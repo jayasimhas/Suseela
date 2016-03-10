@@ -550,6 +550,10 @@
     <Compile Include="User\Profile\IQueryNewsletterUserOptIn.cs" />
     <Compile Include="User\Profile\IQueryOfferUserOptIn.cs" />
     <Compile Include="User\Profile\IQueryOfferUserOptInResult.cs" />
+    <Compile Include="User\Profile\IManageSavedContent.cs" />
+    <Compile Include="User\Profile\ISavedContentReadResult.cs" />
+    <Compile Include="User\Profile\ISavedContent.cs" />
+    <Compile Include="User\Profile\ISavedContentWriteResult.cs" />
     <Compile Include="User\Profile\IUpdateNewsletterUserOptIn.cs" />
     <Compile Include="User\Profile\IUpdateOfferUserOptIn.cs" />
     <Compile Include="User\Profile\INewsletterUserOptIn.cs" />
@@ -559,6 +563,9 @@
     <Compile Include="User\Profile\NewsletterUserOptIn.cs" />
     <Compile Include="User\Profile\NewsletterUserOptInFactory.cs" />
     <Compile Include="Newsletter\NewsletterType.cs" />
+    <Compile Include="User\Profile\SavedContent.cs" />
+    <Compile Include="User\Profile\SavedContentReadResult.cs" />
+    <Compile Include="User\Profile\SavedContentWriteResult.cs" />
     <Compile Include="User\Registration\INewUser.cs" />
     <Compile Include="User\Registration\INewUserFactory.cs" />
     <Compile Include="User\Registration\IRegisterUser.cs" />

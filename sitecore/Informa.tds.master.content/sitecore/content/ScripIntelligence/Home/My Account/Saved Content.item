@@ -2,9 +2,9 @@
 version: 1
 id: {F929F21D-3FD3-4BDD-B67D-4D6C77E47721}
 database: master
-path: /sitecore/content/ScripIntelligence/Home/My Account/Saved Articles
+path: /sitecore/content/ScripIntelligence/Home/My Account/Saved Content
 parent: {5A90B8C7-19FA-4735-9230-0065B8FC5AA3}
-name: Saved Articles
+name: Saved Content
 master: {00000000-0000-0000-0000-000000000000}
 template: {0807607F-2431-41BB-B56A-19AB73B0928C}
 templatekey: Saved Articles Page
@@ -19,7 +19,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: d34376d1-96d3-4b60-9a2d-aa93f1593dd9
+revision: 356153a6-8527-4efc-ab85-129f538ebfe2
 
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d34376d1-96d3-4b60-9a2d-aa93f1593dd9
+356153a6-8527-4efc-ab85-129f538ebfe2
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160308T031801Z
+20160310T190553Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
