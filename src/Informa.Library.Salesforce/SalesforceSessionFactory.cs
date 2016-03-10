@@ -18,6 +18,7 @@ namespace Informa.Library.Salesforce
 			var password = string.Concat(Configuration.Password, Configuration.Token);
 			var service = new SforceService
 			{
+				Url = Configuration.Url,
 				Timeout = Configuration.Timeout
 			};
 

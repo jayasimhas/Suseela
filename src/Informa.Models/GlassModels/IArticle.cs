@@ -20,12 +20,12 @@ using Sitecore.Globalization;
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
-	public partial interface IArticle : IPublicationChild
+	public partial interface IArticle : IPublicationChild, IEntitledProductItem
 	{
 		bool IsPublished { get; set; }
 	}
 
-	public class ArticleMap : SitecoreGlassMap<IPublicationChild>
+    public class ArticleMap : SitecoreGlassMap<IPublicationChild>
 	{
 		public override void Configure()
 		{
@@ -119,8 +119,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public Guid State { get; set; }
 
 		public string Notification_Text { get; set; }
-		
-	}
+        public string Leaderboard_Slot_ID { get; set; }
+    }
 
 	public interface IPublicationChild
 	{

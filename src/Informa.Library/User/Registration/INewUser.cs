@@ -1,8 +1,8 @@
 ﻿namespace Informa.Library.User.Registration
 {
-	public interface INewUser
+	public interface INewUser : IUser
 	{
-		string Username { get; set; }
+		new string Username { get; set; }
 		string FirstName { get; set; }
 		string LastName { get; set; }
 		string Password { get; set; }

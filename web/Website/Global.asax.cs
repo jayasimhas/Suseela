@@ -6,6 +6,7 @@ using System.Web.UI;
 using Informa.Web.App_Start;
 using Sitecore.Web;
 using Autofac;
+using System.Web;
 
 namespace Informa.Web
 {
@@ -45,6 +46,11 @@ namespace Informa.Web
 				Path = bundlePath,
 				LoadSuccessExpression = "window.jQuery"
 			});
+		}
+
+		protected void Application_PostAuthorizeRequest()
+		{
+			HttpContext.Current.SetSessionStateBehavior(System.Web.SessionState.SessionStateBehavior.Required);
 		}
 	}
 }

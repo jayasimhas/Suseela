@@ -1,4 +1,7 @@
-﻿namespace Informa.Library.User.Authentication
+﻿using System.Collections.Generic;
+using Informa.Library.User.Entitlement;
+
+namespace Informa.Library.User.Authentication
 {
 	public class LoginWebUserResult : ILoginWebUserResult
 	{

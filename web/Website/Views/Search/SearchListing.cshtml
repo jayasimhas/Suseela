@@ -39,13 +39,13 @@
                 {{ doc.title }}
             </a>
 
-            <div class="result__author">by {{ doc.byline }}</div>
+            <div class="result__author" ng-if="doc.byline !== ''">By {{ doc.byline }}</div>
 
             <p class="result__description">{{ doc.summary }}</p>
 
              <div class="result__tags"  >
-
-                 <span ng-repeat="tax in doc.searchDisplayTaxonomy.links"><a ng-click="filterResult(tax.url)" href="">
+                 
+                 <span ng-repeat="tax in doc.searchDisplayTaxonomy.links"><a ng-click="filterResult(tax.url)" href="{{tax.url}}">
                     {{tax.title}}
                 </a>
                      <span ng-if="!$last"  class="result__line-separator"></span> <!-- only prints if there are multiple tags -->

@@ -8,19 +8,20 @@ using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
+using Informa.Library.User.Entitlement;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Velir.Search.Core.CustomGlass.Models;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 using Sitecore.Web;
 
 namespace Informa.Web.ViewModels
 {
-    public class GlassArticleModel : GlassViewModel<IArticle>, IArticleModel
+    public class GlassArticleModel : EntitledViewModel<IArticle>, IArticleModel
     {
         public ISiteRootContext SiterootContext { get; set; }
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
@@ -35,7 +36,8 @@ namespace Informa.Web.ViewModels
             ITextTranslator textTranslator, 
             IArticleSearch searcher,
             ISitecoreContext context,
-            IArticleComponentFactory articleComponentFactory)
+            IArticleComponentFactory articleComponentFactory,
+            IEntitledProductContext entitledProductContext) : base(entitledProductContext)
         {
             SiterootContext = siterootContext;
             ArticleListableFactory = articleListableFactory;
@@ -58,8 +60,7 @@ namespace Informa.Web.ViewModels
         {
             get
             {
-                //string body = (GlassModel.Free_Article || AccessLevel != EntitledAccessLevel.UnEntitled) ? GlassModel.Body : "TEMPORARY UNENTITLED\n\n" + GlassModel.Summary;
-                string body = GlassModel.Body;
+                string body = (GlassModel.Free_Article || AccessLevel != EntitledAccessLevel.UnEntitled) ? GlassModel.Body : "TEMPORARY UNENTITLED\n\n" + GlassModel.Summary;
 
                 //Replace any DCD related tokens with proper names
                 body = DCDTokenMatchers.ProcessDCDTokens(body);
@@ -146,7 +147,7 @@ namespace Informa.Web.ViewModels
                 string summ = GlassModel.Summary;
 
                 //Replace any DCD related tokens with proper names
-                //summ = DCDTokenMatchers.ProcessDCDTokens(summ);
+                summ = DCDTokenMatchers.ProcessDCDTokens(summ);
 
                 return summ;
             }
@@ -169,6 +170,12 @@ namespace Informa.Web.ViewModels
             get { return !string.IsNullOrWhiteSpace(ListableImage); }
             set { }
         }
+
+        #endregion
+
+        #region Overrides of EntitledViewModel<IArticle>
+
+        //public EntitledAccessLevel AccessLevel => GlassModel is IEntitledProductItem ? EntitledProductContext.GetAccessLevel((IEntitledProductItem)GlassModel) : EntitledAccessLevel.Free;
 
         #endregion
     }

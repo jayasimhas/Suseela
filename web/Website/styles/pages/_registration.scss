@@ -6,7 +6,7 @@
         margin-bottom: 1.25rem;
     }
 
-    p {
+    &__introduction {
         font-size: 1.125rem;
         margin-bottom: 2rem;
     }
@@ -44,7 +44,8 @@
         &--float {
             float: left;
             margin-right: 1rem;
-            &:nth-of-type(2n) {
+
+            &:nth-of-type(2n+1) {
                 margin-left: 1rem;
                 margin-right: 0;
             }
@@ -52,10 +53,9 @@
     }
 
     &__tos-confirm {
-        @include textMix('Roboto', 0.9375rem, 500);
-        color: $color-abbey-gray;
-        margin-bottom: 2rem;
-        vertical-align: middle;
+        label {
+            @extend .checkbox-label;
+        }
     }
 
     &__submit-wrapper {
@@ -71,7 +71,13 @@
             color: $color-dusty-gray;
             line-height: 1.25rem;
             width: 250px;
+            margin-bottom: 1rem;
         }
+    }
+
+    &__error {
+        @extend .error-text;
+        display: none;
     }
 
 }

@@ -96,11 +96,11 @@ namespace Informa.Web.Areas.Article.Controllers
 				replacements["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink();
 				replacements["#Twitter_Link_Text#"] = GetValue(siteRoot?.Twitter_Link?.Text);
 
-				replacements["#Body_Content#"] = GetValue(siteRoot?.Email_A_Friend_Body_Content)
-					.ReplaceCaseInsensitive("#reciever_name#", friendName)
-					.ReplaceCaseInsensitive("#sender_name#", senderEmail)
-					.ReplaceCaseInsensitive("#sender_email#", senderName)
-					.ReplaceCaseInsensitive("#personal_message#", message);
+				//replacements["#Body_Content#"] = GetValue(siteRoot?.Email_A_Friend_Body_Content)
+				//	.ReplaceCaseInsensitive("#reciever_name#", friendName)
+				//	.ReplaceCaseInsensitive("#sender_name#", senderEmail)
+				//	.ReplaceCaseInsensitive("#sender_email#", senderName)
+				//	.ReplaceCaseInsensitive("#personal_message#", message);
 
 				// Article Body
 				var article = _articleUtil.GetArticleByNumber(articleNumber);
@@ -131,11 +131,11 @@ namespace Informa.Web.Areas.Article.Controllers
 				}
 
 				replacements["#Footer_Content#"] = GetValue(siteRoot?.Email_A_Friend_Footer_Content)
-					.ReplaceCaseInsensitive("#SENDER_EMAIL#", senderEmail)
-					.ReplaceCaseInsensitive("#RECIPIENT_EMAIL#", friendEmail);
+					.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail)
+					.ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", friendEmail);
 
 
-				emailHtml = emailHtml.ReplaceCaseInsensitive(replacements);
+				emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
 			}
 			catch (Exception ex)
 			{

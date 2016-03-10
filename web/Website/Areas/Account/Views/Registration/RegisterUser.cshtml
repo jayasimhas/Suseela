@@ -3,23 +3,46 @@
 <div class="page-registration js-register-user-container">
 	<h1 class="page-registration__header">@Model.Title</h1>
 	<h2 class="page-registration__subheader">@Model.SubTitle</h2>
-	<p>@Model.Body</p>
+	<p class="page-registration__introduction">@Model.Body</p>
 	<hr />
-	<div style="display: none;" class="js-register-user-error-container">
-		<p style="display: none;" class="js-register-user-error js-register-user-error-Required">@Model.RequiredErrorText</p>
-		<p style="display: none;" class="js-register-user-error js-register-user-error-UsernameRequirements">@Model.UsernameRequirementsErrorText</p>
-		<p style="display: none;" class="js-register-user-error js-register-user-error-PasswordMismatch">@Model.PasswordMismatchErrorText</p>
-		<p style="display: none;" class="js-register-user-error js-register-user-error-PasswordRequirements">@Model.PasswordRequirementsErrorText</p>
-		<p style="display: none;" class="js-register-user-error js-register-user-error-TermsNotAccepted">@Model.TermsNotAcceptedErrorText</p>
-		<p style="display: none;" class="js-register-user-error js-register-user-error-general">@Model.GeneralErrorText</p>
-	</div>
 	<div>
 		<div class="page-registration__required-hint">
 			<span class="asterisk-required"></span> <em>@Model.RequiedFieldsText</em>
 		</div>
 
+		<form	class="form-registration"
+				data-on-submit="/Account/api/RegistrationApi/Register/"
+				data-on-success="@Model.NextStepUrl">
+
+		<p class="	page-registration__error
+					js-register-user-error
+					js-register-user-error-general">
+			@Model.GeneralErrorText
+		</p>
+
 		<div class="page-registration__field-wrapper">
-			<label for="username" class="page-registration__text-label">@Model.UsernameLabelText <span class="asterisk-required"></span></label>
+			<label for="username" class="page-registration__text-label">
+				@Model.UsernameLabelText <span class="asterisk-required"></span>
+			</label>
+
+			<p class="	page-registration__error
+						js-form-error
+						js-form-error-UsernameRequirements">
+				@Model.UsernameRequirementsErrorText
+			</p>
+
+			<p class=" page-registration__error
+			   js-form-error
+			   js-form-error-UsernameExists">
+				@Model.UsernameExistsErrorText
+			</p>
+
+			<p class="	page-registration__error
+						js-form-error
+						js-form-error-Required">
+				@Model.RequiredErrorText
+			</p>
+
 			<input 	type="email"
 	               	class="inf-standard-form-field"
 	               	placeholder="@Model.UsernamePlaceholderText"
@@ -28,16 +51,23 @@
 		</div>
 
 		<div class="page-registration__field-wrapper page-registration__field-wrapper--float">
-			<label for="firstName" class="page-registration__text-label">@Model.FirstNameLabelText <span class="asterisk-required"></span></label>
+			<label for="firstName" class="page-registration__text-label">
+				@Model.FirstNameLabelText <span class="asterisk-required"></span>
+			</label>
+
 			<input 	type="text"
 	               	class="inf-standard-form-field"
 	               	tabindex="2"
 				   	name="firstName"
 				   	placeholder="@Model.FirstNamePlaceholderText">
+
 		</div>
 
 		<div class="page-registration__field-wrapper page-registration__field-wrapper--float">
-			<label for="lastName" class="page-registration__text-label">@Model.LastNameLabelText <span class="asterisk-required"></span></label>
+			<label for="lastName" class="page-registration__text-label">
+				@Model.LastNameLabelText <span class="asterisk-required"></span>
+			</label>
+
 			<input 	type="text"
 	               	class="inf-standard-form-field"
 	               	placeholder=""
@@ -46,7 +76,22 @@
 		</div>
 
 		<div class="page-registration__field-wrapper page-registration__field-wrapper--float">
-			<label for="password" class="page-registration__text-label">@Model.PasswordLabelText <span class="asterisk-required"></span></label>
+			<label for="password" class="page-registration__text-label">
+				@Model.PasswordLabelText <span class="asterisk-required"></span>
+			</label>
+
+			<p class="	page-registration__error
+						js-form-error
+						js-form-error-PasswordRequirements">
+				@Model.PasswordRequirementsErrorText
+			</p>
+
+			<p class="	page-registration__error
+						js-form-error
+						js-form-error-PasswordMismatch">
+				@Model.PasswordMismatchErrorText
+			</p>
+
 			<input 	name="password"
 					class="inf-standard-form-field"
 					type="password"
@@ -55,7 +100,16 @@
 		</div>
 
 		<div class="page-registration__field-wrapper page-registration__field-wrapper--float">
-			<label for="passwordRepeat" class="page-registration__text-label">@Model.PasswordRepeatLabelText <span class="asterisk-required"></span></label>
+			<label for="passwordRepeat" class="page-registration__text-label">
+				@Model.PasswordRepeatLabelText <span class="asterisk-required"></span>
+			</label>
+
+			<p class="	page-registration__error
+						js-form-error
+						js-form-error-PasswordMismatch">
+				@Model.PasswordMismatchErrorText
+			</p>
+
 			<input 	name="passwordRepeat"
 					class="inf-standard-form-field"
 					type="password"
@@ -66,15 +120,23 @@
 		<hr>
 
 	    <div class="page-registration__tos-confirm">
-	        <input name="termsAccepted" type="checkbox" data-checkbox-type="boolean"> <label for="termsAccepted">@Model.TermsLabel</label>
+			<p class="	page-registration__error
+						js-form-error
+						js-form-error-TermsNotAccepted">
+				@Model.TermsNotAcceptedErrorText
+			</p>
+
+	        <input	name="termsAccepted"
+					type="checkbox"
+					data-checkbox-type="boolean"> <label for="termsAccepted">@Model.TermsLabel</label>
 	    </div>
 
 	    <div class="page-registration__submit-wrapper">
-	        <button type="submit" class="button--filled js-register-user-submit" data-register-user-url="/Account/api/RegistrationApi/Register/">@Model.SubmitText</button>
+	        <button	type="submit"
+					class="button--filled js-register-user-submit">@Model.SubmitText</button>
 	        <p><em>@Model.NewsletterSignUpText</em></p>
 	    </div>
 
-		<p style="display: none;" class="js-register-user-success">Account successfull registered (-> redirect to thank you).</p>
-
+		</form>
 	</div>
 </div>

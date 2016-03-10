@@ -6,12 +6,12 @@ using Autofac.Extras.Attributed;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
 using Informa.Web.App_Start.Registrations;
-using Jabberwocky.Autofac.Extras.MiniProfiler;
 using Jabberwocky.Autofac.Modules;
 using Jabberwocky.Glass.Autofac.Extensions;
 using Jabberwocky.Glass.Autofac.Mvc.Extensions;
 using log4net;
 using Informa.Library.CustomSitecore.Mvc;
+using Informa.Library.Utilities.Autofac.Modules;
 using Informa.Web.Controllers;
 using Informa.Web.Controllers.Search;
 using Velir.Search.Autofac.Modules;
@@ -61,6 +61,7 @@ namespace Informa.Web.App_Start
 
 			// Custom Modules
 			builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));
+            builder.RegisterModule(new AutomapperModule(LibraryDll));
 
 
             // Custom Registrations

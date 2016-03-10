@@ -1,4 +1,7 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Informa.Library.User.Entitlement;
+using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Authentication
 {
@@ -23,11 +26,11 @@ namespace Informa.Library.User.Authentication
 				{
 					Email = sitecoreUser.Profile.Email,
 					Name = sitecoreUser.Profile.Name,
-					Username = sitecoreUser.Profile.UserName
+					Username = sitecoreUser.Profile.UserName       
 				};
 			}
 		}
 
-		public bool IsAuthenticated => SitecoreUserContext.User.IsAuthenticated;
-	}
+		public bool IsAuthenticated => SitecoreUserContext.User.IsAuthenticated;             
+	}                                      
 }

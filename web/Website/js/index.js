@@ -7,7 +7,7 @@ import SearchScript from './search-page.js';
 import LoginController from './login-controller';
 import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
-import FormValidation from './form-validation';
+import FormController from './form-controller';
 
 
 /* Toggle menu categories */
@@ -36,22 +36,6 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 	var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
 	dismissedBanners[thisBanner.data('banner-id')] = true;
 	Cookies.set('dismissedBanners', dismissedBanners);
-});
-
-// Pre-registration username validation
-$('.js-register-submit').on('click', function validateUsername(e) {
-	var submitButton = $(e.target);
-	var username = submitButton.siblings('.js-register-username').val();
-	$.post('account/api/accountvalidation/username/', { username: username }, function (response) {
-		if (response.valid) {
-			var redirectUrl = submitButton.attr('data-register-redirect');
-
-			window.location.href = redirectUrl + '?username=' + username;
-		}
-		else {
-			submitButton.siblings('.js-register-invalid').show();
-		}
-	});
 });
 
 	// Make sure proper elm gets the click event
@@ -160,9 +144,29 @@ $(document).ready(function() {
 	resetPassword.addChangeControl('.js-reset-password-change-submit');
 	resetPassword.addRetryControl('.js-reset-password-retry-submit');
 
+
+	var userRegistrationController = new FormController();
+	userRegistrationController.watchForm('.form-registration');
+	userRegistrationController.watchForm('.form-registration-optins');
+	userRegistrationController.watchForm(
+		'.form-pre-registration',
+		function(form) {
+			var usernameInput = $(form).find('.js-register-username');
+			var nextStepUrl = $(form).data('on-success') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
+
+			window.location.href = nextStepUrl;
+		}
+	);
+
 	var registerController = new RegisterController();
 
-	registerController.addRegisterUserControl('.js-register-user-submit');
+	registerController.addRegisterUserControl('.js-register-user-optins-submit');
+
+	var emailArticleController = new FormController();
+	emailArticleController.watchForm('.form-email-article');
+
+	var accountEmailPreferencesController = new FormController();
+	accountEmailPreferencesController.watchForm('.form-email-preferences');
 
     svg4everybody();
 
@@ -295,7 +299,6 @@ $(document).ready(function() {
 			$('.general-header__navigation-scroller--right').removeClass('is-visible');
 		}
 	});
-
 
 
 	// Twitter sharing JS

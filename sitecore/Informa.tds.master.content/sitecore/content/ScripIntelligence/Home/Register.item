@@ -16,10 +16,17 @@ key: __renderings
 content-length: 206
 
 <r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{CEA67009-C8D2-4835-AF91-11E2A920D7E4}" s:id="{D996258F-29F7-4E0E-A0A6-6F4ADA08F931}" s:ph="main-content" /></d></r>
+----field----
+field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
+name: __Security
+key: __security
+content-length: 63
+
+ar|sitecore\General Content Access|pe|+item:read|pd|+item:read|
 ----version----
 language: en
 version: 1
-revision: b92f9d94-3a77-4168-8d65-42168779d7dd
+revision: 3bad6623-7751-4ffb-b080-5e9475025be2
 
 ----field----
 field: {761D17CF-74DB-4658-AD8B-3C3B119D5851}
@@ -35,6 +42,13 @@ key: user agreement text
 content-length: 123
 
 I have read and understand the <a href="\'#\'">Registrationed User Agreement</a> and agree to be bound by all of its terms.
+----field----
+field: {1EF03C3C-B490-43D8-88FF-BA0669A63ADB}
+name: Next Step Page
+key: next step page
+content-length: 38
+
+{63843B6D-A1F0-4B02-A5E8-84E40D4D9A7A}
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
 name: Title
@@ -77,14 +91,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b92f9d94-3a77-4168-8d65-42168779d7dd
+3bad6623-7751-4ffb-b080-5e9475025be2
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160307T153930Z
+20160308T214738Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
