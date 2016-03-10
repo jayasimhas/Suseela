@@ -1,0 +1,9 @@
+----role----
+name: sitecore\Deny Final Workflow
+
+----role-in-role----
+rolename: sitecore\Author
+
+----role-in-role----
+rolename: sitecore\Production
+
