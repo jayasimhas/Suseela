@@ -9,6 +9,7 @@
 						<field fieldName="IsSearchable" returnType="bool">Informa.Library.Search.ComputedFields.Base.IsSearchableField, Informa.Library</field>
             <field fieldName="ArticleIntegerNumber" returnType="long">Informa.Library.Search.ComputedFields.SearchResults.ArticleIntegerNumberField, Informa.Library</field>
 						
+						<field fieldName="PlannedPublishDate" returnType="datetime">Informa.Library.Search.ComputedFields.SearchResults.PlannedPublishDateField, Informa.Library</field>
 						<field fieldName="SearchDate" returnType="datetime">Informa.Library.Search.ComputedFields.SearchResults.SearchResultDateField, Informa.Library</field>
 						<field fieldName="SearchUrl" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchResultUrlField, Informa.Library</field>
 						<field fieldName="SearchTitle" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchResultTitleField, Informa.Library</field>
@@ -24,6 +25,7 @@
 						<field fieldName="FacetRegions" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.RegionsField, Informa.Library</field>
 						<field fieldName="FacetSubjects" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.SubjectsField, Informa.Library</field>
 						<field fieldName="FacetCompanies" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.CompaniesField, Informa.Library</field>
+						<field fieldName="FacetArticleInProgress" returnType="bool">Informa.Library.Search.ComputedFields.Facets.ArticleInProgressField, Informa.Library</field>
 					</fields>
 				</defaultSolrIndexConfiguration>
 			</indexConfigurations>

@@ -63,8 +63,13 @@ namespace Elsevier.Web.VWB
 				return;
 			}
 
-			//var logoItem = ItemReference.VWBLogo.InnerItem;
-		    LogoUrl = "";// Sitecore.StringUtil.EnsurePrefix('/', Sitecore.Resources.Media.MediaManager.GetMediaUrl(logoItem));
+		    if (Request.QueryString.Count == 0)
+		    {
+                RunQuery(true);
+            }
+
+            //var logoItem = ItemReference.VWBLogo.InnerItem;
+            LogoUrl = "";// Sitecore.StringUtil.EnsurePrefix('/', Sitecore.Resources.Media.MediaManager.GetMediaUrl(logoItem));
 
 			const string defaultTime = "12:00 AM";
 			txtStartTime.Text = defaultTime;
@@ -72,7 +77,9 @@ namespace Elsevier.Web.VWB
 
 			UpdateFields();
 			BuildOptionalColumnDropdown();
-		}
+
+            
+        }
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
