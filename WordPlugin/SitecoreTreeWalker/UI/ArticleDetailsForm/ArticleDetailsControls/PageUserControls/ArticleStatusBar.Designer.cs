@@ -87,7 +87,7 @@
 			// 
 			// uxLockStateButton
 			// 
-			this.uxLockStateButton.Image = global::InformaSitecoreWord.Properties.Resources._53_Lock_unlocked;
+			this.uxLockStateButton.Image = global::InformaSitecoreWord.Properties.Resources.lockedIcon;
 			this.uxLockStateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.uxLockStateButton.Margin = new System.Windows.Forms.Padding(6, 1, 0, 2);
 			this.uxLockStateButton.Name = "uxLockStateButton";

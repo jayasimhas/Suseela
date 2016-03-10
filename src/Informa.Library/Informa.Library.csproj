@@ -279,9 +279,12 @@
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
+    <Compile Include="Company\CompanyContext.cs" />
     <Compile Include="Company\ICompany.cs" />
     <Compile Include="Company\ICompanyContext.cs" />
     <Compile Include="Company\IFindCompanyByIpAddress.cs" />
+    <Compile Include="Company\IUserCompanyContext.cs" />
+    <Compile Include="Company\UserCompanyContext.cs" />
     <Compile Include="ComponentModel\DataAnnotations\MustBeTrueAttribute.cs" />
     <Compile Include="ComponentModel\DataAnnotations\PasswordAttribute.cs" />
     <Compile Include="CustomSitecore\Mvc\SitecoreValidateAntiForgeryTokenAttribute.cs" />
@@ -538,6 +541,8 @@
     <Compile Include="User\Authentication\IAuthenticatedUserContext.cs" />
     <Compile Include="User\IUpdateUserPassword.cs" />
     <Compile Include="User\IUser.cs" />
+    <Compile Include="User\IUserIpAddressContext.cs" />
+    <Compile Include="User\IUserSession.cs" />
     <Compile Include="User\Profile\IFindUserProfileByUsername.cs" />
     <Compile Include="User\Profile\INewsletterOptIn.cs" />
     <Compile Include="User\Profile\INewsletterUserOptInFactory.cs" />
@@ -626,6 +631,8 @@
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedUser.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />
+    <Compile Include="User\UserIpAddressContext.cs" />
+    <Compile Include="User\UserSession.cs" />
     <Compile Include="Utilities\Autofac\Modules\AutoMapperModule.cs" />
     <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleBodyProfile.cs" />
     <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleFrontProfile.cs" />
