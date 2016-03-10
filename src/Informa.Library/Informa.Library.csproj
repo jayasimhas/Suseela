@@ -78,6 +78,10 @@
       <HintPath>..\..\packages\Autofac.Mef.3.0.3\lib\net40\Autofac.Integration.Mef.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
@@ -275,7 +279,11 @@
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
+    <Compile Include="Company\ICompany.cs" />
+    <Compile Include="Company\ICompanyContext.cs" />
+    <Compile Include="Company\IFindCompanyByIpAddress.cs" />
     <Compile Include="ComponentModel\DataAnnotations\MustBeTrueAttribute.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\PasswordAttribute.cs" />
     <Compile Include="CustomSitecore\Mvc\SitecoreValidateAntiForgeryTokenAttribute.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
     <Compile Include="Mail\BaseHtmlEmailFactory.cs" />
@@ -293,10 +301,37 @@
     <Compile Include="Rss\SearchResults.cs" />
     <Compile Include="Rss\SearchResultsRequest.cs" />
     <Compile Include="Rss\SearchRssFeed.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchSummaryField.cs" />
     <Compile Include="Search\Results\GeneralContentResult.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
     <Compile Include="Search\Sort\HierarchicalStrategyWithCountSort.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
+    <Compile Include="Services\NlmExport\INlmExportService.cs" />
+    <Compile Include="Services\NlmExport\Models\Body\NlmArticleBodyModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Common\NlmCategoryModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\Contrib\NlmArticleAuthorNameModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\Contrib\NlmAuthorEmailModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\History\NlmHistoryDateModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleAbstractModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleAuthorModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleIdModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleCustomMetaModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticlePermissionsModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticlePubDateModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleTitleModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleWordCountModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmRelatedArticleModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Journal\NlmIssueNumberModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Journal\NlmJournalIdModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Journal\NlmJournalTitleModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Journal\NlmPublisherModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\NlmArticleFrontModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\NlmArticleMetaModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\NlmJournalMetaModel.cs" />
+    <Compile Include="Services\NlmExport\Models\NlmArticleModel.cs" />
+    <Compile Include="Services\NlmExport\NlmExportService.cs" />
+    <Compile Include="Services\NlmExport\Serialization\INlmSerializer.cs" />
+    <Compile Include="Services\NlmExport\Serialization\NlmSerializer.cs" />
     <Compile Include="Services\RobotsText\RobotsTextService.cs" />
     <Compile Include="Services\Sitemap\SitemapService.cs" />
     <Compile Include="Site\Newsletter\ISiteNewsletterTypesContext.cs" />
@@ -584,6 +619,25 @@
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedUser.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />
+    <Compile Include="Utilities\Autofac\Modules\AutoMapperModule.cs" />
+    <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleBodyProfile.cs" />
+    <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleFrontProfile.cs" />
+    <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleProfile.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\AutoMapResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\BaseValueResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\ArticleTypeResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleCategoriesResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleContributorResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleHistoryResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticlePermissionsResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticlePubDateResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticlePublisherIdResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleRelatedArticlesResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleTitleResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\IssueNumberResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalIdResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalTitleResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\PublisherResolver.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
@@ -595,6 +649,8 @@
     <Compile Include="Utilities\References\RenderingReferences.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
+    <Compile Include="Utilities\StringUtils\HtmlUtil.cs" />
+    <Compile Include="Utilities\StringUtils\WordUtil.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
     <Compile Include="Utilities\TokenMatcher\DCDTokenMatchers.cs" />
     <Compile Include="Utilities\WebApi\Caching\ApiOutputCacheAdapter.cs" />

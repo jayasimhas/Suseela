@@ -28,6 +28,8 @@
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
     <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -719,6 +721,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
+    <Compile Include="ViewModels\AdvertisementViewModel.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\EntitledViewModel.cs" />
     <Compile Include="ViewModels\IArticleComponentFactory.cs" />
@@ -792,6 +795,7 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="VWB\Report\ArticleItemWrapper.cs" />
+    <Compile Include="VWB\Report\Columns\ContentTypeColumn.cs" />
     <Compile Include="VWB\Report\Columns\CreatedDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleLengthEstimateColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleNumberColumn.cs" />
@@ -799,14 +803,17 @@
     <Compile Include="VWB\Report\Columns\ArticleTypeColumn.cs" />
     <Compile Include="VWB\Report\Columns\AuthorsColumn.cs" />
     <Compile Include="VWB\Report\Columns\ColumnFactory.cs" />
+    <Compile Include="VWB\Report\Columns\EmailPriorityColumn.cs" />
     <Compile Include="VWB\Report\Columns\IssuePublishDateColumn.cs" />
     <Compile Include="VWB\Report\Columns\IVwbColumn.cs" />
     <Compile Include="VWB\Report\Columns\LockStatusColumn.cs" />
+    <Compile Include="VWB\Report\Columns\MediaTypeColumn.cs" />
     <Compile Include="VWB\Report\Columns\NotesToEditorialColumn.cs" />
     <Compile Include="VWB\Report\Columns\ProofreadingStatusColumn.cs" />
     <Compile Include="VWB\Report\Columns\PublishableAfterColumn.cs" />
     <Compile Include="VWB\Report\Columns\PlannedPublishDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\SidebarColumn.cs" />
+    <Compile Include="VWB\Report\Columns\TaxonomyColumn.cs" />
     <Compile Include="VWB\Report\Columns\TitleColumn.cs" />
     <Compile Include="VWB\Report\Columns\ActualPublishDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\WorkflowStateColumn.cs" />
@@ -1065,6 +1072,11 @@
     <None Include="App_Config\Include\UserDefined\AppInsights.config.template">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
+    <None Include="App_Config\Include\UserDefined\CustomSitecore.config.template">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
@@ -1144,6 +1156,7 @@
     <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
     <Content Include="Views\Shared\Global\Sitemap.cshtml" />
+    <Content Include="Views\Shared\Components\Advertisement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
@@ -1202,8 +1215,10 @@
     <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
