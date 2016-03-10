@@ -171,7 +171,7 @@ namespace Informa.Web.Controllers
 			List<WorkflowEvent> workflowHistory = GetWorkflowHistory(article);
 			replacements["#history#"] = HistoryTableCreation(workflowHistory);
 
-			return emailHtml.ReplaceCaseInsensitive(replacements);
+			return emailHtml.ReplacePatternCaseInsensitive(replacements);
 		}
 
 		public string CreateEditAfterPublishBody(ArticleStruct articleStruct, string emailTitle, string publication)
@@ -215,7 +215,7 @@ namespace Informa.Web.Controllers
 			List<WorkflowEvent> workflowHistory = GetWorkflowHistory(article);
 			replacements["#history#"] = HistoryTableCreation(workflowHistory);
 
-			return emailHtml.ReplaceCaseInsensitive(replacements);
+			return emailHtml.ReplacePatternCaseInsensitive(replacements);
 		}
 
 		public string GetWordURL(ArticleStruct articleStruct)

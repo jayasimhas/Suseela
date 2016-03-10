@@ -79,17 +79,17 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 
         public static void InsertDealIntoDocument(DealInfo dealInfo)
         {
-            InsertLinkIntoDocument("W", dealInfo.ID, dealInfo.Url, DealTooltip);
+            InsertLinkIntoDocument("W", dealInfo.ID, dealInfo.Url, DealTooltip, dealInfo.RecordNumber);
         }
 
-        protected static void InsertLinkIntoDocument(string prefix, string ID, string URL, string tooltip)
+        protected static void InsertLinkIntoDocument(string prefix, string ID, string URL, string tooltip, string recordNumber)
         {
             var app = Globals.SitecoreAddin.Application;
             //TamerM - 2016-03-01: added the following line because changing the text thrown an exception: you are not allowed to edit this
             //http://stackoverflow.com/questions/17594211/you-are-not-allowed-to-edit-this-selection-because-it-is-protected-but-only-s
             app.ActiveWindow.View.ReadingLayout = false;
             Range selection = app.Selection.Range;
-            selection.Text = "[" + prefix + "#" + ID + "]";
+            selection.Text = "[" + prefix + "#" + recordNumber + "]";
             var address = URL;
             app.ActiveDocument.Hyperlinks.Add(selection, address, null, tooltip);
             app.ActiveDocument.Range(selection.End, selection.End).Select();
