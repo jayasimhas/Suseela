@@ -9512,6 +9512,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Link Subscribe_Link  {get; set;}
 								/// <summary>
+					/// The Recognized IP Announcment Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 774124e0-be3a-4db9-af48-333be5ac0f27</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Recognized_IP_Announcment_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Recognized_IP_Announcment_Text  {get; set;}
+								/// <summary>
 					/// The Left Column Text field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -9992,6 +10001,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Link Subscribe_Link  {get; set;}
 										/// <summary>
+						/// The Recognized IP Announcment Text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 774124e0-be3a-4db9-af48-333be5ac0f27</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Recognized_IP_Announcment_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Recognized_IP_Announcment_Text  {get; set;}
+										/// <summary>
 						/// The Left Column Text field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -10383,6 +10401,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
 			public const string Subscribe_LinkFieldName = "Subscribe Link";
+
+						
+					
+			public static readonly ID Recognized_IP_Announcment_TextFieldId = new ID("774124e0-be3a-4db9-af48-333be5ac0f27");
+			public const string Recognized_IP_Announcment_TextFieldName = "Recognized IP Announcment Text";
 
 						
 					
@@ -14155,6 +14178,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Global_Leaderboard_Ad_ZoneFieldId = new ID("016b3e1c-33ef-4029-9cbd-9cf36657f5fe");
+			public const string Global_Leaderboard_Ad_ZoneFieldName = "Global Leaderboard Ad Zone";
+
+						
+					
+			public static readonly ID Global_Leaderboard_Slot_IDFieldId = new ID("6c312b88-b709-4eb1-a483-0222a8d7e401");
+			public const string Global_Leaderboard_Slot_IDFieldName = "Global Leaderboard Slot ID";
+
+						
+					
 			public static readonly ID Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
 			public const string Email_FooterFieldName = "Email Footer";
 
@@ -14229,6 +14262,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
 			public const string Subscribe_LinkFieldName = "Subscribe Link";
+
+						
+					
+			public static readonly ID Recognized_IP_Announcment_TextFieldId = new ID("774124e0-be3a-4db9-af48-333be5ac0f27");
+			public const string Recognized_IP_Announcment_TextFieldName = "Recognized IP Announcment Text";
 
 						
 					

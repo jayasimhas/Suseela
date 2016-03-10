@@ -20,6 +20,7 @@ namespace Informa.Library.Salesforce.Company
 			IIpAddressRangeCheck ipAddressRangeCheck,
 			ISalesforceServiceContext service)
 		{
+			IpAddressRangeCheck = ipAddressRangeCheck;
 			Service = service;
 		}
 
