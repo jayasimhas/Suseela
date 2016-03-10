@@ -30,10 +30,17 @@ key: __renderings
 content-length: 383
 
 <r xmlns:xsd="http://www.w3.org/2001/XMLSchema"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{BA46F4AD-9E30-41D7-9580-FCEB81875402}"><r id="{0872F38B-B06B-4441-A065-A341230B57AB}" ph="main-content" uid="{0F6A6227-C265-4521-8F6D-FA78653AE581}" /><r uid="{AD525F08-A5D0-4FB3-9446-13A93299836E}" ds="" id="{4882EA28-8D85-451A-904E-967504C9DBAC}" par="" ph="main-content" /></d></r>
+----field----
+field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
+name: __Security
+key: __security
+content-length: 63
+
+ar|sitecore\General Content Access|pe|+item:read|pd|+item:read|
 ----version----
 language: en
 version: 1
-revision: 1c194d4d-39ee-4dfe-9e51-104bd70cfdab
+revision: b34b0027-97e1-458d-b4bb-3d2e8c088be7
 
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
@@ -151,14 +158,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-1c194d4d-39ee-4dfe-9e51-104bd70cfdab
+b34b0027-97e1-458d-b4bb-3d2e8c088be7
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160111T203513Z
+20160308T214737Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
