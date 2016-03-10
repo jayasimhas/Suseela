@@ -6,26 +6,26 @@ using System.Web.UI.WebControls;
 
 namespace Elsevier.Web.VWB.Report.Columns
 {
-	public class IssuePublishDateColumn : IVwbColumn
+	public class WordCountColumn : IVwbColumn
 	{
 		public int Compare(ArticleItemWrapper x, ArticleItemWrapper y)
 		{
-			return x.IssueDate.CompareTo(y.IssueDate);
+			return x.WordCount.CompareTo(y.WordCount);
 		}
 
 		public string GetHeader()
 		{
-			return "Issue Date";
+			return "Word Count";
 		}
 
 		public string Key()
 		{
-			return "isd";
+			return "asz";
 		}
 
 		public TableCell GetCell(ArticleItemWrapper articleItemWrapper)
 		{
-			return new TableCell { Text = articleItemWrapper.IssueDate == DateTime.MinValue ? "N/E" : articleItemWrapper.IssueDateValue };
-		}
+            return new TableCell { Text = articleItemWrapper.WordCount };
+        }
 	}
 }

@@ -71,25 +71,10 @@ namespace Elsevier.Web.VWB.Report.Columns
                 tc.Controls.Add(lockimage);
             }
             tc.Controls.Add(link);
-            tc.Controls.Add(GetMobilePreviewLink(articleItemWrapper));
+
             return tc;
 		}
-		private Control GetMobilePreviewLink(ArticleItemWrapper articleItemWrapper)
-		{
-			
-			var opening= new Label { Text = " (" };
-			var closing = new Label { Text = ")" };
-			var link = GetPreviewLink(articleItemWrapper, true);
-			//link.Controls.Add(label);
-			link.Text = "Preview Mobile";
-			var everything = new Label();
-			
-			everything.Controls.Add(opening);
-			everything.Controls.Add(link);
-			everything.Controls.Add(closing);
-			return everything;
 
-		}
 		private HyperLink GetPreviewLink(ArticleItemWrapper articleItemWrapper,bool isMobile = false)
 		{
 		
