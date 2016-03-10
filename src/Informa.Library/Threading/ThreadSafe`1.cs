@@ -9,12 +9,17 @@
 		{
 			get
 			{
+				if (!IsValid)
+				{
+					Reload();
+				}
+
 				if (safeObject != null)
 				{
 					return safeObject;
 				}
 
-				lock(locker)
+				lock (locker)
 				{
 					if (safeObject != null)
 					{
@@ -30,10 +35,12 @@
 
 		public void Reload()
 		{
-			lock(locker)
+			lock (locker)
 			{
 				safeObject = UnsafeObject;
 			}
 		}
+
+		public virtual bool IsValid => true;
 	}
 }
