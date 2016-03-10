@@ -216,7 +216,16 @@ namespace Elsevier.Web.VWB.Report
             using (new Sitecore.SecurityModel.SecurityDisabler())
             {
                 string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
-                string url = string.Format("http://{0}/api/informasearch?pId={1}&sortBy=date&sortOrder=desc&perPage=60", WebUtil.GetHostName(), searchPageId);
+                string url = string.Format("http://{0}/api/informasearch?pId={1}&sortBy=date&sortOrder=desc", WebUtil.GetHostName(), searchPageId);
+
+                if (query.StartDate != null && query.EndDate != null)
+                {
+                    DateTime startDate = query.StartDate ?? DateTime.MinValue;
+                    url += "&date=" + startDate.ToString("MM/dd/yyyy");
+
+                    DateTime endDate = query.EndDate ?? DateTime.MaxValue;
+                    url += ";" + endDate.ToString("MM/dd/yyyy");
+                }
 
 
                 var client = new WebClient();

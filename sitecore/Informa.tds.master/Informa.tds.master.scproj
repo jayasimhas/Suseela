@@ -776,6 +776,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\Search\Refinements\zDate.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\Search\Refinements\zDatePlaceholder.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -841,6 +842,14 @@
     <SitecoreItem Include="sitecore\system\Modules\Search\Sorts\Updated Date.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\Search\Vwb.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\Search\Vwb\Vwb Search.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\Url Rewrite.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>

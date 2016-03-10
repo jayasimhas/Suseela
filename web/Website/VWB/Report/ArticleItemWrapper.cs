@@ -9,7 +9,9 @@ using Elsevier.Library.Metadata;
 using Elsevier.Library.Reference;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.Web;
 using Velir.Utilities.Extensions.System.Collections.Generic;
 using ArticleItem = Elsevier.Library.CustomItems.Publication.General.ArticleItem;
 
@@ -81,7 +83,12 @@ namespace Elsevier.Web.VWB.Report
 			: this(articleItem, new ArticleLengthEstimator())
 		{}
 
-		public ArticleItemWrapper(ArticleItem articleItem, ArticleLengthEstimator estimator)
+        public string GetPreviewUrl(string itemId)
+        {
+            return "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + itemId + "}&sc_mode=preview&sc_lang=en";
+        }
+
+        public ArticleItemWrapper(ArticleItem articleItem, ArticleLengthEstimator estimator)
 		{
 			_estimator = estimator; 
 
@@ -91,7 +98,7 @@ namespace Elsevier.Web.VWB.Report
 		    InnerItem = articleBaseItem;
 
             //TODO
-            PreviewUrl = "/";
+            PreviewUrl = GetPreviewUrl(article._Id.ToString());
 			ArticleNumber = article.Article_Number;
 		    if (ArticleNumber == null)
 		    {
