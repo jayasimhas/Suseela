@@ -298,6 +298,8 @@
     <Compile Include="Mail\IEmailSender.cs" />
     <Compile Include="Mail\IHtmlEmailTemplate.cs" />
     <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
+    <Compile Include="Net\IIpAddressRangeCheck.cs" />
+    <Compile Include="Net\IpAddressRangeCheck.cs" />
     <Compile Include="Rss\SearchResults.cs" />
     <Compile Include="Rss\SearchResultsRequest.cs" />
     <Compile Include="Rss\SearchRssFeed.cs" />
@@ -334,6 +336,8 @@
     <Compile Include="Services\NlmExport\Serialization\NlmSerializer.cs" />
     <Compile Include="Services\RobotsText\RobotsTextService.cs" />
     <Compile Include="Services\Sitemap\SitemapService.cs" />
+    <Compile Include="Session\ISessionStore.cs" />
+    <Compile Include="Session\HttpContextSessionStore.cs" />
     <Compile Include="Site\Newsletter\ISiteNewsletterTypesContext.cs" />
     <Compile Include="Site\Newsletter\SiteNewsletterTypesContext.cs" />
     <Compile Include="User\Authentication\IAuthenticateUser.cs" />
