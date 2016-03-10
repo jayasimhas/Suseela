@@ -905,7 +905,6 @@
     <Content Include="App_Config\Sitecore.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Sitecore.config.template" />
     <Content Include="App_Config\Web\nwebsec.config" />
     <Content Include="App_Config\Web\nwebsec.config.template" />
     <Content Include="App_Config\Web\system.webServer.handlers.config" />
@@ -1074,9 +1073,6 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
-    <None Include="App_Config\Include\UserDefined\CustomSitecore.config.template">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
