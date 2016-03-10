@@ -303,10 +303,13 @@
     <Compile Include="Rss\SearchResults.cs" />
     <Compile Include="Rss\SearchResultsRequest.cs" />
     <Compile Include="Rss\SearchRssFeed.cs" />
+    <Compile Include="Search\ComputedFields\Facets\ArticleInProgressField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\PlannedPublishDateField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchSummaryField.cs" />
     <Compile Include="Search\Results\GeneralContentResult.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
     <Compile Include="Search\Sort\HierarchicalStrategyWithCountSort.cs" />
+    <Compile Include="Search\TypeAhead\CompanyTypeAheadResponseItem.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
     <Compile Include="Services\NlmExport\INlmExportService.cs" />
     <Compile Include="Services\NlmExport\Models\Body\NlmArticleBodyModel.cs" />
