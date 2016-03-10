@@ -208,8 +208,8 @@
   <data name="industries_tabheader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\tab headers\industries_tabheader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1445989402_lock-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\icons\1445989402_lock-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="unlockIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icons\unlockIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="greencheck" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\icons\greencheck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,8 +226,8 @@
   <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="53-Lock-unlocked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\icons\53-Lock-unlocked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lockedIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icons\lockIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TabHeaders_graphics" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\tab headers\tree browser\tabheaders_graphics.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
