@@ -776,6 +776,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\Search\Refinements\zDate.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\Search\Refinements\zDatePlaceholder.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
