@@ -26,8 +26,87 @@
       <form class="facets__section"
             ng-repeat="group in allFacets.facetGroups">
 
+          <fieldset ng-show="group.label == 'Companies'" class="facets__fieldset">
+              <legend class="facets__legend facets__section-header">
+                  <h4>Companies</h4>
+                  <button class="facets__button facets__button--toggle-section"
+                          ng-model="collapsecompanies"
+                          ng-click="collapsecompanies=!collapsecompanies; isCollapsedCompanies=!isCollapsedCompanies"
+                          ng-class="{'collapsed': isCollapsedCompanies}">
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+                  </button>
+              </legend>
+              <ul class="facets__section-list" ng-hide="collapsecompanies">
+                  <li>
+                      <input type="checkbox" class="visuallyhidden">
+                      <label>Amgen (537)</label>
+                  </li>
+                  <li>
+                      <input type="checkbox" class="visuallyhidden">
+                      <label>Novartis (221)</label>
+                  </li>
+                  <li>
+                      <input type="checkbox" class="visuallyhidden">
+                      <label>Sandoz International GMBH (125)</label>
+                  </li>
+                  <li class="facets__company-input" ng-show="isAddingCompany">
+                      <div class="facets__field-group facets__field-group--companies">
+                          <button class="facets__button facets__button--clear-company"
+                                  ng-class="{'collapsed': isCollapsedCompanies}"
+                                  ng-click="">
+                              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use></svg>
+                          </button>
+                          <input type="text" name="company-facet" placeholder="Company Name">
+                      </div>
+                  </li>
+              </ul>
+              <button class="facets__button facets__button--add"
+                      ng-model="isAddingCompany"
+                      ng-class="{'collapsed': isCollapsedCompanies, 'adding-company': isAddingCompany}"
+                      ng-hide="isAddingCompany"
+                      ng-click="isAddingCompany = true">
+                  Add
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#add"></use></svg>
+              </button>
+          </fieldset>
+
+          <fieldset ng-show="group.label == 'Date Placeholder'" class="facets__fieldset">
+              <legend class="facets__legend facets__section-header">
+                  <h4>Date</h4>
+                  <button class="facets__button facets__button--toggle-section"
+                          ng-model="collapsedate"
+                          ng-click="collapsedate=!collapsedate; isCollapsedDate=!isCollapsedDate"
+                          ng-class="{'collapsed': isCollapsedDate}">
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+                  </button>
+              </legend>
+              <ul class="facets__section-list" ng-hide="collapsedate">
+                  <li ng-repeat="dateFilter in allFacets.DateFilters">
+                      <input type="radio"
+                             name="date-facet"
+                             id="{{dateFilter.key}}"
+                             ng-model="dateFilter.selected"
+                             ng-value=true
+                             ng-checked="{{dateFilter.selected}}"
+                             ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
+                      <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
+
+                      <div class="facets__field-group facets__field-group--from" ng-show="$last">
+                          <label>From</label>
+                          <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeFrom">
+                          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+                      </div>
+                      <div class="facets__field-group facets__field-group--to" ng-show="$last">
+                          <label>To</label>
+                          <input type="date" placeholder="dd/mm/yyyy" ng-model="dateRangeTo">
+                          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
+                      </div>
+                  </li>
+              </ul>
+          </fieldset>
+
           <!-- temporarily removing ng-if='group.facets.length > 1' from above -->
-          <fieldset class="facets__fieldset">
+          <fieldset ng-show="group.label != 'Companies' && group.label != 'Date Placeholder'" class="facets__fieldset">
               <legend class="facets__legend facets__section-header">
                   <h4>{{ group.label }}</h4>
                   <button
@@ -81,7 +160,7 @@
           </fieldset>
       </form>
 
-    <!-- HARDCODED COMPANIES FACET -->
+    <!-- HARDCODED COMPANIES FACET 
     <form class="facets__section">
       <fieldset class="facets__fieldset">
         <legend class="facets__legend facets__section-header">
@@ -129,8 +208,8 @@
         </button>
       </fieldset>
     </form>
-
-    <!-- HARDCODED DATE FACET -->
+      -->
+    <!-- HARDCODED DATE FACET 
     <form class="facets__section">
       <fieldset class="facets__fieldset">
         <legend class="facets__legend facets__section-header">
@@ -168,7 +247,7 @@
           </li>
         </ul>
       </fieldset>
-    </form>
+    </form>-->
 
               <!-- <li>
             <input type="radio" name="date-facet" id="custom-range">

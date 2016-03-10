@@ -1,5 +1,7 @@
-﻿using Informa.Library.Site;
+﻿using Glass.Mapper.Sc;
+using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
+using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Web.ViewModels.PopOuts;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
@@ -19,7 +21,8 @@ namespace Informa.Web.ViewModels
 			ISignInPopOutViewModel signInPopOutViewModel,
 			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
 			IRegisterPopOutViewModel registerPopOutViewModel,
-            IAppInsightsConfig appInsightsConfig)
+            IAppInsightsConfig appInsightsConfig,
+            ISiteSettings siteSettings)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -30,6 +33,8 @@ namespace Informa.Web.ViewModels
 			EmailArticlePopOutViewModel = emailArticlePopOutViewModel;
 			RegisterPopOutViewModel = registerPopOutViewModel;
 		    AppInsightsConfig = appInsightsConfig;
+		    SiteSettings = siteSettings;
+
 		}
 
 		public IMaintenanceViewModel MaintenanceMessage;
@@ -40,8 +45,9 @@ namespace Informa.Web.ViewModels
 		public IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
 		public IRegisterPopOutViewModel RegisterPopOutViewModel;
 	    public IAppInsightsConfig AppInsightsConfig;
+	    public ISiteSettings SiteSettings;
 
-		public string Title
+        public string Title
 		{
 			get
 			{
@@ -71,5 +77,7 @@ namespace Informa.Web.ViewModels
 		}
 
 		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
+
+	    public string OASHostname => SiteSettings.GetSetting("OAS.Hostname", string.Empty);
 	}
 }

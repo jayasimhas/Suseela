@@ -64,6 +64,20 @@ content-length: 4
 
 Top3
 ----field----
+field: {6C312B88-B709-4EB1-A483-0222A8D7E401}
+name: Global Leaderboard Slot ID
+key: global leaderboard slot id
+content-length: 4
+
+Top1
+----field----
+field: {016B3E1C-33EF-4029-9CBD-9CF36657F5FE}
+name: Global Leaderboard Ad Zone
+key: global leaderboard ad zone
+content-length: 4
+
+home
+----field----
 field: {D0EA1C84-68E4-4811-87C2-14FF280C8FC2}
 name: Site Logo
 key: site logo
