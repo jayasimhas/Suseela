@@ -47,8 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Company\ISalesforceRetrieveActiveIpRanges.cs" />
-    <Compile Include="Company\SalesforceRetrieveActiveIpRanges.cs" />
+    <Compile Include="Company\ISalesforceCompany.cs" />
+    <Compile Include="Company\ISalesforceFindCompanyByIpAddress.cs" />
+    <Compile Include="Company\SalesforceCompany.cs" />
+    <Compile Include="Company\SalesforceFindCompanyByIpAddress.cs" />
     <Compile Include="EBIWebServices\EBI_CreateProfileResponse.cs" />
     <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryAllActiveIPRangesResponse.cs" />
@@ -56,6 +58,7 @@
     <Compile Include="EBIWebServices\EBI_QueryEmailNewsletterOptInsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryInformationAndOfferOptInsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryProfileContactInformationResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QuerySavedDocumentResponse.cs" />
     <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponseExtensions.cs" />
@@ -92,7 +95,6 @@
     <Compile Include="User\ISalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\ISalesforceUpdateUserPassword.cs" />
     <Compile Include="User\ISalesforceUser.cs" />
-    <Compile Include="User\Profile\ISalesforceQueryNewsletterUserOptInResult.cs" />
     <Compile Include="User\Profile\ISalesforceUserProfile.cs" />
     <Compile Include="User\Profile\ISalesforceFindUserProfile.cs" />
     <Compile Include="User\Profile\SalesforceQueryOfferUserOptIn.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="User\Profile\SalesforceQueryNewsletterUserOptIn.cs" />
     <Compile Include="User\Profile\SalesforceQueryNewsletterUserOptInResult.cs" />
     <Compile Include="User\Profile\SalesforceQueryOfferUserOptInResult.cs" />
+    <Compile Include="User\Profile\SalesforceManageSavedContent.cs" />
     <Compile Include="User\Profile\SalesforceUpdateNewsletterUserOptIn.cs" />
     <Compile Include="User\Profile\SalesforceUpdateOfferUserOptIn.cs" />
     <Compile Include="User\Profile\SalesforceUserProfile.cs" />

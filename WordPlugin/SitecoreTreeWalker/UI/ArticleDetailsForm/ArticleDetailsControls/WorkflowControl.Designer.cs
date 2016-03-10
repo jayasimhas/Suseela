@@ -76,7 +76,7 @@
 			this.uxUnlockOnSave.Checked = true;
 			this.uxUnlockOnSave.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.uxUnlockOnSave.Font = new System.Drawing.Font("Segoe UI", 8F);
-			this.uxUnlockOnSave.Location = new System.Drawing.Point(116, 387);
+			this.uxUnlockOnSave.Location = new System.Drawing.Point(116, 389);
 			this.uxUnlockOnSave.Name = "uxUnlockOnSave";
 			this.uxUnlockOnSave.Size = new System.Drawing.Size(15, 14);
 			this.uxUnlockOnSave.TabIndex = 3;

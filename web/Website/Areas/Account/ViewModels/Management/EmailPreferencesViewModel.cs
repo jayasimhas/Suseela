@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
+using Informa.Library.Newsletter;
 using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
@@ -18,34 +19,40 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
     public class EmailPreferencesViewModel : GlassViewModel<I___BasePage>
     {
         public readonly ITextTranslator TextTranslator;
-        public readonly ISitecoreContext SitecoreContext;
         public readonly IQueryNewsletterUserOptIn NewsletterOptIn;
         public readonly IQueryOfferUserOptIn OffersOptIn;
         public readonly IAuthenticatedUserContext UserContext;
         public readonly ISignInViewModel SignInViewModel;
-
+        
         public EmailPreferencesViewModel(
             ITextTranslator translator,
-            ISitecoreContext sitecoreContext,
             IQueryNewsletterUserOptIn newsletterOptIn,
             IQueryOfferUserOptIn offersOptIn,
-            IAuthenticatedUserContext userContext,
-            ISignInViewModel signInViewModel)
+            ISignInViewModel signInViewModel,
+            IAuthenticatedUserContext userContext)
         {
             TextTranslator = translator;
-            SitecoreContext = sitecoreContext;
             NewsletterOptIn = newsletterOptIn;
             OffersOptIn = offersOptIn;
             UserContext = userContext;
             SignInViewModel = signInViewModel;
 
+            //check if any of the query results is the one we're looking for and if so use that value else default to false
             var userNewsOptInStatus = NewsletterOptIn.Query(UserContext.User);
             if (userNewsOptInStatus.Success)
-                ReceivesNewsletterEmails = userNewsOptInStatus.NewsletterOptIns.Any() && userNewsOptInStatus.NewsletterOptIns.First().ReceivesNewsletterAlert;
-
+            {
+                var result = userNewsOptInStatus.NewsletterOptIns.Where(a => a.Name.ToLower().Equals(NewsletterType.Scrip.ToString().ToLower()));
+                ReceivesNewsletterEmails = (result.Any())
+                    ? result.First().ReceivesNewsletterAlert
+                    : false;
+            }
+            else
+            {
+                ReceivesNewsletterEmails = false;
+            }
+            
             var userOffersOptInStatus = OffersOptIn.Query(UserContext.User);
-            if (userOffersOptInStatus.Success)
-                DoNotSendOfferEmails = userOffersOptInStatus.DoNotSendOffers;
+            DoNotSendOfferEmails = (userOffersOptInStatus.Success) && userOffersOptInStatus.DoNotSendOffers;
         }
 
         public bool IsAuthenticated => UserContext.IsAuthenticated;
