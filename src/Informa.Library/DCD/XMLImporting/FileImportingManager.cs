@@ -57,7 +57,8 @@ namespace Informa.Library.DCD.XMLImporting
             {
                 if (EnableWatcher)
                 {
-                    Thread t = new Thread(() => { Thread.Sleep(20000); CreateWatcher(); });
+                    //This is to make sure, the DCD DB has started and the sitecore context is ready.
+                    Thread t = new Thread(() => { Thread.Sleep(30000); CreateWatcher(); });
                     t.Start();
                 }
             }

@@ -112,7 +112,7 @@ namespace Informa.Library.DCD.XMLImporting
             {
                 return dc.Deals.FirstOrDefault(r => r.RecordId == recordId);
             }
-            else if (typeof(T) == typeof(Company))
+            else if (typeof(T) == typeof(Informa.Models.DCD.Company))
             {
                 return dc.Companies.FirstOrDefault(r => r.RecordId == recordId);
             }

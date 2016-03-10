@@ -124,7 +124,7 @@ namespace Informa.Library.DCD.XMLImporting
                         }
                         else if (content.type == IBIContentType.company)
                         {
-                            success = dc.ProcessRecord<Company, CompanyRecordImportLog>(record, _importingLogRecord);
+                            success = dc.ProcessRecord<Informa.Models.DCD.Company, CompanyRecordImportLog>(record, _importingLogRecord);
                             if (success)
                             {
                                 //TODO: This is a hack for the thin records. Replace this when full records are imported
@@ -152,7 +152,7 @@ namespace Informa.Library.DCD.XMLImporting
                                 }
                                 else
                                 {
-                                    _companyUpdates.Add(dc.GetRecord<Company>(record.Identification.RecordId));
+                                    _companyUpdates.Add(dc.GetRecord<Informa.Models.DCD.Company>(record.Identification.RecordId));
                                 }
                             }
                         }
