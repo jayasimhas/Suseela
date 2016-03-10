@@ -77,7 +77,5 @@ namespace Informa.Web.ViewModels
 		}
 
 		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
-
-	    public string OASHostname => SiteSettings.GetSetting("OAS.Hostname", string.Empty);
 	}
 }

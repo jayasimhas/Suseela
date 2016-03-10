@@ -648,6 +648,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
+    <Compile Include="App_Start\Registrations\CompanyRegistrar.cs" />
     <Compile Include="App_Start\Registrations\RegistrationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\UserRegistrar.cs" />
     <Compile Include="App_Start\Registrations\AuthenticationRegistrar.cs" />
@@ -726,6 +727,7 @@
     <Compile Include="ViewModels\EntitledViewModel.cs" />
     <Compile Include="ViewModels\IArticleComponentFactory.cs" />
     <Compile Include="ViewModels\ISearchModel.cs" />
+    <Compile Include="ViewModels\NewsletterSignUpModel.cs" />
     <Compile Include="ViewModels\RobotsTextViewModel.cs" />
     <Compile Include="ViewModels\SitemapViewModel.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
@@ -904,7 +906,6 @@
     <Content Include="App_Config\Sitecore.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Sitecore.config.template" />
     <Content Include="App_Config\Web\nwebsec.config" />
     <Content Include="App_Config\Web\nwebsec.config.template" />
     <Content Include="App_Config\Web\system.webServer.handlers.config" />
@@ -1073,9 +1074,6 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
-    <None Include="App_Config\Include\UserDefined\CustomSitecore.config.template">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>

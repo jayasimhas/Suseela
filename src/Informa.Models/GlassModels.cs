@@ -364,11 +364,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 				public const string User_Agreement_Text__RawFieldName = "User Agreement Text";
 						
 					
-			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
-
-						
-					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -685,11 +680,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public const string TemplateName = "Saved Articles Page";
 
 					
-			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
-
-						
-					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -874,11 +864,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Exclude_From_Google_SearchFieldId = new ID("de73b0ac-1de7-4c74-8dc3-515a939f567b");
 			public const string Exclude_From_Google_SearchFieldName = "Exclude From Google Search";
-
-						
-					
-			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
 
 						
 					
@@ -2209,11 +2194,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Notification_TextFieldId = new ID("99c8be36-4215-4c67-88e7-ee066c605bea");
 			public const string Notification_TextFieldName = "Notification Text";
-
-						
-					
-			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
 
 						
 					
@@ -3754,6 +3734,159 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 					
 			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
 			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+
+
+ 	/// <summary>
+	/// INewsletter_Sign_Up Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Components/Newsletter Sign up</para>	
+	/// <para>ID: 3d8eb2b7-1261-43da-a426-e9e3fa40ad0e</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=INewsletter_Sign_UpConstants.TemplateIdString)]
+	public partial interface INewsletter_Sign_Up : IGlassBase 
+	{
+								/// <summary>
+					/// The Confirmation summary field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: af314b14-759b-4163-add9-e9cffc39a79f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INewsletter_Sign_UpConstants.Confirmation_SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Confirmation_Summary  {get; set;}
+								/// <summary>
+					/// The Confirmation Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 44f21651-8bce-4bfe-99df-e064e480dabc</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INewsletter_Sign_UpConstants.Confirmation_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Confirmation_Text  {get; set;}
+								/// <summary>
+					/// The Headline text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: e2020ea6-d28e-4296-a53d-4fdf76130e5a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INewsletter_Sign_UpConstants.Headline_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Headline_Text  {get; set;}
+								/// <summary>
+					/// The Sign up button text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 5664f1dd-289e-4d3c-bae5-6c098baf34cb</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INewsletter_Sign_UpConstants.Sign_Up_Button_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Sign_Up_Button_Text  {get; set;}
+								/// <summary>
+					/// The Sign up call to action field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: ec162ca7-ba9a-42ab-b736-e2abb9bd1e44</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(INewsletter_Sign_UpConstants.Sign_Up_Call_To_ActionFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Sign_Up_Call_To_Action  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// INewsletter_Sign_Up Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Components/Newsletter Sign up</para>	
+		/// <para>ID: 3d8eb2b7-1261-43da-a426-e9e3fa40ad0e</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface INewsletter_Sign_Up__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Confirmation summary field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: af314b14-759b-4163-add9-e9cffc39a79f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INewsletter_Sign_UpConstants.Confirmation_SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Confirmation_Summary  {get; set;}
+										/// <summary>
+						/// The Confirmation Text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 44f21651-8bce-4bfe-99df-e064e480dabc</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INewsletter_Sign_UpConstants.Confirmation_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Confirmation_Text  {get; set;}
+										/// <summary>
+						/// The Headline text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: e2020ea6-d28e-4296-a53d-4fdf76130e5a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INewsletter_Sign_UpConstants.Headline_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Headline_Text  {get; set;}
+										/// <summary>
+						/// The Sign up button text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 5664f1dd-289e-4d3c-bae5-6c098baf34cb</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INewsletter_Sign_UpConstants.Sign_Up_Button_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Sign_Up_Button_Text  {get; set;}
+										/// <summary>
+						/// The Sign up call to action field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: ec162ca7-ba9a-42ab-b736-e2abb9bd1e44</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(INewsletter_Sign_UpConstants.Sign_Up_Call_To_ActionFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Sign_Up_Call_To_Action  {get; set;}
+						}
+	
+	public static partial class INewsletter_Sign_UpConstants{
+
+			public const string TemplateIdString = "3d8eb2b7-1261-43da-a426-e9e3fa40ad0e";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Newsletter Sign up";
+
+					
+			public static readonly ID Confirmation_SummaryFieldId = new ID("af314b14-759b-4163-add9-e9cffc39a79f");
+			public const string Confirmation_SummaryFieldName = "Confirmation summary";
+
+						
+					
+			public static readonly ID Confirmation_TextFieldId = new ID("44f21651-8bce-4bfe-99df-e064e480dabc");
+			public const string Confirmation_TextFieldName = "Confirmation Text";
+
+						
+					
+			public static readonly ID Headline_TextFieldId = new ID("e2020ea6-d28e-4296-a53d-4fdf76130e5a");
+			public const string Headline_TextFieldName = "Headline text";
+
+						
+					
+			public static readonly ID Sign_Up_Button_TextFieldId = new ID("5664f1dd-289e-4d3c-bae5-6c098baf34cb");
+			public const string Sign_Up_Button_TextFieldName = "Sign up button text";
+
+						
+					
+			public static readonly ID Sign_Up_Call_To_ActionFieldId = new ID("ec162ca7-ba9a-42ab-b736-e2abb9bd1e44");
+			public const string Sign_Up_Call_To_ActionFieldName = "Sign up call to action";
 
 						
 			
@@ -5909,11 +6042,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string TemplateName = "Topic Page";
 
 					
-			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
-
-						
-					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -6104,11 +6232,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Email Preferences Page";
 
-					
-			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
-
-						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -7272,11 +7395,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Home Page";
 
-					
-			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
-
-						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -10638,11 +10756,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string TemplateName = "Error Page";
 
 					
-			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
-
-						
-					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -11197,11 +11310,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public const string TemplateName = "Subscriptions Page";
 
 					
-			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
-
-						
-					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -11692,11 +11800,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Contact Information Page";
 
-					
-			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
-
-						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -14052,16 +14155,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Global_Leaderboard_Ad_ZoneFieldId = new ID("016b3e1c-33ef-4029-9cbd-9cf36657f5fe");
-			public const string Global_Leaderboard_Ad_ZoneFieldName = "Global Leaderboard Ad Zone";
-
-						
-					
-			public static readonly ID Global_Leaderboard_Slot_IDFieldId = new ID("6c312b88-b709-4eb1-a483-0222a8d7e401");
-			public const string Global_Leaderboard_Slot_IDFieldName = "Global Leaderboard Slot ID";
-
-						
-					
 			public static readonly ID Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
 			public const string Email_FooterFieldName = "Email Footer";
 
@@ -16373,11 +16466,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Account Landing Page";
 
-					
-			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
-			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
-
-						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
