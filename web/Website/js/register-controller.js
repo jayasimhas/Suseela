@@ -13,6 +13,10 @@ function loginController(requestVerificationToken) {
 
 					if ($(this).data('checkbox-type') === 'boolean') {
 						value = $(this).attr('checked');
+
+						if ($(this).data('checkbox-boolean-type') === 'reverse') {
+							value = !value;
+						}
 					}
 					else {
 						value = $(this).val();
@@ -27,19 +31,25 @@ function loginController(requestVerificationToken) {
 					data: inputData,
 					context: this,
 					success: function (response) {
-						if (response.success) {
-							this.showSuccessMessage(triggerElement);
-							
+						if (response.success) {							
 							if (successCallback) {
 								successCallback(triggerElement);
 							}
+
+							var nextStepUrl = $(triggerElement).data('next-step-url');
+
+							if (nextStepUrl) {
+								window.location.href = nextStepUrl;
+							}
+
+							this.showSuccessMessage(triggerElement);
 						}
 						else {
 							$(triggerElement).removeAttr('disabled');
 							
 							var specificErrorDisplayed = false;
 
-							if (response.reasons.length > 0) {
+							if (response.reasons && response.reasons.length > 0) {
 								for (var reason in response.reasons) {
 									this.showError(triggerElement, '.js-register-user-error-' + response.reasons[reason]);
 								}

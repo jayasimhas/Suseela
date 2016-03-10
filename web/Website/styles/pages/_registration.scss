@@ -1,0 +1,83 @@
+.page-registration {
+
+    &__header,
+    &__subheader {
+        color: $color-zeus-black;
+        margin-bottom: 1.25rem;
+    }
+
+    &__introduction {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+
+    hr {
+        margin-bottom: 2.5rem;
+    }
+
+    &__text-label {
+        @include textMix('Roboto', 1.125rem, 500);
+        color: $color-zeus-black;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=password] {
+        @extend .inf-standard-form-field;
+        @include textMix('Roboto', 0.875rem, 400);
+        display: block;
+        width: 100%;
+    }
+
+    &__required-hint {
+        @include textMix('Roboto', 0.9375rem, 500);
+        color: $color-dusty-gray;
+        margin-bottom: 2rem;
+    }
+
+    &__field-wrapper {
+        margin-bottom: 2rem;
+        width: calc(50% - 1rem);
+
+        &--float {
+            float: left;
+            margin-right: 1rem;
+
+            &:nth-of-type(2n+1) {
+                margin-left: 1rem;
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__tos-confirm {
+        label {
+            @extend .checkbox-label;
+        }
+    }
+
+    &__submit-wrapper {
+        float: right;
+        text-align: right;
+
+        button {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            @include textMix('Roboto', 0.875rem, 500);
+            color: $color-dusty-gray;
+            line-height: 1.25rem;
+            width: 250px;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__error {
+        @extend .error-text;
+        display: none;
+    }
+
+}
