@@ -44,9 +44,15 @@ namespace Informa.Library.CustomSitecore.Pipelines
             );
 
             routes.MapHttpRoute(
+                "sitemapXml",
+                "sitemap.xml",
+                new { controller = "Sitemap", action = "SitemapXml" }
+            );
+
+            routes.MapHttpRoute(
                 "sitemapNewsXml",
                 "sitemap-news.xml",
-                new { controller = "Sitemap", action = "NewsSitemapXml" }
+                new { controller = "Sitemap", action = "SitemapXml" }
             );
 
             routes.MapHttpRoute(

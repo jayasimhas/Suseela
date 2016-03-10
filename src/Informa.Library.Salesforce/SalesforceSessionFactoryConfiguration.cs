@@ -1,11 +1,19 @@
-﻿namespace Informa.Library.Salesforce
+﻿using Sitecore.Configuration;
+
+namespace Informa.Library.Salesforce
 {
-	// TODO-Sforce: Read values from configuration files
 	public class SalesforceSessionFactoryConfiguration : ISalesforceSessionFactoryConfiguration
 	{
-		public string Username => "apiuserweb2@elsevier.com.developer";
-		public string Password => "$Pmbi2015";
-		public string Token => "fUE714vOuqMNAD7ajwPqEzjSj";
-		public int Timeout => 3000;
+		private const string UrlConfigKey = "SalesforceSessionFactoryConfiguration.Url";
+		private const string UsernameConfigKey = "SalesforceSessionFactoryConfiguration.Username";
+		private const string PasswordConfigKey = "SalesforceSessionFactoryConfiguration.Password";
+		private const string TokenConfigKey = "SalesforceSessionFactoryConfiguration.Token";
+		private const string TimeoutConfigKey = "SalesforceSessionFactoryConfiguration.Timeout";
+
+		public string Url => Settings.GetSetting(UrlConfigKey);
+		public string Username => Settings.GetSetting(UsernameConfigKey);
+		public string Password => Settings.GetSetting(PasswordConfigKey);
+		public string Token => Settings.GetSetting(TokenConfigKey);
+		public int Timeout => Settings.GetIntSetting(TimeoutConfigKey, 3000);
 	}
 }
