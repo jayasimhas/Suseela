@@ -47,8 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Company\ISalesforceRetrieveActiveIpRanges.cs" />
-    <Compile Include="Company\SalesforceRetrieveActiveIpRanges.cs" />
+    <Compile Include="Company\ISalesforceCompany.cs" />
+    <Compile Include="Company\ISalesforceFindCompanyByIpAddress.cs" />
+    <Compile Include="Company\SalesforceCompany.cs" />
+    <Compile Include="Company\SalesforceFindCompanyByIpAddress.cs" />
     <Compile Include="EBIWebServices\EBI_CreateProfileResponse.cs" />
     <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryAllActiveIPRangesResponse.cs" />
