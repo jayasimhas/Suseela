@@ -722,6 +722,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
+    <Compile Include="velir\services\TypeAhead.asmx.cs">
+      <DependentUpon>TypeAhead.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ViewModels\AdvertisementViewModel.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\EntitledViewModel.cs" />
@@ -952,6 +956,7 @@
     <Content Include="tasks\js.js" />
     <Content Include="tasks\svg-sprite.js" />
     <Content Include="tasks\utils.js" />
+    <Content Include="velir\services\TypeAhead.asmx" />
     <Content Include="VWB\default.aspx" />
     <Content Include="VWB\login.aspx" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
