@@ -103,9 +103,9 @@ namespace InformaSitecoreWord.UI
 						if (_user.IsLoggedIn)
 						{
 							Globals.SitecoreAddin.Log("User has logged in, closing the login screen and showing the tree...");
-							IsLoggedIn();
 							login.Close();
 							login.Dispose();
+							IsLoggedIn();
 							myAction();
 						}
 						IsLoggedIn();
@@ -138,8 +138,8 @@ namespace InformaSitecoreWord.UI
 						if (_user.IsLoggedIn)
 						{
 							Globals.SitecoreAddin.Log("User has logged in, closing the login screen and showing the tree...");
-							IsLoggedIn();
 							login.Close();
+							IsLoggedIn();
 							OpenTaskPane(taskControl, title);
 						}
 						IsLoggedIn();
@@ -256,10 +256,10 @@ namespace InformaSitecoreWord.UI
 					{
 						if (_user.IsLoggedIn)
 						{
-							IsLoggedIn();
 							Globals.SitecoreAddin.Log(
 								"User has logged in, closing the login screen and showing the tree...");
 							login.Close();
+							IsLoggedIn();
 						}
 					};
 				login.ShowDialog();
