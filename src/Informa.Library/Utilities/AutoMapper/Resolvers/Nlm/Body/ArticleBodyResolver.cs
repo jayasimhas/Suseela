@@ -13,7 +13,11 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Body
         protected override string Resolve(ArticleItem source, ResolutionContext context)
         {
             var builder = new StringBuilder();
-            using (var writer = XmlWriter.Create(builder))
+            var settings = new XmlWriterSettings
+            {
+                OmitXmlDeclaration = true
+            };
+            using (var writer = XmlWriter.Create(builder, settings))
             {
                 DocumentParser.Parse(source.Body, writer);
             }

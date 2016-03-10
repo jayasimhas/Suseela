@@ -291,6 +291,7 @@
     <Compile Include="ComponentModel\DataAnnotations\PasswordAttribute.cs" />
     <Compile Include="CustomSitecore\Mvc\SitecoreValidateAntiForgeryTokenAttribute.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
+    <Compile Include="CustomSitecore\Ribbon\ExportArticle.cs" />
     <Compile Include="Mail\BaseHtmlEmailFactory.cs" />
     <Compile Include="Mail\Email.cs" />
     <Compile Include="Mail\EmailFactory.cs" />
@@ -393,6 +394,10 @@
     <Compile Include="Services\NlmExport\Parser\Legacy\Table\TableRow.cs" />
     <Compile Include="Services\NlmExport\Serialization\INlmSerializer.cs" />
     <Compile Include="Services\NlmExport\Serialization\NlmSerializer.cs" />
+    <Compile Include="Services\NlmExport\Validation\Config\NlmValidationConfiguration.cs" />
+    <Compile Include="Services\NlmExport\Validation\INlmValidationService.cs" />
+    <Compile Include="Services\NlmExport\Validation\NlmValidationService.cs" />
+    <Compile Include="Services\NlmExport\Validation\XmlResolver\XmlCachingResolverDecorator.cs" />
     <Compile Include="Services\RobotsText\RobotsTextService.cs" />
     <Compile Include="Services\Sitemap\SitemapService.cs" />
     <Compile Include="Session\ISessionStore.cs" />

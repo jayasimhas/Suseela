@@ -10,6 +10,6 @@ namespace Informa.Library.Utilities.Settings
 			return Sitecore.Configuration.Settings.GetSetting(key, defaultValue);
 		}
 
-	    public string NlmExportPath => GetSetting("Nlm.ExportPath", "");
+	    public string NlmExportPath => GetSetting("NLM.ExportPath", "");
 	}
 }

@@ -49,6 +49,7 @@ namespace Informa.Library.Article.Service
             }
         }
 
+        [AutowireService(true)]
         public interface IDependencies
         {
             Func<string, Owned<ISitecoreService>> ServiceFactory { get; }

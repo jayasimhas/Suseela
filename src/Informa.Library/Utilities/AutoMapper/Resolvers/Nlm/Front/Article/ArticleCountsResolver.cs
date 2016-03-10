@@ -14,7 +14,7 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
             {
                 new NlmArticleWordCountModel
                 {
-                    Count = source.Word_Count ?? "0"
+                    Count = string.IsNullOrWhiteSpace(source.Word_Count) ? "0" : source.Word_Count
                 }
             };
         }
