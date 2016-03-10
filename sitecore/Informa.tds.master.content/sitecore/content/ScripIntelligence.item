@@ -33,7 +33,7 @@ ar|sitecore\Article Read Access|pe|+item:read|pd|+item:read|ar|sitecore\General 
 ----version----
 language: en
 version: 1
-revision: c6bab10f-8e91-4300-bb88-4b47d0e1c15f
+revision: aabf44f8-c180-40e4-b775-49be84cf0a82
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -53,16 +53,23 @@ Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apol
 field: {DFF8072A-6D80-408F-A3FB-2175E3B3DD72}
 name: Global Article Medium Slot ID
 key: global article medium slot id
-content-length: 5
+content-length: 9
 
-Right
+Position2
 ----field----
 field: {7F493D5A-9FC5-407B-9B05-609F5BE5D07D}
 name: Global Article Filmstrip Slot ID
 key: global article filmstrip slot id
+content-length: 5
+
+Right
+----field----
+field: {58330274-E29E-4FB9-802B-B7A508D15075}
+name: Global Article Ad Zone
+key: global article ad zone
 content-length: 4
 
-Top3
+home
 ----field----
 field: {6C312B88-B709-4EB1-A483-0222A8D7E401}
 name: Global Leaderboard Slot ID
@@ -216,14 +223,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c6bab10f-8e91-4300-bb88-4b47d0e1c15f
+aabf44f8-c180-40e4-b775-49be84cf0a82
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160308T212844Z
+20160310T040547Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
