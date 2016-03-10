@@ -1,6 +1,0 @@
- #if ($env == "dev")
- <protocols>
-        <add name="HttpGet"/>
-        <add name="HttpPost"/>
-      </protocols>
-  #end	  
