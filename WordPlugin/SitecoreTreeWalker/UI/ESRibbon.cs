@@ -33,8 +33,7 @@ namespace InformaSitecoreWord.UI
 
 		private void ESRibbon_Load(object sender, RibbonUIEventArgs e)
 		{
-			LogoutBtn.Visible = false;
-			LoginBtn.Visible = true;
+			IsNotLoggedIn();
 		}
 
 		private void ShowTree()
@@ -90,6 +89,7 @@ namespace InformaSitecoreWord.UI
 		{
 			if (_user.IsLoggedIn)
 			{
+				IsLoggedIn();
 				Globals.SitecoreAddin.Log("User is logged in, opening the Plugin...");
 				myAction();
 			}
@@ -103,11 +103,12 @@ namespace InformaSitecoreWord.UI
 						if (_user.IsLoggedIn)
 						{
 							Globals.SitecoreAddin.Log("User has logged in, closing the login screen and showing the tree...");
+							IsLoggedIn();
 							login.Close();
 							login.Dispose();
-							LoginLogoutButtonChange();
 							myAction();
 						}
+						IsLoggedIn();
 					};
 				login.ShowDialog();
 			}
@@ -123,6 +124,7 @@ namespace InformaSitecoreWord.UI
 		{
 			if (_user.IsLoggedIn)
 			{
+				IsLoggedIn();
 				Globals.SitecoreAddin.Log("User is logged in, opening the Plugin...");
 				OpenTaskPane(taskControl, title);
 			}
@@ -136,10 +138,11 @@ namespace InformaSitecoreWord.UI
 						if (_user.IsLoggedIn)
 						{
 							Globals.SitecoreAddin.Log("User has logged in, closing the login screen and showing the tree...");
+							IsLoggedIn();
 							login.Close();
-							LoginLogoutButtonChange();
 							OpenTaskPane(taskControl, title);
 						}
+						IsLoggedIn();
 					};
 				login.ShowDialog();
 			}
@@ -242,7 +245,7 @@ namespace InformaSitecoreWord.UI
 		{
 			if (_user.IsLoggedIn)
 			{
-				LoginLogoutButtonChange();
+				IsLoggedIn();
 			}
 			else
 			{
@@ -253,11 +256,11 @@ namespace InformaSitecoreWord.UI
 					{
 						if (_user.IsLoggedIn)
 						{
+							IsLoggedIn();
 							Globals.SitecoreAddin.Log(
 								"User has logged in, closing the login screen and showing the tree...");
 							login.Close();
 						}
-						LoginLogoutButtonChange();
 					};
 				login.ShowDialog();
 			}
@@ -273,7 +276,7 @@ namespace InformaSitecoreWord.UI
 				var loginControl1 = new LoginControl();
 				loginControl1.Logout();
 				Globals.SitecoreAddin.CloseSitecoreTreeBrowser(Globals.SitecoreAddin.Application.ActiveDocument);
-				LoginLogoutButtonChange();
+				IsNotLoggedIn();
 			}
 			catch (Exception ex)
 			{
@@ -282,10 +285,22 @@ namespace InformaSitecoreWord.UI
 			}
 		}
 
-		public void LoginLogoutButtonChange()
+		//public void LoginLogoutButtonChange()
+		//{
+		//	LoginBtn.Visible = !LoginBtn.Visible;
+		//	LogoutBtn.Visible = !LogoutBtn.Visible;
+		//}
+
+		public void IsLoggedIn()
 		{
-			LoginBtn.Visible = !LoginBtn.Visible;
-			LogoutBtn.Visible = !LogoutBtn.Visible;
+			LoginBtn.Visible = false;
+			LogoutBtn.Visible = true;
+		}
+
+		public void IsNotLoggedIn()
+		{
+			LoginBtn.Visible =true;
+			LogoutBtn.Visible = false;
 		}
 
 		private void ArticlePreviewMenu_Click(object sender, RibbonControlEventArgs e)
@@ -361,8 +376,8 @@ namespace InformaSitecoreWord.UI
 			{
 				return;
 			}
-			
-			MessageBox.Show(@"Article successfully saved to Sitecore!", @"Informa");			
+
+			MessageBox.Show(@"Article successfully saved to Sitecore!", @"Informa");
 		}
 
 		/// <summary>
@@ -397,11 +412,11 @@ namespace InformaSitecoreWord.UI
 				if (HasArticleNumber())
 				{
 					var copy = ArticleDetails.ArticleGuid;
-					ArticleDetails = GetArticleDetails(articleNumber,metadataParser);
+					ArticleDetails = GetArticleDetails(articleNumber, metadataParser);
 					ArticleDetails.ArticleGuid = copy;
 					_sitecoreArticle = new SitecoreClient();
 					//TODO - Add workflow stuff here
-					List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, 
+					List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails,
 						new Guid(), new List<StaffStruct>(), GetArticleNumber(), body);
 					if (errors != null && errors.Any())
 					{
@@ -413,7 +428,7 @@ namespace InformaSitecoreWord.UI
 							}
 						}
 						return false;
-					}					
+					}
 				}
 			}
 			catch (Exception ex)
@@ -430,7 +445,7 @@ namespace InformaSitecoreWord.UI
 			var sitecoreArticleDetails = SitecoreClient.ForceReadArticleDetails(articleNumber);
 			if (metadataParser == null)
 			{
-				metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument,_wordUtils.CharacterStyleTransformer);
+				metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument, _wordUtils.CharacterStyleTransformer);
 			}
 			string longSummary = metadataParser.LongSummary;
 			var articleDetails = new ArticleStruct
