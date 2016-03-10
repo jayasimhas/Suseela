@@ -1,0 +1,15 @@
+﻿@model ICompanyRegisterMessageViewModel
+@if (Model.Display)
+{
+	<div class="banner banner--maintenance">
+		<div class="banner__wrapper">
+			<div class="dismiss-button js-dismiss-banner">
+				<a href="@Model.RegisterLinkUrl">@Model.RegisterLinkText</a>
+			</div>
+			<svg class="banner__lead-icon">
+				<use xlink:href="/dist/img/svg-sprite.svg#tool-maintenance"></use>
+			</svg>
+			<span>@Model.Message</span>
+		</div>
+	</div>
+}

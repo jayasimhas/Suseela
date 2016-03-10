@@ -26,7 +26,7 @@ namespace Informa.Library.User.Authentication
 				{
 					Email = sitecoreUser.Profile.Email,
 					Name = sitecoreUser.Profile.Name,
-					Username = sitecoreUser.Profile.UserName       
+					Username = sitecoreUser.Profile.Email       
 				};
 			}
 		}
