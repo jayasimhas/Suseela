@@ -1,46 +1,142 @@
-﻿<div class="js-register-user-container">
-	<h1>Register for an Account</h1>
-	<h3>Creating an account has many benefits</h3>
-	<p>Please fill out the form below to receive free email newsletters, set custom email alerts, save articles, topics and searches.</p>
+﻿@model Informa.Web.Areas.Account.ViewModels.Registration.RegisterUserViewModel
+
+<div class="page-registration js-register-user-container">
+	<h1 class="page-registration__header">@Model.Title</h1>
+	<h2 class="page-registration__subheader">@Model.SubTitle</h2>
+	<p class="page-registration__introduction">@Model.Body</p>
 	<hr />
-	<div style="display: none;" class="js-register-user-error-container">
-		<p style="display: none;" class="js-register-user-error js-register-user-error-Required">Please enter all required fields.</p>
-		<p style="display: none;" class="js-register-user-error js-register-user-error-UsernameRequirements">Your username does not meet the requirements.</p>
-		<p style="display: none;" class="js-register-user-error js-register-user-error-PasswordMismatch">Your passwords do not match.</p>
-		<p style="display: none;" class="js-register-user-error js-register-user-error-PasswordRequirements">Your password does not meet the minimum requirements.</p>
-		<p style="display: none;" class="js-register-user-error js-register-user-error-TermsNotAccepted">Please accept the terms and conditions.</p>
-	</div>
 	<div>
-		<p>* required field</p>
-		<div>
-			<label for="username">Email Address (User Name) *</label>
-			<input name="username" type="email" placeholder="Enter your work email address" />
+		<div class="page-registration__required-hint">
+			<span class="asterisk-required"></span> <em>@Model.RequiedFieldsText</em>
 		</div>
-		<div>
-			<div>
-				<label for="firstName">First Name *</label>
-				<input name="firstName" type="text" placeholder="Must be at least two characters" />
-			</div>
-			<div>
-				<label for="lastName">Last Name *</label>
-				<input name="lastName" type="text" />
-			</div>
+
+		<form	class="form-registration"
+				data-on-submit="/Account/api/RegistrationApi/Register/"
+				data-on-success="@Model.NextStepUrl">
+
+		<p class="	page-registration__error
+					js-register-user-error
+					js-register-user-error-general">
+			@Model.GeneralErrorText
+		</p>
+
+		<div class="page-registration__field-wrapper">
+			<label for="username" class="page-registration__text-label">
+				@Model.UsernameLabelText <span class="asterisk-required"></span>
+			</label>
+
+			<p class="	page-registration__error
+						js-form-error
+						js-form-error-UsernameRequirements">
+				@Model.UsernameRequirementsErrorText
+			</p>
+
+			<p class=" page-registration__error
+			   js-form-error
+			   js-form-error-UsernameExists">
+				@Model.UsernameExistsErrorText
+			</p>
+
+			<p class="	page-registration__error
+						js-form-error
+						js-form-error-Required">
+				@Model.RequiredErrorText
+			</p>
+
+			<input 	type="email"
+	               	class="inf-standard-form-field"
+	               	placeholder="@Model.UsernamePlaceholderText"
+	               	tabindex="1"
+				   	name="username">
 		</div>
-		<div>
-			<div>
-				<label for="password">Password *</label>
-				<input name="password" type="password" placeholder="Minimum 8 characters, case sensitive" />
-			</div>
-			<div>
-				<label for="passwordRepeat">Confirm Password *</label>
-				<input name="passwordRepeat" type="password" />
-			</div>
+
+		<div class="page-registration__field-wrapper page-registration__field-wrapper--float">
+			<label for="firstName" class="page-registration__text-label">
+				@Model.FirstNameLabelText <span class="asterisk-required"></span>
+			</label>
+
+			<input 	type="text"
+	               	class="inf-standard-form-field"
+	               	tabindex="2"
+				   	name="firstName"
+				   	placeholder="@Model.FirstNamePlaceholderText">
+
 		</div>
-		<div>
-			<input name="termsAccepted" type="checkbox" data-checkbox-type="boolean" /><label for="termsAccepted">I have read and understand the <a href="#">Registered User Agreement</a> and agree to be bound by all of its terms.</label>
+
+		<div class="page-registration__field-wrapper page-registration__field-wrapper--float">
+			<label for="lastName" class="page-registration__text-label">
+				@Model.LastNameLabelText <span class="asterisk-required"></span>
+			</label>
+
+			<input 	type="text"
+	               	class="inf-standard-form-field"
+	               	placeholder=""
+	               	tabindex="3"
+				   	name="lastName">
 		</div>
-		<button class="button--filled js-register-user-submit" data-register-user-url="/Account/api/RegistrationApi/Register/">Register</button>
-		<p style="display: none;" class="js-register-user-success">Account successfull registered (-> redirect to thank you).</p>
-		<p>You will be able to sign up for free newsletters on the next page</p>
+
+		<div class="page-registration__field-wrapper page-registration__field-wrapper--float">
+			<label for="password" class="page-registration__text-label">
+				@Model.PasswordLabelText <span class="asterisk-required"></span>
+			</label>
+
+			<p class="	page-registration__error
+						js-form-error
+						js-form-error-PasswordRequirements">
+				@Model.PasswordRequirementsErrorText
+			</p>
+
+			<p class="	page-registration__error
+						js-form-error
+						js-form-error-PasswordMismatch">
+				@Model.PasswordMismatchErrorText
+			</p>
+
+			<input 	name="password"
+					class="inf-standard-form-field"
+					type="password"
+					placeholder="@Model.PasswordPlaceholderText"
+					tabindex="4">
+		</div>
+
+		<div class="page-registration__field-wrapper page-registration__field-wrapper--float">
+			<label for="passwordRepeat" class="page-registration__text-label">
+				@Model.PasswordRepeatLabelText <span class="asterisk-required"></span>
+			</label>
+
+			<p class="	page-registration__error
+						js-form-error
+						js-form-error-PasswordMismatch">
+				@Model.PasswordMismatchErrorText
+			</p>
+
+			<input 	name="passwordRepeat"
+					class="inf-standard-form-field"
+					type="password"
+					placeholder=""
+					tabindex="5">
+		</div>
+
+		<hr>
+
+	    <div class="page-registration__tos-confirm">
+			<p class="	page-registration__error
+						js-form-error
+						js-form-error-TermsNotAccepted">
+				@Model.TermsNotAcceptedErrorText
+			</p>
+
+	        <input	name="termsAccepted"
+					type="checkbox"
+					data-checkbox-type="boolean"> <label for="termsAccepted">@Model.TermsLabel</label>
+	    </div>
+
+	    <div class="page-registration__submit-wrapper">
+	        <button	type="submit"
+					class="button--filled js-register-user-submit">@Model.SubmitText</button>
+	        <p><em>@Model.NewsletterSignUpText</em></p>
+	    </div>
+
+		</form>
 	</div>
 </div>

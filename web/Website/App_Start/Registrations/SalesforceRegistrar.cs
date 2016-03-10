@@ -10,6 +10,7 @@ namespace Informa.Web.App_Start.Registrations
 	{
 		public static void RegisterDependencies(ContainerBuilder builder)
 		{
+			builder.RegisterType<SalesforceServiceConfiguration>().As<ISalesforceServiceConfiguration>();
 			builder.RegisterType<SalesforceService>().As<ISalesforceService>();
 			builder.RegisterType<SalesforceServiceContext>().As<ISalesforceServiceContext>();
 			builder.RegisterType<SalesforceSessionContext>().As<ISalesforceSessionContext>().SingleInstance();
@@ -18,6 +19,8 @@ namespace Informa.Web.App_Start.Registrations
 			builder.RegisterType<SalesforceSetUserTemporaryPassword>().As<ISalesforceSetUserTemporaryPassword>();
 			builder.RegisterType<SalesforceFindUserProfile>().As<ISalesforceFindUserProfile>();
 			builder.RegisterType<SalesforceRegisterUser>().As<ISalesforceRegisterUser>();
-		}
+		    builder.RegisterType<SalesforceGetUserEntitlements>().As<ISalesforceGetUserEntitlements>();
+            builder.RegisterType<SalesforceGetIPEntitlements>().As<ISalesforceGetIPEntitlements>();
+        }
 	}
 }
