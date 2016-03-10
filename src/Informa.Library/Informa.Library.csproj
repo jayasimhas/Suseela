@@ -301,6 +301,8 @@
     <Compile Include="Rss\SearchResults.cs" />
     <Compile Include="Rss\SearchResultsRequest.cs" />
     <Compile Include="Rss\SearchRssFeed.cs" />
+    <Compile Include="Search\ComputedFields\Facets\ArticleInProgressField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\PlannedPublishDateField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchSummaryField.cs" />
     <Compile Include="Search\Results\GeneralContentResult.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
