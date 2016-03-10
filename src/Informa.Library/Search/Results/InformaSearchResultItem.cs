@@ -18,12 +18,18 @@ namespace Informa.Library.Search.Results
         [IndexField("issearchable_b")]
         public bool IsSearchable { get; set; }
 
+        [IndexField("facetarticleinprogress_b")]
+        public bool InProgress { get; set; }
+
         [IndexField("_latestversion")]
         public bool IsLatestVersion { get; set; }
 
         [IndexField("searchdate")]
         [DataMember]
         public DateTime SearchDate { get; set; }
+
+        [IndexField("plannedpublishdate")]
+        public DateTime PlannedPublishDate { get; set; }
 
         [IndexField("searchurl_s")]
         [DataMember]
