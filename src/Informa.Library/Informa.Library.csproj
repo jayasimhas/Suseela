@@ -284,7 +284,6 @@
     <Compile Include="DCD\XMLImporting\DCDImportEndRemoteEvent.cs" />
     <Compile Include="DCD\XMLImporting\DCDImporter.cs" />
     <Compile Include="DCD\XMLImporting\DCDImportingLogger.cs" />
-    <Compile Include="DCD\XMLImporting\Enumerations.cs" />
     <Compile Include="DCD\XMLImporting\FileImportingManager.cs" />
     <Compile Include="DCD\XMLImporting\IBIContent.cs" />
     <Compile Include="DCD\XMLImporting\XMLFileUtilities.cs" />
@@ -573,6 +572,7 @@
     <Compile Include="AntiForgery\AntiForgeryValidate.cs" />
     <Compile Include="AntiForgery\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\WebApi\Filters\ValidateReasonsAttribute.cs" />
+    <Compile Include="Utilities\WebUtils\UrlUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
