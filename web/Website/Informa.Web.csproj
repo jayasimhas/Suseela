@@ -760,6 +760,61 @@
     <Compile Include="ViewModels\TestUserResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\TopicContainerViewModel.cs" />
     <Compile Include="ViewModels\TopicJumpToViewModel.cs" />
+    <Compile Include="Views\Util\DCD\DcdImportReport.aspx.cs">
+      <DependentUpon>DcdImportReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Util\DCD\DcdImportReport.aspx.designer.cs">
+      <DependentUpon>DcdImportReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VWB\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VWB\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VWB\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VWB\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VWB\Report\ArticleItemWrapper.cs" />
+    <Compile Include="VWB\Report\Columns\ContentTypeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\CreatedDateTimeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ArticleLengthEstimateColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ArticleNumberColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ArticleSizeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ArticleTypeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\AuthorsColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ColumnFactory.cs" />
+    <Compile Include="VWB\Report\Columns\EmailPriorityColumn.cs" />
+    <Compile Include="VWB\Report\Columns\IssuePublishDateColumn.cs" />
+    <Compile Include="VWB\Report\Columns\IVwbColumn.cs" />
+    <Compile Include="VWB\Report\Columns\LockStatusColumn.cs" />
+    <Compile Include="VWB\Report\Columns\MediaTypeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\NotesToEditorialColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ProofreadingStatusColumn.cs" />
+    <Compile Include="VWB\Report\Columns\PublishableAfterColumn.cs" />
+    <Compile Include="VWB\Report\Columns\PlannedPublishDateTimeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\SidebarColumn.cs" />
+    <Compile Include="VWB\Report\Columns\TaxonomyColumn.cs" />
+    <Compile Include="VWB\Report\Columns\TitleColumn.cs" />
+    <Compile Include="VWB\Report\Columns\ActualPublishDateTimeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\WorkflowStateColumn.cs" />
+    <Compile Include="VWB\Report\IVwbArticleItemCollection.cs" />
+    <Compile Include="VWB\Report\MacroVwbArticleItemCollection.cs" />
+    <Compile Include="VWB\Report\ReportBuilder.cs" />
+    <Compile Include="VWB\Report\VwbArticleItemCollection.cs" />
+    <Compile Include="VWB\services\VirtualWhiteBoard.asmx.cs">
+      <DependentUpon>VirtualWhiteBoard.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VWB\Util\VWBUtil.cs" />
+    <Compile Include="VWB\VwbQuery.cs" />
+    <Compile Include="VWB\VwbSessionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="500.html" />
@@ -876,6 +931,30 @@
     <Content Include="tasks\js.js" />
     <Content Include="tasks\svg-sprite.js" />
     <Content Include="tasks\utils.js" />
+    <Content Include="Views\Util\DCD\DcdImportReport.aspx" />
+    <Content Include="VWB\default.aspx" />
+    <Content Include="VWB\login.aspx" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_gloss-wave_35_ffffff_500x100.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_highlight-soft_100_ffffff_1x100.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\jquery-ui-1.8.11.custom.css" />
+    <Content Include="VWB\Scripts\jquery-ui\jquery-ui.js" />
+    <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.css" />
+    <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.js" />
+    <Content Include="VWB\Scripts\jquery.js" />
+    <Content Include="VWB\services\VirtualWhiteBoard.asmx" />
+    <Content Include="VWB\Styles\vwb.css" />
     <Content Include="webedit.css" />
     <Content Include="App_Browsers\Form.browser" />
     <Content Include="App_Browsers\XamlPage.browser" />

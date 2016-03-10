@@ -58,6 +58,7 @@ namespace Informa.Web.ViewModels
         {
             get
             {
+                //string body = (GlassModel.Free_Article || AccessLevel != EntitledAccessLevel.UnEntitled) ? GlassModel.Body : "TEMPORARY UNENTITLED\n\n" + GlassModel.Summary;
                 string body = GlassModel.Body;
 
                 //Replace any DCD related tokens with proper names
@@ -145,7 +146,7 @@ namespace Informa.Web.ViewModels
                 string summ = GlassModel.Summary;
 
                 //Replace any DCD related tokens with proper names
-                summ = DCDTokenMatchers.ProcessDCDTokens(summ);
+                //summ = DCDTokenMatchers.ProcessDCDTokens(summ);
 
                 return summ;
             }
