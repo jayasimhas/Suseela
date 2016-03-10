@@ -194,6 +194,7 @@ WordPlugin/SitecoreTreeWalker/app.config
 web/Data/Submit Queue
 web/Website/App_Config/Include/ZZ.UserDefined/Solr.config
 web/Website/App_Config/Include/UserDefined/Salesforce.config
+web/Website/App_Config/Include/UserDefined/CustomSitecore.config
 web/Website/wordinstaller
 config/env/local.json
 
