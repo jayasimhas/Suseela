@@ -1072,6 +1072,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
+    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template" />
     <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
