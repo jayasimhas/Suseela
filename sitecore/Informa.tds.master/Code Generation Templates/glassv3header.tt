@@ -38,6 +38,7 @@ using Jabberwocky.Glass.Models;
 using Sitecore.Globalization;
 using Sitecore.Data;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Velir.Search.Models;
 
 <#
 // Calculate the top leve namespace as configured in the target project and

@@ -23,25 +23,18 @@ key: system maintenance end date
 content-length: 16
 
 20160504T140000Z
+----field----
+field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
+name: __Security
+key: __security
+content-length: 382
+
+ar|sitecore\Article Read Access|pe|+item:read|pd|+item:read|ar|sitecore\General Content Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|pd|+item:rename|+item:write|+item:read|+item:delete|+item:create|ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:read|-item:rename|pd|-item:create|-item:write|-item:delete|-item:read|-item:rename|
 ----version----
 language: en
 version: 1
-revision: 42390f95-7ab4-4e50-85ef-cfbd8139f44c
+revision: aabf44f8-c180-40e4-b775-49be84cf0a82
 
-----field----
-field: {DFF8072A-6D80-408F-A3FB-2175E3B3DD72}
-name: Global Article Medium Slot ID
-key: global article medium slot id
-content-length: 5
-
-Right
-----field----
-field: {7F493D5A-9FC5-407B-9B05-609F5BE5D07D}
-name: Global Article Filmstrip Slot ID
-key: global article filmstrip slot id
-content-length: 4
-
-Top3
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
 name: Supporting Documents Folder
@@ -56,6 +49,41 @@ key: system maintenance text
 content-length: 106
 
 Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.
+----field----
+field: {DFF8072A-6D80-408F-A3FB-2175E3B3DD72}
+name: Global Article Medium Slot ID
+key: global article medium slot id
+content-length: 9
+
+Position2
+----field----
+field: {7F493D5A-9FC5-407B-9B05-609F5BE5D07D}
+name: Global Article Filmstrip Slot ID
+key: global article filmstrip slot id
+content-length: 5
+
+Right
+----field----
+field: {58330274-E29E-4FB9-802B-B7A508D15075}
+name: Global Article Ad Zone
+key: global article ad zone
+content-length: 4
+
+home
+----field----
+field: {6C312B88-B709-4EB1-A483-0222A8D7E401}
+name: Global Leaderboard Slot ID
+key: global leaderboard slot id
+content-length: 4
+
+Top1
+----field----
+field: {016B3E1C-33EF-4029-9CBD-9CF36657F5FE}
+name: Global Leaderboard Ad Zone
+key: global leaderboard ad zone
+content-length: 4
+
+home
 ----field----
 field: {D0EA1C84-68E4-4811-87C2-14FF280C8FC2}
 name: Site Logo
@@ -113,26 +141,12 @@ content-length: 155
 
 {FE0B4566-CDDD-49A5-BF3D-40E154E83377}|{EA088B7F-FC39-4695-9848-6BC63A16E85E}|{CF48173B-0B5C-417F-952A-E82CDBC4D277}|{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
 ----field----
-field: {31F9F75C-54A7-43A5-A248-66E1F19A5469}
-name: LinkedIn Link
-key: linkedin link
-content-length: 94
-
-<link text="LinkedIn" linktype="external" url="http://www.linkedin.com" anchor="" target="" />
-----field----
 field: {CF68ED35-F96D-4924-850C-E96F0A7F1E34}
 name: Facebook Link
 key: facebook link
 content-length: 94
 
 <link text="Facebook" linktype="external" url="http://www.facebook.com" anchor="" target="" />
-----field----
-field: {7D78565C-EC7D-4D58-9E24-76FFC1505335}
-name: Twitter Link
-key: twitter link
-content-length: 92
-
-<link text="Twitter" linktype="external" url="http://www.twitter.com" anchor="" target="" />
 ----field----
 field: {7704CDD8-3258-4A10-8D22-55998BF88976}
 name: Subscribe Link
@@ -155,12 +169,40 @@ content-length: 131
 
 <link text="Purchase" linktype="internal" class="" title="" target="" querystring="" id="{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" />
 ----field----
+field: {31F9F75C-54A7-43A5-A248-66E1F19A5469}
+name: LinkedIn Link
+key: linkedin link
+content-length: 94
+
+<link text="LinkedIn" linktype="external" url="http://www.linkedin.com" anchor="" target="" />
+----field----
+field: {7D78565C-EC7D-4D58-9E24-76FFC1505335}
+name: Twitter Link
+key: twitter link
+content-length: 92
+
+<link text="Twitter" linktype="external" url="http://www.twitter.com" anchor="" target="" />
+----field----
 field: {0727143B-4AA3-4853-BB84-B01ABC4C2AD4}
 name: Main Navigation
 key: main navigation
 content-length: 38
 
 {A5B851A7-8477-4EF0-AFB4-F373C28280D0}
+----field----
+field: {6F5117BC-2706-48DA-B5D3-0FD785FD9979}
+name: Email From Address
+key: email from address
+content-length: 19
+
+support@informa.com
+----field----
+field: {6B8B6C6D-013A-4BA0-A166-F57747668B0F}
+name: My Account Page
+key: my account page
+content-length: 38
+
+{39611772-CD97-4610-BB55-F96BE4C1F540}
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
@@ -181,14 +223,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-42390f95-7ab4-4e50-85ef-cfbd8139f44c
+aabf44f8-c180-40e4-b775-49be84cf0a82
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160216T213629Z
+20160310T040547Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
