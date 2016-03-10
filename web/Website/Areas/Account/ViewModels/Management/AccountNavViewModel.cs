@@ -37,20 +37,5 @@ namespace Informa.Web.Areas.Account.ViewModels.Manangement
                 ? "is-active" 
                 : string.Empty;
         }
-
-	    public IEnumerable<I___BasePage> Breadcrumbs
-	    {
-            get { 
-                var pages = new List<I___BasePage>();
-                I___BasePage current = SitecoreContext.GetCurrentItem<I___BasePage>();
-                while (current._Parent != null && !current._TemplateId.ToID().Equals(ISite_RootConstants.TemplateId))
-                {
-                    pages.Add(current);
-                    current = SitecoreContext.GetItem<I___BasePage>(current._Parent._Id);
-                }
-                pages.Reverse();
-                return pages;
-            }
-        } 
 	}
 }

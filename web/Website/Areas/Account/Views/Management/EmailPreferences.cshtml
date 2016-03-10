@@ -13,21 +13,21 @@
                     data-on-submit="/Account/api/PreferencesApi/Update/">
 
                 <div class="labeled-checkbox page-preferences__newsletteroptin-confirm">
-                    <input  name="newsletterOptIn"
-                            id="newsletterOptIn"
+                    <input  name="NewsletterOptIn"
+                            id="NewsletterOptIn"
                             type="checkbox"
                             data-checkbox-type="boolean"
                             @(@Model.ReceivesNewsletterEmails ? "checked='checked'" : "")>
-                    <label for="newsletterOptIn" class="checkbox-label">@Model.NewsletterLabel</label>
+                    <label for="NewsletterOptIn" class="checkbox-label">@Model.NewsletterLabel</label>
                 </div>
 
                 <div class="labeled-checkbox page-preferences__offersoptin-confirm">
-                    <input  name="doNotSendOffersOptIn"
-                            id="doNotSendOffersOptIn"
+                    <input  name="DoNotSendOffersOptIn"
+                            id="DoNotSendOffersOptIn"
                             type="checkbox"
                             data-checkbox-type="boolean"
                             @(@Model.DoNotSendOfferEmails ? "checked='checked'" : "")>
-                    <label for="doNotSendOffersOptIn" class="checkbox-label">@Model.EmailsLabel</label>
+                    <label for="DoNotSendOffersOptIn" class="checkbox-label">@Model.EmailsLabel</label>
                 </div>
 
                 <div class="page-preferences__submit-wrapper">
