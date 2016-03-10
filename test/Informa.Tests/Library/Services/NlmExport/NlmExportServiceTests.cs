@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Xml;
@@ -92,6 +93,9 @@ namespace Informa.Tests.Library.Services.NlmExport
                     {
                     }
                 }
+
+                sourceStream.Seek(0, SeekOrigin.Begin);
+                Debug.Print(new StreamReader(sourceStream).ReadToEnd());
 
                 Assert.IsEmpty(errors.ToString());
             }
