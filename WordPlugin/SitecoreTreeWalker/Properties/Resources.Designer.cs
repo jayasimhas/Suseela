@@ -63,26 +63,6 @@ namespace InformaSitecoreWord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1445989402_lock_24 {
-            get {
-                object obj = ResourceManager.GetObject("1445989402_lock-24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _53_Lock_unlocked {
-            get {
-                object obj = ResourceManager.GetObject("53-Lock-unlocked", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
@@ -381,6 +361,16 @@ namespace InformaSitecoreWord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lockedIcon {
+            get {
+                object obj = ResourceManager.GetObject("lockedIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap marketsegments_tabheader {
             get {
                 object obj = ResourceManager.GetObject("marketsegments_tabheader", resourceCulture);
@@ -653,6 +643,16 @@ namespace InformaSitecoreWord.Properties {
         internal static System.Drawing.Bitmap tree {
             get {
                 object obj = ResourceManager.GetObject("tree", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unlockIcon {
+            get {
+                object obj = ResourceManager.GetObject("unlockIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
