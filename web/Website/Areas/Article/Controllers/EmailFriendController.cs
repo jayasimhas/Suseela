@@ -131,11 +131,11 @@ namespace Informa.Web.Areas.Article.Controllers
 				}
 
 				replacements["#Footer_Content#"] = GetValue(siteRoot?.Email_A_Friend_Footer_Content)
-					.ReplaceCaseInsensitive("#SENDER_EMAIL#", senderEmail)
-					.ReplaceCaseInsensitive("#RECIPIENT_EMAIL#", friendEmail);
+					.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail)
+					.ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", friendEmail);
 
 
-				emailHtml = emailHtml.ReplaceCaseInsensitive(replacements);
+				emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
 			}
 			catch (Exception ex)
 			{

@@ -23,10 +23,17 @@ key: system maintenance end date
 content-length: 16
 
 20160504T140000Z
+----field----
+field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
+name: __Security
+key: __security
+content-length: 382
+
+ar|sitecore\Article Read Access|pe|+item:read|pd|+item:read|ar|sitecore\General Content Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|pd|+item:rename|+item:write|+item:read|+item:delete|+item:create|ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:read|-item:rename|pd|-item:create|-item:write|-item:delete|-item:read|-item:rename|
 ----version----
 language: en
 version: 1
-revision: b35116ca-5d5d-4bce-b83a-96a1249f7fbe
+revision: aabf44f8-c180-40e4-b775-49be84cf0a82
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -60,6 +67,20 @@ Right
 field: {58330274-E29E-4FB9-802B-B7A508D15075}
 name: Global Article Ad Zone
 key: global article ad zone
+content-length: 4
+
+home
+----field----
+field: {6C312B88-B709-4EB1-A483-0222A8D7E401}
+name: Global Leaderboard Slot ID
+key: global leaderboard slot id
+content-length: 4
+
+Top1
+----field----
+field: {016B3E1C-33EF-4029-9CBD-9CF36657F5FE}
+name: Global Leaderboard Ad Zone
+key: global leaderboard ad zone
 content-length: 4
 
 home
@@ -169,6 +190,13 @@ content-length: 38
 
 {A5B851A7-8477-4EF0-AFB4-F373C28280D0}
 ----field----
+field: {6F5117BC-2706-48DA-B5D3-0FD785FD9979}
+name: Email From Address
+key: email from address
+content-length: 19
+
+support@informa.com
+----field----
 field: {6B8B6C6D-013A-4BA0-A166-F57747668B0F}
 name: My Account Page
 key: my account page
@@ -195,14 +223,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b35116ca-5d5d-4bce-b83a-96a1249f7fbe
+aabf44f8-c180-40e4-b775-49be84cf0a82
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160309T145749Z
+20160310T040547Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

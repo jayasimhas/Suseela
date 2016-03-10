@@ -8,7 +8,17 @@ namespace Informa.Library.Utilities.References
 
 		Guid DCDConfigurationItem { get; }
 
+		Guid NlmConfiguration { get; }
+
 		Guid SiteConfig { get; }
+
+        // Pharma Globals
+        Guid NlmCopyrightStatement { get; }
+
+        // Taxonomy Folders
+        Guid SubjectsTaxonomyFolder { get; }
+        Guid RegionsTaxonomyFolder { get; }
+        Guid TherapyAreasTaxonomyFolder { get; } 
 
 		// Templates
 		Guid FolderTemplate { get; }

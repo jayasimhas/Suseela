@@ -47,8 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Company\ISalesforceRetrieveActiveIpRanges.cs" />
-    <Compile Include="Company\SalesforceRetrieveActiveIpRanges.cs" />
+    <Compile Include="Company\ISalesforceCompany.cs" />
+    <Compile Include="Company\ISalesforceFindCompanyByIpAddress.cs" />
+    <Compile Include="Company\SalesforceCompany.cs" />
+    <Compile Include="Company\SalesforceFindCompanyByIpAddress.cs" />
     <Compile Include="EBIWebServices\EBI_CreateProfileResponse.cs" />
     <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryAllActiveIPRangesResponse.cs" />
@@ -59,8 +61,10 @@
     <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponseExtensions.cs" />
+    <Compile Include="ISalesforceServiceConfiguration.cs" />
     <Compile Include="ISalesforceServiceContextExtensions.cs" />
     <Compile Include="ISalesforceSessionFactoryConfiguration.cs" />
+    <Compile Include="SalesforceServiceConfiguration.cs" />
     <Compile Include="SalesforceSessionFactoryConfiguration.cs" />
     <Compile Include="User\Authentication\ISalesforceAuthenticatedUser.cs" />
     <Compile Include="User\Authentication\ISalesforceAuthenticateUser.cs" />

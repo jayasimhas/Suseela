@@ -46,7 +46,7 @@ namespace Informa.Library.Mail
 			replacements["#Twitter_Link_Text#"] = GetValue(siteRoot?.Twitter_Link?.Text);
 			replacements["#Footer_Content#"] = GetValue(siteRoot?.Email_Footer);
 
-			emailHtml = emailHtml.ReplaceCaseInsensitive(replacements);
+			emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
 
 			var email = EmailFactory.Create();
 			var emailFrom = GetValue(siteRoot?.Email_From_Address);
