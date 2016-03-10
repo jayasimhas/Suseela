@@ -78,9 +78,3 @@ p {
         }
     }
 }
-
-.error-text {
-    @include textMix('Roboto', 0.875rem, 600);
-    font-style: italic;
-    color: $color-cardinal-red;
-}
