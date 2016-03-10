@@ -1,6 +1,57 @@
-﻿
+﻿function getCorrespondingSectr(sector) {
+    if (sector == 'comment' || sector == 'features' || sector == 'analysis') {
+        sector = 'analysis';
+    } else if (sector == 'supplementsreports' || sector == 'multimedia' || sector == 'scienceabstracts') {
+        sector = 'home';
+    } else if (sector == 'therapysector' || sector == 'other') {
+        sector = 'therapy';
+    } else if (sector == 'cardiovascular') {
+        sector = 'cardio';
+    } else if (sector == 'musculoskeletal') {
+        sector = 'musculo';
+    } else if (sector == 'gastrointestinal') {
+        sector = 'gastro';
+    } else if (sector == 'genericsbusiness') {
+        sector = 'genbusiness';
+    } else if (sector == 'manda') {
+        sector = 'merger';
+    } else if (sector == 'businessstrategy') {
+        sector = 'corp';
+    } else if (sector == 'lifecyclemanagement') {
+        sector = 'lifecycle';
+    } else if (sector == 'policyregulation') {
+        sector = 'policyandreg';
+    } else if (sector == 'pricingreimbursement') {
+        sector = 'pandr';
+    } else if (sector == 'healthcarepolicy') {
+        sector = 'hpolicy';
+    } else if (sector == 'pharmacovigilance') {
+        sector = 'pharmacv';
+    } else if (sector == 'intellectualproperty') {
+        sector = 'ip';
+    } else if (sector == 'researchdevelopment') {
+        sector = 'randd';
+    } else if (sector == 'productapprovals') {
+        sector = 'approvals';
+    } else if (sector == 'clinicaltrials') {
+        sector = 'ctrials';
+    } else if (sector == 'productfilings') {
+        sector = 'filings';
+    } else if (sector == 'productsafety') {
+        sector = 'safety';
+    } else if (sector == 'productdelays') {
+        sector = 'delays';
+    } else if (sector == 'latinamerica') {
+        sector = 'lamerica';
+    } else if (sector == 'world') {
+        sector = 'row';
+    }
+    return sector;
+}
+
 //configuration
 OAS_url = 'http://oas.informahealthcare.com/RealMedia/ads/';
+OAS_sitepage = 'www.scripnews.com/' + getCorrespondingSectr('home');
 OAS_listpos = 'TopRight,Top1,Top2,Top3,Middle,Position2,Position3,Middle1,Right';
 OAS_query = '';
 OAS_target = 'ad';

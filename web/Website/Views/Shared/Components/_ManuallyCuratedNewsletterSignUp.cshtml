@@ -1,8 +1,22 @@
+@inherits CustomGlassView<NewsletterSignUpModel>
+
+@if (Model.GlassModel != null)
+{
 <div class="newsletter-signup">
-	<h3>Be informed first</h3>
-	Receive the SCRIP Intelligence newsletters.
+	<h3>@Editable(x=>x.GlassModel.Headline_Text)</h3>
+	@Editable(x=>x.GlassModel.Sign_Up_Call_To_Action)
 	<div class="form--single-row">
 		<input class="inf-standard-form-field">
-		<button class="button--filled">Sign Up</button>
+		<button class="button--filled">@Editable(x=>x.GlassModel.Sign_Up_Button_Text)</button>
 	</div>
+</div>
+}
+@*TODO : Add user logged in condition*@
+<div class="newsletter-signup">
+    <h3>@Editable(x => x.GlassModel.Confirmation_Text)</h3>
+    @Editable(x => x.GlassModel.Confirmation_Summary)
+    <div class="form--single-row">
+        <input class="inf-standard-form-field">
+        <button class="button--filled">@Editable(x => x.GlassModel.Sign_Up_Button_Text)</button>
+    </div>
 </div>

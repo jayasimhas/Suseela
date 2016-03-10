@@ -9,10 +9,17 @@ master: {00000000-0000-0000-0000-000000000000}
 template: {FCB415D5-4852-4E86-B54C-0F8ED7A6852E}
 templatekey: Account Landing Page
 
+----field----
+field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
+name: __Security
+key: __security
+content-length: 63
+
+ar|sitecore\General Content Access|pe|+item:read|pd|+item:read|
 ----version----
 language: en
 version: 1
-revision: 35867377-341c-4ac7-b23a-cd2d34143473
+revision: 6e7d6439-e968-4c6a-92bc-9753ca5ab1d8
 
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-35867377-341c-4ac7-b23a-cd2d34143473
+6e7d6439-e968-4c6a-92bc-9753ca5ab1d8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160308T132916Z
+20160310T032315Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
