@@ -230,9 +230,8 @@ namespace Elsevier.Web.VWB.Report
                 }
                 else
                 {
-                    startDate = DateTime.Now.AddDays(-1);
+                    startDate = DateTime.Now;
                     endDate = DateTime.Now.AddDays(30);
-
                 }
 
                 url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
