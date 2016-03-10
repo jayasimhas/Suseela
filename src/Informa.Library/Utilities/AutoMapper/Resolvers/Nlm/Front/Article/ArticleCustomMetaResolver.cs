@@ -24,7 +24,7 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
                 new NlmArticleCustomMetaModel
                 {
                     MetaName = "lastupdated_datetime",
-                    MetaValue = source.Modified_Date.ToString(DateTimeFormat)
+                    MetaValue = source.Updated.ToString(DateTimeFormat)
                 },
                 new NlmArticleCustomMetaModel
                 {
