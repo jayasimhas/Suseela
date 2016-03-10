@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using Informa.Library.Newsletter;
 using Informa.Library.Site.Newsletter;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
@@ -25,17 +26,22 @@ namespace Informa.Web.Areas.Account.Controllers
         public PreferencesApiController(
             IAuthenticatedUserContext userContext,
             IUpdateNewsletterUserOptIn newsletterOptIn,
+            INewsletterUserOptInFactory newsletterUserOptInFactory,
+            ISiteNewsletterTypesContext newsletterTypesContext,
             IUpdateOfferUserOptIn offersOptIn)
         {
             UserContext = userContext;
             NewsletterOptIn = newsletterOptIn;
+            NewsletterUserOptInFactory = newsletterUserOptInFactory;
+            NewsletterTypesContext = newsletterTypesContext;
             OffersOptIn = offersOptIn;
         }
 
         [HttpPost]
         public IHttpActionResult Update(PreferencesRequest request)
         {
-            var userNewsletterOptIns = NewsletterTypesContext.NewsletterTypes.Select(nt => NewsletterUserOptInFactory.Create(nt, request.NewsletterOptIn));
+
+            var userNewsletterOptIns = new List<INewsletterUserOptIn>() { NewsletterUserOptInFactory.Create(NewsletterType.Scrip, request.NewsletterOptIn) };
             var nResp = NewsletterOptIn.Update(UserContext.User, userNewsletterOptIns);
             var oResp = OffersOptIn.Update(UserContext.User, !request.DoNotSendOffersOptIn);
             

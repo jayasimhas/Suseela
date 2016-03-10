@@ -25,13 +25,4 @@
             </svg>
         </div>
     }
-    @if (Model.Breadcrumbs.Any())
-    {
-        foreach (I___BasePage bc in @Model.Breadcrumbs)
-        {
-            <a href="@bc._Url">
-                @bc.Navigation_Title
-            </a>
-        }
-    }
 </div>
