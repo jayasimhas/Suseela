@@ -799,12 +799,11 @@
     <Compile Include="VWB\Report\Columns\CreatedDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleLengthEstimateColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleNumberColumn.cs" />
-    <Compile Include="VWB\Report\Columns\ArticleSizeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\WordCountColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleTypeColumn.cs" />
     <Compile Include="VWB\Report\Columns\AuthorsColumn.cs" />
     <Compile Include="VWB\Report\Columns\ColumnFactory.cs" />
     <Compile Include="VWB\Report\Columns\EmailPriorityColumn.cs" />
-    <Compile Include="VWB\Report\Columns\IssuePublishDateColumn.cs" />
     <Compile Include="VWB\Report\Columns\IVwbColumn.cs" />
     <Compile Include="VWB\Report\Columns\LockStatusColumn.cs" />
     <Compile Include="VWB\Report\Columns\MediaTypeColumn.cs" />
@@ -818,7 +817,6 @@
     <Compile Include="VWB\Report\Columns\ActualPublishDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\WorkflowStateColumn.cs" />
     <Compile Include="VWB\Report\IVwbArticleItemCollection.cs" />
-    <Compile Include="VWB\Report\MacroVwbArticleItemCollection.cs" />
     <Compile Include="VWB\Report\ReportBuilder.cs" />
     <Compile Include="VWB\Report\VwbArticleItemCollection.cs" />
     <Compile Include="VWB\services\VirtualWhiteBoard.asmx.cs">
