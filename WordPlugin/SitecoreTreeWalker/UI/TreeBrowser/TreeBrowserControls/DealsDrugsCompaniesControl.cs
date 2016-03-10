@@ -128,7 +128,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 		private void uxCompanyName_TextChanged(object sender, EventArgs e)
 		{
 			CompanyNameGo();
-			uxCompanyName.Focus();
+			//uxCompanyName.Focus();
 		}
 
 		/* COMPANIES */
@@ -149,7 +149,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 			else if (e.KeyCode == Keys.Enter)
 			{
 				CompanyNameGo();
-				uxCompanyName.Focus();
+				//uxCompanyName.Focus();
 			}
 
 			uxViewDetails.Enabled = false;
