@@ -34,6 +34,7 @@ and running. There are additional default properties from dev.properties that yo
 	<property name="connstr.tracking.contact" value="mongodb://localhost/Informa_tracking_contact" />
   <property name="connstr.scheduledpublishing" value="mongodb://localhost/Informa_scheduled_publishing" />
   <property name="connstr.dcd" value="user id=sitecore;password=password;Data Source=localhost\SQLEXPRESS;Database=Sitecore_Companies" />
+	<property name="connstr.custom" value="user id=sitecore;password=password;Data Source=localhost\SQLEXPRESS;Database=Informa_Custom" />
 		
 		
 	<!-- Web.config settings -->

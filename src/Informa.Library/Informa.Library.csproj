@@ -354,7 +354,10 @@
     <Compile Include="Search\Sort\HierarchicalStrategyWithCountSort.cs" />
     <Compile Include="Search\TypeAhead\CompanyTypeAheadResponseItem.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
+    <Compile Include="Services\NlmExport\ExportResult.cs" />
     <Compile Include="Services\NlmExport\INlmExportService.cs" />
+    <Compile Include="Services\NlmExport\Logging\NlmLoggingDecorator.cs" />
+    <Compile Include="Services\NlmExport\Logging\NlmLogMessage.cs" />
     <Compile Include="Services\NlmExport\Models\Body\NlmArticleBodyModel.cs" />
     <Compile Include="Services\NlmExport\Models\Common\NlmCategoryModel.cs" />
     <Compile Include="Services\NlmExport\Models\Front\Article\Contrib\NlmArticleAuthorNameModel.cs" />
@@ -434,6 +437,8 @@
     <Compile Include="Services\NlmExport\Validation\Config\NlmValidationConfiguration.cs" />
     <Compile Include="Services\NlmExport\Validation\INlmValidationService.cs" />
     <Compile Include="Services\NlmExport\Validation\NlmValidationService.cs" />
+    <Compile Include="Services\NlmExport\Validation\Error\ValidationError.cs" />
+    <Compile Include="Services\NlmExport\Validation\ValidationResult.cs" />
     <Compile Include="Services\NlmExport\Validation\XmlResolver\XmlCachingResolverDecorator.cs" />
     <Compile Include="Services\RobotsText\RobotsTextService.cs" />
     <Compile Include="Services\Sitemap\SitemapService.cs" />
