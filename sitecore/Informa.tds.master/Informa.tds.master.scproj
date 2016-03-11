@@ -92,6 +92,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\DCDConfiguration.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
