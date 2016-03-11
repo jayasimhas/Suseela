@@ -6,33 +6,35 @@ using Informa.Library.User.Entitlement;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Security.Authentication;
 
-namespace Informa.Library.User.Authentication
+namespace Informa.Library.User.Authentication.Web
 {
 	[AutowireService(LifetimeScope.Default)]
-	public class LoginWebUser : ILoginWebUser
+	public class WebLoginUser : IWebLoginUser
 	{
 		protected IAuthenticateUser AuthenticateUser;
 		protected readonly ISitecoreVirtualUsernameFactory VirtualUsernameFactory;
 	    protected readonly IGetUserEntitlements GetUserEntitlements;
+		protected readonly IWebLoginUserActions LoginActions;
 
-		public LoginWebUser(
+		public WebLoginUser(
 			IAuthenticateUser authenticateUser,
 			ISitecoreVirtualUsernameFactory virtualUsernameFactory,
-            IGetUserEntitlements getUserEntitlements)
+            IGetUserEntitlements getUserEntitlements,
+			IWebLoginUserActions loginActions)
 		{
 			AuthenticateUser = authenticateUser;
 			VirtualUsernameFactory = virtualUsernameFactory;
 		    GetUserEntitlements = getUserEntitlements;
 		}
 
-		public ILoginWebUserResult Login(string username, string password, bool persist)
+		public IWebLoginUserResult Login(string username, string password, bool persist)
 		{
 			var result = AuthenticateUser.Authenticate(username, password);
 			var state = result.State;
 			var authenticatedUser = result.User;
-			var authenticated = state == AuthenticateUserResultState.Success;
+			var success = state == AuthenticateUserResultState.Success;
 
-			if (authenticated)
+			if (success)
 			{
 				var sitecoreUsername = VirtualUsernameFactory.Create(authenticatedUser);
 				var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, persist);
@@ -46,13 +48,18 @@ namespace Informa.Library.User.Authentication
 
                 sitecoreVirtualUser.Profile.Save();
 
-				AuthenticationManager.LoginVirtualUser(sitecoreVirtualUser);
+				success = AuthenticationManager.LoginVirtualUser(sitecoreVirtualUser);
+
+				if (success)
+				{
+					LoginActions.ToList().ForEach(a => a.Process(authenticatedUser));
+				}
 			}
 
-			return new LoginWebUserResult
+			return new WebLoginUserResult
 			{
 				State = state,
-				Success = authenticated,
+				Success = success,
 				User = authenticatedUser
 			};
 		}

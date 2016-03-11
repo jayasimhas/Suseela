@@ -2,7 +2,7 @@
 
 namespace Informa.Library.Salesforce.Company
 {
-	public interface ISalesforceCompanyFromSiteType
+	public interface ISalesforceCompanyTypeFromSiteType
 	{
 		CompanyType Parse(string siteType);
 	}

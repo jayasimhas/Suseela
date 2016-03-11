@@ -14,12 +14,12 @@ namespace Informa.Library.Salesforce.Company
 		private DateTime LastRefresh;
 
 		protected readonly IIpAddressRangeCheck IpAddressRangeCheck;
-		protected readonly ISalesforceCompanyFromSiteType ParseCompanyType;
+		protected readonly ISalesforceCompanyTypeFromSiteType ParseCompanyType;
 		protected readonly ISalesforceServiceContext Service;
 
 		public SalesforceFindCompanyByIpAddress(
 			IIpAddressRangeCheck ipAddressRangeCheck,
-			ISalesforceCompanyFromSiteType parseCompanyType,
+			ISalesforceCompanyTypeFromSiteType parseCompanyType,
 			ISalesforceServiceContext service)
 		{
 			IpAddressRangeCheck = ipAddressRangeCheck;

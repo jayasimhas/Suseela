@@ -1,7 +1,0 @@
-﻿namespace Informa.Library.User.Authentication
-{
-	public interface ILoginWebUser
-	{
-		ILoginWebUserResult Login(string username, string password, bool persist);
-	}
-}

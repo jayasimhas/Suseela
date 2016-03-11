@@ -2,7 +2,7 @@
 
 namespace Informa.Library.Salesforce.Company
 {
-	public class SalesforceSiteTypeParser : ISalesforceCompanyFromSiteType
+	public class SalesforceSiteTypeParser : ISalesforceCompanyTypeFromSiteType, ISalesforceSiteTypeFromCompanyType
 	{
 		public CompanyType Parse(string siteType)
 		{
@@ -16,6 +16,19 @@ namespace Informa.Library.Salesforce.Company
 					return CompanyType.SiteLicenseIP;
 				default:
 					return CompanyType.Unknown;
+			}
+		}
+
+		public string Parse(CompanyType companyType)
+		{
+			switch(companyType)
+			{
+				case CompanyType.SiteLicenseIP:
+					return "SiteLicenseIP";
+				case CompanyType.TransparentIP:
+					return "TransparentIP";
+				default:
+					return null;
 			}
 		}
 	}

@@ -1,4 +1,5 @@
 ﻿using Informa.Library.Company;
+using Informa.Library.Salesforce.Company;
 using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.User.Registration;
 using System.Collections.Generic;
@@ -7,11 +8,14 @@ namespace Informa.Library.Salesforce.User.Registration
 {
 	public class SalesforceRegisterUser : ISalesforceRegisterUser, IRegisterUser, IRegisterCompanyUser
 	{
+		protected readonly ISalesforceSiteTypeFromCompanyType SiteTypeParser;
 		protected readonly ISalesforceServiceContext Service;
 
 		public SalesforceRegisterUser(
+			ISalesforceSiteTypeFromCompanyType siteTypeParser,
 			ISalesforceServiceContext service)
 		{
+			SiteTypeParser = siteTypeParser;
 			Service = service;
 		}
 
@@ -29,12 +33,12 @@ namespace Informa.Library.Salesforce.User.Registration
 
 			var salesforceCompanies = new List<EBI_AccountData>();
 
-			if (company != null)
+			if (company != null && company.Type == CompanyType.SiteLicenseIP)
 			{
 				salesforceCompanies.Add(new EBI_AccountData
 				{
 					accountId = company.Id,
-					accountType = "" // TODO
+					accountType = SiteTypeParser.Parse(company.Type)
 				});
 			}
 

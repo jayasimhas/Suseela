@@ -49,12 +49,16 @@
   <ItemGroup>
     <Compile Include="Company\ISalesforceCompany.cs" />
     <Compile Include="Company\ISalesforceFindCompanyByIpAddress.cs" />
-    <Compile Include="Company\ISalesforceCompanyFromSiteType.cs" />
+    <Compile Include="Company\ISalesforceCompanyTypeFromSiteType.cs" />
+    <Compile Include="Company\ISalesforceFindCompanyByUser.cs" />
+    <Compile Include="Company\ISalesforceSiteTypeFromCompanyType.cs" />
     <Compile Include="Company\SalesforceCompany.cs" />
+    <Compile Include="Company\SalesforceFindCompanyByUser.cs" />
     <Compile Include="Company\SalesforceSiteTypeParser.cs" />
     <Compile Include="Company\SalesforceFindCompanyByIpAddress.cs" />
     <Compile Include="EBIWebServices\EBI_CreateProfileResponse.cs" />
     <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryAccountByUsernameResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryAllActiveIPRangesResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryEntitlementsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryEmailNewsletterOptInsResponse.cs" />
