@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Informa.Library.User.Profile
 {
-    public class SavedContent : ISavedContent
+    public class SavedDocument : ISavedDocument
     {
         public DateTime SaveDate { get; set; }
         public string DocumentId { get; set; }

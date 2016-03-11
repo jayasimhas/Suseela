@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Informa.Library.User.Profile
 {
-    public interface ISavedContentWriteResult
+    public class SavedDocumentWriteResult : ISavedDocumentWriteResult
     {
-        bool Success { get; set; }
-        string Message { get; set; }
+        public bool Success { get; set; }
+        public string Message { get; set; }
     }
 }

@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {F9EB286C-8B45-46B9-AEDA-FBA7BEB31968}
+id: {90F3ACCD-E14A-4F48-A831-56F09B8BEB19}
 database: master
-path: /sitecore/content/ScripIntelligence/Globals/ScriptIntelligenceDictionary/Account/SavedContent/RemoveText
+path: /sitecore/content/ScripIntelligence/Globals/ScriptIntelligenceDictionary/Account/SavedDocuments/Item Removed Message
 parent: {4BF1EC72-2740-47AC-8C5B-208F1BD07B3C}
-name: RemoveText
+name: Item Removed Message
 master: {4314E7F7-4F9F-4E16-A43A-8C0BF2A03A2F}
 template: {6D1CD897-1936-4A3A-A511-289A94C2A7B1}
 templatekey: Dictionary entry
@@ -13,9 +13,9 @@ templatekey: Dictionary entry
 field: {580C75A8-C01A-4580-83CB-987776CEB3AF}
 name: Key
 key: key
-content-length: 23
+content-length: 33
 
-SavedContent.RemoveText
+SavedDocuments.ItemRemovedMessage
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
@@ -33,36 +33,36 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: ce44a782-98ae-4e4b-b32d-74f4741cb599
+revision: d11a6901-cd83-4397-ae16-5f47bee6c5f1
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 6
+content-length: 33
 
-Remove
+The item was removed successfully
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20160310T205851Z
+20160310T210052Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-ce44a782-98ae-4e4b-b32d-74f4741cb599
+d11a6901-cd83-4397-ae16-5f47bee6c5f1
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160310T210000Z
+20160311T020637Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

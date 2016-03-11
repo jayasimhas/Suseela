@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Informa.Web.Areas.Account.Models.User.Management
 {
-    public class SavedContentRemoveRequest
+    public class SavedDocumentRemoveRequest
     {
         public string DocumentID { get; set; }
     }

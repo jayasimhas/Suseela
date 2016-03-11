@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Informa.Library.User.Profile
 {
-    public interface ISavedContentReadResult
+    public interface ISavedDocumentReadResult
     {
         bool Success { get; set; }
-        IEnumerable<ISavedContent> SavedContentItems { get; set; }
+        IEnumerable<ISavedDocument> SavedDocuments { get; set; }
     }
 }

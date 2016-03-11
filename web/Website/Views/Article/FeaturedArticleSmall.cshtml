@@ -36,7 +36,7 @@
 
     <div class="article-preview__inner-wrapper">
         <h1 class="article-preview__headline">
-            <a href="@Model.LinkableUrl">@Model.ListableTitle</a>
+            <a href="@Model.LinkableUrl">@HttpUtility.HtmlDecode(Model.ListableTitle)</a>
         </h1>
 
         <span class="article-preview__byline">

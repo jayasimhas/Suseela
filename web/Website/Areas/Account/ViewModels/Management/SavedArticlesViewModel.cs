@@ -18,36 +18,37 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
     {
         public readonly ITextTranslator TextTranslator;
         public readonly IAuthenticatedUserContext UserContext;
-        public readonly IManageSavedContent QuerySavedContent;
+        public readonly IManageSavedDocuments QuerySavedDocuments;
         public readonly ISignInViewModel SignInViewModel;
 
         public SavedArticlesViewModel(
             ITextTranslator translator,
             IAuthenticatedUserContext userContext,
-            IManageSavedContent querySavedContent,
+            IManageSavedDocuments querySavedDocuments,
             ISignInViewModel signInViewModel)
         {
             TextTranslator = translator;
             UserContext = userContext;
-            QuerySavedContent = querySavedContent;
+            QuerySavedDocuments = querySavedDocuments;
             SignInViewModel = signInViewModel;
 
-            var result = QuerySavedContent.QueryItems(UserContext.User);
-            SavedContent = (result.Success)
-                ? result.SavedContentItems
-                : Enumerable.Empty<ISavedContent>();
+            var result = QuerySavedDocuments.QueryItems(UserContext.User);
+            SavedDocuments = (result.Success)
+                ? result.SavedDocuments
+                : Enumerable.Empty<ISavedDocument>();
         }
 
-        public IEnumerable<ISavedContent> SavedContent;
+        public IEnumerable<ISavedDocument> SavedDocuments;
 
         public bool IsAuthenticated => UserContext.IsAuthenticated;
         public string Title => GlassModel?.Title;
-        public string GeneralErrorText => TextTranslator.Translate("SavedContent.GeneralError");
-        public string NullUserText => TextTranslator.Translate("SavedContent.NullUserError");
-        public string RequestFailedText => TextTranslator.Translate("SavedContent.RequestFailedError");
-        public string TitleText => TextTranslator.Translate("SavedContent.TitleText");
-        public string DateText => TextTranslator.Translate("SavedContent.DateText");
-        public string RemoveText => TextTranslator.Translate("SavedContent.RemoveText");
-        public string ItemRemovedMessage => TextTranslator.Translate("SavedContent.ItemRemovedMessage");
+        public string GeneralErrorText => TextTranslator.Translate("SavedDocuments.GeneralError");
+        public string NullUserText => TextTranslator.Translate("SavedDocuments.NullUserError");
+        public string RequestFailedText => TextTranslator.Translate("SavedDocuments.RequestFailedError");
+        public string TitleText => TextTranslator.Translate("SavedDocuments.TitleText");
+        public string DateText => TextTranslator.Translate("SavedDocuments.DateText");
+        public string RemoveText => TextTranslator.Translate("SavedDocuments.RemoveText");
+        public string ItemRemovedMessage => TextTranslator.Translate("SavedDocuments.ItemRemovedMessage");
+        public string BadIDText => TextTranslator.Translate("SavedDocuments.BadIDText"); 
     }
 }
