@@ -41,6 +41,7 @@ namespace Informa.Web.App_Start.Registrations
 		    builder.RegisterType<SalesforceGetIPEntitlements>().As<IGetIPEntitlements>();
 
 		    builder.RegisterType<SalesforceManageSavedDocuments>().As<IManageSavedDocuments>();
+            builder.RegisterType<SalesforceManageSubscriptions>().As<IManageSubscriptions>();
 		}
 	}
 }
