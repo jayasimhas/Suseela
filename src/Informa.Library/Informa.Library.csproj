@@ -331,6 +331,16 @@
     <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
     <Compile Include="Net\IIpAddressRangeCheck.cs" />
     <Compile Include="Net\IpAddressRangeCheck.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityAllScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityDeleteItemScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityDeleteScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityDeleteVersionScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityFindScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityScheduledPublishContext.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityScheduledPublishContextFactory.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityScheduledPublishFactory.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\IEntityScheduledPublishContextFactory.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\ScheduledPublish.cs" />
     <Compile Include="Rss\SearchResults.cs" />
     <Compile Include="Rss\SearchResultsRequest.cs" />
     <Compile Include="Rss\SearchRssFeed.cs" />
