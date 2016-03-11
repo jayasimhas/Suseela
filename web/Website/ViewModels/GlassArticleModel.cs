@@ -28,7 +28,7 @@ namespace Informa.Web.ViewModels
         protected readonly ITextTranslator TextTranslator;
         protected readonly IArticleSearch Searcher;
         protected readonly ISitecoreContext SitecoreContext;
-        protected readonly IArticleComponentFactory ArticleComponentFactory;    
+        protected readonly IArticleComponentFactory ArticleComponentFactory;
 
         public GlassArticleModel(
             ISiteRootContext siterootContext,
@@ -44,7 +44,7 @@ namespace Informa.Web.ViewModels
             TextTranslator = textTranslator;
             Searcher = searcher;
             SitecoreContext = context;
-            ArticleComponentFactory = articleComponentFactory;      
+            ArticleComponentFactory = articleComponentFactory;
         }
 
         public IEnumerable<ILinkable> TaxonomyItems
@@ -60,7 +60,7 @@ namespace Informa.Web.ViewModels
         {
             get
             {
-                string body = (GlassModel.Free_Article || AccessLevel != EntitledAccessLevel.UnEntitled) ? GlassModel.Body : "TEMPORARY UNENTITLED\n\n" + GlassModel.Summary;
+                string body = IsFree || IsEntitled() ? GlassModel.Body : "";
 
                 //Replace any DCD related tokens with proper names
                 body = DCDTokenMatchers.ProcessDCDTokens(body);
@@ -121,6 +121,8 @@ namespace Informa.Web.ViewModels
             return "pdf";
         }
 
+        public override bool IsFree => GlassModel.Free_Article;
+
         #endregion
 
         #region Implementation of ILinkable
@@ -171,12 +173,6 @@ namespace Informa.Web.ViewModels
             set { }
         }
 
-        #endregion
-
-        #region Overrides of EntitledViewModel<IArticle>
-
-        //public EntitledAccessLevel AccessLevel => GlassModel is IEntitledProductItem ? EntitledProductContext.GetAccessLevel((IEntitledProductItem)GlassModel) : EntitledAccessLevel.Free;
-
-        #endregion
+        #endregion                              
     }
 }

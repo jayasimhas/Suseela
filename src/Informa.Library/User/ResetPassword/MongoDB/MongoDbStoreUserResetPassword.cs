@@ -1,8 +1,5 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
-
-namespace Informa.Library.User.ResetPassword.MongoDB
+﻿namespace Informa.Library.User.ResetPassword.MongoDB
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
 	public class MongoDbStoreUserResetPassword : IStoreUserResetPassword
 	{
 		protected readonly IUserResetPasswordDocumentFactory DocumentFatory;
@@ -16,11 +13,12 @@ namespace Informa.Library.User.ResetPassword.MongoDB
 			MongoDbContext = mongoDbContext;
 		}
 
-		public void Store(IUserResetPassword userResetPassword)
+		public bool Store(IUserResetPassword userResetPassword)
 		{
 			var document = DocumentFatory.Create(userResetPassword);
+			var result = MongoDbContext.UserResetPasswords.Save(document);
 
-			MongoDbContext.UserResetPasswords.Save(document);
+			return true;
 		}
 	}
 }

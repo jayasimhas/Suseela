@@ -1,5 +1,4 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
-using System.Linq;
 
 namespace Informa.Library.User.Registration.Web
 {
@@ -27,7 +26,7 @@ namespace Informa.Library.User.Registration.Web
 			if (registered)
 			{
 				RegisterUserSession.NewUser = newUser;
-				RegisterUserActions.ToList().ForEach(a => a.Process(newUser));
+				RegisterUserActions.Process(newUser);
 			}
 
 			return registered;

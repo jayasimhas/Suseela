@@ -1,9 +1,9 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.Registration.RegisterUserViewModel
 
-<div class="page-registration js-register-user-container">
+<div class="page-registration page-account js-register-user-container">
 	<h1 class="page-registration__header">@Model.Title</h1>
 	<h2 class="page-registration__subheader">@Model.SubTitle</h2>
-	<p class="page-registration__introduction">@Model.Body</p>
+	<p class="page-account__introduction">@Model.Body</p>
 	<hr />
 	<div>
 		<div class="page-registration__required-hint">
@@ -20,8 +20,8 @@
 			@Model.GeneralErrorText
 		</p>
 
-		<div class="page-registration__field-wrapper">
-			<label for="username" class="page-registration__text-label">
+		<div class="page-account__field-wrapper">
+			<label for="username" class="page-account__text-label">
 				@Model.UsernameLabelText <span class="asterisk-required"></span>
 			</label>
 
@@ -50,8 +50,8 @@
 				   	name="username">
 		</div>
 
-		<div class="page-registration__field-wrapper page-registration__field-wrapper--float">
-			<label for="firstName" class="page-registration__text-label">
+		<div class="page-account__field-wrapper page-account__field-wrapper--float">
+			<label for="firstName" class="page-account__text-label">
 				@Model.FirstNameLabelText <span class="asterisk-required"></span>
 			</label>
 
@@ -63,8 +63,8 @@
 
 		</div>
 
-		<div class="page-registration__field-wrapper page-registration__field-wrapper--float">
-			<label for="lastName" class="page-registration__text-label">
+		<div class="page-account__field-wrapper page-account__field-wrapper--float">
+			<label for="lastName" class="page-account__text-label">
 				@Model.LastNameLabelText <span class="asterisk-required"></span>
 			</label>
 
@@ -75,8 +75,8 @@
 				   	name="lastName">
 		</div>
 
-		<div class="page-registration__field-wrapper page-registration__field-wrapper--float">
-			<label for="password" class="page-registration__text-label">
+		<div class="page-account__field-wrapper page-account__field-wrapper--float">
+			<label for="password" class="page-account__text-label">
 				@Model.PasswordLabelText <span class="asterisk-required"></span>
 			</label>
 
@@ -99,8 +99,8 @@
 					tabindex="4">
 		</div>
 
-		<div class="page-registration__field-wrapper page-registration__field-wrapper--float">
-			<label for="passwordRepeat" class="page-registration__text-label">
+		<div class="page-account__field-wrapper page-account__field-wrapper--float">
+			<label for="passwordRepeat" class="page-account__text-label">
 				@Model.PasswordRepeatLabelText <span class="asterisk-required"></span>
 			</label>
 

@@ -7,7 +7,7 @@ namespace Informa.Library.Services.NlmExport.Models.Front.Article.Contrib
     [Serializable]
     public class NlmAuthorEmailModel
     {
-        [XmlAttribute("href", Namespace = "xlink")]
+        [XmlAttribute("href", Namespace = "http://www.w3.org/1999/xlink")]
         public string Href { get; set; }
     }
 }
