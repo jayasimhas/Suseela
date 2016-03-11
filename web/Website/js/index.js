@@ -155,7 +155,9 @@ $(document).ready(function() {
 
 	var userRegistrationController = new FormController();
 	userRegistrationController.watchForm('.form-registration');
+
 	userRegistrationController.watchForm('.form-registration-optins');
+	
 	userRegistrationController.watchForm(
 		'.form-pre-registration',
 		function(form) {
