@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Specialized;
-using System.IO;
 using System.Threading;
 using Autofac;
 using Glass.Mapper.Sc;
 using Informa.Library.Services.NlmExport;
-using Informa.Library.Services.NlmExport.Validation;
-using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Util;
 using Sitecore;
@@ -41,28 +38,17 @@ namespace Informa.Library.CustomSitecore.Ribbon
                     using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
                     {
                         var exportService = scope.Resolve<INlmExportService>();
-                        var validationService = scope.Resolve<INlmValidationService>();
                         var serviceFactory = scope.Resolve<Func<string, ISitecoreService>>();
                         var service = serviceFactory(InformaConstants.MasterDb);
-                        var settings = scope.Resolve<ISiteSettings>();
 
-                        // Generate NLM XML
-                        var stream = exportService.ExportNlm(service.GetItem<ArticleItem>(publicationNodeItem.ID.Guid));
-
-                        // Validate NLM
-                        if (!validationService.ValidateXml(stream))
+                        // Generate NLM XML, and retrieve the validation result
+                        var result = exportService.ExportNlm(service.GetItem<ArticleItem>(publicationNodeItem.ID.Guid), ExportType.Manual);
+                        if (!result.ExportSuccessful)
                         {
-                            throw new Exception("NLM was not valid");
-                        }
-
-                        // Write to disk (TODO: Put into its own service)
-                        var exportFolder = Path.GetFullPath(settings.NlmExportPath);
-                        Directory.CreateDirectory(exportFolder);
-                        var fileName = $"{publicationNodeItem[IArticleConstants.Article_NumberFieldName]}.xml";
-                        using (var file = File.Open(Path.Combine(exportFolder, fileName), FileMode.Create))
-                        {
-                            stream.Seek(0, SeekOrigin.Begin);
-                            stream.CopyTo(file);
+                            // NLM Export failed
+                            SheerResponse.Alert(
+                                "The article did not pass NLM validation and has not been exported. Please check the fields and try again.");
+                                return;
                         }
 
                         SheerResponse.Alert("The article passed NLM validation and exported successfully.");
@@ -70,7 +56,7 @@ namespace Informa.Library.CustomSitecore.Ribbon
                 }
                 catch (Exception ex) when (!(ex is ThreadAbortException))
                 {
-                    SheerResponse.Alert("The article did not pass NLM validation and has not been exported. Please check fields and try again.");
+                    SheerResponse.Alert("The article did not pass NLM validation and has not been exported. Please check the fields and try again.");
                 }
             }
         }

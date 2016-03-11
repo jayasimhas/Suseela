@@ -13,6 +13,7 @@ using Informa.Library.Utilities.Autofac.Modules;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Util;
+using log4net;
 using NSubstitute;
 using NUnit.Framework;
 
@@ -30,6 +31,7 @@ namespace Informa.Tests.Library.Services.NlmExport
         public void Setup()
         {
             var dependencies = Substitute.For<NlmExportService.IDependencies>();
+            var mockLogger = Substitute.For<ILog>();
             _mockService = Substitute.For<ISitecoreService>();
             _mockReferences = Substitute.For<IItemReferences>();
             _mockSearchService = Substitute.For<IArticleSearchService>();
@@ -46,7 +48,7 @@ namespace Informa.Tests.Library.Services.NlmExport
             dependencies.Mapper.Returns(c => container.Resolve<IMapper>());
             dependencies.Serializer.Returns(c => new NlmSerializer());
 
-            _exportService = new NlmExportService(dependencies);
+            _exportService = new NlmExportService(dependencies, mockLogger);
         }
 
         [TearDown]
@@ -61,7 +63,7 @@ namespace Informa.Tests.Library.Services.NlmExport
         {
             var article = new ArticleItem();
 
-            var stream = _exportService.ExportNlm(article);
+            var stream = _exportService.GenerateNlm(article);
 
             Assert.AreEqual(0, stream.Position);
             Assert.IsTrue(ValidateXml(stream));
