@@ -157,7 +157,7 @@ $(document).ready(function() {
 	userRegistrationController.watchForm('.form-registration');
 
 	userRegistrationController.watchForm('.form-registration-optins');
-	
+
 	userRegistrationController.watchForm(
 		'.form-pre-registration',
 		function(form) {
@@ -180,6 +180,9 @@ $(document).ready(function() {
 
     svg4everybody();
 
+	var getHeaderEdge = function() {
+		return $('.header__wrapper').offset().top + $('.header__wrapper').height();
+	};
 
 	/* Toggle menu visibility */
 	$('.js-toggle-menu').on('click', function toggleMenu() {
@@ -187,7 +190,7 @@ $(document).ready(function() {
 			$('.main-menu').removeClass('is-active');
 			$('.menu-toggler').removeClass('is-active');
 			$('body').removeClass('is-frozen');
-			if($(window).scrollTop() <= 100) {
+			if($(window).scrollTop() <= getHeaderEdge()) {
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 			}
 		} else {
@@ -200,7 +203,7 @@ $(document).ready(function() {
 
 	/* Attach / detach sticky menu */
 	$(window).on('scroll', function windowScrolled() {
-		if ($(this).scrollTop() > 100 || $('.main-menu').hasClass('is-active')) {
+		if ($(this).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
 			$('.header__wrapper .menu-toggler').addClass('is-sticky');
 		} else {
 			$('.header__wrapper .menu-toggler').removeClass('is-sticky');
