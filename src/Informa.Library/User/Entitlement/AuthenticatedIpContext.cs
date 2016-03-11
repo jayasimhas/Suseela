@@ -24,17 +24,17 @@ namespace Informa.Library.User.Entitlement
         {
             get
             {
-                var entitlements = UserSession.Get<IList<IEntitlement>>(EntitlementSessionKey);
-                if (entitlements != null && entitlements.Any())
-                    return entitlements;
+                var entitlements = UserSession.Get<IList<IEntitlement>>(EntitlementSessionKey) ?? new List<IEntitlement>();
 
                 //Entitlements = GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress.ToString());
 
                 if (entitlements.Any())
                     return entitlements;
 
-                return new List<IEntitlement> {new Entitlement {ProductCode = "NONE"}};
+                entitlements.Add(new Entitlement { ProductCode = "NONE" });
+                Entitlements = entitlements;
 
+                return entitlements;
             }
             set { UserSession.Set($"{EntitlementSessionKey}{UserIpAddressContext.IpAddress}", value); }
         }
