@@ -24,14 +24,19 @@ $('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
 
 /* Toggle header search box (tablets/smartphones) */
 $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
-	$('.header-search__wrapper').toggleClass('is-active').focus();
+	if($(window).width() <= 800) {
+		$('.header-search__wrapper').toggleClass('is-active').focus();
+	} else {
+		$(e.target).closest('form').submit();
+	}
+	e.preventDefault();
+	return false;
 });
 
 /* Generic banner dismiss */
 $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 	var thisBanner = $(e.srcElement).parents('.banner');
 	thisBanner.removeClass('is-visible');
-	console.log(thisBanner);
 
 	var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
 	dismissedBanners[thisBanner.data('banner-id')] = true;
