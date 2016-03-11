@@ -7,7 +7,7 @@ namespace Informa.Library.Services.NlmExport.Models.Front.Article
     [Serializable]
     public class NlmArticleWordCountModel
     {
-        [XmlAttribute("counts")]
+        [XmlAttribute("count")]
         public string Count { get; set; }
     }
 }

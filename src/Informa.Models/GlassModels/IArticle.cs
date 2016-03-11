@@ -23,6 +23,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	public partial interface IArticle : IPublicationChild, IEntitledProductItem
 	{
 		bool IsPublished { get; set; }
+        bool IsFree { get; }
 	}
 
     public class ArticleMap : SitecoreGlassMap<IPublicationChild>
@@ -120,6 +121,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 		public string Notification_Text { get; set; }
         public string Leaderboard_Slot_ID { get; set; }
+
+        [SitecoreField("__updated")]
+        public virtual DateTime Updated { get; set; }
     }
 
 	public interface IPublicationChild

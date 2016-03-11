@@ -30,6 +30,9 @@ namespace Informa.Library.Utilities.AutoMapper.Profiles.Nlm
                 .ForMember(m => m.History, opt => opt.ResolveUsing<ArticleHistoryResolver>())
                 .ForMember(m => m.Permissions, opt => opt.ResolveUsing<ArticlePermissionsResolver>())
                 .ForMember(m => m.RelatedArticles, opt => opt.ResolveUsing<ArticleRelatedArticlesResolver>())
+                .ForMember(m => m.Abstracts, opt => opt.ResolveUsing<ArticleAbstractsResolver>())
+                .ForMember(m => m.Counts, opt => opt.ResolveUsing<ArticleCountsResolver>())
+                .ForMember(m => m.CustomMetaGroup, opt => opt.ResolveUsing<ArticleCustomMetaResolver>())
                 ;
 
             // Journal Meta

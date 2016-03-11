@@ -4,6 +4,7 @@ namespace Informa.Library.User.Profile
 {
 	public interface IUpdateNewsletterUserOptIn
 	{
-		bool Update(IUser user, IEnumerable<INewsletterUserOptIn> newsletterOptIns);
+		bool Update(IEnumerable<INewsletterUserOptIn> newsletterOptIns,string userName);
+		bool IsUserSignedUp(string userName);
 	}
 }

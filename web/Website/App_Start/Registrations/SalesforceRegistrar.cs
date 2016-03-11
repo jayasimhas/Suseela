@@ -1,6 +1,8 @@
 ﻿using Autofac;
 using Informa.Library.Salesforce;
+using Informa.Library.Salesforce.Company;
 using Informa.Library.Salesforce.User;
+using Informa.Library.Salesforce.User.Entitlement;
 using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.Salesforce.User.Registration;
 
@@ -21,6 +23,10 @@ namespace Informa.Web.App_Start.Registrations
 			builder.RegisterType<SalesforceRegisterUser>().As<ISalesforceRegisterUser>();
 		    builder.RegisterType<SalesforceGetUserEntitlements>().As<ISalesforceGetUserEntitlements>();
             builder.RegisterType<SalesforceGetIPEntitlements>().As<ISalesforceGetIPEntitlements>();
+			builder.RegisterType<SalesforceSiteTypeParser>()
+				.As<ISalesforceCompanyTypeFromSiteType>()
+				.As<ISalesforceSiteTypeFromCompanyType>();
+			
         }
 	}
 }

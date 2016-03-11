@@ -1,27 +1,15 @@
-﻿using System.Collections;
+﻿using Informa.Library.Actions;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Informa.Library.User.Registration.Web
 {
-	public class WebRegisterUserActions : IWebRegisterUserActions
+	public class WebRegisterUserActions : ActionsProcessor<IWebRegisterUserAction, INewUser>, IWebRegisterUserActions
 	{
-		protected readonly IEnumerable<IWebRegisterUserAction> Actions;
-
 		public WebRegisterUserActions(
 			IEnumerable<IWebRegisterUserAction> actions)
+			: base(actions)
 		{
-			Actions = actions;
-		}
-
-		public IEnumerator<IWebRegisterUserAction> GetEnumerator()
-		{
-			return Actions == null ? Enumerable.Empty<IWebRegisterUserAction>().GetEnumerator() : Actions.GetEnumerator();
-		}
-
-		IEnumerator IEnumerable.GetEnumerator()
-		{
-			return GetEnumerator();
+			
 		}
 	}
 }
