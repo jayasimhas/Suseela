@@ -1,56 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using Informa.Library.Newsletter;
 using Informa.Library.Site.Newsletter;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
-using Informa.Library.User.Registration;
-using Informa.Library.User.Registration.Web;
-using Informa.Library.Utilities.WebApi.Filters;
 using Informa.Web.Areas.Account.Models.User.Management;
-using Informa.Web.Areas.Account.Models.User.Registration;
+
 
 namespace Informa.Web.Areas.Account.Controllers
 {
-    public class PreferencesApiController : ApiController
-    {
-        protected readonly IAuthenticatedUserContext UserContext;
-        protected readonly IUpdateNewsletterUserOptIn NewsletterOptIn;
-        protected readonly INewsletterUserOptInFactory NewsletterUserOptInFactory;
-        protected readonly ISiteNewsletterTypesContext NewsletterTypesContext;
-        protected readonly IUpdateOfferUserOptIn OffersOptIn;
+	public class PreferencesApiController : ApiController
+	{
+		protected readonly IAuthenticatedUserContext UserContext;
+		protected readonly IUpdateNewsletterUserOptIn NewsletterOptIn;
+		protected readonly INewsletterUserOptInFactory NewsletterUserOptInFactory;
+		protected readonly ISiteNewsletterTypesContext NewsletterTypesContext;
+		protected readonly IUpdateOfferUserOptIn OffersOptIn;
 
-        public PreferencesApiController(
-            IAuthenticatedUserContext userContext,
-            IUpdateNewsletterUserOptIn newsletterOptIn,
-            INewsletterUserOptInFactory newsletterUserOptInFactory,
-            ISiteNewsletterTypesContext newsletterTypesContext,
-            IUpdateOfferUserOptIn offersOptIn)
-        {
-            UserContext = userContext;
-            NewsletterOptIn = newsletterOptIn;
-            NewsletterUserOptInFactory = newsletterUserOptInFactory;
-            NewsletterTypesContext = newsletterTypesContext;
-            OffersOptIn = offersOptIn;
-        }
+		public PreferencesApiController(
+			IAuthenticatedUserContext userContext,
+			IUpdateNewsletterUserOptIn newsletterOptIn,
+			INewsletterUserOptInFactory newsletterUserOptInFactory,
+			ISiteNewsletterTypesContext newsletterTypesContext,
+			IUpdateOfferUserOptIn offersOptIn)
+		{
+			UserContext = userContext;
+			NewsletterOptIn = newsletterOptIn;
+			NewsletterUserOptInFactory = newsletterUserOptInFactory;
+			NewsletterTypesContext = newsletterTypesContext;
+			OffersOptIn = offersOptIn;
+		}
 
-        [HttpPost]
-        public IHttpActionResult Update(PreferencesRequest request)
-        {
+		[HttpPost]
+		public IHttpActionResult Update(PreferencesRequest request)
+		{
+			var userNewsletterOptIns = new List<INewsletterUserOptIn>() { NewsletterUserOptInFactory.Create(NewsletterType.Scrip, request.NewsletterOptIn) };
+			var nResp = NewsletterOptIn.Update(userNewsletterOptIns, request.UserName);
+			var oResp = OffersOptIn.Update(UserContext.User, !request.DoNotSendOffersOptIn);
 
-            var userNewsletterOptIns = new List<INewsletterUserOptIn>() { NewsletterUserOptInFactory.Create(NewsletterType.Scrip, request.NewsletterOptIn) };
-            var nResp = NewsletterOptIn.Update(UserContext.User, userNewsletterOptIns);
-            var oResp = OffersOptIn.Update(UserContext.User, !request.DoNotSendOffersOptIn);
-            
-            var success = nResp && oResp;
+			var success = nResp && oResp;
 
-            return Ok(new
-            {
-                success = success
-            });
-        }
-    }
+			return Ok(new
+			{
+				success = success
+			});
+		}
+
+		[HttpGet]
+		public bool IsUserSignedUp()
+		{
+			var user = UserContext.User;
+			if (UserContext.IsAuthenticated)
+			{
+				return NewsletterOptIn.IsUserSignedUp(UserContext.User.Username);
+			}
+			return false;
+		}
+	}
 }

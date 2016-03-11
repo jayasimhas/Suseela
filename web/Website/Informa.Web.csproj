@@ -730,7 +730,7 @@
       <DependentUpon>TypeAhead.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-	<Compile Include="Util\DCD\DcdImportReport.aspx.cs">
+    <Compile Include="Util\DCD\DcdImportReport.aspx.cs">
       <DependentUpon>DcdImportReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -875,6 +875,7 @@
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="js\form-controller.js" />
+    <Content Include="js\newsletter-signup.js" />
     <Content Include="js\openadstream.js" />
     <Content Include="js\register-controller.js" />
     <Content Include="js\reset-password-controller.js" />
@@ -977,7 +978,7 @@
     <Content Include="tasks\svg-sprite.js" />
     <Content Include="tasks\utils.js" />
     <Content Include="velir\services\TypeAhead.asmx" />
-	<Content Include="Util\DCD\DcdImportReport.aspx" />
+    <Content Include="Util\DCD\DcdImportReport.aspx" />
     <Content Include="Util\DCD\ViewDCDXML.aspx" />
     <Content Include="VWB\default.aspx" />
     <Content Include="VWB\login.aspx" />
