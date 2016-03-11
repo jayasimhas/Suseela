@@ -7,9 +7,7 @@
 		   	value="@Model.Token">
 	@if (Model.IsValidToken)
 	{
-
-		<h4 class="page-account__subheader">Dear #first_name# #last_name#,</h4>
-		<p class="page-account__introduction">@Model.ResetBody</p>
+		<div class="page-account__introduction">@Model.ResetBody</div>
 		<hr>
 		<form data-on-submit="/Account/api/ResetPasswordApi/Change/">
 			<div class="page-account__field-wrapper">
