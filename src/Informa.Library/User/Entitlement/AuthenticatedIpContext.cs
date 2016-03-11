@@ -11,7 +11,7 @@ namespace Informa.Library.User.Entitlement
         private readonly IUserIpAddressContext UserIpAddressContext;
         private readonly IUserSession UserSession;
         //private readonly IGetIPEntitlements GetIpEntitlements;
-        public AuthenticatedIpContext(IUserIpAddressContext userIpAddressContext, IUserSession userSession, IGetIPEntitlements getIpEntitlements)
+        public AuthenticatedIpContext(IUserIpAddressContext userIpAddressContext, IUserSession userSession)//, IGetIPEntitlements getIpEntitlements)
         {
             UserIpAddressContext = userIpAddressContext;
             UserSession = userSession;
