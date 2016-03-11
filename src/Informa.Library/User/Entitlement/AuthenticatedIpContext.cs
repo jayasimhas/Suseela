@@ -25,7 +25,7 @@ namespace Informa.Library.User.Entitlement
             get
             {
                 var entitlements = UserSession.Get<IList<IEntitlement>>(EntitlementSessionKey);
-                if (entitlements.Any())
+                if (entitlements != null && entitlements.Any())
                     return entitlements;
 
                 //Entitlements = GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress.ToString());
