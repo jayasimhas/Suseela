@@ -1,26 +1,24 @@
-
-
 .informa-ribbon {
     @include textMix('Roboto', 14px, 400);
-	width:100%;
-	color:#fff;
-	height:35px;
-	font-size:13px;
-	line-height:18px;
+	width: 100%;
+	color: #fff;
+	height: 35px;
+	font-size: 0.8125rem;
+	line-height: 1.125rem;
 
     a {
-        color:#fff;
+        color: #fff;
     }
 
     &__title {
-    	height:16px;
-    	width:92px;
-    	background:url('/dist/img/iribbon-logo.gif') no-repeat top center;
-    	font-size:0em;
-    	color:#525a5c;
-    	margin:10px auto;
-    	clear:both;
-    	cursor:pointer;
+    	height: 16px;
+    	width: 92px;
+    	background: url('/dist/img/iribbon-logo.gif') no-repeat top center;
+    	font-size: 0em;
+    	color: #525A5C;
+    	margin: 10px auto;
+    	clear: both;
+    	cursor: pointer;
     }
 
     &__wrapper {
@@ -28,10 +26,15 @@
     	border-bottom:1px solid #A5ACAF;
         position: absolute;
         width: 100%;
+        padding: 0 2rem;
+        z-index: 9999;
+
+        @include breakpoint('small') {
+            padding: 0 1rem;
+        }
     }
 
     &__detail {
-    	/*display:none;*/
     	overflow: hidden;
         max-height: 0;
         max-width: 1180px;
@@ -39,22 +42,43 @@
         margin: 0 auto;
     	transition: max-height ease-in-out 500ms;
         display: flex;
+
+        @include breakpoint('small') {
+            flex-direction: column;
+        }
     }
 
     &__right,
     &__left{
-    	max-width:570px;
-    	width:47%;
     	float:left;
     	margin:40px 0;
+    	max-width:570px;
+    	width:47%;
         flex: 1 1 auto;
+        line-height: 1.5rem;
+        padding-right: 2rem;
+
+        @include breakpoint('small') {
+            margin: 0;
+            padding: 0;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            width: 100%;
+        }
     }
 
 
-    &__right{
-    	float:right;
-    	border-left:1px solid #A5ACAF;
-    	padding-left:2%;
+    &__right {
+    	border-left: 1px solid #A5ACAF;
+        padding-right: 0;
+        padding-left: 2rem;
+
+        @include breakpoint('small') {
+            border-left: 0;
+            border-top: 1px solid #A5ACAF;
+            padding-left: 0;
+        }
     }
 
     &__detail p:last-child{
