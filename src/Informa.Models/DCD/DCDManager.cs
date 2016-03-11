@@ -1,14 +1,20 @@
-﻿using Informa.Models.DCD;
-using System;
+﻿using System;
+using Informa.Models.DCD;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Informa.Model.DCD
 {
     public class DCDManager
     {
+        public Drug GetDrugByRecordNumber(string recordNumber)
+        {
+            using (var context = new DCDContext())
+            {
+                return context.Drugs.FirstOrDefault(drug => drug.RecordNumber == recordNumber);
+            }
+        }
+
         public Deal GetDealByRecordNumber(string recordNumber)
         {
             Deal dbDeal = null;
@@ -85,7 +91,6 @@ namespace Informa.Model.DCD
 
             return lstRelatedComp;
         }
-
         public ImportLog GetImportLogById(int id)
         {
             ImportLog log = null;

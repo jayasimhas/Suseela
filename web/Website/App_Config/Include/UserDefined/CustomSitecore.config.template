@@ -195,7 +195,10 @@ But you can also use "patch:attribute" for clarity:
       <setting name="GlassInterfaceFactory.DebuggingEnabled" value="true" />
 
       <setting name="WebEdit.ShowNumberOfLockedItemsOnButton" value="false" />
+      
       <setting name="DCD.OldDealsURL" value="https://www.pharmamedtechbi.com/d/{0}" />
+      
+      <setting name="NLM.ExportPath" value="${NLM.ExportPath}" />
     </settings>
   </sitecore>
 </configuration>

@@ -35,10 +35,14 @@ and running. There are additional default properties from dev.properties that yo
   <property name="connstr.scheduledpublishing" value="mongodb://localhost/Informa_scheduled_publishing" />
   <property name="connstr.dcd" value="user id=sitecore;password=password;Data Source=localhost\SQLEXPRESS;Database=Sitecore_Companies" />
 		
+		
 	<!-- Web.config settings -->
 	<property name="data.folder" value="${project.folder}\web\Data" />
 	<property name="compilation.OptimizeCompilations" value="true" />
-		
+	
+	<!-- NLM Export Settings -->
+	<property name="NLM.ExportPath" value="${data.folder}\NLM" />
+	
 	<!-- TDS Settings -->
 	<property name="TDS.SitecoreDeployFolder" value="d:\Informa\web\Website" />
   	<property name="TDS.SitecoreWebUrl" value="http://${project.domain}" />
@@ -73,9 +77,17 @@ and running. There are additional default properties from dev.properties that yo
 	<property name="installpath" value="http://informa8.ashah.velir.com/wordinstaller/" />
 	<property name="updatepath" value="http://informa8.ashah.velir.com/wordinstaller/" />
 	
+	<!-- CRM Manager -->
+	<property name="CRMManager.SalesforceUrl" value="https://test.salesforce.com/services/Soap/c/22.0/0DFR0000000CeVX" />
+	<property name="CRMManager.EbiUrl" value="https://cs51.salesforce.com/services/Soap/class/EBI_WebServices" />
+	<property name="CRMManager.SalesforceUserName" value="apiuserweb@elsevier.com.datareload" />
+	<property name="CRMManager.SalesforcePassword" value="ebI3Zuser!" />
+	<property name="CRMManager.SalesforceToken" value="IuVQbQcTweaxDM6dDu9Q2xEBy" />
+	<property name="CRMManager.SalesforceTimeout" value="1000" />
+	
 	<!-- DCD Modules Related Configuration-->
 	<property name="DCD.ImportFolder" value="C:\Projects\Velir\DCDXML"/>
-    <!-- Folder where DCD XML importing files will be located -->    
-    <property name="DCD.EnableWatcher" value="true"/>
-    <!--Whether to enable DCD XML files changes watching in the DCD.ImportFolder folder-->
+    	<!-- Folder where DCD XML importing files will be located -->    
+    	<property name="DCD.EnableWatcher" value="true"/>
+    	<!--Whether to enable DCD XML files changes watching in the DCD.ImportFolder folder-->
 </project>
