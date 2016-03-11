@@ -529,6 +529,7 @@
     <Compile Include="User\Entitlement\EntitlementContext.cs" />
     <Compile Include="User\Entitlement\IAuthenticatedIPContext.cs" />
     <Compile Include="User\Entitlement\IEntitledProductContext.cs" />
+    <Compile Include="User\Entitlement\IEntitledVisit.cs" />
     <Compile Include="User\Entitlement\IEntitlement.cs" />
     <Compile Include="User\Entitlement\IEntitlementContext.cs" />
     <Compile Include="User\Entitlement\IGetIPEntitlements.cs" />

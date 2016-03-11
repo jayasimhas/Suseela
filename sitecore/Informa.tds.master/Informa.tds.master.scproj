@@ -784,6 +784,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\Search\Refinements\zInProgress.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\Search\Refinements\zMedia Type.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -791,6 +792,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\Search\Refinements\zPlanned Publish Date.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\Search\Refinements\zRegion.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -859,6 +861,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\Search\Sorts\Planned Publish Date.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\Search\Sorts\Updated Date.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>

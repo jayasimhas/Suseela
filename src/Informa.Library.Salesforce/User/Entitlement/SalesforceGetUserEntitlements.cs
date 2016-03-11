@@ -3,7 +3,7 @@ using System.Linq;
 using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.User.Entitlement;
 
-namespace Informa.Library.Salesforce.User
+namespace Informa.Library.Salesforce.User.Entitlement
 {
     public class SalesforceGetUserEntitlements : ISalesforceGetUserEntitlements, IGetUserEntitlements
     {
@@ -23,8 +23,8 @@ namespace Informa.Library.Salesforce.User
                 return new List<IEntitlement>();
             }
             return new List<IEntitlement>(
-                response.entitlements?.Select(x => new Entitlement {ProductCode = x.ProductCode}) ??
-                new List<Entitlement>());
+                response.entitlements?.Select(x => new Library.User.Entitlement.Entitlement {ProductCode = x.ProductCode}) ??
+                new List<Library.User.Entitlement.Entitlement>());
         }
     }
 }
