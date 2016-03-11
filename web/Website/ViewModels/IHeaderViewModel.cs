@@ -7,10 +7,15 @@
 
 		// Account/Sign In/Registration
 		string WelcomeText { get; }
-		bool IsAuthenticated { get; }
+        string PolicyText { get; }
+        bool IsAuthenticated { get; }
 		string MyAccountLinkText { get; }
-		string SignOutLinkText { get; }
+        string MyAccountLink { get; }
+        string SignOutLinkText { get; }
 		string RegisterLinkText { get; }
 		string SignInLinkText { get; }
-	}
+        string AdvertisementText { get; }
+        string LeaderboardSlotID { get; }
+        string LeaderboardAdZone { get; }
+    }
 }

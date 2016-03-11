@@ -167,12 +167,10 @@ namespace Informa.Web.Controllers
 			//Set up the options for creating the new media library options
 			MediaCreatorOptions mediaCreatorOptions;
 			Database masterDb = _sitecoreMasterService.Database;
-			// SitecoreDatabases.AuthoringDatabase;
 			try
 			{
 				//Create the full media library item path including the path and the media item name
-				//TODO: Validate media item name
-				//itemName = ItemNameUtil.GetValidItemName(itemName);
+				//itemName = Sitecore.Data.Items.ItemUtil.ProposeValidItemName(itemName);
 				itemName = Regex.Replace(itemName, @"<(.|\n)*?>", string.Empty).Trim();
 				string fullMediaPath = mediaLibraryPath + @"/" + itemName;
 				mediaCreatorOptions = new MediaCreatorOptions
@@ -189,7 +187,5 @@ namespace Informa.Web.Controllers
 
 			return mediaCreatorOptions;
 		}
-
-
 	}
 }

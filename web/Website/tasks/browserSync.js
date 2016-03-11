@@ -15,6 +15,7 @@ var settings = {
     files: [
         config.root + '/html_templates/**',
         config.root + '/Views',
+        config.root + '/Areas',
         config.dest + '/**'
     ]
 

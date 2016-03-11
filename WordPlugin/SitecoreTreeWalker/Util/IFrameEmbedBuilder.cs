@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using HtmlAgilityPack;
+using InformaSitecoreWord.Util.Document;
 using PluginModels;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls;
-using SitecoreTreeWalker.Util.Document;
+using InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
 	public class IFrameEmbedBuilder
 	{
@@ -63,7 +63,6 @@ namespace SitecoreTreeWalker.Util
 
 		private static XElement HtmlNodeToXElement(HtmlNode root)
 		{
-			//TODO Load xml from output as xml option
 			if (root != null)
 			{
 				if (!IsAllowed(root)) return null;

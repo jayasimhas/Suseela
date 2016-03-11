@@ -16,8 +16,12 @@ using Sitecore.SecurityModel;
 using Sitecore.Workflows;
 using static System.String;
 using File = System.IO.File;
-using Informa.Library.Utilities.References;
 using PluginModels;
+using Informa.Models.DCD;
+using Sitecore;
+using Sitecore.Mvc.Extensions;
+using Sitecore.Shell.Applications.WebEdit.Commands;
+using Constants = Informa.Library.Utilities.References.Constants;
 
 namespace Informa.Web.Controllers
 {
@@ -28,15 +32,15 @@ namespace Informa.Web.Controllers
 		protected string TempFileLocation;
 		private readonly ArticleUtil _articleUtil;
 		private readonly IArticleSearch _articleSearcher;
-
-
-		public SitecoreSaverUtil(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil, IArticleSearch searcher)
+		private readonly EmailUtil _emailUtil;
+		public SitecoreSaverUtil(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil, IArticleSearch searcher, EmailUtil emailUtil)
 		{
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			TempFileLocation = IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)) ?
 				TempFolderFallover : Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\temp.";
 			_articleUtil = articleUtil;
 			_articleSearcher = searcher;
+			_emailUtil = emailUtil;
 
 		}
 
@@ -56,32 +60,25 @@ namespace Informa.Web.Controllers
 
 		public void SaveArticleDetails(Guid articleGuid, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
-			using (new SecurityDisabler())
+			//TODO:  Add Roles
+			ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
+			if (article == null)
 			{
-				ArticleItem article = _sitecoreMasterService.GetItem<ArticleItem>(articleGuid);
-				if (article == null)
-				{
-					throw new ApplicationException("Could not find article with Guid " + articleGuid);
-				}
-
-				SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion, false);
+				throw new ApplicationException("Could not find article with Guid " + articleGuid);
 			}
-			Sitecore.Security.Authentication.AuthenticationManager.Logout();
+			SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion, false);
 		}
 
 		public void SaveArticleDetails(string articleNumber, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
 		{
-			using (new SecurityDisabler())
-			{
-				ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
-				if (article == null)
-				{
-					throw new ApplicationException("Could not find article for number [" + articleNumber + "]");
-				}
 
-				SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion);
+			ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
+			if (article == null)
+			{
+				throw new ApplicationException("Could not find article for number [" + articleNumber + "]");
 			}
-			Sitecore.Security.Authentication.AuthenticationManager.Logout();
+
+			SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion);
 		}
 
 		/// <summary>
@@ -107,102 +104,96 @@ namespace Informa.Web.Controllers
 			bool loggedIn = false;
 			if (!IsNullOrEmpty(userID))
 			{
-				loggedIn = Sitecore.Security.Authentication.AuthenticationManager.Login(userID);
+				loggedIn = Sitecore.Context.User.IsAuthenticated;
 			}
 
 			var newVersion = article;
-
-			//TODO - Add version adn workflow informatiomn
-			//try
-			//{							Item updatedVersion;
-			// var info = new WorkflowInfo(Guid.Empty.ToString(), Guid.Empty.ToString());
-			//if (addVersion)
-			//{
-			//	using (new EditContext(articleItem))
-			//	{
-			//		ItemState itemState = articleItem.State;
-			//		if (itemState != null)
-			//		{
-			//			WorkflowState workflowState = itemState.GetWorkflowState();
-			//			if (workflowState != null)
-			//			{
-			//				IWorkflow workflow = itemState.GetWorkflow();
-
-			//				string state = workflowState.StateID;
-			//				if (workflow != null && state != null)
-			//				{
-			//					info = new WorkflowInfo(workflow.WorkflowID, state);
-			//					// remove the old version from workflow and prevent from being published
-			//					// Note: to remove an item from workflow requires using the fields, rather than the SetWorkflowInfo
-			//					//  method, because the SetWorkflowInfo method does not allow empty strings 
-			//					articleItem.Fields[Sitecore.FieldIDs.WorkflowState].Value = null;
-			//					articleItem.Fields[Sitecore.FieldIDs.HideVersion].Value = "1";
-			//				}
-			//			}
-			//		}
-			//		//newVersion = article.InnerItem.Versions.AddVersion();
-			//		updatedVersion = articleItem.Versions.AddVersion();
-			//		newVersion = _sitecoreMasterService.GetItem<ArticleItem>(updatedVersion.ID.ToString());
-			//	}
-			//}
-			//else
-			//{
-			//	newVersion = article;
-			//}
-			//newVersion = article;
-			//}
-			//catch (Exception ex)
-			//{
-			//	var ax = new ApplicationException("Workflow: Error with versioning/workflow while saving article [" + article.Article_Number + "]!", ex);
-			//	throw ax;
-			//}
+			var info = new WorkflowInfo(Guid.Empty.ToString(), Guid.Empty.ToString());
 
 			try
 			{
-				SaveArticleFields(newVersion, article, articleStruct, saveDocumentSpecificData);
-				if (saveDocumentSpecificData)
+				Item updatedVersion;
+
+				if (addVersion)
 				{
-					RenameArticleItem(newVersion, articleStruct);
-				}
-				//TODO - Workflow Updates
-				/*
-				if (info.StateID != Guid.Empty.ToString() && info.WorkflowID != Guid.Empty.ToString())
-				{
-					// Doing this twice is intentional: when we do it once, the workflow field gets set to the empty string.
-					//  I don't know why, but it does. Doing this twice sets it properly. Doing it not at all causes the 
-					//  workflow field to be set to the empty string when leaving the edit context.
-					newVersion.Database.DataManager.SetWorkflowInfo(newVersion, info);
-					newVersion.Database.DataManager.SetWorkflowInfo(newVersion, info);
-				}
-				
-				
-				//an editcontext just for workflow
-				using (new SecurityDisabler())
-				{
-					using (new EditContext(newVersion))
+					using (new EditContext(articleItem))
 					{
+						ItemState itemState = articleItem.State;
+						if (itemState != null)
+						{
+							WorkflowState workflowState = itemState.GetWorkflowState();
+							if (workflowState != null)
+							{
+								IWorkflow workflow = itemState.GetWorkflow();
+
+								string state = workflowState.StateID;
+								if (workflow != null && state != null)
+								{
+									info = new WorkflowInfo(workflow.WorkflowID, state);
+									//					// remove the old version from workflow and prevent from being published
+									//					// Note: to remove an item from workflow requires using the fields, rather than the SetWorkflowInfo
+									//					//  method, because the SetWorkflowInfo method does not allow empty strings 
+									articleItem.Fields[Sitecore.FieldIDs.WorkflowState].Value = null;
+									articleItem.Fields[Sitecore.FieldIDs.HideVersion].Value = "1";
+								}
+							}
+						}
+						//newVersion = article.InnerItem.Versions.AddVersion();
+						updatedVersion = articleItem.Versions.AddVersion();
+						newVersion = _sitecoreMasterService.GetItem<ArticleItem>(updatedVersion.ID.ToString());
+					}
+				}
+				else
+				{
+					newVersion = article;
+				}
+
+			}
+			catch (Exception ex)
+			{
+				var ax = new ApplicationException("Workflow: Error with versioning/workflow while saving article [" + article.Article_Number + "]!", ex);
+				throw ax;
+			}
+
+			try
+			{
+				var newVersionItem = _sitecoreMasterService.GetItem<Item>(newVersion._Id);
+				using (new EditContext(newVersionItem))
+				{
+
+					SaveArticleFields(newVersion, article, articleStruct, saveDocumentSpecificData);
+					if (saveDocumentSpecificData)
+					{
+						RenameArticleItem(newVersion, articleStruct);
+					}
+
+
+					if (info.StateID != Guid.Empty.ToString() && info.WorkflowID != Guid.Empty.ToString())
+					{
+						// Doing this twice is intentional: when we do it once, the workflow field gets set to the empty string.
+						//  I don't know why, but it does. Doing this twice sets it properly. Doing it not at all causes the 
+						//  workflow field to be set to the empty string when leaving the edit context.
+
+						newVersionItem.Database.DataManager.SetWorkflowInfo(newVersionItem, info);
+						newVersionItem.Database.DataManager.SetWorkflowInfo(newVersionItem, info);
+
 						if (articleStruct.CommandID != Guid.Empty)
 						{
-							newVersion.NotificationTransientField.ShouldSend.Checked = true;
-							_workflowController.ExecuteCommandAndGetWorkflowState(newVersion.InnerItem, articleStruct.CommandID.ToString());
+							//newVersion.NotificationTransientField.ShouldSend.Checked = true;
+							_articleUtil.ExecuteCommandAndGetWorkflowState(newVersionItem, articleStruct.CommandID.ToString());
 
-							//TODO: explain thyself, heathen
-							// I'm guessing we only should send notifications if the flag is set? Not sure why the need to explain this.
 							if (shouldNotify)
 							{
-								_notificationsManager.SendArticleSpecificNotifications(newVersion, articleStruct);
+								_emailUtil.SendNotification(articleStruct, info);
 
 							}
 						}
 					}
 				}
-				*/
-				using (new SecurityDisabler())
+
+				if (loggedIn)
 				{
-					if (loggedIn)
-					{
-						_sitecoreMasterService.GetItem<Item>(newVersion._Id).Locking.Lock();
-					}
+					_sitecoreMasterService.GetItem<Item>(newVersion._Id).Locking.Lock();
 				}
 			}
 
@@ -210,6 +201,36 @@ namespace Informa.Web.Controllers
 			{
 				var ax = new ApplicationException("Workflow: Error with saving details while saving article [" + article.Article_Number + "]!", ex);
 				throw ax;
+			}
+
+			//  Notifying the Editors when stories are edited after pushlished 
+			if (articleStruct.IsPublished)
+			{
+				// Setting the workflow to "Edit After Publish".
+				try
+				{
+					var newVersionItem = _sitecoreMasterService.GetItem<Item>(newVersion._Id);
+					newVersionItem.Locking.Unlock();
+					using (new EditContext(newVersionItem))
+					{
+						newVersionItem[FieldIDs.WorkflowState] = Constants.EditAfterPublishWorkflowCommand;
+					}
+
+					if (loggedIn)
+					{
+						_sitecoreMasterService.GetItem<Item>(newVersion._Id).Locking.Lock();
+					}
+				}
+				catch (Exception ex)
+				{
+					var ax =
+						new ApplicationException(
+							"Workflow: Error with changing the workflow to Edit After Publish [" + article.Article_Number + "]!", ex);
+					throw ax;
+				}
+
+
+				_emailUtil.EditAfterPublishSendNotification(articleStruct);
 			}
 			return newVersion;
 		}
@@ -241,15 +262,20 @@ namespace Informa.Web.Controllers
 				newArticle.Media_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.MediaType);
 				newArticle.Authors = articleStruct.Authors.Select(x => _sitecoreMasterService.GetItem<IAuthor>(x.ID));
 				newArticle.Editorial_Notes = articleStruct.NotesToEditorial;
-
-				newArticle.Referenced_Articles = articleStruct.RelatedInlineArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
-				newArticle.Related_Articles = articleStruct.RelatedArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
+				if (articleStruct.RelatedInlineArticles != null && articleStruct.RelatedInlineArticles.Any())
+				{
+					newArticle.Referenced_Articles =
+						articleStruct.RelatedInlineArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
+				}
+				if (articleStruct.RelatedArticles != null && articleStruct.RelatedArticles.Any())
+				{
+					newArticle.Related_Articles = articleStruct.RelatedArticles.Select(x => _sitecoreMasterService.GetItem<IArticle>(x));
+				}
 
 				newArticle.Featured_Image_16_9 = new Image { MediaId = articleStruct.FeaturedImage };
 				newArticle.Featured_Image_Caption = articleStruct.FeaturedImageCaption;
 				newArticle.Featured_Image_Source = articleStruct.FeaturedImageSource;
-
-				//TODO - Add Taxonomy items
+				newArticle.Notification_Text = articleStruct.NotificationText;
 
 				var taxonomyItems = new List<ITaxonomy_Item>();
 				if (articleStruct.Taxonomoy.Any())
@@ -257,8 +283,8 @@ namespace Informa.Web.Controllers
 					taxonomyItems.AddRange(articleStruct.Taxonomoy
 						.Select(eachTaxonomy => _sitecoreMasterService.GetItem<ITaxonomy_Item>(eachTaxonomy.ID))
 						.Where(taxItem => taxItem != null));
-                    newArticle.Taxonomies = taxonomyItems;
-                }
+					newArticle.Taxonomies = taxonomyItems;
+				}
 
 				if (saveDocumentSpecificData)
 				{
@@ -314,6 +340,7 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="article"></param>
 		/// <param name="articleText"></param>
+		/// <param name="articleStruct"></param>
 		public void SaveArticleDetailsAndText(ArticleItem article, string articleText, ArticleStruct articleStruct)
 		{
 			using (new SecurityDisabler())
@@ -325,12 +352,11 @@ namespace Informa.Web.Controllers
 				{
 					article.Body = parsedText;
 				}
-				//TODO - Replace the body text company names with company look ups and company references.
-				/*
+
 				string companyIdsCsv;
-					article.Body = _companyFinder.ReplaceStrongCompanyNamesWithToken(articleText, out companyIdsCsv);
-					article.Referenced_Companies = companyIdsCsv;					
-				*/
+				article.Body = CompanyTokenizer.ReplaceStrongCompanyNamesWithToken(articleText, out companyIdsCsv);
+				article.Referenced_Companies = companyIdsCsv;
+
 				_sitecoreMasterService.Save(article);
 			}
 		}

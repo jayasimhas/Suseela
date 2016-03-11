@@ -4,34 +4,58 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
-using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.Util.Document;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
+using InformaSitecoreWord.User;
+using InformaSitecoreWord.Util;
+using InformaSitecoreWord.Util.Document;
 using ArticleStruct = PluginModels.ArticleStruct;
 using StaffStruct = PluginModels.StaffStruct;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	/// <summary>
 	/// Primary control for the Article Information tab
 	/// </summary>
 	public partial class ArticleInformationControl : ArticleDetailsPageUserControl
 	{
-		private const string RemoteTimezoneId = "Eastern Standard Time";
+		private readonly string RemoteTimezoneId = "Greenwich Standard Time";
 
 		private ArticleDetail _parent;
 		protected DocumentCustomProperties _documentCustomProperties;
 
 		private string ArticleNumber;
 
-		protected bool _isLive;
+		public bool _isLive;
 
 		public ArticleInformationControl()
 		{
 			InitializeComponent();
+
+			try
+			{//TamerM- 2015-02-24: Instead of using the hard coded 'Easter Standard Time', now it reads from the app.config appSettings section and defaults to GMT if any error occurs
+
+				var remoteTimezoneIDFromAppSettings = InformaSitecoreWord.Config.ApplicationConfig.GetPropertyValue("RemoteTimezoneToConvertTo");
+
+				//If not appSettings key for RemoteTimezone exists, keep the hard coded default "GMT"
+				if (string.IsNullOrEmpty(remoteTimezoneIDFromAppSettings))
+					return;
+
+				//Try to parse specified timezoneid. Throws exception if it fails
+				TimeZoneInfo.FindSystemTimeZoneById(remoteTimezoneIDFromAppSettings);
+
+				//set the timezoneid to the global RemoteTimezoneId property
+				RemoteTimezoneId = InformaSitecoreWord.Config.ApplicationConfig.GetPropertyValue("RemoteTimezoneToConvertTo");
+			}
+			catch (System.TimeZoneNotFoundException tzEx)//If the specified timezone is invalid
+			{
+				Globals.SitecoreAddin.LogException("Error validating appSettings Timezone key 'RemoteTimezoneToConvertTo'", tzEx);
+			}
+			catch (Exception ex)
+			{
+				Globals.SitecoreAddin.LogException("Error reading timezone", ex);
+			}
 		}
 
 		public bool _isCheckedOut;
@@ -286,8 +310,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 				IsCheckedOut = checkedOut.Locked;
 				if (IsCheckedOut)
 				{
-					//TODO - This is a hack. Security might be at risk
-					if (SitecoreUser.GetUser().Username == checkedOut.User || checkedOut.User == "extranet\\Anonymous")
+					if (SitecoreUser.GetUser().Username == checkedOut.User)
 					{ //locked by me
 
 						IndicateCheckedOutByMe(checkedOut);
@@ -318,17 +341,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			_parent.PreLinkEnable();
 			IndicatedUnfavoredLink();
-
-			//uxLockStatus.BackColor = DefaultBackColor;
-			//uxLockUser.Text = @"N\A";
-			//uxLockStatusLabel.Text = @"Unlocked";
-
 			IsCheckedOutByMe = false;
 			IsCheckedOut = false;
-
-			//uxUnlockButton.Visible = false;
-			//uxLockButton.Visible = true;
-			//uxLockButton.Enabled = true;
 			DocumentProtection.Protect(_documentCustomProperties);
 		}
 
@@ -336,6 +350,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			//uxLinkToDocumentPanel.Visible = false;
 			//uxLockStatus.Visible = true;
+			_parent.articleStatusBar1.ChangeLockButtonStatus(false);
 			//uxVersionStatus.Visible = true;
 			uxPublication.Enabled = false;
 			//_parent.EnablePreview();
@@ -362,9 +377,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			_parent.PreLinkEnable();
 
 			IndicatedUnfavoredLink();
-			//uxUnlockButton.Visible = true;
-			//uxUnlockButton.Enabled = false;
-			//uxLockButton.Visible = false;
 			DocumentProtection.Protect(_documentCustomProperties);
 		}
 
@@ -518,12 +530,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			}
 		}
 
-		public List<StaffStruct> GetSelectedNotifyees()
-		{
-			//TODO: Implement the UI for this and then this code too!
-			return new List<StaffStruct>();
-		}
-
 		/// <summary>
 		/// Gets the web publish date (as a combination of date and time).
 		/// </summary>
@@ -532,14 +538,14 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			var localDate = uxWebPublishDate.Value.Date.Add(uxWebPublishTime.Value.TimeOfDay);
 
-			TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById(RemoteTimezoneId);
+			TimeZoneInfo remoteZone = TimeZoneInfo.FindSystemTimeZoneById(RemoteTimezoneId);
 
 			Globals.SitecoreAddin.Log("GetWebPublishDate: Date before DateTime conversion: [" +
 									  localDate.Date.ToString() + "].");
 			Globals.SitecoreAddin.Log("GetWebPublishDate: Time before DateTime conversion:  [" +
 									  localDate.TimeOfDay.ToString() + "].");
 
-			DateTime convertedTime = TimeZoneInfo.ConvertTime(localDate, easternZone);
+			DateTime convertedTime = TimeZoneInfo.ConvertTime(localDate, remoteZone);
 
 			Globals.SitecoreAddin.Log("GetWebPublishDate: Date after DateTime conversion: [" +
 									  convertedTime.Date.ToString() + "].");
@@ -743,7 +749,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
 		public void ResetFields()
 		{
-			uxPublication.SelectedIndex = 0;			
+			uxPublication.SelectedIndex = 0;
 			SetPublicationTime(DateTime.Today, true);
 			uxMediaTypes.SelectedIndex = 0;
 			uxLabel.SelectedIndex = 0;
@@ -825,7 +831,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 			return formattedUserName;
 		}
 
-		
+
 		private void uxLockButton_Click(object sender, EventArgs e)
 		{
 			/*

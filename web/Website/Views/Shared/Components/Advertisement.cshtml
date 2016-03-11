@@ -1,0 +1,12 @@
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@model AdvertisementViewModel
+
+@if (Sitecore.Context.PageMode.IsExperienceEditor)
+{
+    @Html.Glass().Editable(x => x.GlassModel.Slot_ID)
+    @Html.Glass().Editable(x => x.GlassModel.Zone)
+}
+<div class="article-preview__ad">
+    @Model.AdvertisementText
+    <script language="JavaScript">OAS_AD('@Model.GlassModel.Slot_ID', '@Model.GlassModel.Zone');</script>
+</div>

@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	partial class TaxonomyControl
 	{
@@ -28,13 +28,14 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaxonomyControl));
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.messageLbl = new System.Windows.Forms.Label();
 			this.uxArrowUp = new System.Windows.Forms.Label();
 			this.uxArrowDown = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.uxGeographyViewTree = new System.Windows.Forms.LinkLabel();
-			this.uxGeographyResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxGeographyResults = new InformaSitecoreWord.UI.NoFlickerListView();
 			this.uxGeographyResultsTree = new System.Windows.Forms.TreeView();
 			this.uxGeographyKeywords = new System.Windows.Forms.TextBox();
 			this.uxGeographyViewSearch = new System.Windows.Forms.LinkLabel();
@@ -80,7 +81,7 @@
 			// uxArrowUp
 			// 
 			this.uxArrowUp.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.uxArrowUp.Image = global::SitecoreTreeWalker.Properties.Resources.arrowup;
+			this.uxArrowUp.Image = global::InformaSitecoreWord.Properties.Resources.arrowup;
 			this.uxArrowUp.Location = new System.Drawing.Point(587, 327);
 			this.uxArrowUp.Name = "uxArrowUp";
 			this.uxArrowUp.Padding = new System.Windows.Forms.Padding(2);
@@ -90,7 +91,7 @@
 			// uxArrowDown
 			// 
 			this.uxArrowDown.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.uxArrowDown.Image = global::SitecoreTreeWalker.Properties.Resources.arrowdown;
+			this.uxArrowDown.Image = global::InformaSitecoreWord.Properties.Resources.arrowdown;
 			this.uxArrowDown.Location = new System.Drawing.Point(587, 372);
 			this.uxArrowDown.Name = "uxArrowDown";
 			this.uxArrowDown.Padding = new System.Windows.Forms.Padding(2);
@@ -99,8 +100,6 @@
 			// 
 			// panel2
 			// 
-			this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
 			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel2.Controls.Add(this.uxGeographyViewTree);
@@ -110,7 +109,8 @@
 			this.panel2.Controls.Add(this.uxGeographyViewSearch);
 			this.panel2.Controls.Add(this.label17);
 			this.panel2.Controls.Add(this.label18);
-			this.panel2.Location = new System.Drawing.Point(0, 54);
+			this.panel2.Location = new System.Drawing.Point(0, 59);
+			this.panel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(610, 208);
 			this.panel2.TabIndex = 39;
@@ -193,7 +193,7 @@
 			// 
 			this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
 			this.label4.ForeColor = System.Drawing.Color.Gray;
-			this.label4.Image = global::SitecoreTreeWalker.Properties.Resources.geography_tabheader;
+			this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
 			this.label4.Location = new System.Drawing.Point(0, 0);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(610, 30);

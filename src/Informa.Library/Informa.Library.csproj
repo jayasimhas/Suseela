@@ -26,6 +26,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,6 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-NoTds|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -42,7 +44,8 @@
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-NoTds|AnyCPU'">
     <OutputPath>bin\Release-NoTds\</OutputPath>
@@ -51,7 +54,8 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
@@ -74,8 +78,20 @@
       <HintPath>..\..\packages\Autofac.Mef.3.0.3\lib\net40\Autofac.Integration.Mef.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Glass.Mapper, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
@@ -138,6 +154,10 @@
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.Analytics, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Buckets">
       <HintPath>..\..\lib\Sitecore\Sitecore.Buckets.dll</HintPath>
     </Reference>
@@ -182,8 +202,10 @@
       <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -192,6 +214,7 @@
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -255,8 +278,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Article\IUserArticleBookmarkedContext.cs" />
-    <Compile Include="Article\MockUserArticleBookmarkedContext.cs" />
+    <Compile Include="Actions\ActionsProcessor.cs" />
+    <Compile Include="Actions\IActionsProcessor.cs" />
+    <Compile Include="Actions\IAction.cs" />
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Search\ArticleSearch.cs" />
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
@@ -265,7 +289,168 @@
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
+    <Compile Include="Article\Service\ArticleSearchService.cs" />
+    <Compile Include="Article\Service\IArticleSearchService.cs" />
+    <Compile Include="Company\CompanyContext.cs" />
+    <Compile Include="Company\CompanyType.cs" />
+    <Compile Include="Company\ICompany.cs" />
+    <Compile Include="Company\ICompanyContext.cs" />
+    <Compile Include="Company\IFindCompanyByIpAddress.cs" />
+    <Compile Include="Company\IFindCompanyByUser.cs" />
+    <Compile Include="Company\IRegisterCompanyUser.cs" />
+    <Compile Include="Company\IUserCompanyContext.cs" />
+    <Compile Include="Company\CompanyRegisterUser.cs" />
+    <Compile Include="Company\UserCompanyContext.cs" />
+    <Compile Include="Company\Web\WebClearUserCompanyContextLogoutAction.cs" />
+    <Compile Include="Company\Web\WebSetUserCompanyContextLoginAction.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\MustBeTrueAttribute.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\PasswordAttribute.cs" />
+    <Compile Include="CustomSitecore\Mvc\SitecoreValidateAntiForgeryTokenAttribute.cs" />
+    <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
+    <Compile Include="CustomSitecore\Ribbon\ExportArticle.cs" />
+    <Compile Include="Data\Entity\CustomDbContext.cs" />
+    <Compile Include="Mail\BaseHtmlEmailFactory.cs" />
+    <Compile Include="DCD\XMLImporting\DCDConfigurationItem.cs" />
+    <Compile Include="DCD\XMLImporting\DCDContextExtensions.cs" />
+    <Compile Include="DCD\XMLImporting\DCDImportEndRemoteEvent.cs" />
+    <Compile Include="DCD\XMLImporting\DCDImporter.cs" />
+    <Compile Include="DCD\XMLImporting\DCDImportingLogger.cs" />
+    <Compile Include="DCD\XMLImporting\FileImportingManager.cs" />
+    <Compile Include="DCD\XMLImporting\IBIContent.cs" />
+    <Compile Include="DCD\XMLImporting\XMLFileUtilities.cs" />
+    <Compile Include="Mail\Email.cs" />
+    <Compile Include="Mail\EmailFactory.cs" />
+    <Compile Include="Mail\EmailSender.cs" />
+    <Compile Include="Mail\HtmlEmailTemplate.cs" />
+    <Compile Include="Mail\HtmlEmailTemplateFactory.cs" />
+    <Compile Include="Mail\IBaseHtmlEmailFactory.cs" />
+    <Compile Include="Mail\IEmail.cs" />
+    <Compile Include="Mail\IEmailFactory.cs" />
+    <Compile Include="Mail\IEmailSender.cs" />
+    <Compile Include="Mail\IHtmlEmailTemplate.cs" />
+    <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
+    <Compile Include="Net\IIpAddressRangeCheck.cs" />
+    <Compile Include="Net\IpAddressRangeCheck.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityAllScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityDeleteItemScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityDeleteScheduledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityDeleteVersionScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityFindScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityScheduledPublishContext.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityScheduledPublishContextFactory.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityScheduledPublishFactory.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\IEntityScheduledPublishContextFactory.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\ScheduledPublish.cs" />
+    <Compile Include="Rss\SearchResults.cs" />
+    <Compile Include="Rss\SearchResultsRequest.cs" />
+    <Compile Include="Rss\SearchRssFeed.cs" />
+    <Compile Include="Search\ComputedFields\Facets\ArticleInProgressField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\PlannedPublishDateField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchSummaryField.cs" />
+    <Compile Include="Search\Results\GeneralContentResult.cs" />
     <Compile Include="Search\Results\IReferencedArticles.cs" />
+    <Compile Include="Search\Sort\HierarchicalStrategyWithCountSort.cs" />
+    <Compile Include="Search\TypeAhead\CompanyTypeAheadResponseItem.cs" />
+    <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
+    <Compile Include="Services\NlmExport\INlmExportService.cs" />
+    <Compile Include="Services\NlmExport\Models\Body\NlmArticleBodyModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Common\NlmCategoryModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\Contrib\NlmArticleAuthorNameModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\Contrib\NlmAuthorEmailModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\History\NlmHistoryDateModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleAbstractModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleAuthorModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleIdModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleCustomMetaModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticlePermissionsModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticlePubDateModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleTitleModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmArticleWordCountModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Article\NlmRelatedArticleModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Journal\NlmIssueNumberModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Journal\NlmJournalIdModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Journal\NlmJournalTitleModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\Journal\NlmPublisherModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\NlmArticleFrontModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\NlmArticleMetaModel.cs" />
+    <Compile Include="Services\NlmExport\Models\Front\NlmJournalMetaModel.cs" />
+    <Compile Include="Services\NlmExport\Models\NlmArticleModel.cs" />
+    <Compile Include="Services\NlmExport\NlmExportService.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Container\Content.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Container\InnerTextNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Container\ParagraphContent.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Container\SideboxNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\DocumentParser.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Figure\FigureBase.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Figure\FigureInformation.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Figure\ImageNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Helpers.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Iframe\IframeBase.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Iframe\IframeInformation.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Iframe\IframeNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Interface\IDocumentNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Link\AssetLinkBase.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Link\CompanionLink.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Link\CompanyLink.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Link\DealLink.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Link\DrugLink.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Link\ExternalLink.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Link\LinkContent.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Link\LinkNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Link\SupportingDocumentLink.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\List\BaseListNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\List\ListItemNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\List\ListItemNodeType.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\List\Ordered\OrderListNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\List\Ordered\SideboxOrderedList.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\List\Unordered\SideboxUnorderedList.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\List\Unordered\UnorderedListNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\NlmGlobals.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Paragraph\BlockquoteParagraph.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Paragraph\CompanyNameNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Paragraph\InterviewAnswerNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Paragraph\InterviewQuestionNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Paragraph\ParagraphNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Paragraph\QuickFactsTextNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Paragraph\QuickFactsTitleNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Simple\BlockquoteNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Simple\CaptionNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Simple\DivNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Simple\HeaderFourNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Simple\HeaderThreeNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Simple\HeaderTwoNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Simple\SimpleNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Simple\TextNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Span\SpanNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Table\TableCell.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Table\TableCellContent.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Table\TableCellHeaderTwo.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Table\TableNode.cs" />
+    <Compile Include="Services\NlmExport\Parser\Legacy\Table\TableRow.cs" />
+    <Compile Include="Services\NlmExport\Serialization\INlmSerializer.cs" />
+    <Compile Include="Services\NlmExport\Serialization\NlmSerializer.cs" />
+    <Compile Include="Services\NlmExport\Validation\Config\NlmValidationConfiguration.cs" />
+    <Compile Include="Services\NlmExport\Validation\INlmValidationService.cs" />
+    <Compile Include="Services\NlmExport\Validation\NlmValidationService.cs" />
+    <Compile Include="Services\NlmExport\Validation\XmlResolver\XmlCachingResolverDecorator.cs" />
+    <Compile Include="Services\RobotsText\RobotsTextService.cs" />
+    <Compile Include="Services\Sitemap\SitemapService.cs" />
+    <Compile Include="Session\ISessionStore.cs" />
+    <Compile Include="Session\HttpContextSessionStore.cs" />
+    <Compile Include="Site\Newsletter\ISiteNewsletterTypesContext.cs" />
+    <Compile Include="Site\Newsletter\SiteNewsletterTypesContext.cs" />
+    <Compile Include="User\Authentication\IAuthenticateUser.cs" />
+    <Compile Include="User\Authentication\IAuthenticateUserResult.cs" />
+    <Compile Include="User\Authentication\AuthenticateUserResultState.cs" />
+    <Compile Include="User\Authentication\Web\IWebLoginUser.cs" />
+    <Compile Include="User\Authentication\Web\IWebLoginUserAction.cs" />
+    <Compile Include="User\Authentication\Web\IWebLoginUserActions.cs" />
+    <Compile Include="User\Authentication\Web\IWebLoginUserResult.cs" />
+    <Compile Include="User\Authentication\Web\IWebLogoutUser.cs" />
+    <Compile Include="User\Authentication\ISitecoreVirtualUsernameFactory.cs" />
+    <Compile Include="User\Authentication\Web\IWebLogoutUserAction.cs" />
+    <Compile Include="User\Authentication\Web\IWebLogoutUserActions.cs" />
+    <Compile Include="User\Authentication\Web\WebLoginUser.cs" />
     <Compile Include="ContentCuration\IItemManuallyCuratedContent.cs" />
     <Compile Include="ContentCuration\Search\ItemManuallyCuratedContentSearch.cs" />
     <Compile Include="ContentCuration\Search\ManuallyCuratedContentSearchResult.cs" />
@@ -273,6 +458,8 @@
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\ArticleItemResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\LoginRedirect.cs" />
     <Compile Include="CustomSitecore\Ribbon\DownloadWord.cs" />
+    <Compile Include="CustomSitecore\Mvc\CustomValidateFormHandlerAttribute.cs" />
+    <Compile Include="CustomSitecore\Mvc\CustomValidHttpPostAttribute.cs" />
     <Compile Include="Publishing\IPublishingStatus.cs" />
     <Compile Include="Publishing\PublishingStatus.cs" />
     <Compile Include="Publishing\IPublishingStatusCheck.cs" />
@@ -320,8 +507,8 @@
     <Compile Include="Presentation\GlassRenderingParametersContext.cs" />
     <Compile Include="Presentation\GlassRenderingParametersContext`1.cs" />
     <Compile Include="ContentCuration\Search\ComputedIndexField\ManuallyCuratedContent.cs" />
-    <Compile Include="Authentication\IUserAuthenticationContext.cs" />
-    <Compile Include="Authentication\RequestUserAuthenticationContext.cs" />
+    <Compile Include="User\Authentication\Web\WebLoginUserActions.cs" />
+    <Compile Include="User\Authentication\Web\WebLoginUserResult.cs" />
     <Compile Include="Corporate\ICorporateAccountNameContext.cs" />
     <Compile Include="Corporate\MockCorporateAccountNameContext.cs" />
     <Compile Include="CustomSitecore\Fields\MultiTreeList.cs" />
@@ -384,8 +571,6 @@
     <Compile Include="Publishing\Scheduled\ScheduledPublishingTargetsContext.cs" />
     <Compile Include="Publishing\Scheduled\UpdateItemScheduledPublishing.cs" />
     <Compile Include="Publishing\Scheduled\UpsertScheduledPublishes.cs" />
-    <Compile Include="Registration\IUsernameValidator.cs" />
-    <Compile Include="Registration\MockUsernameValidator.cs" />
     <Compile Include="ContentCuration\Search\Filter\IManuallyCuratedContentFilter.cs" />
     <Compile Include="ContentCuration\Search\Extensions\QueryableExtensions.cs" />
     <Compile Include="Search\ComputedFields\Base\IsSearchableField.cs" />
@@ -433,6 +618,159 @@
     <Compile Include="Site\SiteMaintenanceInfo.cs" />
     <Compile Include="Subscription\IUserSubscriptionContext.cs" />
     <Compile Include="Subscription\MockUserSubscriptionContext.cs" />
+    <Compile Include="User\Authentication\Web\WebLogoutUser.cs" />
+    <Compile Include="User\Authentication\SitecoreVirtualUsernameFactory.cs" />
+    <Compile Include="User\Authentication\Web\WebLogoutUserActions.cs" />
+    <Compile Include="User\Entitlement\AuthenticatedIpContext.cs" />
+    <Compile Include="User\Entitlement\EntitledAccessLevel.cs" />
+    <Compile Include="User\Entitlement\EntitledProductContext.cs" />
+    <Compile Include="User\Entitlement\Entitlement.cs" />
+    <Compile Include="User\Entitlement\EntitlementContext.cs" />
+    <Compile Include="User\Entitlement\IAuthenticatedIPContext.cs" />
+    <Compile Include="User\Entitlement\IEntitledProductContext.cs" />
+    <Compile Include="User\Entitlement\IEntitledVisit.cs" />
+    <Compile Include="User\Entitlement\IEntitlement.cs" />
+    <Compile Include="User\Entitlement\IEntitlementContext.cs" />
+    <Compile Include="User\Entitlement\IGetIPEntitlements.cs" />
+    <Compile Include="User\Entitlement\IGetUserEntitlements.cs" />
+    <Compile Include="User\FindUserByUsername.cs" />
+    <Compile Include="User\IFindUserByEmail.cs" />
+    <Compile Include="User\IFindUserByUsername.cs" />
+    <Compile Include="User\ISitecoreUserContext.cs" />
+    <Compile Include="User\Authentication\IAuthenticatedUser.cs" />
+    <Compile Include="User\Authentication\IAuthenticatedUserContext.cs" />
+    <Compile Include="User\IUpdateUserPassword.cs" />
+    <Compile Include="User\IUser.cs" />
+    <Compile Include="User\IUserIpAddressContext.cs" />
+    <Compile Include="User\IUserSession.cs" />
+    <Compile Include="User\Profile\IFindUserProfileByUsername.cs" />
+    <Compile Include="User\Profile\INewsletterOptIn.cs" />
+    <Compile Include="User\Profile\INewsletterUserOptInFactory.cs" />
+    <Compile Include="User\Profile\IQueryNewsletterUserOptInResult.cs" />
+    <Compile Include="User\Profile\IQueryNewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\IQueryOfferUserOptIn.cs" />
+    <Compile Include="User\Profile\IQueryOfferUserOptInResult.cs" />
+    <Compile Include="User\Profile\IManageSavedDocuments.cs" />
+    <Compile Include="User\Profile\ISavedDocumentReadResult.cs" />
+    <Compile Include="User\Profile\ISavedDocument.cs" />
+    <Compile Include="User\Profile\ISavedDocumentWriteResult.cs" />
+    <Compile Include="User\Profile\IUpdateNewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\IUpdateOfferUserOptIn.cs" />
+    <Compile Include="User\Profile\INewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\IUserProfile.cs" />
+    <Compile Include="User\Profile\IUserProfileFactory.cs" />
+    <Compile Include="User\Profile\NewsletterOptIn.cs" />
+    <Compile Include="User\Profile\NewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\NewsletterUserOptInFactory.cs" />
+    <Compile Include="Newsletter\NewsletterType.cs" />
+    <Compile Include="User\Profile\SavedDocument.cs" />
+    <Compile Include="User\Profile\SavedDocumentReadResult.cs" />
+    <Compile Include="User\Profile\SavedDocumentWriteResult.cs" />
+    <Compile Include="User\Registration\INewUser.cs" />
+    <Compile Include="User\Registration\INewUserFactory.cs" />
+    <Compile Include="User\Registration\IRegisterUser.cs" />
+    <Compile Include="User\Registration\IRegisterUserResult.cs" />
+    <Compile Include="User\Registration\ISetOptInsRegisterUser.cs" />
+    <Compile Include="User\Registration\NewUser.cs" />
+    <Compile Include="User\Registration\NewUserFactory.cs" />
+    <Compile Include="User\Registration\SetOptInsRegisterUser.cs" />
+    <Compile Include="User\Registration\Web\IWebRegisterUser.cs" />
+    <Compile Include="User\Registration\Web\IWebRegisterUserAction.cs" />
+    <Compile Include="User\Registration\Web\IWebRegisterUserActions.cs" />
+    <Compile Include="User\Registration\Web\IWebRegisterUserEmailFactory.cs" />
+    <Compile Include="User\Registration\Web\IWebRegisterUserSession.cs" />
+    <Compile Include="User\Registration\Web\IWebSendRegisterUserEmail.cs" />
+    <Compile Include="User\Registration\Web\IWebSetOptInsRegisterUser.cs" />
+    <Compile Include="User\Registration\Web\IWebSetRegisterUserSession.cs" />
+    <Compile Include="User\Registration\Web\WebRegisterUser.cs" />
+    <Compile Include="User\Registration\Web\WebRegisterUserActions.cs" />
+    <Compile Include="User\Registration\Web\WebRegisterUserEmailFactory.cs" />
+    <Compile Include="User\Registration\Web\WebRegisterUserSession.cs" />
+    <Compile Include="User\Registration\Web\WebSendRegisterUserEmail.cs" />
+    <Compile Include="User\Registration\Web\WebSetOptInsRegisterUser.cs" />
+    <Compile Include="User\ResetPassword\Entity\EntityFindUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\Entity\EntityStoreUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\Entity\EntityUserResetPasswordContextFactory.cs" />
+    <Compile Include="User\ResetPassword\Entity\IEntityUserResetPasswordFactory.cs" />
+    <Compile Include="User\ResetPassword\Entity\EntityUserResetPasswordFactory.cs" />
+    <Compile Include="User\ResetPassword\FindValidUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\GenerateUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\IFindUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\IFindValidUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\IGenerateUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\IProcessUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\IProcessUserResetPasswordResult.cs" />
+    <Compile Include="User\ResetPassword\IStoreUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\IUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\IUserResetPasswordFactory.cs" />
+    <Compile Include="User\ResetPassword\IUserResetPasswordTokenFactory.cs" />
+    <Compile Include="User\ResetPassword\MongoDB\IMongoDbUserResetPasswordConfiguration.cs" />
+    <Compile Include="User\ResetPassword\MongoDB\IMongoDbUserResetPasswordContext.cs" />
+    <Compile Include="User\ResetPassword\MongoDB\IUserResetPasswordDocumentFactory.cs" />
+    <Compile Include="User\ResetPassword\MongoDB\MongoDbFindUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\MongoDB\MongoDbStoreUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\MongoDB\MongoDbUserResetPasswordConfiguration.cs" />
+    <Compile Include="User\ResetPassword\MongoDB\MongoDbUserResetPasswordContext.cs" />
+    <Compile Include="User\ResetPassword\MongoDB\UserResetPasswordDocument.cs" />
+    <Compile Include="User\ResetPassword\MongoDB\UserResetPasswordDocumentFactory.cs" />
+    <Compile Include="User\ResetPassword\ProcessUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\ProcessUserResetPasswordResult.cs" />
+    <Compile Include="User\ResetPassword\ProcessUserResetPasswordStatus.cs" />
+    <Compile Include="User\ResetPassword\Entity\IEntityUserResetPasswordContextFactory.cs" />
+    <Compile Include="User\ResetPassword\Entity\EntityUserResetPasswordContext.cs" />
+    <Compile Include="User\ResetPassword\Entity\UserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\UserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\UserResetPasswordExtensions.cs" />
+    <Compile Include="User\ResetPassword\UserResetPasswordFactory.cs" />
+    <Compile Include="User\ResetPassword\UserResetPasswordTokenFactory.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPasswordAction.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPasswordActions.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebGenerateUserResetPasswordResult.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebRegenerateUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebSendUserResetPasswordEmail.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebUserResetPasswordEmailFactory.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebUserResetPasswordTokenContext.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebUserResetPasswordUrlConfiguration.cs" />
+    <Compile Include="User\ResetPassword\Web\IWebUserResetPasswordUrlFactory.cs" />
+    <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPasswordActions.cs" />
+    <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPasswordResult.cs" />
+    <Compile Include="User\ResetPassword\Web\WebGenerateUserResetPasswordStatus.cs" />
+    <Compile Include="User\ResetPassword\Web\WebRegenerateUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\Web\WebSendUserResetPasswordEmail.cs" />
+    <Compile Include="User\ResetPassword\Web\WebUserResetPasswordEmailFactory.cs" />
+    <Compile Include="User\ResetPassword\Web\WebUserResetPasswordTokenContext.cs" />
+    <Compile Include="User\ResetPassword\Web\WebUserResetPasswordUrlConfiguration.cs" />
+    <Compile Include="User\ResetPassword\Web\WebUserResetPasswordUrlFactory.cs" />
+    <Compile Include="User\SitecoreUserContext.cs" />
+    <Compile Include="User\Authentication\AuthenticatedUser.cs" />
+    <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />
+    <Compile Include="User\UserIpAddressContext.cs" />
+    <Compile Include="User\UserSession.cs" />
+    <Compile Include="Utilities\Autofac\Modules\AutoMapperModule.cs" />
+    <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleBodyProfile.cs" />
+    <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleFrontProfile.cs" />
+    <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleProfile.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\AutoMapResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\BaseValueResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\ArticleTypeResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Body\ArticleBodyResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleAbstractsResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleCategoriesResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleContributorResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleCountsResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleCustomMetaResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleHistoryResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticlePermissionsResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticlePubDateResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticlePublisherIdResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleRelatedArticlesResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Article\ArticleTitleResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\IssueNumberResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalIdResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalTitleResolver.cs" />
+    <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\PublisherResolver.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
@@ -444,9 +782,17 @@
     <Compile Include="Utilities\References\RenderingReferences.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
+    <Compile Include="Utilities\StringUtils\HtmlUtil.cs" />
+    <Compile Include="Utilities\StringUtils\WordUtil.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
+    <Compile Include="Utilities\TokenMatcher\DCDTokenMatchers.cs" />
     <Compile Include="Utilities\WebApi\Caching\ApiOutputCacheAdapter.cs" />
+    <Compile Include="Utilities\WebApi\Filters\ArgumentsRequiredAttribute.cs" />
     <Compile Include="Utilities\WebApi\Filters\ValidateCsrfAttribute.cs" />
+    <Compile Include="AntiForgery\AntiForgeryValidate.cs" />
+    <Compile Include="AntiForgery\HtmlHelperExtensions.cs" />
+    <Compile Include="Utilities\WebApi\Filters\ValidateReasonsAttribute.cs" />
+    <Compile Include="Utilities\WebUtils\UrlUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

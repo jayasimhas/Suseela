@@ -1,6 +1,7 @@
-﻿using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls;
+﻿using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm
+namespace InformaSitecoreWord.UI.ArticleDetailsForm
 {
     partial class ArticleDetail
     {
@@ -38,9 +39,9 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
 			this.uxCreateArticle = new System.Windows.Forms.Button();
 			this.uxSaveArticle = new System.Windows.Forms.Button();
 			this.uxSaveMetadata = new System.Windows.Forms.Button();
-			this.articleStatusBar1 = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.ArticleStatusBar();
-			this.articleDetailsPageSelector = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.ArticleDetailsPageSelector();
-			this.loginControl1 = new SitecoreTreeWalker.UI.LoginControl();
+			this.articleStatusBar1 = new ArticleStatusBar();
+			this.articleDetailsPageSelector = new ArticleDetailsPageSelector();
+			this.loginControl1 = new LoginControl();
 			this.uxLoginPanel.SuspendLayout();
 			this.uxArticlePanel.SuspendLayout();
 			this.SuspendLayout();
@@ -189,13 +190,10 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm
         public System.Windows.Forms.Panel uxArticlePanel;
         public System.Windows.Forms.Button uxSaveArticle;
         public System.Windows.Forms.Button uxSaveMetadata;
-        //TODO:Remove these once logout fully implemented
-        //private System.Windows.Forms.Button uxLogout;
         public LoginControl loginControl1;
         public System.Windows.Forms.Button uxCreateArticle;
         public System.Windows.Forms.Button uxPreview;
-		public ArticleDetailsPageSelector articleDetailsPageSelector;
-		//private WorkflowControl workflowControl1;
+		public ArticleDetailsPageSelector articleDetailsPageSelector;		
         public System.Windows.Forms.Label uxVersionNumber;
         public ArticleDetailsControls.PageUserControls.ArticleStatusBar articleStatusBar1;
     }

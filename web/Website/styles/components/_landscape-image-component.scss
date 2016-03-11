@@ -1,0 +1,10 @@
+.landscape-image-component {
+    width: 100%;
+    
+    & img {
+        display: block;
+        height: auto;
+        margin: 0px auto;
+        width: 100%;
+    }
+}

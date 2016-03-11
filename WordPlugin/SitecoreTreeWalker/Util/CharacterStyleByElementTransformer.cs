@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.SitecoreTree;
-using SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls;
-using SitecoreTreeWalker.Util.Document;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.SitecoreTree;
+using InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls;
+using InformaSitecoreWord.Util.Document;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
 	public class CharacterStyleByElementTransformer
 	{

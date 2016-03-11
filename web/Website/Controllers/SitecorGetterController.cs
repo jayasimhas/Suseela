@@ -22,6 +22,7 @@ using Sitecore.Data.Items;
 using Sitecore.Links;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
+using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
 
 namespace Informa.Web.Controllers
 {
@@ -70,6 +71,67 @@ namespace Informa.Web.Controllers
 		}
 	}
 
+	[Route]
+	public class WorkflowController : ApiController
+	{
+
+		private ISitecoreService _sitecoreService;
+		private readonly IArticleSearch _search;
+		private readonly IArticleSearchFilter _articleSearchFilter;
+		private readonly ArticleUtil _articleUtil;
+		public WorkflowController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
+		{
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
+			_articleUtil = articleUtil;
+		}
+		// GET api/<controller>
+
+
+
+		[Route]
+		public JsonResult<ArticleWorkflowState> Get(Guid articleGuid)
+		{
+			var workFlowState = _articleUtil.GetWorkFlowState(articleGuid);
+			return Json(workFlowState);
+		}
+
+		public JsonResult<ArticleWorkflowState> Get(string articleNumber)
+		{
+			var article = _articleUtil.GetArticleByNumber(articleNumber);
+			if (article != null)
+			{
+				var workflowState = _articleUtil.GetWorkFlowState(article._Id);
+				return Json(workflowState);
+			}
+			return Json(new ArticleWorkflowState());
+		}
+	}
+
+	[Route]
+	public class GetUserInfoController : ApiController
+	{
+		// GET api/<controller>
+		public JsonResult<List<string>> Get(string username)
+		{
+			List<string> lockUserInformation = new List<string>();
+			try
+			{
+				Sitecore.Security.Accounts.User editor = Sitecore.Security.Accounts.User.FromName(username, false);
+				if (editor != null && !string.IsNullOrEmpty(editor.Profile.FullName))
+				{
+					lockUserInformation.Add(editor.Profile.FullName);
+					lockUserInformation.Add(editor.Profile.Email);
+				}
+			}
+			catch (Exception ex)
+			{
+				// ignored
+			}
+			return Json(lockUserInformation);
+		}
+	}
+
+
 
 	public class SearchTaxonomyController : ApiController
 	{
@@ -101,7 +163,7 @@ namespace Informa.Web.Controllers
 			{
 				children = taxonomyItem.Axes.GetDescendants().ToList();
 			}
-			var matches = children.Select(child => new TaxonomyStruct {ID = child.ID.Guid, Name = child.DisplayName}).ToList();
+			var matches = children.Select(child => new TaxonomyStruct { ID = child.ID.Guid, Name = child.DisplayName }).ToList();
 
 			return Json(matches);
 
@@ -134,6 +196,25 @@ namespace Informa.Web.Controllers
 				result.Add(baseFolder._Path);
 			}
 			return Json(result.ToArray());
+		}
+	}
+
+	[Route]
+	public class GetContactEmailController : ApiController
+	{
+		private ISitecoreService _sitecoreService;
+		public GetContactEmailController(Func<string, ISitecoreService> sitecoreFactory)
+		{
+			_sitecoreService = sitecoreFactory(Constants.MasterDb);
+		}
+		// GET api/<controller>
+		public JsonResult<string> Get()
+		{
+			var siteConfigItem = _sitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode);
+			if (siteConfigItem == null) return Json(string.Empty);
+			var supportingEmailFieldValue = siteConfigItem.Contact_Email;
+			if (string.IsNullOrEmpty(supportingEmailFieldValue)) return Json(string.Empty);
+			return Json(supportingEmailFieldValue);
 		}
 	}
 
@@ -347,7 +428,6 @@ namespace Informa.Web.Controllers
 		}
 	}
 
-	//TODO: This might have bugs, and would need to fix it.
 	[Route]
 	public class GetWidthHeightOfMediaItemController : ApiController
 	{
@@ -376,37 +456,6 @@ namespace Informa.Web.Controllers
 		{
 			Item item = _sitecoreService.GetItem<Item>(pathOrId);
 			return item?.Children.ToArray().ToDictionary(child => child.DisplayName, child => child.ID.Guid);
-		}
-	}
-
-	[Route]
-	//TODO - need to fix this
-	public class WordPluginController : ApiController
-	{
-		private readonly ISitecoreService _sitecoreService;
-		public WordPluginController(ISitecoreService service)
-		{
-			_sitecoreService = service;
-		}
-		// GET api/<controller>
-
-		[HttpGet]
-		[ActionName("GetMaxLengthShortSummary")]
-		public JsonResult<int> GetMaxLengthShortSummary()
-		{
-			string maxLengthShortSummary = "1000";
-			int length;
-			Int32.TryParse(maxLengthShortSummary, out length);
-			return Json(length);
-		}
-		[HttpGet]
-		[ActionName("GetMaxLengthLongSummary")]
-		public JsonResult<int> GetMaxLengthLongSummary()
-		{
-			string maxLengthLongSummary = "1500";
-			int length;
-			Int32.TryParse(maxLengthLongSummary, out length);
-			return Json(length);
 		}
 	}
 
@@ -798,7 +847,7 @@ namespace Informa.Web.Controllers
 	}
 
 	[Route]
-	//TODO - wrtie a service that will check for duplicate article names
+
 	public class DoesArticleNameAlreadyExistInIssueController : ApiController
 	{
 		private readonly ISitecoreService _sitecoreService;
@@ -812,4 +861,7 @@ namespace Informa.Web.Controllers
 			return Json(false);
 		}
 	}
+
+
+
 }

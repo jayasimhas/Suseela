@@ -4,6 +4,10 @@ import Cookies from './jscookie';
 import PopOutController from './pop-out-controller';
 import BookmarkController from './bookmark-controller';
 import SearchScript from './search-page.js';
+import LoginController from './login-controller';
+import ResetPasswordController from './reset-password-controller';
+import RegisterController from './register-controller';
+import FormController from './form-controller';
 
 
 /* Toggle menu categories */
@@ -20,36 +24,23 @@ $('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
 
 /* Toggle header search box (tablets/smartphones) */
 $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
-	$('.header-search__wrapper').toggleClass('is-active').focus();
+	if($(window).width() <= 800) {
+		$('.header-search__wrapper').toggleClass('is-active').focus();
+	} else {
+		$(e.target).closest('form').submit();
+	}
+	e.preventDefault();
+	return false;
 });
 
 /* Generic banner dismiss */
 $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 	var thisBanner = $(e.srcElement).parents('.banner');
 	thisBanner.removeClass('is-visible');
-	console.log(thisBanner);
 
-	var dismissedBanners = Cookies.get('dismissedBanners') || {};
+	var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
 	dismissedBanners[thisBanner.data('banner-id')] = true;
 	Cookies.set('dismissedBanners', dismissedBanners);
-});
-
-
-
-// Pre-registration username validation
-$('.js-register-submit').on('click', function validateUsername(e) {
-	var submitButton = $(e.target);
-	var username = submitButton.siblings('.js-register-username').val();
-	$.post('account/api/accountvalidation/username/', { username: username }, function (response) {
-		if (response.valid) {
-			var redirectUrl = submitButton.attr('data-register-redirect');
-
-			window.location.href = redirectUrl + '?username=' + username;
-		}
-		else {
-			submitButton.siblings('.js-register-invalid').show();
-		}
-	});
 });
 
 	// Make sure proper elm gets the click event
@@ -64,7 +55,8 @@ var showForgotPassSuccess = function() {
 
 // Toggle the sign-in error message displayed to a user
 var toggleSignInError = function() {
-	$('.pop-out__form-error').toggleClass('is-active');
+	$('.pop-out__form-error').show();
+	//$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
 };
 
 var renderIframeComponents = function() {
@@ -96,8 +88,10 @@ var renderIframeComponents = function() {
 	});
 };
 
-
 $(document).ready(function() {
+
+	// Anti Forgery Token
+	var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
 
 	var poc = new PopOutController('.js-pop-out-trigger');
 
@@ -134,35 +128,87 @@ $(document).ready(function() {
 
 	});
 
+	var login = new LoginController(requestVerificationToken);
+
+	login.addControl(
+		'.js-sign-in-submit',
+		null,
+		function(triggerElement) {
+			toggleSignInError();
+		}
+	);
+
+	var resetPassword = new FormController();
+	resetPassword.watchForm('.form-reset-password', function() {
+		$('.form-reset-password').find('.alert-success').show();
+	});
+
+	var newResetPassToken = new FormController();
+	newResetPassToken.watchForm('.form-new-reset-pass-token', function() {
+		$('.form-new-reset-pass-token').find('.alert-success').show();
+	});
+	/*
+	resetPassword.addRequestControl(
+		'.js-reset-password-request-submit',
+		function(triggerElement) {
+			$(triggerElement).parents('.js-reset-password-request-form').hide();
+		}
+	);
+	resetPassword.addChangeControl('.js-reset-password-change-submit');
+	resetPassword.addRetryControl('.js-reset-password-retry-submit');
+*/
+
+	var userRegistrationController = new FormController();
+	userRegistrationController.watchForm('.form-registration');
+
+	userRegistrationController.watchForm('.form-registration-optins');
+
+	userRegistrationController.watchForm(
+		'.form-pre-registration',
+		function(form) {
+			var usernameInput = $(form).find('.js-register-username');
+			var nextStepUrl = $(form).data('on-success') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
+
+			window.location.href = nextStepUrl;
+		}
+	);
+
+	var registerController = new RegisterController();
+
+	registerController.addRegisterUserControl('.js-register-user-optins-submit');
+
+	var emailArticleController = new FormController();
+	emailArticleController.watchForm('.form-email-article');
+
+	var accountEmailPreferencesController = new FormController();
+	accountEmailPreferencesController.watchForm('.form-email-preferences');
 
     svg4everybody();
 
+	var getHeaderEdge = function() {
+		return $('.header__wrapper').offset().top + $('.header__wrapper').height();
+	};
 
 	/* Toggle menu visibility */
 	$('.js-toggle-menu').on('click', function toggleMenu() {
 		if($('.main-menu').hasClass('is-active')) {
 			$('.main-menu').removeClass('is-active');
 			$('.menu-toggler').removeClass('is-active');
-			$('body').css({
-				overflow: 'auto',
-				height: 'auto'
-			});
-			if($(window).scrollTop() <= 100) {
+			$('body').removeClass('is-frozen');
+			if($(window).scrollTop() <= getHeaderEdge()) {
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 			}
 		} else {
 			$('.main-menu').addClass('is-active');
 			$('.menu-toggler').addClass('is-active');
 			$('.header__wrapper .menu-toggler').addClass('is-sticky');
-			$('body').css({
-				'overflow-y': 'hidden'
-			});
+			$('body').addClass('is-frozen');
 		}
 	});
 
 	/* Attach / detach sticky menu */
 	$(window).on('scroll', function windowScrolled() {
-		if ($(this).scrollTop() > 100 || $('.main-menu').hasClass('is-active')) {
+		if ($(this).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
 			$('.header__wrapper .menu-toggler').addClass('is-sticky');
 		} else {
 			$('.header__wrapper .menu-toggler').removeClass('is-sticky');
@@ -178,8 +224,21 @@ $(document).ready(function() {
 	});
 
 	// For each article table, clone and append "view full table" markup
-	$('.article-body-content table').forEach(function(e) {
-		$(e).after($('.js-mobile-table-template .article-table').clone());
+	$('.article-body-content table').not('.article-table--mobile-link').forEach(function(e) {
+ 	    var mediaId = $(e).data("mediaid");
+ 	    var tableLink = $('.js-mobile-table-template .article-table').clone();
+
+	    var url = window.location.href;
+    	url.replace("#", "");
+	    if (url.indexOf("?") < 0)
+	        url += "?";
+ 	    else
+ 	        url += "&";
+
+ 	    url+= "mobilemedia=true&selectedid=" + mediaId;
+
+ 	    $(tableLink).find('a').attr("href", url);
+ 		$(e).after(tableLink);
 	});
 
 	// When DOM loads, render the appropriate iFrame components
@@ -218,6 +277,53 @@ $(document).ready(function() {
 		poc.closePopOut();
 	});
 
+	// Make sure all external links open in a new window/tab
+	$("a[href^=http]").each(function(){
+		if(this.href.indexOf(location.hostname) == -1) {
+           $(this).attr({
+               target: "_blank",
+           });
+	  	}
+	});
+
+	$('.general-header__navigation').each(function() {
+
+		$(this).on('scroll', function() {
+			var scrollLeft = $(this).scrollLeft();
+			var scrollWidth = $(this)[0].scrollWidth;
+			var winWidth = $(window).width();
+
+			if(scrollLeft > 32) {
+				$('.general-header__navigation-scroller--left').addClass('is-visible');
+			} else {
+				$('.general-header__navigation-scroller--left').removeClass('is-visible');
+			}
+
+			if(scrollLeft + winWidth < scrollWidth - 32) {
+				$('.general-header__navigation-scroller--right').addClass('is-visible');
+			} else {
+				$('.general-header__navigation-scroller--right').removeClass('is-visible');
+			}
+
+		});
+
+		var scrollLeft = $(this).scrollLeft();
+		var scrollWidth = $(this)[0].scrollWidth;
+		var winWidth = $(window).width();
+
+		if(scrollLeft + winWidth < scrollWidth - 32) {
+			$('.general-header__navigation-scroller--right').addClass('is-visible');
+		} else {
+			$('.general-header__navigation-scroller--right').removeClass('is-visible');
+		}
+	});
+
+
+	$('.informa-ribbon__title').on('click', function (e) {
+
+		$('.informa-ribbon').toggleClass('show')
+
+	});
 
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");

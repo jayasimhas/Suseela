@@ -16,23 +16,19 @@
       display: inline;
 
       &:not(:last-child) {
-        margin-right: 40px;
+        margin-right: 10px;
       }
 
-      &.is-active {
-        position: relative;
+      a {
+        padding: 4px 10px;
+      }
 
-        a {
-          color: $informa-dark-gray;
-
-          &:after {
-            content: "";
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            background: $informa-light-gray-f;
-            position: absolute;
-          }
+      &.is-active a {
+        background: $informa-light-gray-f;
+        color: $informa-dark-gray;
+        
+        &:hover {
+          text-decoration: none;
         }
       }
     }

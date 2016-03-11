@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace SitecoreTreeWalker.Sitecore
+namespace InformaSitecoreWord.Sitecore
 {
 	public class UpdateNode
 	{

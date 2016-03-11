@@ -43,6 +43,24 @@ namespace Informa.Library.CustomSitecore.Pipelines
                 new { escenicID = @"\d+" }
             );
 
+            routes.MapHttpRoute(
+                "sitemapXml",
+                "sitemap.xml",
+                new { controller = "Sitemap", action = "SitemapXml" }
+            );
+
+            routes.MapHttpRoute(
+                "sitemapNewsXml",
+                "sitemap-news.xml",
+                new { controller = "Sitemap", action = "SitemapXml" }
+            );
+
+            routes.MapHttpRoute(
+                "robotsText",
+                "robots.txt",
+                new { controller = "RobotsText", action = "RobotsText" }
+            );
+
             var jsonFormatter = new JsonMediaTypeFormatter
 			{
 				SerializerSettings = { ContractResolver = new CamelCasePropertyNamesContractResolver()},

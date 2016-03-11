@@ -1,9 +1,24 @@
+/*---
+title: Bar-separated Link List
+section: UI Elements
+---
+Styling for a horizontal list of links, separated by a thin bar.
+
+```example:html
+<div class="bar-separated-link-list">
+    <a href="#">Person</a>
+    <a href="#">Place</a>
+    <a href="#">Thing</a>
+</div>
+```
+*/
+
 .bar-separated-link-list {
     display: inline-flex;
     align-items: flex-start;
 
     a {
-        @include textMix('Roboto', 0.875rem, 400);
+        @include textMix('Roboto', 0.9375rem, 400);
         border-right: 1px solid $informa-light-gray-d;
         display: inline-block;
         padding: 0 0.75rem;

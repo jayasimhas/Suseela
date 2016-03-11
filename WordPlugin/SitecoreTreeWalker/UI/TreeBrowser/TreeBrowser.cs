@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using SitecoreTreeWalker.Sitecore;
+using InformaSitecoreWord.Sitecore;
 using Application = Microsoft.Office.Interop.Word.Application;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser
+namespace InformaSitecoreWord.UI.TreeBrowser
 {
     public partial class TreeBrowser : UserControl
     {

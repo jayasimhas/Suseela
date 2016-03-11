@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
+﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 {
 	partial class ArticleDetailsTabControl
 	{
@@ -30,13 +30,13 @@
 		{
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.uxArticleInformationTabPage = new System.Windows.Forms.TabPage();
-			this.articleInformationControl1 = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.ArticleInformationControl();
+			this.articleInformationControl1 = new InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.ArticleInformationControl();
 			this.uxRelatedArticlesTabPage = new System.Windows.Forms.TabPage();
-			this.relatedArticlesControl1 = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.RelatedArticlesControl();
+			this.relatedArticlesControl1 = new InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.RelatedArticlesControl();
 			this.uxRelatedDealsTabPage = new System.Windows.Forms.TabPage();
-			this.relatedDealsControl1 = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.RelatedDealsControl();
+			this.relatedDealsControl1 = new InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.RelatedDealsControl();
 			this.uxSupportingDocumentsTabPage = new System.Windows.Forms.TabPage();
-			this.supportingDocumentsControl1 = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.SupportingDocumentsControl();
+			this.supportingDocumentsControl1 = new InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.SupportingDocumentsControl();
 			this.uxCompaniesTabPage = new System.Windows.Forms.TabPage();
 			this.uxIndustriesTabPage = new System.Windows.Forms.TabPage();
 			this.label6 = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
 			this.label50 = new System.Windows.Forms.Label();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.uxIndustriesViewTree = new System.Windows.Forms.LinkLabel();
-			this.uxIndustriesResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxIndustriesResults = new InformaSitecoreWord.UI.NoFlickerListView();
 			this.uxIndustriesResultsTree = new System.Windows.Forms.TreeView();
 			this.uxIndustriesKeywords = new System.Windows.Forms.TextBox();
 			this.uxIndustriesViewSearch = new System.Windows.Forms.LinkLabel();
@@ -60,7 +60,7 @@
 			this.uxSubjectsSelected = new System.Windows.Forms.ListView();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.uxSubjectsViewTree = new System.Windows.Forms.LinkLabel();
-			this.uxSubjectsResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxSubjectsResults = new InformaSitecoreWord.UI.NoFlickerListView();
 			this.uxSubjectsResultsTree = new System.Windows.Forms.TreeView();
 			this.uxSubjectsKeywords = new System.Windows.Forms.TextBox();
 			this.uxSubjectsViewSearch = new System.Windows.Forms.LinkLabel();
@@ -69,7 +69,7 @@
 			this.uxGeographyTabPage = new System.Windows.Forms.TabPage();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.uxGeographyViewTree = new System.Windows.Forms.LinkLabel();
-			this.uxGeographyResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxGeographyResults = new InformaSitecoreWord.UI.NoFlickerListView();
 			this.uxGeographyResultsTree = new System.Windows.Forms.TreeView();
 			this.uxGeographyKeywords = new System.Windows.Forms.TextBox();
 			this.uxGeographyViewSearch = new System.Windows.Forms.LinkLabel();
@@ -83,7 +83,7 @@
 			this.uxTherapeuticCategoriesTabPage = new System.Windows.Forms.TabPage();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.uxTherapeuticCategoriesViewTree = new System.Windows.Forms.LinkLabel();
-			this.uxTherapeuticCategoriesResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxTherapeuticCategoriesResults = new InformaSitecoreWord.UI.NoFlickerListView();
 			this.uxTherapeuticCategoriesResultsTree = new System.Windows.Forms.TreeView();
 			this.uxTherapeuticCategoriesKeywords = new System.Windows.Forms.TextBox();
 			this.uxTherapeuticCategoriesViewSearch = new System.Windows.Forms.LinkLabel();
@@ -97,7 +97,7 @@
 			this.uxMarketSegmentsTabPage = new System.Windows.Forms.TabPage();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.uxMarketSegmentsViewTree = new System.Windows.Forms.LinkLabel();
-			this.uxMarketSegmentsResults = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.uxMarketSegmentsResults = new InformaSitecoreWord.UI.NoFlickerListView();
 			this.uxMarketSegmentsResultsTree = new System.Windows.Forms.TreeView();
 			this.uxMarketSegmentsKeywords = new System.Windows.Forms.TextBox();
 			this.uxMarketSegmentsViewSearch = new System.Windows.Forms.LinkLabel();
@@ -109,9 +109,9 @@
 			this.uxMarketSegmentsSelected = new System.Windows.Forms.ListView();
 			this.label29 = new System.Windows.Forms.Label();
 			this.uxGeneralTagsTabPage = new System.Windows.Forms.TabPage();
-			this.generalTagsControl1 = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.GeneralTagsControl();
+			this.generalTagsControl1 = new InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.GeneralTagsControl();
 			this.uxSummaryTabPage = new System.Windows.Forms.TabPage();
-			this.summaryControl1 = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.SummaryControl();
+			this.summaryControl1 = new InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.SummaryControl();
 			this.uxGeographyIcon = new System.Windows.Forms.Label();
 			this.uxSubjectsIcon = new System.Windows.Forms.Label();
 			this.uxIndustriesIcon = new System.Windows.Forms.Label();
@@ -130,7 +130,7 @@
 			this.linkLabel2 = new System.Windows.Forms.LinkLabel();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.treeView1 = new System.Windows.Forms.TreeView();
-			this.noFlickerListView1 = new SitecoreTreeWalker.UI.NoFlickerListView();
+			this.noFlickerListView1 = new InformaSitecoreWord.UI.NoFlickerListView();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.button1 = new System.Windows.Forms.Button();
 			this.panel6 = new System.Windows.Forms.Panel();
@@ -1198,7 +1198,7 @@
 			// label37
 			// 
 			this.label37.Font = new System.Drawing.Font("Arial", 12F);
-			this.label37.Image = global::SitecoreTreeWalker.Properties.Resources.redx;
+			this.label37.Image = global::InformaSitecoreWord.Properties.Resources.redx;
 			this.label37.Location = new System.Drawing.Point(20, 521);
 			this.label37.Margin = new System.Windows.Forms.Padding(0);
 			this.label37.Name = "label37";
@@ -1209,7 +1209,7 @@
 			// label7
 			// 
 			this.label7.Font = new System.Drawing.Font("Arial", 12F);
-			this.label7.Image = global::SitecoreTreeWalker.Properties.Resources.redx;
+			this.label7.Image = global::InformaSitecoreWord.Properties.Resources.redx;
 			this.label7.Location = new System.Drawing.Point(20, 221);
 			this.label7.Margin = new System.Windows.Forms.Padding(0);
 			this.label7.Name = "label7";
@@ -1220,7 +1220,7 @@
 			// label5
 			// 
 			this.label5.Font = new System.Drawing.Font("Arial", 12F);
-			this.label5.Image = global::SitecoreTreeWalker.Properties.Resources.redx;
+			this.label5.Image = global::InformaSitecoreWord.Properties.Resources.redx;
 			this.label5.Location = new System.Drawing.Point(20, 171);
 			this.label5.Margin = new System.Windows.Forms.Padding(0);
 			this.label5.Name = "label5";
@@ -1231,7 +1231,7 @@
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Arial", 12F);
-			this.label2.Image = global::SitecoreTreeWalker.Properties.Resources.redx;
+			this.label2.Image = global::InformaSitecoreWord.Properties.Resources.redx;
 			this.label2.Location = new System.Drawing.Point(20, 121);
 			this.label2.Margin = new System.Windows.Forms.Padding(0);
 			this.label2.Name = "label2";
@@ -1242,7 +1242,7 @@
 			// label1
 			// 
 			this.label1.Font = new System.Drawing.Font("Arial", 12F);
-			this.label1.Image = global::SitecoreTreeWalker.Properties.Resources.redx;
+			this.label1.Image = global::InformaSitecoreWord.Properties.Resources.redx;
 			this.label1.Location = new System.Drawing.Point(20, 71);
 			this.label1.Margin = new System.Windows.Forms.Padding(0);
 			this.label1.Name = "label1";
@@ -1253,7 +1253,7 @@
 			// uxArticleInformationIcon
 			// 
 			this.uxArticleInformationIcon.Font = new System.Drawing.Font("Arial", 12F);
-			this.uxArticleInformationIcon.Image = global::SitecoreTreeWalker.Properties.Resources.redx;
+			this.uxArticleInformationIcon.Image = global::InformaSitecoreWord.Properties.Resources.redx;
 			this.uxArticleInformationIcon.Location = new System.Drawing.Point(20, 21);
 			this.uxArticleInformationIcon.Margin = new System.Windows.Forms.Padding(0);
 			this.uxArticleInformationIcon.Name = "uxArticleInformationIcon";

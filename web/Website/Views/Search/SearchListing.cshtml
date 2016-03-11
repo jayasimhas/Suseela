@@ -1,6 +1,6 @@
 ﻿@model dynamic
 
-<section class="search-results" ng-class="{ 'headlines-only': headlinesOnly.showOnlyHeadlines() }" ng-controller="searchResultsController as results">
+<section class="search-results" ng-class="{ 'headlines-only': headlinesOnly.showOnlyHeadlines() }" ng-controller="InformaResultsController as results">
 
     <!-- start Media Object - Default (no width) -->
     <div class="result" ng-repeat="doc in results.docs">
@@ -22,11 +22,14 @@
                 <svg><use ng-href="/dist/img/svg-sprite.svg#{{doc.mediaType}}" xlink:href=""></use></svg> <!-- example media type icon, video -->
             </div>
 
-            <div class="result__bookmark pop-out__trigger js-pop-out-trigger"
+            <div class="result__bookmark pop-out__trigger js-pop-out-trigger result__bookmark--not-bookmarked"
                  data-pop-out-type="sign-in"
                  data-pop-out-align="right">
-                <svg class="article-prologue__share-icon">
-                    <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use> <!-- if an item is bookmarked, change svg link to svg-sprite.svg#bookmarked -->
+                <svg class="icon__bookmark icon__bookmark--outlined">
+                    <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+                </svg>
+                <svg class="icon__bookmark icon__bookmark--filled">
+                    <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
                 </svg>
             </div>
 
@@ -36,16 +39,16 @@
                 {{ doc.title }}
             </a>
 
-            <div class="result__author">by {{ doc.byline }}</div>
+            <div class="result__author" ng-if="doc.byline !== ''">By {{ doc.byline }}</div>
 
             <p class="result__description">{{ doc.summary }}</p>
 
              <div class="result__tags"  >
-
-                 <span ng-repeat="tax in doc.searchDisplayTaxonomy.links"><a href="{{tax.url}}">
+                 
+                 <span ng-repeat="tax in doc.searchDisplayTaxonomy.links"><a ng-click="filterResult(tax.url)" href="{{tax.url}}">
                     {{tax.title}}
                 </a>
-                     <span ng-if="!$last">  | </span> <!-- only prints if there are multiple tags -->
+                     <span ng-if="!$last"  class="result__line-separator"></span> <!-- only prints if there are multiple tags -->
                  </span>
                 
             </div>

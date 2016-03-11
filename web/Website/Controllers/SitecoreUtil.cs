@@ -14,7 +14,6 @@ namespace Informa.Web.Controllers
 {
 	public static class SitecoreUtil
 	{
-		//TODO: Business logic for Article Number Generation
 		/// <summary>
 		/// This method Generates the Article Number
 		/// </summary>
@@ -55,9 +54,7 @@ namespace Informa.Web.Controllers
 				}
 			}
 
-			userStatus.LoginAttemptsRemaining = 1;
-			//TODO
-			//userStatus.LoginAttemptsRemaining = AttemptedPasswordAttemptsRemaining(user);
+			userStatus.LoginAttemptsRemaining = AttemptedPasswordAttemptsRemaining(user);
 			userStatus.LockedOut = user.IsLockedOut;
 			bool wasUserLockedOut = user.IsLockedOut;
 
@@ -80,16 +77,12 @@ namespace Informa.Web.Controllers
 				}
 			}
 
-			userStatus.LoginAttemptsRemaining = 1;
-			//TODO
-			//userStatus.LoginAttemptsRemaining = AttemptedPasswordAttemptsRemaining(user);
+			userStatus.LoginAttemptsRemaining = AttemptedPasswordAttemptsRemaining(user);
 			userStatus.LockedOut = user.IsLockedOut;
 
 			return userStatus;
 		}
-
-		//TODO _ add a check to get the attempts left
-		/*
+		
 		public static int AttemptedPasswordAttemptsRemaining(MembershipUser user)
 		{
 			var membershipProvider = (CustomSqlMembershipProvider)Membership.Providers["sql"];
@@ -100,6 +93,6 @@ namespace Informa.Web.Controllers
 
 			return membershipProvider.GetRemainingPasswordAttempts((Guid)user.ProviderUserKey);
 		}
-		*/
+		
 	}
 }

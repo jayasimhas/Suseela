@@ -1,0 +1,58 @@
+﻿@model Informa.Web.Areas.Account.ViewModels.Management.SavedArticlesViewModel
+
+@if (Model.IsAuthenticated)
+{
+    <div class="page-account">
+        <h1 class="page-account__header">@Model.Title</h1>
+        <div class="page-preferences js-preferences-user-container">
+            <div style="display: none;" class="js-preferences-user-error-container">
+                <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-general">@Model.GeneralErrorText</p>
+                <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-null-user">@Model.NullUserText</p>
+                <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-request-failed">@Model.RequestFailedText</p>
+                <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-bad-id">@Model.BadIDText</p>
+            </div>
+
+            <table>
+                <thead>
+                <tr>
+                    <td>
+                        @Model.TitleText
+                    </td>
+                    <td>
+                        @Model.DateText
+                    </td>
+                    <td></td>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.SavedDocuments)
+                {
+                    <tr>
+                        <td>
+                            @HttpUtility.HtmlDecode(item.Name)
+                        </td>
+                        <td>
+                            @item.SaveDate.ToString("d MMMM yyyy")
+                        </td>
+                        <td>
+                            <form class="form-saved-content" data-on-submit="/Account/api/SavedDocumentApi/RemoveItem/">
+                                <input name="DocumentID"
+                                       id="DocumentID"
+                                       type="hidden"
+                                       value="@item.DocumentId">
+                                <button type="submit" class="button--filled button--fly-right">@Model.RemoveText</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+
+            <p style="display: none;" class="js-preferences-user-success">@Model.ItemRemovedMessage</p>
+        </div>
+    </div>
+}
+else
+{
+    Html.RenderPartial("_SignInForm", Model.SignInViewModel);
+}

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using InformaSitecoreWord.Sitecore;
 using PluginModels;
-using SitecoreTreeWalker.Sitecore;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
     public partial class CompanyTreeView : UserControl
     {
@@ -82,10 +82,10 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             }
 
             var node = new TreeNode(current.Title, GetChildNodes(current, filter).ToArray())
-                           {
-                               Tag = current.RecordID,
-                               ImageIndex = 0
-                           };
+            {
+                Tag = current.RecordID,
+                ImageIndex = 0
+            };
             node.Expand();
 
             return node;
@@ -93,14 +93,17 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
         private IEnumerable<TreeNode> GetChildNodes(CompanyWrapper current, Dictionary<int, bool> filter)
         {
-            foreach (var child in current.RelatedCompanies)
+            if (current.RelatedCompanies != null)
             {
-                if (filter != null && !filter.ContainsKey(child.RecordID))
+                foreach (var child in current.RelatedCompanies)
                 {
-                    continue;
-                }
+                    if (filter != null && !filter.ContainsKey(child.RecordID))
+                    {
+                        continue;
+                    }
 
-                yield return GetNode(child, filter);
+                    yield return GetNode(child, filter);
+                }
             }
         }
 
@@ -355,7 +358,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             {
                 ListViewItem selectedItem = noFlickerListView1.SelectedItems[0];
 
-                int i = (int) selectedItem.Tag;
+                int i = (int)selectedItem.Tag;
 
                 SelectNodeInTree(i);
                 tabControl1.SelectedTab = tabTreeView;
@@ -380,7 +383,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
         private TreeNode FindCompany(int recordId, TreeNode wrapper)
         {
-            int id = (int) wrapper.Tag;
+            int id = (int)wrapper.Tag;
             if (id == recordId)
             {
                 return wrapper;
@@ -408,7 +411,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
                 treeView1.SelectedNode = node;
                 node.EnsureVisible();
             }
-            
+
             tabControl1.SelectedTab = tabTreeView;
         }
 

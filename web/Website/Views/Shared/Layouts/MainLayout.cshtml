@@ -1,4 +1,6 @@
 ﻿@model MainLayoutViewModel
+@using System.Configuration
+@using Informa.Library.Utilities.References        
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +24,39 @@
 
     @* @Html.Sitecore().VisitorIdentification() *@
     @Html.Sitecore().Placeholder("head")
+    <script src="/js/openadstream.js"></script>
+    <!--
+    To collect end-user usage analytics about your application,
+    insert the following script into each page you want to track.
+    Place this code immediately before the closing </head> tag,
+    and before any other scripts. Your first data will appear
+    automatically in just a few seconds.
+    -->
+    @if (Model.AppInsightsConfig.Enabled)
+    {
+        <script type="text/javascript">
+            var appInsights = window.appInsights || function(config) {
+                function r(config) {
+                    t[config] = function() {
+                        var i = arguments;
+                        t.queue.push(function() { t[config].apply(t, i) })
+                    }
+                }
+
+                var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f;
+                for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;)r("track" + i.pop());
+                return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function(config, r, u, e, o) {
+                    var s = f && f(config, r, u, e, o);
+                    return s !== !0 && t["_" + i](config, r, u, e, o), s
+                }), t
+            }({
+                instrumentationKey: "@Model.AppInsightsConfig.InstrumentationKey"
+            });
+
+            window.appInsights = appInsights;
+            appInsights.trackPageView();
+        </script>
+    }
 </head>
 <body>
 
@@ -33,31 +68,17 @@
     @*@Html.Glass().InvokeAction(mvc => Execute());*@
     @{ Html.RenderPartial("_Navigation", Model.SideNavigationMenu);}
 
-    <div class="main__wrapper">
+    <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
 
-        @*
-        <div class="general-header">
-            <div class="general-header__section-title">
-                Name of Section
-            </div>
-            <div class="general-header__navigation">
-                <a href="#" class="is-active">General Content Page V1</a>
-                <a href="#">Page Name</a>
-                <a href="#">Page Name</a>
-                <a href="#">Page Name</a>
-            </div>
-        </div>
-        *@
         <div class="general-header">
             @Html.Sitecore().Placeholder("general-header")
         </div>
 
         @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
+		@{  Html.RenderPartial("Company/_RegisterMessage", Model.CompanyRegisterMessage); }
 
         <div class="main__content">
-
             @Html.Sitecore().Placeholder("main-content")
-
         </div>
 
         @* * *  POP-OUT TEMPLATE MARKUP *@
@@ -77,6 +98,7 @@
 </footer>
 
 <script src="/dist/js/index.js"></script>
+
 
 </body>
 </html>

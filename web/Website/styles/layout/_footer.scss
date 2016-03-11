@@ -140,6 +140,10 @@ footer li {
 	margin-right: 20px;
     height: 24px;
     width: 24px;
+
+	&:hover {
+		@include svg-fill($color-zeus-black);
+	}
 }
 
 

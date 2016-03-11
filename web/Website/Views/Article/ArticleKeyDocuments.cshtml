@@ -3,12 +3,11 @@
 @* * *  ARTICLE - KEY DOCUMENTS
         IIPP-158 *@
 
-@if (Model.KeyDocuments.Any())
+@if (Model.KeyDocuments.Any() && Model.IsEntitled())
 {
     <div class="article-key-documents">
-        <h2>Key Documents</h2>
+        <h2>@Model.KeyDocumentHeader</h2>
         <ul>
-
             @foreach (var doc in Model.KeyDocuments)
             {
                 <li class="article-key-document">
@@ -22,20 +21,12 @@
                         Supported" field on the Sitecore item"
                     This img `src` is a placeholder, please replace with images
                     sourced from Sitecore. *@
-                    <img class="article-key-document__icon" src="/assets/img/icon-pdf.png">
-                    <a href="@doc.LinkableUrl">@doc.LinkableText</a>
+                    <svg class="article-table__expand-table">
+                        <use xlink:href="/dist/img/svg-sprite.svg#@Model.GetDocumentIcon(doc)"></use>
+                    </svg>
+                    <a href="@doc._MediaUrl">@Model.GetTitle(doc)</a>
                 </li>
             }
-
-
-            @*<li class="article-key-document">
-            <img class="article-key-document__icon" src="/assets/img/icon-pdf.png">
-            <a href="#">Document Title Goes Here</a>
-        </li>
-        <li class="article-key-document">
-            <img class="article-key-document__icon" src="/assets/img/icon-pdf.png">
-            <a href="#">Document Title Goes Here</a>
-        </li>*@
         </ul>
     </div>
 }

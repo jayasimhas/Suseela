@@ -1,23 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI;
+using InformaSitecoreWord.UI.ArticleDetailsForm;
+using InformaSitecoreWord.UI.TreeBrowser;
+using InformaSitecoreWord.User;
 using PluginModels;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI;
-using SitecoreTreeWalker.UI.ArticleDetailsForm;
-using SitecoreTreeWalker.UI.TreeBrowser;
-using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.Util;
+using InformaSitecoreWord.Util;
 using Word = Microsoft.Office.Interop.Word;
 using StaffStruct = PluginModels.StaffStruct;
 
-namespace SitecoreTreeWalker
+namespace InformaSitecoreWord
 {
     public partial class SitecoreAddin
     {
@@ -91,10 +92,7 @@ namespace SitecoreTreeWalker
 
             try
             {
-				//TODO - Work on this service to get the support email.
-                //SupportEmailAddress = sctree.GetSupportEmail();
-				SupportEmailAddress = "aakash.shah@velir.com";
-
+                SupportEmailAddress = SitecoreClient.GetContactEmail();				
 			}
             catch (Exception ex)
             {
@@ -146,8 +144,8 @@ namespace SitecoreTreeWalker
                     case SaveDialog.SaveChoice.SaveToSitecoreAndUnlock:
                         // at this point, there can be no metadata changes, only body text changes.
                         var _sitecoreClient = new SitecoreClient();
-
-                        var errors = _sitecoreClient.SaveArticle(doc, SitecoreClient.ForceReadArticleDetails(documentCustomProps.ArticleNumber), Guid.Empty, new StaffStruct[0], documentCustomProps.ArticleNumber);
+                        var errors = _sitecoreClient.SaveArticle(doc, SitecoreClient.ForceReadArticleDetails(documentCustomProps.ArticleNumber), 
+							Guid.Empty, new List<StaffStruct>(), documentCustomProps.ArticleNumber);
 
                         if (errors.Count > 0)
                         {
@@ -175,9 +173,8 @@ namespace SitecoreTreeWalker
                         doc.Saved = true;
                         break;
                 }
-
-            }
-        }
+            }			
+		}
 
         void OpenArticleInformationWindowIfNeeded(Word.Document doc)
         {

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
 using HtmlAgilityPack;
+using InformaSitecoreWord.Properties;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.Util;
+using InformaSitecoreWord.Util.Document;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Properties;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.Util.Document;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 using UserControl = System.Windows.Forms.UserControl;
 
 
-namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	public partial class IFrameControl : UserControl
 	{
@@ -269,12 +269,6 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			}
 		}
 
-
-		/*
-			 * TODO : There is no way to check if a style exists so we have to try to create it and 
-			 then ignore the "Style alredy exists" error with the empty catch 
-			 my apologies
-			 * */
 		private static void CreateCustomStyleFromBase(Microsoft.Office.Interop.Word.Application app, string baseStyle,
 													   string newStyleName)
 		{

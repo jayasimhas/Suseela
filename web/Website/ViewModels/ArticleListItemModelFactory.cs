@@ -45,7 +45,7 @@ namespace Informa.Web.ViewModels
 				ListableSummary = article.Summary,
 				ListableTitle = article.Title,
 				ListableByline = publication,
-				ListableTopics = article.Taxonomies?.Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = "/Search?QueryParam" }),
+				ListableTopics = article.Taxonomies?.Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = $"/Search?tag={x._Id}" }),
 				ListableType = article.Media_Type?.Item_Name == "Data" ? "chart" : article.Media_Type?.Item_Name?.ToLower() ?? "",
 				ListableUrl = new Link { Url = article._Url, Text = article.Title },
 				LinkableText = article.Content_Type?.Item_Name,

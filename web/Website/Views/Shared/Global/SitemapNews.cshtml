@@ -1,0 +1,3 @@
+﻿@Html.Raw(Model.GetNewsSitemapXML())
+@{ Response.ContentType = "text/xml"; }
+@model SitemapViewModel

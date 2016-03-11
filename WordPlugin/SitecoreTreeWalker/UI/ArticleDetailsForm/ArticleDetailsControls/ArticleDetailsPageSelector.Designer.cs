@@ -1,6 +1,6 @@
-﻿using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
+﻿using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 {
 	partial class ArticleDetailsPageSelector
 	{
@@ -31,17 +31,17 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		private void InitializeComponent()
 		{
 			this.FlowLayoutMenu = new System.Windows.Forms.FlowLayoutPanel();
-			this.ArticleInformationMenuItem = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.MenuSelectorItem();
-			this.RelatedArticlesMenuItem = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.MenuSelectorItem();
-			this.WorkflowMenuItem = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.MenuSelectorItem();
-			this.FeaturedImagesMenuItem = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.MenuSelectorItem();
-			this.TaxonomyMenuItem = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.MenuSelectorItem();
+			this.ArticleInformationMenuItem = new MenuSelectorItem();
+			this.RelatedArticlesMenuItem = new MenuSelectorItem();
+			this.WorkflowMenuItem = new MenuSelectorItem();
+			this.FeaturedImagesMenuItem = new MenuSelectorItem();
+			this.TaxonomyMenuItem = new MenuSelectorItem();
 			this.CurrentPagePanel = new System.Windows.Forms.Panel();
-			this.pageArticleInformationControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.ArticleInformationControl();
-			this.pageTaxonomyControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.TaxonomyControl();
-			this.pageFeaturedImageControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.FeaturedImage();
-			this.pageWorkflowControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.WorkflowControl();
-			this.pageRelatedArticlesControl = new SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls.RelatedArticlesControl();
+			this.pageArticleInformationControl = new ArticleInformationControl();
+			this.pageTaxonomyControl = new TaxonomyControl();
+			this.pageFeaturedImageControl = new FeaturedImage();
+			this.pageWorkflowControl = new WorkflowControl();
+			this.pageRelatedArticlesControl = new RelatedArticlesControl();
 			this.FlowLayoutPanel = new System.Windows.Forms.Panel();
 			this.FlowLayoutMenu.SuspendLayout();
 			this.CurrentPagePanel.SuspendLayout();

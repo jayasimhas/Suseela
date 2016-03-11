@@ -1,3 +1,16 @@
+/*---
+title: Article Pullquote
+section: Article Components
+---
+Styles for a pull quote or blockquote.
+
+```example:html
+<blockquote class="article-pullquote">
+    <p>Sometimes you just gotta come up with something to say.</p>
+</blockquote>
+```
+*/
+
 .article-pullquote {
     @include textMix('Roboto', 22px, 500);
     border-bottom: 1px solid $informa-dark-orange;
@@ -17,7 +30,7 @@
             margin: 0;
         }
     }
-    
+
     @include breakpoint('medium') {
         font-size: 20px;
         margin: 2rem 0px;

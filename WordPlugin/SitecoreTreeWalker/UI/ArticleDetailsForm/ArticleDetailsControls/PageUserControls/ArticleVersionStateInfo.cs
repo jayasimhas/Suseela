@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.Util;
+using InformaSitecoreWord.Util;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.User;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
     public partial class ArticleVersionStateInfo : Form
     {
@@ -28,6 +28,8 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             {
                 return;
             }
+
+
             var updatedArticleDetail = new ArticleDetail();
             if (Convert.ToDateTime(_parent.ArticleDetails.WordDocLastUpdateDate) >=
                 Convert.ToDateTime(updatedArticleDetail.ArticleDetails.WordDocLastUpdateDate)) return;

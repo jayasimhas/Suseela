@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+﻿namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	partial class IFrameControl
 	{
@@ -277,8 +277,8 @@
 			// pictureBox1
 			// 
 			this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox1.Image = global::SitecoreTreeWalker.Properties.Resources.imformaVideoPlaceholder2;
-			this.pictureBox1.InitialImage = global::SitecoreTreeWalker.Properties.Resources.ExampleEmbed;
+			this.pictureBox1.Image = global::InformaSitecoreWord.Properties.Resources.imformaVideoPlaceholder2;
+			this.pictureBox1.InitialImage = global::InformaSitecoreWord.Properties.Resources.ExampleEmbed;
 			this.pictureBox1.Location = new System.Drawing.Point(13, 80);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(282, 166);
@@ -288,7 +288,7 @@
 			// 
 			// label9
 			// 
-			this.label9.Image = global::SitecoreTreeWalker.Properties.Resources.multimedia_tabheader;
+			this.label9.Image = global::InformaSitecoreWord.Properties.Resources.multimedia_tabheader;
 			this.label9.Location = new System.Drawing.Point(-3, 0);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(310, 24);

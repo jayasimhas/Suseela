@@ -3,32 +3,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using SitecoreTreeWalker.User;
 using System.Web.Script.Serialization;
+using InformaSitecoreWord.Custom_Exceptions;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.User;
+using InformaSitecoreWord.Util;
+using InformaSitecoreWord.Util.Document;
+using InformaSitecoreWord.WebserviceHelper;
 using Microsoft.Office.Interop.Word;
 using Newtonsoft.Json;
 using PluginModels;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Custom_Exceptions;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.Util.Document;
-using SitecoreTreeWalker.WebserviceHelper;
+using InformaSitecoreWord.Config;
 
 /// <summary>
-namespace SitecoreTreeWalker.Sitecore
+namespace InformaSitecoreWord.Sitecore
 {
 	class SitecoreClient
 	{
 		private static List<StaffStruct> _authors;
 		private static ArticleStruct _articleDetails = new ArticleStruct();
 		protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
-        private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true };
+		private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true };
+		//private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true, Credentials = new NetworkCredential(@"dev\tanasuk", "DjnznZZ21!") };
 
-        private static readonly UserCredentialReader _reader = UserCredentialReader.GetReader();
+
+		private static readonly UserCredentialReader _reader = UserCredentialReader.GetReader();
+
+		public SitecoreClient()
+		{
+			if (_sitecoreUser.Username != null && _handler.CookieContainer.GetCookies(new Uri(Constants.EDITOR_ENVIRONMENT_SERVERURL)) == null)
+			{
+				_sitecoreUser.Authenticate(_sitecoreUser.Username, _sitecoreUser.Password);
+				//var cookie = UserCredentialReader.GetReader().GetCookie(_sitecoreUser.Username);
+				//_handler.CookieContainer.Add(cookie);
+			}
+
+		}
+
+		public bool IsUserAuthorized()
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}CreateArticle").Result;
+
+				return response.IsSuccessStatusCode;
+			}
+		}
 
 
-        public static List<TaxonomyStruct> SearchTaxonomy(string term)
+		public static List<TaxonomyStruct> SearchTaxonomy(string term)
 		{
 			using (var client = new HttpClient(_handler, false))
 			{
@@ -216,9 +239,8 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
-		//TODO - Implement this
 		public static int GetMaxLengthShortSummary()
-		{			
+		{
 			using (var client = new HttpClient(_handler, false))
 			{
 				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMaxLengthShortSummary").Result;
@@ -230,18 +252,36 @@ namespace SitecoreTreeWalker.Sitecore
 				*/
 			}
 		}
-		
-		//TODO - Implement this
+
 		public static int GetMaxLengthLongSummary()
 		{
 			using (var client = new HttpClient(_handler, false))
 			{
 				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetMaxLengthLongSummary").Result;
-				var length =  JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+				var length = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
 				return length;
 			}
 		}
 
+		public static string GetContactEmail()
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetContactEmail").Result;
+				var email = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
+				return email;
+			}
+		}
+
+		public static List<string> GetFullNameAndEmail(string userName)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetUserInfo?username={userName}").Result;
+				var userInfo = JsonConvert.DeserializeObject<List<string>>(response.Content.ReadAsStringAsync().Result);
+				return userInfo;
+			}
+		}
 
 		public static bool IsAvailable()
 		{
@@ -271,12 +311,16 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
-		//TODO - GetDealInfo
 		public static DealInfo GetDealInfo(string recordNumber)
 		{
-			//return sctree.GetDealInfo(recordNumber, _sitecoreUser.Username, _sitecoreUser.Password);
-			return new DealInfo();
-	}
+			using (var client = new HttpClient(_handler, false))
+			{
+				//var response = client.GetAsync($"http://dev.ibi.velir.com/api/GetDealInfo?recordNumber={recordNumber}").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetDealInfo?recordNumber={recordNumber}").Result;
+				var dealInfo = JsonConvert.DeserializeObject<DealInfo>(response.Content.ReadAsStringAsync().Result);
+				return dealInfo;
+			}
+		}
 
 		public static int[] GetWidthHeightOfMediaItem(string path)
 		{
@@ -288,18 +332,26 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 
 		}
-		//TODO - GetAllCompanies
 		public static List<CompanyWrapper> GetAllCompanies()
 		{
-			//return sctree.GetAllCompanies(_sitecoreUser.Username, _sitecoreUser.Password).ToList();
-			return new List<CompanyWrapper>();
+			using (var client = new HttpClient(_handler, false))
+			{
+				//var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAllCompanies").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAllCompanies").Result;
+				var lstComp = JsonConvert.DeserializeObject<List<CompanyWrapper>>(response.Content.ReadAsStringAsync().Result);
+				return lstComp;
+			}
 		}
-		
-		//TODO - GetAllRelatedCompanies
+
 		public static IEnumerable<CompanyWrapper> GetAllCompaniesWithRelated()
 		{
-			//return sctree.GetAllCompaniesWithRelated(_sitecoreUser.Username, _sitecoreUser.Password);
-			return new List<CompanyWrapper>();
+			using (var client = new HttpClient(_handler, false))
+			{
+				//var response = client.GetAsync("http://dev.ibi.velir.com/api/GetAllCompaniesWithRelated").Result;
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAllCompaniesWithRelated").Result;
+				var lstComp = JsonConvert.DeserializeObject<List<CompanyWrapper>>(response.Content.ReadAsStringAsync().Result);
+				return lstComp;
+			}
 		}
 
 		public static List<WordStyleStruct> GetParagraphStyles()
@@ -341,7 +393,7 @@ namespace SitecoreTreeWalker.Sitecore
 				return mediaItem;
 			}
 		}
-		
+
 		public static Guid GetItemGuidByPath(string path)
 		{
 			using (var client = new HttpClient(_handler, false))
@@ -366,427 +418,443 @@ namespace SitecoreTreeWalker.Sitecore
 			}
 		}
 
-        public ArticleStruct SaveStubToSitecore(string articleName, string publicationDate, Guid publicationID)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var article = new CreateArticleRequest() { Name = articleName, PublicationID = publicationID, PublicationDate = publicationDate };
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CreateArticle", article).Result;
-                var articleItem = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
-                return articleItem;
-            }
-        }
+		public ArticleStruct SaveStubToSitecore(string articleName, string publicationDate, Guid publicationID)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var article = new CreateArticleRequest() { Name = articleName, PublicationID = publicationID, PublicationDate = publicationDate };
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CreateArticle", article).Result;
+				var articleItem = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
+				return articleItem;
+			}
+		}
 
-        public static bool DoesArticleNameAlreadyExistInIssue(ArticleStruct articleDetails)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleNameAlreadyExistInIssue").Result;
-                var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
-                return flag;
-            }
-        }
+		public static bool DoesArticleNameAlreadyExistInIssue(ArticleStruct articleDetails)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleNameAlreadyExistInIssue").Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+		}
 
-        public static void SaveMetadataToSitecore(string articleID, ArticleStruct articleData)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var article = new SaveArticleDetails() { ArticleNumber = articleID, ArticleData = articleData };
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleDetails", article).Result;
-            }
-        }
+		public static void SaveMetadataToSitecore(string articleID, ArticleStruct articleData)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var article = new SaveArticleDetails() { ArticleNumber = articleID, ArticleData = articleData };
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleDetails", article).Result;
+			}
+		}
 
-        public static void SaveArticleDetailsByGuid(Guid articleGuid, ArticleStruct articleData)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var article = new SaveArticleDetailsByGuid() { ArticleGuid = articleGuid, ArticleData = articleData };
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleDetailsByGuid", article).Result;
-            }
-        }
+		public static void SaveArticleDetailsByGuid(Guid articleGuid, ArticleStruct articleData)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var article = new SaveArticleDetailsByGuid() { ArticleGuid = articleGuid, ArticleData = articleData };
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleDetailsByGuid", article).Result;
+			}
+		}
 
-        public static string GetArticleUrl(string articleNumber)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleUrl", articleNumber).Result;
-                var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
-                return url;
-            }
-        }
+		public static string GetArticleUrl(string articleNumber)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleUrl", articleNumber).Result;
+				var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
+				return url;
+			}
+		}
 
-        public static string GetArticlePreviewUrl(string articleNumber)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}PreviewUrlArticle", articleNumber).Result;
-                var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
-                return url;
-            }
-        }
+		public static string GetArticlePreviewUrl(string articleNumber)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}PreviewUrlArticle", articleNumber).Result;
+				var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
+				return url;
+			}
+		}
 
-        public static string GetArticleDynamicUrl(string articleNumber)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleDynamicUrl", articleNumber).Result;
-                var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
-                return url;
-            }
-        }
+		public static string GetArticleDynamicUrl(string articleNumber)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleDynamicUrl", articleNumber).Result;
+				var url = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
+				return url;
+			}
+		}
 
-        public static bool DoesArticleHaveText(string articleNumber)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleHaveText", articleNumber).Result;
-                var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
-                return flag;
-            }
-        }
+		public static bool DoesArticleHaveText(string articleNumber)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleHaveText", articleNumber).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+		}
 
-        public static bool DoesArticleHaveText(Guid articleGuid)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleGuidHaveText", articleGuid).Result;
-                var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
-                return flag;
-            }
-        }
+		public static bool DoesArticleHaveText(Guid articleGuid)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleGuidHaveText", articleGuid).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+		}
 
-        public static bool DoesArticleExist(string articleNumber)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleExist", articleNumber).Result;
-                var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
-                return flag;
-            }
-        }
+		public static bool DoesArticleExist(string articleNumber)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleExist", articleNumber).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+		}
 
-        public static bool DoesArticleExist(Guid articleGuid)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleGuidExist", articleGuid).Result;
-                var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
-                return flag;
-            }
-        }
+		public static bool DoesArticleExist(Guid articleGuid)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleGuidExist", articleGuid).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+		}
 
-        public static CheckoutStatus GetLockedStatus(string articleNumber)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetLockedStatus", articleNumber).Result;
-                return JsonConvert.DeserializeObject<CheckoutStatus>(response.Content.ReadAsStringAsync().Result);
-            }
-        }
+		public static CheckoutStatus GetLockedStatus(string articleNumber)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetLockedStatus", articleNumber).Result;
+				return JsonConvert.DeserializeObject<CheckoutStatus>(response.Content.ReadAsStringAsync().Result);
+			}
+		}
 
-        public static CheckoutStatus GetLockedStatus(Guid articleGuid)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetLockedStatusByGuid", articleGuid).Result;
-                return JsonConvert.DeserializeObject<CheckoutStatus>(response.Content.ReadAsStringAsync().Result);
-            }
-        }
+		public static CheckoutStatus GetLockedStatus(Guid articleGuid)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetLockedStatusByGuid", articleGuid).Result;
+				return JsonConvert.DeserializeObject<CheckoutStatus>(response.Content.ReadAsStringAsync().Result);
+			}
+		}
 
-        public static bool CheckOutArticle(string articleNumber, string username)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CheckOutArticle", articleNumber).Result;
-                var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
-                return flag;
-            }
-        }
+		public static bool CheckOutArticle(string articleNumber, string username)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CheckOutArticle", articleNumber).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+		}
 
-        public static bool CheckOutArticle(Guid articleGuid, string username)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CheckOutArticleByGuid", articleGuid).Result;
-                var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
-                return flag;
-            }
-        }
+		public static bool CheckOutArticle(Guid articleGuid, string username)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CheckOutArticleByGuid", articleGuid).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+		}
 
-        public static bool CheckInArticle(string articleNumber)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CheckInArticle", articleNumber).Result;
-                var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
-                return flag;
-            }
-        }
+		public static bool CheckInArticle(string articleNumber)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CheckInArticle", articleNumber).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+		}
 
-        public static bool CheckInArticle(Guid articleGuid)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CheckInArticleByGuid", articleGuid).Result;
-                var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
-                return flag;
-            }
-        }
+		public static bool CheckInArticle(Guid articleGuid)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CheckInArticleByGuid", articleGuid).Result;
+				var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+				return flag;
+			}
+		}
 
-        public static string GetArticleGuidByArticleNumber(string articleNumber)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleGuidByNum", articleNumber).Result;
-                var articleGuid = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
-                return articleGuid;
-            }
-        }
+		public static string GetArticleGuidByArticleNumber(string articleNumber)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleGuidByNum", articleNumber).Result;
+				var articleGuid = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
+				return articleGuid;
+			}
+		}
 
-        public static ArticlePreviewInfo GetArticlePreviewInfo(string articleNumber)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfo", articleNumber).Result;
-                var previewInfo = JsonConvert.DeserializeObject<ArticlePreviewInfo>(response.Content.ReadAsStringAsync().Result);
-                return previewInfo;
-            }
-        }
+		public static ArticlePreviewInfo GetArticlePreviewInfo(string articleNumber)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfo", articleNumber).Result;
+				var previewInfo = JsonConvert.DeserializeObject<ArticlePreviewInfo>(response.Content.ReadAsStringAsync().Result);
+				return previewInfo;
+			}
+		}
 
-        public static List<ArticlePreviewInfo> GetArticlePreviewInfo(List<Guid> guids)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfoByGuids", guids).Result;
-                var articlePreviewCollection = JsonConvert.DeserializeObject<List<ArticlePreviewInfo>>(response.Content.ReadAsStringAsync().Result);
-                return articlePreviewCollection;
-            }
-        }
+		public static List<ArticlePreviewInfo> GetArticlePreviewInfo(List<Guid> guids)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfoByGuids", guids).Result;
+				var articlePreviewCollection = JsonConvert.DeserializeObject<List<ArticlePreviewInfo>>(response.Content.ReadAsStringAsync().Result);
+				return articlePreviewCollection;
+			}
+		}
 
-        public static void SaveArticleText(string articleNumber, string text, ArticleStruct articleStruct)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var article = new SaveArticleText() { ArticleNumber = articleNumber, ArticleData = articleStruct, WordText = text };
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleText", article).Result;
-            }
-        }
+		public static void SaveArticleText(string articleNumber, string text, ArticleStruct articleStruct)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var article = new SaveArticleText() { ArticleNumber = articleNumber, ArticleData = articleStruct, WordText = text };
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleText", article).Result;
+			}
+		}
 
-        public static void SaveArticleText(Guid articleGuid, string text, ArticleStruct articleStruct)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var article = new SaveArticleTextByGuid() { ArticleGuid = articleGuid, ArticleData = articleStruct, WordText = text };
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleTextByGuid", article).Result;
-            }
-        }
+		public static void SaveArticleText(Guid articleGuid, string text, ArticleStruct articleStruct)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var article = new SaveArticleTextByGuid() { ArticleGuid = articleGuid, ArticleData = articleStruct, WordText = text };
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SaveArticleTextByGuid", article).Result;
+			}
+		}
 
-        public static int GetWordVersionNumber(string articleNumber)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetWordVersionNum", articleNumber).Result;
-                var versionNumber = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
-                return versionNumber;
-            }
-        }
+		public static int GetWordVersionNumber(string articleNumber)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetWordVersionNumByNumber", articleNumber).Result;
+				var versionNumber = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+				return versionNumber;
+			}
+		}
 
-        public static int GetWordVersionNumber(Guid articleguid)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetWordVersionNumByGuid", articleguid).Result;
-                var versionNumber = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
-                return versionNumber;
-            }
-        }
+		public static int GetWordVersionNumber(Guid articleguid)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetWordVersionNumByGuid", articleguid).Result;
+				var versionNumber = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+				return versionNumber;
+			}
+		}
 
-        public int SendDocumentToSitecore(string articleNumber, byte[] data, string extension, string username)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SendDocumentToSitecore", new SendDocumentToSitecore() { ArticleNumber = articleNumber, Data = data, Extension = extension }).Result;
-                return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
-            }
-        }
+		public int SendDocumentToSitecore(string articleNumber, byte[] data, string extension, string username)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SendDocumentToSitecore", new SendDocumentToSitecore() { ArticleNumber = articleNumber, Data = data, Extension = extension }).Result;
+				return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+			}
+		}
 
-        public int SendDocumentToSitecoreByGuid(Guid articleGuid, byte[] data, string extension, string username)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SendDocumentToSitecoreByGuid", new SendDocumentToSitecoreByGuid() { ArticlGuid = articleGuid, Data = data, Extension = extension }).Result;
-                return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
-            }
-        }
+		public int SendDocumentToSitecoreByGuid(Guid articleGuid, byte[] data, string extension, string username)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}SendDocumentToSitecoreByGuid", new SendDocumentToSitecoreByGuid() { ArticlGuid = articleGuid, Data = data, Extension = extension }).Result;
+				return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+			}
+		}
 
-        public static UserStatusStruct AuthenticateUser(string username, string password)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}AuthenticateUser", new LoginModel() { Username = username, Password = password }).Result;
-                var userStatus = JsonConvert.DeserializeObject<UserStatusStruct>(response.Content.ReadAsStringAsync().Result);
+		public static UserStatusStruct AuthenticateUser(string username, string password)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}AuthenticateUser", new LoginModel() { Username = username, Password = password }).Result;
+				var userStatus = JsonConvert.DeserializeObject<UserStatusStruct>(response.Content.ReadAsStringAsync().Result);
 
-                var cookies = _handler.CookieContainer.GetCookies(new Uri(Constants.EDITOR_ENVIRONMENT_SERVERURL));
-                
-                if(cookies != null && cookies.Count > 0 && string.Equals(".ASPXAUTH", cookies[0].Name))
-                    _reader.WriteCookie(cookies[0].Name);
+				var cookies = _handler.CookieContainer.GetCookies(new Uri(Constants.EDITOR_ENVIRONMENT_SERVERURL));
+
+				if (cookies != null && cookies.Count > 0 && string.Equals(".ASPXAUTH", cookies[0].Name))
+					_reader.WriteCookie(cookies, username);
 
 
-                return userStatus;
-            }
-        }   
+				return userStatus;
+			}
+		}
 
-        //TODO - work flow
-        public static WorkflowState GetWorkflowState(string articleNumber)
-        {
-            //return sctree.GetWorkflowState(articleNumber, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-            return new WorkflowState { DisplayName = "", IsFinal = true, Commands = new List<WorkflowCommand>() };
-        }
+		public static ArticleWorkflowState GetWorkflowState(string articleNumber)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response =
+					client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}Workflow?articleNumber=" + articleNumber).Result;
+				var workflowState =
+					JsonConvert.DeserializeObject<ArticleWorkflowState>(response.Content.ReadAsStringAsync().Result);
 
-        //TODO - work flow
-        public static WorkflowState GetWorkflowState(Guid articleGuid)
-        {
-            //var sctree = new SitecoreTree.SCTree();
-            //sctree.Url = Constants.EDITOR_ENVIRONMENT_LOGINURL;
-            //return sctree.GetWorkflowStateByGuid(articleGuid, SitecoreUser.GetUser().Username, SitecoreUser.GetUser().Password);
-            return new WorkflowState { DisplayName = "", IsFinal = true, Commands = new List<WorkflowCommand>() };
-        }
+				return workflowState;
+			}
+		}
 
-        public static string GetDocumentPassword()
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetDocumentPassword").Result;
-                return response.Content.ReadAsStringAsync().Result;
-            }
-        }
+		public static ArticleWorkflowState GetWorkflowState(Guid articleGuid)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response =
+					client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}Workflow?articleGuid=" + articleGuid).Result;
+				var workflowState =
+					JsonConvert.DeserializeObject<ArticleWorkflowState>(response.Content.ReadAsStringAsync().Result);
 
-        public List<string> SaveArticle(Document activeDocument, ArticleStruct articleDetails, Guid workflowCommand, StaffStruct[] notifications, string articleNumber, string body = null)
-        {
+				return workflowState;
+			}
+		}
 
-            string text;
-            try
-            {
-                text = body ?? _wordUtils.GetWordDocTextWithStyles(activeDocument).ToString();
-            }
-            catch (InsecureIFrameException insecureIframe)
-            {
-                string message = String.Empty;
-                foreach (string iframeURL in insecureIframe.InsecureIframes)
-                {
-                    message += $"\n{iframeURL}";
-                }
 
-                return new List<string> { "The following multimedia content is not secure. Please correct and try to save again. " + message };
-            }
-            catch (InvalidHtmlException)
-            {
-                return new List<string> { String.Empty };
-            }
-            catch (Exception ex)
-            {
-                Globals.SitecoreAddin.LogException("Error when parsing article!", ex);
-                return new List<string> { "The document could not be parsed to transfer to Sitecore! Details in logs." };
-            }
-            try
-            {
-                var documentCustomProperties = new DocumentCustomProperties(activeDocument);
-                articleDetails.ArticleSpecificNotifications = notifications.ToList();
-                articleDetails.WordCount = activeDocument.ComputeStatistics(0);
-                articleDetails.ReferencedDeals = ReferencedDealParser.GetReferencedDeals(activeDocument).ToList();
-                articleDetails.CommandID = workflowCommand;
-                articleDetails.SupportingDocumentPaths = _wordUtils.GetSupportingDocumentPaths().ToList();
-                Globals.SitecoreAddin.Log("Local document version before check: " +
-                                          documentCustomProperties.WordSitecoreVersionNumber);
-                var currentVersion = articleDetails.ArticleGuid != Guid.Empty
-                                         ? GetWordVersionNumber(articleDetails.ArticleGuid)
-                                         : GetWordVersionNumber(articleNumber);
-                Globals.SitecoreAddin.Log("Sitecore document version before save: " + currentVersion);
-                if (currentVersion != -1)
-                {
-                    documentCustomProperties.WordSitecoreVersionNumber = currentVersion + 1;
-                }
-                else
-                {
-                    documentCustomProperties.WordSitecoreVersionNumber = 1;
-                }
-                if (articleDetails.ArticleGuid != Guid.Empty)
-                {
-                    SaveArticleText(articleDetails.ArticleGuid, text, _structConverter.GetServerStruct(articleDetails));
-                }
-                else
-                {
-                    SaveArticleText(articleNumber, text, _structConverter.GetServerStruct(articleDetails));
-                }
+		public static string GetDocumentPassword()
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetDocumentPassword").Result;
+				return response.Content.ReadAsStringAsync().Result;
+			}
+		}
 
-                Globals.SitecoreAddin.Log("Local document version after check: " +
-                                          documentCustomProperties.WordSitecoreVersionNumber);
+		public List<string> SaveArticle(Document activeDocument, ArticleStruct articleDetails, Guid workflowCommand, List<StaffStruct> notifications, string articleNumber, string body = null, string notificationText = null)
+		{
 
-                SendWordDocumentToSitecore(activeDocument, documentCustomProperties, articleNumber, articleDetails);
-                documentCustomProperties.WordSitecoreVersionNumber = articleDetails.ArticleGuid != Guid.Empty ? GetWordVersionNumber(articleDetails.ArticleGuid) : GetWordVersionNumber(articleNumber);
+			string text;
+			try
+			{
+				text = body ?? _wordUtils.GetWordDocTextWithStyles(activeDocument).ToString();
+			}
+			catch (InsecureIFrameException insecureIframe)
+			{
+				string message = String.Empty;
+				foreach (string iframeURL in insecureIframe.InsecureIframes)
+				{
+					message += $"\n{iframeURL}";
+				}
 
-                Globals.SitecoreAddin.Log("Local document version after cautionary update: " +
-                                          documentCustomProperties.WordSitecoreVersionNumber);
+				return new List<string> { "The following multimedia content is not secure. Please correct and try to save again. " + message };
+			}
+			catch (InvalidHtmlException)
+			{
+				return new List<string> { String.Empty };
+			}
+			catch (Exception ex)
+			{
+				Globals.SitecoreAddin.LogException("Error when parsing article!", ex);
+				return new List<string> { "The document could not be parsed to transfer to Sitecore! Details in logs." };
+			}
+			try
+			{
+				var documentCustomProperties = new DocumentCustomProperties(activeDocument);
+				articleDetails.ArticleSpecificNotifications = notifications.ToList();
+				articleDetails.NotificationText = notificationText;
+				articleDetails.WordCount = activeDocument.ComputeStatistics(0);
+				articleDetails.ReferencedDeals = ReferencedDealParser.GetReferencedDeals(activeDocument).ToList();
+				articleDetails.CommandID = workflowCommand;
+				articleDetails.SupportingDocumentPaths = _wordUtils.GetSupportingDocumentPaths().ToList();
+				if (articleDetails.RelatedArticles == null)
+					articleDetails.RelatedArticles = new List<Guid>();
+				if (articleDetails.RelatedInlineArticles == null)
+					articleDetails.RelatedInlineArticles = new List<Guid>();
 
-                var path = activeDocument.Path;
-                if (!string.IsNullOrWhiteSpace(path) && WordUtils.FileExistsAndNotReadOnly(path, activeDocument.Name))
-                {
-                    WordUtils.Save(activeDocument);
-                }
+				Globals.SitecoreAddin.Log("Local document version before check: " +
+										  documentCustomProperties.WordSitecoreVersionNumber);
+				var currentVersion = articleDetails.ArticleGuid != Guid.Empty
+										 ? GetWordVersionNumber(articleDetails.ArticleGuid)
+										 : GetWordVersionNumber(articleNumber);
+				Globals.SitecoreAddin.Log("Sitecore document version before save: " + currentVersion);
+				if (currentVersion != -1)
+				{
+					documentCustomProperties.WordSitecoreVersionNumber = currentVersion + 1;
+				}
+				else
+				{
+					documentCustomProperties.WordSitecoreVersionNumber = 1;
+				}
+				if (articleDetails.ArticleGuid != Guid.Empty)
+				{
+					SaveArticleText(articleDetails.ArticleGuid, text, _structConverter.GetServerStruct(articleDetails));
+				}
+				else
+				{
+					SaveArticleText(articleNumber, text, _structConverter.GetServerStruct(articleDetails));
+				}
 
-                return _wordUtils.Errors;
+				Globals.SitecoreAddin.Log("Local document version after check: " +
+										  documentCustomProperties.WordSitecoreVersionNumber);
 
-            }
-            catch (Exception ex)
-            {
-                Globals.SitecoreAddin.LogException("Error when saving article!", ex);
-                throw;
-            }
-        }
+				SendWordDocumentToSitecore(activeDocument, documentCustomProperties, articleNumber, articleDetails);
+				documentCustomProperties.WordSitecoreVersionNumber = articleDetails.ArticleGuid != Guid.Empty ? GetWordVersionNumber(articleDetails.ArticleGuid) : GetWordVersionNumber(articleNumber);
 
-        protected void SendWordDocumentToSitecore(Document activeDocument, DocumentCustomProperties documentCustomProperties, string articleNumber, ArticleStruct articleDetails)
-        {
-            string extension = GetExtension(activeDocument);
-            DocumentProtection.Protect(documentCustomProperties);
+				Globals.SitecoreAddin.Log("Local document version after cautionary update: " +
+										  documentCustomProperties.WordSitecoreVersionNumber);
 
-            byte[] data = _wordUtils.GetWordBytes(activeDocument);
-            if (data == null)
-            {
-                throw new Exception("Error saving file to disk.");
-            }
+				var path = activeDocument.Path;
+				if (!string.IsNullOrWhiteSpace(path) && WordUtils.FileExistsAndNotReadOnly(path, activeDocument.Name))
+				{
+					WordUtils.Save(activeDocument);
+				}
 
-            DocumentProtection.Unprotect(documentCustomProperties);
-            string uploader = SitecoreUser.GetUser().Username;
-            int wordSitecoreVersionNumber = articleDetails.ArticleGuid != Guid.Empty
-                                                ? this.SendDocumentToSitecoreByGuid(articleDetails.ArticleGuid, data, extension, uploader)
-                                                : this.SendDocumentToSitecore(articleNumber, data, extension, uploader);
-            documentCustomProperties.WordSitecoreVersionNumber = wordSitecoreVersionNumber;
-        }
+				return _wordUtils.Errors;
 
-        protected string GetExtension(Document activeDocument)
-        {
-            string extension;
-            int indexOfDot = activeDocument.Name.LastIndexOf(".");
-            if (indexOfDot < 0 || indexOfDot >= activeDocument.Name.Length)
-            {
-                // If, for some reason, we can't get the extension normally, just default to .docx
+			}
+			catch (Exception ex)
+			{
+				Globals.SitecoreAddin.LogException("Error when saving article!", ex);
+				throw;
+			}
+		}
 
-                extension = ".docx";
-            }
-            else
-            {
-                extension = activeDocument.Name.Substring(indexOfDot);
-                if (!(extension == ".docx" || extension == ".doc"))
-                {
-                    // if we get a weird extension, this is probably a problem. 
-                    //TODO: what do we do if we get a weird extension?
-                    extension = ".docx";
-                }
-            }
-            return extension;
-        }
+		protected void SendWordDocumentToSitecore(Document activeDocument, DocumentCustomProperties documentCustomProperties, string articleNumber, ArticleStruct articleDetails)
+		{
+			string extension = GetExtension(activeDocument);
+			DocumentProtection.Protect(documentCustomProperties);
 
-        protected WordUtils _wordUtils = new WordUtils();
-        protected static StructConverter _structConverter = new StructConverter();
-    }
+			byte[] data = _wordUtils.GetWordBytes(activeDocument);
+			if (data == null)
+			{
+				throw new Exception("Error saving file to disk.");
+			}
+
+			DocumentProtection.Unprotect(documentCustomProperties);
+			string uploader = SitecoreUser.GetUser().Username;
+			int wordSitecoreVersionNumber = articleDetails.ArticleGuid != Guid.Empty
+												? this.SendDocumentToSitecoreByGuid(articleDetails.ArticleGuid, data, extension, uploader)
+												: this.SendDocumentToSitecore(articleNumber, data, extension, uploader);
+			documentCustomProperties.WordSitecoreVersionNumber = wordSitecoreVersionNumber;
+		}
+
+		protected string GetExtension(Document activeDocument)
+		{
+			string extension;
+			int indexOfDot = activeDocument.Name.LastIndexOf(".");
+			if (indexOfDot < 0 || indexOfDot >= activeDocument.Name.Length)
+			{
+				// If, for some reason, we can't get the extension normally, just default to .docx
+
+				extension = ".docx";
+			}
+			else
+			{
+				extension = activeDocument.Name.Substring(indexOfDot);
+				if (!(extension == ".docx" || extension == ".doc"))
+				{
+					// if we get a weird extension, this is probably a problem. 
+					extension = ".docx";
+				}
+			}
+			return extension;
+		}
+
+		protected WordUtils _wordUtils = new WordUtils();
+		protected static StructConverter _structConverter = new StructConverter();
+	}
 }

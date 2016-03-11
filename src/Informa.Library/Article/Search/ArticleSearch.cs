@@ -111,7 +111,8 @@ namespace Informa.Library.Article.Search
 				};
 			}
 		}
-		public long GetNextArticleNumber(Guid publicationGuid)
+        
+        public long GetNextArticleNumber(Guid publicationGuid)
 		{
 		    using (var context = SearchContextFactory.Create("master"))
 		    {

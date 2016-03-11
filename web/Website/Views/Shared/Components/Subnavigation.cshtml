@@ -2,16 +2,31 @@
 @using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
 @model SubnavigationViewModel
 
-@if(Model.SubnavigationItems.Count() > 0) { 
-    @* Top Element *@
-    <a href="@Model.GlassModel._Url">
-        @Model.GlassModel.Navigation_Title    
-    </a>
-    @* Subnavigation Items *@
-    foreach (I___BasePage sn in @Model.SubnavigationItems)
+<div class="general-header">
+
+    @if (Model.SubnavigationItems.Count() > 0)
     {
-        <a href="sn._Url">
-            @sn.Navigation_Title
-        </a>
+        @* Subnavigation Items *@
+        <div class="general-header__navigation">
+            <a class="is-active" href="@Model.GlassModel._Url">
+                @Model.GlassModel.Navigation_Title
+            </a>
+            @foreach (I___BasePage sn in @Model.SubnavigationItems)
+            {
+                <a href="@sn._Url">
+                    @sn.Navigation_Title
+                </a>
+            }
+        </div>
+        <div class="general-header__navigation-scroller--right">
+            <svg>
+                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+            </svg>
+        </div>
+        <div class="general-header__navigation-scroller--left">
+            <svg>
+                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+            </svg>
+        </div>
     }
-}
+</div>

@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	partial class SupportingDocumentsControl
 	{
@@ -43,7 +43,7 @@
 			// 
 			this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
 			this.label1.ForeColor = System.Drawing.Color.Gray;
-			this.label1.Image = global::SitecoreTreeWalker.Properties.Resources.supportingdocs_tabheader;
+			this.label1.Image = global::InformaSitecoreWord.Properties.Resources.supportingdocs_tabheader;
 			this.label1.Location = new System.Drawing.Point(0, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(610, 30);

@@ -20,16 +20,13 @@ using Sitecore.Globalization;
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
-	public partial interface IArticle : IPublicationChild
+	public partial interface IArticle : IPublicationChild, IEntitledProductItem
 	{
-		//TODO
 		bool IsPublished { get; set; }
-
-		/*[SitecoreField(I___BaseTaxonomyConstants.TaxonomiesFieldName)]
-		IEnumerable<Guid> TaxonomyIDs { get; set; } */
+        bool IsFree { get; }
 	}
 
-	public class ArticleMap : SitecoreGlassMap<IPublicationChild>
+    public class ArticleMap : SitecoreGlassMap<IPublicationChild>
 	{
 		public override void Configure()
 		{
@@ -119,9 +116,17 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public bool Scheduled_Publishing_Enabled { get; set; }
         public bool Include_In_Search { get; set; }
 		public Link Canonical_Link { get; set; }
+		public Guid Workflow { get; set; }
+		public Guid State { get; set; }
+
+		public string Notification_Text { get; set; }
+        public string Leaderboard_Slot_ID { get; set; }
+
+        [SitecoreField("__updated")]
+        public virtual DateTime Updated { get; set; }
     }
 
-    public interface IPublicationChild
+	public interface IPublicationChild
 	{
 		Guid Publication { get; }
 	}

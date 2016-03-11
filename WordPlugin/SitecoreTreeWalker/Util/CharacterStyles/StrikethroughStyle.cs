@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Office.Interop.Word;
 
-namespace SitecoreTreeWalker.Util.CharacterStyles
+namespace InformaSitecoreWord.Util.CharacterStyles
 {
 	class StrikethroughStyle : CharacterStyle
 	{

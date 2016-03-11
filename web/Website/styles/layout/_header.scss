@@ -1,21 +1,58 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
+/*---
+title: Global Header
+section: Global Components
+---
+
+```example:html
+<header>
+    <div class="header__wrapper clearfix">
+
+        <div class="menu-toggler menu-toggler--mini js-toggle-menu">
+            <button class="menu-toggler__button">
+                <span>Toggle Menu</span>
+            </button>
+            Menu
+        </div>
+
+        <div class="header__logo">
+            <a href="/"><img src="/-/media/scriplogo.jpg"></a>
+        </div>
+
+        <div class="header-search__wrapper">
+            <input class="inf-standard-form-field header-search__field" type="search" placeholder="Search the site">
+            <svg class="header__icons header__icons--search js-header-search-trigger">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#search"></use>
+            </svg>
+            <svg class="header__icons header__icons--dismiss-search js-header-search-trigger">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#x"></use>
+            </svg>
+        </div>
+
+        <div class="header-account-access">
+                <div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger" data-pop-out-id="header-register" data-pop-out-type="register">
+
+                    <svg class="header__icons icon-register">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#register"></use>
+                    </svg>
+					<span class="header-account-access__label">Register</span>
+                </div>
+                <div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger" data-pop-out-id="header-signin" data-pop-out-align="right" data-pop-out-type="sign-in" data-pop-out-tab-height="87">
+                    <svg class="header__icons icon-sign-in">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#sign-in"></use>
+                    </svg>
+					<span class="header-account-access__label">Sign In</span>
+                </div>
+        </div>
+    </div>
+</header>
+```
+*/
 
 $main-menu-desktop-width: 0px;
 $main-menu-tablet-width: 70px;
 $main-menu-smartphone-width: 62px;
 
 .header {
-
-	// This is just a placeholder. Will pull in actual banner from another
-	// existing project.
-	&__informa-permabanner {
-		background-color: #505050;
-		color: #fff;
-		line-height: 36px;
-		text-align: center;
-	}
 
 	// -------------------------------------------------------------------------
 	// Wraps main header content, below Informa banner and ad banner
@@ -60,7 +97,8 @@ $main-menu-smartphone-width: 62px;
 			}
 
 			@include breakpoint('small') {
-				margin-left: 5rem;
+				display: inline;
+                margin-left: 5rem;
 				padding-top: 1rem;
 			}
 		}
@@ -69,6 +107,8 @@ $main-menu-smartphone-width: 62px;
 			align-self: auto;
 			height: calc(100% - 1.25rem);
 			flex: 1 0 auto;
+            margin-right: 100px; // Prevents overlapping search icon
+            z-index: 20; // Position above search form, even when search is hidden
 		}
 	}
 
@@ -87,6 +127,7 @@ $main-menu-smartphone-width: 62px;
 			height: 20px;
 			width: 20px;
 			margin-left: 0.5rem;
+			cursor: pointer;
 		}
 		&--dismiss-search { // Hide on larger screens, no need to dismiss
 			display: none;
@@ -130,6 +171,8 @@ $main-menu-smartphone-width: 62px;
 				position: relative;
 
 				&.is-active {
+                    z-index: 25;
+
 					.header-search__field,
 					.header__icons--dismiss-search {
 						display: inline-block;
