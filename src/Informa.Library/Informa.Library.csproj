@@ -305,6 +305,7 @@
     <Compile Include="ComponentModel\DataAnnotations\PasswordAttribute.cs" />
     <Compile Include="CustomSitecore\Mvc\SitecoreValidateAntiForgeryTokenAttribute.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
+    <Compile Include="Data\Entity\CustomDbContext.cs" />
     <Compile Include="Mail\BaseHtmlEmailFactory.cs" />
     <Compile Include="DCD\XMLImporting\DCDConfigurationItem.cs" />
     <Compile Include="DCD\XMLImporting\DCDContextExtensions.cs" />
@@ -619,6 +620,11 @@
     <Compile Include="User\Registration\Web\WebRegisterUserSession.cs" />
     <Compile Include="User\Registration\Web\WebSendRegisterUserEmail.cs" />
     <Compile Include="User\Registration\Web\WebSetOptInsRegisterUser.cs" />
+    <Compile Include="User\ResetPassword\Entity\EntityFindUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\Entity\EntityStoreUserResetPassword.cs" />
+    <Compile Include="User\ResetPassword\Entity\EntityUserResetPasswordContextFactory.cs" />
+    <Compile Include="User\ResetPassword\Entity\IEntityUserResetPasswordFactory.cs" />
+    <Compile Include="User\ResetPassword\Entity\EntityUserResetPasswordFactory.cs" />
     <Compile Include="User\ResetPassword\FindValidUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\GenerateUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\IFindUserResetPassword.cs" />
@@ -642,6 +648,9 @@
     <Compile Include="User\ResetPassword\ProcessUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\ProcessUserResetPasswordResult.cs" />
     <Compile Include="User\ResetPassword\ProcessUserResetPasswordStatus.cs" />
+    <Compile Include="User\ResetPassword\Entity\IEntityUserResetPasswordContextFactory.cs" />
+    <Compile Include="User\ResetPassword\Entity\EntityUserResetPasswordContext.cs" />
+    <Compile Include="User\ResetPassword\Entity\UserResetPassword.cs" />
     <Compile Include="User\ResetPassword\UserResetPassword.cs" />
     <Compile Include="User\ResetPassword\UserResetPasswordExtensions.cs" />
     <Compile Include="User\ResetPassword\UserResetPasswordFactory.cs" />
@@ -728,7 +737,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InterfaceFactory\Models\" />
-    <Folder Include="User\ResetPassword\Sql\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

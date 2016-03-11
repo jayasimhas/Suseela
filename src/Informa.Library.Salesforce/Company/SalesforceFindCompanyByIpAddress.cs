@@ -29,7 +29,12 @@ namespace Informa.Library.Salesforce.Company
 
 		public ICompany Find(IPAddress ipAddress)
 		{
-			return Companies.FirstOrDefault(c => IpAddressRangeCheck.IsInRange(ipAddress, c.LowerIpAddress, c.UpperIpAddress));
+			if (ipAddress == null)
+			{
+				return null;
+			}
+
+			return Companies.FirstOrDefault(c => c.LowerIpAddress != null && c.UpperIpAddress != null && IpAddressRangeCheck.IsInRange(ipAddress, c.LowerIpAddress, c.UpperIpAddress));
 		}
 
 		public List<SalesforceCompany> Companies => SafeObject;
