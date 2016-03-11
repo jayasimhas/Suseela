@@ -2,6 +2,7 @@
 using Informa.Library.User;
 using Informa.Library.User.ResetPassword.Web;
 using Informa.Library.Salesforce.User;
+using Informa.Library.Salesforce.User.Entitlement;
 using Informa.Library.User.ResetPassword.MongoDB;
 using Informa.Library.User.ResetPassword;
 using Informa.Library.User.Profile;
@@ -31,8 +32,7 @@ namespace Informa.Web.App_Start.Registrations
 
 			builder.RegisterType<SalesforceQueryNewsletterUserOptIn>().As<IQueryNewsletterUserOptIn>();
             builder.RegisterType<SalesforceQueryOfferUserOptIn>().As<IQueryOfferUserOptIn>();
-		    builder.RegisterType<SalesforceGetUserEntitlements>().As<IGetUserEntitlements>();
-
+		    builder.RegisterType<SalesforceGetUserEntitlements>().As<IGetUserEntitlements>();      
 		    builder.RegisterType<SalesforceGetIPEntitlements>().As<IGetIPEntitlements>();
 
 		    builder.RegisterType<SalesforceManageSavedContent>().As<IManageSavedContent>();
