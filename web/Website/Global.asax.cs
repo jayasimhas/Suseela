@@ -28,11 +28,14 @@ namespace Informa.Web
 
 			EnableUnobtrusiveValidation();
 
-			//AreaRegistration.RegisterAllAreas();
-			//GlobalConfiguration.Configure(WebApiConfig.Register);
-			//FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-			//RouteConfig.RegisterRoutes(RouteTable.Routes);
-			BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Library.DCD.XMLImporting.FileImportingManager mgr = new Library.DCD.XMLImporting.FileImportingManager();
+            mgr.StartIfStartable();
+
+            //AreaRegistration.RegisterAllAreas();
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
+            //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
 		}
 
 		protected virtual void EnableUnobtrusiveValidation()

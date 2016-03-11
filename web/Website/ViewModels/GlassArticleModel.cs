@@ -28,7 +28,7 @@ namespace Informa.Web.ViewModels
         protected readonly ITextTranslator TextTranslator;
         protected readonly IArticleSearch Searcher;
         protected readonly ISitecoreContext SitecoreContext;
-        protected readonly IArticleComponentFactory ArticleComponentFactory;    
+        protected readonly IArticleComponentFactory ArticleComponentFactory;
 
         public GlassArticleModel(
             ISiteRootContext siterootContext,
@@ -44,7 +44,7 @@ namespace Informa.Web.ViewModels
             TextTranslator = textTranslator;
             Searcher = searcher;
             SitecoreContext = context;
-            ArticleComponentFactory = articleComponentFactory;      
+            ArticleComponentFactory = articleComponentFactory;
         }
 
         public IEnumerable<ILinkable> TaxonomyItems

@@ -1,5 +1,4 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using Informa.Library.Services.NlmExport.Models.Front.Article.History;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
@@ -11,7 +10,7 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
 
         protected override NlmHistoryDateModel[] Resolve(ArticleItem source, ResolutionContext context)
         {
-            var updated = source?.Modified_Date;
+            var updated = source?.Updated;
 
             var day = updated?.Day.ToString();
             var month = updated?.Month.ToString();

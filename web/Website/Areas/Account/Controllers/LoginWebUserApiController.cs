@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using Informa.Library.User.Authentication;
+using Informa.Library.User.Authentication.Web;
 using Informa.Web.Areas.Account.Models.User.Authentication;
 using Informa.Library.User.ResetPassword;
 using Informa.Library.User.ResetPassword.Web;
@@ -10,12 +11,12 @@ namespace Informa.Web.Areas.Account.Controllers
     {
 		protected readonly IGenerateUserResetPassword GenerateUserResetPassword;
 		protected readonly IWebUserResetPasswordUrlFactory UserResetPasswordUrlFactory;
-		protected readonly ILoginWebUser LoginWebUser;
+		protected readonly IWebLoginUser LoginWebUser;
 
 		public LoginWebUserApiController(
 			IGenerateUserResetPassword generateUserResetPassword,
 			IWebUserResetPasswordUrlFactory userResetPasswordUrlFactory,
-			ILoginWebUser loginWebUser)
+			IWebLoginUser loginWebUser)
 		{
 			GenerateUserResetPassword = generateUserResetPassword;
 			UserResetPasswordUrlFactory = userResetPasswordUrlFactory;

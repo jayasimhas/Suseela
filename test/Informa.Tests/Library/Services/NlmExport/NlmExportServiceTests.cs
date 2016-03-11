@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Xml;
 using Autofac;
 using AutoMapper;
 using Glass.Mapper.Sc;
+using Informa.Library.Article.Service;
 using Informa.Library.Services.NlmExport;
 using Informa.Library.Services.NlmExport.Serialization;
 using Informa.Library.Utilities.Autofac.Modules;
@@ -22,6 +24,7 @@ namespace Informa.Tests.Library.Services.NlmExport
         private NlmExportService _exportService;
         private ISitecoreService _mockService;
         private IItemReferences _mockReferences;
+        private IArticleSearchService _mockSearchService;
 
         [SetUp]
         public void Setup()
@@ -29,12 +32,14 @@ namespace Informa.Tests.Library.Services.NlmExport
             var dependencies = Substitute.For<NlmExportService.IDependencies>();
             _mockService = Substitute.For<ISitecoreService>();
             _mockReferences = Substitute.For<IItemReferences>();
+            _mockSearchService = Substitute.For<IArticleSearchService>();
 
             // May as well use real dependencies for testing; more of a system test
             var builder = new ContainerBuilder();
             builder.RegisterModule(new AutomapperModule("Informa.Library"));
             builder.Register(c => _mockService).As<ISitecoreService>();
             builder.Register(c => _mockReferences).As<IItemReferences>();
+            builder.Register(c => _mockSearchService).As<IArticleSearchService>();
             var container = builder.Build();
             AutofacConfig.ServiceLocator = container;
 
@@ -92,6 +97,9 @@ namespace Informa.Tests.Library.Services.NlmExport
                     {
                     }
                 }
+
+                sourceStream.Seek(0, SeekOrigin.Begin);
+                Debug.Print(new StreamReader(sourceStream).ReadToEnd());
 
                 Assert.IsEmpty(errors.ToString());
             }

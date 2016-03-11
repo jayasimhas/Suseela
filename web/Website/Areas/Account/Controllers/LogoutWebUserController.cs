@@ -1,14 +1,14 @@
-﻿using Informa.Library.User.Authentication;
+﻿using Informa.Library.User.Authentication.Web;
 using System.Web.Mvc;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
     public class LogoutWebUserController : Controller
     {
-		protected readonly ILogoutWebUser LogoutWebUser;
+		protected readonly IWebLogoutUser LogoutWebUser;
 
 		public LogoutWebUserController(
-			ILogoutWebUser logoutWebUser)
+			IWebLogoutUser logoutWebUser)
 		{
 			LogoutWebUser = logoutWebUser;
 		}

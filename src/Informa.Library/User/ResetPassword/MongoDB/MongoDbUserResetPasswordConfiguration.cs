@@ -1,10 +1,8 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore.Configuration;
+﻿using Sitecore.Configuration;
 using System.Configuration;
 
 namespace Informa.Library.User.ResetPassword.MongoDB
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
 	public class MongoDbUserResetPasswordConfiguration : IMongoDbUserResetPasswordConfiguration
 	{
 		private const string CollectionNameConfigKey = "MongoDbUserResetPasswordConfiguration.CollectionName";

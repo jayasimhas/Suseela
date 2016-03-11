@@ -2,6 +2,6 @@
 {
 	public interface IStoreUserResetPassword
 	{
-		void Store(IUserResetPassword userResetPassword);
+		bool Store(IUserResetPassword userResetPassword);
 	}
 }

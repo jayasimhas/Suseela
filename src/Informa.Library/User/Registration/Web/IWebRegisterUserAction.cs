@@ -1,7 +1,8 @@
-﻿namespace Informa.Library.User.Registration.Web
+﻿using Informa.Library.Actions;
+
+namespace Informa.Library.User.Registration.Web
 {
-	public interface IWebRegisterUserAction
+	public interface IWebRegisterUserAction : IAction<INewUser>
 	{
-		void Process(INewUser newUser);
 	}
 }

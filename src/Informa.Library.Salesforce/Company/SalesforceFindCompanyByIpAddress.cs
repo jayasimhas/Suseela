@@ -14,18 +14,27 @@ namespace Informa.Library.Salesforce.Company
 		private DateTime LastRefresh;
 
 		protected readonly IIpAddressRangeCheck IpAddressRangeCheck;
+		protected readonly ISalesforceCompanyTypeFromSiteType ParseCompanyType;
 		protected readonly ISalesforceServiceContext Service;
 
 		public SalesforceFindCompanyByIpAddress(
 			IIpAddressRangeCheck ipAddressRangeCheck,
+			ISalesforceCompanyTypeFromSiteType parseCompanyType,
 			ISalesforceServiceContext service)
 		{
+			IpAddressRangeCheck = ipAddressRangeCheck;
+			ParseCompanyType = parseCompanyType;
 			Service = service;
 		}
 
 		public ICompany Find(IPAddress ipAddress)
 		{
-			return Companies.FirstOrDefault(c => IpAddressRangeCheck.IsInRange(ipAddress, c.LowerIpAddress, c.UpperIpAddress));
+			if (ipAddress == null)
+			{
+				return null;
+			}
+
+			return Companies.FirstOrDefault(c => c.LowerIpAddress != null && c.UpperIpAddress != null && IpAddressRangeCheck.IsInRange(ipAddress, c.LowerIpAddress, c.UpperIpAddress));
 		}
 
 		public List<SalesforceCompany> Companies => SafeObject;
@@ -55,6 +64,7 @@ namespace Informa.Library.Salesforce.Company
 			{
 				Id = ipRange.account.accountId,
 				Name = ipRange.account.company,
+				Type = ParseCompanyType.Parse(ipRange.siteType),
 				LowerIpAddress = CreateIpAddress(ipRange.beginRange),
 				UpperIpAddress = CreateIpAddress(ipRange.endRange)
 			};

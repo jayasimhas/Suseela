@@ -24,7 +24,7 @@ namespace Informa.Library.Services.NlmExport.Models.Body
 
         public void WriteXml(XmlWriter writer)
         {
-            writer.WriteString(SerializedBody);
+            writer.WriteRaw(SerializedBody);
         }
     }
 }

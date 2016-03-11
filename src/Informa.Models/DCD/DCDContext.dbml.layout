@@ -50,28 +50,28 @@
         <elementListCompartment Id="ecbe3750-d007-4a1a-b9e5-e4247eb8aeff" absoluteBounds="0.765, 4.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.75 : 1.78929768880208); (9.5 : 1.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.75 : 1.78929768880208); (9.5 : 1.78929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DCDContext/Company/Company_RelatedCompany" />
       <nodes>
         <classShapeMoniker Id="1e20f029-c80f-4038-9b20-895e108cd09f" />
         <classShapeMoniker Id="b91602c4-6efe-404e-afc7-20b9539da889" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 4.25); (1.75 : 2.32774983723958); (3.5 : 2.32774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 4.25); (1.75 : 2.32774983723958); (3.5 : 2.32774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DCDContext/ImportLog/ImportLog_CompanyRecordImportLog" />
       <nodes>
         <classShapeMoniker Id="df77a07c-4732-4e6f-9ecb-acd3675145b6" />
         <classShapeMoniker Id="65bfa652-0906-40e0-9e83-0c0f5d1795d8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.23159912109375); (3.5 : 5.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 5.23159912109375); (3.5 : 5.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DCDContext/ImportLog/ImportLog_DealRecordImportLog" />
       <nodes>
         <classShapeMoniker Id="df77a07c-4732-4e6f-9ecb-acd3675145b6" />
         <classShapeMoniker Id="ba17e23c-4a6a-403a-b479-ebea0165dd85" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 6.2131982421875); (1.75 : 8.07774983723958); (3.5 : 8.07774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 6.2131982421875); (1.75 : 8.07774983723958); (3.5 : 8.07774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DCDContext/ImportLog/ImportLog_DrugRecordImportLog" />
       <nodes>
         <classShapeMoniker Id="df77a07c-4732-4e6f-9ecb-acd3675145b6" />
