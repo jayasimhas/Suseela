@@ -62,6 +62,10 @@
     <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponseExtensions.cs" />
+    <Compile Include="User\Entitlement\ISalesforceGetIPEntitlements.cs" />
+    <Compile Include="User\Entitlement\ISalesforceGetUserEntitlements.cs" />
+    <Compile Include="User\Entitlement\SalesforceGetIPEntitlements.cs" />
+    <Compile Include="User\Entitlement\SalesforceGetUserEntitlements.cs" />
     <Compile Include="ISalesforceServiceConfiguration.cs" />
     <Compile Include="ISalesforceServiceContextExtensions.cs" />
     <Compile Include="ISalesforceSessionFactoryConfiguration.cs" />
@@ -90,8 +94,6 @@
     <Compile Include="SalesforceSessionContext.cs" />
     <Compile Include="SalesforceSessionFactory.cs" />
     <Compile Include="User\ISalesforceFindUserByEmail.cs" />
-    <Compile Include="User\ISalesforceGetIPEntitlements.cs" />
-    <Compile Include="User\ISalesforceGetUserEntitlements.cs" />
     <Compile Include="User\ISalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\ISalesforceUpdateUserPassword.cs" />
     <Compile Include="User\ISalesforceUser.cs" />
@@ -109,8 +111,6 @@
     <Compile Include="User\Registration\ISalesforceRegisterUser.cs" />
     <Compile Include="User\Registration\SalesforceRegisterUser.cs" />
     <Compile Include="User\SalesforceFindUserByEmail.cs" />
-    <Compile Include="User\SalesforceGetIPEntitlements.cs" />
-    <Compile Include="User\SalesforceGetUserEntitlements.cs" />
     <Compile Include="User\SalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\SalesforceUpdateUserPassword.cs" />
     <Compile Include="User\SalesforceUser.cs" />
@@ -326,7 +326,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="User\Entitlement\" />
+    <Folder Include="Entitlement\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
