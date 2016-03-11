@@ -1,0 +1,128 @@
+.informa-ribbon {
+    @include textMix('Roboto', 14px, 400);
+	width: 100%;
+	color: #fff;
+	height: 35px;
+	font-size: 0.8125rem;
+	line-height: 1.125rem;
+
+    a {
+        color: #fff;
+    }
+
+    &__title {
+    	height: 16px;
+    	width: 92px;
+    	background: url('/dist/img/iribbon-logo.gif') no-repeat top center;
+    	font-size: 0em;
+    	color: #525A5C;
+    	margin: 10px auto;
+    	clear: both;
+    	cursor: pointer;
+    }
+
+    &__wrapper {
+    	background:#525A5C;
+    	border-bottom:1px solid #A5ACAF;
+        position: absolute;
+        width: 100%;
+        padding: 0 2rem;
+        z-index: 9999;
+
+        @include breakpoint('small') {
+            padding: 0 1rem;
+        }
+    }
+
+    &__detail {
+    	overflow: hidden;
+        max-height: 0;
+        max-width: 1180px;
+        width: 100%;
+        margin: 0 auto;
+    	transition: max-height ease-in-out 500ms;
+        display: flex;
+
+        @include breakpoint('small') {
+            flex-direction: column;
+        }
+    }
+
+    &__right,
+    &__left{
+    	float:left;
+    	margin:40px 0;
+    	max-width:570px;
+    	width:47%;
+        flex: 1 1 auto;
+        line-height: 1.5rem;
+        padding-right: 2rem;
+
+        @include breakpoint('small') {
+            margin: 0;
+            padding: 0;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+
+    &__right {
+    	border-left: 1px solid #A5ACAF;
+        padding-right: 0;
+        padding-left: 2rem;
+
+        @include breakpoint('small') {
+            border-left: 0;
+            border-top: 1px solid #A5ACAF;
+            padding-left: 0;
+        }
+    }
+
+    &__detail p:last-child{
+    	margin-bottom:0;
+    }
+
+    &__detail ul,
+    &__detail ul li{
+    	list-style:none;
+    	margin:0;
+    	padding:0;
+    	display:inline-block;
+    }
+
+    &__detail ul li{
+    	padding: 0 10px 0 5px;
+        line-height: 1em;
+    	border-right:1px solid #A5ACAF;
+    }
+
+    &__detail ul li:last-child{
+    	border:0;
+    }
+
+    &__detail ul li a{
+    	text-transform:uppercase;
+    }
+
+    &__detail ul li.iribbon-mainlink {
+
+    	border:0;
+    	padding-left:0;
+    }
+
+    &__detail ul li.iribbon-mainlink a{
+    	text-transform:none;
+    	font-weight:bold;
+    }
+
+
+    .show &__detail{
+    	max-height:400px;
+    }
+    .show &__title{
+    	background-position:bottom center;
+    }
+}

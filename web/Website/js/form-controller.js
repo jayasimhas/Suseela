@@ -33,7 +33,7 @@ function formController(requestVerificationToken) {
 				}
 
 				inputData[field.attr('name')] = value;
-			})
+			});
 
 			$.ajax({
 				url: $(form).data('on-submit'),

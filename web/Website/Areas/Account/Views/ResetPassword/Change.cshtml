@@ -8,7 +8,7 @@
 	@if (Model.IsValidToken)
 	{
 
-		<h4 class="page-account__subheader">Dear First Last,</h4>
+		<h4 class="page-account__subheader">Dear #first_name# #last_name#,</h4>
 		<p class="page-account__introduction">@Model.ResetBody</p>
 		<hr>
 		<form data-on-submit="/Account/api/ResetPasswordApi/Change/">
