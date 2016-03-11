@@ -59,7 +59,7 @@ namespace Informa.Library.Salesforce.User.Profile
         {
             string gID = g.ToString("B").ToUpper();
             ISavedDocumentReadResult result = QueryItems(user);
-            return result.Success && result.SavedDocuments.Any(b => b.DocumentId.Equals(gID));
+            return result.Success && result.SavedDocuments.Any(b => b.DocumentId.ToUpper().Equals(gID));
         }
 
         public ISavedDocumentWriteResult RemoveItem(IAuthenticatedUser user, string documentId)
