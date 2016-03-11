@@ -25,6 +25,7 @@ namespace Informa.Library.User.Authentication.Web
 			AuthenticateUser = authenticateUser;
 			VirtualUsernameFactory = virtualUsernameFactory;
 		    GetUserEntitlements = getUserEntitlements;
+			LoginActions = loginActions;
 		}
 
 		public IWebLoginUserResult Login(string username, string password, bool persist)
