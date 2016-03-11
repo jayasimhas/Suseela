@@ -50,4 +50,10 @@
             }
         }
     }
+
+    // TODO - Refactor this with similar _registration class
+    &__error {
+        @extend .error-text;
+        display: none;
+    }
 }
