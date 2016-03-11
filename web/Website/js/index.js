@@ -137,6 +137,11 @@ $(document).ready(function() {
 	resetPassword.watchForm('.form-reset-password', function() {
 		$('.form-reset-password').find('.alert-success').show();
 	});
+
+	var newResetPassToken = new FormController();
+	newResetPassToken.watchForm('.form-new-reset-pass-token', function() {
+		$('.form-new-reset-pass-token').find('.alert-success').show();
+	});
 	/*
 	resetPassword.addRequestControl(
 		'.js-reset-password-request-submit',
