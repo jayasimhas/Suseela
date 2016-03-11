@@ -15,14 +15,18 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Body
             var builder = new StringBuilder();
             var settings = new XmlWriterSettings
             {
-                OmitXmlDeclaration = true
+                OmitXmlDeclaration = true,
+                ConformanceLevel = ConformanceLevel.Fragment
             };
             using (var writer = XmlWriter.Create(builder, settings))
             {
-                DocumentParser.Parse(source.Body, writer);
+                DocumentParser.Parse($"<body>{source.Body}</body>", writer);
             }
 
-            return builder.ToString();
+            var bodyXml = Helpers.ConvertSpecialCharacters(builder.ToString());
+            bodyXml = bodyXml.Replace("&amp;#", "&#");
+
+            return bodyXml;
         }
     }
 }

@@ -59,7 +59,7 @@ namespace Informa.Library.CustomSitecore.Ribbon
                         var exportFolder = Path.GetFullPath(settings.NlmExportPath);
                         Directory.CreateDirectory(exportFolder);
                         var fileName = $"{publicationNodeItem[IArticleConstants.Article_NumberFieldName]}.xml";
-                        using (var file = File.OpenWrite(Path.Combine(exportFolder, fileName)))
+                        using (var file = File.Open(Path.Combine(exportFolder, fileName), FileMode.Create))
                         {
                             stream.Seek(0, SeekOrigin.Begin);
                             stream.CopyTo(file);
