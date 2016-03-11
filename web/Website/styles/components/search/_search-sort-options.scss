@@ -35,27 +35,19 @@
             text-decoration: underline;
         }
 
-        &.is-sorted-up {
-            .icon-triangle--up {
-                @include svg-fill($informa-red);
-            }
+        &.is-sorted-up .icon-triangle--up {
+            @include svg-fill($informa-red);
+        }
 
-            &.is-selected span {
-                text-decoration: underline;
-            }
+        &.is-sorted-down .icon-triangle--down {
+            @include svg-fill($informa-red);
+        }
 
-            &.is-sorted-down {
-                .icon-triangle--down {
-                    @include svg-fill($informa-red);
-                }
-            }
-
-            &.is-sorted-up a,
-            &.is-sorted-up a:hover,
-            &.is-sorted-down a,
-            &.is-sorted-down a:hover {
-                text-decoration: none;
-            }
+        &.is-sorted-up a,
+        &.is-sorted-up a:hover,
+        &.is-sorted-down a,
+        &.is-sorted-down a:hover {
+            text-decoration: none;
         }
     }
 
