@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 
 Purpose: This include file shows how to change elements in the <settings> section
 of the web.config file
@@ -196,7 +196,7 @@ But you can also use "patch:attribute" for clarity:
 
       <setting name="WebEdit.ShowNumberOfLockedItemsOnButton" value="false" />
       
-      <setting name="DCD.OldDealsURL" value="http://supportinforma.velir.com/deals/{0}" />
+      <setting name="DCD.OldDealsURL" value="https://www.pharmamedtechbi.com/d/{0}" />
       
       <setting name="NLM.ExportPath" value="${NLM.ExportPath}" />
     </settings>

@@ -2,21 +2,21 @@
 
 @if (Model.GlassModel != null)
 {
-<div class="newsletter-signup">
-	<h3>@Editable(x=>x.GlassModel.Headline_Text)</h3>
-	@Editable(x=>x.GlassModel.Sign_Up_Call_To_Action)
-	<div class="form--single-row">
-		<input class="inf-standard-form-field">
-		<button class="button--filled">@Editable(x=>x.GlassModel.Sign_Up_Button_Text)</button>
-	</div>
-</div>
-}
-@*TODO : Add user logged in condition*@
-<div class="newsletter-signup">
-    <h3>@Editable(x => x.GlassModel.Confirmation_Text)</h3>
-    @Editable(x => x.GlassModel.Confirmation_Summary)
-    <div class="form--single-row">
-        <input class="inf-standard-form-field">
-        <button class="button--filled">@Editable(x => x.GlassModel.Sign_Up_Button_Text)</button>
+    <div class="newsletter-signup">
+        <h3>@Editable(x => x.GlassModel.Headline_Text)</h3>
+        @Editable(x => x.GlassModel.Sign_Up_Call_To_Action)
+        <div class="form--single-row">
+            <input class="inf-standard-form-field">
+            <button class="button--filled newsletter-signup-submit js-newsletter-signup-submit" data-url="/api/PreferencesApi/Update">@Editable(x => x.GlassModel.Sign_Up_Button_Text)</button>
+        </div>
+        <div class="newsletter-signup-after-submit">
+            <h3>@Editable(x => x.GlassModel.Confirmation_Text)</h3>
+            @Editable(x => x.GlassModel.Confirmation_Summary)
+            <div class="form--single-row">
+                <input class="inf-standard-form-field">
+                <button class="button--filled">@Editable(x => x.GlassModel.Sign_Up_Button_Text)</button>
+            </div>
+        </div>
     </div>
-</div>
+}
+    @*TODO : Add user logged in condition*@

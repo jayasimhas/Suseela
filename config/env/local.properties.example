@@ -84,4 +84,10 @@ and running. There are additional default properties from dev.properties that yo
 	<property name="CRMManager.SalesforcePassword" value="ebI3Zuser!" />
 	<property name="CRMManager.SalesforceToken" value="IuVQbQcTweaxDM6dDu9Q2xEBy" />
 	<property name="CRMManager.SalesforceTimeout" value="1000" />
+	
+	<!-- DCD Modules Related Configuration-->
+	<property name="DCD.ImportFolder" value="C:\Projects\Velir\DCDXML"/>
+    	<!-- Folder where DCD XML importing files will be located -->    
+    	<property name="DCD.EnableWatcher" value="true"/>
+    	<!--Whether to enable DCD XML files changes watching in the DCD.ImportFolder folder-->
 </project>

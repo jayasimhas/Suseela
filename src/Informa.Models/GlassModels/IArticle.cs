@@ -23,6 +23,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	public partial interface IArticle : IPublicationChild, IEntitledProductItem
 	{
 		bool IsPublished { get; set; }
+        bool IsFree { get; }
 	}
 
     public class ArticleMap : SitecoreGlassMap<IPublicationChild>

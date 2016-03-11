@@ -100,6 +100,7 @@
   <ItemGroup>
     <Compile Include="AncestorDataMapper.cs" />
     <Compile Include="CoreGlassModels.cs" />
+    <Compile Include="DCD\CompanyRecordCache.cs" />
     <Compile Include="DCD\CompanyTokenizer.cs" />
     <Compile Include="DCD\DCDConstants.cs" />
     <Compile Include="DCD\DCDContext.cs">
@@ -110,7 +111,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DCDContext.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DCD\DCDContext.Partials.cs" />
     <Compile Include="DCD\DCDManager.cs" />
+    <Compile Include="DCD\Enumerations.cs" />
+    <Compile Include="DCD\IDCD.cs" />
+    <Compile Include="DCD\IDCDRecordImporting.cs" />
     <Compile Include="FieldSources\FactoryInterfaceModels.cs" />
     <Compile Include="GlassModels.cs" />
     <Compile Include="GlassModels\IEntitledProductItem.cs" />

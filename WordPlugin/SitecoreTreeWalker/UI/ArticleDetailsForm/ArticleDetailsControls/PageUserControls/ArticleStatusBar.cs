@@ -105,12 +105,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             if (displayStatus)
             {
                 uxLockStateButton.Text = "Unlock";
-                uxLockStateButton.Image = new Bitmap(Resources._53_Lock_unlocked);
+                uxLockStateButton.Image = new Bitmap(Resources.lockedIcon);
             }
             else
             {
                 uxLockStateButton.Text = "Lock";
-                uxLockStateButton.Image = new Bitmap(Resources._1445989402_lock_24);
+                uxLockStateButton.Image = new Bitmap(Resources.unlockIcon);
             }
         }
 

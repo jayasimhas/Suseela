@@ -1,5 +1,4 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
-using System.Linq;
 
 namespace Informa.Library.User.ResetPassword.Web
 {
@@ -36,7 +35,7 @@ namespace Informa.Library.User.ResetPassword.Web
 				return CreateResult(WebGenerateUserResetPasswordStatus.Failure);
 			}
 
-			Actions.ToList().ForEach(a => a.Process(userResetPassword));
+			Actions.Process(userResetPassword);
 
 			var result = CreateResult(WebGenerateUserResetPasswordStatus.Success);
 

@@ -14,6 +14,13 @@ namespace Informa.Web.ViewModels
         protected EntitledViewModel(IEntitledProductContext entitledProductContext)
         {
             EntitledProductContext = entitledProductContext;
-        } 
+        }
+
+        public virtual bool IsFree => false;
+
+        public bool IsEntitled()
+        {
+            return IsFree || AccessLevel != EntitledAccessLevel.UnEntitled;
+        }
     }
 }

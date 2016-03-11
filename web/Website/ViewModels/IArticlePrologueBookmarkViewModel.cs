@@ -1,8 +1,11 @@
-﻿namespace Informa.Web.ViewModels
+﻿using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+
+namespace Informa.Web.ViewModels
 {
 	public interface IArticlePrologueBookmarkViewModel
 	{
-		bool IsUserAuthenticated { get; }
+        IArticle Article { get; }
+        bool IsUserAuthenticated { get; }
 		bool IsArticleBookmarked { get; }
 		string BookmarkedText { get; }
 		string BookmarkText { get; }
