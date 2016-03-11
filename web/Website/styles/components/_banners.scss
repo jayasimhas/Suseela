@@ -127,7 +127,7 @@ Multiple banner styles.
 	}
 
 	&.is-visible {
-		max-height: 300px;
+		max-height: 600px;
 	}
 
 	@include breakpoint('medium') {
