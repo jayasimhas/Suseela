@@ -31,7 +31,8 @@
             display: inline-block;
         }
 
-        &.is-selected span {
+        &.is-selected span,
+        &.is-selected a {
             text-decoration: underline;
         }
 
