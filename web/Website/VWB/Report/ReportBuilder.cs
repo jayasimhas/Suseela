@@ -16,6 +16,7 @@ using Informa.Library.Utilities.References;
 using Newtonsoft.Json;
 using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.Web;
 
 namespace Elsevier.Web.VWB.Report
 {
@@ -142,7 +143,7 @@ namespace Elsevier.Web.VWB.Report
 				
 				foreach(var col in Columns)
 				{
-					if(!first && (result.IsFirstArticleInIssue || result.IsFirstArticleInCategory))
+					if(!first && (result.IsFirstArticleInCategory))
 					{
 						resultRow.CssClass = "double";
 					}
@@ -215,8 +216,26 @@ namespace Elsevier.Web.VWB.Report
             using (new Sitecore.SecurityModel.SecurityDisabler())
             {
                 string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
-                string url = string.Format("http://{0}/api/informasearch?pId={1}&sortBy=date&sortOrder=desc&perPage=60", "informa.gabe.dev", searchPageId);
+                string url = string.Format("http://{0}/api/informasearch?pId={1}&sortBy=plannedpublishdate&sortOrder=desc", WebUtil.GetHostName(), searchPageId);
 
+                DateTime startDate;
+                DateTime endDate;
+                if (query.StartDate != null && query.EndDate != null)
+                {
+                    startDate = query.StartDate ?? DateTime.MinValue;
+                   
+
+                    endDate = query.EndDate ?? DateTime.MaxValue;
+                    
+                }
+                else
+                {
+                    startDate = DateTime.Now;
+                    endDate = DateTime.Now.AddDays(30);
+                }
+
+                url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
+                url += ";" + endDate.ToString("MM/dd/yyyy");
 
                 var client = new WebClient();
                 var content = client.DownloadString(url);

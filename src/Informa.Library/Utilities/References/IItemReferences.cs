@@ -2,17 +2,31 @@ using System;
 
 namespace Informa.Library.Utilities.References
 {
-    public interface IItemReferences
-    {
-        Guid HomePage { get; }
+	public interface IItemReferences
+	{
+		Guid HomePage { get; }
 
-        Guid DCDConfigurationItem { get; }
+		Guid DCDConfigurationItem { get; }
 
-        Guid SiteConfig { get; }
+		Guid NlmConfiguration { get; }
 
-        // Templates
-        Guid FolderTemplate { get; }
+		Guid SiteConfig { get; }
 
-        Guid TaxonomyRoot { get; }
-    }
+        // Pharma Globals
+        Guid NlmCopyrightStatement { get; }
+
+        // Taxonomy Folders
+        Guid SubjectsTaxonomyFolder { get; }
+        Guid RegionsTaxonomyFolder { get; }
+        Guid TherapyAreasTaxonomyFolder { get; } 
+
+		// Templates
+		Guid FolderTemplate { get; }
+
+		Guid TaxonomyRoot { get; }
+
+		Guid SubscriptionPage { get; }
+		
+		Guid EmailPreferences { get; }
+	}
 }

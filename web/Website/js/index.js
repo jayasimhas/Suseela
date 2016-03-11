@@ -38,22 +38,6 @@ $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 	Cookies.set('dismissedBanners', dismissedBanners);
 });
 
-// Pre-registration username validation
-$('.js-register-submit').on('click', function validateUsername(e) {
-	var submitButton = $(e.target);
-	var username = submitButton.siblings('.js-register-username').val();
-	$.post('account/api/accountvalidation/username/', { username: username }, function (response) {
-		if (response.valid) {
-			var redirectUrl = submitButton.attr('data-register-redirect');
-
-			window.location.href = redirectUrl + '?username=' + username;
-		}
-		else {
-			submitButton.siblings('.js-register-invalid').show();
-		}
-	});
-});
-
 	// Make sure proper elm gets the click event
 // When a user submits a Forgot Password request, this will display the proper
 // success message and hide the form to prevent re-sending.
@@ -163,9 +147,26 @@ $(document).ready(function() {
 
 	var userRegistrationController = new FormController();
 	userRegistrationController.watchForm('.form-registration');
+	userRegistrationController.watchForm('.form-registration-optins');
+	userRegistrationController.watchForm(
+		'.form-pre-registration',
+		function(form) {
+			var usernameInput = $(form).find('.js-register-username');
+			var nextStepUrl = $(form).data('on-success') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
+
+			window.location.href = nextStepUrl;
+		}
+	);
+
+	var registerController = new RegisterController();
+
+	registerController.addRegisterUserControl('.js-register-user-optins-submit');
 
 	var emailArticleController = new FormController();
 	emailArticleController.watchForm('.form-email-article');
+
+	var accountEmailPreferencesController = new FormController();
+	accountEmailPreferencesController.watchForm('.form-email-preferences');
 
     svg4everybody();
 
@@ -299,6 +300,12 @@ $(document).ready(function() {
 		}
 	});
 
+
+	$('.informa-ribbon__title').on('click', function (e) {
+
+		$('.informa-ribbon').toggleClass('show')
+
+	});
 
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");

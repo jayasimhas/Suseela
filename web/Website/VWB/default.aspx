@@ -33,7 +33,10 @@
 					<div class="left dateRangeLabel">To</div>
 					<asp:TextBox ID="txtEnd" runat="server" class="date" Enabled="false"></asp:TextBox>
 					<asp:TextBox ID="txtEndTime" runat="server" class="time" Enabled="false"></asp:TextBox>
+                    <br/>
+                    <asp:CheckBox runat="server" id="chkShowInProgressArticles" Text="Show in-progress articles only"/>
 				</div>	
+
 
 				<div class="appbuttons">
 					<asp:Button ID="btnRunReport" runat="server" Text="Run Report" OnClick="RunReport"/>

@@ -22,7 +22,12 @@ namespace Informa.Library.User.ResetPassword
 
 			if (userResetPassword != null)
 			{
-				StoreUserResetPassword.Store(userResetPassword);
+				var success = StoreUserResetPassword.Store(userResetPassword);
+
+				if (!success)
+				{
+					return null;
+				}
 			}
 
 			return userResetPassword;

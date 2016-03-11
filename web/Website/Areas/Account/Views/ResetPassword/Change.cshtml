@@ -1,48 +1,49 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.ResetPassword.ChangeViewModel
 
-<h1>Reset Password</h1>
-<h3>Dear First Last,</h3>
-<p>Please enter a new password for your SCRIP account.</p>
-<hr>
-<div class="js-reset-password-container" style="border: 2px dashed red;">
-	<h1>@Model.Title</h1>
-	<input name="token"
-		   type="hidden"
-		   value="@Model.Token" />
+<div class="page-account js-reset-password-container">
+	<h1 class="page-account__header">@Model.Title</h1>
+	<input	name="token"
+		   	type="hidden"
+		   	value="@Model.Token">
 	@if (Model.IsValidToken)
 	{
-		<div style="border: 2px dashed blue; margin: 2px;">
-			<div>@Model.ResetBody</div>
-			<hr />
-			<div>
-				<label for="newPassword">@Model.NewPasswordLabelText</label>
-				<input name="newPassword"
-					   class=""
-					   placeholder="@Model.NewPasswordPlaceholderText"
-					   type="password">
-				<label for="newPasswordRepeat">@Model.NewPasswordRepeatLabelText</label>
-				<input name="newPasswordRepeat"
-					   class=""
-					   placeholder="@Model.NewPasswordRepeatPlaceholderText"
-					   type="password">
-				<hr />
-				<button class="button--filled js-reset-password-change-submit" data-reset-url="/Account/api/ResetPasswordApi/Change/">@Model.SubmitButtonText</button>
+		<div class="page-account__introduction">@Model.ResetBody</div>
+		<hr>
+		<form data-on-submit="/Account/api/ResetPasswordApi/Change/">
+			<div class="page-account__field-wrapper">
+				<label 	class="page-account__text-label" for="newPassword">@Model.NewPasswordLabelText</label>
+				<input 	id="newPassword"
+						name="newPassword"
+					   	class=""
+					   	placeholder="@Model.NewPasswordPlaceholderText"
+					   	type="password">
 			</div>
-			<ul>
-				<li class="js-reset-password-error js-reset-password-error-requirements" style="display: none;">@Model.ResetErrorRequirementsText</li>
-				<li class="js-reset-password-error js-reset-password-error-mismatch" style="display: none;">@Model.ResetErrorMismatchText</li>
-				<li class="js-reset-password-error js-reset-password-error-general" style="display: none;">@Model.ResetErrorGeneralText</li>
-			</ul>
-			<div class="js-reset-password-success" style="display: none;">
-				<p>@Model.ResetSuccessText</p>
+			<div class="page-account__field-wrapper">
+				<label 	class="page-account__text-label"
+						for="newPasswordRepeat">@Model.NewPasswordRepeatLabelText</label>
+				<input 	name="newPasswordRepeat"
+						id="newPasswordRepeat"
+				   		class=""
+				   		placeholder="@Model.NewPasswordRepeatPlaceholderText"
+						type="password">
 			</div>
+			<hr>
+			<button type="submit" class="button--filled js-reset-password-change-submit">@Model.SubmitButtonText</button>
+		</form>
+		<ul>
+			<li class="js-reset-password-error js-reset-password-error-requirements" style="display: none;">@Model.ResetErrorRequirementsText</li>
+			<li class="js-reset-password-error js-reset-password-error-mismatch" style="display: none;">@Model.ResetErrorMismatchText</li>
+			<li class="js-reset-password-error js-reset-password-error-general" style="display: none;">@Model.ResetErrorGeneralText</li>
+		</ul>
+		<div class="js-reset-password-success" style="display: none;">
+			<p>@Model.ResetSuccessText</p>
 		</div>
 	}
 	else
 	{
 		if (Model.TokenFound)
 		{
-			<div style="border: 2px dashed green; margin: 2px;">
+			<div>
 				<hr />
 				<p>@Model.RetryBody</p>
 				<button class="button--filled js-reset-password-retry-submit" data-retry-url="/Account/api/ResetPasswordApi/Retry/">@Model.SubmitButtonText</button>
@@ -56,10 +57,8 @@
 		}
 		else
 		{
-			<div style="border: 2px dashed purple; margin: 2px;">
-				<hr />
-				<p>@Model.TokenNotFoundBody</p>
-			</div>
+			<hr>
+			<p>@Model.TokenNotFoundBody</p>
 		}
 	}
 </div>

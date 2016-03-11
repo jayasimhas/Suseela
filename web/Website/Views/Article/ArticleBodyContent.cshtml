@@ -3,7 +3,7 @@
 @model GlassArticleModel
 
 <div class="article-body-content">
-    <h1>@Model.Title</h1>
+    <h1>@HttpUtility.HtmlDecode(Model.Title)</h1>
     <h3>@Model.Sub_Title</h3>
 
     <div class="article-metadata">

@@ -34,6 +34,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 		private WordUtils _wordUtils;
 		protected StructConverter _structConverter;
 
+		public bool _Live;
+
 		#endregion
 
 		#region MinorUIManipulation
@@ -126,6 +128,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 			{
 				articleStatusBar1.ChangeLockButtonStatus(true);
 			}
+
 			articleDetailsPageSelector.InitializePages();
 			SitecoreUser.GetUser().ResetAuthenticatedSubscription();
 			SitecoreUser.GetUser().Authenticated += PopulateFieldsOnAuthentication;
@@ -338,6 +341,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 					ArticleDetails = articleDetailsPageSelector.GetArticleDetails(metadataParser);
 					ArticleDetails.ArticleGuid = copy;
 					ArticleDetails.IsPublished = isPublish;
+					_Live = isPublish;
 					//List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails, new Guid(), new StaffStruct[0], GetArticleNumber(), body);
 					//Uncomment this after workflow is tested properly.
 					List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails,
@@ -393,6 +397,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 			articleDetailsPageSelector.SwitchToPage(pageArticleInformationControl);
 			pageArticleInformationControl.MenuItem.HasChanged = false;
 			pageArticleInformationControl.MenuItem.UpdateBackground();
+
+			_Live = pageArticleInformationControl._isLive;
 		}
 
 		/// <summary>

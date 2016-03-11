@@ -56,8 +56,8 @@ namespace Informa.Library.Utilities.TokenMatcher
         {
             try
             {
-                //return a strong company name (from the token itself) to replace the token
-                return string.Format("<strong>{0}</strong>", match.Groups[1].Value.Split(':')[1]);
+                //return a strong link of the company name (from the token itself) to replace the token
+                return string.Format("<a href=\"{0}\">{1}</a>", string.Format(Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL"), match.Groups[1].Value.Split(':')[0]), match.Groups[1].Value.Split(':')[1]);
             }
             catch (Exception ex)
             {

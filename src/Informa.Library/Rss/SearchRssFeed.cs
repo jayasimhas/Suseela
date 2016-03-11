@@ -159,12 +159,17 @@ namespace Informa.Library.Rss
 
         private SyndicationItem AddEmailSortOrderField(SyndicationItem syndicationItem, IArticle article)
         {
+            var emailPriorityElement = new XElement("e-mail_priority");
             if (article.Sort_Order > 0)
             {
-                var mediaElement = new XElement("e-mail_priority");
-                mediaElement.Value = article.Sort_Order.ToString();
-                syndicationItem.ElementExtensions.Add(mediaElement.CreateReader());
+                emailPriorityElement.Value = article.Sort_Order.ToString();
             }
+            else
+            {
+                emailPriorityElement.Value = "0";
+            }
+
+            syndicationItem.ElementExtensions.Add(emailPriorityElement.CreateReader());
 
             return syndicationItem;
         }

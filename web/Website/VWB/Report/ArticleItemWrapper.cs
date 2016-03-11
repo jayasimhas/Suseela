@@ -9,7 +9,9 @@ using Elsevier.Library.Metadata;
 using Elsevier.Library.Reference;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.Web;
 using Velir.Utilities.Extensions.System.Collections.Generic;
 using ArticleItem = Elsevier.Library.CustomItems.Publication.General.ArticleItem;
 
@@ -17,30 +19,15 @@ namespace Elsevier.Web.VWB.Report
 {
 	public class ArticleItemWrapper
 	{
-		/// <summary>
-		/// For usage in VWB when organizing articles by issue
-		/// </summary>
-		public bool IsFirstArticleInIssue;
-		/// <summary>
-		/// For usage in VWB when organizing articles by issue
-		/// to get the count of articles. Only the "first article
-		/// in issue" needs to have this value set
-		/// </summary>
-		public int ArticleCountInIssue;
-		/// <summary>
-		/// Value populated if IsFirstArticleInIssue
-		/// </summary>
 		public int NumArticlesInIssue;
 		public string ArticleNumber;
-		public Guid IssueGuid = Guid.Empty;
 		public string Title;
 		public DateTime ArticleCreation;
-		public DateTime IssueDate;
 		public IEnumerable<string> Authors;
 		public ArticleItem InnerItem;
 		public IEnumerable<string> Editors;
 		public string IssueDateValue;
-		public string ArticleSize;
+		public string WordCount;
 		public string PreviewUrl;
 		public DateTime SAPDateTime;
 		public DateTime WebPublicationDateTime;
@@ -59,7 +46,15 @@ namespace Elsevier.Web.VWB.Report
 	        }
 	    }
 
-		public List<string> SidebarArticleNumbers = new List<string>();
+	    public string EmailPriority;
+
+	    public string MediaType;
+
+	    public string ContentType;
+
+	    public string TaxonomyString;
+
+	    public List<string> SidebarArticleNumbers = new List<string>();
 		public string NotesToEditorial;
 		public string NotesToProduction;
 		public DateTime EmbargoDate;
@@ -73,7 +68,12 @@ namespace Elsevier.Web.VWB.Report
 			: this(articleItem, new ArticleLengthEstimator())
 		{}
 
-		public ArticleItemWrapper(ArticleItem articleItem, ArticleLengthEstimator estimator)
+        public string GetPreviewUrl(string itemId)
+        {
+            return "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + itemId + "}&sc_mode=preview&sc_lang=en";
+        }
+
+        public ArticleItemWrapper(ArticleItem articleItem, ArticleLengthEstimator estimator)
 		{
 			_estimator = estimator; 
 
@@ -83,14 +83,15 @@ namespace Elsevier.Web.VWB.Report
 		    InnerItem = articleBaseItem;
 
             //TODO
-            PreviewUrl = "/";
+            PreviewUrl = GetPreviewUrl(article._Id.ToString());
 			ArticleNumber = article.Article_Number;
 		    if (ArticleNumber == null)
 		    {
 		        ArticleNumber = "";
 
 		    }
-			Title = article.Title+":"+ article._Path;
+
+			Title = article.Title;
 
 		    if (article.Authors != null)
 		    {
@@ -103,29 +104,36 @@ namespace Elsevier.Web.VWB.Report
 				ArticleCreation = articleBaseItem.Statistics.Created;
 			}
 
-			PublicationItem publication = articleItem.GetPublication();
-
-            IssueDate = article.Actual_Publish_Date;
-
-   //         if (publication.IsDaily())
-			//{
-			//	IssueDate = article.Actual_Publish_Date;
-			//}
-			//else
-			//{
-   //             //TODO
-			//	IssueDate = articleBaseItem.Statistics.Created;
-   //         }
-
-			IssueDateValue = IssueDate.ToString(Constants.VwbDateTimeFormatWithDashes);
-			
-            ArticleSize = article.Word_Count;
+            WordCount = article.Word_Count;
 
             //TODO
 			//lArticleItem.ChildArticles.ListItems.Select(i => (ArticleItem)i).ForEach(a => SidebarArticleNumbers.Add(a.ArticleNumber.Text));
 			SidebarArticleNumbers.Sort();
 
+		    TaxonomyString = "";
+		    string sep = "";
+            foreach (var taxonomy in article.Taxonomies)
+            {
+                TaxonomyString += sep + taxonomy.Item_Name;
+                sep = ",";
+            }
 
+		    ContentType = "";
+
+            if (article.Content_Type != null)
+		    {
+		        ContentType = article.Content_Type.Item_Name;
+		    }
+
+		    MediaType = "";
+		    if (article.Media_Type != null)
+		    {
+                MediaType = article.Media_Type.Item_Name;
+		    }
+
+		    EmailPriority = "";
+            EmailPriority = article.Sort_Order.ToString();
+		    
             NotesToEditorial = article.Editorial_Notes;
 
 

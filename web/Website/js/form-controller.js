@@ -22,7 +22,7 @@ function formController(requestVerificationToken) {
                 var field = $(this);
 
 				if (field.data('checkbox-type') === 'boolean') {
-					value = field.attr('checked');
+					value = field.attr('checked') || field.attr('checked') === 'checked';
 
 					if (field.data('checkbox-boolean-type') === 'reverse') {
 						value = !value;
@@ -33,7 +33,7 @@ function formController(requestVerificationToken) {
 				}
 
 				inputData[field.attr('name')] = value;
-			})
+			});
 
 			$.ajax({
 				url: $(form).data('on-submit'),
