@@ -49,7 +49,9 @@
   <ItemGroup>
     <Compile Include="Company\ISalesforceCompany.cs" />
     <Compile Include="Company\ISalesforceFindCompanyByIpAddress.cs" />
+    <Compile Include="Company\ISalesforceCompanyFromSiteType.cs" />
     <Compile Include="Company\SalesforceCompany.cs" />
+    <Compile Include="Company\SalesforceSiteTypeParser.cs" />
     <Compile Include="Company\SalesforceFindCompanyByIpAddress.cs" />
     <Compile Include="EBIWebServices\EBI_CreateProfileResponse.cs" />
     <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
