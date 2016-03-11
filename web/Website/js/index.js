@@ -133,8 +133,11 @@ $(document).ready(function() {
 		}
 	);
 
-	var resetPassword = new ResetPasswordController();
-
+	var resetPassword = new FormController();
+	resetPassword.watchForm('.form-reset-password', function() {
+		$('.form-reset-password').find('.alert-success').show();
+	});
+	/*
 	resetPassword.addRequestControl(
 		'.js-reset-password-request-submit',
 		function(triggerElement) {
@@ -143,7 +146,7 @@ $(document).ready(function() {
 	);
 	resetPassword.addChangeControl('.js-reset-password-change-submit');
 	resetPassword.addRetryControl('.js-reset-password-retry-submit');
-
+*/
 
 	var userRegistrationController = new FormController();
 	userRegistrationController.watchForm('.form-registration');
