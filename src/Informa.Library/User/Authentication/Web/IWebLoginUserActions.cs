@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Informa.Library.Actions;
 
 namespace Informa.Library.User.Authentication.Web
 {
-	public interface IWebLoginUserActions : IEnumerable<IWebLoginUserAction>
+	public interface IWebLoginUserActions : IActionsProcessor<IWebLoginUserAction, IAuthenticatedUser>
 	{
 	}
 }

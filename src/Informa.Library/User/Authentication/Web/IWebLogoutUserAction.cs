@@ -1,7 +1,8 @@
-﻿namespace Informa.Library.User.Authentication.Web
+﻿using Informa.Library.Actions;
+
+namespace Informa.Library.User.Authentication.Web
 {
-	public interface IWebLogoutUserAction
+	public interface IWebLogoutUserAction : IAction<IAuthenticatedUser>
 	{
-		void Process(IAuthenticatedUser user);
 	}
 }

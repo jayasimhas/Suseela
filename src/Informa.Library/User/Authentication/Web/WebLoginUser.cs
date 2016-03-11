@@ -53,7 +53,7 @@ namespace Informa.Library.User.Authentication.Web
 
 				if (success)
 				{
-					LoginActions.ToList().ForEach(a => a.Process(authenticatedUser));
+					LoginActions.Process(authenticatedUser);
 				}
 			}
 

@@ -1,6 +1,5 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Security.Authentication;
-using System.Linq;
 
 namespace Informa.Library.User.Authentication.Web
 {
@@ -24,7 +23,7 @@ namespace Informa.Library.User.Authentication.Web
 
 			var user = AuthenticatedUserContext.User;
 
-			Actions.ToList().ForEach(a => a.Process(user));
+			Actions.Process(user);
 		}
 	}
 }

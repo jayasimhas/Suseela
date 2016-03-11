@@ -270,6 +270,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\ActionsProcessor.cs" />
+    <Compile Include="Actions\IActionsProcessor.cs" />
+    <Compile Include="Actions\IAction.cs" />
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Search\ArticleSearch.cs" />
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />

@@ -1,27 +1,15 @@
-﻿using System.Collections;
+﻿using Informa.Library.Actions;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Informa.Library.User.Authentication.Web
 {
-	public class WebLoginUserActions : IWebLoginUserActions
+	public class WebLoginUserActions : ActionsProcessor<IWebLoginUserAction, IAuthenticatedUser>, IWebLoginUserActions
 	{
-		protected readonly IEnumerable<IWebLoginUserAction> Actions;
-
 		public WebLoginUserActions(
 			IEnumerable<IWebLoginUserAction> actions)
+			: base(actions)
 		{
-			Actions = actions;
-		}
 
-		public IEnumerator<IWebLoginUserAction> GetEnumerator()
-		{
-			return Actions == null ? Enumerable.Empty<IWebLoginUserAction>().GetEnumerator() : Actions.GetEnumerator();
-		}
-
-		IEnumerator IEnumerable.GetEnumerator()
-		{
-			return GetEnumerator();
 		}
 	}
 }

@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Informa.Library.Actions;
 
 namespace Informa.Library.User.Authentication.Web
 {
-	public interface IWebLogoutUserActions : IEnumerable<IWebLogoutUserAction>
+	public interface IWebLogoutUserActions : IActionsProcessor<IWebLogoutUserAction, IAuthenticatedUser>
 	{
 	}
 }
