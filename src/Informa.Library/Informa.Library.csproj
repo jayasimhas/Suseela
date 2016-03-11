@@ -288,6 +288,7 @@
     <Compile Include="Company\IUserCompanyContext.cs" />
     <Compile Include="Company\CompanyRegisterUser.cs" />
     <Compile Include="Company\UserCompanyContext.cs" />
+    <Compile Include="Company\Web\WebClearUserCompanyContextLogoutAction.cs" />
     <Compile Include="Company\Web\WebSetUserCompanyContextLoginAction.cs" />
     <Compile Include="ComponentModel\DataAnnotations\MustBeTrueAttribute.cs" />
     <Compile Include="ComponentModel\DataAnnotations\PasswordAttribute.cs" />
@@ -367,6 +368,8 @@
     <Compile Include="User\Authentication\Web\IWebLoginUserResult.cs" />
     <Compile Include="User\Authentication\Web\IWebLogoutUser.cs" />
     <Compile Include="User\Authentication\ISitecoreVirtualUsernameFactory.cs" />
+    <Compile Include="User\Authentication\Web\IWebLogoutUserAction.cs" />
+    <Compile Include="User\Authentication\Web\IWebLogoutUserActions.cs" />
     <Compile Include="User\Authentication\Web\WebLoginUser.cs" />
     <Compile Include="ContentCuration\IItemManuallyCuratedContent.cs" />
     <Compile Include="ContentCuration\Search\ItemManuallyCuratedContentSearch.cs" />
@@ -537,6 +540,7 @@
     <Compile Include="Subscription\MockUserSubscriptionContext.cs" />
     <Compile Include="User\Authentication\Web\WebLogoutUser.cs" />
     <Compile Include="User\Authentication\SitecoreVirtualUsernameFactory.cs" />
+    <Compile Include="User\Authentication\Web\WebLogoutUserActions.cs" />
     <Compile Include="User\Entitlement\AuthenticatedIpContext.cs" />
     <Compile Include="User\Entitlement\EntitledAccessLevel.cs" />
     <Compile Include="User\Entitlement\EntitledProductContext.cs" />

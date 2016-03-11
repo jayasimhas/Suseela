@@ -11,6 +11,7 @@ namespace Informa.Web.App_Start.Registrations
 		{
 			builder.RegisterType<SalesforceAuthenticateUser>().As<IAuthenticateUser>();
 			builder.RegisterType<WebLoginUserActions>().As<IWebLoginUserActions>();
+			builder.RegisterType<WebLogoutUserActions>().As<IWebLogoutUserActions>();
 		}
 	}
 }
