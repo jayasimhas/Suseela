@@ -1,7 +1,13 @@
 ﻿using System;
 using System.IO;
+using Glass.Mapper.Sc;
+using Informa.Library.Mail;
 using Informa.Library.User;
+using Informa.Library.Utilities.References;
+using Informa.Library.Utilities.Settings;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Jabberwocky.Glass.Autofac.Attributes;
 using log4net;
 using Newtonsoft.Json;
 
@@ -10,17 +16,19 @@ namespace Informa.Library.Services.NlmExport.Logging
     public class NlmLoggingDecorator : INlmExportService
     {
         private readonly INlmExportService _innerService;
-        private readonly ISitecoreUserContext _userContext;
+        private readonly IDependencies _;
         private readonly ILog _logger;
 
-        public NlmLoggingDecorator(INlmExportService innerService, ILog logger, ISitecoreUserContext userContext)
+        protected IError_Distribution_List EmailDistributionList
+            => _.SitecoreService.GetItem<IError_Distribution_List>(_.ItemReferences.NlmErrorDistributionList);
+
+        public NlmLoggingDecorator(INlmExportService innerService, ILog logger, IDependencies _)
         {
             if (innerService == null) throw new ArgumentNullException(nameof(innerService));
             if (logger == null) throw new ArgumentNullException(nameof(logger));
-            if (userContext == null) throw new ArgumentNullException(nameof(userContext));
             _innerService = innerService;
             _logger = logger;
-            _userContext = userContext;
+            this._ = _;
         }
 
         public Stream GenerateNlm(ArticleItem article, PublicationType? type = null)
@@ -31,7 +39,7 @@ namespace Informa.Library.Services.NlmExport.Logging
         public ExportResult ExportNlm(ArticleItem article, ExportType exportType, PublicationType? type = null)
         {
             // Capture some state
-            var username = _userContext.User?.Name ?? "Unknown User";
+            var username = _.UserContext.User?.Name ?? "Unknown User";
             var articlePath = article._Path;
             var articleId = article.Article_Number;
             var currentTime = DateTime.UtcNow;
@@ -47,25 +55,59 @@ namespace Informa.Library.Services.NlmExport.Logging
                 ExportResult = result
             };
 
-            // Log any export errors
-            if (result.Exception != null)
+            // Log & report any export errors
+            if (!result.ExportSuccessful)
             {
-                var serializedMessage = JsonConvert.SerializeObject(logMessage);
-                _logger.Error("Error while exporting NLM: \n" + serializedMessage, result.Exception);
-            }
-            // Log & report on any validation errors
-            else if (!result.ValidationResult)
-            {
-                var serializedMessage = JsonConvert.SerializeObject(logMessage);
-                _logger.Warn("NLM Export failed on validation. \n" + serializedMessage, result.Exception);
+                var errorMessage = string.Empty;
+                if (result.Exception != null)
+                {
+                    errorMessage = "Error while exporting NLM: \n" + JsonConvert.SerializeObject(logMessage);
+                }
+                // Log & report on any validation errors
+                else if (!result.ValidationResult)
+                {
+                    errorMessage = "NLM Export failed on validation. \n" + JsonConvert.SerializeObject(logMessage);
+                }
+
+                _logger.Error(errorMessage, result.Exception);
+                SendMail(errorMessage);
             }
 
             return result;
         }
 
+        private void SendMail(string errorMessage)
+        {
+            var mail = new Email
+            {
+                IsBodyHtml = false,
+                To = GetEmailRecipients(),
+                From = _.SiteSettings.MailFromAddress,
+                Subject = "NLM Export Error",
+                Body = errorMessage
+            };
+
+            _.EmailService.Send(mail);
+        }
+
         public bool DeleteNlm(ArticleItem article)
         {
             return _innerService.DeleteNlm(article);
+        }
+
+        protected virtual string GetEmailRecipients()
+        {
+            return EmailDistributionList?.NLM_Error_Distribution_List ?? string.Empty;
+        }
+
+        [AutowireService(true)]
+        public interface IDependencies
+        {
+            IItemReferences ItemReferences { get; }
+            ISiteSettings SiteSettings { get; }
+            ISitecoreService SitecoreService { get; }
+            ISitecoreUserContext UserContext { get; }
+            IEmailSender EmailService { get; }
         }
     }
 }
