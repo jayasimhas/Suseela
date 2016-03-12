@@ -20,10 +20,16 @@ function bookmarkController() {
             DocumentID: $(e).closest('.js-bookmark-article').data('bookmark-id')
         };
 
+        if(/* IS BOOKMARKED */) {
+            var endpoint = '/Account/api/SavedDocumentApi/RemoveItem/';
+        } else {
+            var endpoint = '/Account/api/SavedDocumentApi/SaveItem/';
+        }
+
         if(apiData.DocumentID) {
 
             $.ajax({
-                url: '/Account/api/SavedDocumentApi/SaveItem/',
+                url: endpoint,
                 type: 'POST',
                 data: apiData,
                 context: this,
