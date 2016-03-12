@@ -644,6 +644,9 @@
     <Compile Include="User\IUserIpAddressContext.cs" />
     <Compile Include="User\IUserSession.cs" />
     <Compile Include="User\Profile\IFindUserProfileByUsername.cs" />
+    <Compile Include="User\Profile\IManageSubscriptions.cs" />
+    <Compile Include="User\Profile\ISubscription.cs" />
+    <Compile Include="User\Profile\ISubscriptionsReadResult.cs" />
     <Compile Include="User\Profile\INewsletterOptIn.cs" />
     <Compile Include="User\Profile\INewsletterUserOptInFactory.cs" />
     <Compile Include="User\Profile\IQueryNewsletterUserOptInResult.cs" />
@@ -666,6 +669,8 @@
     <Compile Include="User\Profile\SavedDocument.cs" />
     <Compile Include="User\Profile\SavedDocumentReadResult.cs" />
     <Compile Include="User\Profile\SavedDocumentWriteResult.cs" />
+    <Compile Include="User\Profile\Subscription.cs" />
+    <Compile Include="User\Profile\SubscriptionsReadResult.cs" />
     <Compile Include="User\Registration\INewUser.cs" />
     <Compile Include="User\Registration\INewUserFactory.cs" />
     <Compile Include="User\Registration\IRegisterUser.cs" />

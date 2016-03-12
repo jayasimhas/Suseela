@@ -688,6 +688,7 @@
     <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\EmailPreferencesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedArticlesViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\SubscriptionsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
