@@ -32,44 +32,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 
             var result = ManageSubscriptions.QueryItems(UserContext.User);
             Subscriptions = false //(result.Success)
-                            ? result.Subscriptions.Where(z => z.ProductType.Equals(ProductTypeKey))
-                            : new List<ISubscription>()
-                            {
-                                //case 1 : show button
-                                new Library.User.Profile.Subscription() //within renew range
-                                {
-                                    Publication = "Test Show Renew",
-                                    ExpirationDate = DateTime.Now.AddDays(118),
-                                    ProductCode = "AA"
-                                },
-                                //case 2 - one outside renew range : don't show button
-                                new Library.User.Profile.Subscription() //within renew range
-                                {
-                                    Publication = "Test Don't Show Renew",
-                                    ExpirationDate = DateTime.Now.AddDays(118),
-                                    ProductCode = "BB"
-                                },
-                                new Library.User.Profile.Subscription() //outside renew range
-                                {
-                                    Publication = "Test Don't Show Renew",
-                                    ExpirationDate = DateTime.Now.AddDays(119),
-                                    ProductCode = "BB"
-                                },
-                                //case 3 - no valid subscriptions : show button
-                                new Library.User.Profile.Subscription()
-                                {
-                                    Publication = "Test Show Subscribe",
-                                    ExpirationDate = DateTime.Now.AddDays(-1),
-                                    ProductCode = "CC"
-                                },
-                                //case 4 - valid subscription : don't show
-                                new Library.User.Profile.Subscription()
-                                {
-                                    Publication = "Test Don't Show Subscribe",
-                                    ExpirationDate = DateTime.Now.AddDays(1),
-                                    ProductCode = "DD"
-                                }
-                            };
+                ? result.Subscriptions.Where(z => z.ProductType.Equals(ProductTypeKey))
+                : Enumerable.Empty<ISubscription>();
         }
 
         public IEnumerable<ISubscription> Subscriptions;
@@ -125,5 +89,45 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public string ExpirationDateText => TextTranslator.Translate("Subscriptions.ExpirationDate");
         public string ProductTypeKey => TextTranslator.Translate("Subscriptions.ProductTypeKey");
 
+        /* Test Subscription Data 
+        
+        new List<ISubscription>()
+        {
+            //case 1 : show button
+            new Library.User.Profile.Subscription() //within renew range
+            {
+                Publication = "Test Show Renew",
+                ExpirationDate = DateTime.Now.AddDays(118),
+                ProductCode = "AA"
+            },
+            //case 2 - one outside renew range : don't show button
+            new Library.User.Profile.Subscription() //within renew range
+            {
+                Publication = "Test Don't Show Renew",
+                ExpirationDate = DateTime.Now.AddDays(118),
+                ProductCode = "BB"
+            },
+            new Library.User.Profile.Subscription() //outside renew range
+            {
+                Publication = "Test Don't Show Renew",
+                ExpirationDate = DateTime.Now.AddDays(119),
+                ProductCode = "BB"
+            },
+            //case 3 - no valid subscriptions : show button
+            new Library.User.Profile.Subscription()
+            {
+                Publication = "Test Show Subscribe",
+                ExpirationDate = DateTime.Now.AddDays(-1),
+                ProductCode = "CC"
+            },
+            //case 4 - valid subscription : don't show
+            new Library.User.Profile.Subscription()
+            {
+                Publication = "Test Don't Show Subscribe",
+                ExpirationDate = DateTime.Now.AddDays(1),
+                ProductCode = "DD"
+            }
+        };
+        */
     }
 }
