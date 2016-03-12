@@ -2,26 +2,15 @@
 
 @* * *  ARTICLE - KEY DOCUMENTS
         IIPP-158 *@
-
 @if (Model.KeyDocuments.Any() && Model.IsEntitled())
 {
     <div class="article-key-documents">
         <h2>@Model.KeyDocumentHeader</h2>
         <ul>
-            @foreach (var doc in Model.KeyDocuments)
+        @foreach (var doc in Model.KeyDocuments)
             {
                 <li class="article-key-document">
-                    @*  Per the ticket, these 4 document types should have icons:
-                    - Word docs (.doc, .docx)
-                    - Excel docs (.xls, .xlsx)
-                    - PDF docs (.pdf)
-                    - Other
-                    NOTE: "Icons will be sourced from /sitecore/environment
-                        globals/supporting document icons/ based on the "Extensions
-                        Supported" field on the Sitecore item"
-                    This img `src` is a placeholder, please replace with images
-                    sourced from Sitecore. *@
-                    <svg class="article-table__expand-table">
+                    <svg class="article-key-document__icon">
                         <use xlink:href="/dist/img/svg-sprite.svg#@Model.GetDocumentIcon(doc)"></use>
                     </svg>
                     <a href="@doc._MediaUrl">@Model.GetTitle(doc)</a>
