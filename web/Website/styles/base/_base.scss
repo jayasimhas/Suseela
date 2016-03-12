@@ -38,6 +38,11 @@ a {
       }
   }
 }
+.link-hint-arrow {
+  @include svg-fill($color-cardinal-red);
+  height: 9px;
+  width: 10px;
+}
 
 // List Resets
 ul, li, ol {
