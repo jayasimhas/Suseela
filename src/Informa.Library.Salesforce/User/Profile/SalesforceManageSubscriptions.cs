@@ -48,6 +48,7 @@ namespace Informa.Library.Salesforce.User.Profile
                         ProductGuid = a.productGUID,
                         SubscriptionType = a.subscriptionType,
                         Publication = a.name,
+                        ProductType = a.productType,
                         ExpirationDate = (a.expirationDateSpecified) ? a.expirationDate.Value : DateTime.Now
                     })
                     : Enumerable.Empty<ISubscription>()

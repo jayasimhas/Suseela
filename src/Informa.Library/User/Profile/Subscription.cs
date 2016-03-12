@@ -14,5 +14,6 @@ namespace Informa.Library.User.Profile
         public DateTime ExpirationDate { get; set; }
         public string ProductCode { get; set; }
         public string ProductGuid { get; set; }
+        public string ProductType { get; set; }
     }
 }

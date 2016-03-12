@@ -31,48 +31,73 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             SignInViewModel = signInViewModel;
 
             var result = ManageSubscriptions.QueryItems(UserContext.User);
-            Subscriptions = (result.Success)
-                            ? result.Subscriptions
-                            : Enumerable.Empty<ISubscription>();
+            Subscriptions = false //(result.Success)
+                            ? result.Subscriptions.Where(z => z.ProductType.Equals(ProductTypeKey))
+                            : new List<ISubscription>()
+                            {
+                                //case 1 : show button
+                                new Library.User.Profile.Subscription() //within renew range
+                                {
+                                    Publication = "Test Show Renew",
+                                    ExpirationDate = DateTime.Now.AddDays(118),
+                                    ProductCode = "AA"
+                                },
+                                //case 2 - one outside renew range : don't show button
+                                new Library.User.Profile.Subscription() //within renew range
+                                {
+                                    Publication = "Test Don't Show Renew",
+                                    ExpirationDate = DateTime.Now.AddDays(118),
+                                    ProductCode = "BB"
+                                },
+                                new Library.User.Profile.Subscription() //outside renew range
+                                {
+                                    Publication = "Test Don't Show Renew",
+                                    ExpirationDate = DateTime.Now.AddDays(119),
+                                    ProductCode = "BB"
+                                },
+                                //case 3 - no valid subscriptions : show button
+                                new Library.User.Profile.Subscription()
+                                {
+                                    Publication = "Test Show Subscribe",
+                                    ExpirationDate = DateTime.Now.AddDays(-1),
+                                    ProductCode = "CC"
+                                },
+                                //case 4 - valid subscription : don't show
+                                new Library.User.Profile.Subscription()
+                                {
+                                    Publication = "Test Don't Show Subscribe",
+                                    ExpirationDate = DateTime.Now.AddDays(1),
+                                    ProductCode = "DD"
+                                }
+                            };
         }
 
         public IEnumerable<ISubscription> Subscriptions;
 
         public bool ShowRenewButton(string productCode)
         {
-            //subscription expires < 119 days && there isn't another subscription with an expiration date in the future
-            IEnumerable<ISubscription> matches = Subscriptions.Where(a => a.ProductCode.Equals(productCode));
-            int renewCount = matches.Count(b => WithinRenewRange(b.ExpirationDate));
-            return renewCount > 0 && matches.Count() == renewCount;
+            //The user's individual subscription expires in < 119 days and the user has not renewed 
+            //(ie. there isn't another subscription with an expiration date in the future)
+
+            //translation: if there isn't any subscription outside renew range
+            return !Subscriptions.Any(a => a.ProductCode.Equals(productCode) && !WithinRenewRange(a.ExpirationDate));
         }
 
         public bool ShowSubscribeButton(string productCode, DateTime dt)
         {
-            //find all of same product type
-            IEnumerable<ISubscription> matches = Subscriptions.Where(a => a.ProductCode.Equals(productCode));
-            if (!matches.Any())
-                return false;
-
-            //Do Not Show Subscribe Button if user has an has subscription that's not a free trial
-            bool hasSubscription = matches.Any(b => IsValidSubscription(b.ExpirationDate) && !IsFreeTrial(b));
-            if (hasSubscription)
-                return false;
-
-            //find current product
-            IEnumerable<ISubscription> curMatch = matches.Where(c => c.ExpirationDate.Equals(dt));
-            if (!curMatch.Any())
-                return false;
-            
-            //Show If the user has a Free Trial and has not yet subscribed.
-            ISubscription s = curMatch.First();
-            if (IsFreeTrial(s) && !hasSubscription)
-                return true;
-
+            //Show Subscribe Button:
+            //If the user has a Free Trial and has not yet subscribed.
             //Continue showing the "Subscribe" button even after the Free Trial has expired.
-            return !IsValidSubscription(s.ExpirationDate);
+            //Do Not Show Subscribe Button
+            //If the user has an (active or expired Free Trial) AND(has subscribed)
+
+            //doesn't mention case of only having expired regular subscription
+            //assuming would still want them to subscribe if they were on regular expiration also
+            
+            //translation: if there aren't any valid subscriptions
+            return !Subscriptions.Any(k => k.ProductCode.Equals(productCode) && IsValidSubscription(k));
         }
-
-
+        
         public bool WithinRenewRange(DateTime dt)
         {
             // (08/31/2013) - (08/01/2013) = 31
@@ -80,10 +105,10 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             return days < 119;
         }
 
-        public bool IsValidSubscription(DateTime dt)
+        public bool IsValidSubscription(ISubscription s)
         {
             // (08/31/2013) - (08/01/2013) = 31
-            int days = Convert.ToInt16((dt - DateTime.Now).TotalDays);
+            int days = Convert.ToInt16((s.ExpirationDate - DateTime.Now).TotalDays);
             return days > 0;
         }
 
@@ -98,5 +123,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public string PublicationText => TextTranslator.Translate("Subscriptions.Publication");
         public string SubscriptionTypeText => TextTranslator.Translate("Subscriptions.SubscriptionType");
         public string ExpirationDateText => TextTranslator.Translate("Subscriptions.ExpirationDate");
+        public string ProductTypeKey => TextTranslator.Translate("Subscriptions.ProductTypeKey");
+
     }
 }
