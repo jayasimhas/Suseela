@@ -24,14 +24,19 @@ $('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
 
 /* Toggle header search box (tablets/smartphones) */
 $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
-	$('.header-search__wrapper').toggleClass('is-active').focus();
+	if($(window).width() <= 800) {
+		$('.header-search__wrapper').toggleClass('is-active').focus();
+	} else {
+		$(e.target).closest('form').submit();
+	}
+	e.preventDefault();
+	return false;
 });
 
 /* Generic banner dismiss */
 $('.js-dismiss-banner').on('click', function dismissBanner(e) {
 	var thisBanner = $(e.srcElement).parents('.banner');
 	thisBanner.removeClass('is-visible');
-	console.log(thisBanner);
 
 	var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
 	dismissedBanners[thisBanner.data('banner-id')] = true;
@@ -133,8 +138,16 @@ $(document).ready(function() {
 		}
 	);
 
-	var resetPassword = new ResetPasswordController();
+	var resetPassword = new FormController();
+	resetPassword.watchForm('.form-reset-password', function() {
+		$('.form-reset-password').find('.alert-success').show();
+	});
 
+	var newResetPassToken = new FormController();
+	newResetPassToken.watchForm('.form-new-reset-pass-token', function() {
+		$('.form-new-reset-pass-token').find('.alert-success').show();
+	});
+	/*
 	resetPassword.addRequestControl(
 		'.js-reset-password-request-submit',
 		function(triggerElement) {
@@ -143,11 +156,13 @@ $(document).ready(function() {
 	);
 	resetPassword.addChangeControl('.js-reset-password-change-submit');
 	resetPassword.addRetryControl('.js-reset-password-retry-submit');
-
+*/
 
 	var userRegistrationController = new FormController();
 	userRegistrationController.watchForm('.form-registration');
+
 	userRegistrationController.watchForm('.form-registration-optins');
+
 	userRegistrationController.watchForm(
 		'.form-pre-registration',
 		function(form) {
@@ -170,6 +185,9 @@ $(document).ready(function() {
 
     svg4everybody();
 
+	var getHeaderEdge = function() {
+		return $('.header__wrapper').offset().top + $('.header__wrapper').height();
+	};
 
 	/* Toggle menu visibility */
 	$('.js-toggle-menu').on('click', function toggleMenu() {
@@ -177,7 +195,7 @@ $(document).ready(function() {
 			$('.main-menu').removeClass('is-active');
 			$('.menu-toggler').removeClass('is-active');
 			$('body').removeClass('is-frozen');
-			if($(window).scrollTop() <= 100) {
+			if($(window).scrollTop() <= getHeaderEdge()) {
 				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
 			}
 		} else {
@@ -190,7 +208,7 @@ $(document).ready(function() {
 
 	/* Attach / detach sticky menu */
 	$(window).on('scroll', function windowScrolled() {
-		if ($(this).scrollTop() > 100 || $('.main-menu').hasClass('is-active')) {
+		if ($(this).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
 			$('.header__wrapper .menu-toggler').addClass('is-sticky');
 		} else {
 			$('.header__wrapper .menu-toggler').removeClass('is-sticky');

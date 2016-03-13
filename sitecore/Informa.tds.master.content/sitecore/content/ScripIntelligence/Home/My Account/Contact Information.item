@@ -19,8 +19,15 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 997092dc-1130-4707-828d-f398a57e98de
+revision: 4597a78e-6d41-40cc-bd6c-4807e7f06dca
 
+----field----
+field: {6BCC4ECA-2E47-4340-8E01-72D5D7311121}
+name: Update Email Help Text
+key: update email help text
+content-length: 195
+
+To update your email address/username, please contact us at <strong>(800) 322-2181</strong>, <strong>+1 (908) 748-1221</strong>, or <a href="mailto:custcare@informa.com">custcare@informa.com</a>.
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
 name: Title
@@ -55,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-997092dc-1130-4707-828d-f398a57e98de
+4597a78e-6d41-40cc-bd6c-4807e7f06dca
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160308T031801Z
+20160313T122131Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

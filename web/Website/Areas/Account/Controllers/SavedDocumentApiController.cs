@@ -9,6 +9,7 @@ using Informa.Library.Newsletter;
 using Informa.Library.Site.Newsletter;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
+using Informa.Library.Utilities.WebApi.Filters;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Web.Areas.Account.Models.User.Management;
 using Sitecore.Data;
@@ -37,6 +38,7 @@ namespace Informa.Web.Areas.Account.Controllers
         }
 
         [HttpPost]
+        [ArgumentsRequired]
         public IHttpActionResult RemoveItem(SavedDocumentRemoveRequest request)
         {
             var result = ManageSavedDocument.RemoveItem(UserContext.User, request.DocumentID);
@@ -49,6 +51,7 @@ namespace Informa.Web.Areas.Account.Controllers
         }
 
         [HttpPost]
+        [ArgumentsRequired]
         public IHttpActionResult SaveItem(SavedDocumentSaveRequest request)
         {
             Sitecore.Data.ID itemID = ID.Null;
