@@ -14,7 +14,8 @@ namespace Informa.Library.Salesforce.User.Profile
     {
         protected readonly ISalesforceServiceContext Service;
         protected readonly ITextTranslator TextTranslator;
-        
+
+        protected string BadIDKey => TextTranslator.Translate("SavedDocument.BadID");
         protected string NullUserKey => TextTranslator.Translate("SavedDocument.NullUser");
         protected string RequestFailedKey => TextTranslator.Translate("SavedDocument.RequestFailed");
 
@@ -57,7 +58,7 @@ namespace Informa.Library.Salesforce.User.Profile
 
         public bool IsBookmarked(IAuthenticatedUser user, Guid g)
         {
-            string gID = g.ToString("B").ToUpper();
+            string gID = g.ToString("D").ToUpper();
             ISavedDocumentReadResult result = QueryItems(user);
             return result.Success && result.SavedDocuments.Any(b => b.DocumentId.ToUpper().Equals(gID));
         }
@@ -69,7 +70,12 @@ namespace Informa.Library.Salesforce.User.Profile
                 return WriteErrorResult(NullUserKey);
             }
 
-            var response = Service.Execute(s => s.deleteSavedDocument(user.Email, documentId));
+            Guid newDID;
+            if (!Guid.TryParse(documentId, out newDID)) { 
+                return WriteErrorResult(BadIDKey);
+            }
+
+            var response = Service.Execute(s => s.deleteSavedDocument(user.Email, newDID.ToString("D")));
 
             if (!response.IsSuccess())
             {
@@ -90,10 +96,16 @@ namespace Informa.Library.Salesforce.User.Profile
                 return WriteErrorResult(NullUserKey);
             }
 
+            Guid newDID;
+            if (!Guid.TryParse(documentId, out newDID))
+            {
+                return WriteErrorResult(BadIDKey);
+            }
+
             EBI_SavedDocument d = new EBI_SavedDocument();
             d.name = documentName;
             d.description = documentDescription;
-            d.documentId = documentId;
+            d.documentId = newDID.ToString("D");
             
             var response = Service.Execute(s => s.createSavedDocument(d, user.Email));
 

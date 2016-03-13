@@ -665,6 +665,7 @@
     <Compile Include="App_Start\TelemetryConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
+    <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
@@ -673,6 +674,9 @@
     <Compile Include="Areas\Account\Controllers\SavedDocumentApiController.cs" />
     <Compile Include="Areas\Account\Controllers\SubscriptionPageController.cs" />
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\ContactInformationUpdateRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\ManagementValidationReasons.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\PasswordUpdateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\PreferencesRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentRemoveRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentSaveRequest.cs" />
@@ -688,6 +692,8 @@
     <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\EmailPreferencesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedArticlesViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\SubscriptionsViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\ContactInformationViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />

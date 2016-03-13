@@ -1,1 +1,404 @@
-﻿@model Informa.Web.Areas.Account.ViewModels.Registration.RegisterUserViewModel
+﻿@model Informa.Web.Areas.Account.ViewModels.Management.ContactInformationViewModel
+
+@if (Model.IsAuthenticated)
+{
+    <div class="page-account">
+        <h1 class="page-account__header">@Model.Title</h1>
+        <div class="page-preferences js-preferences-user-container">
+
+            <div class="update-pass">
+            
+                <div class="user-details">
+
+                    @Model.UserNameTitleText
+
+                    @Model.UserContext.User.Username
+
+                    @Html.Raw(Model.UpdateHelpText)
+
+                </div>
+
+                <div class="user-pass-form">
+
+                    @Model.PasswordTitleText
+
+                    <form class="form-email-preferences"
+                          data-on-submit="/Account/api/ContactInfoApi/UpdatePassword/">
+
+                        <div>
+                            <label for="CurrentPassword">
+                                @Model.CurrentPasswordLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <input type="text"
+                                   name="CurrentPassword"
+                                   placeholder="@Model.CurrentPasswordPlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="NewPassword">
+                                @Html.Raw(Model.NewPasswordLabelText) <span class="asterisk-required"></span>
+                            </label>
+                            <input type="text"
+                                   name="NewPassword"
+                                   placeholder="@Model.NewPasswordPlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="NewPasswordConfirm">
+                                @Model.NewPasswordConfirmLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <input type="text"
+                                   name="NewPasswordConfirm"
+                                   placeholder="@Model.NewPasswordConfirmPlaceholderText">
+                        </div>
+
+                        <div class="page-preferences__submit-wrapper">
+                            <button type="submit" class="button--filled button--fly-right">@Model.UpdatePasswordText</button>
+                        </div>
+
+                    </form>
+
+                    <p style="display: none;" class="js-preferences-user-success">@Model.PasswordUpdatedText</p>
+
+                </div>
+
+            </div>
+
+            <div class="update-contact">
+
+                <form class="form-email-preferences"
+                      action="/Account/api/PreferencesApi/UpdateContactInfo/" method="POST">
+
+                    <div class="user-name">
+
+                        @Model.NameTitleText
+
+                        <div>
+                            <label for="Salutation">
+                                @Model.SalutationLabelText
+                            </label>
+                            <select name="Salutation">
+                                @foreach (var o in Model.Salutations)
+                                {
+                                    <option @(@Model.SfUserProfile.Salutation.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="FirstName">
+                                @Model.FirstNameLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <input type="text"
+                                   name="FirstName"
+                                   value="@Model.SfUserProfile.FirstName"
+                                   placeholder="@Model.FirstNamePlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="MiddleInitial">
+                                @Model.MiddleInitialLabelText
+                            </label>
+                            <input type="text"
+                                   name="MiddleInitial"
+                                   value="@Model.SfUserProfile.MiddleInitial"
+                                   placeholder="@Model.MiddleInitialPlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="LastName">
+                                @Model.LastNameLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <input type="text"
+                                   name="LastName"
+                                   value="@Model.SfUserProfile.LastName"
+                                   placeholder="@Model.LastNamePlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="NameSuffix">
+                                @Model.NameSuffixLabelText
+                            </label>
+                            <select name="NameSuffix">
+                                @foreach (var o in Model.Suffixes)
+                                {
+                                    <option @(@Model.SfUserProfile.NameSuffix.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="user-company">
+
+                        @Model.CompanyTitleText
+
+                        <div>
+                            <label for="Company">
+                                @Model.CompanyLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <input type="text"
+                                   name="Company"
+                                   value="@Model.SfUserProfile.Company"
+                                   placeholder="@Model.CompanyPlaceholderText">
+                        </div>
+
+                        <div>
+                            @Model.AssociatedCompanyLabelText
+                            @Model.AssociatedCompany
+                        </div>
+
+                        <div>
+                            <label for="JobTitle">
+                                @Model.JobTitleLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <input type="text"
+                                   name="JobTitle"
+                                   value="@Model.SfUserProfile.JobTitle"
+                                   placeholder="@Model.JobTitlePlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="JobFunction">
+                                @Model.JobFunctionLabelText
+                            </label>
+                            <select name="JobFunction">
+                                @foreach (var o in Model.JobFunctions)
+                                {
+                                    <option @(@Model.SfUserProfile.JobFunction.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="JobIndustry">
+                                @Model.JobIndustryLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <select name="JobIndustry">
+                                @foreach (var o in Model.JobIndustries)
+                                {
+                                    <option @(@Model.SfUserProfile.JobIndustry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="user-phone">
+
+                        @Model.PhoneTitleText
+
+                        <div>
+                            <label for="PhoneType">
+                                @Model.PhoneTypeLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <select name="PhoneType">
+                                @foreach (var o in Model.PhoneTypes)
+                                {
+                                    <option @(@Model.SfUserProfile.PhoneType.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="CountryCode">
+                                @Model.CountryCodeLabelText
+                            </label>
+                            <input type="text"
+                                   name="CountryCode"
+                                   value="@Model.SfUserProfile.CountryCode"
+                                   placeholder="@Model.CountryCodePlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="Phone">
+                                @Model.PhoneLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <input type="text"
+                                   name="Phone"
+                                   value="@Model.SfUserProfile.Phone"
+                                   placeholder="@Model.PhonePlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="PhoneExtension">
+                                @Model.PhoneExtensionLabelText
+                            </label>
+                            <input type="text"
+                                   name="PhoneExtension"
+                                   value="@Model.SfUserProfile.PhoneExtension"
+                                   placeholder="@Model.PhoneExtensionPlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="Fax">
+                                @Model.FaxLabelText
+                            </label>
+                            <input type="text"
+                                   name="Fax"
+                                   value="@Model.SfUserProfile.Fax"
+                                   placeholder="@Model.FaxPlaceholderText">
+                        </div>
+                    </div>
+
+                    <div class="user-billing">
+
+                        @Model.BillingTitleText
+
+                        <div>
+                            <label for="BillCountry">
+                                @Model.BillCountryLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <select name="BillCountry">
+                                @foreach (var o in Model.Countries)
+                                {
+                                    <option @(@Model.SfUserProfile.BillCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                }
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="BillAddress1">
+                                @Model.BillAddress1LabelText <span class="asterisk-required"></span>
+                            </label>
+                            <input type="text"
+                                   name="BillAddress1"
+                                   value="@Model.SfUserProfile.BillAddress1"
+                                   placeholder="@Model.BillAddress1PlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="BillAddress2">
+                                @Model.BillAddress2LabelText
+                            </label>
+                            <input type="text"
+                                   name="BillAddress2"
+                                   value="@Model.SfUserProfile.BillAddress2"
+                                   placeholder="@Model.BillAddress2PlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="BillCity">
+                                @Model.BillCityLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <input type="text"
+                                   name="BillCity"
+                                   value="@Model.SfUserProfile.BillCity"
+                                   placeholder="@Model.BillCityPlaceholderText">
+                        </div>
+                        
+                        <div>
+                            <label for="BillState">
+                                @Model.BillStateLabelText
+                            </label>
+                            <input type="text"
+                                   name="BillState"
+                                   value="@Model.SfUserProfile.BillState"
+                                   placeholder="@Model.BillStatePlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="BillPostalCode">
+                                @Model.BillPostalCodeLabelText
+                            </label>
+                            <input type="text"
+                                   name="BillPostalCode"
+                                   value="@Model.SfUserProfile.BillPostalCode"
+                                   placeholder="@Model.BillPostalCodePlaceholderText">
+                        </div>
+
+                    </div>
+
+                    <div class="user-shipping">
+
+                        @Model.ShippingTitleText
+
+                        <div>
+                            <input name="SameAsBilling"
+                                   type="checkbox"
+                                   data-checkbox-type="boolean">
+                            <label for="SameAsBilling" class="checkbox-label">@Model.SameAsBillingLabel</label>
+                        </div>
+
+                        <div>
+                            <label for="ShipCountry">
+                                @Model.ShipCountryLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <select name="ShipCountry">
+                                @foreach (var o in Model.Countries)
+                                {
+                                    <option @(@Model.SfUserProfile.ShipCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="ShipAddress1">
+                                @Model.ShipAddress1LabelText <span class="asterisk-required"></span>
+                            </label>
+                            <input type="text"
+                                   name="ShipAddress1"
+                                   value="@Model.SfUserProfile.ShipAddress1"
+                                   placeholder="@Model.ShipAddress1PlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="ShipAddress2">
+                                @Model.ShipAddress2LabelText
+                            </label>
+                            <input type="text"
+                                   name="ShipAddress2"
+                                   value="@Model.SfUserProfile.ShipAddress2"
+                                   placeholder="@Model.ShipAddress2PlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="ShipCity">
+                                @Model.ShipCityLabelText <span class="asterisk-required"></span>
+                            </label>
+                            <input type="text"
+                                   name="ShipCity"
+                                   value="@Model.SfUserProfile.ShipCity"
+                                   placeholder="@Model.ShipCityPlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="ShipState">
+                                @Model.ShipStateLabelText
+                            </label>
+                            <input type="text"
+                                   name="ShipState"
+                                   value="@Model.SfUserProfile.ShipState"
+                                   placeholder="@Model.ShipStatePlaceholderText">
+                        </div>
+
+                        <div>
+                            <label for="ShipPostalCode">
+                                @Model.ShipPostalCodeLabelText
+                            </label>
+                            <input type="text"
+                                   name="ShipPostalCode"
+                                   value="@Model.SfUserProfile.ShipPostalCode"
+                                   placeholder="@Model.ShipPostalCodePlaceholderText">
+                        </div>
+
+                    </div>
+
+                    <div class="page-preferences__submit-wrapper">
+                        <button type="submit" class="button--filled button--fly-right">@Model.UpdateContactInfoText</button>
+                    </div>
+
+                </form>
+
+                <p style="display: none;" class="js-preferences-user-success">@Model.AccountUpdatedText</p>
+
+            </div>
+            
+            <div style="display: none;" class="js-preferences-user-error-container">
+                <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-general">@Model.GeneralErrorText</p>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    Html.RenderPartial("_SignInForm", Model.SignInViewModel);
+}
