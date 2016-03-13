@@ -9,6 +9,7 @@ using Elsevier.Library.Metadata;
 using Elsevier.Library.Reference;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Web;
@@ -75,12 +76,15 @@ namespace Elsevier.Web.VWB.Report
 
         public ArticleItemWrapper(ArticleItem articleItem, ArticleLengthEstimator estimator)
 		{
-			_estimator = estimator; 
+			_estimator = estimator;
 
-            IArticle article = new SitecoreContext().GetItem<IArticle>(articleItem.ID.ToString());
-		    Item articleBaseItem = Sitecore.Context.Database.GetItem(articleItem.ID.ToString());
+            Database masterDb = Factory.GetDatabase("master");
 
-		    InnerItem = articleBaseItem;
+            Item articleBaseItem = masterDb.GetItem(articleItem.ID.ToString());
+
+            IArticle article = articleBaseItem.GlassCast<IArticle>(inferType: true);
+
+            InnerItem = articleBaseItem;
 
             //TODO
             PreviewUrl = GetPreviewUrl(article._Id.ToString());
@@ -91,7 +95,7 @@ namespace Elsevier.Web.VWB.Report
 
 		    }
 
-			Title = article.Title;
+			Title = article.Title + " : " + article._Path;
 
 		    if (article.Authors != null)
 		    {

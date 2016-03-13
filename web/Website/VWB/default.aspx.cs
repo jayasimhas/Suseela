@@ -83,7 +83,7 @@ namespace Elsevier.Web.VWB
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			ReportBuilderBlacklist.Add(btnReset);
+            ReportBuilderBlacklist.Add(btnReset);
 
 			_vwbQuery = new VwbQuery(Request);
 			if (!IsPostBack
@@ -154,6 +154,12 @@ namespace Elsevier.Web.VWB
 				txtEndTime.Text = string.Format("{0:h:mm tt}", _vwbQuery.EndDate);
 				EnableDate();
 			}
+
+		    if (_vwbQuery.InProgressValue)
+		    {
+		        chkShowInProgressArticles.Checked = true;
+		    }
+
 		}
 
 		protected void EnableDate()
@@ -214,6 +220,13 @@ namespace Elsevier.Web.VWB
 					}
 				}
 			}
+
+		    if (chkShowInProgressArticles.Checked)
+		    {
+		        q.InProgressValue = true;
+		    }
+            else
+            { q.InProgressValue = false; }
 
 			q.ShouldRun = execute;
 			q.NumResultsValue = GetMaxNumResults();

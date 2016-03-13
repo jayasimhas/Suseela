@@ -14,6 +14,7 @@ using Elsevier.Web.VWB.Report.Columns;
 using Informa.Library.Rss;
 using Informa.Library.Utilities.References;
 using Newtonsoft.Json;
+using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Web;
@@ -166,67 +167,27 @@ namespace Elsevier.Web.VWB.Report
 		/// <returns>Sorted list of ArticleItemProxies based on query</returns>
 		public List<ArticleItemWrapper> RunSearch(VwbQuery query)
 		{
-           // var param = new ArticleSearchParam();
-            //param.IncludeSidebarArticles();
             List<ArticleItemWrapper> articles;
-            //string issue = query.IssueIdValue;
-            //var pubId = new ID(query.PublicationIdValue);
-            //DateTime today = DateTime.Today;
-            //if (!string.IsNullOrEmpty(issue))
-            //{
-            //    if (issue == VwbQuery.NextIssueValue)
-            //    {
-            //        _publication = SitecoreDatabases.Context.GetItem(pubId);
 
-            //        if (_publication.IsDaily())
-            //        {
-            //            //make the date range encompass "tomorrow"
-            //            param.DateRanges.Add(
-            //                new DateRangeSearchParam.DateRangeField(
-            //                ArticleIndex.SortDateField,
-            //                today.AddDays(1),
-            //                today.AddDays(2)
-            //            ));
-            //        }
-            //        _iitem = IssueSearcher.GetNextIssue(_publication, today.Subtract(new TimeSpan(1, 0, 0, 0)));
-            //        if (_iitem != null)
-            //        {
-            //            param.LocationIds = _iitem.ID.ToString();
-            //        }
-            //    }
-            //    else
-            //    {
-            //        param.LocationIds = new ID(issue).ToString();
-            //    }
-            //}
-            //else if (!string.IsNullOrEmpty(query.PublicationIdValue))
-            //{
-            //    param.LocationIds = pubId.ToString();
-            //}
-
-            //if (query.StartDate != null && query.EndDate != null)
-            //{
-            //    param.DateRanges.Add(
-            //        new DateRangeSearchParam.DateRangeField(
-            //            ArticleIndex.SortDateField,
-            //            query.StartDate.Value,
-            //            query.EndDate.Value//.AddDays(1) //making search inclusive to the query's enddate
-            //            ));
-            //}
             using (new Sitecore.SecurityModel.SecurityDisabler())
             {
                 string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
                 string url = string.Format("http://{0}/api/informasearch?pId={1}&sortBy=plannedpublishdate&sortOrder=desc", WebUtil.GetHostName(), searchPageId);
+
+                if (query.InProgressValue)
+                {
+                    url += "&inprogress=1";
+                }
 
                 DateTime startDate;
                 DateTime endDate;
                 if (query.StartDate != null && query.EndDate != null)
                 {
                     startDate = query.StartDate ?? DateTime.MinValue;
-                   
+
 
                     endDate = query.EndDate ?? DateTime.MaxValue;
-                    
+
                 }
                 else
                 {
@@ -244,9 +205,11 @@ namespace Elsevier.Web.VWB.Report
 
                 var resultItems = new List<ArticleItem>();
 
+                Database masterDb = Factory.GetDatabase("master");
+
                 foreach (var searchResult in results.results)
                 {
-                    var theItem = (ArticleItem)Sitecore.Context.Database.GetItem(searchResult.ItemId);
+                    var theItem = (ArticleItem)masterDb.GetItem(searchResult.ItemId);
 
                     if (theItem == null)
                     {
