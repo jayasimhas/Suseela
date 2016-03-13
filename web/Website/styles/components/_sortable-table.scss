@@ -1,0 +1,19 @@
+.sortable-table {
+	@include textMix('Roboto', 1rem, 400);
+	color: $color-abbey-gray;
+	border: 1px solid $color-light-gray;
+
+	td {
+		padding: 1rem 1.25rem;
+	}
+
+	tbody tr {
+		border-bottom: 1px solid $color-light-gray;
+	}
+	&__header {
+		background-color: $color-concrete-gray;
+		color: $color-zeus-black;
+		font-size: 1.125rem;
+		font-weight: 600;
+	}
+}
