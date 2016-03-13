@@ -126,10 +126,30 @@
                              ng-checked="f.selected"
                              ng-model="f.selected"
                              ng-change="allFacets.update()">
-                      <!-- temporarily removing ng-if="f.label.length > 0" from above -->
                       <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">{{ f.label }} ({{f.count}})</label>
-
-                      <ul ng-show="f.sublist.length > 0" class="facets__section-list--sub">
+                      <button
+                          class="facets__button facets__button--toggle-subcat"
+                          ng-model="collapsesubfacet"
+                          ng-click="collapseSubfacet=!collapseSubfacet; isCollapsedSubfacet=!isCollapsedSubfacet">
+                          @* hide if collapsed *@
+                          <svg 
+                            class="facets__button--collapse-subfacet"
+                            ng-show="f.sublist.length > 0"
+                            ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use>
+                          </svg>
+                          @* show if collapsed  *@
+                          <svg 
+                            class="facets__button--expand-subfacet"
+                            ng-show="(f.sublist.length > 0)" 
+                            ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#expand"></use>
+                          </svg>
+                      </button>
+                      @* hide if collapsed *@
+                      <ul ng-show="f.sublist.length > 0"  
+                          ng-class="{'collapsedSubfacet': isCollapsedSubfacet}" 
+                          class="facets__section-list--sub">
                           <li ng-repeat="subFacet in f.sublist">
                               <input id="{{ subFacet.id }}-{{ $index }}"
                                      type="checkbox"
@@ -140,8 +160,7 @@
                               <label ng-if="subFacet.name" for="{{ subFacet.id }}-{{ $index }}">{{ subFacet.name }} ({{subFacet.count}})</label>
                           </li>
                       </ul>
-
-</li>
+                  </li>
               </ul>
               <button
                   class="facets__button facets__button--more"

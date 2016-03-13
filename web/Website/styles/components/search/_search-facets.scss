@@ -81,6 +81,11 @@
       padding-top: 10px;
       padding-left: 30px;
 
+      // if the subfacet is collapsed, hide the subfacet list
+      &.collapsedSubfacet {
+        display: none;
+      }
+
       input[type="checkbox"] + label {
         font-size: 13px;
         line-height: 20px;
@@ -212,7 +217,7 @@
       width: 100%;
 
       &.collapsed {
-      display: none;
+        display: none;
       }
 
       svg {
@@ -249,6 +254,27 @@
         width: 18px;
       }
     }
+
+    &--collapse-subfacet {
+      display: inline-block; 
+
+      &.collapsedSubfacet {
+        display: none;
+      }
+    }
+
+    &--expand-subfacet {
+      display: none;
+
+      &.collapsedSubfacet {
+        display: inline-block;
+      }
+    }
+
+    // &.collapsedSubfacet {
+    //   display: none;
+    // }
+
   }
 
 
