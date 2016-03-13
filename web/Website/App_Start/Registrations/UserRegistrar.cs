@@ -42,6 +42,9 @@ namespace Informa.Web.App_Start.Registrations
 
 		    builder.RegisterType<SalesforceManageSavedDocuments>().As<IManageSavedDocuments>();
             builder.RegisterType<SalesforceManageSubscriptions>().As<IManageSubscriptions>();
-		}
+            builder.RegisterType<SalesforceManageAccountInfo>().As<IManageAccountInfo>();
+            builder.RegisterType<SalesforceUserProfile>().As<ISalesforceUserProfile>();
+            builder.RegisterType<SalesforceFindUserProfile>().As<ISalesforceFindUserProfile>();
+        }
 	}
 }

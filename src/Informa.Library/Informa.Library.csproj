@@ -643,6 +643,8 @@
     <Compile Include="User\IUser.cs" />
     <Compile Include="User\IUserIpAddressContext.cs" />
     <Compile Include="User\IUserSession.cs" />
+    <Compile Include="User\Profile\AccountInfoWriteResult.cs" />
+    <Compile Include="User\Profile\IAccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IFindUserProfileByUsername.cs" />
     <Compile Include="User\Profile\IManageSubscriptions.cs" />
     <Compile Include="User\Profile\ISubscription.cs" />
@@ -660,6 +662,7 @@
     <Compile Include="User\Profile\IUpdateNewsletterUserOptIn.cs" />
     <Compile Include="User\Profile\IUpdateOfferUserOptIn.cs" />
     <Compile Include="User\Profile\INewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\IManageAccountInfo.cs" />
     <Compile Include="User\Profile\IUserProfile.cs" />
     <Compile Include="User\Profile\IUserProfileFactory.cs" />
     <Compile Include="User\Profile\NewsletterOptIn.cs" />
