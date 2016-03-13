@@ -15,6 +15,7 @@ namespace Informa.Web.ViewModels
 		public MainLayoutViewModel(
 			ISiteRootContext siteRootContext,
 			IMaintenanceViewModel maintenanceViewModel,
+			ICompanyRegisterMessageViewModel companyRegisterMessageViewModel,
 			ISideNavigationMenuViewModel sideNavigationMenuViewModel,
 			IHeaderViewModel headerViewModel,
 			IFooterViewModel footerViewModel,
@@ -26,6 +27,7 @@ namespace Informa.Web.ViewModels
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
+			CompanyRegisterMessage = companyRegisterMessageViewModel;
 			SideNavigationMenu = sideNavigationMenuViewModel;
 			Header = headerViewModel;
 			Footer = footerViewModel;
@@ -38,6 +40,7 @@ namespace Informa.Web.ViewModels
 		}
 
 		public IMaintenanceViewModel MaintenanceMessage;
+		public ICompanyRegisterMessageViewModel CompanyRegisterMessage;
 		public ISideNavigationMenuViewModel SideNavigationMenu;
 		public IFooterViewModel Footer;
 		public IHeaderViewModel Header;

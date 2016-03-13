@@ -1,0 +1,204 @@
+<!--
+
+Purpose: This include file shows how to change elements in the <settings> section
+of the web.config file
+
+To enable this, rename this file so that it has a ".config" extension
+
+Notice that when changing simple settings like this, you can typically put in the
+setting directly without using "patch:attribute" like we do in the structure below.
+But you can also use "patch:attribute" for clarity:
+    <setting name="RequireLockBeforeEditing">
+      <patch:attribute name="value">false</patch:attribute>
+    </setting>
+
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <pipelines>
+      <initialize>
+        <processor type="Informa.Library.CustomSitecore.Pipelines.InitializeControllerFactory, Informa.Library" patch:instead="processor[@type='Sitecore.Mvc.Pipelines.Loader.InitializeControllerFactory, Sitecore.Mvc']"/>
+        <processor
+                   type="Informa.Library.CustomSitecore.Pipelines.RegisterHttpRoutes, Informa.Library"
+                   factory="Autofac" ref="Informa.Library.CustomSitecore.Pipelines.RegisterHttpRoutes, Informa.Library" reusable="false" />
+
+        <!-- Sitecore MVC Route Configuration-->
+        <processor patch:before="processor[@type='Sitecore.Mvc.Pipelines.Loader.InitializeRoutes, Sitecore.Mvc']"
+                   type="Informa.Web.CustomMvc.Pipelines.RegisterMvcRoutes, Informa.Web"
+                   factory="Autofac" ref="Informa.Web.CustomMvc.Pipelines.RegisterMvcRoutes, Informa.Web" reusable="false" />
+        <!-- Deleting this twice, for overriding two separate instances from two disparate include files -->
+        <processor type="Sitecore.Pipelines.Initialize.PrecompileSpeakViews, Sitecore.Speak.Client">
+          <patch:delete />
+        </processor>
+        <processor type="Sitecore.Pipelines.Initialize.PrecompileSpeakViews, Sitecore.Speak.Client">
+          <patch:delete />
+        </processor>
+      </initialize>
+
+      <mvc.renderRendering>
+        <processor type="Informa.Library.CustomSitecore.Pipelines.AddIndexUpdateCacheFlag, Informa.Library" patch:after="processor[@type='Sitecore.HtmlCache.Pipeline.Mvc.RenderRendering.GenerateCacheKey, Sitecore.HtmlCache']" />
+        <!-- Sitecore.Mvc.Pipelines.Response.RenderRendering.GenerateCacheKey, Sitecore.Mvc -->
+        <processor type="Informa.Library.CustomSitecore.Pipelines.RenderRenderings.ExecuteRenderer, Informa.Library" patch:instead="processor[@type='Sitecore.Mvc.Pipelines.Response.RenderRendering.ExecuteRenderer, Sitecore.Mvc']" />
+      </mvc.renderRendering>
+
+      <httpRequestBegin>
+        <processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.ArticleItemResolver, Informa.Library"
+                   ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.ArticleItemResolver, Informa.Library"
+                   factory="Autofac"
+                   patch:before="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
+                   reusable="false" />
+        <processor type="Sitecore.Pipelines.HttpRequest.ExecuteRequest, Sitecore.Kernel">
+          <patch:attribute name="type">Informa.Library.CustomSitecore.Pipelines.HttpRequest.InformaExecuteRequest,Informa.Library</patch:attribute>
+        </processor>
+      </httpRequestBegin>
+    </pipelines>
+
+
+    <hooks>
+      <hook type="Sitecore.Diagnostics.MemoryMonitorHook, Sitecore.Kernel">
+        <param desc="Threshold">1200MB</param>
+        <ClearCaches>false</ClearCaches>
+        <GarbageCollect>false</GarbageCollect>
+        <AdjustLoadFactor>false</AdjustLoadFactor>
+      </hook>
+    </hooks>
+
+    <encodeNameReplacements>
+      <replace mode="on" find=" " replaceWith="-" />
+    </encodeNameReplacements>
+
+    <linkManager>
+      <providers>
+        <add name="sitecore">
+          <patch:attribute name="languageEmbedding">never</patch:attribute>
+          <patch:attribute name="lowercaseUrls">true</patch:attribute>
+        </add>
+      </providers>
+    </linkManager>
+
+    <sites>
+      <site name="website">
+        <patch:attribute name="htmlCacheSize">10MB</patch:attribute>
+      </site>
+      <site name="shell">
+        <patch:attribute name="enableWorkflow">true</patch:attribute>
+        <patch:attribute name="startItem">/sites</patch:attribute>
+        <patch:attribute name="contentStartItem">/sites</patch:attribute>
+      </site>
+    </sites>
+
+    <cacheSizes>
+      <sites>
+        <website>
+          <html>10MB</html>
+        </website>
+      </sites>
+    </cacheSizes>
+
+    <mediaLibrary>
+      <mediaTypes>
+        <mediaType name="PDF file">
+          <forceDownload>false</forceDownload>
+        </mediaType>
+
+        <mediaType name="SVG" extensions="svg">
+          <mimeType>image/svg+xml</mimeType>
+          <forceDownload>false</forceDownload>
+          <sharedTemplate>system/media/unversioned/file</sharedTemplate>
+          <versionedTemplate>system/media/versioned/file</versionedTemplate>
+          <mediaValidator type="Sitecore.Resources.Media.ImageValidator"/>
+          <thumbnails>
+            <generator type="Sitecore.Resources.Media.ImageThumbnailGenerator, Sitecore.Kernel">
+              <extension>png</extension>
+            </generator>
+            <width>150</width>
+            <height>150</height>
+            <backgroundColor>#FFFFFF</backgroundColor>
+          </thumbnails>
+        </mediaType>
+      </mediaTypes>
+    </mediaLibrary>
+
+    <sitecore.experienceeditor.speak.requests>
+      <request name="Optimization.SuggestedTests.Count" type="Sitecore.ContentTesting.Requests.ExperienceEditor.SuggestedTestsCountRequest, Sitecore.ContentTesting">
+        <patch:attribute name="type">Informa.Web.CustomMvc.Pipelines.SuggestedTestsCountRequest, Informa.Web</patch:attribute>
+      </request>
+    </sitecore.experienceeditor.speak.requests>
+
+    <settings>
+
+      <!--<setting name="Analytics.HostName">
+        <patch:attribute name="value">[CHANGEME]</patch:attribute>
+      </setting>-->
+
+      <!--  REQUIRE LOCK BEFORE EDITING
+            If true, the user must have a lock on a document before
+            he can edit it, otherwise it is always ready for editing
+			MG: The explicit override here was reverted to the default setting to allow workflow locks/editing to behave as needed
+      -->
+      <setting name="RequireLockBeforeEditing" value="true"/>
+
+      <!-- Velir Settings -->
+
+      <!-- Production Host -->
+      <setting  name="Env.IsProduction" value="false" />
+
+      <!-- Production Host -->
+      <setting  name="Host.Production" value="[CHANGEME]" />
+
+      <!-- Mail Settings -->
+      <setting name="Mail.MailServerFromAddress" value="no-reply@velir.com"/>
+
+      <setting name="MailServer">
+        <patch:attribute name="value">smtp.velir.com</patch:attribute>
+      </setting>
+
+      <setting name="MailServerUserName">
+        <patch:attribute name="value"></patch:attribute>
+      </setting>
+
+      <setting name="MailServerPassword">
+        <patch:attribute name="value"></patch:attribute>
+      </setting>
+
+      <setting name="MailServerPort">
+        <patch:attribute name="value">25</patch:attribute>
+      </setting>
+
+      <!-- HIDDEN SETTING!  Suggestion from sitecore to speed up the back end content editor. -->
+      <setting name="ContentEditor.RenderCollapsedSections" value="false"/>
+
+      <setting name="HtmlEditor.RemoveScripts">
+        <patch:attribute name="value">false</patch:attribute>
+      </setting>
+
+      <setting name="InvalidItemNameChars">
+        <patch:attribute name="value">\/:?&quot;&lt;&gt;|[]-</patch:attribute>
+      </setting>
+
+      <setting name="Media.RequestExtension">
+        <patch:attribute name="value"></patch:attribute>
+      </setting>
+
+      <setting name="Mvc.AllowDataSourceNesting">
+        <patch:attribute name="value">false</patch:attribute>
+      </setting>
+
+      <setting name="IgnoreUrlPrefixes">
+        <patch:attribute name="value">/bundles/|/html_templates/|/GenerateSitemap/CreateSitemap.axd|/sitecore/default.aspx|/trace.axd|/webresource.axd|/sitecore/shell/Controls/Rich Text Editor/Telerik.Web.UI.DialogHandler.aspx|/BotDetectCaptcha.ashx|/sitecore/shell/applications/content manager/telerik.web.ui.dialoghandler.aspx|/sitecore/shell/Controls/Rich Text Editor/Telerik.Web.UI.SpellCheckHandler.axd|/Telerik.Web.UI.WebResource.axd|/sitecore/admin/upgrade/|/layouts/testing|/sitecore/service/</patch:attribute>
+      </setting>
+
+      <!-- Scalability Settings -->
+      <setting name="MaxWorkerThreads" value="48" />
+
+      <!-- Glass Interface Factory Settings -->
+      <setting name="GlassInterfaceFactory.DebuggingEnabled" value="true" />
+
+      <setting name="WebEdit.ShowNumberOfLockedItemsOnButton" value="false" />
+      
+      <setting name="DCD.OldDealsURL" value="https://www.pharmamedtechbi.com/d/{0}" />
+      
+      <setting name="NLM.ExportPath" value="${NLM.ExportPath}" />
+    </settings>
+  </sitecore>
+</configuration>

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using Informa.Library.User.Entitlement;
 
-namespace Informa.Library.Salesforce.User
+namespace Informa.Library.User.Entitlement
 {
     public interface IGetIPEntitlements
     {

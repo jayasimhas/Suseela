@@ -33,7 +33,7 @@ namespace Informa.Library.Utilities.References
 		public Guid SiteConfig  => new Guid("{BE2B8891-635F-49C1-8BA9-4D2F6C7C5ACE}");
 
         public Guid SearchPage  => new Guid("{0FF66777-7EC7-40BE-ABC4-6A20C8ED1EF0}");
-        public Guid VwbSearchPage  => new Guid("{5B5DCF96-98F2-4CDC-9A5F-75F3E0CE6F52}");
+        public Guid VwbSearchPage  => new Guid("{A0163A51-2FF8-4A9C-8FBA-6516546E5AE1}");
 
 		public Guid SubscriptionPage => new Guid("{39611772-CD97-4610-BB55-F96BE4C1F540}");
 

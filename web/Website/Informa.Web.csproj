@@ -473,6 +473,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Web.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Xdb.Configuration">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Xdb.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="SolrNet, Version=0.4.0.2002, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\SolrNet.dll</HintPath>
@@ -649,6 +652,7 @@
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="App_Start\Registrations\CompanyRegistrar.cs" />
+    <Compile Include="App_Start\Registrations\NlmRegistrar.cs" />
     <Compile Include="App_Start\Registrations\RegistrationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\UserRegistrar.cs" />
     <Compile Include="App_Start\Registrations\AuthenticationRegistrar.cs" />
@@ -666,9 +670,12 @@
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
     <Compile Include="Areas\Account\Controllers\ResetPasswordApiController.cs" />
+    <Compile Include="Areas\Account\Controllers\SavedDocumentApiController.cs" />
     <Compile Include="Areas\Account\Controllers\SubscriptionPageController.cs" />
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\PreferencesRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\SavedDocumentRemoveRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\SavedDocumentSaveRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\PreRegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterValidationReason.cs" />
@@ -680,6 +687,7 @@
     <Compile Include="Areas\Account\Models\User\ResetPassword\RetryRequest.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\EmailPreferencesViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\SavedArticlesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
@@ -722,10 +730,30 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
+    <Compile Include="velir\services\TypeAhead.asmx.cs">
+      <DependentUpon>TypeAhead.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Util\DCD\DcdImportReport.aspx.cs">
+      <DependentUpon>DcdImportReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Util\DCD\DcdImportReport.aspx.designer.cs">
+      <DependentUpon>DcdImportReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\DCD\ViewDCDXML.aspx.cs">
+      <DependentUpon>ViewDCDXML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Util\DCD\ViewDCDXML.aspx.designer.cs">
+      <DependentUpon>ViewDCDXML.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\AdvertisementViewModel.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
+    <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\EntitledViewModel.cs" />
     <Compile Include="ViewModels\IArticleComponentFactory.cs" />
+    <Compile Include="ViewModels\ICompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\ISearchModel.cs" />
     <Compile Include="ViewModels\NewsletterSignUpModel.cs" />
     <Compile Include="ViewModels\RobotsTextViewModel.cs" />
@@ -801,12 +829,11 @@
     <Compile Include="VWB\Report\Columns\CreatedDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleLengthEstimateColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleNumberColumn.cs" />
-    <Compile Include="VWB\Report\Columns\ArticleSizeColumn.cs" />
+    <Compile Include="VWB\Report\Columns\WordCountColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleTypeColumn.cs" />
     <Compile Include="VWB\Report\Columns\AuthorsColumn.cs" />
     <Compile Include="VWB\Report\Columns\ColumnFactory.cs" />
     <Compile Include="VWB\Report\Columns\EmailPriorityColumn.cs" />
-    <Compile Include="VWB\Report\Columns\IssuePublishDateColumn.cs" />
     <Compile Include="VWB\Report\Columns\IVwbColumn.cs" />
     <Compile Include="VWB\Report\Columns\LockStatusColumn.cs" />
     <Compile Include="VWB\Report\Columns\MediaTypeColumn.cs" />
@@ -820,12 +847,18 @@
     <Compile Include="VWB\Report\Columns\ActualPublishDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\WorkflowStateColumn.cs" />
     <Compile Include="VWB\Report\IVwbArticleItemCollection.cs" />
-    <Compile Include="VWB\Report\MacroVwbArticleItemCollection.cs" />
     <Compile Include="VWB\Report\ReportBuilder.cs" />
     <Compile Include="VWB\Report\VwbArticleItemCollection.cs" />
     <Compile Include="VWB\services\VirtualWhiteBoard.asmx.cs">
       <DependentUpon>VirtualWhiteBoard.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VWB\Util\LoginRedirectToPreview.aspx.cs">
+      <DependentUpon>LoginRedirectToPreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VWB\Util\LoginRedirectToPreview.aspx.designer.cs">
+      <DependentUpon>LoginRedirectToPreview.aspx</DependentUpon>
     </Compile>
     <Compile Include="VWB\Util\VWBUtil.cs" />
     <Compile Include="VWB\VwbQuery.cs" />
@@ -846,6 +879,7 @@
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="js\form-controller.js" />
+    <Content Include="js\newsletter-signup.js" />
     <Content Include="js\openadstream.js" />
     <Content Include="js\register-controller.js" />
     <Content Include="js\reset-password-controller.js" />
@@ -947,6 +981,9 @@
     <Content Include="tasks\js.js" />
     <Content Include="tasks\svg-sprite.js" />
     <Content Include="tasks\utils.js" />
+    <Content Include="velir\services\TypeAhead.asmx" />
+    <Content Include="Util\DCD\DcdImportReport.aspx" />
+    <Content Include="Util\DCD\ViewDCDXML.aspx" />
     <Content Include="VWB\default.aspx" />
     <Content Include="VWB\login.aspx" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
@@ -970,6 +1007,7 @@
     <Content Include="VWB\Scripts\jquery.js" />
     <Content Include="VWB\services\VirtualWhiteBoard.asmx" />
     <Content Include="VWB\Styles\vwb.css" />
+    <Content Include="VWB\Util\LoginRedirectToPreview.aspx" />
     <Content Include="webedit.css" />
     <Content Include="App_Browsers\Form.browser" />
     <Content Include="App_Browsers\XamlPage.browser" />
@@ -1074,6 +1112,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
+    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template" />
     <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
@@ -1155,6 +1194,7 @@
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
     <Content Include="Views\Shared\Global\Sitemap.cshtml" />
     <Content Include="Views\Shared\Components\Advertisement.cshtml" />
+    <Content Include="Views\Shared\Company\_RegisterMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

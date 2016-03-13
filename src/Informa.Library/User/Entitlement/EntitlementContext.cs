@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Linq;
+using System.Linq;                         
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Mvc.Extensions;
 
@@ -9,44 +9,23 @@ namespace Informa.Library.User.Entitlement
     public class EntitlementContext : IEntitlementContext
     {
         private readonly ISitecoreUserContext SitecoreUserContext;
-        private readonly IAuthenticatedIPContext AuthenticatedIPContext;  
+        //private readonly IAuthenticatedIPContext AuthenticatedIPContext;
+        //private readonly ICompanyContext CompanyContext;
         public EntitlementContext(
-            ISitecoreUserContext sitecoreUserContext,
-            IAuthenticatedIPContext authenticatedIpContext)
+            ISitecoreUserContext sitecoreUserContext)
+            //IAuthenticatedIPContext authenticatedIpContext,
+            //ICompanyContext companyContext)
         {
             SitecoreUserContext = sitecoreUserContext;
-            AuthenticatedIPContext = authenticatedIpContext;
+            //AuthenticatedIPContext = authenticatedIpContext;
+            //CompanyContext = companyContext;
         }
 
         #region Implementation of IEntitlementContext
 
-        public IList<IEntitlement> Entitlements
-        {
-            get
-            {
-                //var spoofed = Sitecore.Context.User.Profile.GetCustomProperty("spoof" + nameof(Entitlement));
-                //if (!string.IsNullOrEmpty(spoofed))
-                //    return
-                //        new List<IEntitlement>(SitecoreUserContext.User.Profile.GetCustomProperty("spoof" + nameof(Entitlement))
-                //            .Split(',')
-                //            .Select(x => new Entitlement {ProductCode = x}));
-
-
-                var entitlements =
-                    new List<IEntitlement>(SitecoreUserContext.User.Profile.GetCustomProperty(nameof(Entitlement))
-                        .Split(',')
-                        .Select(x => new Entitlement {ProductCode = x}));
-
-                if(entitlements.Any())
-                    return entitlements;
-
-                return AuthenticatedIPContext.Entitlements.ToList();
-            }
-        }           
-
         public bool IsEntitled(IEntitlement entitlement)
         {
-            return SitecoreUserContext.User.IsAdministrator || Entitlements.Any(x => x.ProductCode == entitlement.ProductCode);
+            return SitecoreUserContext.User.IsAdministrator || SitecoreUserContext.Entitlements.Any(x => x.ProductCode == entitlement.ProductCode);
         }
 
         #endregion

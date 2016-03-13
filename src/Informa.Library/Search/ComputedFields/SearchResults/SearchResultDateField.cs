@@ -21,7 +21,12 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
             //If the Actual Publish Date is not set then use the created date.
             if (article.Actual_Publish_Date == DateTime.MinValue)
             {
-                return indexItem.Statistics.Created;
+                if (article.Created_Date == DateTime.MinValue)
+                {
+                    return indexItem.Statistics.Created;
+                }
+
+                return article.Created_Date;
             }
 
             return article.Actual_Publish_Date;

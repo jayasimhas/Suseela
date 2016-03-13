@@ -16,9 +16,9 @@ namespace Informa.Library.Salesforce.User.Profile
 			Service = service;
 		}
 
-		public bool Update(IUser user, IEnumerable<INewsletterUserOptIn> newsletterOptIns)
+		public bool Update(IEnumerable<INewsletterUserOptIn> newsletterOptIns, string userName)
 		{
-			if (string.IsNullOrEmpty(user?.Username))
+			if (string.IsNullOrEmpty(userName))
 			{
 				return false;
 			}
@@ -30,9 +30,22 @@ namespace Informa.Library.Salesforce.User.Profile
 				IsReceivingEmailNewsletterSpecified = true
 			}).ToArray();
 
-			var response = Service.Execute(s => s.updateEmailNewsletterOptIns(user.Username, optIns));
-
+			var response = Service.Execute(s => s.updateEmailNewsletterOptIns(userName,optIns));
 			return response.IsSuccess();
+		}
+
+		public bool IsUserSignedUp(string userName)
+		{
+			var response = Service.Execute(s => s.queryEmailNewsletterOptins(userName));
+			if (response.emailNewsletterOptins != null)
+			{
+				var optionSignup = response.emailNewsletterOptins.Where(x => x.optinName.Equals("Scrip")).Count();
+				if (optionSignup > 0)
+				{
+					return true;
+				}
+			}
+			return false;
 		}
 	}
 }

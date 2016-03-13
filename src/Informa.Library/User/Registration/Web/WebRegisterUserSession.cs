@@ -1,28 +1,30 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
-using System.Web;
+﻿using Informa.Library.Session;
+using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Registration.Web
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class WebRegisterUserSession : IWebRegisterUserSession, IWebSetRegisterUserSession
 	{
-		public WebRegisterUserSession(
-			)
-		{
+		private const string NewUserSessionKey = "WebRegisterUserSession";
 
+		protected readonly ISessionStore SessionStore;
+
+		public WebRegisterUserSession(
+			ISessionStore sessionStore)
+		{
+			SessionStore = sessionStore;
 		}
 
 		public INewUser NewUser
 		{
 			get
 			{
-				var sessionObject = HttpContext.Current.Session["WebRegisterUserSession"];
-
-				return sessionObject is INewUser ? (INewUser)sessionObject : null;
+				return SessionStore.Get<INewUser>(NewUserSessionKey);
 			}
 			set
 			{
-				HttpContext.Current.Session["WebRegisterUserSession"] = value;
+				SessionStore.Set(NewUserSessionKey, value);
 			}
 		}
 	}

@@ -28,12 +28,14 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
                 Href = item.Article_Number
             };
 
+            // Sidebar Articles
             var sidebarArticles = source.Related_Articles?.Where(article => article.Is_Sidebar_Article) ?? Enumerable.Empty<IArticle>();
             foreach (var article in sidebarArticles)
             {
                 yield return toModel(article, "sidebar");
             }
 
+            // Companion Articles
             var companionArticles = source.Related_Articles?.Concat(source.Referenced_Articles ?? Enumerable.Empty<IArticle>())
                 .Where(article => !article.Is_Sidebar_Article)
                     ?? Enumerable.Empty<IArticle>();
@@ -42,7 +44,25 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
                 yield return toModel(article, "companion");
             }
 
-            //var dealArticles = source
+            // Reference Deal
+            if (!string.IsNullOrWhiteSpace(source.Referenced_Deals))
+            {
+                yield return new NlmRelatedArticleModel
+                {
+                    ArticleType = "deal",
+                    Href = source.Referenced_Deals
+                };
+            }
+
+            // Reference Companies
+            if (!string.IsNullOrWhiteSpace(source.Referenced_Companies))
+            {
+                yield return new NlmRelatedArticleModel
+                {
+                    ArticleType = "company",
+                    Href = source.Referenced_Companies
+                };
+            }
         } 
     }
 }

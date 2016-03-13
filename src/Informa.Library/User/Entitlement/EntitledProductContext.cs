@@ -1,3 +1,4 @@
+using System.Linq;
 using Informa.Library.Subscription;
 using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -40,7 +41,7 @@ namespace Informa.Library.User.Entitlement
 
 
 
-            if (AuthenticatedIPContext.IsEntitled(entitlement))
+            if (AuthenticatedIPContext.Entitlements.Any(p => p.ProductCode == entitlement.ProductCode))
                 return EntitledAccessLevel.TransparentIP;
 
             //TODO: Free Trial?

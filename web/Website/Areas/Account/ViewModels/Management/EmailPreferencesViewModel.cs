@@ -19,7 +19,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
     public class EmailPreferencesViewModel : GlassViewModel<I___BasePage>
     {
         public readonly ITextTranslator TextTranslator;
-        public readonly ISitecoreContext SitecoreContext;
         public readonly IQueryNewsletterUserOptIn NewsletterOptIn;
         public readonly IQueryOfferUserOptIn OffersOptIn;
         public readonly IAuthenticatedUserContext UserContext;
@@ -27,14 +26,12 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         
         public EmailPreferencesViewModel(
             ITextTranslator translator,
-            ISitecoreContext sitecoreContext,
             IQueryNewsletterUserOptIn newsletterOptIn,
             IQueryOfferUserOptIn offersOptIn,
-            IAuthenticatedUserContext userContext,
-            ISignInViewModel signInViewModel)
+            ISignInViewModel signInViewModel,
+            IAuthenticatedUserContext userContext)
         {
             TextTranslator = translator;
-            SitecoreContext = sitecoreContext;
             NewsletterOptIn = newsletterOptIn;
             OffersOptIn = offersOptIn;
             UserContext = userContext;
