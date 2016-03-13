@@ -10,11 +10,20 @@
         }
 </script>
 
-<button class="facets__mobile-button">
-  <h6>Show Filters</h6>
+<button 
+  class="facets__mobile-button" 
+  ng-model="collapsefilters"
+  ng-click="collapsefilters = !collapsefilters"
+  ng-class="{'isExpanded': collapsefilters}">
+  <h6 class="show-filters">Show Filters</h6>
+  <h6 class="hide-filters">Hide Filters</h6>
 </button>
 
-<div id="search-facet-01" class="search__facets search__left-sidebar" ng-controller="InformaFacetController as allFacets">
+<div 
+  id="search-facet-01" 
+  class="search__facets search__left-sidebar" 
+  ng-class="{'isExpanded': collapsefilters}"
+  ng-controller="InformaFacetController as allFacets">
 
   <div class="facets__header">
     <h3>Filter By</h3>
@@ -332,3 +341,11 @@
   </div> <!-- / facets__content -->
 
 </div><!-- / search__facets -->
+
+<button 
+  class="facets__mobile-button facets__mobile-button--bottom" 
+  ng-model="collapsefilters"
+  ng-click="collapsefilters = !collapsefilters"
+  ng-class="{'isExpanded': collapsefilters}">
+  <h6 class="hide-filters">Hide Filters</h6>
+</button>

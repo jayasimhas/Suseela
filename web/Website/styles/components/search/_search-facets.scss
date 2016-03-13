@@ -6,6 +6,13 @@
   @include breakpoint('medium') {
     display: none;
   }
+
+  &.isExpanded {
+    @include breakpoint('medium') {
+      display: block;
+      margin-right: 0;
+    }
+  }
 }
 
 .facets {
@@ -21,8 +28,32 @@
       background-color: $informa-light-orange;
       text-align: center;
 
-      h6 {
+      &--bottom {
+        display: none;
+
+        &.isExpanded {
+          display: block;
+        }
+      }
+
+      h6.show-filters {
+        display: block;
         padding: 10px;
+      }
+
+      h6.hide-filters {
+        display: none;
+      }
+
+      &.isExpanded {
+        h6.show-filters {
+          display: none;
+        }
+
+        h6.hide-filters {
+          display: block;
+          padding: 10px;
+        }
       }
     }
   }
@@ -270,10 +301,6 @@
         display: inline-block;
       }
     }
-
-    // &.collapsedSubfacet {
-    //   display: none;
-    // }
 
   }
 
