@@ -1,7 +1,8 @@
-﻿namespace Informa.Library.User.ResetPassword.Web
+﻿using Informa.Library.Actions;
+
+namespace Informa.Library.User.ResetPassword.Web
 {
-	public interface IWebGenerateUserResetPasswordAction
+	public interface IWebGenerateUserResetPasswordAction : IAction<IUserResetPassword>
 	{
-		void Process(IUserResetPassword userResetPassword);
 	}
 }

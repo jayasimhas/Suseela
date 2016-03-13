@@ -1,4 +1,5 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
+﻿using System.Linq;
+using Jabberwocky.Glass.Autofac.Attributes;
 using System.Net;
 using System.Web;
 
@@ -9,17 +10,23 @@ namespace Informa.Library.User
 	{
 		public IPAddress IpAddress
 		{
-			get
-			{
-				IPAddress ipAddress;
+		    get
+		    {
+		        IPAddress ipAddress = null;
 
-				if (IPAddress.TryParse(HttpContext.Current.Request.UserHostAddress, out ipAddress))
-				{
-					return ipAddress;
-				}
+		        string ip =
+		            HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
 
-				return null;
-			}
-		}
+		        if (string.IsNullOrEmpty(ip))
+		            ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+
+		        if (string.IsNullOrEmpty(ip))
+		            ip = HttpContext.Current.Request.UserHostAddress;
+
+		        ip?.Split(',').Any(x => IPAddress.TryParse(x, out ipAddress));
+
+                return ipAddress;                                     
+		    }                                                         
+		}                   
 	}
 }

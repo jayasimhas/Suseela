@@ -10,6 +10,10 @@
     &__introduction {
         font-size: 1.125rem;
         margin-bottom: 2rem;
+
+        h4 {
+            margin-bottom: 1rem;
+        }
     }
 
     hr {
@@ -45,5 +49,11 @@
                 margin-right: 0;
             }
         }
+    }
+
+    // TODO - Refactor this with similar _registration class
+    &__error {
+        @extend .error-text;
+        display: none;
     }
 }

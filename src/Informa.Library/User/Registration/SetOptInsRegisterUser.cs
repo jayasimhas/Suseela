@@ -28,7 +28,7 @@ namespace Informa.Library.User.Registration
 		public bool Set(INewUser newUser, bool offers, bool newsletters)
 		{
 			var userNewsletterOptIns = NewsletterTypesContext.NewsletterTypes.Select(nt => NewsletterUserOptInFactory.Create(nt, newsletters));
-			var newsletterSucccess = UpdateNewsletterUserOptIn.Update(newUser, userNewsletterOptIns);
+			var newsletterSucccess = UpdateNewsletterUserOptIn.Update(userNewsletterOptIns, newUser.Username);
 			var offerSuccess = UpdateOfferUserOptIn.Update(newUser, offers);
 
 			return offerSuccess && newsletterSucccess;

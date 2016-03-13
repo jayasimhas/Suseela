@@ -1,10 +1,8 @@
 ﻿using MongoDB.Driver;
 using Informa.Library.Threading;
-using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.ResetPassword.MongoDB
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
 	public class MongoDbUserResetPasswordContext : ThreadSafe<MongoDatabase>, IMongoDbUserResetPasswordContext
 	{
 		protected readonly IMongoDbUserResetPasswordConfiguration Configuration;

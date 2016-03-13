@@ -7,6 +7,7 @@ namespace Informa.Library.Salesforce.Company
 	{
 		public string Id { get; set; }
 		public string Name { get; set; }
+		public CompanyType Type { get; set; }
 		public IPAddress LowerIpAddress { get; set; }
 		public IPAddress UpperIpAddress { get; set; }
 	}

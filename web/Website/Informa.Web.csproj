@@ -473,6 +473,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Web.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Xdb.Configuration">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Xdb.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="SolrNet, Version=0.4.0.2002, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\SolrNet.dll</HintPath>
@@ -649,6 +652,7 @@
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="App_Start\Registrations\CompanyRegistrar.cs" />
+    <Compile Include="App_Start\Registrations\NlmRegistrar.cs" />
     <Compile Include="App_Start\Registrations\RegistrationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\UserRegistrar.cs" />
     <Compile Include="App_Start\Registrations\AuthenticationRegistrar.cs" />
@@ -661,6 +665,7 @@
     <Compile Include="App_Start\TelemetryConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
+    <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
@@ -669,6 +674,9 @@
     <Compile Include="Areas\Account\Controllers\SavedDocumentApiController.cs" />
     <Compile Include="Areas\Account\Controllers\SubscriptionPageController.cs" />
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\ContactInformationUpdateRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\ManagementValidationReasons.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\PasswordUpdateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\PreferencesRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentRemoveRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentSaveRequest.cs" />
@@ -684,6 +692,8 @@
     <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\EmailPreferencesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedArticlesViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\SubscriptionsViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\ContactInformationViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
@@ -730,7 +740,7 @@
       <DependentUpon>TypeAhead.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-	<Compile Include="Util\DCD\DcdImportReport.aspx.cs">
+    <Compile Include="Util\DCD\DcdImportReport.aspx.cs">
       <DependentUpon>DcdImportReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -875,6 +885,7 @@
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="js\form-controller.js" />
+    <Content Include="js\newsletter-signup.js" />
     <Content Include="js\openadstream.js" />
     <Content Include="js\register-controller.js" />
     <Content Include="js\reset-password-controller.js" />
@@ -977,7 +988,7 @@
     <Content Include="tasks\svg-sprite.js" />
     <Content Include="tasks\utils.js" />
     <Content Include="velir\services\TypeAhead.asmx" />
-	<Content Include="Util\DCD\DcdImportReport.aspx" />
+    <Content Include="Util\DCD\DcdImportReport.aspx" />
     <Content Include="Util\DCD\ViewDCDXML.aspx" />
     <Content Include="VWB\default.aspx" />
     <Content Include="VWB\login.aspx" />
@@ -1107,6 +1118,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
+    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template" />
     <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
