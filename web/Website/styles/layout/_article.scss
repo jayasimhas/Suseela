@@ -29,8 +29,7 @@
     margin-bottom: 1rem;
 }
 
-.media-exhibit,
-.article-inline-image {
+.article-exhibit {
     @include textMix('Roboto', 13px, 400);
     color: $informa-mid-gray;
     margin-bottom: 2rem;

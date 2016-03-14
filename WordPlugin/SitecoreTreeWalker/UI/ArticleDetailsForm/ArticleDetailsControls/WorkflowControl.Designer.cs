@@ -43,6 +43,7 @@
 			this.lblUnlockOnSave = new System.Windows.Forms.Label();
 			this.lblNotificationText = new System.Windows.Forms.Label();
 			this.uxWorkflowPanel = new System.Windows.Forms.Panel();
+			this.subjectLbl = new System.Windows.Forms.Label();
 			this.lblWorkflow = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.uxWorkflowPanel.SuspendLayout();
@@ -76,7 +77,7 @@
 			this.uxUnlockOnSave.Checked = true;
 			this.uxUnlockOnSave.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.uxUnlockOnSave.Font = new System.Drawing.Font("Segoe UI", 8F);
-			this.uxUnlockOnSave.Location = new System.Drawing.Point(116, 389);
+			this.uxUnlockOnSave.Location = new System.Drawing.Point(116, 361);
 			this.uxUnlockOnSave.Name = "uxUnlockOnSave";
 			this.uxUnlockOnSave.Size = new System.Drawing.Size(15, 14);
 			this.uxUnlockOnSave.TabIndex = 3;
@@ -86,7 +87,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(12, 86);
+			this.label1.Location = new System.Drawing.Point(12, 77);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(82, 15);
 			this.label1.TabIndex = 4;
@@ -97,7 +98,7 @@
 			this.uxNotifyPicker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.uxNotifyPicker.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.uxNotifyPicker.FormattingEnabled = true;
-			this.uxNotifyPicker.Location = new System.Drawing.Point(15, 116);
+			this.uxNotifyPicker.Location = new System.Drawing.Point(14, 104);
 			this.uxNotifyPicker.Name = "uxNotifyPicker";
 			this.uxNotifyPicker.Size = new System.Drawing.Size(200, 21);
 			this.uxNotifyPicker.TabIndex = 5;
@@ -105,7 +106,7 @@
 			// uxNotifyAdd
 			// 
 			this.uxNotifyAdd.Font = new System.Drawing.Font("Segoe UI", 8F);
-			this.uxNotifyAdd.Location = new System.Drawing.Point(232, 116);
+			this.uxNotifyAdd.Location = new System.Drawing.Point(220, 104);
 			this.uxNotifyAdd.Name = "uxNotifyAdd";
 			this.uxNotifyAdd.Size = new System.Drawing.Size(69, 23);
 			this.uxNotifyAdd.TabIndex = 7;
@@ -117,7 +118,7 @@
 			// 
 			this.uxNotifyList.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.uxNotifyList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-			this.uxNotifyList.Location = new System.Drawing.Point(15, 145);
+			this.uxNotifyList.Location = new System.Drawing.Point(14, 131);
 			this.uxNotifyList.Name = "uxNotifyList";
 			this.uxNotifyList.Size = new System.Drawing.Size(287, 90);
 			this.uxNotifyList.TabIndex = 8;
@@ -147,7 +148,7 @@
 			// 
 			// txtNotificationText
 			// 
-			this.txtNotificationText.Location = new System.Drawing.Point(14, 275);
+			this.txtNotificationText.Location = new System.Drawing.Point(14, 260);
 			this.txtNotificationText.Multiline = true;
 			this.txtNotificationText.Name = "txtNotificationText";
 			this.txtNotificationText.Size = new System.Drawing.Size(287, 97);
@@ -157,7 +158,7 @@
 			// 
 			this.lblUnlockOnSave.AutoSize = true;
 			this.lblUnlockOnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblUnlockOnSave.Location = new System.Drawing.Point(11, 387);
+			this.lblUnlockOnSave.Location = new System.Drawing.Point(11, 360);
 			this.lblUnlockOnSave.Name = "lblUnlockOnSave";
 			this.lblUnlockOnSave.Size = new System.Drawing.Size(99, 15);
 			this.lblUnlockOnSave.TabIndex = 14;
@@ -167,7 +168,7 @@
 			// 
 			this.lblNotificationText.AutoSize = true;
 			this.lblNotificationText.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNotificationText.Location = new System.Drawing.Point(12, 248);
+			this.lblNotificationText.Location = new System.Drawing.Point(12, 242);
 			this.lblNotificationText.Name = "lblNotificationText";
 			this.lblNotificationText.Size = new System.Drawing.Size(257, 15);
 			this.lblNotificationText.TabIndex = 12;
@@ -175,6 +176,7 @@
 			// 
 			// uxWorkflowPanel
 			// 
+			this.uxWorkflowPanel.Controls.Add(this.subjectLbl);
 			this.uxWorkflowPanel.Controls.Add(this.uxUnlockOnSave);
 			this.uxWorkflowPanel.Controls.Add(this.lblUnlockOnSave);
 			this.uxWorkflowPanel.Controls.Add(this.uxWorkflowLabel);
@@ -191,6 +193,16 @@
 			this.uxWorkflowPanel.Name = "uxWorkflowPanel";
 			this.uxWorkflowPanel.Size = new System.Drawing.Size(646, 461);
 			this.uxWorkflowPanel.TabIndex = 2;
+			// 
+			// subjectLbl
+			// 
+			this.subjectLbl.AutoSize = true;
+			this.subjectLbl.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.subjectLbl.Location = new System.Drawing.Point(12, 224);
+			this.subjectLbl.Name = "subjectLbl";
+			this.subjectLbl.Size = new System.Drawing.Size(55, 15);
+			this.subjectLbl.TabIndex = 15;
+			this.subjectLbl.Text = "Subject :";
 			// 
 			// lblWorkflow
 			// 
@@ -247,5 +259,6 @@
 		private System.Windows.Forms.Panel uxWorkflowPanel;
 		private System.Windows.Forms.Label lblWorkflow;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label subjectLbl;
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace Informa.Library.Publishing.Scheduled.Entity
 {
-	public class EntityScheduledPublishFactory
+	public class EntityScheduledPublishFactory : IEntityScheduledPublishFactory
 	{
 		public ScheduledPublish Create(IScheduledPublish scheduledPublish)
 		{
@@ -10,6 +10,7 @@ namespace Informa.Library.Publishing.Scheduled.Entity
 
 			return new ScheduledPublish
 			{
+				Id = Guid.NewGuid(),
 				Added = now,
 				ItemId = scheduledPublish.ItemId,
 				Language = scheduledPublish.Language ?? string.Empty,

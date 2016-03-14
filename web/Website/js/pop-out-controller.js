@@ -83,6 +83,7 @@ function popOutController(triggerElm) {
 		};
 		// Get trigger height, width, offsetTop, offsetWidth
 		trgr.offset = trgr.e.offset();
+
 		trgr.hasStyles = state.customized[trgr.e.data('pop-out-id')];
 
 		// Determine which pop-out template to use
@@ -112,6 +113,7 @@ function popOutController(triggerElm) {
 		popOut.addClass('is-active');
 
 		// Check if browser is less than or equal to `small` CSS breakpoint
+
 		var isNarrow = $(window).width() <= 480;
 		var isTablet = $(window).width() <= 800;
 
@@ -236,7 +238,7 @@ function popOutController(triggerElm) {
 		// Apply that giant blob of CSS
 		popOut.css({
 			zIndex: res.css.box.zIndex,
-			transform: res.css.box.transform,
+			transform: res.css.box.transform
 		}).find('.pop-out__tab').css({ // find this pop-out's child tab
 			height: res.css.tab.height,
 			width: res.css.tab.width,
@@ -245,6 +247,8 @@ function popOutController(triggerElm) {
 			top: res.css.tab.top,
 			zIndex: res.css.tab.zIndex
 		});
+		// Ugly hack for Safari 8, booo
+		popOut.css('-webkit-transform', res.css.box.transform);
 
 	};
 

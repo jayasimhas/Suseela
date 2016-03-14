@@ -1,6 +1,9 @@
-﻿using Glass.Mapper.Sc;
+﻿using System.Collections.Generic;
+using Glass.Mapper.Sc;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
+using Informa.Library.User.Authentication;
+using Informa.Library.User.Profile;
 using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Factory;
 using Velir.Search.Core.Managers;
@@ -19,9 +22,11 @@ namespace Informa.Web.Controllers.Search
         private ISitecoreContext _context;
         private readonly ISearchPageParser _parser;
         private readonly ISearchManager<InformaSearchResultItem> _searchManager;
+        private readonly IAuthenticatedUserContext _authenticatedUserContext;
+        private readonly IManageSavedDocuments _manageSavedDocuments;
 
         public InformaSearchController(ISearchManager<InformaSearchResultItem> searchManager, ISearchPageParser parser,
-            IGlassInterfaceFactory interfaceFactory, ISitecoreContext context, ICacheProvider cache)
+            IGlassInterfaceFactory interfaceFactory, ISitecoreContext context, ICacheProvider cache, IAuthenticatedUserContext authenticatedUserContext, IManageSavedDocuments manageSavedDocuments)
             : base(searchManager, parser)
         {
             _searchManager = searchManager;
@@ -29,6 +34,8 @@ namespace Informa.Web.Controllers.Search
             _context = context;
             _cache = cache;
             _interfaceFactory = interfaceFactory;
+            _authenticatedUserContext = authenticatedUserContext;
+            _manageSavedDocuments = manageSavedDocuments;
         }
 
         public override IQueryResults Get(ApiSearchRequest request)
@@ -46,7 +53,26 @@ namespace Informa.Web.Controllers.Search
             var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
             q.PredicateBuilder = predicateBuilder;
 
-            return _searchManager.GetItems(q);
+            var results = _searchManager.GetItems(q);
+
+            //Loop through the results and add the authenticaton and bookmarking property values to be used
+            //on the front end.
+            if (_authenticatedUserContext.IsAuthenticated)
+            {
+                var currentUser = _authenticatedUserContext.User;
+
+                List<InformaSearchResultItem> resultsWithBookmarks = new List<InformaSearchResultItem>();
+                foreach (InformaSearchResultItem queryResult in results.Results)
+                {
+                    queryResult.IsUserAuthenticated = true;
+                    queryResult.IsArticleBookmarked = _manageSavedDocuments.IsBookmarked(currentUser, queryResult.ItemId.ToGuid());
+                    resultsWithBookmarks.Add(queryResult);
+                }
+
+                results.Results = resultsWithBookmarks;
+            }
+
+            return results;
         }
     }
 }

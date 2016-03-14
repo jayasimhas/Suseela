@@ -41,7 +41,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 
 			if (articleItemWrapper.Embargoed && articleItemWrapper.EmbargoDate > DateTime.Now)
 			{
-				var flagImg = new Image() { ImageUrl = "https://" + _siteRoot + "/VWB/images/vwb/flag_red_h.png" };
+				var flagImg = new Image() { ImageUrl = "/VWB/images/vwb/flag_red_h.png" };
 				flagImg.Attributes.Add("align", "absmiddle");
 				flagImg.Attributes.Add("width", "16");
 				flagImg.Attributes.Add("height", "16");

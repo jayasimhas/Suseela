@@ -1,10 +1,8 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore.Configuration;
+﻿using Sitecore.Configuration;
 using System.Configuration;
 
 namespace Informa.Library.Publishing.Scheduled.MongoDB
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
 	public class MongoDbScheduledPublishConfiguration : IMongoDbScheduledPublishConfiguration
 	{
 		private const string CollectionNameConfigKey = "MongoDbScheduledPublishConfiguration.CollectionName";

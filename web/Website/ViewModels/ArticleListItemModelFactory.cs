@@ -7,6 +7,7 @@ using Informa.Library.Site;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.Article.Search;
 using Informa.Library.Utilities.Extensions;
+using Informa.Library.Utilities.TokenMatcher;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
@@ -42,7 +43,7 @@ namespace Informa.Web.ViewModels
 				ListableAuthors = article.Authors?.Select(x => new LinkableModel { LinkableText = x.First_Name + " " + x.Last_Name }),
 				ListableDate = article.Actual_Publish_Date,
 				ListableImage = image,
-				ListableSummary = article.Summary,
+				ListableSummary = DCDTokenMatchers.ProcessDCDTokens(article.Summary),
 				ListableTitle = article.Title,
 				ListableByline = publication,
 				ListableTopics = article.Taxonomies?.Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = $"/Search?tag={x._Id}" }),

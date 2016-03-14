@@ -2,6 +2,6 @@
 {
 	public interface IUpdateOfferUserOptIn
 	{
-		bool Update(IUser user, bool optIn);
+		bool Update(string  userName, bool optIn);
 	}
 }
