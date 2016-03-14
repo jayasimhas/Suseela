@@ -67,7 +67,8 @@ Multiple banner styles.
 		color: #58595b;
 	}
 
-	&--maintenance {
+	&--maintenance,
+	&--register {
 
 		@include breakpoint('medium') {
 			display: none;
@@ -95,6 +96,18 @@ Multiple banner styles.
 		}
 	}
 
+	&--register {
+		background-color: $color-yellow-orange;
+
+		& .button--outline:enabled {
+			background: transparent;
+			border: 1px solid $color-white;
+
+			@include on-event() {
+				border: 1px solid $color-tree-poppy-orange;
+			}
+		}
+	}
 	&--cookie-policy {
 		margin-bottom: 0;
 	}
