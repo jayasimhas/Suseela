@@ -162,7 +162,7 @@
               <label for="date-picker-from" ng-click="open($event,'dtFrom')">From</label>
               <input type="text" 
                name="dtFrom" 
-               ng-model="dtFrom"  
+               ng-model="dateValues.dtFromValue"  
                id="date-picker-from" 
                datepicker-popup="shortDate" 
                is-open="datepickers.dtFrom" 
@@ -186,16 +186,18 @@
               <label for="date-picker-to" ng-click="open($event,'dtTo')">To</label>
               <input type="text" 
                name="dtTo"
-               ng-model="dtTo" 
-               id="date-picker-from" 
+                     ng-model="dateValues.dtToValue"
+
+                     id="date-picker-from" 
                datepicker-popup="shortDate" 
                is-open="datepickers.dtTo" 
                datepicker-options="dateOptions" 
                popup-placement="auto right-top" 
                date-disabled="disabled(date, mode)" 
                ng-required="false" 
-               close-text="Close" 
-               show-button-bar="true"
+               close-text="Close"
+                     show-button-bar="true"
+                     ng-change="allFacets.customDateRangeSearch('date',dateValues.dtToValue,dateValues.dtFromValue)"
                readonly
                ng-click="open($event,'dtTo')"
                />

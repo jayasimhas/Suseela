@@ -39,16 +39,21 @@
     informaSearchApp.controller("InformaDatesController",
       ["$scope", function($scope){
 
+          $scope.dateValues = {
+              dtFromValue: '',
+              dtToValue: ''
+          };
+
       // need to differentiate the 2 datepickers
-      $scope.datepickers = {
-        dtFrom: false,
-        dtTo: false
+          $scope.datepickers = {
+              dtFrom: false,
+              dtTo: false
       }
  
       // grab today and inject into field
       $scope.today = function() {
-        $scope.dtFrom = new Date();
-        $scope.dtTo = new Date();
+          $scope.dateValues.dtFromValue = "mm/dd/yyyy";
+          $scope.dateValues.dtToValue = "mm/dd/yyyy";
       };
       
       // run today() function
@@ -77,8 +82,12 @@
         $scope.datepickers[which] = true;
       };
 
-      
-    }]);
+      $scope.$watch('dateValues.dtToValue', function (val) {
+
+       //   alert("VALUE: " + val);
+      });
+
+      }]);
 
 
     // TODO: This should be split off into a new file inside the controllers directory

@@ -132,8 +132,14 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         return filterDateLabel._value;
     }
 
+    _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
+        alert(new Date(endDate).getDay());
+
+    }
+
     //** This builds date parameters for the search query **//
     _this.dateRangeSearch = function (filterKey, dateFilter) {
+       
         var filter = _this.getFilter(filterKey);
         var filterDateLabel = _this.getFilter('dateFilterLabel');
         console.log("date range: ", dateFilter);
