@@ -54,7 +54,7 @@ namespace Elsevier.Web.VWB
 		{
 			if (!Sitecore.Context.User.IsAuthenticated)
 			{
-				Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?redirect=" + Request.RawUrl);
+                Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?returnUrl=" + Request.RawUrl);
 			}
 			if (IsPostBack)
 			{
@@ -63,7 +63,7 @@ namespace Elsevier.Web.VWB
 				return;
 			}
 
-		    if (Request.QueryString.Count == 0)
+		    if (Request.QueryString.Count == 0 || (Request.QueryString.Count == 1 && Request.QueryString["sc_lang"] != null))
 		    {
                 RunQuery(true);
             }

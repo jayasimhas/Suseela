@@ -37,15 +37,16 @@ namespace Elsevier.Web.VWB.Report.Columns
 			{
 				url += "?sc_mode=preview";
 				var hlink = new HyperLink();
-                if (HttpContext.Current.Request.IsSecureConnection)
-                {
-                    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(url).Replace("http","https");
-                }
-                else
-                {
-                    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(url);
-                }				
-				hlink.Attributes.Add("href", url);
+                //if (HttpContext.Current.Request.IsSecureConnection)
+                //{
+                //    //url = "../Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(url).Replace("http", "https");
+                //    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + url.Replace("http", "https");
+                //}
+                //else
+                //{
+                //    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + url;
+                //}
+                hlink.Attributes.Add("href", url);
 				hlink.Attributes.Add("target", "_blank");
 				hlink.Text = articleItemWrapper.ArticleNumber;
 
@@ -85,16 +86,15 @@ namespace Elsevier.Web.VWB.Report.Columns
 		        return string.Empty;
 		    }
 
-            var wordDocURL = article.Word_Document.Url;
-            wordDocURL = wordDocURL.Replace("-", " ");
+            Item wordDoc = masterDb.GetItem(article.Word_Document.TargetId.ToString());
+		    if (wordDoc == null)
+		    {
+		        return string.Empty;
+		    }
 
-            //Item wordDoc = masterDb.GetItem(article.WordDocument.Field.TargetID);
-            //if (wordDoc == null) return string.Empty;
-
-            //string url =
-            //    MediaManager.GetMediaUrl(wordDoc);
-
-            return wordDocURL;
+            string url = MediaManager.GetMediaUrl(wordDoc);
+            url = url.Replace("/-/", "/~/");
+            return url.Replace("-", " ");
         }
 
 		#endregion

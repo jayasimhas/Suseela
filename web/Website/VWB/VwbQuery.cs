@@ -72,7 +72,8 @@ namespace Elsevier.Web.VWB
 				ColumnKeysInOrder = new List<string>();
 			}
 			Descending = request[DescendingParam] == "1";
-			ShouldRun = request[RunParam] == "1";
+			//ShouldRun = request[RunParam] == "1";
+			ShouldRun = true;
 			if (request[EndDateParam] != null)
 			{
 				EndDate = GetDateTime(request[EndDateParam]);

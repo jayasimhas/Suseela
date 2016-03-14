@@ -92,8 +92,8 @@ namespace Elsevier.Web.VWB.Report
 		    if (ArticleNumber == null)
 		    {
 		        ArticleNumber = "";
-
 		    }
+            
 
 			//Title = article.Title + " : " + article._Path;
 			Title = article.Title;
@@ -111,9 +111,15 @@ namespace Elsevier.Web.VWB.Report
 
             WordCount = article.Word_Count;
 
-            //TODO
-			//lArticleItem.ChildArticles.ListItems.Select(i => (ArticleItem)i).ForEach(a => SidebarArticleNumbers.Add(a.ArticleNumber.Text));
-			SidebarArticleNumbers.Sort();
+            foreach (IArticle referencedArticle in article.Referenced_Articles)
+            {
+                if (!string.IsNullOrEmpty(referencedArticle.Article_Number))
+                {
+                    SidebarArticleNumbers.Add(referencedArticle.Article_Number);
+                }
+            }
+
+            SidebarArticleNumbers.Sort();
 
 		    TaxonomyString = "";
 		    string sep = "";
