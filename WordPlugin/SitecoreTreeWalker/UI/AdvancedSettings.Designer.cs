@@ -1,4 +1,6 @@
-﻿namespace InformaSitecoreWord.UI
+﻿using System.Windows.Forms;
+
+namespace InformaSitecoreWord.UI
 {
     partial class AdvancedSettings
     {
@@ -51,7 +53,8 @@
             this.uxEnvironmentPicker.Location = new System.Drawing.Point(143, 39);
             this.uxEnvironmentPicker.Name = "uxEnvironmentPicker";
             this.uxEnvironmentPicker.Size = new System.Drawing.Size(190, 21);
-            this.uxEnvironmentPicker.TabIndex = 1;
+			this.uxEnvironmentPicker.DropDownStyle = ComboBoxStyle.DropDownList;
+			this.uxEnvironmentPicker.TabIndex = 1;
             // 
             // AdvancedSettingCancelBtn
             // 
