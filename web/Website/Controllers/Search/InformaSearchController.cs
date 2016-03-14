@@ -57,15 +57,20 @@ namespace Informa.Web.Controllers.Search
 
             //Loop through the results and add the authenticaton and bookmarking property values to be used
             //on the front end.
-            List<InformaSearchResultItem> resultsWithBookmarks = new List<InformaSearchResultItem>();
-            foreach (InformaSearchResultItem queryResult in results.Results)
+            if (_authenticatedUserContext.IsAuthenticated)
             {
-                queryResult.IsUserAuthenticated = _authenticatedUserContext.IsAuthenticated;
-                queryResult.IsArticleBookmarked = _manageSavedDocuments.IsBookmarked(_authenticatedUserContext.User, queryResult.ItemId.ToGuid());
-                resultsWithBookmarks.Add(queryResult);
-            }
+                var currentUser = _authenticatedUserContext.User;
 
-            results.Results = resultsWithBookmarks;
+                List<InformaSearchResultItem> resultsWithBookmarks = new List<InformaSearchResultItem>();
+                foreach (InformaSearchResultItem queryResult in results.Results)
+                {
+                    queryResult.IsUserAuthenticated = true;
+                    queryResult.IsArticleBookmarked = _manageSavedDocuments.IsBookmarked(currentUser, queryResult.ItemId.ToGuid());
+                    resultsWithBookmarks.Add(queryResult);
+                }
+
+                results.Results = resultsWithBookmarks;
+            }
 
             return results;
         }
