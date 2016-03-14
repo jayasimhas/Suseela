@@ -91,8 +91,9 @@ namespace PluginModels
 
     public class MediaItemStruct
     {
+		public string altText;
 
-        private string extensionField;
+		private string extensionField;
 
         private byte[] dataField;
 
