@@ -196,8 +196,15 @@ namespace Elsevier.Web.VWB.Report
                 }
                 else
                 {
-                    startDate = DateTime.Now;
-                    endDate = DateTime.Now.AddDays(30);
+                    DateTime now = DateTime.Now;
+
+                    //The start date is today with the time being set at midnight
+                    startDate = new DateTime(now.Year, now.Month, now.Day,0, 0, 0, 0, 0);
+
+                    DateTime nowPlusMonth = DateTime.Now.AddDays(30);
+
+                    //The end date is in a month with the time being set at 11:59
+                    endDate = new DateTime(nowPlusMonth.Year, nowPlusMonth.Month, nowPlusMonth.Day, 23, 59, 0, 0, 0);
                 }
 
                 url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
