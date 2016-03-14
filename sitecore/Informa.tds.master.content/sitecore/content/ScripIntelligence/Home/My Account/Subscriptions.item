@@ -12,8 +12,15 @@ templatekey: Subscriptions Page
 ----version----
 language: en
 version: 1
-revision: b0ca29a1-7a86-4762-b8d8-4229f9af96b0
+revision: 5df7f0e4-8dc2-4051-b8bb-75c758dc6324
 
+----field----
+field: {017E9C5B-9504-4644-998F-5C0A6F72C300}
+name: Off Site Subscription Link
+key: off site subscription link
+content-length: 76
+
+<link linktype="external" url="http://www.google.com" anchor="" target="" />
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
 name: Title
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b0ca29a1-7a86-4762-b8d8-4229f9af96b0
+5df7f0e4-8dc2-4051-b8bb-75c758dc6324
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160308T014400Z
+20160311T201856Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

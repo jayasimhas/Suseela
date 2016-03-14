@@ -20,12 +20,16 @@
       }
 
       a {
-        padding: 5px 10px;
+        padding: 4px 10px;
       }
 
       &.is-active a {
         background: $informa-light-gray-f;
         color: $informa-dark-gray;
+        
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
   }

@@ -11597,6 +11597,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 	[SitecoreType(TemplateId=ISubscriptions_PageConstants.TemplateIdString)]
 	public partial interface ISubscriptions_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
+								/// <summary>
+					/// The Off Site Subscription Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 017e9c5b-9504-4644-998f-5c0a6f72c300</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISubscriptions_PageConstants.Off_Site_Subscription_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Off_Site_Subscription_Link  {get; set;}
 				}
 
 	
@@ -11609,6 +11618,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 		[SitecoreType]
 		public partial interface ISubscriptions_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
+										/// <summary>
+						/// The Off Site Subscription Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: 017e9c5b-9504-4644-998f-5c0a6f72c300</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISubscriptions_PageConstants.Off_Site_Subscription_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Off_Site_Subscription_Link  {get; set;}
 						}
 	
 	public static partial class ISubscriptions_PageConstants{
@@ -11617,6 +11635,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Subscriptions Page";
 
+					
+			public static readonly ID Off_Site_Subscription_LinkFieldId = new ID("017e9c5b-9504-4644-998f-5c0a6f72c300");
+			public const string Off_Site_Subscription_LinkFieldName = "Off Site Subscription Link";
+
+						
 					
 			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
 			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
@@ -12093,6 +12116,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 	[SitecoreType(TemplateId=IContact_Information_PageConstants.TemplateIdString)]
 	public partial interface IContact_Information_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
+								/// <summary>
+					/// The Update Email Help Text field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 6bcc4eca-2e47-4340-8e01-72d5d7311121</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IContact_Information_PageConstants.Update_Email_Help_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Update_Email_Help_Text  {get; set;}
 				}
 
 	
@@ -12105,6 +12137,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 		[SitecoreType]
 		public partial interface IContact_Information_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
+										/// <summary>
+						/// The Update Email Help Text field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 6bcc4eca-2e47-4340-8e01-72d5d7311121</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IContact_Information_PageConstants.Update_Email_Help_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Update_Email_Help_Text  {get; set;}
 						}
 	
 	public static partial class IContact_Information_PageConstants{
@@ -12113,6 +12154,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Contact Information Page";
 
+					
+			public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
+			public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
+
+							public static readonly ID Update_Email_Help_Text__RawFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
+				public const string Update_Email_Help_Text__RawFieldName = "Update Email Help Text";
+						
 					
 			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
 			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";

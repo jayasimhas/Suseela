@@ -10,27 +10,31 @@
 		  data-on-success="/">
 
 		<p class="page-registration__error
-		   js-register-user-error
-		   js-register-user-error-general">
+		   js-form-error
+		   js-form-error-general">
 			@Model.GeneralErrorText
 		</p>
 
 		<div>
 			<div class="page-registration__tos-confirm">
-				<input name="newsletters"
-					   type="checkbox"
-					   checked="checked"
-					   data-checkbox-type="boolean"> <label for="newsletters">@Model.NewslettersLabelText</label>
+				<input 	name="newsletters"
+						id="newsletters"
+					   	type="checkbox"
+					   	checked="checked"
+					   	data-checkbox-type="boolean">
+				<label class="checkbox-label" for="newsletters">@Model.NewslettersLabelText</label>
 			</div>
 			<div class="page-registration__tos-confirm">
-				<input name="offers"
-					   type="checkbox"
-					   data-checkbox-type="boolean"
-					   data-checkbox-boolean-type="reverse"> <label for="offers">@Model.OffersLabelText</label>
+				<input 	name="offers"
+						id="offers"
+					   	type="checkbox"
+					   	data-checkbox-type="boolean"
+					   	data-checkbox-boolean-type="reverse">
+				<label class="checkbox-label" for="offers">@Model.OffersLabelText</label>
 			</div>
 
-			<div class="page-registration__submit-wrapper">
-				<button type="submit" class="button--filled js-register-user-optins-submit">@Model.SubmitText</button>
+			<div class="page-account__submit-wrapper">
+				<button type="submit" class="button--filled">@Model.SubmitText</button>
 			</div>
 		</div>
 	</form>

@@ -17,6 +17,13 @@ content-length: 77
 
 {1930BBEB-7805-471A-A3BE-4858AC7CF696}|{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
 ----field----
+field: {F7D48A55-2158-4F02-9356-756654404F73}
+name: __Standard values
+key: __standard values
+content-length: 38
+
+{CF8EDBAD-017B-414A-9590-B69A4DDF4BAC}
+----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
@@ -33,7 +40,7 @@ content-length: 77
 ----version----
 language: en
 version: 1
-revision: deb463aa-3b74-4747-a22f-4258c96baac8
+revision: 51ba1fa2-38c3-4e26-8bad-5a2b2cbfd1e1
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -55,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-deb463aa-3b74-4747-a22f-4258c96baac8
+51ba1fa2-38c3-4e26-8bad-5a2b2cbfd1e1
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160226T151207Z
+20160314T113740Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

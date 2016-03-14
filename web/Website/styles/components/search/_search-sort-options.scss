@@ -31,46 +31,38 @@
             display: inline-block;
         }
 
-        &.is-selected span {
+        &.is-selected span,
+        &.is-selected a {
             text-decoration: underline;
         }
 
-        &.is-sorted-up {
-            .icon-triangle--up {
-                @include svg-fill($informa-red);
-            }
-
-            &.is-selected span {
-                text-decoration: underline;
-            }
-
-            &.is-sorted-down {
-                .icon-triangle--down {
-                    @include svg-fill($informa-red);
-                }
-            }
-
-            &.is-sorted-up a,
-            &.is-sorted-up a:hover,
-            &.is-sorted-down a,
-            &.is-sorted-down a:hover {
-                text-decoration: none;
-            }
+        &.is-sorted-up .icon-triangle--up {
+            @include svg-fill($informa-red);
         }
 
-        &__icon-group {
-            display: inline-block;
-            vertical-align: bottom;
-            margin-left: 5px;
+        &.is-sorted-down .icon-triangle--down {
+            @include svg-fill($informa-red);
         }
 
-        .icon-triangle {
-            @include svg-fill($informa-light-gray-d);
-            display: block;
-            width: 12px;
-            height: 11px;
+        &.is-sorted-up a,
+        &.is-sorted-up a:hover,
+        &.is-sorted-down a,
+        &.is-sorted-down a:hover {
+            text-decoration: none;
         }
+    }
 
+    &__icon-group {
+        display: inline-block;
+        vertical-align: bottom;
+        margin-left: 5px;
+    }
+
+    .icon-triangle {
+        @include svg-fill($informa-light-gray-d);
+        display: block;
+        width: 12px;
+        height: 11px;
     }
 
 }
