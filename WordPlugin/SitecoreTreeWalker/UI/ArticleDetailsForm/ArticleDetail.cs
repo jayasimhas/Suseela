@@ -246,7 +246,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 		{
 			Globals.SitecoreAddin.Log("Updating fields...");
 			articleDetailsPageSelector.UpdateFields(ArticleDetails);
-			articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState);
+			articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState, ArticleDetails);
 		}
 
 		/// <summary>
@@ -567,7 +567,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
 			articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
 											? SitecoreClient.GetWorkflowState(ArticleDetails.ArticleGuid)
-											: SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber));
+											: SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber), ArticleDetails);
 
 			articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
 			UpdateFieldsAfterSave();
@@ -762,7 +762,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 				}
 				articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
 												? SitecoreClient.GetWorkflowState(ArticleDetails.ArticleGuid)
-												: SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber));
+												: SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber), ArticleDetails);
 				articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
 				articleDetailsPageSelector.UpdateFields();
 				articleDetailsPageSelector.ResetChangedStatus();

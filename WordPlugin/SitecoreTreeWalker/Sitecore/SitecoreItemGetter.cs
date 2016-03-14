@@ -16,7 +16,8 @@ namespace InformaSitecoreWord.Sitecore
 			public string Title { get; set; }
 			public string Uploader { get; set; }
 			public DateTime UploadDate { get; set; }
-        }
+			public string AltText { get; set; }
+		}
 
 		protected SitecoreMediaItem GetMediaSitecoreItem(MediaItemStruct mediaItem)
 		{
@@ -48,7 +49,8 @@ namespace InformaSitecoreWord.Sitecore
 				Url = mediaItem.Url,
 				Title = mediaItem.Name,
 				UploadDate = mediaItem.UploadDate,
-				Uploader = mediaItem.Uploader
+				Uploader = mediaItem.Uploader,
+				AltText =  mediaItem.altText
 			};
 
 			return media;
