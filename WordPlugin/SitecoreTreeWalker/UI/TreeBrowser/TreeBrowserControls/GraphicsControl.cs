@@ -245,21 +245,21 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 			{
 				selection = selection.Next(WdUnits.wdParagraph);
 			}
-
-			if (!string.IsNullOrWhiteSpace(source))
-			{
-				selection.Text = source;
-				selection.set_Style(DocumentAndParagraphStyles.SourceStyle);
-				selection = selection.Next(WdUnits.wdParagraph);
-			}
-
+            
 			if (!string.IsNullOrEmpty(caption))
 			{
 				selection.Text = caption;
 				selection.set_Style(DocumentAndParagraphStyles.ExhibitCaptionStyle52);
 				selection.Next(WdUnits.wdParagraph).Select();
 			}
-		}
+
+            if (!string.IsNullOrWhiteSpace(source))
+            {
+                selection.Text = source;
+                selection.set_Style(DocumentAndParagraphStyles.SourceStyle);
+                selection = selection.Next(WdUnits.wdParagraph);
+            }
+        }
 
 		private void uxRefresh_Click(object sender, System.EventArgs e)
 		{
