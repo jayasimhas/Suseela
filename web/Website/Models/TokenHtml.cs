@@ -10,6 +10,8 @@ using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Fields;
 using Glass.Mapper.Sc.Web.Mvc;
 using Informa.Library.Article.Search;
+using Informa.Library.Utilities.TokenMatcher;
+using Informa.Models.DCD;
 using Informa.Web.ViewModels;
 
 namespace Informa.Web.Models
@@ -47,6 +49,7 @@ namespace Informa.Web.Models
         /// <returns/>
         public virtual IHtmlString RenderTokenBody(Expression<Func<TK, string>> expression, string partialName)
         {
+            var dealRegex = new Regex(DCDConstants.DealTokenRegex);
 
             var sidebarRegex = new Regex(@"\[Sidebar#(.*?)\]");    
 
@@ -54,11 +57,17 @@ namespace Informa.Web.Models
              
             var fieldValue = expression.Compile()(this.Model);
 
+            foreach (Match match in dealRegex.Matches(fieldValue))
+            {
+                var replace = DCDTokenMatchers.dealMatchEval(match);
+
+                fieldValue = fieldValue.Replace(match.Value, replace.ToString());
+            }
+
             foreach (Match match in sidebarRegex.Matches(fieldValue))
             {
                 string articleNumber = match.Groups[1].Value;
-
-
+                
                 IArticleSearchFilter filter = ArticleSearch.CreateFilter();
                 filter.ArticleNumber = articleNumber;
                 var results = ArticleSearch.Search(filter);
@@ -73,7 +82,6 @@ namespace Informa.Web.Models
                 }     
                
                 fieldValue = fieldValue.Replace(match.Value, replace.ToString());
-               
             }
 
 			foreach (Match match in referenceArticleTokenRegex.Matches(fieldValue))
