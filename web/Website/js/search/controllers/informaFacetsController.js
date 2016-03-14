@@ -50,6 +50,7 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         _this.facetGroups = searchService.getFacetGroups();
     }, true);
 
+    //** This updates the router/url with the latest search parameters **//
     _this.update = function () {
         _this.searchService.getFilter('page').setValue('1');
         var routeBuilder = this.searchService.getRouteBuilder();
@@ -89,7 +90,7 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         return filter;
     }
 
-
+    //** This deselects any selected facet checkboxes, clears all facet parameters from the search query, and runs the clearDateRange function **//
     _this.clearAllFacets = function () {
         var facetClear = this;
         var facetGroups = facetClear.facetGroups;
@@ -109,6 +110,7 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         filter.setValue("");
     }
 
+    //** This clears the date parameters from the search, deselcts any date radio buttons, and clears both custom date input fields **//
     _this.clearDateRange = function () {
         var filter = _this.getFilter('date');
         console.log("removing: ", filter);
@@ -130,7 +132,14 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         return filterDateLabel._value;
     }
 
+    _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
+        alert(new Date(endDate).getDay());
+
+    }
+
+    //** This builds date parameters for the search query **//
     _this.dateRangeSearch = function (filterKey, dateFilter) {
+       
         var filter = _this.getFilter(filterKey);
         var filterDateLabel = _this.getFilter('dateFilterLabel');
         console.log("date range: ", dateFilter);
@@ -152,6 +161,13 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
        // _this.CustomEndDate.val('');
        // _this.checkSelectedDateRange();
         _this.update();
+    }
+
+    /** VVV UNFINISHED VVV */
+    //** This selects the 'Select date range' radio button when the user clicks in either custom date input field **//
+    _this.selectCustomDate = function() {
+        console.log("select custom date");
+        _this.DateFilters.custom.selected = true;
     }
 
     
