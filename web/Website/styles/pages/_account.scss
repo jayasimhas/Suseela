@@ -56,4 +56,21 @@
         @extend .error-text;
         display: none;
     }
+
+    &__submit-wrapper {
+        overflow: auto;
+        text-align: right;
+
+        button {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            @include textMix('Roboto', 0.875rem, 500);
+            color: $color-dusty-gray;
+            line-height: 1.25rem;
+            width: 250px;
+            margin-bottom: 1rem;
+        }
+    }
 }

@@ -34,7 +34,24 @@ namespace Informa.Web.Areas.Account.Controllers
 		{
 			var userNewsletterOptIns = new List<INewsletterUserOptIn>() { NewsletterUserOptInFactory.Create(NewsletterType.Scrip, request.NewsletterOptIn) };
 			var nResp = NewsletterOptIn.Update(userNewsletterOptIns, UserContext.User.Username);
-			var oResp = OffersOptIn.Update(UserContext.User, !request.DoNotSendOffersOptIn);
+			var oResp = OffersOptIn.Update(UserContext.User?.Username, !request.DoNotSendOffersOptIn);
+
+			var success = nResp && oResp;
+
+			return Ok(new
+			{
+				success = success
+			});
+		}
+
+
+		[HttpPost]
+		[ArgumentsRequired]
+		public IHttpActionResult SignupUser(string userName)
+		{
+			var userNewsletterOptIns = new List<INewsletterUserOptIn>() { NewsletterUserOptInFactory.Create(NewsletterType.Scrip,true) };
+			var nResp = NewsletterOptIn.Update(userNewsletterOptIns, userName);
+			var oResp = OffersOptIn.Update(userName,false);
 
 			var success = nResp && oResp;
 

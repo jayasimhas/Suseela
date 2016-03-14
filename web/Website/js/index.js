@@ -2,12 +2,14 @@ import Zepto from './zepto.min';
 import svg4everybody from './svg4everybody';
 import Cookies from './jscookie';
 import PopOutController from './pop-out-controller';
+import NewsletterSignupController  from './newsletter-signup';
 import BookmarkController from './bookmark-controller';
 import SearchScript from './search-page.js';
 import LoginController from './login-controller';
 import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
+
 
 
 /* Toggle menu categories */
@@ -118,6 +120,7 @@ $(document).ready(function() {
 
 	// Toggle bookmark icon
 	$('.js-bookmark-article').on('click', function bookmarkArticle(e) {
+		
 		// Make sure proper elm gets the click event
 		if (e.target !== this) {
 			this.click();
@@ -127,6 +130,11 @@ $(document).ready(function() {
 		bookmark.toggle(e.target);
 
 	});
+
+	var newsletterSignup = new NewsletterSignupController();
+	$("#newsletter-signup-after-submit").hide();
+	newsletterSignup.checkForUserSignedUp();
+
 
 	var login = new LoginController(requestVerificationToken);
 

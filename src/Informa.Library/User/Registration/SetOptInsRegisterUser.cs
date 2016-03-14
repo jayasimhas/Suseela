@@ -29,7 +29,7 @@ namespace Informa.Library.User.Registration
 		{
 			var userNewsletterOptIns = NewsletterTypesContext.NewsletterTypes.Select(nt => NewsletterUserOptInFactory.Create(nt, newsletters));
 			var newsletterSucccess = UpdateNewsletterUserOptIn.Update(userNewsletterOptIns, newUser.Username);
-			var offerSuccess = UpdateOfferUserOptIn.Update(newUser, offers);
+			var offerSuccess = UpdateOfferUserOptIn.Update(newUser?.Username, offers);
 
 			return offerSuccess && newsletterSucccess;
 		}
