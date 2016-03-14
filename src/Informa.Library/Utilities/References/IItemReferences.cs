@@ -10,6 +10,8 @@ namespace Informa.Library.Utilities.References
 
 		Guid NlmConfiguration { get; }
 
+        Guid NlmErrorDistributionList { get; }
+
 		Guid SiteConfig { get; }
 
         // Pharma Globals

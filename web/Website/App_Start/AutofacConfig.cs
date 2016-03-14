@@ -60,6 +60,7 @@ namespace Informa.Web.App_Start
 			RegistrationRegistrar.RegisterDependencies(builder);
 			CompanyRegistrar.RegisterDependencies(builder);
             NlmRegistrar.RegisterDependencies(builder);
+			ScheduledPublishingRegistrar.RegisterDependencies(builder);
 
 			// Custom Modules
 			builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));

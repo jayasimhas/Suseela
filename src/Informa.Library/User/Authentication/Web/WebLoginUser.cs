@@ -38,7 +38,7 @@ namespace Informa.Library.User.Authentication.Web
 			if (success)
 			{
 				var sitecoreUsername = VirtualUsernameFactory.Create(authenticatedUser);
-				var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, persist);
+				var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, true);
 
 				sitecoreVirtualUser.Profile.Email = authenticatedUser.Email;
 				sitecoreVirtualUser.Profile.Name = authenticatedUser.Name;
@@ -49,7 +49,7 @@ namespace Informa.Library.User.Authentication.Web
 
                 sitecoreVirtualUser.Profile.Save();
 
-				success = AuthenticationManager.LoginVirtualUser(sitecoreVirtualUser);
+				success = AuthenticationManager.Login(sitecoreVirtualUser.Name, persist);
 
 				if (success)
 				{

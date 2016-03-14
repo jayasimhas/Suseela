@@ -81,6 +81,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             return s.SubscriptionType.ToLower().Equals("free trial");
         }
 
+        public string OffSiteRenewLink => GlassModel.Off_Site_Renew_Link?.Url ?? "#";
         public string OffSiteSubscriptionLink => GlassModel.Off_Site_Subscription_Link?.Url ?? "#";
         public bool IsAuthenticated => UserContext.IsAuthenticated;
         public string Title => GlassModel?.Title;

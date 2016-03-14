@@ -4651,6 +4651,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+ 	/// <summary>
+	/// IError_Distribution_List Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/Error Distribution List</para>	
+	/// <para>ID: 4f0325b5-bf43-4c1b-8abc-7f183c3e4ab3</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IError_Distribution_ListConstants.TemplateIdString)]
+	public partial interface IError_Distribution_List : IGlassBase 
+	{
+								/// <summary>
+					/// The NLM Error Distribution List field.
+					/// <para>Use comma delimited list of emails</para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 6fe67217-f25b-4b34-8146-a3d4eec7fc9a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IError_Distribution_ListConstants.NLM_Error_Distribution_ListFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string NLM_Error_Distribution_List  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IError_Distribution_List Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/Error Distribution List</para>	
+		/// <para>ID: 4f0325b5-bf43-4c1b-8abc-7f183c3e4ab3</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IError_Distribution_List__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The NLM Error Distribution List field.
+						/// <para>Use comma delimited list of emails</para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 6fe67217-f25b-4b34-8146-a3d4eec7fc9a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IError_Distribution_ListConstants.NLM_Error_Distribution_ListFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string NLM_Error_Distribution_List  {get; set;}
+						}
+	
+	public static partial class IError_Distribution_ListConstants{
+
+			public const string TemplateIdString = "4f0325b5-bf43-4c1b-8abc-7f183c3e4ab3";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Error Distribution List";
+
+					
+			public static readonly ID NLM_Error_Distribution_ListFieldId = new ID("6fe67217-f25b-4b34-8146-a3d4eec7fc9a");
+			public const string NLM_Error_Distribution_ListFieldName = "NLM Error Distribution List";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation
 {
 
@@ -11537,6 +11598,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 	public partial interface ISubscriptions_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
 								/// <summary>
+					/// The Off Site Renew Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 2dd1b9ea-ec90-419c-8ee6-bca3c5467071</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISubscriptions_PageConstants.Off_Site_Renew_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Off_Site_Renew_Link  {get; set;}
+								/// <summary>
 					/// The Off Site Subscription Link field.
 					/// <para></para>
 					/// <para>Field Type: General Link</para>		
@@ -11558,6 +11628,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 		public partial interface ISubscriptions_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
 										/// <summary>
+						/// The Off Site Renew Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: 2dd1b9ea-ec90-419c-8ee6-bca3c5467071</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISubscriptions_PageConstants.Off_Site_Renew_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Off_Site_Renew_Link  {get; set;}
+										/// <summary>
 						/// The Off Site Subscription Link field.
 						/// <para></para>
 						/// <para>Field Type: General Link</para>		
@@ -11574,6 +11653,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Subscriptions Page";
 
+					
+			public static readonly ID Off_Site_Renew_LinkFieldId = new ID("2dd1b9ea-ec90-419c-8ee6-bca3c5467071");
+			public const string Off_Site_Renew_LinkFieldName = "Off Site Renew Link";
+
+						
 					
 			public static readonly ID Off_Site_Subscription_LinkFieldId = new ID("017e9c5b-9504-4644-998f-5c0a6f72c300");
 			public const string Off_Site_Subscription_LinkFieldName = "Off Site Subscription Link";

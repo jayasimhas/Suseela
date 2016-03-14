@@ -1,8 +1,5 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
-
-namespace Informa.Library.Publishing.Scheduled.MongoDB
+﻿namespace Informa.Library.Publishing.Scheduled.MongoDB
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
 	public class MongoDbInsertScheduledPublish : IMongoDbInsertScheduledPublish
 	{
 		protected readonly IMongoDbScheduledPublishContext ScheduledPublishContext;
