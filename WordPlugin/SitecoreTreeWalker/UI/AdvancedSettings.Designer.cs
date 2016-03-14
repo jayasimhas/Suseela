@@ -83,7 +83,8 @@
             this.Controls.Add(this.uxEnvironmentPicker);
             this.Controls.Add(this.EnvironmentLbl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AdvancedSettings";
             this.ShowIcon = false;
