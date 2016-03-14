@@ -1,9 +1,7 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
-using System;
+﻿using System;
 
 namespace Informa.Library.Publishing.Scheduled.MongoDB
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
 	public class ScheduledPublishDocumentFactory : IScheduledPublishDocumentFactory
 	{
 		public ScheduledPublishDocument Create(IScheduledPublish scheduledPublish)
