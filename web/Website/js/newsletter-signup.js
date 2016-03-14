@@ -1,14 +1,14 @@
 ﻿function newsletterSignupController() {
 
     this.checkForUserSignedUp = function(){
-        $post('/api/PreferencesApi/IsUserSignedUp', function(response)
-        {          
+        $.post('/api/PreferencesApi/IsUserSignedUp', function(response)
+        {
             var res = response;
             if(response)
             {
                 $("#newsletter-signup").hide();
             }
-    
+
         });
     }
     this.addControl = function(triggerElement, successCallback, failureCallback) {
@@ -42,7 +42,7 @@
         }
     }
 
-   
+
 }
 
 export default newsletterSignupController;
