@@ -11,8 +11,8 @@ namespace Informa.Web.ViewModels
             _glassModel = glassModel;
         }
 
-        public string ImageUrl => _glassModel.Featured_Image_16_9?.Src;
-        public string ImageCaption => _glassModel.Featured_Image_Caption;
-        public string ImageSource => _glassModel.Featured_Image_Source;
+        public string ImageUrl => _glassModel?.Featured_Image_16_9?.Src ?? string.Empty;
+        public string ImageCaption => _glassModel?.Featured_Image_Caption ?? string.Empty;
+        public string ImageSource => _glassModel?.Featured_Image_Source ?? string.Empty;
     }
 }

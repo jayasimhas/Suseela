@@ -91,15 +91,15 @@ function formController(requestVerificationToken) {
 
 	this.showSuccessMessage = function(form) {
 		$(form).find('.js-form-success').show();
-	}
+	};
 
 	this.showError = function(form, error) {
 		$(form).find(error).show();
-	}
+	};
 
 	this.hideErrors = function(form) {
 		$(form).find('.js-form-error').hide();
-	}
-};
+	};
+}
 
 export default formController;
