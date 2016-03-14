@@ -11,13 +11,16 @@ using Elsevier.Library.LuceneSearch.Parameters;
 using Elsevier.Library.LuceneSearch.Searchers;
 using Elsevier.Library.Reference;
 using Elsevier.Web.VWB.Report.Columns;
+using Glass.Mapper.Sc;
 using Informa.Library.Rss;
 using Informa.Library.Utilities.References;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Newtonsoft.Json;
 using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Web;
+using ArticleItem = Elsevier.Library.CustomItems.Publication.General.ArticleItem;
 
 namespace Elsevier.Web.VWB.Report
 {
@@ -167,6 +170,8 @@ namespace Elsevier.Web.VWB.Report
 		/// <returns>Sorted list of ArticleItemProxies based on query</returns>
 		public List<ArticleItemWrapper> RunSearch(VwbQuery query)
 		{
+           // var param = new ArticleSearchParam();
+            //param.IncludeSidebarArticles();
             List<ArticleItemWrapper> articles;
 
             using (new Sitecore.SecurityModel.SecurityDisabler())
@@ -216,7 +221,15 @@ namespace Elsevier.Web.VWB.Report
                         continue;
                     }
 
-                    resultItems.Add(theItem);
+                    //Manually filtering for time
+                    IArticle article = theItem.InnerItem.GlassCast<IArticle>(inferType: true);
+
+                    if (article.Planned_Publish_Date.Ticks >= startDate.Ticks &&
+                        article.Planned_Publish_Date.Ticks <= endDate.Ticks)
+                    {
+                        resultItems.Add(theItem);
+                    }
+
                 }
 
                 articles = ArticleItemWrapper.GetArticleItemProxies(resultItems).ToList();

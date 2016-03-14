@@ -95,7 +95,8 @@ namespace Elsevier.Web.VWB.Report
 
 		    }
 
-			Title = article.Title + " : " + article._Path;
+			//Title = article.Title + " : " + article._Path;
+			Title = article.Title;
 
 		    if (article.Authors != null)
 		    {
