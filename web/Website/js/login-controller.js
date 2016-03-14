@@ -7,8 +7,23 @@ function loginController(requestVerificationToken) {
 				var redirectUrl = $(triggerElement).data('login-redirect-url');
 
 				$(triggerElement).parents('.js-login-container').find('input').each(function() {
-					inputData[$(this).attr('name')] = $(this).val();
-				})
+
+					var value = '';
+					var field = $(this);
+
+					if (field.data('checkbox-type') === 'boolean') {
+						value = field.attr('checked') || field.attr('checked') === 'checked';
+
+						if (field.data('checkbox-boolean-type') === 'reverse') {
+							value = !value;
+						}
+					}
+					else {
+						value = field.val();
+					}
+
+					inputData[field.attr('name')] = value;
+				});
 
 				console.log(requestVerificationToken);
 
