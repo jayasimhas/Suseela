@@ -4,6 +4,7 @@ using AutoMapper;
 using Informa.Library.Services.NlmExport.Models;
 using Informa.Library.Services.NlmExport.Serialization;
 using Informa.Library.Services.NlmExport.Validation;
+using Informa.Library.Utilities.References;
 using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
@@ -15,7 +16,7 @@ namespace Informa.Library.Services.NlmExport
     {
         private readonly IDependencies _;
         private readonly ILog _logger;
-
+        
         public NlmExportService(IDependencies dependencies, ILog logger)
         {
             if (dependencies == null) throw new ArgumentNullException(nameof(dependencies));
@@ -54,7 +55,7 @@ namespace Informa.Library.Services.NlmExport
                     // Write to disk
                     var exportFolder = Path.GetFullPath(_.Settings.NlmExportPath);
                     Directory.CreateDirectory(exportFolder);
-                    var fileName = $"{article.Article_Number}.xml";
+                    var fileName = GetFilenamePrefix(article) + ".xml";
 
                     using (var file = File.Open(Path.Combine(exportFolder, fileName), FileMode.Create))
                     {
@@ -76,7 +77,7 @@ namespace Informa.Library.Services.NlmExport
             try
             {
                 var exportFolder = Path.GetFullPath(_.Settings.NlmExportPath);
-                var fileName = $"{article.Article_Number}_del.xml";
+                var fileName = GetFilenamePrefix(article) + "_del.xml";
                 File.Delete(Path.Combine(exportFolder, fileName));
             }
             catch (Exception ex)
@@ -86,6 +87,12 @@ namespace Informa.Library.Services.NlmExport
             }
 
             return true;
+        }
+
+
+        private string GetFilenamePrefix(ArticleItem article)
+        {
+            return $"{Constants.ScripPublicationName}_{article.Article_Number}";
         }
 
         private static ExportResult Result(ValidationResult validationResult = null, Exception ex = null)
