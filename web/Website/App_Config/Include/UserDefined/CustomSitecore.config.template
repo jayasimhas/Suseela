@@ -53,7 +53,7 @@ But you can also use "patch:attribute" for clarity:
       </httpRequestBegin>
 
       <publishItem>
-        <processor patch:after="*[@type='Sitecore.Publishing.Pipelines.PublishItem.DetermineAction, Sitecore.Kernel']" type="Informa.Library.CustomSitecore.Pipelines.PublishItem.ItemsPublishingProcessor, Informa.Library" />
+        <!--<processor patch:after="*[@type='Sitecore.Publishing.Pipelines.PublishItem.DetermineAction, Sitecore.Kernel']" type="Informa.Library.CustomSitecore.Pipelines.PublishItem.ItemsPublishingProcessor, Informa.Library" />-->
       </publishItem>
     </pipelines>
 
