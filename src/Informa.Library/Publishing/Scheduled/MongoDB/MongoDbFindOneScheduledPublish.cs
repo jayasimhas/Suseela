@@ -1,14 +1,12 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
-using MongoDB.Driver.Builders;
+﻿using MongoDB.Driver.Builders;
 
 namespace Informa.Library.Publishing.Scheduled.MongoDB
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
-	public class MongoDbFindOneSchuledPublish : IMongoDbFindOneScheduledPublish
+	public class MongoDbFindOneScheduledPublish : IMongoDbFindOneScheduledPublish
 	{
 		protected readonly IMongoDbScheduledPublishContext ScheduledPublishContext;
 
-		public MongoDbFindOneSchuledPublish(
+		public MongoDbFindOneScheduledPublish(
 			IMongoDbScheduledPublishContext scheduledPublishContext)
 		{
 			ScheduledPublishContext = scheduledPublishContext;
