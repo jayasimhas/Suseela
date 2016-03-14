@@ -11598,6 +11598,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 	public partial interface ISubscriptions_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
 								/// <summary>
+					/// The Off Site Renew Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 2dd1b9ea-ec90-419c-8ee6-bca3c5467071</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISubscriptions_PageConstants.Off_Site_Renew_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Off_Site_Renew_Link  {get; set;}
+								/// <summary>
 					/// The Off Site Subscription Link field.
 					/// <para></para>
 					/// <para>Field Type: General Link</para>		
@@ -11619,6 +11628,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 		public partial interface ISubscriptions_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
 										/// <summary>
+						/// The Off Site Renew Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: 2dd1b9ea-ec90-419c-8ee6-bca3c5467071</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISubscriptions_PageConstants.Off_Site_Renew_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Off_Site_Renew_Link  {get; set;}
+										/// <summary>
 						/// The Off Site Subscription Link field.
 						/// <para></para>
 						/// <para>Field Type: General Link</para>		
@@ -11635,6 +11653,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Subscriptions Page";
 
+					
+			public static readonly ID Off_Site_Renew_LinkFieldId = new ID("2dd1b9ea-ec90-419c-8ee6-bca3c5467071");
+			public const string Off_Site_Renew_LinkFieldName = "Off Site Renew Link";
+
+						
 					
 			public static readonly ID Off_Site_Subscription_LinkFieldId = new ID("017e9c5b-9504-4644-998f-5c0a6f72c300");
 			public const string Off_Site_Subscription_LinkFieldName = "Off Site Subscription Link";
