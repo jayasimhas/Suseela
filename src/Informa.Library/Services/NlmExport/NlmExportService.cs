@@ -92,7 +92,12 @@ namespace Informa.Library.Services.NlmExport
 
         private string GetFilenamePrefix(ArticleItem article)
         {
-            return $"{Constants.ScripPublicationName}_{article.Article_Number}";
+            string publicationName;
+            publicationName = Constants.PublicationPrefixDictionary.TryGetValue(article.Publication, out publicationName)
+                ? publicationName
+                : Constants.ScripPublicationName;
+
+            return $"{publicationName}_{article.Article_Number}";
         }
 
         private static ExportResult Result(ValidationResult validationResult = null, Exception ex = null)
