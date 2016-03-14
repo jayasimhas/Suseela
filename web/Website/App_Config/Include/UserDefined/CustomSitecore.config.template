@@ -51,6 +51,10 @@ But you can also use "patch:attribute" for clarity:
           <patch:attribute name="type">Informa.Library.CustomSitecore.Pipelines.HttpRequest.InformaExecuteRequest,Informa.Library</patch:attribute>
         </processor>
       </httpRequestBegin>
+
+      <publishItem>
+        <processor patch:after="*[@type='Sitecore.Publishing.Pipelines.PublishItem.DetermineAction, Sitecore.Kernel']" type="Informa.Library.CustomSitecore.Pipelines.PublishItem.ItemsPublishingProcessor, Informa.Library" />
+      </publishItem>
     </pipelines>
 
 

@@ -29,6 +29,7 @@ namespace Informa.Library.Search.Results
         public DateTime SearchDate { get; set; }
 
         [IndexField("plannedpublishdate")]
+        [DataMember]
         public DateTime PlannedPublishDate { get; set; }
 
         [IndexField("searchurl_s")]

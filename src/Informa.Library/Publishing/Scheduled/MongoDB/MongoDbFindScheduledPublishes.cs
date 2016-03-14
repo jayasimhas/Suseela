@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using MongoDB.Driver.Builders;
-using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.Publishing.Scheduled.MongoDB
 {
-	[AutowireService(LifetimeScope.Default)]
 	public class MongoDbFindScheduledPublishes : IFindScheduledPublishes
 	{
 		protected readonly IMongoDbScheduledPublishContext ScheduledPublishContext;

@@ -43,13 +43,13 @@ namespace InformaSitecoreWord.Util
         public const string DocxFormatName = "Word12";
 		public Dictionary<string, string> imageFloatDictionary = new Dictionary<string, string>
 		{
-			{ "left", "article-inline-image--pull-left"},
-			{ "right", "article-inline-image--pull-right"},
-			{ "none", "article-inline-image"},
+			{ "left", "article-exhibit article-exhibit--pull-left"},
+			{ "right", "article-exhibit article-exhibit--pull-right"},
+			{ "none", "article-exhibit"},
 		};
 
-		//These properties are built so that the accessing of the sitecore webservices is deferred until after 
-		//the user has actually logged on. 
+		//These properties are built so that the accessing of the sitecore webservices is deferred until after
+		//the user has actually logged on.
 		protected Dictionary<string, WordStyleStruct> _paragraphStyles;
 
         protected Dictionary<string, WordStyleStruct> ParagraphStyles
@@ -579,7 +579,7 @@ namespace InformaSitecoreWord.Util
                     if (embedElement != null)
                     {
                         iframeElement.SetAttributeValue("data-embed-link", "enabled");
-                        iframeElement.Add(embedElement); 
+                        iframeElement.Add(embedElement);
                         iframeGroupElement.Add(iframeElement);
                     }
                     if (style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
@@ -590,7 +590,7 @@ namespace InformaSitecoreWord.Util
                 }
 
                 if (IFrameEmbedBuilder.IFrameStyles.Contains(style.NameLocal))
-                { 
+                {
                     WordStyleStruct w = new WordStyleStruct();
                     //base styles are used becuase the parent level styles only exist in the plugin
                     var baseStyle = (Style)style.get_BaseStyle();
@@ -677,7 +677,7 @@ namespace InformaSitecoreWord.Util
                     }
 
                     //Get the float Value from the image hyperlink (if it is an image) and set it to the article-image element
-                    var hyprlnk = paragraph.Range.Hyperlinks.Cast<Hyperlink>().FirstOrDefault();					
+                    var hyprlnk = paragraph.Range.Hyperlinks.Cast<Hyperlink>().FirstOrDefault();
 	                if (hyprlnk != null && string.IsNullOrEmpty(hyprlnk.ScreenTip) == false)
 	                {
 						string classValue;

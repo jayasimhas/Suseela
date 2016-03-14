@@ -1,11 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using System.Linq;
 using System.Xml;
 using Informa.Library.Services.NlmExport.Validation.Config;
-using Informa.Library.Services.NlmExport.Validation.XmlResolver;
+using Informa.Library.Services.NlmExport.Validation.Error;
 using Jabberwocky.Glass.Autofac.Attributes;
-using log4net;
 
 namespace Informa.Library.Services.NlmExport.Validation
 {
@@ -13,19 +13,17 @@ namespace Informa.Library.Services.NlmExport.Validation
     public class NlmValidationService : INlmValidationService
     {
         private readonly NlmValidationConfiguration _config;
-        private readonly ILog _log;
 
-        public NlmValidationService(NlmValidationConfiguration config, ILog log)
+        public NlmValidationService(NlmValidationConfiguration config)
         {
             if (config == null) throw new ArgumentNullException(nameof(config));
-            if (log == null) throw new ArgumentNullException(nameof(log));
             _config = config;
-            _log = log;
         }
 
-        public bool ValidateXml(Stream sourceStream)
+        public ValidationResult ValidateXml(Stream sourceStream)
         {
-            StringBuilder errors = new StringBuilder();
+            var errors = new List<ValidationError>();
+            var capturedElement = string.Empty;
 
             try
             {
@@ -40,30 +38,42 @@ namespace Informa.Library.Services.NlmExport.Validation
                 settings.ValidationEventHandler += (sender, args) =>
                 {
                     if (!args.Message.Contains("The parameter entity replacement text"))
-                        errors.AppendLine(args.Message);
+                    {
+                        errors.Add(new ValidationError
+                        {
+                            Message = args.Message,
+                            LineNumber = args.Exception?.LineNumber.ToString(),
+                            LinePosition = args.Exception?.LinePosition.ToString(),
+                            LastCapturedElement = capturedElement,
+                            Exception = args.Exception
+                        });
+                    }
                 };
 
                 using (var reader = XmlReader.Create(sourceStream, settings, path))
                 {
                     while (reader.Read())
                     {
+                        capturedElement = $"Name: '{reader.Name}', Type: '{reader.NodeType}', Value: '{reader.Value}'";
                     }
                 }
-                
-                var errorString = errors.ToString();
-                if (!string.IsNullOrEmpty(errorString))
-                {
-                    _log.Error("Failed NLM validation: " + errorString);
-                    return false;
-                }
+
+                return Result(errors);
             }
             catch (Exception ex)
             {
-                _log.Error("Failed NLM validation", ex);
-                return false;
+                return Result(errors, ex);
             }
+        }
 
-            return true;
+        private static ValidationResult Result(IList<ValidationError> errors = null, Exception ex = null)
+        {
+            return new ValidationResult
+            {
+                Errors = errors ?? new List<ValidationError>(),
+                ValidationSuccessful = errors == null || !errors.Any(),
+                Exception = ex
+            };
         }
     }
 }

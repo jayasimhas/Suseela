@@ -4,6 +4,6 @@ namespace Informa.Library.Services.NlmExport.Validation
 {
     public interface INlmValidationService
     {
-        bool ValidateXml(Stream sourceStream);
+        ValidationResult ValidateXml(Stream sourceStream);
     }
 }

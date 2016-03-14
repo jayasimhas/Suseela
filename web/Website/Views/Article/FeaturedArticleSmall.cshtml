@@ -1,6 +1,6 @@
 ﻿@model FeaturedArticleViewModel
 <section class="article-preview article-preview--small">
-    @if (Model == null && Model.GlassModel != null)
+    @if (Model != null && Model.GlassModel != null)
     { 
         if (Model.DisplayImage && !string.IsNullOrEmpty(Model.ListableImage))
         {

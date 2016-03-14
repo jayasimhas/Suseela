@@ -48,6 +48,9 @@ namespace Elsevier.Web.VWB
 		public const string NumResultsParam = "max";
 		public int? NumResultsValue;
 
+        public const string InProgressParam = "inprogress";
+		public bool InProgressValue;
+
 
 		public VwbQuery()
 		{
@@ -69,7 +72,8 @@ namespace Elsevier.Web.VWB
 				ColumnKeysInOrder = new List<string>();
 			}
 			Descending = request[DescendingParam] == "1";
-			ShouldRun = request[RunParam] == "1";
+			//ShouldRun = request[RunParam] == "1";
+			ShouldRun = true;
 			if (request[EndDateParam] != null)
 			{
 				EndDate = GetDateTime(request[EndDateParam]);
@@ -84,10 +88,18 @@ namespace Elsevier.Web.VWB
 			}
 			catch (Exception)
 			{
-				
 				NumResultsValue = null;
 			}
-		}
+            if (request[InProgressParam] != null)
+            {
+                InProgressValue = true;
+            }
+            else
+            {
+                InProgressValue = false;
+            }
+        
+        }
 
 		/// <summary>
 		/// parses date from MMddyyyy
@@ -147,6 +159,10 @@ namespace Elsevier.Web.VWB
 			{
 				query += NumResultsParam + "=" + NumResultsValue + "&";
 			}
+			if(InProgressValue)
+			{
+				query += InProgressParam + "=" + InProgressValue + "&";
+			}
 			if(SortColumnKey != null)
 			{
 				query += SortColumnParam + "=" + SortColumnKey + "&";
@@ -201,6 +217,7 @@ namespace Elsevier.Web.VWB
 			clone.ColumnOrderValue = ColumnOrderValue;
 			clone.Descending = Descending;
 			clone.NumResultsValue = NumResultsValue;
+			clone.InProgressValue = InProgressValue;
 			return clone;
 		}
 	}
