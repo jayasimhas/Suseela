@@ -25,6 +25,9 @@
 .hidden-mobile-table-template {
     display: none;
 }
+.article-table--mobile-link {
+    margin-bottom: 1rem;
+}
 
 .media-exhibit,
 .article-inline-image {
@@ -66,6 +69,15 @@
         margin-right: 0;
         margin-left: 2rem;
         text-align: right;
+
+        // Prevents short paragraphs between two floating images from flowing weird
+        & + p {
+            clear: left;
+        }
+    }
+    // Prevents short paragraphs between two floating images from flowing weird
+    &--pull-left + p {
+        clear: right;
     }
 
     @include breakpoint('medium') {

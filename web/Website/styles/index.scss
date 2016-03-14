@@ -77,8 +77,6 @@
 @import 'components/search/search-sort-options';
 @import 'components/search/search-listing';
 @import 'components/search/search-pagination';
-@import 'components/search/search-buttons';
-@import 'components/search/search-datepicker';
 
 /* * * * ATOMS * * * */
 @import 'components/atoms/blockquote';
@@ -99,6 +97,7 @@
 /* * * * PAGE-SPECIFIC STYLES * * * */
 @import 'pages/account';
 @import 'pages/home';
+@import 'pages/registration';
 
 
 /* * * * PRINT STYLES * * * */
