@@ -7,21 +7,21 @@ namespace Informa.Library.Salesforce.User.Profile
 	public class SalesforceUpdateOfferUserOptIn : IUpdateOfferUserOptIn
 	{
 		protected readonly ISalesforceServiceContext Service;
-
+		 
 		public SalesforceUpdateOfferUserOptIn(
 			ISalesforceServiceContext service)
 		{
 			Service = service;
 		}
 
-		public bool Update(IUser user, bool optIn)
+		public bool Update(string userName, bool optIn)
 		{
-			if (string.IsNullOrEmpty(user?.Username))
+			if (string.IsNullOrEmpty(userName))
 			{
 				return false;
 			}
 
-			var response = Service.Execute(s => s.updateDoNotSendInformationAndOffers(user.Username, !optIn));
+			var response = Service.Execute(s => s.updateDoNotSendInformationAndOffers(userName, !optIn));
 
 			return response.IsSuccess();
 		}

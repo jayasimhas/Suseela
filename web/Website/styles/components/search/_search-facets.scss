@@ -6,6 +6,13 @@
   @include breakpoint('medium') {
     display: none;
   }
+
+  &.isExpanded {
+    @include breakpoint('medium') {
+      display: block;
+      margin-right: 0;
+    }
+  }
 }
 
 .facets {
@@ -21,8 +28,32 @@
       background-color: $informa-light-orange;
       text-align: center;
 
-      h6 {
+      &--bottom {
+        display: none;
+
+        &.isExpanded {
+          display: block;
+        }
+      }
+
+      h6.show-filters {
+        display: block;
         padding: 10px;
+      }
+
+      h6.hide-filters {
+        display: none;
+      }
+
+      &.isExpanded {
+        h6.show-filters {
+          display: none;
+        }
+
+        h6.hide-filters {
+          display: block;
+          padding: 10px;
+        }
       }
     }
   }
@@ -80,6 +111,11 @@
     &--sub {
       padding-top: 10px;
       padding-left: 30px;
+
+      // if the subfacet is collapsed, hide the subfacet list
+      &.collapsedSubfacet {
+        display: none;
+      }
 
       input[type="checkbox"] + label {
         font-size: 13px;
@@ -212,7 +248,7 @@
       width: 100%;
 
       &.collapsed {
-      display: none;
+        display: none;
       }
 
       svg {
@@ -249,6 +285,23 @@
         width: 18px;
       }
     }
+
+    &--collapse-subfacet {
+      display: inline-block; 
+
+      &.collapsedSubfacet {
+        display: none;
+      }
+    }
+
+    &--expand-subfacet {
+      display: none;
+
+      &.collapsedSubfacet {
+        display: inline-block;
+      }
+    }
+
   }
 
 

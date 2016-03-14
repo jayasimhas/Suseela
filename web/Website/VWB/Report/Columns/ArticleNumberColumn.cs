@@ -1,6 +1,10 @@
 ﻿using System.Web;
 using System.Web.UI.WebControls;
 using Elsevier.Library.CustomItems.Publication.General;
+using Glass.Mapper.Sc;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Sitecore.Configuration;
+using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Resources.Media;
 
@@ -33,17 +37,18 @@ namespace Elsevier.Web.VWB.Report.Columns
 			{
 				url += "?sc_mode=preview";
 				var hlink = new HyperLink();
-                if (HttpContext.Current.Request.IsSecureConnection)
-                {
-                    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(url).Replace("http","https");
-                }
-                else
-                {
-                    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(url);
-                }				
-				hlink.Attributes.Add("href", url);
+                //if (HttpContext.Current.Request.IsSecureConnection)
+                //{
+                //    //url = "../Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(url).Replace("http", "https");
+                //    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + url.Replace("http", "https");
+                //}
+                //else
+                //{
+                //    url = "../Util/LoginRedirectToPreview.aspx?redirect=" + url;
+                //}
+                hlink.Attributes.Add("href", url);
 				hlink.Attributes.Add("target", "_blank");
-				//hlink.Text = articleItemWrapper.ArticleNumber;
+				hlink.Text = articleItemWrapper.ArticleNumber;
 
 				var img = new Image {ImageUrl = "/VWB/images/vwb/wordicon.png"};
 				img.Attributes.Add("align", "absmiddle");
@@ -71,18 +76,26 @@ namespace Elsevier.Web.VWB.Report.Columns
 			return "an";
 		}
 
-		protected string GetDownloadLink(ArticleItem a)
+		protected string GetDownloadLink(Item articleBaseItem)
 		{
-		    return "";
-		    //TODO
-		    //Item wordDoc = Sitecore.Context.Database.GetItem(a.WordDocument.Field.TargetID);
-		    //if (wordDoc == null) return string.Empty;
+		    Database masterDb = Factory.GetDatabase("master");
+            IArticle article = articleBaseItem.GlassCast<IArticle>(inferType: true);
 
-		    //string url =
-		    //	MediaManager.GetMediaUrl(wordDoc);
+		    if (article.Word_Document == null)
+		    {
+		        return string.Empty;
+		    }
 
-		    //return url;
-		}
+            Item wordDoc = masterDb.GetItem(article.Word_Document.TargetId.ToString());
+		    if (wordDoc == null)
+		    {
+		        return string.Empty;
+		    }
+
+            string url = MediaManager.GetMediaUrl(wordDoc);
+            url = url.Replace("/-/", "/~/");
+            return url.Replace("-", " ");
+        }
 
 		#endregion
 	}

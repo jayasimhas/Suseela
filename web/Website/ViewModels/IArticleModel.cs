@@ -20,5 +20,9 @@ namespace Informa.Web.ViewModels
         string Category { get; }     
         IEnumerable<IListable> RelatedArticles { get; }  
         IEnumerable<IGlassBase> KeyDocuments { get; }
+        bool IsUserAuthenticated { get; }
+        bool IsArticleBookmarked { get; }
+        string BookmarkedText { get; }
+        string BookmarkText { get; }
     }
 }

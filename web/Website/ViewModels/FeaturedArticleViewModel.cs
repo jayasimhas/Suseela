@@ -3,7 +3,9 @@ using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Presentation;
 using Informa.Library.Site;
+using Informa.Library.User.Authentication;
 using Informa.Library.User.Entitlement;
+using Informa.Library.User.Profile;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 
 namespace Informa.Web.ViewModels
@@ -18,8 +20,10 @@ namespace Informa.Web.ViewModels
 			IArticleListItemModelFactory articleListableFactory, ITextTranslator textTranslator, IArticleSearch searcher,
             ISitecoreContext context,
             IArticleComponentFactory articleComponentFactory,
-            IEntitledProductContext entitledProductContext)
-			: base(siterootContext, articleListableFactory, textTranslator, searcher, context, articleComponentFactory, entitledProductContext)
+            IEntitledProductContext entitledProductContext,
+            IManageSavedDocuments manageSavedDocuments,
+            IAuthenticatedUserContext authenticatedUserContext)
+			: base(siterootContext, articleListableFactory, textTranslator, searcher, context, articleComponentFactory, entitledProductContext, manageSavedDocuments, authenticatedUserContext)
 		{
 			RenderingParametersContext = renderingParametersContext;
 		}

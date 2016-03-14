@@ -9,14 +9,16 @@
         "tests"
     ],
     "dependencies": {
-        "angular": "1.4.6",
+    "angular": "1.5.1",
         "jquery": "2.1.4",
         "jquery-validation": "1.14.0",
         "respondJs": "~1.4.2",
         "neat": "~1.7.2",
         "bourbon": "~4.2.6",
         "bootstrap-sass": "~3.3.6",
-        "svg4everybody": "~2.0.0"
+    "svg4everybody": "~2.0.0",
+    "angular-animate": "1.5.1",
+    "angular-touch": "1.5.1"
     },
     "overrides": {
         "modernizr-min": {

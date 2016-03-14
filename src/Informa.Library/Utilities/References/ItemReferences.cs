@@ -15,8 +15,9 @@ namespace Informa.Library.Utilities.References
 
         public Guid DCDConfigurationItem => new Guid("{}");
 	    public Guid NlmConfiguration => new Guid("{B0C03A57-0C1E-4BC9-BE7A-5871695FD79B}");
+	    public Guid NlmErrorDistributionList => new Guid("{54C6F361-9A73-453F-89E4-6230090C122A}");
 
-        #region Pharma Globals
+	    #region Pharma Globals
 
 	    public Guid NlmCopyrightStatement => new Guid("{EE38E489-23F7-4637-A152-3FDC696FAACF}");
 

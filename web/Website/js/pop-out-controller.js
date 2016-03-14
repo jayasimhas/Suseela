@@ -235,7 +235,6 @@ function popOutController(triggerElm) {
 		// `transform` to quickly position box, relative to top left corner
 		res.css.box.transform = 'translate3d(' + res.offset.box.left +'px, ' + res.offset.box.top + 'px, 0)'
 
-		console.log(res.offset.tab.left);
 		// Apply that giant blob of CSS
 		popOut.css({
 			zIndex: res.css.box.zIndex,

@@ -22,6 +22,15 @@ namespace Elsevier.Web.VWB {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// rbNoDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbNoDate;
+        
+        /// <summary>
         /// rbDateRange control.
         /// </summary>
         /// <remarks>
