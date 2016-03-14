@@ -4651,6 +4651,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+ 	/// <summary>
+	/// IError_Distribution_List Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/Error Distribution List</para>	
+	/// <para>ID: 4f0325b5-bf43-4c1b-8abc-7f183c3e4ab3</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IError_Distribution_ListConstants.TemplateIdString)]
+	public partial interface IError_Distribution_List : IGlassBase 
+	{
+								/// <summary>
+					/// The NLM Error Distribution List field.
+					/// <para>Use comma delimited list of emails</para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 6fe67217-f25b-4b34-8146-a3d4eec7fc9a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IError_Distribution_ListConstants.NLM_Error_Distribution_ListFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string NLM_Error_Distribution_List  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IError_Distribution_List Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/Error Distribution List</para>	
+		/// <para>ID: 4f0325b5-bf43-4c1b-8abc-7f183c3e4ab3</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IError_Distribution_List__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The NLM Error Distribution List field.
+						/// <para>Use comma delimited list of emails</para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 6fe67217-f25b-4b34-8146-a3d4eec7fc9a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IError_Distribution_ListConstants.NLM_Error_Distribution_ListFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string NLM_Error_Distribution_List  {get; set;}
+						}
+	
+	public static partial class IError_Distribution_ListConstants{
+
+			public const string TemplateIdString = "4f0325b5-bf43-4c1b-8abc-7f183c3e4ab3";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Error Distribution List";
+
+					
+			public static readonly ID NLM_Error_Distribution_ListFieldId = new ID("6fe67217-f25b-4b34-8146-a3d4eec7fc9a");
+			public const string NLM_Error_Distribution_ListFieldName = "NLM Error Distribution List";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation
 {
 
@@ -12055,6 +12116,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 	[SitecoreType(TemplateId=IContact_Information_PageConstants.TemplateIdString)]
 	public partial interface IContact_Information_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
+								/// <summary>
+					/// The Update Email Help Text field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 6bcc4eca-2e47-4340-8e01-72d5d7311121</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IContact_Information_PageConstants.Update_Email_Help_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Update_Email_Help_Text  {get; set;}
 				}
 
 	
@@ -12067,6 +12137,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 		[SitecoreType]
 		public partial interface IContact_Information_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
+										/// <summary>
+						/// The Update Email Help Text field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 6bcc4eca-2e47-4340-8e01-72d5d7311121</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IContact_Information_PageConstants.Update_Email_Help_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Update_Email_Help_Text  {get; set;}
 						}
 	
 	public static partial class IContact_Information_PageConstants{
@@ -12075,6 +12154,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Contact Information Page";
 
+					
+			public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
+			public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
+
+							public static readonly ID Update_Email_Help_Text__RawFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
+				public const string Update_Email_Help_Text__RawFieldName = "Update Email Help Text";
+						
 					
 			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
 			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";

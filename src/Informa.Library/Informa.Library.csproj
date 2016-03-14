@@ -331,6 +331,8 @@
     <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
     <Compile Include="Net\IIpAddressRangeCheck.cs" />
     <Compile Include="Net\IpAddressRangeCheck.cs" />
+    <Compile Include="Rss\SearchFacetGroupResult.cs" />
+    <Compile Include="Rss\SearchFacetResult.cs" />
     <Compile Include="Publishing\Scheduled\Entity\EntityAllScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\Entity\EntityDeleteItemScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\Entity\EntityDeleteScheduledPublish.cs" />
@@ -339,7 +341,9 @@
     <Compile Include="Publishing\Scheduled\Entity\EntityScheduledPublishContext.cs" />
     <Compile Include="Publishing\Scheduled\Entity\EntityScheduledPublishContextFactory.cs" />
     <Compile Include="Publishing\Scheduled\Entity\EntityScheduledPublishFactory.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\EntityUpsertScheduledPublish.cs" />
     <Compile Include="Publishing\Scheduled\Entity\IEntityScheduledPublishContextFactory.cs" />
+    <Compile Include="Publishing\Scheduled\Entity\IEntityScheduledPublishFactory.cs" />
     <Compile Include="Publishing\Scheduled\Entity\ScheduledPublish.cs" />
     <Compile Include="Rss\SearchResults.cs" />
     <Compile Include="Rss\SearchResultsRequest.cs" />
@@ -352,7 +356,10 @@
     <Compile Include="Search\Sort\HierarchicalStrategyWithCountSort.cs" />
     <Compile Include="Search\TypeAhead\CompanyTypeAheadResponseItem.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
+    <Compile Include="Services\NlmExport\ExportResult.cs" />
     <Compile Include="Services\NlmExport\INlmExportService.cs" />
+    <Compile Include="Services\NlmExport\Logging\NlmLoggingDecorator.cs" />
+    <Compile Include="Services\NlmExport\Logging\NlmLogMessage.cs" />
     <Compile Include="Services\NlmExport\Models\Body\NlmArticleBodyModel.cs" />
     <Compile Include="Services\NlmExport\Models\Common\NlmCategoryModel.cs" />
     <Compile Include="Services\NlmExport\Models\Front\Article\Contrib\NlmArticleAuthorNameModel.cs" />
@@ -432,6 +439,8 @@
     <Compile Include="Services\NlmExport\Validation\Config\NlmValidationConfiguration.cs" />
     <Compile Include="Services\NlmExport\Validation\INlmValidationService.cs" />
     <Compile Include="Services\NlmExport\Validation\NlmValidationService.cs" />
+    <Compile Include="Services\NlmExport\Validation\Error\ValidationError.cs" />
+    <Compile Include="Services\NlmExport\Validation\ValidationResult.cs" />
     <Compile Include="Services\NlmExport\Validation\XmlResolver\XmlCachingResolverDecorator.cs" />
     <Compile Include="Services\RobotsText\RobotsTextService.cs" />
     <Compile Include="Services\Sitemap\SitemapService.cs" />
@@ -556,7 +565,7 @@
     <Compile Include="Publishing\Scheduled\MongoDB\IMongoDbScheduledPublishContext.cs" />
     <Compile Include="Publishing\Scheduled\MongoDB\IScheduledPublishDocumentFactory.cs" />
     <Compile Include="Publishing\Scheduled\MongoDB\MongoDbDeleteScheduledPublish.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbFindOneSchuledPublish.cs" />
+    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbFindOneScheduledPublish.cs" />
     <Compile Include="Publishing\Scheduled\MongoDB\MongoDbInsertScheduledPublish.cs" />
     <Compile Include="Publishing\Scheduled\MongoDB\MongoDbScheduledPublishContext.cs" />
     <Compile Include="Publishing\Scheduled\MongoDB\MongoDbAllScheduledPublishes.cs" />
@@ -643,6 +652,8 @@
     <Compile Include="User\IUser.cs" />
     <Compile Include="User\IUserIpAddressContext.cs" />
     <Compile Include="User\IUserSession.cs" />
+    <Compile Include="User\Profile\AccountInfoWriteResult.cs" />
+    <Compile Include="User\Profile\IAccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IFindUserProfileByUsername.cs" />
     <Compile Include="User\Profile\IManageSubscriptions.cs" />
     <Compile Include="User\Profile\ISubscription.cs" />
@@ -660,6 +671,7 @@
     <Compile Include="User\Profile\IUpdateNewsletterUserOptIn.cs" />
     <Compile Include="User\Profile\IUpdateOfferUserOptIn.cs" />
     <Compile Include="User\Profile\INewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\IManageAccountInfo.cs" />
     <Compile Include="User\Profile\IUserProfile.cs" />
     <Compile Include="User\Profile\IUserProfileFactory.cs" />
     <Compile Include="User\Profile\NewsletterOptIn.cs" />

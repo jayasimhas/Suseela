@@ -31,7 +31,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             SignInViewModel = signInViewModel;
 
             var result = ManageSubscriptions.QueryItems(UserContext.User);
-            Subscriptions = false //(result.Success)
+            Subscriptions = (result.Success)
                 ? result.Subscriptions.Where(z => z.ProductType.Equals(ProductTypeKey))
                 : Enumerable.Empty<ISubscription>();
         }

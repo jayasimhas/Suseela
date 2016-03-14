@@ -2,7 +2,8 @@
     'use strict';
 
     var informaSearchApp = angular.module('informaSearchApp', [
-        'velir.search'
+        'velir.search',
+        'ui.bootstrap'
     ])
         .constant('apiEndpoints', {
             API_BASE: '/api',
@@ -32,5 +33,89 @@
             }
         }
     });
+
+
+// TODO: This should be split off into a new file inside the controllers directory
+    informaSearchApp.controller("InformaDatesController",
+      ["$scope", function($scope){
+
+          $scope.dateValues = {
+              dtFromValue: '',
+              dtToValue: ''
+          };
+
+      // need to differentiate the 2 datepickers
+          $scope.datepickers = {
+              dtFrom: false,
+              dtTo: false
+      }
+ 
+      // grab today and inject into field
+      $scope.today = function() {
+          $scope.dateValues.dtFromValue = "mm/dd/yyyy";
+          $scope.dateValues.dtToValue = "mm/dd/yyyy";
+      };
+      
+      // run today() function
+      $scope.today();
+
+      // setup clear
+      $scope.clear = function () {
+        $scope.dt = null;
+        // $scope.dtFrom = null;
+        // $scope.dtTo = null;
+      };
+
+      $scope.dateOptions = {
+        // dateDisabled: disabled,
+        showWeeks: false, 
+        formatDayHeader: 'EEE', 
+        formatDay: 'd',
+        startingDay: 1
+      };
+
+      // open min-cal
+      $scope.open = function($event, which) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.datepickers[which] = true;
+      };
+
+      $scope.$watch('dateValues.dtToValue', function (val) {
+
+       //   alert("VALUE: " + val);
+      });
+
+      }]);
+
+
+    // TODO: This should be split off into a new file inside the controllers directory
+    informaSearchApp.controller("InformaTypeaheadController",
+      ["$scope", function($scope){
+
+        var _selected;
+        $scope.selected = undefined;
+        $scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+
+        $scope.ngModelOptionsSelected = function(value) {
+          if (arguments.length) {
+            _selected = value;
+          } else {
+            return _selected;
+          }
+        };
+
+        $scope.modelOptions = {
+          debounce: {
+            default: 500,
+            blur: 250
+          },
+          getterSetter: true
+        };
+
+    }]);
+
+
 
 })(); 

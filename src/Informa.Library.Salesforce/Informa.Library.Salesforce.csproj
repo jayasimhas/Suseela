@@ -106,6 +106,7 @@
     <Compile Include="User\ISalesforceUser.cs" />
     <Compile Include="User\Profile\ISalesforceUserProfile.cs" />
     <Compile Include="User\Profile\ISalesforceFindUserProfile.cs" />
+    <Compile Include="User\Profile\SalesforceManageAccountInfo.cs" />
     <Compile Include="User\Profile\SalesforceManageSubscriptions.cs" />
     <Compile Include="User\Profile\SalesforceQueryOfferUserOptIn.cs" />
     <Compile Include="User\Profile\SalesforceFindUserProfile.cs" />

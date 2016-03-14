@@ -1,0 +1,91 @@
+button {
+    @extend .button--plain; // unstyles buttons
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+
+// buttons used in search facet panel
+.facets__button {
+
+    // by default, mobile button displays instead of facets at/below med
+    &--mobile {
+        display: none;
+
+        @include breakpoint('medium') {
+          display: block;
+          width: 100%;
+          margin-bottom: 30px;
+          border: 0;
+          background-color: $informa-light-orange;
+          text-align: center;
+
+          h6 {
+            padding: 10px;
+          }
+        }
+    }
+
+    // in facets__header, clears all selected facets & fields
+    &--clear {
+      float: right;
+      line-height: 29px;
+      cursor: pointer;
+      color: $informa-red;
+    }
+
+    &--clear-company {
+      padding: 0;
+      margin-right: 11px;
+      
+      svg {
+        @include svg-fill($informa-red);
+        margin: 0;
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &--toggle-section {
+        @extend .main-menu__arrow-icon;
+        @include svg-fill($color-medium-gray-8);
+        top: 0;
+        right: 0;
+
+        &.collapsed {
+            -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+        }
+    }
+
+    &--toggle-subcat {
+      float: right;
+
+      svg {
+        @include svg-fill($informa-light-gray-d);
+        width: 18px;
+      }
+    }
+
+    &--more,
+    &--less,
+    &--add {
+        margin: 20px auto 10px auto;
+        width: 100%;
+        color: $informa-red;
+
+        svg {
+            @include svg-fill($informa-red);
+            width: 10px;
+            vertical-align: middle;
+            margin-left: 3px;
+        }
+    }
+
+    &--add svg {
+        vertical-align: text-top;
+    }
+}

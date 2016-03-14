@@ -97,6 +97,9 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 				mobileEmbed.Text = mobileEmbed.Text.Trim().Equals(_mobilePHText) ? String.Empty : mobileEmbed.Text;//set mobile text to empty if it is the placeholder text
 				InsertIFrame(uxIFrameHeader.Text, uxIFrameTitle.Text, uxIFrameCaption.Text, uxIFrameSource.Text, SuggestedURL.GetSuggestedUrl(desktopEmbed.Text),
 							 SuggestedURL.GetSuggestedUrl(mobileEmbed.Text));
+
+				desktopEmbed.Text = string.Empty;
+				mobileEmbed.Text = string.Empty;
 			}
 			else
 			{

@@ -69,7 +69,7 @@ namespace Elsevier.Web.VWB
             }
 
             //var logoItem = ItemReference.VWBLogo.InnerItem;
-            LogoUrl = "";// Sitecore.StringUtil.EnsurePrefix('/', Sitecore.Resources.Media.MediaManager.GetMediaUrl(logoItem));
+            LogoUrl = "/-/media/scriplogo.jpg";
 
 			const string defaultTime = "12:00 AM";
 			txtStartTime.Text = defaultTime;
@@ -83,7 +83,7 @@ namespace Elsevier.Web.VWB
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			ReportBuilderBlacklist.Add(btnReset);
+            ReportBuilderBlacklist.Add(btnReset);
 
 			_vwbQuery = new VwbQuery(Request);
 			if (!IsPostBack
@@ -141,19 +141,37 @@ namespace Elsevier.Web.VWB
 
 		private void UpdateFields()
 		{
-
+		    bool startDate = false;
 			if (_vwbQuery.StartDate != null && _vwbQuery.StartDate != DateTime.MinValue)
 			{
-				txtStart.Text = string.Format("{0:MM/dd/yyyy}", _vwbQuery.StartDate);
+			    startDate = true;
+
+                txtStart.Text = string.Format("{0:MM/dd/yyyy}", _vwbQuery.StartDate);
 				txtStartTime.Text = string.Format("{0:h:mm tt}", _vwbQuery.StartDate);
 				EnableDate();
 			}
+
+		    bool endDate = false;
 			if (_vwbQuery.EndDate != null && _vwbQuery.EndDate.Value.Year != 9999)
 			{
-				txtEnd.Text = string.Format("{0:MM/dd/yyyy}", _vwbQuery.EndDate);
+			    endDate = true;
+
+                txtEnd.Text = string.Format("{0:MM/dd/yyyy}", _vwbQuery.EndDate);
 				txtEndTime.Text = string.Format("{0:h:mm tt}", _vwbQuery.EndDate);
 				EnableDate();
 			}
+
+		    if (!startDate && !endDate)
+		    {
+		        rbNoDate.Checked = true;
+
+		    }
+
+		    if (_vwbQuery.InProgressValue)
+		    {
+		        chkShowInProgressArticles.Checked = true;
+		    }
+
 		}
 
 		protected void EnableDate()
@@ -180,40 +198,52 @@ namespace Elsevier.Web.VWB
 		private void RunQuery(bool execute)
 		{
 			var q = _vwbQuery.Clone();
-			if (rbDateRange.Checked)
-			{
-				DateTime startDate;
-				DateTime.TryParse(txtStart.Text, out startDate);
-				DateTime endDate;
-				DateTime.TryParse(txtEnd.Text, out endDate);
+		    if (rbDateRange.Checked)
+		    {
+		        DateTime startDate;
+		        DateTime.TryParse(txtStart.Text, out startDate);
+		        DateTime endDate;
+		        DateTime.TryParse(txtEnd.Text, out endDate);
 
-				if (!endDate.Equals(DateTime.MinValue) && !startDate.Equals(DateTime.MinValue))
-				{
-					q.StartDate = startDate;
-					//endDate = endDate.AddDays(1); //setting up the range so that it include the end date
-					q.EndDate = endDate;
-				}
+		        if (!endDate.Equals(DateTime.MinValue) && !startDate.Equals(DateTime.MinValue))
+		        {
+		            q.StartDate = startDate;
+		            //endDate = endDate.AddDays(1); //setting up the range so that it include the end date
+		            q.EndDate = endDate;
+		        }
 
-				if (q.StartDate.HasValue && !string.IsNullOrEmpty(txtStartTime.Text))
-				{
-					DateTime startTime;
-					var combinedStartTime = string.Format("{0} {1}", txtStart.Text, txtStartTime.Text);
-					if (DateTime.TryParse(combinedStartTime, out startTime))
-					{
-						q.StartDate = startTime;
-					}
-				}
+		        if (q.StartDate.HasValue && !string.IsNullOrEmpty(txtStartTime.Text))
+		        {
+		            DateTime startTime;
+		            var combinedStartTime = string.Format("{0} {1}", txtStart.Text, txtStartTime.Text);
+		            if (DateTime.TryParse(combinedStartTime, out startTime))
+		            {
+		                q.StartDate = startTime;
+		            }
+		        }
 
-				if (q.EndDate.HasValue && !string.IsNullOrEmpty(txtEndTime.Text))
-				{
-					DateTime endTime;
-					var combinedEndTime = string.Format("{0} {1}", txtEnd.Text, txtEndTime.Text);
-					if (DateTime.TryParse(combinedEndTime, out endTime))
-					{
-						q.EndDate = endTime;
-					}
-				}
-			}
+		        if (q.EndDate.HasValue && !string.IsNullOrEmpty(txtEndTime.Text))
+		        {
+		            DateTime endTime;
+		            var combinedEndTime = string.Format("{0} {1}", txtEnd.Text, txtEndTime.Text);
+		            if (DateTime.TryParse(combinedEndTime, out endTime))
+		            {
+		                q.EndDate = endTime;
+		            }
+		        }
+		    }
+		    else
+		    {
+                q.StartDate = null;
+                q.EndDate = null;
+            }
+
+		    if (chkShowInProgressArticles.Checked)
+		    {
+		        q.InProgressValue = true;
+		    }
+            else
+            { q.InProgressValue = false; }
 
 			q.ShouldRun = execute;
 			q.NumResultsValue = GetMaxNumResults();

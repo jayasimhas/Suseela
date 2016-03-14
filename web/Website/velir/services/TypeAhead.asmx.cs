@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Script.Services;
 using System.Web.Services;
+using Informa.Library.Rss;
 using Informa.Library.Search.TypeAhead;
+using Informa.Library.Utilities.References;
+using Jabberwocky.Core.Caching;
+using Newtonsoft.Json;
+using Sitecore.Web;
 
 namespace Informa.Web.velir.services
 {
@@ -18,6 +24,12 @@ namespace Informa.Web.velir.services
     // [System.Web.Script.Services.ScriptService]
     public class TypeAhead : System.Web.Services.WebService
     {
+        //private readonly ICacheProvider _cache;
+
+        //public TypeAhead(ICacheProvider cache)
+        //{
+        //    _cache = cache;
+        //}
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
@@ -32,6 +44,62 @@ namespace Informa.Web.velir.services
             companies.Add(company1);
             companies.Add(company2);
             companies.Add(company3);
+
+            return companies;
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<CompanyTypeAheadResponseItem> TypeAheadCompaniesTest()
+        {
+            List<CompanyTypeAheadResponseItem> companies = new List<CompanyTypeAheadResponseItem>();
+
+            //  string cacheKey = string.Format("TypeAhead:TypeAheadCompanies:{0}", Sitecore.Context.Site.Name);
+
+            //   var allTypeAheadOptions = _cache.GetFromCache<IEnumerable<IContent_Tag_Base>>(cacheKey);
+
+            // if (allTypeAheadOptions == null)
+            {
+
+                //List<CompanyTypeAheadResponseItem> companies = new List<CompanyTypeAheadResponseItem>();
+
+                //var company1 = new CompanyTypeAheadResponseItem("Acme");
+                //var company2 = new CompanyTypeAheadResponseItem("Velir");
+                //var company3 = new CompanyTypeAheadResponseItem("Bioware");
+
+                //companies.Add(company1);
+                //companies.Add(company2);
+                //companies.Add(company3);
+
+                //return companies;
+
+            }
+
+            string searchPageId = new ItemReferences().SearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
+            string url = string.Format("http://{0}/api/informasearch?pId={1}", WebUtil.GetHostName(), searchPageId);
+
+            url = string.Format("{0}&sortBy=relevance&sortOrder=asc", url);
+            
+
+            var client = new WebClient();
+            var content = client.DownloadString(url);
+
+            var results = JsonConvert.DeserializeObject<SearchResults>(content);
+
+            foreach (var facetGroupResult in results.facets)
+            {
+                if (facetGroupResult.id == "Companies")
+                {
+                    foreach (SearchFacetResult result in facetGroupResult.values)
+                    {
+                        if (!string.IsNullOrEmpty(result.name))
+                        {
+                            companies.Add(new CompanyTypeAheadResponseItem(result.name));
+                        }
+
+                    }
+                }
+            }
 
             return companies;
         }
