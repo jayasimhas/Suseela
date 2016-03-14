@@ -6,9 +6,57 @@
   @include breakpoint('medium') {
     display: none;
   }
+
+  &.isExpanded {
+    @include breakpoint('medium') {
+      display: block;
+      margin-right: 0;
+    }
+  }
 }
 
 .facets {
+
+  &__mobile-button {
+    display: none;
+
+    @include breakpoint('medium') {
+      display: block;
+      width: 100%;
+      margin-bottom: 30px;
+      border: 0;
+      background-color: $informa-light-orange;
+      text-align: center;
+
+      &--bottom {
+        display: none;
+
+        &.isExpanded {
+          display: block;
+        }
+      }
+
+      h6.show-filters {
+        display: block;
+        padding: 10px;
+      }
+
+      h6.hide-filters {
+        display: none;
+      }
+
+      &.isExpanded {
+        h6.show-filters {
+          display: none;
+        }
+
+        h6.hide-filters {
+          display: block;
+          padding: 10px;
+        }
+      }
+    }
+  }
 
   &__header {
     padding: 20px;
@@ -18,24 +66,30 @@
       display: inline-block;
       color: $informa-black;
     }
+      cursor: pointer;
+  }
+
+  &__content {
+    padding: 20px;
   }
 
   &__section {
-    // contains section-title & section-wrapper
     font-size: 15px;
     line-height: 23px;
-    margin: 0 20px;
-    padding-top: 20px;
 
-    // top border on all except first section
-    &:not(:first-of-type) {
-      // padding-top: 20px;
+    &:not(:first-child) {
+      padding-top: 20px;
       border-top: 1px solid $informa-light-gray-d;
     }
   }
 
-  &__section-title {
-    // section-title contains section label (h4) and expand/collapse button
+  &__fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__legend {
     display: inline-block;
     width: 100%;
     padding-bottom: 15px;
@@ -46,35 +100,32 @@
       display: inline;
     }
 
-    &__button--toggle-section {
+    button {
       position: absolute;
       right: 5px;
     }
   }
 
-  &__section-wrapper {
-    // contains section-list
-  }
-
   &__section-list {
-    // contains list items
-    
-  }
 
-  &__section-list--sub {
-    // modified version of section-list used for subsections
-    padding-top: 10px;
-    padding-left: 30px;
+    &--sub {
+      padding-top: 10px;
+      padding-left: 30px;
 
-    input[type="checkbox"] + label {
-      font-size: 13px;
-      line-height: 20px;
+      // if the subfacet is collapsed, hide the subfacet list
+      &.collapsedSubfacet {
+        display: none;
+      }
+
+      input[type="checkbox"] + label {
+        font-size: 13px;
+        line-height: 20px;
+      }
     }
-  }
 
-
-  &__section-item {
-    padding-bottom: 10px;
+    li {
+      padding-bottom: 10px;
+    }
 
     input[type="checkbox"],
     input[type="radio"] {
@@ -121,12 +172,8 @@
       top: -1px;
       font-size: 30px;
     }
-  }
-
-  &__section-footer {
 
   }
-
 
   &__field-group {
     padding-left: 32px;
@@ -171,6 +218,92 @@
       vertical-align: middle;
     }
   }
+
+  &__button {
+    @extend .button--plain;
+    color: $informa-red;
+
+    &--clear {
+      float: right;
+      line-height: 29px;
+      cursor: pointer;
+    }
+
+    &--clear-company {
+      padding: 0;
+      margin-right: 11px;
+      
+      svg {
+        @include svg-fill($informa-red);
+        margin: 0;
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &--more,
+    &--less, 
+    &--add {
+      margin: 10px auto;
+      width: 100%;
+
+      &.collapsed {
+        display: none;
+      }
+
+      svg {
+        @include svg-fill($informa-red);
+        width: 10px;
+        vertical-align: middle;
+        margin-left: 3px;
+      }
+    }
+
+    &--add {
+      svg {
+        vertical-align: text-top;
+      }
+    }
+
+    &--toggle-section {
+      @include svg-fill($color-medium-gray-8);
+      // transition: all 300ms ease-in 0s;
+      // transform-origin: 50%;
+      width: 16px;
+      height: 23px;
+
+      &.collapsed {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--toggle-subcat {
+      float: right;
+
+      svg {
+        @include svg-fill($informa-light-gray-d);
+        width: 18px;
+      }
+    }
+
+    &--collapse-subfacet {
+      display: inline-block; 
+
+      &.collapsedSubfacet {
+        display: none;
+      }
+    }
+
+    &--expand-subfacet {
+      display: none;
+
+      &.collapsedSubfacet {
+        display: inline-block;
+      }
+    }
+
+  }
+
 
 }
 

@@ -1806,7 +1806,7 @@
                         var _ref$orders = _ref.orders;
                         var orders = _ref$orders === undefined ? ['asc', 'desc'] : _ref$orders;
                         var _ref$current = _ref.current;
-                        var current = _ref$current === undefined ? 'asc' : _ref$current;
+                        var current = _ref$current === undefined ? 'desc' : _ref$current;
 
                         _classCallCheck(this, SingleSortOrder);
 

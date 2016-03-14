@@ -35,6 +35,10 @@ function formController(requestVerificationToken) {
 				inputData[field.attr('name')] = value;
 			});
 
+			if(!$(form).data('on-submit')) {
+				console.warn('No submit link for form');
+			}
+
 			$.ajax({
 				url: $(form).data('on-submit'),
 				type: 'POST',
@@ -80,20 +84,22 @@ function formController(requestVerificationToken) {
                 }
 
 			});
+
+			return false;
 		});
 	};
 
 	this.showSuccessMessage = function(form) {
 		$(form).find('.js-form-success').show();
-	}
+	};
 
 	this.showError = function(form, error) {
 		$(form).find(error).show();
-	}
+	};
 
 	this.hideErrors = function(form) {
 		$(form).find('.js-form-error').hide();
-	}
-};
+	};
+}
 
 export default formController;

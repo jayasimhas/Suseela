@@ -1,24 +1,22 @@
 ﻿function newsletterSignupController() {
 
     this.checkForUserSignedUp = function(){
-        //$post('/api/PreferencesApi/IsUserSignedUp', function(response)
-        //{
-        //    if(response.success)
-        //    {
-              
-        //    }
-        //}
+        $post('/api/PreferencesApi/IsUserSignedUp', function(response)
+        {          
+            var res = response;
+            if(response)
+            {
+                $("#newsletter-signup").hide();
+            }
     
-        //};
-
+        });
+    }
     this.addControl = function(triggerElement, successCallback, failureCallback) {
         if (triggerElement) {
             $(triggerElement).on('click', (event) => {
                 var inputData = {};
-                var url = $(triggerElement).data('login-url');
-                var redirectUrl = $(triggerElement).data('login-redirect-url');
-
-                $(triggerElement).parents('.js-login-container').find('input').each(function() {
+                var url = $(triggerElement).data('signup-url');
+                $(triggerElement).parents('.newsletter-signup').find('input').each(function() {
                     inputData[$(this).attr('name')] = $(this).val();
                 })
 
@@ -26,11 +24,8 @@
 
                 $.post(url, inputData, function (response) {
                     if (response.success) {
-                        if (successCallback) {
-                            successCallback(triggerElement);
-                        }
-
-                        window.location.href = redirectUrl;
+                        $("#newsletter-signup").hide();
+                        $("#newsletter-signup-after-submit").show();
                     }
                     else {
                         if (response.redirectUrl) {
@@ -46,6 +41,8 @@
             });
         }
     }
+
+   
 }
 
-export default loginController;
+export default newsletterSignupController;

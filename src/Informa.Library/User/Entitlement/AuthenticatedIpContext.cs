@@ -11,7 +11,7 @@ namespace Informa.Library.User.Entitlement
         private readonly IUserIpAddressContext UserIpAddressContext;
         private readonly IUserSession UserSession;
         //private readonly IGetIPEntitlements GetIpEntitlements;
-        public AuthenticatedIpContext(IUserIpAddressContext userIpAddressContext, IUserSession userSession, IGetIPEntitlements getIpEntitlements)
+        public AuthenticatedIpContext(IUserIpAddressContext userIpAddressContext, IUserSession userSession)//, IGetIPEntitlements getIpEntitlements)
         {
             UserIpAddressContext = userIpAddressContext;
             UserSession = userSession;
@@ -24,17 +24,17 @@ namespace Informa.Library.User.Entitlement
         {
             get
             {
-                var entitlements = UserSession.Get<IList<IEntitlement>>(EntitlementSessionKey);
-                if (entitlements != null && entitlements.Any())
-                    return entitlements;
+                var entitlements = UserSession.Get<IList<IEntitlement>>(EntitlementSessionKey) ?? new List<IEntitlement>();
 
                 //Entitlements = GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress.ToString());
 
-                if (entitlements.Any())
+                if (entitlements != null && entitlements.Any())
                     return entitlements;
 
-                return new List<IEntitlement> {new Entitlement {ProductCode = "NONE"}};
+                entitlements.Add(new Entitlement { ProductCode = "NONE" });
+                Entitlements = entitlements;
 
+                return entitlements;
             }
             set { UserSession.Set($"{EntitlementSessionKey}{UserIpAddressContext.IpAddress}", value); }
         }
