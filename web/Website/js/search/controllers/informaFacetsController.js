@@ -163,13 +163,6 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         _this.update();
     }
 
-    /** VVV UNFINISHED VVV */
-    //** This selects the 'Select date range' radio button when the user clicks in either custom date input field **//
-    _this.selectCustomDate = function() {
-        console.log("select custom date");
-        _this.DateFilters.custom.selected = true;
-    }
-
     
 
 
