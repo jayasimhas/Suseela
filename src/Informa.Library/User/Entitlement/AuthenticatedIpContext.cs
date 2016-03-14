@@ -28,7 +28,7 @@ namespace Informa.Library.User.Entitlement
 
                 //Entitlements = GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress.ToString());
 
-                if (entitlements.Any())
+                if (entitlements != null && entitlements.Any())
                     return entitlements;
 
                 entitlements.Add(new Entitlement { ProductCode = "NONE" });
