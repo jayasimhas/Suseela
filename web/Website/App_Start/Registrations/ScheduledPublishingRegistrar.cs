@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Informa.Library.Publishing.Scheduled;
+using Informa.Library.Publishing.Scheduled.History;
 
 namespace Informa.Web.App_Start.Registrations
 {
@@ -27,6 +28,15 @@ namespace Informa.Web.App_Start.Registrations
 			//builder.RegisterType<Library.Publishing.Scheduled.Entity.EntityDeleteScheduledPublish>().As<IDeleteScheduledPublish>();
 			//builder.RegisterType<Library.Publishing.Scheduled.Entity.EntityDeleteItemScheduledPublishes>().As<IDeleteItemScheduledPublishes>();
 			//builder.RegisterType<Library.Publishing.Scheduled.Entity.EntityAllScheduledPublishes>().As<IAllScheduledPublishes>();
+
+			//builder.RegisterType<AddHistoryProcessedScheduledPublishAction>().As<IAddHistoryProcessedScheduledPublishAction>();
+			//builder.RegisterType<Library.Publishing.Scheduled.History.Entity.EntityScheduledPublishHistoryContextFactory>().As<Library.Publishing.Scheduled.History.Entity.IEntityScheduledPublishHistoryContextFactory>();
+			//builder.RegisterType<Library.Publishing.Scheduled.History.Entity.EntityScheduledPublishFactory>().As<Library.Publishing.Scheduled.History.Entity.IEntityScheduledPublishFactory>();
+			//builder.RegisterType<Library.Publishing.Scheduled.History.Entity.EntityAddScheduledPublishHistory>().As<IAddScheduledPublishHistory>();
+			//builder.RegisterType<Library.Publishing.Scheduled.History.Entity.EntityFindScheduledPublishHistories>()
+			//	.As<IFindItemScheduledPublishHistories>()
+			//	.As<IFindItemLanguageScheduledPublishHistories>()
+			//	.As<IFindItemVersionScheduledPublishHistories>();
 		}
 	}
 }

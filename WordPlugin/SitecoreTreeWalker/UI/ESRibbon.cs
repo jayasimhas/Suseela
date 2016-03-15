@@ -139,6 +139,7 @@ namespace InformaSitecoreWord.UI
 						{
 							Globals.SitecoreAddin.Log("User has logged in, closing the login screen and showing the tree...");
 							login.Close();
+							login.Dispose();
 							IsLoggedIn();
 							OpenTaskPane(taskControl, title);
 						}
@@ -233,14 +234,6 @@ namespace InformaSitecoreWord.UI
 			return redirect;
 		}
 
-		public void TodoMethod()
-		{
-			var app = Globals.SitecoreAddin.Application;
-			var doc = app.ActiveDocument;
-			Globals.SitecoreAddin.ShowTree(doc);
-		}
-
-
 		private void LoginButton_Click(object sender, RibbonControlEventArgs e)
 		{
 			if (_user.IsLoggedIn)
@@ -259,6 +252,7 @@ namespace InformaSitecoreWord.UI
 							Globals.SitecoreAddin.Log(
 								"User has logged in, closing the login screen and showing the tree...");
 							login.Close();
+							login.Dispose();
 							IsLoggedIn();
 						}
 					};
