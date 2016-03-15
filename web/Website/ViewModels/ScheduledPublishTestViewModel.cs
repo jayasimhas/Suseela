@@ -3,6 +3,7 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 using System;
 using System.Collections.Generic;
+using System.Web;
 
 namespace Informa.Web.ViewModels
 {
@@ -20,6 +21,23 @@ namespace Informa.Web.ViewModels
 			AllScheduledPublishes = allScheduledPublishes;
 			UpsertScheduledPublish = upsertScheduledPublish;
 			ProcessScheduledPublishing = processScheduledPublishing;
+		}
+
+		public string ProcessedMessage
+		{
+			get
+			{
+				var process = HttpContext.Current.Request["spTestRun"];
+
+				if (string.IsNullOrEmpty(process))
+				{
+					return "Not Processing";
+				}
+
+				ProcessScheduledPublishing.Process();
+
+				return "Processed";
+			}
 		}
 
 		public IEnumerable<IScheduledPublish> ScheduledPublishes => AllScheduledPublishes.ScheduledPublishes;
