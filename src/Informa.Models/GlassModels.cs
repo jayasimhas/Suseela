@@ -16383,194 +16383,193 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversio
 {
 
 
-	/// <summary>
+ 	/// <summary>
 	/// IImage Interface
 	/// <para></para>
 	/// <para>Path: /sitecore/templates/System/Media/Unversioned/Image</para>	
 	/// <para>ID: f1828a2c-7e5d-4bbd-98ca-320474871548</para>	
 	/// </summary>
-	[SitecoreType(TemplateId = IImageConstants.TemplateIdString)]
-	public partial interface IImage : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned.IFile
+	[SitecoreType(TemplateId=IImageConstants.TemplateIdString)]
+	public partial interface IImage : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned.IFile
 	{
+								/// <summary>
+					/// The Alt field.
+					/// <para></para>
+					/// <para>Field Type: text</para>		
+					/// <para>Field ID: 65885c44-8fcd-4a7f-94f1-ee63703fe193</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IImageConstants.AltFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Alt  {get; set;}
+								/// <summary>
+					/// The Height field.
+					/// <para></para>
+					/// <para>Field Type: text</para>		
+					/// <para>Field ID: de2ca9e4-c117-4c8a-a139-1ff4b199d15a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IImageConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Height  {get; set;}
+								/// <summary>
+					/// The Width field.
+					/// <para></para>
+					/// <para>Field Type: text</para>		
+					/// <para>Field ID: 22eac599-f13b-4607-a89d-c091763a467d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IImageConstants.WidthFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Width  {get; set;}
+								/// <summary>
+					/// The Dimensions field.
+					/// <para></para>
+					/// <para>Field Type: text</para>		
+					/// <para>Field ID: cb09946f-3218-4823-87d2-d5007c199a96</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IImageConstants.DimensionsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Dimensions  {get; set;}
+				}
+
+	
 		/// <summary>
-		/// The Alt field.
+		/// IImage Interface
 		/// <para></para>
-		/// <para>Field Type: text</para>		
-		/// <para>Field ID: 65885c44-8fcd-4a7f-94f1-ee63703fe193</para>
-		/// <para>Custom Data: </para>
+		/// <para>Path: /sitecore/templates/System/Media/Unversioned/Image</para>	
+		/// <para>ID: f1828a2c-7e5d-4bbd-98ca-320474871548</para>	
 		/// </summary>
-		[SitecoreField(IImageConstants.AltFieldName, Setting = SitecoreFieldSettings.InferType)]
-		string Alt { get; set; }
-		/// <summary>
-		/// The Height field.
-		/// <para></para>
-		/// <para>Field Type: text</para>		
-		/// <para>Field ID: de2ca9e4-c117-4c8a-a139-1ff4b199d15a</para>
-		/// <para>Custom Data: </para>
-		/// </summary>
-		[SitecoreField(IImageConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
-		string Height { get; set; }
-		/// <summary>
-		/// The Width field.
-		/// <para></para>
-		/// <para>Field Type: text</para>		
-		/// <para>Field ID: 22eac599-f13b-4607-a89d-c091763a467d</para>
-		/// <para>Custom Data: </para>
-		/// </summary>
-		[SitecoreField(IImageConstants.WidthFieldName, Setting = SitecoreFieldSettings.InferType)]
-		string Width { get; set; }
-		/// <summary>
-		/// The Dimensions field.
-		/// <para></para>
-		/// <para>Field Type: text</para>		
-		/// <para>Field ID: cb09946f-3218-4823-87d2-d5007c199a96</para>
-		/// <para>Custom Data: </para>
-		/// </summary>
-		[SitecoreField(IImageConstants.DimensionsFieldName, Setting = SitecoreFieldSettings.InferType)]
-		string Dimensions { get; set; }
-	}
+		[SitecoreType]
+		public partial interface IImage__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned.IFile__Raw
+		{
+										/// <summary>
+						/// The Alt field.
+						/// <para></para>
+						/// <para>Field Type: text</para>		
+						/// <para>Field ID: 65885c44-8fcd-4a7f-94f1-ee63703fe193</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IImageConstants.AltFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Alt  {get; set;}
+										/// <summary>
+						/// The Height field.
+						/// <para></para>
+						/// <para>Field Type: text</para>		
+						/// <para>Field ID: de2ca9e4-c117-4c8a-a139-1ff4b199d15a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IImageConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Height  {get; set;}
+										/// <summary>
+						/// The Width field.
+						/// <para></para>
+						/// <para>Field Type: text</para>		
+						/// <para>Field ID: 22eac599-f13b-4607-a89d-c091763a467d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IImageConstants.WidthFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Width  {get; set;}
+										/// <summary>
+						/// The Dimensions field.
+						/// <para></para>
+						/// <para>Field Type: text</para>		
+						/// <para>Field ID: cb09946f-3218-4823-87d2-d5007c199a96</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IImageConstants.DimensionsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Dimensions  {get; set;}
+						}
+	
+	public static partial class IImageConstants{
 
+			public const string TemplateIdString = "f1828a2c-7e5d-4bbd-98ca-320474871548";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Image";
 
-	/// <summary>
-	/// IImage Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/System/Media/Unversioned/Image</para>	
-	/// <para>ID: f1828a2c-7e5d-4bbd-98ca-320474871548</para>	
-	/// </summary>
-	[SitecoreType]
-	public partial interface IImage__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned.IFile__Raw
-	{
-		/// <summary>
-		/// The Alt field.
-		/// <para></para>
-		/// <para>Field Type: text</para>		
-		/// <para>Field ID: 65885c44-8fcd-4a7f-94f1-ee63703fe193</para>
-		/// <para>Custom Data: </para>
-		/// </summary>
-		[SitecoreField(IImageConstants.AltFieldName, Setting = SitecoreFieldSettings.InferType)]
-		string Alt { get; set; }
-		/// <summary>
-		/// The Height field.
-		/// <para></para>
-		/// <para>Field Type: text</para>		
-		/// <para>Field ID: de2ca9e4-c117-4c8a-a139-1ff4b199d15a</para>
-		/// <para>Custom Data: </para>
-		/// </summary>
-		[SitecoreField(IImageConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
-		string Height { get; set; }
-		/// <summary>
-		/// The Width field.
-		/// <para></para>
-		/// <para>Field Type: text</para>		
-		/// <para>Field ID: 22eac599-f13b-4607-a89d-c091763a467d</para>
-		/// <para>Custom Data: </para>
-		/// </summary>
-		[SitecoreField(IImageConstants.WidthFieldName, Setting = SitecoreFieldSettings.InferType)]
-		string Width { get; set; }
-		/// <summary>
-		/// The Dimensions field.
-		/// <para></para>
-		/// <para>Field Type: text</para>		
-		/// <para>Field ID: cb09946f-3218-4823-87d2-d5007c199a96</para>
-		/// <para>Custom Data: </para>
-		/// </summary>
-		[SitecoreField(IImageConstants.DimensionsFieldName, Setting = SitecoreFieldSettings.InferType)]
-		string Dimensions { get; set; }
-	}
+					
+			public static readonly ID AltFieldId = new ID("65885c44-8fcd-4a7f-94f1-ee63703fe193");
+			public const string AltFieldName = "Alt";
 
-	public static partial class IImageConstants
-	{
+						
+					
+			public static readonly ID HeightFieldId = new ID("de2ca9e4-c117-4c8a-a139-1ff4b199d15a");
+			public const string HeightFieldName = "Height";
 
-		public const string TemplateIdString = "f1828a2c-7e5d-4bbd-98ca-320474871548";
-		public static readonly ID TemplateId = new ID(TemplateIdString);
-		public const string TemplateName = "Image";
+						
+					
+			public static readonly ID WidthFieldId = new ID("22eac599-f13b-4607-a89d-c091763a467d");
+			public const string WidthFieldName = "Width";
 
+						
+					
+			public static readonly ID DimensionsFieldId = new ID("cb09946f-3218-4823-87d2-d5007c199a96");
+			public const string DimensionsFieldName = "Dimensions";
 
-		public static readonly ID AltFieldId = new ID("65885c44-8fcd-4a7f-94f1-ee63703fe193");
-		public const string AltFieldName = "Alt";
+						
+					
+			public static readonly ID DescriptionFieldId = new ID("ba8341a1-ff30-47b8-ae6a-f4947e4113f0");
+			public const string DescriptionFieldName = "Description";
 
+						
+					
+			public static readonly ID ExtensionFieldId = new ID("c06867fe-9a43-4c7d-b739-48780492d06f");
+			public const string ExtensionFieldName = "Extension";
 
+						
+					
+			public static readonly ID KeywordsFieldId = new ID("2fafe7cb-2691-4800-8848-255efa1d31aa");
+			public const string KeywordsFieldName = "Keywords";
 
-		public static readonly ID HeightFieldId = new ID("de2ca9e4-c117-4c8a-a139-1ff4b199d15a");
-		public const string HeightFieldName = "Height";
+						
+					
+			public static readonly ID Mime_TypeFieldId = new ID("6f47a0a5-9c94-4b48-abeb-42d38def6054");
+			public const string Mime_TypeFieldName = "Mime Type";
 
+						
+					
+			public static readonly ID SizeFieldId = new ID("6954b7c7-2487-423f-8600-436cb3b6dc0e");
+			public const string SizeFieldName = "Size";
 
+						
+					
+			public static readonly ID TitleFieldId = new ID("3f4b20e9-36e6-4d45-a423-c86567373f82");
+			public const string TitleFieldName = "Title";
 
-		public static readonly ID WidthFieldId = new ID("22eac599-f13b-4607-a89d-c091763a467d");
-		public const string WidthFieldName = "Width";
+						
+					
+			public static readonly ID CountryCodeFieldId = new ID("ff01bc1a-ef22-407c-9115-7dbee11451a5");
+			public const string CountryCodeFieldName = "CountryCode";
 
+						
+					
+			public static readonly ID LatitudeFieldId = new ID("5d589ec4-4842-4630-a860-540357a196f3");
+			public const string LatitudeFieldName = "Latitude";
 
+						
+					
+			public static readonly ID LocationDescriptionFieldId = new ID("e8fa62d2-13fc-4c5c-91e5-71d615591420");
+			public const string LocationDescriptionFieldName = "LocationDescription";
 
-		public static readonly ID DimensionsFieldId = new ID("cb09946f-3218-4823-87d2-d5007c199a96");
-		public const string DimensionsFieldName = "Dimensions";
+						
+					
+			public static readonly ID LongitudeFieldId = new ID("11cb6358-8f71-4f80-ab30-04d745d99d56");
+			public const string LongitudeFieldName = "Longitude";
 
+						
+					
+			public static readonly ID ZipCodeFieldId = new ID("fb540bf1-b2eb-47c9-a55f-f01b2fca5851");
+			public const string ZipCodeFieldName = "ZipCode";
 
+						
+					
+			public static readonly ID File_PathFieldId = new ID("2134867a-ac67-4dac-836c-a9264fd9d6d6");
+			public const string File_PathFieldName = "File Path";
 
-		public static readonly ID DescriptionFieldId = new ID("ba8341a1-ff30-47b8-ae6a-f4947e4113f0");
-		public const string DescriptionFieldName = "Description";
+						
+					
+			public static readonly ID FormatFieldId = new ID("fbd90442-db0c-48f1-a0f4-0427cd9afcce");
+			public const string FormatFieldName = "Format";
 
-
-
-		public static readonly ID ExtensionFieldId = new ID("c06867fe-9a43-4c7d-b739-48780492d06f");
-		public const string ExtensionFieldName = "Extension";
-
-
-
-		public static readonly ID KeywordsFieldId = new ID("2fafe7cb-2691-4800-8848-255efa1d31aa");
-		public const string KeywordsFieldName = "Keywords";
-
-
-
-		public static readonly ID Mime_TypeFieldId = new ID("6f47a0a5-9c94-4b48-abeb-42d38def6054");
-		public const string Mime_TypeFieldName = "Mime Type";
-
-
-
-		public static readonly ID SizeFieldId = new ID("6954b7c7-2487-423f-8600-436cb3b6dc0e");
-		public const string SizeFieldName = "Size";
-
-
-
-		public static readonly ID TitleFieldId = new ID("3f4b20e9-36e6-4d45-a423-c86567373f82");
-		public const string TitleFieldName = "Title";
-
-
-
-		public static readonly ID CountryCodeFieldId = new ID("ff01bc1a-ef22-407c-9115-7dbee11451a5");
-		public const string CountryCodeFieldName = "CountryCode";
-
-
-
-		public static readonly ID LatitudeFieldId = new ID("5d589ec4-4842-4630-a860-540357a196f3");
-		public const string LatitudeFieldName = "Latitude";
-
-
-
-		public static readonly ID LocationDescriptionFieldId = new ID("e8fa62d2-13fc-4c5c-91e5-71d615591420");
-		public const string LocationDescriptionFieldName = "LocationDescription";
-
-
-
-		public static readonly ID LongitudeFieldId = new ID("11cb6358-8f71-4f80-ab30-04d745d99d56");
-		public const string LongitudeFieldName = "Longitude";
-
-
-
-		public static readonly ID ZipCodeFieldId = new ID("fb540bf1-b2eb-47c9-a55f-f01b2fca5851");
-		public const string ZipCodeFieldName = "ZipCode";
-
-
-
-		public static readonly ID File_PathFieldId = new ID("2134867a-ac67-4dac-836c-a9264fd9d6d6");
-		public const string File_PathFieldName = "File Path";
-
-
-
-		public static readonly ID FormatFieldId = new ID("fbd90442-db0c-48f1-a0f4-0427cd9afcce");
-		public const string FormatFieldName = "Format";
-
-
-
+						
+			
 
 	}
 
