@@ -2,7 +2,7 @@
 
 namespace Informa.Library.Publishing.Scheduled
 {
-	public interface IProcessedScheduledPublishAction : IAction<IScheduledPublish>
+	public interface IProcessedScheduledPublishAction : IAction<IScheduledPublishResult>
 	{
 	}
 }

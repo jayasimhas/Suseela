@@ -26,7 +26,7 @@ namespace Informa.Library.Publishing.Scheduled
 			var scheduledPublishesResult = PublishScheduledPublishes.Publish(scheduledPublishes);
 			var results = scheduledPublishesResult.ScheduledPublishes.ToList();
 
-			results.ForEach(r => ProcessedActions.Process(r.ScheduledPublish));
+			results.ForEach(r => ProcessedActions.Process(r));
 		}
 	}
 }

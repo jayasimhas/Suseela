@@ -13,9 +13,9 @@ namespace Informa.Library.Publishing.Scheduled
 			UpsertScheduledPublish = upsertScheduledPublish;
 		}
 
-		public void Process(IScheduledPublish value)
+		public void Process(IScheduledPublishResult value)
 		{
-			UpsertScheduledPublish.Upsert(value);
+			UpsertScheduledPublish.Upsert(value.ScheduledPublish);
 		}
 	}
 }
