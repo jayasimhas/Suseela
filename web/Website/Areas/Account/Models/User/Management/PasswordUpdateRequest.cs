@@ -10,7 +10,7 @@ namespace Informa.Web.Areas.Account.Models.User.Management
         public string CurrentPassword { get; set; }
         [Password(ErrorMessage = ManagementValidationReasons.PasswordRequirements)]
         public string NewPassword { get; set; }
-        [Compare("Password", ErrorMessage = ManagementValidationReasons.PasswordMismatch)]
+        [Compare("NewPassword", ErrorMessage = ManagementValidationReasons.PasswordMismatch)]
         public string NewPasswordConfirm { get; set; }
     }
 }

@@ -20,10 +20,18 @@ namespace Informa.Library.Utilities.References
         // Taxonomy Folders
         Guid SubjectsTaxonomyFolder { get; }
         Guid RegionsTaxonomyFolder { get; }
-        Guid TherapyAreasTaxonomyFolder { get; } 
+        Guid TherapyAreasTaxonomyFolder { get; }
 
-		// Templates
-		Guid FolderTemplate { get; }
+        //Account Drop Down
+        Guid AccountCountries { get; }
+        Guid AccountJobFunctions { get; }
+        Guid AccountJobIndustries { get; }
+        Guid AccountNameSuffixes { get; }
+        Guid AccountPhoneTypes { get; }
+        Guid AccountSalutations { get; }
+
+        // Templates
+        Guid FolderTemplate { get; }
 
 		Guid TaxonomyRoot { get; }
 

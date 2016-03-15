@@ -62,8 +62,8 @@
       // setup clear
       $scope.clear = function () {
         $scope.dt = null;
-        // $scope.dtFrom = null;
-        // $scope.dtTo = null;
+        $scope.dateValues.dtFromValue = "mm/dd/yyyy";
+        $scope.dateValues.dtToValue = "mm/dd/yyyy";
       };
 
       $scope.dateOptions = {

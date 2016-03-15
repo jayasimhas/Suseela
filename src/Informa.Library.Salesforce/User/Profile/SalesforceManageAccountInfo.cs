@@ -29,7 +29,9 @@ namespace Informa.Library.Salesforce.User.Profile
             var response = Service.Execute(s => s.updatePassword(user.Username, curPassword, isTempPassword, newPassword));
 
             if (!response.IsSuccess())
-                return WriteErrorResult(RequestFailedKey);
+            {
+                return WriteErrorResult(response.errors?.First()?.message ?? RequestFailedKey);
+            }
 
             return new AccountInfoWriteResult()
             {

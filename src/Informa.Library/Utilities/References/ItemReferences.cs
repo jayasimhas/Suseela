@@ -41,8 +41,16 @@ namespace Informa.Library.Utilities.References
 
 		public Guid EmailPreferences => new Guid("{BAF1D4FB-7599-4EDA-8926-0A4995E4DC2D}");
 
+        #region Account Contact Info Drop Downs
 
+        public Guid AccountCountries => new Guid("{C1479FF7-F581-4A71-B25A-5FCB6312A0CF}");
+        public Guid AccountJobFunctions => new Guid("{FC588B3B-499F-41F1-BB48-A362EA72FD0C}");
+        public Guid AccountJobIndustries => new Guid("{88CC966F-877E-4B79-9C69-A5AF27CCA4DD}");
+        public Guid AccountNameSuffixes => new Guid("{A2065C72-92F8-4F71-9913-11A7AE7E6D72}");
+        public Guid AccountPhoneTypes => new Guid("{361E7AC5-BF4B-4FD2-A840-5BE7457BBDD5}");
+        public Guid AccountSalutations => new Guid("{E7366564-0E17-43FF-8ECA-0BD9829392AC}");
 
+        #endregion Account Contact Info Drop Downs
 
         #region Templates
 
