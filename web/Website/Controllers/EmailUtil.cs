@@ -277,12 +277,13 @@ namespace Informa.Web.Controllers
 		{
 			StringBuilder outputString = new StringBuilder();
 			if (!history.Any()) return outputString.ToString();
-			outputString.Append("<table><th>To State</th><th>By...</th><th>At...</th>");
+			outputString.Append("<u>Prior Workflow History:</u>");
+			outputString.Append("<table style='border: 1px solid black;border-collapse: collapse;'><th style='border: 1px solid black'>To State</th><th style='border: 1px solid black'>By...</th><th style='border: 1px solid black'>At...</th>");
 			foreach (var eachWorkflow in history)
 			{
 				var state = _service.Database.WorkflowProvider.GetWorkflow(eachWorkflow.NewState);
-				outputString.Append("<tr><td>" + state.Appearance.DisplayName + "</td><td>" +
-									eachWorkflow.User + "</td><td>" + eachWorkflow.Date.ToString(CultureInfo.InvariantCulture));
+				outputString.Append("<tr><td style='border: 1px solid black'>" + state.Appearance.DisplayName + "</td><td style='border: 1px solid black'>" +
+									eachWorkflow.User + "</td><td style='border: 1px solid black'>" + eachWorkflow.Date.ToString(CultureInfo.InvariantCulture));
 				outputString.Append("</tr>");
 			}
 			outputString.Append("</table>");

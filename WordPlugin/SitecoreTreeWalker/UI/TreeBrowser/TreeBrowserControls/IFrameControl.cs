@@ -98,8 +98,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 				InsertIFrame(uxIFrameHeader.Text, uxIFrameTitle.Text, uxIFrameCaption.Text, uxIFrameSource.Text, SuggestedURL.GetSuggestedUrl(desktopEmbed.Text),
 							 SuggestedURL.GetSuggestedUrl(mobileEmbed.Text));
 
-				desktopEmbed.Text = string.Empty;
-				mobileEmbed.Text = string.Empty;
+				InitializeValues();
 			}
 			else
 			{
@@ -324,7 +323,15 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 		}
 
 
-
+		public void InitializeValues()
+		{
+			mobileEmbed.Text = _mobilePHText;
+			desktopEmbed.Text = _desktopPHText;
+			uxIFrameHeader.Text = string.Empty;
+			uxIFrameTitle.Text = string.Empty;
+			uxIFrameCaption.Text = string.Empty;
+			uxIFrameSource.Text = string.Empty;
+		}
 
 		internal void uxMobileEmbed_LostFocus(object sender, EventArgs e)
 		{
