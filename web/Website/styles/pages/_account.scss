@@ -44,10 +44,46 @@
             float: left;
             margin-right: 1rem;
 
-            &:nth-of-type(2n+1) {
+            &:nth-of-type(2n) {
                 margin-left: 1rem;
                 margin-right: 0;
             }
+        }
+
+        &--full {
+            width: 100%;
+        }
+
+        &--bordered-left,
+        &--bordered-alt-left,
+        &--bordered-right,
+        &--bordered-alt-right {
+            border: 1px solid orange;
+
+            width: calc(50% - 1.5rem);
+        
+        }
+        &--bordered-left {
+            border-left: 1px solid $color-concrete-gray;
+            padding-left: 2rem;
+            margin-left: 2rem;
+        }
+
+        &--bordered-alt-left {
+            //padding-right: 2rem;
+            //margin-right: 2rem;
+        }
+
+        &--bordered-right {
+            border-left: 1px solid lightgray;
+            padding-left: 2rem;
+            margin-right: 0;
+        }
+
+        &--bordered-alt-right {
+            border-left: 1px solid lightgray;
+            padding-left: 2rem;
+            margin-left: 2rem;
         }
     }
 

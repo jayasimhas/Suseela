@@ -21,8 +21,7 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
              { label: 'Last 3 days', key: 'threedays', selected: false },
              { label: 'Last week', key: 'week', selected: false },
              { label: 'Last month', key: 'month', selected: false },
-             { label: 'Last year', key: 'year', selected: false },
-             { label: 'Select date range', key: 'custom', selected: false}
+             { label: 'Last year', key: 'year', selected: false }
         ];
 
         //_this.CustomStartDate = jq("#facet-by-start-date");
@@ -133,7 +132,8 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
     }
 
     _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
-        alert(new Date(endDate).getDay());
+        //alert(new Date(endDate).getDay());
+        //alert(filterKey + startDate + endDate );
 
     }
 

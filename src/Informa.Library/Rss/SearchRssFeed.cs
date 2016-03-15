@@ -29,33 +29,6 @@ namespace Informa.Library.Rss
         protected string _hostName;
         protected ItemReferences _itemReferences;
 
-        //protected override DateTime? GetItemDate(Item item)
-        //{
-        //    Control feedRendering = FeedUtil.GetFeedRendering(item);
-        //    if (feedRendering == null)
-        //        return new DateTime?();
-        //    using (new ContextItemSwitcher(item))
-        //    {
-        //        if (feedRendering is FeedRenderer)
-        //        {
-        //            FeedRenderer feedRenderer = feedRendering as FeedRenderer;
-        //            feedRenderer.Database = (Context.ContentDatabase ?? Context.Database).Name;
-
-        //            if (item.ID.ToString() == "{20353DAD-117F-4A56-B989-F00D69274759}")
-        //            {
-        //                return new DateTime?(DateTime.Now);
-        //            }
-        //            else
-        //            {
-        //                return new DateTime?(feedRenderer.GetDate());
-        //            }
-                   
-        //        }
-        //    }
-        //    throw new InvalidOperationException("FeedRenderer rendering must be of Sitecore.Web.UI.WebControls.FeedRenderer type");
-        //}
-
-
         protected override void SetupFeed(SyndicationFeed feed)
         {
                _sitecoreContext = new SitecoreContext();
@@ -97,8 +70,6 @@ namespace Informa.Library.Rss
         /// <returns></returns>
         private SyndicationFeed AddCopyrightText(SyndicationFeed feed)
         {
-            
-
             var siteConfig = _sitecoreContext.GetItem<ISite_Config>(_itemReferences.SiteConfig);
             feed.Copyright = new TextSyndicationContent(siteConfig.Copyright_Text);
 
