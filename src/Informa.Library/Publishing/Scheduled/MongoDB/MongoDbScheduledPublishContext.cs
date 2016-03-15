@@ -1,10 +1,8 @@
 ﻿using Informa.Library.Threading;
-using Jabberwocky.Glass.Autofac.Attributes;
 using MongoDB.Driver;
 
 namespace Informa.Library.Publishing.Scheduled.MongoDB
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
 	public class MongoDbScheduledPublishContext : ThreadSafe<MongoDatabase>, IMongoDbScheduledPublishContext
 	{
 		public readonly IMongoDbScheduledPublishConfiguration Configuration;

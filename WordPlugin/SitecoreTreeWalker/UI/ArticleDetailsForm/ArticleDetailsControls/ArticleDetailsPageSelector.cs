@@ -270,7 +270,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
             pageArticleInformationControl.UpdateFields(articleDetails);
             pageRelatedArticlesControl.UpdateFields(articleDetails);
             pageFeaturedImageControl.UpdateFields(articleDetails);
-            pageWorkflowControl.UpdateFields(articleDetails.ArticleWorkflowState);
+            pageWorkflowControl.UpdateFields(articleDetails.ArticleWorkflowState, articleDetails);
             pageTaxonomyControl.UpdateFields(articleDetails);
 
             if (string.IsNullOrEmpty(articleDetails.ArticleNumber))
@@ -279,7 +279,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
             }
             //pageSubjectsControl.TabController.UpdateFields(articleDetails.Subjects.ToList());	
             pageTaxonomyControl.TabController.UpdateFields(articleDetails.Taxonomoy.ToList());
-            pageWorkflowControl.UpdateFields(articleDetails.ArticleWorkflowState);
+            pageWorkflowControl.UpdateFields(articleDetails.ArticleWorkflowState, articleDetails);
         }
 
         /// <summary>

@@ -4,6 +4,7 @@
 	{
 		bool Display { get; }
 		string Message { get; }
+		string DismissText { get; }
 		string RegisterLinkText { get; }
 		string RegisterLinkUrl { get; }
 	}

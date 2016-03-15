@@ -12,5 +12,6 @@ namespace Informa.Library.Rss
         public SearchResultsRequest request { get; set; }
         public string totalResults { get; set; }
         public List<InformaSearchResultItem> results { get; set; }
+        public List<SearchFacetGroupResult> facets { get; set; }
     }
 }

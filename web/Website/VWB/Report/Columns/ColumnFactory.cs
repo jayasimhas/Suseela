@@ -22,16 +22,23 @@ namespace Elsevier.Web.VWB.Report.Columns
 							new CreatedDateTimeColumn(),
 							new PlannedPublishDateTimeColumn(),
 							new ActualPublishDateTimeColumn(),
-							new WordCountColumn(),
-							new SidebarColumn(),
-							new NotesToEditorialColumn(),
-							new ArticleLengthEstimateColumn(),
-							new PublishableAfterColumn(),
-							new WorkflowStateColumn(),
-                            new TaxonomyColumn(),
-                            new ContentTypeColumn(),
+                                new SidebarColumn(),
+                                new NotesToEditorialColumn(),
+                                        new PublishableAfterColumn(),
+                                                new WorkflowStateColumn(),
+                                                new TaxonomyColumn(),
+
+                            new WordCountColumn(),
+
+                                   new ContentTypeColumn(),
                             new MediaTypeColumn(),
                             new EmailPriorityColumn()
+
+               
+					
+					
+                        
+                     
 
                           };
 			_articleNumberColumn = new ArticleNumberColumn();

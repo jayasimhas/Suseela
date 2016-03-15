@@ -30,12 +30,16 @@ namespace Informa.Library.Salesforce.User.Profile
 				IsReceivingEmailNewsletterSpecified = true
 			}).ToArray();
 
-			var response = Service.Execute(s => s.updateEmailNewsletterOptIns(userName,optIns));
+			var response = Service.Execute(s => s.updateEmailNewsletterOptIns(userName, optIns));
 			return response.IsSuccess();
 		}
 
 		public bool IsUserSignedUp(string userName)
 		{
+			if (!Sitecore.Context.User.IsAuthenticated)
+			{
+				return false;
+			}
 			var response = Service.Execute(s => s.queryEmailNewsletterOptins(userName));
 			if (response.emailNewsletterOptins != null)
 			{

@@ -1,7 +1,4 @@
-﻿using Autofac;
-using Glass.Mapper.Sc;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Jabberwocky.Glass.Autofac.Util;
+﻿using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore;
 using Sitecore.Data.Fields;
 using Sitecore.Publishing.Pipelines.PublishItem;
@@ -11,8 +8,6 @@ namespace Informa.Library.Article.Publishing.Events
 {
 	public class ArticlePublishItemProcessing
 	{
-		protected ISitecoreService SitecoreService { get { return AutofacConfig.ServiceLocator.Resolve<ISitecoreService>(); } }
-
 		public void Process(object sender, EventArgs args)
 		{
 			var publishArgs = args as ItemProcessingEventArgs;

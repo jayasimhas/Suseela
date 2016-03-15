@@ -6,13 +6,20 @@
         <img class="article-preview__image" src="@Model.ListableImage">
     }
 
+    @if(Model != null && Model.GlassModel != null) {
     <div class="article-metadata">
-        <div class="article-preview__bookmarker pop-out__trigger js-pop-out-trigger"
+        <div class="article-preview__bookmarker pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
              data-pop-out-type="sign-in"
-             data-bookmark-id="@Model.GlassModel._Id">
-            <span class="article-preview__bookmarker-label">Bookmark</span>
+             data-bookmark-id="@Model.GlassModel._Id"
+             @( Model.IsArticleBookmarked ? "data-is-bookmarked=true" : null)>
+
+            <span   class="article-prologue__share-label js-bookmark-label"
+                    data-label-bookmark="@Model.BookmarkText"
+                    data-label-bookmarked="@Model.BookmarkedText">
+                @( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )
+            </span>
             <svg class="article-prologue__share-icon">
-                <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+                <use xlink:href="/dist/img/svg-sprite.svg#@( Model.IsArticleBookmarked ? "bookmarked" : "bookmark" )"></use>
             </svg>
         </div>
         <ul>
@@ -59,5 +66,5 @@
             }
         }
     </div>
-
+}
 </section>

@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Informa.Library.Search.ComputedFields.SearchResults;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
+using Informa.Library.User.Authentication;
+using Informa.Library.User.Profile;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Converters;
 using Sitecore.ContentSearch.SearchTypes;
@@ -29,6 +31,7 @@ namespace Informa.Library.Search.Results
         public DateTime SearchDate { get; set; }
 
         [IndexField("plannedpublishdate")]
+        [DataMember]
         public DateTime PlannedPublishDate { get; set; }
 
         [IndexField("searchurl_s")]
@@ -67,6 +70,12 @@ namespace Informa.Library.Search.Results
         [IndexField("searchdisplaytaxonomy_s")]
         [DataMember]
         public HtmlLinkList SearchDisplayTaxonomy { get; set; }
+
+        [DataMember]
+        public bool IsArticleBookmarked { get; set; }
+
+        [DataMember]
+        public bool IsUserAuthenticated { get; set; }
     }
 
 
