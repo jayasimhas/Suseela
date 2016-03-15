@@ -27,12 +27,11 @@ function bookmarkController() {
         // Used later to know what API endpoint to hit, and what DOM changes are required
         bookmark.isBookmarking = bookmark.elm.data('is-bookmarked') ? false : true;
 
-        var apiEndpoint = bookmark.isBookmarking ? 
+        var apiEndpoint = bookmark.isBookmarking ?
             '/Account/api/SavedDocumentApi/SaveItem/' :
             '/Account/api/SavedDocumentApi/RemoveItem/';
 
         if(bookmark.id) {
-
             $.ajax({
                 url: apiEndpoint,
                 type: 'POST',
@@ -47,11 +46,11 @@ function bookmarkController() {
 
                             bookmark.icon.setAttributeNS(
                                 'http://www.w3.org/1999/xlink',
-                                'href', 
+                                'href',
                                 '/dist/img/svg-sprite.svg#bookmarked');
                             bookmark.elm.data('is-bookmarked', true);
                             bookmark.label.elm.html(bookmark.label.bookmarked);
-                                
+
                         } else {
 
                             bookmark.icon.setAttributeNS(
@@ -68,8 +67,10 @@ function bookmarkController() {
 
                     }
                 },
-                error: function(response) { },
-                complete: function() { }
+                error: function(response) {
+                },
+                complete: function() {
+                }
             });
 
         }

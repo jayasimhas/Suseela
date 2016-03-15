@@ -21,7 +21,8 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
              { label: 'Last 3 days', key: 'threedays', selected: false },
              { label: 'Last week', key: 'week', selected: false },
              { label: 'Last month', key: 'month', selected: false },
-             { label: 'Last year', key: 'year', selected: false }
+             { label: 'Last year', key: 'year', selected: false },
+             { label: 'Select date range', key: 'custom', selected: false }
         ];
 
         //_this.CustomStartDate = jq("#facet-by-start-date");
@@ -132,14 +133,34 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
     }
 
     _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
-        //alert(new Date(endDate).getDay());
-        //alert(filterKey + startDate + endDate );
+
+ 
+        var filter = _this.getFilter(filterKey);
+        var filterDateLabel = _this.getFilter('dateFilterLabel');
+        filterDateLabel.setValue('custom');
+
+        var date1Unparsed = new Date(startDate);
+        var date1 =(date1Unparsed.getMonth() + 1) + '/' +date1Unparsed.getDate() + '/'  + date1Unparsed.getFullYear();
+
+        var date2Unparsed = new Date(endDate);
+        var date2 = (date2Unparsed.getMonth() + 1) + '/' + date2Unparsed.getDate() + '/' + date2Unparsed.getFullYear();
+
+        
+       filter.setValue(date1 + ";" + date2);
+
+        _this.update();
 
     }
 
+
+
     //** This builds date parameters for the search query **//
     _this.dateRangeSearch = function (filterKey, dateFilter) {
-       
+
+        if (dateFilter == 'custom') {
+            return;
+        }
+
         var filter = _this.getFilter(filterKey);
         var filterDateLabel = _this.getFilter('dateFilterLabel');
         console.log("date range: ", dateFilter);
