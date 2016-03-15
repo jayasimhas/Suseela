@@ -332,6 +332,13 @@
     <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
     <Compile Include="Net\IIpAddressRangeCheck.cs" />
     <Compile Include="Net\IpAddressRangeCheck.cs" />
+    <Compile Include="Publishing\Scheduled\IProcessedScheduledPublishAction.cs" />
+    <Compile Include="Publishing\Scheduled\IProcessedScheduledPublishActions.cs" />
+    <Compile Include="Publishing\Scheduled\IProcessScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\IUpdateProcessedScheduledPublishAction.cs" />
+    <Compile Include="Publishing\Scheduled\ProcessedScheduledPublishActions.cs" />
+    <Compile Include="Publishing\Scheduled\ProcessScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\UpdatedProcessedScheduledPublishAction.cs" />
     <Compile Include="Rss\PublicationsRssFeed.cs" />
     <Compile Include="Rss\SearchFacetGroupResult.cs" />
     <Compile Include="Rss\SearchFacetResult.cs" />
