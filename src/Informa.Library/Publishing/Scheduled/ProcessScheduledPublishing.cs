@@ -23,6 +23,12 @@ namespace Informa.Library.Publishing.Scheduled
 		public void Process()
 		{
 			var scheduledPublishes = ReadyScheduledPublishes.ScheduledPublishes;
+
+			if (!scheduledPublishes.Any())
+			{
+				return;
+			}
+
 			var scheduledPublishesResult = PublishScheduledPublishes.Publish(scheduledPublishes);
 			var groupedResults = scheduledPublishesResult.ScheduledPublishes.GroupBy(sp => sp.PublishingStatus.Status);
 
