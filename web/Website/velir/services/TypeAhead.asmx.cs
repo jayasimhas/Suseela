@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.Script.Services;
 using System.Web.Services;
 using Informa.Library.Rss;
@@ -33,7 +34,7 @@ namespace Informa.Web.velir.services
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public List<CompanyTypeAheadResponseItem> TypeAheadCompanies()
+        public string TypeAheadCompanies()
         {
             List<CompanyTypeAheadResponseItem> companies = new List<CompanyTypeAheadResponseItem>();
 
@@ -45,7 +46,7 @@ namespace Informa.Web.velir.services
             companies.Add(company2);
             companies.Add(company3);
 
-            return companies;
+            return new JavaScriptSerializer().Serialize(companies);
         }
 
         [WebMethod]
