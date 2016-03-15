@@ -43,7 +43,7 @@ namespace Informa.Library.Salesforce.User.Profile
 			var response = Service.Execute(s => s.queryEmailNewsletterOptins(userName));
 			if (response.emailNewsletterOptins != null)
 			{
-				var optionSignup = response.emailNewsletterOptins.Where(x => x.optinName.Equals("Scrip")).Count();
+				var optionSignup = response.emailNewsletterOptins.Where(x => (x !=null && x.optinName.Equals("Scrip"))).Count();
 				if (optionSignup > 0)
 				{
 					return true;
