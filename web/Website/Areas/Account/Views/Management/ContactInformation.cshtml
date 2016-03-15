@@ -6,75 +6,78 @@
         <h1 class="page-account__header">@Model.Title</h1>
         <div class="page-preferences js-preferences-user-container">
 
-            <div class="update-pass">
-            
-                <div class="user-details">
+            <div class="page-account__field-wrapper
+                        page-account__field-wrapper--float
+                        page-account__field-wrapper--bordered-alt-left">
+                <h2 class="page-account__subheader">User Name / Email Address</h2>
 
-                    @Model.UserNameTitleText
+                @Model.UserNameTitleText
 
-                    @Model.UserContext.User.Username
+                @Model.UserContext.User.Username
 
-                    @Html.Raw(Model.UpdateHelpText)
-
-                </div>
-
-                <div class="user-pass-form">
-
-                    @Model.PasswordTitleText
-
-                    <form class="form-email-preferences"
-                          data-on-submit="/Account/api/ContactInfoApi/UpdatePassword/">
-
-                        <div>
-                            <label for="CurrentPassword">
-                                @Model.CurrentPasswordLabelText <span class="asterisk-required"></span>
-                            </label>
-                            <input type="text"
-                                   name="CurrentPassword"
-                                   placeholder="@Model.CurrentPasswordPlaceholderText">
-                        </div>
-
-                        <div>
-                            <label for="NewPassword">
-                                @Html.Raw(Model.NewPasswordLabelText) <span class="asterisk-required"></span>
-                            </label>
-                            <input type="text"
-                                   name="NewPassword"
-                                   placeholder="@Model.NewPasswordPlaceholderText">
-                        </div>
-
-                        <div>
-                            <label for="NewPasswordConfirm">
-                                @Model.NewPasswordConfirmLabelText <span class="asterisk-required"></span>
-                            </label>
-                            <input type="text"
-                                   name="NewPasswordConfirm"
-                                   placeholder="@Model.NewPasswordConfirmPlaceholderText">
-                        </div>
-
-                        <div class="page-preferences__submit-wrapper">
-                            <button type="submit" class="button--filled button--fly-right">@Model.UpdatePasswordText</button>
-                        </div>
-
-                    </form>
-
-                    <p style="display: none;" class="js-preferences-user-success">@Model.PasswordUpdatedText</p>
-
-                </div>
+                <p>@Html.Raw(Model.UpdateHelpText)</p>
 
             </div>
 
-            <div class="update-contact">
+            <div class="page-account__field-wrapper
+                        page-account__field-wrapper--float
+                        page-account__field-wrapper--bordered-right">
 
-                <form class="form-email-preferences"
-                      action="/Account/api/PreferencesApi/UpdateContactInfo/" method="POST">
+                <h2 class="page-account__subheader">@Model.PasswordTitleText</h2>
 
-                    <div class="user-name">
+                <form class="form-update-account-pass"
+                      data-on-submit="/Account/api/ContactInfoApi/UpdatePassword/">
 
-                        @Model.NameTitleText
+                    <p>
+                        <label for="CurrentPassword" class="page-account__text-label">
+                            @Model.CurrentPasswordLabelText <span class="asterisk-required"></span>
+                        </label>
+                        <input type="text"
+                               name="CurrentPassword"
+                               placeholder="@Model.CurrentPasswordPlaceholderText">
+                    </p>
 
-                        <div>
-                            <label for="Salutation">
+                    <p>
+                        <label for="NewPassword" class="page-account__text-label">
+                            @Html.Raw(Model.NewPasswordLabelText) <span class="asterisk-required"></span>
+                        </label>
+                        <input type="text"
+                               name="NewPassword"
+                               placeholder="@Model.NewPasswordPlaceholderText">
+                    </p>
+
+                    <p>
+                        <label for="NewPasswordConfirm" class="page-account__text-label">
+                            @Model.NewPasswordConfirmLabelText <span class="asterisk-required"></span>
+                        </label>
+                        <input type="text"
+                               name="NewPasswordConfirm"
+                               placeholder="@Model.NewPasswordConfirmPlaceholderText">
+                    </p>
+
+                    <div class="page-preferences__submit-wrapper">
+                        <button type="submit" class="button--filled button--fly-right">@Model.UpdatePasswordText</button>
+                    </div>
+
+                </form>
+
+                <p style="display: none;" class="js-preferences-user-success">@Model.PasswordUpdatedText</p>
+
+            </div>
+
+            <hr>
+
+            <form class="form-update-account-contact"
+                  action="/Account/api/PreferencesApi/UpdateContactInfo/" method="POST">
+
+                  <div class="page-account__field-wrapper page-account__field-wrapper--float">
+
+                    <div class="page-account__field-wrapper page-account__field-wrapper--full">
+
+                        <h2 class="page-account__subheader">@Model.NameTitleText</h2>
+
+                        <p>
+                            <label for="Salutation" class="page-account__text-label">
                                 @Model.SalutationLabelText
                             </label>
                             <select name="Salutation">
@@ -83,40 +86,40 @@
                                     <option @(@Model.SfUserProfile.Salutation.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                 }
                             </select>
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="FirstName">
+                        <p>
+                            <label for="FirstName" class="page-account__text-label">
                                 @Model.FirstNameLabelText <span class="asterisk-required"></span>
                             </label>
                             <input type="text"
                                    name="FirstName"
                                    value="@Model.SfUserProfile.FirstName"
                                    placeholder="@Model.FirstNamePlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="MiddleInitial">
+                        <p>
+                            <label for="MiddleInitial" class="page-account__text-label">
                                 @Model.MiddleInitialLabelText
                             </label>
                             <input type="text"
                                    name="MiddleInitial"
                                    value="@Model.SfUserProfile.MiddleInitial"
                                    placeholder="@Model.MiddleInitialPlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="LastName">
+                        <p>
+                            <label for="LastName" class="page-account__text-label">
                                 @Model.LastNameLabelText <span class="asterisk-required"></span>
                             </label>
                             <input type="text"
                                    name="LastName"
                                    value="@Model.SfUserProfile.LastName"
                                    placeholder="@Model.LastNamePlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="NameSuffix">
+                        <p>
+                            <label for="NameSuffix" class="page-account__text-label">
                                 @Model.NameSuffixLabelText
                             </label>
                             <select name="NameSuffix">
@@ -125,40 +128,44 @@
                                     <option @(@Model.SfUserProfile.NameSuffix.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                 }
                             </select>
-                        </div>
+                        </p>
                     </div>
 
-                    <div class="user-company">
+                    <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
-                        @Model.CompanyTitleText
+                        <h2 class="page-account__subheader">@Model.CompanyTitleText</h2>
 
-                        <div>
-                            <label for="Company">
+                        <p>
+                            <label for="Company" class="page-account__text-label">
                                 @Model.CompanyLabelText <span class="asterisk-required"></span>
                             </label>
                             <input type="text"
                                    name="Company"
                                    value="@Model.SfUserProfile.Company"
                                    placeholder="@Model.CompanyPlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            @Model.AssociatedCompanyLabelText
+                        <p>
+                            <label for="Company" class="page-account__text-label">
+                                @Model.AssociatedCompanyLabelText
+                            </label>
+
                             @Model.AssociatedCompany
-                        </div>
 
-                        <div>
-                            <label for="JobTitle">
+                        </p>
+
+                        <p>
+                            <label for="JobTitle" class="page-account__text-label">
                                 @Model.JobTitleLabelText <span class="asterisk-required"></span>
                             </label>
                             <input type="text"
                                    name="JobTitle"
                                    value="@Model.SfUserProfile.JobTitle"
                                    placeholder="@Model.JobTitlePlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="JobFunction">
+                        <p>
+                            <label for="JobFunction" class="page-account__text-label">
                                 @Model.JobFunctionLabelText
                             </label>
                             <select name="JobFunction">
@@ -167,7 +174,7 @@
                                     <option @(@Model.SfUserProfile.JobFunction.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                 }
                             </select>
-                        </div>
+                        </p>
 
                         <div>
                             <label for="JobIndustry">
@@ -182,12 +189,12 @@
                         </div>
                     </div>
 
-                    <div class="user-phone">
+                    <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
-                        @Model.PhoneTitleText
+                        <h2 class="page-account__subheader">@Model.PhoneTitleText</h2>
 
-                        <div>
-                            <label for="PhoneType">
+                        <p>
+                            <label for="PhoneType" class="page-account__text-label">
                                 @Model.PhoneTypeLabelText <span class="asterisk-required"></span>
                             </label>
                             <select name="PhoneType">
@@ -196,55 +203,57 @@
                                     <option @(@Model.SfUserProfile.PhoneType.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                 }
                             </select>
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="CountryCode">
+                        <p>
+                            <label for="CountryCode" class="page-account__text-label">
                                 @Model.CountryCodeLabelText
                             </label>
                             <input type="text"
                                    name="CountryCode"
                                    value="@Model.SfUserProfile.CountryCode"
                                    placeholder="@Model.CountryCodePlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="Phone">
+                        <p>
+                            <label for="Phone" class="page-account__text-label">
                                 @Model.PhoneLabelText <span class="asterisk-required"></span>
                             </label>
                             <input type="text"
                                    name="Phone"
                                    value="@Model.SfUserProfile.Phone"
                                    placeholder="@Model.PhonePlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="PhoneExtension">
+                        <p>
+                            <label for="PhoneExtension" class="page-account__text-label">
                                 @Model.PhoneExtensionLabelText
                             </label>
                             <input type="text"
                                    name="PhoneExtension"
                                    value="@Model.SfUserProfile.PhoneExtension"
                                    placeholder="@Model.PhoneExtensionPlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="Fax">
+                        <p>
+                            <label for="Fax" class="page-account__text-label">
                                 @Model.FaxLabelText
                             </label>
                             <input type="text"
                                    name="Fax"
                                    value="@Model.SfUserProfile.Fax"
                                    placeholder="@Model.FaxPlaceholderText">
-                        </div>
+                        </p>
                     </div>
+                </div>
 
-                    <div class="user-billing">
+                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                    <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
-                        @Model.BillingTitleText
+                        <h2 class="page-account__subheader">@Model.BillingTitleText</h2>
 
-                        <div>
-                            <label for="BillCountry">
+                        <p>
+                            <label for="BillCountry" class="page-account__text-label">
                                 @Model.BillCountryLabelText <span class="asterisk-required"></span>
                             </label>
                             <select name="BillCountry">
@@ -253,73 +262,73 @@
                                     <option @(@Model.SfUserProfile.BillCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                 }
                             </select>
-                        </div>
-                        
-                        <div>
-                            <label for="BillAddress1">
+                        </p>
+
+                        <p>
+                            <label for="BillAddress1" class="page-account__text-label">
                                 @Model.BillAddress1LabelText <span class="asterisk-required"></span>
                             </label>
                             <input type="text"
                                    name="BillAddress1"
                                    value="@Model.SfUserProfile.BillAddress1"
                                    placeholder="@Model.BillAddress1PlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="BillAddress2">
+                        <p>
+                            <label for="BillAddress2" class="page-account__text-label">
                                 @Model.BillAddress2LabelText
                             </label>
                             <input type="text"
                                    name="BillAddress2"
                                    value="@Model.SfUserProfile.BillAddress2"
                                    placeholder="@Model.BillAddress2PlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="BillCity">
+                        <p>
+                            <label for="BillCity" class="page-account__text-label">
                                 @Model.BillCityLabelText <span class="asterisk-required"></span>
                             </label>
                             <input type="text"
                                    name="BillCity"
                                    value="@Model.SfUserProfile.BillCity"
                                    placeholder="@Model.BillCityPlaceholderText">
-                        </div>
-                        
-                        <div>
-                            <label for="BillState">
+                        </p>
+
+                        <p>
+                            <label for="BillState" class="page-account__text-label">
                                 @Model.BillStateLabelText
                             </label>
                             <input type="text"
                                    name="BillState"
                                    value="@Model.SfUserProfile.BillState"
                                    placeholder="@Model.BillStatePlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="BillPostalCode">
+                        <p>
+                            <label for="BillPostalCode" class="page-account__text-label">
                                 @Model.BillPostalCodeLabelText
                             </label>
                             <input type="text"
                                    name="BillPostalCode"
                                    value="@Model.SfUserProfile.BillPostalCode"
                                    placeholder="@Model.BillPostalCodePlaceholderText">
-                        </div>
+                        </p>
 
                     </div>
 
-                    <div class="user-shipping">
+                    <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
-                        @Model.ShippingTitleText
+                        <h2 class="page-account__subheader">@Model.ShippingTitleText</h2>
 
-                        <div>
+                        <p>
                             <input name="SameAsBilling"
                                    type="checkbox"
                                    data-checkbox-type="boolean">
                             <label for="SameAsBilling" class="checkbox-label">@Model.SameAsBillingLabel</label>
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="ShipCountry">
+                        <p>
+                            <label for="ShipCountry" class="page-account__text-label">
                                 @Model.ShipCountryLabelText <span class="asterisk-required"></span>
                             </label>
                             <select name="ShipCountry">
@@ -328,57 +337,57 @@
                                     <option @(@Model.SfUserProfile.ShipCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                 }
                             </select>
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="ShipAddress1">
+                        <p>
+                            <label for="ShipAddress1" class="page-account__text-label">
                                 @Model.ShipAddress1LabelText <span class="asterisk-required"></span>
                             </label>
                             <input type="text"
                                    name="ShipAddress1"
                                    value="@Model.SfUserProfile.ShipAddress1"
                                    placeholder="@Model.ShipAddress1PlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="ShipAddress2">
+                        <p>
+                            <label for="ShipAddress2" class="page-account__text-label">
                                 @Model.ShipAddress2LabelText
                             </label>
                             <input type="text"
                                    name="ShipAddress2"
                                    value="@Model.SfUserProfile.ShipAddress2"
                                    placeholder="@Model.ShipAddress2PlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="ShipCity">
+                        <p>
+                            <label for="ShipCity" class="page-account__text-label">
                                 @Model.ShipCityLabelText <span class="asterisk-required"></span>
                             </label>
                             <input type="text"
                                    name="ShipCity"
                                    value="@Model.SfUserProfile.ShipCity"
                                    placeholder="@Model.ShipCityPlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="ShipState">
+                        <p>
+                            <label for="ShipState" class="page-account__text-label">
                                 @Model.ShipStateLabelText
                             </label>
                             <input type="text"
                                    name="ShipState"
                                    value="@Model.SfUserProfile.ShipState"
                                    placeholder="@Model.ShipStatePlaceholderText">
-                        </div>
+                        </p>
 
-                        <div>
-                            <label for="ShipPostalCode">
+                        <p>
+                            <label for="ShipPostalCode" class="page-account__text-label">
                                 @Model.ShipPostalCodeLabelText
                             </label>
                             <input type="text"
                                    name="ShipPostalCode"
                                    value="@Model.SfUserProfile.ShipPostalCode"
                                    placeholder="@Model.ShipPostalCodePlaceholderText">
-                        </div>
+                        </p>
 
                     </div>
 
@@ -386,12 +395,14 @@
                         <button type="submit" class="button--filled button--fly-right">@Model.UpdateContactInfoText</button>
                     </div>
 
+                </div>
+
                 </form>
 
                 <p style="display: none;" class="js-preferences-user-success">@Model.AccountUpdatedText</p>
 
-            </div>
-            
+
+
             <div style="display: none;" class="js-preferences-user-error-container">
                 <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-general">@Model.GeneralErrorText</p>
             </div>
