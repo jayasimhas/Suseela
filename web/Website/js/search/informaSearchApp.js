@@ -3,8 +3,7 @@
 
     var informaSearchApp = angular.module('informaSearchApp', [
         'velir.search',
-        'ui.bootstrap',
-        'ngSanitize'    ])
+        'ui.bootstrap'   ])
         .constant('apiEndpoints', {
             API_BASE: '/api',
             SEARCH_ENDPOINT: '/search'
@@ -131,7 +130,8 @@ informaSearchApp.service('dataService', ['$http', function($http) {
     // returns a promise
     }).then(function successCallback(response) {
       console.log("success");
-      console.log(response.data);
+      var data = response.data;
+      console.log(data);
     }, function errorCallback(response) {
       console.log("error");
     });
