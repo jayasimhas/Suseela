@@ -94,11 +94,10 @@
                       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
                   </button>
               </legend>
-            <ul class="facets__section-list datepicker" ng-controller="InformaDatesController">
+            <ul class="facets__section datepicker" ng-controller="InformaDatesController">
 
                 <li class="facets__section-wrapper" ng-hide="collapsedate">
                     <ul class="facets__section-list">
-
                         <li class="facets__section-item" ng-repeat="dateFilter in allFacets.DateFilters">
                             <input type="radio"
                                    name="date-facet"
@@ -108,14 +107,8 @@
                                    ng-checked="{{dateFilter.selected}}"
                                    ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
                             <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
-                        </li>
-
-                        <li class="facets__section-item">
-                            <input type="radio" name="date-facet" id="custom" value="true">
-                            <label for="custom" class="ng-binding">Select date range</label>
-                           
                             <ul class="facets__section-footer">
-                                <li class="facets__field-group facets__field-group--from input-group">
+                                <li class="facets__field-group facets__field-group--from input-group" ng-show="$last">
                                     <label for="date-picker-from" ng-click="open($event,'dtFrom')">From</label>
                                     <input type="text"
                                            name="dtFrom"
@@ -131,14 +124,15 @@
                                            close-text="Close"
                                            show-button-bar="true"
                                            readonly
-                                           ng-click="open($event,'dtFrom')" />
+                                           ng-click="open($event,'dtFrom')"
+                                           />
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-default">
                                             <svg ng-click="open($event,'dtFrom')"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
                                         </button>
                                     </span>
                                 </li>
-                                <li class="facets__field-group facets__field-group--to input-group">
+                                <li class="facets__field-group facets__field-group--to input-group" ng-show="$last">
                                     <label for="date-picker-to" ng-click="open($event,'dtTo')">To</label>
                                     <input type="text"
                                            name="dtTo"
@@ -154,7 +148,7 @@
                                            show-button-bar="true"
                                            readonly
                                            ng-click="open($event,'dtTo')"
-                                           ng-change="allFacets.customDateRangeSearch(dateFilter.selected,'b','c')" />
+                                           ng-change="allFacets.customDateRangeSearch('date',dateValues.dtFromValue,dateValues.dtToValue)" />
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-default">
                                             <svg ng-click="open($event,'dtTo')"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
@@ -162,11 +156,7 @@
                                     </span>
                                 </li>
                             </ul>
-
-
-
                         </li>
-
                     </ul>
                 </li>
             </ul>
