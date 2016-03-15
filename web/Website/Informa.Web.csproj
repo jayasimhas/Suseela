@@ -1204,6 +1204,7 @@
     <Content Include="Views\Shared\Global\Sitemap.cshtml" />
     <Content Include="Views\Shared\Components\Advertisement.cshtml" />
     <Content Include="Views\Shared\Company\_RegisterMessage.cshtml" />
+    <Content Include="Views\Article\UserCallToAction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

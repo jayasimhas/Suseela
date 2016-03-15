@@ -1,4 +1,4 @@
-// http://sass-guidelin.es/#encoding
+﻿// http://sass-guidelin.es/#encoding
 @charset 'utf-8';
 
 // http://sass-guidelin.es/#the-7-1-pattern
@@ -55,6 +55,7 @@
 /* * * * COMPONENTS — ARTICLE * * * */
 @import 'components/article/article-author';
 @import 'components/article/article-body';
+@import 'components/article/article-call-to-action';
 @import 'components/article/article-executive-summary';
 @import 'components/article/article-exhibit';
 @import 'components/article/article-interview';
