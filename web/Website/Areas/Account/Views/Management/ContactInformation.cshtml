@@ -6,12 +6,8 @@
         <h1 class="page-account__header">@Model.Title</h1>
         <div class="page-preferences js-preferences-user-container">
 
-            <div class="page-account__field-wrapper
-                        page-account__field-wrapper--float
-                        page-account__field-wrapper--bordered-alt-left">
-                <h2 class="page-account__subheader">User Name / Email Address</h2>
-
-                @Model.UserNameTitleText
+            <div class="page-account-contact__column">
+                <h2 class="page-account__subheader">@Model.UserNameTitleText</h2>
 
                 @Model.UserContext.User.Username
 
@@ -19,9 +15,7 @@
 
             </div>
 
-            <div class="page-account__field-wrapper
-                        page-account__field-wrapper--float
-                        page-account__field-wrapper--bordered-right">
+            <div class="page-account-contact__column">
 
                 <h2 class="page-account__subheader">@Model.PasswordTitleText</h2>
 
@@ -70,7 +64,7 @@
             <form class="form-update-account-contact"
                   action="/Account/api/ContactInfoApi/UpdateContactInfo/" method="POST">
 
-                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                <div class="page-account-contact__column">
 
                     <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
@@ -247,7 +241,7 @@
                     </div>
                 </div>
 
-                <div class="page-account__field-wrapper page-account__field-wrapper--float">
+                <div class="page-account-contact__column">
                     <div class="page-account__field-wrapper page-account__field-wrapper--full">
 
                         <h2 class="page-account__subheader">@Model.BillingTitleText</h2>
