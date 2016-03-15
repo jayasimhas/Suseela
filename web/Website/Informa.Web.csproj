@@ -979,6 +979,9 @@
     <Content Include="Scripts\search\InformaFacetsController.js" />
     <Content Include="Scripts\vendor.js" />
     <Content Include="sitecore\login\login.js" />
+    <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.js" />
+    <Content Include="sitecore\shell\client\Applications\Nlm Export\css\ExportNlm.css" />
+    <Content Include="sitecore\shell\client\Applications\Nlm Export\scripts\ExportNlm.js" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
     <Content Include="tasks\copy.js" />
@@ -1204,6 +1207,7 @@
     <Content Include="Views\Shared\Global\Sitemap.cshtml" />
     <Content Include="Views\Shared\Components\Advertisement.cshtml" />
     <Content Include="Views\Shared\Company\_RegisterMessage.cshtml" />
+    <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

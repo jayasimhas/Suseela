@@ -145,7 +145,14 @@ tools/vagrant/scripts/customize.ps1
 copysauce.bat
 
 # Sitecore
-web/Website/sitecore
+web/Website/sitecore/*
+web/Website/sitecore/shell/*
+web/Website/sitecore/shell/client/*
+web/Website/sitecore/shell/client/Applications/*
+!web/Website/sitecore/shell/
+!web/Website/sitecore/shell/client
+!web/Website/sitecore/shell/client/Applications
+!web/Website/sitecore/shell/client/Applications/Nlm Export/
 
 web/Data/indexes/*
 web/Data/packages/*
