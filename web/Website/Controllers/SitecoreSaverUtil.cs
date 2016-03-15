@@ -257,7 +257,7 @@ namespace Informa.Web.Controllers
 				{
 					newArticle.Planned_Publish_Date = new DateTime();
 				}
-
+				newArticle.Actual_Publish_Date = DateTime.Now;
 				newArticle.Embargoed = articleStruct.Embargoed;
 				newArticle.Media_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.MediaType);
 				newArticle.Authors = articleStruct.Authors.Select(x => _sitecoreMasterService.GetItem<IAuthor>(x.ID));
