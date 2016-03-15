@@ -108,8 +108,9 @@ namespace Informa.Web.ViewModels
 
         public IEnumerable<IGlassBase> KeyDocuments => GlassModel.Supporting_Documents;
         public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
+		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
 
-        public string GetTitle(IGlassBase g)
+		public string GetTitle(IGlassBase g)
         {
             IFile f = SitecoreContext.GetItem<IFile>(g._Id);
             return (f != null && !string.IsNullOrEmpty(f.Title))
