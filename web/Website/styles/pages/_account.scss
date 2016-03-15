@@ -116,5 +116,9 @@
             @include columnize(2, 4, 1px solid $color-light-gray);
             margin-bottom: 2rem;
         }
+
+        .page-account__field-wrapper {
+            margin-bottom: 3rem;
+        }
     }
 }

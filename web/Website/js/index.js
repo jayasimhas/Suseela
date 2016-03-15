@@ -120,7 +120,7 @@ $(document).ready(function() {
 
 	// Toggle bookmark icon
 	$('.js-bookmark-article').on('click', function bookmarkArticle(e) {
-		
+
 		// Make sure proper elm gets the click event
 		if (e.target !== this) {
 			this.click();
@@ -193,6 +193,14 @@ $(document).ready(function() {
 
 	var accountEmailPreferencesController = new FormController();
 	accountEmailPreferencesController.watchForm('.form-email-preferences');
+
+
+	var accountUpdatePassController = new FormController();
+	accountUpdatePassController.watchForm('.form-update-account-pass');
+
+	var accountUpdateContactController = new FormController();
+	accountUpdateContactController.watchForm('.form-update-account-contact');
+
 
     svg4everybody();
 

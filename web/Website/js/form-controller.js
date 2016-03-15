@@ -94,7 +94,9 @@ function formController(requestVerificationToken) {
 	};
 
 	this.showError = function(form, error) {
-		$(form).find(error).show();
+		if($(form).find(error)) {
+			$(form).find(error).show();
+		}
 	};
 
 	this.hideErrors = function(form) {

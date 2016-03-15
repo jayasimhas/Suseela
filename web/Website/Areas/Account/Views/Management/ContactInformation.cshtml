@@ -2,7 +2,7 @@
 
 @if (Model.IsAuthenticated || Sitecore.Context.PageMode.IsExperienceEditor)
 {
-    <div class="page-account">
+    <div class="page-account page-account-contact">
         <h1 class="page-account__header">@Model.Title</h1>
         <div class="page-preferences js-preferences-user-container">
 
@@ -53,16 +53,16 @@
                         <button type="submit" class="button--filled button--fly-right">@Model.UpdatePasswordText</button>
                     </div>
 
-                </form>
+                    <p class="js-form-error">@Model.PasswordUpdatedText</p>
 
-                <p style="display: none;" class="js-preferences-user-success">@Model.PasswordUpdatedText</p>
+                </form>
 
             </div>
 
             <hr>
 
             <form class="form-update-account-contact"
-                  action="/Account/api/ContactInfoApi/UpdateContactInfo/" method="POST">
+                  data-on-submit="/Account/api/ContactInfoApi/UpdateContactInfo/" method="POST">
 
                 <div class="page-account-contact__column">
 
@@ -171,7 +171,7 @@
                         </p>
 
                         <div>
-                            <label for="JobIndustry">
+                            <label for="JobIndustry" class="page-account__text-label">
                                 @Model.JobIndustryLabelText <span class="asterisk-required"></span>
                             </label>
                             <select name="JobIndustry">
