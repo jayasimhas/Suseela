@@ -50,71 +50,75 @@
 				   	name="username">
 		</div>
 
-		<div class="page-account__field-wrapper page-account__field-wrapper--float">
-			<label for="firstName" class="page-account__text-label">
-				@Model.FirstNameLabelText <span class="asterisk-required"></span>
-			</label>
+		<div class="page-registration__floats-wrapper">
 
-			<input 	type="text"
-	               	class="inf-standard-form-field"
-	               	tabindex="2"
-				   	name="firstName"
-				   	placeholder="@Model.FirstNamePlaceholderText">
+			<div class="page-account__field-wrapper page-account__field-wrapper--float">
+				<label for="firstName" class="page-account__text-label">
+					@Model.FirstNameLabelText <span class="asterisk-required"></span>
+				</label>
 
-		</div>
+				<input 	type="text"
+		               	class="inf-standard-form-field"
+		               	tabindex="2"
+					   	name="firstName"
+					   	placeholder="@Model.FirstNamePlaceholderText">
 
-		<div class="page-account__field-wrapper page-account__field-wrapper--float">
-			<label for="lastName" class="page-account__text-label">
-				@Model.LastNameLabelText <span class="asterisk-required"></span>
-			</label>
+			</div>
 
-			<input 	type="text"
-	               	class="inf-standard-form-field"
-	               	placeholder=""
-	               	tabindex="3"
-				   	name="lastName">
-		</div>
+			<div class="page-account__field-wrapper page-account__field-wrapper--float">
+				<label for="lastName" class="page-account__text-label">
+					@Model.LastNameLabelText <span class="asterisk-required"></span>
+				</label>
 
-		<div class="page-account__field-wrapper page-account__field-wrapper--float">
-			<label for="password" class="page-account__text-label">
-				@Model.PasswordLabelText <span class="asterisk-required"></span>
-			</label>
+				<input 	type="text"
+		               	class="inf-standard-form-field"
+		               	placeholder=""
+		               	tabindex="3"
+					   	name="lastName">
+			</div>
 
-			<p class="	page-registration__error
-						js-form-error
-						js-form-error-PasswordRequirements">
-				@Model.PasswordRequirementsErrorText
-			</p>
+			<div class="page-account__field-wrapper page-account__field-wrapper--float">
+				<label for="password" class="page-account__text-label">
+					@Model.PasswordLabelText <span class="asterisk-required"></span>
+				</label>
 
-			<p class="	page-registration__error
-						js-form-error
-						js-form-error-PasswordMismatch">
-				@Model.PasswordMismatchErrorText
-			</p>
+				<p class="	page-registration__error
+							js-form-error
+							js-form-error-PasswordRequirements">
+					@Model.PasswordRequirementsErrorText
+				</p>
 
-			<input 	name="password"
-					class="inf-standard-form-field"
-					type="password"
-					placeholder="@Model.PasswordPlaceholderText"
-					tabindex="4">
-		</div>
+				<p class="	page-registration__error
+							js-form-error
+							js-form-error-PasswordMismatch">
+					@Model.PasswordMismatchErrorText
+				</p>
 
-		<div class="page-account__field-wrapper page-account__field-wrapper--float">
-			<label for="passwordRepeat" class="page-account__text-label">
-				@Model.PasswordRepeatLabelText <span class="asterisk-required"></span>
-			</label>
+				<input 	name="password"
+						class="inf-standard-form-field"
+						type="password"
+						placeholder="@Model.PasswordPlaceholderText"
+						tabindex="4">
+			</div>
 
-			<p class="	page-registration__error
-						js-form-error
-						js-form-error-PasswordMismatch">
-				@Model.PasswordMismatchErrorText
-			</p>
+			<div class="page-account__field-wrapper page-account__field-wrapper--float">
+				<label for="passwordRepeat" class="page-account__text-label">
+					@Model.PasswordRepeatLabelText <span class="asterisk-required"></span>
+				</label>
 
-			<input 	name="passwordRepeat"
-					class="inf-standard-form-field"
-					type="password"
-					placeholder=""
-					tabindex="5">
+				<p class="	page-registration__error
+							js-form-error
+							js-form-error-PasswordMismatch">
+					@Model.PasswordMismatchErrorText
+				</p>
+
+				<input 	name="passwordRepeat"
+						class="inf-standard-form-field"
+						type="password"
+						placeholder=""
+						tabindex="5">
+			</div>
+			
 		</div>
 
 		<hr>
