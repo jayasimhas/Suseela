@@ -35,7 +35,8 @@
     <form class="facets__section"
             ng-repeat="group in allFacets.facetGroups">
 
-          <fieldset ng-show="group.label == 'Companies'" class="facets__fieldset">
+          <fieldset 
+            ng-show="group.label == 'Companies'" class="facets__fieldset">
               <legend class="facets__legend facets__section-header">
                   <h4>Companies</h4>
                   <button class="facets__button facets__button--toggle-section"
@@ -46,26 +47,29 @@
                   </button>
               </legend>
               <ul class="facets__section-list" ng-hide="collapsecompanies">
-                  <li>
+                  <!--<li>
                       <input type="checkbox" class="visuallyhidden">
                       <label>Amgen (537)</label>
-                  </li>
-                  <li>
-                      <input type="checkbox" class="visuallyhidden">
-                      <label>Novartis (221)</label>
-                  </li>
-                  <li>
-                      <input type="checkbox" class="visuallyhidden">
-                      <label>Sandoz International GMBH (125)</label>
-                  </li>
-                  <li class="facets__company-input" ng-show="isAddingCompany">
+                  </li>-->
+                  <li class="facets__company-input" ng-show="isAddingCompany"
+                    ng-controller="InformaTypeaheadController"
+                    >
                       <div class="facets__field-group facets__field-group--companies">
                           <button class="facets__button facets__button--clear-company"
                                   ng-class="{'collapsed': isCollapsedCompanies}"
                                   ng-click="">
                               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use></svg>
                           </button>
-                          <input type="text" name="company-facet" placeholder="Company Name">
+                          <input 
+                            type="text" 
+                            id="companies" 
+                            name="companies" 
+                            placeholder="enter a company"
+                            ng-model="selected"
+                            typeahead="companies for companies in companies"
+                            class="form-control"
+                            >
+                            @* typeahead="companies for companies in companies | filter:$viewValue | limitTo:10" *@
                       </div>
                   </li>
               </ul>

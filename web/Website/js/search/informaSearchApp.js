@@ -3,8 +3,8 @@
 
     var informaSearchApp = angular.module('informaSearchApp', [
         'velir.search',
-        'ui.bootstrap'
-    ])
+        'ui.bootstrap',
+        'ngSanitize'    ])
         .constant('apiEndpoints', {
             API_BASE: '/api',
             SEARCH_ENDPOINT: '/search'
@@ -87,34 +87,97 @@
        //   alert("VALUE: " + val);
       });
 
-      }]);
-
-
-    // TODO: This should be split off into a new file inside the controllers directory
-    informaSearchApp.controller("InformaTypeaheadController",
-      ["$scope", function($scope){
-
-        var _selected;
-        $scope.selected = undefined;
-        $scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
-
-        $scope.ngModelOptionsSelected = function(value) {
-          if (arguments.length) {
-            _selected = value;
-          } else {
-            return _selected;
-          }
-        };
-
-        $scope.modelOptions = {
-          debounce: {
-            default: 500,
-            blur: 250
-          },
-          getterSetter: true
-        };
-
     }]);
+
+
+
+
+// TODO: This should be split off into a new file inside the controllers directory
+
+  // informaSearchApp.factory("dataFactoryy", function(){
+  //   var states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Dakota", "North Carolina", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
+    
+  //   return states;
+  // });
+  
+// define factory for data source
+  informaSearchApp.factory("dataFactory", ['$http', function($http) {
+
+    var urlBase = '/velir/services/TypeAhead.asmx/TypeAheadCompanies';
+    var url = 'http://dev.ibi.velir.com/velir/services/TypeAhead.asmx/TypeAheadCompanies';
+
+    var dataFactory = {};
+     
+    dataFactory.getCompanies = function () {
+      return $http.get(urlBase);
+    }
+
+    return dataFactory;
+  }]);
+
+// service to return data
+informaSearchApp.service('dataService', ['$http', function($http) {
+
+    var url = '/velir/services/TypeAhead.asmx/TypeAheadCompanies';
+     
+    // retuns a promise
+    // this.getCompanies = function () {
+    //   return $http.get(url);
+    // };
+    
+    $http({
+      method: 'GET',
+      url: 'http://informa-insight.rose.velir.com/velir/services/TypeAhead.asmx/TypeAheadCompanies'
+    // returns a promise
+    }).then(function successCallback(response) {
+      console.log("success");
+      console.log(response.data);
+    }, function errorCallback(response) {
+      console.log("error");
+    });
+}]);
+
+  
+// setup controller and pass data source
+  informaSearchApp.controller("InformaTypeaheadController", function($scope, dataService){
+    // ["$scope", function($scope, States){
+
+      // var _selected;
+      $scope.selected = undefined;
+      $scope.companies = dataService;
+      // console.log(dataFactory);
+
+      // $scope.ngModelOptionsSelected = function(value) {
+      //   if (arguments.length) {
+      //     _selected = value;
+      //   } else {
+      //     return _selected;
+      //   }
+      // };
+
+      // $scope.modelOptions = {
+      //   debounce: {
+      //     default: 500,
+      //     blur: 250
+      //   },
+      //   getterSetter: true
+      // };
+      
+      // $.ajax({
+      //   type: 'GET',
+      //   url: 'http://dev.ibi.velir.com/velir/services/TypeAhead.asmx/TypeAheadCompanies',
+      //   dataType: 'xml',
+      //   success: function(xml){
+      //      console.log(xml);
+            // $(xml).find('artist-list').each(function(){
+            // $(this).find('artist').each(function(){
+            //                 var ext = $(this).attr('ext');
+            //                 alert(ext);
+            //         });
+            // });
+    // }
+
+  });
 
 
 
