@@ -39,15 +39,30 @@ namespace Informa.Web.Models
             ArticleListableFactory = DependencyResolver.Current.GetService<IArticleListItemModelFactory>();
 
 
-        }                                       
+        }
 
-        /// <summary>
-        /// Render HTML for a link
-        /// 
-        /// </summary>
-        /// <typeparam name="T">The model type</typeparam><param name="model">The model</param><param name="field">The link field to user</param><param name="attributes">Any additional link attributes</param><param name="isEditable">Make the link editable</param><param name="contents">Content to override the default decription or item name</param>
-        /// <returns/>
-        public virtual IHtmlString RenderTokenBody(Expression<Func<TK, string>> expression, string partialName)
+		public virtual IHtmlString RenderCompanyLink(Expression<Func<TK, string>> expression)
+		{
+			var dealRegex = new Regex(DCDConstants.DealTokenRegex);
+			var fieldValue = expression.Compile()(this.Model);
+
+			foreach (Match match in dealRegex.Matches(fieldValue))
+			{
+				var replace = DCDTokenMatchers.dealMatchEval(match);
+
+				fieldValue = fieldValue.Replace(match.Value, replace.ToString());
+			}
+
+			return HtmlHelper.Raw(fieldValue);			
+		}
+
+		/// <summary>
+		/// Render HTML for a link
+		/// 
+		/// </summary>
+		/// <typeparam name="T">The model type</typeparam><param name="model">The model</param><param name="field">The link field to user</param><param name="attributes">Any additional link attributes</param><param name="isEditable">Make the link editable</param><param name="contents">Content to override the default decription or item name</param>
+		/// <returns/>
+		public virtual IHtmlString RenderTokenBody(Expression<Func<TK, string>> expression, string partialName)
         {
             var dealRegex = new Regex(DCDConstants.DealTokenRegex);
 

@@ -78,7 +78,8 @@ namespace Informa.Library.Services.NlmExport
             {
                 var exportFolder = Path.GetFullPath(_.Settings.NlmExportPath);
                 var fileName = GetFilenamePrefix(article) + "_del.xml";
-                File.Delete(Path.Combine(exportFolder, fileName));
+                Directory.CreateDirectory(exportFolder);
+                File.Open(Path.Combine(exportFolder, fileName), FileMode.Create).Dispose();
             }
             catch (Exception ex)
             {

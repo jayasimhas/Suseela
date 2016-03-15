@@ -149,7 +149,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 			else if (e.KeyCode == Keys.Enter)
 			{
 				CompanyNameGo();
-				//uxCompanyName.Focus();
+				uxCompanyName.Focus();
 			}
 
 			uxViewDetails.Enabled = false;

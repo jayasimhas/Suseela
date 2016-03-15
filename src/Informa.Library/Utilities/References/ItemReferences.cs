@@ -34,14 +34,23 @@ namespace Informa.Library.Utilities.References
 		public Guid SiteConfig  => new Guid("{BE2B8891-635F-49C1-8BA9-4D2F6C7C5ACE}");
 
         public Guid SearchPage  => new Guid("{0FF66777-7EC7-40BE-ABC4-6A20C8ED1EF0}");
+        public Guid PublicatonsRssSearchPage  => new Guid("{A9540B26-298D-4F2C-AB43-3E5904444D50}");
         public Guid VwbSearchPage  => new Guid("{A0163A51-2FF8-4A9C-8FBA-6516546E5AE1}");
 
 		public Guid SubscriptionPage => new Guid("{39611772-CD97-4610-BB55-F96BE4C1F540}");
 
 		public Guid EmailPreferences => new Guid("{BAF1D4FB-7599-4EDA-8926-0A4995E4DC2D}");
 
+        #region Account Contact Info Drop Downs
 
+        public Guid AccountCountries => new Guid("{C1479FF7-F581-4A71-B25A-5FCB6312A0CF}");
+        public Guid AccountJobFunctions => new Guid("{FC588B3B-499F-41F1-BB48-A362EA72FD0C}");
+        public Guid AccountJobIndustries => new Guid("{88CC966F-877E-4B79-9C69-A5AF27CCA4DD}");
+        public Guid AccountNameSuffixes => new Guid("{A2065C72-92F8-4F71-9913-11A7AE7E6D72}");
+        public Guid AccountPhoneTypes => new Guid("{361E7AC5-BF4B-4FD2-A840-5BE7457BBDD5}");
+        public Guid AccountSalutations => new Guid("{E7366564-0E17-43FF-8ECA-0BD9829392AC}");
 
+        #endregion Account Contact Info Drop Downs
 
         #region Templates
 

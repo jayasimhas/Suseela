@@ -23,7 +23,7 @@ namespace Informa.Library.Publishing.Scheduled
 				var scheduledPublishes = AllScheduledPublishes.ScheduledPublishes;
 				var now = DateTime.Now;
 
-				return scheduledPublishes.Where(sc => !sc.Published && sc.PublishOn <= now);
+				return scheduledPublishes.Where(sc => !sc.Published && sc.PublishOn <= now).ToList();
 			}
 		}
 	}

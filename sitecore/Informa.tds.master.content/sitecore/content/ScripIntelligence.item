@@ -24,6 +24,13 @@ content-length: 16
 
 20160504T140000Z
 ----field----
+field: {073E357F-68A0-422F-B188-EB9CC874536A}
+name: Reset Password Page
+key: reset password page
+content-length: 38
+
+{1F568EC6-31C4-490E-AF33-B46FB3524A30}
+----field----
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
@@ -160,7 +167,7 @@ name: Register Link
 key: register link
 content-length: 131
 
-<link text="Register" linktype="internal" class="" title="" target="" querystring="" id="{E60C1B8F-F8CD-4987-9D3F-64D778DB84EE}" />
+<link text="Register" linktype="internal" class="" title="" target="" querystring="" id="{BD836069-C52C-4B3F-B170-39082AD580ED}" />
 ----field----
 field: {4352F61D-BAB4-4CE4-888E-562FFC1C643C}
 name: Purchase Link
@@ -183,12 +190,65 @@ content-length: 92
 
 <link text="Twitter" linktype="external" url="http://www.twitter.com" anchor="" target="" />
 ----field----
+field: {8A7F6685-C505-419F-9BB0-0769F24C9947}
+name: Customer Support Text
+key: customer support text
+content-length: 137
+
+Need help? Contact us at <strong>(800) 332-2181</strong>, <strong>+1 (908) 748-1221</strong>, or <a href="\'#\'">custcare@informa.com</a>
+----field----
+field: {2BDA24FC-E3D6-4774-81A1-66C0C096C474}
+name: Forgot Password Text
+key: forgot password text
+content-length: 161
+
+<h3>Forgot your password?</h3>
+<p>&nbsp;</p>
+<p>Enter the email address associated with your account and an email will be sent to you to reset your password.</p>
+----field----
 field: {0727143B-4AA3-4853-BB84-B01ABC4C2AD4}
 name: Main Navigation
 key: main navigation
 content-length: 38
 
 {A5B851A7-8477-4EF0-AFB4-F373C28280D0}
+----field----
+field: {A9FEC917-3234-4782-B449-A8DDA61126A8}
+name: Reset Password Email Body
+key: reset password email body
+content-length: 150
+
+<p><strong>Dear #first_name# #last_name#,</strong></p>
+<p><strong>You have requested to chang the password for your SCRIP account.<br />
+</strong></p>
+----field----
+field: {F0C09D25-7D73-448B-A2D3-0A8A46CE532C}
+name: Reset Password Email Support
+key: reset password email support
+content-length: 143
+
+Have questions or need help? Contact us at (888) 670-8900. +1 (908) 748-1221 or <a href="mailto:custcare@informa.com">custcare@informa.com</a>.
+----field----
+field: {5630B7A0-4F8C-4BC8-BEBB-8AA1092E1C19}
+name: Reset Password Email Link Text
+key: reset password email link text
+content-length: 34
+
+Click Here to Update Your Password
+----field----
+field: {BE0AA45C-7A7B-435F-9E68-77903413D6FC}
+name: Reset Password Email Subject
+key: reset password email subject
+content-length: 19
+
+Reset Your Password
+----field----
+field: {E7DA68A3-D817-487F-99D9-8A27ABA050ED}
+name: RSS Link
+key: rss link
+content-length: 131
+
+<link text="RSS Feed" linktype="internal" class="" title="" target="" querystring="" id="{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" />
 ----field----
 field: {6F5117BC-2706-48DA-B5D3-0FD785FD9979}
 name: Email From Address
@@ -197,12 +257,54 @@ content-length: 19
 
 support@informa.com
 ----field----
+field: {223891E7-0345-450B-A858-A10FDA0F718D}
+name: Email Logo
+key: email logo
+content-length: 58
+
+<image mediaid="{5F8207FA-F049-47C0-8FC5-8F6D7E808E19}" />
+----field----
+field: {ABDD8A75-DCA3-4B79-9922-916DFDB77A4F}
+name: Email Footer
+key: email footer
+content-length: 200
+
+<p><strong>Footer Content</strong></p>
+<p><strong><a href="mailto:#email#">#email#</a></strong></p>
+<p><strong><a href="~/link.aspx?_id=110D559FDEA542EA9C1C8A5DF7E70EF9&amp;_z=z">Home</a></strong></p>
+----field----
 field: {6B8B6C6D-013A-4BA0-A166-F57747668B0F}
 name: My Account Page
 key: my account page
 content-length: 38
 
 {39611772-CD97-4610-BB55-F96BE4C1F540}
+----field----
+field: {281273CB-8A6A-4637-B88E-1F278448CA11}
+name: Registration Email Subject
+key: registration email subject
+content-length: 39
+
+SCRIP Intelligence Account Registration
+----field----
+field: {A2F0A1FF-1D99-4D0D-AD42-1A55F9285554}
+name: Registration Email Body
+key: registration email body
+content-length: 326
+
+<p><strong>Dear #first_name# #last_name#,</strong></p>
+<p>Thank you for creating your online account!</p>
+<p>If you have any questions, please email us at <a href="mailto:custcare@informa.com">custcare@informa.com</a> or call (800) 332-2181 or +1 (908) 748-1221</p>
+<p>&nbsp;</p>
+<p>Thank you,</p>
+<p>Informa Customer Care</p>
+----field----
+field: {774124E0-BE3A-4DB9-AF48-333BE5AC0F27}
+name: Recognized IP Announcment Text
+key: recognized ip announcment text
+content-length: 93
+
+Hello #Company_Name#, you can receive access from your company by registering for an account.
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name

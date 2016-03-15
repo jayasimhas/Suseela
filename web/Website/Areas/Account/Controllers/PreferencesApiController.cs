@@ -45,20 +45,14 @@ namespace Informa.Web.Areas.Account.Controllers
 		}
 
 
-		[HttpPost]
-		[ArgumentsRequired]
-		public IHttpActionResult SignupUser(string userName)
+		[HttpGet]
+		public bool SignupUser(string userName)
 		{
 			var userNewsletterOptIns = new List<INewsletterUserOptIn>() { NewsletterUserOptInFactory.Create(NewsletterType.Scrip,true) };
 			var nResp = NewsletterOptIn.Update(userNewsletterOptIns, userName);
 			var oResp = OffersOptIn.Update(userName,false);
-
 			var success = nResp && oResp;
-
-			return Ok(new
-			{
-				success = success
-			});
+	    	return success;
 		}
 
 		[HttpGet]

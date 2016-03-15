@@ -1,23 +1,27 @@
+@using Sitecore.Globalization
 @inherits CustomGlassView<NewsletterSignUpModel>
 
 @if (Model.GlassModel != null)
 {
 
     <div class="newsletter-signup">
-        <h3>@Editable(x => x.GlassModel.Headline_Text)</h3>
-        @Editable(x => x.GlassModel.Sign_Up_Call_To_Action)
-        <div class="form--single-row">
-            <input class="inf-standard-form-field" name="userName">
-            <button class="button--filled newsletter-signup-submit js-newsletter-signup-submit" data-signup-url="/api/PreferencesApi/SignupUser">@Editable(x => x.GlassModel.Sign_Up_Button_Text)</button>
-        </div>
-        <div class="newsletter-signup-after-submit">
-            <h3>@Editable(x => x.GlassModel.Confirmation_Text)</h3>
-            @Editable(x => x.GlassModel.Confirmation_Summary)
+        <div class="newsletter-signup-before-submit">
+            <h3>@Editable(x => x.GlassModel.Headline_Text)</h3>
+            @Editable(x => x.GlassModel.Sign_Up_Call_To_Action)
             <div class="form--single-row">
-                <input class="inf-standard-form-field">
-                <button class="button--filled">@Editable(x => x.GlassModel.Sign_Up_Button_Text)</button>
+                <input class="inf-standard-form-field" name="userName" placeholder="@Translate.Text("Global.NewsletterSignupEmail")">
+                <div class="sign-in__submit-wrapper">
+                    <button class="button--filled newsletter-signup-submit js-newsletter-signup-submit" data-signup-url="/api/PreferencesApi/SignupUser/">@Model.GlassModel.Sign_Up_Button_Text</button>
+                </div>
+            </div>
+            </div>
+            <div class="newsletter-signup-after-submit">
+                <h3>@Editable(x => x.GlassModel.Confirmation_Text)</h3>
+                @Editable(x => x.GlassModel.Confirmation_Summary)
+                <div class="form--single-row">
+                    <button class="button--filled">@Translate.Text("Global.ManagePreferences")</button>
+                </div>
             </div>
         </div>
-    </div>
 }
     @*TODO : Add user logged in condition*@
