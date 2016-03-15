@@ -925,7 +925,9 @@
     <Content Include="App_Config\ConnectionStrings.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\ConnectionStrings.config.template" />
+    <Content Include="App_Config\ConnectionStrings.config.template">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\ConnectionStringsOracle.config" />
     <Content Include="App_Config\FieldTypes.config" />
     <Content Include="App_Config\Icons.config" />
@@ -1121,7 +1123,9 @@
     <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
     <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template" />
     <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
-    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config" />
+    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\UserDefined\ScheduledPublishing.MongoDB.config.disabled" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
