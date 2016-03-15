@@ -8,5 +8,3 @@ function open_window(URL,name,left,top,width,height,menubar){
 	 return(false);
 }
 
-
-
