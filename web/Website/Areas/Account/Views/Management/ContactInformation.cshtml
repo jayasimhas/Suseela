@@ -1,6 +1,6 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.Management.ContactInformationViewModel
 
-@if (Model.IsAuthenticated)
+@if (Model.IsAuthenticated || Sitecore.Context.PageMode.IsExperienceEditor)
 {
     <div class="page-account">
         <h1 class="page-account__header">@Model.Title</h1>
@@ -67,7 +67,7 @@
             <div class="update-contact">
 
                 <form class="form-email-preferences"
-                      action="/Account/api/PreferencesApi/UpdateContactInfo/" method="POST">
+                      data-on-submit="/Account/api/ContactInfoApi/UpdateContactInfo/">
 
                     <div class="user-name">
 

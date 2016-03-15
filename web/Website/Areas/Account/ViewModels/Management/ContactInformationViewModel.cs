@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
+using Glass.Mapper.Sc;
 using Informa.Library.Company;
 using Informa.Library.Globalization;
 using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
+using Informa.Library.Utilities.References;
+using Informa.Models.Informa.Models.sitecore.templates.Common;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Sitecore.Data.Items;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
@@ -23,14 +28,18 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public readonly ISignInViewModel SignInViewModel;
         public readonly ICompanyContext CompanyContext;
         public readonly ISalesforceFindUserProfile FindUserProfile;
-        
+        private readonly IItemReferences ItemReferences;
+        public readonly ISitecoreContext SitecoreContext;
+
         public ContactInformationViewModel(
             ITextTranslator translator,
             IAuthenticatedUserContext userContext,
             IManageAccountInfo accountInfo,
             ISignInViewModel signInViewModel,
             ICompanyContext companyContext,
-            ISalesforceFindUserProfile findUserProfile)
+            ISalesforceFindUserProfile findUserProfile,
+            IItemReferences itemReferences,
+            ISitecoreContext sitecoreContext)
         {
             TextTranslator = translator;
             UserContext = userContext;
@@ -39,6 +48,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             CompanyContext = companyContext;
             FindUserProfile = findUserProfile;
             SfUserProfile = FindUserProfile.Find(UserContext.User.Username);
+            ItemReferences = itemReferences;
+            SitecoreContext = sitecoreContext;
         }
         
         public bool IsAuthenticated => UserContext.IsAuthenticated;
@@ -124,22 +135,20 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 
         #region Drop Down Lists 
 
-        public IEnumerable<ListItem> Salutations => GetListing();
-        public IEnumerable<ListItem> Suffixes => GetListing();
-        public IEnumerable<ListItem> JobFunctions => GetListing();
-        public IEnumerable<ListItem> JobIndustries => GetListing();
-        public IEnumerable<ListItem> PhoneTypes => GetListing();
-        public IEnumerable<ListItem> Countries => GetListing();
+        public IEnumerable<ListItem> Salutations => GetListing(ItemReferences.AccountSalutations);
+        public IEnumerable<ListItem> Suffixes => GetListing(ItemReferences.AccountNameSuffixes);
+        public IEnumerable<ListItem> JobFunctions => GetListing(ItemReferences.AccountJobFunctions);
+        public IEnumerable<ListItem> JobIndustries => GetListing(ItemReferences.AccountJobIndustries);
+        public IEnumerable<ListItem> PhoneTypes => GetListing(ItemReferences.AccountPhoneTypes);
+        public IEnumerable<ListItem> Countries => GetListing(ItemReferences.AccountCountries);
 
-        private IEnumerable<ListItem> GetListing()
+        private IEnumerable<ListItem> GetListing(Guid g)
         {
-            return new List<ListItem>
-            {
-                new ListItem("Key1", "Value1"),
-                new ListItem("Key2", "Value2"),
-                new ListItem("Key3", "Value3"),
-                new ListItem("Key4", "Value4")
-            };
+            var item = SitecoreContext.GetItem<Item>(g);
+            if (item == null)
+                return Enumerable.Empty<ListItem>();
+
+            return item.GetChildren().Select(a => SitecoreContext.GetItem<ITaxonomy_Item>(a.ID.Guid)).Select(b => new ListItem(b.Item_Name, b.Item_Name));
         }
 
         #endregion Drop Down Lists
