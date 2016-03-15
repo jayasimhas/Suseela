@@ -7,6 +7,7 @@ using Informa.Library.User.Authentication;
 using Informa.Library.User.Entitlement;
 using Informa.Library.User.Profile;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
+using Informa.Web.ViewModels.PopOuts;
 
 namespace Informa.Web.ViewModels
 {
@@ -22,8 +23,10 @@ namespace Informa.Web.ViewModels
             IArticleComponentFactory articleComponentFactory,
             IEntitledProductContext entitledProductContext,
             IManageSavedDocuments manageSavedDocuments,
-            IAuthenticatedUserContext authenticatedUserContext)
-			: base(siterootContext, articleListableFactory, textTranslator, searcher, context, articleComponentFactory, entitledProductContext, manageSavedDocuments, authenticatedUserContext)
+            IAuthenticatedUserContext authenticatedUserContext,
+            ISignInViewModel signInViewModel,
+            IRegisterPopOutViewModel registerPopOutViewModel)
+			: base(siterootContext, articleListableFactory, textTranslator, searcher, context, articleComponentFactory, entitledProductContext, manageSavedDocuments, authenticatedUserContext, signInViewModel, registerPopOutViewModel)
 		{
 			RenderingParametersContext = renderingParametersContext;
 		}
