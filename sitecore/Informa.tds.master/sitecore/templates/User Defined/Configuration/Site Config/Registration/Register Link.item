@@ -2,8 +2,8 @@
 version: 1
 id: {905EB945-783A-4385-B95E-E1A6FF63BCBA}
 database: master
-path: /sitecore/templates/User Defined/Configuration/Site Config/Footer/Register Link
-parent: {A11EB6F9-C8F3-4990-BA3F-176EAD9838CB}
+path: /sitecore/templates/User Defined/Configuration/Site Config/Registration/Register Link
+parent: {D1374E4A-1FB2-48AD-9D0D-5DD03D633C3C}
 name: Register Link
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
@@ -26,7 +26,7 @@ content-length: 4
 ----version----
 language: en
 version: 1
-revision: 938d5c9b-bcc0-45f1-b72b-3e2939e4ef5f
+revision: edd7bf95-8482-40bd-b014-fed85e654d91
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-938d5c9b-bcc0-45f1-b72b-3e2939e4ef5f
+edd7bf95-8482-40bd-b014-fed85e654d91
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160112T140738Z
+20160315T101735Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
