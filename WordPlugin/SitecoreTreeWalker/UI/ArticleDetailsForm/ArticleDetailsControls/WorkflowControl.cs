@@ -12,7 +12,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 	{
 		public List<ArticleWorkflowCommand> Commands;
 		protected List<StaffStruct> _staff;
-
+		public ArticleStruct _ArticleStruct;
 
 		public WorkflowControl()
 		{
@@ -23,7 +23,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			txtNotificationText.Enabled = false;
 		}
 
-		public void UpdateFields(ArticleWorkflowState state)
+		public void UpdateFields(ArticleWorkflowState state, ArticleStruct articleStruct)
 		{
 			if (_staff == null)
 			{
@@ -37,6 +37,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			{
 				return;
 			}
+			_ArticleStruct = articleStruct;
 			uxCurrentWorkflowValue.Text = state.DisplayName;
 			Commands = new List<ArticleWorkflowCommand>();
 			Commands.Insert(0, new ArticleWorkflowCommand { DisplayName = "Move in Workflow...", StringID = Guid.Empty.ToString() });
@@ -130,6 +131,11 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 
 		private void uxWorkflowActions_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			var selectedItem = uxWorkflowActions.SelectedItem as ArticleWorkflowCommand;
+			if (selectedItem != null)
+			{
+				subjectLbl.Text = $"Subject: {_ArticleStruct.Title} has been moved to {selectedItem.DisplayName}";
+			}
 			uxUnlockOnSave.Checked = true;
 			SetNotificationOptions();
 		}
