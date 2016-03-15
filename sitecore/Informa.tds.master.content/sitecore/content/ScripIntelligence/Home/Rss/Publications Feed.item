@@ -1,0 +1,107 @@
+----item----
+version: 1
+id: {C7ED3F9E-942F-4609-B4AC-EE59BDBB0953}
+database: master
+path: /sitecore/content/ScripIntelligence/Home/Rss/Publications Feed
+parent: {403146D0-D6BD-408B-86D8-146397A26F19}
+name: Publications Feed
+master: {00000000-0000-0000-0000-000000000000}
+template: {03BA7987-D4ED-4727-8350-DA92E21074A7}
+templatekey: Publications Rss Feed
+
+----field----
+field: {EA2A3FC7-8255-4FBD-BBC8-6A917A0641E6}
+name: Type
+key: type
+content-length: 55
+
+Informa.Library.Rss.PublicationsRssFeed,Informa.Library
+----version----
+language: en
+version: 1
+revision: 4ad75927-66bf-4a65-afe6-a3e63916e6a0
+
+----field----
+field: {72C481B9-F789-4457-838F-2329EB8469C2}
+name: Source
+key: source
+content-length: 0
+
+
+----field----
+field: {621E7ABB-01E7-4CAA-AFF3-9AB8AB1C10CD}
+name: Web Master
+key: web master
+content-length: 45
+
+rss@scripintelligence.com (scripintelligence)
+----field----
+field: {13C91A1A-FF70-4E65-9908-E59A23B1400C}
+name: Language
+key: language
+content-length: 5
+
+en-US
+----field----
+field: {16CC56DD-27F5-4839-B790-DBBD9ACA882C}
+name: Title
+key: title
+content-length: 17
+
+Publications Feed
+----field----
+field: {770878C5-EE73-4967-AFF5-D0F402523FDF}
+name: Description
+key: description
+content-length: 8
+
+Home RSS
+----field----
+field: {AD3E65ED-74C0-43AF-A232-035308CADEFD}
+name: Link
+key: link
+content-length: 93
+
+<link linktype="external" url="http://www.scripintelligence.com/home/" anchor="" target="" />
+----field----
+field: {E6C75788-9E12-4497-830C-C33160664B46}
+name: Copyright
+key: copyright
+content-length: 129
+
+&#x2117; &amp; &#xA9; 2016 of Informa Pharma. Please refer to the Terms and Conditions of Use at http://www.scripintelligence.com
+----field----
+field: {BFBFFC27-6B53-46C9-BD5A-A929F6BBAC70}
+name: Managing editor
+key: managing editor
+content-length: 0
+
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160303T002753Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4ad75927-66bf-4a65-afe6-a3e63916e6a0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160315T042629Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

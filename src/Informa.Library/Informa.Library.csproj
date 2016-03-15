@@ -307,6 +307,7 @@
     <Compile Include="ComponentModel\DataAnnotations\PasswordAttribute.cs" />
     <Compile Include="CustomSitecore\Mvc\SitecoreValidateAntiForgeryTokenAttribute.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
+    <Compile Include="CustomSitecore\Pipelines\PublishItem\ItemsPublishingProcessor.cs" />
     <Compile Include="CustomSitecore\Ribbon\ExportArticle.cs" />
     <Compile Include="Data\Entity\CustomDbContext.cs" />
     <Compile Include="Mail\BaseHtmlEmailFactory.cs" />
@@ -331,6 +332,7 @@
     <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
     <Compile Include="Net\IIpAddressRangeCheck.cs" />
     <Compile Include="Net\IpAddressRangeCheck.cs" />
+    <Compile Include="Rss\PublicationsRssFeed.cs" />
     <Compile Include="Rss\SearchFacetGroupResult.cs" />
     <Compile Include="Rss\SearchFacetResult.cs" />
     <Compile Include="Publishing\Scheduled\Entity\EntityAllScheduledPublishes.cs" />
@@ -345,6 +347,8 @@
     <Compile Include="Publishing\Scheduled\Entity\IEntityScheduledPublishContextFactory.cs" />
     <Compile Include="Publishing\Scheduled\Entity\IEntityScheduledPublishFactory.cs" />
     <Compile Include="Publishing\Scheduled\Entity\ScheduledPublish.cs" />
+    <Compile Include="Publishing\Switcher\ScheduledPublishContext.cs" />
+    <Compile Include="Publishing\Switcher\ScheduledState.cs" />
     <Compile Include="Rss\SearchResults.cs" />
     <Compile Include="Rss\SearchResultsRequest.cs" />
     <Compile Include="Rss\SearchRssFeed.cs" />

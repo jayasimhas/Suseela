@@ -132,8 +132,11 @@ $(document).ready(function() {
 	});
 
 	var newsletterSignup = new NewsletterSignupController();
-	$("#newsletter-signup-after-submit").hide();
+	$(".newsletter-signup-after-submit").hide();
 	newsletterSignup.checkForUserSignedUp();
+	newsletterSignup.addControl('.js-newsletter-signup-submit', null,function(triggerElement) {
+		  //  toggleSignInError();
+		});
 
 
 	var login = new LoginController(requestVerificationToken);
