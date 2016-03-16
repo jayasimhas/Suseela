@@ -197,6 +197,14 @@ $(document).ready(function() {
 	accountEmailPreferencesController.watchForm('.form-email-preferences');
 
 
+	var accountUpdatePassController = new FormController();
+	accountUpdatePassController.watchForm('.form-update-account-pass');
+
+	var accountUpdateContactController = new FormController();
+	accountUpdateContactController.watchForm('.form-update-account-contact');
+
+
+
 	var savedDocumentsController = new FormController();
 	savedDocumentsController.watchForm('.form-remove-saved-document', function(form, context, evt) {
 		$(evt.target).closest('tr').remove();
