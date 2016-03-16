@@ -29,3 +29,79 @@ using Sitecore.Data;
 
 
 
+namespace Informa.Models.Informa.Models.sitecore.client.Your_Apps.View_NLM.Components.ViewNlmComponent
+{
+
+
+ 	/// <summary>
+	/// IViewNlmProperties Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/client/Your Apps/View NLM/Components/ViewNlmComponent/ViewNlmProperties</para>	
+	/// <para>ID: 310c65e3-4fa1-41d0-b655-9daba704bd68</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IViewNlmPropertiesConstants.TemplateIdString)]
+	public partial interface IViewNlmProperties : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IViewNlmProperties Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/client/Your Apps/View NLM/Components/ViewNlmComponent/ViewNlmProperties</para>	
+		/// <para>ID: 310c65e3-4fa1-41d0-b655-9daba704bd68</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IViewNlmProperties__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IViewNlmPropertiesConstants{
+
+			public const string TemplateIdString = "310c65e3-4fa1-41d0-b655-9daba704bd68";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "ViewNlmProperties";
+
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.client.Your_Apps.NLM_Export.Components.ExportPrompt
+{
+
+
+ 	/// <summary>
+	/// IExportPromptParameters Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/client/Your Apps/NLM Export/Components/ExportPrompt/ExportPromptParameters</para>	
+	/// <para>ID: fa6f8e9d-34d3-4edb-bedb-3eecd9d3e473</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IExportPromptParametersConstants.TemplateIdString)]
+	public partial interface IExportPromptParameters : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IExportPromptParameters Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/client/Your Apps/NLM Export/Components/ExportPrompt/ExportPromptParameters</para>	
+		/// <para>ID: fa6f8e9d-34d3-4edb-bedb-3eecd9d3e473</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IExportPromptParameters__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IExportPromptParametersConstants{
+
+			public const string TemplateIdString = "fa6f8e9d-34d3-4edb-bedb-3eecd9d3e473";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "ExportPromptParameters";
+
+			
+
+	}
+
+}

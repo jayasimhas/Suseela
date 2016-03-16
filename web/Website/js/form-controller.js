@@ -50,7 +50,7 @@ function formController(requestVerificationToken) {
                         this.showSuccessMessage(form);
 
 						if (successCallback) {
-							successCallback(form);
+							successCallback(form, this, event);
 						}
 
                         if($(form).data('on-success')) {
@@ -94,7 +94,9 @@ function formController(requestVerificationToken) {
 	};
 
 	this.showError = function(form, error) {
-		$(form).find(error).show();
+		if($(form).find(error)) {
+			$(form).find(error).show();
+		}
 	};
 
 	this.hideErrors = function(form) {

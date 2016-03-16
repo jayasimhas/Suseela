@@ -13,9 +13,9 @@ templatekey: Large Button
 field: {D47ED548-84D5-4622-9886-5CC164727507}
 name: Icon
 key: icon
-content-length: 29
+content-length: 34
 
-Core/32x32/move_to_folder.png
+Applications/32x32/document_up.png
 ----field----
 field: {DBBF9EE3-C30E-4456-A81F-ED8C2E8DF91B}
 name: Click
@@ -33,7 +33,7 @@ ExportArticleButton
 ----version----
 language: en
 version: 1
-revision: d90e2464-c61f-4ee7-91a3-5dbc0580f160
+revision: de9892b6-2bc5-4e68-8f60-d0f53e6f71a3
 
 ----field----
 field: {4DF6DA21-E745-444C-956E-1D4A96AB8821}
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d90e2464-c61f-4ee7-91a3-5dbc0580f160
+de9892b6-2bc5-4e68-8f60-d0f53e6f71a3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160310T200459Z
+20160316T154003Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
