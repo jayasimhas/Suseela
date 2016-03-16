@@ -16,17 +16,38 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
                 return string.Empty;
             }
 
-            IArticle article = indexItem.GlassCast<IArticle>(inferType: true);
+            var article = indexItem.GlassCast<IArticle>(inferType: true);
 
-            return GetTruncatedText(article.Summary,20);
+            var processedText = GetTruncatedText(article.Summary, 20);
+            processedText = ReplaceArticleTokens(processedText);
+
+            return processedText;
         }
 
-        public string GetTruncatedText(string text,int maxWordCount)
+        /// <summary>
+        ///     Replace article and deal tokens in the summary
+        /// </summary>
+        /// <param name="bodyText"></param>
+        /// <returns></returns>
+        public string ReplaceArticleTokens(string bodyText)
+        {
+            return bodyText;
+
+            //Informa.Web.Models.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar")
+        }
+
+        /// <summary>
+        ///     Truncate the summary text and add ...
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="maxWordCount"></param>
+        /// <returns></returns>
+        public string GetTruncatedText(string text, int maxWordCount)
         {
             string result;
             try
             {
-                int maxWordCountLessEllipsis = maxWordCount;
+                var maxWordCountLessEllipsis = maxWordCount;
 
                 if (WordUtil.GetWordCount(text) <= maxWordCount)
                     result = text;
@@ -38,8 +59,7 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
 
                     if (lastWordPosition < 0) lastWordPosition = 0;
 
-                    result = result.Substring(0, lastWordPosition).Trim(new[] { '.', ',', '!', '?' }) + "...";
-
+                    result = result.Substring(0, lastWordPosition).Trim('.', ',', '!', '?') + "...";
                 }
             }
             catch (Exception)
