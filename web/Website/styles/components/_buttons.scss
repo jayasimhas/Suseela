@@ -43,11 +43,13 @@ button:focus {
 	}
 
 	&--outline:enabled {
+		@include smooth-transition(all, 50ms, ease-out);
 		background-color: $color-white;
 		border: 1px solid $informa-light-orange;
 
 		&:hover {
 			border-color: $informa-dark-orange;
+			background-color: $informa-dark-orange;
 		}
 	}
 
