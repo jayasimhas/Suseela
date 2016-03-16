@@ -13352,6 +13352,186 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global
+{
+
+
+ 	/// <summary>
+	/// IInforma_Bar Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Global/Informa Bar</para>	
+	/// <para>ID: c379ee3f-4e50-41d6-b1e6-e0e7e978649f</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IInforma_BarConstants.TemplateIdString)]
+	public partial interface IInforma_Bar : IGlassBase 
+	{
+								/// <summary>
+					/// The Left Column Text field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 4c2dd301-15f2-464c-a7b7-e45697e0ef64</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IInforma_BarConstants.Left_Column_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Left_Column_Text  {get; set;}
+								/// <summary>
+					/// The Link 1 field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: da3e3085-51db-4b93-941e-265eee3d1bde</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IInforma_BarConstants.Link_1FieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Link_1  {get; set;}
+								/// <summary>
+					/// The Link 2 field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 4adb8fe0-7ec7-40a9-a5b5-4f438438791e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IInforma_BarConstants.Link_2FieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Link_2  {get; set;}
+								/// <summary>
+					/// The Link 3 field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: d7a43a40-ae84-4d28-9959-cd09c78ded63</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IInforma_BarConstants.Link_3FieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Link_3  {get; set;}
+								/// <summary>
+					/// The Link 4 field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 039ca390-5c48-4cb5-9374-2228dd95c0dd</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IInforma_BarConstants.Link_4FieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Link_4  {get; set;}
+								/// <summary>
+					/// The Right Column Text field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 5196eab8-62df-4314-84a0-247a5c07aa63</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IInforma_BarConstants.Right_Column_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Right_Column_Text  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IInforma_Bar Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Global/Informa Bar</para>	
+		/// <para>ID: c379ee3f-4e50-41d6-b1e6-e0e7e978649f</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IInforma_Bar__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Left Column Text field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 4c2dd301-15f2-464c-a7b7-e45697e0ef64</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IInforma_BarConstants.Left_Column_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Left_Column_Text  {get; set;}
+										/// <summary>
+						/// The Link 1 field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: da3e3085-51db-4b93-941e-265eee3d1bde</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IInforma_BarConstants.Link_1FieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Link_1  {get; set;}
+										/// <summary>
+						/// The Link 2 field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: 4adb8fe0-7ec7-40a9-a5b5-4f438438791e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IInforma_BarConstants.Link_2FieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Link_2  {get; set;}
+										/// <summary>
+						/// The Link 3 field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: d7a43a40-ae84-4d28-9959-cd09c78ded63</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IInforma_BarConstants.Link_3FieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Link_3  {get; set;}
+										/// <summary>
+						/// The Link 4 field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: 039ca390-5c48-4cb5-9374-2228dd95c0dd</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IInforma_BarConstants.Link_4FieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Link_4  {get; set;}
+										/// <summary>
+						/// The Right Column Text field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 5196eab8-62df-4314-84a0-247a5c07aa63</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IInforma_BarConstants.Right_Column_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Right_Column_Text  {get; set;}
+						}
+	
+	public static partial class IInforma_BarConstants{
+
+			public const string TemplateIdString = "c379ee3f-4e50-41d6-b1e6-e0e7e978649f";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Informa Bar";
+
+					
+			public static readonly ID Left_Column_TextFieldId = new ID("4c2dd301-15f2-464c-a7b7-e45697e0ef64");
+			public const string Left_Column_TextFieldName = "Left Column Text";
+
+							public static readonly ID Left_Column_Text__RawFieldId = new ID("4c2dd301-15f2-464c-a7b7-e45697e0ef64");
+				public const string Left_Column_Text__RawFieldName = "Left Column Text";
+						
+					
+			public static readonly ID Link_1FieldId = new ID("da3e3085-51db-4b93-941e-265eee3d1bde");
+			public const string Link_1FieldName = "Link 1";
+
+						
+					
+			public static readonly ID Link_2FieldId = new ID("4adb8fe0-7ec7-40a9-a5b5-4f438438791e");
+			public const string Link_2FieldName = "Link 2";
+
+						
+					
+			public static readonly ID Link_3FieldId = new ID("d7a43a40-ae84-4d28-9959-cd09c78ded63");
+			public const string Link_3FieldName = "Link 3";
+
+						
+					
+			public static readonly ID Link_4FieldId = new ID("039ca390-5c48-4cb5-9374-2228dd95c0dd");
+			public const string Link_4FieldName = "Link 4";
+
+						
+					
+			public static readonly ID Right_Column_TextFieldId = new ID("5196eab8-62df-4314-84a0-247a5c07aa63");
+			public const string Right_Column_TextFieldName = "Right Column Text";
+
+							public static readonly ID Right_Column_Text__RawFieldId = new ID("5196eab8-62df-4314-84a0-247a5c07aa63");
+				public const string Right_Column_Text__RawFieldName = "Right Column Text";
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
