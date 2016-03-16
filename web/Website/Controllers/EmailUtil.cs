@@ -44,7 +44,8 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		public void SendNotification(ArticleStruct articleStruct, WorkflowInfo oldWorkflow)
 		{
-			var siteConfigItem = _service.GetItem<ISite_Config>(Constants.ScripRootNode);
+			if (articleStruct.Publication == Guid.NewGuid()) return;
+			var siteConfigItem = _service.GetItem<ISite_Config>(articleStruct.Publication);
 			if (siteConfigItem == null) return;
 			var fromEmail = siteConfigItem.From_Email_Address;
 			var title = siteConfigItem.Email_Title;
@@ -87,14 +88,17 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		public void EditAfterPublishSendNotification(ArticleStruct articleStruct)
 		{
-			var siteConfigItem = _service.GetItem<ISite_Config>(Constants.ScripRootNode);
+			if (articleStruct.Publication == Guid.NewGuid()) return;
+			var siteConfigItem = _service.GetItem<ISite_Config>(articleStruct.Publication);
 			if (siteConfigItem == null) return;
 			var fromEmail = siteConfigItem.From_Email_Address;
 			var title = siteConfigItem.Email_Title;
 			var replyToEmail = Sitecore.Context.User.Profile.Email;
 			if (string.IsNullOrEmpty(fromEmail) || string.IsNullOrEmpty(replyToEmail)) return;
 
-			var workflowItem = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(Constants.ScripWorkflow);
+			var workflowItem =
+				_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(
+					Constants.ScripWorkflow);
 			if (workflowItem == null) return;
 			var notificationList = workflowItem.Notified_After_Publishes;
 			var staffItems = notificationList as IStaff_Item[] ?? notificationList.ToArray();

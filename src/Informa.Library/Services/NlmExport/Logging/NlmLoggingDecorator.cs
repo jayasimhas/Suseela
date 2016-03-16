@@ -70,20 +70,20 @@ namespace Informa.Library.Services.NlmExport.Logging
                 }
 
                 _logger.Error(errorMessage, result.Exception);
-                SendMail(errorMessage);
+                SendMail(errorMessage, articleId);
             }
 
             return result;
         }
 
-        private void SendMail(string errorMessage)
+        private void SendMail(string errorMessage, string articleId)
         {
             var mail = new Email
             {
                 IsBodyHtml = false,
                 To = GetEmailRecipients(),
                 From = _.SiteSettings.MailFromAddress,
-                Subject = "NLM Export Error",
+                Subject = $"NLM export failed for article ID {articleId}",
                 Body = errorMessage
             };
 

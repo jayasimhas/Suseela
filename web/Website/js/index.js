@@ -9,6 +9,7 @@ import LoginController from './login-controller';
 import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
+import SortableTableController from './sortable-table-controller';
 
 
 
@@ -156,6 +157,7 @@ $(document).ready(function() {
 		}
 	);
 
+
 	var resetPassword = new FormController();
 	resetPassword.watchForm('.form-reset-password', function() {
 		$('.form-reset-password').find('.alert-success').show();
@@ -165,16 +167,7 @@ $(document).ready(function() {
 	newResetPassToken.watchForm('.form-new-reset-pass-token', function() {
 		$('.form-new-reset-pass-token').find('.alert-success').show();
 	});
-	/*
-	resetPassword.addRequestControl(
-		'.js-reset-password-request-submit',
-		function(triggerElement) {
-			$(triggerElement).parents('.js-reset-password-request-form').hide();
-		}
-	);
-	resetPassword.addChangeControl('.js-reset-password-change-submit');
-	resetPassword.addRetryControl('.js-reset-password-retry-submit');
-*/
+
 
 	var userRegistrationController = new FormController();
 	userRegistrationController.watchForm('.form-registration');
@@ -191,15 +184,34 @@ $(document).ready(function() {
 		}
 	);
 
-	var registerController = new RegisterController();
 
+	var registerController = new RegisterController();
 	registerController.addRegisterUserControl('.js-register-user-optins-submit');
+
 
 	var emailArticleController = new FormController();
 	emailArticleController.watchForm('.form-email-article');
 
+
 	var accountEmailPreferencesController = new FormController();
 	accountEmailPreferencesController.watchForm('.form-email-preferences');
+
+
+	var accountUpdatePassController = new FormController();
+	accountUpdatePassController.watchForm('.form-update-account-pass');
+
+	var accountUpdateContactController = new FormController();
+	accountUpdateContactController.watchForm('.form-update-account-contact', function(form, context, evt) {
+		$(window).scrollTop(($(evt.target).closest('form').find('.js-form-error-general').offset().top - 32));
+	});
+
+
+
+	var savedDocumentsController = new FormController();
+	savedDocumentsController.watchForm('.form-remove-saved-document', function(form, context, evt) {
+		$(evt.target).closest('tr').remove();
+	});
+
 
     svg4everybody();
 
@@ -342,6 +354,8 @@ $(document).ready(function() {
 		$('.informa-ribbon').toggleClass('show')
 
 	});
+
+	var sortTheTables = new SortableTableController();
 
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");

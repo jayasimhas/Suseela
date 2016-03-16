@@ -12,7 +12,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 	public partial class SupportingDocumentsControl : UserControl
 	{
 		protected SitecoreItemGetter _siteCoreItemGetter;
-		public readonly List<string> ValidDocumentTypes = 
+		public readonly List<string> ValidDocumentTypes =
 			new List<string> {"doc", "docx", "ppt", "pptx", "xls", "xlsx", "pdf"};
 		public SupportingDocumentsControl()
 		{
@@ -44,7 +44,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 			{
 				return;
 			}
-			
+
 			try
 			{
 				SitecoreItemGetter.SitecoreMediaItem mediaItem =
@@ -100,7 +100,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 			{
 				SetSitecoreItemGetter(new SitecoreItemGetter());
 				var values = SitecoreClient.GetSupportingDocumentsRootNode();
-				AddRootNode(uxBrowseDocuments, values[1], values[0]); 
+				AddRootNode(uxBrowseDocuments, values[1], values[0]);
 			}
 		}
 
@@ -148,9 +148,9 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 			InsertDocument(path);
 		}
 
-		
 
-		static void InsertDocument(SitecorePath path) 
+
+		static void InsertDocument(SitecorePath path)
 		{
 			var media = SitecoreClient.GetMediaStatistics(path.Path);
 			var app = Globals.SitecoreAddin.Application;
@@ -167,6 +167,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 			var values = SitecoreClient.GetSupportingDocumentsRootNode();
 			uxBrowseDocuments.Nodes.Clear();
 			AddRootNode(uxBrowseDocuments, values[1], values[0]);
+			PreviewInfo(false);
 		}
 	}
 }
