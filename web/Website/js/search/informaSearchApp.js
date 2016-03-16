@@ -124,45 +124,50 @@
 
 // TODO: This should be split off into a new file inside the controllers directory
 
-  // informaSearchApp.factory("dataFactory", function(){
-  //   var states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Dakota", "North Carolina", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
+  informaSearchApp.factory("States", function(){
+    var states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Dakota", "North Carolina", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
     
-  //   return states;
-  // });
+    return states;
+  });
   
 
 
-// service to return companies data
-informaSearchApp.service('companiesService', ['$http', function($http) {
+  // service to return companies data
+  informaSearchApp.service('Companies', ['$http', function($http) {
 
-    var url = '/velir/services/TypeAhead.asmx/TypeAheadCompanies';
+      var url = '/velir/services/TypeAhead.asmx/TypeAheadCompanies';
 
-    $http({
-      method: 'GET',
-      url: 'http://informa-insight.rose.velir.com/velir/services/TypeAhead.asmx/TypeAheadCompanies'
-    // returns a promise
-    }).then(function successCallback(response) {
-      console.log("success");
-      var data = response.data;
-      var companies = [];
-      // companies = Object.keys(data).map(function(k) { return data[k] });
-      companies = $.map(data, function(value, index) {
-        return value;
+      $http({
+          method: 'GET',
+          url: 'http://informa-insight.rose.velir.com/velir/services/TypeAhead.asmx/TypeAheadCompanies'
+      // returns a promise
+      }).then(function successCallback(response) {
+
+        console.log("success");
+        var data = response.data;
+
+        var companies = [];
+        companies = $.map(data, function(value, index) {
+          return value.CompanyName;
+        });
+
+        console.log(companies);
+        return companies;
+
+      }, function errorCallback(response) {
+        console.log("error");
       });
-      console.log(companies);
-    }, function errorCallback(response) {
-      console.log("error");
-    });
-}]);
+  }]);
 
-  
-// setup controller and pass data source
-  informaSearchApp.controller("InformaTypeaheadController", function($scope, companiesService){
-    ["$scope", function($scope, States){
+    
+  // setup controller and pass data source
+  informaSearchApp.controller("InformaTypeaheadController", 
+    function($scope, Companies){
+    // function($scope, companiesService){
 
-      // var _selected;
+      var _selected;
       $scope.selected = undefined;
-      $scope.companies = companiesService;
+      $scope.companies = Companies;
 
       // $scope.ngModelOptionsSelected = function(value) {
       //   if (arguments.length) {
@@ -179,6 +184,11 @@ informaSearchApp.service('companiesService', ['$http', function($http) {
       //   },
       //   getterSetter: true
       // };
+
+    });
+      // console.log(companies);
+
+      
       
       // $.ajax({
       //   type: 'GET',
@@ -192,9 +202,11 @@ informaSearchApp.service('companiesService', ['$http', function($http) {
             //                 alert(ext);
             //         });
             // });
-    }
+    // }
+    
+    // ]
 
-  });
+  // });
 
 
 
