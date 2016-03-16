@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {CFBBFB70-0072-4AF5-A2FC-1DEE6879C09A}
+id: {7D6D7ED0-8103-46F8-91DA-F01F465B20CE}
 database: master
-path: /sitecore/content/ScripIntelligence/Globals/ScriptIntelligenceDictionary/Account/ContactInfo/Request Failed Key
-parent: {2CAAADA1-1E28-4D52-9FD3-DA4746AF91B5}
-name: Request Failed Key
+path: /sitecore/content/ScripIntelligence/Globals/ScriptIntelligenceDictionary/Account/Subscriptions/Action
+parent: {D05CA80A-F61D-4872-99E9-92BE7B8CB456}
+name: Action
 master: {4314E7F7-4F9F-4E16-A43A-8C0BF2A03A2F}
 template: {6D1CD897-1936-4A3A-A511-289A94C2A7B1}
 templatekey: Dictionary entry
@@ -13,9 +13,9 @@ templatekey: Dictionary entry
 field: {580C75A8-C01A-4580-83CB-987776CEB3AF}
 name: Key
 key: key
-content-length: 25
+content-length: 20
 
-ContactInfo.RequestFailed
+Subscriptions.Action
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
@@ -23,13 +23,6 @@ key: __icon
 content-length: 21
 
 Apps/32x32/Pencil.png
-----field----
-field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
-name: __Sortorder
-key: __sortorder
-content-length: 4
-
-1200
 ----field----
 field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
 name: __Originator
@@ -40,36 +33,36 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: c295738d-bf79-4297-932d-3afeccf55077
+revision: 727bdce2-6b76-43d9-a76e-9adc81042001
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 14
+content-length: 6
 
-Request Failed
+Action
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20160313T130125Z
+20160316T151802Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-c295738d-bf79-4297-932d-3afeccf55077
+727bdce2-6b76-43d9-a76e-9adc81042001
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160313T171446Z
+20160316T151808Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

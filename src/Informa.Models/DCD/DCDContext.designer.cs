@@ -57,7 +57,8 @@ namespace Informa.Models.DCD
     #endregion
 		
 		public DCDContext() : 
-				base(System.Configuration.ConfigurationManager.ConnectionStrings["dcd"].ConnectionString, mappingSource)
+				base("Data Source=.\\SQL2012;Initial Catalog=InformaOld_DCD;User ID=sa;Password=1100M@ss" +
+						"!;MultipleActiveResultSets=True;Application Name=EntityFramework", mappingSource)
 		{
 			OnCreated();
 		}
