@@ -7,6 +7,7 @@ using Informa.Library.Mail;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.References;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Web.Areas.Article.Models.Article.EmailFriend;
 using Informa.Web.Controllers;
 
@@ -140,7 +141,8 @@ namespace Informa.Web.Areas.Article.Controllers
 					replacements["#article_summary#"] = article.Summary;
 				}
 
-				replacements["#Footer_Content#"] = GetValue(siteRoot?.Email_A_Friend_Footer_Content)
+				var footerContent = _service.GetItem<IEmail_Config>(Constants.ScripEmailConfig);				
+				replacements["#Footer_Content#"] = GetValue(footerContent?.Email_A_Friend_Footer_Content)
 					.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail)
 					.ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", friendEmail);
 

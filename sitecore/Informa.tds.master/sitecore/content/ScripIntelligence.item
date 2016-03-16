@@ -43,34 +43,6 @@ version: 1
 revision: 99f58a5e-4f14-4408-bec4-7191a1c605c1
 
 ----field----
-field: {23B4E9BC-9D9C-44F8-80AC-93230012F320}
-name: Email A Friend Footer Content
-key: email a friend footer content
-content-length: 2985
-
-											<p style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding-bottom:12px">Sent to <a href="mailto:#RECIPIENT_EMAIL#">#RECIPIENT_EMAIL#</a> on behalf of <a href="mailto:#SENDER_EMAIL#">#SENDER_EMAIL#</a>. If you have questions about this email or Scrip Intelligence, please call UK support at +44 (0)20 7017 4161 / US support at +1 617 374 22 42 or <a href="mailto:emailonlineaccess@informa.com">emailonlineaccess@informa.com</a>.</p>
-											<p style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding-bottom:12px">To ensure delivery please add <a href="mailto:info@scripintelligence.com">info@scripintelligence.com</a> to your address book.</p>
-											<p style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding-bottom:12px">
-												© 2015 Informa plc. All rights reserved.<br />
-												Scrip Intelligence is owned and operated by Informa plc ("informa") whose registered office is 5 Howick Place, London, SW1P 1WG. Registered in England and Wales. Number 3099067. UK VAT Group GB 365 4626 36
-											</p>
-											<p style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding-bottom: 12px">
-												<a href="#" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #be1e2d; font-weight: normal; text-decoration: none">Advertise</a>
-												<span class="footer-link-separator" style="padding-left: 8px; padding-right: 8px; color: #d1d3d4; font-weight: 100; vertical-align: middle">|</span>
-												<a href="#" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #be1e2d; font-weight: normal; text-decoration: none">About Us</a>
-												<span class="footer-link-separator" style="padding-left: 8px; padding-right: 8px; color: #d1d3d4; font-weight: 100; vertical-align: middle">|</span>
-												<a href="#" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #be1e2d; font-weight: normal; text-decoration: none">Login</a>
-												<span class="footer-link-separator" style="padding-left: 8px; padding-right: 8px; color: #d1d3d4; font-weight: 100; vertical-align: middle">|</span>
-												<a href="#" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #be1e2d; font-weight: normal; text-decoration: none">Contact Us</a>
-												<span class="footer-link-separator" style="padding-left: 8px; padding-right: 8px; color: #d1d3d4; font-weight: 100; vertical-align: middle">|</span>
-												<a href="#" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #be1e2d; font-weight: normal; text-decoration: none">Privacy</a>
-												<span class="footer-link-separator" style="padding-left: 8px; padding-right: 8px; color: #d1d3d4; font-weight: 100; vertical-align: middle">|</span>
-												<a href="#" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #be1e2d; font-weight: normal; text-decoration: none">Help</a>
-
-
-
-											</p>
-----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
 name: Supporting Documents Folder
 key: supporting documents folder

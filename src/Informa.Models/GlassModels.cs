@@ -9536,7 +9536,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	/// <para>ID: 997a3064-65f5-45cd-b32f-9ec61e90a610</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=ISite_ConfigConstants.TemplateIdString)]
-	public partial interface ISite_Config : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.IEmail_Config
+	public partial interface ISite_Config : IGlassBase 
 	{
 								/// <summary>
 					/// The My Account Page field.
@@ -10025,7 +10025,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 		/// <para>ID: 997a3064-65f5-45cd-b32f-9ec61e90a610</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ISite_Config__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.IEmail_Config__Raw
+		public partial interface ISite_Config__Raw : IGlassBase 
 		{
 										/// <summary>
 						/// The My Account Page field.
@@ -10796,13 +10796,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
 			public const string From_Email_AddressFieldName = "From Email Address";
 
-						
-					
-			public static readonly ID Email_A_Friend_Footer_ContentFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
-			public const string Email_A_Friend_Footer_ContentFieldName = "Email A Friend Footer Content";
-
-							public static readonly ID Email_A_Friend_Footer_Content__RawFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
-				public const string Email_A_Friend_Footer_Content__RawFieldName = "Email A Friend Footer Content";
 						
 			
 
@@ -14859,13 +14852,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
 			public const string From_Email_AddressFieldName = "From Email Address";
 
-						
-					
-			public static readonly ID Email_A_Friend_Footer_ContentFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
-			public const string Email_A_Friend_Footer_ContentFieldName = "Email A Friend Footer Content";
-
-							public static readonly ID Email_A_Friend_Footer_Content__RawFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
-				public const string Email_A_Friend_Footer_Content__RawFieldName = "Email A Friend Footer Content";
 						
 			
 
