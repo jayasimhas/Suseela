@@ -95,41 +95,48 @@ $(document).ready(function() {
 	// Anti Forgery Token
 	var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
 
-	var poc = new PopOutController('.js-pop-out-trigger');
+	window.indexPopOuts = function() {
+		window.controlPopOuts = new PopOutController('.js-pop-out-trigger');
 
-	poc.customize({
-		id: 'header-register',
-		tabStyles: {
-			deskHeight: 87,
-			tabletHeight: 72,
-			phoneHeight: '' // Default
-		}
-	});
+		window.controlPopOuts.customize({
+			id: 'header-register',
+			tabStyles: {
+				deskHeight: 87,
+				tabletHeight: 72,
+				phoneHeight: '' // Default
+			}
+		});
 
-	poc.customize({
-		id: 'header-signin',
-		tabStyles: {
-			deskHeight: 87,
-			tabletHeight: 72,
-			phoneHeight: '' // Default
-		}
-	});
+		window.controlPopOuts.customize({
+			id: 'header-signin',
+			tabStyles: {
+				deskHeight: 87,
+				tabletHeight: 72,
+				phoneHeight: '' // Default
+			}
+		});
+	};
+
+	window.indexPopOuts();
 
 
-	var bookmark = new BookmarkController();
+	window.bookmark = new BookmarkController();
 
-	// Toggle bookmark icon
-	$('.js-bookmark-article').on('click', function bookmarkArticle(e) {
-		
-		// Make sure proper elm gets the click event
-		if (e.target !== this) {
-			this.click();
-			return;
-		}
+	window.indexBookmarks = function() { // Toggle bookmark icon
+		$('.js-bookmark-article').on('click', function bookmarkArticle(e) {
 
-		bookmark.toggle(e.target);
+			// Make sure proper elm gets the click event
+			if (e.target !== this) {
+				this.click();
+				return;
+			}
 
-	});
+			window.bookmark.toggle(e.target);
+
+		});
+	};
+
+	indexBookmarks();
 
 	var newsletterSignup = new NewsletterSignupController();
 	$(".newsletter-signup-after-submit").hide();

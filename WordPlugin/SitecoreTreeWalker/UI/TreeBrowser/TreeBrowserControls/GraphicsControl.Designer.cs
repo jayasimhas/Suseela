@@ -34,26 +34,27 @@
 			this.uxPreview = new System.Windows.Forms.PictureBox();
 			this.uxInsertIntoArticle = new System.Windows.Forms.Button();
 			this.uxRefresh = new System.Windows.Forms.Button();
-			this.HeaderPanel1 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.uxPreview)).BeginInit();
-			this.HeaderPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// uxBrowseImages
 			// 
+			this.uxBrowseImages.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.uxBrowseImages.Font = new System.Drawing.Font("Segoe UI", 8.25F);
 			this.uxBrowseImages.Location = new System.Drawing.Point(4, 36);
 			this.uxBrowseImages.Name = "uxBrowseImages";
-			this.uxBrowseImages.Size = new System.Drawing.Size(295, 138);
+			this.uxBrowseImages.Size = new System.Drawing.Size(303, 138);
 			this.uxBrowseImages.TabIndex = 15;
 			this.uxBrowseImages.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.NodeExpanded);
 			this.uxBrowseImages.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.uxBrowseImages_AfterSelect);
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBox1.Controls.Add(this.uxPreview);
 			this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
 			this.groupBox1.ForeColor = System.Drawing.Color.Gray;
@@ -66,6 +67,8 @@
 			// 
 			// uxPreview
 			// 
+			this.uxPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.uxPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.uxPreview.Location = new System.Drawing.Point(0, 21);
 			this.uxPreview.Name = "uxPreview";
@@ -77,7 +80,8 @@
 			// 
 			// uxInsertIntoArticle
 			// 
-			this.uxInsertIntoArticle.Location = new System.Drawing.Point(52, 357);
+			this.uxInsertIntoArticle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.uxInsertIntoArticle.Location = new System.Drawing.Point(82, 357);
 			this.uxInsertIntoArticle.Name = "uxInsertIntoArticle";
 			this.uxInsertIntoArticle.Size = new System.Drawing.Size(103, 23);
 			this.uxInsertIntoArticle.TabIndex = 29;
@@ -87,33 +91,14 @@
 			// 
 			// uxRefresh
 			// 
-			this.uxRefresh.Location = new System.Drawing.Point(175, 357);
+			this.uxRefresh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.uxRefresh.Location = new System.Drawing.Point(82, 386);
 			this.uxRefresh.Name = "uxRefresh";
-			this.uxRefresh.Size = new System.Drawing.Size(90, 23);
+			this.uxRefresh.Size = new System.Drawing.Size(103, 23);
 			this.uxRefresh.TabIndex = 30;
 			this.uxRefresh.Text = "Refresh";
 			this.uxRefresh.UseVisualStyleBackColor = true;
 			this.uxRefresh.Click += new System.EventHandler(this.uxRefresh_Click);
-			// 
-			// HeaderPanel1
-			// 
-			this.HeaderPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.HeaderPanel1.Controls.Add(this.label1);
-			this.HeaderPanel1.Location = new System.Drawing.Point(0, 3);
-			this.HeaderPanel1.Name = "HeaderPanel1";
-			this.HeaderPanel1.Size = new System.Drawing.Size(803, 27);
-			this.HeaderPanel1.TabIndex = 31;
-			// 
-			// label1
-			// 
-			this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-			this.label1.ForeColor = System.Drawing.Color.Gray;
-			this.label1.Image = global::InformaSitecoreWord.Properties.Resources.graphics_tabheader;
-			this.label1.Location = new System.Drawing.Point(0, 3);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(310, 24);
-			this.label1.TabIndex = 11;
 			// 
 			// toolTip1
 			// 
@@ -127,31 +112,26 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.White;
-			this.Controls.Add(this.HeaderPanel1);
 			this.Controls.Add(this.uxRefresh);
 			this.Controls.Add(this.uxInsertIntoArticle);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.uxBrowseImages);
 			this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
 			this.Name = "GraphicsControl";
-			this.Size = new System.Drawing.Size(311, 404);
+			this.Size = new System.Drawing.Size(319, 452);
 			this.Load += new System.EventHandler(this.GraphicsControl_Load);
 			this.groupBox1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.uxPreview)).EndInit();
-			this.HeaderPanel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TreeView uxBrowseImages;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.PictureBox uxPreview;
 		private System.Windows.Forms.Button uxInsertIntoArticle;
 		private System.Windows.Forms.Button uxRefresh;
-        private System.Windows.Forms.Panel HeaderPanel1;
         private System.Windows.Forms.ToolTip toolTip1;
 		
 		

@@ -1,4 +1,5 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
+@using Informa.Library.User.Entitlement
 @using Informa.Web.Models
 @model GlassArticleModel
 
@@ -98,26 +99,36 @@
         @* End Executive Summary  *@
     }
 
-    @if (Model.Image != null)
+    @if (true)//Model.AccessLevel == EntitledAccessLevel.UnEntitled)
     {
-    @* * *  ARTICLE - FEATURED IMAGE
-        IIPP-117 *@
-        <aside class="article-inline-image">
-            <img src="@Model.Image.ImageUrl">
-            @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
-                {
-                    <span class="article-inline-image__source">
-                        Image Source: @Model.Image.ImageSource
-                    </span>
-                }
-            <span class="article-inline-image__caption">@Model.Image.ImageCaption</span>
-        </aside>
-    @* * *  END ARTICLE - FEATURED IMAGE *@
+        //This will show context for subscribe, login, register
+        <div class="article-call-to-action">
+            @{ Html.RenderPartial("../Article/UserCallToAction", Model.SignInViewModel); }
+        </div>
     }
 
-    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
 
-</div>
+
+            @if (Model.Image != null)
+            {
+                @* * *  ARTICLE - FEATURED IMAGE
+                    IIPP-117 *@
+                <aside class="article-inline-image">
+                    <img src="@Model.Image.ImageUrl">
+                    @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
+                    {
+                        <span class="article-inline-image__source">
+                        @Model.FeaturedImageSource: @Model.Image.ImageSource
+                        </span>
+                    }
+                    <span class="article-inline-image__caption">@Model.Image.ImageCaption</span>
+                </aside>
+                @* * *  END ARTICLE - FEATURED IMAGE *@
+            }
+
+            @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
+
+        </div>
 
 @*
     This element is a template for viewing tables on narrow screens
@@ -147,3 +158,4 @@
         </tbody>
     </table>
 </div>
+                                                                                        

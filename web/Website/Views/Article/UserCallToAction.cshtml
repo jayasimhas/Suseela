@@ -1,0 +1,44 @@
+﻿@model ISignInViewModel
+
+    <div class="article-call-to-action__two-column">
+        <div class="article-call-to-action">
+            <h4>
+                Already Registered?
+            </h4>
+            <h5 class="pop-out__register-header">Sign in to continue reading.</h5>
+            @{ Html.RenderPartial("_SignInForm", Model); }
+        </div>
+
+        <div class="article-call-to-action">
+            <h4>New to SCRIP?</h4>
+            <h5 class="pop-out__register-header">Register to read this article.</h5>
+            <form class="pop-out__register form-pre-registration"
+                  data-on-submit="/Account/api/RegistrationApi/PreRegister/"
+                  data-on-success="RegisterUrl">
+
+                <input name="username"
+                       class="pop-out__register-input header__hover-input js-register-username"
+                       type="text"
+                       placeholder="UsernamePlaceholderText">
+
+                <p class="js-form-error js-form-error-UsernameRequirements"
+                   style="display: none;">UsernameRequirementsErrorText</p>
+                <p class="js-form-error js-form-error-UsernameExists"
+                   style="display: none;">UsernameExistsErrorText</p>
+                <p class="js-form-error js-form-error-error-general"
+                   style="display: none;">GeneralErrorText</p>
+
+                <button type="submit" class="pop-out__register-submit js-pre-register-user-submit">
+                    RegisterButtonText
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="article-call-to-action__single-column">
+        <div class="article-call-to-action">
+            <h4>Not a subscriber?</h4>
+            <a href="#">Learn how you can access scrip content.</a>
+        </div>
+    </div>

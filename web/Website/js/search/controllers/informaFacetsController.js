@@ -12,6 +12,7 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         _this.location = $location;
         _this.searchBootstrapper = searchBootstrapper;
         _this.MaxFacetShow = 5;
+        _this.CurrentDateSelection = '';
 
         // Date Facet stuff
         _this.currentDateRange = _this.getDateFilterLabel();
@@ -21,26 +22,20 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
              { label: 'Last 3 days', key: 'threedays', selected: false },
              { label: 'Last week', key: 'week', selected: false },
              { label: 'Last month', key: 'month', selected: false },
-             { label: 'Last year', key: 'year', selected: false }
+             { label: 'Last year', key: 'year', selected: false },
+             { label: 'Select date range', key: 'custom', selected: false }
         ];
+      
+        //Select a radio button if the search was using a custom search
+        var dateArrayLength = _this.DateFilters.length;
+        for (var i = 0; i < dateArrayLength; i++) {
 
-        //_this.CustomStartDate = jq("#facet-by-start-date");
-        //_this.CustomEndDate = jq("#facet-by-end-date");
+            if ($location.search().dateFilterLabel == _this.DateFilters[i].key) {
+                _this.CurrentDateSelection = _this.DateFilters[i].key;
+                _this.DateFilters[i].selected = true;
+            }
+        }
 
-        //_this.CustomStartDate = '';
-        //_this.CustomEndDate = '';
-
-        //var filter = _this.getFilter('publicationdate');
-        //if (filter._value != '') {
-
-        //    var split = filter._value.split(';');
-        //    _this.CustomStartDate.val(split[0]);
-        //    _this.CustomEndDate.val(split[1]);
-        //    //hack to get dates to render correctly
-        //    _this.CustomEndDate.focus();
-        //    _this.CustomStartDate.focus();
-        //    _this.setCustomDateIsActive();
-        //}
     };
 
     $scope.$watch(function () {
@@ -131,15 +126,40 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         return filterDateLabel._value;
     }
 
+   
     _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
-        //alert(new Date(endDate).getDay());
-        //alert(filterKey + startDate + endDate );
+
+        if (_this.CurrentDateSelection == 'custom')
+        {
+            var filter = _this.getFilter(filterKey);
+            var filterDateLabel = _this.getFilter('dateFilterLabel');
+            filterDateLabel.setValue('custom');
+
+            var date1Unparsed = new Date(startDate);
+            var date1 =(date1Unparsed.getMonth() + 1) + '/' +date1Unparsed.getDate() + '/'  + date1Unparsed.getFullYear();
+
+            var date2Unparsed = new Date(endDate);
+            var date2 = (date2Unparsed.getMonth() + 1) + '/' + date2Unparsed.getDate() + '/' + date2Unparsed.getFullYear();
+
+        
+            filter.setValue(date1 + ";" + date2);
+
+            _this.update();
+        }
 
     }
 
+
+
     //** This builds date parameters for the search query **//
     _this.dateRangeSearch = function (filterKey, dateFilter) {
-       
+
+        _this.CurrentDateSelection = dateFilter;
+
+        if (dateFilter == 'custom') {
+            return;
+        }
+
         var filter = _this.getFilter(filterKey);
         var filterDateLabel = _this.getFilter('dateFilterLabel');
         console.log("date range: ", dateFilter);
