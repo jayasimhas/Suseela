@@ -1,6 +1,7 @@
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using Informa.Library.Utilities.References;
 using Jabberwocky.Glass.Autofac.Pipelines.Processors;
 using Jabberwocky.WebApi.Handlers;
 using Newtonsoft.Json.Serialization;
@@ -26,7 +27,7 @@ namespace Informa.Library.CustomSitecore.Pipelines
             routes.MapHttpRoute(
                 "articleNumberApi", 
                 "SC{articleNumber}",
-                new { controller = "Article", action ="Get", prefix = "SC" },
+                new { controller = "Article", action ="Get", prefix = Constants.ScripRootNodeIntials },
                 new { articleNumber = @"\d+" }
             );
 
