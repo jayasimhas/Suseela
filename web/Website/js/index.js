@@ -156,6 +156,7 @@ $(document).ready(function() {
 		}
 	);
 
+
 	var resetPassword = new FormController();
 	resetPassword.watchForm('.form-reset-password', function() {
 		$('.form-reset-password').find('.alert-success').show();
@@ -165,16 +166,7 @@ $(document).ready(function() {
 	newResetPassToken.watchForm('.form-new-reset-pass-token', function() {
 		$('.form-new-reset-pass-token').find('.alert-success').show();
 	});
-	/*
-	resetPassword.addRequestControl(
-		'.js-reset-password-request-submit',
-		function(triggerElement) {
-			$(triggerElement).parents('.js-reset-password-request-form').hide();
-		}
-	);
-	resetPassword.addChangeControl('.js-reset-password-change-submit');
-	resetPassword.addRetryControl('.js-reset-password-retry-submit');
-*/
+
 
 	var userRegistrationController = new FormController();
 	userRegistrationController.watchForm('.form-registration');
@@ -191,15 +183,22 @@ $(document).ready(function() {
 		}
 	);
 
-	var registerController = new RegisterController();
 
+	var registerController = new RegisterController();
 	registerController.addRegisterUserControl('.js-register-user-optins-submit');
+
 
 	var emailArticleController = new FormController();
 	emailArticleController.watchForm('.form-email-article');
 
+
 	var accountEmailPreferencesController = new FormController();
 	accountEmailPreferencesController.watchForm('.form-email-preferences');
+
+
+	var savedDocumentsController = new FormController();
+	savedDocumentsController.watchForm('.form-remove-saved-document');
+
 
     svg4everybody();
 

@@ -12,43 +12,53 @@
                 <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-bad-id">@Model.BadIDText</p>
             </div>
 
-            <table>
-                <thead>
-                <tr>
-                    <td>
-                        @Model.TitleText
-                    </td>
-                    <td>
-                        @Model.DateText
-                    </td>
-                    <td></td>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach (var item in Model.SavedDocuments)
-                {
+            <table class="sortable-table">
+                <thead class="sortable-table__header">
                     <tr>
                         <td>
-                            @HttpUtility.HtmlDecode(item.Name)
+                            @Model.TitleText
                         </td>
                         <td>
-                            @item.SaveDate.ToString("d MMMM yyyy")
+                            @Model.DateText
                         </td>
-                        <td>
-                            <form class="form-saved-content" data-on-submit="/Account/api/SavedDocumentApi/RemoveItem/">
-                                <input name="DocumentID"
-                                       id="DocumentID"
-                                       type="hidden"
-                                       value="@item.DocumentId">
-                                <button type="submit" class="button--filled button--fly-right">@Model.RemoveText</button>
-                            </form>
-                        </td>
+                        <td></td>
                     </tr>
-                }
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SavedDocuments)
+                    {
+                        <tr>
+                            <td>
+                                @HttpUtility.HtmlDecode(item.Name)
+                            </td>
+                            <td>
+                                @item.SaveDate.ToString("d MMMM yyyy")
+                            </td>
+                            <td>
+                                <form   class="form-remove-saved-document"
+                                        data-on-submit="/Account/api/SavedDocumentApi/RemoveItem/">
+
+                                    <input name="DocumentID"
+                                           id="DocumentID"
+                                           type="hidden"
+                                           value="@item.DocumentId">
+
+                                    <button type="submit" class="button--outline">@Model.RemoveText</button>
+
+                                </form>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
 
-            <p style="display: none;" class="js-preferences-user-success">@Model.ItemRemovedMessage</p>
+            <div class="alert-success js-form-success">
+                <svg class="alert__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+                </svg>
+                <p>@Model.ItemRemovedMessage</p>
+            </div>
+
         </div>
     </div>
 }
