@@ -94,7 +94,7 @@
                       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
                   </button>
               </legend>
-            <ul class="facets__section datepicker" ng-controller="InformaDatesController">
+            <ul class="facets__section-list datepicker" ng-controller="InformaDatesController">
 
                 <li class="facets__section-wrapper" ng-hide="collapsedate">
                     <ul class="facets__section-list">
@@ -116,7 +116,7 @@
                                            id="date-picker-from"
                                            datepicker-popup="shortDate"
                                            is-open="datepickers.dtFrom"
-                                           datepicker-options="dateOptions"
+                                           datepicker-options="fromDateOptions"
                                            popup-placement="auto right-top"
                                            uib-datepicker-popup="shortDay"
                                            date-disabled="disabled(date, mode)"
@@ -140,7 +140,7 @@
                                            id="date-picker-from"
                                            datepicker-popup="shortDate"
                                            is-open="datepickers.dtTo"
-                                           datepicker-options="dateOptions"
+                                           datepicker-options="toDateOptions"
                                            popup-placement="auto right-top"
                                            date-disabled="disabled(date, mode)"
                                            ng-required="false"
