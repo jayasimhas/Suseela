@@ -1,55 +1,29 @@
 .article-call-to-action {
+    @include textMix('Roboto', 1rem, 400);
 
     &--sign-in-up,
     &--subscribe {
         margin-bottom: 1.5rem;
         background-color: $color-concrete-gray;
         border: 1px solid $color-light-gray;
+        overflow: auto;
         padding: 1.5rem;
     }
 
     &__column {
+        @include columnize(2, 4, 1px solid $color-light-gray);
     }
 
-    &__two-column {
-        display: flex;
-        justify-content: space-between;
-        width: calc(100% + 2rem);
-        flex-wrap: wrap;
-        margin: 0 -1rem;
-
-    &:after {
-        clear: both;
-        content: "";
-        display: block;
-    }
-    }
-
-    &__single-column {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin: 0 -1rem;
-
-        .article-call-to-action {
-            width: 300px;
-            flex: 1 0 auto;
-        }
-
-        }
-	  h4 {
-        color: $color-zeus-black;
-        font-size: 1.5rem;
-        margin-bottom: 0.75rem;
-    }
     &__title {
-		@extend h4;
-		margin-bottom: 1rem !important;
-		line-height: 1.5rem !important;
+		@extend h3;
+        color: $color-zeus-black;
+        display: block;
+		margin-bottom: 1rem;
 	}
-    h5 {
-        line-height: 1.5rem;
-        margin-bottom: 0.5rem;
+    &__subtitle {
+        @extend h5;
+        display: block;
+        margin-bottom: 1rem;
         color: $color-zeus-black;
     }
 	&__caption,

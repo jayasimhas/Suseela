@@ -1,17 +1,25 @@
 ﻿@model ISignInViewModel
 
+@* * * SIGNED OUT - NOT ENTITLED * * *@
+
 <div class="article-call-to-action--sign-in-up">
     <div class="article-call-to-action__column">
-        <h4>
+        <span class="article-call-to-action__title">
             Already Registered?
-        </h4>
-        <h5 class="pop-out__register-header">Sign in to continue reading.</h5>
+        </span>
+        <span class="article-call-to-action__subtitle">
+            Sign in to continue reading.
+        </span>
         @{ Html.RenderPartial("_SignInForm", Model); }
     </div>
 
     <div class="article-call-to-action__column">
-        <h4>New to SCRIP?</h4>
-        <h5 class="pop-out__register-header">Register to read this article.</h5>
+        <span class="article-call-to-action__title">
+            New to SCRIP?
+        </span>
+        <span class="article-call-to-action__subtitle">
+            Register to read this article.
+        </span>
         <form class="pop-out__register form-pre-registration"
               data-on-submit="/Account/api/RegistrationApi/PreRegister/"
               data-on-success="RegisterUrl">
@@ -36,7 +44,13 @@
     </div>
 </div>
 
+
+
+@* * * SIGNED IN - NOT ENTITLED * * *@
+
 <div class="article-call-to-action--subscribe">
-    <h4>Not a subscriber?</h4>
+    <span class="article-call-to-action__title">
+        Not a subscriber?
+    </span>
     <a href="#">Learn how you can access scrip content.</a>
 </div>
