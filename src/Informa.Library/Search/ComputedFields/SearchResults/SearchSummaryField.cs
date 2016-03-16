@@ -17,8 +17,8 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
             }
 
             var article = indexItem.GlassCast<IArticle>(inferType: true);
-
-            var processedText = GetTruncatedText(article.Summary, 20);
+            
+            var processedText = WordUtil.TruncateArticle(article.Summary, 20);
             processedText = ReplaceArticleTokens(processedText);
 
             return processedText;
@@ -42,32 +42,9 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
         /// <param name="text"></param>
         /// <param name="maxWordCount"></param>
         /// <returns></returns>
-        public string GetTruncatedText(string text, int maxWordCount)
+        public string GetTruncatedSummaryText(string summaryText, int maxWordCount)
         {
-            string result;
-            try
-            {
-                var maxWordCountLessEllipsis = maxWordCount;
-
-                if (WordUtil.GetWordCount(text) <= maxWordCount)
-                    result = text;
-
-                else
-                {
-                    result = HtmlUtil.StripHtml(text);
-                    var lastWordPosition = result.LastIndexOf(' ');
-
-                    if (lastWordPosition < 0) lastWordPosition = 0;
-
-                    result = result.Substring(0, lastWordPosition).Trim('.', ',', '!', '?') + "...";
-                }
-            }
-            catch (Exception)
-            {
-                return text;
-            }
-
-            return result;
+            return WordUtil.TruncateArticle(summaryText, maxWordCount);
         }
     }
 }
