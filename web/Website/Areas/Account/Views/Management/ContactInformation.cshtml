@@ -27,16 +27,44 @@
                     <p>@Model.PasswordUpdatedText</p>
                 </div>
 
+                <div class="alert-error js-form-error-PasswordUpdateFailed">
+                    <svg class="alert__icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                    </svg>
+
+                    <p class="page-account-contact__error">
+                        @Model.PasswordUpdateFailed
+                    </p>
+                </div>
+
                 <div class="alert-error js-form-error-PasswordRequirements">
-                  <svg class="alert__icon">
-                      <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
-                  </svg>
+                    <svg class="alert__icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                    </svg>
 
-                  @* * *
-                    TODO — NEEDS ERROR TEXT
-                  * * *@
+                    <p class="page-account-contact__error">
+                        @Model.PasswordRequirements
+                    </p>
+                </div>
 
-                  <p>@Model.PasswordUpdatedText</p>
+                <div class="alert-error js-form-error-PasswordMismatch">
+                    <svg class="alert__icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                    </svg>
+
+                    <p class="page-account-contact__error">
+                        @Model.PasswordMismatch
+                    </p>
+                </div>
+
+                <div class="alert-error js-form-error-InvalidPasswordValues">
+                    <svg class="alert__icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                    </svg>
+
+                    <p class="page-account-contact__error">
+                        @Model.InvalidPasswordValues
+                    </p>
                 </div>
 
                 <h2 class="page-account__subheader">@Model.PasswordTitleText</h2>
@@ -85,7 +113,20 @@
                     <svg class="alert__icon">
                         <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
                     </svg>
-                    <p>@Model.AccountUpdatedText</p>
+
+                    <p class="page-account-contact__error">
+                        @Model.Required
+                    </p>
+                </div>
+
+                <div class="alert-error js-form-error-ContactUpdateFailed js-form-error-general">
+                    <svg class="alert__icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                    </svg>
+
+                    <p class="page-account-contact__error">
+                        @Model.ContactUpdateFailed
+                    </p>
                 </div>
 
                 <div>
