@@ -10,7 +10,7 @@
         submit: function () {
             var result = {
                 delete: $('input[name=delete]')[0].checked,
-                pubtype: $('input[name=pubtype]').val()
+                pubtype: $('input:radio[name=pubtype]:checked').val()
             };
 
             this.closeDialog(JSON.stringify(result));
