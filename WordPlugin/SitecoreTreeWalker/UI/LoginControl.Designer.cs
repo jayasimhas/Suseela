@@ -111,7 +111,7 @@
 			this.uxConnectionError.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.uxConnectionError.Controls.Add(this.uxErrorMessage);
 			this.uxConnectionError.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-			this.uxConnectionError.Location = new System.Drawing.Point(110, 55);
+			this.uxConnectionError.Location = new System.Drawing.Point(110, 27);
 			this.uxConnectionError.Name = "uxConnectionError";
 			this.uxConnectionError.Size = new System.Drawing.Size(264, 44);
 			this.uxConnectionError.TabIndex = 7;
@@ -162,7 +162,7 @@
 			// label3
 			// 
 			this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-			this.label3.Location = new System.Drawing.Point(52, 120);
+			this.label3.Location = new System.Drawing.Point(40, 157);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(400, 150);
 			this.label3.TabIndex = 6;
@@ -178,16 +178,16 @@
 			this.Controls.Add(this.uxForgotPassword);
 			this.Controls.Add(this.uxVersionNumber);
 			this.Controls.Add(this.uxConnectionError);
-			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.uxRememberPassword);
 			this.Controls.Add(this.uxPassword);
 			this.Controls.Add(this.uxUsername);
 			this.Controls.Add(this.uxLoginButton);
+			this.Controls.Add(this.label3);
 			this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
 			this.Name = "LoginControl";
-			this.Size = new System.Drawing.Size(486, 516);
+			this.Size = new System.Drawing.Size(443, 440);
 			this.Load += new System.EventHandler(this.LoginControl_Load);
 			this.uxConnectionError.ResumeLayout(false);
 			this.uxConnectionError.PerformLayout();
