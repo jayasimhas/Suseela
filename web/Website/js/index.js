@@ -201,7 +201,9 @@ $(document).ready(function() {
 	accountUpdatePassController.watchForm('.form-update-account-pass');
 
 	var accountUpdateContactController = new FormController();
-	accountUpdateContactController.watchForm('.form-update-account-contact');
+	accountUpdateContactController.watchForm('.form-update-account-contact', function(form, context, evt) {
+		$(window).scrollTop(($(evt.target).closest('form').find('.js-form-error-general').offset().top - 32));
+	});
 
 
 

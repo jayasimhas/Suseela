@@ -70,6 +70,10 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public string NewPasswordPlaceholderText => TextTranslator.Translate("ContactInfo.NewPasswordPlaceholder");
         public string NewPasswordConfirmPlaceholderText => TextTranslator.Translate("ContactInfo.NewPasswordConfirmPlaceholder");
         public string PasswordUpdatedText => TextTranslator.Translate("ContactInfo.PasswordUpdated");
+        public string PasswordUpdateFailed => TextTranslator.Translate("ContactInfo.PasswordUpdateFailed");
+        public string PasswordRequirements => TextTranslator.Translate("ContactInfo.PasswordRequirements");
+        public string PasswordMismatch => TextTranslator.Translate("ContactInfo.PasswordMismatch");
+        public string InvalidPasswordValues => TextTranslator.Translate("ContactInfo.InvalidPasswordValues");
 
         #endregion Password
 
@@ -130,6 +134,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public string ShipStatePlaceholderText => TextTranslator.Translate("ContactInfo.ShipStatePlaceholder");
         public string UpdateContactInfoText => TextTranslator.Translate("ContactInfo.UpdateContactInfo");
         public string AccountUpdatedText => TextTranslator.Translate("ContactInfo.AccountUpdated");
+        public string Required => TextTranslator.Translate("ContactInfo.Required");
+        public string ContactUpdateFailed => TextTranslator.Translate("ContactInfo.ContactUpdateFailed");
 
         #endregion Contact Info
 
@@ -148,7 +154,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             if (item == null)
                 return Enumerable.Empty<ListItem>();
 
-            return item.GetChildren().Select(a => SitecoreContext.GetItem<ITaxonomy_Item>(a.ID.Guid)).Select(b => new ListItem(b.Item_Name, b.Item_Name));
+            return item.GetChildren().Select(a => SitecoreContext.GetItem<ITaxonomy_Item>(a.ID.Guid)).Select(b => new ListItem(b.Item_Name, (b.Item_Name.ToLower().Contains("select one")) ? "" : b.Item_Name));
         }
 
         #endregion Drop Down Lists
