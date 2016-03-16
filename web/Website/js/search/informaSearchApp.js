@@ -124,37 +124,19 @@
 
 // TODO: This should be split off into a new file inside the controllers directory
 
-  // informaSearchApp.factory("dataFactoryy", function(){
+  // informaSearchApp.factory("dataFactory", function(){
   //   var states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Dakota", "North Carolina", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
     
   //   return states;
   // });
   
-// define factory for data source
-  informaSearchApp.factory("dataFactory", ['$http', function($http) {
 
-    var urlBase = '/velir/services/TypeAhead.asmx/TypeAheadCompanies';
-    var url = 'http://dev.ibi.velir.com/velir/services/TypeAhead.asmx/TypeAheadCompanies';
 
-    var dataFactory = {};
-     
-    dataFactory.getCompanies = function () {
-      return $http.get(urlBase);
-    }
-
-    return dataFactory;
-  }]);
-
-// service to return data
-informaSearchApp.service('dataService', ['$http', function($http) {
+// service to return companies data
+informaSearchApp.service('companiesService', ['$http', function($http) {
 
     var url = '/velir/services/TypeAhead.asmx/TypeAheadCompanies';
-     
-    // retuns a promise
-    // this.getCompanies = function () {
-    //   return $http.get(url);
-    // };
-    
+
     $http({
       method: 'GET',
       url: 'http://informa-insight.rose.velir.com/velir/services/TypeAhead.asmx/TypeAheadCompanies'
@@ -162,7 +144,12 @@ informaSearchApp.service('dataService', ['$http', function($http) {
     }).then(function successCallback(response) {
       console.log("success");
       var data = response.data;
-      console.log(data);
+      var companies = [];
+      // companies = Object.keys(data).map(function(k) { return data[k] });
+      companies = $.map(data, function(value, index) {
+        return value;
+      });
+      console.log(companies);
     }, function errorCallback(response) {
       console.log("error");
     });
@@ -170,13 +157,12 @@ informaSearchApp.service('dataService', ['$http', function($http) {
 
   
 // setup controller and pass data source
-  informaSearchApp.controller("InformaTypeaheadController", function($scope, dataService){
-    // ["$scope", function($scope, States){
+  informaSearchApp.controller("InformaTypeaheadController", function($scope, companiesService){
+    ["$scope", function($scope, States){
 
       // var _selected;
       $scope.selected = undefined;
-      $scope.companies = dataService;
-      // console.log(dataFactory);
+      $scope.companies = companiesService;
 
       // $scope.ngModelOptionsSelected = function(value) {
       //   if (arguments.length) {
@@ -206,7 +192,7 @@ informaSearchApp.service('dataService', ['$http', function($http) {
             //                 alert(ext);
             //         });
             // });
-    // }
+    }
 
   });
 

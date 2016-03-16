@@ -107,11 +107,11 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
     //** This clears the date parameters from the search, deselcts any date radio buttons, and clears both custom date input fields **//
     _this.clearDateRange = function () {
         var filter = _this.getFilter('date');
-        console.log("removing: ", filter);
+        // console.log("removing: ", filter);
         filter.setValue("");
         filter.selected = false;
         var filterDateLabel = _this.getFilter('dateFilterLabel');
-        console.log("removing: ", filterDateLabel);
+        // console.log("removing: ", filterDateLabel);
         filterDateLabel.setValue("");
         var dates = _this.DateFilters;
          _.each(dates, function(date) {
@@ -162,7 +162,7 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
 
         var filter = _this.getFilter(filterKey);
         var filterDateLabel = _this.getFilter('dateFilterLabel');
-        console.log("date range: ", dateFilter);
+        // console.log("date range: ", dateFilter);
 
         // if (dateFilter == _this.currentDateRange) {
             // _this.clearDateRange(filterKey);
