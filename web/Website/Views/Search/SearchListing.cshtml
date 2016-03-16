@@ -3,9 +3,9 @@
 <section class="search-results" ng-class="{ 'headlines-only': headlinesOnly.showOnlyHeadlines() }" ng-controller="InformaResultsController as results">
 
     <!-- start Media Object - Default (no width) -->
-    <div class="result" ng-repeat="doc in results.docs">
+    <div class="result" ng-repeat="doc in results.docs" on-finish-render broadcasteventname="ngRepeatBroadcast1">
 
-    
+
         <div class="result__body">
 
             <div class="result__pubdate">
@@ -31,8 +31,8 @@
                  data-is-bookmarked="{{doc.isArticleBookmarked}}">
 
                 <svg class="icon__bookmark">
-                    <use ng-show="doc.isArticleBookmarked" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-                    <use ng-show="!doc.isArticleBookmarked" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+                    <use ng-if="doc.isArticleBookmarked" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+                    <use ng-if="!doc.isArticleBookmarked" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
                 </svg>
             </div>
 
@@ -47,13 +47,13 @@
             <p class="result__description">{{ doc.summary }}</p>
 
              <div class="result__tags"  >
-                 
+
                  <span ng-repeat="tax in doc.searchDisplayTaxonomy.links"><a ng-click="filterResult(tax.url)" href="{{tax.url}}">
                     {{tax.title}}
                 </a>
                      <span ng-if="!$last"  class="result__line-separator"></span> <!-- only prints if there are multiple tags -->
                  </span>
-                
+
             </div>
 
         </div>

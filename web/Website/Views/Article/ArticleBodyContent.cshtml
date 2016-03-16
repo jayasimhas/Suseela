@@ -93,8 +93,8 @@
     {
         @* * * Executive Summary *@
         <div class="article-executive-summary">
-            <h4>Executive Summary</h4>
-            @Html.Raw(Model.ListableSummary)
+            <h4>Executive Summary</h4>            
+			@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.ListableSummary))			
         </div>
         @* End Executive Summary  *@
     }
@@ -118,7 +118,7 @@
                     @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
                     {
                         <span class="article-inline-image__source">
-                            Image Source: @Model.Image.ImageSource
+                        @Model.FeaturedImageSource: @Model.Image.ImageSource
                         </span>
                     }
                     <span class="article-inline-image__caption">@Model.Image.ImageCaption</span>

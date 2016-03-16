@@ -7,20 +7,20 @@ namespace Informa.Library.Publishing.Scheduled
 	[AutowireService(LifetimeScope.Default)]
 	public class PublishScheduledPublishes : IPublishScheduledPublishes
 	{
-		protected readonly IPublishScheduledPublish ProcessScheduledPublish;
+		protected readonly IPublishScheduledPublish PublishScheduledPublish;
 		protected readonly IPublishingStatusCheck PublishProcessStatusCheck;
 
 		public PublishScheduledPublishes(
-			IPublishScheduledPublish processScheduledPublish,
+			IPublishScheduledPublish publishScheduledPublish,
 			IPublishingStatusCheck publishProcessStatusCheck)
 		{
-			ProcessScheduledPublish = processScheduledPublish;
+			PublishScheduledPublish = publishScheduledPublish;
 			PublishProcessStatusCheck = publishProcessStatusCheck;
 		}
 
 		public IScheduledPublishesResult Publish(IEnumerable<IScheduledPublish> scheduledPublishes)
 		{
-			var allPublishes = scheduledPublishes.Select(sp => new ScheduledPublishResult { ScheduledPublish = sp, PublishingStatus = ProcessScheduledPublish.Publish(sp) }).ToList();
+			var allPublishes = scheduledPublishes.Select(sp => new ScheduledPublishResult { ScheduledPublish = sp, PublishingStatus = PublishScheduledPublish.Publish(sp) }).ToList();
 			var processingPublishes = allPublishes;
 
 			while (processingPublishes != null)
@@ -31,6 +31,8 @@ namespace Informa.Library.Publishing.Scheduled
 
 				processingPublishes = groupedStatuses.FirstOrDefault(gs => gs.Key == PublishStatus.Processing)?.ToList();
 			}
+
+			allPublishes.Where(p => p.PublishingStatus.Status == PublishStatus.Done).ToList().ForEach(p => p.ScheduledPublish.Published = true);
 
 			return new ScheduledPublishesResult
 			{

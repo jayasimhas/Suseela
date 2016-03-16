@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.Script.Services;
 using System.Web.Services;
 using Informa.Library.Rss;
@@ -14,6 +15,7 @@ using Sitecore.Web;
 
 namespace Informa.Web.velir.services
 {
+
     /// <summary>
     /// Summary description for TypeAhead
     /// </summary>
@@ -32,8 +34,7 @@ namespace Informa.Web.velir.services
         //}
 
         [WebMethod]
-        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public List<CompanyTypeAheadResponseItem> TypeAheadCompanies()
+        public void TypeAheadCompanies()
         {
             List<CompanyTypeAheadResponseItem> companies = new List<CompanyTypeAheadResponseItem>();
 
@@ -45,8 +46,12 @@ namespace Informa.Web.velir.services
             companies.Add(company2);
             companies.Add(company3);
 
-            return companies;
+            this.Context.Response.ContentType = "application/json; charset=utf-8";
+            this.Context.Response.Write(new JavaScriptSerializer().Serialize(companies));
+
         }
+
+
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
