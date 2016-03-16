@@ -52,8 +52,7 @@
                       <label>Amgen (537)</label>
                   </li>-->
                   <li class="facets__company-input" ng-show="isAddingCompany"
-                    ng-controller="InformaTypeaheadController"
-                    >
+                    ng-controller="InformaTypeaheadController">
                       <div class="facets__field-group facets__field-group--companies">
                           <button class="facets__button facets__button--clear-company"
                                   ng-class="{'collapsed': isCollapsedCompanies}"
@@ -66,10 +65,19 @@
                             name="companies" 
                             placeholder="enter a company"
                             ng-model="selected"
-                            typeahead="companies for companies in companies"
-                            class="form-control"
-                            >
-                            @* typeahead="companies for companies in companies | filter:$viewValue | limitTo:10" *@
+                            typeahead="companies for companies in companies | filter:$viewValue | limitTo:10" 
+                            typeahead-loading="loadingCompanies"  
+                            typeahead-no-results="noCompanies" 
+                            typeahead-min-length=2
+                            typeahead-select-on-blur=true
+                            typeahead-select-on-exact=true
+                            typeahead-on-select='onSelect()' 
+                            class="form-control">
+                          <i ng-show="loadingCompanies" class="glyphicon glyphicon-refresh"></i>
+                          <div ng-show="noCompanies">
+                            <i class="glyphicon glyphicon-remove"></i> No Results Found
+                          </div>
+                          {{selected}}
                       </div>
                   </li>
               </ul>
@@ -82,11 +90,6 @@
                   <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#add"></use></svg>
               </button>
           </fieldset>
-
-
-
-
-
 
         <fieldset ng-show="group.label == 'Date Placeholder'" class="facets__fieldset">
               <legend class="facets__legend facets__section-header">

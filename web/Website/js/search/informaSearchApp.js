@@ -122,91 +122,45 @@
 
 
 
-// TODO: This should be split off into a new file inside the controllers directory
-
-  informaSearchApp.factory("States", function(){
-    var states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Dakota", "North Carolina", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
-    
-    return states;
-  });
-  
-
+// TODO: This should be split off into a new file
 
   // service to return companies data
-  informaSearchApp.service('Companies', ['$http', function($http) {
+  informaSearchApp.factory('Companies', ['$http', function($http) {
 
-      var url = '/velir/services/TypeAhead.asmx/TypeAheadCompanies';
-
-      $http({
+    var fetchCompanies = function() {
+      // var url = '/velir/services/TypeAhead.asmx/TypeAheadCompanies';
+      return $http({
           method: 'GET',
           url: 'http://informa-insight.rose.velir.com/velir/services/TypeAhead.asmx/TypeAheadCompanies'
-      // returns a promise
-      }).then(function successCallback(response) {
-
-        console.log("success");
-        var data = response.data;
-
-        var companies = [];
-        companies = $.map(data, function(value, index) {
-          return value.CompanyName;
-        });
-
-        console.log(companies);
-        return companies;
-
-      }, function errorCallback(response) {
-        console.log("error");
       });
+    }
+
+    return {fetchCompanies : fetchCompanies};
   }]);
 
     
   // setup controller and pass data source
   informaSearchApp.controller("InformaTypeaheadController", 
     function($scope, Companies){
-    // function($scope, companiesService){
 
-      var _selected;
-      $scope.selected = undefined;
-      $scope.companies = Companies;
+      Companies.fetchCompanies()
+      .then(function(response) {
+        var companies = [];
+        companies = $.map( response.data, function(value, index) {
+          return value.CompanyName;
+        });
+        $scope.companies = companies;
+      })
+      .catch( function(reason) {
+        console.log("error")
+        console.log(reason);
+      })
 
-      // $scope.ngModelOptionsSelected = function(value) {
-      //   if (arguments.length) {
-      //     _selected = value;
-      //   } else {
-      //     return _selected;
-      //   }
-      // };
-
-      // $scope.modelOptions = {
-      //   debounce: {
-      //     default: 500,
-      //     blur: 250
-      //   },
-      //   getterSetter: true
-      // };
-
-    });
-      // console.log(companies);
-
-      
-      
-      // $.ajax({
-      //   type: 'GET',
-      //   url: 'http://dev.ibi.velir.com/velir/services/TypeAhead.asmx/TypeAheadCompanies',
-      //   dataType: 'xml',
-      //   success: function(xml){
-      //      console.log(xml);
-            // $(xml).find('artist-list').each(function(){
-            // $(this).find('artist').each(function(){
-            //                 var ext = $(this).attr('ext');
-            //                 alert(ext);
-            //         });
-            // });
-    // }
-    
-    // ]
-
-  // });
+      // console.log("hi there");
+     $scope.onSelect = function() {
+        console.log("hi");
+      } 
+  });
 
 
 

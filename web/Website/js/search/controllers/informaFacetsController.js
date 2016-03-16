@@ -162,29 +162,16 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
 
         var filter = _this.getFilter(filterKey);
         var filterDateLabel = _this.getFilter('dateFilterLabel');
-        // console.log("date range: ", dateFilter);
 
-        // if (dateFilter == _this.currentDateRange) {
-            // _this.clearDateRange(filterKey);
-            // _this.currentDateRange = "";
-            // filterDateLabel.setValue("");
-            // filter.setValue("");
-        // } else {
         var startDate = datesObject[dateFilter];
         var endDate = datesObject['day'];
         _this.currentDateRange = dateFilter;
 
         filterDateLabel.setValue(dateFilter);
         filter.setValue(startDate + ";" + endDate);
-        // }
-        //_this.CustomStartDate.val('');
-       // _this.CustomEndDate.val('');
-       // _this.checkSelectedDateRange();
+
         _this.update();
     }
-
-    
-
 
 
     init();
