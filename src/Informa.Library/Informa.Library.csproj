@@ -311,6 +311,7 @@
     <Compile Include="CustomSitecore\Ribbon\ExportArticle.cs" />
     <Compile Include="CustomSitecore\Ribbon\ViewNlm.cs" />
     <Compile Include="Data\Entity\CustomDbContext.cs" />
+    <Compile Include="Globalization\GenerateSitecoreTextTranslator.cs" />
     <Compile Include="Mail\BaseHtmlEmailFactory.cs" />
     <Compile Include="DCD\XMLImporting\DCDConfigurationItem.cs" />
     <Compile Include="DCD\XMLImporting\DCDContextExtensions.cs" />

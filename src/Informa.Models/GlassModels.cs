@@ -1318,6 +1318,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.System.Dictionary
+{
+
+
+ 	/// <summary>
+	/// IDictionary_Domain Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/System/Dictionary/Dictionary Domain</para>	
+	/// <para>ID: 0a2847e6-9885-450b-b61e-f9e6528480ef</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IDictionary_DomainConstants.TemplateIdString)]
+	public partial interface IDictionary_Domain : IGlassBase 
+	{
+								/// <summary>
+					/// The Fallback Domain field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: cd72e892-d8bb-487c-9eb1-6a57c48c72cc</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IDictionary_DomainConstants.Fallback_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Fallback_Domain  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IDictionary_Domain Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/System/Dictionary/Dictionary Domain</para>	
+		/// <para>ID: 0a2847e6-9885-450b-b61e-f9e6528480ef</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IDictionary_Domain__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Fallback Domain field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: cd72e892-d8bb-487c-9eb1-6a57c48c72cc</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IDictionary_DomainConstants.Fallback_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Fallback_Domain  {get; set;}
+						}
+	
+	public static partial class IDictionary_DomainConstants{
+
+			public const string TemplateIdString = "0a2847e6-9885-450b-b61e-f9e6528480ef";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Dictionary Domain";
+
+					
+			public static readonly ID Fallback_DomainFieldId = new ID("cd72e892-d8bb-487c-9eb1-6a57c48c72cc");
+			public const string Fallback_DomainFieldName = "Fallback Domain";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 {
 
@@ -3195,6 +3256,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 			public const string Mobile_Embed_CodeFieldName = "Mobile Embed Code";
 
 						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.System.Dictionary
+{
+
+
+ 	/// <summary>
+	/// IDictionary_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/System/Dictionary/Dictionary folder</para>	
+	/// <para>ID: 267d9ac7-5d85-4e9d-af89-99ab296cc218</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IDictionary_FolderConstants.TemplateIdString)]
+	public partial interface IDictionary_Folder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IDictionary_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/System/Dictionary/Dictionary folder</para>	
+		/// <para>ID: 267d9ac7-5d85-4e9d-af89-99ab296cc218</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IDictionary_Folder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IDictionary_FolderConstants{
+
+			public const string TemplateIdString = "267d9ac7-5d85-4e9d-af89-99ab296cc218";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Dictionary folder";
+
 			
 
 	}
@@ -5949,6 +6048,90 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 					
 			public static readonly ID Ignore_CaseFieldId = new ID("ceeeb260-ec81-40b6-b2a6-9e56525c599f");
 			public const string Ignore_CaseFieldName = "Ignore case";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.System.Dictionary
+{
+
+
+ 	/// <summary>
+	/// IDictionary_Entry Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/System/Dictionary/Dictionary entry</para>	
+	/// <para>ID: 6d1cd897-1936-4a3a-a511-289a94c2a7b1</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IDictionary_EntryConstants.TemplateIdString)]
+	public partial interface IDictionary_Entry : IGlassBase 
+	{
+								/// <summary>
+					/// The Key field.
+					/// <para></para>
+					/// <para>Field Type: memo</para>		
+					/// <para>Field ID: 580c75a8-c01a-4580-83cb-987776ceb3af</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IDictionary_EntryConstants.KeyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Key  {get; set;}
+								/// <summary>
+					/// The Phrase field.
+					/// <para></para>
+					/// <para>Field Type: memo</para>		
+					/// <para>Field ID: 2ba3454a-9a9c-4cdf-a9f8-107fd484eb6e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IDictionary_EntryConstants.PhraseFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Phrase  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IDictionary_Entry Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/System/Dictionary/Dictionary entry</para>	
+		/// <para>ID: 6d1cd897-1936-4a3a-a511-289a94c2a7b1</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IDictionary_Entry__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Key field.
+						/// <para></para>
+						/// <para>Field Type: memo</para>		
+						/// <para>Field ID: 580c75a8-c01a-4580-83cb-987776ceb3af</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IDictionary_EntryConstants.KeyFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Key  {get; set;}
+										/// <summary>
+						/// The Phrase field.
+						/// <para></para>
+						/// <para>Field Type: memo</para>		
+						/// <para>Field ID: 2ba3454a-9a9c-4cdf-a9f8-107fd484eb6e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IDictionary_EntryConstants.PhraseFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Phrase  {get; set;}
+						}
+	
+	public static partial class IDictionary_EntryConstants{
+
+			public const string TemplateIdString = "6d1cd897-1936-4a3a-a511-289a94c2a7b1";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Dictionary entry";
+
+					
+			public static readonly ID KeyFieldId = new ID("580c75a8-c01a-4580-83cb-987776ceb3af");
+			public const string KeyFieldName = "Key";
+
+						
+					
+			public static readonly ID PhraseFieldId = new ID("2ba3454a-9a9c-4cdf-a9f8-107fd484eb6e");
+			public const string PhraseFieldName = "Phrase";
 
 						
 			
@@ -14846,6 +15029,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Register_LinkFieldId = new ID("905eb945-783a-4385-b95e-e1a6ff63bcba");
+			public const string Register_LinkFieldName = "Register Link";
+
+						
+					
 			public static readonly ID Subscribe_LinkFieldId = new ID("7704cdd8-3258-4a10-8d22-55998bf88976");
 			public const string Subscribe_LinkFieldName = "Subscribe Link";
 
@@ -14926,11 +15114,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Publication_NameFieldId = new ID("9aee6c51-8392-4461-b24c-bf22acf5b07f");
 			public const string Publication_NameFieldName = "Publication Name";
-
-						
-					
-			public static readonly ID Register_LinkFieldId = new ID("905eb945-783a-4385-b95e-e1a6ff63bcba");
-			public const string Register_LinkFieldName = "Register Link";
 
 						
 					

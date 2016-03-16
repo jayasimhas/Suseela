@@ -34,8 +34,7 @@ namespace Informa.Web.ViewModels
         protected readonly IArticleComponentFactory ArticleComponentFactory;
         protected readonly IManageSavedDocuments ManageSavedDocuments;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-        public readonly ISignInViewModel SignInViewModel;
-        public readonly IRegisterPopOutViewModel RegisterPopOutViewModel;
+        public readonly ICallToActionViewModel CallToActionViewModel;
 
         public GlassArticleModel(
             ISiteRootContext siterootContext,
@@ -47,8 +46,7 @@ namespace Informa.Web.ViewModels
             IEntitledProductContext entitledProductContext,
             IManageSavedDocuments manageSavedDocuments,
             IAuthenticatedUserContext authenticatedUserContext,
-            ISignInViewModel signInViewModel,
-            IRegisterPopOutViewModel registerPopOutViewModel) : base(entitledProductContext)
+            ICallToActionViewModel callToActionViewModel) : base(entitledProductContext)
         {
             SiterootContext = siterootContext;
             ArticleListableFactory = articleListableFactory;
@@ -58,8 +56,7 @@ namespace Informa.Web.ViewModels
             ArticleComponentFactory = articleComponentFactory;
             ManageSavedDocuments = manageSavedDocuments;
             AuthenticatedUserContext = authenticatedUserContext;
-            SignInViewModel = signInViewModel;
-            RegisterPopOutViewModel = registerPopOutViewModel;
+            CallToActionViewModel = callToActionViewModel;
         }
 
         public IEnumerable<ILinkable> TaxonomyItems
