@@ -120,5 +120,13 @@
         .page-account__field-wrapper {
             margin-bottom: 3rem;
         }
+
+        &__update-pass-success {
+            margin-bottom: 1rem;
+        }
+
+        .alert-error {
+            margin-bottom: 2rem;
+        }
     }
 }

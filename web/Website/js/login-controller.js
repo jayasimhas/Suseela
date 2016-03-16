@@ -1,7 +1,13 @@
 function loginController(requestVerificationToken) {
-	this.addControl = function(triggerElement, successCallback, failureCallback) {
-		if (triggerElement) {
-			$(triggerElement).on('click', (event) => {
+	this.addControl = function(triggerForm, successCallback, failureCallback) {
+
+		var triggerElement = $(triggerForm).find('button[type=submit]');
+
+		if (triggerForm) {
+			$(triggerForm).on('submit', (event) => {
+
+				event.preventDefault();
+
 				var inputData = {};
 				var url = $(triggerElement).data('login-url');
 				var redirectUrl = $(triggerElement).data('login-redirect-url');
@@ -46,6 +52,8 @@ function loginController(requestVerificationToken) {
 						}
 					}
 				});
+
+				return false;
 			});
 		}
 	}

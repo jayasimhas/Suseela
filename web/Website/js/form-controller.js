@@ -16,7 +16,7 @@ function formController(requestVerificationToken) {
 
 			var inputData = {};
 
-			$(form).find('input').each(function() {
+			$(form).find('input, select').each(function() {
 
                 var value = '';
                 var field = $(this);
