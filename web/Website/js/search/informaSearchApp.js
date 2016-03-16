@@ -86,7 +86,15 @@
         //$scope.dateValues.dtToValue = "mm/dd/yyyy";
       };
 
-      $scope.dateOptions = {
+      $scope.fromDateOptions = {
+        // dateDisabled: disabled,
+        showWeeks: false, 
+        formatDayHeader: 'EEE', 
+        formatDay: 'd',
+        startingDay: 1
+      };
+
+      $scope.toDateOptions = {
         // dateDisabled: disabled,
         showWeeks: false, 
         formatDayHeader: 'EEE', 
@@ -101,6 +109,14 @@
 
         $scope.datepickers[which] = true;
       };
+
+      $scope.$watch('dateValues.dtFromValue', function () {
+          $scope.toDateOptions.minDate = $scope.dateValues.dtFromValue;
+      });
+
+      $scope.$watch('dateValues.dtToValue', function () {
+          $scope.fromDateOptions.maxDate = $scope.dateValues.dtToValue;
+      });
 
       }]);
 
