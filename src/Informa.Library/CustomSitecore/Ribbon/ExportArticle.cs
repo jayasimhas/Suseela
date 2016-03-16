@@ -6,6 +6,7 @@ using Glass.Mapper.Sc;
 using Informa.Library.Services.NlmExport;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Util;
+using log4net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Sitecore;
@@ -21,6 +22,12 @@ namespace Informa.Library.CustomSitecore.Ribbon
     [Serializable]
     public class ExportArticle : Command
     {
+        private const string ExportDialogPath = "/sitecore/client/Your Apps/NLM Export/Dialogs/Export Article";
+        private const string Ecorrected = "ecorrected";
+        private const string Eretracted = "eretracted";
+
+        private static readonly ILog Logger = LogManager.GetLogger(typeof (ExportArticle));
+
         protected void Run(ClientPipelineArgs args)
         {
             Item[] items = DeserializeItems(args.Parameters["items"]);
@@ -28,7 +35,7 @@ namespace Informa.Library.CustomSitecore.Ribbon
 
             if (!args.IsPostBack)
             {
-                SheerResponse.ShowModalDialog(new ModalDialogOptions("/sitecore/client/Your Apps/NLM Export/Dialogs/Export Article")
+                SheerResponse.ShowModalDialog(new ModalDialogOptions(ExportDialogPath)
                 {
                     Response = true
                 });
@@ -47,10 +54,10 @@ namespace Informa.Library.CustomSitecore.Ribbon
 
                 switch (dialogResult.Pubtype)
                 {
-                    case "ecorrected":
+                    case Ecorrected:
                         pubType = PublicationType.Ecorrected;
                         break;
-                    case "eretracted":
+                    case Eretracted:
                         pubType = PublicationType.Eretracted;
                         break;
                 }
@@ -77,6 +84,7 @@ namespace Informa.Library.CustomSitecore.Ribbon
                 }
                 catch (Exception ex) when (!(ex is ThreadAbortException))
                 {
+                    Logger.Error("Could not export article.", ex);
                     SheerResponse.Alert("There was an error during the export process. Please try again.");
                 }
             }
