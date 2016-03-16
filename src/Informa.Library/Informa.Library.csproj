@@ -309,6 +309,7 @@
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
     <Compile Include="CustomSitecore\Pipelines\PublishItem\ItemsPublishingProcessor.cs" />
     <Compile Include="CustomSitecore\Ribbon\ExportArticle.cs" />
+    <Compile Include="CustomSitecore\Ribbon\ViewNlm.cs" />
     <Compile Include="Data\Entity\CustomDbContext.cs" />
     <Compile Include="Mail\BaseHtmlEmailFactory.cs" />
     <Compile Include="DCD\XMLImporting\DCDConfigurationItem.cs" />
