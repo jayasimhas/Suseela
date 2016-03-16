@@ -51,27 +51,34 @@ namespace Informa.Web.Areas.Article.Controllers
 			}
 
 			var emailFrom = GetValue(siteRoot?.Email_From_Address);
-
-			var emailBody = GetEmailBody(request.SenderEmail, request.SenderName,
-				request.ArticleNumber, "Aakash Shah", request.RecipientEmail, request.PersonalMessage);
-			Email friendEmail = new Email
+			var allEmails = request.RecipientEmail.Split(';');
+			var result = true;
+			foreach (var eachEmail in allEmails)
 			{
-				To = request.RecipientEmail,
-				Subject = request.ArticleTitle,
-				From = emailFrom,
-				Body = emailBody,
-				IsBodyHtml = true
-			};
+				var emailBody = GetEmailBody(request.SenderEmail, request.SenderName,
+					request.ArticleNumber, eachEmail, request.PersonalMessage);
+				var friendEmail = new Email
+				{
+					To = eachEmail,
+					Subject = request.ArticleTitle,
+					From = emailFrom,
+					Body = emailBody,
+					IsBodyHtml = true
+				};
 
-			var result = EmailSender.Send(friendEmail);
-
+				var isEmailSent = EmailSender.Send(friendEmail);
+				if (!isEmailSent)
+				{
+					result = false;
+				}
+			}
 			return Ok(new
 			{
 				success = result
 			});
 		}
 
-		public string GetEmailBody(string senderEmail, string senderName, string articleNumber, string friendName, string friendEmail, string message)
+		public string GetEmailBody(string senderEmail, string senderName, string articleNumber, string friendEmail, string message)
 		{
 			string emailHtml = string.Empty;
 			try
@@ -85,29 +92,32 @@ namespace Informa.Web.Areas.Article.Controllers
 
 				var siteRoot = SiteRootContext.Item;
 				emailHtml = htmlEmailTemplate.Html;
-				var replacements = new Dictionary<string, string>();
-
-				replacements["#Logo_URL#"] = GetValue(siteRoot?.Email_Logo?.Src);
-				replacements["#Date#"] = DateTime.Now.ToString("dddd, d MMMM yyyy");
-				replacements["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink();
-				replacements["#RSS_Link_Text#"] = GetValue(siteRoot?.RSS_Link?.Text);
-				replacements["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink();
-				replacements["#LinkedIn_Link_Text#"] = GetValue(siteRoot?.LinkedIn_Link?.Text);
-				replacements["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink();
-				replacements["#Twitter_Link_Text#"] = GetValue(siteRoot?.Twitter_Link?.Text);
-
-				//replacements["#Body_Content#"] = GetValue(siteRoot?.Email_A_Friend_Body_Content)
-				//	.ReplaceCaseInsensitive("#reciever_name#", friendName)
-				//	.ReplaceCaseInsensitive("#sender_name#", senderEmail)
-				//	.ReplaceCaseInsensitive("#sender_email#", senderName)
-				//	.ReplaceCaseInsensitive("#personal_message#", message);
-
+				var replacements = new Dictionary<string, string>
+				{
+					["#Logo_URL#"] = GetValue(siteRoot?.Email_Logo?.Src),
+					["#Date#"] = DateTime.Now.ToString("dddd, d MMMM yyyy"),
+					["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink(),
+					["#RSS_Link_Text#"] = GetValue(siteRoot?.RSS_Link?.Text),
+					["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
+					["#LinkedIn_Link_Text#"] = GetValue(siteRoot?.LinkedIn_Link?.Text),
+					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
+					["#Twitter_Link_Text#"] = GetValue(siteRoot?.Twitter_Link?.Text),
+					["#friend_name#"] = friendEmail,
+					["#sender_name#"] = senderName,
+					["#sender_email#"] = senderEmail
+				};
+				
+				if (!string.IsNullOrEmpty(message))
+				{
+					replacements["#personal_message#"] = '"' + message + '"';
+				}
+				
 				// Article Body
 				var article = _articleUtil.GetArticleByNumber(articleNumber);
 				if (article != null)
 				{
 					replacements["#article_date#"] = article.Actual_Publish_Date.ToShortDateString();
-					replacements["#article_mediaType#"] = article.Media_Type != null ? article.Media_Type.Item_Name : string.Empty;
+					replacements["#article_mediatype#"] = article.Media_Type != null ? article.Media_Type.Item_Name : string.Empty;
 					replacements["#article_title#"] = article.Title;
 					replacements["#article_titleURL#"] = article._Url;
 
