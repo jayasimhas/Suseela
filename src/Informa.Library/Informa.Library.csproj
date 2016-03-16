@@ -680,6 +680,7 @@
     <Compile Include="User\IUpdateUserPassword.cs" />
     <Compile Include="User\IUser.cs" />
     <Compile Include="User\IUserIpAddressContext.cs" />
+    <Compile Include="User\IUserIpAddressSession.cs" />
     <Compile Include="User\IUserSession.cs" />
     <Compile Include="User\Profile\AccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IAccountInfoWriteResult.cs" />
@@ -793,6 +794,7 @@
     <Compile Include="User\Authentication\AuthenticatedUser.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />
     <Compile Include="User\UserIpAddressContext.cs" />
+    <Compile Include="User\UserIpAddressSession.cs" />
     <Compile Include="User\UserSession.cs" />
     <Compile Include="Utilities\Autofac\Modules\AutoMapperModule.cs" />
     <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleBodyProfile.cs" />

@@ -8,11 +8,24 @@ namespace Informa.Library.User
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class UserIpAddressContext : IUserIpAddressContext
 	{
+		protected readonly IUserIpAddressSession Session;
+
+		public UserIpAddressContext(
+			IUserIpAddressSession session)
+		{
+			Session = session;
+		}
+
 		public IPAddress IpAddress
 		{
 		    get
 		    {
-		        IPAddress ipAddress = null;
+		        var ipAddress = Session.IpAddress;
+
+				if (ipAddress != null)
+				{
+					return ipAddress;
+				}
 
 		        string ip =
 		            HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
@@ -25,7 +38,7 @@ namespace Informa.Library.User
 
 		        ip?.Split(',').Any(x => IPAddress.TryParse(x, out ipAddress));
 
-                return ipAddress;                                     
+                return Session.IpAddress = ipAddress;                                     
 		    }                                                         
 		}                   
 	}
