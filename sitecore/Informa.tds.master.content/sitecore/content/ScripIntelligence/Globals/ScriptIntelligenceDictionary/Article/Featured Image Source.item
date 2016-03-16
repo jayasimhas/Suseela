@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {DE5FCA6C-5AAF-49CA-BD78-35954F8F8274}
+id: {81E7CF67-41AA-4A53-94F1-65B15243326C}
 database: master
-path: /sitecore/content/ScripIntelligence/Globals/ScriptIntelligenceDictionary/Account/AccountInfo/Request Failed Key
-parent: {7ED51430-667D-4EE6-A83C-0F0A4F480839}
-name: Request Failed Key
+path: /sitecore/content/ScripIntelligence/Globals/ScriptIntelligenceDictionary/Article/Featured Image Source
+parent: {3E7A7455-2927-487B-A88B-F46CFBC11F63}
+name: Featured Image Source
 master: {4314E7F7-4F9F-4E16-A43A-8C0BF2A03A2F}
 template: {6D1CD897-1936-4A3A-A511-289A94C2A7B1}
 templatekey: Dictionary entry
@@ -13,9 +13,9 @@ templatekey: Dictionary entry
 field: {580C75A8-C01A-4580-83CB-987776CEB3AF}
 name: Key
 key: key
-content-length: 25
+content-length: 27
 
-ContactInfo.RequestFailed
+Article.FeaturedImageSource
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
@@ -33,36 +33,36 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 68979e6e-a4fa-48dc-abcb-50721e2232cc
+revision: 9896fd4d-9d17-414a-9d4d-bc8f801de4ce
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 13
+content-length: 12
 
-RequestFailed
+Image Source
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20160312T190815Z
+20160315T212840Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-68979e6e-a4fa-48dc-abcb-50721e2232cc
+9896fd4d-9d17-414a-9d4d-bc8f801de4ce
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160316T031222Z
+20160315T212853Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -525,7 +525,7 @@
     <Compile Include="Publishing\Scheduled\ScheduledPublishesResult.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishResult.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishType.cs" />
-    <Compile Include="Publishing\Scheduled\Tasks\ProcessScheduledPublishing.cs" />
+    <Compile Include="Publishing\Scheduled\Tasks\ScheduledPublishing.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\ArticleIntegerNumberField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchMediaIconField.cs" />
     <Compile Include="Threading\ThreadSafe`1.cs" />
