@@ -12,14 +12,30 @@
                 <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-bad-id">@Model.BadIDText</p>
             </div>
 
-            <table class="sortable-table">
+            <table class="sortable sortable-table">
                 <thead class="sortable-table__header">
                     <tr>
                         <td>
                             @Model.TitleText
+                            <div class="sortable-table__sort-arrows">
+                                <svg class="sortable-table__sort-arrows--up">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                </svg>
+                                <svg class="sortable-table__sort-arrows--down">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                </svg>
+                            </div>
                         </td>
                         <td>
                             @Model.DateText
+                            <div class="sortable-table__sort-arrows">
+                                <svg class="sortable-table__sort-arrows--up">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                </svg>
+                                <svg class="sortable-table__sort-arrows--down">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                </svg>
+                            </div>
                         </td>
                         <td></td>
                     </tr>

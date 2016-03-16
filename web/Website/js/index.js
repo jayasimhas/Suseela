@@ -9,6 +9,7 @@ import LoginController from './login-controller';
 import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
+import SortableTableController from './sortable-table-controller';
 
 
 
@@ -197,7 +198,9 @@ $(document).ready(function() {
 
 
 	var savedDocumentsController = new FormController();
-	savedDocumentsController.watchForm('.form-remove-saved-document');
+	savedDocumentsController.watchForm('.form-remove-saved-document', function(form, context, evt) {
+		$(evt.target).closest('tr').remove();
+	});
 
 
     svg4everybody();
@@ -341,6 +344,8 @@ $(document).ready(function() {
 		$('.informa-ribbon').toggleClass('show')
 
 	});
+
+	var sortTheTables = new SortableTableController();
 
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");

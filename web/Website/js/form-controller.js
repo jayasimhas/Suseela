@@ -50,7 +50,7 @@ function formController(requestVerificationToken) {
                         this.showSuccessMessage(form);
 
 						if (successCallback) {
-							successCallback(form);
+							successCallback(form, this, event);
 						}
 
                         if($(form).data('on-success')) {
