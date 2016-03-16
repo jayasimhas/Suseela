@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using System;
+using System.Linq;
+using System.Net;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Net.Mail;
 using Sitecore.Configuration;
@@ -9,9 +11,15 @@ namespace Informa.Library.Mail
 	public class EmailSender : IEmailSender
 	{
 		public bool Send(IEmail email)
-		{
-		    using (var sitecoreEmail = new MailMessage(email.From, email.To, email.Subject, email.Body))
+        {
+            var recipients = GetRecipients(email);
+            using (var sitecoreEmail = new MailMessage(email.From, recipients.First(), email.Subject, email.Body))
 		    {
+                foreach (var recipient in recipients.Skip(1))
+                {
+                    sitecoreEmail.To.Add(recipient);
+                }
+
                 sitecoreEmail.IsBodyHtml = email.IsBodyHtml;
 
 		        try
@@ -32,8 +40,14 @@ namespace Informa.Library.Mail
 
 		public bool SendWorkflowNotification(IEmail email, string replyEmail)
 		{
-            using (var sitecoreEmail = new MailMessage(email.From, email.To, email.Subject, email.Body))
+		    var recipients = GetRecipients(email);
+            using (var sitecoreEmail = new MailMessage(email.From, recipients.First(), email.Subject, email.Body))
             {
+                foreach (var recipient in recipients.Skip(1))
+                {
+                    sitecoreEmail.To.Add(recipient);
+                }
+
                 sitecoreEmail.IsBodyHtml = email.IsBodyHtml;
                 sitecoreEmail.ReplyToList.Add(replyEmail);
 
@@ -53,7 +67,13 @@ namespace Informa.Library.Mail
             }
 		}
 
-        // This is taken from Sitecore.MainUtil; MainUtil.SendMail has a resource leak
+	    private string[] GetRecipients(IEmail email)
+	    {
+	        return email.To.Split(new[] {';'}, StringSplitOptions.RemoveEmptyEntries)
+                .ToArray();
+	    }
+
+	    // This is taken from Sitecore.MainUtil; MainUtil.SendMail has a resource leak
         private static SmtpClient CreateSmtpClient()
         {
             string mailServer = Settings.MailServer;

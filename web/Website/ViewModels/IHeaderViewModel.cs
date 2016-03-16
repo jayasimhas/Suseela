@@ -17,5 +17,11 @@
         string AdvertisementText { get; }
         string LeaderboardSlotID { get; }
         string LeaderboardAdZone { get; }
+        string LeftColumnText { get; }
+        string RightColumnText { get; }
+        string Link1 { get; }
+        string Link2 { get; }
+        string Link3 { get; }
+        string Link4 { get; }
     }
 }

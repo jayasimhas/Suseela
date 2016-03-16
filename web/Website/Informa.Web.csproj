@@ -735,6 +735,7 @@
     <Compile Include="Models\PageLinksFactory.cs" />
     <Compile Include="Models\TokenHtml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sitecore\shell\client\Applications\View NLM\model\ViewNlmViewModel.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
     <Compile Include="velir\services\TypeAhead.asmx.cs">
@@ -981,6 +982,12 @@
     <Content Include="Scripts\search\InformaFacetsController.js" />
     <Content Include="Scripts\vendor.js" />
     <Content Include="sitecore\login\login.js" />
+    <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
+    <Content Include="sitecore\shell\client\Applications\View NLM\css\ViewNlm.css" />
+    <Content Include="sitecore\shell\client\Applications\View NLM\scripts\ViewNlm.js" />
+    <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.js" />
+    <Content Include="sitecore\shell\client\Applications\Nlm Export\css\ExportNlm.css" />
+    <Content Include="sitecore\shell\client\Applications\Nlm Export\scripts\ExportNlm.js" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
     <Content Include="tasks\copy.js" />
@@ -1208,6 +1215,8 @@
     <Content Include="Views\Shared\Global\Sitemap.cshtml" />
     <Content Include="Views\Shared\Components\Advertisement.cshtml" />
     <Content Include="Views\Shared\Company\_RegisterMessage.cshtml" />
+    <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.cshtml" />
+    <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.cshtml" />
     <Content Include="Views\Article\UserCallToAction.cshtml" />
   </ItemGroup>
   <ItemGroup>
