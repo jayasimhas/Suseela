@@ -41,7 +41,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             var userNewsOptInStatus = NewsletterOptIn.Query(UserContext.User);
             if (userNewsOptInStatus.Success)
             {
-                var result = userNewsOptInStatus.NewsletterOptIns.Where(a => a.Name.ToLower().Equals(NewsletterType.Scrip.ToString().ToLower()));
+                var result = userNewsOptInStatus.NewsletterOptIns.Where(a => a.Name.ToLower().Equals(NewsletterType.Scrip.ToDescriptionString().ToLower()));
                 ReceivesNewsletterEmails = (result.Any())
                     ? result.First().ReceivesNewsletterAlert
                     : false;
