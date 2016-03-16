@@ -6,7 +6,7 @@ using System.Web;
 namespace Informa.Library.User
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
-	public class UserIpAddressContext : IUserIpAddressContext
+	public class UserIpAddressContext : IUserIpAddressContext, ISetUserIpAddressContext
 	{
 		protected readonly IUserIpAddressSession Session;
 
@@ -39,7 +39,11 @@ namespace Informa.Library.User
 		        ip?.Split(',').Any(x => IPAddress.TryParse(x, out ipAddress));
 
                 return Session.IpAddress = ipAddress;                                     
-		    }                                                         
-		}                   
+		    }
+			set
+			{
+				Session.IpAddress = value;
+			}
+		}
 	}
 }

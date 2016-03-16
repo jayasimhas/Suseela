@@ -674,6 +674,7 @@
     <Compile Include="User\FindUserByUsername.cs" />
     <Compile Include="User\IFindUserByEmail.cs" />
     <Compile Include="User\IFindUserByUsername.cs" />
+    <Compile Include="User\ISetUserIpAddressContext.cs" />
     <Compile Include="User\ISitecoreUserContext.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUser.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUserContext.cs" />
