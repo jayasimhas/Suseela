@@ -659,7 +659,7 @@ namespace Informa.Web.Controllers
 				Extension = media.Extension,
 				Name = item.DisplayName,
 				Path = path,
-				Uploader = item.Statistics.CreatedBy,
+				Uploader = item.Statistics.UpdatedBy,
 				UploadDate = item.Statistics.Created,
 				Url = "http://" + WebUtil.GetHostName() + MediaManager.GetMediaUrl(item)
 			};
