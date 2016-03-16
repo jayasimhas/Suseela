@@ -77,7 +77,7 @@
 
   &__bookmark {
     @extend .article-preview__bookmarker;
-    z-index: -1; // overrides .pop-out__trigger z-index:993
+    //z-index: -1; // overrides .pop-out__trigger z-index:993
 
     .icon__bookmark {
       @extend .article-prologue__share-icon;

@@ -94,7 +94,7 @@
                       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
                   </button>
               </legend>
-            <ul class="facets__section datepicker" ng-controller="InformaDatesController">
+            <ul class="facets__section-list datepicker" ng-controller="InformaDatesController">
 
                 <li class="facets__section-wrapper" ng-hide="collapsedate">
                     <ul class="facets__section-list">
@@ -112,11 +112,11 @@
                                     <label for="date-picker-from" ng-click="open($event,'dtFrom')">From</label>
                                     <input type="text"
                                            name="dtFrom"
-                                           ng-model="dtFrom"
+                                           ng-model="dateValues.dtFromValue"
                                            id="date-picker-from"
                                            datepicker-popup="shortDate"
                                            is-open="datepickers.dtFrom"
-                                           datepicker-options="dateOptions"
+                                           datepicker-options="fromDateOptions"
                                            popup-placement="auto right-top"
                                            uib-datepicker-popup="shortDay"
                                            date-disabled="disabled(date, mode)"
@@ -124,7 +124,8 @@
                                            close-text="Close"
                                            show-button-bar="true"
                                            readonly
-                                           ng-click="open($event,'dtFrom')" />
+                                           ng-click="open($event,'dtFrom')"
+                                           />
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-default">
                                             <svg ng-click="open($event,'dtFrom')"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
@@ -135,18 +136,19 @@
                                     <label for="date-picker-to" ng-click="open($event,'dtTo')">To</label>
                                     <input type="text"
                                            name="dtTo"
-                                           ng-model="dtTo"
+                                           ng-model="dateValues.dtToValue"
                                            id="date-picker-from"
                                            datepicker-popup="shortDate"
                                            is-open="datepickers.dtTo"
-                                           datepicker-options="dateOptions"
+                                           datepicker-options="toDateOptions"
                                            popup-placement="auto right-top"
                                            date-disabled="disabled(date, mode)"
                                            ng-required="false"
                                            close-text="Close"
                                            show-button-bar="true"
                                            readonly
-                                           ng-click="open($event,'dtTo')" />
+                                           ng-click="open($event,'dtTo')"
+                                           ng-change="allFacets.customDateRangeSearch('date',dateValues.dtFromValue,dateValues.dtToValue)" />
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-default">
                                             <svg ng-click="open($event,'dtTo')"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>

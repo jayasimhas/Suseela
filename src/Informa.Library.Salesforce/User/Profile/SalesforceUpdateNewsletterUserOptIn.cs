@@ -1,6 +1,7 @@
 ﻿using Informa.Library.User.Profile;
 using System.Collections.Generic;
 using System.Linq;
+using Informa.Library.Newsletter;
 using Informa.Library.User;
 using Informa.Library.Salesforce.EBIWebServices;
 
@@ -25,7 +26,7 @@ namespace Informa.Library.Salesforce.User.Profile
 
 			var optIns = newsletterOptIns.Select(noi => new EBI_EmailNewsLetterOptin
 			{
-				optinName = noi.NewsletterType.ToString(),
+				optinName = noi.NewsletterType.ToDescriptionString(),
 				IsReceivingEmailNewsletter = noi.OptIn,
 				IsReceivingEmailNewsletterSpecified = true
 			}).ToArray();
@@ -43,7 +44,7 @@ namespace Informa.Library.Salesforce.User.Profile
 			var response = Service.Execute(s => s.queryEmailNewsletterOptins(userName));
 			if (response.emailNewsletterOptins != null)
 			{
-				var optionSignup = response.emailNewsletterOptins.Where(x => (x !=null && x.optinName.Equals("Scrip"))).Count();
+				var optionSignup = response.emailNewsletterOptins.Where(x => (x !=null && x.optinName.Equals(NewsletterType.Scrip.ToDescriptionString()))).Count();
 				if (optionSignup > 0)
 				{
 					return true;

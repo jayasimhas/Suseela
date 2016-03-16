@@ -1,0 +1,56 @@
+﻿@model ISignInViewModel
+
+@* * * SIGNED OUT - NOT ENTITLED * * *@
+
+<div class="article-call-to-action--sign-in-up">
+    <div class="article-call-to-action__column">
+        <span class="article-call-to-action__title">
+            Already Registered?
+        </span>
+        <span class="article-call-to-action__subtitle">
+            Sign in to continue reading.
+        </span>
+        @{ Html.RenderPartial("_SignInForm", Model); }
+    </div>
+
+    <div class="article-call-to-action__column">
+        <span class="article-call-to-action__title">
+            New to SCRIP?
+        </span>
+        <span class="article-call-to-action__subtitle">
+            Register to read this article.
+        </span>
+        <form class="pop-out__register form-pre-registration"
+              data-on-submit="/Account/api/RegistrationApi/PreRegister/"
+              data-on-success="RegisterUrl">
+
+            <input name="username"
+                   class="pop-out__register-input header__hover-input js-register-username"
+                   type="text"
+                   placeholder="UsernamePlaceholderText">
+
+            <p class="js-form-error js-form-error-UsernameRequirements"
+               style="display: none;">UsernameRequirementsErrorText</p>
+            <p class="js-form-error js-form-error-UsernameExists"
+               style="display: none;">UsernameExistsErrorText</p>
+            <p class="js-form-error js-form-error-error-general"
+               style="display: none;">GeneralErrorText</p>
+
+            <button type="submit" class="pop-out__register-submit js-pre-register-user-submit">
+                RegisterButtonText
+            </button>
+
+        </form>
+    </div>
+</div>
+
+
+
+@* * * SIGNED IN - NOT ENTITLED * * *@
+
+<div class="article-call-to-action--subscribe">
+    <span class="article-call-to-action__title">
+        Not a subscriber?
+    </span>
+    <a href="#">Learn how you can access scrip content.</a>
+</div>

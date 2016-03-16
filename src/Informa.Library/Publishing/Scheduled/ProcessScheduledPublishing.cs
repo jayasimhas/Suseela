@@ -7,32 +7,23 @@ namespace Informa.Library.Publishing.Scheduled
 	public class ProcessScheduledPublishing : IProcessScheduledPublishing
 	{
 		protected readonly IReadyScheduledPublishes ReadyScheduledPublishes;
-		protected readonly IPublishScheduledPublishes PublishScheduledPublishes;
-		protected readonly IUpsertScheduledPublishes UpsertScheduledPublishes;
+		protected readonly IProcessScheduledPublishes ProcessScheduledPublishes;
 
 		public ProcessScheduledPublishing(
 			IReadyScheduledPublishes readyScheduledPublishes,
-			IPublishScheduledPublishes publishScheduledPublishes,
-			IUpsertScheduledPublishes upsertScheduledPublishes)
+			IProcessScheduledPublishes processScheduledPublishes)
 		{
 			ReadyScheduledPublishes = readyScheduledPublishes;
-			PublishScheduledPublishes = publishScheduledPublishes;
-			UpsertScheduledPublishes = upsertScheduledPublishes;
+			ProcessScheduledPublishes = processScheduledPublishes;
 		}
 
 		public void Process()
 		{
 			var scheduledPublishes = ReadyScheduledPublishes.ScheduledPublishes;
-			var scheduledPublishesResult = PublishScheduledPublishes.Publish(scheduledPublishes);
-			var groupedResults = scheduledPublishesResult.ScheduledPublishes.GroupBy(sp => sp.PublishingStatus.Status);
 
-			var doneScheduledPublishes = groupedResults.FirstOrDefault(gr => gr.Key == PublishStatus.Done)?.Select(sp => sp.ScheduledPublish).ToList();
-
-			if (doneScheduledPublishes != null)
+			if (scheduledPublishes.Any())
 			{
-				doneScheduledPublishes.ForEach(dsp => dsp.Published = true);
-
-				UpsertScheduledPublishes.Upsert(doneScheduledPublishes);
+				ProcessScheduledPublishes.Process(scheduledPublishes);
 			}
 		}
 	}

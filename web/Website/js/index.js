@@ -9,6 +9,7 @@ import LoginController from './login-controller';
 import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
+import SortableTableController from './sortable-table-controller';
 
 
 
@@ -95,41 +96,48 @@ $(document).ready(function() {
 	// Anti Forgery Token
 	var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
 
-	var poc = new PopOutController('.js-pop-out-trigger');
+	window.indexPopOuts = function() {
+		window.controlPopOuts = new PopOutController('.js-pop-out-trigger');
 
-	poc.customize({
-		id: 'header-register',
-		tabStyles: {
-			deskHeight: 87,
-			tabletHeight: 72,
-			phoneHeight: '' // Default
-		}
-	});
+		window.controlPopOuts.customize({
+			id: 'header-register',
+			tabStyles: {
+				deskHeight: 87,
+				tabletHeight: 72,
+				phoneHeight: '' // Default
+			}
+		});
 
-	poc.customize({
-		id: 'header-signin',
-		tabStyles: {
-			deskHeight: 87,
-			tabletHeight: 72,
-			phoneHeight: '' // Default
-		}
-	});
+		window.controlPopOuts.customize({
+			id: 'header-signin',
+			tabStyles: {
+				deskHeight: 87,
+				tabletHeight: 72,
+				phoneHeight: '' // Default
+			}
+		});
+	};
+
+	window.indexPopOuts();
 
 
-	var bookmark = new BookmarkController();
+	window.bookmark = new BookmarkController();
 
-	// Toggle bookmark icon
-	$('.js-bookmark-article').on('click', function bookmarkArticle(e) {
-		
-		// Make sure proper elm gets the click event
-		if (e.target !== this) {
-			this.click();
-			return;
-		}
+	window.indexBookmarks = function() { // Toggle bookmark icon
+		$('.js-bookmark-article').on('click', function bookmarkArticle(e) {
 
-		bookmark.toggle(e.target);
+			// Make sure proper elm gets the click event
+			if (e.target !== this) {
+				this.click();
+				return;
+			}
 
-	});
+			window.bookmark.toggle(e.target);
+
+		});
+	};
+
+	indexBookmarks();
 
 	var newsletterSignup = new NewsletterSignupController();
 	$(".newsletter-signup-after-submit").hide();
@@ -149,6 +157,7 @@ $(document).ready(function() {
 		}
 	);
 
+
 	var resetPassword = new FormController();
 	resetPassword.watchForm('.form-reset-password', function() {
 		$('.form-reset-password').find('.alert-success').show();
@@ -158,16 +167,7 @@ $(document).ready(function() {
 	newResetPassToken.watchForm('.form-new-reset-pass-token', function() {
 		$('.form-new-reset-pass-token').find('.alert-success').show();
 	});
-	/*
-	resetPassword.addRequestControl(
-		'.js-reset-password-request-submit',
-		function(triggerElement) {
-			$(triggerElement).parents('.js-reset-password-request-form').hide();
-		}
-	);
-	resetPassword.addChangeControl('.js-reset-password-change-submit');
-	resetPassword.addRetryControl('.js-reset-password-retry-submit');
-*/
+
 
 	var userRegistrationController = new FormController();
 	userRegistrationController.watchForm('.form-registration');
@@ -184,15 +184,32 @@ $(document).ready(function() {
 		}
 	);
 
-	var registerController = new RegisterController();
 
+	var registerController = new RegisterController();
 	registerController.addRegisterUserControl('.js-register-user-optins-submit');
+
 
 	var emailArticleController = new FormController();
 	emailArticleController.watchForm('.form-email-article');
 
+
 	var accountEmailPreferencesController = new FormController();
 	accountEmailPreferencesController.watchForm('.form-email-preferences');
+
+
+	var accountUpdatePassController = new FormController();
+	accountUpdatePassController.watchForm('.form-update-account-pass');
+
+	var accountUpdateContactController = new FormController();
+	accountUpdateContactController.watchForm('.form-update-account-contact');
+
+
+
+	var savedDocumentsController = new FormController();
+	savedDocumentsController.watchForm('.form-remove-saved-document', function(form, context, evt) {
+		$(evt.target).closest('tr').remove();
+	});
+
 
     svg4everybody();
 
@@ -335,6 +352,8 @@ $(document).ready(function() {
 		$('.informa-ribbon').toggleClass('show')
 
 	});
+
+	var sortTheTables = new SortableTableController();
 
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");

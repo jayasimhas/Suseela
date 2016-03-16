@@ -17,6 +17,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Velir.Search.Core.CustomGlass.Models;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
+using Informa.Web.ViewModels.PopOuts;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 using Sitecore.Web;
@@ -33,6 +34,8 @@ namespace Informa.Web.ViewModels
         protected readonly IArticleComponentFactory ArticleComponentFactory;
         protected readonly IManageSavedDocuments ManageSavedDocuments;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        public readonly ISignInViewModel SignInViewModel;
+        public readonly IRegisterPopOutViewModel RegisterPopOutViewModel;
 
         public GlassArticleModel(
             ISiteRootContext siterootContext,
@@ -43,7 +46,9 @@ namespace Informa.Web.ViewModels
             IArticleComponentFactory articleComponentFactory,
             IEntitledProductContext entitledProductContext,
             IManageSavedDocuments manageSavedDocuments,
-            IAuthenticatedUserContext authenticatedUserContext) : base(entitledProductContext)
+            IAuthenticatedUserContext authenticatedUserContext,
+            ISignInViewModel signInViewModel,
+            IRegisterPopOutViewModel registerPopOutViewModel) : base(entitledProductContext)
         {
             SiterootContext = siterootContext;
             ArticleListableFactory = articleListableFactory;
@@ -53,6 +58,8 @@ namespace Informa.Web.ViewModels
             ArticleComponentFactory = articleComponentFactory;
             ManageSavedDocuments = manageSavedDocuments;
             AuthenticatedUserContext = authenticatedUserContext;
+            SignInViewModel = signInViewModel;
+            RegisterPopOutViewModel = registerPopOutViewModel;
         }
 
         public IEnumerable<ILinkable> TaxonomyItems
@@ -108,8 +115,9 @@ namespace Informa.Web.ViewModels
 
         public IEnumerable<IGlassBase> KeyDocuments => GlassModel.Supporting_Documents;
         public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
+		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
 
-        public string GetTitle(IGlassBase g)
+		public string GetTitle(IGlassBase g)
         {
             IFile f = SitecoreContext.GetItem<IFile>(g._Id);
             return (f != null && !string.IsNullOrEmpty(f.Title))
@@ -122,9 +130,9 @@ namespace Informa.Web.ViewModels
             IFile f = SitecoreContext.GetItem<IFile>(g._Id);
             if (f == null || string.IsNullOrEmpty(f.Extension) || f.Extension.Equals("pdf"))
                 return "pdf";
-            if (f.Extension.Equals(".doc") || f.Extension.Equals(".docx"))
+            if (f.Extension.Equals("doc") || f.Extension.Equals("docx"))
                 return "doc";
-            if (f.Extension.Equals(".xls") || f.Extension.Equals(".xlsx"))
+            if (f.Extension.Equals("xls") || f.Extension.Equals("xlsx"))
                 return "xls";
             return "pdf";
         }

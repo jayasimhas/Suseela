@@ -1,4 +1,4 @@
-// http://sass-guidelin.es/#encoding
+﻿// http://sass-guidelin.es/#encoding
 @charset 'utf-8';
 
 // http://sass-guidelin.es/#the-7-1-pattern
@@ -44,6 +44,7 @@
 @import 'components/pop-out-register';
 @import 'components/pop-out-sign-in';
 @import 'components/promotional-sidebar';
+@import 'components/sortable-table';
 @import 'components/sub-topic-links';
 @import 'components/topic-featured-article';
 @import 'components/topic-subtopic';
@@ -55,6 +56,7 @@
 /* * * * COMPONENTS — ARTICLE * * * */
 @import 'components/article/article-author';
 @import 'components/article/article-body';
+@import 'components/article/article-call-to-action';
 @import 'components/article/article-executive-summary';
 @import 'components/article/article-exhibit';
 @import 'components/article/article-interview';

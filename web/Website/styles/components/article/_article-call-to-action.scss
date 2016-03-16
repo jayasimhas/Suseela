@@ -1,0 +1,39 @@
+.article-call-to-action {
+    @include textMix('Roboto', 1rem, 400);
+
+    &--sign-in-up,
+    &--subscribe {
+        margin-bottom: 1.5rem;
+        background-color: $color-concrete-gray;
+        border: 1px solid $color-light-gray;
+        overflow: auto;
+        padding: 1.5rem;
+    }
+
+    &__column {
+        @include columnize(2, 4, 1px solid $color-light-gray);
+    }
+
+    &__title {
+		@extend h3;
+        color: $color-zeus-black;
+        display: block;
+		margin-bottom: 1rem;
+	}
+    &__subtitle {
+        @extend h5;
+        display: block;
+        margin-bottom: 1rem;
+        color: $color-zeus-black;
+    }
+	&__caption,
+	&__source {
+		@include textMix('Roboto', 13px, 400);
+	    color: $informa-mid-gray;
+	    margin-bottom: 0 !important;
+	    line-height: 1.5rem !important;
+	    display: block;
+	    text-transform: uppercase;
+	    letter-spacing: 1px;
+	}
+}

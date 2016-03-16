@@ -278,9 +278,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actions\ActionsProcessor.cs" />
-    <Compile Include="Actions\IActionsProcessor.cs" />
-    <Compile Include="Actions\IAction.cs" />
+    <Compile Include="Actions\ActionsProcessor`2.cs" />
+    <Compile Include="Actions\IActionsProcessor`2.cs" />
+    <Compile Include="Actions\IAction`1.cs" />
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Search\ArticleSearch.cs" />
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
@@ -333,6 +333,31 @@
     <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
     <Compile Include="Net\IIpAddressRangeCheck.cs" />
     <Compile Include="Net\IpAddressRangeCheck.cs" />
+    <Compile Include="Publishing\Scheduled\History\AddHistoryProcessedScheduledPublishAction.cs" />
+    <Compile Include="Publishing\Scheduled\History\Entity\EntityAddScheduledPublishHistory.cs" />
+    <Compile Include="Publishing\Scheduled\History\Entity\EntityScheduledPublishFactory.cs" />
+    <Compile Include="Publishing\Scheduled\History\Entity\EntityScheduledPublishHistoryContext.cs" />
+    <Compile Include="Publishing\Scheduled\History\Entity\EntityScheduledPublishHistoryContextFactory.cs" />
+    <Compile Include="Publishing\Scheduled\History\Entity\EntityFindScheduledPublishHistories.cs" />
+    <Compile Include="Publishing\Scheduled\History\Entity\IEntityScheduledPublishFactory.cs" />
+    <Compile Include="Publishing\Scheduled\History\Entity\IEntityScheduledPublishHistoryContextFactory.cs" />
+    <Compile Include="Publishing\Scheduled\History\Entity\ScheduledPublishHistory.cs" />
+    <Compile Include="Publishing\Scheduled\History\IAddHistoryProcessedScheduledPublishAction.cs" />
+    <Compile Include="Publishing\Scheduled\History\IAddScheduledPublishHistory.cs" />
+    <Compile Include="Publishing\Scheduled\History\IFindItemLanguageScheduledPublishHistories.cs" />
+    <Compile Include="Publishing\Scheduled\History\IFindItemScheduledPublishHistories.cs" />
+    <Compile Include="Publishing\Scheduled\History\IFindItemVersionScheduledPublishHistories.cs" />
+    <Compile Include="Publishing\Scheduled\History\IScheduledPublishHistory.cs" />
+    <Compile Include="Publishing\Scheduled\History\IScheduledPublishHistoryFactory.cs" />
+    <Compile Include="Publishing\Scheduled\History\ScheduledPublishHistory.cs" />
+    <Compile Include="Publishing\Scheduled\History\ScheduledPublishHistoryFactory.cs" />
+    <Compile Include="Publishing\Scheduled\IProcessedScheduledPublishAction.cs" />
+    <Compile Include="Publishing\Scheduled\IProcessedScheduledPublishActions.cs" />
+    <Compile Include="Publishing\Scheduled\IProcessScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\IUpdateProcessedScheduledPublishAction.cs" />
+    <Compile Include="Publishing\Scheduled\ProcessedScheduledPublishActions.cs" />
+    <Compile Include="Publishing\Scheduled\ProcessScheduledPublishes.cs" />
+    <Compile Include="Publishing\Scheduled\UpdatedProcessedScheduledPublishAction.cs" />
     <Compile Include="Rss\PublicationsRssFeed.cs" />
     <Compile Include="Rss\SearchFacetGroupResult.cs" />
     <Compile Include="Rss\SearchFacetResult.cs" />
@@ -360,6 +385,7 @@
     <Compile Include="Search\Results\IReferencedArticles.cs" />
     <Compile Include="Search\Sort\HierarchicalStrategyWithCountSort.cs" />
     <Compile Include="Search\TypeAhead\CompanyTypeAheadResponseItem.cs" />
+    <Compile Include="Search\Utilities\SearchCompanyUtil.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
     <Compile Include="Services\NlmExport\ExportResult.cs" />
     <Compile Include="Services\NlmExport\INlmExportService.cs" />
@@ -501,7 +527,7 @@
     <Compile Include="Publishing\Scheduled\ScheduledPublishesResult.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishResult.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishType.cs" />
-    <Compile Include="Publishing\Scheduled\Tasks\ProcessScheduledPublishing.cs" />
+    <Compile Include="Publishing\Scheduled\Tasks\ScheduledPublishing.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\ArticleIntegerNumberField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchMediaIconField.cs" />
     <Compile Include="Threading\ThreadSafe`1.cs" />
@@ -650,12 +676,14 @@
     <Compile Include="User\FindUserByUsername.cs" />
     <Compile Include="User\IFindUserByEmail.cs" />
     <Compile Include="User\IFindUserByUsername.cs" />
+    <Compile Include="User\ISetUserIpAddressContext.cs" />
     <Compile Include="User\ISitecoreUserContext.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUser.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUserContext.cs" />
     <Compile Include="User\IUpdateUserPassword.cs" />
     <Compile Include="User\IUser.cs" />
     <Compile Include="User\IUserIpAddressContext.cs" />
+    <Compile Include="User\IUserIpAddressSession.cs" />
     <Compile Include="User\IUserSession.cs" />
     <Compile Include="User\Profile\AccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IAccountInfoWriteResult.cs" />
@@ -769,6 +797,7 @@
     <Compile Include="User\Authentication\AuthenticatedUser.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />
     <Compile Include="User\UserIpAddressContext.cs" />
+    <Compile Include="User\UserIpAddressSession.cs" />
     <Compile Include="User\UserSession.cs" />
     <Compile Include="Utilities\Autofac\Modules\AutoMapperModule.cs" />
     <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleBodyProfile.cs" />

@@ -37,7 +37,7 @@
 
 // TODO: This should be split off into a new file inside the controllers directory
     informaSearchApp.controller("InformaDatesController",
-      ["$scope", function($scope){
+      ["$scope", "$location", function ($scope, $location) {
 
           $scope.dateValues = {
               dtFromValue: '',
@@ -51,9 +51,29 @@
       }
  
       // grab today and inject into field
-      $scope.today = function() {
-          $scope.dateValues.dtFromValue = "mm/dd/yyyy";
-          $scope.dateValues.dtToValue = "mm/dd/yyyy";
+          $scope.today = function () {
+
+              if ($location.search().dateFilterLabel == 'custom') {
+                 
+                  if ($location.search().date.indexOf(";") > -1) {
+                    
+                      var dates = $location.search().date.split(";");
+                
+                      if (dates.length == 2) {
+
+                          var date1 = new Date(dates[0]);
+                          $scope.dateValues.dtFromValue = (date1.getMonth() + 1) + "/" + date1.getDate() + "/" + date1.getFullYear().toString().substring(2, 4);
+
+                          var date2 = new Date(dates[1]);
+                          $scope.dateValues.dtToValue = (date2.getMonth() + 1) + "/" + date2.getDate() + "/" + date2.getFullYear().toString().substring(2, 4);
+
+                          return;
+                      }
+                  }
+              } 
+
+              $scope.dateValues.dtFromValue = "mm/dd/yy";
+              $scope.dateValues.dtToValue = "mm/dd/yy";          
       };
       
       // run today() function
@@ -62,11 +82,19 @@
       // setup clear
       $scope.clear = function () {
         $scope.dt = null;
-        // $scope.dtFrom = null;
-        // $scope.dtTo = null;
+        //$scope.dateValues.dtFromValue = "mm/dd/yyyy";
+        //$scope.dateValues.dtToValue = "mm/dd/yyyy";
       };
 
-      $scope.dateOptions = {
+      $scope.fromDateOptions = {
+        // dateDisabled: disabled,
+        showWeeks: false, 
+        formatDayHeader: 'EEE', 
+        formatDay: 'd',
+        startingDay: 1
+      };
+
+      $scope.toDateOptions = {
         // dateDisabled: disabled,
         showWeeks: false, 
         formatDayHeader: 'EEE', 
@@ -82,9 +110,12 @@
         $scope.datepickers[which] = true;
       };
 
-      $scope.$watch('dateValues.dtToValue', function (val) {
+      $scope.$watch('dateValues.dtFromValue', function () {
+          $scope.toDateOptions.minDate = $scope.dateValues.dtFromValue;
+      });
 
-       //   alert("VALUE: " + val);
+      $scope.$watch('dateValues.dtToValue', function () {
+          $scope.fromDateOptions.maxDate = $scope.dateValues.dtToValue;
       });
 
       }]);
