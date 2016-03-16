@@ -130,9 +130,9 @@ namespace Informa.Web.ViewModels
             IFile f = SitecoreContext.GetItem<IFile>(g._Id);
             if (f == null || string.IsNullOrEmpty(f.Extension) || f.Extension.Equals("pdf"))
                 return "pdf";
-            if (f.Extension.Equals(".doc") || f.Extension.Equals(".docx"))
+            if (f.Extension.Equals("doc") || f.Extension.Equals("docx"))
                 return "doc";
-            if (f.Extension.Equals(".xls") || f.Extension.Equals(".xlsx"))
+            if (f.Extension.Equals("xls") || f.Extension.Equals("xlsx"))
                 return "xls";
             return "pdf";
         }
