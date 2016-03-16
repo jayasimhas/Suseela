@@ -55,7 +55,7 @@ namespace Informa.Web.velir.services
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public List<CompanyTypeAheadResponseItem> TypeAheadCompaniesTest()
+        public void TypeAheadCompaniesTest()
         {
             List<CompanyTypeAheadResponseItem> companies = new List<CompanyTypeAheadResponseItem>();
 
@@ -93,7 +93,7 @@ namespace Informa.Web.velir.services
 
             foreach (var facetGroupResult in results.facets)
             {
-                if (facetGroupResult.id == "Companies")
+                if (facetGroupResult.id.ToLower() == "companies2")
                 {
                     foreach (SearchFacetResult result in facetGroupResult.values)
                     {
@@ -106,7 +106,9 @@ namespace Informa.Web.velir.services
                 }
             }
 
-            return companies;
+            this.Context.Response.ContentType = "application/json; charset=utf-8";
+            this.Context.Response.Write(new JavaScriptSerializer().Serialize(companies));
+       
         }
     }
 }
