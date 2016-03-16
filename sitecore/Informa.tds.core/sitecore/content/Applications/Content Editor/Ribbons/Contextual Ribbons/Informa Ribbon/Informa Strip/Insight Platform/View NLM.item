@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {506544E8-F127-45B5-96F4-760379A2C29D}
+id: {D5B24102-2526-414B-9F09-F4052F6E378B}
 database: core
-path: /sitecore/content/Applications/Content Editor/Ribbons/Contextual Ribbons/Informa Ribbon/Informa Strip/Insight Platform/Export Article
+path: /sitecore/content/Applications/Content Editor/Ribbons/Contextual Ribbons/Informa Ribbon/Informa Strip/Insight Platform/View NLM
 parent: {377D3D6D-D726-4479-BB75-5DF68F8A8F58}
-name: Export Article
+name: View NLM
 master: {00000000-0000-0000-0000-000000000000}
 template: {1DB34C92-03B0-4475-9A39-DA14E4D9D8FC}
 templatekey: Large Button
@@ -13,35 +13,35 @@ templatekey: Large Button
 field: {D47ED548-84D5-4622-9886-5CC164727507}
 name: Icon
 key: icon
-content-length: 34
+content-length: 36
 
-Applications/32x32/document_up.png
+Applications/32x32/document_view.png
 ----field----
 field: {DBBF9EE3-C30E-4456-A81F-ED8C2E8DF91B}
 name: Click
 key: click
-content-length: 10
+content-length: 8
 
-nlm:export
+nlm:view
 ----field----
 field: {1193B1A3-0148-413F-A979-49B39AA4A2AF}
 name: ID
 key: id
-content-length: 19
+content-length: 13
 
-ExportArticleButton
+ViewNlmButton
 ----version----
 language: en
 version: 1
-revision: de9892b6-2bc5-4e68-8f60-d0f53e6f71a3
+revision: 901378d2-7460-48de-a859-c9a94860f696
 
 ----field----
 field: {4DF6DA21-E745-444C-956E-1D4A96AB8821}
 name: Header
 key: header
-content-length: 14
+content-length: 8
 
-Export Article
+View NLM
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-de9892b6-2bc5-4e68-8f60-d0f53e6f71a3
+901378d2-7460-48de-a859-c9a94860f696
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160316T154003Z
+20160316T153950Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

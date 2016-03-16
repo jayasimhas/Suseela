@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Glass.Mapper.Sc;
-using Informa.Library.Publishing.Scheduled;
+using Informa.Library.Publishing.Scheduled.History;
 using Informa.Library.Publishing.Switcher;
 using Informa.Library.Services.NlmExport;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -17,21 +17,21 @@ namespace Informa.Library.CustomSitecore.Pipelines.PublishItem
     public class ItemsPublishingProcessor : ProcessorBase<PublishItemContext>
     {
         private readonly INlmExportService _exportService;
-        private readonly IFindScheduledPublishes _scheduledPublishes;
+        private readonly IFindItemScheduledPublishHistories _publishHistory;
         private readonly ILog _logger;
         private readonly Func<Database, ISitecoreService> _serviceFactory;
 
         public ItemsPublishingProcessor(ILog logger, Func<Database, ISitecoreService> serviceFactory,
-            INlmExportService exportService, IFindScheduledPublishes scheduledPublishes)
+            INlmExportService exportService, IFindItemScheduledPublishHistories publishHistory)
         {
             if (logger == null) throw new ArgumentNullException(nameof(logger));
             if (serviceFactory == null) throw new ArgumentNullException(nameof(serviceFactory));
             if (exportService == null) throw new ArgumentNullException(nameof(exportService));
-            if (scheduledPublishes == null) throw new ArgumentNullException(nameof(scheduledPublishes));
+            if (publishHistory == null) throw new ArgumentNullException(nameof(publishHistory));
             _logger = logger;
             _serviceFactory = serviceFactory;
             _exportService = exportService;
-            _scheduledPublishes = scheduledPublishes;
+            _publishHistory = publishHistory;
         }
 
         protected override void Run(PublishItemContext context)
@@ -74,8 +74,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.PublishItem
                             var database = _serviceFactory(context.PublishOptions.SourceDatabase);
                             var article = database.Cast<ArticleItem>(sourceItem);
 
-                            var isFirstScheduledPublishForItem = _scheduledPublishes.Find(sourceItem.ID.Guid, sourceItem.Language.ToString(), sourceItem.Version.Number.ToString())
-                                    .Any(pub => !pub.Published);
+                            var isFirstScheduledPublishForItem = !_publishHistory.Find(sourceItem.ID.Guid).Any();
                             var isCurrentPublishScheduled = Switcher<ScheduledState>.CurrentValue;
 
                             if (!isFirstScheduledPublishForItem || isCurrentPublishScheduled != ScheduledState.IsScheduledPublish)
