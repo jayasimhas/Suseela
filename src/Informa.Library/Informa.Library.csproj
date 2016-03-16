@@ -413,6 +413,7 @@
     <Compile Include="Services\NlmExport\Models\Front\NlmJournalMetaModel.cs" />
     <Compile Include="Services\NlmExport\Models\NlmArticleModel.cs" />
     <Compile Include="Services\NlmExport\NlmExportService.cs" />
+    <Compile Include="Utilities\ArticleExtension.cs" />
     <Compile Include="Services\NlmExport\Parser\Legacy\Container\Content.cs" />
     <Compile Include="Services\NlmExport\Parser\Legacy\Container\InnerTextNode.cs" />
     <Compile Include="Services\NlmExport\Parser\Legacy\Container\ParagraphContent.cs" />
