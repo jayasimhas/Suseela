@@ -61,7 +61,7 @@
             border: 1px solid orange;
 
             width: calc(50% - 1.5rem);
-        
+
         }
         &--bordered-left {
             border-left: 1px solid $color-concrete-gray;
@@ -107,6 +107,18 @@
             line-height: 1.25rem;
             width: 250px;
             margin-bottom: 1rem;
+        }
+    }
+
+    &-contact {
+
+        &__column {
+            @include columnize(2, 4, 1px solid $color-light-gray);
+            margin-bottom: 2rem;
+        }
+
+        .page-account__field-wrapper {
+            margin-bottom: 3rem;
         }
     }
 }
