@@ -763,6 +763,8 @@
     <Compile Include="ViewModels\IArticleComponentFactory.cs" />
     <Compile Include="ViewModels\ICallToActionViewModel.cs" />
     <Compile Include="ViewModels\ICompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\IIndividualRenewalMessageViewModel.cs" />
+    <Compile Include="ViewModels\IndividualRenewalMessageViewModel.cs" />
     <Compile Include="ViewModels\ISearchModel.cs" />
     <Compile Include="ViewModels\NewsletterSignUpModel.cs" />
     <Compile Include="ViewModels\RobotsTextViewModel.cs" />
@@ -1220,6 +1222,7 @@
     <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.cshtml" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.cshtml" />
     <Content Include="Views\Article\UserCallToAction.cshtml" />
+    <Content Include="Views\Shared\_IndividualSubscriptionRenewalMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

@@ -1,6 +1,6 @@
 ﻿@model MainLayoutViewModel
 @using System.Configuration
-@using Informa.Library.Utilities.References        
+@using Informa.Library.Utilities.References
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +13,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	@if (!string.IsNullOrWhiteSpace(Model.CanonicalUrl))
-	{
-		<link rel="canonical" href="@Model.CanonicalUrl" />
-	}
+    @if (!string.IsNullOrWhiteSpace(Model.CanonicalUrl))
+    {
+        <link rel="canonical" href="@Model.CanonicalUrl" />
+    }
 
     <!-- STATIC PLACEHOLDER -->
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
@@ -35,17 +35,17 @@
     @if (Model.AppInsightsConfig.Enabled)
     {
         <script type="text/javascript">
-            var appInsights = window.appInsights || function(config) {
+            var appInsights = window.appInsights || function (config) {
                 function r(config) {
-                    t[config] = function() {
+                    t[config] = function () {
                         var i = arguments;
-                        t.queue.push(function() { t[config].apply(t, i) })
+                        t.queue.push(function () { t[config].apply(t, i) })
                     }
                 }
 
                 var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f;
-                for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;)r("track" + i.pop());
-                return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function(config, r, u, e, o) {
+                for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) r("track" + i.pop());
+                return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) {
                     var s = f && f(config, r, u, e, o);
                     return s !== !0 && t["_" + i](config, r, u, e, o), s
                 }), t
@@ -60,49 +60,50 @@
 </head>
 <body>
 
-@{ Html.RenderPartial("_Header", Model.Header); }
-@*@Html.Sitecore().Placeholder("header")*@
+    @{ Html.RenderPartial("_Header", Model.Header); }
+    @*@Html.Sitecore().Placeholder("header")*@
 
-<main>
+    <main>
 
-    @*@Html.Glass().InvokeAction(mvc => Execute());*@
-    @{ Html.RenderPartial("_Navigation", Model.SideNavigationMenu);}
+        @*@Html.Glass().InvokeAction(mvc => Execute());*@
+        @{ Html.RenderPartial("_Navigation", Model.SideNavigationMenu);}
 
-    <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
+        <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
 
-        <div class="general-header">
-            @Html.Sitecore().Placeholder("general-header")
+            <div class="general-header">
+                @Html.Sitecore().Placeholder("general-header")
+            </div>
+
+            @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
+            @{  Html.RenderPartial("_IndividualSubscriptionRenewalMessage", Model.IndividualRenewalMessageInfo); }
+            @{  Html.RenderPartial("Company/_RegisterMessage", Model.CompanyRegisterMessage); }
+
+            <div class="main__content">
+                @Html.Sitecore().Placeholder("main-content")
+            </div>
+
+            @* * *  POP-OUT TEMPLATE MARKUP *@
+
+            @{ Html.RenderPartial("PopOuts/SignIn", Model.SignInPopOutViewModel); }
+            @{ Html.RenderPartial("PopOuts/Register", Model.RegisterPopOutViewModel); }
+            @{ Html.RenderPartial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel); }
+
+            @* * *  END POP-OUT TEMPLATE MARKUP *@
+
         </div>
 
-        @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
-		@{  Html.RenderPartial("Company/_RegisterMessage", Model.CompanyRegisterMessage); }
+    </main>
 
-        <div class="main__content">
-            @Html.Sitecore().Placeholder("main-content")
-        </div>
+    <footer>
+        @{ Html.RenderPartial("_Footer", Model.Footer);}
+    </footer>
 
-        @* * *  POP-OUT TEMPLATE MARKUP *@
-
-        @{ Html.RenderPartial("PopOuts/SignIn", Model.SignInPopOutViewModel); }
-        @{ Html.RenderPartial("PopOuts/Register", Model.RegisterPopOutViewModel); }
-        @{ Html.RenderPartial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel); }
-
-        @* * *  END POP-OUT TEMPLATE MARKUP *@
-
-    </div>
-
-</main>
-
-<footer>
-	@{ Html.RenderPartial("_Footer", Model.Footer);}
-</footer>
-
-<script src="/dist/js/index.js"></script>
-@* <script src="vendor/bower_components/angular-animate/angular-animate.js"></script> *@
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
-@* <script src="vendor/angular-ui/ui-bootstrap-custom-tpls-1.2.2.js"></script> *@
-@* <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script> *@
-<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="/dist/js/index.js"></script>
+    @* <script src="vendor/bower_components/angular-animate/angular-animate.js"></script> *@
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+    @* <script src="vendor/angular-ui/ui-bootstrap-custom-tpls-1.2.2.js"></script> *@
+    @* <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script> *@
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
 
 
 </body>

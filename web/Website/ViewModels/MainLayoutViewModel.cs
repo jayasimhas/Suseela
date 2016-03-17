@@ -8,77 +8,79 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 
 namespace Informa.Web.ViewModels
 {
-	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
-	{
-		protected readonly ISiteRootContext SiteRootContext;
+    public class MainLayoutViewModel : GlassViewModel<I___BasePage>
+    {
+        protected readonly ISiteRootContext SiteRootContext;
 
-		public MainLayoutViewModel(
-			ISiteRootContext siteRootContext,
-			IMaintenanceViewModel maintenanceViewModel,
-			ICompanyRegisterMessageViewModel companyRegisterMessageViewModel,
-			ISideNavigationMenuViewModel sideNavigationMenuViewModel,
-			IHeaderViewModel headerViewModel,
-			IFooterViewModel footerViewModel,
-			ISignInPopOutViewModel signInPopOutViewModel,
-			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
-			IRegisterPopOutViewModel registerPopOutViewModel,
+        public MainLayoutViewModel(
+            ISiteRootContext siteRootContext,
+            IMaintenanceViewModel maintenanceViewModel,
+            ICompanyRegisterMessageViewModel companyRegisterMessageViewModel,
+            ISideNavigationMenuViewModel sideNavigationMenuViewModel,
+            IHeaderViewModel headerViewModel,
+            IFooterViewModel footerViewModel,
+            ISignInPopOutViewModel signInPopOutViewModel,
+            IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
+            IRegisterPopOutViewModel registerPopOutViewModel,
             IAppInsightsConfig appInsightsConfig,
-            ISiteSettings siteSettings)
-		{
-			SiteRootContext = siteRootContext;
-			MaintenanceMessage = maintenanceViewModel;
-			CompanyRegisterMessage = companyRegisterMessageViewModel;
-			SideNavigationMenu = sideNavigationMenuViewModel;
-			Header = headerViewModel;
-			Footer = footerViewModel;
-			SignInPopOutViewModel = signInPopOutViewModel;
-			EmailArticlePopOutViewModel = emailArticlePopOutViewModel;
-			RegisterPopOutViewModel = registerPopOutViewModel;
-		    AppInsightsConfig = appInsightsConfig;
-		    SiteSettings = siteSettings;
+            ISiteSettings siteSettings,
+            IIndividualRenewalMessageViewModel renewalInfo)
+        {
+            SiteRootContext = siteRootContext;
+            MaintenanceMessage = maintenanceViewModel;
+            CompanyRegisterMessage = companyRegisterMessageViewModel;
+            SideNavigationMenu = sideNavigationMenuViewModel;
+            Header = headerViewModel;
+            Footer = footerViewModel;
+            SignInPopOutViewModel = signInPopOutViewModel;
+            EmailArticlePopOutViewModel = emailArticlePopOutViewModel;
+            RegisterPopOutViewModel = registerPopOutViewModel;
+            AppInsightsConfig = appInsightsConfig;
+            SiteSettings = siteSettings;
+            IndividualRenewalMessageInfo = renewalInfo;
+        }
 
-		}
-
-		public IMaintenanceViewModel MaintenanceMessage;
-		public ICompanyRegisterMessageViewModel CompanyRegisterMessage;
-		public ISideNavigationMenuViewModel SideNavigationMenu;
-		public IFooterViewModel Footer;
-		public IHeaderViewModel Header;
-		public ISignInPopOutViewModel SignInPopOutViewModel;
-		public IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
-		public IRegisterPopOutViewModel RegisterPopOutViewModel;
-	    public IAppInsightsConfig AppInsightsConfig;
-	    public ISiteSettings SiteSettings;
+        public IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
+        public IMaintenanceViewModel MaintenanceMessage;
+        public ICompanyRegisterMessageViewModel CompanyRegisterMessage;
+        public ISideNavigationMenuViewModel SideNavigationMenu;
+        public IFooterViewModel Footer;
+        public IHeaderViewModel Header;
+        public ISignInPopOutViewModel SignInPopOutViewModel;
+        public IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
+        public IRegisterPopOutViewModel RegisterPopOutViewModel;
+        public IAppInsightsConfig AppInsightsConfig;
+        public ISiteSettings SiteSettings;
 
         public string Title
-		{
-			get
-			{
-				var pageTitle = string.Empty;
+        {
+            get
+            {
+                var pageTitle = string.Empty;
 
-				if (GlassModel is I___BasePage)
-				{
-					var page = (I___BasePage)GlassModel;
+                if (GlassModel is I___BasePage)
+                {
+                    var page = (I___BasePage)GlassModel;
 
-					if (!string.IsNullOrEmpty(page.Meta_Title_Override))
-					{
-						return page.Meta_Title_Override.StripHtml();
-					}
+                    if (!string.IsNullOrEmpty(page.Meta_Title_Override))
+                    {
+                        return page.Meta_Title_Override.StripHtml();
+                    }
 
-					pageTitle = page.Title.StripHtml();
-				}
-				
-				if (string.IsNullOrWhiteSpace(pageTitle) && GlassModel != null)
-				{
-					pageTitle = GlassModel._Name;
-				}
+                    pageTitle = page.Title.StripHtml();
+                }
 
-				var publicationName = SiteRootContext.Item == null ? string.Empty : string.Format(" :: {0}", SiteRootContext.Item.Publication_Name.StripHtml());
+                if (string.IsNullOrWhiteSpace(pageTitle) && GlassModel != null)
+                {
+                    pageTitle = GlassModel._Name;
+                }
 
-				return string.Concat(pageTitle, publicationName);
-			}
-		}
+                var publicationName = SiteRootContext.Item == null ? string.Empty : string.Format(" :: {0}", SiteRootContext.Item.Publication_Name.StripHtml());
 
-		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
-	}
+                return string.Concat(pageTitle, publicationName);
+            }
+        }
+
+        public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
+    }
 }
