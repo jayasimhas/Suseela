@@ -5,6 +5,7 @@ using System.Web;
 using System.Xml;
 using Glass.Mapper.Sc;
 using Informa.Library.Services.NlmExport;
+using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
@@ -21,12 +22,12 @@ namespace Informa.Web.sitecore.shell.client.Applications.View_NLM.model
 
         protected string ArticleId => HttpContext.Current.Request.QueryString["id"];
 
-        public ViewNlmViewModel(INlmExportService exportService, ISitecoreService service)
+        public ViewNlmViewModel(INlmExportService exportService, Func<string, ISitecoreService> serviceFactory)
         {
             if (exportService == null) throw new ArgumentNullException(nameof(exportService));
-            if (service == null) throw new ArgumentNullException(nameof(service));
+            if (serviceFactory == null) throw new ArgumentNullException(nameof(serviceFactory));
             _exportService = exportService;
-            _service = service;
+            _service = serviceFactory(Constants.MasterDb);
 
             _lazyArticleNlm = new Lazy<string>(GetArticleNlm);
         }
