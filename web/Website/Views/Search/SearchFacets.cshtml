@@ -35,7 +35,7 @@
     <form class="facets__section"
             ng-repeat="group in allFacets.facetGroups">
 
-          <fieldset ng-show="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController">
+          <fieldset ng-if="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController">
               <legend class="facets__legend facets__section-header">
                   <h4>Companies</h4>
                   <button class="facets__button facets__button--toggle-section"
@@ -104,7 +104,7 @@
                             typeahead-min-length=2 
                             typeahead-select-on-blur="true" 
                             typeahead-select-on-exact="true" 
-                            typeahead-on-select='saveCompany($item); isAddingCompany = false;' 
+                            typeahead-on-select="allFacets.searchForCompany($item)"
                             typeahead-editable="false"
                             class="form-control"
                             autocomplete="off">
@@ -132,7 +132,7 @@
               </button>
           </fieldset>
 
-        <fieldset ng-show="group.label == 'Date Placeholder'" class="facets__fieldset">
+        <fieldset ng-if="group.label == 'Date Placeholder'" class="facets__fieldset">
             <legend class="facets__legend facets__section-header">
                 <h4>Date</h4>
                 <button class="facets__button facets__button--toggle-section"

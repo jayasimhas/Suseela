@@ -136,30 +136,27 @@
   // set up controller and pass data source
   // note: a controller is usually destroyed & recreated when the route changes
   informaSearchApp.controller("InformaTypeaheadController", 
-    function($scope, getCompaniesService){
+    function($scope, getCompaniesService) {
 
-      getCompaniesService.fetchCompanies()
+        getCompaniesService.fetchCompanies()
+            .then(function(response) {
 
-      .then(function(response) {
+                var companies = [];
+                companies = $.map(response.data, function(value, index) {
 
-        var companies = [];
-        companies = $.map( response.data, function(value, index) {
+                    return value.CompanyName;
 
-          return value.CompanyName;
+                });
 
+                $scope.companies = companies;
+            })
+            .catch(function(reason) {
+
+                console.log("error");
+                console.log(reason);
+
+            });
         });
 
-        $scope.companies = companies;
-      })
-
-      .catch( function(reason) {
-
-        console.log("error");
-        console.log(reason);
-
-      })
-
-  });
-
-
+        
 })(); 
