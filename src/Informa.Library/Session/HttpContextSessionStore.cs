@@ -10,7 +10,7 @@ namespace Informa.Library.Session
 		{
 			var obj = HttpContext.Current.Session[key];
 
-			return (T)(obj is T ? obj : null);
+			return obj is T ? (T)obj : default(T);
 		}
 
 		public void Set<T>(string key, T obj)

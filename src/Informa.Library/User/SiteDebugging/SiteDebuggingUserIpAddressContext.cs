@@ -20,18 +20,37 @@ namespace Informa.Library.User.SiteDebugging
 			UserIpAddressContext = userIpAddressContext;
 		}
 
-		public bool IsDebugging => DebugSession.Get<bool>(IsDebuggingSessionKey);
+		public bool IsDebugging
+		{
+			get
+			{
+				var isDebugging = DebugSession.Get<bool?>(IsDebuggingSessionKey);
+
+				if (!isDebugging.HasValue)
+				{
+					return false;
+				}
+
+				return isDebugging.Value;
+			}
+			set
+			{
+				bool? isDebugging = value;
+
+				DebugSession.Set(IsDebuggingSessionKey, isDebugging);
+			}
+		}
 
 		public void StopDebugging()
 		{
 			UserIpAddressContext.IpAddress = null;
-			DebugSession.Set(IsDebuggingSessionKey, false);
+			IsDebugging = false;
 		}
 
 		public void StartDebugging(IPAddress ipAddress)
 		{
 			UserIpAddressContext.IpAddress = ipAddress;
-			DebugSession.Set(IsDebuggingSessionKey, true);
+			IsDebugging = true;
 		}
 	}
 }
