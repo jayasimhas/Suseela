@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Xml;
 using System.Xml.XPath;
+using Sitecore.Diagnostics;
 
 namespace Informa.Library.Utilities.StringUtils
 {
@@ -42,6 +43,11 @@ namespace Informa.Library.Utilities.StringUtils
 
         public static string TruncateArticle(string text, int maxWordCount)
         {
+            return TruncateArticle(text, maxWordCount, true);
+        }
+
+        public static string TruncateArticle(string text, int maxWordCount,bool decodeHtmlBeforeParsing)
+        {
             string result;
             try
             {
@@ -52,7 +58,7 @@ namespace Informa.Library.Utilities.StringUtils
 
                 else
                 {
-                    result = WordUtil.TruncateHtml(text, maxWordCountLessEllipsis);
+                    result = WordUtil.TruncateHtml(text, maxWordCountLessEllipsis, decodeHtmlBeforeParsing);
                     var lastWordPosition = result.LastIndexOf(' ');
 
                     if (lastWordPosition < 0) lastWordPosition = 0;
@@ -61,8 +67,9 @@ namespace Informa.Library.Utilities.StringUtils
 
                 }
             }
-            catch (Exception)
+            catch (Exception exc)
             {
+                Log.Error("Cound Not parse text: " + exc.Message, "TruncateArticle");
                 return text;
             }
 
@@ -70,9 +77,13 @@ namespace Informa.Library.Utilities.StringUtils
         }
 
 
-        public static string TruncateHtml(string text, int maxWordCount)
+        public static string TruncateHtml(string text, int maxWordCount, bool decodeHtmlBeforeParsing)
         {
-            text = HttpUtility.HtmlDecode(text);
+            if (decodeHtmlBeforeParsing)
+            {
+                text = HttpUtility.HtmlDecode(text);
+            }
+            
             text = "<body>" + text + "</body>";
             int wordsAvailable = maxWordCount;
 
