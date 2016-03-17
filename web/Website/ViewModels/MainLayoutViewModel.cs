@@ -1,8 +1,8 @@
-﻿using Glass.Mapper.Sc;
-using Informa.Library.Site;
+﻿using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Web.ViewModels.SiteDebugging;
 using Informa.Web.ViewModels.PopOuts;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
@@ -23,7 +23,8 @@ namespace Informa.Web.ViewModels
 			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
 			IRegisterPopOutViewModel registerPopOutViewModel,
             IAppInsightsConfig appInsightsConfig,
-            ISiteSettings siteSettings)
+            ISiteSettings siteSettings,
+			IToolbarViewModel debugToolbar)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -36,7 +37,7 @@ namespace Informa.Web.ViewModels
 			RegisterPopOutViewModel = registerPopOutViewModel;
 		    AppInsightsConfig = appInsightsConfig;
 		    SiteSettings = siteSettings;
-
+			DebugToolbar = debugToolbar;
 		}
 
 		public IMaintenanceViewModel MaintenanceMessage;
@@ -49,6 +50,7 @@ namespace Informa.Web.ViewModels
 		public IRegisterPopOutViewModel RegisterPopOutViewModel;
 	    public IAppInsightsConfig AppInsightsConfig;
 	    public ISiteSettings SiteSettings;
+		public IToolbarViewModel DebugToolbar;
 
         public string Title
 		{
