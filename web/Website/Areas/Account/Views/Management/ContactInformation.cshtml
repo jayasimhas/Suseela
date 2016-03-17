@@ -109,7 +109,7 @@
             <form class="form-update-account-contact"
                   data-on-submit="/Account/api/ContactInfoApi/UpdateContactInfo/" method="POST">
 
-                <div class="alert-error js-form-error-Required js-form-error-general">
+                <div class="alert-error js-form-error js-form-error-Required">
                     <svg class="alert__icon">
                         <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
                     </svg>
@@ -119,13 +119,23 @@
                     </p>
                 </div>
 
-                <div class="alert-error js-form-error-ContactUpdateFailed js-form-error-general">
+                <div class="alert-error js-form-error js-form-error-ContactUpdateFailed">
                     <svg class="alert__icon">
                         <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
                     </svg>
 
                     <p class="page-account-contact__error">
                         @Model.ContactUpdateFailed
+                    </p>
+                </div>
+
+                <div class="alert-error js-form-error js-form-error-general">
+                    <svg class="alert__icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                    </svg>
+
+                    <p class="page-account-contact__error">
+                        @Model.GeneralErrorText
                     </p>
                 </div>
 
@@ -451,7 +461,7 @@
 
                         </div>
 
-                        <div class="page-preferences__submit-wrapper">
+                        <div class="page-account__submit-wrapper">
                             <button type="submit" class="button--filled button--fly-right">@Model.UpdateContactInfoText</button>
                         </div>
 
@@ -467,10 +477,6 @@
 
             </form>
 
-
-            <div style="display: none;" class="js-preferences-user-error-container">
-                <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-general">@Model.GeneralErrorText</p>
-            </div>
         </div>
     </div>
 }

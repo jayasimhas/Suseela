@@ -3,8 +3,7 @@
 
     var informaSearchApp = angular.module('informaSearchApp', [
         'velir.search',
-        'ui.bootstrap'
-    ])
+        'ui.bootstrap'   ])
         .constant('apiEndpoints', {
             API_BASE: '/api',
             SEARCH_ENDPOINT: '/search'
@@ -28,7 +27,6 @@
             showOnlyHeadlines: function () { return headlines; }
             ,
             updateValue: function () {
-                
                 headlines = !headlines;
             }
         }
@@ -118,35 +116,50 @@
           $scope.fromDateOptions.maxDate = $scope.dateValues.dtToValue;
       });
 
-      }]);
-
-
-    // TODO: This should be split off into a new file inside the controllers directory
-    informaSearchApp.controller("InformaTypeaheadController",
-      ["$scope", function($scope){
-
-        var _selected;
-        $scope.selected = undefined;
-        $scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
-
-        $scope.ngModelOptionsSelected = function(value) {
-          if (arguments.length) {
-            _selected = value;
-          } else {
-            return _selected;
-          }
-        };
-
-        $scope.modelOptions = {
-          debounce: {
-            default: 500,
-            blur: 250
-          },
-          getterSetter: true
-        };
-
     }]);
 
+
+  
+  // factory to handle call to companies service
+  // note: a factory lives through the entire application lifecycle
+  informaSearchApp.factory('getCompaniesService', ['$http', function($http) {
+    var fetchCompanies = function() {
+      return $http({
+          method: 'GET',
+          url: 'http://informa-insight.rose.velir.com/velir/services/TypeAhead.asmx/TypeAheadCompanies'
+      });
+    }
+    return {fetchCompanies : fetchCompanies};
+  }]);
+
+
+  // set up controller and pass data source
+  // note: a controller is usually destroyed & recreated when the route changes
+  informaSearchApp.controller("InformaTypeaheadController", 
+    function($scope, getCompaniesService){
+
+      getCompaniesService.fetchCompanies()
+
+      .then(function(response) {
+
+        var companies = [];
+        companies = $.map( response.data, function(value, index) {
+
+          return value.CompanyName;
+
+        });
+
+        $scope.companies = companies;
+      })
+
+      .catch( function(reason) {
+
+        console.log("error");
+        console.log(reason);
+
+      })
+
+  });
 
 
 })(); 
