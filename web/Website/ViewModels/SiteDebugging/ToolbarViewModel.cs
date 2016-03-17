@@ -19,6 +19,6 @@ namespace Informa.Web.ViewModels.SiteDebugging
 		public IUserIpAddressViewModel UserIpAddressViewModel { get; set; }
 
 		public bool Enabled => SiteDebuggingAllowedContext.IsAllowed;
-		public string ToggleButtonText => "Show/Hide";
+		public string ToggleButtonText => "Debugging";
 	}
 }
