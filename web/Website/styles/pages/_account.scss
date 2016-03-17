@@ -128,5 +128,10 @@
         .alert-error {
             margin-bottom: 2rem;
         }
+
+        &__submit-wrapper {
+            overflow: auto;
+            margin-bottom: 2rem;
+        }
     }
 }
