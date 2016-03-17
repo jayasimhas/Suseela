@@ -2732,7 +2732,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 								/// <summary>
 					/// The Notified After Publish field.
 					/// <para></para>
-					/// <para>Field Type: Multilist</para>		
+					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: 0e222fc9-35a4-40c9-afc9-d4f681c7aed4</para>
 					/// <para>Custom Data: generic=IStaff_Item</para>
 					/// </summary>
@@ -2780,7 +2780,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 										/// <summary>
 						/// The Notified After Publish field.
 						/// <para></para>
-						/// <para>Field Type: Multilist</para>		
+						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: 0e222fc9-35a4-40c9-afc9-d4f681c7aed4</para>
 						/// <para>Custom Data: generic=IStaff_Item</para>
 						/// </summary>
