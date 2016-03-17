@@ -1,5 +1,5 @@
 ﻿
-var InformaFacetController = function ($scope, $location, $http, searchService, searchBootstrapper, getCompaniesService, myCompaniesService) {
+var InformaFacetController = function ($scope, $location, $http, searchService, searchBootstrapper, getCompaniesService) {
     "use strict";
 
     var _this = this;
@@ -13,7 +13,6 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         _this.searchBootstrapper = searchBootstrapper;
         _this.MaxFacetShow = 5;
         _this.CompanyList = getCompaniesService.fetchCompanies();
-        _this.myCompanies = [];
 
         // Date Facet stuff
         _this.CurrentDateSelection = '';
@@ -47,19 +46,13 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
     }, true);
 
 
-    $scope.foo = "I'm foo!";
     $scope.savedCompanies = [];
 
-    $scope.saveCompany = function () {
-        $scope.savedCompanies.push($scope.savedCompanies.length);
+    $scope.saveCompany = function ($item, model, label) {
+        console.log("selected: ", $item);
+        $scope.savedCompanies.push($item);
     };
 
-
-    _this.addCompany = function($item, $model, $label) {
-        console.log("selected: ", $item);
-        $scope.selected = $item;
-        _this.myCompanies.push(_this.myCompanies.length);
-    }
 
     //** This updates the router/url with the latest search parameters **//
     _this.update = function () {
@@ -182,4 +175,4 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
 
 };
 var informaSearchApp = angular.module('informaSearchApp');
-informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', 'searchService', 'searchBootstrapper', 'getCompaniesService', 'myCompaniesService', InformaFacetController]);
+informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', 'searchService', 'searchBootstrapper', 'getCompaniesService', InformaFacetController]);
