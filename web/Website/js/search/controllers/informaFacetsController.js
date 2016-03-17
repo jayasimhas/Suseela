@@ -47,11 +47,15 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
 
 
     //** This collects the user's saved companies **//
-    $scope.savedCompanies = [];
+    $scope.savedCompanies = {};
 
     $scope.saveCompany = function ($item, model, label) {
         console.log("selected: ", $item);
-        $scope.savedCompanies.push($item);
+        $scope.savedCompanies[$item] = {
+            selected: true,
+            label: $item
+        };
+        console.log($scope.savedCompanies);
     };
 
 

@@ -1,15 +1,13 @@
-button {
+// buttons used in search facet panel
+.facets__button {
+
     @extend .button--plain; // unstyles buttons
     cursor: pointer;
 
     &:focus {
         outline: 0;
     }
-}
-
-
-// buttons used in search facet panel
-.facets__button {
+    
 
     // by default, mobile button displays instead of facets at/below med
     &--mobile {
