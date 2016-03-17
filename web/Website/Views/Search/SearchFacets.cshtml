@@ -45,6 +45,35 @@
                       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
                   </button>
               </legend>
+  
+
+              <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit" ng-hide="collapsefacet">
+
+                  <li ng-if="f.selected">
+                      <input id="{{ group.id }}-{{ $index }}"
+                             type="checkbox"
+                             class="visuallyhidden"
+                             ng-checked="f.selected"
+                             ng-model="f.selected"
+                             ng-change="allFacets.update()">
+                      <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">{{ f.label }} ({{f.count}})</label>
+                      <button class="facets__button facets__button--toggle-subcat"
+                              ng-model="collapsesubfacet"
+                              ng-click="collapseSubfacet=!collapseSubfacet; isCollapsedSubfacet=!isCollapsedSubfacet">
+                          <svg class="facets__button--collapse-subfacet"
+                               ng-show="f.sublist.length > 0"
+                               ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use>
+                          </svg>
+                          <svg class="facets__button--expand-subfacet"
+                               ng-show="(f.sublist.length > 0)"
+                               ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#expand"></use>
+                          </svg>
+                      </button>
+                  </li>
+              </ul>
+
               <ul class="facets__section-list" ng-hide="collapsecompanies">
 
               <!-- sample added company 
