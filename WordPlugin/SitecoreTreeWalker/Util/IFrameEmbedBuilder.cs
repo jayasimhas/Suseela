@@ -58,6 +58,7 @@ namespace InformaSitecoreWord.Util
 			}
 			var removedInsecure = new XElement("div");
 			removedInsecure.Add(new XAttribute("data-ewf-note", "iframe-removed-insecure"));
+		    removedInsecure.Value = "&nbsp;";
 			return removedInsecure;
 		}
 
@@ -75,7 +76,7 @@ namespace InformaSitecoreWord.Util
 					//add hidden div so that i frame/embed doesn't get dropped
 					var hiddendiv = new XElement("div");
 					hiddendiv.Add(new XAttribute("style","display:none;"));
-					hiddendiv.Value = "&nbsp";
+					hiddendiv.Value = "&nbsp;";
 					rootXEl.Add(hiddendiv);
 				}
 				

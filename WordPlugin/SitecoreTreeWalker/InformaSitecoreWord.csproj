@@ -32,8 +32,8 @@
     <TargetFrameworkProfile />
     <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>publish\</PublishUrl>
-    <InstallUrl>https://scripauth.pharmamedtechbi.com/wordplugin/</InstallUrl>
+    <PublishUrl>D:\Projects\Informa-Initial\web\Website\wordinstaller\</PublishUrl>
+    <InstallUrl>http://informa.miked.velir.com/wordplugin/</InstallUrl>
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>2.2.0.10</ApplicationVersion>
     <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
