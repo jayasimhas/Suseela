@@ -3,18 +3,23 @@
 {
 	<style>
 		.debugToolbar {
-			background-color: aquamarine;
+			margin: 5px;
 			position: fixed;
 			top: 0;
-			width: 100%;
 			z-index: 99999;
 		}
 		.debugToolbarContainer {
+			background-color: #f1f2f2;
+			border: 3px solid #d1d3d4;
 			display: none;
+		}
+		.debugToggleButton {
+			border: 3px solid #d1d3d4;
+			margin-bottom: 5px;
 		}
 	</style>
 	<div class="debugToolbar">
-		<button class="js-debug-expand-button">@Model.ToggleButtonText</button>
+		<button class="js-debug-expand-button button--filled debugToggleButton">@Model.ToggleButtonText</button>
 		<div class="debugToolbarContainer">
 			@{ Html.RenderPartial("SiteDebugging/UserIpAddress", Model.UserIpAddressViewModel); }
 		</div>
