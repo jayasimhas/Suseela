@@ -47,12 +47,6 @@
               </legend>
               <ul class="facets__section-list" ng-hide="collapsecompanies">
 
-              <!-- testing -->
-              <!-- <div ng-repeat="company in savedCompanies">
-                  I'm a new company. {{item}}
-              </div> -->
-              <!-- /testing -->
-
               <!-- sample added company 
                   <li>
                       <input type="checkbox" class="visuallyhidden">
@@ -60,11 +54,9 @@
                   </li> 
                /sample added company -->
 
-                  <li 
-                    ng-repeat="myCompany in savedCompanies"
-                    id="{{myCompany}}" >
-                    <input type="checkbox" class="visuallyhidden" ng-checked="{{myCompany.selected}}">
-                    <label for="{{myCompany}}">{{myCompany}}</label>
+                  <li ng-repeat="myCompany in savedCompanies">
+                    <input type="checkbox" class="visuallyhidden" id="{{myCompany.label}}" ng-checked="myCompany.selected">
+                    <label for="{{myCompany.label}}">{{myCompany.label}}</label>
                   </li>
                   <li class="facets__company-input" ng-show="isAddingCompany">
                       <div class="facets__field-group facets__field-group--companies">
@@ -75,10 +67,10 @@
                           </button>
                           <input 
                             type="text" 
-                            id="company" 
-                            name="company" 
+                            id="company-field" 
+                            name="company-field" 
                             placeholder="Enter a Company"
-                            ng-model="company.selected"
+                            ng-model="myCompany.selected"
                             typeahead="company for company in companies | filter:$viewValue | limitTo:10" 
                             typeahead-min-length=2 
                             typeahead-select-on-blur="true" 
