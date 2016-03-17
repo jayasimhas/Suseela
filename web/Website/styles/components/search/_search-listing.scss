@@ -29,7 +29,7 @@
 
   &__heading {
     @include textMix('Roboto Condensed', 26px, 700);
-    display: block;
+    display: inline-block;
     color: $informa-black;
     padding-top: 15px;
   }
