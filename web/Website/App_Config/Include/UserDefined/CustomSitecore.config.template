@@ -58,6 +58,14 @@ But you can also use "patch:attribute" for clarity:
                    ref="Informa.Library.CustomSitecore.Pipelines.PublishItem.ItemsPublishingProcessor, Informa.Library" 
                    reusable="false" />
       </publishItem>
+
+      <speak.client.resolveScript>
+        <processor type="Sitecore.Resources.Pipelines.ResolveScript.Controls, Sitecore.Speak.Client">
+          <sources hint="raw:AddSource">
+            <source folder="/sitecore/shell/client/Applications/Nlm Export" deep="true" category="nlmexport" pattern="*.js,*.css"></source>
+          </sources>
+        </processor>
+      </speak.client.resolveScript>
     </pipelines>
 
 

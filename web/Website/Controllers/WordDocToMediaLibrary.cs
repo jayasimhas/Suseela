@@ -6,6 +6,7 @@ using Sitecore.Data.Items;
 using System.IO;
 using System.Text.RegularExpressions;
 using Glass.Mapper.Sc;
+using Informa.Library.Utilities;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
@@ -25,8 +26,9 @@ namespace Informa.Web.Controllers
 
 		public MediaItem SaveWordDocIntoMediaLibrary(ArticleItem article, string fileName, string docName, string extension)
 		{
-			var articleItem = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
-			Guid publicationGuid = articleItem.Publication;
+			var item = _sitecoreMasterService.GetItem<Item>(article._Id);
+			var publicationItem = ArticleExtension.GetAncestorItemBasedOnTemplateID(item);
+			Guid publicationGuid = publicationItem.ID.Guid;
 			var articleDate = article.Planned_Publish_Date > DateTime.MinValue ? article.Planned_Publish_Date : article.Created_Date;
 			var itemFolder = GetMediaFolder(publicationGuid, articleDate);
 			var path = itemFolder._Path;

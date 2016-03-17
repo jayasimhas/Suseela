@@ -24,9 +24,8 @@ namespace Informa.Web.ViewModels
             IEntitledProductContext entitledProductContext,
             IManageSavedDocuments manageSavedDocuments,
             IAuthenticatedUserContext authenticatedUserContext,
-            ISignInViewModel signInViewModel,
-            IRegisterPopOutViewModel registerPopOutViewModel)
-			: base(siterootContext, articleListableFactory, textTranslator, searcher, context, articleComponentFactory, entitledProductContext, manageSavedDocuments, authenticatedUserContext, signInViewModel, registerPopOutViewModel)
+            ICallToActionViewModel callToActionViewModel)
+			: base(siterootContext, articleListableFactory, textTranslator, searcher, context, articleComponentFactory, entitledProductContext, manageSavedDocuments, authenticatedUserContext, callToActionViewModel)
 		{
 			RenderingParametersContext = renderingParametersContext;
 		}

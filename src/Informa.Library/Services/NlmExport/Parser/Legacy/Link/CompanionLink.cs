@@ -1,8 +1,11 @@
-﻿using Glass.Mapper.Sc;
+﻿using System;
+using Glass.Mapper.Sc;
 using Informa.Library.Article.Service;
+using Informa.Library.Utilities;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Sitecore.Data.Items;
 
 namespace Informa.Library.Services.NlmExport.Parser.Legacy.Link
 {
@@ -37,7 +40,10 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Link
 
             using (var db = new SitecoreService(Constants.MasterDb))
             {
-                var publication = db.GetItem<ISite_Root>(item.Publication);
+				var articleItem = db.GetItem<Item>(item._Id);
+				var publicationItem = ArticleExtension.GetAncestorItemBasedOnTemplateID(articleItem);
+				Guid publicationGuid = publicationItem.ID.Guid;
+				var publication = db.GetItem<ISite_Root>(publicationGuid);
                 textToReturn += "\"" + publication?.Publication_Name + "\" ";
             }
 
@@ -52,5 +58,5 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Link
         {
             get { return "pii"; }
         }
-    }
+	}
 }

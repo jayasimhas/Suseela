@@ -16,6 +16,7 @@ namespace Informa.Library.Utilities.References
 
         // Pharma Globals
         Guid NlmCopyrightStatement { get; }
+        Guid InformaBar { get; }
 
         // Taxonomy Folders
         Guid SubjectsTaxonomyFolder { get; }

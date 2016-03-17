@@ -278,9 +278,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actions\ActionsProcessor.cs" />
-    <Compile Include="Actions\IActionsProcessor.cs" />
-    <Compile Include="Actions\IAction.cs" />
+    <Compile Include="Actions\ActionsProcessor`2.cs" />
+    <Compile Include="Actions\IActionsProcessor`2.cs" />
+    <Compile Include="Actions\IAction`1.cs" />
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Search\ArticleSearch.cs" />
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
@@ -309,7 +309,9 @@
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
     <Compile Include="CustomSitecore\Pipelines\PublishItem\ItemsPublishingProcessor.cs" />
     <Compile Include="CustomSitecore\Ribbon\ExportArticle.cs" />
+    <Compile Include="CustomSitecore\Ribbon\ViewNlm.cs" />
     <Compile Include="Data\Entity\CustomDbContext.cs" />
+    <Compile Include="Globalization\GenerateSitecoreTextTranslator.cs" />
     <Compile Include="Mail\BaseHtmlEmailFactory.cs" />
     <Compile Include="DCD\XMLImporting\DCDConfigurationItem.cs" />
     <Compile Include="DCD\XMLImporting\DCDContextExtensions.cs" />
@@ -384,6 +386,7 @@
     <Compile Include="Search\Results\IReferencedArticles.cs" />
     <Compile Include="Search\Sort\HierarchicalStrategyWithCountSort.cs" />
     <Compile Include="Search\TypeAhead\CompanyTypeAheadResponseItem.cs" />
+    <Compile Include="Search\Utilities\SearchCompanyUtil.cs" />
     <Compile Include="Search\Utilities\SearchTaxonomyUtil.cs" />
     <Compile Include="Services\NlmExport\ExportResult.cs" />
     <Compile Include="Services\NlmExport\INlmExportService.cs" />
@@ -412,6 +415,7 @@
     <Compile Include="Services\NlmExport\Models\Front\NlmJournalMetaModel.cs" />
     <Compile Include="Services\NlmExport\Models\NlmArticleModel.cs" />
     <Compile Include="Services\NlmExport\NlmExportService.cs" />
+    <Compile Include="Utilities\ArticleExtension.cs" />
     <Compile Include="Services\NlmExport\Parser\Legacy\Container\Content.cs" />
     <Compile Include="Services\NlmExport\Parser\Legacy\Container\InnerTextNode.cs" />
     <Compile Include="Services\NlmExport\Parser\Legacy\Container\ParagraphContent.cs" />
@@ -525,7 +529,7 @@
     <Compile Include="Publishing\Scheduled\ScheduledPublishesResult.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishResult.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishType.cs" />
-    <Compile Include="Publishing\Scheduled\Tasks\ProcessScheduledPublishing.cs" />
+    <Compile Include="Publishing\Scheduled\Tasks\ScheduledPublishing.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\ArticleIntegerNumberField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchMediaIconField.cs" />
     <Compile Include="Threading\ThreadSafe`1.cs" />
@@ -674,12 +678,14 @@
     <Compile Include="User\FindUserByUsername.cs" />
     <Compile Include="User\IFindUserByEmail.cs" />
     <Compile Include="User\IFindUserByUsername.cs" />
+    <Compile Include="User\ISetUserIpAddressContext.cs" />
     <Compile Include="User\ISitecoreUserContext.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUser.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUserContext.cs" />
     <Compile Include="User\IUpdateUserPassword.cs" />
     <Compile Include="User\IUser.cs" />
     <Compile Include="User\IUserIpAddressContext.cs" />
+    <Compile Include="User\IUserIpAddressSession.cs" />
     <Compile Include="User\IUserSession.cs" />
     <Compile Include="User\Profile\AccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IAccountInfoWriteResult.cs" />
@@ -793,6 +799,7 @@
     <Compile Include="User\Authentication\AuthenticatedUser.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />
     <Compile Include="User\UserIpAddressContext.cs" />
+    <Compile Include="User\UserIpAddressSession.cs" />
     <Compile Include="User\UserSession.cs" />
     <Compile Include="Utilities\Autofac\Modules\AutoMapperModule.cs" />
     <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleBodyProfile.cs" />

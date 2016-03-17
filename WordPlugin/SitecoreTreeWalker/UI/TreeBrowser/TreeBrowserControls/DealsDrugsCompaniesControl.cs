@@ -128,7 +128,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 		private void uxCompanyName_TextChanged(object sender, EventArgs e)
 		{
 			CompanyNameGo();
-			//uxCompanyName.Focus();
+			uxCompanyName.Focus();
 		}
 
 		/* COMPANIES */
@@ -175,6 +175,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 				uxCompanyName.Clear();
 				uxPreviewPanel.Visible = true;
 				companyTreeView1.Visible = false;
+				uxDealNumber.Focus();
 			}
 		}
 

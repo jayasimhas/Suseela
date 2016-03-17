@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 using InformaSitecoreWord.Sitecore;
 using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using PluginModels;
@@ -54,6 +53,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			uxWorkflowActions.DisplayMember = "DisplayName";
 			uxWorkflowActions.ValueMember = "StringID";
 			uxUnlockOnSave.Checked = false;
+			subjectLbl.Text = "Subject :";
 		}
 
 		public string GetNotificationText()

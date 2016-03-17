@@ -99,11 +99,14 @@
         @* End Executive Summary  *@
     }
 
-    @if (true)//Model.AccessLevel == EntitledAccessLevel.UnEntitled)
+    @if (!Model.IsEntitled())
     {
         //This will show context for subscribe, login, register
         <div class="article-call-to-action">
-            @{ Html.RenderPartial("../Article/UserCallToAction", Model.SignInViewModel); }
+            @if (!Model.IsUserAuthenticated)
+            {
+                Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel);
+            }
         </div>
     }
 

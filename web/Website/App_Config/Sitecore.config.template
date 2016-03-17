@@ -3601,7 +3601,7 @@
             This also controls the number of items in Lookup, Multilist and Valuelookup fields.
             Default value: 100
       -->
-    <setting name="Query.MaxItems" value="100" />
+    <setting name="Query.MaxItems" value="300" />
     <!--  RECYCLE BIN
             If true, when deleting items in the client, they will
             be moved to the recycle bin rather than being deleted
