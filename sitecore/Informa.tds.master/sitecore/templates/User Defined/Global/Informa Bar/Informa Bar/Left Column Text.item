@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {184010D1-69D3-4148-9848-D6072A002BF1}
+id: {4C2DD301-15F2-464C-A7B7-E45697E0EF64}
 database: master
-path: /sitecore/templates/User Defined/Configuration/Email Config/Email A Friend/Email A Friend Body Content
-parent: {81781454-B977-434A-838E-98E125715C32}
-name: Email A Friend Body Content
+path: /sitecore/templates/User Defined/Global/Informa Bar/Informa Bar/Left Column Text
+parent: {BF203953-601B-43E4-993B-1406901CCCFC}
+name: Left Column Text
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -26,7 +26,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 334cfa5a-bf8e-44ea-a85b-42f52c35ef73
+revision: d9ac5439-3528-48ac-836c-5da70b676835
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160307T180555Z
+20160316T202545Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-334cfa5a-bf8e-44ea-a85b-42f52c35ef73
+d9ac5439-3528-48ac-836c-5da70b676835
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160307T180656Z
+20160316T203040Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

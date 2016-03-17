@@ -20,7 +20,7 @@ namespace Informa.Library.Utilities.References
 	    #region Pharma Globals
 
 	    public Guid NlmCopyrightStatement => new Guid("{EE38E489-23F7-4637-A152-3FDC696FAACF}");
-
+	    public Guid InformaBar => new Guid("{F3082926-B856-4B48-8DD8-5D55573FE4F6}");
         #endregion
 
         #region Taxonomy Folders

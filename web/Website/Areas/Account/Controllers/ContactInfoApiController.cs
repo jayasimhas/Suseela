@@ -41,7 +41,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 return Ok(new
                 {
                     success = false,
-                    message = NullUserKey
+                    reasons = new string[] { NullUserKey }
                 });
             }
 
@@ -57,8 +57,18 @@ namespace Informa.Web.Areas.Account.Controllers
             return Ok(new
             {
                 success = result.Success,
-                message = result.Message
+                reasons = new string[] { GetContactResultKey(result) }
             });
+        }
+
+        protected string GetContactResultKey(IAccountInfoWriteResult result)
+        {
+            if (result.Success)
+                return "";
+            else if (result.Message.Contains("required"))
+                return "Required";
+            else
+                return "ContactUpdateFailed";
         }
 
         [HttpPost]
@@ -71,7 +81,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 return Ok(new
                 {
                     success = false,
-                    message = NullUserKey
+                    reasons = new string[] { NullUserKey }
                 });
             }
 
@@ -81,8 +91,18 @@ namespace Informa.Web.Areas.Account.Controllers
             return Ok(new
             {
                 success = result.Success,
-                message = result.Message
+                reasons = new string[] { GetPasswordResultKey(result) }
             });
+        }
+
+        protected string GetPasswordResultKey(IAccountInfoWriteResult result)
+        {
+            if (result.Success)
+                return "";
+            else if (result.Message.Contains("invalid username and password"))
+                return "InvalidPasswordValues";
+            else
+                return "PasswordUpdateFailed";
         }
 
         protected string NullUserKey => TextTranslator.Translate("ContactInfo.NullUser");
