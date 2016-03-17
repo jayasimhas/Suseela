@@ -1,16 +1,13 @@
-button {
+// buttons used in search facet panel
+.facets__button {
+
     @extend .button--plain; // unstyles buttons
     cursor: pointer;
 
     &:focus {
         outline: 0;
     }
-}
-
-
-// buttons used in search facet panel
-.facets__button {
-
+    
     // by default, mobile button displays instead of facets at/below med
     &--mobile {
         display: none;
@@ -40,7 +37,7 @@ button {
     &--clear-company {
       padding: 0;
       margin-right: 11px;
-      
+
       svg {
         @include svg-fill($informa-red);
         margin: 0;
