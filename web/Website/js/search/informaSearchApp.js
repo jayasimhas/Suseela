@@ -3,7 +3,8 @@
 
     var informaSearchApp = angular.module('informaSearchApp', [
         'velir.search',
-        'ui.bootstrap'   ])
+        'ui.bootstrap',
+        'ngSanitize'])
         .constant('apiEndpoints', {
             API_BASE: '/api',
             SEARCH_ENDPOINT: '/search'

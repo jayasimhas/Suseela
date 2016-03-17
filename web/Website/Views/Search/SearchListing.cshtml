@@ -38,13 +38,13 @@
 
             <div class="result__publication">{{ doc.publicationTitle }} </div>
 
-            <a class="result__heading" ng-href="{{ doc.url }}" title="Page Title">
-                {{ doc.title }}
+            <a class="result__heading" ng-href="{{ doc.url }}" title="Page Title" >
+  {{doc.title}}
             </a>
 
             <div class="result__author" ng-if="doc.byline !== ''">By {{ doc.byline }}</div>
 
-            <p class="result__description">{{ doc.summary }}</p>
+            <p class="result__description" ng-bind-html="doc.summary"></p>
 
              <div class="result__tags"  >
 

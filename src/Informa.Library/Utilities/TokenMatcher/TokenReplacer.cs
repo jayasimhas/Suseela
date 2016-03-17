@@ -19,7 +19,8 @@ namespace Informa.Library.Utilities.TokenMatcher
         {
             ArticleSearch = articleSearch;
         }
-        public TokenReplacer() : this(DependencyResolver.Current.GetService<IArticleSearch>())
+        //public TokenReplacer() : this(DependencyResolver.Current.GetService<IArticleSearch>())
+        public TokenReplacer()
         {
 
         }
