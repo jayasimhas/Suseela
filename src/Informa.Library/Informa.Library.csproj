@@ -306,6 +306,7 @@
     <Compile Include="ComponentModel\DataAnnotations\MustBeTrueAttribute.cs" />
     <Compile Include="ComponentModel\DataAnnotations\PasswordAttribute.cs" />
     <Compile Include="CustomSitecore\Mvc\SitecoreValidateAntiForgeryTokenAttribute.cs" />
+    <Compile Include="CustomSitecore\Pipelines\GenerateIfDictionaryKeyNotFound.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaExecuteRequest.cs" />
     <Compile Include="CustomSitecore\Pipelines\PublishItem\ItemsPublishingProcessor.cs" />
     <Compile Include="CustomSitecore\Ribbon\ExportArticle.cs" />
@@ -315,7 +316,6 @@
     <Compile Include="SiteDebugging\SiteDebuggingSession.cs" />
     <Compile Include="SiteDebugging\ISiteDebuggingAllowedContext.cs" />
     <Compile Include="SiteDebugging\ISiteDebuggingSession.cs" />
-    <Compile Include="Globalization\GenerateSitecoreTextTranslator.cs" />
     <Compile Include="Mail\BaseHtmlEmailFactory.cs" />
     <Compile Include="DCD\XMLImporting\DCDConfigurationItem.cs" />
     <Compile Include="DCD\XMLImporting\DCDContextExtensions.cs" />
