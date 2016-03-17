@@ -1,5 +1,5 @@
 ﻿
-var InformaFacetController = function ($scope, $location, $http, searchService, searchBootstrapper) {
+var InformaFacetController = function ($scope, $location, $http, searchService, searchBootstrapper, getCompaniesService) {
     "use strict";
 
     var _this = this;
@@ -12,9 +12,10 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         _this.location = $location;
         _this.searchBootstrapper = searchBootstrapper;
         _this.MaxFacetShow = 5;
-        _this.CurrentDateSelection = '';
+        _this.CompanyList = getCompaniesService.fetchCompanies();
 
         // Date Facet stuff
+        _this.CurrentDateSelection = '';
         _this.currentDateRange = _this.getDateFilterLabel();
         _this.ValidDates = true;
         _this.DateFilters = [
@@ -44,6 +45,20 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         _this.facetGroups = searchService.getFacetGroups();
     }, true);
 
+
+    //** This collects the user's saved companies **//
+    $scope.savedCompanies = {};
+
+    $scope.saveCompany = function ($item, model, label) {
+        console.log("selected: ", $item);
+        $scope.savedCompanies[$item] = {
+            selected: true,
+            label: $item
+        };
+        console.log($scope.savedCompanies);
+    };
+
+
     //** This updates the router/url with the latest search parameters **//
     _this.update = function () {
         _this.searchService.getFilter('page').setValue('1');
@@ -58,18 +73,12 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         _this.update();
     }
 
+    // TODO: this comes from a diff search app, and needs jquery to work. 
+    //       either hook up jq to this controller or move this elsewhere
     _this.scrollTop = function () {
         // var location = jq(".search-facets__header").offset().top;
         //window.scrollTo(0, location - 80);
     }
-
-    // _this.clearGroup = function (groupId) {
-    //     var facets = _this.searchService.getFacetGroup(groupId).getSelectedFacets();
-    //     _.each(facets, function (facet) {
-    //         facet.selected = false;
-    //     });
-    //     this.update();
-    // }
 
     _this.hasSelected = function (values) {
         return _.find(values, { selected: true }) ? true : false;
@@ -107,11 +116,9 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
     //** This clears the date parameters from the search, deselcts any date radio buttons, and clears both custom date input fields **//
     _this.clearDateRange = function () {
         var filter = _this.getFilter('date');
-        console.log("removing: ", filter);
         filter.setValue("");
         filter.selected = false;
         var filterDateLabel = _this.getFilter('dateFilterLabel');
-        console.log("removing: ", filterDateLabel);
         filterDateLabel.setValue("");
         var dates = _this.DateFilters;
          _.each(dates, function(date) {
@@ -125,7 +132,6 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         var filterDateLabel = _this.getFilter('dateFilterLabel');
         return filterDateLabel._value;
     }
-
    
     _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
 
@@ -149,8 +155,6 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
 
     }
 
-
-
     //** This builds date parameters for the search query **//
     _this.dateRangeSearch = function (filterKey, dateFilter) {
 
@@ -162,33 +166,20 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
 
         var filter = _this.getFilter(filterKey);
         var filterDateLabel = _this.getFilter('dateFilterLabel');
-        console.log("date range: ", dateFilter);
 
-        // if (dateFilter == _this.currentDateRange) {
-            // _this.clearDateRange(filterKey);
-            // _this.currentDateRange = "";
-            // filterDateLabel.setValue("");
-            // filter.setValue("");
-        // } else {
         var startDate = datesObject[dateFilter];
         var endDate = datesObject['day'];
         _this.currentDateRange = dateFilter;
 
         filterDateLabel.setValue(dateFilter);
         filter.setValue(startDate + ";" + endDate);
-        // }
-        //_this.CustomStartDate.val('');
-       // _this.CustomEndDate.val('');
-       // _this.checkSelectedDateRange();
+
         _this.update();
     }
-
-    
-
 
 
     init();
 
 };
 var informaSearchApp = angular.module('informaSearchApp');
-informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', 'searchService', 'searchBootstrapper', InformaFacetController]);
+informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', 'searchService', 'searchBootstrapper', 'getCompaniesService', InformaFacetController]);
