@@ -10164,6 +10164,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Search_Tips_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Search_Tips_Title  {get; set;}
 								/// <summary>
+					/// The Debug Email Access field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: fa009cbe-f5ee-4934-a608-29f6471fb59a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Debug_Email_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Debug_Email_Access  {get; set;}
+								/// <summary>
+					/// The Debug IP Access field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: ed1fb2f5-c40a-469b-bb1d-44ce20263493</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Debug_IP_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Debug_IP_Access  {get; set;}
+								/// <summary>
 					/// The LinkedIn Link field.
 					/// <para></para>
 					/// <para>Field Type: General Link</para>		
@@ -10653,6 +10671,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Search_Tips_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Search_Tips_Title  {get; set;}
 										/// <summary>
+						/// The Debug Email Access field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: fa009cbe-f5ee-4934-a608-29f6471fb59a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Debug_Email_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Debug_Email_Access  {get; set;}
+										/// <summary>
+						/// The Debug IP Access field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: ed1fb2f5-c40a-469b-bb1d-44ce20263493</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Debug_IP_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Debug_IP_Access  {get; set;}
+										/// <summary>
 						/// The LinkedIn Link field.
 						/// <para></para>
 						/// <para>Field Type: General Link</para>		
@@ -10977,6 +11013,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Search_Tips_TitleFieldId = new ID("3f8a2bb3-17bb-48a9-bb23-3e88c6b98b7b");
 			public const string Search_Tips_TitleFieldName = "Search Tips Title";
+
+						
+					
+			public static readonly ID Debug_Email_AccessFieldId = new ID("fa009cbe-f5ee-4934-a608-29f6471fb59a");
+			public const string Debug_Email_AccessFieldName = "Debug Email Access";
+
+						
+					
+			public static readonly ID Debug_IP_AccessFieldId = new ID("ed1fb2f5-c40a-469b-bb1d-44ce20263493");
+			public const string Debug_IP_AccessFieldName = "Debug IP Access";
 
 						
 					
@@ -15213,6 +15259,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Search_Tips_TitleFieldId = new ID("3f8a2bb3-17bb-48a9-bb23-3e88c6b98b7b");
 			public const string Search_Tips_TitleFieldName = "Search Tips Title";
+
+						
+					
+			public static readonly ID Debug_Email_AccessFieldId = new ID("fa009cbe-f5ee-4934-a608-29f6471fb59a");
+			public const string Debug_Email_AccessFieldName = "Debug Email Access";
+
+						
+					
+			public static readonly ID Debug_IP_AccessFieldId = new ID("ed1fb2f5-c40a-469b-bb1d-44ce20263493");
+			public const string Debug_IP_AccessFieldName = "Debug IP Access";
 
 						
 					
