@@ -24,6 +24,7 @@ namespace Informa.Web.Models
 
 		public ISitecoreContext SitecoreContext => GlassHtml.SitecoreContext;
 		public IArticleSearch ArticleSearch { get; }
+		private TokenReplacer TokenReplacer { get; }
 
 		private readonly IArticleListItemModelFactory _articleListableFactory;
 
@@ -34,50 +35,13 @@ namespace Informa.Web.Models
 			Model = HtmlHelper.ViewData.Model;
 
 			ArticleSearch = DependencyResolver.Current.GetService<IArticleSearch>();
-			_articleListableFactory = DependencyResolver.Current.GetService<IArticleListItemModelFactory>();			
-		}
+			_articleListableFactory = DependencyResolver.Current.GetService<IArticleListItemModelFactory>();
 
-		public string ReplaceCompany(string content)
-		{
-			var dealRegex = new Regex(DCDConstants.DealTokenRegex);
+            TokenReplacer = new TokenReplacer(ArticleSearch);
 
-			foreach (Match match in dealRegex.Matches(content))
-			{
-				var replace = DCDTokenMatchers.dealMatchEval(match);
+        }
 
-				content = content.Replace(match.Value, replace.ToString());
-			}
-
-			return content;
-		}
-
-		public string ReplaceRelatedArticles(string content)
-		{
-			var referenceArticleTokenRegex = new Regex(@"\(<a>\[A#(.*?)\]</a>\)");
-
-			foreach (Match match in referenceArticleTokenRegex.Matches(content))
-			{
-				string articleNumber = match.Groups[1].Value;
-
-
-				IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-				filter.ArticleNumber = articleNumber;
-				var results = ArticleSearch.Search(filter);
-
-				HtmlString replace = new HtmlString("");
-
-				if (results.Articles.Any())
-				{
-					var article = results.Articles.FirstOrDefault();
-					if (article != null)
-						replace = new HtmlString($"<a href='{article._Url}'>{article.Navigation_Title}</a>");
-				}
-
-				content = content.Replace(match.Value, replace.ToHtmlString());
-			}
-			return content;
-		}
-
+		
 		public string ReplaceSidebarArticles(string content, string partialName)
 		{
 			var sidebarRegex = new Regex(@"\[Sidebar#(.*?)\]");
@@ -107,7 +71,7 @@ namespace Informa.Web.Models
 		public virtual IHtmlString RenderCompanyLink(Expression<Func<TK, string>> expression)
 		{
 			var fieldValue = expression.Compile()(this.Model);
-			return HtmlHelper.Raw(ReplaceCompany(fieldValue));
+			return HtmlHelper.Raw(TokenReplacer.ReplaceCompany(fieldValue));
 		}
 
 		/// <summary>
@@ -119,11 +83,11 @@ namespace Informa.Web.Models
 		public virtual IHtmlString RenderTokenBody(Expression<Func<TK, string>> expression, string partialName)
 		{
 			var fieldValue = expression.Compile()(this.Model);
-			fieldValue = ReplaceCompany(fieldValue);
+			fieldValue = TokenReplacer.ReplaceCompany(fieldValue);
 
 			fieldValue = ReplaceSidebarArticles(fieldValue, partialName);
 
-			ReplaceRelatedArticles(fieldValue);
+            TokenReplacer.ReplaceRelatedArticles(fieldValue);
 
 			return HtmlHelper.Raw(fieldValue);
 			//return new HtmlString(this.GlassHtml.RenderLink<T>(model, field, attributes, isEditable, contents));
