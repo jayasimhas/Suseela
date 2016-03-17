@@ -27,7 +27,6 @@
             showOnlyHeadlines: function () { return headlines; }
             ,
             updateValue: function () {
-                
                 headlines = !headlines;
             }
         }
@@ -120,30 +119,40 @@
     }]);
 
 
-
-
-// TODO: This should be split off into a new file
-
-  // service to return companies data
-  informaSearchApp.factory('Companies', ['$http', function($http) {
-
+  
+  // factory to handle call to companies service
+  // note: a factory lives through the entire application lifecycle
+  informaSearchApp.factory('getCompaniesService', ['$http', function($http) {
     var fetchCompanies = function() {
-      // var url = '/velir/services/TypeAhead.asmx/TypeAheadCompanies';
       return $http({
           method: 'GET',
           url: 'http://informa-insight.rose.velir.com/velir/services/TypeAhead.asmx/TypeAheadCompanies'
       });
     }
-
     return {fetchCompanies : fetchCompanies};
   }]);
 
-    
-  // setup controller and pass data source
-  informaSearchApp.controller("InformaTypeaheadController", 
-    function($scope, Companies){
+  // factory to handle pushing company selections
+  informaSearchApp.factory('myCompaniesService', function() {
+     return { 
+      saveSelection: function() {
+        return [
+          { label: 'company1', key: 'company1', selected: false },
+          { label: 'company2', key: 'company2', selected: false },
+          { label: 'company3', key: 'company3', selected: false }
+        ]
+      }
 
-      Companies.fetchCompanies()
+     };
+
+  });
+
+  // set up controller and pass data source
+  // note: a controller is usually destroyed & recreated when the route changes
+  informaSearchApp.controller("InformaTypeaheadController", 
+    function($scope, getCompaniesService){
+
+      getCompaniesService.fetchCompanies()
       .then(function(response) {
         var companies = [];
         companies = $.map( response.data, function(value, index) {
@@ -152,15 +161,29 @@
         $scope.companies = companies;
       })
       .catch( function(reason) {
-        console.log("error")
+        console.log("error");
         console.log(reason);
       })
 
-      // console.log("hi there");
-     $scope.onSelect = function() {
-        console.log("hi");
-      } 
+      // $scope.addCompany = function($item, $model, $label) {
+      //   console.log("selected: ", $item);
+      //   $scope.selected = $item;
+      // } 
+
+      // $scope.savedCompanies = [
+      //        { label: 'thing1', key: 'thing1', selected: false },
+      //        { label: 'thing2', key: 'thing2', selected: false },
+      //        { label: 'thing3', key: 'thing3', selected: false }
+      //   ];
+
+      // Companies.collectCompany()
+      // .then(function() {
+      //   var myCompanies = [];
+      //   myCompanies.push("something");
+      //   $scope.myCompanies = myCompanies;
+      // })
   });
+
 
 
 

@@ -35,8 +35,7 @@
     <form class="facets__section"
             ng-repeat="group in allFacets.facetGroups">
 
-          <fieldset 
-            ng-show="group.label == 'Companies'" class="facets__fieldset">
+          <fieldset ng-show="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController as typeahead">
               <legend class="facets__legend facets__section-header">
                   <h4>Companies</h4>
                   <button class="facets__button facets__button--toggle-section"
@@ -47,12 +46,31 @@
                   </button>
               </legend>
               <ul class="facets__section-list" ng-hide="collapsecompanies">
-                  <!--<li>
+
+              <!-- testing -->
+              <button ng-click="saveCompany()">Add a line</button>
+              <div ng-repeat="company in savedCompanies">
+                  I'm a new line. {{foo}}
+              </div>
+              <!-- /testing -->
+
+              <!-- sample added company 
+                  <li>
                       <input type="checkbox" class="visuallyhidden">
                       <label>Amgen (537)</label>
-                  </li>-->
-                  <li class="facets__company-input" ng-show="isAddingCompany"
-                    ng-controller="InformaTypeaheadController">
+                  </li> 
+               /sample added company -->
+
+                  <!-- ng-repeat="company in allFacets.MyCompanies" -->
+                  <!-- ng-repeat="company in typeahead.companies" -->
+                  <li 
+                    ng-repeat="company in allFacets.CompanyList"
+                    id="{{company.key}}" >
+                    <input type="checkbox" class="visuallyhidden" ng-checked="{{company.selected}}">
+                    <label for="{{company.key}}">{{company.selected}}</label>
+                    <!--<label for="{{company.key}}">{{selected}}</label>-->
+                  </li>
+                  <li class="facets__company-input" ng-show="isAddingCompany">
                       <div class="facets__field-group facets__field-group--companies">
                           <button class="facets__button facets__button--clear-company"
                                   ng-class="{'collapsed': isCollapsedCompanies}"
@@ -61,48 +79,48 @@
                           </button>
                           <input 
                             type="text" 
-                            id="companies" 
-                            name="companies" 
-                            placeholder="enter a company"
-                            ng-model="selected"
-                            typeahead="companies for companies in companies | filter:$viewValue | limitTo:10" 
-                            typeahead-loading="loadingCompanies"  
-                            typeahead-no-results="noCompanies" 
-                            typeahead-min-length=2
-                            typeahead-select-on-blur=true
-                            typeahead-select-on-exact=true
-                            typeahead-on-select='onSelect()' 
-                            class="form-control">
-                          <i ng-show="loadingCompanies" class="glyphicon glyphicon-refresh"></i>
+                            id="company" 
+                            name="company" 
+                            placeholder="Enter a Company"
+                            ng-model="company.selected"
+                            typeahead="company for company in companies | filter:$viewValue | limitTo:10" 
+                            typeahead-min-length=2 
+                            typeahead-select-on-blur="true" 
+                            typeahead-select-on-exact="true" 
+                            typeahead-on-select='addCompany($item, $model, $label)' 
+                            typeahead-editable="false"
+                            class="form-control"
+                            autocomplete="off">
+                            <!-- add to above: typeahead-loading="loadingCompanies" 
+                            typeahead-no-results="noCompanies" -->
+                          <!--<i ng-show="loadingCompanies" class="glyphicon glyphicon-refresh"></i>
                           <div ng-show="noCompanies">
                             <i class="glyphicon glyphicon-remove"></i> No Results Found
-                          </div>
-                          {{selected}}
+                          </div>-->
                       </div>
                   </li>
               </ul>
               <button class="facets__button facets__button--add"
-                      ng-model="isAddingCompany"
-                      ng-class="{'collapsed': isCollapsedCompanies, 'adding-company': isAddingCompany}"
-                      ng-hide="isAddingCompany"
-                      ng-click="isAddingCompany = true">
+                  ng-model="isAddingCompany"
+                  ng-class="{'collapsed': isCollapsedCompanies, 'adding-company': isAddingCompany}"
+                  ng-hide="isAddingCompany"
+                  ng-click="isAddingCompany = true">
                   Add
                   <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#add"></use></svg>
               </button>
           </fieldset>
 
         <fieldset ng-show="group.label == 'Date Placeholder'" class="facets__fieldset">
-              <legend class="facets__legend facets__section-header">
-                  <h4>Date</h4>
-                  <button class="facets__button facets__button--toggle-section"
-                          ng-model="collapsedate"
-                          ng-click="collapsedate=!collapsedate; isCollapsedDate=!isCollapsedDate"
-                          ng-class="{'collapsed': isCollapsedDate}">
-                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
-                  </button>
-              </legend>
+            <legend class="facets__legend facets__section-header">
+                <h4>Date</h4>
+                <button class="facets__button facets__button--toggle-section"
+                        ng-model="collapsedate"
+                        ng-click="collapsedate=!collapsedate; isCollapsedDate=!isCollapsedDate"
+                        ng-class="{'collapsed': isCollapsedDate}">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+                </button>
+            </legend>
             <ul class="facets__section-list datepicker" ng-controller="InformaDatesController">
-
                 <li class="facets__section-wrapper" ng-hide="collapsedate">
                     <ul class="facets__section-list">
                         <li class="facets__section-item" ng-repeat="dateFilter in allFacets.DateFilters">
