@@ -1,4 +1,6 @@
-﻿namespace Informa.Library.Session
+﻿using System;
+
+namespace Informa.Library.Session
 {
 	public interface ISessionStore
 	{

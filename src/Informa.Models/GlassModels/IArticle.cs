@@ -116,8 +116,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 		public string Notification_Text { get; set; }
 		public string Leaderboard_Slot_ID { get; set; }
-
-		[SitecoreField("__updated")]
+        public string Article_Medium_Slot_ID { get; set; }
+        public string Article_Filmstrip_Slot_ID { get; set; }
+        [SitecoreField("__updated")]
 		public virtual DateTime Updated { get; set; }
 	}
 

@@ -1,7 +1,10 @@
 @model ArticleAdViewModel
-<section class="article-preview article-preview--small">
-    <div class="article-preview__ad">
-        @Model.AdvertisementText
-        <script language="JavaScript">OAS_AD('@Model.MediumAdID', '@Model.AdZone');</script>
-    </div>
-</section>
+@if (!string.IsNullOrEmpty(Model.MediumAdID) && !string.IsNullOrEmpty(Model.AdZone))
+{
+    <section class="article-preview article-preview--small">
+        <div class="article-preview__ad">
+            @Model.AdvertisementText
+            <script language="JavaScript">OAS_AD('@Model.MediumAdID', '@Model.AdZone');</script>
+        </div>
+    </section>
+}

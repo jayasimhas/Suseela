@@ -1,0 +1,11 @@
+﻿@model Informa.Web.ViewModels.SiteDebugging.IUserIpAddressViewModel
+<div class="debugUserIpAddress">
+	<form action="" method="post">
+		<label for="debugIpAddress">@Model.IpAddressLabelText</label><input type="text" name="@Model.IpAddressInputName" value="@Model.IpAddress" @( Model.IsDebugging ? "disabled=\"disabled\"" : "" ) />
+		@if (Model.IsDebugging)
+		{
+			<input type="hidden" name="@Model.ClearIpAddressInputName" value="clear" />
+		}
+		<button type="submit">@Model.IpAddressSubmitText</button>
+	</form>
+</div>

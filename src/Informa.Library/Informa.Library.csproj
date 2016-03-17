@@ -311,6 +311,10 @@
     <Compile Include="CustomSitecore\Ribbon\ExportArticle.cs" />
     <Compile Include="CustomSitecore\Ribbon\ViewNlm.cs" />
     <Compile Include="Data\Entity\CustomDbContext.cs" />
+    <Compile Include="SiteDebugging\SiteDebuggingAllowedContext.cs" />
+    <Compile Include="SiteDebugging\SiteDebuggingSession.cs" />
+    <Compile Include="SiteDebugging\ISiteDebuggingAllowedContext.cs" />
+    <Compile Include="SiteDebugging\ISiteDebuggingSession.cs" />
     <Compile Include="Globalization\GenerateSitecoreTextTranslator.cs" />
     <Compile Include="Mail\BaseHtmlEmailFactory.cs" />
     <Compile Include="DCD\XMLImporting\DCDConfigurationItem.cs" />
@@ -332,7 +336,11 @@
     <Compile Include="Mail\IEmailSender.cs" />
     <Compile Include="Mail\IHtmlEmailTemplate.cs" />
     <Compile Include="Mail\IHtmlEmailTemplateFactory.cs" />
+    <Compile Include="Net\IIpAddressContext.cs" />
+    <Compile Include="Net\IIpAddressFactory.cs" />
     <Compile Include="Net\IIpAddressRangeCheck.cs" />
+    <Compile Include="Net\IpAddressContext.cs" />
+    <Compile Include="Net\IpAddressFactory.cs" />
     <Compile Include="Net\IpAddressRangeCheck.cs" />
     <Compile Include="Publishing\Scheduled\History\AddHistoryProcessedScheduledPublishAction.cs" />
     <Compile Include="Publishing\Scheduled\History\Entity\EntityAddScheduledPublishHistory.cs" />
@@ -414,6 +422,11 @@
     <Compile Include="Services\NlmExport\Models\Front\NlmJournalMetaModel.cs" />
     <Compile Include="Services\NlmExport\Models\NlmArticleModel.cs" />
     <Compile Include="Services\NlmExport\NlmExportService.cs" />
+    <Compile Include="Session\SpecificSessionStore.cs" />
+    <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
+    <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
+    <Compile Include="SiteDebugging\ISiteDebuggingAllowedConfiguration.cs" />
+    <Compile Include="User\SiteDebugging\ISiteDebuggingUserIpAddressContext.cs" />
     <Compile Include="Utilities\ArticleExtension.cs" />
     <Compile Include="Services\NlmExport\Parser\Legacy\Container\Content.cs" />
     <Compile Include="Services\NlmExport\Parser\Legacy\Container\InnerTextNode.cs" />
