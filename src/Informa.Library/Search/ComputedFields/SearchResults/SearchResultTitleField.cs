@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Web;
 using Glass.Mapper.Sc;
-using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Jabberwocky.Glass.Models;
 using Sitecore.Data.Items;
@@ -12,34 +7,31 @@ using Velir.Search.Core.ComputedFields;
 
 namespace Informa.Library.Search.ComputedFields.SearchResults
 {
-    public class SearchResultTitleField : BaseContentComputedField
-    {
-        public override object GetFieldValue(Item indexItem)
-        {
-            var glassItem = indexItem.GlassCast<IGlassBase>(inferType: true);
-            var page = glassItem as I___BasePage;
+	public class SearchResultTitleField : BaseContentComputedField
+	{
+		public override object GetFieldValue(Item indexItem)
+		{
+			var glassItem = indexItem.GlassCast<IGlassBase>(inferType: true);
+			var page = glassItem as I___BasePage;
+			var title = indexItem.Name;
 
-            if (page == null)
-            {
-                return indexItem.Name;
-            }
+			if (page == null) return HttpUtility.HtmlDecode(title);
+			if (!string.IsNullOrEmpty(page.Title))
+			{
+				title = page.Title;
+			}
 
-            if (!string.IsNullOrEmpty(page.Title))
-            {
-                return page.Title;
-            }
+			if (!string.IsNullOrEmpty(page.Navigation_Title))
+			{
+				title = page.Navigation_Title;
+			}
 
-            if (!string.IsNullOrEmpty(page.Navigation_Title))
-            {
-                return page.Navigation_Title;
-            }
+			if (!string.IsNullOrEmpty(indexItem.DisplayName))
+			{
+				title = indexItem.DisplayName;
+			}
 
-            if (!string.IsNullOrEmpty(indexItem.DisplayName))
-            {
-                return indexItem.DisplayName;
-            }
-
-            return indexItem.Name;
-        }
-    }
+			return HttpUtility.HtmlDecode(title);
+		}
+	}
 }
