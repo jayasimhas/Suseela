@@ -1152,6 +1152,8 @@
     <Content Include="Areas\Account\Views\Management\EmailPreferences.cshtml" />
     <Content Include="Areas\Account\Views\Management\AccountNavigation.cshtml" />
     <Content Include="Areas\Account\Views\Registration\RegisterUserOptIns.cshtml" />
+    <Content Include="Areas\Account\Views\Management\OneClickSubscribe.cshtml" />
+    <Content Include="Areas\Account\Views\Management\OneClickUnsubscribe.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
