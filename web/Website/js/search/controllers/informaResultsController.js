@@ -1,4 +1,4 @@
-﻿var InformaResultsController = function InformaResultsController($scope, searchService, viewHeadlinesStateService) {
+﻿var InformaResultsController = function InformaResultsController($scope, $sanitize,searchService, viewHeadlinesStateService) {
     var _this = this;
 
     this.service = searchService;
@@ -39,4 +39,4 @@ var informaSearchApp = angular.module('informaSearchApp').directive('onFinishRen
         }
     };
 });
-informaSearchApp.controller("InformaResultsController", ['$scope', 'searchService', 'viewHeadlinesStateService', InformaResultsController]);
+informaSearchApp.controller("InformaResultsController", ['$scope', '$sanitize','searchService', 'viewHeadlinesStateService', InformaResultsController]);

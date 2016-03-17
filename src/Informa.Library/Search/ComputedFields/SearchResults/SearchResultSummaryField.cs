@@ -34,7 +34,7 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
             processedText = WordUtil.TruncateArticle(processedText, 20,false);
             processedText = HtmlUtil.StripHtml(processedText);
             processedText = UnescapeXMLValue(processedText);
-           // processedText = ReplaceArticleTokens(processedText);
+            processedText = ReplaceArticleTokens(processedText);
 
             return processedText;
         }
@@ -51,8 +51,8 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
             //Companies
             string processedText = tokenReplacer.ReplaceCompany(bodyText);
 
-            //Articlees
-            processedText = tokenReplacer.ReplaceRelatedArticles(bodyText);
+            //Articles
+            //processedText = tokenReplacer.ReplaceRelatedArticles(bodyText);
 
             return processedText;
         }
