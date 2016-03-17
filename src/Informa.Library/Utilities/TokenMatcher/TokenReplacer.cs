@@ -57,7 +57,7 @@ namespace Informa.Library.Utilities.TokenMatcher
                 {
                     var article = results.Articles.FirstOrDefault();
                     if (article != null)
-                        replace = new HtmlString($"<a href='{article._Url}'>{article.Navigation_Title}</a>");
+                        replace = new HtmlString($"<a href='{article._Url}'>{HttpUtility.HtmlDecode(article.Navigation_Title)}</a>");
                 }
 
                 content = content.Replace(match.Value, replace.ToHtmlString());
