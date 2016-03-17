@@ -93,7 +93,7 @@ namespace Informa.Web.velir.services
 
             foreach (var facetGroupResult in results.facets)
             {
-                if (facetGroupResult.id.ToLower() == "companies2")
+                if (facetGroupResult.id.ToLower() == "companies")
                 {
                     foreach (SearchFacetResult result in facetGroupResult.values)
                     {
