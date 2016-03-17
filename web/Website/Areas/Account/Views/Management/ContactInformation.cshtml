@@ -129,6 +129,16 @@
                     </p>
                 </div>
 
+                <div class="alert-error js-form-error js-form-error-general">
+                    <svg class="alert__icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                    </svg>
+
+                    <p class="page-account-contact__error">
+                        @Model.GeneralErrorText
+                    </p>
+                </div>
+
                 <div>
                     <div class="page-account-contact__column">
 
@@ -467,10 +477,6 @@
 
             </form>
 
-
-            <div style="display: none;" class="js-preferences-user-error-container">
-                <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-general">@Model.GeneralErrorText</p>
-            </div>
         </div>
     </div>
 }
