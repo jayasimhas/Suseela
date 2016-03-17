@@ -46,6 +46,7 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
     }, true);
 
 
+    //** This collects the user's saved companies **//
     $scope.savedCompanies = [];
 
     $scope.saveCompany = function ($item, model, label) {
@@ -68,6 +69,8 @@ var InformaFacetController = function ($scope, $location, $http, searchService, 
         _this.update();
     }
 
+    // TODO: this comes from a diff search app, and needs jquery to work. 
+    //       either hook up jq to this controller or move this elsewhere
     _this.scrollTop = function () {
         // var location = jq(".search-facets__header").offset().top;
         //window.scrollTo(0, location - 80);
