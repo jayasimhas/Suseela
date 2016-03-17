@@ -36,7 +36,7 @@ namespace Informa.Library.Subscription
             get
             {
 
-                return _userContext.User.Name + " " + _siteRootContext.Item.Individual_Subscription_Expiration_Warning_Text;
+                return _siteRootContext.Item.Individual_Subscription_Expiration_Warning_Text;
             }
         }
 
@@ -52,7 +52,7 @@ namespace Informa.Library.Subscription
         {
             get
             {
-                return _siteRootContext.Item.Subscribe_Link.Text;
+                return _textTranslator.Translate("Subscriptions.Renewals.RenewalMessageSubscriptionLinkText");
             }
         }
 
