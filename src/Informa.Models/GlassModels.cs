@@ -1620,6 +1620,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing
 	{
 								/// <summary>
+					/// The Article Filmstrip Slot ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: e3946a4f-b5d3-43dc-a640-74c55c865bca</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Article_Filmstrip_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Article_Filmstrip_Slot_ID  {get; set;}
+								/// <summary>
+					/// The Article Medium Slot ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 8af013ce-64a8-449b-83b3-ad35f2c9ee01</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Article_Medium_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Article_Medium_Slot_ID  {get; set;}
+								/// <summary>
 					/// The Sort Order field.
 					/// <para></para>
 					/// <para>Field Type: Number</para>		
@@ -1911,6 +1929,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing__Raw
 		{
 										/// <summary>
+						/// The Article Filmstrip Slot ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: e3946a4f-b5d3-43dc-a640-74c55c865bca</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Article_Filmstrip_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Article_Filmstrip_Slot_ID  {get; set;}
+										/// <summary>
+						/// The Article Medium Slot ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 8af013ce-64a8-449b-83b3-ad35f2c9ee01</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Article_Medium_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Article_Medium_Slot_ID  {get; set;}
+										/// <summary>
 						/// The Sort Order field.
 						/// <para></para>
 						/// <para>Field Type: Number</para>		
@@ -2197,6 +2233,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Article";
 
+					
+			public static readonly ID Article_Filmstrip_Slot_IDFieldId = new ID("e3946a4f-b5d3-43dc-a640-74c55c865bca");
+			public const string Article_Filmstrip_Slot_IDFieldName = "Article Filmstrip Slot ID";
+
+						
+					
+			public static readonly ID Article_Medium_Slot_IDFieldId = new ID("8af013ce-64a8-449b-83b3-ad35f2c9ee01");
+			public const string Article_Medium_Slot_IDFieldName = "Article Medium Slot ID";
+
+						
 					
 			public static readonly ID Sort_OrderFieldId = new ID("09caa578-881b-4252-b94f-59d68c19d7c7");
 			public const string Sort_OrderFieldName = "Sort Order";
