@@ -25,8 +25,12 @@ namespace Informa.Web.ViewModels
             TextTranslator = textTranslator;
         }
 
-        public string MediumAdID => SitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode)?.Global_Article_Medium_Slot_ID ?? string.Empty;
-        public string FilmstripAdID => SitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode)?.Global_Article_Filmstrip_Slot_ID ?? string.Empty;
+        public string MediumAdID => (!string.IsNullOrEmpty(GlassModel?.Article_Medium_Slot_ID)) 
+            ? GlassModel.Article_Medium_Slot_ID 
+            : SitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode)?.Global_Article_Medium_Slot_ID ?? string.Empty;
+        public string FilmstripAdID => (!string.IsNullOrEmpty(GlassModel?.Article_Filmstrip_Slot_ID))
+            ? GlassModel.Article_Filmstrip_Slot_ID
+            : SitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode)?.Global_Article_Filmstrip_Slot_ID ?? string.Empty;
         public string AdZone => SitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode)?.Global_Article_Ad_Zone ?? string.Empty;
         public string AdvertisementText => TextTranslator.Translate("Ads.Advertisement");
     }

@@ -18,6 +18,8 @@ namespace Informa.Library.Utilities.References
         Guid NlmCopyrightStatement { get; }
         Guid InformaBar { get; }
 
+        Guid GeneratedDictionary { get; }
+
         // Taxonomy Folders
         Guid SubjectsTaxonomyFolder { get; }
         Guid RegionsTaxonomyFolder { get; }

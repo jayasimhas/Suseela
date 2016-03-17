@@ -16,10 +16,17 @@ key: __enable item fallback
 content-length: 1
 
 1
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 21
+
+apps/32x32/pencil.png
 ----version----
 language: en
 version: 1
-revision: 6e218411-3e57-49ab-9da5-fab8267f4287
+revision: 8c37c87a-b141-446b-b5ad-f1d8b3ceec57
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6e218411-3e57-49ab-9da5-fab8267f4287
+8c37c87a-b141-446b-b5ad-f1d8b3ceec57
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150728T233054Z
+20160317T203551Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

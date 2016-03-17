@@ -1,4 +1,5 @@
 ﻿@using Glass.Mapper.Sc.Mvc
+@using Informa.Library.Utilities.StringUtils
 @model ArticleListItemModel
 <aside class="article-sidebar">
 	<h3>@HttpUtility.HtmlDecode(Model.ListableTitle)</h3>
@@ -7,7 +8,7 @@
 	}
 	<time class="article-sidebar__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
 
-	@Html.Raw(Model.TruncateArticle(Model.ListableSummary, 60))
+	@Html.Raw(WordUtil.TruncateArticle(Model.ListableSummary, 60))
 
 	<a class="article-sidebar__read-more" href="@Model.LinkableUrl">Read the full article here </a>
 </aside>
