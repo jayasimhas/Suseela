@@ -64,7 +64,7 @@ namespace Informa.Web.ViewModels
                 if (_latestSalesForceRecord.productCode.ToLower() != "scrip")
                     return false;
 
-                if ((_latestSalesForceRecord?.expirationDate - DateTime.Now)?.TotalDays > 190)
+                if ((_latestSalesForceRecord?.expirationDate - DateTime.Now)?.TotalDays < 190)
                     return false;
 
                 if (_latestSalesForceRecord.subscriptionType.ToLower() != "individual" && _latestSalesForceRecord.subscriptionType.ToLower() != "free-trial")
@@ -89,14 +89,14 @@ namespace Informa.Web.ViewModels
         {
             get
             {
-                return "IsAuthenticated:" + (_userContext.IsAuthenticated ? "true" : "false") + "|" +"productCode:" + _latestSalesForceRecord.productCode + "|" + "expirationDate: " + _latestSalesForceRecord.expirationDate.Value.ToString() + "|" + "subsType:" + _latestSalesForceRecord.subscriptionType + "|" + "productType" + _latestSalesForceRecord.productType;
+                // return "IsAuthenticated:" + (_userContext.IsAuthenticated ? "true" : "false") + "|" +"productCode:" + _latestSalesForceRecord.productCode + "|" + "expirationDate: " + _latestSalesForceRecord.expirationDate.Value.ToString() + "|" + "subsType:" + _latestSalesForceRecord.subscriptionType + "|" + "productType" + _latestSalesForceRecord.productType;
 
                 if (_latestSalesForceRecord?.subscriptionType.ToLower() == "individual")
                     return _context.Message_IndividualSubscriptiong.Replace("#FIRST_NAME#", _userContext.User.Name);
                 else if (_latestSalesForceRecord?.subscriptionType.ToLower() == "free-trial")
                     return _context.Message_FreeTrial.Replace("#FIRST_NAME#", _userContext.User.Name);
                 else
-                    return _latestSalesForceRecord?.subscriptionType;
+                    return string.Empty;
             }
         }
 

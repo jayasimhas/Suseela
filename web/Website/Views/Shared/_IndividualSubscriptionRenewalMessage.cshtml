@@ -1,9 +1,6 @@
 ﻿@inherits CustomGlassView<IIndividualRenewalMessageViewModel>
-@if (true)
+@if (Model.Display                       )
 {
-    //.style{
-    //    IndividualRenewalSubscriptionURL
-    //}
     <div class="banner banner--maintenance" data-banner-id="@Model.Id">
         <div class="banner__wrapper">
             <div class="dismiss-button js-dismiss-banner">
