@@ -568,6 +568,15 @@ namespace InformaSitecoreWord.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select a valid document.
+        /// </summary>
+        internal static string SupportingDocumentsControl_uxViewDocument_Click_Please_select_a_valid_document {
+            get {
+                return ResourceManager.GetString("SupportingDocumentsControl_uxViewDocument_Click_Please_select_a_valid_document", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap TabHeaders_companies {
