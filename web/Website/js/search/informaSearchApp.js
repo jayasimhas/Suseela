@@ -3,7 +3,8 @@
 
     var informaSearchApp = angular.module('informaSearchApp', [
         'velir.search',
-        'ui.bootstrap'   ])
+        'ui.bootstrap',
+        'ngSanitize'])
         .constant('apiEndpoints', {
             API_BASE: '/api',
             SEARCH_ENDPOINT: '/search'
@@ -126,7 +127,7 @@
     var fetchCompanies = function() {
       return $http({
           method: 'GET',
-          url: '/velir/services/TypeAhead.asmx/TypeAheadCompaniesTest'
+          url: '/velir/services/TypeAhead.asmx/TypeAheadCompanies'
       });
     }
     return {fetchCompanies : fetchCompanies};

@@ -302,6 +302,7 @@
     <Compile Include="Company\CompanyRegisterUser.cs" />
     <Compile Include="Company\UserCompanyContext.cs" />
     <Compile Include="Company\Web\WebClearUserCompanyContextLogoutAction.cs" />
+    <Compile Include="User\Entitlement\WebClearUserEntitlementsContextAction.cs" />
     <Compile Include="Company\Web\WebSetUserCompanyContextLoginAction.cs" />
     <Compile Include="ComponentModel\DataAnnotations\MustBeTrueAttribute.cs" />
     <Compile Include="ComponentModel\DataAnnotations\PasswordAttribute.cs" />
@@ -422,8 +423,11 @@
     <Compile Include="Services\NlmExport\Models\Front\NlmJournalMetaModel.cs" />
     <Compile Include="Services\NlmExport\Models\NlmArticleModel.cs" />
     <Compile Include="Services\NlmExport\NlmExportService.cs" />
+    <Compile Include="Subscription\IIndividualSubscriptionRenewalMessageContext.cs" />
+    <Compile Include="Subscription\IndividualSubscriptionRenewalMessageContext.cs" />
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
+    <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
     <Compile Include="SiteDebugging\ISiteDebuggingAllowedConfiguration.cs" />
     <Compile Include="User\SiteDebugging\ISiteDebuggingUserIpAddressContext.cs" />
@@ -807,7 +811,6 @@
     <Compile Include="User\ResetPassword\Web\WebUserResetPasswordTokenContext.cs" />
     <Compile Include="User\ResetPassword\Web\WebUserResetPasswordUrlConfiguration.cs" />
     <Compile Include="User\ResetPassword\Web\WebUserResetPasswordUrlFactory.cs" />
-    <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedUser.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserContext.cs" />
     <Compile Include="User\UserIpAddressContext.cs" />
@@ -851,7 +854,6 @@
     <Compile Include="Utilities\StringUtils\WordUtil.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
     <Compile Include="Utilities\TokenMatcher\DCDTokenMatchers.cs" />
-    <Compile Include="Utilities\TokenMatcher\TokenReplacer.cs" />
     <Compile Include="Utilities\WebApi\Caching\ApiOutputCacheAdapter.cs" />
     <Compile Include="Utilities\WebApi\Filters\ArgumentsRequiredAttribute.cs" />
     <Compile Include="Utilities\WebApi\Filters\ValidateCsrfAttribute.cs" />

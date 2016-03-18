@@ -3,7 +3,7 @@
     width: 100%;
     border: 1px solid $color-mercury-gray;
 
-    thead th, // Table header
+    thead th, th, // Table header
     td.header.colored, // Table header
     td.cell p.highlight { // Table sub-header
         @include textMix('Roboto', 16px, 500);
@@ -34,6 +34,7 @@
     th {
         @include textMix('Roboto', 16px, 500);
         background-color: $informa-light-gray-f;
+        color: $color-zeus-black;
     }
     td {
         font-size: 15px;

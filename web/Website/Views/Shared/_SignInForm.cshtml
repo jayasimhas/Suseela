@@ -16,7 +16,7 @@
 
 	<div class="pop-out__form-actions-wrapper">
 		<div>
-			<a class="pop-out__form-actions js-show-forgot-password" href="#">@Model.SignInResetPasswordLinkText</a>
+			<span class="pop-out__form-actions js-show-forgot-password">@Model.SignInResetPasswordLinkText</span>
 			<div class="pop-out__sign-in-remember-me">
 				<input name="persist" type="checkbox" data-checkbox-type="boolean"> @Model.SignInRememberMeText
 			</div>
@@ -29,33 +29,35 @@
 </div>
 
 <div class="pop-out__sign-in-forgot-password js-reset-password-container">
-	<div class="alert-success js-reset-password-success">
-		<svg class="alert__icon">
-			<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
-		</svg>
-		<p>@Model.ResetPasswordSuccessText</p>
-	</div>
-	<div class="pop-out__form-error js-reset-password-error-container">
-		<p class="js-reset-password-error js-reset-password-error-email">@Model.ResetPasswordErrorEmailText</p>
-		<p class="js-reset-password-error js-reset-password-error-general">@Model.ResetPasswordErrorGeneralText</p>
-	</div>
 
-	<div class="pop-out__sign-in-forgot-password-nested js-reset-password-request-form">
-		@Model.ResetPasswordBody
+	<form class="form-reset-password" data-on-submit="/Account/api/ResetPasswordApi/Generate/">
+		<div class="alert-success js-reset-password-success">
+			<svg class="alert__icon">
+				<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+			</svg>
+			<p>@Model.ResetPasswordSuccessText</p>
+		</div>
 
-		<input name="email"
-			   class="pop-out__input"
-			   type="text"
-			   placeholder="@Model.ResetPasswordEmailPlaceholderText">
-		<div class="pop-out__form-actions-wrapper">
-			<div></div>
-			<div class="sign-in__submit-wrapper">
-				<button class="button--filled sign-in__submit js-reset-password-request-submit" data-reset-url="/Account/api/ResetPasswordApi/Generate/">@Model.ResetPasswordSubmitText</button>
+		<div class="pop-out__sign-in-forgot-password-nested js-reset-password-request-form">
+			@Model.ResetPasswordBody
+
+			<p class="pop-out__form-error js-form-error js-form-error-EmailRequirement">@Model.ResetPasswordErrorEmailText</p>
+			<p class="pop-out__form-error js-form-error js-form-error-general">@Model.ResetPasswordErrorGeneralText</p>
+
+			<input name="email"
+				   class="pop-out__input"
+				   type="text"
+				   placeholder="@Model.ResetPasswordEmailPlaceholderText">
+			<div class="pop-out__form-actions-wrapper">
+				<div></div>
+				<div class="sign-in__submit-wrapper">
+					<button class="button--filled" type="submit">@Model.ResetPasswordSubmitText</button>
+				</div>
 			</div>
 		</div>
-	</div>
-	<p class="pop-out__details pop-out__details--inset u-italic u-centered">
-		@Model.ResetPasswordContactText
-	</p>
+		<p class="pop-out__details pop-out__details--inset u-italic u-centered">
+			@Model.ResetPasswordContactText
+		</p>
+	</form>
 
 </div>

@@ -3800,15 +3800,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	public partial interface IEmail_Config : IGlassBase 
 	{
 								/// <summary>
-					/// The Email A Friend Body Content field.
-					/// <para></para>
-					/// <para>Field Type: Rich Text</para>		
-					/// <para>Field ID: 184010d1-69d3-4148-9848-d6072a002bf1</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IEmail_ConfigConstants.Email_A_Friend_Body_ContentFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Email_A_Friend_Body_Content  {get; set;}
-								/// <summary>
 					/// The Email A Friend Footer Content field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -3830,15 +3821,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 		public partial interface IEmail_Config__Raw : IGlassBase 
 		{
 										/// <summary>
-						/// The Email A Friend Body Content field.
-						/// <para></para>
-						/// <para>Field Type: Rich Text</para>		
-						/// <para>Field ID: 184010d1-69d3-4148-9848-d6072a002bf1</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IEmail_ConfigConstants.Email_A_Friend_Body_ContentFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
-						string Email_A_Friend_Body_Content  {get; set;}
-										/// <summary>
 						/// The Email A Friend Footer Content field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -3855,13 +3837,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Email Config";
 
-					
-			public static readonly ID Email_A_Friend_Body_ContentFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
-			public const string Email_A_Friend_Body_ContentFieldName = "Email A Friend Body Content";
-
-							public static readonly ID Email_A_Friend_Body_Content__RawFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
-				public const string Email_A_Friend_Body_Content__RawFieldName = "Email A Friend Body Content";
-						
 					
 			public static readonly ID Email_A_Friend_Footer_ContentFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
 			public const string Email_A_Friend_Footer_ContentFieldName = "Email A Friend Footer Content";
@@ -6332,6 +6307,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					/// </summary>
 					[SitecoreField(ITaxonomy_ItemConstants.Item_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Item_Name  {get; set;}
+								/// <summary>
+					/// The Media Type Icon field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: 1cfbe05b-a4af-4b00-90fb-734cba008f42</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITaxonomy_ItemConstants.Media_Type_IconFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image Media_Type_Icon  {get; set;}
 				}
 
 	
@@ -6353,6 +6337,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 						/// </summary>
 						[SitecoreField(ITaxonomy_ItemConstants.Item_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Item_Name  {get; set;}
+										/// <summary>
+						/// The Media Type Icon field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: 1cfbe05b-a4af-4b00-90fb-734cba008f42</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ITaxonomy_ItemConstants.Media_Type_IconFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image Media_Type_Icon  {get; set;}
 						}
 	
 	public static partial class ITaxonomy_ItemConstants{
@@ -6364,6 +6357,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					
 			public static readonly ID Item_NameFieldId = new ID("ac58f381-3d7f-4d90-966d-41813dc66e87");
 			public const string Item_NameFieldName = "Item Name";
+
+						
+					
+			public static readonly ID Media_Type_IconFieldId = new ID("1cfbe05b-a4af-4b00-90fb-734cba008f42");
+			public const string Media_Type_IconFieldName = "Media Type Icon";
 
 						
 					
@@ -9890,7 +9888,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	/// <para>ID: 997a3064-65f5-45cd-b32f-9ec61e90a610</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=ISite_ConfigConstants.TemplateIdString)]
-	public partial interface ISite_Config : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.IEmail_Config
+	public partial interface ISite_Config : IGlassBase 
 	{
 								/// <summary>
 					/// The My Account Page field.
@@ -10072,6 +10070,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Link Subscribe_Link  {get; set;}
+								/// <summary>
+					/// The Free Trial Expiration Warning Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 0bf887f6-d1ee-4050-8695-dc8a44f7834c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Free_Trial_Expiration_Warning_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Free_Trial_Expiration_Warning_Text  {get; set;}
+								/// <summary>
+					/// The Individual Subscription Expiration Warning Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 30f03c12-afae-4b46-af9d-782179814ee6</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Individual_Subscription_Expiration_Warning_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Individual_Subscription_Expiration_Warning_Text  {get; set;}
 								/// <summary>
 					/// The Recognized IP Announcment Text field.
 					/// <para></para>
@@ -10397,7 +10413,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 		/// <para>ID: 997a3064-65f5-45cd-b32f-9ec61e90a610</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ISite_Config__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.IEmail_Config__Raw
+		public partial interface ISite_Config__Raw : IGlassBase 
 		{
 										/// <summary>
 						/// The My Account Page field.
@@ -10579,6 +10595,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Subscribe_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Link Subscribe_Link  {get; set;}
+										/// <summary>
+						/// The Free Trial Expiration Warning Text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 0bf887f6-d1ee-4050-8695-dc8a44f7834c</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Free_Trial_Expiration_Warning_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Free_Trial_Expiration_Warning_Text  {get; set;}
+										/// <summary>
+						/// The Individual Subscription Expiration Warning Text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 30f03c12-afae-4b46-af9d-782179814ee6</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Individual_Subscription_Expiration_Warning_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Individual_Subscription_Expiration_Warning_Text  {get; set;}
 										/// <summary>
 						/// The Recognized IP Announcment Text field.
 						/// <para></para>
@@ -11005,6 +11039,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Free_Trial_Expiration_Warning_TextFieldId = new ID("0bf887f6-d1ee-4050-8695-dc8a44f7834c");
+			public const string Free_Trial_Expiration_Warning_TextFieldName = "Free Trial Expiration Warning Text";
+
+						
+					
+			public static readonly ID Individual_Subscription_Expiration_Warning_TextFieldId = new ID("30f03c12-afae-4b46-af9d-782179814ee6");
+			public const string Individual_Subscription_Expiration_Warning_TextFieldName = "Individual Subscription Expiration Warning Text";
+
+						
+					
 			public static readonly ID Recognized_IP_Announcment_TextFieldId = new ID("774124e0-be3a-4db9-af48-333be5ac0f27");
 			public const string Recognized_IP_Announcment_TextFieldName = "Recognized IP Announcment Text";
 
@@ -11196,20 +11240,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
 			public const string From_Email_AddressFieldName = "From Email Address";
 
-						
-					
-			public static readonly ID Email_A_Friend_Body_ContentFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
-			public const string Email_A_Friend_Body_ContentFieldName = "Email A Friend Body Content";
-
-							public static readonly ID Email_A_Friend_Body_Content__RawFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
-				public const string Email_A_Friend_Body_Content__RawFieldName = "Email A Friend Body Content";
-						
-					
-			public static readonly ID Email_A_Friend_Footer_ContentFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
-			public const string Email_A_Friend_Footer_ContentFieldName = "Email A Friend Footer Content";
-
-							public static readonly ID Email_A_Friend_Footer_Content__RawFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
-				public const string Email_A_Friend_Footer_Content__RawFieldName = "Email A Friend Footer Content";
 						
 			
 
@@ -15265,6 +15295,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Free_Trial_Expiration_Warning_TextFieldId = new ID("0bf887f6-d1ee-4050-8695-dc8a44f7834c");
+			public const string Free_Trial_Expiration_Warning_TextFieldName = "Free Trial Expiration Warning Text";
+
+						
+					
+			public static readonly ID Individual_Subscription_Expiration_Warning_TextFieldId = new ID("30f03c12-afae-4b46-af9d-782179814ee6");
+			public const string Individual_Subscription_Expiration_Warning_TextFieldName = "Individual Subscription Expiration Warning Text";
+
+						
+					
 			public static readonly ID Recognized_IP_Announcment_TextFieldId = new ID("774124e0-be3a-4db9-af48-333be5ac0f27");
 			public const string Recognized_IP_Announcment_TextFieldName = "Recognized IP Announcment Text";
 
@@ -15456,20 +15496,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
 			public const string From_Email_AddressFieldName = "From Email Address";
 
-						
-					
-			public static readonly ID Email_A_Friend_Body_ContentFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
-			public const string Email_A_Friend_Body_ContentFieldName = "Email A Friend Body Content";
-
-							public static readonly ID Email_A_Friend_Body_Content__RawFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
-				public const string Email_A_Friend_Body_Content__RawFieldName = "Email A Friend Body Content";
-						
-					
-			public static readonly ID Email_A_Friend_Footer_ContentFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
-			public const string Email_A_Friend_Footer_ContentFieldName = "Email A Friend Footer Content";
-
-							public static readonly ID Email_A_Friend_Footer_Content__RawFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
-				public const string Email_A_Friend_Footer_Content__RawFieldName = "Email A Friend Footer Content";
 						
 			
 

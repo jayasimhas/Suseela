@@ -196,13 +196,14 @@
                 var _lodash2 = _interopRequireDefault(_lodash);
 
                 var PaginationController = (function () {
-                    function PaginationController($scope, $location, searchService) {
+                    function PaginationController($scope, $location, $anchorScroll, searchService) {
                         var _this = this;
 
                         _classCallCheck(this, PaginationController);
 
                         this.searchService = searchService;
                         this.location = $location;
+                        this.anchorScroll = $anchorScroll;
 
                         this.pager = this.searchService.getPager();
                         this.initializeData();
@@ -231,6 +232,10 @@
                                 var routeBuilder = this.searchService.getRouteBuilder();
                                 this.location.search(routeBuilder.getRoute());
                                 this.searchService.query();
+
+                
+                                this.location.hash("searchTop");
+                                this.anchorScroll();
                             }
                         }
                     }, {
@@ -260,7 +265,7 @@
 
                 exports.PaginationController = PaginationController;
 
-                PaginationController.$inject = ['$scope', '$location', 'searchService'];
+                PaginationController.$inject = ['$scope', '$location','$anchorScroll', 'searchService'];
 
             }).call(this, typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 

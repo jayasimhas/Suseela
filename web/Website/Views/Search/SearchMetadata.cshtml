@@ -1,8 +1,22 @@
-﻿
+﻿@model SearchViewModel
+
+
 <section class="search-metadata" ng-controller="searchMetaController as meta">
 
-    <div class="search-header__results-meta">
-        <strong>{{ meta.currentResults }}</strong> of <strong>{{ meta.totalResults }}</strong> results<span ng-if="meta.keywords"> for keyword: <strong>&ldquo;{{ meta.keywords }}&rdquo;</strong></span><span ng-if="meta.selectedFacetGroups.length"> within:</span>
+    <div class="search-header__results-meta" id="searchTop">
+
+        @Model.SearchShowingResults1Text 
+        <strong>
+            {{ meta.currentResults }}
+        </strong>
+        @Model.SearchShowingResults2Text
+        <strong>
+            {{ meta.totalResults }}
+        </strong>
+        @Model.SearchShowingResults3Text
+        <span ng-if="meta.keywords">
+         @Model.SearchShowingResults4Text <strong>&ldquo;{{ meta.keywords }}&rdquo;</strong>
+        </span>
     </div>
 
     <dl class="search-header__facet-tag-list">
