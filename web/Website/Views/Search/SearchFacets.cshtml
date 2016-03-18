@@ -35,7 +35,7 @@
     <form class="facets__section"
             ng-repeat="group in allFacets.facetGroups">
 
-          <fieldset ng-show="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController">
+          <fieldset ng-if="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController">
               <legend class="facets__legend facets__section-header">
                   <h4>Companies</h4>
                   <button class="facets__button facets__button--toggle-section"
@@ -103,7 +103,7 @@
               </button>
           </fieldset>
 
-        <fieldset ng-show="group.label == 'Date Placeholder'" class="facets__fieldset">
+        <fieldset ng-if="group.label == 'Date Placeholder'" class="facets__fieldset">
             <legend class="facets__legend facets__section-header">
                 <h4>Date</h4>
                 <button class="facets__button facets__button--toggle-section"
@@ -126,7 +126,7 @@
                                    ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
                             <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
                             <ul class="facets__section-footer">
-                                <li class="facets__field-group facets__field-group--from input-group" ng-show="$last">
+                                <li class="facets__field-group facets__field-group--from input-group" ng-if="$last">
                                     <label for="date-picker-from" ng-click="open($event,'dtFrom')">From</label>
                                     <input type="text"
                                            name="dtFrom"
@@ -181,7 +181,7 @@
           </fieldset>
 
           <!-- temporarily removing ng-if='group.facets.length > 1' from above -->
-          <fieldset ng-show="group.label != 'Companies' && group.label != 'Date Placeholder'" class="facets__fieldset">
+          <fieldset ng-if="group.label != 'Companies' && group.label != 'Date Placeholder'" class="facets__fieldset">
               <legend class="facets__legend facets__section-header">
                   <h4>{{ group.label }}</h4>
                   <button
