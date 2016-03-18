@@ -4,6 +4,7 @@ namespace Informa.Library.User.Entitlement
 {
     public interface IEntitledVisit
     {
-        IList<IEntitlement> Entitlements { get; } 
+        IList<IEntitlement> Entitlements { get; }
+        void RefreshEntitlements();
     }
 }
