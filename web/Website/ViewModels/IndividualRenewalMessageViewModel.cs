@@ -89,12 +89,30 @@ namespace Informa.Web.ViewModels
         {
             get
             {
+                string tempMsg = string.Empty;
+                try
+                {
+                    tempMsg += "user:" + _userContext.User.Username + "\n"; 
+                    EBI_QuerySubscriptionsAndPurchasesResponse response = _service.Execute(x => x.querySubscriptionsAndPurchases(_userContext.User.Username));
+
+                    //Get the latest record
+                    _latestSalesForceRecord = response.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
+                }
+                catch (Exception ex)
+                {
+                    tempMsg += "error: " + ex.Message + "\n"; ;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex, this.GetType());
+                }
+
+                tempMsg += "subsType:" + _latestSalesForceRecord?.subscriptionType;
+                return tempMsg;
+
                 if (_latestSalesForceRecord?.subscriptionType.ToLower() == "individual")
                     return _context.Message_IndividualSubscriptiong.Replace("#FIRST_NAME#", _userContext.User.Name);
                 else if (_latestSalesForceRecord?.subscriptionType.ToLower() == "free-trial")
                     return _context.Message_FreeTrial.Replace("#FIRST_NAME#", _userContext.User.Name);
                 else
-                    return string.Empty;
+                    return _latestSalesForceRecord?.subscriptionType;
             }
         }
 
