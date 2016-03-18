@@ -94,7 +94,7 @@ namespace Informa.Web.ViewModels
                 else if (_latestSalesForceRecord?.subscriptionType.ToLower() == "free-trial")
                     return _context.Message_FreeTrial.Replace("#FIRST_NAME#", _userContext.User.Name);
                 else
-                    return _latestSalesForceRecord?.subscriptionType;
+                    return string.Empty;
             }
         }
 
