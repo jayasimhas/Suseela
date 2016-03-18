@@ -1,8 +1,8 @@
-﻿using Glass.Mapper.Sc;
-using Informa.Library.Site;
+﻿using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Web.ViewModels.SiteDebugging;
 using Informa.Web.ViewModels.PopOuts;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
@@ -24,7 +24,8 @@ namespace Informa.Web.ViewModels
             IRegisterPopOutViewModel registerPopOutViewModel,
             IAppInsightsConfig appInsightsConfig,
             ISiteSettings siteSettings,
-            IIndividualRenewalMessageViewModel renewalInfo)
+			IToolbarViewModel debugToolbar,
+			IIndividualRenewalMessageViewModel renewalInfo)
         {
             SiteRootContext = siteRootContext;
             MaintenanceMessage = maintenanceViewModel;
@@ -37,7 +38,8 @@ namespace Informa.Web.ViewModels
             RegisterPopOutViewModel = registerPopOutViewModel;
             AppInsightsConfig = appInsightsConfig;
             SiteSettings = siteSettings;
-            IndividualRenewalMessageInfo = renewalInfo;
+			IndividualRenewalMessageInfo = renewalInfo;
+			DebugToolbar = debugToolbar;
         }
 
         public IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
@@ -51,6 +53,7 @@ namespace Informa.Web.ViewModels
         public IRegisterPopOutViewModel RegisterPopOutViewModel;
         public IAppInsightsConfig AppInsightsConfig;
         public ISiteSettings SiteSettings;
+		public IToolbarViewModel DebugToolbar;
 
         public string Title
         {

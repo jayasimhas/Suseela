@@ -192,7 +192,7 @@ namespace Informa.Web.Controllers
 
 			return new ArticlePreviewInfo
 			{
-				Title = article.Title,
+				Title = HttpUtility.HtmlDecode(article.Title),
 				Publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid)._Name,
 				Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
 				ArticleNumber = article.Article_Number,
