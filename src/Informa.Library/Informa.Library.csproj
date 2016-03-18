@@ -849,6 +849,7 @@
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
     <Compile Include="Utilities\StringUtils\HtmlUtil.cs" />
     <Compile Include="Utilities\StringUtils\WordUtil.cs" />
+    <Compile Include="Utilities\StringUtils\XmlStringUtil.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
     <Compile Include="Utilities\TokenMatcher\DCDTokenMatchers.cs" />
     <Compile Include="Utilities\TokenMatcher\TokenReplacer.cs" />

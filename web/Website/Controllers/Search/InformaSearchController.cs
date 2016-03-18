@@ -4,6 +4,8 @@ using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
+using Informa.Library.Utilities.StringUtils;
+using Informa.Library.Utilities.TokenMatcher;
 using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Factory;
 using Velir.Search.Core.Managers;
@@ -69,10 +71,42 @@ namespace Informa.Web.Controllers.Search
                     resultsWithBookmarks.Add(queryResult);
                 }
 
+              
+
+
                 results.Results = resultsWithBookmarks;
             }
 
+            foreach (InformaSearchResultItem queryResult in results.Results)
+            {
+                string processedText = XmlStringUtil.UnescapeXMLValue(queryResult.Summary);
+                queryResult.Summary = ReplaceArticleTokens(processedText);
+            }
+
+
             return results;
         }
+
+        /// <summary>
+        ///     Replace article and deal/company tokens in the summary
+        /// </summary>
+        /// <param name="bodyText"></param>
+        /// <returns></returns>
+        public string ReplaceArticleTokens(string bodyText)
+        {
+            TokenReplacer tokenReplacer = new TokenReplacer();
+
+            //Companies
+            string processedText = tokenReplacer.ReplaceCompany(bodyText);
+
+            //Articles
+            processedText = tokenReplacer.ReplaceRelatedArticles(processedText);
+
+            return processedText;
+        }
+
+
+
+
     }
 }
