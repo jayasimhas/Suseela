@@ -299,4 +299,7 @@ Please make sure you have provided valid HTML with no script, style, or link tag
 	<data name="SelectedRelatedArticles_CreateDateLabel_Date_not_Set" xml:space="preserve">
     <value>Date not Set</value>
   </data>
+	<data name="SupportingDocumentsControl_uxViewDocument_Click_Please_select_a_valid_document" xml:space="preserve">
+    <value>Please select a valid document</value>
+  </data>
 </root>
