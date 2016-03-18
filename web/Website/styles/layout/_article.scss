@@ -5,6 +5,7 @@
     @include breakpoint('medium') {
         width: 100%;
         clear: both;
+        float: none;
     }
 }
 
@@ -31,7 +32,7 @@
 
 .article-exhibit {
     @include textMix('Roboto', 13px, 400);
-    clear: both; 
+    clear: both;
     color: $informa-mid-gray;
     margin-bottom: 2rem;
 

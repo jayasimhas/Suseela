@@ -422,6 +422,8 @@
     <Compile Include="Services\NlmExport\Models\Front\NlmJournalMetaModel.cs" />
     <Compile Include="Services\NlmExport\Models\NlmArticleModel.cs" />
     <Compile Include="Services\NlmExport\NlmExportService.cs" />
+	<Compile Include="Subscription\IIndividualSubscriptionRenewalMessageContext.cs" />
+    <Compile Include="Subscription\IndividualSubscriptionRenewalMessageContext.cs" />
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
     <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
