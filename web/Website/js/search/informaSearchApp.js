@@ -126,7 +126,7 @@
     var fetchCompanies = function() {
       return $http({
           method: 'GET',
-          url: 'http://informa-insight.rose.velir.com/velir/services/TypeAhead.asmx/TypeAheadCompanies'
+          url: '/velir/services/TypeAhead.asmx/TypeAheadCompanies'
       });
     }
     return {fetchCompanies : fetchCompanies};
