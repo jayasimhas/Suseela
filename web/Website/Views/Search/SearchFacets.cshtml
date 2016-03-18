@@ -207,18 +207,18 @@
                           ng-click="collapseSubfacet=!collapseSubfacet; isCollapsedSubfacet=!isCollapsedSubfacet">
                       <svg 
                         class="facets__button--collapse-subfacet"
-                        ng-show="f.sublist.length > 0"
+                        ng-if="f.sublist.length > 0"
                         ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use>
                       </svg>
                       <svg 
                         class="facets__button--expand-subfacet"
-                        ng-show="(f.sublist.length > 0)" 
+                        ng-if="(f.sublist.length > 0)" 
                         ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#expand"></use>
                       </svg>
                   </button>
-                  <ul ng-show="f.sublist.length > 0"  
+                  <ul ng-if="f.sublist.length > 0"  
                       ng-class="{'collapsedSubfacet': isCollapsedSubfacet}" 
                       class="facets__section-list--sub">
                       <li ng-repeat="subFacet in f.sublist">
