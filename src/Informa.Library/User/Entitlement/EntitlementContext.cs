@@ -13,8 +13,6 @@ namespace Informa.Library.User.Entitlement
         //private readonly ICompanyContext CompanyContext;
         public EntitlementContext(
             ISitecoreUserContext sitecoreUserContext)
-            //IAuthenticatedIPContext authenticatedIpContext,
-            //ICompanyContext companyContext)
         {
             SitecoreUserContext = sitecoreUserContext;
             //AuthenticatedIPContext = authenticatedIpContext;
