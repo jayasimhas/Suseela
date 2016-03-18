@@ -174,7 +174,7 @@
                                            ng-click="open($event,'dtFrom')"
                                            />
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default">
+                                        <button type="button" class="facets__button">
                                             <svg ng-click="open($event,'dtFrom')"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
                                         </button>
                                     </span>
@@ -197,7 +197,7 @@
                                            ng-click="open($event,'dtTo')"
                                            ng-change="allFacets.customDateRangeSearch('date',dateValues.dtFromValue,dateValues.dtToValue)" />
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default">
+                                        <button type="button" class="facets__button">
                                             <svg ng-click="open($event,'dtTo')"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
                                         </button>
                                     </span>
@@ -211,17 +211,21 @@
 
           <!-- temporarily removing ng-if='group.facets.length > 1' from above -->
           <fieldset ng-if="group.label != 'Companies' && group.label != 'Date Placeholder'" class="facets__fieldset">
+             
               <legend class="facets__legend facets__section-header">
-                  <h4>{{ group.label }}</h4>
+                  <h4>{{ ::group.label }}</h4>
                   <button
                       class="facets__button facets__button--toggle-section"
                       ng-model="collapsefacet"
                       ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
                       ng-class="{'collapsed': isCollapsed}">
-                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+                      <svg>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
+                      </svg>
                   </button>
               </legend>
-              <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit" ng-hide="collapsefacet">
+
+              <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
                 
                 <li ng-hide="($index >= allFacets.MaxFacetShow) && (!group.ShowMore)">
                   <input  id="{{ group.id }}-{{ $index }}"
@@ -236,18 +240,18 @@
                           ng-click="collapseSubfacet=!collapseSubfacet; isCollapsedSubfacet=!isCollapsedSubfacet">
                       <svg 
                         class="facets__button--collapse-subfacet"
-                        ng-show="f.sublist.length > 0"
+                        ng-if="f.sublist.length > 0"
                         ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use>
                       </svg>
                       <svg 
                         class="facets__button--expand-subfacet"
-                        ng-show="(f.sublist.length > 0)" 
+                        ng-if="(f.sublist.length > 0)" 
                         ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#expand"></use>
                       </svg>
                   </button>
-                  <ul ng-show="f.sublist.length > 0"  
+                  <ul ng-if="f.sublist.length > 0"  
                       ng-class="{'collapsedSubfacet': isCollapsedSubfacet}" 
                       class="facets__section-list--sub">
                       <li ng-repeat="subFacet in f.sublist">

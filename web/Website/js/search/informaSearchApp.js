@@ -127,7 +127,7 @@
     var fetchCompanies = function() {
       return $http({
           method: 'GET',
-          url: '/velir/services/TypeAhead.asmx/TypeAheadCompaniesTest'
+          url: '/velir/services/TypeAhead.asmx/TypeAheadCompanies'
       });
     }
     return {fetchCompanies : fetchCompanies};
