@@ -89,9 +89,9 @@ namespace Informa.Web.ViewModels
         {
             get
             {
-                if (_latestSalesForceRecord.subscriptionType.ToLower() == "individual")
+                if (_latestSalesForceRecord?.subscriptionType.ToLower() == "individual")
                     return _context.Message_IndividualSubscriptiong.Replace("#FIRST_NAME#", _userContext.User.Name);
-                else if (_latestSalesForceRecord.subscriptionType.ToLower() == "free-trial")
+                else if (_latestSalesForceRecord?.subscriptionType.ToLower() == "free-trial")
                     return _context.Message_FreeTrial.Replace("#FIRST_NAME#", _userContext.User.Name);
                 else
                     return string.Empty;
