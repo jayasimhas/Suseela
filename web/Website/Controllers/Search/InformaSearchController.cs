@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using Glass.Mapper.Sc;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
+using Informa.Library.Utilities.StringUtils;
+using Informa.Library.Utilities.TokenMatcher;
 using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Factory;
 using Velir.Search.Core.Managers;
@@ -12,6 +15,10 @@ using Velir.Search.Core.Queries;
 using Velir.Search.Core.Results;
 using Velir.Search.WebApi.Controllers;
 using Velir.Search.WebApi.Models;
+using Glass.Mapper.Sc.Web.Mvc;
+using Informa.Library.User.Entitlement;
+using Informa.Web.Models;
+using Informa.Web.ViewModels;
 
 namespace Informa.Web.Controllers.Search
 {
@@ -37,6 +44,8 @@ namespace Informa.Web.Controllers.Search
             _authenticatedUserContext = authenticatedUserContext;
             _manageSavedDocuments = manageSavedDocuments;
         }
+
+
 
         public override IQueryResults Get(ApiSearchRequest request)
         {
@@ -69,10 +78,22 @@ namespace Informa.Web.Controllers.Search
                     resultsWithBookmarks.Add(queryResult);
                 }
 
+              
+
+
                 results.Results = resultsWithBookmarks;
             }
 
+            //Replace DCD tokens in the summary
+            foreach (InformaSearchResultItem queryResult in results.Results)
+            {
+                queryResult.Summary = DCDTokenMatchers.ProcessDCDTokens(queryResult.Summary);
+            }
+
+
             return results;
         }
+
+
     }
 }
