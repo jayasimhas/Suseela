@@ -182,17 +182,21 @@
 
           <!-- temporarily removing ng-if='group.facets.length > 1' from above -->
           <fieldset ng-if="group.label != 'Companies' && group.label != 'Date Placeholder'" class="facets__fieldset">
+             
               <legend class="facets__legend facets__section-header">
-                  <h4>{{ group.label }}</h4>
+                  <h4>{{ ::group.label }}</h4>
                   <button
                       class="facets__button facets__button--toggle-section"
                       ng-model="collapsefacet"
                       ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
                       ng-class="{'collapsed': isCollapsed}">
-                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+                      <svg>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
+                      </svg>
                   </button>
               </legend>
-              <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit" ng-hide="collapsefacet">
+
+              <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
                 
                 <li ng-hide="($index >= allFacets.MaxFacetShow) && (!group.ShowMore)">
                   <input  id="{{ group.id }}-{{ $index }}"
