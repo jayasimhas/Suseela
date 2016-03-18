@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using Glass.Mapper.Sc;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
@@ -14,6 +15,10 @@ using Velir.Search.Core.Queries;
 using Velir.Search.Core.Results;
 using Velir.Search.WebApi.Controllers;
 using Velir.Search.WebApi.Models;
+using Glass.Mapper.Sc.Web.Mvc;
+using Informa.Library.User.Entitlement;
+using Informa.Web.Models;
+using Informa.Web.ViewModels;
 
 namespace Informa.Web.Controllers.Search
 {
@@ -39,6 +44,8 @@ namespace Informa.Web.Controllers.Search
             _authenticatedUserContext = authenticatedUserContext;
             _manageSavedDocuments = manageSavedDocuments;
         }
+
+
 
         public override IQueryResults Get(ApiSearchRequest request)
         {
@@ -77,35 +84,15 @@ namespace Informa.Web.Controllers.Search
                 results.Results = resultsWithBookmarks;
             }
 
+            //Replace DCD tokens in the summary
             foreach (InformaSearchResultItem queryResult in results.Results)
             {
-                string processedText = XmlStringUtil.UnescapeXMLValue(queryResult.Summary);
-                queryResult.Summary = ReplaceArticleTokens(processedText);
+                queryResult.Summary = DCDTokenMatchers.ProcessDCDTokens(queryResult.Summary);
             }
 
 
             return results;
         }
-
-        /// <summary>
-        ///     Replace article and deal/company tokens in the summary
-        /// </summary>
-        /// <param name="bodyText"></param>
-        /// <returns></returns>
-        public string ReplaceArticleTokens(string bodyText)
-        {
-            TokenReplacer tokenReplacer = new TokenReplacer();
-
-            //Companies
-            string processedText = tokenReplacer.ReplaceCompany(bodyText);
-
-            //Articles
-            processedText = tokenReplacer.ReplaceRelatedArticles(processedText);
-
-            return processedText;
-        }
-
-
 
 
     }

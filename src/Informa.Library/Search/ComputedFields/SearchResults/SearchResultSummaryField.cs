@@ -17,8 +17,6 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
     {
         public override object GetFieldValue(Item indexItem)
         {
-            string test = base.FieldName;
-
             if (indexItem.TemplateID != IArticleConstants.TemplateId)
             {
                 return string.Empty;
@@ -26,14 +24,7 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
 
             var article = indexItem.GlassCast<IArticle>(inferType: true);
 
-            //string 
-            string processedText = HtmlUtil.StripHtml(article.Summary);
-           // processedText = XmlStringUtil.EscapeXMLValue(processedText);
-            
-
-         //   processedText = WordUtil.TruncateArticle(processedText, 20,false);
-         //   processedText = HtmlUtil.StripHtml(processedText);
-            
+            string processedText = WordUtil.TruncateArticle(article.Summary, 20,false);
 
             return processedText;
         }
