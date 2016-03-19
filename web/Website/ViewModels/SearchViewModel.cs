@@ -29,6 +29,12 @@ namespace Informa.Web.ViewModels
         public string SearchTipsText => TextTranslator.Translate("Search.Tips");
         public string SearchTitleText => TextTranslator.Translate("Search.Title");
         public string SearchViewHeadlinesOnlyText => TextTranslator.Translate("Search.ViewHeadlinesOnly");
+        public string SearchSortByText => TextTranslator.Translate("Search.SortBy");
+        public string SearchRelevanceText => TextTranslator.Translate("Search.Relevancy");
+        public string SearchShowingResults1Text => TextTranslator.Translate("Search.ShowingResults1");
+        public string SearchShowingResults2Text => TextTranslator.Translate("Search.ShowingResults2");
+        public string SearchShowingResults3Text => TextTranslator.Translate("Search.ShowingResults3");
+        public string SearchShowingResults4Text => TextTranslator.Translate("Search.ShowingResults4");
         
     }
 }

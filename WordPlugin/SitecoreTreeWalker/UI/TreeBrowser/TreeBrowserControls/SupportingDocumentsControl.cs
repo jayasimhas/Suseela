@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
+using InformaSitecoreWord.Properties;
 using InformaSitecoreWord.Sitecore;
 using InformaSitecoreWord.Util;
 
@@ -13,7 +14,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 	{
 		protected SitecoreItemGetter _siteCoreItemGetter;
 		public readonly List<string> ValidDocumentTypes =
-			new List<string> {"doc", "docx", "ppt", "pptx", "xls", "xlsx", "pdf"};
+			new List<string> { "doc", "docx", "ppt", "pptx", "xls", "xlsx", "pdf" };
 		public SupportingDocumentsControl()
 		{
 			InitializeComponent();
@@ -123,15 +124,32 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 
 		private void uxViewDocument_Click(object sender, EventArgs e)
 		{
-			var path = uxBrowseDocuments.SelectedNode.Tag as SitecorePath;
-			if (path == null) return;
-			try
+			if (uxBrowseDocuments.SelectedNode != null && uxBrowseDocuments.SelectedNode.Tag is SitecorePath)
 			{
-				Process.Start(SitecoreClient.MediaPreviewUrl(path.Path));
+				var path = (SitecorePath)uxBrowseDocuments.SelectedNode.Tag;
+				var itemPath = SitecoreClient.MediaPreviewUrl(path.Path);
+
+				if ((itemPath.Contains(".doc") || itemPath.Contains(".docx") || itemPath.Contains(".xls")
+					 || itemPath.Contains(".xlsx") || itemPath.Contains(".ppt") || itemPath.Contains(".pptx") ||
+					 itemPath.Contains(".pdf")))
+				{
+					try
+					{
+						Process.Start(itemPath);
+					}
+					catch (WebException)
+					{
+						Globals.SitecoreAddin.AlertConnectionFailure();
+					}
+				}
+				else
+				{
+					MessageBox.Show(Resources.SupportingDocumentsControl_uxViewDocument_Click_Please_select_a_valid_document);
+				}
 			}
-			catch (WebException)
+			else
 			{
-				Globals.SitecoreAddin.AlertConnectionFailure();
+				MessageBox.Show(Resources.SupportingDocumentsControl_uxViewDocument_Click_Please_select_a_valid_document);
 			}
 		}
 
@@ -139,7 +157,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 		{
 			var path = uxBrowseDocuments.SelectedNode.Tag as SitecorePath;
 			if (path == null) return;
-			SitecoreItemGetter.SitecoreMediaItem mediaItem =_siteCoreItemGetter.DownloadSiteCoreMediaItem(path.Path);
+			SitecoreItemGetter.SitecoreMediaItem mediaItem = _siteCoreItemGetter.DownloadSiteCoreMediaItem(path.Path);
 			if ((mediaItem == null) || !IsValidDocumentType(mediaItem.Extension.ToLower()))
 			{
 				MessageBox.Show(@"Please insert valid media item.", @"Informa");

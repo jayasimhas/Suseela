@@ -10,6 +10,13 @@ template: {267D9AC7-5D85-4E9D-AF89-99AB296CC218}
 templatekey: Dictionary folder
 
 ----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 21
+
+apps/32x32/folder.png
+----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
 name: __Masters
 key: __masters
@@ -19,7 +26,7 @@ content-length: 77
 ----version----
 language: en
 version: 1
-revision: 54fba625-7705-4850-892e-eb2b7f5812d3
+revision: 7c823a89-8919-4495-a6cf-7d7233ebe70e
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -32,9 +39,9 @@ sitecore\admin
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 15
+content-length: 16
 
-20070927T112700
+20070927T152700Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-54fba625-7705-4850-892e-eb2b7f5812d3
+7c823a89-8919-4495-a6cf-7d7233ebe70e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 34
+content-length: 16
 
-20111107T151143:634562755037354589
+20160317T214450Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

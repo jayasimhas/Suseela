@@ -655,6 +655,7 @@
     <Compile Include="App_Start\Registrations\NlmRegistrar.cs" />
     <Compile Include="App_Start\Registrations\RegistrationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\ScheduledPublishingRegistrar.cs" />
+    <Compile Include="App_Start\Registrations\SiteDebuggingRegistrar.cs" />
     <Compile Include="App_Start\Registrations\UserRegistrar.cs" />
     <Compile Include="App_Start\Registrations\AuthenticationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\CustomMvcRegistrar.cs" />
@@ -759,10 +760,16 @@
     <Compile Include="ViewModels\AdvertisementViewModel.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IToolbarViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IUserIpAddressViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\ToolbarViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\UserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\EntitledViewModel.cs" />
     <Compile Include="ViewModels\IArticleComponentFactory.cs" />
     <Compile Include="ViewModels\ICallToActionViewModel.cs" />
     <Compile Include="ViewModels\ICompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\IIndividualRenewalMessageViewModel.cs" />
+    <Compile Include="ViewModels\IndividualRenewalMessageViewModel.cs" />
     <Compile Include="ViewModels\ISearchModel.cs" />
     <Compile Include="ViewModels\NewsletterSignUpModel.cs" />
     <Compile Include="ViewModels\RobotsTextViewModel.cs" />
@@ -1147,6 +1154,8 @@
     <Content Include="Areas\Account\Views\Management\EmailPreferences.cshtml" />
     <Content Include="Areas\Account\Views\Management\AccountNavigation.cshtml" />
     <Content Include="Areas\Account\Views\Registration\RegisterUserOptIns.cshtml" />
+    <Content Include="Areas\Account\Views\Management\OneClickSubscribe.cshtml" />
+    <Content Include="Areas\Account\Views\Management\OneClickUnsubscribe.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1220,6 +1229,9 @@
     <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.cshtml" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.cshtml" />
     <Content Include="Views\Article\UserCallToAction.cshtml" />
+	<Content Include="Views\Shared\_IndividualSubscriptionRenewalMessage.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\Toolbar.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\UserIpAddress.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -44,7 +45,7 @@ namespace Informa.Web.ViewModels
 				ListableDate = article.Actual_Publish_Date,
 				ListableImage = image,
 				ListableSummary = DCDTokenMatchers.ProcessDCDTokens(article.Summary),
-				ListableTitle = article.Title,
+				ListableTitle = HttpUtility.HtmlDecode(article.Title),
 				ListableByline = publication,
 				ListableTopics = article.Taxonomies?.Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = $"/Search?tag={x._Id}" }),
 				ListableType = article.Media_Type?.Item_Name == "Data" ? "chart" : article.Media_Type?.Item_Name?.ToLower() ?? "",
