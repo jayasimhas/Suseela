@@ -201,6 +201,10 @@
       float: left;
     }
 
+    &--companies input {
+      float: none;
+    }
+
     svg {
       @include svg-fill($informa-mid-gray);
       width: 20px;
