@@ -58,6 +58,7 @@
                     <input type="checkbox" class="visuallyhidden" id="{{myCompany.label}}" ng-checked="myCompany.selected">
                     <label for="{{myCompany.label}}">{{myCompany.label}}</label>
                   </li>
+
                   <li class="facets__company-input" ng-show="isAddingCompany">
                       <div class="facets__field-group facets__field-group--companies">
                           <button class="facets__button facets__button--clear-company"
@@ -78,6 +79,7 @@
                             typeahead-on-select='saveCompany($item); isAddingCompany = false;' 
                             typeahead-editable="false"
                             class="form-control"
+                            typeahead-popup-template-url="companiesFacetTemplate.html"
                             autocomplete="off">
 
                             <!-- add to above input for loading & no results: 
@@ -103,6 +105,12 @@
               </button>
           </fieldset>
 
+
+
+        @* * * * *
+              FACET — DATE
+        * * * * *@
+
         <fieldset ng-if="group.label == 'Date Placeholder'" class="facets__fieldset">
             <legend class="facets__legend facets__section-header">
                 <h4>Date</h4>
@@ -113,6 +121,8 @@
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
                 </button>
             </legend>
+
+            
             <ul class="facets__section-list datepicker" ng-controller="InformaDatesController">
                 <li class="facets__section-wrapper" ng-hide="collapsedate">
                     <ul class="facets__section-list">
@@ -125,54 +135,65 @@
                                    ng-checked="{{dateFilter.selected}}"
                                    ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
                             <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
-                            <ul class="facets__section-footer">
-                                <li class="facets__field-group facets__field-group--from input-group" ng-if="$last">
+
+                            <ul class="facets__section-footer" ng-if="$last">
+                                <li class="facets__field-group facets__field-group--from input-group">
+
                                     <label for="date-picker-from" ng-click="open($event,'dtFrom')">From</label>
+                                    
                                     <input type="text"
                                            name="dtFrom"
-                                           ng-model="dateValues.dtFromValue"
+                                           ng-model="dateValues.dtFrom"
                                            id="date-picker-from"
-                                           datepicker-popup="shortDate"
+                                           uib-datepicker-popup="{{format}}"
                                            is-open="datepickers.dtFrom"
                                            datepicker-options="fromDateOptions"
                                            popup-placement="auto right-top"
-                                           uib-datepicker-popup="shortDay"
                                            date-disabled="disabled(date, mode)"
                                            ng-required="false"
-                                           close-text="Close"
-                                           show-button-bar="true"
                                            readonly
                                            ng-click="open($event,'dtFrom')"
+                                           show-button-bar="false"
                                            />
+                                           @* close-text="Close" *@
+                                           
+
                                     <span class="input-group-btn">
                                         <button type="button" class="facets__button">
                                             <svg ng-click="open($event,'dtFrom')"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
                                         </button>
                                     </span>
+
                                 </li>
-                                <li class="facets__field-group facets__field-group--to input-group" ng-show="$last">
+
+                                <li class="facets__field-group facets__field-group--to input-group">
+
                                     <label for="date-picker-to" ng-click="open($event,'dtTo')">To</label>
+
                                     <input type="text"
                                            name="dtTo"
-                                           ng-model="dateValues.dtToValue"
-                                           id="date-picker-from"
+                                           uib-datepicker-popup="{{format}}"
+                                           ng-model="dateValues.dtTo"
+                                           id="date-picker-to"
                                            datepicker-popup="shortDate"
                                            is-open="datepickers.dtTo"
                                            datepicker-options="toDateOptions"
                                            popup-placement="auto right-top"
                                            date-disabled="disabled(date, mode)"
                                            ng-required="false"
-                                           close-text="Close"
-                                           show-button-bar="true"
                                            readonly
                                            ng-click="open($event,'dtTo')"
-                                           ng-change="allFacets.customDateRangeSearch('date',dateValues.dtFromValue,dateValues.dtToValue)" />
+                                           ng-change="allFacets.customDateRangeSearch('date', dateValues.dtFrom, dateValues.dtTo)"
+                                           show-button-bar="false">
+                                           @* close-text="Close" *@
+
                                     <span class="input-group-btn">
                                         <button type="button" class="facets__button">
                                             <svg ng-click="open($event,'dtTo')"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
                                         </button>
                                     </span>
-                                </li>
+
+                                </li> 
                             </ul>
                         </li>
                     </ul>
