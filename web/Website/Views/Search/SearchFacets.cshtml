@@ -68,31 +68,32 @@
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
                         </svg>
                       </button>
-                      <input 
-                        type="text" 
-                        id="company-field" 
-                        name="company-field" 
-                        placeholder="Enter a Company"
-                        ng-model="myCompany.selected"
-                        uib-typeahead="company for company in companies | filter:$viewValue | limitTo:10" 
-                        typeahead-min-length=2 
-                        typeahead-select-on-blur="false" 
-                        typeahead-select-on-exact="false" 
-                        typeahead-on-select='saveCompany($item); isAddingCompany = false;' 
-                        typeahead-editable="false"
-                        class="form-control"
-                        autocomplete="off">
+                      <div class="facets__company-typeahead-wrapper">
+                        <input 
+                          type="text" 
+                          id="company-field" 
+                          name="company-field" 
+                          placeholder="Enter a Company"
+                          ng-model="myCompany.selected"
+                          uib-typeahead="company for company in companies | filter:$viewValue | limitTo:10" 
+                          typeahead-min-length=2 
+                          typeahead-select-on-blur="false" 
+                          typeahead-select-on-exact="false" 
+                          typeahead-on-select='saveCompany($item); isAddingCompany = false;' 
+                          typeahead-editable="false"
+                          class="form-control"
+                          autocomplete="off">
 
-                        <!-- add to above input for loading & no results: 
-                            typeahead-loading="loadingCompanies" 
-                            typeahead-no-results="noCompanies" 
-                            add below:
-                            <i ng-show="loadingCompanies" class="glyphicon glyphicon-refresh"></i>
-                            <div ng-show="noCompanies">
-                              <i class="glyphicon glyphicon-remove"></i> No Results Found
-                            </div>
-                        -->
-
+                          <!-- add to above input for loading & no results: 
+                              typeahead-loading="loadingCompanies" 
+                              typeahead-no-results="noCompanies" 
+                              add below:
+                              <i ng-show="loadingCompanies" class="glyphicon glyphicon-refresh"></i>
+                              <div ng-show="noCompanies">
+                                <i class="glyphicon glyphicon-remove"></i> No Results Found
+                              </div>
+                          -->
+                      </div>
                     </div>
                   </li>
               </ul>

@@ -182,10 +182,6 @@
       margin-top: 10px;
     }
 
-    &--companies {
-      padding: 0;
-    }
-
     label {
       color: $color-medium-gray-8;
       font-size: 13px;
@@ -201,16 +197,33 @@
       float: left;
     }
 
-    &--companies input {
-      float: none;
-    }
-
     svg {
       @include svg-fill($informa-mid-gray);
       width: 20px;
       height: 30px;
       margin-left: 10px;
       vertical-align: middle;
+    }
+
+    &--companies {
+      padding: 0;
+
+      input {
+        float: none;
+        width: 100%;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        border: 1px solid $color-light-gray;
+        border-top: 0;
+        max-height: 150px;
+        overflow: scroll;
+        padding: 0.5rem;
+        background-color: $color-white;
+        width: 100%;
+        z-index: 999;
+      }
     }
   }
 
@@ -299,6 +312,10 @@
 
   }
 
-
+  &__company-typeahead-wrapper {
+    position: relative; // child with width: 100% will expand to this elm width
+    display: inline-block;
+    width: calc(100% - 30px);
+  }
 }
 
