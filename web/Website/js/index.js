@@ -147,6 +147,7 @@ $(document).ready(function() {
 		});
 
 
+	// TODO - Refactor this with generic form controller
 	var login = new LoginController(requestVerificationToken);
 
 	login.addControl(
