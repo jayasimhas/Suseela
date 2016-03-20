@@ -58,8 +58,6 @@
         &--bordered-alt-left,
         &--bordered-right,
         &--bordered-alt-right {
-            border: 1px solid orange;
-
             width: calc(50% - 1.5rem);
 
         }
@@ -85,6 +83,21 @@
             padding-left: 2rem;
             margin-left: 2rem;
         }
+
+        @include breakpoint('small') {
+            &,
+            &--float,
+            &--bordered-left,
+            &--bordered-alt-left,
+            &--bordered-right,
+            &--bordered-alt-right,
+            &--float:nth-of-type(2n) {
+                width: 100%;
+                float: none;
+                border: 0;
+                margin: 0 0 2rem;
+            }
+        }
     }
 
     // TODO - Refactor this with similar _registration class
@@ -107,6 +120,10 @@
             line-height: 1.25rem;
             width: 250px;
             margin-bottom: 1rem;
+
+            @include breakpoint('small') {
+                float: left;
+            }
         }
     }
 
