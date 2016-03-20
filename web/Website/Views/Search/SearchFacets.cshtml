@@ -32,8 +32,7 @@
 
   <div class="facets__content">
 
-    <form class="facets__section"
-            ng-repeat="group in allFacets.facetGroups">
+    <form class="facets__section" ng-repeat="group in allFacets.facetGroups">
 
           <fieldset ng-if="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController">
               <legend class="facets__legend facets__section-header">
@@ -267,7 +266,7 @@
 
               <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
                 
-                <li ng-hide="($index >= allFacets.MaxFacetShow) && (!group.ShowMore)">
+                <li ng-if="($index < allFacets.MaxFacetShow) || group.ShowMore">
                   <input  id="{{ group.id }}-{{ $index }}"
                           type="checkbox"
                           class="visuallyhidden"
