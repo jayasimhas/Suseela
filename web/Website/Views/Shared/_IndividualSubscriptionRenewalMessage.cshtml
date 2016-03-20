@@ -1,5 +1,6 @@
 ﻿@inherits CustomGlassView<IIndividualRenewalMessageViewModel>
-@if (Model.Display                       )
+<p>@Model.Display?"true":"false"</p>
+@if (Model.Display)
 {
     <div class="banner banner--maintenance" data-banner-id="@Model.Id">
         <div class="banner__wrapper">
@@ -19,4 +20,3 @@
         </div>
     </div>
 }
-
