@@ -50,14 +50,14 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
     $scope.savedCompanies = {};
 
     $scope.saveCompany = function($item, model, label) {
-        console.log("selected: ", $item);
+        // console.log("selected: ", $item);
 
+        $scope.savedCompanies[$item] = {
+            selected: true,
+            label: $item
+        };
 
-        //$scope.savedCompanies[$item] = {
-        //    selected: true,
-        //    label: $item
-        //};
-        console.log($scope.savedCompanies);
+        // console.log($scope.savedCompanies);
     };
 
 
@@ -68,19 +68,19 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
         _this.location.search(routeBuilder.getRoute());
         _this.searchService.query();
         // _this.scrollTop();
-    }
+    };
 
     _this.facetChange = function(facet) {
         _this.searchService.getFacet(facet.id).selected = facet.selected;
         _this.update();
-    }
+    };
 
     // TODO: this comes from a diff search app, and needs jquery to work. 
     //       either hook up jq to this controller or move this elsewhere
     _this.scrollTop = function() {
         // var location = jq(".search-facets__header").offset().top;
         //window.scrollTo(0, location - 80);
-    }
+    };
 
     _this.hasSelected = function(values) {
         return _.find(values, { selected: true }) ? true : false;
@@ -93,7 +93,7 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
             filter = _this.searchService.getFilter(filterKey);
         }
         return filter;
-    }
+    };
 
     //** This deselects any selected facet checkboxes, clears all facet parameters from the search query, and runs the clearDateRange function **//
     _this.clearAllFacets = function() {
@@ -113,7 +113,7 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
     _this.clearFilter = function(filterKey) {
         var filter = _this.getFilter(filterKey);
         filter.setValue("");
-    }
+    };
 
     //** This clears the date parameters from the search, deselcts any date radio buttons, and clears both custom date input fields **//
     _this.clearDateRange = function() {
@@ -128,12 +128,12 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
         });
         _this.currentDateRange = "";
         _this.update();
-    }
+    };
 
     _this.getDateFilterLabel = function() {
         var filterDateLabel = _this.getFilter('dateFilterLabel');
         return filterDateLabel._value;
-    }
+    };
 
     _this.searchForCompany = function (selectedCompany) {
 
@@ -153,7 +153,7 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
         filter.setValue(companyFilter);
 
         _this.update();
-    }
+    };
 
 _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
 
@@ -175,7 +175,7 @@ _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
             _this.update();
         }
 
-    }
+    };
 
     //** This builds date parameters for the search query **//
     _this.dateRangeSearch = function (filterKey, dateFilter) {
@@ -190,18 +190,19 @@ _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
         var filterDateLabel = _this.getFilter('dateFilterLabel');
 
         var startDate = datesObject[dateFilter];
-        var endDate = datesObject['day'];
+        var endDate = datesObject.day;
         _this.currentDateRange = dateFilter;
 
         filterDateLabel.setValue(dateFilter);
         filter.setValue(startDate + ";" + endDate);
 
         _this.update();
-    }
+    };
 
 
     init();
 
 };
+
 var informaSearchApp = angular.module('informaSearchApp');
 informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', 'searchService', 'searchBootstrapper', 'getCompaniesService', InformaFacetController]);
