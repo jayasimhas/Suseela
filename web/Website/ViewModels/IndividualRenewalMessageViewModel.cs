@@ -69,10 +69,10 @@ namespace Informa.Web.ViewModels
                 if ((_latestSalesForceRecord.expirationDate - DateTime.Now)?.TotalDays > _siteRootContext.Item.Days_To_Expiration)
                     return false;
 
-                string[] subsTypes = _siteRootContext.Item.Subscription_Type.ToLower().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                //string[] subsTypes = _siteRootContext.Item.Subscription_Type.ToLower().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-                if (subsTypes == null || subsTypes.Contains(_latestSalesForceRecord.subscriptionType.ToLower()) == false)
-                    return false;
+                //if (subsTypes == null || subsTypes.Contains(_latestSalesForceRecord.subscriptionType.ToLower()) == false)
+                //    return false;
 
                 if (_latestSalesForceRecord.productType.ToLower() != _siteRootContext.Item.Product_Type.ToLower())
                     return false;
