@@ -83,9 +83,13 @@
                   </li> 
                /sample added company -->
 
-                  <li ng-repeat="myCompany in savedCompanies">
+                  <li ng-repeat="myCompany in savedCompanies" class="saved-company">
                     <input type="checkbox" class="visuallyhidden" id="{{myCompany.label}}" ng-checked="myCompany.selected">
                     <label for="{{myCompany.label}}">{{myCompany.label}}</label>
+                    <svg ng-click="removeCompany(myCompany)"
+                         class="saved-company__delete-icon">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                    </svg>
                   </li>
 
                   <li class="facets__company-input" ng-show="isAddingCompany">

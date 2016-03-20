@@ -60,6 +60,14 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
         // console.log($scope.savedCompanies);
     };
 
+    $scope.removeCompany = function($item, model, label) {
+        // console.log("selected: ", $item);
+
+        delete $scope.savedCompanies[$item.label];
+
+        // console.log($scope.savedCompanies);
+    };
+
 
     //** This updates the router/url with the latest search parameters **//
     _this.update = function() {

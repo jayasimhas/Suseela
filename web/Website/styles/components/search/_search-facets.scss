@@ -319,3 +319,15 @@
   }
 }
 
+.saved-company__delete-icon {
+  @include svg-fill($color-light-gray);
+  height: 14px;
+  width: 12px;
+  vertical-align: baseline;
+  float: right;
+  cursor: pointer;
+}
+.saved-company:hover .saved-company__delete-icon{
+  @include svg-fill($color-zeus-black);
+}
+
