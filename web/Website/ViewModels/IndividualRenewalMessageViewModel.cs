@@ -93,8 +93,6 @@ namespace Informa.Web.ViewModels
         {
             get
             {
-                return string.Format("ProductCode:{0}; DaysToExpiration:{1}; SubscriptionType:{2}; ProductType:{3}", _latestSalesForceRecord.productCode, (_latestSalesForceRecord.expirationDate - DateTime.Now)?.TotalDays, _latestSalesForceRecord.subscriptionType, _latestSalesForceRecord.productType);
-
                 if (_latestSalesForceRecord == null)
                     return string.Empty;
 
