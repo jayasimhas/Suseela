@@ -178,15 +178,15 @@ $(document).ready(function() {
 		'.form-pre-registration',
 		function(form) {
 			var usernameInput = $(form).find('.js-register-username');
-			var nextStepUrl = $(form).data('on-success') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
-
+			var nextStepUrl = $(form).data('forwarding-url') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
+			
 			window.location.href = nextStepUrl;
 		}
 	);
 
 
-	var registerController = new RegisterController();
-	registerController.addRegisterUserControl('.js-register-user-optins-submit');
+	//var registerController = new RegisterController();
+	//registerController.addRegisterUserControl('.js-register-user-optins-submit');
 
 
 	var emailArticleController = new FormController();
