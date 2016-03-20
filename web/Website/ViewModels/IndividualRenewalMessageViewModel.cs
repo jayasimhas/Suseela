@@ -74,7 +74,7 @@ namespace Informa.Web.ViewModels
                 if (subsTypes == null || subsTypes.Contains(_latestSalesForceRecord.subscriptionType.ToLower()) == false)
                     return false;
 
-                if (_latestSalesForceRecord.productType != _siteRootContext.Item.Product_Type.ToLower())
+                if (_latestSalesForceRecord.productType.ToLower() != _siteRootContext.Item.Product_Type.ToLower())
                     return false;
 
                 return true;
