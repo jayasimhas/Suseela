@@ -10,19 +10,19 @@
         }
 </script>
 
-<button 
+<button
   class="facets__mobile-button"
-  ng-model="collapsefilters" 
-  ng-click="collapsefilters = !collapsefilters" 
+  ng-model="collapsefilters"
+  ng-click="collapsefilters = !collapsefilters"
   ng-class="{'isExpanded': collapsefilters}">
   <h6 class="show-filters">Show Filters</h6>
   <h6 class="hide-filters">Hide Filters</h6>
 </button>
 
-<div 
-  id="search-facet-01" 
-  class="search__facets search__left-sidebar" 
-  ng-class="{'isExpanded': collapsefilters}" 
+<div
+  id="search-facet-01"
+  class="search__facets search__left-sidebar"
+  ng-class="{'isExpanded': collapsefilters}"
   ng-controller="InformaFacetController as allFacets">
 
   <div class="facets__header">
@@ -34,21 +34,25 @@
 
     <form class="facets__section" ng-repeat="group in allFacets.facetGroups">
 
-          <fieldset ng-if="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController">
-              <legend class="facets__legend facets__section-header">
-                  <h4>Companies</h4>
-                  <button class="facets__button facets__button--toggle-section"
-                          ng-model="collapsecompanies"
-                          ng-click="collapsecompanies=!collapsecompanies; isCollapsedCompanies=!isCollapsedCompanies"
-                          ng-class="{'collapsed': isCollapsedCompanies}">
-                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
-                  </button>
-              </legend>
-  
+        @* * * * *
+        FACET — COMPANIES
+        * * * * *@
 
-              <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit" ng-hide="collapsefacet">
+        <fieldset ng-if="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController">
+          <legend class="facets__legend facets__section-header">
+              <h4>Companies</h4>
+              <button class="facets__button facets__button--toggle-section"
+                      ng-model="collapsecompanies"
+                      ng-click="collapsecompanies=!collapsecompanies; isCollapsedCompanies=!isCollapsedCompanies"
+                      ng-class="{'collapsed': isCollapsedCompanies}">
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+              </button>
+          </legend>
 
-                  <li ng-if="f.selected">
+
+          <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit">
+              <ul ng-if="f.selected" class="facets__section-list" ng-hide="collapsefacet">
+                  <li>
                       <input id="{{ group.id }}-{{ $index }}"
                              type="checkbox"
                              class="visuallyhidden"
@@ -72,77 +76,78 @@
                       </button>
                   </li>
               </ul>
+          </div>
 
-              <ul class="facets__section-list" ng-hide="collapsecompanies">
+          <ul class="facets__section-list" ng-hide="collapsecompanies">
 
-              <!-- sample added company 
-                  <li>
-                      <input type="checkbox" class="visuallyhidden">
-                      <label>Amgen (537)</label>
-                  </li> 
-               /sample added company -->
+          <!-- sample added company
+              <li>
+                  <input type="checkbox" class="visuallyhidden">
+                  <label>Amgen (537)</label>
+              </li>
+           /sample added company -->
 
-                  <li ng-repeat="myCompany in savedCompanies" class="saved-company">
-                    <input type="checkbox" class="visuallyhidden" id="{{myCompany.label}}" ng-checked="myCompany.selected">
-                    <label for="{{myCompany.label}}">{{myCompany.label}}</label>
-                    <svg ng-click="removeCompany(myCompany)"
-                         class="saved-company__delete-icon">
+              <li ng-repeat="myCompany in savedCompanies" class="saved-company">
+                <input type="checkbox" class="visuallyhidden" id="{{myCompany.label}}" ng-checked="myCompany.selected">
+                <label for="{{myCompany.label}}">{{myCompany.label}}</label>
+                <svg ng-click="removeCompany(myCompany)"
+                     class="saved-company__delete-icon">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+              </li>
+
+              <li class="facets__company-input" ng-show="isAddingCompany">
+                <div class="facets__field-group facets__field-group--companies">
+                  <button class="facets__button facets__button--clear-company"
+                          ng-class="{'collapsed': isCollapsedCompanies}"
+                          ng-click="isAddingCompany = false;">
+                    <svg>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
                     </svg>
-                  </li>
+                  </button>
+                  <div class="facets__company-typeahead-wrapper">
+                    <input
+                      type="text"
+                      id="company-field"
+                      name="company-field"
+                      placeholder="Enter a Company"
+                      ng-model="myCompany.selected"
+                      uib-typeahead="company for company in companies | filter:$viewValue | limitTo:10"
+                      typeahead-min-length=2
+                      typeahead-select-on-blur="false"
+                      typeahead-select-on-exact="false"
+                      typeahead-on-select='saveCompany($item); isAddingCompany = false;'
+                      typeahead-editable="false"
+                      class="form-control"
+                      autocomplete="off">
 
-                  <li class="facets__company-input" ng-show="isAddingCompany">
-                    <div class="facets__field-group facets__field-group--companies">
-                      <button class="facets__button facets__button--clear-company"
-                              ng-class="{'collapsed': isCollapsedCompanies}"
-                              ng-click="isAddingCompany = false;">
-                        <svg>
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
-                        </svg>
-                      </button>
-                      <div class="facets__company-typeahead-wrapper">
-                        <input 
-                          type="text" 
-                          id="company-field" 
-                          name="company-field" 
-                          placeholder="Enter a Company"
-                          ng-model="myCompany.selected"
-                          uib-typeahead="company for company in companies | filter:$viewValue | limitTo:10" 
-                          typeahead-min-length=2 
-                          typeahead-select-on-blur="false" 
-                          typeahead-select-on-exact="false" 
-                          typeahead-on-select='saveCompany($item); isAddingCompany = false;' 
-                          typeahead-editable="false"
-                          class="form-control"
-                          autocomplete="off">
-
-                          <!-- add to above input for loading & no results: 
-                              typeahead-loading="loadingCompanies" 
-                              typeahead-no-results="noCompanies" 
-                              add below:
-                              <i ng-show="loadingCompanies" class="glyphicon glyphicon-refresh"></i>
-                              <div ng-show="noCompanies">
-                                <i class="glyphicon glyphicon-remove"></i> No Results Found
-                              </div>
-                          -->
-                      </div>
-                    </div>
-                  </li>
-              </ul>
-              <button class="facets__button facets__button--add"
-                  ng-model="isAddingCompany"
-                  ng-class="{'collapsed': isCollapsedCompanies, 'adding-company': isAddingCompany}"
-                  ng-hide="isAddingCompany"
-                  ng-click="isAddingCompany = true">
-                  Add
-                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#add"></use></svg>
-              </button>
-          </fieldset>
+                      <!-- add to above input for loading & no results:
+                          typeahead-loading="loadingCompanies"
+                          typeahead-no-results="noCompanies"
+                          add below:
+                          <i ng-show="loadingCompanies" class="glyphicon glyphicon-refresh"></i>
+                          <div ng-show="noCompanies">
+                            <i class="glyphicon glyphicon-remove"></i> No Results Found
+                          </div>
+                      -->
+                  </div>
+                </div>
+              </li>
+          </ul>
+          <button class="facets__button facets__button--add"
+              ng-model="isAddingCompany"
+              ng-class="{'collapsed': isCollapsedCompanies, 'adding-company': isAddingCompany}"
+              ng-hide="isAddingCompany"
+              ng-click="isAddingCompany = true">
+              Add
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#add"></use></svg>
+          </button>
+        </fieldset>
 
 
 
         @* * * * *
-              FACET — DATE
+        FACET — DATE
         * * * * *@
 
         <fieldset ng-if="group.label == 'Date Placeholder'" class="facets__fieldset">
@@ -156,7 +161,7 @@
                 </button>
             </legend>
 
-            
+
             <ul class="facets__section-list datepicker" ng-controller="InformaDatesController">
                 <li class="facets__section-wrapper" ng-hide="collapsedate">
                     <ul class="facets__section-list">
@@ -174,7 +179,7 @@
                                 <li class="facets__field-group facets__field-group--from input-group">
 
                                     <label for="date-picker-from" ng-click="open($event,'dtFrom')">From</label>
-                                    
+
                                     <input type="text"
                                            name="dtFrom"
                                            ng-model="dateValues.dtFrom"
@@ -190,7 +195,7 @@
                                            show-button-bar="false"
                                            />
                                            @* close-text="Close" *@
-                                           
+
 
                                     <span class="input-group-btn">
                                         <button type="button" class="facets__button">
@@ -227,7 +232,7 @@
                                         </button>
                                     </span>
 
-                                </li> 
+                                </li>
 
                                 <div>
                                   <ul class="uib-datepicker-popup dropdown-menu uib-position-measure" dropdown-nested ng-if="isOpen" ng-keydown="keydown($event)" ng-click="$event.stopPropagation()">
@@ -248,25 +253,29 @@
             </ul>
           </fieldset>
 
-          <!-- temporarily removing ng-if='group.facets.length > 1' from above -->
-          <fieldset ng-if="group.label != 'Companies' && group.label != 'Date Placeholder'" class="facets__fieldset">
-             
-              <legend class="facets__legend facets__section-header">
-                  <h4>{{ ::group.label }}</h4>
-                  <button
-                      class="facets__button facets__button--toggle-section"
-                      ng-model="collapsefacet"
-                      ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
-                      ng-class="{'collapsed': isCollapsed}">
-                      <svg>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
-                      </svg>
-                  </button>
-              </legend>
 
-              <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
-                
-                <li ng-if="($index < allFacets.MaxFacetShow) || group.ShowMore">
+          @* * * * *
+          FACETS - DYNAMIC
+          * * * * *@
+
+        <fieldset ng-if="group.label != 'Companies' && group.label != 'Date Placeholder'" class="facets__fieldset">
+
+          <legend class="facets__legend facets__section-header">
+              <h4>{{ ::group.label }}</h4>
+              <button
+                  class="facets__button facets__button--toggle-section"
+                  ng-model="collapsefacet"
+                  ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
+                  ng-class="{'collapsed': isCollapsed}">
+                  <svg>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
+                  </svg>
+              </button>
+          </legend>
+
+          <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
+            <ul class="facets__section-list" ng-if="($index < allFacets.MaxFacetShow) || group.ShowMore">
+                <li>
                   <input  id="{{ group.id }}-{{ $index }}"
                           type="checkbox"
                           class="visuallyhidden"
@@ -277,21 +286,21 @@
                   <button class="facets__button facets__button--toggle-subcat"
                           ng-model="collapsesubfacet"
                           ng-click="collapseSubfacet=!collapseSubfacet; isCollapsedSubfacet=!isCollapsedSubfacet">
-                      <svg 
+                      <svg
                         class="facets__button--collapse-subfacet"
                         ng-if="f.sublist.length > 0"
                         ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use>
                       </svg>
-                      <svg 
+                      <svg
                         class="facets__button--expand-subfacet"
-                        ng-if="(f.sublist.length > 0)" 
+                        ng-if="(f.sublist.length > 0)"
                         ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#expand"></use>
                       </svg>
                   </button>
-                  <ul ng-if="f.sublist.length > 0"  
-                      ng-class="{'collapsedSubfacet': isCollapsedSubfacet}" 
+                  <ul ng-if="f.sublist.length > 0"
+                      ng-class="{'collapsedSubfacet': isCollapsedSubfacet}"
                       class="facets__section-list--sub">
                       <li ng-repeat="subFacet in f.sublist">
                           <input id="{{ subFacet.id }}-{{ $index }}"
@@ -304,33 +313,32 @@
                       </li>
                   </ul>
                 </li>
-              </ul>
-              <button
-                  class="facets__button facets__button--more"
-                  ng-show='(group.facets.length > allFacets.MaxFacetShow) && (!group.ShowMore)'
-                  ng-click='group.ShowMore = true'
-                  ng-class="{'collapsed': isCollapsed}">See All
-                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
-              </button>
-              <button
-                  class="facets__button facets__button--less"
-                  ng-show='group.ShowMore'
-                  ng-click='group.ShowMore = false'
-                  ng-class="{'collapsed': isCollapsed}">See Less
-                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#up-arrow"></use></svg>
-              </button>
-          </fieldset>
+            </ul>
+        </div>
+        <button
+              class="facets__button facets__button--more"
+              ng-show='(group.facets.length > allFacets.MaxFacetShow) && (!group.ShowMore)'
+              ng-click='group.ShowMore = true'
+              ng-class="{'collapsed': isCollapsed}">See All
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
+          </button>
+          <button
+              class="facets__button facets__button--less"
+              ng-show='group.ShowMore'
+              ng-click='group.ShowMore = false'
+              ng-class="{'collapsed': isCollapsed}">See Less
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#up-arrow"></use></svg>
+          </button>
+        </fieldset>
       </form>
 
  </div> <!-- / .facets__content -->
 </div> <!-- / .search__facets -->
 
-<button 
-  class="facets__mobile-button facets__mobile-button--bottom" 
+<button
+  class="facets__mobile-button facets__mobile-button--bottom"
   ng-model="collapsefilters"
   ng-click="collapsefilters = !collapsefilters"
   ng-class="{'isExpanded': collapsefilters}">
   <h6 class="hide-filters">Hide Filters</h6>
 </button>
-
-        
