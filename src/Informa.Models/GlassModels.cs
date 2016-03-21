@@ -10341,6 +10341,42 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Twitter_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Link Twitter_Link  {get; set;}
 								/// <summary>
+					/// The Days To Expiration field.
+					/// <para></para>
+					/// <para>Field Type: Integer</para>		
+					/// <para>Field ID: 3071922d-4ef9-4abb-ae03-3dafec2544f4</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Days_To_ExpirationFieldName, Setting = SitecoreFieldSettings.InferType)]
+					int Days_To_Expiration  {get; set;}
+								/// <summary>
+					/// The Product Code field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: b892acbf-336f-4d65-ae8c-84e17b3a0d65</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Product_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Product_Code  {get; set;}
+								/// <summary>
+					/// The Product Type field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 50ac1998-cb65-4e2f-ad0b-52980f402a95</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Product_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Product_Type  {get; set;}
+								/// <summary>
+					/// The Subscription Type field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: f754e79e-c985-4f0f-818f-0d051911a80d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Subscription_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Subscription_Type  {get; set;}
+								/// <summary>
 					/// The System Maintenance End Date field.
 					/// <para></para>
 					/// <para>Field Type: Datetime</para>		
@@ -10866,6 +10902,42 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Twitter_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Link Twitter_Link  {get; set;}
 										/// <summary>
+						/// The Days To Expiration field.
+						/// <para></para>
+						/// <para>Field Type: Integer</para>		
+						/// <para>Field ID: 3071922d-4ef9-4abb-ae03-3dafec2544f4</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Days_To_ExpirationFieldName, Setting = SitecoreFieldSettings.InferType)]
+						int Days_To_Expiration  {get; set;}
+										/// <summary>
+						/// The Product Code field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: b892acbf-336f-4d65-ae8c-84e17b3a0d65</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Product_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Product_Code  {get; set;}
+										/// <summary>
+						/// The Product Type field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 50ac1998-cb65-4e2f-ad0b-52980f402a95</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Product_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Product_Type  {get; set;}
+										/// <summary>
+						/// The Subscription Type field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: f754e79e-c985-4f0f-818f-0d051911a80d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Subscription_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Subscription_Type  {get; set;}
+										/// <summary>
 						/// The System Maintenance End Date field.
 						/// <para></para>
 						/// <para>Field Type: Datetime</para>		
@@ -11202,6 +11274,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Twitter_LinkFieldId = new ID("7d78565c-ec7d-4d58-9e24-76ffc1505335");
 			public const string Twitter_LinkFieldName = "Twitter Link";
+
+						
+					
+			public static readonly ID Days_To_ExpirationFieldId = new ID("3071922d-4ef9-4abb-ae03-3dafec2544f4");
+			public const string Days_To_ExpirationFieldName = "Days To Expiration";
+
+						
+					
+			public static readonly ID Product_CodeFieldId = new ID("b892acbf-336f-4d65-ae8c-84e17b3a0d65");
+			public const string Product_CodeFieldName = "Product Code";
+
+						
+					
+			public static readonly ID Product_TypeFieldId = new ID("50ac1998-cb65-4e2f-ad0b-52980f402a95");
+			public const string Product_TypeFieldName = "Product Type";
+
+						
+					
+			public static readonly ID Subscription_TypeFieldId = new ID("f754e79e-c985-4f0f-818f-0d051911a80d");
+			public const string Subscription_TypeFieldName = "Subscription Type";
 
 						
 					
@@ -15458,6 +15550,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Twitter_LinkFieldId = new ID("7d78565c-ec7d-4d58-9e24-76ffc1505335");
 			public const string Twitter_LinkFieldName = "Twitter Link";
+
+						
+					
+			public static readonly ID Days_To_ExpirationFieldId = new ID("3071922d-4ef9-4abb-ae03-3dafec2544f4");
+			public const string Days_To_ExpirationFieldName = "Days To Expiration";
+
+						
+					
+			public static readonly ID Product_CodeFieldId = new ID("b892acbf-336f-4d65-ae8c-84e17b3a0d65");
+			public const string Product_CodeFieldName = "Product Code";
+
+						
+					
+			public static readonly ID Product_TypeFieldId = new ID("50ac1998-cb65-4e2f-ad0b-52980f402a95");
+			public const string Product_TypeFieldName = "Product Type";
+
+						
+					
+			public static readonly ID Subscription_TypeFieldId = new ID("f754e79e-c985-4f0f-818f-0d051911a80d");
+			public const string Subscription_TypeFieldName = "Subscription Type";
 
 						
 					

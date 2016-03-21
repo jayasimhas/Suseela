@@ -79,6 +79,18 @@ p {
     }
 }
 
+// Styling for "default"-style <ul>s and <ol>s
+// Actual lists, not lists used for layout
+.default-style-list {
+    margin-bottom: 1.5rem;
+
+    li {
+        margin-left: 1.25rem;
+        padding-left: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
 .error-text {
     @include textMix('Roboto', 0.875rem, 600);
     font-style: italic;

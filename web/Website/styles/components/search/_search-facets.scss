@@ -182,10 +182,6 @@
       margin-top: 10px;
     }
 
-    &--companies {
-      padding: 0;
-    }
-
     label {
       color: $color-medium-gray-8;
       font-size: 13px;
@@ -197,17 +193,8 @@
     }
 
     input {
-      border: 1px solid $informa-light-gray-d;
-      padding-left: 5px;
-
-      // autoprefixer doesn't seem to be catching these
-      &::-webkit-input-placeholder,
-      &:-moz-placeholder,
-      &::-moz-placeholder,
-      &:-ms-input-placeholder,
-      &::placeholder {
-        color: $color-medium-gray-8;
-      }
+      @extend .inf-standard-form-field;
+      float: left;
     }
 
     svg {
@@ -216,6 +203,27 @@
       height: 30px;
       margin-left: 10px;
       vertical-align: middle;
+    }
+
+    &--companies {
+      padding: 0;
+
+      input {
+        float: none;
+        width: 100%;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        border: 1px solid $color-light-gray;
+        border-top: 0;
+        max-height: 150px;
+        overflow: scroll;
+        padding: 0.5rem;
+        background-color: $color-white;
+        width: 100%;
+        z-index: 999;
+      }
     }
   }
 
@@ -304,6 +312,22 @@
 
   }
 
+  &__company-typeahead-wrapper {
+    position: relative; // child with width: 100% will expand to this elm width
+    display: inline-block;
+    width: calc(100% - 30px);
+  }
+}
 
+.saved-company__delete-icon {
+  @include svg-fill($color-light-gray);
+  height: 14px;
+  width: 12px;
+  vertical-align: baseline;
+  float: right;
+  cursor: pointer;
+}
+.saved-company:hover .saved-company__delete-icon{
+  @include svg-fill($color-zeus-black);
 }
 

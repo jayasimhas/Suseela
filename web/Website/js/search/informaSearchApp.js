@@ -4,7 +4,8 @@
     var informaSearchApp = angular.module('informaSearchApp', [
         'velir.search',
         'ui.bootstrap',
-        'ngSanitize'])
+        'ngSanitize',
+        'ngAnimate'])
         .constant('apiEndpoints', {
             API_BASE: '/api',
             SEARCH_ENDPOINT: '/search'
@@ -25,101 +26,12 @@
         var headlines = false;
 
         return {
-            showOnlyHeadlines: function () { return headlines; }
-            ,
+            showOnlyHeadlines: function () { return headlines; },
             updateValue: function () {
                 headlines = !headlines;
             }
-        }
+        };
     });
-
-
-// TODO: This should be split off into a new file inside the controllers directory
-    informaSearchApp.controller("InformaDatesController",
-      ["$scope", "$location", function ($scope, $location) {
-
-          $scope.dateValues = {
-              dtFromValue: '',
-              dtToValue: ''
-          };
-
-      // need to differentiate the 2 datepickers
-          $scope.datepickers = {
-              dtFrom: false,
-              dtTo: false
-      }
- 
-      // grab today and inject into field
-          $scope.today = function () {
-
-              if ($location.search().dateFilterLabel == 'custom') {
-                 
-                  if ($location.search().date.indexOf(";") > -1) {
-                    
-                      var dates = $location.search().date.split(";");
-                
-                      if (dates.length == 2) {
-
-                          var date1 = new Date(dates[0]);
-                          $scope.dateValues.dtFromValue = (date1.getMonth() + 1) + "/" + date1.getDate() + "/" + date1.getFullYear().toString().substring(2, 4);
-
-                          var date2 = new Date(dates[1]);
-                          $scope.dateValues.dtToValue = (date2.getMonth() + 1) + "/" + date2.getDate() + "/" + date2.getFullYear().toString().substring(2, 4);
-
-                          return;
-                      }
-                  }
-              } 
-
-              $scope.dateValues.dtFromValue = "mm/dd/yy";
-              $scope.dateValues.dtToValue = "mm/dd/yy";          
-      };
-      
-      // run today() function
-      $scope.today();
-
-      // setup clear
-      $scope.clear = function () {
-        $scope.dt = null;
-        //$scope.dateValues.dtFromValue = "mm/dd/yyyy";
-        //$scope.dateValues.dtToValue = "mm/dd/yyyy";
-      };
-
-      $scope.fromDateOptions = {
-        // dateDisabled: disabled,
-        showWeeks: false, 
-        formatDayHeader: 'EEE', 
-        formatDay: 'd',
-        startingDay: 1
-      };
-
-      $scope.toDateOptions = {
-        // dateDisabled: disabled,
-        showWeeks: false, 
-        formatDayHeader: 'EEE', 
-        formatDay: 'd',
-        startingDay: 1
-      };
-
-      // open min-cal
-      $scope.open = function($event, which) {
-        $event.preventDefault();
-        $event.stopPropagation();
-
-        $scope.datepickers[which] = true;
-      };
-
-      $scope.$watch('dateValues.dtFromValue', function () {
-          $scope.toDateOptions.minDate = $scope.dateValues.dtFromValue;
-      });
-
-      $scope.$watch('dateValues.dtToValue', function () {
-          $scope.fromDateOptions.maxDate = $scope.dateValues.dtToValue;
-      });
-
-    }]);
-
-
   
   // factory to handle call to companies service
   // note: a factory lives through the entire application lifecycle

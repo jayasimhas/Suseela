@@ -32,8 +32,7 @@
 
   <div class="facets__content">
 
-    <form class="facets__section"
-            ng-repeat="group in allFacets.facetGroups">
+    <form class="facets__section" ng-repeat="group in allFacets.facetGroups">
 
           <fieldset ng-if="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController">
               <legend class="facets__legend facets__section-header">
@@ -83,43 +82,51 @@
                   </li> 
                /sample added company -->
 
-                  <li ng-repeat="myCompany in savedCompanies">
+                  <li ng-repeat="myCompany in savedCompanies" class="saved-company">
                     <input type="checkbox" class="visuallyhidden" id="{{myCompany.label}}" ng-checked="myCompany.selected">
                     <label for="{{myCompany.label}}">{{myCompany.label}}</label>
+                    <svg ng-click="removeCompany(myCompany)"
+                         class="saved-company__delete-icon">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                    </svg>
                   </li>
+
                   <li class="facets__company-input" ng-show="isAddingCompany">
-                      <div class="facets__field-group facets__field-group--companies">
-                          <button class="facets__button facets__button--clear-company"
-                                  ng-class="{'collapsed': isCollapsedCompanies}"
-                                  ng-click="isAddingCompany = false;">
-                              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use></svg>
-                          </button>
-                          <input 
-                            type="text" 
-                            id="company-field" 
-                            name="company-field" 
-                            placeholder="Enter a Company"
-                            ng-model="myCompany.selected"
-                            typeahead="company for company in companies | filter:$viewValue | limitTo:10" 
-                            typeahead-min-length=2 
-                            typeahead-select-on-blur="true" 
-                            typeahead-select-on-exact="true" 
-                            typeahead-on-select="allFacets.searchForCompany($item)"
-                            typeahead-editable="false"
-                            class="form-control"
-                            autocomplete="off">
+                    <div class="facets__field-group facets__field-group--companies">
+                      <button class="facets__button facets__button--clear-company"
+                              ng-class="{'collapsed': isCollapsedCompanies}"
+                              ng-click="isAddingCompany = false;">
+                        <svg>
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                        </svg>
+                      </button>
+                      <div class="facets__company-typeahead-wrapper">
+                        <input 
+                          type="text" 
+                          id="company-field" 
+                          name="company-field" 
+                          placeholder="Enter a Company"
+                          ng-model="myCompany.selected"
+                          uib-typeahead="company for company in companies | filter:$viewValue | limitTo:10" 
+                          typeahead-min-length=2 
+                          typeahead-select-on-blur="false" 
+                          typeahead-select-on-exact="false" 
+                          typeahead-on-select='saveCompany($item); isAddingCompany = false;' 
+                          typeahead-editable="false"
+                          class="form-control"
+                          autocomplete="off">
 
-                            <!-- add to above input for loading & no results: 
-                                typeahead-loading="loadingCompanies" 
-                                typeahead-no-results="noCompanies" 
-                                add below:
-                                <i ng-show="loadingCompanies" class="glyphicon glyphicon-refresh"></i>
-                                <div ng-show="noCompanies">
-                                  <i class="glyphicon glyphicon-remove"></i> No Results Found
-                                </div>
-                            -->
-
+                          <!-- add to above input for loading & no results: 
+                              typeahead-loading="loadingCompanies" 
+                              typeahead-no-results="noCompanies" 
+                              add below:
+                              <i ng-show="loadingCompanies" class="glyphicon glyphicon-refresh"></i>
+                              <div ng-show="noCompanies">
+                                <i class="glyphicon glyphicon-remove"></i> No Results Found
+                              </div>
+                          -->
                       </div>
+                    </div>
                   </li>
               </ul>
               <button class="facets__button facets__button--add"
@@ -132,6 +139,12 @@
               </button>
           </fieldset>
 
+
+
+        @* * * * *
+              FACET — DATE
+        * * * * *@
+
         <fieldset ng-if="group.label == 'Date Placeholder'" class="facets__fieldset">
             <legend class="facets__legend facets__section-header">
                 <h4>Date</h4>
@@ -142,6 +155,8 @@
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
                 </button>
             </legend>
+
+            
             <ul class="facets__section-list datepicker" ng-controller="InformaDatesController">
                 <li class="facets__section-wrapper" ng-hide="collapsedate">
                     <ul class="facets__section-list">
@@ -154,54 +169,78 @@
                                    ng-checked="{{dateFilter.selected}}"
                                    ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
                             <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
-                            <ul class="facets__section-footer">
-                                <li class="facets__field-group facets__field-group--from input-group" ng-if="$last">
+
+                            <ul class="facets__section-footer" ng-if="$last">
+                                <li class="facets__field-group facets__field-group--from input-group">
+
                                     <label for="date-picker-from" ng-click="open($event,'dtFrom')">From</label>
+                                    
                                     <input type="text"
                                            name="dtFrom"
-                                           ng-model="dateValues.dtFromValue"
+                                           ng-model="dateValues.dtFrom"
                                            id="date-picker-from"
-                                           datepicker-popup="shortDate"
+                                           uib-datepicker-popup="{{format}}"
                                            is-open="datepickers.dtFrom"
                                            datepicker-options="fromDateOptions"
                                            popup-placement="auto right-top"
-                                           uib-datepicker-popup="shortDay"
                                            date-disabled="disabled(date, mode)"
                                            ng-required="false"
-                                           close-text="Close"
-                                           show-button-bar="true"
                                            readonly
                                            ng-click="open($event,'dtFrom')"
+                                           show-button-bar="false"
                                            />
+                                           @* close-text="Close" *@
+                                           
+
                                     <span class="input-group-btn">
                                         <button type="button" class="facets__button">
                                             <svg ng-click="open($event,'dtFrom')"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
                                         </button>
                                     </span>
+
                                 </li>
-                                <li class="facets__field-group facets__field-group--to input-group" ng-show="$last">
+
+                                <li class="facets__field-group facets__field-group--to input-group">
+
                                     <label for="date-picker-to" ng-click="open($event,'dtTo')">To</label>
+
                                     <input type="text"
                                            name="dtTo"
-                                           ng-model="dateValues.dtToValue"
-                                           id="date-picker-from"
+                                           uib-datepicker-popup="{{format}}"
+                                           ng-model="dateValues.dtTo"
+                                           id="date-picker-to"
                                            datepicker-popup="shortDate"
                                            is-open="datepickers.dtTo"
                                            datepicker-options="toDateOptions"
                                            popup-placement="auto right-top"
                                            date-disabled="disabled(date, mode)"
                                            ng-required="false"
-                                           close-text="Close"
-                                           show-button-bar="true"
                                            readonly
                                            ng-click="open($event,'dtTo')"
-                                           ng-change="allFacets.customDateRangeSearch('date',dateValues.dtFromValue,dateValues.dtToValue)" />
+                                           ng-change="allFacets.customDateRangeSearch('date', dateValues.dtFrom, dateValues.dtTo)"
+                                           show-button-bar="false">
+                                           @* close-text="Close" *@
+
                                     <span class="input-group-btn">
                                         <button type="button" class="facets__button">
                                             <svg ng-click="open($event,'dtTo')"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
                                         </button>
                                     </span>
-                                </li>
+
+                                </li> 
+
+                                <div>
+                                  <ul class="uib-datepicker-popup dropdown-menu uib-position-measure" dropdown-nested ng-if="isOpen" ng-keydown="keydown($event)" ng-click="$event.stopPropagation()">
+                                    <li ng-transclude></li>
+                                    <li ng-if="showButtonBar" class="uib-button-bar">
+                                      <span class="btn-group pull-left">
+                                        <button type="button" class="btn btn-sm btn-info uib-datepicker-current" ng-click="select('today', $event)" ng-disabled="isDisabled('today')">{{ getText('current') }}</button>
+                                        <button type="button" class="btn btn-sm btn-danger uib-clear" ng-click="select(null, $event)">{{ getText('clear') }}</button>
+                                      </span>
+                                      <button type="button" class="btn btn-sm btn-success pull-right uib-close" ng-click="close($event)">{{ getText('close') }}</button>
+                                    </li>
+                                  </ul>
+                                </div>
                             </ul>
                         </li>
                     </ul>
@@ -227,7 +266,7 @@
 
               <ul class="facets__section-list" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
                 
-                <li ng-hide="($index >= allFacets.MaxFacetShow) && (!group.ShowMore)">
+                <li ng-if="($index < allFacets.MaxFacetShow) || group.ShowMore">
                   <input  id="{{ group.id }}-{{ $index }}"
                           type="checkbox"
                           class="visuallyhidden"

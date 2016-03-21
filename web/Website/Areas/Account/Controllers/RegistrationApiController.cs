@@ -15,20 +15,17 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly INewUserFactory NewUserFactory;
 		protected readonly IWebRegisterUser RegisterUser;
 		protected readonly IWebSetOptInsRegisterUser SetOptInsRegisterUser;
-        protected readonly IWebLoginUser LoginWebUser;
 
         public RegistrationApiController(
 			IFindUserByEmail findUser,
 			INewUserFactory newUserFactory,
 			IWebRegisterUser registerUser,
-			IWebSetOptInsRegisterUser setOptInsRegisterUser,
-            IWebLoginUser loginWebUser)
+			IWebSetOptInsRegisterUser setOptInsRegisterUser)
 		{
 			FindUser = findUser;
 			NewUserFactory = newUserFactory;
 			RegisterUser = registerUser;
 			SetOptInsRegisterUser = setOptInsRegisterUser;
-            LoginWebUser = loginWebUser;
 		}
 
 		[HttpPost]
@@ -65,9 +62,7 @@ namespace Informa.Web.Areas.Account.Controllers
 			newUser.Username = request.Username;
 
 			var success = RegisterUser.Register(newUser);
-
-		    LoginWebUser.Login(request.Username, request.Password, false);
-
+            
 			return Ok(new
 			{
 				success = success

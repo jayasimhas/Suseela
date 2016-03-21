@@ -1,6 +1,19 @@
-.article-exhibit {
+.article-exhibit,
+.article-exhibit--pull-left,
+.article-exhibit--pull-right,
+.article-inline-image,
+.article-inline-image--pull-left,
+.article-inline-image--pull-right {
+	@include textMix('Roboto', 13px, 400);
+	clear: both;
+	color: $informa-mid-gray;
+	margin-bottom: 2rem;
+	display: flex;
+	flex-direction:	column;
+
 	&__title {
 		@extend h4;
+		color: $color-zeus-black;
 		margin-bottom: 1rem !important;
 		line-height: 1.5rem !important;
 	}
@@ -11,11 +24,63 @@
 	    margin-bottom: 0 !important;
 	    line-height: 1.5rem !important;
 	    display: block;
-	    text-transform: uppercase;
-	    letter-spacing: 1px;
 	}
 	&__source {
     	float: right;
 		font-style: italic;
 	}
+
+    img {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    &__caption {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        order: 99; /* Caption always goes last */
+    }
+
+    @include breakpoint('medium') {
+        &__source {
+            display: block;
+            float: none;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+.article-exhibit--pull-left,
+.article-exhibit--pull-right,
+.article-inline-image--pull-left,
+.article-inline-image--pull-right  {
+    float: left;
+    margin-right: 2rem;
+    width: 50%;
+
+    .article-inline-image__source,
+    .article-exhibit__source {
+        float: none;
+        display: block;
+        margin-bottom: 0.75rem;
+    }
+}
+
+.article-exhibit--pull-right,
+.article-inline-image--pull-right  {
+
+    float: right;
+    margin-right: 0;
+    margin-left: 2rem;
+    text-align: right;
+
+    // Prevents short paragraphs between two floating images from flowing weird
+    & + p {
+        clear: left;
+    }
+}
+// Prevents short paragraphs between two floating images from flowing weird
+.article-exhibit--pull-left + p,
+.article-inline-image--pull-left + p {
+    clear: right;
 }
