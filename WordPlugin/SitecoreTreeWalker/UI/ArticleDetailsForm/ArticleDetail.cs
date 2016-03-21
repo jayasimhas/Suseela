@@ -373,7 +373,22 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 				throw;
 			}
 
-			return true;
+            try
+            {
+                if (ArticleDetails.IsPublished || ArticleDetails.WebPublicationDate < DateTime.Now)
+                {
+                    if (MessageBox.Show("Would you like to re-export the NLM feed?", "Export NLM?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    {
+                        SitecoreClient.ReExportArticleNlm(articleNumber);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Globals.SitecoreAddin.LogException("Error when requesting an article NLM Reexport", ex);
+            }
+
+            return true;
 		}
 
 		protected void UpdateFieldsUsingSitecore()
