@@ -558,7 +558,8 @@ namespace Informa.Web.Controllers
 					var media = MediaManager.GetMedia(child);
 					string ext = media.Extension.ToLower();
 
-					if (!(ext.Contains("doc") ||
+					if (!(ext.Contains("mp3") || 
+						  ext.Contains("doc") ||
 						  ext.Contains("docx") ||
 						  ext.Contains("xls") ||
 						  ext.Contains("xlsx") ||
@@ -609,7 +610,8 @@ namespace Informa.Web.Controllers
 					var media = MediaManager.GetMedia(child);
 					string ext = media.Extension.ToLower();
 
-					if (!(ext.Contains("doc") ||
+					if (!(ext.Contains("mp3") || 
+						  ext.Contains("doc") ||
 						  ext.Contains("docx") ||
 						  ext.Contains("xls") ||
 						  ext.Contains("xlsx") ||
