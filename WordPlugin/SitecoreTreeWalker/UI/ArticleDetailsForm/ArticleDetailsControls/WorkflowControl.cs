@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using InformaSitecoreWord.Sitecore;
 using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using PluginModels;
@@ -134,7 +135,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			var selectedItem = uxWorkflowActions.SelectedItem as ArticleWorkflowCommand;
 			if (selectedItem != null)
 			{
-				subjectLbl.Text = $"Subject: {_ArticleStruct.Title} has been moved to {selectedItem.DisplayName}";
+				subjectLbl.Text = $"Subject: {WebUtility.HtmlDecode(_ArticleStruct.Title)} has been moved to {selectedItem.DisplayName}";
 			}
 			uxUnlockOnSave.Checked = true;
 			SetNotificationOptions();

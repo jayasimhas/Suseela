@@ -14,7 +14,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 	{
 		protected SitecoreItemGetter _siteCoreItemGetter;
 		public readonly List<string> ValidDocumentTypes =
-			new List<string> { "doc", "docx", "ppt", "pptx", "xls", "xlsx", "pdf" };
+			new List<string> { "mp3", "doc", "docx", "ppt", "pptx", "xls", "xlsx", "pdf" };
 		public SupportingDocumentsControl()
 		{
 			InitializeComponent();
@@ -129,7 +129,7 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 				var path = (SitecorePath)uxBrowseDocuments.SelectedNode.Tag;
 				var itemPath = SitecoreClient.MediaPreviewUrl(path.Path);
 
-				if ((itemPath.Contains(".doc") || itemPath.Contains(".docx") || itemPath.Contains(".xls")
+				if ((itemPath.Contains(".mp3") || itemPath.Contains(".doc") || itemPath.Contains(".docx") || itemPath.Contains(".xls")
 					 || itemPath.Contains(".xlsx") || itemPath.Contains(".ppt") || itemPath.Contains(".pptx") ||
 					 itemPath.Contains(".pdf")))
 				{

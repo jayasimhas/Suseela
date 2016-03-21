@@ -24,7 +24,7 @@ namespace InformaSitecoreWord.UI
 		public EasyRemoveListView()
 		{
 			View = View.Details;
-			Columns.Add("Staff", Width);
+			Columns.Add("Staff", 300);
 			HeaderStyle = ColumnHeaderStyle.None;
 			DisableEdit = false;
 			MouseMove +=

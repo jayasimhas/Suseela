@@ -302,6 +302,8 @@
     <Compile Include="Company\CompanyRegisterUser.cs" />
     <Compile Include="Company\UserCompanyContext.cs" />
     <Compile Include="Company\Web\WebClearUserCompanyContextLogoutAction.cs" />
+    <Compile Include="Logging\IErrorLogger.cs" />
+    <Compile Include="Logging\SitecoreErrorLogger.cs" />
     <Compile Include="User\Entitlement\WebClearUserEntitlementsContextAction.cs" />
     <Compile Include="Company\Web\WebSetUserCompanyContextLoginAction.cs" />
     <Compile Include="ComponentModel\DataAnnotations\MustBeTrueAttribute.cs" />
