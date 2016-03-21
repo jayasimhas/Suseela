@@ -6,7 +6,7 @@
 	<p class="page-registration__introduction">@Model.Body</p>
 	<hr />
 	<form class="form-registration-optins"
-		  data-on-submit="/Account/api/PreferencesApi/Update/"
+		  data-on-submit="/Account/api/RegistrationApi/SetOptIns/"
 		  data-on-success="/">
 
 		<p class="page-registration__error
@@ -17,19 +17,20 @@
 
 		<div>
 			<div class="page-registration__tos-confirm">
-				<input 	name="NewsletterOptIn"
-						id="NewsletterOptIn"
+				<input 	name="newsletters"
+						id="newsletters"
 					   	type="checkbox"
 					   	checked="checked"
 					   	data-checkbox-type="boolean">
-				<label class="checkbox-label" for="NewsletterOptIn">@Model.NewslettersLabelText</label>
+				<label class="checkbox-label" for="newsletters">@Model.NewslettersLabelText</label>
 			</div>
 			<div class="page-registration__tos-confirm">
-				<input 	name="DoNotSendOffersOptIn"
-						id="DoNotSendOffersOptIn"
+				<input 	name="offers"
+						id="offers"
 					   	type="checkbox"
-					   	data-checkbox-type="boolean">
-				<label class="checkbox-label" for="DoNotSendOffersOptIn">@Model.OffersLabelText</label>
+					    data-checkbox-type="boolean"
+                        data-checkbox-boolean-type="reverse">
+				<label class="checkbox-label" for="offers">@Model.OffersLabelText</label>
 			</div>
 
 			<div class="page-account__submit-wrapper">
