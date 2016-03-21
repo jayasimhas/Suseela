@@ -15,7 +15,7 @@ using System.Web;
 
 namespace Informa.Web.ViewModels
 {
-    [AutowireService(LifetimeScope.PerRequest)]
+    [AutowireService(LifetimeScope.SingleInstance)]
     public class IndividualRenewalMessageViewModel : IIndividualRenewalMessageViewModel
     {
         ISalesforceServiceContext _service;
@@ -31,21 +31,6 @@ namespace Informa.Web.ViewModels
             _textTranslator = textTranslator;
             _userContext = userContext;
             _siteRootContext = siteRootContext;
-            try
-            {
-                if (_userContext.IsAuthenticated)
-                {
-                    //Get SubscruiptionsAndPurchases records for the specifed usern
-                    EBI_QuerySubscriptionsAndPurchasesResponse response = _service.Execute(x => x.querySubscriptionsAndPurchases(_userContext.User.Username));
-
-                    //Get the latest record
-                    _latestSalesForceRecord = response.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
-                }
-            }
-            catch (Exception ex)
-            {
-                Sitecore.Diagnostics.Log.Error(ex.Message, ex, this.GetType());
-            }
         }
 
         public string DismissText
@@ -60,6 +45,31 @@ namespace Informa.Web.ViewModels
         {
             get
             {
+                try
+                {
+                    if (_userContext.IsAuthenticated)
+                    {
+                        //Get SubscruiptionsAndPurchases records for the specifed usern
+                        EBI_QuerySubscriptionsAndPurchasesResponse response = _service.Execute(x => x.querySubscriptionsAndPurchases(_userContext.User.Username));
+
+                        //Get the latest record
+                        _latestSalesForceRecord = response.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
+                    }
+                    //else
+                    //{
+                    //    _latestSalesForceRecord = new EBI_SubscriptionAndPurchase();
+                    //    _latestSalesForceRecord.productCode = "SCRIP";
+                    //    _latestSalesForceRecord.productType = "Publication";
+                    //    _latestSalesForceRecord.subscriptionType = "Individual";
+                    //    _latestSalesForceRecord.expirationDate = new DateTime(2017, 1, 1);
+                    //}
+                }
+                catch (Exception ex)
+                {
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex, this.GetType());
+                    return false;
+                }
+
                 if (_latestSalesForceRecord == null)
                     return false;
 
@@ -95,28 +105,6 @@ namespace Informa.Web.ViewModels
         {
             get
             {
-                if (_latestSalesForceRecord == null)
-                {
-                    string result = "null record||";
-                    try
-                    {
-                        if (_userContext.IsAuthenticated)
-                        {
-                            //Get SubscruiptionsAndPurchases records for the specifed usern
-                            EBI_QuerySubscriptionsAndPurchasesResponse response = _service.Execute(x => x.querySubscriptionsAndPurchases(_userContext.User.Username));
-
-                            //Get the latest record
-                            _latestSalesForceRecord = response.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        result += ex.ToString();
-                    }
-
-                    return result + "||" + _userContext.IsAuthenticated;
-                }
-
                 if (_latestSalesForceRecord.productCode.ToLower() != _siteRootContext.Item.Product_Code.ToLower())
                     return string.Format("_latestSalesForceRecord.productCode.ToLower():{0};  _siteRootContext.Item.Product_Code.ToLower():{1}", _latestSalesForceRecord.productCode.ToLower(), _siteRootContext.Item.Product_Code.ToLower());
 

@@ -28,7 +28,7 @@ namespace Informa.Library.Subscription
         {
             get
             {
-                return "renewalMessage_" + DateTime.Now.ToString("yyyyMMddHHmmss");
+                return "renewalMessage_" + DateTime.Now.ToString("yyyyMMdd") + "_" + _userContext?.User?.Username;
             }
         }
 
