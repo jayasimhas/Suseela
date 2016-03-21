@@ -39,7 +39,7 @@
     var fetchCompanies = function() {
       return $http({
           method: 'GET',
-          url: '/velir/services/TypeAhead.asmx/TypeAheadCompanies'
+          url: '/velir/services/TypeAhead.asmx/TypeAheadCompaniesFromSearch'
       });
     }
     return {fetchCompanies : fetchCompanies};

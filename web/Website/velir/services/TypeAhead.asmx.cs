@@ -55,30 +55,9 @@ namespace Informa.Web.velir.services
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public void TypeAheadCompaniesTest()
+        public void TypeAheadCompaniesFromSearch()
         {
             List<CompanyTypeAheadResponseItem> companies = new List<CompanyTypeAheadResponseItem>();
-
-            //  string cacheKey = string.Format("TypeAhead:TypeAheadCompanies:{0}", Sitecore.Context.Site.Name);
-
-            //   var allTypeAheadOptions = _cache.GetFromCache<IEnumerable<IContent_Tag_Base>>(cacheKey);
-
-            // if (allTypeAheadOptions == null)
-            {
-
-                //List<CompanyTypeAheadResponseItem> companies = new List<CompanyTypeAheadResponseItem>();
-
-                //var company1 = new CompanyTypeAheadResponseItem("Acme");
-                //var company2 = new CompanyTypeAheadResponseItem("Velir");
-                //var company3 = new CompanyTypeAheadResponseItem("Bioware");
-
-                //companies.Add(company1);
-                //companies.Add(company2);
-                //companies.Add(company3);
-
-                //return companies;
-
-            }
 
             string searchPageId = new ItemReferences().SearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
             string url = string.Format("http://{0}/api/informasearch?pId={1}", WebUtil.GetHostName(), searchPageId);
