@@ -1,4 +1,6 @@
-﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+﻿using System.Windows.Forms;
+
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	partial class ArticleInformationControl
 	{
@@ -162,6 +164,7 @@
 			this.uxSelectAuthor.Location = new System.Drawing.Point(9, 39);
 			this.uxSelectAuthor.Name = "uxSelectAuthor";
 			this.uxSelectAuthor.Size = new System.Drawing.Size(302, 21);
+			this.uxSelectAuthor.AutoSize = true;
 			this.uxSelectAuthor.TabIndex = 19;
 			// 
 			// uxAddAuthor
