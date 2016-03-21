@@ -41,14 +41,14 @@ namespace Informa.Web.ViewModels
                     //Get the latest record
                     _latestSalesForceRecord = response.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
                 }
-                else
-                {
-                    _latestSalesForceRecord = new EBI_SubscriptionAndPurchase();
-                    _latestSalesForceRecord.productCode = "SCRIP";
-                    _latestSalesForceRecord.productType = "Publication";
-                    _latestSalesForceRecord.subscriptionType = "Individual";
-                    _latestSalesForceRecord.expirationDate = new DateTime(2017, 1, 1);
-                }
+                //else
+                //{
+                //    _latestSalesForceRecord = new EBI_SubscriptionAndPurchase();
+                //    _latestSalesForceRecord.productCode = "SCRIP";
+                //    _latestSalesForceRecord.productType = "Publication";
+                //    _latestSalesForceRecord.subscriptionType = "Individual";
+                //    _latestSalesForceRecord.expirationDate = new DateTime(2017, 1, 1);
+                //}
             }
             catch (Exception ex)
             {
@@ -103,6 +103,25 @@ namespace Informa.Web.ViewModels
         {
             get
             {
+                if (_latestSalesForceRecord == null)
+                    return "null record";
+
+                if (_latestSalesForceRecord.productCode.ToLower() != _siteRootContext.Item.Product_Code.ToLower())
+                    return string.Format("_latestSalesForceRecord.productCode.ToLower():{0};  _siteRootContext.Item.Product_Code.ToLower():{1}", _latestSalesForceRecord.productCode.ToLower(), _siteRootContext.Item.Product_Code.ToLower());
+
+                if ((_latestSalesForceRecord.expirationDate - DateTime.Now)?.TotalDays > _siteRootContext.Item.Days_To_Expiration)
+                    return string.Format("_latestSalesForceRecord.expirationDate:{0}; _siteRootContext.Item.Days_To_Expiration:{1}; diff:{2}", _latestSalesForceRecord.expirationDate, _siteRootContext.Item.Days_To_Expiration, (_latestSalesForceRecord.expirationDate - DateTime.Now)?.TotalDays);
+
+                if (_latestSalesForceRecord.subscriptionType.ToLower() != "individual" && _latestSalesForceRecord.subscriptionType.ToLower() != "free-trial")
+                    return "_latestSalesForceRecord.subscriptionType:" + _latestSalesForceRecord.subscriptionType;
+                //string[] subsTypes = _siteRootContext.Item.Subscription_Type.ToLower().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                //if (subsTypes == null || subsTypes.Contains(_latestSalesForceRecord.subscriptionType.ToLower()) == false)
+                //    return false;
+
+                if (_latestSalesForceRecord.productType.ToLower() != _siteRootContext.Item.Product_Type.ToLower())
+                    return string.Format("_latestSalesForceRecord.productType.ToLower():{0}; _siteRootContext.Item.Product_Type.ToLower():{1}", _latestSalesForceRecord.productType.ToLower(), _siteRootContext.Item.Product_Type.ToLower());
+
                 if (_latestSalesForceRecord == null)
                     return string.Empty;
 
