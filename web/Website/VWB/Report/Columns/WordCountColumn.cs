@@ -10,7 +10,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 	{
 		public int Compare(ArticleItemWrapper x, ArticleItemWrapper y)
 		{
-			return x.WordCount.CompareTo(y.WordCount);
+            return x.WordCount.CompareTo(y.WordCount);
 		}
 
 		public string GetHeader()
@@ -25,7 +25,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 
 		public TableCell GetCell(ArticleItemWrapper articleItemWrapper)
 		{
-            return new TableCell { Text = articleItemWrapper.WordCount };
+            return new TableCell { Text = articleItemWrapper.WordCount.ToString() };
         }
 	}
 }
