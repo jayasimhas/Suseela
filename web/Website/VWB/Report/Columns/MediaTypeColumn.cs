@@ -12,6 +12,11 @@ namespace Informa.Web.VWB.Report.Columns
     {
         public int Compare(ArticleItemWrapper x, ArticleItemWrapper y)
         {
+            if (x.MediaType == null || y.MediaType == null)
+            {
+                return 0;
+            }
+
             return x.MediaType.CompareTo(y.MediaType);
         }
 
