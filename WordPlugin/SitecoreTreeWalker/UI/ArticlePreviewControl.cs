@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Windows.Forms;
 using PluginModels;
@@ -76,7 +77,7 @@ namespace InformaSitecoreWord.UI
 				Title.Width = Title.Parent.Width;
 				return false;
 			}
-			Title.Text = articleStruct.Title;
+			Title.Text = WebUtility.HtmlDecode(articleStruct.Title);
 			Authors.Text = articleStruct.Authors.Count() > 0
 				            ? articleStruct.Authors.Aggregate((complete, cur) => complete + ", " + cur)
 				            : @"N/A";
