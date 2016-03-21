@@ -180,7 +180,6 @@
 
                             <ul class="facets__section-footer" ng-if="$last">
                                 <li class="facets__field-group facets__field-group--from input-group">
-
                                     <label for="date-picker-from" ng-click="open($event,'dtFrom')">From</label>
 
                                     <input type="text"
@@ -194,7 +193,8 @@
                                            date-disabled="disabled(date, mode)"
                                            ng-required="false"
                                            readonly
-                                           ng-click="open($event,'dtFrom')"
+                                           ng-click="open($event,'dtFrom'); allFacets.updateSelectedDate(dateFilter.key)"
+                                           ng-change="allFacets.customDateRangeSearch('date', dateValues.dtFrom, dateValues.dtTo)"
                                            show-button-bar="false"
                                            />
                                            @* close-text="Close" *@
@@ -224,7 +224,7 @@
                                            date-disabled="disabled(date, mode)"
                                            ng-required="false"
                                            readonly
-                                           ng-click="open($event,'dtTo')"
+                                           ng-click="open($event,'dtTo'); allFacets.updateSelectedDate(dateFilter.key)"
                                            ng-change="allFacets.customDateRangeSearch('date', dateValues.dtFrom, dateValues.dtTo)"
                                            show-button-bar="false">
                                            @* close-text="Close" *@
