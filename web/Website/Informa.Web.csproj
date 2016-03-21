@@ -1157,6 +1157,8 @@
     <Content Include="Areas\Account\Views\Registration\RegisterUserOptIns.cshtml" />
     <Content Include="Areas\Account\Views\Management\OneClickSubscribe.cshtml" />
     <Content Include="Areas\Account\Views\Management\OneClickUnsubscribe.cshtml" />
+    <Content Include="App_Config\Web\system.webServer.rewrite.config" />
+    <None Include="App_Config\Web\system.webServer.rewrite.config.template" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
