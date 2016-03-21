@@ -28,7 +28,7 @@ namespace Elsevier.Web.VWB.Report
 		public ArticleItem InnerItem;
 		public IEnumerable<string> Editors;
 		public string IssueDateValue;
-		public string WordCount;
+		public int WordCount;
 		public string PreviewUrl;
 		public DateTime SAPDateTime;
 		public DateTime WebPublicationDateTime;
@@ -109,8 +109,23 @@ namespace Elsevier.Web.VWB.Report
 				ArticleCreation = articleBaseItem.Statistics.Created;
 			}
 
-            WordCount = article.Word_Count;
-
+            if (string.IsNullOrEmpty(article.Word_Count))
+            {
+                WordCount = 0;
+            }
+            else
+            {
+                int parsedCount = 0;
+                if (Int32.TryParse(article.Word_Count, out parsedCount))
+                {
+                    WordCount = parsedCount;
+                }
+                else
+                {
+                    WordCount = 0;
+                }
+            }
+           
             foreach (IArticle referencedArticle in article.Referenced_Articles)
             {
                 if (!string.IsNullOrEmpty(referencedArticle.Article_Number))
