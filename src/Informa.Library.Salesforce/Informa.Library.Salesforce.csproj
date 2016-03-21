@@ -69,6 +69,8 @@
     <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponseExtensions.cs" />
+    <Compile Include="ISalesforceErrorLogger.cs" />
+    <Compile Include="SalesforceErrorLogger.cs" />
     <Compile Include="User\Entitlement\ISalesforceGetIPEntitlements.cs" />
     <Compile Include="User\Entitlement\ISalesforceGetUserEntitlements.cs" />
     <Compile Include="User\Entitlement\SalesforceGetIPEntitlements.cs" />

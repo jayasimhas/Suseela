@@ -11,13 +11,16 @@ namespace Informa.Library.Salesforce
 
 		protected readonly ISalesforceService Service;
 		protected readonly ISalesforceSessionContext SessionContext;
+		protected readonly ISalesforceErrorLogger ErrorLogger;
 
 		public SalesforceServiceContext(
 			ISalesforceService service,
-			ISalesforceSessionContext sessionContext)
+			ISalesforceSessionContext sessionContext,
+			ISalesforceErrorLogger errorLogger)
 		{
 			Service = service;
 			SessionContext = sessionContext;
+			ErrorLogger = errorLogger;
 
 			Service.SessionHeaderValue = new SessionHeader();
 		}
@@ -58,6 +61,8 @@ namespace Informa.Library.Salesforce
 					invalidSession = true;
 					SessionContext.Refresh();
 				}
+
+				ErrorLogger.Log("Execute", ex);
 			}
 
 			if (invalidSession)
