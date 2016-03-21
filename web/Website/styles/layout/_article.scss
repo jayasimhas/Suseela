@@ -30,66 +30,6 @@
     margin-bottom: 1rem;
 }
 
-.article-exhibit {
-    @include textMix('Roboto', 13px, 400);
-    clear: both;
-    color: $informa-mid-gray;
-    margin-bottom: 2rem;
-
-    img {
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-
-    &__source {
-        float: right;
-        font-style: italic;
-    }
-
-    &__caption {
-        display: block;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    &--pull-left,
-    &--pull-right {
-        float: left;
-        margin-right: 2rem;
-        width: 50%;
-
-        .article-inline-image__source {
-            float: none;
-            display: block;
-            margin-bottom: 0.75rem;
-        }
-    }
-
-    &--pull-right {
-        float: right;
-        margin-right: 0;
-        margin-left: 2rem;
-        text-align: right;
-
-        // Prevents short paragraphs between two floating images from flowing weird
-        & + p {
-            clear: left;
-        }
-    }
-    // Prevents short paragraphs between two floating images from flowing weird
-    &--pull-left + p {
-        clear: right;
-    }
-
-    @include breakpoint('medium') {
-        &__source {
-            display: block;
-            float: none;
-            margin-bottom: 0.5rem;
-        }
-    }
-}
-
 .article-paragraph {
     color: $informa-dark-gray;
     line-height: 2rem;

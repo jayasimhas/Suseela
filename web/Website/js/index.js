@@ -64,8 +64,8 @@ var toggleSignInError = function() {
 
 var renderIframeComponents = function() {
 	$('.iframe-component').each(function(index, elm) {
-		var desktopEmbed = $(elm).find('.iframe-component__desktop');
-		var mobileEmbed = $(elm).find('.iframe-component__mobile')
+		var desktopEmbed = $(elm).find('.iframe-component__desktop iframe');
+		var mobileEmbed = $(elm).find('.iframe-component__mobile iframe');
 		var mobileEmbedLink = mobileEmbed.data('embed-link');
 
 		// Check if the user is viewing inside the page editor
@@ -147,6 +147,7 @@ $(document).ready(function() {
 		});
 
 
+	// TODO - Refactor this with generic form controller
 	var login = new LoginController(requestVerificationToken);
 
 	login.addControl(
@@ -178,15 +179,15 @@ $(document).ready(function() {
 		'.form-pre-registration',
 		function(form) {
 			var usernameInput = $(form).find('.js-register-username');
-			var nextStepUrl = $(form).data('on-success') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
-
+			var nextStepUrl = $(form).data('forwarding-url') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
+			
 			window.location.href = nextStepUrl;
 		}
 	);
 
 
-	var registerController = new RegisterController();
-	registerController.addRegisterUserControl('.js-register-user-optins-submit');
+	//var registerController = new RegisterController();
+	//registerController.addRegisterUserControl('.js-register-user-optins-submit');
 
 
 	var emailArticleController = new FormController();

@@ -2,6 +2,10 @@
 
     hr {
         margin-bottom: 2.5rem;
+
+        @include breakpoint('small') {
+            margin-bottom: 1.5rem;
+        }
     }
 
     &__required-hint {
@@ -11,6 +15,12 @@
     }
 
     &__tos-confirm {
+        margin-bottom: 2.5rem;
+
+        @include breakpoint('small') {
+            margin-bottom: 1rem;
+        }
+
         label {
             @extend .checkbox-label;
         }

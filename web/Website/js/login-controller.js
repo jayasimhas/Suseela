@@ -10,7 +10,7 @@ function loginController(requestVerificationToken) {
 
 				var inputData = {};
 				var url = $(triggerElement).data('login-url');
-				var redirectUrl = $(triggerElement).data('login-redirect-url');
+				
 
 				$(triggerElement).parents('.js-login-container').find('input').each(function() {
 
@@ -31,15 +31,18 @@ function loginController(requestVerificationToken) {
 					inputData[field.attr('name')] = value;
 				});
 
-				console.log(requestVerificationToken);
-
 				$.post(url, inputData, function (response) {
+
 					if (response.success) {
 						if (successCallback) {
 							successCallback(triggerElement);
 						}
 
-						window.location.href = redirectUrl;
+						if($(triggerElement).data('login-redirect-url')) {
+							window.location.href = $(triggerElement).data('login-redirect-url');
+						} else {
+							window.location.reload(false);
+						}
 					}
 					else {
 						if (response.redirectUrl) {
