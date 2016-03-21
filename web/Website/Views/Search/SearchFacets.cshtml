@@ -111,7 +111,7 @@
                           typeahead-min-length=2 
                           typeahead-select-on-blur="false" 
                           typeahead-select-on-exact="false" 
-                          typeahead-on-select='saveCompany($item); isAddingCompany = false;' 
+                          typeahead-on-select="allFacets.searchForCompany($item)"
                           typeahead-editable="false"
                           class="form-control"
                           autocomplete="off">
