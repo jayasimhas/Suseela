@@ -105,6 +105,9 @@ namespace Informa.Web.ViewModels
         {
             get
             {
+                if (_latestSalesForceRecord == null)
+                    return "null record";
+
                 if (_latestSalesForceRecord.productCode.ToLower() != _siteRootContext.Item.Product_Code.ToLower())
                     return string.Format("_latestSalesForceRecord.productCode.ToLower():{0};  _siteRootContext.Item.Product_Code.ToLower():{1}", _latestSalesForceRecord.productCode.ToLower(), _siteRootContext.Item.Product_Code.ToLower());
 
