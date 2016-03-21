@@ -83,7 +83,7 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
         _this.update();
     };
 
-    // TODO: this comes from a diff search app, and needs jquery to work. 
+    // TODO: this comes from a diff search app, and needs jquery to work.
     //       either hook up jq to this controller or move this elsewhere
     _this.scrollTop = function() {
         // var location = jq(".search-facets__header").offset().top;
@@ -150,7 +150,7 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
         var facets = _this.searchService.getFacetGroup('companies').getSelectedFacets();
 
         var filter = _this.getFilter('companies');
-        
+
         var companyFilter = selectedCompany;
         var sep = ';';
 
@@ -177,7 +177,7 @@ _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
             var date2Unparsed = new Date(endDate);
             var date2 = (date2Unparsed.getMonth() + 1) + '/' + date2Unparsed.getDate() + '/' + date2Unparsed.getFullYear();
 
-        
+
             filter.setValue(date1 + ";" + date2);
 
             _this.update();
@@ -204,9 +204,22 @@ _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
         filterDateLabel.setValue(dateFilter);
         filter.setValue(startDate + ";" + endDate);
 
+        _this.updateSelectedDate(dateFilter);
+
         _this.update();
     };
 
+    _this.updateSelectedDate = function (dateFilter) {
+        var dateArrayLength = _this.DateFilters.length;
+        for (var i = 0; i < dateArrayLength; i++) {
+            if (dateFilter == _this.DateFilters[i].key) {
+                _this.CurrentDateSelection = _this.DateFilters[i].key;
+                _this.DateFilters[i].selected = true;
+            } else {
+                _this.DateFilters[i].selected = false;
+            }
+        }
+    };
 
     init();
 

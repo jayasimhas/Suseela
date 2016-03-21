@@ -18,7 +18,7 @@ var informaDatesController = function ($scope, $location) {
     $scope.dateValues.dtFrom = new Date();
     $scope.dateValues.dtTo = new Date();
   };
-  
+
   // run today() function
   $scope.today();
 
@@ -29,8 +29,8 @@ var informaDatesController = function ($scope, $location) {
   };
 
   $scope.fromDateOptions = {
-    showWeeks: false, 
-    formatDayHeader: 'EEE', 
+    showWeeks: false,
+    formatDayHeader: 'EEE',
     formatDay: 'd',
     startingDay: 0, // Sunday
     // dateDisabled: disabled,
@@ -40,8 +40,8 @@ var informaDatesController = function ($scope, $location) {
   };
 
   $scope.toDateOptions = {
-    showWeeks: false, 
-    formatDayHeader: 'EEE', 
+    showWeeks: false,
+    formatDayHeader: 'EEE',
     formatDay: 'd',
     startingDay: 0, // Sunday
     // dateDisabled: disabled,
