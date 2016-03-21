@@ -64,8 +64,8 @@ var toggleSignInError = function() {
 
 var renderIframeComponents = function() {
 	$('.iframe-component').each(function(index, elm) {
-		var desktopEmbed = $(elm).find('.iframe-component__desktop');
-		var mobileEmbed = $(elm).find('.iframe-component__mobile')
+		var desktopEmbed = $(elm).find('.iframe-component__desktop iframe');
+		var mobileEmbed = $(elm).find('.iframe-component__mobile iframe');
 		var mobileEmbedLink = mobileEmbed.data('embed-link');
 
 		// Check if the user is viewing inside the page editor
@@ -147,6 +147,7 @@ $(document).ready(function() {
 		});
 
 
+	// TODO - Refactor this with generic form controller
 	var login = new LoginController(requestVerificationToken);
 
 	login.addControl(

@@ -8,27 +8,24 @@
         top: 100%;
         left: 0;
         z-index: 1000;
-        display: none;
+        // display: none;
         float: left;
         min-width: 254px;
-        // padding: 5px 0;
-        // margin: 2px 0 0;
+        margin-left: 0.5rem;
         list-style: none;
         font-size: 14px;
         background-color: #EFF0F0;
-        border: 1px solid #CFD1D2;
-        // border: 1px solid rgba(0,0,0,.15);
-        // border-radius: 4px;
-        -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-        box-shadow: 0 6px 12px rgba(0,0,0,.175);
         background-clip: padding-box;
 
         // wraps calendar
         li:first-child {
+            padding: 0;
+
             div {
                 table {
                     width: 100%;
                     text-align: center;
+                    border: 0;
 
                     &:focus {
                         outline: 0;
@@ -36,6 +33,8 @@
 
                     thead {
                         // Top bar (month)
+                        border: 1px solid $color-zeus-black;
+
                         tr:first-child {
                             width: 100%;
                             background-color: #231f20;
@@ -62,7 +61,7 @@
                             th:nth-child(2) {
                                 button {
                                     strong {
-                                        @include textMix('RobotoCondensed', 13px, 700); // design says 15px but doesn't look right
+                                        @include textMix('Roboto Condensed', 13px, 600); // design says 15px but doesn't look right
                                         color: #fff;
                                         text-transform: uppercase;
                                     }
@@ -98,7 +97,7 @@
 
                             th {
                                 small {
-                                    @include textMix('Roboto', 12px, 500);
+                                    @include textMix('Roboto', 11px, 500);
                                     text-transform: uppercase;
                                     color:  #808285;
                                     line-height: 16.998px;
@@ -109,23 +108,34 @@
                     }
                     tbody {
                         // each row of dates
+                        border: 1px solid $color-medium-gray-8;
+                        border-top: 0;
                         tr {
                             // each date cell
                             td {
                                 button {
+                                    background-color: $color-mercury-gray;
                                     border: 1px solid #d1d3d4;
+                                    border-top: 0;
+                                    border-right: 0;
                                     box-sizing: border-box;
+                                    height: 32px;
+                                    width: 36px;
+
+                                    &:nth-child(7n+1) {
+                                        border-left: 0;
+                                    }
 
                                     &.active {
-                                        border: 1px solid #808285;
-                                        background-color:  #ffffff;
+                                        border: 2px solid #808285;
+                                        background-color: $color-white;
                                     }
                                     // each date number
                                     span {
                                         @include textMix('Roboto', 15px, 400);
-                                        line-height: 31.8px;
                                         color:  #37373d;
                                         text-align: center;
+                                        vertical-align: middle;
 
                                         &.text-muted {
                                             color: #878a8b;
@@ -165,6 +175,9 @@
 
     }
 
+    .uib-title {
+        @extend .button--plain;
+    }
 
     .form-control {
         display: block;

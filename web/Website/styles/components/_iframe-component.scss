@@ -7,4 +7,12 @@
         display: block;
         margin: 0px auto;
     }
+
+    @include breakpoint('small') {
+    		&__mobile iframe,
+			&__desktop iframe {
+				max-width: 100%;
+				height: auto;
+			}
+    }
 }
