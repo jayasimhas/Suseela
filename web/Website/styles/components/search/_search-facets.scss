@@ -106,6 +106,11 @@
     }
   }
 
+  &__section-item,
+  &__section-list {
+      padding-bottom: 10px;
+  }
+
   &__section-list {
 
     &--sub {
@@ -123,9 +128,7 @@
       }
     }
 
-    li {
-      padding-bottom: 10px;
-    }
+
 
     input[type="checkbox"],
     input[type="radio"] {
@@ -175,11 +178,17 @@
 
   }
 
+  &__label-count {
+      color: $color-dusty-gray;
+      font-size: 0.75rem;
+  }
+
   &__field-group {
     padding-left: 32px;
 
     &--from {
       margin-top: 10px;
+      padding-bottom: 10px;
     }
 
     label {
@@ -240,7 +249,7 @@
     &--clear-company {
       padding: 0;
       margin-right: 11px;
-      
+
       svg {
         @include svg-fill($informa-red);
         margin: 0;
@@ -250,7 +259,7 @@
     }
 
     &--more,
-    &--less, 
+    &--less,
     &--add {
       margin: 10px auto;
       width: 100%;
@@ -295,7 +304,7 @@
     }
 
     &--collapse-subfacet {
-      display: inline-block; 
+      display: inline-block;
 
       &.collapsedSubfacet {
         display: none;
@@ -330,4 +339,3 @@
 .saved-company:hover .saved-company__delete-icon{
   @include svg-fill($color-zeus-black);
 }
-

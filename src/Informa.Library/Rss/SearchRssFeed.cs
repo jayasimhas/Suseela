@@ -156,8 +156,11 @@ namespace Informa.Library.Rss
             if (article.Media_Type != null)
             {
                 var mediaElement = new XElement("media_icon");
-                mediaElement.Value = article.Media_Type.Item_Name;
-                syndicationItem.ElementExtensions.Add(mediaElement.CreateReader());
+                if (!string.IsNullOrEmpty(article.Media_Type.Item_Name))
+                {
+                    mediaElement.Value = article.Media_Type.Item_Name;
+                    syndicationItem.ElementExtensions.Add(mediaElement.CreateReader());
+                }
             }
 
             return syndicationItem;
