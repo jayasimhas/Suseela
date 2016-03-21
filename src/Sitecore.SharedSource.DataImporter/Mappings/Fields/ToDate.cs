@@ -34,8 +34,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields {
 
             //try to parse date value 
             DateTime date;
-            if (!DateTime.TryParse(importValue, out date)
-                && !DateTime.TryParseExact(importValue, new string[] { "d/M/yyyy", "d/M/yyyy HH:mm:ss" }, CultureInfo.InvariantCulture, DateTimeStyles.None, out date))  {
+            if (!DateTime.TryParseExact(importValue, new string[] { "yyyy-MM-ddTHH:mm:ss", "d/M/yyyy", "d/M/yyyy HH:mm:ss" }, CultureInfo.InvariantCulture, DateTimeStyles.None, out date))  {
                 map.Logger.Log(newItem.Paths.FullPath, "Date parse error", ProcessStatus.DateParseError, ItemName(), importValue);
                 return;
             }

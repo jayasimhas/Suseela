@@ -1,8 +1,8 @@
-﻿using Glass.Mapper.Sc;
-using Informa.Library.Site;
+﻿using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Web.ViewModels.SiteDebugging;
 using Informa.Web.ViewModels.PopOuts;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
@@ -22,8 +22,10 @@ namespace Informa.Web.ViewModels
 			ISignInPopOutViewModel signInPopOutViewModel,
 			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
 			IRegisterPopOutViewModel registerPopOutViewModel,
-            IAppInsightsConfig appInsightsConfig,
-            ISiteSettings siteSettings)
+			IAppInsightsConfig appInsightsConfig,
+			ISiteSettings siteSettings,
+			IToolbarViewModel debugToolbar,
+			IIndividualRenewalMessageViewModel renewalInfo)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -34,11 +36,13 @@ namespace Informa.Web.ViewModels
 			SignInPopOutViewModel = signInPopOutViewModel;
 			EmailArticlePopOutViewModel = emailArticlePopOutViewModel;
 			RegisterPopOutViewModel = registerPopOutViewModel;
-		    AppInsightsConfig = appInsightsConfig;
-		    SiteSettings = siteSettings;
-
+			AppInsightsConfig = appInsightsConfig;
+			SiteSettings = siteSettings;
+			IndividualRenewalMessageInfo = renewalInfo;
+			DebugToolbar = debugToolbar;
 		}
 
+		public IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
 		public IMaintenanceViewModel MaintenanceMessage;
 		public ICompanyRegisterMessageViewModel CompanyRegisterMessage;
 		public ISideNavigationMenuViewModel SideNavigationMenu;
@@ -47,10 +51,11 @@ namespace Informa.Web.ViewModels
 		public ISignInPopOutViewModel SignInPopOutViewModel;
 		public IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
 		public IRegisterPopOutViewModel RegisterPopOutViewModel;
-	    public IAppInsightsConfig AppInsightsConfig;
-	    public ISiteSettings SiteSettings;
+		public IAppInsightsConfig AppInsightsConfig;
+		public ISiteSettings SiteSettings;
+		public IToolbarViewModel DebugToolbar;
 
-        public string Title
+		public string Title
 		{
 			get
 			{
@@ -67,7 +72,7 @@ namespace Informa.Web.ViewModels
 
 					pageTitle = page.Title.StripHtml();
 				}
-				
+
 				if (string.IsNullOrWhiteSpace(pageTitle) && GlassModel != null)
 				{
 					pageTitle = GlassModel._Name;
@@ -78,6 +83,19 @@ namespace Informa.Web.ViewModels
 				return string.Concat(pageTitle, publicationName);
 			}
 		}
+
+		public string SiteEnvrionment
+		{
+			get
+			{
+				return SiteSettings.GetSetting("Env.Value", string.Empty);
+			}
+		}
+
+		public string PageType { get { return Sitecore.Context.Item.TemplateName; } }
+
+		public string CountryCode { get { return "123"; } }
+
 
 		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	}

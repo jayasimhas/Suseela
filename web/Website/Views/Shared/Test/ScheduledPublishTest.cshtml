@@ -1,5 +1,6 @@
 ﻿@model ScheduledPublishTestViewModel
 <h2>Scheduled Publish Test</h2>
+<p><a href="?spTestRun=true">Process Scheduled Publishing</a> [@Model.ProcessedMessage]</p>
 <ul>
 	@foreach (var scheduledPublish in Model.ScheduledPublishes)
 	{

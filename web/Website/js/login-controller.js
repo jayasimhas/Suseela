@@ -1,24 +1,48 @@
 function loginController(requestVerificationToken) {
-	this.addControl = function(triggerElement, successCallback, failureCallback) {
-		if (triggerElement) {
-			$(triggerElement).on('click', (event) => {
+	this.addControl = function(triggerForm, successCallback, failureCallback) {
+
+		var triggerElement = $(triggerForm).find('button[type=submit]');
+
+		if (triggerForm) {
+			$(triggerForm).on('submit', (event) => {
+
+				event.preventDefault();
+
 				var inputData = {};
 				var url = $(triggerElement).data('login-url');
-				var redirectUrl = $(triggerElement).data('login-redirect-url');
+				
 
 				$(triggerElement).parents('.js-login-container').find('input').each(function() {
-					inputData[$(this).attr('name')] = $(this).val();
-				})
 
-				console.log(requestVerificationToken);
+					var value = '';
+					var field = $(this);
+
+					if (field.data('checkbox-type') === 'boolean') {
+						value = field.attr('checked') || field.attr('checked') === 'checked';
+
+						if (field.data('checkbox-boolean-type') === 'reverse') {
+							value = !value;
+						}
+					}
+					else {
+						value = field.val();
+					}
+
+					inputData[field.attr('name')] = value;
+				});
 
 				$.post(url, inputData, function (response) {
+
 					if (response.success) {
 						if (successCallback) {
 							successCallback(triggerElement);
 						}
 
-						window.location.href = redirectUrl;
+						if($(triggerElement).data('login-redirect-url')) {
+							window.location.href = $(triggerElement).data('login-redirect-url');
+						} else {
+							window.location.reload(false);
+						}
 					}
 					else {
 						if (response.redirectUrl) {
@@ -31,6 +55,8 @@ function loginController(requestVerificationToken) {
 						}
 					}
 				});
+
+				return false;
 			});
 		}
 	}

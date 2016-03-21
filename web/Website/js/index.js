@@ -2,12 +2,15 @@ import Zepto from './zepto.min';
 import svg4everybody from './svg4everybody';
 import Cookies from './jscookie';
 import PopOutController from './pop-out-controller';
+import NewsletterSignupController  from './newsletter-signup';
 import BookmarkController from './bookmark-controller';
 import SearchScript from './search-page.js';
 import LoginController from './login-controller';
 import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
+import SortableTableController from './sortable-table-controller';
+
 
 
 /* Toggle menu categories */
@@ -61,8 +64,8 @@ var toggleSignInError = function() {
 
 var renderIframeComponents = function() {
 	$('.iframe-component').each(function(index, elm) {
-		var desktopEmbed = $(elm).find('.iframe-component__desktop');
-		var mobileEmbed = $(elm).find('.iframe-component__mobile')
+		var desktopEmbed = $(elm).find('.iframe-component__desktop iframe');
+		var mobileEmbed = $(elm).find('.iframe-component__mobile iframe');
 		var mobileEmbedLink = mobileEmbed.data('embed-link');
 
 		// Check if the user is viewing inside the page editor
@@ -93,41 +96,58 @@ $(document).ready(function() {
 	// Anti Forgery Token
 	var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
 
-	var poc = new PopOutController('.js-pop-out-trigger');
+	window.indexPopOuts = function() {
+		window.controlPopOuts = new PopOutController('.js-pop-out-trigger');
 
-	poc.customize({
-		id: 'header-register',
-		tabStyles: {
-			deskHeight: 87,
-			tabletHeight: 72,
-			phoneHeight: '' // Default
-		}
-	});
+		window.controlPopOuts.customize({
+			id: 'header-register',
+			tabStyles: {
+				deskHeight: 87,
+				tabletHeight: 72,
+				phoneHeight: '' // Default
+			}
+		});
 
-	poc.customize({
-		id: 'header-signin',
-		tabStyles: {
-			deskHeight: 87,
-			tabletHeight: 72,
-			phoneHeight: '' // Default
-		}
-	});
+		window.controlPopOuts.customize({
+			id: 'header-signin',
+			tabStyles: {
+				deskHeight: 87,
+				tabletHeight: 72,
+				phoneHeight: '' // Default
+			}
+		});
+	};
+
+	window.indexPopOuts();
 
 
-	var bookmark = new BookmarkController();
+	window.bookmark = new BookmarkController();
 
-	// Toggle bookmark icon
-	$('.js-bookmark-article').on('click', function bookmarkArticle(e) {
-		// Make sure proper elm gets the click event
-		if (e.target !== this) {
-			this.click();
-			return;
-		}
+	window.indexBookmarks = function() { // Toggle bookmark icon
+		$('.js-bookmark-article').on('click', function bookmarkArticle(e) {
 
-		bookmark.toggle(e.target);
+			// Make sure proper elm gets the click event
+			if (e.target !== this) {
+				this.click();
+				return;
+			}
 
-	});
+			window.bookmark.toggle(e.target);
 
+		});
+	};
+
+	indexBookmarks();
+
+	var newsletterSignup = new NewsletterSignupController();
+	$(".newsletter-signup-after-submit").hide();
+	newsletterSignup.checkForUserSignedUp();
+	newsletterSignup.addControl('.js-newsletter-signup-submit', null,function(triggerElement) {
+		  //  toggleSignInError();
+		});
+
+
+	// TODO - Refactor this with generic form controller
 	var login = new LoginController(requestVerificationToken);
 
 	login.addControl(
@@ -138,6 +158,7 @@ $(document).ready(function() {
 		}
 	);
 
+
 	var resetPassword = new FormController();
 	resetPassword.watchForm('.form-reset-password', function() {
 		$('.form-reset-password').find('.alert-success').show();
@@ -147,16 +168,7 @@ $(document).ready(function() {
 	newResetPassToken.watchForm('.form-new-reset-pass-token', function() {
 		$('.form-new-reset-pass-token').find('.alert-success').show();
 	});
-	/*
-	resetPassword.addRequestControl(
-		'.js-reset-password-request-submit',
-		function(triggerElement) {
-			$(triggerElement).parents('.js-reset-password-request-form').hide();
-		}
-	);
-	resetPassword.addChangeControl('.js-reset-password-change-submit');
-	resetPassword.addRetryControl('.js-reset-password-retry-submit');
-*/
+
 
 	var userRegistrationController = new FormController();
 	userRegistrationController.watchForm('.form-registration');
@@ -167,21 +179,40 @@ $(document).ready(function() {
 		'.form-pre-registration',
 		function(form) {
 			var usernameInput = $(form).find('.js-register-username');
-			var nextStepUrl = $(form).data('on-success') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
-
+			var nextStepUrl = $(form).data('forwarding-url') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
+			
 			window.location.href = nextStepUrl;
 		}
 	);
 
-	var registerController = new RegisterController();
 
-	registerController.addRegisterUserControl('.js-register-user-optins-submit');
+	//var registerController = new RegisterController();
+	//registerController.addRegisterUserControl('.js-register-user-optins-submit');
+
 
 	var emailArticleController = new FormController();
 	emailArticleController.watchForm('.form-email-article');
 
+
 	var accountEmailPreferencesController = new FormController();
 	accountEmailPreferencesController.watchForm('.form-email-preferences');
+
+
+	var accountUpdatePassController = new FormController();
+	accountUpdatePassController.watchForm('.form-update-account-pass');
+
+	var accountUpdateContactController = new FormController();
+	accountUpdateContactController.watchForm('.form-update-account-contact', function(form, context, evt) {
+		$(window).scrollTop(($(evt.target).closest('form').find('.js-form-error-general').offset().top - 32));
+	});
+
+
+
+	var savedDocumentsController = new FormController();
+	savedDocumentsController.watchForm('.form-remove-saved-document', function(form, context, evt) {
+		$(evt.target).closest('tr').remove();
+	});
+
 
     svg4everybody();
 
@@ -324,6 +355,8 @@ $(document).ready(function() {
 		$('.informa-ribbon').toggleClass('show')
 
 	});
+
+	var sortTheTables = new SortableTableController();
 
 	// Twitter sharing JS
 	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");

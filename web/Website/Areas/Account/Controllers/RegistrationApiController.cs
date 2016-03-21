@@ -5,6 +5,7 @@ using Informa.Library.Utilities.WebApi.Filters;
 using Informa.Web.Areas.Account.Models.User.Registration;
 using System.Collections.Generic;
 using System.Web.Http;
+using Informa.Library.User.Authentication.Web;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -15,7 +16,7 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly IWebRegisterUser RegisterUser;
 		protected readonly IWebSetOptInsRegisterUser SetOptInsRegisterUser;
 
-		public RegistrationApiController(
+        public RegistrationApiController(
 			IFindUserByEmail findUser,
 			INewUserFactory newUserFactory,
 			IWebRegisterUser registerUser,
@@ -61,7 +62,7 @@ namespace Informa.Web.Areas.Account.Controllers
 			newUser.Username = request.Username;
 
 			var success = RegisterUser.Register(newUser);
-
+            
 			return Ok(new
 			{
 				success = success

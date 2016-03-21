@@ -29,7 +29,7 @@
 
   &__heading {
     @include textMix('Roboto Condensed', 26px, 700);
-    display: block;
+    display: inline-block;
     color: $informa-black;
     padding-top: 15px;
   }
@@ -38,7 +38,7 @@
     @include textMix('Roboto', 15px, 700);
     line-height: 25px;
     color: $informa-dark-gray;
-    padding-top: 25px;
+    padding-top: 15px;
   }
 
   &__pubdate {
@@ -77,7 +77,7 @@
 
   &__bookmark {
     @extend .article-preview__bookmarker;
-    z-index: -1; // overrides .pop-out__trigger z-index:993
+    //z-index: -1; // overrides .pop-out__trigger z-index:993
 
     .icon__bookmark {
       @extend .article-prologue__share-icon;
@@ -106,7 +106,7 @@
     @include textMix('PTSerif', 15px, 400);
     line-height: 25px;
     color: $informa-dark-gray;
-    padding-top: 20px;
+    padding-top: 10px;
   }
 
   &__tags {

@@ -32,6 +32,15 @@ namespace Informa.Library.Search.PredicateBuilders
             predicate = predicate.And(x => x.IsSearchable);
             predicate = predicate.And(x => x.IsLatestVersion);
 
+           // If the inprogress flag is available then add that as as filter, this is used in VWB
+            if (_request.QueryParameters.ContainsKey("inprogress"))
+            {
+                if (_request.QueryParameters["inprogress"] == "1")
+                {
+                    predicate = predicate.And(x => x.InProgress);
+                }
+            }
+
             //Date Searching
             //if (DateRangeStart > DateTime.MinValue)
             //{

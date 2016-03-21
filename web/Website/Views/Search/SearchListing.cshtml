@@ -3,7 +3,9 @@
 <section class="search-results" ng-class="{ 'headlines-only': headlinesOnly.showOnlyHeadlines() }" ng-controller="InformaResultsController as results">
 
     <!-- start Media Object - Default (no width) -->
-    <div class="result" ng-repeat="doc in results.docs">
+    <div class="result" ng-repeat="doc in results.docs" on-finish-render broadcasteventname="ngRepeatBroadcast1">
+
+
         <div class="result__body">
 
             <div class="result__pubdate">
@@ -13,44 +15,45 @@
             <span class="result__line-separator" ng-if="doc.contentType !== ''"></span>
 
             <div class="result__content-type">
-                 {{doc.contentType }}
+                 {{::doc.contentType}}
             </div>
 
             <span class="result__line-separator" ng-if="doc.mediaType"></span> <!-- only prints if media type isn't blank -->
 
             <div class="result__media-type" ng-if="doc.mediaType">
-                <svg><use ng-href="/dist/img/svg-sprite.svg#{{doc.mediaType}}" xlink:href=""></use></svg> <!-- example media type icon, video -->
+                <svg><use ng-href="/dist/img/svg-sprite.svg#{{::doc.mediaType}}" xlink:href=""></use></svg> <!-- example media type icon, video -->
             </div>
 
-            <div class="result__bookmark pop-out__trigger js-pop-out-trigger result__bookmark--not-bookmarked"
+            <div class="result__bookmark pop-out__trigger" ng-class="doc.isUserAuthenticated ? 'js-bookmark-article' : 'js-pop-out-trigger'"
                  data-pop-out-type="sign-in"
-                 data-pop-out-align="right">
-                <svg class="icon__bookmark icon__bookmark--outlined">
-                    <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-                </svg>
-                <svg class="icon__bookmark icon__bookmark--filled">
-                    <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+                 data-pop-out-align="right"
+                 data-bookmark-id="{{::doc.itemId}}"
+                 data-is-bookmarked="{{::doc.isArticleBookmarked}}">
+
+                <svg class="icon__bookmark">
+                    <use ng-if="doc.isArticleBookmarked" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+                    <use ng-if="!doc.isArticleBookmarked" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
                 </svg>
             </div>
 
-            <div class="result__publication">{{ doc.publicationTitle }} </div>
+            <div class="result__publication">{{ ::doc.publicationTitle }} </div>
 
-            <a class="result__heading" ng-href="{{ doc.url }}" title="Page Title">
-                {{ doc.title }}
+            <a class="result__heading" ng-href="{{ ::doc.url }}" title="Page Title">
+                {{ ::doc.title }}
             </a>
 
             <div class="result__author" ng-if="doc.byline !== ''">By {{ doc.byline }}</div>
 
-            <p class="result__description">{{ doc.summary }}</p>
+            <p class="result__description" ng-bind-html="doc.summary"></p>
 
              <div class="result__tags"  >
-                 
+
                  <span ng-repeat="tax in doc.searchDisplayTaxonomy.links"><a ng-click="filterResult(tax.url)" href="{{tax.url}}">
-                    {{tax.title}}
+                    {{::tax.title}}
                 </a>
                      <span ng-if="!$last"  class="result__line-separator"></span> <!-- only prints if there are multiple tags -->
                  </span>
-                
+
             </div>
 
         </div>

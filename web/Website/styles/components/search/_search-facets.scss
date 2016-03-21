@@ -6,6 +6,13 @@
   @include breakpoint('medium') {
     display: none;
   }
+
+  &.isExpanded {
+    @include breakpoint('medium') {
+      display: block;
+      margin-right: 0;
+    }
+  }
 }
 
 .facets {
@@ -21,8 +28,32 @@
       background-color: $informa-light-orange;
       text-align: center;
 
-      h6 {
+      &--bottom {
+        display: none;
+
+        &.isExpanded {
+          display: block;
+        }
+      }
+
+      h6.show-filters {
+        display: block;
         padding: 10px;
+      }
+
+      h6.hide-filters {
+        display: none;
+      }
+
+      &.isExpanded {
+        h6.show-filters {
+          display: none;
+        }
+
+        h6.hide-filters {
+          display: block;
+          padding: 10px;
+        }
       }
     }
   }
@@ -80,6 +111,11 @@
     &--sub {
       padding-top: 10px;
       padding-left: 30px;
+
+      // if the subfacet is collapsed, hide the subfacet list
+      &.collapsedSubfacet {
+        display: none;
+      }
 
       input[type="checkbox"] + label {
         font-size: 13px;
@@ -146,10 +182,6 @@
       margin-top: 10px;
     }
 
-    &--companies {
-      padding: 0;
-    }
-
     label {
       color: $color-medium-gray-8;
       font-size: 13px;
@@ -161,17 +193,8 @@
     }
 
     input {
-      border: 1px solid $informa-light-gray-d;
-      padding-left: 5px;
-
-      // autoprefixer doesn't seem to be catching these
-      &::-webkit-input-placeholder,
-      &:-moz-placeholder,
-      &::-moz-placeholder,
-      &:-ms-input-placeholder,
-      &::placeholder {
-        color: $color-medium-gray-8;
-      }
+      @extend .inf-standard-form-field;
+      float: left;
     }
 
     svg {
@@ -180,6 +203,27 @@
       height: 30px;
       margin-left: 10px;
       vertical-align: middle;
+    }
+
+    &--companies {
+      padding: 0;
+
+      input {
+        float: none;
+        width: 100%;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        border: 1px solid $color-light-gray;
+        border-top: 0;
+        max-height: 150px;
+        overflow: scroll;
+        padding: 0.5rem;
+        background-color: $color-white;
+        width: 100%;
+        z-index: 999;
+      }
     }
   }
 
@@ -212,7 +256,7 @@
       width: 100%;
 
       &.collapsed {
-      display: none;
+        display: none;
       }
 
       svg {
@@ -249,8 +293,41 @@
         width: 18px;
       }
     }
+
+    &--collapse-subfacet {
+      display: inline-block; 
+
+      &.collapsedSubfacet {
+        display: none;
+      }
+    }
+
+    &--expand-subfacet {
+      display: none;
+
+      &.collapsedSubfacet {
+        display: inline-block;
+      }
+    }
+
   }
 
+  &__company-typeahead-wrapper {
+    position: relative; // child with width: 100% will expand to this elm width
+    display: inline-block;
+    width: calc(100% - 30px);
+  }
+}
 
+.saved-company__delete-icon {
+  @include svg-fill($color-light-gray);
+  height: 14px;
+  width: 12px;
+  vertical-align: baseline;
+  float: right;
+  cursor: pointer;
+}
+.saved-company:hover .saved-company__delete-icon{
+  @include svg-fill($color-zeus-black);
 }
 

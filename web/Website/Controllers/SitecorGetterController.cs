@@ -16,6 +16,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models;
 using Informa.Library.Utilities.References;
+using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Glass.Models;
 using PluginModels;
 using Sitecore.Data.Items;
@@ -23,6 +24,7 @@ using Sitecore.Links;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
 using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
+
 
 namespace Informa.Web.Controllers
 {
@@ -556,7 +558,8 @@ namespace Informa.Web.Controllers
 					var media = MediaManager.GetMedia(child);
 					string ext = media.Extension.ToLower();
 
-					if (!(ext.Contains("doc") ||
+					if (!(ext.Contains("mp3") || 
+						  ext.Contains("doc") ||
 						  ext.Contains("docx") ||
 						  ext.Contains("xls") ||
 						  ext.Contains("xlsx") ||
@@ -607,7 +610,8 @@ namespace Informa.Web.Controllers
 					var media = MediaManager.GetMedia(child);
 					string ext = media.Extension.ToLower();
 
-					if (!(ext.Contains("doc") ||
+					if (!(ext.Contains("mp3") || 
+						  ext.Contains("doc") ||
 						  ext.Contains("docx") ||
 						  ext.Contains("xls") ||
 						  ext.Contains("xlsx") ||
@@ -657,10 +661,17 @@ namespace Informa.Web.Controllers
 				Extension = media.Extension,
 				Name = item.DisplayName,
 				Path = path,
-				Uploader = item.Statistics.CreatedBy,
+				Uploader = item.Statistics.UpdatedBy,
 				UploadDate = item.Statistics.Created,
 				Url = "http://" + WebUtil.GetHostName() + MediaManager.GetMediaUrl(item)
 			};
+
+			IImage imageItem = _sitecoreService.GetItem<IImage>(path);
+			if (imageItem != null)
+			{
+				mediaItem.altText = imageItem.Alt;
+			}
+
 			return Json(mediaItem);
 		}
 	}

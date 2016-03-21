@@ -654,6 +654,9 @@
     <Compile Include="App_Start\Registrations\CompanyRegistrar.cs" />
     <Compile Include="App_Start\Registrations\NlmRegistrar.cs" />
     <Compile Include="App_Start\Registrations\RegistrationRegistrar.cs" />
+    <Compile Include="App_Start\Registrations\ScheduledPublishingRegistrar.cs" />
+    <Compile Include="App_Start\Registrations\LoggingRegistrar.cs" />
+    <Compile Include="App_Start\Registrations\SiteDebuggingRegistrar.cs" />
     <Compile Include="App_Start\Registrations\UserRegistrar.cs" />
     <Compile Include="App_Start\Registrations\AuthenticationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\CustomMvcRegistrar.cs" />
@@ -665,6 +668,7 @@
     <Compile Include="App_Start\TelemetryConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
+    <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
@@ -673,6 +677,9 @@
     <Compile Include="Areas\Account\Controllers\SavedDocumentApiController.cs" />
     <Compile Include="Areas\Account\Controllers\SubscriptionPageController.cs" />
     <Compile Include="Areas\Account\Models\User\Authentication\AuthenticateRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\ContactInformationUpdateRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\ManagementValidationReasons.cs" />
+    <Compile Include="Areas\Account\Models\User\Management\PasswordUpdateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\PreferencesRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentRemoveRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentSaveRequest.cs" />
@@ -688,6 +695,8 @@
     <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\EmailPreferencesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedArticlesViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\SubscriptionsViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\ContactInformationViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
@@ -728,6 +737,7 @@
     <Compile Include="Models\PageLinksFactory.cs" />
     <Compile Include="Models\TokenHtml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sitecore\shell\client\Applications\View NLM\model\ViewNlmViewModel.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
     <Compile Include="velir\services\TypeAhead.asmx.cs">
@@ -751,12 +761,20 @@
     <Compile Include="ViewModels\AdvertisementViewModel.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IToolbarViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IUserIpAddressViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\ToolbarViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\UserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\EntitledViewModel.cs" />
     <Compile Include="ViewModels\IArticleComponentFactory.cs" />
+    <Compile Include="ViewModels\ICallToActionViewModel.cs" />
     <Compile Include="ViewModels\ICompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\IIndividualRenewalMessageViewModel.cs" />
+    <Compile Include="ViewModels\IndividualRenewalMessageViewModel.cs" />
     <Compile Include="ViewModels\ISearchModel.cs" />
     <Compile Include="ViewModels\NewsletterSignUpModel.cs" />
     <Compile Include="ViewModels\RobotsTextViewModel.cs" />
+    <Compile Include="ViewModels\CallToActionViewModel.cs" />
     <Compile Include="ViewModels\SitemapViewModel.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="ViewModels\SubnavigationViewModel.cs" />
@@ -918,7 +936,9 @@
     <Content Include="App_Config\ConnectionStrings.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\ConnectionStrings.config.template" />
+    <Content Include="App_Config\ConnectionStrings.config.template">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\ConnectionStringsOracle.config" />
     <Content Include="App_Config\FieldTypes.config" />
     <Content Include="App_Config\Icons.config" />
@@ -972,6 +992,12 @@
     <Content Include="Scripts\search\InformaFacetsController.js" />
     <Content Include="Scripts\vendor.js" />
     <Content Include="sitecore\login\login.js" />
+    <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
+    <Content Include="sitecore\shell\client\Applications\View NLM\css\ViewNlm.css" />
+    <Content Include="sitecore\shell\client\Applications\View NLM\scripts\ViewNlm.js" />
+    <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.js" />
+    <Content Include="sitecore\shell\client\Applications\Nlm Export\css\ExportNlm.css" />
+    <Content Include="sitecore\shell\client\Applications\Nlm Export\scripts\ExportNlm.js" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
     <Content Include="tasks\copy.js" />
@@ -1114,6 +1140,10 @@
     <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
     <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template" />
     <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
+    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="App_Config\Include\UserDefined\ScheduledPublishing.MongoDB.config.disabled" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
@@ -1125,6 +1155,10 @@
     <Content Include="Areas\Account\Views\Management\EmailPreferences.cshtml" />
     <Content Include="Areas\Account\Views\Management\AccountNavigation.cshtml" />
     <Content Include="Areas\Account\Views\Registration\RegisterUserOptIns.cshtml" />
+    <Content Include="Areas\Account\Views\Management\OneClickSubscribe.cshtml" />
+    <Content Include="Areas\Account\Views\Management\OneClickUnsubscribe.cshtml" />
+    <Content Include="App_Config\Web\system.webServer.rewrite.config" />
+    <None Include="App_Config\Web\system.webServer.rewrite.config.template" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1195,6 +1229,12 @@
     <Content Include="Views\Shared\Global\Sitemap.cshtml" />
     <Content Include="Views\Shared\Components\Advertisement.cshtml" />
     <Content Include="Views\Shared\Company\_RegisterMessage.cshtml" />
+    <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.cshtml" />
+    <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.cshtml" />
+    <Content Include="Views\Article\UserCallToAction.cshtml" />
+    <Content Include="Views\Shared\_IndividualSubscriptionRenewalMessage.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\Toolbar.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\UserIpAddress.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

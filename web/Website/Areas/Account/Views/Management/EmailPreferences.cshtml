@@ -1,4 +1,4 @@
-﻿@model Informa.Web.Areas.Account.ViewModels.Management.EmailPreferencesViewModel
+@model Informa.Web.Areas.Account.ViewModels.Management.EmailPreferencesViewModel
 
 @if (Model.IsAuthenticated)
 {
@@ -6,9 +6,11 @@
 
         <h1 class="page-account__header">@Model.Title</h1>
         <div class="page-preferences js-preferences-user-container">
-            <div style="display: none;" class="js-preferences-user-error-container">
-                <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-general">@Model.GeneralErrorText</p>
-            </div>
+            
+            <p class="page-account__error js-form-error js-form-error-general">
+                @Model.GeneralErrorText
+            </p>
+            
             <form   class="form-email-preferences"
                     data-on-submit="/Account/api/PreferencesApi/Update/">
 
@@ -17,7 +19,7 @@
                             id="NewsletterOptIn"
                             type="checkbox"
                             data-checkbox-type="boolean"
-                            @(@Model.ReceivesNewsletterEmails ? "checked='checked'" : "")>
+                            @(@Model.ReceivesNewsletterEmails ? "checked" : "")>
                     <label for="NewsletterOptIn" class="checkbox-label">@Model.NewsletterLabel</label>
                 </div>
 
@@ -26,16 +28,23 @@
                             id="DoNotSendOffersOptIn"
                             type="checkbox"
                             data-checkbox-type="boolean"
-                            @(@Model.DoNotSendOfferEmails ? "checked='checked'" : "")>
+                            @(@Model.DoNotSendOfferEmails ? "checked" : "")>
                     <label for="DoNotSendOffersOptIn" class="checkbox-label">@Model.EmailsLabel</label>
                 </div>
 
-                <div class="page-preferences__submit-wrapper">
-                    <button type="submit" class="button--filled button--fly-right" >@Model.SubmitText</button>
+                <div class="page-account__submit-wrapper">
+                    <button type="submit" class="button--filled button--fly-right">@Model.SubmitText</button>
                 </div>
 
-                <p style="display: none;" class="js-preferences-user-success">@Model.PreferencesSavedMessage</p>
+                <div class="alert-success js-form-success">
+                    <svg class="alert__icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+                    </svg>
+                    <p>@Model.PreferencesSavedMessage</p>
+                </div>
+
             </form>
+
         </div>
     </div>
 }

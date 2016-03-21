@@ -18,6 +18,8 @@ using Sitecore.Web;
 using Informa.Library.Article.Search;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
+using Informa.Library.Site;
+using Informa.Library.Utilities;
 using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
 using PluginModels;
 using Sitecore;
@@ -118,17 +120,18 @@ namespace Informa.Web.Controllers
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
 		private readonly IArticleSearch _articleSearcher;
+
 		//protected readonly IWorkFlowUtil WorkflowUtil;
 		/// <summary>
 		/// Constructor
 		/// </summary
 		/// <param name="searcher"></param>
 		/// <param name="sitecoreFactory"></param>
+		/// <param name="siteRootContext"></param>
 		public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
 		{
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			_articleSearcher = searcher;
-			
 		}
 
 		/// <summary>
@@ -183,10 +186,14 @@ namespace Informa.Web.Controllers
 
 		public ArticlePreviewInfo GetPreviewInfo(ArticleItem article)
 		{
+			var item = _sitecoreMasterService.GetItem<Item>(article._Id);
+			var publicationItem = ArticleExtension.GetAncestorItemBasedOnTemplateID(item);
+			Guid publicationGuid = publicationItem.ID.Guid;
+
 			return new ArticlePreviewInfo
 			{
-				Title = article.Title,
-				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,
+				Title = HttpUtility.HtmlDecode(article.Title),
+				Publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid)._Name,
 				Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
 				ArticleNumber = article.Article_Number,
 				Date = article.Actual_Publish_Date,
@@ -222,7 +229,7 @@ namespace Informa.Web.Controllers
 			if (article.Locking.IsLocked())
 			{
 				throw new ApplicationException("Trying to lock an already locked article!");
-			}						
+			}
 			if (string.IsNullOrEmpty(Sitecore.Context.User.DisplayName))
 			{
 				return false;
@@ -259,7 +266,7 @@ namespace Informa.Web.Controllers
 			if (!loggedIn)
 			{
 				return false;
-			}                          
+			}
 			using (new EditContext(article))
 			{
 				article.Locking.Unlock();
@@ -394,12 +401,16 @@ namespace Informa.Web.Controllers
 		public ArticleStruct GetArticleStruct(ArticleItem articleItem)
 		{
 			var article = _sitecoreMasterService.GetItem<ArticleItem>(articleItem._Id);
+			var item = _sitecoreMasterService.GetItem<Item>(article._Id);
+			var publicationItem = ArticleExtension.GetAncestorItemBasedOnTemplateID(item);
+			Guid publicationGuid = publicationItem.ID.Guid;
+
 			var articleStruct = new ArticleStruct
 			{
 				ArticleGuid = articleItem._Id,
 				Title = articleItem.Title,
 				ArticleNumber = articleItem.Article_Number,
-				Publication = article.Publication
+				Publication = publicationGuid
 			};
 
 			if (articleItem.Content_Type != null)
@@ -419,7 +430,7 @@ namespace Informa.Web.Controllers
 			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
 
 			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
-			
+
 			articleStruct.ArticleWorkflowState = GetWorkFlowState(articleItem._Id);
 
 
@@ -452,7 +463,7 @@ namespace Informa.Web.Controllers
 				var webItem = service.GetItem<Item>(articleItem._Id);
 				articleStruct.IsPublished = webItem != null;
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				articleStruct.IsPublished = false;
 			}
@@ -581,6 +592,5 @@ namespace Informa.Web.Controllers
 				return state;
 			}
 		}
-
 	}
 }

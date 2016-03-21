@@ -145,7 +145,15 @@ tools/vagrant/scripts/customize.ps1
 copysauce.bat
 
 # Sitecore
-web/Website/sitecore
+web/Website/sitecore/*
+web/Website/sitecore/shell/*
+web/Website/sitecore/shell/client/*
+web/Website/sitecore/shell/client/Applications/*
+!web/Website/sitecore/shell/
+!web/Website/sitecore/shell/client
+!web/Website/sitecore/shell/client/Applications
+!web/Website/sitecore/shell/client/Applications/Nlm Export/
+!web/Website/sitecore/shell/client/Applications/View NLM/
 
 web/Data/indexes/*
 web/Data/packages/*
@@ -208,3 +216,4 @@ web/Website/ApplicationInsights.config
 web/Website/App_Config/Include/UserDefined/AppInsights.config
 web/Website/App_Config/Include/UserDefined/AppInsights.config
 web/Website/ApplicationInsights.config
+web/Website/App_Config/Web/system.webServer.rewrite.config

@@ -2,8 +2,10 @@
     'use strict';
 
     var informaSearchApp = angular.module('informaSearchApp', [
-        'velir.search'
-    ])
+        'velir.search',
+        'ui.bootstrap',
+        'ngSanitize',
+        'ngAnimate'])
         .constant('apiEndpoints', {
             API_BASE: '/api',
             SEARCH_ENDPOINT: '/search'
@@ -24,13 +26,50 @@
         var headlines = false;
 
         return {
-            showOnlyHeadlines: function () { return headlines; }
-            ,
+            showOnlyHeadlines: function () { return headlines; },
             updateValue: function () {
-                
                 headlines = !headlines;
             }
-        }
+        };
     });
+  
+  // factory to handle call to companies service
+  // note: a factory lives through the entire application lifecycle
+  informaSearchApp.factory('getCompaniesService', ['$http', function($http) {
+    var fetchCompanies = function() {
+      return $http({
+          method: 'GET',
+          url: '/velir/services/TypeAhead.asmx/TypeAheadCompaniesFromSearch'
+      });
+    }
+    return {fetchCompanies : fetchCompanies};
+  }]);
 
+
+  // set up controller and pass data source
+  // note: a controller is usually destroyed & recreated when the route changes
+  informaSearchApp.controller("InformaTypeaheadController", 
+    function($scope, getCompaniesService) {
+
+        getCompaniesService.fetchCompanies()
+            .then(function(response) {
+
+                var companies = [];
+                companies = $.map(response.data, function(value, index) {
+
+                    return value.CompanyName;
+
+                });
+
+                $scope.companies = companies;
+            })
+            .catch(function(reason) {
+
+                console.log("error");
+                console.log(reason);
+
+            });
+        });
+
+        
 })(); 

@@ -14,6 +14,8 @@ namespace Informa.Web.App_Start.Registrations
 	{
 		public static void RegisterDependencies(ContainerBuilder builder)
 		{
+			builder.RegisterType<UserSession>().As<IUserSession>();
+
 			builder.RegisterType<SalesforceFindUserByEmail>().As<IFindUserByEmail>();
 			builder.RegisterType<SalesforceUpdateUserPassword>().As<IUpdateUserPassword>();
 
@@ -41,6 +43,10 @@ namespace Informa.Web.App_Start.Registrations
 		    builder.RegisterType<SalesforceGetIPEntitlements>().As<IGetIPEntitlements>();
 
 		    builder.RegisterType<SalesforceManageSavedDocuments>().As<IManageSavedDocuments>();
-		}
+            builder.RegisterType<SalesforceManageSubscriptions>().As<IManageSubscriptions>();
+            builder.RegisterType<SalesforceManageAccountInfo>().As<IManageAccountInfo>();
+            builder.RegisterType<SalesforceUserProfile>().As<ISalesforceUserProfile>();
+            builder.RegisterType<SalesforceFindUserProfile>().As<ISalesforceFindUserProfile>();
+        }
 	}
 }

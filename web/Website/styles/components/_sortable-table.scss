@@ -1,0 +1,42 @@
+.sortable-table {
+	@include textMix('Roboto', 1rem, 400);
+	border: 1px solid $color-light-gray;
+	color: $color-abbey-gray;
+	width: 100%;
+
+	td {
+		padding: 1rem 1.25rem;
+	}
+
+	tbody tr {
+		border-bottom: 1px solid $color-light-gray;
+	}
+	&__header {
+		background-color: $color-concrete-gray;
+		color: $color-zeus-black;
+		cursor: pointer;
+		font-size: 1.125rem;
+		font-weight: 600;
+	}
+
+	&__sort-arrows {
+		display: inline-block;
+		height: 17px;
+		width: 14px;
+
+		svg {
+			@include svg-fill($color-dusty-gray);
+			display: block;
+			height: 10px;
+			width: 14px;
+		}
+	}
+
+	.sorttable_sorted &__sort-arrows svg.sortable-table__sort-arrows--down {
+		@include svg-fill($color-cardinal-red);
+	}
+
+	.sorttable_sorted_reverse &__sort-arrows svg.sortable-table__sort-arrows--up {
+		@include svg-fill($color-cardinal-red);
+	}
+}

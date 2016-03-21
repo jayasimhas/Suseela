@@ -8,13 +8,16 @@ using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
+using Informa.Library.User.Authentication;
 using Informa.Library.User.Entitlement;
+using Informa.Library.User.Profile;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Velir.Search.Core.CustomGlass.Models;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
+using Informa.Web.ViewModels.PopOuts;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 using Sitecore.Web;
@@ -29,6 +32,9 @@ namespace Informa.Web.ViewModels
         protected readonly IArticleSearch Searcher;
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IArticleComponentFactory ArticleComponentFactory;
+        protected readonly IManageSavedDocuments ManageSavedDocuments;
+        protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        public readonly ICallToActionViewModel CallToActionViewModel;
 
         public GlassArticleModel(
             ISiteRootContext siterootContext,
@@ -37,7 +43,10 @@ namespace Informa.Web.ViewModels
             IArticleSearch searcher,
             ISitecoreContext context,
             IArticleComponentFactory articleComponentFactory,
-            IEntitledProductContext entitledProductContext) : base(entitledProductContext)
+            IEntitledProductContext entitledProductContext,
+            IManageSavedDocuments manageSavedDocuments,
+            IAuthenticatedUserContext authenticatedUserContext,
+            ICallToActionViewModel callToActionViewModel) : base(entitledProductContext)
         {
             SiterootContext = siterootContext;
             ArticleListableFactory = articleListableFactory;
@@ -45,6 +54,9 @@ namespace Informa.Web.ViewModels
             Searcher = searcher;
             SitecoreContext = context;
             ArticleComponentFactory = articleComponentFactory;
+            ManageSavedDocuments = manageSavedDocuments;
+            AuthenticatedUserContext = authenticatedUserContext;
+            CallToActionViewModel = callToActionViewModel;
         }
 
         public IEnumerable<ILinkable> TaxonomyItems
@@ -100,8 +112,9 @@ namespace Informa.Web.ViewModels
 
         public IEnumerable<IGlassBase> KeyDocuments => GlassModel.Supporting_Documents;
         public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
+		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
 
-        public string GetTitle(IGlassBase g)
+		public string GetTitle(IGlassBase g)
         {
             IFile f = SitecoreContext.GetItem<IFile>(g._Id);
             return (f != null && !string.IsNullOrEmpty(f.Title))
@@ -114,9 +127,9 @@ namespace Informa.Web.ViewModels
             IFile f = SitecoreContext.GetItem<IFile>(g._Id);
             if (f == null || string.IsNullOrEmpty(f.Extension) || f.Extension.Equals("pdf"))
                 return "pdf";
-            if (f.Extension.Equals(".doc") || f.Extension.Equals(".docx"))
+            if (f.Extension.Equals("doc") || f.Extension.Equals("docx"))
                 return "doc";
-            if (f.Extension.Equals(".xls") || f.Extension.Equals(".xlsx"))
+            if (f.Extension.Equals("xls") || f.Extension.Equals("xlsx"))
                 return "xls";
             return "pdf";
         }
@@ -174,5 +187,10 @@ namespace Informa.Web.ViewModels
         }
 
         #endregion                              
+
+        public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
+        public bool IsArticleBookmarked => ManageSavedDocuments.IsBookmarked(AuthenticatedUserContext.User, GlassModel._Id);
+        public string BookmarkText => TextTranslator.Translate("Bookmark");
+        public string BookmarkedText => TextTranslator.Translate("Bookmarked");
     }
 }

@@ -16,7 +16,7 @@ function formController(requestVerificationToken) {
 
 			var inputData = {};
 
-			$(form).find('input').each(function() {
+			$(form).find('input, select, textarea').each(function() {
 
                 var value = '';
                 var field = $(this);
@@ -50,7 +50,7 @@ function formController(requestVerificationToken) {
                         this.showSuccessMessage(form);
 
 						if (successCallback) {
-							successCallback(form);
+							successCallback(form, this, event);
 						}
 
                         if($(form).data('on-success')) {
@@ -91,15 +91,17 @@ function formController(requestVerificationToken) {
 
 	this.showSuccessMessage = function(form) {
 		$(form).find('.js-form-success').show();
-	}
+	};
 
 	this.showError = function(form, error) {
-		$(form).find(error).show();
-	}
+		if($(form).find(error)) {
+			$(form).find(error).show();
+		}
+	};
 
 	this.hideErrors = function(form) {
 		$(form).find('.js-form-error').hide();
-	}
-};
+	};
+}
 
 export default formController;

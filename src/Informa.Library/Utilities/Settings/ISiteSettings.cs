@@ -5,5 +5,7 @@ namespace Informa.Library.Utilities.Settings
 	    string GetSetting(string key, string defaultValue);
 		
 		string NlmExportPath { get; }
+
+        string MailFromAddress { get; }
 	}
 }

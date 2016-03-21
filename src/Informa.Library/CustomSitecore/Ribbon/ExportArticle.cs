@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Specialized;
-using System.IO;
 using System.Threading;
 using Autofac;
 using Glass.Mapper.Sc;
 using Informa.Library.Services.NlmExport;
-using Informa.Library.Services.NlmExport.Validation;
-using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Util;
+using log4net;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
@@ -22,6 +22,12 @@ namespace Informa.Library.CustomSitecore.Ribbon
     [Serializable]
     public class ExportArticle : Command
     {
+        private const string ExportDialogPath = "/sitecore/client/Your Apps/NLM Export/Dialogs/Export Article";
+        private const string Ecorrected = "ecorrected";
+        private const string Eretracted = "eretracted";
+
+        private static readonly ILog Logger = LogManager.GetLogger(typeof (ExportArticle));
+
         protected void Run(ClientPipelineArgs args)
         {
             Item[] items = DeserializeItems(args.Parameters["items"]);
@@ -29,50 +35,86 @@ namespace Informa.Library.CustomSitecore.Ribbon
 
             if (!args.IsPostBack)
             {
-                SheerResponse.Confirm("You are about to export this article as NLM. Do you want to proceed?");
+                SheerResponse.ShowModalDialog(new ModalDialogOptions(ExportDialogPath)
+                {
+                    Response = true
+                });
                 args.WaitForPostBack();
             }
-            else if (args.Result == "yes")
+            else if (args.Result != null)
             {
-                //bool forDelete = false;
+                var dialogResult = JsonConvert.DeserializeObject<ExportDialogResult>(args.Result, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver()});
+                if (dialogResult == null)
+                {
+                    return;
+                }
+
+                var forDelete = dialogResult.Delete;
+                var pubType = PublicationType.Epub;
+
+                switch (dialogResult.Pubtype)
+                {
+                    case Ecorrected:
+                        pubType = PublicationType.Ecorrected;
+                        break;
+                    case Eretracted:
+                        pubType = PublicationType.Eretracted;
+                        break;
+                }
 
                 try
                 {
                     using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
                     {
                         var exportService = scope.Resolve<INlmExportService>();
-                        var validationService = scope.Resolve<INlmValidationService>();
                         var serviceFactory = scope.Resolve<Func<string, ISitecoreService>>();
                         var service = serviceFactory(InformaConstants.MasterDb);
-                        var settings = scope.Resolve<ISiteSettings>();
 
-                        // Generate NLM XML
-                        var stream = exportService.ExportNlm(service.GetItem<ArticleItem>(publicationNodeItem.ID.Guid));
+                        var articleItem = service.GetItem<ArticleItem>(publicationNodeItem.ID.Guid);
 
-                        // Validate NLM
-                        if (!validationService.ValidateXml(stream))
+                        if (forDelete)
                         {
-                            throw new Exception("NLM was not valid");
+                            DeleteNlm(exportService, articleItem);
                         }
-
-                        // Write to disk (TODO: Put into its own service)
-                        var exportFolder = Path.GetFullPath(settings.NlmExportPath);
-                        Directory.CreateDirectory(exportFolder);
-                        var fileName = $"{publicationNodeItem[IArticleConstants.Article_NumberFieldName]}.xml";
-                        using (var file = File.Open(Path.Combine(exportFolder, fileName), FileMode.Create))
+                        else
                         {
-                            stream.Seek(0, SeekOrigin.Begin);
-                            stream.CopyTo(file);
+                            ExportNlm(exportService, articleItem, pubType);
                         }
-
-                        SheerResponse.Alert("The article passed NLM validation and exported successfully.");
                     }
                 }
                 catch (Exception ex) when (!(ex is ThreadAbortException))
                 {
-                    SheerResponse.Alert("The article did not pass NLM validation and has not been exported. Please check fields and try again.");
+                    Logger.Error("Could not export article.", ex);
+                    SheerResponse.Alert("There was an error during the export process. Please try again.");
                 }
             }
+        }
+
+        private static void DeleteNlm(INlmExportService exportService, ArticleItem articleItem)
+        {
+            if (!exportService.DeleteNlm(articleItem))
+            {
+                // NLM Delete failed
+                SheerResponse.Alert("The deletion XML file could not be generated.");
+                return;
+            }
+
+            SheerResponse.Alert("The article has been successfully exported for deletion.");
+        }
+
+        private static void ExportNlm(INlmExportService exportService, ArticleItem articleItem, PublicationType pubType)
+        {
+            // Generate NLM XML, and retrieve the validation result
+            var result = exportService.ExportNlm(articleItem, ExportType.Manual, pubType);
+            if (!result.ExportSuccessful)
+            {
+                // NLM Export failed
+                SheerResponse.Alert(
+                    "The article did not pass NLM validation and has not been exported. Please check the fields and try again.");
+                return;
+            }
+
+            SheerResponse.Alert("The article passed NLM validation and exported successfully.");
         }
 
 
@@ -95,6 +137,12 @@ namespace Informa.Library.CustomSitecore.Ribbon
             return item?.TemplateID == IArticleConstants.TemplateId
                 ? CommandState.Enabled
                 : CommandState.Hidden;
+        }
+
+        public class ExportDialogResult
+        {
+            public bool Delete { get; set; }
+            public string Pubtype { get; set; }
         }
     }
 }

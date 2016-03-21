@@ -13,18 +13,15 @@ namespace Informa.Library.User.Authentication.Web
 	{
 		protected IAuthenticateUser AuthenticateUser;
 		protected readonly ISitecoreVirtualUsernameFactory VirtualUsernameFactory;
-	    protected readonly IGetUserEntitlements GetUserEntitlements;
 		protected readonly IWebLoginUserActions LoginActions;
 
 		public WebLoginUser(
 			IAuthenticateUser authenticateUser,
 			ISitecoreVirtualUsernameFactory virtualUsernameFactory,
-            IGetUserEntitlements getUserEntitlements,
 			IWebLoginUserActions loginActions)
 		{
 			AuthenticateUser = authenticateUser;
 			VirtualUsernameFactory = virtualUsernameFactory;
-		    GetUserEntitlements = getUserEntitlements;
 			LoginActions = loginActions;
 		}
 
@@ -38,18 +35,14 @@ namespace Informa.Library.User.Authentication.Web
 			if (success)
 			{
 				var sitecoreUsername = VirtualUsernameFactory.Create(authenticatedUser);
-				var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, persist);
+				var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, true);
 
 				sitecoreVirtualUser.Profile.Email = authenticatedUser.Email;
 				sitecoreVirtualUser.Profile.Name = authenticatedUser.Name;
-
-
-			    var entitlements = GetUserEntitlements.GetEntitlements(username, GetIPAddress()) ?? new List<IEntitlement>();                                           
-			    sitecoreVirtualUser.Profile.SetCustomProperty(nameof(Entitlement.Entitlement), string.Join(",", entitlements.Select(x => x.ProductCode)));
-
+			   
                 sitecoreVirtualUser.Profile.Save();
 
-				success = AuthenticationManager.LoginVirtualUser(sitecoreVirtualUser);
+				success = AuthenticationManager.Login(sitecoreVirtualUser.Name, persist);
 
 				if (success)
 				{

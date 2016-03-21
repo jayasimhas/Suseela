@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -7,6 +8,7 @@ using Informa.Library.Site;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.Article.Search;
 using Informa.Library.Utilities.Extensions;
+using Informa.Library.Utilities.TokenMatcher;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
@@ -42,8 +44,8 @@ namespace Informa.Web.ViewModels
 				ListableAuthors = article.Authors?.Select(x => new LinkableModel { LinkableText = x.First_Name + " " + x.Last_Name }),
 				ListableDate = article.Actual_Publish_Date,
 				ListableImage = image,
-				ListableSummary = article.Summary,
-				ListableTitle = article.Title,
+				ListableSummary = DCDTokenMatchers.ProcessDCDTokens(article.Summary),
+				ListableTitle = HttpUtility.HtmlDecode(article.Title),
 				ListableByline = publication,
 				ListableTopics = article.Taxonomies?.Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = $"/Search?tag={x._Id}" }),
 				ListableType = article.Media_Type?.Item_Name == "Data" ? "chart" : article.Media_Type?.Item_Name?.ToLower() ?? "",

@@ -1,3 +1,85 @@
-﻿@model Informa.Web.Areas.Account.ViewModels.Subscription.SubscriptionModel
+﻿@model Informa.Web.Areas.Account.ViewModels.Management.SubscriptionsViewModel
 
-<p> @Model.BodyText</p>
+@if (Model.IsAuthenticated)
+{
+    <div class="page-account">
+        <h1 class="page-account__header">@Model.Title</h1>
+        <div class="page-preferences js-preferences-user-container">
+            <table class="sortable sortable-table">
+                <thead class="sortable-table__header">
+                    <tr>
+                        <td>
+                            @Model.PublicationText
+                            <div class="sortable-table__sort-arrows">
+                                <svg class="sortable-table__sort-arrows--up">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                </svg>
+                                <svg class="sortable-table__sort-arrows--down">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                </svg>
+                            </div>
+                        </td>
+                        <td>
+                            @Model.SubscriptionTypeText
+                            <div class="sortable-table__sort-arrows">
+                                <svg class="sortable-table__sort-arrows--up">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                </svg>
+                                <svg class="sortable-table__sort-arrows--down">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                </svg>
+                            </div>
+                        </td>
+                        <td>
+                            @Model.ExpirationDateText
+                            <div class="sortable-table__sort-arrows">
+                                <svg class="sortable-table__sort-arrows--up">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                </svg>
+                                <svg class="sortable-table__sort-arrows--down">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                </svg>
+                            </div>
+                        </td>
+                        <td>
+                            @Model.ActionText
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.Subscriptions)
+                {
+                    <tr>
+                        <td>
+                            @item.Publication
+                        </td>
+                        <td>
+                            @item.SubscriptionType
+                        </td>
+                        <td>
+                            @item.ExpirationDate.ToString("d MMMM yyyy")
+                        </td>
+                        <td>
+                            @if (Model.ShowRenewButton(item.ProductCode)) {
+                                <a href="@Model.OffSiteRenewLink">
+                                    Renew
+                                </a>
+                            }
+
+                            @if (Model.ShowSubscribeButton(item.ProductCode, item.ExpirationDate)) {
+                                <a href="@Model.OffSiteSubscriptionLink">
+                                    Subscribe
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+else
+{
+    Html.RenderPartial("_SignInForm", Model.SignInViewModel);
+}

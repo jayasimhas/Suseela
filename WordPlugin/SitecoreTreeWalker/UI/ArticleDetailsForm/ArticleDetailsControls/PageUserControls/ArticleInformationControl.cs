@@ -640,7 +640,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 			}
 			else
 			{
-				const string easternZoneId = "Eastern Standard Time";
+			  string easternZoneId = RemoteTimezoneId;
 
 				TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById(easternZoneId);
 

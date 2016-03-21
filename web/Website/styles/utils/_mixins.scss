@@ -91,3 +91,42 @@
         #{$prefix}#{$property}: $value;
     }
 }
+
+/// Simple grid / column mixin
+@mixin columnize($count, $margin: false, $separator: false) {
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  position: relative;
+  width: calc(100% / #{$count});
+
+  @if $margin {
+      width: calc(#{100 / $count}% - #{$margin / #{$count - 1}}rem);
+  }
+
+  @if $separator {
+      border-left: $separator;
+      @if $margin {
+          margin-left: $margin;
+          padding: 0 #{$margin / 2}rem;
+      }
+
+      &:nth-child(#{$count}n-#{$count - 1}) {
+          border-left: 0;
+          margin-left: 0;
+          padding-left: 0;
+      }
+      &:nth-child(#{$count}n) {
+          padding-right: 0;
+      }
+  }
+
+  @include breakpoint('small') {
+      width: 100%;
+      border: 0;
+      padding: 0;
+      @if $margin {
+          margin: 0 #{$margin / 2};
+      }
+  }
+}

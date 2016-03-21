@@ -6,6 +6,7 @@ using System.Xml;
 using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.Article.Search;
+using Informa.Library.Utilities;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -94,7 +95,8 @@ namespace Informa.Web.Controllers
 		private ArticleItem SaveArticleDetails(ArticleItem article, ArticleStruct articleStruct, bool saveDocumentSpecificData, bool addVersion, bool shouldNotify = true)
 		{
 			var articleItem = _sitecoreMasterService.GetItem<Item>(article._Id);
-
+			var publication = ArticleExtension.GetAncestorItemBasedOnTemplateID(articleItem);
+			articleStruct.Publication = publication.ID.Guid;
 			//IIPP-243 - Moving the location of the article if needed
 			if (!article.IsPublished && article.Planned_Publish_Date != articleStruct.WebPublicationDate)
 			{
@@ -257,7 +259,7 @@ namespace Informa.Web.Controllers
 				{
 					newArticle.Planned_Publish_Date = new DateTime();
 				}
-
+				newArticle.Actual_Publish_Date = DateTime.Now;
 				newArticle.Embargoed = articleStruct.Embargoed;
 				newArticle.Media_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.MediaType);
 				newArticle.Authors = articleStruct.Authors.Select(x => _sitecoreMasterService.GetItem<IAuthor>(x.ID));
@@ -320,18 +322,21 @@ namespace Informa.Web.Controllers
 
 		protected void MoveArticleIfNecessary(ArticleItem article, ArticleStruct articleStruct)
 		{
-			var articleItem = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
+			var item = _sitecoreMasterService.GetItem<Item>(article._Id);
 			using (new SecurityDisabler())
 			{
-				var publication = articleItem.Publication;
-				var newParent = _articleUtil.GenerateDailyFolder(publication, articleStruct.WebPublicationDate);
-				if (newParent != null)
+				var publicationItem = ArticleExtension.GetAncestorItemBasedOnTemplateID(item);
+				if (publicationItem != null)
 				{
-					_sitecoreMasterService.Move(article, newParent);
+					var publication = publicationItem.ID.Guid;
+					var newParent = _articleUtil.GenerateDailyFolder(publication, articleStruct.WebPublicationDate);
+					if (newParent != null)
+					{
+						_sitecoreMasterService.Move(article, newParent);
+					}
+					//TODO - Verify if this feautre needs to be there or not.
+					//_wordDocToMediaLibrary.MoveWordDocIfNecessary(article, articleStruct, oldIssueID);	
 				}
-				//TODO - Verify if this feautre needs to be there or not.
-				//_wordDocToMediaLibrary.MoveWordDocIfNecessary(article, articleStruct, oldIssueID);	
-
 			}
 		}
 
