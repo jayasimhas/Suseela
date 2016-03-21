@@ -161,7 +161,7 @@ But you can also use "patch:attribute" for clarity:
       <setting name="RequireLockBeforeEditing" value="true"/>
 
       <!-- Velir Settings -->
-
+      <setting  name="Env.Value" value="${Env.Value}" />
       <!-- Production Host -->
       <setting  name="Env.IsProduction" value="false" />
 

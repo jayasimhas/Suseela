@@ -10,7 +10,7 @@ namespace Informa.Library.ComponentModel.DataAnnotations
 		{
 			var password = Convert.ToString(value);
 
-			var valid = password.Length >= 8 &&
+			var valid = password.Length >= 7 &&
 						password.Length <= 40 &&
 						password.Any(c => !char.IsLetterOrDigit(c)) &&
 						password.Any(c => char.IsNumber(c));

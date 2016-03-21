@@ -7,6 +7,8 @@ namespace Informa.Library.Salesforce
 {
 	public class SalesforceServiceContext : ISalesforceServiceContext
 	{
+		private const string InvalidSessionIdErrorKey = "INVALID_SESSION_ID";
+
 		protected readonly ISalesforceService Service;
 		protected readonly ISalesforceSessionContext SessionContext;
 
@@ -38,18 +40,32 @@ namespace Informa.Library.Salesforce
 				RefreshSession();
 			}
 
-			var function = functionExpression.Compile();
-			var result = function(Service);
+			var result = default(TResult);
+			var invalidSession = false;
 
-			// TODO-Sforce: Re-factor to abstract away
-			if (result.errors != null && result.errors.Any(e => e != null && string.Equals(e.statusCode, "INVALID_SESSION_ID", StringComparison.InvariantCultureIgnoreCase)))
+			try
+			{
+				var function = functionExpression.Compile();
+
+				result = function(Service);
+
+				invalidSession = result.errors != null && result.errors.Any(e => e != null && string.Equals(e.statusCode, InvalidSessionIdErrorKey, StringComparison.InvariantCultureIgnoreCase));
+			}
+			catch (Exception ex)
+			{
+				if (ex.Message.Contains(InvalidSessionIdErrorKey))
+				{
+					invalidSession = true;
+					SessionContext.Refresh();
+				}
+			}
+
+			if (invalidSession)
 			{
 				RefreshSession();
 
 				return Execute(functionExpression);
 			}
-
-			// TODO-Sforce: Check for critical errors and log
 
 			return result;
 		}
