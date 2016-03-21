@@ -104,7 +104,26 @@ namespace Informa.Web.ViewModels
             get
             {
                 if (_latestSalesForceRecord == null)
-                    return "null record";
+                {
+                    string result = "null record||";
+                    try
+                    {
+                        if (_userContext.IsAuthenticated)
+                        {
+                            //Get SubscruiptionsAndPurchases records for the specifed usern
+                            EBI_QuerySubscriptionsAndPurchasesResponse response = _service.Execute(x => x.querySubscriptionsAndPurchases(_userContext.User.Username));
+
+                            //Get the latest record
+                            _latestSalesForceRecord = response.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        result += ex.ToString();
+                    }
+
+                    return result + "||" + _userContext.IsAuthenticated;
+                }
 
                 if (_latestSalesForceRecord.productCode.ToLower() != _siteRootContext.Item.Product_Code.ToLower())
                     return string.Format("_latestSalesForceRecord.productCode.ToLower():{0};  _siteRootContext.Item.Product_Code.ToLower():{1}", _latestSalesForceRecord.productCode.ToLower(), _siteRootContext.Item.Product_Code.ToLower());
