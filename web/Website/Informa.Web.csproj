@@ -655,6 +655,7 @@
     <Compile Include="App_Start\Registrations\NlmRegistrar.cs" />
     <Compile Include="App_Start\Registrations\RegistrationRegistrar.cs" />
     <Compile Include="App_Start\Registrations\ScheduledPublishingRegistrar.cs" />
+    <Compile Include="App_Start\Registrations\LoggingRegistrar.cs" />
     <Compile Include="App_Start\Registrations\SiteDebuggingRegistrar.cs" />
     <Compile Include="App_Start\Registrations\UserRegistrar.cs" />
     <Compile Include="App_Start\Registrations\AuthenticationRegistrar.cs" />
@@ -1229,7 +1230,7 @@
     <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.cshtml" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.cshtml" />
     <Content Include="Views\Article\UserCallToAction.cshtml" />
-	<Content Include="Views\Shared\_IndividualSubscriptionRenewalMessage.cshtml" />
+    <Content Include="Views\Shared\_IndividualSubscriptionRenewalMessage.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\Toolbar.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\UserIpAddress.cshtml" />
   </ItemGroup>
