@@ -15,7 +15,7 @@ using System.Web;
 
 namespace Informa.Web.ViewModels
 {
-    [AutowireService(LifetimeScope.SingleInstance)]
+    [AutowireService(LifetimeScope.PerRequest)]
     public class IndividualRenewalMessageViewModel : IIndividualRenewalMessageViewModel
     {
         ISalesforceServiceContext _service;
@@ -41,14 +41,6 @@ namespace Informa.Web.ViewModels
                     //Get the latest record
                     _latestSalesForceRecord = response.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
                 }
-                //else
-                //{
-                //    _latestSalesForceRecord = new EBI_SubscriptionAndPurchase();
-                //    _latestSalesForceRecord.productCode = "SCRIP";
-                //    _latestSalesForceRecord.productType = "Publication";
-                //    _latestSalesForceRecord.subscriptionType = "Individual";
-                //    _latestSalesForceRecord.expirationDate = new DateTime(2017, 1, 1);
-                //}
             }
             catch (Exception ex)
             {
