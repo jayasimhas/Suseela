@@ -59,6 +59,21 @@
     }
 </head>
 <body>
+    <script type="text/javascript">
+        var utag_data=
+        { "country_code" : "@Model.CountryCode", "page_name" : "@Model.Title", "page_type" : "@Model.PageType" }
+
+        ;
+    </script>
+    <script type="text/javascript">
+       (function(a,b,c,d){
+            a = '//tags.tiqcdn.com/utag/informa/main/@Model.SiteEnvrionment/utag.js';
+            b=document;c='script';d=b.createElement(c);d.src=a;
+            d.type='text/java'+c;d.async=true;
+            a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a)
+        })();
+    </script>
+
 
     @{ Html.RenderPartial("_Header", Model.Header); }
     @*@Html.Sitecore().Placeholder("header")*@
@@ -103,8 +118,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
     @* <script src="vendor/angular-ui/ui-bootstrap-custom-tpls-1.2.2.js"></script> *@
     @* <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script> *@
-<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
 
-@{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
+    @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
 </body>
 </html>
