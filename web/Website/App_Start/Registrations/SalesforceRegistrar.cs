@@ -12,6 +12,7 @@ namespace Informa.Web.App_Start.Registrations
 	{
 		public static void RegisterDependencies(ContainerBuilder builder)
 		{
+			builder.RegisterType<SalesforceErrorLogger>().As<ISalesforceErrorLogger>();
 			builder.RegisterType<SalesforceServiceConfiguration>().As<ISalesforceServiceConfiguration>();
 			builder.RegisterType<SalesforceService>().As<ISalesforceService>();
 			builder.RegisterType<SalesforceServiceContext>().As<ISalesforceServiceContext>();
