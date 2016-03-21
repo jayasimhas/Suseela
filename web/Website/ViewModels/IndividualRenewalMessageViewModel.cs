@@ -41,6 +41,14 @@ namespace Informa.Web.ViewModels
                     //Get the latest record
                     _latestSalesForceRecord = response.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
                 }
+                else
+                {
+                    _latestSalesForceRecord = new EBI_SubscriptionAndPurchase();
+                    _latestSalesForceRecord.productCode = "SCRIP";
+                    _latestSalesForceRecord.productType = "Publication";
+                    _latestSalesForceRecord.subscriptionType = "Individual";
+                    _latestSalesForceRecord.expirationDate = new DateTime(2017, 1, 1);
+                }
             }
             catch (Exception ex)
             {
@@ -69,10 +77,12 @@ namespace Informa.Web.ViewModels
                 if ((_latestSalesForceRecord.expirationDate - DateTime.Now)?.TotalDays > _siteRootContext.Item.Days_To_Expiration)
                     return false;
 
-                string[] subsTypes = _siteRootContext.Item.Subscription_Type.ToLower().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-
-                if (subsTypes == null || subsTypes.Contains(_latestSalesForceRecord.subscriptionType.ToLower()) == false)
+                if (_latestSalesForceRecord.subscriptionType.ToLower() != "individual" && _latestSalesForceRecord.subscriptionType.ToLower() != "free-trial")
                     return false;
+                //string[] subsTypes = _siteRootContext.Item.Subscription_Type.ToLower().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                //if (subsTypes == null || subsTypes.Contains(_latestSalesForceRecord.subscriptionType.ToLower()) == false)
+                //    return false;
 
                 if (_latestSalesForceRecord.productType.ToLower() != _siteRootContext.Item.Product_Type.ToLower())
                     return false;
