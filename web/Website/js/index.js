@@ -180,7 +180,7 @@ $(document).ready(function() {
 		function(form) {
 			var usernameInput = $(form).find('.js-register-username');
 			var nextStepUrl = $(form).data('forwarding-url') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
-			
+
 			window.location.href = nextStepUrl;
 		}
 	);
@@ -348,6 +348,91 @@ $(document).ready(function() {
 			$('.general-header__navigation-scroller--right').removeClass('is-visible');
 		}
 	});
+
+	var smoothScrollingNav = function() {
+
+		var navScroller = $('.general-header__navigation');
+		var navParent = $('.general-header');
+
+		var scrollPosition = function() {
+			return navScroller[0].scrollWidth - (navParent.width() + navScroller.scrollLeft());
+		};
+
+		var scrollDistance = function() {
+
+			var containerWidth = navParent.width();
+			// console.log(scrollPosition(), containerWidth);
+			// if(scrollPosition() > containerWidth) {
+				return {
+					left: navScroller.scrollLeft(),
+					right: scrollPosition()
+				};
+			// } else {
+			// 	return {
+			// 		left: containerWidth - scrollPosition(),
+			// 		right: scrollPosition()
+			// 	}
+			// }
+
+		};
+
+		var init = function() {
+
+			$('.general-header__navigation-scroller--right').on('click', function() {
+				if(scrollPosition() > 0) { // Not on right edge
+					smoothScroll(200, 'right');
+				}
+			});
+
+			$('.general-header__navigation-scroller--left').on('click', function() {
+				if(scrollPosition() <= (navScroller[0].scrollWidth - navParent.width())) {
+					smoothScroll(200, 'left');
+				}
+			});
+
+		};
+
+		var scrollToTimerCache;
+
+		var smoothScroll = function(duration, direction) {
+			if (duration < 0) {
+				return;
+			}
+
+			var scrollPos = scrollDistance();
+
+			var offsetDist = (direction === 'left' ? scrollPos.left : scrollPos.right);
+
+			var perTick;
+			if(offsetDist > navParent.width()) {
+				perTick = navParent.width() / duration * 10;
+			} else {
+				perTick = offsetDist / duration * 10;
+			}
+
+
+			scrollToTimerCache = setTimeout(function() {
+				if (!isNaN(parseInt(perTick, 10))) {
+					if(direction === 'right') {
+						navScroller.scrollLeft(navScroller.scrollLeft() + perTick);
+						smoothScroll(duration - 10, direction, scrollPos);
+					} else if(direction === 'left') {
+						navScroller.scrollLeft(navScroller.scrollLeft() - perTick);
+						smoothScroll(duration - 10, direction, scrollPos);
+					}
+
+				}
+			}.bind(this), 10);
+		};
+
+		init();
+
+	};
+
+	smoothScrollingNav();
+
+
+
 
 
 	$('.informa-ribbon__title').on('click', function (e) {

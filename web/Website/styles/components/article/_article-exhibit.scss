@@ -42,6 +42,24 @@
         order: 99; /* Caption always goes last */
     }
 
+	.enlarge {
+		position: relative;
+
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			height: 30px;
+			width: 30px;
+			background: $color-dove-gray url('data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20id%3D%22layers%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2260px%22%20height%3D%2260px%22%20viewBox%3D%220%200%2060%2060%22%20style%3D%22enable-background%3Anew%200%200%2060%2060%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20fill%3D%22%23eee%22%20class%3D%22st1%22%20d%3D%22M22.528%2C45c5.309%2C0%2C10.185-1.871%2C14.03-4.978l19.074%2C19.241C56.118%2C59.754%2C56.757%2C60%2C57.397%2C60%0A%09c0.636%2C0%2C1.271-0.243%2C1.757-0.727c0.976-0.973%2C0.979-2.559%2C0.009-3.536L40.066%2C36.472c3.045-3.842%2C4.878-8.693%2C4.878-13.971%0A%09C44.944%2C10.094%2C34.888%2C0%2C22.528%2C0S0.112%2C10.094%2C0.112%2C22.501S10.168%2C45%2C22.528%2C45z%20M22.528%2C5.002c9.614%2C0%2C17.435%2C7.85%2C17.435%2C17.499%0A%09s-7.821%2C17.5-17.435%2C17.5S5.093%2C32.15%2C5.093%2C22.501S12.915%2C5.002%2C22.528%2C5.002z%22/%3E%0A%3C/svg%3E');
+			background-size: 60%;
+			background-repeat: no-repeat;
+			background-position: center;
+			top: 0;
+			right: 0;
+		}
+	}
+
     @include breakpoint('medium') {
         &__source {
             display: block;
