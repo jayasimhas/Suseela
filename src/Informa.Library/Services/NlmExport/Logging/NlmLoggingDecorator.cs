@@ -44,6 +44,9 @@ namespace Informa.Library.Services.NlmExport.Logging
             var articleId = article.Article_Number;
             var currentTime = DateTime.UtcNow;
 
+            //TamerM - 2016-03-22: Log the normal case
+            _logger.Info($"Starting ExportNlm(): username:{username}, articleId:{articleId}, articlePath:{articlePath}, exportTime:{currentTime}");
+
             var result = _innerService.ExportNlm(article, exportType, type);
 
             var logMessage = new NlmLogMessage
@@ -71,6 +74,11 @@ namespace Informa.Library.Services.NlmExport.Logging
 
                 _logger.Error(errorMessage, result.Exception);
                 SendMail(errorMessage, articleId);
+            }
+            else
+            {
+                //TamerM - 2016-03-22: Log the normal case
+                _logger.Info($"ExportNlm() completed successfully");
             }
 
             return result;
