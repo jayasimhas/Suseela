@@ -18,7 +18,7 @@ function loginController(requestVerificationToken) {
 					var field = $(this);
 
 					if (field.data('checkbox-type') === 'boolean') {
-						value = field.attr('checked') || field.attr('checked') === 'checked';
+						value = this.checked;
 
 						if (field.data('checkbox-boolean-type') === 'reverse') {
 							value = !value;
