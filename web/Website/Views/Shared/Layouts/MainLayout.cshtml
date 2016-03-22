@@ -60,17 +60,17 @@
 </head>
 <body>
     <script type="text/javascript">
-        var utag_data=
-        { "country_code" : "@Model.CountryCode", "page_name" : "@Model.Title", "page_type" : "@Model.PageType" }
+        var utag_data =
+        { "country_code": "@Model.CountryCode", "page_name": "@Model.Title", "page_type": "@Model.PageType" };
 
-        ;
+
     </script>
     <script type="text/javascript">
-       (function(a,b,c,d){
+        (function (a, b, c, d) {
             a = '//tags.tiqcdn.com/utag/informa/main/@Model.SiteEnvrionment/utag.js';
-            b=document;c='script';d=b.createElement(c);d.src=a;
-            d.type='text/java'+c;d.async=true;
-            a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a)
+            b = document; c = 'script'; d = b.createElement(c); d.src = a;
+            d.type = 'text/java' + c; d.async = true;
+            a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a)
         })();
     </script>
 
@@ -114,6 +114,20 @@
     </footer>
 
     <script src="/dist/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('.click-utag').click(function (e) {
+            var eventName = $(this).data('info');
+            utag.link({
+                "page_type": "@Model.PageType",
+                "page_name": "@Model.Title",
+                "event_name": eventName
+            });
+
+        });
+
+    });
+    </script>
     @* <script src="vendor/bower_components/angular-animate/angular-animate.js"></script> *@
     @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
 </body>

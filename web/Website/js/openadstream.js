@@ -50,7 +50,7 @@
 }
 
 //configuration
-OAS_url = 'http://oas.informahealthcare.com/RealMedia/ads/';
+OAS_url = 'https://oasc-eu1.247realmedia.com/RealMedia/ads/';
 OAS_sitepage = 'www.scripnews.com/' + getCorrespondingSectr('home');
 OAS_listpos = 'TopRight,Top1,Top2,Top3,Middle,Position2,Position3,Middle1,Right';
 OAS_query = '';
