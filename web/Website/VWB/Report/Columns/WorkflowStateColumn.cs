@@ -1,6 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.UI.WebControls;
 using Elsevier.Library.CustomItems.Publication.General;
+using Informa.Web.Controllers;
+using Sitecore;
+using Sitecore.Configuration;
+using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Workflows;
 
@@ -38,7 +44,9 @@ namespace Elsevier.Web.VWB.Report.Columns
 
 		public TableCell GetCell(ArticleItemWrapper articleItemWrapper)
 		{
-			ArticleItem article = articleItemWrapper.InnerItem;
+		    Database masterDb = Factory.GetDatabase("master");
+
+            ArticleItem article = articleItemWrapper.InnerItem;
 			Item item = article.InnerItem;
 			var cell = new TableCell();
 			string text = "";
@@ -57,14 +65,60 @@ namespace Elsevier.Web.VWB.Report.Columns
 			text += workflowState.DisplayName;
 			if(workflowState.FinalState)
 			{
-				var history = article.GetWorkflowHistory();
-				WorkflowEvent latest = history.Last();
-				text += "<br />Signed off: " + latest.Date.ToString();
-				string user = latest.User;
-				text += "<br />By: " + user.Substring(user.LastIndexOf(@"\")+1);
+                //TODO I took this from EmailUtil, need to refactor a bit so that code is not in two places
+                List<WorkflowEvent> history = GetWorkflowHistory(masterDb, item);
+
+			    if (history.Count == 0)
+			    {
+                    cell.Text = "N/E";
+                    return cell;
+                }
+			    else
+			    {
+                    WorkflowEvent latest = history.Last();
+                    text += "<br />Signed off: " + latest.Date.ToString();
+                    string user = latest.User;
+                    text += "<br />By: " + user.Substring(user.LastIndexOf(@"\") + 1);
+                }
 			}
 			cell.Text = text;
 			return cell;
 		}
-	}
+
+        //TODO I took this from EmailUtil, need to refactor a bit so that code is not in two places
+        public List<WorkflowEvent> GetWorkflowHistory(Database db,Item currentItem)
+        {
+            var completeWorkflowHistory = new List<WorkflowEvent>();
+            try
+            {
+                bool addedFirstEvent = false;
+                // versions are in a 1-based array; if you give it "0", it will give you the most recent.
+                for (int i = 1; i < currentItem.Versions.Count + 1; i++)
+                {
+                    Item thisVersion = currentItem.Versions[new Sitecore.Data.Version(i)];
+                    IWorkflow workflow = db.WorkflowProvider.GetWorkflow(thisVersion[FieldIDs.Workflow]);
+
+                    if (workflow != null)
+                    {
+                        List<WorkflowEvent> events = workflow.GetHistory(thisVersion).ToList();
+
+                        if (addedFirstEvent)
+                        {
+                            WorkflowState firstState = workflow.GetStates()[0];
+                            events.RemoveAll(e => e.OldState == "" && e.NewState == firstState.StateID);
+                            addedFirstEvent = true;
+                        }
+                        addedFirstEvent = true;
+
+                        completeWorkflowHistory.AddRange(events);
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+            return completeWorkflowHistory;
+        }
+    }
 }

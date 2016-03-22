@@ -39,7 +39,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 
 			link.Controls.Add(img);
 
-			if (articleItemWrapper.Embargoed && articleItemWrapper.EmbargoDate > DateTime.Now)
+			if (articleItemWrapper.Embargoed)
 			{
 				var flagImg = new Image() { ImageUrl = "/VWB/images/vwb/flag_red_h.png" };
 				flagImg.Attributes.Add("align", "absmiddle");
