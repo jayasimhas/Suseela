@@ -74,6 +74,10 @@ namespace Informa.Library.DCD.XMLImporting
             //Create a new FileSystemWatcher. 
             FileSystemWatcher watcher = new FileSystemWatcher();
 
+            //If import directory is invalid do not continue
+            if (Directory.Exists(ImportDirectory) == false)
+                return;
+
             //Set the filter to only catch xml files.
             watcher.Filter = "*.xml";
             watcher.Changed += Watcher_FileChanged;
