@@ -478,6 +478,7 @@
     <Compile Include="Util\ImageReferenceBuilder.cs" />
     <Compile Include="Util\Document\InvalidStylesHighlighter.cs" />
     <Compile Include="Util\ListBuilder.cs" />
+    <Compile Include="Util\NLMFeedUtils.cs" />
     <Compile Include="Util\OptimizedCharacterStyleTransformer.cs" />
     <Compile Include="Util\ParagraphAlignmentParser.cs" />
     <Compile Include="Util\PreviewLinkUpdater.cs" />
