@@ -609,7 +609,7 @@ namespace Informa.Web.Controllers
     {
         [HttpPost]
         //[Authorize]
-        public bool Post([FromBody] string articleNumber)
+        public string Post([FromBody] string articleNumber)
         {
             return new ReExportArticleNlm().ReExport(articleNumber);
         }

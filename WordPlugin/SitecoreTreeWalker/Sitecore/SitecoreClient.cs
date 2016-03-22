@@ -856,13 +856,12 @@ namespace InformaSitecoreWord.Sitecore
         protected WordUtils _wordUtils = new WordUtils();
         protected static StructConverter _structConverter = new StructConverter();
 
-        public static bool ReExportArticleNlm(string articleNumber)
+        public static string ReExportArticleNlm(string articleNumber)
         {
             using (var client = new HttpClient(_handler, false))
             {
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}ReExportNlm", articleNumber).Result;
-                //.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetDealInfo?articleNumber={articleNumber}").Result;
-                bool result = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+                string result = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
                 return result;
             }
         }

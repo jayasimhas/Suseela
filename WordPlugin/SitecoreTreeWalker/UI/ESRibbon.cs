@@ -431,20 +431,8 @@ namespace InformaSitecoreWord.UI
                 throw;
             }
 
-            try
-            {
-                if (ArticleDetails.IsPublished || ArticleDetails.WebPublicationDate < DateTime.Now)
-                {
-                    if (MessageBox.Show("Would you like to re-export the NLM feed?", "Export NLM?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-                    {
-                        SitecoreClient.ReExportArticleNlm(articleNumber);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Globals.SitecoreAddin.LogException("Error when requesting an article NLM Reexport", ex);
-            }
+            //TamerM - 2016-03-22: Prompt and ReExport  NLM FEED
+            NLMFeedUtils.PromptAndReExportNLMFeed(ArticleDetails.ArticleNumber, ArticleDetails.IsPublished);
 
             return true;
         }

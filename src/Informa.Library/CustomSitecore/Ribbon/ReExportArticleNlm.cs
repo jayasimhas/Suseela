@@ -13,6 +13,7 @@ namespace Informa.Library.CustomSitecore.Ribbon
 
         public ReExportArticleNlm()
         {
+            //Resolve needed dependencies
             using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
             {
                 _nlmExportService = scope.Resolve<INlmExportService>();
@@ -20,18 +21,22 @@ namespace Informa.Library.CustomSitecore.Ribbon
             }
         }
 
-        public bool ReExport(string articleNumber)
+        public string ReExport(string articleNumber)
         {
             try
             {
+                //Use the NlmExportService to reExport the NLM feed
                 ExportResult result = _nlmExportService.ExportNlm(_searcher.GetArticleByNumber(articleNumber), ExportType.Manual, PublicationType.Ecorrected);
 
-                return result.ExportSuccessful;
+                if (result.ExportSuccessful)
+                    return string.Empty;
+                else
+                    return result.Exception.ToString();
             }
             catch (Exception ex)
             {
                 Sitecore.Diagnostics.Log.Error("Error while ReExporting Article Nlm: " + ex.ToString(), this.GetType());
-                return false;
+                return ex.ToString();
             }
         }
     }
