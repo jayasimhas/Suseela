@@ -7,50 +7,31 @@ namespace Informa.Library.User.SiteDebugging
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class SiteDebuggingUserIpAddressContext : ISiteDebuggingUserIpAddressContext
 	{
-		private const string IsDebuggingSessionKey = "UserIpAddress.IsDebugging";
+		private const string DebuggerKey = "UserIpAddress";
 
-		protected readonly ISiteDebuggingSession DebugSession;
+		protected readonly ISiteDebugger SiteDebugger;
 		protected readonly ISetUserIpAddressContext UserIpAddressContext;
 
 		public SiteDebuggingUserIpAddressContext(
-			ISiteDebuggingSession debugSession,
+			ISiteDebugger siteDebugger,
 			ISetUserIpAddressContext userIpAddressContext)
 		{
-			DebugSession = debugSession;
+			SiteDebugger = siteDebugger;
 			UserIpAddressContext = userIpAddressContext;
 		}
 
-		public bool IsDebugging
-		{
-			get
-			{
-				var isDebugging = DebugSession.Get<bool?>(IsDebuggingSessionKey);
-
-				if (!isDebugging.HasValue)
-				{
-					return false;
-				}
-
-				return isDebugging.Value;
-			}
-			set
-			{
-				bool? isDebugging = value;
-
-				DebugSession.Set(IsDebuggingSessionKey, isDebugging);
-			}
-		}
+		public bool IsDebugging => SiteDebugger.IsDebugging(DebuggerKey);
 
 		public void StopDebugging()
 		{
 			UserIpAddressContext.IpAddress = null;
-			IsDebugging = false;
+			SiteDebugger.StopDebugging(DebuggerKey);
 		}
 
 		public void StartDebugging(IPAddress ipAddress)
 		{
 			UserIpAddressContext.IpAddress = ipAddress;
-			IsDebugging = true;
+			SiteDebugger.StartDebugging(DebuggerKey);
 		}
 	}
 }
