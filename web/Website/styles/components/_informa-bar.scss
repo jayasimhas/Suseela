@@ -11,6 +11,8 @@
     }
 
     &__title {
+        box-shadow: 0;
+        border: 0;
     	height: 16px;
     	width: 92px;
     	background: url('/dist/img/iribbon-logo.gif') no-repeat top center;
@@ -19,6 +21,7 @@
     	margin: 10px auto;
     	clear: both;
     	cursor: pointer;
+        display: block;
     }
 
     &__wrapper {

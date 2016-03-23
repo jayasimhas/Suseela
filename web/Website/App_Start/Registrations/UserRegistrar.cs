@@ -15,6 +15,7 @@ namespace Informa.Web.App_Start.Registrations
 		public static void RegisterDependencies(ContainerBuilder builder)
 		{
 			builder.RegisterType<UserSession>().As<IUserSession>();
+			builder.RegisterType<EntitlementSession>().As<IEntitlementSession>();
 
 			builder.RegisterType<SalesforceFindUserByEmail>().As<IFindUserByEmail>();
 			builder.RegisterType<SalesforceUpdateUserPassword>().As<IUpdateUserPassword>();
