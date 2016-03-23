@@ -191,7 +191,10 @@ $(document).ready(function() {
 
 
 	var emailArticleController = new FormController();
-	emailArticleController.watchForm('.form-email-article');
+	emailArticleController.watchForm('.form-email-article', function() {
+		$('.js-email-article-form-wrapper').hide();
+		$('.js-email-article-success').show();
+	});
 
 
 	var accountEmailPreferencesController = new FormController();
