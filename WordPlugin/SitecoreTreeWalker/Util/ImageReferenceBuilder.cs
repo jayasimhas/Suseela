@@ -115,7 +115,8 @@ namespace InformaSitecoreWord.Util
             img.SetAttributeValue("src", url);
             wrapper.SetAttributeValue("class", "enlarge");
 			wrapper.SetAttributeValue("href", url);
-            wrapper.Add(img);
+			wrapper.SetAttributeValue("target", "_blank");			
+			wrapper.Add(img);
             wrapper.Add(new XElement("br"));
             return wrapper;
         }
