@@ -35,7 +35,7 @@ namespace Informa.Library.User.Entitlement
             if (productItem == null)
                 return EntitledAccessLevel.UnEntitled;
 
-			if (!EntitlementChecksEnabled.IsEnabled)
+			if (!EntitlementChecksEnabled.Enabled)
 			{
 				return EntitledAccessLevel.Individual;
 			}

@@ -2,6 +2,6 @@
 {
 	public interface IEntitlementChecksEnabled
 	{
-		bool IsEnabled { get; set; }
+		bool Enabled { get; set; }
 	}
 }

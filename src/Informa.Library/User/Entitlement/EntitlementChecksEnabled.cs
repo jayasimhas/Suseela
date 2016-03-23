@@ -15,7 +15,7 @@ namespace Informa.Library.User.Entitlement
 			Session = session;
 		}
 
-		public bool IsEnabled
+		public bool Enabled
 		{
 			get
 			{
@@ -23,7 +23,7 @@ namespace Informa.Library.User.Entitlement
 
 				if (isEnabled == null || !isEnabled.HasValue)
 				{
-					return IsEnabled = true;
+					return Enabled = true;
 				}
 
 				return isEnabled.Value;
