@@ -349,43 +349,32 @@ $(document).ready(function() {
 		}
 	});
 
+
+	// Smooth, clickable scrolling for General page headers
 	var smoothScrollingNav = function() {
 
-		var navScroller = $('.general-header__navigation');
-		var navParent = $('.general-header');
+		// Cache for less DOM checking
+		var Scrollable = $('.general-header__navigation');
+		var Container = $('.general-header');
 
-		var scrollPosition = function() {
-			return navScroller[0].scrollWidth - (navParent.width() + navScroller.scrollLeft());
-		};
-
+		// Find current scroll distance is from left and right edges
 		var scrollDistance = function() {
-
-			var containerWidth = navParent.width();
-			// console.log(scrollPosition(), containerWidth);
-			// if(scrollPosition() > containerWidth) {
-				return {
-					left: navScroller.scrollLeft(),
-					right: scrollPosition()
-				};
-			// } else {
-			// 	return {
-			// 		left: containerWidth - scrollPosition(),
-			// 		right: scrollPosition()
-			// 	}
-			// }
-
+  			return {
+				left: Scrollable.scrollLeft(),
+				right: Scrollable[0].scrollWidth - (Container.width() + Scrollable.scrollLeft())
+			};
 		};
 
 		var init = function() {
 
 			$('.general-header__navigation-scroller--right').on('click', function() {
-				if(scrollPosition() > 0) { // Not on right edge
+				if(scrollDistance().right > 0) { // Not on right edge
 					smoothScroll(200, 'right');
 				}
 			});
 
 			$('.general-header__navigation-scroller--left').on('click', function() {
-				if(scrollPosition() <= (navScroller[0].scrollWidth - navParent.width())) {
+				if(scrollDistance().left > 0) {
 					smoothScroll(200, 'left');
 				}
 			});
@@ -393,46 +382,54 @@ $(document).ready(function() {
 		};
 
 		var scrollToTimerCache;
+	    var totalTravel = null;
+	    var durationStart = null;
+
+	    // Quadratic ease-out algorithm
+	    var easing = function(time, distance) {
+	       return distance * (time * (2 - time));
+	    };
 
 		var smoothScroll = function(duration, direction) {
-			if (duration < 0) {
+			if (duration <= 0) {
+			    // Reset everything when duration time finishes
+			    totalTravel = null;
+			    durationStart = null;
 				return;
 			}
 
-			var scrollPos = scrollDistance();
+			// Store duration as durationStart on first loop
+			durationStart = !durationStart ? duration : durationStart;
 
-			var offsetDist = (direction === 'left' ? scrollPos.left : scrollPos.right);
+			// Store travel distance (container width) as totalTravel on first loop
+			totalTravel = !totalTravel ? Container.width() : totalTravel;
 
-			var perTick;
-			if(offsetDist > navParent.width()) {
-				perTick = navParent.width() / duration * 10;
-			} else {
-				perTick = offsetDist / duration * 10;
-			}
+			// Finds percentage of elapsed time since start
+			var travelPcent = 1 - (duration / durationStart);
 
+			// Finds travel change on this loop, adjusted for ease-out
+			var travel = easing(travelPcent, ((totalTravel / durationStart) * 10));
 
 			scrollToTimerCache = setTimeout(function() {
-				if (!isNaN(parseInt(perTick, 10))) {
+				if (!isNaN(parseInt(travel, 10))) {
 					if(direction === 'right') {
-						navScroller.scrollLeft(navScroller.scrollLeft() + perTick);
-						smoothScroll(duration - 10, direction, scrollPos);
+						Scrollable.scrollLeft(Scrollable.scrollLeft() + travel);
+						smoothScroll(duration - 10, direction);
 					} else if(direction === 'left') {
-						navScroller.scrollLeft(navScroller.scrollLeft() - perTick);
-						smoothScroll(duration - 10, direction, scrollPos);
+						Scrollable.scrollLeft(Scrollable.scrollLeft() - travel);
+						smoothScroll(duration - 10, direction);
 					}
 
 				}
 			}.bind(this), 10);
 		};
 
+		// Bind event listeners
 		init();
-
 	};
 
+	// Execute!
 	smoothScrollingNav();
-
-
-
 
 
 	$('.informa-ribbon__title').on('click', function (e) {
