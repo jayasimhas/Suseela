@@ -1,6 +1,5 @@
 using System.Linq;
 using Informa.Library.Subscription;
-using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 
@@ -9,14 +8,18 @@ namespace Informa.Library.User.Entitlement
     [AutowireService(LifetimeScope.Default)]
     public class EntitledProductContext : IEntitledProductContext
     {
-        private readonly IUserSubscriptionContext UserSubscriptionContext;
-        private readonly IAuthenticatedIPContext AuthenticatedIPContext;
-        private readonly IEntitlementContext EntitlementContext;
+		protected readonly IEntitlementFactory EntitlementFactory;
+		protected readonly IUserSubscriptionContext UserSubscriptionContext;
+        protected readonly IAuthenticatedIPContext AuthenticatedIPContext;
+        protected readonly IEntitlementContext EntitlementContext;
+
         public EntitledProductContext(
-            IUserSubscriptionContext userSubscriptionContext,
+			IEntitlementFactory entitlementFactory,
+			IUserSubscriptionContext userSubscriptionContext,
             IAuthenticatedIPContext authenticatedIpContext,
             IEntitlementContext entitlementContext)
-        {                                                         
+        {
+			EntitlementFactory = entitlementFactory;
             UserSubscriptionContext = userSubscriptionContext;
             AuthenticatedIPContext = authenticatedIpContext;
             EntitlementContext = entitlementContext;
@@ -26,7 +29,7 @@ namespace Informa.Library.User.Entitlement
 
         public EntitledAccessLevel GetAccessLevel(IEntitledProductItem productItem)
         {
-            var entitlement = new ScripEntitlement(productItem);
+            var entitlement = EntitlementFactory.Create(productItem);
             //TODO:  Difference logic for 'EntitledProductItem'
 
             if (productItem == null)
