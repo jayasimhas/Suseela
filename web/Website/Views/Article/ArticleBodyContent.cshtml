@@ -93,8 +93,8 @@
     {
         @* * * Executive Summary *@
         <div class="article-executive-summary">
-            <h4>Executive Summary</h4>            
-			@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.ListableSummary))			
+            <h4>Executive Summary</h4>
+			@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.ListableSummary))
         </div>
         @* End Executive Summary  *@
     }
@@ -149,16 +149,15 @@
             <tr>
                 <td class="cell">
                     <p class="small">
-                        <a class="js-mobile-table-link" href="#" target="_blank">
+                        <a class="js-mobile-table-link" href="#" target="_blank" onclick="window.open($(this).data('table-url')); return false;">
                             <svg class="article-table__expand-table">
                                 <use xlink:href="/dist/img/svg-sprite.svg#expand-table"></use>
                             </svg>
                         </a>
-                        <a class="js-mobile-table-link" href="#" target="_blank">View full table</a>
+                        <a class="js-mobile-table-link" href="#" target="_blank" onclick="window.open($(this).data('table-url')); return false;">View full table</a>
                     </p>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
-                                                                                        

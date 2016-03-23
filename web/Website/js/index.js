@@ -271,7 +271,8 @@ $(document).ready(function() {
 
  	    url+= "mobilemedia=true&selectedid=" + mediaId;
 
- 	    $(tableLink).find('a').attr("href", url);
+		// $(tableLink).find('a').attr("href", url);
+		$(tableLink).find('a').data("table-url", url).attr('href', null);
  		$(e).after(tableLink);
 	});
 
