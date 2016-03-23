@@ -7,6 +7,7 @@ using Informa.Library.Mail;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.References;
+using Informa.Library.Utilities.WebUtils;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Web.Areas.Article.Models.Article.EmailFriend;
 using Informa.Web.Controllers;
@@ -95,7 +96,7 @@ namespace Informa.Web.Areas.Article.Controllers
 				emailHtml = htmlEmailTemplate.Html;
 				var replacements = new Dictionary<string, string>
 				{
-					["#Logo_URL#"] = GetValue(siteRoot?.Email_Logo?.Src),
+					//["#Logo_URL#"] = GetValue(siteRoot?.Email_Logo?.Src),
 					["#Date#"] = DateTime.Now.ToString("dddd, d MMMM yyyy"),
 					["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink(),
 					["#RSS_Link_Text#"] = GetValue(siteRoot?.RSS_Link?.Text),
@@ -107,7 +108,11 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#sender_name#"] = senderName,
 					["#sender_email#"] = senderEmail
 				};
-				
+
+				if (siteRoot?.Email_Logo != null)
+				{
+					replacements["#Logo_URL#"] = UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString());
+				}
 				if (!string.IsNullOrEmpty(message))
 				{
 					replacements["#personal_message#"] = '"' + message + '"';

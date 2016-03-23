@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Informa.Library.Utilities.Extensions;
+using Informa.Library.Utilities.WebUtils;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.Mail
@@ -35,8 +36,11 @@ namespace Informa.Library.Mail
 			var siteRoot = SiteRootContext.Item;
 			var emailHtml = htmlEmailTemplate.Html;
 			var replacements = new Dictionary<string, string>();
-
-			replacements["#Logo_URL#"] = GetValue(siteRoot?.Email_Logo?.Src);
+			if (siteRoot?.Email_Logo != null)
+			{
+				replacements["#Logo_URL#"] = UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString());
+			}
+			//replacements["#Logo_URL#"] = GetValue(siteRoot?.Email_Logo?.Src);
 			replacements["#Date#"] = DateTime.Now.ToString("dddd, d MMMM yyyy");
 			replacements["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink();
 			replacements["#RSS_Link_Text#"] = GetValue(siteRoot?.RSS_Link?.Text);
