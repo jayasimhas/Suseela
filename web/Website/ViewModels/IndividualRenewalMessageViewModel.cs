@@ -47,13 +47,13 @@ namespace Informa.Web.ViewModels
             {
                 try
                 {
-                    if (_userContext.IsAuthenticated)
+                    if (_userContext != null && _userContext.IsAuthenticated)
                     {
                         //Get SubscruiptionsAndPurchases records for the specifed usern
                         EBI_QuerySubscriptionsAndPurchasesResponse response = _service.Execute(x => x.querySubscriptionsAndPurchases(_userContext.User.Username));
 
                         //Get the latest record
-                        _latestSalesForceRecord = response.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
+                        _latestSalesForceRecord = response?.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
                     }
                     else
                     {

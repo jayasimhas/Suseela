@@ -11,10 +11,6 @@ This file contains all styles related to the button component.
 ```
 */
 
-button:focus {
-	outline: 0;
-}
-
 .button {
 	&--filled,
 	&--outlined,
@@ -66,6 +62,10 @@ button:focus {
 
 	&--fly-right {
 		float: right;
+	}
+
+	&:focus {
+		outline: 0;
 	}
 
 }

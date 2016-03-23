@@ -51,9 +51,9 @@
 			// 
 			// panel1
 			// 
-			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.panel1.BackColor = System.Drawing.Color.White;
 			this.panel1.Controls.Add(this.messageLbl);
 			this.panel1.Controls.Add(this.uxArrowUp);
@@ -80,7 +80,8 @@
 			// 
 			// uxArrowUp
 			// 
-			this.uxArrowUp.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.uxArrowUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+				| System.Windows.Forms.AnchorStyles.Right)));
 			this.uxArrowUp.Image = global::InformaSitecoreWord.Properties.Resources.arrowup;
 			this.uxArrowUp.Location = new System.Drawing.Point(587, 327);
 			this.uxArrowUp.Name = "uxArrowUp";
@@ -90,7 +91,8 @@
 			// 
 			// uxArrowDown
 			// 
-			this.uxArrowDown.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.uxArrowDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+				| System.Windows.Forms.AnchorStyles.Right)));
 			this.uxArrowDown.Image = global::InformaSitecoreWord.Properties.Resources.arrowdown;
 			this.uxArrowDown.Location = new System.Drawing.Point(587, 372);
 			this.uxArrowDown.Name = "uxArrowDown";
@@ -117,7 +119,8 @@
 			// 
 			// uxGeographyViewTree
 			// 
-			this.uxGeographyViewTree.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.uxGeographyViewTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+				| System.Windows.Forms.AnchorStyles.Right)));
 			this.uxGeographyViewTree.AutoSize = true;
 			this.uxGeographyViewTree.Location = new System.Drawing.Point(538, 43);
 			this.uxGeographyViewTree.Name = "uxGeographyViewTree";
@@ -129,8 +132,8 @@
 			// 
 			// uxGeographyResults
 			// 
-			this.uxGeographyResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.uxGeographyResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.uxGeographyResults.Location = new System.Drawing.Point(18, 58);
 			this.uxGeographyResults.MultiSelect = false;
 			this.uxGeographyResults.Name = "uxGeographyResults";
@@ -140,8 +143,8 @@
 			// 
 			// uxGeographyResultsTree
 			// 
-			this.uxGeographyResultsTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.uxGeographyResultsTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.uxGeographyResultsTree.HideSelection = false;
 			this.uxGeographyResultsTree.Location = new System.Drawing.Point(18, 58);
 			this.uxGeographyResultsTree.Name = "uxGeographyResultsTree";
@@ -151,8 +154,8 @@
 			// 
 			// uxGeographyKeywords
 			// 
-			this.uxGeographyKeywords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.uxGeographyKeywords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+				| System.Windows.Forms.AnchorStyles.Right)));
 			this.uxGeographyKeywords.Location = new System.Drawing.Point(18, 19);
 			this.uxGeographyKeywords.Name = "uxGeographyKeywords";
 			this.uxGeographyKeywords.Size = new System.Drawing.Size(575, 22);
@@ -160,7 +163,8 @@
 			// 
 			// uxGeographyViewSearch
 			// 
-			this.uxGeographyViewSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.uxGeographyViewSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+				| System.Windows.Forms.AnchorStyles.Right)));
 			this.uxGeographyViewSearch.AutoSize = true;
 			this.uxGeographyViewSearch.Location = new System.Drawing.Point(488, 43);
 			this.uxGeographyViewSearch.Name = "uxGeographyViewSearch";
@@ -202,13 +206,14 @@
 			// 
 			// uxGeographySelected
 			// 
-			this.uxGeographySelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.uxGeographySelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.uxGeographySelected.Location = new System.Drawing.Point(0, 298);
 			this.uxGeographySelected.MultiSelect = false;
 			this.uxGeographySelected.Name = "uxGeographySelected";
 			this.uxGeographySelected.Size = new System.Drawing.Size(558, 142);
 			this.uxGeographySelected.TabIndex = 41;
+			this.uxGeographySelected.AutoSize = true;
 			this.uxGeographySelected.UseCompatibleStateImageBehavior = false;
 			// 
 			// label16
