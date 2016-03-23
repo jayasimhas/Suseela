@@ -89,6 +89,7 @@ namespace Informa.Web.velir.services
                     {
                         if (!string.IsNullOrEmpty(result.name))
                         {
+                            //companies.Add(new CompanyTypeAheadResponseItem(result.name + " (" + result.count + ")"));
                             companies.Add(new CompanyTypeAheadResponseItem(result.name));
                         }
 
