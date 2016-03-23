@@ -926,6 +926,7 @@
     <Content Include="Views\Shared\Components\ListItemSimple.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Config\Include\ListManagement\" />
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Views\Account\" />
@@ -981,6 +982,7 @@
     <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="App_Config\Include\zzzMustBeLast\SwitchMasterToWeb.config.disabled" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
