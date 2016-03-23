@@ -71,7 +71,7 @@ namespace Informa.Web.Models
 				{
 					var article = results.Articles.FirstOrDefault();
 					if (article != null)
-						replace = new HtmlString($"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Navigation_Title)}</a>");
+						replace = new HtmlString($"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>");
 				}
 
 				content = content.Replace(match.Value, replace.ToHtmlString());
