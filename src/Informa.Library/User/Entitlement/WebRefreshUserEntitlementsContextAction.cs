@@ -5,11 +5,11 @@ using Jabberwocky.Glass.Autofac.Attributes;
 namespace Informa.Library.User.Entitlement
 {
     [AutowireService(LifetimeScope.SingleInstance)]
-    public class WebClearUserEntitlementsContextAction : IWebLogoutUserAction, IWebLoginUserAction
+    public class WebRefreshUserEntitlementsContextAction : IWebLogoutUserAction, IWebLoginUserAction
     {
         protected readonly ISitecoreUserContext SitecoreUserContext;
 
-        public WebClearUserEntitlementsContextAction(
+        public WebRefreshUserEntitlementsContextAction(
             ISitecoreUserContext sitecoreUserContext)
         {
             SitecoreUserContext = sitecoreUserContext;
