@@ -164,7 +164,6 @@ web/Data/diagnostics/*
 web/Data/viewstate/*
 
 web/Website/App_Config/Include/**/*.example
-web/Website/App_Config/Include/**/*.disabled
 web/Website/App_Data/MediaCache/*
 web/Website/temp/*
 
