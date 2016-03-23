@@ -191,8 +191,9 @@ $(document).ready(function() {
 
 
 	var emailArticleController = new FormController();
-	emailArticleController.watchForm('.form-email-article', function() {
+	emailArticleController.watchForm('.form-email-article', function(form) {
 		$('.js-email-article-form-wrapper').hide();
+		$('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val());
 		$('.js-email-article-success').show();
 	});
 
