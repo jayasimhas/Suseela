@@ -62,8 +62,19 @@ namespace Informa.Web.velir.services
             string searchPageId = new ItemReferences().SearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
             string url = string.Format("http://{0}/api/informasearch?pId={1}", WebUtil.GetHostName(), searchPageId);
 
-            url = string.Format("{0}&sortBy=relevance&sortOrder=asc", url);
-            
+            if (Sitecore.Context.RawUrl.Contains("?"))
+            {
+                var urlParts = Sitecore.Context.RawUrl.Split('?');
+
+                if (urlParts.Length == 2)
+                {
+                    url = string.Format("{0}&{1}", url, urlParts[1]);
+                }
+            }
+            else
+            {
+                url = string.Format("{0}&sortBy=relevance&sortOrder=asc", url);
+            }
 
             var client = new WebClient();
             var content = client.DownloadString(url);
@@ -78,6 +89,7 @@ namespace Informa.Web.velir.services
                     {
                         if (!string.IsNullOrEmpty(result.name))
                         {
+                            //companies.Add(new CompanyTypeAheadResponseItem(result.name + " (" + result.count + ")"));
                             companies.Add(new CompanyTypeAheadResponseItem(result.name));
                         }
 
