@@ -308,8 +308,10 @@
     <Compile Include="SiteDebugging\ISiteDebugger.cs" />
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
     <Compile Include="SiteDebugging\SiteDebugger.cs" />
+    <Compile Include="User\Entitlement\EntitlementAccessLevelContext.cs" />
     <Compile Include="User\Entitlement\EntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\EntitlementSession.cs" />
+    <Compile Include="User\Entitlement\IEntitlementAccessLevelContext.cs" />
     <Compile Include="User\Entitlement\IEntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\IEntitlementFactory.cs" />
     <Compile Include="User\Entitlement\IEntitlementSession.cs" />
@@ -317,7 +319,7 @@
     <Compile Include="User\Entitlement\Scrip\ScripEntitlementFactory.cs" />
     <Compile Include="User\Entitlement\SiteDebugging\ISiteDebuggingEntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\SiteDebugging\SiteDebuggingEntitlementChecksEnabled.cs" />
-    <Compile Include="User\Entitlement\WebClearUserEntitlementsContextAction.cs" />
+    <Compile Include="User\Entitlement\WebRefreshUserEntitlementsContextAction.cs" />
     <Compile Include="Company\Web\WebSetUserCompanyContextLoginAction.cs" />
     <Compile Include="ComponentModel\DataAnnotations\MustBeTrueAttribute.cs" />
     <Compile Include="ComponentModel\DataAnnotations\PasswordAttribute.cs" />
