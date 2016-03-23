@@ -761,6 +761,8 @@
     <Compile Include="ViewModels\AdvertisementViewModel.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IToolbarViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IUserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\ToolbarViewModel.cs" />
@@ -1235,6 +1237,7 @@
     <Content Include="Views\Shared\_IndividualSubscriptionRenewalMessage.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\Toolbar.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\UserIpAddress.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\EntitlementsCheckEnabled.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

@@ -180,7 +180,7 @@ $(document).ready(function() {
 		function(form) {
 			var usernameInput = $(form).find('.js-register-username');
 			var nextStepUrl = $(form).data('forwarding-url') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
-			
+
 			window.location.href = nextStepUrl;
 		}
 	);
@@ -191,7 +191,10 @@ $(document).ready(function() {
 
 
 	var emailArticleController = new FormController();
-	emailArticleController.watchForm('.form-email-article');
+	emailArticleController.watchForm('.form-email-article', function() {
+		$('.js-email-article-form-wrapper').hide();
+		$('.js-email-article-success').show();
+	});
 
 
 	var accountEmailPreferencesController = new FormController();
@@ -348,6 +351,88 @@ $(document).ready(function() {
 			$('.general-header__navigation-scroller--right').removeClass('is-visible');
 		}
 	});
+
+
+	// Smooth, clickable scrolling for General page headers
+	var smoothScrollingNav = function() {
+
+		// Cache for less DOM checking
+		var Scrollable = $('.general-header__navigation');
+		var Container = $('.general-header');
+
+		// Find current scroll distance is from left and right edges
+		var scrollDistance = function() {
+  			return {
+				left: Scrollable.scrollLeft(),
+				right: Scrollable[0].scrollWidth - (Container.width() + Scrollable.scrollLeft())
+			};
+		};
+
+		var init = function() {
+
+			$('.general-header__navigation-scroller--right').on('click', function() {
+				if(scrollDistance().right > 0) { // Not on right edge
+					smoothScroll(200, 'right');
+				}
+			});
+
+			$('.general-header__navigation-scroller--left').on('click', function() {
+				if(scrollDistance().left > 0) {
+					smoothScroll(200, 'left');
+				}
+			});
+
+		};
+
+		var scrollToTimerCache;
+	    var totalTravel = null;
+	    var durationStart = null;
+
+	    // Quadratic ease-out algorithm
+	    var easing = function(time, distance) {
+	       return distance * (time * (2 - time));
+	    };
+
+		var smoothScroll = function(duration, direction) {
+			if (duration <= 0) {
+			    // Reset everything when duration time finishes
+			    totalTravel = null;
+			    durationStart = null;
+				return;
+			}
+
+			// Store duration as durationStart on first loop
+			durationStart = !durationStart ? duration : durationStart;
+
+			// Store travel distance (container width) as totalTravel on first loop
+			totalTravel = !totalTravel ? Container.width() : totalTravel;
+
+			// Finds percentage of elapsed time since start
+			var travelPcent = 1 - (duration / durationStart);
+
+			// Finds travel change on this loop, adjusted for ease-out
+			var travel = easing(travelPcent, ((totalTravel / durationStart) * 10));
+
+			scrollToTimerCache = setTimeout(function() {
+				if (!isNaN(parseInt(travel, 10))) {
+					if(direction === 'right') {
+						Scrollable.scrollLeft(Scrollable.scrollLeft() + travel);
+						smoothScroll(duration - 10, direction);
+					} else if(direction === 'left') {
+						Scrollable.scrollLeft(Scrollable.scrollLeft() - travel);
+						smoothScroll(duration - 10, direction);
+					}
+
+				}
+			}.bind(this), 10);
+		};
+
+		// Bind event listeners
+		init();
+	};
+
+	// Execute!
+	smoothScrollingNav();
 
 
 	$('.informa-ribbon__title').on('click', function (e) {

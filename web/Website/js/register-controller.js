@@ -12,7 +12,7 @@ function loginController(requestVerificationToken) {
 					var value = '';
 
 					if ($(this).data('checkbox-type') === 'boolean') {
-						value = $(this).attr('checked');
+						value = this.checked;
 
 						if ($(this).data('checkbox-boolean-type') === 'reverse') {
 							value = !value;

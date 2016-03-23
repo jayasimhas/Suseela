@@ -14,7 +14,7 @@ using Sitecore.Analytics;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService]
 	public class HeaderViewModel : IHeaderViewModel
 	{
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;

@@ -115,7 +115,7 @@ namespace Informa.Library.Utilities.TokenMatcher
                 {
                     var article = results.Articles.FirstOrDefault();
                     if (article != null)
-                        return string.Format("<a href='{0}'>{1}</a>", article._Url, HttpUtility.HtmlDecode(article.Navigation_Title));
+                        return string.Format("<a href='{0}'>{1}</a>", article._Url, HttpUtility.HtmlDecode(article.Title));
                 }
             }
             catch (Exception ex)

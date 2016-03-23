@@ -1,23 +1,22 @@
-﻿using Glass.Mapper.Sc;
-using Informa.Library.Globalization;
+﻿using Informa.Library.Globalization;
 using Informa.Library.Salesforce;
 using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.Site;
 using Informa.Library.Subscription;
 using Informa.Library.User.Authentication;
-using Informa.Library.User.Authentication.Web;
 using Jabberwocky.Glass.Autofac.Attributes;
-using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace Informa.Web.ViewModels
 {
     [AutowireService(LifetimeScope.SingleInstance)]
     public class IndividualRenewalMessageViewModel : IIndividualRenewalMessageViewModel
     {
+        private const string PRODUCT_CODE = "scrip";
+        private const string PRODUCT_TYPE = "publication";
+        private readonly string[] SUBSCRIPTIONTYPE = new string[] { "individual", "free-trial" };
+
         ISalesforceServiceContext _service;
         ITextTranslator _textTranslator;
         IIndividualSubscriptionRenewalMessageContext _context;
@@ -47,13 +46,13 @@ namespace Informa.Web.ViewModels
             {
                 try
                 {
-                    if (_userContext.IsAuthenticated)
+                    if (_userContext != null && _userContext.IsAuthenticated)
                     {
                         //Get SubscruiptionsAndPurchases records for the specifed usern
                         EBI_QuerySubscriptionsAndPurchasesResponse response = _service.Execute(x => x.querySubscriptionsAndPurchases(_userContext.User.Username));
 
                         //Get the latest record
-                        _latestSalesForceRecord = response.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
+                        _latestSalesForceRecord = response?.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
                     }
                     else
                     {
@@ -70,16 +69,16 @@ namespace Informa.Web.ViewModels
                 if (_latestSalesForceRecord == null)
                     return false;
 
-                if (_latestSalesForceRecord.productCode.ToLower() != _siteRootContext.Item.Product_Code.ToLower())
+                if (_latestSalesForceRecord.productCode.ToLower() != PRODUCT_CODE)
                     return false;
 
                 if ((_latestSalesForceRecord.expirationDate - DateTime.Now)?.TotalDays > _siteRootContext.Item.Days_To_Expiration)
                     return false;
 
-                if (_latestSalesForceRecord.subscriptionType.ToLower() != "individual" && _latestSalesForceRecord.subscriptionType.ToLower() != "free-trial")
+                if (SUBSCRIPTIONTYPE.Contains(_latestSalesForceRecord.subscriptionType.ToLower()) == false)
                     return false;
 
-                if (_latestSalesForceRecord.productType.ToLower() != _siteRootContext.Item.Product_Type.ToLower())
+                if (_latestSalesForceRecord.productType.ToLower() != PRODUCT_TYPE)
                     return false;
 
                 return true;

@@ -373,6 +373,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 				throw;
 			}
 
+			//TamerM - 2016-03-22: Prompt and ReExport  NLM FEED
+			NLMFeedUtils.PromptAndReExportNLMFeed(ArticleDetails.ArticleNumber, ArticleDetails.IsPublished);
+
 			return true;
 		}
 
@@ -562,7 +565,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 				}
 			}
 
-
 			DocumentPropertyEditor.WritePublicationAndDate(SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
 
 			articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleGuid != Guid.Empty
@@ -723,26 +725,27 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 				MessageBox.Show(@"Select at least one taxonomy item for the article!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return;
 			}
-			var articleDate = articleDetailsPageSelector.GetDate();
-			if (articleDate < DateTime.Now)
-			{
-
-				var result = WantsToSetArticleDateToNow(command);
-				if (result == DialogResult.Yes)
-				{
-					articleDetailsPageSelector.SetDate(DateTime.Now);
-				}
-				else if (result == DialogResult.Cancel)
-				{
-					MessageBox.Show("Save cancelled.");
-					return;
-				}
-			}
-
-			SuspendLayout();
-			Cursor = Cursors.WaitCursor;
 			try
 			{
+				var articleDate = articleDetailsPageSelector.GetDate();
+				if (articleDate < DateTime.Now)
+				{
+
+					var result = WantsToSetArticleDateToNow(command);
+					if (result == DialogResult.Yes)
+					{
+						articleDetailsPageSelector.SetDate(DateTime.Now);
+					}
+					else if (result == DialogResult.Cancel)
+					{
+						MessageBox.Show("Save cancelled.");
+						return;
+					}
+				}
+
+				SuspendLayout();
+				Cursor = Cursors.WaitCursor;
+
 				var isPublished = ArticleDetails.IsPublished;
 				Guid guidCopy = ArticleDetails.ArticleGuid;
 				ArticleDetails = articleDetailsPageSelector.GetArticleDetailsWithoutDocumentParsing();
@@ -766,8 +769,11 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 				articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
 				articleDetailsPageSelector.UpdateFields();
 				articleDetailsPageSelector.ResetChangedStatus();
-				DocumentPropertyEditor.WritePublicationAndDate(
-					SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
+				DocumentPropertyEditor.WritePublicationAndDate(SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
+
+				//TamerM - 2016-03-22: Prompt and ReExport  NLM FEED
+				NLMFeedUtils.PromptAndReExportNLMFeed(ArticleDetails.ArticleNumber, ArticleDetails.IsPublished);
+
 				MessageBox.Show(@"Metadata saved!", @"Informa");
 			}
 			catch (WebException wex)
@@ -804,29 +810,30 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 				MessageBox.Show(@"Select at least one taxonomy item for the article!", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return;
 			}
-			var articleDate = articleDetailsPageSelector.GetDate();
-			if (articleDate < DateTime.Now)
-			{
-				var result = WantsToSetArticleDateToNow(command);
-				if (result == DialogResult.Yes)
-				{
-					articleDetailsPageSelector.SetDate(DateTime.Now);
-				}
-				else if (result == DialogResult.Cancel)
-				{
-					MessageBox.Show("Save cancelled.");
-					return;
-				}
-			}
-
-			Globals.SitecoreAddin.Log("Save and transferring");
-			Cursor = Cursors.WaitCursor;
-			SuspendLayout();
-
-			SitecoreAddin.ActiveDocument.Saved = false;
-
 			try
 			{
+				var articleDate = articleDetailsPageSelector.GetDate();
+				if (articleDate < DateTime.Now)
+				{
+					var result = WantsToSetArticleDateToNow(command);
+					if (result == DialogResult.Yes)
+					{
+						articleDetailsPageSelector.SetDate(DateTime.Now);
+					}
+					else if (result == DialogResult.Cancel)
+					{
+						MessageBox.Show("Save cancelled.");
+						return;
+					}
+				}
+
+				Globals.SitecoreAddin.Log("Save and transferring");
+				Cursor = Cursors.WaitCursor;
+				SuspendLayout();
+
+				SitecoreAddin.ActiveDocument.Saved = false;
+
+
 				var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument,
 																	   _wordUtils.CharacterStyleTransformer);
 				if (PreSavePrompts(metadataParser)) return;
