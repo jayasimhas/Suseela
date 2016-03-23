@@ -68,10 +68,6 @@
 
 			@if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
             {
-                if (Model.IsAuthenticated && !Sitecore.Context.User.IsAdministrator)
-                {
-                    <div class="header-account-access__friendly-greeting">@Html.ActionLink("TEMPORARILY SPOOF ENTITLEMENT", "SpoofEntitlement", "Spoof", new { area = "Account", returnUrl = "/" }, new { })</div>
-                }
 				<div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
 			}
 
