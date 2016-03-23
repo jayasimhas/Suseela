@@ -40,7 +40,7 @@ ar|sitecore\Article Read Access|pe|+item:read|pd|+item:read|ar|sitecore\General 
 ----version----
 language: en
 version: 1
-revision: 060a7b45-08e1-4d1f-bc5a-087a04a1fb75
+revision: 1f44627c-a958-42c4-acbc-8807225b920c
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -325,36 +325,14 @@ name: Subscribe Link
 key: subscribe link
 content-length: 114
 
-<link text="" linktype="internal" class="" title=""  querystring="" id="{BD836069-C52C-4B3F-B170-39082AD580ED}" />
-----field----
-field: {B892ACBF-336F-4D65-AE8C-84E17B3A0D65}
-name: Product Code
-key: product code
-content-length: 5
-
-scrip
+<link text="" linktype="internal" class="" title=""  querystring="" id="{2870779D-E98C-4A3B-A753-57E90CA5E4A6}" />
 ----field----
 field: {3071922D-4EF9-4ABB-AE03-3DAFEC2544F4}
 name: Days To Expiration
 key: days to expiration
-content-length: 3
+content-length: 4
 
-190
-----field----
-field: {F754E79E-C985-4F0F-818F-0D051911A80D}
-name: Subscription Type
-key: subscription type
-content-length: 22
-
-individual
-free-trial
-----field----
-field: {50AC1998-CB65-4E2F-AD0B-52980F402A95}
-name: Product Type
-key: product type
-content-length: 11
-
-publication
+1900
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
@@ -375,14 +353,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-060a7b45-08e1-4d1f-bc5a-087a04a1fb75
+1f44627c-a958-42c4-acbc-8807225b920c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160320T133106Z
+20160321T120236Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
