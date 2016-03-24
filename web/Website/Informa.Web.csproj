@@ -767,10 +767,12 @@
     <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IToolbarViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IUsernameViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IUserSubscriptionsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IUserEntitlementsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IUserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\ToolbarViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\UsernameViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\UserSubscriptionsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\UserEntitlementsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\UserIpAddressViewModel.cs" />
@@ -1248,6 +1250,7 @@
     <Content Include="Views\Search\SearchRssXml.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\UserEntitlements.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\UserSubscriptions.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\Username.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

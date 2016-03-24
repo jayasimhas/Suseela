@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Informa.Web.ViewModels.SiteDebugging
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.Default)]
 	public class UserIpAddressViewModel : IUserIpAddressViewModel
 	{
 		protected readonly IIpAddressFactory IpAddressFactory;
@@ -56,17 +56,6 @@ namespace Informa.Web.ViewModels.SiteDebugging
 			}
 		}
 		public bool IsCleared => !string.IsNullOrWhiteSpace(HttpContext.Current.Request[ClearIpAddressInputName]);
-		public string IpAddress
-		{
-			get
-			{
-				if (IsDebugging)
-				{
-					return UserIpAddressContext.IpAddress.ToString();
-				}
-
-				return string.Empty;
-			}
-		}
+		public string IpAddress => IsDebugging ? UserIpAddressContext.IpAddress.ToString() : string.Empty;
 	}
 }

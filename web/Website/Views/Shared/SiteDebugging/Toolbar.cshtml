@@ -30,6 +30,9 @@
 				@{ Html.RenderPartial("SiteDebugging/UserIpAddress", Model.UserIpAddressViewModel); }
 			</div>
 			<div class="debugToolbarSection">
+				@{ Html.RenderPartial("SiteDebugging/Username", Model.UsernameViewModel); }
+			</div>
+			<div class="debugToolbarSection">
 				@{ Html.RenderPartial("SiteDebugging/EntitlementsCheckEnabled", Model.EntitlementsCheckEnabledViewModel); }
 			</div>
 			<div class="debugToolbarSection">
