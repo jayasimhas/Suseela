@@ -24,7 +24,7 @@
         <li>
             @if (Model.LinkedInLink != null)
             {
-                <a href="@Model.LinkedInLink.Url" class="click-utag" data-info="article share linkedin" target="_blank" title="@Model.LinkedInLink.Text">
+                <a href="@Model.LinkedInLink.Url" class="click-utag" data-info='{"event_name" : "article-share-linkedin"}' target="_blank" title="@Model.LinkedInLink.Text">
                     <svg class="footer__share-icons">
                         <use xlink:href="/dist/img/svg-sprite.svg#linkedin-footer"></use>
                     </svg>
@@ -32,7 +32,7 @@
             }
             @if (Model.TwitterLink != null)
             {
-                <a href="@Model.TwitterLink.Url" target="_blank" title="@Model.TwitterLink.Text" class="click-utag" data-info="article share twitter">
+                <a href="@Model.TwitterLink.Url" target="_blank" title="@Model.TwitterLink.Text" class="click-utag" data-info='{"event_name" : "article-share-twitter"}'>
                     <svg class="footer__share-icons">
                         <use xlink:href="/dist/img/svg-sprite.svg#twitter-footer"></use>
                     </svg>
@@ -40,7 +40,7 @@
             }
             @if (Model.FacebookLink != null)
             {
-                <a href="@Model.FacebookLink.Url" target="_blank" title="@Model.FacebookLink.Text" class="click-utag" data-info="article share facebook">
+                <a href="@Model.FacebookLink.Url" target="_blank" title="@Model.FacebookLink.Text" class="click-utag" data-info='{"event_name" : "article-share-facebook"}'>
                     <svg class="footer__share-icons">
                         <use xlink:href="/dist/img/svg-sprite.svg#facebook-footer"></use>
                     </svg>
