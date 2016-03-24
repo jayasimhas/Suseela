@@ -39,6 +39,7 @@ namespace Informa.Library.Salesforce.User.Profile
 			{
 				FirstName = profile?.name?.firstName ?? string.Empty,
 				LastName = profile?.name?.lastName ?? string.Empty,
+				Email = username,
                 MiddleInitial = profile?.name?.middleInitial ?? string.Empty,
                 NameSuffix = profile?.name?.nameSuffix ?? string.Empty,
                 Salutation = profile?.name?.salutation ?? string.Empty,
