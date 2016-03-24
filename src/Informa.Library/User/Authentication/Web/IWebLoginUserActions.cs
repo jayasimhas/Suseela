@@ -2,7 +2,7 @@
 
 namespace Informa.Library.User.Authentication.Web
 {
-	public interface IWebLoginUserActions : IActionsProcessor<IWebLoginUserAction, IAuthenticatedUser>
+	public interface IWebLoginUserActions : IActionsProcessor<IWebLoginUserAction, IUser>
 	{
 	}
 }

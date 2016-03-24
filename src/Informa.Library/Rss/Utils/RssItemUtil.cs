@@ -1,108 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.ServiceModel.Syndication;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Web;
-using System.Web.UI;
-using System.Xml;
 using System.Xml.Linq;
 using Glass.Mapper.Sc;
-using Informa.Library.Utilities.References;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Newtonsoft.Json;
-using Sitecore;
 using Sitecore.Data.Items;
-using Sitecore.Syndication;
-using Sitecore.Syndication.Web;
-using Sitecore.Web;
-using Sitecore.Web.UI.WebControls;
 
-namespace Informa.Library.Rss
+namespace Informa.Library.Rss.Utils
 {
-    public class SearchRssFeed : PublicFeed
+    public class RssItemUtil
     {
-        private readonly XNamespace _atomNameSpace = "http://www.w3.org/2005/Atom";
         protected ISitecoreContext _sitecoreContext;
-        protected string _hostName;
-        protected ItemReferences _itemReferences;
 
-        protected override void SetupFeed(SyndicationFeed feed)
+        public RssItemUtil(ISitecoreContext sitecoreContext)
         {
-               _sitecoreContext = new SitecoreContext();
-            _hostName = WebUtil.GetHostName();
-            _itemReferences = new ItemReferences();
+            _sitecoreContext = sitecoreContext;
 
-            //Set some basic feed attributes
-            feed.Title = new TextSyndicationContent(GetFeedTitle());
-            feed.Language = "en-US";
-
-            //Add atom namespace to the feed 
-            feed.AttributeExtensions.Add(new XmlQualifiedName("atom", XNamespace.Xmlns.NamespaceName),
-                _atomNameSpace.NamespaceName);
-
-            feed = AddFeedLinks(feed);
-            feed = AddCopyrightText(feed);
         }
 
-        /// <summary>
-        /// Get the RSS channel title that displays any search terms that were used in the search
-        /// </summary>
-        /// <returns></returns>
-        private string GetFeedTitle()
+        public SyndicationItem GetSyndicationItemFromSitecore(Item item)
         {
-            var title = "Search Feed";
-
-            if (Context.Request.QueryString["q"] != null)
-            {
-                title += ": " + Context.Request.QueryString["q"];
-            }
-
-            return title;
-        }
-
-        /// <summary>
-        /// Add the copyright text to the rss channel, this is pulled from Sitecore
-        /// </summary>
-        /// <param name="feed"></param>
-        /// <returns></returns>
-        private SyndicationFeed AddCopyrightText(SyndicationFeed feed)
-        {
-            var siteConfig = _sitecoreContext.GetItem<ISite_Config>(_itemReferences.SiteConfig);
-            feed.Copyright = new TextSyndicationContent(siteConfig.Copyright_Text);
-
-            return feed;
-        }
-
-        /// <summary>
-        /// Add the channel links
-        /// </summary>
-        /// <param name="feed"></param>
-        /// <returns></returns>
-        protected SyndicationFeed AddFeedLinks(SyndicationFeed feed)
-        {
-            feed.Links.Add(SyndicationLink.CreateAlternateLink(new Uri(GetSearchUrl())));
-            feed.ElementExtensions.Add(new XElement(_atomNameSpace + "link", new XAttribute("href", GetSearchUrl()),
-                new XAttribute("rel", "self"), new XAttribute("type", "application/rss+xml")));
-
-            return feed;
-        }
-
-        /// <summary>
-        /// Render each RSS item, there are custom fields being added above and beyond the normal atom fields
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        protected override SyndicationItem RenderItem(Item item)
-        {
-            var syndicationItem = base.RenderItem(item);
-
             var article = _sitecoreContext.GetItem<IArticle>(item.ID.ToString());
 
-            if (article != null)
+            if (article == null)
             {
+                return null;
+            }
+            
+                var syndicationItem = new SyndicationItem(article.Title,
+            article.Summary,
+            new Uri(article._AbsoluteUrl),
+            article._AbsoluteUrl,
+            article.Actual_Publish_Date);
+
                 syndicationItem = AddIdToFeedItem(syndicationItem, article);
                 syndicationItem = AddCatgoryToFeedItem(syndicationItem, article);
                 syndicationItem = AddAuthorsToFeedItem(syndicationItem, article);
@@ -114,7 +49,12 @@ namespace Informa.Library.Rss
 
                 if (article.Media_Type != null)
                 {
+                    if (!string.IsNullOrEmpty(article.Media_Type.Item_Name))
+                    {
                     titleText = article.Media_Type.Item_Name.ToUpper() + ": " + titleText;
+                }
+
+                    
                 }
 
                 syndicationItem.Title = new TextSyndicationContent(StripHtmlTags(titleText));
@@ -122,10 +62,21 @@ namespace Informa.Library.Rss
                 var content = syndicationItem.Content as TextSyndicationContent;
                 var descriptonText = HttpUtility.HtmlEncode(content.Text);
                 syndicationItem.Content = new TextSyndicationContent(descriptonText);
-            }
+
+                return syndicationItem;
+            
 
 
-            return syndicationItem;
+           
+        }
+
+        public static string StripHtmlTags(string html)
+        {
+            if (string.IsNullOrEmpty(html)) return "";
+
+            var decodedHtml = HttpUtility.HtmlDecode(html);
+
+            return Regex.Replace(decodedHtml, "<.*?>", string.Empty);
         }
 
         private SyndicationItem AddEmailSortOrderField(SyndicationItem syndicationItem, IArticle article)
@@ -253,80 +204,5 @@ namespace Informa.Library.Rss
 
             return syndicationItem;
         }
-
-        public static string StripHtmlTags(string html)
-        {
-            if (string.IsNullOrEmpty(html)) return "";
-
-            var decodedHtml = HttpUtility.HtmlDecode(html);
-
-            return Regex.Replace(decodedHtml, "<.*?>", string.Empty);
-        }
-
-        /// <summary>
-        ///     Get the url for the original search page
-        /// </summary>
-        /// <returns></returns>
-        private string GetSearchUrl()
-        {
-
-            var searchUrlBase = string.Format("http://{0}/search#?", _hostName);
-
-            if (!Context.RawUrl.Contains("?"))
-            {
-                return searchUrlBase;
-            }
-
-            var urlParts = Context.RawUrl.Split('?');
-
-            if (urlParts.Length != 2)
-            {
-                return searchUrlBase;
-            }
-
-            return HttpUtility.HtmlEncode(string.Format("{0}{1}", searchUrlBase, urlParts[1]));
-        }
-
-        public override IEnumerable<Item> GetSourceItems()
-        {
-            string searchPageId = _itemReferences.SearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
-            string url = string.Format("http://{0}/api/informasearch?pId={1}", _hostName, searchPageId);
-
-            if (Context.RawUrl.Contains("?"))
-            {
-                var urlParts = Context.RawUrl.Split('?');
-
-                if (urlParts.Length == 2)
-                {
-                    url = string.Format("{0}&{1}", url, urlParts[1]);
-                }
-            }
-            else
-            {
-                url = string.Format("{0}&sortBy=relevance&sortOrder=asc", url);
-            }
-
-            var client = new WebClient();
-            var content = client.DownloadString(url);
-
-            var results = JsonConvert.DeserializeObject<SearchResults>(content);
-
-            var resultItems = new List<Item>();
-
-            foreach (var searchResult in results.results)
-            {
-                var theItem = Context.Database.GetItem(searchResult.ItemId);
-
-                if (theItem == null)
-                {
-                    continue;
-                }
-
-                resultItems.Add(theItem);
-            }
-
-            return resultItems;
-        }
-
     }
 }

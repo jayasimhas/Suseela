@@ -305,6 +305,8 @@
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
+    <Compile Include="Rss\Utils\RssFeedUtil.cs" />
+    <Compile Include="Rss\Utils\RssItemUtil.cs" />
     <Compile Include="SiteDebugging\ISiteDebugger.cs" />
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
     <Compile Include="SiteDebugging\SiteDebugger.cs" />
@@ -312,7 +314,12 @@
     <Compile Include="Subscription\SubscriptionProductKeyContext.cs" />
     <Compile Include="Subscription\User\IUserSubscriptionsContext.cs" />
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
+    <Compile Include="User\Authentication\Web\IWebAuthenticateUser.cs" />
+    <Compile Include="User\Authentication\Web\IWebAuthenticateUserResult.cs" />
+    <Compile Include="User\Authentication\Web\SiteDebugging\ISiteDebuggingWebLoginUser.cs" />
     <Compile Include="User\Authentication\Web\SiteDebugging\SiteDebuggingWebLoginUser.cs" />
+    <Compile Include="User\Authentication\Web\WebAuthenticateUser.cs" />
+    <Compile Include="User\Authentication\Web\WebAuthenticateUserResult.cs" />
     <Compile Include="User\Entitlement\EntitlementAccessLevelContext.cs" />
     <Compile Include="User\Entitlement\EntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\EntitlementSession.cs" />
@@ -411,7 +418,6 @@
     <Compile Include="Publishing\Switcher\ScheduledState.cs" />
     <Compile Include="Rss\SearchResults.cs" />
     <Compile Include="Rss\SearchResultsRequest.cs" />
-    <Compile Include="Rss\SearchRssFeed.cs" />
     <Compile Include="Search\ComputedFields\Facets\ArticleInProgressField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\PlannedPublishDateField.cs" />
     <Compile Include="Search\Results\GeneralContentResult.cs" />
@@ -884,6 +890,8 @@
     <Compile Include="AntiForgery\AntiForgeryValidate.cs" />
     <Compile Include="AntiForgery\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\WebApi\Filters\ValidateReasonsAttribute.cs" />
+    <Compile Include="Utilities\WebUtils\IRefreshPage.cs" />
+    <Compile Include="Utilities\WebUtils\RefreshPage.cs" />
     <Compile Include="Utilities\WebUtils\UrlUtils.cs" />
   </ItemGroup>
   <ItemGroup>
