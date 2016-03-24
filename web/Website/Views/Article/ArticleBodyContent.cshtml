@@ -117,7 +117,7 @@
                 @* * *  ARTICLE - FEATURED IMAGE
                     IIPP-117 *@
                 <aside class="article-inline-image">
-                    <img src="@Model.Image.ImageUrl">
+                    <img src="@Model.Image.ImageUrl" alt="@Model.Image.ImageAltText">
                     @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
                     {
                         <span class="article-inline-image__source">
