@@ -1,18 +1,25 @@
 ----item----
 version: 1
-id: {C5203FAB-4CD3-4B25-BAD8-EB58E543F51F}
+id: {E482F426-F765-496C-8E63-8B49628417BC}
 database: master
-path: /sitecore/content/ScripIntelligence/Home/Rss/Search Feed
-parent: {403146D0-D6BD-408B-86D8-146397A26F19}
-name: Search Feed
+path: /sitecore/layout/Renderings/User Defined/Search/SearchRssXml
+parent: {896D8843-D186-47FD-B652-5E186688664E}
+name: SearchRssXml
 master: {00000000-0000-0000-0000-000000000000}
-template: {A6DE7B43-7CD7-4BFE-AB9B-09ACBA91E9B8}
-templatekey: Search Rss Feed
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
 
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 33
+
+/Views/Search/SearchRssXml.cshtml
 ----version----
 language: en
 version: 1
-revision: 6ad3e2eb-5e58-4787-a786-c945dd53ed30
+revision: f93d4802-f650-4d29-9207-c7a37dd8f59a
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -20,21 +27,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160323T171122Z
+20160303T011616Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-6ad3e2eb-5e58-4787-a786-c945dd53ed30
+f93d4802-f650-4d29-9207-c7a37dd8f59a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160323T194202Z
+20160323T170710Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

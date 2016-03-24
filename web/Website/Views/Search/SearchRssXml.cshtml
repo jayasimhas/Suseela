@@ -1,0 +1,3 @@
+﻿@model SearchRssViewModel
+@Html.Raw(Model.GetSearchRssXml())
+@{ Response.ContentType = "text/xml"; }

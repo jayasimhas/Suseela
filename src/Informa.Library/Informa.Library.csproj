@@ -305,6 +305,8 @@
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
+    <Compile Include="Rss\Utils\RssFeedUtil.cs" />
+    <Compile Include="Rss\Utils\RssItemUtil.cs" />
     <Compile Include="SiteDebugging\ISiteDebugger.cs" />
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
     <Compile Include="SiteDebugging\SiteDebugger.cs" />
@@ -415,7 +417,6 @@
     <Compile Include="Publishing\Switcher\ScheduledState.cs" />
     <Compile Include="Rss\SearchResults.cs" />
     <Compile Include="Rss\SearchResultsRequest.cs" />
-    <Compile Include="Rss\SearchRssFeed.cs" />
     <Compile Include="Search\ComputedFields\Facets\ArticleInProgressField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\PlannedPublishDateField.cs" />
     <Compile Include="Search\Results\GeneralContentResult.cs" />
