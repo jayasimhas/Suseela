@@ -6,6 +6,10 @@ main {
 	@include breakpoint('small') {
 		width: 100%;
 	}
+
+	&.main--solo {
+		margin-left: 0;
+	}
 }
 
 .main__wrapper {
@@ -23,6 +27,11 @@ main {
 	@include breakpoint('small') {
 		width: 100%;
 		margin-left: 330px;
+	}
+
+	&--solo {
+		width: 100%;
+		margin-left: 0;
 	}
 }
 
