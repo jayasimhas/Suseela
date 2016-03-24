@@ -2,7 +2,7 @@
 using Informa.Library.User.Authentication;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
-using Informa.Library.Subscription;
+using Informa.Library.Subscription.User;
 using Informa.Web.Models;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
@@ -16,14 +16,14 @@ namespace Informa.Web.ViewModels
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IPageLinksFactory PageLinksFactory;
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-		protected readonly IUserSubscriptionContext UserSubscriptionContext;
+		protected readonly IUserSubscribedContext UserSubscriptionContext;
 		protected readonly ITextTranslator TextTranslator;
 
 		public FooterViewModel(
 			ISiteRootContext siteRootContext,
 			IPageLinksFactory pageLinksFactory,
 			IAuthenticatedUserContext authenticatedUserContext,
-			IUserSubscriptionContext userSubscriptionContext,
+			IUserSubscribedContext userSubscriptionContext,
 			ITextTranslator textTranslator)
 		{
 			SiteRootContext = siteRootContext;

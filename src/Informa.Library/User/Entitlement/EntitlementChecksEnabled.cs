@@ -7,11 +7,14 @@ namespace Informa.Library.User.Entitlement
 	{
 		private const string ChecksEnabledSessionKey = "ChecksEnabled";
 
+		protected readonly ISitecoreUserContext SitecoreUserContext;
 		protected readonly IEntitlementSession Session;
 
 		public EntitlementChecksEnabled(
+			ISitecoreUserContext sitecoreUserContext,
 			IEntitlementSession session)
 		{
+			SitecoreUserContext = sitecoreUserContext;
 			Session = session;
 		}
 
@@ -23,7 +26,7 @@ namespace Informa.Library.User.Entitlement
 
 				if (isEnabled == null || !isEnabled.HasValue)
 				{
-					return Enabled = true;
+					return Enabled = !SitecoreUserContext.User.IsAdministrator;
 				}
 
 				return isEnabled.Value;

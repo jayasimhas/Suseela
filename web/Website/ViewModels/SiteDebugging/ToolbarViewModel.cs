@@ -11,15 +11,18 @@ namespace Informa.Web.ViewModels.SiteDebugging
 		public ToolbarViewModel(
 			ISiteDebuggingAllowedContext siteDebuggingAllowedContext,
 			IUserIpAddressViewModel userIpAddressViewModel,
-			IEntitlementsCheckEnabledViewModel entitlementsCheckEnabledViewModel)
+			IEntitlementsCheckEnabledViewModel entitlementsCheckEnabledViewModel,
+			IUserEntitlementsViewModel userEntitlementsViewModel)
 		{
 			SiteDebuggingAllowedContext = siteDebuggingAllowedContext;
 			UserIpAddressViewModel = userIpAddressViewModel;
 			EntitlementsCheckEnabledViewModel = entitlementsCheckEnabledViewModel;
+			UserEntitlementsViewModel = userEntitlementsViewModel;
 		}
 
 		public IUserIpAddressViewModel UserIpAddressViewModel { get; set; }
 		public IEntitlementsCheckEnabledViewModel EntitlementsCheckEnabledViewModel { get; set; }
+		public IUserEntitlementsViewModel UserEntitlementsViewModel { get; set; }
 
 		public bool Enabled => SiteDebuggingAllowedContext.IsAllowed;
 		public string ToggleButtonText => "Debugging";

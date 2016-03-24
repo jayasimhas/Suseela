@@ -7,24 +7,27 @@ namespace Informa.Library.Salesforce.User.Entitlement
 {
     public class SalesforceGetUserEntitlements : ISalesforceGetUserEntitlements, IGetUserEntitlements
     {
-        protected readonly ISalesforceServiceContext Service;
+		protected readonly ISalesforceEntitlmentFactory EntitlementFactory;
+		protected readonly ISalesforceServiceContext Service;
 
-        public SalesforceGetUserEntitlements(ISalesforceServiceContext service)
+        public SalesforceGetUserEntitlements(
+			ISalesforceEntitlmentFactory entitlementFactory,
+			ISalesforceServiceContext service)
         {
-            Service = service;
+			EntitlementFactory = entitlementFactory;
+			Service = service;
         }
 
         public IList<IEntitlement> GetEntitlements(string email, string ipaddress)
         {
             var response = Service.Execute(x => x.queryEntitlements(email, ipaddress));
 
-            if (!response.IsSuccess())
-            {
-                return new List<IEntitlement>();
-            }
-            return new List<IEntitlement>(
-                response.entitlements?.Select(x => new Library.User.Entitlement.Entitlement {ProductCode = x.ProductCode}) ??
-                new List<Library.User.Entitlement.Entitlement>());
-        }
+			if (!response.IsSuccess() || response.entitlements == null)
+			{
+				return Enumerable.Empty<IEntitlement>().ToList();
+			}
+
+			return response.entitlements?.Select(x => EntitlementFactory.Create(x) as IEntitlement).ToList();
+		}
     }
 }
