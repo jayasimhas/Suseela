@@ -191,8 +191,9 @@ $(document).ready(function() {
 
 
 	var emailArticleController = new FormController();
-	emailArticleController.watchForm('.form-email-article', function() {
+	emailArticleController.watchForm('.form-email-article', function(form) {
 		$('.js-email-article-form-wrapper').hide();
+		$('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val());
 		$('.js-email-article-success').show();
 	});
 
@@ -271,7 +272,8 @@ $(document).ready(function() {
 
  	    url+= "mobilemedia=true&selectedid=" + mediaId;
 
- 	    $(tableLink).find('a').attr("href", url);
+		// $(tableLink).find('a').attr("href", url);
+		$(tableLink).find('a').data("table-url", url).attr('href', null);
  		$(e).after(tableLink);
 	});
 

@@ -21,7 +21,7 @@
 			<svg class="alert__icon">
 				<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
 			</svg>
-			<p>All set! This article has been sent to <b>my&#64;email.address</b>.</p>
+			<p>All set! This article has been sent to <b class="js-email-article-recip-success">my&#64;email.address</b>.</p>
 		</div>
 
 		<div class="js-email-article-form-wrapper">
@@ -44,7 +44,7 @@
 					@Model.InvalidEmailText
 				</p>
 				<input	name="RecipientEmail"
-					   	class="pop-out__input"
+					   	class="pop-out__input js-email-article-recip-addr"
 					   	type="text"
 					   	placeholder="@Model.RecipientEmailPlaceholderText">
 
@@ -89,7 +89,7 @@
 						<a href="#">@Model.CancelText</a>
 					</div>
 					<div class="sign-in__submit-wrapper">
-						<button type="submit" class="button--filled">@Model.SendText</button>
+						<button type="submit" class="button--filled click-utag"  data-info='{"event_name" : "email-a-friend", "emailFrom" : "@Model.AuthUserName","articleTitle":"@Model.ArticleTitle" }'>@Model.SendText</button>
 					</div>
 				</div>
 			</form>
