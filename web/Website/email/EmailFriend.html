@@ -140,6 +140,22 @@
 	</style>
 </head>
 <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;margin:0;padding:0;margin:0;padding:0;background-color:#FFF;height:100% !important;width:100% !important">
+    <input type="hidden" value="#Environment#" id="hdnEnvironment"/>
+      <script type="text/javascript">
+          (function (a, b, c, d) {
+              var environment = document.getElementById("hdnEnvironment").value;
+            a = '//tags.tiqcdn.com/utag/informa/main/'+environment+'/utag.js';
+            b = document; c = 'script'; d = b.createElement(c); d.src = a;
+            d.type = 'text/java' + c; d.async = true;
+            a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a)
+          })();
+          function clickFromEmail(eventName)
+          {
+              utag.link({
+                  "event_name" : eventName
+              });
+          }
+    </script>
 	<center>
 		<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;padding:0;background-color:#FFF;border-collapse:collapse !important;height:100% !important;width:100% !important">
 			<tr>
@@ -147,7 +163,7 @@
 					<table border="0" cellpadding="0" cellspacing="0" id="topViewOnlineLink" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:helvetica, arial, sans-serif;font-size:12px;border-collapse:collapse !important">
 						<tr>
 							<td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-bottom: 12px;">
-								View our <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">online version</a>
+								View our <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none" onclick="clickFromEmail('view-online-version-from-email')">online version</a>
 							</td>
 						</tr>
 					</table>
@@ -173,9 +189,9 @@
 											<img src="#Logo_URL#" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;height:auto;max-width:600px;max-width:150px;" id="headerImage">
 										</td>
 										<td valign="bottom" align="right" class="headerSocialLinks" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-right: 24px; padding-bottom: 32px;">
-											<a href="#RSS_Link_URL#">#RSS_Link_Text#</a>
-											<a href="#LinkedIn_Link_URL#">#LinkedIn_Link_Text#</a>
-											<a href="#Twitter_Link_URL#">#Twitter_Link_Text#</a>
+											<a href="#RSS_Link_URL#" onclick="clickFromEmail('rss-link-from-email')">#RSS_Link_Text#</a>
+											<a href="#LinkedIn_Link_URL#" onclick="clickFromEmail('linkedin-from-email')">#LinkedIn_Link_Text#</a>
+											<a href="#Twitter_Link_URL#" onclick="clickFromEmail('twitter-from-email')">#Twitter_Link_Text#</a>
 										</td>
 									</tr>
 								</table>

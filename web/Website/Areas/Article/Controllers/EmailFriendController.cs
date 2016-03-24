@@ -11,6 +11,7 @@ using Informa.Library.Utilities.WebUtils;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Web.Areas.Article.Models.Article.EmailFriend;
 using Informa.Web.Controllers;
+using Informa.Library.Utilities.Settings;
 
 namespace Informa.Web.Areas.Article.Controllers
 {
@@ -23,9 +24,10 @@ namespace Informa.Web.Areas.Article.Controllers
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IEmailFactory EmailFactory;
+		protected readonly ISiteSettings SiteSettings;
 
 		public EmailFriendController(ArticleUtil articleUtil, ITextTranslator textTranslator, ISiteRootContext siteRootContext, IEmailFactory emailFactory,
-			Func<string, ISitecoreService> sitecoreFactory, IEmailSender emailSender, IHtmlEmailTemplateFactory htmlEmailTemplateFactory)
+			Func<string, ISitecoreService> sitecoreFactory, IEmailSender emailSender, IHtmlEmailTemplateFactory htmlEmailTemplateFactory, ISiteSettings siteSettings)
 		{
 			EmailSender = emailSender;
 			_articleUtil = articleUtil;
@@ -34,6 +36,7 @@ namespace Informa.Web.Areas.Article.Controllers
 			TextTranslator = textTranslator;
 			SiteRootContext = siteRootContext;
 			EmailFactory = emailFactory;
+			SiteSettings = siteSettings;
 		}
 
 		[HttpPost]
@@ -97,6 +100,7 @@ namespace Informa.Web.Areas.Article.Controllers
 				var replacements = new Dictionary<string, string>
 				{
 					//["#Logo_URL#"] = GetValue(siteRoot?.Email_Logo?.Src),
+					["#Envrionment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),
 					["#Date#"] = DateTime.Now.ToString("dddd, d MMMM yyyy"),
 					["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink(),
 					["#RSS_Link_Text#"] = GetValue(siteRoot?.RSS_Link?.Text),

@@ -117,11 +117,9 @@
     <script type="text/javascript">
     $(document).ready(function () {
         $('.click-utag').click(function (e) {
-            var eventName = $(this).data('info');
+            var eventDetials = $(this).data('info');
             utag.link({
-                "page_type": "@Model.PageType",
-                "page_name": "@Model.Title",
-                "event_name": eventName
+               eventDetials
             });
 
         });

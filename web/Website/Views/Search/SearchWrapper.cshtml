@@ -4,8 +4,8 @@
 
         <div class="search__header-buttons" ng-controller="EmailRssController as emailRss">
 
-            <!--TODO: replace with correct email and subject-->
-            <a href="mailto:someone@example.com?Subject=Hello%20again" class="click-utag" data-info="mail to someone" target="_top" class="search__header-buttons--email">
+            <!--TODO: replace with correct email and subject, also change the data-info value of someone required for analytics-->
+            <a href="mailto:someone@example.com?Subject=Hello%20again" class="click-utag" data-info='{"event_name" : "mail-to-someone"}' target="_top" class="search__header-buttons--email">
                 <h6>email</h6>
                 <svg class="icon icon--email">
               	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#email"></use>
