@@ -2,6 +2,6 @@
 {
 	public interface IWebLoginUser
 	{
-		IWebLoginUserResult Login(string username, string password, bool persist);
+		IWebLoginUserResult Login(IUser user, bool persist);
 	}
 }

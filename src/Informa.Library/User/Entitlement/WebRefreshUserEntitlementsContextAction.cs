@@ -15,7 +15,7 @@ namespace Informa.Library.User.Entitlement
             SitecoreUserContext = sitecoreUserContext;
         }
 
-        public void Process(IAuthenticatedUser user)
+        public void Process(IUser user)
         {
             SitecoreUserContext.RefreshEntitlements();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Informa.Library.User.Authentication.Web
 {
-	public interface IWebLoginUserResult : IAuthenticateUserResult
+	public interface IWebLoginUserResult
 	{
 		bool Success { get; }
 	}

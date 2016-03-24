@@ -32,6 +32,12 @@
 			<div class="debugToolbarSection">
 				@{ Html.RenderPartial("SiteDebugging/EntitlementsCheckEnabled", Model.EntitlementsCheckEnabledViewModel); }
 			</div>
+			<div class="debugToolbarSection">
+				@{ Html.RenderPartial("SiteDebugging/UserEntitlements", Model.UserEntitlementsViewModel); }
+			</div>
+			<div class="debugToolbarSection">
+				@{ Html.RenderPartial("SiteDebugging/UserSubscriptions", Model.UserSubscriptionsViewModel); }
+			</div>
 		</div>
 	</div>
 	<script>

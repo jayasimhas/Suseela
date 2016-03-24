@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Informa.Library.Globalization;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Informa.Library.Subscription.User;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
@@ -16,27 +15,22 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
     {
         public readonly ITextTranslator TextTranslator;
         public readonly IAuthenticatedUserContext UserContext;
-        public readonly IManageSubscriptions ManageSubscriptions;
+        public readonly IUserSubscriptionsContext UserSubscriptionsContext;
         public readonly ISignInViewModel SignInViewModel;
 
         public SubscriptionsViewModel(
             ITextTranslator translator,
             IAuthenticatedUserContext userContext,
-            IManageSubscriptions manageSubscriptions,
+			IUserSubscriptionsContext userSubscriptionsContext,
             ISignInViewModel signInViewModel)
         {
             TextTranslator = translator;
             UserContext = userContext;
-            ManageSubscriptions = manageSubscriptions;
+            UserSubscriptionsContext = userSubscriptionsContext;
             SignInViewModel = signInViewModel;
-
-            var result = ManageSubscriptions.QueryItems(UserContext.User);
-            Subscriptions = (result.Success)
-                ? result.Subscriptions.Where(z => z.ProductType.Equals(ProductTypeKey))
-                : Enumerable.Empty<ISubscription>();
         }
 
-        public IEnumerable<ISubscription> Subscriptions;
+        public IEnumerable<ISubscription> Subscriptions => UserSubscriptionsContext.Subscriptions;
 
         public bool ShowRenewButton(string productCode)
         {
@@ -88,7 +82,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public string PublicationText => TextTranslator.Translate("Subscriptions.Publication");
         public string SubscriptionTypeText => TextTranslator.Translate("Subscriptions.SubscriptionType");
         public string ExpirationDateText => TextTranslator.Translate("Subscriptions.ExpirationDate");
-        public string ProductTypeKey => TextTranslator.Translate("Subscriptions.ProductTypeKey");
         public string ActionText => TextTranslator.Translate("Subscriptions.Action");
 
         /* Test Subscription Data 

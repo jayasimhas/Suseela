@@ -1,4 +1,4 @@
-﻿using Informa.Library.Subscription;
+﻿using Informa.Library.Subscription.User;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Linq;
 
@@ -7,18 +7,18 @@ namespace Informa.Library.User.Entitlement
 	[AutowireService(LifetimeScope.Default)]
 	public class EntitlementAccessLevelContext : IEntitlementAccessLevelContext
 	{
-		protected readonly ISitecoreUserContext SitecoreUserContext;
+		protected readonly IUserEntitlementsContext UserEntitlementsContext;
 		protected readonly IEntitlementChecksEnabled EntitlementChecksEnabled;
-		protected readonly IUserSubscriptionContext UserSubscriptionContext;
+		protected readonly IUserSubscribedContext UserSubscriptionContext;
 		protected readonly IAuthenticatedIPContext AuthenticatedIPContext;
 
 		public EntitlementAccessLevelContext(
-			ISitecoreUserContext sitecoreUserContext,
+			IUserEntitlementsContext userEntitlementsContext,
 			IEntitlementChecksEnabled entitlementChecksEnabled,
-			IUserSubscriptionContext userSubscriptionContext,
+			IUserSubscribedContext userSubscriptionContext,
 			IAuthenticatedIPContext authenticatedIpContext)
 		{
-			SitecoreUserContext = sitecoreUserContext;
+			UserEntitlementsContext = userEntitlementsContext;
 			EntitlementChecksEnabled = entitlementChecksEnabled;
 			UserSubscriptionContext = userSubscriptionContext;
 			AuthenticatedIPContext = authenticatedIpContext;
@@ -31,7 +31,7 @@ namespace Informa.Library.User.Entitlement
 				return EntitledAccessLevel.Individual;
 			}
 
-			var isEntitled = SitecoreUserContext.User.IsAdministrator || SitecoreUserContext.Entitlements.Any(x => x.ProductCode == entitlement.ProductCode); ;
+			var isEntitled = UserEntitlementsContext.Entitlements.Any(x => x.ProductCode == entitlement.ProductCode);
 
 			if (isEntitled) //UserSubscriptionContext.IsSubscribed
 			{
