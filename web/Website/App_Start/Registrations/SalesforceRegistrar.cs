@@ -27,6 +27,7 @@ namespace Informa.Web.App_Start.Registrations
 			builder.RegisterType<SalesforceSiteTypeParser>()
 				.As<ISalesforceCompanyTypeFromSiteType>()
 				.As<ISalesforceSiteTypeFromCompanyType>();
+			builder.RegisterType<SalesforceEntitlmentFactory>().As<ISalesforceEntitlmentFactory>();
 			
         }
 	}

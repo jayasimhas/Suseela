@@ -1,4 +1,5 @@
 ﻿using Informa.Library.User.Entitlement.SiteDebugging;
+using Informa.Library.Utilities.WebUtils;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Web;
 
@@ -7,11 +8,14 @@ namespace Informa.Web.ViewModels.SiteDebugging
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class EntitlementsCheckEnabledViewModel : IEntitlementsCheckEnabledViewModel
 	{
+		protected readonly IRefreshPage RefreshPage;
 		protected readonly ISiteDebuggingEntitlementChecksEnabled DebugEntitlementChecksEnabled;
 
 		public EntitlementsCheckEnabledViewModel(
+			IRefreshPage refreshPage,
 			ISiteDebuggingEntitlementChecksEnabled debugEntitlementChecksEnabled)
 		{
+			RefreshPage = refreshPage;
 			DebugEntitlementChecksEnabled = debugEntitlementChecksEnabled;
 		}
 
@@ -34,10 +38,12 @@ namespace Informa.Web.ViewModels.SiteDebugging
 				if (string.Equals(inputValue, EnabledInputValue))
 				{
 					DebugEntitlementChecksEnabled.StopDebugging();
+					RefreshPage.Refresh();
 				}
 				else if (string.Equals(inputValue, DisabledInputValue))
 				{
 					DebugEntitlementChecksEnabled.StartDebugging();
+					RefreshPage.Refresh();
 				}
 
 				return DebugEntitlementChecksEnabled.IsDebugging;

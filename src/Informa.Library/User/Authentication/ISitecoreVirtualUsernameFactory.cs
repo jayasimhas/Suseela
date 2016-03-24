@@ -2,6 +2,6 @@
 {
 	public interface ISitecoreVirtualUsernameFactory
 	{
-		string Create(IAuthenticatedUser user);
+		string Create(IUser user);
 	}
 }

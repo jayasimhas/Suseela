@@ -71,8 +71,11 @@
     <Compile Include="EBIWebServices\IEbiResponseExtensions.cs" />
     <Compile Include="ISalesforceErrorLogger.cs" />
     <Compile Include="SalesforceErrorLogger.cs" />
+    <Compile Include="User\Entitlement\ISalesforceEntitlmentFactory.cs" />
     <Compile Include="User\Entitlement\ISalesforceGetIPEntitlements.cs" />
     <Compile Include="User\Entitlement\ISalesforceGetUserEntitlements.cs" />
+    <Compile Include="User\Entitlement\SalesforceEntitlement.cs" />
+    <Compile Include="User\Entitlement\SalesforceEntitlmentFactory.cs" />
     <Compile Include="User\Entitlement\SalesforceGetIPEntitlements.cs" />
     <Compile Include="User\Entitlement\SalesforceGetUserEntitlements.cs" />
     <Compile Include="ISalesforceServiceConfiguration.cs" />

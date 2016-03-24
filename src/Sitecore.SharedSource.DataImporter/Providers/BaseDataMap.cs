@@ -448,8 +448,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
                 Item newItem;
                 //search for the child by name
                 newItem = GetChild(parent, newItemName);
-                if (newItem != null) //add version for lang
-                    newItem = newItem.Versions.AddVersion();
+                //if (newItem != null) //add version for lang
+                //    newItem = newItem.Versions.AddVersion();
 
                 //if not found then create one
                 if (newItem == null) {

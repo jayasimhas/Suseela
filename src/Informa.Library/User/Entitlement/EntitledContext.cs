@@ -3,11 +3,11 @@ using Jabberwocky.Glass.Autofac.Attributes;
 namespace Informa.Library.User.Entitlement
 {
     [AutowireService(LifetimeScope.Default)]
-    public class EntitlementContext : IEntitlementContext
+    public class EntitledContext : IEntitledContext
     {
 		protected readonly IEntitlementAccessLevelContext EntitlementAccessLevelContext;
 
-		public EntitlementContext(
+		public EntitledContext(
 			IEntitlementAccessLevelContext entitlementAccessLevelContext)
         {
 			EntitlementAccessLevelContext = entitlementAccessLevelContext;
