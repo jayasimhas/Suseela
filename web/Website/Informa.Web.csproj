@@ -493,6 +493,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Cors">
       <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
       <Private>True</Private>
@@ -548,6 +549,7 @@
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="Velir.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Velir.Library.Core.1.0.4\lib\net45\Velir.Core.dll</HintPath>
       <Private>True</Private>
@@ -761,9 +763,18 @@
     <Compile Include="ViewModels\AdvertisementViewModel.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\SearchRssViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IToolbarViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IUsernameViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IUserSubscriptionsViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IUserEntitlementsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IUserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\ToolbarViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\UsernameViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\UserSubscriptionsViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\UserEntitlementsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\UserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\EntitledViewModel.cs" />
     <Compile Include="ViewModels\IArticleComponentFactory.cs" />
@@ -1235,6 +1246,11 @@
     <Content Include="Views\Shared\_IndividualSubscriptionRenewalMessage.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\Toolbar.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\UserIpAddress.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\EntitlementsCheckEnabled.cshtml" />
+    <Content Include="Views\Search\SearchRssXml.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\UserEntitlements.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\UserSubscriptions.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\Username.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

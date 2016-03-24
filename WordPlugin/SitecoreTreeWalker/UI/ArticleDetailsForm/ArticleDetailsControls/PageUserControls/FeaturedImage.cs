@@ -201,7 +201,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 			imageSelected = articleDetails.FeaturedImage.ToString();
 			pictureBox1.ImageLocation = mediaItem.FileName;
 			filenameLbl.Text = mediaItem.Title;
-			alttextLbl.Text = mediaItem.Title;
+			alttextLbl.Text = mediaItem.AltText;
 
 		}
 		/// <summary>

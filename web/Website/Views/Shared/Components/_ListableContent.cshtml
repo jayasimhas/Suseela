@@ -18,7 +18,7 @@
                 data-label-bookmarked="@*Model.BookmarkedText*@">
             @*@( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )*@
         </span>
-        <svg class="article-prologue__share-icon">
+        <svg class="article-prologue__share-icon click-utag" data-info='{"event_name" : "bookmark"}'>
             <use xlink:href="/dist/img/svg-sprite.svg#@( false/*Model.IsArticleBookmarked*/ ? "bookmarked" : "bookmark" )"></use>
         </svg>
     </div>

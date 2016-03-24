@@ -250,15 +250,15 @@ namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 			{
 				selection.Text = caption;
 				selection.set_Style(DocumentAndParagraphStyles.ExhibitCaptionStyle52);
-				selection.Next(WdUnits.wdParagraph).Select();
+				selection = selection.Next(WdUnits.wdParagraph);
 			}
 
             if (!string.IsNullOrWhiteSpace(source))
             {
                 selection.Text = source;
-                selection.set_Style(DocumentAndParagraphStyles.SourceStyle);
-                selection = selection.Next(WdUnits.wdParagraph);
-            }
+                selection.set_Style(DocumentAndParagraphStyles.SourceStyle);                
+				selection.Next(WdUnits.wdParagraph).Select();
+			}
         }
 
 		private void uxRefresh_Click(object sender, System.EventArgs e)

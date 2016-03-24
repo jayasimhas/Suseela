@@ -80,8 +80,17 @@
             float: right;
             height: 20px;
             width: 20px;
+            margin-top: 4px;
         }
 
     }
 
+}
+
+.mobile-table-exit {
+    @include textMix('Roboto', 1rem, 400);
+    @extend a;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }

@@ -14,7 +14,7 @@
         margin-left: 0.5rem;
         list-style: none;
         font-size: 14px;
-        background-color: #EFF0F0;
+        background-color: $color-mercury-gray;
         background-clip: padding-box;
 
         // wraps calendar
@@ -41,19 +41,31 @@
                             height: 32px;
 
                             // wraps previous button
-                            th:first-child {
+                            th:first-child,
+                            th:last-child {
                                 text-align: left;
                                 vertical-align: top;
+                                position: relative;
 
                                 button {
                                     width: 0px;
                                     height: 0px;
-                                    border-top: 5px solid transparent;
-                                    border-bottom: 5px solid transparent;
-                                    border-right: 5px solid #d1d3d4;
+                                    border: 0;
+                                    background: transparent;
+                                    position: absolute;
+                                    margin-top: 1px;
 
                                     i {
+                                        display: none;
+                                    }
 
+                                    &:after {
+                                        content: "▸";
+                                        color: $color-light-gray;
+                                        display: inline-block;
+                                        -webkit-transform: rotate(180deg);
+                                        transform: rotate(180deg);
+                                        font-size: 1.25rem;
                                     }
                                 }
                             }
@@ -70,18 +82,10 @@
                             // wraps next button
                             th:last-child {
                                 text-align: right;
-                                vertical-align: top;
-
-                                button {
-                                    width: 0px;
-                                    height: 0px;
-                                    border-top: 5px solid transparent;
-                                    border-bottom: 5px solid transparent;
-                                    border-left: 5px solid #d1d3d4;
-
-                                    i {
-
-                                    }
+                                
+                                button:after {
+                                    -webkit-transform: none;
+                                    transform: none;
                                 }
                             }
                         }
@@ -108,23 +112,21 @@
                     }
                     tbody {
                         // each row of dates
-                        border: 1px solid $color-medium-gray-8;
+                        border: 1px solid $color-light-gray;
                         border-top: 0;
+                        border-bottom: 0;
+
                         tr {
                             // each date cell
                             td {
                                 button {
                                     background-color: $color-mercury-gray;
-                                    border: 1px solid #d1d3d4;
+                                    border: 1px solid $color-light-gray;
                                     border-top: 0;
                                     border-right: 0;
                                     box-sizing: border-box;
                                     height: 32px;
                                     width: 36px;
-
-                                    &:nth-child(7n+1) {
-                                        border-left: 0;
-                                    }
 
                                     &.active {
                                         border: 2px solid #808285;
@@ -142,6 +144,10 @@
                                         }
                                     }
 
+                                }
+
+                                &:nth-child(7n+1) button {
+                                    border-left: 0;
                                 }
 
                             }

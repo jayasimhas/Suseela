@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {F754E79E-C985-4F0F-818F-0D051911A80D}
+id: {52A982E9-A0B0-49C9-BE20-948D18C44F05}
 database: master
-path: /sitecore/templates/User Defined/Configuration/Site Config/Subscribe Register Purchase Individual Renewal Notification Settings/Subscription Type
-parent: {D15D5B41-789C-4632-9EC8-BCF96746133B}
-name: Subscription Type
+path: /sitecore/templates/User Defined/Rss/Search Rss Feed/Feed Data/Description
+parent: {FCC6E3CD-99B1-4A67-B5BA-F03EB0017AE6}
+name: Description
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -13,20 +13,20 @@ templatekey: Template field
 field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
 name: Type
 key: type
-content-length: 15
+content-length: 16
 
-Multi-Line Text
+Single-Line Text
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
 content-length: 3
 
-300
+100
 ----version----
 language: en
 version: 1
-revision: cf83f5dd-bce9-49ef-ad72-18f479f82610
+revision: 34a268c7-973b-449f-a22d-5c3d33c1f1b4
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160320T130553Z
+20160323T185411Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-cf83f5dd-bce9-49ef-ad72-18f479f82610
+34a268c7-973b-449f-a22d-5c3d33c1f1b4
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160320T130614Z
+20160323T185411Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

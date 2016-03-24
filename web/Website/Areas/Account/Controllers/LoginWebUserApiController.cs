@@ -11,16 +11,16 @@ namespace Informa.Web.Areas.Account.Controllers
     {
 		protected readonly IGenerateUserResetPassword GenerateUserResetPassword;
 		protected readonly IWebUserResetPasswordUrlFactory UserResetPasswordUrlFactory;
-		protected readonly IWebLoginUser LoginWebUser;
+		protected readonly IWebAuthenticateUser AuthenticateWebUser;
 
 		public LoginWebUserApiController(
 			IGenerateUserResetPassword generateUserResetPassword,
 			IWebUserResetPasswordUrlFactory userResetPasswordUrlFactory,
-			IWebLoginUser loginWebUser)
+			IWebAuthenticateUser authenticateWebUser)
 		{
 			GenerateUserResetPassword = generateUserResetPassword;
 			UserResetPasswordUrlFactory = userResetPasswordUrlFactory;
-			LoginWebUser = loginWebUser;
+			AuthenticateWebUser = authenticateWebUser;
 		}
 
 		[HttpPost]
@@ -37,7 +37,7 @@ namespace Informa.Web.Areas.Account.Controllers
 				});
 			}
 
-			var result = LoginWebUser.Login(request.Username, request.Password, request.Persist);
+			var result = AuthenticateWebUser.Authenticate(request.Username, request.Password, request.Persist);
 			var redirectUrl = string.Empty;
 
 			if (result.State == AuthenticateUserResultState.TemporaryPassword)

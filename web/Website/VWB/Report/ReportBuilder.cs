@@ -186,6 +186,8 @@ namespace Elsevier.Web.VWB.Report
 
                 DateTime startDate;
                 DateTime endDate;
+                
+                //Check to see if the dates are provided in the query string
                 if (query.StartDate != null && query.EndDate != null)
                 {
                     startDate = query.StartDate ?? DateTime.MinValue;
@@ -196,9 +198,10 @@ namespace Elsevier.Web.VWB.Report
                 }
                 else
                 {
-                    DateTime now = DateTime.Now;
+                    //Default the dates
+                    DateTime now = DateTime.Now.AddDays(-1);
 
-                    //The start date is today with the time being set at midnight
+                    //The start date is yesterday with the time being set at midnight
                     startDate = new DateTime(now.Year, now.Month, now.Day,0, 0, 0, 0, 0);
 
                     DateTime nowPlusMonth = DateTime.Now.AddDays(30);

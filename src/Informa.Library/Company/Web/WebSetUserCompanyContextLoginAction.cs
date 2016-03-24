@@ -1,6 +1,6 @@
 ﻿using Informa.Library.User.Authentication.Web;
-using Informa.Library.User.Authentication;
 using Jabberwocky.Glass.Autofac.Attributes;
+using Informa.Library.User;
 
 namespace Informa.Library.Company.Web
 {
@@ -18,9 +18,9 @@ namespace Informa.Library.Company.Web
 			UserCompanyContext = userCompanyContext;
 		}
 
-		public void Process(IAuthenticatedUser authenticatedUser)
+		public void Process(IUser user)
 		{
-			var company = FindCompany.Find(authenticatedUser);
+			var company = FindCompany.Find(user);
 
 			UserCompanyContext.Company = company;
 		}
