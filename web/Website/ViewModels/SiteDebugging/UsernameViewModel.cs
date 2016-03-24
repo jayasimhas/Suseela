@@ -1,5 +1,6 @@
 ﻿using Informa.Library.User.Authentication;
 using Informa.Library.User.Authentication.Web.SiteDebugging;
+using Informa.Library.Utilities.WebUtils;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Web;
 
@@ -8,13 +9,16 @@ namespace Informa.Web.ViewModels.SiteDebugging
 	[AutowireService(LifetimeScope.Default)]
 	public class UsernameViewModel : IUsernameViewModel
 	{
+		protected readonly IRefreshPage RefreshPage;
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
 		protected readonly ISiteDebuggingWebLoginUser DebugWebLoginUser;
 
 		public UsernameViewModel(
+			IRefreshPage refreshPage,
 			IAuthenticatedUserContext authenticatedUserContext,
 			ISiteDebuggingWebLoginUser debugWebLoginUser)
 		{
+			RefreshPage = refreshPage;
 			AuthenticatedUserContext = authenticatedUserContext;
 			DebugWebLoginUser = debugWebLoginUser;
 		}
@@ -30,6 +34,7 @@ namespace Informa.Web.ViewModels.SiteDebugging
 				if (IsCleared)
 				{
 					DebugWebLoginUser.StopDebugging();
+					RefreshPage.Refresh();
 
 					return false;
 				}
@@ -47,6 +52,7 @@ namespace Informa.Web.ViewModels.SiteDebugging
 				}
 
 				DebugWebLoginUser.StartDebugging(username);
+				RefreshPage.Refresh();
 
 				return true;
 			}

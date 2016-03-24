@@ -1,6 +1,7 @@
 ﻿using Informa.Library.Net;
 using Informa.Library.User;
 using Informa.Library.User.SiteDebugging;
+using Informa.Library.Utilities.WebUtils;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Web;
 
@@ -9,15 +10,18 @@ namespace Informa.Web.ViewModels.SiteDebugging
 	[AutowireService(LifetimeScope.Default)]
 	public class UserIpAddressViewModel : IUserIpAddressViewModel
 	{
+		protected readonly IRefreshPage RefreshPage;
 		protected readonly IIpAddressFactory IpAddressFactory;
 		protected readonly IUserIpAddressContext UserIpAddressContext;
 		protected readonly ISiteDebuggingUserIpAddressContext DebugUserIpAddressContext;
 
 		public UserIpAddressViewModel(
+			IRefreshPage refreshPage,
 			IIpAddressFactory ipAddressFactory,
 			IUserIpAddressContext userIpAddressContext,
 			ISiteDebuggingUserIpAddressContext debugUserIpAddressContext)
 		{
+			RefreshPage = refreshPage;
 			IpAddressFactory = ipAddressFactory;
 			UserIpAddressContext = userIpAddressContext;
 			DebugUserIpAddressContext = debugUserIpAddressContext;
@@ -34,6 +38,7 @@ namespace Informa.Web.ViewModels.SiteDebugging
 				if (IsCleared)
 				{
 					DebugUserIpAddressContext.StopDebugging();
+					RefreshPage.Refresh();
 
 					return false;
 				}
@@ -51,6 +56,7 @@ namespace Informa.Web.ViewModels.SiteDebugging
 				}
 
 				DebugUserIpAddressContext.StartDebugging(ipAddress);
+				RefreshPage.Refresh();
 
 				return true;
 			}
