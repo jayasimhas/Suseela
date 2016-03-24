@@ -308,6 +308,10 @@
     <Compile Include="SiteDebugging\ISiteDebugger.cs" />
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
     <Compile Include="SiteDebugging\SiteDebugger.cs" />
+    <Compile Include="Subscription\ISubscriptionProductKeyContext.cs" />
+    <Compile Include="Subscription\SubscriptionProductKeyContext.cs" />
+    <Compile Include="Subscription\User\IUserSubscriptionsContext.cs" />
+    <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
     <Compile Include="User\Entitlement\EntitlementAccessLevelContext.cs" />
     <Compile Include="User\Entitlement\EntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\EntitlementSession.cs" />
