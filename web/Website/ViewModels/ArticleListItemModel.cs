@@ -33,6 +33,7 @@ namespace Informa.Web.ViewModels
 		public string Publication { get; set; }
 
         #endregion
-       
+       public string SourceArticleID { get { return Sitecore.Context.Item.ID.ToString(); } }
+
     }
 }

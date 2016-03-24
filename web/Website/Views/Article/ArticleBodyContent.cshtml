@@ -48,11 +48,11 @@
                         <span class="article-author__contact">
                             @if (!string.IsNullOrEmpty(author.Twitter))
                             {
-                                <a href="http://www.twitter.com/@author.Twitter" target="_blank">&#64;@author.Twitter</a>
+                                <a href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
                             }
                             @if (!string.IsNullOrEmpty(author.Email_Address))
                             {
-                                <a href="mailto:@author.Email_Address" class="click-utag" data-info="mail to author">@author.Email_Address</a>
+                                <a href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
                             }
                         </span>
                     </div>
@@ -74,11 +74,11 @@
                         <span class="article-author__contact">
                             @if (!string.IsNullOrEmpty(author.Twitter))
                             {
-                                <a href="http://www.twitter.com/@author.Twitter" target="_blank">&#64;@author.Twitter</a>
+                                <a href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
                             }
                             @if (!string.IsNullOrEmpty(author.Email_Address))
                             {
-                                <a href="mailto:@author.Email_Address" class="click-utag" data-info="mail to author">@author.Email_Address</a>
+                                <a href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
                             }
                             </span>
                     </li>
