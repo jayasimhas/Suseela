@@ -10,5 +10,5 @@
 
 	@Html.Raw(WordUtil.TruncateArticle(Model.ListableSummary, 60))
 
-	<a class="article-sidebar__read-more" href="@Model.LinkableUrl">Read the full article here </a>
+	<a class="article-sidebar__read-more click-utag" data-info='{"event_name" : "article-sidebar-read-more-click","source_article"="@Model.SourceArticleID","destination_article"="@Model.LinkableUrl"}' href="@Model.LinkableUrl" >Read the full article here </a>
 </aside>
