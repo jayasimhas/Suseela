@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.Default)]
 	public class FooterViewModel : IFooterViewModel
 	{
 		protected readonly ISiteRootContext SiteRootContext;

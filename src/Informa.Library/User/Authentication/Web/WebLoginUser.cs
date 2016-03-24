@@ -56,17 +56,6 @@ namespace Informa.Library.User.Authentication.Web
 				Success = success,
 				User = authenticatedUser
 			};
-		}
-
-        public static String GetIPAddress()
-        {
-            String ip =
-                HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
-
-            if (string.IsNullOrEmpty(ip))
-                return HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
-            
-            return ip.Split(',').FirstOrDefault();
-        }                                          
+		}                                         
     }
 }
