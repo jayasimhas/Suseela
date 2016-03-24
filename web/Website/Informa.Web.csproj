@@ -764,8 +764,12 @@
     <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IToolbarViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IUserSubscriptionsViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IUserEntitlementsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IUserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\ToolbarViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\UserSubscriptionsViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\UserEntitlementsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\UserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\EntitledViewModel.cs" />
     <Compile Include="ViewModels\IArticleComponentFactory.cs" />
@@ -1238,6 +1242,8 @@
     <Content Include="Views\Shared\SiteDebugging\Toolbar.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\UserIpAddress.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\EntitlementsCheckEnabled.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\UserEntitlements.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\UserSubscriptions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
