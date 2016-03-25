@@ -292,7 +292,7 @@ namespace Informa.Views.Util.DCD
 
         private string addParameterToUrl(HttpRequest request, string parameterName, string parameterValue)
         {
-            return addParameterToUrl("http://" + request.Url.Host + request.RawUrl, parameterName, parameterValue);
+            return addParameterToUrl(request.Url.Scheme + "://" + request.Url.Host + request.RawUrl, parameterName, parameterValue);
         }
 
         private string addParameterToUrl(string fullUrl, string parameterName, string parameterValue)
@@ -355,7 +355,7 @@ namespace Informa.Views.Util.DCD
 
         private string ClearUrlParameters(HttpRequest request)
         {
-            return clearUrlParameters("http://" + request.Url.Host + request.RawUrl);
+            return clearUrlParameters(request.Url.Scheme + "://" + request.Url.Host + request.RawUrl);
         }
 
         private string clearUrlParameters(string fullUrl)

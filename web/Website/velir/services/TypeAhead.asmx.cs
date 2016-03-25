@@ -60,7 +60,7 @@ namespace Informa.Web.velir.services
             List<CompanyTypeAheadResponseItem> companies = new List<CompanyTypeAheadResponseItem>();
 
             string searchPageId = new ItemReferences().SearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
-            string url = string.Format("http://{0}/api/informasearch?pId={1}", WebUtil.GetHostName(), searchPageId);
+            string url = string.Format("{0}://{1}/api/informasearch?pId={2}", HttpContext.Current.Request.Url.Scheme, WebUtil.GetHostName(), searchPageId);
 
             if (Sitecore.Context.RawUrl.Contains("?"))
             {
