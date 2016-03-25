@@ -27,6 +27,7 @@ namespace Informa.Web.ViewModels.PopOuts
 	    public string AuthUserName => UserContext.User.Name;
 
         public string EmailArticleText => TextTranslator.Translate("Article.EmailPopout.EmailArticle");
+	    public string EmailSentSuccessMessage => TextTranslator.Translate("Article.EmailPopout.EmailSentSuccessMessage");
         public string EmailFormInstructionsText => TextTranslator.Translate("Article.EmailPopout.EmailFormInstructions");
         public string RecipientEmailPlaceholderText => TextTranslator.Translate("Article.EmailPopout.RecipientEmailPlaceholder");
         public string YourNamePlaceholderText => TextTranslator.Translate("Article.EmailPopout.YourNamePlaceholder");
