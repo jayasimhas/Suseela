@@ -15,32 +15,32 @@
 
     <div class="informa-ribbon" >
 		<div class="informa-ribbon__wrapper">
+		    <div class="informa-ribbon__detail">
+		        <div class="informa-ribbon__left">
+		            @Html.Raw(Model.LeftColumnText)
+		            <ul>
+		                <li class="iribbon-mainlink">
+		                    @Html.Raw(Model.Link1)
+		                </li>
+		                <li>
+		                    @Html.Raw(Model.Link2)
+		                </li>
+		                <li>
+		                    @Html.Raw(Model.Link3)
+		                </li>
+		                <li>
+		                    @Html.Raw(Model.Link4)
+		                </li>
+		            </ul>
+		        </div>
+
+		        <div class="informa-ribbon__right">
+		            @Html.Raw(Model.RightColumnText)
+		        </div>
+		    </div>
             <button class="informa-ribbon__title">
                 Informa
             </button>
-			<div class="informa-ribbon__detail">
-				<div class="informa-ribbon__left">
-                    @Html.Raw(Model.LeftColumnText)
-                    <ul>
-                        <li class="iribbon-mainlink">
-                            @Html.Raw(Model.Link1)
-                        </li>
-                        <li>
-                            @Html.Raw(Model.Link2)
-                        </li>
-                        <li>
-                            @Html.Raw(Model.Link3)
-                        </li>
-                        <li>
-                            @Html.Raw(Model.Link4)
-                        </li>
-                    </ul>
-				</div>
-
-				<div class="informa-ribbon__right">
-                    @Html.Raw(Model.RightColumnText)
-				</div>
-			</div>
     	</div>
     </div>
 
