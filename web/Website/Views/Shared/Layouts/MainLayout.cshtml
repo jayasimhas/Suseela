@@ -60,8 +60,11 @@
 </head>
 <body>
     <script type="text/javascript">
-        var utag_data =
-        { "country_code": "@Model.CountryCode", "page_name": "@Model.Title", "page_type": "@Model.PageType" };
+        var analytics_data =  { "country_code": "@Model.CountryCode", "page_name": "@Model.Title", "page_type": "@Model.PageType","actual_publish_date":"@Model.Article_Publish_Date","article_author": "@Model.Article_Authors",
+                                "article_content_type":"@Model.Article_Content_Type","article_embargo":"@Model.Article_Embargoed","article_media_type":"@Model.Article_Media_Type","article_number":"@Model.Arcticle_Number",
+                                "created_date":"@Model.Article_Date_Created", "custom_tags":"@Model.Custom_Tags","page_description":"@Model.PageDescription","page_title_override":"@Model.Page_Title_Override",
+                                "taxonomy_region":"@Model.Article_Regions","taxonomy_subjects":"@Model.Article_Subject","taxonomy_therapy_areas":"@Model.Article_Therapy","login_status":"@Model.IsUserLoggedIn"};
+        var utag_data = analytics_data;
 
 
     </script>
@@ -115,16 +118,19 @@
 
     <script src="/dist/js/index.js"></script>
     <script type="text/javascript">
-    $(document).ready(function () {
-        $('.click-utag').click(function (e) {
-            var eventDetials = $(this).data('info');
-            utag.link({
-               eventDetials
+        $(document).ready(function () {
+
+            $('.click-utag').click(function (e) {
+                var eventDetails = $(this).data('info');
+                var result = {};
+                $.extend(result, analytics_data, eventDetails);
+                utag.link({
+                    result
+                });
+
             });
 
         });
-
-    });
     </script>
     @* <script src="vendor/bower_components/angular-animate/angular-animate.js"></script> *@
     @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
