@@ -293,8 +293,8 @@ $(document).ready(function() {
 		topicAnchors.forEach(function(tc) {
 			var id = tc.id;
 			var text = $(tc).data('topic-link-text');
-
-			linkList.append('<a href="#' + id + '">' + text + '</a>');
+			var utagInfo = '{"event_name"="topic-jump-to-link-click","topic-name"="'+text+'"}';
+			linkList.append('<a href="#' + id + '" class="click-utag" data-info='+text+'>' + text + '</a>');
 		});
 	});
 

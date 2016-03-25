@@ -93,7 +93,7 @@ namespace Informa.Library.Rss
         public override IEnumerable<Item> GetSourceItems()
         {
             string searchPageId = _itemReferences.PublicatonsRssSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
-            string url = string.Format("http://{0}/api/informasearch?pId={1}&sortBy=date&sortOrder=desc", _hostName, searchPageId);
+            string url = string.Format("{0}://{1}/api/informasearch?pId={2}&sortBy=date&sortOrder=desc", HttpContext.Current.Request.Url.Scheme, _hostName, searchPageId);
 
             var client = new WebClient();
             var content = client.DownloadString(url);
