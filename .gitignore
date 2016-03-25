@@ -204,3 +204,4 @@ web/Website/sitecore modules/Web/ExperienceExplorer
 
 !web/Website/node_modules/mdcss/**/*
 !web/Website/node_modules/runway-theme-velir/**/*
+web/Website/styleguide/
