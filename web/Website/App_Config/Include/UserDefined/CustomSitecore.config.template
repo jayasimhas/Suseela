@@ -169,10 +169,10 @@ But you can also use "patch:attribute" for clarity:
       <setting  name="Host.Production" value="[CHANGEME]" />
 
       <!-- Mail Settings -->
-      <setting name="Mail.MailServerFromAddress" value="no-reply@velir.com"/>
+      <setting name="Mail.MailServerFromAddress" value="${Mail.MailServerFromAddress}"/>
 
       <setting name="MailServer">
-        <patch:attribute name="value">smtp.velir.com</patch:attribute>
+        <patch:attribute name="value">${Mail.MailServer}</patch:attribute>
       </setting>
 
       <setting name="MailServerUserName">
