@@ -23,7 +23,7 @@
 var gulp    = require("gulp"),
     utils   = require("./tasks/utils"),
     notify  = require("gulp-notify"),
-    path = require("path"),
+    path    = require("path"),
     msbuild = require("gulp-msbuild"),
     config  = utils.loadConfig(); // initialize the config
 
@@ -39,7 +39,7 @@ utils.setConfig({
 
 
 // load the tasks
-utils.loadTasks(["init", "js", "css", "copy", "bower", "svg-sprite", "msbuild"]);
+utils.loadTasks(["init", "js", "css", "styleguide", "copy", "bower", "svg-sprite", "msbuild"]);
 
 /**
  * dev task
@@ -51,7 +51,7 @@ gulp.task("dev", function () {
         env: "dev",
         watch: true,
         notify: true,
-        tasks: ["js", "css", "copy", "bower", "svg-sprite"]
+        tasks: ["js", "css", "styleguide", "copy", "bower", "svg-sprite"]
     });
 
     // build with this config
@@ -70,7 +70,7 @@ gulp.task("dev-nowatch", function(){
         env   : "dev",
         watch : false,
         notify: true,
-        tasks: ["js", "css", "copy", "bower", "svg-sprite"]
+        tasks: ["js", "css", "styleguide", "copy", "bower", "svg-sprite"]
     });
 
     // build with this config

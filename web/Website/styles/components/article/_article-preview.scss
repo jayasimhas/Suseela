@@ -129,8 +129,12 @@ section: Home/Topic Page Components
         margin: 12px auto 0;
         width: 100%;
 
+        // span {
+        //     display: block;
+        // }
+        
         img {
-            width: 100%;
+            max-width: 100%;
             margin-top: 6px;
         }
     }

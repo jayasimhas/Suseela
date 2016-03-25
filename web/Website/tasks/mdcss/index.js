@@ -3,7 +3,7 @@ var fsp    = require('./lib/fs-promise');
 var marked = require('marked');
 var path   = require('path');
 
-var findFrontMatter = /^\s*-{3,}\n((?:[ \t]*[A-z][\w-]*[ \t]*:[ \t]*[\w-][^\n]*\n*)*)(?:[ \t]*-{3,})?/;
+var findFrontMatter = /^\s*-{3,}\r?\n((?:[ \t]*[A-z][\w-]*[ \t]*:[ \t]*[\w-][^\n]*\n*)*)(?:[ \t]*-{3,})?/;
 var splitFrontMatter = /([A-z][\w-]*)[ \t]*:[ \t]*([\w-][^\n]*)/g;
 
 module.exports = require('postcss').plugin('mdcss', function (opts) {
@@ -11,7 +11,7 @@ module.exports = require('postcss').plugin('mdcss', function (opts) {
 	opts = Object(opts);
 
 	// set theme
-	opts.theme = opts.theme || require('mdcss-theme-github');
+	opts.theme = opts.theme || require('runway-theme-velir');
 
 	// set index
 	opts.index = opts.index || 'index.html';
@@ -50,7 +50,6 @@ module.exports = require('postcss').plugin('mdcss', function (opts) {
 
 				// Filter and parse documentation front-matter
 				doc.content = marked(comment.text.replace(findFrontMatter, function (docBlock, frontMatter) {
-
 					if (frontMatter) { // If there is any front-matter, parse it
 						frontMatter.replace(splitFrontMatter, function (isMeta0, name, value) {
 							doc[name] = value.trim();
@@ -130,7 +129,6 @@ module.exports = require('postcss').plugin('mdcss', function (opts) {
 		Object.keys(store).forEach(function (name) {
 			// set documentation
 			var doc = store[name];
-
 			// if documentation has a parent section
 			if ('section' in doc) {
 				// get parent section
@@ -162,7 +160,7 @@ module.exports = require('postcss').plugin('mdcss', function (opts) {
 				list.push(doc);
 			}
 		});
-		console.log(list);
+
 		// return theme executed with parsed list, destination
 		return opts.theme({
 			list: list,
