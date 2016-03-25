@@ -20,73 +20,72 @@ namespace Informa.Models.DCD
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
-	
-	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="InformaOld_DCD")]
+
+
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name = "InformaOld_DCD")]
 	public partial class DCDContext : System.Data.Linq.DataContext
 	{
-		
+
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
-		
-    #region Extensibility Method Definitions
-    partial void OnCreated();
-    partial void InsertCompany(Company instance);
-    partial void UpdateCompany(Company instance);
-    partial void DeleteCompany(Company instance);
-    partial void InsertRelatedCompany(RelatedCompany instance);
-    partial void UpdateRelatedCompany(RelatedCompany instance);
-    partial void DeleteRelatedCompany(RelatedCompany instance);
-    partial void InsertCompanyRecordImportLog(CompanyRecordImportLog instance);
-    partial void UpdateCompanyRecordImportLog(CompanyRecordImportLog instance);
-    partial void DeleteCompanyRecordImportLog(CompanyRecordImportLog instance);
-    partial void InsertDealRecordImportLog(DealRecordImportLog instance);
-    partial void UpdateDealRecordImportLog(DealRecordImportLog instance);
-    partial void DeleteDealRecordImportLog(DealRecordImportLog instance);
-    partial void InsertDeal(Deal instance);
-    partial void UpdateDeal(Deal instance);
-    partial void DeleteDeal(Deal instance);
-    partial void InsertDrugRecordImportLog(DrugRecordImportLog instance);
-    partial void UpdateDrugRecordImportLog(DrugRecordImportLog instance);
-    partial void DeleteDrugRecordImportLog(DrugRecordImportLog instance);
-    partial void InsertDrug(Drug instance);
-    partial void UpdateDrug(Drug instance);
-    partial void DeleteDrug(Drug instance);
-    partial void InsertImportLog(ImportLog instance);
-    partial void UpdateImportLog(ImportLog instance);
-    partial void DeleteImportLog(ImportLog instance);
-    #endregion
-		
-		public DCDContext() : 
-				base("Data Source=.\\SQL2012;Initial Catalog=InformaOld_DCD;User ID=sa;Password=1100M@ss" +
-						"!;MultipleActiveResultSets=True;Application Name=EntityFramework", mappingSource)
+
+		#region Extensibility Method Definitions
+		partial void OnCreated();
+		partial void InsertCompany(Company instance);
+		partial void UpdateCompany(Company instance);
+		partial void DeleteCompany(Company instance);
+		partial void InsertRelatedCompany(RelatedCompany instance);
+		partial void UpdateRelatedCompany(RelatedCompany instance);
+		partial void DeleteRelatedCompany(RelatedCompany instance);
+		partial void InsertCompanyRecordImportLog(CompanyRecordImportLog instance);
+		partial void UpdateCompanyRecordImportLog(CompanyRecordImportLog instance);
+		partial void DeleteCompanyRecordImportLog(CompanyRecordImportLog instance);
+		partial void InsertDealRecordImportLog(DealRecordImportLog instance);
+		partial void UpdateDealRecordImportLog(DealRecordImportLog instance);
+		partial void DeleteDealRecordImportLog(DealRecordImportLog instance);
+		partial void InsertDeal(Deal instance);
+		partial void UpdateDeal(Deal instance);
+		partial void DeleteDeal(Deal instance);
+		partial void InsertDrugRecordImportLog(DrugRecordImportLog instance);
+		partial void UpdateDrugRecordImportLog(DrugRecordImportLog instance);
+		partial void DeleteDrugRecordImportLog(DrugRecordImportLog instance);
+		partial void InsertDrug(Drug instance);
+		partial void UpdateDrug(Drug instance);
+		partial void DeleteDrug(Drug instance);
+		partial void InsertImportLog(ImportLog instance);
+		partial void UpdateImportLog(ImportLog instance);
+		partial void DeleteImportLog(ImportLog instance);
+		#endregion
+
+		public DCDContext() :
+				base(System.Configuration.ConfigurationManager.ConnectionStrings["dcd"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
-		
-		public DCDContext(string connection) : 
+
+		public DCDContext(string connection) :
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
-		
-		public DCDContext(System.Data.IDbConnection connection) : 
+
+		public DCDContext(System.Data.IDbConnection connection) :
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
-		
-		public DCDContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+
+		public DCDContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) :
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
-		
-		public DCDContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+
+		public DCDContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) :
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
-		
+
 		public System.Data.Linq.Table<Company> Companies
 		{
 			get
@@ -94,7 +93,7 @@ namespace Informa.Models.DCD
 				return this.GetTable<Company>();
 			}
 		}
-		
+
 		public System.Data.Linq.Table<RelatedCompany> RelatedCompanies
 		{
 			get
@@ -102,7 +101,7 @@ namespace Informa.Models.DCD
 				return this.GetTable<RelatedCompany>();
 			}
 		}
-		
+
 		public System.Data.Linq.Table<CompanyRecordImportLog> CompanyRecordImportLogs
 		{
 			get
@@ -110,7 +109,7 @@ namespace Informa.Models.DCD
 				return this.GetTable<CompanyRecordImportLog>();
 			}
 		}
-		
+
 		public System.Data.Linq.Table<DealRecordImportLog> DealRecordImportLogs
 		{
 			get
@@ -118,7 +117,7 @@ namespace Informa.Models.DCD
 				return this.GetTable<DealRecordImportLog>();
 			}
 		}
-		
+
 		public System.Data.Linq.Table<Deal> Deals
 		{
 			get
@@ -126,7 +125,7 @@ namespace Informa.Models.DCD
 				return this.GetTable<Deal>();
 			}
 		}
-		
+
 		public System.Data.Linq.Table<DrugRecordImportLog> DrugRecordImportLogs
 		{
 			get
@@ -134,7 +133,7 @@ namespace Informa.Models.DCD
 				return this.GetTable<DrugRecordImportLog>();
 			}
 		}
-		
+
 		public System.Data.Linq.Table<Drug> Drugs
 		{
 			get
@@ -142,7 +141,7 @@ namespace Informa.Models.DCD
 				return this.GetTable<Drug>();
 			}
 		}
-		
+
 		public System.Data.Linq.Table<ImportLog> ImportLogs
 		{
 			get
@@ -151,47 +150,47 @@ namespace Informa.Models.DCD
 			}
 		}
 	}
-	
+
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Companies")]
 	public partial class Company : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-		
+
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
+
 		private int _RecordId;
-		
+
 		private string _RecordNumber;
-		
+
 		private System.DateTime _Created;
-		
+
 		private System.DateTime _LastModified;
-		
+
 		private string _Title;
-		
+
 		private EntitySet<RelatedCompany> _RelatedCompanies;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnRecordIdChanging(int value);
-    partial void OnRecordIdChanged();
-    partial void OnRecordNumberChanging(string value);
-    partial void OnRecordNumberChanged();
-    partial void OnCreatedChanging(System.DateTime value);
-    partial void OnCreatedChanged();
-    partial void OnLastModifiedChanging(System.DateTime value);
-    partial void OnLastModifiedChanged();
-    partial void OnTitleChanging(string value);
-    partial void OnTitleChanged();
-    #endregion
-		
+
+		#region Extensibility Method Definitions
+		partial void OnLoaded();
+		partial void OnValidate(System.Data.Linq.ChangeAction action);
+		partial void OnCreated();
+		partial void OnRecordIdChanging(int value);
+		partial void OnRecordIdChanged();
+		partial void OnRecordNumberChanging(string value);
+		partial void OnRecordNumberChanged();
+		partial void OnCreatedChanging(System.DateTime value);
+		partial void OnCreatedChanged();
+		partial void OnLastModifiedChanging(System.DateTime value);
+		partial void OnLastModifiedChanged();
+		partial void OnTitleChanging(string value);
+		partial void OnTitleChanged();
+		#endregion
+
 		public Company()
 		{
 			this._RelatedCompanies = new EntitySet<RelatedCompany>(new Action<RelatedCompany>(this.attach_RelatedCompanies), new Action<RelatedCompany>(this.detach_RelatedCompanies));
 			OnCreated();
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordId", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int RecordId
 		{
@@ -211,7 +210,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordNumber", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
 		public string RecordNumber
 		{
@@ -231,7 +230,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created", DbType="DateTime NOT NULL")]
 		public System.DateTime Created
 		{
@@ -251,7 +250,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModified", DbType="DateTime NOT NULL")]
 		public System.DateTime LastModified
 		{
@@ -271,7 +270,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(MAX)")]
 		public string Title
 		{
@@ -291,7 +290,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Company_RelatedCompany", Storage="_RelatedCompanies", ThisKey="RecordId", OtherKey="CompanyRecordId")]
 		public EntitySet<RelatedCompany> RelatedCompanies
 		{
@@ -304,11 +303,11 @@ namespace Informa.Models.DCD
 				this._RelatedCompanies.Assign(value);
 			}
 		}
-		
+
 		public event PropertyChangingEventHandler PropertyChanging;
-		
+
 		public event PropertyChangedEventHandler PropertyChanged;
-		
+
 		protected virtual void SendPropertyChanging()
 		{
 			if ((this.PropertyChanging != null))
@@ -316,7 +315,7 @@ namespace Informa.Models.DCD
 				this.PropertyChanging(this, emptyChangingEventArgs);
 			}
 		}
-		
+
 		protected virtual void SendPropertyChanged(String propertyName)
 		{
 			if ((this.PropertyChanged != null))
@@ -324,56 +323,56 @@ namespace Informa.Models.DCD
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
+
 		private void attach_RelatedCompanies(RelatedCompany entity)
 		{
 			this.SendPropertyChanging();
 			entity.Company = this;
 		}
-		
+
 		private void detach_RelatedCompanies(RelatedCompany entity)
 		{
 			this.SendPropertyChanging();
 			entity.Company = null;
 		}
 	}
-	
+
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RelatedCompanies")]
 	public partial class RelatedCompany : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-		
+
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
+
 		private int _Id;
-		
+
 		private int _CompanyRecordId;
-		
+
 		private string _RelatedCompanyRecordNumber;
-		
+
 		private string _RelatedCompanyPath;
-		
+
 		private EntityRef<Company> _Company;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnCompanyRecordIdChanging(int value);
-    partial void OnCompanyRecordIdChanged();
-    partial void OnRelatedCompanyRecordNumberChanging(string value);
-    partial void OnRelatedCompanyRecordNumberChanged();
-    partial void OnRelatedCompanyPathChanging(string value);
-    partial void OnRelatedCompanyPathChanged();
-    #endregion
-		
+
+		#region Extensibility Method Definitions
+		partial void OnLoaded();
+		partial void OnValidate(System.Data.Linq.ChangeAction action);
+		partial void OnCreated();
+		partial void OnIdChanging(int value);
+		partial void OnIdChanged();
+		partial void OnCompanyRecordIdChanging(int value);
+		partial void OnCompanyRecordIdChanged();
+		partial void OnRelatedCompanyRecordNumberChanging(string value);
+		partial void OnRelatedCompanyRecordNumberChanged();
+		partial void OnRelatedCompanyPathChanging(string value);
+		partial void OnRelatedCompanyPathChanged();
+		#endregion
+
 		public RelatedCompany()
 		{
 			this._Company = default(EntityRef<Company>);
 			OnCreated();
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
@@ -393,7 +392,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyRecordId", DbType="Int NOT NULL")]
 		public int CompanyRecordId
 		{
@@ -417,7 +416,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RelatedCompanyRecordNumber", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
 		public string RelatedCompanyRecordNumber
 		{
@@ -437,7 +436,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RelatedCompanyPath", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
 		public string RelatedCompanyPath
 		{
@@ -457,7 +456,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Company_RelatedCompany", Storage="_Company", ThisKey="CompanyRecordId", OtherKey="RecordId", IsForeignKey=true)]
 		public Company Company
 		{
@@ -468,7 +467,7 @@ namespace Informa.Models.DCD
 			set
 			{
 				Company previousValue = this._Company.Entity;
-				if (((previousValue != value) 
+				if (((previousValue != value)
 							|| (this._Company.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
@@ -491,11 +490,11 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		public event PropertyChangingEventHandler PropertyChanging;
-		
+
 		public event PropertyChangedEventHandler PropertyChanged;
-		
+
 		protected virtual void SendPropertyChanging()
 		{
 			if ((this.PropertyChanging != null))
@@ -503,7 +502,7 @@ namespace Informa.Models.DCD
 				this.PropertyChanging(this, emptyChangingEventArgs);
 			}
 		}
-		
+
 		protected virtual void SendPropertyChanged(String propertyName)
 		{
 			if ((this.PropertyChanged != null))
@@ -512,55 +511,55 @@ namespace Informa.Models.DCD
 			}
 		}
 	}
-	
+
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CompanyRecordImportLog")]
 	public partial class CompanyRecordImportLog : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-		
+
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
+
 		private int _Id;
-		
+
 		private System.Nullable<int> _RecordId;
-		
+
 		private int _ImportId;
-		
+
 		private string _Operation;
-		
+
 		private string _Result;
-		
+
 		private System.DateTime _TimeStamp;
-		
+
 		private string _Notes;
-		
+
 		private EntityRef<ImportLog> _ImportLog;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnRecordIdChanging(System.Nullable<int> value);
-    partial void OnRecordIdChanged();
-    partial void OnImportIdChanging(int value);
-    partial void OnImportIdChanged();
-    partial void OnOperationChanging(string value);
-    partial void OnOperationChanged();
-    partial void OnResultChanging(string value);
-    partial void OnResultChanged();
-    partial void OnTimeStampChanging(System.DateTime value);
-    partial void OnTimeStampChanged();
-    partial void OnNotesChanging(string value);
-    partial void OnNotesChanged();
-    #endregion
-		
+
+		#region Extensibility Method Definitions
+		partial void OnLoaded();
+		partial void OnValidate(System.Data.Linq.ChangeAction action);
+		partial void OnCreated();
+		partial void OnIdChanging(int value);
+		partial void OnIdChanged();
+		partial void OnRecordIdChanging(System.Nullable<int> value);
+		partial void OnRecordIdChanged();
+		partial void OnImportIdChanging(int value);
+		partial void OnImportIdChanged();
+		partial void OnOperationChanging(string value);
+		partial void OnOperationChanged();
+		partial void OnResultChanging(string value);
+		partial void OnResultChanged();
+		partial void OnTimeStampChanging(System.DateTime value);
+		partial void OnTimeStampChanged();
+		partial void OnNotesChanging(string value);
+		partial void OnNotesChanged();
+		#endregion
+
 		public CompanyRecordImportLog()
 		{
 			this._ImportLog = default(EntityRef<ImportLog>);
 			OnCreated();
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
@@ -580,7 +579,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordId", DbType="Int")]
 		public System.Nullable<int> RecordId
 		{
@@ -600,7 +599,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImportId", DbType="Int NOT NULL")]
 		public int ImportId
 		{
@@ -624,7 +623,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Operation", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string Operation
 		{
@@ -644,7 +643,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Result", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string Result
 		{
@@ -664,7 +663,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeStamp", DbType="DateTime NOT NULL")]
 		public System.DateTime TimeStamp
 		{
@@ -684,7 +683,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="VarChar(MAX)")]
 		public string Notes
 		{
@@ -704,7 +703,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ImportLog_CompanyRecordImportLog", Storage="_ImportLog", ThisKey="ImportId", OtherKey="Id", IsForeignKey=true)]
 		public ImportLog ImportLog
 		{
@@ -715,7 +714,7 @@ namespace Informa.Models.DCD
 			set
 			{
 				ImportLog previousValue = this._ImportLog.Entity;
-				if (((previousValue != value) 
+				if (((previousValue != value)
 							|| (this._ImportLog.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
@@ -738,11 +737,11 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		public event PropertyChangingEventHandler PropertyChanging;
-		
+
 		public event PropertyChangedEventHandler PropertyChanged;
-		
+
 		protected virtual void SendPropertyChanging()
 		{
 			if ((this.PropertyChanging != null))
@@ -750,7 +749,7 @@ namespace Informa.Models.DCD
 				this.PropertyChanging(this, emptyChangingEventArgs);
 			}
 		}
-		
+
 		protected virtual void SendPropertyChanged(String propertyName)
 		{
 			if ((this.PropertyChanged != null))
@@ -759,55 +758,55 @@ namespace Informa.Models.DCD
 			}
 		}
 	}
-	
+
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DealRecordImportLog")]
 	public partial class DealRecordImportLog : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-		
+
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
+
 		private int _Id;
-		
+
 		private System.Nullable<int> _RecordId;
-		
+
 		private int _ImportId;
-		
+
 		private string _Operation;
-		
+
 		private string _Result;
-		
+
 		private System.DateTime _TimeStamp;
-		
+
 		private string _Notes;
-		
+
 		private EntityRef<ImportLog> _ImportLog;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnRecordIdChanging(System.Nullable<int> value);
-    partial void OnRecordIdChanged();
-    partial void OnImportIdChanging(int value);
-    partial void OnImportIdChanged();
-    partial void OnOperationChanging(string value);
-    partial void OnOperationChanged();
-    partial void OnResultChanging(string value);
-    partial void OnResultChanged();
-    partial void OnTimeStampChanging(System.DateTime value);
-    partial void OnTimeStampChanged();
-    partial void OnNotesChanging(string value);
-    partial void OnNotesChanged();
-    #endregion
-		
+
+		#region Extensibility Method Definitions
+		partial void OnLoaded();
+		partial void OnValidate(System.Data.Linq.ChangeAction action);
+		partial void OnCreated();
+		partial void OnIdChanging(int value);
+		partial void OnIdChanged();
+		partial void OnRecordIdChanging(System.Nullable<int> value);
+		partial void OnRecordIdChanged();
+		partial void OnImportIdChanging(int value);
+		partial void OnImportIdChanged();
+		partial void OnOperationChanging(string value);
+		partial void OnOperationChanged();
+		partial void OnResultChanging(string value);
+		partial void OnResultChanged();
+		partial void OnTimeStampChanging(System.DateTime value);
+		partial void OnTimeStampChanged();
+		partial void OnNotesChanging(string value);
+		partial void OnNotesChanged();
+		#endregion
+
 		public DealRecordImportLog()
 		{
 			this._ImportLog = default(EntityRef<ImportLog>);
 			OnCreated();
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
@@ -827,7 +826,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordId", DbType="Int")]
 		public System.Nullable<int> RecordId
 		{
@@ -847,7 +846,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImportId", DbType="Int NOT NULL")]
 		public int ImportId
 		{
@@ -871,7 +870,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Operation", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string Operation
 		{
@@ -891,7 +890,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Result", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string Result
 		{
@@ -911,7 +910,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeStamp", DbType="DateTime NOT NULL")]
 		public System.DateTime TimeStamp
 		{
@@ -931,7 +930,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="VarChar(MAX)")]
 		public string Notes
 		{
@@ -951,7 +950,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ImportLog_DealRecordImportLog", Storage="_ImportLog", ThisKey="ImportId", OtherKey="Id", IsForeignKey=true)]
 		public ImportLog ImportLog
 		{
@@ -962,7 +961,7 @@ namespace Informa.Models.DCD
 			set
 			{
 				ImportLog previousValue = this._ImportLog.Entity;
-				if (((previousValue != value) 
+				if (((previousValue != value)
 							|| (this._ImportLog.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
@@ -985,11 +984,11 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		public event PropertyChangingEventHandler PropertyChanging;
-		
+
 		public event PropertyChangedEventHandler PropertyChanged;
-		
+
 		protected virtual void SendPropertyChanging()
 		{
 			if ((this.PropertyChanging != null))
@@ -997,7 +996,7 @@ namespace Informa.Models.DCD
 				this.PropertyChanging(this, emptyChangingEventArgs);
 			}
 		}
-		
+
 		protected virtual void SendPropertyChanged(String propertyName)
 		{
 			if ((this.PropertyChanged != null))
@@ -1006,44 +1005,44 @@ namespace Informa.Models.DCD
 			}
 		}
 	}
-	
+
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Deals")]
 	public partial class Deal : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-		
+
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
+
 		private int _RecordId;
-		
+
 		private string _RecordNumber;
-		
+
 		private System.DateTime _Created;
-		
+
 		private System.DateTime _LastModified;
-		
+
 		private string _Title;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnRecordIdChanging(int value);
-    partial void OnRecordIdChanged();
-    partial void OnRecordNumberChanging(string value);
-    partial void OnRecordNumberChanged();
-    partial void OnCreatedChanging(System.DateTime value);
-    partial void OnCreatedChanged();
-    partial void OnLastModifiedChanging(System.DateTime value);
-    partial void OnLastModifiedChanged();
-    partial void OnTitleChanging(string value);
-    partial void OnTitleChanged();
-    #endregion
-		
+
+		#region Extensibility Method Definitions
+		partial void OnLoaded();
+		partial void OnValidate(System.Data.Linq.ChangeAction action);
+		partial void OnCreated();
+		partial void OnRecordIdChanging(int value);
+		partial void OnRecordIdChanged();
+		partial void OnRecordNumberChanging(string value);
+		partial void OnRecordNumberChanged();
+		partial void OnCreatedChanging(System.DateTime value);
+		partial void OnCreatedChanged();
+		partial void OnLastModifiedChanging(System.DateTime value);
+		partial void OnLastModifiedChanged();
+		partial void OnTitleChanging(string value);
+		partial void OnTitleChanged();
+		#endregion
+
 		public Deal()
 		{
 			OnCreated();
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordId", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int RecordId
 		{
@@ -1063,7 +1062,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordNumber", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
 		public string RecordNumber
 		{
@@ -1083,7 +1082,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created", DbType="DateTime NOT NULL")]
 		public System.DateTime Created
 		{
@@ -1103,7 +1102,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModified", DbType="DateTime NOT NULL")]
 		public System.DateTime LastModified
 		{
@@ -1123,7 +1122,7 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(MAX)")]
 		public string Title
 		{
@@ -1143,11 +1142,11 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		public event PropertyChangingEventHandler PropertyChanging;
-		
+
 		public event PropertyChangedEventHandler PropertyChanged;
-		
+
 		protected virtual void SendPropertyChanging()
 		{
 			if ((this.PropertyChanging != null))
@@ -1155,7 +1154,7 @@ namespace Informa.Models.DCD
 				this.PropertyChanging(this, emptyChangingEventArgs);
 			}
 		}
-		
+
 		protected virtual void SendPropertyChanged(String propertyName)
 		{
 			if ((this.PropertyChanged != null))
@@ -1164,56 +1163,56 @@ namespace Informa.Models.DCD
 			}
 		}
 	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DrugRecordImportLog")]
+
+	[global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.DrugRecordImportLog")]
 	public partial class DrugRecordImportLog : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-		
+
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
+
 		private int _Id;
-		
+
 		private System.Nullable<int> _RecordId;
-		
+
 		private int _ImportId;
-		
+
 		private string _Operation;
-		
+
 		private string _Result;
-		
+
 		private System.DateTime _TimeStamp;
-		
+
 		private string _Notes;
-		
+
 		private EntityRef<ImportLog> _ImportLog;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnRecordIdChanging(System.Nullable<int> value);
-    partial void OnRecordIdChanged();
-    partial void OnImportIdChanging(int value);
-    partial void OnImportIdChanged();
-    partial void OnOperationChanging(string value);
-    partial void OnOperationChanged();
-    partial void OnResultChanging(string value);
-    partial void OnResultChanged();
-    partial void OnTimeStampChanging(System.DateTime value);
-    partial void OnTimeStampChanged();
-    partial void OnNotesChanging(string value);
-    partial void OnNotesChanged();
-    #endregion
-		
+
+		#region Extensibility Method Definitions
+		partial void OnLoaded();
+		partial void OnValidate(System.Data.Linq.ChangeAction action);
+		partial void OnCreated();
+		partial void OnIdChanging(int value);
+		partial void OnIdChanged();
+		partial void OnRecordIdChanging(System.Nullable<int> value);
+		partial void OnRecordIdChanged();
+		partial void OnImportIdChanging(int value);
+		partial void OnImportIdChanged();
+		partial void OnOperationChanging(string value);
+		partial void OnOperationChanged();
+		partial void OnResultChanging(string value);
+		partial void OnResultChanged();
+		partial void OnTimeStampChanging(System.DateTime value);
+		partial void OnTimeStampChanged();
+		partial void OnNotesChanging(string value);
+		partial void OnNotesChanged();
+		#endregion
+
 		public DrugRecordImportLog()
 		{
 			this._ImportLog = default(EntityRef<ImportLog>);
 			OnCreated();
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Id", AutoSync = AutoSync.OnInsert, DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true, IsDbGenerated = true)]
 		public int Id
 		{
 			get
@@ -1232,8 +1231,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordId", DbType="Int")]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_RecordId", DbType = "Int")]
 		public System.Nullable<int> RecordId
 		{
 			get
@@ -1252,8 +1251,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImportId", DbType="Int NOT NULL")]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ImportId", DbType = "Int NOT NULL")]
 		public int ImportId
 		{
 			get
@@ -1276,8 +1275,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Operation", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Operation", DbType = "VarChar(50) NOT NULL", CanBeNull = false)]
 		public string Operation
 		{
 			get
@@ -1296,8 +1295,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Result", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Result", DbType = "VarChar(50) NOT NULL", CanBeNull = false)]
 		public string Result
 		{
 			get
@@ -1316,8 +1315,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeStamp", DbType="DateTime NOT NULL")]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_TimeStamp", DbType = "DateTime NOT NULL")]
 		public System.DateTime TimeStamp
 		{
 			get
@@ -1336,8 +1335,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="VarChar(MAX)")]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Notes", DbType = "VarChar(MAX)")]
 		public string Notes
 		{
 			get
@@ -1356,8 +1355,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ImportLog_DrugRecordImportLog", Storage="_ImportLog", ThisKey="ImportId", OtherKey="Id", IsForeignKey=true)]
+
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ImportLog_DrugRecordImportLog", Storage = "_ImportLog", ThisKey = "ImportId", OtherKey = "Id", IsForeignKey = true)]
 		public ImportLog ImportLog
 		{
 			get
@@ -1367,7 +1366,7 @@ namespace Informa.Models.DCD
 			set
 			{
 				ImportLog previousValue = this._ImportLog.Entity;
-				if (((previousValue != value) 
+				if (((previousValue != value)
 							|| (this._ImportLog.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
@@ -1390,11 +1389,11 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		public event PropertyChangingEventHandler PropertyChanging;
-		
+
 		public event PropertyChangedEventHandler PropertyChanged;
-		
+
 		protected virtual void SendPropertyChanging()
 		{
 			if ((this.PropertyChanging != null))
@@ -1402,7 +1401,7 @@ namespace Informa.Models.DCD
 				this.PropertyChanging(this, emptyChangingEventArgs);
 			}
 		}
-		
+
 		protected virtual void SendPropertyChanged(String propertyName)
 		{
 			if ((this.PropertyChanged != null))
@@ -1411,45 +1410,45 @@ namespace Informa.Models.DCD
 			}
 		}
 	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Drugs")]
+
+	[global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.Drugs")]
 	public partial class Drug : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-		
+
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
+
 		private int _RecordId;
-		
+
 		private string _RecordNumber;
-		
+
 		private System.DateTime _Created;
-		
+
 		private System.DateTime _LastModified;
-		
+
 		private string _Title;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnRecordIdChanging(int value);
-    partial void OnRecordIdChanged();
-    partial void OnRecordNumberChanging(string value);
-    partial void OnRecordNumberChanged();
-    partial void OnCreatedChanging(System.DateTime value);
-    partial void OnCreatedChanged();
-    partial void OnLastModifiedChanging(System.DateTime value);
-    partial void OnLastModifiedChanged();
-    partial void OnTitleChanging(string value);
-    partial void OnTitleChanged();
-    #endregion
-		
+
+		#region Extensibility Method Definitions
+		partial void OnLoaded();
+		partial void OnValidate(System.Data.Linq.ChangeAction action);
+		partial void OnCreated();
+		partial void OnRecordIdChanging(int value);
+		partial void OnRecordIdChanged();
+		partial void OnRecordNumberChanging(string value);
+		partial void OnRecordNumberChanged();
+		partial void OnCreatedChanging(System.DateTime value);
+		partial void OnCreatedChanged();
+		partial void OnLastModifiedChanging(System.DateTime value);
+		partial void OnLastModifiedChanged();
+		partial void OnTitleChanging(string value);
+		partial void OnTitleChanged();
+		#endregion
+
 		public Drug()
 		{
 			OnCreated();
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_RecordId", DbType = "Int NOT NULL", IsPrimaryKey = true)]
 		public int RecordId
 		{
 			get
@@ -1468,8 +1467,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordNumber", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_RecordNumber", DbType = "VarChar(15) NOT NULL", CanBeNull = false)]
 		public string RecordNumber
 		{
 			get
@@ -1488,8 +1487,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created", DbType="DateTime NOT NULL")]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Created", DbType = "DateTime NOT NULL")]
 		public System.DateTime Created
 		{
 			get
@@ -1508,8 +1507,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModified", DbType="DateTime NOT NULL")]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_LastModified", DbType = "DateTime NOT NULL")]
 		public System.DateTime LastModified
 		{
 			get
@@ -1528,8 +1527,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(MAX)")]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Title", DbType = "VarChar(MAX)")]
 		public string Title
 		{
 			get
@@ -1548,11 +1547,11 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
+
 		public event PropertyChangingEventHandler PropertyChanging;
-		
+
 		public event PropertyChangedEventHandler PropertyChanged;
-		
+
 		protected virtual void SendPropertyChanging()
 		{
 			if ((this.PropertyChanging != null))
@@ -1560,7 +1559,7 @@ namespace Informa.Models.DCD
 				this.PropertyChanging(this, emptyChangingEventArgs);
 			}
 		}
-		
+
 		protected virtual void SendPropertyChanged(String propertyName)
 		{
 			if ((this.PropertyChanged != null))
@@ -1569,49 +1568,49 @@ namespace Informa.Models.DCD
 			}
 		}
 	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ImportLog")]
+
+	[global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.ImportLog")]
 	public partial class ImportLog : INotifyPropertyChanging, INotifyPropertyChanged
 	{
-		
+
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
+
 		private int _Id;
-		
+
 		private System.DateTime _ImportStart;
-		
+
 		private System.DateTime _ImportEnd;
-		
+
 		private string _FileName;
-		
+
 		private string _Result;
-		
+
 		private string _Notes;
-		
+
 		private EntitySet<CompanyRecordImportLog> _CompanyRecordImportLogs;
-		
+
 		private EntitySet<DealRecordImportLog> _DealRecordImportLogs;
-		
+
 		private EntitySet<DrugRecordImportLog> _DrugRecordImportLogs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnImportStartChanging(System.DateTime value);
-    partial void OnImportStartChanged();
-    partial void OnImportEndChanging(System.DateTime value);
-    partial void OnImportEndChanged();
-    partial void OnFileNameChanging(string value);
-    partial void OnFileNameChanged();
-    partial void OnResultChanging(string value);
-    partial void OnResultChanged();
-    partial void OnNotesChanging(string value);
-    partial void OnNotesChanged();
-    #endregion
-		
+
+		#region Extensibility Method Definitions
+		partial void OnLoaded();
+		partial void OnValidate(System.Data.Linq.ChangeAction action);
+		partial void OnCreated();
+		partial void OnIdChanging(int value);
+		partial void OnIdChanged();
+		partial void OnImportStartChanging(System.DateTime value);
+		partial void OnImportStartChanged();
+		partial void OnImportEndChanging(System.DateTime value);
+		partial void OnImportEndChanged();
+		partial void OnFileNameChanging(string value);
+		partial void OnFileNameChanged();
+		partial void OnResultChanging(string value);
+		partial void OnResultChanged();
+		partial void OnNotesChanging(string value);
+		partial void OnNotesChanged();
+		#endregion
+
 		public ImportLog()
 		{
 			this._CompanyRecordImportLogs = new EntitySet<CompanyRecordImportLog>(new Action<CompanyRecordImportLog>(this.attach_CompanyRecordImportLogs), new Action<CompanyRecordImportLog>(this.detach_CompanyRecordImportLogs));
@@ -1619,8 +1618,8 @@ namespace Informa.Models.DCD
 			this._DrugRecordImportLogs = new EntitySet<DrugRecordImportLog>(new Action<DrugRecordImportLog>(this.attach_DrugRecordImportLogs), new Action<DrugRecordImportLog>(this.detach_DrugRecordImportLogs));
 			OnCreated();
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Id", AutoSync = AutoSync.OnInsert, DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true, IsDbGenerated = true)]
 		public int Id
 		{
 			get
@@ -1639,8 +1638,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImportStart", DbType="DateTime NOT NULL")]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ImportStart", DbType = "DateTime NOT NULL")]
 		public System.DateTime ImportStart
 		{
 			get
@@ -1659,8 +1658,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImportEnd", DbType="DateTime NOT NULL")]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ImportEnd", DbType = "DateTime NOT NULL")]
 		public System.DateTime ImportEnd
 		{
 			get
@@ -1679,8 +1678,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileName", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_FileName", DbType = "VarChar(MAX) NOT NULL", CanBeNull = false)]
 		public string FileName
 		{
 			get
@@ -1699,8 +1698,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Result", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Result", DbType = "VarChar(50) NOT NULL", CanBeNull = false)]
 		public string Result
 		{
 			get
@@ -1719,8 +1718,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="VarChar(MAX)")]
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Notes", DbType = "VarChar(MAX)")]
 		public string Notes
 		{
 			get
@@ -1739,8 +1738,8 @@ namespace Informa.Models.DCD
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ImportLog_CompanyRecordImportLog", Storage="_CompanyRecordImportLogs", ThisKey="Id", OtherKey="ImportId")]
+
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ImportLog_CompanyRecordImportLog", Storage = "_CompanyRecordImportLogs", ThisKey = "Id", OtherKey = "ImportId")]
 		public EntitySet<CompanyRecordImportLog> CompanyRecordImportLogs
 		{
 			get
@@ -1752,8 +1751,8 @@ namespace Informa.Models.DCD
 				this._CompanyRecordImportLogs.Assign(value);
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ImportLog_DealRecordImportLog", Storage="_DealRecordImportLogs", ThisKey="Id", OtherKey="ImportId")]
+
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ImportLog_DealRecordImportLog", Storage = "_DealRecordImportLogs", ThisKey = "Id", OtherKey = "ImportId")]
 		public EntitySet<DealRecordImportLog> DealRecordImportLogs
 		{
 			get
@@ -1765,8 +1764,8 @@ namespace Informa.Models.DCD
 				this._DealRecordImportLogs.Assign(value);
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ImportLog_DrugRecordImportLog", Storage="_DrugRecordImportLogs", ThisKey="Id", OtherKey="ImportId")]
+
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ImportLog_DrugRecordImportLog", Storage = "_DrugRecordImportLogs", ThisKey = "Id", OtherKey = "ImportId")]
 		public EntitySet<DrugRecordImportLog> DrugRecordImportLogs
 		{
 			get
@@ -1778,11 +1777,11 @@ namespace Informa.Models.DCD
 				this._DrugRecordImportLogs.Assign(value);
 			}
 		}
-		
+
 		public event PropertyChangingEventHandler PropertyChanging;
-		
+
 		public event PropertyChangedEventHandler PropertyChanged;
-		
+
 		protected virtual void SendPropertyChanging()
 		{
 			if ((this.PropertyChanging != null))
@@ -1790,7 +1789,7 @@ namespace Informa.Models.DCD
 				this.PropertyChanging(this, emptyChangingEventArgs);
 			}
 		}
-		
+
 		protected virtual void SendPropertyChanged(String propertyName)
 		{
 			if ((this.PropertyChanged != null))
@@ -1798,37 +1797,37 @@ namespace Informa.Models.DCD
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
+
 		private void attach_CompanyRecordImportLogs(CompanyRecordImportLog entity)
 		{
 			this.SendPropertyChanging();
 			entity.ImportLog = this;
 		}
-		
+
 		private void detach_CompanyRecordImportLogs(CompanyRecordImportLog entity)
 		{
 			this.SendPropertyChanging();
 			entity.ImportLog = null;
 		}
-		
+
 		private void attach_DealRecordImportLogs(DealRecordImportLog entity)
 		{
 			this.SendPropertyChanging();
 			entity.ImportLog = this;
 		}
-		
+
 		private void detach_DealRecordImportLogs(DealRecordImportLog entity)
 		{
 			this.SendPropertyChanging();
 			entity.ImportLog = null;
 		}
-		
+
 		private void attach_DrugRecordImportLogs(DrugRecordImportLog entity)
 		{
 			this.SendPropertyChanging();
 			entity.ImportLog = this;
 		}
-		
+
 		private void detach_DrugRecordImportLogs(DrugRecordImportLog entity)
 		{
 			this.SendPropertyChanging();
