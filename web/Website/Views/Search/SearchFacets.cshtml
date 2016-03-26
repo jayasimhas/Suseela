@@ -201,7 +201,9 @@
 
 
                                     <span class="input-group-btn">
-                                        <button type="button" class="facets__button" ng-click="open($event,'dtFrom')">
+                                        <button type="button"
+                                                class="facets__button"
+                                                ng-click="open($event,'dtFrom'); allFacets.updateSelectedDate(dateFilter.key)">
                                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
                                         </button>
                                     </span>
@@ -230,7 +232,9 @@
                                            @* close-text="Close" *@
 
                                     <span class="input-group-btn">
-                                        <button type="button" class="facets__button" ng-click="open($event,'dtTo')">
+                                        <button type="button"
+                                                class="facets__button"
+                                                ng-click="open($event,'dtTo'); allFacets.updateSelectedDate(dateFilter.key)">
                                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
                                         </button>
                                     </span>
