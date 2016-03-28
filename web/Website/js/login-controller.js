@@ -10,8 +10,7 @@ function loginController(requestVerificationToken) {
 
 				var inputData = {};
 				var url = $(triggerElement).data('login-url');
-				
-
+			
 				$(triggerElement).parents('.js-login-container').find('input').each(function() {
 
 					var value = '';
@@ -33,7 +32,13 @@ function loginController(requestVerificationToken) {
 
 				$.post(url, inputData, function (response) {
 
-					if (response.success) {
+				    if (response.success) {
+				        var loginAnalytics = {"event_name":"login","login_state":"successful","userName":'"'+inputData.username+'"'};
+				        var result ={};
+				       $.extend(result,analytics_data,loginAnalytics);
+				        utag.link({
+				            result
+				        });
 						if (successCallback) {
 							successCallback(triggerElement);
 						}
@@ -44,7 +49,13 @@ function loginController(requestVerificationToken) {
 							window.location.reload(false);
 						}
 					}
-					else {
+				    else {
+				        var loginAnalytics = {"event_name":"login","login_state":"unsuccessful","userName":'"'+inputData.username+'"'};
+				        var result ={};
+				        $.extend(result,analytics_data,loginAnalytics);
+				        utag.link({
+				            result
+				        });
 						if (response.redirectUrl) {
 							window.location.href = response.redirectUrl;
 						}
