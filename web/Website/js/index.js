@@ -437,11 +437,11 @@ $(document).ready(function() {
 	smoothScrollingNav();
 
 
+	// Toggle global Informa bar
 	$('.informa-ribbon__title').on('click', function (e) {
-
 		$('.informa-ribbon').toggleClass('show')
-
 	});
+
 
 	var sortTheTables = new SortableTableController();
 
