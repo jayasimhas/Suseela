@@ -218,6 +218,18 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
         }
     };
 
+    // Create placeholder values for From: and To: date values
+    $scope.dateValues = {
+        dtFrom: '',
+        dtTo: ''
+    };
+
+    // need to differentiate the 2 datepickers
+    $scope.datepickers = {
+        dtFrom: false,
+        dtTo: false
+    };
+
     init();
 
 };

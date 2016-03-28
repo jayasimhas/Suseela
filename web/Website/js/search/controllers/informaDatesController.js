@@ -1,18 +1,13 @@
 var informaDatesController = function ($scope, $location) {
   'use strict';
 
-  // Create placeholder values for From: and To: date values
-  $scope.dateValues = {
-      dtFrom: '',
-      dtTo: ''
-  };
-
-  // need to differentiate the 2 datepickers
-  $scope.datepickers = {
-      dtFrom: false,
-      dtTo: false
-  };
-
+  /*
+    $scope.dateValues and $scope.datepickers are in InformaFacetsController.js
+    Using ng-if creates a new scope for the data in this controller, which
+    causes the date values to reset on change. By storing in the parent,
+    those values survive any scope resets here.
+  */
+  
   // grab today and inject into field
   $scope.today = function() {
     $scope.dateValues.dtFrom = new Date();
