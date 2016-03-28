@@ -9,6 +9,8 @@
 	<time class="article-sidebar__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
 
 	@Html.Raw(WordUtil.TruncateArticle(Model.ListableSummary, 60))
-
-	<a class="article-sidebar__read-more click-utag" data-info='{"event_name" : "article-sidebar-read-more-click","source_article"="@Model.SourceArticleID","destination_article"="@Model.LinkableUrl"}' href="@Model.LinkableUrl" >Read the full article here </a>
+    
+    <div></div> @* this spacer prevents the following anchor from being absorbed into previous paragraph *@
+    
+    <a class="article-sidebar__read-more click-utag" data-info='{"event_name" : "article-sidebar-read-more-click","source_article"="@Model.SourceArticleID","destination_article"="@Model.LinkableUrl"}' href="@Model.LinkableUrl" >Read the full article here </a>
 </aside>

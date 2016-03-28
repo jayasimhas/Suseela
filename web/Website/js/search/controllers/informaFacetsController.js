@@ -167,20 +167,18 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         _this.update();
     };
 
-_this.customDateRangeSearch = function(filterKey, startDate,endDate) {
+    _this.customDateRangeSearch = function(filterKey, startDate, endDate) {
 
-        if (_this.CurrentDateSelection == 'custom')
-        {
+        if (_this.CurrentDateSelection == 'custom') {
             var filter = _this.getFilter(filterKey);
             var filterDateLabel = _this.getFilter('dateFilterLabel');
             filterDateLabel.setValue('custom');
 
             var date1Unparsed = new Date(startDate);
-            var date1 =(date1Unparsed.getMonth() + 1) + '/' +date1Unparsed.getDate() + '/'  + date1Unparsed.getFullYear();
+            var date1 = (date1Unparsed.getMonth() + 1) + '/' +date1Unparsed.getDate() + '/'  + date1Unparsed.getFullYear();
 
             var date2Unparsed = new Date(endDate);
             var date2 = (date2Unparsed.getMonth() + 1) + '/' + date2Unparsed.getDate() + '/' + date2Unparsed.getFullYear();
-
 
             filter.setValue(date1 + ";" + date2);
 
@@ -209,7 +207,6 @@ _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
         filter.setValue(startDate + ";" + endDate);
 
         _this.updateSelectedDate(dateFilter);
-
         _this.update();
     };
 
@@ -223,6 +220,18 @@ _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
                 _this.DateFilters[i].selected = false;
             }
         }
+    };
+
+    // Create placeholder values for From: and To: date values
+    $scope.dateValues = {
+        dtFrom: '',
+        dtTo: ''
+    };
+
+    // need to differentiate the 2 datepickers
+    $scope.datepickers = {
+        dtFrom: false,
+        dtTo: false
     };
 
     init();
