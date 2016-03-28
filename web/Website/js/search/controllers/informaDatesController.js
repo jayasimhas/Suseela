@@ -20,7 +20,7 @@ var informaDatesController = function ($scope, $location) {
   };
 
   // run today() function
-  $scope.today();
+  // $scope.today();
 
   // setup clear
   $scope.clear = function () {
@@ -33,7 +33,7 @@ var informaDatesController = function ($scope, $location) {
     formatDayHeader: 'EEE',
     formatDay: 'd',
     startingDay: 0, // Sunday
-    // dateDisabled: disabled,
+    dateDisabled: disabledFrom,
     formatYear: 'yy',
     maxDate: new Date(),
     minDate: new Date(1900, 1, 1)
@@ -44,10 +44,36 @@ var informaDatesController = function ($scope, $location) {
     formatDayHeader: 'EEE',
     formatDay: 'd',
     startingDay: 0, // Sunday
-    // dateDisabled: disabled,
+    dateDisabled: disabledTo,
     formatYear: 'yy',
     maxDate: new Date(),
     minDate: new Date(1900, 1, 1)
+  };
+
+  // Prevent user from selecting date if date is in the future, OR if the date
+  // is later than the selected 'to' date. 'from' can't be later than 'to'
+  function disabledFrom(data) {
+      var date = data.date;
+      var tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      // If no end-time exists, use a very large number so all timestamps are valid
+      var toTimestamp = $scope.dateValues.dtTo ? $scope.dateValues.dtTo.getTime() : Math.pow(99, 9);
+      return (date.getTime() > tomorrow.getTime()
+        || date.getTime() > toTimestamp);
+  };
+
+  // Prevent user from selecting date if date is in the future, OR if date
+  // is before selected 'from' date. 'to' must be later than 'from'
+  function disabledTo(data) {
+      var date = data.date;
+      var tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      // If no start-time exists, use a very large number so all timestamps are valid
+      var fromTimestamp = $scope.dateValues.dtFrom ? $scope.dateValues.dtFrom.getTime() : 0;
+      return (date.getTime() > tomorrow.getTime()
+        || date.getTime() < fromTimestamp);
   };
 
   // open min-cal
@@ -72,14 +98,6 @@ var informaDatesController = function ($scope, $location) {
         break;
     }
   };
-
-  // $scope.$watch('dateValues.dtFromValue', function () {
-  //     $scope.toDateOptions.minDate = $scope.dateValues.dtFromValue;
-  // });
-
-  // $scope.$watch('dateValues.dtToValue', function () {
-  //     $scope.fromDateOptions.maxDate = $scope.dateValues.dtToValue;
-  // });
 
 };
 
