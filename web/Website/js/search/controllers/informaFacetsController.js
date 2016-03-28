@@ -1,5 +1,5 @@
 ﻿
-var InformaFacetController = function($scope, $location, $http, searchService, searchBootstrapper, getCompaniesService) {
+var InformaFacetController = function ($scope, $location, $http, $anchorScroll, searchService, searchBootstrapper, getCompaniesService) {
     "use strict";
 
     var _this = this;
@@ -10,6 +10,7 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
         _this.facetGroups = searchService.getFacetGroups();
         _this.searchService = searchService;
         _this.location = $location;
+        _this.anchorScroll = $anchorScroll;
         _this.searchBootstrapper = searchBootstrapper;
         _this.MaxFacetShow = 5;
         _this.CompanyList = getCompaniesService.fetchCompanies();
@@ -75,7 +76,10 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
         var routeBuilder = this.searchService.getRouteBuilder();
         _this.location.search(routeBuilder.getRoute());
         _this.searchService.query();
-        // _this.scrollTop();
+       
+        //Scroll to the top of the results when a new page is chosen
+        _this.location.hash("searchTop");
+        _this.anchorScroll();
     };
 
     _this.facetChange = function(facet) {
@@ -226,4 +230,4 @@ _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
 };
 
 var informaSearchApp = angular.module('informaSearchApp');
-informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', 'searchService', 'searchBootstrapper', 'getCompaniesService', InformaFacetController]);
+informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', '$anchorScroll', 'searchService', 'searchBootstrapper', 'getCompaniesService', InformaFacetController]);
