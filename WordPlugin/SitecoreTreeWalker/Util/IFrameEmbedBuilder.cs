@@ -58,7 +58,7 @@ namespace InformaSitecoreWord.Util
 			}
 			var removedInsecure = new XElement("div");
 			removedInsecure.Add(new XAttribute("data-ewf-note", "iframe-removed-insecure"));
-		    removedInsecure.Value = "&nbsp;";
+		    removedInsecure.Value = string.Empty;
 			return removedInsecure;
 		}
 
