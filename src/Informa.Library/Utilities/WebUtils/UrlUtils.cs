@@ -16,7 +16,7 @@ namespace Informa.Library.Utilities.WebUtils
 	{
 		public static string AddParameterToUrl(HttpRequest request, string parameterName, string parameterValue)
 		{
-			return AddParameterToUrl("http://" + request.Url.Host + request.RawUrl, parameterName, parameterValue);
+			return AddParameterToUrl(request.Url.Scheme + "://" + request.Url.Host + request.RawUrl, parameterName, parameterValue);
 		}
 
 		public static string AddParameterToUrl(string fullUrl, string parameterName, string parameterValue)
@@ -55,7 +55,7 @@ namespace Informa.Library.Utilities.WebUtils
 
 		public static string ClearUrlParameters(HttpRequest request)
 		{
-			return ClearUrlParameters("http://" + request.Url.Host + request.RawUrl);
+			return ClearUrlParameters(request.Url.Scheme + "://" + request.Url.Host + request.RawUrl);
 		}
 
 		public static string ClearUrlParameters(string fullUrl)

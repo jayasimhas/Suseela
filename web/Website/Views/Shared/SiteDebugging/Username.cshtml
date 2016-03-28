@@ -1,0 +1,9 @@
+﻿@model Informa.Web.ViewModels.SiteDebugging.IUsernameViewModel
+<form action="" method="post">
+	<label class="page-account__text-label" for="debugIpAddress">@Model.LabelText</label><input class="inf-standard-form-field" type="text" name="@Model.InputName" value="@Model.InputValue" @( Model.IsDebugging ? "disabled=\"disabled\"" : "" ) />
+	@if (Model.IsDebugging)
+	{
+		<input type="hidden" name="@Model.ClearInputName" value="clear" />
+	}
+	<button type="submit" class="button--filled">@Model.SubmitText</button>
+</form>

@@ -1,201 +1,246 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Untitled</title>
     <style>
-      a:link{color:#be1e2d;font-weight:normal;text-decoration:none}
-      a:visited{color:#be1e2d;font-weight:normal;text-decoration:none}
+        a:link {
+            color: #be1e2d;
+            font-weight: normal;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #be1e2d;
+            font-weight: normal;
+            text-decoration: none;
+        }
     </style>
     <style type="text/css">
-      /* /\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/ */
-                   /* Force Outlook to provide a "view in browser" message */
-                   .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
-                  .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
-                   /* Prevent WebKit and Windows mobile changing default text sizes */
-                   /* Remove spacing between tables in Outlook 2007 and up */
-                   /* Allow smoother rendering of resized image in Internet Explorer */
-                  /* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
-                  /* /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/ */
-                  /* ========== Page Styles ========== */
-                  /**
+        /* /\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/ */
+        /* Force Outlook to provide a "view in browser" message */
+        .ExternalClass {
+            width: 100%;
+        }
+            /* Force Hotmail to display emails at full width */
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+                line-height: 100%;
+            }
+        /* Force Hotmail to display normal line spacing */
+        /* Prevent WebKit and Windows mobile changing default text sizes */
+        /* Remove spacing between tables in Outlook 2007 and up */
+        /* Allow smoother rendering of resized image in Internet Explorer */
+        /* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
+        /* /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/ */
+        /* ========== Page Styles ========== */
+        /**
                   * @tab Page
                   * @section email border
                   * @tip Set the border for your email.
                   */
-                  /**
+        /**
                   * @tab Header
                   * @section preheader text
                   * @tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
                   */
-                  /**
+        /**
                   * @tab Header
                   * @section header text
                   * @tip Set the styling for your email's header text. Choose a size and color that is easy to read.
                   */
-                  /* ========== Body Styles ========== */
-                  /**
+        /* ========== Body Styles ========== */
+        /**
                   * @tab Body
                   * @section body style
                   * @tip Set the background color and borders for your email's body area.
                   */
-                  /**
+        /**
                   * @tab Body
                   * @section body text
                   * @tip Set the styling for your email's main content text. Choose a size and color that is easy to read.
                   * @theme main
                   */
-                  /* /\/\/\/\/\/\/\/\/ MOBILE STYLES /\/\/\/\/\/\/\/\/ */
-                  @media only screen and (max-width: 480px){
-                      /* /\/\/\/\/\/\/ CLIENT-SPECIFIC MOBILE STYLES /\/\/\/\/\/\/ */
-                      body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:none !important;} /* Prevent Webkit platforms from changing default text sizes */
-                      body{width:100% !important; min-width:100% !important;} /* Prevent iOS Mail from adding padding to the body */
-                      /* /\/\/\/\/\/\/ MOBILE RESET STYLES /\/\/\/\/\/\/ */
-                      #bodyCell{padding:10px !important;}
-                      /* /\/\/\/\/\/\/ MOBILE TEMPLATE STYLES /\/\/\/\/\/\/ */
-                      /* ======== Page Styles ======== */
-                      /**
+        /* /\/\/\/\/\/\/\/\/ MOBILE STYLES /\/\/\/\/\/\/\/\/ */
+        @media only screen and (max-width: 480px) {
+            /* /\/\/\/\/\/\/ CLIENT-SPECIFIC MOBILE STYLES /\/\/\/\/\/\/ */
+            body, table, td, p, a, li, blockquote {
+                -webkit-text-size-adjust: none !important;
+            }
+            /* Prevent Webkit platforms from changing default text sizes */
+            body {
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+            /* Prevent iOS Mail from adding padding to the body */
+            /* /\/\/\/\/\/\/ MOBILE RESET STYLES /\/\/\/\/\/\/ */
+            #bodyCell {
+                padding: 10px !important;
+            }
+            /* /\/\/\/\/\/\/ MOBILE TEMPLATE STYLES /\/\/\/\/\/\/ */
+            /* ======== Page Styles ======== */
+            /**
                       * @tab Mobile Styles
                       * @section template width
                       * @tip Make the template fluid for portrait or landscape view adaptability. If a fluid layout doesn't work for you, set the width to 300px instead.
                       */
-                      #templateContainer{
-                          max-width:600px !important;
-                          width:100% !important;
-                      }
-                      /* ======== Header Styles ======== */
-                      #templatePreheader{display:none !important;} /* Hide the template preheader to save space */
-                      /**
+            #templateContainer {
+                max-width: 600px !important;
+                width: 100% !important;
+            }
+            /* ======== Header Styles ======== */
+            #templatePreheader {
+                display: none !important;
+            }
+            /* Hide the template preheader to save space */
+            /**
                       * @tab Mobile Styles
                       * @section header image
                       * @tip Make the main header image fluid for portrait or landscape view adaptability, and set the image's original width as the max-width. If a fluid setting doesn't work, set the image width to half its original size instead.
                       */
-                      #headerImage{
-                          height:auto !important;
-                          max-width:600px !important;
-                          width:100% !important;
-                      }
-                      /**
+            #headerImage {
+                height: auto !important;
+                max-width: 600px !important;
+                width: 100% !important;
+            }
+            /**
                       * @tab Mobile Styles
                       * @section header text
                       * @tip Make the header content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
                       */
-                      .headerContent{
-                          font-size:20px !important;
-                          line-height:125% !important;
-                      }
-                      /* ======== Body Styles ======== */
-                      /**
+            .headerContent {
+                font-size: 20px !important;
+                line-height: 125% !important;
+            }
+            /* ======== Body Styles ======== */
+            /**
                       * @tab Mobile Styles
                       * @section body text
                       * @tip Make the body content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
                       */
-                      .bodyContent{
-                          font-size:18px !important;
-                          line-height:125% !important;
-                      }
-                      /* ======== Footer Styles ======== */
-                      /**
+            .bodyContent {
+                font-size: 18px !important;
+                line-height: 125% !important;
+            }
+            /* ======== Footer Styles ======== */
+            /**
                       * @tab Mobile Styles
                       * @section footer text
                       * @tip Make the body content text larger in size for better readability on small screens.
                       */
-                      .footerContent{
-                          font-size:14px !important;
-                          line-height:115% !important;
-                      }
-                  }
+            .footerContent {
+                font-size: 14px !important;
+                line-height: 115% !important;
+            }
+        }
     </style>
-  </head>
-  <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;margin:0;padding:0;margin:0;padding:0;background-color:#FFF;height:100% !important;width:100% !important">
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;margin:0;padding:0;margin:0;padding:0;background-color:#FFF;height:100% !important;width:100% !important">
+    <input type="hidden" value="#Environment#" id="hdnEnvironment" />
+    <input type="hidden" value="#UserName#" id="hdnUserName" />
+    <input type="hidden" value="#Page_Type#" id="hdnPageType" />
+    
+    <script>
+        var userName = document.getElementById("hdnEnvironment").value;
+        var pageType = document.getElementById("hdnPageType").value;
+        var utag_data = { "page-type": '"' + pageType + '"', "username": '"' + userName + '"' };
+    </script>
+    <script type="text/javascript">
+        (function (a, b, c, d) {
+            var environment = document.getElementById("hdnEnvironment").value;
+            a = '//tags.tiqcdn.com/utag/informa/main/' + environment + '/utag.js';
+            b = document; c = 'script'; d = b.createElement(c); d.src = a;
+            d.type = 'text/java' + c; d.async = true;
+            a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a)
+        })();
+    </script>
     <center>
-      <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;padding:0;background-color:#FFF;border-collapse:collapse !important;height:100% !important;width:100% !important">
-        <tr>
-          <td align="center" valign="top" id="bodyCell" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;padding:0;padding:20px;height:100% !important;width:100% !important">
-            <table border="0" cellpadding="0" cellspacing="0" id="topViewOnlineLink" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:helvetica, arial, sans-serif;font-size:12px;border-collapse:collapse !important">
-              <tr>
-                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-bottom: 12px;">
-                  View our <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">online version</a>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;padding:0;background-color:#FFF;border-collapse:collapse !important;height:100% !important;width:100% !important">
+            <tr>
+                <td align="center" valign="top" id="bodyCell" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;padding:0;padding:20px;height:100% !important;width:100% !important">
+                    <table border="0" cellpadding="0" cellspacing="0" id="topViewOnlineLink" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:helvetica, arial, sans-serif;font-size:12px;border-collapse:collapse !important">
+                        <tr>
+                            <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-bottom: 12px;">
+                                View our <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">online version</a>
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;width:600px;border:1px solid #DDDDDD;border-collapse:collapse !important">
+                        <tr>
+                            <td align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important">
+                                    <tr>
+                                        <td valign="top" class="preheaderContent" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#414042;font-family:Helvetica;font-size:12px;line-height:125%;text-align:left;font-weight:bold;padding-top:16px; padding-bottom:32px; padding-left:24px;">
+                                            #Date#
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END PREHEADER -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt">
+                                <!-- BEGIN HEADER // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important">
+                                    <tr>
+                                        <td valign="top" class="headerContent" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#505050;font-family:Helvetica;font-size:20px;font-weight:bold;line-height:100%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;text-align:left;vertical-align:middle;padding-left: 24px; padding-bottom: 32px;">
+                                            <img src="#Logo_URL#" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;height:auto;max-width:600px;max-width:150px;" id="headerImage">
+                                        </td>
+                                        <td valign="bottom" align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-right: 24px; padding-bottom: 32px;">
+                                            <a href="#RSS_Link_URL#">#RSS_Link_Text#</a>
+                                            <a href="#LinkedIn_Link_URL#">#LinkedIn_Link_Text#</a>
+                                            <a href="#Twitter_Link_URL#">#Twitter_Link_Text#</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END HEADER -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt">
+                                <!-- BEGIN BODY // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important">
+                                    <tr>
+                                        <td valign="top" class="bodyContent" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#505050;font-family:Georgia, serif;font-size:15px;padding-right:24px;padding-bottom:24px;padding-left:24px;text-align:left;padding-bottom: 40px">
+                                            #Body_Content#
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END BODY -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt">
+                                <!-- BEGIN FOOTER // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;background-color:#f1f2f2;border-collapse:collapse !important">
+                                    <tr>
+                                        <td valign="top" class="footerContent" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#979797;font-family:Roboto, Helvetica;font-size:12px;line-height:175%;padding-top:16px;padding-right:24px;padding-bottom:0px;padding-left:24px;text-align:center">
+                                            <p style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding-bottom:12px">
+                                                #Footer_Content#
+                                            </p>
+                                            <p style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding-bottom:12px">
+                                                <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">Advertise</a>
+                                                <span class="footer-link-separator" style="padding-left:8px;padding-right:8px;color:#d1d3d4;font-weight:100;vertical-align:middle">|</span>
+                                                <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">About Us</a>
+                                                <span class="footer-link-separator" style="padding-left:8px;padding-right:8px;color:#d1d3d4;font-weight:100;vertical-align:middle">|</span>
+                                                <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">Login</a>
+                                                <span class="footer-link-separator" style="padding-left:8px;padding-right:8px;color:#d1d3d4;font-weight:100;vertical-align:middle">|</span>
+                                                <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">Contact Us</a>
+                                                <span class="footer-link-separator" style="padding-left:8px;padding-right:8px;color:#d1d3d4;font-weight:100;vertical-align:middle">|</span>
+                                                <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">Privacy</a>
+                                                <span class="footer-link-separator" style="padding-left:8px;padding-right:8px;color:#d1d3d4;font-weight:100;vertical-align:middle">|</span>
+                                                <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">Help</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END FOOTER -->
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- // END TEMPLATE -->
                 </td>
-              </tr>
-            </table>
-            <table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;width:600px;border:1px solid #DDDDDD;border-collapse:collapse !important">
-              <tr>
-                <td align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt">
-                  <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important">
-                    <tr>
-                    	<td valign="top" class="preheaderContent" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#414042;font-family:Helvetica;font-size:12px;line-height:125%;text-align:left;font-weight:bold;padding-top:16px; padding-bottom:32px; padding-left:24px;">
-                        	#Date#
-                    	</td>
-                    </tr>
-                  </table>
-                  <!-- // END PREHEADER -->
-                </td>
-              </tr>
-              <tr>
-                <td align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt">
-                  <!-- BEGIN HEADER // -->
-                  <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important">
-                    <tr>
-                      <td valign="top" class="headerContent" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#505050;font-family:Helvetica;font-size:20px;font-weight:bold;line-height:100%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;text-align:left;vertical-align:middle;padding-left: 24px; padding-bottom: 32px;">
-                        <img src="#Logo_URL#" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;height:auto;max-width:600px;max-width:150px;" id="headerImage">
-                      </td>
-                      <td valign="bottom" align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-right: 24px; padding-bottom: 32px;">
-						  <a href="#RSS_Link_URL#">#RSS_Link_Text#</a>
-						  <a href="#LinkedIn_Link_URL#">#LinkedIn_Link_Text#</a>
-						  <a href="#Twitter_Link_URL#">#Twitter_Link_Text#</a>
-					  </td>
-                    </tr>
-                  </table>
-                  <!-- // END HEADER -->
-                </td>
-              </tr>
-              <tr>
-                <td align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt">
-                  <!-- BEGIN BODY // -->
-                  <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important">
-                    <tr>
-                      <td valign="top" class="bodyContent" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#505050;font-family:Georgia, serif;font-size:15px;padding-right:24px;padding-bottom:24px;padding-left:24px;text-align:left;padding-bottom: 40px">
-                        #Body_Content#
-                      </td>
-                    </tr>
-                  </table>
-                  <!-- // END BODY -->
-                </td>
-              </tr>
-              <tr>
-                <td align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt">
-                  <!-- BEGIN FOOTER // -->
-                  <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;background-color:#f1f2f2;border-collapse:collapse !important">
-                    <tr>
-                      <td valign="top" class="footerContent" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#979797;font-family:Roboto, Helvetica;font-size:12px;line-height:175%;padding-top:16px;padding-right:24px;padding-bottom:0px;padding-left:24px;text-align:center">
-                        <p style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding-bottom:12px">
-							#Footer_Content#
-						</p>
-                        <p style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding-bottom:12px">
-                          <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">Advertise</a>
-                          <span class="footer-link-separator" style="padding-left:8px;padding-right:8px;color:#d1d3d4;font-weight:100;vertical-align:middle">|</span>
-                          <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">About Us</a>
-                          <span class="footer-link-separator" style="padding-left:8px;padding-right:8px;color:#d1d3d4;font-weight:100;vertical-align:middle">|</span>
-                          <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">Login</a>
-                          <span class="footer-link-separator" style="padding-left:8px;padding-right:8px;color:#d1d3d4;font-weight:100;vertical-align:middle">|</span>
-                          <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">Contact Us</a>
-                          <span class="footer-link-separator" style="padding-left:8px;padding-right:8px;color:#d1d3d4;font-weight:100;vertical-align:middle">|</span>
-                          <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">Privacy</a>
-                          <span class="footer-link-separator" style="padding-left:8px;padding-right:8px;color:#d1d3d4;font-weight:100;vertical-align:middle">|</span>
-                          <a href="#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none">Help</a>
-                        </p>
-                      </td>
-                    </tr>
-                  </table>
-                  <!-- // END FOOTER -->
-                </td>
-              </tr>
-            </table>
-            <!-- // END TEMPLATE -->
-          </td>
-        </tr>
-      </table>
+            </tr>
+        </table>
     </center>
-  </body>
+</body>
 </html>

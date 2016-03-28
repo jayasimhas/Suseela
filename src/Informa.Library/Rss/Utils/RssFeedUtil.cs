@@ -48,7 +48,7 @@ namespace Informa.Library.Rss.Utils
         public IEnumerable<Item> GetSearchItems()
         {
             string searchPageId = _itemReferences.SearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
-            string url = string.Format("http://{0}/api/informasearch?pId={1}", _hostName, searchPageId);
+            string url = string.Format("{0}://{1}/api/informasearch?pId={2}", HttpContext.Current.Request.Url.Host, _hostName, searchPageId);
 
             if (Context.RawUrl.Contains("?"))
             {
@@ -127,7 +127,7 @@ namespace Informa.Library.Rss.Utils
 
         public string GetSearchUrl(string hostName)
         {
-            var searchUrlBase = string.Format("http://{0}/search#?", hostName);
+            var searchUrlBase = string.Format("{0}://{1}/search#?", HttpContext.Current.Request.Url.Scheme, hostName);
 
             if (!Context.RawUrl.Contains("?"))
             {

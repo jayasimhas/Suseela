@@ -4,6 +4,7 @@ using Glass.Mapper.Sc.Fields;
 using Informa.Library.User.Authentication;
 using Informa.Library.Corporate;
 using Informa.Library.Globalization;
+using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.Site;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
@@ -25,6 +26,7 @@ namespace Informa.Web.ViewModels
 	    protected readonly ISitecoreService SitecoreService;
 	    protected readonly ISitecoreContext SitecoreContext;
         protected readonly IItemReferences ItemReferences;
+        protected readonly ISalesforceFindUserProfile FindUserProfile;
 
         public HeaderViewModel(
 			IAuthenticatedUserContext authenticatedUserContext,
@@ -34,7 +36,8 @@ namespace Informa.Web.ViewModels
 			ISiteRootContext siteRootContext,
             ISitecoreService sitecoreService,
             ISitecoreContext sitecoreContext,
-            IItemReferences itemReferences)
+            IItemReferences itemReferences,
+            ISalesforceFindUserProfile findUserProfile)
 		{
 			AuthenticatedUserContext = authenticatedUserContext;
 			CorporateAccountNameContext = corporateAccountNameContext;
@@ -44,6 +47,7 @@ namespace Informa.Web.ViewModels
 		    SitecoreService = sitecoreService;
 		    SitecoreContext = sitecoreContext;
             ItemReferences = itemReferences;
+            FindUserProfile = findUserProfile;
 
             InformaBar = SitecoreContext.GetItem<IInforma_Bar>(ItemReferences.InformaBar);
         }
@@ -54,7 +58,10 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				var accountName = AuthenticatedUserContext.IsAuthenticated ? AuthenticatedUserContext.User.Name : CorporateAccountNameContext.Name;
+			    var user = AuthenticatedUserContext.IsAuthenticated
+			        ? FindUserProfile.Find(AuthenticatedUserContext.User.Username)
+			        : null;
+				var accountName = user != null ? user.FirstName : CorporateAccountNameContext.Name;
 
 				return string.IsNullOrWhiteSpace(accountName) ? string.Empty : string.Concat(TextTranslator.Translate("Header.Greeting"), accountName);
 			}

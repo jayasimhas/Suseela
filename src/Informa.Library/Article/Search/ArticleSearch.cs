@@ -22,6 +22,8 @@ using Sitecore.ContentSearch.Linq.Common;
 using Sitecore.ContentSearch.Linq.Methods;
 using Sitecore.ContentSearch.Linq.Nodes;
 using Sitecore.ContentSearch.Linq.Solr;
+using System.Text;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
 namespace Informa.Library.Article.Search
 {
@@ -31,15 +33,18 @@ namespace Informa.Library.Article.Search
 		protected readonly IProviderSearchContextFactory SearchContextFactory;
 		protected readonly ISitecoreService SitecoreContext;
 		protected readonly Func<string, ISitecoreService> SitecoreFactory;
+		protected readonly IItemReferences ItemReferences;
 
 		public ArticleSearch(
 			IProviderSearchContextFactory searchContextFactory,
-			ISitecoreService sitecoreContext, Func<string, ISitecoreService> sitecoreFactory
+			ISitecoreService sitecoreContext, Func<string, ISitecoreService> sitecoreFactory,
+			 IItemReferences itemReferences
 			)
 		{
 			SearchContextFactory = searchContextFactory;
 			SitecoreContext = sitecoreContext;
 			SitecoreFactory = sitecoreFactory;
+			ItemReferences = itemReferences;
 		}
 
 		public IArticleSearchFilter CreateFilter()
@@ -158,5 +163,59 @@ namespace Informa.Library.Article.Search
 			string procName = a._Name.Replace(" ", "-");
 			return $"/{a.Article_Number}/{procName}";
 		}
+
+		public string  GetArticleAuthors(Guid id)
+		{
+			var item = SitecoreContext.GetItem<ArticleItem>(id);
+			if (item != null && item.Authors.Any())
+			{
+				var lastItem = item.Authors.LastOrDefault();
+				StringBuilder str = new StringBuilder();
+				str.Append("[");
+				foreach (IAuthor author in item.Authors)
+				{
+					str.Append("'");
+					str.Append(author._Name);
+					str.Append("'");
+					if (!author.Equals(lastItem))
+					{
+						str.Append(",");
+					}
+				}
+				str.Append("]");
+			}
+
+			return string.Empty;
+		}
+
+		public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
+		{
+			var article = SitecoreContext.GetItem<ArticleItem>(id);
+			if (article != null && article.Taxonomies.Any())
+			{
+				var taxonomyItems = article.Taxonomies.Where(x => x._Parent._Id.Equals(taxonomyParent));
+				if (taxonomyItems != null && taxonomyItems.Any())
+				{
+					var lastItem = taxonomyItems.LastOrDefault();
+					StringBuilder str = new StringBuilder();
+					str.Append("[");
+					foreach (ITaxonomy_Item taxonomyItem in taxonomyItems)
+					{
+						str.Append("'");
+						str.Append(taxonomyItem.Item_Name);
+						str.Append("'");
+						if (!taxonomyItem.Equals(lastItem))
+						{
+							str.Append(",");
+						}
+					}
+					str.Append("]");
+				}
+			}
+
+			return string.Empty;
+		}
+
+		
 	}
 }
