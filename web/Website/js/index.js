@@ -153,6 +153,29 @@ $(document).ready(function() {
 
     indexBookmarks();
 
+    // Check for any articles to immediately bookmark
+    var autoBookmark = function(article) {
+        $('.js-bookmark-article').each(function(indx, item) {
+            if($(item).data('bookmark-id') === article
+                && !$(item).data('is-bookmarked')) {
+
+                $(item).click();
+
+            } else {
+                // already bookmarked or not a match
+            }
+        });
+    };
+
+    var urlVars = window.location.href.split("?")[1].split("&");
+    for (var i=0; i<urlVars.length; i++) {
+        var pair = urlVars[i].split("=");
+        if(pair[0] === 'immb') {
+            autoBookmark(pair[1]);
+        }
+    }
+
+
     var newsletterSignup = new NewsletterSignupController();
     $(".newsletter-signup-after-submit").hide();
     newsletterSignup.checkForUserSignedUp();
@@ -166,7 +189,12 @@ $(document).ready(function() {
 
     login.addControl(
 		'.js-sign-in-submit',
-		null,
+		function(tg) {
+            if($(tg).data('pass-article-id')) {
+                var sep = (window.location.href.indexOf('?') > -1) ? '&' : '?';
+                $(tg).data('login-redirect-url', window.location.href + sep + 'immb=' + $(tg).data('pass-article-id'));
+            }
+        },
 		function(triggerElement) {
 		    toggleSignInError();
 		}
@@ -323,8 +351,9 @@ $(document).ready(function() {
             this.click();
             return;
         }
+
         $($(e.target).data('target-element')).removeClass('is-active');
-        window.controlPopOuts.closePopOut();
+        window.controlPopOuts.closePopOut(e.target);
     });
 
     // Make sure all external links open in a new window/tab
