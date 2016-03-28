@@ -52,7 +52,7 @@ $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
 
 /* Generic banner dismiss */
 $('.js-dismiss-banner').on('click', function dismissBanner(e) {
-    var thisBanner = $(e.srcElement).parents('.banner');
+    var thisBanner = $(e.target).parents('.banner');
     thisBanner.removeClass('is-visible');
 
     var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
@@ -324,7 +324,7 @@ $(document).ready(function() {
             return;
         }
         $($(e.target).data('target-element')).removeClass('is-active');
-        poc.closePopOut();
+        window.controlPopOuts.closePopOut();
     });
 
     // Make sure all external links open in a new window/tab
@@ -450,7 +450,7 @@ $(document).ready(function() {
     $('#newsletters').on('click',function(e){
         newsletterOptins();
     });
-      
+
     var newsletterOptins = function(){
         if ($('#newsletters').is(':checked')) {
             $('.registration-final').data("info",{"event_name":"registration-complete-thank-you","newsletter_optin":"true"});
@@ -483,7 +483,7 @@ $(document).ready(function() {
         utag.link({
             result
         });
-    
+
     });
 
     newsletterOptins();
