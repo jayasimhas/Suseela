@@ -35,6 +35,8 @@ namespace Informa.Web.ViewModels
         public string SearchShowingResults2Text => TextTranslator.Translate("Search.ShowingResults2");
         public string SearchShowingResults3Text => TextTranslator.Translate("Search.ShowingResults3");
         public string SearchShowingResults4Text => TextTranslator.Translate("Search.ShowingResults4");
+        public string SearchClearAllText => TextTranslator.Translate("Search.ClearAll");
+        public string SearchFilterByText => TextTranslator.Translate("Search.FilterBy");
         
     }
 }

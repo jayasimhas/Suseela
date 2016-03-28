@@ -1,3 +1,4 @@
+@model SearchViewModel
 <!-- SEARCH FILTERS IN LEFT RAIL -->
 
 <script type="text/javascript">
@@ -26,8 +27,8 @@
   ng-controller="InformaFacetController as allFacets">
 
   <div class="facets__header">
-    <h3>Filter By</h3>
-    <button class="facets__button facets__button--clear" ng-click="allFacets.clearAllFacets()">Clear All</a>
+    <h3>@Model.SearchFilterByText</h3>
+    <button class="facets__button facets__button--clear" ng-click="allFacets.clearAllFacets()">@Model.SearchClearAllText</a>
   </div>
 
   <div class="facets__content">
