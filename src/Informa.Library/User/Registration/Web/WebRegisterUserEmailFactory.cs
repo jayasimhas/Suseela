@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Site;
 using Jabberwocky.Glass.Autofac.Attributes;
+using Informa.Library.Utilities.Settings;
 
 namespace Informa.Library.User.Registration.Web
 {
@@ -11,13 +12,16 @@ namespace Informa.Library.User.Registration.Web
 	{
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IBaseHtmlEmailFactory EmailFactory;
+		protected readonly ISiteSettings SiteSettings;
 
 		public WebRegisterUserEmailFactory(
 			ISiteRootContext siteRootContext,
-			IBaseHtmlEmailFactory emailFactory)
+			IBaseHtmlEmailFactory emailFactory,
+			ISiteSettings siteSettings)
 		{
 			SiteRootContext = siteRootContext;
 			EmailFactory = emailFactory;
+			SiteSettings = siteSettings;
 		}
 
 		public IEmail Create(INewUser newUser)
@@ -39,6 +43,8 @@ namespace Informa.Library.User.Registration.Web
 			var replacements = new Dictionary<string, string>();
 
 			replacements["#Email#"] = emailTo;
+			replacements["#Envrionment#"] = SiteSettings.GetSetting("Env.Value", string.Empty);
+			replacements["#Page_Type#"] = "registration-successful-email-in-inbox";
 			replacements["#Body_Content#"] = GetValue(siteRoot?.Registration_Email_Body)
 				.ReplacePatternCaseInsensitive("#First_Name#", newUser.FirstName)
 				.ReplacePatternCaseInsensitive("#Last_Name#", newUser.LastName);

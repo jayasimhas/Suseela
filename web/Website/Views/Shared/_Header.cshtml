@@ -5,43 +5,43 @@
     <div class="banner banner--cookie-policy" data-banner-id="cookie-policy-0001">
         <div class="banner__wrapper">
             <div class="dismiss-button js-dismiss-banner">
-				<svg class="dismiss-button__icon">
-					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-				</svg>
-			</div>
+                <svg class="dismiss-button__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+            </div>
             <span>@Html.Raw(Model.PolicyText)</span>
         </div>
     </div>
 
-    <div class="informa-ribbon" >
-		<div class="informa-ribbon__wrapper">
-		    <div class="informa-ribbon__detail">
-		        <div class="informa-ribbon__left">
-		            @Html.Raw(Model.LeftColumnText)
-		            <ul>
-		                <li class="iribbon-mainlink">
-		                    @Html.Raw(Model.Link1)
-		                </li>
-		                <li>
-		                    @Html.Raw(Model.Link2)
-		                </li>
-		                <li>
-		                    @Html.Raw(Model.Link3)
-		                </li>
-		                <li>
-		                    @Html.Raw(Model.Link4)
-		                </li>
-		            </ul>
-		        </div>
+    <div class="informa-ribbon">
+        <div class="informa-ribbon__wrapper">
+            <div class="informa-ribbon__detail">
+                <div class="informa-ribbon__left">
+                    @Html.Raw(Model.LeftColumnText)
+                    <ul>
+                        <li class="iribbon-mainlink">
+                            @Html.Raw(Model.Link1)
+                        </li>
+                        <li>
+                            @Html.Raw(Model.Link2)
+                        </li>
+                        <li>
+                            @Html.Raw(Model.Link3)
+                        </li>
+                        <li>
+                            @Html.Raw(Model.Link4)
+                        </li>
+                    </ul>
+                </div>
 
-		        <div class="informa-ribbon__right">
-		            @Html.Raw(Model.RightColumnText)
-		        </div>
-		    </div>
+                <div class="informa-ribbon__right">
+                    @Html.Raw(Model.RightColumnText)
+                </div>
+            </div>
             <button class="informa-ribbon__title">
                 Informa
             </button>
-    	</div>
+        </div>
     </div>
 
     <div class="advertising--leaderboard">
@@ -66,9 +66,9 @@
 
         <div class="header-account-access">
 
-			@if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
+            @if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
             {
-				<div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
+                <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
 			}
 
             @if (Model.IsAuthenticated)
@@ -84,11 +84,12 @@
                     <svg class="header__icons icon-sign-out">
                         <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                     </svg>
-					<span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
-				</div>
-			}
-			else
-			{
+                    <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { @class = "click-logout" })</span>
+                </div>
+
+            }
+            else
+            {
                 <div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger"
                      data-pop-out-id="header-register"
                      data-pop-out-type="register">
@@ -96,7 +97,7 @@
                     <svg class="header__icons icon-register">
                         <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
                     </svg>
-					<span class="header-account-access__label">@Model.RegisterLinkText</span>
+                    <span class="header-account-access__label">@Model.RegisterLinkText</span>
                 </div>
 
                 <div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger"
@@ -107,9 +108,8 @@
                     <svg class="header__icons icon-sign-in">
                         <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
                     </svg>
-					<span class="header-account-access__label">@Model.SignInLinkText</span>
-                </div>
-            }
+                    <span class="header-account-access__label">@Model.SignInLinkText</span>
+                </div>}
         </div>
 
 
