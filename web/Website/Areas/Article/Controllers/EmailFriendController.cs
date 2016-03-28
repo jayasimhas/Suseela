@@ -126,7 +126,7 @@ namespace Informa.Web.Areas.Article.Controllers
 				var article = _articleUtil.GetArticleByNumber(articleNumber);
 				if (article != null)
 				{
-					replacements["#article_date#"] = article.Actual_Publish_Date.ToShortDateString();
+					replacements["#article_date#"] = article.Actual_Publish_Date.ToString("dd MMMM yyyy");
 					replacements["#article_mediatype#"] = article.Media_Type != null ? article.Media_Type.Item_Name : string.Empty;
 					replacements["#article_title#"] = article.Title;
 					replacements["#article_titleURL#"] = article._Url;
