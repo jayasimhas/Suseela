@@ -139,7 +139,6 @@ $(document).ready(function() {
 
     window.indexBookmarks = function() { // Toggle bookmark icon
         $('.js-bookmark-article').on('click', function bookmarkArticle(e) {
-
             // Make sure proper elm gets the click event
             if (e.target !== this) {
                 this.click();
@@ -241,6 +240,12 @@ $(document).ready(function() {
         $('.js-email-article-form-wrapper').hide();
         $('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val());
         $('.js-email-article-success').show();
+
+        // Reset the Email Article pop-out to its default state when closed
+        $('.js-dismiss-email-article').one('click', function() {
+            $('.js-email-article-form-wrapper').show();
+            $('.js-email-article-success').hide();
+        });
     });
 
 

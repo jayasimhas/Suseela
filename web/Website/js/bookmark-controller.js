@@ -42,36 +42,43 @@ function bookmarkController() {
                 success: function (response) {
                     if (response.success) {
 
-                        if(bookmark.isBookmarking) {
-
-                            bookmark.icon.setAttributeNS(
-                                'http://www.w3.org/1999/xlink',
-                                'href',
-                                '/dist/img/svg-sprite.svg#bookmarked');
-                            bookmark.elm.data('is-bookmarked', true);
-                            bookmark.label.elm.html(bookmark.label.bookmarked);
-
-                        } else {
-
-                            bookmark.icon.setAttributeNS(
-                                'http://www.w3.org/1999/xlink',
-                                'href',
-                                '/dist/img/svg-sprite.svg#bookmark');
-                            bookmark.elm.data('is-bookmarked', null);
-                            bookmark.label.elm.html(bookmark.label.bookmark);
-
-                        }
-
+                        this.flipIcon(bookmark);
+                        return true;
                     }
                     else {
 
                     }
                 },
                 error: function(response) {
+                    return false;
                 },
                 complete: function() {
                 }
             });
+
+        }
+    };
+
+    this.flipIcon = function(bookmark) {
+        if(bookmark.isBookmarking) {
+            if(!bookmark.elm.hasClass('js-angular-bookmark')) {
+                bookmark.icon.setAttributeNS(
+                    'http://www.w3.org/1999/xlink',
+                    'href',
+                    '/dist/img/svg-sprite.svg#bookmarked');
+                bookmark.elm.data('is-bookmarked', true);
+            }
+            bookmark.label.elm.html(bookmark.label.bookmarked);
+
+        } else {
+            if(!bookmark.elm.hasClass('js-angular-bookmark')) {
+                bookmark.icon.setAttributeNS(
+                    'http://www.w3.org/1999/xlink',
+                    'href',
+                    '/dist/img/svg-sprite.svg#bookmark');
+                bookmark.elm.data('is-bookmarked', null);
+            }
+            bookmark.label.elm.html(bookmark.label.bookmark);
 
         }
     };
