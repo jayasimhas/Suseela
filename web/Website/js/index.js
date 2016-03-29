@@ -15,437 +15,520 @@ import SortableTableController from './sortable-table-controller';
 
 /* Toggle menu categories */
 $('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
-	$(e.target).toggleClass('is-active');
+    $(e.target).toggleClass('is-active');
 });
 
 /* 	Elements with `position:absolute` don't bubble click events
 	`pointer-events: none` would fix, but isn't supported by IE 10.
 	Need to hoist the click event to the parent element to toggle menu items. */
 $('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
-	$(e.target).parents('.js-toggle-menu-section').trigger('click');
+    $(e.target).parents('.js-toggle-menu-section').trigger('click');
 });
-
+$('.click-logout').on('click', function(e){
+    var eventDetails = {"event_name":"logout"};
+    var result = {};
+    $.extend(result, analytics_data, eventDetails);
+    utag.link({
+        result
+    });
+});
 /* Toggle header search box (tablets/smartphones) */
 $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
-	if($(window).width() <= 800) {
-		$('.header-search__wrapper').toggleClass('is-active').focus();
-	} else {
-		$(e.target).closest('form').submit();
-	}
-	e.preventDefault();
-	return false;
+    var searchTerm = $('.header-search__field').val();
+    var eventDetails = {"event_name":"search", "search_term":'"'+searchTerm+'"'};
+    var result = {};
+    $.extend(result, analytics_data, eventDetails);
+    utag.link({
+        result
+    });
+    if($(window).width() <= 800) {
+        $('.header-search__wrapper').toggleClass('is-active').focus();
+    } else {
+        $(e.target).closest('form').submit();
+    }
+    e.preventDefault();
+    return false;
 });
 
 /* Generic banner dismiss */
 $('.js-dismiss-banner').on('click', function dismissBanner(e) {
-	var thisBanner = $(e.srcElement).parents('.banner');
-	thisBanner.removeClass('is-visible');
+    var thisBanner = $(e.target).parents('.banner');
+    thisBanner.removeClass('is-visible');
 
-	var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
-	dismissedBanners[thisBanner.data('banner-id')] = true;
-	Cookies.set('dismissedBanners', dismissedBanners);
+    var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
+    dismissedBanners[thisBanner.data('banner-id')] = true;
+    Cookies.set('dismissedBanners', dismissedBanners);
 });
 
-	// Make sure proper elm gets the click event
+// Make sure proper elm gets the click event
 // When a user submits a Forgot Password request, this will display the proper
 // success message and hide the form to prevent re-sending.
 var showForgotPassSuccess = function() {
-	$('.pop-out__sign-in-forgot-password-nested').toggleClass('is-hidden');
-	$('.pop-out__sign-in-forgot-password')
+    $('.pop-out__sign-in-forgot-password-nested').toggleClass('is-hidden');
+    $('.pop-out__sign-in-forgot-password')
 		.find('.alert-success')
 		.toggleClass('is-active');
 };
 
 // Toggle the sign-in error message displayed to a user
 var toggleSignInError = function() {
-	$('.pop-out__form-error').show();
-	//$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
+    $('.pop-out__form-error').show();
+    //$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
 };
 
 var renderIframeComponents = function() {
-	$('.iframe-component').each(function(index, elm) {
-		var desktopEmbed = $(elm).find('.iframe-component__desktop iframe');
-		var mobileEmbed = $(elm).find('.iframe-component__mobile iframe');
-		var mobileEmbedLink = mobileEmbed.data('embed-link');
+    $('.iframe-component').each(function(index, elm) {
+        var desktopEmbed = $(elm).find('.iframe-component__desktop iframe');
+        var mobileEmbed = $(elm).find('.iframe-component__mobile iframe');
+        var mobileEmbedLink = mobileEmbed.data('embed-link');
 
-		// Check if the user is viewing inside the page editor
-		// Don't hide/show desktop and/or mobile, just keep both visible
-		// so users can add, edit, or delete either.
-		if(desktopEmbed.hasClass('is-page-editor')) {
-			return;
-		}
+        // Check if the user is viewing inside the page editor
+        // Don't hide/show desktop and/or mobile, just keep both visible
+        // so users can add, edit, or delete either.
+        if(desktopEmbed.hasClass('is-page-editor')) {
+            return;
+        }
 
-		if($(window).width() <= 480 && mobileEmbedLink) {
-			mobileEmbed.show();
-			desktopEmbed.hide();
-			if(mobileEmbed.html() == '') {
-				mobileEmbed.html(mobileEmbed.data('embed-link'));
-			}
-		} else {
-			desktopEmbed.show();
-			mobileEmbed.hide();
-			if(desktopEmbed.html() == '') {
-				desktopEmbed.html(desktopEmbed.data('embed-link'));
-			}
-		}
-	});
+        if($(window).width() <= 480 && mobileEmbedLink) {
+            mobileEmbed.show();
+            desktopEmbed.hide();
+            if(mobileEmbed.html() == '') {
+                mobileEmbed.html(mobileEmbed.data('embed-link'));
+            }
+        } else {
+            desktopEmbed.show();
+            mobileEmbed.hide();
+            if(desktopEmbed.html() == '') {
+                desktopEmbed.html(desktopEmbed.data('embed-link'));
+            }
+        }
+    });
 };
 
 $(document).ready(function() {
 
-	// Anti Forgery Token
-	var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
+    // Anti Forgery Token
+    var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
 
-	window.indexPopOuts = function() {
-		window.controlPopOuts = new PopOutController('.js-pop-out-trigger');
+    window.indexPopOuts = function() {
+        window.controlPopOuts = new PopOutController('.js-pop-out-trigger');
 
-		window.controlPopOuts.customize({
-			id: 'header-register',
-			tabStyles: {
-				deskHeight: 87,
-				tabletHeight: 72,
-				phoneHeight: '' // Default
-			}
-		});
+        window.controlPopOuts.customize({
+            id: 'header-register',
+            tabStyles: {
+                deskHeight: 87,
+                tabletHeight: 72,
+                phoneHeight: '' // Default
+            }
+        });
 
-		window.controlPopOuts.customize({
-			id: 'header-signin',
-			tabStyles: {
-				deskHeight: 87,
-				tabletHeight: 72,
-				phoneHeight: '' // Default
-			}
-		});
-	};
+        window.controlPopOuts.customize({
+            id: 'header-signin',
+            tabStyles: {
+                deskHeight: 87,
+                tabletHeight: 72,
+                phoneHeight: '' // Default
+            }
+        });
+    };
 
-	window.indexPopOuts();
-
-
-	window.bookmark = new BookmarkController();
-
-	window.indexBookmarks = function() { // Toggle bookmark icon
-		$('.js-bookmark-article').on('click', function bookmarkArticle(e) {
-
-			// Make sure proper elm gets the click event
-			if (e.target !== this) {
-				this.click();
-				return;
-			}
-
-			window.bookmark.toggle(e.target);
-
-		});
-	};
-
-	indexBookmarks();
-
-	var newsletterSignup = new NewsletterSignupController();
-	$(".newsletter-signup-after-submit").hide();
-	newsletterSignup.checkForUserSignedUp();
-	newsletterSignup.addControl('.js-newsletter-signup-submit', null,function(triggerElement) {
-		  //  toggleSignInError();
-		});
+    window.indexPopOuts();
 
 
-	// TODO - Refactor this with generic form controller
-	var login = new LoginController(requestVerificationToken);
+    window.bookmark = new BookmarkController();
 
-	login.addControl(
+    window.indexBookmarks = function() { // Toggle bookmark icon
+        $('.js-bookmark-article').on('click', function bookmarkArticle(e) {
+
+            // Make sure proper elm gets the click event
+            if (e.target !== this) {
+                this.click();
+                return;
+            }
+
+            window.bookmark.toggle(e.target);
+
+        });
+    };
+
+    indexBookmarks();
+
+    // Check for any articles to immediately bookmark
+    var autoBookmark = function(article) {
+        $('.js-bookmark-article').each(function(indx, item) {
+            if($(item).data('bookmark-id') === article
+                && !$(item).data('is-bookmarked')) {
+
+                $(item).click();
+
+            } else {
+                // already bookmarked or not a match
+            }
+        });
+    };
+
+    var urlVars = window.location.href.split("?")[1].split("&");
+    for (var i=0; i<urlVars.length; i++) {
+        var pair = urlVars[i].split("=");
+        if(pair[0] === 'immb') {
+            autoBookmark(pair[1]);
+        }
+    }
+
+
+    var newsletterSignup = new NewsletterSignupController();
+    $(".newsletter-signup-after-submit").hide();
+    newsletterSignup.checkForUserSignedUp();
+    newsletterSignup.addControl('.js-newsletter-signup-submit', null,function(triggerElement) {
+        //  toggleSignInError();
+    });
+
+
+    // TODO - Refactor this with generic form controller
+    var login = new LoginController(requestVerificationToken);
+
+    login.addControl(
 		'.js-sign-in-submit',
-		null,
+		function(tg) {
+            if($(tg).data('pass-article-id')) {
+                var sep = (window.location.href.indexOf('?') > -1) ? '&' : '?';
+                $(tg).data('login-redirect-url', window.location.href + sep + 'immb=' + $(tg).data('pass-article-id'));
+            }
+        },
 		function(triggerElement) {
-			toggleSignInError();
+		    toggleSignInError();
 		}
 	);
 
 
-	var resetPassword = new FormController();
-	resetPassword.watchForm('.form-reset-password', function() {
-		$('.form-reset-password').find('.alert-success').show();
-	});
+    var resetPassword = new FormController();
+    resetPassword.watchForm('.form-reset-password', function() {
+        $('.form-reset-password').find('.alert-success').show();
+    });
 
-	var newResetPassToken = new FormController();
-	newResetPassToken.watchForm('.form-new-reset-pass-token', function() {
-		$('.form-new-reset-pass-token').find('.alert-success').show();
-	});
+    var newResetPassToken = new FormController();
+    newResetPassToken.watchForm('.form-new-reset-pass-token', function() {
+        $('.form-new-reset-pass-token').find('.alert-success').show();
+    });
 
 
-	var userRegistrationController = new FormController();
-	userRegistrationController.watchForm('.form-registration');
+    var userRegistrationController = new FormController();
+    userRegistrationController.watchForm('.form-registration');
 
-	userRegistrationController.watchForm('.form-registration-optins');
+    userRegistrationController.watchForm('.form-registration-optins');
 
-	userRegistrationController.watchForm(
+    userRegistrationController.watchForm(
 		'.form-pre-registration',
 		function(form) {
-			var usernameInput = $(form).find('.js-register-username');
-			var nextStepUrl = $(form).data('forwarding-url') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
+		    var usernameInput = $(form).find('.js-register-username');
+		    var nextStepUrl = $(form).data('forwarding-url') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
 
-			window.location.href = nextStepUrl;
+		    window.location.href = nextStepUrl;
 		}
 	);
 
 
-	//var registerController = new RegisterController();
-	//registerController.addRegisterUserControl('.js-register-user-optins-submit');
+    //var registerController = new RegisterController();
+    //registerController.addRegisterUserControl('.js-register-user-optins-submit');
 
 
-	var emailArticleController = new FormController();
-	emailArticleController.watchForm('.form-email-article', function(form) {
-		$('.js-email-article-form-wrapper').hide();
-		$('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val());
-		$('.js-email-article-success').show();
-	});
+    var emailArticleController = new FormController();
+    emailArticleController.watchForm('.form-email-article', function(form) {
+        $('.js-email-article-form-wrapper').hide();
+        $('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val());
+        $('.js-email-article-success').show();
+    });
 
 
-	var accountEmailPreferencesController = new FormController();
-	accountEmailPreferencesController.watchForm('.form-email-preferences');
+    var accountEmailPreferencesController = new FormController();
+    accountEmailPreferencesController.watchForm('.form-email-preferences');
 
 
-	var accountUpdatePassController = new FormController();
-	accountUpdatePassController.watchForm('.form-update-account-pass');
+    var accountUpdatePassController = new FormController();
+    accountUpdatePassController.watchForm('.form-update-account-pass');
 
-	var accountUpdateContactController = new FormController();
-	accountUpdateContactController.watchForm('.form-update-account-contact', function(form, context, evt) {
-		$(window).scrollTop(($(evt.target).closest('form').find('.js-form-error-general').offset().top - 32));
-	});
+    var accountUpdateContactController = new FormController();
+    accountUpdateContactController.watchForm('.form-update-account-contact', function(form, context, evt) {
+        $(window).scrollTop(($(evt.target).closest('form').find('.js-form-error-general').offset().top - 32));
+    });
 
 
 
-	var savedDocumentsController = new FormController();
-	savedDocumentsController.watchForm('.form-remove-saved-document', function(form, context, evt) {
-		$(evt.target).closest('tr').remove();
-	});
+    var savedDocumentsController = new FormController();
+    savedDocumentsController.watchForm('.form-remove-saved-document', function(form, context, evt) {
+        $(evt.target).closest('tr').remove();
+    });
 
 
     svg4everybody();
 
-	var getHeaderEdge = function() {
-		return $('.header__wrapper').offset().top + $('.header__wrapper').height();
-	};
+    var getHeaderEdge = function() {
+        return $('.header__wrapper').offset().top + $('.header__wrapper').height();
+    };
 
-	/* Toggle menu visibility */
-	$('.js-toggle-menu').on('click', function toggleMenu() {
-		if($('.main-menu').hasClass('is-active')) {
-			$('.main-menu').removeClass('is-active');
-			$('.menu-toggler').removeClass('is-active');
-			$('body').removeClass('is-frozen');
-			if($(window).scrollTop() <= getHeaderEdge()) {
-				$('.header__wrapper .menu-toggler').removeClass('is-sticky');
-			}
-		} else {
-			$('.main-menu').addClass('is-active');
-			$('.menu-toggler').addClass('is-active');
-			$('.header__wrapper .menu-toggler').addClass('is-sticky');
-			$('body').addClass('is-frozen');
-		}
-	});
+    /* Toggle menu visibility */
+    $('.js-toggle-menu').on('click', function toggleMenu() {
+        if($('.main-menu').hasClass('is-active')) {
+            $('.main-menu').removeClass('is-active');
+            $('.menu-toggler').removeClass('is-active');
+            $('body').removeClass('is-frozen');
+            if($(window).scrollTop() <= getHeaderEdge()) {
+                $('.header__wrapper .menu-toggler').removeClass('is-sticky');
+            }
+        } else {
+            $('.main-menu').addClass('is-active');
+            $('.menu-toggler').addClass('is-active');
+            $('.header__wrapper .menu-toggler').addClass('is-sticky');
+            $('body').addClass('is-frozen');
+        }
+    });
 
-	/* Attach / detach sticky menu */
-	$(window).on('scroll', function windowScrolled() {
-		if ($(this).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
-			$('.header__wrapper .menu-toggler').addClass('is-sticky');
-		} else {
-			$('.header__wrapper .menu-toggler').removeClass('is-sticky');
-		}
-	});
+    /* Attach / detach sticky menu */
+    $(window).on('scroll', function windowScrolled() {
+        if ($(this).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
+            $('.header__wrapper .menu-toggler').addClass('is-sticky');
+        } else {
+            $('.header__wrapper .menu-toggler').removeClass('is-sticky');
+        }
+    });
 
 
     var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
-	$('.banner').each(function() {
-		if($(this).data('banner-id') in dismissedBanners === false) {
-			$(this).addClass('is-visible');
-		}
-	});
+    $('.banner').each(function() {
+        if($(this).data('banner-id') in dismissedBanners === false) {
+            $(this).addClass('is-visible');
+        }
+    });
 
-	// For each article table, clone and append "view full table" markup
-	$('.article-body-content table').not('.article-table--mobile-link').forEach(function(e) {
- 	    var mediaId = $(e).data("mediaid");
- 	    var tableLink = $('.js-mobile-table-template .article-table').clone();
+    // For each article table, clone and append "view full table" markup
+    $('.article-body-content table').not('.article-table--mobile-link').forEach(function(e) {
+        var mediaId = $(e).data("mediaid");
+        var tableLink = $('.js-mobile-table-template .article-table').clone();
 
-	    var url = window.location.href;
-    	url.replace("#", "");
-	    if (url.indexOf("?") < 0)
-	        url += "?";
- 	    else
- 	        url += "&";
+        var url = window.location.href;
+        url.replace("#", "");
+        if (url.indexOf("?") < 0)
+            url += "?";
+        else
+            url += "&";
 
- 	    url+= "mobilemedia=true&selectedid=" + mediaId;
+        url+= "mobilemedia=true&selectedid=" + mediaId;
 
-		// $(tableLink).find('a').attr("href", url);
-		$(tableLink).find('a').data("table-url", url).attr('href', null);
- 		$(e).after(tableLink);
-	});
+        // $(tableLink).find('a').attr("href", url);
+        $(tableLink).find('a').data("table-url", url).attr('href', null);
+        $(e).after(tableLink);
+    });
 
-	// When DOM loads, render the appropriate iFrame components
-	// Also add a listener for winder resize, render appropriate containers
-	renderIframeComponents();
-	$(window).on('resize', (event) => {
-		renderIframeComponents();
-	});
+    // When DOM loads, render the appropriate iFrame components
+    // Also add a listener for winder resize, render appropriate containers
+    renderIframeComponents();
+    $(window).on('resize', (event) => {
+        renderIframeComponents();
+    });
 
-	// Topic links
-	var topicAnchors = $('.js-topic-anchor');
+    // Topic links
+    var topicAnchors = $('.js-topic-anchor');
 
-	$('.sub-topic-links').forEach(function(e) {
-		var linkList = $(e).find('.bar-separated-link-list');
+    $('.sub-topic-links').forEach(function(e) {
+        var linkList = $(e).find('.bar-separated-link-list');
 
-		topicAnchors.forEach(function(tc) {
-			var id = tc.id;
-			var text = $(tc).data('topic-link-text');
-			var utagInfo = '{"event_name"="topic-jump-to-link-click","topic-name"="'+text+'"}';
-			linkList.append('<a href="#' + id + '" class="click-utag" data-info='+text+'>' + text + '</a>');
-		});
-	});
+        topicAnchors.forEach(function(tc) {
+            var id = tc.id;
+            var text = $(tc).data('topic-link-text');
+            var utagInfo = '{"event_name"="topic-jump-to-link-click","topic-name"="'+text+'"}';
+            linkList.append('<a href="#' + id + '" class="click-utag" data-info='+text+'>' + text + '</a>');
+        });
+    });
 
-	// Display the Forgot Password block when "forgot your password" is clicked
-	$('.js-show-forgot-password').on('click', function toggleForgotPass() {
-		$('.pop-out__sign-in-forgot-password').toggleClass('is-active');
-	});
+    // Display the Forgot Password block when "forgot your password" is clicked
+    $('.js-show-forgot-password').on('click', function toggleForgotPass() {
+        $('.pop-out__sign-in-forgot-password').toggleClass('is-active');
+    });
 
-	// Global dismiss button for pop-outs
-	$('.dismiss-button').on('click', function(e) {
-		if (e.target !== this) {
-			this.click();
-	    	return;
-		}
-		$($(e.target).data('target-element')).removeClass('is-active');
-		poc.closePopOut();
-	});
+    // Global dismiss button for pop-outs
+    $('.dismiss-button').on('click', function(e) {
+        if (e.target !== this) {
+            this.click();
+            return;
+        }
 
-	// Make sure all external links open in a new window/tab
-	$("a[href^=http]").each(function(){
-		if(this.href.indexOf(location.hostname) == -1) {
-           $(this).attr({
-               target: "_blank",
-           });
-	  	}
-	});
+        $($(e.target).data('target-element')).removeClass('is-active');
+        window.controlPopOuts.closePopOut(e.target);
+    });
 
-	$('.general-header__navigation').each(function() {
+    // Make sure all external links open in a new window/tab
+    $("a[href^=http]").each(function(){
+        if(this.href.indexOf(location.hostname) == -1) {
+            $(this).attr({
+                target: "_blank",
+            });
+        }
+    });
 
-		$(this).on('scroll', function() {
-			var scrollLeft = $(this).scrollLeft();
-			var scrollWidth = $(this)[0].scrollWidth;
-			var winWidth = $(window).width();
+    $('.general-header__navigation').each(function() {
 
-			if(scrollLeft > 32) {
-				$('.general-header__navigation-scroller--left').addClass('is-visible');
-			} else {
-				$('.general-header__navigation-scroller--left').removeClass('is-visible');
-			}
+        $(this).on('scroll', function() {
+            var scrollLeft = $(this).scrollLeft();
+            var scrollWidth = $(this)[0].scrollWidth;
+            var winWidth = $(window).width();
 
-			if(scrollLeft + winWidth < scrollWidth - 32) {
-				$('.general-header__navigation-scroller--right').addClass('is-visible');
-			} else {
-				$('.general-header__navigation-scroller--right').removeClass('is-visible');
-			}
+            if(scrollLeft > 32) {
+                $('.general-header__navigation-scroller--left').addClass('is-visible');
+            } else {
+                $('.general-header__navigation-scroller--left').removeClass('is-visible');
+            }
 
-		});
+            if(scrollLeft + winWidth < scrollWidth - 32) {
+                $('.general-header__navigation-scroller--right').addClass('is-visible');
+            } else {
+                $('.general-header__navigation-scroller--right').removeClass('is-visible');
+            }
 
-		var scrollLeft = $(this).scrollLeft();
-		var scrollWidth = $(this)[0].scrollWidth;
-		var winWidth = $(window).width();
+        });
 
-		if(scrollLeft + winWidth < scrollWidth - 32) {
-			$('.general-header__navigation-scroller--right').addClass('is-visible');
-		} else {
-			$('.general-header__navigation-scroller--right').removeClass('is-visible');
-		}
-	});
+        var scrollLeft = $(this).scrollLeft();
+        var scrollWidth = $(this)[0].scrollWidth;
+        var winWidth = $(window).width();
 
-
-	// Smooth, clickable scrolling for General page headers
-	var smoothScrollingNav = function() {
-
-		// Cache for less DOM checking
-		var Scrollable = $('.general-header__navigation');
-		var Container = $('.general-header');
-
-		// Find current scroll distance is from left and right edges
-		var scrollDistance = function() {
-  			return {
-				left: Scrollable.scrollLeft(),
-				right: Scrollable[0].scrollWidth - (Container.width() + Scrollable.scrollLeft())
-			};
-		};
-
-		var init = function() {
-
-			$('.general-header__navigation-scroller--right').on('click', function() {
-				if(scrollDistance().right > 0) { // Not on right edge
-					smoothScroll(200, 'right');
-				}
-			});
-
-			$('.general-header__navigation-scroller--left').on('click', function() {
-				if(scrollDistance().left > 0) {
-					smoothScroll(200, 'left');
-				}
-			});
-
-		};
-
-		var scrollToTimerCache;
-	    var totalTravel = null;
-	    var durationStart = null;
-
-	    // Quadratic ease-out algorithm
-	    var easing = function(time, distance) {
-	       return distance * (time * (2 - time));
-	    };
-
-		var smoothScroll = function(duration, direction) {
-			if (duration <= 0) {
-			    // Reset everything when duration time finishes
-			    totalTravel = null;
-			    durationStart = null;
-				return;
-			}
-
-			// Store duration as durationStart on first loop
-			durationStart = !durationStart ? duration : durationStart;
-
-			// Store travel distance (container width) as totalTravel on first loop
-			totalTravel = !totalTravel ? Container.width() : totalTravel;
-
-			// Finds percentage of elapsed time since start
-			var travelPcent = 1 - (duration / durationStart);
-
-			// Finds travel change on this loop, adjusted for ease-out
-			var travel = easing(travelPcent, ((totalTravel / durationStart) * 10));
-
-			scrollToTimerCache = setTimeout(function() {
-				if (!isNaN(parseInt(travel, 10))) {
-					if(direction === 'right') {
-						Scrollable.scrollLeft(Scrollable.scrollLeft() + travel);
-						smoothScroll(duration - 10, direction);
-					} else if(direction === 'left') {
-						Scrollable.scrollLeft(Scrollable.scrollLeft() - travel);
-						smoothScroll(duration - 10, direction);
-					}
-
-				}
-			}.bind(this), 10);
-		};
-
-		// Bind event listeners
-		init();
-	};
-
-	// Execute!
-	smoothScrollingNav();
+        if(scrollLeft + winWidth < scrollWidth - 32) {
+            $('.general-header__navigation-scroller--right').addClass('is-visible');
+        } else {
+            $('.general-header__navigation-scroller--right').removeClass('is-visible');
+        }
+    });
 
 
-	$('.informa-ribbon__title').on('click', function (e) {
+    // Smooth, clickable scrolling for General page headers
+    var smoothScrollingNav = function() {
 
-		$('.informa-ribbon').toggleClass('show')
+        // Cache for less DOM checking
+        var Scrollable = $('.general-header__navigation');
+        var Container = $('.general-header');
 
-	});
+        // Find current scroll distance is from left and right edges
+        var scrollDistance = function() {
+            return {
+                left: Scrollable.scrollLeft(),
+                right: Scrollable[0].scrollWidth - (Container.width() + Scrollable.scrollLeft())
+            };
+        };
 
-	var sortTheTables = new SortableTableController();
+        var init = function() {
 
-	// Twitter sharing JS
-	window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");
+            $('.general-header__navigation-scroller--right').on('click', function() {
+                if(scrollDistance().right > 0) { // Not on right edge
+                    smoothScroll(200, 'right');
+                }
+            });
+
+            $('.general-header__navigation-scroller--left').on('click', function() {
+                if(scrollDistance().left > 0) {
+                    smoothScroll(200, 'left');
+                }
+            });
+
+        };
+
+        var scrollToTimerCache;
+        var totalTravel = null;
+        var durationStart = null;
+
+        // Quadratic ease-out algorithm
+        var easing = function(time, distance) {
+            return distance * (time * (2 - time));
+        };
+
+        var smoothScroll = function(duration, direction) {
+            if (duration <= 0) {
+                // Reset everything when duration time finishes
+                totalTravel = null;
+                durationStart = null;
+                return;
+            }
+
+            // Store duration as durationStart on first loop
+            durationStart = !durationStart ? duration : durationStart;
+
+            // Store travel distance (container width) as totalTravel on first loop
+            totalTravel = !totalTravel ? Container.width() : totalTravel;
+
+            // Finds percentage of elapsed time since start
+            var travelPcent = 1 - (duration / durationStart);
+
+            // Finds travel change on this loop, adjusted for ease-out
+            var travel = easing(travelPcent, ((totalTravel / durationStart) * 10));
+
+            scrollToTimerCache = setTimeout(function() {
+                if (!isNaN(parseInt(travel, 10))) {
+                    if(direction === 'right') {
+                        Scrollable.scrollLeft(Scrollable.scrollLeft() + travel);
+                        smoothScroll(duration - 10, direction);
+                    } else if(direction === 'left') {
+                        Scrollable.scrollLeft(Scrollable.scrollLeft() - travel);
+                        smoothScroll(duration - 10, direction);
+                    }
+
+                }
+            }.bind(this), 10);
+        };
+
+        // Bind event listeners
+        init();
+    };
+
+    $('#newsletters').on('click',function(e){
+        newsletterOptins();
+    });
+
+    var newsletterOptins = function(){
+        if ($('#newsletters').is(':checked')) {
+            $('.registration-final').data("info",{"event_name":"registration-complete-thank-you","newsletter_optin":"true"});
+        } else {
+            $('.registration-final').data("info",{"event_name":"registration-complete-thank-you","newsletter_optin":"false"});
+        }
+    };
+
+    $('.manage-preferences').click(function(e)
+    {
+        var preferencesData = {};
+        if($("#NewsletterOptIn").is(':checked') && $("#DoNotSendOffersOptIn").is(':checked'))
+        {
+            preferencesData ={"event_name":"manage-preferences","newsletter_optin":"true","donot_send_offers_optin":"true"};
+        }
+        if(!$("#NewsletterOptIn").is(':checked') && $("#DoNotSendOffersOptIn").is(':checked'))
+        {
+            preferencesData ={"event_name":"manage-preferences","newsletter_optin":"false","donot_send_offers_optin":"true"};
+        }
+        if($("#NewsletterOptIn").is(':checked') && !$("#DoNotSendOffersOptIn").is(':checked'))
+        {
+            preferencesData ={"event_name":"manage-preferences","newsletter_optin":"true","donot_send_offers_optin":"false"};
+        }
+        if(!$("#NewsletterOptIn").is(':checked') && !$("#DoNotSendOffersOptIn").is(':checked'))
+        {
+            preferencesData ={"event_name":"manage-preferences","newsletter_optin":"false","donot_send_offers_optin":"false"};
+        }
+        var result = {};
+        $.extend(result, analytics_data, preferencesData);
+        utag.link({
+            result
+        });
+
+    });
+
+    newsletterOptins();
+    // Execute!
+    smoothScrollingNav();
+
+
+	// Toggle global Informa bar
+    $('.informa-ribbon__title').on('click', function (e) {
+        $('.informa-ribbon').toggleClass('show')
+    });
+
+
+    var sortTheTables = new SortableTableController();
+
+    // Twitter sharing JS
+    window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");
 
 });

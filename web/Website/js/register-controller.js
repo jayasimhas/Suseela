@@ -31,7 +31,10 @@ function loginController(requestVerificationToken) {
 					data: inputData,
 					context: this,
 					success: function (response) {
-						if (response.success) {							
+					    if (response.success) {		
+					        var registerAnalytics = {"event_name":"register-step-1","registration_state":"successful","userName":'"'+inputData.username+'"'};
+					        var result ={};
+					        $.extend(result,analytics_data,registerAnalytics);
 							if (successCallback) {
 								successCallback(triggerElement);
 							}
@@ -46,7 +49,9 @@ function loginController(requestVerificationToken) {
 						}
 						else {
 							$(triggerElement).removeAttr('disabled');
-							
+							var registerAnalytics = {"event_name":"register-step-1","registration_state":"unsuccessful","userName":'"'+inputData.username+'"'};
+							var result ={};
+							$.extend(result,analytics_data,registerAnalytics);
 							var specificErrorDisplayed = false;
 
 							if (response.reasons && response.reasons.length > 0) {

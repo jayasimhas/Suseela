@@ -57,7 +57,8 @@ namespace Informa.Web.Areas.Account.ViewModels.ResetPassword
 		public string NewPasswordRepeatLabelText => TextTranslator.Translate("Authentication.ResetPassword.Change.NewPasswordRepeatLabel");
 		public string NewPasswordRepeatPlaceholderText => TextTranslator.Translate("Authentication.ResetPassword.Change.NewPasswordRepeatPlaceholder");
 		public string SubmitButtonText => TextTranslator.Translate("Authentication.ResetPassword.Change.Submit");
-		public string ResetErrorRequirementsText => TextTranslator.Translate("Authentication.ResetPassword.Change.ResetErrorRequirements");
+        public string SendNewLinkButtonText => TextTranslator.Translate("Authentication.ResetPassword.Change.SendNewLink");
+        public string ResetErrorRequirementsText => TextTranslator.Translate("Authentication.ResetPassword.Change.ResetErrorRequirements");
 		public string ResetErrorMismatchText => TextTranslator.Translate("Authentication.ResetPassword.Change.ResetErrorMismatch");
 		public string ResetErrorGeneralText => TextTranslator.Translate("Authentication.ResetPassword.Change.ResetErrorGeneral");
 		public string ResetSuccessText => TextTranslator.Translate("Authentication.ResetPassword.Change.ResetSuccess");

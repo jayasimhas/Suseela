@@ -85,8 +85,8 @@
 				<input type="hidden" name="ArticleNumber" value="@Model.ArticleNumber">
 
 				<div class="pop-out__form-actions-wrapper">
-					<div>
-						<a href="#">@Model.CancelText</a>
+					<div class="dismiss-button" data-target-element=".js-pop-out__email-article">
+                        <span class="highlight-link">@Model.CancelText</span>
 					</div>
 					<div class="sign-in__submit-wrapper">
 						<button type="submit" class="button--filled click-utag"  data-info='{"event_name" : "email-a-friend", "emailFrom" : "@Model.AuthUserName","articleTitle":"@Model.ArticleTitle" }'>@Model.SendText</button>

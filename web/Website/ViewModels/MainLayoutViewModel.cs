@@ -230,9 +230,7 @@ namespace Informa.Web.ViewModels
 					{
 						return articleItem.Content_Type.Item_Name;
 					}
-
-
-				}
+                }
 				return string.Empty;
 			}
 		}
