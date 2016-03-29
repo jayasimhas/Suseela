@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {13C91A1A-FF70-4E65-9908-E59A23B1400C}
+id: {8809794A-074A-4F40-BCCD-CA86623D2CEF}
 database: master
-path: /sitecore/templates/User Defined/Rss/Publications Rss Feed/Data/Language
-parent: {599FFCC7-6052-449C-BE91-A598E3C7D2B9}
-name: Language
+path: /sitecore/templates/User Defined/Rss/Search Rss Feed/Search Data/Search Api Url
+parent: {25AE4DFD-EBAC-461A-B9DD-B02FB59289ED}
+name: Search Api Url
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -22,11 +22,11 @@ name: __Sortorder
 key: __sortorder
 content-length: 3
 
-200
+100
 ----version----
 language: en
 version: 1
-revision: 95fc4b95-1fd2-4b67-ae75-f02a3247275a
+revision: 66b2f072-1954-44ae-b2da-03c713b7a534
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160315T042412Z
+20160329T151639Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-95fc4b95-1fd2-4b67-ae75-f02a3247275a
+66b2f072-1954-44ae-b2da-03c713b7a534
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160315T042444Z
+20160329T152604Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
