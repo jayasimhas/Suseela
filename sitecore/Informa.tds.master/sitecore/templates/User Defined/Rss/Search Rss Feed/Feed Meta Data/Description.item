@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {621E7ABB-01E7-4CAA-AFF3-9AB8AB1C10CD}
+id: {52A982E9-A0B0-49C9-BE20-948D18C44F05}
 database: master
-path: /sitecore/templates/User Defined/Rss/Publications Rss Feed/Data/Web Master
-parent: {599FFCC7-6052-449C-BE91-A598E3C7D2B9}
-name: Web Master
+path: /sitecore/templates/User Defined/Rss/Search Rss Feed/Feed Meta Data/Description
+parent: {FCC6E3CD-99B1-4A67-B5BA-F03EB0017AE6}
+name: Description
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -26,7 +26,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: d1f12723-bec4-4b4d-a227-6f74f3d35d60
+revision: 69a3e687-9c86-4691-bcb2-7b614a128fdb
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160315T042412Z
+20160323T185411Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-d1f12723-bec4-4b4d-a227-6f74f3d35d60
+69a3e687-9c86-4691-bcb2-7b614a128fdb
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160315T042444Z
+20160329T152604Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
