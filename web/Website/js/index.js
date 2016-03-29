@@ -167,11 +167,15 @@ $(document).ready(function() {
         });
     };
 
-    var urlVars = window.location.href.split("?")[1].split("&");
-    for (var i=0; i<urlVars.length; i++) {
-        var pair = urlVars[i].split("=");
-        if(pair[0] === 'immb') {
-            autoBookmark(pair[1]);
+
+    var urlVars = window.location.href.split("?");
+    var varsToParse = urlVars[1] ? urlVars[1].split("&") : null;
+    if(varsToParse) {
+        for (var i=0; i<varsToParse.length; i++) {
+            var pair = varsToParse[i].split("=");
+            if(pair[0] === 'immb') {
+                autoBookmark(pair[1]);
+            }
         }
     }
 
