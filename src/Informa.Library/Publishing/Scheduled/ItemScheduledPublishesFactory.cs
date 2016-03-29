@@ -9,6 +9,14 @@ namespace Informa.Library.Publishing.Scheduled
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class ItemScheduledPublishesFactory : IItemScheduledPublishesFactory
 	{
+		protected readonly IScheduledPublishingDateTime ScheduledPublishingDateTime;
+
+		public ItemScheduledPublishesFactory(
+			IScheduledPublishingDateTime scheduledPublishingDateTime)
+		{
+			ScheduledPublishingDateTime = scheduledPublishingDateTime;
+		}
+
 		public IEnumerable<IScheduledPublish> Create(Item item)
 		{
 			var scheduledPublishes = new List<ScheduledPublish>();
@@ -33,7 +41,7 @@ namespace Informa.Library.Publishing.Scheduled
 
 		public bool HasValidValue(DateTime value)
 		{
-			return value != DateTime.MinValue && value != DateTime.MaxValue && value > DateTime.Now;
+			return value != DateTime.MinValue && value != DateTime.MaxValue && value > ScheduledPublishingDateTime.Now;
 		}
 
 		public void AddScheduledPublish(List<ScheduledPublish> scheduledPublishes, Guid itemId, string language, string version, DateTime publishOn, ScheduledPublishType type)
