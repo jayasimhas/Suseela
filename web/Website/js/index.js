@@ -139,7 +139,6 @@ $(document).ready(function() {
 
     window.indexBookmarks = function() { // Toggle bookmark icon
         $('.js-bookmark-article').on('click', function bookmarkArticle(e) {
-
             // Make sure proper elm gets the click event
             if (e.target !== this) {
                 this.click();
