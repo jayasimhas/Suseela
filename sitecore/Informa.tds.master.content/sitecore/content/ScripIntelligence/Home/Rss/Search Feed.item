@@ -12,22 +12,15 @@ templatekey: Search Rss Feed
 ----version----
 language: en
 version: 1
-revision: d6c6941d-f0f7-45b3-b0cf-812604d11bc7
+revision: 7660c787-06c3-4d31-abd1-ff97cf861cab
 
 ----field----
-field: {8809794A-074A-4F40-BCCD-CA86623D2CEF}
-name: Search Api Url
-key: search api url
-content-length: 18
-
-/api/informasearch
-----field----
-field: {0494696F-63F1-4F4F-8BA3-F900E8FDB630}
-name: Default Sort
-key: default sort
+field: {BA86E0DA-28CE-4F72-8893-B17746097449}
+name: Search Page
+key: search page
 content-length: 38
 
-{D0C5A48B-EF28-458C-A852-09982B5CCA8A}
+{0FF66777-7EC7-40BE-ABC4-6A20C8ED1EF0}
 ----field----
 field: {28E25D4D-6FC6-4881-A059-9464C4189015}
 name: Include Url Parameters
@@ -48,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d6c6941d-f0f7-45b3-b0cf-812604d11bc7
+7660c787-06c3-4d31-abd1-ff97cf861cab
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160329T152728Z
+20160329T162730Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
