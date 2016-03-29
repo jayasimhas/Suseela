@@ -163,6 +163,7 @@ namespace Informa.Web.ViewModels
 
 					if (!string.IsNullOrEmpty(page.Custom_Meta_Tags))
 					{
+
 						return page.Custom_Meta_Tags;
 					}
 
@@ -230,8 +231,6 @@ namespace Informa.Web.ViewModels
 					{
 						return articleItem.Content_Type.Item_Name;
 					}
-
-
 				}
 				return string.Empty;
 			}
@@ -323,7 +322,7 @@ namespace Informa.Web.ViewModels
 			{
 				if (GlassModel is IArticle__Raw)
 				{
-					return ArticleSearch.GetArticleTaxonomies(GlassModel._Id,ItemReferences.RegionsTaxonomyFolder);
+					return ArticleSearch.GetArticleTaxonomies(GlassModel._Id, ItemReferences.RegionsTaxonomyFolder);
 				}
 				return string.Empty;
 			}
@@ -350,6 +349,20 @@ namespace Informa.Web.ViewModels
 					return ArticleSearch.GetArticleTaxonomies(GlassModel._Id, ItemReferences.TherapyAreasTaxonomyFolder);
 				}
 				return string.Empty;
+			}
+
+		}
+
+		public bool IsArticleFree
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+					var page = (IArticle__Raw)GlassModel;
+					return page.Free_Article;
+				}
+				return false;
 			}
 
 		}

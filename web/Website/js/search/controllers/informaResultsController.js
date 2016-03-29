@@ -1,4 +1,4 @@
-﻿var InformaResultsController = function InformaResultsController($scope, $sanitize,searchService, viewHeadlinesStateService) {
+﻿var InformaResultsController = function InformaResultsController($scope, $sanitize, searchService, viewHeadlinesStateService, $timeout) {
     var _this = this;
 
     this.service = searchService;
@@ -17,8 +17,20 @@
         window.location.reload();
     };
 
-    $scope.fireBookmark = function() {
-        console.log(window.globaltest);
+    $scope.fireBookmark = function(article, event, key) {
+        /*  Global bookmark controller fires a second click if clicked element
+            isn't the element with the actual click event. (i.e. a child element)
+            To make sure we only catch the second click, make sure the element
+            has the appropriate class name. */
+        if(event.target.nodeName === 'DIV' && event.target.className.indexOf('result__bookmark') >= 0) {
+            /*  Angular is faster than the generic bookmark controller; it has to
+                wait for an AJAX response before updating the bookmark UI. Use
+                $timeout to prevent a race condition.
+                TODO - better way to pass bookmark state to generic controller instead */
+            $timeout(function() {
+                _this.docs[key].isArticleBookmarked = _this.docs[key].isArticleBookmarked ? false : true;
+            }, 250);
+        }
     };
 
     $scope.$on('ngRepeatBroadcast1', function(ngRepeatFinishedEvent) {
@@ -39,4 +51,4 @@ var informaSearchApp = angular.module('informaSearchApp').directive('onFinishRen
         }
     };
 });
-informaSearchApp.controller("InformaResultsController", ['$scope', '$sanitize','searchService', 'viewHeadlinesStateService', InformaResultsController]);
+informaSearchApp.controller("InformaResultsController", ['$scope', '$sanitize','searchService', 'viewHeadlinesStateService',  '$timeout', InformaResultsController]);

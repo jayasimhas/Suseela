@@ -149,7 +149,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			this.CurrentPagePanel.Location = new System.Drawing.Point(190, 3);
 			this.CurrentPagePanel.Name = "CurrentPagePanel";
 			this.CurrentPagePanel.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
-			this.CurrentPagePanel.Size = new System.Drawing.Size(650, 549);
+			this.CurrentPagePanel.Size = new System.Drawing.Size(650, 377);
 			this.CurrentPagePanel.TabIndex = 1;
 			// 
 			// pageArticleInformationControl

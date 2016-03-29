@@ -1,5 +1,5 @@
 ﻿
-var InformaFacetController = function($scope, $location, $http, searchService, searchBootstrapper, getCompaniesService) {
+var InformaFacetController = function ($scope, $location, $http, $anchorScroll, searchService, searchBootstrapper, getCompaniesService) {
     "use strict";
 
     var _this = this;
@@ -10,6 +10,7 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
         _this.facetGroups = searchService.getFacetGroups();
         _this.searchService = searchService;
         _this.location = $location;
+        _this.anchorScroll = $anchorScroll;
         _this.searchBootstrapper = searchBootstrapper;
         _this.MaxFacetShow = 5;
         _this.CompanyList = getCompaniesService.fetchCompanies();
@@ -75,7 +76,10 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
         var routeBuilder = this.searchService.getRouteBuilder();
         _this.location.search(routeBuilder.getRoute());
         _this.searchService.query();
-        // _this.scrollTop();
+       
+        //Scroll to the top of the results when a new page is chosen
+        _this.location.hash("searchTop");
+        _this.anchorScroll();
     };
 
     _this.facetChange = function(facet) {
@@ -163,20 +167,18 @@ var InformaFacetController = function($scope, $location, $http, searchService, s
         _this.update();
     };
 
-_this.customDateRangeSearch = function(filterKey, startDate,endDate) {
+    _this.customDateRangeSearch = function(filterKey, startDate, endDate) {
 
-        if (_this.CurrentDateSelection == 'custom')
-        {
+        if (_this.CurrentDateSelection == 'custom') {
             var filter = _this.getFilter(filterKey);
             var filterDateLabel = _this.getFilter('dateFilterLabel');
             filterDateLabel.setValue('custom');
 
             var date1Unparsed = new Date(startDate);
-            var date1 =(date1Unparsed.getMonth() + 1) + '/' +date1Unparsed.getDate() + '/'  + date1Unparsed.getFullYear();
+            var date1 = (date1Unparsed.getMonth() + 1) + '/' +date1Unparsed.getDate() + '/'  + date1Unparsed.getFullYear();
 
             var date2Unparsed = new Date(endDate);
             var date2 = (date2Unparsed.getMonth() + 1) + '/' + date2Unparsed.getDate() + '/' + date2Unparsed.getFullYear();
-
 
             filter.setValue(date1 + ";" + date2);
 
@@ -205,7 +207,6 @@ _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
         filter.setValue(startDate + ";" + endDate);
 
         _this.updateSelectedDate(dateFilter);
-
         _this.update();
     };
 
@@ -221,9 +222,21 @@ _this.customDateRangeSearch = function(filterKey, startDate,endDate) {
         }
     };
 
+    // Create placeholder values for From: and To: date values
+    $scope.dateValues = {
+        dtFrom: '',
+        dtTo: ''
+    };
+
+    // need to differentiate the 2 datepickers
+    $scope.datepickers = {
+        dtFrom: false,
+        dtTo: false
+    };
+
     init();
 
 };
 
 var informaSearchApp = angular.module('informaSearchApp');
-informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', 'searchService', 'searchBootstrapper', 'getCompaniesService', InformaFacetController]);
+informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', '$anchorScroll', 'searchService', 'searchBootstrapper', 'getCompaniesService', InformaFacetController]);

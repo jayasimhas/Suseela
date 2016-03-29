@@ -23,8 +23,17 @@
                 url = url + "?userName="+inputData;
                 $.get(url, function(response) {
                     if (response) {
+                        var newsletterAnalytics = {"event_name":"newsletter-signup","newsletter_signup_state":"successful","userName":'"'+inputData+'"'};
+                        var result ={};
+                        $.extend(result,analytics_data,newsletterAnalytics);
                         $(".newsletter-signup-before-submit").hide();
-                        $(".newsletter-signup-after-submit").show();
+                        $(".newsletter-signup-after-submit").show();                    
+                    }
+                    else
+                    {
+                        var newsletterAnalytics = {"event_name":"newsletter-signup","newsletter_signup_state":"unsuccessful","userName":'"'+inputData+'"'};
+                        var result ={};
+                        $.extend(result,analytics_data,newsletterAnalytics);
                     }
                   
                 });

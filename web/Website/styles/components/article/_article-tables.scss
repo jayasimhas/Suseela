@@ -20,7 +20,8 @@
         color: $color-ship-gray;
     }
 
-    td.cell p.small {
+    td.cell p.small,
+    td p {
         padding: 0.75rem;
     }
     td.cell.colored {
