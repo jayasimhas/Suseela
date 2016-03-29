@@ -137,9 +137,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			// 
 			// CurrentPagePanel
 			// 
-			this.CurrentPagePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-| System.Windows.Forms.AnchorStyles.Left)
-| System.Windows.Forms.AnchorStyles.Right)));
+			this.CurrentPagePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.CurrentPagePanel.BackColor = System.Drawing.Color.White;
 			this.CurrentPagePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.CurrentPagePanel.Controls.Add(this.pageArticleInformationControl);

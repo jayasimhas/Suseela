@@ -48,9 +48,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 			// 
 			// uxLoginPanel
 			// 
-			this.uxLoginPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
 			this.uxLoginPanel.BackColor = System.Drawing.Color.White;
 			this.uxLoginPanel.Controls.Add(this.uxArticlePanel);
 			this.uxLoginPanel.Controls.Add(this.loginControl1);
@@ -62,9 +59,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 			// 
 			// uxArticlePanel
 			// 
-			this.uxArticlePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
 			this.uxArticlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
 			this.uxArticlePanel.Controls.Add(this.articleStatusBar1);
 			this.uxArticlePanel.Controls.Add(this.uxVersionNumber);
