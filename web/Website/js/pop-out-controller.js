@@ -35,7 +35,7 @@ function popOutController(triggerElm) {
 
 	// PUBLIC
 	// Closes the pop-out.
-	this.closePopOut = function() {
+	this.closePopOut = function(elm) {
 		// Reset all z-indexes so new pop-outs are stacked on top properly
 		$('.pop-out').removeClass('is-active').css("z-index", "");
 		$('.js-pop-out-trigger').css("z-index", "");
@@ -49,6 +49,17 @@ function popOutController(triggerElm) {
 		// Check if clicked element is the toggle itself
 		// Otherwise, climb up DOM tree and find it
 		var poParent = e.hasClass('js-pop-out-trigger') ? e : e.closest('.js-pop-out-trigger');
+
+		/*  This is a little hacky, but if a user is trying to bookmark an article
+			but needs to sign in first, we need to capture and pass the article
+			ID as a URL param after a successful sign in attempt. That allows
+			us to automatically bookmark the article on page refresh. */
+
+		if(poParent.data('pop-out-type') === 'sign-in' && poParent.data('bookmark-id')) {
+			$('.sign-in__submit').data('pass-article-id', poParent.data('bookmark-id'));
+		} else {
+			poParent.data('bookmark-id', null);
+		}
 
 		// If the current pop-out is the same as the active pop-out...
 		if(poParent[0] === state.activeElm) {

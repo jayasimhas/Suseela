@@ -52,7 +52,7 @@ $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
 
 /* Generic banner dismiss */
 $('.js-dismiss-banner').on('click', function dismissBanner(e) {
-    var thisBanner = $(e.srcElement).parents('.banner');
+    var thisBanner = $(e.target).parents('.banner');
     thisBanner.removeClass('is-visible');
 
     var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
@@ -153,6 +153,33 @@ $(document).ready(function() {
 
     indexBookmarks();
 
+    // Check for any articles to immediately bookmark
+    var autoBookmark = function(article) {
+        $('.js-bookmark-article').each(function(indx, item) {
+            if($(item).data('bookmark-id') === article
+                && !$(item).data('is-bookmarked')) {
+
+                $(item).click();
+
+            } else {
+                // already bookmarked or not a match
+            }
+        });
+    };
+
+
+    var urlVars = window.location.href.split("?");
+    var varsToParse = urlVars[1] ? urlVars[1].split("&") : null;
+    if(varsToParse) {
+        for (var i=0; i<varsToParse.length; i++) {
+            var pair = varsToParse[i].split("=");
+            if(pair[0] === 'immb') {
+                autoBookmark(pair[1]);
+            }
+        }
+    }
+
+
     var newsletterSignup = new NewsletterSignupController();
     $(".newsletter-signup-after-submit").hide();
     newsletterSignup.checkForUserSignedUp();
@@ -166,7 +193,12 @@ $(document).ready(function() {
 
     login.addControl(
 		'.js-sign-in-submit',
-		null,
+		function(tg) {
+            if($(tg).data('pass-article-id')) {
+                var sep = (window.location.href.indexOf('?') > -1) ? '&' : '?';
+                $(tg).data('login-redirect-url', window.location.href + sep + 'immb=' + $(tg).data('pass-article-id'));
+            }
+        },
 		function(triggerElement) {
 		    toggleSignInError();
 		}
@@ -323,8 +355,9 @@ $(document).ready(function() {
             this.click();
             return;
         }
+
         $($(e.target).data('target-element')).removeClass('is-active');
-        poc.closePopOut();
+        window.controlPopOuts.closePopOut(e.target);
     });
 
     // Make sure all external links open in a new window/tab
@@ -450,7 +483,7 @@ $(document).ready(function() {
     $('#newsletters').on('click',function(e){
         newsletterOptins();
     });
-      
+
     var newsletterOptins = function(){
         if ($('#newsletters').is(':checked')) {
             $('.registration-final').data("info",{"event_name":"registration-complete-thank-you","newsletter_optin":"true"});
@@ -483,7 +516,7 @@ $(document).ready(function() {
         utag.link({
             result
         });
-    
+
     });
 
     newsletterOptins();

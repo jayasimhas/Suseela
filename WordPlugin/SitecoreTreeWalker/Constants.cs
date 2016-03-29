@@ -73,7 +73,7 @@ namespace InformaSitecoreWord
         public static string EDITOR_ENVIRONMENT_SERVERURL = ApplicationConfig.GetPropertyValue(EDITOR_ENVIRONMENT_VALUE);
         public static string EDITOR_ENVIRONMENT_LOGINURL = ApplicationConfig.GetPropertyValue(EDITOR_ENVIRONMENT_VALUE);
         public static string EDITOR_ENVIRONMENT_FORGOTPASSWORDLINK = ApplicationConfig.GetPropertyValue(EDITOR_ENVIRONMENT_VALUE + "ForgotPasswordLink");
-        public static string DOCUMENT_NOT_LINKED = @"Document Not Linked";
+        public static string DOCUMENT_NOT_LINKED = @"Document Unlinked";
         public static string MESSAGEBOX_TITLE = "Informa";
 
         public static List<EditorEnvironment> EDITOR_ENVIRONMENT = new List<EditorEnvironment> {

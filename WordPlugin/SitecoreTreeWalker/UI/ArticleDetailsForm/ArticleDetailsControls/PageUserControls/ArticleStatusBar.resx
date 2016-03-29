@@ -120,11 +120,14 @@
   <metadata name="uxArticleStatusBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>136</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="uxVersionStateButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGTSURBVFhH7ddRKwRRGMbxSZIkSZIk1z6MDyS5kSRJLiUf
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGTSURBVFhH7ddRKwRRGMbxSZIkSZIk1z6MDyS5kSRJLiUf
         SJJcuPAJJEmSC0ni+a95a3qdnTlzzllSnvq1O9ue9Zg5c2amclmXe3kI4HPvLuC24UYuZFGi8iIfI7Ap
         nRmT0OAStqQzExIaXMK2dGZSbMCrLAzB8TRLDcu1ldqRZBXgkOSEP+oLrMr819vvmRIbACZkjjfxBXi9
         lvHBlosvUNKOENsrs4Mtl18vMC1+YCm9CzAJmck2s1Mciv3erpDWAjPSLJAbFp/kAnjKxD9hv5VUoKT/
@@ -137,7 +140,7 @@
   <data name="uxWorkflowButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAEugSURBVHhe7b1Byyxblp5X59xbt0519a3bnmig7h51NT00
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAEugSURBVHhe7b1Byyxblp5X59xbt0519a3bnmig7h51NT00
         uAS6mrgGugUXVPasBsYYjDEY02Asq7stkNwXGwTC2CCEQPhneOqZbajulv+BMegHGKTugTyzy7Eicmfu
         iFgRud7IHZErMp8X3rp5duz97Nx7Re21Tp7vi/xep19jjDHG+O3sNmKMMcb4te02hvzhw4eZvX5Rw4On
         GB48xfDgKX4Tntt4140mvxoePMXw4CmGB0/xG/HcxlXbZB8/frz6gcl7w4OnGB48xfDgKX4zntu46Hri
@@ -463,7 +466,4 @@
         cnjf+97/D3meWeX5XaraAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>136</value>
-  </metadata>
 </root>
