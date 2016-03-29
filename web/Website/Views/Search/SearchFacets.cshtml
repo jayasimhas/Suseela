@@ -56,10 +56,10 @@
                   <li>
                       <input id="{{ group.id }}-{{ $index }}"
                              type="checkbox"
-                             class="visuallyhidden"
+                             class="visuallyhidden click-utag"
                              ng-checked="f.selected"
                              ng-model="f.selected"
-                             ng-change="allFacets.update()">
+                             ng-change="allFacets.update()" data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group_name":"{{group.label}}"}'>
                       <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">
                           {{ f.label }}
                           <span class="facets__label-count">({{f.count}})</span>
@@ -92,7 +92,7 @@
            /sample added company -->
 
               <li ng-repeat="myCompany in savedCompanies" class="saved-company">
-                <input type="checkbox" class="visuallyhidden" id="{{myCompany.label}}" ng-checked="myCompany.selected">
+                <input type="checkbox" class="visuallyhidden click-utag" id="{{myCompany.label}}" ng-checked="myCompany.selected" data-info='{"event_name":"search-facet","facet_selected":"{{myCompany.label}}","facet_group_name":"My saved companies"}'>
                 <label for="{{myCompany.label}}">{{myCompany.label}}</label>
                 <svg ng-click="removeCompany(myCompany)"
                      class="saved-company__delete-icon">
@@ -176,8 +176,8 @@
                                    ng-model="dateFilter.selected"
                                    ng-value=true
                                    ng-checked="{{dateFilter.selected}}"
-                                   ng-click="allFacets.dateRangeSearch('date', dateFilter.key)">
-                            <label for="{{dateFilter.key}}">{{dateFilter.label}}</label>
+                                   ng-click="allFacets.dateRangeSearch('date', dateFilter.key)" class="click-utag" data-info='{"event_name":"search-facet","facet_selected":"{{dateFilter.label}}","facet_group":"{{group.label}}"}'>
+                            <label for="{{dateFilter.key}}" >{{dateFilter.label}}</label>
 
                             <ul class="facets__section-footer" ng-if="$last">
                                 <li class="facets__field-group facets__field-group--from input-group">
@@ -284,10 +284,10 @@
                 <li>
                   <input  id="{{ group.id }}-{{ $index }}"
                           type="checkbox"
-                          class="visuallyhidden"
+                          class="visuallyhidden click-utag"
                           ng-checked="f.selected"
                           ng-model="f.selected"
-                          ng-change="allFacets.update()">
+                          ng-change="allFacets.update()"  data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
                   <label  ng-if="f.label" for="{{ group.id }}-{{ $index }}">
                       {{ f.label }}
                       <span class="facets__label-count">({{f.count}})</span>
@@ -317,7 +317,7 @@
                                  class="visuallyhidden"
                                  ng-checked="subFacet.selected"
                                  ng-model="subFacet.selected"
-                                 ng-change="allFacets.update()">
+                                 ng-change="allFacets.update()" data-info='{"event_name":"search-facet","sub_facet_selected":"{{subFacet.name}}","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
                           <label ng-if="subFacet.name" for="{{ subFacet.id }}-{{ $index }}">
                               {{ subFacet.name }}
                               <span class="facets__label-count">({{subFacet.count}})</span>
