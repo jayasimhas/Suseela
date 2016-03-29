@@ -43,9 +43,9 @@ function loginController(requestVerificationToken) {
 
 						$.extend(result,analytics_data,loginAnalytics);
 
-						utag.link({
-				            result
-						});
+						//utag.link({
+				        //    result
+						//});
 
 						if (successCallback) {
 							successCallback(triggerElement);
@@ -62,9 +62,9 @@ function loginController(requestVerificationToken) {
 				        var loginAnalytics = {"event_name":"login","login_state":"unsuccessful","userName":'"'+inputData.username+'"'};
 				        var result ={};
 				        $.extend(result,analytics_data,loginAnalytics);
-				        utag.link({
-				            result
-				        });
+				        //utag.link({
+				        //    result
+				        //});
 						if (response.redirectUrl) {
 							window.location.href = response.redirectUrl;
 						}
