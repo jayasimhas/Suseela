@@ -13,6 +13,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss;
 using Newtonsoft.Json;
 using Sitecore;
 using Sitecore.Data.Items;
+using Sitecore.Diagnostics;
 using Velir.Search.Models;
 
 namespace Informa.Library.Rss.Utils
@@ -48,10 +49,26 @@ namespace Informa.Library.Rss.Utils
 
         public string GetSearchApiUrl(ISearch_Rss_Feed rssFeedItem)
         {
+            if (rssFeedItem == null)
+            {
+                Log.Error("Error Getting RSS Feed Item.",this);
+                return string.Empty;
+            }
+
+            Item searchPageItem = Sitecore.Context.Database.GetItem(rssFeedItem.Search_Page.ToString());
+
+            if (searchPageItem == null)
+            {
+                Log.Error("Error Search Page Item For RSS Feed.", this);
+                return string.Empty;
+            }
+
+            ISearch_Listing searchListing = searchPageItem.GlassCast<ISearch_Listing>(inferType: true);
+
             //Build the base api URL
-            var searchPageId = rssFeedItem._Id.ToString("D").ToLower();
+            var searchPageId = searchPageItem.ID.ToGuid().ToString("D").ToLower();
             var feedUrl = string.Format("{0}://{1}{2}?pId={3}", HttpContext.Current.Request.Url.Scheme, _hostName,
-                rssFeedItem.Search_Api_Url, searchPageId);
+                searchListing.Base_Endpoint_Url, searchPageId);
 
             //If the "Include Url Parameters" is checked then any url params are passed along
             //to the api, otherwise they will be stripped
@@ -85,24 +102,20 @@ namespace Informa.Library.Rss.Utils
                 var defaultSortOrder = "";
 
                 //If the default sort has not been chosen fall back to relevance ascending sorting
-                if (rssFeedItem.Default_Sort == Guid.Empty)
+                if (searchListing.Default_Sort_Order == null)
                 {
                     defaultSortBy = "relevance";
                     defaultSortOrder = "asc";
                 }
                 else
                 {
-                    //Get the defaults for sorting from Sitecore
-                    var sortItem = Context.Database.GetItem(rssFeedItem.Default_Sort.ToString());
-                    var defaultSort = sortItem.GlassCast<ISort>(inferType: true);
-
                     defaultSortOrder = "asc";
-                    if (!defaultSort.Sort_Ascending)
+                    if (!searchListing.Default_Sort_Order.Sort_Ascending)
                     {
                         defaultSortOrder = "desc";
                     }
 
-                    defaultSortBy = defaultSort.Key;
+                    defaultSortBy = searchListing.Default_Sort_Order.Key;
                 }
 
                 feedUrl = string.Format("{0}&sortBy={1}&sortOrder={2}", feedUrl, defaultSortBy, defaultSortOrder);
