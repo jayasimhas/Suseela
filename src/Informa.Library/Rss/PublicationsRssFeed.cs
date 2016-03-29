@@ -56,7 +56,10 @@ namespace Informa.Library.Rss
 
                 if (article.Media_Type != null)
                 {
-                    titleText = article.Media_Type.Item_Name.ToUpper() + ": " + titleText;
+                    if(!string.IsNullOrEmpty(article.Media_Type.Item_Name))
+                    {
+                        titleText = article.Media_Type.Item_Name.ToUpper() + ": " + titleText;
+                    }
                 }
 
                 syndicationItem.Title = new TextSyndicationContent(titleText);
