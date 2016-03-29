@@ -40,7 +40,7 @@ ar|sitecore\Article Read Access|pe|+item:read|pd|+item:read|ar|sitecore\General 
 ----version----
 language: en
 version: 1
-revision: 060a7b45-08e1-4d1f-bc5a-087a04a1fb75
+revision: bf7ef0e8-ba7c-47bb-9619-0e2ff54f2229
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -246,9 +246,9 @@ content-length: 131
 field: {6F5117BC-2706-48DA-B5D3-0FD785FD9979}
 name: Email From Address
 key: email from address
-content-length: 19
+content-length: 30
 
-support@informa.com
+pmbi-notifications@informa.com
 ----field----
 field: {223891E7-0345-450B-A858-A10FDA0F718D}
 name: Email Logo

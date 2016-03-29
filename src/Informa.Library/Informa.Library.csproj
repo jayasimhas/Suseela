@@ -305,6 +305,8 @@
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
+    <Compile Include="Publishing\Scheduled\IScheduledPublishingDateTime.cs" />
+    <Compile Include="Publishing\Scheduled\ScheduledPublishingDateTime.cs" />
     <Compile Include="Rss\Utils\RssFeedUtil.cs" />
     <Compile Include="Rss\Utils\RssItemUtil.cs" />
     <Compile Include="SiteDebugging\ISiteDebugger.cs" />
