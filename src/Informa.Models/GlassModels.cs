@@ -10197,6 +10197,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Main_Navigation  {get; set;}
 								/// <summary>
+					/// The Print Logo field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: a975def7-aae1-454c-b0df-0cfeeeb2cf04</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Print_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image Print_Logo  {get; set;}
+								/// <summary>
+					/// The Print Message field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 2a972374-2492-477b-bdd7-f17bc08b1c9f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Print_MessageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Print_Message  {get; set;}
+								/// <summary>
 					/// The Site Logo field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
@@ -10349,33 +10367,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Days_To_ExpirationFieldName, Setting = SitecoreFieldSettings.InferType)]
 					int Days_To_Expiration  {get; set;}
-								/// <summary>
-					/// The Product Code field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: b892acbf-336f-4d65-ae8c-84e17b3a0d65</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Product_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Product_Code  {get; set;}
-								/// <summary>
-					/// The Product Type field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 50ac1998-cb65-4e2f-ad0b-52980f402a95</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Product_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Product_Type  {get; set;}
-								/// <summary>
-					/// The Subscription Type field.
-					/// <para></para>
-					/// <para>Field Type: Multi-Line Text</para>		
-					/// <para>Field ID: f754e79e-c985-4f0f-818f-0d051911a80d</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Subscription_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Subscription_Type  {get; set;}
 								/// <summary>
 					/// The System Maintenance End Date field.
 					/// <para></para>
@@ -10758,6 +10749,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Main_Navigation  {get; set;}
 										/// <summary>
+						/// The Print Logo field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: a975def7-aae1-454c-b0df-0cfeeeb2cf04</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Print_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image Print_Logo  {get; set;}
+										/// <summary>
+						/// The Print Message field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 2a972374-2492-477b-bdd7-f17bc08b1c9f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Print_MessageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Print_Message  {get; set;}
+										/// <summary>
 						/// The Site Logo field.
 						/// <para></para>
 						/// <para>Field Type: Image</para>		
@@ -10910,33 +10919,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Days_To_ExpirationFieldName, Setting = SitecoreFieldSettings.InferType)]
 						int Days_To_Expiration  {get; set;}
-										/// <summary>
-						/// The Product Code field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: b892acbf-336f-4d65-ae8c-84e17b3a0d65</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Product_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Product_Code  {get; set;}
-										/// <summary>
-						/// The Product Type field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 50ac1998-cb65-4e2f-ad0b-52980f402a95</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Product_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Product_Type  {get; set;}
-										/// <summary>
-						/// The Subscription Type field.
-						/// <para></para>
-						/// <para>Field Type: Multi-Line Text</para>		
-						/// <para>Field ID: f754e79e-c985-4f0f-818f-0d051911a80d</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Subscription_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Subscription_Type  {get; set;}
 										/// <summary>
 						/// The System Maintenance End Date field.
 						/// <para></para>
@@ -11189,6 +11171,18 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Print_LogoFieldId = new ID("a975def7-aae1-454c-b0df-0cfeeeb2cf04");
+			public const string Print_LogoFieldName = "Print Logo";
+
+						
+					
+			public static readonly ID Print_MessageFieldId = new ID("2a972374-2492-477b-bdd7-f17bc08b1c9f");
+			public const string Print_MessageFieldName = "Print Message";
+
+							public static readonly ID Print_Message__RawFieldId = new ID("2a972374-2492-477b-bdd7-f17bc08b1c9f");
+				public const string Print_Message__RawFieldName = "Print Message";
+						
+					
 			public static readonly ID Site_LogoFieldId = new ID("d0ea1c84-68e4-4811-87c2-14ff280c8fc2");
 			public const string Site_LogoFieldName = "Site Logo";
 
@@ -11279,21 +11273,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Days_To_ExpirationFieldId = new ID("3071922d-4ef9-4abb-ae03-3dafec2544f4");
 			public const string Days_To_ExpirationFieldName = "Days To Expiration";
-
-						
-					
-			public static readonly ID Product_CodeFieldId = new ID("b892acbf-336f-4d65-ae8c-84e17b3a0d65");
-			public const string Product_CodeFieldName = "Product Code";
-
-						
-					
-			public static readonly ID Product_TypeFieldId = new ID("50ac1998-cb65-4e2f-ad0b-52980f402a95");
-			public const string Product_TypeFieldName = "Product Type";
-
-						
-					
-			public static readonly ID Subscription_TypeFieldId = new ID("f754e79e-c985-4f0f-818f-0d051911a80d");
-			public const string Subscription_TypeFieldName = "Subscription Type";
 
 						
 					
@@ -15465,6 +15444,18 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Print_LogoFieldId = new ID("a975def7-aae1-454c-b0df-0cfeeeb2cf04");
+			public const string Print_LogoFieldName = "Print Logo";
+
+						
+					
+			public static readonly ID Print_MessageFieldId = new ID("2a972374-2492-477b-bdd7-f17bc08b1c9f");
+			public const string Print_MessageFieldName = "Print Message";
+
+							public static readonly ID Print_Message__RawFieldId = new ID("2a972374-2492-477b-bdd7-f17bc08b1c9f");
+				public const string Print_Message__RawFieldName = "Print Message";
+						
+					
 			public static readonly ID Site_LogoFieldId = new ID("d0ea1c84-68e4-4811-87c2-14ff280c8fc2");
 			public const string Site_LogoFieldName = "Site Logo";
 
@@ -15555,21 +15546,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Days_To_ExpirationFieldId = new ID("3071922d-4ef9-4abb-ae03-3dafec2544f4");
 			public const string Days_To_ExpirationFieldName = "Days To Expiration";
-
-						
-					
-			public static readonly ID Product_CodeFieldId = new ID("b892acbf-336f-4d65-ae8c-84e17b3a0d65");
-			public const string Product_CodeFieldName = "Product Code";
-
-						
-					
-			public static readonly ID Product_TypeFieldId = new ID("50ac1998-cb65-4e2f-ad0b-52980f402a95");
-			public const string Product_TypeFieldName = "Product Type";
-
-						
-					
-			public static readonly ID Subscription_TypeFieldId = new ID("f754e79e-c985-4f0f-818f-0d051911a80d");
-			public const string Subscription_TypeFieldName = "Subscription Type";
 
 						
 					

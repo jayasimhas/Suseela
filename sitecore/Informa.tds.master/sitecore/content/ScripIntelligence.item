@@ -40,7 +40,7 @@ ar|sitecore\Article Read Access|pe|+item:read|pd|+item:read|ar|sitecore\General 
 ----version----
 language: en
 version: 1
-revision: 1f44627c-a958-42c4-acbc-8807225b920c
+revision: a5fe7df0-6c4c-444a-a51d-b5cbf686bce5
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -334,6 +334,20 @@ content-length: 4
 
 1900
 ----field----
+field: {A975DEF7-AAE1-454C-B0DF-0CFEEEB2CF04}
+name: Print Logo
+key: print logo
+content-length: 128
+
+<link linktype="media" target="" id="{5F8207FA-F049-47C0-8FC5-8F6D7E808E19}" mediaid="{5F8207FA-F049-47C0-8FC5-8F6D7E808E19}" />
+----field----
+field: {2A972374-2492-477B-BDD7-F17BC08B1C9F}
+name: Print Message
+key: print message
+content-length: 275
+
+After years of warding off generics, large pharma companies are embracing generic drug manufacturers and vying for a share of the off-patent drugs business. Indian generic companies, once considered business pariahs, are the focus of plenty of action, Anju Ghangurde reports.
+----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
@@ -353,14 +367,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-1f44627c-a958-42c4-acbc-8807225b920c
+a5fe7df0-6c4c-444a-a51d-b5cbf686bce5
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160321T120236Z
+20160329T160103Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
