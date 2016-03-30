@@ -23,33 +23,23 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Link
                     {"C", new CompanyLink()}
                 };
 
-        public static string FromId(string linkId)
+        public static string FromId(string linkType, string linkId, string linkName)
         {
-            string fragment = string.Empty;
-            int indexOfPoundSign = linkId.IndexOf('#');
+            if (!AssetLinkMappings.ContainsKey(linkType))
+                return string.Empty;
 
-            if (indexOfPoundSign != -1)
+            AssetLinkBase link = AssetLinkMappings[linkType];
+            using (var ms = new MemoryStream())
             {
-                fragment = linkId.Substring(0, indexOfPoundSign);
-            }
-
-            AssetLinkBase link;
-            if (AssetLinkMappings.TryGetValue(fragment, out link))
-            {
-                using (var ms = new MemoryStream())
+                using (var sw = new StreamWriter(ms))
                 {
-                    using (var sw = new StreamWriter(ms))
-                    {
-                        link.Write(sw, linkId.Substring(indexOfPoundSign + 1));
-                        sw.Flush();
-                    }
-
-                    var bytes = ms.ToArray();
-                    return Encoding.UTF8.GetString(bytes);
+                    link.Write(sw, linkId);
+                    sw.Flush();
                 }
-            }
 
-            return string.Empty;
+                var bytes = ms.ToArray();
+                return Encoding.UTF8.GetString(bytes);
+            }
         }
 
 

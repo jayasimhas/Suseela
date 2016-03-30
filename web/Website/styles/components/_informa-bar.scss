@@ -2,7 +2,7 @@
     @include textMix('Roboto', 14px, 400);
 	width: 100%;
 	color: #fff;
-	height: 35px;
+	min-height: 35px;
 	font-size: 0.8125rem;
 	line-height: 1.125rem;
 
@@ -27,7 +27,7 @@
     &__wrapper {
     	background:#525A5C;
     	border-bottom:1px solid #A5ACAF;
-        position: absolute;
+        //position: absolute;
         width: 100%;
         padding: 0 2rem;
         z-index: 9089;
@@ -112,7 +112,6 @@
 
     &__detail ul li.iribbon-mainlink {
 
-    	border:0;
     	padding-left:0;
     }
 

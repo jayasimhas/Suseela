@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {705CEB38-6813-4E33-AD9D-14C691B720C7}
+id: {8AFA86D7-F38A-4140-BCD5-67779B4B6F4D}
 database: master
-path: /sitecore/templates/User Defined/Configuration/Site Config/Subscribe Register Purchase links
+path: /sitecore/templates/User Defined/Configuration/Site Config/Print Config
 parent: {997A3064-65F5-45CD-B32F-9EC61E90A610}
-name: Subscribe Register Purchase links
+name: Print Config
 master: {00000000-0000-0000-0000-000000000000}
 template: {E269FBB5-3750-427A-9149-7AA950B49301}
 templatekey: Template section
@@ -15,11 +15,11 @@ name: __Sortorder
 key: __sortorder
 content-length: 4
 
-2000
+2200
 ----version----
 language: en
 version: 1
-revision: f0f17c0e-e9d6-413d-af58-762a8ff614e7
+revision: e8eb0a2a-0518-4b22-817d-6ed4a4d8b9b8
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,7 +27,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20160317T115734Z
+20160329T151952Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-f0f17c0e-e9d6-413d-af58-762a8ff614e7
+e8eb0a2a-0518-4b22-817d-6ed4a4d8b9b8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160317T115756Z
+20160329T151952Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Elsevier.Library.Config;
@@ -177,7 +178,7 @@ namespace Elsevier.Web.VWB.Report
             using (new Sitecore.SecurityModel.SecurityDisabler())
             {
                 string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
-                string url = string.Format("http://{0}/api/informasearch?pId={1}&sortBy=plannedpublishdate&sortOrder=desc", WebUtil.GetHostName(), searchPageId);
+                string url = string.Format("{0}://{1}/api/informasearch?pId={2}&sortBy=plannedpublishdate&sortOrder=desc", HttpContext.Current.Request.Url.Scheme, WebUtil.GetHostName(), searchPageId);
 
                 if (query.InProgressValue)
                 {

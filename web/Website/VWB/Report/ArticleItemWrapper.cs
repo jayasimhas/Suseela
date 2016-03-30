@@ -4,6 +4,7 @@ using Elsevier.Library.CustomItems.Global.ArticleCategory;
 using Elsevier.Library.CustomItems.Global.ArticleSizes;
 using Elsevier.Library.CustomItems.Global.Staff;
 using System.Linq;
+using System.Web;
 using Elsevier.Library.CustomItems.Publication.General;
 using Elsevier.Library.Metadata;
 using Elsevier.Library.Reference;
@@ -71,7 +72,7 @@ namespace Elsevier.Web.VWB.Report
 
         public string GetPreviewUrl(string itemId)
         {
-            return "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + itemId + "}&sc_mode=preview&sc_lang=en";
+            return HttpContext.Current.Request.Url.Scheme + "://" + WebUtil.GetHostName() + "/?sc_itemid={" + itemId + "}&sc_mode=preview&sc_lang=en";
         }
 
         public ArticleItemWrapper(ArticleItem articleItem, ArticleLengthEstimator estimator)

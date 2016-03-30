@@ -45,7 +45,7 @@ namespace Informa.Library.Rss.Utils
                 syndicationItem = AddMediaTypeToFeedItem(syndicationItem, article);
                 syndicationItem = AddEmailSortOrderField(syndicationItem, article);
 
-                var titleText = HttpUtility.HtmlEncode(syndicationItem.Title.Text);
+                var titleText = HttpUtility.HtmlEncode(article.Title);
 
                 if (article.Media_Type != null)
                 {

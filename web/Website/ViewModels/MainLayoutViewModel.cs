@@ -5,6 +5,15 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templat
 using Informa.Web.ViewModels.SiteDebugging;
 using Informa.Web.ViewModels.PopOuts;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Informa.Library.User.Authentication;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using System;
+using Glass.Mapper.Sc;
+using Informa.Library.Article.Search;
+using Informa.Library.Utilities.References;
+using System.Web;
+using Informa.Library.Globalization;
+using Informa.Library.Corporate;
 
 namespace Informa.Web.ViewModels
 {
@@ -25,7 +34,13 @@ namespace Informa.Web.ViewModels
 			IAppInsightsConfig appInsightsConfig,
 			ISiteSettings siteSettings,
 			IToolbarViewModel debugToolbar,
-			IIndividualRenewalMessageViewModel renewalInfo)
+			IIndividualRenewalMessageViewModel renewalInfo,
+			IAuthenticatedUserContext authenticatedUserContext,
+			ISitecoreService service,
+			IArticleSearch articleSearch,
+            IItemReferences itemReferences,
+            ITextTranslator textTranslator,
+            ICorporateAccountNameContext corporateAccountNameContext)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -40,8 +55,16 @@ namespace Informa.Web.ViewModels
 			SiteSettings = siteSettings;
 			IndividualRenewalMessageInfo = renewalInfo;
 			DebugToolbar = debugToolbar;
+			AuthenticatedUserContext = authenticatedUserContext;
+			Service = service;
+			ArticleSearch = articleSearch;
+			ItemReferences = itemReferences;
+            TextTranslator = textTranslator;
+            CorporateAccountNameContext = corporateAccountNameContext;
 		}
 
+        private ICorporateAccountNameContext CorporateAccountNameContext;
+        private ITextTranslator TextTranslator;
 		public IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
 		public IMaintenanceViewModel MaintenanceMessage;
 		public ICompanyRegisterMessageViewModel CompanyRegisterMessage;
@@ -54,6 +77,16 @@ namespace Informa.Web.ViewModels
 		public IAppInsightsConfig AppInsightsConfig;
 		public ISiteSettings SiteSettings;
 		public IToolbarViewModel DebugToolbar;
+		public IAuthenticatedUserContext AuthenticatedUserContext;
+		private ISitecoreService Service;
+		private IArticleSearch ArticleSearch;
+		private IItemReferences ItemReferences;
+
+        public string PrintPageHeaderLogoSrc => SiteRootContext?.Item?.Print_Logo?.Src ?? string.Empty;
+        public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
+        public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
+        public string UserName => AuthenticatedUserContext.User.Name;
+        public string CorporateName => CorporateAccountNameContext.Name;
 
 		public string Title
 		{
@@ -96,6 +129,257 @@ namespace Informa.Web.ViewModels
 
 		public string CountryCode { get { return "123"; } }
 
+		public string PageDescription
+		{
+			get
+			{
+				if (GlassModel is I___BasePage)
+				{
+					var page = (I___BasePage)GlassModel;
+
+					if (!string.IsNullOrEmpty(page.Meta_Description))
+					{
+						return page.Meta_Description;
+					}
+
+
+				}
+				return string.Empty;
+			}
+		}
+
+		public string Page_Title_Override
+		{
+			get
+			{
+				if (GlassModel is I___BasePage)
+				{
+					var page = (I___BasePage)GlassModel;
+
+					if (!string.IsNullOrEmpty(page.Meta_Title_Override))
+					{
+						return page.Meta_Title_Override;
+					}
+
+
+				}
+				return string.Empty;
+			}
+		}
+
+		public string Custom_Tags
+		{
+			get
+			{
+				if (GlassModel is I___BasePage)
+				{
+					var page = (I___BasePage)GlassModel;
+
+					if (!string.IsNullOrEmpty(page.Custom_Meta_Tags))
+					{
+
+						return page.Custom_Meta_Tags;
+					}
+
+
+				}
+				return string.Empty;
+			}
+		}
+
+
+		public string Meta_KeyWords
+		{
+			get
+			{
+				if (GlassModel is I___BasePage)
+				{
+					var page = (I___BasePage)GlassModel;
+
+					if (!string.IsNullOrEmpty(page.Meta_Keywords))
+					{
+						return page.Meta_Keywords;
+					}
+
+
+				}
+				return string.Empty;
+			}
+		}
+
+		public bool IsUserLoggedIn
+		{
+			get
+			{
+				return AuthenticatedUserContext.IsAuthenticated;
+			}
+		}
+
+		public string Article_Publish_Date
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+					var page = (IArticle__Raw)GlassModel;
+
+					if (page.Actual_Publish_Date > DateTime.MinValue)
+					{
+						return page.Actual_Publish_Date.ToString();
+					}
+
+
+				}
+				return string.Empty;
+			}
+		}
+		public string Article_Content_Type
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+					ArticleItem articleItem = Service.GetItem<ArticleItem>(GlassModel._Id);
+
+					if (articleItem.Content_Type != null)
+					{
+						return articleItem.Content_Type.Item_Name;
+					}
+				}
+				return string.Empty;
+			}
+		}
+
+		public string Arcticle_Number
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+					var page = (IArticle__Raw)GlassModel;
+					if (!string.IsNullOrEmpty(page.Article_Number))
+					{
+						return page.Article_Number;
+					}
+
+
+				}
+				return string.Empty;
+			}
+		}
+		public bool Article_Embargoed
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+					ArticleItem articleItem = Service.GetItem<ArticleItem>(GlassModel._Id);
+					return articleItem.Embargoed;
+
+				}
+				return false;
+			}
+		}
+
+		public string Article_Media_Type
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+
+					ArticleItem articleItem = Service.GetItem<ArticleItem>(GlassModel._Id);
+					if (articleItem.Media_Type != null)
+					{
+						return articleItem.Media_Type.Item_Name;
+					}
+
+				}
+				return string.Empty;
+			}
+		}
+
+		public string Article_Date_Created
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+					var page = (IArticle__Raw)GlassModel;
+
+					if (page.Created_Date > DateTime.MinValue)
+					{
+						return page.Created_Date.ToString();
+					}
+				}
+				return string.Empty;
+			}
+
+		}
+
+		public string Article_Authors
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+					return ArticleSearch.GetArticleAuthors(GlassModel._Id);
+				}
+				return string.Empty;
+			}
+
+		}
+
+		public string Article_Regions
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+                    return ArticleSearch.GetArticleTaxonomies(GlassModel._Id, ItemReferences.RegionsTaxonomyFolder);
+				}
+				return string.Empty;
+			}
+
+		}
+		public string Article_Subject
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+					return ArticleSearch.GetArticleTaxonomies(GlassModel._Id, ItemReferences.SubjectsTaxonomyFolder);
+				}
+				return string.Empty;
+			}
+
+		}
+		public string Article_Therapy
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+					return ArticleSearch.GetArticleTaxonomies(GlassModel._Id, ItemReferences.TherapyAreasTaxonomyFolder);
+				}
+				return string.Empty;
+			}
+
+		}
+
+		public bool IsArticleFree
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+					var page = (IArticle__Raw)GlassModel;
+					return page.Free_Article;
+				}
+				return false;
+			}
+
+		}
 
 		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	}

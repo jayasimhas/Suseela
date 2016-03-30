@@ -52,7 +52,7 @@ namespace Informa.Web.ViewModels
                         EBI_QuerySubscriptionsAndPurchasesResponse response = _service.Execute(x => x.querySubscriptionsAndPurchases(_userContext.User.Username));
 
                         //Get the latest record
-                        _latestSalesForceRecord = response?.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
+                        _latestSalesForceRecord = response?.subscriptionsAndPurchases?.OrderByDescending(o => o.expirationDate).FirstOrDefault();
                     }
                     else
                     {

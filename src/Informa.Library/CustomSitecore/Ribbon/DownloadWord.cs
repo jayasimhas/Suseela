@@ -31,7 +31,7 @@ namespace Informa.Library.CustomSitecore.Ribbon
 						Item docItem = masterDb.GetItem(wordDocument.TargetID);
 
 						string url = siteRoot + MediaManager.GetMediaUrl(docItem) + "?sc_mode=preview";
-						SheerResponse.Eval("window.open('http://" + url +
+						SheerResponse.Eval("window.open('" + HttpContext.Current.Request.Url.Scheme + "://" + url +
 										   "','_blank','height=800,width=800,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,titlebar=no,location=no')");
 					}
 					else

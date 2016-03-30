@@ -18,10 +18,10 @@
                         <td>
                             @Model.TitleText
                             <div class="sortable-table__sort-arrows">
-                                <svg class="sortable-table__sort-arrows--up">
+                                <svg class="sortable-table__sort-arrows--up click-utag" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"up"}'>
                                     <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
                                 </svg>
-                                <svg class="sortable-table__sort-arrows--down">
+                                <svg class="sortable-table__sort-arrows--down" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"down"}'>
                                     <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
                                 </svg>
                             </div>
@@ -45,10 +45,12 @@
                     {
                         <tr>
                             <td>
-                                @HttpUtility.HtmlDecode(item.Name)
+                                <a href="@Model.GetUrl(item.DocumentId)">
+                                    @HttpUtility.HtmlDecode(item.Name)
+                                </a>
                             </td>
                             <td>
-                                @item.SaveDate.ToString("d MMMM yyyy")
+                                @Model.GetActualPublishDate(item.DocumentId, "d MMMM yyyy")
                             </td>
                             <td>
                                 <form   class="form-remove-saved-document"
@@ -59,7 +61,7 @@
                                            type="hidden"
                                            value="@item.DocumentId">
 
-                                    <button type="submit" class="button--outline">@Model.RemoveText</button>
+                                    <button type="submit" class="button--outline click-utag" data-info='{"event_name":"saved-article-remove" "document_id":"@item.DocumentId"}'>@Model.RemoveText</button>
 
                                 </form>
                             </td>

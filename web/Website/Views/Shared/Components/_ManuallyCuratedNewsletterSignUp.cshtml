@@ -11,7 +11,7 @@
             <div class="form--single-row">
                 <input class="inf-standard-form-field" name="userName" placeholder="@Translate.Text("Global.NewsletterSignupEmail")">
                 <div class="sign-in__submit-wrapper">
-                    <button class="button--filled newsletter-signup-submit js-newsletter-signup-submit" data-signup-url="/api/PreferencesApi/SignupUser/">@Model.GlassModel.Sign_Up_Button_Text</button>
+                    <button class="button--filled newsletter-signup-submit js-newsletter-signup-submit" data-signup-url="/api/PreferencesApi/SignupUser/">@Editable(x => x.GlassModel.Sign_Up_Button_Text)</button>
                 </div>
             </div>
             </div>
