@@ -11,6 +11,9 @@ using System;
 using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Library.Utilities.References;
+using System.Web;
+using Informa.Library.Globalization;
+using Informa.Library.Corporate;
 
 namespace Informa.Web.ViewModels
 {
@@ -35,7 +38,9 @@ namespace Informa.Web.ViewModels
 			IAuthenticatedUserContext authenticatedUserContext,
 			ISitecoreService service,
 			IArticleSearch articleSearch,
-			IItemReferences itemReferences)
+            IItemReferences itemReferences,
+            ITextTranslator textTranslator,
+            ICorporateAccountNameContext corporateAccountNameContext)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -54,9 +59,12 @@ namespace Informa.Web.ViewModels
 			Service = service;
 			ArticleSearch = articleSearch;
 			ItemReferences = itemReferences;
-
+            TextTranslator = textTranslator;
+            CorporateAccountNameContext = corporateAccountNameContext;
 		}
 
+        private ICorporateAccountNameContext CorporateAccountNameContext;
+        private ITextTranslator TextTranslator;
 		public IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
 		public IMaintenanceViewModel MaintenanceMessage;
 		public ICompanyRegisterMessageViewModel CompanyRegisterMessage;
@@ -73,6 +81,12 @@ namespace Informa.Web.ViewModels
 		private ISitecoreService Service;
 		private IArticleSearch ArticleSearch;
 		private IItemReferences ItemReferences;
+
+        public string PrintPageHeaderLogoSrc => SiteRootContext.Item.Print_Logo.Src;
+        public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
+        public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
+        public string UserName => AuthenticatedUserContext.User.Name;
+        public string CorporateName => CorporateAccountNameContext.Name;
 
 		public string Title
 		{
@@ -163,6 +177,7 @@ namespace Informa.Web.ViewModels
 
 					if (!string.IsNullOrEmpty(page.Custom_Meta_Tags))
 					{
+
 						return page.Custom_Meta_Tags;
 					}
 
@@ -230,7 +245,7 @@ namespace Informa.Web.ViewModels
 					{
 						return articleItem.Content_Type.Item_Name;
 					}
-                }
+				}
 				return string.Empty;
 			}
 		}
@@ -321,7 +336,7 @@ namespace Informa.Web.ViewModels
 			{
 				if (GlassModel is IArticle__Raw)
 				{
-					return ArticleSearch.GetArticleTaxonomies(GlassModel._Id,ItemReferences.RegionsTaxonomyFolder);
+                    return ArticleSearch.GetArticleTaxonomies(GlassModel._Id, ItemReferences.RegionsTaxonomyFolder);
 				}
 				return string.Empty;
 			}
@@ -348,6 +363,20 @@ namespace Informa.Web.ViewModels
 					return ArticleSearch.GetArticleTaxonomies(GlassModel._Id, ItemReferences.TherapyAreasTaxonomyFolder);
 				}
 				return string.Empty;
+			}
+
+		}
+
+		public bool IsArticleFree
+		{
+			get
+			{
+				if (GlassModel is IArticle__Raw)
+				{
+					var page = (IArticle__Raw)GlassModel;
+					return page.Free_Article;
+				}
+				return false;
 			}
 
 		}

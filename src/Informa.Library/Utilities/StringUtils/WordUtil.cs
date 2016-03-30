@@ -63,7 +63,12 @@ namespace Informa.Library.Utilities.StringUtils
 
                     if (lastWordPosition < 0) lastWordPosition = 0;
 
-                    result = result.Substring(0, lastWordPosition).Trim(new[] { '.', ',', '!', '?' }) + "...";
+                    char[] chars = new char[] {'.', ',', '!', '?'};
+                    if (chars.Contains(result[lastWordPosition - 1])) { 
+                        result = result.Remove(lastWordPosition - 1, 1);
+                        lastWordPosition--;
+                    }
+                    result = result.Insert(lastWordPosition, "...");
 
                 }
             }

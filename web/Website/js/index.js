@@ -25,22 +25,25 @@ $('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
     $(e.target).parents('.js-toggle-menu-section').trigger('click');
 });
 $('.click-logout').on('click', function(e){
-    var eventDetails = {"event_name":"logout"};
+    var eventDetails = {
+        event_name: "logout"
+    };
     var result = {};
     $.extend(result, analytics_data, eventDetails);
-    utag.link({
-        result
-    });
+    utag.link(result);
 });
 /* Toggle header search box (tablets/smartphones) */
 $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
     var searchTerm = $('.header-search__field').val();
-    var eventDetails = {"event_name":"search", "search_term":'"'+searchTerm+'"'};
+    var eventDetails = {
+        event_name: "search",
+        search_term: '"' + searchTerm + '"'
+    };
+
     var result = {};
     $.extend(result, analytics_data, eventDetails);
-    utag.link({
-        result
-    });
+    utag.link(result);
+
     if($(window).width() <= 800) {
         $('.header-search__wrapper').toggleClass('is-active').focus();
     } else {
@@ -254,7 +257,14 @@ $(document).ready(function() {
 
 
     var accountUpdatePassController = new FormController();
-    accountUpdatePassController.watchForm('.form-update-account-pass');
+    accountUpdatePassController.watchForm(
+		'.form-update-account-pass',
+		function(form, context, evt) {
+			$(form).find('input, select, textarea').each(function() {
+				$(this).val('');
+			});
+		}
+	);
 
     var accountUpdateContactController = new FormController();
     accountUpdateContactController.watchForm('.form-update-account-contact', function(form, context, evt) {
@@ -497,30 +507,40 @@ $(document).ready(function() {
         }
     };
 
-    $('.manage-preferences').click(function(e)
-    {
+    // TODO - Refactor this code, update class name to a `js-` name
+    $('.manage-preferences').click(function(e) {
         var preferencesData = {};
-        if($("#NewsletterOptIn").is(':checked') && $("#DoNotSendOffersOptIn").is(':checked'))
-        {
-            preferencesData ={"event_name":"manage-preferences","newsletter_optin":"true","donot_send_offers_optin":"true"};
+        if($("#NewsletterOptIn").is(':checked') && $("#DoNotSendOffersOptIn").is(':checked')) {
+            preferencesData = {
+                event_name: "manage-preferences",
+                newsletter_optin: "true",
+                donot_send_offers_optin: "true"
+            };
         }
-        if(!$("#NewsletterOptIn").is(':checked') && $("#DoNotSendOffersOptIn").is(':checked'))
-        {
-            preferencesData ={"event_name":"manage-preferences","newsletter_optin":"false","donot_send_offers_optin":"true"};
+        if(!$("#NewsletterOptIn").is(':checked') && $("#DoNotSendOffersOptIn").is(':checked')) {
+            preferencesData = {
+                event_name: "manage-preferences",
+                newsletter_optin: "false",
+                donot_send_offers_optin: "true"
+            };
         }
-        if($("#NewsletterOptIn").is(':checked') && !$("#DoNotSendOffersOptIn").is(':checked'))
-        {
-            preferencesData ={"event_name":"manage-preferences","newsletter_optin":"true","donot_send_offers_optin":"false"};
+        if($("#NewsletterOptIn").is(':checked') && !$("#DoNotSendOffersOptIn").is(':checked')) {
+            preferencesData = {
+                event_name: "manage-preferences",
+                newsletter_optin: "true",
+                donot_send_offers_optin: "false"
+            };
         }
-        if(!$("#NewsletterOptIn").is(':checked') && !$("#DoNotSendOffersOptIn").is(':checked'))
-        {
-            preferencesData ={"event_name":"manage-preferences","newsletter_optin":"false","donot_send_offers_optin":"false"};
+        if(!$("#NewsletterOptIn").is(':checked') && !$("#DoNotSendOffersOptIn").is(':checked')) {
+            preferencesData = {
+                event_name: "manage-preferences",
+                newsletter_optin: "false",
+                donot_send_offers_optin: "false"
+            };
         }
         var result = {};
         $.extend(result, analytics_data, preferencesData);
-        utag.link({
-            result
-        });
+        utag.link(result);
 
     });
 

@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Text;
 using System.Xml;
-using System.Xml.Linq;
 using Glass.Mapper.Sc;
 using Informa.Library.Rss.Utils;
 using Informa.Library.Utilities.References;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss;
+using Sitecore.Data.Items;
 using Sitecore.Web;
 
 namespace Informa.Web.ViewModels
@@ -25,26 +25,23 @@ namespace Informa.Web.ViewModels
         }
 
         /// <summary>
-        /// Returns the xml rss string
+        ///     Returns the xml rss string
         /// </summary>
         /// <returns></returns>
         public string GetSearchRssXml()
         {
+            Item currentItem = Sitecore.Context.Item;
+            ISearch_Rss_Feed rssFeedItem = currentItem.GlassCast<ISearch_Rss_Feed>(inferType: true);
 
-            var feed = _rssFeedutil.GetSearchRssFeed();
+            var feed = _rssFeedutil.GetSearchRssFeed(rssFeedItem);
 
             var formatter = new Rss20FeedFormatter(feed);
             formatter.SerializeExtensionsAsAtom = false;
-           
-         
-            //XNamespace atom = "http://www.w3.org/2005/Atom";
 
-            //feed.AttributeExtensions.Add(new XmlQualifiedName("atom", XNamespace.Xmlns.NamespaceName), atom.NamespaceName);
+            var searchItems = _rssFeedutil.GetSearchItems(rssFeedItem);
 
-
-            var searchItems = _rssFeedutil.GetSearchItems();
-
-            var items = searchItems.Select(searchItem => _rssItemUtil.GetSyndicationItemFromSitecore(searchItem)).ToList();
+            var items =
+                searchItems.Select(searchItem => _rssItemUtil.GetSyndicationItemFromSitecore(searchItem)).ToList();
 
             feed.Items = items;
 
@@ -53,12 +50,8 @@ namespace Informa.Web.ViewModels
             using (var writer = XmlWriter.Create(output, new XmlWriterSettings {Indent = true}))
             {
                 feed.SaveAsRss20(writer);
-              //  formatter.WriteTo(writer);
                 writer.Flush();
-
                 return output.ToString();
-                //rssString = rssString.Replace(":a10", ":atom");
-                //return rssString.Replace("a10:", "atom:");
             }
         }
     }

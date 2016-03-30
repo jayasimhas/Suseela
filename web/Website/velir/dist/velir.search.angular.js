@@ -233,7 +233,7 @@
                                 this.location.search(routeBuilder.getRoute());
                                 this.searchService.query();
 
-                
+                                //Scroll to the top of the results when a new page is chosen
                                 this.location.hash("searchTop");
                                 this.anchorScroll();
                             }
