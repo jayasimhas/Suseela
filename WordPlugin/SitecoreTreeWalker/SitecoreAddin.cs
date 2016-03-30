@@ -65,7 +65,7 @@ namespace InformaSitecoreWord
                 return false;
             }
             //version 12.0 is 2007; 14.0 is 2010
-            //Log("\t\t\tVersion:" + version);
+            Log("\t\t\tVersion:" + version);
             return version >= 14.0;
         }
 
@@ -214,7 +214,7 @@ namespace InformaSitecoreWord
         {
             Log("Starting add in...");
 			
-            //if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
             {
                 Log("Version: " + System.Windows.Forms.Application.ProductVersion);
 

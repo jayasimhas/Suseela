@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Deployment.Application;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using InformaSitecoreWord.Config;
@@ -188,7 +190,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 			SuspendLayout();
 			_wordUtils = new WordUtils();
 			InitializeFields();
-
+			ESRibbon ribbon = Globals.Ribbons.GetRibbon<ESRibbon>();
+			ribbon?.IsLoggedIn();
 			UpdateFieldsUsingSitecore();
 			ResetChangedStatus();
 			ResumeLayout();
@@ -894,13 +897,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 			return redirect;
 		}
 
+		public System.Version AssemblyVersion => ApplicationDeployment.CurrentDeployment.CurrentVersion;
+
 		private void ArticleDetail_Load(object sender, EventArgs e)
 		{
-
-			//if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-			{
-				uxVersionNumber.Text = System.Windows.Forms.Application.ProductVersion;
-			}
+			string version = $"{AssemblyVersion.Major}.{AssemblyVersion.Minor}.{AssemblyVersion.Build}.{AssemblyVersion.Revision}";
+			uxVersionNumber.Text = version;
 		}
 		#endregion
 

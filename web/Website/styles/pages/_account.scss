@@ -26,6 +26,15 @@
         display: block;
         margin-bottom: 0.5rem;
     }
+    &__text-label-hint {
+        color: $color-dusty-gray;
+        display: block;
+        font-size: 0.875rem;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: 0.75rem;
+        padding-top: 0.25rem;
+    }
 
     input[type=text],
     input[type=email],
@@ -120,7 +129,7 @@
             line-height: 1.25rem;
             margin-bottom: 1rem;
             text-align: right;
-            
+
             em {
                 display: inline-block;
                 width: 250px;
