@@ -216,6 +216,7 @@
                                        placeholder="@Model.CompanyPlaceholderText">
                             </p>
 
+                            @if (!string.IsNullOrEmpty(Model.AssociatedCompany)) { 
                             <p>
                                 <label for="Company" class="page-account__text-label">
                                     @Model.AssociatedCompanyLabelText
@@ -224,7 +225,7 @@
                                 @Model.AssociatedCompany
 
                             </p>
-
+                            }
                             <p>
                                 <label for="JobTitle" class="page-account__text-label">
                                     @Model.JobTitleLabelText <span class="asterisk-required"></span>

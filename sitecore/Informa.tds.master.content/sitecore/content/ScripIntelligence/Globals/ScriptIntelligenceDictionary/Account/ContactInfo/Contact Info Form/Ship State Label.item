@@ -33,15 +33,15 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 234c3339-28af-4fc3-9f82-b1ee75d0aff3
+revision: d9f09bb8-d73a-4977-90b7-55ef5ed5db8e
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 10
+content-length: 26
 
-Ship State
+State/Province (US/Canada)
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-234c3339-28af-4fc3-9f82-b1ee75d0aff3
+d9f09bb8-d73a-4977-90b7-55ef5ed5db8e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160313T184415Z
+20160330T163739Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
