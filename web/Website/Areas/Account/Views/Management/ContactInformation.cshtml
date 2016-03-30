@@ -9,7 +9,11 @@
             <div class="page-account-contact__column">
                 <h2 class="page-account__subheader">@Model.UserNameTitleText</h2>
 
-                @Model.UserContext.User.Username
+                <p>
+                    <label class="page-account__text-label">
+                        @Model.UserContext.User.Username
+                    </label>
+                </p>
 
                 <p>@Html.Raw(Model.UpdateHelpText)</p>
 
