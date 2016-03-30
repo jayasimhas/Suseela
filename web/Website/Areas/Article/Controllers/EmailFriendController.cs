@@ -12,6 +12,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuratio
 using Informa.Web.Areas.Article.Models.Article.EmailFriend;
 using Informa.Web.Controllers;
 using Informa.Library.Utilities.Settings;
+using log4net;
 
 namespace Informa.Web.Areas.Article.Controllers
 {
@@ -25,9 +26,10 @@ namespace Informa.Web.Areas.Article.Controllers
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IEmailFactory EmailFactory;
 		protected readonly ISiteSettings SiteSettings;
+	    private ILog _logger;
 
 		public EmailFriendController(ArticleUtil articleUtil, ITextTranslator textTranslator, ISiteRootContext siteRootContext, IEmailFactory emailFactory,
-			Func<string, ISitecoreService> sitecoreFactory, IEmailSender emailSender, IHtmlEmailTemplateFactory htmlEmailTemplateFactory, ISiteSettings siteSettings)
+			Func<string, ISitecoreService> sitecoreFactory, IEmailSender emailSender, IHtmlEmailTemplateFactory htmlEmailTemplateFactory, ISiteSettings siteSettings, ILog logger)
 		{
 			EmailSender = emailSender;
 			_articleUtil = articleUtil;
@@ -37,6 +39,7 @@ namespace Informa.Web.Areas.Article.Controllers
 			SiteRootContext = siteRootContext;
 			EmailFactory = emailFactory;
 			SiteSettings = siteSettings;
+		    _logger = logger;
 		}
 
 		[HttpPost]
@@ -49,7 +52,8 @@ namespace Informa.Web.Areas.Article.Controllers
 				|| string.IsNullOrWhiteSpace(request.SenderName)
 				|| string.IsNullOrWhiteSpace(request.ArticleNumber))
 			{
-				return Ok(new
+                _logger.Warn($"Field is null");
+                return Ok(new
 				{
 					success = false
 				});
@@ -74,7 +78,8 @@ namespace Informa.Web.Areas.Article.Controllers
 				var isEmailSent = EmailSender.Send(friendEmail);
 				if (!isEmailSent)
 				{
-					result = false;
+                    _logger.Warn($"Email sender failed");
+                    result = false;
 				}
 			}
 			return Ok(new
@@ -160,7 +165,7 @@ namespace Informa.Web.Areas.Article.Controllers
 			}
 			catch (Exception ex)
 			{
-				
+				       _logger.Warn($"Email failed to send: {senderEmail}:{senderName}:{articleNumber}:{friendEmail}:{message}", ex);
 			}
 			return emailHtml;
 		}

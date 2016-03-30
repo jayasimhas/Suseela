@@ -176,15 +176,15 @@ But you can also use "patch:attribute" for clarity:
       </setting>
 
       <setting name="MailServerUserName">
-        <patch:attribute name="value"></patch:attribute>
+        <patch:attribute name="value">${Mail.MailServerUserName}</patch:attribute>
       </setting>
 
       <setting name="MailServerPassword">
-        <patch:attribute name="value"></patch:attribute>
+        <patch:attribute name="value">${Mail.MailServerPassword}</patch:attribute>
       </setting>
 
       <setting name="MailServerPort">
-        <patch:attribute name="value">25</patch:attribute>
+        <patch:attribute name="value">${Mail.MailServerPort}</patch:attribute>
       </setting>
 
       <!-- HIDDEN SETTING!  Suggestion from sitecore to speed up the back end content editor. -->
