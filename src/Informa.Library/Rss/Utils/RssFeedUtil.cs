@@ -131,15 +131,23 @@ namespace Informa.Library.Rss.Utils
         /// <returns></returns>
         private IEnumerable<Item> GetItemsFromApi(string apiUrl)
         {
-            var client = new WebClient();
-            var content = client.DownloadString(apiUrl);
+            try
+            {
+                var client = new WebClient();
+                var content = client.DownloadString(apiUrl);
 
-            var results = JsonConvert.DeserializeObject<SearchResults>(content);
+                var results = JsonConvert.DeserializeObject<SearchResults>(content);
 
-            return
-                results.results.Select(searchResult => Context.Database.GetItem(searchResult.ItemId))
-                    .Where(theItem => theItem != null)
-                    .ToList();
+                return
+                    results.results.Select(searchResult => Context.Database.GetItem(searchResult.ItemId))
+                        .Where(theItem => theItem != null)
+                        .ToList();
+            }
+            catch (Exception exc)
+            {
+                Log.Error("Could not retrieve items from the search service for URL: " + apiUrl + " : " + exc.Message,this);
+                return new List<Item>();
+            }
         }
 
         /// <summary>
