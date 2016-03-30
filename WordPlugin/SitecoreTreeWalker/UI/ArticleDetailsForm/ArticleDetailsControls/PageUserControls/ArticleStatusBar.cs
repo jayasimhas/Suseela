@@ -113,5 +113,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                 uxLockStateButton.Image = new Bitmap(Resources.unlockIcon);
             }
         }
+
     }
 }

@@ -5,18 +5,18 @@
     <div class="banner banner--cookie-policy" data-banner-id="cookie-policy-0001">
         <div class="banner__wrapper">
             <div class="dismiss-button js-dismiss-banner">
-				<svg class="dismiss-button__icon">
-					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-				</svg>
-			</div>
+                <svg class="dismiss-button__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+            </div>
             <span>@Html.Raw(Model.PolicyText)</span>
         </div>
     </div>
 
-    <div class="informa-ribbon" >
-		<div class="informa-ribbon__wrapper">
-			<div class="informa-ribbon__detail">
-				<div class="informa-ribbon__left">
+    <div class="informa-ribbon">
+        <div class="informa-ribbon__wrapper">
+            <div class="informa-ribbon__detail">
+                <div class="informa-ribbon__left">
                     @Html.Raw(Model.LeftColumnText)
                     <ul>
                         <li class="iribbon-mainlink">
@@ -32,17 +32,17 @@
                             @Html.Raw(Model.Link4)
                         </li>
                     </ul>
-				</div>
+                </div>
 
-				<div class="informa-ribbon__right">
+                <div class="informa-ribbon__right">
                     @Html.Raw(Model.RightColumnText)
-				</div>
-			</div>
+                </div>
+            </div>
 
             <button class="informa-ribbon__title">
                 Informa
             </button>
-    	</div>
+        </div>
     </div>
 
     <div class="advertising--leaderboard">
@@ -62,19 +62,21 @@
         <div class="header__logo">
             <a href="@Model.LogoUrl"><img src="@Model.LogoImageUrl"></a>
         </div>
+        <div class="header-logo-print">
+            <a href="@Model.LogoUrl"><img src="@Model.PrintPageHeaderLogoSrc"></a>
+        </div>
 
         @Html.Sitecore().Rendering("{ACBBD086-F6F2-4327-B3FF-2D36716E3AFC}")
 
         <div class="header-account-access">
 
-			@if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
+            @if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
             {
                 if (Model.IsAuthenticated && !Sitecore.Context.User.IsAdministrator)
                 {
                     <div class="header-account-access__friendly-greeting">@Html.ActionLink("TEMPORARILY SPOOF ENTITLEMENT", "SpoofEntitlement", "Spoof", new { area = "Account", returnUrl = "/" }, new { })</div>
                 }
-				<div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
-			}
+                <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>}
 
             @if (Model.IsAuthenticated)
             {
@@ -89,11 +91,10 @@
                     <svg class="header__icons icon-sign-out">
                         <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                     </svg>
-					<span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
-				</div>
-			}
-			else
-			{
+                    <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
+                </div>}
+            else
+            {
                 <div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger"
                      data-pop-out-id="header-register"
                      data-pop-out-type="register">
@@ -101,7 +102,7 @@
                     <svg class="header__icons icon-register">
                         <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
                     </svg>
-					<span class="header-account-access__label">@Model.RegisterLinkText</span>
+                    <span class="header-account-access__label">@Model.RegisterLinkText</span>
                 </div>
 
                 <div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger"
@@ -112,7 +113,7 @@
                     <svg class="header__icons icon-sign-in">
                         <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
                     </svg>
-					<span class="header-account-access__label">@Model.SignInLinkText</span>
+                    <span class="header-account-access__label">@Model.SignInLinkText</span>
                 </div>
             }
         </div>
@@ -120,8 +121,8 @@
 
         @* If this is an Article page... *@
         <div class="boxout-print-info">
-            <p>This copy is for your personal non-commercial use. For high-quality copies or electronic reprints for distribution to colleagues or customers, click <a href="#">here</a> or call +1 (908) 748-1221.</p>
-            <p>Printed by <b>Ms. First M. Last, Company</b></p>
+            <p>@Model.PrintPageHeaderMessage</p>
+            <p>@Model.PrintedByText &nbsp; <b>@Model.UserName @(string.IsNullOrEmpty(Model.UserName) || string.IsNullOrEmpty(Model.CorporateName) ? string.Empty : ",") @Model.CorporateName</b></p>
         </div>
         @* end pseudo-if *@
 
