@@ -45,10 +45,12 @@
                     {
                         <tr>
                             <td>
-                                @HttpUtility.HtmlDecode(item.Name)
+                                <a href="@Model.GetUrl(item.DocumentId)">
+                                    @HttpUtility.HtmlDecode(item.Name)
+                                </a>
                             </td>
                             <td>
-                                @item.SaveDate.ToString("d MMMM yyyy")
+                                @Model.GetActualPublishDate(item.DocumentId, "d MMMM yyyy")
                             </td>
                             <td>
                                 <form   class="form-remove-saved-document"

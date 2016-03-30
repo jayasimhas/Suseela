@@ -32,17 +32,21 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
             {
                 title = page.Title;
             }
-
-            //First fallback is the navigation title
-            if (!string.IsNullOrEmpty(page.Navigation_Title))
+            else
             {
-                title = page.Navigation_Title;
-            }
-
-            //And finally try the Sitecore Display Name
-            if (!string.IsNullOrEmpty(indexItem.DisplayName))
-            {
-                title = indexItem.DisplayName;
+                //First fallback is the navigation title
+                if (!string.IsNullOrEmpty(page.Navigation_Title))
+                {
+                    title = page.Navigation_Title;
+                }
+                else
+                {
+                    //And finally try the Sitecore Display Name
+                    if (!string.IsNullOrEmpty(indexItem.DisplayName))
+                    {
+                        title = indexItem.DisplayName;
+                    }
+                }
             }
 
             //Decode and special characters

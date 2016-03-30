@@ -40,7 +40,7 @@ ar|sitecore\Article Read Access|pe|+item:read|pd|+item:read|ar|sitecore\General 
 ----version----
 language: en
 version: 1
-revision: 6729c35f-d9f2-4581-8f0e-a17b7254a86f
+revision: 66250d1c-6158-4037-a8bd-1d375d9e8e7f
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -158,9 +158,9 @@ content-length: 94
 field: {7704CDD8-3258-4A10-8D22-55998BF88976}
 name: Subscribe Link
 key: subscribe link
-content-length: 132
+content-length: 158
 
-<link text="Subscribe" linktype="internal" class="" title="" target="" querystring="" id="{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" />
+<link text="Learn how you can access all SCRIP content ›" linktype="internal" class="" title=""  querystring="" id="{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" />
 ----field----
 field: {4352F61D-BAB4-4CE4-888E-562FFC1C643C}
 name: Purchase Link
@@ -320,13 +320,6 @@ content-length: 72
 
 #FIRST_NAME#, your subscription is up for renewal in on #SUB_EXPIRATION#
 ----field----
-field: {0B421D74-F73B-49B3-BDC3-93C31A5DBECC}
-name: Subscribe Link
-key: subscribe link
-content-length: 114
-
-<link text="" linktype="internal" class="" title=""  querystring="" id="{2870779D-E98C-4A3B-A753-57E90CA5E4A6}" />
-----field----
 field: {3071922D-4EF9-4ABB-AE03-3DAFEC2544F4}
 name: Days To Expiration
 key: days to expiration
@@ -367,14 +360,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6729c35f-d9f2-4581-8f0e-a17b7254a86f
+66250d1c-6158-4037-a8bd-1d375d9e8e7f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160329T152050Z
+20160330T175436Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

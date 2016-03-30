@@ -82,7 +82,7 @@ namespace Informa.Web.ViewModels
 		private IArticleSearch ArticleSearch;
 		private IItemReferences ItemReferences;
 
-        public string PrintPageHeaderLogoSrc => SiteRootContext.Item.Print_Logo.Src;
+        public string PrintPageHeaderLogoSrc => SiteRootContext?.Item?.Print_Logo?.Src ?? string.Empty;
         public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
         public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
         public string UserName => AuthenticatedUserContext.User.Name;

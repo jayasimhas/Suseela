@@ -41,7 +41,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             return !Subscriptions.Any(a => a.ProductCode.Equals(productCode) && !WithinRenewRange(a.ExpirationDate));
         }
 
-        public bool ShowSubscribeButton(string productCode, DateTime dt)
+        public bool ShowSubscribeButton(string productCode)
         {
             //Show Subscribe Button:
             //If the user has a Free Trial and has not yet subscribed.
@@ -69,12 +69,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             int days = Convert.ToInt16((s.ExpirationDate - DateTime.Now).TotalDays);
             return days > 0;
         }
-
-        public bool IsFreeTrial(ISubscription s)
-        {
-            return s.SubscriptionType.ToLower().Equals("free trial");
-        }
-
+        
         public string OffSiteRenewLink => GlassModel.Off_Site_Renew_Link?.Url ?? "#";
         public string OffSiteSubscriptionLink => GlassModel.Off_Site_Subscription_Link?.Url ?? "#";
         public bool IsAuthenticated => UserContext.IsAuthenticated;
@@ -83,46 +78,5 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public string SubscriptionTypeText => TextTranslator.Translate("Subscriptions.SubscriptionType");
         public string ExpirationDateText => TextTranslator.Translate("Subscriptions.ExpirationDate");
         public string ActionText => TextTranslator.Translate("Subscriptions.Action");
-
-        /* Test Subscription Data 
-        
-        new List<ISubscription>()
-        {
-            //case 1 : show button
-            new Library.User.Profile.Subscription() //within renew range
-            {
-                Publication = "Test Show Renew",
-                ExpirationDate = DateTime.Now.AddDays(118),
-                ProductCode = "AA"
-            },
-            //case 2 - one outside renew range : don't show button
-            new Library.User.Profile.Subscription() //within renew range
-            {
-                Publication = "Test Don't Show Renew",
-                ExpirationDate = DateTime.Now.AddDays(118),
-                ProductCode = "BB"
-            },
-            new Library.User.Profile.Subscription() //outside renew range
-            {
-                Publication = "Test Don't Show Renew",
-                ExpirationDate = DateTime.Now.AddDays(119),
-                ProductCode = "BB"
-            },
-            //case 3 - no valid subscriptions : show button
-            new Library.User.Profile.Subscription()
-            {
-                Publication = "Test Show Subscribe",
-                ExpirationDate = DateTime.Now.AddDays(-1),
-                ProductCode = "CC"
-            },
-            //case 4 - valid subscription : don't show
-            new Library.User.Profile.Subscription()
-            {
-                Publication = "Test Don't Show Subscribe",
-                ExpirationDate = DateTime.Now.AddDays(1),
-                ProductCode = "DD"
-            }
-        };
-        */
     }
 }
