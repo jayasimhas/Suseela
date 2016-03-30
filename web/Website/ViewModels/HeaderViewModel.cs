@@ -86,7 +86,7 @@ namespace Informa.Web.ViewModels
         public string Link3 => (InformaBar != null) ? BuildLink(InformaBar.Link_3) : string.Empty;
         public string Link4 => (InformaBar != null) ? BuildLink(InformaBar.Link_4) : string.Empty;
 
-        public string PrintPageHeaderLogoSrc => SiteRootContext.Item.Print_Logo.Src;
+        public string PrintPageHeaderLogoSrc => SiteRootContext?.Item?.Print_Logo?.Src ?? string.Empty;
         public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
         public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
         public string UserName => AuthenticatedUserContext.User.Name;
