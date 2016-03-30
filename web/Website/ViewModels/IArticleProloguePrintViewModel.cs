@@ -1,6 +1,7 @@
 ﻿namespace Informa.Web.ViewModels
 {
-	public interface IArticleProloguePrintViewModel
-	{
-	}
+    public interface IArticleProloguePrintViewModel
+    {
+        bool IsUserAuthenticated { get; }
+    }
 }

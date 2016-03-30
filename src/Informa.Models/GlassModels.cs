@@ -10108,6 +10108,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Main_Navigation  {get; set;}
 								/// <summary>
+					/// The Print Logo field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: a975def7-aae1-454c-b0df-0cfeeeb2cf04</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Print_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image Print_Logo  {get; set;}
+								/// <summary>
+					/// The Print Message field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 2a972374-2492-477b-bdd7-f17bc08b1c9f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Print_MessageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Print_Message  {get; set;}
+								/// <summary>
 					/// The Site Logo field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
@@ -10642,6 +10660,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Main_Navigation  {get; set;}
 										/// <summary>
+						/// The Print Logo field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: a975def7-aae1-454c-b0df-0cfeeeb2cf04</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Print_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image Print_Logo  {get; set;}
+										/// <summary>
+						/// The Print Message field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 2a972374-2492-477b-bdd7-f17bc08b1c9f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Print_MessageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Print_Message  {get; set;}
+										/// <summary>
 						/// The Site Logo field.
 						/// <para></para>
 						/// <para>Field Type: Image</para>		
@@ -11044,6 +11080,18 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
 			public const string Main_NavigationFieldName = "Main Navigation";
 
+						
+					
+			public static readonly ID Print_LogoFieldId = new ID("a975def7-aae1-454c-b0df-0cfeeeb2cf04");
+			public const string Print_LogoFieldName = "Print Logo";
+
+						
+					
+			public static readonly ID Print_MessageFieldId = new ID("2a972374-2492-477b-bdd7-f17bc08b1c9f");
+			public const string Print_MessageFieldName = "Print Message";
+
+							public static readonly ID Print_Message__RawFieldId = new ID("2a972374-2492-477b-bdd7-f17bc08b1c9f");
+				public const string Print_Message__RawFieldName = "Print Message";
 						
 					
 			public static readonly ID Site_LogoFieldId = new ID("d0ea1c84-68e4-4811-87c2-14ff280c8fc2");
@@ -15407,6 +15455,18 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
 			public const string Main_NavigationFieldName = "Main Navigation";
 
+						
+					
+			public static readonly ID Print_LogoFieldId = new ID("a975def7-aae1-454c-b0df-0cfeeeb2cf04");
+			public const string Print_LogoFieldName = "Print Logo";
+
+						
+					
+			public static readonly ID Print_MessageFieldId = new ID("2a972374-2492-477b-bdd7-f17bc08b1c9f");
+			public const string Print_MessageFieldName = "Print Message";
+
+							public static readonly ID Print_Message__RawFieldId = new ID("2a972374-2492-477b-bdd7-f17bc08b1c9f");
+				public const string Print_Message__RawFieldName = "Print Message";
 						
 					
 			public static readonly ID Site_LogoFieldId = new ID("d0ea1c84-68e4-4811-87c2-14ff280c8fc2");

@@ -102,12 +102,9 @@
 	@if (!Model.IsEntitled())
 	{
 		//This will show context for subscribe, login, register
-		<div class="article-call-to-action">
-			@if (!Model.IsUserAuthenticated)
-			{
-				Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel);
-			}
-		</div>
+	    <div class="article-call-to-action">
+	        @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
+	    </div>
 	}
 
 
@@ -121,7 +118,7 @@
 			@if (!string.IsNullOrEmpty(Model.Image.ImageSource))
 			{
 				<span class="article-inline-image__source">
-					@Model.FeaturedImageSource: @Model.Image.ImageSource
+					@Model.FeaturedImageSource @Model.Image.ImageSource
 				</span>
 			}
 			<span class="article-inline-image__caption">@Model.Image.ImageCaption</span>

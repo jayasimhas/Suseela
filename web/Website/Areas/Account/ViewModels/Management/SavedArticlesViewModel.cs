@@ -9,6 +9,7 @@ using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
@@ -20,22 +21,52 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public readonly IAuthenticatedUserContext UserContext;
         public readonly IManageSavedDocuments QuerySavedDocuments;
         public readonly ISignInViewModel SignInViewModel;
+        public readonly ISitecoreService SitecoreService;
 
         public SavedArticlesViewModel(
             ITextTranslator translator,
             IAuthenticatedUserContext userContext,
             IManageSavedDocuments querySavedDocuments,
-            ISignInViewModel signInViewModel)
+            ISignInViewModel signInViewModel,
+            ISitecoreService sitecoreService)
         {
             TextTranslator = translator;
             UserContext = userContext;
             QuerySavedDocuments = querySavedDocuments;
             SignInViewModel = signInViewModel;
+            SitecoreService = sitecoreService;
 
             var result = QuerySavedDocuments.QueryItems(UserContext.User);
             SavedDocuments = (result.Success)
                 ? result.SavedDocuments
                 : Enumerable.Empty<ISavedDocument>();
+        }
+
+        private IArticle GetArticle(string ID)
+        {
+            Guid result;
+            if (!Guid.TryParse(ID, out result))
+                return null;
+
+            return SitecoreService.GetItem<IArticle>(result);
+        }
+
+        public string GetUrl(string ID)
+        {
+            var article = GetArticle(ID);
+            if (article == null)
+                return string.Empty;
+
+            return article._Url;
+        }
+
+        public string GetActualPublishDate(string ID, string dateFormat)
+        {
+            var article = GetArticle(ID);
+            if (article == null)
+                return DateTime.Now.ToString(dateFormat);
+
+            return article.Actual_Publish_Date.ToString(dateFormat);
         }
 
         public IEnumerable<ISavedDocument> SavedDocuments;
