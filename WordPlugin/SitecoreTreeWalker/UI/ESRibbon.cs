@@ -36,13 +36,6 @@ namespace InformaSitecoreWord.UI
             IsNotLoggedIn();
         }
 
-        private void ShowTree()
-        {
-            var app = Globals.SitecoreAddin.Application;
-            var doc = app.ActiveDocument;
-            Globals.SitecoreAddin.ShowTree(doc);
-        }
-
         private void OpenPluginBtn_Click(object sender, RibbonControlEventArgs e)
         {
             CheckLoginAndPerformAction(OpenArticleInformation);
@@ -208,23 +201,6 @@ namespace InformaSitecoreWord.UI
             return ArticleDetails.ArticleNumber;
         }
 
-        /// <summary>
-        /// Sets the member ArticleStruct ArticleDetails to the inputted
-        /// ArticleStruct articleStruct
-        /// </summary>
-        /// <param name="articleStruct"></param>
-        public void SetArticleDetails(ArticleStruct articleStruct)
-        {
-            ArticleDetails = articleStruct;
-        }
-
-        public void SetArticleNumber(string articleNumber)
-        {
-            Globals.SitecoreAddin.Log("Setting article number to #" + articleNumber);
-            ArticleDetails.ArticleNumber = articleNumber;
-            _documentCustomProperties.ArticleNumber = articleNumber;
-        }
-
         private string GetPreviewUrl(bool isMobile)
         {
             string guid = SitecoreClient.GetArticleGuidByArticleNumber(GetArticleNumber());
@@ -278,12 +254,6 @@ namespace InformaSitecoreWord.UI
                 throw;
             }
         }
-
-        //public void LoginLogoutButtonChange()
-        //{
-        //	LoginBtn.Visible = !LoginBtn.Visible;
-        //	LogoutBtn.Visible = !LogoutBtn.Visible;
-        //}
 
         public void IsLoggedIn()
         {
@@ -353,7 +323,6 @@ namespace InformaSitecoreWord.UI
                 WordUtils.Save(activeDocument);
             }
         }
-
         private void SaveArticleToSitecoreUpdateUi(ArticleDocumentMetadataParser metadataParser, string body = null)
         {
             _documentCustomProperties.ArticleNumber = GetArticleNumber();
@@ -436,7 +405,6 @@ namespace InformaSitecoreWord.UI
 
             return true;
         }
-
         public ArticleStruct GetArticleDetails(string articleNumber, ArticleDocumentMetadataParser metadataParser = null)
         {
             var sitecoreArticleDetails = SitecoreClient.ForceReadArticleDetails(articleNumber);
