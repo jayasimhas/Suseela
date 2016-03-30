@@ -8,7 +8,7 @@ using Informa.Web.ViewModels.PopOuts;
 
 namespace Informa.Web.ViewModels
 {
-    [AutowireService(LifetimeScope.SingleInstance)]
+    [AutowireService]
     public class CallToActionViewModel : ICallToActionViewModel
     {
         protected readonly ITextTranslator TextTranslator;
