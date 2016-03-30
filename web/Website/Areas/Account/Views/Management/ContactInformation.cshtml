@@ -81,7 +81,7 @@
                     <p>
                         <label for="NewPassword" class="page-account__text-label">
                             @Model.NewPasswordLabelText
-							<span>@Model.NewPasswordRequirementsText</span>
+							<span class="page-account__text-label-hint">@Model.NewPasswordRequirementsText</span>
                         </label>
                         <input type="password"
                                name="NewPassword"
@@ -216,7 +216,7 @@
                                        placeholder="@Model.CompanyPlaceholderText">
                             </p>
 
-                            @if (!string.IsNullOrEmpty(Model.AssociatedCompany)) { 
+                            @if (!string.IsNullOrEmpty(Model.AssociatedCompany)) {
                             <p>
                                 <label for="Company" class="page-account__text-label">
                                     @Model.AssociatedCompanyLabelText
