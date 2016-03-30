@@ -170,7 +170,7 @@ But you can also use "patch:attribute" for clarity:
 
       <!-- Mail Settings -->
       <setting name="Mail.MailServerFromAddress" value="${Mail.MailServerFromAddress}"/>
-      <setting name="MailServerUseSsl" value="${Mail.MailServerUserSsl}" />
+      <setting name="MailServerEnableSsl" value="${Mail.MailServerEnableSsl}" />
 
       <setting name="MailServer">
         <patch:attribute name="value">${Mail.MailServer}</patch:attribute>
