@@ -121,7 +121,7 @@
 			@if (!string.IsNullOrEmpty(Model.Image.ImageSource))
 			{
 				<span class="article-inline-image__source">
-					@Model.FeaturedImageSource: @Model.Image.ImageSource
+					@Model.FeaturedImageSource @Model.Image.ImageSource
 				</span>
 			}
 			<span class="article-inline-image__caption">@Model.Image.ImageCaption</span>
