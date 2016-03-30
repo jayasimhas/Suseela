@@ -32,32 +32,14 @@ namespace Informa.Library.Mail
 		        {
 		            using (var client = CreateSmtpClient())
 		            {
+                        _logger.Warn($"Email From address: {email.From}");
+
 		                client.Send(sitecoreEmail);
 		            }
 		        }
 		        catch(Exception e)
 		        {
-		            _logger.Error("SmtpClient not created:", e);
-
-                    _logger.Warn($"Mail server: {Settings.MailServer}");
-                    _logger.Warn($"Mail server port: {Settings.MailServerPort}");
-                    _logger.Warn($"Mail server port: {Settings.MailServerPassword}");
-                    _logger.Warn($"Mail server port: {Settings.MailServerUserName}");
-
-                    var emailClient = CreateSmtpClient();
-
-                    _logger.Warn($"Client {emailClient.EnableSsl}");
-                    var port = Settings.MailServerPort <= 0 ? "NoPort:" : "hasPort";
-                    _logger.Warn($"Client, {emailClient.Port},{port}");
-
-                    bool enableSsl;
-                    emailClient.EnableSsl =
-                        bool.TryParse(Sitecore.Configuration.Settings.GetSetting("Mail.MailServerEnableSsl"), out enableSsl) &&
-                        enableSsl;
-
-                    _logger.Warn($"EnableSSL: {enableSsl}");
-
-
+		            _logger.Error("SmtpClient not created:", e);  
                     return false;
 		        }
 
