@@ -96,6 +96,11 @@ namespace Informa.Library.Mail
                 smtpClient = mailServerPort <= 0 ? new SmtpClient(mailServer) : new SmtpClient(mailServer, mailServerPort);
             }
             string mailServerUserName = Settings.MailServerUserName;
+            bool enableSsl;
+            smtpClient.EnableSsl =
+                bool.TryParse(Sitecore.Configuration.Settings.GetSetting("Mail.MailServerEnableSsl"), out enableSsl) &&
+                enableSsl;
+
             if (mailServerUserName.Length > 0)
             {
                 string mailServerPassword = Settings.MailServerPassword;

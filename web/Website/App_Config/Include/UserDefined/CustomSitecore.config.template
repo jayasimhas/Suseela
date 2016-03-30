@@ -170,6 +170,7 @@ But you can also use "patch:attribute" for clarity:
 
       <!-- Mail Settings -->
       <setting name="Mail.MailServerFromAddress" value="${Mail.MailServerFromAddress}"/>
+      <setting name="MailServerUseSsl" value="${Mail.MailServerUserSsl}" />
 
       <setting name="MailServer">
         <patch:attribute name="value">${Mail.MailServer}</patch:attribute>
@@ -185,7 +186,7 @@ But you can also use "patch:attribute" for clarity:
 
       <setting name="MailServerPort">
         <patch:attribute name="value">${Mail.MailServerPort}</patch:attribute>
-      </setting>
+      </setting>                                   
 
       <!-- HIDDEN SETTING!  Suggestion from sitecore to speed up the back end content editor. -->
       <setting name="ContentEditor.RenderCollapsedSections" value="false"/>
