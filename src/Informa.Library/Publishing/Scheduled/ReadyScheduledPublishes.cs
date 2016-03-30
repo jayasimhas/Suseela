@@ -1,5 +1,4 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,11 +8,14 @@ namespace Informa.Library.Publishing.Scheduled
 	public class ReadyScheduledPublishes : IReadyScheduledPublishes
 	{
 		protected readonly IAllScheduledPublishes AllScheduledPublishes;
+		protected readonly IScheduledPublishingDateTime ScheduledPublishingDateTime;
 
 		public ReadyScheduledPublishes(
-			IAllScheduledPublishes allScheduledPublishes)
+			IAllScheduledPublishes allScheduledPublishes,
+			IScheduledPublishingDateTime scheduledPublishingDateTime)
 		{
 			AllScheduledPublishes = allScheduledPublishes;
+			ScheduledPublishingDateTime = scheduledPublishingDateTime;
 		}
 
 		public IEnumerable<IScheduledPublish> ScheduledPublishes
@@ -21,9 +23,8 @@ namespace Informa.Library.Publishing.Scheduled
 			get
 			{
 				var scheduledPublishes = AllScheduledPublishes.ScheduledPublishes;
-				var now = DateTime.Now;
 
-				return scheduledPublishes.Where(sc => !sc.Published && sc.PublishOn <= now).ToList();
+				return scheduledPublishes.Where(sc => !sc.Published && sc.PublishOn <= ScheduledPublishingDateTime.Now).ToList();
 			}
 		}
 	}

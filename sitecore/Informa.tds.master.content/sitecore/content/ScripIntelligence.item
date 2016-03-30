@@ -246,9 +246,9 @@ content-length: 131
 field: {6F5117BC-2706-48DA-B5D3-0FD785FD9979}
 name: Email From Address
 key: email from address
-content-length: 19
+content-length: 30
 
-support@informa.com
+pmbi-notifications@informa.com
 ----field----
 field: {223891E7-0345-450B-A858-A10FDA0F718D}
 name: Email Logo

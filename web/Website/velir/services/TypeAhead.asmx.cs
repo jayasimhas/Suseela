@@ -59,7 +59,7 @@ namespace Informa.Web.velir.services
         {
             List<CompanyTypeAheadResponseItem> companies = new List<CompanyTypeAheadResponseItem>();
 
-            string searchPageId = new ItemReferences().SearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
+            string searchPageId = new ItemReferences().SearchPage.ToString("D").ToLower();
             string url = string.Format("{0}://{1}/api/informasearch?pId={2}", HttpContext.Current.Request.Url.Scheme, WebUtil.GetHostName(), searchPageId);
 
             if (Sitecore.Context.RawUrl.Contains("?"))
@@ -99,7 +99,6 @@ namespace Informa.Web.velir.services
 
             this.Context.Response.ContentType = "application/json; charset=utf-8";
             this.Context.Response.Write(new JavaScriptSerializer().Serialize(companies));
-       
         }
     }
 }

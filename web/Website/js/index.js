@@ -28,9 +28,9 @@ $('.click-logout').on('click', function(e){
     var eventDetails = {"event_name":"logout"};
     var result = {};
     $.extend(result, analytics_data, eventDetails);
-    utag.link({
-        result
-    });
+    //utag.link({
+    //    result
+    //});
 });
 /* Toggle header search box (tablets/smartphones) */
 $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
@@ -38,9 +38,9 @@ $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
     var eventDetails = {"event_name":"search", "search_term":'"'+searchTerm+'"'};
     var result = {};
     $.extend(result, analytics_data, eventDetails);
-    utag.link({
-        result
-    });
+    //utag.link({
+    //    result
+    //});
     if($(window).width() <= 800) {
         $('.header-search__wrapper').toggleClass('is-active').focus();
     } else {
@@ -139,7 +139,6 @@ $(document).ready(function() {
 
     window.indexBookmarks = function() { // Toggle bookmark icon
         $('.js-bookmark-article').on('click', function bookmarkArticle(e) {
-
             // Make sure proper elm gets the click event
             if (e.target !== this) {
                 this.click();
@@ -167,11 +166,15 @@ $(document).ready(function() {
         });
     };
 
-    var urlVars = window.location.href.split("?")[1].split("&");
-    for (var i=0; i<urlVars.length; i++) {
-        var pair = urlVars[i].split("=");
-        if(pair[0] === 'immb') {
-            autoBookmark(pair[1]);
+
+    var urlVars = window.location.href.split("?");
+    var varsToParse = urlVars[1] ? urlVars[1].split("&") : null;
+    if(varsToParse) {
+        for (var i=0; i<varsToParse.length; i++) {
+            var pair = varsToParse[i].split("=");
+            if(pair[0] === 'immb') {
+                autoBookmark(pair[1]);
+            }
         }
     }
 
@@ -237,6 +240,12 @@ $(document).ready(function() {
         $('.js-email-article-form-wrapper').hide();
         $('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val());
         $('.js-email-article-success').show();
+
+        // Reset the Email Article pop-out to its default state when closed
+        $('.js-dismiss-email-article').one('click', function() {
+            $('.js-email-article-form-wrapper').show();
+            $('.js-email-article-success').hide();
+        });
     });
 
 
@@ -509,9 +518,9 @@ $(document).ready(function() {
         }
         var result = {};
         $.extend(result, analytics_data, preferencesData);
-        utag.link({
-            result
-        });
+        //utag.link({
+        //    result
+        //});
 
     });
 
