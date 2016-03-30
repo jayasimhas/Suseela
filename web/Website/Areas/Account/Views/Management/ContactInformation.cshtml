@@ -80,7 +80,8 @@
 
                     <p>
                         <label for="NewPassword" class="page-account__text-label">
-                            @Html.Raw(Model.NewPasswordLabelText)
+                            @Model.NewPasswordLabelText
+							<span>@Model.NewPasswordRequirementsText</span>
                         </label>
                         <input type="password"
                                name="NewPassword"

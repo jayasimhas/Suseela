@@ -64,7 +64,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public string PasswordTitleText => TextTranslator.Translate("ContactInfo.PasswordTitle");
         public string CurrentPasswordLabelText => TextTranslator.Translate("ContactInfo.CurrentPasswordLabel");
         public string NewPasswordLabelText => TextTranslator.Translate("ContactInfo.NewPasswordLabel");
-        public string NewPasswordConfirmLabelText => TextTranslator.Translate("ContactInfo.NewPasswordConfirmLabel");
+		public string NewPasswordRequirementsText => TextTranslator.Translate("ContactInfo.NewPasswordRequirements");
+		public string NewPasswordConfirmLabelText => TextTranslator.Translate("ContactInfo.NewPasswordConfirmLabel");
         public string UpdatePasswordText => TextTranslator.Translate("ContactInfo.UpdatePassword");
         public string CurrentPasswordPlaceholderText => TextTranslator.Translate("ContactInfo.CurrentPasswordPlaceholder");
         public string NewPasswordPlaceholderText => TextTranslator.Translate("ContactInfo.NewPasswordPlaceholder");
