@@ -254,7 +254,14 @@ $(document).ready(function() {
 
 
     var accountUpdatePassController = new FormController();
-    accountUpdatePassController.watchForm('.form-update-account-pass');
+    accountUpdatePassController.watchForm(
+		'.form-update-account-pass',
+		function(form, context, evt) {
+			$(form).find('input, select, textarea').each(function() {
+				$(this).val('');
+			});
+		}
+	);
 
     var accountUpdateContactController = new FormController();
     accountUpdateContactController.watchForm('.form-update-account-contact', function(form, context, evt) {
