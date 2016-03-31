@@ -85,7 +85,7 @@
 			// 
 			this.uxMobileError.AutoSize = true;
 			this.uxMobileError.ForeColor = System.Drawing.Color.Red;
-			this.uxMobileError.Location = new System.Drawing.Point(16, 587);
+			this.uxMobileError.Location = new System.Drawing.Point(15, 861);
 			this.uxMobileError.MaximumSize = new System.Drawing.Size(250, 0);
 			this.uxMobileError.Name = "uxMobileError";
 			this.uxMobileError.Size = new System.Drawing.Size(0, 13);
@@ -325,7 +325,7 @@
 			this.Controls.Add(this.uxInsertIFrame);
 			this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
 			this.Name = "IFrameControl";
-			this.Size = new System.Drawing.Size(330, 861);
+			this.Size = new System.Drawing.Size(330, 885);
 			this.Load += new System.EventHandler(this.IFrameControl_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
