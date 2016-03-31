@@ -47,9 +47,9 @@ namespace InformaSitecoreWord.Util
 				{
 					var link = new XElement("a");
 					link.SetAttributeValue("href", "");
-					link.SetAttributeValue("target", "_blank");
-					link.SetAttributeValue("onclick", "window.open($(this).data('table-url')); return false;");
-					link.Value = " Open Media";
+					link.SetAttributeValue("class", "iframe-component__desktop-showcase-link");
+					link.SetAttributeValue("onclick", "window.open($(this).data('mediaid')); return false;");
+					link.Value = "Open Media";
 					return link;
 				}
 
