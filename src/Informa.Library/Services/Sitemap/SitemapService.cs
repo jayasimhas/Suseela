@@ -77,10 +77,23 @@ namespace Informa.Library.Services.Sitemap
                 {
                     url = itm.Canonical_Link?.Url;
                 }
-                catch (ArgumentOutOfRangeException ex)
+                catch (Exception ex)
                 {
-                    url = itm._Url;
+                    
                 }
+
+                if (string.IsNullOrEmpty(url))
+                {
+                    try
+                    {
+                        url = itm._Url;
+                    }
+                    catch (Exception ex)
+                    {
+                        
+                    }
+                }
+
                 if (string.IsNullOrEmpty(url))
                     continue;
 
