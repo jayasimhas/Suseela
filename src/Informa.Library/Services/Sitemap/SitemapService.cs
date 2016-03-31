@@ -76,7 +76,16 @@ namespace Informa.Library.Services.Sitemap
                 lastNode.AppendChild(urlNode);
                 
                 //create location
-                string pageUrl = itm.Canonical_Link?.Url ?? itm._Url;
+                string url = string.Empty;
+                try
+                {
+                    url = itm.Canonical_Link?.Url;
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    url = itm._Url;
+                }
+                string pageUrl = url;
                 if (pageUrl.StartsWith("/"))
                     pageUrl = $"{domain}{pageUrl}";
                 urlNode.AppendChild(MakeNode(doc, "loc", pageUrl));
