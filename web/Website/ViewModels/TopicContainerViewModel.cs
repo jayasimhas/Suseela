@@ -26,7 +26,7 @@ namespace Informa.Web.ViewModels
 		public ILinkable Link => new LinkableModel
 		{
 			LinkableText = TextTranslator.Translate("Topic.Explore"),
-			LinkableUrl = GlassModel?.Navigation_Link?.Url
-		};
+			LinkableUrl = $"{GlassModel?.Navigation_Link?.Url}{GlassModel?.Navigation_Link?.Query}"
+        };
 	}
 }
