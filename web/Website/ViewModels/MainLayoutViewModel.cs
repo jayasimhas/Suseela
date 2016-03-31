@@ -47,7 +47,7 @@ namespace Informa.Web.ViewModels
 			ICorporateAccountNameContext corporateAccountNameContext,
 			ISalesforceFindUserProfile salesforceFindUserProfile,
 			IEntitlementAccessLevelContext entitlementAccessLevelContext,
-			UserSubscriptionsContext userSubscriptionsContext)
+			IUserSubscriptionsContext userSubscriptionsContext)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
