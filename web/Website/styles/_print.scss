@@ -13,13 +13,14 @@
 
     body {
         width: 100%;
+        max-width: 100%;
     }
 
     @page {
-        margin-top: 0.5in;
-        margin-bottom: 0.5in;
-        margin-left: 0.5in;
-        margin-right: 0.5in;
+        margin-top: 0.75in;
+        margin-bottom: 0.75in;
+        margin-left: 0.75in;
+        margin-right: 0.75in;
     }
 
     // Hide this stuff.
@@ -36,6 +37,7 @@
     .header__logo,
     .pop-out__trigger,
     .js-pop-out-trigger,
+    .debugToolbar,
     footer {
         display: none;
     }
@@ -47,6 +49,9 @@
     header,
     main {
         height: auto;
+        margin-left: 0;
+        width: 100%;
+        max-width: 100%;
     }
 
     header {
@@ -59,6 +64,12 @@
         margin: 0;
         position: relative;
         top: 0px;
+        max-width: 100%;
+    }
+    .main__wrapper {
+        margin-left: 0;
+        padding-left: 0;
+        width: 100%;
     }
 
     .header__wrapper {
@@ -83,6 +94,7 @@
     }
 
     .boxout-print-info {
+        @include textMix('Roboto', 0.875rem, 400);
         display: block;
         height: auto;
         flex: 0 0 auto;
@@ -92,11 +104,14 @@
     }
 
     .boxout-print-info.footer {
-        margin-left:0;
-        right:20%;
-        position:relative;
+        margin: 0px auto 0.5in;
+        margin-right: auto;
+        float: none;
     }
 
+    .article-prologue {
+        margin-bottom: 1.5rem;
+    }
     .article-tags-bar a,
     .article-tags-bar a:nth-last-child(3):first-child {
         width: unset;
@@ -107,30 +122,47 @@
         width: unset;
     }
 
-    /*.header__wrapper {
-        border: 0;
-        height: auto;
-        padding-left: 0;
-        padding-right: 0;
-        display: flex;
-        flex-flow: row;
-        background-color: green;
-    }*/
+    .article-author,
+    .article-sidebar {
+        background: none;
+        border: 1px solid $color-light-gray;
+        border-top-width: 2px;
+    }
 
-    /*.article-prologue__tags-bar {
+    .article-sidebar {
+        border-top-width: 4px;
+    }
+
+    .article-tags-bar {
         background: none;
         padding-left: 0;
     }
 
+
     .article-left-rail {
-        width: calc(65% - 1rem);
+        width: 100%;
+        max-width: 100%;
     }
 
     .article-right-rail {
-        width: calc(30% - 1rem);
-    }*/
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .article-executive-summary p {
+        line-height: 1.5rem;
+    }
+    .article-body-content table:not(.article-table--mobile-link) {
+        display: block;
+        max-width: 100% !important;
+    }
+
+    .article-body-content table.article-table--mobile-link {
+        display: none;
+    }
+
     /*
-   
+
     //.header__logo {
       //  margin-left: 0;
 //        height: 0.55in;
@@ -144,7 +176,7 @@
         //}
     //}
 
-   
+
 
   */
 }
