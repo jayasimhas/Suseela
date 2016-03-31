@@ -119,10 +119,11 @@
     <footer>
         @{ Html.RenderPartial("_Footer", Model.Footer);}
     </footer>
+    
     @* If this is an Article page... *@
     <div class="boxout-print-info footer">
         <p>@Model.PrintPageHeaderMessage</p>
-        <p>@Model.PrintedByText &nbsp; <b>@Model.UserName @(string.IsNullOrEmpty(Model.UserName) || string.IsNullOrEmpty(Model.CorporateName) ? string.Empty : ",") @Model.CorporateName</b></p>
+        <p>@Model.PrintedByText <b>@Model.UserName @(string.IsNullOrEmpty(Model.UserName) || string.IsNullOrEmpty(Model.CorporateName) ? string.Empty : ",") @Model.CorporateName</b></p>
     </div>
     @* end pseudo-if *@
 

@@ -15,7 +15,7 @@
             @Html.Glass().Editable(x => x.GlassModel.Navigation_Text)
         }
         else {
-            <a class="topic-subtopic__header-explore-link" href="@Model.Link.LinkableUrl">@Model.Link.LinkableText</a>
+            <a class="topic-subtopic__header-explore-link" href="@HttpUtility.UrlDecode(Model.Link.LinkableUrl)">@Model.Link.LinkableText</a>
         }
     </h1>
 	@Html.Sitecore().DynamicPlaceholder("two-column-curated")

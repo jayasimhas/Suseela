@@ -1,7 +1,7 @@
 ﻿function newsletterSignupController() {
 
     this.checkForUserSignedUp = function(){
-        $.get('/api/PreferencesApi/IsUserSignedUp', function(response)
+        $.get('/Account/api/PreferencesApi/IsUserSignedUp', function(response)
         {
             var res = response;
             if(response)
