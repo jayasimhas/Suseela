@@ -41,7 +41,10 @@ function loginController(requestVerificationToken) {
 
 						var result ={};
 						$.extend(result,analytics_data,loginAnalytics);
-						utag.link(result);
+				        //  utag.link({
+				        //    result
+				        //});
+
 
 						if (successCallback) {
 							successCallback(triggerElement);
@@ -62,7 +65,10 @@ function loginController(requestVerificationToken) {
 						};
 				        var result ={};
 				        $.extend(result,analytics_data,loginAnalytics);
-				        utag.link(result);
+				        //  utag.link({
+				        //    result
+				        //});
+
 						
 						if (response.redirectUrl) {
 							window.location.href = response.redirectUrl;

@@ -50,9 +50,7 @@ namespace Informa.Web.Areas.Account.Controllers
 		{
 			var userNewsletterOptIns = new List<INewsletterUserOptIn>() { NewsletterUserOptInFactory.Create(NewsletterType.Scrip,true) };
 			var nResp = NewsletterOptIn.Update(userNewsletterOptIns, userName);
-			var oResp = OffersOptIn.Update(userName,false);
-			var success = nResp && oResp;
-	    	return success;
+			return nResp;
 		}
 
 		[HttpGet]

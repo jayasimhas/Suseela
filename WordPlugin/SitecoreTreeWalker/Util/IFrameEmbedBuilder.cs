@@ -11,7 +11,7 @@ namespace InformaSitecoreWord.Util
 {
 	public class IFrameEmbedBuilder
 	{
-		
+
 		public const string MobileMessage =
 				"You have not provided a mobile view, your IFrame will appear as a link to a new window in mobile. To provide a mobile view replace this text with your code.";
 
@@ -22,30 +22,38 @@ namespace InformaSitecoreWord.Util
 		protected OptimizedCharacterStyleTransformer Transformer;
 
 
-		public static XElement Parse(Paragraph paragraph, string cssClass)
+		public static XElement Parse(Paragraph paragraph, string cssClass, bool isMobile = false)
 		{
 
-			return GetIFrameElement(paragraph.Range.Text, cssClass);
+			return GetIFrameElement(paragraph.Range.Text, cssClass, isMobile);
 
 		}
 
 
 
-		private static XElement GetIFrameElement(string embed,string cssClass)
+		private static XElement GetIFrameElement(string embed, string cssClass, bool isMobile)
 		{
 			//use html agilty pack to fill in all empty attributes and correct broken html
-				string html = string.Format("<html><head></head><body>{0}</body></html>", embed);
-				HtmlDocument doc = new HtmlDocument();
-				doc.LoadHtml(html);
-				HtmlNode embedNodeParent = doc.DocumentNode.SelectSingleNode("//body");
-			
+			string html = string.Format("<html><head></head><body>{0}</body></html>", embed);
+			HtmlDocument doc = new HtmlDocument();
+			doc.LoadHtml(html);
+			HtmlNode embedNodeParent = doc.DocumentNode.SelectSingleNode("//body");
+
 			var embedNode = embedNodeParent.ChildNodes[0];
 
 			if (embedNode != null)
 			{
-				
+				if (isMobile && embedNode.Attributes["src"] == null)
+				{
+					var link = new XElement("a");
+					link.SetAttributeValue("href", "");
+					link.SetAttributeValue("target", "_blank");
+					link.SetAttributeValue("onclick", "window.open($(this).data('table-url')); return false;");
+					link.Value = " Open Media";
+					return link;
+				}
 
-				if (embedNode.Attributes["src"] !=null 
+				if (embedNode.Attributes["src"] != null
 					&& (embedNode.Attributes["src"].Value.StartsWith("https:") || embedNode.Attributes["src"].Value.StartsWith("//")))
 				{
 					embedNode.SetAttributeValue("class", String.Format(cssClass));
@@ -58,7 +66,7 @@ namespace InformaSitecoreWord.Util
 			}
 			var removedInsecure = new XElement("div");
 			removedInsecure.Add(new XAttribute("data-ewf-note", "iframe-removed-insecure"));
-		    removedInsecure.Value = string.Empty;
+			removedInsecure.Value = string.Empty;
 			return removedInsecure;
 		}
 
@@ -68,22 +76,23 @@ namespace InformaSitecoreWord.Util
 			{
 				if (!IsAllowed(root)) return null;
 				XElement rootXEl = new XElement(root.Name);
-				if(!String.IsNullOrEmpty(root.InnerText.Trim()))
+				if (!String.IsNullOrEmpty(root.InnerText.Trim()))
 				{
 					rootXEl.Value = root.InnerText;
-				}else
+				}
+				else
 				{
 					//add hidden div so that i frame/embed doesn't get dropped
 					var hiddendiv = new XElement("div");
-					hiddendiv.Add(new XAttribute("style","display:none;"));
+					hiddendiv.Add(new XAttribute("style", "display:none;"));
 					hiddendiv.Value = "&nbsp;";
 					rootXEl.Add(hiddendiv);
 				}
-				
+
 				foreach (var attribute in root.Attributes)
 				{
 					rootXEl.Add(new XAttribute(attribute.Name, attribute.Value));
-					
+
 				}
 
 				foreach (HtmlNode node in root.ChildNodes)
@@ -104,8 +113,8 @@ namespace InformaSitecoreWord.Util
 		private static bool IsAllowed(HtmlNode node)
 		{
 			return (!node.Name.StartsWith("#") && !String.Equals(node.Name, "script")
-			        && !String.Equals(node.Name, "form")
-			        && !String.Equals(node.Name, "style") && !String.Equals(node.Name, "link"));
+					&& !String.Equals(node.Name, "form")
+					&& !String.Equals(node.Name, "style") && !String.Equals(node.Name, "link"));
 		}
 	}
 }

@@ -24,14 +24,18 @@ $('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
 $('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
     $(e.target).parents('.js-toggle-menu-section').trigger('click');
 });
-$('.click-logout').on('click', function(e){
+
+$('.click-logout').on('click', function(e) {
     var eventDetails = {
         event_name: "logout"
     };
     var result = {};
     $.extend(result, analytics_data, eventDetails);
-    utag.link(result);
+    //  utag.link({
+    //    result
+    //});
 });
+
 /* Toggle header search box (tablets/smartphones) */
 $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
     var searchTerm = $('.header-search__field').val();
@@ -43,6 +47,7 @@ $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
     var result = {};
     $.extend(result, analytics_data, eventDetails);
     utag.link(result);
+
 
     if($(window).width() <= 800) {
         $('.header-search__wrapper').toggleClass('is-active').focus();
