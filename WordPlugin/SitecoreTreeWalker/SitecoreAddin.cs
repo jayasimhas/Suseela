@@ -252,8 +252,8 @@ namespace InformaSitecoreWord
                     Trace.WriteLine("Exepction detail: " + ex.Message);
                     Trace.WriteLine(ex.StackTrace);
 
-                    string fileName = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "ElsevierWordPlugin\\";
-                    fileName += "elsevier_word_addin_" + DateTime.Now.ToString("_yyyyMMdd") + ".log";
+                    string fileName = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "InformaWordPlugin\\";
+                    fileName += "informa_word_addin_" + DateTime.Now.ToString("_yyyyMMdd") + ".log";
 
                     var fi = new FileInfo(fileName);
                     if (fi.Directory != null && !fi.Directory.Exists)

@@ -48,8 +48,6 @@ namespace InformaSitecoreWord
         public static string ArticleNumber = "ArticleNumber";
         public static string Editor = "Editor";
         public static string HYPERLINK_STYLE = "hyperlinkStyle";
-        public static string INDUSTRY_PATH = "/sitecore/content/Elsevier Settings/Taxonomy/Industries";
-        public static string ENTITY_PATH = "/sitecore/content/Elsevier Settings/Taxonomy/Entities";
         public static string Entities = "Entities";
         public static string Industries = "Industries";
 
