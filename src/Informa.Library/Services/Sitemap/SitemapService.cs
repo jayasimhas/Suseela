@@ -70,13 +70,6 @@ namespace Informa.Library.Services.Sitemap
             {
                 if (itm == null)
                     continue;
-
-                //set pointer
-                XmlNode lastNode = doc.LastChild;
-
-                //create new node
-                XmlNode urlNode = MakeNode(doc, "url");
-                lastNode.AppendChild(urlNode);
                 
                 //create location
                 string url = string.Empty;
@@ -94,6 +87,13 @@ namespace Informa.Library.Services.Sitemap
                 string pageUrl = url;
                 if (pageUrl.StartsWith("/"))
                     pageUrl = $"{domain}{pageUrl}";
+
+                //set pointer
+                XmlNode lastNode = doc.LastChild;
+
+                //create new node
+                XmlNode urlNode = MakeNode(doc, "url");
+                lastNode.AppendChild(urlNode);
                 urlNode.AppendChild(MakeNode(doc, "loc", pageUrl));
             }
 
