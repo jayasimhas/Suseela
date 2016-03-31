@@ -19,15 +19,15 @@ CallToAction.Register.Title
 ----version----
 language: en
 version: 1
-revision: 4b2f9e60-d9ec-4fb6-99ad-7b808d37a013
+revision: 4770b9a1-d046-4427-8d7e-ce0cff5a50c0
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 27
+content-length: 13
 
-CallToAction.Register.Title
+New to SCRIP?
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,18 +48,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-4b2f9e60-d9ec-4fb6-99ad-7b808d37a013
+4770b9a1-d046-4427-8d7e-ce0cff5a50c0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160317T213623Z
+20160331T143344Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 18
+content-length: 14
 
-extranet\Anonymous
+sitecore\admin

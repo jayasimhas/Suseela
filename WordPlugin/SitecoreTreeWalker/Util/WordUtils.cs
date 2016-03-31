@@ -551,6 +551,7 @@ namespace InformaSitecoreWord.Util
                     if (!previousWasIFrame)
                     {
                         iframeGroupId = Guid.NewGuid().ToString("N");
+
                         previousWasIFrame = true;
                         iframeGroupElement.SetAttributeValue("class", "iframe-component");
                     }
@@ -561,7 +562,8 @@ namespace InformaSitecoreWord.Util
                         desktopCodeFound = true;
                         cssStyle = String.Format("ewf-desktop-iframe_{0}", iframeGroupId);
                         iframeElement.SetAttributeValue("class", $"iframe-component__desktop {cssStyle}");
-                    }
+						iframeElement.SetAttributeValue("data-mediaid", iframeGroupId);
+					}
 
                     if (style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
                     {
@@ -575,17 +577,21 @@ namespace InformaSitecoreWord.Util
 
                     currentContainsInvalidNodes = HTMLTools.ContainsForExternalNodes(paragraph.Range.Text);
                     containsInvalidNodes = containsInvalidNodes || currentContainsInvalidNodes;
-                    XElement embedElement = IFrameEmbedBuilder.Parse(paragraph, cssStyle);
+                    XElement embedElement = IFrameEmbedBuilder.Parse(paragraph, cssStyle, true);
                     if (embedElement != null)
                     {
                         iframeElement.SetAttributeValue("data-embed-link", "enabled");
                         iframeElement.Add(embedElement);
                         iframeGroupElement.Add(iframeElement);
                     }
-                    if (style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
-                        xData.Add(iframeGroupElement);
+	                if (style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
+	                {
+		                xData.Add(iframeGroupElement);
+						iframeGroupElement = new XElement("div");
+						iframeGroupElement.SetAttributeValue("class", "iframe-component");
+					}
 
-                    previousIFrameStyle = style.NameLocal;
+	                previousIFrameStyle = style.NameLocal;
                     continue;
                 }
 

@@ -54,7 +54,9 @@ namespace Informa.Library.User
             if (User.IsAuthenticated)
             {
                 //Get from Session
-                yield return UserSession.Get<IList<IEntitlement>>(EntitlementSessionKey);
+                var sessionValue = UserSession.Get<IList<IEntitlement>>(EntitlementSessionKey);
+                if(sessionValue != null)
+                    yield return sessionValue;
                 //Get from Salesforce
                 yield return
                     GetUserEntitlements.GetEntitlements(User.LocalName, UserIpAddressContext.IpAddress.ToString());
