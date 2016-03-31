@@ -30,7 +30,9 @@ $('.click-logout').on('click', function(e){
     };
     var result = {};
     $.extend(result, analytics_data, eventDetails);
-    utag.link(result);
+    //  utag.link({
+    //    result
+    //});
 });
 /* Toggle header search box (tablets/smartphones) */
 $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
@@ -42,7 +44,10 @@ $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
 
     var result = {};
     $.extend(result, analytics_data, eventDetails);
-    utag.link(result);
+    //  utag.link({
+    //    result
+    //});
+
 
     if($(window).width() <= 800) {
         $('.header-search__wrapper').toggleClass('is-active').focus();
@@ -357,7 +362,6 @@ $(document).ready(function() {
             var utagInfo = '{"event_name"="topic-jump-to-link-click","topic-name"="'+text+'"}';
             linkList.append('<a href="#' + id + '" class="click-utag" data-info='+text+'>' + text + '</a>');
         });
-    });
 
     // Display the Forgot Password block when "forgot your password" is clicked
     $('.js-show-forgot-password').on('click', function toggleForgotPass() {
@@ -540,7 +544,9 @@ $(document).ready(function() {
         }
         var result = {};
         $.extend(result, analytics_data, preferencesData);
-        utag.link(result);
+        utag.link({
+                result
+            });
 
     });
 

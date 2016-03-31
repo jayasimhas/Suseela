@@ -394,10 +394,31 @@ namespace Informa.Web.ViewModels
 		{
 			get { return EntitlementAccessLevelContext.GetEntitledProductStatus(); }
 		}
-		
+
 		public string Subscribed_Products
 		{
 			get { return UserSubscriptionsContext.GetSubscribed_Products(); }
+		}
+
+		public string User_Company
+		{
+			get { return (SfUserProfile != null ? SfUserProfile.Company : string.Empty); }
+		}
+
+		public string User_Industry
+		{
+			get
+			{
+				return (SfUserProfile != null ? SfUserProfile.JobIndustry : string.Empty);
+			}
+		}
+
+		public string User_Email
+		{
+			get
+			{
+				return (SfUserProfile != null ? SfUserProfile.Email : string.Empty);
+			}
 		}
 		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	}
