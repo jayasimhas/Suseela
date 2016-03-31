@@ -68,6 +68,9 @@ namespace Informa.Library.Services.Sitemap
             //append an xml node for each item
             foreach (I___BasePage itm in items)
             {
+                if (itm == null)
+                    continue;
+
                 //set pointer
                 XmlNode lastNode = doc.LastChild;
 
