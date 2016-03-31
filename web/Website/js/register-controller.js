@@ -35,6 +35,10 @@ function loginController(requestVerificationToken) {
 					        var registerAnalytics = {"event_name":"register-step-1","registration_state":"successful","userName":'"'+inputData.username+'"'};
 					        var result ={};
 					        $.extend(result,analytics_data,registerAnalytics);
+					        //  utag.link({
+					        //    result
+					        //});
+
 							if (successCallback) {
 								successCallback(triggerElement);
 							}
@@ -52,6 +56,10 @@ function loginController(requestVerificationToken) {
 							var registerAnalytics = {"event_name":"register-step-1","registration_state":"unsuccessful","userName":'"'+inputData.username+'"'};
 							var result ={};
 							$.extend(result,analytics_data,registerAnalytics);
+					        //  utag.link({
+					        //    result
+					        //});
+
 							var specificErrorDisplayed = false;
 
 							if (response.reasons && response.reasons.length > 0) {
