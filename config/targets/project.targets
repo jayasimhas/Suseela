@@ -31,8 +31,8 @@
 				<include name="${dir.test}/**/*.template" />				
 				<include name="${dir.tools}/**/*.template" />						
 				<include name="${dir.wordplugin}/**/*.template" />	
-				<!-- <include name="${dir.tools}/vagrant/**/*.template" /> --> <!-- Added (for Vagrant)-->
-				<!-- <include name="${dir.tools}/copysauce/**/*.template" /> --> <!-- Added (for CopySauce)-->
+				<include name="${dir.tools}/vagrant/**/*.template" /> <!-- Added (for Vagrant)-->
+				<include name="${dir.web}/*.template" /> <!-- Added (for CopySauce)-->
 				<include name="*.template" /> <!-- root directory -->
 			</fileset>
 		</nvelocity>
