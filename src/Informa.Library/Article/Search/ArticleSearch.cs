@@ -204,12 +204,13 @@ namespace Informa.Library.Article.Search
 						str.Append("'");
 						str.Append(taxonomyItem.Item_Name);
 						str.Append("'");
-						if (!taxonomyItem.Equals(lastItem))
+						if (taxonomyItems.Count() > 1 && !taxonomyItem.Equals(lastItem))
 						{
 							str.Append(",");
 						}
 					}
 					str.Append("]");
+					return str.ToString();
 				}
 			}
 

@@ -1,6 +1,7 @@
 ﻿using Informa.Library.Subscription.User;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Linq;
+using System.Text;
 
 namespace Informa.Library.User.Entitlement
 {
@@ -37,14 +38,60 @@ namespace Informa.Library.User.Entitlement
 			{
 				return EntitledAccessLevel.Individual;
 			}
-			//return EntitledAccessLevel.Corporate;
-
-			if (AuthenticatedIPContext.Entitlements.Any(p => p.ProductCode == entitlement.ProductCode))
+	    	if (AuthenticatedIPContext.Entitlements.Any(p => p.ProductCode == entitlement.ProductCode))
 			{
 				return EntitledAccessLevel.TransparentIP;
 			}
-
 			return EntitledAccessLevel.UnEntitled;
+		}
+
+		public string GetEntitledProducts()
+		{
+			var entitlementList = UserEntitlementsContext.Entitlements;
+			if (entitlementList != null)
+			{
+				StringBuilder strEntitledProducts = new StringBuilder();
+				var lastEntitlement = entitlementList.LastOrDefault();
+				strEntitledProducts.Append("[");
+				foreach (var entitlement in entitlementList)
+				{
+					strEntitledProducts.Append("'");
+					strEntitledProducts.Append(entitlement.ProductCode);
+					strEntitledProducts.Append("'");
+					if (entitlementList.Count() > 1 && !lastEntitlement.Equals(entitlement))
+					{
+						strEntitledProducts.Append(",");
+					}
+				}
+				strEntitledProducts.Append("]");
+				return strEntitledProducts.ToString();
+			}
+			return string.Empty;
+		}
+
+		public string GetEntitledProductStatus()
+		{
+			var entitlementList = UserEntitlementsContext.Entitlements;
+			if (entitlementList != null)
+			{
+				StringBuilder strEntitledProducts = new StringBuilder();
+				var lastEntitlement = entitlementList.LastOrDefault();
+				strEntitledProducts.Append("[");
+				foreach (var entitlement in entitlementList)
+				{
+					var entitledStatus = Determine(entitlement);
+					strEntitledProducts.Append("'");
+					strEntitledProducts.Append(entitledStatus.ToString());
+					strEntitledProducts.Append("'");
+					if (entitlementList.Count() > 1 && !lastEntitlement.Equals(entitlement))
+					{
+						strEntitledProducts.Append(",");
+					}
+				}
+				strEntitledProducts.Append("]");
+				return strEntitledProducts.ToString();
+			}
+			return string.Empty;
 		}
 	}
 }
