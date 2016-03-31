@@ -32,11 +32,8 @@
 		}
 	}
 
-	.sorttable_sorted &__sort-arrows svg.sortable-table__sort-arrows--down {
-		@include svg-fill($color-cardinal-red);
-	}
-
-	.sorttable_sorted_reverse &__sort-arrows svg.sortable-table__sort-arrows--up {
+	.sorttable_sorted &__sort-arrows svg.sortable-table__sort-arrows--up,
+	.sorttable_sorted_reverse &__sort-arrows svg.sortable-table__sort-arrows--down {
 		@include svg-fill($color-cardinal-red);
 	}
 }

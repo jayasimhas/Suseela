@@ -8,11 +8,27 @@
         margin: 0px auto;
     }
 
+    &__desktop-showcase-link {
+        @include textMix('Roboto', inherit, 400);
+        cursor: pointer;
+        display: none;
+
+        &:after {
+            content: "›";
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+    }
+
     @include breakpoint('small') {
     		&__mobile iframe,
 			&__desktop iframe {
 				max-width: 100%;
 				height: auto;
 			}
+
+            &__desktop-showcase-link {
+                display: block;
+            }
     }
 }

@@ -97,7 +97,7 @@ var renderIframeComponents = function() {
             return;
         }
 
-        if($(window).width() <= 480 && mobileEmbedLink) {
+        if($(window).width() <= 480) {
             mobileEmbed.show();
             desktopEmbed.hide();
             if(mobileEmbed.html() == '') {
@@ -110,6 +110,19 @@ var renderIframeComponents = function() {
                 desktopEmbed.html(desktopEmbed.data('embed-link'));
             }
         }
+
+        var desktopMediaId = $(elm).find('.iframe-component__desktop').data("mediaid");
+
+        var url = window.location.href;
+        url.replace("#", "");
+        if (url.indexOf("?") < 0) {
+            url += "?";
+        } else {
+            url += "&";
+        }
+
+        url += "mobilemedia=true&selectedid=" + desktopMediaId;
+        $(elm).find('.iframe-component__mobile a').data('mediaid', url).attr('href', null);
     });
 };
 
