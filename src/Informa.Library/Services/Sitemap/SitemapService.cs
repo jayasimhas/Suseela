@@ -88,6 +88,9 @@ namespace Informa.Library.Services.Sitemap
                 {
                     url = itm._Url;
                 }
+                if (string.IsNullOrEmpty(url))
+                    continue;
+
                 string pageUrl = url;
                 if (pageUrl.StartsWith("/"))
                     pageUrl = $"{domain}{pageUrl}";
