@@ -36,6 +36,7 @@
     $scope.$on('ngRepeatBroadcast1', function(ngRepeatFinishedEvent) {
         window.indexPopOuts();
         window.indexBookmarks();
+        window.autoBookmark();
     });
 
 };

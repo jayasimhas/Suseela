@@ -52,7 +52,7 @@ function loginController(requestVerificationToken) {
 
 						if($(triggerElement).data('login-redirect-url')) {
 							window.location.href = $(triggerElement).data('login-redirect-url');
-							window.location.reload(false);
+							//window.location.reload(true);
 						} else {
 							window.location.reload(false);
 						}
@@ -69,7 +69,7 @@ function loginController(requestVerificationToken) {
 				        //    result
 				        //});
 
-						
+
 						if (response.redirectUrl) {
 							window.location.href = response.redirectUrl;
 						}
