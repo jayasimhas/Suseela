@@ -43,7 +43,8 @@ namespace Informa.Web.ViewModels
 			IFooterViewModel footerViewModel,
 			ISignInPopOutViewModel signInPopOutViewModel,
 			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
-			IRegisterPopOutViewModel registerPopOutViewModel,
+            IEmailSearchPopOutViewModel emailSearchPopOutViewModel,
+            IRegisterPopOutViewModel registerPopOutViewModel,
 			IAppInsightsConfig appInsightsConfig,
 			ISiteSettings siteSettings,
 			IToolbarViewModel debugToolbar,
@@ -66,7 +67,8 @@ namespace Informa.Web.ViewModels
 			Footer = footerViewModel;
 			SignInPopOutViewModel = signInPopOutViewModel;
 			EmailArticlePopOutViewModel = emailArticlePopOutViewModel;
-			RegisterPopOutViewModel = registerPopOutViewModel;
+            EmailSearchPopOutViewModel = emailSearchPopOutViewModel;
+            RegisterPopOutViewModel = registerPopOutViewModel;
 			AppInsightsConfig = appInsightsConfig;
 			SiteSettings = siteSettings;
 			IndividualRenewalMessageInfo = renewalInfo;
@@ -91,7 +93,8 @@ namespace Informa.Web.ViewModels
 		public readonly IHeaderViewModel Header;
 		public readonly ISignInPopOutViewModel SignInPopOutViewModel;
 		public readonly IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
-		public readonly IToolbarViewModel DebugToolbar;
+	    public readonly IEmailSearchPopOutViewModel EmailSearchPopOutViewModel;
+        public readonly IToolbarViewModel DebugToolbar;
 		public readonly IRegisterPopOutViewModel RegisterPopOutViewModel;
 		public readonly IAppInsightsConfig AppInsightsConfig;
 

@@ -40,7 +40,7 @@ ar|sitecore\Article Read Access|pe|+item:read|pd|+item:read|ar|sitecore\General 
 ----version----
 language: en
 version: 1
-revision: 66250d1c-6158-4037-a8bd-1d375d9e8e7f
+revision: 4f1340ad-438d-4a0a-a96e-19c5a9985e31
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -330,9 +330,9 @@ content-length: 4
 field: {A975DEF7-AAE1-454C-B0DF-0CFEEEB2CF04}
 name: Print Logo
 key: print logo
-content-length: 79
+content-length: 128
 
-<link linktype="media" target="" id="{5F8207FA-F049-47C0-8FC5-8F6D7E808E19}" />
+<link linktype="media" target="" id="{5F8207FA-F049-47C0-8FC5-8F6D7E808E19}" mediaid="{E48C6867-1BDE-4D4A-BAAF-ED1E0305827C}" />
 ----field----
 field: {2A972374-2492-477B-BDD7-F17BC08B1C9F}
 name: Print Message
@@ -360,14 +360,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-66250d1c-6158-4037-a8bd-1d375d9e8e7f
+4f1340ad-438d-4a0a-a96e-19c5a9985e31
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160330T175436Z
+20160401T171143Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
