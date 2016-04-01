@@ -586,10 +586,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 			if (ArticleDetails.ArticleGuid == Guid.Empty)
 			{
 				articleDetailsPageSelector.UpdateFields();
+				articleStatusBar1.UpdateFields();
 			}
 			else
 			{
 				articleDetailsPageSelector.UpdateFields(ArticleDetails.ArticleGuid);
+				articleStatusBar1.UpdateFields(ArticleDetails.ArticleGuid);
 			}
 		}
 

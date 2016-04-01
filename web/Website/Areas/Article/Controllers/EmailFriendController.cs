@@ -15,6 +15,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuratio
 using Informa.Web.Areas.Article.Models.Article.EmailFriend;
 using Informa.Web.Controllers;
 using Informa.Library.Utilities.Settings;
+using log4net;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 
 namespace Informa.Web.Areas.Article.Controllers
@@ -29,11 +30,12 @@ namespace Informa.Web.Areas.Article.Controllers
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IEmailFactory EmailFactory;
 		protected readonly ISiteSettings SiteSettings;
+	    private ILog _logger;
 	    protected readonly ISitecoreService SitecoreService;
 
 		public EmailFriendController(ArticleUtil articleUtil, ITextTranslator textTranslator, ISiteRootContext siteRootContext, IEmailFactory emailFactory,
-			Func<string, ISitecoreService> sitecoreFactory, IEmailSender emailSender, IHtmlEmailTemplateFactory htmlEmailTemplateFactory, ISiteSettings siteSettings,
-            ISitecoreService sitecoreService)
+			Func<string, ISitecoreService> sitecoreFactory, IEmailSender emailSender, IHtmlEmailTemplateFactory htmlEmailTemplateFactory, 
+            ISiteSettings siteSettings, ILog logger, ISitecoreService sitecoreService)
 		{
 			EmailSender = emailSender;
 			_articleUtil = articleUtil;
@@ -43,6 +45,7 @@ namespace Informa.Web.Areas.Article.Controllers
 			SiteRootContext = siteRootContext;
 			EmailFactory = emailFactory;
 			SiteSettings = siteSettings;
+		    _logger = logger;
 		    SitecoreService = sitecoreService;
 		}
 
@@ -56,7 +59,8 @@ namespace Informa.Web.Areas.Article.Controllers
 				|| string.IsNullOrWhiteSpace(request.SenderName)
 				|| string.IsNullOrWhiteSpace(request.ArticleNumber))
 			{
-				return Ok(new
+                _logger.Warn($"Field is null");
+                return Ok(new
 				{
 					success = false
 				});
@@ -81,7 +85,8 @@ namespace Informa.Web.Areas.Article.Controllers
 				var isEmailSent = EmailSender.Send(friendEmail);
 				if (!isEmailSent)
 				{
-					result = false;
+                    _logger.Warn($"Email sender failed");
+                    result = false;
 				}
 			}
 			return Ok(new
@@ -179,7 +184,7 @@ namespace Informa.Web.Areas.Article.Controllers
 			}
 			catch (Exception ex)
 			{
-				
+				       _logger.Warn($"Email failed to send: {senderEmail}:{senderName}:{articleNumber}:{friendEmail}:{message}", ex);
 			}
 			return emailHtml;
 		}
@@ -221,7 +226,8 @@ namespace Informa.Web.Areas.Article.Controllers
                     request.ResultIDs.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries), 
                     eachEmail,
                     request.PersonalMessage,
-                    request.QueryTerm);
+                    request.QueryTerm,
+                    request.QueryUrl);
 
                 var friendEmail = new Email
                 {
@@ -244,7 +250,7 @@ namespace Informa.Web.Areas.Article.Controllers
             });
         }
 
-        public string GetEmailSearchBody(string senderEmail, string senderName, IEnumerable<string> resultIDs, string friendEmail, string message, string queryTerm)
+        public string GetEmailSearchBody(string senderEmail, string senderName, IEnumerable<string> resultIDs, string friendEmail, string message, string queryTerm, string queryUrl)
         {
             string emailHtml = string.Empty;
             try
@@ -268,7 +274,8 @@ namespace Informa.Web.Areas.Article.Controllers
                     ["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
                     ["#friend_name#"] = friendEmail,
                     ["#sender_name#"] = senderName,
-                    ["#sender_email#"] = senderEmail
+                    ["#sender_email#"] = senderEmail,
+                    ["#query_url#"] = queryUrl
                 };
 
                 if (siteRoot?.Email_Logo != null)
@@ -322,7 +329,7 @@ namespace Informa.Web.Areas.Article.Controllers
                     resultBody.Append(row);
                     j++;
                 }
-                replacements["#result_count# "] = j.ToString();
+                replacements["#result_count#"] = j.ToString();
                 replacements["#result_list#"] = resultBody.ToString();
 
                 emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);

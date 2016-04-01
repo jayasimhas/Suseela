@@ -10,7 +10,10 @@
             <div class="form--single-row">
                 <input class="inf-standard-form-field" name="userName" placeholder="@Translate.Text("Global.NewsletterSignupEmail")">
                 <div class="sign-in__submit-wrapper">
-                    <button class="button--filled newsletter-signup-submit js-newsletter-signup-submit" data-signup-url="/Account/api/PreferencesApi/SignupUser/">@Editable(x => x.GlassModel.Sign_Up_Button_Text)</button>
+                    @if(Sitecore.Context.PageMode.IsExperienceEditor) { 
+                        @Editable(x => x.GlassModel.Sign_Up_Button_Text)
+                    }
+                    <button class="button--filled newsletter-signup-submit js-newsletter-signup-submit" data-signup-url="/Account/api/PreferencesApi/SignupUser/">@Model.GlassModel.Sign_Up_Button_Text</button>
                 </div>
             </div>
             </div>
@@ -23,4 +26,3 @@
             </div>
         </div>
 }
-    @*TODO : Add user logged in condition*@
