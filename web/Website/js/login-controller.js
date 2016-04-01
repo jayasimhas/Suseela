@@ -2,10 +2,10 @@ function loginController(requestVerificationToken) {
 
 	this.addControl = function(triggerForm, successCallback, failureCallback) {
 
-		var triggerElement = $(triggerForm).find('button[type=submit]');
-
 		if (triggerForm) {
 			$(triggerForm).on('submit', (event) => {
+
+				var triggerElement = $(event.target).find('button[type=submit]');
 
 				event.preventDefault();
 
@@ -75,7 +75,7 @@ function loginController(requestVerificationToken) {
 						}
 						else {
 							if (failureCallback) {
-								failureCallback(triggerElement);
+								failureCallback(event.target);
 							}
 						}
 					}
