@@ -2,7 +2,7 @@
 
 namespace Informa.Library.SiteDebugging
 {
-	public interface ISiteDebuggingSession : ISessionStore
+	public interface ISiteDebuggingSession : ISpecificSessionStore
 	{
 
 	}

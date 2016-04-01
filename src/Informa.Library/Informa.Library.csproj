@@ -309,6 +309,9 @@
     <Compile Include="Publishing\Scheduled\ScheduledPublishingDateTime.cs" />
     <Compile Include="Rss\Utils\RssFeedUtil.cs" />
     <Compile Include="Rss\Utils\RssItemUtil.cs" />
+    <Compile Include="Session\ISpecificSessionStore.cs" />
+    <Compile Include="Session\ISpecificSessionStores.cs" />
+    <Compile Include="Session\SpecificSessionStores.cs" />
     <Compile Include="SiteDebugging\ISiteDebugger.cs" />
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
     <Compile Include="SiteDebugging\SiteDebugger.cs" />
@@ -598,8 +601,8 @@
     <Compile Include="ContentCuration\Search\ComputedIndexField\ManuallyCuratedContent.cs" />
     <Compile Include="User\Authentication\Web\WebLoginUserActions.cs" />
     <Compile Include="User\Authentication\Web\WebLoginUserResult.cs" />
-    <Compile Include="Corporate\ICorporateAccountNameContext.cs" />
-    <Compile Include="Corporate\MockCorporateAccountNameContext.cs" />
+    <Compile Include="Company\ICompanyNameContext.cs" />
+    <Compile Include="Company\CompanyNameContext.cs" />
     <Compile Include="CustomSitecore\Fields\MultiTreeList.cs" />
     <Compile Include="CustomSitecore\Mvc\AreaControllerFactory.cs" />
     <Compile Include="CustomSitecore\Mvc\CustomSitecoreHelper.cs" />
