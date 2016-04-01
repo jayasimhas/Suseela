@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--
@@ -33,7 +33,7 @@
     <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>publish\</PublishUrl>
-    <InstallUrl>https://scrip-auth.pharmamedtechbi.com/wordinstaller/</InstallUrl>
+    <InstallUrl>http://dev.ibi.velir.com/wordinstaller/</InstallUrl>
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>2.16.3.29</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
@@ -608,7 +608,6 @@
       <DependentUpon>SitecoreAddin.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
-    <None Include="SitecoreTreeWalker_1_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -723,11 +722,10 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>InformaTestCertificate.pfx</AssemblyOriginatorKeyFile>
+    <ManifestCertificateThumbprint>B1440187B71AE08BEC90E545CBFB27EC966EA3EA</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestTimestampUrl>
-    </ManifestTimestampUrl>
+    <ManifestKeyFile>InformaSitecoreWord_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
