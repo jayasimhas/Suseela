@@ -601,8 +601,8 @@
     <Compile Include="ContentCuration\Search\ComputedIndexField\ManuallyCuratedContent.cs" />
     <Compile Include="User\Authentication\Web\WebLoginUserActions.cs" />
     <Compile Include="User\Authentication\Web\WebLoginUserResult.cs" />
-    <Compile Include="Corporate\ICorporateAccountNameContext.cs" />
-    <Compile Include="Corporate\MockCorporateAccountNameContext.cs" />
+    <Compile Include="Company\ICompanyNameContext.cs" />
+    <Compile Include="Company\CompanyNameContext.cs" />
     <Compile Include="CustomSitecore\Fields\MultiTreeList.cs" />
     <Compile Include="CustomSitecore\Mvc\AreaControllerFactory.cs" />
     <Compile Include="CustomSitecore\Mvc\CustomSitecoreHelper.cs" />

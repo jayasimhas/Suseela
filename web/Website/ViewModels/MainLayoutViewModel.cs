@@ -13,9 +13,8 @@ using Informa.Library.Article.Search;
 using Informa.Library.Utilities.References;
 using System.Web;
 using Informa.Library.Globalization;
-using Informa.Library.Corporate;
+using Informa.Library.Company;
 using Informa.Library.Salesforce.User.Profile;
-using Informa.Library.User;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Subscription.User;
 
@@ -24,6 +23,16 @@ namespace Informa.Web.ViewModels
 	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
 	{
 		protected readonly ISiteRootContext SiteRootContext;
+		protected readonly ICompanyNameContext CompanyNameContext;
+		protected readonly ITextTranslator TextTranslator;
+		protected readonly ISiteSettings SiteSettings;
+		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+		protected readonly ISitecoreService Service;
+		protected readonly IArticleSearch ArticleSearch;
+		protected readonly IItemReferences ItemReferences;
+		protected readonly ISalesforceFindUserProfile SalesforceFindUserProfile;
+		protected readonly IEntitlementAccessLevelContext EntitlementAccessLevelContext;
+		protected readonly IUserSubscriptionsContext UserSubscriptionsContext;
 
 		public MainLayoutViewModel(
 			ISiteRootContext siteRootContext,
@@ -44,7 +53,7 @@ namespace Informa.Web.ViewModels
 			IArticleSearch articleSearch,
 			IItemReferences itemReferences,
 			ITextTranslator textTranslator,
-			ICorporateAccountNameContext corporateAccountNameContext,
+			ICompanyNameContext companyNameContext,
 			ISalesforceFindUserProfile salesforceFindUserProfile,
 			IEntitlementAccessLevelContext entitlementAccessLevelContext,
 			IUserSubscriptionsContext userSubscriptionsContext)
@@ -67,39 +76,30 @@ namespace Informa.Web.ViewModels
 			ArticleSearch = articleSearch;
 			ItemReferences = itemReferences;
 			TextTranslator = textTranslator;
-			CorporateAccountNameContext = corporateAccountNameContext;
+			CompanyNameContext = companyNameContext;
 			SalesforceFindUserProfile = salesforceFindUserProfile;
 			SfUserProfile = salesforceFindUserProfile.Find(authenticatedUserContext.User.Username);
 			EntitlementAccessLevelContext = entitlementAccessLevelContext;
 			UserSubscriptionsContext = userSubscriptionsContext;
 		}
 
-		private ICorporateAccountNameContext CorporateAccountNameContext;
-		private ITextTranslator TextTranslator;
-		public IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
-		public IMaintenanceViewModel MaintenanceMessage;
-		public ICompanyRegisterMessageViewModel CompanyRegisterMessage;
-		public ISideNavigationMenuViewModel SideNavigationMenu;
-		public IFooterViewModel Footer;
-		public IHeaderViewModel Header;
-		public ISignInPopOutViewModel SignInPopOutViewModel;
-		public IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
-		public IRegisterPopOutViewModel RegisterPopOutViewModel;
-		public IAppInsightsConfig AppInsightsConfig;
-		public ISiteSettings SiteSettings;
-		public IToolbarViewModel DebugToolbar;
-		public IAuthenticatedUserContext AuthenticatedUserContext;
-		private readonly ISitecoreService Service;
-		private readonly IArticleSearch ArticleSearch;
-		private readonly IItemReferences ItemReferences;
-		private readonly ISalesforceFindUserProfile SalesforceFindUserProfile;
-		private readonly IEntitlementAccessLevelContext EntitlementAccessLevelContext;
-		private readonly IUserSubscriptionsContext UserSubscriptionsContext;
+		public readonly IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
+		public readonly IMaintenanceViewModel MaintenanceMessage;
+		public readonly ICompanyRegisterMessageViewModel CompanyRegisterMessage;
+		public readonly ISideNavigationMenuViewModel SideNavigationMenu;
+		public readonly IFooterViewModel Footer;
+		public readonly IHeaderViewModel Header;
+		public readonly ISignInPopOutViewModel SignInPopOutViewModel;
+		public readonly IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
+		public readonly IToolbarViewModel DebugToolbar;
+		public readonly IRegisterPopOutViewModel RegisterPopOutViewModel;
+		public readonly IAppInsightsConfig AppInsightsConfig;
+
 		public string PrintPageHeaderLogoSrc => SiteRootContext?.Item?.Print_Logo?.Src ?? string.Empty;
 		public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
 		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
 		public string UserName => AuthenticatedUserContext.User.Name;
-		public string CorporateName => CorporateAccountNameContext.Name;
+		public string CorporateName => CompanyNameContext.Name;
 
 		public ISalesforceUserProfile SfUserProfile;
 		public string Title
