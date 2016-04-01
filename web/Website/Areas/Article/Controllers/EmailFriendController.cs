@@ -193,17 +193,16 @@ namespace Informa.Web.Areas.Article.Controllers
 
 
         [HttpPost]
-        [HttpGet]
-        public IHttpActionResult EmailSearch(string RecipientEmail, string SenderEmail, string SenderName, string PersonalMessage, string ResultIDs, string QueryTerm, string Subject)
+        public IHttpActionResult EmailSearch(EmailFriendSearchRequest request)
         {
             var siteRoot = SiteRootContext.Item;
 
-            if (string.IsNullOrWhiteSpace(RecipientEmail)
-                || string.IsNullOrWhiteSpace(SenderEmail)
-                || string.IsNullOrWhiteSpace(SenderName)
-                || string.IsNullOrWhiteSpace(PersonalMessage)
-                || string.IsNullOrEmpty(ResultIDs)
-                || string.IsNullOrEmpty(QueryTerm))
+            if (string.IsNullOrWhiteSpace(request.RecipientEmail)
+                || string.IsNullOrWhiteSpace(request.SenderEmail)
+                || string.IsNullOrWhiteSpace(request.SenderName)
+                || string.IsNullOrWhiteSpace(request.PersonalMessage)
+                || string.IsNullOrEmpty(request.ResultIDs)
+                || string.IsNullOrEmpty(request.QueryTerm))
             {
                 return Ok(new
                 {
@@ -212,22 +211,22 @@ namespace Informa.Web.Areas.Article.Controllers
             }
 
             var emailFrom = GetValue(siteRoot?.Email_From_Address);
-            var allEmails = RecipientEmail.Split(';');
+            var allEmails = request.RecipientEmail.Split(';');
             var result = true;
             foreach (var eachEmail in allEmails)
             {
                 var emailBody = GetEmailSearchBody(
-                    SenderEmail, 
-                    SenderName,
-                    ResultIDs.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries), 
-                    eachEmail, 
-                    PersonalMessage, 
-                    QueryTerm);
+                    request.SenderEmail,
+                    request.SenderName,
+                    request.ResultIDs.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries), 
+                    eachEmail,
+                    request.PersonalMessage,
+                    request.QueryTerm);
 
                 var friendEmail = new Email
                 {
                     To = eachEmail,
-                    Subject = Subject,
+                    Subject = request.Subject,
                     From = emailFrom,
                     Body = emailBody,
                     IsBodyHtml = true
