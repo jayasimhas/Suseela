@@ -40,14 +40,26 @@ namespace Informa.Library.Mail
 			{
 				replacements["#Logo_URL#"] = UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString());
 			}
-			//replacements["#Logo_URL#"] = GetValue(siteRoot?.Email_Logo?.Src);
+
 			replacements["#Date#"] = DateTime.Now.ToString("dddd, d MMMM yyyy");
 			replacements["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink();
-			replacements["#RSS_Link_Text#"] = GetValue(siteRoot?.RSS_Link?.Text);
+			if (siteRoot?.RSS_Logo != null)
+			{
+				replacements["#RssLogo#"] = UrlUtils.GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString());
+			}
+			
 			replacements["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink();
-			replacements["#LinkedIn_Link_Text#"] = GetValue(siteRoot?.LinkedIn_Link?.Text);
+			if (siteRoot?.Linkedin_Logo != null)
+			{
+				replacements["#LinkedinLogo#"] = UrlUtils.GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString());
+			}
+
 			replacements["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink();
-			replacements["#Twitter_Link_Text#"] = GetValue(siteRoot?.Twitter_Link?.Text);
+			if (siteRoot?.Twitter_Logo != null)
+			{
+				replacements["#TwitterLogo#"] = UrlUtils.GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString());
+			}
+
 			replacements["#Footer_Content#"] = GetValue(siteRoot?.Email_Footer);
 
 			emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
