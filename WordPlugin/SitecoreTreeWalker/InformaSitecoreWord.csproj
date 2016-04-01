@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--
@@ -32,11 +32,11 @@
     <TargetFrameworkProfile />
     <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>\\calypso-8yra6ecdjk6n.pharmamedtechbi.com\D%24\inetpub\wwwroot\InformaStgAuth\Website\wordinstaller\</PublishUrl>
     <InstallUrl>http://dev.ibi.velir.com/wordinstaller/</InstallUrl>
+    <PublishUrl>publish\</PublishUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>2.16.3.25</ApplicationVersion>
-    <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
+    <ApplicationVersion>2.16.3.26</ApplicationVersion>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
@@ -691,11 +691,9 @@
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <PropertyGroup>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
-    <ManifestKeyFile>InformaTestCertificate.pfx</ManifestKeyFile>
-    <ManifestCertificateThumbprint>DB8A27913558910707905A6096BA6F7B07050E24</ManifestCertificateThumbprint>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WordPlugin-Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\WordPlugin-Debug\</OutputPath>
