@@ -35,7 +35,7 @@
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl>https://scrip-auth.pharmamedtechbi.com/wordinstaller/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>2.16.3.28</ApplicationVersion>
+    <ApplicationVersion>2.16.3.29</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
