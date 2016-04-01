@@ -102,12 +102,9 @@ namespace Informa.Web.Areas.Article.Controllers
 					//["#Logo_URL#"] = GetValue(siteRoot?.Email_Logo?.Src),
 					["#Envrionment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),
 					["#Date#"] = DateTime.Now.ToString("dddd, d MMMM yyyy"),
-					["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink(),
-					["#RSS_Link_Text#"] = GetValue(siteRoot?.RSS_Link?.Text),
-					["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
-					["#LinkedIn_Link_Text#"] = GetValue(siteRoot?.LinkedIn_Link?.Text),
-					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
-					["#Twitter_Link_Text#"] = GetValue(siteRoot?.Twitter_Link?.Text),
+					["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink(),					
+					["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),					
+					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),					
 					["#friend_name#"] = friendEmail,
 					["#sender_name#"] = senderName,
 					["#sender_email#"] = senderEmail
@@ -117,6 +114,22 @@ namespace Informa.Web.Areas.Article.Controllers
 				{
 					replacements["#Logo_URL#"] = UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString());
 				}
+				
+				if (siteRoot?.RSS_Logo != null)
+				{
+					replacements["#RssLogo#"] = UrlUtils.GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString());
+				}
+				
+				if (siteRoot?.Linkedin_Logo != null)
+				{
+					replacements["#LinkedinLogo#"] = UrlUtils.GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString());
+				}
+				
+				if (siteRoot?.Twitter_Logo != null)
+				{
+					replacements["#TwitterLogo#"] = UrlUtils.GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString());
+				}
+
 				if (!string.IsNullOrEmpty(message))
 				{
 					replacements["#personal_message#"] = '"' + message + '"';
