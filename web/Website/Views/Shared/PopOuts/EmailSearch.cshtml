@@ -21,6 +21,7 @@
 		</div>
 
 		<div class="js-email-search-form-wrapper">
+
 			<p class="pop-out__details u-italic">
 				@Model.EmailFormInstructionsText
 			</p>
@@ -90,8 +91,8 @@
 
 				<textarea name="PersonalMessage" class="pop-out__input pop-out__textarea"></textarea>
 
-			    <input type="hidden" name="ResultIDs" value="">
-                <input type="hidden" name="QueryTerm" value="">
+			    <input type="hidden" name="ResultIDs" class="js-email-search-results-ids" value="">
+                <input type="hidden" name="QueryTerm" class="js-email-search-query" value="">
 
 				<div class="pop-out__form-actions-wrapper">
 					<div class="dismiss-button" data-target-element=".js-pop-out__email-search">
