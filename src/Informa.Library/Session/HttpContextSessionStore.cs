@@ -1,4 +1,5 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
+using System.Collections.Generic;
 using System.Web;
 
 namespace Informa.Library.Session
@@ -16,6 +17,21 @@ namespace Informa.Library.Session
 		public void Set<T>(string key, T obj)
 		{
 			HttpContext.Current.Session[key] = obj;
+		}
+
+		public void ClearAll(string keyStartsWith)
+		{
+			var keys = new List<string>();
+
+			foreach (string key in HttpContext.Current.Session)
+			{
+				if (key.StartsWith(keyStartsWith))
+				{
+					keys.Add(key);
+				}
+			}
+
+			keys.ForEach(k => HttpContext.Current.Session.Remove(k));
 		}
 	}
 }

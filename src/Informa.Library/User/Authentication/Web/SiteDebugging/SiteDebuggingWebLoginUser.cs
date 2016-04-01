@@ -1,4 +1,5 @@
-﻿using Informa.Library.SiteDebugging;
+﻿using Informa.Library.Session;
+using Informa.Library.SiteDebugging;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Authentication.Web.SiteDebugging
@@ -8,17 +9,20 @@ namespace Informa.Library.User.Authentication.Web.SiteDebugging
 	{
 		private const string DebugWebLoginUserKey = "WebLoginUser";
 
+		protected readonly ISpecificSessionStores SessionStores;
 		protected readonly IFindUserByEmail FindUser;
 		protected readonly IWebLoginUser LoginUser;
 		protected readonly IWebLogoutUser LogoutUser;
 		protected readonly ISiteDebugger SiteDebugger;
 
 		public SiteDebuggingWebLoginUser(
+			ISpecificSessionStores sessionStores,
 			IFindUserByEmail findUser,
 			IWebLoginUser loginUser,
 			IWebLogoutUser logoutUser,
 			ISiteDebugger siteDebugger)
 		{
+			SessionStores = sessionStores;
 			FindUser = findUser;
 			LoginUser = loginUser;
 			LogoutUser = logoutUser;
@@ -48,6 +52,7 @@ namespace Informa.Library.User.Authentication.Web.SiteDebugging
 
 		public void StopDebugging()
 		{
+			SessionStores.Clear();
 			LogoutUser.Logout();
 			SiteDebugger.StopDebugging(DebugWebLoginUserKey);
 		}

@@ -12,7 +12,7 @@ function formController(requestVerificationToken) {
             this.hideErrors(form); // Reset any visible errors
 
             // Prevent user from re-submitting form
-			$(formSubmit).attr('disabled', 'disabled');
+			$(event.target).attr('disabled', 'disabled');
 
 			var inputData = {};
 

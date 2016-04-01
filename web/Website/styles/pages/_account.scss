@@ -165,4 +165,14 @@
             margin-bottom: 2rem;
         }
     }
+
+    &__sign-in-solo {
+        @include textMix('Roboto', 0.875rem, 400);
+        margin: 0px auto;
+        width: 50%;
+
+        @include breakpoint('small') {
+            width: 100%;
+        }
+    }
 }

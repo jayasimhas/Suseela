@@ -7,7 +7,7 @@ namespace Informa.Library.Services.NlmExport.Models.Front.Article
     [Serializable]
     public class NlmRelatedArticleModel
     {
-        [XmlAttribute("article-type")]
+        [XmlAttribute("related-article-type")]
         public string ArticleType { get; set; }
 
         [XmlAttribute("href", Namespace = "http://www.w3.org/1999/xlink")]

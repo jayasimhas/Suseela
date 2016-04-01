@@ -24,7 +24,8 @@ $('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
 $('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
     $(e.target).parents('.js-toggle-menu-section').trigger('click');
 });
-$('.click-logout').on('click', function(e){
+
+$('.click-logout').on('click', function(e) {
     var eventDetails = {
         event_name: "logout"
     };
@@ -32,6 +33,7 @@ $('.click-logout').on('click', function(e){
     $.extend(result, analytics_data, eventDetails);
     utag.link(result);
 });
+
 /* Toggle header search box (tablets/smartphones) */
 $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
     var searchTerm = $('.header-search__field').val();
@@ -43,6 +45,7 @@ $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
     var result = {};
     $.extend(result, analytics_data, eventDetails);
     utag.link(result);
+
 
     if($(window).width() <= 800) {
         $('.header-search__wrapper').toggleClass('is-active').focus();
@@ -74,8 +77,8 @@ var showForgotPassSuccess = function() {
 };
 
 // Toggle the sign-in error message displayed to a user
-var toggleSignInError = function() {
-    $('.pop-out__form-error').show();
+var toggleSignInError = function(form) {
+    $(form).closest('.js-login-container').find('.pop-out__form-error').show();
     //$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
 };
 
@@ -92,7 +95,7 @@ var renderIframeComponents = function() {
             return;
         }
 
-        if($(window).width() <= 480 && mobileEmbedLink) {
+        if($(window).width() <= 480) {
             mobileEmbed.show();
             desktopEmbed.hide();
             if(mobileEmbed.html() == '') {
@@ -105,6 +108,19 @@ var renderIframeComponents = function() {
                 desktopEmbed.html(desktopEmbed.data('embed-link'));
             }
         }
+
+        var desktopMediaId = $(elm).find('.iframe-component__desktop').data("mediaid");
+
+        var url = window.location.href;
+        url.replace("#", "");
+        if (url.indexOf("?") < 0) {
+            url += "?";
+        } else {
+            url += "&";
+        }
+
+        url += "mobilemedia=true&selectedid=" + desktopMediaId;
+        $(elm).find('.iframe-component__mobile a').data('mediaid', url).attr('href', null);
     });
 };
 
@@ -156,30 +172,34 @@ $(document).ready(function() {
     indexBookmarks();
 
     // Check for any articles to immediately bookmark
-    var autoBookmark = function(article) {
-        $('.js-bookmark-article').each(function(indx, item) {
-            if($(item).data('bookmark-id') === article
-                && !$(item).data('is-bookmarked')) {
+    window.autoBookmark = function() {
 
-                $(item).click();
+        var bookmarkTheArticle = function(article) {
+            $('.js-bookmark-article').each(function(indx, item) {
+                if($(item).data('bookmark-id') === article
+                    && !$(item).data('is-bookmarked')) {
 
-            } else {
-                // already bookmarked or not a match
-            }
-        });
-    };
+                    $(item).click();
 
+                } else {
+                    // already bookmarked or not a match
+                }
+            });
+        };
 
-    var urlVars = window.location.href.split("?");
-    var varsToParse = urlVars[1] ? urlVars[1].split("&") : null;
-    if(varsToParse) {
-        for (var i=0; i<varsToParse.length; i++) {
-            var pair = varsToParse[i].split("=");
-            if(pair[0] === 'immb') {
-                autoBookmark(pair[1]);
+        var urlVars = window.location.href.split("?");
+        var varsToParse = urlVars[1] ? urlVars[1].split("&") : null;
+        if(varsToParse) {
+            for (var i=0; i<varsToParse.length; i++) {
+                var pair = varsToParse[i].split("=");
+                if(pair[0] === 'immb') {
+                    bookmarkTheArticle(pair[1]);
+                }
             }
         }
-    }
+    };
+
+    window.autoBookmark();
 
 
     var newsletterSignup = new NewsletterSignupController();
@@ -201,8 +221,8 @@ $(document).ready(function() {
                 $(tg).data('login-redirect-url', window.location.href + sep + 'immb=' + $(tg).data('pass-article-id'));
             }
         },
-		function(triggerElement) {
-		    toggleSignInError();
+		function(triggerForm) {
+		    toggleSignInError(triggerForm);
 		}
 	);
 
@@ -556,6 +576,14 @@ $(document).ready(function() {
 
 
     var sortTheTables = new SortableTableController();
+
+
+    $('.click-utag').click(function (e) {
+        var eventDetails = $(this).data('info');
+        var result = {};
+        $.extend(result, analytics_data, eventDetails);
+        utag.link(result);
+    });
 
     // Twitter sharing JS
     window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");

@@ -12,7 +12,7 @@ templatekey: Site Root
 ----version----
 language: en
 version: 1
-revision: 5bd6bd94-9643-4c9d-909f-916f5909b74b
+revision: 5140a730-a812-4cfa-ae7f-4dcd4aca309e
 
 ----field----
 field: {89DB27D7-1FB5-4260-A219-3DAF504D76C5}
@@ -21,6 +21,27 @@ key: contact email
 content-length: 19
 
 support@informa.com
+----field----
+field: {C86C6F15-961F-45B6-BD8C-5AE71A9521C3}
+name: Twitter Logo
+key: twitter logo
+content-length: 58
+
+<image mediaid="{A07088D1-8D31-4755-A63E-48A3D996ADB0}" />
+----field----
+field: {C2BF3B90-FFA3-48AD-9B31-D0A0EAED7462}
+name: Linkedin Logo
+key: linkedin logo
+content-length: 58
+
+<image mediaid="{3D2BC2B8-A653-4EDD-BC29-AF7A569AF6F6}" />
+----field----
+field: {7857053C-1E97-4B20-AE0A-79E1EBEF08AC}
+name: RSS logo
+key: rss logo
+content-length: 58
+
+<image mediaid="{23CDBC28-15AC-48D7-8542-D073EADAA519}" />
 ----field----
 field: {E90AD04D-B62B-4118-B3FC-8C535DFED2EB}
 name: Email Title
@@ -62,14 +83,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-5bd6bd94-9643-4c9d-909f-916f5909b74b
+5140a730-a812-4cfa-ae7f-4dcd4aca309e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160306T042849Z
+20160401T150425Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

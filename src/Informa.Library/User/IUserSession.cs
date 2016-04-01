@@ -2,7 +2,7 @@
 
 namespace Informa.Library.User
 {
-	public interface IUserSession : ISessionStore
+	public interface IUserSession : ISpecificSessionStore
 	{
 	}
 }

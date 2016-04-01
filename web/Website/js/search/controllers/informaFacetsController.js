@@ -51,22 +51,14 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     $scope.savedCompanies = {};
 
     $scope.saveCompany = function($item, model, label) {
-        // console.log("selected: ", $item);
-
         $scope.savedCompanies[$item] = {
             selected: true,
             label: $item
         };
-
-        // console.log($scope.savedCompanies);
     };
 
     $scope.removeCompany = function($item, model, label) {
-        // console.log("selected: ", $item);
-
         delete $scope.savedCompanies[$item.label];
-
-        // console.log($scope.savedCompanies);
     };
 
 
@@ -76,7 +68,7 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         var routeBuilder = this.searchService.getRouteBuilder();
         _this.location.search(routeBuilder.getRoute());
         _this.searchService.query();
-       
+
         //Scroll to the top of the results when a new page is chosen
         _this.location.hash("searchTop");
         _this.anchorScroll();
@@ -221,6 +213,7 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
             }
         }
     };
+
 
     // Create placeholder values for From: and To: date values
     $scope.dateValues = {
