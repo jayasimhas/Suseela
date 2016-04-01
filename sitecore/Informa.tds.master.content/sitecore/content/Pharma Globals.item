@@ -16,10 +16,17 @@ key: __icon
 content-length: 23
 
 Apps/32x32/Umbrella.png
+----field----
+field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
+name: __Security
+key: __security
+content-length: 187
+
+ar|sitecore\Operations Access|pe|+item:rename|+item:create|+item:delete|+item:read|+item:write|ar|sitecore\Globals Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|
 ----version----
 language: en
 version: 1
-revision: d4b1fe9b-bb14-4cb5-aa33-36633eb23ead
+revision: 3f9b0988-9a2d-4947-8346-97da280e8844
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,18 +48,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d4b1fe9b-bb14-4cb5-aa33-36633eb23ead
+3f9b0988-9a2d-4947-8346-97da280e8844
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160309T163301Z
+20160401T194357Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 15
+content-length: 14
 
-sitecore\csmith
+sitecore\admin
