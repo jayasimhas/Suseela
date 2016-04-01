@@ -709,7 +709,6 @@
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
     <Compile Include="Areas\Article\Controllers\EmailFriendController.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
-    <Compile Include="Areas\Account\Controllers\SpoofController.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
