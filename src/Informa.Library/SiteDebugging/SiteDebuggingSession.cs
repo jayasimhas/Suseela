@@ -4,7 +4,7 @@ namespace Informa.Library.SiteDebugging
 {
 	public class SiteDebuggingSession : SpecificSessionStore, ISiteDebuggingSession
 	{
-		private const string DebugSessionKeyPrefix = "Debug";
+		private const string sessionStoreId = "Debug";
 
 		public SiteDebuggingSession(
 			ISessionStore sessionStore)
@@ -13,6 +13,6 @@ namespace Informa.Library.SiteDebugging
 			
 		}
 
-		public override string Prefix => DebugSessionKeyPrefix;
+		public override string Id => sessionStoreId;
 	}
 }

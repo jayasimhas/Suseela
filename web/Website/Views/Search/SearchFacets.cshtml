@@ -11,29 +11,30 @@
         }
 </script>
 
-<button
-  class="facets__mobile-button"
-  ng-model="collapsefilters"
-  ng-click="collapsefilters = !collapsefilters"
-  ng-class="{'isExpanded': collapsefilters}">
-  <h6 class="show-filters">Show Filters</h6>
-  <h6 class="hide-filters">Hide Filters</h6>
+<button class="facets__mobile-button"
+        ng-model="collapsefilters"
+        ng-click="collapsefilters = !collapsefilters"
+        ng-class="{'isExpanded': collapsefilters}">
+    <h6 class="show-filters">Show Filters</h6>
+    <h6 class="hide-filters">Hide Filters</h6>
 </button>
 
-<div
-  id="search-facet-01"
-  class="search__facets search__left-sidebar"
-  ng-class="{'isExpanded': collapsefilters}"
-  ng-controller="InformaFacetController as allFacets">
+<div    id="search-facet-01"
+        class="search__facets search__left-sidebar"
+        ng-class="{'isExpanded': collapsefilters}"
+        ng-controller="InformaFacetController as allFacets">
 
-  <div class="facets__header">
-    <h3>@Model.SearchFilterByText</h3>
-    <button class="facets__button facets__button--clear" ng-click="allFacets.clearAllFacets()">@Model.SearchClearAllText</a>
-  </div>
+    <div class="facets__header">
+        <h3>@Model.SearchFilterByText</h3>
+        <button class="facets__button facets__button--clear"
+                ng-click="allFacets.clearAllFacets()">
+            @Model.SearchClearAllText
+        </button>
+    </div>
 
-  <div class="facets__content">
+    <div class="facets__content">
 
-    <form class="facets__section" ng-repeat="group in allFacets.facetGroups">
+        <form class="facets__section" ng-repeat="group in allFacets.facetGroups">
 
         @* * * * *
         FACET — COMPANIES
@@ -51,7 +52,7 @@
           </legend>
 
 
-          <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit">
+            <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit">
               <ul ng-if="f.selected" class="facets__section-list" ng-hide="collapsefacet">
                   <li>
                       <input id="{{ group.id }}-{{ $index }}"
@@ -64,14 +65,17 @@
                           {{ f.label }}
                           <span class="facets__label-count">({{f.count}})</span>
                       </label>
+
                       <button class="facets__button facets__button--toggle-subcat"
                               ng-model="collapsesubfacet"
                               ng-click="collapseSubfacet=!collapseSubfacet; isCollapsedSubfacet=!isCollapsedSubfacet">
-                          <svg class="facets__button--collapse-subfacet"
-                               ng-show="f.sublist.length > 0"
-                               ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+                          <svg  class="facets__button--collapse-subfacet"
+                                ng-show="f.sublist.length > 0"
+                                ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+
                               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use>
                           </svg>
+
                           <svg class="facets__button--expand-subfacet"
                                ng-show="(f.sublist.length > 0)"
                                ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
@@ -80,7 +84,7 @@
                       </button>
                   </li>
               </ul>
-          </div>
+            </div>
 
           <ul class="facets__section-list" ng-hide="collapsecompanies">
 
@@ -104,7 +108,7 @@
                 <div class="facets__field-group facets__field-group--companies">
                   <button class="facets__button facets__button--clear-company"
                           ng-class="{'collapsed': isCollapsedCompanies}"
-                          ng-click="isAddingCompany = false;">
+                          ng-click="isAddingCompany = false; myCompany.selected = ''">
                     <svg>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
                     </svg>

@@ -2,7 +2,7 @@
 using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.User.Authentication;
-using Informa.Library.Corporate;
+using Informa.Library.Company;
 using Informa.Library.Globalization;
 using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.Site;
@@ -21,7 +21,7 @@ namespace Informa.Web.ViewModels
 	public class HeaderViewModel : IHeaderViewModel
 	{
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-		protected readonly ICorporateAccountNameContext CorporateAccountNameContext;
+		protected readonly ICompanyNameContext CompanyNameContext;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteHomeContext SiteHomeContext;
 		protected readonly ISiteRootContext SiteRootContext;
@@ -32,7 +32,7 @@ namespace Informa.Web.ViewModels
 
 		public HeaderViewModel(
 			IAuthenticatedUserContext authenticatedUserContext,
-			ICorporateAccountNameContext corporateAccountNameContext,
+			ICompanyNameContext companyNameContext,
 			ITextTranslator textTranslator,
 			ISiteHomeContext siteHomeContext,
 			ISiteRootContext siteRootContext,
@@ -42,7 +42,7 @@ namespace Informa.Web.ViewModels
 			ISalesforceFindUserProfile findUserProfile)
 		{
 			AuthenticatedUserContext = authenticatedUserContext;
-			CorporateAccountNameContext = corporateAccountNameContext;
+			CompanyNameContext = companyNameContext;
 			TextTranslator = textTranslator;
 			SiteHomeContext = siteHomeContext;
 			SiteRootContext = siteRootContext;
@@ -63,7 +63,7 @@ namespace Informa.Web.ViewModels
 				var user = AuthenticatedUserContext.IsAuthenticated
 					? FindUserProfile.Find(AuthenticatedUserContext.User.Username)
 					: null;
-				var accountName = user != null ? user.FirstName : CorporateAccountNameContext.Name;
+				var accountName = user != null ? user.FirstName : CompanyNameContext.Name;
 
 				return string.IsNullOrWhiteSpace(accountName) ? string.Empty : string.Concat(TextTranslator.Translate("Header.Greeting"), accountName);
 			}
@@ -90,7 +90,7 @@ namespace Informa.Web.ViewModels
 		public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
 		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
 		public string UserName => AuthenticatedUserContext.User.Name;
-		public string CorporateName => CorporateAccountNameContext.Name;
+		public string CorporateName => CompanyNameContext.Name;
 
 		private string BuildLink(Link l)
 		{

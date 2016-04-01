@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Informa.Library.Session;
 using Informa.Library.SiteDebugging;
 
 namespace Informa.Web.App_Start.Registrations
@@ -9,7 +10,9 @@ namespace Informa.Web.App_Start.Registrations
 		{
 			builder.RegisterType<SiteDebuggingAllowedConfiguration>().As<ISiteDebuggingAllowedConfiguration>();
 			builder.RegisterType<SiteDebuggingAllowedContext>().As<ISiteDebuggingAllowedContext>();
-			builder.RegisterType<SiteDebuggingSession>().As<ISiteDebuggingSession>();
+			builder.RegisterType<SiteDebuggingSession>()
+				.As<ISiteDebuggingSession>()
+				.As<ISpecificSessionStore>();
 		}
 	}
 }

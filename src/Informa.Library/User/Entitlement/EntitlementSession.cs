@@ -4,7 +4,7 @@ namespace Informa.Library.User.Entitlement
 {
 	public class EntitlementSession : SpecificSessionStore, IEntitlementSession
 	{
-		private const string SessionKeyPrefix = "Entitlement";
+		private const string sessionStoreId = "Entitlement";
 
 		public EntitlementSession(
 			ISessionStore sessionStore)
@@ -13,6 +13,6 @@ namespace Informa.Library.User.Entitlement
 
 		}
 
-		public override string Prefix => SessionKeyPrefix;
+		public override string Id => sessionStoreId;
 	}
 }
