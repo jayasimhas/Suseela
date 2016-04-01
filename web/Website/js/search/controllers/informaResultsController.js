@@ -49,9 +49,9 @@ var informaSearchApp = angular.module('informaSearchApp').directive('onFinishRen
         restrict: 'A',
         link: function (scope, element, attr) {
             if (scope.$last === true) {
-            $timeout(function () {
-                scope.$emit(attr.broadcasteventname ? attr.broadcasteventname : 'ngRepeatFinished');
-            });
+                $timeout(function () {
+                    scope.$emit(attr.broadcasteventname ? attr.broadcasteventname : 'ngRepeatFinished');
+                });
             }
         }
     };
