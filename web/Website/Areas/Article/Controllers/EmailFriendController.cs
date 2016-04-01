@@ -34,8 +34,8 @@ namespace Informa.Web.Areas.Article.Controllers
 	    protected readonly ISitecoreService SitecoreService;
 
 		public EmailFriendController(ArticleUtil articleUtil, ITextTranslator textTranslator, ISiteRootContext siteRootContext, IEmailFactory emailFactory,
-			Func<string, ISitecoreService> sitecoreFactory, IEmailSender emailSender, IHtmlEmailTemplateFactory htmlEmailTemplateFactory, ISiteSettings siteSettings, ILog logger)
-            ISitecoreService sitecoreService)
+			Func<string, ISitecoreService> sitecoreFactory, IEmailSender emailSender, IHtmlEmailTemplateFactory htmlEmailTemplateFactory, 
+            ISiteSettings siteSettings, ILog logger, ISitecoreService sitecoreService)
 		{
 			EmailSender = emailSender;
 			_articleUtil = articleUtil;
