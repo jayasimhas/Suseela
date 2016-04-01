@@ -17,5 +17,16 @@ namespace Informa.Library.Session
 		{
 			HttpContext.Current.Session[key] = obj;
 		}
+
+		public void ClearAll(string keyStartsWith)
+		{
+			foreach (string key in HttpContext.Current.Session)
+			{
+				if (key.StartsWith(keyStartsWith))
+				{
+					HttpContext.Current.Session.Remove(key);
+				}
+			}
+		}
 	}
 }

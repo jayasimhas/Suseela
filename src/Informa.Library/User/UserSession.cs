@@ -4,7 +4,7 @@ namespace Informa.Library.User
 {
 	public class UserSession : SpecificSessionStore, IUserSession
 	{
-		private const string UserSessionKeyPrefix = "User";
+		private const string userSessionStoreId = "User";
 
 		public UserSession(
 			ISessionStore sessionStore)
@@ -13,6 +13,6 @@ namespace Informa.Library.User
 			
 		}
 
-		public override string Prefix => UserSessionKeyPrefix;
+		public override string SessionStoreId => userSessionStoreId;
 	}
 }
