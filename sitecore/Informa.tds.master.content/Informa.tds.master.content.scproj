@@ -73,6 +73,7 @@
     <SitecoreItem Include="sitecore\content\Environment Globals.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Article Sizes.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -3785,6 +3786,7 @@
     <SitecoreItem Include="sitecore\content\Pharma Globals.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Pharma Globals\Copyright Statement.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -3793,6 +3795,7 @@
     <SitecoreItem Include="sitecore\content\ScripIntelligence.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -7117,6 +7120,7 @@
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Marketing.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\My Account.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
@@ -7225,6 +7229,7 @@
     <SitecoreItem Include="sitecore\media library.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\30743_10100674988634179_69560386_n %281%29.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -7244,12 +7249,15 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\emailiconlinkedin.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\emailiconrss.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\emailicontwitter.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\Images.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -7269,6 +7277,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\scriplogoprint.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\Supporting Documents.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -7285,6 +7294,8 @@
     <SitecoreItem Include="sitecore\system.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <DeployAlwaysFields>
+      </DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Workflows.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>

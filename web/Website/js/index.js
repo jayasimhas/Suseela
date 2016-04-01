@@ -277,6 +277,7 @@ $(document).ready(function() {
         $('.js-email-search-form-wrapper').hide();
         $('.js-email-search-recip-success').html($('.js-email-search-recip-addr').val());
         $('.js-email-search-success').show();
+        $('.js-email-search-form-wrapper input, .js-email-search-form-wrapper textarea').val('');
 
         // Reset the Email Article pop-out to its default state when closed
         $('.js-dismiss-email-search').one('click', function() {
@@ -293,7 +294,7 @@ $(document).ready(function() {
 
         $('.js-email-search-results-ids').val(resultIDs);
         $('.js-email-search-query').val($('.search-bar__field').val());
-
+        $('.js-email-search-query-url').val(document.location.href);
     });
 
 
