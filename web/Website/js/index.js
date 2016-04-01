@@ -31,9 +31,7 @@ $('.click-logout').on('click', function(e) {
     };
     var result = {};
     $.extend(result, analytics_data, eventDetails);
-    //  utag.link({
-    //    result
-    //});
+    utag.link(result);
 });
 
 /* Toggle header search box (tablets/smartphones) */
@@ -79,8 +77,8 @@ var showForgotPassSuccess = function() {
 };
 
 // Toggle the sign-in error message displayed to a user
-var toggleSignInError = function() {
-    $('.pop-out__form-error').show();
+var toggleSignInError = function(form) {
+    $(form).closest('.js-login-container').find('.pop-out__form-error').show();
     //$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
 };
 
@@ -223,8 +221,8 @@ $(document).ready(function() {
                 $(tg).data('login-redirect-url', window.location.href + sep + 'immb=' + $(tg).data('pass-article-id'));
             }
         },
-		function(triggerElement) {
-		    toggleSignInError();
+		function(triggerForm) {
+		    toggleSignInError(triggerForm);
 		}
 	);
 
@@ -578,6 +576,14 @@ $(document).ready(function() {
 
 
     var sortTheTables = new SortableTableController();
+
+
+    $('.click-utag').click(function (e) {
+        var eventDetails = $(this).data('info');
+        var result = {};
+        $.extend(result, analytics_data, eventDetails);
+        utag.link(result);
+    });
 
     // Twitter sharing JS
     window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");
