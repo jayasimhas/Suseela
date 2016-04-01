@@ -13,13 +13,26 @@ using Informa.Library.Article.Search;
 using Informa.Library.Utilities.References;
 using System.Web;
 using Informa.Library.Globalization;
-using Informa.Library.Corporate;
+using Informa.Library.Company;
+using Informa.Library.Salesforce.User.Profile;
+using Informa.Library.User.Entitlement;
+using Informa.Library.Subscription.User;
 
 namespace Informa.Web.ViewModels
 {
 	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
 	{
 		protected readonly ISiteRootContext SiteRootContext;
+		protected readonly ICompanyNameContext CompanyNameContext;
+		protected readonly ITextTranslator TextTranslator;
+		protected readonly ISiteSettings SiteSettings;
+		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+		protected readonly ISitecoreService Service;
+		protected readonly IArticleSearch ArticleSearch;
+		protected readonly IItemReferences ItemReferences;
+		protected readonly ISalesforceFindUserProfile SalesforceFindUserProfile;
+		protected readonly IEntitlementAccessLevelContext EntitlementAccessLevelContext;
+		protected readonly IUserSubscriptionsContext UserSubscriptionsContext;
 
 		public MainLayoutViewModel(
 			ISiteRootContext siteRootContext,
@@ -38,9 +51,12 @@ namespace Informa.Web.ViewModels
 			IAuthenticatedUserContext authenticatedUserContext,
 			ISitecoreService service,
 			IArticleSearch articleSearch,
-            IItemReferences itemReferences,
-            ITextTranslator textTranslator,
-            ICorporateAccountNameContext corporateAccountNameContext)
+			IItemReferences itemReferences,
+			ITextTranslator textTranslator,
+			ICompanyNameContext companyNameContext,
+			ISalesforceFindUserProfile salesforceFindUserProfile,
+			IEntitlementAccessLevelContext entitlementAccessLevelContext,
+			IUserSubscriptionsContext userSubscriptionsContext)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -59,35 +75,33 @@ namespace Informa.Web.ViewModels
 			Service = service;
 			ArticleSearch = articleSearch;
 			ItemReferences = itemReferences;
-            TextTranslator = textTranslator;
-            CorporateAccountNameContext = corporateAccountNameContext;
+			TextTranslator = textTranslator;
+			CompanyNameContext = companyNameContext;
+			SalesforceFindUserProfile = salesforceFindUserProfile;
+			SfUserProfile = salesforceFindUserProfile.Find(authenticatedUserContext.User.Username);
+			EntitlementAccessLevelContext = entitlementAccessLevelContext;
+			UserSubscriptionsContext = userSubscriptionsContext;
 		}
 
-        private ICorporateAccountNameContext CorporateAccountNameContext;
-        private ITextTranslator TextTranslator;
-		public IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
-		public IMaintenanceViewModel MaintenanceMessage;
-		public ICompanyRegisterMessageViewModel CompanyRegisterMessage;
-		public ISideNavigationMenuViewModel SideNavigationMenu;
-		public IFooterViewModel Footer;
-		public IHeaderViewModel Header;
-		public ISignInPopOutViewModel SignInPopOutViewModel;
-		public IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
-		public IRegisterPopOutViewModel RegisterPopOutViewModel;
-		public IAppInsightsConfig AppInsightsConfig;
-		public ISiteSettings SiteSettings;
-		public IToolbarViewModel DebugToolbar;
-		public IAuthenticatedUserContext AuthenticatedUserContext;
-		private ISitecoreService Service;
-		private IArticleSearch ArticleSearch;
-		private IItemReferences ItemReferences;
+		public readonly IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
+		public readonly IMaintenanceViewModel MaintenanceMessage;
+		public readonly ICompanyRegisterMessageViewModel CompanyRegisterMessage;
+		public readonly ISideNavigationMenuViewModel SideNavigationMenu;
+		public readonly IFooterViewModel Footer;
+		public readonly IHeaderViewModel Header;
+		public readonly ISignInPopOutViewModel SignInPopOutViewModel;
+		public readonly IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
+		public readonly IToolbarViewModel DebugToolbar;
+		public readonly IRegisterPopOutViewModel RegisterPopOutViewModel;
+		public readonly IAppInsightsConfig AppInsightsConfig;
 
-        public string PrintPageHeaderLogoSrc => SiteRootContext?.Item?.Print_Logo?.Src ?? string.Empty;
-        public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
-        public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
-        public string UserName => AuthenticatedUserContext.User.Name;
-        public string CorporateName => CorporateAccountNameContext.Name;
+		public string PrintPageHeaderLogoSrc => SiteRootContext?.Item?.Print_Logo?.Src ?? string.Empty;
+		public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
+		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
+		public string UserName => AuthenticatedUserContext.User.Name;
+		public string CorporateName => CompanyNameContext.Name;
 
+		public ISalesforceUserProfile SfUserProfile;
 		public string Title
 		{
 			get
@@ -126,8 +140,8 @@ namespace Informa.Web.ViewModels
 		}
 
 		public string PageType { get { return Sitecore.Context.Item.TemplateName; } }
-
-		public string CountryCode { get { return "123"; } }
+		//TODO : Uncomment this once the value to be passed is determined
+		//	public string CountryCode { get { return "123"; } }
 
 		public string PageDescription
 		{
@@ -141,8 +155,6 @@ namespace Informa.Web.ViewModels
 					{
 						return page.Meta_Description;
 					}
-
-
 				}
 				return string.Empty;
 			}
@@ -160,8 +172,6 @@ namespace Informa.Web.ViewModels
 					{
 						return page.Meta_Title_Override;
 					}
-
-
 				}
 				return string.Empty;
 			}
@@ -180,8 +190,6 @@ namespace Informa.Web.ViewModels
 
 						return page.Custom_Meta_Tags;
 					}
-
-
 				}
 				return string.Empty;
 			}
@@ -200,8 +208,6 @@ namespace Informa.Web.ViewModels
 					{
 						return page.Meta_Keywords;
 					}
-
-
 				}
 				return string.Empty;
 			}
@@ -227,8 +233,6 @@ namespace Informa.Web.ViewModels
 					{
 						return page.Actual_Publish_Date.ToString();
 					}
-
-
 				}
 				return string.Empty;
 			}
@@ -261,8 +265,6 @@ namespace Informa.Web.ViewModels
 					{
 						return page.Article_Number;
 					}
-
-
 				}
 				return string.Empty;
 			}
@@ -287,7 +289,6 @@ namespace Informa.Web.ViewModels
 			{
 				if (GlassModel is IArticle__Raw)
 				{
-
 					ArticleItem articleItem = Service.GetItem<ArticleItem>(GlassModel._Id);
 					if (articleItem.Media_Type != null)
 					{
@@ -336,7 +337,7 @@ namespace Informa.Web.ViewModels
 			{
 				if (GlassModel is IArticle__Raw)
 				{
-                    return ArticleSearch.GetArticleTaxonomies(GlassModel._Id, ItemReferences.RegionsTaxonomyFolder);
+					return ArticleSearch.GetArticleTaxonomies(GlassModel._Id, ItemReferences.RegionsTaxonomyFolder);
 				}
 				return string.Empty;
 			}
@@ -381,6 +382,44 @@ namespace Informa.Web.ViewModels
 
 		}
 
+		public string UserEntitlements
+		{
+			get
+			{
+				return EntitlementAccessLevelContext.GetEntitledProducts();
+			}
+		}
+
+		public string UserEntitlementStatus
+		{
+			get { return EntitlementAccessLevelContext.GetEntitledProductStatus(); }
+		}
+
+		public string Subscribed_Products
+		{
+			get { return UserSubscriptionsContext.GetSubscribed_Products(); }
+		}
+
+		public string User_Company
+		{
+			get { return (SfUserProfile != null ? SfUserProfile.Company : string.Empty); }
+		}
+
+		public string User_Industry
+		{
+			get
+			{
+				return (SfUserProfile != null ? SfUserProfile.JobIndustry : string.Empty);
+			}
+		}
+
+		public string User_Email
+		{
+			get
+			{
+				return (SfUserProfile != null ? SfUserProfile.Email : string.Empty);
+			}
+		}
 		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	}
 }

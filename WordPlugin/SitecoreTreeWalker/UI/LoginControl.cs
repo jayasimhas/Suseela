@@ -3,7 +3,8 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using InformaSitecoreWord.Config;
-using System.Deployment ;
+using System.Deployment;
+using System.Deployment.Application;
 using System.Reflection;
 using InformaSitecoreWord.Sitecore;
 using InformaSitecoreWord.User;
@@ -67,7 +68,7 @@ namespace InformaSitecoreWord.UI
 			if (errorMessage.Length > 40)
 			{ //resizing the panel to fit
 				int rows = errorMessage.Length / 40;
-				var offset = rows*15;
+				var offset = rows * 15;
 				uxConnectionError.Location = new Point(uxConnectionError.Location.X, 136 - offset);
 				uxConnectionError.Size = new Size(uxConnectionError.Size.Width, 44 + offset);
 			}
@@ -97,7 +98,7 @@ namespace InformaSitecoreWord.UI
 			uxPassword.Clear();
 
 			Visible = false;
-			if(ToReveal != null)ToReveal.Visible = true;
+			if (ToReveal != null) ToReveal.Visible = true;
 		}
 
 		/// <summary>
@@ -146,7 +147,7 @@ namespace InformaSitecoreWord.UI
 				if (userStatus.LoginSuccessful)
 				{
 
-         
+
 					Globals.SitecoreAddin.Log("LoginControl.TryToLogin: Login successful, updating the UI...");
 					SuspendLayout();
 					if (uxRememberPassword.Checked)
@@ -158,7 +159,7 @@ namespace InformaSitecoreWord.UI
 					{
 						//IIPP-330 - Fixing hidding of both the fields
 						_reader.Clear();
-						//Globals.SitecoreAddin.Log("LoginControl.TryToLogin: Saving the username...");
+						Globals.SitecoreAddin.Log("LoginControl.TryToLogin: Saving the username...");
 						//_reader.Write(uxUsername.Text);
 					}
 					HideError();
@@ -176,7 +177,7 @@ namespace InformaSitecoreWord.UI
 				else if (userStatus.LoginAttemptsRemaining > 0)
 				{ //don't want to show a message where it says "you have 0 attempts remaining", that would be dumb.
 					Globals.SitecoreAddin.Log("LoginControl.TryToLogin: Credentials were invalid.");
-					ShowError( string.Format(Constants.InvalidPassword, userStatus.LoginAttemptsRemaining.ToString()));
+					ShowError(string.Format(Constants.InvalidPassword, userStatus.LoginAttemptsRemaining.ToString()));
 					uxPassword.Clear();
 					uxPassword.Focus();
 				}
@@ -221,30 +222,13 @@ namespace InformaSitecoreWord.UI
 			}
 		}
 
+		public Version AssemblyVersion => ApplicationDeployment.CurrentDeployment.CurrentVersion;
+
 		private void LoginControl_Load(object sender, EventArgs e)
 		{
-			uxVersionNumber.Text = GetRunningVersion().ToString();
-			//if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-			{
-				uxVersionNumber.Text = Application.ProductVersion;
-			}
+			string version = $"{AssemblyVersion.Major}.{AssemblyVersion.Minor}.{AssemblyVersion.Build}.{AssemblyVersion.Revision}";
+			uxVersionNumber.Text = version;
 			PopulateFields();
-		}
-
-		/// <summary>
-		/// This method gets the current running version of the Plugin
-		/// </summary>
-		/// <returns></returns>
-		private string GetRunningVersion()
-		{
-			try
-			{
-				return Application.ProductVersion;
-			}
-			catch
-			{
-				return Assembly.GetExecutingAssembly().GetName().Version.ToString();
-			}
 		}
 
 		private void uxUsername_KeyDown(object sender, KeyEventArgs e)
@@ -257,7 +241,7 @@ namespace InformaSitecoreWord.UI
 
 		private void uxPassword_KeyDown(object sender, KeyEventArgs e)
 		{
-			if(e.KeyCode == Keys.Enter)
+			if (e.KeyCode == Keys.Enter)
 			{
 				uxLoginButton.PerformClick();
 			}

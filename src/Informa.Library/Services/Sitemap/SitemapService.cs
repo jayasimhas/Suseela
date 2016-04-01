@@ -68,17 +68,45 @@ namespace Informa.Library.Services.Sitemap
             //append an xml node for each item
             foreach (I___BasePage itm in items)
             {
+                if (itm == null)
+                    continue;
+                
+                //create location
+                string url = string.Empty;
+                try
+                {
+                    url = itm.Canonical_Link?.Url;
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+
+                if (string.IsNullOrEmpty(url))
+                {
+                    try
+                    {
+                        url = itm._Url;
+                    }
+                    catch (Exception ex)
+                    {
+                        
+                    }
+                }
+
+                if (string.IsNullOrEmpty(url))
+                    continue;
+
+                string pageUrl = url;
+                if (pageUrl.StartsWith("/"))
+                    pageUrl = $"{domain}{pageUrl}";
+
                 //set pointer
                 XmlNode lastNode = doc.LastChild;
 
                 //create new node
                 XmlNode urlNode = MakeNode(doc, "url");
                 lastNode.AppendChild(urlNode);
-                
-                //create location
-                string pageUrl = itm.Canonical_Link?.Url ?? itm._Url;
-                if (pageUrl.StartsWith("/"))
-                    pageUrl = $"{domain}{pageUrl}";
                 urlNode.AppendChild(MakeNode(doc, "loc", pageUrl));
             }
 

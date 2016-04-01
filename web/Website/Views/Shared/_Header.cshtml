@@ -72,12 +72,8 @@
 
             @if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
             {
-                if (Model.IsAuthenticated && !Sitecore.Context.User.IsAdministrator)
-                {
-                    <div class="header-account-access__friendly-greeting">@Html.ActionLink("TEMPORARILY SPOOF ENTITLEMENT", "SpoofEntitlement", "Spoof", new { area = "Account", returnUrl = "/" }, new { })</div>
-                }
-                <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>}
-
+                <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
+			}
             @if (Model.IsAuthenticated)
             {
                 @* TODO: UNTIL WE GET ENTITLED USERS *@
@@ -122,7 +118,7 @@
         @* If this is an Article page... *@
         <div class="boxout-print-info">
             <p>@Model.PrintPageHeaderMessage</p>
-            <p>@Model.PrintedByText &nbsp; <b>@Model.UserName @(string.IsNullOrEmpty(Model.UserName) || string.IsNullOrEmpty(Model.CorporateName) ? string.Empty : ",") @Model.CorporateName</b></p>
+            <p>@Model.PrintedByText <b>@Model.UserName @(string.IsNullOrEmpty(Model.UserName) || string.IsNullOrEmpty(Model.CorporateName) ? string.Empty : ",") @Model.CorporateName</b></p>
         </div>
         @* end pseudo-if *@
 

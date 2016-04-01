@@ -3,6 +3,7 @@ using Informa.Library.User.Profile;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Informa.Library.Subscription.User
 {
@@ -31,9 +32,32 @@ namespace Informa.Library.Subscription.User
 				var subscriptions = (result.Success)
 					? result.Subscriptions.Where(s => s.ProductType.Equals(SubscriptionProductKeyContext.ProductKey))
 					: Enumerable.Empty<ISubscription>();
-
 				return subscriptions;
 			}
 		}
+
+		public string GetSubscribed_Products()
+		{
+			if (Subscriptions != null && Subscriptions.Any())
+			{
+				StringBuilder strSubscription = new StringBuilder();
+				var lastSubscription = Subscriptions.LastOrDefault();
+				strSubscription.Append("[");
+				foreach (var subscription in Subscriptions)
+				{
+					strSubscription.Append("'");
+					strSubscription.Append(subscription.ProductCode);
+					strSubscription.Append("'");
+					if (Subscriptions.Count() > 1 && !lastSubscription.Equals(subscription))
+					{
+						strSubscription.Append(",");
+					}
+				}
+				return strSubscription.ToString();
+			}
+			return string.Empty;
+		}
+
+
 	}
 }

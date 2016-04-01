@@ -38,7 +38,7 @@ namespace InformaSitecoreWord.document
         public void UpdatePluginVersionNumber()
         {
             string versionNumber = "Development Version";
-            //if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
             {
                 versionNumber = System.Windows.Forms.Application.ProductVersion;
             }

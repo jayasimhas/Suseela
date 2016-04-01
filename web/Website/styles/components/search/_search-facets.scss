@@ -204,7 +204,7 @@
     input {
       @extend .inf-standard-form-field;
       float: left;
-      width: 80%;
+      width: 78%;
     }
 
     svg {
@@ -228,7 +228,7 @@
         border: 1px solid $color-light-gray;
         border-top: 0;
         max-height: 150px;
-        overflow-y: scroll;
+        overflow-y: auto;
         overflow-x: hidden;
         padding: 0.5rem;
         background-color: $color-white;

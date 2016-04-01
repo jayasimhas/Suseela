@@ -2,7 +2,7 @@
 
 namespace Informa.Library.User.Entitlement
 {
-	public interface IEntitlementSession : ISessionStore
+	public interface IEntitlementSession : ISpecificSessionStore
 	{
 
 	}
