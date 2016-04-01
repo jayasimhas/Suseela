@@ -82,5 +82,7 @@
 }
 else
 {
-    Html.RenderPartial("_SignInForm", Model.SignInViewModel);
+    <div class="page-account__sign-in-solo">
+        @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
+    </div>
 }
