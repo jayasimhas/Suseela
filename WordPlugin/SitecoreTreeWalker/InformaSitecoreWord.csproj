@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--
@@ -33,7 +33,7 @@
     <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>\\calypso-8yra6ecdjk6n.pharmamedtechbi.com\D%24\inetpub\wwwroot\InformaStgAuth\Website\wordinstaller\</PublishUrl>
-    <InstallUrl>https://calypso-8yra6ecdjk6n.pharmamedtechbi.com/wordinstaller/</InstallUrl>
+    <InstallUrl>http://dev.ibi.velir.com/wordinstaller/</InstallUrl>
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>2.16.3.25</ApplicationVersion>
     <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
@@ -41,9 +41,9 @@
     <UpdateInterval>0</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
     <ProductName>InsightPlatformPlugin</ProductName>
-    <PublisherName>PharmamedtechBI</PublisherName>
+    <PublisherName>Informa Business Intelligence, Inc.</PublisherName>
     <SupportUrl />
-    <FriendlyName>InsightPlatformInformaSitecoreWord</FriendlyName>
+    <FriendlyName>Insight Platform Plugin</FriendlyName>
     <OfficeApplicationDescription />
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
@@ -585,7 +585,7 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
-    <None Include="InformaTestCertificate.pfx" />
+    <None Include="InformaSitecoreWord_TemporaryKey.pfx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -609,7 +609,6 @@
     </Compile>
     <AppDesigner Include="Properties\" />
     <None Include="SitecoreTreeWalker_1_TemporaryKey.pfx" />
-    <None Include="SitecoreTreeWalker_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -695,15 +694,8 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
-  </PropertyGroup>
-  <PropertyGroup>
     <ManifestKeyFile>InformaTestCertificate.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
     <ManifestCertificateThumbprint>DB8A27913558910707905A6096BA6F7B07050E24</ManifestCertificateThumbprint>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WordPlugin-Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\WordPlugin-Debug\</OutputPath>
@@ -721,6 +713,13 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestTimestampUrl>
+    </ManifestTimestampUrl>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
