@@ -1,4 +1,6 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Informa.Library.Session;
+using Jabberwocky.Glass.Autofac.Attributes;
+using System.Linq;
 
 namespace Informa.Library.SiteDebugging
 {
@@ -7,11 +9,14 @@ namespace Informa.Library.SiteDebugging
 	{
 		private const string IsDebuggingSessionKey = "IsDebugging.";
 
+		protected readonly ISpecificSessionStores SessionStores;
 		protected readonly ISiteDebuggingSession DebugSession;
 
 		public SiteDebugger(
+			ISpecificSessionStores sessionStores,
 			ISiteDebuggingSession debugSession)
 		{
+			SessionStores = sessionStores;
 			DebugSession = debugSession;
 		}
 
@@ -22,6 +27,7 @@ namespace Informa.Library.SiteDebugging
 
 		public void StopDebugging(string key)
 		{
+			SessionStores.Where(ss => ss.Id != DebugSession.Id).ToList().ForEach(ss => ss.Clear());
 			SetDebugging(key, false);
 		}
 

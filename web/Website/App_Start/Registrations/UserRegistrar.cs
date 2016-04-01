@@ -7,6 +7,7 @@ using Informa.Library.User.ResetPassword;
 using Informa.Library.User.Profile;
 using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Entitlement;
+using Informa.Library.Session;
 
 namespace Informa.Web.App_Start.Registrations
 {
@@ -14,8 +15,12 @@ namespace Informa.Web.App_Start.Registrations
 	{
 		public static void RegisterDependencies(ContainerBuilder builder)
 		{
-			builder.RegisterType<UserSession>().As<IUserSession>();
-			builder.RegisterType<EntitlementSession>().As<IEntitlementSession>();
+			builder.RegisterType<UserSession>()
+				.As<IUserSession>()
+				.As<ISpecificSessionStore>();
+			builder.RegisterType<EntitlementSession>()
+				.As<IEntitlementSession>()
+				.As<ISpecificSessionStore>();
 
 			builder.RegisterType<SalesforceFindUserByEmail>().As<IFindUserByEmail>();
 			builder.RegisterType<SalesforceUpdateUserPassword>().As<IUpdateUserPassword>();

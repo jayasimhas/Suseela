@@ -13,6 +13,6 @@ namespace Informa.Library.SiteDebugging
 			
 		}
 
-		public override string SessionStoreId => sessionStoreId;
+		public override string Id => sessionStoreId;
 	}
 }

@@ -310,6 +310,8 @@
     <Compile Include="Rss\Utils\RssFeedUtil.cs" />
     <Compile Include="Rss\Utils\RssItemUtil.cs" />
     <Compile Include="Session\ISpecificSessionStore.cs" />
+    <Compile Include="Session\ISpecificSessionStores.cs" />
+    <Compile Include="Session\SpecificSessionStores.cs" />
     <Compile Include="SiteDebugging\ISiteDebugger.cs" />
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
     <Compile Include="SiteDebugging\SiteDebugger.cs" />

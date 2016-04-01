@@ -13,6 +13,6 @@ namespace Informa.Library.User
 			
 		}
 
-		public override string SessionStoreId => userSessionStoreId;
+		public override string Id => userSessionStoreId;
 	}
 }

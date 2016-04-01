@@ -1,6 +1,6 @@
 ﻿namespace Informa.Library.Session
 {
-	public abstract class SpecificSessionStore : ISessionStore, ISpecificSessionStore
+	public abstract class SpecificSessionStore : ISpecificSessionStore
 	{
 		private const string basePrefix = "Informa.";
 
@@ -22,9 +22,9 @@
 			SessionStore.Set(CreatePrefixedSessionKey(key), obj);
 		}
 
-		public abstract string SessionStoreId { get; }
+		public abstract string Id { get; }
 
-		public string Prefix => string.Concat(basePrefix, SessionStoreId);
+		public string Prefix => string.Concat(basePrefix, Id);
 
 		public string CreatePrefixedSessionKey(string key)
 		{
