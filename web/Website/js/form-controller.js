@@ -1,11 +1,15 @@
 function formController(requestVerificationToken) {
-	this.watchForm = function(form, successCallback, failureCallback) {
+	this.watchForm = function(form, successCallback, failureCallback, presubmit) {
 
         if (!form) return false;
 
         var formSubmit = $(form).find('button[type=submit]');
 
 		$(formSubmit).on('click', (event) => {
+
+			if(presubmit) {
+				presubmit();
+			}
 
 			event.preventDefault(); // Prevent form submitting
 

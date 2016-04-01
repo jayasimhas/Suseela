@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--
@@ -33,17 +33,17 @@
     <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>publish\</PublishUrl>
-    <InstallUrl>https://scripauth.pharmamedtechbi.com/wordplugin/</InstallUrl>
+    <InstallUrl>http://dev.ibi.velir.com/wordinstaller/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>2.2.0.10</ApplicationVersion>
+    <ApplicationVersion>2.16.3.29</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
-    <UpdateInterval>7</UpdateInterval>
+    <UpdateInterval>0</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
     <ProductName>InsightPlatformPlugin</ProductName>
-    <PublisherName>PharmamedtechBI</PublisherName>
+    <PublisherName>Informa Business Intelligence, Inc.</PublisherName>
     <SupportUrl />
-    <FriendlyName>InsightPlatformInformaSitecoreWord</FriendlyName>
+    <FriendlyName>Insight Platform Plugin</FriendlyName>
     <OfficeApplicationDescription />
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
@@ -125,7 +125,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
     <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
     <WarningLevel>4</WarningLevel>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
   </PropertyGroup>
   <!--
     This section specifies references for the project.
@@ -585,6 +585,7 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="InformaSitecoreWord_TemporaryKey.pfx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -600,8 +601,6 @@
     <Compile Include="SitecoreAddin.cs">
       <SubType>Code</SubType>
     </Compile>
-    <None Include="InformaSitecoreWord_1_TemporaryKey.pfx" />
-    <None Include="InformaSitecoreWord_TemporaryKey.pfx" />
     <None Include="SitecoreAddin.Designer.xml">
       <DependentUpon>SitecoreAddin.cs</DependentUpon>
     </None>
@@ -609,7 +608,6 @@
       <DependentUpon>SitecoreAddin.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
-    <None Include="SitecoreTreeWalker_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -692,17 +690,8 @@
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <PropertyGroup>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>SitecoreTreeWalker_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>73446AE1379743B1274DD2D697D66AA8D214CD75</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WordPlugin-Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -723,11 +712,20 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestTimestampUrl>
+    </ManifestTimestampUrl>
+  </PropertyGroup>
+  <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <ManifestCertificateThumbprint>B1440187B71AE08BEC90E545CBFB27EC966EA3EA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>InformaSitecoreWord_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -739,7 +737,7 @@
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Word" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\16.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/w" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
         <Host Name="Word" GeneratedCodeNamespace="InformaSitecoreWord" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="SitecoreAddin.cs" CanonicalName="AddIn" PublishedHash="618888658762E9DCDD36BE42D0DB584F8F6A5009" CanActivate="false" IconIndex="1" Blueprint="SitecoreAddin.Designer.xml" GeneratedCode="SitecoreAddin.Designer.cs" />
+          <HostItem Name="ThisAddIn" Code="SitecoreAddin.cs" CanonicalName="AddIn" PublishedHash="22691AFE3C4CEAA102B5C31069352B69C71C8FD4" CanActivate="false" IconIndex="1" Blueprint="SitecoreAddin.Designer.xml" GeneratedCode="SitecoreAddin.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>

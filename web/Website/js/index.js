@@ -272,6 +272,31 @@ $(document).ready(function() {
     });
 
 
+    var emailSearchController = new FormController();
+    emailSearchController.watchForm('.form-email-search', function(form) {
+        $('.js-email-search-form-wrapper').hide();
+        $('.js-email-search-recip-success').html($('.js-email-search-recip-addr').val());
+        $('.js-email-search-success').show();
+
+        // Reset the Email Article pop-out to its default state when closed
+        $('.js-dismiss-email-search').one('click', function() {
+            $('.js-email-search-form-wrapper').show();
+            $('.js-email-search-success').hide();
+        });
+    }, null, function() {
+
+        var resultIDs = null;
+
+        $('.result__bookmark').each(function(indx, item) {
+            resultIDs = resultIDs ? resultIDs + ',' + $(item).data('bookmark-id') : $(item).data('bookmark-id');
+        });
+
+        $('.js-email-search-results-ids').val(resultIDs);
+        $('.js-email-search-query').val($('.search-bar__field').val());
+
+    });
+
+
     var accountEmailPreferencesController = new FormController();
     accountEmailPreferencesController.watchForm('.form-email-preferences');
 
