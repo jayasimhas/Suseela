@@ -100,8 +100,9 @@ namespace InformaSitecoreWord.UI
                             login.Dispose();
                             IsLoggedIn();
                             myAction();
-                        }
-                        IsLoggedIn();
+
+                            IsLoggedIn();
+                        }                        
                     };
                 login.ShowDialog();
             }
