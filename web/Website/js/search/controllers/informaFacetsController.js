@@ -214,6 +214,7 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         }
     };
 
+
     // Create placeholder values for From: and To: date values
     $scope.dateValues = {
         dtFrom: '',

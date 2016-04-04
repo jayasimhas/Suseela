@@ -109,6 +109,7 @@
             @{ Html.RenderPartial("PopOuts/SignIn", Model.SignInPopOutViewModel); }
             @{ Html.RenderPartial("PopOuts/Register", Model.RegisterPopOutViewModel); }
             @{ Html.RenderPartial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel); }
+            @{ Html.RenderPartial("PopOuts/EmailSearch", Model.EmailSearchPopOutViewModel); }
 
             @* * *  END POP-OUT TEMPLATE MARKUP *@
 
@@ -119,7 +120,7 @@
     <footer>
         @{ Html.RenderPartial("_Footer", Model.Footer);}
     </footer>
-    
+
     @* If this is an Article page... *@
     <div class="boxout-print-info footer">
         <p>@Model.PrintPageHeaderMessage</p>
@@ -128,21 +129,7 @@
     @* end pseudo-if *@
 
     <script src="/dist/js/index.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            $('.click-utag').click(function (e) {
-                var eventDetails = $(this).data('info');
-                var result = {};
-                $.extend(result, analytics_data, eventDetails);
-              //  utag.link({
-                //    result
-                //});
-
-            });
-
-        });
-    </script>
+    
     @* <script src="vendor/bower_components/angular-animate/angular-animate.js"></script> *@
     @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
 </body>

@@ -45,7 +45,9 @@ namespace InformaSitecoreWord
 
         public static string DocumentPassword = "DocumentPassword";
         public static string ArticleID = "ArticleID";
-        public static string ArticleNumber = "ArticleNumber";
+		public static string PluginName = "PluginName";
+		public static string InformaPluginName = "Informa Insight";
+		public static string ArticleNumber = "ArticleNumber";
         public static string Editor = "Editor";
         public static string HYPERLINK_STYLE = "hyperlinkStyle";
         public static string Entities = "Entities";

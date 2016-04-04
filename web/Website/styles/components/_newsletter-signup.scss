@@ -25,4 +25,10 @@ section: Home/Topic Page Components
         font-weight: 400;
         margin-bottom: 0.5rem;
     }
+
+    &__error {
+        @extend .error-text;
+        display: none;
+        margin-top: 0.5rem;
+    }
 }

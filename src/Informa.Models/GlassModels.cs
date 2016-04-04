@@ -364,6 +364,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 				public const string User_Agreement_Text__RawFieldName = "User Agreement Text";
 						
 					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
+					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -680,6 +685,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public const string TemplateName = "Saved Articles Page";
 
 					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
+					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -864,6 +874,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Exclude_From_Google_SearchFieldId = new ID("de73b0ac-1de7-4c74-8dc3-515a939f567b");
 			public const string Exclude_From_Google_SearchFieldName = "Exclude From Google Search";
+
+						
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
 
 						
 					
@@ -3701,15 +3716,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	public partial interface IEmail_Config : IGlassBase 
 	{
 								/// <summary>
-					/// The Email A Friend Body Content field.
-					/// <para></para>
-					/// <para>Field Type: Rich Text</para>		
-					/// <para>Field ID: 184010d1-69d3-4148-9848-d6072a002bf1</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IEmail_ConfigConstants.Email_A_Friend_Body_ContentFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Email_A_Friend_Body_Content  {get; set;}
-								/// <summary>
 					/// The Email A Friend Footer Content field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -3731,15 +3737,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 		public partial interface IEmail_Config__Raw : IGlassBase 
 		{
 										/// <summary>
-						/// The Email A Friend Body Content field.
-						/// <para></para>
-						/// <para>Field Type: Rich Text</para>		
-						/// <para>Field ID: 184010d1-69d3-4148-9848-d6072a002bf1</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IEmail_ConfigConstants.Email_A_Friend_Body_ContentFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
-						string Email_A_Friend_Body_Content  {get; set;}
-										/// <summary>
 						/// The Email A Friend Footer Content field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -3756,13 +3753,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Email Config";
 
-					
-			public static readonly ID Email_A_Friend_Body_ContentFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
-			public const string Email_A_Friend_Body_ContentFieldName = "Email A Friend Body Content";
-
-							public static readonly ID Email_A_Friend_Body_Content__RawFieldId = new ID("184010d1-69d3-4148-9848-d6072a002bf1");
-				public const string Email_A_Friend_Body_Content__RawFieldName = "Email A Friend Body Content";
-						
 					
 			public static readonly ID Email_A_Friend_Footer_ContentFieldId = new ID("23b4e9bc-9d9c-44f8-80ac-93230012f320");
 			public const string Email_A_Friend_Footer_ContentFieldName = "Email A Friend Footer Content";
@@ -6233,15 +6223,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					/// </summary>
 					[SitecoreField(ITaxonomy_ItemConstants.Item_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Item_Name  {get; set;}
-								/// <summary>
-					/// The Media Type Icon field.
-					/// <para></para>
-					/// <para>Field Type: Image</para>		
-					/// <para>Field ID: 1cfbe05b-a4af-4b00-90fb-734cba008f42</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ITaxonomy_ItemConstants.Media_Type_IconFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Image Media_Type_Icon  {get; set;}
 				}
 
 	
@@ -6263,15 +6244,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 						/// </summary>
 						[SitecoreField(ITaxonomy_ItemConstants.Item_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Item_Name  {get; set;}
-										/// <summary>
-						/// The Media Type Icon field.
-						/// <para></para>
-						/// <para>Field Type: Image</para>		
-						/// <para>Field ID: 1cfbe05b-a4af-4b00-90fb-734cba008f42</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ITaxonomy_ItemConstants.Media_Type_IconFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Image Media_Type_Icon  {get; set;}
 						}
 	
 	public static partial class ITaxonomy_ItemConstants{
@@ -6283,11 +6255,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					
 			public static readonly ID Item_NameFieldId = new ID("ac58f381-3d7f-4d90-966d-41813dc66e87");
 			public const string Item_NameFieldName = "Item Name";
-
-						
-					
-			public static readonly ID Media_Type_IconFieldId = new ID("1cfbe05b-a4af-4b00-90fb-734cba008f42");
-			public const string Media_Type_IconFieldName = "Media Type Icon";
 
 						
 					
@@ -6521,6 +6488,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public const string TemplateName = "Topic Page";
 
 					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
+					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
 
@@ -6711,6 +6683,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Email Preferences Page";
 
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -7874,6 +7851,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Home Page";
 
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -10126,6 +10108,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Print_MessageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Print_Message  {get; set;}
 								/// <summary>
+					/// The Linkedin Logo field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: c2bf3b90-ffa3-48ad-9b31-d0a0eaed7462</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Linkedin_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image Linkedin_Logo  {get; set;}
+								/// <summary>
+					/// The RSS logo field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: 7857053c-1e97-4b20-ae0a-79e1ebef08ac</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.RSS_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image RSS_Logo  {get; set;}
+								/// <summary>
 					/// The Site Logo field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
@@ -10134,6 +10134,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Site_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Image Site_Logo  {get; set;}
+								/// <summary>
+					/// The Twitter Logo field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: c86c6f15-961f-45b6-bd8c-5ae71a9521c3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Twitter_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image Twitter_Logo  {get; set;}
 								/// <summary>
 					/// The Publication Name field.
 					/// <para></para>
@@ -10678,6 +10687,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Print_MessageFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 						string Print_Message  {get; set;}
 										/// <summary>
+						/// The Linkedin Logo field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: c2bf3b90-ffa3-48ad-9b31-d0a0eaed7462</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Linkedin_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image Linkedin_Logo  {get; set;}
+										/// <summary>
+						/// The RSS logo field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: 7857053c-1e97-4b20-ae0a-79e1ebef08ac</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.RSS_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image RSS_Logo  {get; set;}
+										/// <summary>
 						/// The Site Logo field.
 						/// <para></para>
 						/// <para>Field Type: Image</para>		
@@ -10686,6 +10713,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Site_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Image Site_Logo  {get; set;}
+										/// <summary>
+						/// The Twitter Logo field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: c86c6f15-961f-45b6-bd8c-5ae71a9521c3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Twitter_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image Twitter_Logo  {get; set;}
 										/// <summary>
 						/// The Publication Name field.
 						/// <para></para>
@@ -11094,8 +11130,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 				public const string Print_Message__RawFieldName = "Print Message";
 						
 					
+			public static readonly ID Linkedin_LogoFieldId = new ID("c2bf3b90-ffa3-48ad-9b31-d0a0eaed7462");
+			public const string Linkedin_LogoFieldName = "Linkedin Logo";
+
+						
+					
+			public static readonly ID RSS_LogoFieldId = new ID("7857053c-1e97-4b20-ae0a-79e1ebef08ac");
+			public const string RSS_LogoFieldName = "RSS logo";
+
+						
+					
 			public static readonly ID Site_LogoFieldId = new ID("d0ea1c84-68e4-4811-87c2-14ff280c8fc2");
 			public const string Site_LogoFieldName = "Site Logo";
+
+						
+					
+			public static readonly ID Twitter_LogoFieldId = new ID("c86c6f15-961f-45b6-bd8c-5ae71a9521c3");
+			public const string Twitter_LogoFieldName = "Twitter Logo";
 
 						
 					
@@ -11529,6 +11580,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Error Page";
 
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
@@ -15469,8 +15525,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 				public const string Print_Message__RawFieldName = "Print Message";
 						
 					
+			public static readonly ID Linkedin_LogoFieldId = new ID("c2bf3b90-ffa3-48ad-9b31-d0a0eaed7462");
+			public const string Linkedin_LogoFieldName = "Linkedin Logo";
+
+						
+					
+			public static readonly ID RSS_LogoFieldId = new ID("7857053c-1e97-4b20-ae0a-79e1ebef08ac");
+			public const string RSS_LogoFieldName = "RSS logo";
+
+						
+					
 			public static readonly ID Site_LogoFieldId = new ID("d0ea1c84-68e4-4811-87c2-14ff280c8fc2");
 			public const string Site_LogoFieldName = "Site Logo";
+
+						
+					
+			public static readonly ID Twitter_LogoFieldId = new ID("c86c6f15-961f-45b6-bd8c-5ae71a9521c3");
+			public const string Twitter_LogoFieldName = "Twitter Logo";
 
 						
 					
@@ -17941,6 +18012,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Account Landing Page";
 
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
 					
 			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
 			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";

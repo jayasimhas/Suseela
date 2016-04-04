@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Net.Mail;
+using log4net;
 using Sitecore.Configuration;
 
 namespace Informa.Library.Mail
@@ -10,6 +11,11 @@ namespace Informa.Library.Mail
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class EmailSender : IEmailSender
 	{
+	    private ILog _logger;
+	    public EmailSender()
+	    {
+            _logger = LogManager.GetLogger("LogFileAppender");
+        }
 		public bool Send(IEmail email)
         {
             var recipients = GetRecipients(email);
@@ -26,12 +32,15 @@ namespace Informa.Library.Mail
 		        {
 		            using (var client = CreateSmtpClient())
 		            {
+                        _logger.Warn($"Email From address: {email.From}");
+
 		                client.Send(sitecoreEmail);
 		            }
 		        }
-		        catch
+		        catch(Exception e)
 		        {
-		            return false;
+		            _logger.Error("SmtpClient not created:", e);  
+                    return false;
 		        }
 
 		        return true;
@@ -58,8 +67,9 @@ namespace Informa.Library.Mail
                         client.Send(sitecoreEmail);
                     }
                 }
-                catch
-                {
+                catch (Exception e)
+                {   
+                    _logger.Error("SmtpClient not created:", e);
                     return false;
                 }
 
@@ -88,6 +98,11 @@ namespace Informa.Library.Mail
                 smtpClient = mailServerPort <= 0 ? new SmtpClient(mailServer) : new SmtpClient(mailServer, mailServerPort);
             }
             string mailServerUserName = Settings.MailServerUserName;
+            bool enableSsl;
+            smtpClient.EnableSsl =
+                bool.TryParse(Sitecore.Configuration.Settings.GetSetting("Mail.MailServerEnableSsl"), out enableSsl) &&
+                enableSsl;
+
             if (mailServerUserName.Length > 0)
             {
                 string mailServerPassword = Settings.MailServerPassword;

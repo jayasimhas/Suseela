@@ -2,7 +2,8 @@ function popOutController(triggerElm) {
 
 	// Toggle pop-out when trigger is clicked
 	if(triggerElm) {
-		$(triggerElm).on('click', (event) => {
+	    $(triggerElm).on('click', (event) => {
+	        event.preventDefault();
 			this.togglePopOut($(event.target));
 		});
 	}
@@ -109,6 +110,10 @@ function popOutController(triggerElm) {
 			// EMAIL ARTICLE
 			case 'email-article':
 				var popOut = $('.js-pop-out__email-article');
+				break;
+			// EMAIL ARTICLE
+			case 'email-search':
+				var popOut = $('.js-pop-out__email-search');
 				break;
 			// GLOBAL HEADER REGISTRATION
 			case 'register':

@@ -1,5 +1,5 @@
 function formController(requestVerificationToken) {
-	this.watchForm = function(form, successCallback, failureCallback) {
+	this.watchForm = function(form, successCallback, failureCallback, presubmit) {
 
         if (!form) return false;
 
@@ -7,12 +7,16 @@ function formController(requestVerificationToken) {
 
 		$(formSubmit).on('click', (event) => {
 
+			if(presubmit) {
+				presubmit();
+			}
+
 			event.preventDefault(); // Prevent form submitting
 
             this.hideErrors(form); // Reset any visible errors
 
             // Prevent user from re-submitting form
-			$(formSubmit).attr('disabled', 'disabled');
+			$(event.target).attr('disabled', 'disabled');
 
 			var inputData = {};
 
