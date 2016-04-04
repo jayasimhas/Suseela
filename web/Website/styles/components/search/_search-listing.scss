@@ -1,59 +1,59 @@
 .search-results {
-  // headlines-only view
-  &.headlines-only {
-    .result__publication,
-    .result__author,
-    .result__description,
-    .result__tags {
-      display: none;
+    // headlines-only view
+    &.headlines-only {
+        .result__publication,
+        .result__author,
+        .result__description,
+        .result__tags {
+            display: none;
+        }
     }
-  }
 
-  @include breakpoint('medium') {
-    order: 4;
-  }
+    @include breakpoint('medium') {
+        order: 4;
+    }
 }
 
 .result {
-  display: block;
-  padding: 22px 0;
-  border-top: 2px solid $informa-light-gray-d;
+    border-top: 2px solid $informa-light-gray-d;
+    display: block;
+    padding: 22px 0;
 
-  &__publication {
-    @include textMix('Roboto', 12px, 500);
-    letter-spacing: 2px;
-    color: $color-medium-gray-8;
-    text-transform: uppercase;
-    padding-top: 30px;
-  }
+    &__publication {
+        @include textMix('Roboto', 12px, 500);
+        color: $color-medium-gray-8;
+        letter-spacing: 2px;
+        padding-top: 30px;
+        text-transform: uppercase;
+    }
 
-  &__heading {
-    @include textMix('Roboto Condensed', 26px, 700);
-    display: inline-block;
-    color: $informa-black;
-    padding-top: 15px;
-  }
+    &__heading {
+        @include textMix('Roboto Condensed', 26px, 700);
+        display: inline-block;
+        color: $informa-black;
+        padding-top: 15px;
+    }
 
-  &__author {
-    @include textMix('Roboto', 15px, 700);
-    line-height: 25px;
-    color: $informa-dark-gray;
-    padding-top: 15px;
-  }
+    &__author {
+        @include textMix('Roboto', 15px, 700);
+        line-height: 25px;
+        color: $informa-dark-gray;
+        padding-top: 15px;
+    }
 
-  &__pubdate {
-    @include textMix('Roboto', 14px, 400);
-    display: inline;
-    line-height: 22px;
-    color: $informa-dark-gray;
-  }
+    &__pubdate {
+        @include textMix('Roboto', 14px, 400);
+        display: inline;
+        line-height: 22px;
+        color: $informa-dark-gray;
+    }
 
-  &__content-type {
-    @include textMix('Roboto Condensed', 15px, 700);
-    display: inline;
-    color: $informa-black;
-    text-transform: uppercase;
-  }
+    &__content-type {
+        @include textMix('Roboto Condensed', 15px, 700);
+        display: inline;
+        color: $informa-black;
+        text-transform: uppercase;
+    }
 
   &__media-type {
     display: inline-block;

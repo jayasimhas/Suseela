@@ -196,6 +196,7 @@ $main-menu-smartphone-width: 62px;
 
 
 		&__field {
+			@extend .inf-standard-form-field;
 			max-width: 310px;
 			width: calc(100% - 60px);
 
