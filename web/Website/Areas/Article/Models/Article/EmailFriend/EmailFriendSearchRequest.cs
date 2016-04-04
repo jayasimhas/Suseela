@@ -14,5 +14,6 @@ namespace Informa.Web.Areas.Article.Models.Article.EmailFriend
         public string PersonalMessage { get; set; }
         public string ResultIDs { get; set; }
         public string QueryTerm { get; set; }
+        public string QueryUrl { get; set; }
     }
 }

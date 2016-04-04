@@ -228,7 +228,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				if (GlassModel is IArticle__Raw)
+				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
 					var page = (IArticle__Raw)GlassModel;
 
@@ -244,7 +244,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				if (GlassModel is IArticle__Raw)
+				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
 					ArticleItem articleItem = Service.GetItem<ArticleItem>(GlassModel._Id);
 
@@ -261,7 +261,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				if (GlassModel is IArticle__Raw)
+				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
 					var page = (IArticle__Raw)GlassModel;
 					if (!string.IsNullOrEmpty(page.Article_Number))
@@ -276,7 +276,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				if (GlassModel is IArticle__Raw)
+				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
 					ArticleItem articleItem = Service.GetItem<ArticleItem>(GlassModel._Id);
 					return articleItem.Embargoed;
@@ -290,7 +290,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				if (GlassModel is IArticle__Raw)
+				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
 					ArticleItem articleItem = Service.GetItem<ArticleItem>(GlassModel._Id);
 					if (articleItem.Media_Type != null)
@@ -307,7 +307,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				if (GlassModel is IArticle__Raw)
+				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
 					var page = (IArticle__Raw)GlassModel;
 
@@ -325,7 +325,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				if (GlassModel is IArticle__Raw)
+				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
 					return ArticleSearch.GetArticleAuthors(GlassModel._Id);
 				}
@@ -338,7 +338,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				if (GlassModel is IArticle__Raw)
+				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
 					return ArticleSearch.GetArticleTaxonomies(GlassModel._Id, ItemReferences.RegionsTaxonomyFolder);
 				}
@@ -350,7 +350,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				if (GlassModel is IArticle__Raw)
+				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
 					return ArticleSearch.GetArticleTaxonomies(GlassModel._Id, ItemReferences.SubjectsTaxonomyFolder);
 				}
@@ -362,7 +362,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				if (GlassModel is IArticle__Raw)
+				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
 					return ArticleSearch.GetArticleTaxonomies(GlassModel._Id, ItemReferences.TherapyAreasTaxonomyFolder);
 				}
@@ -375,7 +375,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				if (GlassModel is IArticle__Raw)
+				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
 					var page = (IArticle__Raw)GlassModel;
 					return page.Free_Article;

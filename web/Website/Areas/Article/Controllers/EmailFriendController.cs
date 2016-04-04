@@ -226,7 +226,8 @@ namespace Informa.Web.Areas.Article.Controllers
                     request.ResultIDs.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries), 
                     eachEmail,
                     request.PersonalMessage,
-                    request.QueryTerm);
+                    request.QueryTerm,
+                    request.QueryUrl);
 
                 var friendEmail = new Email
                 {
@@ -249,7 +250,7 @@ namespace Informa.Web.Areas.Article.Controllers
             });
         }
 
-        public string GetEmailSearchBody(string senderEmail, string senderName, IEnumerable<string> resultIDs, string friendEmail, string message, string queryTerm)
+        public string GetEmailSearchBody(string senderEmail, string senderName, IEnumerable<string> resultIDs, string friendEmail, string message, string queryTerm, string queryUrl)
         {
             string emailHtml = string.Empty;
             try
@@ -273,7 +274,8 @@ namespace Informa.Web.Areas.Article.Controllers
                     ["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
                     ["#friend_name#"] = friendEmail,
                     ["#sender_name#"] = senderName,
-                    ["#sender_email#"] = senderEmail
+                    ["#sender_email#"] = senderEmail,
+                    ["#query_url#"] = queryUrl
                 };
 
                 if (siteRoot?.Email_Logo != null)
@@ -327,7 +329,7 @@ namespace Informa.Web.Areas.Article.Controllers
                     resultBody.Append(row);
                     j++;
                 }
-                replacements["#result_count# "] = j.ToString();
+                replacements["#result_count#"] = j.ToString();
                 replacements["#result_list#"] = resultBody.ToString();
 
                 emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);

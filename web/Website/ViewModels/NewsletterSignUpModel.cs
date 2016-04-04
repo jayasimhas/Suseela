@@ -1,5 +1,6 @@
 ﻿
 using System.Linq;
+using Informa.Library.Globalization;
 using Informa.Library.Newsletter;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
@@ -13,14 +14,17 @@ namespace Informa.Web.ViewModels
 	{
 	    private readonly IAuthenticatedUserContext UserContext;
         public readonly IQueryNewsletterUserOptIn NewsletterOptIn;
+	    public readonly ITextTranslator TextTranslator;
 
         public NewsletterSignUpModel(
 	        IAuthenticatedUserContext userContext,
-            IQueryNewsletterUserOptIn newsletterOptIn)
+            IQueryNewsletterUserOptIn newsletterOptIn,
+            ITextTranslator textTranslator)
 	    {
 
             UserContext = userContext;
             NewsletterOptIn = newsletterOptIn;
+            TextTranslator = textTranslator;
 	    }
 
         public bool IsAuthenticated => UserContext.IsAuthenticated;
@@ -43,5 +47,8 @@ namespace Informa.Web.ViewModels
 	            return false;
 	        }
 	    }
+
+	    public string GeneralError => TextTranslator.Translate("Newsletter.GeneralError");
+
 	}
 }

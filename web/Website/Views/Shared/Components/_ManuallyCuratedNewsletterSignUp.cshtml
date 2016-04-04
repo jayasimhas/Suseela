@@ -10,19 +10,22 @@
             <div class="form--single-row">
                 <input class="inf-standard-form-field" name="userName" placeholder="@Translate.Text("Global.NewsletterSignupEmail")">
                 <div class="sign-in__submit-wrapper">
-                    @if(Sitecore.Context.PageMode.IsExperienceEditor) { 
+                    @if(Sitecore.Context.PageMode.IsExperienceEditor) {
                         @Editable(x => x.GlassModel.Sign_Up_Button_Text)
                     }
                     <button class="button--filled newsletter-signup-submit js-newsletter-signup-submit" data-signup-url="/Account/api/PreferencesApi/SignupUser/">@Model.GlassModel.Sign_Up_Button_Text</button>
                 </div>
             </div>
-            </div>
-            <div class="newsletter-signup-after-submit">
-                <h3>@Editable(x => x.GlassModel.Confirmation_Text)</h3>
-                @Editable(x => x.GlassModel.Confirmation_Summary)
-                <div class="form--single-row">
-                    <button class="button--filled">@Translate.Text("Global.ManagePreferences")</button>
-                </div>
+            <div class="newsletter-signup__error js-newsletter-signup-error">
+                @Model.GeneralError
             </div>
         </div>
+        <div class="newsletter-signup-after-submit">
+            <h3>@Editable(x => x.GlassModel.Confirmation_Text)</h3>
+            @Editable(x => x.GlassModel.Confirmation_Summary)
+            <div class="form--single-row">
+                <button class="button--filled">@Translate.Text("Global.ManagePreferences")</button>
+            </div>
+        </div>
+    </div>
 }
