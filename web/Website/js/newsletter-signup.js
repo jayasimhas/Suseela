@@ -1,3 +1,5 @@
+import { analyticsEvent } from './analytics-controller';
+
 ﻿function newsletterSignupController() {
 
     this.checkForUserSignedUp = function(){
@@ -30,26 +32,27 @@
 
                 $.get(url, function(response) {
                     if (response) {
+
                         var newsletterAnalytics = {
                             event_name: 'newsletter-signup',
                             newsletter_signup_state: 'successful',
                             userName: '"' + inputData + '"'
                         };
-                        var result ={};
-                        $.extend(result,analytics_data,newsletterAnalytics);
-                        utag.link(result);
+
+                        analyticsEvent( $.extend( analytics_data, newsletterAnalytics) );
 
                         $(".newsletter-signup-before-submit").hide();
                         $(".newsletter-signup-after-submit").show();
+
                     } else {
+
                         var newsletterAnalytics = {
                             event_name: 'newsletter-signup',
                             newsletter_signup_state: 'unsuccessful',
                             userName: '"' + inputData + '"'
                         };
-                        var result ={};
-                        $.extend(result,analytics_data,newsletterAnalytics);
-                        utag.link(result);
+
+                        analyticsEvent( $.extend(analytics_data, newsletterAnalytics) );
 
                         $('.js-newsletter-signup-error').show();
                     }
@@ -58,8 +61,6 @@
             });
         }
     }
-
-
 }
 
 export default newsletterSignupController;

@@ -24,7 +24,7 @@
             <h3>@Editable(x => x.GlassModel.Confirmation_Text)</h3>
             @Editable(x => x.GlassModel.Confirmation_Summary)
             <div class="form--single-row">
-                <button class="button--filled">@Translate.Text("Global.ManagePreferences")</button>
+                <a href="@Model.PreferencesURL" class="button--filled">@Translate.Text("Global.ManagePreferences")</a>
             </div>
         </div>
     </div>

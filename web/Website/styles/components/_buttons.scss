@@ -11,7 +11,8 @@ This file contains all styles related to the button component.
 ```
 */
 
-.button {
+.button,
+a.button {
 	&--filled,
 	&--outlined,
 	&--outline,
@@ -30,6 +31,7 @@ This file contains all styles related to the button component.
 
 		&:hover {
 			background-color: $informa-dark-orange;
+            text-decoration:none;
 		}
 
 		&:disabled {

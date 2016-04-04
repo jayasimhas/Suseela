@@ -138,6 +138,8 @@
 		display: none;
 		float: left;
 		flex: 0 0 auto;
+		margin-right: 0;
+		z-index: 9999; // above header logo
 
 		@include breakpoint('medium') {
 			display: block;

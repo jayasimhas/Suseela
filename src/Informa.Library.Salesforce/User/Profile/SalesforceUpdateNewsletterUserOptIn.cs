@@ -4,17 +4,25 @@ using System.Linq;
 using Informa.Library.Newsletter;
 using Informa.Library.User;
 using Informa.Library.Salesforce.EBIWebServices;
+using Informa.Library.User.Authentication;
 
 namespace Informa.Library.Salesforce.User.Profile
 {
 	public class SalesforceUpdateNewsletterUserOptIn : IUpdateNewsletterUserOptIn
 	{
 		protected readonly ISalesforceServiceContext Service;
+        private readonly IAuthenticatedUserContext UserContext;
+        public readonly IQueryNewsletterUserOptIn NewsletterOptIn;
 
-		public SalesforceUpdateNewsletterUserOptIn(
-			ISalesforceServiceContext service)
+        public SalesforceUpdateNewsletterUserOptIn(
+			ISalesforceServiceContext service,
+            IAuthenticatedUserContext userContext,
+            IQueryNewsletterUserOptIn newsletterOptIn)
 		{
 			Service = service;
+            UserContext = userContext;
+            NewsletterOptIn = newsletterOptIn;
+
 		}
 
 		public bool Update(IEnumerable<INewsletterUserOptIn> newsletterOptIns, string userName)
@@ -37,20 +45,18 @@ namespace Informa.Library.Salesforce.User.Profile
 
 		public bool IsUserSignedUp(string userName)
 		{
-			if (!Sitecore.Context.User.IsAuthenticated)
-			{
-				return false;
-			}
-			var response = Service.Execute(s => s.queryEmailNewsletterOptins(userName));
-			if (response.emailNewsletterOptins != null)
-			{
-				var optionSignup = response.emailNewsletterOptins.Where(x => (x !=null && x.optinName.Equals(NewsletterType.Scrip.ToDescriptionString()))).Count();
-				if (optionSignup > 0)
-				{
-					return true;
-				}
-			}
-			return false;
+            if (!UserContext.IsAuthenticated)
+                return false;
+
+            var userNewsOptInStatus = NewsletterOptIn.Query(UserContext.User);
+            if (userNewsOptInStatus.Success)
+            {
+                var result = userNewsOptInStatus.NewsletterOptIns.Where(a => a.Name.ToLower().Equals(NewsletterType.Scrip.ToDescriptionString().ToLower()));
+                return (result.Any())
+                    ? result.First().ReceivesNewsletterAlert
+                    : false;
+            }
+            return false;
 		}
 	}
 }
