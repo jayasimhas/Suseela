@@ -32,9 +32,7 @@ namespace Informa.Library.Utilities.References
         public Guid TherapyAreasTaxonomyFolder => new Guid("{49A93890-E459-44F1-9453-A6F3FF0AF4C1}");
 
         #endregion
-
-		public Guid SiteConfig  => new Guid("{BE2B8891-635F-49C1-8BA9-4D2F6C7C5ACE}");
-
+		
         public Guid SearchPage  => new Guid("{0FF66777-7EC7-40BE-ABC4-6A20C8ED1EF0}");
         public Guid VwbSearchPage  => new Guid("{A0163A51-2FF8-4A9C-8FBA-6516546E5AE1}");
 
