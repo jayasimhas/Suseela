@@ -1,27 +1,29 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Text;
 using System.Xml;
 using Glass.Mapper.Sc;
+using Informa.Library.Rss.Interfaces;
 using Informa.Library.Rss.Utils;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss;
 using Sitecore.Data.Items;
+using Sitecore.Diagnostics;
 using Sitecore.Web;
 
 namespace Informa.Web.ViewModels
 {
     public class SearchRssViewModel
     {
-        private readonly RssFeedUtil _rssFeedutil;
-        private readonly RssItemUtil _rssItemUtil;
+        private ISitecoreContext _sitecoreContext;
+        private ItemReferences _itemReferences;
 
         public SearchRssViewModel()
         {
-            ISitecoreContext sitecoreContext = new SitecoreContext();
-
-            _rssItemUtil = new RssItemUtil(sitecoreContext);
-            _rssFeedutil = new RssFeedUtil(sitecoreContext, WebUtil.GetHostName(), new ItemReferences());
+            _sitecoreContext = new SitecoreContext();
+            _itemReferences = new ItemReferences();
         }
 
         /// <summary>
@@ -31,19 +33,59 @@ namespace Informa.Web.ViewModels
         public string GetSearchRssXml()
         {
             Item currentItem = Sitecore.Context.Item;
-            ISearch_Rss_Feed rssFeedItem = currentItem.GlassCast<ISearch_Rss_Feed>(inferType: true);
+            I_Base_Rss_Feed rssFeedItem = currentItem.GlassCast<I_Base_Rss_Feed>(inferType: false);
 
-            var feed = _rssFeedutil.GetSearchRssFeed(rssFeedItem);
+            SyndicationFeed feed = null;
+
+            var feedGenerator = GetFeedGenerator(rssFeedItem);
+            if (feedGenerator == null)
+            {
+                Log.Error("Could Note Create RSS Feed Geneartor " + rssFeedItem.Rss_Feed_Generation, this);
+                return string.Empty;
+            }
+
+            feed = feedGenerator.GetRssFeed(rssFeedItem, _sitecoreContext, _itemReferences);
+
+            if (feed == null)
+            {
+                Log.Error("Could Note Create RSS Feed With " + rssFeedItem.Rss_Feed_Generation, this);
+                return string.Empty;
+            }
 
             var formatter = new Rss20FeedFormatter(feed);
             formatter.SerializeExtensionsAsAtom = false;
 
-            var searchItems = _rssFeedutil.GetSearchItems(rssFeedItem);
+            var itemRetriever = GetItemRetriever(rssFeedItem);
+            if (itemRetriever == null)
+            {
+                Log.Error("Could Note Create Item Retriever With " + rssFeedItem.Sitecore_Item_Retrieval, this);
+                return string.Empty;
+            }
 
-            var items =
-                searchItems.Select(searchItem => _rssItemUtil.GetSyndicationItemFromSitecore(searchItem)).ToList();
+            var rssItemGenerator = GetItemGenerator(rssFeedItem);
+            if (rssItemGenerator == null)
+            {
+                Log.Error("Could Note Create Item Generator With " + rssFeedItem.Rss_Item_Generation, this);
+                return string.Empty;
+            }
 
-            feed.Items = items;
+            var sitecoreItems = itemRetriever.GetSitecoreItems(currentItem);
+
+            List<SyndicationItem> syndicationItems = new List<SyndicationItem>();
+            foreach (Item sitecoreItem in sitecoreItems)
+            {
+                var syndicationItem = rssItemGenerator.GetSyndicationItemFromSitecore(_sitecoreContext, sitecoreItem);
+                if (syndicationItem == null)
+                {
+                    continue;
+                    
+                }
+
+                syndicationItems.Add(syndicationItem);
+            }
+
+            feed.Items = syndicationItems;
+
 
             var output = new StringBuilder();
 
@@ -53,6 +95,37 @@ namespace Informa.Web.ViewModels
                 writer.Flush();
                 return output.ToString();
             }
+        }
+
+        public IRssFeedGeneration GetFeedGenerator(I_Base_Rss_Feed rssFeedItem)
+        {
+            Type feedGenerationType = Type.GetType(rssFeedItem.Rss_Feed_Generation);
+            if (feedGenerationType != null)
+            {
+                return Activator.CreateInstance(feedGenerationType) as IRssFeedGeneration;
+            }
+
+            return null;
+        }
+        public IRssItemGeneration GetItemGenerator(I_Base_Rss_Feed rssFeedItem)
+        {
+            Type itemGenerationType = Type.GetType(rssFeedItem.Rss_Item_Generation);
+            if (itemGenerationType != null)
+            {
+                return Activator.CreateInstance(itemGenerationType) as IRssItemGeneration;
+            }
+
+            return null;
+        }
+        public IRssSitecoreItemRetrieval GetItemRetriever(I_Base_Rss_Feed rssFeedItem)
+        {
+            Type itemRetrievalType = Type.GetType(rssFeedItem.Sitecore_Item_Retrieval);
+            if (itemRetrievalType != null)
+            {
+                return Activator.CreateInstance(itemRetrievalType) as IRssSitecoreItemRetrieval;
+            }
+
+            return null;
         }
     }
 }
