@@ -9784,6 +9784,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	public partial interface ISite_Config : IGlassBase 
 	{
 								/// <summary>
+					/// The Email Preferences Page field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 8d08511c-d6ff-4ade-9a19-e70c34d1cc71</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_Preferences_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Email_Preferences_Page  {get; set;}
+								/// <summary>
 					/// The My Account Page field.
 					/// <para></para>
 					/// <para>Field Type: Droptree</para>		
@@ -10363,6 +10372,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 		public partial interface ISite_Config__Raw : IGlassBase 
 		{
 										/// <summary>
+						/// The Email Preferences Page field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 8d08511c-d6ff-4ade-9a19-e70c34d1cc71</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_Preferences_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Email_Preferences_Page  {get; set;}
+										/// <summary>
 						/// The My Account Page field.
 						/// <para></para>
 						/// <para>Field Type: Droptree</para>		
@@ -10937,6 +10955,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Site Config";
 
+					
+			public static readonly ID Email_Preferences_PageFieldId = new ID("8d08511c-d6ff-4ade-9a19-e70c34d1cc71");
+			public const string Email_Preferences_PageFieldName = "Email Preferences Page";
+
+						
 					
 			public static readonly ID My_Account_PageFieldId = new ID("6b8b6c6d-013a-4ba0-a166-f57747668b0f");
 			public const string My_Account_PageFieldName = "My Account Page";
@@ -15332,6 +15355,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Site Root";
 
+					
+			public static readonly ID Email_Preferences_PageFieldId = new ID("8d08511c-d6ff-4ade-9a19-e70c34d1cc71");
+			public const string Email_Preferences_PageFieldName = "Email Preferences Page";
+
+						
 					
 			public static readonly ID My_Account_PageFieldId = new ID("6b8b6c6d-013a-4ba0-a166-f57747668b0f");
 			public const string My_Account_PageFieldName = "My Account Page";
