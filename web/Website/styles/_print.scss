@@ -48,7 +48,6 @@
 
     header,
     main {
-        height: auto;
         margin-left: 0;
         width: 100%;
         max-width: 100%;
@@ -56,6 +55,12 @@
 
     header {
         max-height: 400px;
+        height: auto;
+    }
+    main {
+        // page-break-before: always;
+         display: inline;
+        //overflow: auto;
     }
 
     .main__content {
@@ -70,6 +75,7 @@
         margin-left: 0;
         padding-left: 0;
         width: 100%;
+        float: none;
     }
 
     .header__wrapper {
