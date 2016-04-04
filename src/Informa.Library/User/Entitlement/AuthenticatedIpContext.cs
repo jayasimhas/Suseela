@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Informa.Library.Salesforce.User;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Entitlement
@@ -8,9 +7,10 @@ namespace Informa.Library.User.Entitlement
     [AutowireService(LifetimeScope.Default)]
     public class AuthenticatedIpContext : IAuthenticatedIPContext
     { 
-        private readonly IUserIpAddressContext UserIpAddressContext;
-        private readonly IUserSession UserSession;
-        private readonly IGetIPEntitlements GetIpEntitlements;
+        protected readonly IUserIpAddressContext UserIpAddressContext;
+        protected readonly IUserSession UserSession;
+        protected readonly IGetIPEntitlements GetIpEntitlements;
+
         public AuthenticatedIpContext(IUserIpAddressContext userIpAddressContext, IUserSession userSession, IGetIPEntitlements getIpEntitlements)
         {
             UserIpAddressContext = userIpAddressContext;
@@ -18,26 +18,34 @@ namespace Informa.Library.User.Entitlement
             GetIpEntitlements = getIpEntitlements;
         }
 
-        private const string EntitlementSessionKey = nameof(AuthenticatedIpContext);
+        private const string EntitlementSessionKeyPrefix = nameof(AuthenticatedIpContext);
 
-        public IList<IEntitlement> Entitlements
+		public string EntitlementSessionKey => $"{EntitlementSessionKeyPrefix}{UserIpAddressContext.IpAddress}";
+
+		public IList<IEntitlement> Entitlements
         {
             get
             {
-                var entitlements = UserSession.Get<IList<IEntitlement>>($"{EntitlementSessionKey}{UserIpAddressContext.IpAddress}") ??
-                                   new List<IEntitlement>();
+				var entitlementsSessions = UserSession.Get<IList<IEntitlement>>(EntitlementSessionKey);
+				var entitlements = entitlementsSessions.HasValue ? entitlementsSessions.Value : new List<IEntitlement>();
 
-                if (entitlements != null && entitlements.Any())
-                    return entitlements;
+                if (entitlements.Any())
+				{
+					return entitlements;
+				}
+                    
+                entitlements = GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress);
 
-                entitlements = GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress.ToString());
                 if(!entitlements.Any())
-                    entitlements.Add(new Entitlement { ProductCode = "NONE" });
+				{
+					entitlements.Add(new Entitlement { ProductCode = "NONE" });
+				}
 
                 Entitlements = entitlements;
+
                 return entitlements;
             }
-            private set { UserSession.Set($"{EntitlementSessionKey}{UserIpAddressContext.IpAddress}", value); }
+			set { UserSession.Set(EntitlementSessionKey, value); }
         }
 
         public void RefreshEntitlements()

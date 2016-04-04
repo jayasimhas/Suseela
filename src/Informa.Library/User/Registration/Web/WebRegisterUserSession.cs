@@ -20,7 +20,7 @@ namespace Informa.Library.User.Registration.Web
 		{
 			get
 			{
-				return SessionStore.Get<INewUser>(NewUserSessionKey);
+				return SessionStore.Get<INewUser>(NewUserSessionKey).Value;
 			}
 			set
 			{

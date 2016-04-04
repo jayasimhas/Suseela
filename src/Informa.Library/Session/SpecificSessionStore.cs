@@ -12,7 +12,7 @@
 			SessionStore = sessionStore;
 		}
 
-		public T Get<T>(string key)
+		public ISessionValue<T> Get<T>(string key)
 		{
 			return SessionStore.Get<T>(CreatePrefixedSessionKey(key));
 		}

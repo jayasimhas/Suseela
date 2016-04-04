@@ -10,19 +10,19 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 {
 	public class RegisterUserOptInsViewModel : GlassViewModel<IRegistration_Thank_You_Page>
 	{
-		protected readonly ICompanyContext CompanyContext;
+		protected readonly IUserCompanyContext UserCompanyContext;
 		protected readonly ITextTranslator TextTranslator;
 
 		public RegisterUserOptInsViewModel(
-			ICompanyContext companyContext,
+			IUserCompanyContext userCompanyContext,
 			ITextTranslator textTranslator)
 		{
-			CompanyContext = companyContext;
+			UserCompanyContext = userCompanyContext;
 			TextTranslator = textTranslator;
 		}
 
 		public string Title => GlassModel?.Title;
-		public string SubTitle => CompanyContext.Company == null ? GlassModel?.Sub_Title : GlassModel?.Company_Sub_Title.ReplacePatternCaseInsensitive("#User_Company_Name#", CompanyContext.Company.Name);
+		public string SubTitle => UserCompanyContext.Company == null ? GlassModel?.Sub_Title : GlassModel?.Company_Sub_Title.ReplacePatternCaseInsensitive("#User_Company_Name#", UserCompanyContext.Company.Name);
 		public IHtmlString Body => new MvcHtmlString(GlassModel?.Body);
 		public string SubmitText => TextTranslator.Translate("Registration.OptIn.Submit");
 		public string GeneralErrorText => TextTranslator.Translate("Registration.OptIn.GeneralError");

@@ -23,7 +23,7 @@ namespace Informa.Web.ViewModels
 	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
 	{
 		protected readonly ISiteRootContext SiteRootContext;
-		protected readonly ICompanyNameContext CompanyNameContext;
+		protected readonly IUserCompanyNameContext CompanyNameContext;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteSettings SiteSettings;
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
@@ -54,7 +54,7 @@ namespace Informa.Web.ViewModels
 			IArticleSearch articleSearch,
 			IItemReferences itemReferences,
 			ITextTranslator textTranslator,
-			ICompanyNameContext companyNameContext,
+			IUserCompanyNameContext companyNameContext,
 			ISalesforceFindUserProfile salesforceFindUserProfile,
 			IEntitlementAccessLevelContext entitlementAccessLevelContext,
 			IUserSubscriptionsContext userSubscriptionsContext)
