@@ -177,12 +177,13 @@ namespace Informa.Library.Article.Search
 					str.Append("'");
 					str.Append(author._Name);
 					str.Append("'");
-					if (!author.Equals(lastItem))
+					if (item.Authors.Count() > 1 && !author.Equals(lastItem))
 					{
 						str.Append(",");
 					}
 				}
 				str.Append("]");
+				return str.ToString();
 			}
 
 			return string.Empty;
