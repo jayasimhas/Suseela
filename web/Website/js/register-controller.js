@@ -1,3 +1,5 @@
+import { analyticsEvent } from './analytics-controller';
+
 function loginController(requestVerificationToken) {
 	this.addRegisterUserControl = function(triggerElement, successCallback, failureCallback) {
 		if (triggerElement) {
@@ -32,10 +34,14 @@ function loginController(requestVerificationToken) {
 					context: this,
 					success: function (response) {
 					    if (response.success) {
-					        var registerAnalytics = {"event_name":"register-step-1","registration_state":"successful","userName":'"'+inputData.username+'"'};
-					        var result ={};
-					        $.extend(result,analytics_data,registerAnalytics);
-					        utag.link(result);
+
+							var registerAnalytics = {
+								event_name: 'register-step-1',
+								registration_state: 'successful',
+								userName: '"' + inputData.username + '"'
+							};
+
+					        analyticsEvent( $.extend(analytics_data, registerAnalytics) );
 
 							if (successCallback) {
 								successCallback(triggerElement);
@@ -51,10 +57,14 @@ function loginController(requestVerificationToken) {
 						}
 						else {
 							$(triggerElement).removeAttr('disabled');
-							var registerAnalytics = {"event_name":"register-step-1","registration_state":"unsuccessful","userName":'"'+inputData.username+'"'};
-							var result ={};
-							$.extend(result,analytics_data,registerAnalytics);
-					        utag.link(result);
+
+							var registerAnalytics = {
+								event_name: 'register-step-1',
+								registration_state: 'unsuccessful',
+								userName: '"' + inputData.username + '"'
+							};
+
+							analyticsEvent( $.extend(analytics_data, registerAnalytics) );
 
 							var specificErrorDisplayed = false;
 

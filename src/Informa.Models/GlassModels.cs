@@ -1333,6 +1333,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss
+{
+
+
+ 	/// <summary>
+	/// IRss_Feed_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Rss/Rss Feed Folder</para>	
+	/// <para>ID: 0cec731c-0b3d-4017-9486-053fa3169902</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRss_Feed_FolderConstants.TemplateIdString)]
+	public partial interface IRss_Feed_Folder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IRss_Feed_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Rss/Rss Feed Folder</para>	
+		/// <para>ID: 0cec731c-0b3d-4017-9486-053fa3169902</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRss_Feed_Folder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IRss_Feed_FolderConstants{
+
+			public const string TemplateIdString = "0cec731c-0b3d-4017-9486-053fa3169902";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Rss Feed Folder";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields
 {
 
@@ -6223,6 +6261,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					/// </summary>
 					[SitecoreField(ITaxonomy_ItemConstants.Item_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Item_Name  {get; set;}
+								/// <summary>
+					/// The Media Type Icon field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: 1cfbe05b-a4af-4b00-90fb-734cba008f42</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITaxonomy_ItemConstants.Media_Type_IconFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image Media_Type_Icon  {get; set;}
 				}
 
 	
@@ -6244,6 +6291,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 						/// </summary>
 						[SitecoreField(ITaxonomy_ItemConstants.Item_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Item_Name  {get; set;}
+										/// <summary>
+						/// The Media Type Icon field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: 1cfbe05b-a4af-4b00-90fb-734cba008f42</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ITaxonomy_ItemConstants.Media_Type_IconFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image Media_Type_Icon  {get; set;}
 						}
 	
 	public static partial class ITaxonomy_ItemConstants{
@@ -6255,6 +6311,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					
 			public static readonly ID Item_NameFieldId = new ID("ac58f381-3d7f-4d90-966d-41813dc66e87");
 			public const string Item_NameFieldName = "Item Name";
+
+						
+					
+			public static readonly ID Media_Type_IconFieldId = new ID("1cfbe05b-a4af-4b00-90fb-734cba008f42");
+			public const string Media_Type_IconFieldName = "Media Type Icon";
 
 						
 					
@@ -12352,17 +12413,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss
 	/// <para>ID: a6de7b43-7cd7-4bfe-ab9b-09acba91e9b8</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=ISearch_Rss_FeedConstants.TemplateIdString)]
-	public partial interface ISearch_Rss_Feed : IGlassBase 
+	public partial interface ISearch_Rss_Feed : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss.I_Base_Rss_Feed
 	{
-								/// <summary>
-					/// The Description field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 52a982e9-a0b0-49c9-be20-948d18c44f05</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISearch_Rss_FeedConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Description  {get; set;}
 								/// <summary>
 					/// The Include Url Parameters field.
 					/// <para></para>
@@ -12391,17 +12443,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss
 		/// <para>ID: a6de7b43-7cd7-4bfe-ab9b-09acba91e9b8</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface ISearch_Rss_Feed__Raw : IGlassBase 
+		public partial interface ISearch_Rss_Feed__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss.I_Base_Rss_Feed__Raw
 		{
-										/// <summary>
-						/// The Description field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 52a982e9-a0b0-49c9-be20-948d18c44f05</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISearch_Rss_FeedConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Description  {get; set;}
 										/// <summary>
 						/// The Include Url Parameters field.
 						/// <para></para>
@@ -12429,11 +12472,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss
 			public const string TemplateName = "Search Rss Feed";
 
 					
-			public static readonly ID DescriptionFieldId = new ID("52a982e9-a0b0-49c9-be20-948d18c44f05");
-			public const string DescriptionFieldName = "Description";
-
-						
-					
 			public static readonly ID Include_Url_ParametersFieldId = new ID("28e25d4d-6fc6-4881-a059-9464c4189015");
 			public const string Include_Url_ParametersFieldName = "Include Url Parameters";
 
@@ -12441,6 +12479,51 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss
 					
 			public static readonly ID Search_PageFieldId = new ID("ba86e0da-28ce-4f72-8893-b17746097449");
 			public const string Search_PageFieldName = "Search Page";
+
+						
+					
+			public static readonly ID CopyrightFieldId = new ID("f0139dad-461e-43bd-b7e8-92c3fd88fdfe");
+			public const string CopyrightFieldName = "Copyright";
+
+						
+					
+			public static readonly ID DescriptionFieldId = new ID("4a73e74f-3611-4c5d-9f98-129bed62f83a");
+			public const string DescriptionFieldName = "Description";
+
+						
+					
+			public static readonly ID LanguageFieldId = new ID("57a6a774-fed8-41a8-baa1-a9b0397e1059");
+			public const string LanguageFieldName = "Language";
+
+						
+					
+			public static readonly ID LinkFieldId = new ID("a83d0c7c-6c27-429a-8641-d9b059d7d5dd");
+			public const string LinkFieldName = "Link";
+
+						
+					
+			public static readonly ID TitleFieldId = new ID("b615291e-d10b-45cf-b4ea-1c63d2005424");
+			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID Web_MasterFieldId = new ID("90d31b7d-a704-4204-841b-8e3876ef2f70");
+			public const string Web_MasterFieldName = "Web Master";
+
+						
+					
+			public static readonly ID Rss_Feed_GenerationFieldId = new ID("9d4040a3-b103-4afb-9e36-42fac7d9eb94");
+			public const string Rss_Feed_GenerationFieldName = "Rss Feed Generation";
+
+						
+					
+			public static readonly ID Rss_Item_GenerationFieldId = new ID("fde00e6f-673f-4f9b-8e23-f0a39a5b6017");
+			public const string Rss_Item_GenerationFieldName = "Rss Item Generation";
+
+						
+					
+			public static readonly ID Sitecore_Item_RetrievalFieldId = new ID("d554c7c4-e931-4876-a1d6-8e3b9c45146a");
+			public const string Sitecore_Item_RetrievalFieldName = "Sitecore Item Retrieval";
 
 						
 			
@@ -17542,6 +17625,251 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversio
 					
 			public static readonly ID FormatFieldId = new ID("fbd90442-db0c-48f1-a0f4-0427cd9afcce");
 			public const string FormatFieldName = "Format";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss
+{
+
+
+ 	/// <summary>
+	/// I_Base_Rss_Feed Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Rss/_Base Rss Feed</para>	
+	/// <para>ID: f401b861-4149-4913-915e-8ba4b07a4eb1</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=I_Base_Rss_FeedConstants.TemplateIdString)]
+	public partial interface I_Base_Rss_Feed : IGlassBase 
+	{
+								/// <summary>
+					/// The Copyright field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: f0139dad-461e-43bd-b7e8-92c3fd88fdfe</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I_Base_Rss_FeedConstants.CopyrightFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Copyright  {get; set;}
+								/// <summary>
+					/// The Description field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 4a73e74f-3611-4c5d-9f98-129bed62f83a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I_Base_Rss_FeedConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Description  {get; set;}
+								/// <summary>
+					/// The Language field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 57a6a774-fed8-41a8-baa1-a9b0397e1059</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I_Base_Rss_FeedConstants.LanguageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Language  {get; set;}
+								/// <summary>
+					/// The Link field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: a83d0c7c-6c27-429a-8641-d9b059d7d5dd</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I_Base_Rss_FeedConstants.LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Link  {get; set;}
+								/// <summary>
+					/// The Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: b615291e-d10b-45cf-b4ea-1c63d2005424</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I_Base_Rss_FeedConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Title  {get; set;}
+								/// <summary>
+					/// The Web Master field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 90d31b7d-a704-4204-841b-8e3876ef2f70</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I_Base_Rss_FeedConstants.Web_MasterFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Web_Master  {get; set;}
+								/// <summary>
+					/// The Rss Feed Generation field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 9d4040a3-b103-4afb-9e36-42fac7d9eb94</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I_Base_Rss_FeedConstants.Rss_Feed_GenerationFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Rss_Feed_Generation  {get; set;}
+								/// <summary>
+					/// The Rss Item Generation field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: fde00e6f-673f-4f9b-8e23-f0a39a5b6017</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I_Base_Rss_FeedConstants.Rss_Item_GenerationFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Rss_Item_Generation  {get; set;}
+								/// <summary>
+					/// The Sitecore Item Retrieval field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: d554c7c4-e931-4876-a1d6-8e3b9c45146a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I_Base_Rss_FeedConstants.Sitecore_Item_RetrievalFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Sitecore_Item_Retrieval  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// I_Base_Rss_Feed Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Rss/_Base Rss Feed</para>	
+		/// <para>ID: f401b861-4149-4913-915e-8ba4b07a4eb1</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface I_Base_Rss_Feed__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Copyright field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: f0139dad-461e-43bd-b7e8-92c3fd88fdfe</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I_Base_Rss_FeedConstants.CopyrightFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Copyright  {get; set;}
+										/// <summary>
+						/// The Description field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 4a73e74f-3611-4c5d-9f98-129bed62f83a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I_Base_Rss_FeedConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Description  {get; set;}
+										/// <summary>
+						/// The Language field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 57a6a774-fed8-41a8-baa1-a9b0397e1059</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I_Base_Rss_FeedConstants.LanguageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Language  {get; set;}
+										/// <summary>
+						/// The Link field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: a83d0c7c-6c27-429a-8641-d9b059d7d5dd</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I_Base_Rss_FeedConstants.LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Link  {get; set;}
+										/// <summary>
+						/// The Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: b615291e-d10b-45cf-b4ea-1c63d2005424</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I_Base_Rss_FeedConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Title  {get; set;}
+										/// <summary>
+						/// The Web Master field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 90d31b7d-a704-4204-841b-8e3876ef2f70</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I_Base_Rss_FeedConstants.Web_MasterFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Web_Master  {get; set;}
+										/// <summary>
+						/// The Rss Feed Generation field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 9d4040a3-b103-4afb-9e36-42fac7d9eb94</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I_Base_Rss_FeedConstants.Rss_Feed_GenerationFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Rss_Feed_Generation  {get; set;}
+										/// <summary>
+						/// The Rss Item Generation field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: fde00e6f-673f-4f9b-8e23-f0a39a5b6017</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I_Base_Rss_FeedConstants.Rss_Item_GenerationFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Rss_Item_Generation  {get; set;}
+										/// <summary>
+						/// The Sitecore Item Retrieval field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: d554c7c4-e931-4876-a1d6-8e3b9c45146a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I_Base_Rss_FeedConstants.Sitecore_Item_RetrievalFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Sitecore_Item_Retrieval  {get; set;}
+						}
+	
+	public static partial class I_Base_Rss_FeedConstants{
+
+			public const string TemplateIdString = "f401b861-4149-4913-915e-8ba4b07a4eb1";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "_Base Rss Feed";
+
+					
+			public static readonly ID CopyrightFieldId = new ID("f0139dad-461e-43bd-b7e8-92c3fd88fdfe");
+			public const string CopyrightFieldName = "Copyright";
+
+						
+					
+			public static readonly ID DescriptionFieldId = new ID("4a73e74f-3611-4c5d-9f98-129bed62f83a");
+			public const string DescriptionFieldName = "Description";
+
+						
+					
+			public static readonly ID LanguageFieldId = new ID("57a6a774-fed8-41a8-baa1-a9b0397e1059");
+			public const string LanguageFieldName = "Language";
+
+						
+					
+			public static readonly ID LinkFieldId = new ID("a83d0c7c-6c27-429a-8641-d9b059d7d5dd");
+			public const string LinkFieldName = "Link";
+
+						
+					
+			public static readonly ID TitleFieldId = new ID("b615291e-d10b-45cf-b4ea-1c63d2005424");
+			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID Web_MasterFieldId = new ID("90d31b7d-a704-4204-841b-8e3876ef2f70");
+			public const string Web_MasterFieldName = "Web Master";
+
+						
+					
+			public static readonly ID Rss_Feed_GenerationFieldId = new ID("9d4040a3-b103-4afb-9e36-42fac7d9eb94");
+			public const string Rss_Feed_GenerationFieldName = "Rss Feed Generation";
+
+						
+					
+			public static readonly ID Rss_Item_GenerationFieldId = new ID("fde00e6f-673f-4f9b-8e23-f0a39a5b6017");
+			public const string Rss_Item_GenerationFieldName = "Rss Item Generation";
+
+						
+					
+			public static readonly ID Sitecore_Item_RetrievalFieldId = new ID("d554c7c4-e931-4876-a1d6-8e3b9c45146a");
+			public const string Sitecore_Item_RetrievalFieldName = "Sitecore Item Retrieval";
 
 						
 			

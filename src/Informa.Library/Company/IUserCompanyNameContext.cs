@@ -1,6 +1,6 @@
 ﻿namespace Informa.Library.Company
 {
-	public interface ICompanyNameContext
+	public interface IUserCompanyNameContext
 	{
 		string Name { get; }
 	}

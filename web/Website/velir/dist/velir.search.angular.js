@@ -293,6 +293,7 @@
                 _createClass(QueryController, [{
                     key: 'update',
                     value: function update() {
+                        this.service.getFilter('page').setValue("1");
                         this.service.getFilter('q').setValue(this.keywords);
 
                         var routerBuilder = this.service.getRouteBuilder();

@@ -23,7 +23,7 @@ namespace Informa.Web.ViewModels
 	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
 	{
 		protected readonly ISiteRootContext SiteRootContext;
-		protected readonly ICompanyNameContext CompanyNameContext;
+		protected readonly IUserCompanyNameContext CompanyNameContext;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteSettings SiteSettings;
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
@@ -43,8 +43,8 @@ namespace Informa.Web.ViewModels
 			IFooterViewModel footerViewModel,
 			ISignInPopOutViewModel signInPopOutViewModel,
 			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
-            IEmailSearchPopOutViewModel emailSearchPopOutViewModel,
-            IRegisterPopOutViewModel registerPopOutViewModel,
+			IEmailSearchPopOutViewModel emailSearchPopOutViewModel,
+			IRegisterPopOutViewModel registerPopOutViewModel,
 			IAppInsightsConfig appInsightsConfig,
 			ISiteSettings siteSettings,
 			IToolbarViewModel debugToolbar,
@@ -54,7 +54,7 @@ namespace Informa.Web.ViewModels
 			IArticleSearch articleSearch,
 			IItemReferences itemReferences,
 			ITextTranslator textTranslator,
-			ICompanyNameContext companyNameContext,
+			IUserCompanyNameContext companyNameContext,
 			ISalesforceFindUserProfile salesforceFindUserProfile,
 			IEntitlementAccessLevelContext entitlementAccessLevelContext,
 			IUserSubscriptionsContext userSubscriptionsContext)
@@ -67,8 +67,8 @@ namespace Informa.Web.ViewModels
 			Footer = footerViewModel;
 			SignInPopOutViewModel = signInPopOutViewModel;
 			EmailArticlePopOutViewModel = emailArticlePopOutViewModel;
-            EmailSearchPopOutViewModel = emailSearchPopOutViewModel;
-            RegisterPopOutViewModel = registerPopOutViewModel;
+			EmailSearchPopOutViewModel = emailSearchPopOutViewModel;
+			RegisterPopOutViewModel = registerPopOutViewModel;
 			AppInsightsConfig = appInsightsConfig;
 			SiteSettings = siteSettings;
 			IndividualRenewalMessageInfo = renewalInfo;
@@ -93,8 +93,8 @@ namespace Informa.Web.ViewModels
 		public readonly IHeaderViewModel Header;
 		public readonly ISignInPopOutViewModel SignInPopOutViewModel;
 		public readonly IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
-	    public readonly IEmailSearchPopOutViewModel EmailSearchPopOutViewModel;
-        public readonly IToolbarViewModel DebugToolbar;
+		public readonly IEmailSearchPopOutViewModel EmailSearchPopOutViewModel;
+		public readonly IToolbarViewModel DebugToolbar;
 		public readonly IRegisterPopOutViewModel RegisterPopOutViewModel;
 		public readonly IAppInsightsConfig AppInsightsConfig;
 
@@ -230,14 +230,13 @@ namespace Informa.Web.ViewModels
 			{
 				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
-					var page = (IArticle__Raw)GlassModel;
-
+					ArticleItem page = Service.GetItem<ArticleItem>(GlassModel._Id);
 					if (page.Actual_Publish_Date > DateTime.MinValue)
 					{
 						return page.Actual_Publish_Date.ToString();
 					}
 				}
-				return string.Empty;
+				return DateTime.MinValue.ToString();
 			}
 		}
 		public string Article_Content_Type
@@ -263,7 +262,7 @@ namespace Informa.Web.ViewModels
 			{
 				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
-					var page = (IArticle__Raw)GlassModel;
+					ArticleItem page = Service.GetItem<ArticleItem>(GlassModel._Id);
 					if (!string.IsNullOrEmpty(page.Article_Number))
 					{
 						return page.Article_Number;
@@ -309,8 +308,7 @@ namespace Informa.Web.ViewModels
 			{
 				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
-					var page = (IArticle__Raw)GlassModel;
-
+					ArticleItem page = Service.GetItem<ArticleItem>(GlassModel._Id);
 					if (page.Created_Date > DateTime.MinValue)
 					{
 						return page.Created_Date.ToString();
@@ -377,7 +375,7 @@ namespace Informa.Web.ViewModels
 			{
 				if (GlassModel._TemplateId.Equals(IArticleConstants.TemplateId.Guid))
 				{
-					var page = (IArticle__Raw)GlassModel;
+					ArticleItem page = Service.GetItem<ArticleItem>(GlassModel._Id);
 					return page.Free_Article;
 				}
 				return false;
