@@ -20,7 +20,7 @@ namespace Informa.Library.User
 		{
 			get
 			{
-				return UserSession.Get<IPAddress>(UserIpAddressSessionKey);
+				return UserSession.Get<IPAddress>(UserIpAddressSessionKey).Value;
 			}
 			set
 			{

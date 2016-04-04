@@ -22,9 +22,9 @@ namespace Informa.Library.User.Entitlement
 		{
 			get
 			{
-				var isEnabled = Session.Get<bool?>(ChecksEnabledSessionKey);
+				var isEnabled = Session.Get<bool>(ChecksEnabledSessionKey);
 
-				if (isEnabled == null || !isEnabled.HasValue)
+				if (!isEnabled.HasValue)
 				{
 					return Enabled = !SitecoreUserContext.User.IsAdministrator;
 				}

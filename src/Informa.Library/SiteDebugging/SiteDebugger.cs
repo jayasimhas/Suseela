@@ -32,9 +32,9 @@ namespace Informa.Library.SiteDebugging
 
 		public bool IsDebugging(string key)
 		{
-			var isDebugging = DebugSession.Get<bool?>(CreateSessionKey(key));
+			var isDebugging = DebugSession.Get<bool>(CreateSessionKey(key));
 
-			if (isDebugging == null || !isDebugging.HasValue)
+			if (!isDebugging.HasValue)
 			{
 				return false;
 			}
