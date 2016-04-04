@@ -291,10 +291,8 @@
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
-    <Compile Include="Company\CompanyContext.cs" />
     <Compile Include="Company\CompanyType.cs" />
     <Compile Include="Company\ICompany.cs" />
-    <Compile Include="Company\ICompanyContext.cs" />
     <Compile Include="Company\IFindCompanyByIpAddress.cs" />
     <Compile Include="Company\IFindCompanyByUser.cs" />
     <Compile Include="Company\IRegisterCompanyUser.cs" />
@@ -318,8 +316,10 @@
     <Compile Include="Rss\ItemRetrieval\RssSearchResultsItemRetrieval.cs" />
     <Compile Include="Rss\Utils\RssConstants.cs" />
     <Compile Include="Search\Utilities\SearchSummaryUtil.cs" />
+    <Compile Include="Session\ISessionValue`1.cs" />
     <Compile Include="Session\ISpecificSessionStore.cs" />
     <Compile Include="Session\ISpecificSessionStores.cs" />
+    <Compile Include="Session\SessionValue`1.cs" />
     <Compile Include="Session\SpecificSessionStores.cs" />
     <Compile Include="SiteDebugging\ISiteDebugger.cs" />
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
@@ -610,8 +610,8 @@
     <Compile Include="ContentCuration\Search\ComputedIndexField\ManuallyCuratedContent.cs" />
     <Compile Include="User\Authentication\Web\WebLoginUserActions.cs" />
     <Compile Include="User\Authentication\Web\WebLoginUserResult.cs" />
-    <Compile Include="Company\ICompanyNameContext.cs" />
-    <Compile Include="Company\CompanyNameContext.cs" />
+    <Compile Include="Company\IUserCompanyNameContext.cs" />
+    <Compile Include="Company\UserCompanyNameContext.cs" />
     <Compile Include="CustomSitecore\Fields\MultiTreeList.cs" />
     <Compile Include="CustomSitecore\Mvc\AreaControllerFactory.cs" />
     <Compile Include="CustomSitecore\Mvc\CustomSitecoreHelper.cs" />

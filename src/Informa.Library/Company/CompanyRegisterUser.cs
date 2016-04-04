@@ -4,20 +4,20 @@ namespace Informa.Library.Company
 {
 	public class CompanyRegisterUser : IRegisterUser
 	{
-		protected readonly ICompanyContext CompanyContext;
+		protected readonly IUserCompanyContext UserCompanyContext;
 		protected readonly IRegisterCompanyUser RegisterCompanyUser;
 
 		public CompanyRegisterUser(
-			ICompanyContext companyContext,
+			IUserCompanyContext userCompanyContext,
 			IRegisterCompanyUser registerCompanyUser)
 		{
-			CompanyContext = companyContext;
+			UserCompanyContext = userCompanyContext;
 			RegisterCompanyUser = registerCompanyUser;
 		}
 
 		public bool Register(INewUser newUser)
 		{
-			return RegisterCompanyUser.Register(newUser, CompanyContext.Company);
+			return RegisterCompanyUser.Register(newUser, UserCompanyContext.Company);
 		}
 	}
 }
