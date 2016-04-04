@@ -27,12 +27,20 @@ namespace Informa.Library.Rss.Utils
 		{
 			var article = _sitecoreContext.GetItem<IArticle>(item.ID.ToString());
 			var searchTerm = Sitecore.Context.Request.QueryString["q"];
+			string publicationName = "None";
 			if (article == null)
 			{
 				return null;
 			}
-			var publication = _sitecoreContext.GetItem<Item>(article.Publication);
-			var articleUrl = (!string.IsNullOrEmpty(searchTerm)) ? string.Format("{0}?utm_source=search&utm_medium=RSS&utm_term={1}&utm_campaign=search_rss", article._AbsoluteUrl, searchTerm) : string.Format("{0}?utm_source={1}&utm_medium=RSS&utm_campaign={2}_RSS_Feed", article._AbsoluteUrl, publication.Name, publication.Name);
+			if (article.Publication != null)
+			{
+				var publication = _sitecoreContext.GetItem<Item>(article.Publication);
+				if (publication != null)
+				{
+					publicationName = publication.Name;
+				}
+			}
+			var articleUrl = (!string.IsNullOrEmpty(searchTerm)) ? string.Format("{0}?utm_source=search&utm_medium=RSS&utm_term={1}&utm_campaign=search_rss", article._AbsoluteUrl, searchTerm) : string.Format("{0}?utm_source={1}&utm_medium=RSS&utm_campaign={2}_RSS_Feed", article._AbsoluteUrl, publicationName, publicationName);
 			var syndicationItem = new SyndicationItem(article.Title,
 		article.Summary,
 		new Uri(articleUrl),
