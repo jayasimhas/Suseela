@@ -21,7 +21,7 @@ namespace Informa.Web.ViewModels
 	public class HeaderViewModel : IHeaderViewModel
 	{
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-		protected readonly ICompanyNameContext CompanyNameContext;
+		protected readonly IUserCompanyNameContext CompanyNameContext;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteHomeContext SiteHomeContext;
 		protected readonly ISiteRootContext SiteRootContext;
@@ -32,7 +32,7 @@ namespace Informa.Web.ViewModels
 
 		public HeaderViewModel(
 			IAuthenticatedUserContext authenticatedUserContext,
-			ICompanyNameContext companyNameContext,
+			IUserCompanyNameContext companyNameContext,
 			ITextTranslator textTranslator,
 			ISiteHomeContext siteHomeContext,
 			ISiteRootContext siteRootContext,
