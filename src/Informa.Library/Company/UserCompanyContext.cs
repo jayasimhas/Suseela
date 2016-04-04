@@ -27,14 +27,16 @@ namespace Informa.Library.Company
 		{
 			get
 			{
-				var company = UserSession.Get<ICompany>(CompanySessionKey);
+				var companySession = UserSession.Get<ICompany>(CompanySessionKey);
 
-				if (company != null || UserContext.User == null)
+				if (companySession.HasValue || UserContext.User == null)
 				{
-					return company;
+					return companySession.Value;
 				}
 
-				Company = company = FindCompany.Find(UserContext.User);
+				var company = FindCompany.Find(UserContext.User);
+
+				Company = company;
 
 				return company;
 			}
