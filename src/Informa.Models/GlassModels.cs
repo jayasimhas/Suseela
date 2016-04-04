@@ -18147,67 +18147,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
-{
-
-
- 	/// <summary>
-	/// IWorkflow_From_Email_Address_Configuration Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Configuration/Workflow From Email Address Configuration</para>	
-	/// <para>ID: fa5b2cfd-a800-4b83-88d9-644dda87e3d2</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IWorkflow_From_Email_Address_ConfigurationConstants.TemplateIdString)]
-	public partial interface IWorkflow_From_Email_Address_Configuration : IGlassBase 
-	{
-								/// <summary>
-					/// The From Email Address field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 2bea4387-4092-40ac-a07b-738a5ff29453</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IWorkflow_From_Email_Address_ConfigurationConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string From_Email_Address  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IWorkflow_From_Email_Address_Configuration Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Configuration/Workflow From Email Address Configuration</para>	
-		/// <para>ID: fa5b2cfd-a800-4b83-88d9-644dda87e3d2</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IWorkflow_From_Email_Address_Configuration__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The From Email Address field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 2bea4387-4092-40ac-a07b-738a5ff29453</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IWorkflow_From_Email_Address_ConfigurationConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string From_Email_Address  {get; set;}
-						}
-	
-	public static partial class IWorkflow_From_Email_Address_ConfigurationConstants{
-
-			public const string TemplateIdString = "fa5b2cfd-a800-4b83-88d9-644dda87e3d2";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Workflow From Email Address Configuration";
-
-					
-			public static readonly ID From_Email_AddressFieldId = new ID("2bea4387-4092-40ac-a07b-738a5ff29453");
-			public const string From_Email_AddressFieldName = "From Email Address";
-
-						
-			
-
-	}
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Folders
 {
 
