@@ -1,4 +1,4 @@
-﻿var InformaResultsController = function InformaResultsController($scope, $sanitize, searchService, viewHeadlinesStateService, $timeout) {
+﻿var InformaResultsController = function InformaResultsController($scope, $sanitize, searchService, viewHeadlinesStateService, $timeout, $window) {
     var _this = this;
 
     this.service = searchService;
@@ -39,17 +39,21 @@
         window.autoBookmark();
     });
 
+    this.forceRefresh = function() {
+        $window.location.reload(false);
+    };
+
 };
 var informaSearchApp = angular.module('informaSearchApp').directive('onFinishRender', function ($timeout) {
     return {
         restrict: 'A',
         link: function (scope, element, attr) {
             if (scope.$last === true) {
-            $timeout(function () {
-                scope.$emit(attr.broadcasteventname ? attr.broadcasteventname : 'ngRepeatFinished');
-            });
+                $timeout(function () {
+                    scope.$emit(attr.broadcasteventname ? attr.broadcasteventname : 'ngRepeatFinished');
+                });
             }
         }
     };
 });
-informaSearchApp.controller("InformaResultsController", ['$scope', '$sanitize','searchService', 'viewHeadlinesStateService',  '$timeout', InformaResultsController]);
+informaSearchApp.controller("InformaResultsController", ['$scope', '$sanitize','searchService', 'viewHeadlinesStateService',  '$timeout', '$window', InformaResultsController]);

@@ -19,7 +19,7 @@ content-length: 253
 ----version----
 language: en
 version: 1
-revision: a531ef19-e63e-405c-b20d-1be263d247e9
+revision: 70ebe359-d59f-4a3d-b64d-4f68f4d7391a
 
 ----field----
 field: {9D4040A3-B103-4AFB-9E36-42FAC7D9EB94}
@@ -42,6 +42,13 @@ key: rss item generation
 content-length: 73
 
 Informa.Library.Rss.ItemGenerators.SearchRssItemGenerator,Informa.Library
+----field----
+field: {28E25D4D-6FC6-4881-A059-9464C4189015}
+name: Include Url Parameters
+key: include url parameters
+content-length: 1
+
+1
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -69,14 +76,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-a531ef19-e63e-405c-b20d-1be263d247e9
+70ebe359-d59f-4a3d-b64d-4f68f4d7391a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160401T172129Z
+20160401T173032Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -47,6 +47,10 @@ namespace Informa.Library.Rss.FeedGenerators
             if (!string.IsNullOrEmpty(rssFeed.Link))
             {
                 feed.Links.Add(SyndicationLink.CreateAlternateLink(new Uri(rssFeed.Link)));
+
+                feed.ElementExtensions.Add(new XElement(RssConstants.AtomNamespace + "link",
+               new XAttribute("href", new Uri(rssFeed.Link)), new XAttribute("rel", "self"),
+               new XAttribute("type", "application/rss+xml")));
             }
 
             return feed;

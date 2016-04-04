@@ -4,15 +4,16 @@
 
         <div class="search__header-buttons" ng-controller="EmailRssController as emailRss">
 
-            <!--TODO: replace with correct email and subject, also change the data-info value of someone required for analytics-->
-            <a href="mailto:someone@example.com?Subject=Hello%20again" class="click-utag" data-info='{"event_name" : "mail-to-someone"}' target="_top" class="search__header-buttons--email">
+            <a href="#"
+               class="click-utag search__header-buttons--email pop-out__trigger js-pop-out-trigger"
+               data-info='{"event_name" : "mail-to-someone"}'
+               data-pop-out-type="email-search">
                 <h6>email</h6>
                 <svg class="icon icon--email">
               	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#email"></use>
             	</svg>
             </a>
 
-            <!--TODO: replace with correct RSS feed link-->
             <a target="_blank" class="search__header-buttons--rss" href="/rss/search-feed.aspx{{currentLocation}}" >
                 <h6>rss</h6>
                 <svg class="icon icon--rss">

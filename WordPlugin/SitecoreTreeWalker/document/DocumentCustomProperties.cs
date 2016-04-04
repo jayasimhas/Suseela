@@ -9,13 +9,14 @@ namespace InformaSitecoreWord.document
 {
 	public class DocumentCustomProperties
 	{
-		public readonly Word.Document _wordDoc;         
- 
+		public readonly Word.Document _wordDoc;
+
 		public DocumentCustomProperties(Word.Document doc)
 		{
 			_wordDoc = doc;
 
-            UpdatePluginVersionNumber();
+			UpdatePluginVersionNumber();
+			UpdatePluginName();
 		}
 
 		public int WordSitecoreVersionNumber
@@ -31,32 +32,47 @@ namespace InformaSitecoreWord.document
 			}
 			set
 			{
-			    SetCustomDocumentProperty(Constants.WordVersionNumber, value.ToString());
+				SetCustomDocumentProperty(Constants.WordVersionNumber, value.ToString());
 			}
 		}
 
-        public void UpdatePluginVersionNumber()
-        {
-            string versionNumber = "Development Version";
-            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-            {
-                versionNumber = System.Windows.Forms.Application.ProductVersion;
-            }
-            SetCustomDocumentProperty(Constants.PluginVersionNumber, versionNumber);
-        }
+		public void UpdatePluginVersionNumber()
+		{
+			string versionNumber = "Development Version";
+			if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+			{
+				versionNumber = System.Windows.Forms.Application.ProductVersion;
+			}
+			SetCustomDocumentProperty(Constants.PluginVersionNumber, versionNumber);
+		}
 
 		public string DocumentPassword
 		{
 			get { return GetPropertyValue(Constants.ArticleID); }
-            set { SetCustomDocumentProperty(Constants.ArticleID, value); }
+			set { SetCustomDocumentProperty(Constants.ArticleID, value); }
 		}
+
+		public void UpdatePluginName()
+		{
+			SetCustomDocumentProperty(Constants.PluginName, Constants.InformaPluginName);
+		}
+
 
 		public string ArticleNumber
 		{
 			get { return GetPropertyValue(Constants.ArticleNumber); }
 			set
 			{
-			    SetCustomDocumentProperty(Constants.ArticleNumber, value);
+				SetCustomDocumentProperty(Constants.ArticleNumber, value);
+			}
+		}
+
+		public string PluginName
+		{
+			get { return GetPropertyValue(Constants.PluginName); }
+			set
+			{
+				SetCustomDocumentProperty(Constants.PluginVersionNumber, Constants.InformaPluginName);
 			}
 		}
 
@@ -83,7 +99,7 @@ namespace InformaSitecoreWord.document
 			{
 				SetCustomDocumentPropertyToEmpty(name);
 			}
-			
+
 			return true;
 		}
 

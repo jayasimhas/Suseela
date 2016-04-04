@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Xml.Linq;
 using Informa.Library.Rss.Utils;
+using Informa.Library.Utilities.StringUtils;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Library.Rss.ItemGenerators
@@ -16,7 +17,7 @@ namespace Informa.Library.Rss.ItemGenerators
         public string GetItemTitle(IArticle article)
         {
             //Build the title string, if there is a media type that is prepended onto the title
-            var titleText = HttpUtility.HtmlEncode(article.Title);
+            var titleText = HttpUtility.HtmlEncode(HtmlUtil.StripHtml(article.Title));
 
             if (article.Media_Type != null)
             {

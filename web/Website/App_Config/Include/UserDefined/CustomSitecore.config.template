@@ -169,23 +169,24 @@ But you can also use "patch:attribute" for clarity:
       <setting  name="Host.Production" value="[CHANGEME]" />
 
       <!-- Mail Settings -->
-      <setting name="Mail.MailServerFromAddress" value="no-reply@velir.com"/>
+      <setting name="Mail.MailServerFromAddress" value="${Mail.MailServerFromAddress}"/>
+      <setting name="Mail.MailServerEnableSsl" value="${Mail.MailServerEnableSsl}" />
 
       <setting name="MailServer">
-        <patch:attribute name="value">smtp.velir.com</patch:attribute>
+        <patch:attribute name="value">${Mail.MailServer}</patch:attribute>
       </setting>
 
       <setting name="MailServerUserName">
-        <patch:attribute name="value"></patch:attribute>
+        <patch:attribute name="value">${Mail.MailServerUserName}</patch:attribute>
       </setting>
 
       <setting name="MailServerPassword">
-        <patch:attribute name="value"></patch:attribute>
+        <patch:attribute name="value">${Mail.MailServerPassword}</patch:attribute>
       </setting>
 
       <setting name="MailServerPort">
-        <patch:attribute name="value">25</patch:attribute>
-      </setting>
+        <patch:attribute name="value">${Mail.MailServerPort}</patch:attribute>
+      </setting>                                   
 
       <!-- HIDDEN SETTING!  Suggestion from sitecore to speed up the back end content editor. -->
       <setting name="ContentEditor.RenderCollapsedSections" value="false"/>

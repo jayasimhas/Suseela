@@ -22,7 +22,7 @@ namespace Informa.Library.Rss.FeedGenerators
         {
         }
 
-        public SyndicationFeed GetRssFeed(I_Base_Rss_Feed rssFeed, ISitecoreContext sitecoreContext, IItemReferences itemReferences)
+        public new SyndicationFeed GetRssFeed(I_Base_Rss_Feed rssFeed, ISitecoreContext sitecoreContext, IItemReferences itemReferences)
         {
             SyndicationFeed feed = base.GetRssFeed(rssFeed, sitecoreContext, itemReferences);
             feed = AddFeedLinksToFeed(feed, rssFeed);
@@ -37,10 +37,13 @@ namespace Informa.Library.Rss.FeedGenerators
         /// </summary>
         /// <param name="feed"></param>
         /// <returns></returns>
-        public SyndicationFeed AddFeedLinksToFeed(SyndicationFeed feed, I_Base_Rss_Feed rssFeed)
+        public new SyndicationFeed AddFeedLinksToFeed(SyndicationFeed feed, I_Base_Rss_Feed rssFeed)
         {
+            string searchUrl = GetSearchUrl(WebUtil.GetHostName());
+
+            feed.Links.Add(SyndicationLink.CreateAlternateLink(new Uri(searchUrl)));
             feed.ElementExtensions.Add(new XElement(RssConstants.AtomNamespace + "link",
-                new XAttribute("href", new Uri(GetSearchUrl(WebUtil.GetHostName()))), new XAttribute("rel", "self"),
+                new XAttribute("href", new Uri(searchUrl)), new XAttribute("rel", "self"),
                 new XAttribute("type", "application/rss+xml")));
 
             return feed;

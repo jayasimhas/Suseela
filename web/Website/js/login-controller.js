@@ -1,10 +1,11 @@
 function loginController(requestVerificationToken) {
-	this.addControl = function(triggerForm, successCallback, failureCallback) {
 
-		var triggerElement = $(triggerForm).find('button[type=submit]');
+	this.addControl = function(triggerForm, successCallback, failureCallback) {
 
 		if (triggerForm) {
 			$(triggerForm).on('submit', (event) => {
+
+				var triggerElement = $(event.target).find('button[type=submit]');
 
 				event.preventDefault();
 
@@ -41,9 +42,7 @@ function loginController(requestVerificationToken) {
 
 						var result ={};
 						$.extend(result,analytics_data,loginAnalytics);
-				        //  utag.link({
-				        //    result
-				        //});
+				        utag.link(result);
 
 
 						if (successCallback) {
@@ -52,6 +51,10 @@ function loginController(requestVerificationToken) {
 
 						if($(triggerElement).data('login-redirect-url')) {
 							window.location.href = $(triggerElement).data('login-redirect-url');
+							// If Angular, need location.reload to force page refresh
+							if(angular) {
+								angular.element($('.search-results')[0]).controller().forceRefresh();
+							}
 						} else {
 							window.location.reload(false);
 						}
@@ -64,9 +67,7 @@ function loginController(requestVerificationToken) {
 						};
 				        var result ={};
 				        $.extend(result,analytics_data,loginAnalytics);
-				        //  utag.link({
-				        //    result
-				        //});
+				        utag.link(result);
 
 
 						if (response.redirectUrl) {
@@ -74,7 +75,7 @@ function loginController(requestVerificationToken) {
 						}
 						else {
 							if (failureCallback) {
-								failureCallback(triggerElement);
+								failureCallback(event.target);
 							}
 						}
 					}

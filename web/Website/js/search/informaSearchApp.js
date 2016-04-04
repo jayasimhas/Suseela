@@ -32,7 +32,7 @@
             }
         };
     });
-  
+
   // factory to handle call to companies service
   // note: a factory lives through the entire application lifecycle
     informaSearchApp.factory('getCompaniesService', ['$http', '$location', function ($http, $location) {
@@ -44,9 +44,9 @@
         }
 
         return $http({
-          method: 'GET',
-          url: fullUrl
-      });
+            method: 'GET',
+            url: fullUrl
+        });
     }
     return {fetchCompanies : fetchCompanies};
   }]);
@@ -54,11 +54,9 @@
 
   // set up controller and pass data source
   // note: a controller is usually destroyed & recreated when the route changes
-  informaSearchApp.controller("InformaTypeaheadController", 
-    function($scope, getCompaniesService) {
+  informaSearchApp.controller("InformaTypeaheadController", function($scope, getCompaniesService) {
 
-        getCompaniesService.fetchCompanies()
-            .then(function(response) {
+        getCompaniesService.fetchCompanies().then(function(response) {
 
                 var companies = [];
                 companies = $.map(response.data, function(value, index) {
@@ -68,8 +66,8 @@
                 });
 
                 $scope.companies = companies;
-            })
-            .catch(function(reason) {
+
+            }).catch(function(reason) {
 
                 console.log("error");
                 console.log(reason);
@@ -77,5 +75,5 @@
             });
         });
 
-        
-})(); 
+
+})();

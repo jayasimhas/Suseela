@@ -11,29 +11,30 @@
         }
 </script>
 
-<button
-  class="facets__mobile-button"
-  ng-model="collapsefilters"
-  ng-click="collapsefilters = !collapsefilters"
-  ng-class="{'isExpanded': collapsefilters}">
-  <h6 class="show-filters">Show Filters</h6>
-  <h6 class="hide-filters">Hide Filters</h6>
+<button class="facets__mobile-button"
+        ng-model="collapsefilters"
+        ng-click="collapsefilters = !collapsefilters"
+        ng-class="{'isExpanded': collapsefilters}">
+    <h6 class="show-filters">Show Filters</h6>
+    <h6 class="hide-filters">Hide Filters</h6>
 </button>
 
-<div
-  id="search-facet-01"
-  class="search__facets search__left-sidebar"
-  ng-class="{'isExpanded': collapsefilters}"
-  ng-controller="InformaFacetController as allFacets">
+<div    id="search-facet-01"
+        class="search__facets search__left-sidebar"
+        ng-class="{'isExpanded': collapsefilters}"
+        ng-controller="InformaFacetController as allFacets">
 
-  <div class="facets__header">
-    <h3>@Model.SearchFilterByText</h3>
-    <button class="facets__button facets__button--clear" ng-click="allFacets.clearAllFacets()">@Model.SearchClearAllText</a>
-  </div>
+    <div class="facets__header">
+        <h3>@Model.SearchFilterByText</h3>
+        <button class="facets__button facets__button--clear"
+                ng-click="allFacets.clearAllFacets()">
+            @Model.SearchClearAllText
+        </button>
+    </div>
 
-  <div class="facets__content">
+    <div class="facets__content">
 
-    <form class="facets__section" ng-repeat="group in allFacets.facetGroups">
+        <form class="facets__section" ng-repeat="group in allFacets.facetGroups">
 
         @* * * * *
         FACET — COMPANIES
@@ -51,7 +52,7 @@
           </legend>
 
 
-          <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit">
+            <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit">
               <ul ng-if="f.selected" class="facets__section-list" ng-hide="collapsefacet">
                   <li>
                       <input id="{{ group.id }}-{{ $index }}"
@@ -60,18 +61,21 @@
                              ng-checked="f.selected"
                              ng-model="f.selected"
                              ng-change="allFacets.update()" data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group_name":"{{group.label}}"}'>
-                      <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">
+                      <label class="facets__label" ng-if="f.label" for="{{ group.id }}-{{ $index }}">
                           {{ f.label }}
                           <span class="facets__label-count">({{f.count}})</span>
                       </label>
+
                       <button class="facets__button facets__button--toggle-subcat"
                               ng-model="collapsesubfacet"
                               ng-click="collapseSubfacet=!collapseSubfacet; isCollapsedSubfacet=!isCollapsedSubfacet">
-                          <svg class="facets__button--collapse-subfacet"
-                               ng-show="f.sublist.length > 0"
-                               ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+                          <svg  class="facets__button--collapse-subfacet"
+                                ng-show="f.sublist.length > 0"
+                                ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+
                               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use>
                           </svg>
+
                           <svg class="facets__button--expand-subfacet"
                                ng-show="(f.sublist.length > 0)"
                                ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
@@ -80,7 +84,7 @@
                       </button>
                   </li>
               </ul>
-          </div>
+            </div>
 
           <ul class="facets__section-list" ng-hide="collapsecompanies">
 
@@ -93,7 +97,12 @@
 
               <li ng-repeat="myCompany in savedCompanies" class="saved-company">
                 <input type="checkbox" class="visuallyhidden click-utag" id="{{myCompany.label}}" ng-checked="myCompany.selected" data-info='{"event_name":"search-facet","facet_selected":"{{myCompany.label}}","facet_group_name":"My saved companies"}'>
-                <label for="{{myCompany.label}}">{{myCompany.label}}</label>
+
+                <label  class="facets__label"
+                        for="{{myCompany.label}}">
+                    {{myCompany.label}}
+                </label>
+
                 <svg ng-click="removeCompany(myCompany)"
                      class="saved-company__delete-icon">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
@@ -104,7 +113,7 @@
                 <div class="facets__field-group facets__field-group--companies">
                   <button class="facets__button facets__button--clear-company"
                           ng-class="{'collapsed': isCollapsedCompanies}"
-                          ng-click="isAddingCompany = false;">
+                          ng-click="isAddingCompany = false; myCompany.selected = ''">
                     <svg>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
                     </svg>
@@ -177,7 +186,10 @@
                                    ng-value=true
                                    ng-checked="{{dateFilter.selected}}"
                                    ng-click="allFacets.dateRangeSearch('date', dateFilter.key)" class="click-utag" data-info='{"event_name":"search-facet","facet_selected":"{{dateFilter.label}}","facet_group":"{{group.label}}"}'>
-                            <label for="{{dateFilter.key}}" >{{dateFilter.label}}</label>
+                            <label  class="facets__label"
+                                    for="{{dateFilter.key}}">
+                                {{dateFilter.label}}
+                            </label>
 
                             <ul class="facets__section-footer" ng-if="$last">
                                 <li class="facets__field-group facets__field-group--from input-group">
@@ -264,87 +276,98 @@
           FACETS - DYNAMIC
           * * * * *@
 
-        <fieldset ng-if="group.label != 'Companies' && group.label != 'Date Placeholder'" class="facets__fieldset">
+            <fieldset ng-if="group.label != 'Companies' && group.label != 'Date Placeholder'" class="facets__fieldset">
 
-          <legend class="facets__legend facets__section-header">
-              <h4>{{ ::group.label }}</h4>
-              <button
-                  class="facets__button facets__button--toggle-section"
-                  ng-model="collapsefacet"
-                  ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
-                  ng-class="{'collapsed': isCollapsed}">
-                  <svg>
+                <legend class="facets__legend facets__section-header">
+                    <h4>{{ ::group.label }}</h4>
+                    <button
+                      class="facets__button facets__button--toggle-section"
+                      ng-model="collapsefacet"
+                      ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
+                      ng-class="{'collapsed': isCollapsed}">
+                        <svg>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
+                        </svg>
+                    </button>
+                </legend>
+
+                <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
+                <ul class="facets__section-list" ng-if="($index < allFacets.MaxFacetShow) || group.ShowMore">
+                    <li>
+                        @* Hidden input field *@
+                        <input  id="{{ group.id }}-{{ $index }}"
+                              type="checkbox"
+                              class="visuallyhidden click-utag"
+                              ng-checked="f.selected"
+                              ng-model="f.selected"
+                              ng-change="allFacets.update()"  data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
+
+                        <label  class="facets__label"
+                                ng-if="f.label"
+                                for="{{ group.id }}-{{ $index }}">
+
+                            <span class="facets__label-content">
+                                {{ f.label }}<span class="facets__label-count">({{f.count}})</span>
+                            </span>
+
+                            <button class="facets__button facets__button--toggle-subcat"
+                                    ng-model="collapsesubfacet"
+                                    ng-click="collapseSubfacet = !collapseSubfacet; isCollapsedSubfacet = !isCollapsedSubfacet">
+                                <svg
+                                  class="facets__button--collapse-subfacet"
+                                  ng-if="f.sublist.length > 0"
+                                  ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use>
+                                </svg>
+                                <svg
+                                  class="facets__button--expand-subfacet"
+                                  ng-if="(f.sublist.length > 0)"
+                                  ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#expand"></use>
+                                </svg>
+                            </button>
+
+                        </label>
+                      <ul ng-if="f.sublist.length > 0"
+                          ng-class="{'collapsedSubfacet': isCollapsedSubfacet}"
+                          class="facets__section-list--sub">
+                          <li ng-repeat="subFacet in f.sublist">
+                              <input id="{{ subFacet.id }}-{{ $index }}"
+                                     type="checkbox"
+                                     class="visuallyhidden"
+                                     ng-checked="subFacet.selected"
+                                     ng-model="subFacet.selected"
+                                     ng-change="allFacets.update()" data-info='{"event_name":"search-facet","sub_facet_selected":"{{subFacet.name}}","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
+                              <label class="facets__label" ng-if="subFacet.name" for="{{ subFacet.id }}-{{ $index }}">
+                                  {{ subFacet.name }}
+                                  <span class="facets__label-count">({{subFacet.count}})</span>
+                              </label>
+                          </li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+            <button class="facets__button facets__button--more"
+                    ng-show='(group.facets.length > allFacets.MaxFacetShow) && (!group.ShowMore)'
+                    ng-click='group.ShowMore = true'
+                    ng-class="{'collapsed': isCollapsed}">See All
+                <svg>
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
-                  </svg>
-              </button>
-          </legend>
+                </svg>
+            </button>
+            <button class="facets__button facets__button--less"
+                    ng-show='group.ShowMore'
+                    ng-click='group.ShowMore = false'
+                    ng-class="{'collapsed': isCollapsed}">
+                See Less
+                <svg>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#up-arrow"></use>
+                </svg>
+            </button>
+            </fieldset>
 
-          <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
-            <ul class="facets__section-list" ng-if="($index < allFacets.MaxFacetShow) || group.ShowMore">
-                <li>
-                  <input  id="{{ group.id }}-{{ $index }}"
-                          type="checkbox"
-                          class="visuallyhidden click-utag"
-                          ng-checked="f.selected"
-                          ng-model="f.selected"
-                          ng-change="allFacets.update()"  data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
-                  <label  ng-if="f.label" for="{{ group.id }}-{{ $index }}">
-                      {{ f.label }}
-                      <span class="facets__label-count">({{f.count}})</span>
-                  </label>
-                  <button class="facets__button facets__button--toggle-subcat"
-                          ng-model="collapsesubfacet"
-                          ng-click="collapseSubfacet=!collapseSubfacet; isCollapsedSubfacet=!isCollapsedSubfacet">
-                      <svg
-                        class="facets__button--collapse-subfacet"
-                        ng-if="f.sublist.length > 0"
-                        ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use>
-                      </svg>
-                      <svg
-                        class="facets__button--expand-subfacet"
-                        ng-if="(f.sublist.length > 0)"
-                        ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#expand"></use>
-                      </svg>
-                  </button>
-                  <ul ng-if="f.sublist.length > 0"
-                      ng-class="{'collapsedSubfacet': isCollapsedSubfacet}"
-                      class="facets__section-list--sub">
-                      <li ng-repeat="subFacet in f.sublist">
-                          <input id="{{ subFacet.id }}-{{ $index }}"
-                                 type="checkbox"
-                                 class="visuallyhidden"
-                                 ng-checked="subFacet.selected"
-                                 ng-model="subFacet.selected"
-                                 ng-change="allFacets.update()" data-info='{"event_name":"search-facet","sub_facet_selected":"{{subFacet.name}}","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
-                          <label ng-if="subFacet.name" for="{{ subFacet.id }}-{{ $index }}">
-                              {{ subFacet.name }}
-                              <span class="facets__label-count">({{subFacet.count}})</span>
-                          </label>
-                      </li>
-                  </ul>
-                </li>
-            </ul>
-        </div>
-        <button
-              class="facets__button facets__button--more"
-              ng-show='(group.facets.length > allFacets.MaxFacetShow) && (!group.ShowMore)'
-              ng-click='group.ShowMore = true'
-              ng-class="{'collapsed': isCollapsed}">See All
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
-          </button>
-          <button
-              class="facets__button facets__button--less"
-              ng-show='group.ShowMore'
-              ng-click='group.ShowMore = false'
-              ng-class="{'collapsed': isCollapsed}">See Less
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#up-arrow"></use></svg>
-          </button>
-        </fieldset>
-      </form>
-
- </div> <!-- / .facets__content -->
+        </form>
+    </div> <!-- / .facets__content -->
 </div> <!-- / .search__facets -->
 
 <button
