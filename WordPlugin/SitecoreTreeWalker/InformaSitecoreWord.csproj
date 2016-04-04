@@ -36,6 +36,7 @@
     <InstallUrl>http://dev.ibi.velir.com/wordinstaller/</InstallUrl>
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>2.16.4.1</ApplicationVersion>
+    <ApplicationVersion>2.16.4.16</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
