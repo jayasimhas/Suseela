@@ -1,7 +1,9 @@
-﻿namespace Informa.Library.Salesforce
+﻿using System.Runtime.CompilerServices;
+
+namespace Informa.Library.Salesforce
 {
 	public interface ISalesforceSessionFactory
 	{
-		ISalesforceSession Create();
+		ISalesforceSession Create([CallerMemberName] string CallerMemberName = "", [CallerFilePath] string CallerFilePath = "", [CallerLineNumber] int CallerLineNumber = 0);
 	}
 }
