@@ -10,6 +10,7 @@ import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
 import SortableTableController from './sortable-table-controller';
+import { analyticsEvent } from './analytics-controller';
 
 
 
@@ -26,25 +27,18 @@ $('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
 });
 
 $('.click-logout').on('click', function(e) {
-    var eventDetails = {
-        event_name: "logout"
-    };
-    var result = {};
-    $.extend(result, analytics_data, eventDetails);
-    utag.link(result);
+    analyticsEvent( $.extend(result, analytics_data, { event_name: "logout" }) );
 });
 
 /* Toggle header search box (tablets/smartphones) */
 $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
-    var searchTerm = $('.header-search__field').val();
 
     var eventDetails = {
         event_name: "search",
-        search_term: '"' + searchTerm + '"'
+        search_term: '"' + $('.header-search__field').val() + '"'
     };
-    var result = {};
-    $.extend(result, analytics_data, eventDetails);
-    utag.link(result);
+
+    analyticsEvent( $.extend(analytics_data, eventDetails) );
 
 
     if($(window).width() <= 800) {
@@ -555,38 +549,36 @@ $(document).ready(function() {
 
     // TODO - Refactor this code, update class name to a `js-` name
     $('.manage-preferences').click(function(e) {
-        var preferencesData = {};
+        var preferencesData = {
+            event_name: "manage-preferences"
+        };
         if($("#NewsletterOptIn").is(':checked') && $("#DoNotSendOffersOptIn").is(':checked')) {
             preferencesData = {
-                event_name: "manage-preferences",
                 newsletter_optin: "true",
                 donot_send_offers_optin: "true"
             };
         }
         if(!$("#NewsletterOptIn").is(':checked') && $("#DoNotSendOffersOptIn").is(':checked')) {
             preferencesData = {
-                event_name: "manage-preferences",
                 newsletter_optin: "false",
                 donot_send_offers_optin: "true"
             };
         }
         if($("#NewsletterOptIn").is(':checked') && !$("#DoNotSendOffersOptIn").is(':checked')) {
             preferencesData = {
-                event_name: "manage-preferences",
                 newsletter_optin: "true",
                 donot_send_offers_optin: "false"
             };
         }
         if(!$("#NewsletterOptIn").is(':checked') && !$("#DoNotSendOffersOptIn").is(':checked')) {
             preferencesData = {
-                event_name: "manage-preferences",
                 newsletter_optin: "false",
                 donot_send_offers_optin: "false"
             };
         }
-        var result = {};
-        $.extend(result, analytics_data, preferencesData);
-        utag.link(result);
+
+        analyticsEvent( $.extend(analytics_data, preferencesData) );
+
 
     });
 
@@ -605,10 +597,7 @@ $(document).ready(function() {
 
 
     $('.click-utag').click(function (e) {
-        var eventDetails = $(this).data('info');
-        var result = {};
-        $.extend(result, analytics_data, eventDetails);
-        utag.link(result);
+        analyticsEvent( $.extend(analytics_data, $(this).data('info')) );
     });
 
     // Twitter sharing JS

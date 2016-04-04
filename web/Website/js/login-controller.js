@@ -1,3 +1,5 @@
+import { analyticsEvent } from './analytics-controller';
+
 function loginController(requestVerificationToken) {
 
 	this.addControl = function(triggerForm, successCallback, failureCallback) {
@@ -34,16 +36,14 @@ function loginController(requestVerificationToken) {
 				$.post(url, inputData, function (response) {
 
 				    if (response.success) {
+
 				        var loginAnalytics =  {
 							event_name: 'login',
 							login_state: 'successful',
 							userName: '"' + inputData.username + '"'
 						};
 
-						var result ={};
-						$.extend(result,analytics_data,loginAnalytics);
-				        utag.link(result);
-
+				        analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
 
 						if (successCallback) {
 							successCallback(triggerElement);
@@ -60,14 +60,14 @@ function loginController(requestVerificationToken) {
 						}
 					}
 				    else {
+
 				        var loginAnalytics = {
 							event_name: "login",
 							login_state: "unsuccessful",
 							userName: '"' + inputData.username + '"'
 						};
-				        var result ={};
-				        $.extend(result,analytics_data,loginAnalytics);
-				        utag.link(result);
+
+				        analyticsEvent( $.extend(analytics_data, loginAnalytics) );
 
 
 						if (response.redirectUrl) {
