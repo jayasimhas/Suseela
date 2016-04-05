@@ -29,7 +29,7 @@ namespace Informa.Library.Rss.FeedGenerators
             feed.Language = rssFeed.Language;
             feed.Description = new TextSyndicationContent(rssFeed.Description);
 
-            feed = AddCopyrightTextToFeed(feed, sitecoreContext, itemReferences.SiteConfig, rssFeed);
+            feed = AddCopyrightTextToFeed(feed, sitecoreContext, Constants.ScripRootNode, rssFeed);
             feed = AddFeedLinksToFeed(feed, rssFeed);
             feed = AddWebMasterToFeed(feed, rssFeed);
 
@@ -62,12 +62,11 @@ namespace Informa.Library.Rss.FeedGenerators
         /// </summary>
         /// <param name="feed"></param>
         /// <returns></returns>
-        public SyndicationFeed AddCopyrightTextToFeed(SyndicationFeed feed, ISitecoreContext sitecoreContext,
-            Guid siteConfigItemId, I_Base_Rss_Feed rssFeed)
+        public SyndicationFeed AddCopyrightTextToFeed(SyndicationFeed feed, ISitecoreContext sitecoreContext,string siteConfigItemId, I_Base_Rss_Feed rssFeed)
         {
             if (string.IsNullOrEmpty(rssFeed.Copyright))
             {
-                var siteConfig = sitecoreContext.GetItem<ISite_Config>(siteConfigItemId);
+                var siteConfig = sitecoreContext.GetItem<ISite_Root>(siteConfigItemId);
                 feed.Copyright = new TextSyndicationContent(siteConfig.Copyright_Text);
             }
             else

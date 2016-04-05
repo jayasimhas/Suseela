@@ -1,20 +1,25 @@
-﻿using Informa.Library.Salesforce.SalesforceAPI;
+﻿using System.Runtime.CompilerServices;
+using Informa.Library.Salesforce.SalesforceAPI;
 
 namespace Informa.Library.Salesforce
 {
 	public class SalesforceSessionFactory : ISalesforceSessionFactory
 	{
 		protected readonly ISalesforceSessionFactoryConfiguration Configuration;
+	    protected readonly ISalesforceErrorLogger ErrorLogger;
 
 		public SalesforceSessionFactory(
-			ISalesforceSessionFactoryConfiguration configuration)
+			ISalesforceSessionFactoryConfiguration configuration, ISalesforceErrorLogger errorLogger)
 		{
+		    ErrorLogger = errorLogger;
 			Configuration = configuration;
 		}
 
-		public ISalesforceSession Create()
+		public ISalesforceSession Create([CallerMemberName] string CallerMemberName = "", [CallerFilePath] string CallerFilePath = "", [CallerLineNumber] int CallerLineNumber = 0)
 		{
-			var username = Configuration.Username;
+            //TODO: Salesforce logging.
+            ErrorLogger.Log($"Salesforced called by: {CallerMemberName}, File: {CallerFilePath}, Line Number {CallerLineNumber}", null);
+            var username = Configuration.Username;
 			var password = string.Concat(Configuration.Password, Configuration.Token);
 			var service = new SforceService
 			{

@@ -9845,6 +9845,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	public partial interface ISite_Config : IGlassBase 
 	{
 								/// <summary>
+					/// The Email Preferences Page field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 8d08511c-d6ff-4ade-9a19-e70c34d1cc71</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_Preferences_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Email_Preferences_Page  {get; set;}
+								/// <summary>
 					/// The My Account Page field.
 					/// <para></para>
 					/// <para>Field Type: Droptree</para>		
@@ -10424,6 +10433,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 		public partial interface ISite_Config__Raw : IGlassBase 
 		{
 										/// <summary>
+						/// The Email Preferences Page field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 8d08511c-d6ff-4ade-9a19-e70c34d1cc71</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_Preferences_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Email_Preferences_Page  {get; set;}
+										/// <summary>
 						/// The My Account Page field.
 						/// <para></para>
 						/// <para>Field Type: Droptree</para>		
@@ -10998,6 +11016,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Site Config";
 
+					
+			public static readonly ID Email_Preferences_PageFieldId = new ID("8d08511c-d6ff-4ade-9a19-e70c34d1cc71");
+			public const string Email_Preferences_PageFieldName = "Email Preferences Page";
+
+						
 					
 			public static readonly ID My_Account_PageFieldId = new ID("6b8b6c6d-013a-4ba0-a166-f57747668b0f");
 			public const string My_Account_PageFieldName = "My Account Page";
@@ -15416,6 +15439,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public const string TemplateName = "Site Root";
 
 					
+			public static readonly ID Email_Preferences_PageFieldId = new ID("8d08511c-d6ff-4ade-9a19-e70c34d1cc71");
+			public const string Email_Preferences_PageFieldName = "Email Preferences Page";
+
+						
+					
 			public static readonly ID My_Account_PageFieldId = new ID("6b8b6c6d-013a-4ba0-a166-f57747668b0f");
 			public const string My_Account_PageFieldName = "My Account Page";
 
@@ -18140,67 +18168,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 					
 			public static readonly ID Article_Title_StyleFieldId = new ID("03845b01-8644-4a67-9d45-a4587e739fdc");
 			public const string Article_Title_StyleFieldName = "Article Title Style";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
-{
-
-
- 	/// <summary>
-	/// IWorkflow_From_Email_Address_Configuration Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Configuration/Workflow From Email Address Configuration</para>	
-	/// <para>ID: fa5b2cfd-a800-4b83-88d9-644dda87e3d2</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IWorkflow_From_Email_Address_ConfigurationConstants.TemplateIdString)]
-	public partial interface IWorkflow_From_Email_Address_Configuration : IGlassBase 
-	{
-								/// <summary>
-					/// The From Email Address field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 2bea4387-4092-40ac-a07b-738a5ff29453</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IWorkflow_From_Email_Address_ConfigurationConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string From_Email_Address  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IWorkflow_From_Email_Address_Configuration Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Configuration/Workflow From Email Address Configuration</para>	
-		/// <para>ID: fa5b2cfd-a800-4b83-88d9-644dda87e3d2</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IWorkflow_From_Email_Address_Configuration__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The From Email Address field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 2bea4387-4092-40ac-a07b-738a5ff29453</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IWorkflow_From_Email_Address_ConfigurationConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string From_Email_Address  {get; set;}
-						}
-	
-	public static partial class IWorkflow_From_Email_Address_ConfigurationConstants{
-
-			public const string TemplateIdString = "fa5b2cfd-a800-4b83-88d9-644dda87e3d2";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Workflow From Email Address Configuration";
-
-					
-			public static readonly ID From_Email_AddressFieldId = new ID("2bea4387-4092-40ac-a07b-738a5ff29453");
-			public const string From_Email_AddressFieldName = "From Email Address";
 
 						
 			
