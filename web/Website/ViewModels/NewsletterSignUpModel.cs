@@ -1,9 +1,12 @@
 ﻿
 using System.Linq;
+using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Newsletter;
+using Informa.Library.Site;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
@@ -15,16 +18,23 @@ namespace Informa.Web.ViewModels
 	    private readonly IAuthenticatedUserContext UserContext;
         public readonly IQueryNewsletterUserOptIn NewsletterOptIn;
 	    public readonly ITextTranslator TextTranslator;
+	    private readonly ISiteRootContext SiteRootContext;
+	    private readonly ISitecoreService SitecoreService;
 
         public NewsletterSignUpModel(
 	        IAuthenticatedUserContext userContext,
             IQueryNewsletterUserOptIn newsletterOptIn,
-            ITextTranslator textTranslator)
+            ITextTranslator textTranslator,
+            ISiteRootContext siteRootContext,
+            ISitecoreService sitecoreService)
 	    {
 
             UserContext = userContext;
             NewsletterOptIn = newsletterOptIn;
             TextTranslator = textTranslator;
+            SiteRootContext = siteRootContext;
+            SitecoreService = sitecoreService;
+
 	    }
 
         public bool IsAuthenticated => UserContext.IsAuthenticated;
@@ -47,8 +57,7 @@ namespace Informa.Web.ViewModels
 	            return false;
 	        }
 	    }
-
-	    public string GeneralError => TextTranslator.Translate("Newsletter.GeneralError");
-
+        public string PreferencesURL => SitecoreService.GetItem<I___BasePage>(SiteRootContext.Item.Email_Preferences_Page)?._Url ?? "#";
+        public string GeneralError => TextTranslator.Translate("Newsletter.GeneralError");
 	}
 }

@@ -111,7 +111,7 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
             });
         });
         vm.clearDateRange();
-        this.update();
+        vm.update();
     };
 
     vm.clearFilter = function(filterKey) {
@@ -132,7 +132,6 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
             date.selected = false;
         });
         vm.currentDateRange = "";
-        vm.update();
     };
 
     vm.getDateFilterLabel = function() {

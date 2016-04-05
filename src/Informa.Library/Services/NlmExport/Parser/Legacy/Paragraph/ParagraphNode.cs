@@ -22,16 +22,26 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Paragraph
                     }
                 }
             }
-			else if (classOfParagraph.Equals("nomargin", StringComparison.CurrentCultureIgnoreCase))
-			{
-				using (writer.StartElement("p"))
-				{
-					writer.WriteAttributeString("content-type", "2.25 Story Text - No Spacing");
+            else if (classOfParagraph.Equals("article-paragraph", StringComparison.CurrentCultureIgnoreCase))
+            {
+                using (writer.StartElement("p"))
+                {
+                    writer.WriteAttributeString("content-type", "2.2 Story Text");
 
-					var innerContent = new InnerTextNode();
-					innerContent.Convert(node, writer);
-				}
-			}
+                    var innerContent = new InnerTextNode();
+                    innerContent.Convert(node, writer);
+                }
+            }
+            else if (classOfParagraph.Equals("nomargin", StringComparison.CurrentCultureIgnoreCase))
+            {
+                using (writer.StartElement("p"))
+                {
+                    writer.WriteAttributeString("content-type", "2.25 Story Text - No Spacing");
+
+                    var innerContent = new InnerTextNode();
+                    innerContent.Convert(node, writer);
+                }
+            }
             else if (classOfParagraph.Equals("exhibitnumber", StringComparison.CurrentCultureIgnoreCase))
             {
                 // exhibit numbers are handled by the image/table.
