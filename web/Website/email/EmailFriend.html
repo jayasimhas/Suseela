@@ -141,20 +141,6 @@
 </head>
 <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;margin:0;padding:0;margin:0;padding:0;background-color:#FFF;height:100% !important;width:100% !important">
 	<input type="hidden" value="#Environment#" id="hdnEnvironment" />
-	<script type="text/javascript">
-		(function (a, b, c, d) {
-			var environment = document.getElementById("hdnEnvironment").value;
-			a = '//tags.tiqcdn.com/utag/informa/main/' + environment + '/utag.js';
-			b = document; c = 'script'; d = b.createElement(c); d.src = a;
-			d.type = 'text/java' + c; d.async = true;
-			a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a)
-		})();
-		function clickFromEmail(eventName) {
-			utag.link({
-				"event_name": eventName
-			});
-		}
-	</script>
 	<center>
 		<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;padding:0;background-color:#FFF;border-collapse:collapse !important;height:100% !important;width:100% !important">
 			<tr>
@@ -187,13 +173,13 @@
 										</td>
 										<td valign="bottom" align="right" class="headerSocialLinks" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-right: 24px; padding-bottom: 32px;">
 											<a href="#RSS_Link_URL#">
-                                                <img src="#RssLogo#" width="20" height="20" style="width: 20px; height: 20px; padding: 5px 5px 5px 5px;">
-                                            </a>
+                                                <img src="#RssLogo#" width="20" height="20" style="width: 20px; height: 20px;">
+                                            </a>&nbsp;&nbsp;&nbsp;
                                             <a href="#LinkedIn_Link_URL#">
-                                                <img src="#LinkedinLogo#" width="20" height="20" style="width: 20px; height: 20px; padding: 5px 5px 5px 5px;">
-                                            </a>
+                                                <img src="#LinkedinLogo#" width="20" height="20" style="width: 20px; height: 20px;">
+                                            </a>&nbsp;&nbsp;&nbsp;
                                             <a href="#Twitter_Link_URL#">
-                                                <img src="#TwitterLogo#" width="20" height="20" style="width: 20px; height: 20px; padding: 5px 5px 5px 5px;">
+                                                <img src="#TwitterLogo#" width="20" height="20" style="width: 20px; height: 20px;">
                                             </a>
 										</td>
 									</tr>
@@ -232,7 +218,7 @@
 									<tr>
 										<td valign="top" class="bodyContent sharedArticleBody" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#505050;font-family:Georgia, serif;font-size:15px;padding-right:24px;padding-bottom:24px;padding-left:24px;text-align:left;padding:0 24px;padding-bottom: 40px;">
 											<h1 style='font-family:Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;padding:0;margin:0 0 16px'><a href="#article_titleURL#" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#be1e2d;font-weight:normal;text-decoration:none;font-weight:inherit">#article_title#</a></h1>
-											<span class="sharedArticleByline" style='font-family:Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;padding:0;margin:0 0 16px;font-weight:bold;font-size:13px'>#article_authorBy# &nbsp; #article_author#</span>
+											<span class="sharedArticleByline" style='font-family:Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;padding:0;margin:0 0 16px;font-weight:bold;font-size:13px'>#article_authorBy#&nbsp; #article_author#</span>
 											<p style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;line-height:175%;padding-bottom:12px">
 												#article_summary#
 											</p>
