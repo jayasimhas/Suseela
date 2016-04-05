@@ -9,14 +9,27 @@
 	color: $informa-mid-gray;
 	margin-bottom: 2rem;
 	display: flex;
-	flex-direction:	column;
+	flex-direction:	row;
+	flex-wrap: wrap;
 
+	&__header,
+	&__title,
+	a {
+		flex: 1 0 auto;
+		width: 100%;
+	}
 	&__title {
 		@extend h4;
 		color: $color-zeus-black;
 		margin-bottom: 1rem !important;
 		line-height: 1.5rem !important;
 	}
+
+	img {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
 	&__caption,
 	&__source {
 		@include textMix('Roboto', 13px, 400);
@@ -25,22 +38,21 @@
 	    line-height: 1.5rem !important;
 	    display: block;
 	}
-	&__source {
-    	float: right;
-		font-style: italic;
-	}
-
-    img {
-        width: 100%;
-        margin-bottom: 0.5rem;
-    }
-
-    &__caption {
+	&__caption {
         display: block;
         text-transform: uppercase;
         letter-spacing: 1px;
-        order: 99; /* Caption always goes last */
+		flex: 1 0 auto;
+		width: 73%;
     }
+	&__source {
+    	float: right;
+		font-style: italic;
+		flex: 1 0 auto;
+		text-align: right;
+		width: 23%;
+	}
+
 
 	.enlarge {
 		position: relative;
@@ -81,16 +93,28 @@
         float: none;
         display: block;
         margin-bottom: 0.75rem;
+		width: 100%;
+		flex: 1 0 auto;
+		text-align: left;
     }
+
+	.article-inline-image__caption,
+    .article-exhibit__caption {
+		order: 99; // Always last when floated
+	}
 }
 
 .article-exhibit--pull-right,
 .article-inline-image--pull-right  {
-
     float: right;
     margin-right: 0;
     margin-left: 2rem;
     text-align: right;
+
+	.article-inline-image__source,
+    .article-exhibit__source {
+		text-align: right;
+	}
 
     // Prevents short paragraphs between two floating images from flowing weird
     & + p {
@@ -101,4 +125,23 @@
 .article-exhibit--pull-left + p,
 .article-inline-image--pull-left + p {
     clear: right;
+}
+
+// Ugly wonky styles for iframe components
+// Due to Word plugin difficulties, can't wrap a container around all parts of
+// an iframe component. So, positioning/styling is tricky.
+.iframe-component + .article-exhibit__caption {
+	float: left;
+	max-width: 75%;
+
+	& + .article-exhibit__source {
+		float: none;
+		display: block;
+		text-align: right;
+		width: auto;
+	}
+}
+
+.article-exhibit__source + p {
+	clear: both;
 }
