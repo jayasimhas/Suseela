@@ -46,5 +46,10 @@ namespace Informa.Library.Session
 
 			keys.ForEach(k => HttpContext.Current.Session.Remove(k));
 		}
+
+		public void Clear(string key)
+		{
+			HttpContext.Current.Session.Remove(key);
+		}
 	}
 }
