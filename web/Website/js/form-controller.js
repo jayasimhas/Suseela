@@ -7,20 +7,27 @@ function formController(requestVerificationToken) {
 
 		$(formSubmit).on('click', (event) => {
 
+			var currentForm;
+			if(event.target.form) {
+				currentForm = event.target.form;
+			} else {
+				currentForm = $(event.target).closest('form');
+			}
+
 			if(presubmit) {
 				presubmit();
 			}
 
 			event.preventDefault(); // Prevent form submitting
 
-            this.hideErrors(form); // Reset any visible errors
+            this.hideErrors(currentForm); // Reset any visible errors
 
             // Prevent user from re-submitting form
 			$(event.target).attr('disabled', 'disabled');
 
 			var inputData = {};
 
-			$(form).find('input, select, textarea').each(function() {
+			$(currentForm).find('input, select, textarea').each(function() {
 
                 var value = '';
                 var field = $(this);
@@ -39,26 +46,26 @@ function formController(requestVerificationToken) {
 				inputData[field.attr('name')] = value;
 			});
 
-			if(!$(form).data('on-submit')) {
+			if(!$(currentForm).data('on-submit')) {
 				console.warn('No submit link for form');
 			}
 
 			$.ajax({
-				url: $(form).data('on-submit'),
+				url: $(currentForm).data('on-submit'),
 				type: 'POST',
 				data: inputData,
 				context: this,
 				success: function (response) {
 					if (response.success) {
 
-                        this.showSuccessMessage(form);
+                        this.showSuccessMessage(currentForm);
 
 						if (successCallback) {
-							successCallback(form, this, event);
+							successCallback(currentForm, this, event);
 						}
 
                         if($(form).data('on-success')) {
-                            window.location.href = $(form).data('on-success');
+                            window.location.href = $(currentForm).data('on-success');
                         }
 					}
 					else {
@@ -67,20 +74,20 @@ function formController(requestVerificationToken) {
 								this.showError(form, '.js-form-error-' + response.reasons[reason]);
 							}
 						} else {
-                            this.showError(form, '.js-form-error-general');
+                            this.showError(currentForm, '.js-form-error-general');
 						}
 
 						if (failureCallback) {
-							failureCallback(form);
+							failureCallback(currentForm);
 						}
 					}
 				},
 				error: function(response) {
 
-					this.showError(form, '.js-form-error-general');
+					this.showError(currentForm, '.js-form-error-general');
 
 					if (failureCallback) {
-						failureCallback(form);
+						failureCallback(currentForm);
 					}
 				},
                 complete: function() {
