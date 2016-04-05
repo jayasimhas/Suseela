@@ -470,6 +470,7 @@
     <Compile Include="Subscription\IndividualSubscriptionRenewalMessageContext.cs" />
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
+    <Compile Include="User\Profile\UserProfileContext.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
     <Compile Include="SiteDebugging\ISiteDebuggingAllowedConfiguration.cs" />
