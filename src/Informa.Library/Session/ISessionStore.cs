@@ -3,7 +3,8 @@
 	public interface ISessionStore
 	{
 		void Set<T>(string key, T obj);
-		T Get<T>(string key);
+		ISessionValue<T> Get<T>(string key);
+		void Clear(string key);
 		void ClearAll(string keyStartsWith);
 	}
 }

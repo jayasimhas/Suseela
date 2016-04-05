@@ -64,12 +64,13 @@
 			background-color: transparent;
 			color: $color-zeus-black;
 			cursor: pointer;
+			padding-bottom: 0.5rem;
 
 			.sortable-table__col {
 				display: inline-block;
 				font-size: 1rem;
 				font-weight: 400;
-				padding: 1rem 0.5rem 1rem 1rem;
+				padding: 0 0.5rem 0.5rem 1rem;
 				width: auto;
 				vertical-align: middle;
 			}
@@ -102,6 +103,18 @@
 
 			&--date:before {
 				content: "Date";
+			}
+
+			&--publication:before {
+				content: "Publication";
+			}
+
+			&--sub-type:before {
+				content: "Subscription Type";
+			}
+
+			&--exp-date:before {
+				content: "Expiration Date";
 			}
 		}
 

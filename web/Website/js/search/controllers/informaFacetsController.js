@@ -1,57 +1,56 @@
 ﻿
-var InformaFacetController = function ($scope, $location, $http, $anchorScroll, searchService, searchBootstrapper, getCompaniesService) {
+var InformaFacetController = function ($scope, $location, $http, $anchorScroll, searchService, searchBootstrapper) {
     "use strict";
 
-    var _this = this;
+    // Bind `this` to vm - a represetation of the view model
+    var vm = this;
 
-    var init = function() {
+    // var init = function() {
 
-        // General Facet stuff
-        _this.facetGroups = searchService.getFacetGroups();
-        _this.searchService = searchService;
-        _this.location = $location;
-        _this.anchorScroll = $anchorScroll;
-        _this.searchBootstrapper = searchBootstrapper;
-        _this.MaxFacetShow = 5;
-        _this.CompanyList = getCompaniesService.fetchCompanies();
+    // General Facet stuff
+    vm.facetGroups = searchService.getFacetGroups();
+    vm.searchService = searchService;
+    vm.location = $location;
+    vm.anchorScroll = $anchorScroll;
+    vm.searchBootstrapper = searchBootstrapper;
+    vm.MaxFacetShow = 5;
 
-        // Date Facet stuff
-        _this.CurrentDateSelection = '';
-        _this.currentDateRange = _this.getDateFilterLabel();
-        _this.ValidDates = true;
-        _this.DateFilters = [
-            { label: 'Last 24 hours', key: 'day', selected: false },
-            { label: 'Last 3 days', key: 'threedays', selected: false },
-            { label: 'Last week', key: 'week', selected: false },
-            { label: 'Last month', key: 'month', selected: false },
-            { label: 'Last year', key: 'year', selected: false },
-            { label: 'Select date range', key: 'custom', selected: false }
-        ];
+    // Date Facet stuff
+    vm.CurrentDateSelection = '';
+    vm.ValidDates = true;
+    vm.DateFilters = [
+        { label: 'Last 24 hours', key: 'day', selected: false },
+        { label: 'Last 3 days', key: 'threedays', selected: false },
+        { label: 'Last week', key: 'week', selected: false },
+        { label: 'Last month', key: 'month', selected: false },
+        { label: 'Last year', key: 'year', selected: false },
+        { label: 'Select date range', key: 'custom', selected: false }
+    ];
 
-        //Select a radio button if the search was using a custom search
-        var dateArrayLength = _this.DateFilters.length;
-        for (var i = 0; i < dateArrayLength; i++) {
+    //Select a radio button if the search was using a custom search
+    var dateArrayLength = vm.DateFilters.length;
+    for (var i = 0; i < dateArrayLength; i++) {
 
-            if ($location.search().dateFilterLabel == _this.DateFilters[i].key) {
-                _this.CurrentDateSelection = _this.DateFilters[i].key;
-                _this.DateFilters[i].selected = true;
-            }
+        if ($location.search().dateFilterLabel == vm.DateFilters[i].key) {
+            vm.CurrentDateSelection = vm.DateFilters[i].key;
+            vm.DateFilters[i].selected = true;
         }
+    }
 
-    };
+    // };
 
     $scope.$watch(function() {
         return searchService.getPager();
     }, function() {
-        _this.facetGroups = searchService.getFacetGroups();
+        vm.facetGroups = searchService.getFacetGroups();
     }, true);
 
 
     //** This collects the user's saved companies **//
-    $scope.savedCompanies = {};
+    vm.savedCompanies = {};
 
-    $scope.saveCompany = function($item, model, label) {
-        $scope.savedCompanies[$item] = {
+    vm.saveCompany = function($item, model, label) {
+        vm.savedCompanies[$item] = {
             selected: true,
             label: $item
         };
@@ -63,107 +62,108 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
 
 
     //** This updates the router/url with the latest search parameters **//
-    _this.update = function() {
-        _this.searchService.getFilter('page').setValue('1');
+    vm.update = function() {
+        vm.searchService.getFilter('page').setValue('1');
         var routeBuilder = this.searchService.getRouteBuilder();
-        _this.location.search(routeBuilder.getRoute());
-        _this.searchService.query();
+        vm.location.search(routeBuilder.getRoute());
+        vm.searchService.query();
 
         //Scroll to the top of the results when a new page is chosen
-        _this.location.hash("searchTop");
-        _this.anchorScroll();
+        vm.location.hash("searchTop");
+        vm.anchorScroll();
     };
 
-    _this.facetChange = function(facet) {
-        _this.searchService.getFacet(facet.id).selected = facet.selected;
-        _this.update();
+    vm.facetChange = function(facet) {
+        vm.searchService.getFacet(facet.id).selected = facet.selected;
+        vm.update();
     };
 
     // TODO: this comes from a diff search app, and needs jquery to work.
     //       either hook up jq to this controller or move this elsewhere
-    _this.scrollTop = function() {
+    vm.scrollTop = function() {
         // var location = jq(".search-facets__header").offset().top;
         //window.scrollTo(0, location - 80);
     };
 
-    _this.hasSelected = function(values) {
+    vm.hasSelected = function(values) {
         return _.find(values, { selected: true }) ? true : false;
     };
 
-    _this.getFilter = function(filterKey) {
-        var filter = _this.searchService.getFilter(filterKey);
+    vm.getFilter = function(filterKey) {
+        var filter = vm.searchService.getFilter(filterKey);
         if (!filter) {
-            _this.searchBootstrapper.createFilter(filterKey, "");
-            filter = _this.searchService.getFilter(filterKey);
+            vm.searchBootstrapper.createFilter(filterKey, "");
+            filter = vm.searchService.getFilter(filterKey);
         }
         return filter;
     };
 
-    //** This deselects any selected facet checkboxes, clears all facet parameters from the search query, and runs the clearDateRange function **//
-    _this.clearAllFacets = function() {
+    /* This deselects any selected facet checkboxes, clears all facet parameters
+        from the search query, and runs the clearDateRange function */
+    vm.clearAllFacets = function() {
         var facetClear = this;
         var facetGroups = facetClear.facetGroups;
         _.each(facetGroups, function(group) {
-            // _this.clearGroup(group.id)
-            var facets = _this.searchService.getFacetGroup(group.id).getSelectedFacets();
+            // vm.clearGroup(group.id)
+            var facets = vm.searchService.getFacetGroup(group.id).getSelectedFacets();
             _.each(facets, function(facet) {
                 facet.selected = false;
             });
         });
-        _this.clearDateRange();
-        this.update();
+        vm.clearDateRange();
+        vm.update();
     };
 
-    _this.clearFilter = function(filterKey) {
-        var filter = _this.getFilter(filterKey);
+    vm.clearFilter = function(filterKey) {
+        var filter = vm.getFilter(filterKey);
         filter.setValue("");
     };
 
-    //** This clears the date parameters from the search, deselcts any date radio buttons, and clears both custom date input fields **//
-    _this.clearDateRange = function() {
-        var filter = _this.getFilter('date');
+    /* This clears the date parameters from the search, deselcts any date radio
+    buttons, and clears both custom date input fields **/
+    vm.clearDateRange = function() {
+        var filter = vm.getFilter('date');
         filter.setValue("");
         filter.selected = false;
-        var filterDateLabel = _this.getFilter('dateFilterLabel');
+        var filterDateLabel = vm.getFilter('dateFilterLabel');
         filterDateLabel.setValue("");
-        var dates = _this.DateFilters;
+        var dates = vm.DateFilters;
         _.each(dates, function(date) {
             date.selected = false;
         });
-        _this.currentDateRange = "";
-        _this.update();
+        vm.currentDateRange = "";
     };
 
-    _this.getDateFilterLabel = function() {
-        var filterDateLabel = _this.getFilter('dateFilterLabel');
+    vm.getDateFilterLabel = function() {
+        var filterDateLabel = vm.getFilter('dateFilterLabel');
         return filterDateLabel._value;
     };
 
-    _this.searchForCompany = function (selectedCompany) {
+    vm.searchForCompany = function (selectedCompany) {
 
         //This is not correct right now, should be using facet groups instead
         //will fix later
-        var facets = _this.searchService.getFacetGroup('companies').getSelectedFacets();
+        var facets = vm.searchService.getFacetGroup('companies').getSelectedFacets();
 
-        var filter = _this.getFilter('companies');
+        var filter = vm.getFilter('companies');
 
         var companyFilter = selectedCompany;
         var sep = ';';
 
-        for (var i = 0;i < facets.length; i++) {
+        for (var i = 0; i < facets.length; i++) {
             companyFilter += sep + facets[i].id;
         }
 
         filter.setValue(companyFilter);
 
-        _this.update();
+        vm.update();
     };
 
-    _this.customDateRangeSearch = function(filterKey, startDate, endDate) {
+    vm.customDateRangeSearch = function(filterKey, startDate, endDate) {
 
-        if (_this.CurrentDateSelection == 'custom') {
-            var filter = _this.getFilter(filterKey);
-            var filterDateLabel = _this.getFilter('dateFilterLabel');
+        if (vm.CurrentDateSelection == 'custom') {
+            var filter = vm.getFilter(filterKey);
+            var filterDateLabel = vm.getFilter('dateFilterLabel');
             filterDateLabel.setValue('custom');
 
             var date1Unparsed = new Date(startDate);
@@ -174,42 +174,42 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
 
             filter.setValue(date1 + ";" + date2);
 
-            _this.update();
+            vm.update();
         }
 
     };
 
     //** This builds date parameters for the search query **//
-    _this.dateRangeSearch = function (filterKey, dateFilter) {
+    vm.dateRangeSearch = function (filterKey, dateFilter) {
 
-        _this.CurrentDateSelection = dateFilter;
+        vm.CurrentDateSelection = dateFilter;
 
         if (dateFilter == 'custom') {
             return;
         }
 
-        var filter = _this.getFilter(filterKey);
-        var filterDateLabel = _this.getFilter('dateFilterLabel');
+        var filter = vm.getFilter(filterKey);
+        var filterDateLabel = vm.getFilter('dateFilterLabel');
 
         var startDate = datesObject[dateFilter];
         var endDate = datesObject.day;
-        _this.currentDateRange = dateFilter;
+        vm.currentDateRange = dateFilter;
 
         filterDateLabel.setValue(dateFilter);
         filter.setValue(startDate + ";" + endDate);
 
-        _this.updateSelectedDate(dateFilter);
-        _this.update();
+        vm.updateSelectedDate(dateFilter);
+        vm.update();
     };
 
-    _this.updateSelectedDate = function (dateFilter) {
-        var dateArrayLength = _this.DateFilters.length;
+    vm.updateSelectedDate = function (dateFilter) {
+        var dateArrayLength = vm.DateFilters.length;
         for (var i = 0; i < dateArrayLength; i++) {
-            if (dateFilter == _this.DateFilters[i].key) {
-                _this.CurrentDateSelection = _this.DateFilters[i].key;
-                _this.DateFilters[i].selected = true;
+            if (dateFilter == vm.DateFilters[i].key) {
+                vm.CurrentDateSelection = vm.DateFilters[i].key;
+                vm.DateFilters[i].selected = true;
             } else {
-                _this.DateFilters[i].selected = false;
+                vm.DateFilters[i].selected = false;
             }
         }
     };
@@ -227,9 +227,11 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         dtTo: false
     };
 
-    init();
+    vm.currentDateRange = vm.getDateFilterLabel();
+
+    // init();
 
 };
 
 var informaSearchApp = angular.module('informaSearchApp');
-informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', '$anchorScroll', 'searchService', 'searchBootstrapper', 'getCompaniesService', InformaFacetController]);
+informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', '$anchorScroll', 'searchService', 'searchBootstrapper', InformaFacetController]);

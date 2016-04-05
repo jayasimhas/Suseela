@@ -11,12 +11,17 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Paragraph
         {
             var classOfParagraph = node.GetAttributeValue("class", string.Empty);
 
-            if (classOfParagraph.Equals("quickfactstitle", StringComparison.InvariantCultureIgnoreCase))
+            if (classOfParagraph.Equals("quick-facts__header", StringComparison.InvariantCultureIgnoreCase))
             {
                 var titleNode = new QuickFactsTitleNode();
                 titleNode.Convert(node, writer);
             }
             else if (classOfParagraph.Equals("quickfactstext", StringComparison.InvariantCultureIgnoreCase))
+            {
+                var titleNode = new QuickFactsTextNode();
+                titleNode.Convert(node, writer);
+            }
+            else if (string.IsNullOrEmpty(classOfParagraph))
             {
                 var titleNode = new QuickFactsTextNode();
                 titleNode.Convert(node, writer);

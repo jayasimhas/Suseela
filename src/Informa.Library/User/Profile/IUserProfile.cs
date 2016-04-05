@@ -5,5 +5,6 @@
 		string FirstName { get; }
 		string LastName { get; }
 		string Email { get; }
+		string JobIndustry { get; }
 	}
 }
