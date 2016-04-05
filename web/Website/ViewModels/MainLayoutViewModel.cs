@@ -17,20 +17,21 @@ using Informa.Library.Company;
 using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Subscription.User;
+using Informa.Library.User.Profile;
 
 namespace Informa.Web.ViewModels
 {
 	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
 	{
 		protected readonly ISiteRootContext SiteRootContext;
-		protected readonly IUserCompanyNameContext CompanyNameContext;
+		protected readonly IUserCompanyNameContext UserCompanyContext;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteSettings SiteSettings;
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
 		protected readonly ISitecoreService Service;
 		protected readonly IArticleSearch ArticleSearch;
 		protected readonly IItemReferences ItemReferences;
-		protected readonly ISalesforceFindUserProfile SalesforceFindUserProfile;
+		protected readonly IUserProfileContext UserProfileContext;
 		protected readonly IEntitlementAccessLevelContext EntitlementAccessLevelContext;
 		protected readonly IUserSubscriptionsContext UserSubscriptionsContext;
 
@@ -54,8 +55,8 @@ namespace Informa.Web.ViewModels
 			IArticleSearch articleSearch,
 			IItemReferences itemReferences,
 			ITextTranslator textTranslator,
-			IUserCompanyNameContext companyNameContext,
-			ISalesforceFindUserProfile salesforceFindUserProfile,
+			IUserCompanyNameContext userCompanyContext,
+			IUserProfileContext userProfileContext,
 			IEntitlementAccessLevelContext entitlementAccessLevelContext,
 			IUserSubscriptionsContext userSubscriptionsContext)
 		{
@@ -78,9 +79,8 @@ namespace Informa.Web.ViewModels
 			ArticleSearch = articleSearch;
 			ItemReferences = itemReferences;
 			TextTranslator = textTranslator;
-			CompanyNameContext = companyNameContext;
-			SalesforceFindUserProfile = salesforceFindUserProfile;
-			SfUserProfile = salesforceFindUserProfile.Find(authenticatedUserContext.User.Username);
+			UserCompanyContext = userCompanyContext;
+			UserProfileContext = userProfileContext;
 			EntitlementAccessLevelContext = entitlementAccessLevelContext;
 			UserSubscriptionsContext = userSubscriptionsContext;
 		}
@@ -98,13 +98,13 @@ namespace Informa.Web.ViewModels
 		public readonly IRegisterPopOutViewModel RegisterPopOutViewModel;
 		public readonly IAppInsightsConfig AppInsightsConfig;
 
+		public IArticle Article => GlassModel is IArticle ? (IArticle)GlassModel : null;
 		public string PrintPageHeaderLogoSrc => SiteRootContext?.Item?.Print_Logo?.Src ?? string.Empty;
 		public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
 		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
 		public string UserName => AuthenticatedUserContext.User.Name;
-		public string CorporateName => CompanyNameContext.Name;
+		public string CorporateName => UserCompanyContext.Name;
 
-		public ISalesforceUserProfile SfUserProfile;
 		public string Title
 		{
 			get
@@ -401,26 +401,9 @@ namespace Informa.Web.ViewModels
 			get { return UserSubscriptionsContext.GetSubscribed_Products(); }
 		}
 
-		public string User_Company
-		{
-			get { return (SfUserProfile != null ? SfUserProfile.Company : string.Empty); }
-		}
-
-		public string User_Industry
-		{
-			get
-			{
-				return (SfUserProfile != null ? SfUserProfile.JobIndustry : string.Empty);
-			}
-		}
-
-		public string User_Email
-		{
-			get
-			{
-				return (SfUserProfile != null ? SfUserProfile.Email : string.Empty);
-			}
-		}
+		public string UserCompany => UserCompanyContext.Name;
+		public string UserIndustry => UserProfileContext.Profile?.JobIndustry ?? string.Empty;
+		public string UserEmail => UserProfileContext.Profile?.Email ?? string.Empty;
 		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	}
 }

@@ -1,8 +1,10 @@
 ﻿using Informa.Library.User.Authentication;
+using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Profile
 {
-	public class UserProfileContext
+	[AutowireService(LifetimeScope.SingleInstance)]
+	public class UserProfileContext : IUserProfileContext
 	{
 		private const string sessionKey = "Profile";
 
@@ -20,7 +22,7 @@ namespace Informa.Library.User.Profile
 			UserSession = userSession;
 		}
 
-		IUserProfile Profile
+		public IUserProfile Profile
 		{
 			get
 			{
