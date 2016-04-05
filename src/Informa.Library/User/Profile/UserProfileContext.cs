@@ -10,12 +10,12 @@ namespace Informa.Library.User.Profile
 
 		protected readonly IFindUserProfileByUsername FindUserProfile;
 		protected readonly IAuthenticatedUserContext UserContext;
-		protected readonly IUserSession UserSession;
+		protected readonly IAuthenticatedUserSession UserSession;
 
 		public UserProfileContext(
 			IFindUserProfileByUsername findUserProfile,
 			IAuthenticatedUserContext userContext,
-			IUserSession userSession)
+			IAuthenticatedUserSession userSession)
 		{
 			FindUserProfile = findUserProfile;
 			UserContext = userContext;
@@ -31,6 +31,11 @@ namespace Informa.Library.User.Profile
 				if (profileSession.HasValue)
 				{
 					return profileSession.Value;
+				}
+
+				if (!UserContext.IsAuthenticated)
+				{
+					return null;
 				}
 
 				var profile = FindUserProfile.Find(UserContext.User?.Username ?? string.Empty);

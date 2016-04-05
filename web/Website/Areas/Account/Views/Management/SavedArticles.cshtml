@@ -12,10 +12,11 @@
                 <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-bad-id">@Model.BadIDText</p>
             </div>
 
-            <table class="sortable sortable-table">
+            <table class="sortable-table js-sortable-table">
                 <thead class="sortable-table__header">
                     <tr>
-                        <td class="sortable-table__col">
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="1">
                             @Model.TitleText
                             <div class="sortable-table__sort-arrows">
                                 <svg class="sortable-table__sort-arrows--up click-utag" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"up"}'>
@@ -26,7 +27,8 @@
                                 </svg>
                             </div>
                         </td>
-                        <td class="sortable-table__col">
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="2">
                             @Model.DateText
                             <div class="sortable-table__sort-arrows">
                                 <svg class="sortable-table__sort-arrows--up">
@@ -45,7 +47,8 @@
                         <td class="sortable-table__col">
                             <h6>Sort by:</h6>
                         </td>
-                        <td class="sortable-table__col">
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="1">
                             @Model.TitleText
                             <div class="sortable-table__sort-arrows">
                                 <svg class="sortable-table__sort-arrows--up click-utag" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"up"}'>
@@ -56,7 +59,8 @@
                                 </svg>
                             </div>
                         </td>
-                        <td class="sortable-table__col">
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="2">
                             @Model.DateText
                             <div class="sortable-table__sort-arrows">
                                 <svg class="sortable-table__sort-arrows--up">

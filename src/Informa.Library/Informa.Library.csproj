@@ -328,12 +328,15 @@
     <Compile Include="Subscription\SubscriptionProductKeyContext.cs" />
     <Compile Include="Subscription\User\IUserSubscriptionsContext.cs" />
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
+    <Compile Include="User\Authentication\AuthenticatedUserSession.cs" />
+    <Compile Include="User\Authentication\IAuthenticatedUserSession.cs" />
     <Compile Include="User\Authentication\Web\IWebAuthenticateUser.cs" />
     <Compile Include="User\Authentication\Web\IWebAuthenticateUserResult.cs" />
     <Compile Include="User\Authentication\Web\SiteDebugging\ISiteDebuggingWebLoginUser.cs" />
     <Compile Include="User\Authentication\Web\SiteDebugging\SiteDebuggingWebLoginUser.cs" />
     <Compile Include="User\Authentication\Web\WebAuthenticateUser.cs" />
     <Compile Include="User\Authentication\Web\WebAuthenticateUserResult.cs" />
+    <Compile Include="User\Authentication\Web\WebClearAuthenticatedUserSessionAction.cs" />
     <Compile Include="User\Entitlement\EntitlementAccessLevelContext.cs" />
     <Compile Include="User\Entitlement\EntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\EntitlementSession.cs" />

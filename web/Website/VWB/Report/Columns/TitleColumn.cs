@@ -89,7 +89,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 
             if (HttpContext.Current.Request.IsSecureConnection)
             {
-                link.Attributes.Add("href", "/VWB/Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(articleItemWrapper.PreviewUrl + mobileQueryParam).Replace("http","https"));
+                link.Attributes.Add("href", "/VWB/Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(articleItemWrapper.PreviewUrl + mobileQueryParam));
             }
             else
             {
