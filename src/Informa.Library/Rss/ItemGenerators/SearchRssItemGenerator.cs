@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using Glass.Mapper.Sc;
 using Informa.Library.Rss.Interfaces;
 using Informa.Library.Rss.Utils;
+using Informa.Library.Search.Utilities;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.Data.Items;
 
@@ -25,7 +26,7 @@ namespace Informa.Library.Rss.ItemGenerators
 
             //Build the basic syndicaton item
             var syndicationItem = new SyndicationItem(GetItemTitle(article),
-                article.Summary,
+                GetItemSummary(article),
                 new Uri(article._AbsoluteUrl),
                 article._AbsoluteUrl,
                 article.Actual_Publish_Date);
