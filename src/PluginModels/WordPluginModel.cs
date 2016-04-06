@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 
 namespace PluginModels
-{
+{    
+    public class ImageItem
+    {
+        public Guid MediaId { get; set; }
+        public string Alt { get; set; }
+    }
 
-	public struct ArticleSize
+    public struct ArticleSize
 	{
 		public string Name { get; set; }
 		public int MinimumWordCount { get; set; }
