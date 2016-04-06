@@ -63,5 +63,10 @@ namespace Informa.Library.User.Entitlement
 		{
 			UserSession.Clear(EntitlementSessionKey);
 		}
+
+		public EntitledAccessLevel GetProductAccessLevel(string productCode)
+		{
+			return Entitlements.Any(e => e.ProductCode == productCode) ? EntitledAccessLevel.Individual : EntitledAccessLevel.UnEntitled;
+		}
 	}
 }

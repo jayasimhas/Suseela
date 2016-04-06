@@ -340,11 +340,13 @@
     <Compile Include="User\Entitlement\DefaultEntitlementsFactory.cs" />
     <Compile Include="User\Entitlement\EntitlementAccessLevelContext.cs" />
     <Compile Include="User\Entitlement\EntitlementChecksEnabled.cs" />
+    <Compile Include="User\Entitlement\EntitlementsContexts.cs" />
     <Compile Include="User\Entitlement\EntitlementSession.cs" />
     <Compile Include="User\Entitlement\IDefaultEntitlementsFactory.cs" />
     <Compile Include="User\Entitlement\IEntitlementAccessLevelContext.cs" />
     <Compile Include="User\Entitlement\IEntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\IEntitlementFactory.cs" />
+    <Compile Include="User\Entitlement\IEntitlementsContexts.cs" />
     <Compile Include="User\Entitlement\IEntitlementSession.cs" />
     <Compile Include="User\Entitlement\IAuthenticatedUserEntitlementsContext.cs" />
     <Compile Include="User\Entitlement\IUserEntitlementsContext.cs" />

@@ -14,10 +14,11 @@ using Informa.Library.Utilities.References;
 using System.Web;
 using Informa.Library.Globalization;
 using Informa.Library.Company;
-using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Subscription.User;
 using Informa.Library.User.Profile;
+using System.Text;
+using System.Linq;
 
 namespace Informa.Web.ViewModels
 {
@@ -34,6 +35,7 @@ namespace Informa.Web.ViewModels
 		protected readonly IUserProfileContext UserProfileContext;
 		protected readonly IEntitlementAccessLevelContext EntitlementAccessLevelContext;
 		protected readonly IUserSubscriptionsContext UserSubscriptionsContext;
+		protected readonly IUserEntitlementsContext UserEntitlementsContext;
 
 		public MainLayoutViewModel(
 			ISiteRootContext siteRootContext,
@@ -58,7 +60,8 @@ namespace Informa.Web.ViewModels
 			IUserCompanyNameContext userCompanyContext,
 			IUserProfileContext userProfileContext,
 			IEntitlementAccessLevelContext entitlementAccessLevelContext,
-			IUserSubscriptionsContext userSubscriptionsContext)
+			IUserSubscriptionsContext userSubscriptionsContext,
+			IUserEntitlementsContext userEntitlementsContext)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -83,6 +86,7 @@ namespace Informa.Web.ViewModels
 			UserProfileContext = userProfileContext;
 			EntitlementAccessLevelContext = entitlementAccessLevelContext;
 			UserSubscriptionsContext = userSubscriptionsContext;
+			UserEntitlementsContext = userEntitlementsContext;
 		}
 
 		public readonly IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
@@ -174,8 +178,59 @@ namespace Informa.Web.ViewModels
 		public string ArticleSubject => GetArticleTaxonomy(ItemReferences.SubjectsTaxonomyFolder);
 		public string ArticleTherapy => GetArticleTaxonomy(ItemReferences.TherapyAreasTaxonomyFolder);
 		public bool IsArticleFree => Article?.Free_Article ?? false;
-		public string UserEntitlements => EntitlementAccessLevelContext.GetEntitledProducts();
-		public string UserEntitlementStatus => EntitlementAccessLevelContext.GetEntitledProductStatus();
+		public string UserEntitlements
+		{
+			get
+			{
+				var entitlementList = UserEntitlementsContext.Entitlements;
+				if (entitlementList != null)
+				{
+					StringBuilder strEntitledProducts = new StringBuilder();
+					var lastEntitlement = entitlementList.LastOrDefault();
+					strEntitledProducts.Append("[");
+					foreach (var entitlement in entitlementList)
+					{
+						strEntitledProducts.Append("'");
+						strEntitledProducts.Append(entitlement.ProductCode);
+						strEntitledProducts.Append("'");
+						if (entitlementList.Count() > 1 && !lastEntitlement.Equals(entitlement))
+						{
+							strEntitledProducts.Append(",");
+						}
+					}
+					strEntitledProducts.Append("]");
+					return strEntitledProducts.ToString();
+				}
+				return string.Empty;
+			}
+		}
+		public string UserEntitlementStatus
+		{
+			get
+			{
+				var entitlementList = UserEntitlementsContext.Entitlements;
+				if (entitlementList != null)
+				{
+					StringBuilder strEntitledProducts = new StringBuilder();
+					var lastEntitlement = entitlementList.LastOrDefault();
+					strEntitledProducts.Append("[");
+					foreach (var entitlement in entitlementList)
+					{
+						var entitledStatus = EntitlementAccessLevelContext.Determine(entitlement);
+						strEntitledProducts.Append("'");
+						strEntitledProducts.Append(entitledStatus.ToString());
+						strEntitledProducts.Append("'");
+						if (entitlementList.Count() > 1 && !lastEntitlement.Equals(entitlement))
+						{
+							strEntitledProducts.Append(",");
+						}
+					}
+					strEntitledProducts.Append("]");
+					return strEntitledProducts.ToString();
+				}
+				return string.Empty;
+			}
+		}
 		public string SubscribedProducts => UserSubscriptionsContext.GetSubscribed_Products();
 		public string UserCompany => UserCompanyContext.Name;
 		public string UserIndustry => UserProfileContext.Profile?.JobIndustry ?? string.Empty;

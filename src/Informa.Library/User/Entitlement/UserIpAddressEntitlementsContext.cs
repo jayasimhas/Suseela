@@ -54,9 +54,14 @@ namespace Informa.Library.User.Entitlement
 			set { UserSession.Set(EntitlementSessionKey, value); }
         }
 
-        public void RefreshEntitlements()
+		public void RefreshEntitlements()
         {
 			UserSession.Clear(EntitlementSessionKey);
 		}
-    }
+
+		public EntitledAccessLevel GetProductAccessLevel(string productCode)
+		{
+			return Entitlements.Any(e => e.ProductCode == productCode) ? EntitledAccessLevel.TransparentIP : EntitledAccessLevel.UnEntitled;
+		}
+	}
 }

@@ -7,10 +7,10 @@ namespace Informa.Library.User.Entitlement
 	[AutowireService(LifetimeScope.Default)]
 	public class UserEntitlementsContext : IUserEntitlementsContext
 	{
-		protected readonly IEnumerable<IEntitlementsContext> EntitlementsContexts;
+		protected readonly IEntitlementsContexts EntitlementsContexts;
 
 		public UserEntitlementsContext(
-			IEnumerable<IEntitlementsContext> entitlementsContexts)
+			IEntitlementsContexts entitlementsContexts)
 		{
 			EntitlementsContexts = entitlementsContexts;
 		}
