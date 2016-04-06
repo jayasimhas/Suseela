@@ -529,6 +529,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
 			ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(title, webPublishDate, pubGuid);
 
+			if (string.IsNullOrEmpty(astruct.RemoteErrorMessage) == false)
+			{
+				Globals.SitecoreAddin.Log("SaveStubToSitecore returned astruct object with error: " + astruct.RemoteErrorMessage);
+			}
 			//articleDetailsPageSelector.UpdateArticleNumber(astruct.ArticleNumber);
 			articleDetails.ArticleNumber = astruct.ArticleNumber;
 			articleDetails.ArticleGuid = astruct.ArticleGuid;
@@ -774,6 +778,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 				articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
 				articleDetailsPageSelector.UpdateFields();
 				articleDetailsPageSelector.ResetChangedStatus();
+				UpdateFieldsAfterSave();
 				DocumentPropertyEditor.WritePublicationAndDate(SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
 
 				//TamerM - 2016-03-22: Prompt and ReExport  NLM FEED

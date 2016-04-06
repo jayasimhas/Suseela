@@ -424,8 +424,15 @@ namespace InformaSitecoreWord.Sitecore
             {
                 var article = new CreateArticleRequest() { Name = articleName, PublicationID = publicationID, PublicationDate = publicationDate };
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CreateArticle", article).Result;
-                var articleItem = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
-                return articleItem;
+                if (response?.StatusCode != HttpStatusCode.OK)
+                {
+                    return new ArticleStruct { RemoteErrorMessage = $"response: {response.ToString()}, Request: {response.RequestMessage.ToString()}" };
+                }
+                else
+                {
+                    var articleItem = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
+                    return articleItem;
+                }
             }
         }
 
