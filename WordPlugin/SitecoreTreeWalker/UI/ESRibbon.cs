@@ -44,13 +44,13 @@ namespace InformaSitecoreWord.UI
         private void ArticlesBtn_Click(object sender, RibbonControlEventArgs e)
         {
             ArticlesSidebarsControl myUserControl = new ArticlesSidebarsControl();
-            CheckLoginAndPerformAction(myUserControl, "Reference Articles");
+            CheckLoginAndPerformAction(myUserControl, "Articles");
         }
 
         private void IntelligenceProductsBtn_Click(object sender, RibbonControlEventArgs e)
         {
             DealsDrugsCompaniesControl myUserControl = new DealsDrugsCompaniesControl();
-            CheckLoginAndPerformAction(myUserControl, "Deals and Companies");
+            CheckLoginAndPerformAction(myUserControl, "Intelligence Products");
         }
 
         private void Multimedia_Click(object sender, RibbonControlEventArgs e)
