@@ -195,21 +195,18 @@ var datesObject = {
                                 <li class="facets__field-group facets__field-group--from input-group">
                                     <label for="date-picker-from" ng-click="open($event,'dtFrom');  facetController.updateSelectedDate(dateFilter.key)">From</label>
                                     <input type="text"
-                                           name="dtFrom"
-                                           ng-model="dateValues.dtFrom"
-                                           id="date-picker-from"
-                                           uib-datepicker-popup="dd/MM/yyyy"
-                                           is-open="datepickers.dtFrom"
                                            datepicker-options="fromDateOptions"
-                                           popup-placement="auto right-top"
-                                           ng-required="false"
-                                           readonly
-                                           ng-click="open($event,'dtFrom'); facetController.updateSelectedDate(dateFilter.key)"
+                                           id="date-picker-from"
+                                           is-open="datepickers.dtFrom"
+                                           name="dtFrom"
                                            ng-change="facetController.customDateRangeSearch('date', dateValues.dtFrom, dateValues.dtTo)"
+                                           ng-click="facetController.updateSelectedDate(dateFilter.key)"
+                                           ng-model="dateValues.dtFrom"
+                                           ng-required="false"
+                                           placeholder="dd/mm/yyyy"
+                                           popup-placement="auto right-top"
                                            show-button-bar="false"
-                                           placeholder="dd/mm/yyyy">
-                                           @* close-text="Close" *@
-
+                                           uib-datepicker-popup="dd/MM/yyyy">
 
                                     <span class="input-group-btn">
                                         <button type="button"
@@ -226,21 +223,19 @@ var datesObject = {
                                     <label for="date-picker-to" ng-click="open($event,'dtTo');  facetController.updateSelectedDate(dateFilter.key)">To</label>
 
                                     <input type="text"
-                                           name="dtTo"
-                                           uib-datepicker-popup="{{format}}"
-                                           ng-model="dateValues.dtTo"
-                                           id="date-picker-to"
-                                           datepicker-popup="shortDate"
-                                           is-open="datepickers.dtTo"
                                            datepicker-options="toDateOptions"
-                                           popup-placement="auto right-top"
-                                           ng-required="false"
-                                           readonly
-                                           ng-click="open($event,'dtTo'); facetController.updateSelectedDate(dateFilter.key)"
+                                           datepicker-popup="shortDate"
+                                           id="date-picker-to"
+                                           is-open="datepickers.dtTo"
+                                           name="dtTo"
                                            ng-change="facetController.customDateRangeSearch('date', dateValues.dtFrom, dateValues.dtTo)"
+                                           ng-click="facetController.updateSelectedDate(dateFilter.key)"
+                                           ng-model="dateValues.dtTo"
+                                           ng-required="false"
+                                           placeholder="dd/mm/yyyy"
+                                           popup-placement="auto right-top"
                                            show-button-bar="false"
-                                           placeholder="dd/mm/yyyy">
-                                           @* close-text="Close" *@
+                                           uib-datepicker-popup="dd/MM/yyyy">
 
                                     <span class="input-group-btn">
                                         <button type="button"
