@@ -2,9 +2,9 @@
 
 namespace Informa.Library.User.Entitlement
 {
-    public interface IEntitledVisit
+    public interface IEntitlementsContext
     {
-        IList<IEntitlement> Entitlements { get; }
+        IEnumerable<IEntitlement> Entitlements { get; }
         void RefreshEntitlements();
     }
 }

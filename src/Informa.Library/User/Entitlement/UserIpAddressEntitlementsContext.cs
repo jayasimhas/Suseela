@@ -5,29 +5,35 @@ using Jabberwocky.Glass.Autofac.Attributes;
 namespace Informa.Library.User.Entitlement
 {
     [AutowireService(LifetimeScope.Default)]
-    public class AuthenticatedIpContext : IAuthenticatedIPContext
+    public class UserIpAddressEntitlementsContext : IUserIpAddressEntitlementsContext
     { 
         protected readonly IUserIpAddressContext UserIpAddressContext;
         protected readonly IUserSession UserSession;
         protected readonly IGetIPEntitlements GetIpEntitlements;
+		protected readonly IDefaultEntitlementsFactory DefaultEntitlementsFactory;
 
-        public AuthenticatedIpContext(IUserIpAddressContext userIpAddressContext, IUserSession userSession, IGetIPEntitlements getIpEntitlements)
+		public UserIpAddressEntitlementsContext(
+			IUserIpAddressContext userIpAddressContext,
+			IUserSession userSession,
+			IGetIPEntitlements getIpEntitlements,
+			IDefaultEntitlementsFactory defaultEntitlementsFactory)
         {
             UserIpAddressContext = userIpAddressContext;
             UserSession = userSession;
             GetIpEntitlements = getIpEntitlements;
-        }
+			DefaultEntitlementsFactory = defaultEntitlementsFactory;
+		}
 
-        private const string EntitlementSessionKeyPrefix = nameof(AuthenticatedIpContext);
+        private const string EntitlementSessionKeyPrefix = nameof(UserIpAddressEntitlementsContext);
 
 		public string EntitlementSessionKey => $"{EntitlementSessionKeyPrefix}{UserIpAddressContext.IpAddress}";
 
-		public IList<IEntitlement> Entitlements
+		public IEnumerable<IEntitlement> Entitlements
         {
             get
             {
-				var entitlementsSessions = UserSession.Get<IList<IEntitlement>>(EntitlementSessionKey);
-				var entitlements = entitlementsSessions.HasValue ? entitlementsSessions.Value : new List<IEntitlement>();
+				var entitlementsSession = UserSession.Get<IList<IEntitlement>>(EntitlementSessionKey);
+				var entitlements = entitlementsSession.HasValue ? entitlementsSession.Value : new List<IEntitlement>();
 
                 if (entitlements.Any())
 				{
@@ -38,7 +44,7 @@ namespace Informa.Library.User.Entitlement
 
                 if(!entitlements.Any())
 				{
-					entitlements.Add(new Entitlement { ProductCode = "NONE" });
+					entitlements = DefaultEntitlementsFactory.Create().ToList();
 				}
 
                 Entitlements = entitlements;
@@ -50,7 +56,7 @@ namespace Informa.Library.User.Entitlement
 
         public void RefreshEntitlements()
         {
-            Entitlements = new List<IEntitlement>();
-        }
+			UserSession.Clear(EntitlementSessionKey);
+		}
     }
 }

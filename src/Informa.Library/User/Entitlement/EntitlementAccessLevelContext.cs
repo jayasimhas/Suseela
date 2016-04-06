@@ -8,16 +8,16 @@ namespace Informa.Library.User.Entitlement
 	[AutowireService(LifetimeScope.Default)]
 	public class EntitlementAccessLevelContext : IEntitlementAccessLevelContext
 	{
-		protected readonly IUserEntitlementsContext UserEntitlementsContext;
+		protected readonly IAuthenticatedUserEntitlementsContext UserEntitlementsContext;
 		protected readonly IEntitlementChecksEnabled EntitlementChecksEnabled;
 		protected readonly IUserSubscribedContext UserSubscriptionContext;
-		protected readonly IAuthenticatedIPContext AuthenticatedIPContext;
+		protected readonly IUserIpAddressEntitlementsContext AuthenticatedIPContext;
 
 		public EntitlementAccessLevelContext(
-			IUserEntitlementsContext userEntitlementsContext,
+			IAuthenticatedUserEntitlementsContext userEntitlementsContext,
 			IEntitlementChecksEnabled entitlementChecksEnabled,
 			IUserSubscribedContext userSubscriptionContext,
-			IAuthenticatedIPContext authenticatedIpContext)
+			IUserIpAddressEntitlementsContext authenticatedIpContext)
 		{
 			UserEntitlementsContext = userEntitlementsContext;
 			EntitlementChecksEnabled = entitlementChecksEnabled;
