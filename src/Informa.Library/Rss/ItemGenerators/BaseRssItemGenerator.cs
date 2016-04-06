@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Xml.Linq;
 using Informa.Library.Rss.Utils;
+using Informa.Library.Search.Utilities;
 using Informa.Library.Utilities.StringUtils;
+using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Library.Rss.ItemGenerators
@@ -39,6 +41,13 @@ namespace Informa.Library.Rss.ItemGenerators
             }
 
             return syndicationItem;
+        }
+
+        public string GetItemSummary(IArticle article)
+        {
+            string summary = SearchSummaryUtil.GetTruncatedSearchSummary(article.Summary);
+            summary = DCDTokenMatchers.ProcessDCDTokens(summary);
+            return SearchSummaryUtil.EscapeXMLValue(summary);
         }
 
     }
