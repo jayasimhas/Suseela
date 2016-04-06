@@ -903,6 +903,7 @@
     <Content Include="default.css" />
     <Content Include="default.js" />
     <Content Include="email\EditAfterPublishEmail.html" />
+    <Content Include="email\EmailFriendSearchAuthor.html" />
     <Content Include="email\EmailFriendSearchRow.html" />
     <Content Include="email\EmailFriendSearch.html" />
     <Content Include="email\EmailFriend.html" />

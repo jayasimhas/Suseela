@@ -12,12 +12,12 @@
 			SessionStore = sessionStore;
 		}
 
-		public ISessionValue<T> Get<T>(string key)
+		public virtual ISessionValue<T> Get<T>(string key)
 		{
 			return SessionStore.Get<T>(CreatePrefixedSessionKey(key));
 		}
 
-		public void Set<T>(string key, T obj)
+		public virtual void Set<T>(string key, T obj)
 		{
 			SessionStore.Set(CreatePrefixedSessionKey(key), obj);
 		}
@@ -39,6 +39,11 @@
 		public void Clear()
 		{
 			SessionStore.ClearAll(Prefix);
+		}
+
+		public void Clear(string key)
+		{
+			SessionStore.Clear(CreatePrefixedSessionKey(key));
 		}
 	}
 }
