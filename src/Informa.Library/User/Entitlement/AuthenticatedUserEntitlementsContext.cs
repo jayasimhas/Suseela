@@ -34,7 +34,7 @@ namespace Informa.Library.User.Entitlement
 		{
 			get
 			{
-				var entitlementsSession = UserSession.Get<IList<IEntitlement>>(EntitlementSessionKey);
+				var entitlementsSession = UserSession.Get<IEnumerable<IEntitlement>>(EntitlementSessionKey);
 				var entitlements = entitlementsSession.HasValue ? entitlementsSession.Value : new List<IEntitlement>();
 
 				if (entitlements.Any())
