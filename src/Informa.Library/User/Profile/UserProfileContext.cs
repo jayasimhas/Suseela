@@ -49,5 +49,10 @@ namespace Informa.Library.User.Profile
 				UserSession.Set(sessionKey, value);
 			}
 		}
+
+	    public void Clear()
+	    {
+	        UserSession.Clear(sessionKey);
+	    }
 	}
 }
