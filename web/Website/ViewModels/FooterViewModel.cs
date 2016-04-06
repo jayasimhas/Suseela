@@ -33,7 +33,7 @@ namespace Informa.Web.ViewModels
 			TextTranslator = textTranslator;
 		}
 
-		public string FooterLogoUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Footer_Logo.Src;
+		public string FooterLogoUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Footer_Logo?.Src;
 
 		public string CopyrightText => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Copyright_Text;
 
