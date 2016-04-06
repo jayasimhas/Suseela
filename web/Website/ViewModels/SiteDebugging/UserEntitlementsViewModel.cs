@@ -7,10 +7,10 @@ namespace Informa.Web.ViewModels.SiteDebugging
 	[AutowireService(LifetimeScope.Default)]
 	public class UserEntitlementsViewModel : IUserEntitlementsViewModel
 	{
-		protected readonly IAuthenticatedUserEntitlementsContext UserEntitlementsContext;
+		protected readonly IUserEntitlementsContext UserEntitlementsContext;
 
 		public UserEntitlementsViewModel(
-			IAuthenticatedUserEntitlementsContext userEntitlementsContext)
+			IUserEntitlementsContext userEntitlementsContext)
 		{
 			UserEntitlementsContext = userEntitlementsContext;
 		}
