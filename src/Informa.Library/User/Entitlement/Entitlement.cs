@@ -1,5 +1,8 @@
+using System;
+
 namespace Informa.Library.User.Entitlement
 {
+    [Serializable]
     public class Entitlement : IEntitlement
     {
 		public string ArchiveCode { get; set; }
