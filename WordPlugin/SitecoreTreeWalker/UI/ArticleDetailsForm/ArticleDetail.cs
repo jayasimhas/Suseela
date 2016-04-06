@@ -788,6 +788,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
                 articleDetailsPageSelector.UpdateFields();
                 articleDetailsPageSelector.ResetChangedStatus();
+				UpdateFieldsAfterSave();
                 DocumentPropertyEditor.WritePublicationAndDate(SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
 
                 //TamerM - 2016-03-22: Prompt and ReExport  NLM FEED
