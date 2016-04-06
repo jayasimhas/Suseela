@@ -424,9 +424,10 @@ namespace InformaSitecoreWord.Sitecore
             {
                 var article = new CreateArticleRequest() { Name = articleName, PublicationID = publicationID, PublicationDate = publicationDate };
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}CreateArticle", article).Result;
+
                 if (response?.StatusCode != HttpStatusCode.OK)
-                {
-                    return new ArticleStruct { RemoteErrorMessage = $"response: {response.ToString()}, Request: {response.RequestMessage.ToString()}" };
+                {//If the response is not OK, place the status code into the remote error message for logging 
+                    return new ArticleStruct { RemoteErrorMessage = response?.StatusCode.ToString() };
                 }
                 else
                 {

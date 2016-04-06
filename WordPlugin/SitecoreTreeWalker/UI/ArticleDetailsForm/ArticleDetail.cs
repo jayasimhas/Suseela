@@ -524,19 +524,21 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 return null;
             }
 
-
             SuspendLayout();
 
             ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(title, webPublishDate, pubGuid);
 
             if (string.IsNullOrEmpty(astruct.RemoteErrorMessage) == false)
             {
-                Globals.SitecoreAddin.Log("SaveStubToSitecore returned astruct object with error: " + astruct.RemoteErrorMessage);
+                Globals.SitecoreAddin.Log("SaveStubToSitecore returned astruct object with StatusCode/Error: " + astruct.RemoteErrorMessage);
+                articleDetails.RemoteErrorMessage = astruct.RemoteErrorMessage;
             }
-            //articleDetailsPageSelector.UpdateArticleNumber(astruct.ArticleNumber);
-            articleDetails.ArticleNumber = astruct.ArticleNumber;
-            articleDetails.ArticleGuid = astruct.ArticleGuid;
-            SitecoreClient.SaveArticleDetailsByGuid(astruct.ArticleGuid, _structConverter.GetServerStruct(articleDetails));
+            else
+            {
+                articleDetails.ArticleNumber = astruct.ArticleNumber;
+                articleDetails.ArticleGuid = astruct.ArticleGuid;
+                SitecoreClient.SaveArticleDetailsByGuid(astruct.ArticleGuid, _structConverter.GetServerStruct(articleDetails));
+            }
             ResumeLayout();
 
             return articleDetails;
@@ -681,7 +683,15 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 {
                     if (string.IsNullOrEmpty(ArticleDetails.ArticleNumber))
                     {
-                        MessageBox.Show(@"The article number generator is busy! Please try again later.", @"Informa");
+                        if (ArticleDetails.RemoteErrorMessage == HttpStatusCode.Unauthorized.ToString())
+                        {
+                            MessageBox.Show("Your session has timed out, please login again in order to continue");
+                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show(@"The article number generator is busy! Please try again later.", @"Informa");
+                        }
                     }
                     else
                     {
