@@ -35,29 +35,5 @@ namespace Informa.Library.Subscription.User
 				return subscriptions;
 			}
 		}
-
-		public string GetSubscribed_Products()
-		{
-			if (Subscriptions != null && Subscriptions.Any())
-			{
-				StringBuilder strSubscription = new StringBuilder();
-				var lastSubscription = Subscriptions.LastOrDefault();
-				strSubscription.Append("[");
-				foreach (var subscription in Subscriptions)
-				{
-					strSubscription.Append("'");
-					strSubscription.Append(subscription.ProductCode);
-					strSubscription.Append("'");
-					if (Subscriptions.Count() > 1 && !lastSubscription.Equals(subscription))
-					{
-						strSubscription.Append(",");
-					}
-				}
-				return strSubscription.ToString();
-			}
-			return string.Empty;
-		}
-
-
 	}
 }

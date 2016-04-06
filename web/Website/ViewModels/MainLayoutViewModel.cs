@@ -231,7 +231,32 @@ namespace Informa.Web.ViewModels
 				return string.Empty;
 			}
 		}
-		public string SubscribedProducts => UserSubscriptionsContext.GetSubscribed_Products();
+		public string SubscribedProducts
+		{
+			get
+			{
+				var subscriptions = UserSubscriptionsContext.Subscriptions;
+
+				if (subscriptions != null && subscriptions.Any())
+				{
+					StringBuilder strSubscription = new StringBuilder();
+					var lastSubscription = subscriptions.LastOrDefault();
+					strSubscription.Append("[");
+					foreach (var subscription in subscriptions)
+					{
+						strSubscription.Append("'");
+						strSubscription.Append(subscription.ProductCode);
+						strSubscription.Append("'");
+						if (subscriptions.Count() > 1 && !lastSubscription.Equals(subscription))
+						{
+							strSubscription.Append(",");
+						}
+					}
+					return strSubscription.ToString();
+				}
+				return string.Empty;
+			}
+		}
 		public string UserCompany => UserCompanyContext.Name;
 		public string UserIndustry => UserProfileContext.Profile?.JobIndustry ?? string.Empty;
 		public string UserEmail => UserProfileContext.Profile?.Email ?? string.Empty;
