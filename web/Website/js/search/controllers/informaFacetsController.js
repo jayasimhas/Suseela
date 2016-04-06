@@ -2,10 +2,8 @@
 var InformaFacetController = function ($scope, $location, $http, $anchorScroll, searchService, searchBootstrapper) {
     "use strict";
 
-    // Bind `this` to vm - a represetation of the view model
+    // Bind `this` to vm - a representation of the view model
     var vm = this;
-
-    // var init = function() {
 
     // General Facet stuff
     vm.facetGroups = searchService.getFacetGroups();
@@ -16,8 +14,6 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     vm.MaxFacetShow = 5;
 
     // Date Facet stuff
-    vm.CurrentDateSelection = '';
-    vm.ValidDates = true;
     vm.DateFilters = [
         { label: 'Last 24 hours', key: 'day', selected: false },
         { label: 'Last 3 days', key: 'threedays', selected: false },
@@ -27,17 +23,36 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         { label: 'Select date range', key: 'custom', selected: false }
     ];
 
-    //Select a radio button if the search was using a custom search
-    var dateArrayLength = vm.DateFilters.length;
-    for (var i = 0; i < dateArrayLength; i++) {
+    // Create placeholder values for From: and To: date values
+    $scope.dateValues = {
+        dtFrom: '',
+        dtTo: ''
+    };
 
+    // need to differentiate the 2 datepickers
+    $scope.datepickers = {
+        dtFrom: false,
+        dtTo: false
+    };
+
+    // On first run, check all date filters against date filter set in URL
+    for (var i = 0; i < vm.DateFilters.length; i++) {
         if ($location.search().dateFilterLabel == vm.DateFilters[i].key) {
-            vm.CurrentDateSelection = vm.DateFilters[i].key;
+
+            // Mark date filter as selected to match URL
             vm.DateFilters[i].selected = true;
+
+            // If date filter is a date range filter...
+            if(vm.DateFilters[i].key === 'custom') {
+                // ...convert the date data in the URL to `Date`s...
+                // example: date=3/29/2015;4/5/2016
+                var splitDates = $location.search().date.split(';');
+                // ...and update the model so the UI shows the right data.
+                $scope.dateValues.dtFrom = new Date(splitDates[0]);
+                $scope.dateValues.dtTo = new Date(splitDates[1]);
+            }
         }
     }
-
-    // };
 
     $scope.$watch(function() {
         return searchService.getPager();
@@ -131,7 +146,7 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         _.each(dates, function(date) {
             date.selected = false;
         });
-        vm.currentDateRange = "";
+
     };
 
     vm.getDateFilterLabel = function() {
@@ -161,11 +176,10 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
 
     vm.customDateRangeSearch = function(filterKey, startDate, endDate) {
 
-        if (vm.CurrentDateSelection == 'custom') {
-            var filter = vm.getFilter(filterKey);
-            var filterDateLabel = vm.getFilter('dateFilterLabel');
-            filterDateLabel.setValue('custom');
-
+        var filter = vm.getFilter(filterKey);
+        var filterDateLabel = vm.getFilter('dateFilterLabel');
+        filterDateLabel.setValue('custom');
+        if(startDate > 0 && endDate > 0 && startDate < endDate) {
             var date1Unparsed = new Date(startDate);
             var date1 = (date1Unparsed.getMonth() + 1) + '/' +date1Unparsed.getDate() + '/'  + date1Unparsed.getFullYear();
 
@@ -182,8 +196,6 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     //** This builds date parameters for the search query **//
     vm.dateRangeSearch = function (filterKey, dateFilter) {
 
-        vm.CurrentDateSelection = dateFilter;
-
         if (dateFilter == 'custom') {
             return;
         }
@@ -193,7 +205,6 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
 
         var startDate = datesObject[dateFilter];
         var endDate = datesObject.day;
-        vm.currentDateRange = dateFilter;
 
         filterDateLabel.setValue(dateFilter);
         filter.setValue(startDate + ";" + endDate);
@@ -203,33 +214,19 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     };
 
     vm.updateSelectedDate = function (dateFilter) {
-        var dateArrayLength = vm.DateFilters.length;
-        for (var i = 0; i < dateArrayLength; i++) {
+
+        for (var i = 0; i < vm.DateFilters.length; i++) {
             if (dateFilter == vm.DateFilters[i].key) {
-                vm.CurrentDateSelection = vm.DateFilters[i].key;
+
                 vm.DateFilters[i].selected = true;
+
             } else {
+
                 vm.DateFilters[i].selected = false;
+
             }
         }
     };
-
-
-    // Create placeholder values for From: and To: date values
-    $scope.dateValues = {
-        dtFrom: '',
-        dtTo: ''
-    };
-
-    // need to differentiate the 2 datepickers
-    $scope.datepickers = {
-        dtFrom: false,
-        dtTo: false
-    };
-
-    vm.currentDateRange = vm.getDateFilterLabel();
-
-    // init();
 
 };
 
