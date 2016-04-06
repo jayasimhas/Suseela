@@ -6,6 +6,5 @@ namespace Informa.Library.Subscription.User
 	public interface IUserSubscriptionsContext
 	{
 		IEnumerable<ISubscription> Subscriptions { get; }
-		string GetSubscribed_Products();
 	}
 }

@@ -33,25 +33,32 @@ namespace Informa.Web.Controllers
         [Authorize]
         public ArticleStruct Post([FromBody] CreateArticleRequest content)
         {
-            var publicationDate = DateTime.Parse(content.PublicationDate);
-            var parent = _articleUtil.GenerateDailyFolder(content.PublicationID, publicationDate);
-            var rinsedName = ItemUtil.ProposeValidItemName(content.Name);
-            var articleCreate = _sitecoreMasterService.Create<IArticle, IArticle_Date_Folder>(parent, rinsedName);
+            try
+            {
+                var publicationDate = DateTime.Parse(content.PublicationDate);
+                var parent = _articleUtil.GenerateDailyFolder(content.PublicationID, publicationDate);
+                var rinsedName = ItemUtil.ProposeValidItemName(content.Name);
+                var articleCreate = _sitecoreMasterService.Create<IArticle, IArticle_Date_Folder>(parent, rinsedName);
 
-            //Hack to start the workflow
-            var articleItem = _sitecoreMasterService.GetItem<Item>(articleCreate._Id);
-            var intialWorkflow = _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow("{926E6200-EB76-4AD4-8614-691D002573AC}");
-            intialWorkflow.Start(articleItem);
+                //Hack to start the workflow
+                var articleItem = _sitecoreMasterService.GetItem<Item>(articleCreate._Id);
+                var intialWorkflow = _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow("{926E6200-EB76-4AD4-8614-691D002573AC}");
+                intialWorkflow.Start(articleItem);
 
-            var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
-            article.Title = content.Name;
-            article.Planned_Publish_Date = publicationDate;
-            article.Created_Date = DateTime.Now;
-            article.Article_Number = SitecoreUtil.GetNextArticleNumber(_articleSearch.GetNextArticleNumber(content.PublicationID), content.PublicationID);
-            _sitecoreMasterService.Save(article);
-            var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
-            var articleStruct = _articleUtil.GetArticleStruct(savedArticle);
-            return articleStruct;
+                var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
+                article.Title = content.Name;
+                article.Planned_Publish_Date = publicationDate;
+                article.Created_Date = DateTime.Now;
+                article.Article_Number = SitecoreUtil.GetNextArticleNumber(_articleSearch.GetNextArticleNumber(content.PublicationID), content.PublicationID);
+                _sitecoreMasterService.Save(article);
+                var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
+                var articleStruct = _articleUtil.GetArticleStruct(savedArticle);
+                return articleStruct;
+            }
+            catch (Exception ex)
+            {
+                return new ArticleStruct { RemoteErrorMessage = ex.ToString() };
+            }
         }
 
 

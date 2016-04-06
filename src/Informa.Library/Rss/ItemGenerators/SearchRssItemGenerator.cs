@@ -23,10 +23,12 @@ namespace Informa.Library.Rss.ItemGenerators
                 return null;
             }
 
-            //Build the basic syndicaton item
-            var syndicationItem = new SyndicationItem(GetItemTitle(article),
+			//Build the basic syndicaton item
+			var searchTerm = Sitecore.Context.Request.QueryString["q"];
+			var articleUrl = string.Format("{0}?utm_source=search&utm_medium=RSS&utm_term={1}&utm_campaign=search_rss", article._AbsoluteUrl, searchTerm);
+			var syndicationItem = new SyndicationItem(GetItemTitle(article),
                 article.Summary,
-                new Uri(article._AbsoluteUrl),
+                new Uri(articleUrl),
                 article._AbsoluteUrl,
                 article.Actual_Publish_Date);
 
