@@ -102,7 +102,7 @@ namespace InformaSitecoreWord.UI
                             myAction();
 
                             IsLoggedIn();
-                        }                        
+                        }
                     };
                 login.ShowDialog();
             }
@@ -167,6 +167,11 @@ namespace InformaSitecoreWord.UI
             try
             {
                 ArticleDetail.Open();
+            }
+            catch (UnauthorizedAccessException uax)
+            {
+                Globals.SitecoreAddin.LogException("ESRibbon.OpenArticleInformation: Error loading the article information window! Unauthorized access to API handler. Asking user to login again", uax);
+                MessageBox.Show(Constants.SESSIONTIMEOUTERRORMESSAGE);
             }
             catch (Exception ex)
             {
@@ -413,13 +418,13 @@ namespace InformaSitecoreWord.UI
             {
                 metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument, _wordUtils.CharacterStyleTransformer);
             }
-            string longSummary = metadataParser.LongSummary;
+            string ExecutiveSummary = metadataParser.ExecutiveSummary;
             var articleDetails = new ArticleStruct
             {
                 ArticleNumber = sitecoreArticleDetails.ArticleNumber,
                 WebPublicationDate = sitecoreArticleDetails.WebPublicationDate,
                 Title = metadataParser.Title.Trim(),
-                Summary = longSummary,
+                Summary = ExecutiveSummary,
                 Subtitle = metadataParser.Subtitle,
                 Publication = sitecoreArticleDetails.Publication,
                 Authors = sitecoreArticleDetails.Authors.ToList(),
@@ -482,7 +487,7 @@ namespace InformaSitecoreWord.UI
                 }
             }
             int maxLengthLongSummary = SitecoreClient.GetMaxLengthLongSummary();
-            if (metadataParser.LongSummary.Length > maxLengthLongSummary)
+            if (metadataParser.ExecutiveSummary.Length > maxLengthLongSummary)
             {
                 if (!AskExceededCharacterLimit("Summary", maxLengthLongSummary))
                 {

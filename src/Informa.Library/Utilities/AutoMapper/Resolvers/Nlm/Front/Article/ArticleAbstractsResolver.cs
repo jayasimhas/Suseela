@@ -11,12 +11,16 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
         {
             if (source == null) return null;
 
+            //Load the summary into an HTMLAgilityPack's HtmlDoc to render and remove html tags
+            HtmlAgilityPack.HtmlDocument htmlDoc = new HtmlAgilityPack.HtmlDocument();
+            htmlDoc.LoadHtml(source.Summary);
+
             return new List<NlmArticleAbstractModel>
             {
                 new NlmArticleAbstractModel
                 {
                     AbstractType = "short",
-                    Paragraph = source.Summary
+                    Paragraph = htmlDoc.DocumentNode.InnerText
                 }
             };
         }
