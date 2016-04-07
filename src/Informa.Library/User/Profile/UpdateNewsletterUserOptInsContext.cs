@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Informa.Library.User.Profile
 {
 	[AutowireService(LifetimeScope.Default)]
-	public class UpdateNewsletterUserOptInsContext
+	public class UpdateNewsletterUserOptInsContext : IUpdateNewsletterUserOptInsContext
 	{
 		protected readonly IUpdateNewsletterUserOptIns UpdateUserOptIns;
 		protected readonly INewsletterUserOptInsContext OptInsContext;

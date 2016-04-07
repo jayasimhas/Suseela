@@ -116,7 +116,6 @@
     <Compile Include="User\Profile\SalesforceQueryOfferUserOptIn.cs" />
     <Compile Include="User\Profile\SalesforceFindUserProfile.cs" />
     <Compile Include="User\Profile\SalesforceFindNewsletterUserOptIns.cs" />
-    <Compile Include="User\Profile\SalesforceQueryNewsletterUserOptInResult.cs" />
     <Compile Include="User\Profile\SalesforceQueryOfferUserOptInResult.cs" />
     <Compile Include="User\Profile\SalesforceManageSavedDocuments.cs" />
     <Compile Include="User\Profile\SalesforceUpdateNewsletterUserOptIns.cs" />

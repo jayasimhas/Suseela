@@ -482,11 +482,16 @@
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
     <Compile Include="User\Profile\ISiteNewsletterUserOptedInContext.cs" />
+    <Compile Include="User\Profile\IUpdateNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Profile\IUpdateSiteNewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\IUpdateSiteNewsletterUserOptInContext.cs" />
     <Compile Include="User\Profile\IUserProfileContext.cs" />
     <Compile Include="User\Profile\INewsletterUserOptInsContext.cs" />
     <Compile Include="User\Profile\NewsletterUserOptInsContext.cs" />
     <Compile Include="User\Profile\SiteNewsletterUserOptedInContext.cs" />
     <Compile Include="User\Profile\UpdateNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Profile\UpdateSiteNewsletterUserOptIn.cs" />
+    <Compile Include="User\Profile\UpdateSiteNewsletterUserOptInContext.cs" />
     <Compile Include="User\Profile\UserProfileContext.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
@@ -770,9 +775,7 @@
     <Compile Include="User\Profile\IManageSubscriptions.cs" />
     <Compile Include="User\Profile\ISubscription.cs" />
     <Compile Include="User\Profile\ISubscriptionsReadResult.cs" />
-    <Compile Include="User\Profile\INewsletterOptIn.cs" />
     <Compile Include="User\Profile\INewsletterUserOptInFactory.cs" />
-    <Compile Include="User\Profile\IQueryNewsletterUserOptInResult.cs" />
     <Compile Include="User\Profile\IFindNewsletterUserOptIn.cs" />
     <Compile Include="User\Profile\IQueryOfferUserOptIn.cs" />
     <Compile Include="User\Profile\IQueryOfferUserOptInResult.cs" />
@@ -786,7 +789,6 @@
     <Compile Include="User\Profile\IManageAccountInfo.cs" />
     <Compile Include="User\Profile\IUserProfile.cs" />
     <Compile Include="User\Profile\IUserProfileFactory.cs" />
-    <Compile Include="User\Profile\NewsletterOptIn.cs" />
     <Compile Include="User\Profile\NewsletterUserOptIn.cs" />
     <Compile Include="User\Profile\NewsletterUserOptInFactory.cs" />
     <Compile Include="Newsletter\NewsletterType.cs" />
