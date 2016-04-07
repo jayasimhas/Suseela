@@ -177,6 +177,11 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     UpdateFieldsUsingSitecore();
                 }
             }
+            catch (UnauthorizedAccessException uax)
+            {
+                Globals.SitecoreAddin.LogException("ArticleDetail.InitializeLogin: Unauthorized access to API handler. Must re-login", uax);
+                throw uax;
+            }
             catch (Exception ex)
             {
                 var ax = new ApplicationException("ArticleDetail.InitializeLogin: Error setting up the login screen!", ex);
@@ -685,7 +690,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     {
                         if (ArticleDetails.RemoteErrorMessage == HttpStatusCode.Unauthorized.ToString())
                         {
-                            MessageBox.Show("Your session has timed out, please login again in order to continue");
+                            MessageBox.Show(Constants.SESSIONTIMEOUTERRORMESSAGE);
                             return;
                         }
                         else
@@ -788,7 +793,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
                 articleDetailsPageSelector.UpdateFields();
                 articleDetailsPageSelector.ResetChangedStatus();
-				UpdateFieldsAfterSave();
+                UpdateFieldsAfterSave();
                 DocumentPropertyEditor.WritePublicationAndDate(SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
 
                 //TamerM - 2016-03-22: Prompt and ReExport  NLM FEED
