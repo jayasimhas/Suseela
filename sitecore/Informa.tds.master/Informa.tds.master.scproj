@@ -2116,8 +2116,7 @@
     <SitecoreItem Include="sitecore\templates\System\Workflow\State\Notification\Staff.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <CodeGenData>
-      </CodeGenData>
+      <CodeGenData>IStaff_Item</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\System\Workflow\Workflow.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
