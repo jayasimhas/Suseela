@@ -1,0 +1,17 @@
+{
+    "cmd_after_copy": "",
+    "file_exclude_patterns": [
+        "^\\.",
+		".*~.*",
+		".*tmp$",
+		".*TMP$"
+    ],
+    "folder_exclude_patterns": [
+        "^\\.",
+		"obj"
+    ],
+    "folders_to_watch": [
+        "Website"
+    ],
+    "web_root": "\\\\\\\\${Vagrant.BoxIPAddress}\\wwwroot\\Informa"
+}

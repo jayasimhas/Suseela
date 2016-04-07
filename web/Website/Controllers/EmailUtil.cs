@@ -54,6 +54,34 @@ namespace Informa.Web.Controllers
 
 			if (!articleStruct.ArticleSpecificNotifications.Any()) return;
 			var notificationList = articleStruct.ArticleSpecificNotifications;
+
+			//IIPP-1092
+			var workflowItem = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(
+					Constants.ScripWorkflow);
+			if (workflowItem != null)
+			{
+				var workflowBasednotificationList = workflowItem.Notified_After_Publishes;
+				if (workflowBasednotificationList.Any())
+				{
+					foreach (var eachUser in workflowBasednotificationList)
+					{
+						try
+						{
+							var toSender = new StaffStruct {ID = eachUser._Id};
+							notificationList.Add(toSender);
+						}
+						catch (Exception ex)
+						{
+							//TODO - Add logging
+						}
+					}
+				}
+			}
+			else
+			{
+				//TODO Logging - Failed to find the workflow item.
+			}
+
 			var emailBody = CreateBody(articleStruct, title, siteConfigItem.Publication_Name, oldWorkflow);
 
 			foreach (var eachEmail in notificationList)

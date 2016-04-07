@@ -1,0 +1,2 @@
+Get-WebBinding -Port 80 -Name "${iis.sitename}" | Remove-WebBinding
+New-WebBinding -Name "${iis.sitename}" -IPAddress "*" -Port 80 -HostHeader "*"

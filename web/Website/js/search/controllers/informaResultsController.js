@@ -40,7 +40,6 @@ var informaSearchApp = angular.module('informaSearchApp');
         window.indexPopOuts();
         window.indexBookmarks();
         window.autoBookmark();
-        console.log('finished');
     });
 
     this.forceRefresh = function() {

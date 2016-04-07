@@ -5,7 +5,6 @@ using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Newsletter;
-using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;

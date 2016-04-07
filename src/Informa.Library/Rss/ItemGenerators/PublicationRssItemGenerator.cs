@@ -46,10 +46,7 @@ namespace Informa.Library.Rss.ItemGenerators
             return syndicationItem;
         }
 
-        private string GetItemSummary(IArticle article)
-        {
-            return SearchSummaryUtil.EscapeXMLValue(DCDTokenMatchers.ProcessDCDTokens(article.Summary));
-        }
+      
 
 
         private SyndicationItem AddImageToFeedItem(SyndicationItem syndicationItem, IArticle article,string siteLink)
