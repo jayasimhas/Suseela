@@ -603,12 +603,12 @@ $(document).ready(function() {
     $('#chkASBilling').click(function(e){
         if($(this).is(':checked'))
         {
-            $('#ddlShippingCountry').val($('ddlBillingCountry').val());
-            $('#txtShippingAddress1').val($('txtBillingAddress1').val());
-            $('#txtShippingAddress2').val($('txtBillingAddress2').val());
-            $('#txtShippingCity').val($('txtBillingCity').val());
-            $('#txtShippingState').val($('txtBillingState').val());
-            $('#txtShippingPostalCode').val($('txtBillingPostalCode').val());
+            $('#ddlShippingCountry').val($('#ddlBillingCountry').val());
+            $('#txtShippingAddress1').val($('#txtBillingAddress1').val());
+            $('#txtShippingAddress2').val($('#txtBillingAddress2').val());
+            $('#txtShippingCity').val($('#txtBillingCity').val());
+            $('#txtShippingState').val($('#txtBillingState').val());
+            $('#txtShippingPostalCode').val($('#txtBillingPostalCode').val());
         }
     });
     // Twitter sharing JS
