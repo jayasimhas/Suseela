@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Newsletter;
-using Informa.Library.Site.Newsletter;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
 using Informa.Library.Utilities.WebApi.Filters;
@@ -22,6 +17,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IManageSavedDocuments ManageSavedDocument;
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly ITextTranslator TextTranslator;
+		protected readonly ISiteNewsletterTypeContext NewsletterTypeContext;
 
         protected string BadIDKey => TextTranslator.Translate("SavedDocument.BadID");
 
@@ -29,12 +25,14 @@ namespace Informa.Web.Areas.Account.Controllers
             IAuthenticatedUserContext userContext,
             IManageSavedDocuments manageSavedDocument,
             ISitecoreContext sitecoreContext,
-            ITextTranslator textTranslator)
+            ITextTranslator textTranslator,
+			ISiteNewsletterTypeContext newsletterTypeContext)
         {
             UserContext = userContext;
             ManageSavedDocument = manageSavedDocument;
             SitecoreContext = sitecoreContext;
             TextTranslator = textTranslator;
+			NewsletterTypeContext = newsletterTypeContext;
         }
 
         [HttpPost]
@@ -66,7 +64,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
             var page = SitecoreContext.GetItem<I___BasePage>(itemID.Guid);
             
-            var result = ManageSavedDocument.SaveItem(UserContext.User, page.Title, NewsletterType.Scrip.ToString(), request.DocumentID);
+            var result = ManageSavedDocument.SaveItem(UserContext.User, page.Title, NewsletterTypeContext.Type.ToString(), request.DocumentID);
 
             return Ok(new
             {
