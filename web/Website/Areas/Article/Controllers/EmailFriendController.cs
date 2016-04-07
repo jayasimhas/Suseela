@@ -127,7 +127,6 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
 					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
 					["#sender_name#"] = senderName,
-					//#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:",
 					["#sender_email#"] = senderEmail,
 					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
 						? UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
@@ -148,11 +147,9 @@ namespace Informa.Web.Areas.Article.Controllers
 						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail)
 				};
 
-
-				if (!string.IsNullOrEmpty(message))
-				{
-					replacements["#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:";
-				}
+				replacements["#sender_name_message#"] = !string.IsNullOrEmpty(message)
+					? $"{senderName} {TextTranslator.Translate("Search.Message")}:"
+					: string.Empty;
 
 				// Article Body
 				var article = _articleUtil.GetArticleByNumber(articleNumber);
@@ -273,7 +270,6 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
 					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
 					["#sender_name#"] = senderName,
-					//["#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:",
 					["#sender_email#"] = senderEmail,
 					["#query_url#"] = queryUrl,
 					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
@@ -298,11 +294,9 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#see_more#"] = TextTranslator.Translate("Search.SeeMore")
 				};
 
-
-				if (!string.IsNullOrEmpty(message))
-				{
-					replacements["#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:";
-				}
+				replacements["#sender_name_message#"] = !string.IsNullOrEmpty(message)
+					? $"{senderName} {TextTranslator.Translate("Search.Message")}:"
+					: string.Empty;
 
 				//search results
 				StringBuilder resultBody = new StringBuilder();
