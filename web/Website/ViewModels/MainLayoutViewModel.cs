@@ -112,21 +112,15 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				var pageTitle = string.Empty;
-
-				if (!string.IsNullOrEmpty(GlassModel.Meta_Title_Override))
-				{
-					return GlassModel.Meta_Title_Override.StripHtml();
-				}
-
-				pageTitle = GlassModel.Title.StripHtml();
-
+				var pageTitle = GlassModel?.Meta_Title_Override.StripHtml() ?? string.Empty;
 				if (string.IsNullOrWhiteSpace(pageTitle))
-				{
-					pageTitle = GlassModel._Name;
-				}
-
-				var publicationName = SiteRootContext.Item == null ? string.Empty : string.Format(" :: {0}", SiteRootContext.Item.Publication_Name.StripHtml());
+                    pageTitle = GlassModel?.Title?.StripHtml() ?? string.Empty;
+                if (string.IsNullOrWhiteSpace(pageTitle))
+					pageTitle = GlassModel?._Name ?? string.Empty;
+				
+				var publicationName = (SiteRootContext.Item == null) 
+                    ? string.Empty 
+                    : $" :: {SiteRootContext.Item.Publication_Name.StripHtml()}";
 
 				return string.Concat(pageTitle, publicationName);
 			}
