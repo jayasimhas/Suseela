@@ -127,8 +127,8 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
 					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
 					["#sender_name#"] = senderName,
-                    ["#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:",
-                    ["#sender_email#"] = senderEmail,
+					//#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:",
+					["#sender_email#"] = senderEmail,
 					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
 						? UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
 						: string.Empty,
@@ -148,6 +148,12 @@ namespace Informa.Web.Areas.Article.Controllers
 						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail)
 				};
 
+
+				if (!string.IsNullOrEmpty(message))
+				{
+					replacements["#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:";
+				}
+
 				// Article Body
 				var article = _articleUtil.GetArticleByNumber(articleNumber);
 				replacements["#article_date#"] = article?.Actual_Publish_Date.ToString("dd MMMM yyyy") ?? string.Empty;
@@ -166,7 +172,8 @@ namespace Informa.Web.Areas.Article.Controllers
 
 				emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
 			}
-			catch (Exception ex) {
+			catch (Exception ex)
+			{
 				_logger.Warn($"Email failed to send: {senderEmail}:{senderName}:{articleNumber}:{message}", ex);
 			}
 			return emailHtml;
@@ -266,8 +273,8 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
 					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
 					["#sender_name#"] = senderName,
-                    ["#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:",
-                    ["#sender_email#"] = senderEmail,
+					//["#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:",
+					["#sender_email#"] = senderEmail,
 					["#query_url#"] = queryUrl,
 					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
 						? UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
@@ -287,17 +294,23 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#Footer_Content#"] = GetValue(footerContent?.Email_A_Friend_Footer_Content)
 						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail),
 					["#notice_message#"] = TextTranslator.Translate("Search.EmailPopout.Notice"),
-                    ["#search_query#"] = queryTerm,
-                    ["#see_more#"] = TextTranslator.Translate("Search.SeeMore")
-                };
-                
+					["#search_query#"] = queryTerm,
+					["#see_more#"] = TextTranslator.Translate("Search.SeeMore")
+				};
+
+
+				if (!string.IsNullOrEmpty(message))
+				{
+					replacements["#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:";
+				}
+
 				//search results
 				StringBuilder resultBody = new StringBuilder();
 				int j = 0;
 				foreach (string id in resultIDs)
 				{
 					Guid g;
-                    if(!Guid.TryParse(id, out g))
+					if (!Guid.TryParse(id, out g))
 						continue;
 
 					var result = SitecoreService.GetItem<I___BasePage>(g);
