@@ -418,13 +418,13 @@ namespace InformaSitecoreWord.UI
             {
                 metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument, _wordUtils.CharacterStyleTransformer);
             }
-            string longSummary = metadataParser.LongSummary;
+            string ExecutiveSummary = metadataParser.ExecutiveSummary;
             var articleDetails = new ArticleStruct
             {
                 ArticleNumber = sitecoreArticleDetails.ArticleNumber,
                 WebPublicationDate = sitecoreArticleDetails.WebPublicationDate,
                 Title = metadataParser.Title.Trim(),
-                Summary = longSummary,
+                Summary = ExecutiveSummary,
                 Subtitle = metadataParser.Subtitle,
                 Publication = sitecoreArticleDetails.Publication,
                 Authors = sitecoreArticleDetails.Authors.ToList(),
@@ -487,7 +487,7 @@ namespace InformaSitecoreWord.UI
                 }
             }
             int maxLengthLongSummary = SitecoreClient.GetMaxLengthLongSummary();
-            if (metadataParser.LongSummary.Length > maxLengthLongSummary)
+            if (metadataParser.ExecutiveSummary.Length > maxLengthLongSummary)
             {
                 if (!AskExceededCharacterLimit("Summary", maxLengthLongSummary))
                 {

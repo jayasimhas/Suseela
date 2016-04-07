@@ -641,7 +641,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 }
             }
             int maxLengthLongSummary = SitecoreClient.GetMaxLengthLongSummary();
-            if (metadataParser.LongSummary.Length > maxLengthLongSummary)
+            if (metadataParser.ExecutiveSummary.Length > maxLengthLongSummary)
             {
                 if (!AskExceededCharacterLimit("Summary", maxLengthLongSummary))
                 {
