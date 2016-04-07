@@ -1,7 +1,7 @@
 ﻿using Informa.Library.Globalization;
-using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Newsletter;
+using Informa.Library.User.Profile;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
@@ -11,31 +11,28 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
     public class EmailPreferencesViewModel : GlassViewModel<I___BasePage>
     {
         protected readonly ITextTranslator TextTranslator;
-        protected readonly IQueryOfferUserOptIn OffersOptIn;
+        protected readonly IOfferUserOptedInContext OffersOptedInContext;
         protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
 
 		public EmailPreferencesViewModel(
             ITextTranslator translator,
-            IQueryOfferUserOptIn offersOptIn,
+			IOfferUserOptedInContext offersOptedInContext,
             ISignInViewModel signInViewModel,
             IAuthenticatedUserContext userContext,
 			ISiteNewsletterUserOptedInContext newsletterOptedInContext)
         {
             TextTranslator = translator;
-            OffersOptIn = offersOptIn;
+            OffersOptedInContext = offersOptedInContext;
             UserContext = userContext;
             SignInViewModel = signInViewModel;
 			NewsletterOptedInContext = newsletterOptedInContext;
-            
-            var userOffersOptInStatus = OffersOptIn.Query(UserContext.User);
-            DoNotSendOfferEmails = (userOffersOptInStatus.Success) && userOffersOptInStatus.DoNotSendOffers;
         }
 
 		public readonly ISignInViewModel SignInViewModel;
 		public bool IsAuthenticated => UserContext.IsAuthenticated;
 		public bool ReceivesNewsletterEmails => NewsletterOptedInContext.OptedIn;
-        public bool DoNotSendOfferEmails { get; set; }
+		public bool DoNotSendOfferEmails => !OffersOptedInContext.OptedIn;
         public string Title => GlassModel?.Title;
         public string GeneralErrorText => TextTranslator.Translate("Preferences.GeneralError");
         public string NewsletterLabel => TextTranslator.Translate("Preferences.NewsletterLabel");

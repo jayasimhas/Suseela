@@ -28,6 +28,11 @@ namespace Informa.Library.User.Newsletter
 		{
 			get
 			{
+				if (!UserContext.IsAuthenticated)
+				{
+					return Enumerable.Empty<INewsletterUserOptIn>();
+				}
+
 				var optInsSession = UserSession.Get<IEnumerable<INewsletterUserOptIn>>(sessionKey);
 
 				if (optInsSession.HasValue)
