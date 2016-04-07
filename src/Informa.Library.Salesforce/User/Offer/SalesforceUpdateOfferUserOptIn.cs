@@ -1,8 +1,7 @@
-﻿using Informa.Library.User.Profile;
-using Informa.Library.User;
+﻿using Informa.Library.User.Offer;
 using Informa.Library.Salesforce.EBIWebServices;
 
-namespace Informa.Library.Salesforce.User.Profile
+namespace Informa.Library.Salesforce.User.Offer
 {
 	public class SalesforceUpdateOfferUserOptIn : IUpdateOfferUserOptIn
 	{

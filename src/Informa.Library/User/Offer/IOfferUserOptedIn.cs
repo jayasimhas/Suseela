@@ -1,4 +1,4 @@
-﻿namespace Informa.Library.User.Profile
+﻿namespace Informa.Library.User.Offer
 {
     public interface IOfferUserOptedIn
     {

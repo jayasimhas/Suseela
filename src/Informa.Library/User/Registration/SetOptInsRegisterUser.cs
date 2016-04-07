@@ -1,4 +1,4 @@
-﻿using Informa.Library.User.Profile;
+﻿using Informa.Library.User.Offer;
 using Informa.Library.User.Newsletter;
 using Jabberwocky.Glass.Autofac.Attributes;
 

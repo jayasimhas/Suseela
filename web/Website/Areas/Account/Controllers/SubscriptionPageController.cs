@@ -7,7 +7,7 @@ using System;
 using System.Web.Mvc;
 using Informa.Library.Newsletter;
 using Informa.Library.User.Authentication;
-using Informa.Library.User.Profile;
+using Informa.Library.User.Offer;
 using Informa.Library.User.Newsletter;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 using Informa.Web.ViewModels;
@@ -20,9 +20,9 @@ namespace Informa.Web.Areas.Account.Controllers
 		private readonly ISitecoreService _sitecoreMasterService;
 		private readonly IItemReferences _itemReferences;
         private readonly ISitecoreContext SitecoreContext;
-        public readonly IAuthenticatedUserContext UserContext;
-        public readonly ISignInViewModel SignInViewModel;
+
         protected readonly IUpdateOfferUserOptIn OffersOptIn;
+		protected readonly IUpdateOfferUserOptInContext OffersOptInContext;
 		protected readonly ISiteNewsletterTypeContext NewsletterTypeContext;
 		protected readonly IUpdateSiteNewsletterUserOptInContext UpdateNewsletterOptInContext;
 		protected readonly IUpdateSiteNewsletterUserOptIn UpdateNewsletterOptIn;
@@ -34,6 +34,7 @@ namespace Informa.Web.Areas.Account.Controllers
             IAuthenticatedUserContext userContext,
             ISignInViewModel signInViewModel,
             IUpdateOfferUserOptIn offersOptIn,
+			IUpdateOfferUserOptInContext offersOptInContext,
 			ISiteNewsletterTypeContext newsletterTypeContext,
 			IUpdateSiteNewsletterUserOptInContext updateNewsletterOptInContext,
 			IUpdateSiteNewsletterUserOptIn updateNewsletterOptIn)
@@ -44,10 +45,15 @@ namespace Informa.Web.Areas.Account.Controllers
             UserContext = userContext;
             SignInViewModel = signInViewModel;
             OffersOptIn = offersOptIn;
+			OffersOptInContext = offersOptInContext;
 			NewsletterTypeContext = newsletterTypeContext;
 			UpdateNewsletterOptInContext = updateNewsletterOptInContext;
 			UpdateNewsletterOptIn = updateNewsletterOptIn;
 		}
+
+		public readonly IAuthenticatedUserContext UserContext;
+		public readonly ISignInViewModel SignInViewModel;
+
 		public ActionResult Index(string pub)
         {
 			//TODO: Add logic to subscribe the user using salesforce and also check for logged in user functionality
@@ -124,10 +130,9 @@ namespace Informa.Web.Areas.Account.Controllers
             else if (Type.ToLower() == "promotions") {
 				if (UserContext.IsAuthenticated)
 				{
-					User = UserContext.User.Username;
+					OffersOptInContext.Update(false);
 				}
-
-				if (!string.IsNullOrWhiteSpace(User))
+				else if (!string.IsNullOrWhiteSpace(User))
 				{
 					OffersOptIn.Update(User, false);
 				}

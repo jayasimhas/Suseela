@@ -485,7 +485,8 @@
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptIn.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptInContext.cs" />
-    <Compile Include="User\Profile\IOfferUserOptedInContext.cs" />
+    <Compile Include="User\Offer\IOfferUserOptedInContext.cs" />
+    <Compile Include="User\Offer\IUpdateOfferUserOptInContext.cs" />
     <Compile Include="User\Profile\IUserProfileContext.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\NewsletterUserOptInsContext.cs" />
@@ -493,7 +494,8 @@
     <Compile Include="User\Newsletter\UpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\UpdateSiteNewsletterUserOptIn.cs" />
     <Compile Include="User\Newsletter\UpdateSiteNewsletterUserOptInContext.cs" />
-    <Compile Include="User\Profile\OfferUserOptedInContext.cs" />
+    <Compile Include="User\Offer\OfferUserOptedInContext.cs" />
+    <Compile Include="User\Offer\UpdateOfferUserOptInContext.cs" />
     <Compile Include="User\Profile\UserProfileContext.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
@@ -777,13 +779,13 @@
     <Compile Include="User\Profile\ISubscriptionsReadResult.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInFactory.cs" />
     <Compile Include="User\Newsletter\IFindNewsletterUserOptIn.cs" />
-    <Compile Include="User\Profile\IOfferUserOptedIn.cs" />
+    <Compile Include="User\Offer\IOfferUserOptedIn.cs" />
     <Compile Include="User\Profile\IManageSavedDocuments.cs" />
     <Compile Include="User\Profile\ISavedDocumentReadResult.cs" />
     <Compile Include="User\Profile\ISavedDocument.cs" />
     <Compile Include="User\Profile\ISavedDocumentWriteResult.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptIns.cs" />
-    <Compile Include="User\Profile\IUpdateOfferUserOptIn.cs" />
+    <Compile Include="User\Offer\IUpdateOfferUserOptIn.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptIn.cs" />
     <Compile Include="User\Profile\IManageAccountInfo.cs" />
     <Compile Include="User\Profile\IUserProfile.cs" />

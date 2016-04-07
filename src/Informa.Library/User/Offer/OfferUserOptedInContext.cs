@@ -1,7 +1,7 @@
 ﻿using Informa.Library.User.Authentication;
 using Jabberwocky.Glass.Autofac.Attributes;
 
-namespace Informa.Library.User.Profile
+namespace Informa.Library.User.Offer
 {
 	[AutowireService(LifetimeScope.Default)]
 	public class OfferUserOptedInContext : IOfferUserOptedInContext

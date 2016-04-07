@@ -113,12 +113,12 @@
     <Compile Include="User\Profile\ISalesforceFindUserProfile.cs" />
     <Compile Include="User\Profile\SalesforceManageAccountInfo.cs" />
     <Compile Include="User\Profile\SalesforceManageSubscriptions.cs" />
-    <Compile Include="User\Profile\SalesforceOfferUserOptedIn.cs" />
+    <Compile Include="User\Offer\SalesforceOfferUserOptedIn.cs" />
     <Compile Include="User\Profile\SalesforceFindUserProfile.cs" />
     <Compile Include="User\Newsletter\SalesforceFindNewsletterUserOptIns.cs" />
     <Compile Include="User\Profile\SalesforceManageSavedDocuments.cs" />
     <Compile Include="User\Newsletter\SalesforceUpdateNewsletterUserOptIns.cs" />
-    <Compile Include="User\Profile\SalesforceUpdateOfferUserOptIn.cs" />
+    <Compile Include="User\Offer\SalesforceUpdateOfferUserOptIn.cs" />
     <Compile Include="User\Profile\SalesforceUserProfile.cs" />
     <Compile Include="User\Registration\ISalesforceRegisterUser.cs" />
     <Compile Include="User\Registration\SalesforceRegisterUser.cs" />
