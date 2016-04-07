@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI.WebControls;
 using Glass.Mapper.Sc;
 using Informa.Library.Company;
 using Informa.Library.Globalization;
-using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
 using Informa.Library.Utilities.References;
-using Informa.Models.Informa.Models.sitecore.templates.Common;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 using Informa.Web.ViewModels;
@@ -26,8 +22,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public readonly IAuthenticatedUserContext UserContext;
         public readonly IManageAccountInfo AccountInfo;
         public readonly ISignInViewModel SignInViewModel;
-        public readonly ICompanyContext CompanyContext;
-        public readonly ISalesforceFindUserProfile FindUserProfile;
+        public readonly IUserCompanyContext UserCompanyContext;
+        public readonly IUserProfileContext ProfileContext;
         private readonly IItemReferences ItemReferences;
         public readonly ISitecoreContext SitecoreContext;
 
@@ -36,8 +32,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             IAuthenticatedUserContext userContext,
             IManageAccountInfo accountInfo,
             ISignInViewModel signInViewModel,
-            ICompanyContext companyContext,
-            ISalesforceFindUserProfile findUserProfile,
+			IUserCompanyContext userCompanyContext,
+            IUserProfileContext profileContext,
             IItemReferences itemReferences,
             ISitecoreContext sitecoreContext)
         {
@@ -45,9 +41,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             UserContext = userContext;
             AccountInfo = accountInfo;
             SignInViewModel = signInViewModel;
-            CompanyContext = companyContext;
-            FindUserProfile = findUserProfile;
-            SfUserProfile = FindUserProfile.Find(UserContext.User.Username);
+            UserCompanyContext = userCompanyContext;
+            ProfileContext = profileContext;
             ItemReferences = itemReferences;
             SitecoreContext = sitecoreContext;
         }
@@ -55,7 +50,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public bool IsAuthenticated => UserContext.IsAuthenticated;
         public string Title => GlassModel?.Title;
         public string GeneralErrorText => TextTranslator.Translate("ContactInfo.GeneralError");
-        public ISalesforceUserProfile SfUserProfile;
 
         #region Password
 
@@ -93,7 +87,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public string CompanyLabelText => TextTranslator.Translate("ContactInfo.CompanyLabel");
         public string CompanyPlaceholderText => TextTranslator.Translate("ContactInfo.CompanyPlaceholder");
         public string AssociatedCompanyLabelText => TextTranslator.Translate("ContactInfo.AssociatedCompanyLabel");
-        public string AssociatedCompany => CompanyContext?.Company?.Name ?? string.Empty;
+        public string AssociatedCompany => UserCompanyContext?.Company?.Name ?? string.Empty;
         public string JobTitleLabelText => TextTranslator.Translate("ContactInfo.JobTitleLabel");
         public string JobTitlePlaceholderText => TextTranslator.Translate("ContactInfo.JobTitlePlaceholder");
         public string JobFunctionLabelText => TextTranslator.Translate("ContactInfo.JobFunctionLabel");

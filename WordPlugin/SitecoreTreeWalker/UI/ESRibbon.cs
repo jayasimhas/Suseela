@@ -44,13 +44,13 @@ namespace InformaSitecoreWord.UI
         private void ArticlesBtn_Click(object sender, RibbonControlEventArgs e)
         {
             ArticlesSidebarsControl myUserControl = new ArticlesSidebarsControl();
-            CheckLoginAndPerformAction(myUserControl, "Reference Articles");
+            CheckLoginAndPerformAction(myUserControl, "Articles");
         }
 
         private void IntelligenceProductsBtn_Click(object sender, RibbonControlEventArgs e)
         {
             DealsDrugsCompaniesControl myUserControl = new DealsDrugsCompaniesControl();
-            CheckLoginAndPerformAction(myUserControl, "Deals and Companies");
+            CheckLoginAndPerformAction(myUserControl, "Intelligence Products");
         }
 
         private void Multimedia_Click(object sender, RibbonControlEventArgs e)
@@ -100,8 +100,9 @@ namespace InformaSitecoreWord.UI
                             login.Dispose();
                             IsLoggedIn();
                             myAction();
+
+                            IsLoggedIn();
                         }
-                        IsLoggedIn();
                     };
                 login.ShowDialog();
             }
@@ -166,6 +167,11 @@ namespace InformaSitecoreWord.UI
             try
             {
                 ArticleDetail.Open();
+            }
+            catch (UnauthorizedAccessException uax)
+            {
+                Globals.SitecoreAddin.LogException("ESRibbon.OpenArticleInformation: Error loading the article information window! Unauthorized access to API handler. Asking user to login again", uax);
+                MessageBox.Show(Constants.SESSIONTIMEOUTERRORMESSAGE);
             }
             catch (Exception ex)
             {

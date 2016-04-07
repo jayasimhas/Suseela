@@ -10,6 +10,7 @@ import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
 import SortableTableController from './sortable-table-controller';
+import { analyticsEvent } from './analytics-controller';
 
 
 
@@ -26,25 +27,18 @@ $('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
 });
 
 $('.click-logout').on('click', function(e) {
-    var eventDetails = {
-        event_name: "logout"
-    };
-    var result = {};
-    $.extend(result, analytics_data, eventDetails);
-    utag.link(result);
+    analyticsEvent( $.extend(result, analytics_data, { event_name: "logout" }) );
 });
 
 /* Toggle header search box (tablets/smartphones) */
 $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
-    var searchTerm = $('.header-search__field').val();
+
     var eventDetails = {
         event_name: "search",
-        search_term: '"' + searchTerm + '"'
+        search_term: '"' + $('.header-search__field').val() + '"'
     };
 
-    var result = {};
-    $.extend(result, analytics_data, eventDetails);
-    utag.link(result);
+    analyticsEvent( $.extend(analytics_data, eventDetails) );
 
 
     if($(window).width() <= 800) {
@@ -269,6 +263,32 @@ $(document).ready(function() {
             $('.js-email-article-form-wrapper').show();
             $('.js-email-article-success').hide();
         });
+    });
+
+
+    var emailSearchController = new FormController();
+    emailSearchController.watchForm('.form-email-search', function(form) {
+        $('.js-email-search-form-wrapper').hide();
+        $('.js-email-search-recip-success').html($('.js-email-search-recip-addr').val());
+        $('.js-email-search-success').show();
+        $('.js-email-search-form-wrapper input, .js-email-search-form-wrapper textarea').val('');
+
+        // Reset the Email Article pop-out to its default state when closed
+        $('.js-dismiss-email-search').one('click', function() {
+            $('.js-email-search-form-wrapper').show();
+            $('.js-email-search-success').hide();
+        });
+    }, null, function() {
+
+        var resultIDs = null;
+
+        $('.result__bookmark').each(function(indx, item) {
+            resultIDs = resultIDs ? resultIDs + ',' + $(item).data('bookmark-id') : $(item).data('bookmark-id');
+        });
+
+        $('.js-email-search-results-ids').val(resultIDs);
+        $('.js-email-search-query').val($('.search-bar__field').val());
+        $('.js-email-search-query-url').val(document.location.href);
     });
 
 
@@ -529,38 +549,36 @@ $(document).ready(function() {
 
     // TODO - Refactor this code, update class name to a `js-` name
     $('.manage-preferences').click(function(e) {
-        var preferencesData = {};
+        var preferencesData = {
+            event_name: "manage-preferences"
+        };
         if($("#NewsletterOptIn").is(':checked') && $("#DoNotSendOffersOptIn").is(':checked')) {
             preferencesData = {
-                event_name: "manage-preferences",
                 newsletter_optin: "true",
                 donot_send_offers_optin: "true"
             };
         }
         if(!$("#NewsletterOptIn").is(':checked') && $("#DoNotSendOffersOptIn").is(':checked')) {
             preferencesData = {
-                event_name: "manage-preferences",
                 newsletter_optin: "false",
                 donot_send_offers_optin: "true"
             };
         }
         if($("#NewsletterOptIn").is(':checked') && !$("#DoNotSendOffersOptIn").is(':checked')) {
             preferencesData = {
-                event_name: "manage-preferences",
                 newsletter_optin: "true",
                 donot_send_offers_optin: "false"
             };
         }
         if(!$("#NewsletterOptIn").is(':checked') && !$("#DoNotSendOffersOptIn").is(':checked')) {
             preferencesData = {
-                event_name: "manage-preferences",
                 newsletter_optin: "false",
                 donot_send_offers_optin: "false"
             };
         }
-        var result = {};
-        $.extend(result, analytics_data, preferencesData);
-        utag.link(result);
+
+        analyticsEvent( $.extend(analytics_data, preferencesData) );
+
 
     });
 
@@ -579,13 +597,22 @@ $(document).ready(function() {
 
 
     $('.click-utag').click(function (e) {
-        var eventDetails = $(this).data('info');
-        var result = {};
-        $.extend(result, analytics_data, eventDetails);
-        utag.link(result);
+        analyticsEvent( $.extend(analytics_data, $(this).data('info')) );
     });
 
+    $('#chkASBilling').click(function(e){
+        if($(this).is(':checked'))
+        {
+            $('#ddlShippingCountry').val($('#ddlBillingCountry').val());
+            $('#txtShippingAddress1').val($('#txtBillingAddress1').val());
+            $('#txtShippingAddress2').val($('#txtBillingAddress2').val());
+            $('#txtShippingCity').val($('#txtBillingCity').val());
+            $('#txtShippingState').val($('#txtBillingState').val());
+            $('#txtShippingPostalCode').val($('#txtBillingPostalCode').val());
+        }
+    });
     // Twitter sharing JS
     window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");
+
 
 });

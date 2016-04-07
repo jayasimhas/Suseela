@@ -4,7 +4,6 @@ using Glass.Mapper.Sc.Fields;
 using Informa.Library.User.Authentication;
 using Informa.Library.Company;
 using Informa.Library.Globalization;
-using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.Site;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
@@ -14,6 +13,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Analytics;
 using System.Web;
 using System.Web.Mvc;
+using Informa.Library.User.Profile;
 
 namespace Informa.Web.ViewModels
 {
@@ -21,25 +21,25 @@ namespace Informa.Web.ViewModels
 	public class HeaderViewModel : IHeaderViewModel
 	{
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-		protected readonly ICompanyNameContext CompanyNameContext;
+		protected readonly IUserCompanyNameContext CompanyNameContext;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteHomeContext SiteHomeContext;
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly ISitecoreService SitecoreService;
 		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly IItemReferences ItemReferences;
-		protected readonly ISalesforceFindUserProfile FindUserProfile;
+        protected readonly IUserProfileContext ProfileContext;
 
 		public HeaderViewModel(
 			IAuthenticatedUserContext authenticatedUserContext,
-			ICompanyNameContext companyNameContext,
+			IUserCompanyNameContext companyNameContext,
 			ITextTranslator textTranslator,
 			ISiteHomeContext siteHomeContext,
 			ISiteRootContext siteRootContext,
 			ISitecoreService sitecoreService,
 			ISitecoreContext sitecoreContext,
 			IItemReferences itemReferences,
-			ISalesforceFindUserProfile findUserProfile)
+            IUserProfileContext profileContext)
 		{
 			AuthenticatedUserContext = authenticatedUserContext;
 			CompanyNameContext = companyNameContext;
@@ -49,7 +49,7 @@ namespace Informa.Web.ViewModels
 			SitecoreService = sitecoreService;
 			SitecoreContext = sitecoreContext;
 			ItemReferences = itemReferences;
-			FindUserProfile = findUserProfile;
+            ProfileContext = profileContext;
 
 			InformaBar = SitecoreContext.GetItem<IInforma_Bar>(ItemReferences.InformaBar);
 		}
@@ -59,11 +59,11 @@ namespace Informa.Web.ViewModels
 		public string WelcomeText
 		{
 			get
-			{
-				var user = AuthenticatedUserContext.IsAuthenticated
-					? FindUserProfile.Find(AuthenticatedUserContext.User.Username)
-					: null;
-				var accountName = user != null ? user.FirstName : CompanyNameContext.Name;
+            {
+                var user = AuthenticatedUserContext.IsAuthenticated
+                     ? ProfileContext.Profile
+                     : null;
+                var accountName = user != null ? user.FirstName : CompanyNameContext.Name;
 
 				return string.IsNullOrWhiteSpace(accountName) ? string.Empty : string.Concat(TextTranslator.Translate("Header.Greeting"), accountName);
 			}
@@ -110,7 +110,6 @@ namespace Informa.Web.ViewModels
 					: local;
 			}
 		}
-
 
 		public string LeaderboardAdZone => SitecoreService.GetItem<ISite_Config>(Informa.Library.Utilities.References.Constants.ScripRootNode)?.Global_Leaderboard_Ad_Zone ?? string.Empty;
 	}

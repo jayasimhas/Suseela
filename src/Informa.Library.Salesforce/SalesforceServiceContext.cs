@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 
 namespace Informa.Library.Salesforce
 {
@@ -27,17 +28,29 @@ namespace Informa.Library.Salesforce
 
 		public void RefreshSession()
 		{
-			if (string.Equals(Service.SessionHeaderValue.sessionId, SessionContext.Session.Id))
+            ErrorLogger.Log("Refresh Session", new Exception($"Header Value: {Service.SessionHeaderValue.sessionId}, ContextValue: {SessionContext.Session.Id}"));
+            if (string.Equals(Service.SessionHeaderValue.sessionId, SessionContext.Session.Id))
 			{
 				SessionContext.Refresh();
 			}
 
-			Service.SessionHeaderValue.sessionId = SessionContext.Session.Id;
+		    try
+		    {
+		        Service.SessionHeaderValue.sessionId = SessionContext.Session.Id;
+		    }
+		    catch (Exception e)
+		    {
+                ErrorLogger.Log("Is this the 'Cannot change header value' issue I've been seeing?", e);
+            }
 		}
 
-		public TResult Execute<TResult>(Expression<Func<ISalesforceService, TResult>> functionExpression)
+		public TResult Execute<TResult>(Expression<Func<ISalesforceService, TResult>> functionExpression, string CallerMemberName = "", string CallerFilePath = "",
+            int CallerLineNumber = 0)
 			where TResult : IEbiResponse
 		{
+            //TODO: Salesforce logging.
+		    ErrorLogger.Log($"Salesforced called by: {CallerMemberName}, File: {CallerFilePath}, Line Number {CallerLineNumber}", null);
+
 			if (!HasSession)
 			{
 				RefreshSession();
@@ -58,7 +71,8 @@ namespace Informa.Library.Salesforce
 			{
 				if (ex.Message.Contains(InvalidSessionIdErrorKey))
 				{
-					invalidSession = true;
+                    ErrorLogger.Log("Invalid Session, infinite loop?", ex);
+                    invalidSession = true;
 					SessionContext.Refresh();
 				}
 
@@ -68,8 +82,8 @@ namespace Informa.Library.Salesforce
 			if (invalidSession)
 			{
 				RefreshSession();
-
-				return Execute(functionExpression);
+                ErrorLogger.Log("Invalid Session", new Exception("Infinite loop?"));
+                return Execute(functionExpression);
 			}
 
 			return result;

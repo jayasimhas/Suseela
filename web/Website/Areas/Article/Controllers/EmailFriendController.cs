@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 using System.Web.Http;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
@@ -17,6 +18,8 @@ using Informa.Web.Controllers;
 using Informa.Library.Utilities.Settings;
 using log4net;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Web.Areas.Article.Controllers
 {
@@ -30,12 +33,13 @@ namespace Informa.Web.Areas.Article.Controllers
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IEmailFactory EmailFactory;
 		protected readonly ISiteSettings SiteSettings;
-	    private ILog _logger;
-	    protected readonly ISitecoreService SitecoreService;
+		private ILog _logger;
+		protected readonly ISitecoreService SitecoreService;
+		private readonly IBaseHtmlEmailFactory BaseEmailFactory;
 
 		public EmailFriendController(ArticleUtil articleUtil, ITextTranslator textTranslator, ISiteRootContext siteRootContext, IEmailFactory emailFactory,
-			Func<string, ISitecoreService> sitecoreFactory, IEmailSender emailSender, IHtmlEmailTemplateFactory htmlEmailTemplateFactory, 
-            ISiteSettings siteSettings, ILog logger, ISitecoreService sitecoreService)
+			Func<string, ISitecoreService> sitecoreFactory, IEmailSender emailSender, IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
+			ISiteSettings siteSettings, ILog logger, ISitecoreService sitecoreService)
 		{
 			EmailSender = emailSender;
 			_articleUtil = articleUtil;
@@ -45,8 +49,8 @@ namespace Informa.Web.Areas.Article.Controllers
 			SiteRootContext = siteRootContext;
 			EmailFactory = emailFactory;
 			SiteSettings = siteSettings;
-		    _logger = logger;
-		    SitecoreService = sitecoreService;
+			_logger = logger;
+			SitecoreService = sitecoreService;
 		}
 
 		[HttpPost]
@@ -59,8 +63,8 @@ namespace Informa.Web.Areas.Article.Controllers
 				|| string.IsNullOrWhiteSpace(request.SenderName)
 				|| string.IsNullOrWhiteSpace(request.ArticleNumber))
 			{
-                _logger.Warn($"Field is null");
-                return Ok(new
+				_logger.Warn($"Field is null");
+				return Ok(new
 				{
 					success = false
 				});
@@ -69,24 +73,29 @@ namespace Informa.Web.Areas.Article.Controllers
 			var emailFrom = GetValue(siteRoot?.Email_From_Address);
 			var allEmails = request.RecipientEmail.Split(';');
 			var result = true;
+			var emailBody = GetEmailBody(request.SenderEmail, request.SenderName,
+					request.ArticleNumber, request.PersonalMessage);
+
 			foreach (var eachEmail in allEmails)
 			{
-				var emailBody = GetEmailBody(request.SenderEmail, request.SenderName,
-					request.ArticleNumber, eachEmail, request.PersonalMessage);
+				string specificEmailBody = emailBody
+					.ReplacePatternCaseInsensitive("#friend_name#", eachEmail)
+					.ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", eachEmail);
+
 				var friendEmail = new Email
 				{
 					To = eachEmail,
 					Subject = request.ArticleTitle,
 					From = emailFrom,
-					Body = emailBody,
+					Body = specificEmailBody,
 					IsBodyHtml = true
 				};
 
 				var isEmailSent = EmailSender.Send(friendEmail);
 				if (!isEmailSent)
 				{
-                    _logger.Warn($"Email sender failed");
-                    result = false;
+					_logger.Warn($"Email sender failed");
+					result = false;
 				}
 			}
 			return Ok(new
@@ -95,7 +104,7 @@ namespace Informa.Web.Areas.Article.Controllers
 			});
 		}
 
-		public string GetEmailBody(string senderEmail, string senderName, string articleNumber, string friendEmail, string message)
+		public string GetEmailBody(string senderEmail, string senderName, string articleNumber, string message)
 		{
 			string emailHtml = string.Empty;
 			try
@@ -109,236 +118,223 @@ namespace Informa.Web.Areas.Article.Controllers
 
 				var siteRoot = SiteRootContext.Item;
 				emailHtml = htmlEmailTemplate.Html;
+				var footerContent = _service.GetItem<IEmail_Config>(Constants.ScripEmailConfig);
 				var replacements = new Dictionary<string, string>
 				{
-					["#Envrionment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),
+					["#Environment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),
 					["#Date#"] = DateTime.Now.ToString("dddd, d MMMM yyyy"),
-					["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink(),					
-					["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),					
-					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),					
-					["#friend_name#"] = friendEmail,
+					["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink(),
+					["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
+					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
 					["#sender_name#"] = senderName,
-					["#sender_email#"] = senderEmail
+                    ["#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:",
+                    ["#sender_email#"] = senderEmail,
+					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
+						? UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
+						: string.Empty,
+					["#RssLogo#"] = (siteRoot?.RSS_Logo != null)
+						? UrlUtils.GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString())
+						: string.Empty,
+					["#LinkedinLogo#"] = (siteRoot?.Linkedin_Logo != null)
+						? UrlUtils.GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString())
+						: string.Empty,
+					["#TwitterLogo#"] = (siteRoot?.Twitter_Logo != null)
+						? UrlUtils.GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString())
+						: string.Empty,
+					["#personal_message#"] = (!string.IsNullOrEmpty(message))
+						? $"\"{message}\""
+						: string.Empty,
+					["#Footer_Content#"] = GetValue(footerContent?.Email_A_Friend_Footer_Content)
+						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail)
 				};
 
-				if (siteRoot?.Email_Logo != null)
-				{
-					replacements["#Logo_URL#"] = UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString());
-				}
-				
-				if (siteRoot?.RSS_Logo != null)
-				{
-					replacements["#RssLogo#"] = UrlUtils.GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString());
-				}
-				
-				if (siteRoot?.Linkedin_Logo != null)
-				{
-					replacements["#LinkedinLogo#"] = UrlUtils.GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString());
-				}
-				
-				if (siteRoot?.Twitter_Logo != null)
-				{
-					replacements["#TwitterLogo#"] = UrlUtils.GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString());
-				}
-
-				if (!string.IsNullOrEmpty(message))
-				{
-					replacements["#personal_message#"] = '"' + message + '"';
-				}
-				
 				// Article Body
 				var article = _articleUtil.GetArticleByNumber(articleNumber);
-				if (article != null)
+				replacements["#article_date#"] = article?.Actual_Publish_Date.ToString("dd MMMM yyyy") ?? string.Empty;
+				replacements["#article_mediatype#"] = article?.Media_Type?.Item_Name ?? string.Empty;
+				replacements["#article_title#"] = article?.Title ?? String.Empty;
+				replacements["#article_titleURL#"] = (article != null)
+					? $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{article._Url}"
+					: string.Empty;
+				replacements["#article_authorBy#"] = (article != null && article.Authors.Any())
+					? TextTranslator.Translate("Article.By")
+					: string.Empty;
+				replacements["#article_author#"] = (article != null && article.Authors.Any())
+					? string.Join(",", article.Authors.Select(a => $"{a.First_Name} {a.Last_Name}"))
+					: string.Empty;
+				replacements["#article_summary#"] = article?.Summary ?? string.Empty;
+
+				emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
+			}
+			catch (Exception ex) {
+				_logger.Warn($"Email failed to send: {senderEmail}:{senderName}:{articleNumber}:{message}", ex);
+			}
+			return emailHtml;
+		}
+
+		public string GetValue(string value, string defaultValue = null)
+		{
+			return value ?? defaultValue ?? string.Empty;
+		}
+
+		#region Email Results
+
+
+		[HttpPost]
+		public IHttpActionResult EmailSearch(EmailFriendSearchRequest request)
+		{
+			var siteRoot = SiteRootContext.Item;
+
+			if (string.IsNullOrWhiteSpace(request.RecipientEmail)
+				|| string.IsNullOrWhiteSpace(request.SenderEmail)
+				|| string.IsNullOrWhiteSpace(request.SenderName)
+				|| string.IsNullOrWhiteSpace(request.PersonalMessage)
+				|| string.IsNullOrEmpty(request.ResultIDs)
+				|| string.IsNullOrEmpty(request.QueryTerm))
+			{
+				return Ok(new
 				{
-					replacements["#article_date#"] = article.Actual_Publish_Date.ToString("dd MMMM yyyy");
-					replacements["#article_mediatype#"] = article.Media_Type != null ? article.Media_Type.Item_Name : string.Empty;
-					replacements["#article_title#"] = article.Title;
-					replacements["#article_titleURL#"] = article._Url;
+					success = false
+				});
+			}
 
-					var authorString = string.Empty;
-					foreach (var eachAuthor in article.Authors)
-					{
-						authorString = eachAuthor.First_Name + eachAuthor.Last_Name + ",";
-					}
-					if (!string.IsNullOrEmpty(authorString))
-					{
-						replacements["#article_authorBy#"] = "By";
-						replacements["#article_author#"] = authorString;
-					}
-					else
-					{
-						replacements["#article_authorBy#"] = string.Empty;
-						replacements["#article_author#"] = authorString;
-					}
+			var emailFrom = GetValue(siteRoot?.Email_From_Address);
+			var allEmails = request.RecipientEmail.Split(';');
+			var result = true;
+			var emailBody = GetEmailSearchBody(
+					request.SenderEmail,
+					request.SenderName,
+					request.ResultIDs.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries),
+					request.PersonalMessage,
+					request.QueryTerm,
+					request.QueryUrl);
 
-					replacements["#article_summary#"] = article.Summary;
+			foreach (var eachEmail in allEmails)
+			{
+				string specificEmailBody = emailBody
+					.ReplacePatternCaseInsensitive("#friend_name#", eachEmail)
+					.ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", eachEmail);
+
+				var friendEmail = new Email
+				{
+					To = eachEmail,
+					Subject = request.Subject,
+					From = emailFrom,
+					Body = specificEmailBody,
+					IsBodyHtml = true
+				};
+
+				var isEmailSent = EmailSender.Send(friendEmail);
+				if (!isEmailSent)
+				{
+					result = false;
+				}
+			}
+			return Ok(new
+			{
+				success = result
+			});
+		}
+
+		public string GetEmailSearchBody(string senderEmail, string senderName, IEnumerable<string> resultIDs, string message, string queryTerm, string queryUrl)
+		{
+			string emailHtml = string.Empty;
+			try
+			{
+				var htmlEmailTemplate = HtmlEmailTemplateFactory.Create("_BaseEmail");
+				var searchTemplate = HtmlEmailTemplateFactory.Create("EmailFriendSearch");
+				var searchRow = HtmlEmailTemplateFactory.Create("EmailFriendSearchRow");
+				var searchAuthor = HtmlEmailTemplateFactory.Create("EmailFriendSearchAuthor");
+
+				if (htmlEmailTemplate == null
+					|| searchRow == null
+					|| searchTemplate == null
+					|| searchAuthor == null)
+				{
+					return null;
 				}
 
-				var footerContent = _service.GetItem<IEmail_Config>(Constants.ScripEmailConfig);				
-				replacements["#Footer_Content#"] = GetValue(footerContent?.Email_A_Friend_Footer_Content)
-					.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail)
-					.ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", friendEmail);
+				//main email information
+				var siteRoot = SiteRootContext.Item;
+				emailHtml = htmlEmailTemplate.Html.Replace("#Body_Content#", searchTemplate.Html);
+				var footerContent = _service.GetItem<IEmail_Config>(Constants.ScripEmailConfig);
+				var replacements = new Dictionary<string, string>
+				{
+					["#Environment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),
+					["#Date#"] = DateTime.Now.ToString("dddd, d MMMM yyyy"),
+					["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink(),
+					["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
+					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
+					["#sender_name#"] = senderName,
+                    ["#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:",
+                    ["#sender_email#"] = senderEmail,
+					["#query_url#"] = queryUrl,
+					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
+						? UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
+						: string.Empty,
+					["#RssLogo#"] = (siteRoot?.RSS_Logo != null)
+						? UrlUtils.GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString())
+						: string.Empty,
+					["#LinkedinLogo#"] = (siteRoot?.Linkedin_Logo != null)
+						? UrlUtils.GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString())
+						: string.Empty,
+					["#TwitterLogo#"] = (siteRoot?.Twitter_Logo != null)
+						? UrlUtils.GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString())
+						: string.Empty,
+					["#personal_message#"] = (!string.IsNullOrEmpty(message))
+						? $"\"{message}\""
+						: string.Empty,
+					["#Footer_Content#"] = GetValue(footerContent?.Email_A_Friend_Footer_Content)
+						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail),
+					["#notice_message#"] = TextTranslator.Translate("Search.EmailPopout.Notice"),
+                    ["#search_query#"] = queryTerm,
+                    ["#see_more#"] = TextTranslator.Translate("Search.SeeMore")
+                };
+                
+				//search results
+				StringBuilder resultBody = new StringBuilder();
+				int j = 0;
+				foreach (string id in resultIDs)
+				{
+					Guid g;
+                    if(!Guid.TryParse(id, out g))
+						continue;
 
+					var result = SitecoreService.GetItem<I___BasePage>(g);
+					if (result == null)
+						continue;
+
+					//article authors
+					var article = SitecoreService.GetItem<IArticle>(g);
+					bool hasAuthors = article != null && article.Authors.Any();
+					string byline = TextTranslator.Translate("Article.By");
+					string authorInsert = (hasAuthors)
+						? searchAuthor.Html
+							.ReplacePatternCaseInsensitive("#article_authorBy#", (!string.IsNullOrEmpty(byline)) ? byline : string.Empty)
+							.ReplacePatternCaseInsensitive("#article_author#", string.Join(",", article.Authors.Select(a => $"{a.First_Name} {a.Last_Name}")))
+						: string.Empty;
+
+					var row = searchRow.Html.Replace("#result_publication#", SiteRootContext?.Item?.Publication_Name)
+						.ReplacePatternCaseInsensitive("#result_title#", result.Title)
+						.ReplacePatternCaseInsensitive("#result_summary#", SearchSummaryUtil.GetTruncatedSearchSummary(result.Body))
+						.ReplacePatternCaseInsensitive("#result_url#", $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{result._Url}")
+						.ReplacePatternCaseInsensitive("#author_insert#", authorInsert);
+
+					resultBody.Append(row);
+					j++;
+				}
+				replacements["#result_count#"] = j.ToString();
+				replacements["#result_list#"] = resultBody.ToString();
 
 				emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
 			}
 			catch (Exception ex)
 			{
-				       _logger.Warn($"Email failed to send: {senderEmail}:{senderName}:{articleNumber}:{friendEmail}:{message}", ex);
+
 			}
 			return emailHtml;
 		}
 
-	    public string GetValue(string value, string defaultValue = null)
-		{
-			return value ?? defaultValue ?? string.Empty;
-		}
-
-        #region Email Results
-
-
-        [HttpPost]
-        public IHttpActionResult EmailSearch(EmailFriendSearchRequest request)
-        {
-            var siteRoot = SiteRootContext.Item;
-
-            if (string.IsNullOrWhiteSpace(request.RecipientEmail)
-                || string.IsNullOrWhiteSpace(request.SenderEmail)
-                || string.IsNullOrWhiteSpace(request.SenderName)
-                || string.IsNullOrWhiteSpace(request.PersonalMessage)
-                || string.IsNullOrEmpty(request.ResultIDs)
-                || string.IsNullOrEmpty(request.QueryTerm))
-            {
-                return Ok(new
-                {
-                    success = false
-                });
-            }
-
-            var emailFrom = GetValue(siteRoot?.Email_From_Address);
-            var allEmails = request.RecipientEmail.Split(';');
-            var result = true;
-            foreach (var eachEmail in allEmails)
-            {
-                var emailBody = GetEmailSearchBody(
-                    request.SenderEmail,
-                    request.SenderName,
-                    request.ResultIDs.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries), 
-                    eachEmail,
-                    request.PersonalMessage,
-                    request.QueryTerm);
-
-                var friendEmail = new Email
-                {
-                    To = eachEmail,
-                    Subject = request.Subject,
-                    From = emailFrom,
-                    Body = emailBody,
-                    IsBodyHtml = true
-                };
-
-                var isEmailSent = EmailSender.Send(friendEmail);
-                if (!isEmailSent)
-                {
-                    result = false;
-                }
-            }
-            return Ok(new
-            {
-                success = result
-            });
-        }
-
-        public string GetEmailSearchBody(string senderEmail, string senderName, IEnumerable<string> resultIDs, string friendEmail, string message, string queryTerm)
-        {
-            string emailHtml = string.Empty;
-            try
-            {
-                var htmlEmailTemplate = HtmlEmailTemplateFactory.Create("EmailFriendSearch");
-                var resultRow = HtmlEmailTemplateFactory.Create("EmailFriendSearchRow");
-
-                if (htmlEmailTemplate == null || resultRow == null)
-                {
-                    return null;
-                }
-
-                var siteRoot = SiteRootContext.Item;
-                emailHtml = htmlEmailTemplate.Html;
-                var replacements = new Dictionary<string, string>
-                {
-                    ["#Envrionment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),
-                    ["#Date#"] = DateTime.Now.ToString("dddd, d MMMM yyyy"),
-                    ["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink(),
-                    ["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
-                    ["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
-                    ["#friend_name#"] = friendEmail,
-                    ["#sender_name#"] = senderName,
-                    ["#sender_email#"] = senderEmail
-                };
-
-                if (siteRoot?.Email_Logo != null)
-                {
-                    replacements["#Logo_URL#"] = UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString());
-                }
-
-                if (siteRoot?.RSS_Logo != null)
-                {
-                    replacements["#RssLogo#"] = UrlUtils.GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString());
-                }
-
-                if (siteRoot?.Linkedin_Logo != null)
-                {
-                    replacements["#LinkedinLogo#"] = UrlUtils.GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString());
-                }
-
-                if (siteRoot?.Twitter_Logo != null)
-                {
-                    replacements["#TwitterLogo#"] = UrlUtils.GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString());
-                }
-                if (!string.IsNullOrEmpty(message))
-                {
-                    replacements["#personal_message#"] = '"' + message + '"';
-                }
-                
-                var footerContent = _service.GetItem<IEmail_Config>(Constants.ScripEmailConfig);
-                replacements["#Footer_Content#"] = GetValue(footerContent?.Email_A_Friend_Footer_Content)
-                    .ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail)
-                    .ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", friendEmail);
-
-                replacements["#notice_message#"] = TextTranslator.Translate("Search.EmailPopout.Notice");
-                replacements["#search_query#"] = queryTerm;
-
-                StringBuilder resultBody = new StringBuilder();
-                int j = 0;
-                foreach (string id in resultIDs)
-                {
-                    Guid g;
-                    if(!Guid.TryParse(id, out g))
-                        continue;
-
-                    var result = SitecoreService.GetItem<I___BasePage>(g);
-                    if (result == null)
-                        continue;
-
-                    var row = resultRow.Html.Replace("#result_publication#", SiteRootContext?.Item?.Publication_Name)
-                        .Replace("#result_title#", result.Title)
-                        .Replace("#result_summary#", SearchSummaryUtil.GetTruncatedSearchSummary(result.Body));
-                    
-                    resultBody.Append(row);
-                    j++;
-                }
-                replacements["#result_count# "] = j.ToString();
-                replacements["#result_list#"] = resultBody.ToString();
-
-                emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
-            }
-            catch (Exception ex)
-            {
-
-            }
-            return emailHtml;
-        }
-
-        #endregion Email Results
-    }
+		#endregion Email Results
+	}
 }

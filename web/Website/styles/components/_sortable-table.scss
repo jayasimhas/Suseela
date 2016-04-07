@@ -4,7 +4,7 @@
 	color: $color-abbey-gray;
 	width: 100%;
 
-	td {
+	&__col {
 		padding: 1rem 1.25rem;
 	}
 
@@ -17,6 +17,10 @@
 		cursor: pointer;
 		font-size: 1.125rem;
 		font-weight: 600;
+
+		&--mobile {
+			display: none;
+		}
 	}
 
 	&__sort-arrows {
@@ -35,5 +39,88 @@
 	.sorttable_sorted &__sort-arrows svg.sortable-table__sort-arrows--up,
 	.sorttable_sorted_reverse &__sort-arrows svg.sortable-table__sort-arrows--down {
 		@include svg-fill($color-cardinal-red);
+	}
+
+	@include breakpoint('small') {
+
+		border: 0;
+
+		tbody tr {
+			border: 1px solid $color-light-gray;
+			border-bottom-width: 0;
+			display: block;
+			padding-bottom: 1rem;
+
+			&:last-child {
+				border-bottom-width: 1px;
+			}
+		}
+
+		&__header {
+			display: none;
+		}
+		&__header--mobile {
+			display: block;
+			background-color: transparent;
+			color: $color-zeus-black;
+			cursor: pointer;
+			padding-bottom: 0.5rem;
+
+			.sortable-table__col {
+				display: inline-block;
+				font-size: 1rem;
+				font-weight: 400;
+				padding: 0 0.5rem 0.5rem 1rem;
+				width: auto;
+				vertical-align: middle;
+			}
+		}
+
+		&__sort-arrows svg {
+			@include svg-fill($color-light-gray);
+		}
+
+		&__col {
+			display: block;
+			font-size: 1.125rem;
+			padding: 1rem 1rem 0;
+			width: 100%;
+
+			&--has-title {
+				display: flex;
+				flex-wrap: nowrap;
+
+				&:before {
+					font-weight: 500;
+					height: 100%;
+					padding-right: 1rem;
+				}
+			}
+
+			&--title:before {
+				content: "Title";
+			}
+
+			&--date:before {
+				content: "Date";
+			}
+
+			&--publication:before {
+				content: "Publication";
+			}
+
+			&--sub-type:before {
+				content: "Subscription Type";
+			}
+
+			&--exp-date:before {
+				content: "Expiration Date";
+			}
+		}
+
+		&__submit-wrapper {
+			text-align: right;
+		}
+
 	}
 }

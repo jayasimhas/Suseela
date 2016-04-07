@@ -1,15 +1,18 @@
-﻿var InformaResultsController = function InformaResultsController($scope, $sanitize, searchService, viewHeadlinesStateService, $timeout, $window) {
-    var _this = this;
+var informaSearchApp = angular.module('informaSearchApp');
 
-    this.service = searchService;
-    this.docs = [];
+﻿var InformaResultsController = function InformaResultsController($scope, $sanitize, searchService, viewHeadlinesStateService, $timeout, $window) {
+
+    var vm = this;
+
+    vm.service = searchService;
+    vm.docs = [];
 
     $scope.headlinesOnly = viewHeadlinesStateService;
 
     $scope.$watchCollection(function () {
         return searchService.getResults();
     }, function () {
-        _this.docs = searchService.getResults();
+        vm.docs = searchService.getResults();
     });
 
     $scope.filterResult = function (url) {
@@ -28,12 +31,12 @@
                 $timeout to prevent a race condition.
                 TODO - better way to pass bookmark state to generic controller instead */
             $timeout(function() {
-                _this.docs[key].isArticleBookmarked = _this.docs[key].isArticleBookmarked ? false : true;
+                vm.docs[key].isArticleBookmarked = vm.docs[key].isArticleBookmarked ? false : true;
             }, 250);
         }
     };
 
-    $scope.$on('ngRepeatBroadcast1', function(ngRepeatFinishedEvent) {
+    $scope.$on('refreshPopOuts', function(ngRepeatFinishedEvent) {
         window.indexPopOuts();
         window.indexBookmarks();
         window.autoBookmark();
@@ -44,16 +47,18 @@
     };
 
 };
-var informaSearchApp = angular.module('informaSearchApp').directive('onFinishRender', function ($timeout) {
+
+informaSearchApp.directive('onFinishRender', function ($timeout) {
     return {
         restrict: 'A',
         link: function (scope, element, attr) {
             if (scope.$last === true) {
                 $timeout(function () {
-                    scope.$emit(attr.broadcasteventname ? attr.broadcasteventname : 'ngRepeatFinished');
+                    scope.$emit('refreshPopOuts');
                 });
             }
         }
     };
 });
+
 informaSearchApp.controller("InformaResultsController", ['$scope', '$sanitize','searchService', 'viewHeadlinesStateService',  '$timeout', '$window', InformaResultsController]);

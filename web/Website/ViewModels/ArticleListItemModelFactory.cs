@@ -7,6 +7,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Site;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.Article.Search;
+using Informa.Library.Globalization;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.TokenMatcher;
 using Jabberwocky.Glass.Autofac.Attributes;
@@ -19,13 +20,15 @@ namespace Informa.Web.ViewModels
 		protected readonly ISiteRootContext SiteRootContext;
 	    protected readonly ISitecoreContext SitecoreContext;
 	    protected readonly IArticleSearch ArticleSearch;
+	    protected readonly ITextTranslator TextTranslator;
 
-		public ArticleListItemModelFactory(
-			ISiteRootContext siteRootContext, ISitecoreContext sitecoreContext, IArticleSearch articleSearch)
+        public ArticleListItemModelFactory(
+			ISiteRootContext siteRootContext, ISitecoreContext sitecoreContext, IArticleSearch articleSearch, ITextTranslator textTranslator)
 		{
 			SiteRootContext = siteRootContext;
 		    SitecoreContext = sitecoreContext;
 		    ArticleSearch = articleSearch;
+            TextTranslator = textTranslator;
 		}
 
 		public IListableViewModel Create(IArticle article)
@@ -52,8 +55,9 @@ namespace Informa.Web.ViewModels
 				ListableUrl = new Link { Url = article._Url, Text = article.Title },
 				LinkableText = article.Content_Type?.Item_Name,
 				LinkableUrl = article._Url,
-				Publication = publication
-			};
+				Publication = publication,
+                By = TextTranslator.Translate("Article.By")
+            };
 		}
 
 	    public IListableViewModel Create(Guid articleId)

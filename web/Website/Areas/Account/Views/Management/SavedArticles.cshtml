@@ -12,10 +12,11 @@
                 <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-bad-id">@Model.BadIDText</p>
             </div>
 
-            <table class="sortable sortable-table">
+            <table class="sortable-table js-sortable-table">
                 <thead class="sortable-table__header">
                     <tr>
-                        <td>
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="1">
                             @Model.TitleText
                             <div class="sortable-table__sort-arrows">
                                 <svg class="sortable-table__sort-arrows--up click-utag" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"up"}'>
@@ -26,7 +27,8 @@
                                 </svg>
                             </div>
                         </td>
-                        <td>
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="2">
                             @Model.DateText
                             <div class="sortable-table__sort-arrows">
                                 <svg class="sortable-table__sort-arrows--up">
@@ -37,22 +39,54 @@
                                 </svg>
                             </div>
                         </td>
-                        <td></td>
+                        <td class="sortable-table__col"></td>
+                    </tr>
+                </thead>
+                <thead class="sortable-table__header sortable-table__header--mobile">
+                    <tr>
+                        <td class="sortable-table__col">
+                            <h6>Sort by:</h6>
+                        </td>
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="1">
+                            @Model.TitleText
+                            <div class="sortable-table__sort-arrows">
+                                <svg class="sortable-table__sort-arrows--up click-utag" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"up"}'>
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                </svg>
+                                <svg class="sortable-table__sort-arrows--down" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"down"}'>
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="2">
+                            @Model.DateText
+                            <div class="sortable-table__sort-arrows">
+                                <svg class="sortable-table__sort-arrows--up">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                </svg>
+                                <svg class="sortable-table__sort-arrows--down">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="sortable-table__col"></td>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model.SavedDocuments)
                     {
                         <tr>
-                            <td>
+                            <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
                                 <a href="@Model.GetUrl(item.DocumentId)">
                                     @HttpUtility.HtmlDecode(item.Name)
                                 </a>
                             </td>
-                            <td>
+                            <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--date">
                                 @Model.GetActualPublishDate(item.DocumentId, "d MMMM yyyy")
                             </td>
-                            <td>
+                            <td class="sortable-table__col sortable-table__submit-wrapper">
                                 <form   class="form-remove-saved-document"
                                         data-on-submit="/Account/api/SavedDocumentApi/RemoveItem/">
 

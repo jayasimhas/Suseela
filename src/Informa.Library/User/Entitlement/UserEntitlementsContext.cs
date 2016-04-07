@@ -1,19 +1,25 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Informa.Library.User.Entitlement
 {
 	[AutowireService(LifetimeScope.Default)]
 	public class UserEntitlementsContext : IUserEntitlementsContext
 	{
-		protected readonly ISitecoreUserContext SitecoreUserContext;
+		protected readonly IEntitlementsContexts EntitlementsContexts;
 
 		public UserEntitlementsContext(
-			ISitecoreUserContext sitecoreUserContext)
+			IEntitlementsContexts entitlementsContexts)
 		{
-			SitecoreUserContext = sitecoreUserContext;
+			EntitlementsContexts = entitlementsContexts;
 		}
 
-		public IEnumerable<IEntitlement> Entitlements => SitecoreUserContext.Entitlements;
+		public IEnumerable<IEntitlement> Entitlements => EntitlementsContexts.SelectMany(ec => ec.Entitlements);
+
+		public void RefreshEntitlements()
+		{
+			EntitlementsContexts.ToList().ForEach(ec => ec.RefreshEntitlements());
+		}
 	}
 }

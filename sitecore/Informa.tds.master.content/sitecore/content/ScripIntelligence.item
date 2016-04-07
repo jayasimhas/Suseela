@@ -40,7 +40,7 @@ ar|sitecore\Article Read Access|pe|+item:read|pd|+item:read|ar|sitecore\General 
 ----version----
 language: en
 version: 1
-revision: 4f1340ad-438d-4a0a-a96e-19c5a9985e31
+revision: 4cda7748-94d8-4b87-bc59-57c13b97b881
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -273,6 +273,13 @@ content-length: 38
 
 {39611772-CD97-4610-BB55-F96BE4C1F540}
 ----field----
+field: {8D08511C-D6FF-4ADE-9A19-E70C34D1CC71}
+name: Email Preferences Page
+key: email preferences page
+content-length: 38
+
+{BAF1D4FB-7599-4EDA-8926-0A4995E4DC2D}
+----field----
 field: {281273CB-8A6A-4637-B88E-1F278448CA11}
 name: Registration Email Subject
 key: registration email subject
@@ -360,14 +367,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-4f1340ad-438d-4a0a-a96e-19c5a9985e31
+4cda7748-94d8-4b87-bc59-57c13b97b881
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160401T171143Z
+20160404T150910Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -2,39 +2,39 @@
 <!-- SEARCH FILTERS IN LEFT RAIL -->
 
 <script type="text/javascript">
-        var datesObject = {
-            year: '@DateTime.Now.AddDays(-365).ToString("MM/dd/yyyy")',
-            day: '@DateTime.Now.AddDays(-1).ToString("MM/dd/yyyy")',
-            threedays: '@DateTime.Now.AddDays(-3).ToString("MM/dd/yyyy")',
-            month: '@DateTime.Now.AddDays(-30).ToString("MM/dd/yyyy")',
-            week: '@DateTime.Now.AddDays(-7).ToString("MM/dd/yyyy")',
-        }
+var datesObject = {
+    year: '@DateTime.Now.AddDays(-365).ToString("MM/dd/yyyy")',
+    day: '@DateTime.Now.AddDays(-1).ToString("MM/dd/yyyy")',
+    threedays: '@DateTime.Now.AddDays(-3).ToString("MM/dd/yyyy")',
+    month: '@DateTime.Now.AddDays(-30).ToString("MM/dd/yyyy")',
+    week: '@DateTime.Now.AddDays(-7).ToString("MM/dd/yyyy")',
+}
 </script>
 
 <button class="facets__mobile-button"
-        ng-model="collapsefilters"
-        ng-click="collapsefilters = !collapsefilters"
-        ng-class="{'isExpanded': collapsefilters}">
-    <h6 class="show-filters">Show Filters</h6>
-    <h6 class="hide-filters">Hide Filters</h6>
+        ng-model="facetsAreCollapsed"
+        ng-click="facetsAreCollapsed = !facetsAreCollapsed"
+        ng-class="{'is-expanded': facetsAreCollapsed}">
+    <h6 ng-if="!facetsAreCollapsed" class="show-filters">Show Filters</h6>
+    <h6 ng-if="facetsAreCollapsed" class="hide-filters">Hide Filters</h6>
 </button>
 
 <div    id="search-facet-01"
         class="search__facets search__left-sidebar"
-        ng-class="{'isExpanded': collapsefilters}"
-        ng-controller="InformaFacetController as allFacets">
+        ng-class="{'is-expanded': facetsAreCollapsed}"
+        ng-controller="InformaFacetController as facetController">
 
     <div class="facets__header">
         <h3>@Model.SearchFilterByText</h3>
         <button class="facets__button facets__button--clear"
-                ng-click="allFacets.clearAllFacets()">
+                ng-click="facetController.clearAllFacets()">
             @Model.SearchClearAllText
         </button>
     </div>
 
     <div class="facets__content">
 
-        <form class="facets__section" ng-repeat="group in allFacets.facetGroups">
+        <form class="facets__section" ng-repeat="group in facetController.facetGroups">
 
         @* * * * *
         FACET — COMPANIES
@@ -60,8 +60,8 @@
                              class="visuallyhidden click-utag"
                              ng-checked="f.selected"
                              ng-model="f.selected"
-                             ng-change="allFacets.update()" data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group_name":"{{group.label}}"}'>
-                      <label ng-if="f.label" for="{{ group.id }}-{{ $index }}">
+                             ng-change="facetController.update()" data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group_name":"{{group.label}}"}'>
+                      <label class="facets__label" ng-if="f.label" for="{{ group.id }}-{{ $index }}">
                           {{ f.label }}
                           <span class="facets__label-count">({{f.count}})</span>
                       </label>
@@ -97,7 +97,12 @@
 
               <li ng-repeat="myCompany in savedCompanies" class="saved-company">
                 <input type="checkbox" class="visuallyhidden click-utag" id="{{myCompany.label}}" ng-checked="myCompany.selected" data-info='{"event_name":"search-facet","facet_selected":"{{myCompany.label}}","facet_group_name":"My saved companies"}'>
-                <label for="{{myCompany.label}}">{{myCompany.label}}</label>
+
+                <label  class="facets__label"
+                        for="{{myCompany.label}}">
+                    {{myCompany.label}}
+                </label>
+
                 <svg ng-click="removeCompany(myCompany)"
                      class="saved-company__delete-icon">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
@@ -120,11 +125,11 @@
                       name="company-field"
                       placeholder="Enter a Company"
                       ng-model="myCompany.selected"
-                      uib-typeahead="company for company in companies | filter:$viewValue | limitTo:10"
+                      uib-typeahead="company for company in companies | filter:$viewValue | limitTo:5"
                       typeahead-min-length=2
                       typeahead-select-on-blur="false"
                       typeahead-select-on-exact="false"
-                      typeahead-on-select="allFacets.searchForCompany($item)"
+                      typeahead-on-select="facetController.searchForCompany($item)"
                       typeahead-editable="false"
                       class="form-control"
                       autocomplete="off">
@@ -173,40 +178,40 @@
             <ul class="facets__section-list datepicker" ng-controller="InformaDatesController">
                 <li class="facets__section-wrapper" ng-hide="collapsedate">
                     <ul class="facets__section-list">
-                        <li class="facets__section-item" ng-repeat="dateFilter in allFacets.DateFilters">
+                        <li class="facets__section-item" ng-repeat="dateFilter in facetController.DateFilters">
                             <input type="radio"
                                    name="date-facet"
                                    id="{{dateFilter.key}}"
                                    ng-model="dateFilter.selected"
                                    ng-value=true
                                    ng-checked="{{dateFilter.selected}}"
-                                   ng-click="allFacets.dateRangeSearch('date', dateFilter.key)" class="click-utag" data-info='{"event_name":"search-facet","facet_selected":"{{dateFilter.label}}","facet_group":"{{group.label}}"}'>
-                            <label for="{{dateFilter.key}}" >{{dateFilter.label}}</label>
+                                   ng-click="facetController.dateRangeSearch('date', dateFilter.key)" class="click-utag" data-info='{"event_name":"search-facet","facet_selected":"{{dateFilter.label}}","facet_group":"{{group.label}}"}'>
+                            <label  class="facets__label"
+                                    for="{{dateFilter.key}}">
+                                {{dateFilter.label}}
+                            </label>
 
                             <ul class="facets__section-footer" ng-if="$last">
                                 <li class="facets__field-group facets__field-group--from input-group">
-                                    <label for="date-picker-from" ng-click="open($event,'dtFrom');  allFacets.updateSelectedDate(dateFilter.key)">From</label>
+                                    <label for="date-picker-from" ng-click="open($event,'dtFrom');  facetController.updateSelectedDate(dateFilter.key)">From</label>
                                     <input type="text"
-                                           name="dtFrom"
-                                           ng-model="dateValues.dtFrom"
-                                           id="date-picker-from"
-                                           uib-datepicker-popup="{{format}}"
-                                           is-open="datepickers.dtFrom"
                                            datepicker-options="fromDateOptions"
-                                           popup-placement="auto right-top"
+                                           id="date-picker-from"
+                                           is-open="datepickers.dtFrom"
+                                           name="dtFrom"
+                                           ng-change="facetController.customDateRangeSearch('date', dateValues.dtFrom, dateValues.dtTo)"
+                                           ng-click="facetController.updateSelectedDate(dateFilter.key)"
+                                           ng-model="dateValues.dtFrom"
                                            ng-required="false"
-                                           readonly
-                                           ng-click="open($event,'dtFrom'); allFacets.updateSelectedDate(dateFilter.key)"
-                                           ng-change="allFacets.customDateRangeSearch('date', dateValues.dtFrom, dateValues.dtTo)"
+                                           placeholder="dd/mm/yyyy"
+                                           popup-placement="auto right-top"
                                            show-button-bar="false"
-                                           placeholder="dd/mm/yyyy">
-                                           @* close-text="Close" *@
-
+                                           uib-datepicker-popup="dd/MM/yyyy">
 
                                     <span class="input-group-btn">
                                         <button type="button"
                                                 class="facets__button"
-                                                ng-click="open($event,'dtFrom'); allFacets.updateSelectedDate(dateFilter.key)">
+                                                ng-click="open($event,'dtFrom'); facetController.updateSelectedDate(dateFilter.key)">
                                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
                                         </button>
                                     </span>
@@ -215,29 +220,27 @@
 
                                 <li class="facets__field-group facets__field-group--to input-group">
 
-                                    <label for="date-picker-to" ng-click="open($event,'dtTo');  allFacets.updateSelectedDate(dateFilter.key)">To</label>
+                                    <label for="date-picker-to" ng-click="open($event,'dtTo');  facetController.updateSelectedDate(dateFilter.key)">To</label>
 
                                     <input type="text"
-                                           name="dtTo"
-                                           uib-datepicker-popup="{{format}}"
-                                           ng-model="dateValues.dtTo"
-                                           id="date-picker-to"
-                                           datepicker-popup="shortDate"
-                                           is-open="datepickers.dtTo"
                                            datepicker-options="toDateOptions"
-                                           popup-placement="auto right-top"
+                                           datepicker-popup="shortDate"
+                                           id="date-picker-to"
+                                           is-open="datepickers.dtTo"
+                                           name="dtTo"
+                                           ng-change="facetController.customDateRangeSearch('date', dateValues.dtFrom, dateValues.dtTo)"
+                                           ng-click="facetController.updateSelectedDate(dateFilter.key)"
+                                           ng-model="dateValues.dtTo"
                                            ng-required="false"
-                                           readonly
-                                           ng-click="open($event,'dtTo'); allFacets.updateSelectedDate(dateFilter.key)"
-                                           ng-change="allFacets.customDateRangeSearch('date', dateValues.dtFrom, dateValues.dtTo)"
+                                           placeholder="dd/mm/yyyy"
+                                           popup-placement="auto right-top"
                                            show-button-bar="false"
-                                           placeholder="dd/mm/yyyy">
-                                           @* close-text="Close" *@
+                                           uib-datepicker-popup="dd/MM/yyyy">
 
                                     <span class="input-group-btn">
                                         <button type="button"
                                                 class="facets__button"
-                                                ng-click="open($event,'dtTo'); allFacets.updateSelectedDate(dateFilter.key)">
+                                                ng-click="open($event,'dtTo'); facetController.updateSelectedDate(dateFilter.key)">
                                             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#calendar"></use></svg>
                                         </button>
                                     </span>
@@ -268,93 +271,104 @@
           FACETS - DYNAMIC
           * * * * *@
 
-        <fieldset ng-if="group.label != 'Companies' && group.label != 'Date Placeholder'" class="facets__fieldset">
+            <fieldset ng-if="group.label != 'Companies' && group.label != 'Date Placeholder'" class="facets__fieldset">
 
-          <legend class="facets__legend facets__section-header">
-              <h4>{{ ::group.label }}</h4>
-              <button
-                  class="facets__button facets__button--toggle-section"
-                  ng-model="collapsefacet"
-                  ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
-                  ng-class="{'collapsed': isCollapsed}">
-                  <svg>
+                <legend class="facets__legend facets__section-header">
+                    <h4>{{ ::group.label }}</h4>
+                    <button
+                      class="facets__button facets__button--toggle-section"
+                      ng-model="collapsefacet"
+                      ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
+                      ng-class="{'collapsed': isCollapsed}">
+                        <svg>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
+                        </svg>
+                    </button>
+                </legend>
+
+                <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
+                <ul class="facets__section-list" ng-if="($index < facetController.MaxFacetShow) || group.ShowMore">
+                    <li>
+                        @* Hidden input field *@
+                        <input  id="{{ group.id }}-{{ $index }}"
+                              type="checkbox"
+                              class="visuallyhidden click-utag"
+                              ng-checked="f.selected"
+                              ng-model="f.selected"
+                              ng-change="facetController.update()"  data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
+
+                        <label  class="facets__label"
+                                ng-if="f.label"
+                                for="{{ group.id }}-{{ $index }}">
+
+                            <span class="facets__label-content">
+                                {{ f.label }}<span class="facets__label-count">({{f.count}})</span>
+                            </span>
+
+                            <button class="facets__button facets__button--toggle-subcat"
+                                    ng-model="collapsesubfacet"
+                                    ng-click="collapseSubfacet = !collapseSubfacet; isCollapsedSubfacet = !isCollapsedSubfacet">
+                                <svg
+                                  class="facets__button--collapse-subfacet"
+                                  ng-if="f.sublist.length > 0"
+                                  ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use>
+                                </svg>
+                                <svg
+                                  class="facets__button--expand-subfacet"
+                                  ng-if="(f.sublist.length > 0)"
+                                  ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#expand"></use>
+                                </svg>
+                            </button>
+
+                        </label>
+                      <ul ng-if="f.sublist.length > 0"
+                          ng-class="{'collapsedSubfacet': isCollapsedSubfacet}"
+                          class="facets__section-list--sub">
+                          <li ng-repeat="subFacet in f.sublist">
+                              <input id="{{ subFacet.id }}-{{ $index }}"
+                                     type="checkbox"
+                                     class="visuallyhidden"
+                                     ng-checked="subFacet.selected"
+                                     ng-model="subFacet.selected"
+                                     ng-change="facetController.update()" data-info='{"event_name":"search-facet","sub_facet_selected":"{{subFacet.name}}","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
+                              <label class="facets__label" ng-if="subFacet.name" for="{{ subFacet.id }}-{{ $index }}">
+                                  {{ subFacet.name }}
+                                  <span class="facets__label-count">({{subFacet.count}})</span>
+                              </label>
+                          </li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+            <button class="facets__button facets__button--more"
+                    ng-show='(group.facets.length > facetController.MaxFacetShow) && (!group.ShowMore)'
+                    ng-click='group.ShowMore = true'
+                    ng-class="{'collapsed': isCollapsed}">See All
+                <svg>
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
-                  </svg>
-              </button>
-          </legend>
+                </svg>
+            </button>
+            <button class="facets__button facets__button--less"
+                    ng-show='group.ShowMore'
+                    ng-click='group.ShowMore = false'
+                    ng-class="{'collapsed': isCollapsed}">
+                See Less
+                <svg>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#up-arrow"></use>
+                </svg>
+            </button>
+            </fieldset>
 
-          <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
-            <ul class="facets__section-list" ng-if="($index < allFacets.MaxFacetShow) || group.ShowMore">
-                <li>
-                  <input  id="{{ group.id }}-{{ $index }}"
-                          type="checkbox"
-                          class="visuallyhidden click-utag"
-                          ng-checked="f.selected"
-                          ng-model="f.selected"
-                          ng-change="allFacets.update()"  data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
-                  <label  ng-if="f.label" for="{{ group.id }}-{{ $index }}">
-                      {{ f.label }}
-                      <span class="facets__label-count">({{f.count}})</span>
-                  </label>
-                  <button class="facets__button facets__button--toggle-subcat"
-                          ng-model="collapsesubfacet"
-                          ng-click="collapseSubfacet=!collapseSubfacet; isCollapsedSubfacet=!isCollapsedSubfacet">
-                      <svg
-                        class="facets__button--collapse-subfacet"
-                        ng-if="f.sublist.length > 0"
-                        ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use>
-                      </svg>
-                      <svg
-                        class="facets__button--expand-subfacet"
-                        ng-if="(f.sublist.length > 0)"
-                        ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#expand"></use>
-                      </svg>
-                  </button>
-                  <ul ng-if="f.sublist.length > 0"
-                      ng-class="{'collapsedSubfacet': isCollapsedSubfacet}"
-                      class="facets__section-list--sub">
-                      <li ng-repeat="subFacet in f.sublist">
-                          <input id="{{ subFacet.id }}-{{ $index }}"
-                                 type="checkbox"
-                                 class="visuallyhidden"
-                                 ng-checked="subFacet.selected"
-                                 ng-model="subFacet.selected"
-                                 ng-change="allFacets.update()" data-info='{"event_name":"search-facet","sub_facet_selected":"{{subFacet.name}}","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
-                          <label ng-if="subFacet.name" for="{{ subFacet.id }}-{{ $index }}">
-                              {{ subFacet.name }}
-                              <span class="facets__label-count">({{subFacet.count}})</span>
-                          </label>
-                      </li>
-                  </ul>
-                </li>
-            </ul>
-        </div>
-        <button
-              class="facets__button facets__button--more"
-              ng-show='(group.facets.length > allFacets.MaxFacetShow) && (!group.ShowMore)'
-              ng-click='group.ShowMore = true'
-              ng-class="{'collapsed': isCollapsed}">See All
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
-          </button>
-          <button
-              class="facets__button facets__button--less"
-              ng-show='group.ShowMore'
-              ng-click='group.ShowMore = false'
-              ng-class="{'collapsed': isCollapsed}">See Less
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#up-arrow"></use></svg>
-          </button>
-        </fieldset>
-      </form>
-
- </div> <!-- / .facets__content -->
+        </form>
+    </div> <!-- / .facets__content -->
 </div> <!-- / .search__facets -->
 
 <button
   class="facets__mobile-button facets__mobile-button--bottom"
-  ng-model="collapsefilters"
-  ng-click="collapsefilters = !collapsefilters"
-  ng-class="{'isExpanded': collapsefilters}">
+  ng-model="facetsAreCollapsed"
+  ng-click="facetsAreCollapsed = !facetsAreCollapsed"
+  ng-class="{'is-expanded': facetsAreCollapsed}">
   <h6 class="hide-filters">Hide Filters</h6>
 </button>
