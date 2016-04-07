@@ -58,9 +58,18 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             uxCreateArticle.Visible = true;
             uxSaveMetadata.Visible = false;
             uxSaveArticle.Visible = false;
-            DisablePreview();
             articleDetailsPageSelector.PreLinkEnable();
             articleDetailsPageSelector.pageWorkflowControl.PreLinkEnable();
+            if (workflowChange_UnlockOnSave)
+            {
+                EnablePreview();
+                uxCreateArticle.Visible = false;
+            }
+            else
+            {
+                DisablePreview();
+            }
+            
             Refresh();
         }
 
@@ -751,6 +760,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             }
             try
             {
+                if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Enabled)
+                    workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
+
                 var articleDate = articleDetailsPageSelector.GetDate();
                 if (articleDate < DateTime.Now)
                 {
@@ -815,6 +827,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             {
                 ResumeLayout();
                 Cursor = Cursors.Default;
+                workflowChange_UnlockOnSave = false;
             }
 
             Document activeDocument = SitecoreAddin.ActiveDocument;
@@ -825,6 +838,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             }
         }
 
+        private bool workflowChange_UnlockOnSave;
         private void uxSaveAndTransfer_Click(object sender, EventArgs e)
         {
             var command = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommandState();
@@ -837,6 +851,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             }
             try
             {
+                if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Enabled)
+                    workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
+
                 var articleDate = articleDetailsPageSelector.GetDate();
                 if (articleDate < DateTime.Now)
                 {
@@ -878,6 +895,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             {
                 ResumeLayout();
                 Cursor = Cursors.Default;
+                workflowChange_UnlockOnSave = false;
             }
             Document activeDocument = SitecoreAddin.ActiveDocument;
             var path = activeDocument.Path;
