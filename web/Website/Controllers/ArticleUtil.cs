@@ -493,15 +493,18 @@ namespace Informa.Web.Controllers
 				{
 					wfCommand.SendsToFinal = nextStateItem.Final;
 					wfCommand.GlobalNotifyList = new List<StaffStruct>();
-					foreach (IStaff_Item staff in nextStateItem.Staffs)
+					foreach (var staff in nextStateItem.Staffs)
 					{
-						if (staff.Inactive)
+						var staffItem = _sitecoreMasterService.GetItem<IStaff_Item>(staff._Id);
+						if (staffItem.Inactive)
 						{
 							continue;
 						}
-						var staffMember = new StaffStruct();
-						staffMember.ID = staff._Id;
-						staffMember.Name = staff.Last_Name + " , " + staff.First_Name;
+						var staffMember = new StaffStruct
+						{
+							ID = staffItem._Id,
+							Name = staffItem.Last_Name + " , " + staffItem.First_Name
+						};
 						//   staffMember.Publications = staff  //TODO :Check if this field if we need this field.
 						wfCommand.GlobalNotifyList.Add(staffMember);
 					}
