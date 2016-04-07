@@ -58,9 +58,18 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             uxCreateArticle.Visible = true;
             uxSaveMetadata.Visible = false;
             uxSaveArticle.Visible = false;
-            DisablePreview();
             articleDetailsPageSelector.PreLinkEnable();
             articleDetailsPageSelector.pageWorkflowControl.PreLinkEnable();
+            if (workflowChange_UnlockOnSave)
+            {
+                EnablePreview();
+                uxCreateArticle.Visible = false;
+            }
+            else
+            {
+                DisablePreview();
+            }
+            
             Refresh();
         }
 
@@ -176,6 +185,11 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     loginControl1.HideLogin();
                     UpdateFieldsUsingSitecore();
                 }
+            }
+            catch (UnauthorizedAccessException uax)
+            {
+                Globals.SitecoreAddin.LogException("ArticleDetail.InitializeLogin: Unauthorized access to API handler. Must re-login", uax);
+                throw uax;
             }
             catch (Exception ex)
             {
@@ -524,19 +538,21 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 return null;
             }
 
-
             SuspendLayout();
 
             ArticleStruct astruct = _sitecoreArticle.SaveStubToSitecore(title, webPublishDate, pubGuid);
 
             if (string.IsNullOrEmpty(astruct.RemoteErrorMessage) == false)
             {
-                Globals.SitecoreAddin.Log("SaveStubToSitecore returned astruct object with error: " + astruct.RemoteErrorMessage);
+                Globals.SitecoreAddin.Log("SaveStubToSitecore returned astruct object with StatusCode/Error: " + astruct.RemoteErrorMessage);
+                articleDetails.RemoteErrorMessage = astruct.RemoteErrorMessage;
             }
-            //articleDetailsPageSelector.UpdateArticleNumber(astruct.ArticleNumber);
-            articleDetails.ArticleNumber = astruct.ArticleNumber;
-            articleDetails.ArticleGuid = astruct.ArticleGuid;
-            SitecoreClient.SaveArticleDetailsByGuid(astruct.ArticleGuid, _structConverter.GetServerStruct(articleDetails));
+            else
+            {
+                articleDetails.ArticleNumber = astruct.ArticleNumber;
+                articleDetails.ArticleGuid = astruct.ArticleGuid;
+                SitecoreClient.SaveArticleDetailsByGuid(astruct.ArticleGuid, _structConverter.GetServerStruct(articleDetails));
+            }
             ResumeLayout();
 
             return articleDetails;
@@ -625,7 +641,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 }
             }
             int maxLengthLongSummary = SitecoreClient.GetMaxLengthLongSummary();
-            if (metadataParser.LongSummary.Length > maxLengthLongSummary)
+            if (metadataParser.ExecutiveSummary.Length > maxLengthLongSummary)
             {
                 if (!AskExceededCharacterLimit("Summary", maxLengthLongSummary))
                 {
@@ -681,7 +697,15 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 {
                     if (string.IsNullOrEmpty(ArticleDetails.ArticleNumber))
                     {
-                        MessageBox.Show(@"The article number generator is busy! Please try again later.", @"Informa");
+                        if (ArticleDetails.RemoteErrorMessage == HttpStatusCode.Unauthorized.ToString())
+                        {
+                            MessageBox.Show(Constants.SESSIONTIMEOUTERRORMESSAGE);
+                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show(@"The article number generator is busy! Please try again later.", @"Informa");
+                        }
                     }
                     else
                     {
@@ -736,6 +760,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             }
             try
             {
+                if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Enabled)
+                    workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
+
                 var articleDate = articleDetailsPageSelector.GetDate();
                 if (articleDate < DateTime.Now)
                 {
@@ -778,6 +805,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
                 articleDetailsPageSelector.UpdateFields();
                 articleDetailsPageSelector.ResetChangedStatus();
+                UpdateFieldsAfterSave();
                 DocumentPropertyEditor.WritePublicationAndDate(SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
 
                 //TamerM - 2016-03-22: Prompt and ReExport  NLM FEED
@@ -799,6 +827,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             {
                 ResumeLayout();
                 Cursor = Cursors.Default;
+                workflowChange_UnlockOnSave = false;
             }
 
             Document activeDocument = SitecoreAddin.ActiveDocument;
@@ -809,6 +838,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             }
         }
 
+        private bool workflowChange_UnlockOnSave;
         private void uxSaveAndTransfer_Click(object sender, EventArgs e)
         {
             var command = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommandState();
@@ -821,6 +851,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             }
             try
             {
+                if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Enabled)
+                    workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
+
                 var articleDate = articleDetailsPageSelector.GetDate();
                 if (articleDate < DateTime.Now)
                 {
@@ -862,6 +895,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             {
                 ResumeLayout();
                 Cursor = Cursors.Default;
+                workflowChange_UnlockOnSave = false;
             }
             Document activeDocument = SitecoreAddin.ActiveDocument;
             var path = activeDocument.Path;

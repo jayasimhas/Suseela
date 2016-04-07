@@ -51,7 +51,7 @@ namespace InformaSitecoreWord.Util.Document
             }
 
             int maxLengthLongSummary = SitecoreClient.GetMaxLengthLongSummary();
-            if (_metadataParser.LongSummary.Length > maxLengthLongSummary)
+            if (_metadataParser.ExecutiveSummary.Length > maxLengthLongSummary)
             {
                 if (AllowTruncatingExceededCharacterLimit("Summary", maxLengthLongSummary) == false)
                 {
