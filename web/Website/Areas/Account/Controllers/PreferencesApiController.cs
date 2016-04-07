@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Web.Http;
-using Informa.Library.Newsletter;
-using Informa.Library.Site.Newsletter;
+﻿using System.Web.Http;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
+using Informa.Library.User.Newsletter;
 using Informa.Web.Areas.Account.Models.User.Management;
 using Informa.Library.Utilities.WebApi.Filters;
 
@@ -12,28 +10,30 @@ namespace Informa.Web.Areas.Account.Controllers
 	public class PreferencesApiController : ApiController
 	{
 		protected readonly IAuthenticatedUserContext UserContext;
-		protected readonly IUpdateNewsletterUserOptIn NewsletterOptIn;
-		protected readonly INewsletterUserOptInFactory NewsletterUserOptInFactory;
 		protected readonly IUpdateOfferUserOptIn OffersOptIn;
+		protected readonly IUpdateSiteNewsletterUserOptIn UpdateSiteNewsletterOptIn;
+		protected readonly IUpdateSiteNewsletterUserOptInContext UpdateSiteNewsletterOptInContext;
+		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
 
 		public PreferencesApiController(
 			IAuthenticatedUserContext userContext,
-			IUpdateNewsletterUserOptIn newsletterOptIn,
-			INewsletterUserOptInFactory newsletterUserOptInFactory,
-			IUpdateOfferUserOptIn offersOptIn)
+			IUpdateOfferUserOptIn offersOptIn,
+			IUpdateSiteNewsletterUserOptIn updateSiteNewsletterOptIn,
+			IUpdateSiteNewsletterUserOptInContext updateSiteNewsletterOptInContext,
+			ISiteNewsletterUserOptedInContext newsletterOptedInContext)
 		{
 			UserContext = userContext;
-			NewsletterOptIn = newsletterOptIn;
-			NewsletterUserOptInFactory = newsletterUserOptInFactory;
 			OffersOptIn = offersOptIn;
+			UpdateSiteNewsletterOptIn = updateSiteNewsletterOptIn;
+			UpdateSiteNewsletterOptInContext = updateSiteNewsletterOptInContext;
+			NewsletterOptedInContext = newsletterOptedInContext;
 		}
 
 		[HttpPost]
         [ArgumentsRequired]
         public IHttpActionResult Update(PreferencesRequest request)
 		{
-			var userNewsletterOptIns = new List<INewsletterUserOptIn>() { NewsletterUserOptInFactory.Create(NewsletterType.Scrip, request.NewsletterOptIn) };
-			var nResp = NewsletterOptIn.Update(userNewsletterOptIns, UserContext.User.Username);
+			var nResp = UpdateSiteNewsletterOptInContext.Update(request.NewsletterOptIn);
 			var oResp = OffersOptIn.Update(UserContext.User?.Username, !request.DoNotSendOffersOptIn);
 
 			var success = nResp && oResp;
@@ -44,24 +44,18 @@ namespace Informa.Web.Areas.Account.Controllers
 			});
 		}
 
-
 		[HttpGet]
 		public bool SignupUser(string userName)
 		{
-			var userNewsletterOptIns = new List<INewsletterUserOptIn>() { NewsletterUserOptInFactory.Create(NewsletterType.Scrip,true) };
-			var nResp = NewsletterOptIn.Update(userNewsletterOptIns, userName);
+			var nResp = UpdateSiteNewsletterOptIn.Update(userName, true);
+
 			return nResp;
 		}
 
 		[HttpGet]
 		public bool IsUserSignedUp()
 		{
-			var user = UserContext.User;
-			if (UserContext.IsAuthenticated)
-			{
-				return NewsletterOptIn.IsUserSignedUp(UserContext.User.Username);
-			}
-			return false;
+			return NewsletterOptedInContext.OptedIn;
 		}
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using Informa.Library.Newsletter;
 using Jabberwocky.Glass.Autofac.Attributes;
 
-namespace Informa.Library.User.Profile
+namespace Informa.Library.User.Newsletter
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class NewsletterUserOptInFactory : INewsletterUserOptInFactory

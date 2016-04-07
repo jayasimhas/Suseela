@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace Informa.Library.User.Profile
+namespace Informa.Library.User.Newsletter
 {
-	public interface IUpdateNewsletterUserOptIn
+	public interface IUpdateNewsletterUserOptIns
 	{
 		bool Update(IEnumerable<INewsletterUserOptIn> newsletterOptIns, string userName);
-		bool IsUserSignedUp(string userName);
 	}
 }

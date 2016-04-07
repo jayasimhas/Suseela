@@ -102,7 +102,7 @@ namespace InformaSitecoreWord.UI
                             myAction();
 
                             IsLoggedIn();
-                        }                        
+                        }
                     };
                 login.ShowDialog();
             }
@@ -167,6 +167,11 @@ namespace InformaSitecoreWord.UI
             try
             {
                 ArticleDetail.Open();
+            }
+            catch (UnauthorizedAccessException uax)
+            {
+                Globals.SitecoreAddin.LogException("ESRibbon.OpenArticleInformation: Error loading the article information window! Unauthorized access to API handler. Asking user to login again", uax);
+                MessageBox.Show(Constants.SESSIONTIMEOUTERRORMESSAGE);
             }
             catch (Exception ex)
             {

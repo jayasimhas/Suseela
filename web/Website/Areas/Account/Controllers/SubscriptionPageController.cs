@@ -3,15 +3,12 @@ using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Web.Areas.Account.ViewModels.Subscription;
 using Sitecore.Data.Items;
-using Sitecore.Links;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Informa.Library.Newsletter;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
+using Informa.Library.User.Newsletter;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 using Informa.Web.ViewModels;
 
@@ -25,33 +22,36 @@ namespace Informa.Web.Areas.Account.Controllers
         private readonly ISitecoreContext SitecoreContext;
         public readonly IAuthenticatedUserContext UserContext;
         public readonly ISignInViewModel SignInViewModel;
-        protected readonly IUpdateNewsletterUserOptIn NewsletterOptIn;
-        protected readonly INewsletterUserOptInFactory NewsletterUserOptInFactory;
         protected readonly IUpdateOfferUserOptIn OffersOptIn;
+		protected readonly ISiteNewsletterTypeContext NewsletterTypeContext;
+		protected readonly IUpdateSiteNewsletterUserOptInContext UpdateNewsletterOptInContext;
+		protected readonly IUpdateSiteNewsletterUserOptIn UpdateNewsletterOptIn;
 
-        public SubscriptionPageController(
+		public SubscriptionPageController(
             Func<string, ISitecoreService> sitecoreFactory, 
             IItemReferences itemReferences,
             ISitecoreContext sitecoreContext,
             IAuthenticatedUserContext userContext,
             ISignInViewModel signInViewModel,
-            IUpdateNewsletterUserOptIn newsletterOptIn,
-            INewsletterUserOptInFactory newsletterUserOptInFactory,
-            IUpdateOfferUserOptIn offersOptIn)
+            IUpdateOfferUserOptIn offersOptIn,
+			ISiteNewsletterTypeContext newsletterTypeContext,
+			IUpdateSiteNewsletterUserOptInContext updateNewsletterOptInContext,
+			IUpdateSiteNewsletterUserOptIn updateNewsletterOptIn)
 		{
             _sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			_itemReferences = itemReferences;
 		    SitecoreContext = sitecoreContext;
             UserContext = userContext;
             SignInViewModel = signInViewModel;
-            NewsletterOptIn = newsletterOptIn;
-            NewsletterUserOptInFactory = newsletterUserOptInFactory;
             OffersOptIn = offersOptIn;
+			NewsletterTypeContext = newsletterTypeContext;
+			UpdateNewsletterOptInContext = updateNewsletterOptInContext;
+			UpdateNewsletterOptIn = updateNewsletterOptIn;
 		}
 		public ActionResult Index(string pub)
         {
 			//TODO: Add logic to subscribe the user using salesforce and also check for logged in user functionality
-			if (!string.IsNullOrEmpty(pub) && pub.ToLower().Equals("scrip"))
+			if (!string.IsNullOrEmpty(pub) && pub.ToLower() == NewsletterTypeContext.Type.ToString().ToLower())
 			{
 				SubscriptionModel subscriptionModel = new SubscriptionModel();
 				var item = _sitecoreMasterService.GetItem<I___BasePage>(_itemReferences.SubscriptionPage);
@@ -82,15 +82,13 @@ namespace Informa.Web.Areas.Account.Controllers
                     return View(OneClickView, s);
             }
 
-            //process subscribe
+			//process subscribe
+			var newsletterType = NewsletterTypeContext.Type;
+
             if (!string.IsNullOrEmpty(Pub) 
-                && (Pub.ToLower() == NewsletterType.Scrip.ToDescriptionString().ToLower() || Pub.ToLower() == NewsletterType.Scrip.ToString().ToLower()))
+                && (Pub.ToLower() == newsletterType.ToDescriptionString().ToLower() || Pub.ToLower() == newsletterType.ToString().ToLower()))
             {
-                var userNewsletterOptIns = new List<INewsletterUserOptIn>()
-                {
-                    NewsletterUserOptInFactory.Create(NewsletterType.Scrip, true)
-                };
-                NewsletterOptIn.Update(userNewsletterOptIns, UserContext.User.Username);
+				UpdateNewsletterOptInContext.Update(true);
             }
             
             return View(OneClickView, s);
@@ -98,9 +96,6 @@ namespace Informa.Web.Areas.Account.Controllers
 
         public ActionResult Unsubscribe(string User, string Type, string Pub)
         {
-            if (UserContext.IsAuthenticated && !string.IsNullOrEmpty(UserContext?.User?.Username))
-                User = UserContext.User.Username;
-
             string OneClickView = "~/Areas/Account/Views/Management/OneClickUnsubscribe.cshtml";
             var page = SitecoreContext.GetCurrentItem<IUnsubscribe_Page>();
 
@@ -108,18 +103,34 @@ namespace Informa.Web.Areas.Account.Controllers
             s.BodyText = page.Body;
             s.SignInViewModel = SignInViewModel;
 
-            //process unsubscribe
-            if (string.IsNullOrEmpty(Type))
-                return View(OneClickView, s);
+			if (string.IsNullOrEmpty(Type))
+			{
+				return View(OneClickView, s);
+			}
 
-            if(Type.ToLower() == "newsletter" && !string.IsNullOrEmpty(Pub) && (Pub.ToLower() == NewsletterType.Scrip.ToDescriptionString().ToLower() || Pub.ToLower() == NewsletterType.Scrip.ToString().ToLower())) {
-                var userNewsletterOptIns = new List<INewsletterUserOptIn>() {
-                    NewsletterUserOptInFactory.Create(NewsletterType.Scrip, false)
-                };
-                NewsletterOptIn.Update(userNewsletterOptIns, User);
+			//process unsubscribe
+			var newsletterType = NewsletterTypeContext.Type;
+
+			if (Type.ToLower() == "newsletter" && !string.IsNullOrEmpty(Pub) && (Pub.ToLower() == newsletterType.ToDescriptionString().ToLower() || Pub.ToLower() == newsletterType.ToString().ToLower())) {
+				if (UserContext.IsAuthenticated)
+				{
+					UpdateNewsletterOptInContext.Update(false);
+				}
+				else if (!string.IsNullOrWhiteSpace(User))
+				{
+					UpdateNewsletterOptIn.Update(User, false);
+				}
             }
-            else if (Type.ToLower() == "promotions") { 
-                OffersOptIn.Update(User, false);
+            else if (Type.ToLower() == "promotions") {
+				if (UserContext.IsAuthenticated)
+				{
+					User = UserContext.User.Username;
+				}
+
+				if (!string.IsNullOrWhiteSpace(User))
+				{
+					OffersOptIn.Update(User, false);
+				}
             }
 
             return View(OneClickView, s);
