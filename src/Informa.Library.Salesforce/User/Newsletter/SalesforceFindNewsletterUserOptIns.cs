@@ -7,7 +7,7 @@ using System;
 
 namespace Informa.Library.Salesforce.User.Newsletter
 {
-    public class SalesforceFindNewsletterUserOptIns : IFindNewsletterUserOptIn
+    public class SalesforceFindNewsletterUserOptIns : IFindNewsletterUserOptIns
     {
 		protected readonly INewsletterUserOptInFactory OptInFactory;
 		protected readonly ISalesforceServiceContext Service;

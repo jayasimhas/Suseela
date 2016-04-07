@@ -12,12 +12,12 @@ namespace Informa.Library.User.Newsletter
 
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IAuthenticatedUserSession UserSession;
-		protected readonly IFindNewsletterUserOptIn NewsletterOptIn;
+		protected readonly IFindNewsletterUserOptIns NewsletterOptIn;
 
 		public NewsletterUserOptInsContext(
 			IAuthenticatedUserContext userContext,
 			IAuthenticatedUserSession userSession,
-			IFindNewsletterUserOptIn newsletterOptIn)
+			IFindNewsletterUserOptIns newsletterOptIn)
 		{
 			NewsletterOptIn = newsletterOptIn;
 			UserSession = userSession;

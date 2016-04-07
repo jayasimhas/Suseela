@@ -778,7 +778,7 @@
     <Compile Include="User\Profile\ISubscription.cs" />
     <Compile Include="User\Profile\ISubscriptionsReadResult.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInFactory.cs" />
-    <Compile Include="User\Newsletter\IFindNewsletterUserOptIn.cs" />
+    <Compile Include="User\Newsletter\IFindNewsletterUserOptIns.cs" />
     <Compile Include="User\Offer\IOfferUserOptedIn.cs" />
     <Compile Include="User\Profile\IManageSavedDocuments.cs" />
     <Compile Include="User\Profile\ISavedDocumentReadResult.cs" />
