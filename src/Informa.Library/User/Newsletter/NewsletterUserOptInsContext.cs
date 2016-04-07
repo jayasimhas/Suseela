@@ -12,12 +12,12 @@ namespace Informa.Library.User.Newsletter
 
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IAuthenticatedUserSession UserSession;
-		protected readonly IFindNewsletterUserOptIn NewsletterOptIn;
+		protected readonly IFindNewsletterUserOptIns NewsletterOptIn;
 
 		public NewsletterUserOptInsContext(
 			IAuthenticatedUserContext userContext,
 			IAuthenticatedUserSession userSession,
-			IFindNewsletterUserOptIn newsletterOptIn)
+			IFindNewsletterUserOptIns newsletterOptIn)
 		{
 			NewsletterOptIn = newsletterOptIn;
 			UserSession = userSession;
@@ -28,6 +28,11 @@ namespace Informa.Library.User.Newsletter
 		{
 			get
 			{
+				if (!UserContext.IsAuthenticated)
+				{
+					return Enumerable.Empty<INewsletterUserOptIn>();
+				}
+
 				var optInsSession = UserSession.Get<IEnumerable<INewsletterUserOptIn>>(sessionKey);
 
 				if (optInsSession.HasValue)

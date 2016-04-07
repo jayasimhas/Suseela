@@ -2,7 +2,7 @@
 
 namespace Informa.Library.User.Newsletter
 {
-    public interface IFindNewsletterUserOptIn
+    public interface IFindNewsletterUserOptIns
     {
         IEnumerable<INewsletterUserOptIn> Find(string username);
     }
