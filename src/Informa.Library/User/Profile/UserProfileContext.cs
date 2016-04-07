@@ -26,16 +26,16 @@ namespace Informa.Library.User.Profile
 		{
 			get
 			{
+				if (!UserContext.IsAuthenticated)
+				{
+					return null;
+				}
+
 				var profileSession = UserSession.Get<IUserProfile>(sessionKey);
 
 				if (profileSession.HasValue)
 				{
 					return profileSession.Value;
-				}
-
-				if (!UserContext.IsAuthenticated)
-				{
-					return null;
 				}
 
 				var profile = FindUserProfile.Find(UserContext.User?.Username ?? string.Empty);
@@ -49,5 +49,10 @@ namespace Informa.Library.User.Profile
 				UserSession.Set(sessionKey, value);
 			}
 		}
+
+	    public void Clear()
+	    {
+	        UserSession.Clear(sessionKey);
+	    }
 	}
 }

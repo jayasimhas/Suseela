@@ -5,7 +5,6 @@ using System.Web.UI.WebControls;
 using Glass.Mapper.Sc;
 using Informa.Library.Company;
 using Informa.Library.Globalization;
-using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
 using Informa.Library.Utilities.References;
@@ -24,7 +23,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public readonly IManageAccountInfo AccountInfo;
         public readonly ISignInViewModel SignInViewModel;
         public readonly IUserCompanyContext UserCompanyContext;
-        public readonly ISalesforceFindUserProfile FindUserProfile;
+        public readonly IUserProfileContext ProfileContext;
         private readonly IItemReferences ItemReferences;
         public readonly ISitecoreContext SitecoreContext;
 
@@ -34,7 +33,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             IManageAccountInfo accountInfo,
             ISignInViewModel signInViewModel,
 			IUserCompanyContext userCompanyContext,
-            ISalesforceFindUserProfile findUserProfile,
+            IUserProfileContext profileContext,
             IItemReferences itemReferences,
             ISitecoreContext sitecoreContext)
         {
@@ -43,8 +42,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             AccountInfo = accountInfo;
             SignInViewModel = signInViewModel;
             UserCompanyContext = userCompanyContext;
-            FindUserProfile = findUserProfile;
-            SfUserProfile = FindUserProfile.Find(UserContext.User.Username);
+            ProfileContext = profileContext;
             ItemReferences = itemReferences;
             SitecoreContext = sitecoreContext;
         }
@@ -52,7 +50,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public bool IsAuthenticated => UserContext.IsAuthenticated;
         public string Title => GlassModel?.Title;
         public string GeneralErrorText => TextTranslator.Translate("ContactInfo.GeneralError");
-        public ISalesforceUserProfile SfUserProfile;
 
         #region Password
 

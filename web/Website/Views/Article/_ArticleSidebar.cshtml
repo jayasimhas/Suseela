@@ -4,7 +4,7 @@
 <aside class="article-sidebar">
 	<h3>@HttpUtility.HtmlDecode(Model.ListableTitle)</h3>
 	@if(Model.ListableAuthors.Any()){
-	<span class="article-sidebar__byline">By @string.Join(", ", Model.ListableAuthors.Select(x => x.LinkableText))</span>
+	<span class="article-sidebar__byline">@Model.By @string.Join(", ", Model.ListableAuthors.Select(x => x.LinkableText))</span>
 	}
 	<time class="article-sidebar__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
 

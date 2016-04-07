@@ -3,5 +3,6 @@
 	public interface IUserProfileContext
 	{
 		IUserProfile Profile { get; set; }
+	    void Clear();
 	}
 }

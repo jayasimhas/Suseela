@@ -40,7 +40,7 @@ namespace Informa.Web.ViewModels
             var feedGenerator = GetFeedGenerator(rssFeedItem);
             if (feedGenerator == null)
             {
-                Log.Error("Could Note Create RSS Feed Geneartor " + rssFeedItem.Rss_Feed_Generation, this);
+                Log.Error("Could Not Create RSS Feed Geneartor " + rssFeedItem.Rss_Feed_Generation, this);
                 return string.Empty;
             }
 
@@ -48,7 +48,7 @@ namespace Informa.Web.ViewModels
 
             if (feed == null)
             {
-                Log.Error("Could Note Create RSS Feed With " + rssFeedItem.Rss_Feed_Generation, this);
+                Log.Error("Could Not Create RSS Feed With " + rssFeedItem.Rss_Feed_Generation, this);
                 return string.Empty;
             }
 
@@ -58,14 +58,14 @@ namespace Informa.Web.ViewModels
             var itemRetriever = GetItemRetriever(rssFeedItem);
             if (itemRetriever == null)
             {
-                Log.Error("Could Note Create Item Retriever With " + rssFeedItem.Sitecore_Item_Retrieval, this);
+                Log.Error("Could Not Create Item Retriever With " + rssFeedItem.Sitecore_Item_Retrieval, this);
                 return string.Empty;
             }
 
             var rssItemGenerator = GetItemGenerator(rssFeedItem);
             if (rssItemGenerator == null)
             {
-                Log.Error("Could Note Create Item Generator With " + rssFeedItem.Rss_Item_Generation, this);
+                Log.Error("Could Not Create Item Generator With " + rssFeedItem.Rss_Item_Generation, this);
                 return string.Empty;
             }
 

@@ -20,16 +20,22 @@ namespace Informa.Library.Rss.ItemGenerators
         public SyndicationItem GetSyndicationItemFromSitecore(ISitecoreContext sitecoreContext, Item item)
         {
             var article = sitecoreContext.GetItem<IArticle>(item.ID.ToString());
-
-            if (article == null)
+			string publicationName = "None";
+			if (article == null)
             {
                 return null;
             }
 
-            //Build the basic syndicaton item
-            var syndicationItem = new SyndicationItem(GetItemTitle(article),
+			if (article.Publication != null)
+			{
+				var publication = sitecoreContext.GetItem<Item>(article.Publication);
+			    publicationName = publication?.Name;
+			}
+			var articleUrl = string.Format("{0}?utm_source={1}&utm_medium=RSS&utm_campaign={2}_RSS_Feed", article._AbsoluteUrl, publicationName, publicationName);
+			//Build the basic syndicaton item
+			var syndicationItem = new SyndicationItem(GetItemTitle(article),
                 GetItemSummary(article),
-                new Uri(article._AbsoluteUrl),
+                new Uri(articleUrl),
                 article._AbsoluteUrl,
                 article.Actual_Publish_Date);
 
@@ -40,10 +46,7 @@ namespace Informa.Library.Rss.ItemGenerators
             return syndicationItem;
         }
 
-        private string GetItemSummary(IArticle article)
-        {
-            return SearchSummaryUtil.EscapeXMLValue(DCDTokenMatchers.ProcessDCDTokens(article.Summary));
-        }
+      
 
 
         private SyndicationItem AddImageToFeedItem(SyndicationItem syndicationItem, IArticle article,string siteLink)
