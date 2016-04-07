@@ -332,7 +332,7 @@
                                 <label for="BillCountry" class="page-account__text-label">
                                     @Model.BillCountryLabelText <span class="asterisk-required"></span>
                                 </label>
-                                <select name="BillCountry">
+                                <select name="BillCountry" id="ddlBillingCountry">
                                     @foreach (var o in Model.Countries)
                                     {
                                         <option @(@Model.ProfileContext.Profile.BillCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
@@ -347,7 +347,7 @@
                                 <input type="text"
                                        name="BillAddress1"
                                        value="@Model.ProfileContext.Profile.BillAddress1"
-                                       placeholder="@Model.BillAddress1PlaceholderText">
+                                       placeholder="@Model.BillAddress1PlaceholderText" id="txtBillingAddress1">
                             </p>
 
                             <p>
@@ -357,7 +357,7 @@
                                 <input type="text"
                                        name="BillAddress2"
                                        value="@Model.ProfileContext.Profile.BillAddress2"
-                                       placeholder="@Model.BillAddress2PlaceholderText">
+                                       placeholder="@Model.BillAddress2PlaceholderText" id="txtBillingAddress2">
                             </p>
 
                             <p>
@@ -367,7 +367,7 @@
                                 <input type="text"
                                        name="BillCity"
                                        value="@Model.ProfileContext.Profile.BillCity"
-                                       placeholder="@Model.BillCityPlaceholderText">
+                                       placeholder="@Model.BillCityPlaceholderText" id="txtBillingCity">
                             </p>
 
                             <p>
@@ -377,7 +377,7 @@
                                 <input type="text"
                                        name="BillState"
                                        value="@Model.ProfileContext.Profile.BillState"
-                                       placeholder="@Model.BillStatePlaceholderText">
+                                       placeholder="@Model.BillStatePlaceholderText" id="txtBillingState">
                             </p>
 
                             <p>
@@ -387,7 +387,7 @@
                                 <input type="text"
                                        name="BillPostalCode"
                                        value="@Model.ProfileContext.Profile.BillPostalCode"
-                                       placeholder="@Model.BillPostalCodePlaceholderText">
+                                       placeholder="@Model.BillPostalCodePlaceholderText" id="txtBillingPostalCode">
                             </p>
 
                         </div>
@@ -399,7 +399,7 @@
                             <p>
                                 <input name="SameAsBilling"
                                        type="checkbox"
-                                       data-checkbox-type="boolean">
+                                       data-checkbox-type="boolean"l id="chkASBilling">
                                 <label for="SameAsBilling" class="checkbox-label">@Model.SameAsBillingLabel</label>
                             </p>
 
@@ -407,7 +407,7 @@
                                 <label for="ShipCountry" class="page-account__text-label">
                                     @Model.ShipCountryLabelText <span class="asterisk-required"></span>
                                 </label>
-                                <select name="ShipCountry">
+                                <select name="ShipCountry" id="ddlShippingCountry">
                                     @foreach (var o in Model.Countries)
                                     {
                                         <option @(@Model.ProfileContext.Profile.ShipCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
@@ -422,7 +422,7 @@
                                 <input type="text"
                                        name="ShipAddress1"
                                        value="@Model.ProfileContext.Profile.ShipAddress1"
-                                       placeholder="@Model.ShipAddress1PlaceholderText">
+                                       placeholder="@Model.ShipAddress1PlaceholderText" id="txtShippingAddress1">
                             </p>
 
                             <p>
@@ -432,7 +432,7 @@
                                 <input type="text"
                                        name="ShipAddress2"
                                        value="@Model.ProfileContext.Profile.ShipAddress2"
-                                       placeholder="@Model.ShipAddress2PlaceholderText">
+                                       placeholder="@Model.ShipAddress2PlaceholderText" id="txtShippingAddress2">
                             </p>
 
                             <p>
@@ -442,7 +442,7 @@
                                 <input type="text"
                                        name="ShipCity"
                                        value="@Model.ProfileContext.Profile.ShipCity"
-                                       placeholder="@Model.ShipCityPlaceholderText">
+                                       placeholder="@Model.ShipCityPlaceholderText" id="txtShippingCity">
                             </p>
 
                             <p>
@@ -452,7 +452,7 @@
                                 <input type="text"
                                        name="ShipState"
                                        value="@Model.ProfileContext.Profile.ShipState"
-                                       placeholder="@Model.ShipStatePlaceholderText">
+                                       placeholder="@Model.ShipStatePlaceholderText" id="txtShippingState">
                             </p>
 
                             <p>
@@ -462,7 +462,7 @@
                                 <input type="text"
                                        name="ShipPostalCode"
                                        value="@Model.ProfileContext.Profile.ShipPostalCode"
-                                       placeholder="@Model.ShipPostalCodePlaceholderText">
+                                       placeholder="@Model.ShipPostalCodePlaceholderText" id="txtShippingPostalCode">
                             </p>
 
                         </div>

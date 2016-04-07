@@ -14,7 +14,7 @@ namespace InformaSitecoreWord.Util
                 if (isArticlePublished)//Check if article is already published
                 {
                     //If yes, ask author whether to reExport NLM feed which should have already been exported
-                    if (MessageBox.Show("Would you like to re-export the NLM feed?", "Export NLM?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    if (MessageBox.Show("This story has already been published via XML feed. Do you want this story to be re-published to feed customers?", "Export NLM?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                     {
                         //Call Web API to do the reExporting via the article Number
                         string result = SitecoreClient.ReExportArticleNlm(articleNumber);

@@ -127,7 +127,8 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
 					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
 					["#sender_name#"] = senderName,
-					["#sender_email#"] = senderEmail,
+                    ["#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:",
+                    ["#sender_email#"] = senderEmail,
 					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
 						? UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
 						: string.Empty,
@@ -146,11 +147,6 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#Footer_Content#"] = GetValue(footerContent?.Email_A_Friend_Footer_Content)
 						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail)
 				};
-
-				if (!string.IsNullOrEmpty(GetValue(footerContent?.Email_A_Friend_Footer_Content)))
-				{
-					replacements["#sender_name_message#"] = senderName + " Message:";
-				}
 
 				// Article Body
 				var article = _articleUtil.GetArticleByNumber(articleNumber);
@@ -270,7 +266,8 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink(),
 					["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink(),
 					["#sender_name#"] = senderName,
-					["#sender_email#"] = senderEmail,
+                    ["#sender_name_message#"] = $"{senderName} {TextTranslator.Translate("Search.Message")}:",
+                    ["#sender_email#"] = senderEmail,
 					["#query_url#"] = queryUrl,
 					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
 						? UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
@@ -290,14 +287,10 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#Footer_Content#"] = GetValue(footerContent?.Email_A_Friend_Footer_Content)
 						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail),
 					["#notice_message#"] = TextTranslator.Translate("Search.EmailPopout.Notice"),
-					["#search_query#"] = queryTerm
-				};
-
-				if (!string.IsNullOrEmpty(GetValue(footerContent?.Email_A_Friend_Footer_Content)))
-				{
-					replacements["#sender_name_message#"] = senderName + " Message:";
-				}
-
+                    ["#search_query#"] = queryTerm,
+                    ["#see_more#"] = TextTranslator.Translate("Search.SeeMore")
+                };
+                
 				//search results
 				StringBuilder resultBody = new StringBuilder();
 				int j = 0;
