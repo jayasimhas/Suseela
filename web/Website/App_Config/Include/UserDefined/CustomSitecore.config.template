@@ -222,6 +222,11 @@ But you can also use "patch:attribute" for clarity:
       <setting name="DCD.OldDealsURL" value="https://www.pharmamedtechbi.com/d/{0}" />
       
       <setting name="NLM.ExportPath" value="${NLM.ExportPath}" />
+
+      <setting name="Taxonomy.SubjectPath" value="/sitecore/content/environment globals/taxonomy/subjects"></setting>
+      <setting name="Taxonomy.RegionPath" value="/sitecore/content/environment globals/taxonomy/regions"></setting>
+      <setting name="Taxonomy.AreaPath" value="/sitecore/content/environment globals/taxonomy/therapy areas"></setting>
+      
     </settings>
   </sitecore>
 </configuration>

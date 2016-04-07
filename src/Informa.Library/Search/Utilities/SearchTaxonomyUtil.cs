@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Sitecore.Configuration;
 
 namespace Informa.Library.Search.Utilities
 {
@@ -37,23 +38,21 @@ namespace Informa.Library.Search.Utilities
 
             return url.ToString();
         }
-
-        //TODO take out paths here
-
+                
         public static bool IsSubjectTaxonomy(string itemPath)
         {
             return itemPath.ToLower()
-                .StartsWith("/sitecore/content/scripintelligence/globals/taxonomy/subjects");
+                .StartsWith(Settings.GetSetting("Taxonomy.SubjectPath"));
         }
         public static bool IsRegionTaxonomy(string itemPath)
         {
             return itemPath.ToLower()
-                .StartsWith("/sitecore/content/scripintelligence/globals/taxonomy/regions");
+                .StartsWith(Settings.GetSetting("Taxonomy.RegionPath"));
         }
         public static bool IsAreaTaxonomy(string itemPath)
         {
             return itemPath.ToLower()
-                .StartsWith("/sitecore/content/scripintelligence/globals/taxonomy/therapy areas");
+                .StartsWith(Settings.GetSetting("Taxonomy.AreaPath"));
         }
     }
 }

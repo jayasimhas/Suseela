@@ -62,7 +62,7 @@ namespace Informa.Web.Areas.Account.Controllers
 			newUser.Username = request.Username;
 
 			var success = RegisterUser.Register(newUser);
-            
+
 			return Ok(new
 			{
 				success = success
