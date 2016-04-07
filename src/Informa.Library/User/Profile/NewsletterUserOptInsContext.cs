@@ -20,6 +20,7 @@ namespace Informa.Library.User.Profile
 			IFindNewsletterUserOptIn newsletterOptIn)
 		{
 			NewsletterOptIn = newsletterOptIn;
+			UserSession = userSession;
 			UserContext = userContext;
 		}
 

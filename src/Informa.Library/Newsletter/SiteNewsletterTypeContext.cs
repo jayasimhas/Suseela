@@ -2,9 +2,9 @@
 
 namespace Informa.Library.Newsletter
 {
+	[AutowireService(LifetimeScope.Default)]
 	public class SiteNewsletterTypeContext : ISiteNewsletterTypeContext
 	{
-		[AutowireService(LifetimeScope.Default)]
 		public SiteNewsletterTypeContext(
 			)
 		{

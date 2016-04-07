@@ -15,7 +15,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         protected readonly ITextTranslator TextTranslator;
         protected readonly IQueryOfferUserOptIn OffersOptIn;
         protected readonly IAuthenticatedUserContext UserContext;
-        protected readonly ISignInViewModel SignInViewModel;
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
 
 		public EmailPreferencesViewModel(
@@ -35,7 +34,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             DoNotSendOfferEmails = (userOffersOptInStatus.Success) && userOffersOptInStatus.DoNotSendOffers;
         }
 
-        public bool IsAuthenticated => UserContext.IsAuthenticated;
+		public readonly ISignInViewModel SignInViewModel;
+		public bool IsAuthenticated => UserContext.IsAuthenticated;
 		public bool ReceivesNewsletterEmails => NewsletterOptedInContext.OptedIn;
         public bool DoNotSendOfferEmails { get; set; }
         public string Title => GlassModel?.Title;
