@@ -520,6 +520,9 @@ namespace InformaSitecoreWord.Sitecore
             using (var client = new HttpClient(_handler, false))
             {
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleExist", articleNumber).Result;
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                    throw new UnauthorizedAccessException(response.StatusCode.ToString() + ": Connection Timeout");
+
                 var flag = JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
                 return flag;
             }
