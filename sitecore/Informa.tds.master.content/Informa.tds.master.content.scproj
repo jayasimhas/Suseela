@@ -6175,22 +6175,6 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Media Types.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Media Types\Audio.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Media Types\Data.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Media Types\Video.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>

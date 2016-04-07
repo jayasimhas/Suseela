@@ -4740,7 +4740,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: ee6bf39b-3d0b-46fd-890a-5de92f1f67fd</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: IStaff_Item</para>
 					/// </summary>
 					[SitecoreField(IStateConstants.StaffsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Staffs  {get; set;}
@@ -4788,7 +4788,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: ee6bf39b-3d0b-46fd-890a-5de92f1f67fd</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: IStaff_Item</para>
 						/// </summary>
 						[SitecoreField(IStateConstants.StaffsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Staffs  {get; set;}
