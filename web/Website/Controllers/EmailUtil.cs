@@ -12,6 +12,7 @@ using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Jabberwocky.Glass.Models;
 using PluginModels;
 using Sitecore;
 using Sitecore.Configuration;
@@ -56,28 +57,34 @@ namespace Informa.Web.Controllers
 			var notificationList = articleStruct.ArticleSpecificNotifications;
 
 			//IIPP-1092
-			var workflowItem = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(
-					Constants.ScripWorkflow);
-			if (workflowItem != null)
+			try
 			{
-				var workflowBasednotificationList = workflowItem.Notified_After_Publishes;
-				if (workflowBasednotificationList.Any())
+				var workflowItem =
+					_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IState>(
+						articleStruct.CommandID.ToString());
+				if (workflowItem != null)
 				{
-					foreach (var eachUser in workflowBasednotificationList)
+					var workflowBasednotificationList = workflowItem.Staffs;
+					var basednotificationList = workflowBasednotificationList as IGlassBase[] ??
+												workflowBasednotificationList.ToArray();
+					if (basednotificationList.Any())
 					{
-						try
+						foreach (var eachUser in basednotificationList)
 						{
-							var toSender = new StaffStruct {ID = eachUser._Id};
-							notificationList.Add(toSender);
-						}
-						catch (Exception ex)
-						{
-							//TODO - Add logging
+							try
+							{
+								var toSender = new StaffStruct { ID = eachUser._Id };
+								notificationList.Add(toSender);
+							}
+							catch (Exception ex)
+							{
+								//TODO - Add logging
+							}
 						}
 					}
 				}
 			}
-			else
+			catch (Exception ex)
 			{
 				//TODO Logging - Failed to find the workflow item.
 			}
