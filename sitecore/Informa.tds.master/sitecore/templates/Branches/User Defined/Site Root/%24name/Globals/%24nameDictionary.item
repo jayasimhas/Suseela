@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {B84718DE-FEE6-46A2-9BF6-80F2AB3D4684}
+database: master
+path: /sitecore/templates/Branches/User Defined/Site Root/$name/Globals/$nameDictionary
+parent: {51338B6C-F638-4A8E-AB6B-AFAACBD332DD}
+name: $nameDictionary
+master: {9F20A3A9-0713-4CF7-AAFA-92A81DEB6950}
+template: {0A2847E6-9885-450B-B61E-F9E6528480EF}
+templatekey: Dictionary Domain
+
+----field----
+field: {CD72E892-D8BB-487C-9EB1-6A57C48C72CC}
+name: Fallback Domain
+key: fallback domain
+content-length: 38
+
+{97286D9D-452D-48E6-AD4E-682D52869459}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 20
+
+apps/32x32/books.png
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 77
+
+{4314E7F7-4F9F-4E16-A43A-8C0BF2A03A2F}|{21E73669-E1E7-4DB1-8B6D-A6366366CC29}
+----version----
+language: en
+version: 1
+revision: 3fdf81c6-afe6-46e5-bab6-698e29dfaea8
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160406T171658Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3fdf81c6-afe6-46e5-bab6-698e29dfaea8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160406T174313Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
