@@ -2,6 +2,7 @@
 using AutoMapper;
 using Informa.Library.Services.NlmExport.Models.Front.Article;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using System.Web;
 
 namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
 {
@@ -20,7 +21,7 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
                 new NlmArticleAbstractModel
                 {
                     AbstractType = "short",
-                    Paragraph = htmlDoc.DocumentNode.InnerText
+                    Paragraph = HttpUtility.HtmlDecode(htmlDoc.DocumentNode.InnerText)
                 }
             };
         }
