@@ -94,15 +94,15 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 				metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument,
 					_parent.GetWordUtils().CharacterStyleTransformer);
 			}
-			string longSummary = metadataParser.LongSummary;
-			string shortSummary = metadataParser.ShortSummary;
+			string ExecutiveSummary = metadataParser.ExecutiveSummary;
+
 			var articleDetails = new ArticleStruct();
 			try
 			{
 				articleDetails.ArticleNumber = pageArticleInformationControl.GetArticleNumber();
 				articleDetails.WebPublicationDate = pageArticleInformationControl.GetWebPublishDate();
 				articleDetails.Title = metadataParser.Title.Trim();
-				articleDetails.Summary = longSummary;
+				articleDetails.Summary = ExecutiveSummary;
 				articleDetails.Subtitle = metadataParser.Subtitle;
 				articleDetails.Publication = pageArticleInformationControl.GetSelectedPublicationGuid();
 				articleDetails.Authors = pageArticleInformationControl.GetSelectedAuthors().ToList();
