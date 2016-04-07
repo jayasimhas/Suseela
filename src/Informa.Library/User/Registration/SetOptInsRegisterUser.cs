@@ -1,4 +1,5 @@
 ﻿using Informa.Library.User.Profile;
+using Informa.Library.User.Newsletter;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Registration

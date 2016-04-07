@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Informa.Library.User.Profile;
+using Informa.Library.User.Newsletter;
 using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.Newsletter;
 using System;
 
-namespace Informa.Library.Salesforce.User.Profile
+namespace Informa.Library.Salesforce.User.Newsletter
 {
     public class SalesforceFindNewsletterUserOptIns : IFindNewsletterUserOptIn
     {

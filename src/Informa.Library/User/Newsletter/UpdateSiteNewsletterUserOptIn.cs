@@ -2,18 +2,18 @@
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
 
-namespace Informa.Library.User.Profile
+namespace Informa.Library.User.Newsletter
 {
 	[AutowireService(LifetimeScope.Default)]
-	public class UpdateSiteNewsletterUserOptInContext : IUpdateSiteNewsletterUserOptInContext
+	public class UpdateSiteNewsletterUserOptIn : IUpdateSiteNewsletterUserOptIn
 	{
 		protected readonly INewsletterUserOptInFactory OptInFactory;
-		protected readonly IUpdateNewsletterUserOptInsContext UpdateOptIns;
+		protected readonly IUpdateNewsletterUserOptIns UpdateOptIns;
 		protected readonly ISiteNewsletterTypeContext NewsletterTypeContext;
 
-		public UpdateSiteNewsletterUserOptInContext(
+		public UpdateSiteNewsletterUserOptIn(
 			INewsletterUserOptInFactory optInFactory,
-			IUpdateNewsletterUserOptInsContext updateOptIns,
+			IUpdateNewsletterUserOptIns updateOptIns,
 			ISiteNewsletterTypeContext newsletterTypeContext)
 		{
 			OptInFactory = optInFactory;
@@ -21,11 +21,16 @@ namespace Informa.Library.User.Profile
 			NewsletterTypeContext = newsletterTypeContext;
 		}
 
-		public bool Update(bool optIn)
+		public bool Update(string username, bool optIn)
 		{
+			if (string.IsNullOrWhiteSpace(username))
+			{
+				return false;
+			}
+
 			var userOptIn = OptInFactory.Create(NewsletterTypeContext.Type, optIn);
 
-			return UpdateOptIns.Update(new List<INewsletterUserOptIn>() { { userOptIn } });
+			return UpdateOptIns.Update(new List<INewsletterUserOptIn>() { { userOptIn } }, username);
 		}
 	}
 }

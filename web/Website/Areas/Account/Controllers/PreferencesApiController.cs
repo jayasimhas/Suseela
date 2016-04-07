@@ -1,6 +1,7 @@
 ﻿using System.Web.Http;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
+using Informa.Library.User.Newsletter;
 using Informa.Web.Areas.Account.Models.User.Management;
 using Informa.Library.Utilities.WebApi.Filters;
 

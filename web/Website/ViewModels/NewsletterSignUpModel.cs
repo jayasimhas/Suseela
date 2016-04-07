@@ -2,7 +2,7 @@
 using Informa.Library.Globalization;
 using Informa.Library.Site;
 using Informa.Library.User.Authentication;
-using Informa.Library.User.Profile;
+using Informa.Library.User.Newsletter;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Jabberwocky.Glass.Autofac.Mvc.Models;

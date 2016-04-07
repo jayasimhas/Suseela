@@ -4,11 +4,11 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templat
 using Informa.Web.Areas.Account.ViewModels.Subscription;
 using Sitecore.Data.Items;
 using System;
-using System.Collections.Generic;
 using System.Web.Mvc;
 using Informa.Library.Newsletter;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
+using Informa.Library.User.Newsletter;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 using Informa.Web.ViewModels;
 

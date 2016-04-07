@@ -1,9 +1,7 @@
-﻿using System.Linq;
-using Informa.Library.Globalization;
-using Informa.Library.Newsletter;
+﻿using Informa.Library.Globalization;
 using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.User.Authentication;
-using Informa.Library.User.Profile;
+using Informa.Library.User.Newsletter;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;

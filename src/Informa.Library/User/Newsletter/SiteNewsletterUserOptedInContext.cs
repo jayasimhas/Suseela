@@ -2,7 +2,7 @@
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Linq;
 
-namespace Informa.Library.User.Profile
+namespace Informa.Library.User.Newsletter
 {
 	[AutowireService(LifetimeScope.Default)]
 	public class SiteNewsletterUserOptedInContext : ISiteNewsletterUserOptedInContext

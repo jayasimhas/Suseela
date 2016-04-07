@@ -1,10 +1,10 @@
-﻿using Informa.Library.User.Profile;
+﻿using Informa.Library.User.Newsletter;
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Newsletter;
 using Informa.Library.Salesforce.EBIWebServices;
 
-namespace Informa.Library.Salesforce.User.Profile
+namespace Informa.Library.Salesforce.User.Newsletter
 {
 	public class SalesforceUpdateNewsletterUserOptIns : IUpdateNewsletterUserOptIns
 	{
