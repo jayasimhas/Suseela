@@ -15,20 +15,17 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly INewUserFactory NewUserFactory;
 		protected readonly IWebRegisterUser RegisterUser;
 		protected readonly IWebSetOptInsRegisterUser SetOptInsRegisterUser;
-		protected readonly IWebLoginUser LoginUser;
 
         public RegistrationApiController(
 			IFindUserByEmail findUser,
 			INewUserFactory newUserFactory,
 			IWebRegisterUser registerUser,
-			IWebSetOptInsRegisterUser setOptInsRegisterUser,
-			IWebLoginUser loginUser)
+			IWebSetOptInsRegisterUser setOptInsRegisterUser)
 		{
 			FindUser = findUser;
 			NewUserFactory = newUserFactory;
 			RegisterUser = registerUser;
 			SetOptInsRegisterUser = setOptInsRegisterUser;
-			LoginUser = loginUser;
 		}
 
 		[HttpPost]
