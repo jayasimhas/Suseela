@@ -25,7 +25,7 @@ namespace Informa.Web.Areas.Account.Controllers
         private readonly ISitecoreContext SitecoreContext;
         public readonly IAuthenticatedUserContext UserContext;
         public readonly ISignInViewModel SignInViewModel;
-        protected readonly IUpdateNewsletterUserOptIn NewsletterOptIn;
+        protected readonly IUpdateNewsletterUserOptIns NewsletterOptIn;
         protected readonly INewsletterUserOptInFactory NewsletterUserOptInFactory;
         protected readonly IUpdateOfferUserOptIn OffersOptIn;
 
@@ -35,7 +35,7 @@ namespace Informa.Web.Areas.Account.Controllers
             ISitecoreContext sitecoreContext,
             IAuthenticatedUserContext userContext,
             ISignInViewModel signInViewModel,
-            IUpdateNewsletterUserOptIn newsletterOptIn,
+            IUpdateNewsletterUserOptIns newsletterOptIn,
             INewsletterUserOptInFactory newsletterUserOptInFactory,
             IUpdateOfferUserOptIn offersOptIn)
 		{

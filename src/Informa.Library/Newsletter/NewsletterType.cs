@@ -5,7 +5,8 @@ namespace Informa.Library.Newsletter
 	public enum NewsletterType
 	{
         [Description("SCRIP Intelligence")]
-		Scrip
+		Scrip,
+		Unknown
 	}
 
     public static class EnumExtensions

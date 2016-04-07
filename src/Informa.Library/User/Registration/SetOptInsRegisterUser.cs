@@ -9,13 +9,13 @@ namespace Informa.Library.User.Registration
 	public class SetOptInsRegisterUser : ISetOptInsRegisterUser
 	{
 		protected readonly IUpdateOfferUserOptIn UpdateOfferUserOptIn;
-		protected readonly IUpdateNewsletterUserOptIn UpdateNewsletterUserOptIn;
+		protected readonly IUpdateNewsletterUserOptIns UpdateNewsletterUserOptIn;
 		protected readonly INewsletterUserOptInFactory NewsletterUserOptInFactory;
 		protected readonly ISiteNewsletterTypesContext NewsletterTypesContext;
 
 		public SetOptInsRegisterUser(
 			IUpdateOfferUserOptIn updateOfferUserOptIn,
-			IUpdateNewsletterUserOptIn updateNewsletterUserOptIn,
+			IUpdateNewsletterUserOptIns updateNewsletterUserOptIn,
 			INewsletterUserOptInFactory newsletterUserOptInFactory,
 			ISiteNewsletterTypesContext newsletterTypesContext)
 		{

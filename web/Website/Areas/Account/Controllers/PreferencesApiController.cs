@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using Informa.Library.Newsletter;
-using Informa.Library.Site.Newsletter;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
 using Informa.Web.Areas.Account.Models.User.Management;
@@ -12,20 +11,23 @@ namespace Informa.Web.Areas.Account.Controllers
 	public class PreferencesApiController : ApiController
 	{
 		protected readonly IAuthenticatedUserContext UserContext;
-		protected readonly IUpdateNewsletterUserOptIn NewsletterOptIn;
+		protected readonly IUpdateNewsletterUserOptIns NewsletterOptIn;
 		protected readonly INewsletterUserOptInFactory NewsletterUserOptInFactory;
 		protected readonly IUpdateOfferUserOptIn OffersOptIn;
+		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
 
 		public PreferencesApiController(
 			IAuthenticatedUserContext userContext,
-			IUpdateNewsletterUserOptIn newsletterOptIn,
+			IUpdateNewsletterUserOptIns newsletterOptIn,
 			INewsletterUserOptInFactory newsletterUserOptInFactory,
-			IUpdateOfferUserOptIn offersOptIn)
+			IUpdateOfferUserOptIn offersOptIn,
+			ISiteNewsletterUserOptedInContext newsletterOptedInContext)
 		{
 			UserContext = userContext;
 			NewsletterOptIn = newsletterOptIn;
 			NewsletterUserOptInFactory = newsletterUserOptInFactory;
 			OffersOptIn = offersOptIn;
+			NewsletterOptedInContext = newsletterOptedInContext;
 		}
 
 		[HttpPost]
@@ -56,12 +58,7 @@ namespace Informa.Web.Areas.Account.Controllers
 		[HttpGet]
 		public bool IsUserSignedUp()
 		{
-			var user = UserContext.User;
-			if (UserContext.IsAuthenticated)
-			{
-				return NewsletterOptIn.IsUserSignedUp(UserContext.User.Username);
-			}
-			return false;
+			return NewsletterOptedInContext.OptedIn;
 		}
 	}
 }
