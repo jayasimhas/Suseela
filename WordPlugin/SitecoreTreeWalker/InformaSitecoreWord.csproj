@@ -35,7 +35,7 @@
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl>https://calypso-8yra6ecdjk6n.pharmamedtechbi.com/wordinstaller/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>2.16.5.26</ApplicationVersion>
+    <ApplicationVersion>2.16.5.27</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
