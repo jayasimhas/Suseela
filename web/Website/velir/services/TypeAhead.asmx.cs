@@ -77,6 +77,7 @@ namespace Informa.Web.velir.services
             }
 
             var client = new WebClient();
+            client.UseDefaultCredentials = true;
             var content = client.DownloadString(url);
 
             var results = JsonConvert.DeserializeObject<SearchResults>(content);
