@@ -887,8 +887,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 		{
 			if (_isLive)
 			{
-				e.Graphics.DrawImage(Properties.Resources.live, 570, 1, 28, 28);
-				e.Graphics.DrawString("Published!", new Font("SegoeUI", 18), Brushes.Green, 450, 1);
+				e.Graphics.DrawImage(Properties.Resources.live, 570, 1, 25, 25);
+				e.Graphics.DrawString("Published!", new Font("SegoeUI", 17), Brushes.White, 450, 1);
 			}
 		}
 
