@@ -61,12 +61,12 @@
 <body>
     <script type="text/javascript">
         var analytics_data = {
-            "page_name": "@Model.Title", "page_type": "@Model.PageType", "actual_publish_date": "@Model.ArticlePublishDate", "article_author": "@Model.ArticleAuthors",
+            "page_name": "@Model.PageTitleAnalytics", "page_type": "@Model.PageType", "actual_publish_date": "@Model.ArticlePublishDate", "article_author": "@Model.ArticleAuthors",
             "article_content_type": "@Model.ArticleContentType", "article_embargo": "@Model.ArticleEmbargoed", "article_media_type": "@Model.ArticleMediaType", "article_number": "@Model.ArcticleNumber",
             "created_date": "@Model.ArticleDateCreated", "custom_tags": "@Model.CustomTags", "page_description": "@Model.PageDescription", "page_title_override": "@Model.PageTitleOverride",
             "taxonomy_region": "@Model.ArticleRegions", "taxonomy_subjects": "@Model.ArticleSubject", "taxonomy_therapy_areas": "@Model.ArticleTherapy", "login_status": "@Model.IsUserLoggedIn", "IsArticleFree": "@Model.IsArticleFree",
             "user_id": "@Model.UserName", "company": "@Model.UserCompany", "user_entitlement_type": "@Model.UserEntitlements", "entitlement_status": "@Model.UserEntitlementStatus", "industry": "@Model.UserIndustry",
-            "user_email" :"@Model.UserEmail","current_email_subscriptions" :"@Model.SubscribedProducts"
+            "user_email": "@Model.UserEmail", "current_email_subscriptions": "@Model.SubscribedProducts", "page_keywords": "@Model.MetaKeyWords"
         };
         var utag_data = analytics_data;
 

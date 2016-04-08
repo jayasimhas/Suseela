@@ -114,17 +114,18 @@ namespace Informa.Web.ViewModels
 			{
 				var pageTitle = GlassModel?.Meta_Title_Override.StripHtml() ?? string.Empty;
 				if (string.IsNullOrWhiteSpace(pageTitle))
-                    pageTitle = GlassModel?.Title?.StripHtml() ?? string.Empty;
-                if (string.IsNullOrWhiteSpace(pageTitle))
+					pageTitle = GlassModel?.Title?.StripHtml() ?? string.Empty;
+				if (string.IsNullOrWhiteSpace(pageTitle))
 					pageTitle = GlassModel?._Name ?? string.Empty;
-				
-				var publicationName = (SiteRootContext.Item == null) 
-                    ? string.Empty 
-                    : $" :: {SiteRootContext.Item.Publication_Name.StripHtml()}";
+
+				var publicationName = (SiteRootContext.Item == null)
+					? string.Empty
+					: $" :: {SiteRootContext.Item.Publication_Name.StripHtml()}";
 
 				return string.Concat(pageTitle, publicationName);
 			}
 		}
+		public string PageTitleAnalytics => GlassModel?.Title ?? string.Empty;
 		public string SiteEnvrionment
 		{
 			get
@@ -246,6 +247,7 @@ namespace Informa.Web.ViewModels
 							strSubscription.Append(",");
 						}
 					}
+					strSubscription.Append("]");
 					return strSubscription.ToString();
 				}
 				return string.Empty;

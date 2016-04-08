@@ -33,14 +33,13 @@ namespace Informa.Library.User.Entitlement
             get
             {
 				var entitlementsSession = UserSession.Get<IEnumerable<IEntitlement>>(EntitlementSessionKey);
-				var entitlements = entitlementsSession.HasValue ? entitlementsSession.Value : new List<IEntitlement>();
 
-                if (entitlements.Any())
+                if (entitlementsSession.HasValue)
 				{
-					return entitlements;
+					return entitlementsSession.Value;
 				}
                     
-                entitlements = GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress);
+                var entitlements = GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress);
 
                 if(!entitlements.Any())
 				{
