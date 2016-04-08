@@ -80,24 +80,20 @@
 			// 
 			// uxArrowUp
 			// 
-			this.uxArrowUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.uxArrowUp.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.uxArrowUp.Image = global::InformaSitecoreWord.Properties.Resources.arrowup;
 			this.uxArrowUp.Location = new System.Drawing.Point(587, 327);
-			this.uxArrowUp.Name = "uxArrowUp";
-			this.uxArrowUp.Padding = new System.Windows.Forms.Padding(2);
-			this.uxArrowUp.Size = new System.Drawing.Size(32, 32);
+			this.uxArrowUp.Name = "uxArrowUp";			
+			this.uxArrowUp.Size = new System.Drawing.Size(30, 32);
 			this.uxArrowUp.TabIndex = 43;
 			// 
 			// uxArrowDown
 			// 
-			this.uxArrowDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.uxArrowDown.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.uxArrowDown.Image = global::InformaSitecoreWord.Properties.Resources.arrowdown;
-			this.uxArrowDown.Location = new System.Drawing.Point(587, 372);
-			this.uxArrowDown.Name = "uxArrowDown";
-			this.uxArrowDown.Padding = new System.Windows.Forms.Padding(2);
-			this.uxArrowDown.Size = new System.Drawing.Size(32, 32);
+			this.uxArrowDown.Location = new System.Drawing.Point(588, 372);
+			this.uxArrowDown.Name = "uxArrowDown";		
+			this.uxArrowDown.Size = new System.Drawing.Size(30, 32);
 			this.uxArrowDown.TabIndex = 42;
 			// 
 			// panel2
