@@ -171,20 +171,14 @@ namespace Informa.Library.Article.Search
 			{
 				var lastItem = item.Authors.LastOrDefault();
 				StringBuilder str = new StringBuilder();
-				str.Append("[");
 				foreach (IAuthor author in item.Authors)
 				{
-					str.Append("'");
-					str.Append(author._Name);
-					str.Append("'");
-					if (item.Authors.Count() > 1 && !author.Equals(lastItem))
-					{
-						str.Append(",");
-					}
+                    if (str.Length > 0)
+                        str.Append(",");
+                    str.Append($"'{author._Name.Trim()}'");
 				}
-				str.Append("]");
-				return str.ToString();
-			}
+                return $"[{str}]";
+            }
 
 			return string.Empty;
 		}
@@ -199,20 +193,14 @@ namespace Informa.Library.Article.Search
 				{
 					var lastItem = taxonomyItems.LastOrDefault();
 					StringBuilder str = new StringBuilder();
-					str.Append("[");
 					foreach (ITaxonomy_Item taxonomyItem in taxonomyItems)
 					{
-						str.Append("'");
-						str.Append(taxonomyItem.Item_Name);
-						str.Append("'");
-						if (taxonomyItems.Count() > 1 && !taxonomyItem.Equals(lastItem))
-						{
-							str.Append(",");
-						}
-					}
-					str.Append("]");
-					return str.ToString();
-				}
+					    if (str.Length > 0)
+					        str.Append(",");
+						str.Append($"'{taxonomyItem.Item_Name.Trim()}'");
+                    }
+                    return $"[{str}]";
+                }
 			}
 
 			return string.Empty;
