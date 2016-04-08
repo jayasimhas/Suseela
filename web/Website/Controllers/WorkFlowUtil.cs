@@ -55,7 +55,7 @@ namespace Informa.Web.Controllers
 		protected SitecoreSaverUtil SitecoreUtil;
 		protected ArticleUtil ArticleUtil;
 
-		public WorkFlowUtil(Func<string, ISitecoreService> sitecoreFactory,SitecoreSaverUtil sitecoreSaverUtil, ArticleUtil articleUtil)
+		public WorkFlowUtil(Func<string, ISitecoreService> sitecoreFactory, SitecoreSaverUtil sitecoreSaverUtil, ArticleUtil articleUtil)
 		{
 			_sitecoreMasterService = sitecoreFactory(MasterDb);
 			SitecoreUtil = sitecoreSaverUtil;
@@ -115,16 +115,16 @@ namespace Informa.Web.Controllers
 						wfCommand.SendsToFinal = stateItem.Final;
 						wfCommand.GlobalNotifyList = new List<StaffStruct>();
 
-						//foreach (IStaff_Item x in stateItem.Staff.ListItems)
-						//{
-						//	if (x.Inactive.Checked) { continue; }
+						foreach (var x in stateItem.Staffs)
+						{
+							var staffItem = _sitecoreMasterService.GetItem<IStaff_Item>(x._Id);
+							if (staffItem.Inactive) { continue; }
 
-						//	var staffMember = new SitecoreUtil.StaffStruct();
-						//	staffMember.ID = x.ID.ToGuid();
-						//	staffMember.Name = x.GetFullName();
-						//	staffMember.Publications = x.Publications.ListItems.Select(p => p.ID.ToGuid()).ToArray();
-						//	wfCommand.GlobalNotifyList.Add(staffMember);
-						//}
+							var staffMember = new StaffStruct {ID = staffItem._Id};
+							//staffMember.Name = x.GetFullName();
+							//staffMember.Publications = x.Publications.ListItems.Select(p => p.ID.ToGuid()).ToArray();
+							wfCommand.GlobalNotifyList.Add(staffMember);
+						}
 
 						commands.Add(wfCommand);
 					}
@@ -136,7 +136,7 @@ namespace Informa.Web.Controllers
 			}
 		}
 
-		
+
 		public ArticleWorkflowState GetWorkflowState(Item i)
 		{
 			return this.ExecuteCommandAndGetWorkflowState(i, null);
@@ -158,6 +158,6 @@ namespace Informa.Web.Controllers
 			return ExecuteCommandAndGetWorkflowState(_sitecoreMasterService.GetItem<Item>(articleGuid), commandID);
 		}
 
-	
+
 	}
 }

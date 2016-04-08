@@ -575,16 +575,17 @@ namespace Informa.Web.Controllers
 						wfCommand.SendsToFinal = stateItem.Final;
 						wfCommand.GlobalNotifyList = new List<StaffStruct>();
 
-						//foreach (IStaff_Item x in stateItem.Staff.ListItems)
-						//{
-						//	if (x.Inactive.Checked) { continue; }
+						foreach (var x in stateItem.Staffs)
+						{
+							var staffItem = _sitecoreMasterService.GetItem<IStaff_Item>(x._Id);
+							if (staffItem.Inactive) { continue; }
 
-						//	var staffMember = new SitecoreUtil.StaffStruct();
-						//	staffMember.ID = x.ID.ToGuid();
-						//	staffMember.Name = x.GetFullName();
-						//	staffMember.Publications = x.Publications.ListItems.Select(p => p.ID.ToGuid()).ToArray();
-						//	wfCommand.GlobalNotifyList.Add(staffMember);
-						//}
+							var staffMember = new StaffStruct();
+							staffMember.ID = staffItem._Id;
+							//staffMember.Name = staffItem.GetFullName();
+							//staffMember.Publications = staffItem.Publications.ListItems.Select(p => p.ID.ToGuid()).ToArray();
+							wfCommand.GlobalNotifyList.Add(staffMember);
+						}
 
 						commands.Add(wfCommand);
 					}
