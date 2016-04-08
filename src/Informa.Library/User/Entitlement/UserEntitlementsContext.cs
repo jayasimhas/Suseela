@@ -1,6 +1,7 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
+using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Library.User.Entitlement
 {
@@ -15,7 +16,7 @@ namespace Informa.Library.User.Entitlement
 			EntitlementsContexts = entitlementsContexts;
 		}
 
-		public IEnumerable<IEntitlement> Entitlements => EntitlementsContexts.SelectMany(ec => ec.Entitlements);
+		public IEnumerable<IEntitlement> Entitlements => EntitlementsContexts.SelectMany(ec => ec.Entitlements).DistinctBy(e => e.ProductCode);
 
 		public void RefreshEntitlements()
 		{
