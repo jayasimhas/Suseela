@@ -1,17 +1,14 @@
-﻿using Informa.Library.User.Profile;
+﻿using Informa.Library.User.Document;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Informa.Library.Globalization;
 using Informa.Library.Salesforce.EBIWebServices;
-using Informa.Library.User.Authentication;
 
 namespace Informa.Library.Salesforce.User.Profile
 {
-    public class SalesforceManageSavedDocuments : IManageSavedDocuments
-    {
+    public class SalesforceSavedDocuments : IFindSavedDocuments, ISaveDocument, IRemoveDocument
+	{
         protected readonly ISalesforceServiceContext Service;
         protected readonly ITextTranslator TextTranslator;
 
@@ -19,7 +16,7 @@ namespace Informa.Library.Salesforce.User.Profile
         protected string NullUserKey => TextTranslator.Translate("SavedDocument.NullUser");
         protected string RequestFailedKey => TextTranslator.Translate("SavedDocument.RequestFailed");
 
-        public SalesforceManageSavedDocuments(
+        public SalesforceSavedDocuments(
             ISalesforceServiceContext service,
             ITextTranslator textTranslator)
         {
@@ -27,45 +24,34 @@ namespace Informa.Library.Salesforce.User.Profile
             TextTranslator = textTranslator;
         }
 
-        public ISavedDocumentReadResult QueryItems(IAuthenticatedUser user)
+		public IEnumerable<ISavedDocument> Find(string username)
+		{
+			if (string.IsNullOrEmpty(username))
+			{
+				return Enumerable.Empty<ISavedDocument>();
+			}
+
+			var response = Service.Execute(s => s.querySavedDocuments(username));
+
+			if (!response.IsSuccess() || response.savedDocuments == null)
+			{
+				return Enumerable.Empty<ISavedDocument>();
+			}
+
+			var savedDocuments = response.savedDocuments.Select(sd => new SavedDocument()
+			{
+				SaveDate = (sd.saveDateSpecified) ? sd.saveDate.Value : DateTime.Now,
+				DocumentId = sd.documentId,
+				Name = sd.name,
+				Description = sd.description
+			});
+
+			return savedDocuments;
+		}
+
+        public ISavedDocumentWriteResult Remove(string username, string documentId)
         {
-            if (string.IsNullOrEmpty(user?.Email))
-            {
-                return ReadErrorResult;
-            }
-
-            var response = Service.Execute(s => s.querySavedDocuments(user.Email));
-
-            if (!response.IsSuccess())
-            {
-                return ReadErrorResult;
-            }
-
-            return new SavedDocumentReadResult
-            {
-                Success = true,
-                SavedDocuments = (response.savedDocuments != null && response.savedDocuments.Any())
-                    ? response.savedDocuments.Select(a => new SavedDocument()
-                    {
-                        SaveDate = (a.saveDateSpecified) ? a.saveDate.Value : DateTime.Now,
-                        DocumentId = a.documentId,
-                        Name = a.name,
-                        Description = a.description
-                    })
-                    : Enumerable.Empty<ISavedDocument>()
-            };
-        }
-
-        public bool IsBookmarked(IAuthenticatedUser user, Guid g)
-        {
-            string gID = g.ToString("D").ToUpper();
-            ISavedDocumentReadResult result = QueryItems(user);
-            return result.Success && result.SavedDocuments.Any(b => b.DocumentId.ToUpper().Equals(gID));
-        }
-
-        public ISavedDocumentWriteResult RemoveItem(IAuthenticatedUser user, string documentId)
-        {
-            if (string.IsNullOrEmpty(user?.Email))
+            if (string.IsNullOrEmpty(username))
             {
                 return WriteErrorResult(NullUserKey);
             }
@@ -75,7 +61,7 @@ namespace Informa.Library.Salesforce.User.Profile
                 return WriteErrorResult(BadIDKey);
             }
 
-            var response = Service.Execute(s => s.deleteSavedDocument(user.Email, newDID.ToString("D")));
+            var response = Service.Execute(s => s.deleteSavedDocument(username, newDID.ToString("D")));
 
             if (!response.IsSuccess())
             {
@@ -89,9 +75,9 @@ namespace Informa.Library.Salesforce.User.Profile
             };
         }
 
-        public ISavedDocumentWriteResult SaveItem(IAuthenticatedUser user, string documentName, string documentDescription, string documentId)
+        public ISavedDocumentWriteResult Save(string username, string documentName, string documentDescription, string documentId)
         {
-            if (string.IsNullOrEmpty(user?.Email))
+            if (string.IsNullOrEmpty(username))
             {
                 return WriteErrorResult(NullUserKey);
             }
@@ -107,7 +93,7 @@ namespace Informa.Library.Salesforce.User.Profile
             d.description = documentDescription;
             d.documentId = newDID.ToString("D");
             
-            var response = Service.Execute(s => s.createSavedDocument(d, user.Email));
+            var response = Service.Execute(s => s.createSavedDocument(d, username));
 
             if (!response.IsSuccess())
             {
@@ -121,12 +107,6 @@ namespace Informa.Library.Salesforce.User.Profile
             };
         }
 
-        public ISavedDocumentReadResult ReadErrorResult => new SavedDocumentReadResult
-        {
-            Success = false,
-            SavedDocuments = Enumerable.Empty<ISavedDocument>()
-        };
-
         public ISavedDocumentWriteResult WriteErrorResult(string message)
         {
             return new SavedDocumentWriteResult
@@ -135,5 +115,5 @@ namespace Informa.Library.Salesforce.User.Profile
                 Message = message
             };
         }
-    }
+	}
 }

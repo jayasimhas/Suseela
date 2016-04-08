@@ -300,6 +300,7 @@
     <Compile Include="Company\CompanyRegisterUser.cs" />
     <Compile Include="Company\UserCompanyContext.cs" />
     <Compile Include="Company\Web\WebClearUserCompanyContextLogoutAction.cs" />
+    <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaSiteResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
@@ -489,6 +490,14 @@
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptInContext.cs" />
     <Compile Include="User\Offer\IOfferUserOptedInContext.cs" />
     <Compile Include="User\Offer\IUpdateOfferUserOptInContext.cs" />
+    <Compile Include="User\Document\IFindSavedDocuments.cs" />
+    <Compile Include="User\Document\IIsSavedDocumentContext.cs" />
+    <Compile Include="User\Document\IRemoveDocument.cs" />
+    <Compile Include="User\Document\IRemoveDocumentContext.cs" />
+    <Compile Include="User\Document\ISavedDocumentsContext.cs" />
+    <Compile Include="User\Document\ISaveDocument.cs" />
+    <Compile Include="User\Document\ISaveDocumentContext.cs" />
+    <Compile Include="User\Document\IsSavedDocumentContext.cs" />
     <Compile Include="User\Profile\IUserProfileContext.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\NewsletterUserOptInsContext.cs" />
@@ -498,6 +507,9 @@
     <Compile Include="User\Newsletter\UpdateSiteNewsletterUserOptInContext.cs" />
     <Compile Include="User\Offer\OfferUserOptedInContext.cs" />
     <Compile Include="User\Offer\UpdateOfferUserOptInContext.cs" />
+    <Compile Include="User\Document\RemoveDocumentContext.cs" />
+    <Compile Include="User\Document\SavedDocumentsContext.cs" />
+    <Compile Include="User\Document\SaveDocumentContext.cs" />
     <Compile Include="User\Profile\UserProfileContext.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
@@ -782,10 +794,8 @@
     <Compile Include="User\Newsletter\INewsletterUserOptInFactory.cs" />
     <Compile Include="User\Newsletter\IFindNewsletterUserOptIns.cs" />
     <Compile Include="User\Offer\IOfferUserOptedIn.cs" />
-    <Compile Include="User\Profile\IManageSavedDocuments.cs" />
-    <Compile Include="User\Profile\ISavedDocumentReadResult.cs" />
-    <Compile Include="User\Profile\ISavedDocument.cs" />
-    <Compile Include="User\Profile\ISavedDocumentWriteResult.cs" />
+    <Compile Include="User\Document\ISavedDocument.cs" />
+    <Compile Include="User\Document\ISavedDocumentWriteResult.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptIns.cs" />
     <Compile Include="User\Offer\IUpdateOfferUserOptIn.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptIn.cs" />
@@ -795,9 +805,8 @@
     <Compile Include="User\Newsletter\NewsletterUserOptIn.cs" />
     <Compile Include="User\Newsletter\NewsletterUserOptInFactory.cs" />
     <Compile Include="Newsletter\NewsletterType.cs" />
-    <Compile Include="User\Profile\SavedDocument.cs" />
-    <Compile Include="User\Profile\SavedDocumentReadResult.cs" />
-    <Compile Include="User\Profile\SavedDocumentWriteResult.cs" />
+    <Compile Include="User\Document\SavedDocument.cs" />
+    <Compile Include="User\Document\SavedDocumentWriteResult.cs" />
     <Compile Include="User\Profile\Subscription.cs" />
     <Compile Include="User\Profile\SubscriptionsReadResult.cs" />
     <Compile Include="User\Registration\INewUser.cs" />
@@ -905,6 +914,7 @@
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalIdResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalTitleResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\PublisherResolver.cs" />
+    <Compile Include="Utilities\Extensions\EnumerableExtensions.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />

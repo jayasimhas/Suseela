@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
-using Informa.Library.Newsletter;
 using Informa.Library.User.Authentication;
-using Informa.Library.User.Profile;
+using Informa.Library.User.Document;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.ViewModels;
@@ -18,27 +15,22 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
     {
         public readonly ITextTranslator TextTranslator;
         public readonly IAuthenticatedUserContext UserContext;
-        public readonly IManageSavedDocuments QuerySavedDocuments;
         public readonly ISignInViewModel SignInViewModel;
         public readonly ISitecoreService SitecoreService;
+		protected readonly ISavedDocumentsContext SavedDocumentsContext;
 
-        public SavedArticlesViewModel(
+		public SavedArticlesViewModel(
             ITextTranslator translator,
             IAuthenticatedUserContext userContext,
-            IManageSavedDocuments querySavedDocuments,
             ISignInViewModel signInViewModel,
-            ISitecoreService sitecoreService)
+            ISitecoreService sitecoreService,
+			ISavedDocumentsContext savedDocumentsContext)
         {
             TextTranslator = translator;
             UserContext = userContext;
-            QuerySavedDocuments = querySavedDocuments;
             SignInViewModel = signInViewModel;
             SitecoreService = sitecoreService;
-
-            var result = QuerySavedDocuments.QueryItems(UserContext.User);
-            SavedDocuments = (result.Success)
-                ? result.SavedDocuments
-                : Enumerable.Empty<ISavedDocument>();
+			SavedDocumentsContext = savedDocumentsContext;
         }
 
         private IArticle GetArticle(string ID)
@@ -68,7 +60,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             return article.Actual_Publish_Date.ToString(dateFormat);
         }
 
-        public IEnumerable<ISavedDocument> SavedDocuments;
+		public IEnumerable<ISavedDocument> SavedDocuments => SavedDocumentsContext.SavedDocuments;
 
         public bool IsAuthenticated => UserContext.IsAuthenticated;
         public string Title => GlassModel?.Title;
