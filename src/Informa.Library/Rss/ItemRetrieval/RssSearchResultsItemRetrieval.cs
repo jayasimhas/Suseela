@@ -115,6 +115,7 @@ namespace Informa.Library.Rss.ItemRetrieval
             try
             {
                 var client = new WebClient();
+                client.UseDefaultCredentials = true;
                 var content = client.DownloadString(apiUrl);
 
                 var results = JsonConvert.DeserializeObject<SearchResults>(content);

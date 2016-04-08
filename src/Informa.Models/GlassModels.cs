@@ -774,6 +774,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IGeneral_Content_PageConstants.CSSFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string CSS  {get; set;}
 								/// <summary>
+					/// The Javascript field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 89f93105-8d7e-42e3-a647-416c00ac24a0</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IGeneral_Content_PageConstants.JavascriptFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Javascript  {get; set;}
+								/// <summary>
 					/// The Section Title field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -822,6 +831,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IGeneral_Content_PageConstants.CSSFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string CSS  {get; set;}
 										/// <summary>
+						/// The Javascript field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 89f93105-8d7e-42e3-a647-416c00ac24a0</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IGeneral_Content_PageConstants.JavascriptFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Javascript  {get; set;}
+										/// <summary>
 						/// The Section Title field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -859,6 +877,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID CSSFieldId = new ID("2f02ffdb-8082-44c9-b9c6-a034f3c1f9d9");
 			public const string CSSFieldName = "CSS";
+
+						
+					
+			public static readonly ID JavascriptFieldId = new ID("89f93105-8d7e-42e3-a647-416c00ac24a0");
+			public const string JavascriptFieldName = "Javascript";
 
 						
 					
