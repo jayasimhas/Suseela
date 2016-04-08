@@ -59,29 +59,27 @@ namespace Informa.Web.Controllers
 			//IIPP-1092
 			try
 			{
-				var workflowItem =
-					_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IState>(
+				var stateItem =
+					_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.ICommand>(
 						articleStruct.CommandID.ToString());
-				if (workflowItem != null)
+				if (stateItem != null)
 				{
-					var workflowBasednotificationList = workflowItem.Staffs;
-					var basednotificationList = workflowBasednotificationList as IGlassBase[] ??
-												workflowBasednotificationList.ToArray();
-					if (basednotificationList.Any())
+					var workflowitem =
+						_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IState>(stateItem.Next_State);
+					var workflowBasednotificationList = workflowitem.Staffs;
+					foreach (var eachUser in workflowBasednotificationList)
 					{
-						foreach (var eachUser in basednotificationList)
+						try
 						{
-							try
-							{
-								var toSender = new StaffStruct { ID = eachUser._Id };
-								notificationList.Add(toSender);
-							}
-							catch (Exception ex)
-							{
-								//TODO - Add logging
-							}
+							var toSender = new StaffStruct { ID = eachUser._Id };
+							notificationList.Add(toSender);
+						}
+						catch (Exception ex)
+						{
+							//TODO - Add logging
 						}
 					}
+
 				}
 			}
 			catch (Exception ex)
