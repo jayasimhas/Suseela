@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
-using System.Web.Mvc;
 using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
@@ -14,11 +12,8 @@ using Informa.Library.User.Profile;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Velir.Search.Core.CustomGlass.Models;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
-using Informa.Web.ViewModels.PopOuts;
-using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 using Sitecore.Web;
 
@@ -32,9 +27,9 @@ namespace Informa.Web.ViewModels
         protected readonly IArticleSearch Searcher;
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IArticleComponentFactory ArticleComponentFactory;
-        protected readonly IManageSavedDocuments ManageSavedDocuments;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-        public readonly ICallToActionViewModel CallToActionViewModel;
+		protected readonly IIsSavedDocumentContext IsSavedDocuementContext;
+		public readonly ICallToActionViewModel CallToActionViewModel;
 
         public GlassArticleModel(
             ISiteRootContext siterootContext,
@@ -44,9 +39,10 @@ namespace Informa.Web.ViewModels
             ISitecoreContext context,
             IArticleComponentFactory articleComponentFactory,
             IEntitledProductContext entitledProductContext,
-            IManageSavedDocuments manageSavedDocuments,
             IAuthenticatedUserContext authenticatedUserContext,
-            ICallToActionViewModel callToActionViewModel) : base(entitledProductContext)
+			IIsSavedDocumentContext isSavedDocuementContext,
+			ICallToActionViewModel callToActionViewModel)
+			: base(entitledProductContext)
         {
             SiterootContext = siterootContext;
             ArticleListableFactory = articleListableFactory;
@@ -54,9 +50,9 @@ namespace Informa.Web.ViewModels
             Searcher = searcher;
             SitecoreContext = context;
             ArticleComponentFactory = articleComponentFactory;
-            ManageSavedDocuments = manageSavedDocuments;
             AuthenticatedUserContext = authenticatedUserContext;
             CallToActionViewModel = callToActionViewModel;
+			IsSavedDocuementContext = isSavedDocuementContext;
         }
 
         public IEnumerable<ILinkable> TaxonomyItems
@@ -189,7 +185,7 @@ namespace Informa.Web.ViewModels
         #endregion                              
 
         public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
-        public bool IsArticleBookmarked => ManageSavedDocuments.IsBookmarked(AuthenticatedUserContext.User, GlassModel._Id);
+        public bool IsArticleBookmarked => IsSavedDocuementContext.IsSaved(GlassModel._Id);
         public string BookmarkText => TextTranslator.Translate("Bookmark");
         public string BookmarkedText => TextTranslator.Translate("Bookmarked");
     }

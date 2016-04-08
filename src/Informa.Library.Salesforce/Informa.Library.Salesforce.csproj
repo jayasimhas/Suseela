@@ -119,6 +119,7 @@
     <Compile Include="User\Profile\SalesforceManageSavedDocuments.cs" />
     <Compile Include="User\Newsletter\SalesforceUpdateNewsletterUserOptIns.cs" />
     <Compile Include="User\Offer\SalesforceUpdateOfferUserOptIn.cs" />
+    <Compile Include="User\Profile\SalesforceSavedDocument.cs" />
     <Compile Include="User\Profile\SalesforceUserProfile.cs" />
     <Compile Include="User\Registration\ISalesforceRegisterUser.cs" />
     <Compile Include="User\Registration\SalesforceRegisterUser.cs" />

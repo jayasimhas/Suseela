@@ -2,15 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Informa.Library.Globalization;
 using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.User.Authentication;
 
 namespace Informa.Library.Salesforce.User.Profile
 {
-    public class SalesforceManageSavedDocuments : IManageSavedDocuments
+    public class SalesforceManageSavedDocuments : IManageSavedDocuments, IFindSavedDocuments
     {
         protected readonly ISalesforceServiceContext Service;
         protected readonly ITextTranslator TextTranslator;
@@ -27,41 +25,30 @@ namespace Informa.Library.Salesforce.User.Profile
             TextTranslator = textTranslator;
         }
 
-        public ISavedDocumentReadResult QueryItems(IAuthenticatedUser user)
-        {
-            if (string.IsNullOrEmpty(user?.Email))
-            {
-                return ReadErrorResult;
-            }
+		public IEnumerable<ISavedDocument> Find(string username)
+		{
+			if (string.IsNullOrEmpty(username))
+			{
+				return Enumerable.Empty<ISavedDocument>();
+			}
 
-            var response = Service.Execute(s => s.querySavedDocuments(user.Email));
+			var response = Service.Execute(s => s.querySavedDocuments(username));
 
-            if (!response.IsSuccess())
-            {
-                return ReadErrorResult;
-            }
+			if (!response.IsSuccess() || response.savedDocuments == null)
+			{
+				return Enumerable.Empty<ISavedDocument>();
+			}
 
-            return new SavedDocumentReadResult
-            {
-                Success = true,
-                SavedDocuments = (response.savedDocuments != null && response.savedDocuments.Any())
-                    ? response.savedDocuments.Select(a => new SavedDocument()
-                    {
-                        SaveDate = (a.saveDateSpecified) ? a.saveDate.Value : DateTime.Now,
-                        DocumentId = a.documentId,
-                        Name = a.name,
-                        Description = a.description
-                    })
-                    : Enumerable.Empty<ISavedDocument>()
-            };
-        }
+			var savedDocuments = response.savedDocuments.Select(sd => new SavedDocument()
+			{
+				SaveDate = (sd.saveDateSpecified) ? sd.saveDate.Value : DateTime.Now,
+				DocumentId = sd.documentId,
+				Name = sd.name,
+				Description = sd.description
+			});
 
-        public bool IsBookmarked(IAuthenticatedUser user, Guid g)
-        {
-            string gID = g.ToString("D").ToUpper();
-            ISavedDocumentReadResult result = QueryItems(user);
-            return result.Success && result.SavedDocuments.Any(b => b.DocumentId.ToUpper().Equals(gID));
-        }
+			return savedDocuments;
+		}
 
         public ISavedDocumentWriteResult RemoveItem(IAuthenticatedUser user, string documentId)
         {
@@ -121,12 +108,6 @@ namespace Informa.Library.Salesforce.User.Profile
             };
         }
 
-        public ISavedDocumentReadResult ReadErrorResult => new SavedDocumentReadResult
-        {
-            Success = false,
-            SavedDocuments = Enumerable.Empty<ISavedDocument>()
-        };
-
         public ISavedDocumentWriteResult WriteErrorResult(string message)
         {
             return new SavedDocumentWriteResult
@@ -135,5 +116,5 @@ namespace Informa.Library.Salesforce.User.Profile
                 Message = message
             };
         }
-    }
+	}
 }
