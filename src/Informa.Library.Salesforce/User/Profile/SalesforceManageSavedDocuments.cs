@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
 using Informa.Library.Salesforce.EBIWebServices;
-using Informa.Library.User.Authentication;
 
 namespace Informa.Library.Salesforce.User.Profile
 {
-    public class SalesforceManageSavedDocuments : IManageSavedDocuments, IFindSavedDocuments
-    {
+    public class SalesforceManageSavedDocuments : IFindSavedDocuments, ISaveDocument, IRemoveDocument
+	{
         protected readonly ISalesforceServiceContext Service;
         protected readonly ITextTranslator TextTranslator;
 
@@ -50,9 +49,9 @@ namespace Informa.Library.Salesforce.User.Profile
 			return savedDocuments;
 		}
 
-        public ISavedDocumentWriteResult RemoveItem(IAuthenticatedUser user, string documentId)
+        public ISavedDocumentWriteResult Remove(string username, string documentId)
         {
-            if (string.IsNullOrEmpty(user?.Email))
+            if (string.IsNullOrEmpty(username))
             {
                 return WriteErrorResult(NullUserKey);
             }
@@ -62,7 +61,7 @@ namespace Informa.Library.Salesforce.User.Profile
                 return WriteErrorResult(BadIDKey);
             }
 
-            var response = Service.Execute(s => s.deleteSavedDocument(user.Email, newDID.ToString("D")));
+            var response = Service.Execute(s => s.deleteSavedDocument(username, newDID.ToString("D")));
 
             if (!response.IsSuccess())
             {
@@ -76,9 +75,9 @@ namespace Informa.Library.Salesforce.User.Profile
             };
         }
 
-        public ISavedDocumentWriteResult SaveItem(IAuthenticatedUser user, string documentName, string documentDescription, string documentId)
+        public ISavedDocumentWriteResult Save(string username, string documentName, string documentDescription, string documentId)
         {
-            if (string.IsNullOrEmpty(user?.Email))
+            if (string.IsNullOrEmpty(username))
             {
                 return WriteErrorResult(NullUserKey);
             }
@@ -94,7 +93,7 @@ namespace Informa.Library.Salesforce.User.Profile
             d.description = documentDescription;
             d.documentId = newDID.ToString("D");
             
-            var response = Service.Execute(s => s.createSavedDocument(d, user.Email));
+            var response = Service.Execute(s => s.createSavedDocument(d, username));
 
             if (!response.IsSuccess())
             {

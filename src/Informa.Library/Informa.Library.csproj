@@ -491,7 +491,11 @@
     <Compile Include="User\Offer\IUpdateOfferUserOptInContext.cs" />
     <Compile Include="User\Profile\IFindSavedDocuments.cs" />
     <Compile Include="User\Profile\IIsSavedDocumentContext.cs" />
+    <Compile Include="User\Profile\IRemoveDocument.cs" />
+    <Compile Include="User\Profile\IRemoveDocumentContext.cs" />
     <Compile Include="User\Profile\ISavedDocumentsContext.cs" />
+    <Compile Include="User\Profile\ISaveDocument.cs" />
+    <Compile Include="User\Profile\ISaveDocumentContext.cs" />
     <Compile Include="User\Profile\IsSavedDocumentContext.cs" />
     <Compile Include="User\Profile\IUserProfileContext.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInsContext.cs" />
@@ -502,7 +506,9 @@
     <Compile Include="User\Newsletter\UpdateSiteNewsletterUserOptInContext.cs" />
     <Compile Include="User\Offer\OfferUserOptedInContext.cs" />
     <Compile Include="User\Offer\UpdateOfferUserOptInContext.cs" />
+    <Compile Include="User\Profile\RemoveDocumentContext.cs" />
     <Compile Include="User\Profile\SavedDocumentsContext.cs" />
+    <Compile Include="User\Profile\SaveDocumentContext.cs" />
     <Compile Include="User\Profile\UserProfileContext.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
@@ -787,7 +793,6 @@
     <Compile Include="User\Newsletter\INewsletterUserOptInFactory.cs" />
     <Compile Include="User\Newsletter\IFindNewsletterUserOptIns.cs" />
     <Compile Include="User\Offer\IOfferUserOptedIn.cs" />
-    <Compile Include="User\Profile\IManageSavedDocuments.cs" />
     <Compile Include="User\Profile\ISavedDocument.cs" />
     <Compile Include="User\Profile\ISavedDocumentWriteResult.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptIns.cs" />
