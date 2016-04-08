@@ -36,7 +36,7 @@ namespace Informa.Library.User.Entitlement
 			{
 				if (!AuthenticatedUserContext.IsAuthenticated)
 				{
-					return Enumerable.Empty<IEntitlement>();
+					return DefaultEntitlementsFactory.Create();
 				}
 
 				var entitlementsSession = UserSession.Get<IEnumerable<IEntitlement>>(EntitlementSessionKey);
