@@ -53,7 +53,7 @@ namespace Informa.Web.Controllers
 			var replyToEmail = Sitecore.Context.User.Profile.Email;
 			if (string.IsNullOrEmpty(fromEmail) || string.IsNullOrEmpty(replyToEmail)) return;
 
-			var notificationList = articleStruct.ArticleSpecificNotifications.Any() ? new List<StaffStruct>() :
+			var notificationList = !articleStruct.ArticleSpecificNotifications.Any() ? new List<StaffStruct>() :
 				articleStruct.ArticleSpecificNotifications;
 
 			//IIPP-1092
