@@ -25,7 +25,7 @@ namespace Informa.Library.Salesforce.User.Newsletter
 
 			var optIns = newsletterOptIns.Select(noi => new EBI_EmailNewsLetterOptin
 			{
-				optinName = noi.NewsletterType.ToDescriptionString(),
+				optinName = noi.NewsletterType,
 				IsReceivingEmailNewsletter = noi.OptIn,
 				IsReceivingEmailNewsletterSpecified = true
 			}).ToArray();

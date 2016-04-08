@@ -35,26 +35,11 @@ namespace Informa.Library.Salesforce.User.Newsletter
             }
 
 			var optIns = response.emailNewsletterOptins.Select(eno => OptInFactory.Create(
-				ParseOptInName(eno.optinName),
+				eno.optinName,
 				eno.IsReceivingEmailNewsletterSpecified && eno.IsReceivingEmailNewsletter.Value)
 			);
 
 			return optIns;
-		}
-
-		public NewsletterType ParseOptInName(string name)
-		{
-			var newsletterTypes = Enum.GetValues(typeof(NewsletterType));
-
-			foreach (NewsletterType newsletterType in newsletterTypes)
-			{
-				if (string.Equals(newsletterType.ToDescriptionString(), name, StringComparison.InvariantCultureIgnoreCase))
-				{
-					return newsletterType;
-				}
-			}
-
-			return NewsletterType.Unknown;
 		}
     }
 }

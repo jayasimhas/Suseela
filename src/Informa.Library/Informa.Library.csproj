@@ -804,7 +804,6 @@
     <Compile Include="User\Profile\IUserProfileFactory.cs" />
     <Compile Include="User\Newsletter\NewsletterUserOptIn.cs" />
     <Compile Include="User\Newsletter\NewsletterUserOptInFactory.cs" />
-    <Compile Include="Newsletter\NewsletterType.cs" />
     <Compile Include="User\Document\SavedDocument.cs" />
     <Compile Include="User\Document\SavedDocumentWriteResult.cs" />
     <Compile Include="User\Profile\Subscription.cs" />
