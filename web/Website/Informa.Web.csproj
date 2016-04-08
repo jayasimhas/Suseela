@@ -1259,6 +1259,8 @@
     <Content Include="Views\Shared\SiteDebugging\UserSubscriptions.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\Username.cshtml" />
     <Content Include="Views\Shared\PopOuts\EmailSearch.cshtml" />
+    <Content Include="Views\Shared\Components\JavascriptComponent.cshtml" />
+    <Content Include="Views\Shared\Global\MetaNoIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
