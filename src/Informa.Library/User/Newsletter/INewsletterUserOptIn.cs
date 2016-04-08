@@ -5,6 +5,6 @@ namespace Informa.Library.User.Newsletter
 	public interface INewsletterUserOptIn
 	{
 		bool OptIn { get; set; }
-		NewsletterType NewsletterType { get; }
+		string NewsletterType { get; }
 	}
 }

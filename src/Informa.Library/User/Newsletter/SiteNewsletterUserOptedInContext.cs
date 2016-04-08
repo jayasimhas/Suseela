@@ -18,6 +18,6 @@ namespace Informa.Library.User.Newsletter
 			OptInsContext = optInsContext;
 		}
 
-		public bool OptedIn => OptInsContext.OptIns.Any(oi => oi.NewsletterType != NewsletterType.Unknown && oi.NewsletterType == NewsletterTypeContext.Type && oi.OptIn);
+		public bool OptedIn => OptInsContext.OptIns.Any(oi => oi.NewsletterType == NewsletterTypeContext.Type && oi.OptIn);
 	}
 }
