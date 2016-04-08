@@ -15,7 +15,7 @@ body {
 	}
 
 	header {
-		flex-basis: 250px;
+		flex-basis: 350px;
 	}
 }
 
@@ -281,7 +281,7 @@ button {
 	padding: 6px 12px;
 	vertical-align: middle;
 	white-space: nowrap;
-} 
+}
 
 button:focus, button:hover {
 	background-color: #dddddd;
@@ -317,7 +317,7 @@ The navigation remains fixed while you scroll.
 @media screen and (min-width: 640px) {
 	main {
 		width: 100%;
-		padding: 0 3rem 0 5rem;
+		padding: 0 3rem 0 25rem;
 	}
 }
 
@@ -388,7 +388,6 @@ a:hover, a:active {
 @media screen and (min-width: 640px) {
 	nav {
 		position: fixed;
-		width: calc(250px - 30px);
 	}
 }
 
@@ -627,4 +626,9 @@ body {
 	color: #ccc;
 	right: 0.5rem;
 	font-style: normal;
+}
+
+
+section.hidden {
+	display: none;
 }

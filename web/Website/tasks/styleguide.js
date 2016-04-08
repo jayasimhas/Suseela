@@ -14,7 +14,7 @@ var css = utils.loadTaskConfig("css");
 
 utils.setTaskConfig("styleguide", {
     default: {
-        src: css.dest + "/index-generated.css",
+        src: css.dest + "/index-generated.css"
     }
 });
 
@@ -34,6 +34,7 @@ gulp.task("styleguide", function() {
         .pipe(utils.drano())
         .pipe(postcss([
             require('../runway')({
+                theme: require('../runway/runway-theme-velir'),
                 title: "Informa Style Guide",
                 logo: "https://pbs.twimg.com/profile_images/537287811724881921/JrtNWIt5.png",
                 css: ['style.css', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic'],

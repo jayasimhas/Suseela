@@ -1,4 +1,3 @@
-/* eslint-env browser */
 /* global examples, Prism */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -36,4 +35,39 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (!(conf.lang in Prism.languages)) wrap.removeChild(pre);
 		}
 	});
+
+	var sections = document.getElementsByTagName('section');
+
+	for(var i = 0; i < sections.length; i++) {
+		sections[i].classList.add('hidden');
+		sections[i].addEventListener('click', toggleSection(sections[i].id));
+	}
+
+	var sectionTriggers = document.querySelectorAll('[data-toggle-section]');
+	for(var j = 0; j < sectionTriggers.length; j++) {
+		sectionTriggers[j].addEventListener('click', toggleSection(sectionTriggers[j].dataset.toggleSection));
+	}
 });
+
+var toggleSection = function(section) {
+	return function() {
+
+		var sections = document.getElementsByTagName('section');
+
+		for(var i = 0; i < sections.length; i++) {
+			sections[i].classList.add('hidden');
+		}
+
+		var sectionElm = document.getElementById(section);
+		sectionElm.classList.remove('hidden');
+
+		if(sectionElm.parentNode.parentNode.tagName === 'SECTION') {
+			sectionElm.parentNode.parentNode.classList.remove('hidden');
+		} else {
+			var subsections = sectionElm.getElementsByTagName('section');
+			for(var k = 0; k < subsections.length; k++) {
+				subsections[k].classList.remove('hidden');
+			};
+		}
+	};
+};

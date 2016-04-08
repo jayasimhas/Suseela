@@ -11,7 +11,7 @@ module.exports = require('postcss').plugin('mdcss', function (opts) {
 	opts = Object(opts);
 
 	// set theme
-	opts.theme = opts.theme || require('runway-theme-velir');
+	opts.theme = opts.theme || require('./runway-theme-velir');
 
 	// set index
 	opts.index = opts.index || 'index.html';

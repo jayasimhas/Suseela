@@ -16,7 +16,7 @@
 			<h6>Theme</h6>
 			<div class="theme-dropdown__select">Default</div>
 		</div>
-		
+
 		<% menu(list, 1) %>
 	</nav>
 </header>
@@ -37,7 +37,7 @@ function menu(children, depth) {
 			if (child.name) {
 				%>
 				<li>
-					<a href="#<%- child.name %>"><span><%= child.title %></span></a>
+					<a data-toggle-section="<%- child.name %>"><span><%= child.title %></span></a>
 					<% if (child.children) menu(child.children, depth + 1) %>
 				</li>
 				<%
