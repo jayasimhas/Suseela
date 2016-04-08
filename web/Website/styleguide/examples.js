@@ -105,6 +105,8 @@ examples.lang = {
 			return '<script src="' + js + '"></script>';
 		}).join('');
 
+		html += '<style>.iframe-wrapper { height: 100%; }</style>';
+
 		idoc.write(html);
 
 		idoc.close();
@@ -113,7 +115,7 @@ examples.lang = {
 		idoc.documentElement.setAttribute('style', examples.htmlcss);
 		idoc.body.setAttribute('style', examples.bodycss);
 
-		idoc.body.innerHTML = '<div class="iframe-wrapper">' + idoc.body.innerHTML + '</div>';
+		idoc.body.innerHTML = '<div class="iframe-wrapper">' + idoc.body.innerHTML + '<div style="clear: both;"></div></div>';
 
 		if (conf.width) style.width = String(conf.width);
 

@@ -1,7 +1,7 @@
 /* global examples, Prism */
 
-document.addEventListener('DOMContentLoaded', function () {
-	Array.prototype.forEach.call(document.querySelectorAll('pre code[class^="lang"]'), function (code) {
+$(document).ready(function () {
+	$('pre code[class^="lang"]').each(function(code, index, array) {
 		// set pre, wrap, opts, and get meta data from code
 		var pre  = code.parentNode;
 		var wrap = pre.parentNode.insertBefore(document.createElement('figure'), pre);
@@ -47,7 +47,38 @@ document.addEventListener('DOMContentLoaded', function () {
 	for(var j = 0; j < sectionTriggers.length; j++) {
 		sectionTriggers[j].addEventListener('click', toggleSection(sectionTriggers[j].dataset.toggleSection));
 	}
+
 });
+
+var resizeIframes = function() {
+	$('.iframe-wrapper').each(function(e, i, a) {
+		console.log(e);
+		var elmScrollHeight = e.offsetHeight;
+		var style  = e.style;
+		var scrollHeight;
+		// get iframe dom
+		var iwin = e.contentWindow;
+		var idoc = e.document;
+
+		if (scrollHeight !== elmScrollHeight) {
+			scrollHeight = elmScrollHeight;
+			style.height = 0;
+			style.height = parseInt(documentElement.scrollHeight) + (iframe.offsetHeight - iwin.innerHeight) + 'px';
+		}
+	});
+};
+
+window.addEventListener('message', function(e) {
+	console.log(e.data);
+  // var $iframe = jQuery("#myIframe");
+  // var eventName = e.data[0];
+  // var data = e.data[1];
+  // switch(eventName) {
+  //   case 'setHeight':
+  //     $iframe.height(data);
+  //     break;
+  // }
+}, false);
 
 var toggleSection = function(section) {
 	return function() {
@@ -67,7 +98,9 @@ var toggleSection = function(section) {
 			var subsections = sectionElm.getElementsByTagName('section');
 			for(var k = 0; k < subsections.length; k++) {
 				subsections[k].classList.remove('hidden');
-			};
+			}
 		}
+
+		resizeIframes();
 	};
 };

@@ -1,4 +1,8 @@
 {
+  "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+},
   "ecmaFeatures": {
     "jsx": true,
     "modules": true,
@@ -11,7 +15,10 @@
     "forOf": true
   },
   "env": {
-    "node": true
+    "node": true,
+    "es6": true,
+    "browser": true,
+    "jquery": true
   },
   "rules": {
     "no-alert": 0,
