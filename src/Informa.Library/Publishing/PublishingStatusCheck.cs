@@ -8,6 +8,13 @@ namespace Informa.Library.Publishing
 	{
 		public IPublishingStatus Update(IPublishingStatus publishingStatus)
 		{
+			if (publishingStatus.PublishHandle == null)
+			{
+				publishingStatus.Status = PublishStatus.Failed;
+
+				return publishingStatus;
+			}
+
 			var publishStatus = PublishManager.GetStatus(publishingStatus.PublishHandle);
 
 			if (publishStatus.Failed || publishStatus.Expired)
