@@ -16,15 +16,13 @@ namespace InformaSitecoreWord.Util.Document
 
 		protected string TitleStyle = ApplicationConfig.GetPropertyValue("TitleStyle");
 		protected string DeckStyle = ApplicationConfig.GetPropertyValue("DeckStyle");
-		protected string LongSummaryStyle = ApplicationConfig.GetPropertyValue("LongSummaryStyle");
-		protected string ShortSummaryStyle = ApplicationConfig.GetPropertyValue("ShortSummaryStyle");
+		protected string ExecutiveSummaryStyle = ApplicationConfig.GetPropertyValue("ExecutiveSummaryStyle");
 		protected string SubtitleStyle = ApplicationConfig.GetPropertyValue("SubtitleStyle");
 	    protected string BodyStyle = ApplicationConfig.GetPropertyValue("StoryTextStyle");
 
 		public string Title = "";
 		public string Deck = "";
-		public string ShortSummary = "";
-		public string LongSummary = "";
+		public string ExecutiveSummary = "";
 		public string Subtitle = "";
 
 		public int TitleCount;
@@ -35,8 +33,7 @@ namespace InformaSitecoreWord.Util.Document
 		{
 			MetadataStyles.Add(TitleStyle);
 			MetadataStyles.Add(DeckStyle);
-			MetadataStyles.Add(LongSummaryStyle);
-			MetadataStyles.Add(ShortSummaryStyle);
+			MetadataStyles.Add(ExecutiveSummaryStyle);
 			MetadataStyles.Add(SubtitleStyle); 
 		}
 
@@ -50,14 +47,11 @@ namespace InformaSitecoreWord.Util.Document
 			TitleCount = 0;
 			MetadataStyles.Add(TitleStyle);
 			MetadataStyles.Add(DeckStyle);
-			MetadataStyles.Add(LongSummaryStyle);
-			MetadataStyles.Add(ShortSummaryStyle);
+			MetadataStyles.Add(ExecutiveSummaryStyle);
 			MetadataStyles.Add(SubtitleStyle);
 			int maxLengthLongSummary = SitecoreClient.GetMaxLengthLongSummary();
-			int maxLengthShortSummary = SitecoreClient.GetMaxLengthShortSummary();
 
 			int longSummaryLimit = maxLengthLongSummary;
-			int shortSummaryLimit = maxLengthShortSummary;
 
 		    Paragraph firstBodyParagraph = null;
 
@@ -78,23 +72,18 @@ namespace InformaSitecoreWord.Util.Document
 				{
 					Deck += GetInnerRichText(paragraph, transformer).Replace("\a", "");
 				}
-				if (styleName == LongSummaryStyle)
+				if (styleName == ExecutiveSummaryStyle)
 				{
-					LongSummary += GetRichText(paragraph, transformer, longSummaryLimit, out longSummaryLimit).Replace("\a", "") + " ";
+					ExecutiveSummary += GetRichText(paragraph, transformer, longSummaryLimit, out longSummaryLimit).Replace("\a", "") + " ";
 				} 
-				if (styleName == ShortSummaryStyle)
-				{
-					ShortSummary += GetRichText(paragraph, transformer, shortSummaryLimit, out shortSummaryLimit).Replace("\a", "") + " ";
-
-				}
 				if (styleName == SubtitleStyle)
 				{
 					Subtitle += GetInnerRichText(paragraph, transformer).Replace("\a", "").TrimEnd() + " ";
 				}
 			}
 
-            if(string.IsNullOrWhiteSpace(LongSummary) && firstBodyParagraph != null)
-                LongSummary += GetRichText(firstBodyParagraph, transformer, longSummaryLimit, out longSummaryLimit).Replace("\a", "") + " ";                         
+            if(string.IsNullOrWhiteSpace(ExecutiveSummary) && firstBodyParagraph != null)
+				ExecutiveSummary += GetRichText(firstBodyParagraph, transformer, longSummaryLimit, out longSummaryLimit).Replace("\a", "") + " ";                         
         }
 
 		protected string GetRichText(Paragraph paragraph, OptimizedCharacterStyleTransformer transformer, int limit, out int newLimit)
