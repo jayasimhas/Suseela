@@ -1,4 +1,4 @@
-﻿using Informa.Library.User.Profile;
+﻿using Informa.Library.User.Document;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using Informa.Library.Salesforce.EBIWebServices;
 
 namespace Informa.Library.Salesforce.User.Profile
 {
-    public class SalesforceManageSavedDocuments : IFindSavedDocuments, ISaveDocument, IRemoveDocument
+    public class SalesforceSavedDocuments : IFindSavedDocuments, ISaveDocument, IRemoveDocument
 	{
         protected readonly ISalesforceServiceContext Service;
         protected readonly ITextTranslator TextTranslator;
@@ -16,7 +16,7 @@ namespace Informa.Library.Salesforce.User.Profile
         protected string NullUserKey => TextTranslator.Translate("SavedDocument.NullUser");
         protected string RequestFailedKey => TextTranslator.Translate("SavedDocument.RequestFailed");
 
-        public SalesforceManageSavedDocuments(
+        public SalesforceSavedDocuments(
             ISalesforceServiceContext service,
             ITextTranslator textTranslator)
         {

@@ -2,7 +2,7 @@
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Newsletter;
-using Informa.Library.User.Profile;
+using Informa.Library.User.Document;
 using Informa.Library.Utilities.WebApi.Filters;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Web.Areas.Account.Models.User.Management;

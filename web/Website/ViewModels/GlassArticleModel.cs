@@ -8,7 +8,7 @@ using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Entitlement;
-using Informa.Library.User.Profile;
+using Informa.Library.User.Document;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;

@@ -3,7 +3,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Informa.Library.User.Profile
+namespace Informa.Library.User.Document
 {
 	[AutowireService(LifetimeScope.Default)]
 	public class SavedDocumentsContext : ISavedDocumentsContext

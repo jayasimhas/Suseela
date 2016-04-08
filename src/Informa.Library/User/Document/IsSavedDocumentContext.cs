@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace Informa.Library.User.Profile
+namespace Informa.Library.User.Document
 {
 	[AutowireService(LifetimeScope.Default)]
 	public class IsSavedDocumentContext : IIsSavedDocumentContext

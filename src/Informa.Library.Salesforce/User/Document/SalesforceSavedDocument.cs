@@ -1,4 +1,4 @@
-﻿using Informa.Library.User.Profile;
+﻿using Informa.Library.User.Document;
 using System;
 
 namespace Informa.Library.Salesforce.User.Profile

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.User.Authentication;
-using Informa.Library.User.Profile;
+using Informa.Library.User.Document;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.ViewModels;

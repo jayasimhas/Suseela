@@ -1,7 +1,7 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.Presentation;
 using Informa.Library.User.Authentication;
-using Informa.Library.User.Profile;
+using Informa.Library.User.Document;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 

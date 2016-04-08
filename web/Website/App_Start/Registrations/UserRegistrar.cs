@@ -7,6 +7,7 @@ using Informa.Library.User.ResetPassword;
 using Informa.Library.User.Profile;
 using Informa.Library.User.Newsletter;
 using Informa.Library.User.Offer;
+using Informa.Library.User.Document;
 using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.Salesforce.User.Newsletter;
 using Informa.Library.Salesforce.User.Offer;
@@ -52,7 +53,7 @@ namespace Informa.Web.App_Start.Registrations
 		    builder.RegisterType<SalesforceGetUserEntitlements>().As<IGetUserEntitlements>();      
 		    builder.RegisterType<SalesforceGetIPEntitlements>().As<IGetIPEntitlements>();
 
-		    builder.RegisterType<SalesforceManageSavedDocuments>()
+		    builder.RegisterType<SalesforceSavedDocuments>()
 				.As<IFindSavedDocuments>()
 				.As<ISaveDocument>()
 				.As<IRemoveDocument>();

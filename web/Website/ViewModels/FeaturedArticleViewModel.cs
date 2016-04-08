@@ -5,7 +5,7 @@ using Informa.Library.Presentation;
 using Informa.Library.Site;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Entitlement;
-using Informa.Library.User.Profile;
+using Informa.Library.User.Document;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 
 namespace Informa.Web.ViewModels

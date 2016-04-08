@@ -1,28 +1,28 @@
 ﻿using Informa.Library.User.Authentication;
 using Jabberwocky.Glass.Autofac.Attributes;
 
-namespace Informa.Library.User.Profile
+namespace Informa.Library.User.Document
 {
 	[AutowireService(LifetimeScope.Default)]
-	public class RemoveDocumentContext : IRemoveDocumentContext
+	public class SaveDocumentContext : ISaveDocumentContext
 	{
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly ISavedDocumentsContext SavedDocumentsContext;
-		protected readonly IRemoveDocument RemoveDocument;
+		protected readonly ISaveDocument SaveDocument;
 
-		public RemoveDocumentContext(
+		public SaveDocumentContext(
 			IAuthenticatedUserContext userContext,
 			ISavedDocumentsContext savedDocumentsContext,
-			IRemoveDocument removeDocument)
+			ISaveDocument saveDocument)
 		{
 			UserContext = userContext;
 			SavedDocumentsContext = savedDocumentsContext;
-			RemoveDocument = removeDocument;
+			SaveDocument = saveDocument;
 		}
 
-		public ISavedDocumentWriteResult Remove(string documentId)
+		public ISavedDocumentWriteResult Save(string documentName, string documentDescription, string documentId)
 		{
-			var result = RemoveDocument.Remove(UserContext.User.Username, documentId);
+			var result = SaveDocument.Save(UserContext.User.Username, documentName, documentDescription, documentId);
 
 			if (result.Success)
 			{

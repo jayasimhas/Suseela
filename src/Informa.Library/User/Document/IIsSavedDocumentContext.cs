@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Informa.Library.User.Profile
+namespace Informa.Library.User.Document
 {
 	public interface IIsSavedDocumentContext
 	{
