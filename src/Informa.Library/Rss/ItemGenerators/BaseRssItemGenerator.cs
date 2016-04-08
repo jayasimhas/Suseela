@@ -19,7 +19,9 @@ namespace Informa.Library.Rss.ItemGenerators
         public string GetItemTitle(IArticle article)
         {
             //Build the title string, if there is a media type that is prepended onto the title
-            var titleText = HttpUtility.HtmlEncode(HtmlUtil.StripHtml(article.Title));
+            //We need to decode it before encoding it again because strings like &amp; may
+            //be in the original title and if we encode that it comes out as &amp;amp;
+            var titleText = HttpUtility.HtmlEncode(HttpUtility.HtmlDecode(HtmlUtil.StripHtml(article.Title)));
 
             if (article.Media_Type != null)
             {
@@ -45,9 +47,10 @@ namespace Informa.Library.Rss.ItemGenerators
 
         public string GetItemSummary(IArticle article)
         {
-            string summary = SearchSummaryUtil.GetTruncatedSearchSummary(article.Summary);
+            string summary = HttpUtility.HtmlDecode(article.Summary);
+             summary = SearchSummaryUtil.GetTruncatedSearchSummary(article.Summary);
             summary = DCDTokenMatchers.ProcessDCDTokens(summary);
-            return SearchSummaryUtil.EscapeXMLValue(summary);
+            return HttpUtility.HtmlDecode(summary);
         }
 
     }

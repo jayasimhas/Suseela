@@ -1,5 +1,6 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Informa.Library.User.Entitlement
 {
@@ -8,7 +9,7 @@ namespace Informa.Library.User.Entitlement
 	{
 		public IEnumerable<IEntitlement> Create()
 		{
-			return new List<IEntitlement> { new Entitlement { ProductCode = "NONE" } };
+			return Enumerable.Empty<IEntitlement>();
 		}
 	}
 }

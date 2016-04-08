@@ -34,15 +34,19 @@ namespace Informa.Library.User.Entitlement
 		{
 			get
 			{
-				var entitlementsSession = UserSession.Get<IEnumerable<IEntitlement>>(EntitlementSessionKey);
-				var entitlements = entitlementsSession.HasValue ? entitlementsSession.Value : new List<IEntitlement>();
-
-				if (entitlements.Any())
+				if (!AuthenticatedUserContext.IsAuthenticated)
 				{
-					return entitlements;
+					return DefaultEntitlementsFactory.Create();
 				}
 
-				entitlements = GetUserEntitlements.GetEntitlements(AuthenticatedUserContext.User.Username, UserIpAddressContext.IpAddress.ToString());
+				var entitlementsSession = UserSession.Get<IEnumerable<IEntitlement>>(EntitlementSessionKey);
+
+				if (entitlementsSession.HasValue)
+				{
+					return entitlementsSession.Value;
+				}
+
+				var entitlements = GetUserEntitlements.GetEntitlements(AuthenticatedUserContext.User.Username, UserIpAddressContext.IpAddress.ToString());
 
 				if (!entitlements.Any())
 				{

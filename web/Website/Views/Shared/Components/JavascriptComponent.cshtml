@@ -3,8 +3,8 @@
 
 @if (Sitecore.Context.PageMode.IsExperienceEditor)
 {
-    @Html.Glass().Editable(x => x.CSS)
+    @Html.Glass().Editable(x => x.Javascript)
 }
-<style type="text/css">
-    @Html.Raw(Model.CSS)
-</style>
+<script type="text/javascript">
+    @Html.Raw(Model.Javascript)
+</script>
