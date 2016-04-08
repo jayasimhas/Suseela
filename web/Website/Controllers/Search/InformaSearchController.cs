@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
 using Glass.Mapper.Sc;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
 using Informa.Library.User.Authentication;
-using Informa.Library.User.Profile;
-using Informa.Library.Utilities.StringUtils;
+using Informa.Library.User.Document;
 using Informa.Library.Utilities.TokenMatcher;
 using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Factory;
@@ -15,10 +13,6 @@ using Velir.Search.Core.Queries;
 using Velir.Search.Core.Results;
 using Velir.Search.WebApi.Controllers;
 using Velir.Search.WebApi.Models;
-using Glass.Mapper.Sc.Web.Mvc;
-using Informa.Library.User.Entitlement;
-using Informa.Web.Models;
-using Informa.Web.ViewModels;
 
 namespace Informa.Web.Controllers.Search
 {
@@ -29,11 +23,17 @@ namespace Informa.Web.Controllers.Search
         private ISitecoreContext _context;
         private readonly ISearchPageParser _parser;
         private readonly ISearchManager<InformaSearchResultItem> _searchManager;
-        private readonly IAuthenticatedUserContext _authenticatedUserContext;
-        private readonly IManageSavedDocuments _manageSavedDocuments;
+		protected readonly IAuthenticatedUserContext UserContext;
+		protected readonly IIsSavedDocumentContext IsSavedDocumentContext;
 
-        public InformaSearchController(ISearchManager<InformaSearchResultItem> searchManager, ISearchPageParser parser,
-            IGlassInterfaceFactory interfaceFactory, ISitecoreContext context, ICacheProvider cache, IAuthenticatedUserContext authenticatedUserContext, IManageSavedDocuments manageSavedDocuments)
+		public InformaSearchController(
+			ISearchManager<InformaSearchResultItem> searchManager,
+			ISearchPageParser parser,
+            IGlassInterfaceFactory interfaceFactory,
+			ISitecoreContext context,
+			ICacheProvider cache,
+			IAuthenticatedUserContext userContext,
+			IIsSavedDocumentContext isSavedDocumentContext)
             : base(searchManager, parser)
         {
             _searchManager = searchManager;
@@ -41,11 +41,9 @@ namespace Informa.Web.Controllers.Search
             _context = context;
             _cache = cache;
             _interfaceFactory = interfaceFactory;
-            _authenticatedUserContext = authenticatedUserContext;
-            _manageSavedDocuments = manageSavedDocuments;
+			UserContext = userContext;
+			IsSavedDocumentContext = isSavedDocumentContext;
         }
-
-
 
         public override IQueryResults Get(ApiSearchRequest request)
         {
@@ -66,23 +64,18 @@ namespace Informa.Web.Controllers.Search
 
             //Loop through the results and add the authenticaton and bookmarking property values to be used
             //on the front end.
-            if (_authenticatedUserContext.IsAuthenticated)
-            {
-                var currentUser = _authenticatedUserContext.User;
+			if (UserContext.IsAuthenticated)
+			{
+				List<InformaSearchResultItem> resultsWithBookmarks = new List<InformaSearchResultItem>();
+				foreach (InformaSearchResultItem queryResult in results.Results)
+				{
+					queryResult.IsUserAuthenticated = UserContext.IsAuthenticated;
+					queryResult.IsArticleBookmarked = IsSavedDocumentContext.IsSaved(queryResult.ItemId.ToGuid());
+					resultsWithBookmarks.Add(queryResult);
+				}
 
-                List<InformaSearchResultItem> resultsWithBookmarks = new List<InformaSearchResultItem>();
-                foreach (InformaSearchResultItem queryResult in results.Results)
-                {
-                    queryResult.IsUserAuthenticated = true;
-                    queryResult.IsArticleBookmarked = _manageSavedDocuments.IsBookmarked(currentUser, queryResult.ItemId.ToGuid());
-                    resultsWithBookmarks.Add(queryResult);
-                }
-
-              
-
-
-                results.Results = resultsWithBookmarks;
-            }
+				results.Results = resultsWithBookmarks;
+			}
 
             //Replace DCD tokens in the summary
             foreach (InformaSearchResultItem queryResult in results.Results)
@@ -90,10 +83,7 @@ namespace Informa.Web.Controllers.Search
                 queryResult.Summary = DCDTokenMatchers.ProcessDCDTokens(queryResult.Summary);
             }
 
-
             return results;
         }
-
-
     }
 }
