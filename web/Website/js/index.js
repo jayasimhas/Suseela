@@ -1,3 +1,5 @@
+/* global angular, analytics_data */
+
 import Zepto from './zepto.min';
 import svg4everybody from './svg4everybody';
 import Cookies from './jscookie';
@@ -5,7 +7,6 @@ import PopOutController from './pop-out-controller';
 import NewsletterSignupController  from './newsletter-signup';
 import BookmarkController from './bookmark-controller';
 import SearchScript from './search-page.js';
-import LoginController from './login-controller';
 import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
@@ -27,7 +28,7 @@ $('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
 });
 
 $('.click-logout').on('click', function(e) {
-    analyticsEvent( $.extend(result, analytics_data, { event_name: "logout" }) );
+    analyticsEvent( $.extend(analytics_data, { event_name: "logout" }) );
 });
 
 /* Toggle header search box (tablets/smartphones) */
@@ -68,12 +69,6 @@ var showForgotPassSuccess = function() {
     $('.pop-out__sign-in-forgot-password')
 		.find('.alert-success')
 		.toggleClass('is-active');
-};
-
-// Toggle the sign-in error message displayed to a user
-var toggleSignInError = function(form) {
-    $(form).closest('.js-login-container').find('.pop-out__form-error').show();
-    //$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
 };
 
 var renderIframeComponents = function() {
@@ -163,7 +158,7 @@ $(document).ready(function() {
         });
     };
 
-    indexBookmarks();
+    window.indexBookmarks();
 
     // Check for any articles to immediately bookmark
     window.autoBookmark = function() {
@@ -200,122 +195,162 @@ $(document).ready(function() {
     $(".newsletter-signup-after-submit").hide();
     newsletterSignup.checkForUserSignedUp();
     newsletterSignup.addControl('.js-newsletter-signup-submit', null,function(triggerElement) {
-        //  toggleSignInError();
+
     });
 
 
     // TODO - Refactor this with generic form controller
-    var login = new LoginController(requestVerificationToken);
+    var userSignIn = new FormController({
+        observe: '.js-sign-in-submit',
+        successCallback: function(form, context, event) {
 
-    login.addControl(
-		'.js-sign-in-submit',
-		function(tg) {
-            if($(tg).data('pass-article-id')) {
+            var loginAnalytics =  {
+                event_name: 'login',
+                login_state: 'successful',
+                userName: '"' + $(form).find('input[name=username]').val() + '"'
+            };
+
+            analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
+
+            var passArticleId = $(form).find('.sign-in__submit').data('pass-article-id');
+            if(passArticleId) {
                 var sep = (window.location.href.indexOf('?') > -1) ? '&' : '?';
-                $(tg).data('login-redirect-url', window.location.href + sep + 'immb=' + $(tg).data('pass-article-id'));
+
+                window.location.href = window.location.href + sep + 'immb=' + passArticleId;
+
+                // If Angular, need location.reload to force page refresh
+                if(typeof angular !== 'undefined') {
+                    angular.element($('.search-results')[0]).controller().forceRefresh();
+                }
+
+            } else {
+                window.location.reload(false);
             }
         },
-		function(triggerForm) {
-		    toggleSignInError(triggerForm);
+        failureCallback: function(form, context, event) {
+
+            var loginAnalytics = {
+                event_name: "login",
+                login_state: "unsuccessful",
+                userName: '"' + $(form).find('input[name=username]').val() + '"'
+            };
+
+            analyticsEvent( $.extend(analytics_data, loginAnalytics) );
+
 		}
-	);
-
-
-    var resetPassword = new FormController();
-    resetPassword.watchForm('.form-reset-password', function() {
-        $('.form-reset-password').find('.alert-success').show();
-    });
-
-    var newResetPassToken = new FormController();
-    newResetPassToken.watchForm('.form-new-reset-pass-token', function() {
-        $('.form-new-reset-pass-token').find('.alert-success').show();
     });
 
 
-    var userRegistrationController = new FormController();
-    userRegistrationController.watchForm('.form-registration');
+    var resetPassword = new FormController({
+        observe: '.form-reset-password',
+        successCallback: function() {
+            $('.form-reset-password').find('.alert-success').show();
+        }
+    });
 
-    userRegistrationController.watchForm('.form-registration-optins');
+    var newResetPassToken = new FormController({
+        observe: '.form-new-reset-pass-token',
+        successCallback: function() {
+            $('.form-new-reset-pass-token').find('.alert-success').show();
+        }
+    });
 
-    userRegistrationController.watchForm(
-		'.form-pre-registration',
-		function(form) {
-		    var usernameInput = $(form).find('.js-register-username');
-		    var nextStepUrl = $(form).data('forwarding-url') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
 
-		    window.location.href = nextStepUrl;
+    var userRegistrationController = new FormController({
+        observe: '.form-registration'
+    });
+
+    var userRegistrationFinalController = new FormController({
+        observe: '.form-registration-optins'
+    });
+
+
+    var userPreRegistrationController = new FormController({
+		observe: '.form-pre-registration',
+		successCallback: function(form) {
+            var usernameInput = $(form).find('.js-register-username');
+            var nextStepUrl = $(form).data('forwarding-url') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
+
+            window.location.href = nextStepUrl;
 		}
-	);
+	});
 
 
-    //var registerController = new RegisterController();
-    //registerController.addRegisterUserControl('.js-register-user-optins-submit');
 
+    var emailArticleController = new FormController({
+        observe: '.form-email-article',
+        successCallback: function(form) {
+            $('.js-email-article-form-wrapper').hide();
+            $('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val());
+            $('.js-email-article-success').show();
 
-    var emailArticleController = new FormController();
-    emailArticleController.watchForm('.form-email-article', function(form) {
-        $('.js-email-article-form-wrapper').hide();
-        $('.js-email-article-recip-success').html($('.js-email-article-recip-addr').val());
-        $('.js-email-article-success').show();
-
-        // Reset the Email Article pop-out to its default state when closed
-        $('.js-dismiss-email-article').one('click', function() {
-            $('.js-email-article-form-wrapper').show();
-            $('.js-email-article-success').hide();
-        });
+            // Reset the Email Article pop-out to its default state when closed
+            $('.js-dismiss-email-article').one('click', function() {
+                $('.js-email-article-form-wrapper').show();
+                $('.js-email-article-success').hide();
+            });
+        }
     });
 
 
-    var emailSearchController = new FormController();
-    emailSearchController.watchForm('.form-email-search', function(form) {
-        $('.js-email-search-form-wrapper').hide();
-        $('.js-email-search-recip-success').html($('.js-email-search-recip-addr').val());
-        $('.js-email-search-success').show();
-        $('.js-email-search-form-wrapper input, .js-email-search-form-wrapper textarea').val('');
+    var emailSearchController = new FormController({
+        observe: '.form-email-search',
+        successCallback: function(form) {
 
-        // Reset the Email Article pop-out to its default state when closed
-        $('.js-dismiss-email-search').one('click', function() {
-            $('.js-email-search-form-wrapper').show();
-            $('.js-email-search-success').hide();
-        });
-    }, null, function() {
+            $('.js-email-search-form-wrapper').hide();
+            $('.js-email-search-recip-success').html($('.js-email-search-recip-addr').val());
+            $('.js-email-search-success').show();
+            $('.js-email-search-form-wrapper input, .js-email-search-form-wrapper textarea').val('');
 
-        var resultIDs = null;
+            // Reset the Email Article pop-out to its default state when closed
+            $('.js-dismiss-email-search').one('click', function() {
+                $('.js-email-search-form-wrapper').show();
+                $('.js-email-search-success').hide();
+            });
 
-        $('.result__bookmark').each(function(indx, item) {
-            resultIDs = resultIDs ? resultIDs + ',' + $(item).data('bookmark-id') : $(item).data('bookmark-id');
-        });
+        },
+        beforeRequest: function() {
 
-        $('.js-email-search-results-ids').val(resultIDs);
-        $('.js-email-search-query').val($('.search-bar__field').val());
-        $('.js-email-search-query-url').val(document.location.href);
+            var resultIDs = null;
+
+            $('.result__bookmark').each(function(indx, item) {
+                resultIDs = resultIDs ? resultIDs + ',' + $(item).data('bookmark-id') : $(item).data('bookmark-id');
+            });
+
+            $('.js-email-search-results-ids').val(resultIDs);
+            $('.js-email-search-query').val($('.search-bar__field').val());
+            $('.js-email-search-query-url').val(document.location.href);
+
+        }
     });
 
 
-    var accountEmailPreferencesController = new FormController();
-    accountEmailPreferencesController.watchForm('.form-email-preferences');
+    var accountEmailPreferencesController = new FormController({
+        observe: '.form-email-preferences'
+    });
 
 
-    var accountUpdatePassController = new FormController();
-    accountUpdatePassController.watchForm(
-		'.form-update-account-pass',
-		function(form, context, evt) {
+    var accountUpdatePassController = new FormController({
+        observe: '.form-update-account-pass',
+		successCallback: function(form, context, evt) {
 			$(form).find('input, select, textarea').each(function() {
 				$(this).val('');
 			});
 		}
-	);
+	});
 
-    var accountUpdateContactController = new FormController();
-    accountUpdateContactController.watchForm('.form-update-account-contact', function(form, context, evt) {
-        $(window).scrollTop(($(evt.target).closest('form').find('.js-form-error-general').offset().top - 32));
+    var accountUpdateContactController = new FormController({
+        observe: '.form-update-account-contact',
+        successCallback: function(form, context, evt) {
+            $(window).scrollTop(($(evt.target).closest('form').find('.js-form-error-general').offset().top - 32));
+        }
     });
 
-
-
-    var savedDocumentsController = new FormController();
-    savedDocumentsController.watchForm('.form-remove-saved-document', function(form, context, evt) {
-        $(evt.target).closest('tr').remove();
+    var savedDocumentsController = new FormController({
+        observe: '.form-remove-saved-document',
+        successCallback: function(form, context, evt) {
+            $(evt.target).closest('tr').remove();
+        }
     });
 
 
@@ -419,7 +454,7 @@ $(document).ready(function() {
     $("a[href^=http]").each(function(){
         if(this.href.indexOf(location.hostname) == -1) {
             $(this).attr({
-                target: "_blank",
+                target: "_blank"
             });
         }
     });
@@ -589,7 +624,7 @@ $(document).ready(function() {
 
 	// Toggle global Informa bar
     $('.informa-ribbon__title').on('click', function (e) {
-        $('.informa-ribbon').toggleClass('show')
+        $('.informa-ribbon').toggleClass('show');
     });
 
 
@@ -612,7 +647,12 @@ $(document).ready(function() {
         }
     });
     // Twitter sharing JS
-    window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)?w:(n=t.createElement(e),n.id=r,n.src="https://platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)},w)}(document,"script","twitter-wjs");
-
+    window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],
+        w=window.twttr||{};
+    return t.getElementById(r) ? w : (n=t.createElement(e),
+    n.id=r,n.src="https://platform.twitter.com/widgets.js",
+    i.parentNode.insertBefore(n,i),w._e=[],
+    w.ready=function(t) { w._e.push(t); },
+    w); } (document,"script","twitter-wjs");
 
 });

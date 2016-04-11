@@ -1,0 +1,12 @@
+
+#if ($Is.FeLocalEnvironment == "true")
+cd c:\vagrant_root
+nant init -D:env=local
+
+cd "C:\Program Files (x86)\MSBuild\14.0\Bin"
+msbuild informa.sln /property:Configuration=Debug-NoTds
+#end
+
+robocopy "c:\vagrant_website" "c:\inetpub\wwwroot\Informa\Website" /E /XD "c:\vagrant_website\node_modules"
+
+exit 0
