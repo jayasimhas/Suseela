@@ -85,7 +85,7 @@
 
     &__fieldset {
         border: 0;
-        margin: 0;
+        margin: 0 0 0.5rem;
         padding: 0;
     }
 
@@ -108,14 +108,15 @@
 
     &__section-item,
     &__section-list {
-        padding-bottom: 10px;
+        padding-bottom: 0.5rem;
     }
 
     &__section-list {
 
         &--sub {
-            padding-top: 10px;
-            padding-left: 30px;
+            padding-top: 0.25rem;
+            padding-left: 2rem;
+            padding-bottom: 0.25rem;
 
             // if the subfacet is collapsed, hide the subfacet list
             &.collapsedSubfacet {
@@ -124,7 +125,7 @@
 
             input[type="checkbox"] + label {
                 font-size: 13px;
-                line-height: 20px;
+                line-height: 22px;
             }
         }
 
@@ -270,9 +271,6 @@
         &--more,
         &--less,
         &--add {
-            margin: 10px auto;
-            width: 100%;
-
             &.collapsed {
                 display: none;
             }

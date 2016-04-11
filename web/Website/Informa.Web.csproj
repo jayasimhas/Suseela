@@ -299,6 +299,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceEditor.Speak.Ribbon.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.HtmlCache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.HtmlCache\Sitecore.HtmlCache.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>

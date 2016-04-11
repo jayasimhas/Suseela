@@ -1,3 +1,5 @@
+/* global angular */
+
 var informaSearchApp = angular.module('informaSearchApp');
 
 // set up controller and pass data source
@@ -17,5 +19,5 @@ informaSearchApp.controller("InformaTypeaheadController", function($scope, getCo
         console.log("error");
         console.log(reason);
     });
-    
+
 });
