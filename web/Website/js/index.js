@@ -35,7 +35,7 @@ $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
 
     var eventDetails = {
         event_name: "search",
-        search_term: '"' + $('.header-search__field').val() + '"'
+        search_keyword: '"' + $('.header-search__field').val() + '"'
     };
 
     analyticsEvent( $.extend(analytics_data, eventDetails) );
