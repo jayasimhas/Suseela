@@ -1238,7 +1238,6 @@
     <Content Include="Views\Shared\Global\SitemapNews.cshtml" />
     <Content Include="Views\Shared\Global\RobotsText.cshtml" />
     <Content Include="Views\Article\ArticleFilmstripAd.cshtml" />
-    <Content Include="Scripts\vendor.js.map" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
