@@ -69,7 +69,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             {
                 DisablePreview();
             }
-            
+
             Refresh();
         }
 
@@ -133,11 +133,11 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
             if (this.articleDetailsPageSelector.pageArticleInformationControl._isCheckedOut)
             {
-                articleStatusBar1.ChangeLockButtonStatus(false);
+                articleStatusBar1.ChangeLockButtonStatus(LockStatus.Unlocked);
             }
             else
             {
-                articleStatusBar1.ChangeLockButtonStatus(true);
+                articleStatusBar1.ChangeLockButtonStatus(LockStatus.Locked);
             }
 
             articleDetailsPageSelector.InitializePages();
