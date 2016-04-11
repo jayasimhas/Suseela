@@ -104,11 +104,15 @@ namespace Elsevier.Web.VWB.Report
                 Authors = article.Authors.Select(a => a.First_Name + " " + a.Last_Name);
             }
 
-			ArticleCreation = article.Created_Date;
-			if(ArticleCreation == DateTime.MinValue)
+			
+			if(article.Created_Date == DateTime.MinValue)
 			{
 				ArticleCreation = articleBaseItem.Statistics.Created;
 			}
+			else
+			{
+                ArticleCreation = GetLocalDateTimeFromGtc(article.Created_Date);
+            }
 
             if (string.IsNullOrEmpty(article.Word_Count))
             {
@@ -165,11 +169,21 @@ namespace Elsevier.Web.VWB.Report
 
 
             Embargoed = article.Embargoed;
-            EmbargoDate = articleBaseItem.Publishing.PublishDate;      
+            EmbargoDate = GetLocalDateTimeFromGtc(articleBaseItem.Publishing.PublishDate);      
 
-		    SAPDateTime = article.Planned_Publish_Date;
-		    WebPublicationDateTime = article.Actual_Publish_Date;
+		    SAPDateTime = GetLocalDateTimeFromGtc(article.Planned_Publish_Date);
+		    WebPublicationDateTime = GetLocalDateTimeFromGtc(article.Actual_Publish_Date);
 		}
+
+	    private DateTime GetLocalDateTimeFromGtc(DateTime dateTime)
+	    {
+
+            DateTime convertedDate = DateTime.SpecifyKind(
+                dateTime,
+                DateTimeKind.Utc);
+
+	        return convertedDate.ToLocalTime();
+	    }
 
 		public const string NE = "N/E";
 		public const string NA = "N/A";
