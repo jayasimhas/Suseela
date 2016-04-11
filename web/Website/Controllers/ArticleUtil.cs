@@ -194,7 +194,7 @@ namespace Informa.Web.Controllers
 			{
 				Title = HttpUtility.HtmlDecode(article.Title),
 				Publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid)._Name,
-				Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
+				Authors = article.Authors.Select(r => (((IStaff_Item)r).Last_Name + "," + ((IStaff_Item)r).First_Name)).ToList(),
 				ArticleNumber = article.Article_Number,
 				Date = article.Actual_Publish_Date,
 				PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
@@ -425,7 +425,7 @@ namespace Informa.Web.Controllers
 			articleStruct.WebPublicationDate = articleItem.Planned_Publish_Date;
 			articleStruct.PrintPublicationDate = articleItem.Actual_Publish_Date;
 			articleStruct.Embargoed = articleItem.Embargoed;
-			var authors = articleItem.Authors.Select(r => ((IAuthor)r)).ToList();
+			var authors = articleItem.Authors.Select(r => ((IStaff_Item)r)).ToList();
 			articleStruct.Authors = authors.Select(r => new StaffStruct { ID = r._Id, Name = r.Last_Name + ", " + r.First_Name, }).ToList();
 			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
 

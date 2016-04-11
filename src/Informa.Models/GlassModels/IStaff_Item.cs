@@ -9,7 +9,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templat
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 {
-	partial interface IAuthor : IListable
+	public partial interface IStaff_Item : IListable
 	{                     
 		
 	}

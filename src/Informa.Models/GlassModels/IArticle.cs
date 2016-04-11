@@ -99,7 +99,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public string Featured_Image_Caption { get; set; }
 		public string Featured_Image_Source { get; set; }
 		public string Summary { get; set; }
-		public IEnumerable<IAuthor> Authors { get; set; }
+		public IEnumerable<IStaff_Item> Authors { get; set; }
 		public string Section_Review { get; set; }
 		public string Start_Page { get; set; }
 		public string Word_Count { get; set; }
