@@ -137,7 +137,7 @@ namespace InformaSitecoreWord.UI
                             IsLoggedIn();
                             OpenTaskPane(taskControl, title);
                         }
-                        IsLoggedIn();
+                        //IsLoggedIn();
                     };
                 login.ShowDialog();
             }
