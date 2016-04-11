@@ -1,3 +1,43 @@
+/*---
+title: Pop-outs
+section: UI Elements
+---
+
+```example:html
+<div class="pop-out js-pop-out__sign-in is-active" style="position: relative;">
+    <div class="pop-out__tab" style="height: 54px; width: 52px; left: auto; right: 0px; top: -53px; z-index: 9998;"></div>
+    <div class="pop-out__internal">
+        <div class="pop-out__sign-in">
+            <div class="dismiss-button" data-target-element=".js-pop-out__sign-in">
+                <svg class="dismiss-button__icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#x"></use>
+                </svg>
+            </div>
+
+            <h3 class="pop-out__register-header">You must sign in to use this functionality</h3>
+
+    <div class="js-login-container">
+        <div class="pop-out__form-error">
+            Your login and/or password information does not match our records. Please try again.
+        </div>
+        <form method="post" class="js-sign-in-submit">
+            <input name="username" class="pop-out__input header__hover-input" placeholder="Email Address (User Name)" type="text">
+            <input name="password" class="pop-out__input header__hover-input" placeholder="Password" type="password">
+
+            <div class="pop-out__form-actions-wrapper">
+                <div>
+                    <span class="pop-out__form-actions pop-out__reset-password js-show-forgot-password">Forgot your password?</span>
+                    <div class="pop-out__sign-in-remember-me">
+                        <input name="persist" type="checkbox" data-checkbox-type="boolean"> Remember Me
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+```
+*/
+
 .pop-out {
     display: none;
     position: absolute;

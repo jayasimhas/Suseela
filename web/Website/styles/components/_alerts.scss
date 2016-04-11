@@ -4,9 +4,9 @@ section: UI Elements
 ---
 
 ```example:html
-<div class="alert-success">
+<div class="alert-success" style="display: block !important;">
     <svg class="alert__icon">
-        <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+        <use xlink:href="svg-sprite.svg#check"></use>
     </svg>
     <p>Good work! The thing you did was a success.</p>
 </div>
