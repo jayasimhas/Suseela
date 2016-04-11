@@ -36,7 +36,6 @@
         }
     }
 
-
     @include breakpoint('small') {
         &__main-well,
         &__main-well .article-preview,
@@ -44,5 +43,9 @@
         &__right-rail {
             width: 100%;
         }
+    }
+
+    .article-pullquote {
+        margin: 0 0 2rem;
     }
 }

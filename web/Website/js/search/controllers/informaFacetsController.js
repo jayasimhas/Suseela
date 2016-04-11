@@ -1,4 +1,4 @@
-﻿
+﻿/* global _, angular */
 var InformaFacetController = function ($scope, $location, $http, $anchorScroll, searchService, searchBootstrapper) {
     "use strict";
 
@@ -22,6 +22,14 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         { label: 'Last year', key: 'year', selected: false },
         { label: 'Select date range', key: 'custom', selected: false }
     ];
+
+    vm.datesObject = {
+        year: '@DateTime.Now.AddDays(-365).ToString("MM/dd/yyyy")',
+        day: '@DateTime.Now.AddDays(-1).ToString("MM/dd/yyyy")',
+        threedays: '@DateTime.Now.AddDays(-3).ToString("MM/dd/yyyy")',
+        month: '@DateTime.Now.AddDays(-30).ToString("MM/dd/yyyy")',
+        week: '@DateTime.Now.AddDays(-7).ToString("MM/dd/yyyy")'
+    };
 
     // Create placeholder values for From: and To: date values
     $scope.dateValues = {
@@ -203,8 +211,8 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         var filter = vm.getFilter(filterKey);
         var filterDateLabel = vm.getFilter('dateFilterLabel');
 
-        var startDate = datesObject[dateFilter];
-        var endDate = datesObject.day;
+        var startDate = vm.datesObject[dateFilter];
+        var endDate = vm.datesObject.day;
 
         filterDateLabel.setValue(dateFilter);
         filter.setValue(startDate + ";" + endDate);
