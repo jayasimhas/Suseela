@@ -2,6 +2,6 @@
 {
 	public interface ISiteNewsletterTypeContext
 	{
-		NewsletterType Type { get; }
+		string Type { get; }
 	}
 }

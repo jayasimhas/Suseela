@@ -3,5 +3,7 @@
 	public interface IUserCompanyNameContext
 	{
 		string Name { get; }
+
+		string CompanyId { get; }
 	}
 }

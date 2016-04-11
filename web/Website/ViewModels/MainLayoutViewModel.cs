@@ -156,13 +156,14 @@ namespace Informa.Web.ViewModels
 		public string ArcticleNumber => Article?.Article_Number;
 		public bool ArticleEmbargoed => Article?.Embargoed ?? false;
 		public string ArticleMediaType => Article?.Media_Type?.Item_Name;
-		public string ArticleDateCreated
+		public string DateCreated
 		{
 			get
 			{
-				if (Article != null && Article.Created_Date > DateTime.MinValue)
+				var currentItem = Sitecore.Context.Item;
+				if (currentItem != null && currentItem.Statistics.Created > DateTime.MinValue)
 				{
-					return Article.Created_Date.ToString();
+					return currentItem.Statistics.Created.ToString("MM/dd/yyyy");
 				}
 
 				return DateTime.MinValue.ToString();
@@ -254,6 +255,7 @@ namespace Informa.Web.ViewModels
 			}
 		}
 		public string UserCompany => UserCompanyContext.Name;
+		public string CompanyId => UserCompanyContext.CompanyId;
 		public string UserIndustry => UserProfileContext.Profile?.JobIndustry ?? string.Empty;
 		public string UserEmail => UserProfileContext.Profile?.Email ?? string.Empty;
 		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
