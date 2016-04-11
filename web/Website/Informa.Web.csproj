@@ -712,6 +712,7 @@
     <Compile Include="Areas\Article\Controllers\EmailFriendController.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendSearchRequest.cs" />
+    <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendValidationReason.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
