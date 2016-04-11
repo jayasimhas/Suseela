@@ -774,6 +774,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IGeneral_Content_PageConstants.CSSFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string CSS  {get; set;}
 								/// <summary>
+					/// The Javascript field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 89f93105-8d7e-42e3-a647-416c00ac24a0</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IGeneral_Content_PageConstants.JavascriptFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Javascript  {get; set;}
+								/// <summary>
 					/// The Section Title field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -822,6 +831,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IGeneral_Content_PageConstants.CSSFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string CSS  {get; set;}
 										/// <summary>
+						/// The Javascript field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 89f93105-8d7e-42e3-a647-416c00ac24a0</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IGeneral_Content_PageConstants.JavascriptFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Javascript  {get; set;}
+										/// <summary>
 						/// The Section Title field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -859,6 +877,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID CSSFieldId = new ID("2f02ffdb-8082-44c9-b9c6-a034f3c1f9d9");
 			public const string CSSFieldName = "CSS";
+
+						
+					
+			public static readonly ID JavascriptFieldId = new ID("89f93105-8d7e-42e3-a647-416c00ac24a0");
+			public const string JavascriptFieldName = "Javascript";
 
 						
 					
@@ -14553,7 +14576,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 	/// <para>ID: d0dfaf98-bb2a-4eb3-a931-13c335201d25</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IArticle_Date_FolderConstants.TemplateIdString)]
-	public partial interface IArticle_Date_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+	public partial interface IArticle_Date_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___PublishStatus
 	{
 				}
 
@@ -14565,7 +14588,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 		/// <para>ID: d0dfaf98-bb2a-4eb3-a931-13c335201d25</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArticle_Date_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
+		public partial interface IArticle_Date_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___PublishStatus__Raw
 		{
 						}
 	
@@ -14575,6 +14598,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Article Date Folder";
 
+					
+			public static readonly ID ___Item_PublishedFieldId = new ID("177cc3b0-d09c-408d-8948-78b13c1f615a");
+			public const string ___Item_PublishedFieldName = "__Item Published";
+
+						
 			
 
 	}
@@ -16243,6 +16271,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 					
 			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
 			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
+{
+
+
+ 	/// <summary>
+	/// I___PublishStatus Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Base Templates/__PublishStatus</para>	
+	/// <para>ID: e6371d65-0718-40eb-91aa-c42b01c27969</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=I___PublishStatusConstants.TemplateIdString)]
+	public partial interface I___PublishStatus : IGlassBase 
+	{
+								/// <summary>
+					/// The __Item Published field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 177cc3b0-d09c-408d-8948-78b13c1f615a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I___PublishStatusConstants.___Item_PublishedFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool ___Item_Published  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// I___PublishStatus Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Base Templates/__PublishStatus</para>	
+		/// <para>ID: e6371d65-0718-40eb-91aa-c42b01c27969</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface I___PublishStatus__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The __Item Published field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 177cc3b0-d09c-408d-8948-78b13c1f615a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I___PublishStatusConstants.___Item_PublishedFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool ___Item_Published  {get; set;}
+						}
+	
+	public static partial class I___PublishStatusConstants{
+
+			public const string TemplateIdString = "e6371d65-0718-40eb-91aa-c42b01c27969";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "__PublishStatus";
+
+					
+			public static readonly ID ___Item_PublishedFieldId = new ID("177cc3b0-d09c-408d-8948-78b13c1f615a");
+			public const string ___Item_PublishedFieldName = "__Item Published";
 
 						
 			

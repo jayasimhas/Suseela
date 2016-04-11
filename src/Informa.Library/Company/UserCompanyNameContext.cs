@@ -14,5 +14,7 @@ namespace Informa.Library.Company
 		}
 
 		public string Name => UserCompanyContext.Company?.Name ?? string.Empty;
+
+		public string CompanyId => UserCompanyContext.Company?.Id ?? string.Empty;
 	}
 }

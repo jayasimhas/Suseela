@@ -67,7 +67,7 @@ namespace Informa.Web.Controllers
 			{
 				throw new ApplicationException("Could not find article with Guid " + articleGuid);
 			}
-			SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion, false);
+			SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion);
 		}
 
 		public void SaveArticleDetails(string articleNumber, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)

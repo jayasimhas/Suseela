@@ -63,7 +63,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
             var page = SitecoreContext.GetItem<I___BasePage>(itemID.Guid);
             
-            var result = SaveDocumentContext.Save(page.Title, NewsletterTypeContext.Type.ToString(), request.DocumentID);
+            var result = SaveDocumentContext.Save(page.Title, NewsletterTypeContext.Type, request.DocumentID);
 
             return Ok(new
             {

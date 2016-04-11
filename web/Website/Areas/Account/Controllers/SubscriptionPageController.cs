@@ -57,7 +57,7 @@ namespace Informa.Web.Areas.Account.Controllers
 		public ActionResult Index(string pub)
         {
 			//TODO: Add logic to subscribe the user using salesforce and also check for logged in user functionality
-			if (!string.IsNullOrEmpty(pub) && pub.ToLower() == NewsletterTypeContext.Type.ToString().ToLower())
+			if (!string.IsNullOrEmpty(pub) && pub.ToLower() == NewsletterTypeContext.Type.ToLower())
 			{
 				SubscriptionModel subscriptionModel = new SubscriptionModel();
 				var item = _sitecoreMasterService.GetItem<I___BasePage>(_itemReferences.SubscriptionPage);
@@ -89,10 +89,8 @@ namespace Informa.Web.Areas.Account.Controllers
             }
 
 			//process subscribe
-			var newsletterType = NewsletterTypeContext.Type;
-
-            if (!string.IsNullOrEmpty(Pub) 
-                && (Pub.ToLower() == newsletterType.ToDescriptionString().ToLower() || Pub.ToLower() == newsletterType.ToString().ToLower()))
+			if (!string.IsNullOrEmpty(Pub) 
+                && (Pub.ToLower() == NewsletterTypeContext.Type.ToLower()))
             {
 				UpdateNewsletterOptInContext.Update(true);
             }
@@ -117,7 +115,7 @@ namespace Informa.Web.Areas.Account.Controllers
 			//process unsubscribe
 			var newsletterType = NewsletterTypeContext.Type;
 
-			if (Type.ToLower() == "newsletter" && !string.IsNullOrEmpty(Pub) && (Pub.ToLower() == newsletterType.ToDescriptionString().ToLower() || Pub.ToLower() == newsletterType.ToString().ToLower())) {
+			if (Type.ToLower() == "newsletter" && !string.IsNullOrEmpty(Pub) && (Pub.ToLower() == newsletterType.ToLower())) {
 				if (UserContext.IsAuthenticated)
 				{
 					UpdateNewsletterOptInContext.Update(false);
