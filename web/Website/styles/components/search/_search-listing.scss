@@ -7,6 +7,10 @@
         .result__tags {
             display: none;
         }
+
+        .result__heading {
+            width: 100%;
+        }
     }
 
     @include breakpoint('medium') {
