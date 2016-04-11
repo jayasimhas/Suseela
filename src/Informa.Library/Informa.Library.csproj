@@ -520,6 +520,10 @@
     <Compile Include="User\Document\SavedDocumentsContext.cs" />
     <Compile Include="User\Document\SaveDocumentContext.cs" />
     <Compile Include="User\Profile\UserProfileContext.cs" />
+    <Compile Include="User\Registration\Web\IWebIsActiveRegistration.cs" />
+    <Compile Include="User\Registration\Web\IWebRegisterUserContext.cs" />
+    <Compile Include="User\Registration\Web\WebIsActiveRegistration.cs" />
+    <Compile Include="User\Registration\Web\WebRegisterUserContext.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
     <Compile Include="SiteDebugging\ISiteDebuggingAllowedConfiguration.cs" />
@@ -832,7 +836,6 @@
     <Compile Include="User\Registration\Web\IWebRegisterUserSession.cs" />
     <Compile Include="User\Registration\Web\IWebSendRegisterUserEmail.cs" />
     <Compile Include="User\Registration\Web\IWebSetOptInsRegisterUser.cs" />
-    <Compile Include="User\Registration\Web\IWebSetRegisterUserSession.cs" />
     <Compile Include="User\Registration\Web\WebRegisterUser.cs" />
     <Compile Include="User\Registration\Web\WebRegisterUserActions.cs" />
     <Compile Include="User\Registration\Web\WebRegisterUserEmailFactory.cs" />

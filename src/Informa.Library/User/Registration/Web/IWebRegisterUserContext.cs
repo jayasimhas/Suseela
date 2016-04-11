@@ -1,6 +1,6 @@
 ﻿namespace Informa.Library.User.Registration.Web
 {
-	public interface IWebSetRegisterUserSession
+	public interface IWebRegisterUserContext
 	{
 		INewUser NewUser { get; set; }
 	}
