@@ -1,5 +1,32 @@
-function formController(requestVerificationToken) {
-	this.watchForm = function(form, successCallback, failureCallback, presubmit) {
+/*
+
+opts.observe — Form element(s) to observe
+opts.beforeRequest — Function to execute before making Ajax request
+opts.successCallback — If Ajax request is successful, callback
+opts.failureCallback — If Ajax request fails / returns false, callback
+
+*/
+
+function formController(opts) {
+	this.watchForm = function() {};
+
+	var showSuccessMessage = function(form) {
+		$(form).find('.js-form-success').show();
+	};
+
+	var showError = function(form, error) {
+		if($(form).find(error)) {
+			$(form).find(error).show();
+		}
+	};
+
+	var hideErrors = function(form) {
+		$(form).find('.js-form-error').hide();
+	};
+
+	(function init() {
+
+		var form = opts.observe;
 
         if (!form) return false;
 
@@ -14,16 +41,16 @@ function formController(requestVerificationToken) {
 				currentForm = $(event.target).closest('form');
 			}
 
-			if(presubmit) {
-				presubmit();
+			if(opts.beforeRequest) {
+				opts.beforeRequest();
 			}
 
 			event.preventDefault(); // Prevent form submitting
 
-            this.hideErrors(currentForm); // Reset any visible errors
+            hideErrors(currentForm); // Reset any visible errors
 
             // Prevent user from re-submitting form
-			$(event.target).attr('disabled', 'disabled');
+			$(formSubmit).attr('disabled', 'disabled');
 
 			var inputData = {};
 
@@ -58,10 +85,10 @@ function formController(requestVerificationToken) {
 				success: function (response) {
 					if (response.success) {
 
-                        this.showSuccessMessage(currentForm);
+                        showSuccessMessage(currentForm);
 
-						if (successCallback) {
-							successCallback(currentForm, this, event);
+						if (opts.successCallback) {
+							opts.successCallback(currentForm, this, event);
 						}
 
                         if($(form).data('on-success')) {
@@ -71,48 +98,36 @@ function formController(requestVerificationToken) {
 					else {
 						if (response.reasons && response.reasons.length > 0) {
 							for (var reason in response.reasons) {
-								this.showError(form, '.js-form-error-' + response.reasons[reason]);
+								showError(form, '.js-form-error-' + response.reasons[reason]);
 							}
 						} else {
-                            this.showError(currentForm, '.js-form-error-general');
+                            showError(currentForm, '.js-form-error-general');
 						}
 
-						if (failureCallback) {
-							failureCallback(currentForm);
+						if (opts.failureCallback) {
+							opts.failureCallback(currentForm);
 						}
 					}
 				},
 				error: function(response) {
 
-					this.showError(currentForm, '.js-form-error-general');
+					showError(currentForm, '.js-form-error-general');
 
-					if (failureCallback) {
-						failureCallback(currentForm);
+					if (opts.failureCallback) {
+						opts.failureCallback(currentForm);
 					}
 				},
                 complete: function() {
-                    $(formSubmit).removeAttr('disabled');
+                    setTimeout((function() {
+						$(formSubmit).removeAttr('disabled');
+					}), 500);
                 }
 
 			});
 
 			return false;
 		});
-	};
-
-	this.showSuccessMessage = function(form) {
-		$(form).find('.js-form-success').show();
-	};
-
-	this.showError = function(form, error) {
-		if($(form).find(error)) {
-			$(form).find(error).show();
-		}
-	};
-
-	this.hideErrors = function(form) {
-		$(form).find('.js-form-error').hide();
-	};
+	})();
 }
 
 export default formController;

@@ -4,7 +4,9 @@
 	<div class="pop-out__form-error">
 		@Model.SignInInvalidText
 	</div>
-	<form method="post" class="js-sign-in-submit">
+	<form 	method="post"
+			class="js-sign-in-submit"
+			data-on-submit="/Account/api/LoginWebUserApi/Login/">
 		<input name="username"
 			   class="pop-out__input header__hover-input"
 			   placeholder="@Model.SignInUsernamePlaceholderText"
@@ -22,7 +24,7 @@
 				</div>
 			</div>
 			<div class="sign-in__submit-wrapper">
-				<button type="submit" class="button--filled sign-in__submit" data-login-url="/Account/api/LoginWebUserApi/Login/" data-login-redirect-url="">@Model.SignInButtonText</button>
+				<button type="submit" class="button--filled sign-in__submit" data-login-redirect-url="">@Model.SignInButtonText</button>
 			</div>
 		</div>
 	</form>
