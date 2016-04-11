@@ -323,6 +323,7 @@
     <Compile Include="Rss\ItemRetrieval\RssSearchResultsItemRetrieval.cs" />
     <Compile Include="Rss\Utils\RssConstants.cs" />
     <Compile Include="Search\Utilities\SearchSummaryUtil.cs" />
+    <Compile Include="Search\Utilities\SearchWebClientUtil.cs" />
     <Compile Include="Session\ISessionValue`1.cs" />
     <Compile Include="Session\ISpecificSessionStore.cs" />
     <Compile Include="Session\ISpecificSessionStores.cs" />
