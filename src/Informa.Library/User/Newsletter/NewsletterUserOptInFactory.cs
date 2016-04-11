@@ -6,7 +6,7 @@ namespace Informa.Library.User.Newsletter
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class NewsletterUserOptInFactory : INewsletterUserOptInFactory
 	{
-		public INewsletterUserOptIn Create(NewsletterType newsletterOptInType, bool optIn)
+		public INewsletterUserOptIn Create(string newsletterOptInType, bool optIn)
 		{
 			return new NewsletterUserOptIn
 			{

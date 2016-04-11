@@ -171,7 +171,7 @@ namespace Informa.Library.Article.Search
 			{
 				var lastItem = item.Authors.LastOrDefault();
 				StringBuilder str = new StringBuilder();
-				foreach (IAuthor author in item.Authors)
+				foreach (IStaff_Item author in item.Authors)
 				{
                     if (str.Length > 0)
                         str.Append(",");

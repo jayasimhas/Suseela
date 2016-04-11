@@ -1480,109 +1480,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
-{
-
-
- 	/// <summary>
-	/// IAuthor Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Objects/Author</para>	
-	/// <para>ID: 101b0388-7503-4bed-8f12-063f94c34d18</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IAuthorConstants.TemplateIdString)]
-	public partial interface IAuthor : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Person
-	{
-				}
-
-	
-		/// <summary>
-		/// IAuthor Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Objects/Author</para>	
-		/// <para>ID: 101b0388-7503-4bed-8f12-063f94c34d18</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IAuthor__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Person__Raw
-		{
-						}
-	
-	public static partial class IAuthorConstants{
-
-			public const string TemplateIdString = "101b0388-7503-4bed-8f12-063f94c34d18";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Author";
-
-					
-			public static readonly ID Email_AddressFieldId = new ID("0ecf54f6-157b-49b0-aad2-ce5ea3b5a568");
-			public const string Email_AddressFieldName = "Email Address";
-
-						
-					
-			public static readonly ID First_NameFieldId = new ID("cf238d7d-3c1b-4cde-b2b5-01cdbbd23a58");
-			public const string First_NameFieldName = "First Name";
-
-						
-					
-			public static readonly ID ImageFieldId = new ID("3e617952-e635-4b9d-9cf7-f7adfa549b6a");
-			public const string ImageFieldName = "Image";
-
-						
-					
-			public static readonly ID InactiveFieldId = new ID("b3e3f7b7-3e08-4cbf-abed-1932bb8639a7");
-			public const string InactiveFieldName = "Inactive";
-
-						
-					
-			public static readonly ID Last_NameFieldId = new ID("da223987-cabd-4c88-98d7-40e3492220f5");
-			public const string Last_NameFieldName = "Last Name";
-
-						
-					
-			public static readonly ID TwitterFieldId = new ID("ea38cc14-799a-4fed-a58c-4bed8c57a81e");
-			public const string TwitterFieldName = "Twitter";
-
-						
-					
-			public static readonly ID FactoryListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
-			public const string FactoryListableAuthorsFieldName = "FactoryListableAuthors";
-
-						
-					
-			public static readonly ID FactoryListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
-			public const string FactoryListableDatesFieldName = "FactoryListableDate";
-
-						
-					
-			public static readonly ID FactoryListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
-			public const string FactoryListableImagesFieldName = "FactoryListableImage";
-
-						
-					
-			public static readonly ID FactoryListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
-			public const string FactoryListableSummariesFieldName = "FactoryListableSummary";
-
-						
-					
-			public static readonly ID FactoryListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
-			public const string FactoryListableTitlesFieldName = "FactoryListableTitle";
-
-						
-					
-			public static readonly ID FactoryListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
-			public const string FactoryListableTopicsFieldName = "FactoryListableTopics";
-
-						
-					
-			public static readonly ID FactoryListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
-			public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
-
-						
-			
-
-	}
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
 
@@ -1808,10 +1705,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: 5ad65e47-7554-4ce5-87b0-7fb65051c05a</para>
-					/// <para>Custom Data: generic=IAuthor</para>
+					/// <para>Custom Data: generic=IStaff_Item</para>
 					/// </summary>
 					[SitecoreField(IArticleConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IAuthor> Authors  {get; set;}
+					IEnumerable<IStaff_Item> Authors  {get; set;}
 								/// <summary>
 					/// The Section Review field.
 					/// <para></para>
@@ -2117,10 +2014,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: 5ad65e47-7554-4ce5-87b0-7fb65051c05a</para>
-						/// <para>Custom Data: generic=IAuthor</para>
+						/// <para>Custom Data: generic=IStaff_Item</para>
 						/// </summary>
 						[SitecoreField(IArticleConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IAuthor> Authors  {get; set;}
+						IEnumerable<IStaff_Item> Authors  {get; set;}
 										/// <summary>
 						/// The Section Review field.
 						/// <para></para>
@@ -14576,7 +14473,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 	/// <para>ID: d0dfaf98-bb2a-4eb3-a931-13c335201d25</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IArticle_Date_FolderConstants.TemplateIdString)]
-	public partial interface IArticle_Date_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+	public partial interface IArticle_Date_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___PublishStatus
 	{
 				}
 
@@ -14588,7 +14485,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 		/// <para>ID: d0dfaf98-bb2a-4eb3-a931-13c335201d25</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArticle_Date_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
+		public partial interface IArticle_Date_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___PublishStatus__Raw
 		{
 						}
 	
@@ -14598,6 +14495,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Article Date Folder";
 
+					
+			public static readonly ID ___Item_PublishedFieldId = new ID("177cc3b0-d09c-408d-8948-78b13c1f615a");
+			public const string ___Item_PublishedFieldName = "__Item Published";
+
+						
 			
 
 	}
@@ -16266,6 +16168,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 					
 			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
 			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
+{
+
+
+ 	/// <summary>
+	/// I___PublishStatus Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Base Templates/__PublishStatus</para>	
+	/// <para>ID: e6371d65-0718-40eb-91aa-c42b01c27969</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=I___PublishStatusConstants.TemplateIdString)]
+	public partial interface I___PublishStatus : IGlassBase 
+	{
+								/// <summary>
+					/// The __Item Published field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 177cc3b0-d09c-408d-8948-78b13c1f615a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(I___PublishStatusConstants.___Item_PublishedFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool ___Item_Published  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// I___PublishStatus Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Base Templates/__PublishStatus</para>	
+		/// <para>ID: e6371d65-0718-40eb-91aa-c42b01c27969</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface I___PublishStatus__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The __Item Published field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 177cc3b0-d09c-408d-8948-78b13c1f615a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(I___PublishStatusConstants.___Item_PublishedFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool ___Item_Published  {get; set;}
+						}
+	
+	public static partial class I___PublishStatusConstants{
+
+			public const string TemplateIdString = "e6371d65-0718-40eb-91aa-c42b01c27969";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "__PublishStatus";
+
+					
+			public static readonly ID ___Item_PublishedFieldId = new ID("177cc3b0-d09c-408d-8948-78b13c1f615a");
+			public const string ___Item_PublishedFieldName = "__Item Published";
 
 						
 			

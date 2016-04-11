@@ -1,32 +1,32 @@
 ----item----
 version: 1
-id: {5C4D8806-C74E-465E-AB61-FC50F168BCBC}
+id: {E6371D65-0718-40EB-91AA-C42B01C27969}
 database: master
-path: /sitecore/content/Environment Globals/Staff
-parent: {BD7B681C-5854-420B-877A-26366EA73EC7}
-name: Staff
+path: /sitecore/templates/User Defined/Base Templates/__PublishStatus
+parent: {614D6759-0A94-418A-9FC3-72E9000F9742}
+name: __PublishStatus
 master: {00000000-0000-0000-0000-000000000000}
-template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
-templatekey: Folder
+template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
+templatekey: Template
 
 ----field----
-field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
-name: __Icon
-key: __icon
-content-length: 21
-
-apps/32x32/folder.png
-----field----
-field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
-name: __Masters
-key: __masters
+field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
+name: __Base template
+key: __base template
 content-length: 38
 
-{DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+{1930BBEB-7805-471A-A3BE-4858AC7CF696}
+----field----
+field: {F7D48A55-2158-4F02-9356-756654404F73}
+name: __Standard values
+key: __standard values
+content-length: 38
+
+{3FCE09E8-4A0A-43E6-8F64-59FEFE2854A2}
 ----version----
 language: en
 version: 1
-revision: 84018172-7277-4996-9f52-7d474a459372
+revision: 2887a61a-b09d-480f-b674-ab2489e9a748
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,7 +34,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20160107T163403Z
+20160411T103224Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-84018172-7277-4996-9f52-7d474a459372
+2887a61a-b09d-480f-b674-ab2489e9a748
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160411T134844Z
+20160411T103446Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
