@@ -179,7 +179,7 @@ namespace Informa.Web.ViewModels
 			get
 			{
 				var entitlementList = UserEntitlementsContext.Entitlements;
-				if (entitlementList != null)
+				if (entitlementList != null && entitlementList.Any())
 				{
 					StringBuilder strEntitledProducts = new StringBuilder();
 					var lastEntitlement = entitlementList.LastOrDefault();
@@ -205,7 +205,7 @@ namespace Informa.Web.ViewModels
 			get
 			{
 				var entitlementList = UserEntitlementsContext.Entitlements;
-				if (entitlementList != null)
+				if (entitlementList != null && entitlementList.Any())
 				{
 					StringBuilder strEntitledProducts = new StringBuilder();
 					var lastEntitlement = entitlementList.LastOrDefault();
