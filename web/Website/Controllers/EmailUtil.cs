@@ -52,6 +52,7 @@ namespace Informa.Web.Controllers
 			var title = siteConfigItem.Email_Title;
 			var replyToEmail = Sitecore.Context.User.Profile.Email;
 			if (string.IsNullOrEmpty(fromEmail) || string.IsNullOrEmpty(replyToEmail)) return;
+			var isAuthorInSenderList = false;
 
 			var notificationList = !articleStruct.ArticleSpecificNotifications.Any() ? new List<StaffStruct>() :
 				articleStruct.ArticleSpecificNotifications;
@@ -102,8 +103,13 @@ namespace Informa.Web.Controllers
 					IsBodyHtml = true
 				};
 				EmailSender.SendWorkflowNotification(email, replyToEmail);
+				if (replyToEmail == notificationUser.Email_Address)
+				{
+					isAuthorInSenderList = true;
+				}
 			}
 
+			if (isAuthorInSenderList) return;
 			//Emailing the Content Author
 			Email contentAuthorEmail = new Email
 			{
