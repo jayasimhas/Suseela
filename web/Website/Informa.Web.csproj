@@ -1157,6 +1157,9 @@
     </None>
     <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
     <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template" />
+    <Content Include="App_Config\Include\UserDefined\Publishing.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
       <SubType>Designer</SubType>

@@ -282,6 +282,8 @@
     <Compile Include="Actions\IActionsProcessor`2.cs" />
     <Compile Include="Actions\IAction`1.cs" />
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
+    <Compile Include="Article\Publishing\Events\PublishDateFoldersArticlePublishItemProcessing.cs" />
+    <Compile Include="Article\Publishing\Events\ActualPublishDateArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Search\ArticleSearch.cs" />
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
     <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
@@ -306,6 +308,8 @@
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
     <Compile Include="Newsletter\ISiteNewsletterTypeContext.cs" />
     <Compile Include="Newsletter\SiteNewsletterTypeContext.cs" />
+    <Compile Include="Publishing\Events\ItemPublishedPublishItemProcessing.cs" />
+    <Compile Include="Publishing\Events\PublishItemProcessing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishingDateTime.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishingDateTime.cs" />
     <Compile Include="Rss\FeedGenerators\BaseInformaFeedGenerator.cs" />

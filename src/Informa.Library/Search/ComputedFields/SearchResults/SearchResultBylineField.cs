@@ -34,7 +34,7 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
 
             //string sep = "";
 
-            //foreach (IAuthor author in article.Authors)
+            //foreach (IStaff_Item author in article.Authors)
             //{
             //    byLine.Append(sep);
             //    byLine.Append(author.First_Name + " " + author.Last_Name);
