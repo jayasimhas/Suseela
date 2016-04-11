@@ -1,16 +1,6 @@
 @model SearchViewModel
 <!-- SEARCH FILTERS IN LEFT RAIL -->
 
-<script type="text/javascript">
-var datesObject = {
-    year: '@DateTime.Now.AddDays(-365).ToString("MM/dd/yyyy")',
-    day: '@DateTime.Now.AddDays(-1).ToString("MM/dd/yyyy")',
-    threedays: '@DateTime.Now.AddDays(-3).ToString("MM/dd/yyyy")',
-    month: '@DateTime.Now.AddDays(-30).ToString("MM/dd/yyyy")',
-    week: '@DateTime.Now.AddDays(-7).ToString("MM/dd/yyyy")',
-}
-</script>
-
 <button class="facets__mobile-button"
         ng-model="facetsAreCollapsed"
         ng-click="facetsAreCollapsed = !facetsAreCollapsed"
@@ -50,7 +40,6 @@ var datesObject = {
                   <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use></svg>
               </button>
           </legend>
-
 
             <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit">
               <ul ng-if="f.selected" class="facets__section-list" ng-hide="collapsefacet">
@@ -94,7 +83,6 @@ var datesObject = {
                   <label>Amgen (537)</label>
               </li>
            /sample added company -->
-
               <li ng-repeat="myCompany in savedCompanies" class="saved-company">
                 <input type="checkbox" class="visuallyhidden click-utag" id="{{myCompany.label}}" ng-checked="myCompany.selected" data-info='{"event_name":"search-facet","facet_selected":"{{myCompany.label}}","facet_group_name":"My saved companies"}'>
 
@@ -306,26 +294,27 @@ var datesObject = {
                             </span>
 
                             <button class="facets__button facets__button--toggle-subcat"
-                                    ng-model="collapsesubfacet"
-                                    ng-click="collapseSubfacet = !collapseSubfacet; isCollapsedSubfacet = !isCollapsedSubfacet">
+                                    ng-model="f.collapseSubfacet"
+                                    ng-click="f.collapseSubfacet = !f.collapseSubfacet; f.isCollapsedSubfacet = !f.isCollapsedSubfacet">
                                 <svg
                                   class="facets__button--collapse-subfacet"
                                   ng-if="f.sublist.length > 0"
-                                  ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+                                  ng-class="{'collapsedSubfacet': f.isCollapsedSubfacet}">
                                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#collapse"></use>
                                 </svg>
                                 <svg
                                   class="facets__button--expand-subfacet"
                                   ng-if="(f.sublist.length > 0)"
-                                  ng-class="{'collapsedSubfacet': isCollapsedSubfacet}">
+                                  ng-class="{'collapsedSubfacet': f.isCollapsedSubfacet}">
                                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#expand"></use>
                                 </svg>
                             </button>
-
                         </label>
-                      <ul ng-if="f.sublist.length > 0"
-                          ng-class="{'collapsedSubfacet': isCollapsedSubfacet}"
+
+                      <ul ng-show="f.sublist.length > 0"
+                          ng-class="{'collapsedSubfacet': f.isCollapsedSubfacet}"
                           class="facets__section-list--sub">
+
                           <li ng-repeat="subFacet in f.sublist">
                               <input id="{{ subFacet.id }}-{{ $index }}"
                                      type="checkbox"
