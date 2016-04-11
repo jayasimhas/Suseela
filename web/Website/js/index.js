@@ -71,12 +71,6 @@ var showForgotPassSuccess = function() {
 		.toggleClass('is-active');
 };
 
-// Toggle the sign-in error message displayed to a user
-var toggleSignInError = function(form) {
-    $(form).closest('.js-login-container').find('.pop-out__form-error').show();
-    //$('.pop-out__form-error').toggleClass('is-active'); - bugged due to styling issues
-};
-
 var renderIframeComponents = function() {
     $('.iframe-component').each(function(index, elm) {
         var desktopEmbed = $(elm).find('.iframe-component__desktop iframe');
@@ -201,7 +195,7 @@ $(document).ready(function() {
     $(".newsletter-signup-after-submit").hide();
     newsletterSignup.checkForUserSignedUp();
     newsletterSignup.addControl('.js-newsletter-signup-submit', null,function(triggerElement) {
-        //  toggleSignInError();
+
     });
 
 
@@ -243,7 +237,6 @@ $(document).ready(function() {
 
             analyticsEvent( $.extend(analytics_data, loginAnalytics) );
 
-            toggleSignInError(form);
 		}
     });
 

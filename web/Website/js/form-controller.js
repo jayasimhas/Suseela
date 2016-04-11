@@ -8,7 +8,6 @@ opts.failureCallback — If Ajax request fails / returns false, callback
 */
 
 function formController(opts) {
-	this.watchForm = function() {};
 
 	var showSuccessMessage = function(form) {
 		$(form).find('.js-form-success').show();
@@ -101,7 +100,7 @@ function formController(opts) {
 								showError(form, '.js-form-error-' + response.reasons[reason]);
 							}
 						} else {
-                            showError(currentForm, '.js-form-error-general');
+							showError(currentForm, '.js-form-error-general');
 						}
 
 						if (opts.failureCallback) {
@@ -120,7 +119,7 @@ function formController(opts) {
                 complete: function() {
                     setTimeout((function() {
 						$(formSubmit).removeAttr('disabled');
-					}), 500);
+					}), 250);
                 }
 
 			});

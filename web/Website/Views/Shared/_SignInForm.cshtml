@@ -1,12 +1,14 @@
 @model ISignInViewModel
 
 <div class="js-login-container">
-	<div class="pop-out__form-error">
-		@Model.SignInInvalidText
-	</div>
 	<form 	method="post"
 			class="js-sign-in-submit"
 			data-on-submit="/Account/api/LoginWebUserApi/Login/">
+
+		<div class="pop-out__form-error js-form-error js-form-error-general">
+			@Model.SignInInvalidText
+		</div>
+
 		<input name="username"
 			   class="pop-out__input header__hover-input"
 			   placeholder="@Model.SignInUsernamePlaceholderText"
