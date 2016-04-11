@@ -8,6 +8,7 @@ using System.Web.Script.Services;
 using System.Web.Services;
 using Informa.Library.Rss;
 using Informa.Library.Search.TypeAhead;
+using Informa.Library.Search.Utilities;
 using Informa.Library.Utilities.References;
 using Jabberwocky.Core.Caching;
 using Newtonsoft.Json;
@@ -76,24 +77,23 @@ namespace Informa.Web.velir.services
                 url = string.Format("{0}&sortBy=relevance&sortOrder=asc", url);
             }
 
-            var client = new WebClient();
-            client.UseDefaultCredentials = true;
-            var content = client.DownloadString(url);
+            var results = SearchWebClientUtil.GetSearchResultsFromApi(url);
 
-            var results = JsonConvert.DeserializeObject<SearchResults>(content);
-
-            foreach (var facetGroupResult in results.facets)
+            if (results != null)
             {
-                if (facetGroupResult.id.ToLower() == "companies")
+                foreach (var facetGroupResult in results.facets)
                 {
-                    foreach (SearchFacetResult result in facetGroupResult.values)
+                    if (facetGroupResult.id.ToLower() == "companies")
                     {
-                        if (!string.IsNullOrEmpty(result.name))
+                        foreach (SearchFacetResult result in facetGroupResult.values)
                         {
-                            //companies.Add(new CompanyTypeAheadResponseItem(result.name + " (" + result.count + ")"));
-                            companies.Add(new CompanyTypeAheadResponseItem(result.name));
-                        }
+                            if (!string.IsNullOrEmpty(result.name))
+                            {
+                                //companies.Add(new CompanyTypeAheadResponseItem(result.name + " (" + result.count + ")"));
+                                companies.Add(new CompanyTypeAheadResponseItem(result.name));
+                            }
 
+                        }
                     }
                 }
             }
