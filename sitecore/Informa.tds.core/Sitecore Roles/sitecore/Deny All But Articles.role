@@ -1,9 +1,0 @@
-----role----
-name: sitecore\Deny All But Articles
-
-----role-in-role----
-rolename: sitecore\Author
-
-----role-in-role----
-rolename: sitecore\Production
-
