@@ -10,7 +10,7 @@ namespace Informa.Library.Globalization
             //Removed auto-generator for dictionary keys
             //return Sitecore.Globalization.Translate.TextByLanguage(key, Sitecore.Context.Language, null, new[] { "GenerateIfDictionaryKeyNotFound" });
 
-            return Sitecore.Globalization.Translate.Text(key);
+            return Sitecore.Globalization.Translate.Text(key) ?? "";
 		}
 	}
 }
