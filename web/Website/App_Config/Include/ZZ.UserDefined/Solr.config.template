@@ -32,6 +32,7 @@
 			<configuration>
 				<indexes hint="list:AddIndex">
 				<!-- Custom Indexes -->
+          #if($Env.DeliveryOnly == "false")
           <index id="informa_content_master_index" type="Informa.Library.Search.SearchIndex.CustomSolrSearchIndex, Informa.Library">
             <param desc="name">$(id)</param>
             <param desc="core">${Solr.CustomIndex.CoreName}_content_master</param>
@@ -47,6 +48,7 @@
               </crawler>
             </locations>
           </index>
+          #end
           <index id="informa_content_web_index" type="Informa.Library.Search.SearchIndex.CustomSwitchOnRebuildSolrSearchIndex, Informa.Library">
             <param desc="name">$(id)</param>
             <param desc="core">${Solr.CustomIndex.CoreName}_content_web</param>
@@ -63,17 +65,17 @@
               </crawler>
             </locations>
           </index>
-        
-					<index id="sitecore_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
-					</index>
 					<index id="sitecore_web_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
 					</index>
 					<index id="sitecore_core_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
 					</index>
-					<index id="sitecore_analytics_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+          #if($Env.DeliveryOnly == "false")
+          <index id="sitecore_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+            <param desc="core">${Solr.CustomIndex.CoreName}</param>
+          </index>
+          <index id="sitecore_analytics_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
 					</index>
 					<index id="sitecore_testing_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
@@ -87,10 +89,7 @@
 					</index>
 					<index id="sitecore_fxm_web_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
-					</index>
-					<index id="sitecore_list_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
-					</index>
+					</index>          
 					<index id="social_messages_master" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
 					</index>
@@ -109,7 +108,11 @@
 					<index id="sitecore_marketingdefinitions_web" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
 					</index>
-				</indexes>
+          <index id="sitecore_list_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+            <param desc="core">${Solr.CustomIndex.CoreName}</param>
+          </index>
+          #end
+        </indexes>    
 			</configuration>
 		</contentSearch>
 		<settings>
