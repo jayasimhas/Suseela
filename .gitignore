@@ -218,3 +218,4 @@ web/Website/ApplicationInsights.config
 web/Website/App_Config/Web/system.webServer.rewrite.config
 WordPlugin/SitecoreTreeWalker/Informa Business Intelligence, Inc..cer
 WordPlugin/SitecoreTreeWalker/informa_plugin.pfx
+web/Website/App_Config/Include/**/*.disabled
