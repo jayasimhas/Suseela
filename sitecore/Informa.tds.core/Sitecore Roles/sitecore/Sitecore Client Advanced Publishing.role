@@ -1,8 +1,8 @@
 ----role----
-name: sitecore\Article Read Access
+name: sitecore\Sitecore Client Advanced Publishing
 
 ----role-in-role----
-rolename: sitecore\Author Write Access
+rolename: sitecore\Operations Access
 
 ----role-in-role----
 rolename: sitecore\Production

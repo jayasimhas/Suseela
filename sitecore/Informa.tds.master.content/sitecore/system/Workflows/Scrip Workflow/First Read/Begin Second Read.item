@@ -27,13 +27,13 @@ Applications/32x32/check2.png
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
-content-length: 171
+content-length: 0
 
-ar|sitecore\Deny Final Workflow|pe|+workflowCommand:execute|pd|+workflowCommand:execute|ar|sitecore\Informa Author|pe|+workflowCommand:execute|pd|+workflowCommand:execute|
+
 ----version----
 language: en
 version: 1
-revision: 7d14419e-a902-43ee-9aa6-f70c1f2d7e2d
+revision: fdb6c257-d369-4675-80fe-4470194e82a2
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-7d14419e-a902-43ee-9aa6-f70c1f2d7e2d
+fdb6c257-d369-4675-80fe-4470194e82a2
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160405T214103Z
+20160411T203401Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
