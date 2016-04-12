@@ -158,24 +158,28 @@ namespace Informa.Web.Controllers
 		/// <returns></returns>
 		public ArticleItem GetArticleByNumber(string articleNumber)
 		{
-
-			IArticleSearchFilter filter = _articleSearcher.CreateFilter();
-			filter.ArticleNumber = articleNumber;
-			var results = _articleSearcher.SearchCustomDatabase(filter, Constants.MasterDb);
-			if (results.Articles.Any())
-			{
-				var foundArticle = results.Articles.FirstOrDefault();
-				if (foundArticle != null) return _sitecoreMasterService.GetItem<ArticleItem>(foundArticle._Id);
-			}
-			return null;
+		    return GetArticleByNumber(articleNumber, Constants.MasterDb);
 		}
 
-		/// <summary>
-		/// Returns the Version Number of Article
-		/// </summary>
-		/// <param name="article"></param>
-		/// <returns></returns>
-		public int GetWordVersionNumber(ArticleItem article)
+        public ArticleItem GetArticleByNumber(string articleNumber,string databaseName)
+        {
+            IArticleSearchFilter filter = _articleSearcher.CreateFilter();
+            filter.ArticleNumber = articleNumber;
+            var results = _articleSearcher.SearchCustomDatabase(filter, databaseName);
+            if (results.Articles.Any())
+            {
+                var foundArticle = results.Articles.FirstOrDefault();
+                if (foundArticle != null) return _sitecoreMasterService.GetItem<ArticleItem>(foundArticle._Id);
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Returns the Version Number of Article
+        /// </summary>
+        /// <param name="article"></param>
+        /// <returns></returns>
+        public int GetWordVersionNumber(ArticleItem article)
 		{
 			if (article.Word_Document == null) return -1;
 			var wordDocURL = article.Word_Document.Url;

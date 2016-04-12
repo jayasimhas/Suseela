@@ -7,7 +7,7 @@ parent: {110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
 name: Register
 master: {00000000-0000-0000-0000-000000000000}
 template: {0520D52B-52A8-4052-A07F-9F35F8CA274C}
-templatekey: Registration Page
+templatekey: Registration Details Page
 
 ----field----
 field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
@@ -20,13 +20,13 @@ content-length: 206
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
-content-length: 63
+content-length: 0
 
-ar|sitecore\General Content Access|pe|+item:read|pd|+item:read|
+
 ----version----
 language: en
 version: 1
-revision: 3bad6623-7751-4ffb-b080-5e9475025be2
+revision: 18906d03-7448-49f7-827f-def9b6d733e3
 
 ----field----
 field: {761D17CF-74DB-4658-AD8B-3C3B119D5851}
@@ -91,14 +91,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3bad6623-7751-4ffb-b080-5e9475025be2
+18906d03-7448-49f7-827f-def9b6d733e3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160308T214738Z
+20160411T202906Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

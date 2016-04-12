@@ -1,3 +1,15 @@
+/*---
+title: Search Facets
+section: Search
+---
+
+```example:html
+
+```
+*/
+
+
+
 .search__facets {
     @include textMix('Roboto', 13px, 400);
     border: 1px solid $informa-light-gray-d;
@@ -67,6 +79,7 @@
             color: $informa-black;
         }
         cursor: pointer;
+      cursor: pointer;
     }
 
     &__content {

@@ -59,6 +59,10 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
             padding-left: 0;
         }
 
+        @include on-event() {
+            color: $color-cardinal-red;
+        }
+
         &:first-child {
             padding-left: 0;
         }

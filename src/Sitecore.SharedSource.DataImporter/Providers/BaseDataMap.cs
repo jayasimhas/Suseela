@@ -507,7 +507,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
                     return thisParent;
                 }
 
-                if (!DateTime.TryParseExact(dateValue, new string[] { "yyyy-MM-ddTHH:mm:ss", "d/M/yyyy", "d/M/yyyy HH:mm:ss" }, CultureInfo.InvariantCulture, DateTimeStyles.None, out date)) {
+                if (!DateTimeUtil.ParseInformaDate(dateValue, out date)) {
                     Logger.Log(newItemName, "date could not be parsed", ProcessStatus.DateParseError, DateField, dateValue);
                     return thisParent;
                 }

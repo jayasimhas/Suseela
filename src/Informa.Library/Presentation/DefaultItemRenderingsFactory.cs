@@ -4,6 +4,7 @@ using System.Linq;
 using Sitecore.Data.Items;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore;
+using Sitecore.Layouts;
 
 namespace Informa.Library.Presentation
 {
@@ -26,12 +27,12 @@ namespace Informa.Library.Presentation
 				return itemRenderings;
 			}
 
-			var renderings = item.Visualization.GetRenderings(device, false);
+			var renderings = item.Visualization.GetRenderings(device, false) ?? new RenderingReference[0];
 
 			itemRenderings.AddRange(renderings.Select(r => new ItemRendering
 			{
-				Datasource = r.Settings.DataSource,
-				RenderingItemId = r.RenderingItem.ID.Guid
+				Datasource = r?.Settings?.DataSource,
+				RenderingItemId = r?.RenderingItem?.ID.Guid ?? Guid.Empty
 			}));
 
 			return itemRenderings;

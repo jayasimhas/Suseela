@@ -52,7 +52,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields {
 
             //loop through children and look for anything that matches by name
             string cleanName = StringUtility.GetValidItemName(importValue, map.ItemNameMaxLength);
-            IEnumerable<Item> t = i.GetChildren().Where(c => c.DisplayName.Equals(cleanName));
+            IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
 
             //if you find one then store the id
             if (!t.Any())

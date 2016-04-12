@@ -1,0 +1,6 @@
+----role----
+name: sitecore\Sitecore Local Administrators
+
+----role-in-role----
+rolename: sitecore\Operations Access
+

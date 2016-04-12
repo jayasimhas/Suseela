@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Informa.Web.Areas.Account.ViewModels.Registration
 {
-	public class RegisterUserViewModel : GlassViewModel<IRegistration_Page>
+	public class RegisterUserViewModel : GlassViewModel<IRegistration_Details_Page>
 	{
 		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly ITextTranslator TextTranslator;

@@ -1,3 +1,4 @@
+using System;
 using Glass.Mapper.Sc;
 using Jabberwocky.Glass.Models;
 using Sitecore.Configuration;
@@ -20,18 +21,25 @@ namespace Informa.Library.Services.Search.Fields.Base
 		{
 			Item indexItem = indexable as SitecoreIndexableItem;
 
-			if (indexItem == null) return null;
-
 			// We don't care about the Core database, so don't do anything in that context
-			if (indexItem.Database == null || indexItem.Database.Name == SitecoreCoreDatabaseName)
+			if (indexItem?.Database == null || indexItem.Database.Name == SitecoreCoreDatabaseName)
 			{
 				return null;
 			}
 
-			using (new SiteContextSwitcher(Factory.GetSite(WebsiteName)))
+			try
 			{
-				return GetFieldValue(indexItem);
+				using (new SiteContextSwitcher(Factory.GetSite(WebsiteName)))
+				{
+					return GetFieldValue(indexItem);
+				}
 			}
+			catch (Exception e)
+			{
+				Sitecore.Diagnostics.Log.Error($"Error indexing field: {FieldName}, Type: {typeof(T)}, Item Path: {indexItem.Paths.FullPath}", e, GetType());
+			}
+
+			return null;
 		}
 
 		protected virtual object GetFieldValue(Item indexItem)

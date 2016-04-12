@@ -1,0 +1,6 @@
+----role----
+name: sitecore\Social Message Workflow Reviewer
+
+----role-in-role----
+rolename: sitecore\Operations Access
+
