@@ -301,6 +301,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 		{
 			if (_parent.ArticleDetails.ArticleGuid != Guid.Empty)
 			{
+                prompt = false;
 				return pageArticleInformationControl.CheckOut(prompt);
 			}
 			string articleNumber = _parent.GetArticleNumber();

@@ -11,8 +11,9 @@
 
     .pop-out__internal {
         left: 0;
-        top: 0;
+        min-width: 360px;
         padding: 2.175rem 1.625rem;
+        top: 0;
         width: 100%;
     }
 

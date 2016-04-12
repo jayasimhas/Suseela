@@ -137,7 +137,7 @@ namespace InformaSitecoreWord.UI
                             IsLoggedIn();
                             OpenTaskPane(taskControl, title);
                         }
-                        IsLoggedIn();
+                        //IsLoggedIn();
                     };
                 login.ShowDialog();
             }
@@ -167,6 +167,12 @@ namespace InformaSitecoreWord.UI
             try
             {
                 ArticleDetail.Open();
+
+                if (GetArticleNumber() != null)
+                {
+                    SaveToSitecoreBtn.Enabled = true;
+                    ArticlePreviewMenu.Enabled = true;
+                }
             }
             catch (UnauthorizedAccessException uax)
             {
@@ -242,7 +248,6 @@ namespace InformaSitecoreWord.UI
             }
         }
 
-
         private void LogoutBtn_Click(object sender, RibbonControlEventArgs e)
         {
             if (!_user.IsLoggedIn) return;
@@ -271,6 +276,8 @@ namespace InformaSitecoreWord.UI
         {
             LoginBtn.Visible = true;
             LogoutBtn.Visible = false;
+            SaveToSitecoreBtn.Enabled = false;
+            ArticlePreviewMenu.Enabled = false;
         }
 
         private void ArticlePreviewMenu_Click(object sender, RibbonControlEventArgs e)
@@ -280,8 +287,6 @@ namespace InformaSitecoreWord.UI
 
         private void SaveToSitecoreBtn_Click(object sender, RibbonControlEventArgs e)
         {
-
-
             //var documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
             //if (!string.IsNullOrEmpty(documentCustomProperties.ArticleNumber))
             //{

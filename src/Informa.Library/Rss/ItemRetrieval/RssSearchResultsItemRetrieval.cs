@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Library.Rss.Interfaces;
+using Informa.Library.Search.Utilities;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss;
 using Newtonsoft.Json;
 using Sitecore;
@@ -114,11 +115,12 @@ namespace Informa.Library.Rss.ItemRetrieval
         {
             try
             {
-                var client = new WebClient();
-                client.UseDefaultCredentials = true;
-                var content = client.DownloadString(apiUrl);
+                var results = SearchWebClientUtil.GetSearchResultsFromApi(apiUrl);
 
-                var results = JsonConvert.DeserializeObject<SearchResults>(content);
+                if (results == null)
+                {
+                    return new List<Item>();
+                }
 
                 return
                     results.results.Select(searchResult => Context.Database.GetItem(searchResult.ItemId))

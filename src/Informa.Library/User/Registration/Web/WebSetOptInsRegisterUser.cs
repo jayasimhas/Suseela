@@ -5,20 +5,20 @@ namespace Informa.Library.User.Registration.Web
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class WebSetOptInsRegisterUser : IWebSetOptInsRegisterUser
 	{
-		protected readonly IWebRegisterUserSession RegisterUserSession;
+		protected readonly IWebRegisterUserContext RegisterUserContext;
 		protected readonly ISetOptInsRegisterUser SetOptInsRegisterUser;
 
 		public WebSetOptInsRegisterUser(
-			IWebRegisterUserSession registerUserSession,
+			IWebRegisterUserContext registerUserContext,
 			ISetOptInsRegisterUser setOptInsRegisterUser)
 		{
-			RegisterUserSession = registerUserSession;
+			RegisterUserContext = registerUserContext;
 			SetOptInsRegisterUser = setOptInsRegisterUser;
 		}
 
 		public bool Set(bool offers, bool newsletters)
 		{
-			var newUser = RegisterUserSession.NewUser;
+			var newUser = RegisterUserContext.NewUser;
 
 			if (newUser == null)
 			{

@@ -8,26 +8,13 @@ using System;
 using System.Linq;
 using Informa.Library.Search;
 using Informa.Library.Utilities.References;
-using Sitecore.Buckets.Extensions;
-using Sitecore.Configuration;
 using Sitecore.ContentSearch.Linq;
-using Sitecore.ContentSearch.Linq.Utilities;
-using Sitecore.Data;
-using Sitecore.Data.Items;
-using Sitecore.ContentSearch;
-using Sitecore.ContentSearch.Abstractions;
-using Sitecore.ContentSearch.Diagnostics;
-using Sitecore.ContentSearch.Linq;
-using Sitecore.ContentSearch.Linq.Common;
-using Sitecore.ContentSearch.Linq.Methods;
-using Sitecore.ContentSearch.Linq.Nodes;
-using Sitecore.ContentSearch.Linq.Solr;
 using System.Text;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
 namespace Informa.Library.Article.Search
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService]
 	public class ArticleSearch : IArticleSearch
 	{
 		protected readonly IProviderSearchContextFactory SearchContextFactory;
@@ -171,20 +158,14 @@ namespace Informa.Library.Article.Search
 			{
 				var lastItem = item.Authors.LastOrDefault();
 				StringBuilder str = new StringBuilder();
-				str.Append("[");
-				foreach (IAuthor author in item.Authors)
+				foreach (IStaff_Item author in item.Authors)
 				{
-					str.Append("'");
-					str.Append(author._Name);
-					str.Append("'");
-					if (item.Authors.Count() > 1 && !author.Equals(lastItem))
-					{
-						str.Append(",");
-					}
+                    if (str.Length > 0)
+                        str.Append(",");
+                    str.Append($"'{author._Name.Trim()}'");
 				}
-				str.Append("]");
-				return str.ToString();
-			}
+                return $"[{str}]";
+            }
 
 			return string.Empty;
 		}
@@ -199,20 +180,14 @@ namespace Informa.Library.Article.Search
 				{
 					var lastItem = taxonomyItems.LastOrDefault();
 					StringBuilder str = new StringBuilder();
-					str.Append("[");
 					foreach (ITaxonomy_Item taxonomyItem in taxonomyItems)
 					{
-						str.Append("'");
-						str.Append(taxonomyItem.Item_Name);
-						str.Append("'");
-						if (taxonomyItems.Count() > 1 && !taxonomyItem.Equals(lastItem))
-						{
-							str.Append(",");
-						}
-					}
-					str.Append("]");
-					return str.ToString();
-				}
+					    if (str.Length > 0)
+					        str.Append(",");
+						str.Append($"'{taxonomyItem.Item_Name.Trim()}'");
+                    }
+                    return $"[{str}]";
+                }
 			}
 
 			return string.Empty;

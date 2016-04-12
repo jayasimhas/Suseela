@@ -9,14 +9,12 @@ namespace Informa.Library.Search
 	{
 		public IProviderSearchContext Create()
 		{
-			var indexName = string.Format("sitecore_{0}_index", Context.Database.Name.ToLower());
-
-			return ContentSearchManager.GetIndex(indexName).CreateSearchContext();
+			return Create(Context.Database.Name);
 		}
 
 		public IProviderSearchContext Create(string database)
 		{
-			var indexName = string.Format("sitecore_{0}_index", database.ToLower());
+			var indexName = string.Format("informa_content_{0}_index", database.ToLower());
 
 			return ContentSearchManager.GetIndex(indexName).CreateSearchContext();
 		}

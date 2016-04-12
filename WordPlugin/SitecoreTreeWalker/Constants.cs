@@ -5,6 +5,7 @@ namespace InformaSitecoreWord
 {
     internal class Constants
     {
+		//Comment to change the DLL
         public static string PAN_JP = "PAN_JP";
         public static string PAN_CP = "PAN_CP";
         public static string PAN_WP = "PAN_WP";

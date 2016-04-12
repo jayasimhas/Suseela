@@ -29,11 +29,23 @@
 			<form 	class="form-email-search"
 					data-on-submit="/Account/api/EmailFriend/EmailSearch/">
 
-				<p class="	pop-out__error
+			    <p class="	pop-out__error
 							js-form-error
 							js-form-error-general">
-					@Model.GeneralError
-				</p>
+			        @Model.GeneralError
+			    </p>
+
+			    <p class=" pop-out__error
+                   js-form-error
+                   js-form-error-Required">
+			        @Model.EmptyFieldText
+			    </p>
+
+                <p class=" pop-out__error
+                   js-form-error
+                   js-form-error-EmailRequirements">
+                    @Model.InvalidEmailText
+                </p>
 
 			    <p class="	pop-out__error
 							js-form-error

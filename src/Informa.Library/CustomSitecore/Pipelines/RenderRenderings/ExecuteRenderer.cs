@@ -21,7 +21,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.RenderRenderings
 			{
 				success = false;
 
-				if (Context.PageMode.IsPageEditor || Context.PageMode.IsPreview)
+				if (Context.PageMode.IsExperienceEditor || Context.PageMode.IsPreview)
 				{
 					writer.Write("<p>Error rendering the following component: {0}</p><p>{1}</p>", args.Rendering.RenderingItem.Name, e);
 				}
