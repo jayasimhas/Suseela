@@ -1,18 +1,18 @@
 ----item----
 version: 1
-id: {F098A891-8314-42A6-839C-95D0D83A5BA0}
+id: {D5904AD9-3908-490E-B591-1A549E62683D}
 database: master
 path: /sitecore/templates/User Defined/Pages/Registration Page/__Standard Values
-parent: {0520D52B-52A8-4052-A07F-9F35F8CA274C}
+parent: {AD812609-C21C-42F6-A1D4-283D7699BD8A}
 name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}
-template: {0520D52B-52A8-4052-A07F-9F35F8CA274C}
+template: {AD812609-C21C-42F6-A1D4-283D7699BD8A}
 templatekey: Registration Page
 
 ----version----
 language: en
 version: 1
-revision: 355cfeac-3d9c-4ff2-998b-d2535529ccbb
+revision: c3e1b087-17f5-4afe-b34f-4363347db1e6
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,14 +27,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-355cfeac-3d9c-4ff2-998b-d2535529ccbb
+c3e1b087-17f5-4afe-b34f-4363347db1e6
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160307T141805Z
+20160412T075913Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
