@@ -5,9 +5,6 @@
 {
     @Html.Glass().Editable(x => x.CSS)
 }
-else
-{
-    <style type="text/css">
-        @Html.Raw(Model.CSS)
-    </style>
-}
+<style type="text/css">
+    @Html.Raw(Model.CSS)
+</style>

@@ -43,6 +43,10 @@ namespace Informa.Library.Rss.ItemGenerators
             syndicationItem = AddImageToFeedItem(syndicationItem, article, siteLink);
             syndicationItem = AddPubDateToFeedItem(syndicationItem, article);
 
+            var content = syndicationItem.Content as TextSyndicationContent;
+            var descriptonText = HttpUtility.HtmlEncode(content.Text);
+            syndicationItem.Content = new TextSyndicationContent(descriptonText);
+
             return syndicationItem;
         }
 

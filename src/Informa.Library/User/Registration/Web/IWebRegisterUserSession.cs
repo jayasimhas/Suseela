@@ -1,7 +1,9 @@
-﻿namespace Informa.Library.User.Registration.Web
+﻿using Informa.Library.Session;
+
+namespace Informa.Library.User.Registration.Web
 {
-	public interface IWebRegisterUserSession
+	public interface IWebRegisterUserSession : ISpecificSessionStore
 	{
-		INewUser NewUser { get; }
+
 	}
 }

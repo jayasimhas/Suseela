@@ -194,7 +194,7 @@ namespace Informa.Web.Controllers
 			{
 				Title = HttpUtility.HtmlDecode(article.Title),
 				Publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid)._Name,
-				Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
+				Authors = article.Authors.Select(r => (((IStaff_Item)r).Last_Name + "," + ((IStaff_Item)r).First_Name)).ToList(),
 				ArticleNumber = article.Article_Number,
 				Date = article.Actual_Publish_Date,
 				PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
@@ -425,7 +425,7 @@ namespace Informa.Web.Controllers
 			articleStruct.WebPublicationDate = articleItem.Planned_Publish_Date;
 			articleStruct.PrintPublicationDate = articleItem.Actual_Publish_Date;
 			articleStruct.Embargoed = articleItem.Embargoed;
-			var authors = articleItem.Authors.Select(r => ((IAuthor)r)).ToList();
+			var authors = articleItem.Authors.Select(r => ((IStaff_Item)r)).ToList();
 			articleStruct.Authors = authors.Select(r => new StaffStruct { ID = r._Id, Name = r.Last_Name + ", " + r.First_Name, }).ToList();
 			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
 
@@ -575,16 +575,17 @@ namespace Informa.Web.Controllers
 						wfCommand.SendsToFinal = stateItem.Final;
 						wfCommand.GlobalNotifyList = new List<StaffStruct>();
 
-						//foreach (IStaff_Item x in stateItem.Staff.ListItems)
-						//{
-						//	if (x.Inactive.Checked) { continue; }
+						foreach (var x in stateItem.Staffs)
+						{
+							var staffItem = _sitecoreMasterService.GetItem<IStaff_Item>(x._Id);
+							if (staffItem.Inactive) { continue; }
 
-						//	var staffMember = new SitecoreUtil.StaffStruct();
-						//	staffMember.ID = x.ID.ToGuid();
-						//	staffMember.Name = x.GetFullName();
-						//	staffMember.Publications = x.Publications.ListItems.Select(p => p.ID.ToGuid()).ToArray();
-						//	wfCommand.GlobalNotifyList.Add(staffMember);
-						//}
+							var staffMember = new StaffStruct();
+							staffMember.ID = staffItem._Id;
+							//staffMember.Name = staffItem.GetFullName();
+							//staffMember.Publications = staffItem.Publications.ListItems.Select(p => p.ID.ToGuid()).ToArray();
+							wfCommand.GlobalNotifyList.Add(staffMember);
+						}
 
 						commands.Add(wfCommand);
 					}
