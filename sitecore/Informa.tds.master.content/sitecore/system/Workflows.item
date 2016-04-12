@@ -34,9 +34,9 @@ content-length: 38
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
-content-length: 172
+content-length: 491
 
-ar|sitecore\Operations Access|pe|+workflowCommand:execute|+workflowState:write|+workflowState:delete|pd|+workflowCommand:execute|+workflowState:write|+workflowState:delete|
+ar|sitecore\Operations Access|pe|+workflowCommand:execute|+workflowState:write|+workflowState:delete|pd|+workflowCommand:execute|+workflowState:write|+workflowState:delete|ar|sitecore\Production|pe|^*|+item:create|+item:read|+workflowCommand:execute|+item:rename|+item:delete|+workflowState:write|+item:write|+workflowState:delete|+item:admin|pd|^*|+item:create|+item:read|+workflowCommand:execute|+item:rename|+item:delete|+workflowState:write|+item:write|+workflowState:delete|+item:admin|
 ----version----
 language: da
 version: 1
@@ -148,7 +148,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: 2a690822-e529-43ea-a692-51e24540b78b
+revision: 3b9d2cb8-4615-4393-85ba-19b3ee91c5b8
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -177,14 +177,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-2a690822-e529-43ea-a692-51e24540b78b
+3b9d2cb8-4615-4393-85ba-19b3ee91c5b8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160412T155656Z
+20160412T173752Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
