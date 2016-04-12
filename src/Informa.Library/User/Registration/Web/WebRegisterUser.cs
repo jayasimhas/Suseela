@@ -6,16 +6,16 @@ namespace Informa.Library.User.Registration.Web
 	public class WebRegisterUser : IWebRegisterUser
 	{
 		protected readonly IRegisterUser RegisterUser;
-		protected readonly IWebSetRegisterUserSession RegisterUserSession;
+		protected readonly IWebRegisterUserContext RegisterUserContext;
 		protected readonly IWebRegisterUserActions RegisterUserActions;
 
 		public WebRegisterUser(
 			IRegisterUser registerUser,
-			IWebSetRegisterUserSession registerUserSession,
+			IWebRegisterUserContext registerUserContext,
 			IWebRegisterUserActions registerUserActions)
 		{
 			RegisterUser = registerUser;
-			RegisterUserSession = registerUserSession;
+			RegisterUserContext = registerUserContext;
 			RegisterUserActions = registerUserActions;
 		}
 
@@ -25,7 +25,7 @@ namespace Informa.Library.User.Registration.Web
 
 			if (registered)
 			{
-				RegisterUserSession.NewUser = newUser;
+				RegisterUserContext.NewUser = newUser;
 				RegisterUserActions.Process(newUser);
 			}
 

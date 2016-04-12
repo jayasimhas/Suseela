@@ -108,15 +108,11 @@
                         </td>
                         <td class="sortable-table__col">
                             @if (Model.ShowRenewButton(item.ProductCode)) {
-                                <a href="@Model.OffSiteRenewLink">
-                                    Renew
-                                </a>
+                                <a class="button button--outline" href="@Model.OffSiteRenewLink">Renew</a>
                             }
-
                             @if (Model.ShowSubscribeButton(item.ProductCode)) {
-                                <a href="@Model.OffSiteSubscriptionLink">
-                                    Subscribe
-                                </a>
+                                @Html.Raw("&nbsp;&nbsp;&nbsp;")
+                                <a class="button button--outline" href="@Model.OffSiteSubscriptionLink">Subscribe</a>
                             }
                         </td>
                     </tr>

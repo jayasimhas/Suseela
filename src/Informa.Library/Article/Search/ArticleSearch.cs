@@ -8,26 +8,13 @@ using System;
 using System.Linq;
 using Informa.Library.Search;
 using Informa.Library.Utilities.References;
-using Sitecore.Buckets.Extensions;
-using Sitecore.Configuration;
 using Sitecore.ContentSearch.Linq;
-using Sitecore.ContentSearch.Linq.Utilities;
-using Sitecore.Data;
-using Sitecore.Data.Items;
-using Sitecore.ContentSearch;
-using Sitecore.ContentSearch.Abstractions;
-using Sitecore.ContentSearch.Diagnostics;
-using Sitecore.ContentSearch.Linq;
-using Sitecore.ContentSearch.Linq.Common;
-using Sitecore.ContentSearch.Linq.Methods;
-using Sitecore.ContentSearch.Linq.Nodes;
-using Sitecore.ContentSearch.Linq.Solr;
 using System.Text;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
 namespace Informa.Library.Article.Search
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService]
 	public class ArticleSearch : IArticleSearch
 	{
 		protected readonly IProviderSearchContextFactory SearchContextFactory;

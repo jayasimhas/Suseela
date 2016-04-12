@@ -16,6 +16,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuratio
 using Informa.Web.Areas.Article.Models.Article.EmailFriend;
 using Informa.Web.Controllers;
 using Informa.Library.Utilities.Settings;
+using Informa.Library.Utilities.WebApi.Filters;
 using log4net;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
@@ -185,7 +186,9 @@ namespace Informa.Web.Areas.Article.Controllers
 
 
 		[HttpPost]
-		public IHttpActionResult EmailSearch(EmailFriendSearchRequest request)
+        [ValidateReasons]
+        [ArgumentsRequired]
+        public IHttpActionResult EmailSearch(EmailFriendSearchRequest request)
 		{
 			var siteRoot = SiteRootContext.Item;
 
