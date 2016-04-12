@@ -1,8 +1,27 @@
-// -----------------------------------------------------------------------------
-// COMPONENTS / ADVERTISING
-// Ref. IIPP-131
-// -----------------------------------------------------------------------------
+/*---
+title: Leaderboard
+section: Advertising
+---
 
+```example:html
+<div class="advertising--leaderboard">
+    <img src="http://placebear.com/728/90" style="border:0px black solid;" width="728" height="90" alt=""></a>
+</div>
+```
+*/
+
+/*---
+title: Rectangle
+section: Advertising
+---
+
+```example:html
+<div class="article-preview__ad">
+    Advertisement
+    <img src="http://placebear.com/300/250" style="border:0px black solid;" width="300" height="250" alt="">
+</div>
+```
+*/
 .advertising {
 
 	&--leaderboard {
