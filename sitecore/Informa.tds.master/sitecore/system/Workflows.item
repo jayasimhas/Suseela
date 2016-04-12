@@ -30,6 +30,13 @@ key: __masters
 content-length: 38
 
 {1C0ACC50-37BE-4742-B43C-96A07A7410A5}
+----field----
+field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
+name: __Security
+key: __security
+content-length: 172
+
+ar|sitecore\Operations Access|pe|+workflowCommand:execute|+workflowState:write|+workflowState:delete|pd|+workflowCommand:execute|+workflowState:write|+workflowState:delete|
 ----version----
 language: da
 version: 1
@@ -141,7 +148,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: 403c1a64-1773-4b70-92fb-30e529458fe5
+revision: 2a690822-e529-43ea-a692-51e24540b78b
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -170,14 +177,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-403c1a64-1773-4b70-92fb-30e529458fe5
+2a690822-e529-43ea-a692-51e24540b78b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160308T213945Z
+20160412T155656Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
