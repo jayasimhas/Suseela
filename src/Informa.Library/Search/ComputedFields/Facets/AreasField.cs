@@ -1,31 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Glass.Mapper.Sc;
 using Informa.Library.Search.Utilities;
+using Informa.Library.Services.Search.Fields.Base;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
-using Sitecore.Data.Items;
-using Velir.Search.Core.ComputedFields;
 
 namespace Informa.Library.Search.ComputedFields.Facets
 {
-    public class AreasField : BaseContentComputedField
-    {
-        public override object GetFieldValue(Item indexItem)
-        {
-            I___BaseTaxonomy taxonomItem = indexItem.GlassCast<I___BaseTaxonomy>(inferType: true);
+	public class AreasField : BaseGlassComputedField<I___BaseTaxonomy>
+	{
+		public override object GetFieldValue(I___BaseTaxonomy indexItem)
+		{
+			if (indexItem?.Taxonomies != null)
+			{
+				var subjectTaxonomyItems = indexItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsAreaTaxonomy(x._Path));
 
-            if (taxonomItem?.Taxonomies != null)
-            {
-                var subjectTaxonomyItems =
-                    taxonomItem.Taxonomies.Where(
-                        x => SearchTaxonomyUtil.IsAreaTaxonomy(x._Path));
-
-                return subjectTaxonomyItems.Select(x => x.Item_Name.Trim()).ToList();
-            }
-            return new List<string>();
-        }
-    }
+				return subjectTaxonomyItems.Where(x => !string.IsNullOrEmpty(x.Item_Name)).Select(x => x.Item_Name.Trim()).ToList();
+			}
+			return new List<string>();
+		}
+	}
 }

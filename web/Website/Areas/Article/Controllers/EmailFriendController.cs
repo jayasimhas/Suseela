@@ -153,7 +153,7 @@ namespace Informa.Web.Areas.Article.Controllers
 					: string.Empty;
 
 				// Article Body
-				var article = _articleUtil.GetArticleByNumber(articleNumber);
+				var article = _articleUtil.GetArticleByNumber(articleNumber,Sitecore.Context.Database.Name);
 				replacements["#article_date#"] = article?.Actual_Publish_Date.ToString("dd MMMM yyyy") ?? string.Empty;
 				replacements["#article_mediatype#"] = article?.Media_Type?.Item_Name ?? string.Empty;
 				replacements["#article_title#"] = article?.Title ?? String.Empty;

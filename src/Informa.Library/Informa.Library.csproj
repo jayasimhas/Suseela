@@ -954,9 +954,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
-    <None Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
-    <None Include="App_Config\Include\Jabberwocky.Glass.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
