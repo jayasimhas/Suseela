@@ -32,6 +32,7 @@ module.exports = require('postcss').plugin('mdcss', function (opts) {
 
 	// return plugin
 	return function (css, result) {
+
 		// set current css directory or current directory
 		var dir = css.source.input.file ? path.dirname(css.source.input.file) : process.cwd();
 
@@ -95,7 +96,9 @@ module.exports = require('postcss').plugin('mdcss', function (opts) {
 						try {
 							if (mdspec) {
 								doc.content = fs.readFileSync(path.join(localdir, mdspec), 'utf8');
-							} else throw new Error();
+							} else {
+								throw new Error();
+							}
 						} catch (error1) {
 							try {
 								doc.content = fs.readFileSync(path.join(localdir, mdbase), 'utf8');

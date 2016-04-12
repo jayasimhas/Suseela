@@ -1,16 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <title><%- opts.title %></title>
 <meta charset="utf-8">
-<% opts.css.forEach(function (href) {
-	%><link href="<%= href %>" rel="stylesheet"><%
-}); %>
+<link href="style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic" rel="stylesheet">
 <script>examples=<%- JSON.stringify(opts.examples) %>;</script>
 <% opts.js.forEach(function (src) {
 	%><script src="<%= src %>"></script><%
 }); %>
 <header>
 	<nav>
-		<img src="<%= opts.logo %>" alt="<%= opts.title %>">
+		<img src="velir-logo.png" alt="Informa Style Guide">
 
 		<div class="theme-dropdown">
 			<h6>Theme</h6>

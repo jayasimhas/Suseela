@@ -1,33 +1,22 @@
 var ejs  = require('ejs');
-var ext  = require('object-assign');
 var fs   = require('fs');
 var path = require('path');
 
 module.exports = function (themeopts) {
 	// set theme options object
-	//themeopts = Object(themeopts);
-
-	// set theme logo
-	themeopts.logo = themeopts.logo || 'mdcss-logo.png';
-
-	// set theme title
-	themeopts.title = themeopts.title || 'Style Guide';
-
-	// set theme css
-	themeopts.css = themeopts.css || ['style.css'];
+	themeopts = Object(themeopts);
 
 	// set theme css
 	themeopts.js = themeopts.js || [];
 
 	// set example conf
-	themeopts.examples = ext({
+	themeopts.examples = Object.assign({
 		base:    '',
 		target:  '_self',
-		css:     ['style.css'],
+		css:     [],
 		js:      [],
 		bodyjs:  [],
-		htmlcss: 'background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto',
-		bodycss: 'background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto'
+		iframeReset: true
 	}, themeopts.examples);
 
 	// return theme
@@ -47,7 +36,7 @@ module.exports = function (themeopts) {
 				if (error) reject(error);
 				else {
 					// set examples options
-					docs.opts = ext({}, docs.opts, docs.themeopts);
+					docs.opts = Object.assign({}, docs.opts, docs.themeopts);
 
 					// set compiled template
 					docs.template = ejs.compile(contents)(docs);

@@ -317,7 +317,7 @@ pre code {
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word; 
+    word-wrap: break-word;
 }
 
 iframe {
@@ -599,4 +599,8 @@ body {
 
 section.hidden {
 	display: none;
+}
+
+.color-property p {
+	margin: 0;
 }

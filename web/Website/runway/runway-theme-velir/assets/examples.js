@@ -1,9 +1,12 @@
+/* global examples */
+
 examples.lang = {
 	color: function (pre, value) {
+
 		var colors = pre.parentNode.insertBefore(document.createElement('div'), pre);
 		var allLines = value.trim().split(/\n+/);
 
-		colors.className = 'colors';
+		$(colors).addClass('colors');
 
 		var parseLine = function(line) {
 			line = line.trim();
@@ -13,9 +16,13 @@ examples.lang = {
 			var prop;
 
 			// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec
-			while (prop = match.exec(line)) {
-				color[prop[1]] = prop[2];
-			}
+			// `do` instead of `while` prevents ESLint complaints
+			do {
+				prop = match.exec(line);
+				if (prop) {
+					color[prop[1]] = prop[2];
+				}
+			} while (prop);
 
 			return color;
 		};
@@ -23,33 +30,22 @@ examples.lang = {
 		var parseColor = function(color) {
 
 			var colorNode = document.createElement('div');
-
-			colorNode.className = 'color';
+			$(colorNode).addClass('color');
 
 			var swatchNode = colorNode.appendChild(document.createElement('div'));
+			$(swatchNode).addClass('color-swatch').css({
+				backgroundColor: color.color
+			});
 
-			swatchNode.className = 'color-swatch';
-
-			swatchNode.style.backgroundColor = color.color;
-
-			// var contrastColor = contrast(color.color);
-
-			// swatchNode.style.color = contrastColor;
-
-			// swatchNode.style.textShadow = '0 0 1px ' + (contrastColor === '#ffffff' ? '#000000' : '#ffffff');
-
-			// swatchNode.appendChild(document.createTextNode(color.color));
-
-			Object.keys(color).filter(function (key) { return key !== 'color' }).forEach(function (key) {
+			Object.keys(color).filter(function (key) {
+				return key !== 'color';
+			}).forEach(function (key) {
 				var propertyNode = colorNode.appendChild(document.createElement('div'));
 
-				propertyNode.className = 'color-property';
-
-				propertyNode.setAttribute('data-name', key);
-
-				propertyNode.setAttribute('data-color', color.color);
-
-				propertyNode.appendChild(document.createTextNode(color[key] + '\n' + color.color));
+				$(propertyNode).addClass('color-property')
+					.append('<p class="lang-color__color-name">' + color[key] + '</p>')
+					.append('<p class="lang-color__color-hex">' + color.color + '</p>')
+					.append('<p class="lang-color__color-scss">$color-' + $.fn.slugify(color[key]) + '</p>');
 			});
 
 			return colorNode;
@@ -112,9 +108,13 @@ examples.lang = {
 
 		idoc.close();
 
+
 		// add default block styles to iframe dom
-		idoc.documentElement.setAttribute('style', examples.htmlcss);
-		idoc.body.setAttribute('style', examples.bodycss);
+		if(examples.iframeReset) {
+			var resetStyles = 'background:none; border:0; clip:auto; display:block;  height:auto; margin:0; padding:0; position:static; width:auto';
+			idoc.documentElement.setAttribute('style', resetStyles);
+			idoc.body.setAttribute('style', resetStyles);
+		}
 
 		idoc.body.innerHTML = '<div class="iframe-wrapper">' + idoc.body.innerHTML + '<div style="clear: both;"></div></div>';
 
