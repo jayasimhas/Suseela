@@ -81,6 +81,7 @@
     <SitecoreItem Include="sitecore\layout.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Devices.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -555,6 +556,7 @@
     <SitecoreItem Include="sitecore\system.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Aliases.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -1212,6 +1214,7 @@
     <SitecoreItem Include="sitecore\templates.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Branches.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
