@@ -72,10 +72,10 @@
           </index>
         
 					<index id="sitecore_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
           </index>
 					<index id="sitecore_web_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
             #if ($Env.DeliveryOnly == "true")
             <strategies hint="list:AddStrategy">
               <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
@@ -83,7 +83,7 @@
             #end
 					</index>
 					<index id="sitecore_core_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
             #if ($Env.DeliveryOnly == "true")
             <strategies hint="list:AddStrategy">
               <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/intervalAsyncCore']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
