@@ -72,10 +72,10 @@
           </index>
         
 					<index id="sitecore_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
           </index>
 					<index id="sitecore_web_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
             #if ($Env.DeliveryOnly == "true")
             <strategies hint="list:AddStrategy">
               <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
@@ -83,7 +83,7 @@
             #end
 					</index>
 					<index id="sitecore_core_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
             #if ($Env.DeliveryOnly == "true")
             <strategies hint="list:AddStrategy">
               <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/intervalAsyncCore']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
@@ -91,19 +91,19 @@
             #end
           </index>
 					<index id="sitecore_analytics_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
 					</index>
 					<index id="sitecore_testing_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
 					</index>
 					<index id="sitecore_suggested_test_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
 					</index>
 					<index id="sitecore_fxm_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
 					</index>
 					<index id="sitecore_fxm_web_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
             #if ($Env.DeliveryOnly == "true")
             <strategies hint="list:AddStrategy">
               <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
@@ -111,13 +111,13 @@
             #end
           </index>
 					<index id="sitecore_list_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
 					</index>
 					<index id="social_messages_master" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
 					</index>
 					<index id="social_messages_web" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
             #if ($Env.DeliveryOnly == "true")
             <strategies hint="list:AddStrategy">
               <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
@@ -125,10 +125,10 @@
             #end
           </index>
 					<index id="sitecore_marketing_asset_index_master" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
 					</index>
 					<index id="sitecore_marketing_asset_index_web" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
             #if ($Env.DeliveryOnly == "true")
             <strategies hint="list:AddStrategy">
               <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
@@ -136,10 +136,10 @@
             #end
           </index>
 					<index id="sitecore_marketingdefinitions_master" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
 					</index>
 					<index id="sitecore_marketingdefinitions_web" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+						<param desc="core">${Solr.Sitecore.CoreName}</param>
             #if ($Env.DeliveryOnly == "true")
             <strategies hint="list:AddStrategy">
               <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
