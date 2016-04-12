@@ -7,7 +7,7 @@ parent: {110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
 name: Register
 master: {00000000-0000-0000-0000-000000000000}
 template: {0520D52B-52A8-4052-A07F-9F35F8CA274C}
-templatekey: Registration Page
+templatekey: Registration Details Page
 
 ----field----
 field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}

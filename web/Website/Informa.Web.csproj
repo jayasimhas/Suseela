@@ -227,38 +227,17 @@
       <HintPath>..\..\packages\NWebsec.Mvc.4.2.0\lib\45\NWebsec.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Abstractions">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Automation">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Automation.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Automation.MongoDB, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Automation.MongoDB.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.DataAccess, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.DataAccess.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Model, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
-    </Reference>
     <Reference Include="Sitecore.Buckets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Buckets.dll</HintPath>
+      <HintPath>..\..\packages\Sitecore.Buckets.8.1.0.151207\lib\Sitecore.Buckets.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
+      <HintPath>..\..\packages\Sitecore.ContentSearch.8.1.0.151207\lib\Sitecore.ContentSearch.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
+      <HintPath>..\..\packages\Sitecore.ContentSearch.Linq.8.1.0.151207\lib\Sitecore.ContentSearch.Linq.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq.Solr, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -268,213 +247,45 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.SolrProvider.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.ContentSearch.SolrProvider.AutoFacIntegration">
+    <Reference Include="Sitecore.ContentSearch.SolrProvider.AutoFacIntegration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.SolrProvider.AutoFacIntegration.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.ContentTesting, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Sitecore.HtmlCache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentTesting.Intelligence, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.Intelligence.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentTesting.Model, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.Model.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentTesting.Mvc, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceEditor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceEditor.Speak, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceEditor.Speak.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceEditor.Speak.Ribbon, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceEditor.Speak.Ribbon.dll</HintPath>
+      <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.HtmlCache\Sitecore.HtmlCache.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\packages\Sitecore.Kernel.8.1.0.151207\lib\Sitecore.Kernel.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Logging, Version=1.2.0.30715, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Logging.dll</HintPath>
+      <HintPath>..\..\packages\Sitecore.Logging.8.1.0.151207\lib\Sitecore.Logging.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
+      <HintPath>..\..\packages\Sitecore.Mvc.8.1.0.151207\lib\Sitecore.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Services.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Services.Core.dll</HintPath>
+      <HintPath>..\..\packages\Sitecore.Services.Core.8.1.0.151207\lib\Sitecore.Services.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Services.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Services.Infrastructure.dll</HintPath>
+      <HintPath>..\..\packages\Sitecore.Services.Infrastructure.8.1.0.151207\lib\Sitecore.Services.Infrastructure.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Services.Infrastructure.Sitecore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
+      <HintPath>..\..\packages\Sitecore.Services.Infrastructure.Sitecore.8.1.0.151207\lib\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.SharedSource.PageEditor">
-      <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Api, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client.Api, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Client.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client.Common, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Client.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client.Domain, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Client.Domain.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client.Mvc, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Client.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client.Speak, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Client.Speak.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Configuration, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Domain, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Domain.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.ExperienceProfile.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.ExperienceProfile.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Facebook, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Facebook.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Facebook.Api, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Facebook.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Facebook.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Facebook.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Facebook.Client.Mvc, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Facebook.Client.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.GooglePlus, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.GooglePlus.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.GooglePlus.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.GooglePlus.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.GooglePlus.Client.Mvc, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.GooglePlus.Client.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Infrastructure, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Infrastructure.Logging, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Infrastructure.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Installation, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Installation.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Klout.Api, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Klout.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Klout.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Klout.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.LinkedIn, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.LinkedIn.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.LinkedIn.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.LinkedIn.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.LinkedIn.Client.Mvc, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.LinkedIn.Client.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.NetworkProviders, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.NetworkProviders.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.SitecoreAccess, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.SitecoreAccess.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.SocialMarketer, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.SocialMarketer.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.SocialMarketer.Api, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.SocialMarketer.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.SocialMarketer.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.SocialMarketer.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Twitter, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Twitter.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Twitter.Api, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Twitter.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Twitter.Client, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Twitter.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Twitter.Client.Mvc, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Social.Twitter.Client.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Speak.Web">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Web.dll</HintPath>
+    <Reference Include="Sitecore.SessionProvider.Sql, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.SessionProvider.Sql.8.1.0.151207\lib\Sitecore.SessionProvider.Sql.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Web, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Xdb.Configuration">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Xdb.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="SolrNet, Version=0.4.0.2002, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -648,7 +459,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacConfig.cs" />
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\CustomAutoFacSolrStartUp.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GlassMapperSc.cs" />
@@ -712,6 +522,7 @@
     <Compile Include="Areas\Article\Controllers\EmailFriendController.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendSearchRequest.cs" />
+    <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendValidationReason.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
@@ -729,7 +540,6 @@
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
     <Compile Include="Controllers\WorkFlowUtil.cs" />
-    <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
     <Compile Include="Global.asax.cs">
@@ -919,7 +729,6 @@
     <Content Include="js\openadstream.js" />
     <Content Include="js\register-controller.js" />
     <Content Include="js\reset-password-controller.js" />
-    <Content Include="js\login-controller.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
     <Content Include="js\search\controllers\emailRssController.js" />
@@ -1005,10 +814,6 @@
     <Content Include="Areas\Article\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Account\Views\web.config" />
-    <Content Include="Scripts\ai.0.15.0-build58334.js" />
-    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
-    <Content Include="Scripts\search\InformaFacetsController.js" />
-    <Content Include="Scripts\vendor.js" />
     <Content Include="sitecore\login\login.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\css\ViewNlm.css" />
@@ -1106,6 +911,7 @@
     <Content Include="Views\Shared\Components\ListItemSimple.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Config\Include\ListManagement\" />
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Views\Account\" />
@@ -1157,11 +963,14 @@
     </None>
     <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
     <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template" />
+    <Content Include="App_Config\Include\UserDefined\Publishing.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="App_Config\Include\UserDefined\ScheduledPublishing.MongoDB.config.disabled" />
+    <None Include="App_Config\Include\zzzMustBeLast\SwitchMasterToWeb.config.disabled" />
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
@@ -1177,6 +986,7 @@
     <Content Include="Areas\Account\Views\Management\OneClickUnsubscribe.cshtml" />
     <Content Include="App_Config\Web\system.webServer.rewrite.config" />
     <None Include="App_Config\Web\system.webServer.rewrite.config.template" />
+    <Content Include="App_Config\zzzMustBeLast\SwitchMasterToWeb.config" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1240,7 +1050,6 @@
     <Content Include="Views\Shared\Global\SitemapNews.cshtml" />
     <Content Include="Views\Shared\Global\RobotsText.cshtml" />
     <Content Include="Views\Article\ArticleFilmstripAd.cshtml" />
-    <Content Include="Scripts\vendor.js.map" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
@@ -1278,10 +1087,6 @@
     <ProjectReference Include="..\..\src\PluginModels\PluginModels.csproj">
       <Project>{be0591fc-dabc-44b0-b267-0e3ab0fd02d4}</Project>
       <Name>PluginModels</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Sitecore.SharedSource.DataImporter\Sitecore.SharedSource.DataImporter.csproj">
-      <Project>{0e4f3486-8733-4e18-a5d0-51f2b92b2974}</Project>
-      <Name>Sitecore.SharedSource.DataImporter</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

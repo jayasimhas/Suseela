@@ -150,6 +150,9 @@
       <HintPath>..\..\packages\MongoDB.Driver.Core.2.2.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NewRelic.Api.Agent">
+      <HintPath>..\..\lib\NewRelic\NewRelic.Api.Agent.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -282,6 +285,8 @@
     <Compile Include="Actions\IActionsProcessor`2.cs" />
     <Compile Include="Actions\IAction`1.cs" />
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
+    <Compile Include="Article\Publishing\Events\PublishDateFoldersArticlePublishItemProcessing.cs" />
+    <Compile Include="Article\Publishing\Events\ActualPublishDateArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Search\ArticleSearch.cs" />
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
     <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
@@ -300,12 +305,16 @@
     <Compile Include="Company\CompanyRegisterUser.cs" />
     <Compile Include="Company\UserCompanyContext.cs" />
     <Compile Include="Company\Web\WebClearUserCompanyContextLogoutAction.cs" />
+    <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaSiteResolver.cs" />
+    <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
     <Compile Include="Newsletter\ISiteNewsletterTypeContext.cs" />
     <Compile Include="Newsletter\SiteNewsletterTypeContext.cs" />
+    <Compile Include="Publishing\Events\ItemPublishedPublishItemProcessing.cs" />
+    <Compile Include="Publishing\Events\PublishItemProcessing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishingDateTime.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishingDateTime.cs" />
     <Compile Include="Rss\FeedGenerators\BaseInformaFeedGenerator.cs" />
@@ -319,6 +328,7 @@
     <Compile Include="Rss\ItemRetrieval\RssSearchResultsItemRetrieval.cs" />
     <Compile Include="Rss\Utils\RssConstants.cs" />
     <Compile Include="Search\Utilities\SearchSummaryUtil.cs" />
+    <Compile Include="Search\Utilities\SearchWebClientUtil.cs" />
     <Compile Include="Session\ISessionValue`1.cs" />
     <Compile Include="Session\ISpecificSessionStore.cs" />
     <Compile Include="Session\ISpecificSessionStores.cs" />
@@ -511,6 +521,10 @@
     <Compile Include="User\Document\SavedDocumentsContext.cs" />
     <Compile Include="User\Document\SaveDocumentContext.cs" />
     <Compile Include="User\Profile\UserProfileContext.cs" />
+    <Compile Include="User\Registration\Web\IWebIsActiveRegistration.cs" />
+    <Compile Include="User\Registration\Web\IWebRegisterUserContext.cs" />
+    <Compile Include="User\Registration\Web\WebIsActiveRegistration.cs" />
+    <Compile Include="User\Registration\Web\WebRegisterUserContext.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
     <Compile Include="SiteDebugging\ISiteDebuggingAllowedConfiguration.cs" />
@@ -823,7 +837,6 @@
     <Compile Include="User\Registration\Web\IWebRegisterUserSession.cs" />
     <Compile Include="User\Registration\Web\IWebSendRegisterUserEmail.cs" />
     <Compile Include="User\Registration\Web\IWebSetOptInsRegisterUser.cs" />
-    <Compile Include="User\Registration\Web\IWebSetRegisterUserSession.cs" />
     <Compile Include="User\Registration\Web\WebRegisterUser.cs" />
     <Compile Include="User\Registration\Web\WebRegisterUserActions.cs" />
     <Compile Include="User\Registration\Web\WebRegisterUserEmailFactory.cs" />

@@ -4,7 +4,7 @@ namespace Informa.Library.User
 {
 	public class UserSession : SpecificSessionStore, IUserSession
 	{
-		private const string userSessionStoreId = "User";
+		private const string userSessionStoreId = nameof(UserSession);
 
 		public UserSession(
 			ISessionStore sessionStore)

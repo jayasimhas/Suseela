@@ -32,6 +32,47 @@
 			<configuration>
 				<indexes hint="list:AddIndex">
 				<!-- Custom Indexes -->
+     
+          <index id="informa_content_web_index" type="Informa.Library.Search.SearchIndex.CustomSwitchOnRebuildSolrSearchIndex, Informa.Library">
+            <param desc="name">$(id)</param>
+            <param desc="core">${Solr.CustomIndex.CoreName}_content_web</param>
+            <param desc="rebuildcore">${Solr.CustomIndex.CoreName}_content_web_rebuild</param>
+            <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
+            <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration" />
+            <strategies hint="list:AddStrategy">
+              #if ($Env.DeliveryOnly == "false")
+              <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync" />
+              #end
+              #if ($Env.DeliveryOnly == "true")
+              <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
+              #end
+            </strategies>
+            <locations hint="list:AddCrawler">
+              <crawler type="Sitecore.ContentSearch.SitecoreItemCrawler, Sitecore.ContentSearch">
+                <Database>web</Database>
+                <Root>/sitecore/Content</Root>
+              </crawler>
+            </locations>
+          </index>
+
+					<index id="sitecore_web_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+            #if ($Env.DeliveryOnly == "true")
+            <strategies hint="list:AddStrategy">
+              <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
+            </strategies>
+            #end
+					</index>
+					<index id="sitecore_core_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+						<param desc="core">${Solr.CustomIndex.CoreName}</param>
+            #if ($Env.DeliveryOnly == "true")
+            <strategies hint="list:AddStrategy">
+              <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/intervalAsyncCore']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
+            </strategies>
+            #end
+          </index>
+
+          #if ($Env.DeliveryOnly == "false")
           <index id="informa_content_master_index" type="Informa.Library.Search.SearchIndex.CustomSolrSearchIndex, Informa.Library">
             <param desc="name">$(id)</param>
             <param desc="core">${Solr.CustomIndex.CoreName}_content_master</param>
@@ -47,32 +88,11 @@
               </crawler>
             </locations>
           </index>
-          <index id="informa_content_web_index" type="Informa.Library.Search.SearchIndex.CustomSwitchOnRebuildSolrSearchIndex, Informa.Library">
-            <param desc="name">$(id)</param>
-            <param desc="core">${Solr.CustomIndex.CoreName}_content_web</param>
-            <param desc="rebuildcore">${Solr.CustomIndex.CoreName}_content_web_rebuild</param>
-            <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
-            <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration" />
-            <strategies hint="list:AddStrategy">
-              <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync" />
-            </strategies>
-            <locations hint="list:AddCrawler">
-              <crawler type="Sitecore.ContentSearch.SitecoreItemCrawler, Sitecore.ContentSearch">
-                <Database>web</Database>
-                <Root>/sitecore/Content</Root>
-              </crawler>
-            </locations>
+
+          <index id="sitecore_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+            <param desc="core">${Solr.CustomIndex.CoreName}</param>
           </index>
-        
-					<index id="sitecore_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
-					</index>
-					<index id="sitecore_web_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
-					</index>
-					<index id="sitecore_core_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-						<param desc="core">${Solr.CustomIndex.CoreName}</param>
-					</index>
+          
 					<index id="sitecore_analytics_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
 					</index>
@@ -87,7 +107,12 @@
 					</index>
 					<index id="sitecore_fxm_web_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
-					</index>
+            #if ($Env.DeliveryOnly == "true")
+            <strategies hint="list:AddStrategy">
+              <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
+            </strategies>
+            #end
+          </index>
 					<index id="sitecore_list_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
 					</index>
@@ -96,19 +121,35 @@
 					</index>
 					<index id="social_messages_web" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
-					</index>
+            #if ($Env.DeliveryOnly == "true")
+            <strategies hint="list:AddStrategy">
+              <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
+            </strategies>
+            #end
+          </index>
 					<index id="sitecore_marketing_asset_index_master" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
 					</index>
 					<index id="sitecore_marketing_asset_index_web" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
-					</index>
+            #if ($Env.DeliveryOnly == "true")
+            <strategies hint="list:AddStrategy">
+              <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
+            </strategies>
+            #end
+          </index>
 					<index id="sitecore_marketingdefinitions_master" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
 					</index>
 					<index id="sitecore_marketingdefinitions_web" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
-					</index>
+            #if ($Env.DeliveryOnly == "true")
+            <strategies hint="list:AddStrategy">
+              <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
+            </strategies>
+            #end
+          </index>
+          #end
 				</indexes>
 			</configuration>
 		</contentSearch>

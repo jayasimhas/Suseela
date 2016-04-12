@@ -21,7 +21,6 @@ using PluginModels;
 using Informa.Models.DCD;
 using Sitecore;
 using Sitecore.Mvc.Extensions;
-using Sitecore.Shell.Applications.WebEdit.Commands;
 using Constants = Informa.Library.Utilities.References.Constants;
 
 namespace Informa.Web.Controllers
@@ -67,7 +66,7 @@ namespace Informa.Web.Controllers
 			{
 				throw new ApplicationException("Could not find article with Guid " + articleGuid);
 			}
-			SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion, false);
+			SaveArticleDetails(article, articleStruct, saveDocumentSpecificData, addVersion);
 		}
 
 		public void SaveArticleDetails(string articleNumber, ArticleStruct articleStruct, bool saveDocumentSpecificData = false, bool addVersion = true)
@@ -262,7 +261,7 @@ namespace Informa.Web.Controllers
 				//newArticle.Actual_Publish_Date = DateTime.;
 				newArticle.Embargoed = articleStruct.Embargoed;
 				newArticle.Media_Type = _sitecoreMasterService.GetItem<ITaxonomy_Item>(articleStruct.MediaType);
-				newArticle.Authors = articleStruct.Authors.Select(x => _sitecoreMasterService.GetItem<IAuthor>(x.ID));
+				newArticle.Authors = articleStruct.Authors.Select(x => _sitecoreMasterService.GetItem<IStaff_Item>(x.ID));
 				newArticle.Editorial_Notes = articleStruct.NotesToEditorial;
 				if (articleStruct.RelatedInlineArticles != null && articleStruct.RelatedInlineArticles.Any())
 				{

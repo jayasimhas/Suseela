@@ -121,7 +121,7 @@
     <Compile Include="GlassModels\IEntitledProductItem.cs" />
     <Compile Include="GlassModels\IPage_Assets.cs" />
     <Compile Include="GlassModels\ITaxonomyHierarchy.cs" />
-    <Compile Include="GlassModels\IAuthor.cs" />
+    <Compile Include="GlassModels\IStaff_Item.cs" />
     <Compile Include="GlassModels\IArticle.cs" />
     <Compile Include="GlassModels\I___BasePage.cs" />
     <Compile Include="GlassModels\I___BaseTaxonomy.cs" />
