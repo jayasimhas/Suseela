@@ -12,6 +12,7 @@
     <title>@Html.Raw(Model.Title)</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/dist/img/favicon.png" />
 
     @if (!string.IsNullOrWhiteSpace(Model.CanonicalUrl))
     {
@@ -129,7 +130,7 @@
     @* end pseudo-if *@
 
     <script src="/dist/js/index.js"></script>
-    
+
     @* <script src="vendor/bower_components/angular-animate/angular-animate.js"></script> *@
     @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
 </body>
