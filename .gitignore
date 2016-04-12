@@ -213,9 +213,7 @@ nant.send.bat
 web/Data
 WordPlugin/SitecoreTreeWalker/publish
 
-!web/Website/node_modules/mdcss/**/*
-!web/Website/node_modules/runway-theme-velir/**/*
-web/Website/styleguide/
+web/Website/styleguide
 web/Website/ApplicationInsights.config
 web/Website/App_Config/Include/UserDefined/AppInsights.config
 web/Website/App_Config/Include/UserDefined/AppInsights.config
