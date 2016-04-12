@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
 using HtmlAgilityPack;
+using InformaSitecoreWord.Properties;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.Util;
+using InformaSitecoreWord.Util.Document;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Properties;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.Util.Document;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 using UserControl = System.Windows.Forms.UserControl;
 
 
-namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	public partial class IFrameControl : UserControl
 	{
@@ -97,6 +97,8 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 				mobileEmbed.Text = mobileEmbed.Text.Trim().Equals(_mobilePHText) ? String.Empty : mobileEmbed.Text;//set mobile text to empty if it is the placeholder text
 				InsertIFrame(uxIFrameHeader.Text, uxIFrameTitle.Text, uxIFrameCaption.Text, uxIFrameSource.Text, SuggestedURL.GetSuggestedUrl(desktopEmbed.Text),
 							 SuggestedURL.GetSuggestedUrl(mobileEmbed.Text));
+
+				InitializeValues();
 			}
 			else
 			{
@@ -269,12 +271,6 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			}
 		}
 
-
-		/*
-			 * TODO : There is no way to check if a style exists so we have to try to create it and 
-			 then ignore the "Style alredy exists" error with the empty catch 
-			 my apologies
-			 * */
 		private static void CreateCustomStyleFromBase(Microsoft.Office.Interop.Word.Application app, string baseStyle,
 													   string newStyleName)
 		{
@@ -327,7 +323,15 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		}
 
 
-
+		public void InitializeValues()
+		{
+			mobileEmbed.Text = _mobilePHText;
+			desktopEmbed.Text = _desktopPHText;
+			uxIFrameHeader.Text = string.Empty;
+			uxIFrameTitle.Text = string.Empty;
+			uxIFrameCaption.Text = string.Empty;
+			uxIFrameSource.Text = string.Empty;
+		}
 
 		internal void uxMobileEmbed_LostFocus(object sender, EventArgs e)
 		{

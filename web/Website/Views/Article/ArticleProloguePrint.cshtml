@@ -1,7 +1,15 @@
 ﻿@model Informa.Web.ViewModels.IArticleProloguePrintViewModel
-<li class="article-prologue__share-item">
-	<span class="article-prologue__share-label">Print</span>
-	<svg class="article-prologue__share-icon">
-		<use xlink:href="/dist/img/svg-sprite.svg#print"></use>
-	</svg>
+<style>
+    .clickable {
+        cursor: pointer;
+    }
+</style>
+<li class="article-prologue__share-item pop-out__trigger click-utag @( Model.IsUserAuthenticated ? "" : "js-pop-out-trigger" )"
+    data-pop-out-type="sign-in"
+    data-pop-out-align="center"
+    @(Model.IsUserAuthenticated ? "onclick=window.print();" : string.Empty) data-info='{"event_name" : "article-print"}'>
+    <span class="article-prologue__share-label">Print</span>
+    <svg class="article-prologue__share-icon">
+        <use xlink:href="/dist/img/svg-sprite.svg#print"></use>
+    </svg>
 </li>

@@ -5,19 +5,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
-using SitecoreTreeWalker.Properties;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls;
-using SitecoreTreeWalker.Util;
+using InformaSitecoreWord.Properties;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls;
+using PluginModels;
+using InformaSitecoreWord.Util;
 
-namespace SitecoreTreeWalker.UI
+namespace InformaSitecoreWord.UI
 {
 	class SelectedRelatedArticles : TableLayoutPanel
 	{
-		public List<WordPluginModel.ArticlePreviewInfo> LocalRelatedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
-		public List<WordPluginModel.ArticlePreviewInfo> SitecoreRelatedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
-		public List<WordPluginModel.ArticlePreviewInfo> LocalReferencedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
-		public List<WordPluginModel.ArticlePreviewInfo> SitecoreReferencedArticles = new List<WordPluginModel.ArticlePreviewInfo>();
+		public List<ArticlePreviewInfo> LocalRelatedArticles = new List<ArticlePreviewInfo>();
+		public List<ArticlePreviewInfo> SitecoreRelatedArticles = new List<ArticlePreviewInfo>();
+		public List<ArticlePreviewInfo> LocalReferencedArticles = new List<ArticlePreviewInfo>();
+		public List<ArticlePreviewInfo> SitecoreReferencedArticles = new List<ArticlePreviewInfo>();
 		public MenuSelectorItem MenuItem;
 		public bool HasChanged;
 
@@ -26,7 +26,7 @@ namespace SitecoreTreeWalker.UI
 			Padding = new Padding(0,0,SystemInformation.VerticalScrollBarWidth,0);
 		}
 
-		public Label CreateRemoveImageLabel(WordPluginModel.ArticlePreviewInfo article)
+		public Label CreateRemoveImageLabel(ArticlePreviewInfo article)
 		{
 			var label = new Label
 			       	{
@@ -48,7 +48,7 @@ namespace SitecoreTreeWalker.UI
 			MenuItem.Refresh();
 		}
 
-		private void ConfigureRemoveLabel(Label label, WordPluginModel.ArticlePreviewInfo article)
+		private void ConfigureRemoveLabel(Label label, ArticlePreviewInfo article)
 		{
 			label.MouseMove += delegate
 			{
@@ -68,7 +68,7 @@ namespace SitecoreTreeWalker.UI
 			ConfigureLabel(label, article);
 		}
 
-		private void ConfigureViewLabel(Label label, WordPluginModel.ArticlePreviewInfo article)
+		private void ConfigureViewLabel(Label label, ArticlePreviewInfo article)
 		{
 			label.MouseMove += delegate
 			{
@@ -125,7 +125,7 @@ namespace SitecoreTreeWalker.UI
 			return header;
 		}
 
-		public Label CreateViewLabel(WordPluginModel.ArticlePreviewInfo article)
+		public Label CreateViewLabel(ArticlePreviewInfo article)
 		{
 			var view = new Label
 			           	{
@@ -141,21 +141,21 @@ namespace SitecoreTreeWalker.UI
 			return view;
 		}
 
-		public void ConfigureLabel(Label label, WordPluginModel.ArticlePreviewInfo article = null)
+		public void ConfigureLabel(Label label, ArticlePreviewInfo article = null)
 		{
 			//label.Tag = article.ArticleNumber;
 			label.Width = label.Parent.Width;
 			label.Height = 15;
 		}
 
-		public void AddToRelated(WordPluginModel.ArticlePreviewInfo preview)
+		public void AddToRelated(ArticlePreviewInfo preview)
 		{
 			
 			if(LocalRelatedArticles.Select(t => t.ArticleNumber).Contains(preview.ArticleNumber)
 				|| LocalReferencedArticles.Select(t => t.ArticleNumber).Contains(preview.ArticleNumber)
 				|| HasArticle(GetActiveSitecoreRelatedArticles(), preview))
 			{
-				MessageBox.Show(@"The selected article is already Related Article or Referenced Article!", @"Informa");
+				MessageBox.Show(@"The selected article is already a Related Article or Referenced Article.", @"Informa");
 				//foreach(Control control in Controls)
 				//{
 				//	if (control.Tag == null || control.Font.Strikeout) continue;
@@ -182,7 +182,7 @@ namespace SitecoreTreeWalker.UI
 		/// and be "Referenced Inline" instead.
 		/// </summary>
 		/// <returns></returns>
-		public IEnumerable<WordPluginModel.ArticlePreviewInfo> GetActiveSitecoreRelatedArticles()
+		public IEnumerable<ArticlePreviewInfo> GetActiveSitecoreRelatedArticles()
 		{
 			return SitecoreRelatedArticles.Where(sra => !HasArticle(LocalReferencedArticles, sra));
 		}
@@ -198,12 +198,12 @@ namespace SitecoreTreeWalker.UI
 				RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
 				Controls.Add(ReferencedArticlesHeader);
 				ConfigureLabel(ReferencedArticlesHeader);
-				foreach (WordPluginModel.ArticlePreviewInfo article in LocalReferencedArticles)
+				foreach (ArticlePreviewInfo article in LocalReferencedArticles)
 				{
 					bool bold = !SitecoreReferencedArticles.Select(a => a.ArticleNumber).Contains(article.ArticleNumber);
 					AddRow(article, false, bold, false);
 				}
-				foreach (WordPluginModel.ArticlePreviewInfo article in SitecoreReferencedArticles.Where(a => !LocalReferencedArticles.Select(b=>b.ArticleNumber).Contains(a.ArticleNumber)))
+				foreach (ArticlePreviewInfo article in SitecoreReferencedArticles.Where(a => !LocalReferencedArticles.Select(b=>b.ArticleNumber).Contains(a.ArticleNumber)))
 				{
 					bool italic = !LocalReferencedArticles.Select(a => a.ArticleNumber).Contains(article.ArticleNumber);
 					AddRow(article, italic, false, false);
@@ -217,7 +217,7 @@ namespace SitecoreTreeWalker.UI
 				RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
 				Controls.Add(RelatedArticlesHeader);
 			}
-			foreach (WordPluginModel.ArticlePreviewInfo article in SitecoreRelatedArticles)
+			foreach (ArticlePreviewInfo article in SitecoreRelatedArticles)
 			{
 				if(LocalReferencedArticles.Select(a => a.ArticleNumber).Contains(article.ArticleNumber))
 				{ //sitecore related article already referenced inline locally, so strikeout
@@ -228,7 +228,7 @@ namespace SitecoreTreeWalker.UI
 					AddRow(article);
 				}
 			} 
-			foreach (WordPluginModel.ArticlePreviewInfo article in LocalRelatedArticles)
+			foreach (ArticlePreviewInfo article in LocalRelatedArticles)
 			{
 				if(!HasArticle(SitecoreRelatedArticles, article))
 				{
@@ -250,7 +250,7 @@ namespace SitecoreTreeWalker.UI
 			        || !HasSameMembers(LocalReferencedArticles, SitecoreReferencedArticles) || HasChanged);
 		}
 
-		private static bool HasSameMembers(List<WordPluginModel.ArticlePreviewInfo> articles1, List<WordPluginModel.ArticlePreviewInfo> articles2)
+		private static bool HasSameMembers(List<ArticlePreviewInfo> articles1, List<ArticlePreviewInfo> articles2)
 		{
 			if(articles1.Count != articles2.Count)
 			{
@@ -261,12 +261,12 @@ namespace SitecoreTreeWalker.UI
 			return numbers1.All(numbers2.Contains);
 		}
 
-		private static bool HasArticle(IEnumerable<WordPluginModel.ArticlePreviewInfo> articles, WordPluginModel.ArticlePreviewInfo article)
+		private static bool HasArticle(IEnumerable<ArticlePreviewInfo> articles, ArticlePreviewInfo article)
 		{
 			return articles.Select(a => a.ArticleNumber).Contains(article.ArticleNumber);
 		}
 
-		public void AddRow(WordPluginModel.ArticlePreviewInfo article, bool italic = false, bool bold = false, bool removable = true)
+		public void AddRow(ArticlePreviewInfo article, bool italic = false, bool bold = false, bool removable = true)
 		{
 			//RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
 			Label image;

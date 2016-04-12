@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
-using Informa.Web.Areas.Account.Models;
+using PluginModels;
 
-namespace SitecoreTreeWalker.UI.Controllers
+namespace InformaSitecoreWord.UI.Controllers
 {
     /// <summary>
     /// Comparer used to sort the list of results on a search for a taxonomy. 
     /// </summary>
-    class TaxonomyComparer : IComparer<WordPluginModel.TaxonomyStruct>
+    class TaxonomyComparer : IComparer<TaxonomyStruct>
     {
         private readonly string _substring;
         /// <summary>
@@ -27,7 +27,7 @@ namespace SitecoreTreeWalker.UI.Controllers
         /// If the substring appears at the same index, a negative number if Taxonomy x has fewer characters
         /// If the substring appears at the same index, a positive number if Taxonomy y has fewer characters
         /// 0 if the substring appears at the same index for both Taxonomy x and Taxonomy y and they both have the same length</returns>
-        public int Compare(WordPluginModel.TaxonomyStruct x, WordPluginModel.TaxonomyStruct y)
+        public int Compare(TaxonomyStruct x, TaxonomyStruct y)
         {
             if(x==null)
             {

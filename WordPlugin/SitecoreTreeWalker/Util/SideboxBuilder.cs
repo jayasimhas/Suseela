@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.Linq;
 using Microsoft.Office.Interop.Word;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
 	
 	class SideboxBuilder
@@ -42,7 +42,8 @@ namespace SitecoreTreeWalker.Util
 		public XElement GetSidebox(WordUtils wordUtils)
 		{
 			var sidebox = new XElement("div");
-			sidebox.SetAttributeValue("class", "sidebox");
+			// Changed the class from "side-box" to "quick-facts"
+			sidebox.SetAttributeValue("class", "quick-facts");
 
 			sidebox.Add(wordUtils.ParagraphsToXml(_paragraphs, null, this).Elements());
 

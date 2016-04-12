@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
-using SitecoreTreeWalker.Sitecore;
 using System.IO;
+using InformaSitecoreWord.Sitecore;
 
-namespace SitecoreTreeWalker
+namespace InformaSitecoreWord
 {
 	public class SitecoreImageTransfer
 	{
@@ -39,7 +39,7 @@ namespace SitecoreTreeWalker
 		{
 			try
 			{
-				return SitecoreGetter.GetMediaLibraryItemData(_path);
+				return SitecoreClient.GetMediaLibraryItemData(_path);
 			}
 			catch(WebException e)
 			{

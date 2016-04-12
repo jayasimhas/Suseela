@@ -44,14 +44,12 @@
     <SitecoreAccessGuid>d058c981-7197-4bc4-ac0a-c4b86c979b65</SitecoreAccessGuid>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
-
     <OutputPath>bin\Debug-NoTds\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release-NoTds' ">
     <SitecoreAccessGuid>d058c981-7197-4bc4-ac0a-c4b86c979b65</SitecoreAccessGuid>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
-
     <OutputPath>bin\Release-NoTds\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
@@ -69,6 +67,122 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <SitecoreItem Include="sitecore\client.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Components.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Components\ExportPrompt.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Components\ExportPrompt\ExportPromptParameters.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Components\ExportPrompt\ExportPromptParameters\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Dialogs.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Dialogs\Export Article.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Dialogs\Export Article\PageSettings.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Dialogs\Export Article\PageSettings\Buttons.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Dialogs\Export Article\PageSettings\Buttons\CloseButton.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Dialogs\Export Article\PageSettings\Buttons\ConfirmButton.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Dialogs\Export Article\PageSettings\ExportArticleStyles.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Dialogs\Export Article\PageSettings\Text.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\NLM Export\Dialogs\Export Article\PageSettings\Text\TitleDefinition.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM\Components.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM\Components\ViewNlmComponent.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM\Components\ViewNlmComponent\ViewNlmProperties.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM\Components\ViewNlmComponent\ViewNlmProperties\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM\Dialogs.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM\Dialogs\View NLM.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM\Dialogs\View NLM\PageSettings.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM\Dialogs\View NLM\PageSettings\Buttons.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM\Dialogs\View NLM\PageSettings\Buttons\CloseButton.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM\Dialogs\View NLM\PageSettings\Text.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM\Dialogs\View NLM\PageSettings\Text\TitleDefinition.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\client\Your Apps\View NLM\Dialogs\View NLM\PageSettings\ViewNlmStyles.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -87,7 +201,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\Content Editor\Context Menues\Default.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\Content Editor\Context Menues\Default\Copy.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -186,7 +300,7 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\Content Editor\Editors.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\Content Editor\Editors\Modules.item">
@@ -200,6 +314,116 @@
     <SitecoreItem Include="sitecore\content\Applications\Content Editor\Editors\Modules\DataImporter\DataImporter.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Chunks.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons\Informa Ribbon.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons\Informa Ribbon\Informa Strip.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons\Informa Ribbon\Informa Strip\Insight Platform.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons\Informa Ribbon\Informa Strip\Insight Platform\Download Word.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons\Informa Ribbon\Informa Strip\Insight Platform\Export Article.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Contextual Ribbons\Informa Ribbon\Informa Strip\Insight Platform\View NLM.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Ribbons.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Ribbons\Default.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Ribbons\Strips.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Url Rewrite.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Url Rewrite\Url Rewrite.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Documents and settings.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Documents and settings\All users.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Documents and settings\All users\Start menu.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Documents and settings\All users\Start menu\Left.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Documents and settings\All users\Start menu\Left\Url Rewrite.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Documents and settings\All users\Start menu\Programs.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Documents and settings\All users\Start menu\Programs\Url Rewrite.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Layouts.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Layouts\Applications.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Layouts\Applications\UrlRewrite.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
@@ -217,10 +441,13 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Field types\List Types\SiteDroplist.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
   </ItemGroup>
   <ItemGroup>
     <CodeGenTemplate Include="Code Generation Templates\generalextensions.tt" />
-    <CodeGenTemplate Include="Code Generation Templates\glassv3header.tt" />
     <CodeGenTemplate Include="Code Generation Templates\glassv3header.tt" />
     <CodeGenTemplate Include="Code Generation Templates\glassv3item.tt" />
     <CodeGenTemplate Include="Code Generation Templates\helpers.tt" />
@@ -235,6 +462,19 @@
   </ItemGroup>
   <ItemGroup>
     <CodeGenReferencedProject Include="{0707d4fe-c860-4127-bae4-463e673d4d69}" />
+  </ItemGroup>
+  <ItemGroup>
+    <SitecoreRole Include="Sitecore Roles\sitecore\Article Read Access.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\Author Write Access.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\Author.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\Deny All But Articles.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\Deny Final Workflow.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\Editor.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\General Content Access.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\Globals Access.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\Media Library Access.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\Operations Access.role" />
+    <SitecoreRole Include="Sitecore Roles\sitecore\Production.role" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
 </Project>

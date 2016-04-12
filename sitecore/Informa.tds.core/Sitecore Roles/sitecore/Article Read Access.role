@@ -1,0 +1,9 @@
+----role----
+name: sitecore\Article Read Access
+
+----role-in-role----
+rolename: sitecore\Author Write Access
+
+----role-in-role----
+rolename: sitecore\Production
+

@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Net;
 using System.Web.Services.Protocols;
-using Informa.Web.Areas.Account.Models;
-using SitecoreTreeWalker.Config;
+using InformaSitecoreWord.Sitecore;
+using PluginModels;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.Util;
 
-namespace SitecoreTreeWalker.User
+namespace InformaSitecoreWord.User
 {
 	public class SitecoreUser
 	{
@@ -62,19 +65,20 @@ namespace SitecoreTreeWalker.User
 		/// <param name="username">User's username</param>
 		/// <param name="password">User's password</param>
 		/// <returns>True if authentication successful; otherwise, false.</returns>
-		public WordPluginModel.UserStatusStruct Authenticate(string username, string password)
+		public UserStatusStruct Authenticate(string username, string password)
 		{
 			Globals.SitecoreAddin.Log("SitecoreUser.Authenticate: Trying to authenticate user [" + username + "]...");
 			var domainAndUsername = DefaultDomain + @"\" + username;
 			try
 			{
-				var userStatus = SitecoreArticle.AuthenticateUser(domainAndUsername, password);
+				var userStatus = SitecoreClient.AuthenticateUser(domainAndUsername, password);
 				if (userStatus.LoginSuccessful)
 				{
 					Globals.SitecoreAddin.Log("SitecoreUser.Authenticate: Authentication succeeded.");
 					IsLoggedIn = true;
 					Username = domainAndUsername;
 					Password = password;
+				    UserCookie = UserCredentialReader.GetReader().GetCookie(username);
 					InvokeAuthenticated(EventArgs.Empty);
 				}
 				return userStatus;
@@ -86,7 +90,9 @@ namespace SitecoreTreeWalker.User
 			}
 		}
 
-		/// <summary>
+	    public CookieCollection UserCookie { get; set; }
+
+	    /// <summary>
 		/// Logs user out
 		/// </summary>
 		/// <returns>True if logout successful; otherwise, false (eg, no logged in user to logout)</returns>

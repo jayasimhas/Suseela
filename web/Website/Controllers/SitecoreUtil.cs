@@ -1,43 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web.Security;
 using Informa.Library.Article.Search;
 using Informa.Library.Utilities.References;
 using Informa.Web.Areas.Account.Models;   
 using Informa.Models.FactoryInterface;
+using PluginModels;
 using Sitecore.Security.Authentication;
 
 namespace Informa.Web.Controllers
 {
 	public static class SitecoreUtil
 	{
-		//TODO: Business logic for Article Number Generation
 		/// <summary>
 		/// This method Generates the Article Number
 		/// </summary>
 		/// <param name="lastArticleNumber"></param>
 		/// <param name="publication"></param>		
 		/// <returns></returns>
-		public static string GetNextArticleNumber(int lastArticleNumber, Guid publication)
+		public static string GetNextArticleNumber(long lastArticleNumber, Guid publication)
 		{			
 			string number = GetPublicationPrefix(publication) + lastArticleNumber.ToString(Constants.ArticleNumberLength);
 			return number;
 		}
 
-		//TODO: remove this
-		/// <summary>
-		/// This method Generates the Article Number
-		/// </summary>
-		/// <param name="lastArticleNumber"></param>
-		/// <param name="publication"></param>		
-		/// <returns></returns>
-		public static string GetNextArticleNumber(string lastArticleNumber, Guid publication)
-		{
-			string number = GetPublicationPrefix(publication) + lastArticleNumber;
-			return number;
-		}
-
+		
 		/// <summary>
 		/// This method gets the Publication Prefix which is used in Article Number Generation.
 		/// </summary>
@@ -49,9 +38,9 @@ namespace Informa.Web.Controllers
 			return Constants.PublicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : null;
 		}
 
-		public static WordPluginModel.UserStatusStruct GetUserStatus(string username, string password)
+		public static UserStatusStruct GetUserStatus(string username, string password)
 		{
-			var userStatus = new WordPluginModel.UserStatusStruct { UserName = username };
+			var userStatus = new UserStatusStruct { UserName = username };
 
 			MembershipUser user = Membership.GetUser(username);
 			if (user == null)
@@ -65,9 +54,7 @@ namespace Informa.Web.Controllers
 				}
 			}
 
-			userStatus.LoginAttemptsRemaining = 1;
-			//TODO
-			//userStatus.LoginAttemptsRemaining = AttemptedPasswordAttemptsRemaining(user);
+			userStatus.LoginAttemptsRemaining = AttemptedPasswordAttemptsRemaining(user);
 			userStatus.LockedOut = user.IsLockedOut;
 			bool wasUserLockedOut = user.IsLockedOut;
 
@@ -90,16 +77,12 @@ namespace Informa.Web.Controllers
 				}
 			}
 
-			userStatus.LoginAttemptsRemaining = 1;
-			//TODO
-			//userStatus.LoginAttemptsRemaining = AttemptedPasswordAttemptsRemaining(user);
+			userStatus.LoginAttemptsRemaining = AttemptedPasswordAttemptsRemaining(user);
 			userStatus.LockedOut = user.IsLockedOut;
 
 			return userStatus;
 		}
-
-		//TODO _ add a check to get the attempts left
-		/*
+		
 		public static int AttemptedPasswordAttemptsRemaining(MembershipUser user)
 		{
 			var membershipProvider = (CustomSqlMembershipProvider)Membership.Providers["sql"];
@@ -110,6 +93,6 @@ namespace Informa.Web.Controllers
 
 			return membershipProvider.GetRemainingPasswordAttempts((Guid)user.ProviderUserKey);
 		}
-		*/
+		
 	}
 }

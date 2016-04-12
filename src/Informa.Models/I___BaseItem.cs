@@ -30,7 +30,8 @@ namespace Informa.Models.FactoryInterface
         string ImageUrl { get; }
         string ImageCaption { get; }
         string ImageSource { get; }
-    }
+		string ImageAltText { get; }
+	}
 
     public class FeaturedImage : IFeaturedImage
     {
@@ -39,8 +40,9 @@ namespace Informa.Models.FactoryInterface
         public string ImageUrl { get; set; }
         public string ImageCaption { get; set; }
         public string ImageSource { get; set; }
+	    public string ImageAltText { get; }
 
-        #endregion
+	    #endregion
     }
 
 

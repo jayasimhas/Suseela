@@ -51,8 +51,9 @@ section: UI Elements
 
     .pop-out__internal {
         left: 0;
-        top: 0;
+        min-width: 360px;
         padding: 2.175rem 1.625rem;
+        top: 0;
         width: 100%;
     }
 
@@ -127,6 +128,12 @@ section: UI Elements
         &--inset {
             padding: 0 1.125rem;
         }
+    }
+
+    &__error {
+        @extend .error-text;
+        display: none;
+        margin-bottom: 0.5rem;
     }
 
     // Bottom section of pop-out form, below input fields

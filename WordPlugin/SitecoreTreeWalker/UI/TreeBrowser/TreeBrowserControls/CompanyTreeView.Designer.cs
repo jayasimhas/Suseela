@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+﻿namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
     partial class CompanyTreeView
     {
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.tabControl1 = new SitecoreTreeWalker.UI.TablessTabControl();
+            this.tabControl1 = new TablessTabControl();
             this.tabTreeView = new System.Windows.Forms.TabPage();
             this.tabResultsView = new System.Windows.Forms.TabPage();
-            this.noFlickerListView1 = new SitecoreTreeWalker.UI.NoFlickerListView();
+            this.noFlickerListView1 = new NoFlickerListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkViewInTree = new System.Windows.Forms.LinkLabel();

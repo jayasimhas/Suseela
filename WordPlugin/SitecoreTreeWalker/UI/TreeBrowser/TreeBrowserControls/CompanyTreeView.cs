@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
-using SitecoreTreeWalker.Sitecore;
+using InformaSitecoreWord.Sitecore;
+using PluginModels;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
     public partial class CompanyTreeView : UserControl
     {
-        public delegate void CompanyDoubleClick(WordPluginModel.CompanyWrapper wrapper);
+        public delegate void CompanyDoubleClick(CompanyWrapper wrapper);
 
         public event CompanyDoubleClick CompanyDoubleClicked;
 
@@ -23,21 +23,21 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             _unfiltered = new List<TreeNode>();
         }
 
-        private IEnumerable<WordPluginModel.CompanyWrapper> _wrappers;
+        private IEnumerable<CompanyWrapper> _wrappers;
 
         private List<TreeNode> _unfiltered;
 
-        private void LoadCompanies(IEnumerable<WordPluginModel.CompanyWrapper> wrappers)
+        private void LoadCompanies(IEnumerable<CompanyWrapper> wrappers)
         {
             PopulateTree(wrappers);
         }
 
-        private void PopulateTree(IEnumerable<WordPluginModel.CompanyWrapper> wrappers)
+        private void PopulateTree(IEnumerable<CompanyWrapper> wrappers)
         {
             PopulateTree(wrappers, null);
         }
 
-        private void PopulateTree(IEnumerable<WordPluginModel.CompanyWrapper> wrappers, Dictionary<int, bool> filter)
+        private void PopulateTree(IEnumerable<CompanyWrapper> wrappers, Dictionary<int, bool> filter)
         {
             treeView1.Nodes.Clear();
 
@@ -60,10 +60,10 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             treeView1.Nodes.AddRange(n);
         }
 
-        private Dictionary<int, WordPluginModel.CompanyWrapper> _foundCompanies = new Dictionary<int, WordPluginModel.CompanyWrapper>();
-        private Dictionary<char, List<WordPluginModel.CompanyWrapper>> _wrappersByLetter = new Dictionary<char, List<WordPluginModel.CompanyWrapper>>();
+        private Dictionary<int, CompanyWrapper> _foundCompanies = new Dictionary<int, CompanyWrapper>();
+        private Dictionary<char, List<CompanyWrapper>> _wrappersByLetter = new Dictionary<char, List<CompanyWrapper>>();
 
-        private TreeNode GetNode(WordPluginModel.CompanyWrapper current, Dictionary<int, bool> filter)
+        private TreeNode GetNode(CompanyWrapper current, Dictionary<int, bool> filter)
         {
             if (!_foundCompanies.ContainsKey(current.RecordID))
             {
@@ -71,10 +71,10 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
                 char c = current.Title.ToLower()[0];
 
-                List<WordPluginModel.CompanyWrapper> letterWrappers;
+                List<CompanyWrapper> letterWrappers;
                 if (!_wrappersByLetter.TryGetValue(c, out letterWrappers))
                 {
-                    letterWrappers = new List<WordPluginModel.CompanyWrapper>();
+                    letterWrappers = new List<CompanyWrapper>();
                     _wrappersByLetter.Add(c, letterWrappers);
                 }
 
@@ -82,25 +82,28 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             }
 
             var node = new TreeNode(current.Title, GetChildNodes(current, filter).ToArray())
-                           {
-                               Tag = current.RecordID,
-                               ImageIndex = 0
-                           };
+            {
+                Tag = current.RecordID,
+                ImageIndex = 0
+            };
             node.Expand();
 
             return node;
         }
 
-        private IEnumerable<TreeNode> GetChildNodes(WordPluginModel.CompanyWrapper current, Dictionary<int, bool> filter)
+        private IEnumerable<TreeNode> GetChildNodes(CompanyWrapper current, Dictionary<int, bool> filter)
         {
-            foreach (var child in current.RelatedCompanies)
+            if (current.RelatedCompanies != null)
             {
-                if (filter != null && !filter.ContainsKey(child.RecordID))
+                foreach (var child in current.RelatedCompanies)
                 {
-                    continue;
-                }
+                    if (filter != null && !filter.ContainsKey(child.RecordID))
+                    {
+                        continue;
+                    }
 
-                yield return GetNode(child, filter);
+                    yield return GetNode(child, filter);
+                }
             }
         }
 
@@ -118,7 +121,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
             char c = text.ToLower()[0];
 
-            List<WordPluginModel.CompanyWrapper> wrappersForLetter;
+            List<CompanyWrapper> wrappersForLetter;
             if (_wrappersByLetter.TryGetValue(c, out wrappersForLetter))
             {
                 Dictionary<int, bool> filter = Filter(text, wrappersForLetter);
@@ -128,7 +131,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
                 foreach (var b in filter)
                 {
-                    WordPluginModel.CompanyWrapper wrapper;
+                    CompanyWrapper wrapper;
                     if (_foundCompanies.TryGetValue(b.Key, out wrapper))
                     {
                         ListViewItem item = new ListViewItem();
@@ -141,7 +144,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
         }
 
-        private Dictionary<int, bool> Filter(string text, IEnumerable<WordPluginModel.CompanyWrapper> wrappers)
+        private Dictionary<int, bool> Filter(string text, IEnumerable<CompanyWrapper> wrappers)
         {
             Dictionary<int, bool> allResults = new Dictionary<int, bool>();
 
@@ -161,7 +164,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             return allResults;
         }
 
-        private Dictionary<int, bool> FindMatches(WordPluginModel.CompanyWrapper wrapper, string text)
+        private Dictionary<int, bool> FindMatches(CompanyWrapper wrapper, string text)
         {
             Dictionary<int, bool> matches = new Dictionary<int, bool>();
 
@@ -176,12 +179,12 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             return matches;
         }
 
-        private bool IsMatch(WordPluginModel.CompanyWrapper wrapper, string text)
+        private bool IsMatch(CompanyWrapper wrapper, string text)
         {
             return wrapper.Title.StartsWith(text, StringComparison.InvariantCultureIgnoreCase);
         }
 
-        public WordPluginModel.CompanyWrapper SelectedCompany
+        public CompanyWrapper SelectedCompany
         {
             get
             {
@@ -207,7 +210,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
                     }
                 }
 
-                WordPluginModel.CompanyWrapper wrapper = null;
+                CompanyWrapper wrapper = null;
                 if (recordId.HasValue)
                 {
                     _foundCompanies.TryGetValue(recordId.Value, out wrapper);
@@ -315,7 +318,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
         private void treeView1_DoubleClick(object sender, EventArgs e)
         {
-            WordPluginModel.CompanyWrapper selectedCompany = SelectedCompany;
+            CompanyWrapper selectedCompany = SelectedCompany;
 
             if (selectedCompany != null && CompanyDoubleClicked != null)
             {
@@ -327,7 +330,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
         {
             if (!DesignMode)
             {
-                _wrappers = SitecoreGetter.GetAllCompaniesWithRelated();
+                _wrappers = SitecoreClient.GetAllCompaniesWithRelated();
 
                 LoadCompanies(_wrappers);
             }
@@ -355,7 +358,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
             {
                 ListViewItem selectedItem = noFlickerListView1.SelectedItems[0];
 
-                int i = (int) selectedItem.Tag;
+                int i = (int)selectedItem.Tag;
 
                 SelectNodeInTree(i);
                 tabControl1.SelectedTab = tabTreeView;
@@ -380,7 +383,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
         private TreeNode FindCompany(int recordId, TreeNode wrapper)
         {
-            int id = (int) wrapper.Tag;
+            int id = (int)wrapper.Tag;
             if (id == recordId)
             {
                 return wrapper;
@@ -408,13 +411,13 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
                 treeView1.SelectedNode = node;
                 node.EnsureVisible();
             }
-            
+
             tabControl1.SelectedTab = tabTreeView;
         }
 
         private void noFlickerListView1_DoubleClick(object sender, EventArgs e)
         {
-            WordPluginModel.CompanyWrapper selectedCompany = SelectedCompany;
+            CompanyWrapper selectedCompany = SelectedCompany;
 
             if (selectedCompany != null && CompanyDoubleClicked != null)
             {

@@ -13,16 +13,23 @@ templatekey: Template
 field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
 name: __Base template
 key: __base template
-content-length: 77
+content-length: 116
 
-{1930BBEB-7805-471A-A3BE-4858AC7CF696}|{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
+{1930BBEB-7805-471A-A3BE-4858AC7CF696}|{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}|{E6371D65-0718-40EB-91AA-C42B01C27969}
+----field----
+field: {F7D48A55-2158-4F02-9356-756654404F73}
+name: __Standard values
+key: __standard values
+content-length: 38
+
+{CF8EDBAD-017B-414A-9590-B69A4DDF4BAC}
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
-content-length: 35
+content-length: 25
 
-Applications/32x32/folder_green.png
+Apps/32x32/Folder (1).png
 ----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
 name: __Masters
@@ -33,7 +40,7 @@ content-length: 77
 ----version----
 language: en
 version: 1
-revision: 6f26260d-63fe-4c8d-9dda-bc0fed3de26b
+revision: 2e07ebf4-762d-47ad-a7aa-d9b3eac0785b
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -55,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6f26260d-63fe-4c8d-9dda-bc0fed3de26b
+2e07ebf4-762d-47ad-a7aa-d9b3eac0785b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160112T161350Z
+20160411T105308Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

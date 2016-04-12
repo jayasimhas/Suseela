@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Informa.Web.Areas.Account.Models;
-using SitecoreTreeWalker.Sitecore;
+using InformaSitecoreWord.Sitecore;
+using PluginModels;
 
-namespace SitecoreTreeWalker.Util.CharacterStyles
+namespace InformaSitecoreWord.Util.CharacterStyles
 {
 	/// <summary>
 	/// Fields are null until GetCharacterStyles() has been called to initialize values
@@ -25,7 +25,7 @@ namespace SitecoreTreeWalker.Util.CharacterStyles
 		{
 			if (CharacterStyles == null)
 			{
-				List<WordPluginModel.WordStyleStruct> styles = SitecoreGetter.GetCharacterStyles().ToList();
+				List<WordStyleStruct> styles = SitecoreClient.GetCharacterStyles().ToList();
 				var characterStyles = styles.ToDictionary(style => style.WordStyle, style => style.CssElement);
 				string boldElement;
 				string italicElement;

@@ -1,0 +1,219 @@
+// Combo of custom styles and Bootstrap styles for ui-bootstrap datepicker
+// HTML structure comes from ui-datepicker, is mapped out (with all of its crazy nesting) below
+
+.datepicker {
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        // display: none;
+        float: left;
+        min-width: 254px;
+        margin-left: 0.5rem;
+        list-style: none;
+        font-size: 14px;
+        background-color: $color-mercury-gray;
+        background-clip: padding-box;
+
+        // wraps calendar
+        li:first-child {
+            padding: 0;
+
+            div {
+                table {
+                    width: 100%;
+                    text-align: center;
+                    border: 0;
+
+                    &:focus {
+                        outline: 0;
+                    }
+
+                    thead {
+                        // Top bar (month)
+                        border: 1px solid $color-zeus-black;
+
+                        tr:first-child {
+                            width: 100%;
+                            background-color: #231f20;
+                            height: 32px;
+
+                            // wraps previous button
+                            th:first-child,
+                            th:last-child {
+                                text-align: left;
+                                vertical-align: top;
+                                position: relative;
+
+                                button {
+                                    width: 1.5rem;
+                                    height: 100%;
+                                    border: 0;
+                                    background: transparent;
+                                    position: absolute;
+                                    //margin-top: 2px;
+
+                                    i {
+                                        display: none;
+                                    }
+
+                                    &:after {
+                                        content: "▸";
+                                        color: $color-light-gray;
+                                        display: block;
+                                        -webkit-transform: rotate(180deg);
+                                        transform: rotate(180deg);
+                                        font-size: 1.25rem;
+                                    }
+
+                                    &:active,
+                                    &:focus {
+                                        outline: 0;
+                                        -webkit-user-select: none;
+                                        -moz-user-select: none;
+                                        -ms-user-select: none;
+                                    }
+                                }
+                            }
+                            // wraps month and year text
+                            th:nth-child(2) {
+                                button {
+                                    strong {
+                                        @include textMix('Roboto Condensed', 13px, 600); // design says 15px but doesn't look right
+                                        color: #fff;
+                                        text-transform: uppercase;
+                                    }
+                                }
+                            }
+                            // wraps next button
+                            th:last-child {
+                                text-align: right;
+
+                                button {
+                                    position: relative;
+
+                                    &:after {
+                                        -webkit-transform: none;
+                                        transform: none;
+                                        margin-top: 2px;
+                                    }
+                                }
+                            }
+                        }
+                        // 2nd bar (weekdays)
+                        tr:nth-child(2) {
+                            background-color: #d1d3d4;
+                            border-style: solid;
+                            border-width: 1px;
+                            border-color:  #b4b7b8;
+                            box-sizing: border-box;
+                            height: 29px;
+                            text-align: center;
+
+                            th {
+                                small {
+                                    @include textMix('Roboto', 11px, 500);
+                                    text-transform: uppercase;
+                                    color:  #808285;
+                                    line-height: 16.998px;
+                                }
+                            }
+
+                        }
+                    }
+                    tbody {
+                        // each row of dates
+                        border: 1px solid $color-light-gray;
+                        border-top: 0;
+                        border-bottom: 0;
+
+                        tr {
+                            // each date cell
+                            td {
+                                button {
+                                    background-color: $color-mercury-gray;
+                                    border: 1px solid $color-light-gray;
+                                    border-top: 0;
+                                    border-right: 0;
+                                    box-sizing: border-box;
+                                    height: 32px;
+                                    width: 36px;
+
+                                    &.active {
+                                        border: 2px solid #808285;
+                                        background-color: $color-white;
+                                    }
+                                    // each date number
+                                    span {
+                                        @include textMix('Roboto', 15px, 400);
+                                        color:  #37373d;
+                                        text-align: center;
+                                        vertical-align: middle;
+
+                                        &.text-muted {
+                                            color: #878a8b;
+                                        }
+                                    }
+
+                                }
+
+                                &:nth-child(7n+1) button {
+                                    border-left: 0;
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        // wraps buttons
+        li:nth-child(2) {
+            // wraps today & clear buttons
+            span.btn-group {
+                // today button
+                button:first-child {
+
+                }
+                // clear button
+                button: nth-child(2) {
+
+                }
+            }
+            // close button
+            button {
+
+            }
+
+        }
+
+
+    }
+
+    .uib-title {
+        @extend .button--plain;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+
+}

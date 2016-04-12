@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI
+﻿namespace InformaSitecoreWord.UI
 {
 	partial class SaveDialog
 	{

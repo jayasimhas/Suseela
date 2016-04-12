@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="header-search__wrapper">
+
+    @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
+    {
+         @Html.AntiForgeryToken()
+         @Html.Sitecore().FormHandler()
+
+        <input class="header-search__field" type="search" placeholder="Search the site" name="SearchTerm">
+
+        <svg class="header__icons header__icons--search js-header-search-trigger">
+            <use xlink:href="/dist/img/svg-sprite.svg#search"></use>
+        </svg>
+
+        <svg class="header__icons header__icons--dismiss-search js-header-search-trigger">
+            <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+        </svg>
+
+    }
+</div>

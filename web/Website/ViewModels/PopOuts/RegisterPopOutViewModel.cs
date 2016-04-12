@@ -22,6 +22,9 @@ namespace Informa.Web.ViewModels.PopOuts
 		public string RegisterButtonText => TextTranslator.Translate("Header.RegisterButton");
 		public string RegisterUrl => SiteRootContext.Item?.Register_Link?.Url ?? string.Empty;
 		public string UsernamePlaceholderText => TextTranslator.Translate("Header.UsernamePlaceholder");
-		public string UsernameInvalidText => TextTranslator.Translate("Header.UsernameInvalid");
+		public string UsernameRequirementsErrorText => TextTranslator.Translate("Registration.UsernameRequirementsError");
+		public string UsernameExistsErrorText => TextTranslator.Translate("Registration.UsernameExistsError");
+		public string GeneralErrorText => TextTranslator.Translate("Registration.GeneralError");
+		public string Username { get; set; }
 	}
 }

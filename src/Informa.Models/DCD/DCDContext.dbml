@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="InformaOld_DCD" Class="DCDContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=.\SQL2012;Initial Catalog=InformaOld_DCD;User ID=sa;Password=1100M@ss!;MultipleActiveResultSets=True;Application Name=EntityFramework" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Companies" Member="Companies">
+    <Type Name="Company">
+      <Column Name="RecordId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RecordNumber" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Content]" Member="Content" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Published" Type="System.DateTime" DbType="DateTime" CanBeNull="false" />
+      <Association Name="Company_RelatedCompany" Member="RelatedCompanies" ThisKey="RecordId" OtherKey="CompanyRecordId" Type="RelatedCompany" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RelatedCompanies" Member="RelatedCompanies">
+    <Type Name="RelatedCompany">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyRecordId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RelatedCompanyRecordNumber" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="RelatedCompanyPath" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Company_RelatedCompany" Member="Company" ThisKey="CompanyRecordId" OtherKey="RecordId" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyRecordImportLog" Member="CompanyRecordImportLogs">
+    <Type Name="CompanyRecordImportLog">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecordId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImportId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Operation" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Result" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="ImportLog_CompanyRecordImportLog" Member="ImportLog" ThisKey="ImportId" OtherKey="Id" Type="ImportLog" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DealRecordImportLog" Member="DealRecordImportLogs">
+    <Type Name="DealRecordImportLog">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecordId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImportId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Operation" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Result" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="ImportLog_DealRecordImportLog" Member="ImportLog" ThisKey="ImportId" OtherKey="Id" Type="ImportLog" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Deals" Member="Deals">
+    <Type Name="Deal">
+      <Column Name="RecordId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RecordNumber" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Content]" Member="Content" Type="System.String" DbType="varchar(MAX)" CanBeNull="true" />
+      <Column Name="Published" Type="System.DateTime" DbType="DateTime" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DrugRecordImportLog" Member="DrugRecordImportLogs">
+    <Type Name="DrugRecordImportLog">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecordId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImportId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Operation" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Result" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="ImportLog_DrugRecordImportLog" Member="ImportLog" ThisKey="ImportId" OtherKey="Id" Type="ImportLog" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Drugs" Member="Drugs">
+    <Type Name="Drug">
+      <Column Name="RecordId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RecordNumber" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Content]" Member="Content" Type="System.String" DbType="varchar(MAX)" CanBeNull="true" />
+      <Column Name="Published" Type="System.DateTime" DbType="datetime" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImportLog" Member="ImportLogs">
+    <Type Name="ImportLog">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ImportStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ImportEnd" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Result" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="ImportLog_CompanyRecordImportLog" Member="CompanyRecordImportLogs" ThisKey="Id" OtherKey="ImportId" Type="CompanyRecordImportLog" />
+      <Association Name="ImportLog_DealRecordImportLog" Member="DealRecordImportLogs" ThisKey="Id" OtherKey="ImportId" Type="DealRecordImportLog" />
+      <Association Name="ImportLog_DrugRecordImportLog" Member="DrugRecordImportLogs" ThisKey="Id" OtherKey="ImportId" Type="DrugRecordImportLog" />
+    </Type>
+  </Table>
+</Database>

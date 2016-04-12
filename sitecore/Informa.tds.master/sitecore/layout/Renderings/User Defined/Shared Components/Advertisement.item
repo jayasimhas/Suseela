@@ -1,6 +1,6 @@
 ----item----
 version: 1
-id: {231A0FB2-657C-4A34-A8C9-BC490DEDAD1C}
+id: {8C64BF41-EFAF-4867-A5A1-91EEB97F2985}
 database: master
 path: /sitecore/layout/Renderings/User Defined/Shared Components/Advertisement
 parent: {C89B6A9F-E766-4320-BCB2-A9ECD153E4E6}
@@ -13,9 +13,16 @@ templatekey: View rendering
 field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
 name: Path
 key: path
-content-length: 54
+content-length: 45
 
-/Views/Shared/Components/_ManuallyCuratedAdvert.cshtml
+/Views/Shared/Components/Advertisement.cshtml
+----field----
+field: {FE7C64B6-FCF8-4F00-A5E8-C2D9A8CF3048}
+name: Parameters
+key: parameters
+content-length: 60
+
+contentFolderTemplate={EBEB3CE7-6437-4F3F-8140-F5C9A552471F}
 ----field----
 field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
 name: Open Properties after Add
@@ -27,23 +34,23 @@ content-length: 0
 field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
 name: Datasource Location
 key: datasource location
-content-length: 0
+content-length: 30
 
-
+./PageAssets|/sitecore/content
 ----field----
 field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
 name: Datasource Template
 key: datasource template
-content-length: 0
+content-length: 57
 
-
+/sitecore/templates/User Defined/Components/Advertisement
 ----field----
 field: {E441ABE7-2CA3-4640-AE26-3789967925D7}
 name: Compatible Renderings
 key: compatible renderings
-content-length: 194
+content-length: 0
 
-{3B91B663-7ECB-4964-9145-0F3DD02EA49B}|{231A0FB2-657C-4A34-A8C9-BC490DEDAD1C}|{B302F679-C10E-4D17-B387-C06D275E9F78}|{9DCE5D27-9823-40F0-BBDE-28F8862318B5}|{B835C69E-153A-49E1-96C4-F073E1B6A8E3}
+
 ----field----
 field: {A2F5D9DF-8CBA-4A1D-99EB-51ACB94CB057}
 name: Page Editor Buttons
@@ -54,7 +61,7 @@ content-length: 116
 ----version----
 language: en
 version: 1
-revision: d848e00b-6baa-4e0e-a85c-6e7151fe702a
+revision: bbe53d33-65e9-4431-8edc-50bfb803fca5
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -69,14 +76,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d848e00b-6baa-4e0e-a85c-6e7151fe702a
+bbe53d33-65e9-4431-8edc-50bfb803fca5
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160212T000849Z
+20160309T194414Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

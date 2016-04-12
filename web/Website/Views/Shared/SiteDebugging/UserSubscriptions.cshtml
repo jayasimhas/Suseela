@@ -1,0 +1,41 @@
+﻿@model Informa.Web.ViewModels.SiteDebugging.IUserSubscriptionsViewModel
+<style>
+	.debugToolbarSubscriptions {
+		display: none;
+	}
+</style>
+<button class="js-debug-expand-subscriptions-button button--filled" type="button">View Subscriptions</button>
+<div class="debugToolbarSubscriptions">
+	<table class="sortable sortable-table">
+		<thead class="sortable-table__header">
+			<tr>
+				<td>Document ID</td>
+				<td>Expiration Date</td>
+				<td>Product Code</td>
+				<td>Product Guid</td>
+				<td>Product Type</td>
+				<td>Publication</td>
+				<td>Subscription Type</td>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var subscription in Model.Subscriptions)
+			{
+				<tr>
+					<td>@subscription.DocumentID</td>
+					<td>@subscription.ExpirationDate</td>
+					<td>@subscription.ProductCode</td>
+					<td>@subscription.ProductGuid</td>
+					<td>@subscription.ProductType</td>
+					<td>@subscription.Publication</td>
+					<td>@subscription.SubscriptionType</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+<script>
+	$('.js-debug-expand-subscriptions-button').on('click', function toggle(e) {
+		$(e.target).siblings('.debugToolbarSubscriptions').toggle();
+	});
+</script>

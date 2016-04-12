@@ -1,0 +1,16 @@
+.boxout-print-info {
+    // Only show when printing
+    // See: _print.scss
+    display: none;
+    float: right;
+    width: 626px;
+    font-size: 0.875rem;
+    border: 1px solid $color-light-gray;
+    background-color: $color-concrete-gray;
+    padding: 1rem;
+    line-height: 1.25rem;
+}
+
+.header-logo-print {
+    display: none;
+}

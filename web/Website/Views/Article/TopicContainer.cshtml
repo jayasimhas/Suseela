@@ -1,6 +1,10 @@
 ﻿@model TopicContainerViewModel
 
-<div id="@Model.Id.ToString("N")" class="topic-subtopic" data-topic-link-text="@Model.NavigationText">
+<a id="@Model.Id.ToString("N")"
+   class="sub-topic-links__invisible-topic-header-anchor js-topic-anchor"
+   data-topic-link-text="@Model.NavigationText"></a>
+
+<div class="topic-subtopic">
     <h1 class="topic-subtopic__header">
         @Html.Glass().Editable(x => x.GlassModel.Title)
         @if (Sitecore.Context.PageMode.IsPageEditor)
@@ -11,7 +15,7 @@
             @Html.Glass().Editable(x => x.GlassModel.Navigation_Text)
         }
         else {
-            <a class="topic-subtopic__header-explore-link" href="@Model.Link.LinkableUrl">@Model.Link.LinkableText</a>
+            <a class="topic-subtopic__header-explore-link" href="@HttpUtility.UrlDecode(Model.Link.LinkableUrl)">@Model.Link.LinkableText</a>
         }
     </h1>
 	@Html.Sitecore().DynamicPlaceholder("two-column-curated")

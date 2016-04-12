@@ -1,0 +1,34 @@
+.page-registration {
+
+    hr {
+        margin-bottom: 2.5rem;
+
+        @include breakpoint('small') {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__required-hint {
+        @include textMix('Roboto', 0.9375rem, 500);
+        color: $color-dusty-gray;
+        margin-bottom: 2rem;
+    }
+
+    &__tos-confirm {
+        margin-bottom: 2.5rem;
+
+        @include breakpoint('small') {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            @extend .checkbox-label;
+        }
+    }
+
+    &__error {
+        @extend .error-text;
+        display: none;
+    }
+
+}

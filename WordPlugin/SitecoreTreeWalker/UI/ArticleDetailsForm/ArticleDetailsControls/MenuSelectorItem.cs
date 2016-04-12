@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 {
 	public partial class MenuSelectorItem : UserControl
 	{

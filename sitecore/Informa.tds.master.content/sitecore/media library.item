@@ -34,9 +34,9 @@ Applications/16x16/photo_scenery.png
 field: {9C6106EA-7A5A-48E2-8CAD-F0F693B1E2D4}
 name: __Read Only
 key: __read only
-content-length: 1
+content-length: 0
 
-1
+
 ----field----
 field: {0C894AAB-962B-4A84-B923-CB24B05E60D2}
 name: __Ribbon
@@ -90,9 +90,9 @@ content-length: 0
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
-content-length: 149
+content-length: 407
 
-au|sitecore\ServicesAPI|p*|+item:read|^*|ar|sitecore\Sitecore Client Authoring|pe|+item:create|pd|+item:rename|+item:delete|+item:write|+item:create|
+ar|sitecore\Operations Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|au|sitecore\ServicesAPI|p*|+item:read|^*|ar|sitecore\Sitecore Client Authoring|pe|+item:create|pd|+item:rename|+item:delete|+item:write|+item:create|ar|sitecore\Media Library Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|pd|+item:rename|+item:write|+item:read|+item:delete|+item:create|
 ----version----
 language: da
 version: 1
@@ -232,7 +232,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: 524a7b13-93df-440e-861a-c9f0e4abb080
+revision: b3f43c7a-decd-437c-8980-3b30c5745ea3
 
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
@@ -282,14 +282,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-524a7b13-93df-440e-861a-c9f0e4abb080
+b3f43c7a-decd-437c-8980-3b30c5745ea3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151207T115939Z
+20160401T194701Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

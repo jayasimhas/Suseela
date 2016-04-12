@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+﻿namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	partial class IFrameControl
 	{
@@ -51,13 +51,14 @@
             this.sourceLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // mobileEmbed
             // 
+            this.mobileEmbed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mobileEmbed.Font = new System.Drawing.Font("Consolas", 10.5F);
             this.mobileEmbed.Location = new System.Drawing.Point(19, 194);
             this.mobileEmbed.Multiline = true;
@@ -71,6 +72,8 @@
             // 
             // uxMobilehttpsPreview
             // 
+            this.uxMobilehttpsPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uxMobilehttpsPreview.Location = new System.Drawing.Point(159, 279);
             this.uxMobilehttpsPreview.Name = "uxMobilehttpsPreview";
             this.uxMobilehttpsPreview.Size = new System.Drawing.Size(151, 23);
@@ -84,7 +87,7 @@
             // 
             this.uxMobileError.AutoSize = true;
             this.uxMobileError.ForeColor = System.Drawing.Color.Red;
-            this.uxMobileError.Location = new System.Drawing.Point(16, 587);
+            this.uxMobileError.Location = new System.Drawing.Point(15, 861);
             this.uxMobileError.MaximumSize = new System.Drawing.Size(250, 0);
             this.uxMobileError.Name = "uxMobileError";
             this.uxMobileError.Size = new System.Drawing.Size(0, 13);
@@ -102,6 +105,8 @@
             // 
             // uxIFrameHeader
             // 
+            this.uxIFrameHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uxIFrameHeader.Font = new System.Drawing.Font("Arial", 10.5F);
             this.uxIFrameHeader.Location = new System.Drawing.Point(19, 322);
             this.uxIFrameHeader.Name = "uxIFrameHeader";
@@ -120,6 +125,8 @@
             // 
             // uxIFrameTitle
             // 
+            this.uxIFrameTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uxIFrameTitle.Font = new System.Drawing.Font("Arial Black", 10F);
             this.uxIFrameTitle.Location = new System.Drawing.Point(19, 373);
             this.uxIFrameTitle.Name = "uxIFrameTitle";
@@ -138,6 +145,8 @@
             // 
             // uxIFrameCaption
             // 
+            this.uxIFrameCaption.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uxIFrameCaption.Font = new System.Drawing.Font("Arial", 10.5F);
             this.uxIFrameCaption.Location = new System.Drawing.Point(19, 425);
             this.uxIFrameCaption.Name = "uxIFrameCaption";
@@ -156,6 +165,8 @@
             // 
             // uxIFrameSource
             // 
+            this.uxIFrameSource.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uxIFrameSource.Font = new System.Drawing.Font("Arial", 10.5F);
             this.uxIFrameSource.Location = new System.Drawing.Point(19, 473);
             this.uxIFrameSource.Name = "uxIFrameSource";
@@ -174,6 +185,8 @@
             // 
             // desktopEmbed
             // 
+            this.desktopEmbed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.desktopEmbed.Font = new System.Drawing.Font("Consolas", 10.5F);
             this.desktopEmbed.Location = new System.Drawing.Point(19, 58);
             this.desktopEmbed.Multiline = true;
@@ -186,6 +199,8 @@
             // 
             // uxDesktophttpsPreview
             // 
+            this.uxDesktophttpsPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uxDesktophttpsPreview.Location = new System.Drawing.Point(163, 146);
             this.uxDesktophttpsPreview.Name = "uxDesktophttpsPreview";
             this.uxDesktophttpsPreview.Size = new System.Drawing.Size(144, 23);
@@ -208,7 +223,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 42);
+            this.label1.Location = new System.Drawing.Point(17, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 49;
@@ -217,7 +232,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 178);
+            this.label6.Location = new System.Drawing.Point(16, 169);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 50;
@@ -262,6 +277,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.headerLabel);
             this.groupBox1.Controls.Add(this.captionLabel);
             this.groupBox1.Controls.Add(this.sourceLabel);
@@ -276,31 +293,23 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SitecoreTreeWalker.Properties.Resources.imformaVideoPlaceholder2;
-            this.pictureBox1.InitialImage = global::SitecoreTreeWalker.Properties.Resources.ExampleEmbed;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::InformaSitecoreWord.Properties.Resources.imformaVideoPlaceholder2;
+            this.pictureBox1.InitialImage = global::InformaSitecoreWord.Properties.Resources.ExampleEmbed;
             this.pictureBox1.Location = new System.Drawing.Point(13, 80);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(282, 166);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;            
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            // 
-            // label9
-            // 
-            this.label9.Image = global::SitecoreTreeWalker.Properties.Resources.multimedia_tabheader;
-            this.label9.Location = new System.Drawing.Point(-3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(310, 24);
-            this.label9.TabIndex = 56;
             // 
             // IFrameControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.uxMobileError);
             this.Controls.Add(this.uxMobilehttpsPreview);
@@ -320,7 +329,7 @@
             this.Controls.Add(this.uxInsertIFrame);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.Name = "IFrameControl";
-            this.Size = new System.Drawing.Size(330, 850);
+            this.Size = new System.Drawing.Size(330, 885);
             this.Load += new System.EventHandler(this.IFrameControl_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -354,7 +363,6 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label captionLabel;
         private System.Windows.Forms.Label sourceLabel;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
 	}
 }

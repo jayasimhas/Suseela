@@ -1,0 +1,14 @@
+.article-list {
+    &--ul,
+    &--ol {
+        @extend .default-style-list;
+    }
+
+    &--ul {
+        @extend .carrot-list;
+    }
+    
+    &--ol li {
+        list-style-type: decimal;
+    }
+}

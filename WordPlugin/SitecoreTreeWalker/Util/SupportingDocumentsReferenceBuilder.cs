@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using System.Xml.Linq;
+using InformaSitecoreWord.Sitecore;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Sitecore;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
 	public class SupportingDocumentsReferenceBuilder
 	{
@@ -25,14 +25,16 @@ namespace SitecoreTreeWalker.Util
 			var path = strings[1];
 
 			var root = new XElement("a");
+		//	root.SetAttributeValue("class", "plugin-hide");
 			try
 			{
 				if (!SupportingDocuments.Contains(path))
 				{
 					SupportingDocuments.Add(path); 
 				}
-				var url = SitecoreGetter.GetDynamicUrl(path);
+				var url = SitecoreClient.GetDynamicUrl(path);
 				root.SetAttributeValue("href", url);
+				root.SetAttributeValue("target", "_blank");
                 root.Value = hyperlink.Range.Text;
 				//root.Add(GetDocIcon(url));
 			}

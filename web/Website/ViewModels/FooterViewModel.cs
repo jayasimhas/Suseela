@@ -1,8 +1,8 @@
 ﻿using Glass.Mapper.Sc.Fields;
-using Informa.Library.Authentication;
+using Informa.Library.User.Authentication;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
-using Informa.Library.Subscription;
+using Informa.Library.Subscription.User;
 using Informa.Web.Models;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
@@ -10,30 +10,30 @@ using System.Linq;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.Default)]
 	public class FooterViewModel : IFooterViewModel
 	{
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IPageLinksFactory PageLinksFactory;
-		protected readonly IUserAuthenticationContext UserAuthenticationContext;
-		protected readonly IUserSubscriptionContext UserSubscriptionContext;
+		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+		protected readonly IUserSubscribedContext UserSubscriptionContext;
 		protected readonly ITextTranslator TextTranslator;
 
 		public FooterViewModel(
 			ISiteRootContext siteRootContext,
 			IPageLinksFactory pageLinksFactory,
-			IUserAuthenticationContext userAuthenticationContext,
-			IUserSubscriptionContext userSubscriptionContext,
+			IAuthenticatedUserContext authenticatedUserContext,
+			IUserSubscribedContext userSubscriptionContext,
 			ITextTranslator textTranslator)
 		{
 			SiteRootContext = siteRootContext;
 			PageLinksFactory = pageLinksFactory;
-			UserAuthenticationContext = userAuthenticationContext;
+			AuthenticatedUserContext = authenticatedUserContext;
 			UserSubscriptionContext = userSubscriptionContext;
 			TextTranslator = textTranslator;
 		}
 
-		public string FooterLogoUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Footer_Logo.Src;
+		public string FooterLogoUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Footer_Logo?.Src;
 
 		public string CopyrightText => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Copyright_Text;
 
@@ -51,7 +51,7 @@ namespace Informa.Web.ViewModels
 					return SiteRootContext.Item.Subscribe_Link;
 				}
 
-				if (UserAuthenticationContext.IsAuthenticated)
+				if (AuthenticatedUserContext.IsAuthenticated)
 				{
 					return SiteRootContext.Item.Purchase_Link;
 				}

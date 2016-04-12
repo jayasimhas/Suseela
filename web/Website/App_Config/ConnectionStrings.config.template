@@ -14,4 +14,6 @@
   <add name="reporting" connectionString="${connstr.reporting}" />
   <add name="scheduledpublishing" connectionString="${connstr.scheduledpublishing}" />
   <add name="dcd" connectionString="${connstr.dcd}" />
+  <add name="custom" connectionString="${connstr.custom}" providerName="System.Data.SqlClient" />
+  <add name="session" connectionString="${connstr.session}" />
 </connectionStrings>

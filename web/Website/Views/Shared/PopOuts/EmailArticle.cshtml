@@ -1,44 +1,103 @@
 ﻿@model Informa.Web.ViewModels.PopOuts.IEmailArticlePopOutViewModel
 <div class="pop-out js-pop-out__email-article">
+	<div class="pop-out__form-error">
+		<!--TODO Add error message-->
+		@Model.ArticleNumber
+	</div>
 	<div class="pop-out__tab"></div>
 	<div class="pop-out__internal">
-		<div class="dismiss-button">
+
+		<div class="dismiss-button js-dismiss-email-article" data-target-element=".js-pop-out__email-article">
 			<svg class="dismiss-button__icon">
 				<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
 			</svg>
 		</div>
 
-		<h4 class="pop-out__header">
-			Email Article
-		</h4>
+		<h3 class="pop-out__header">
+			@Model.EmailArticleText
+		</h3>
 
-		<p class="pop-out__details">
-			All fields are required. For multiple recipients, separate email addresses with a semicolon.
-		</p>
-		<input class="inf-standard-form-field"
-			   type="text"
-			   placeholder="Recipient Email Address">
-		<input class="inf-standard-form-field"
-			   type="text"
-			   placeholder="Your Name">
-		<input class="inf-standard-form-field"
-			   type="text"
-			   placeholder="Your Email">
-		<p>
-			<span class="pop-out__run-in">Subject:</span> 1st U.S. Biosimilar Arrives: Zarxio Launches
-		</p>
-		<p><span class="pop-out__run-in">Add a personalized message to your email</span></p>
-		<textarea class="text-field"></textarea>
-		<div class="pop-out__form-actions-wrapper">
-			<div>
-				<a href="#">Cancel</a>
-			</div>
-			<div class="sign-in__submit-wrapper">
-				<button class="button--filled sign-in__submit">Send</button>
-			</div>
+		<div class="alert-success js-email-article-success">
+			<svg class="alert__icon">
+				<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+			</svg>
+			<p>@Model.EmailSentSuccessMessage <b class="js-email-article-recip-success">my&#64;email.address</b>.</p>
 		</div>
-		<p class="pop-out__details u-italic">
-			<b>Please Note:</b> Only individuals with subscriptions to SCRIP will be able to access the full article. All other readers will be directed to the abstract and may purchase the article.
-		</p>
+
+		<div class="js-email-article-form-wrapper">
+			<p class="pop-out__details u-italic">
+				@Model.EmailFormInstructionsText
+			</p>
+
+			<form 	class="form-email-article"
+					data-on-submit="/Account/api/EmailFriend/Email/">
+
+				<p class="	pop-out__error
+							js-form-error
+							js-form-error-general">
+					@Model.GeneralError
+				</p>
+
+				<p class="	pop-out__error
+							js-form-error
+							js-form-error-failType">
+					@Model.InvalidEmailText
+				</p>
+				<input	name="RecipientEmail"
+					   	class="pop-out__input js-email-article-recip-addr"
+					   	type="text"
+					   	placeholder="@Model.RecipientEmailPlaceholderText">
+
+				<p class="	pop-out__error
+							js-form-error
+							js-form-error-failType">
+					@Model.EmptyFieldText
+				</p>
+				<input 	name="SenderName"
+					   	class="pop-out__input"
+					   	type="text"
+					   	placeholder="@Model.YourNamePlaceholderText"
+		               	value="@Model.AuthUserName">
+
+
+				<p class="	pop-out__error
+							js-form-error
+							js-form-error-failType">
+					@Model.EmptyFieldText
+				</p>
+				<input 	name="SenderEmail"
+					   	class="pop-out__input"
+					   	type="text"
+					   	placeholder="@Model.YourEmailPlaceholderText"
+		               	value="@Model.AuthUserEmail">
+
+				<p>
+					<span class="pop-out__run-in">@Model.SubjectText</span> @Html.Raw(Model.ArticleTitle)
+					<input type="hidden" name="ArticleTitle" value="@Model.ArticleTitle">
+				</p>
+
+				<p>
+					<span class="pop-out__run-in">@Model.AddMessageText</span>
+				</p>
+
+				<textarea name="PersonalMessage" class="pop-out__input pop-out__textarea"></textarea>
+
+				<input type="hidden" name="ArticleNumber" value="@Model.ArticleNumber">
+
+				<div class="pop-out__form-actions-wrapper">
+					<div class="dismiss-button" data-target-element=".js-pop-out__email-article">
+                        <span class="highlight-link">@Model.CancelText</span>
+					</div>
+					<div class="sign-in__submit-wrapper">
+						<button type="submit" class="button--filled click-utag"  data-info='{"event_name" : "email-a-friend", "emailFrom" : "@Model.AuthUserName","articleTitle":"@Model.ArticleTitle" }'>@Model.SendText</button>
+					</div>
+				</div>
+			</form>
+
+			<p class="pop-out__details u-italic">
+				@Html.Raw(Model.NoticeText)
+			</p>
+		</div>
+
 	</div>
 </div>

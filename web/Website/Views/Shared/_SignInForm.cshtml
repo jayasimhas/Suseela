@@ -1,53 +1,67 @@
-@model Informa.Web.ViewModels.ISignInViewModel
+@model ISignInViewModel
 
-<div class="pop-out__form-error">
-    @Model.SignInInvalidText
+<div class="js-login-container">
+	<form 	method="post"
+			class="js-sign-in-submit"
+			data-on-submit="/Account/api/LoginWebUserApi/Login/">
+
+		<div class="pop-out__form-error js-form-error js-form-error-general">
+			@Model.SignInInvalidText
+		</div>
+
+		<input name="username"
+			   class="pop-out__input header__hover-input"
+			   placeholder="@Model.SignInUsernamePlaceholderText"
+			   type="text">
+		<input name="password"
+			   class="pop-out__input header__hover-input"
+			   placeholder="@Model.SignInPasswordPlaceholderText"
+			   type="password">
+
+		<div class="pop-out__form-actions-wrapper">
+			<div>
+				<span class="pop-out__form-actions pop-out__reset-password js-show-forgot-password">@Model.SignInResetPasswordLinkText</span>
+				<div class="pop-out__sign-in-remember-me">
+					<input name="persist" type="checkbox" data-checkbox-type="boolean"> @Model.SignInRememberMeText
+				</div>
+			</div>
+			<div class="sign-in__submit-wrapper">
+				<button type="submit" class="button--filled sign-in__submit" data-login-redirect-url="">@Model.SignInButtonText</button>
+			</div>
+		</div>
+	</form>
 </div>
 
-<input class="pop-out__input header__hover-input"
-       placeholder="@Model.UsernamePlaceholderText"
-       type="text">
-<input class="pop-out__input header__hover-input"
-       placeholder="@Model.PasswordPlaceholderText"
-       type="password">
+<div class="pop-out__sign-in-forgot-password js-reset-password-container">
 
-<div class="pop-out__form-actions-wrapper">
-    <div>
-        <a class="pop-out__form-actions js-show-forgot-password" href="#">@Model.ForgotPasswordLinkText</a>
-        <div class="pop-out__sign-in-remember-me">
-            <input type="checkbox"> @Model.RememberMeText
-        </div>
-    </div>
-    <div class="sign-in__submit-wrapper">
-        <button class="button--filled sign-in__submit">@Model.SignInButtonText</button>
-    </div>
-</div>
+	<form class="form-reset-password" data-on-submit="/Account/api/ResetPasswordApi/Generate/">
+		<div class="alert-success js-reset-password-success">
+			<svg class="alert__icon">
+				<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+			</svg>
+			<p>@Model.ResetPasswordSuccessText</p>
+		</div>
 
-<div class="pop-out__sign-in-forgot-password">
-    <div class="alert-success">
-        <svg class="alert__icon">
-            <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
-        </svg>
-        <p>Thanks, we've sent a link to reset your password.</p>
-    </div>
+		<div class="pop-out__sign-in-forgot-password-nested js-reset-password-request-form">
+			@Model.ResetPasswordBody
 
-    <div class="pop-out__sign-in-forgot-password-nested">
-        <h4 class="pop-out__sign-in-forgot-password-header">Forgot your password?</h4>
-        <p class="pop-out__details">
-            @Model.ForgotPasswordHelpText
-        </p>
-        <input  class="pop-out__input"
-                type="text"
-                placeholder="@Model.EmailPlaceholderText">
-        <div class="pop-out__form-actions-wrapper">
-            <div></div>
-            <div class="sign-in__submit-wrapper">
-                <button class="button--filled sign-in__submit">@Model.ForgotPasswordButtonText</button>
-            </div>
-        </div>
-    </div>
-    <p class="pop-out__details pop-out__details--inset u-italic u-centered">
-        @Model.ForgotPasswordContactText
-    </p>
+			<p class="pop-out__form-error js-form-error js-form-error-EmailRequirement">@Model.ResetPasswordErrorEmailText</p>
+			<p class="pop-out__form-error js-form-error js-form-error-general">@Model.ResetPasswordErrorGeneralText</p>
+
+			<input name="email"
+				   class="pop-out__input"
+				   type="text"
+				   placeholder="@Model.ResetPasswordEmailPlaceholderText">
+			<div class="pop-out__form-actions-wrapper">
+				<div></div>
+				<div class="sign-in__submit-wrapper">
+					<button class="button--filled  click-utag" type="submit" data-info='{"event_name" : "reset-password"}'>@Model.ResetPasswordSubmitText</button>
+				</div>
+			</div>
+		</div>
+		<p class="pop-out__details pop-out__details--inset u-italic u-centered">
+			@Model.ResetPasswordContactText
+		</p>
+	</form>
 
 </div>

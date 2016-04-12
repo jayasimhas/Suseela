@@ -59,6 +59,23 @@ gulp.task("dev", function () {
 
 });
 
+/**
+ * dev special snowflake task
+ */
+gulp.task("dev-rsync", function () {
+
+    // set the dev config (cache in utils.js)
+    utils.setConfig({
+        env: "dev",
+        watch: true,
+        notify: true,
+        tasks: ["js", "css", "copy", "bower", "svg-sprite", "rsync"]
+    });
+
+    // build with this config
+    utils.build();
+
+});
 
 /**
  * dev task

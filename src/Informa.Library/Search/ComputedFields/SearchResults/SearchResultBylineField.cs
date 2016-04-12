@@ -27,18 +27,21 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
                 return string.Empty;
             }
 
-            StringBuilder byLine = new StringBuilder();
+            //TamerM - 2016-04-03: comma separate except the last one and replace with 'and'
+            return string.Join(", ", article.Authors?.Take(article.Authors.Count() - 1).Select(x => x.First_Name + " " + x.Last_Name)) + ((article.Authors.Count() > 1 ? " and " : "") + article.Authors.Select(x => x.First_Name + " " + x.Last_Name).LastOrDefault());
 
-            string sep = "";
+            //StringBuilder byLine = new StringBuilder();
 
-            foreach (IAuthor author in article.Authors)
-            {
-                byLine.Append(sep);
-                byLine.Append(author.First_Name + " " + author.Last_Name);
-                sep = ", ";
-            }
+            //string sep = "";
 
-            return byLine.ToString();
+            //foreach (IStaff_Item author in article.Authors)
+            //{
+            //    byLine.Append(sep);
+            //    byLine.Append(author.First_Name + " " + author.Last_Name);
+            //    sep = ", ";
+            //}
+
+            //return byLine.ToString();
         }
     }
 }

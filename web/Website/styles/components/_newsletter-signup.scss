@@ -18,11 +18,18 @@ section: Home/Topic Page Components
 .newsletter-signup {
     @include textMix('PT Serif', 16px, 400);
     background-color: $informa-light-gray-f;
+    margin-bottom: 2rem;
     padding: 1rem;
     width: 100%;
 
     h3 {
         font-weight: 400;
         margin-bottom: 0.5rem;
+    }
+
+    &__error {
+        @extend .error-text;
+        display: none;
+        margin-top: 0.5rem;
     }
 }

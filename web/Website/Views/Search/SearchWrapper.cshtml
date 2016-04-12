@@ -1,10 +1,28 @@
-﻿<div class="search" ng-app="example">
+﻿<div class="search" ng-app="informaSearchApp" ng-cloak>
 
     <header class="search__header">
-        <div class="search__header-icons">
-          <h6 class="icon icon--email"><a>email</a></h6>
-          <h6 class="icon icon--rss"><a>rss</a></h6>
+
+        <div class="search__header-buttons" ng-controller="EmailRssController as emailRss">
+
+            <a href="#"
+               class="click-utag search__header-buttons--email pop-out__trigger js-pop-out-trigger"
+               data-info='{"event_name" : "mail-to-someone"}'
+               data-pop-out-type="email-search">
+                <h6>email</h6>
+                <svg class="icon icon--email">
+              	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#email"></use>
+            	</svg>
+            </a>
+
+            <a target="_blank" class="search__header-buttons--rss" href="/rss/search-feed.aspx{{currentLocation}}" >
+                <h6>rss</h6>
+                <svg class="icon icon--rss">
+              	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#rss"></use>
+            	</svg>
+            </a>
+
         </div>
+
         <h1 class="search__header-title">Search Results</h1>
         @Html.Sitecore().Placeholder("search-header")
     </header>

@@ -5,6 +5,7 @@
     @include breakpoint('medium') {
         width: 100%;
         clear: both;
+        float: none;
     }
 }
 
@@ -25,133 +26,14 @@
 .hidden-mobile-table-template {
     display: none;
 }
-
-.article-table,
-.article-body-content table {
-    width: 100%;
-    border: 1px solid $informa-light-gray-e;
-
-    tbody:nth-child(odd) {
-        background-color: $informa-light-gray-f;
-    }
-    th,
-    td {
-        text-align: left;
-        padding: 12px;
-    }
-    th,
-    tr {
-        border-bottom: 1px solid $informa-light-gray-e;
-    }
-    th {
-        @include textMix('Roboto', 16px, 500);
-        background-color: $informa-light-gray-f;
-    }
-    thead th {
-        background-color: $informa-darker-gray;
-        color: $informa-light-gray-f;
-        border: 0;
-    }
-    td {
-        font-size: 15px;
-
-        &:first-child {
-            font-weight: 900;
-        }
-    }
-
-    &__rowspan {
-        border-right: 1px solid $informa-light-gray-e;
-    }
-
-    &--mobile-link {
-        display: none;
-    }
-
-    @include breakpoint('medium') {
-
-        &:not(.article-table--mobile-link) {
-            display: none;
-        }
-
-        &--mobile-link {
-            display: table;
-
-            td {
-                @include textMix('Roboto', 14px, 400);
-
-                &:first-child {
-                    font-weight: inherit;
-                }
-
-                a:after {
-                    content: "\276f";
-                    display: inline-block;
-                    font-size: 10px;
-                    line-height: 1rem;
-                    vertical-align: middle;
-                    margin-left: 0.25rem;
-                }
-            }
-        }
-
-        &__expand-table {
-            @include svg-fill($informa-mid-gray);
-            float: right;
-            height: 20px;
-            width: 20px;
-        }
-
-    }
-
+.article-table--mobile-link {
+.media-exhibit,
+    margin-bottom: 1rem;
 }
 
-.media-exhibit,
-.article-inline-image {
-    @include textMix('Roboto', 13px, 400);
-    color: $informa-mid-gray;
-    margin-bottom: 2rem;
-
-    img {
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-
-    &__source {
-        float: right;
-        font-style: italic;
-    }
-
-    &__caption {
-        display: block;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    &--pull-left,
-    &--pull-right {
-        float: left;
-        margin-right: 2rem;
-        width: 50%;
-
-        .article-inline-image__source {
-            float: none;
-            display: block;
-            margin-bottom: 0.75rem;
-        }
-    }
-
-    &--pull-right {
-        float: right;
-        margin-left: 0;
-        margin-left: 2rem;
-        text-align: right;
-    }
-
-    @include breakpoint('medium') {
-        &__source {
-            display: block;
-            float: none;
-            margin-bottom: 0.5rem;
-        }
-    }
+.article-paragraph,
+.article-body-content > p { // "top level" paragraphs, direct children of wrapper
+    color: $informa-dark-gray;
+    line-height: 2rem;
+    margin: 0 0 1rem;
 }

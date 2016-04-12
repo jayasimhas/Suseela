@@ -1,0 +1,56 @@
+@model Informa.Web.Areas.Account.ViewModels.Management.EmailPreferencesViewModel
+
+@if (Model.IsAuthenticated)
+{
+    <div class="page-account">
+
+        <h1 class="page-account__header">@Model.Title</h1>
+        <div class="page-preferences js-preferences-user-container">
+
+            <p class="page-account__error js-form-error js-form-error-general">
+                @Model.GeneralErrorText
+            </p>
+
+            <form   class="form-email-preferences"
+                    data-on-submit="/Account/api/PreferencesApi/Update/">
+
+                <div class="labeled-checkbox page-preferences__newsletteroptin-confirm">
+                    <input  name="NewsletterOptIn"
+                            id="NewsletterOptIn"
+                            type="checkbox"
+                            data-checkbox-type="boolean"
+                            @(@Model.ReceivesNewsletterEmails ? "checked" : "")>
+                    <label for="NewsletterOptIn" class="checkbox-label">@Model.NewsletterLabel</label>
+                </div>
+
+                <div class="labeled-checkbox page-preferences__offersoptin-confirm">
+                    <input  name="DoNotSendOffersOptIn"
+                            id="DoNotSendOffersOptIn"
+                            type="checkbox"
+                            data-checkbox-type="boolean"
+                            @(@Model.DoNotSendOfferEmails ? "checked" : "")>
+                    <label for="DoNotSendOffersOptIn" class="checkbox-label">@Model.EmailsLabel</label>
+                </div>
+
+                <div class="page-account__submit-wrapper">
+                    <button type="submit" class="button--filled button--fly-right manage-preferences">@Model.SubmitText</button>
+                </div>
+
+                <div class="alert-success js-form-success">
+                    <svg class="alert__icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+                    </svg>
+                    <p>@Model.PreferencesSavedMessage</p>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+}
+else
+{
+    <div class="page-account__sign-in-solo">
+        @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
+    </div>
+}

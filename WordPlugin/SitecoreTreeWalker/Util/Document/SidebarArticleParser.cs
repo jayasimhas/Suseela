@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using InformaSitecoreWord.Sitecore;
 using Microsoft.Office.Interop.Word;
 
-namespace SitecoreTreeWalker.Util.Document
+namespace InformaSitecoreWord.Util.Document
 {
 	public class SidebarArticleParser
 	{
@@ -33,7 +34,7 @@ namespace SitecoreTreeWalker.Util.Document
 				string matchStr = match.Groups[0].Value;
 				string articleNumber = matchStr.Replace("[Sidebar#", "");
 				articleNumber = articleNumber.Replace("]", "");
-				articleGuid = SitecoreArticle.GetArticleGuidByArticleNumber(articleNumber);
+				articleGuid = SitecoreClient.GetArticleGuidByArticleNumber(articleNumber);
 				if(new Guid(articleGuid) == Guid.Empty)
 				{
 					throw new ArgumentException("Invalid sidebar article number inside paragraph contents: \"" + paragraph.TrimEnd() + "\"");

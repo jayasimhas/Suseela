@@ -6,6 +6,7 @@ using Sitecore.Data.Items;
 using System.IO;
 using System.Text.RegularExpressions;
 using Glass.Mapper.Sc;
+using Informa.Library.Utilities;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
@@ -25,8 +26,9 @@ namespace Informa.Web.Controllers
 
 		public MediaItem SaveWordDocIntoMediaLibrary(ArticleItem article, string fileName, string docName, string extension)
 		{
-			var articleItem = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
-			Guid publicationGuid = articleItem.Publication;
+			var item = _sitecoreMasterService.GetItem<Item>(article._Id);
+			var publicationItem = ArticleExtension.GetAncestorItemBasedOnTemplateID(item);
+			Guid publicationGuid = publicationItem.ID.Guid;
 			var articleDate = article.Planned_Publish_Date > DateTime.MinValue ? article.Planned_Publish_Date : article.Created_Date;
 			var itemFolder = GetMediaFolder(publicationGuid, articleDate);
 			var path = itemFolder._Path;
@@ -167,12 +169,10 @@ namespace Informa.Web.Controllers
 			//Set up the options for creating the new media library options
 			MediaCreatorOptions mediaCreatorOptions;
 			Database masterDb = _sitecoreMasterService.Database;
-			// SitecoreDatabases.AuthoringDatabase;
 			try
 			{
 				//Create the full media library item path including the path and the media item name
-				//TODO: Validate media item name
-				//itemName = ItemNameUtil.GetValidItemName(itemName);
+				//itemName = Sitecore.Data.Items.ItemUtil.ProposeValidItemName(itemName);
 				itemName = Regex.Replace(itemName, @"<(.|\n)*?>", string.Empty).Trim();
 				string fullMediaPath = mediaLibraryPath + @"/" + itemName;
 				mediaCreatorOptions = new MediaCreatorOptions
@@ -189,7 +189,5 @@ namespace Informa.Web.Controllers
 
 			return mediaCreatorOptions;
 		}
-
-
 	}
 }

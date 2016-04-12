@@ -4,11 +4,15 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Windows.Shapes;
-using SitecoreTreeWalker.document;
-using SitecoreTreeWalker.User;
-using SitecoreTreeWalker.WebserviceHelper;
+using InformaSitecoreWord.Properties;
+using InformaSitecoreWord.document;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.User;
+using InformaSitecoreWord.Util;
+using InformaSitecoreWord.WebserviceHelper;
+using PluginModels;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
     public partial class ArticleStatusBar : UserControl
     {
@@ -30,15 +34,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             articleLinkUnlinkInfo.ShowDialog();
         }
 
-        private void uxRefreshButton_Click(object sender, EventArgs e)
-        {
-            //TODO: refresh button yet to be done
-            var updatedArticleDetail = new ArticleDetail();
-            _parent = updatedArticleDetail;
-            _parent.Repaint();
-
-        }
-
         private void uxLockStateButton_Click(object sender, EventArgs e)
         {
             var articleLockInfo = new ArticleLockInfo { StartPosition = FormStartPosition.CenterParent };
@@ -46,6 +41,22 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             articleLockInfo.SetArticleNumber(_articleNumber);
             articleLockInfo.LinkToStatusBar(this);
             articleLockInfo.ShowDialog();
+        }
+
+        public void UpdateFields()
+        {
+            if (_parent != null)
+                UpdateFields(SitecoreClient.ForceReadArticleDetails(_parent.GetArticleNumber()));
+        }
+
+        public void UpdateFields(Guid articleGuid)
+        {
+            UpdateFields(SitecoreClient.ForceReadArticleDetails(articleGuid));
+        }
+
+        public void UpdateFields(ArticleStruct articleDetails)
+        {
+            _parent.ArticleDetails = articleDetails;
         }
 
         private void uxVersionStateButton_Click(object sender, EventArgs e)
@@ -81,7 +92,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 
         public void DisplayStatusBar(bool displayStatus, string articleNumber)
         {
-            uxLockStateButton.Visible = displayStatus;            
+            uxLockStateButton.Visible = displayStatus;
             uxVersionStateButton.Visible = displayStatus;
             uxWorkflowButton.Visible = displayStatus;
             if (!string.IsNullOrEmpty(articleNumber))
@@ -97,30 +108,49 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
             if (displayStatus)
             {
                 uxLinkUnlinkButton.Text = "UnLink";
-                uxLinkUnlinkButton.Image = new Bitmap(SitecoreTreeWalker.Properties.Resources.broken_link);
+                uxLinkUnlinkButton.Image = new Bitmap(Resources.broken_link);
             }
             else
             {
                 uxLinkUnlinkButton.Text = "Link";
-                uxLinkUnlinkButton.Image = new Bitmap(SitecoreTreeWalker.Properties.Resources.link_32);
+                uxLinkUnlinkButton.Image = new Bitmap(Resources.link_32);
             }
             var articleLockInfo = new ArticleLockInfo();
             articleLockInfo.SetCheckedOutStatus();
         }
 
-        public void ChangeLockButtonStatus(bool displayStatus)
+        public void ChangeLockButtonStatus(LockStatus lockStatus)
         {
-            if (displayStatus)
+            switch (lockStatus)
             {
-                uxLockStateButton.Text = "Unlock";
-                uxLockStateButton.Image = new Bitmap(SitecoreTreeWalker.Properties.Resources._53_Lock_unlocked);
-            }
-            else
-            {
-                uxLockStateButton.Text = "Lock";
-                uxLockStateButton.Image = new Bitmap(SitecoreTreeWalker.Properties.Resources._1445989402_lock_24);
+                case LockStatus.Locked:
+                    {
+                        uxLockStateButton.Text = "Locked";
+                        uxLockStateButton.ToolTipText = "Currently locked, click for more information and to unlock";
+                        uxLockStateButton.Image = new Bitmap(Resources.lockedIcon);
+                    }
+                    break;
+                //case LockStatus.Unlocked:
+                //    {
+                //        uxLockStateButton.Text = "Unlocked";
+                //        uxLockStateButton.ToolTipText = "";
+                //        uxLockStateButton.Image = new Bitmap(Resources.unlockIcon);
+                //    }
+                //    break;
+                default:
+                    {
+                        uxLockStateButton.Text = "Unlocked";
+                        uxLockStateButton.ToolTipText = "Currently unlocked, click for more information and to Lock";
+                        uxLockStateButton.Image = new Bitmap(Resources.unlockIcon);
+                    }
+                    break;
             }
         }
+    }
 
+    public enum LockStatus
+    {
+        Locked,
+        Unlocked
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+﻿using System.Windows.Forms;
+
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	partial class ArticleInformationControl
 	{
@@ -29,6 +31,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArticleInformationControl));
 			this.label1 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.uxWebPublishTime = new System.Windows.Forms.DateTimePicker();
@@ -41,7 +44,7 @@
 			this.uxSelectAuthor = new System.Windows.Forms.ComboBox();
 			this.uxAddAuthor = new System.Windows.Forms.Button();
 			this.label15 = new System.Windows.Forms.Label();
-			this.uxSelectedAuthors = new SitecoreTreeWalker.UI.EasyRemoveListView();
+			this.uxSelectedAuthors = new InformaSitecoreWord.UI.EasyRemoveListView();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.uxMediaTypes = new System.Windows.Forms.ComboBox();
@@ -58,7 +61,7 @@
 			// 
 			this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
 			this.label1.ForeColor = System.Drawing.Color.Gray;
-			this.label1.Image = global::SitecoreTreeWalker.Properties.Resources.articleinfo_tabheader;
+			this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
 			this.label1.Location = new System.Drawing.Point(0, 0);
 			this.label1.Margin = new System.Windows.Forms.Padding(0);
 			this.label1.Name = "label1";
@@ -161,6 +164,7 @@
 			this.uxSelectAuthor.Location = new System.Drawing.Point(9, 39);
 			this.uxSelectAuthor.Name = "uxSelectAuthor";
 			this.uxSelectAuthor.Size = new System.Drawing.Size(302, 21);
+			this.uxSelectAuthor.AutoSize = true;
 			this.uxSelectAuthor.TabIndex = 19;
 			// 
 			// uxAddAuthor

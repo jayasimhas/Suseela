@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.Util.CharacterStyles;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.Util.CharacterStyles;
 
-namespace SitecoreTreeWalker.Util.Document
+namespace InformaSitecoreWord.Util.Document
 {
 	public class ArticleDocumentMetadataParser
 	{
@@ -16,14 +16,13 @@ namespace SitecoreTreeWalker.Util.Document
 
 		protected string TitleStyle = ApplicationConfig.GetPropertyValue("TitleStyle");
 		protected string DeckStyle = ApplicationConfig.GetPropertyValue("DeckStyle");
-		protected string LongSummaryStyle = ApplicationConfig.GetPropertyValue("LongSummaryStyle");
-		protected string ShortSummaryStyle = ApplicationConfig.GetPropertyValue("ShortSummaryStyle");
+		protected string ExecutiveSummaryStyle = ApplicationConfig.GetPropertyValue("ExecutiveSummaryStyle");
 		protected string SubtitleStyle = ApplicationConfig.GetPropertyValue("SubtitleStyle");
+	    protected string BodyStyle = ApplicationConfig.GetPropertyValue("StoryTextStyle");
 
 		public string Title = "";
 		public string Deck = "";
-		public string ShortSummary = "";
-		public string LongSummary = "";
+		public string ExecutiveSummary = "";
 		public string Subtitle = "";
 
 		public int TitleCount;
@@ -34,8 +33,7 @@ namespace SitecoreTreeWalker.Util.Document
 		{
 			MetadataStyles.Add(TitleStyle);
 			MetadataStyles.Add(DeckStyle);
-			MetadataStyles.Add(LongSummaryStyle);
-			MetadataStyles.Add(ShortSummaryStyle);
+			MetadataStyles.Add(ExecutiveSummaryStyle);
 			MetadataStyles.Add(SubtitleStyle); 
 		}
 
@@ -49,19 +47,22 @@ namespace SitecoreTreeWalker.Util.Document
 			TitleCount = 0;
 			MetadataStyles.Add(TitleStyle);
 			MetadataStyles.Add(DeckStyle);
-			MetadataStyles.Add(LongSummaryStyle);
-			MetadataStyles.Add(ShortSummaryStyle);
+			MetadataStyles.Add(ExecutiveSummaryStyle);
 			MetadataStyles.Add(SubtitleStyle);
-			int maxLengthLongSummary = SitecoreGetter.GetMaxLengthLongSummary();
-			int maxLengthShortSummary = SitecoreGetter.GetMaxLengthShortSummary();
+			int maxLengthLongSummary = SitecoreClient.GetMaxLengthLongSummary();
 
 			int longSummaryLimit = maxLengthLongSummary;
-			int shortSummaryLimit = maxLengthShortSummary;
+
+		    Paragraph firstBodyParagraph = null;
 
 			foreach(Paragraph paragraph in doc.Paragraphs)
 			{
 				Style style = (Style)paragraph.get_Style();
 				string styleName = style.NameLocal;
+			    if (firstBodyParagraph == null && styleName == BodyStyle)
+			    {
+			        firstBodyParagraph = paragraph;
+			    }
 				if (styleName == TitleStyle)
 				{
 					Title += GetInnerRichText(paragraph, transformer).Replace("\a", "").TrimEnd() + " ";
@@ -71,21 +72,19 @@ namespace SitecoreTreeWalker.Util.Document
 				{
 					Deck += GetInnerRichText(paragraph, transformer).Replace("\a", "");
 				}
-				if (styleName == LongSummaryStyle)
+				if (styleName == ExecutiveSummaryStyle)
 				{
-					LongSummary += GetRichText(paragraph, transformer, longSummaryLimit, out longSummaryLimit).Replace("\a", "") + " ";
+					ExecutiveSummary += GetRichText(paragraph, transformer, longSummaryLimit, out longSummaryLimit).Replace("\a", "") + " ";
 				} 
-				if (styleName == ShortSummaryStyle)
-				{
-					ShortSummary += GetRichText(paragraph, transformer, shortSummaryLimit, out shortSummaryLimit).Replace("\a", "") + " ";
-
-				}
 				if (styleName == SubtitleStyle)
 				{
 					Subtitle += GetInnerRichText(paragraph, transformer).Replace("\a", "").TrimEnd() + " ";
 				}
 			}
-		}
+
+            if(string.IsNullOrWhiteSpace(ExecutiveSummary) && firstBodyParagraph != null)
+				ExecutiveSummary += GetRichText(firstBodyParagraph, transformer, longSummaryLimit, out longSummaryLimit).Replace("\a", "") + " ";                         
+        }
 
 		protected string GetRichText(Paragraph paragraph, OptimizedCharacterStyleTransformer transformer, int limit, out int newLimit)
 		{

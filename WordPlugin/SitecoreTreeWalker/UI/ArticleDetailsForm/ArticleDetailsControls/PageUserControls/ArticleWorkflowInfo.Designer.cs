@@ -1,4 +1,4 @@
-﻿namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+﻿namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	partial class ArticleWorkflowInfo
 	{
@@ -68,7 +68,7 @@
             // 
             this.uxWorkflowState.AutoSize = true;
             this.uxWorkflowState.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.uxWorkflowState.Location = new System.Drawing.Point(114, 30);
+            this.uxWorkflowState.Location = new System.Drawing.Point(105, 30);
             this.uxWorkflowState.Name = "uxWorkflowState";
             this.uxWorkflowState.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.uxWorkflowState.Size = new System.Drawing.Size(13, 13);

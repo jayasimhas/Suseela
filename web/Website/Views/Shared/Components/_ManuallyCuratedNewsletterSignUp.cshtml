@@ -1,8 +1,31 @@
-<div class="newsletter-signup">
-	<h3>Be informed first</h3>
-	Receive the SCRIP Intelligence newsletters.
-	<div class="form--single-row">
-		<input class="inf-standard-form-field">
-		<button class="button--filled">Sign Up</button>
-	</div>
-</div>
+@using Sitecore.Globalization
+@inherits CustomGlassView<NewsletterSignUpModel>
+
+@if (Model.GlassModel != null && (!Model.IsAuthenticated || (Model.IsAuthenticated && !Model.HasSubscribed)))
+{
+    <div class="newsletter-signup">
+        <div class="newsletter-signup-before-submit">
+            <h3>@Editable(x => x.GlassModel.Headline_Text)</h3>
+            @Editable(x => x.GlassModel.Sign_Up_Call_To_Action)
+            <div class="form--single-row">
+                <input class="inf-standard-form-field" name="userName" placeholder="@Translate.Text("Global.NewsletterSignupEmail")">
+                <div class="sign-in__submit-wrapper">
+                    @if(Sitecore.Context.PageMode.IsExperienceEditor) {
+                        @Editable(x => x.GlassModel.Sign_Up_Button_Text)
+                    }
+                    <button class="button--filled newsletter-signup-submit js-newsletter-signup-submit" data-signup-url="/Account/api/PreferencesApi/SignupUser/">@Model.GlassModel.Sign_Up_Button_Text</button>
+                </div>
+            </div>
+            <div class="newsletter-signup__error js-newsletter-signup-error">
+                @Model.GeneralError
+            </div>
+        </div>
+        <div class="newsletter-signup-after-submit">
+            <h3>@Editable(x => x.GlassModel.Confirmation_Text)</h3>
+            @Editable(x => x.GlassModel.Confirmation_Summary)
+            <div class="form--single-row">
+                <a href="@Model.PreferencesURL" class="button--filled">@Translate.Text("Global.ManagePreferences")</a>
+            </div>
+        </div>
+    </div>
+}

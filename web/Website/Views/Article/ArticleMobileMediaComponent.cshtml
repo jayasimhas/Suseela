@@ -1,0 +1,21 @@
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@using Informa.Web.Models
+@model GlassArticleModel
+
+<div class="article-body-content">
+    <div class="mobile-table-exit" onclick="return quitBox('quit');">
+        &#10094; Return to article
+    </div>
+    @Html.Raw(@Model.SelectedMobileMedia)
+</div>
+
+<script>
+
+function quitBox(cmd) {
+    if (cmd=='quit') {
+       open(location, '_self').close();
+    }
+    return false;
+};
+
+</script>

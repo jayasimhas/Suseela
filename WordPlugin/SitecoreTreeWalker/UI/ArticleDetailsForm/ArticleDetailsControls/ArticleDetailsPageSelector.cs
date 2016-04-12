@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
-using SitecoreTreeWalker.Util.Document;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
+using InformaSitecoreWord.Util.Document;
+using PluginModels;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 {
 	public partial class ArticleDetailsPageSelector : UserControl
 	{
@@ -24,7 +24,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			InitializeMenuItems();
 
 			ArticleInformationMenuItem.Selected = true;
-			//pageArticleInformationControl.Visible = true;
+			pageArticleInformationControl.Visible = true;
 			ArticleInformationMenuItem.UpdateBackground();
 		}
 
@@ -37,23 +37,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			MenuItems.Add(WorkflowMenuItem);
 			MenuItems.Add(FeaturedImagesMenuItem);
 			MenuItems.Add(TaxonomyMenuItem);
-			//MenuItems.Add(NotesMenuItem);
 
 			ArticleInformationMenuItem.SetMenuTitle("Article Information");
-			//RelatedDealsMenuItem.SetMenuTitle("Related Deals");
-			//RelatedDealsMenuItem.SetIndicatorIcon(Properties.Resources.blankred);
-			//RelatedDealsMenuItem.SetIndicatorNumber("0");
 			RelatedArticlesMenuItem.SetMenuTitle("Related Articles");
-			//SupportingDocumentsMenuItem.SetMenuTitle("Supporting Documents");
-			//SupportingDocumentsMenuItem.SetIndicatorNumber("0");
-			//SupportingDocumentsMenuItem.SetIndicatorIcon(Properties.Resources.blankred);
-			//CompaniesMenuItem.SetMenuTitle("Companies");
-			//CompaniesMenuItem.SetIndicatorNumber("0");
-			//CompaniesMenuItem.SetIndicatorIcon(Properties.Resources.blankred);
 			WorkflowMenuItem.SetMenuTitle("Workflow");
 			FeaturedImagesMenuItem.SetMenuTitle("Featured Image");
 			TaxonomyMenuItem.SetMenuTitle("Taxonomy");
-			//NotesMenuItem.SetMenuTitle("Notes");			       
 		}
 
 		public void InitializePages()
@@ -63,7 +52,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			Pages.Add(pageWorkflowControl);
 			Pages.Add(pageFeaturedImageControl);
 			Pages.Add(pageTaxonomyControl);
-			//Pages.Add(PageNotesControl);
 
 			LinkMenuItems();
 
@@ -98,74 +86,80 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		/// Retrieve the relevant information from the UI
 		/// </summary>
 		/// <returns></returns>
-		public WordPluginModel.ArticleStruct GetArticleDetails(ArticleDocumentMetadataParser metadataParser = null)
+		public ArticleStruct GetArticleDetails(ArticleDocumentMetadataParser metadataParser = null)
 		{
+
 			if (metadataParser == null)
 			{
 				metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument,
-																   _parent.GetWordUtils().CharacterStyleTransformer);
+					_parent.GetWordUtils().CharacterStyleTransformer);
 			}
-			string longSummary = metadataParser.LongSummary;
-			string shortSummary = metadataParser.ShortSummary;
-			var articleDetails = new WordPluginModel.ArticleStruct
-			{
-				ArticleNumber = pageArticleInformationControl.GetArticleNumber(),
-				WebPublicationDate = pageArticleInformationControl.GetWebPublishDate(),
-				Title = metadataParser.Title.Trim(),
-				Summary = longSummary,
-				Subtitle = metadataParser.Subtitle,
-				Publication = pageArticleInformationControl.GetSelectedPublicationGuid(),
-				Authors = pageArticleInformationControl.GetSelectedAuthors().ToList(),
-				Label = pageArticleInformationControl.GetLabelGuid(),
-				MediaType = pageArticleInformationControl.GetMediaTypeGuid(),
-				NotesToEditorial = pageArticleInformationControl.GetNotes(),
-				Taxonomoy = pageTaxonomyControl.TabController.GetSelected().ToList(),
-				//Subjects = pageSubjectsControl.TabController.GetSelected(),
-				//NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
-				RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList(),
-				RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),
-				ArticleSpecificNotifications = pageArticleInformationControl.GetSelectedNotifyees().ToList(),
-				Embargoed = pageArticleInformationControl.GetEmbargoedState(),
-				FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
-				FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource()
-			};
+			string ExecutiveSummary = metadataParser.ExecutiveSummary;
 
-			if (pageFeaturedImageControl.GetFeaturedImage() != null)
+			var articleDetails = new ArticleStruct();
+			try
 			{
-				articleDetails.FeaturedImage = pageFeaturedImageControl.GetFeaturedImage().MediaId;
+				articleDetails.ArticleNumber = pageArticleInformationControl.GetArticleNumber();
+				articleDetails.WebPublicationDate = pageArticleInformationControl.GetWebPublishDate();
+				articleDetails.Title = metadataParser.Title.Trim();
+				articleDetails.Summary = ExecutiveSummary;
+				articleDetails.Subtitle = metadataParser.Subtitle;
+				articleDetails.Publication = pageArticleInformationControl.GetSelectedPublicationGuid();
+				articleDetails.Authors = pageArticleInformationControl.GetSelectedAuthors().ToList();
+				articleDetails.Label = pageArticleInformationControl.GetLabelGuid();
+				articleDetails.MediaType = pageArticleInformationControl.GetMediaTypeGuid();
+				articleDetails.NotesToEditorial = pageArticleInformationControl.GetNotes();
+				articleDetails.Taxonomoy = pageTaxonomyControl.TabController.GetSelected().ToList();
+				articleDetails.RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList();
+				articleDetails.RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList();
+				articleDetails.ArticleSpecificNotifications = pageWorkflowControl.GetNotifyList().ToList();
+				articleDetails.Embargoed = pageArticleInformationControl.GetEmbargoedState();
+				articleDetails.FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption();
+				articleDetails.FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource();
+				articleDetails.NotificationText = pageWorkflowControl.GetNotificationText();
+				articleDetails.CommandID = pageWorkflowControl.GetSelectedCommand();
+
+				if (pageFeaturedImageControl.GetFeaturedImage() != null)
+				{
+					articleDetails.FeaturedImage = pageFeaturedImageControl.GetFeaturedImage().MediaId;
+				}
 			}
-
+			catch (Exception ex)
+			{
+				Globals.SitecoreAddin.Log("ArticleDetailsPageSelector:GetArticleDetails - Error :" + ex.Message);
+			}
 			return articleDetails;
 		}
 
-		public WordPluginModel.ArticleStruct GetArticleDetailsWithoutDocumentParsing()
+		public ArticleStruct GetArticleDetailsWithoutDocumentParsing()
 		{
-			var articleDetails = new WordPluginModel.ArticleStruct
+			var articleDetails = new ArticleStruct();
+			try
 			{
-				ArticleNumber = pageArticleInformationControl.GetArticleNumber(),
-				WebPublicationDate = pageArticleInformationControl.GetWebPublishDate(),
-				Publication = pageArticleInformationControl.GetSelectedPublicationGuid(),
-				Authors = pageArticleInformationControl.GetSelectedAuthors().ToList(),
-				Label = pageArticleInformationControl.GetLabelGuid(),
-				MediaType = pageArticleInformationControl.GetMediaTypeGuid(),
-				NotesToEditorial = pageArticleInformationControl.GetNotes(),
-				//Industries = pageIndustriesControl.TabController.GetSelected(),
-				Taxonomoy = pageTaxonomyControl.TabController.GetSelected().ToList(),
-				//Subjects = pageSubjectsControl.TabController.GetSelected(),			
-				//TODO - Editorial Notes
-				//NotesToEditorial = pageArticleInformationControl.PageNotesControl.GetNotesToEditors(),
-				//although this technically requires document parsing, we want to retrieve it 
-				//as though it didn't
-				RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList(),
-				RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList(),
-				Embargoed = pageArticleInformationControl.GetEmbargoedState(),
-				FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption(),
-				FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource(),
-			};
+				articleDetails.ArticleNumber = pageArticleInformationControl.GetArticleNumber();
+				articleDetails.WebPublicationDate = pageArticleInformationControl.GetWebPublishDate();
+				articleDetails.Publication = pageArticleInformationControl.GetSelectedPublicationGuid();
+				articleDetails.Authors = pageArticleInformationControl.GetSelectedAuthors().ToList();
+				articleDetails.Label = pageArticleInformationControl.GetLabelGuid();
+				articleDetails.MediaType = pageArticleInformationControl.GetMediaTypeGuid();
+				articleDetails.NotesToEditorial = pageArticleInformationControl.GetNotes();
+				articleDetails.Taxonomoy = pageTaxonomyControl.TabController.GetSelected().ToList();
+				articleDetails.RelatedInlineArticles = pageRelatedArticlesControl.GetInlineReferences().ToList();
+				articleDetails.RelatedArticles = pageRelatedArticlesControl.GetRelatedArticles().ToList();
+				articleDetails.Embargoed = pageArticleInformationControl.GetEmbargoedState();
+				articleDetails.FeaturedImageCaption = pageFeaturedImageControl.GetFeaturedImageCaption();
+				articleDetails.FeaturedImageSource = pageFeaturedImageControl.GetFeaturedImageSource();
+				articleDetails.NotificationText = pageWorkflowControl.GetNotificationText();
+				articleDetails.CommandID = pageWorkflowControl.GetSelectedCommand();
 
-			if (pageFeaturedImageControl.GetFeaturedImage() != null)
+				if (pageFeaturedImageControl.GetFeaturedImage() != null)
+				{
+					articleDetails.FeaturedImage = pageFeaturedImageControl.GetFeaturedImage().MediaId;
+				}
+			}
+			catch (Exception ex)
 			{
-				articleDetails.FeaturedImage = pageFeaturedImageControl.GetFeaturedImage().MediaId;
+				Globals.SitecoreAddin.Log("ArticleDetailsPageSelector:GetArticleDetailsWithoutDocumentParsing - Error :" + ex.Message);
 			}
 
 			return articleDetails;
@@ -200,22 +194,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			pageArticleInformationControl.SetPublicationTime(time, true);
 		}
 
-		/*
-		public bool TryingToNominateWithNoIndustries()
-		{
-		    return pageArticleInformationControl.uxNominate.Enabled
-		           && pageArticleInformationControl.uxNominate.Checked;
-		    //&& pageIndustriesControl.TabController.GetSelected().Count() == 0;
-		}
-
-		public bool TryingToNominateWithNoPrimaryIndustries()
-		{
-		    return pageArticleInformationControl.uxNominate.Enabled
-		           && pageArticleInformationControl.uxNominate.Checked;
-		    //&& !SitecoreGetter.HasPrimaryIndustries(pageIndustriesControl.TabController.GetSelected().Select(i => i.ID));
-		}
-         * */
-
 		#endregion
 
 		#region Minor UI Manipulation
@@ -235,43 +213,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			foreach (MenuSelectorItem m in MenuItems)
 			{
 				m.UpdateBackground();
-			}
-		}
-
-		public void SwitchToNextPage()
-		{
-			MenuSelectorItem selected = MenuItems.Where(m => m.Selected).Single();
-			int index = MenuItems.IndexOf(selected);
-
-			if (index < MenuItems.Count - 1)
-			{
-				selected.Selected = false;
-				selected.UpdateBackground();
-
-				selected = MenuItems[index + 1];
-				selected.Selected = true;
-				selected.UpdateBackground();
-
-				Pages[index].Visible = false;
-				Pages[index + 1].Visible = true;
-			}
-		}
-
-		public void SwitchToPreviousPage()
-		{
-			MenuSelectorItem selected = MenuItems.Where(m => m.Selected).Single();
-			int index = MenuItems.IndexOf(selected);
-			if (index > 0)
-			{
-				selected.Selected = false;
-				selected.UpdateBackground();
-
-				selected = MenuItems[index - 1];
-				selected.Selected = true;
-				selected.UpdateBackground();
-
-				Pages[index].Visible = false;
-				Pages[index - 1].Visible = true;
 			}
 		}
 
@@ -310,12 +251,13 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 
 		public void UpdateFields()
 		{
-			UpdateFields(SitecoreGetter.ForceReadArticleDetails(_parent.GetArticleNumber()));
+			if (_parent != null)
+				UpdateFields(SitecoreClient.ForceReadArticleDetails(_parent.GetArticleNumber()));
 		}
 
 		public void UpdateFields(Guid articleGuid)
 		{
-			UpdateFields(SitecoreGetter.ForceReadArticleDetails(articleGuid));
+			UpdateFields(SitecoreClient.ForceReadArticleDetails(articleGuid));
 		}
 
 		public void ResetFields()
@@ -333,12 +275,12 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		/// Sets the fields in the UI based on the inputted ArticleStruct
 		/// </summary>
 		/// <param name="articleDetails"></param>
-		public void UpdateFields(WordPluginModel.ArticleStruct articleDetails)
+		public void UpdateFields(ArticleStruct articleDetails)
 		{
 			pageArticleInformationControl.UpdateFields(articleDetails);
 			pageRelatedArticlesControl.UpdateFields(articleDetails);
 			pageFeaturedImageControl.UpdateFields(articleDetails);
-			//pageWorkflowControl.UpdateFields(articleDetails.WorkflowState);
+			pageWorkflowControl.UpdateFields(articleDetails.ArticleWorkflowState, articleDetails);
 			pageTaxonomyControl.UpdateFields(articleDetails);
 
 			if (string.IsNullOrEmpty(articleDetails.ArticleNumber))
@@ -347,7 +289,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			}
 			//pageSubjectsControl.TabController.UpdateFields(articleDetails.Subjects.ToList());	
 			pageTaxonomyControl.TabController.UpdateFields(articleDetails.Taxonomoy.ToList());
-			pageWorkflowControl.UpdateFields(articleDetails.WorkflowState);
+			pageWorkflowControl.UpdateFields(articleDetails.ArticleWorkflowState, articleDetails);
 		}
 
 		/// <summary>
@@ -359,12 +301,13 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		{
 			if (_parent.ArticleDetails.ArticleGuid != Guid.Empty)
 			{
+                prompt = false;
 				return pageArticleInformationControl.CheckOut(prompt);
 			}
 			string articleNumber = _parent.GetArticleNumber();
 			if (!string.IsNullOrEmpty(articleNumber))
 			{
-				if (!SitecoreArticle.DoesArticleExist(articleNumber))
+				if (!SitecoreClient.DoesArticleExist(articleNumber))
 				{
 					//_parent.SetArticleNumber(null);
 					return false;
@@ -394,7 +337,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 		{
 			foreach (ArticleDetailsPageUserControl p in Pages)
 			{
-
 				MenuSelectorItem menuItem = p.GetMenuItem();
 				if (savingArticle || !p.DoesNotChangeOnSaveMetadata())
 				{
@@ -403,8 +345,6 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 
 				menuItem.UpdateBackground();
 			}
-			//pageGeneralTagsControl.PushSitecoreChanges();
-
 		}
 
 		#endregion

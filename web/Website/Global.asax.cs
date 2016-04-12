@@ -6,6 +6,7 @@ using System.Web.UI;
 using Informa.Web.App_Start;
 using Sitecore.Web;
 using Autofac;
+using System.Web;
 
 namespace Informa.Web
 {
@@ -27,11 +28,13 @@ namespace Informa.Web
 
 			EnableUnobtrusiveValidation();
 
-			//AreaRegistration.RegisterAllAreas();
-			//GlobalConfiguration.Configure(WebApiConfig.Register);
-			//FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-			//RouteConfig.RegisterRoutes(RouteTable.Routes);
-			BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Library.DCD.XMLImporting.FileImportingManager mgr = new Library.DCD.XMLImporting.FileImportingManager();
+            mgr.StartIfStartable();
+
+            //AreaRegistration.RegisterAllAreas();
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
+            //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
 		}
 
 		protected virtual void EnableUnobtrusiveValidation()
@@ -42,6 +45,11 @@ namespace Informa.Web
 				Path = bundlePath,
 				LoadSuccessExpression = "window.jQuery"
 			});
+		}
+
+		protected void Application_PostAuthorizeRequest()
+		{
+			HttpContext.Current.SetSessionStateBehavior(System.Web.SessionState.SessionStateBehavior.Required);
 		}
 	}
 }

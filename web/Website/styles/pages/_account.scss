@@ -1,0 +1,178 @@
+.page-account {
+    padding-bottom: 2rem;
+
+    &__header,
+    &__subheader {
+        color: $color-zeus-black;
+        margin-bottom: 1.25rem;
+    }
+
+    &__introduction {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+
+        h4 {
+            margin-bottom: 1rem;
+        }
+    }
+
+    hr {
+        margin-bottom: 2rem;
+    }
+
+    &__text-label {
+        @include textMix('Roboto', 1.125rem, 500);
+        color: $color-zeus-black;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    &__text-label-hint {
+        color: $color-dusty-gray;
+        display: block;
+        font-size: 0.875rem;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: 0.75rem;
+        padding-top: 0.25rem;
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=password] {
+        @extend .inf-standard-form-field;
+        @include textMix('Roboto', 0.875rem, 400);
+        display: block;
+        width: 100%;
+    }
+
+    &__field-wrapper {
+        margin-bottom: 2rem;
+        width: calc(50% - 1rem);
+
+        &--float {
+            float: left;
+            margin-right: 1rem;
+
+            &:nth-of-type(2n) {
+                margin-left: 1rem;
+                margin-right: 0;
+            }
+        }
+
+        &--full {
+            width: 100%;
+        }
+
+        &--bordered-left,
+        &--bordered-alt-left,
+        &--bordered-right,
+        &--bordered-alt-right {
+            width: calc(50% - 1.5rem);
+
+        }
+        &--bordered-left {
+            border-left: 1px solid $color-concrete-gray;
+            padding-left: 2rem;
+            margin-left: 2rem;
+        }
+
+        &--bordered-alt-left {
+            //padding-right: 2rem;
+            //margin-right: 2rem;
+        }
+
+        &--bordered-right {
+            border-left: 1px solid lightgray;
+            padding-left: 2rem;
+            margin-right: 0;
+        }
+
+        &--bordered-alt-right {
+            border-left: 1px solid lightgray;
+            padding-left: 2rem;
+            margin-left: 2rem;
+        }
+
+        @include breakpoint('small') {
+            &,
+            &--float,
+            &--bordered-left,
+            &--bordered-alt-left,
+            &--bordered-right,
+            &--bordered-alt-right,
+            &--float:nth-of-type(2n) {
+                width: 100%;
+                float: none;
+                border: 0;
+                margin: 0 0 2rem;
+            }
+        }
+    }
+
+    // TODO - Refactor this with similar _registration class
+    &__error {
+        @extend .error-text;
+        display: none;
+    }
+
+    &__submit-wrapper {
+        overflow: auto;
+        text-align: right;
+
+        button {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            @include textMix('Roboto', 0.875rem, 500);
+            color: $color-dusty-gray;
+            line-height: 1.25rem;
+            margin-bottom: 1rem;
+            text-align: right;
+
+            em {
+                display: inline-block;
+                width: 250px;
+            }
+
+            @include breakpoint('small') {
+                float: left;
+            }
+        }
+    }
+
+    &-contact {
+
+        &__column {
+            @include columnize(2, 4, 1px solid $color-light-gray);
+            margin-bottom: 2rem;
+        }
+
+        .page-account__field-wrapper {
+            margin-bottom: 3rem;
+        }
+
+        &__update-pass-success {
+            margin-bottom: 1rem;
+        }
+
+        .alert-error {
+            margin-bottom: 2rem;
+        }
+
+        &__submit-wrapper {
+            overflow: auto;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__sign-in-solo {
+        @include textMix('Roboto', 0.875rem, 400);
+        margin: 0px auto;
+        width: 50%;
+
+        @include breakpoint('small') {
+            width: 100%;
+        }
+    }
+}

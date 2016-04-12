@@ -1,41 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
+using System.Net;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
+using PluginModels;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 {
 	public partial class WorkflowControl : ArticleDetailsPageUserControl
 	{
-		public List<WordPluginModel.WorkflowCommand> Commands;
-		protected List<WordPluginModel.StaffStruct> _staff;
-		
+		public List<ArticleWorkflowCommand> Commands;
+		protected List<StaffStruct> _staff;
+		public ArticleStruct _ArticleStruct;
 
 		public WorkflowControl()
 		{
 			InitializeComponent();
+			uxNotifyPicker.Enabled = false;
+			uxNotifyList.Enabled = false;
+			uxNotifyAdd.Enabled = false;
+			txtNotificationText.Enabled = false;
 		}
 
-		public void UpdateFields(WordPluginModel.WorkflowState state)
+		public void UpdateFields(ArticleWorkflowState state, ArticleStruct articleStruct)
 		{
 			if (_staff == null)
 			{
-			    _staff = SitecoreGetter.GetStaffAndGroups(); 
+				_staff = SitecoreClient.GetStaffAndGroups();
 			}
 
 			uxNotifyPicker.DataSource = _staff;
 			uxNotifyPicker.DisplayMember = "Name";
 			uxNotifyPicker.ValueMember = "ID";
-			if(state == null)
+			if (state == null)
 			{
 				return;
 			}
-			uxWorkflowLabel.Text = state.DisplayName;
-			Commands = new List<WordPluginModel.WorkflowCommand>();
-			Commands.Insert(0, new WordPluginModel.WorkflowCommand {DisplayName = "Move in Workflow...", StringID = Guid.Empty.ToString()});
+			_ArticleStruct = articleStruct;
+			uxCurrentWorkflowValue.Text = state.DisplayName;
+			Commands = new List<ArticleWorkflowCommand>();
+			Commands.Insert(0, new ArticleWorkflowCommand { DisplayName = "Move in Workflow...", StringID = Guid.Empty.ToString() });
 			if (state.Commands != null)
 			{
 				Commands.AddRange(state.Commands);
@@ -49,22 +54,28 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			uxWorkflowActions.DisplayMember = "DisplayName";
 			uxWorkflowActions.ValueMember = "StringID";
 			uxUnlockOnSave.Checked = false;
+			subjectLbl.Text = "Subject :";
 		}
 
+		public string GetNotificationText()
+		{
+			return txtNotificationText.Text;
+		}
 		protected void SetNotificationOptions()
 		{
-			if (uxWorkflowActions.SelectedValue is WordPluginModel.WorkflowCommand)
+			if (uxWorkflowActions.SelectedValue is ArticleWorkflowCommand)
 			{
-				if (((WordPluginModel.WorkflowCommand) uxWorkflowActions.SelectedValue).StringID == Guid.Empty.ToString())
+				if (((ArticleWorkflowCommand)uxWorkflowActions.SelectedValue).StringID == Guid.Empty.ToString())
 				{
 					uxNotifyPicker.Enabled = false;
 					uxNotifyList.Enabled = false;
 					uxNotifyAdd.Enabled = false;
-
+					txtNotificationText.Enabled = false;
+					uxUnlockOnSave.Enabled = false;
 					return;
 				}
-
-				var command = ((WordPluginModel.WorkflowCommand)uxWorkflowActions.SelectedValue);
+				EnableControls();
+				var command = ((ArticleWorkflowCommand)uxWorkflowActions.SelectedValue);
 
 				if (command.GlobalNotifyList != null) { uxNotifyList.ResetUnremovableStaff(command.GlobalNotifyList.ToList()); }
 			}
@@ -75,28 +86,31 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 					uxNotifyPicker.Enabled = false;
 					uxNotifyList.Enabled = false;
 					uxNotifyAdd.Enabled = false;
-
+					txtNotificationText.Enabled = false;
+					uxUnlockOnSave.Enabled = false;
 					return;
 				}
-
+				EnableControls();
 				var command = Commands.Where(c => c.StringID == uxWorkflowActions.SelectedValue.ToString()).FirstOrDefault();
 
 				if (command != null && command.GlobalNotifyList != null) { uxNotifyList.ResetUnremovableStaff(command.GlobalNotifyList.ToList()); }
 			}
 
+
+		}
+
+		private void EnableControls()
+		{
 			uxNotifyPicker.Enabled = true;
 			uxNotifyList.Enabled = true;
 			uxNotifyAdd.Enabled = true;
-
-			
-
-			//update globals
-
+			txtNotificationText.Enabled = true;
+			uxUnlockOnSave.Enabled = true;
 		}
 
 		public void PreLinkEnable()
 		{
-			Visible = false;
+			//Visible = false;
 		}
 
 		public void PostLinkEnable()
@@ -105,25 +119,31 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			ResetNotificationList();
 		}
 
-        public WordPluginModel.WorkflowCommand GetSelectedCommandState()
-        {
-            return uxWorkflowActions.SelectedItem as WordPluginModel.WorkflowCommand;
-        }
+		public ArticleWorkflowCommand GetSelectedCommandState()
+		{
+			return uxWorkflowActions.SelectedItem as ArticleWorkflowCommand;
+		}
 
 		public Guid GetSelectedCommand()
 		{
-			return (new Guid(uxWorkflowActions.SelectedValue.ToString()));
+			var commandId = uxWorkflowActions?.SelectedValue?.ToString();
+			return string.IsNullOrEmpty(commandId) ? Guid.Empty : Guid.Parse(commandId);
 		}
 
 		private void uxWorkflowActions_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			var selectedItem = uxWorkflowActions.SelectedItem as ArticleWorkflowCommand;
+			if (selectedItem != null)
+			{
+				subjectLbl.Text = $"Subject: {WebUtility.HtmlDecode(_ArticleStruct.Title)} has been moved to {selectedItem.DisplayName}";
+			}
 			uxUnlockOnSave.Checked = true;
 			SetNotificationOptions();
 		}
 
 		private void uxNotifyAdd_Click(object sender, EventArgs e)
 		{
-			var selectedStaffMember = uxNotifyPicker.SelectedItem as WordPluginModel.StaffStruct;
+			var selectedStaffMember = uxNotifyPicker.SelectedItem as StaffStruct;
 
 			if (selectedStaffMember != null)
 			{
@@ -131,7 +151,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls
 			}
 		}
 
-		public List<WordPluginModel.StaffStruct> GetNotifyList()
+		public List<StaffStruct> GetNotifyList()
 		{
 			return uxNotifyList.Selected;
 		}

@@ -1,0 +1,8 @@
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IGeneral_Content_Page
+
+@if(!string.IsNullOrEmpty(Model.Section_Title) || Sitecore.Context.PageMode.IsExperienceEditor) {
+    <div class="general-header__section-title">
+        @Html.Glass().Editable(x => x.Section_Title)
+    </div>
+}

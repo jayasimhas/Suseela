@@ -1,12 +1,52 @@
 @model Informa.Web.ViewModels.IHeaderViewModel
 @*@model Informa.Web.Areas.Account.Models.LoginViewModel*@
 <header>
-    <div class="header__informa-permabanner">
-        informa
+
+    <div class="banner banner--cookie-policy" data-banner-id="cookie-policy-0001">
+        <div class="banner__wrapper">
+            <div class="dismiss-button js-dismiss-banner">
+                <svg class="dismiss-button__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+            </div>
+            <span>@Html.Raw(Model.PolicyText)</span>
+        </div>
+    </div>
+
+    <div class="informa-ribbon">
+        <div class="informa-ribbon__wrapper">
+            <div class="informa-ribbon__detail">
+                <div class="informa-ribbon__left">
+                    @Html.Raw(Model.LeftColumnText)
+                    <ul>
+                        <li class="iribbon-mainlink">
+                            @Html.Raw(Model.Link1)
+                        </li>
+                        <li>
+                            @Html.Raw(Model.Link2)
+                        </li>
+                        <li>
+                            @Html.Raw(Model.Link3)
+                        </li>
+                        <li>
+                            @Html.Raw(Model.Link4)
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="informa-ribbon__right">
+                    @Html.Raw(Model.RightColumnText)
+                </div>
+            </div>
+
+            <button class="informa-ribbon__title">
+                Informa
+            </button>
+        </div>
     </div>
 
     <div class="advertising--leaderboard">
-        <img src="http://placehold.it/728x90">
+        <script language="JavaScript">OAS_AD('@Model.LeaderboardSlotID', '@Model.LeaderboardAdZone');</script>
     </div>
 
     <div class="header__wrapper clearfix">
@@ -22,45 +62,35 @@
         <div class="header__logo">
             <a href="@Model.LogoUrl"><img src="@Model.LogoImageUrl"></a>
         </div>
-
-        <div class="header-search__wrapper">
-            <input class="inf-standard-form-field header-search__field" type="search" placeholder="Search the site">
-            <svg class="header__icons header__icons--search js-header-search-trigger">
-                <use xlink:href="/dist/img/svg-sprite.svg#search"></use>
-            </svg>
-            <svg class="header__icons header__icons--dismiss-search js-header-search-trigger">
-                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-            </svg>
+        <div class="header-logo-print">
+            <a href="@Model.LogoUrl"><img src="@Model.PrintPageHeaderLogoSrc"></a>
         </div>
 
+        @Html.Sitecore().Rendering("{ACBBD086-F6F2-4327-B3FF-2D36716E3AFC}")
 
         <div class="header-account-access">
 
-			@if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
-			{
-				<div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
+            @if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
+            {
+                <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
 			}
-
             @if (Model.IsAuthenticated)
             {
-				@* Signed In *@
-                using (Html.BeginForm("LogOff", "Account", new { area = "Account" }, FormMethod.Post, new { id = "logoutForm", @class = "header-account-access__logout-form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <div class="header-account-access__my-account">
-                        <svg class="header__icons icon-my-account">
-                            <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
-                        </svg>
-                        <span class="header-account-access__label">@Html.ActionLink(Model.MyAccountLinkText, "Index", "Manage", new { area = "Account" }, htmlAttributes: new { title = "Manage" })</span>
-                    </div>
-                    <div class="header-account-access__sign-in-out">
-                        <svg class="header__icons icon-sign-out">
-                            <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
-                        </svg>
-                        <a href="javascript:document.getElementById('logoutForm').submit()"><span class="header-account-access__label">@Model.SignOutLinkText</span></a>
-                    </div>
-				}
-			} else {
+                @* TODO: UNTIL WE GET ENTITLED USERS *@
+                <div class="header-account-access__my-account">
+                    <svg class="header__icons icon-my-account">
+                        <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
+                    </svg>
+                    <span class="header-account-access__label"><a href="@Model.MyAccountLink">@Model.MyAccountLinkText</a></span>
+                </div>
+                <div class="header-account-access__sign-in-out">
+                    <svg class="header__icons icon-sign-out">
+                        <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
+                    </svg>
+                    <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
+                </div>}
+            else
+            {
                 <div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger"
                      data-pop-out-id="header-register"
                      data-pop-out-type="register">
@@ -68,7 +98,7 @@
                     <svg class="header__icons icon-register">
                         <use xlink:href="/dist/img/svg-sprite.svg#register"></use>
                     </svg>
-					<span class="header-account-access__label">@Model.RegisterLinkText</span>
+                    <span class="header-account-access__label">@Model.RegisterLinkText</span>
                 </div>
 
                 <div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger"
@@ -79,7 +109,7 @@
                     <svg class="header__icons icon-sign-in">
                         <use xlink:href="/dist/img/svg-sprite.svg#sign-in"></use>
                     </svg>
-					<span class="header-account-access__label">@Model.SignInLinkText</span>
+                    <span class="header-account-access__label">@Model.SignInLinkText</span>
                 </div>
             }
         </div>
@@ -87,8 +117,8 @@
 
         @* If this is an Article page... *@
         <div class="boxout-print-info">
-            <p>This copy is for your personal non-commercial use. For high-quality copies or electronic reprints for distribution to colleagues or customers, click <a href="#">here</a> or call +1 (908) 748-1221.</p>
-            <p>Printed by <b>Ms. First M. Last, Company</b></p>
+            <p>@Model.PrintPageHeaderMessage</p>
+            <p>@Model.PrintedByText <b>@Model.UserName @(string.IsNullOrEmpty(Model.UserName) || string.IsNullOrEmpty(Model.CorporateName) ? string.Empty : ",") @Model.CorporateName</b></p>
         </div>
         @* end pseudo-if *@
 

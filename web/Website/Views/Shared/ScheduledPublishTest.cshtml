@@ -1,8 +1,0 @@
-﻿@model ScheduledPublishTestViewModel
-<h2>Scheduled Publish Test</h2>
-<ul>
-	@foreach (var scheduledPublish in Model.ScheduledPublishes)
-	{
-		<li>ID: @scheduledPublish.ItemId | Language: @scheduledPublish.Language | Version: @scheduledPublish.Version | Date/Time: @scheduledPublish.PublishOn | Type: @scheduledPublish.Type | Published: @scheduledPublish.Published</li>
-	}
-</ul>

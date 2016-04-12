@@ -5,7 +5,7 @@ using System.Linq;
 using System.Xml.Linq;
 using Microsoft.Office.Interop.Word;
 
-namespace SitecoreTreeWalker.Util.Tables
+namespace InformaSitecoreWord.Util.Tables
 {
 	public class TableBuilder
 	{
@@ -69,6 +69,7 @@ namespace SitecoreTreeWalker.Util.Tables
 			const int fullTableWidth = 514;
 			decimal curSetWidth = Math.Truncate(tableAnalyzer.TableCellWidthSums.Last());
 			root.SetAttributeValue("width", (curSetWidth/fullTableWidth*100) + "%");
+            root.SetAttributeValue("data-mediaid", Guid.NewGuid().ToString("N"));
 			ParseRows(tbody, table, tableAnalyzer);
 			return root;
 		}

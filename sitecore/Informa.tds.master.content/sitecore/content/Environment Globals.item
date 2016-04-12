@@ -9,10 +9,31 @@ master: {00000000-0000-0000-0000-000000000000}
 template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
 templatekey: Folder
 
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 21
+
+apps/32x32/folder.png
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 38
+
+{BC324106-766F-4E09-A82C-328FA7BD55CA}
+----field----
+field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
+name: __Security
+key: __security
+content-length: 187
+
+ar|sitecore\Operations Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|ar|sitecore\Globals Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|
 ----version----
 language: en
 version: 1
-revision: b1f492a6-4abe-47c3-adec-c000c08bfa18
+revision: 6def67a4-5627-49b7-9031-d47e9ac5e17b
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b1f492a6-4abe-47c3-adec-c000c08bfa18
+6def67a4-5627-49b7-9031-d47e9ac5e17b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151230T181812Z
+20160401T194500Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

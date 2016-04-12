@@ -23,8 +23,15 @@ section: Article Components
     background-color: $color-antique-white;
     float: right;
     margin: 2rem 0 2rem 2rem;
+    overflow: auto;
     padding: 2rem 1.75rem 0;
     width: 50%;
+
+    @include breakpoint('small') {
+        width: calc(100% - 2rem);
+        float: none;
+        margin: 0 1rem 2rem;
+    }
 
     p,
     ul,
@@ -32,22 +39,24 @@ section: Article Components
         color: $informa-black;
         margin-bottom: 2rem;
     }
-    h3 {
+
+    &__header {
         @include textMix('Roboto Condensed', 1.625rem, 700);
         color: $informa-black;
         margin: 0 0 1rem;
     }
 
-    ul li {
+    &__list {
+        @extend .article-list;
         color: $color-zeus-black;
 
-        &:before { } // See shame.scss
-    }
+        &--ul {
+            @extend .article-list--ul;
+        }
 
-    ol li {
-        color: $color-zeus-black;
-        list-style-position: inside;
-        list-style-type: decimal;
+        &--ol {
+            @extend .article-list--ol;
+        }
     }
 
     &__source {
@@ -55,5 +64,12 @@ section: Article Components
         color: $informa-dark-gray;
         float: right;
         font-style: italic;
+    }
+
+    hr {
+        border: 0;
+        background-color: $color-yellow-orange;
+        height: 1px;
+        margin-bottom: 1.75rem;
     }
 }

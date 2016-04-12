@@ -19,7 +19,7 @@ content-length: 4
 ----version----
 language: en
 version: 1
-revision: 8b59108a-6527-4f79-bcc6-8909377b1fcc
+revision: d104e667-b942-4fe4-ad10-4218a357f712
 
 ----field----
 field: {03CC96C5-7903-41DE-A057-2DDD1D7EA034}
@@ -35,6 +35,13 @@ key: css element
 content-length: 2
 
 ol
+----field----
+field: {D8B1A6CB-7396-4D32-90AD-17EED882404D}
+name: CSS Class
+key: css class
+content-length: 16
+
+article-list--ol
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -62,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-8b59108a-6527-4f79-bcc6-8909377b1fcc
+d104e667-b942-4fe4-ad10-4218a357f712
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 34
+content-length: 16
 
-20110829T114710:634502152309260199
+20160304T162313Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

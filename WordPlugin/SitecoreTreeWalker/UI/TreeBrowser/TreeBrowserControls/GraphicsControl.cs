@@ -3,13 +3,14 @@ using System.Diagnostics;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.Util.Document;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.Util;
-using SitecoreTreeWalker.Util.Document;
+using PluginModels;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.Util;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	public partial class GraphicsControl : UserControl
 	{
@@ -107,7 +108,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		/// </summary>
 		public void InitializeItems()
 		{
-			var values = SitecoreGetter.GetGraphicsRootNode();
+			var values = SitecoreClient.GetGraphicsRootNode();
 			AddRootNode(uxBrowseImages, values[1], values[0]);
 		}
 
@@ -174,17 +175,19 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			string floatValue = "None";
 			try
 			{
-				if (form.uxFloatBox.SelectedValue.GetType() == typeof(Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct))
+				if (form.uxFloatBox.SelectedItem != null && !string.IsNullOrEmpty(form.uxFloatBox.SelectedItem.ToString()))
 				{
-					floatValue = ((Informa.Web.Areas.Account.Models.WordPluginModel.ItemStruct)form.uxFloatBox.SelectedValue).Name;
+					floatValue = form.uxFloatBox.SelectedItem.ToString();
 				}
-				else
+				else if (!string.IsNullOrEmpty(form.uxFloatBox.SelectedText))
 				{
-					floatValue = (string)form.uxFloatBox.SelectedValue;
+					floatValue = form.uxFloatBox.SelectedText;
 				}
+				//else keep the default 'None' value
 			}
 			catch (Exception ex)
 			{
+				Globals.SitecoreAddin.LogException("Error reading float value from insert form", ex);
 
 			}
 			InsertImage(form.uxHeader.Text, form.uxTitle.Text, path, form.uxCaption.Text, form.uxSource.Text, floatValue);
@@ -201,8 +204,8 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			if (!string.IsNullOrEmpty(source)) numParagraph = numParagraph + 2;
 			for (int i = 0; i < numParagraph + 1; i++)
 			{
-					app.Selection.TypeParagraph();
-				}
+				app.Selection.TypeParagraph();
+			}
 			Range selection = app.Selection.Previous(WdUnits.wdParagraph, numParagraph);
 
 			if (!string.IsNullOrWhiteSpace(header))
@@ -225,7 +228,14 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			selection.Text = path.DisplayName;
 			try
 			{
-				app.ActiveDocument.Hyperlinks.Add(selection, SitecoreGetter.MediaPreviewUrl(path.Path), null, floatType, path.Path);
+				string mediaUrl = SitecoreClient.MediaPreviewUrl(path.Path);
+				if (mediaUrl.StartsWith("\""))
+					mediaUrl = mediaUrl.TrimStart('"');
+				if (mediaUrl.EndsWith("\""))
+					mediaUrl = mediaUrl.TrimEnd('"');
+
+				app.ActiveDocument.Hyperlinks.Add(selection, mediaUrl, null, floatType, path.Path);
+				//app.ActiveDocument.Hyperlinks.Add(selection, SitecoreClient.MediaPreviewUrl(path.Path), null, floatType, path.Path);
 			}
 			catch (WebException)
 			{
@@ -235,7 +245,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			{
 				selection = selection.Next(WdUnits.wdParagraph);
 			}
-
+            
 			if (!string.IsNullOrEmpty(caption))
 			{
 				selection.Text = caption;
@@ -243,13 +253,13 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 				selection = selection.Next(WdUnits.wdParagraph);
 			}
 
-			if (!string.IsNullOrWhiteSpace(source))
-			{
-				selection.Text = source;
-				selection.set_Style(DocumentAndParagraphStyles.SourceStyle);
+            if (!string.IsNullOrWhiteSpace(source))
+            {
+                selection.Text = source;
+                selection.set_Style(DocumentAndParagraphStyles.SourceStyle);                
 				selection.Next(WdUnits.wdParagraph).Select();
 			}
-		}
+        }
 
 		private void uxRefresh_Click(object sender, System.EventArgs e)
 		{

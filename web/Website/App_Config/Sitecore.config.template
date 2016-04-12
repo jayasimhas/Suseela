@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <sitecore database="SqlServer">
-    <sc.variable name="dataFolder" value="${data.folder}" />
-    <sc.variable name="mediaFolder" value="/upload" />
-    <sc.variable name="tempFolder" value="/temp" />
-    <prototypes>
-      <sc.include file="/App_Config/Prototypes.config" />
-    </prototypes>
-    <!-- EVENT MAPS
+  <sc.variable name="dataFolder" value="${data.folder}" />
+  <sc.variable name="mediaFolder" value="/upload" />
+  <sc.variable name="tempFolder" value="/temp" />
+  <prototypes>
+    <sc.include file="/App_Config/Prototypes.config" />
+  </prototypes>
+  <!-- EVENT MAPS
       events.timingLevel =
         none   - No timing information is logged for any of the events (no matter what their local settings are)
         low    - Start/end timing is logged for events with handlers. Local settings override.
@@ -945,18 +945,18 @@
         <param desc="database">$(id)</param>
         <param desc="history store" ref="workflowHistoryStores/main" param1="$(id)" />
       </workflowProvider>
-        #if ($Env.IsProduction == "false")
+      #if ($Env.IsProduction == "false")
       <archives hint="raw:AddArchive">
         <archive name="archive" />
         <archive name="recyclebin" />
       </archives>
-        #end
+      #end
       <cacheSizes hint="setting">
-          <data>${Cache.Core.Data}</data>
-          <items>${Cache.Core.Items}</items>
-          <paths>${Cache.Core.Paths}</paths>
-          <itempaths>${Cache.Core.ItemPaths}</itempaths>
-          <standardValues>${Cache.Core.StandardValues}</standardValues>
+        <data>${Cache.Core.Data}</data>
+        <items>${Cache.Core.Items}</items>
+        <paths>${Cache.Core.Paths}</paths>
+        <itempaths>${Cache.Core.ItemPaths}</itempaths>
+        <standardValues>${Cache.Core.StandardValues}</standardValues>
       </cacheSizes>
       <Engines.HistoryEngine.Storage>
         <obj type="Sitecore.Data.$(database).$(database)HistoryStorage, Sitecore.Kernel">
@@ -1007,11 +1007,11 @@
         <param desc="databaseName">$(id)</param>
       </NotificationProvider>
       <cacheSizes hint="setting">
-          <data>${Cache.Master.Data}</data>
-          <items>${Cache.Master.Items}</items>
-          <paths>${Cache.Master.Paths}</paths>
-          <itempaths>${Cache.Master.ItemPaths}</itempaths>
-          <standardValues>${Cache.Master.StandardValues}</standardValues>
+        <data>${Cache.Master.Data}</data>
+        <items>${Cache.Master.Items}</items>
+        <paths>${Cache.Master.Paths}</paths>
+        <itempaths>${Cache.Master.ItemPaths}</itempaths>
+        <standardValues>${Cache.Master.StandardValues}</standardValues>
       </cacheSizes>
     </database>
     <!-- web -->
@@ -1035,11 +1035,11 @@
         <archive name="recyclebin" />
       </archives>
       <cacheSizes hint="setting">
-          <data>${Cache.Web.Data}</data>
-          <items>${Cache.Web.Items}</items>
-          <paths>${Cache.Web.Paths}</paths>
-          <itempaths>${Cache.Web.ItemPaths}</itempaths>
-          <standardValues>${Cache.Web.StandardValues}</standardValues>
+        <data>${Cache.Web.Data}</data>
+        <items>${Cache.Web.Items}</items>
+        <paths>${Cache.Web.Paths}</paths>
+        <itempaths>${Cache.Web.ItemPaths}</itempaths>
+        <standardValues>${Cache.Web.StandardValues}</standardValues>
       </cacheSizes>
     </database>
     <!-- file system -->
@@ -1150,7 +1150,7 @@
               <Tags>taskoption</Tags>
               <Boost>1.9</Boost>
             </core-controlpanel>
-            
+
             <master type="Sitecore.Search.Crawlers.DatabaseCrawler, Sitecore.Kernel">
               <Database>master</Database>
               <Tags>master content</Tags>
@@ -1366,7 +1366,7 @@
   <linkManager defaultProvider="sitecore">
     <providers>
       <clear />
-        <add name="sitecore" type="Sitecore.Links.LinkProvider, Sitecore.Kernel" addAspxExtension="false" alwaysIncludeServerUrl="false" encodeNames="true" languageEmbedding="never" languageLocation="filePath" lowercaseUrls="true" shortenUrls="true" useDisplayName="false" />
+      <add name="sitecore" type="Sitecore.Links.LinkProvider, Sitecore.Kernel" addAspxExtension="false" alwaysIncludeServerUrl="false" encodeNames="true" languageEmbedding="never" languageLocation="filePath" lowercaseUrls="true" shortenUrls="true" useDisplayName="false" />
     </providers>
   </linkManager>
   <!-- STANDARD VALUES -->
@@ -2346,6 +2346,14 @@
       </layout>
       <encoding value="utf-8" />
     </appender>
+    <appender name="DCDImportAppender" type="log4net.Appender.SitecoreLogFileAppender, Sitecore.Logging">
+      <file value="$(dataFolder)/logs/DCDImporting.log.{date}.txt" />
+      <appendToFile value="true" />
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%4t %d{ABSOLUTE} %-5p %m%n" />
+      </layout>
+      <encoding value="utf-8" />
+    </appender>
     <root>
       <priority value="INFO" />
       <appender-ref ref="LogFileAppender" />
@@ -2353,6 +2361,10 @@
     <logger name="Sitecore.Diagnostics.WebDAV" additivity="false">
       <level value="INFO" />
       <appender-ref ref="WebDAVLogFileAppender" />
+    </logger>
+    <logger name="DCDImportAppender" additivity="false">
+      <level value="DEBUG" />
+      <appender-ref ref="DCDImportAppender" />
     </logger>
     <logger name="Sitecore.Diagnostics.Publishing" additivity="false">
       <level value="INFO" />
@@ -2399,7 +2411,7 @@
             (saved in 'url' query string parameter).
             Default: false
       -->
-    <setting name="Authentication.SaveRawUrl" value="false" />
+    <setting name="Authentication.SaveRawUrl" value="true" />
     <!--  VIRTUAL MEMBERSHIP WILDCARD
             Specifies the membership wildcard to use in high level code.
             Default: *
@@ -2669,7 +2681,7 @@
             Indicates if performance counters are enabled.
             Default value: true
       -->
-      <setting name="Counters.Enabled" value="${Sitecore.Counters.Enabled}" />
+    <setting name="Counters.Enabled" value="${Sitecore.Counters.Enabled}" />
     <!--  COUNTERS INSTANCE NAME
             Instance name for performance counters.
             Default value: (value of InstanceName setting)
@@ -3093,12 +3105,12 @@
             Default value: false
       -->
     <setting name="Login.DisableAutoComplete" value="false" />
-      <!--  LOGIN DISABLE CHANGE PASSWORD
+    <!--  LOGIN DISABLE CHANGE PASSWORD
             If true, Sitecore hides the "Change Password" link on the login page and disables the
             /sitecore/login/changepassword.aspx page.
             Default: false
       -->
-      <setting name="Login.DisableChangePassword" value="false" />
+    <setting name="Login.DisableChangePassword" value="false" />
     <!--  LOGIN DISABLE PASSWORD RECOVERY
             If true, Sitecore hides the "Forgot Your Password?" link on the login page.  
             Default: false
@@ -3589,7 +3601,7 @@
             This also controls the number of items in Lookup, Multilist and Valuelookup fields.
             Default value: 100
       -->
-    <setting name="Query.MaxItems" value="100" />
+    <setting name="Query.MaxItems" value="300" />
     <!--  RECYCLE BIN
             If true, when deleting items in the client, they will
             be moved to the recycle bin rather than being deleted
@@ -3883,6 +3895,18 @@
             Regular expression for validating Host Name
       -->
     <setting name="HostNameValidationPattern" value="^([a-zA-Z0-9]+)([a-zA-Z0-9-.]*)([a-zA-Z0-9]+)$" />
+
+    <setting name="DCD.OldDealsURL" value="${DCD.OldDealsURL}" />
+    <!-- This is responsible for redirecting the user to the Deals page that is available in the old project -->
+    
+    <setting name="DCD.OldCompaniesURL" value="${DCD.OldCompaniesURL}" />
+    <!-- This is responsible for redirecting the user to the Company page that is available in the old project -->
+    
+    <setting name="DCD.ImportFolder" value="${DCD.ImportFolder}"/>
+    <!-- Folder where DCD XML importing files will be located -->
+    
+    <setting name="DCD.EnableWatcher" value="${DCD.EnableWatcher}"/>
+    <!--Whether to enable DCD XML files changes watching in the DCD.ImportFolder folder-->
   </settings>
- 
+
 </sitecore>

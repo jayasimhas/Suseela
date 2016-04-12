@@ -1,6 +1,11 @@
-﻿using Informa.Library.Globalization;
+﻿using Glass.Mapper.Sc;
+using Informa.Library.Article.Search;
+using Informa.Library.Globalization;
 using Informa.Library.Presentation;
 using Informa.Library.Site;
+using Informa.Library.User.Authentication;
+using Informa.Library.User.Entitlement;
+using Informa.Library.User.Document;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 
 namespace Informa.Web.ViewModels
@@ -12,8 +17,14 @@ namespace Informa.Web.ViewModels
 		public FeaturedArticleViewModel(
 			IRenderingParametersContext renderingParametersContext,
 			ISiteRootContext siterootContext,
-			IArticleListItemModelFactory articleListableFactory, ITextTranslator textTranslator)
-			: base(siterootContext, articleListableFactory, textTranslator)
+			IArticleListItemModelFactory articleListableFactory, ITextTranslator textTranslator, IArticleSearch searcher,
+            ISitecoreContext context,
+            IArticleComponentFactory articleComponentFactory,
+            IEntitledProductContext entitledProductContext,
+            IAuthenticatedUserContext authenticatedUserContext,
+			IIsSavedDocumentContext isSavedDocumentContext,
+            ICallToActionViewModel callToActionViewModel)
+			: base(siterootContext, articleListableFactory, textTranslator, searcher, context, articleComponentFactory, entitledProductContext, authenticatedUserContext, isSavedDocumentContext, callToActionViewModel)
 		{
 			RenderingParametersContext = renderingParametersContext;
 		}

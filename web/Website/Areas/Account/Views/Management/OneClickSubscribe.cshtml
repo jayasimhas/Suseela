@@ -1,0 +1,13 @@
+﻿@using System.Web.Mvc.Html
+@model Informa.Web.Areas.Account.ViewModels.Subscription.SubscriptionModel
+
+@if (Model.IsAuthenticated)
+{
+    @Html.Raw(Model.BodyText)
+}
+else
+{
+    <div class="page-account__sign-in-solo">
+        @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
+    </div>
+}

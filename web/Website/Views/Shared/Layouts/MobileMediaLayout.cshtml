@@ -1,0 +1,51 @@
+﻿@model GlassArticleModel
+@using Informa.Library.Utilities.References
+<!DOCTYPE html>
+<html>
+<head>
+    @*@Styles.Render("~/Content/css")*@
+    @*@Scripts.Render("~/bundles/modernizr")*@
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@Model.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- STATIC PLACEHOLDER -->
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/dist/index-generated.css">
+
+    @* @Html.Sitecore().VisitorIdentification() *@
+    @Html.Sitecore().Placeholder("head")
+</head>
+<body>
+
+    @*@Html.Sitecore().Placeholder("header")*@
+<header>
+
+</header>
+    <main class="main--solo">
+
+        @*@Html.Glass().InvokeAction(mvc => Execute());*@
+
+
+        <div class="main__wrapper main__wrapper--solo" data-request-verification-token="@Html.RequestVerificationToken()">
+
+            <div class="general-header">
+                @Html.Sitecore().Placeholder("general-header")
+            </div>
+
+            <div class="main__content">
+                @Html.Sitecore().Placeholder("main-content")
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="/dist/js/index.js"></script>
+
+
+</body>
+</html>

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using Informa.Web.Areas.Account.Models;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
-using SitecoreTreeWalker.UI.Controllers;
+using InformaSitecoreWord.Properties;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
+using InformaSitecoreWord.UI.Controllers;
+using PluginModels;
+using PluginModels;
 
-namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
+namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
 	public partial class TaxonomyControl : ArticleDetailsPageUserControl
 	{
@@ -21,10 +23,10 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 													  uxArrowUp, uxArrowDown);
 		}
 
-		public void UpdateFields(WordPluginModel.ArticleStruct articleDetails)
+		public void UpdateFields(ArticleStruct articleDetails)
 		{
-			List<WordPluginModel.TaxonomyStruct> taxonomyItems = SitecoreGetter.SearchTaxonomy("").ToList();
-			WordPluginModel.HDirectoryStruct taxonomyDirectory = SitecoreGetter.GetHierarchyByGuid(new Guid(Constants.TAXONOMY_GUID));
+			List<TaxonomyStruct> taxonomyItems = SitecoreClient.SearchTaxonomy("").ToList();
+			HDirectoryStruct taxonomyDirectory = SitecoreClient.GetHierarchyByGuid(new Guid(Constants.TAXONOMY_GUID));
 
             TabController.InitializeSitecoreValues(taxonomyItems, taxonomyDirectory);
 
@@ -46,7 +48,7 @@ namespace SitecoreTreeWalker.UI.ArticleDetailsForm.ArticleDetailsControls.PageUs
 		{
 			if (_isLive)
 			{
-				e.Graphics.DrawImage(SitecoreTreeWalker.Properties.Resources.live, 570, 1, 28, 28);
+				e.Graphics.DrawImage(Resources.live, 570, 1, 28, 28);
 				e.Graphics.DrawString("Live!", new Font("SegoeUI", 18), Brushes.Green, 510, 1);
 			}
 		}

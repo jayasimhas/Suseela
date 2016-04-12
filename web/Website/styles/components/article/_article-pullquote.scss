@@ -30,7 +30,7 @@ Styles for a pull quote or blockquote.
             margin: 0;
         }
     }
-    
+
     @include breakpoint('medium') {
         font-size: 20px;
         margin: 2rem 0px;

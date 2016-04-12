@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using SitecoreTreeWalker.Sitecore;
+using InformaSitecoreWord.Sitecore;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser
+namespace InformaSitecoreWord.UI.TreeBrowser
 {
     public partial class GraphicsMetadataForm : Form
     {

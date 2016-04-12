@@ -1,4 +1,6 @@
 ﻿@model MainLayoutViewModel
+@using System.Configuration
+@using Informa.Library.Utilities.References
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,14 +9,15 @@
 
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@Model.Title</title>
+    <title>@Html.Raw(Model.Title)</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/dist/img/favicon.png" />
 
-	@if (!string.IsNullOrWhiteSpace(Model.CanonicalUrl))
-	{
-		<link rel="canonical" href="@Model.CanonicalUrl" />
-	}
+    @if (!string.IsNullOrWhiteSpace(Model.CanonicalUrl))
+    {
+        <link rel="canonical" href="@Model.CanonicalUrl" />
+    }
 
     <!-- STATIC PLACEHOLDER -->
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
@@ -22,58 +25,113 @@
 
     @* @Html.Sitecore().VisitorIdentification() *@
     @Html.Sitecore().Placeholder("head")
+    <script src="/js/openadstream.js"></script>
+    <!--
+    To collect end-user usage analytics about your application,
+    insert the following script into each page you want to track.
+    Place this code immediately before the closing </head> tag,
+    and before any other scripts. Your first data will appear
+    automatically in just a few seconds.
+    -->
+    @if (Model.AppInsightsConfig.Enabled)
+    {
+        <script type="text/javascript">
+            var appInsights = window.appInsights || function (config) {
+                function r(config) {
+                    t[config] = function () {
+                        var i = arguments;
+                        t.queue.push(function () { t[config].apply(t, i) })
+                    }
+                }
+
+                var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f;
+                for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) r("track" + i.pop());
+                return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) {
+                    var s = f && f(config, r, u, e, o);
+                    return s !== !0 && t["_" + i](config, r, u, e, o), s
+                }), t
+            }({
+                instrumentationKey: "@Model.AppInsightsConfig.InstrumentationKey"
+            });
+
+            window.appInsights = appInsights;
+            appInsights.trackPageView();
+        </script>
+    }
 </head>
 <body>
+    <script type="text/javascript">
+        var analytics_data = {
+            "page_name": "@Model.PageTitleAnalytics", "page_type": "@Model.PageType", "actual_publish_date": "@Model.ArticlePublishDate", "article_author": "@Html.Raw(Model.ArticleAuthors)",
+            "article_content_type": "@Model.ArticleContentType", "article_embargo": "@Model.ArticleEmbargoed", "article_media_type": "@Model.ArticleMediaType", "article_number": "@Model.ArcticleNumber",
+            "created_date": "@Model.DateCreated", "custom_tags": "@Model.CustomTags", "page_description": "@Model.PageDescription", "page_title_override": "@Model.PageTitleOverride",
+            "taxonomy_region": "@Html.Raw(Model.ArticleRegions)", "taxonomy_subjects": "@Html.Raw(Model.ArticleSubject)", "taxonomy_therapy_areas": "@Html.Raw(Model.ArticleTherapy)", "login_status": "@Model.IsUserLoggedIn", "IsArticleFree": "@Model.IsArticleFree",
+            "user_id": "@Model.UserName", "company": "@Model.UserCompany", "user_entitlement_type": "@Model.UserEntitlements", "entitlement_status": "@Model.UserEntitlementStatus", "industry": "@Model.UserIndustry",
+            "user_email": "@Model.UserEmail", "current_email_subscriptions": "@Model.SubscribedProducts", "page_keywords": "@Model.MetaKeyWords", "company_Id" : "@Model.CompanyId"
+        };
+        var utag_data = analytics_data;
 
-@{ Html.RenderPartial("_Header", Model.Header); }
-@*@Html.Sitecore().Placeholder("header")*@
 
-<main>
+    </script>
+    <script type="text/javascript">
+        (function (a, b, c, d) {
+            a = '//tags.tiqcdn.com/utag/informa/main/@Model.SiteEnvrionment/utag.js';
+            b = document; c = 'script'; d = b.createElement(c); d.src = a;
+            d.type = 'text/java' + c; d.async = true;
+            a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a)
+        })();
+    </script>
 
-    @*@Html.Glass().InvokeAction(mvc => Execute());*@
-    @{ Html.RenderPartial("_Navigation", Model.SideNavigationMenu);}
 
-    <div class="main__wrapper">
+    @{ Html.RenderPartial("_Header", Model.Header); }
+    @*@Html.Sitecore().Placeholder("header")*@
 
-        @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
+    <main>
 
-        @*
-        <div class="general-header">
-            <div class="general-header__section-title">
-                Name of Section
+        @*@Html.Glass().InvokeAction(mvc => Execute());*@
+        @{ Html.RenderPartial("_Navigation", Model.SideNavigationMenu);}
+
+        <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
+
+            <div class="general-header">
+                @Html.Sitecore().Placeholder("general-header")
             </div>
-            <div class="general-header__navigation">
-                <a href="#" class="is-active">General Content Page V1</a>
-                <a href="#">Page Name</a>
-                <a href="#">Page Name</a>
-                <a href="#">Page Name</a>
+
+            @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
+            @{  Html.RenderPartial("_IndividualSubscriptionRenewalMessage", Model.IndividualRenewalMessageInfo); }
+            @{  Html.RenderPartial("Company/_RegisterMessage", Model.CompanyRegisterMessage); }
+
+            <div class="main__content">
+                @Html.Sitecore().Placeholder("main-content")
             </div>
+
+            @* * *  POP-OUT TEMPLATE MARKUP *@
+
+            @{ Html.RenderPartial("PopOuts/SignIn", Model.SignInPopOutViewModel); }
+            @{ Html.RenderPartial("PopOuts/Register", Model.RegisterPopOutViewModel); }
+            @{ Html.RenderPartial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel); }
+            @{ Html.RenderPartial("PopOuts/EmailSearch", Model.EmailSearchPopOutViewModel); }
+
+            @* * *  END POP-OUT TEMPLATE MARKUP *@
+
         </div>
-        *@
 
-        <div class="main__content">
+    </main>
 
-            @Html.Sitecore().Placeholder("main-content")
+    <footer>
+        @{ Html.RenderPartial("_Footer", Model.Footer);}
+    </footer>
 
-        </div>
-
-        @* * *  POP-OUT TEMPLATE MARKUP *@
-
-		@{ Html.RenderPartial("PopOuts/SignIn", Model.SignInPopOutViewModel); }
-		@{ Html.RenderPartial("PopOuts/Register", Model.RegisterPopOutViewModel); }
-		@{ Html.RenderPartial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel); }
-
-        @* * *  END POP-OUT TEMPLATE MARKUP *@
-
+    @* If this is an Article page... *@
+    <div class="boxout-print-info footer">
+        <p>@Model.PrintPageHeaderMessage</p>
+        <p>@Model.PrintedByText <b>@Model.UserName @(string.IsNullOrEmpty(Model.UserName) || string.IsNullOrEmpty(Model.CorporateName) ? string.Empty : ",") @Model.CorporateName</b></p>
     </div>
+    @* end pseudo-if *@
 
-</main>
+    <script src="/dist/js/index.js"></script>
 
-<footer>
-	@{ Html.RenderPartial("_Footer", Model.Footer);}
-</footer>
-
-<script src="/dist/js/index.js"></script>
-
+    @* <script src="vendor/bower_components/angular-animate/angular-animate.js"></script> *@
+    @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
 </body>
 </html>

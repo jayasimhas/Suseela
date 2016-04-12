@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using InformaSitecoreWord.Sitecore;
 using Microsoft.Office.Interop.Word;
 
-namespace SitecoreTreeWalker.Util.Document
+namespace InformaSitecoreWord.Util.Document
 {
 	public class InlineReferenceParser
 	{
@@ -38,12 +39,12 @@ namespace SitecoreTreeWalker.Util.Document
 				articleNumber = Regex.Replace(articleNumber, @"\<.*?>", "");
 				articleNumber = Regex.Replace(articleNumber, @"\[A#", "");
 				articleNumber = Regex.Replace(articleNumber, @"\]", "");
-				if(!SitecoreArticle.DoesArticleExist(articleNumber))
+				if(!SitecoreClient.DoesArticleExist(articleNumber))
 				{
 					match = match.NextMatch();
 					continue;
 				}
-				var articleGuid = new Guid(SitecoreArticle.GetArticleGuidByArticleNumber(articleNumber));
+				var articleGuid = new Guid(SitecoreClient.GetArticleGuidByArticleNumber(articleNumber));
 				if (articleGuid == Guid.Empty)
 				{
 					match = match.NextMatch(); 

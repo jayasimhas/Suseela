@@ -1,37 +1,70 @@
 .search-sort {
-  display: inline-block;
-  float: right;
-
-  @include breakpoint('medium') {
-    display: block;
-    float: left;
-    order: 3;
-  }
-
-  &__title {
     display: inline-block;
-    text-transform: uppercase;
-    margin-right: 5px;
-  }
+    float: right;
 
-  &__line-separator {
-    @extend .result__line-separator;
-  }
-
-  &__control-list {
-    display: inline-block;
-  }
-
-  &__control-type {
-    display: inline-block;
-
-    a {
-      @include textMix('Roboto', 15px, 400);
-      display: inline-block;
+    @include breakpoint('medium') {
+        display: block;
+        float: left;
+        order: 3;
+        margin-bottom: 23px;
     }
 
-    &.is-selected span {
-      text-decoration: underline;
+    &__title {
+        display: inline-block;
+        text-transform: uppercase;
+        margin-right: 5px;
+    }
+
+    &__line-separator {
+        @extend .result__line-separator;
+    }
+
+    &__control-list {
+        display: inline-block;
+    }
+
+    &__control-type {
+        display: inline-block;
+
+        a {
+            @include textMix('Roboto', 15px, 400);
+            display: inline-block;
+        }
+
+        &.is-selected span,
+        &.is-selected a {
+            text-decoration: underline;
+        }
+
+        &.is-sorted-up .icon-triangle--up {
+            @include svg-fill($informa-red);
+        }
+
+        &.is-sorted-down .icon-triangle--down {
+            @include svg-fill($informa-red);
+        }
+
+        &.is-sorted-up a,
+        &.is-sorted-up a:hover,
+        &.is-sorted-down a,
+        &.is-sorted-down a:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__icon-group {
+        display: inline-block;
+        vertical-align: bottom;
+        margin-left: 5px;
+    }
+
+    .icon-triangle {
+        @include svg-fill($informa-light-gray-d);
+        display: block;
+        width: 12px;
+        height: 11px;
+    }
+
     }
 
     &.is-sorted-up {

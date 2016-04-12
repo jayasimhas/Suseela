@@ -45,6 +45,6 @@ namespace WordPluginCustomInstallActions
 		}
 
 		protected RegisterOffice2007AddIn _registerer;
-		protected readonly string _addinName = "InsightPlatform.WordPlugin";
+		protected readonly string _addinName = "InformaSitecoreWord.WordPlugin";
 	}
 }

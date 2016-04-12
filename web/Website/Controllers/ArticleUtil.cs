@@ -18,15 +18,22 @@ using Sitecore.Web;
 using Informa.Library.Article.Search;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
+using Informa.Library.Site;
+using Informa.Library.Utilities;
+using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
+using PluginModels;
+using Sitecore;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Utilities;
 using Sitecore.Data;
 using Sitecore.Links;
 using Sitecore.Mvc.Controllers;
+using Velir.Core.Utilities.Strings;
 using Velir.Search.Core.Managers;
 using Velir.Search.Core.Page;
 using Velir.Search.Core.Queries;
 using Constants = Informa.Library.Utilities.References.Constants;
+using IWorkflow = Sitecore.Workflows.IWorkflow;
 
 namespace Informa.Web.Controllers
 {
@@ -35,7 +42,6 @@ namespace Informa.Web.Controllers
 	{
 		protected readonly IArticleSearch ArticleSearcher;
 		protected readonly ISitecoreContext SitecoreContext;
-
 		public ArticleController(IArticleSearch searcher, ISitecoreContext context)
 		{
 			ArticleSearcher = searcher;
@@ -115,11 +121,13 @@ namespace Informa.Web.Controllers
 		protected string _tempFileLocation;
 		private readonly IArticleSearch _articleSearcher;
 
+		//protected readonly IWorkFlowUtil WorkflowUtil;
 		/// <summary>
 		/// Constructor
 		/// </summary
 		/// <param name="searcher"></param>
 		/// <param name="sitecoreFactory"></param>
+		/// <param name="siteRootContext"></param>
 		public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
 		{
 			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
@@ -134,7 +142,7 @@ namespace Informa.Web.Controllers
 		public Item GetArticleItemByNumber(string articleNumber)
 		{
 
-            ArticleItem articleItem = GetArticleByNumber(articleNumber);
+			ArticleItem articleItem = GetArticleByNumber(articleNumber);
 			if (articleItem != null)
 			{
 				var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
@@ -176,13 +184,17 @@ namespace Informa.Web.Controllers
 			return wordDoc?.Version.Number ?? -1;
 		}
 
-		public WordPluginModel.ArticlePreviewInfo GetPreviewInfo(ArticleItem article)
+		public ArticlePreviewInfo GetPreviewInfo(ArticleItem article)
 		{
-			return new WordPluginModel.ArticlePreviewInfo
+			var item = _sitecoreMasterService.GetItem<Item>(article._Id);
+			var publicationItem = ArticleExtension.GetAncestorItemBasedOnTemplateID(item);
+			Guid publicationGuid = publicationItem.ID.Guid;
+
+			return new ArticlePreviewInfo
 			{
-				Title = article.Title,
-				Publication = _sitecoreMasterService.GetItem<IGlassBase>(article.Publication)._Name,				
-				Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
+				Title = HttpUtility.HtmlDecode(article.Title),
+				Publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid)._Name,
+				Authors = article.Authors.Select(r => (((IStaff_Item)r).Last_Name + "," + ((IStaff_Item)r).First_Name)).ToList(),
 				ArticleNumber = article.Article_Number,
 				Date = article.Actual_Publish_Date,
 				PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
@@ -190,13 +202,13 @@ namespace Informa.Web.Controllers
 			};
 		}
 
-        public WordPluginModel.ArticlePreviewInfo GetPreviewInfo(IArticle article)
-        {
-            return GetPreviewInfo(_sitecoreMasterService.GetItem<ArticleItem>(article._Id));
-        }
+		public ArticlePreviewInfo GetPreviewInfo(IArticle article)
+		{
+			return GetPreviewInfo(_sitecoreMasterService.GetItem<ArticleItem>(article._Id));
+		}
 
 
-        public string PreviewArticleURL(string articleNumber, string siteHost)
+		public string PreviewArticleURL(string articleNumber, string siteHost)
 		{
 			Guid guid = GetArticleByNumber(articleNumber)._Id;
 			if (guid.Equals(Guid.Empty))
@@ -218,27 +230,21 @@ namespace Informa.Web.Controllers
 			{
 				throw new ApplicationException("Trying to lock an already locked article!");
 			}
-			//TODO - Might need to work on the user and login
-			/*
-			if (userID.IsNullOrEmpty())
+			if (string.IsNullOrEmpty(Sitecore.Context.User.DisplayName))
 			{
 				return false;
 			}
-			bool loggedIn = Sitecore.Security.Authentication.AuthenticationManager.Login(userID);
+			bool loggedIn = Sitecore.Context.User.IsAuthenticated;
 			if (!loggedIn)
 			{
 				{ return false; }
 			}
-			*/
 
-			using (new Sitecore.SecurityModel.SecurityDisabler())
+			using (new EditContext(article))
 			{
-				using (new EditContext(article))
-				{
-					article.Locking.Lock();
-				}
+				article.Locking.Lock();
 			}
-			Sitecore.Security.Authentication.AuthenticationManager.Logout();
+
 			return true;
 		}
 
@@ -255,25 +261,18 @@ namespace Informa.Web.Controllers
 			}
 			string userID = article.Locking.GetOwner();
 			if (string.IsNullOrEmpty(userID)) return false;
-			//TODO: assuming domain is specified here.
-			bool loggedIn = Sitecore.Security.Authentication.AuthenticationManager.Login(userID);
+
+			bool loggedIn = Sitecore.Context.User.IsAuthenticated;
 			if (!loggedIn)
 			{
 				return false;
 			}
-
-			//TODO: use real security
-			using (new Sitecore.SecurityModel.SecurityDisabler())
+			using (new EditContext(article))
 			{
-				using (new EditContext(article))
-				{
-					article.Locking.Unlock();
-					//there is already a new version created before saving an article
-					//var item = article.Versions.AddVersion();
-				}
+				article.Locking.Unlock();
+				//there is already a new version created before saving an article
+				//var item = article.Versions.AddVersion();
 			}
-
-			Sitecore.Security.Authentication.AuthenticationManager.Logout();
 
 			return true;
 		}
@@ -283,7 +282,7 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="article"></param>
 		/// <returns></returns>
-		public WordPluginModel.CheckoutStatus GetLockedStatus(Item article)
+		public CheckoutStatus GetLockedStatus(Item article)
 		{
 			if (article == null)
 			{
@@ -291,7 +290,7 @@ namespace Informa.Web.Controllers
 				throw nex;
 			}
 
-			var checkoutStatus = new WordPluginModel.CheckoutStatus();
+			var checkoutStatus = new CheckoutStatus();
 
 			ItemLocking itemLocking = article.Locking;
 			checkoutStatus.Locked = itemLocking.IsLocked();
@@ -399,17 +398,19 @@ namespace Informa.Web.Controllers
 			return dayFolder;
 		}
 
-		public WordPluginModel.ArticleStruct
-			GetArticleStruct(ArticleItem articleItem)
+		public ArticleStruct GetArticleStruct(ArticleItem articleItem)
 		{
 			var article = _sitecoreMasterService.GetItem<ArticleItem>(articleItem._Id);
-			var articleStruct = new WordPluginModel.ArticleStruct
+			var item = _sitecoreMasterService.GetItem<Item>(article._Id);
+			var publicationItem = ArticleExtension.GetAncestorItemBasedOnTemplateID(item);
+			Guid publicationGuid = publicationItem.ID.Guid;
+
+			var articleStruct = new ArticleStruct
 			{
 				ArticleGuid = articleItem._Id,
 				Title = articleItem.Title,
 				ArticleNumber = articleItem.Article_Number,
-				//TODO - Get article Publication
-				Publication = article.Publication
+				Publication = publicationGuid
 			};
 
 			if (articleItem.Content_Type != null)
@@ -424,25 +425,21 @@ namespace Informa.Web.Controllers
 			articleStruct.WebPublicationDate = articleItem.Planned_Publish_Date;
 			articleStruct.PrintPublicationDate = articleItem.Actual_Publish_Date;
 			articleStruct.Embargoed = articleItem.Embargoed;
-			var authors = articleItem.Authors.Select(r => ((IAuthor)r)).ToList();
-			articleStruct.Authors = authors.Select(r => new WordPluginModel.StaffStruct { ID = r._Id, Name = r.Last_Name + ", " + r.First_Name, }).ToList();
+			var authors = articleItem.Authors.Select(r => ((IStaff_Item)r)).ToList();
+			articleStruct.Authors = authors.Select(r => new StaffStruct { ID = r._Id, Name = r.Last_Name + ", " + r.First_Name, }).ToList();
 			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
 
 			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
 
-			//TODO - Workflow - 
-			// In order to read the available commands for a given workflow state, we need to be in a secured environment.
-			//try
-			//{
-			//	articleStruct.WorkflowState = _workflowController.GetWorkflowState(this.ID.ToGuid());
-			//}
+			articleStruct.ArticleWorkflowState = GetWorkFlowState(articleItem._Id);
+
 
 			articleStruct.FeaturedImageSource = articleItem.Featured_Image_Source;
 			articleStruct.FeaturedImageCaption = articleItem.Featured_Image_Caption;
 			if (articleItem.Featured_Image_16_9 != null)
 			{ articleStruct.FeaturedImage = articleItem.Featured_Image_16_9.MediaId; }
 
-			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new WordPluginModel.TaxonomyStruct() { Name = r._Name, ID = r._Id }).ToList();
+			articleStruct.Taxonomoy = articleItem.Taxonomies.Select(r => new TaxonomyStruct() { Name = r._Name, ID = r._Id, Section = r._Parent._Name }).ToList();
 
 			articleStruct.ReferencedArticlesInfo = articleItem.Referenced_Articles.Select(a => GetPreviewInfo((IArticle)a)).ToList();
 
@@ -450,7 +447,7 @@ namespace Informa.Web.Controllers
 			{
 				var wordDocURL = articleItem.Word_Document.Url;
 				wordDocURL = wordDocURL.Replace("-", " ");
-				var wordDoc = Sitecore.Context.Database.GetItem(wordDocURL);
+				var wordDoc = _sitecoreMasterService.GetItem<Item>(wordDocURL);
 
 				if (wordDoc != null)
 				{
@@ -462,16 +459,142 @@ namespace Informa.Web.Controllers
 
 			try
 			{
-				ISitecoreService service = new SitecoreContext(WebDb);
+				ISitecoreService service = new SitecoreContentContext();
 				var webItem = service.GetItem<Item>(articleItem._Id);
 				articleStruct.IsPublished = webItem != null;
 			}
-			catch
+			catch (Exception ex)
 			{
 				articleStruct.IsPublished = false;
 			}
 
 			return articleStruct;
+		}
+
+		public ArticleWorkflowState GetWorkFlowState(Guid articleId)
+		{
+			var item = _sitecoreMasterService.GetItem<Item>(articleId);
+			if (item?.State?.GetWorkflowState() == null) return null;
+			var currentState = item.State.GetWorkflowState();
+			Sitecore.Workflows.IWorkflow workflow = item.State.GetWorkflow();
+			var workFlowState = new ArticleWorkflowState();
+			workFlowState.IsFinal = currentState.FinalState;
+			workFlowState.DisplayName = currentState.DisplayName;
+			var commands = new List<ArticleWorkflowCommand>();
+			foreach (Sitecore.Workflows.WorkflowCommand command in workflow.GetCommands(item))
+			{
+				var wfCommand = new ArticleWorkflowCommand();
+				wfCommand.DisplayName = command.DisplayName;
+				wfCommand.StringID = command.CommandID;
+				ICommand commandItem = _sitecoreMasterService.GetItem<ICommand>(new Guid(command.CommandID));
+				IState nextStateItem = _sitecoreMasterService.GetItem<IState>(commandItem.Next_State);
+
+				if (nextStateItem != null)
+				{
+					wfCommand.SendsToFinal = nextStateItem.Final;
+					wfCommand.GlobalNotifyList = new List<StaffStruct>();
+					foreach (var staff in nextStateItem.Staffs)
+					{
+						var staffItem = _sitecoreMasterService.GetItem<IStaff_Item>(staff._Id);
+						if (staffItem.Inactive)
+						{
+							continue;
+						}
+						var staffMember = new StaffStruct
+						{
+							ID = staffItem._Id,
+							Name = staffItem.Last_Name + " , " + staffItem.First_Name
+						};
+						//   staffMember.Publications = staff  //TODO :Check if this field if we need this field.
+						wfCommand.GlobalNotifyList.Add(staffMember);
+					}
+					commands.Add(wfCommand);
+				}
+			}
+			workFlowState.Commands = commands;
+
+			return workFlowState;
+		}
+
+		public void SetWorkflowState(Item i, string commandID)
+		{
+			i[FieldIDs.WorkflowState] = commandID;
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="i"></param>
+		/// <param name="commandID">Optional: if included, the command will be executed</param>
+		/// <returns>The workflow state of the item (after workflow command has executed, if given one)</returns>
+		public ArticleWorkflowState ExecuteCommandAndGetWorkflowState(Item i, string commandID)
+		{
+			using (new Sitecore.SecurityModel.SecurityDisabler())
+			{
+				IWorkflow workflow = i.State.GetWorkflow();
+
+				if (workflow == null)
+				{
+					//uh oh
+					return new ArticleWorkflowState();
+				}
+
+				if (commandID != null)
+				{
+					//var oldWorkflow = workflow.WorkflowID;
+					// This line will cause the workflow field to be set to null... sometimes
+					workflow.Execute(commandID, i, "comments", false);
+					//var info = new WorkflowInfo(oldWorkflow, i.Fields[Sitecore.FieldIDs.WorkflowState].Value);
+					//i.Database.DataManager.SetWorkflowInfo(i, info);
+					//i.Fields[Sitecore.FieldIDs.Workflow].Value = oldWorkflow;
+
+				}
+				var state = new ArticleWorkflowState();
+
+				var currentState = workflow.GetState(i);
+				state.DisplayName = currentState.DisplayName;
+				state.IsFinal = currentState.FinalState;
+
+				var commands = new List<ArticleWorkflowCommand>();
+				foreach (Sitecore.Workflows.WorkflowCommand command in workflow.GetCommands(i))
+				{
+					var wfCommand = new PluginModels.ArticleWorkflowCommand();
+					wfCommand.DisplayName = command.DisplayName;
+					wfCommand.StringID = command.CommandID;
+
+					ICommand commandItem = _sitecoreMasterService.GetItem<ICommand>(new Guid(command.CommandID));
+
+					IState stateItem = _sitecoreMasterService.GetItem<IState>(commandItem.Next_State);
+
+					if (stateItem == null)
+					{
+						//_logger.Warn("WorkflowController.ExecuteCommandAndGetWorkflowState: Next state for command [" + command.CommandID + "] is null!");
+					}
+					else
+					{
+						wfCommand.SendsToFinal = stateItem.Final;
+						wfCommand.GlobalNotifyList = new List<StaffStruct>();
+
+						foreach (var x in stateItem.Staffs)
+						{
+							var staffItem = _sitecoreMasterService.GetItem<IStaff_Item>(x._Id);
+							if (staffItem.Inactive) { continue; }
+
+							var staffMember = new StaffStruct();
+							staffMember.ID = staffItem._Id;
+							//staffMember.Name = staffItem.GetFullName();
+							//staffMember.Publications = staffItem.Publications.ListItems.Select(p => p.ID.ToGuid()).ToArray();
+							wfCommand.GlobalNotifyList.Add(staffMember);
+						}
+
+						commands.Add(wfCommand);
+					}
+				}
+
+				state.Commands = commands;
+
+				return state;
+			}
 		}
 	}
 }

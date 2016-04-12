@@ -4,10 +4,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
-using StaffStruct = Informa.Web.Areas.Account.Models.WordPluginModel.StaffStruct;
+using PluginModels;
+using StaffStruct = PluginModels.StaffStruct;
 
-namespace SitecoreTreeWalker.UI
+namespace InformaSitecoreWord.UI
 {
 	/// <summary>
 	/// ListBox for selected staff members to allow the "remove"
@@ -24,7 +24,7 @@ namespace SitecoreTreeWalker.UI
 		public EasyRemoveListView()
 		{
 			View = View.Details;
-			Columns.Add("Staff", Width);
+			Columns.Add("Staff", 300);
 			HeaderStyle = ColumnHeaderStyle.None;
 			DisableEdit = false;
 			MouseMove +=
@@ -147,7 +147,7 @@ namespace SitecoreTreeWalker.UI
 			}
 		}
 
-		public void Add(WordPluginModel.StaffStruct selected)
+		public void Add(StaffStruct selected)
 		{
 			if (Selected.Any(r => r.ID == selected.ID) || Unremovable.Any(r => r.ID == selected.ID))
 			{

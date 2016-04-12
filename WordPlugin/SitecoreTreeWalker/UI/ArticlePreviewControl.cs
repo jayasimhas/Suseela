@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
-using ArticleStruct = Informa.Web.Areas.Account.Models.WordPluginModel.ArticleStruct;
+using PluginModels;
+using ArticleStruct = PluginModels.ArticleStruct;
 
-namespace SitecoreTreeWalker.UI
+namespace InformaSitecoreWord.UI
 {
 	sealed class ArticlePreviewControl : TableLayoutPanel
 	{
@@ -65,7 +66,7 @@ namespace SitecoreTreeWalker.UI
 		/// </summary>
 		/// <param name="articleStruct"></param>
 		/// <returns>True if article is found</returns>
-		public bool UpdatePreview(WordPluginModel.ArticlePreviewInfo articleStruct)
+		public bool UpdatePreview(ArticlePreviewInfo articleStruct)
 		{
 			Controls.Clear();
 			if(string.IsNullOrEmpty(articleStruct.ArticleNumber))
@@ -76,7 +77,7 @@ namespace SitecoreTreeWalker.UI
 				Title.Width = Title.Parent.Width;
 				return false;
 			}
-			Title.Text = articleStruct.Title;
+			Title.Text = WebUtility.HtmlDecode(articleStruct.Title);
 			Authors.Text = articleStruct.Authors.Count() > 0
 				            ? articleStruct.Authors.Aggregate((complete, cur) => complete + ", " + cur)
 				            : @"N/A";

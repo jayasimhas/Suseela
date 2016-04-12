@@ -76,6 +76,7 @@ _ReSharper*
 # NCrunch
 *.ncrunch*
 .*crunch*.local.xml
+*ncrunchTemp_*
 
 # Installshield output folder
 [Ee]xpress
@@ -144,7 +145,15 @@ tools/vagrant/scripts/customize.ps1
 copysauce.bat
 
 # Sitecore
-web/Website/sitecore
+web/Website/sitecore/*
+web/Website/sitecore/shell/*
+web/Website/sitecore/shell/client/*
+web/Website/sitecore/shell/client/Applications/*
+!web/Website/sitecore/shell/
+!web/Website/sitecore/shell/client
+!web/Website/sitecore/shell/client/Applications
+!web/Website/sitecore/shell/client/Applications/Nlm Export/
+!web/Website/sitecore/shell/client/Applications/View NLM/
 
 web/Data/indexes/*
 web/Data/packages/*
@@ -193,6 +202,8 @@ WordPlugin/SitecoreTreeWalker/SitecoreTreeWalker_1_TemporaryKey.pfx
 WordPlugin/SitecoreTreeWalker/app.config
 web/Data/Submit Queue
 web/Website/App_Config/Include/ZZ.UserDefined/Solr.config
+web/Website/App_Config/Include/UserDefined/Salesforce.config
+web/Website/App_Config/Include/UserDefined/CustomSitecore.config
 web/Website/wordinstaller
 config/env/local.json
 
@@ -200,8 +211,15 @@ logs/*
 web/Website/local.js
 nant.send.bat
 web/Data
-web/Website/sitecore modules/Web/ExperienceExplorer
+WordPlugin/SitecoreTreeWalker/publish
 
 !web/Website/node_modules/mdcss/**/*
 !web/Website/node_modules/runway-theme-velir/**/*
 web/Website/styleguide/
+web/Website/ApplicationInsights.config
+web/Website/App_Config/Include/UserDefined/AppInsights.config
+web/Website/App_Config/Include/UserDefined/AppInsights.config
+web/Website/ApplicationInsights.config
+web/Website/App_Config/Web/system.webServer.rewrite.config
+WordPlugin/SitecoreTreeWalker/Informa Business Intelligence, Inc..cer
+WordPlugin/SitecoreTreeWalker/informa_plugin.pfx

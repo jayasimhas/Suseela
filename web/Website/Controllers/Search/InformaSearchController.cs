@@ -1,6 +1,10 @@
-﻿using Glass.Mapper.Sc;
+﻿using System.Collections.Generic;
+using Glass.Mapper.Sc;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
+using Informa.Library.User.Authentication;
+using Informa.Library.User.Document;
+using Informa.Library.Utilities.TokenMatcher;
 using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Factory;
 using Velir.Search.Core.Managers;
@@ -19,9 +23,17 @@ namespace Informa.Web.Controllers.Search
         private ISitecoreContext _context;
         private readonly ISearchPageParser _parser;
         private readonly ISearchManager<InformaSearchResultItem> _searchManager;
+		protected readonly IAuthenticatedUserContext UserContext;
+		protected readonly IIsSavedDocumentContext IsSavedDocumentContext;
 
-        public InformaSearchController(ISearchManager<InformaSearchResultItem> searchManager, ISearchPageParser parser,
-            IGlassInterfaceFactory interfaceFactory, ISitecoreContext context, ICacheProvider cache)
+		public InformaSearchController(
+			ISearchManager<InformaSearchResultItem> searchManager,
+			ISearchPageParser parser,
+            IGlassInterfaceFactory interfaceFactory,
+			ISitecoreContext context,
+			ICacheProvider cache,
+			IAuthenticatedUserContext userContext,
+			IIsSavedDocumentContext isSavedDocumentContext)
             : base(searchManager, parser)
         {
             _searchManager = searchManager;
@@ -29,6 +41,8 @@ namespace Informa.Web.Controllers.Search
             _context = context;
             _cache = cache;
             _interfaceFactory = interfaceFactory;
+			UserContext = userContext;
+			IsSavedDocumentContext = isSavedDocumentContext;
         }
 
         public override IQueryResults Get(ApiSearchRequest request)
@@ -46,7 +60,30 @@ namespace Informa.Web.Controllers.Search
             var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
             q.PredicateBuilder = predicateBuilder;
 
-            return _searchManager.GetItems(q);
+            var results = _searchManager.GetItems(q);
+
+            //Loop through the results and add the authenticaton and bookmarking property values to be used
+            //on the front end.
+			if (UserContext.IsAuthenticated)
+			{
+				List<InformaSearchResultItem> resultsWithBookmarks = new List<InformaSearchResultItem>();
+				foreach (InformaSearchResultItem queryResult in results.Results)
+				{
+					queryResult.IsUserAuthenticated = UserContext.IsAuthenticated;
+					queryResult.IsArticleBookmarked = IsSavedDocumentContext.IsSaved(queryResult.ItemId.ToGuid());
+					resultsWithBookmarks.Add(queryResult);
+				}
+
+				results.Results = resultsWithBookmarks;
+			}
+
+            //Replace DCD tokens in the summary
+            foreach (InformaSearchResultItem queryResult in results.Results)
+            {
+                queryResult.Summary = DCDTokenMatchers.ProcessDCDTokens(queryResult.Summary);
+            }
+
+            return results;
         }
     }
 }

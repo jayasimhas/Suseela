@@ -1,9 +1,14 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using Informa.Library.Article.Search;
 using Sitecore.ContentSearch.Linq;
 using Informa.Library.Search.Results;
 using Sitecore.ContentSearch.Linq.Utilities;
 using Informa.Library.Search.Filter;
+using Sitecore.ContentSearch.Linq.Helpers;
 using Sitecore.ContentSearch.SearchTypes;
+using Sitecore.ContentSearch.SolrProvider;
+using Velir.Core.Extensions.System.Collections.Generic;
 
 namespace Informa.Library.Search.Extensions
 {
@@ -35,8 +40,25 @@ namespace Informa.Library.Search.Extensions
             var predicate = PredicateBuilder.True<T>();
             predicate = predicate.Or(i => i.ArticleNumber == filter.ArticleNumber);
 
+            return source.Filter(predicate);   
+
+            //var index = new LinqToSolrIndex<ArticleSearchResultItem>();
+        }
+
+        public static IQueryable<T> FilteryByRelatedId<T>(this IQueryable<T> source, IReferencedArticleFilter filter)
+        where T : IReferencedArticles
+        {
+            if (source == null || filter == null || filter.ReferencedArticle.Equals(Guid.Empty))
+            {
+                return source;
+            }
+
+            var predicate = PredicateBuilder.True<T>();
+            predicate = predicate.Or(i => i.ReferencedArticles.Contains(filter.ReferencedArticle));
+
             return source.Filter(predicate);
         }
+
 
         public static IQueryable<T> FilteryByEScenicID<T>(this IQueryable<T> source, IArticleEScenicIDFilter filter)
             where T : IArticleEScenicID

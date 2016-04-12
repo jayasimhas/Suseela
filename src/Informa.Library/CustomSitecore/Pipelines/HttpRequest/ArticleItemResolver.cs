@@ -59,6 +59,9 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
                 return;
 
             IArticle a = results.Articles.First();
+            if (a == null)
+                return;
+
             string matchTitle = mc[0].Groups[5].Value;
             string urlTitle = a._Name.ToLower().Replace(" ", "-");
             if (!urlTitle.Equals(matchTitle))

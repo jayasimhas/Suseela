@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SitecoreTreeWalker.Properties {
+namespace InformaSitecoreWord.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SitecoreTreeWalker.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SitecoreTreeWalker.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("InformaSitecoreWord.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,26 +57,6 @@ namespace SitecoreTreeWalker.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1445989402_lock_24 {
-            get {
-                object obj = ResourceManager.GetObject("1445989402_lock-24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _53_Lock_unlocked {
-            get {
-                object obj = ResourceManager.GetObject("53-Lock-unlocked", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -381,6 +361,16 @@ namespace SitecoreTreeWalker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lockedIcon {
+            get {
+                object obj = ResourceManager.GetObject("lockedIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap marketsegments_tabheader {
             get {
                 object obj = ResourceManager.GetObject("marketsegments_tabheader", resourceCulture);
@@ -578,6 +568,15 @@ namespace SitecoreTreeWalker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select a valid document.
+        /// </summary>
+        internal static string SupportingDocumentsControl_uxViewDocument_Click_Please_select_a_valid_document {
+            get {
+                return ResourceManager.GetString("SupportingDocumentsControl_uxViewDocument_Click_Please_select_a_valid_document", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap TabHeaders_companies {
@@ -653,6 +652,16 @@ namespace SitecoreTreeWalker.Properties {
         internal static System.Drawing.Bitmap tree {
             get {
                 object obj = ResourceManager.GetObject("tree", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unlockIcon {
+            get {
+                object obj = ResourceManager.GetObject("unlockIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

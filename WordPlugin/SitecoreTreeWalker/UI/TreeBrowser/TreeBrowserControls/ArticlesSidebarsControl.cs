@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
-using Informa.Web.Areas.Account.Models;
+using InformaSitecoreWord.Sitecore;
+using PluginModels;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Util;
+using InformaSitecoreWord.Util;
 using Word = Microsoft.Office.Interop.Word;
 using Office = Microsoft.Office.Core;
 
-namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
+namespace InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls
 {
 	public partial class ArticlesSidebarsControl : UserControl
 	{
@@ -16,7 +17,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			InitializeComponent();
 		}
 
-		private void InsertRelatedArticle(WordPluginModel.ArticlePreviewInfo article)
+		private void InsertRelatedArticle(ArticlePreviewInfo article)
 		{
 			if(string.IsNullOrEmpty(uxRelatedArticleNumber.Text))
 			{
@@ -57,7 +58,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			if (uxInsertIntoArticle.Visible)
 			{
-				InsertRelatedArticle(uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo);
+				InsertRelatedArticle(uxArticlePreviewTable.Tag as ArticlePreviewInfo);
 				SetToRetriveArticleMode();
 				uxRelatedArticleNumber.Clear();
 			}
@@ -72,7 +73,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			if(uxInsertIntoArticle.Visible)
 			{
-				InsertSidebarArticle(uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo);
+				InsertSidebarArticle(uxArticlePreviewTable.Tag as ArticlePreviewInfo);
 				SetToRetriveArticleMode();
 				uxSidebarArticleNumber.Clear();
 			}
@@ -83,7 +84,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 			}
 		}
 
-		private void InsertSidebarArticle(WordPluginModel.ArticlePreviewInfo article)
+		private void InsertSidebarArticle(ArticlePreviewInfo article)
 		{
 			if (string.IsNullOrEmpty(uxSidebarArticleNumber.Text))
 			{
@@ -120,9 +121,9 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 				MessageBox.Show(@"Please enter an article number!", @"Informa");
 				return;
 			}
-			WordPluginModel.ArticlePreviewInfo info = SitecoreArticle.DoesArticleExist(articleNumber)
-										? SitecoreArticle.GetArticlePreviewInfo(articleNumber)
-										: new WordPluginModel.ArticlePreviewInfo();
+			ArticlePreviewInfo info = SitecoreClient.DoesArticleExist(articleNumber)
+										? SitecoreClient.GetArticlePreviewInfo(articleNumber)
+										: new ArticlePreviewInfo();
 			uxArticlePreviewTable.UpdatePreview(info);
 			uxArticlePreviewTable.Tag = info;
 		}
@@ -138,7 +139,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 		private void TryToSetToInsertArticleMode()
 		{
-			var info = uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo;
+			var info = uxArticlePreviewTable.Tag as ArticlePreviewInfo;
 			if(info != null && !string.IsNullOrEmpty(info.ArticleNumber))
 			{
 				uxRetrieveArticle.Visible = false;
@@ -171,13 +172,13 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 		{
 			if (!string.IsNullOrEmpty(uxSidebarArticleNumber.Text))
 			{
-				InsertSidebarArticle(uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo);
+				InsertSidebarArticle(uxArticlePreviewTable.Tag as ArticlePreviewInfo);
 				uxSidebarArticleNumber.Clear();
 			}
 
 			if (!string.IsNullOrEmpty(uxRelatedArticleNumber.Text))
 			{
-				InsertRelatedArticle(uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo);
+				InsertRelatedArticle(uxArticlePreviewTable.Tag as ArticlePreviewInfo);
 				uxRelatedArticleNumber.Clear();
 			}
 			SetToRetriveArticleMode();
@@ -185,7 +186,7 @@ namespace SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls
 
 		private void uxPreviewArticle_Click(object sender, EventArgs e)
 		{
-			var article = uxArticlePreviewTable.Tag as WordPluginModel.ArticlePreviewInfo;
+			var article = uxArticlePreviewTable.Tag as ArticlePreviewInfo;
 			if (article != null)
 			{
 				//Process.Start(PreviewLinkUpdater.GetPreviewURL(article.PreviewUrl).ToString());

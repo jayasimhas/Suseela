@@ -24,6 +24,54 @@
       a {
         display: inline-block;
         color: $informa-black;
+
+        // RH: for some reason, removing text-decoration to fix the underline
+        // appearing in the space between the link title and the svg icon
+        // breaks the icon altogether (makes it not appear)
+
+        // &:hover {
+        //   text-decoration: initial;
+        // }
+
+        // &:hover h6 {
+        //   text-decoration: underline;
+        // }
+      }
+
+      h6 {
+        display: inline;
+        vertical-align: middle;
+        // padding-right: 5px;
+
+        @include breakpoint('medium') {
+            display: none;
+        }
+      }
+
+      .icon {
+        @include svg-fill($informa-mid-gray);
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        vertical-align: middle;
+      }
+
+      h6 {
+        display: inline;
+        vertical-align: middle;
+        padding-right: 5px;
+
+        @include breakpoint('medium') {
+            display: none;
+        }
+      }
+
+      .icon {
+        @include svg-fill($informa-mid-gray);
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        vertical-align: middle;
       }
 
       h6 {
@@ -47,12 +95,25 @@
 
     &-title {
       color: $informa-black;
+      font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+      font-size: 47px;
+      font-weight: 700;
+
+
+      @include breakpoint('medium') {
+        margin-top: 30px;
+        font-size: 36px;
+      }
     }
   }
 
 // Includes filters, search bar, and search results
   &__content {
     display: flex;
+
+    @include breakpoint('medium') {
+      display: block;
+    }
   }
 
   // 2 sections are nested inside search__content:

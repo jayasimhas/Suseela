@@ -1,59 +1,63 @@
 .search-results {
-  // headlines-only view
-  &.headlines-only {
-    .result__publication,
-    .result__author,
-    .result__description,
-    .result__tags {
-      display: none;
-    }
-  }
+    // headlines-only view
+    &.headlines-only {
+        .result__publication,
+        .result__author,
+        .result__description,
+        .result__tags {
+            display: none;
+        }
 
-  @include breakpoint('medium') {
-    order: 4;
-  }
+        .result__heading {
+            width: 100%;
+        }
+    }
+
+    @include breakpoint('medium') {
+        order: 4;
+    }
 }
 
 .result {
-  display: block;
-  padding: 22px 0;
-  border-top: 2px solid $informa-light-gray-d;
-
-  &__publication {
-    @include textMix('Roboto', 12px, 500);
-    letter-spacing: 2px;
-    color: $color-medium-gray-8;
-    text-transform: uppercase;
-    padding-top: 30px;
-  }
-
-  &__heading {
-    @include textMix('Roboto Condensed', 26px, 700);
+    border-top: 2px solid $informa-light-gray-d;
     display: block;
-    color: $informa-black;
-    padding-top: 15px;
-  }
+    padding: 22px 0;
 
-  &__author {
-    @include textMix('Roboto', 15px, 700);
-    line-height: 25px;
-    color: $informa-dark-gray;
-    padding-top: 25px;
-  }
+    &__publication {
+        @include textMix('Roboto', 12px, 500);
+        color: $color-medium-gray-8;
+        letter-spacing: 2px;
+        padding-top: 30px;
+        text-transform: uppercase;
+    }
 
-  &__pubdate {
-    @include textMix('Roboto', 14px, 400);
-    display: inline;
-    line-height: 22px;
-    color: $informa-dark-gray;
-  }
+    &__heading {
+        @include textMix('Roboto Condensed', 26px, 700);
+        display: inline-block;
+        color: $informa-black;
+        padding-top: 15px;
+    }
 
-  &__content-type {
-    @include textMix('Roboto Condensed', 15px, 700);
-    display: inline;
-    color: $informa-black;
-    text-transform: uppercase;
-  }
+    &__author {
+        @include textMix('Roboto', 15px, 700);
+        line-height: 25px;
+        color: $informa-dark-gray;
+        padding-top: 15px;
+    }
+
+    &__pubdate {
+        @include textMix('Roboto', 14px, 400);
+        display: inline;
+        line-height: 22px;
+        color: $informa-dark-gray;
+    }
+
+    &__content-type {
+        @include textMix('Roboto Condensed', 15px, 700);
+        display: inline;
+        color: $informa-black;
+        text-transform: uppercase;
+    }
 
   &__media-type {
     display: inline-block;
@@ -77,14 +81,36 @@
 
   &__bookmark {
     @extend .article-preview__bookmarker;
-    z-index: -1; // overrides .pop-out__trigger z-index:993
+    //z-index: -1; // overrides .pop-out__trigger z-index:993
+
+    .icon__bookmark {
+      @extend .article-prologue__share-icon;
+    }
+
+    &--not-bookmarked {
+      .icon__bookmark--outlined {
+        display: inline-block;
+      }
+      .icon__bookmark--filled {
+        display: none;
+      }
+    }
+
+    &--bookmarked {
+      .icon__bookmark--outlined {
+        display: none;
+      }
+      .icon__bookmark--filled {
+        display: inline-block;
+      }
+    }
   }
 
   &__description {
     @include textMix('PTSerif', 15px, 400);
     line-height: 25px;
     color: $informa-dark-gray;
-    padding-top: 20px;
+    padding-top: 10px;
   }
 
   &__tags {

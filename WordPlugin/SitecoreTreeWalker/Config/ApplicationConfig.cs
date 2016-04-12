@@ -2,7 +2,7 @@ using System;
 using System.Configuration;
 using Microsoft.Win32;
 
-namespace SitecoreTreeWalker.Config
+namespace InformaSitecoreWord.Config
 {
 	public static class ApplicationConfig
 	{
@@ -14,24 +14,7 @@ namespace SitecoreTreeWalker.Config
 		public static string GetPropertyValue(string propName)
 		{
 			if (Config == null)
-			{
-				/*try
-				{
-					Globals.SitecoreAddin.Log("ApplicationConfig.GetPropertyValue: Getting configuration object from registry...");
-					Config = GetConfigFromRegistry();
-					Globals.SitecoreAddin.Log("ApplicationConfig.GetPropertyValue: Config file path = [" + Config.FilePath + "].");
-					ConfigPath = Config.FilePath;
-				}
-				catch (ConfigurationErrorsException cex)
-				{
-					Globals.SitecoreAddin.LogException
-						("ApplicationConfig.GetPropertyValue: Cannot load configuration from registry!", cex);
-				}
-				catch (NullReferenceException nex)
-				{
-					Globals.SitecoreAddin.LogException
-						("ApplicationConfig.GetPropertyValue: Cannot load configuration from registry!", nex);
-				}*/
+			{   
 				if (Config == null || Config.AppSettings.Settings[propName] == null)
 				{
 					try
@@ -73,43 +56,5 @@ namespace SitecoreTreeWalker.Config
 		{
 			return ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming);
 		}
-
-		/*private static Configuration GetConfigFromRegistry()
-		{
-			string exePath;
-
-			try
-			{
-				RegistryKey currentKey = Registry.CurrentUser.OpenSubKey("Software");
-				currentKey = currentKey.OpenSubKey("Microsoft");
-				currentKey = currentKey.OpenSubKey("Office");
-				currentKey = currentKey.OpenSubKey("Word");
-				currentKey = currentKey.OpenSubKey("AddIns");
-				currentKey = currentKey.OpenSubKey("Elsevier.WordPlugin");
-				exePath = (string)currentKey.GetValue("Manifest");
-				exePath = exePath.Replace("file:///", "");
-				exePath = exePath.Replace("/", @"\");
-				exePath = exePath.Replace(".vsto|vstolocal", ".dll");
-				Globals.SitecoreAddin.Log("ApplicationConfig.GetPropertyValue: ");
-				RegistryHive = "CurrentUser";
-			}
-			catch (NullReferenceException nex)
-			{
-				RegistryKey currentKey = Registry.LocalMachine.OpenSubKey("Software");
-				currentKey = currentKey.OpenSubKey("Microsoft");
-				currentKey = currentKey.OpenSubKey("Office");
-				currentKey = currentKey.OpenSubKey("Word");
-				currentKey = currentKey.OpenSubKey("AddIns");
-				currentKey = currentKey.OpenSubKey("Elsevier.WordPlugin");
-				exePath = (string)currentKey.GetValue("Manifest");
-				exePath = exePath.Replace("file:///", "");
-				exePath = exePath.Replace("/", @"\");
-				exePath = exePath.Replace(".vsto|vstolocal", ".dll");
-				Globals.SitecoreAddin.Log("ApplicationConfig.GetPropertyValue: ");
-				RegistryHive = "LocalMachine";
-			}
-
-			return ConfigurationManager.OpenExeConfiguration(exePath);
-		}*/
 	}
 }

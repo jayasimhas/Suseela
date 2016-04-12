@@ -54,15 +54,6 @@ $main-menu-smartphone-width: 62px;
 
 .header {
 
-	// This is just a placeholder. Will pull in actual banner from another
-	// existing project.
-	&__informa-permabanner {
-		background-color: #505050;
-		color: #fff;
-		line-height: 36px;
-		text-align: center;
-	}
-
 	// -------------------------------------------------------------------------
 	// Wraps main header content, below Informa banner and ad banner
 	// -------------------------------------------------------------------------
@@ -100,13 +91,14 @@ $main-menu-smartphone-width: 62px;
 			margin-right: 2rem;
 
 			@include breakpoint('medium') {
-				margin-left: calc(#{$main-menu-tablet-width} + 1.5rem);
+				margin-left: 1rem;
 				padding-top: 1.5rem;
 				padding-bottom: 1.5rem;
 			}
 
 			@include breakpoint('small') {
-				margin-left: 5rem;
+				display: inline;
+                margin-left: 1rem;
 				padding-top: 1rem;
 			}
 		}
@@ -115,6 +107,8 @@ $main-menu-smartphone-width: 62px;
 			align-self: auto;
 			height: calc(100% - 1.25rem);
 			flex: 1 0 auto;
+			margin-right: 100px; // Prevents overlapping search icon
+            z-index: 20; // Position above search form, even when search is hidden
 		}
 	}
 
@@ -133,6 +127,8 @@ $main-menu-smartphone-width: 62px;
 			height: 20px;
 			width: 20px;
 			margin-left: 0.5rem;
+			cursor: pointer;
+			z-index: 9999;
 		}
 		&--dismiss-search { // Hide on larger screens, no need to dismiss
 			display: none;
@@ -176,6 +172,8 @@ $main-menu-smartphone-width: 62px;
 				position: relative;
 
 				&.is-active {
+                    z-index: 25;
+
 					.header-search__field,
 					.header__icons--dismiss-search {
 						display: inline-block;
@@ -199,6 +197,7 @@ $main-menu-smartphone-width: 62px;
 
 
 		&__field {
+			@extend .inf-standard-form-field;
 			max-width: 310px;
 			width: calc(100% - 60px);
 

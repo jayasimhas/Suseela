@@ -17,12 +17,19 @@ content-length: 77
 
 {1930BBEB-7805-471A-A3BE-4858AC7CF696}|{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
 ----field----
+field: {F7D48A55-2158-4F02-9356-756654404F73}
+name: __Standard values
+key: __standard values
+content-length: 38
+
+{B2509862-B2CF-46BF-9242-3631E8871100}
+----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
-content-length: 38
+content-length: 25
 
-Applications/32x32/folder_document.png
+apps/32x32/folder (1).png
 ----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
 name: __Masters
@@ -33,7 +40,7 @@ content-length: 77
 ----version----
 language: en
 version: 1
-revision: e7ecd7bc-9f85-4f55-8d3d-cc8dc3db7303
+revision: 4e8a2c0c-aacb-48cc-8952-43b77fe55616
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -55,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-e7ecd7bc-9f85-4f55-8d3d-cc8dc3db7303
+4e8a2c0c-aacb-48cc-8952-43b77fe55616
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160108T191445Z
+20160314T113708Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

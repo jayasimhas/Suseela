@@ -12,7 +12,7 @@ templatekey: Facet
 ----version----
 language: en
 version: 1
-revision: f8e8d51a-165e-46aa-a8cb-37b6b97ed731
+revision: 3db1dd39-829d-40dd-8daf-0861fb03d464
 
 ----field----
 field: {3162CD52-3D1C-41F1-88A1-E5D7C4E89215}
@@ -43,6 +43,20 @@ content-length: 13
 
 Therapy Areas
 ----field----
+field: {524CF7F5-8ED0-4CD5-9AAC-FF92E5BD6FBD}
+name: Is Multi Value
+key: is multi value
+content-length: 1
+
+1
+----field----
+field: {C009EFA3-5B61-4AF2-9180-538D9D4A6918}
+name: Sort By
+key: sort by
+content-length: 38
+
+{A875FAB4-9244-4221-B69A-3DB96DCB9330}
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -55,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-f8e8d51a-165e-46aa-a8cb-37b6b97ed731
+3db1dd39-829d-40dd-8daf-0861fb03d464
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160210T154632Z
+20160307T202241Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

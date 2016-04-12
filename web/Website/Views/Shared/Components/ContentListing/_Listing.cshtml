@@ -1,11 +1,23 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
 @model Informa.Web.ViewModels.ContentListing.ContentListingViewModel
-<ul>
-	@if (Model.DisplayImage)
+<div class="image-cutline-block">
+
+	@if (Model.GlassModel.Image != null || Sitecore.Context.PageMode.IsExperienceEditor)
 	{
-		<li>@Html.Glass().Editable(x => x.GlassModel.Image)</li>
+		<div class="image-cutline-block__image">
+			@if (Model.DisplayImage)
+				{
+				@Html.Glass().Editable(x => x.GlassModel.Image)
+				}
+		</div>
 	}
-	<li><h3>@Html.Glass().Editable(x => x.GlassModel.Title)</h3></li>
-	<li><div>@Html.Glass().Editable(x => x.GlassModel.Text)</div></li>
-	<li>@Html.Glass().Editable(x => x.GlassModel.Link)</li>
-</ul>
+	<div class="image-cutline-block__cutline">
+		<h3 class="image-cutline-block__cutline-header">@Html.Glass().Editable(x => x.GlassModel.Title)</h3>
+		<p class="image-cutline-block__cutline-text">
+			@Html.Glass().Editable(x => x.GlassModel.Text)
+		</p>
+		<div class="image-cutline-block__cutline-link">
+			@Html.Glass().Editable(x => x.GlassModel.Link)
+		</div>
+	</div>
+</div>

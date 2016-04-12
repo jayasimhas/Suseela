@@ -6,26 +6,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using HtmlAgilityPack;
-using Informa.Web.Areas.Account.Models;
+using InformaSitecoreWord.Config;
+using InformaSitecoreWord.Custom_Exceptions;
+using InformaSitecoreWord.Sitecore;
+using InformaSitecoreWord.Util.CharacterStyles;
+using InformaSitecoreWord.Util.Document;
+using InformaSitecoreWord.Util.Tables;
+using PluginModels;
 using Microsoft.Office.Interop.Word;
-using SitecoreTreeWalker.Config;
-using SitecoreTreeWalker.Custom_Exceptions;
-using SitecoreTreeWalker.Sitecore;
-using SitecoreTreeWalker.Util.CharacterStyles;
-using SitecoreTreeWalker.Util.Document;
-using SitecoreTreeWalker.Util.Tables;
 using Word = Microsoft.Office.Interop.Word;
 using COM = System.Runtime.InteropServices.ComTypes;
-using SitecoreTreeWalker.UI.TreeBrowser.TreeBrowserControls;
+using InformaSitecoreWord.UI.TreeBrowser.TreeBrowserControls;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 
-namespace SitecoreTreeWalker.Util
+namespace InformaSitecoreWord.Util
 {
     public class AlertDisabler : IDisposable
     {
         private readonly Word.Application _application;
-
-        public AlertDisabler(Word.Application application)
+		public AlertDisabler(Word.Application application)
         {
             _application = application;
             _application.DisplayAlerts = WdAlertLevel.wdAlertsNone;
@@ -42,23 +41,29 @@ namespace SitecoreTreeWalker.Util
 
         public const string BlockquoteName = "2.4 Quote Box";
         public const string DocxFormatName = "Word12";
+		public Dictionary<string, string> imageFloatDictionary = new Dictionary<string, string>
+		{
+			{ "left", "article-exhibit article-exhibit--pull-left"},
+			{ "right", "article-exhibit article-exhibit--pull-right"},
+			{ "none", "article-exhibit"},
+		};
 
-        //These properties are built so that the accessing of the sitecore webservices is deferred until after 
-        //the user has actually logged on. 
-        protected Dictionary<string, WordPluginModel.WordStyleStruct> _paragraphStyles;
+		//These properties are built so that the accessing of the sitecore webservices is deferred until after
+		//the user has actually logged on.
+		protected Dictionary<string, WordStyleStruct> _paragraphStyles;
 
-        protected Dictionary<string, WordPluginModel.WordStyleStruct> ParagraphStyles
+        protected Dictionary<string, WordStyleStruct> ParagraphStyles
         {
             get
             {
                 if (_paragraphStyles == null)
                 {
-                    _paragraphStyles = new Dictionary<string, WordPluginModel.WordStyleStruct>();
-                    List<WordPluginModel.WordStyleStruct> styles = SitecoreGetter.GetParagraphStyles().ToList();
-                    foreach (WordPluginModel.WordStyleStruct style in styles)
+                    _paragraphStyles = new Dictionary<string, WordStyleStruct>();
+                    List<WordStyleStruct> styles = SitecoreClient.GetParagraphStyles().ToList();
+                    foreach (WordStyleStruct style in styles)
                     {
                         if (
-                            !_paragraphStyles.Contains(new KeyValuePair<string, WordPluginModel.WordStyleStruct>(style.WordStyle, style)))
+                            !_paragraphStyles.Contains(new KeyValuePair<string, WordStyleStruct>(style.WordStyle, style)))
                         {
                             _paragraphStyles.Add(style.WordStyle, style);
                         }
@@ -384,7 +389,7 @@ namespace SitecoreTreeWalker.Util
 
         private static void saveCopyAs(Word.Document activeDocument, string fileName)
         {
-            var pp = (COM.IPersistFile) activeDocument;
+            var pp = (COM.IPersistFile)activeDocument;
             pp.Save(fileName, false);
             pp.SaveCompleted(fileName);
         }
@@ -426,12 +431,17 @@ namespace SitecoreTreeWalker.Util
             bool containsInvalidNodes = false;
 
             string iframeGroupId = String.Empty;
+            XElement iframeGroupElement = new XElement("div");
+            iframeGroupElement.SetAttributeValue("class", "iframe-component");
+
             bool previousWasBlockquote = false;
             var contiguousListElements = new List<Paragraph>();
             var contiguousBlockquoteElements = new List<Paragraph>();
             List<string> StylesToIgnore = ArticleDocumentMetadataParser.GetInstance().MetadataStyles;
             Paragraph lastParagraph = null;
-            var xData = new XElement("root");
+            //var xData = new XElement("root");
+            var xData = new XElement("div");
+            xData.SetAttributeValue("class", "root");
             Errors = new List<string>();
             int imageTagCount = 0;
             XElement divElement = null;
@@ -441,7 +451,7 @@ namespace SitecoreTreeWalker.Util
                 Paragraph paragraph = paragraphs[i];
                 int tIndex = tableBuilder == null ? -1 : tableBuilder.GetTableIndexFor(paragraph.Range);
 
-                Style style = (Style) paragraph.get_Style();
+                Style style = (Style)paragraph.get_Style();
 
 
                 if (tableBuilder != null && tIndex != -1 && tableBuilder.HasRetrieved(tIndex))
@@ -449,7 +459,7 @@ namespace SitecoreTreeWalker.Util
                     continue;
                 }
 
-                var currentStyle = (Style) paragraph.get_Style();
+                var currentStyle = (Style)paragraph.get_Style();
                 if (StylesToIgnore.Contains(currentStyle.NameLocal))
                 {
                     continue;
@@ -536,10 +546,14 @@ namespace SitecoreTreeWalker.Util
                 if (style.NameLocal == DocumentAndParagraphStyles.IFrameCodeStyle ||
                     style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
                 {
+                    var iframeElement = new XElement("div");
+
                     if (!previousWasIFrame)
                     {
                         iframeGroupId = Guid.NewGuid().ToString("N");
+
                         previousWasIFrame = true;
+                        iframeGroupElement.SetAttributeValue("class", "iframe-component");
                     }
                     string cssStyle = string.Empty;
 
@@ -547,11 +561,14 @@ namespace SitecoreTreeWalker.Util
                     {
                         desktopCodeFound = true;
                         cssStyle = String.Format("ewf-desktop-iframe_{0}", iframeGroupId);
-                    }
+                        iframeElement.SetAttributeValue("class", $"iframe-component__desktop {cssStyle}");
+						iframeElement.SetAttributeValue("data-mediaid", iframeGroupId);
+					}
 
                     if (style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
                     {
                         cssStyle = String.Format("ewf-mobile-iframe_{0}", iframeGroupId);
+                        iframeElement.SetAttributeValue("class", $"iframe-component__mobile {cssStyle}");
                     }
 
                     var insecureIFramesInParagraph = HTMLTools.CheckForInsecureIFrames(paragraph.Range.Text);
@@ -560,21 +577,29 @@ namespace SitecoreTreeWalker.Util
 
                     currentContainsInvalidNodes = HTMLTools.ContainsForExternalNodes(paragraph.Range.Text);
                     containsInvalidNodes = containsInvalidNodes || currentContainsInvalidNodes;
-                    XElement embedElement = IFrameEmbedBuilder.Parse(paragraph, cssStyle);
+                    XElement embedElement = IFrameEmbedBuilder.Parse(paragraph, cssStyle, true);
                     if (embedElement != null)
                     {
-                        xData.Add(embedElement);
+                        iframeElement.SetAttributeValue("data-embed-link", "enabled");
+                        iframeElement.Add(embedElement);
+                        iframeGroupElement.Add(iframeElement);
                     }
-                    previousIFrameStyle = style.NameLocal;
+	                if (style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
+	                {
+		                xData.Add(iframeGroupElement);
+						iframeGroupElement = new XElement("div");
+						iframeGroupElement.SetAttributeValue("class", "iframe-component");
+					}
+
+	                previousIFrameStyle = style.NameLocal;
                     continue;
                 }
 
                 if (IFrameEmbedBuilder.IFrameStyles.Contains(style.NameLocal))
                 {
-
-					WordPluginModel.WordStyleStruct w = new WordPluginModel.WordStyleStruct();
+                    WordStyleStruct w = new WordStyleStruct();
                     //base styles are used becuase the parent level styles only exist in the plugin
-                    var baseStyle = (Style) style.get_BaseStyle();
+                    var baseStyle = (Style)style.get_BaseStyle();
                     if (baseStyle != null)
                     {
                         ParagraphStyles.TryGetValue(baseStyle.NameLocal, out w);
@@ -653,11 +678,20 @@ namespace SitecoreTreeWalker.Util
                     if (imageTagCount == 0)
                     {
                         divElement = new XElement("section");
-                        divElement.SetAttributeValue("class", "article-image");
+                        divElement.SetAttributeValue("class", "article-exhibit");
                         xData.Add(divElement);
                     }
 
-                    var imageTag = ImageReferenceBuilder.Parse(paragraph);
+                    //Get the float Value from the image hyperlink (if it is an image) and set it to the article-image element
+                    var hyprlnk = paragraph.Range.Hyperlinks.Cast<Hyperlink>().FirstOrDefault();
+	                if (hyprlnk != null && string.IsNullOrEmpty(hyprlnk.ScreenTip) == false)
+	                {
+						string classValue;
+						classValue = imageFloatDictionary.TryGetValue(hyprlnk.ScreenTip.ToLower(), out classValue) ? classValue : string.Empty;
+						divElement.SetAttributeValue("class", classValue);
+	                }
+
+	                var imageTag = ImageReferenceBuilder.Parse(paragraph);
                     divElement.Add(imageTag);
                     imageTagCount++;
                     continue;
@@ -665,7 +699,7 @@ namespace SitecoreTreeWalker.Util
 
                 imageTagCount = 0;
 
-				WordPluginModel.WordStyleStruct styleStruct;
+				WordStyleStruct styleStruct;
                 if (ParagraphStyles.TryGetValue(currentStyle.NameLocal, out styleStruct))
                 {
                     //if there is a special configuration for the paragraph style, have it configured properly
@@ -726,7 +760,7 @@ namespace SitecoreTreeWalker.Util
             {
                 xData.Add(GetListStyleElement(contiguousListElements));
             }
-            if (lastParagraph != null && ((Style) lastParagraph.get_Style()).NameLocal == BlockquoteName)
+            if (lastParagraph != null && ((Style)lastParagraph.get_Style()).NameLocal == BlockquoteName)
             {
                 xData.Add(BlockquoteTransformer.Generate(contiguousBlockquoteElements, CharacterStyleTransformer));
             }
@@ -752,8 +786,9 @@ namespace SitecoreTreeWalker.Util
                 listType = "ol";
             }
             var currentListElement = new XElement(listType);
+            currentListElement.SetAttributeValue("class", "carrot-list");
             XElement rootListElement = currentListElement;
-			WordPluginModel.WordStyleStruct wstyle;
+			WordStyleStruct wstyle;
             Style style = listItems[0].get_Style();
             if (style != null && ParagraphStyles.TryGetValue(style.NameLocal, out wstyle))
             {

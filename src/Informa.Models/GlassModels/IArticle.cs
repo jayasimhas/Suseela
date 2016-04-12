@@ -20,35 +20,27 @@ using Sitecore.Globalization;
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
-	public partial interface IArticle : IPublicationChild
+	public partial interface IArticle : IPublicationChild, IEntitledProductItem
 	{
-		//TODO
 		bool IsPublished { get; set; }
-
-		/*[SitecoreField(I___BaseTaxonomyConstants.TaxonomiesFieldName)]
-		IEnumerable<Guid> TaxonomyIDs { get; set; } */
+		bool IsFree { get; }
 	}
 
 	public class ArticleMap : SitecoreGlassMap<IPublicationChild>
 	{
 		public override void Configure()
 		{
-			// Map(x => x.AutoMap(),x => x.Delegate(y => y.Publication).GetValue(z => new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}")));
-
-			//Map(x => x.Delegate(y => y.Publication).GetValue(z => z.Item.Paths.LongID.Split('/')
-			//	.Select(tag => z.Service.GetItem<IGlassBase>(tag, true, true)).OfType<ISite_Root>().FirstOrDefault()?._Id));		
 		}
 	}
-    
+
 	public class ArticleItem : GlassBase, IArticle__Raw
 	{
-	    public Guid Publication => new Guid("{3818C47E-4B75-4305-8F01-AB994150A1B0}");
 		public Guid _Id { get; set; }
 		public Language _Language { get; set; }
 		public int _Version { get; set; }
 		public string _Url { get; set; }
-	    public Guid _TemplateId { get; set; } = IArticleConstants.TemplateId.Guid;
-			//= new Guid(IArticleConstants.TemplateIdString);
+		public Guid _TemplateId { get; set; } = IArticleConstants.TemplateId.Guid;
+		//= new Guid(IArticleConstants.TemplateIdString);
 		public string _Path { get; set; }
 		public string _Name { get; set; }
 		public IEnumerable<IGlassBase> _ChildrenWithInferType { get; set; }
@@ -107,21 +99,30 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public string Featured_Image_Caption { get; set; }
 		public string Featured_Image_Source { get; set; }
 		public string Summary { get; set; }
-		public IEnumerable<IAuthor> Authors { get; set; }
+		public IEnumerable<IStaff_Item> Authors { get; set; }
 		public string Section_Review { get; set; }
 		public string Start_Page { get; set; }
 		public string Word_Count { get; set; }
-		public IEnumerable<IGlassBase> Referenced_Articles { get; set; }
+		public IEnumerable<IArticle> Referenced_Articles { get; set; }
 		public string Referenced_Companies { get; set; }
 		public string Referenced_Deals { get; set; }
 		public IEnumerable<IArticle> Related_Articles { get; set; }
 		public IEnumerable<IGlassBase> Supporting_Documents { get; set; }
 		public bool Scheduled_Publishing_Enabled { get; set; }
-        public bool Include_In_Search { get; set; }
+		public bool Include_In_Search { get; set; }
 		public Link Canonical_Link { get; set; }
-    }
+		public Guid Workflow { get; set; }
+		public Guid State { get; set; }
 
-    public interface IPublicationChild
+		public string Notification_Text { get; set; }
+		public string Leaderboard_Slot_ID { get; set; }
+        public string Article_Medium_Slot_ID { get; set; }
+        public string Article_Filmstrip_Slot_ID { get; set; }
+        [SitecoreField("__updated")]
+		public virtual DateTime Updated { get; set; }
+	}
+
+	public interface IPublicationChild
 	{
 		Guid Publication { get; }
 	}
