@@ -18,9 +18,9 @@ namespace Informa.Models.DCD
             context.Deals.DeleteOnSubmit(this);
         }
 
-        public DateTime Published { get; set; }
+        //public DateTime Published { get; set; }
 
-        public string Content { get; set; }
+        //public string Content { get; set; }
         //public List<string> GetCompanyRecordIDs()
         //{
         //    return DealContent.DealCompanies.Select(i => i.Company.id).ToList();
@@ -42,9 +42,9 @@ namespace Informa.Models.DCD
             context.Companies.DeleteOnSubmit(this);
         }
 
-        public DateTime Published { get; set; }
+        //public DateTime Published { get; set; }
 
-        public string Content { get; set; }
+        //public string Content { get; set; }
     }
 
     public partial class Drug : IDCD
@@ -59,9 +59,9 @@ namespace Informa.Models.DCD
             context.Drugs.DeleteOnSubmit(this);
         }
 
-        public DateTime Published { get; set; }
+        //public DateTime Published { get; set; }
 
-        public string Content { get; set; }
+        //public string Content { get; set; }
     }
 
     public partial class DealRecordImportLog : IDCDRecordImportLog

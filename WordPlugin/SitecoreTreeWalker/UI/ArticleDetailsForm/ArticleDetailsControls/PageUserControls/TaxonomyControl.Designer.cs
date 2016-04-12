@@ -76,7 +76,7 @@
 			this.messageLbl.Name = "messageLbl";
 			this.messageLbl.Size = new System.Drawing.Size(273, 13);
 			this.messageLbl.TabIndex = 1;
-			this.messageLbl.Text = "The top \"3\" items will display under tags on screens ";
+			this.messageLbl.Text = "The top \"3\" items will appear in the TAGS section at the top of the article";
 			// 
 			// uxArrowUp
 			// 

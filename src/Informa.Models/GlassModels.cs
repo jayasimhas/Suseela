@@ -264,13 +264,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 
  	/// <summary>
-	/// IRegistration_Page Interface
+	/// IRegistration_Details_Page Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Pages/Registration Page</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Registration Details Page</para>	
 	/// <para>ID: 0520d52b-52a8-4052-a07f-9f35f8ca274c</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=IRegistration_PageConstants.TemplateIdString)]
-	public partial interface IRegistration_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	[SitecoreType(TemplateId=IRegistration_Details_PageConstants.TemplateIdString)]
+	public partial interface IRegistration_Details_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IRegistration_Page
 	{
 								/// <summary>
 					/// The Newsletter Sign Up Text field.
@@ -279,7 +279,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 761d17cf-74db-4658-ad8b-3c3b119d5851</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IRegistration_PageConstants.Newsletter_Sign_Up_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IRegistration_Details_PageConstants.Newsletter_Sign_Up_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Newsletter_Sign_Up_Text  {get; set;}
 								/// <summary>
 					/// The Next Step Page field.
@@ -288,7 +288,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: 1ef03c3c-b490-43d8-88ff-ba0669a63adb</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IRegistration_PageConstants.Next_Step_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IRegistration_Details_PageConstants.Next_Step_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Next_Step_Page  {get; set;}
 								/// <summary>
 					/// The User Agreement Text field.
@@ -297,19 +297,19 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para>Field ID: cd6cd5e9-9d91-4d09-b981-e9e3c8d9b391</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IRegistration_PageConstants.User_Agreement_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IRegistration_Details_PageConstants.User_Agreement_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string User_Agreement_Text  {get; set;}
 				}
 
 	
 		/// <summary>
-		/// IRegistration_Page Interface
+		/// IRegistration_Details_Page Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Pages/Registration Page</para>	
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Registration Details Page</para>	
 		/// <para>ID: 0520d52b-52a8-4052-a07f-9f35f8ca274c</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IRegistration_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		public partial interface IRegistration_Details_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IRegistration_Page__Raw
 		{
 										/// <summary>
 						/// The Newsletter Sign Up Text field.
@@ -318,7 +318,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// <para>Field ID: 761d17cf-74db-4658-ad8b-3c3b119d5851</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IRegistration_PageConstants.Newsletter_Sign_Up_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						[SitecoreField(IRegistration_Details_PageConstants.Newsletter_Sign_Up_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Newsletter_Sign_Up_Text  {get; set;}
 										/// <summary>
 						/// The Next Step Page field.
@@ -327,7 +327,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// <para>Field ID: 1ef03c3c-b490-43d8-88ff-ba0669a63adb</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IRegistration_PageConstants.Next_Step_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						[SitecoreField(IRegistration_Details_PageConstants.Next_Step_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Next_Step_Page  {get; set;}
 										/// <summary>
 						/// The User Agreement Text field.
@@ -336,15 +336,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// <para>Field ID: cd6cd5e9-9d91-4d09-b981-e9e3c8d9b391</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IRegistration_PageConstants.User_Agreement_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						[SitecoreField(IRegistration_Details_PageConstants.User_Agreement_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 						string User_Agreement_Text  {get; set;}
 						}
 	
-	public static partial class IRegistration_PageConstants{
+	public static partial class IRegistration_Details_PageConstants{
 
 			public const string TemplateIdString = "0520d52b-52a8-4052-a07f-9f35f8ca274c";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Registration Page";
+			public const string TemplateName = "Registration Details Page";
 
 					
 			public static readonly ID Newsletter_Sign_Up_TextFieldId = new ID("761d17cf-74db-4658-ad8b-3c3b119d5851");
@@ -11294,7 +11294,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 9ab762e2-ca3b-476a-9ba3-1bf98b268c80</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IRegistration_Thank_You_PageConstants.TemplateIdString)]
-	public partial interface IRegistration_Thank_You_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	public partial interface IRegistration_Thank_You_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IRegistration_Page
 	{
 								/// <summary>
 					/// The Company Sub Title field.
@@ -11315,7 +11315,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 9ab762e2-ca3b-476a-9ba3-1bf98b268c80</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IRegistration_Thank_You_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		public partial interface IRegistration_Thank_You_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IRegistration_Page__Raw
 		{
 										/// <summary>
 						/// The Company Sub Title field.
@@ -12839,6 +12839,106 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 							public static readonly ID Update_Email_Help_Text__RawFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
 				public const string Update_Email_Help_Text__RawFieldName = "Update Email Help Text";
 						
+					
+			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+						
+					
+			public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+			public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+						
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+
+						
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+						
+					
+			public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+			public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+						
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+
+						
+					
+			public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+			public const string BodyFieldName = "Body";
+
+							public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+				public const string Body__RawFieldName = "Body";
+						
+					
+			public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+			public const string Sub_TitleFieldName = "Sub Title";
+
+						
+					
+			public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+			public const string Include_In_SearchFieldName = "Include In Search";
+
+						
+					
+			public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+			public const string TaxonomiesFieldName = "Taxonomy";
+
+						
+					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
+{
+
+
+ 	/// <summary>
+	/// IRegistration_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Registration Page</para>	
+	/// <para>ID: ad812609-c21c-42f6-a1d4-283d7699bd8a</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRegistration_PageConstants.TemplateIdString)]
+	public partial interface IRegistration_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	{
+				}
+
+	
+		/// <summary>
+		/// IRegistration_Page Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Registration Page</para>	
+		/// <para>ID: ad812609-c21c-42f6-a1d4-283d7699bd8a</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRegistration_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		{
+						}
+	
+	public static partial class IRegistration_PageConstants{
+
+			public const string TemplateIdString = "ad812609-c21c-42f6-a1d4-283d7699bd8a";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Registration Page";
+
 					
 			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
 			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
