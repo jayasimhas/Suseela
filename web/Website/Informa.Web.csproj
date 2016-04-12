@@ -960,7 +960,6 @@
     <Content Include="App_Config\Icons.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.config" />
     <Content Include="App_Config\Include\Velir.Search.Web.config" />
-    <Content Include="App_Config\Include\zz.Sitecore.HtmlCache.config" />
     <Content Include="App_Config\LanguageDefinitions.config" />
     <Content Include="App_Config\MimeTypes.config" />
     <Content Include="App_Config\Portraits.config" />
