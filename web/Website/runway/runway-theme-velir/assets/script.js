@@ -1,8 +1,7 @@
-/* eslint-env browser */
 /* global examples, Prism */
 
-document.addEventListener('DOMContentLoaded', function () {
-	Array.prototype.forEach.call(document.querySelectorAll('pre code[class^="lang"]'), function (code) {
+$(document).ready(function () {
+	$('pre code[class^="lang"]').each(function(code, index, array) {
 		// set pre, wrap, opts, and get meta data from code
 		var pre  = code.parentNode;
 		var wrap = pre.parentNode.insertBefore(document.createElement('figure'), pre);
@@ -36,4 +35,5 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (!(conf.lang in Prism.languages)) wrap.removeChild(pre);
 		}
 	});
+
 });
