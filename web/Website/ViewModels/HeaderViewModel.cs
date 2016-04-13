@@ -10,7 +10,6 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templat
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global;
 using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore.Analytics;
 using System.Web;
 using System.Web.Mvc;
 using Informa.Library.User.Profile;
