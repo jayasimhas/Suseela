@@ -2,8 +2,8 @@
 version: 1
 id: {C00E39E4-3566-4307-93AE-8471769D6B36}
 database: master
-path: /sitecore/content/Environment Globals/Taxonomy/Media Type Icons
-parent: {E8A37C2D-FFE3-42D4-B38E-164584743832}
+path: /sitecore/content/Environment Globals/Publication Taxonomy/Media Type Icons
+parent: {1F6FD825-D343-4C37-8B28-8FBA56BD3C42}
 name: Media Type Icons
 master: {00000000-0000-0000-0000-000000000000}
 template: {0B37EFC7-8F16-4FC0-B886-404982B2396A}
@@ -26,7 +26,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 105a057e-503d-4fde-b7fd-3298ef166692
+revision: 666970d2-5fb1-481b-8a9b-3745300be829
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-105a057e-503d-4fde-b7fd-3298ef166692
+666970d2-5fb1-481b-8a9b-3745300be829
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160412T185811Z
+20160413T151515Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
