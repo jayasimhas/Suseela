@@ -1,4 +1,5 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Informa.Library.User.Authentication;
+using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Registration.Web
 {
@@ -7,13 +8,16 @@ namespace Informa.Library.User.Registration.Web
 	{
 		protected readonly IWebRegisterUserContext RegisterUserContext;
 		protected readonly ISetOptInsRegisterUser SetOptInsRegisterUser;
+	    protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
 
 		public WebSetOptInsRegisterUser(
 			IWebRegisterUserContext registerUserContext,
-			ISetOptInsRegisterUser setOptInsRegisterUser)
+			ISetOptInsRegisterUser setOptInsRegisterUser,
+            IAuthenticatedUserContext authenticatedUserContext)
 		{
 			RegisterUserContext = registerUserContext;
 			SetOptInsRegisterUser = setOptInsRegisterUser;
+		    AuthenticatedUserContext = authenticatedUserContext;
 		}
 
 		public bool Set(bool offers, bool newsletters)
@@ -22,8 +26,10 @@ namespace Informa.Library.User.Registration.Web
 
 			if (newUser == null)
 			{
-				return false;
-			}
+                var username = AuthenticatedUserContext?.User?.Username;
+                if (!string.IsNullOrEmpty(username))
+                    return SetOptInsRegisterUser.Set(username, offers, newsletters);
+            }
 
 			var success = SetOptInsRegisterUser.Set(newUser, offers, newsletters);
 
