@@ -53,7 +53,6 @@
       <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Title" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="[Content]" Member="Content" Type="System.String" DbType="varchar(MAX)" CanBeNull="true" />
-      <Column Name="Published" Type="System.DateTime" DbType="DateTime" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.DrugRecordImportLog" Member="DrugRecordImportLogs">
@@ -76,7 +75,6 @@
       <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Title" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="[Content]" Member="Content" Type="System.String" DbType="varchar(MAX)" CanBeNull="true" />
-      <Column Name="Published" Type="System.DateTime" DbType="datetime" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.ImportLog" Member="ImportLogs">
