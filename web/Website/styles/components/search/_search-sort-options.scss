@@ -65,4 +65,36 @@
         height: 11px;
     }
 
+    &.is-sorted-up {
+      .icon-triangle--up {
+        @include svg-fill($informa-red);
+      }
+    }
+
+    &.is-sorted-down {
+      .icon-triangle--down {
+        @include svg-fill($informa-red);
+      }
+    }
+
+    &.is-sorted-up a,
+    &.is-sorted-up a:hover,
+    &.is-sorted-down a,
+    &.is-sorted-down a:hover {
+      text-decoration: none;
+    }
+
+  &__icon-group {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 5px;
+  }
+
+  .icon-triangle {
+    @include svg-fill($informa-light-gray-d);
+    display: block;
+    width: 12px;
+    height: 11px;
+  }
+
 }

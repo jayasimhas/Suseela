@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Informa.Library.Presentation
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService]
 	public class DuplicateRenderingsFactory : IDuplicateRenderingsFactory
 	{
 		protected readonly IDuplicateRenderingsFactoryConfiguration Configuration;

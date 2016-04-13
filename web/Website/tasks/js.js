@@ -16,7 +16,17 @@ utils.setTaskConfig("js", {
 
     default: {
 
-        src: config.root + "/js/index.js",
+        // Pass array instead of single file!
+        src: [
+            config.root + "/js/index.js",
+            config.root + "/js/search/search.js",
+
+            // Angular 1.x doesn't play well with CommonJS modules :(
+            config.root + "/js/search/angular-1.5.0.min.js",
+            config.root + "/js/search/angular-animate-1.5.0.min.js",
+            config.root + "/js/search/angular-sanitize-1.5.0.min.js"
+        ],
+
         dest: config.dest + "/js",
 
         // js uglify options, to skip, set value to false or omit entirely

@@ -33,7 +33,7 @@ namespace Informa.Library.Salesforce.User.Registration
 
 			var salesforceCompanies = new List<EBI_AccountData>();
 
-			if (company != null && company.Type == CompanyType.SiteLicenseIP)
+			if (company != null)
 			{
 				salesforceCompanies.Add(new EBI_AccountData
 				{

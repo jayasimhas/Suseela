@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {788B0B1C-89B6-46CF-9A15-B2911D77E6F0}
+database: master
+path: /sitecore/content/Environment Globals/Taxonomy/Regions/North America/Jamaica
+parent: {DA9AF47D-7CED-4AC4-AEC9-1B77FAFDE3C0}
+name: Jamaica
+master: {00000000-0000-0000-0000-000000000000}
+template: {6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+templatekey: Taxonomy Item
+
+----version----
+language: en
+version: 1
+revision: 2b82ef89-2757-457d-ba74-a63abb982d74
+
+----field----
+field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
+name: Item Name
+key: item name
+content-length: 8
+
+Jamaica
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160107T214019Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2b82ef89-2757-457d-ba74-a63abb982d74
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160411T204124Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

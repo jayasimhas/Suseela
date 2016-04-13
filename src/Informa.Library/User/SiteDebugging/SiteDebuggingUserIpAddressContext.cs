@@ -35,6 +35,7 @@ namespace Informa.Library.User.SiteDebugging
 
 		public void StartDebugging(IPAddress ipAddress)
 		{
+			SessionStores.Clear();
 			UserIpAddressContext.IpAddress = ipAddress;
 			SiteDebugger.StartDebugging(DebuggerKey);
 		}

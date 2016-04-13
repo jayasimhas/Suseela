@@ -94,6 +94,27 @@ Multiple banner styles.
 				order: 2;
 			}
 		}
+
+		.banner__wrapper {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+
+			.dismiss-button {
+				align-self: center;
+				flex: 0 0 auto;
+				order: 3;
+			}
+			.banner__lead-icon {
+				align-self: center;
+				flex: 0 0 auto;
+				order: 1;
+			}
+			span {
+				flex: 1 1 auto;
+				order: 2;
+			}
+		}
 	}
 
 	&--register {

@@ -36,6 +36,11 @@ namespace Informa.Library.User.Entitlement
 				return EntitledAccessLevel.TransparentIP;
 			}
 
+			if (accessLevels.Contains(EntitledAccessLevel.Site))
+			{
+				return EntitledAccessLevel.Site;
+			}
+
 			return EntitledAccessLevel.UnEntitled;
 		}
 	}

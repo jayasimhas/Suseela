@@ -1,6 +1,33 @@
+/*---
+title: Article Topics
+section: Article Components
+---
+
+```example:html
+<div class="article-topics">
+    <h2 class="article-topics__header">Topics</h2>
+    <ul>
+        <li class="article-topics__section-header">Therapy Areas</li>
+        <li class="article-topics__li"><a href="#">Infectious Diseases</a></li>
+        <li class="article-topics__li"><a href="#">Orthopedics</a></li>
+        <li class="article-topics__li"><a href="#">Respiratory</a></li>
+        <li class="article-topics__li"><a href="#">Immune Disorders</a></li>
+        <li class="article-topics__section-header">Regions</li>
+        <li class="article-topics__li"><a href="#">Belgium</a></li>
+    </ul>
+</div>
+```
+*/
+
 .article-topics {
     @include textMix('Roboto', 15px, 400);
     margin-bottom: 3.5rem;
+
+    &__header {
+        @extend h2;
+        color: $color-zeus-black;
+        margin-bottom: 1.5rem;
+    }
 
     &__li {
         padding: 6px 0 12px;
