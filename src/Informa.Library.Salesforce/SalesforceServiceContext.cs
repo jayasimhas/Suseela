@@ -87,7 +87,7 @@ namespace Informa.Library.Salesforce
 			}
 
             if(!result.IsSuccess())
-                ErrorLogger.Log($"Request Failed: {result.errors[0]}", null);
+                ErrorLogger.Log($"Request Failed: {result.errors?.FirstOrDefault()?.message}", null);
 
 			return result;
 		}
