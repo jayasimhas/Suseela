@@ -296,7 +296,11 @@
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
+    <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
+    <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\CompanyType.cs" />
+    <Compile Include="Company\IAllowCompanyRegisterUserContext.cs" />
+    <Compile Include="Company\IAllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\ICompany.cs" />
     <Compile Include="Company\IFindCompanyByIpAddress.cs" />
     <Compile Include="Company\IFindCompanyByUser.cs" />
@@ -775,12 +779,12 @@
     <Compile Include="User\Authentication\Web\WebLogoutUser.cs" />
     <Compile Include="User\Authentication\SitecoreVirtualUsernameFactory.cs" />
     <Compile Include="User\Authentication\Web\WebLogoutUserActions.cs" />
-    <Compile Include="User\Entitlement\UserIpAddressEntitlementsContext.cs" />
+    <Compile Include="Company\User\Entitlement\CompanyEntitlementsContext.cs" />
     <Compile Include="User\Entitlement\EntitledAccessLevel.cs" />
     <Compile Include="User\Entitlement\EntitledProductContext.cs" />
     <Compile Include="User\Entitlement\Entitlement.cs" />
     <Compile Include="User\Entitlement\EntitledContext.cs" />
-    <Compile Include="User\Entitlement\IUserIpAddressEntitlementsContext.cs" />
+    <Compile Include="Company\User\Entitlement\ICompanyEntitlementsContext.cs" />
     <Compile Include="User\Entitlement\IEntitledProductContext.cs" />
     <Compile Include="User\Entitlement\IEntitlementsContext.cs" />
     <Compile Include="User\Entitlement\IEntitlement.cs" />

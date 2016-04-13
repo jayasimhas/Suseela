@@ -21,7 +21,6 @@ using PluginModels;
 using Informa.Models.DCD;
 using Sitecore;
 using Sitecore.Mvc.Extensions;
-using Sitecore.Shell.Applications.WebEdit.Commands;
 using Constants = Informa.Library.Utilities.References.Constants;
 
 namespace Informa.Web.Controllers

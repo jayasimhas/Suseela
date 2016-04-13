@@ -18,7 +18,7 @@ namespace Informa.Models.DCD
             context.Deals.DeleteOnSubmit(this);
         }
 
-        //public DateTime Published { get; set; }
+        public DateTime Published { get; set; }
 
         //public string Content { get; set; }
         //public List<string> GetCompanyRecordIDs()
@@ -59,7 +59,7 @@ namespace Informa.Models.DCD
             context.Drugs.DeleteOnSubmit(this);
         }
 
-        //public DateTime Published { get; set; }
+        public DateTime Published { get; set; }
 
         //public string Content { get; set; }
     }

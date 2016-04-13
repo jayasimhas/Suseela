@@ -147,9 +147,9 @@ namespace Informa.Web.ViewModels
 			{
 				if (Article != null && Article.Actual_Publish_Date > DateTime.MinValue)
 				{
-					return Article.Actual_Publish_Date.ToString();
+					return Article.Actual_Publish_Date.ToString("MM/dd/yyyy");
 				}
-				return DateTime.MinValue.ToString();
+				return DateTime.MinValue.ToString("MM/dd/yyyy");
 			}
 		}
 		public string ArticleContentType => Article?.Content_Type?.Item_Name;
@@ -166,7 +166,7 @@ namespace Informa.Web.ViewModels
 					return currentItem.Statistics.Created.ToString("MM/dd/yyyy");
 				}
 
-				return DateTime.MinValue.ToString();
+				return DateTime.MinValue.ToString("MM/dd/yyyy");
 			}
 		}
 		public string ArticleAuthors => Article != null ? ArticleSearch.GetArticleAuthors(Article._Id) : string.Empty;
