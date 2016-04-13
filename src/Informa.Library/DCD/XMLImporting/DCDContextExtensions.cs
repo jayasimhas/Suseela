@@ -175,7 +175,7 @@ namespace Informa.Library.DCD.XMLImporting
             {
                 RecordLogType log = new RecordLogType();
                 log.RecordId = recordId;
-                log.ImportLog = importLog;
+                log.ImportLog = dc.ImportLogs.FirstOrDefault(w => w.Id == importLog.Id);
                 log.Result = result.ToString();
                 log.Operation = operation.ToString();
                 log.Notes = notes + (e != null ? $"[{e.ToString()}]" : string.Empty);
