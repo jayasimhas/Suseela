@@ -7645,6 +7645,7 @@
     <SitecoreItem Include="sitecore\system\Workflows\Scrip Workflow.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Workflows\Scrip Workflow\Authoring.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
