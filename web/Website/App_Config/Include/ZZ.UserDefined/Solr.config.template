@@ -32,23 +32,7 @@
 			<configuration>
 				<indexes hint="list:AddIndex">
 				<!-- Custom Indexes -->
-          #if ($Env.DeliveryOnly == "false")
-          <index id="informa_content_master_index" type="Informa.Library.Search.SearchIndex.CustomSolrSearchIndex, Informa.Library">
-            <param desc="name">$(id)</param>
-            <param desc="core">${Solr.CustomIndex.CoreName}_content_master</param>
-            <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
-            <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration" />
-            <strategies hint="list:AddStrategy">
-              <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/syncMaster" />
-            </strategies>
-            <locations hint="list:AddCrawler">
-              <crawler type="Sitecore.ContentSearch.SitecoreItemCrawler, Sitecore.ContentSearch">
-                <Database>master</Database>
-                <Root>/sitecore/Content</Root>
-              </crawler>
-            </locations>
-          </index>
-          #end
+     
           <index id="informa_content_web_index" type="Informa.Library.Search.SearchIndex.CustomSwitchOnRebuildSolrSearchIndex, Informa.Library">
             <param desc="name">$(id)</param>
             <param desc="core">${Solr.CustomIndex.CoreName}_content_web</param>
@@ -70,10 +54,8 @@
               </crawler>
             </locations>
           </index>
-        
-					<index id="sitecore_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+
 						<param desc="core">${Solr.Sitecore.CoreName}</param>
-          </index>
 					<index id="sitecore_web_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.Sitecore.CoreName}</param>
             #if ($Env.DeliveryOnly == "true")
@@ -90,6 +72,28 @@
             </strategies>
             #end
           </index>
+
+          #if ($Env.DeliveryOnly == "false")
+          <index id="informa_content_master_index" type="Informa.Library.Search.SearchIndex.CustomSolrSearchIndex, Informa.Library">
+            <param desc="name">$(id)</param>
+            <param desc="core">${Solr.CustomIndex.CoreName}_content_master</param>
+            <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
+            <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration" />
+            <strategies hint="list:AddStrategy">
+              <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/syncMaster" />
+            </strategies>
+            <locations hint="list:AddCrawler">
+              <crawler type="Sitecore.ContentSearch.SitecoreItemCrawler, Sitecore.ContentSearch">
+                <Database>master</Database>
+                <Root>/sitecore/Content</Root>
+              </crawler>
+            </locations>
+          </index>
+
+          <index id="sitecore_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+            <param desc="core">${Solr.CustomIndex.CoreName}</param>
+          </index>
+          
 					<index id="sitecore_analytics_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
 						<param desc="core">${Solr.CustomIndex.CoreName}</param>
 					</index>
@@ -146,6 +150,7 @@
             </strategies>
             #end
           </index>
+          #end
 				</indexes>
 			</configuration>
 		</contentSearch>

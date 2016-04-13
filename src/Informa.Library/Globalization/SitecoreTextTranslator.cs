@@ -1,5 +1,4 @@
 ﻿using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore.Globalization;
 
 namespace Informa.Library.Globalization
 {
@@ -7,8 +6,11 @@ namespace Informa.Library.Globalization
 	public class SitecoreTextTranslator : ITextTranslator
 	{
 		public string Translate(string key)
-		{   
-            return Sitecore.Globalization.Translate.TextByLanguage(key, Sitecore.Context.Language, null, new []{ "GenerateIfDictionaryKeyNotFound" });
+		{
+            //Removed auto-generator for dictionary keys
+            //return Sitecore.Globalization.Translate.TextByLanguage(key, Sitecore.Context.Language, null, new[] { "GenerateIfDictionaryKeyNotFound" });
+
+            return Sitecore.Globalization.Translate.Text(key) ?? string.Empty;
 		}
-	}                         
+	}
 }
