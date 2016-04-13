@@ -16,15 +16,15 @@ namespace Informa.Library.Search.ComputedFields.Facets
     {
         public override object GetFieldValue(Item indexItem)
         {
-            I___BaseTaxonomy taxonomItem = indexItem.GlassCast<I___BaseTaxonomy>(inferType: true);
+            I___BaseTaxonomy taxonomyItem = indexItem.GlassCast<I___BaseTaxonomy>(inferType: true);
 
-            if (taxonomItem?.Taxonomies != null)
+            if (taxonomyItem?.Taxonomies != null)
             {
                 var subjectTaxonomyItems =
-                    taxonomItem.Taxonomies.Where(
+                    taxonomyItem.Taxonomies.Where(
                         x => SearchTaxonomyUtil.IsSubjectTaxonomy(x._Path));
 
-                return subjectTaxonomyItems.Select(x => x.Item_Name.Trim()).ToList();
+                return SearchTaxonomyUtil.GetHierarchicalFacetFieldValue(subjectTaxonomyItems);
             }
             return new List<string>();
         }
