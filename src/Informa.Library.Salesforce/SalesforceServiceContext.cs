@@ -86,6 +86,9 @@ namespace Informa.Library.Salesforce
                 return Execute(functionExpression);
 			}
 
+            if(!result.IsSuccess())
+                ErrorLogger.Log($"Request Failed: {result.errors[0]}", null);
+
 			return result;
 		}
 
