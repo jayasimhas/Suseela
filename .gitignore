@@ -324,3 +324,4 @@ web/Website/App_Config/Include/Social/Sitecore.Social.Solr.IndexConfiguration.co
 web/Website/App_Config/Include/Social/Sitecore.Social.Twitter.config
 web/Website/App_Config/Include/Social/Sitecore.Social.config
 tools/vagrant/scripts/localdeploy.bat
+web/Website/App_Config/AppSettings.config
