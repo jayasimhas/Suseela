@@ -296,7 +296,11 @@
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
+    <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
+    <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\CompanyType.cs" />
+    <Compile Include="Company\IAllowCompanyRegisterUserContext.cs" />
+    <Compile Include="Company\IAllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\ICompany.cs" />
     <Compile Include="Company\IFindCompanyByIpAddress.cs" />
     <Compile Include="Company\IFindCompanyByUser.cs" />
