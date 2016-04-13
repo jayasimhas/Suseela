@@ -1,30 +1,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using Jabberwocky.Glass.Autofac.Attributes;
+using Informa.Library.User;
+using Informa.Library.User.Entitlement;
 
-namespace Informa.Library.User.Entitlement
+namespace Informa.Library.Company.User.Entitlement
 {
     [AutowireService(LifetimeScope.Default)]
-    public class UserIpAddressEntitlementsContext : IUserIpAddressEntitlementsContext
-    { 
-        protected readonly IUserIpAddressContext UserIpAddressContext;
+    public class CompanyEntitlementsContext : ICompanyEntitlementsContext
+    {
+		protected readonly IUserCompanyContext CompanyContext;
+		protected readonly IUserIpAddressContext UserIpAddressContext;
         protected readonly IUserSession UserSession;
         protected readonly IGetIPEntitlements GetIpEntitlements;
 		protected readonly IDefaultEntitlementsFactory DefaultEntitlementsFactory;
 
-		public UserIpAddressEntitlementsContext(
+		public CompanyEntitlementsContext(
+			IUserCompanyContext companyContext,
 			IUserIpAddressContext userIpAddressContext,
 			IUserSession userSession,
 			IGetIPEntitlements getIpEntitlements,
 			IDefaultEntitlementsFactory defaultEntitlementsFactory)
         {
+			CompanyContext = companyContext;
             UserIpAddressContext = userIpAddressContext;
             UserSession = userSession;
             GetIpEntitlements = getIpEntitlements;
 			DefaultEntitlementsFactory = defaultEntitlementsFactory;
 		}
 
-        private const string EntitlementSessionKeyPrefix = nameof(UserIpAddressEntitlementsContext);
+        private const string EntitlementSessionKeyPrefix = nameof(CompanyEntitlementsContext);
 
 		public string EntitlementSessionKey => $"{EntitlementSessionKeyPrefix}{UserIpAddressContext.IpAddress}";
 
@@ -41,12 +46,7 @@ namespace Informa.Library.User.Entitlement
                     
                 var entitlements = GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress);
 
-                if(!entitlements.Any())
-				{
-					entitlements = DefaultEntitlementsFactory.Create().ToList();
-				}
-
-                Entitlements = entitlements;
+                Entitlements = entitlements.Any() ? entitlements : DefaultEntitlementsFactory.Create();
 
                 return entitlements;
             }
@@ -60,7 +60,20 @@ namespace Informa.Library.User.Entitlement
 
 		public EntitledAccessLevel GetProductAccessLevel(string productCode)
 		{
-			return Entitlements.Any(e => e.ProductCode == productCode) ? EntitledAccessLevel.TransparentIP : EntitledAccessLevel.UnEntitled;
+			return Entitlements.Any(e => e.ProductCode == productCode) ? GetCompanyAccessLevel(CompanyContext.Company.Type) : EntitledAccessLevel.UnEntitled;
+		}
+
+		public EntitledAccessLevel GetCompanyAccessLevel(CompanyType companyType)
+		{
+			switch (companyType)
+			{
+				case CompanyType.SiteLicenseIP:
+					return EntitledAccessLevel.Site;
+				case CompanyType.TransparentIP:
+					return EntitledAccessLevel.TransparentIP;
+				default:
+					return EntitledAccessLevel.UnEntitled;
+			}
 		}
 	}
 }

@@ -7,11 +7,9 @@ namespace Informa.Web.ViewModels
 {
     public abstract class EntitledViewModel<T> : GlassViewModel<T> where T : class, IEntitledProductItem, IGlassBase
     {   
-        public readonly IEntitledProductEntitlementAccessLevelContext EntitledProductContext;
+        public readonly IEntitledProductContext EntitledProductContext;
 
-        public EntitledAccessLevel AccessLevel => EntitledProductContext.GetAccessLevel(GlassModel);
-
-        protected EntitledViewModel(IEntitledProductEntitlementAccessLevelContext entitledProductContext)
+        protected EntitledViewModel(IEntitledProductContext entitledProductContext)
         {
             EntitledProductContext = entitledProductContext;
         }
@@ -20,7 +18,7 @@ namespace Informa.Web.ViewModels
 
         public bool IsEntitled()
         {
-            return IsFree || AccessLevel != EntitledAccessLevel.UnEntitled;
+			return IsFree || EntitledProductContext.IsEntitled(GlassModel);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace Informa.Web.ViewModels
             IArticleSearch searcher,
             ISitecoreContext context,
             IArticleComponentFactory articleComponentFactory,
-            IEntitledProductEntitlementAccessLevelContext entitledProductContext,
+            IEntitledProductContext entitledProductContext,
             IAuthenticatedUserContext authenticatedUserContext,
 			IIsSavedDocumentContext isSavedDocuementContext,
 			ICallToActionViewModel callToActionViewModel)

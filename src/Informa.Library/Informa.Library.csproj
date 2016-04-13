@@ -779,13 +779,13 @@
     <Compile Include="User\Authentication\Web\WebLogoutUser.cs" />
     <Compile Include="User\Authentication\SitecoreVirtualUsernameFactory.cs" />
     <Compile Include="User\Authentication\Web\WebLogoutUserActions.cs" />
-    <Compile Include="User\Entitlement\UserIpAddressEntitlementsContext.cs" />
+    <Compile Include="Company\User\Entitlement\CompanyEntitlementsContext.cs" />
     <Compile Include="User\Entitlement\EntitledAccessLevel.cs" />
-    <Compile Include="User\Entitlement\EntitledProductEntitlementAccessLevelContext.cs" />
+    <Compile Include="User\Entitlement\EntitledProductContext.cs" />
     <Compile Include="User\Entitlement\Entitlement.cs" />
     <Compile Include="User\Entitlement\EntitledContext.cs" />
-    <Compile Include="User\Entitlement\IUserIpAddressEntitlementsContext.cs" />
-    <Compile Include="User\Entitlement\IEntitledProductEntitlementAccessLevelContext.cs" />
+    <Compile Include="Company\User\Entitlement\ICompanyEntitlementsContext.cs" />
+    <Compile Include="User\Entitlement\IEntitledProductContext.cs" />
     <Compile Include="User\Entitlement\IEntitlementsContext.cs" />
     <Compile Include="User\Entitlement\IEntitlement.cs" />
     <Compile Include="User\Entitlement\IEntitledContext.cs" />
