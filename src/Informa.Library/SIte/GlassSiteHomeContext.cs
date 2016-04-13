@@ -4,13 +4,12 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.Site
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class GlassSiteHomeContext : ISiteHomeContext
 	{
 		protected readonly ISitecoreContext SitecoreContext;
 
-		public GlassSiteHomeContext(
-			ISitecoreContext sitecoreContext)
+		public GlassSiteHomeContext(ISitecoreContext sitecoreContext)
 		{
 			SitecoreContext = sitecoreContext;
 		}

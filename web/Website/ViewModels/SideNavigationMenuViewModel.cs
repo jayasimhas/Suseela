@@ -6,7 +6,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class SideNavigationMenuViewModel : ISideNavigationMenuViewModel
 	{
 		protected readonly ISiteMainNavigationContext SiteMainNavigationContext;

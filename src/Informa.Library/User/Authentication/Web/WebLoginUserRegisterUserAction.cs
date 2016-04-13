@@ -3,7 +3,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Authentication.Web
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService]
 	public class WebLoginUserRegisterUserAction : IWebLoginUserRegisterUserAction
 	{
 		protected readonly IWebLoginUser LoginUser;

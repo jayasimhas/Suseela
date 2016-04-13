@@ -4,7 +4,7 @@ using System;
 
 namespace Informa.Library.Site
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class SiteMaintenanceContext : ISiteMaintenanceContext
 	{
 		protected readonly ISiteRootContext SiteRootContext;

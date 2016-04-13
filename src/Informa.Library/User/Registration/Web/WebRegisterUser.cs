@@ -2,7 +2,7 @@
 
 namespace Informa.Library.User.Registration.Web
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService]
 	public class WebRegisterUser : IWebRegisterUser
 	{
 		protected readonly IRegisterUser RegisterUser;

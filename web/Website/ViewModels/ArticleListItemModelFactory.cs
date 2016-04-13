@@ -14,7 +14,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class ArticleListItemModelFactory : IArticleListItemModelFactory
 	{
 		protected readonly ISiteRootContext SiteRootContext;

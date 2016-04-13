@@ -3,11 +3,10 @@ using Informa.Library.User.Profile;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Informa.Library.Subscription.User
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class UserSubscriptionsContext : IUserSubscriptionsContext
 	{
 		private const string subscriptionsSessionKey = nameof(UserSubscriptionsContext);

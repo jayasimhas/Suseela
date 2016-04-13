@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Informa.Library.User.ResetPassword.Web
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class WebUserResetPasswordEmailFactory : IWebUserResetPasswordEmailFactory
 	{
 		protected readonly ITextTranslator TextTranslator;

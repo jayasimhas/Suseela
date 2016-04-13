@@ -7,25 +7,25 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class ArticlePrologueBookmarkViewModel : IArticlePrologueBookmarkViewModel
 	{
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IRenderingItemContext ArticleRenderingContext;
-	    protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
 		protected readonly IIsSavedDocumentContext IsSavedDocuementContext;
 
 		public ArticlePrologueBookmarkViewModel(
 			ITextTranslator textTranslator,
 			IRenderingItemContext articleRenderingContext,
 			ISignInViewModel signInViewModel,
-            IAuthenticatedUserContext authenticatedUserContext,
+						IAuthenticatedUserContext authenticatedUserContext,
 			IIsSavedDocumentContext isSavedDocuementContext)
 		{
 			TextTranslator = textTranslator;
 			ArticleRenderingContext = articleRenderingContext;
 			SignInViewModel = signInViewModel;
-            AuthenticatedUserContext = authenticatedUserContext;
+			AuthenticatedUserContext = authenticatedUserContext;
 			IsSavedDocuementContext = isSavedDocuementContext;
 		}
 

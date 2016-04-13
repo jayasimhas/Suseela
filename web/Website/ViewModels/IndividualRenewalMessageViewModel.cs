@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace Informa.Web.ViewModels
 {
-    [AutowireService(LifetimeScope.SingleInstance)]
+    [AutowireService(LifetimeScope.PerScope)]
     public class IndividualRenewalMessageViewModel : IIndividualRenewalMessageViewModel
     {
         private const string PRODUCT_CODE = "scrip";

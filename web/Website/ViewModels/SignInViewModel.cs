@@ -2,12 +2,10 @@
 using Informa.Library.Site;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Web;
-using Glass.Mapper.Sc.Fields;
-using Informa.Web.ViewModels.PopOuts;
 
 namespace Informa.Web.ViewModels
 {
-    [AutowireService(LifetimeScope.SingleInstance)]
+    [AutowireService(LifetimeScope.PerScope)]
     public class SignInViewModel : ISignInViewModel
     {
         protected readonly ISiteRootContext SiteRootContext;

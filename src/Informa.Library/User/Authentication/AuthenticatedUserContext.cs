@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Informa.Library.User.Entitlement;
-using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Authentication
 {
@@ -10,8 +7,7 @@ namespace Informa.Library.User.Authentication
 	{
 		protected readonly ISitecoreUserContext SitecoreUserContext;
 
-		public AuthenticatedUserContext(
-			ISitecoreUserContext sitecoreUserContext)
+		public AuthenticatedUserContext(ISitecoreUserContext sitecoreUserContext)
 		{
 			SitecoreUserContext = sitecoreUserContext;
 		}

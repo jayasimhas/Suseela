@@ -6,7 +6,7 @@ namespace Informa.Web.ViewModels
     [AutowireService(LifetimeScope.SingleInstance)]
     public class ArticleProloguePrintViewModel : IArticleProloguePrintViewModel
     {
-        public IAuthenticatedUserContext _authenticatedUserContext;
+        private readonly IAuthenticatedUserContext _authenticatedUserContext;
         public ArticleProloguePrintViewModel(IAuthenticatedUserContext authenticatedUserContext)
         {
             _authenticatedUserContext = authenticatedUserContext;

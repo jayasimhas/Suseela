@@ -2,7 +2,7 @@
 
 namespace Informa.Web.ViewModels.PopOuts
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class SignInPopOutViewModel : ISignInPopOutViewModel
 	{
 		public SignInPopOutViewModel(
