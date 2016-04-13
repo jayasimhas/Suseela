@@ -20,7 +20,7 @@ namespace Informa.Web.ViewModels
 			IArticleListItemModelFactory articleListableFactory, ITextTranslator textTranslator, IArticleSearch searcher,
             ISitecoreContext context,
             IArticleComponentFactory articleComponentFactory,
-            IEntitledProductContext entitledProductContext,
+            IEntitledProductEntitlementAccessLevelContext entitledProductContext,
             IAuthenticatedUserContext authenticatedUserContext,
 			IIsSavedDocumentContext isSavedDocumentContext,
             ICallToActionViewModel callToActionViewModel)

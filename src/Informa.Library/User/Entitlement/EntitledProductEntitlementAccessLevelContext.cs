@@ -4,12 +4,12 @@ using Jabberwocky.Glass.Autofac.Attributes;
 namespace Informa.Library.User.Entitlement
 {
     [AutowireService(LifetimeScope.Default)]
-    public class EntitledProductContext : IEntitledProductContext
+    public class EntitledProductEntitlementAccessLevelContext : IEntitledProductEntitlementAccessLevelContext
     {
 		protected readonly IEntitlementFactory EntitlementFactory;
         protected readonly IEntitlementAccessLevelContext EntitlementAccessLevelContext;
 
-        public EntitledProductContext(
+        public EntitledProductEntitlementAccessLevelContext(
 			IEntitlementFactory entitlementFactory,
 			IEntitlementAccessLevelContext entitlementAccessLevelContext)
         {
@@ -28,7 +28,7 @@ namespace Informa.Library.User.Entitlement
 
 			if (productItem.IsFree)
 			{
-				return EntitledAccessLevel.Individual;
+				return EntitledAccessLevel.Free;
 			}
 
 			var entitlement = EntitlementFactory.Create(productItem);

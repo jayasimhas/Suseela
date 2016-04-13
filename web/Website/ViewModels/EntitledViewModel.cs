@@ -7,11 +7,11 @@ namespace Informa.Web.ViewModels
 {
     public abstract class EntitledViewModel<T> : GlassViewModel<T> where T : class, IEntitledProductItem, IGlassBase
     {   
-        public readonly IEntitledProductContext EntitledProductContext;
+        public readonly IEntitledProductEntitlementAccessLevelContext EntitledProductContext;
 
         public EntitledAccessLevel AccessLevel => EntitledProductContext.GetAccessLevel(GlassModel);
 
-        protected EntitledViewModel(IEntitledProductContext entitledProductContext)
+        protected EntitledViewModel(IEntitledProductEntitlementAccessLevelContext entitledProductContext)
         {
             EntitledProductContext = entitledProductContext;
         }
