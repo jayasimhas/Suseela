@@ -27,13 +27,13 @@ Applications/32x32/navigate_check.png
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
-content-length: 401
+content-length: 395
 
-ar|sitecore\Operations Access|pe|+item:read|+item:create|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+workflowState:delete|!*|+item:admin|pd|+item:read|+item:create|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+workflowState:delete|!*|+item:admin|ar|sitecore\Author|pe|-workflowCommand:execute|pd|-workflowCommand:execute|
+ar|sitecore\Operations Access|pe|+item:create|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+item:read|+workflowState:delete|+item:admin|pd|+item:create|+workflowState:write|+workflowCommand:execute|+item:rename|+item:delete|+item:write|+item:read|+workflowState:delete|+item:admin|ar|sitecore\Author|pe|-workflowCommand:execute|pd|-workflowCommand:execute|
 ----version----
 language: en
 version: 1
-revision: 3cc24c24-69e7-42e4-8560-90f9124c21dd
+revision: 8314d0ea-de8b-49c7-8302-7d8274400933
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3cc24c24-69e7-42e4-8560-90f9124c21dd
+8314d0ea-de8b-49c7-8302-7d8274400933
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160413T150546Z
+20160413T152202Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
