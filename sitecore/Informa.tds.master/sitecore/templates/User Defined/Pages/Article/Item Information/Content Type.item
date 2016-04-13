@@ -20,9 +20,9 @@ Droplink
 field: {1EB8AE32-E190-44A6-968D-ED904C794EBF}
 name: Source
 key: source
-content-length: 60
+content-length: 72
 
-/sitecore/content/Environment Globals/Taxonomy/Content Types
+/sitecore/content/Environment Globals/Publication Taxonomy/Content Types
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
@@ -33,7 +33,7 @@ content-length: 4
 ----version----
 language: en
 version: 1
-revision: 271beef5-b4eb-4393-ab79-fe2a575f1272
+revision: f9763610-ed79-41d1-8f0c-a58cf7454890
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-271beef5-b4eb-4393-ab79-fe2a575f1272
+f9763610-ed79-41d1-8f0c-a58cf7454890
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160412T201033Z
+20160413T151554Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
