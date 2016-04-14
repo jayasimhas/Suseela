@@ -31,6 +31,7 @@ namespace Informa.Library.Utilities.References
 		public static class QueryString
 		{
 			public const string InProgressKey = "inprogress";
+			public const string SearchHeadlinesOnly = "headlinesOnly";
 		}
 	}
 }
