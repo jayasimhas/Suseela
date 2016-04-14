@@ -7,7 +7,8 @@ namespace Informa.Library.Utilities.References
 	{
 		public const string ArticleNumberLength = "000000";
 		public const string MasterDb = "master";
-		
+		public const string ScripPublicationName = "Scrip Intelligence";
+
 		public const string MediaLibraryRoot = "/sitecore/media library/";
 		public const string MediaLibraryPath = "Documents/";
 
