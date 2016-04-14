@@ -40,9 +40,13 @@
     }
 
     &__heading {
-        color: $color-cardinal-red;
         display: inline-block;
         margin-bottom: 1rem;
+        color: $informa-black;
+
+        &:hover {
+            color: $color-cardinal-red;
+        }
     }
 
     &__author {

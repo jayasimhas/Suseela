@@ -109,9 +109,16 @@ section: Home/Topic Page Components
 
     &__headline {
         @include textMix('Roboto Condensed', 30px, 700);
-        color: $informa-black;
         line-height: 2.175rem;
         margin-bottom: 0.5rem;
+        &,
+        & a {
+            color: $informa-black;
+
+            &:hover {
+                color: $color-cardinal-red;
+            }
+        }
     }
     &__byline {
         @include textMix('Roboto', 16px, 500);
@@ -132,7 +139,7 @@ section: Home/Topic Page Components
         // span {
         //     display: block;
         // }
-        
+
         img {
             max-width: 100%;
             margin-top: 6px;
