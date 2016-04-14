@@ -10,12 +10,12 @@
         <div class="search-result__body">
 
             <div class="search-result__pubdate">
-                <time datetime="2015-01-15">{{doc.searchDate | date: 'd MMM yyyy' }}</time>
+                <time datetime="{{doc.searchDate | date: 'yyyy-MM-dd'}}">{{doc.searchDate | date: 'd MMM yyyy' }}</time>
             </div>
 
-            <span class="search-result__line-separator" ng-if="doc.contentType !== ''"></span>
+            <span class="search-result__line-separator" ng-if="doc.contentType"></span>
 
-            <div class="search-result__content-type">
+            <div class="search-result__content-type" ng-if="doc.contentType">
                  {{::doc.contentType}}
             </div>
 
@@ -52,7 +52,7 @@
                 {{ ::doc.title }}
             </a>
 
-            <div class="search-result__author" ng-if="doc.byline !== ''">
+            <div class="search-result__author" ng-if="doc.byline">
                 By {{ ::doc.byline }}
             </div>
 
