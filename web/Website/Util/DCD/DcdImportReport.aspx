@@ -4,14 +4,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Deals, Companies, and Drugs Import Report</title>
-    <link href="../../styles/style.css" rel="stylesheet" media="screen" />
-    <link href="../../styles/jquery-ui-1.8.11.custom.css" rel="stylesheet" />
-    <link href="../../styles/jquery.multiSelect.css" rel="stylesheet" />
 
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/jquery-ui.js"></script>
-    <script src="../../js/jquery.multiSelect.js"></script>
-    <script src="../../js/scripts.js"></script>
+    <link href="styles/style.css" rel="stylesheet"  media="screen"/>
+    <link href="styles/jquery-ui-1.8.11.custom.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.multiSelect.js"></script>
+    <script src="js/scripts.js"></script>
 
 	<style>
 		#content table.data th a
