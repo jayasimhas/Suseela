@@ -1,4 +1,5 @@
 ﻿using Glass.Mapper.Sc.Fields;
+using Informa.Library.Navigation;
 using Informa.Web.Models;
 using System.Collections.Generic;
 
@@ -24,10 +25,10 @@ namespace Informa.Web.ViewModels
 
 		string MenuOneHeader { get; }
 
-		IEnumerable<IPageLink> MenuOneLinks { get; }
+		IEnumerable<INavigation> MenuOneLinks { get; }
 
 		string MenuTwoHeader { get; }
 
-		IEnumerable<IPageLink> MenuTwoLinks { get; }
+		IEnumerable<INavigation> MenuTwoLinks { get; }
 	}
 }
