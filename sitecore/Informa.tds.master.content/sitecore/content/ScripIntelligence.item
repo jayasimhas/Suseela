@@ -40,7 +40,7 @@ ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename
 ----version----
 language: en
 version: 1
-revision: 6c063589-c520-4ffd-ac4d-17b620b4714a
+revision: c37689e8-7df0-478a-8032-be468517a6c7
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -116,9 +116,9 @@ content-length: 58
 field: {ACA9D1AD-7C13-40BB-ACB6-C584EB6623BD}
 name: Local Footer Links
 key: local footer links
-content-length: 155
+content-length: 38
 
-{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}|{FE0B4566-CDDD-49A5-BF3D-40E154E83377}|{EA088B7F-FC39-4695-9848-6BC63A16E85E}|{CF48173B-0B5C-417F-952A-E82CDBC4D277}
+{8571D053-5A3C-44C5-82DF-68537628956F}
 ----field----
 field: {9C4CAA71-E34E-4489-91C3-ED76AB9700BD}
 name: Menu One Header
@@ -127,26 +127,12 @@ content-length: 15
 
 Menu One Header
 ----field----
-field: {ABF9CD82-13D2-438A-AF7E-02856B69E19A}
-name: Menu One Links
-key: menu one links
-content-length: 155
-
-{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}|{EA088B7F-FC39-4695-9848-6BC63A16E85E}|{CF48173B-0B5C-417F-952A-E82CDBC4D277}|{FE0B4566-CDDD-49A5-BF3D-40E154E83377}
-----field----
 field: {3D4E2020-4A15-4B8E-A581-440107E91144}
 name: Menu Two Header
 key: menu two header
 content-length: 15
 
 Menu Two Header
-----field----
-field: {575E0858-B583-4A04-B358-2AFC3EA6EE9A}
-name: Menu Two Links
-key: menu two links
-content-length: 155
-
-{FE0B4566-CDDD-49A5-BF3D-40E154E83377}|{EA088B7F-FC39-4695-9848-6BC63A16E85E}|{CF48173B-0B5C-417F-952A-E82CDBC4D277}|{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
 ----field----
 field: {CF68ED35-F96D-4924-850C-E96F0A7F1E34}
 name: Facebook Link
@@ -205,6 +191,20 @@ key: main navigation
 content-length: 38
 
 {A5B851A7-8477-4EF0-AFB4-F373C28280D0}
+----field----
+field: {2EE1BA61-9842-4942-94AB-C1DF8A97B1DB}
+name: Footer Menu 1 Navigation
+key: footer menu 1 navigation
+content-length: 38
+
+{513F7FEC-E40B-4424-94FA-DE336DCC3AF9}
+----field----
+field: {22B35B7A-CE40-4D68-84BA-738DE2BCDBA3}
+name: Footer Menu 2 Navigation
+key: footer menu 2 navigation
+content-length: 38
+
+{B92E6703-128B-4606-956C-D458DC97364A}
 ----field----
 field: {A9FEC917-3234-4782-B449-A8DDA61126A8}
 name: Reset Password Email Body
@@ -367,14 +367,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6c063589-c520-4ffd-ac4d-17b620b4714a
+c37689e8-7df0-478a-8032-be468517a6c7
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160411T202931Z
+20160414T132832Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
