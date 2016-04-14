@@ -5,118 +5,122 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Informa.Library.Utilities.StringUtils;
+using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.DCD;
 
 namespace Informa.Library.Search.Utilities
 {
-    public class SearchSummaryUtil
-    {
-        public static string GetTruncatedSearchSummary(string summaryText)
-        {
-            //Replace any article tokens with a placeholder
-            var processedTextAndArticleTokens = ArticleTokenProcessingStart(summaryText);
+	public class SearchSummaryUtil
+	{
+		public static string GetTruncatedSearchSummary(string summaryText)
+		{
+			//Replace any article tokens with a placeholder
+			var processedTextAndArticleTokens = ArticleTokenProcessingStart(summaryText);
 
-            //Strip any HTML from the summary
-            var processedText = HtmlUtil.StripHtml(processedTextAndArticleTokens.Item1);
+			//Strip any HTML from the summary
+			var processedText = HtmlUtil.StripHtml(processedTextAndArticleTokens.Item1);
 
-            //Truncate the summary text
-            processedText = TruncateSummary(processedText);
+			//Truncate the summary text
+			processedText = TruncateSummary(processedText);
 
-            //Replace the placholder tokens with the real article tokens
-            processedText = ArticleTokenProcessingEnd(processedText, processedTextAndArticleTokens.Item2);
+			//Replace the placholder tokens with the real article tokens
+			processedText = ArticleTokenProcessingEnd(processedText, processedTextAndArticleTokens.Item2);
 
-            return processedText;
-        }
+			//Replacing the summary text with company and deals token
+			processedText = DCDTokenMatchers.ProcessDCDTokens(processedText);
 
-        private static string TruncateSummary(string summary)
-        {
-            summary = EscapeXMLValue(summary);
-            summary = WordUtil.TruncateArticle(summary, 20, false);
-            summary = UnescapeXMLValue(summary);
-            summary = HtmlUtil.StripHtml(summary);
+			return processedText;
+		}
 
-            return summary;
-        }
+		private static string TruncateSummary(string summary)
+		{
+			summary = EscapeXMLValue(summary);
+			summary = WordUtil.TruncateArticle(summary, 20, false);
+			summary = UnescapeXMLValue(summary);
+			summary = HtmlUtil.StripHtml(summary);
 
-        /// <summary>
-        ///     Replaces any article tokens like (<a>[A#SC049466]</a>) with text (#ArticleToken1 for example) that can be
-        ///     replaced at the end of the summary processing process.
-        ///     The problem is that the article tokens include HTML and in order for the
-        ///     truncating process to work we need to strip any HTML to start.  The new tokens will be replaced with the original
-        ///     tokens at the
-        ///     end of the summary building process, these article tokens will then be replaced when the summary
-        ///     is returned from the search service.
-        /// </summary>
-        /// <param name="summary"></param>
-        /// <returns></returns>
-        private static Tuple<string, Dictionary<string, string>> ArticleTokenProcessingStart(string summary)
-        {
-            var tokenMappings = new Dictionary<string, string>();
+			return summary;
+		}
 
-            var ItemRegex = new Regex(DCDConstants.ArticleTokenRegex, RegexOptions.Compiled);
-            var count = 1;
-            foreach (Match ItemMatch in ItemRegex.Matches(summary))
-            {
-                summary = summary.Replace(ItemMatch.Value, "#ArticleToken" + count);
-                tokenMappings.Add("#ArticleToken" + count, ItemMatch.Value);
-                count++;
-            }
+		/// <summary>
+		///     Replaces any article tokens like (<a>[A#SC049466]</a>) with text (#ArticleToken1 for example) that can be
+		///     replaced at the end of the summary processing process.
+		///     The problem is that the article tokens include HTML and in order for the
+		///     truncating process to work we need to strip any HTML to start.  The new tokens will be replaced with the original
+		///     tokens at the
+		///     end of the summary building process, these article tokens will then be replaced when the summary
+		///     is returned from the search service.
+		/// </summary>
+		/// <param name="summary"></param>
+		/// <returns></returns>
+		private static Tuple<string, Dictionary<string, string>> ArticleTokenProcessingStart(string summary)
+		{
+			var tokenMappings = new Dictionary<string, string>();
 
-            return new Tuple<string, Dictionary<string, string>>(summary, tokenMappings);
-        }
+			var ItemRegex = new Regex(DCDConstants.ArticleTokenRegex, RegexOptions.Compiled);
+			var count = 1;
+			foreach (Match ItemMatch in ItemRegex.Matches(summary))
+			{
+				summary = summary.Replace(ItemMatch.Value, "#ArticleToken" + count);
+				tokenMappings.Add("#ArticleToken" + count, ItemMatch.Value);
+				count++;
+			}
 
-        /// <summary>
-        ///     Goes with ArticleTokenProcessingStart, this method replaces the #ArticleToken1 style tokens
-        ///     with the original article token.
-        /// </summary>
-        /// <param name="summary"></param>
-        /// <param name="tokenMappings"></param>
-        /// <returns></returns>
-        private static string ArticleTokenProcessingEnd(string summary, Dictionary<string, string> tokenMappings)
-        {
-            foreach (var key in tokenMappings.Keys)
-            {
-                var value = tokenMappings[key];
-                if (value == null)
-                {
-                    continue;
-                }
-                summary = summary.Replace(key, value);
-            }
+			return new Tuple<string, Dictionary<string, string>>(summary, tokenMappings);
+		}
 
-            return summary;
-        }
+		/// <summary>
+		///     Goes with ArticleTokenProcessingStart, this method replaces the #ArticleToken1 style tokens
+		///     with the original article token.
+		/// </summary>
+		/// <param name="summary"></param>
+		/// <param name="tokenMappings"></param>
+		/// <returns></returns>
+		private static string ArticleTokenProcessingEnd(string summary, Dictionary<string, string> tokenMappings)
+		{
+			foreach (var key in tokenMappings.Keys)
+			{
+				var value = tokenMappings[key];
+				if (value == null)
+				{
+					continue;
+				}
+				summary = summary.Replace(key, value);
+			}
 
-        public static string UnescapeXMLValue(string xmlString)
-        {
-            if (xmlString == null)
-            {
-                throw new ArgumentNullException("xmlString");
-            }
+			return summary;
+		}
 
-            xmlString = xmlString.Replace("&apos;", "'");
-            xmlString = xmlString.Replace("&quot;", "\"");
-            xmlString = xmlString.Replace("&gt;", ">");
-            xmlString = xmlString.Replace("&lt;", "<");
-            xmlString = xmlString.Replace("&amp;", "&");
+		public static string UnescapeXMLValue(string xmlString)
+		{
+			if (xmlString == null)
+			{
+				throw new ArgumentNullException("xmlString");
+			}
 
-            return xmlString;
-        }
+			xmlString = xmlString.Replace("&apos;", "'");
+			xmlString = xmlString.Replace("&quot;", "\"");
+			xmlString = xmlString.Replace("&gt;", ">");
+			xmlString = xmlString.Replace("&lt;", "<");
+			xmlString = xmlString.Replace("&amp;", "&");
 
-        public static string EscapeXMLValue(string xmlString)
-        {
-            if (xmlString == null)
-            {
-                throw new ArgumentNullException("xmlString");
-            }
+			return xmlString;
+		}
 
-            xmlString = xmlString.Replace("&", "&amp;");
-            xmlString = xmlString.Replace("'", "&apos;");
-            xmlString = xmlString.Replace("\"", "&quot;");
-            xmlString = xmlString.Replace(">", "&gt;");
-            xmlString = xmlString.Replace("<", "&lt;");
+		public static string EscapeXMLValue(string xmlString)
+		{
+			if (xmlString == null)
+			{
+				throw new ArgumentNullException("xmlString");
+			}
 
-            return xmlString;
-        }
-    }
+			xmlString = xmlString.Replace("&", "&amp;");
+			xmlString = xmlString.Replace("'", "&apos;");
+			xmlString = xmlString.Replace("\"", "&quot;");
+			xmlString = xmlString.Replace(">", "&gt;");
+			xmlString = xmlString.Replace("<", "&lt;");
+
+			return xmlString;
+		}
+	}
 }
