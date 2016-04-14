@@ -764,6 +764,8 @@
     <Compile Include="ViewModels\AdvertisementViewModel.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\IEmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\SearchRssViewModel.cs" />
@@ -1018,6 +1020,18 @@
     <Content Include="tasks\js.js" />
     <Content Include="tasks\svg-sprite.js" />
     <Content Include="tasks\utils.js" />
+    <Content Include="Util\DCD\img\arrow_sort_down_active.png" />
+    <Content Include="Util\DCD\img\back_body.gif" />
+    <Content Include="Util\DCD\img\back_body_leftshadow.png" />
+    <Content Include="Util\DCD\img\back_body_rightshadow.png" />
+    <Content Include="Util\DCD\img\header_logo.gif" />
+    <Content Include="Util\DCD\js\jquery-ui.js" />
+    <Content Include="Util\DCD\js\jquery.js" />
+    <Content Include="Util\DCD\js\jquery.multiSelect.js" />
+    <Content Include="Util\DCD\js\scripts.js" />
+    <Content Include="Util\DCD\styles\jquery-ui-1.8.11.custom.css" />
+    <Content Include="Util\DCD\styles\jquery.multiSelect.css" />
+    <Content Include="Util\DCD\styles\style.css" />
     <Content Include="velir\services\TypeAhead.asmx" />
     <Content Include="Util\DCD\DcdImportReport.aspx" />
     <Content Include="Util\DCD\ViewDCDXML.aspx" />
