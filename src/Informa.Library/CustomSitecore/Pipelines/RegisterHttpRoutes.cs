@@ -70,7 +70,7 @@ namespace Informa.Library.CustomSitecore.Pipelines
 			configuration.Formatters.Insert(0, jsonFormatter);
 
 			// Add gzip/deflate compression
-			configuration.MessageHandlers.Add(new CompressionHandler());
+			configuration.MessageHandlers.Insert(0, new CompressionHandler());
 
 			configuration.EnsureInitialized();
 		}

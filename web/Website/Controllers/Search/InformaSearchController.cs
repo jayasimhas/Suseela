@@ -16,74 +16,52 @@ using Velir.Search.WebApi.Models;
 
 namespace Informa.Web.Controllers.Search
 {
-    public class InformaSearchController : VelirSearchController<InformaSearchResultItem>
-    {
-        private readonly ICacheProvider _cache;
-        private readonly IGlassInterfaceFactory _interfaceFactory;
-        private ISitecoreContext _context;
-        private readonly ISearchPageParser _parser;
-        private readonly ISearchManager<InformaSearchResultItem> _searchManager;
+	public class InformaSearchController : VelirSearchController<InformaSearchResultItem>
+	{
+		private readonly ISearchPageParser _parser;
+		private readonly ISearchManager<InformaSearchResultItem> _searchManager;
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IIsSavedDocumentContext IsSavedDocumentContext;
 
 		public InformaSearchController(
 			ISearchManager<InformaSearchResultItem> searchManager,
 			ISearchPageParser parser,
-            IGlassInterfaceFactory interfaceFactory,
-			ISitecoreContext context,
-			ICacheProvider cache,
 			IAuthenticatedUserContext userContext,
 			IIsSavedDocumentContext isSavedDocumentContext)
-            : base(searchManager, parser)
-        {
-            _searchManager = searchManager;
-            _parser = parser;
-            _context = context;
-            _cache = cache;
-            _interfaceFactory = interfaceFactory;
+						: base(searchManager, parser)
+		{
+			_searchManager = searchManager;
+			_parser = parser;
 			UserContext = userContext;
 			IsSavedDocumentContext = isSavedDocumentContext;
-        }
+		}
 
-        public override IQueryResults Get(ApiSearchRequest request)
-        {
-            //If an improper request is passed in return nothing
-            if (string.IsNullOrEmpty(request?.PageId))
-            {
-                return null;
-            }
-
-            var predicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request);
-
-            //predicateBuilder.ListableOnly = true;
-
-            var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
-            q.PredicateBuilder = predicateBuilder;
-
-            var results = _searchManager.GetItems(q);
-
-            //Loop through the results and add the authenticaton and bookmarking property values to be used
-            //on the front end.
-			if (UserContext.IsAuthenticated)
+		public override IQueryResults Get(ApiSearchRequest request)
+		{
+			//If an improper request is passed in return nothing
+			if (string.IsNullOrEmpty(request?.PageId))
 			{
-				List<InformaSearchResultItem> resultsWithBookmarks = new List<InformaSearchResultItem>();
-				foreach (InformaSearchResultItem queryResult in results.Results)
+				return null;
+			}
+			
+			var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
+			q.PredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request); 
+
+			var results = _searchManager.GetItems(q);
+
+			//Replace DCD tokens in the summary
+			foreach (InformaSearchResultItem queryResult in results.Results)
+			{
+				queryResult.Summary = DCDTokenMatchers.ProcessDCDTokens(queryResult.Summary);
+
+				if (UserContext.IsAuthenticated)
 				{
 					queryResult.IsUserAuthenticated = UserContext.IsAuthenticated;
 					queryResult.IsArticleBookmarked = IsSavedDocumentContext.IsSaved(queryResult.ItemId.ToGuid());
-					resultsWithBookmarks.Add(queryResult);
 				}
-
-				results.Results = resultsWithBookmarks;
 			}
 
-            //Replace DCD tokens in the summary
-            foreach (InformaSearchResultItem queryResult in results.Results)
-            {
-                queryResult.Summary = DCDTokenMatchers.ProcessDCDTokens(queryResult.Summary);
-            }
-
-            return results;
-        }
-    }
+			return results;
+		}
+	}
 }

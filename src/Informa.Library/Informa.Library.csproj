@@ -331,6 +331,8 @@
     <Compile Include="Rss\ItemGenerators\SearchRssItemGenerator.cs" />
     <Compile Include="Rss\ItemRetrieval\RssSearchResultsItemRetrieval.cs" />
     <Compile Include="Rss\Utils\RssConstants.cs" />
+    <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
+    <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
     <Compile Include="Search\Utilities\SearchSummaryUtil.cs" />
     <Compile Include="Search\Utilities\SearchWebClientUtil.cs" />
     <Compile Include="Session\ISessionValue`1.cs" />
@@ -341,6 +343,8 @@
     <Compile Include="SiteDebugging\ISiteDebugger.cs" />
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
     <Compile Include="SiteDebugging\SiteDebugger.cs" />
+    <Compile Include="Site\GlassSiteRootContext.cs" />
+    <Compile Include="Site\ISiteRootContext.cs" />
     <Compile Include="Subscription\ISubscriptionProductKeyContext.cs" />
     <Compile Include="Subscription\SubscriptionProductKeyContext.cs" />
     <Compile Include="Subscription\User\IUserSubscriptionsContext.cs" />
@@ -747,7 +751,6 @@
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultPublicationTitleField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultSummaryField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultTitleField.cs" />
-    <Compile Include="Search\ComputedFields\SearchResults\SearchResultUrlField.cs" />
     <Compile Include="Search\Extensions\QueryableExtensions.cs" />
     <Compile Include="Search\Filter\IArticleEScenicIDFilter.cs" />
     <Compile Include="Search\Filter\IArticleNumberFilter.cs" />
@@ -764,13 +767,9 @@
     <Compile Include="Search\SearchIndex\CustomSwitchOnRebuildSolrSearchIndex.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseGlassComputedField.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseInterfaceFactoryComputedField.cs" />
-    <Compile Include="Site\GlassSiteRootContext.cs" />
-    <Compile Include="Site\ISiteHomeContext.cs" />
     <Compile Include="Site\ISiteMainNavigationContext.cs" />
     <Compile Include="Site\ISiteMaintenanceContext.cs" />
     <Compile Include="Site\ISiteMaintenanceInfo.cs" />
-    <Compile Include="Site\ISiteRootContext.cs" />
-    <Compile Include="Site\GlassSiteHomeContext.cs" />
     <Compile Include="Site\SiteMainNavigationContext.cs" />
     <Compile Include="Site\SiteMaintenanceContext.cs" />
     <Compile Include="Site\SiteMaintenanceInfo.cs" />
@@ -931,8 +930,10 @@
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalTitleResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\PublisherResolver.cs" />
     <Compile Include="Utilities\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Utilities\Extensions\GlassBaseExtensions.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Utilities\Extensions\ItemExtensions.cs" />
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
     <Compile Include="Utilities\Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\References\Constants.cs" />

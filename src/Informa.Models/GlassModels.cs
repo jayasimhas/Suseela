@@ -26,6 +26,7 @@ using Glass.Mapper.Sc.Fields;
 using Jabberwocky.Glass.Models;
 using Sitecore.Globalization;
 using Sitecore.Data;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Velir.Search.Models;
 
@@ -9778,10 +9779,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// <para></para>
 					/// <para>Field Type: Droptree</para>		
 					/// <para>Field ID: 6b8b6c6d-013a-4ba0-a166-f57747668b0f</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=I___BasePage</para>
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid My_Account_Page  {get; set;}
+					I___BasePage My_Account_Page  {get; set;}
 								/// <summary>
 					/// The Global Article Ad Zone field.
 					/// <para></para>
@@ -10366,10 +10367,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// <para></para>
 						/// <para>Field Type: Droptree</para>		
 						/// <para>Field ID: 6b8b6c6d-013a-4ba0-a166-f57747668b0f</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: type=I___BasePage</para>
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid My_Account_Page  {get; set;}
+						I___BasePage My_Account_Page  {get; set;}
 										/// <summary>
 						/// The Global Article Ad Zone field.
 						/// <para></para>

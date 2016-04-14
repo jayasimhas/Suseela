@@ -6,12 +6,12 @@ namespace Informa.Library.Newsletter
 	[AutowireService(LifetimeScope.Default)]
 	public class SiteNewsletterTypeContext : ISiteNewsletterTypeContext
 	{
-	    private ISiteRootContext SiteRootContext;
+		private ISiteRootContext SiteRootContext;
 		public SiteNewsletterTypeContext(
-            ISiteRootContext siteRootContext
+						ISiteRootContext siteRootContext
 			)
 		{
-		    SiteRootContext = siteRootContext;
+			SiteRootContext = siteRootContext;
 		}
 
 		public string Type => SiteRootContext?.Item?.Publication_Name ?? string.Empty;

@@ -234,7 +234,8 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Taxonomy.SubjectPath" value="/sitecore/content/environment globals/taxonomy/subjects"></setting>
       <setting name="Taxonomy.RegionPath" value="/sitecore/content/environment globals/taxonomy/regions"></setting>
       <setting name="Taxonomy.AreaPath" value="/sitecore/content/environment globals/taxonomy/therapy areas"></setting>
-      
+      <setting name="Taxonomy.IndustryPath" value="/sitecore/content/environment globals/taxonomy/industries"></setting>
+      <setting name="Taxonomy.DeviceAreaPath" value="/sitecore/content/environment globals/taxonomy/device areas"></setting>
     </settings>
   </sitecore>
 </configuration>

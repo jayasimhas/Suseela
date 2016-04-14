@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
+using Sitecore.Links;
 
 namespace Informa.Library.Search.Results
 {
@@ -25,10 +26,6 @@ namespace Informa.Library.Search.Results
 		[IndexField("plannedpublishdate")]
 		[DataMember]
 		public DateTime PlannedPublishDate { get; set; }
-
-		[IndexField("searchurl_s")]
-		[DataMember]
-		public new string Url { get; set; }
 
 		[IndexField("searchtitle_s")]
 		[DataMember]
@@ -68,7 +65,17 @@ namespace Informa.Library.Search.Results
 
 		[DataMember]
 		public bool IsUserAuthenticated { get; set; }
+
+		[DataMember]
+		public new string Url
+		{
+			get
+			{
+				var options = LinkManager.GetDefaultUrlOptions();
+				options.SiteResolving = true;
+
+				return LinkManager.GetItemUrl(GetItem(), options);
+			}
+		}
 	}
-
-
 }
