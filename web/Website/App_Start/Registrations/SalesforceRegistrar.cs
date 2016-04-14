@@ -5,6 +5,7 @@ using Informa.Library.Salesforce.User;
 using Informa.Library.Salesforce.User.Entitlement;
 using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.Salesforce.User.Registration;
+using Informa.Library.Salesforce.Web;
 
 namespace Informa.Web.App_Start.Registrations
 {
@@ -17,6 +18,8 @@ namespace Informa.Web.App_Start.Registrations
 			builder.RegisterType<SalesforceService>().As<ISalesforceService>();
 			builder.RegisterType<SalesforceServiceContextEnabledChecks>().As<ISalesforceServiceContextEnabledChecks>();
 			builder.RegisterType<SalesforceServiceContextEnabled>().As<ISalesforceServiceContextEnabled>();
+			builder.RegisterType<UserAgentServiceContextEnabledCheckConfiguration>().As<IUserAgentServiceContextEnabledCheckConfiguration>();
+			builder.RegisterType<UserAgentServiceContextEnabledCheck>().As<ISalesforceServiceContextEnabledCheck>();
 			builder.RegisterType<SalesforceServiceContext>().As<ISalesforceServiceContext>();
 			builder.RegisterType<SalesforceSessionContext>().As<ISalesforceSessionContext>().SingleInstance();
 			builder.RegisterType<SalesforceSessionFactory>().As<ISalesforceSessionFactory>();

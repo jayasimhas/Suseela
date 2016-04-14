@@ -142,6 +142,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web\IUserAgentServiceContextEnabledCheckConfiguration.cs" />
+    <Compile Include="Web\UserAgentServiceContextEnabledCheck.cs" />
+    <Compile Include="Web\UserAgentServiceContextEnabledCheckConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
