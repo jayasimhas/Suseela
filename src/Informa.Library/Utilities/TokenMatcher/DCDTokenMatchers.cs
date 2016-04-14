@@ -3,6 +3,7 @@ using Informa.Models.DCD;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -114,9 +115,15 @@ namespace Informa.Library.Utilities.TokenMatcher
                 if (results.Articles.Any())
                 {
                     var article = results.Articles.FirstOrDefault();
-                    if (article != null)
-                        return string.Format("<a href='{0}'>{1}</a>", article._Url, HttpUtility.HtmlDecode(article.Title));
-                }
+                    //if (article != null)
+                    //    return string.Format("<a href='{0}'>{1}</a>", article._Url, HttpUtility.HtmlDecode(article.Title));
+
+					if (article != null)
+					{
+						var articleText = string.Format(" (See \"{0}\" - \"{1}\" {2}.)", article.Title, "Scrip", article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("MMM. d, yyyy") : "");
+						return ($"<a href='{article._Url}'>{WebUtility.HtmlDecode(articleText)}</a>");
+					}
+				}
             }
             catch (Exception ex)
             {
