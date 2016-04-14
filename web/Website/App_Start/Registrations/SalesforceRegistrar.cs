@@ -15,6 +15,8 @@ namespace Informa.Web.App_Start.Registrations
 			builder.RegisterType<SalesforceErrorLogger>().As<ISalesforceErrorLogger>();
 			builder.RegisterType<SalesforceServiceConfiguration>().As<ISalesforceServiceConfiguration>();
 			builder.RegisterType<SalesforceService>().As<ISalesforceService>();
+			builder.RegisterType<SalesforceServiceContextEnabledChecks>().As<ISalesforceServiceContextEnabledChecks>();
+			builder.RegisterType<SalesforceServiceContextEnabled>().As<ISalesforceServiceContextEnabled>();
 			builder.RegisterType<SalesforceServiceContext>().As<ISalesforceServiceContext>();
 			builder.RegisterType<SalesforceSessionContext>().As<ISalesforceSessionContext>().SingleInstance();
 			builder.RegisterType<SalesforceSessionFactory>().As<ISalesforceSessionFactory>();
