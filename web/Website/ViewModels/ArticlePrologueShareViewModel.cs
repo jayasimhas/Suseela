@@ -1,5 +1,4 @@
 ﻿using System.Web;
-using Informa.Library.Article;
 using Informa.Library.Globalization;
 using Informa.Library.Presentation;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -7,7 +6,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class ArticlePrologueShareViewModel : IArticlePrologueShareViewModel
 	{
         protected readonly ITextTranslator TextTranslator;

@@ -7,7 +7,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.Mail
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class BaseHtmlEmailFactory : IBaseHtmlEmailFactory
 	{
 		protected readonly ISiteRootContext SiteRootContext;

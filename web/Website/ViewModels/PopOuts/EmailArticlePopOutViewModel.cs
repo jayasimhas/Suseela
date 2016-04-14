@@ -6,7 +6,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels.PopOuts
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class EmailArticlePopOutViewModel : IEmailArticlePopOutViewModel
 	{
         protected readonly ITextTranslator TextTranslator;

@@ -4,7 +4,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels.PopOuts
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class RegisterPopOutViewModel : IRegisterPopOutViewModel
 	{
 		protected readonly ITextTranslator TextTranslator;

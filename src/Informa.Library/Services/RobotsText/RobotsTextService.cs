@@ -1,11 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Web;
-using System.Xml;
 using Glass.Mapper.Sc;
-using Informa.Library.Article.Search;
-using Informa.Library.Globalization;
 using Informa.Library.Search;
 using Informa.Library.Search.Results;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -19,7 +15,7 @@ namespace Informa.Library.Services.RobotsText
         string GetDisallowedGeneralContentUrls();
     }
 
-    [AutowireService(LifetimeScope.SingleInstance)]
+    [AutowireService(LifetimeScope.PerScope)]
     public class RobotsTextService : IRobotsTextService
     {
         protected readonly ISitecoreContext SitecoreContext;

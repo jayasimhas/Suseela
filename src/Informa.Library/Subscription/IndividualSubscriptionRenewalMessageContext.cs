@@ -4,14 +4,10 @@ using Informa.Library.User.Authentication;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Links;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Informa.Library.Subscription
 {
-    [AutowireService(LifetimeScope.SingleInstance)]
+    [AutowireService(LifetimeScope.PerScope)]
     public class IndividualSubscriptionRenewalMessageContext : IIndividualSubscriptionRenewalMessageContext
     {
         ITextTranslator _textTranslator;

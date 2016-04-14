@@ -4,27 +4,24 @@ using Jabberwocky.Glass.Models;
 
 namespace Informa.Library.Presentation
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class GlassRenderingItemContext : IRenderingItemContext
 	{
 		protected readonly ISitecoreContext SitecoreContext;
-		protected readonly ISitecoreService SitecoreService;
 		protected readonly IRenderingContext RenderingContext;
 
 		public GlassRenderingItemContext(
 			ISitecoreContext sitecoreContext,
-			ISitecoreService sitecoreService,
 			IRenderingContext renderingContext)
 		{
 			SitecoreContext = sitecoreContext;
-			SitecoreService = sitecoreService;
 			RenderingContext = renderingContext;
 		}
 
 		public T Get<T>()
 			where T : class, IGlassBase
 		{
-			return RenderingContext.HasDataSource ? SitecoreService.GetItem<T>(RenderingContext.GetDataSource()) : SitecoreContext.GetCurrentItem<T>();
+			return RenderingContext.HasDataSource ? SitecoreContext.GetItem<T>(RenderingContext.GetDataSource()) : SitecoreContext.GetCurrentItem<T>();
 		}
 	}
 }

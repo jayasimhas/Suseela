@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Web.Security;
-using Informa.Library.Article.Search;
 using Informa.Library.Utilities.References;
-using Informa.Web.Areas.Account.Models;   
-using Informa.Models.FactoryInterface;
 using PluginModels;
 using Sitecore.Security.Authentication;
 
