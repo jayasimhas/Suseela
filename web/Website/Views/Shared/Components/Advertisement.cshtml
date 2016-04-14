@@ -8,5 +8,7 @@
 }
 <div class="article-preview__ad">
     @Model.AdvertisementText
-    <script language="JavaScript">OAS_AD('@Model.GlassModel.Slot_ID', '@Model.GlassModel.Zone');</script>
+    <script>
+    OAS_AD('@Model.GlassModel.Slot_ID', '@Model.GlassModel.Zone');
+    </script>
 </div>

@@ -137,7 +137,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         public override void FillField(IDataMap map, ref Item newItem, string importValue)
         {
             //replace <h1> with <h2>
-            importValue = importValue.Replace("h1", "h2").Replace("62.73.128.229", "www.scripintelligence.com");
+            importValue = importValue.Replace("h1", "h2");
 
             //strip out the tags, attributes and remap images
             List<string> removeTags = new List<string>() { "font", "preform" };
@@ -241,8 +241,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         public MediaItem HandleImage(IDataMap map, string articlePath, DateTime dt, string url)
         {
+            url = url.Replace("192.168.45.101:8080", "www.scripintelligence.com")
+                .Replace("62.73.128.229", "www.scripintelligence.com");
             if (url.StartsWith("/scripnews") || url.StartsWith("/multimedia"))
-                url = $"http://scripintelligence.com{url}";
+                url = $"http://www.scripintelligence.com{url}";
             else if (url.Contains("scripnews.com"))
                 url = url.Replace("scripnews.com", "scripintelligence.com");
 

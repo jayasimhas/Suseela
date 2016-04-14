@@ -25,6 +25,9 @@ namespace Informa.Library.Company
 		{
 			var company = UserCompanyContext.Company;
 
+		    if (UserCompanyContext.Company == null)
+		        return RegisterCompanyUser.Register(newUser, null);
+
 			return RegisterCompanyUser.Register(newUser, AllowedCompanyTypes.Types.Contains(company.Type) ? company : null);
 		}
 	}
