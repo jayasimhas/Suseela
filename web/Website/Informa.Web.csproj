@@ -1189,6 +1189,7 @@
     <Content Include="Areas\Account\Views\Management\OneClickUnsubscribe.cshtml" />
     <Content Include="App_Config\Web\system.webServer.rewrite.config" />
     <None Include="App_Config\Web\system.webServer.rewrite.config.template" />
+    <Content Include="Areas\Account\Views\Management\SavedSearches.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
