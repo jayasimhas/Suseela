@@ -45,7 +45,7 @@ namespace Informa.Web.Areas.Article.Controllers
 		{
 			EmailSender = emailSender;
 			_articleUtil = articleUtil;
-			_service = sitecoreFactory(Constants.MasterDb);
+			_service = sitecoreFactory(Sitecore.Context.Database.Name);
 			HtmlEmailTemplateFactory = htmlEmailTemplateFactory;
 			TextTranslator = textTranslator;
 			SiteRootContext = siteRootContext;
