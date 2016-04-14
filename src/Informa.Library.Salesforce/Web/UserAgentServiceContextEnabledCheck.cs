@@ -31,7 +31,7 @@ namespace Informa.Library.Salesforce.Web
 
 				var enabled = Enabled = Configuration.UserAgents.Any(ua => ua == "Check User Agent Logic"); // TODO-Ladan: Replace with business logic for checking against user agents
 
-				enabled = true; // TODO-Ladan: Remove once implementation is done.
+				enabled = Enabled = true; // TODO-Ladan: Remove once implementation is done.
 
 				return enabled;
 			}
