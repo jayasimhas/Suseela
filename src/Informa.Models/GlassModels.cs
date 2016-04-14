@@ -751,6 +751,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Validation.Email
+{
+
+
+ 	/// <summary>
+	/// IRestricted_Email_Domain_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Validation/Email/Restricted Email Domain Folder</para>	
+	/// <para>ID: 08a44059-ff92-48f1-85e5-3bf95839f562</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRestricted_Email_Domain_FolderConstants.TemplateIdString)]
+	public partial interface IRestricted_Email_Domain_Folder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IRestricted_Email_Domain_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Validation/Email/Restricted Email Domain Folder</para>	
+		/// <para>ID: 08a44059-ff92-48f1-85e5-3bf95839f562</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRestricted_Email_Domain_Folder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IRestricted_Email_Domain_FolderConstants{
+
+			public const string TemplateIdString = "08a44059-ff92-48f1-85e5-3bf95839f562";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Restricted Email Domain Folder";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
 
@@ -6308,6 +6346,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_
 			public const string LinkFieldName = "Link";
 
 						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Validation.Email
+{
+
+
+ 	/// <summary>
+	/// IRestricted_Email_Domains Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Validation/Email/Restricted Email Domains</para>	
+	/// <para>ID: 70c6d01f-b23e-41da-becb-f4311df56fae</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRestricted_Email_DomainsConstants.TemplateIdString)]
+	public partial interface IRestricted_Email_Domains : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IRestricted_Email_Domains Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Validation/Email/Restricted Email Domains</para>	
+		/// <para>ID: 70c6d01f-b23e-41da-becb-f4311df56fae</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRestricted_Email_Domains__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IRestricted_Email_DomainsConstants{
+
+			public const string TemplateIdString = "70c6d01f-b23e-41da-becb-f4311df56fae";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Restricted Email Domains";
+
 			
 
 	}
@@ -14945,6 +15021,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.A
 					
 			public static readonly ID Minimum_Word_CountFieldId = new ID("f5fcc36c-250d-4c02-8ba8-e057f37b7ff3");
 			public const string Minimum_Word_CountFieldName = "Minimum Word Count";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Validation.Email
+{
+
+
+ 	/// <summary>
+	/// IRestricted_Email_Domain Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Validation/Email/Restricted Email Domain</para>	
+	/// <para>ID: d4664308-e642-42f4-8bbe-c4e09992874c</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRestricted_Email_DomainConstants.TemplateIdString)]
+	public partial interface IRestricted_Email_Domain : IGlassBase 
+	{
+								/// <summary>
+					/// The Restricted Domain field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 2bb2efdf-0ced-4863-ab0a-fba79ae8d289</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRestricted_Email_DomainConstants.Restricted_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Restricted_Domain  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IRestricted_Email_Domain Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Validation/Email/Restricted Email Domain</para>	
+		/// <para>ID: d4664308-e642-42f4-8bbe-c4e09992874c</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRestricted_Email_Domain__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Restricted Domain field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 2bb2efdf-0ced-4863-ab0a-fba79ae8d289</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRestricted_Email_DomainConstants.Restricted_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Restricted_Domain  {get; set;}
+						}
+	
+	public static partial class IRestricted_Email_DomainConstants{
+
+			public const string TemplateIdString = "d4664308-e642-42f4-8bbe-c4e09992874c";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Restricted Email Domain";
+
+					
+			public static readonly ID Restricted_DomainFieldId = new ID("2bb2efdf-0ced-4863-ab0a-fba79ae8d289");
+			public const string Restricted_DomainFieldName = "Restricted Domain";
 
 						
 			
