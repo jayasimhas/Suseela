@@ -4,84 +4,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @*@Styles.Render("~/Content/css")*@
-    @*@Scripts.Render("~/bundles/modernizr")*@
-
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@Html.Raw(Model.Title)</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="/dist/img/favicon.png" />
 
+    <title>@Html.Raw(Model.Title)</title>
+
+    <link rel="icon" type="image/png" href="/dist/img/favicon.png" />
     @if (!string.IsNullOrWhiteSpace(Model.CanonicalUrl))
     {
         <link rel="canonical" href="@Model.CanonicalUrl" />
     }
 
-    <!-- STATIC PLACEHOLDER -->
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/dist/index-generated.css">
 
+    <script src="/js/openadstream.js"></script>
+
     @* @Html.Sitecore().VisitorIdentification() *@
     @Html.Sitecore().Placeholder("head")
-    <script src="/js/openadstream.js"></script>
-    <!--
-    To collect end-user usage analytics about your application,
-    insert the following script into each page you want to track.
-    Place this code immediately before the closing </head> tag,
-    and before any other scripts. Your first data will appear
-    automatically in just a few seconds.
-    -->
-    @if (Model.AppInsightsConfig.Enabled)
-    {
-        <script type="text/javascript">
-            var appInsights = window.appInsights || function (config) {
-                function r(config) {
-                    t[config] = function () {
-                        var i = arguments;
-                        t.queue.push(function () { t[config].apply(t, i) })
-                    }
-                }
 
-                var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f;
-                for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) r("track" + i.pop());
-                return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) {
-                    var s = f && f(config, r, u, e, o);
-                    return s !== !0 && t["_" + i](config, r, u, e, o), s
-                }), t
-            }({
-                instrumentationKey: "@Model.AppInsightsConfig.InstrumentationKey"
-            });
-
-            window.appInsights = appInsights;
-            appInsights.trackPageView();
-        </script>
-    }
 </head>
 <body>
-    <script type="text/javascript">
-        var analytics_data = {
-            "page_name": "@Model.PageTitleAnalytics", "page_type": "@Model.PageType", "actual_publish_date": "@Model.ArticlePublishDate", "article_author": "@Html.Raw(Model.ArticleAuthors)",
-            "article_content_type": "@Model.ArticleContentType", "article_embargo": "@Model.ArticleEmbargoed", "article_media_type": "@Model.ArticleMediaType", "article_number": "@Model.ArcticleNumber",
-            "created_date": "@Model.DateCreated", "custom_tags": "@Model.CustomTags", "page_description": "@Model.PageDescription", "page_title_override": "@Model.PageTitleOverride",
-            "taxonomy_region": "@Html.Raw(Model.ArticleRegions)", "taxonomy_subjects": "@Html.Raw(Model.ArticleSubject)", "taxonomy_therapy_areas": "@Html.Raw(Model.ArticleTherapy)", "login_status": "@Model.IsUserLoggedIn", "IsArticleFree": "@Model.IsArticleFree",
-            "user_id": "@Model.UserName", "company": "@Model.UserCompany", "user_entitlement_type": "@Model.UserEntitlements", "entitlement_status": "@Model.UserEntitlementStatus", "industry": "@Model.UserIndustry",
-            "user_email": "@Model.UserEmail", "current_email_subscriptions": "@Model.SubscribedProducts", "page_keywords": "@Model.MetaKeyWords", "company_Id" : "@Model.CompanyId"
-        };
-        var utag_data = analytics_data;
-
-
-    </script>
-    <script type="text/javascript">
-        (function (a, b, c, d) {
-            a = '//tags.tiqcdn.com/utag/informa/main/@Model.SiteEnvrionment/utag.js';
-            b = document; c = 'script'; d = b.createElement(c); d.src = a;
-            d.type = 'text/java' + c; d.async = true;
-            a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a)
-        })();
-    </script>
-
 
     @{ Html.RenderPartial("_Header", Model.Header); }
     @*@Html.Sitecore().Placeholder("header")*@
@@ -129,9 +74,66 @@
     </div>
     @* end pseudo-if *@
 
+    @*
+    To collect end-user usage analytics about your application,
+    insert the following script into each page you want to track.
+    Place this code immediately before the closing </head> tag,
+    and before any other scripts. Your first data will appear
+    automatically in just a few seconds.
+    *@
+    @if (Model.AppInsightsConfig.Enabled)
+    {
+        <script type="text/javascript">
+            var appInsights = window.appInsights || function (config) {
+                function r(config) {
+                    t[config] = function () {
+                        var i = arguments;
+                        t.queue.push(function () { t[config].apply(t, i) })
+                    }
+                }
+
+                var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f;
+                for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) r("track" + i.pop());
+                return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) {
+                    var s = f && f(config, r, u, e, o);
+                    return s !== !0 && t["_" + i](config, r, u, e, o), s
+                }), t
+            }({
+                instrumentationKey: "@Model.AppInsightsConfig.InstrumentationKey"
+            });
+
+            window.appInsights = appInsights;
+            appInsights.trackPageView();
+        </script>
+    }
+
+    <script type="text/javascript">
+    /* * *
+    ANALYTICS DATA
+    * * */
+
+    var analytics_data = {
+        "page_name": "@Model.PageTitleAnalytics", "page_type": "@Model.PageType", "actual_publish_date": "@Model.ArticlePublishDate", "article_author": "@Html.Raw(Model.ArticleAuthors)",
+        "article_content_type": "@Model.ArticleContentType", "article_embargo": "@Model.ArticleEmbargoed", "article_media_type": "@Model.ArticleMediaType", "article_number": "@Model.ArcticleNumber",
+        "created_date": "@Model.DateCreated", "custom_tags": "@Model.CustomTags", "page_description": "@Model.PageDescription", "page_title_override": "@Model.PageTitleOverride",
+        "taxonomy_region": "@Html.Raw(Model.ArticleRegions)", "taxonomy_subjects": "@Html.Raw(Model.ArticleSubject)", "taxonomy_therapy_areas": "@Html.Raw(Model.ArticleTherapy)", "login_status": "@Model.IsUserLoggedIn", "IsArticleFree": "@Model.IsArticleFree",
+        "user_id": "@Model.UserName", "company": "@Model.UserCompany", "user_entitlement_type": "@Model.UserEntitlements", "entitlement_status": "@Model.UserEntitlementStatus", "industry": "@Model.UserIndustry",
+        "user_email": "@Model.UserEmail", "current_email_subscriptions": "@Model.SubscribedProducts", "page_keywords": "@Model.MetaKeyWords", "company_Id" : "@Model.CompanyId"
+    };
+    var utag_data = analytics_data;
+
+    (function (a, b, c, d) {
+        a = '//tags.tiqcdn.com/utag/informa/main/@Model.SiteEnvrionment/utag.js';
+        b = document; c = 'script'; d = b.createElement(c); d.src = a;
+        d.type = 'text/java' + c; d.async = true;
+        a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a)
+    })();
+
+    </script>
+
     <script src="/dist/js/index.js"></script>
 
-    @* <script src="vendor/bower_components/angular-animate/angular-animate.js"></script> *@
     @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
+
 </body>
 </html>

@@ -16,6 +16,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuratio
 using Informa.Web.Areas.Article.Models.Article.EmailFriend;
 using Informa.Web.Controllers;
 using Informa.Library.Utilities.Settings;
+using Informa.Library.Utilities.TokenMatcher;
 using Informa.Library.Utilities.WebApi.Filters;
 using log4net;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
@@ -166,7 +167,9 @@ namespace Informa.Web.Areas.Article.Controllers
 				replacements["#article_author#"] = (article != null && article.Authors.Any())
 					? string.Join(",", article.Authors.Select(a => $"{a.First_Name} {a.Last_Name}"))
 					: string.Empty;
-				replacements["#article_summary#"] = article?.Summary ?? string.Empty;
+				replacements["#article_summary#"] = (article != null && !string.IsNullOrEmpty(article.Summary))
+                    ? DCDTokenMatchers.ProcessDCDTokens(article.Summary)
+                    : string.Empty;
 
 				emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
 			}
