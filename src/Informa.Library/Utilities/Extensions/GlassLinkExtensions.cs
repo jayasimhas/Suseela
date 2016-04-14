@@ -23,27 +23,34 @@ namespace Informa.Library.Utilities.Extensions
 
         public static string LinkUrl(this Link lf)
         {
-            switch (lf.Type)
+            try
             {
-                case LinkType.NotSet:
-                    break;
-                case LinkType.Anchor:
-                    return !string.IsNullOrEmpty(lf.Anchor) ? "#" + lf.Anchor : string.Empty;
-                case LinkType.External:
-                    return lf.Url;
-                case LinkType.JavaScript:
-                    return lf.Url;
-                case LinkType.Internal:
-                    return lf.TargetId != null ? Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(new Sitecore.Data.ID(lf.TargetId))) : string.Empty;
-                case LinkType.MailTo:
-                    return lf.Url;
-                case LinkType.Media:
-                    return lf.TargetId != null ? Sitecore.Resources.Media.MediaManager.GetMediaUrl(Sitecore.Context.Database.GetItem(new Sitecore.Data.ID(lf.TargetId))) : string.Empty;
-                default:
-                    return lf.Url;
-            }
+                switch (lf.Type)
+                {
+                    case LinkType.NotSet:
+                        break;
+                    case LinkType.Anchor:
+                        return !string.IsNullOrEmpty(lf.Anchor) ? "#" + lf.Anchor : string.Empty;
+                    case LinkType.External:
+                        return lf.Url;
+                    case LinkType.JavaScript:
+                        return lf.Url;
+                    case LinkType.Internal:
+                        return lf.TargetId != null ? Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(new Sitecore.Data.ID(lf.TargetId))) : string.Empty;
+                    case LinkType.MailTo:
+                        return lf.Url;
+                    case LinkType.Media:
+                        return lf.TargetId != null ? Sitecore.Resources.Media.MediaManager.GetMediaUrl(Sitecore.Context.Database.GetItem(new Sitecore.Data.ID(lf.TargetId))) : string.Empty;
+                    default:
+                        return lf.Url;
+                }
 
-            return lf.Url;
+                return lf.Url;
+            }
+            catch
+            {
+                return lf.Url;
+            }
         }
     }
 }
