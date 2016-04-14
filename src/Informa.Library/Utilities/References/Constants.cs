@@ -5,13 +5,9 @@ namespace Informa.Library.Utilities.References
 {
 	public static class Constants
 	{
-		public const string Site_Root_Template_ID = "{DD003F89-D57D-48CB-B428-FFB519AACA56}";
-		
 		public const string ArticleNumberLength = "000000";
 		public const string MasterDb = "master";
-		public static string WebDb = "web";
-		public const string ScripPublicationName = "Scrip Intelligence";
-
+		
 		public const string MediaLibraryRoot = "/sitecore/media library/";
 		public const string MediaLibraryPath = "Documents/";
 
@@ -31,9 +27,9 @@ namespace Informa.Library.Utilities.References
 			{ new Guid(ScripRootNode), ScripRootNodeIntials},
 		};
 
-		public static readonly Dictionary<string, string> PublicationPrefixByName = new Dictionary<string, string>
+		public static class QueryString
 		{
-			{ScripPublicationName, ScripRootNodeIntials }
-		};
+			public const string InProgressKey = "inprogress";
+		}
 	}
 }

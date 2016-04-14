@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq.Expressions;
 using Informa.Library.Search.Results;
-using Sitecore;
-using Sitecore.ContentSearch.Linq;
+using Informa.Library.Utilities.References;
 using Sitecore.ContentSearch.Linq.Utilities;
 using Velir.Search.Core.Models;
 using Velir.Search.Core.Page;
@@ -11,58 +9,38 @@ using Velir.Search.Core.PredicateBuilders;
 
 namespace Informa.Library.Search.PredicateBuilders
 {
-    public class InformaPredicateBuilder<T> : SearchPredicateBuilder<T> where T : InformaSearchResultItem
-    {
-        public DateTime DateRangeStart { get; set; }
-        public DateTime DateRangeEnd { get; set; }
+	public class InformaPredicateBuilder<T> : SearchPredicateBuilder<T> where T : InformaSearchResultItem
+	{
+		private readonly ISearchRequest _request;
 
-        private ISearchRequest _request;
+		public InformaPredicateBuilder(ISearchPageParser pageParser, ISearchRequest request = null)
+				: base(pageParser, request)
+		{
+			_request = request;
+		}
 
+		public override Expression<Func<T, bool>> Build()
+		{
+			var predicate = base.Build();
 
-        public InformaPredicateBuilder(ISearchPageParser pageParser, ISearchRequest request = null)
-            : base(pageParser, request)
-        {
-            _request = request;
-        }
+			predicate = predicate.And(x => x.IsSearchable);
+			predicate = predicate.And(x => x.IsLatestVersion);
 
-        public override Expression<Func<T, bool>> Build()
-        {
-            var predicate = base.Build();
+			// If the inprogress flag is available then add that as as filter, this is used in VWB
+			if (_request.QueryParameters.ContainsKey(Constants.QueryString.InProgressKey))
+			{
+				if (_request.QueryParameters[Constants.QueryString.InProgressKey] == "1")
+				{
+					predicate = predicate.And(x => x.InProgress);
+				}
+			}
 
-            predicate = predicate.And(x => x.IsSearchable);
-            predicate = predicate.And(x => x.IsLatestVersion);
+			return predicate;
+		}
 
-           // If the inprogress flag is available then add that as as filter, this is used in VWB
-            if (_request.QueryParameters.ContainsKey("inprogress"))
-            {
-                if (_request.QueryParameters["inprogress"] == "1")
-                {
-                    predicate = predicate.And(x => x.InProgress);
-                }
-            }
-
-            //Date Searching
-            //if (DateRangeStart > DateTime.MinValue)
-            //{
-            //    predicate = predicate.And(x => x.SearchDate > DateRangeStart);
-            //    DateRangeEnd = DateRangeEnd != DateTime.MinValue ? DateRangeEnd : DateTime.Now;
-            //    predicate = predicate.And(x => x.SearchDate < DateRangeEnd);
-            //}
-
-            //Add boosting if there is a search term
-            //if (_request?.QueryParameters.Count > 0)
-            //{
-            //    if (_request.QueryParameters.ContainsKey("q"))
-            //    {
-            //        string searchTerm = _request.QueryParameters["q"];
-            //        predicate =
-            //            predicate.And(
-            //                x => x.Summary.Contains(searchTerm).Boost(4) || x.Title.Contains(searchTerm).Boost(5) || x.SubTitle.Contains(searchTerm).Boost(3));
-            //    }
-            //}
-
-            return predicate;
-        }
-    }
-
+		protected override Expression<Func<T, bool>> AddAllClause(string[] value)
+		{
+			return base.AddAllClause(value);
+		}
+	}
 }
