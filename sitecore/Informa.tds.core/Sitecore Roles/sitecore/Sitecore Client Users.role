@@ -1,0 +1,63 @@
+----role----
+name: sitecore\Sitecore Client Users
+
+----role-in-role----
+rolename: sitecore\Analytics Content Profiling
+
+----role-in-role----
+rolename: sitecore\Analytics Maintaining
+
+----role-in-role----
+rolename: sitecore\Analytics Personalization
+
+----role-in-role----
+rolename: sitecore\Analytics Reporting
+
+----role-in-role----
+rolename: sitecore\Analytics Testing
+
+----role-in-role----
+rolename: sitecore\Author
+
+----role-in-role----
+rolename: sitecore\Editor
+
+----role-in-role----
+rolename: sitecore\Sitecore Client Account Managing
+
+----role-in-role----
+rolename: sitecore\Sitecore Client Authoring
+
+----role-in-role----
+rolename: sitecore\Sitecore Client Configuring
+
+----role-in-role----
+rolename: sitecore\Sitecore Client Designing
+
+----role-in-role----
+rolename: sitecore\Sitecore Client Developing
+
+----role-in-role----
+rolename: sitecore\Sitecore Client Maintaining
+
+----role-in-role----
+rolename: sitecore\Sitecore Client Publishing
+
+----role-in-role----
+rolename: sitecore\Sitecore Client Securing
+
+----role-in-role----
+rolename: sitecore\Sitecore Client Translating
+
+----role-in-role----
+rolename: sitecore\Sitecore Limited Content Editor
+
+----role-in-role----
+rolename: sitecore\Sitecore Limited Page Editor
+
+----role-in-role----
+rolename: sitecore\Sitecore Local Administrators
+
+----role-in-role----
+rolename: sitecore\Sitecore Minimal Page Editor
+

@@ -1072,8 +1072,6 @@ namespace Informa.Models.DCD
 		
 		private string _Content;
 		
-		private System.DateTime _Published;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1090,8 +1088,6 @@ namespace Informa.Models.DCD
     partial void OnTitleChanged();
     partial void OnContentChanging(string value);
     partial void OnContentChanged();
-    partial void OnPublishedChanging(System.DateTime value);
-    partial void OnPublishedChanged();
     #endregion
 		
 		public Deal()
@@ -1215,26 +1211,6 @@ namespace Informa.Models.DCD
 					this._Content = value;
 					this.SendPropertyChanged("Content");
 					this.OnContentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="DateTime")]
-		public System.DateTime Published
-		{
-			get
-			{
-				return this._Published;
-			}
-			set
-			{
-				if ((this._Published != value))
-				{
-					this.OnPublishedChanging(value);
-					this.SendPropertyChanging();
-					this._Published = value;
-					this.SendPropertyChanged("Published");
-					this.OnPublishedChanged();
 				}
 			}
 		}
@@ -1525,8 +1501,6 @@ namespace Informa.Models.DCD
 		
 		private string _Content;
 		
-		private System.DateTime _Published;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1543,8 +1517,6 @@ namespace Informa.Models.DCD
     partial void OnTitleChanged();
     partial void OnContentChanging(string value);
     partial void OnContentChanged();
-    partial void OnPublishedChanging(System.DateTime value);
-    partial void OnPublishedChanged();
     #endregion
 		
 		public Drug()
@@ -1668,26 +1640,6 @@ namespace Informa.Models.DCD
 					this._Content = value;
 					this.SendPropertyChanged("Content");
 					this.OnContentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="datetime")]
-		public System.DateTime Published
-		{
-			get
-			{
-				return this._Published;
-			}
-			set
-			{
-				if ((this._Published != value))
-				{
-					this.OnPublishedChanging(value);
-					this.SendPropertyChanging();
-					this._Published = value;
-					this.SendPropertyChanged("Published");
-					this.OnPublishedChanged();
 				}
 			}
 		}

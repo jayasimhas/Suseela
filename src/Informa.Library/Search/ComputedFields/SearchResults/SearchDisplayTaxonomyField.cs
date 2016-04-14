@@ -1,66 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Script.Serialization;
-using Glass.Mapper.Sc;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
 using Informa.Library.Search.Utilities;
+using Informa.Library.Services.Search.Fields.Base;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Sitecore.Data.Items;
-using Sitecore.Links;
-using Velir.Search.Core.ComputedFields;
 
 namespace Informa.Library.Search.ComputedFields.SearchResults
 {
+	public class SearchDisplayTaxonomyField : BaseGlassComputedField<I___BaseTaxonomy>
+	{
+		public override object GetFieldValue(I___BaseTaxonomy indexItem)
+		{
+			List<HtmlLink> displayTaxonomies = new List<HtmlLink>();
 
+			if (indexItem?.Taxonomies == null || !indexItem.Taxonomies.Any())
+			{
+				return string.Empty;
+			}
 
-    public class SearchDisplayTaxonomyField : BaseContentComputedField
-    {
-        public override object GetFieldValue(Item indexItem)
-        {
-            List<HtmlLink> displayTaxonomies = new List<HtmlLink>();
+			int count = 0;
+			foreach (ITaxonomy_Item taxonomy in indexItem.Taxonomies)
+			{
+				displayTaxonomies.Add(new HtmlLink { Title = taxonomy.Item_Name?.Trim() ?? string.Empty, Url = SearchTaxonomyUtil.GetSearchUrl(taxonomy) });
+				count++;
 
-            I___BaseTaxonomy taxonomyItem = indexItem.GlassCast<I___BaseTaxonomy>(inferType: true);
+				if (count == 2)
+				{
+					break;
+				}
+			}
 
-            if (taxonomyItem == null)
-            {
-                return string.Empty;
-            }
-
-            if (taxonomyItem.Taxonomies == null)
-            {
-                return string.Empty;
-            }
-
-            if (!taxonomyItem.Taxonomies.Any())
-            {
-                return string.Empty;
-            }
-
-            int count = 0;
-            foreach (ITaxonomy_Item taxonomy in taxonomyItem.Taxonomies)
-            {
-                displayTaxonomies.Add(new HtmlLink() {Title = taxonomy.Item_Name.Trim(), Url = SearchTaxonomyUtil.GetSearchUrl(taxonomy)});
-                count++;
-
-                if (count == 2)
-                {
-                    break;
-                }
-            }
-
-            HtmlLinkList links = new HtmlLinkList()
-                                 {
-                                     Links = displayTaxonomies
-            };
-
-        
-
-            return new JavaScriptSerializer().Serialize(links);
-        }
-    }
+			HtmlLinkList links = new HtmlLinkList
+			{
+				Links = displayTaxonomies
+			};
+			
+			return new JavaScriptSerializer().Serialize(links);
+		}
+	}
 }

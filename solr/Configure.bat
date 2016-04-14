@@ -57,7 +57,7 @@ set fileToEnable[19]=FXM\Sitecore.FXM.Solr.DomainsSearch.Index.Web.config
 echo Enabling Solr configuration files
 
 for /l %%n in (0,1,19) do (
-echo Disabling file: %includeDirectory%\!fileToEnable[%%n]!
+echo Enabling file: %includeDirectory%\!fileToEnable[%%n]!
 move "%includeDirectory%\!fileToEnable[%%n]!.disabled" "%includeDirectory%\!fileToEnable[%%n]!"
 move "%includeDirectory%\!fileToEnable[%%n]!.example" "%includeDirectory%\!fileToEnable[%%n]!"
 )

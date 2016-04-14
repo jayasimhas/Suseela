@@ -7,36 +7,32 @@ namespace Informa.Library.User.Entitlement
     public class EntitledProductContext : IEntitledProductContext
     {
 		protected readonly IEntitlementFactory EntitlementFactory;
-        protected readonly IEntitlementAccessLevelContext EntitlementAccessLevelContext;
+		protected readonly IEntitledContext EntitledContext;
 
-        public EntitledProductContext(
+		public EntitledProductContext(
 			IEntitlementFactory entitlementFactory,
-			IEntitlementAccessLevelContext entitlementAccessLevelContext)
+			IEntitledContext entitledContext)
         {
 			EntitlementFactory = entitlementFactory;
-            EntitlementAccessLevelContext = entitlementAccessLevelContext;
+			EntitledContext = entitledContext;
 		}
 
-        #region Implementation of IEntitledProductContext
-
-        public EntitledAccessLevel GetAccessLevel(IEntitledProductItem productItem)
-        {
-            if (productItem == null)
+		public bool IsEntitled(IEntitledProductItem productItem)
+		{
+			if (productItem == null)
 			{
-				return EntitledAccessLevel.UnEntitled;
+				return false;
 			}
 
 			if (productItem.IsFree)
 			{
-				return EntitledAccessLevel.Individual;
+				return true;
 			}
 
 			var entitlement = EntitlementFactory.Create(productItem);
+			var entitled = EntitledContext.IsEntitled(entitlement);
 
-			return EntitlementAccessLevelContext.Determine(entitlement);
-        }
-
-
-        #endregion
+			return entitled;
+		}
     }
 }

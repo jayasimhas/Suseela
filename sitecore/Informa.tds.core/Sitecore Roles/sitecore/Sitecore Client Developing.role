@@ -1,0 +1,12 @@
+----role----
+name: sitecore\Sitecore Client Developing
+
+----role-in-role----
+rolename: sitecore\Developer
+
+----role-in-role----
+rolename: sitecore\Operations Access
+
+----role-in-role----
+rolename: sitecore\Sitecore Client Bucket Management
+

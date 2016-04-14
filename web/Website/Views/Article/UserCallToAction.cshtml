@@ -48,11 +48,14 @@
 }
 else
 {
+    if (Model != null)
+    {
     @* * * SIGNED IN - NOT ENTITLED * * *@
-    <div class="article-call-to-action--subscribe">
-        <span class="article-call-to-action__title">
+        <div class="article-call-to-action--subscribe">
+            <span class="article-call-to-action__title">
         @Model.SubscribeTitle
     </span>
-        <a href="@Model.SubscribeLink.Url">@Model.SubscribeLink.Text</a>
-    </div>
+            <a href="@Model.SubscribeLink.Url">@Model.SubscribeLink.Text</a>
+        </div>
+    }
 }

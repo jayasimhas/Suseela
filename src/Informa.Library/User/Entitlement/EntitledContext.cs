@@ -21,7 +21,6 @@ namespace Informa.Library.User.Entitlement
 
 			switch (accessLevel)
 			{
-				case EntitledAccessLevel.Free:
 				case EntitledAccessLevel.Individual:
 				case EntitledAccessLevel.TransparentIP:
 					return true;

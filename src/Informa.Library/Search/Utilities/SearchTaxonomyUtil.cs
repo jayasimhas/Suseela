@@ -65,7 +65,14 @@ namespace Informa.Library.Search.Utilities
 
                 if (taxonomyItem._Parent._TemplateId == ITaxonomy_ItemConstants.TemplateId.ToGuid())
                 {
-                    fullTaxonomyList.Add(((ITaxonomy_Item)taxonomyItem._Parent).Item_Name);
+                    string facetValue = ((ITaxonomy_Item) taxonomyItem._Parent).Item_Name.Trim();
+
+                    if (string.IsNullOrEmpty(facetValue))
+                    {
+                        continue;
+                    }
+
+                    fullTaxonomyList.Add(facetValue);
                 }
             }
 
