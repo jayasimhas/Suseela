@@ -273,9 +273,11 @@
                         </svg>
                     </button>
                 </legend>
-
+                <p ng-if="group.id === 'publication'">
+                    <button class="facets__button">Select My Subscriptions</button>
+                </p>
                 <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
-                <ul class="facets__section-list" ng-if="($index < facetController.MaxFacetShow) || group.ShowMore">
+                    <ul class="facets__section-list" ng-if="($index < facetController.MaxFacetShow) || group.ShowMore">
                     <li>
                         @* Hidden input field *@
                         <input  id="{{ group.id }}-{{ $index }}"
