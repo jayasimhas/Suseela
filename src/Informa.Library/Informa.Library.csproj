@@ -525,6 +525,16 @@
     <Compile Include="User\Document\SavedDocumentsContext.cs" />
     <Compile Include="User\Document\SaveDocumentContext.cs" />
     <Compile Include="User\Profile\UserProfileContext.cs" />
+    <Compile Include="User\Registration\ComponentModel\DataAnnotations\EmailRestrictionAttribute.cs" />
+    <Compile Include="User\Registration\ComponentModel\DataAnnotations\CompetitorEmailRestrictionAttribute.cs" />
+    <Compile Include="User\Registration\ComponentModel\DataAnnotations\PublicEmailRestrictionAttribute.cs" />
+    <Compile Include="User\Registration\ICompetitorRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\IPublicRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\IRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\IRestrictedEmailDomainsFactory.cs" />
+    <Compile Include="User\Registration\CompetitorRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\PublicRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\RestrictedEmailDomainsFactory.cs" />
     <Compile Include="User\Registration\Web\IWebIsActiveRegistration.cs" />
     <Compile Include="User\Registration\Web\IWebRegisterUserContext.cs" />
     <Compile Include="User\Registration\Web\WebIsActiveRegistration.cs" />
