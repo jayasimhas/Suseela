@@ -5,6 +5,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http;
 using Glass.Mapper.Sc;
+using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Mail;
 using Informa.Library.Search.Utilities;
@@ -27,25 +28,29 @@ namespace Informa.Web.Areas.Article.Controllers
 {
 	public class EmailFriendController : ApiController
 	{
-		private ISitecoreService _service;
-		private ArticleUtil _articleUtil;
 		protected readonly IEmailSender EmailSender;
 		protected readonly IHtmlEmailTemplateFactory HtmlEmailTemplateFactory;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IEmailFactory EmailFactory;
 		protected readonly ISiteSettings SiteSettings;
-		private ILog _logger;
+		private readonly ILog _logger;
 		protected readonly ISitecoreService SitecoreService;
 		private readonly IBaseHtmlEmailFactory BaseEmailFactory;
+	    protected readonly IArticleSearch ArticleSearch;
 
-		public EmailFriendController(ArticleUtil articleUtil, ITextTranslator textTranslator, ISiteRootContext siteRootContext, IEmailFactory emailFactory,
-			Func<string, ISitecoreService> sitecoreFactory, IEmailSender emailSender, IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
-			ISiteSettings siteSettings, ILog logger, ISitecoreService sitecoreService)
+		public EmailFriendController(
+            ITextTranslator textTranslator, 
+            ISiteRootContext siteRootContext, 
+            IEmailFactory emailFactory,
+			IEmailSender emailSender, 
+            IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
+			ISiteSettings siteSettings, 
+            ILog logger, 
+            ISitecoreService sitecoreService, 
+            IArticleSearch articleSearch)
 		{
 			EmailSender = emailSender;
-			_articleUtil = articleUtil;
-			_service = sitecoreFactory(Sitecore.Context.Database.Name);
 			HtmlEmailTemplateFactory = htmlEmailTemplateFactory;
 			TextTranslator = textTranslator;
 			SiteRootContext = siteRootContext;
@@ -53,6 +58,8 @@ namespace Informa.Web.Areas.Article.Controllers
 			SiteSettings = siteSettings;
 			_logger = logger;
 			SitecoreService = sitecoreService;
+		    ArticleSearch = articleSearch;
+
 		}
 
 		[HttpPost]
@@ -120,7 +127,7 @@ namespace Informa.Web.Areas.Article.Controllers
 
 				var siteRoot = SiteRootContext.Item;
 				emailHtml = htmlEmailTemplate.Html;
-				var footerContent = _service.GetItem<IEmail_Config>(Constants.ScripEmailConfig);
+				var footerContent = SitecoreService.GetItem<IEmail_Config>(Constants.ScripEmailConfig);
 				var replacements = new Dictionary<string, string>
 				{
 					["#Environment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),
@@ -154,7 +161,7 @@ namespace Informa.Web.Areas.Article.Controllers
 					: string.Empty;
 
 				// Article Body
-				var article = _articleUtil.GetArticleByNumber(articleNumber,Sitecore.Context.Database.Name);
+				var article = GetArticle(articleNumber);
 				replacements["#article_date#"] = article?.Actual_Publish_Date.ToString("dd MMMM yyyy") ?? string.Empty;
 				replacements["#article_mediatype#"] = article?.Media_Type?.Item_Name ?? string.Empty;
 				replacements["#article_title#"] = article?.Title ?? String.Empty;
@@ -267,7 +274,7 @@ namespace Informa.Web.Areas.Article.Controllers
 				//main email information
 				var siteRoot = SiteRootContext.Item;
 				emailHtml = htmlEmailTemplate.Html.Replace("#Body_Content#", searchTemplate.Html);
-				var footerContent = _service.GetItem<IEmail_Config>(Constants.ScripEmailConfig);
+				var footerContent = SitecoreService.GetItem<IEmail_Config>(Constants.ScripEmailConfig);
 				var replacements = new Dictionary<string, string>
 				{
 					["#Environment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),
@@ -349,5 +356,12 @@ namespace Informa.Web.Areas.Article.Controllers
 		}
 
 		#endregion Email Results
+
+	    protected IArticle GetArticle(string articleNumber)
+	    {
+            IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+            filter.ArticleNumber = articleNumber;
+            return ArticleSearch.Search(filter).Articles.FirstOrDefault();            
+        }
 	}
 }

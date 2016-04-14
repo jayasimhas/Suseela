@@ -42,7 +42,8 @@ namespace Informa.Web.Controllers
 	{
 		protected readonly IArticleSearch ArticleSearcher;
 		protected readonly ISitecoreContext SitecoreContext;
-		public ArticleController(IArticleSearch searcher, ISitecoreContext context)
+
+        public ArticleController(IArticleSearch searcher, ISitecoreContext context)
 		{
 			ArticleSearcher = searcher;
 			SitecoreContext = context;
@@ -120,17 +121,19 @@ namespace Informa.Web.Controllers
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
 		private readonly IArticleSearch _articleSearcher;
+        protected readonly Func<string, ISitecoreService> SitecoreFactory;
 
-		//protected readonly IWorkFlowUtil WorkflowUtil;
-		/// <summary>
-		/// Constructor
-		/// </summary
-		/// <param name="searcher"></param>
-		/// <param name="sitecoreFactory"></param>
-		/// <param name="siteRootContext"></param>
-		public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
-		{
-			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
+        //protected readonly IWorkFlowUtil WorkflowUtil;
+        /// <summary>
+        /// Constructor
+        /// </summary
+        /// <param name="searcher"></param>
+        /// <param name="sitecoreFactory"></param>
+        /// <param name="siteRootContext"></param>
+        public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
+        {
+            SitecoreFactory = sitecoreFactory;
+            _sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			_articleSearcher = searcher;
 		}
 
@@ -169,7 +172,9 @@ namespace Informa.Web.Controllers
             if (results.Articles.Any())
             {
                 var foundArticle = results.Articles.FirstOrDefault();
-                if (foundArticle != null) return _sitecoreMasterService.GetItem<ArticleItem>(foundArticle._Id);
+                var service = SitecoreFactory(databaseName);
+                if (foundArticle != null)
+                    return service.GetItem<ArticleItem>(foundArticle._Id);
             }
             return null;
         }
