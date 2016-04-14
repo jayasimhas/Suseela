@@ -22,15 +22,20 @@ namespace Informa.Library.User.Registration
 		{
 			var username = newUser?.Username;
 
-			if (string.IsNullOrWhiteSpace(username))
-			{
-				return false;
-			}
-
-			var newsletterSucccess = UpdateNewsletterOptIns.Update(username, newsletters);
-			var offerSuccess = UpdateOfferUserOptIn.Update(username, offers);
-
-			return offerSuccess && newsletterSucccess;
+		    return Set(username, offers, newsletters);
 		}
-	}
+
+        public bool Set(string username, bool offers, bool newsletters)
+        {
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                return false;
+            }
+
+            var newsletterSucccess = UpdateNewsletterOptIns.Update(username, newsletters);
+            var offerSuccess = UpdateOfferUserOptIn.Update(username, offers);
+
+            return offerSuccess && newsletterSucccess;
+        }
+    }
 }
