@@ -45,7 +45,7 @@
                     <div id="header">
                         <!-- Logo -->
                         <a class="site-logo" href="#">
-                            <img src="/img/header_logo.gif" /></a>
+                            <img src="/util/DCD/img/header_logo.gif" /></a>
                     </div>
                     <!-- End header -->
                     <div id="contentwrapper">

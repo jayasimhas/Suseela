@@ -4,25 +4,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @*@Styles.Render("~/Content/css")*@
-    @*@Scripts.Render("~/bundles/modernizr")*@
-
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@Html.Raw(Model.Title)</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="/dist/img/favicon.png" />
 
+    <title>@Html.Raw(Model.Title)</title>
+
+    <link rel="icon" type="image/png" href="/dist/img/favicon.png" />
     @if (!string.IsNullOrWhiteSpace(Model.CanonicalUrl))
     {
         <link rel="canonical" href="@Model.CanonicalUrl" />
     }
 
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/dist/index-generated.css">
+
+    <script src="/js/openadstream.js"></script>
+
     @* @Html.Sitecore().VisitorIdentification() *@
     @Html.Sitecore().Placeholder("head")
-    <link rel="stylesheet" href="/dist/index-generated.css">
-    <script src="/js/openadstream.js"></script>
+
 </head>
 <body>
 
@@ -129,7 +131,6 @@
 
     </script>
 
-    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
     <script src="/dist/js/index.js"></script>
 
     @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }

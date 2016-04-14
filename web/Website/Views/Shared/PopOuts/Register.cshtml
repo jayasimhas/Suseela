@@ -9,7 +9,7 @@
 
 			<div class="dismiss-button" data-target-element=".js-pop-out__register">
 				<svg class="dismiss-button__icon">
-					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>UsernamePublicRestriction
 				</svg>
 			</div>
 
@@ -22,6 +22,10 @@
 
 			<p class="js-form-error js-form-error-UsernameRequirements pop-out__form-error"
 			   style="display: none;">@Model.UsernameRequirementsErrorText</p>
+			<p class="js-form-error js-form-error-UsernameCompetitorRestriction pop-out__form-error"
+			   style="display: none;">@Model.UsernameCompetitorRestrictedDomainErrorText</p>
+			<p class="js-form-error js-form-error-UsernamePublicRestriction pop-out__form-error"
+			   style="display: none;">@Model.UsernamePublicRestrictedDomainErrorText</p>
 			<p class="js-form-error js-form-error-UsernameExists pop-out__form-error"
 			   style="display: none;">@Model.UsernameExistsErrorText</p>
 			<p class="js-form-error js-form-error-error-general pop-out__form-error"
