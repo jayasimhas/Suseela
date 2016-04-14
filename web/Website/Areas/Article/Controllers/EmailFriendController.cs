@@ -12,17 +12,17 @@ using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.References;
-using Informa.Library.Utilities.WebUtils;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Web.Areas.Article.Models.Article.EmailFriend;
-using Informa.Web.Controllers;
 using Informa.Library.Utilities.Settings;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Library.Utilities.WebApi.Filters;
 using log4net;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Sitecore.Data.Items;
+using Sitecore.Resources.Media;
+using Sitecore.Web;
 
 namespace Informa.Web.Areas.Article.Controllers
 {
@@ -138,28 +138,28 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#sender_name#"] = senderName,
 					["#sender_email#"] = senderEmail,
 					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
-						? UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
+						? GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
 						: string.Empty,
 					["#RssLogo#"] = (siteRoot?.RSS_Logo != null)
-						? UrlUtils.GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString())
+						? GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString())
 						: string.Empty,
 					["#LinkedinLogo#"] = (siteRoot?.Linkedin_Logo != null)
-						? UrlUtils.GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString())
+						? GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString())
 						: string.Empty,
 					["#TwitterLogo#"] = (siteRoot?.Twitter_Logo != null)
-						? UrlUtils.GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString())
+						? GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString())
 						: string.Empty,
 					["#personal_message#"] = (!string.IsNullOrEmpty(message))
 						? $"\"{message}\""
 						: string.Empty,
 					["#Footer_Content#"] = GetValue(footerContent?.Email_A_Friend_Footer_Content)
-						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail)
-				};
+						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail),
+                    ["#sender_name_message#"] = !string.IsNullOrEmpty(message)
+                        ? $"{senderName} {TextTranslator.Translate("Search.Message")}:"
+                        : string.Empty
 
-				replacements["#sender_name_message#"] = !string.IsNullOrEmpty(message)
-					? $"{senderName} {TextTranslator.Translate("Search.Message")}:"
-					: string.Empty;
-
+                };
+                
 				// Article Body
 				var article = GetArticle(articleNumber);
 				replacements["#article_date#"] = article?.Actual_Publish_Date.ToString("dd MMMM yyyy") ?? string.Empty;
@@ -286,16 +286,16 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#sender_email#"] = senderEmail,
 					["#query_url#"] = queryUrl,
 					["#Logo_URL#"] = (siteRoot?.Email_Logo != null)
-						? UrlUtils.GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
+						? GetMediaURL(siteRoot.Email_Logo.MediaId.ToString())
 						: string.Empty,
 					["#RssLogo#"] = (siteRoot?.RSS_Logo != null)
-						? UrlUtils.GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString())
+						? GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString())
 						: string.Empty,
 					["#LinkedinLogo#"] = (siteRoot?.Linkedin_Logo != null)
-						? UrlUtils.GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString())
+						? GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString())
 						: string.Empty,
 					["#TwitterLogo#"] = (siteRoot?.Twitter_Logo != null)
-						? UrlUtils.GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString())
+						? GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString())
 						: string.Empty,
 					["#personal_message#"] = (!string.IsNullOrEmpty(message))
 						? $"\"{message}\""
@@ -304,12 +304,11 @@ namespace Informa.Web.Areas.Article.Controllers
 						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail),
 					["#notice_message#"] = TextTranslator.Translate("Search.EmailPopout.Notice"),
 					["#search_query#"] = queryTerm,
-					["#see_more#"] = TextTranslator.Translate("Search.SeeMore")
-				};
-
-				replacements["#sender_name_message#"] = !string.IsNullOrEmpty(message)
-					? $"{senderName} {TextTranslator.Translate("Search.Message")}:"
-					: string.Empty;
+					["#see_more#"] = TextTranslator.Translate("Search.SeeMore"),
+                    ["#sender_name_message#"] = !string.IsNullOrEmpty(message)
+                        ? $"{senderName} {TextTranslator.Translate("Search.Message")}:"
+                        : string.Empty
+                };
 
 				//search results
 				StringBuilder resultBody = new StringBuilder();
@@ -363,5 +362,14 @@ namespace Informa.Web.Areas.Article.Controllers
             filter.ArticleNumber = articleNumber;
             return ArticleSearch.Search(filter).Articles.FirstOrDefault();            
         }
-	}
+
+        public string GetMediaURL(string mediaId)
+        {
+            Item imageItem = SitecoreService.GetItem<Item>(mediaId);
+            if (imageItem == null)
+                return string.Empty;
+
+            return $"{HttpContext.Current.Request.Url.Scheme}://{WebUtil.GetHostName()}{MediaManager.GetMediaUrl(imageItem)}";
+        }
+    }
 }
