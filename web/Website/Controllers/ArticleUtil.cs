@@ -3,35 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
-using System.Web.Mvc;
 using System.Xml;
 using Glass.Mapper.Sc;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Informa.Web.Areas.Account.Models;
 using Jabberwocky.Glass.Models;
 using Sitecore.Data.Items;
 using Sitecore.Data.Locking;
 using Sitecore.Web;
 using Informa.Library.Article.Search;
-using Informa.Library.Search.PredicateBuilders;
-using Informa.Library.Search.Results;
-using Informa.Library.Site;
 using Informa.Library.Utilities;
 using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
 using PluginModels;
 using Sitecore;
-using Sitecore.ContentSearch;
-using Sitecore.ContentSearch.Utilities;
-using Sitecore.Data;
-using Sitecore.Links;
-using Sitecore.Mvc.Controllers;
-using Velir.Core.Utilities.Strings;
-using Velir.Search.Core.Managers;
-using Velir.Search.Core.Page;
-using Velir.Search.Core.Queries;
 using Constants = Informa.Library.Utilities.References.Constants;
 using IWorkflow = Sitecore.Workflows.IWorkflow;
 
@@ -42,7 +27,8 @@ namespace Informa.Web.Controllers
 	{
 		protected readonly IArticleSearch ArticleSearcher;
 		protected readonly ISitecoreContext SitecoreContext;
-		public ArticleController(IArticleSearch searcher, ISitecoreContext context)
+
+        public ArticleController(IArticleSearch searcher, ISitecoreContext context)
 		{
 			ArticleSearcher = searcher;
 			SitecoreContext = context;
@@ -120,17 +106,19 @@ namespace Informa.Web.Controllers
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
 		private readonly IArticleSearch _articleSearcher;
+        protected readonly Func<string, ISitecoreService> SitecoreFactory;
 
-		//protected readonly IWorkFlowUtil WorkflowUtil;
-		/// <summary>
-		/// Constructor
-		/// </summary
-		/// <param name="searcher"></param>
-		/// <param name="sitecoreFactory"></param>
-		/// <param name="siteRootContext"></param>
-		public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
-		{
-			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
+        //protected readonly IWorkFlowUtil WorkflowUtil;
+        /// <summary>
+        /// Constructor
+        /// </summary
+        /// <param name="searcher"></param>
+        /// <param name="sitecoreFactory"></param>
+        /// <param name="siteRootContext"></param>
+        public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
+        {
+            SitecoreFactory = sitecoreFactory;
+            _sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			_articleSearcher = searcher;
 		}
 
@@ -169,7 +157,9 @@ namespace Informa.Web.Controllers
             if (results.Articles.Any())
             {
                 var foundArticle = results.Articles.FirstOrDefault();
-                if (foundArticle != null) return _sitecoreMasterService.GetItem<ArticleItem>(foundArticle._Id);
+                var service = SitecoreFactory(databaseName);
+                if (foundArticle != null)
+                    return service.GetItem<ArticleItem>(foundArticle._Id);
             }
             return null;
         }
