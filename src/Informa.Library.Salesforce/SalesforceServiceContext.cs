@@ -2,7 +2,6 @@
 using System;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
 
 namespace Informa.Library.Salesforce
 {
@@ -13,15 +12,18 @@ namespace Informa.Library.Salesforce
 		protected readonly ISalesforceService Service;
 		protected readonly ISalesforceSessionContext SessionContext;
 		protected readonly ISalesforceErrorLogger ErrorLogger;
+		protected readonly ISalesforceServiceContextEnabled ServiceContextEnabled;
 
 		public SalesforceServiceContext(
 			ISalesforceService service,
 			ISalesforceSessionContext sessionContext,
-			ISalesforceErrorLogger errorLogger)
+			ISalesforceErrorLogger errorLogger,
+			ISalesforceServiceContextEnabled serviceContextEnabled)
 		{
 			Service = service;
 			SessionContext = sessionContext;
 			ErrorLogger = errorLogger;
+			ServiceContextEnabled = serviceContextEnabled;
 
 			Service.SessionHeaderValue = new SessionHeader();
 		}
@@ -29,6 +31,7 @@ namespace Informa.Library.Salesforce
 		public void RefreshSession()
 		{
             ErrorLogger.Log("Refresh Session", new Exception($"Header Value: {Service.SessionHeaderValue.sessionId}, ContextValue: {SessionContext.Session.Id}"));
+
             if (string.Equals(Service.SessionHeaderValue.sessionId, SessionContext.Session.Id))
 			{
 				SessionContext.Refresh();
@@ -48,8 +51,12 @@ namespace Informa.Library.Salesforce
             int CallerLineNumber = 0)
 			where TResult : IEbiResponse
 		{
-            //TODO: Salesforce logging.
 		    ErrorLogger.Log($"Salesforced called by: {CallerMemberName}, File: {CallerFilePath}, Line Number {CallerLineNumber}", null);
+
+			if (!ServiceContextEnabled.Enabled)
+			{
+				return default(TResult);
+			}
 
 			if (!HasSession)
 			{

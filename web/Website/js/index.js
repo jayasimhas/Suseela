@@ -15,18 +15,6 @@ import { analyticsEvent } from './analytics-controller';
 
 
 
-/* Toggle menu categories */
-$('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
-    $(e.target).toggleClass('is-active');
-});
-
-/* 	Elements with `position:absolute` don't bubble click events
-	`pointer-events: none` would fix, but isn't supported by IE 10.
-	Need to hoist the click event to the parent element to toggle menu items. */
-$('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
-    $(e.target).parents('.js-toggle-menu-section').trigger('click');
-});
-
 $('.click-logout').on('click', function(e) {
     analyticsEvent( $.extend(analytics_data, { event_name: "logout" }) );
 });
@@ -360,31 +348,59 @@ $(document).ready(function() {
         return $('.header__wrapper').offset().top + $('.header__wrapper').height();
     };
 
-    /* Toggle menu visibility */
-    $('.js-toggle-menu').on('click', function toggleMenu() {
-        if($('.main-menu').hasClass('is-active')) {
+    /* * *
+    MAIN SITE MENU
+    * * */
+
+    (function MenuController() {
+
+        var showMenu = function() {
+            $('.main-menu').addClass('is-active');
+            $('.menu-toggler').addClass('is-active');
+            $('.header__wrapper .menu-toggler').addClass('is-sticky');
+            $('body').addClass('is-frozen');
+        };
+
+        var hideMenu = function() {
             $('.main-menu').removeClass('is-active');
             $('.menu-toggler').removeClass('is-active');
             $('body').removeClass('is-frozen');
             if($(window).scrollTop() <= getHeaderEdge()) {
                 $('.header__wrapper .menu-toggler').removeClass('is-sticky');
             }
-        } else {
-            $('.main-menu').addClass('is-active');
-            $('.menu-toggler').addClass('is-active');
-            $('.header__wrapper .menu-toggler').addClass('is-sticky');
-            $('body').addClass('is-frozen');
-        }
-    });
+        };
 
-    /* Attach / detach sticky menu */
-    $(window).on('scroll', function windowScrolled() {
-        if ($(this).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
-            $('.header__wrapper .menu-toggler').addClass('is-sticky');
-        } else {
-            $('.header__wrapper .menu-toggler').removeClass('is-sticky');
-        }
-    });
+        /* Toggle menu visibility */
+        $('.js-menu-toggle-button').on('click', function toggleMenu(e) {
+            $('.main-menu').hasClass('is-active') ? hideMenu() : showMenu();
+            e.preventDefault();
+            e.stopPropazgation();
+        });
+
+        /*  If the menu is closed, let any clicks on the menu element open
+            the menu. This includes the border—visible when the menu is closed—
+            so it's easier to open. */
+        $('.js-full-menu-toggle').on('click', function toggleMenu() {
+            $('.main-menu').hasClass('is-active') ? null : showMenu();
+        });
+
+        /* Attach / detach sticky menu */
+        $(window).on('scroll', function windowScrolled() {
+            // Only stick if the header (including toggler) isn't visible
+            if ($(this).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
+                $('.header__wrapper .menu-toggler').addClass('is-sticky');
+            } else {
+                $('.header__wrapper .menu-toggler').removeClass('is-sticky');
+            }
+        });
+
+        /* Toggle menu categories */
+        $('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
+            e.target !== this ? this.click() : $(e.target).toggleClass('is-active');
+        });
+
+    })();
+
 
 
     var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};

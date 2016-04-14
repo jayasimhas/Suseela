@@ -1,8 +1,10 @@
 ﻿using Informa.Library.Mail;
 using Informa.Models.DCD;
+using Jabberwocky.Glass.Autofac.Util;
 using log4net;
 using System;
 using System.Text;
+using Autofac;
 
 namespace Informa.Library.DCD.XMLImporting
 {
@@ -10,6 +12,7 @@ namespace Informa.Library.DCD.XMLImporting
     {
         static ILog _logger;
         static DCDConfigurationItem dcdConfig;
+        static IEmailSender emailSender;
         static DCDImportLogger()
         {
             try
@@ -18,6 +21,11 @@ namespace Informa.Library.DCD.XMLImporting
                 try
                 {
                     dcdConfig = Sitecore.Data.Database.GetDatabase("web").GetItem(DCDConstants.DCDConfigurationItemID);
+
+                    using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
+                    {
+                        emailSender = scope.Resolve<IEmailSender>();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -114,9 +122,7 @@ namespace Informa.Library.DCD.XMLImporting
 
         public static bool SendNotification(string subject, string body)
         {
-            IEmailSender mailer = new EmailSender();
             var message = new Informa.Library.Mail.Email();
-            //var from = new System.Net.Mail.MailAddress(DCDConstants.EmailNoReplySenderAddress);
 
             message.IsBodyHtml = false;
 
@@ -132,7 +138,7 @@ namespace Informa.Library.DCD.XMLImporting
             message.Subject = subject;
             message.From = DCDConstants.EmailNoReplySenderAddress;
 
-            return mailer.Send(message);
+            return emailSender.Send(message);
         }
     }
 }
