@@ -13,7 +13,8 @@ namespace Informa.Web.ViewModels
         string RegisterTitle { get; }
         string RegisterSubtitle { get; }
         string SubscribeTitle { get; }
-        Link SubscribeLink { get; }
+        string SubscribeLinkUrl { get; }
+        string SubscribeLinkText { get; }
         bool IsAuthenticated { get; }
     }
 }
