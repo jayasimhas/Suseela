@@ -69,8 +69,8 @@
       <SpecificVersion>True</SpecificVersion>
       <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\81\Glass.Mapper.Sc.dll</HintPath>
     </Reference>
-    <Reference Include="Jabberwocky.Core, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Jabberwocky.Core.1.0.1.0\lib\net45\Jabberwocky.Core.dll</HintPath>
+    <Reference Include="Jabberwocky.Core, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Core.1.0.2.0\lib\net45\Jabberwocky.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Jabberwocky.Glass, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
