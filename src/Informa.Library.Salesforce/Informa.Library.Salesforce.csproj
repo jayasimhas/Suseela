@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -70,9 +71,17 @@
     <Compile Include="EBIWebServices\IEbiResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponseExtensions.cs" />
     <Compile Include="ISalesforceErrorLogger.cs" />
+    <Compile Include="ISalesforceServiceContextEnabled.cs" />
+    <Compile Include="ISalesforceServiceContextEnabledCheck.cs" />
+    <Compile Include="ISalesforceServiceContextEnabledChecks.cs" />
     <Compile Include="SalesforceErrorLogger.cs" />
+    <Compile Include="SalesforceServiceContextEnabled.cs" />
+    <Compile Include="SalesforceServiceContextEnabledChecks.cs" />
+    <Compile Include="User\Entitlement\ISalesforceEntitlmentFactory.cs" />
     <Compile Include="User\Entitlement\ISalesforceGetIPEntitlements.cs" />
     <Compile Include="User\Entitlement\ISalesforceGetUserEntitlements.cs" />
+    <Compile Include="User\Entitlement\SalesforceEntitlement.cs" />
+    <Compile Include="User\Entitlement\SalesforceEntitlmentFactory.cs" />
     <Compile Include="User\Entitlement\SalesforceGetIPEntitlements.cs" />
     <Compile Include="User\Entitlement\SalesforceGetUserEntitlements.cs" />
     <Compile Include="ISalesforceServiceConfiguration.cs" />
@@ -110,14 +119,13 @@
     <Compile Include="User\Profile\ISalesforceFindUserProfile.cs" />
     <Compile Include="User\Profile\SalesforceManageAccountInfo.cs" />
     <Compile Include="User\Profile\SalesforceManageSubscriptions.cs" />
-    <Compile Include="User\Profile\SalesforceQueryOfferUserOptIn.cs" />
+    <Compile Include="User\Offer\SalesforceOfferUserOptedIn.cs" />
     <Compile Include="User\Profile\SalesforceFindUserProfile.cs" />
-    <Compile Include="User\Profile\SalesforceQueryNewsletterUserOptIn.cs" />
-    <Compile Include="User\Profile\SalesforceQueryNewsletterUserOptInResult.cs" />
-    <Compile Include="User\Profile\SalesforceQueryOfferUserOptInResult.cs" />
-    <Compile Include="User\Profile\SalesforceManageSavedDocuments.cs" />
-    <Compile Include="User\Profile\SalesforceUpdateNewsletterUserOptIn.cs" />
-    <Compile Include="User\Profile\SalesforceUpdateOfferUserOptIn.cs" />
+    <Compile Include="User\Newsletter\SalesforceFindNewsletterUserOptIns.cs" />
+    <Compile Include="User\Document\SalesforceSavedDocuments.cs" />
+    <Compile Include="User\Newsletter\SalesforceUpdateNewsletterUserOptIns.cs" />
+    <Compile Include="User\Offer\SalesforceUpdateOfferUserOptIn.cs" />
+    <Compile Include="User\Document\SalesforceSavedDocument.cs" />
     <Compile Include="User\Profile\SalesforceUserProfile.cs" />
     <Compile Include="User\Registration\ISalesforceRegisterUser.cs" />
     <Compile Include="User\Registration\SalesforceRegisterUser.cs" />
@@ -135,6 +143,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web\IUserAgentServiceContextEnabledCheckConfiguration.cs" />
+    <Compile Include="Web\UserAgentServiceContextEnabledCheck.cs" />
+    <Compile Include="Web\UserAgentServiceContextEnabledCheckConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

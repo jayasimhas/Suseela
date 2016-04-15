@@ -25,6 +25,7 @@ namespace Informa.Web.ViewModels
 		public virtual IEnumerable<ILinkable> ListableTopics { get; set; }
 		public string ListableType { get; set; }
 		public virtual Link ListableUrl { get; set; }
+        public string By { get; set; }
 
 		#region Implementation of ILinkable
 
@@ -33,6 +34,7 @@ namespace Informa.Web.ViewModels
 		public string Publication { get; set; }
 
         #endregion
-       
+       public string SourceArticleID { get { return Sitecore.Context.Item.ID.ToString(); } }
+
     }
 }

@@ -19,7 +19,7 @@
             @( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )
         </span>
 
-        <svg class="article-prologue__share-icon">
+        <svg class="article-prologue__share-icon click-utag" data-info='{"event_name" : "bookmark"}'>
             <use xlink:href="/dist/img/svg-sprite.svg#@( Model.IsArticleBookmarked ? "bookmarked" : "bookmark" )"></use>
         </svg>
     </div>
@@ -46,7 +46,7 @@
 
 <div class="topic-featured-article__inner-wrapper">
     <h3 class="topic-featured-article__headline">
-        <a href="@Model.LinkableUrl">@Model.ListableTitle</a>
+        <a href="@Model.LinkableUrl">@Html.Raw(Model.ListableTitle)</a>
     </h3>
 
     <span class="article-preview__byline">

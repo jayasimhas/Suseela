@@ -39,7 +39,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 
 			link.Controls.Add(img);
 
-			if (articleItemWrapper.Embargoed && articleItemWrapper.EmbargoDate > DateTime.Now)
+			if (articleItemWrapper.Embargoed)
 			{
 				var flagImg = new Image() { ImageUrl = "/VWB/images/vwb/flag_red_h.png" };
 				flagImg.Attributes.Add("align", "absmiddle");
@@ -89,7 +89,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 
             if (HttpContext.Current.Request.IsSecureConnection)
             {
-                link.Attributes.Add("href", "/VWB/Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(articleItemWrapper.PreviewUrl + mobileQueryParam).Replace("http","https"));
+                link.Attributes.Add("href", "/VWB/Util/LoginRedirectToPreview.aspx?redirect=" + HttpUtility.UrlEncode(articleItemWrapper.PreviewUrl + mobileQueryParam));
             }
             else
             {

@@ -4,6 +4,7 @@ using Elsevier.Library.CustomItems.Global.ArticleCategory;
 using Elsevier.Library.CustomItems.Global.ArticleSizes;
 using Elsevier.Library.CustomItems.Global.Staff;
 using System.Linq;
+using System.Web;
 using Elsevier.Library.CustomItems.Publication.General;
 using Elsevier.Library.Metadata;
 using Elsevier.Library.Reference;
@@ -28,7 +29,7 @@ namespace Elsevier.Web.VWB.Report
 		public ArticleItem InnerItem;
 		public IEnumerable<string> Editors;
 		public string IssueDateValue;
-		public string WordCount;
+		public int WordCount;
 		public string PreviewUrl;
 		public DateTime SAPDateTime;
 		public DateTime WebPublicationDateTime;
@@ -71,7 +72,7 @@ namespace Elsevier.Web.VWB.Report
 
         public string GetPreviewUrl(string itemId)
         {
-            return "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + itemId + "}&sc_mode=preview&sc_lang=en";
+            return HttpContext.Current.Request.Url.Scheme + "://" + WebUtil.GetHostName() + "/?sc_itemid={" + itemId + "}&sc_mode=preview&sc_lang=en";
         }
 
         public ArticleItemWrapper(ArticleItem articleItem, ArticleLengthEstimator estimator)
@@ -103,14 +104,33 @@ namespace Elsevier.Web.VWB.Report
                 Authors = article.Authors.Select(a => a.First_Name + " " + a.Last_Name);
             }
 
-			ArticleCreation = article.Created_Date;
-			if(ArticleCreation == DateTime.MinValue)
+			
+			if(article.Created_Date == DateTime.MinValue)
 			{
 				ArticleCreation = articleBaseItem.Statistics.Created;
 			}
+			else
+			{
+                ArticleCreation = article.Created_Date;
+            }
 
-            WordCount = article.Word_Count;
-
+            if (string.IsNullOrEmpty(article.Word_Count))
+            {
+                WordCount = 0;
+            }
+            else
+            {
+                int parsedCount = 0;
+                if (Int32.TryParse(article.Word_Count, out parsedCount))
+                {
+                    WordCount = parsedCount;
+                }
+                else
+                {
+                    WordCount = 0;
+                }
+            }
+           
             foreach (IArticle referencedArticle in article.Referenced_Articles)
             {
                 if (!string.IsNullOrEmpty(referencedArticle.Article_Number))

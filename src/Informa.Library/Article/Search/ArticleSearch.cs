@@ -8,38 +8,30 @@ using System;
 using System.Linq;
 using Informa.Library.Search;
 using Informa.Library.Utilities.References;
-using Sitecore.Buckets.Extensions;
-using Sitecore.Configuration;
 using Sitecore.ContentSearch.Linq;
-using Sitecore.ContentSearch.Linq.Utilities;
-using Sitecore.Data;
-using Sitecore.Data.Items;
-using Sitecore.ContentSearch;
-using Sitecore.ContentSearch.Abstractions;
-using Sitecore.ContentSearch.Diagnostics;
-using Sitecore.ContentSearch.Linq;
-using Sitecore.ContentSearch.Linq.Common;
-using Sitecore.ContentSearch.Linq.Methods;
-using Sitecore.ContentSearch.Linq.Nodes;
-using Sitecore.ContentSearch.Linq.Solr;
+using System.Text;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
 namespace Informa.Library.Article.Search
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService]
 	public class ArticleSearch : IArticleSearch
 	{
 		protected readonly IProviderSearchContextFactory SearchContextFactory;
 		protected readonly ISitecoreService SitecoreContext;
 		protected readonly Func<string, ISitecoreService> SitecoreFactory;
+		protected readonly IItemReferences ItemReferences;
 
 		public ArticleSearch(
 			IProviderSearchContextFactory searchContextFactory,
-			ISitecoreService sitecoreContext, Func<string, ISitecoreService> sitecoreFactory
+			ISitecoreService sitecoreContext, Func<string, ISitecoreService> sitecoreFactory,
+			 IItemReferences itemReferences
 			)
 		{
 			SearchContextFactory = searchContextFactory;
 			SitecoreContext = sitecoreContext;
 			SitecoreFactory = sitecoreFactory;
+			ItemReferences = itemReferences;
 		}
 
 		public IArticleSearchFilter CreateFilter()
@@ -158,5 +150,49 @@ namespace Informa.Library.Article.Search
 			string procName = a._Name.Replace(" ", "-");
 			return $"/{a.Article_Number}/{procName}";
 		}
+
+		public string  GetArticleAuthors(Guid id)
+		{
+			var item = SitecoreContext.GetItem<ArticleItem>(id);
+			if (item != null && item.Authors.Any())
+			{
+				var lastItem = item.Authors.LastOrDefault();
+				StringBuilder str = new StringBuilder();
+				foreach (IStaff_Item author in item.Authors)
+				{
+                    if (str.Length > 0)
+                        str.Append(",");
+                    str.Append($"'{author._Name.Trim()}'");
+				}
+                return $"[{str}]";
+            }
+
+			return string.Empty;
+		}
+
+		public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
+		{
+			var article = SitecoreContext.GetItem<ArticleItem>(id);
+			if (article != null && article.Taxonomies.Any())
+			{
+				var taxonomyItems = article.Taxonomies.Where(x => x._Parent._Id.Equals(taxonomyParent));
+				if (taxonomyItems != null && taxonomyItems.Any())
+				{
+					var lastItem = taxonomyItems.LastOrDefault();
+					StringBuilder str = new StringBuilder();
+					foreach (ITaxonomy_Item taxonomyItem in taxonomyItems)
+					{
+					    if (str.Length > 0)
+					        str.Append(",");
+						str.Append($"'{taxonomyItem.Item_Name.Trim()}'");
+                    }
+                    return $"[{str}]";
+                }
+			}
+
+			return string.Empty;
+		}
+
+		
 	}
 }

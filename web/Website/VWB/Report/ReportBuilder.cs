@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Elsevier.Library.Config;
@@ -177,7 +178,7 @@ namespace Elsevier.Web.VWB.Report
             using (new Sitecore.SecurityModel.SecurityDisabler())
             {
                 string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
-                string url = string.Format("http://{0}/api/informasearch?pId={1}&sortBy=plannedpublishdate&sortOrder=desc", WebUtil.GetHostName(), searchPageId);
+                string url = string.Format("{0}://{1}/api/informasearch?pId={2}&sortBy=plannedpublishdate&sortOrder=desc", HttpContext.Current.Request.Url.Scheme, WebUtil.GetHostName(), searchPageId);
 
                 if (query.InProgressValue)
                 {
@@ -186,6 +187,8 @@ namespace Elsevier.Web.VWB.Report
 
                 DateTime startDate;
                 DateTime endDate;
+                
+                //Check to see if the dates are provided in the query string
                 if (query.StartDate != null && query.EndDate != null)
                 {
                     startDate = query.StartDate ?? DateTime.MinValue;
@@ -196,9 +199,10 @@ namespace Elsevier.Web.VWB.Report
                 }
                 else
                 {
-                    DateTime now = DateTime.Now;
+                    //Default the dates
+                    DateTime now = DateTime.Now.AddDays(-1);
 
-                    //The start date is today with the time being set at midnight
+                    //The start date is yesterday with the time being set at midnight
                     startDate = new DateTime(now.Year, now.Month, now.Day,0, 0, 0, 0, 0);
 
                     DateTime nowPlusMonth = DateTime.Now.AddDays(30);

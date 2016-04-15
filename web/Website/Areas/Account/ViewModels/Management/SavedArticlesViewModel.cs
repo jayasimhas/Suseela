@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
-using Informa.Library.Newsletter;
-using Informa.Library.Salesforce.User.Profile;
+using Informa.Library.Site;
 using Informa.Library.User.Authentication;
-using Informa.Library.User.Profile;
+using Informa.Library.User.Document;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
@@ -18,27 +17,61 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
     {
         public readonly ITextTranslator TextTranslator;
         public readonly IAuthenticatedUserContext UserContext;
-        public readonly IManageSavedDocuments QuerySavedDocuments;
         public readonly ISignInViewModel SignInViewModel;
+        public readonly ISitecoreService SitecoreService;
+		protected readonly ISavedDocumentsContext SavedDocumentsContext;
+        protected readonly ISiteRootContext SiteRootContext;
 
-        public SavedArticlesViewModel(
+		public SavedArticlesViewModel(
             ITextTranslator translator,
             IAuthenticatedUserContext userContext,
-            IManageSavedDocuments querySavedDocuments,
-            ISignInViewModel signInViewModel)
+            ISignInViewModel signInViewModel,
+            ISitecoreService sitecoreService,
+			ISavedDocumentsContext savedDocumentsContext,
+            ISiteRootContext siteRootContext)
         {
             TextTranslator = translator;
             UserContext = userContext;
-            QuerySavedDocuments = querySavedDocuments;
             SignInViewModel = signInViewModel;
-
-            var result = QuerySavedDocuments.QueryItems(UserContext.User);
-            SavedDocuments = (result.Success)
-                ? result.SavedDocuments
-                : Enumerable.Empty<ISavedDocument>();
+            SitecoreService = sitecoreService;
+			SavedDocumentsContext = savedDocumentsContext;
+		    SiteRootContext = siteRootContext;
         }
 
-        public IEnumerable<ISavedDocument> SavedDocuments;
+        private IArticle GetArticle(string ID)
+        {
+            Guid result;
+            if (!Guid.TryParse(ID, out result))
+                return null;
+
+            return SitecoreService.GetItem<IArticle>(result);
+        }
+
+        public string GetUrl(string ID)
+        {
+            var article = GetArticle(ID);
+            if (article == null)
+                return string.Empty;
+
+            return article._Url;
+        }
+
+        public string GetActualPublishDate(string ID, string dateFormat)
+        {
+            var article = GetArticle(ID);
+            if (article == null)
+                return DateTime.Now.ToString(dateFormat);
+
+            return article.Actual_Publish_Date.ToString(dateFormat);
+        }
+
+		public IEnumerable<ISavedDocument> SavedDocuments => SavedDocumentsContext.SavedDocuments.Where(IsInContextSite);
+
+        private bool IsInContextSite(ISavedDocument savedDocument)
+        {
+            var article = GetArticle(savedDocument.DocumentId);
+            return (article != null && article._Path.StartsWith(SiteRootContext.Item._Path));
+        }
 
         public bool IsAuthenticated => UserContext.IsAuthenticated;
         public string Title => GlassModel?.Title;

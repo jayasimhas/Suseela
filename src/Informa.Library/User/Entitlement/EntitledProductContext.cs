@@ -1,6 +1,3 @@
-using System.Linq;
-using Informa.Library.Subscription;
-using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 
@@ -9,47 +6,33 @@ namespace Informa.Library.User.Entitlement
     [AutowireService(LifetimeScope.Default)]
     public class EntitledProductContext : IEntitledProductContext
     {
-        private readonly IUserSubscriptionContext UserSubscriptionContext;
-        private readonly IAuthenticatedIPContext AuthenticatedIPContext;
-        private readonly IEntitlementContext EntitlementContext;
-        public EntitledProductContext(
-            IUserSubscriptionContext userSubscriptionContext,
-            IAuthenticatedIPContext authenticatedIpContext,
-            IEntitlementContext entitlementContext)
-        {                                                         
-            UserSubscriptionContext = userSubscriptionContext;
-            AuthenticatedIPContext = authenticatedIpContext;
-            EntitlementContext = entitlementContext;
-    }
+		protected readonly IEntitlementFactory EntitlementFactory;
+		protected readonly IEntitledContext EntitledContext;
 
-        #region Implementation of IEntitledProductContext
-
-        public EntitledAccessLevel GetAccessLevel(IEntitledProductItem productItem)
+		public EntitledProductContext(
+			IEntitlementFactory entitlementFactory,
+			IEntitledContext entitledContext)
         {
-            var entitlement = new ScripEntitlement(productItem);
-            //TODO:  Difference logic for 'EntitledProductItem'
+			EntitlementFactory = entitlementFactory;
+			EntitledContext = entitledContext;
+		}
 
-            if (productItem == null)
-                return EntitledAccessLevel.UnEntitled;
+		public bool IsEntitled(IEntitledProductItem productItem)
+		{
+			if (productItem == null)
+			{
+				return false;
+			}
 
-            if (UserSubscriptionContext.IsSubscribed && EntitlementContext.IsEntitled(entitlement))
-                return EntitledAccessLevel.Individual;
+			if (productItem.IsFree)
+			{
+				return true;
+			}
 
-            if (EntitlementContext.IsEntitled(entitlement))
-                return EntitledAccessLevel.Individual;
-            //return EntitledAccessLevel.Corporate;
+			var entitlement = EntitlementFactory.Create(productItem);
+			var entitled = EntitledContext.IsEntitled(entitlement);
 
-
-
-            if (AuthenticatedIPContext.Entitlements.Any(p => p.ProductCode == entitlement.ProductCode))
-                return EntitledAccessLevel.TransparentIP;
-
-            //TODO: Free Trial?
-
-            return EntitledAccessLevel.UnEntitled;
-        }
-
-
-        #endregion
+			return entitled;
+		}
     }
 }

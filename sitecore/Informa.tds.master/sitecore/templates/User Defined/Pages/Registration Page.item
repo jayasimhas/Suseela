@@ -1,6 +1,6 @@
 ----item----
 version: 1
-id: {0520D52B-52A8-4052-A07F-9F35F8CA274C}
+id: {AD812609-C21C-42F6-A1D4-283D7699BD8A}
 database: master
 path: /sitecore/templates/User Defined/Pages/Registration Page
 parent: {8D510CBE-EC0E-42E1-983B-748AD8332249}
@@ -22,7 +22,7 @@ name: __Standard values
 key: __standard values
 content-length: 38
 
-{F098A891-8314-42A6-839C-95D0D83A5BA0}
+{D5904AD9-3908-490E-B591-1A549E62683D}
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
@@ -33,7 +33,7 @@ Apps/32x32/Pencil (1).png
 ----version----
 language: en
 version: 1
-revision: ef3085ec-5303-49e7-873f-efe3e564ad21
+revision: 7b9714e5-600f-493d-8498-e0e2f5054fb8
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ef3085ec-5303-49e7-873f-efe3e564ad21
+7b9714e5-600f-493d-8498-e0e2f5054fb8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160307T141805Z
+20160412T075913Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

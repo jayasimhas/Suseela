@@ -1,0 +1,6 @@
+﻿@model Informa.Web.ViewModels.SiteDebugging.IEntitlementsCheckEnabledViewModel
+<form action="" method="post">
+	<label class="page-account__text-label" for="@Model.InputName">@Model.LabelText</label>
+	<input type="hidden" name="@Model.InputName" value="@( Model.IsDebugging ? Model.EnabledInputValue : Model.DisabledInputValue )" />
+	<button type="submit" class="button--filled">@Model.SubmitText</button>
+</form>

@@ -11,7 +11,7 @@ namespace Informa.Library.Net
 		{
 			IPAddress ipAddress = null;
 
-			rawIpAddress?.Split(',').Any(x => IPAddress.TryParse(x, out ipAddress));
+			rawIpAddress?.Trim()?.Split(',').Any(x => IPAddress.TryParse(x, out ipAddress));
 
 			return ipAddress;
 		}

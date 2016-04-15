@@ -1,8 +1,13 @@
 ﻿using Informa.Library.Site;
 using System;
 using System.Collections.Generic;
+using System.Web;
+using Glass.Mapper.Sc;
 using Informa.Library.Utilities.Extensions;
 using Jabberwocky.Glass.Autofac.Attributes;
+using Sitecore.Data.Items;
+using Sitecore.Resources.Media;
+using Sitecore.Web;
 
 namespace Informa.Library.Mail
 {
@@ -12,15 +17,19 @@ namespace Informa.Library.Mail
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IHtmlEmailTemplateFactory HtmlEmailTemplateFactory;
 		protected readonly IEmailFactory EmailFactory;
+	    protected readonly ISitecoreService SitecoreService;
 
-		public BaseHtmlEmailFactory(
+
+        public BaseHtmlEmailFactory(
 			ISiteRootContext siteRootContext,
 			IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
-			IEmailFactory emailFactory)
+			IEmailFactory emailFactory,
+            ISitecoreService sitecoreService)
 		{
 			SiteRootContext = siteRootContext;
 			HtmlEmailTemplateFactory = htmlEmailTemplateFactory;
 			EmailFactory = emailFactory;
+            SitecoreService = sitecoreService;
 		}
 
 		public IEmail Create()
@@ -35,15 +44,30 @@ namespace Informa.Library.Mail
 			var siteRoot = SiteRootContext.Item;
 			var emailHtml = htmlEmailTemplate.Html;
 			var replacements = new Dictionary<string, string>();
+			if (siteRoot?.Email_Logo != null)
+			{
+				replacements["#Logo_URL#"] = GetMediaURL(siteRoot.Email_Logo.MediaId.ToString());
+			}
 
-			replacements["#Logo_URL#"] = GetValue(siteRoot?.Email_Logo?.Src);
 			replacements["#Date#"] = DateTime.Now.ToString("dddd, d MMMM yyyy");
 			replacements["#RSS_Link_URL#"] = siteRoot?.RSS_Link.GetLink();
-			replacements["#RSS_Link_Text#"] = GetValue(siteRoot?.RSS_Link?.Text);
+			if (siteRoot?.RSS_Logo != null)
+			{
+				replacements["#RssLogo#"] = GetMediaURL(siteRoot.RSS_Logo.MediaId.ToString());
+			}
+			
 			replacements["#LinkedIn_Link_URL#"] = siteRoot?.LinkedIn_Link.GetLink();
-			replacements["#LinkedIn_Link_Text#"] = GetValue(siteRoot?.LinkedIn_Link?.Text);
+			if (siteRoot?.Linkedin_Logo != null)
+			{
+				replacements["#LinkedinLogo#"] = GetMediaURL(siteRoot.Linkedin_Logo.MediaId.ToString());
+			}
+
 			replacements["#Twitter_Link_URL#"] = siteRoot?.Twitter_Link.GetLink();
-			replacements["#Twitter_Link_Text#"] = GetValue(siteRoot?.Twitter_Link?.Text);
+			if (siteRoot?.Twitter_Logo != null)
+			{
+				replacements["#TwitterLogo#"] = GetMediaURL(siteRoot.Twitter_Logo.MediaId.ToString());
+			}
+
 			replacements["#Footer_Content#"] = GetValue(siteRoot?.Email_Footer);
 
 			emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
@@ -62,5 +86,14 @@ namespace Informa.Library.Mail
 		{
 			return value ?? defaultValue ?? string.Empty;
 		}
-	}
+
+        public string GetMediaURL(string mediaId)
+        {
+            Item imageItem = SitecoreService.GetItem<Item>(mediaId);
+            if (imageItem == null)
+                return string.Empty;
+            
+            return $"{HttpContext.Current.Request.Url.Scheme}://{WebUtil.GetHostName()}{MediaManager.GetMediaUrl(imageItem)}";
+        }
+    }
 }

@@ -5,6 +5,7 @@ namespace InformaSitecoreWord
 {
     internal class Constants
     {
+		//Comment to change the DLL
         public static string PAN_JP = "PAN_JP";
         public static string PAN_CP = "PAN_CP";
         public static string PAN_WP = "PAN_WP";
@@ -45,11 +46,11 @@ namespace InformaSitecoreWord
 
         public static string DocumentPassword = "DocumentPassword";
         public static string ArticleID = "ArticleID";
-        public static string ArticleNumber = "ArticleNumber";
+		public static string PluginName = "PluginName";
+		public static string InformaPluginName = "Informa Insight";
+		public static string ArticleNumber = "ArticleNumber";
         public static string Editor = "Editor";
         public static string HYPERLINK_STYLE = "hyperlinkStyle";
-        public static string INDUSTRY_PATH = "/sitecore/content/Elsevier Settings/Taxonomy/Industries";
-        public static string ENTITY_PATH = "/sitecore/content/Elsevier Settings/Taxonomy/Entities";
         public static string Entities = "Entities";
         public static string Industries = "Industries";
 
@@ -75,6 +76,7 @@ namespace InformaSitecoreWord
         public static string EDITOR_ENVIRONMENT_FORGOTPASSWORDLINK = ApplicationConfig.GetPropertyValue(EDITOR_ENVIRONMENT_VALUE + "ForgotPasswordLink");
         public static string DOCUMENT_NOT_LINKED = @"Document Not Linked";
         public static string MESSAGEBOX_TITLE = "Informa";
+        public static string SESSIONTIMEOUTERRORMESSAGE = "Your session has timed out, please login again in order to continue";
 
         public static List<EditorEnvironment> EDITOR_ENVIRONMENT = new List<EditorEnvironment> {
             new EditorEnvironment{Name="Development" }, 

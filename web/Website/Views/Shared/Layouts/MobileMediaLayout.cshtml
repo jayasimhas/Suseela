@@ -23,14 +23,14 @@
 
     @*@Html.Sitecore().Placeholder("header")*@
 <header>
-    
+
 </header>
-    <main>
+    <main class="main--solo">
 
         @*@Html.Glass().InvokeAction(mvc => Execute());*@
-    
 
-        <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
+
+        <div class="main__wrapper main__wrapper--solo" data-request-verification-token="@Html.RequestVerificationToken()">
 
             <div class="general-header">
                 @Html.Sitecore().Placeholder("general-header")
@@ -43,10 +43,6 @@
         </div>
 
     </main>
-
-    <footer>
-    
-    </footer>
 
     <script src="/dist/js/index.js"></script>
 

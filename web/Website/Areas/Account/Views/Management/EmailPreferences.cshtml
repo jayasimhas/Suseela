@@ -6,11 +6,11 @@
 
         <h1 class="page-account__header">@Model.Title</h1>
         <div class="page-preferences js-preferences-user-container">
-            
+
             <p class="page-account__error js-form-error js-form-error-general">
                 @Model.GeneralErrorText
             </p>
-            
+
             <form   class="form-email-preferences"
                     data-on-submit="/Account/api/PreferencesApi/Update/">
 
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="page-account__submit-wrapper">
-                    <button type="submit" class="button--filled button--fly-right">@Model.SubmitText</button>
+                    <button type="submit" class="button--filled button--fly-right manage-preferences">@Model.SubmitText</button>
                 </div>
 
                 <div class="alert-success js-form-success">
@@ -50,5 +50,7 @@
 }
 else
 {
-    Html.RenderPartial("_SignInForm", Model.SignInViewModel);
+    <div class="page-account__sign-in-solo">
+        @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
+    </div>
 }

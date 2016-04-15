@@ -1,14 +1,7 @@
-using System.Web.Mvc;
-using System.Web.Routing;
-//using Informa.Web.Areas.Admin;
-using Sitecore.ContentTesting.Data;
-using Sitecore.ContentTesting.ContentSearch.Models;
+﻿using Sitecore.ContentTesting.Data;
 using Sitecore.Diagnostics;
 using Sitecore.ExperienceEditor.Speak.Server.Requests;
 using Sitecore.ExperienceEditor.Speak.Server.Responses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Sitecore.ExperienceEditor.Speak.Server.Contexts;
 using Sitecore.ContentTesting;
 

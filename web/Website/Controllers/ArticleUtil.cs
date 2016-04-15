@@ -3,35 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
-using System.Web.Mvc;
 using System.Xml;
 using Glass.Mapper.Sc;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Informa.Web.Areas.Account.Models;
 using Jabberwocky.Glass.Models;
 using Sitecore.Data.Items;
 using Sitecore.Data.Locking;
 using Sitecore.Web;
 using Informa.Library.Article.Search;
-using Informa.Library.Search.PredicateBuilders;
-using Informa.Library.Search.Results;
-using Informa.Library.Site;
 using Informa.Library.Utilities;
 using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
 using PluginModels;
 using Sitecore;
-using Sitecore.ContentSearch;
-using Sitecore.ContentSearch.Utilities;
-using Sitecore.Data;
-using Sitecore.Links;
-using Sitecore.Mvc.Controllers;
-using Velir.Core.Utilities.Strings;
-using Velir.Search.Core.Managers;
-using Velir.Search.Core.Page;
-using Velir.Search.Core.Queries;
 using Constants = Informa.Library.Utilities.References.Constants;
 using IWorkflow = Sitecore.Workflows.IWorkflow;
 
@@ -42,7 +27,8 @@ namespace Informa.Web.Controllers
 	{
 		protected readonly IArticleSearch ArticleSearcher;
 		protected readonly ISitecoreContext SitecoreContext;
-		public ArticleController(IArticleSearch searcher, ISitecoreContext context)
+
+        public ArticleController(IArticleSearch searcher, ISitecoreContext context)
 		{
 			ArticleSearcher = searcher;
 			SitecoreContext = context;
@@ -120,17 +106,19 @@ namespace Informa.Web.Controllers
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
 		private readonly IArticleSearch _articleSearcher;
+        protected readonly Func<string, ISitecoreService> SitecoreFactory;
 
-		//protected readonly IWorkFlowUtil WorkflowUtil;
-		/// <summary>
-		/// Constructor
-		/// </summary
-		/// <param name="searcher"></param>
-		/// <param name="sitecoreFactory"></param>
-		/// <param name="siteRootContext"></param>
-		public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
-		{
-			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
+        //protected readonly IWorkFlowUtil WorkflowUtil;
+        /// <summary>
+        /// Constructor
+        /// </summary
+        /// <param name="searcher"></param>
+        /// <param name="sitecoreFactory"></param>
+        /// <param name="siteRootContext"></param>
+        public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
+        {
+            SitecoreFactory = sitecoreFactory;
+            _sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			_articleSearcher = searcher;
 		}
 
@@ -158,24 +146,30 @@ namespace Informa.Web.Controllers
 		/// <returns></returns>
 		public ArticleItem GetArticleByNumber(string articleNumber)
 		{
-
-			IArticleSearchFilter filter = _articleSearcher.CreateFilter();
-			filter.ArticleNumber = articleNumber;
-			var results = _articleSearcher.SearchCustomDatabase(filter, Constants.MasterDb);
-			if (results.Articles.Any())
-			{
-				var foundArticle = results.Articles.FirstOrDefault();
-				if (foundArticle != null) return _sitecoreMasterService.GetItem<ArticleItem>(foundArticle._Id);
-			}
-			return null;
+		    return GetArticleByNumber(articleNumber, Constants.MasterDb);
 		}
 
-		/// <summary>
-		/// Returns the Version Number of Article
-		/// </summary>
-		/// <param name="article"></param>
-		/// <returns></returns>
-		public int GetWordVersionNumber(ArticleItem article)
+        public ArticleItem GetArticleByNumber(string articleNumber,string databaseName)
+        {
+            IArticleSearchFilter filter = _articleSearcher.CreateFilter();
+            filter.ArticleNumber = articleNumber;
+            var results = _articleSearcher.SearchCustomDatabase(filter, databaseName);
+            if (results.Articles.Any())
+            {
+                var foundArticle = results.Articles.FirstOrDefault();
+                var service = SitecoreFactory(databaseName);
+                if (foundArticle != null)
+                    return service.GetItem<ArticleItem>(foundArticle._Id);
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Returns the Version Number of Article
+        /// </summary>
+        /// <param name="article"></param>
+        /// <returns></returns>
+        public int GetWordVersionNumber(ArticleItem article)
 		{
 			if (article.Word_Document == null) return -1;
 			var wordDocURL = article.Word_Document.Url;
@@ -194,7 +188,7 @@ namespace Informa.Web.Controllers
 			{
 				Title = HttpUtility.HtmlDecode(article.Title),
 				Publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid)._Name,
-				Authors = article.Authors.Select(r => (((IAuthor)r).Last_Name + "," + ((IAuthor)r).First_Name)).ToList(),
+				Authors = article.Authors.Select(r => (((IStaff_Item)r).Last_Name + "," + ((IStaff_Item)r).First_Name)).ToList(),
 				ArticleNumber = article.Article_Number,
 				Date = article.Actual_Publish_Date,
 				PreviewUrl = "http://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en",
@@ -425,7 +419,7 @@ namespace Informa.Web.Controllers
 			articleStruct.WebPublicationDate = articleItem.Planned_Publish_Date;
 			articleStruct.PrintPublicationDate = articleItem.Actual_Publish_Date;
 			articleStruct.Embargoed = articleItem.Embargoed;
-			var authors = articleItem.Authors.Select(r => ((IAuthor)r)).ToList();
+			var authors = articleItem.Authors.Select(r => ((IStaff_Item)r)).ToList();
 			articleStruct.Authors = authors.Select(r => new StaffStruct { ID = r._Id, Name = r.Last_Name + ", " + r.First_Name, }).ToList();
 			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
 
@@ -493,15 +487,18 @@ namespace Informa.Web.Controllers
 				{
 					wfCommand.SendsToFinal = nextStateItem.Final;
 					wfCommand.GlobalNotifyList = new List<StaffStruct>();
-					foreach (IStaff_Item staff in nextStateItem.Staffs)
+					foreach (var staff in nextStateItem.Staffs)
 					{
-						if (staff.Inactive)
+						var staffItem = _sitecoreMasterService.GetItem<IStaff_Item>(staff._Id);
+						if (staffItem.Inactive)
 						{
 							continue;
 						}
-						var staffMember = new StaffStruct();
-						staffMember.ID = staff._Id;
-						staffMember.Name = staff.Last_Name + " , " + staff.First_Name;
+						var staffMember = new StaffStruct
+						{
+							ID = staffItem._Id,
+							Name = staffItem.Last_Name + " , " + staffItem.First_Name
+						};
 						//   staffMember.Publications = staff  //TODO :Check if this field if we need this field.
 						wfCommand.GlobalNotifyList.Add(staffMember);
 					}
@@ -572,16 +569,17 @@ namespace Informa.Web.Controllers
 						wfCommand.SendsToFinal = stateItem.Final;
 						wfCommand.GlobalNotifyList = new List<StaffStruct>();
 
-						//foreach (IStaff_Item x in stateItem.Staff.ListItems)
-						//{
-						//	if (x.Inactive.Checked) { continue; }
+						foreach (var x in stateItem.Staffs)
+						{
+							var staffItem = _sitecoreMasterService.GetItem<IStaff_Item>(x._Id);
+							if (staffItem.Inactive) { continue; }
 
-						//	var staffMember = new SitecoreUtil.StaffStruct();
-						//	staffMember.ID = x.ID.ToGuid();
-						//	staffMember.Name = x.GetFullName();
-						//	staffMember.Publications = x.Publications.ListItems.Select(p => p.ID.ToGuid()).ToArray();
-						//	wfCommand.GlobalNotifyList.Add(staffMember);
-						//}
+							var staffMember = new StaffStruct();
+							staffMember.ID = staffItem._Id;
+							//staffMember.Name = staffItem.GetFullName();
+							//staffMember.Publications = staffItem.Publications.ListItems.Select(p => p.ID.ToGuid()).ToArray();
+							wfCommand.GlobalNotifyList.Add(staffMember);
+						}
 
 						commands.Add(wfCommand);
 					}

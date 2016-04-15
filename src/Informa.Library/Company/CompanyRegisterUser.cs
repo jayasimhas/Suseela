@@ -1,23 +1,34 @@
 ﻿using Informa.Library.User.Registration;
+using Jabberwocky.Glass.Autofac.Attributes;
+using System.Linq;
 
 namespace Informa.Library.Company
 {
+	[AutowireService(LifetimeScope.Default)]
 	public class CompanyRegisterUser : IRegisterUser
 	{
-		protected readonly ICompanyContext CompanyContext;
+		protected readonly IUserCompanyContext UserCompanyContext;
 		protected readonly IRegisterCompanyUser RegisterCompanyUser;
+		protected readonly IAllowedRegisterUserCompanyTypes AllowedCompanyTypes;
 
 		public CompanyRegisterUser(
-			ICompanyContext companyContext,
-			IRegisterCompanyUser registerCompanyUser)
+			IUserCompanyContext userCompanyContext,
+			IRegisterCompanyUser registerCompanyUser,
+			IAllowedRegisterUserCompanyTypes allowedCompanyTypes)
 		{
-			CompanyContext = companyContext;
+			UserCompanyContext = userCompanyContext;
 			RegisterCompanyUser = registerCompanyUser;
+			AllowedCompanyTypes = allowedCompanyTypes;
 		}
 
 		public bool Register(INewUser newUser)
 		{
-			return RegisterCompanyUser.Register(newUser, CompanyContext.Company);
+			var company = UserCompanyContext.Company;
+
+		    if (UserCompanyContext.Company == null)
+		        return RegisterCompanyUser.Register(newUser, null);
+
+			return RegisterCompanyUser.Register(newUser, AllowedCompanyTypes.Types.Contains(company.Type) ? company : null);
 		}
 	}
 }

@@ -46,6 +46,14 @@ namespace Informa.Library.Publishing.Scheduled
 		            var publishingTargetDatabases = PublishingTargetsContext.Databases.ToArray();
 		            var handle = PublishManager.PublishItem(item, publishingTargetDatabases, languages, false, false, true);
 
+					if (handle == null)
+					{
+						return new PublishingStatus
+						{
+							Status = PublishStatus.Failed
+						};
+					}
+
 		            return new PublishingStatus
 		            {
 		                PublishHandle = handle,

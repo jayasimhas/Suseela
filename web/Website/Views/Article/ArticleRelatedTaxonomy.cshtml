@@ -8,34 +8,16 @@
         <ul>
             @foreach (var catagory in Model.Children)
             {
-                <li class="article-topics__section-header">@catagory.Text</li>
-                foreach (var tag in catagory.Children)
+                <li class="article-topics__section-header">@catagory.Text</li>foreach (var tag in catagory.Children)
                 {
-                    <li class="article-topics__li"><a href="@tag.Url">@tag.Text</a></li>
-                    foreach (var childTag in tag.Children)
+                    <li class="article-topics__li"><a href="@tag.Url" class="click-utag" data-info='{"event_name"="related-taxonomy", "taxonomy-name"="@tag.Text","taxonomy-category"="@catagory.Text"}'>@tag.Text</a></li>foreach (var childTag in tag.Children)
                     {
                         Html.RenderPartial("ChildTaxonomy", childTag);
                     }
                 }
             }
 
-            @*<li class="article-topics__li"><a href="#">Biosimilars</a></li>
-        <ul>
-            <li class="article-topics__li article-topics__li--grandchild"><a href="#">Biosimilar Child Item</a></li>
-            <ul>
-                <li class="article-topics__li article-topics__li--grandchild"><a href="#">Biosimilar Grandchild Item That Wraps</a></li>
-            </ul>
-        </ul>
-        <li class="article-topics__li"><a href="#">Legal Issues</a></li>
-        <li class="article-topics__section-header">Therapy Areas</li>
-        <li class="article-topics__li"><a href="#">Oncology</a></li>
-        <ul>
-            <li class="article-topics__li article-topics__li--grandchild"><a href="#">Oncology Child Item</a></li>
-            <ul>
-                <li class="article-topics__li article-topics__li--grandchild"><a href="#">Oncology Grandchild Item That Wraps</a></li>
-            </ul>
-        </ul>
-        <li class="article-topics__li"><a href="#">Respiratory</a></li>*@
+
         </ul>
     </div>
 }

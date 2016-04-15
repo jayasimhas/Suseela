@@ -448,8 +448,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
                 Item newItem;
                 //search for the child by name
                 newItem = GetChild(parent, newItemName);
-                if (newItem != null) //add version for lang
-                    newItem = newItem.Versions.AddVersion();
+                //if (newItem != null) //add version for lang
+                //    newItem = newItem.Versions.AddVersion();
 
                 //if not found then create one
                 if (newItem == null) {
@@ -507,7 +507,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
                     return thisParent;
                 }
 
-                if (!DateTime.TryParseExact(dateValue, new string[] { "yyyy-MM-ddTHH:mm:ss", "d/M/yyyy", "d/M/yyyy HH:mm:ss" }, CultureInfo.InvariantCulture, DateTimeStyles.None, out date)) {
+                if (!DateTimeUtil.ParseInformaDate(dateValue, out date)) {
                     Logger.Log(newItemName, "date could not be parsed", ProcessStatus.DateParseError, DateField, dateValue);
                     return thisParent;
                 }

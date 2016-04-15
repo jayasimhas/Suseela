@@ -18,17 +18,20 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IManageAccountInfo AccountInfo;
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly ITextTranslator TextTranslator;
+        protected readonly IUserProfileContext ProfileContext;
 
         public ContactInfoApiController(
             IAuthenticatedUserContext userContext,
             IManageAccountInfo accountInfo,
             ISitecoreContext sitecoreContext,
-            ITextTranslator textTranslator)
+            ITextTranslator textTranslator,
+            IUserProfileContext profileContext)
         {
             UserContext = userContext;
             AccountInfo = accountInfo;
             SitecoreContext = sitecoreContext;
             TextTranslator = textTranslator;
+            ProfileContext = profileContext;
         }
 
         [HttpPost]
@@ -53,6 +56,9 @@ namespace Informa.Web.Areas.Account.Controllers
                 form.ShipState,
                 form.Fax, form.CountryCode, form.PhoneExtension, form.Phone, form.PhoneType, form.Company,
                 form.JobFunction, form.JobIndustry, form.JobTitle);
+
+            if (result.Success)
+                ProfileContext.Clear();
 
             return Ok(new
             {
@@ -85,9 +91,8 @@ namespace Informa.Web.Areas.Account.Controllers
                 });
             }
 
-            var result = AccountInfo.UpdatePassword(UserContext.User, request.CurrentPassword, request.NewPassword,
-                false);
-
+            var result = AccountInfo.UpdatePassword(UserContext.User, request.CurrentPassword, request.NewPassword, false);
+            
             return Ok(new
             {
                 success = result.Success,

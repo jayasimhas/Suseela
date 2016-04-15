@@ -24,7 +24,7 @@
         <li>
             @if (Model.LinkedInLink != null)
             {
-                <a href="@Model.LinkedInLink.Url" target="_blank" title="@Model.LinkedInLink.Text">
+                <a href="@Model.LinkedInLink.Url" class="click-utag" data-info='{"event_name" : "article-share-linkedin"}' target="_blank" title="@Model.LinkedInLink.Text">
                     <svg class="footer__share-icons">
                         <use xlink:href="/dist/img/svg-sprite.svg#linkedin-footer"></use>
                     </svg>
@@ -32,7 +32,7 @@
             }
             @if (Model.TwitterLink != null)
             {
-                <a href="@Model.TwitterLink.Url" target="_blank" title="@Model.TwitterLink.Text">
+                <a href="@Model.TwitterLink.Url" target="_blank" title="@Model.TwitterLink.Text" class="click-utag" data-info='{"event_name" : "article-share-twitter"}'>
                     <svg class="footer__share-icons">
                         <use xlink:href="/dist/img/svg-sprite.svg#twitter-footer"></use>
                     </svg>
@@ -40,7 +40,7 @@
             }
             @if (Model.FacebookLink != null)
             {
-                <a href="@Model.FacebookLink.Url" target="_blank" title="@Model.FacebookLink.Text">
+                <a href="@Model.FacebookLink.Url" target="_blank" title="@Model.FacebookLink.Text" class="click-utag" data-info='{"event_name" : "article-share-facebook"}'>
                     <svg class="footer__share-icons">
                         <use xlink:href="/dist/img/svg-sprite.svg#facebook-footer"></use>
                     </svg>
@@ -54,38 +54,48 @@
         <hr class="footer__separator">
     }
 
-	@if (Model.MenuOneLinks.Any())
-	{
-		<div class="footer__section footer__section--single">
-			<span class="footer__section-header">
-				@Model.MenuOneHeader
-			</span>
-			<ul>
-				@RenderLinks(Model.MenuOneLinks)
-			</ul>
-		</div>
-	}
+    @if (Model.MenuOneLinks.Any())
+    {
+        <div class="footer__section footer__section--single">
+            <span class="footer__section-header">
+                @Model.MenuOneHeader
+            </span>
+            <ul>
+                @RenderLinks(Model.MenuOneLinks)
+            </ul>
+        </div>
+    }
 
-	@if (Model.MenuTwoLinks.Any())
-	{
-		<div class="footer__section footer__section--triple">
-			<span class="footer__section-header">
-				@Model.MenuTwoHeader
-			</span>
-			<ul>
-				@RenderLinks(Model.MenuTwoLinks)
-			</ul>
-		</div>
-	}
+    @if (Model.MenuTwoLinks.Any())
+    {
+        <div class="footer__section footer__section--triple">
+            <span class="footer__section-header">
+                @Model.MenuTwoHeader
+            </span>
+            <ul>
+                @RenderLinks(Model.MenuTwoLinks)
+            </ul>
+        </div>
+    }
 
 </div>
 
+@helper RenderLinks(IEnumerable<Informa.Library.Navigation.INavigation> pageLinks)
+{
+foreach (var pageLink in pageLinks)
+{
+        <li>
+            <a href="@Informa.Library.Utilities.Extensions.GlassLinkExtensions.LinkUrl(pageLink.Link)">@pageLink.Text</a>
+        </li>
+}
+}
+
 @helper RenderLinks(IEnumerable<Informa.Web.Models.IPageLink> pageLinks)
 {
-	foreach (var pageLink in pageLinks)
-	{
-		<li>
-			<a href="@pageLink.Url">@pageLink.Text</a>
-		</li>
-	}
+foreach (var pageLink in pageLinks)
+{
+        <li>
+            <a href="@pageLink.Url">@pageLink.Text</a>
+        </li>
+}
 }

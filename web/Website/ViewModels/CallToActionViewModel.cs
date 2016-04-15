@@ -8,7 +8,7 @@ using Informa.Web.ViewModels.PopOuts;
 
 namespace Informa.Web.ViewModels
 {
-    [AutowireService(LifetimeScope.SingleInstance)]
+    [AutowireService]
     public class CallToActionViewModel : ICallToActionViewModel
     {
         protected readonly ITextTranslator TextTranslator;
@@ -38,8 +38,9 @@ namespace Informa.Web.ViewModels
         public string RegisterTitle => TextTranslator.Translate("CallToAction.Register.Title");
         public string RegisterSubtitle => TextTranslator.Translate("CallToAction.Register.SubTitle");
         public string SubscribeTitle => TextTranslator.Translate("CallToAction.Subscribe.Title");
-        public Link SubscribeLink => SiteRootContext.Item?.Subscribe_Link;
-        public Link PurchaseLink => SiteRootContext.Item?.Purchase_Link;
+        public string SubscribeLinkUrl => SiteRootContext?.Item?.Subscribe_Link?.Url ?? string.Empty;
+        public string SubscribeLinkText => SiteRootContext?.Item?.Subscribe_Link.Text ?? string.Empty;
+        public Link PurchaseLink => SiteRootContext?.Item?.Purchase_Link;
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
 
         #endregion

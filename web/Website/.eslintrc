@@ -10,8 +10,17 @@
     "templateStrings": true,
     "forOf": true
   },
+  "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+  },
   "env": {
-    "node": true
+    "node": true,
+    "browser": true,
+    "jquery": true,
   },
   "rules": {
     "no-alert": 0,

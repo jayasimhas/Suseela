@@ -54,6 +54,7 @@ namespace Informa.Web.App_Start
             builder.RegisterModule<SolrSearchModule>();
             SearchRegistrar.RegisterDependencies(builder);
 
+			SessionRegistrar.RegisterDependencies(builder);
 			AuthenticationRegistrar.RegisterDependencies(builder);
 			SalesforceRegistrar.RegisterDependencies(builder);
 			UserRegistrar.RegisterDependencies(builder);
@@ -63,6 +64,7 @@ namespace Informa.Web.App_Start
 			ScheduledPublishingRegistrar.RegisterDependencies(builder);
 			SiteDebuggingRegistrar.RegisterDependencies(builder);
 			LoggingRegistrar.RegisterDependencies(builder);
+			EntitlementsRegistrar.RegisterDependencies(builder);
 
 			// Custom Modules
 			builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));

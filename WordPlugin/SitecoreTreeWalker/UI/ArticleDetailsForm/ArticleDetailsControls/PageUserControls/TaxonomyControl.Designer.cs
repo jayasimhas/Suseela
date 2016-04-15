@@ -74,28 +74,26 @@
 			this.messageLbl.AutoSize = true;
 			this.messageLbl.Location = new System.Drawing.Point(75, 278);
 			this.messageLbl.Name = "messageLbl";
-			this.messageLbl.Size = new System.Drawing.Size(211, 13);
+			this.messageLbl.Size = new System.Drawing.Size(273, 13);
 			this.messageLbl.TabIndex = 1;
-			this.messageLbl.Text = "The top \"3\" items will display on screens";
+			this.messageLbl.Text = "The top \"3\" items will appear in the TAGS section at the top of the article";
 			// 
 			// uxArrowUp
 			// 
 			this.uxArrowUp.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.uxArrowUp.Image = global::InformaSitecoreWord.Properties.Resources.arrowup;
 			this.uxArrowUp.Location = new System.Drawing.Point(587, 327);
-			this.uxArrowUp.Name = "uxArrowUp";
-			this.uxArrowUp.Padding = new System.Windows.Forms.Padding(2);
-			this.uxArrowUp.Size = new System.Drawing.Size(32, 32);
+			this.uxArrowUp.Name = "uxArrowUp";			
+			this.uxArrowUp.Size = new System.Drawing.Size(30, 32);
 			this.uxArrowUp.TabIndex = 43;
 			// 
 			// uxArrowDown
 			// 
 			this.uxArrowDown.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.uxArrowDown.Image = global::InformaSitecoreWord.Properties.Resources.arrowdown;
-			this.uxArrowDown.Location = new System.Drawing.Point(587, 372);
-			this.uxArrowDown.Name = "uxArrowDown";
-			this.uxArrowDown.Padding = new System.Windows.Forms.Padding(2);
-			this.uxArrowDown.Size = new System.Drawing.Size(32, 32);
+			this.uxArrowDown.Location = new System.Drawing.Point(588, 372);
+			this.uxArrowDown.Name = "uxArrowDown";		
+			this.uxArrowDown.Size = new System.Drawing.Size(30, 32);
 			this.uxArrowDown.TabIndex = 42;
 			// 
 			// panel2
@@ -117,7 +115,8 @@
 			// 
 			// uxGeographyViewTree
 			// 
-			this.uxGeographyViewTree.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.uxGeographyViewTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.uxGeographyViewTree.AutoSize = true;
 			this.uxGeographyViewTree.Location = new System.Drawing.Point(538, 43);
 			this.uxGeographyViewTree.Name = "uxGeographyViewTree";
@@ -160,7 +159,8 @@
 			// 
 			// uxGeographyViewSearch
 			// 
-			this.uxGeographyViewSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.uxGeographyViewSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.uxGeographyViewSearch.AutoSize = true;
 			this.uxGeographyViewSearch.Location = new System.Drawing.Point(488, 43);
 			this.uxGeographyViewSearch.Name = "uxGeographyViewSearch";
@@ -209,6 +209,7 @@
 			this.uxGeographySelected.Name = "uxGeographySelected";
 			this.uxGeographySelected.Size = new System.Drawing.Size(558, 142);
 			this.uxGeographySelected.TabIndex = 41;
+			this.uxGeographySelected.AutoSize = true;
 			this.uxGeographySelected.UseCompatibleStateImageBehavior = false;
 			// 
 			// label16

@@ -4,24 +4,21 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 using System.Xml;
 using HtmlAgilityPack;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.SharedSource.DataImporter.Utility;
 using HtmlDocument = Sitecore.WordOCX.HtmlDocument.HtmlDocument;
-using CsvHelper;
 using Sitecore.SharedSource.DataImporter.Logger;
 
 namespace Sitecore.SharedSource.DataImporter.Providers
 {
-    public class InformaDataMap : BaseDataMap
+    public class EscenicAutonomyArticleDataMap : BaseDataMap
     {
         #region Constructor
 
-        public InformaDataMap(Database db, string ConnectionString, Item importItem, ILogger l)
+        public EscenicAutonomyArticleDataMap(Database db, string ConnectionString, Item importItem, ILogger l)
             : base(db, ConnectionString, importItem, l) {
             
         }
@@ -44,28 +41,16 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             string[] files = Directory.GetFiles(this.Query);
             foreach (string f in files)
             {
-                Encoding et = Encoding.GetEncoding("utf-8");
-                byte[] bytes = GetFileBytes(f);
-                string data = et.GetString(bytes);
-
                 Dictionary<string, string> ao = new Dictionary<string, string>();
-
-                //store filename
-                string curFileName = new FileInfo(f).Name;
-                ao["ARTICLE NUMBER"] = string.Format("SC{0:D6}", artNumber);
-
-                XmlDocument d = new XmlDocument();
-                try
-                {
-                    d.LoadXml(data);
-                }
-                catch (Exception ex)
-                {
-                    Logger.Log("N/A", string.Format("Xml file data was malformed: {0}", ex.Message), ProcessStatus.Error, "File", f);
+                XmlDocument d = GetXmlDocument(f);
+                if(d == null)
                     continue;
-                }
 
-                //escenic
+                //generated field
+                string curFileName = new FileInfo(f).Name;
+                ao["ARTICLE NUMBER"] = $"SC{artNumber:D6}";
+                
+                //escenic field values
                 string authorNode = "STORYAUTHORNAME";
                 ao.Add(authorNode, AuthorHelper.Authors(GetXMLData(d, authorNode)));
                 string bodyNode = "STORYBODY";
@@ -79,40 +64,32 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 l.Add(ao);
                 artNumber++;
-                
-                List<string> autNodes = new List<string>() {"CATEGORY", "COMPANY", "STORYUPDATE", "SECTION", "COUNTRY", "KEYWORD", "THERAPY_SECTOR", "TREATABLE_CONDITION" };
 
-                string autFile = string.Format(@"{0}upload\Import\Autonomy\{1}", HttpRuntime.AppDomainAppPath, curFileName);
+                //autonomy fields
+                string autFile = $@"{this.Query}\..\Autonomy\{curFileName}";
+
+                List<string> autNodes = new List<string>() {"CATEGORY", "COMPANY", "STORYUPDATE", "SECTION", "COUNTRY", "KEYWORD", "THERAPY_SECTOR", "TREATABLE_CONDITION" };
+                //if no autonomy file then fill fields with empty
                 if (!File.Exists(autFile)) {
                     Logger.Log("N/A", "File not found", ProcessStatus.NotFoundError, "File", autFile);
-                    foreach(string n in autNodes)
+                    foreach (string n in autNodes)
                         ao.Add(n, string.Empty);
 
-                    //populate the date from escenic
+                    //default back to the date from escenic
                     string dateVal = GetXMLData(d, "DATEPUBLISHED");
                     DateTime date;
-                    if (!DateTime.TryParse(dateVal, out date))
+                    if (!DateTimeUtil.ParseInformaDate(dateVal, out date))
                         Logger.Log("N/A", "No Date to parse error", ProcessStatus.DateParseError, "Missing Autonomy File Name", autFile);
                     else
                         ao["STORYUPDATE"] = dateVal;
 
                     continue;
                 }
-                
-                byte[] aBytes = GetFileBytes(autFile);
-                string aData = et.GetString(aBytes);
-                XmlDocument d2 = new XmlDocument();
-                try
-                {
-                    d2.LoadXml(aData);
-                }
-                catch (Exception ex)
-                {
-                    Logger.Log("N/A", string.Format("Xml file data was malformed: {0}", ex.Message), ProcessStatus.Error, "File", autFile);
+
+                XmlDocument d2 = GetXmlDocument(autFile);
+                if (d2 == null)
                     continue;
-                }
-                
-                //autonomy
+
                 foreach (string n in autNodes)
                     ao.Add(n, GetXMLData(d2, n));
             }
@@ -229,6 +206,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             return str.Split(new string[] { splitter }, StringSplitOptions.None).ToList();
         }
 
+        protected string GetFileAsString(string path)
+        {
+            Encoding et = Encoding.GetEncoding("utf-8");
+            byte[] aBytes = GetFileBytes(path);
+            return et.GetString(aBytes);
+        }
+
         protected byte[] GetFileBytes(string filePath)
         {
             //open the file selected
@@ -238,6 +222,23 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             s.Position = 0;
             s.Read(bytes, 0, int.Parse(s.Length.ToString()));
             return bytes;
+        }
+
+        protected XmlDocument GetXmlDocument(string filePath)
+        {
+            string data = GetFileAsString(filePath);
+
+            XmlDocument d = new XmlDocument();
+            try
+            {
+                d.LoadXml(data);
+                return d;
+            }
+            catch (Exception ex)
+            {
+                Logger.Log("N/A", string.Format("Xml file data was malformed: {0}", ex.Message), ProcessStatus.Error, "File", filePath);
+            }
+            return null;
         }
 
         #endregion Methods
@@ -289,11 +290,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         }
     }
 
-    public class AuthorDataMap : InformaDataMap
+    public class EscenicAutonomyAuthorDataMap : EscenicAutonomyArticleDataMap
     {
         #region Constructor
 
-        public AuthorDataMap(Database db, string ConnectionString, Item importItem, ILogger l)
+        public EscenicAutonomyAuthorDataMap(Database db, string ConnectionString, Item importItem, ILogger l)
             : base(db, ConnectionString, importItem, l)
         {
 

@@ -12,6 +12,7 @@ using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Jabberwocky.Glass.Models;
 using PluginModels;
 using Sitecore;
 using Sitecore.Configuration;
@@ -51,9 +52,42 @@ namespace Informa.Web.Controllers
 			var title = siteConfigItem.Email_Title;
 			var replyToEmail = Sitecore.Context.User.Profile.Email;
 			if (string.IsNullOrEmpty(fromEmail) || string.IsNullOrEmpty(replyToEmail)) return;
+			var isAuthorInSenderList = false;
 
-			if (!articleStruct.ArticleSpecificNotifications.Any()) return;
-			var notificationList = articleStruct.ArticleSpecificNotifications;
+			var notificationList = !articleStruct.ArticleSpecificNotifications.Any() ? new List<StaffStruct>() :
+				articleStruct.ArticleSpecificNotifications;
+
+			//IIPP-1092
+			try
+			{
+				var stateItem =
+					_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.ICommand>(
+						articleStruct.CommandID.ToString());
+				if (stateItem != null)
+				{
+					var workflowitem =
+						_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IState>(stateItem.Next_State);
+					var workflowBasednotificationList = workflowitem.Staffs;
+					foreach (var eachUser in workflowBasednotificationList)
+					{
+						try
+						{
+							var toSender = new StaffStruct { ID = eachUser._Id };
+							notificationList.Add(toSender);
+						}
+						catch (Exception ex)
+						{
+							//TODO - Add logging
+						}
+					}
+
+				}
+			}
+			catch (Exception ex)
+			{
+				//TODO Logging - Failed to find the workflow item.
+			}
+
 			var emailBody = CreateBody(articleStruct, title, siteConfigItem.Publication_Name, oldWorkflow);
 
 			foreach (var eachEmail in notificationList)
@@ -69,8 +103,13 @@ namespace Informa.Web.Controllers
 					IsBodyHtml = true
 				};
 				EmailSender.SendWorkflowNotification(email, replyToEmail);
+				if (replyToEmail == notificationUser.Email_Address)
+				{
+					isAuthorInSenderList = true;
+				}
 			}
 
+			if (isAuthorInSenderList) return;
 			//Emailing the Content Author
 			Email contentAuthorEmail = new Email
 			{

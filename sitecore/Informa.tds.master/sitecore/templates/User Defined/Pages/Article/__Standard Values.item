@@ -54,7 +54,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 19a51291-2e45-4933-afab-52c44cb52f34
+revision: 944e395b-8f8b-417b-bb15-4053a8a23d87
 
 ----field----
 field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
@@ -67,9 +67,9 @@ content-length: 0
 field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
 name: Actual Publish Date
 key: actual publish date
-content-length: 16
+content-length: 0
 
-20160304T162901Z
+
 ----field----
 field: {A92E4BFB-3010-4332-A7A0-C788348993CE}
 name: FactoryListableTitle
@@ -118,14 +118,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-19a51291-2e45-4933-afab-52c44cb52f34
+944e395b-8f8b-417b-bb15-4053a8a23d87
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160309T141632Z
+20160408T160109Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

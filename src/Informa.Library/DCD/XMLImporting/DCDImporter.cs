@@ -27,10 +27,10 @@ namespace Informa.Library.DCD.XMLImporting
         private readonly List<string> _companyDeletes;
         private readonly List<string> _drugDeletes;
 
-        private DCDContext dcContext
-        {
-            get { return new DCDContext(); }
-        }
+        //private DCDContext dcContext
+        //{
+        //    get { return new DCDContext(); }
+        //}
 
         public DCDImporter(string path, string name)
         {
@@ -48,8 +48,11 @@ namespace Informa.Library.DCD.XMLImporting
 
         public bool ProcessFile()
         {
-            //Initialize the database log entry for this import
-            dcContext.CreateImportLogEntry(DateTime.Now, _fileName, out _importingLogRecord);
+            using (DCDContext dcCntxt = new DCDContext())
+            {
+                //Initialize the database log entry for this import
+                dcCntxt.CreateImportLogEntry(DateTime.Now, _fileName, out _importingLogRecord);
+            }
 
             if (_importingLogRecord == null)
             {
@@ -109,6 +112,7 @@ namespace Informa.Library.DCD.XMLImporting
                         bool success = false;
                         if (content.type == IBIContentType.deal)
                         {
+                            //_importingLogRecord = new Model.DCD.DCDManager().GetImportLogById(_importingLogRecord.Id);
                             success = dc.ProcessRecord<Deal, DealRecordImportLog>(record, _importingLogRecord);
                             if (success)
                             {
@@ -272,7 +276,8 @@ namespace Informa.Library.DCD.XMLImporting
             _importingLogRecord.Result = (_hasSomeFailures) ? ImportResult.PartialSuccess.ToString() : ImportResult.Success.ToString();
             _importingLogRecord.Notes = _importLogNotes.ToString();
 
-            dcContext.UpdateImportLogEntry(_importingLogRecord);
+            using (DCDContext dcdContext = new DCDContext())
+                dcdContext.UpdateImportLogEntry(_importingLogRecord);
 
             return true;
         }

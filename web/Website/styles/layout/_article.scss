@@ -30,7 +30,9 @@
     margin-bottom: 1rem;
 }
 
-.article-paragraph {
+.media-exhibit,
+.article-paragraph,
+.article-body-content > p { // "top level" paragraphs, direct children of wrapper
     color: $informa-dark-gray;
     line-height: 2rem;
     margin: 0 0 1rem;

@@ -25,7 +25,7 @@ namespace InformaSitecoreWord.Util
 			var path = strings[1];
 
 			var root = new XElement("a");
-			root.SetAttributeValue("class", "plugin-hide");
+		//	root.SetAttributeValue("class", "plugin-hide");
 			try
 			{
 				if (!SupportingDocuments.Contains(path))
@@ -34,6 +34,7 @@ namespace InformaSitecoreWord.Util
 				}
 				var url = SitecoreClient.GetDynamicUrl(path);
 				root.SetAttributeValue("href", url);
+				root.SetAttributeValue("target", "_blank");
                 root.Value = hyperlink.Range.Text;
 				//root.Add(GetDocIcon(url));
 			}

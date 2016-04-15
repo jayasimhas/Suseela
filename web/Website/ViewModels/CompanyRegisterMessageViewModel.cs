@@ -1,9 +1,11 @@
-﻿using Informa.Library.Company;
+﻿using Glass.Mapper.Sc;
+using Informa.Library.Company;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
-using Informa.Library.User.Authentication;
 using Informa.Library.Utilities.Extensions;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
+using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels
 {
@@ -12,25 +14,28 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteRootContext SiteRootContext;
-		protected readonly ICompanyContext CompanyContext;
-		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+		protected readonly IUserCompanyContext UserCompanyContext;
+		protected readonly IAllowCompanyRegisterUserContext AllowCompanyRegisterUser;
+		protected readonly ISitecoreContext SitecoreContext;
 
 		public CompanyRegisterMessageViewModel(
 			ITextTranslator textTranslator,
 			ISiteRootContext siteRootContext,
-			ICompanyContext companyContext,
-			IAuthenticatedUserContext authenticatedUserContext)
+			IUserCompanyContext userCompanyContext,
+			IAllowCompanyRegisterUserContext allowCompanyRegisterUser,
+			ISitecoreContext sitecoreContext)
 		{
 			TextTranslator = textTranslator;
 			SiteRootContext = siteRootContext;
-			CompanyContext = companyContext;
-			AuthenticatedUserContext = authenticatedUserContext;
+			UserCompanyContext = userCompanyContext;
+			AllowCompanyRegisterUser = allowCompanyRegisterUser;
+			SitecoreContext = sitecoreContext;
 		}
 
-		public string CompanyName => CompanyContext.Company?.Name ?? string.Empty;
+		public string CompanyName => UserCompanyContext.Company?.Name ?? string.Empty;
 		public string Message => (SiteRootContext.Item?.Recognized_IP_Announcment_Text ?? string.Empty).ReplacePatternCaseInsensitive("#Company_Name#", CompanyName);
 		public string DismissText => TextTranslator.Translate("Maintenance.MaintenanceDismiss");
-		public bool Display => !AuthenticatedUserContext.IsAuthenticated && CompanyContext.Company != null;
+		public bool Display =>	AllowCompanyRegisterUser.IsAllowed && !(SitecoreContext.GetCurrentItem<IGlassBase>(inferType: true) is IRegistration_Page);
 		public string RegisterLinkText => SiteRootContext.Item?.Register_Link?.Text;
 		public string RegisterLinkUrl => SiteRootContext.Item?.Register_Link?.Url;
 	}

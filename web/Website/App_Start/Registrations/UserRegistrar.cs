@@ -5,8 +5,14 @@ using Informa.Library.Salesforce.User;
 using Informa.Library.Salesforce.User.Entitlement;
 using Informa.Library.User.ResetPassword;
 using Informa.Library.User.Profile;
+using Informa.Library.User.Newsletter;
+using Informa.Library.User.Offer;
+using Informa.Library.User.Document;
 using Informa.Library.Salesforce.User.Profile;
+using Informa.Library.Salesforce.User.Newsletter;
+using Informa.Library.Salesforce.User.Offer;
 using Informa.Library.User.Entitlement;
+using Informa.Library.Session;
 
 namespace Informa.Web.App_Start.Registrations
 {
@@ -14,7 +20,12 @@ namespace Informa.Web.App_Start.Registrations
 	{
 		public static void RegisterDependencies(ContainerBuilder builder)
 		{
-			builder.RegisterType<UserSession>().As<IUserSession>();
+			builder.RegisterType<UserSession>()
+				.As<IUserSession>()
+				.As<ISpecificSessionStore>();
+			builder.RegisterType<EntitlementSession>()
+				.As<IEntitlementSession>()
+				.As<ISpecificSessionStore>();
 
 			builder.RegisterType<SalesforceFindUserByEmail>().As<IFindUserByEmail>();
 			builder.RegisterType<SalesforceUpdateUserPassword>().As<IUpdateUserPassword>();
@@ -35,14 +46,17 @@ namespace Informa.Web.App_Start.Registrations
 			builder.RegisterType<SalesforceFindUserProfile>().As<IFindUserProfileByUsername>();
 
 			builder.RegisterType<SalesforceUpdateOfferUserOptIn>().As<IUpdateOfferUserOptIn>();
-			builder.RegisterType<SalesforceUpdateNewsletterUserOptIn>().As<IUpdateNewsletterUserOptIn>();
+			builder.RegisterType<SalesforceUpdateNewsletterUserOptIns>().As<IUpdateNewsletterUserOptIns>();
 
-			builder.RegisterType<SalesforceQueryNewsletterUserOptIn>().As<IQueryNewsletterUserOptIn>();
-            builder.RegisterType<SalesforceQueryOfferUserOptIn>().As<IQueryOfferUserOptIn>();
+			builder.RegisterType<SalesforceFindNewsletterUserOptIns>().As<IFindNewsletterUserOptIns>();
+            builder.RegisterType<SalesforceOfferUserOptedIn>().As<IOfferUserOptedIn>();
 		    builder.RegisterType<SalesforceGetUserEntitlements>().As<IGetUserEntitlements>();      
 		    builder.RegisterType<SalesforceGetIPEntitlements>().As<IGetIPEntitlements>();
 
-		    builder.RegisterType<SalesforceManageSavedDocuments>().As<IManageSavedDocuments>();
+		    builder.RegisterType<SalesforceSavedDocuments>()
+				.As<IFindSavedDocuments>()
+				.As<ISaveDocument>()
+				.As<IRemoveDocument>();
             builder.RegisterType<SalesforceManageSubscriptions>().As<IManageSubscriptions>();
             builder.RegisterType<SalesforceManageAccountInfo>().As<IManageAccountInfo>();
             builder.RegisterType<SalesforceUserProfile>().As<ISalesforceUserProfile>();

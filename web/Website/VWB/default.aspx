@@ -23,7 +23,7 @@
 
 			<div id="dateRangeWrapper">
 				<div class="left radioButtonWrapper">
-				<asp:RadioButton ID="rbNoDate" runat="server" Text="No Dates" GroupName="choice" class="enabledate" />    
+				<asp:RadioButton ID="rbNoDate" runat="server" Text="Default" GroupName="choice" class="enabledate" />    
                 </div>
 				<div class="left radioButtonWrapper">
 					<asp:RadioButton ID="rbDateRange" runat="server" Text="Date Range" GroupName="choice" class="enabledate" />

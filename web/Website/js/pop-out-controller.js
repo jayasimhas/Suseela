@@ -3,6 +3,7 @@ function popOutController(triggerElm) {
 	// Toggle pop-out when trigger is clicked
 	if(triggerElm) {
 		$(triggerElm).on('click', (event) => {
+			event.preventDefault();
 			this.togglePopOut($(event.target));
 		});
 	}
@@ -35,13 +36,13 @@ function popOutController(triggerElm) {
 
 	// PUBLIC
 	// Closes the pop-out.
-	this.closePopOut = function() {
+	this.closePopOut = function(elm) {
 		// Reset all z-indexes so new pop-outs are stacked on top properly
 		$('.pop-out').removeClass('is-active').css("z-index", "");
 		$('.js-pop-out-trigger').css("z-index", "");
 
 		state.activeElm = null;
-	}
+	};
 
 	// PUBLIC
 	// Toggles the pop-out
@@ -49,6 +50,17 @@ function popOutController(triggerElm) {
 		// Check if clicked element is the toggle itself
 		// Otherwise, climb up DOM tree and find it
 		var poParent = e.hasClass('js-pop-out-trigger') ? e : e.closest('.js-pop-out-trigger');
+
+		/*  This is a little hacky, but if a user is trying to bookmark an article
+			but needs to sign in first, we need to capture and pass the article
+			ID as a URL param after a successful sign in attempt. That allows
+			us to automatically bookmark the article on page refresh. */
+
+		if(poParent.data('pop-out-type') === 'sign-in' && poParent.data('bookmark-id')) {
+			$('.sign-in__submit').data('pass-article-id', poParent.data('bookmark-id'));
+		} else {
+			poParent.data('bookmark-id', null);
+		}
 
 		// If the current pop-out is the same as the active pop-out...
 		if(poParent[0] === state.activeElm) {
@@ -88,25 +100,29 @@ function popOutController(triggerElm) {
 
 		// Determine which pop-out template to use
 		// TODO: Make this user-configurable
-		//			Let users assign a name to a template class
+		// Let users assign a name to a template class
+		var popOut;
 		switch (trgr.e.data('pop-out-type')) {
 			// SIGN IN
 			// (Global sign-in, bookmarking when not signed in)
 			case 'sign-in':
-				var popOut = $('.js-pop-out__sign-in');
+				popOut = $('.js-pop-out__sign-in');
 				break;
 			// EMAIL ARTICLE
 			case 'email-article':
-				var popOut = $('.js-pop-out__email-article');
+				popOut = $('.js-pop-out__email-article');
+				break;
+			// EMAIL ARTICLE
+			case 'email-search':
+				popOut = $('.js-pop-out__email-search');
 				break;
 			// GLOBAL HEADER REGISTRATION
 			case 'register':
-				var popOut = $('.js-pop-out__register');
+				popOut = $('.js-pop-out__register');
 				break;
 			default:
 				console.warn('Attempting to fire unidentified pop-out.');
 				return;
-				break;
 		}
 
 		// Make pop-out visible so we can query for its width
@@ -233,7 +249,7 @@ function popOutController(triggerElm) {
 		res.css.tab.zIndex = trgr.e.css('z-index') - 1;
 
 		// `transform` to quickly position box, relative to top left corner
-		res.css.box.transform = 'translate3d(' + res.offset.box.left +'px, ' + res.offset.box.top + 'px, 0)'
+		res.css.box.transform = 'translate3d(' + res.offset.box.left +'px, ' + res.offset.box.top + 'px, 0)';
 
 		// Apply that giant blob of CSS
 		popOut.css({
@@ -258,7 +274,7 @@ function popOutController(triggerElm) {
 		if(state.activeElm) {
 			updatePosition();
 		}
-	}
-};
+	};
+}
 
 export default popOutController;

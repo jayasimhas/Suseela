@@ -4,10 +4,10 @@ section: Home/Topic Page Components
 ---
 
 ```example:html
-<section class="article-preview article-preview--small">
+<section class="article-preview">
 
     <div class="article-metadata">
-        <div class="article-preview__bookmarker pop-out__trigger js-pop-out-trigger" data-pop-out-type="sign-in">
+        <div class="article-preview__bookmarker pop-out__trigger">
             <span class="article-preview__bookmarker-label">Bookmark</span>
             <svg class="article-prologue__share-icon">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#bookmark"></use>
@@ -30,7 +30,7 @@ section: Home/Topic Page Components
 
     <div class="article-preview__inner-wrapper">
         <h1 class="article-preview__headline">
-            <a href="/articles/2015/09/15/icaac-2015-mercks-bezlotoxumab-a-big-step-in-c-diff">ICAAC 2015: Merck's Bezlotoxumab A 'Big Step' In C Diff</a>
+            <a href="#">ICAAC 2015: Merck's Bezlotoxumab A 'Big Step' In C Diff</a>
         </h1>
 
         <span class="article-preview__byline">
@@ -43,9 +43,9 @@ section: Home/Topic Page Components
     </div>
 
     <div class="article-preview__tags bar-separated-link-list">
-                <a href="/search?tag=1d288e18-baff-4498-b284-ef9bc8d32e30">Metabolic Disorders</a>
-                <a href="/search?tag=6ddf7877-fdae-472b-8739-fb4710df7651">Switzerland</a>
-                <a href="/search?tag=b3122c5e-ff3f-438a-9c93-1b54dc1286a5">Clinical Trials</a>
+        <a href="#">Metabolic Disorders</a>
+        <a href="#">Switzerland</a>
+        <a href="#">Clinical Trials</a>
     </div>
 </section>
 ```
@@ -55,6 +55,10 @@ section: Home/Topic Page Components
     padding-bottom: 48px;
     position: relative;
     width: 100%;
+
+    &__inner-wrapper {
+        margin-bottom: 1rem;
+    }
 
     &__two-column {
         display: flex;
@@ -109,9 +113,16 @@ section: Home/Topic Page Components
 
     &__headline {
         @include textMix('Roboto Condensed', 30px, 700);
-        color: $informa-black;
         line-height: 2.175rem;
         margin-bottom: 0.5rem;
+        &,
+        & a {
+            color: $informa-black;
+
+            &:hover {
+                color: $color-cardinal-red;
+            }
+        }
     }
     &__byline {
         @include textMix('Roboto', 16px, 500);
@@ -122,16 +133,11 @@ section: Home/Topic Page Components
     }
 
     &__ad {
-        @include textMix('Roboto', 11px, 500);
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: $informa-light-gray-d;
         margin: 12px auto 0;
         width: 100%;
 
         img {
-            width: 100%;
-            margin-top: 6px;
+            max-width: 100%;
         }
     }
 

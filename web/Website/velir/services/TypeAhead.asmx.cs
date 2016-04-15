@@ -8,6 +8,7 @@ using System.Web.Script.Services;
 using System.Web.Services;
 using Informa.Library.Rss;
 using Informa.Library.Search.TypeAhead;
+using Informa.Library.Search.Utilities;
 using Informa.Library.Utilities.References;
 using Jabberwocky.Core.Caching;
 using Newtonsoft.Json;
@@ -59,35 +60,46 @@ namespace Informa.Web.velir.services
         {
             List<CompanyTypeAheadResponseItem> companies = new List<CompanyTypeAheadResponseItem>();
 
-            string searchPageId = new ItemReferences().SearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
-            string url = string.Format("http://{0}/api/informasearch?pId={1}", WebUtil.GetHostName(), searchPageId);
+            string searchPageId = new ItemReferences().SearchPage.ToString("D").ToLower();
+            string url = string.Format("{0}://{1}/api/informasearch?pId={2}", HttpContext.Current.Request.Url.Scheme, WebUtil.GetHostName(), searchPageId);
 
-            url = string.Format("{0}&sortBy=relevance&sortOrder=asc", url);
-            
-
-            var client = new WebClient();
-            var content = client.DownloadString(url);
-
-            var results = JsonConvert.DeserializeObject<SearchResults>(content);
-
-            foreach (var facetGroupResult in results.facets)
+            if (Sitecore.Context.RawUrl.Contains("?"))
             {
-                if (facetGroupResult.id.ToLower() == "companies")
-                {
-                    foreach (SearchFacetResult result in facetGroupResult.values)
-                    {
-                        if (!string.IsNullOrEmpty(result.name))
-                        {
-                            companies.Add(new CompanyTypeAheadResponseItem(result.name));
-                        }
+                var urlParts = Sitecore.Context.RawUrl.Split('?');
 
+                if (urlParts.Length == 2)
+                {
+                    url = string.Format("{0}&{1}", url, urlParts[1]);
+                }
+            }
+            else
+            {
+                url = string.Format("{0}&sortBy=relevance&sortOrder=asc", url);
+            }
+
+            var results = SearchWebClientUtil.GetSearchResultsFromApi(url);
+
+            if (results != null)
+            {
+                foreach (var facetGroupResult in results.facets)
+                {
+                    if (facetGroupResult.id.ToLower() == "companies")
+                    {
+                        foreach (SearchFacetResult result in facetGroupResult.values)
+                        {
+                            if (!string.IsNullOrEmpty(result.name))
+                            {
+                                //companies.Add(new CompanyTypeAheadResponseItem(result.name + " (" + result.count + ")"));
+                                companies.Add(new CompanyTypeAheadResponseItem(result.name));
+                            }
+
+                        }
                     }
                 }
             }
 
             this.Context.Response.ContentType = "application/json; charset=utf-8";
             this.Context.Response.Write(new JavaScriptSerializer().Serialize(companies));
-       
         }
     }
 }

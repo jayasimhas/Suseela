@@ -3,15 +3,15 @@
 
 <section class="search-metadata" ng-controller="searchMetaController as meta">
 
-    <div class="search-header__results-meta" id="searchTop">
+    <div class="search-header__results-meta">
 
-        @Model.SearchShowingResults1Text 
+        @Model.SearchShowingResults1Text
         <strong>
             {{ meta.currentResults }}
         </strong>
         @Model.SearchShowingResults2Text
         <strong>
-            {{ meta.totalResults }}
+            {{ meta.totalResults | number }}
         </strong>
         @Model.SearchShowingResults3Text
         <span ng-if="meta.keywords">

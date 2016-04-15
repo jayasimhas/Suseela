@@ -14,7 +14,7 @@
         margin-left: 0.5rem;
         list-style: none;
         font-size: 14px;
-        background-color: #EFF0F0;
+        background-color: $color-mercury-gray;
         background-clip: padding-box;
 
         // wraps calendar
@@ -41,19 +41,39 @@
                             height: 32px;
 
                             // wraps previous button
-                            th:first-child {
+                            th:first-child,
+                            th:last-child {
                                 text-align: left;
                                 vertical-align: top;
+                                position: relative;
 
                                 button {
-                                    width: 0px;
-                                    height: 0px;
-                                    border-top: 5px solid transparent;
-                                    border-bottom: 5px solid transparent;
-                                    border-right: 5px solid #d1d3d4;
+                                    width: 1.5rem;
+                                    height: 100%;
+                                    border: 0;
+                                    background: transparent;
+                                    position: absolute;
+                                    //margin-top: 2px;
 
                                     i {
+                                        display: none;
+                                    }
 
+                                    &:after {
+                                        content: "▸";
+                                        color: $color-light-gray;
+                                        display: block;
+                                        -webkit-transform: rotate(180deg);
+                                        transform: rotate(180deg);
+                                        font-size: 1.25rem;
+                                    }
+
+                                    &:active,
+                                    &:focus {
+                                        outline: 0;
+                                        -webkit-user-select: none;
+                                        -moz-user-select: none;
+                                        -ms-user-select: none;
                                     }
                                 }
                             }
@@ -70,17 +90,14 @@
                             // wraps next button
                             th:last-child {
                                 text-align: right;
-                                vertical-align: top;
 
                                 button {
-                                    width: 0px;
-                                    height: 0px;
-                                    border-top: 5px solid transparent;
-                                    border-bottom: 5px solid transparent;
-                                    border-left: 5px solid #d1d3d4;
+                                    position: relative;
 
-                                    i {
-
+                                    &:after {
+                                        -webkit-transform: none;
+                                        transform: none;
+                                        margin-top: 2px;
                                     }
                                 }
                             }
@@ -92,7 +109,7 @@
                             border-width: 1px;
                             border-color:  #b4b7b8;
                             box-sizing: border-box;
-                            height: 29px; 
+                            height: 29px;
                             text-align: center;
 
                             th {
@@ -108,23 +125,21 @@
                     }
                     tbody {
                         // each row of dates
-                        border: 1px solid $color-medium-gray-8;
+                        border: 1px solid $color-light-gray;
                         border-top: 0;
+                        border-bottom: 0;
+
                         tr {
                             // each date cell
                             td {
                                 button {
                                     background-color: $color-mercury-gray;
-                                    border: 1px solid #d1d3d4;
+                                    border: 1px solid $color-light-gray;
                                     border-top: 0;
                                     border-right: 0;
                                     box-sizing: border-box;
                                     height: 32px;
                                     width: 36px;
-
-                                    &:nth-child(7n+1) {
-                                        border-left: 0;
-                                    }
 
                                     &.active {
                                         border: 2px solid #808285;
@@ -142,6 +157,10 @@
                                         }
                                     }
 
+                                }
+
+                                &:nth-child(7n+1) button {
+                                    border-left: 0;
                                 }
 
                             }
@@ -197,161 +216,4 @@
         transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     }
 
-
-//     label {
-//         display: inline-block;
-//         margin-bottom: 5px;
-//         font-weight: 700;
-//     }
-
-//     p {
-//         margin: 0 0 10px;
-//     }
-
-//     .input-group {
-//         position: relative;
-//         display: table;
-//         border-collapse: separate;
-//     }
-
-//     .input-group .form-control:not(:first-child):not(:last-child) {
-//         border-radius: 0;
-//     }
-
-//     .input-group .form-control {
-//         display: table-cell;
-//     }
-
-//     .input-group .form-control {
-//     position: relative;
-//     z-index: 2;
-//     float: left;
-//     width: 100%;
-//     margin-bottom: 0;
-// }
-
-// .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-//     cursor: not-allowed;
-//     background-color: #eee;
-//     opacity: 1;
-// }
-
-
-// input, button, select, textarea {
-//     font-family: inherit;
-//     font-size: inherit;
-//     line-height: inherit;
-// }
-// input {
-//     line-height: normal;
-// }
-// button, input, optgroup, select, textarea {
-//     color: inherit;
-//     font: inherit;
-//     margin: 0;
-// }
-// * {
-//     -webkit-box-sizing: border-box;
-//     -moz-box-sizing: border-box;
-//     box-sizing: border-box;
-// }
-
-
-// ul, ol {
-//     margin-top: 0;
-//     margin-bottom: 10px;
-// }
-
-// .btn-group, .btn-group-vertical {
-//     position: relative;
-//     display: inline-block;
-//     vertical-align: middle;
-// }
-
-// .pull-right {
-//     float: right!important;
-// }
-
-// .btn-sm, .btn-group-sm>.btn {
-//     padding: 5px 10px;
-//     font-size: 12px;
-//     line-height: 1.5;
-//     border-radius: 3px;
-// }
-// .btn-success {
-//     color: #fff;
-//     background-color: #5cb85c;
-//     border-color: #4cae4c;
-// }
-// .btn {
-//     display: inline-block;
-//     margin-bottom: 0;
-//     font-weight: 400;
-//     text-align: center;
-//     vertical-align: middle;
-//     cursor: pointer;
-//     background-image: none;
-//     border: 1px solid transparent;
-//     white-space: nowrap;
-//     padding: 6px 12px;
-//     font-size: 14px;
-//     line-height: 1.42857143;
-//     border-radius: 4px;
-//     -webkit-user-select: none;
-//     -moz-user-select: none;
-//     -ms-user-select: none;
-//     user-select: none;
-// }
-// input, button, select, textarea {
-//     font-family: inherit;
-//     font-size: inherit;
-//     line-height: inherit;
-// }
-// button, html input[type=button], input[type=reset], input[type=submit] {
-//     -webkit-appearance: button;
-//     cursor: pointer;
-// }
-// button, select {
-//     text-transform: none;
-// }
-// button {
-//     overflow: visible;
-// }
-// button, input, optgroup, select, textarea {
-//     color: inherit;
-//     font: inherit;
-//     margin: 0;
-// }
-
-// .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
-//     border-bottom-right-radius: 0;
-//     border-top-right-radius: 0;
-// }
-// .btn-group>.btn:first-child {
-//     margin-left: 0;
-// }
-
-// .input-group-btn {
-//     width: 1%;
-//     white-space: nowrap;
-//     vertical-align: middle;
-// }
-
-// table {
-//     max-width: 100%;
-//     background-color: transparent;
-// }
-// table {
-//     border-collapse: collapse;
-//     border-spacing: 0;
-// }
-
-// th {
-//     text-align: left;
-// }
-// td, th {
-//     padding: 0;
-// }
-
 }
-

@@ -271,9 +271,13 @@
     <Reference Include="Sitecore.ContentSearch.SolrProvider.AutoFacIntegration">
       <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.SolrProvider.AutoFacIntegration.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.ContentTesting, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Sitecore.ContentTesting, Version=8.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.HtmlCache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.HtmlCache\Sitecore.HtmlCache.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ContentTesting.Intelligence, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -493,6 +497,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Cors">
       <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
       <Private>True</Private>
@@ -548,6 +553,7 @@
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="Velir.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Velir.Library.Core.1.0.4\lib\net45\Velir.Core.dll</HintPath>
       <Private>True</Private>
@@ -646,11 +652,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacConfig.cs" />
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\CustomAutoFacSolrStartUp.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
+    <Compile Include="App_Start\Registrations\EntitlementsRegistrar.cs" />
+    <Compile Include="App_Start\Registrations\SessionRegistrar.cs" />
     <Compile Include="App_Start\Registrations\CompanyRegistrar.cs" />
     <Compile Include="App_Start\Registrations\NlmRegistrar.cs" />
     <Compile Include="App_Start\Registrations\RegistrationRegistrar.cs" />
@@ -707,7 +714,8 @@
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
     <Compile Include="Areas\Article\Controllers\EmailFriendController.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
-    <Compile Include="Areas\Account\Controllers\SpoofController.cs" />
+    <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendSearchRequest.cs" />
+    <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendValidationReason.cs" />
     <Compile Include="Authenticator\MachineKeyProtector.cs" />
     <Compile Include="Controllers\ArticleUtil.cs" />
     <Compile Include="Controllers\CustomSqlMembershipProvider.cs" />
@@ -725,9 +733,9 @@
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
     <Compile Include="Controllers\WorkFlowUtil.cs" />
-    <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
+    <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -761,9 +769,22 @@
     <Compile Include="ViewModels\AdvertisementViewModel.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\IEmailSearchPopOutViewModel.cs" />
+    <Compile Include="ViewModels\SearchRssViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IToolbarViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IUsernameViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IUserSubscriptionsViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IUserEntitlementsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IUserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\ToolbarViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\UsernameViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\UserSubscriptionsViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\UserEntitlementsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\UserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\EntitledViewModel.cs" />
     <Compile Include="ViewModels\IArticleComponentFactory.cs" />
@@ -888,7 +909,11 @@
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
+    <Content Include="dist\js\index.js" />
     <Content Include="email\EditAfterPublishEmail.html" />
+    <Content Include="email\EmailFriendSearchAuthor.html" />
+    <Content Include="email\EmailFriendSearchRow.html" />
+    <Content Include="email\EmailFriendSearch.html" />
     <Content Include="email\EmailFriend.html" />
     <Content Include="email\_BaseEmail.html" />
     <Content Include="email\Workflow.html" />
@@ -901,7 +926,6 @@
     <Content Include="js\openadstream.js" />
     <Content Include="js\register-controller.js" />
     <Content Include="js\reset-password-controller.js" />
-    <Content Include="js\login-controller.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
     <Content Include="js\search\controllers\emailRssController.js" />
@@ -944,7 +968,6 @@
     <Content Include="App_Config\Icons.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.config" />
     <Content Include="App_Config\Include\Velir.Search.Web.config" />
-    <Content Include="App_Config\Include\zz.Sitecore.HtmlCache.config" />
     <Content Include="App_Config\LanguageDefinitions.config" />
     <Content Include="App_Config\MimeTypes.config" />
     <Content Include="App_Config\Portraits.config" />
@@ -987,10 +1010,6 @@
     <Content Include="Areas\Article\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Account\Views\web.config" />
-    <Content Include="Scripts\ai.0.15.0-build58334.js" />
-    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
-    <Content Include="Scripts\search\InformaFacetsController.js" />
-    <Content Include="Scripts\vendor.js" />
     <Content Include="sitecore\login\login.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\css\ViewNlm.css" />
@@ -1007,6 +1026,18 @@
     <Content Include="tasks\js.js" />
     <Content Include="tasks\svg-sprite.js" />
     <Content Include="tasks\utils.js" />
+    <Content Include="Util\DCD\img\arrow_sort_down_active.png" />
+    <Content Include="Util\DCD\img\back_body.gif" />
+    <Content Include="Util\DCD\img\back_body_leftshadow.png" />
+    <Content Include="Util\DCD\img\back_body_rightshadow.png" />
+    <Content Include="Util\DCD\img\header_logo.gif" />
+    <Content Include="Util\DCD\js\jquery-ui.js" />
+    <Content Include="Util\DCD\js\jquery.js" />
+    <Content Include="Util\DCD\js\jquery.multiSelect.js" />
+    <Content Include="Util\DCD\js\scripts.js" />
+    <Content Include="Util\DCD\styles\jquery-ui-1.8.11.custom.css" />
+    <Content Include="Util\DCD\styles\jquery.multiSelect.css" />
+    <Content Include="Util\DCD\styles\style.css" />
     <Content Include="velir\services\TypeAhead.asmx" />
     <Content Include="Util\DCD\DcdImportReport.aspx" />
     <Content Include="Util\DCD\ViewDCDXML.aspx" />
@@ -1134,11 +1165,18 @@
     <Content Include="App_Config\Include\UserDefined\AppInsights.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\AppSettings.config" />
+    <None Include="App_Config\AppSettings.config.template" />
     <None Include="App_Config\Include\UserDefined\AppInsights.config.template">
       <SubType>Designer</SubType>
     </None>
     <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
-    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template" />
+    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\Publishing.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
       <SubType>Designer</SubType>
@@ -1222,7 +1260,6 @@
     <Content Include="Views\Shared\Global\SitemapNews.cshtml" />
     <Content Include="Views\Shared\Global\RobotsText.cshtml" />
     <Content Include="Views\Article\ArticleFilmstripAd.cshtml" />
-    <Content Include="Scripts\vendor.js.map" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
@@ -1235,6 +1272,14 @@
     <Content Include="Views\Shared\_IndividualSubscriptionRenewalMessage.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\Toolbar.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\UserIpAddress.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\EntitlementsCheckEnabled.cshtml" />
+    <Content Include="Views\Search\SearchRssXml.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\UserEntitlements.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\UserSubscriptions.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\Username.cshtml" />
+    <Content Include="Views\Shared\PopOuts\EmailSearch.cshtml" />
+    <Content Include="Views\Shared\Components\JavascriptComponent.cshtml" />
+    <Content Include="Views\Shared\Global\MetaNoIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

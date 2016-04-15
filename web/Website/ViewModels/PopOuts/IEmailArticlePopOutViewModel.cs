@@ -5,6 +5,8 @@
         string AuthUserEmail { get; }
         string AuthUserName { get; }
         string EmailArticleText { get; }
+        string EmailSentSuccessMessage { get; }
+        string GeneralError { get; }
         string EmailFormInstructionsText { get; } 
         string RecipientEmailPlaceholderText { get; }
         string YourNamePlaceholderText { get; }

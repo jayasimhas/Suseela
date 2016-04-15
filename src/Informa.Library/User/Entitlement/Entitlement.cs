@@ -1,21 +1,14 @@
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using System;
 
 namespace Informa.Library.User.Entitlement
 {
-    public class ScripEntitlement : Entitlement
-    {
-        public ScripEntitlement(IEntitledProductItem entitledItem)
-        {
-            ProductCode = "SCRIP";
-        }
-    }
-
+    [Serializable]
     public class Entitlement : IEntitlement
     {
-        #region Implementation of IEntitlement
-
-        public string ProductCode { get; set; }
-
-        #endregion
-    }
+		public string ArchiveCode { get; set; }
+		public string DocumentId { get; set; }
+		public string ProductCode { get; set; }
+		public string ProductId { get; set; }
+		public string ProductType { get; set; }
+	}
 }

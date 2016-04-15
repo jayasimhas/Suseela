@@ -4,10 +4,6 @@
     width: 100%;
     clear: both;
 
-    .article-preview__inner-wrapper {
-        margin-bottom: 1rem;
-    }
-
     &__main-well {
         float: left;
         width: calc(66.666% - 1rem);
@@ -36,7 +32,6 @@
         }
     }
 
-
     @include breakpoint('small') {
         &__main-well,
         &__main-well .article-preview,
@@ -44,5 +39,9 @@
         &__right-rail {
             width: 100%;
         }
+    }
+
+    .article-pullquote {
+        margin: 0 0 2rem;
     }
 }

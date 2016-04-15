@@ -13,8 +13,7 @@
 		<add key="connectionString" value="server=localhost;user id=root; password=admin; database=fdc;port=3306"/>
 		<add key="TitleStyle" value="1.0 Story Title"/>
 		<add key="DeckStyle" value="1.2 Deck"/>
-		<add key="LongSummaryStyle" value="7.0 Long Summary"/>
-		<add key="ShortSummaryStyle" value="7.1 Short Summary"/>
+		<add key="ExecutiveSummaryStyle" value="7.0 Executive Summary"/>
 		<add key="SubtitleStyle" value="1.1 Story Sub-Title"/>
 		<add key="StoryTextStyle" value="2.2 Story Text"/>
 		<add key="hyperlinkStyle" value="Hyperlink"/>
@@ -31,7 +30,7 @@
 		<add key="DevelopmentForgotPasswordLink" value="${DevelopmentForgotPasswordLink}" />
 	 	<add key="StageForgotPasswordLink" value="${StageForgotPasswordLink}" />
     	<add key="ProductionForgotPasswordLink" value="${ProductionForgotPasswordLink}" />
-    <add key="RemoteTimezoneToConvertTo" value="Greenwich Standard Time"/>
+    <add key="RemoteTimezoneToConvertTo" value="Eastern Standard Time"/>
 	</appSettings>
 	<applicationSettings>
 	</applicationSettings>

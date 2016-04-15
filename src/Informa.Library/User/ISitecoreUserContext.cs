@@ -1,8 +1,6 @@
-﻿using Informa.Library.User.Entitlement;
-
-namespace Informa.Library.User
+﻿namespace Informa.Library.User
 {
-	public interface ISitecoreUserContext : IEntitledVisit
+	public interface ISitecoreUserContext
 	{
 		Sitecore.Security.Accounts.User User { get; }
 	}

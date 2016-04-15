@@ -5,10 +5,11 @@
     <div class="page-account">
         <h1 class="page-account__header">@Model.Title</h1>
         <div class="page-preferences js-preferences-user-container">
-            <table class="sortable sortable-table">
+            <table class="sortable-table js-sortable-table">
                 <thead class="sortable-table__header">
                     <tr>
-                        <td>
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="1">
                             @Model.PublicationText
                             <div class="sortable-table__sort-arrows">
                                 <svg class="sortable-table__sort-arrows--up">
@@ -19,7 +20,8 @@
                                 </svg>
                             </div>
                         </td>
-                        <td>
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="2">
                             @Model.SubscriptionTypeText
                             <div class="sortable-table__sort-arrows">
                                 <svg class="sortable-table__sort-arrows--up">
@@ -30,7 +32,8 @@
                                 </svg>
                             </div>
                         </td>
-                        <td>
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="3">
                             @Model.ExpirationDateText
                             <div class="sortable-table__sort-arrows">
                                 <svg class="sortable-table__sort-arrows--up">
@@ -41,8 +44,52 @@
                                 </svg>
                             </div>
                         </td>
-                        <td>
+                        <td class="sortable-table__col">
                             @Model.ActionText
+                        </td>
+                    </tr>
+                </thead>
+
+                <thead class="sortable-table__header sortable-table__header--mobile">
+                    <tr>
+                        <td class="sortable-table__col">
+                            <h6>Sort by:</h6>
+                        </td>
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="1">
+                            Sort by: @Model.PublicationText
+                            <div class="sortable-table__sort-arrows">
+                                <svg class="sortable-table__sort-arrows--up">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                </svg>
+                                <svg class="sortable-table__sort-arrows--down">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="2">
+                            @Model.SubscriptionTypeText
+                            <div class="sortable-table__sort-arrows">
+                                <svg class="sortable-table__sort-arrows--up">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                </svg>
+                                <svg class="sortable-table__sort-arrows--down">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="3">
+                            @Model.ExpirationDateText
+                            <div class="sortable-table__sort-arrows">
+                                <svg class="sortable-table__sort-arrows--up">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                </svg>
+                                <svg class="sortable-table__sort-arrows--down">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                </svg>
+                            </div>
                         </td>
                     </tr>
                 </thead>
@@ -50,26 +97,22 @@
                 @foreach (var item in Model.Subscriptions)
                 {
                     <tr>
-                        <td>
+                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--publication">
                             @item.Publication
                         </td>
-                        <td>
+                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--sub-type">
                             @item.SubscriptionType
                         </td>
-                        <td>
+                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--exp-date">
                             @item.ExpirationDate.ToString("d MMMM yyyy")
                         </td>
-                        <td>
-                            @if (Model.ShowRenewButton(item.ProductCode)) {
-                                <a href="@Model.OffSiteRenewLink">
-                                    Renew
-                                </a>
+                        <td class="sortable-table__col">
+                            @if (Model.ShowRenewButton(item)) {
+                                <a class="button button--outline" href="@Model.OffSiteRenewLink">Renew</a>
                             }
-
-                            @if (Model.ShowSubscribeButton(item.ProductCode, item.ExpirationDate)) {
-                                <a href="@Model.OffSiteSubscriptionLink">
-                                    Subscribe
-                                </a>
+                            @if (Model.ShowSubscribeButton(item.ProductCode)) {
+                                @Html.Raw("&nbsp;&nbsp;&nbsp;")
+                                <a class="button button--outline" href="@Model.OffSiteSubscriptionLink">Subscribe</a>
                             }
                         </td>
                     </tr>
@@ -81,5 +124,7 @@
 }
 else
 {
-    Html.RenderPartial("_SignInForm", Model.SignInViewModel);
+    <div class="page-account__sign-in-solo">
+        @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
+    </div>
 }

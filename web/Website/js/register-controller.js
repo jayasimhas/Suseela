@@ -1,3 +1,5 @@
+import { analyticsEvent } from './analytics-controller';
+
 function loginController(requestVerificationToken) {
 	this.addRegisterUserControl = function(triggerElement, successCallback, failureCallback) {
 		if (triggerElement) {
@@ -12,7 +14,7 @@ function loginController(requestVerificationToken) {
 					var value = '';
 
 					if ($(this).data('checkbox-type') === 'boolean') {
-						value = $(this).attr('checked');
+						value = this.checked;
 
 						if ($(this).data('checkbox-boolean-type') === 'reverse') {
 							value = !value;
@@ -31,7 +33,16 @@ function loginController(requestVerificationToken) {
 					data: inputData,
 					context: this,
 					success: function (response) {
-						if (response.success) {							
+					    if (response.success) {
+
+							var registerAnalytics = {
+								event_name: 'register-step-1',
+								registration_state: 'successful',
+								userName: '"' + inputData.username + '"'
+							};
+
+					        analyticsEvent( $.extend(analytics_data, registerAnalytics) );
+
 							if (successCallback) {
 								successCallback(triggerElement);
 							}
@@ -46,7 +57,15 @@ function loginController(requestVerificationToken) {
 						}
 						else {
 							$(triggerElement).removeAttr('disabled');
-							
+
+							var registerAnalytics = {
+								event_name: 'register-step-1',
+								registration_state: 'unsuccessful',
+								userName: '"' + inputData.username + '"'
+							};
+
+							analyticsEvent( $.extend(analytics_data, registerAnalytics) );
+
 							var specificErrorDisplayed = false;
 
 							if (response.reasons && response.reasons.length > 0) {
@@ -69,7 +88,7 @@ function loginController(requestVerificationToken) {
 					},
 					error: function(response) {
 						$(triggerElement).removeAttr('disabled');
-						
+
 						this.showError(triggerElement, '.js-register-user-error-general');
 
 						if (failureCallback) {
@@ -89,7 +108,7 @@ function loginController(requestVerificationToken) {
 		$(triggerElement).parents('.js-register-user-container').find('.js-register-user-error-container').show();
 		$(triggerElement).parents('.js-register-user-container').find(error).show();
 	}
-	
+
 	this.hideErrors = function(triggerElement) {
 		$(triggerElement).parents('.js-register-user-container').find('.js-register-user-error-container').hide();
 		$(triggerElement).parents('.js-register-user-container').find('.js-register-user-error').hide();

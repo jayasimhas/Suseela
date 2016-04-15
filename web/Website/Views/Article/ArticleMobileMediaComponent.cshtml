@@ -1,16 +1,21 @@
-﻿@using Glass.Mapper.Sc.Web.Mvc                                              
+﻿@using Glass.Mapper.Sc.Web.Mvc
 @using Informa.Web.Models
 @model GlassArticleModel
 
 <div class="article-body-content">
+    <div class="mobile-table-exit" onclick="return quitBox('quit');">
+        &#10094; Return to article
+    </div>
     @Html.Raw(@Model.SelectedMobileMedia)
 </div>
 
-@*
-    This element is a template for viewing tables on narrow screens
-    On document ready, each article table gets one of these appended to it
-    On narrow screens, the elements are visible so users can click/tap to view
-*@
-<div class="article-table article-table--mobile-link">
-    @Html.Raw(@Model.SelectedMobileMedia)
-</div>
+<script>
+
+function quitBox(cmd) {
+    if (cmd=='quit') {
+       open(location, '_self').close();
+    }
+    return false;
+};
+
+</script>

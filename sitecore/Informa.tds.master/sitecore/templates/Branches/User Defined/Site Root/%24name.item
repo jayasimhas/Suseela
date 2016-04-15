@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {E8A18FE9-C9CF-4EFE-A6A1-4B76DCC49244}
+database: master
+path: /sitecore/templates/Branches/User Defined/Site Root/$name
+parent: {CBA15CFC-A70C-4146-8A11-25AA3F4FDDB4}
+name: $name
+master: {00000000-0000-0000-0000-000000000000}
+template: {DD003F89-D57D-48CB-B428-FFB519AACA56}
+templatekey: Site Root
+
+----field----
+field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
+name: __Security
+key: __security
+content-length: 382
+
+ar|sitecore\Article Read Access|pe|+item:read|pd|+item:read|ar|sitecore\General Content Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|pd|+item:rename|+item:write|+item:read|+item:delete|+item:create|ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:read|-item:rename|pd|-item:create|-item:write|-item:delete|-item:read|-item:rename|
+----version----
+language: en
+version: 1
+revision: 426699cb-fb77-405f-8f37-f1c9a6003790
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160406T164701Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+426699cb-fb77-405f-8f37-f1c9a6003790
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160412T204558Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

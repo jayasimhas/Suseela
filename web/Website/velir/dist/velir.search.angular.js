@@ -233,7 +233,7 @@
                                 this.location.search(routeBuilder.getRoute());
                                 this.searchService.query();
 
-                
+                                //Scroll to the top of the results when a new page is chosen
                                 this.location.hash("searchTop");
                                 this.anchorScroll();
                             }
@@ -293,6 +293,7 @@
                 _createClass(QueryController, [{
                     key: 'update',
                     value: function update() {
+                        this.service.getFilter('page').setValue("1");
                         this.service.getFilter('q').setValue(this.keywords);
 
                         var routerBuilder = this.service.getRouteBuilder();

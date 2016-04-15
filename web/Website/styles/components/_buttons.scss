@@ -11,11 +11,8 @@ This file contains all styles related to the button component.
 ```
 */
 
-button:focus {
-	outline: 0;
-}
-
-.button {
+.button,
+a.button {
 	&--filled,
 	&--outlined,
 	&--outline,
@@ -34,6 +31,7 @@ button:focus {
 
 		&:hover {
 			background-color: $informa-dark-orange;
+            text-decoration:none;
 		}
 
 		&:disabled {
@@ -53,7 +51,7 @@ button:focus {
 		}
 	}
 
-	&--gilded:enabled {
+	&--gilded {
 		background-color: $color-white;
 		border: 1px solid $color-goldenrod;
 	}
@@ -66,6 +64,10 @@ button:focus {
 
 	&--fly-right {
 		float: right;
+	}
+
+	&:focus {
+		outline: 0;
 	}
 
 }

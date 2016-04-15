@@ -51,12 +51,18 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Simple
         private static string ConvertLinks(string text)
         {
             // matches links in pattern [LETTER#NUMBERS]
-            var matches = Regex.Matches(text, @"\[(\w#[\w]*\s*?)\]");
+            string r = @"\[(\w)#(\d*):(.*)\]";
+            var matches = Regex.Matches(text, r);
 
             foreach (Match match in matches)
             {
-                var id = match.Groups[1].Value.Trim();
-                var replacementText = LinkNode.FromId(id);
+                if (match.Groups.Count < 4)
+                    continue;
+
+                var type = match.Groups[1].Value.Trim();
+                var id = match.Groups[2].Value.Trim();
+                var name = match.Groups[3].Value.Trim();
+                var replacementText = LinkNode.FromId(type, id, name);
                 text = text.Replace(match.Value, replacementText);
             }
 

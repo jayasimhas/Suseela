@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Newsletter;
-using Informa.Library.Site.Newsletter;
-using Informa.Library.User.Authentication;
-using Informa.Library.User.Profile;
+using Informa.Library.User.Document;
 using Informa.Library.Utilities.WebApi.Filters;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Web.Areas.Account.Models.User.Management;
@@ -18,30 +12,33 @@ namespace Informa.Web.Areas.Account.Controllers
 {
     public class SavedDocumentApiController : ApiController
     {
-        protected readonly IAuthenticatedUserContext UserContext;
-        protected readonly IManageSavedDocuments ManageSavedDocument;
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly ITextTranslator TextTranslator;
+		protected readonly ISiteNewsletterTypeContext NewsletterTypeContext;
+		protected readonly ISaveDocumentContext SaveDocumentContext;
+		protected readonly IRemoveDocumentContext RemoveDocumentContext;
 
-        protected string BadIDKey => TextTranslator.Translate("SavedDocument.BadID");
+		protected string BadIDKey => TextTranslator.Translate("SavedDocument.BadID");
 
         public SavedDocumentApiController(
-            IAuthenticatedUserContext userContext,
-            IManageSavedDocuments manageSavedDocument,
             ISitecoreContext sitecoreContext,
-            ITextTranslator textTranslator)
+            ITextTranslator textTranslator,
+			ISiteNewsletterTypeContext newsletterTypeContext,
+			ISaveDocumentContext saveDocumentContext,
+			IRemoveDocumentContext removeDocumentContext)
         {
-            UserContext = userContext;
-            ManageSavedDocument = manageSavedDocument;
             SitecoreContext = sitecoreContext;
             TextTranslator = textTranslator;
+			NewsletterTypeContext = newsletterTypeContext;
+			SaveDocumentContext = saveDocumentContext;
+			RemoveDocumentContext = removeDocumentContext;
         }
 
         [HttpPost]
         [ArgumentsRequired]
         public IHttpActionResult RemoveItem(SavedDocumentRemoveRequest request)
         {
-            var result = ManageSavedDocument.RemoveItem(UserContext.User, request.DocumentID);
+            var result = RemoveDocumentContext.Remove(request.DocumentID);
 
             return Ok(new
             {
@@ -66,7 +63,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
             var page = SitecoreContext.GetItem<I___BasePage>(itemID.Guid);
             
-            var result = ManageSavedDocument.SaveItem(UserContext.User, page.Title, NewsletterType.Scrip.ToString(), request.DocumentID);
+            var result = SaveDocumentContext.Save(page.Title, NewsletterTypeContext.Type, request.DocumentID);
 
             return Ok(new
             {

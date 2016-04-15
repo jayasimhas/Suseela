@@ -1,7 +1,6 @@
-﻿using Informa.Library.Site.Newsletter;
-using Informa.Library.User.Profile;
+﻿using Informa.Library.User.Offer;
+using Informa.Library.User.Newsletter;
 using Jabberwocky.Glass.Autofac.Attributes;
-using System.Linq;
 
 namespace Informa.Library.User.Registration
 {
@@ -9,29 +8,34 @@ namespace Informa.Library.User.Registration
 	public class SetOptInsRegisterUser : ISetOptInsRegisterUser
 	{
 		protected readonly IUpdateOfferUserOptIn UpdateOfferUserOptIn;
-		protected readonly IUpdateNewsletterUserOptIn UpdateNewsletterUserOptIn;
-		protected readonly INewsletterUserOptInFactory NewsletterUserOptInFactory;
-		protected readonly ISiteNewsletterTypesContext NewsletterTypesContext;
+		protected readonly IUpdateSiteNewsletterUserOptIn UpdateNewsletterOptIns;
 
 		public SetOptInsRegisterUser(
 			IUpdateOfferUserOptIn updateOfferUserOptIn,
-			IUpdateNewsletterUserOptIn updateNewsletterUserOptIn,
-			INewsletterUserOptInFactory newsletterUserOptInFactory,
-			ISiteNewsletterTypesContext newsletterTypesContext)
+			IUpdateSiteNewsletterUserOptIn updateNewsletterOptIns)
 		{
 			UpdateOfferUserOptIn = updateOfferUserOptIn;
-			UpdateNewsletterUserOptIn = updateNewsletterUserOptIn;
-			NewsletterUserOptInFactory = newsletterUserOptInFactory;
-			NewsletterTypesContext = newsletterTypesContext;
+			UpdateNewsletterOptIns = updateNewsletterOptIns;
 		}
 
 		public bool Set(INewUser newUser, bool offers, bool newsletters)
 		{
-			var userNewsletterOptIns = NewsletterTypesContext.NewsletterTypes.Select(nt => NewsletterUserOptInFactory.Create(nt, newsletters));
-			var newsletterSucccess = UpdateNewsletterUserOptIn.Update(userNewsletterOptIns, newUser.Username);
-			var offerSuccess = UpdateOfferUserOptIn.Update(newUser?.Username, offers);
+			var username = newUser?.Username;
 
-			return offerSuccess && newsletterSucccess;
+		    return Set(username, offers, newsletters);
 		}
-	}
+
+        public bool Set(string username, bool offers, bool newsletters)
+        {
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                return false;
+            }
+
+            var newsletterSucccess = UpdateNewsletterOptIns.Update(username, newsletters);
+            var offerSuccess = UpdateOfferUserOptIn.Update(username, offers);
+
+            return offerSuccess && newsletterSucccess;
+        }
+    }
 }

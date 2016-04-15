@@ -1,36 +1,44 @@
-﻿using Glass.Mapper.Sc;
-using Informa.Library.Globalization;
+﻿using Informa.Library.Globalization;
 using Informa.Library.Salesforce;
 using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.Site;
 using Informa.Library.Subscription;
 using Informa.Library.User.Authentication;
-using Informa.Library.User.Authentication.Web;
 using Jabberwocky.Glass.Autofac.Attributes;
-using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using Informa.Library.User.Profile;
 
 namespace Informa.Web.ViewModels
 {
     [AutowireService(LifetimeScope.SingleInstance)]
     public class IndividualRenewalMessageViewModel : IIndividualRenewalMessageViewModel
     {
-        ISalesforceServiceContext _service;
-        ITextTranslator _textTranslator;
-        IIndividualSubscriptionRenewalMessageContext _context;
-        IAuthenticatedUserContext _userContext;
-        EBI_SubscriptionAndPurchase _latestSalesForceRecord;
-        ISiteRootContext _siteRootContext;
-        public IndividualRenewalMessageViewModel(ISalesforceServiceContext service, ITextTranslator textTranslator, IIndividualSubscriptionRenewalMessageContext context, IAuthenticatedUserContext userContext, ISiteRootContext siteRootContext)
+        private const string PRODUCT_CODE = "scrip";
+        private const string PRODUCT_TYPE = "publication";
+        private readonly string[] SUBSCRIPTIONTYPE = new string[] { "individual", "free-trial", "individual internal" };
+
+        protected readonly ISalesforceServiceContext _service;
+        protected readonly ITextTranslator _textTranslator;
+        protected readonly IIndividualSubscriptionRenewalMessageContext _context;
+        protected readonly IAuthenticatedUserContext _userContext;
+        protected readonly ISiteRootContext _siteRootContext;
+        protected readonly IManageSubscriptions _manageSubscriptions;
+
+        public IndividualRenewalMessageViewModel(
+            ISalesforceServiceContext service, 
+            ITextTranslator textTranslator, 
+            IIndividualSubscriptionRenewalMessageContext context, 
+            IAuthenticatedUserContext userContext, 
+            ISiteRootContext siteRootContext,
+            IManageSubscriptions manageSubscriptions)
         {
             _service = service;
             _context = context;
             _textTranslator = textTranslator;
             _userContext = userContext;
             _siteRootContext = siteRootContext;
+            _manageSubscriptions = manageSubscriptions;
         }
 
         public string DismissText
@@ -41,45 +49,26 @@ namespace Informa.Web.ViewModels
             }
         }
 
+        private ISubscription GetLatestRecord()
+        {
+            ISubscriptionsReadResult results = _manageSubscriptions.QueryItems(_userContext.User);
+            return results?.Subscriptions?.OrderByDescending(o => o.ExpirationDate).FirstOrDefault() ?? null;
+        }
+
         public bool Display
         {
             get
             {
-                try
-                {
-                    if (_userContext.IsAuthenticated)
-                    {
-                        //Get SubscruiptionsAndPurchases records for the specifed usern
-                        EBI_QuerySubscriptionsAndPurchasesResponse response = _service.Execute(x => x.querySubscriptionsAndPurchases(_userContext.User.Username));
-
-                        //Get the latest record
-                        _latestSalesForceRecord = response.subscriptionsAndPurchases.OrderByDescending(o => o.expirationDate).FirstOrDefault();
-                    }
-                    else
-                    {
-                        _latestSalesForceRecord = null;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Sitecore.Diagnostics.Log.Error(ex.Message, ex, this.GetType());
-                    _latestSalesForceRecord = null;
-                    return false;
-                }
-
-                if (_latestSalesForceRecord == null)
+                if (_userContext == null || !_userContext.IsAuthenticated)
                     return false;
 
-                if (_latestSalesForceRecord.productCode.ToLower() != _siteRootContext.Item.Product_Code.ToLower())
-                    return false;
+                var latestRecord = GetLatestRecord();
 
-                if ((_latestSalesForceRecord.expirationDate - DateTime.Now)?.TotalDays > _siteRootContext.Item.Days_To_Expiration)
-                    return false;
-
-                if (_latestSalesForceRecord.subscriptionType.ToLower() != "individual" && _latestSalesForceRecord.subscriptionType.ToLower() != "free-trial")
-                    return false;
-
-                if (_latestSalesForceRecord.productType.ToLower() != _siteRootContext.Item.Product_Type.ToLower())
+                if(latestRecord == null
+                    || latestRecord.ProductCode.ToLower() != PRODUCT_CODE
+                    || (latestRecord.ExpirationDate - DateTime.Now).TotalDays > _siteRootContext.Item.Days_To_Expiration
+                    || SUBSCRIPTIONTYPE.Contains(latestRecord.SubscriptionType.ToLower()) == false
+                    || latestRecord.ProductType.ToLower() != PRODUCT_TYPE)
                     return false;
 
                 return true;
@@ -98,10 +87,19 @@ namespace Informa.Web.ViewModels
         {
             get
             {
-                if (_latestSalesForceRecord?.subscriptionType.ToLower() == "free-trial")
-                    return _context.Message_FreeTrial.Replace("#FIRST_NAME#", _userContext.User.Name).Replace("#SUB_EXPIRATION#", _latestSalesForceRecord.expirationDate.Value.ToShortDateString());
+                var latestRecord = GetLatestRecord();
+                if(latestRecord == null)
+                    return _context.Message_FreeTrial
+                        .Replace("#FIRST_NAME#", _userContext.User.Name)
+                        .Replace("#SUB_EXPIRATION#", string.Empty);
+                else if (latestRecord?.SubscriptionType.ToLower() == "free-trial")
+                    return _context.Message_FreeTrial
+                        .Replace("#FIRST_NAME#", _userContext.User.Name)
+                        .Replace("#SUB_EXPIRATION#", latestRecord.ExpirationDate.ToShortDateString());
                 else
-                    return _context.Message_IndividualSubscriptiong.Replace("#FIRST_NAME#", _userContext.User.Name).Replace("#SUB_EXPIRATION#", _latestSalesForceRecord.expirationDate.Value.ToShortDateString());
+                    return _context.Message_IndividualSubscriptiong
+                        .Replace("#FIRST_NAME#", _userContext.User.Name)
+                        .Replace("#SUB_EXPIRATION#", latestRecord.ExpirationDate.ToShortDateString());
             }
         }
 

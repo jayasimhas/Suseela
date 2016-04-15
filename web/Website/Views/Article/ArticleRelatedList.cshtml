@@ -1,7 +1,7 @@
 ﻿@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 @model Informa.Web.ViewModels.GlassArticleModel
 
-@if (Model.RelatedArticles.Any())
+@if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
 {
     <div class="article-related-content">
         <h2>Related Content</h2>

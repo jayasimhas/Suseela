@@ -34,13 +34,13 @@ content-length: 38
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
-content-length: 382
+content-length: 157
 
-ar|sitecore\Article Read Access|pe|+item:read|pd|+item:read|ar|sitecore\General Content Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|pd|+item:rename|+item:write|+item:read|+item:delete|+item:create|ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:read|-item:rename|pd|-item:create|-item:write|-item:delete|-item:read|-item:rename|
+ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename|-item:read|pd|-item:create|-item:write|-item:delete|-item:rename|-item:read|
 ----version----
 language: en
 version: 1
-revision: 060a7b45-08e1-4d1f-bc5a-087a04a1fb75
+revision: c37689e8-7df0-478a-8032-be468517a6c7
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -116,9 +116,9 @@ content-length: 58
 field: {ACA9D1AD-7C13-40BB-ACB6-C584EB6623BD}
 name: Local Footer Links
 key: local footer links
-content-length: 155
+content-length: 38
 
-{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}|{FE0B4566-CDDD-49A5-BF3D-40E154E83377}|{EA088B7F-FC39-4695-9848-6BC63A16E85E}|{CF48173B-0B5C-417F-952A-E82CDBC4D277}
+{8571D053-5A3C-44C5-82DF-68537628956F}
 ----field----
 field: {9C4CAA71-E34E-4489-91C3-ED76AB9700BD}
 name: Menu One Header
@@ -127,26 +127,12 @@ content-length: 15
 
 Menu One Header
 ----field----
-field: {ABF9CD82-13D2-438A-AF7E-02856B69E19A}
-name: Menu One Links
-key: menu one links
-content-length: 155
-
-{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}|{EA088B7F-FC39-4695-9848-6BC63A16E85E}|{CF48173B-0B5C-417F-952A-E82CDBC4D277}|{FE0B4566-CDDD-49A5-BF3D-40E154E83377}
-----field----
 field: {3D4E2020-4A15-4B8E-A581-440107E91144}
 name: Menu Two Header
 key: menu two header
 content-length: 15
 
 Menu Two Header
-----field----
-field: {575E0858-B583-4A04-B358-2AFC3EA6EE9A}
-name: Menu Two Links
-key: menu two links
-content-length: 155
-
-{FE0B4566-CDDD-49A5-BF3D-40E154E83377}|{EA088B7F-FC39-4695-9848-6BC63A16E85E}|{CF48173B-0B5C-417F-952A-E82CDBC4D277}|{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
 ----field----
 field: {CF68ED35-F96D-4924-850C-E96F0A7F1E34}
 name: Facebook Link
@@ -158,9 +144,9 @@ content-length: 94
 field: {7704CDD8-3258-4A10-8D22-55998BF88976}
 name: Subscribe Link
 key: subscribe link
-content-length: 132
+content-length: 158
 
-<link text="Subscribe" linktype="internal" class="" title="" target="" querystring="" id="{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" />
+<link text="Learn how you can access all SCRIP content ›" linktype="internal" class="" title=""  querystring="" id="{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" />
 ----field----
 field: {4352F61D-BAB4-4CE4-888E-562FFC1C643C}
 name: Purchase Link
@@ -206,6 +192,20 @@ content-length: 38
 
 {A5B851A7-8477-4EF0-AFB4-F373C28280D0}
 ----field----
+field: {2EE1BA61-9842-4942-94AB-C1DF8A97B1DB}
+name: Footer Menu 1 Navigation
+key: footer menu 1 navigation
+content-length: 38
+
+{513F7FEC-E40B-4424-94FA-DE336DCC3AF9}
+----field----
+field: {22B35B7A-CE40-4D68-84BA-738DE2BCDBA3}
+name: Footer Menu 2 Navigation
+key: footer menu 2 navigation
+content-length: 38
+
+{B92E6703-128B-4606-956C-D458DC97364A}
+----field----
 field: {A9FEC917-3234-4782-B449-A8DDA61126A8}
 name: Reset Password Email Body
 key: reset password email body
@@ -246,9 +246,9 @@ content-length: 131
 field: {6F5117BC-2706-48DA-B5D3-0FD785FD9979}
 name: Email From Address
 key: email from address
-content-length: 19
+content-length: 30
 
-support@informa.com
+pmbi-notifications@informa.com
 ----field----
 field: {223891E7-0345-450B-A858-A10FDA0F718D}
 name: Email Logo
@@ -272,6 +272,13 @@ key: my account page
 content-length: 38
 
 {39611772-CD97-4610-BB55-F96BE4C1F540}
+----field----
+field: {8D08511C-D6FF-4ADE-9A19-E70C34D1CC71}
+name: Email Preferences Page
+key: email preferences page
+content-length: 38
+
+{BAF1D4FB-7599-4EDA-8926-0A4995E4DC2D}
 ----field----
 field: {281273CB-8A6A-4637-B88E-1F278448CA11}
 name: Registration Email Subject
@@ -320,41 +327,26 @@ content-length: 72
 
 #FIRST_NAME#, your subscription is up for renewal in on #SUB_EXPIRATION#
 ----field----
-field: {0B421D74-F73B-49B3-BDC3-93C31A5DBECC}
-name: Subscribe Link
-key: subscribe link
-content-length: 114
-
-<link text="" linktype="internal" class="" title=""  querystring="" id="{BD836069-C52C-4B3F-B170-39082AD580ED}" />
-----field----
-field: {B892ACBF-336F-4D65-AE8C-84E17B3A0D65}
-name: Product Code
-key: product code
-content-length: 5
-
-scrip
-----field----
 field: {3071922D-4EF9-4ABB-AE03-3DAFEC2544F4}
 name: Days To Expiration
 key: days to expiration
-content-length: 3
+content-length: 4
 
-190
+1900
 ----field----
-field: {F754E79E-C985-4F0F-818F-0D051911A80D}
-name: Subscription Type
-key: subscription type
-content-length: 22
+field: {A975DEF7-AAE1-454C-B0DF-0CFEEEB2CF04}
+name: Print Logo
+key: print logo
+content-length: 128
 
-individual
-free-trial
+<link linktype="media" target="" id="{5F8207FA-F049-47C0-8FC5-8F6D7E808E19}" mediaid="{E48C6867-1BDE-4D4A-BAAF-ED1E0305827C}" />
 ----field----
-field: {50AC1998-CB65-4E2F-AD0B-52980F402A95}
-name: Product Type
-key: product type
-content-length: 11
+field: {2A972374-2492-477B-BDD7-F17BC08B1C9F}
+name: Print Message
+key: print message
+content-length: 308
 
-publication
+<em style="color: #58595b;">After years of warding off generics, large pharma companies are embracing generic drug manufacturers and vying for a share of the off-patent drugs business. Indian generic companies, once considered business pariahs, are the focus of plenty of action, Anju Ghangurde reports.</em>
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
@@ -375,14 +367,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-060a7b45-08e1-4d1f-bc5a-087a04a1fb75
+c37689e8-7df0-478a-8032-be468517a6c7
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160320T133106Z
+20160414T132832Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
