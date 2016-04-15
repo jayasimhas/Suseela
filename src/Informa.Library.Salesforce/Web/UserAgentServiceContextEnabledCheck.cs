@@ -1,5 +1,10 @@
-﻿using Informa.Library.Session;
+﻿using System;
+using Informa.Library.Session;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using Sitecore.Configuration;
+using System.Web;
 
 namespace Informa.Library.Salesforce.Web
 {
@@ -29,11 +34,13 @@ namespace Informa.Library.Salesforce.Web
 					return enabledSession.Value;
 				}
 
-				var enabled = Enabled = Configuration.UserAgents.Any(ua => ua == "Check User Agent Logic"); // TODO-Ladan: Replace with business logic for checking against user agents
-
-				enabled = Enabled = true; // TODO-Ladan: Remove once implementation is done.
-
-				return enabled;
+			    if (Configuration.UserAgents.Any(ua => ua == HttpContext.Current.Request.UserAgent))
+			        return false;
+			    else
+			    {
+			        return true;
+			    }
+               
 			}
 			set
 			{
