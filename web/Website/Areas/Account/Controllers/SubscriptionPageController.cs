@@ -25,8 +25,9 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly IUpdateSiteNewsletterUserOptInContext UpdateNewsletterOptInContext;
 		protected readonly IUpdateSiteNewsletterUserOptIn UpdateNewsletterOptIn;
 
-        public readonly IAuthenticatedUserContext UserContext;
-        public readonly ISignInViewModel SignInViewModel;
+		public readonly IAuthenticatedUserContext UserContext;
+		public readonly ISignInViewModel SignInViewModel;
+
 
         public SubscriptionPageController(
             ISitecoreContext sitecoreContext,
@@ -48,6 +49,7 @@ namespace Informa.Web.Areas.Account.Controllers
 			UpdateNewsletterOptIn = updateNewsletterOptIn;
 		}
         
+		
         public ActionResult Subscribe(string Pub)
         {
             string OneClickView = "~/Areas/Account/Views/Management/OneClickSubscribe.cshtml";
