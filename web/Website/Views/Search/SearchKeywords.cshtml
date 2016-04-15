@@ -26,7 +26,6 @@
         </a>
 
         <div class="search-bar__tips">
-
             <a class="search-bar__tips-button js-toggle-search-tips">
                 <svg class="search-bar__icon search-bar__icon--info">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
@@ -43,12 +42,16 @@
                 <h3>@Editable(Model.GlassModel, m => m.Search_Tips_Title)</h3>
                 @Editable(Model.GlassModel, m => m.Search_Tips_Text)
             </div>
-
         </div>
-
     </div>
 
     <div class="search-bar__footer">
+        <div class="search-bar__headline-toggle">
+            <input type="checkbox" id="headline-search">
+            <label for="headline-search">
+                @Model.SearchSearchHeadlinesOnlyText
+            </label>
+        </div>
         
         <div class="search-bar__headline-toggle onoffswitch js-view-headlines-only" ng-controller="HeadlineToggleController as toggle">
             <input type="checkbox" name="headline-toggle" class="onoffswitch-checkbox" id="headline-toggle">
