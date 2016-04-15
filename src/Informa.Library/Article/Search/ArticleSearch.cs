@@ -113,13 +113,12 @@ namespace Informa.Library.Article.Search
 				var query = context.GetQueryable<ArticleSearchResultItem>()
 					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
 					.FilterTaxonomies(filter)
-					//.Max(x => x.ArticleIntegerNumber);
 					.OrderByDescending(i => i.ArticleIntegerNumber)
 					.Take(1);
 
 				var results = query.GetResults();
 
-				return results.Hits.FirstOrDefault().Document.ArticleIntegerNumber + 1;
+				return results?.Hits?.FirstOrDefault()?.Document?.ArticleIntegerNumber + 1 ?? 0;
 			}
 		}
 
