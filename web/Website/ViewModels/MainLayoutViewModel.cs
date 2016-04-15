@@ -179,7 +179,6 @@ namespace Informa.Web.ViewModels
 		public string ArticleRegions => GetArticleTaxonomy(ItemReferences.RegionsTaxonomyFolder);
 		public string ArticleSubject => GetArticleTaxonomy(ItemReferences.SubjectsTaxonomyFolder);
 		public string ArticleTherapy => GetArticleTaxonomy(ItemReferences.TherapyAreasTaxonomyFolder);
-		public bool IsArticleFree => Article?.Free_Article ?? false;
 		public string UserEntitlements
 		{
 			get
@@ -277,7 +276,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				return Article.IsFree;
+				return Article?.Free_Article ?? false;
 			}
 		}
 
