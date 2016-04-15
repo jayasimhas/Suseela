@@ -14,14 +14,14 @@ namespace Informa.Library.Publishing.Events
 		{
 			var publishArgs = args as ItemProcessingEventArgs;
 
-			if (publishArgs == null || (IgnoreStandardValues && publishArgs.Context.ItemName.IsStandardValues()))
+			if (publishArgs == null)
 			{
 				return;
 			}
 
 			var item = publishArgs.Context.PublishHelper.GetSourceItem(publishArgs.Context.ItemId);
 
-			if (item == null || (TemplateIds.Any() && !TemplateIds.Contains(item.TemplateID)))
+			if (item == null || (IgnoreStandardValues && item.Name.IsStandardValues()) || (TemplateIds.Any() && !TemplateIds.Contains(item.TemplateID)))
 			{
 				return;
 			}

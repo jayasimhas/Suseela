@@ -4,8 +4,9 @@ section: Advertising
 ---
 
 ```example:html
-<div class="advertising--leaderboard">
-    <img src="http://placebear.com/728/90" style="border:0px black solid;" width="728" height="90" alt=""></a>
+<div class="advertising advertising--leaderboard">
+	<span class="advertising__label">Advertisement</span>
+    <img src="http://placebear.com/728/90" width="728" height="90" alt=""></a>
 </div>
 ```
 */
@@ -16,12 +17,13 @@ section: Advertising
 ---
 
 ```example:html
-<div class="article-preview__ad">
-    Advertisement
-    <img src="http://placebear.com/300/250" style="border:0px black solid;" width="300" height="250" alt="">
+<div class="article-preview__ad advertising">
+    <span class="advertising__label">Advertisement</span>
+	<img src="http://placebear.com/300/250" width="300" height="250" alt="">
 </div>
 ```
 */
+
 .advertising {
 
 	&--leaderboard {
@@ -38,6 +40,13 @@ section: Advertising
 				display: block; /* Prevents unwanted space below img */
 			}
 		}
+
+		& .advertising__label {
+			display: block;
+			margin: 0 auto 0.25rem;
+			text-align: left;
+			width: 728px;
+		}
 	}
 
 	&--filmstrip {
@@ -46,6 +55,15 @@ section: Advertising
 
 	&--rectangle {
 
+	}
+
+	&__label {
+		@include textMix('Roboto', 11px, 500);
+		display: block;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $informa-light-gray-d;
+		margin-bottom: 0.25rem;
 	}
 
 }
