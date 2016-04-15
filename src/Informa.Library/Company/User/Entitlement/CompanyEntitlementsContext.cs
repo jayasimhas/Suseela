@@ -44,7 +44,8 @@ namespace Informa.Library.Company.User.Entitlement
 					return entitlementsSession.Value;
 				}
                     
-                var entitlements = GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress);
+                var entitlements = new List<IEntitlement>();
+                entitlements.AddRange(GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress));
 
                 Entitlements = entitlements.Any() ? entitlements : DefaultEntitlementsFactory.Create();
 
@@ -60,7 +61,7 @@ namespace Informa.Library.Company.User.Entitlement
 
 		public EntitledAccessLevel GetProductAccessLevel(string productCode)
 		{
-			return Entitlements.Any(e => e.ProductCode == productCode) ? GetCompanyAccessLevel(CompanyContext.Company.Type) : EntitledAccessLevel.UnEntitled;
+			return (Entitlements == null) || Entitlements.Any(e => e.ProductCode == productCode) ? GetCompanyAccessLevel(CompanyContext.Company.Type) : EntitledAccessLevel.UnEntitled;
 		}
 
 		public EntitledAccessLevel GetCompanyAccessLevel(CompanyType companyType)
