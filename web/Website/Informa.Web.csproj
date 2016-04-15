@@ -917,15 +917,18 @@
     <Content Include="js\form-controller.js" />
     <Content Include="js\newsletter-signup.js" />
     <Content Include="js\openadstream.js" />
+    <Content Include="js\package.json" />
     <Content Include="js\register-controller.js" />
     <Content Include="js\reset-password-controller.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
     <Content Include="js\search\controllers\emailRssController.js" />
+    <Content Include="js\search\controllers\headlineSearchController.js" />
     <Content Include="js\search\controllers\headlineToggleController.js" />
     <Content Include="js\search\controllers\informaFacetsController.js" />
     <Content Include="js\search\controllers\informaResultsController.js" />
     <Content Include="js\search\informaSearchApp.js" />
+    <Content Include="js\search\search.js" />
     <Content Include="js\svg4everybody.js" />
     <Content Include="js\zepto.min.js" />
     <Content Include="layouts\QueryableRulesRunner.ascx" />
@@ -1126,7 +1129,6 @@
     <Content Include="App_Config\Include\UserDefined\Sites.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="js\package.json" />
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config">
       <SubType>Designer</SubType>
     </Content>

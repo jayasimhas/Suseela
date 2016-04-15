@@ -51,7 +51,8 @@ namespace Informa.Library.Search.PredicateBuilders
 
 			if (string.IsNullOrEmpty(query)) return null;
 
-			if (_request.QueryParameters.ContainsKey(Constants.QueryString.SearchHeadlinesOnly))
+			var searchHeadlines = string.Empty;
+			if (_request.QueryParameters.TryGetValue(Constants.QueryString.SearchHeadlinesOnly, out searchHeadlines) && !string.IsNullOrEmpty(searchHeadlines))
 			{
 				return x => x.PublicationTitle == query;
 			}

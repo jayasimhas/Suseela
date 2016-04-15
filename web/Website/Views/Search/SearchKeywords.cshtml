@@ -46,8 +46,8 @@
     </div>
 
     <div class="search-bar__footer">
-        <div class="search-bar__headline-toggle">
-            <input type="checkbox" id="headline-search">
+        <div class="search-bar__headline-toggle" ng-controller="HeadlineSearchController as headline">
+            <input type="checkbox" id="headline-search" >
             <label for="headline-search">
                 @Model.SearchSearchHeadlinesOnlyText
             </label>
