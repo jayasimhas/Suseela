@@ -49,9 +49,7 @@ namespace Informa.Library.Rss.ItemGenerators
         {
             string summary = HttpUtility.HtmlDecode(article.Summary);
              summary = SearchSummaryUtil.GetTruncatedSearchSummary(article.Summary);
-            summary = DCDTokenMatchers.ProcessDCDTokens(summary);
             return HttpUtility.HtmlDecode(summary);
         }
-
     }
 }
