@@ -1,4 +1,5 @@
-﻿@model dynamic
+﻿@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
+@model dynamic
 
 <section    class="search-results"
             ng-class="{ 'headlines-only': headlinesOnly.showOnlyHeadlines() }"
@@ -35,11 +36,11 @@
                     ng-click="doc.isUserAuthenticated ? fireBookmark(doc, $event, $index) : null"
                     data-is-bookmarked="{{doc.isArticleBookmarked}}">
 
-                <svg ng-if="doc.isArticleBookmarked" class="icon__bookmark">
+                <svg ng-if="doc.isArticleBookmarked && doc.templateId == '@IArticleConstants.TemplateIdString'" class="icon__bookmark">
                     <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
                 </svg>
 
-                <svg ng-if="!doc.isArticleBookmarked" class="icon__bookmark">
+                <svg ng-if="!doc.isArticleBookmarked && doc.templateId == '@IArticleConstants.TemplateIdString'" class="icon__bookmark">
                     <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
                 </svg>
             </div>
