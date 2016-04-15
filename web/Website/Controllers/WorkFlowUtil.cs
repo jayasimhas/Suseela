@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Glass.Mapper.Sc;
+using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using PluginModels;
@@ -35,13 +36,12 @@ namespace Informa.Web.Controllers
 	public class WorkFlowUtil : IWorkFlowUtil
 	{
 		private readonly ISitecoreService _sitecoreMasterService;
-		public const string MasterDb = "master";
 		protected SitecoreSaverUtil SitecoreUtil;
 		protected ArticleUtil ArticleUtil;
 
 		public WorkFlowUtil(Func<string, ISitecoreService> sitecoreFactory, SitecoreSaverUtil sitecoreSaverUtil, ArticleUtil articleUtil)
 		{
-			_sitecoreMasterService = sitecoreFactory(MasterDb);
+			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			SitecoreUtil = sitecoreSaverUtil;
 			ArticleUtil = articleUtil;
 		}

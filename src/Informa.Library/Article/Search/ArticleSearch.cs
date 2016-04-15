@@ -106,7 +106,7 @@ namespace Informa.Library.Article.Search
 
 		public long GetNextArticleNumber(Guid publicationGuid)
 		{
-			using (var context = SearchContextFactory.Create("master"))
+			using (var context = SearchContextFactory.Create(Constants.MasterDb))
 			{
 				var filter = CreateFilter();
 
@@ -119,19 +119,8 @@ namespace Informa.Library.Article.Search
 
 				var results = query.GetResults();
 
-
 				return results.Hits.FirstOrDefault().Document.ArticleIntegerNumber + 1;
-
-
-				//var results = articleSearchResultItem.GetResults();
-
-
-				//var articleResults2 = context.GetQueryable<ArticleSearchResultItem>()     Max(x => x.ArticleIntegerNumber);
-
-
-				//return results.Hits.FirstOrDefault().Document.ArticleIntegerNumber;
 			}
-			return 0;
 		}
 
 		/// <summary>
