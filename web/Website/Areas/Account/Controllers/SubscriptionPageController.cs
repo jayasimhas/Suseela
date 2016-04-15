@@ -17,8 +17,7 @@ namespace Informa.Web.Areas.Account.Controllers
     public class SubscriptionPageController : Controller
     {
 		// GET: Account/SubscriptionPage
-		private readonly IItemReferences _itemReferences;
-        private readonly ISitecoreContext SitecoreContext;
+		private readonly ISitecoreContext SitecoreContext;
 
         protected readonly IUpdateOfferUserOptIn OffersOptIn;
 		protected readonly IUpdateOfferUserOptInContext OffersOptInContext;
@@ -30,8 +29,7 @@ namespace Informa.Web.Areas.Account.Controllers
 		public readonly ISignInViewModel SignInViewModel;
 
 
-		public SubscriptionPageController(
-            IItemReferences itemReferences,
+        public SubscriptionPageController(
             ISitecoreContext sitecoreContext,
             IAuthenticatedUserContext userContext,
             ISignInViewModel signInViewModel,
@@ -41,8 +39,7 @@ namespace Informa.Web.Areas.Account.Controllers
 			IUpdateSiteNewsletterUserOptInContext updateNewsletterOptInContext,
 			IUpdateSiteNewsletterUserOptIn updateNewsletterOptIn)
 		{
-			_itemReferences = itemReferences;
-		    SitecoreContext = sitecoreContext;
+			SitecoreContext = sitecoreContext;
             UserContext = userContext;
             SignInViewModel = signInViewModel;
             OffersOptIn = offersOptIn;
@@ -51,7 +48,7 @@ namespace Informa.Web.Areas.Account.Controllers
 			UpdateNewsletterOptInContext = updateNewsletterOptInContext;
 			UpdateNewsletterOptIn = updateNewsletterOptIn;
 		}
-
+        
 		
         public ActionResult Subscribe(string Pub)
         {
