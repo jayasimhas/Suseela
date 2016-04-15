@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
+using Informa.Library.Site;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Document;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
@@ -18,19 +20,22 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public readonly ISignInViewModel SignInViewModel;
         public readonly ISitecoreService SitecoreService;
 		protected readonly ISavedDocumentsContext SavedDocumentsContext;
+        protected readonly ISiteRootContext SiteRootContext;
 
 		public SavedArticlesViewModel(
             ITextTranslator translator,
             IAuthenticatedUserContext userContext,
             ISignInViewModel signInViewModel,
             ISitecoreService sitecoreService,
-			ISavedDocumentsContext savedDocumentsContext)
+			ISavedDocumentsContext savedDocumentsContext,
+            ISiteRootContext siteRootContext)
         {
             TextTranslator = translator;
             UserContext = userContext;
             SignInViewModel = signInViewModel;
             SitecoreService = sitecoreService;
 			SavedDocumentsContext = savedDocumentsContext;
+		    SiteRootContext = siteRootContext;
         }
 
         private IArticle GetArticle(string ID)
@@ -60,7 +65,13 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             return article.Actual_Publish_Date.ToString(dateFormat);
         }
 
-		public IEnumerable<ISavedDocument> SavedDocuments => SavedDocumentsContext.SavedDocuments;
+		public IEnumerable<ISavedDocument> SavedDocuments => SavedDocumentsContext.SavedDocuments.Where(IsInContextSite);
+
+        private bool IsInContextSite(ISavedDocument savedDocument)
+        {
+            var article = GetArticle(savedDocument.DocumentId);
+            return (article != null && article._Path.StartsWith(SiteRootContext.Item._Path));
+        }
 
         public bool IsAuthenticated => UserContext.IsAuthenticated;
         public string Title => GlassModel?.Title;

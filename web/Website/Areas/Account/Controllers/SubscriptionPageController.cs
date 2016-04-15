@@ -17,9 +17,7 @@ namespace Informa.Web.Areas.Account.Controllers
     public class SubscriptionPageController : Controller
     {
 		// GET: Account/SubscriptionPage
-		private readonly ISitecoreService _sitecoreMasterService;
-		private readonly IItemReferences _itemReferences;
-        private readonly ISitecoreContext SitecoreContext;
+		private readonly ISitecoreContext SitecoreContext;
 
         protected readonly IUpdateOfferUserOptIn OffersOptIn;
 		protected readonly IUpdateOfferUserOptInContext OffersOptInContext;
@@ -27,9 +25,10 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly IUpdateSiteNewsletterUserOptInContext UpdateNewsletterOptInContext;
 		protected readonly IUpdateSiteNewsletterUserOptIn UpdateNewsletterOptIn;
 
-		public SubscriptionPageController(
-            Func<string, ISitecoreService> sitecoreFactory, 
-            IItemReferences itemReferences,
+        public readonly IAuthenticatedUserContext UserContext;
+        public readonly ISignInViewModel SignInViewModel;
+
+        public SubscriptionPageController(
             ISitecoreContext sitecoreContext,
             IAuthenticatedUserContext userContext,
             ISignInViewModel signInViewModel,
@@ -39,9 +38,7 @@ namespace Informa.Web.Areas.Account.Controllers
 			IUpdateSiteNewsletterUserOptInContext updateNewsletterOptInContext,
 			IUpdateSiteNewsletterUserOptIn updateNewsletterOptIn)
 		{
-            _sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
-			_itemReferences = itemReferences;
-		    SitecoreContext = sitecoreContext;
+			SitecoreContext = sitecoreContext;
             UserContext = userContext;
             SignInViewModel = signInViewModel;
             OffersOptIn = offersOptIn;
@@ -50,23 +47,6 @@ namespace Informa.Web.Areas.Account.Controllers
 			UpdateNewsletterOptInContext = updateNewsletterOptInContext;
 			UpdateNewsletterOptIn = updateNewsletterOptIn;
 		}
-
-		public readonly IAuthenticatedUserContext UserContext;
-		public readonly ISignInViewModel SignInViewModel;
-
-		public ActionResult Index(string pub)
-        {
-			//TODO: Add logic to subscribe the user using salesforce and also check for logged in user functionality
-			if (!string.IsNullOrEmpty(pub) && pub.ToLower() == NewsletterTypeContext.Type.ToLower())
-			{
-				SubscriptionModel subscriptionModel = new SubscriptionModel();
-				var item = _sitecoreMasterService.GetItem<I___BasePage>(_itemReferences.SubscriptionPage);
-				subscriptionModel.BodyText = item.Body;
-				return View("~/Areas/Account/Views/Management/Subscriptions.cshtml", subscriptionModel);
-			}
-			var emailPreferncesItem = _sitecoreMasterService.GetItem<Item>(_itemReferences.EmailPreferences);
-            return Redirect("/accounts/email-preferences"); // TODO Remove harcoded path
-        }
         
         public ActionResult Subscribe(string Pub)
         {
