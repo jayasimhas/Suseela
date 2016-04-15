@@ -14,7 +14,7 @@ namespace Informa.Library.Salesforce.Web
         {
 	        get
 	        {
-                return Sitecore.Configuration.Settings.GetSetting("DCD.ImportFolder").Split('|').Select(s => s.Trim());
+                return Sitecore.Configuration.Settings.GetSetting("Skipped.SF.User.Agent").Split('|').Select(s => s.Trim());
             }
         }
 	}
