@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -70,7 +71,12 @@
     <Compile Include="EBIWebServices\IEbiResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponseExtensions.cs" />
     <Compile Include="ISalesforceErrorLogger.cs" />
+    <Compile Include="ISalesforceServiceContextEnabled.cs" />
+    <Compile Include="ISalesforceServiceContextEnabledCheck.cs" />
+    <Compile Include="ISalesforceServiceContextEnabledChecks.cs" />
     <Compile Include="SalesforceErrorLogger.cs" />
+    <Compile Include="SalesforceServiceContextEnabled.cs" />
+    <Compile Include="SalesforceServiceContextEnabledChecks.cs" />
     <Compile Include="User\Entitlement\ISalesforceEntitlmentFactory.cs" />
     <Compile Include="User\Entitlement\ISalesforceGetIPEntitlements.cs" />
     <Compile Include="User\Entitlement\ISalesforceGetUserEntitlements.cs" />
@@ -137,6 +143,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web\IUserAgentServiceContextEnabledCheckConfiguration.cs" />
+    <Compile Include="Web\UserAgentServiceContextEnabledCheck.cs" />
+    <Compile Include="Web\UserAgentServiceContextEnabledCheckConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

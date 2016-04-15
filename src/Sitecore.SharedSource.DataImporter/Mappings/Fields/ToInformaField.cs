@@ -21,6 +21,8 @@ using HtmlDocument = Sitecore.WordOCX.HtmlDocument.HtmlDocument;
 
 namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 {
+    #region Scrip
+
     public class ToArticleNumberText : ToText {
         #region Constructor
 
@@ -135,7 +137,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         public override void FillField(IDataMap map, ref Item newItem, string importValue)
         {
             //replace <h1> with <h2>
-            importValue = importValue.Replace("h1", "h2").Replace("62.73.128.229", "www.scripintelligence.com");
+            importValue = importValue.Replace("h1", "h2");
 
             //strip out the tags, attributes and remap images
             List<string> removeTags = new List<string>() { "font", "preform" };
@@ -239,8 +241,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         public MediaItem HandleImage(IDataMap map, string articlePath, DateTime dt, string url)
         {
+            url = url.Replace("192.168.45.101:8080", "www.scripintelligence.com")
+                .Replace("62.73.128.229", "www.scripintelligence.com");
             if (url.StartsWith("/scripnews") || url.StartsWith("/multimedia"))
-                url = $"http://scripintelligence.com{url}";
+                url = $"http://www.scripintelligence.com{url}";
+            else if (url.Contains("scripnews.com"))
+                url = url.Replace("scripnews.com", "scripintelligence.com");
 
             // see if the url is badly formed
             if (!Uri.IsWellFormedUriString(url, UriKind.Absolute)) {
@@ -940,7 +946,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             //loop through children and look for anything that matches by name
             string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-            IEnumerable<Item> t = i.GetChildren().Where(c => c.DisplayName.Equals(cleanName));
+            IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
             
             //if you find one then store the id
             if (!t.Any())
@@ -1070,8 +1076,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                 string[] parts = transformValue.Split(new string[] {"::"}, StringSplitOptions.RemoveEmptyEntries);
 
-                ChildList cl = i.GetChildren();
-
+                Item[] cl = i.Axes.GetDescendants();
                 
                 //loop through children and look for anything that matches by name
                 foreach (string area in parts)
@@ -1957,12 +1962,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             }
             
             string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-            IEnumerable<Item> t = i.GetChildren().Where(c => c.DisplayName.Equals(cleanName));
+            IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
 
             //if you find one then store the id
             if (!t.Any())
             {
-                map.Logger.Log(newItem.Paths.FullPath, "Therapy Area(s) not found in list", ProcessStatus.FieldError, NewItemField, importValue);
+                map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, importValue);
                 return;
             }
 
@@ -1974,8 +1979,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             if (!f.Value.Contains(ctID))
                 f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
         }
-
-
+        
         public Dictionary<string, string> GetMapping()
         {
             Dictionary<string, string> d = new Dictionary<string, string>();
@@ -2194,7 +2198,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             string[] parts = transformValue.Split(new string[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
 
-            ChildList cl = i.GetChildren();
+            Item[] cl = i.Axes.GetDescendants();
 
             StringBuilder sb = new StringBuilder();
 
@@ -2410,4 +2414,6 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         #endregion Methods
 
     }
+
+    #endregion Scrip
 }

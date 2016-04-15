@@ -7,6 +7,8 @@
 		string RegisterUrl { get; }
 		string UsernamePlaceholderText { get; }
 		string UsernameRequirementsErrorText { get; }
+		string UsernamePublicRestrictedDomainErrorText { get; }
+		string UsernameCompetitorRestrictedDomainErrorText { get; }
 		string UsernameExistsErrorText { get; }
 		string GeneralErrorText { get; }
 		string Username { get; }

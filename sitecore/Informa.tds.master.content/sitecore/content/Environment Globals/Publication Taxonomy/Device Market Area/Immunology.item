@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {A16FB57A-6EF3-4171-BA11-1E017A44F448}
+database: master
+path: /sitecore/content/Environment Globals/Publication Taxonomy/Device Market Area/Immunology
+parent: {DE1A13C0-3793-434E-BEE7-15CC5936C0D4}
+name: Immunology
+master: {00000000-0000-0000-0000-000000000000}
+template: {6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+templatekey: Taxonomy Item
+
+----version----
+language: en
+version: 1
+revision: 0137d705-ba15-46a0-8f01-1ef8d28d9f14
+
+----field----
+field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
+name: Item Name
+key: item name
+content-length: 10
+
+Immunology
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160412T184959Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0137d705-ba15-46a0-8f01-1ef8d28d9f14
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160412T184959Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,7 +1,5 @@
 ﻿using Glass.Mapper.Sc;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Jabberwocky.Glass.Models;
 using Sitecore.Data.Items;
 using Velir.Search.Core.ComputedFields;
 

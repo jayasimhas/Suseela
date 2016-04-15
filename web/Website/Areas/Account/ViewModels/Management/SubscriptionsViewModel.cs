@@ -32,30 +32,26 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 
         public IEnumerable<ISubscription> Subscriptions => UserSubscriptionsContext.Subscriptions;
 
-        public bool ShowRenewButton(string productCode)
+        public bool ShowRenewButton(ISubscription subscription)
         {
-            //The user's individual subscription expires in < 119 days and the user has not renewed 
-            //(ie. there isn't another subscription with an expiration date in the future)
-
-            //translation: if there isn't any subscription outside renew range
-            return !Subscriptions.Any(a => a.ProductCode.Equals(productCode) && !WithinRenewRange(a.ExpirationDate));
+            //if all subscriptions of this type are within renew range and this subscription is not multi-user 
+            return Subscriptions
+                    .Where(a => a.ProductCode.Equals(subscription.ProductCode))
+                    .All(b => WithinRenewRange(b.ExpirationDate)) 
+                && !IsMultiUser(subscription.SubscriptionType);
         }
 
         public bool ShowSubscribeButton(string productCode)
         {
-            //Show Subscribe Button:
-            //If the user has a Free Trial and has not yet subscribed.
-            //Continue showing the "Subscribe" button even after the Free Trial has expired.
-            //Do Not Show Subscribe Button
-            //If the user has an (active or expired Free Trial) AND(has subscribed)
-
-            //doesn't mention case of only having expired regular subscription
-            //assuming would still want them to subscribe if they were on regular expiration also
-            
-            //translation: if there aren't any valid subscriptions
+            //if there aren't any valid subscriptions
             return !Subscriptions.Any(k => k.ProductCode.Equals(productCode) && IsValidSubscription(k));
         }
-        
+
+        public bool IsMultiUser(string subscriptionType)
+        {
+            return subscriptionType.ToLower().Equals("multi-user");
+        }
+
         public bool WithinRenewRange(DateTime dt)
         {
             // (08/31/2013) - (08/01/2013) = 31

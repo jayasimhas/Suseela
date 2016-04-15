@@ -3907,6 +3907,9 @@
     
     <setting name="DCD.EnableWatcher" value="${DCD.EnableWatcher}"/>
     <!--Whether to enable DCD XML files changes watching in the DCD.ImportFolder folder-->
+	
+	 <setting name="Skipped.SF.User.Agent" value="${SkippedSFUserAgents}"/>
+    <!--List of user agents that skip the SF call-->
   </settings>
 
 </sitecore>

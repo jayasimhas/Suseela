@@ -271,6 +271,10 @@
     <Reference Include="Sitecore.ContentSearch.SolrProvider.AutoFacIntegration">
       <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.SolrProvider.AutoFacIntegration.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentTesting, Version=8.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.HtmlCache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.HtmlCache\Sitecore.HtmlCache.dll</HintPath>
@@ -729,9 +733,9 @@
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
     <Compile Include="Controllers\WorkFlowUtil.cs" />
-    <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
+    <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -765,6 +769,8 @@
     <Compile Include="ViewModels\AdvertisementViewModel.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\IEmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\SearchRssViewModel.cs" />
@@ -903,6 +909,7 @@
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
+    <Content Include="dist\js\index.js" />
     <Content Include="email\EditAfterPublishEmail.html" />
     <Content Include="email\EmailFriendSearchAuthor.html" />
     <Content Include="email\EmailFriendSearchRow.html" />
@@ -961,7 +968,6 @@
     <Content Include="App_Config\Icons.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.config" />
     <Content Include="App_Config\Include\Velir.Search.Web.config" />
-    <Content Include="App_Config\Include\zz.Sitecore.HtmlCache.config" />
     <Content Include="App_Config\LanguageDefinitions.config" />
     <Content Include="App_Config\MimeTypes.config" />
     <Content Include="App_Config\Portraits.config" />
@@ -1020,6 +1026,18 @@
     <Content Include="tasks\js.js" />
     <Content Include="tasks\svg-sprite.js" />
     <Content Include="tasks\utils.js" />
+    <Content Include="Util\DCD\img\arrow_sort_down_active.png" />
+    <Content Include="Util\DCD\img\back_body.gif" />
+    <Content Include="Util\DCD\img\back_body_leftshadow.png" />
+    <Content Include="Util\DCD\img\back_body_rightshadow.png" />
+    <Content Include="Util\DCD\img\header_logo.gif" />
+    <Content Include="Util\DCD\js\jquery-ui.js" />
+    <Content Include="Util\DCD\js\jquery.js" />
+    <Content Include="Util\DCD\js\jquery.multiSelect.js" />
+    <Content Include="Util\DCD\js\scripts.js" />
+    <Content Include="Util\DCD\styles\jquery-ui-1.8.11.custom.css" />
+    <Content Include="Util\DCD\styles\jquery.multiSelect.css" />
+    <Content Include="Util\DCD\styles\style.css" />
     <Content Include="velir\services\TypeAhead.asmx" />
     <Content Include="Util\DCD\DcdImportReport.aspx" />
     <Content Include="Util\DCD\ViewDCDXML.aspx" />
@@ -1147,11 +1165,15 @@
     <Content Include="App_Config\Include\UserDefined\AppInsights.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\AppSettings.config" />
+    <None Include="App_Config\AppSettings.config.template" />
     <None Include="App_Config\Include\UserDefined\AppInsights.config.template">
       <SubType>Designer</SubType>
     </None>
     <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
-    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template" />
+    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\UserDefined\Publishing.config">
       <SubType>Designer</SubType>
     </Content>

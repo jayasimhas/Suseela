@@ -4,44 +4,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Deals, Companies, and Drugs Import Report</title>
-    <%--	<link rel="stylesheet" type="text/css" href="/Styles/style.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/Scripts/jquery-ui/jquery-ui-1.8.11.custom.css" />
-	<link rel="stylesheet" type="text/css" href="/Scripts/jquery-multiselect/jquery.multiSelect.css" />--%>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js" ></script>
-    <script type="text/javascript" src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js" ></script>
-    <link rel="Stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
-    
-    <%--	<script type="text/javascript" src="/Scripts/jquery.js"></script>
 
-	<script type="text/javascript" src="/Scripts/jquery-ui/jquery-ui.js"></script>
+    <link href="styles/style.css" rel="stylesheet"  media="screen"/>
+    <link href="styles/jquery-ui-1.8.11.custom.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.multiSelect.js"></script>
+    <script src="js/scripts.js"></script>
 
-	<script type="text/javascript" src="/Scripts/jquery-multiselect/jquery.multiSelect.js"></script>
-
-	<script type="text/javascript" src="/Scripts/scripts.js"></script>--%>
-
-    <style>
-        #content table.data th a {
-            color: black;
-        }
-
-        #content table.data th.sortup a {
-            background: url("/images/arrow_sort_up_active.png") no-repeat right center;
-            padding-right: 15px;
-        }
-
-        #content table.data th.sortdown a {
-            background: url("/images/arrow_sort_down_active.png") no-repeat right center;
-            padding-right: 15px;
-        }
-
-        #content table.data.clickable tr:hover td {
-            background: #F4BC50;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-
-    </style>
+	<style>
+		#content table.data th a
+		{
+			color: White;
+		}
+		#content table.data th.sortup a
+		{
+			background: url("/img/arrow_sort_up_active.png") no-repeat right center;
+			padding-right: 15px;
+		}
+		#content table.data th.sortdown a
+		{
+			background: url("/img/arrow_sort_down_active.png") no-repeat right center;
+			padding-right: 15px;
+		}
+		#content table.data.clickable tr:hover td
+		{
+			background: #F4BC50;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	</style>
 </head>
 <body class="fullpage">
     <form id="form1" runat="server">
@@ -52,7 +45,7 @@
                     <div id="header">
                         <!-- Logo -->
                         <a class="site-logo" href="#">
-                            <img src="/images/header_logo.gif" /></a>
+                            <img src="/util/DCD/img/header_logo.gif" /></a>
                     </div>
                     <!-- End header -->
                     <div id="contentwrapper">

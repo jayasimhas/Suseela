@@ -14,53 +14,6 @@ import SortableTableController from './sortable-table-controller';
 import { analyticsEvent } from './analytics-controller';
 
 
-
-/* Toggle menu categories */
-$('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
-    $(e.target).toggleClass('is-active');
-});
-
-/* 	Elements with `position:absolute` don't bubble click events
-	`pointer-events: none` would fix, but isn't supported by IE 10.
-	Need to hoist the click event to the parent element to toggle menu items. */
-$('.js-hoist-menu-click').on('click', function hoistMenuClick(e) {
-    $(e.target).parents('.js-toggle-menu-section').trigger('click');
-});
-
-$('.click-logout').on('click', function(e) {
-    analyticsEvent( $.extend(analytics_data, { event_name: "logout" }) );
-});
-
-/* Toggle header search box (tablets/smartphones) */
-$('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
-
-    var eventDetails = {
-        event_name: "search",
-        search_keyword: '"' + $('.header-search__field').val() + '"'
-    };
-
-    analyticsEvent( $.extend(analytics_data, eventDetails) );
-
-
-    if($(window).width() <= 800) {
-        $('.header-search__wrapper').toggleClass('is-active').focus();
-    } else {
-        $(e.target).closest('form').submit();
-    }
-    e.preventDefault();
-    return false;
-});
-
-/* Generic banner dismiss */
-$('.js-dismiss-banner').on('click', function dismissBanner(e) {
-    var thisBanner = $(e.target).parents('.banner');
-    thisBanner.removeClass('is-visible');
-
-    var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
-    dismissedBanners[thisBanner.data('banner-id')] = true;
-    Cookies.set('dismissedBanners', dismissedBanners);
-});
-
 // Make sure proper elm gets the click event
 // When a user submits a Forgot Password request, this will display the proper
 // success message and hide the form to prevent re-sending.
@@ -118,6 +71,10 @@ $(document).ready(function() {
     // Anti Forgery Token
     var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
 
+    /* * *
+        Traverses the DOM and registers event listeners for any pop-out triggers.
+        Bound explicitly to `window` for easier access by Angular.
+    * * */
     window.indexPopOuts = function() {
         window.controlPopOuts = new PopOutController('.js-pop-out-trigger');
 
@@ -145,6 +102,10 @@ $(document).ready(function() {
 
     window.bookmark = new BookmarkController();
 
+    /* * *
+        Traverses the DOM and registers event listeners for any bookmarkable
+        articles. Bound explicitly to `window` for easier access by Angular.
+    * * */
     window.indexBookmarks = function() { // Toggle bookmark icon
         $('.js-bookmark-article').on('click', function bookmarkArticle(e) {
             // Make sure proper elm gets the click event
@@ -160,7 +121,13 @@ $(document).ready(function() {
 
     window.indexBookmarks();
 
-    // Check for any articles to immediately bookmark
+
+    /* * *
+        If a user tries bookmarking an article while logged out, they'll be
+        prompted to sign in first. This checks for any articles that have been
+        passed along for post-sign-in bookmarking. Bound explicitly to `window`
+        for easier access by Angular.
+    * * */
     window.autoBookmark = function() {
 
         var bookmarkTheArticle = function(article) {
@@ -191,15 +158,43 @@ $(document).ready(function() {
     window.autoBookmark();
 
 
+    /* * *
+        Toggle global header search box
+        (toggles at tablet/smartphone sizes, always visible at desktop size)
+    * * */
+    $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
+
+        var searchKeyword = $('.header-search__field').val();
+        if((searchKeyword === "" || searchKeyword === undefined || searchKeyword === null) && (('.search-bar__field').length))
+        {
+            searchKeyword = $('.search-bar__field').val();
+        }
+        var eventDetails = {
+            event_name: "search",
+            search_keyword: '"' + searchKeyword + '"'
+        };
+
+        analyticsEvent( $.extend(analytics_data, eventDetails) );
+
+
+        if($(window).width() <= 800) {
+            $('.header-search__wrapper').toggleClass('is-active').focus();
+        } else {
+            $(e.target).closest('form').submit();
+        }
+        e.preventDefault();
+        return false;
+    });
+
     var newsletterSignup = new NewsletterSignupController();
-    $(".newsletter-signup-after-submit").hide();
     newsletterSignup.checkForUserSignedUp();
     newsletterSignup.addControl('.js-newsletter-signup-submit', null,function(triggerElement) {
-
     });
 
 
-    // TODO - Refactor this with generic form controller
+    /* * *
+        Handle user sign-in attempts.
+    * * */
     var userSignIn = new FormController({
         observe: '.js-sign-in-submit',
         successCallback: function(form, context, event) {
@@ -212,6 +207,11 @@ $(document).ready(function() {
 
             analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
 
+            /* * *
+                If `pass-article-id` is set, user is probably trying to sign in
+                after attempting to bookmark an article. Add the article ID to
+                the URL so `autoBookmark()` catches it.
+            * * */
             var passArticleId = $(form).find('.sign-in__submit').data('pass-article-id');
             if(passArticleId) {
                 var sep = (window.location.href.indexOf('?') > -1) ? '&' : '?';
@@ -240,7 +240,6 @@ $(document).ready(function() {
 		}
     });
 
-
     var resetPassword = new FormController({
         observe: '.form-reset-password',
         successCallback: function() {
@@ -255,7 +254,6 @@ $(document).ready(function() {
         }
     });
 
-
     var userRegistrationController = new FormController({
         observe: '.form-registration'
     });
@@ -263,7 +261,6 @@ $(document).ready(function() {
     var userRegistrationFinalController = new FormController({
         observe: '.form-registration-optins'
     });
-
 
     var userPreRegistrationController = new FormController({
 		observe: '.form-pre-registration',
@@ -275,6 +272,9 @@ $(document).ready(function() {
 		}
 	});
 
+    $('.click-logout').on('click', function(e) {
+        analyticsEvent( $.extend(analytics_data, { event_name: "logout" }) );
+    });
 
 
     var emailArticleController = new FormController({
@@ -313,7 +313,7 @@ $(document).ready(function() {
 
             var resultIDs = null;
 
-            $('.result__bookmark').each(function(indx, item) {
+            $('.js-angular-bookmark').each(function(indx, item) {
                 resultIDs = resultIDs ? resultIDs + ',' + $(item).data('bookmark-id') : $(item).data('bookmark-id');
             });
 
@@ -360,38 +360,82 @@ $(document).ready(function() {
         return $('.header__wrapper').offset().top + $('.header__wrapper').height();
     };
 
-    /* Toggle menu visibility */
-    $('.js-toggle-menu').on('click', function toggleMenu() {
-        if($('.main-menu').hasClass('is-active')) {
+    /* * *
+        MAIN SITE MENU
+    * * */
+    (function MenuController() {
+
+        var showMenu = function() {
+            $('.main-menu').addClass('is-active');
+            $('.menu-toggler').addClass('is-active');
+            $('.header__wrapper .menu-toggler').addClass('is-sticky');
+            $('body').addClass('is-frozen');
+        };
+
+        var hideMenu = function() {
             $('.main-menu').removeClass('is-active');
             $('.menu-toggler').removeClass('is-active');
             $('body').removeClass('is-frozen');
             if($(window).scrollTop() <= getHeaderEdge()) {
                 $('.header__wrapper .menu-toggler').removeClass('is-sticky');
             }
-        } else {
-            $('.main-menu').addClass('is-active');
-            $('.menu-toggler').addClass('is-active');
-            $('.header__wrapper .menu-toggler').addClass('is-sticky');
-            $('body').addClass('is-frozen');
-        }
-    });
+        };
 
-    /* Attach / detach sticky menu */
-    $(window).on('scroll', function windowScrolled() {
-        if ($(this).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
-            $('.header__wrapper .menu-toggler').addClass('is-sticky');
-        } else {
-            $('.header__wrapper .menu-toggler').removeClass('is-sticky');
-        }
-    });
+        /* Toggle menu visibility */
+        $('.js-menu-toggle-button').on('click', function toggleMenu(e) {
+            $('.main-menu').hasClass('is-active') ? hideMenu() : showMenu();
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+        /*  If the menu is closed, let any clicks on the menu element open
+            the menu. This includes the border—visible when the menu is closed—
+            so it's easier to open. */
+        $('.js-full-menu-toggle').on('click', function toggleMenu() {
+            $('.main-menu').hasClass('is-active') ? null : showMenu();
+        });
+
+        /* Attach / detach sticky menu */
+        $(window).on('scroll', function windowScrolled() {
+            // Only stick if the header (including toggler) isn't visible
+            if ($(this).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
+                $('.header__wrapper .menu-toggler').addClass('is-sticky');
+            } else {
+                $('.header__wrapper .menu-toggler').removeClass('is-sticky');
+            }
+        });
+
+        /* Toggle menu categories */
+        $('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
+            e.target !== this ? this.click() : $(e.target).toggleClass('is-active');
+        });
+
+    })();
 
 
+    /* * *
+        When a banner is dismissed, the banner ID is stored in the
+        `dismissedBanners` cookie as a JSON object. Banners are invisible by default,
+        so on page load, this checks if a banner on the page is dismissed or not,
+        then makes the banner visible if not dismissed.
+    * * */
     var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
     $('.banner').each(function() {
         if($(this).data('banner-id') in dismissedBanners === false) {
             $(this).addClass('is-visible');
         }
+    });
+
+    /* * *
+        Generic banner dismiss
+    * * */
+    $('.js-dismiss-banner').on('click', function dismissBanner(e) {
+        var thisBanner = $(e.target).parents('.banner');
+        thisBanner.removeClass('is-visible');
+
+        var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
+        dismissedBanners[thisBanner.data('banner-id')] = true;
+        Cookies.set('dismissedBanners', dismissedBanners);
     });
 
     // For each article table, clone and append "view full table" markup

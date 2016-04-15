@@ -1,6 +1,8 @@
+/* global analytics_data */
+
 import { analyticsEvent } from './analytics-controller';
 
-﻿function newsletterSignupController() {
+function newsletterSignupController() {
 
     this.checkForUserSignedUp = function(){
         $.get('/Account/api/PreferencesApi/IsUserSignedUp', function(response) {
@@ -10,7 +12,8 @@ import { analyticsEvent } from './analytics-controller';
             }
 
         });
-    }
+    };
+
     this.addControl = function(triggerElement, successCallback, failureCallback) {
         if (triggerElement) {
             $(triggerElement).on('click', (event) => {
@@ -31,9 +34,11 @@ import { analyticsEvent } from './analytics-controller';
                 url = url + '?userName=' + inputData;
 
                 $.get(url, function(response) {
+                    var newsletterAnalytics;
+
                     if (response) {
 
-                        var newsletterAnalytics = {
+                        newsletterAnalytics = {
                             event_name: 'newsletter-signup',
                             newsletter_signup_state: 'successful',
                             userName: '"' + inputData + '"'
@@ -46,7 +51,7 @@ import { analyticsEvent } from './analytics-controller';
 
                     } else {
 
-                        var newsletterAnalytics = {
+                        newsletterAnalytics = {
                             event_name: 'newsletter-signup',
                             newsletter_signup_state: 'unsuccessful',
                             userName: '"' + inputData + '"'
@@ -60,7 +65,7 @@ import { analyticsEvent } from './analytics-controller';
                 });
             });
         }
-    }
+    };
 }
 
 export default newsletterSignupController;

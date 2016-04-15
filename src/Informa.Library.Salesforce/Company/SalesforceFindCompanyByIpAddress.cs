@@ -34,7 +34,9 @@ namespace Informa.Library.Salesforce.Company
 				return null;
 			}
 
-			return Companies.FirstOrDefault(c => c.LowerIpAddress != null && c.UpperIpAddress != null && IpAddressRangeCheck.IsInRange(ipAddress, c.LowerIpAddress, c.UpperIpAddress));
+			var companies = Companies;
+
+			return companies.FirstOrDefault(c => c.LowerIpAddress != null && c.UpperIpAddress != null && IpAddressRangeCheck.IsInRange(ipAddress, c.LowerIpAddress, c.UpperIpAddress));
 		}
 
 		public List<SalesforceCompany> Companies => SafeObject;

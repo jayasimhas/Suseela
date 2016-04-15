@@ -751,6 +751,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Validation.Email
+{
+
+
+ 	/// <summary>
+	/// IRestricted_Email_Domain_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Validation/Email/Restricted Email Domain Folder</para>	
+	/// <para>ID: 08a44059-ff92-48f1-85e5-3bf95839f562</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRestricted_Email_Domain_FolderConstants.TemplateIdString)]
+	public partial interface IRestricted_Email_Domain_Folder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IRestricted_Email_Domain_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Validation/Email/Restricted Email Domain Folder</para>	
+		/// <para>ID: 08a44059-ff92-48f1-85e5-3bf95839f562</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRestricted_Email_Domain_Folder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IRestricted_Email_Domain_FolderConstants{
+
+			public const string TemplateIdString = "08a44059-ff92-48f1-85e5-3bf95839f562";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Restricted Email Domain Folder";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
 
@@ -6313,6 +6351,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Validation.Email
+{
+
+
+ 	/// <summary>
+	/// IRestricted_Email_Domains Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Validation/Email/Restricted Email Domains</para>	
+	/// <para>ID: 70c6d01f-b23e-41da-becb-f4311df56fae</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRestricted_Email_DomainsConstants.TemplateIdString)]
+	public partial interface IRestricted_Email_Domains : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IRestricted_Email_Domains Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Validation/Email/Restricted Email Domains</para>	
+		/// <para>ID: 70c6d01f-b23e-41da-becb-f4311df56fae</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRestricted_Email_Domains__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IRestricted_Email_DomainsConstants{
+
+			public const string TemplateIdString = "70c6d01f-b23e-41da-becb-f4311df56fae";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Restricted Email Domains";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing
 {
 
@@ -9909,15 +9985,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Menu_One_HeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Menu_One_Header  {get; set;}
 								/// <summary>
-					/// The Menu One Links field.
-					/// <para></para>
-					/// <para>Field Type: Treelist</para>		
-					/// <para>Field ID: abf9cd82-13d2-438a-af7e-02856b69e19a</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Menu_One_LinksFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Menu_One_Links  {get; set;}
-								/// <summary>
 					/// The Menu Two Header field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -9926,15 +9993,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Menu_Two_HeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Menu_Two_Header  {get; set;}
-								/// <summary>
-					/// The Menu Two Links field.
-					/// <para></para>
-					/// <para>Field Type: Treelist</para>		
-					/// <para>Field ID: 575e0858-b583-4a04-b358-2afc3ea6ee9a</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Menu_Two_LinksFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Menu_Two_Links  {get; set;}
 								/// <summary>
 					/// The Purchase Link field.
 					/// <para></para>
@@ -10070,6 +10128,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Taxonomy_ListingsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Taxonomy_Listings  {get; set;}
+								/// <summary>
+					/// The Footer Menu 1 Navigation field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 2ee1ba61-9842-4942-94ab-c1df8a97b1db</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Footer_Menu_1_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Footer_Menu_1_Navigation  {get; set;}
+								/// <summary>
+					/// The Footer Menu 2 Navigation field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 22b35b7a-ce40-4d68-84ba-738de2bcdba3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Footer_Menu_2_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Footer_Menu_2_Navigation  {get; set;}
 								/// <summary>
 					/// The Main Navigation field.
 					/// <para></para>
@@ -10497,15 +10573,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Menu_One_HeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Menu_One_Header  {get; set;}
 										/// <summary>
-						/// The Menu One Links field.
-						/// <para></para>
-						/// <para>Field Type: Treelist</para>		
-						/// <para>Field ID: abf9cd82-13d2-438a-af7e-02856b69e19a</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Menu_One_LinksFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Menu_One_Links  {get; set;}
-										/// <summary>
 						/// The Menu Two Header field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -10514,15 +10581,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Menu_Two_HeaderFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Menu_Two_Header  {get; set;}
-										/// <summary>
-						/// The Menu Two Links field.
-						/// <para></para>
-						/// <para>Field Type: Treelist</para>		
-						/// <para>Field ID: 575e0858-b583-4a04-b358-2afc3ea6ee9a</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Menu_Two_LinksFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Menu_Two_Links  {get; set;}
 										/// <summary>
 						/// The Purchase Link field.
 						/// <para></para>
@@ -10658,6 +10716,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Taxonomy_ListingsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Taxonomy_Listings  {get; set;}
+										/// <summary>
+						/// The Footer Menu 1 Navigation field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 2ee1ba61-9842-4942-94ab-c1df8a97b1db</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Footer_Menu_1_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Footer_Menu_1_Navigation  {get; set;}
+										/// <summary>
+						/// The Footer Menu 2 Navigation field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 22b35b7a-ce40-4d68-84ba-738de2bcdba3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Footer_Menu_2_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Footer_Menu_2_Navigation  {get; set;}
 										/// <summary>
 						/// The Main Navigation field.
 						/// <para></para>
@@ -11019,18 +11095,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Menu_One_LinksFieldId = new ID("abf9cd82-13d2-438a-af7e-02856b69e19a");
-			public const string Menu_One_LinksFieldName = "Menu One Links";
-
-						
-					
 			public static readonly ID Menu_Two_HeaderFieldId = new ID("3d4e2020-4a15-4b8e-a581-440107e91144");
 			public const string Menu_Two_HeaderFieldName = "Menu Two Header";
-
-						
-					
-			public static readonly ID Menu_Two_LinksFieldId = new ID("575e0858-b583-4a04-b358-2afc3ea6ee9a");
-			public const string Menu_Two_LinksFieldName = "Menu Two Links";
 
 						
 					
@@ -11114,6 +11180,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Taxonomy_ListingsFieldId = new ID("e4683c82-14a8-450d-880c-452d81981cae");
 			public const string Taxonomy_ListingsFieldName = "Taxonomy Listings";
+
+						
+					
+			public static readonly ID Footer_Menu_1_NavigationFieldId = new ID("2ee1ba61-9842-4942-94ab-c1df8a97b1db");
+			public const string Footer_Menu_1_NavigationFieldName = "Footer Menu 1 Navigation";
+
+						
+					
+			public static readonly ID Footer_Menu_2_NavigationFieldId = new ID("22b35b7a-ce40-4d68-84ba-738de2bcdba3");
+			public const string Footer_Menu_2_NavigationFieldName = "Footer Menu 2 Navigation";
 
 						
 					
@@ -14952,6 +15028,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.A
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Validation.Email
+{
+
+
+ 	/// <summary>
+	/// IRestricted_Email_Domain Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Objects/Validation/Email/Restricted Email Domain</para>	
+	/// <para>ID: d4664308-e642-42f4-8bbe-c4e09992874c</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRestricted_Email_DomainConstants.TemplateIdString)]
+	public partial interface IRestricted_Email_Domain : IGlassBase 
+	{
+								/// <summary>
+					/// The Restricted Domain field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 2bb2efdf-0ced-4863-ab0a-fba79ae8d289</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRestricted_Email_DomainConstants.Restricted_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Restricted_Domain  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IRestricted_Email_Domain Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Objects/Validation/Email/Restricted Email Domain</para>	
+		/// <para>ID: d4664308-e642-42f4-8bbe-c4e09992874c</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IRestricted_Email_Domain__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Restricted Domain field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 2bb2efdf-0ced-4863-ab0a-fba79ae8d289</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRestricted_Email_DomainConstants.Restricted_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Restricted_Domain  {get; set;}
+						}
+	
+	public static partial class IRestricted_Email_DomainConstants{
+
+			public const string TemplateIdString = "d4664308-e642-42f4-8bbe-c4e09992874c";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Restricted Email Domain";
+
+					
+			public static readonly ID Restricted_DomainFieldId = new ID("2bb2efdf-0ced-4863-ab0a-fba79ae8d289");
+			public const string Restricted_DomainFieldName = "Restricted Domain";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_Content
 {
 
@@ -15546,18 +15683,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Menu_One_LinksFieldId = new ID("abf9cd82-13d2-438a-af7e-02856b69e19a");
-			public const string Menu_One_LinksFieldName = "Menu One Links";
-
-						
-					
 			public static readonly ID Menu_Two_HeaderFieldId = new ID("3d4e2020-4a15-4b8e-a581-440107e91144");
 			public const string Menu_Two_HeaderFieldName = "Menu Two Header";
-
-						
-					
-			public static readonly ID Menu_Two_LinksFieldId = new ID("575e0858-b583-4a04-b358-2afc3ea6ee9a");
-			public const string Menu_Two_LinksFieldName = "Menu Two Links";
 
 						
 					
@@ -15641,6 +15768,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Taxonomy_ListingsFieldId = new ID("e4683c82-14a8-450d-880c-452d81981cae");
 			public const string Taxonomy_ListingsFieldName = "Taxonomy Listings";
+
+						
+					
+			public static readonly ID Footer_Menu_1_NavigationFieldId = new ID("2ee1ba61-9842-4942-94ab-c1df8a97b1db");
+			public const string Footer_Menu_1_NavigationFieldName = "Footer Menu 1 Navigation";
+
+						
+					
+			public static readonly ID Footer_Menu_2_NavigationFieldId = new ID("22b35b7a-ce40-4d68-84ba-738de2bcdba3");
+			public const string Footer_Menu_2_NavigationFieldName = "Footer Menu 2 Navigation";
 
 						
 					

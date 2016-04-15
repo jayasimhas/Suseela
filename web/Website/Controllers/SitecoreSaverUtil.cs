@@ -240,7 +240,7 @@ namespace Informa.Web.Controllers
 		{
 			using (new SecurityDisabler())
 			{
-
+				if (articleStruct.Title != null) newArticle.Title = articleStruct.Title;
 				if (articleStruct.Subtitle != null) newArticle.Sub_Title = articleStruct.Subtitle;
 				if (articleStruct.Summary != null) newArticle.Summary = articleStruct.Summary;
 				if (!originalArticle.IsPublished || articleStruct.WebPublicationDate != originalArticle.Planned_Publish_Date)

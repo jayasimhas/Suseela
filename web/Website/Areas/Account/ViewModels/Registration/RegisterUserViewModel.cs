@@ -58,6 +58,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 		public string NewsletterSignUpText => GlassModel?.Newsletter_Sign_Up_Text;
 		public string RequiredErrorText => TextTranslator.Translate("Registration.RequiredError");
 		public string UsernameRequirementsErrorText => TextTranslator.Translate("Registration.UsernameRequirementsError");
+		public string UsernamePublicRestrictedDomainErrorText => TextTranslator.Translate("Registration.UsernameRestrictedPublicDomainError");
+		public string UsernameCompetitorRestrictedDomainErrorText => TextTranslator.Translate("Registration.UsernameRestrictedCompetitorDomainError");
 		public string UsernameExistsErrorText => TextTranslator.Translate("Registration.UsernameExistsError");
 		public string PasswordMismatchErrorText => TextTranslator.Translate("Registration.PasswordMismatchError");
 		public string PasswordRequirementsErrorText => TextTranslator.Translate("Registration.PasswordRequirementsError");

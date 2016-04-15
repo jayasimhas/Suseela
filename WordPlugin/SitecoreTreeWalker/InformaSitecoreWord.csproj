@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--
@@ -35,7 +35,7 @@
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl>http://dev.ibi.velir.com/wordinstaller/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>2.16.4.9</ApplicationVersion>
+    <ApplicationVersion>2.16.4.12</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -465,7 +465,6 @@
     <Compile Include="Util\CharacterStyles\SubscriptStyle.cs" />
     <Compile Include="Util\CharacterStyles\SuperscriptStyle.cs" />
     <Compile Include="Util\CharacterStyles\UnderlineStyle.cs" />
-    <Compile Include="Util\Document\ArticleDocumentManager.cs" />
     <Compile Include="Util\Document\ArticleDocumentMetadataParser.cs" />
     <Compile Include="Util\Document\ArticleDocumentValidator.cs" />
     <Compile Include="Util\Document\DocumentAndParagraphStyles.cs" />
@@ -583,7 +582,9 @@
     <EmbeddedResource Include="UI\TreeBrowser\TreeBrowserControls\SupportingDocumentsControl.resx">
       <DependentUpon>SupportingDocumentsControl.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="InformaSitecoreWord_TemporaryKey.pfx" />
     <None Include="packages.config">

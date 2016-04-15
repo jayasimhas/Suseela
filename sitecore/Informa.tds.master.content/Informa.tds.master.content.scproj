@@ -69,6 +69,7 @@
     <SitecoreItem Include="sitecore\content.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
@@ -1603,22 +1604,6 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Content Types.item">
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Content Types\Analysis.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Content Types\News.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Content Types\Opinion.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Copyright Statement.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
@@ -2543,6 +2528,14 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Global Dictionary\Registration\Username Restricted Competitor Domain Error.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Global Dictionary\Registration\Username Restricted Public Domain Error.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Global Dictionary\Robots Cache Minutes.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
@@ -2723,31 +2716,119 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Legacy Publications.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Legacy Publications\Scrip.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Media Type Icons.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Media Type Icons\Audio.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Media Type Icons\Data.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Media Type Icons\Video.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\NLM Configuration.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Content Types.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Content Types\Analysis.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Content Types\News.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Content Types\Opinion.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Blood Disorders.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Cancer.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Cardiology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Dermatology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Gastroenterology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Gynecology  Urology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Immunology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Metabolic.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Neurology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Ophthalmology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Orthopedics.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Respiratory.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Device Market Area\Wound Management.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Legacy Publications.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Legacy Publications\Scrip.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Media Type Icons.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Media Type Icons\Audio.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Media Type Icons\Data.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Publication Taxonomy\Media Type Icons\Video.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Restricted Email Domains.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Restricted Email Domains\Competitor.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Restricted Email Domains\Public.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
@@ -6179,687 +6260,715 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Afghanistan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Albania.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Angola.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Andorra.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Benin.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Angola.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Botswana.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Anguilla.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Burkina Faso.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Antigua And Barbuda.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Burundi.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Argentina.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Cameroon.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Armenia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Cape Verde.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Australia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Central African Republic.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Austria.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Chad.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Azerbaijan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Cote Divoire.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Bahrain.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Djibouti.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Bangladesh.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Equatorial Guinea.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Barbados.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Eritrea.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Belarus.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Ethiopia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Belgium.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Gabon.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Belize.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Gambia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Benin.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Ghana.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Bermuda.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Guinea.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Bhutan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\GuineaBissau.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Bolivia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Kenya.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Bosnia And Herzegovina.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Lesotho.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Botswana.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Liberia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Brazil.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Madagascar.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Brunei Darussalam.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Malawi.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Bulgaria.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Mali.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Burkina Faso.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Mauritius.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Burundi.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Mozambique.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Cambodia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Namibia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Cameroon.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Niger.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Canada.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Nigeria.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Cape Verde.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Rwanda.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Cayman Islands.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Senegal.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Central African Republic.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Sierra Leone.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Chad.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Somalia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Chile.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\South Africa.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\China.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Sudan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Colombia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Swaziland.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Costa Rica.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Tanzania.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Cote Divoire.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Togo.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Croatia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Uganda.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Cuba.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Zambia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Cyprus.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Africa\Zimbabwe.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Czech Republic.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Denmark.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Afghanistan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Djibouti.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Australia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Dominica.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Bangladesh.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Dominican Republic.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Bhutan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Ecuador.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Brunei Darussalam.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\El Salvador.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Cambodia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Equatorial Guinea.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\China.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Eritrea.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Fiji.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Estonia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Hong Kong.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Ethiopia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\India.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Fiji.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Indonesia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Finland.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Japan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\France.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Kiribati.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Gabon.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Kyrgyzstan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Gambia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Laos.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Georgia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Malaysia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Germany.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Maldives.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Ghana.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Mongolia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Greece.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Myanmar.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Guatemala.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Nepal.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Guinea.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\New Zealand.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\GuineaBissau.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Pakistan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Guyana.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Papua New Guinea.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Haiti.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Philippines.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Honduras.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Samoa.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Hong Kong.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Singapore.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Hungary.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\South Korea.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Iceland.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Sri Lanka.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\India.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Taiwan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Indonesia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Tajikistan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Iran.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Thailand.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Iraq.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\TimorLeste.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Ireland.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Tonga.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Israel.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Turkmenistan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Italy.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Uzbekistan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Jamaica.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Asia Pacific\Viet Nam.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Japan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Jordan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Albania.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Kazakhstan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Andorra.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Kenya.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Armenia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Kiribati.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Austria.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Kuwait.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Azerbaijan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Kyrgyzstan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Belarus.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Laos.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Belgium.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Latvia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Bosnia And Herzegovina.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Lebanon.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Bulgaria.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Lesotho.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Croatia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Liberia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Cyprus.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Liechtenstein.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Czech Republic.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Lithuania.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Denmark.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Luxembourg.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Estonia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Madagascar.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Finland.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Malawi.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\France.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Malaysia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Georgia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Maldives.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Germany.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Mali.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Greece.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Malta.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Hungary.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Mauritius.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Iceland.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Mexico.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Ireland.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Moldova.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Italy.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Mongolia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Kazakhstan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Montenegro.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Latvia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Mozambique.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Liechtenstein.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Myanmar.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Lithuania.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Namibia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Luxembourg.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Nepal.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Malta.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Netherlands.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Moldova.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\New Zealand.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Montenegro.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Nicaragua.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Netherlands.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Niger.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Norway.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Nigeria.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Poland.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Norway.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Portugal.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Oman.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Romania.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Pakistan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Russian Federation.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Panama.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Serbia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Papua New Guinea.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Slovakia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Paraguay.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Slovenia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Peru.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Spain.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Philippines.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Sweden.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Poland.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Switzerland.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Portugal.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Turkey.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Puerto Rico.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\Ukraine.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Qatar.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Europe\United Kingdom.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Romania.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Latin America.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Russian Federation.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Rwanda.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\Bahrain.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Samoa.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\Iran.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Saudi Arabia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\Iraq.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Senegal.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\Israel.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Serbia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\Jordan.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Sierra Leone.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\Kuwait.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Singapore.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\Lebanon.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Slovakia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\Oman.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Slovenia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\Qatar.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Somalia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\Saudi Arabia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South Africa.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\Syria.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South Korea.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\United Arab Emirates.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Spain.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Middle East\Yemen.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Sri Lanka.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Sudan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Anguilla.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Suriname.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Antigua And Barbuda.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Swaziland.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Barbados.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Sweden.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Belize.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Switzerland.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Bermuda.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Syria.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Canada.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Taiwan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Cayman Islands.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Tajikistan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Costa Rica.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Tanzania.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Cuba.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Thailand.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Dominica.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\TimorLeste.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Dominican Republic.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Togo.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\El Salvador.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Tonga.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Guatemala.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Trinidad And Tobago.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Haiti.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Turkey.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Honduras.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Turkmenistan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Jamaica.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Uganda.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Mexico.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Ukraine.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Nicaragua.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\United Arab Emirates.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Panama.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\United Kingdom.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Puerto Rico.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\United States.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\Trinidad And Tobago.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Uruguay.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\North America\United States.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Uzbekistan.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Venezuela.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America\Argentina.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Viet Nam.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America\Bolivia.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Yemen.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America\Brazil.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Zambia.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America\Chile.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\Zimbabwe.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America\Colombia.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America\Ecuador.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America\Guyana.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America\Paraguay.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America\Peru.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America\Suriname.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America\Uruguay.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Regions\South America\Venezuela.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
@@ -6871,7 +6980,43 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Advertising Promotion  Regulation.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Advisory Committees.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Antitrust Regulation.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Approvals.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Bioterrorism.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Blood Products.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Business Models.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Business Strategies.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Clinical Development  Trials.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Clinical Trial Regulation.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
@@ -6887,11 +7032,99 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Comparative Effectiveness.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Cost Effectiveness.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Deals.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Discovery.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Distribution.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Drug Approval Standards.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Drug Device Convergence.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Emerging Markets.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Enforcement.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Epidemiology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Financial Strategies.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Formularies.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Government Payors.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Health Care Statistics.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Incubators.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Innovation.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Intellectual Property.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Legal Issues.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Legislation.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Life Cycle Management.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Managed Markets.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Management Issues.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Manufacturing Quality.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Manufacturing.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
@@ -6903,7 +7136,39 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Marketing  Sales.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Markets.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Medicaid.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Medicare.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Nanotechnology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Patent Litigation.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Personalized Medicine.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Pharmacy Benefit Management.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Platform Technologies.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
@@ -6911,7 +7176,59 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Post Market Regulation.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Post Marketing Studies.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\PostMarketing.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Pre Market Regulation.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Preclinical Through Proof Of Concept.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Prescription To Otc Switch.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Pricing Strategies.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Private Payors.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Product Approvals.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Product Launch.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Product Recalls.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Product Safety.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Proof Of Concept Through Filing.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Regenerative Medicine.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
@@ -6919,7 +7236,35 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Regulatory.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Reimbursement.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Research  Development Strategies.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Risk Management.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Securities Regulation.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Social Media.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Strategy.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Subjects\Surgical Procedures.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
@@ -6980,6 +7325,10 @@
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Therapy Areas\Inflammation.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Therapy Areas\Liver  Hepatic.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
@@ -7064,6 +7413,12 @@
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Footer Menu 1.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Footer Menu 2.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Globals\Navigation\Side Nav Menu.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
@@ -7127,6 +7482,7 @@
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Articles.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\cookie policy.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
@@ -7273,16 +7629,53 @@
     <SitecoreItem Include="sitecore\system.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
-      <DeployAlwaysFields>
-      </DeployAlwaysFields>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Workflows.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Workflows\Redirect Workflow.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Workflows\Redirect Workflow\Approved.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Workflows\Redirect Workflow\Awaiting Approval.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Workflows\Redirect Workflow\Awaiting Approval\Approve.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Workflows\Redirect Workflow\Awaiting Approval\Reject.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Workflows\Redirect Workflow\Draft.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Workflows\Redirect Workflow\Draft\Fast Track.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Workflows\Redirect Workflow\Draft\Submit.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Workflows\Redirect Workflow\Draft\Submit\Validation Action.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Workflows\Scrip Workflow.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Workflows\Scrip Workflow\Authoring.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
@@ -7307,6 +7700,7 @@
     <SitecoreItem Include="sitecore\system\Workflows\Scrip Workflow\Awaiting Sign Off\Sign Off.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Workflows\Scrip Workflow\Edited After Publish.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
@@ -7347,6 +7741,7 @@
     <SitecoreItem Include="sitecore\system\Workflows\Scrip Workflow\Second Read\Sign Off.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <DeployAlwaysFields>__Security|</DeployAlwaysFields>
     </SitecoreItem>
   </ItemGroup>
   <ItemGroup>
