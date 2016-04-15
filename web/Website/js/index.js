@@ -165,7 +165,7 @@ $(document).ready(function() {
     $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
 
         var searchKeyword = $('.header-search__field').val(); 
-        if(searchKeyword === "" || searchKeyword !== undefined || searchKeyword !=null)
+        if(searchKeyword === "" && searchKeyword !== undefined && searchKeyword !=null)
         {
             searchKeyword = ('.search-bar__field').val();
         }
