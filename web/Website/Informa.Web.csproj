@@ -787,7 +787,6 @@
     <Compile Include="ViewModels\ICompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\IIndividualRenewalMessageViewModel.cs" />
     <Compile Include="ViewModels\IndividualRenewalMessageViewModel.cs" />
-    <Compile Include="ViewModels\ISearchModel.cs" />
     <Compile Include="ViewModels\NewsletterSignUpModel.cs" />
     <Compile Include="ViewModels\RobotsTextViewModel.cs" />
     <Compile Include="ViewModels\CallToActionViewModel.cs" />

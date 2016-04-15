@@ -253,8 +253,7 @@
                 </li>
             </ul>
           </fieldset>
-
-
+            
           @* * * * *
           FACETS - DYNAMIC
           * * * * *@
@@ -264,18 +263,21 @@
                 <legend class="facets__legend facets__section-header">
                     <h4>{{ ::group.label }}</h4>
                     <button
-                      class="facets__button facets__button--toggle-section"
-                      ng-model="collapsefacet"
-                      ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
-                      ng-class="{'collapsed': isCollapsed}">
+                        class="facets__button facets__button--toggle-section"
+                        ng-model="collapsefacet"
+                        ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
+                        ng-class="{'collapsed': isCollapsed}">
                         <svg>
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
                         </svg>
                     </button>
                 </legend>
-                <p ng-if="group.id === 'publication'">
-                    <button class="facets__button">Select My Subscriptions</button>
-                </p>
+                @if (Model.IsLoggedIn && Model.Subcriptions.Any())
+                {
+                    <p ng-if="group.id === 'publication'">
+                        <button class="facets__button" ng-click="facetController.facetChangeMultiple(group.id, [@string.Join(", ", Model.Subcriptions.Select(s => string.Format("'{0}'", s)))])">@Model.SearchSelectMySubscriptionsText</button>
+                    </p>
+                }
                 <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
                     <ul class="facets__section-list" ng-if="($index < facetController.MaxFacetShow) || group.ShowMore">
                     <li>

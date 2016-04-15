@@ -101,6 +101,21 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         vm.update();
     };
 
+    vm.facetChangeMultiple = function(facetGroupId, facetIds) {
+        var facets = vm.searchService.getFacetGroup(facetGroupId).getSelectedFacets();
+        _.each(facets, function (facet) {
+            facet.selected = false;
+        });
+
+        vm.update();
+
+        _.each(facetIds, function(id) {
+            vm.searchService.getFacet(id).selected = true;
+        });
+
+        vm.update();
+    }
+
     // TODO: this comes from a diff search app, and needs jquery to work.
     //       either hook up jq to this controller or move this elsewhere
     vm.scrollTop = function() {
