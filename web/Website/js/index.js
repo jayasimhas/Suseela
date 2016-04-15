@@ -380,7 +380,7 @@ $(document).ready(function() {
         $('.js-menu-toggle-button').on('click', function toggleMenu(e) {
             $('.main-menu').hasClass('is-active') ? hideMenu() : showMenu();
             e.preventDefault();
-            e.stopPropazgation();
+            e.stopPropagation();
         });
 
         /*  If the menu is closed, let any clicks on the menu element open

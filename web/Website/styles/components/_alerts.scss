@@ -1,6 +1,6 @@
 /*---
-title: Alerts
-section: UI Elements
+title: Success Alert
+section: Alerts
 ---
 
 ```example:html
@@ -32,6 +32,21 @@ section: UI Elements
         @include svg-fill($color-lime-green);
     }
 }
+
+/*---
+title: Error Alert
+section: Alerts
+---
+
+```example:html
+<div class="alert-error" style="display: block !important;">
+    <svg class="alert__icon">
+        <use xlink:href="svg-sprite.svg#alert"></use>
+    </svg>
+    <p>Uh oh, something didn't work. Please try again.</p>
+</div>
+```
+*/
 
 .alert-error {
     background-color: $color-misty-pink;
