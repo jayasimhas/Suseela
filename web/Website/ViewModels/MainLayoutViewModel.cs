@@ -19,10 +19,11 @@ using Informa.Library.Subscription.User;
 using Informa.Library.User.Profile;
 using System.Text;
 using System.Linq;
+using Informa.Library.User;
 
 namespace Informa.Web.ViewModels
 {
-	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
+	public class MainLayoutViewModel : GlassViewModel<I___BasePage>, IEntitledProductItem
 	{
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IUserCompanyNameContext UserCompanyContext;
@@ -36,7 +37,8 @@ namespace Informa.Web.ViewModels
 		protected readonly IEntitlementAccessLevelContext EntitlementAccessLevelContext;
 		protected readonly IUserSubscriptionsContext UserSubscriptionsContext;
 		protected readonly IUserEntitlementsContext UserEntitlementsContext;
-
+		protected readonly IUserIpAddressContext UserIpAddressContext;
+		protected readonly IEntitledProductContext EntitledProductContext;
 		public MainLayoutViewModel(
 			ISiteRootContext siteRootContext,
 			IMaintenanceViewModel maintenanceViewModel,
@@ -61,7 +63,9 @@ namespace Informa.Web.ViewModels
 			IUserProfileContext userProfileContext,
 			IEntitlementAccessLevelContext entitlementAccessLevelContext,
 			IUserSubscriptionsContext userSubscriptionsContext,
-			IUserEntitlementsContext userEntitlementsContext)
+			IUserEntitlementsContext userEntitlementsContext,
+			IUserIpAddressContext userIpAddressContext,
+			IEntitledProductContext entitledProductContext)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -87,6 +91,8 @@ namespace Informa.Web.ViewModels
 			EntitlementAccessLevelContext = entitlementAccessLevelContext;
 			UserSubscriptionsContext = userSubscriptionsContext;
 			UserEntitlementsContext = userEntitlementsContext;
+			UserIpAddressContext = userIpAddressContext;
+			EntitledProductContext = entitledProductContext;
 		}
 
 		public readonly IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
@@ -259,9 +265,34 @@ namespace Informa.Web.ViewModels
 		public string UserIndustry => UserProfileContext.Profile?.JobIndustry ?? string.Empty;
 		public string UserEmail => UserProfileContext.Profile?.Email ?? string.Empty;
 		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
+
+		public string UserIp => UserIpAddressContext.IpAddress.ToString();
 		public string GetArticleTaxonomy(Guid itemId)
 		{
 			return Article != null ? ArticleSearch.GetArticleTaxonomies(Article._Id, itemId) : string.Empty;
 		}
+		public string Article_Entitlement => GetArticleEntitlements();
+		
+		public bool IsFree
+		{
+			get
+			{
+				return Article.IsFree;
+			}
+		}
+
+		public string GetArticleEntitlements()
+		{
+			if (IsFree)
+			{
+				return "Free View";
+			}
+			else if (EntitledProductContext.IsEntitled(this))
+			{
+				return "Entitled Full View";
+			}
+			return "Unentitled Abstract View";
+		}
+
 	}
 }
