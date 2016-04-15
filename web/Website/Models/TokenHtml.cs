@@ -72,7 +72,7 @@ namespace Informa.Web.Models
 					var article = results.Articles.FirstOrDefault();
 					if (article != null)
 					{
-						var articleText = $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("MMM. d, yyyy") : "")}.)";
+						var articleText = $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
 						replace = new HtmlString(articleText);
 					}
 				}
