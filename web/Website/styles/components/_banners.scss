@@ -1,27 +1,3 @@
-/*---
-title: Banners
-section: UI Elements
----
-Multiple banner styles.
-
-```example:html
-<div class="banner banner--maintenance is-visible">
-	<div class="banner__wrapper">
-		<div class="dismiss-button js-dismiss-banner">
-			<span>Dismiss</span>
-			<svg class="dismiss-button__icon">
-				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#x"></use>
-			</svg>
-		</div>
-		<svg class="banner__lead-icon">
-			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#tool-maintenance"></use>
-		</svg>
-		Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.
-	</div>
-</div>
-```
-*/
-
 .banner {
 	margin-bottom: 2rem;
 
@@ -60,6 +36,29 @@ Multiple banner styles.
 			order: 2;
 		}
 	}
+
+	/*---
+	title: Maintenance Banner
+	section: Banners
+	---
+
+	```example:html
+	<div class="banner banner--maintenance is-visible">
+		<div class="banner__wrapper">
+			<div class="dismiss-button js-dismiss-banner">
+				<span>Dismiss</span>
+				<svg class="dismiss-button__icon">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#x"></use>
+				</svg>
+			</div>
+			<svg class="banner__lead-icon">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#tool-maintenance"></use>
+			</svg>
+			<span>Our site will be undergoing system maintenance on Saturday 1—3 am EST, we apologize for any inconvenience.</span>
+		</div>
+	</div>
+	```
+	*/
 
 	&--maintenance,
 	&--cookie-policy {
@@ -129,6 +128,31 @@ Multiple banner styles.
 			}
 		}
 	}
+
+	/*---
+	title: Alert Banner
+	section: Banners
+	---
+
+	```example:html
+	<div class="banner banner--alert is-visible">
+		<div class="banner__wrapper">
+			<svg class="banner__lead-icon">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#alert"></use>
+			</svg>
+			<span>Name, we could not send the verification email to the address provided.</span>
+		</div>
+	</div>
+	```
+	*/
+	&--alert {
+		background-color: $color-butterscotch-orange;
+
+		span {
+			color: $color-zeus-black;
+		}
+	}
+
 	&--cookie-policy {
 		margin-bottom: 0;
 	}

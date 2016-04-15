@@ -4,17 +4,17 @@ section: Article Components
 ---
 
 ```example:html
-<div class="sidebox">
-  <p class="quickfactstitle">Quick Facts Title</p>
-  <p class="quickfactstext">Quick Facts Text</p>
-  <ul class="quickfactsbulleted">
+<div class="quick-facts">
+  <p class="quick-facts__header">Quick Facts Title</p>
+  <p>Quick Facts Text</p>
+  <ul class="quick-facts__list--ul">
       <li>Quick text bullets</li>
   </ul>
 
-  <ol class="quickfactsnumbered">
-      <li>Quic facts numbered</li>
+  <ol class="quick-facts__list--ol">
+      <li>Quick facts numbered</li>
   </ol>
-  <p class="quickfactssource">Quick Facts Source</p>
+  <p class="quick-facts__source">Quick Facts Source</p>
 </div>
 ```
 */

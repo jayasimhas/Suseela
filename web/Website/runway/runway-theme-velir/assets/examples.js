@@ -102,8 +102,6 @@ examples.lang = {
 			return '<script src="' + js + '"></script>';
 		}).join('');
 
-		html += '<style>.iframe-wrapper { height: 100%; }</style>';
-
 		idoc.write(html);
 
 		idoc.close();
@@ -116,7 +114,7 @@ examples.lang = {
 			idoc.body.setAttribute('style', resetStyles);
 		}
 
-		idoc.body.innerHTML = '<div class="iframe-wrapper">' + idoc.body.innerHTML + '<div style="clear: both;"></div></div>';
+		idoc.body.innerHTML = '<div class="iframe-wrapper" contenteditable spellcheck="false">' + idoc.body.innerHTML + '<div style="clear: both;"></div></div>';
 
 		if (conf.width) style.width = String(conf.width);
 
@@ -138,6 +136,6 @@ examples.lang = {
 
 		resize();
 
-		setInterval(resize, 334);
+		setInterval(resize, 1000);
 	}
 };
