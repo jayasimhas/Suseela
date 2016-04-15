@@ -167,7 +167,7 @@ $(document).ready(function() {
         var searchKeyword = $('.header-search__field').val(); 
         if((searchKeyword === "" || searchKeyword === undefined || searchKeyword === null) && (('.search-bar__field').length))
         {
-            searchKeyword = ('.search-bar__field').val();
+            searchKeyword = $('.search-bar__field').val();
         }
         var eventDetails = {
             event_name: "search",
