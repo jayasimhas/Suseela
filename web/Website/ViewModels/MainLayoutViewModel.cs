@@ -19,13 +19,14 @@ using Informa.Library.Subscription.User;
 using Informa.Library.User.Profile;
 using System.Text;
 using System.Linq;
+using Informa.Library.User;
 
 namespace Informa.Web.ViewModels
 {
-	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
+	public class MainLayoutViewModel : GlassViewModel<I___BasePage>, IEntitledProductItem
 	{
 		protected readonly ISiteRootContext SiteRootContext;
-		protected readonly IUserCompanyNameContext UserCompanyContext;
+		public readonly IUserCompanyContext UserCompanyContext;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteSettings SiteSettings;
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
@@ -36,6 +37,8 @@ namespace Informa.Web.ViewModels
 		protected readonly IEntitlementAccessLevelContext EntitlementAccessLevelContext;
 		protected readonly IUserSubscriptionsContext UserSubscriptionsContext;
 		protected readonly IUserEntitlementsContext UserEntitlementsContext;
+		protected readonly IUserIpAddressContext UserIpAddressContext;
+		protected readonly IEntitledProductContext EntitledProductContext;
 
 		public MainLayoutViewModel(
 			ISiteRootContext siteRootContext,
@@ -57,11 +60,13 @@ namespace Informa.Web.ViewModels
 			IArticleSearch articleSearch,
 			IItemReferences itemReferences,
 			ITextTranslator textTranslator,
-			IUserCompanyNameContext userCompanyContext,
+		    IUserCompanyContext userCompanyContext,
 			IUserProfileContext userProfileContext,
 			IEntitlementAccessLevelContext entitlementAccessLevelContext,
 			IUserSubscriptionsContext userSubscriptionsContext,
-			IUserEntitlementsContext userEntitlementsContext)
+			IUserEntitlementsContext userEntitlementsContext,
+			IUserIpAddressContext userIpAddressContext,
+			IEntitledProductContext entitledProductContext)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -87,6 +92,8 @@ namespace Informa.Web.ViewModels
 			EntitlementAccessLevelContext = entitlementAccessLevelContext;
 			UserSubscriptionsContext = userSubscriptionsContext;
 			UserEntitlementsContext = userEntitlementsContext;
+			UserIpAddressContext = userIpAddressContext;
+			EntitledProductContext = entitledProductContext;
 		}
 
 		public readonly IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
@@ -107,7 +114,7 @@ namespace Informa.Web.ViewModels
 		public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
 		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
 		public string UserName => AuthenticatedUserContext.User.Name;
-		public string CorporateName => UserCompanyContext.Name;
+		public string CorporateName => UserCompanyContext?.Company?.Name;
 		public string Title
 		{
 			get
@@ -173,7 +180,6 @@ namespace Informa.Web.ViewModels
 		public string ArticleRegions => GetArticleTaxonomy(ItemReferences.RegionsTaxonomyFolder);
 		public string ArticleSubject => GetArticleTaxonomy(ItemReferences.SubjectsTaxonomyFolder);
 		public string ArticleTherapy => GetArticleTaxonomy(ItemReferences.TherapyAreasTaxonomyFolder);
-		public bool IsArticleFree => Article?.Free_Article ?? false;
 		public string UserEntitlements
 		{
 			get
@@ -254,14 +260,39 @@ namespace Informa.Web.ViewModels
 				return string.Empty;
 			}
 		}
-		public string UserCompany => UserCompanyContext.Name;
-		public string CompanyId => UserCompanyContext.CompanyId;
+		public string UserCompany => UserCompanyContext?.Company?.Name;
+		public string CompanyId => UserCompanyContext?.Company?.Id;
 		public string UserIndustry => UserProfileContext.Profile?.JobIndustry ?? string.Empty;
 		public string UserEmail => UserProfileContext.Profile?.Email ?? string.Empty;
 		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
+
+		public string UserIp => UserIpAddressContext.IpAddress.ToString();
 		public string GetArticleTaxonomy(Guid itemId)
 		{
 			return Article != null ? ArticleSearch.GetArticleTaxonomies(Article._Id, itemId) : string.Empty;
 		}
+		public string Article_Entitlement => GetArticleEntitlements();
+
+		public bool IsFree
+		{
+			get
+			{
+				return Article?.Free_Article ?? false;
+			}
+		}
+
+		public string GetArticleEntitlements()
+		{
+			if (IsFree)
+			{
+				return "Free View";
+			}
+			else if (EntitledProductContext.IsEntitled(this))
+			{
+				return "Entitled Full View";
+			}
+			return "Unentitled Abstract View";
+		}
+
 	}
 }
