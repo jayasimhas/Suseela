@@ -12,10 +12,10 @@ namespace Informa.Library.Search.ComputedFields.Facets
 		{
 			if (indexItem?.Taxonomies != null)
 			{
-				var subjectTaxonomyItems = indexItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsAreaTaxonomy(x._Path));
+				var areaTaxonomyItems = indexItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsAreaTaxonomy(x._Path));
 
-				return subjectTaxonomyItems.Where(x => !string.IsNullOrEmpty(x.Item_Name)).Select(x => x.Item_Name.Trim()).ToList();
-			}
+                return SearchTaxonomyUtil.GetHierarchicalFacetFieldValue(areaTaxonomyItems);
+            }
 			return new List<string>();
 		}
 	}

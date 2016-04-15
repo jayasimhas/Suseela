@@ -271,6 +271,10 @@
     <Reference Include="Sitecore.ContentSearch.SolrProvider.AutoFacIntegration">
       <HintPath>..\..\lib\Sitecore\Solr\Sitecore.ContentSearch.SolrProvider.AutoFacIntegration.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentTesting, Version=8.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.HtmlCache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.HtmlCache\Sitecore.HtmlCache.dll</HintPath>
@@ -731,6 +735,7 @@
     <Compile Include="Controllers\WorkFlowUtil.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
+    <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -904,6 +909,7 @@
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
+    <Content Include="dist\js\index.js" />
     <Content Include="email\EditAfterPublishEmail.html" />
     <Content Include="email\EmailFriendSearchAuthor.html" />
     <Content Include="email\EmailFriendSearchRow.html" />
@@ -1165,7 +1171,9 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
-    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template" />
+    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\UserDefined\Publishing.config">
       <SubType>Designer</SubType>
     </Content>
