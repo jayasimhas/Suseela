@@ -26,7 +26,7 @@ namespace Informa.Web.ViewModels
 	public class MainLayoutViewModel : GlassViewModel<I___BasePage>, IEntitledProductItem
 	{
 		protected readonly ISiteRootContext SiteRootContext;
-		protected readonly IUserCompanyNameContext UserCompanyContext;
+		public readonly IUserCompanyContext UserCompanyContext;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteSettings SiteSettings;
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
@@ -39,6 +39,7 @@ namespace Informa.Web.ViewModels
 		protected readonly IUserEntitlementsContext UserEntitlementsContext;
 		protected readonly IUserIpAddressContext UserIpAddressContext;
 		protected readonly IEntitledProductContext EntitledProductContext;
+
 		public MainLayoutViewModel(
 			ISiteRootContext siteRootContext,
 			IMaintenanceViewModel maintenanceViewModel,
@@ -59,7 +60,7 @@ namespace Informa.Web.ViewModels
 			IArticleSearch articleSearch,
 			IItemReferences itemReferences,
 			ITextTranslator textTranslator,
-			IUserCompanyNameContext userCompanyContext,
+		    IUserCompanyContext userCompanyContext,
 			IUserProfileContext userProfileContext,
 			IEntitlementAccessLevelContext entitlementAccessLevelContext,
 			IUserSubscriptionsContext userSubscriptionsContext,
@@ -113,7 +114,7 @@ namespace Informa.Web.ViewModels
 		public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
 		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
 		public string UserName => AuthenticatedUserContext.User.Name;
-		public string CorporateName => UserCompanyContext.Name;
+		public string CorporateName => UserCompanyContext?.Company?.Name;
 		public string Title
 		{
 			get
@@ -259,8 +260,8 @@ namespace Informa.Web.ViewModels
 				return string.Empty;
 			}
 		}
-		public string UserCompany => UserCompanyContext.Name;
-		public string CompanyId => UserCompanyContext.CompanyId;
+		public string UserCompany => UserCompanyContext?.Company?.Name;
+		public string CompanyId => UserCompanyContext?.Company?.Id;
 		public string UserIndustry => UserProfileContext.Profile?.JobIndustry ?? string.Empty;
 		public string UserEmail => UserProfileContext.Profile?.Email ?? string.Empty;
 		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
@@ -271,7 +272,7 @@ namespace Informa.Web.ViewModels
 			return Article != null ? ArticleSearch.GetArticleTaxonomies(Article._Id, itemId) : string.Empty;
 		}
 		public string Article_Entitlement => GetArticleEntitlements();
-		
+
 		public bool IsFree
 		{
 			get
