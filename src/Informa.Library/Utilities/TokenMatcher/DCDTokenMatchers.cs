@@ -122,7 +122,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 					{
 						var articleText =
 							$" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, " +
-							$"{(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("MMM. d, yyyy") : "")}.)";
+							$"{(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
 						return articleText;
 					}
 				}
