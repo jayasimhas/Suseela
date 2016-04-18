@@ -160,7 +160,8 @@ But you can also use "patch:attribute" for clarity:
       <!--<setting name="Analytics.HostName">
         <patch:attribute name="value">[CHANGEME]</patch:attribute>
       </setting>-->
-
+		<setting name="ContentTesting.AutomaticContentTesting.Enabled" value="false" />
+		<setting name="Xdb.Enabled" value="false" />
       <!--  REQUIRE LOCK BEFORE EDITING
             If true, the user must have a lock on a document before
             he can edit it, otherwise it is always ready for editing
