@@ -11,8 +11,11 @@ namespace Informa.Library.Search.Utilities
 	{
 		public static string GetTruncatedSearchSummary(string summaryText)
 		{
+			//Replacing the summary text with company and deals token
+			var companyReplacedSummary = DCDTokenMatchers.ProcessDCDTokens(summaryText);
+
 			//Replace any article tokens with a placeholder
-			var processedTextAndArticleTokens = ArticleTokenProcessingStart(summaryText);
+			var processedTextAndArticleTokens = ArticleTokenProcessingStart(companyReplacedSummary);
 
 			//Strip any HTML from the summary
 			var processedText = HtmlUtil.StripHtml(processedTextAndArticleTokens.Item1);
@@ -22,9 +25,6 @@ namespace Informa.Library.Search.Utilities
 
 			//Replace the placholder tokens with the real article tokens
 			processedText = ArticleTokenProcessingEnd(processedText, processedTextAndArticleTokens.Item2);
-
-			//Replacing the summary text with company and deals token
-			processedText = DCDTokenMatchers.ProcessDCDTokens(processedText);
 
 			return processedText;
 		}

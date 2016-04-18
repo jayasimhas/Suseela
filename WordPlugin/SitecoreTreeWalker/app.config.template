@@ -30,7 +30,7 @@
 		<add key="DevelopmentForgotPasswordLink" value="${DevelopmentForgotPasswordLink}" />
 	 	<add key="StageForgotPasswordLink" value="${StageForgotPasswordLink}" />
     	<add key="ProductionForgotPasswordLink" value="${ProductionForgotPasswordLink}" />
-    <add key="RemoteTimezoneToConvertTo" value="Greenwich Standard Time"/>
+    <add key="RemoteTimezoneToConvertTo" value="Eastern Standard Time"/>
 	</appSettings>
 	<applicationSettings>
 	</applicationSettings>

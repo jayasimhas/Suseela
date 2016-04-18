@@ -93,10 +93,16 @@ namespace Informa.Library.Salesforce
                 return Execute(functionExpression);
 			}
 
-            if(!result.IsSuccess())
-                ErrorLogger.Log($"Request Failed: {result.errors[0]}", null);
+		    if (!result.IsSuccess())
+		    {
+		        foreach (var error in result.errors)
+		        {
+		            ErrorLogger.Log($"Request Failed: {error?.message}", null);
+		        }
 
-			return result;
+		    }
+
+		    return result;
 		}
 
 		public bool HasSession => !string.IsNullOrWhiteSpace(Service.SessionHeaderValue.sessionId);

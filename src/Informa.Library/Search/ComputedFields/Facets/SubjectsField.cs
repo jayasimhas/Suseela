@@ -14,8 +14,8 @@ namespace Informa.Library.Search.ComputedFields.Facets
 			{
 				var subjectTaxonomyItems = indexItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsSubjectTaxonomy(x._Path));
 
-				return subjectTaxonomyItems.Where(x => !string.IsNullOrEmpty(x.Item_Name)).Select(x => x.Item_Name.Trim()).ToList();
-			}
+                return SearchTaxonomyUtil.GetHierarchicalFacetFieldValue(subjectTaxonomyItems);
+            }
 			return new List<string>();
 		}
 	}

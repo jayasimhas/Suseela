@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Text;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Sitecore.Configuration;
 
@@ -74,5 +75,29 @@ namespace Informa.Library.Search.Utilities
 			return itemPath.ToLower()
 					.StartsWith(Settings.GetSetting("Taxonomy.DeviceAreaPath"));
 		}
+		
+		 public static IEnumerable<string> GetHierarchicalFacetFieldValue(IEnumerable<ITaxonomy_Item> taxonomyItems)
+        {
+            List<string> fullTaxonomyList =new List<string>();
+
+            foreach (ITaxonomy_Item taxonomyItem in taxonomyItems)
+            {
+                fullTaxonomyList.Add(taxonomyItem.Item_Name.Trim());
+
+                if (taxonomyItem._Parent._TemplateId == ITaxonomy_ItemConstants.TemplateId.ToGuid())
+                {
+                    string facetValue = ((ITaxonomy_Item) taxonomyItem._Parent).Item_Name.Trim();
+
+                    if (string.IsNullOrEmpty(facetValue))
+                    {
+                        continue;
+                    }
+
+                    fullTaxonomyList.Add(facetValue);
+                }
+            }
+
+            return fullTaxonomyList;
+        }
 	}
 }

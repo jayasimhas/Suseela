@@ -1,4 +1,4 @@
-﻿/* global _, angular */
+﻿/* global _, datesObject, angular */
 var InformaFacetController = function ($scope, $location, $http, $anchorScroll, searchService, searchBootstrapper) {
     "use strict";
 
@@ -23,12 +23,43 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         { label: 'Select date range', key: 'custom', selected: false }
     ];
 
+    /* Real talk: the Javascript Date() method is a trash fire. */
+    var dToday = function () {
+        return new Date().clearTime();
+    };
+
+    var jsDates = {
+        minus1Year: function() {
+            var jsDateToday = new Date();
+            return new Date(jsDateToday.setFullYear(jsDateToday.getFullYear() - 1));
+        },
+        minus1Month: function() {
+            var jsDateToday = new Date();
+            var m = jsDateToday.getMonth();
+            jsDateToday.setMonth(jsDateToday.getMonth() - 1);
+
+            // If still in same month, set date to last day of previous month
+            if (jsDateToday.getMonth() == m) {
+                jsDateToday.setDate(0);
+            }
+            return new Date(jsDateToday.setHours(0,0,0));
+        },
+        minusXdays: function(days) {
+            var jsDateToday = new Date();
+            return new Date(jsDateToday.setDate(jsDateToday.getDate() - days));
+        },
+    };
+
+    var formatDateObject = function(d) {
+        return (d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear();
+    };
+
     vm.datesObject = {
-        year: '@DateTime.Now.AddDays(-365).ToString("MM/dd/yyyy")',
-        day: '@DateTime.Now.AddDays(-1).ToString("MM/dd/yyyy")',
-        threedays: '@DateTime.Now.AddDays(-3).ToString("MM/dd/yyyy")',
-        month: '@DateTime.Now.AddDays(-30).ToString("MM/dd/yyyy")',
-        week: '@DateTime.Now.AddDays(-7).ToString("MM/dd/yyyy")'
+        year: formatDateObject(jsDates.minus1Year()),
+        day: formatDateObject(jsDates.minusXdays(1)),
+        threedays: formatDateObject(jsDates.minusXdays(3)),
+        month: formatDateObject(jsDates.minus1Month()),
+        week: formatDateObject(jsDates.minusXdays(7))
     };
 
     // Create placeholder values for From: and To: date values

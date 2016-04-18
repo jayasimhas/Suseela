@@ -164,9 +164,14 @@ $(document).ready(function() {
     * * */
     $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
 
+        var searchKeyword = $('.header-search__field').val();
+        if((searchKeyword === "" || searchKeyword === undefined || searchKeyword === null) && (('.search-bar__field').length))
+        {
+            searchKeyword = $('.search-bar__field').val();
+        }
         var eventDetails = {
             event_name: "search",
-            search_keyword: '"' + $('.header-search__field').val() + '"'
+            search_keyword: '"' + searchKeyword + '"'
         };
 
         analyticsEvent( $.extend(analytics_data, eventDetails) );
@@ -380,7 +385,7 @@ $(document).ready(function() {
         $('.js-menu-toggle-button').on('click', function toggleMenu(e) {
             $('.main-menu').hasClass('is-active') ? hideMenu() : showMenu();
             e.preventDefault();
-            e.stopPropazgation();
+            e.stopPropagation();
         });
 
         /*  If the menu is closed, let any clicks on the menu element open
