@@ -1,3 +1,5 @@
+/* global Promise */
+
 var fs     = require('fs');
 var fsp    = require('./lib/fs-promise');
 var marked = require('marked');
@@ -6,15 +8,70 @@ var path   = require('path');
 var findFrontMatter = /^\s*-{3,}\r?\n((?:[ \t]*[A-z][\w-]*[ \t]*:[ \t]*[\w-][^\n]*\n*)*)(?:[ \t]*-{3,})?/;
 var splitFrontMatter = /([A-z][\w-]*)[ \t]*:[ \t]*([\w-][^\n]*)/g;
 
+/**
+ * Converts string to slug
+ * Example: Second Side Menu! => second-side-menu
+ */
+var slugify = function(title) {
+	return title.replace(/\s+/g, '-').replace(/[^A-z0-9_-]/g, '').toLowerCase();
+};
+
 module.exports = require('postcss').plugin('mdcss', function (opts) {
-	// set options object
+
+	// Build out `opts` options object with defaults if not set by user
 	opts = Object(opts);
 
-	// set theme
-	opts.theme = opts.theme || require('./runway-theme-velir');
+	opts = {
 
-	// set index
-	opts.index = opts.index || 'index.html';
+		/**
+		 * opts.theme
+		 * {npm repository/module?}
+		 * Currently, must be set as an NPM-style repository/module.
+		 * TODO - Simplify this. Point to a single .js file with folder of assets.
+		 */
+		theme: opts.theme || require('./runway-theme-velir'),
+
+		/**
+		 * opts.templatesDir
+		 * {string}
+		 * Path to default directory where Runway should check for component
+		 * templates.
+		 * TODO - Let users set `template` as a filename (current behavior)
+		 * _or_ a path and filename. If file check fails, try as directory.
+		 */
+		templatesDir: opts.templatesDir || path.join(process.cwd(), 'runway', 'templates'),
+
+		/**
+		 * opts.outputFile
+		 * {string}
+		 * The filename of the generated styleguide .html document.
+		 */
+		outputFile: opts.outputFile || 'index.html',
+
+		/**
+		 * opts.outputDir
+		 * {string}
+		 * The directory/path where the generated styleguide, and any required
+		 * assets, will be copied to.
+		 */
+		outputDir: path.join(process.cwd(), opts.outputDir || 'styleguide'),
+
+		/**
+		 * opts.assets
+		 * {array}
+		 * A list of files or directories to copy into the styleguide directory.
+		 * These are included inside generated <iframe> elements for styling
+		 * each example.
+		 * Note: These assets are *not* used for styling the styleguide theme.
+		 * Include any assets required for the theme itself in the `asset`
+		 * directory in the theme folder.
+		 */
+		assets: (opts.assets || []).map(function (src) {
+			return path.join(process.cwd(), src);
+		}),
+
+		examples: opts.examples || null
+	};
 
 	// throw if theme is not a function
 	if (typeof opts.theme !== 'function') throw Error('The theme failed to load');
@@ -22,13 +79,6 @@ module.exports = require('postcss').plugin('mdcss', function (opts) {
 	// conditionally set theme as executed theme
 	if (opts.theme.type === 'mdcss-theme') opts.theme = opts.theme(opts);
 
-	// set destination path
-	opts.destination = path.join(process.cwd(), opts.destination || 'styleguide');
-
-	// set additional assets path
-	opts.assets = (opts.assets || []).map(function (src) {
-		return path.join(process.cwd(), src);
-	});
 
 	// return plugin
 	return function (css, result) {
@@ -66,49 +116,20 @@ module.exports = require('postcss').plugin('mdcss', function (opts) {
 				// conditionally set the closest documentation name
 				if (doc.title && !doc.name) doc.name = slugify(doc.title);
 
-				// If there's no inline content/examples,
-				// conditionally import external content
-				if (!doc.content) {
-					// get comment source path
-					var src = comment.source.input.file;
 
-					// if the comment source path exists
-					if (src) {
-						// get the closest matching directory for this comment
-						var localdir = src ? path.dirname(src) : dir;
+				// If there's a `template` key set in the comment documentation,
+				// determine whether the value is a URL or a filepath, then try
+				// to load the appropriate template markup.
 
-						var mdbase = doc.import;
-						var mdspec;
+				if(doc.template) {
 
-						// conditionally use a sibling md files if no import exists
-						if (!mdbase) {
-							mdbase = mdspec = path.basename(src, path.extname(src));
+					var templateMarkup = fs.readFileSync(path.join(opts.templatesDir, doc.template), 'utf8');
 
-							if (doc.name) {
-								mdspec += '.' + doc.name;
-							}
+					// Appending template markup to `doc.content`, instead of
+					// just setting the value, prevents any notes inside the
+					// CSS documentation from being clobbered.
+					doc.content += marked(templateMarkup);
 
-							mdbase += '.md';
-							mdspec += '.md';
-						}
-
-						// try to read the closest matching documentation
-						try {
-							if (mdspec) {
-								doc.content = fs.readFileSync(path.join(localdir, mdspec), 'utf8');
-							} else {
-								throw new Error();
-							}
-						} catch (error1) {
-							try {
-								doc.content = fs.readFileSync(path.join(localdir, mdbase), 'utf8');
-							} catch (error2) {
-								doc.content = '';
-
-								comment.warn(result, 'Documentation import "' + mdbase + '" could not be read.');
-							}
-						}
-					}
 				}
 
 				// set documentation context
@@ -164,33 +185,28 @@ module.exports = require('postcss').plugin('mdcss', function (opts) {
 			}
 		});
 
-		// return theme executed with parsed list, destination
+		// return theme executed with parsed list, outputDir
 		return opts.theme({
 			list: list,
 			opts: opts
 		}).then(function (docs) {
-			// empty the destination directory
-			return fsp.emptyDir(opts.destination)
-			// then copy the theme assets into the destination
-			.then(function () {
-				return fsp.copy(docs.assets, opts.destination);
-			})
-			// then copy the compiled template into the destination
-			.then(function () {
-				return fsp.outputFile(path.join(opts.destination, opts.index), docs.template);
-			})
-			// then copy any of the additional assets into the destination
-			.then(function () {
+			// empty the outputDir directory
+			return fsp.emptyDir(opts.outputDir).then(function () {
+
+			// then copy the theme assets into the outputDir
+			return fsp.copy(docs.assets, opts.outputDir);
+
+			// then copy the compiled template into the outputDir
+			}).then(function () {
+			return fsp.outputFile(path.join(opts.outputDir, opts.outputFile), docs.template);
+
+			// then copy any of the additional assets into the outputDir
+			}).then(function () {
 				return Promise.all(opts.assets.map(function (src) {
-					return fsp.copy(src, path.join(opts.destination, path.basename(src)));
+					return fsp.copy(src, path.join(opts.outputDir, path.basename(src)));
 				}));
+
 			});
 		});
 	};
 });
-
-// Converts string to slug
-// Second Side Menu! => second-side-menu
-function slugify(title) {
-	return title.replace(/\s+/g, '-').replace(/[^A-z0-9_-]/g, '').toLowerCase();
-}

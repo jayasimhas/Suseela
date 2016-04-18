@@ -1,3 +1,5 @@
+/* global Promise */
+
 var ejs  = require('ejs');
 var fs   = require('fs');
 var path = require('path');
@@ -22,6 +24,7 @@ module.exports = function (themeopts) {
 	// return theme
 	return function (docs) {
 		// set assets directory and template
+
 		docs.assets   = path.join(__dirname, 'assets');
 		docs.template = path.join(__dirname, 'template.ejs');
 
