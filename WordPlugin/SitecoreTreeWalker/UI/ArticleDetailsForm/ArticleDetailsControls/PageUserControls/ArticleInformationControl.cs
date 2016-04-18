@@ -20,7 +20,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
     /// </summary>
     public partial class ArticleInformationControl : ArticleDetailsPageUserControl
     {
-        private readonly string RemoteTimezoneId = "Greenwich Standard Time";
+        private readonly string RemoteTimezoneId = "Eastern Standard Time";
 
         private ArticleDetail _parent;
         protected DocumentCustomProperties _documentCustomProperties;
