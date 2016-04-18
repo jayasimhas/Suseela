@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Xml;
 using HtmlAgilityPack;
 using Sitecore.Data;
 using Sitecore.Data.Items;
-using Sitecore.SecurityModel;
 using Sitecore.SharedSource.DataImporter.Utility;
 using HtmlDocument = Sitecore.WordOCX.HtmlDocument.HtmlDocument;
 using Sitecore.SharedSource.DataImporter.Logger;
@@ -149,32 +147,17 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         private int GetNextArticleNumber()
         {
-            HttpClient client = new HttpClient();
-            int number = 1;
+            IEnumerable<string> articles = ImportToWhere.Axes.GetDescendants()
+                .Where(a => a.TemplateName.Equals(ImportToWhatTemplate.DisplayName))
+                .Select(b => b.Fields["Article Number"].Value)
+                .OrderByDescending(c => c);
 
-            using (new SecurityDisabler())
-            {
-                var nextNumber = client.GetStringAsync("/api/CreateArticle").Result;
-                int.TryParse(nextNumber, out number);
-            }
+            if (articles == null || !articles.Any())
+                return 1;
 
-            return number;
-
-            //IEnumerable<string> articles = ImportToBWhere.Axes.GetDescendants()
-            //    .Where(a => a.TemplateName.Equals(ImportToWhatTemplate.DisplayName))
-            //    .Select(b => b.Fields["Article Number"].Value)
-            //    .OrderByDescending(c => c);
-
-
-
-            //if (articles == null || !articles.Any())
-            //    return 1;
-
-            //string num = articles.First().Replace("SC", "");
-
-
-            //int n = int.Parse(num);
-            //return n + 1;
+            string num = articles.First().Replace("SC", "");
+            int n = int.Parse(num);
+            return n + 1;
         }
 
         public string GetXMLData(XmlDocument xd, string nodeName)
