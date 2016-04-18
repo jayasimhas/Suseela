@@ -11,22 +11,25 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Library.Article.Search
 {
-	public class ArticleSearchResultItem : SearchResultItem, ITaxonomySearchResults, IArticleNumber, IArticleEScenicID, IReferencedArticles
-	{
-		public List<Guid> Taxonomies { get; set; }
-		[IndexField(IArticleConstants.Actual_Publish_DateFieldName)]
-		public DateTime ActualPublishDate { get; set; }
+    public class ArticleSearchResultItem : SearchResultItem, ITaxonomySearchResults, IArticleNumber, IArticleEScenicID, IReferencedArticles
+    {
+        [IndexField("_latestversion")]
+        public bool IsLatestVersion { get; set; }
 
-	    public string ArticleNumber { get; set; }
-	    public long ArticleIntegerNumber { get; set; }
-	    public string EScenicID { get; set; }
+        public List<Guid> Taxonomies { get; set; }
+        [IndexField(IArticleConstants.Actual_Publish_DateFieldName)]
+        public DateTime ActualPublishDate { get; set; }
 
-	    #region Implementation of IReferencedArticles
+        public string ArticleNumber { get; set; }
+        public long ArticleIntegerNumber { get; set; }
+        public string EScenicID { get; set; }
 
-	    public List<Guid> ReferencedArticles { get; set; }
+        #region Implementation of IReferencedArticles
 
-	    #endregion
-	}
+        public List<Guid> ReferencedArticles { get; set; }
+
+        #endregion
+    }
 }
 
 
