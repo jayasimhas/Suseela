@@ -73,6 +73,8 @@ examples.lang = {
 		var wrap = pre.parentNode;
 
 		var iframe = wrap.insertBefore(document.createElement('iframe'), pre);
+
+		$(wrap).prepend('<div class="iframe-resizer-handle"></div>');
 		var style  = iframe.style;
 
 		// get iframe dom
@@ -129,13 +131,13 @@ examples.lang = {
 				scrollHeight = currentScrollHeight;
 				style.height = 0;
 				style.height = parseInt(documentElement.scrollHeight) + (iframe.offsetHeight - iwin.innerHeight) + 'px';
+				parent.window.dispatchEvent(new Event('resize'));
 			}
 		};
 
-		iwin.addEventListener('load', resize);
+		iwin.addEventListener('resize', resize);
 
-		resize();
+		setTimeout(resize, 100);
 
-		setInterval(resize, 1000);
 	}
 };
