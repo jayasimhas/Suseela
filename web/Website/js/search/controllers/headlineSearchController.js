@@ -19,6 +19,11 @@
             }
         }
     };
+
+    vm.init = function () {
+        var filter = vm.searchService.getFilter('headlinesOnly');
+        return filter !== undefined;
+    }
 };
 var informaSearchApp = angular.module('informaSearchApp');
 informaSearchApp.controller("HeadlineSearchController", ['$scope', 'searchService', 'searchBootstrapper', HeadlineSearchController]);
