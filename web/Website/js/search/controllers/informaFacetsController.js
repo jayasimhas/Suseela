@@ -243,7 +243,7 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         var filterDateLabel = vm.getFilter('dateFilterLabel');
 
         var startDate = vm.datesObject[dateFilter];
-        var endDate = vm.datesObject.day;
+        var endDate = formatDateObject(new Date());
 
         filterDateLabel.setValue(dateFilter);
         filter.setValue(startDate + ";" + endDate);
