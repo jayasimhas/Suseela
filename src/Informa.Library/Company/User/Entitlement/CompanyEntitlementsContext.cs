@@ -60,7 +60,7 @@ namespace Informa.Library.Company.User.Entitlement
 
 		public EntitledAccessLevel GetProductAccessLevel(string productCode)
 		{
-			return Entitlements.Any(e => e.ProductCode == productCode) ? GetCompanyAccessLevel(CompanyContext.Company.Type) : EntitledAccessLevel.UnEntitled;
+			return Entitlements.Any(e => e.ProductCode == productCode) ? (CompanyContext.Company == null ? EntitledAccessLevel.UnEntitled : GetCompanyAccessLevel(CompanyContext.Company.Type)) : EntitledAccessLevel.UnEntitled;
 		}
 
 		public EntitledAccessLevel GetCompanyAccessLevel(CompanyType companyType)

@@ -80,7 +80,7 @@ namespace Sitecore.SharedSource.DataImporter {
 
                         DataMap.CreateNewItem(thisParent, importRow, newItemName);
                     } catch (Exception ex) {
-                        Logger.Log("N/A", string.Format("Exception thrown on import row {0} : {1}", line, ex.Message), ProcessStatus.NewItemError);
+                        Logger.Log("N/A", string.Format("Exception thrown on import row {0} : {1}", line, ex.Message), ProcessStatus.NewItemError, "All Import Values", string.Join("||", ((Dictionary<string,string>)importRow).Select(a => $"{a.Key}-{a.Value}")));
                     }
 
                     if (Sitecore.Context.Job != null)
