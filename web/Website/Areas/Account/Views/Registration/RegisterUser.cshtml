@@ -12,7 +12,7 @@
 
 		<form	class="form-registration"
 				data-on-submit="/Account/api/RegistrationApi/Register/"
-				data-on-success="@Model.NextStepUrl">
+				data-on-success="@(Model.NextStepUrl+"?returnUrl="+Request.QueryString["returnUrl"])">
 
 		<p class="	page-registration__error
 					js-register-user-error
