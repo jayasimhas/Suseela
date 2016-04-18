@@ -40,7 +40,7 @@ ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename
 ----version----
 language: en
 version: 1
-revision: c37689e8-7df0-478a-8032-be468517a6c7
+revision: 9bbb17a8-b6e8-4c1a-838c-7a88f4b191a0
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -348,6 +348,55 @@ content-length: 308
 
 <em style="color: #58595b;">After years of warding off generics, large pharma companies are embracing generic drug manufacturers and vying for a share of the off-patent drugs business. Indian generic companies, once considered business pariahs, are the focus of plenty of action, Anju Ghangurde reports.</em>
 ----field----
+field: {D8E65269-0027-42AF-9C13-994EFF890119}
+name: Lockout Email Body
+key: lockout email body
+content-length: 937
+
+<table id="Body" width="700" align="center" cellpadding="20">
+    <tbody>
+        <tr>
+            <td style="width: 80px; text-align: left;"><img alt="" src="{logo}" /></td>
+            <td style="text-align: left;">
+            <div><strong>Informa Business Information</strong></div>
+            <div>User Lockout Notification</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 15px; border: 5px solid black; text-align: left;"><center>
+            <div id="Title">A user was locked out of their Sitecore account.</div>
+            </center><br />
+            <br />
+            <div id="Username"><span style="text-decoration: underline;">Username:&nbsp;</span>{username}</div>
+            <div id="date"><span style="text-decoration: underline;">Date locked out:&nbsp;</span>{dateLockedOut}</div>
+            <br />
+            <br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+----field----
+field: {533CB9D2-B47A-4A9A-9B8A-C4FEBCDADCAB}
+name: Lockout Email From
+key: lockout email from
+content-length: 30
+
+pmbi-notifications@informa.com
+----field----
+field: {F432072F-CFCB-4477-8588-61726FDADF23}
+name: Lockout Email Subject
+key: lockout email subject
+content-length: 25
+
+User Lockout Notification
+----field----
+field: {861CB808-AE66-4908-9D46-96B350E302B3}
+name: Lockout Email To
+key: lockout email to
+content-length: 30
+
+pmbi-notifications@informa.com
+----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
@@ -367,14 +416,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c37689e8-7df0-478a-8032-be468517a6c7
+9bbb17a8-b6e8-4c1a-838c-7a88f4b191a0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160414T132832Z
+20160418T115832Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
