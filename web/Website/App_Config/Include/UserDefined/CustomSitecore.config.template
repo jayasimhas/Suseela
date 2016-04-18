@@ -107,9 +107,6 @@ But you can also use "patch:attribute" for clarity:
     </linkManager>
 
     <sites>
-      <site name="website">
-        <patch:attribute name="htmlCacheSize">10MB</patch:attribute>
-      </site>
       <site name="shell">
         <patch:attribute name="enableWorkflow">true</patch:attribute>
         <patch:attribute name="startItem">/sites</patch:attribute>

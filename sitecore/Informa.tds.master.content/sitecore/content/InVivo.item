@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {920FAC0D-4DA5-465A-94F9-A8B4D03DFCE3}
+database: master
+path: /sitecore/content/InVivo
+parent: {0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+name: InVivo
+master: {CBA15CFC-A70C-4146-8A11-25AA3F4FDDB4}
+template: {DD003F89-D57D-48CB-B428-FFB519AACA56}
+templatekey: Site Root
+
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----field----
+field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
+name: __Security
+key: __security
+content-length: 157
+
+ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename|-item:read|pd|-item:create|-item:write|-item:delete|-item:rename|-item:read|
+----version----
+language: en
+version: 1
+revision: 1ae65a7d-a1c1-47b2-9e5b-e2d71bf82a45
+
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 7
+
+In Vivo
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160418T200823Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1ae65a7d-a1c1-47b2-9e5b-e2d71bf82a45
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160418T200859Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

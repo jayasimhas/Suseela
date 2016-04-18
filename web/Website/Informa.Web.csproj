@@ -1183,6 +1183,9 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="App_Config\Include\UserDefined\ScheduledPublishing.MongoDB.config.disabled" />
+    <Content Include="App_Config\Include\UserDefined\Sites.config.template">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Sitecore.config.velirTemplate">
       <SubType>Designer</SubType>
     </None>
