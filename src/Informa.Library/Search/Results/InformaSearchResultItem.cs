@@ -30,7 +30,10 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public DateTime PlannedPublishDate { get; set; }
 
-		[IndexField("searchtitle_s")]
+		[IndexField("searchtitle")]
+		public string SearchTitle { get; set; }
+
+		[IndexField("displaytitle")]
 		[DataMember]
 		public string Title { get; set; }
 

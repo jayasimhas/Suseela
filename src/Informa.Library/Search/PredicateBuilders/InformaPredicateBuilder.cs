@@ -54,9 +54,9 @@ namespace Informa.Library.Search.PredicateBuilders
 			var searchHeadlines = string.Empty;
 			if (_request.QueryParameters.TryGetValue(Constants.QueryString.SearchHeadlinesOnly, out searchHeadlines) && !string.IsNullOrEmpty(searchHeadlines))
 			{
-				return x => x.PublicationTitle == query;
+				return x => x.SearchTitle == query;
 			}
-			
+
 			// Necessary to surround with quotes for promximity logic to work.
 			// (term1 term2~10000) doesn't work, but ("term1 term2"~100000) does.
 			var quoted_q = string.Format("\"{0}\"", query);
