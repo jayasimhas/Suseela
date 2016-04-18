@@ -23,6 +23,8 @@ $(document).ready(function () {
 
 		code.removeAttribute('class');
 
+		$(wrap).addClass('classhere');
+
 		wrap.appendChild(pre);
 
 		// conditionally syntax highlight code
@@ -33,6 +35,40 @@ $(document).ready(function () {
 			examples.lang[conf.example](pre, text, conf);
 
 			if (!(conf.lang in Prism.languages)) wrap.removeChild(pre);
+		}
+	});
+
+	$('.iframe-resizer-handle').each(function(elm, ind, arr) {
+
+		var currentElement = null;
+
+		var mouseMoveHandler = function (event) {
+			event.preventDefault();
+			var newHeight = currentElement._startHeight + (event.pageY - currentElement._startY);
+			Element.height(Element.getPrevious(currentElement), newHeight);
+		};
+
+		var mouseUpHandler = function (event) {
+			currentElement = null;
+			Event.removeEvent(document, 'mousemove', mouseMoveHandler);
+			Event.removeEvent(document, 'mouseup', mouseUpHandler);
+		};
+
+		for (var i in panel.content.childNodes) {
+			var element = panel.content.childNodes[i],
+				tag = element.nodeName ? element.nodeName.toUpperCase() : false;
+			if (tag === 'DIV' && Element.hasClass(element, 'panel-resize-handle')) {
+
+				Event.addEvent(element, 'mousedown', function (event) {
+					event.preventDefault();
+					currentElement = this;
+					this._startY = event.pageY;
+					this._startHeight = parseInt(Element.height(Element.getPrevious(currentElement)));
+
+					Event.addEvent(document, 'mousemove', mouseMoveHandler);
+					Event.addEvent(document, 'mouseup', mouseUpHandler);
+				});
+			}
 		}
 	});
 
