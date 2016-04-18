@@ -6,8 +6,8 @@ path: /sitecore/system/Modules/Data Imports/Scrip/Articles/AllStories Import
 parent: {896F8A5F-7839-40A0-ACFE-9C4958F7782B}
 name: AllStories Import
 master: {00000000-0000-0000-0000-000000000000}
-template: {E70ADEF9-B551-4648-9FCA-3EFB17B491B1}
-templatekey: CSV Import Map
+template: {6D3FC7EB-4F92-401F-8FE9-786FF3B94111}
+templatekey: Informa Import Map
 
 ----field----
 field: {0790A745-13E8-44F1-AA17-469E8FC7D20E}
@@ -89,15 +89,22 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 1c076dc2-49f1-4f34-b7fa-feac57cc269c
+revision: c4af14a0-2c8b-4531-9f97-235cd3e64058
 
 ----field----
 field: {1F03F44C-DD3A-4148-BEE7-0724310827B8}
 name: Query
 key: query
-content-length: 69
+content-length: 78
 
-D:\inetpub\wwwroot\Informa\web\Website\upload\Import\Scrip\allStories
+D:\inetpub\wwwroot\Informa\web\Website\upload\Import\Scrip\140k-import\eScenic
+----field----
+field: {AE52DF37-B0D7-4548-A4D0-3A470ADA56AD}
+name: Publication Prefix
+key: publication prefix
+content-length: 2
+
+SC
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -111,14 +118,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-1c076dc2-49f1-4f34-b7fa-feac57cc269c
+c4af14a0-2c8b-4531-9f97-235cd3e64058
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160412T181026Z
+20160418T145855Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
