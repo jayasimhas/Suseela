@@ -154,7 +154,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
             using (new SecurityDisabler())
             {
-                var nextNumber = client.GetStringAsync("/api/CreateArticle").Result;
+                
+                var nextNumber = client.GetStringAsync($"https://{Sitecore.Context.Site.TargetHostName}/api/CreateArticle").Result;
                 int.TryParse(nextNumber, out number);
             }
 
