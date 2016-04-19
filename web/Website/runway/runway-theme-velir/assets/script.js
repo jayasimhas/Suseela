@@ -23,8 +23,6 @@ $(document).ready(function () {
 
 		code.removeAttribute('class');
 
-		$(wrap).addClass('classhere');
-
 		wrap.appendChild(pre);
 
 		// conditionally syntax highlight code
@@ -38,38 +36,53 @@ $(document).ready(function () {
 		}
 	});
 
-	$('.iframe-resizer-handle').each(function(elm, ind, arr) {
 
-		var currentElement = null;
+	/**
+	 * Drag to resize component
+	 */
+
+	$('.iframe-external-wrapper').each(function(elm, ind, arr) {
+
+		var handle = $(elm).find('.iframe-resizer-handle');
+		var thisHandle = null,
+			iframe = null,
+			parentFigure = null;
 
 		var mouseMoveHandler = function (event) {
 			event.preventDefault();
-			var newHeight = currentElement._startHeight + (event.pageY - currentElement._startY);
-			Element.height(Element.getPrevious(currentElement), newHeight);
+			var offset = event.pageX - iframe._startX;
+			var newWidth = iframe._startWidth + offset;
+			if(newWidth <= parentFigure.width()) {
+				var readjustmentOffset = parentFigure.width() - newWidth;
+				thisHandle.style.right = readjustmentOffset + 'px';
+				iframe.elm[0].style.width = newWidth + 'px';
+			}
 		};
 
 		var mouseUpHandler = function (event) {
-			currentElement = null;
-			Event.removeEvent(document, 'mousemove', mouseMoveHandler);
-			Event.removeEvent(document, 'mouseup', mouseUpHandler);
+			document.removeEventListener('mousemove', mouseMoveHandler);
+			document.removeEventListener('mouseup', mouseUpHandler);
+			iframe = thisHandle = parentFigure = null;
 		};
 
-		for (var i in panel.content.childNodes) {
-			var element = panel.content.childNodes[i],
-				tag = element.nodeName ? element.nodeName.toUpperCase() : false;
-			if (tag === 'DIV' && Element.hasClass(element, 'panel-resize-handle')) {
+		$(handle).on('mousedown', function (event) {
+			event.preventDefault();
 
-				Event.addEvent(element, 'mousedown', function (event) {
-					event.preventDefault();
-					currentElement = this;
-					this._startY = event.pageY;
-					this._startHeight = parseInt(Element.height(Element.getPrevious(currentElement)));
+			thisHandle = event.target;
 
-					Event.addEvent(document, 'mousemove', mouseMoveHandler);
-					Event.addEvent(document, 'mouseup', mouseUpHandler);
-				});
-			}
-		}
+			iframe = {
+				elm: $(event.target).parent().find('iframe'),
+				_startX: event.pageX
+			};
+
+			parentFigure = $(thisHandle).parent();
+
+			iframe._startWidth = iframe.elm.width();
+
+			// `mousemove`, not `onmousemove`, for more accurate updates
+			document.addEventListener('mousemove', mouseMoveHandler, false);
+			document.addEventListener('mouseup', mouseUpHandler, false);
+		});
 	});
 
 });
