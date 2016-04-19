@@ -41,7 +41,7 @@ namespace Informa.Library.Publishing.Scheduled
 
 		public bool HasValidValue(DateTime value)
 		{
-			return value != DateTime.MinValue && value != DateTime.MaxValue && value > ScheduledPublishingDateTime.Now;
+			return value != DateTime.MinValue && value != DateTime.MaxValue;
 		}
 
 		public void AddScheduledPublish(List<ScheduledPublish> scheduledPublishes, Guid itemId, string language, string version, DateTime publishOn, ScheduledPublishType type)
