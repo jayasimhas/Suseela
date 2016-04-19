@@ -804,7 +804,16 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 ArticleDetails.CommandID = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand();
                 ArticleDetails.NotificationText = articleDetailsPageSelector.pageWorkflowControl.GetNotificationText();
 
+                var lockStateBeforeSaveMetaData = SitecoreClient.GetLockedStatus(ArticleDetails.ArticleGuid);
                 SitecoreClient.SaveMetadataToSitecore(ArticleDetails.ArticleNumber, _structConverter.GetServerStruct(ArticleDetails));
+                //I know the following checks are weird, but issue IIPP-1031 occurs sometimes only on UAT env. So had to hack around it.
+                //On UAT after SaveMetadataToSitecore, the locked status becomes false for no apparent reason.
+                var lockStateAfterSaveMetaData = SitecoreClient.GetLockedStatus(ArticleDetails.ArticleGuid);
+                if (lockStateBeforeSaveMetaData.Locked && lockStateAfterSaveMetaData.Locked == false && workflowChange_UnlockOnSave == false)
+                {
+                    SitecoreClient.CheckOutArticle(ArticleDetails.ArticleNumber, SitecoreUser.GetUser().Username);
+                }
+
                 if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked)
                 {
                     articleDetailsPageSelector.pageArticleInformationControl.CheckIn(false);
