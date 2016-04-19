@@ -74,7 +74,7 @@ examples.lang = {
 
 		var iframe = wrap.insertBefore(document.createElement('iframe'), pre);
 
-		$(wrap).prepend('<div class="iframe-resizer-handle"></div>');
+		$(wrap).prepend('<div class="iframe-resizer-handle">|||</div>');
 		var style  = iframe.style;
 
 		// get iframe dom
