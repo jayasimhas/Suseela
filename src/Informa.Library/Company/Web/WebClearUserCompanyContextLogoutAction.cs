@@ -17,7 +17,7 @@ namespace Informa.Library.Company.Web
 
 		public void Process(IUser user)
 		{
-			UserCompanyContext.Company = null;
+			UserCompanyContext.Clear();
 		}
 	}
 }

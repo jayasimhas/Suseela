@@ -35,18 +35,31 @@ namespace Informa.Library.Publishing.Scheduled
 				return;
 			}
 
-			var scheduledPublishes = ItemScheduledPublishesFactory.Create(item);
+			var newScheduledPublishes = ItemScheduledPublishesFactory.Create(item);
 			var existingScheduledPublishes = new List<IScheduledPublish>();
 
 			existingScheduledPublishes.AddRange(FindScheduledPublishes.Find(item.ID.Guid, string.Empty, string.Empty));
 			existingScheduledPublishes.AddRange(FindScheduledPublishes.Find(item.ID.Guid, item.Language.Name, item.Version.Number.ToString()));
+
 			existingScheduledPublishes
-				.Where(esp => !scheduledPublishes.Any(sp =>
-					sp.Language == esp.Language &&
-					sp.Version == esp.Version &&
-					sp.Type == esp.Type))
+				.Where(esp => 
+					!newScheduledPublishes.Any(sp =>
+						sp.Language == esp.Language &&
+						sp.Version == esp.Version &&
+						sp.Type == esp.Type
+					)
+				)
 				.ToList()
 				.ForEach(osp => DeleteScheduledPublishes.Delete(osp));
+
+			var scheduledPublishes = newScheduledPublishes.Where(nsp =>
+				!existingScheduledPublishes.Any(esp =>
+					esp.Language == nsp.Language &&
+					esp.Version == nsp.Version &&
+					esp.Type == nsp.Type &&
+					esp.PublishOn == nsp.PublishOn	
+				)
+			);
 
 			UpsertScheduledPublishes.Upsert(scheduledPublishes);
 		}
