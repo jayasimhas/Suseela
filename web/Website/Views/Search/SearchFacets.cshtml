@@ -281,9 +281,8 @@
                         <input  id="{{ group.id }}-{{ $index }}"
                               type="checkbox"
                               class="visuallyhidden click-utag"
-                              ng-checked="f.selected"
                               ng-model="f.selected"
-                              ng-change="facetController.update()"  data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
+                              ng-change="facetController.facetChange(f)"  data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
 
                         <label  class="facets__label"
                                 ng-if="f.label"
@@ -321,7 +320,7 @@
                                      class="visuallyhidden"
                                      ng-checked="subFacet.selected"
                                      ng-model="subFacet.selected"
-                                     ng-change="facetController.update()" data-info='{"event_name":"search-facet","sub_facet_selected":"{{subFacet.name}}","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
+                                     ng-change="facetController.update()" data-info='{"event_name":"search-facet"," click-sub_facet_selected":"{{subFacet.name}}","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
                               <label class="facets__label" ng-if="subFacet.name" for="{{ subFacet.id }}-{{ $index }}">
                                   {{ subFacet.name }}
                                   <span class="facets__label-count">({{subFacet.count}})</span>

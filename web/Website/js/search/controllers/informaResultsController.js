@@ -1,6 +1,7 @@
+/* global angular */
 var informaSearchApp = angular.module('informaSearchApp');
 
-﻿var InformaResultsController = function InformaResultsController($scope, $sanitize, searchService, viewHeadlinesStateService, $timeout, $window) {
+var InformaResultsController = function InformaResultsController($scope, $sanitize, searchService, viewHeadlinesStateService, $timeout, $window) {
 
     var vm = this;
 
