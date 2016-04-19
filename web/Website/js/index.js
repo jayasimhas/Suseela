@@ -267,7 +267,7 @@ $(document).ready(function() {
 		observe: '.form-pre-registration',
 		successCallback: function(form) {
             var usernameInput = $(form).find('.js-register-username');
-            var nextStepUrl = $(form).data('forwarding-url') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
+            var nextStepUrl = $(form).data('forwarding-url') + '&' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
 
             window.location.href = nextStepUrl;
 		}
