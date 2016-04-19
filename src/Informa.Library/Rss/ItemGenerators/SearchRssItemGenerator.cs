@@ -26,8 +26,8 @@ namespace Informa.Library.Rss.ItemGenerators
 
 			//Build the basic syndicaton item
 			var searchTerm = Sitecore.Context.Request.QueryString["q"];
-			var articleUrl = string.Format("{0}?utm_source=search&utm_medium=RSS&utm_term={1}&utm_campaign=search_rss", article._AbsoluteUrl, searchTerm);
-			var syndicationItem = new SyndicationItem(GetItemTitle(article),
+            var articleUrl = string.Format("{0}?utm_source=search&amp;utm_medium=RSS&amp;utm_term={1}&amp;utm_campaign=search_rss", article._AbsoluteUrl, searchTerm);
+            var syndicationItem = new SyndicationItem(GetItemTitle(article),
                 GetItemSummary(article),
                 new Uri(articleUrl),
                 article._AbsoluteUrl,
