@@ -2,9 +2,23 @@
 
 namespace Informa.Library.Salesforce.Company
 {
-	public class SalesforceSiteTypeParser : ISalesforceCompanyTypeFromSiteType, ISalesforceSiteTypeFromCompanyType
+	public class SalesforceSiteTypeParser : ISalesforceCompanyTypeFromSiteType, ISalesforceSiteTypeFromCompanyType, ISalesforceCompanyTypeFromAccountType
 	{
-		public CompanyType Parse(string siteType)
+
+		public string Parse(CompanyType companyType)
+		{
+			switch(companyType)
+			{
+				case CompanyType.SiteLicenseIP:
+					return "SiteLicenseIP";
+				case CompanyType.TransparentIP:
+					return "TransparentIP";
+				default:
+					return null;
+			}
+		}
+
+		CompanyType ISalesforceCompanyTypeFromSiteType.Parse(string siteType)
 		{
 			switch (siteType)
 			{
@@ -19,16 +33,14 @@ namespace Informa.Library.Salesforce.Company
 			}
 		}
 
-		public string Parse(CompanyType companyType)
+		CompanyType ISalesforceCompanyTypeFromAccountType.Parse(string accountType)
 		{
-			switch(companyType)
+			switch (accountType)
 			{
-				case CompanyType.SiteLicenseIP:
-					return "SiteLicenseIP";
-				case CompanyType.TransparentIP:
-					return "TransparentIP";
+				case "Multi-User":
+					return CompanyType.SiteLicenseIP;
 				default:
-					return null;
+					return CompanyType.Unknown;
 			}
 		}
 	}

@@ -79,7 +79,7 @@ namespace Informa.Web.ViewModels
 
 
         public IHierarchyLinks TaxonomyHierarchy => new HierarchyLinksViewModel(GlassModel, TextTranslator);
-        public DateTime Date => (Sitecore.Context.PageMode.IsPreview) ? GlassModel.Planned_Publish_Date : GlassModel.Actual_Publish_Date;
+        public DateTime Date => (Sitecore.Context.PageMode.IsPreview && !GlassModel.Planned_Publish_Date.Equals(DateTime.MinValue)) ? GlassModel.Planned_Publish_Date : GlassModel.Actual_Publish_Date;
         //TODO: Extract to a dictionary.
         public string Content_Type => GlassModel.Content_Type?.Item_Name;
         public string Media_Type => GlassModel.Media_Type?.Item_Name == "Data" ? "chart" : GlassModel.Media_Type?.Item_Name?.ToLower() ?? "";

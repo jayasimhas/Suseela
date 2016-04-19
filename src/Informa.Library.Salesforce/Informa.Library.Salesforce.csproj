@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Company\ISalesforceCompany.cs" />
+    <Compile Include="Company\ISalesforceCompanyTypeFromAccountType.cs" />
     <Compile Include="Company\ISalesforceFindCompanyByIpAddress.cs" />
     <Compile Include="Company\ISalesforceCompanyTypeFromSiteType.cs" />
     <Compile Include="Company\ISalesforceFindCompanyByUser.cs" />
