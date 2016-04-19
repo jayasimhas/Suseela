@@ -18,9 +18,16 @@
                 data-label-bookmarked="@*Model.BookmarkedText*@">
             @*@( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )*@
         </span>
-        <svg class="article-prologue__share-icon click-utag" data-info='{"event_name" : "bookmark"}'>
-            <use xlink:href="/dist/img/svg-sprite.svg#@( false/*Model.IsArticleBookmarked*/ ? "bookmarked" : "bookmark" )"></use>
+
+
+        <svg class="article-bookmark article-bookmark__bookmarked click-utag @( Model.IsArticleBookmarked ? "is-visible" : null)" data-info='{"event_name" : "bookmark"}'>
+            <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
         </svg>
+
+        <svg class="article-bookmark click-utag @( Model.IsArticleBookmarked ? null : "is-visible")" data-info='{"event_name" : "bookmark"}'>
+            <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+        </svg>
+
     </div>
     <ul>
         <li>
