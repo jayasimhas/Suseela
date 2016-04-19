@@ -1182,9 +1182,7 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="App_Config\Include\UserDefined\ScheduledPublishing.MongoDB.config.disabled" />
-    <None Include="App_Config\Sitecore.config.velirTemplate">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="App_Config\Sitecore.config.template" />
     <Content Include="Areas\Account\Views\ResetPassword\Change.cshtml" />
     <Content Include="Areas\Account\Views\Registration\RegisterUser.cshtml" />
     <Content Include="Areas\Account\Views\Management\SavedArticles.cshtml" />

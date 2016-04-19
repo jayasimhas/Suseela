@@ -47,7 +47,7 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         minusXdays: function(days) {
             var jsDateToday = new Date();
             return new Date(jsDateToday.setDate(jsDateToday.getDate() - days));
-        },
+        }
     };
 
     var formatDateObject = function(d) {
@@ -128,7 +128,7 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     };
 
     vm.facetChange = function(facet) {
-        vm.searchService.getFacet(facet.id).selected = facet.selected;
+        vm.searchService.getFacetGroup(facet.parentId).getFacet(facet.id).selected = facet.selected;
         vm.update();
     };
 

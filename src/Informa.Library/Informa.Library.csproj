@@ -349,6 +349,8 @@
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserSession.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUserSession.cs" />
+    <Compile Include="User\Authentication\ISendPluginUserLockedOutEmail.cs" />
+    <Compile Include="User\Authentication\SendPluginUserLockedOutEmail.cs" />
     <Compile Include="User\Authentication\Web\IWebAuthenticateUser.cs" />
     <Compile Include="User\Authentication\Web\IWebAuthenticateUserResult.cs" />
     <Compile Include="User\Authentication\Web\IWebLoginUserRegisterUserAction.cs" />

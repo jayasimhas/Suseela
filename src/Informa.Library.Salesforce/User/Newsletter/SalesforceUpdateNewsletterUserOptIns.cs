@@ -27,8 +27,8 @@ namespace Informa.Library.Salesforce.User.Newsletter
 			}
 
             //we can't send just the ones we want to update. we have to send all newsletter optins that a user has
-		    List<string> updateTypes = newsletterOptIns.Select(n => n.NewsletterType).ToList();
-            var updatedOptIns = NewsletterContext.OptIns.Where(a => !updateTypes.Contains(a.NewsletterType)).Concat(newsletterOptIns);
+		    List<string> updateTypes = newsletterOptIns.Select(n => n.NewsletterType.ToLower()).ToList();
+            var updatedOptIns = NewsletterContext.OptIns.Where(a => !updateTypes.Contains(a.NewsletterType.ToLower())).Concat(newsletterOptIns);
 		    
             var optIns = updatedOptIns.Select(noi => new EBI_EmailNewsLetterOptin
 			{
@@ -38,6 +38,11 @@ namespace Informa.Library.Salesforce.User.Newsletter
 			}).ToArray();
 
 			var response = Service.Execute(s => s.updateEmailNewsletterOptIns(userName, optIns));
+            if(!response.IsSuccess() 
+                && response.errors != null 
+                && response.errors.Any())
+                Sitecore.Diagnostics.Log.Error($"Newsletter Opt In Error: {string.Join(",", response.errors.Select(a => a.message))}", this);
+            
 			return response.IsSuccess();
 		}
 	}
