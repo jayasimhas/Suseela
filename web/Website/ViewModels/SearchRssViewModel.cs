@@ -93,6 +93,7 @@ namespace Informa.Web.ViewModels
             {
                 feed.SaveAsRss20(writer);
                 writer.Flush();
+                writer.Close();
                 return output.ToString();
             }
         }

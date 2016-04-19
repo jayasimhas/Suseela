@@ -8,6 +8,7 @@ using System.Web;
 using System.Xml.Linq;
 using Glass.Mapper.Sc;
 using Informa.Library.Rss.Interfaces;
+using Informa.Library.Rss.Utils;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -31,7 +32,7 @@ namespace Informa.Library.Rss.ItemGenerators
 				var publication = sitecoreContext.GetItem<Item>(article.Publication);
 			    publicationName = publication?.Name;
 			}
-			var articleUrl = string.Format("{0}?utm_source={1}&utm_medium=RSS&utm_campaign={2}_RSS_Feed", article._AbsoluteUrl, publicationName, publicationName);
+			var articleUrl = string.Format("{0}?utm_source={1}&amp;utm_medium=RSS&amp;utm_campaign={2}_RSS_Feed", article._AbsoluteUrl, publicationName, publicationName);
 			//Build the basic syndicaton item
 			var syndicationItem = new SyndicationItem(GetItemTitle(article),
                 GetItemSummary(article),
@@ -57,17 +58,17 @@ namespace Informa.Library.Rss.ItemGenerators
         {
             if (article.Featured_Image_16_9 != null)
             {
-                var imageElement = new XElement("image");
+                var imageElement = new XElement(RssConstants.InformaNamespace + RssConstants.FieldImage);
 
-                var urlElement = new XElement("url");
+                var urlElement = new XElement(RssConstants.InformaNamespace + RssConstants.FieldImageUrl);
                 urlElement.Value = siteLink + article.Featured_Image_16_9.Src;
                 imageElement.Add(urlElement);
 
-                var titleElement = new XElement("title");
+                var titleElement = new XElement(RssConstants.InformaNamespace + RssConstants.FieldImageTitle);
                 titleElement.Value = article.Featured_Image_16_9.Alt;
                 imageElement.Add(titleElement);
 
-                var linkElement = new XElement("link");
+                var linkElement = new XElement(RssConstants.InformaNamespace + RssConstants.FieldImageLink);
                 linkElement.Value = siteLink;
                 imageElement.Add(linkElement);
 

@@ -114,6 +114,7 @@ $(document).ready(function() {
                 return;
             }
 
+            e.preventDefault();
             window.bookmark.toggle(e.target);
 
         });
