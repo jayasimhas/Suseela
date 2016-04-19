@@ -208,6 +208,10 @@
     <Reference Include="Sitecore.SharedSource.PageEditor">
       <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
     </Reference>
+    <Reference Include="SolrNet, Version=0.4.0.2002, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Solr\SolrNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -235,8 +239,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
@@ -273,6 +277,10 @@
     </Reference>
     <Reference Include="Velir.Search.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Velir.Search.Models.1.2.0\lib\net45\Velir.Search.Models.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Velir.Search.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Velir.Search.WebApi.1.0.3\lib\net45\Velir.Search.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebApi.OutputCache.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -337,6 +345,8 @@
     <Compile Include="Rss\Utils\RssConstants.cs" />
     <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
     <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
+    <Compile Include="Search\InformaApiSearchRequest.cs" />
+    <Compile Include="Search\PredicateBuilders\InformaQueryPredicateBuilder.cs" />
     <Compile Include="Search\Utilities\SearchSummaryUtil.cs" />
     <Compile Include="Search\Utilities\SearchWebClientUtil.cs" />
     <Compile Include="Session\ISessionValue`1.cs" />
@@ -772,7 +782,7 @@
     <Compile Include="Search\Filter\IArticleNumberFilter.cs" />
     <Compile Include="Search\Filter\ITaxonomySearchFilter.cs" />
     <Compile Include="Search\IProviderSearchContextFactory.cs" />
-    <Compile Include="Search\PredicateBuilders\InformaPredicateBuilder.cs" />
+    <Compile Include="Search\PredicateBuilders\InformaFilterPredicateBuilder.cs" />
     <Compile Include="Search\ProviderSearchContextFactory.cs" />
     <Compile Include="Search\Results\IArticleEScenicID.cs" />
     <Compile Include="Search\Results\IArticleNumber.cs" />

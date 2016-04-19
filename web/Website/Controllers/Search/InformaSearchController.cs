@@ -1,4 +1,6 @@
-﻿using Informa.Library.Search.PredicateBuilders;
+﻿using System.Web.Http.ModelBinding;
+using Informa.Library.Search;
+using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Document;
@@ -32,7 +34,7 @@ namespace Informa.Web.Controllers.Search
 			IsSavedDocumentContext = isSavedDocumentContext;
 		}
 
-		public override IQueryResults Get(ApiSearchRequest request)
+		public override IQueryResults Get([ModelBinder(typeof(ApiSearchRequestModelBinder))]ApiSearchRequest request)
 		{
 			//If an improper request is passed in return nothing
 			if (string.IsNullOrEmpty(request?.PageId))
@@ -41,7 +43,8 @@ namespace Informa.Web.Controllers.Search
 			}
 			
 			var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
-			q.PredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request); 
+			q.FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request); 
+			q.QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(request);
 
 			var results = _searchManager.GetItems(q);
 
