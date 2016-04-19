@@ -7,14 +7,14 @@ namespace Informa.Library.Salesforce.Company
 {
 	public class SalesforceFindCompanyByUser : ISalesforceFindCompanyByUser, IFindCompanyByUser
 	{
-		protected readonly ISalesforceSiteTypeFromCompanyType SiteTypeParser;
+		protected readonly ISalesforceCompanyTypeFromAccountType CompanyTypeParser;
 		protected readonly ISalesforceServiceContext Service;
 
 		public SalesforceFindCompanyByUser(
-			ISalesforceSiteTypeFromCompanyType siteTypeParser,
+			ISalesforceCompanyTypeFromAccountType companyTypeParser,
 			ISalesforceServiceContext service)
 		{
-			SiteTypeParser = siteTypeParser;
+			CompanyTypeParser = companyTypeParser;
 			Service = service;
 		}
 
@@ -33,8 +33,7 @@ namespace Informa.Library.Salesforce.Company
 			}
 
 			var companyType = CompanyType.SiteLicenseIP;
-			var siteType = SiteTypeParser.Parse(companyType);
-			var companyAccount = response.accounts.FirstOrDefault(a => string.Equals(a.accountType, siteType));
+			var companyAccount = response.accounts.FirstOrDefault(a => CompanyTypeParser.Parse(a.accountType) == companyType);
 
 			if (companyAccount == null)
 			{
