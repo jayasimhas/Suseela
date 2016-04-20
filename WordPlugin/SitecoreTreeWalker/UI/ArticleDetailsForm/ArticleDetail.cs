@@ -773,7 +773,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
                 var articleDate = articleDetailsPageSelector.GetDate();
                 articleDate = TimeZoneInfo.ConvertTimeFromUtc(articleDate, easternZone);
-                var currentTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.Now, easternZone);
+                var currentTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, easternZone);
 
                 if (articleDate < currentTime)
                 {
@@ -883,7 +883,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
                 var articleDate = articleDetailsPageSelector.GetDate();
                 articleDate = TimeZoneInfo.ConvertTimeFromUtc(articleDate, easternZone);
-                var currentTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.Now, easternZone);
+                var currentTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, easternZone);
 
                 if (articleDate < currentTime)
                 {
@@ -904,10 +904,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 SuspendLayout();
 
                 SitecoreAddin.ActiveDocument.Saved = false;
-
-
-                var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument,
-                                                                       _wordUtils.CharacterStyleTransformer);
+                
+                var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument,_wordUtils.CharacterStyleTransformer);
                 if (PreSavePrompts(metadataParser)) return;
                 SaveArticleToSitecoreUpdateUI(metadataParser);
             }
