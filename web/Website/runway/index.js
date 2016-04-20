@@ -1,22 +1,23 @@
 /* global Promise */
 
-var fs     = require('fs');
-var fsp    = require('./lib/fs-promise');
-var marked = require('marked');
-var path   = require('path');
+var fs		= require('fs');
+var fsp   	= require('./lib/fs-promise');
+var marked	= require('marked');
+var path	= require('path');
+var postcss	= require('postcss');
 
 var findFrontMatter = /^\s*-{3,}\r?\n((?:[ \t]*[A-z][\w-]*[ \t]*:[ \t]*[\w-][^\n]*\n*)*)(?:[ \t]*-{3,})?/;
 var splitFrontMatter = /([A-z][\w-]*)[ \t]*:[ \t]*([\w-][^\n]*)/g;
 
-/**
- * Converts string to slug
- * Example: Second Side Menu! => second-side-menu
- */
+// Converts string to slug
+// Example: Second Side Menu! => second-side-menu
+
 var slugify = function(title) {
 	return title.replace(/\s+/g, '-').replace(/[^A-z0-9_-]/g, '').toLowerCase();
 };
 
-module.exports = require('postcss').plugin('mdcss', function (opts) {
+
+module.exports = postcss.plugin('mdcss', function (opts) {
 
 	// Build out `opts` options object with defaults if not set by user
 	opts = Object(opts);
@@ -77,11 +78,11 @@ module.exports = require('postcss').plugin('mdcss', function (opts) {
 	if (typeof opts.theme !== 'function') throw Error('The theme failed to load');
 
 	// conditionally set theme as executed theme
+	// TODO - why is this
 	if (opts.theme.type === 'mdcss-theme') opts.theme = opts.theme(opts);
 
 
-	// return plugin
-	return function (css, result) {
+	var buildDocs = function (css, result) {
 
 		// set current css directory or current directory
 		var dir = css.source.input.file ? path.dirname(css.source.input.file) : process.cwd();
@@ -209,4 +210,6 @@ module.exports = require('postcss').plugin('mdcss', function (opts) {
 			});
 		});
 	};
+
+	return buildDocs;
 });
