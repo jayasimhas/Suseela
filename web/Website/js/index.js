@@ -13,6 +13,8 @@ import FormController from './form-controller';
 import SortableTableController from './sortable-table-controller';
 import { analyticsEvent } from './analytics-controller';
 
+/* Polyfill for scripts expecting `jQuery` */
+window.jQuery = $;
 
 // Make sure proper elm gets the click event
 // When a user submits a Forgot Password request, this will display the proper
@@ -267,7 +269,10 @@ $(document).ready(function() {
 		observe: '.form-pre-registration',
 		successCallback: function(form) {
             var usernameInput = $(form).find('.js-register-username');
-            var nextStepUrl = $(form).data('forwarding-url') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
+
+            var forwardingURL = $(form).data('forwarding-url');
+            var sep = forwardingURL.indexOf('?') < 0 ? '?' : '&';
+            var nextStepUrl = $(form).data('forwarding-url') + sep + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
 
             window.location.href = nextStepUrl;
 		}
