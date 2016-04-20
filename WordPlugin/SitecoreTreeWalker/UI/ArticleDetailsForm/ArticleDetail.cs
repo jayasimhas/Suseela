@@ -773,8 +773,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
                 var articleDate = articleDetailsPageSelector.GetDate();
                 articleDate = TimeZoneInfo.ConvertTimeFromUtc(articleDate, easternZone);
+                var currentTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.Now, easternZone);
 
-                if (articleDate < DateTime.Now)
+                if (articleDate < currentTime)
                 {
 
                     var result = WantsToSetArticleDateToNow(command);
@@ -882,8 +883,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
                 var articleDate = articleDetailsPageSelector.GetDate();
                 articleDate = TimeZoneInfo.ConvertTimeFromUtc(articleDate, easternZone);
+                var currentTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.Now, easternZone);
 
-                if (articleDate < DateTime.Now)
+                if (articleDate < currentTime)
                 {
                     var result = WantsToSetArticleDateToNow(command);
                     if (result == DialogResult.Yes)
