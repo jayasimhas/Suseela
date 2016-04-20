@@ -3,7 +3,9 @@
 <div class="page-registration page-account js-register-user-container">
 	<h1 class="page-registration__header">@Model.Title</h1>
 	<h2 class="page-registration__subheader">@Model.SubTitle</h2>
-	<p class="page-account__introduction">@Model.Body</p>
+	<div class="page-account__introduction">
+		@Model.Body
+	</div>
 	<hr />
 	<div>
 		<div class="page-registration__required-hint">
@@ -131,12 +133,12 @@
 						placeholder=""
 						tabindex="5">
 			</div>
-			
+
 		</div>
 
 		<hr>
 
-	    <div class="page-registration__tos-confirm">
+	    <div class="page-registration__labeled-checkbox page-registration__tos-confirm">
 			<p class="	page-registration__error
 						js-form-error
 						js-form-error-TermsNotAccepted">
@@ -144,12 +146,14 @@
 			</p>
 
 	        <input	name="termsAccepted"
-					type="checkbox"
+		            type="checkbox"
+                    tabindex="6"
 					data-checkbox-type="boolean"> <label for="termsAccepted">@Model.TermsLabel</label>
 	    </div>
 
 	    <div class="page-account__submit-wrapper">
-	        <button	type="submit"
+	        <button type="submit"
+                    tabindex="7"
 					class="button--filled js-register-user-submit">@Model.SubmitText</button>
 	        <p><em>@Model.NewsletterSignUpText</em></p>
 	    </div>

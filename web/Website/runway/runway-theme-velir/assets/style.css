@@ -230,6 +230,7 @@ iframe {
 	height: 0;
 	margin: 0;
 	width: 100%;
+	max-width: 100% !important;
 	padding: 1rem;
 }
 
@@ -427,8 +428,9 @@ section.hidden {
 
 
 .iframe-resizer-handle {
-	background: rgba(0, 0, 0, 0.1);
+	background: #ddd;
 	border-radius: 80px;
+	color: #aaa;
 	cursor: ew-resize;
 	font-size: 0.75rem;
 	height: 1.5rem;
@@ -439,10 +441,9 @@ section.hidden {
 	width: 1.5rem;
 	margin-top: -0.75rem;
 	margin-right: -0.75rem;
-	opacity: 0.5;
-	transition: background, opacity 200ms linear;
+	transition: background 200ms, color 200ms;
 }
 .iframe-external-wrapper:hover > figure > .iframe-resizer-handle {
 	background: #CCF7F3; /* Hummingbird */
-	opacity: 1;
+	color: #272727;
 }
