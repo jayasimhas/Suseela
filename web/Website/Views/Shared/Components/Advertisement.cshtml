@@ -6,9 +6,12 @@
     @Html.Glass().Editable(x => x.GlassModel.Slot_ID)
     @Html.Glass().Editable(x => x.GlassModel.Zone)
 }
-<div class="article-preview__ad advertising">
-    <span class="advertising__label">@Model.AdvertisementText</span>
-    <script>
-    OAS_AD('@Model.GlassModel.Slot_ID', '@Model.GlassModel.Zone');
-    </script>
-</div>
+@if (!string.IsNullOrEmpty(Model.GlassModel.Slot_ID) && !string.IsNullOrEmpty(Model.GlassModel.Zone))
+{
+    <div class="article-preview__ad advertising">
+        <span class="advertising__label">@Model.AdvertisementText</span>
+        <script>
+            OAS_AD('@Model.GlassModel.Slot_ID', '@Model.GlassModel.Zone');
+        </script>
+    </div>
+}
