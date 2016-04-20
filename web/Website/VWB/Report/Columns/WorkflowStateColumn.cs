@@ -76,7 +76,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 			    else
 			    {
                     WorkflowEvent latest = history.Last();
-                    text += "<br />Signed off: " + latest.Date.ToString();
+                    text += "<br />Signed off: " + latest.Date.ToLocalTime();
                     string user = latest.User;
                     text += "<br />By: " + user.Substring(user.LastIndexOf(@"\") + 1);
                 }
