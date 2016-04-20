@@ -18,6 +18,9 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public readonly IUserSubscriptionsContext UserSubscriptionsContext;
         public readonly ISignInViewModel SignInViewModel;
 
+        private readonly Dictionary<string, bool> RenewBtnSettings;
+        private readonly Dictionary<string, bool> SubscriptionBtnSettings;
+
         public SubscriptionsViewModel(
             ITextTranslator translator,
             IAuthenticatedUserContext userContext,
@@ -28,23 +31,39 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             UserContext = userContext;
             UserSubscriptionsContext = userSubscriptionsContext;
             SignInViewModel = signInViewModel;
+
+            RenewBtnSettings = new Dictionary<string, bool>();
+            SubscriptionBtnSettings = new Dictionary<string, bool>();
+            foreach (var sub in Subscriptions) {
+                //renew btns
+                if (!RenewBtnSettings.ContainsKey(sub.ProductCode))
+                    RenewBtnSettings.Add(sub.ProductCode, WithinRenewRange(sub.ExpirationDate));
+                else 
+                    RenewBtnSettings[sub.ProductCode] &= WithinRenewRange(sub.ExpirationDate);
+
+                //subscribe btns
+                if (!SubscriptionBtnSettings.ContainsKey(sub.ProductCode))
+                    SubscriptionBtnSettings.Add(sub.ProductCode, IsValidSubscription(sub));
+                else 
+                    SubscriptionBtnSettings[sub.ProductCode] |= IsValidSubscription(sub);
+            }
         }
 
-        public IEnumerable<ISubscription> Subscriptions => UserSubscriptionsContext.Subscriptions;
-
+        public IList<ISubscription> Subscriptions => UserSubscriptionsContext.Subscriptions.ToList();
+            
         public bool ShowRenewButton(ISubscription subscription)
         {
-            //if all subscriptions of this type are within renew range and this subscription is not multi-user 
-            return Subscriptions
-                    .Where(a => a.ProductCode.Equals(subscription.ProductCode))
-                    .All(b => WithinRenewRange(b.ExpirationDate)) 
-                && !IsMultiUser(subscription.SubscriptionType);
+            //this subscription is not multi-user if all subscriptions of this type are within renew range
+            if (IsMultiUser(subscription.SubscriptionType))
+                return false;
+
+            return (RenewBtnSettings.ContainsKey(subscription.ProductCode)) && RenewBtnSettings[subscription.ProductCode];
         }
 
         public bool ShowSubscribeButton(string productCode)
         {
             //if there aren't any valid subscriptions
-            return !Subscriptions.Any(k => k.ProductCode.Equals(productCode) && IsValidSubscription(k));
+            return (SubscriptionBtnSettings.ContainsKey(productCode)) && !SubscriptionBtnSettings[productCode];
         }
 
         public bool IsMultiUser(string subscriptionType)
@@ -56,7 +75,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         {
             // (08/31/2013) - (08/01/2013) = 31
             int days = Convert.ToInt16((dt - DateTime.Now).TotalDays);
-            return days < 119;
+            return days < 119 && days >= 0;
         }
 
         public bool IsValidSubscription(ISubscription s)
