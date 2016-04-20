@@ -8,6 +8,7 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using System;
+using System.Collections.Generic;
 using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Library.Utilities.References;
@@ -20,6 +21,7 @@ using Informa.Library.User.Profile;
 using System.Text;
 using System.Linq;
 using Informa.Library.User;
+using Sitecore.Social.Infrastructure.Utils;
 
 namespace Informa.Web.ViewModels
 {
@@ -170,7 +172,7 @@ namespace Informa.Web.ViewModels
 				var currentItem = Sitecore.Context.Item;
 				if (currentItem != null && currentItem.Statistics.Created > DateTime.MinValue)
 				{
-					return currentItem.Statistics.Created.ToString("MM/dd/yyyy");
+					return currentItem.Statistics.Created.ToServerTimeZone().ToString("MM/dd/yyyy");
 				}
 
 				return DateTime.MinValue.ToString("MM/dd/yyyy");
@@ -184,53 +186,26 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				var entitlementList = UserEntitlementsContext.Entitlements;
-				if (entitlementList != null && entitlementList.Any())
-				{
-					StringBuilder strEntitledProducts = new StringBuilder();
-					var lastEntitlement = entitlementList.LastOrDefault();
-					strEntitledProducts.Append("[");
-					foreach (var entitlement in entitlementList)
-					{
-						strEntitledProducts.Append("'");
-						strEntitledProducts.Append(entitlement.ProductCode);
-						strEntitledProducts.Append("'");
-						if (entitlementList.Count() > 1 && !lastEntitlement.Equals(entitlement))
-						{
-							strEntitledProducts.Append(",");
-						}
-					}
-					strEntitledProducts.Append("]");
-					return strEntitledProducts.ToString();
-				}
-				return string.Empty;
-			}
+                var entitlementList = UserEntitlementsContext.Entitlements;
+                var entitlements = entitlementList as IList<IEntitlement> ?? entitlementList.ToList();
+                if (!entitlements.Any())
+			        return string.Empty;
+                
+                string allEntitlements = string.Join(",", entitlements.Select(a => $"'{a.ProductCode}'"));
+                return $"[{allEntitlements}]";
+            }
 		}
 		public string UserEntitlementStatus
 		{
 			get
 			{
 				var entitlementList = UserEntitlementsContext.Entitlements;
-				if (entitlementList != null && entitlementList.Any())
-				{
-					StringBuilder strEntitledProducts = new StringBuilder();
-					var lastEntitlement = entitlementList.LastOrDefault();
-					strEntitledProducts.Append("[");
-					foreach (var entitlement in entitlementList)
-					{
-						var entitledStatus = EntitlementAccessLevelContext.Determine(entitlement);
-						strEntitledProducts.Append("'");
-						strEntitledProducts.Append(entitledStatus.ToString());
-						strEntitledProducts.Append("'");
-						if (entitlementList.Count() > 1 && !lastEntitlement.Equals(entitlement))
-						{
-							strEntitledProducts.Append(",");
-						}
-					}
-					strEntitledProducts.Append("]");
-					return strEntitledProducts.ToString();
-				}
-				return string.Empty;
+			    var entitlements = entitlementList as IList<IEntitlement> ?? entitlementList.ToList();
+			    if (!entitlements.Any())
+                    return string.Empty;
+
+			    string allEntitlements = string.Join(",", entitlements.Select(a => $"'{EntitlementAccessLevelContext.Determine(a)}'"));
+				return $"[{allEntitlements}]";
 			}
 		}
 		public string SubscribedProducts
@@ -238,28 +213,14 @@ namespace Informa.Web.ViewModels
 			get
 			{
 				var subscriptions = UserSubscriptionsContext.Subscriptions;
-
-				if (subscriptions != null && subscriptions.Any())
-				{
-					StringBuilder strSubscription = new StringBuilder();
-					var lastSubscription = subscriptions.LastOrDefault();
-					strSubscription.Append("[");
-					foreach (var subscription in subscriptions)
-					{
-						strSubscription.Append("'");
-						strSubscription.Append(subscription.ProductCode);
-						strSubscription.Append("'");
-						if (subscriptions.Count() > 1 && !lastSubscription.Equals(subscription))
-						{
-							strSubscription.Append(",");
-						}
-					}
-					strSubscription.Append("]");
-					return strSubscription.ToString();
-				}
-				return string.Empty;
+			    var enumerable = subscriptions as IList<ISubscription> ?? subscriptions.ToList();
+			    if (!enumerable.Any())
+			        return string.Empty;
+				
+				string allSubscriptions = string.Join(",", enumerable.Select(a => $"'{a.ProductCode}'"));
+			    return $"[{allSubscriptions}]";
 			}
-		}
+		}   
 		public string UserCompany => UserCompanyContext?.Company?.Name;
 		public string CompanyId => UserCompanyContext?.Company?.Id;
 		public string UserIndustry => UserProfileContext.Profile?.JobIndustry ?? string.Empty;
