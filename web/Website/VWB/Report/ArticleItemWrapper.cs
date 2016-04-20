@@ -13,6 +13,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.Social.Infrastructure.Utils;
 using Sitecore.Web;
 using Velir.Utilities.Extensions.System.Collections.Generic;
 using ArticleItem = Elsevier.Library.CustomItems.Publication.General.ArticleItem;
@@ -107,11 +108,11 @@ namespace Elsevier.Web.VWB.Report
 			
 			if(article.Created_Date == DateTime.MinValue)
 			{
-				ArticleCreation = articleBaseItem.Statistics.Created.ToLocalTime();
+				ArticleCreation = articleBaseItem.Statistics.Created.ToServerTimeZone();
 			}
 			else
 			{
-                ArticleCreation = article.Created_Date.ToLocalTime();
+                ArticleCreation = article.Created_Date.ToServerTimeZone();
             }
 
             if (string.IsNullOrEmpty(article.Word_Count))
@@ -169,10 +170,10 @@ namespace Elsevier.Web.VWB.Report
 
 
             Embargoed = article.Embargoed;
-            EmbargoDate = articleBaseItem.Publishing.PublishDate.ToLocalTime();
+            EmbargoDate = articleBaseItem.Publishing.PublishDate.ToServerTimeZone();
 
-            SAPDateTime = article.Planned_Publish_Date.ToLocalTime();
-            WebPublicationDateTime = article.Actual_Publish_Date.ToLocalTime();
+            SAPDateTime = article.Planned_Publish_Date.ToServerTimeZone();
+            WebPublicationDateTime = article.Actual_Publish_Date.ToServerTimeZone();
         }
 
 		public const string NE = "N/E";
