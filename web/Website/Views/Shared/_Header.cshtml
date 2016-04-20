@@ -83,11 +83,11 @@
                     </svg>
                     <span class="header-account-access__label"><a href="@Model.MyAccountLink">@Model.MyAccountLinkText</a></span>
                 </div>
-                <div class="header-account-access__sign-in-out">
+                <div class="header-account-access__sign-in-out click-logout">
                     <svg class="header__icons icon-sign-out">
                         <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                     </svg>
-                    <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
+                    <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url })</span>
                 </div>}
             else
             {
