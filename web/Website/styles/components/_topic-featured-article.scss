@@ -52,7 +52,12 @@
         &,
         & a {
             color: $informa-black;
+
+            @include on-event() {
+                color: $informa-red;
+            }
         }
+
     }
 
     .article-preview__tags {

@@ -13,8 +13,11 @@ import FormController from './form-controller';
 import SortableTableController from './sortable-table-controller';
 import { analyticsEvent } from './analytics-controller';
 
-/* Polyfill for scripts expecting `jQuery` */
+/* Polyfill for scripts expecting `jQuery`
+    Also see: CSS selectors support in zepto.min.js
+*/
 window.jQuery = $;
+
 
 // Make sure proper elm gets the click event
 // When a user submits a Forgot Password request, this will display the proper
