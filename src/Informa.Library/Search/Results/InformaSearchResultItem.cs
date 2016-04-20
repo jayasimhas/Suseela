@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.Serialization;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
+using Informa.Library.Utilities.Extensions;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
 using Sitecore.Links;
@@ -63,6 +65,9 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public HtmlLinkList SearchDisplayTaxonomy { get; set; }
 
+		[IndexField("facetcompanies")]
+		public List<string> CompaniesFacet { get; set; }
+			
 		[DataMember]
 		public bool IsArticleBookmarked { get; set; }
 
@@ -72,12 +77,22 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public new string Url
 		{
+			get { return $"{SiteUrl}{LinkManager.GetItemUrl(GetItem())}"; }
+		}
+
+		[DataMember]
+		public string SiteUrl
+		{
 			get
 			{
 				var options = LinkManager.GetDefaultUrlOptions();
 				options.SiteResolving = true;
+				options.AlwaysIncludeServerUrl = true;
 
-				return LinkManager.GetItemUrl(GetItem(), options);
+				var item = GetItem();
+				var site = item.GetSite();
+				var home = item.Database.GetItem($"{site.RootPath}{site.StartItem}");
+				return LinkManager.GetItemUrl(home, options).TrimEnd('/');
 			}
 		}
 	}

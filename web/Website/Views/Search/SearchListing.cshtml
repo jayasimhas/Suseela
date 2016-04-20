@@ -61,7 +61,7 @@
 
             <div class="search-result__tags">
                 <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
-                    <a ng-click="filterResult(tax.url)" href="{{::tax.url}}">
+                    <a ng-click="filterResult(tax.url)" href="{{::doc.siteUrl}}{{::tax.url}}">
                         {{::tax.title}}
                     </a>
                     <!-- don't render separator after last tag -->

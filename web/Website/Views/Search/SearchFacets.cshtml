@@ -30,7 +30,7 @@
         FACET — COMPANIES
         * * * * *@
 
-        <fieldset ng-if="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController">
+        <fieldset ng-if="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController" ng-init="pageId = '@Sitecore.Context.Item.ID.ToString()'">
           <legend class="facets__legend facets__section-header">
               <h4>Companies</h4>
               <button class="facets__button facets__button--toggle-section"

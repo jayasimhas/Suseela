@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Linq;
 using System.Linq.Expressions;
 using Informa.Library.Search.Results;
 using Informa.Library.Utilities.References;
-using Sitecore.ContentSearch.Linq;
 using Sitecore.ContentSearch.Linq.Utilities;
 using Velir.Search.Core.Models;
 using Velir.Search.Core.Page;
@@ -36,9 +34,6 @@ namespace Informa.Library.Search.PredicateBuilders
 					predicate = predicate.And(x => x.InProgress);
 				}
 			}
-
-			// date relevancy
-			predicate = predicate.And(x => x.Val == "recip(ms(NOW, searchdate_tdt), 3.16e-11, 100, 1.8)");
 
 			return predicate;
 		}

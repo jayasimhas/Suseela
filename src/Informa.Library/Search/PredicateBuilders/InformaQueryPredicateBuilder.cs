@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using Informa.Library.Search.Results;
 using Informa.Library.Utilities.References;
 using Sitecore.ContentSearch.Linq;
+using Sitecore.ContentSearch.Linq.Utilities;
 using Velir.Search.Core.Models;
 using Velir.Search.Core.PredicateBuilders;
 
@@ -18,6 +19,16 @@ namespace Informa.Library.Search.PredicateBuilders
 		public InformaQueryPredicateBuilder(ISearchRequest request = null) : base(request)
 		{
 			_request = request;
+		}
+
+		public override Expression<Func<T, bool>> Build()
+		{
+			var predicate = base.Build();
+
+			// date relevancy
+			predicate = predicate.And(x => x.Val == "recip(ms(NOW, searchdate_tdt), 3.16e-11, 100, 1.8)");
+
+			return predicate;
 		}
 
 		protected override Expression<Func<T, bool>> AddAllClause(string[] value)

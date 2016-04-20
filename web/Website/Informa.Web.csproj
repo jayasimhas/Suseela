@@ -724,6 +724,7 @@
     <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
     <Compile Include="Controllers\EmailUtil.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
+    <Compile Include="Controllers\Search\TypeAheadController.cs" />
     <Compile Include="Controllers\SitecoreSaverController.cs" />
     <Compile Include="Controllers\SitecoreSaverUtil.cs" />
     <Compile Include="Controllers\SitecoreUtil.cs" />
@@ -748,10 +749,6 @@
     <Compile Include="sitecore\shell\client\Applications\View NLM\model\ViewNlmViewModel.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
-    <Compile Include="velir\services\TypeAhead.asmx.cs">
-      <DependentUpon>TypeAhead.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Util\DCD\DcdImportReport.aspx.cs">
       <DependentUpon>DcdImportReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1041,7 +1038,6 @@
     <Content Include="Util\DCD\styles\jquery-ui-1.8.11.custom.css" />
     <Content Include="Util\DCD\styles\jquery.multiSelect.css" />
     <Content Include="Util\DCD\styles\style.css" />
-    <Content Include="velir\services\TypeAhead.asmx" />
     <Content Include="Util\DCD\DcdImportReport.aspx" />
     <Content Include="Util\DCD\ViewDCDXML.aspx" />
     <Content Include="VWB\default.aspx" />
