@@ -24,10 +24,21 @@
                 </div>
 
                 <div class="labeled-checkbox page-preferences__offersoptin-confirm">
+                    @*
+                        This field is named a bit weird, but on purpose.
+                        Email regulations require that promo emails are opt IN,
+                        not opt OUT, so we needed to reverse this checkbox's
+                        meaning. But, until the @Model name is updated, keeping
+                        the field name and id the same for consistency.
+
+                        If checked: user is opting-IN for promo emails
+                        If not checked: user is opting-OUT of promo emails
+                    *@
                     <input  name="DoNotSendOffersOptIn"
                             id="DoNotSendOffersOptIn"
                             type="checkbox"
                             data-checkbox-type="boolean"
+                            data-checkbox-boolean-type="reverse"
                             @(@Model.DoNotSendOfferEmails ? "checked" : "")>
                     <label for="DoNotSendOffersOptIn" class="checkbox-label">@Model.EmailsLabel</label>
                 </div>
