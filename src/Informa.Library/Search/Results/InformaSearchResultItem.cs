@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
 using Informa.Library.Utilities.Extensions;
 using Sitecore.ContentSearch;
@@ -77,7 +78,14 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public new string Url
 		{
-			get { return $"{SiteUrl}{LinkManager.GetItemUrl(GetItem())}"; }
+			get
+			{
+				var options = LinkManager.GetDefaultUrlOptions();
+				options.SiteResolving = true;
+				options.AlwaysIncludeServerUrl = true;
+
+				return LinkManager.GetItemUrl(GetItem(), options);
+			}
 		}
 
 		[DataMember]
@@ -85,14 +93,10 @@ namespace Informa.Library.Search.Results
 		{
 			get
 			{
-				var options = LinkManager.GetDefaultUrlOptions();
-				options.SiteResolving = true;
-				options.AlwaysIncludeServerUrl = true;
+				Regex regex = new Regex("(.*?://.*?)/");
+				var match = regex.Match(Url);
 
-				var item = GetItem();
-				var site = item.GetSite();
-				var home = item.Database.GetItem($"{site.RootPath}{site.StartItem}");
-				return LinkManager.GetItemUrl(home, options).TrimEnd('/');
+				return match.Success ? regex.Match(Url).Groups[1].Value : string.Empty;
 			}
 		}
 	}
