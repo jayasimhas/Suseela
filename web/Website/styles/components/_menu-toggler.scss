@@ -8,6 +8,8 @@
 	letter-spacing: 1px;
 	margin-right: -70px;
 	overflow: hidden;
+	position: absolute;
+	left: 100%;
 	text-align: center;
 	text-transform: uppercase;
 	width: $main-menu-handle-width;
@@ -15,6 +17,8 @@
 	@include breakpoint('medium') {
 		display: none; // hide main toggler, show mini (see below)
 		height: 100px;
+		left: auto;
+		position: relative;
 
 		// Make mini-toggler sticky when scrolled on tablet/mobile
 		&.is-sticky {
