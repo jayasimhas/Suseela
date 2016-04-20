@@ -45,10 +45,12 @@
         </div>
     </div>
 
+    @if (!string.IsNullOrEmpty(Model.LeaderboardSlotID) && !string.IsNullOrEmpty(Model.LeaderboardAdZone))
+    {
     <div class="advertising--leaderboard">
         <script>OAS_AD('@Model.LeaderboardSlotID', '@Model.LeaderboardAdZone');</script>
     </div>
-
+    }
     <div class="header__wrapper clearfix">
 
         @* MENU MINI-TOGGLER (SMALLER-THAN-DESKTOP SIZES) *@
