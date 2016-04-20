@@ -365,14 +365,14 @@ $(document).ready(function() {
 
     svg4everybody();
 
-    var getHeaderEdge = function() {
-        return $('.header__wrapper').offset().top + $('.header__wrapper').height();
-    };
-
     /* * *
         MAIN SITE MENU
     * * */
     (function MenuController() {
+
+        var getHeaderEdge = function() {
+            return $('.header__wrapper').offset().top + $('.header__wrapper').height();
+        };
 
         var showMenu = function() {
             $('.main-menu').addClass('is-active');
@@ -407,7 +407,7 @@ $(document).ready(function() {
         /* Attach / detach sticky menu */
         $(window).on('scroll', function windowScrolled() {
             // Only stick if the header (including toggler) isn't visible
-            if ($(this).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
+            if ($(window).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
                 $('.header__wrapper .menu-toggler').addClass('is-sticky');
             } else {
                 $('.header__wrapper .menu-toggler').removeClass('is-sticky');
