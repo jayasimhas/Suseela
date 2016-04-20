@@ -30,7 +30,9 @@ namespace Informa.Web.App_Start.Registrations
             builder.RegisterType<Library.Publishing.Scheduled.Entity.EntityDeleteItemScheduledPublishes>().As<IDeleteItemScheduledPublishes>();
             builder.RegisterType<Library.Publishing.Scheduled.Entity.EntityAllScheduledPublishes>().As<IAllScheduledPublishes>();
 
-            builder.RegisterType<AddHistoryProcessedScheduledPublishAction>().As<IAddHistoryProcessedScheduledPublishAction>();
+			builder.RegisterType<AddHistoryProcessedScheduledPublishAction>()
+				.As<IAddHistoryProcessedScheduledPublishAction>()
+				.As<IProcessedScheduledPublishAction>();
             builder.RegisterType<EntityScheduledPublishHistoryContextFactory>().As<IEntityScheduledPublishHistoryContextFactory>();
             builder.RegisterType<EntityScheduledPublishFactory>().As<IEntityScheduledPublishFactory>();
             builder.RegisterType<EntityAddScheduledPublishHistory>().As<IAddScheduledPublishHistory>();
