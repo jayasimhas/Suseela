@@ -20,6 +20,7 @@ using Informa.Library.User.Profile;
 using System.Text;
 using System.Linq;
 using Informa.Library.User;
+using Sitecore.Social.Infrastructure.Utils;
 
 namespace Informa.Web.ViewModels
 {
@@ -170,7 +171,7 @@ namespace Informa.Web.ViewModels
 				var currentItem = Sitecore.Context.Item;
 				if (currentItem != null && currentItem.Statistics.Created > DateTime.MinValue)
 				{
-					return currentItem.Statistics.Created.ToString("MM/dd/yyyy");
+					return currentItem.Statistics.Created.ToServerTimeZone().ToString("MM/dd/yyyy");
 				}
 
 				return DateTime.MinValue.ToString("MM/dd/yyyy");

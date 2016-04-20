@@ -107,11 +107,11 @@ namespace Elsevier.Web.VWB.Report
 			
 			if(article.Created_Date == DateTime.MinValue)
 			{
-				ArticleCreation = articleBaseItem.Statistics.Created;
+				ArticleCreation = articleBaseItem.Statistics.Created.ToLocalTime();
 			}
 			else
 			{
-                ArticleCreation = article.Created_Date;
+                ArticleCreation = article.Created_Date.ToLocalTime();
             }
 
             if (string.IsNullOrEmpty(article.Word_Count))
@@ -169,11 +169,11 @@ namespace Elsevier.Web.VWB.Report
 
 
             Embargoed = article.Embargoed;
-            EmbargoDate = articleBaseItem.Publishing.PublishDate;      
+            EmbargoDate = articleBaseItem.Publishing.PublishDate.ToLocalTime();
 
-		    SAPDateTime = article.Planned_Publish_Date;
-		    WebPublicationDateTime = article.Actual_Publish_Date;
-		}
+            SAPDateTime = article.Planned_Publish_Date.ToLocalTime();
+            WebPublicationDateTime = article.Actual_Publish_Date.ToLocalTime();
+        }
 
 		public const string NE = "N/E";
 		public const string NA = "N/A";
