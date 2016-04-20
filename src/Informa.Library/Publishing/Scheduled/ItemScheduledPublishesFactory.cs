@@ -53,7 +53,7 @@ namespace Informa.Library.Publishing.Scheduled
 					ItemId = itemId,
 					Language = language,
 					Published = false,
-					PublishOn = publishOn,
+					PublishOn = publishOn.ToUniversalTime(),
 					Version = version,
 					Type = type
 				});
