@@ -49,6 +49,15 @@
                     </svg>
                 </a>
             }
+
+            @if (Model.FooterRssLink != null)
+            {
+                <a href="@Model.FooterRssLink.Url" target="_blank" title="@Model.FooterRssLink.Text" class="click-utag" data-info='{"event_name" : "rss-footer-link-click"}'>
+
+                    <img class="footer__share-icons" src="@Model.FooterRssLogoUrl"/>
+
+                </a>
+            }
         </li>
     </ul>
 
