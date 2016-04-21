@@ -19,7 +19,12 @@ function loginController(requestVerificationToken) {
 					context: this,
 					success: function (response) {
 						if (response.success) {
-							this.showSuccessMessage(triggerElement);
+						    this.showSuccessMessage(triggerElement);
+						    var resetPasswordAnalytics = {
+						        event_name: "password reset success"						       
+						    };
+
+						    analyticsEvent( $.extend(analytics_data, resetPasswordAnalytics) );
 							
 							if (successCallback) {
 								successCallback(triggerElement);

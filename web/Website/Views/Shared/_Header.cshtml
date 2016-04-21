@@ -45,10 +45,12 @@
         </div>
     </div>
 
+    @if (!string.IsNullOrEmpty(Model.LeaderboardSlotID) && !string.IsNullOrEmpty(Model.LeaderboardAdZone))
+    {
     <div class="advertising--leaderboard">
         <script>OAS_AD('@Model.LeaderboardSlotID', '@Model.LeaderboardAdZone');</script>
     </div>
-
+    }
     <div class="header__wrapper clearfix">
 
         @* MENU MINI-TOGGLER (SMALLER-THAN-DESKTOP SIZES) *@
@@ -83,7 +85,7 @@
                     </svg>
                     <span class="header-account-access__label"><a href="@Model.MyAccountLink">@Model.MyAccountLinkText</a></span>
                 </div>
-                <div class="header-account-access__sign-in-out">
+                <div class="header-account-access__sign-in-out click-logout">
                     <svg class="header__icons icon-sign-out">
                         <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
                     </svg>

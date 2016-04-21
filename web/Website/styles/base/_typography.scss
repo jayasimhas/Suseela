@@ -32,6 +32,11 @@ h3, h4, h5 {
     @include textMix('Roboto', 24px, 700);
 }
 
+.main__content > h1:first-child {
+    color: $color-zeus-black;
+    margin-bottom: 1.5rem;
+}
+
 h2 {
     font-size: 30px;
 }

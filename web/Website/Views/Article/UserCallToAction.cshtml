@@ -23,7 +23,7 @@
             </span>
             <form class="pop-out__register form-pre-registration"
                   data-on-submit="/Account/api/RegistrationApi/PreRegister/"
-                  data-on-success="@(Model.RegisterPopOutViewModel.RegisterUrl+"?returnUrl="+ HttpContext.Current.Request.Url.AbsolutePath)">
+                  data-forwarding-url="@(Model.RegisterPopOutViewModel.RegisterUrl+"?returnUrl="+ HttpContext.Current.Request.Url.AbsolutePath)">
                 <input name="username"
                        class="pop-out__register-input header__hover-input js-register-username"
                        type="text"
