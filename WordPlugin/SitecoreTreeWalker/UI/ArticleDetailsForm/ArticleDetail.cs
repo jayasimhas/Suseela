@@ -38,9 +38,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
         public bool _Live;
 
-        string remoteTimezoneIDFromAppSettings;
-        private TimeZoneInfo easternZone;
-
         #endregion
 
         #region MinorUIManipulation
@@ -112,9 +109,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
         /// </summary>
         public ArticleDetail()
         {
-            remoteTimezoneIDFromAppSettings = ApplicationConfig.GetPropertyValue("RemoteTimezoneToConvertTo");
-            easternZone = TimeZoneInfo.FindSystemTimeZoneById(remoteTimezoneIDFromAppSettings);
-
             SitecoreAddin.TagActiveDocument();
 
             _sitecoreArticle = new SitecoreClient();
@@ -772,8 +766,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 }
 
                 var articleDate = articleDetailsPageSelector.GetDate();
-                articleDate = TimeZoneInfo.ConvertTimeFromUtc(articleDate, easternZone);
-                var currentTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, easternZone);
+                var currentTime = DateTime.UtcNow;
 
                 if (articleDate < currentTime)
                 {
@@ -882,8 +875,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
 
                 var articleDate = articleDetailsPageSelector.GetDate();
-                articleDate = TimeZoneInfo.ConvertTimeFromUtc(articleDate, easternZone);
-                var currentTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, easternZone);
+                var currentTime = DateTime.UtcNow;
 
                 if (articleDate < currentTime)
                 {
@@ -904,8 +896,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 SuspendLayout();
 
                 SitecoreAddin.ActiveDocument.Saved = false;
-                
-                var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument,_wordUtils.CharacterStyleTransformer);
+
+                var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument, _wordUtils.CharacterStyleTransformer);
                 if (PreSavePrompts(metadataParser)) return;
                 SaveArticleToSitecoreUpdateUI(metadataParser);
             }
