@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Web.Http.ModelBinding;
 using Informa.Library.Search;
+using Informa.Library.Search.Formatting;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
 using Informa.Library.User.Authentication;
@@ -26,6 +27,7 @@ namespace Informa.Web.Controllers.Search
 	{
 		private readonly ISearchPageParser _parser;
 		private readonly ISearchManager<InformaSearchResultItem> _searchManager;
+		private readonly IQueryFormatter _queryFormatter;
 		private readonly IGlassInterfaceFactory _interfaceFactory;
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IIsSavedDocumentContext IsSavedDocumentContext;
@@ -33,13 +35,15 @@ namespace Informa.Web.Controllers.Search
 		public InformaSearchController(
 			ISearchManager<InformaSearchResultItem> searchManager,
 			ISearchPageParser parser,
-			IGlassInterfaceFactory interfaceFactory,
+			IQueryFormatter queryFormatter,
+		IGlassInterfaceFactory interfaceFactory,
 			IAuthenticatedUserContext userContext,
 			IIsSavedDocumentContext isSavedDocumentContext)
 						: base(searchManager, parser)
 		{
 			_searchManager = searchManager;
 			_parser = parser;
+			_queryFormatter = queryFormatter;
 			_interfaceFactory = interfaceFactory;
 			UserContext = userContext;
 			IsSavedDocumentContext = isSavedDocumentContext;
@@ -55,7 +59,7 @@ namespace Informa.Web.Controllers.Search
 
 			var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
 			q.FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request);
-			q.QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(request);
+			q.QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, request);
 
 			var results = _searchManager.GetItems(q);
 
@@ -107,7 +111,7 @@ namespace Informa.Web.Controllers.Search
 
 			var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
 			q.FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, newRequest);
-			q.QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(newRequest);
+			q.QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, newRequest);
 			q.FacetBuilder = new SearchFacetBuilder<InformaSearchResultItem>(request.GetRefinements().Where(r => facets.Contains(r.RefinementKey)));
 			q.SortBuilder = null;
 
@@ -115,5 +119,5 @@ namespace Informa.Web.Controllers.Search
 
 			return results.Facets;
 		}
-	}	
+	}
 }

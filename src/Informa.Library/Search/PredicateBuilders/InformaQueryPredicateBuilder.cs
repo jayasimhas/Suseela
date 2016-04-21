@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
+using Informa.Library.Search.Formatting;
 using Informa.Library.Search.Results;
 using Informa.Library.Utilities.References;
 using Sitecore.ContentSearch.Linq;
@@ -13,12 +14,13 @@ namespace Informa.Library.Search.PredicateBuilders
 	public class InformaQueryPredicateBuilder<T> : SearchQueryPredicateBuilder<T> where T : InformaSearchResultItem
 	{
 		private const float bigSlopFactor = 100000; // See http://wiki.apache.org/solr/SolrRelevancyCookbook "Term Proximity"
-
 		private readonly ISearchRequest _request;
+		private readonly IQueryFormatter _formatter;
 
-		public InformaQueryPredicateBuilder(ISearchRequest request = null) : base(request)
+		public InformaQueryPredicateBuilder(IQueryFormatter queryFormatter, ISearchRequest request = null) : base(request)
 		{
 			_request = request;
+			_formatter = queryFormatter;
 		}
 
 		public override Expression<Func<T, bool>> Build()
@@ -37,17 +39,29 @@ namespace Informa.Library.Search.PredicateBuilders
 
 			if (string.IsNullOrEmpty(query)) return null;
 
-			var searchHeadlines = string.Empty;
-			if (_request.QueryParameters.TryGetValue(Constants.QueryString.SearchHeadlinesOnly, out searchHeadlines) && !string.IsNullOrEmpty(searchHeadlines))
+			var searchHeadlinesValue = string.Empty;
+			bool searchHeadlines =
+				_request.QueryParameters.TryGetValue(Constants.QueryString.SearchHeadlinesOnly, out searchHeadlinesValue) &&
+				!string.IsNullOrEmpty(searchHeadlinesValue);
+			
+			if (_formatter.NeedsFormatting(query))
 			{
-				return x => x.Title == query;
+				var formattedQuery = _formatter.FormatQuery(query);
+				if (searchHeadlines)
+				{
+					return item => item.Title.Contains(formattedQuery);
+				}
+
+				return item => item.Content.Contains(formattedQuery);
 			}
 
-			// Necessary to surround with quotes for promximity logic to work.
-			// (term1 term2~10000) doesn't work, but ("term1 term2"~100000) does.
-			var quoted_q = string.Format("\"{0}\"", query);
+			var quotedQuery = $"\"{query}\"";
+      if (searchHeadlines)
+			{
+				return item => item.Title.Like(quotedQuery, bigSlopFactor);
+			}
 
-			return item => item.Content.Like(quoted_q, bigSlopFactor);
+			return item => item.Content.Like(quotedQuery, bigSlopFactor);
 		}
 	}
 }

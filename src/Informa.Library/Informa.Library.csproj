@@ -350,6 +350,8 @@
     <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
     <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
     <Compile Include="Search\FacetBuilders\CompaniesFacetBuilder.cs" />
+    <Compile Include="Search\Formatting\IQueryFormatter.cs" />
+    <Compile Include="Search\Formatting\SolrQueryFormatter.cs" />
     <Compile Include="Search\InformaApiSearchRequest.cs" />
     <Compile Include="Search\PredicateBuilders\InformaQueryPredicateBuilder.cs" />
     <Compile Include="Search\Results\QueryResults.cs" />
