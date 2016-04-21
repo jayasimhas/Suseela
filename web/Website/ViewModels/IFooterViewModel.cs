@@ -23,7 +23,11 @@ namespace Informa.Web.ViewModels
 
 		Link TwitterLink { get; }
 
-		string MenuOneHeader { get; }
+        string FooterRssLogoUrl { get; }
+
+        Link FooterRssLink { get; }
+
+        string MenuOneHeader { get; }
 
 		IEnumerable<INavigation> MenuOneLinks { get; }
 
