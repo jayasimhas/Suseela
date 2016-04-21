@@ -138,18 +138,6 @@
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MongoDB.Bson, Version=1.11.0.92, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\mongocsharpdriver.1.11.0\lib\net35\MongoDB.Bson.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MongoDB.Driver, Version=1.11.0.92, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\mongocsharpdriver.1.11.0\lib\net35\MongoDB.Driver.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MongoDB.Driver.Core, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MongoDB.Driver.Core.2.2.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="NewRelic.Api.Agent">
       <HintPath>..\..\lib\NewRelic\NewRelic.Api.Agent.dll</HintPath>
     </Reference>
@@ -650,11 +638,6 @@
     <Compile Include="Publishing\Scheduled\IScheduledPublishResult.cs" />
     <Compile Include="Publishing\Scheduled\ItemDeleteScheduledPublises.cs" />
     <Compile Include="Publishing\Scheduled\ItemVersionDeleteScheduledPublishes.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\IMongoDbScheduledPublishConfiguration.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbDeleteVersionScheduledPublishes.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbDeleteItemScheduledPublishes.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbFindScheduledPublishes.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbScheduledPublishConfiguration.cs" />
     <Compile Include="Publishing\Scheduled\ProcessScheduledPublishing.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishesResult.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishResult.cs" />
@@ -723,18 +706,6 @@
     <Compile Include="Publishing\Scheduled\IUpdateItemScheduledPublishing.cs" />
     <Compile Include="Publishing\Scheduled\IUpsertScheduledPublish.cs" />
     <Compile Include="Publishing\Scheduled\IUpsertScheduledPublishes.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\IMongoDbFindOneScheduledPublish.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\IMongoDbInsertScheduledPublish.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\IMongoDbScheduledPublishContext.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\IScheduledPublishDocumentFactory.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbDeleteScheduledPublish.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbFindOneScheduledPublish.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbInsertScheduledPublish.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbScheduledPublishContext.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbAllScheduledPublishes.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\MongoDbUpsertScheduledPublish.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\ScheduledPublishDocument.cs" />
-    <Compile Include="Publishing\Scheduled\MongoDB\ScheduledPublishDocumentFactory.cs" />
     <Compile Include="Publishing\Scheduled\PublishScheduledPublish.cs" />
     <Compile Include="Publishing\Scheduled\PublishScheduledPublishes.cs" />
     <Compile Include="Publishing\Scheduled\ReadyScheduledPublishes.cs" />
@@ -877,15 +848,6 @@
     <Compile Include="User\ResetPassword\IUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\IUserResetPasswordFactory.cs" />
     <Compile Include="User\ResetPassword\IUserResetPasswordTokenFactory.cs" />
-    <Compile Include="User\ResetPassword\MongoDB\IMongoDbUserResetPasswordConfiguration.cs" />
-    <Compile Include="User\ResetPassword\MongoDB\IMongoDbUserResetPasswordContext.cs" />
-    <Compile Include="User\ResetPassword\MongoDB\IUserResetPasswordDocumentFactory.cs" />
-    <Compile Include="User\ResetPassword\MongoDB\MongoDbFindUserResetPassword.cs" />
-    <Compile Include="User\ResetPassword\MongoDB\MongoDbStoreUserResetPassword.cs" />
-    <Compile Include="User\ResetPassword\MongoDB\MongoDbUserResetPasswordConfiguration.cs" />
-    <Compile Include="User\ResetPassword\MongoDB\MongoDbUserResetPasswordContext.cs" />
-    <Compile Include="User\ResetPassword\MongoDB\UserResetPasswordDocument.cs" />
-    <Compile Include="User\ResetPassword\MongoDB\UserResetPasswordDocumentFactory.cs" />
     <Compile Include="User\ResetPassword\ProcessUserResetPassword.cs" />
     <Compile Include="User\ResetPassword\ProcessUserResetPasswordResult.cs" />
     <Compile Include="User\ResetPassword\ProcessUserResetPasswordStatus.cs" />

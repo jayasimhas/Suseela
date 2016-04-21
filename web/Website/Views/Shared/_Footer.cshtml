@@ -9,7 +9,10 @@
 
     <div class="footer__section footer__section--double">
         <ul>
-            @if (Model.SubscribeLink != null)
+            @* THE SUBSCRIBE LINK HERE IS INCORRECT AND PULLING THE SAME 
+                LINK/TEXT THAT IS USED FOR THE CALL-TO-ACTION BANNER.  
+                THIS IS GOING TO NEED TO BE IT'S OWN FIELD *@
+            @if (false && Model.SubscribeLink != null)
             {
                 <li>
                     <a href="@Model.SubscribeLink.Url">@Model.SubscribeLink.Text</a>
