@@ -8,6 +8,7 @@ using Sitecore;
 using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.Social.Infrastructure.Utils;
 using Sitecore.Workflows;
 
 namespace Elsevier.Web.VWB.Report.Columns
@@ -76,7 +77,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 			    else
 			    {
                     WorkflowEvent latest = history.Last();
-                    text += "<br />Signed off: " + latest.Date.ToLocalTime();
+                    text += "<br />Signed off: " + latest.Date.ToServerTimeZone();
                     string user = latest.User;
                     text += "<br />By: " + user.Substring(user.LastIndexOf(@"\") + 1);
                 }
