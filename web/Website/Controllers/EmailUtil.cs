@@ -266,7 +266,7 @@ namespace Informa.Web.Controllers
 			string url = string.Empty;
 			var article = _articleUtil.GetArticleItemByNumber(articleStruct.ArticleNumber);
 			//Item article = _service.GetItem<Item>(articleStruct.ArticleGuid);
-			LinkField wordDocument = article.Fields[IArticleConstants.Word_DocumentFieldName];
+			LinkField wordDocument = article.Fields[IArticleConstants.Word_DocumentFieldId];
 			if (wordDocument == null) return url;
 			Item item = _service.GetItem<Item>(wordDocument.TargetID.Guid);
 			if (item == null || !MediaManager.HasMediaContent(item)) return url;

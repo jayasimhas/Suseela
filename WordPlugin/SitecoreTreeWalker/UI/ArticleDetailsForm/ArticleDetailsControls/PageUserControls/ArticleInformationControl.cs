@@ -20,8 +20,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
     /// </summary>
     public partial class ArticleInformationControl : ArticleDetailsPageUserControl
     {
-        private readonly string RemoteTimezoneId = "Eastern Standard Time";
-
         private ArticleDetail _parent;
         protected DocumentCustomProperties _documentCustomProperties;
 
@@ -32,30 +30,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         public ArticleInformationControl()
         {
             InitializeComponent();
-
-            try
-            {//TamerM- 2015-02-24: Instead of using the hard coded 'Easter Standard Time', now it reads from the app.config appSettings section and defaults to GMT if any error occurs
-
-                var remoteTimezoneIDFromAppSettings = InformaSitecoreWord.Config.ApplicationConfig.GetPropertyValue("RemoteTimezoneToConvertTo");
-
-                //If not appSettings key for RemoteTimezone exists, keep the hard coded default "GMT"
-                if (string.IsNullOrEmpty(remoteTimezoneIDFromAppSettings))
-                    return;
-
-                //Try to parse specified timezoneid. Throws exception if it fails
-                TimeZoneInfo.FindSystemTimeZoneById(remoteTimezoneIDFromAppSettings);
-
-                //set the timezoneid to the global RemoteTimezoneId property
-                RemoteTimezoneId = InformaSitecoreWord.Config.ApplicationConfig.GetPropertyValue("RemoteTimezoneToConvertTo");
-            }
-            catch (System.TimeZoneNotFoundException tzEx)//If the specified timezone is invalid
-            {
-                Globals.SitecoreAddin.LogException("Error validating appSettings Timezone key 'RemoteTimezoneToConvertTo'", tzEx);
-            }
-            catch (Exception ex)
-            {
-                Globals.SitecoreAddin.LogException("Error reading timezone", ex);
-            }
         }
 
         public bool _isCheckedOut;
@@ -567,25 +541,20 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         public DateTime GetWebPublishDate()
         {
             var localDate = uxWebPublishDate.Value.Date.Add(uxWebPublishTime.Value.TimeOfDay);
-
-            TimeZoneInfo remoteZone = TimeZoneInfo.FindSystemTimeZoneById(RemoteTimezoneId);
-
+            
             Globals.SitecoreAddin.Log("GetWebPublishDate: Date before DateTime conversion: [" +
                                       localDate.Date.ToString() + "].");
             Globals.SitecoreAddin.Log("GetWebPublishDate: Time before DateTime conversion:  [" +
                                       localDate.TimeOfDay.ToString() + "].");
-            if (!Equals(TimeZoneInfo.Local, remoteZone))
-            {
-                DateTime convertedTime = TimeZoneInfo.ConvertTime(localDate, remoteZone);
-                
-                Globals.SitecoreAddin.Log("GetWebPublishDate: Date after DateTime conversion: [" +
-                                          convertedTime.Date.ToString() + "].");
-                Globals.SitecoreAddin.Log("GetWebPublishDate: Time after DateTime conversion:  [" +
-                                          convertedTime.TimeOfDay.ToString() + "].");
 
-                return convertedTime;
-            }
-            return localDate.ToUniversalTime();
+            DateTime convertedTime = TimeZoneInfo.ConvertTime(localDate, TimeZoneInfo.Local, TimeZoneInfo.Utc);
+
+            Globals.SitecoreAddin.Log("GetWebPublishDate: Date after DateTime conversion: [" +
+                                      convertedTime.Date.ToString() + "].");
+            Globals.SitecoreAddin.Log("GetWebPublishDate: Time after DateTime conversion:  [" +
+                                      convertedTime.TimeOfDay.ToString() + "].");
+
+            return convertedTime;
         }
 
         /// <summary>
@@ -673,17 +642,13 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             }
             else
             {
-                string easternZoneId = RemoteTimezoneId;
-
-                TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById(easternZoneId);
-
                 Globals.SitecoreAddin.Log("SetPublicationTime: Date before DateTime conversion: [" +
                                           publicationDate.Date.ToString() + "].");
                 Globals.SitecoreAddin.Log("SetPublicationTime: Time before DateTime conversion:  [" +
                                           publicationDate.TimeOfDay.ToString() + "].");
 
-                DateTime convertedTime = TimeZoneInfo.ConvertTime(publicationDate, easternZone, TimeZoneInfo.Local);
-
+                //DateTime convertedTime = TimeZoneInfo.ConvertTime(publicationDate, TimeZoneInfo.Utc, TimeZoneInfo.Local);
+                DateTime convertedTime = TimeZoneInfo.ConvertTime(publicationDate, TimeZoneInfo.Utc).ToLocalTime();
                 Globals.SitecoreAddin.Log("SetPublicationTime: Date after DateTime conversion: [" +
                                           convertedTime.Date.ToString() + "].");
                 Globals.SitecoreAddin.Log("SetPublicationTime: Time after DateTime conversion:  [" +
