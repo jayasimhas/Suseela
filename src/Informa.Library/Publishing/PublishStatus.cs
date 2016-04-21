@@ -2,6 +2,7 @@
 {
 	public enum PublishStatus
 	{
+		Skipped,
 		Processing,
 		Failed,
 		Done
