@@ -4,6 +4,8 @@ using Sitecore.Globalization;
 using Sitecore.Publishing;
 using System.Linq;
 using Informa.Library.Publishing.Switcher;
+using System;
+using Sitecore;
 
 namespace Informa.Library.Publishing.Scheduled
 {
@@ -40,7 +42,15 @@ namespace Informa.Library.Publishing.Scheduled
 		                };
 		            }
 
-		            var languages = string.IsNullOrEmpty(scheduledPublish.Language)
+					if (!Context.Workflow.IsApproved(item))
+					{
+						return new PublishingStatus
+						{
+							Status = PublishStatus.Skipped
+						};
+					}
+
+					var languages = string.IsNullOrEmpty(scheduledPublish.Language)
 		                ? item.Languages
 		                : new Language[] {item.Language};
 		            var publishingTargetDatabases = PublishingTargetsContext.Databases.ToArray();

@@ -1,3 +1,5 @@
+import { analyticsEvent } from './analytics-controller';
+
 function loginController(requestVerificationToken) {
 	this.addRequestControl = function(triggerElement, successCallback, failureCallback) {
 		if (triggerElement) {
@@ -20,11 +22,7 @@ function loginController(requestVerificationToken) {
 					success: function (response) {
 						if (response.success) {
 						    this.showSuccessMessage(triggerElement);
-						    var resetPasswordAnalytics = {
-						        event_name: "password reset success"						       
-						    };
-
-						    analyticsEvent( $.extend(analytics_data, resetPasswordAnalytics) );
+						  
 							
 							if (successCallback) {
 								successCallback(triggerElement);
@@ -32,19 +30,24 @@ function loginController(requestVerificationToken) {
 						}
 						else {
 							$(triggerElement).removeAttr('disabled');
-							
+							var resetPasswordAnalytics = {
+							    event_name: "password reset unsuccessful"						       
+							};
+
 							var specificErrorDisplayed = false;
 
 							if ($.inArray('EmailRequirement', response.reasons) !== -1)
 							{
 								this.showError(triggerElement, '.js-reset-password-error-email');
 								specificErrorDisplayed = true;
-							}
+                            }
 
 							if (!specificErrorDisplayed)
 							{
 								this.showError(triggerElement, '.js-reset-password-error-general');
 							}
+							
+							analyticsEvent( $.extend(analytics_data, resetPasswordAnalytics) );
 
 							if (failureCallback) {
 								failureCallback(triggerElement);
@@ -182,12 +185,22 @@ function loginController(requestVerificationToken) {
 	};
 
 	this.showSuccessMessage = function(triggerElement) {
-		$(triggerElement).parents('.js-reset-password-container').find('.js-reset-password-success').show();
+	    $(triggerElement).parents('.js-reset-password-container').find('.js-reset-password-success').show();
+	    var resetPasswordAnalytics = {
+	        event_name: "password reset success"						       
+	    };
+
+	    analyticsEvent( $.extend(analytics_data, resetPasswordAnalytics) );
 	}
 
 	this.showError = function(triggerElement, error) {
 		$(triggerElement).parents('.js-reset-password-container').find('.js-reset-password-error-container').show();
 		$(triggerElement).parents('.js-reset-password-container').find(error).show();
+		var resetPasswordAnalytics = {
+		    event_name: "password reset unsuccessful"	
+         };
+
+		analyticsEvent( $.extend(analytics_data, resetPasswordAnalytics) );
 	}
 	
 	this.hideErrors = function(triggerElement) {
