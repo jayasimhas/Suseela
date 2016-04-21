@@ -129,7 +129,7 @@
                             return searchService.getResults();
                         }, function () {
                             _this._initializeData();
-                            _this._utagAnalytics();
+                           
                         });
                     }
 
@@ -154,6 +154,7 @@
                             this.totalResults = pager.totalResults;
                             this.keywords = this.searchService.getFilter('q').getValue();
                             this.selectedFacetGroups = this._getActiveFacetGroups();
+                            this._utagAnalytics();
                          
                         }
                     }, {
@@ -173,7 +174,8 @@
                         key: '_utagAnalytics',
                         value: function _utagAnalytics() {
                             var eventDetails = {
-                                Number_of_Results: '"' +this.totalResults + '"'
+                                Number_of_Results: '"' + this.totalResults + '"',
+                                search_Keyword: '"' + this.keywords + '"'
                             };
                             var dataObj = $.extend(analytics_data, eventDetails);
                             utag.link(dataObj);
