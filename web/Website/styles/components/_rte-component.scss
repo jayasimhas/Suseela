@@ -1,0 +1,7 @@
+.GeneralRTEComponent {
+
+    span {
+        @include textMix('PTSerif', 1rem, 400);
+        line-height: 1.5rem;
+    }
+}

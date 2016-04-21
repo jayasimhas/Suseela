@@ -574,15 +574,18 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                                       localDate.Date.ToString() + "].");
             Globals.SitecoreAddin.Log("GetWebPublishDate: Time before DateTime conversion:  [" +
                                       localDate.TimeOfDay.ToString() + "].");
+            if (!Equals(TimeZoneInfo.Local, remoteZone))
+            {
+                DateTime convertedTime = TimeZoneInfo.ConvertTime(localDate, remoteZone);
+                
+                Globals.SitecoreAddin.Log("GetWebPublishDate: Date after DateTime conversion: [" +
+                                          convertedTime.Date.ToString() + "].");
+                Globals.SitecoreAddin.Log("GetWebPublishDate: Time after DateTime conversion:  [" +
+                                          convertedTime.TimeOfDay.ToString() + "].");
 
-            DateTime convertedTime = TimeZoneInfo.ConvertTime(localDate, remoteZone);
-
-            Globals.SitecoreAddin.Log("GetWebPublishDate: Date after DateTime conversion: [" +
-                                      convertedTime.Date.ToString() + "].");
-            Globals.SitecoreAddin.Log("GetWebPublishDate: Time after DateTime conversion:  [" +
-                                      convertedTime.TimeOfDay.ToString() + "].");
-
-            return convertedTime;
+                return convertedTime;
+            }
+            return localDate.ToUniversalTime();
         }
 
         /// <summary>

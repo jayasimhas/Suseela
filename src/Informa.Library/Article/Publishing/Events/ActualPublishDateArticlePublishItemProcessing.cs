@@ -11,7 +11,11 @@ namespace Informa.Library.Article.Publishing.Events
 	{
 		public override void ProcessPublish(Item item, ItemProcessingEventArgs args)
 		{
-			if (((DateField)item.Fields[IArticleConstants.Actual_Publish_DateFieldName]).DateTime != default(DateTime))
+			var now = DateTime.Now;
+
+			if (((DateField)item.Fields[IArticleConstants.Actual_Publish_DateFieldName]).DateTime != default(DateTime) ||
+				!item.Publishing.IsPublishable(now, false) ||
+				!item.Publishing.IsValid(now, true))
 			{
 				return;
 			}

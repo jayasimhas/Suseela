@@ -18,24 +18,25 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
     {
         protected override SiteContext ResolveSiteContext(HttpRequestArgs args)
         {
+            if (!Context.User.IsAuthenticated) return base.ResolveSiteContext(args);
             // we only want to set the site context in edit or preview mode
             List<string> modes = new List<string>() { "preview", "edit" };
             string qsMode = WebUtil.GetQueryString("sc_mode").ToLower();
-            if(!modes.Contains(qsMode))
+            if (!modes.Contains(qsMode))
                 return base.ResolveSiteContext(args);
 
             // context isn't available yet so we've got to pull the db from config factory
             var db = Factory.GetDatabase("master");
             if (db == null)
                 return base.ResolveSiteContext(args);
-            
+
             // if a query string ID was found, get the item for page editor and front-end preview mode
             string id = WebUtil.GetQueryString("sc_itemid");
             if (string.IsNullOrEmpty(id))
                 return base.ResolveSiteContext(args);
-            
+
             var item = db.GetItem(id);
-            if(item == null)
+            if (item == null)
                 return base.ResolveSiteContext(args);
 
             // look for a site that is an ancestor of the item

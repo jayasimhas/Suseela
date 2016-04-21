@@ -38,6 +38,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
         public bool _Live;
 
+        string remoteTimezoneIDFromAppSettings;
+        private TimeZoneInfo easternZone;
+
         #endregion
 
         #region MinorUIManipulation
@@ -109,6 +112,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
         /// </summary>
         public ArticleDetail()
         {
+            remoteTimezoneIDFromAppSettings = ApplicationConfig.GetPropertyValue("RemoteTimezoneToConvertTo");
+            easternZone = TimeZoneInfo.FindSystemTimeZoneById(remoteTimezoneIDFromAppSettings);
+
             SitecoreAddin.TagActiveDocument();
 
             _sitecoreArticle = new SitecoreClient();
@@ -761,10 +767,15 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             try
             {
                 if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Enabled)
+                {
                     workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
+                }
 
                 var articleDate = articleDetailsPageSelector.GetDate();
-                if (articleDate < DateTime.Now)
+                articleDate = TimeZoneInfo.ConvertTimeFromUtc(articleDate, easternZone);
+                var currentTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, easternZone);
+
+                if (articleDate < currentTime)
                 {
 
                     var result = WantsToSetArticleDateToNow(command);
@@ -794,7 +805,16 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 ArticleDetails.CommandID = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommand();
                 ArticleDetails.NotificationText = articleDetailsPageSelector.pageWorkflowControl.GetNotificationText();
 
+                var lockStateBeforeSaveMetaData = SitecoreClient.GetLockedStatus(ArticleDetails.ArticleGuid);
                 SitecoreClient.SaveMetadataToSitecore(ArticleDetails.ArticleNumber, _structConverter.GetServerStruct(ArticleDetails));
+                //I know the following checks are weird, but issue IIPP-1031 occurs sometimes only on UAT env. So had to hack around it.
+                //On UAT after SaveMetadataToSitecore, the locked status becomes false for no apparent reason.
+                var lockStateAfterSaveMetaData = SitecoreClient.GetLockedStatus(ArticleDetails.ArticleGuid);
+                if (lockStateBeforeSaveMetaData.Locked && lockStateAfterSaveMetaData.Locked == false && workflowChange_UnlockOnSave == false)
+                {
+                    SitecoreClient.CheckOutArticle(ArticleDetails.ArticleNumber, SitecoreUser.GetUser().Username);
+                }
+
                 if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked)
                 {
                     articleDetailsPageSelector.pageArticleInformationControl.CheckIn(false);
@@ -804,12 +824,19 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                                                 : SitecoreClient.GetWorkflowState(ArticleDetails.ArticleNumber), ArticleDetails);
                 articleDetailsPageSelector.pageRelatedArticlesControl.PushSitecoreChanges();
                 articleDetailsPageSelector.UpdateFields();
-                articleDetailsPageSelector.ResetChangedStatus();
+                articleDetailsPageSelector.ResetChangedStatus(true);
+
                 UpdateFieldsAfterSave();
                 DocumentPropertyEditor.WritePublicationAndDate(SitecoreAddin.ActiveDocument, articleDetailsPageSelector.GetPublicationName(), articleDetailsPageSelector.GetProperDate());
 
                 //TamerM - 2016-03-22: Prompt and ReExport  NLM FEED
                 NLMFeedUtils.PromptAndReExportNLMFeed(ArticleDetails.ArticleNumber, ArticleDetails.IsPublished);
+
+                if (workflowChange_UnlockOnSave)
+                {
+                    EnablePreview();
+                    uxCreateArticle.Visible = false;
+                }
 
                 MessageBox.Show(@"Metadata saved!", @"Informa");
             }
@@ -855,7 +882,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
 
                 var articleDate = articleDetailsPageSelector.GetDate();
-                if (articleDate < DateTime.Now)
+                articleDate = TimeZoneInfo.ConvertTimeFromUtc(articleDate, easternZone);
+                var currentTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, easternZone);
+
+                if (articleDate < currentTime)
                 {
                     var result = WantsToSetArticleDateToNow(command);
                     if (result == DialogResult.Yes)
@@ -874,10 +904,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 SuspendLayout();
 
                 SitecoreAddin.ActiveDocument.Saved = false;
-
-
-                var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument,
-                                                                       _wordUtils.CharacterStyleTransformer);
+                
+                var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument,_wordUtils.CharacterStyleTransformer);
                 if (PreSavePrompts(metadataParser)) return;
                 SaveArticleToSitecoreUpdateUI(metadataParser);
             }

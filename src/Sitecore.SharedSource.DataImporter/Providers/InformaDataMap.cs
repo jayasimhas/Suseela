@@ -8,6 +8,7 @@ using System.Xml;
 using HtmlAgilityPack;
 using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.SharedSource.DataImporter.Extensions;
 using Sitecore.SharedSource.DataImporter.Utility;
 using HtmlDocument = Sitecore.WordOCX.HtmlDocument.HtmlDocument;
 using Sitecore.SharedSource.DataImporter.Logger;
@@ -16,11 +17,17 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 {
     public class EscenicAutonomyArticleDataMap : BaseDataMap
     {
+        #region Properties
+
+        public string PublicationPrefix { get; set; }
+        
+        #endregion Properties
+
         #region Constructor
 
         public EscenicAutonomyArticleDataMap(Database db, string ConnectionString, Item importItem, ILogger l)
             : base(db, ConnectionString, importItem, l) {
-            
+            PublicationPrefix = ImportItem.GetItemField("Publication Prefix", Logger);
         }
 
         #endregion Constructor
@@ -48,7 +55,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 //generated field
                 string curFileName = new FileInfo(f).Name;
-                ao["ARTICLE NUMBER"] = $"SC{artNumber:D6}";
+                ao["ARTICLE NUMBER"] = $"{PublicationPrefix}{artNumber:D6}";
                 
                 //escenic field values
                 string authorNode = "STORYAUTHORNAME";

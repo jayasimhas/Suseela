@@ -1,4 +1,5 @@
-﻿using Glass.Mapper.Sc;
+﻿using System.Web;
+using Glass.Mapper.Sc;
 using Informa.Library.Company;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
@@ -37,6 +38,8 @@ namespace Informa.Web.ViewModels
 		public string DismissText => TextTranslator.Translate("Maintenance.MaintenanceDismiss");
 		public bool Display =>	AllowCompanyRegisterUser.IsAllowed && !(SitecoreContext.GetCurrentItem<IGlassBase>(inferType: true) is IRegistration_Page);
 		public string RegisterLinkText => SiteRootContext.Item?.Register_Link?.Text;
-		public string RegisterLinkUrl => SiteRootContext.Item?.Register_Link?.Url;
+	    public string RegisterLinkUrl => (string.IsNullOrEmpty(SiteRootContext?.Item?.Register_Link?.Url))
+	        ? string.Empty
+	        : $"{SiteRootContext.Item.Register_Link.Url}?returnUrl={HttpContext.Current.Request.Url.AbsolutePath}";
 	}
 }

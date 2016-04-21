@@ -31,7 +31,8 @@ namespace Informa.Web.App_Start.Registrations
             builder.RegisterType<SalesforceGetIPEntitlements>().As<ISalesforceGetIPEntitlements>();
 			builder.RegisterType<SalesforceSiteTypeParser>()
 				.As<ISalesforceCompanyTypeFromSiteType>()
-				.As<ISalesforceSiteTypeFromCompanyType>();
+				.As<ISalesforceSiteTypeFromCompanyType>()
+				.As<ISalesforceCompanyTypeFromAccountType>();
 			builder.RegisterType<SalesforceEntitlmentFactory>().As<ISalesforceEntitlmentFactory>();
 			
         }

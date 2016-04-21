@@ -12,22 +12,22 @@ using Velir.Core.Extensions.System.Collections.Generic;
 
 namespace Informa.Library.Search.Extensions
 {
-	public static class QueryableExtensions
-	{
-		public static IQueryable<T> FilterTaxonomies<T>(this IQueryable<T> source, ITaxonomySearchFilter filter)
-			where T : ITaxonomySearchResults
-		{
-			if (source == null || filter == null || !filter.TaxonomyIds.Any())
-			{
-				return source;
-			}
+    public static class QueryableExtensions
+    {
+        public static IQueryable<T> FilterTaxonomies<T>(this IQueryable<T> source, ITaxonomySearchFilter filter)
+            where T : ITaxonomySearchResults
+        {
+            if (source == null || filter == null || !filter.TaxonomyIds.Any())
+            {
+                return source;
+            }
 
-			var predicate = PredicateBuilder.True<T>();
+            var predicate = PredicateBuilder.True<T>();
 
-			predicate = filter.TaxonomyIds.Aggregate(predicate, (current, f) => current.Or(i => i.Taxonomies.Contains(f)));
+            predicate = filter.TaxonomyIds.Aggregate(predicate, (current, f) => current.Or(i => i.Taxonomies.Contains(f)));
 
-			return source.Filter(predicate);
-		}
+            return source.Filter(predicate);
+        }
 
 		public static IQueryable<T> FilteryByArticleNumber<T>(this IQueryable<T> source, IArticleNumberFilter filter)
 				where T : IArticleNumber
@@ -70,6 +70,13 @@ namespace Informa.Library.Search.Extensions
 			predicate = predicate.Or(i => i.EScenicID == filter.EScenicID);
 
 			return source.Filter(predicate);
+        }
+
+        public static IQueryable<T> FilteryByLatestVersionAndCurrentLanguage<T>(this IQueryable<T> source)
+                        where T : ArticleSearchResultItem
+        {
+            source = source?.Filter(x => x.IsLatestVersion).Filter(x => x.Language == Sitecore.Context.Language.Name);
+            return source;
 		}
 	}
 }

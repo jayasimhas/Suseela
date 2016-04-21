@@ -1,0 +1,12 @@
+.article-bookmark {
+    @extend .article-prologue__share-icon;
+    display: none;
+
+    &:hover {
+        @include svg-fill($color-zeus-black);
+    }
+
+    &.is-visible {
+        display: inline-block;
+    }
+}

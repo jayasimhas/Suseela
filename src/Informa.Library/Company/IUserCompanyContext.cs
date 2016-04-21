@@ -3,5 +3,6 @@
 	public interface IUserCompanyContext
 	{
 		ICompany Company { get; set; }
+		void Clear();
 	}
 }
