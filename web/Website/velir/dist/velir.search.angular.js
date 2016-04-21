@@ -154,7 +154,7 @@
                             this.totalResults = pager.totalResults;
                             this.keywords = this.searchService.getFilter('q').getValue();
                             this.selectedFacetGroups = this._getActiveFacetGroups();
-                         
+
                         }
                     }, {
                         key: '_getActiveFacetGroups',
@@ -172,9 +172,18 @@
                     {
                         key: '_utagAnalytics',
                         value: function _utagAnalytics() {
+
+                            var searchKeyword = $('.header-search__field').val();
+                            if ((searchKeyword === "" || searchKeyword === undefined || searchKeyword === null) && (('.search-bar__field').length)) {
+                                searchKeyword = $('.search-bar__field').val();
+
+                            }
                             var eventDetails = {
-                                Number_of_Results: '"' +this.totalResults + '"'
+                                event_name: "search",
+                                search_keyword: '"' + searchKeyword + '"',
+                                Number_of_Results: '"' + this.totalResults + '"'
                             };
+
                             var dataObj = $.extend(analytics_data, eventDetails);
                             utag.link(dataObj);
                         }
@@ -278,7 +287,7 @@
 
                 exports.PaginationController = PaginationController;
 
-                PaginationController.$inject = ['$scope', '$location','$anchorScroll', 'searchService'];
+                PaginationController.$inject = ['$scope', '$location', '$anchorScroll', 'searchService'];
 
             }).call(this, typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
