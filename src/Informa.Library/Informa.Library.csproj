@@ -528,6 +528,7 @@
     <Compile Include="Subscription\IndividualSubscriptionRenewalMessageContext.cs" />
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
+    <Compile Include="User\IUserContentRepository.cs" />
     <Compile Include="User\Newsletter\ISiteNewsletterUserOptedInContext.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptIn.cs" />
@@ -569,6 +570,11 @@
     <Compile Include="User\Registration\Web\IWebRegisterUserContext.cs" />
     <Compile Include="User\Registration\Web\WebIsActiveRegistration.cs" />
     <Compile Include="User\Registration\Web\WebRegisterUserContext.cs" />
+    <Compile Include="User\Search\ISavedSearchEntity.cs" />
+    <Compile Include="User\Search\ISavedSearchItemId.cs" />
+    <Compile Include="User\Search\ISavedSearchUserContext.cs" />
+    <Compile Include="User\Search\SavedSearchEntity.cs" />
+    <Compile Include="User\Search\SavedSearchUserContext.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
     <Compile Include="SiteDebugging\ISiteDebuggingAllowedConfiguration.cs" />

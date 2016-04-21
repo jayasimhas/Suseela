@@ -67,6 +67,7 @@
     <Compile Include="EBIWebServices\EBI_QueryInformationAndOfferOptInsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryProfileContactInformationResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QuerySavedDocumentResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QuerySavedSearchItemsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QuerySubscriptionsAndPurchasesResponse.cs" />
     <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponse.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="User\SalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\SalesforceUpdateUserPassword.cs" />
     <Compile Include="User\SalesforceUser.cs" />
+    <Compile Include="User\Search\SalesforceSavedSearchRepository.cs" />
     <Compile Include="Web References\EBIWebServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
