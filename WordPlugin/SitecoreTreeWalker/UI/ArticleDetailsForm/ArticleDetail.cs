@@ -767,6 +767,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
                 var articleDate = articleDetailsPageSelector.GetDate();
 
+                //This is a temporary Hack as we are assuming the values user selecting to be in EST.
                 var timeUtc = DateTime.UtcNow;
                 TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
                 DateTime currentTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
@@ -878,6 +879,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
 
                 var articleDate = articleDetailsPageSelector.GetDate();
+                //This is a temporary Hack as we are assuming the values user selecting to be in EST.
                 var timeUtc = DateTime.UtcNow;
                 TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
                 DateTime currentTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
