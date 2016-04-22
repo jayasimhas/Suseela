@@ -12,17 +12,20 @@ namespace Informa.Library.Salesforce
 		protected readonly ISalesforceService Service;
 		protected readonly ISalesforceSessionContext SessionContext;
 		protected readonly ISalesforceErrorLogger ErrorLogger;
+	    protected readonly ISalesforceDebugLogger DebugLogger;
 		protected readonly ISalesforceServiceContextEnabled ServiceContextEnabled;
 
 		public SalesforceServiceContext(
 			ISalesforceService service,
 			ISalesforceSessionContext sessionContext,
 			ISalesforceErrorLogger errorLogger,
+            ISalesforceDebugLogger debugLogger,
 			ISalesforceServiceContextEnabled serviceContextEnabled)
 		{
 			Service = service;
 			SessionContext = sessionContext;
 			ErrorLogger = errorLogger;
+		    DebugLogger = debugLogger;
 			ServiceContextEnabled = serviceContextEnabled;
 
 			Service.SessionHeaderValue = new SessionHeader();
@@ -30,7 +33,7 @@ namespace Informa.Library.Salesforce
 
 		public void RefreshSession()
 		{
-            ErrorLogger.Log("Refresh Session", new Exception($"Header Value: {Service.SessionHeaderValue.sessionId}, ContextValue: {SessionContext.Session.Id}"));
+            DebugLogger.Log($"Refresh Session: Header Value: {Service.SessionHeaderValue.sessionId}, ContextValue: {SessionContext.Session.Id}");
 
             if (string.Equals(Service.SessionHeaderValue.sessionId, SessionContext.Session.Id))
 			{
@@ -51,7 +54,7 @@ namespace Informa.Library.Salesforce
             int CallerLineNumber = 0)
 			where TResult : IEbiResponse
 		{
-		    ErrorLogger.Log($"Salesforced called by: {CallerMemberName}, File: {CallerFilePath}, Line Number {CallerLineNumber}", null);
+            DebugLogger.Log($"Salesforced called by: {CallerMemberName}, File: {CallerFilePath}, Line Number {CallerLineNumber}");
 
 			if (!ServiceContextEnabled.Enabled)
 			{
@@ -89,7 +92,7 @@ namespace Informa.Library.Salesforce
 			if (invalidSession)
 			{
 				RefreshSession();
-                ErrorLogger.Log("Invalid Session", new Exception("Infinite loop?"));
+                DebugLogger.Log($"Invalid Session from caller: {functionExpression.Name}");
                 return Execute(functionExpression);
 			}
 
@@ -97,7 +100,7 @@ namespace Informa.Library.Salesforce
 		    {
 		        foreach (var error in result.errors)
 		        {
-		            ErrorLogger.Log($"Request Failed: {error?.message}", null);
+                    DebugLogger.Log($"Request Failed: {error?.message}");
 		        }
 
 		    }

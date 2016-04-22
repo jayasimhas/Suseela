@@ -2,6 +2,7 @@
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
 using System;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.Data.Fields;
 
 namespace Informa.Library.Publishing.Scheduled
@@ -24,17 +25,18 @@ namespace Informa.Library.Publishing.Scheduled
 			var language = item.Language.Name;
 			var version = item.Version.Number.ToString();
 
-			var plannedPublishDateField = (DateField)item.Fields["Planned Publish Date"];
+			var plannedPublishDateField = (DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldId];
 
 			if (plannedPublishDateField != null)
 			{
 				AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, plannedPublishDateField.DateTime, ScheduledPublishType.Planned);
+			    return scheduledPublishes;
 			}
 
-			AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, item.Publishing.PublishDate, ScheduledPublishType.From);
-			AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, item.Publishing.UnpublishDate, ScheduledPublishType.To);
-			AddScheduledPublish(scheduledPublishes, itemId, language, version, item.Publishing.ValidFrom, ScheduledPublishType.From);
-			AddScheduledPublish(scheduledPublishes, itemId, language, version, item.Publishing.ValidTo, ScheduledPublishType.To);
+			//AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, item.Publishing.PublishDate, ScheduledPublishType.From);
+			//AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, item.Publishing.UnpublishDate, ScheduledPublishType.To);
+			//AddScheduledPublish(scheduledPublishes, itemId, language, version, item.Publishing.ValidFrom, ScheduledPublishType.From);
+			//AddScheduledPublish(scheduledPublishes, itemId, language, version, item.Publishing.ValidTo, ScheduledPublishType.To);
 
 			return scheduledPublishes;
 		}
