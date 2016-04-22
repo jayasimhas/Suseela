@@ -766,7 +766,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 }
 
                 var articleDate = articleDetailsPageSelector.GetDate();
-                var currentTime = DateTime.UtcNow;
+                var currentTime = DateTime.Now;
 
                 if (articleDate < currentTime)
                 {
@@ -875,7 +875,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
 
                 var articleDate = articleDetailsPageSelector.GetDate();
-                var currentTime = DateTime.UtcNow;
+                var currentTime = DateTime.Now;
 
                 if (articleDate < currentTime)
                 {
