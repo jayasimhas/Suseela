@@ -386,6 +386,10 @@
     <Compile Include="User\Authentication\Web\WebAuthenticateUserResult.cs" />
     <Compile Include="User\Authentication\Web\WebClearAuthenticatedUserSessionAction.cs" />
     <Compile Include="User\Authentication\Web\WebLoginUserRegisterUserAction.cs" />
+    <Compile Include="User\Content\ContentResponse.cs" />
+    <Compile Include="User\Content\IContentResponse.cs" />
+    <Compile Include="User\Content\IUserContentRepository.cs" />
+    <Compile Include="User\Content\IUserContentService.cs" />
     <Compile Include="User\Entitlement\DefaultEntitlementsFactory.cs" />
     <Compile Include="User\Entitlement\EntitlementAccessLevelContext.cs" />
     <Compile Include="User\Entitlement\EntitlementChecksEnabled.cs" />
@@ -528,7 +532,6 @@
     <Compile Include="Subscription\IndividualSubscriptionRenewalMessageContext.cs" />
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
-    <Compile Include="User\IUserContentRepository.cs" />
     <Compile Include="User\Newsletter\ISiteNewsletterUserOptedInContext.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptIn.cs" />
@@ -570,11 +573,14 @@
     <Compile Include="User\Registration\Web\IWebRegisterUserContext.cs" />
     <Compile Include="User\Registration\Web\WebIsActiveRegistration.cs" />
     <Compile Include="User\Registration\Web\WebRegisterUserContext.cs" />
+    <Compile Include="User\Search\ISavedSearchDisplayable.cs" />
     <Compile Include="User\Search\ISavedSearchEntity.cs" />
     <Compile Include="User\Search\ISavedSearchItemId.cs" />
-    <Compile Include="User\Search\ISavedSearchUserContext.cs" />
+    <Compile Include="User\Search\ISavedSearchSaveable.cs" />
+    <Compile Include="User\Search\SavedSearchDisplayModel.cs" />
     <Compile Include="User\Search\SavedSearchEntity.cs" />
-    <Compile Include="User\Search\SavedSearchUserContext.cs" />
+    <Compile Include="User\Search\SavedSearchInput.cs" />
+    <Compile Include="User\Search\SavedSearchService.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
     <Compile Include="SiteDebugging\ISiteDebuggingAllowedConfiguration.cs" />

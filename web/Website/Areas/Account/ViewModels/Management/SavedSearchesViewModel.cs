@@ -1,13 +1,11 @@
 using System.Collections.Generic;
-using System.Linq;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
 using Informa.Library.User.Authentication;
-using Informa.Library.User.Document;
+using Informa.Library.User.Content;
 using Informa.Library.User.Search;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
-using Informa.Web.Controllers.Search;
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
@@ -19,7 +17,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		public readonly IAuthenticatedUserContext UserContext;
 		public readonly ISignInViewModel SignInViewModel;
 		public readonly ISitecoreService SitecoreService;
-		protected readonly ISavedSearchUserContext SavedSearchUserContext;
+		protected readonly IUserContentService<ISavedSearchSaveable, ISavedSearchDisplayable> SavedSearchService;
 		protected readonly ISiteRootContext SiteRootContext;
 
 		public SavedSearchesViewModel(
@@ -27,19 +25,18 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 			IAuthenticatedUserContext userContext,
 			ISignInViewModel signInViewModel,
 			ISitecoreService sitecoreService,
-			ISavedSearchUserContext savedSearchUserContext,
+			IUserContentService<ISavedSearchSaveable, ISavedSearchDisplayable> savedSearchService,
 			ISiteRootContext siteRootContext)
 		{
 			TextTranslator = translator;
 			UserContext = userContext;
 			SignInViewModel = signInViewModel;
 			SitecoreService = sitecoreService;
-			SavedSearchUserContext = savedSearchUserContext;
+			SavedSearchService = savedSearchService;
 			SiteRootContext = siteRootContext;
 		}
 
-		public IEnumerable<SavedSearchModel> SavedSearches => SavedSearchUserContext.GetMany().Select(s => new SavedSearchModel());
-
+		public IEnumerable<ISavedSearchDisplayable> SavedSearches => SavedSearchService.GetContent();
 		public bool IsAuthenticated => UserContext.IsAuthenticated;
 		public string Title => GlassModel?.Title;
 		public string GeneralErrorText => TextTranslator.Translate("SavedSearches.GeneralError");

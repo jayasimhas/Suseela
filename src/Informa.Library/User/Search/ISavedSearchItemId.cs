@@ -3,6 +3,6 @@
 	public interface ISavedSearchItemId
 	{
 		string Username { get; set; }
-		string Title { get; set; }
+		string Name { get; set; }
 	}
 }

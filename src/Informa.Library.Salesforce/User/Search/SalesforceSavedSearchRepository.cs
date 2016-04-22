@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Salesforce.EBIWebServices;
-using Informa.Library.User;
+using Informa.Library.User.Content;
 using Informa.Library.User.Search;
 
 namespace Informa.Library.Salesforce.User.Search
@@ -15,43 +15,61 @@ namespace Informa.Library.Salesforce.User.Search
 			Service = service;
 		}
 
-		public void Add(ISavedSearchEntity entity)
+		public IContentResponse Add(ISavedSearchEntity entity)
 		{
-			if (string.IsNullOrEmpty(entity?.Username) || string.IsNullOrEmpty(entity.Title) || string.IsNullOrEmpty(entity.Url))
+			if (string.IsNullOrEmpty(entity?.Username) || string.IsNullOrEmpty(entity.Name) || string.IsNullOrEmpty(entity.SearchString))
 			{
-				return;
+				return new ContentResponse
+				{
+					Success = false,
+					Message = string.Empty
+				};
 			}
 
-			var response = Service.Execute(s => s.createSavedSearchItem(entity.Username, entity.Url, entity.Title, entity.HasAlert));
+			var response = Service.Execute(s => s.createSavedSearchItem(entity.Username, entity.SearchString, entity.Name, entity.HasAlert));
+
+			return CreateResponse(response);
 		}
 
-		public void Update(ISavedSearchEntity entity)
+		public IContentResponse Update(ISavedSearchEntity entity)
 		{
-			if (string.IsNullOrEmpty(entity?.Username) || string.IsNullOrEmpty(entity.Title) || string.IsNullOrEmpty(entity.Url))
+			if (string.IsNullOrEmpty(entity?.Username) || string.IsNullOrEmpty(entity.Name) || string.IsNullOrEmpty(entity.SearchString))
 			{
-				return;
+				return new ContentResponse
+				{
+					Success = false,
+					Message = string.Empty
+				};
 			}
 
-			var response = Service.Execute(s => s.updateSavedSearchItem(entity.Username, entity.Url, entity.Title, entity.HasAlert));
+			var response = Service.Execute(s => s.updateSavedSearchItem(entity.Username, entity.SearchString, entity.Name, entity.HasAlert));
+
+			return CreateResponse(response);
 		}
 
-		public void Delete(ISavedSearchEntity entity)
+		public IContentResponse Delete(ISavedSearchEntity entity)
 		{
-			if (string.IsNullOrEmpty(entity?.Username) || string.IsNullOrEmpty(entity.Title))
+			if (string.IsNullOrEmpty(entity?.Username) || string.IsNullOrEmpty(entity.Name))
 			{
-				return;
+				return new ContentResponse
+				{
+					Success = false,
+					Message = string.Empty
+				};
 			}
 
-			var response = Service.Execute(s => s.deleteSavedSearch(entity.Username, entity.Title));
+			var response = Service.Execute(s => s.deleteSavedSearch(entity.Username, entity.Name));
+
+			return CreateResponse(response);
 		}
 
 		public ISavedSearchEntity GetById(object id)
 		{
 			var itemId = id as ISavedSearchItemId;
 
-			if (string.IsNullOrEmpty(itemId?.Username) || string.IsNullOrEmpty(itemId.Title)) return default(ISavedSearchEntity);
+			if (string.IsNullOrEmpty(itemId?.Username) || string.IsNullOrEmpty(itemId.Name)) return default(ISavedSearchEntity);
 
-			return GetMany(itemId.Username).FirstOrDefault(s => s.Title == itemId.Title);
+			return GetMany(itemId.Username).FirstOrDefault(s => s.Name == itemId.Name);
 		}
 
 		public IEnumerable<ISavedSearchEntity> GetMany(string username)
@@ -71,13 +89,22 @@ namespace Informa.Library.Salesforce.User.Search
 			var savedDocuments = response.savedSearches.Select(ssi => new SavedSearchEntity
 			{
 				Username = username,
-				Title = ssi.name,
-				Url = ssi.searchString,
+				Name = ssi.name,
+				SearchString = ssi.searchString,
 				HasAlert = ssi.IsReceivingEmailAlertSpecified,
-				DateSaved = ssi.SaveDate.GetValueOrDefault()
+				DateCreated = ssi.SaveDate.GetValueOrDefault()
 			});
 
 			return savedDocuments;
+		}
+
+		private IContentResponse CreateResponse(IEbiResponse webServiceResponse)
+		{
+			return new ContentResponse
+			{
+				Success = webServiceResponse.IsSuccess(),
+				Message = webServiceResponse.errors?.FirstOrDefault()?.message ?? string.Empty
+			};
 		}
 	}
 }

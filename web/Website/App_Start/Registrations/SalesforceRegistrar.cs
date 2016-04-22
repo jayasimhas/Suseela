@@ -8,6 +8,7 @@ using Informa.Library.Salesforce.User.Registration;
 using Informa.Library.Salesforce.User.Search;
 using Informa.Library.Salesforce.Web;
 using Informa.Library.User;
+using Informa.Library.User.Content;
 using Informa.Library.User.Search;
 
 namespace Informa.Web.App_Start.Registrations
@@ -38,7 +39,6 @@ namespace Informa.Web.App_Start.Registrations
 				.As<ISalesforceCompanyTypeFromAccountType>();
 			builder.RegisterType<SalesforceEntitlmentFactory>().As<ISalesforceEntitlmentFactory>();
 			builder.RegisterType<SalesforceSavedSearchRepository>().As<IUserContentRepository<ISavedSearchEntity>>();
-			builder.RegisterType<SavedSearchUserContext>().As<ISavedSearchUserContext>();
 		}
 	}
 }
