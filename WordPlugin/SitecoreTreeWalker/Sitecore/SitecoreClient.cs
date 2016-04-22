@@ -14,6 +14,7 @@ using Microsoft.Office.Interop.Word;
 using Newtonsoft.Json;
 using PluginModels;
 using InformaSitecoreWord.Config;
+using Newtonsoft.Json.Converters;
 
 /// <summary>
 namespace InformaSitecoreWord.Sitecore
@@ -25,6 +26,15 @@ namespace InformaSitecoreWord.Sitecore
         protected static SitecoreUser _sitecoreUser = SitecoreUser.GetUser();
         private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true };
         //private static WebRequestHandler _handler = new WebRequestHandler { CookieContainer = new CookieContainer(), UseCookies = true, Credentials = new NetworkCredential(@"dev\tanasuk", "DjnznZZ21!") };
+        private static JsonSerializer _serializer
+        {
+            get
+            {
+                var ser = new JsonSerializer();
+                ser.Converters.Add(new IsoDateTimeConverter());
+                return ser;
+            }
+        }
 
 
         private static readonly UserCredentialReader _reader = UserCredentialReader.GetReader();
@@ -431,7 +441,7 @@ namespace InformaSitecoreWord.Sitecore
                 }
                 else
                 {
-                    var articleItem = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result);
+                    var articleItem = JsonConvert.DeserializeObject<ArticleStruct>(response.Content.ReadAsStringAsync().Result, new IsoDateTimeConverter());
                     return articleItem;
                 }
             }
@@ -601,7 +611,7 @@ namespace InformaSitecoreWord.Sitecore
             using (var client = new HttpClient(_handler, false))
             {
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleGuidByNum", articleNumber).Result;
-                var articleGuid = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
+                var articleGuid = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result, new IsoDateTimeConverter());
                 return articleGuid;
             }
         }
@@ -611,7 +621,7 @@ namespace InformaSitecoreWord.Sitecore
             using (var client = new HttpClient(_handler, false))
             {
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfo", articleNumber).Result;
-                var previewInfo = JsonConvert.DeserializeObject<ArticlePreviewInfo>(response.Content.ReadAsStringAsync().Result);
+                var previewInfo = JsonConvert.DeserializeObject<ArticlePreviewInfo>(response.Content.ReadAsStringAsync().Result, new IsoDateTimeConverter());
                 return previewInfo;
             }
         }
@@ -621,7 +631,7 @@ namespace InformaSitecoreWord.Sitecore
             using (var client = new HttpClient(_handler, false))
             {
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfoByGuids", guids).Result;
-                var articlePreviewCollection = JsonConvert.DeserializeObject<List<ArticlePreviewInfo>>(response.Content.ReadAsStringAsync().Result);
+                var articlePreviewCollection = JsonConvert.DeserializeObject<List<ArticlePreviewInfo>>(response.Content.ReadAsStringAsync().Result, new IsoDateTimeConverter());
                 return articlePreviewCollection;
             }
         }
