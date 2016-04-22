@@ -40,7 +40,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.PublishItem
 
             try
             {
-                _logger.Debug("Export to NLM started on Publish. Context.Action = [" + context.Action + "].");
+                _logger.Info("Export to NLM started on Publish. Context.Action = [" + context.Action + "].");
 
                 var itemId = context.ItemId;
                 var sourceItem = context.VersionToPublish ?? context.PublishOptions.SourceDatabase.GetItem(itemId);
@@ -49,7 +49,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.PublishItem
                 // Check if the current item is actually an Article item
                 if (sourceItem == null || sourceItem.TemplateID != IArticleConstants.TemplateId)
                 {
-                    _logger.Debug($"Skipping NLM export for item (not an article): '{itemId}'");
+                    _logger.Info($"Skipping NLM export for item (not an article): '{itemId}'");
                     return;
                 }
 
@@ -64,7 +64,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.PublishItem
                             // Export a _del.xml file
                             _exportService.DeleteNlm(article);
 
-                            _logger.Debug($"Exported NLM delete for article: '{itemId}'");
+                            _logger.Info($"Exported NLM delete for article: '{itemId}'");
                         }
                         break;
 
@@ -73,13 +73,11 @@ namespace Informa.Library.CustomSitecore.Pipelines.PublishItem
                         {
                             var database = _serviceFactory(context.PublishOptions.SourceDatabase);
                             var article = database.Cast<ArticleItem>(sourceItem);
-
                             var isFirstScheduledPublishForItem = !_publishHistory.Find(sourceItem.ID.Guid).Any();
-                            var isCurrentPublishScheduled = Switcher<ScheduledState>.CurrentValue;
-
-                            if (!isFirstScheduledPublishForItem || isCurrentPublishScheduled != ScheduledState.IsScheduledPublish)
+                            
+                            if (!isFirstScheduledPublishForItem)
                             {
-                                _logger.Debug($"Skipping NLM export for item (article already published via Scheduled Publishing): '{itemId}'");
+                                _logger.Info($"Skipping NLM export for item (article already published via Scheduled Publishing): '{itemId}'");
                                 return;
                             }
 
@@ -91,7 +89,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.PublishItem
                         break;
                 }
 
-                _logger.Debug("Export to NLM ended on Publish.");
+                _logger.Info("Export to NLM ended on Publish.");
             }
             catch (Exception ex)
             {

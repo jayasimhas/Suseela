@@ -77,11 +77,6 @@ module.exports = postcss.plugin('mdcss', function (opts) {
 	// throw if theme is not a function
 	if (typeof opts.theme !== 'function') throw Error('The theme failed to load');
 
-	// conditionally set theme as executed theme
-	// TODO - why is this
-	if (opts.theme.type === 'mdcss-theme') opts.theme = opts.theme(opts);
-
-
 	var buildDocs = function (css, result) {
 
 		// set current css directory or current directory
@@ -154,23 +149,18 @@ module.exports = postcss.plugin('mdcss', function (opts) {
 		Object.keys(store).forEach(function (name) {
 			// set documentation
 			var doc = store[name];
-			// if documentation has a parent section
-			if ('section' in doc) {
-				// get parent section
-				var title  = doc.section;
-				var slug  = slugify(title);
+			if ('section' in doc) { // if documentation has a parent section, get parent section
+				var title = doc.section;
+				var slug = slugify(title);
 				var parent = store[slug];
 
-				// if parent section does not exist
-				if (!parent) {
-					// create parent section
-					parent = store[slug] = {
+				if (!parent) { // if parent section does not exist
+					parent = store[slug] = { // create parent section
 						title: title,
 						name:  slug
 					};
 
-					// add parent section to list
-					list.push(parent);
+					list.push(parent); // add parent section to list
 				}
 
 				// If no children, set as empty array
@@ -180,35 +170,51 @@ module.exports = postcss.plugin('mdcss', function (opts) {
 				parent.children.push(doc);
 
 				doc.parent = parent;
-			} else {
-				// otherwise make documentation a child of list
+			} else { // make documentation a child of list
 				list.push(doc);
 			}
 		});
 
-		// return theme executed with parsed list, outputDir
-		return opts.theme({
-			list: list,
-			opts: opts
-		}).then(function (docs) {
-			// empty the outputDir directory
-			return fsp.emptyDir(opts.outputDir).then(function () {
+		var buildTheme = function(opts) {
+			return opts.theme({
+				list: list,
+				opts: opts
+			});
+		};
 
-			// then copy the theme assets into the outputDir
-			return fsp.copy(docs.assets, opts.outputDir);
+		var copyThemeFiles = function (docs) {
 
-			// then copy the compiled template into the outputDir
-			}).then(function () {
-			return fsp.outputFile(path.join(opts.outputDir, opts.outputFile), docs.template);
+			var emptyStyleguideDir = function() {
+				console.log('emptying directory');
+				return fsp.emptyDir(opts.outputDir);
+			};
 
-			// then copy any of the additional assets into the outputDir
-			}).then(function () {
+			var copyThemeAssets = function() {
+				// then copy the theme assets into the outputDir
+				return fsp.copy(docs.assets, opts.outputDir);
+			};
+
+			var copyStyleguideTemplate = function() {
+				return fsp.outputFile(path.join(opts.outputDir, opts.outputFile), docs.template);
+			};
+
+			var copyUserAssets = function () {
+				// then copy any of the additional assets into the outputDir
 				return Promise.all(opts.assets.map(function (src) {
 					return fsp.copy(src, path.join(opts.outputDir, path.basename(src)));
 				}));
+			};
 
-			});
-		});
+			return emptyStyleguideDir()
+				.then( copyThemeAssets )
+				.then( copyStyleguideTemplate )
+				.then( copyUserAssets );
+
+		};
+
+		// return theme executed with parsed list, outputDir
+		return buildTheme(opts).then( copyThemeFiles );
+
 	};
 
 	return buildDocs;

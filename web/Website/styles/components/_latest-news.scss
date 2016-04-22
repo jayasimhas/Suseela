@@ -97,6 +97,15 @@ section: Home/Topic Page Components
         }
     }
 
+    /*---
+    title: Topic - Latest News
+    section: Home/Topic Page Components
+    template: topic-latest-news.md
+    ---
+    Latest News articles are displayed as triplets of 3, 6, 9, or 12 articles, which
+    reflow as the browser window expands or contracts.
+    */
+
     &__articles {
         display: flex;
         flex-wrap: wrap;
