@@ -143,6 +143,23 @@ section: Home/Topic Page Components
                 left: 1.25rem;
                 position: absolute;
                 z-index: 228;
+                width: calc(100% - 2.5rem);
+
+                a {
+                    max-width: 100%;
+                }
+                // Two tags
+                a:nth-last-child(2):first-child,
+                a:nth-last-child(2):first-child ~ a {
+                    max-width: 50%;
+                }
+
+                // Three tags
+                a:nth-last-child(3):first-child,
+                a:nth-last-child(3):first-child ~ a {
+                    max-width: calc(100% / 3);
+                }
+
             }
         }
     }
