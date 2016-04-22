@@ -28,12 +28,19 @@ gulp.task("styleguide", function() {
         .pipe(postcss([
             require('../runway')({
                 theme: require('../runway/runway-theme-velir'),
-                assets: ['dist/img/svg-sprite.svg', 'dist/index-generated.css'],
+                assets: [
+                    'dist/img/svg-sprite.svg',
+                    'dist/index-generated.css'
+                ],
                 examples: {
-                    css: ["https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic", "index-generated.css"]
+                    css: [
+                        "https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic",
+                        "index-generated.css"
+                    ]
                 }
             })
         ]));
 
     return gulpStyle;
+    
 });
