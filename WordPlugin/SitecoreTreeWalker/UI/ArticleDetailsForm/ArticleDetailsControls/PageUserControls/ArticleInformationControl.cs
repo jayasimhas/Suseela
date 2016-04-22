@@ -547,7 +547,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             Globals.SitecoreAddin.Log("GetWebPublishDate: Time before DateTime conversion:  [" +
                                       localDate.TimeOfDay.ToString() + "].");
 
-            DateTime convertedTime = TimeZoneInfo.ConvertTime(localDate, TimeZoneInfo.Local, TimeZoneInfo.Utc);
+            DateTime convertedTime = localDate; //TimeZoneInfo.ConvertTime(localDate, TimeZoneInfo.Local, TimeZoneInfo.Utc);
 
             Globals.SitecoreAddin.Log("GetWebPublishDate: Date after DateTime conversion: [" +
                                       convertedTime.Date.ToString() + "].");
@@ -648,7 +648,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                                           publicationDate.TimeOfDay.ToString() + "].");
 
                 //DateTime convertedTime = TimeZoneInfo.ConvertTime(publicationDate, TimeZoneInfo.Utc, TimeZoneInfo.Local);
-                DateTime convertedTime = TimeZoneInfo.ConvertTime(publicationDate, TimeZoneInfo.Utc).ToLocalTime();
+                //DateTime convertedTime = TimeZoneInfo.ConvertTime(publicationDate, TimeZoneInfo.Utc).ToLocalTime();
+                DateTime convertedTime = publicationDate;
                 Globals.SitecoreAddin.Log("SetPublicationTime: Date after DateTime conversion: [" +
                                           convertedTime.Date.ToString() + "].");
                 Globals.SitecoreAddin.Log("SetPublicationTime: Time after DateTime conversion:  [" +

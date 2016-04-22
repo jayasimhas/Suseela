@@ -4,52 +4,50 @@ var ejs  = require('ejs');
 var fs   = require('fs');
 var path = require('path');
 
-module.exports = function (themeopts) {
-	// set theme options object
-	themeopts = Object(themeopts);
+module.exports = function (params) {
+
+	var themeOptions = Object(params.opts);
+	var docs = params;
 
 	// set theme css
-	themeopts.js = themeopts.js || [];
+	themeOptions.js = themeOptions.js || [];
 
 	// set example conf
-	themeopts.examples = Object.assign({
+	themeOptions.examples = Object.assign({
 		base:    '',
 		target:  '_self',
 		css:     [],
 		js:      [],
 		bodyjs:  [],
 		iframeReset: true
-	}, themeopts.examples);
+	}, themeOptions.examples);
 
-	// return theme
-	return function (docs) {
-		// set assets directory and template
 
-		docs.assets   = path.join(__dirname, 'assets');
-		docs.template = path.join(__dirname, 'template.ejs');
+	docs.opts = themeOptions;
 
-		// set theme options
-		docs.themeopts = themeopts;
+	// set assets directory and template
+	docs.assets   = path.join(__dirname, 'assets');
+	docs.template = path.join(__dirname, 'template.ejs');
 
-		// return promise
-		return new Promise(function (resolve, reject) {
-			// read template
-			fs.readFile(docs.template, 'utf8', function (error, contents) {
-				// throw if template could not be read
-				if (error) reject(error);
-				else {
-					// set examples options
-					docs.opts = Object.assign({}, docs.opts, docs.themeopts);
+	// set theme options
+	docs.themeopts = themeOptions;
 
-					// set compiled template
-					docs.template = ejs.compile(contents)(docs);
+	// return promise
+	return new Promise(function (resolve, reject) {
+		// read template
+		fs.readFile(docs.template, 'utf8', function (error, contents) {
+			// throw if template could not be read
+			if (error) reject(error);
+			else {
+				// set examples options
+				docs.opts = Object.assign({}, docs.opts, docs.themeopts);
 
-					// resolve docs
-					resolve(docs);
-				}
-			});
+				// bake compiled template
+				docs.template = ejs.compile(contents)(docs);
+
+				// resolve docs
+				resolve(docs);
+			}
 		});
-	};
+	});
 };
-
-module.exports.type = 'mdcss-theme';

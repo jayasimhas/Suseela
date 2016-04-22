@@ -140,7 +140,8 @@ gulp.task("prod", function(){
     // set the prod config (cache in utils.js)
     utils.setConfig({
         env   : "prod",
-        watch : false
+        watch : false,
+        tasks: ["js", "css", "copy", "bower", "svg-sprite"]
     });
 
     // build with this config

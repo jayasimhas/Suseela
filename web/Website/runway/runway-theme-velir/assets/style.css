@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
 	box-sizing: border-box;
 }
@@ -11,17 +13,14 @@ body {
 	padding: 30px 30px 90px;
 }
 
-header {
-	flex: 0 0 300px;
-}
-
+header,
 header nav {
-	width: 300px;
+	width: 200px;
 }
 
 main {
 	padding: 0 50px;
-	flex: 1 1 auto;
+	width: calc(100% - 150px);
 }
 
 
@@ -444,6 +443,6 @@ section.hidden {
 	transition: background 200ms, color 200ms;
 }
 .iframe-external-wrapper:hover > figure > .iframe-resizer-handle {
-	background: #CCF7F3; /* Hummingbird */
+	background: #C6EFFF; /* French Pass */
 	color: #272727;
 }
