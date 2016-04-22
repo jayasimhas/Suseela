@@ -42,7 +42,11 @@ namespace Informa.Library.Publishing.Scheduled
 		                };
 		            }
 
-					if (!Context.Workflow.IsApproved(item))
+		            bool? isFinal =
+		                Sitecore.Context.Database.WorkflowProvider?.GetWorkflow(item)?.GetState(item)?.FinalState;
+
+
+                    if (isFinal.HasValue && !isFinal.Value)
 					{
 						return new PublishingStatus
 						{
