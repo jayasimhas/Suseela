@@ -448,7 +448,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             foreach (DataRow r in returnObj.Rows)
             {
-                companies.Add(r["Title"].ToString().ToLower(), r["RecordNumber"].ToString());
+                
+                companies[r["Title"].ToString().ToLower()] = r["RecordNumber"].ToString();
             }
 
             Context.Items[cacheKey] = companies;
