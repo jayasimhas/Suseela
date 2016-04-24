@@ -96,7 +96,34 @@ namespace Informa.Web.Controllers
 			string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
 			HttpContext.Current.Response.RedirectPermanent(newPath);
 		}
-	}
+
+        /// <summary>
+		/// redirects all article urls that end with an escenic id
+		/// </summary>
+		/// <param name="taxonomy"></param>
+		/// <param name="title"></param>
+		/// <param name="escenicID"></param>
+		public void Get(string taxonomy, string title, int escenicID)
+        {
+            string uRef = HttpContext.Current.Request.UrlReferrer?.Host ?? "";
+            //if (!uRef.Contains("scripintelligence.com"))
+            //    return;
+
+            //find the new article page
+            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
+            filter.PageSize = 1;
+            filter.Page = 1;
+            filter.EScenicID = escenicID.ToString();
+
+            var results = ArticleSearcher.Search(filter);
+            if (!results.Articles.Any())
+                return;
+
+            //redirect 
+            string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
+            HttpContext.Current.Response.RedirectPermanent(newPath);
+        }
+    }
 
 	public class ArticleUtil
 	{
