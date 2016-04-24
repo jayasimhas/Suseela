@@ -10,6 +10,7 @@ using Informa.Library.Article.Search;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Pipelines.Processors;
 using Sitecore;
+using Sitecore.Configuration;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Web;
@@ -28,17 +29,27 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
         protected override void RedirectOnItemNotFound(string url)
         {
-            string notFoundContent = WebUtil.ExecuteWebPage("/404");
-            if (string.IsNullOrWhiteSpace(notFoundContent))
+            try
             {
-                return;
+                string notFoundContent = WebUtil.ExecuteWebPage("/404");
+                if (string.IsNullOrWhiteSpace(notFoundContent))
+                {
+                    return;
+                }
+                _args.Context.Response.TrySkipIisCustomErrors = true;
+                _args.Context.Response.StatusCode = 404;
+                _args.Context.Response.StatusDescription = "Page Not Found";
+                _args.Context.Response.ContentType = "text/html";
+                _args.Context.Response.Write(notFoundContent);
+                _args.Context.Response.End();
             }
-            _args.Context.Response.TrySkipIisCustomErrors = true;
-            _args.Context.Response.StatusCode = 404;
-            _args.Context.Response.StatusDescription = "Page Not Found";
-            _args.Context.Response.ContentType = "text/html";
-            _args.Context.Response.Write(notFoundContent);
-            _args.Context.Response.End();
+            catch (Exception e)
+            {
+                if (Settings.RequestErrors.UseServerSideRedirect)
+                    HttpContext.Current.Server.Transfer("/404.html");
+                else
+                    WebUtil.Redirect("/404", false);
+            }
         }
     }
 }
