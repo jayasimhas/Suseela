@@ -31,24 +31,31 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
         {
             try
             {
-                string notFoundContent = WebUtil.ExecuteWebPage("/404");
-                if (string.IsNullOrWhiteSpace(notFoundContent))
+                //string notFoundContent = WebUtil.ExecuteWebPage("/");
+                //if (string.IsNullOrWhiteSpace(notFoundContent))
+                //{
+                //    return;
+                //}
+                //_args.Context.Response.TrySkipIisCustomErrors = true;
+                //_args.Context.Response.StatusCode = 404;
+                //_args.Context.Response.StatusDescription = "Page Not Found";
+                //_args.Context.Response.ContentType = "text/html";
+                //_args.Context.Response.Write(notFoundContent);
+                //_args.Context.Response.End();
+                if (!HttpContext.Current.Response.IsRequestBeingRedirected)
                 {
-                    return;
+                    if (Settings.RequestErrors.UseServerSideRedirect)
+                        HttpContext.Current.Server.Transfer("/");
+                    else
+                        WebUtil.Redirect("/", false);
                 }
-                _args.Context.Response.TrySkipIisCustomErrors = true;
-                _args.Context.Response.StatusCode = 404;
-                _args.Context.Response.StatusDescription = "Page Not Found";
-                _args.Context.Response.ContentType = "text/html";
-                _args.Context.Response.Write(notFoundContent);
-                _args.Context.Response.End();
             }
             catch (Exception e)
             {
-                if (Settings.RequestErrors.UseServerSideRedirect)
-                    HttpContext.Current.Server.Transfer("/404.html");
-                else
-                    WebUtil.Redirect("/404", false);
+                //if (Settings.RequestErrors.UseServerSideRedirect)
+                //    HttpContext.Current.Server.Transfer("/");
+                //else
+                //    WebUtil.Redirect("/", false);
             }
         }
     }
