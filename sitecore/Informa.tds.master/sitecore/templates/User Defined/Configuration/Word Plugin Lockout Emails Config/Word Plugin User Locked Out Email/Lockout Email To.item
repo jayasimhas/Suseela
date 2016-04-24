@@ -1,25 +1,32 @@
 ----item----
 version: 1
-id: {01E46C56-9A5F-4120-AB61-14E8396525ED}
+id: {9F432906-81E8-49FF-B288-C331DD1B30F2}
 database: master
-path: /sitecore/templates/User Defined/Configuration/Site Config/Word Plugin User Locked Out Email
-parent: {997A3064-65F5-45CD-B32F-9EC61E90A610}
-name: Word Plugin User Locked Out Email
+path: /sitecore/templates/User Defined/Configuration/Word Plugin Lockout Emails Config/Word Plugin User Locked Out Email/Lockout Email To
+parent: {46055073-058B-474D-B198-E9DFDD40E408}
+name: Lockout Email To
 master: {00000000-0000-0000-0000-000000000000}
-template: {E269FBB5-3750-427A-9149-7AA950B49301}
-templatekey: Template section
+template: {455A3E98-A627-4B40-8035-E683A0331AC7}
+templatekey: Template field
 
+----field----
+field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
+name: Type
+key: type
+content-length: 16
+
+Single-Line Text
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
-content-length: 4
+content-length: 3
 
-2300
+400
 ----version----
 language: en
 version: 1
-revision: 7aed3d49-af75-4a4e-a613-485af6cadd6c
+revision: 9c4ce48e-7372-4be7-a18d-8b6bbab956e0
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,28 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160417T143239Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
+20160424T073211Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-7aed3d49-af75-4a4e-a613-485af6cadd6c
+9c4ce48e-7372-4be7-a18d-8b6bbab956e0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160417T143239Z
+20160424T073211Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

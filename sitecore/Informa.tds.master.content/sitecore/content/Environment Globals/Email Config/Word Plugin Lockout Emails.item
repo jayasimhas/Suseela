@@ -1,0 +1,107 @@
+----item----
+version: 1
+id: {8A553CE0-6AD6-4CC8-964C-BEAA9714F74B}
+database: master
+path: /sitecore/content/Environment Globals/Email Config/Word Plugin Lockout Emails
+parent: {E896D6B2-9124-41FA-9836-4D0180BA5DC1}
+name: Word Plugin Lockout Emails
+master: {00000000-0000-0000-0000-000000000000}
+template: {27678FC0-F7CB-40EB-BFBF-9C226B62EECE}
+templatekey: Word Plugin Lockout Emails Config
+
+----version----
+language: en
+version: 1
+revision: 9bd50a2a-9f34-4624-830c-816a468b2d1a
+
+----field----
+field: {CC904647-BAC3-4FE2-8884-F6106C487670}
+name: Lockout Email Body
+key: lockout email body
+content-length: 937
+
+<table id="Body" width="700" align="center" cellpadding="20">
+    <tbody>
+        <tr>
+            <td style="width: 80px; text-align: left;"><img alt="" src="{logo}" /></td>
+            <td style="text-align: left;">
+            <div><strong>Informa Business Information</strong></div>
+            <div>User Lockout Notification</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 15px; border: 5px solid black; text-align: left;"><center>
+            <div id="Title">A user was locked out of their Sitecore account.</div>
+            </center><br />
+            <br />
+            <div id="Username"><span style="text-decoration: underline;">Username:&nbsp;</span>{username}</div>
+            <div id="date"><span style="text-decoration: underline;">Date locked out:&nbsp;</span>{dateLockedOut}</div>
+            <br />
+            <br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+----field----
+field: {742C887C-86C6-4D36-B5CF-BB3BA50F49C4}
+name: Lockout Email From
+key: lockout email from
+content-length: 30
+
+pmbi-notifications@informa.com
+----field----
+field: {D2C6A078-8CB3-44E7-83E9-A058D6B7D41A}
+name: Lockout Email Subject
+key: lockout email subject
+content-length: 25
+
+User Lockout Notification
+----field----
+field: {9F432906-81E8-49FF-B288-C331DD1B30F2}
+name: Lockout Email To
+key: lockout email to
+content-length: 30
+
+pmbi-notifications@informa.com
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160424T074811Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9bd50a2a-9f34-4624-830c-816a468b2d1a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160424T074901Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

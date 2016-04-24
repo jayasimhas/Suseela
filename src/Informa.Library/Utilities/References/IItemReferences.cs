@@ -2,16 +2,18 @@ using System;
 
 namespace Informa.Library.Utilities.References
 {
-	public interface IItemReferences
-	{
-		Guid HomePage { get; }
+    public interface IItemReferences
+    {
+        Guid HomePage { get; }
 
-		Guid DCDConfigurationItem { get; }
+        Guid DCDConfigurationItem { get; }
 
-		Guid NlmConfiguration { get; }
+        Guid WordPluginLockoutEmails { get; }
+
+        Guid NlmConfiguration { get; }
 
         Guid NlmErrorDistributionList { get; }
-		
+
         // Pharma Globals
         Guid NlmCopyrightStatement { get; }
         Guid InformaBar { get; }
@@ -34,10 +36,10 @@ namespace Informa.Library.Utilities.References
         // Templates
         Guid FolderTemplate { get; }
 
-		Guid TaxonomyRoot { get; }
+        Guid TaxonomyRoot { get; }
 
-		Guid SubscriptionPage { get; }
-		
-		Guid EmailPreferences { get; }
-	}
+        Guid SubscriptionPage { get; }
+
+        Guid EmailPreferences { get; }
+    }
 }

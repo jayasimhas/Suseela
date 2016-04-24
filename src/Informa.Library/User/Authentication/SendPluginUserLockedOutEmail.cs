@@ -1,7 +1,9 @@
 ﻿using Glass.Mapper.Sc;
 using Informa.Library.Mail;
 using Informa.Library.Site;
+using Informa.Library.Utilities.References;
 using Informa.Library.Utilities.WebUtils;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Data.Items;
 using Sitecore.Resources.Media;
@@ -32,10 +34,12 @@ namespace Informa.Library.User.Authentication
         {
             try
             {
-                string htmlBody = _siteRootContext.Item.Lockout_Email_Body;
-                string from = _siteRootContext.Item.Lockout_Email_From;
-                string subject = _siteRootContext.Item.Lockout_Email_Subject;
-                string to = _siteRootContext.Item.Lockout_Email_To;
+                IWord_Plugin_Lockout_Emails_Config emailConfigItem = _sitecoreService.GetItem<IWord_Plugin_Lockout_Emails_Config>(ItemReferences.Instance.WordPluginLockoutEmails);
+
+                string htmlBody = emailConfigItem.Lockout_Email_Body;
+                string from = emailConfigItem.Lockout_Email_From;
+                string subject = emailConfigItem.Lockout_Email_Subject;
+                string to = emailConfigItem.Lockout_Email_To;
 
                 //If any of them are empty just return
                 if (string.IsNullOrEmpty(htmlBody) || string.IsNullOrEmpty(from) || string.IsNullOrEmpty(to))

@@ -34,11 +34,14 @@ namespace Informa.Library.Utilities.References
         #endregion
 		
         public Guid SearchPage  => new Guid("{0FF66777-7EC7-40BE-ABC4-6A20C8ED1EF0}");
+
         public Guid VwbSearchPage  => new Guid("{A0163A51-2FF8-4A9C-8FBA-6516546E5AE1}");
 
 		public Guid SubscriptionPage => new Guid("{39611772-CD97-4610-BB55-F96BE4C1F540}");
 
 		public Guid EmailPreferences => new Guid("{BAF1D4FB-7599-4EDA-8926-0A4995E4DC2D}");
+
+        public Guid WordPluginLockoutEmails => new Guid("{8A553CE0-6AD6-4CC8-964C-BEAA9714F74B}");
 
         #region Account Contact Info Drop Downs
 

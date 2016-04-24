@@ -1,9 +1,9 @@
 ----item----
 version: 1
-id: {533CB9D2-B47A-4A9A-9B8A-C4FEBCDADCAB}
+id: {742C887C-86C6-4D36-B5CF-BB3BA50F49C4}
 database: master
-path: /sitecore/templates/User Defined/Configuration/Site Config/Word Plugin User Locked Out Email/Lockout Email From
-parent: {01E46C56-9A5F-4120-AB61-14E8396525ED}
+path: /sitecore/templates/User Defined/Configuration/Word Plugin Lockout Emails Config/Word Plugin User Locked Out Email/Lockout Email From
+parent: {46055073-058B-474D-B198-E9DFDD40E408}
 name: Lockout Email From
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
@@ -26,7 +26,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: a02bd7e8-96c0-4210-9e24-35643f75f540
+revision: ddfb2bde-7a6c-4b46-89aa-5ff4fbf4d246
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160417T143240Z
+20160424T073211Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-a02bd7e8-96c0-4210-9e24-35643f75f540
+ddfb2bde-7a6c-4b46-89aa-5ff4fbf4d246
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160418T103009Z
+20160424T073211Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
