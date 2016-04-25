@@ -6,7 +6,7 @@
 }
 
 <div class="article-metadata">
-    <div class="article-preview__bookmarker pop-out__trigger @(true /*Model.IsUserAuthenticated*/ ? "js-bookmark-article" : "js-pop-out-trigger" )"
+    <!-- <div class="article-preview__bookmarker pop-out__trigger @(true /*Model.IsUserAuthenticated*/ ? "js-bookmark-article" : "js-pop-out-trigger" )"
          data-pop-out-type="sign-in"
          data-bookmark-id="@*Model.Article._Id*@"
          @( false/*Model.IsArticleBookmarked*/ ? "data-is-bookmarked=true" : null)>
@@ -19,7 +19,8 @@
             @*@( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )*@
         </span>
 
-		 @* SAM, THIS NEEDS SOME BACKEND WORK, THE VIEW MODEL DOESN'T HAVE THE PROPERTY *@
+        @* SAM, THIS NEEDS SOME BACKEND WORK, THE VIEW MODEL DOESN'T HAVE THE PROPERTY *@
+
         <svg class="article-bookmark article-bookmark__bookmarked click-utag @( false /*Model.IsArticleBookmarked*/ ? "is-visible" : null)" data-info='{"event_name" : "bookmark"}'>
             <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
         </svg>
@@ -28,7 +29,7 @@
             <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
         </svg>
 
-    </div>
+    </div> -->
     <ul>
         <li>
             <time class="article-metadata__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
