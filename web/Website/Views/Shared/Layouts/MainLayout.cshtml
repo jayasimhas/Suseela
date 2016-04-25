@@ -89,6 +89,13 @@
             				</svg>
             			</div>
 
+                        @*
+                            --- START SIGN-IN FORM ---
+
+                            If user is not signed-in, show sign-in form and log
+                            user in when saving search. Otherwise, hide this.
+                        *@
+                        
                         <div class="pop-out__show-hide--bordered-bottom js-login-container">
 
                 			<h3 class="pop-out__register-header">Sign in to save this search</h3>
@@ -96,6 +103,10 @@
                 			[ SIGN IN FORM HERE ]
 
                         </div>
+
+                        @*
+                            --- END SIGN-IN FORM ---
+                        *@
 
                         <h4 class="pop-out__header--tight">
                             Title your search

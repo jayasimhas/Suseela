@@ -11,6 +11,7 @@ import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
 import SortableTableController from './sortable-table-controller';
+import { toggleIcons } from './toggle-icons';
 import { analyticsEvent } from './analytics-controller';
 
 /* Polyfill for scripts expecting `jQuery`
@@ -18,6 +19,7 @@ import { analyticsEvent } from './analytics-controller';
 */
 window.jQuery = $;
 
+window.toggleIcons = toggleIcons;
 
 // Make sure proper elm gets the click event
 // When a user submits a Forgot Password request, this will display the proper
@@ -281,7 +283,10 @@ $(document).ready(function() {
     });
 
     var saveSearchController = new FormController({
-        observe: '.form-save-search'
+        observe: '.form-save-search',
+        successCallback: function() {
+            toggleIcons('.js-save-search');
+        }
     });
 
     var userPreRegistrationController = new FormController({
@@ -645,12 +650,15 @@ $(document).ready(function() {
     });
 
     var newsletterOptins = function(){
-        var eventDetails = {event_name : "newsletter optins"};
+        var eventDetails = {
+            event_name: "newsletter optins"
+        };
+        var chkDetails = {};
         if ($('#newsletters').is(':checked')) {
-            var chkDetails = {   newsletter_optin: "true"}
+            chkDetails.newsletter_optin = "true";
             $.extend(eventDetails,chkDetails);
         } else {
-            var chkDetails = {   newsletter_optin: "false"}
+            chkDetails.newsletter_optin = "false";
             $.extend(eventDetails,chkDetails);
         }
         analyticsEvent( $.extend(analytics_data, eventDetails) );
