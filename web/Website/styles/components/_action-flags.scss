@@ -1,5 +1,5 @@
 .action-flags-bar {
-    border-top: 2px solid $informa-light-gray-d;
+    border-top: 2px solid $color-light-gray;
     clear: both;
     margin-bottom: 36px;
 }
@@ -17,7 +17,7 @@
         margin-left: 0;
     }
 
-    a {    
+    a {
         @include on-event(true) {
             text-decoration: none;
         }
@@ -30,7 +30,7 @@
 
     &__label {
         @include textMix('Roboto Condensed', 14px, 700);
-        color: $informa-black;
+        color: $color-zeus-black;
         margin-right: 0.4375rem;
         text-transform: uppercase;
         vertical-align: middle;
@@ -42,7 +42,7 @@
 
 
     &__icon {
-        @include svg-fill($informa-mid-gray);
+        @include svg-fill($color-dusty-gray);
         height: 22px;
         vertical-align: middle;
         width: 20px;
@@ -77,7 +77,7 @@
         @extend .action-flag;
 
         &:hover .action-flag__icon {
-            @include svg-fill($informa-mid-gray);
+            @include svg-fill($color-dusty-gray);
         }
 
         & a:hover .action-flag__icon {

@@ -13,7 +13,7 @@
     }
 
     &-remember-me {
-        color: $informa-dark-gray;
+        color: $color-abbey-gray;
         font-size: 0.9375rem;
 
         & input[type=checkbox] {
@@ -24,7 +24,7 @@
     }
 
     &-forgot-password {
-        border-top: 1px solid $informa-light-gray-d;
+        border-top: 1px solid $color-light-gray;
         display: none;
         margin-top: 1.5rem;
         padding-top: 1.625rem;

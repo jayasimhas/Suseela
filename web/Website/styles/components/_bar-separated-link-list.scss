@@ -19,7 +19,7 @@ Styling for a horizontal list of links, separated by a thin bar.
 
     a {
         @include textMix('Roboto', 0.9375rem, 400);
-        border-right: 1px solid $informa-light-gray-d;
+        border-right: 1px solid $color-light-gray;
         display: inline-block;
         padding: 0 0.75rem;
         flex: 0 0 auto;

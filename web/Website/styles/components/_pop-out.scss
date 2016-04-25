@@ -122,14 +122,14 @@ section: UI Elements
     &__form-error {
         display: none;
         font-style: italic;
-        color: $informa-red;
+        color: $color-cardinal-red;
         line-height: 1.4375rem;
         margin-bottom: 1rem;
     }
 
     &__details {
         clear: both;
-        color: $informa-mid-gray;
+        color: $color-dusty-gray;
         line-height: 1.25rem;
         margin: 0 0 1.125rem;
 
@@ -160,7 +160,7 @@ section: UI Elements
         }
 
         &--remember-me {
-            color: $informa-dark-gray;
+            color: $color-abbey-gray;
             font-size: 0.9375rem;
         }
     }

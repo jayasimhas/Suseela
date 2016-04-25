@@ -37,11 +37,11 @@
         }
 
         &.is-sorted-up .icon-triangle--up {
-            @include svg-fill($informa-red);
+            @include svg-fill($color-cardinal-red);
         }
 
         &.is-sorted-down .icon-triangle--down {
-            @include svg-fill($informa-red);
+            @include svg-fill($color-cardinal-red);
         }
 
         &.is-sorted-up a,
@@ -60,7 +60,7 @@
     }
 
     .icon-triangle {
-        @include svg-fill($informa-light-gray-d);
+        @include svg-fill($color-light-gray);
         display: block;
         width: 12px;
         height: 11px;
@@ -68,13 +68,13 @@
 
     &.is-sorted-up {
       .icon-triangle--up {
-        @include svg-fill($informa-red);
+        @include svg-fill($color-cardinal-red);
       }
     }
 
     &.is-sorted-down {
       .icon-triangle--down {
-        @include svg-fill($informa-red);
+        @include svg-fill($color-cardinal-red);
       }
     }
 
@@ -92,7 +92,7 @@
   }
 
   .icon-triangle {
-    @include svg-fill($informa-light-gray-d);
+    @include svg-fill($color-light-gray);
     display: block;
     width: 12px;
     height: 11px;

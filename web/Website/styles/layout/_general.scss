@@ -21,8 +21,8 @@ section: Home/Topic Page Components
 .general-header {
     &__section-title {
         @include textMix('Roboto', 1.25rem, 500);
-        background-color: $informa-black;
-        color: $informa-light-gray-f;
+        background-color: $color-zeus-black;
+        color: $color-concrete-gray;
         padding: 1rem 2rem;
 
         @include breakpoint('medium') {
@@ -56,7 +56,7 @@ section: Home/Topic Page Components
             padding: 1rem 0 0.75rem;
 
             &.is-active {
-                border-bottom: 4px solid $informa-dark-orange;
+                border-bottom: 4px solid $color-tree-poppy-orange;
             }
         }
 
