@@ -1,4 +1,5 @@
-﻿using Informa.Library.Globalization;
+﻿using System;
+using Informa.Library.Globalization;
 using Informa.Library.Presentation;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Document;
@@ -7,31 +8,34 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class ArticlePrologueBookmarkViewModel : IArticlePrologueBookmarkViewModel
 	{
 		protected readonly ITextTranslator TextTranslator;
-		protected readonly IRenderingItemContext ArticleRenderingContext;
-	    protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-		protected readonly IIsSavedDocumentContext IsSavedDocuementContext;
-
+		
 		public ArticlePrologueBookmarkViewModel(
 			ITextTranslator textTranslator,
 			IRenderingItemContext articleRenderingContext,
 			ISignInViewModel signInViewModel,
-            IAuthenticatedUserContext authenticatedUserContext,
+			IAuthenticatedUserContext authenticatedUserContext,
 			IIsSavedDocumentContext isSavedDocuementContext)
 		{
 			TextTranslator = textTranslator;
-			ArticleRenderingContext = articleRenderingContext;
 			SignInViewModel = signInViewModel;
-            AuthenticatedUserContext = authenticatedUserContext;
-			IsSavedDocuementContext = isSavedDocuementContext;
+			
+			_article = new Lazy<IArticle>(articleRenderingContext.Get<IArticle>);
+			_isAuthenticated = new Lazy<bool>(authenticatedUserContext.IsAuthenticated);
+			_isArticleBookmarked = new Lazy<bool>(isSavedDocuementContext.IsSaved(Article._Id));
 		}
 
-		public IArticle Article => ArticleRenderingContext.Get<IArticle>();
-		public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
-		public bool IsArticleBookmarked => IsSavedDocuementContext.IsSaved(Article._Id);
+		private readonly Lazy<IArticle> _article; 
+		public IArticle Article => _article.Value;
+
+		private readonly Lazy<bool> _isAuthenticated; 
+		public bool IsUserAuthenticated => _isAuthenticated.Value;
+
+		private readonly Lazy<bool> _isArticleBookmarked; 
+		public bool IsArticleBookmarked => _isArticleBookmarked.Value;
 		public string BookmarkText => TextTranslator.Translate("Bookmark");
 		public string BookmarkedText => TextTranslator.Translate("Bookmarked");
 		public ISignInViewModel SignInViewModel { get; set; }
