@@ -27,8 +27,6 @@ namespace Informa.Web.ViewModels
 		protected readonly IArticleSearch Searcher;
 		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly IArticleComponentFactory ArticleComponentFactory;
-		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-		protected readonly IIsSavedDocumentContext IsSavedDocuementContext;
 		public readonly ICallToActionViewModel CallToActionViewModel;
 
 		public GlassArticleModel(
@@ -50,9 +48,10 @@ namespace Informa.Web.ViewModels
 			Searcher = searcher;
 			SitecoreContext = context;
 			ArticleComponentFactory = articleComponentFactory;
-			AuthenticatedUserContext = authenticatedUserContext;
 			CallToActionViewModel = callToActionViewModel;
-			IsSavedDocuementContext = isSavedDocuementContext;
+			
+			_isAuthenticated = new Lazy<bool>(authenticatedUserContext.IsAuthenticated);
+			_isArticleBookmarked = new Lazy<bool>(IsUserAuthenticated && isSavedDocuementContext.IsSaved(GlassModel._Id));
 		}
 
 		public IEnumerable<ILinkable> TaxonomyItems
@@ -184,8 +183,11 @@ namespace Informa.Web.ViewModels
 
 		#endregion
 
-		public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
-		public bool IsArticleBookmarked => IsSavedDocuementContext.IsSaved(GlassModel._Id);
+		private readonly Lazy<bool> _isAuthenticated;
+		public bool IsUserAuthenticated => _isAuthenticated.Value;
+
+		private readonly Lazy<bool> _isArticleBookmarked;
+		public bool IsArticleBookmarked => _isArticleBookmarked.Value;
 		public string BookmarkText => TextTranslator.Translate("Bookmark");
 		public string BookmarkedText => TextTranslator.Translate("Bookmarked");
 	}

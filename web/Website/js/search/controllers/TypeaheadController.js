@@ -21,3 +21,5 @@ informaSearchApp.controller("InformaTypeaheadController", function($scope, getCo
     });
 
 });
+
+informaSearchApp.controller("InformaTypeaheadController", ['$scope', 'getCompaniesService', InformaTypeaheadController]);

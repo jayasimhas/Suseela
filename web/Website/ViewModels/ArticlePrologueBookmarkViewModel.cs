@@ -25,7 +25,7 @@ namespace Informa.Web.ViewModels
 			
 			_article = new Lazy<IArticle>(articleRenderingContext.Get<IArticle>);
 			_isAuthenticated = new Lazy<bool>(authenticatedUserContext.IsAuthenticated);
-			_isArticleBookmarked = new Lazy<bool>(isSavedDocuementContext.IsSaved(Article._Id));
+			_isArticleBookmarked = new Lazy<bool>(IsUserAuthenticated && isSavedDocuementContext.IsSaved(Article._Id));
 		}
 
 		private readonly Lazy<IArticle> _article; 
