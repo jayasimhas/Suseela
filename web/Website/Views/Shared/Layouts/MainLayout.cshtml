@@ -1,6 +1,7 @@
 ﻿@model MainLayoutViewModel
 @using System.Configuration
 @using Informa.Library.Utilities.References
+@using StackExchange.Profiling
 <!DOCTYPE html>
 <html>
 <head>
@@ -133,6 +134,6 @@
     <script src="/dist/js/index.js"></script>
 
     @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
-
+    @MiniProfiler.RenderIncludes()
 </body>
 </html>
