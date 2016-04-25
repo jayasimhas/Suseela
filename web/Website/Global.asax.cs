@@ -7,6 +7,7 @@ using Informa.Web.App_Start;
 using Sitecore.Web;
 using Autofac;
 using System.Web;
+using StackExchange.Profiling;
 
 namespace Informa.Web
 {
@@ -51,7 +52,22 @@ namespace Informa.Web
 		{
 			HttpContext.Current.SetSessionStateBehavior(System.Web.SessionState.SessionStateBehavior.Required);
 		}
-	}
+
+#if DEBUG
+        protected void Application_BeginRequest()
+        {
+            if (Sitecore.Context.Item != null && !Sitecore.Context.PageMode.IsExperienceEditorEditing && !Sitecore.Context.PageMode.IsPreview)
+            {
+                MiniProfiler.Start();
+            }
+        }
+
+        protected void Application_EndRequest()
+        {
+            MiniProfiler.Stop();
+        }
+#endif
+    }
 }
 
      /*
