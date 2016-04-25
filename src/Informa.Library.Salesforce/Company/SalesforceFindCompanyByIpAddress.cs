@@ -45,10 +45,6 @@ namespace Informa.Library.Salesforce.Company
 		{
 			get
 			{
-                //Temporarily remove companies
-                return Enumerable.Empty<SalesforceCompany>().ToList();
-
-
                 var response = Service.Execute(s => s.queryAllActiveIPRanges(), "FindCompanyByIpAddress");
 
 				LastRefresh = DateTime.Now;
