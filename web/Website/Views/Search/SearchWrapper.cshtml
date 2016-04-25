@@ -1,25 +1,46 @@
 ﻿<div class="search" ng-app="informaSearchApp" ng-cloak>
 
-    <header class="search__header">
+    <header class="search__header action-flags-bar">
 
-        <div class="search__header-buttons" ng-controller="EmailRssController as emailRss">
+        <div class="action-flags" ng-controller="EmailRssController as emailRss">
 
-            <a href="#"
-               class="click-utag search__header-buttons--email pop-out__trigger js-pop-out-trigger"
-               data-info='{"event_name" : "mail-to-someone"}'
-               data-pop-out-type="email-search">
-                <h6>email</h6>
-                <svg class="icon icon--email">
-              	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#email"></use>
-            	</svg>
-            </a>
+            <ul>
+                <li class="action-flag">
+                    <a href="#"
+                       class="click-utag pop-out__trigger js-pop-out-trigger"
+                       data-info='{"event_name" : "mail-to-someone"}'
+                       data-pop-out-type="email-search">
+                        <span class="action-flag__label">email</span>
+                        <svg class="action-flag__icon">
+                      	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#email"></use>
+                    	</svg>
+                    </a>
+                </li>
+                <li class="action-flag">
 
-            <a target="_blank" class="search__header-buttons--rss" href="/rss/search-feed.aspx{{currentLocation}}" >
-                <h6>rss</h6>
-                <svg class="icon icon--rss">
-              	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#rss"></use>
-            	</svg>
-            </a>
+                    <a target="_blank" class="search__header-buttons--rss" href="/rss/search-feed.aspx{{currentLocation}}" >
+                        <span class="action-flag__label">rss</span>
+                        <svg class="action-flag__icon">
+                      	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#rss"></use>
+                    	</svg>
+                    </a>
+                </li>
+
+                <li class="action-flag">
+
+                    <a href="#" class="pop-out__trigger js-pop-out-trigger"
+                        data-pop-out-type="save-search">
+
+                        <span class="action-flag__label">Save Search / Set Alert</span>
+
+                        <svg class="action-flag__icon">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#save"></use>
+                	    </svg>
+
+                    </a>
+
+                </li>
+            </ul>
 
         </div>
 

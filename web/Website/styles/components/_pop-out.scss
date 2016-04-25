@@ -79,7 +79,6 @@ section: UI Elements
     &__trigger {
         position: relative;
         cursor: pointer;
-        display: block;
         z-index: 933;
     }
 
@@ -94,7 +93,11 @@ section: UI Elements
     }
 
     &__header {
-        margin: 0 0 24px;
+        margin: 0 0 1.5rem;
+
+        &--tight {
+            margin-bottom: 0.5rem;
+        }
     }
 
     &__input {
@@ -102,6 +105,11 @@ section: UI Elements
         margin-bottom: 1.5rem;
         padding: 0.5rem 0.75rem;
         width: 100%;
+
+        &--tight {
+            margin-bottom: 0.5rem;
+        }
+
     }
     &__textarea {
         height: 8rem;
@@ -154,6 +162,17 @@ section: UI Elements
         &--remember-me {
             color: $informa-dark-gray;
             font-size: 0.9375rem;
+        }
+    }
+
+    // Some pop-outs are "split", with two distinct containers where one might be
+    // shown or hidden depending on user state/behavior.
+    // ex. a Forgot Password container that can appear below the Sign In container
+    &__show-hide {
+        &--bordered-bottom {
+            border-bottom: 1px solid $color-light-gray;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
         }
     }
 }

@@ -78,6 +78,46 @@
             @{ Html.RenderPartial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel); }
             @{ Html.RenderPartial("PopOuts/EmailSearch", Model.EmailSearchPopOutViewModel); }
 
+
+            <div class="pop-out js-pop-out__save-search">
+            	<div class="pop-out__tab"></div>
+            	<div class="pop-out__internal">
+            		<div class="pop-out__sign-in">
+            			<div class="dismiss-button" data-target-element=".js-pop-out__sign-in">
+            				<svg class="dismiss-button__icon">
+            					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+            				</svg>
+            			</div>
+
+                        <div class="pop-out__show-hide--bordered-bottom js-login-container">
+
+                			<h3 class="pop-out__register-header">Sign in to save this search</h3>
+
+                			[ SIGN IN FORM HERE ]
+
+                        </div>
+
+                        <h4 class="pop-out__header--tight">
+                            Title your search
+                        </h4>
+
+                        <input type="text" class="pop-out__input pop-out__input--tight">
+
+                        <p class="pop-out__details">Your search will be saved to your account - "Saved Searches and Alerts".</p>
+
+                        <div class="labeled-checkbox">
+                            <input type="checkbox">
+                            <label class="checkbox-label">Also set an email alert for this search</label>
+                        </div>
+
+                        <button type="submit" class="pop-out__sign-in-submit button--filled">
+                            Sign In &amp; Save Search
+                        </button>
+
+            		</div>
+            	</div>
+            </div>
+
             @* * *  END POP-OUT TEMPLATE MARKUP *@
 
         </div>

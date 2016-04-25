@@ -7,90 +7,17 @@
   &__header {
     min-height: 60px;
     margin-bottom: 35px;
-    border-top: 2px solid $informa-light-gray-d;
 
     @include breakpoint('medium') {
       border-top: 0;
     }
 
-    &-buttons {
-      padding-top: 18px;
-      text-align: right;
+    .action-flags {
+        text-align: right;
 
-      &--email {
-        margin-right: 30px;
-      }
-
-      a {
-        display: inline-block;
-        color: $informa-black;
-
-        // RH: for some reason, removing text-decoration to fix the underline
-        // appearing in the space between the link title and the svg icon
-        // breaks the icon altogether (makes it not appear)
-
-        // &:hover {
-        //   text-decoration: initial;
-        // }
-
-        // &:hover h6 {
-        //   text-decoration: underline;
-        // }
-      }
-
-      h6 {
-        display: inline;
-        vertical-align: middle;
-        // padding-right: 5px;
-
-        @include breakpoint('medium') {
-            display: none;
+        @include on-event(true) {
+            text-decoration: none;
         }
-      }
-
-      .icon {
-        @include svg-fill($informa-mid-gray);
-        display: inline-block;
-        width: 22px;
-        height: 22px;
-        vertical-align: middle;
-      }
-
-      h6 {
-        display: inline;
-        vertical-align: middle;
-        padding-right: 5px;
-
-        @include breakpoint('medium') {
-            display: none;
-        }
-      }
-
-      .icon {
-        @include svg-fill($informa-mid-gray);
-        display: inline-block;
-        width: 22px;
-        height: 22px;
-        vertical-align: middle;
-      }
-
-      h6 {
-        display: inline;
-        vertical-align: middle;
-        padding-right: 5px;
-
-        @include breakpoint('medium') {
-            display: none;
-        }
-      }
-
-      .icon {
-        @include svg-fill($informa-mid-gray);
-        display: inline-block;
-        width: 22px;
-        height: 22px;
-        vertical-align: middle;
-      }
     }
 
     &-title {
