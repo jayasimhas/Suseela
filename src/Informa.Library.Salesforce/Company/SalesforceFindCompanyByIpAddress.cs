@@ -58,7 +58,7 @@ namespace Informa.Library.Salesforce.Company
 			}
 		}
 
-		public override bool IsValid => DateTime.Now.AddHours(-2) > LastRefresh;
+		public override bool IsValid => DateTime.Now.AddHours(-2) < LastRefresh;
 
 		public SalesforceCompany CreateCompany(EBI_IPRange ipRange)
 		{
