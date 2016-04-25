@@ -1,4 +1,5 @@
-﻿@model Informa.Web.ViewModels.IFooterViewModel
+﻿@inherits CustomGlassView<FooterViewModel>
+
 <div class="footer__wrapper">
     @Html.Sitecore().Placeholder("footer")
     <ul class="footer__section footer__section--corporate">

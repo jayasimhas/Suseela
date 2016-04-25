@@ -6,7 +6,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.Site
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class SiteMainNavigationContext : ISiteMainNavigationContext
 	{
 		protected readonly ISitecoreService SitecoreService;

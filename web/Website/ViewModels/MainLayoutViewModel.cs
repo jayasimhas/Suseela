@@ -34,7 +34,6 @@ namespace Informa.Web.ViewModels
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
 		protected readonly ISitecoreService Service;
 		protected readonly IArticleSearch ArticleSearch;
-		protected readonly IItemReferences ItemReferences;
 		protected readonly IUserProfileContext UserProfileContext;
 		protected readonly IEntitlementAccessLevelContext EntitlementAccessLevelContext;
 		protected readonly IUserSubscriptionsContext UserSubscriptionsContext;
@@ -46,9 +45,6 @@ namespace Informa.Web.ViewModels
 			ISiteRootContext siteRootContext,
 			IMaintenanceViewModel maintenanceViewModel,
 			ICompanyRegisterMessageViewModel companyRegisterMessageViewModel,
-			ISideNavigationMenuViewModel sideNavigationMenuViewModel,
-			IHeaderViewModel headerViewModel,
-			IFooterViewModel footerViewModel,
 			ISignInPopOutViewModel signInPopOutViewModel,
 			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
 			IEmailSearchPopOutViewModel emailSearchPopOutViewModel,
@@ -73,9 +69,6 @@ namespace Informa.Web.ViewModels
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
 			CompanyRegisterMessage = companyRegisterMessageViewModel;
-			SideNavigationMenu = sideNavigationMenuViewModel;
-			Header = headerViewModel;
-			Footer = footerViewModel;
 			SignInPopOutViewModel = signInPopOutViewModel;
 			EmailArticlePopOutViewModel = emailArticlePopOutViewModel;
 			EmailSearchPopOutViewModel = emailSearchPopOutViewModel;
@@ -101,15 +94,13 @@ namespace Informa.Web.ViewModels
 		public readonly IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
 		public readonly IMaintenanceViewModel MaintenanceMessage;
 		public readonly ICompanyRegisterMessageViewModel CompanyRegisterMessage;
-		public readonly ISideNavigationMenuViewModel SideNavigationMenu;
-		public readonly IFooterViewModel Footer;
-		public readonly IHeaderViewModel Header;
 		public readonly ISignInPopOutViewModel SignInPopOutViewModel;
 		public readonly IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
 		public readonly IEmailSearchPopOutViewModel EmailSearchPopOutViewModel;
 		public readonly IToolbarViewModel DebugToolbar;
 		public readonly IRegisterPopOutViewModel RegisterPopOutViewModel;
 		public readonly IAppInsightsConfig AppInsightsConfig;
+		public readonly IItemReferences ItemReferences;
 
 		public IArticle Article => GlassModel is IArticle ? (IArticle)GlassModel : null;
 		public string PrintPageHeaderLogoSrc => SiteRootContext?.Item?.Print_Logo?.Src ?? string.Empty;
