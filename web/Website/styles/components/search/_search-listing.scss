@@ -90,12 +90,13 @@
   }
 
   &__bookmark {
-    @extend .article-preview__bookmarker;
-    //z-index: -1; // overrides .pop-out__trigger z-index:993
+      @extend .action-flag;
+      float: right;
+      padding-top: 0;
 
-    .icon__bookmark {
-      @extend .article-prologue__share-icon;
-    }
+      .icon__bookmark {
+          @extend .action-flag__icon;
+      }
 
     &--not-bookmarked {
       .icon__bookmark--outlined {
