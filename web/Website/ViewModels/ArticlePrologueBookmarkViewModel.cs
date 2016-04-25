@@ -24,18 +24,18 @@ namespace Informa.Web.ViewModels
 			SignInViewModel = signInViewModel;
 			
 			_article = new Lazy<IArticle>(articleRenderingContext.Get<IArticle>);
-			_isAuthenticated = new Lazy<bool>(authenticatedUserContext.IsAuthenticated);
-			_isArticleBookmarked = new Lazy<bool>(IsUserAuthenticated && isSavedDocuementContext.IsSaved(Article._Id));
+			_isAuthenticated = authenticatedUserContext.IsAuthenticated;
+			_isArticleBookmarked = IsUserAuthenticated && isSavedDocuementContext.IsSaved(Article._Id);
 		}
 
 		private readonly Lazy<IArticle> _article; 
 		public IArticle Article => _article.Value;
 
-		private readonly Lazy<bool> _isAuthenticated; 
-		public bool IsUserAuthenticated => _isAuthenticated.Value;
+		private readonly bool _isAuthenticated; 
+		public bool IsUserAuthenticated => _isAuthenticated;
 
-		private readonly Lazy<bool> _isArticleBookmarked; 
-		public bool IsArticleBookmarked => _isArticleBookmarked.Value;
+		private readonly bool _isArticleBookmarked; 
+		public bool IsArticleBookmarked => _isArticleBookmarked;
 		public string BookmarkText => TextTranslator.Translate("Bookmark");
 		public string BookmarkedText => TextTranslator.Translate("Bookmarked");
 		public ISignInViewModel SignInViewModel { get; set; }
