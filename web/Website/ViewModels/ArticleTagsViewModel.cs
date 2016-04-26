@@ -5,11 +5,10 @@ using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Search.Utilities;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class ArticleTagsViewModel : IArticleTagsViewModel
 	{
 		public IRenderingItemContext ArticleRenderingContext;
@@ -18,13 +17,14 @@ namespace Informa.Web.ViewModels
 			IRenderingItemContext articleRenderingContext)
 		{
 			ArticleRenderingContext = articleRenderingContext;
+
+			Tags = ArticleRenderingContext.Get<IArticle>().Taxonomies.Take(3).Select(x => new LinkableModel
+			{
+				LinkableText = x.Item_Name,
+				LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x)
+			});
 		}
 
-	    public IEnumerable<ILinkable> Tags
-	        => ArticleRenderingContext.Get<IArticle>().Taxonomies.Take(3).Select(x => new LinkableModel
-	        {
-	            LinkableText = x.Item_Name,
-	            LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x)
-	        });
+		public IEnumerable<ILinkable> Tags { get; set; }
 	}
 }
