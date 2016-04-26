@@ -23,23 +23,11 @@
 		}
 	}
 
-	&__sort-arrows {
-		display: inline-block;
-		height: 17px;
-		width: 14px;
-
-		svg {
-			@include svg-fill($color-dusty-gray);
-			display: block;
-			height: 10px;
-			width: 14px;
-		}
+	.sorttable_sorted .sorting-arrows__arrow--up,
+	.sorttable_sorted_reverse .sorting-arrows__arrow--down {
+		@extend .sorting-arrows__arrow.is-active;
 	}
 
-	.sorttable_sorted &__sort-arrows svg.sortable-table__sort-arrows--up,
-	.sorttable_sorted_reverse &__sort-arrows svg.sortable-table__sort-arrows--down {
-		@include svg-fill($color-cardinal-red);
-	}
 
 	@include breakpoint('small') {
 

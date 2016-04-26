@@ -48,13 +48,13 @@
 @import 'components/promotional-sidebar';
 @import 'components/rte-component';
 @import 'components/sortable-table';
+@import 'components/sorting-arrows';
 @import 'components/sub-topic-links';
 @import 'components/toggle-icons';
 @import 'components/topic-featured-article';
 @import 'components/topic-subtopic';
 
-
-/* * * * COMPONENTS — ARTICLE * * * */
+/* * * * COMPONENTS — HEADER * * * */
 @import 'components/header/header-account-access';
 
 /* * * * COMPONENTS — ARTICLE * * * */
@@ -109,6 +109,7 @@
 
 /* * * * THEME STYLES * * * */
 @import 'themes/theme-pink-sheet';
+@import 'themes/theme-medtech';
 
 
 /* * * * PRINT STYLES * * * */

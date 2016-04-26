@@ -10,16 +10,19 @@
 
             @Html.Sitecore().Placeholder("search-sort-options")
 
-            <span class="search-sort__line-separator"></span> <!-- TODO: only add this divider line if there are multiple sort options. add it between every sort option.-->
-
+            @*
+                TODO: only add this divider line if there are multiple sort options.
+                Add it between every sort option.
+            *@
+            <span class="search-sort__line-separator"></span>
+            
             <li class="search-sort__control-type" ng-class="{ 'is-selected': sorter.sortBy === 'relevance' }">
                 <a href=""
                    title="Relevance"
                    class="btn btn--sort"
                    ng-click="sorter.setBy('relevance')">@Model.SearchRelevanceText</a>
             </li>
-            
+
         </ol>
     </div>
 </section>
-
