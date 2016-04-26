@@ -40,7 +40,7 @@ namespace Informa.Library.User.Search
 				return Enumerable.Empty<ISavedSearchDisplayable>();
 			}
 
-			var savedSearches = _.UserSession.Get<IEnumerable<ISavedSearchDisplayable>>(SessionKey);
+			var savedSearches = _.UserSession.Get<IEnumerable<SavedSearchDisplayModel>>(SessionKey);
 			if (!savedSearches.HasValue)
 			{
 				var results = _.Repository.GetMany(_.UserContext.User.Username).Select(doc => new SavedSearchDisplayModel
