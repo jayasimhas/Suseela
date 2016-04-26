@@ -1,9 +1,9 @@
-﻿@model Informa.Web.Areas.Account.ViewModels.Management.SavedSearchesViewModel
+﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.Areas.Account.ViewModels.Management.SavedSearchesViewModel>
 
 @if (Model.IsAuthenticated)
 {
     <div class="page-account">
-        <h1 class="page-account__header">@Model.Title</h1>
+        <h1 class="page-account__header">@Editable(Model.GlassModel, model => model.Title)</h1>
         <div class="page-preferences js-preferences-user-container">
             <div style="display: none;" class="js-preferences-user-error-container">
                 <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-general">@Model.GeneralErrorText</p>
@@ -103,49 +103,55 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.SavedSearches)
-                    {
-                        <tr>
-                            <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
+                @{
+                    int index = 1;
+                }
+                @foreach (var item in Model.SavedSearches)
+                {
+                    <tr>
+                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
+                            @if (!item.Sources.Any())
+                            {
+                                @Html.Raw("None")
+                            }
+                            else if (item.Sources.Count() > 1)
+                            {
+                                @Html.Raw("Multiple: ")
+                                @Html.Raw(string.Join("<br/>", item.Sources))
+                            }
+                            else
+                            {
                                 @Html.Raw(string.Join(" ", item.Sources))
-                            </td>
-                            <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
-                                <a href="@item.Url">@Html.Raw(item.Title)</a>
-                            </td>
-                            <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--date">
-                                @item.DateSaved.ToString("d MMM yyyy")
-                            </td>
-                            <td class="sortable-table__col sortable-table__submit-wrapper">
-                                <form class="form-remove-saved-document"
-                                      data-on-submit="/api/SavedSearches/Update">
-
-                                    <input name="DocumentID"
-                                           id="DocumentID"
-                                           type="hidden"
-                                           value="@item.Title">
-
-                                    <input type="checkbox" name="alert-toggle" class="onoffswitch-checkbox" id="alert-toggle">
-                                    <label class="onoffswitch-label" for="alert-toggle">
-                                        <span class="onoffswitch-inner"></span>
-                                        <span class="onoffswitch-switch"></span>
-                                    </label>
-                                </form>
-                            </td>
-                            <td class="sortable-table__col sortable-table__submit-wrapper">
-                                <form   class="form-remove-saved-document"
-                                        data-on-submit="/api/SavedSearches/Delete">
-
-                                    <input name="DocumentID"
-                                           id="DocumentID"
-                                           type="hidden"
-                                           value="@item.Title">
-
-                                    <button type="submit" class="button--outline click-utag" data-info='{"event_name":"saved-search-remove", "id":"@item.Title"}'>@Model.RemoveText</button>
-
-                                </form>
-                            </td>
-                        </tr>
+}
+                        </td>
+                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
+                            <a href="@item.Url">@Html.Raw(item.Title)</a>
+                        </td>
+                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--date">
+                            @item.DateSaved.ToString("d MMM yyyy")
+                        </td>
+                        <td class="sortable-table__col sortable-table__submit-wrapper">
+                            <form class="form-update-saved-search" data-on-submit="/api/SavedSearches" data-submit-type="POST">
+                                <input name="Title" id="Title" type="hidden" value="@item.Title">
+                                <input name="Url" id="Url" type="hidden" value="@item.Url">
+                                <input type="checkbox" name="AlertEnabled" class="onoffswitch-checkbox" id="alert-toggle-@index" @(item.AlertEnabled ? "checked" : string.Empty)>
+                                <label class="onoffswitch-label form-submit" for="alert-toggle-@index">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </form>
+                        </td>
+                        <td class="sortable-table__col sortable-table__submit-wrapper">
+                            <form class="form-remove-saved-search"  data-on-submit="/api/SavedSearches" data-submit-type="DELETE">
+                                <input name="Title" id="Title" type="hidden" value="@item.Title">
+                                <button type="submit" class="button--outline click-utag" data-info='{"event_name":"saved-search-remove", "id":"@item.Title"}'>@Model.RemoveText</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {
+                        index++;
                     }
+                }
                 </tbody>
             </table>
 
@@ -162,6 +168,6 @@
 else
 {
     <div class="page-account__sign-in-solo">
-        @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
+        @Html.Partial("_SignInForm", Model.SignInViewModel)
     </div>
 }

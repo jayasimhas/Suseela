@@ -23,79 +23,103 @@ namespace Informa.Library.User.Search
 		private readonly Lazy<ISearch> _searchPage;
 		protected ISearch SearchPage => _searchPage.Value;
 
+		private readonly Lazy<bool> _isAuthenticated;
+		protected bool IsAuthenticated => _isAuthenticated.Value;
+
 		public SavedSearchService(IDependencies dependencies)
 		{
 			_ = dependencies;
 			_searchPage = new Lazy<ISearch>(() => _.SitecoreContext.GetHomeItem<IGlassBase>()._ChildrenWithInferType.OfType<ISearch>().FirstOrDefault());
+			_isAuthenticated = new Lazy<bool>(() => _.UserContext.IsAuthenticated);
 		}
 
 		public virtual IEnumerable<ISavedSearchDisplayable> GetContent()
 		{
-			if (!_.UserContext.IsAuthenticated)
+			if (!IsAuthenticated)
 			{
 				return Enumerable.Empty<ISavedSearchDisplayable>();
 			}
 
-			var savedSearches = _.UserSession.Get<IEnumerable<ISavedSearchEntity>>(SessionKey);
+			var savedSearches = _.UserSession.Get<IEnumerable<ISavedSearchDisplayable>>(SessionKey);
 			if (!savedSearches.HasValue)
 			{
-				_.UserSession.Set(SessionKey, _.Repository.GetMany(_.UserContext.User.Username));
-				savedSearches = _.UserSession.Get<IEnumerable<ISavedSearchEntity>>(SessionKey);
+				var results = _.Repository.GetMany(_.UserContext.User.Username).Select(doc => new SavedSearchDisplayModel
+				{
+					Sources = ExtractSources(doc.SearchString),
+					Title = doc.Name,
+					Url = ConstructUrl(doc.SearchString),
+					DateSaved = doc.DateCreated,
+					AlertEnabled = doc.HasAlert
+				}).ToList();
+
+				_.UserSession.Set(SessionKey, results);
+				
+				return results;
 			}
 
-			return savedSearches.Value.Select(doc => new SavedSearchDisplayModel
-			{
-				Sources = ExtractSources(doc.SearchString),
-				Title = doc.Name,
-				Url = ConstructUrl(doc.SearchString),
-				DateSaved = doc.DateCreated,
-				AlertEnabled = doc.HasAlert
-			});
+			return savedSearches.Value;
 		}
 
 		public virtual IContentResponse SaveContent(ISavedSearchSaveable input)
 		{
-			if (_.UserContext.IsAuthenticated)
+			if (IsAuthenticated)
 			{
 				var id = new SavedSearchEntity
 				{
-					Username = _.UserContext.User.Name,
+					Username = _.UserContext.User.Username,
 					Name = input.Title
 				};
 
 				var entity = _.Repository.GetById(id);
 				if (entity != null)
 				{
-					return null;
+					entity.HasAlert = input.AlertEnabled;
+
+					var updateResponse = _.Repository.Update(entity);
+					Clear();
+
+					return updateResponse;
 				}
 
 				entity = id;
-				entity.SearchString = input.Url;
+				entity.SearchString = ExtractQueryString(input.Url);
 				entity.HasAlert = input.AlertEnabled;
 
-				_.Repository.Add(entity);
+				var addResponse = _.Repository.Add(entity);
 				Clear();
+
+				return addResponse;
 			}
 
-			return null;
+			return new ContentResponse
+			{
+				Success = false,
+				Message = "User is not authenticated"
+			};
 		}
 
 		public virtual IContentResponse DeleteContent(ISavedSearchSaveable input)
 		{
-			if (_.UserContext.IsAuthenticated)
+			if (IsAuthenticated)
 			{
 				var entity = new SavedSearchEntity
 				{
-					Username = _.UserContext.User.Name,
+					Username = _.UserContext.User.Username,
 					Name = input.Title,
 					SearchString = input.Url
 				};
 
-				_.Repository.Delete(entity);
+				var response = _.Repository.Delete(entity);
 				Clear();
+
+				return response;
 			}
 
-			return null;
+			return new ContentResponse
+			{
+				Success = false,
+				Message = "User is not authenticated"
+			};
 		}
 
 		public virtual void Clear()
@@ -108,9 +132,15 @@ namespace Informa.Library.User.Search
 			return url.ExtractParamValue("publication").Split(SiteSettings.ValueSeparator);
 		}
 
+		protected virtual string ExtractQueryString(string url)
+		{
+			string[] urlParts = url.Split('?');
+			return urlParts.Length == 1 ? urlParts[0] : urlParts[1];
+		}
+
 		protected virtual string ConstructUrl(string searchString)
 		{
-			return $"{SearchPage._Url}?{searchString}";
+			return $"{SearchPage._Url}#?{searchString}";
 		}
 	}
 

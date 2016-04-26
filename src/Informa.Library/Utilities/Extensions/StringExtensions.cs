@@ -54,7 +54,9 @@ namespace Informa.Library.Utilities.Extensions
 
 		public static string ExtractParamValue(this string url, string key)
 		{
-			return WebUtil.ExtractUrlParm(key, url);
+			var querystring = url.Split('&');
+			var param = querystring.FirstOrDefault(p => p.StartsWith($"{key}="));
+			return param?.Split('=')[1] ?? string.Empty;
 		}
 	}
 }

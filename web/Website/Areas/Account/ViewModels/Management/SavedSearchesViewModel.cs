@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
-using Informa.Library.Site;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Content;
 using Informa.Library.User.Search;
@@ -13,40 +11,39 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 {
 	public class SavedSearchesViewModel : GlassViewModel<I___BasePage>
 	{
-		public readonly ITextTranslator TextTranslator;
-		public readonly IAuthenticatedUserContext UserContext;
 		public readonly ISignInViewModel SignInViewModel;
-		public readonly ISitecoreService SitecoreService;
-		protected readonly IUserContentService<ISavedSearchSaveable, ISavedSearchDisplayable> SavedSearchService;
-		protected readonly ISiteRootContext SiteRootContext;
-
+		
 		public SavedSearchesViewModel(
 			ITextTranslator translator,
 			IAuthenticatedUserContext userContext,
 			ISignInViewModel signInViewModel,
-			ISitecoreService sitecoreService,
-			IUserContentService<ISavedSearchSaveable, ISavedSearchDisplayable> savedSearchService,
-			ISiteRootContext siteRootContext)
+			IUserContentService<ISavedSearchSaveable, ISavedSearchDisplayable> savedSearchService)
 		{
-			TextTranslator = translator;
-			UserContext = userContext;
 			SignInViewModel = signInViewModel;
-			SitecoreService = sitecoreService;
-			SavedSearchService = savedSearchService;
-			SiteRootContext = siteRootContext;
+			
+			SavedSearches = savedSearchService.GetContent();
+			IsAuthenticated = userContext.IsAuthenticated;
+			GeneralErrorText = translator.Translate("SavedSearches.GeneralError");
+			NullUserText = translator.Translate("SavedSearches.NullUserError");
+			RequestFailedText = translator.Translate("SavedSearches.RequestFailedError");
+			SourceText = translator.Translate("SavedSearches.SourceText");
+			TitleText = translator.Translate("SavedSearches.TitleText");
+			DateText = translator.Translate("SavedSearches.DateText");
+			EmailAlertText = translator.Translate("SavedSearches.EmailAlertText");
+			RemoveText = translator.Translate("SavedSearches.RemoveText");
+			ItemRemovedMessage = translator.Translate("SavedSearches.ItemRemovedMessage");
 		}
 
-		public IEnumerable<ISavedSearchDisplayable> SavedSearches => SavedSearchService.GetContent();
-		public bool IsAuthenticated => UserContext.IsAuthenticated;
-		public string Title => GlassModel?.Title;
-		public string GeneralErrorText => TextTranslator.Translate("SavedSearches.GeneralError");
-		public string NullUserText => TextTranslator.Translate("SavedSearches.NullUserError");
-		public string RequestFailedText => TextTranslator.Translate("SavedSearches.RequestFailedError");
-		public string SourceText => TextTranslator.Translate("SavedSearches.SourceText");
-		public string TitleText => TextTranslator.Translate("SavedSearches.TitleText");
-		public string DateText => TextTranslator.Translate("SavedSearches.DateText");
-		public string EmailAlertText => TextTranslator.Translate("SavedSearches.EmailAlertText");
-		public string RemoveText => TextTranslator.Translate("SavedSearches.RemoveText");
-		public string ItemRemovedMessage => TextTranslator.Translate("SavedSearches.ItemRemovedMessage");
+		public IEnumerable<ISavedSearchDisplayable> SavedSearches { get; set; }
+		public bool IsAuthenticated { get; set; }
+		public string GeneralErrorText { get; set; }
+		public string NullUserText { get; set; }
+		public string RequestFailedText { get; set; }
+		public string SourceText { get; set; }
+		public string TitleText { get; set; }
+		public string DateText { get; set; }
+		public string EmailAlertText { get; set; }
+		public string RemoveText { get; set; }
+		public string ItemRemovedMessage { get; set; }
 	}
 }

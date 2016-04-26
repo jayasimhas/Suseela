@@ -30,7 +30,7 @@ function formController(opts) {
         if (!form) return false;
 
         var formSubmit = $(form).find('button[type=submit]');
-
+	    
 		$(formSubmit).on('click', (event) => {
 
 			var currentForm;
@@ -78,7 +78,7 @@ function formController(opts) {
 
 			$.ajax({
 				url: $(currentForm).data('on-submit'),
-				type: 'POST',
+				type: $(currentForm).data('submit-type') || 'POST',
 				data: inputData,
 				context: this,
 				success: function (response) {

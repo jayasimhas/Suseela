@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Controllers;
+using System.Web.Http.ModelBinding;
 using Informa.Library.User.Content;
 using Informa.Library.User.Search;
 
@@ -19,14 +22,38 @@ namespace Informa.Web.Controllers.Search
 			return _savedSearchService.GetContent();
 		}
 
-		public IContentResponse Post(ISavedSearchSaveable model)
+		public IHttpActionResult Post(SavedSearchInput model)
 		{
-			return _savedSearchService.SaveContent(model);
+			var result = _savedSearchService.SaveContent(model);
+
+			return Ok(new
+			{
+				success = result.Success,
+				message = result.Message
+			});
 		}
 
-		public IContentResponse Delete(ISavedSearchSaveable model)
+		public IHttpActionResult Delete(SavedSearchInput model)
 		{
-			return _savedSearchService.DeleteContent(model);
+			var result = _savedSearchService.DeleteContent(model);
+			return Ok(new
+			{
+				success = result.Success,
+				message = result.Message
+			});
+		}
+	}
+
+	public class SavedSearchInputModelBinder : IModelBinder
+	{
+		public bool BindModel(HttpActionContext actionContext, ModelBindingContext bindingContext)
+		{
+			bindingContext.Model = new SavedSearchInput
+			{
+				Title = bindingContext.ValueProvider.GetValue("Title").RawValue as string
+			};
+
+			return true;
 		}
 	}
 }

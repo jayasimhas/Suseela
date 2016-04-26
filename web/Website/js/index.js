@@ -389,6 +389,12 @@ $(document).ready(function() {
         }
     });
 
+    var removeSavedSearchesController = new FormController({
+        observe: '.form-remove-saved-search',
+        successCallback: function(form, context, evt) {
+            $(evt.target).closest('tr').remove();
+        }
+    });
 
     svg4everybody();
 
