@@ -8,16 +8,15 @@ using Informa.Library.Site;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global;
-using Jabberwocky.Glass.Autofac.Attributes;
 using System.Web;
 using Informa.Library.User.Profile;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService]
-	public class HeaderViewModel : IHeaderViewModel
+	public class HeaderViewModel : GlassViewModel<I___BasePage>
 	{
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
 		protected readonly IUserCompanyNameContext CompanyNameContext;
@@ -27,7 +26,7 @@ namespace Informa.Web.ViewModels
 
 		protected readonly Lazy<IHome_Page> HomePage;
 		protected readonly Lazy<ISite_Root> SiteRoot;
-		protected readonly Lazy<I___BasePage> CurrentItem; 
+		protected readonly Lazy<I___BasePage> CurrentItem;
 
 		public HeaderViewModel(
 			IAuthenticatedUserContext authenticatedUserContext,
@@ -36,7 +35,7 @@ namespace Informa.Web.ViewModels
 			ISiteRootContext siteRootContext,
 			ISitecoreContext sitecoreContext,
 			IItemReferences itemReferences,
-			IUserProfileContext profileContext)
+						IUserProfileContext profileContext)
 		{
 			AuthenticatedUserContext = authenticatedUserContext;
 			CompanyNameContext = companyNameContext;

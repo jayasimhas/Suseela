@@ -104,7 +104,7 @@ function formController(opts) {
 						}
 
 						if (opts.failureCallback) {
-							opts.failureCallback(currentForm);
+							opts.failureCallback(currentForm,response);
 						}
 					}
 				},
@@ -113,7 +113,7 @@ function formController(opts) {
 					showError(currentForm, '.js-form-error-general');
 
 					if (opts.failureCallback) {
-						opts.failureCallback(currentForm);
+						opts.failureCallback(currentForm,response);
 					}
 				},
                 complete: function() {

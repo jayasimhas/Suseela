@@ -326,3 +326,4 @@ web/Website/App_Config/Include/Social/Sitecore.Social.config
 tools/vagrant/scripts/localdeploy.bat
 web/Website/App_Config/AppSettings.config
 web/Website/App_Config/Include/UserDefined/Sites.config
+web/Website/App_Config/Include/UserDefined/ScheduledPublishing.config

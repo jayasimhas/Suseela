@@ -27,8 +27,6 @@ namespace Informa.Web.ViewModels
 		protected readonly IArticleSearch Searcher;
 		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly IArticleComponentFactory ArticleComponentFactory;
-		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-		protected readonly IIsSavedDocumentContext IsSavedDocuementContext;
 		public readonly ICallToActionViewModel CallToActionViewModel;
 
 		public GlassArticleModel(
@@ -50,9 +48,10 @@ namespace Informa.Web.ViewModels
 			Searcher = searcher;
 			SitecoreContext = context;
 			ArticleComponentFactory = articleComponentFactory;
-			AuthenticatedUserContext = authenticatedUserContext;
 			CallToActionViewModel = callToActionViewModel;
-			IsSavedDocuementContext = isSavedDocuementContext;
+			
+			_isAuthenticated = new Lazy<bool>(authenticatedUserContext.IsAuthenticated);
+			_isArticleBookmarked = new Lazy<bool>(IsUserAuthenticated && isSavedDocuementContext.IsSaved(GlassModel._Id));
 		}
 
 		public IEnumerable<ILinkable> TaxonomyItems
@@ -79,7 +78,7 @@ namespace Informa.Web.ViewModels
 
 
 		public IHierarchyLinks TaxonomyHierarchy => new HierarchyLinksViewModel(GlassModel, TextTranslator);
-        public DateTime Date => (Sitecore.Context.PageMode.IsPreview && !GlassModel.Planned_Publish_Date.Equals(DateTime.MinValue)) ? GlassModel.Planned_Publish_Date : GlassModel.Actual_Publish_Date;
+		public DateTime Date => (Sitecore.Context.PageMode.IsPreview && !GlassModel.Planned_Publish_Date.Equals(DateTime.MinValue)) ? GlassModel.Planned_Publish_Date : GlassModel.Actual_Publish_Date;
 		//TODO: Extract to a dictionary.
 		public string Content_Type => GlassModel.Content_Type?.Item_Name;
 		public string Media_Type => GlassModel.Media_Type?.Item_Name == "Data" ? "chart" : GlassModel.Media_Type?.Item_Name?.ToLower() ?? "";
@@ -97,10 +96,10 @@ namespace Informa.Web.ViewModels
 				{
 					var filter = Searcher.CreateFilter();
 					filter.ReferencedArticle = GlassModel._Id;
+					filter.PageSize = 10 - relatedArticles.Count;
 
 					var results = Searcher.Search(filter);
-					if (results.Articles.Any())
-						relatedArticles.AddRange(results.Articles.Take(10 - relatedArticles.Count));
+					relatedArticles.AddRange(results.Articles);
 				}
 				return relatedArticles.Select(x => ArticleListableFactory.Create(x)).Cast<IListable>().OrderByDescending(x => x.ListableDate);
 			}
@@ -113,7 +112,7 @@ namespace Informa.Web.ViewModels
 		public string GetTitle(IGlassBase g)
 		{
 			IFile f = SitecoreContext.GetItem<IFile>(g._Id);
-			return (f != null && !string.IsNullOrEmpty(f.Title))
+			return !string.IsNullOrEmpty(f?.Title)
 					? f.Title
 					: g._Name;
 		}
@@ -121,7 +120,7 @@ namespace Informa.Web.ViewModels
 		public string GetDocumentIcon(IGlassBase g)
 		{
 			IFile f = SitecoreContext.GetItem<IFile>(g._Id);
-			if (f == null || string.IsNullOrEmpty(f.Extension) || f.Extension.Equals("pdf"))
+			if (string.IsNullOrEmpty(f?.Extension) || f.Extension.Equals("pdf"))
 				return "pdf";
 			if (f.Extension.Equals("doc") || f.Extension.Equals("docx"))
 				return "doc";
@@ -184,8 +183,11 @@ namespace Informa.Web.ViewModels
 
 		#endregion
 
-		public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
-		public bool IsArticleBookmarked => IsSavedDocuementContext.IsSaved(GlassModel._Id);
+		private readonly Lazy<bool> _isAuthenticated;
+		public bool IsUserAuthenticated => _isAuthenticated.Value;
+
+		private readonly Lazy<bool> _isArticleBookmarked;
+		public bool IsArticleBookmarked => _isArticleBookmarked.Value;
 		public string BookmarkText => TextTranslator.Translate("Bookmark");
 		public string BookmarkedText => TextTranslator.Translate("Bookmarked");
 	}

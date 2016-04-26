@@ -1,9 +1,9 @@
 ﻿@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 @model dynamic
 
-<section    class="search-results"
-            ng-class="{ 'headlines-only': headlinesOnly.showOnlyHeadlines() }"
-            ng-controller="InformaResultsController as results">
+<section class="search-results"
+         ng-class="{ 'headlines-only': headlinesOnly.showOnlyHeadlines() }"
+         ng-controller="InformaResultsController as results">
 
     <!-- start Media Object - Default (no width) -->
     <div class="search-result" ng-repeat="doc in results.docs" on-finish-render>
@@ -17,7 +17,7 @@
             <span class="search-result__line-separator" ng-if="doc.contentType"></span>
 
             <div class="search-result__content-type" ng-if="doc.contentType">
-                 {{::doc.contentType}}
+                {{::doc.contentType}}
             </div>
 
             <span class="search-result__line-separator" ng-if="doc.mediaType"></span> <!-- only prints if media type isn't blank -->
@@ -27,7 +27,7 @@
                     <use ng-href="/dist/img/svg-sprite.svg#{{::doc.mediaType}}" xlink:href=""></use>
                 </svg> <!-- example media type icon, video -->
             </div>
-
+            <!--
             <div    class="search-result__bookmark pop-out__trigger js-angular-bookmark"
                     ng-class="doc.isUserAuthenticated ? 'js-bookmark-article' : 'js-pop-out-trigger'"
                     data-pop-out-type="sign-in"
@@ -44,7 +44,7 @@
                     <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
                 </svg>
             </div>
-
+            -->
             <div class="search-result__publication">
                 {{ ::doc.publicationTitle }}
             </div>

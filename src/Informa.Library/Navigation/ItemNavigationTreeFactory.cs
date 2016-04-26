@@ -28,7 +28,7 @@ namespace Informa.Library.Navigation
 				{
 					var headerChildItems = GetChildLinkItems(navigationLinkItem).Where(cli => cli.Navigation_Link != null);
 
-					navigationChild.Children = headerChildItems.Select(hci => CreateNavigation(hci)).ToList();
+					navigationChild.Children = headerChildItems.Select(CreateNavigation);
 
 					navigation.Add(navigationChild);
 				}
@@ -60,7 +60,7 @@ namespace Informa.Library.Navigation
 
 		public IEnumerable<INavigation_Link> GetChildLinkItems(IGlassBase item)
 		{
-			return item._ChildrenWithInferType.OfType<INavigation_Link>().ToList();
+			return item._ChildrenWithInferType.OfType<INavigation_Link>();
 		}
 	}
 }

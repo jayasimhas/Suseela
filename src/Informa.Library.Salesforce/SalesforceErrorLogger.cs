@@ -20,4 +20,22 @@ namespace Informa.Library.Salesforce
 			ErrorLogger.Log(string.Concat(LogMessagePrefix, message), ex);
 		}
 	}
+
+    public class SalesforceDebugLogger : ISalesforceDebugLogger
+    {
+        private const string LogMessagePrefix = "Salesforce Debug: ";
+
+        protected readonly IDebugLogger DebugLogger;
+
+        public SalesforceDebugLogger(
+            IDebugLogger debugLogger)
+        {
+            DebugLogger = debugLogger;
+        }
+
+        public void Log(string message)
+        {
+            DebugLogger.Log(string.Concat(LogMessagePrefix, message));
+        }
+    }
 }

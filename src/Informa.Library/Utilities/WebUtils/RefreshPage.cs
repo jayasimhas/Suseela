@@ -8,7 +8,8 @@ namespace Informa.Library.Utilities.WebUtils
 	{
 		public void Refresh()
 		{
-			HttpContext.Current.Response.Redirect(HttpContext.Current.Request.RawUrl);
+            if (!HttpContext.Current.Response.IsRequestBeingRedirected)
+                HttpContext.Current.Response.Redirect(HttpContext.Current.Request.RawUrl);
 		}
 	}
 }

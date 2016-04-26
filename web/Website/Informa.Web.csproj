@@ -203,14 +203,6 @@
       <HintPath>..\..\packages\MiniProfiler.MVC4.3.0.11\lib\net40\MiniProfiler.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MongoDB.Bson, Version=1.11.0.92, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\mongocsharpdriver.1.11.0\lib\net35\MongoDB.Bson.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MongoDB.Driver, Version=1.11.0.92, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\mongocsharpdriver.1.11.0\lib\net35\MongoDB.Driver.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -828,10 +820,7 @@
     <Compile Include="ViewModels\IArticlePrologueShareViewModel.cs" />
     <Compile Include="ViewModels\IArticleTagsViewModel.cs" />
     <Compile Include="ViewModels\IPersonModel.cs" />
-    <Compile Include="ViewModels\IFooterViewModel.cs" />
-    <Compile Include="ViewModels\IHeaderViewModel.cs" />
     <Compile Include="ViewModels\IMaintenanceViewModel.cs" />
-    <Compile Include="ViewModels\ISideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\MainLayoutViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailArticlePopOutViewModel.cs" />

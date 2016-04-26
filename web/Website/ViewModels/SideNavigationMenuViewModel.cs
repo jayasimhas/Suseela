@@ -2,12 +2,12 @@
 using Informa.Library.Globalization;
 using Informa.Library.Navigation;
 using Informa.Library.Site;
-using Jabberwocky.Glass.Autofac.Attributes;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.PerScope)]
-	public class SideNavigationMenuViewModel : ISideNavigationMenuViewModel
+	public class SideNavigationMenuViewModel : GlassViewModel<I___BasePage>
 	{
 		protected readonly ISiteMainNavigationContext SiteMainNavigationContext;
 		protected readonly ITextTranslator TextTranslator;

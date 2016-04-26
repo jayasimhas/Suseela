@@ -5,6 +5,7 @@ var fsp   	= require('./lib/fs-promise');
 var marked	= require('marked');
 var path	= require('path');
 var postcss	= require('postcss');
+var fetch 	= require('node-fetch');
 
 var findFrontMatter = /^\s*-{3,}\r?\n((?:[ \t]*[A-z][\w-]*[ \t]*:[ \t]*[\w-][^\n]*\n*)*)(?:[ \t]*-{3,})?/;
 var splitFrontMatter = /([A-z][\w-]*)[ \t]*:[ \t]*([\w-][^\n]*)/g;
@@ -77,11 +78,6 @@ module.exports = postcss.plugin('mdcss', function (opts) {
 	// throw if theme is not a function
 	if (typeof opts.theme !== 'function') throw Error('The theme failed to load');
 
-	// conditionally set theme as executed theme
-	// TODO - why is this
-	if (opts.theme.type === 'mdcss-theme') opts.theme = opts.theme(opts);
-
-
 	var buildDocs = function (css, result) {
 
 		// set current css directory or current directory
@@ -92,9 +88,13 @@ module.exports = postcss.plugin('mdcss', function (opts) {
 		var store = {};
 		var uniq = 0;
 
-		// walk comments
-		css.walkComments(function (comment) {
+		// To handle externally-sourced templates, we need to use Promises so
+		// we're able to collect all the docs and markup before continuing.
+		// Boo race conditions!
+		var stashPromises = [];
 
+		// walk comments
+		css.walkComments(function (comment, i) {
 			// Check if comment is Runway documentation
 			if (findFrontMatter.test(comment.text)) {
 
@@ -145,70 +145,112 @@ module.exports = postcss.plugin('mdcss', function (opts) {
 					finalName = sectionName + --uniq; // main-menu becomes main-menu-2
 				}
 
-				// push documentation to store
-				store[finalName] = doc;
-			}
-		});
+				var pushDoc = function() {
+					// push documentation to store
+					store[finalName] = doc;
+				};
 
-		// walk stores
-		Object.keys(store).forEach(function (name) {
-			// set documentation
-			var doc = store[name];
-			// if documentation has a parent section
-			if ('section' in doc) {
-				// get parent section
-				var title  = doc.section;
-				var slug  = slugify(title);
-				var parent = store[slug];
+				if(doc.external) {
 
-				// if parent section does not exist
-				if (!parent) {
-					// create parent section
-					parent = store[slug] = {
-						title: title,
-						name:  slug
-					};
+					// `fetch` returns a promise, will automatically resolve
+					// true when XHR is complete
+					stashPromises.push(
+						fetch(doc.external)
+							.then(function(res) {
+								return res.text();
+							}).then(function(body) {
+								doc.content += marked(body);
+								pushDoc();
+								// Promise resolves true
+							}).catch(function(err) {
+								console.log('A promise failed to resolve', err);
+							}
+						)
+					);
 
-					// add parent section to list
-					list.push(parent);
+				} else {
+					// If a non-Promise is passed to Promise.all, will be
+					// converted to a Promise and resolve true
+					stashPromises.push(pushDoc());
 				}
-
-				// If no children, set as empty array
-				parent.children = parent.children || [];
-
-				// make documentation a child of the parent section
-				parent.children.push(doc);
-
-				doc.parent = parent;
-			} else {
-				// otherwise make documentation a child of list
-				list.push(doc);
 			}
 		});
 
-		// return theme executed with parsed list, outputDir
-		return opts.theme({
-			list: list,
-			opts: opts
-		}).then(function (docs) {
-			// empty the outputDir directory
-			return fsp.emptyDir(opts.outputDir).then(function () {
+		Promise.all(stashPromises).catch(function(err) {
+            // log that I have an error, return the entire array;
+            console.log('Promise.all failed to resolve', err);
+        }).then(function() {
+			// walk stores
+			Object.keys(store).forEach(function (name) {
+				// set documentation
+				var doc = store[name];
+				if ('section' in doc) { // if documentation has a parent section, get parent section
+					var title = doc.section;
+					var slug = slugify(title);
+					var parent = store[slug];
 
-			// then copy the theme assets into the outputDir
-			return fsp.copy(docs.assets, opts.outputDir);
+					if (!parent) { // if parent section does not exist
+						parent = store[slug] = { // create parent section
+							title: title,
+							name:  slug
+						};
 
-			// then copy the compiled template into the outputDir
-			}).then(function () {
-			return fsp.outputFile(path.join(opts.outputDir, opts.outputFile), docs.template);
+						list.push(parent); // add parent section to list
+					}
 
-			// then copy any of the additional assets into the outputDir
-			}).then(function () {
-				return Promise.all(opts.assets.map(function (src) {
-					return fsp.copy(src, path.join(opts.outputDir, path.basename(src)));
-				}));
+					// If no children, set as empty array
+					parent.children = parent.children || [];
 
+					// make documentation a child of the parent section
+					parent.children.push(doc);
+
+					doc.parent = parent;
+				} else { // make documentation a child of list
+					list.push(doc);
+				}
 			});
+
+			var buildTheme = function(opts) {
+				return opts.theme({
+					list: list,
+					opts: opts
+				});
+			};
+
+			var copyThemeFiles = function (docs) {
+
+				var emptyStyleguideDir = function() {
+					return fsp.emptyDir(opts.outputDir);
+				};
+
+				var copyThemeAssets = function() {
+					// then copy the theme assets into the outputDir
+					return fsp.copy(docs.assets, opts.outputDir);
+				};
+
+				var copyStyleguideTemplate = function() {
+					return fsp.outputFile(path.join(opts.outputDir, opts.outputFile), docs.template);
+				};
+
+				var copyUserAssets = function () {
+					// then copy any of the additional assets into the outputDir
+					return Promise.all(opts.assets.map(function (src) {
+						return fsp.copy(src, path.join(opts.outputDir, path.basename(src)));
+					}));
+				};
+
+				return emptyStyleguideDir()
+					.then( copyThemeAssets )
+					.then( copyStyleguideTemplate )
+					.then( copyUserAssets );
+
+			};
+
+			// return theme executed with parsed list, outputDir
+			return buildTheme(opts).then( copyThemeFiles );
+
 		});
+
 	};
 
 	return buildDocs;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 using InformaSitecoreWord.Util;
 using InformaSitecoreWord.document;
@@ -34,7 +35,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             if (Convert.ToDateTime(_parent.ArticleDetails.WordDocLastUpdateDate) >=
                 Convert.ToDateTime(updatedArticleDetail.ArticleDetails.WordDocLastUpdateDate)) return;
             uxVersionUpdated.Text = updatedArticleDetail.ArticleDetails.WordDocLastUpdatedBy;
-            uxVersionUpdateDate.Text = SitecoreWordUtil.FormatUserName(updatedArticleDetail.ArticleDetails.WordDocLastUpdateDate);
+            uxVersionUpdateDate.Text = SitecoreWordUtil.FormatUserName(Convert.ToDateTime(updatedArticleDetail.ArticleDetails.WordDocLastUpdateDate).ToLocalTime().ToString(CultureInfo.InvariantCulture));
         }
 
     }

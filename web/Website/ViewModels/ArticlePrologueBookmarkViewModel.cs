@@ -11,27 +11,25 @@ namespace Informa.Web.ViewModels
 	public class ArticlePrologueBookmarkViewModel : IArticlePrologueBookmarkViewModel
 	{
 		protected readonly ITextTranslator TextTranslator;
-		protected readonly IRenderingItemContext ArticleRenderingContext;
-		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-		protected readonly IIsSavedDocumentContext IsSavedDocuementContext;
-
+		
 		public ArticlePrologueBookmarkViewModel(
 			ITextTranslator textTranslator,
 			IRenderingItemContext articleRenderingContext,
 			ISignInViewModel signInViewModel,
-						IAuthenticatedUserContext authenticatedUserContext,
+			IAuthenticatedUserContext authenticatedUserContext,
 			IIsSavedDocumentContext isSavedDocuementContext)
 		{
 			TextTranslator = textTranslator;
-			ArticleRenderingContext = articleRenderingContext;
 			SignInViewModel = signInViewModel;
-			AuthenticatedUserContext = authenticatedUserContext;
-			IsSavedDocuementContext = isSavedDocuementContext;
+
+			Article = articleRenderingContext.Get<IArticle>();
+			IsUserAuthenticated = authenticatedUserContext.IsAuthenticated;
+			IsArticleBookmarked = IsUserAuthenticated && isSavedDocuementContext.IsSaved(Article._Id);
 		}
 
-		public IArticle Article => ArticleRenderingContext.Get<IArticle>();
-		public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
-		public bool IsArticleBookmarked => IsSavedDocuementContext.IsSaved(Article._Id);
+		public IArticle Article { get; set; }
+		public bool IsUserAuthenticated { get; set; }
+		public bool IsArticleBookmarked { get; set; }
 		public string BookmarkText => TextTranslator.Translate("Bookmark");
 		public string BookmarkedText => TextTranslator.Translate("Bookmarked");
 		public ISignInViewModel SignInViewModel { get; set; }

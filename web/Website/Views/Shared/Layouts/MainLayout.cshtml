@@ -1,5 +1,6 @@
 ﻿@model MainLayoutViewModel
 
+@using StackExchange.Profiling
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,13 +49,9 @@
     })();
 
     </script>
-    @{ Html.RenderPartial("_Header", Model.Header); }
-    @*@Html.Sitecore().Placeholder("header")*@
-
+    @Html.Sitecore().Rendering(Model.ItemReferences.SiteHeaderRendering.ToString())
     <main>
-
-        @*@Html.Glass().InvokeAction(mvc => Execute());*@
-        @{ Html.RenderPartial("_Navigation", Model.SideNavigationMenu);}
+        @Html.Sitecore().Rendering(Model.ItemReferences.SiteSideNavigationRendering.ToString())
 
         <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
 
@@ -71,12 +68,10 @@
             </div>
 
             @* * *  POP-OUT TEMPLATE MARKUP *@
-
-            @{ Html.RenderPartial("PopOuts/SignIn", Model.SignInPopOutViewModel); }
-            @{ Html.RenderPartial("PopOuts/Register", Model.RegisterPopOutViewModel); }
-            @{ Html.RenderPartial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel); }
-            @{ Html.RenderPartial("PopOuts/EmailSearch", Model.EmailSearchPopOutViewModel); }
-
+            @Html.Partial("PopOuts/SignIn", Model.SignInPopOutViewModel)
+            @Html.Partial("PopOuts/Register", Model.RegisterPopOutViewModel)
+            @Html.Partial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel)
+            @Html.Partial("PopOuts/EmailSearch", Model.EmailSearchPopOutViewModel)
             @* * *  END POP-OUT TEMPLATE MARKUP *@
 
         </div>
@@ -84,7 +79,7 @@
     </main>
 
     <footer>
-        @{ Html.RenderPartial("_Footer", Model.Footer);}
+        @Html.Sitecore().Rendering(Model.ItemReferences.SiteFooterRendering.ToString())
     </footer>
 
     @* If this is an Article page... *@
@@ -132,6 +127,6 @@
     <script src="/dist/js/index.js"></script>
 
     @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
-
+    @MiniProfiler.RenderIncludes()
 </body>
 </html>
