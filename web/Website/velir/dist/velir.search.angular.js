@@ -492,7 +492,7 @@
                             });
 
                             if (!sortBy) {
-                                sortBy = "relevance";
+                                sortBy = "date";
                             }
 
                             var order;
