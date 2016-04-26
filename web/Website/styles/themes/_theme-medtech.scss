@@ -38,6 +38,7 @@
     .button--filled,
     .search-bar__submit,
     .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        background: $color-jonquil-yellow;
         background-color: $color-jonquil-yellow;
         color: $color-zeus-black;
     }

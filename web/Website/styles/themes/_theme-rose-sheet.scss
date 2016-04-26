@@ -1,19 +1,19 @@
-.theme-pink-sheet {
+.theme-rose-sheet {
 
     a,
     .facets__button,
     .facets__button svg,
     .sorting-arrows__arrow.is-active {
         @include on-event(true) {
-            color: $color-hibiscus-pink;
-            @include svg-fill($color-hibiscus-pink);
+            color: $color-rose-red;
+            @include svg-fill($color-rose-red);
         }
     }
 
     .header-account-access {
         &__my-account,
         &__sign-in-out {
-            color: $color-hibiscus-pink;
+            color: $color-rose-red;
         }
     }
 
@@ -24,35 +24,35 @@
             color: $color-zeus-black;
 
             &:hover {
-                color: $color-hibiscus-pink;
+                color: $color-rose-red;
             }
         }
     }
 
     .article-pullquote,
     .quote {
-        border-top-color: $color-light-plum;
-        border-bottom-color: $color-light-plum;
+        border-top-color: $color-rubine-red;
+        border-bottom-color: $color-rubine-red;
     }
 
     .button--filled,
     .search-bar__submit,
     .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-        background: $color-light-plum;
-        background-color: $color-light-plum;
+        background: $color-rubine-red;
+        background-color: $color-rubine-red;
         color: $color-soft-peach;
     }
 
     .newsletter-signup {
-        background-color: $color-soft-peach;
-        border-top: 2px solid $color-light-plum;
+        background-color: $color-porcelain-white;
+        border-top: 2px solid $color-rubine-red;
     }
 
 
     .main-menu {
 
         &__hoverable:hover:before {
-            background-color: $color-light-plum;
+            background-color: $color-rubine-red;
         }
 
         &__section-title a {
@@ -63,7 +63,7 @@
             color: $color-abbey-gray;
 
             @include on-event(false) {
-                color: $color-hibiscus-pink;
+                color: $color-rose-red;
             }
         }
         &__section-link {
