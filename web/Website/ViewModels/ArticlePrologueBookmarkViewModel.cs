@@ -1,5 +1,4 @@
-﻿using System;
-using Informa.Library.Globalization;
+﻿using Informa.Library.Globalization;
 using Informa.Library.Presentation;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Document;
@@ -22,20 +21,15 @@ namespace Informa.Web.ViewModels
 		{
 			TextTranslator = textTranslator;
 			SignInViewModel = signInViewModel;
-			
-			_article = new Lazy<IArticle>(articleRenderingContext.Get<IArticle>);
-			_isAuthenticated = authenticatedUserContext.IsAuthenticated;
-			_isArticleBookmarked = IsUserAuthenticated && isSavedDocuementContext.IsSaved(Article._Id);
+
+			Article = articleRenderingContext.Get<IArticle>();
+			IsUserAuthenticated = authenticatedUserContext.IsAuthenticated;
+			IsArticleBookmarked = IsUserAuthenticated && isSavedDocuementContext.IsSaved(Article._Id);
 		}
 
-		private readonly Lazy<IArticle> _article; 
-		public IArticle Article => _article.Value;
-
-		private readonly bool _isAuthenticated; 
-		public bool IsUserAuthenticated => _isAuthenticated;
-
-		private readonly bool _isArticleBookmarked; 
-		public bool IsArticleBookmarked => _isArticleBookmarked;
+		public IArticle Article { get; set; }
+		public bool IsUserAuthenticated { get; set; }
+		public bool IsArticleBookmarked { get; set; }
 		public string BookmarkText => TextTranslator.Translate("Bookmark");
 		public string BookmarkedText => TextTranslator.Translate("Bookmarked");
 		public ISignInViewModel SignInViewModel { get; set; }
