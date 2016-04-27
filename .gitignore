@@ -95,7 +95,7 @@ DocProject/Help/html
 *.Publish.xml
 
 # NuGet Packages Directory
-packages/
+packages/*
 !packages/repositories.config
 !packages/Velir.*
 !packages/Jabberwocky.*
