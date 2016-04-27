@@ -763,8 +763,9 @@
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
-    <Compile Include="ViewModels\PopOuts\IEmailSearchPopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\SearchRssViewModel.cs" />
+    <Compile Include="ViewModels\SearchWrapperViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IToolbarViewModel.cs" />
@@ -1268,6 +1269,7 @@
     <Content Include="Views\Shared\PopOuts\EmailSearch.cshtml" />
     <Content Include="Views\Shared\Components\JavascriptComponent.cshtml" />
     <Content Include="Views\Shared\Global\MetaNoIndex.cshtml" />
+    <Content Include="Views\Shared\PopOuts\SaveSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

@@ -35,8 +35,9 @@ namespace Informa.Library.Utilities.References
 		Guid SiteHeaderRendering { get; }
 		Guid SiteFooterRendering { get; }
 		Guid SiteSideNavigationRendering { get; }
-		Guid SignInPopOutRendering { get; }
-		
+		Guid EmailSearchPopOutRendering { get; }
+		Guid SaveSearchPopOutRendering { get; }
+
 		// Templates
 		Guid FolderTemplate { get; }
 

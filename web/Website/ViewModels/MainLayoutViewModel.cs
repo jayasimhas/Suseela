@@ -18,7 +18,6 @@ using Informa.Library.Company;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Subscription.User;
 using Informa.Library.User.Profile;
-using System.Text;
 using System.Linq;
 using Informa.Library.User;
 using Sitecore.Social.Infrastructure.Utils;
@@ -47,7 +46,6 @@ namespace Informa.Web.ViewModels
 			ICompanyRegisterMessageViewModel companyRegisterMessageViewModel,
 			ISignInPopOutViewModel signInPopOutViewModel,
 			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
-			IEmailSearchPopOutViewModel emailSearchPopOutViewModel,
 			IRegisterPopOutViewModel registerPopOutViewModel,
 			IAppInsightsConfig appInsightsConfig,
 			ISiteSettings siteSettings,
@@ -71,7 +69,6 @@ namespace Informa.Web.ViewModels
 			CompanyRegisterMessage = companyRegisterMessageViewModel;
 			SignInPopOutViewModel = signInPopOutViewModel;
 			EmailArticlePopOutViewModel = emailArticlePopOutViewModel;
-			EmailSearchPopOutViewModel = emailSearchPopOutViewModel;
 			RegisterPopOutViewModel = registerPopOutViewModel;
 			AppInsightsConfig = appInsightsConfig;
 			SiteSettings = siteSettings;
@@ -96,7 +93,6 @@ namespace Informa.Web.ViewModels
 		public readonly ICompanyRegisterMessageViewModel CompanyRegisterMessage;
 		public readonly ISignInPopOutViewModel SignInPopOutViewModel;
 		public readonly IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
-		public readonly IEmailSearchPopOutViewModel EmailSearchPopOutViewModel;
 		public readonly IToolbarViewModel DebugToolbar;
 		public readonly IRegisterPopOutViewModel RegisterPopOutViewModel;
 		public readonly IAppInsightsConfig AppInsightsConfig;

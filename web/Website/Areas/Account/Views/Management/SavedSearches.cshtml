@@ -131,7 +131,7 @@
                             @item.DateSaved.ToString("d MMM yyyy")
                         </td>
                         <td class="sortable-table__col sortable-table__submit-wrapper">
-                            <form class="form-update-saved-search" data-on-submit="/api/SavedSearches" data-submit-type="POST">
+                            <form class="form-update-saved-search onoffswitch" data-on-submit="/api/SavedSearches" data-submit-type="POST">
                                 <input name="Title" id="Title" type="hidden" value="@item.Title">
                                 <input name="Url" id="Url" type="hidden" value="@item.Url">
                                 <input type="checkbox" name="AlertEnabled" class="onoffswitch-checkbox" id="alert-toggle-@index" @(item.AlertEnabled ? "checked" : string.Empty)>
