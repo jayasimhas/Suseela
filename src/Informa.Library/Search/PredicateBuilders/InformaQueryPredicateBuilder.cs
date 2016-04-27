@@ -6,6 +6,7 @@ using Informa.Library.Search.Results;
 using Informa.Library.Utilities.References;
 using Sitecore.ContentSearch.Linq;
 using Sitecore.ContentSearch.Linq.Utilities;
+using Sitecore.Mvc.Extensions;
 using Velir.Search.Core.Models;
 using Velir.Search.Core.PredicateBuilders;
 
@@ -49,10 +50,10 @@ namespace Informa.Library.Search.PredicateBuilders
 				var formattedQuery = _formatter.FormatQuery(query);
 				if (searchHeadlines)
 				{
-					return item => item.Title.Contains(formattedQuery);
+					return item => item.Title.MatchWildcard(formattedQuery);
 				}
 
-				return item => item.Content.Contains(formattedQuery);
+				return item => item.Content.MatchWildcard(formattedQuery);
 			}
 
 			var quotedQuery = $"\"{query}\"";
@@ -60,7 +61,7 @@ namespace Informa.Library.Search.PredicateBuilders
 			{
 				return item => item.Title.Like(quotedQuery, bigSlopFactor);
 			}
-
+			
 			return item => item.Content.Like(quotedQuery, bigSlopFactor);
 		}
 	}

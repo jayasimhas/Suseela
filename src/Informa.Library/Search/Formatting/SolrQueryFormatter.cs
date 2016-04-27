@@ -26,7 +26,7 @@ namespace Informa.Library.Search.Formatting
 				{
 					if (i%2 == 1) continue;
 
-					if( _keywords.Any(k => lowercaseQuery.Contains(queryParts[i])))
+					if( _keywords.Any(k => lowercaseQuery.Contains(k)))
 					{
 						queryParts[i] = queryParts[i].Replace(" and ", " AND ").Replace(" or ", " OR ").Replace(" not ", " NOT ");
 					}
