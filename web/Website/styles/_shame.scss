@@ -31,7 +31,7 @@
 
 .facets__section-list input[type="checkbox"]:checked + label:after {
 	// TODO: get rid of ugly uri-encoded svg, use correct check from designs
-	@include svg-fill($informa-black);
+	@include svg-fill($color-zeus-black);
 	content:"";
 	display: inline-block;
 	position: absolute;

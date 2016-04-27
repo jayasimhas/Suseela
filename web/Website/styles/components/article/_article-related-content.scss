@@ -9,7 +9,7 @@
     &__category ,
     &__date {
         @include textMix('Roboto Condensed', 13px, 300);
-        color: $informa-mid-gray;
+        color: $color-dusty-gray;
     }
     &__category {
         display: inline-block;
@@ -29,7 +29,7 @@
     }
 
     &__date {
-        border-bottom: 1px solid $informa-light-gray-d;
+        border-bottom: 1px solid $color-light-gray;
         display: inline-block;
         font-weight: 400;
         margin-bottom: 1.5rem;

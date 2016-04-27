@@ -86,7 +86,7 @@ section: Home/Topic Page Components
     }
 
     &__icon {
-        @include svg-fill($informa-mid-gray);
+        @include svg-fill($color-dusty-gray);
         height: 24px;
         width: 24px;
         display: inline-block;
@@ -117,7 +117,7 @@ section: Home/Topic Page Components
         margin-bottom: 0.5rem;
         &,
         & a {
-            color: $informa-black;
+            color: $color-zeus-black;
 
             &:hover {
                 color: $color-cardinal-red;
@@ -126,7 +126,7 @@ section: Home/Topic Page Components
     }
     &__byline {
         @include textMix('Roboto', 16px, 500);
-        color: $informa-dark-gray;
+        color: $color-abbey-gray;
         display: block;
         line-height: 18px;
         margin-bottom: 1rem;
@@ -159,7 +159,7 @@ section: Home/Topic Page Components
     p {
         font-size: 18px;
         line-height: 30px;
-        color: $informa-dark-gray;
+        color: $color-abbey-gray;
     }
 
 

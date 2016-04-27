@@ -1,0 +1,76 @@
+.theme-medtech {
+
+    a,
+    .facets__button,
+    .facets__button svg,
+    .sorting-arrows__arrow.is-active {
+        @include on-event(true) {
+            color: $color-sapphire-blue;
+            @include svg-fill($color-sapphire-blue);
+        }
+    }
+
+    .header-account-access {
+        &__my-account,
+        &__sign-in-out {
+            color: $color-sapphire-blue;
+        }
+    }
+
+    .article-preview__headline,
+    .topic-featured-article__headline {
+        &,
+        & a {
+            color: $color-zeus-black;
+
+            &:hover {
+                color: $color-sapphire-blue;
+            }
+        }
+    }
+
+    .article-pullquote,
+    .quote {
+        border-top-color: $color-marine-blue;
+        border-bottom-color: $color-marine-blue;
+    }
+
+    .button--filled,
+    .search-bar__submit,
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        background: $color-jonquil-yellow;
+        background-color: $color-jonquil-yellow;
+        color: $color-zeus-black;
+    }
+
+    .newsletter-signup {
+        background-color: $color-porcelain-white;
+        border-top: 2px solid $color-marine-blue;
+    }
+
+
+    .main-menu {
+
+        &__hoverable:hover:before {
+            background-color: $color-marine-blue;
+        }
+
+        &__section-title a {
+            color: inherit;
+        }
+
+        &__footer-link a {
+            color: $color-abbey-gray;
+
+            @include on-event(false) {
+                color: $color-sapphire-blue;
+            }
+        }
+        &__section-link {
+            @include on-event(true) {
+                color: $color-abbey-gray;
+            }
+        }
+
+    }
+}

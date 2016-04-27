@@ -1,0 +1,76 @@
+.theme-pink-sheet {
+
+    a,
+    .facets__button,
+    .facets__button svg,
+    .sorting-arrows__arrow.is-active {
+        @include on-event(true) {
+            color: $color-hibiscus-pink;
+            @include svg-fill($color-hibiscus-pink);
+        }
+    }
+
+    .header-account-access {
+        &__my-account,
+        &__sign-in-out {
+            color: $color-hibiscus-pink;
+        }
+    }
+
+    .article-preview__headline,
+    .topic-featured-article__headline {
+        &,
+        & a {
+            color: $color-zeus-black;
+
+            &:hover {
+                color: $color-hibiscus-pink;
+            }
+        }
+    }
+
+    .article-pullquote,
+    .quote {
+        border-top-color: $color-light-plum;
+        border-bottom-color: $color-light-plum;
+    }
+
+    .button--filled,
+    .search-bar__submit,
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        background: $color-light-plum;
+        background-color: $color-light-plum;
+        color: $color-soft-peach;
+    }
+
+    .newsletter-signup {
+        background-color: $color-soft-peach;
+        border-top: 2px solid $color-light-plum;
+    }
+
+
+    .main-menu {
+
+        &__hoverable:hover:before {
+            background-color: $color-light-plum;
+        }
+
+        &__section-title a {
+            color: inherit;
+        }
+
+        &__footer-link a {
+            color: $color-abbey-gray;
+
+            @include on-event(false) {
+                color: $color-hibiscus-pink;
+            }
+        }
+        &__section-link {
+            @include on-event(true) {
+                color: $color-abbey-gray;
+            }
+        }
+
+    }
+}

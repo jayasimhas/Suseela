@@ -72,6 +72,75 @@
             @Html.Partial("PopOuts/Register", Model.RegisterPopOutViewModel)
             @Html.Partial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel)
             @Html.Partial("PopOuts/EmailSearch", Model.EmailSearchPopOutViewModel)
+
+            <div class="pop-out js-pop-out__save-search">
+            	<div class="pop-out__tab"></div>
+            	<div class="pop-out__internal">
+            		<div class="pop-out__sign-in">
+            			<div class="dismiss-button" data-target-element=".js-pop-out__sign-in">
+            				<svg class="dismiss-button__icon">
+            					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+            				</svg>
+            			</div>
+
+                        @*
+                            --- START SIGN-IN FORM ---
+
+                            If user is not signed-in, show sign-in form and log
+                            user in when saving search. Otherwise, hide this.
+                        *@
+                        
+                        <div class="pop-out__show-hide--bordered-bottom js-login-container">
+
+                			<h3 class="pop-out__register-header">Sign in to save this search</h3>
+
+                			[ SIGN IN FORM HERE ]
+
+                        </div>
+
+                        @*
+                            --- END SIGN-IN FORM ---
+                        *@
+
+                        <h4 class="pop-out__header--tight">
+                            Title your search
+                        </h4>
+
+                        <form
+                            class="form-save-search"
+                            data-on-submit="---SAVE SEARCH API ENDPOINT HERE---">
+
+                            <input
+                                type="text"
+                                name="saveSearchTitle"
+                                class="pop-out__input pop-out__input--tight">
+
+                            <p class="pop-out__details">
+                                Your search will be saved to your account - "Saved Searches and Alerts".
+                            </p>
+
+                            <div class="labeled-checkbox">
+                                <input
+                                    type="checkbox"
+                                    name="saveSearchEmailAlert"
+                                    id="saveSearchEmailAlert">
+                                <label
+                                    class="checkbox-label"
+                                    for="saveSearchEmailAlert">
+                                    Also set an email alert for this search
+                                </label>
+                            </div>
+
+                            <button type="submit" class="pop-out__sign-in-submit button--filled">
+                                Sign In &amp; Save Search
+                            </button>
+
+                        </form>
+
+            		</div>
+            	</div>
+            </div>
+
             @* * *  END POP-OUT TEMPLATE MARKUP *@
 
         </div>

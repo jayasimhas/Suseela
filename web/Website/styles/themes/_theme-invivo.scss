@@ -1,0 +1,76 @@
+.theme-invivo {
+
+    a,
+    .facets__button,
+    .facets__button svg,
+    .sorting-arrows__arrow.is-active {
+        @include on-event(true) {
+            color: $color-mojo-red;
+            @include svg-fill($color-mojo-red);
+        }
+    }
+
+    .header-account-access {
+        &__my-account,
+        &__sign-in-out {
+            color: $color-mojo-red;
+        }
+    }
+
+    .article-preview__headline,
+    .topic-featured-article__headline {
+        &,
+        & a {
+            color: $color-zeus-black;
+
+            &:hover {
+                color: $color-mojo-red;
+            }
+        }
+    }
+
+    .article-pullquote,
+    .quote {
+        border-top-color: $color-rosewood-red;
+        border-bottom-color: $color-rosewood-red;
+    }
+
+    .button--filled,
+    .search-bar__submit,
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        background: $color-mojo-red;
+        background-color: $color-mojo-red;
+        color: $color-soft-peach;
+    }
+
+    .newsletter-signup {
+        background-color: $color-porcelain-white;
+        border-top: 2px solid $color-rosewood-red;
+    }
+
+
+    .main-menu {
+
+        &__hoverable:hover:before {
+            background-color: $color-rosewood-red;
+        }
+
+        &__section-title a {
+            color: inherit;
+        }
+
+        &__footer-link a {
+            color: $color-abbey-gray;
+
+            @include on-event(false) {
+                color: $color-mojo-red;
+            }
+        }
+        &__section-link {
+            @include on-event(true) {
+                color: $color-abbey-gray;
+            }
+        }
+
+    }
+}

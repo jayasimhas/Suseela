@@ -65,7 +65,7 @@ section: Home/Topic Page Components
         text-align: center;
 
         &:before {
-            background-color: $informa-red;
+            background-color: $color-cardinal-red;
             content: "";
             display: block;
             height: 4px;
@@ -83,7 +83,7 @@ section: Home/Topic Page Components
         }
 
         @include breakpoint('small') {
-            border-bottom: 4px solid $informa-red;
+            border-bottom: 4px solid $color-cardinal-red;
             margin-bottom: 1.5rem;
             text-align: left;
 
@@ -113,7 +113,7 @@ section: Home/Topic Page Components
         margin: 0 -1rem;
 
         .article-preview--small {
-            border: 1px solid $informa-light-gray-d;
+            border: 1px solid $color-light-gray;
             flex: 1 0 auto;
             height: 450px;
             margin: 0 1rem 2.25rem;
