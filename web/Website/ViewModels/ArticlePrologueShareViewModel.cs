@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 using Informa.Library.Article;
 using Informa.Library.Globalization;
 using Informa.Library.Presentation;
@@ -7,22 +8,24 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class ArticlePrologueShareViewModel : IArticlePrologueShareViewModel
 	{
-        protected readonly ITextTranslator TextTranslator;
-        protected readonly IRenderingItemContext ArticleRenderingContext;
+		private readonly Lazy<IArticle> _article; 
 
-        public ArticlePrologueShareViewModel(
-            ITextTranslator textTranslator,
-            IRenderingItemContext articleRenderingContext)
-        {
-            TextTranslator = textTranslator;
-            ArticleRenderingContext = articleRenderingContext;
-        }
+		protected readonly ITextTranslator TextTranslator;
+		
+		public ArticlePrologueShareViewModel(
+				ITextTranslator textTranslator,
+				IRenderingItemContext articleRenderingContext)
+		{
+			TextTranslator = textTranslator;
+			
+			_article = new Lazy<IArticle>(articleRenderingContext.Get<IArticle>);
+		}
 
-        public string ArticleTitle => ArticleRenderingContext.Get<IArticle>().Title;
-        public string ArticleUrl => $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{ArticleRenderingContext.Get<IArticle>()._Url}";
-        public string ShareText => TextTranslator.Translate("Article.Share");
-    }
+		public string ArticleTitle => _article.Value.Title;
+		public string ArticleUrl => $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{_article.Value._Url}";
+		public string ShareText => TextTranslator.Translate("Article.Share");
+	}
 }
