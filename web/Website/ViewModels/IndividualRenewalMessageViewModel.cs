@@ -4,6 +4,7 @@ using Informa.Library.Subscription;
 using Informa.Library.User.Authentication;
 using System;
 using System.Linq;
+using Informa.Library.Subscription.User;
 using Informa.Library.User.Profile;
 using Jabberwocky.Autofac.Attributes;
 
@@ -18,20 +19,20 @@ namespace Informa.Web.ViewModels
 
 		protected readonly IIndividualSubscriptionRenewalMessageContext Context;
 		protected readonly ISiteRootContext SiteRootContext;
-		protected readonly IManageSubscriptions ManageSubscriptions;
+		protected readonly IUserSubscriptionsContext UserSubscriptionsContext;
 
 		public IndividualRenewalMessageViewModel(
 				ITextTranslator textTranslator,
 				IIndividualSubscriptionRenewalMessageContext context,
 				IAuthenticatedUserContext userContext,
 				ISiteRootContext siteRootContext,
-				IManageSubscriptions manageSubscriptions)
+				IUserSubscriptionsContext userSubscriptionsContext)
 		{
 			Context = context;
 			SiteRootContext = siteRootContext;
-			ManageSubscriptions = manageSubscriptions;
+			UserSubscriptionsContext = userSubscriptionsContext;
 
-			ISubscription record = userContext.IsAuthenticated ? GetLatestRecord(userContext.User) : null;
+			ISubscription record = userContext.IsAuthenticated ? GetLatestRecord() : null;
 
 			DismissText = textTranslator.Translate("Subscriptions.Renewals.Dismiss");
 			Display = DisplayMessage(record);
@@ -41,10 +42,9 @@ namespace Informa.Web.ViewModels
 			RenewURLText = context.RenewalLinkText;
 		}
 
-		private ISubscription GetLatestRecord(IAuthenticatedUser user)
+		private ISubscription GetLatestRecord()
 		{
-			ISubscriptionsReadResult results = ManageSubscriptions.QueryItems(user);
-			return results?.Subscriptions?.OrderByDescending(o => o.ExpirationDate).FirstOrDefault() ?? null;
+			return UserSubscriptionsContext.Subscriptions?.OrderByDescending(o => o.ExpirationDate).FirstOrDefault() ?? null;
 		}
 
 		private bool DisplayMessage(ISubscription subscription)
