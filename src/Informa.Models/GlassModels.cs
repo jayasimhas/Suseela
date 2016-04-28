@@ -9859,6 +9859,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 	public partial interface ISitecore_Import_Map : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map
 	{
 								/// <summary>
+					/// The Start Path field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 059f68ff-e3e0-49af-8287-68f4faaa364a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISitecore_Import_MapConstants.Start_PathFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Start_Path  {get; set;}
+								/// <summary>
+					/// The Template ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 18f8fbc8-8aa1-46a1-9698-d89ef5b70766</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISitecore_Import_MapConstants.Template_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Template_ID  {get; set;}
+								/// <summary>
+					/// The Year field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: b86ab71d-fc76-413b-9aa1-71bbe4ef57cd</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISitecore_Import_MapConstants.YearFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Year  {get; set;}
+								/// <summary>
 					/// The Import From Language field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
@@ -9889,6 +9916,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 		public partial interface ISitecore_Import_Map__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map__Raw
 		{
 										/// <summary>
+						/// The Start Path field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 059f68ff-e3e0-49af-8287-68f4faaa364a</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISitecore_Import_MapConstants.Start_PathFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Start_Path  {get; set;}
+										/// <summary>
+						/// The Template ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 18f8fbc8-8aa1-46a1-9698-d89ef5b70766</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISitecore_Import_MapConstants.Template_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Template_ID  {get; set;}
+										/// <summary>
+						/// The Year field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: b86ab71d-fc76-413b-9aa1-71bbe4ef57cd</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISitecore_Import_MapConstants.YearFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Year  {get; set;}
+										/// <summary>
 						/// The Import From Language field.
 						/// <para></para>
 						/// <para>Field Type: Droplink</para>		
@@ -9914,6 +9968,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Sitecore Import Map";
 
+					
+			public static readonly ID Start_PathFieldId = new ID("059f68ff-e3e0-49af-8287-68f4faaa364a");
+			public const string Start_PathFieldName = "Start Path";
+
+						
+					
+			public static readonly ID Template_IDFieldId = new ID("18f8fbc8-8aa1-46a1-9698-d89ef5b70766");
+			public const string Template_IDFieldName = "Template ID";
+
+						
+					
+			public static readonly ID YearFieldId = new ID("b86ab71d-fc76-413b-9aa1-71bbe4ef57cd");
+			public const string YearFieldName = "Year";
+
+						
 					
 			public static readonly ID Import_From_LanguageFieldId = new ID("f8b6f833-d85a-48e7-a17f-c926e39d9e65");
 			public const string Import_From_LanguageFieldName = "Import From Language";
@@ -16292,6 +16361,28 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
 			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
+
+						
+					
+			public static readonly ID Lockout_Email_BodyFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
+			public const string Lockout_Email_BodyFieldName = "Lockout Email Body";
+
+							public static readonly ID Lockout_Email_Body__RawFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
+				public const string Lockout_Email_Body__RawFieldName = "Lockout Email Body";
+						
+					
+			public static readonly ID Lockout_Email_FromFieldId = new ID("533cb9d2-b47a-4a9a-9b8a-c4febcdadcab");
+			public const string Lockout_Email_FromFieldName = "Lockout Email From";
+
+						
+					
+			public static readonly ID Lockout_Email_SubjectFieldId = new ID("f432072f-cfcb-4477-8588-61726fdadf23");
+			public const string Lockout_Email_SubjectFieldName = "Lockout Email Subject";
+
+						
+					
+			public static readonly ID Lockout_Email_ToFieldId = new ID("861cb808-ae66-4908-9d46-96b350e302b3");
+			public const string Lockout_Email_ToFieldName = "Lockout Email To";
 
 						
 					

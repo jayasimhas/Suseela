@@ -41,7 +41,7 @@ and running. There are additional default properties from dev.properties that yo
   <property name="connstr.scheduledpublishing" value="mongodb://localhost/Informa_scheduled_publishing" />
   <property name="connstr.dcd" value="user id=sitecore;password=password;Data Source=localhost\SQLEXPRESS;Database=Sitecore_Companies" />
 	<property name="connstr.custom" value="user id=sitecore;password=password;Data Source=localhost\SQLEXPRESS;Database=Informa_Custom" />
-		
+			<property name="connstr.pmbi" value="user id=SitecoreUser;password=felixx;Data Source=vwibisql;Database=Informa_Support_Master" />
 		
 	<!-- Web.config settings -->
 	<property name="data.folder" value="${project.folder}\web\Data" />

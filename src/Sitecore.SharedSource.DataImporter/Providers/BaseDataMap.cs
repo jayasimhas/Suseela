@@ -67,6 +67,21 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
 
         #region IDataMap Fields
 
+		/// <summary>
+		/// Year of articles to import
+		/// </summary>
+		public string Year { get; set; }
+
+		/// <summary>
+		/// The start path to import from
+		/// </summary>
+		public string StartPath { get; set; }
+
+		/// <summary>
+		/// The template id of items that needs to import
+		/// </summary>
+		public string TemplateId { get; set; }
+
         /// <summary>
         /// the query used to retrieve the data
         /// </summary>
@@ -128,8 +143,17 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
             //get query
             Query = ImportItem.GetItemField("Query", Logger);
 
-            //get parent item
-            ImportToWhere = GetImportToWhereItem();
+			// Get start path
+	        StartPath = ImportItem.GetItemField("Start Path", Logger);
+
+			// Get template id
+	        TemplateId = ImportItem.GetItemField("Template ID", Logger);
+
+			// Get year
+			Year = ImportItem.GetItemField("Year", Logger);
+
+			//get parent item
+			ImportToWhere = GetImportToWhereItem();
 
             //get new item template
             ImportToWhatTemplate = GetImportToTemplate();
@@ -471,7 +495,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
                         try {
                             IEnumerable<string> values = GetFieldValues(d.GetExistingFieldNames(), importRow);
                             importValue = String.Join(d.GetFieldValueDelimiter(), values);
-                            d.FillField(this, ref newItem, importValue);
+	                        string id = string.Empty;
+	                        if (importRow is Item)
+	                        {
+		                        id = (importRow as Item).ID.ToString();
+	                        }
+                            d.FillField(this, ref newItem, importValue, id);
                         } catch (Exception ex) {
                             Logger.Log(newItem.Paths.FullPath, "the FillField failed", ProcessStatus.FieldError, d.ItemName(), importValue);
                         }

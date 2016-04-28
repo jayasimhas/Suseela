@@ -32,7 +32,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields {
 
         public string Name { get; set; }
 
-        public void FillField(IDataMap map, ref Item newItem, string importValue) {
+        public void FillField(IDataMap map, ref Item newItem, string importValue, string id = null) {
             //ignore import value and store value provided
             Field f = newItem.Fields[NewItemField];
             if (f != null)

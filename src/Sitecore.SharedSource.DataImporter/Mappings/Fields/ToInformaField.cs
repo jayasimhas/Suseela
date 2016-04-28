@@ -32,7 +32,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
             // connect to the company database and get the ID to store
             if (importValue.Equals(string.Empty))
@@ -62,7 +62,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -134,7 +134,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
             //replace <h1> with <h2>
             importValue = importValue.Replace("h1", "h2");
@@ -345,7 +345,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
             // connect to the company database and get the ID to store
             if (importValue.Equals(string.Empty))
@@ -362,12 +362,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             foreach(string cName in importCompanies) { 
                 string casedValue = cName.ToLower();
-                KeyValuePair<string, string> id;
+                KeyValuePair<string, string> pair;
                 if (fileCompanies.ContainsKey(casedValue)) { 
-                    id = fileCompanies.First(a => a.Key.Equals(casedValue));
+                    pair = fileCompanies.First(a => a.Key.Equals(casedValue));
                 }
                 else if (dbCompanies.ContainsKey(casedValue)) { 
-                    id = dbCompanies.First(a => a.Key.Equals(casedValue));
+                    pair = dbCompanies.First(a => a.Key.Equals(casedValue));
                 }
                 else { 
                     var ids = dbCompanies.Where(a => a.Key.Contains(casedValue));
@@ -381,10 +381,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         map.Logger.Log(newItem.Paths.FullPath, $"Company not selected. Possible matches '{string.Join(" ", ids.Select(m => $"{m.Key}-{m.Value}"))}'", ProcessStatus.FieldError, NewItemField, cName);
                         continue;
                     }
-                    id = ids.First();
+                    pair = ids.First();
                 }
                 
-                string businessID = id.Value;
+                string businessID = pair.Value;
                 if (string.IsNullOrEmpty(businessID))
                     return;
                 
@@ -925,7 +925,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -1047,7 +1047,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -1943,7 +1943,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -2173,7 +2173,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region Methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
             if (string.IsNullOrEmpty(importValue))
                 return;
@@ -2415,6 +2415,17 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
         #endregion Methods
 
     }
+
+	public class ToLegacySitecoreId : ToText
+	{
+		public ToLegacySitecoreId(Item i) : base(i) { }
+
+		public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+		{
+			Field f = newItem.Fields[NewItemField];
+			f.Value = id;
+		}
+	}
 
     #endregion Scrip
 }
