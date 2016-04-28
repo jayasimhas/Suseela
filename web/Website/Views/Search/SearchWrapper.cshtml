@@ -49,7 +49,8 @@
 
                 </li>
             </ul>
-
+            @Html.Sitecore().Rendering(Model.ItemReferences.EmailSearchPopOutRendering.ToString())
+            @Html.Sitecore().Rendering(Model.ItemReferences.SaveSearchPopOutRendering.ToString())
         </div>
 
         <h1 class="search__header-title">Search Results</h1>
@@ -75,5 +76,3 @@
 
 </div>
 
-@Html.Sitecore().Rendering(Model.ItemReferences.EmailSearchPopOutRendering.ToString())
-@Html.Sitecore().Rendering(Model.ItemReferences.SaveSearchPopOutRendering.ToString())

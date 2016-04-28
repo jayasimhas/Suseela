@@ -24,13 +24,13 @@
                 @Html.Raw(Model.TitleLabelText)
             </h4>
 
-            <form class="form-save-search" ng-controller="EmailRssController as controller"
+            <form class="form-save-search"
                   data-on-submit="/api/SavedSearches">
 
                 <input type="text"
                        name="Title"
                        class="pop-out__input pop-out__input--tight">
-
+                @*This popout is sitting in SearchWrapper.cshtml where the AngularJS EmailRssController is available. *@
                 <input type="hidden" name="Url" value="{{currentLocation}}"/>
 
                 <p class="pop-out__details">
@@ -38,11 +38,8 @@
                 </p>
 
                 <div class="labeled-checkbox">
-                    <input type="checkbox"
-                           name="AlertEnabled"
-                           id="AlertEnabled">
-                    <label class="checkbox-label"
-                           for="AlertEnabled">
+                    @Html.CheckBox("AlertEnabled")
+                    <label class="checkbox-label" for="AlertEnabled">
                         @Html.Raw(Model.EmailAlertLabelText)
                     </label>
                 </div>
