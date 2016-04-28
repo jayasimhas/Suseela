@@ -1177,6 +1177,7 @@
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="App_Config\Include\Sitecore.Support.405677.config" />
     <None Include="App_Config\Include\UserDefined\ScheduledPublishing.MongoDB.config.disabled" />
     </Content>
     <Content Include="Areas\Account\Views\ResetPassword\Change.cshtml" />
