@@ -17,6 +17,10 @@
         }
     }
 
+    .general-header__navigation a.is-active {
+        border-bottom-color: $color-rosewood-red;
+    }
+
     .article-preview__headline,
     .topic-featured-article__headline {
         &,
