@@ -1168,6 +1168,7 @@
     <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config.template" />
     <None Include="App_Config\Include\UserDefined\ScheduledPublishing.MongoDB.config.disabled" />
     <Content Include="App_Config\Include\UserDefined\Sites.config.template">
       <SubType>Designer</SubType>
@@ -1184,6 +1185,9 @@
     <Content Include="Areas\Account\Views\Management\OneClickUnsubscribe.cshtml" />
     <Content Include="App_Config\Web\system.webServer.rewrite.config" />
     <Content Include="App_Config\Sitecore.config.template" />
+    <Content Include="App_Config\Include\UserDefined\Sites.config" />
+    <Content Include="App_Config\Include\UserDefined\WebClientAuth.config" />
+    <Content Include="App_Config\Include\UserDefined\WebClientAuth.config.template" />
     <None Include="App_Config\Web\system.webServer.rewrite.config.template" />
     <Content Include="Areas\Account\Views\Management\SavedSearches.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
