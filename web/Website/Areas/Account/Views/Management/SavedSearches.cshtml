@@ -4,6 +4,7 @@
 {
     <div class="page-account">
         <h1 class="page-account__header">@Editable(Model.GlassModel, model => model.Title)</h1>
+        @Editable(Model.GlassModel, model => model.Body)
         <div class="page-preferences js-preferences-user-container">
             <p class="page-account__error js-preferences-user-error-general">
                 @Model.GeneralErrorText
@@ -21,10 +22,10 @@
                         data-sortable-table-col="1">
                         @Html.Raw(Model.SourceText)
                         <div class="sorting-arrows">
-                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--up click-utag" data-info='{"event_name":"saved-search-source-sort" "sort-direction":"up"}'>
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
                                 <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
                             </svg>
-                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--down" data-info='{"event_name":"saved-search-source-sort" "sort-direction":"down"}'>
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
                                 <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
                             </svg>
                         </div>
@@ -53,8 +54,17 @@
                             </svg>
                         </div>
                     </td>
-                    <td class="sortable-table__col">
+                    <td class="sortable-table__col js-sortable-table-sorter l-no-wrap"
+                        data-sortable-table-col="4">
                         @Html.Raw(Model.EmailAlertText)
+                        <div class="sorting-arrows">
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                            </svg>
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                            </svg>
+                        </div>
                     </td>
                     <td class="sortable-table__col"></td>
                 </tr>
@@ -67,11 +77,11 @@
                         <td class="sortable-table__col js-sortable-table-sorter"
                             data-sortable-table-col="1">
                             @Html.Raw(Model.SourceText)
-                            <div class="sortable-table__sort-arrows">
-                                <svg class="sortable-table__sort-arrows--up click-utag" data-info='{"event_name":"saved-search-source-sort" "sort-direction":"up"}'>
+                            <div class="sorting-arrows">
+                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
                                     <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
                                 </svg>
-                                <svg class="sortable-table__sort-arrows--down" data-info='{"event_name":"saved-search-source-sort" "sort-direction":"down"}'>
+                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
                                     <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
                                 </svg>
                             </div>
@@ -79,11 +89,11 @@
                         <td class="sortable-table__col js-sortable-table-sorter"
                             data-sortable-table-col="2">
                             @Html.Raw(Model.TitleText)
-                            <div class="sortable-table__sort-arrows">
-                                <svg class="sortable-table__sort-arrows--up click-utag" data-info='{"event_name":"saved-search-title-sort" "sort-direction":"up"}'>
+                            <div class="sorting-arrows">
+                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up click-utag" data-info='{"event_name":"saved-search-title-sort" "sort-direction":"up"}'>
                                     <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
                                 </svg>
-                                <svg class="sortable-table__sort-arrows--down" data-info='{"event_name":"saved-search-title-sort" "sort-direction":"down"}'>
+                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down" data-info='{"event_name":"saved-search-title-sort" "sort-direction":"down"}'>
                                     <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
                                 </svg>
                             </div>
@@ -91,11 +101,23 @@
                         <td class="sortable-table__col js-sortable-table-sorter"
                             data-sortable-table-col="3">
                             @Html.Raw(Model.DateText)
-                            <div class="sortable-table__sort-arrows">
-                                <svg class="sortable-table__sort-arrows--up">
+                            <div class="sorting-arrows">
+                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
                                     <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
                                 </svg>
-                                <svg class="sortable-table__sort-arrows--down">
+                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="sortable-table__col js-sortable-table-sorter"
+                            data-sortable-table-col="4">
+                            @Html.Raw(Model.EmailAlertText)
+                            <div class="sorting-arrows">
+                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                </svg>
+                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
                                     <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
                                 </svg>
                             </div>
