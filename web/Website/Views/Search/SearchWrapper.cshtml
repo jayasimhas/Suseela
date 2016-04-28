@@ -28,20 +28,21 @@
                     </a>
                 </li>
 
-                <li class="action-flag">
+                <li class="action-flag" ng-controller="SavedSearchController as savedSearch">
 
                     <a
                         href="#"
-                        class="pop-out__trigger js-pop-out-trigger js-save-search"
+                        class="pop-out__trigger js-save-search"
+                        ng-class="{'js-pop-out-trigger': !isSaved}"
                         data-pop-out-type="save-search">
 
                         <span class="action-flag__label">Save Search / Set Alert</span>
 
-                        <svg class="action-flag__icon toggleable-icon is-visible">
+                        <svg ng-class="{'is-visible': !isSaved}" class="action-flag__icon toggleable-icon">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#save"></use>
                 	    </svg>
 
-                        <svg class="action-flag__icon toggleable-icon">
+                        <svg ng-class="{'is-visible': isSaved}" class="action-flag__icon toggleable-icon">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#saved"></use>
                 	    </svg>
 

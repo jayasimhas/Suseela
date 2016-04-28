@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.User.Content;
 using Informa.Library.User.Search;

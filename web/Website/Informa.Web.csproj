@@ -142,6 +142,10 @@
       <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.Mvc.1.1.0.0\lib\net45\Jabberwocky.Glass.Autofac.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Jabberwocky.Glass.Autofac.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.WebApi.1.0.0.0\lib\net45\Jabberwocky.Glass.Autofac.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Jabberwocky.WebApi, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Jabberwocky.WebApi.1.0.1.0\lib\net45\Jabberwocky.WebApi.dll</HintPath>
       <Private>True</Private>
@@ -923,6 +927,9 @@
     <Content Include="js\search\controllers\headlineToggleController.js" />
     <Content Include="js\search\controllers\informaFacetsController.js" />
     <Content Include="js\search\controllers\informaResultsController.js" />
+    <Content Include="js\search\controllers\savedSearchController.js" />
+    <Content Include="js\search\factories\companiesFactory.js" />
+    <Content Include="js\search\factories\savedSearchesFactory.js" />
     <Content Include="js\search\informaSearchApp.js" />
     <Content Include="js\search\search.js" />
     <Content Include="js\svg4everybody.js" />

@@ -12,11 +12,8 @@
             @if (!Model.IsAuthenticated)
             {
                 <div class="pop-out__show-hide--bordered-bottom js-login-container">
-
                     <h3 class="pop-out__register-header">@Html.Raw(Model.SignInText)</h3>
-
                     @Html.Partial("_SignInForm", Model.SignInViewModel)
-
                 </div>
             }
 
@@ -24,14 +21,12 @@
                 @Html.Raw(Model.TitleLabelText)
             </h4>
 
-            <form class="form-save-search"
-                  data-on-submit="/api/SavedSearches">
-
+            <form class="form-save-search" data-on-submit="/api/SavedSearches">
                 <input type="text"
                        name="Title"
                        class="pop-out__input pop-out__input--tight">
                 @*This popout is sitting in SearchWrapper.cshtml where the AngularJS EmailRssController is available. *@
-                <input type="hidden" name="Url" value="{{currentLocation}}"/>
+                <input type="hidden" name="Url" value="@Model.GlassModel._Url#{{currentLocation}}"/>
 
                 <p class="pop-out__details">
                     @Html.Raw(Model.DescriptionText)
@@ -54,9 +49,7 @@
                         @Html.Raw(Model.ButtonLoggedOutText)
                     }
                 </button>
-
             </form>
-
         </div>
     </div>
 </div>

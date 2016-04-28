@@ -286,6 +286,9 @@ $(document).ready(function() {
         observe: '.form-save-search',
         successCallback: function() {
             toggleIcons('.js-save-search');
+        },
+        failureCallback: function() {
+            
         }
     });
 
@@ -383,14 +386,7 @@ $(document).ready(function() {
             $(evt.target).closest('tr').remove();
         }
     });
-
-    var removeSavedSearchesController = new FormController({
-        observe: '.form-remove-saved-search',
-        successCallback: function(form, context, evt) {
-            $(evt.target).closest('tr').remove();
-        }
-    });
-
+    
     svg4everybody();
 
     /* * *

@@ -17,6 +17,11 @@ namespace Informa.Web.Controllers.Search
 			_savedSearchService = savedSearchService;
 		}
 
+		public bool Get(string url)
+		{
+			return true;
+		}
+
 		public IEnumerable<ISavedSearchDisplayable> Get()
 		{
 			return _savedSearchService.GetContent();
