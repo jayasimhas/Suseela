@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Content;
@@ -129,7 +130,7 @@ namespace Informa.Library.User.Search
 
 		protected virtual IEnumerable<string> ExtractSources(string url)
 		{
-			return url.ExtractParamValue("publication").Split(SiteSettings.ValueSeparator);
+			return url.ExtractParamValue("publication").Split(SiteSettings.ValueSeparator).Where(s => !string.IsNullOrEmpty(s)).Select(HttpUtility.UrlDecode);
 		}
 
 		protected virtual string ExtractQueryString(string url)
