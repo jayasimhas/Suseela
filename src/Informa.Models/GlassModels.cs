@@ -1704,6 +1704,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IArticleConstants.Legacy_PublicationsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Legacy_Publications  {get; set;}
 								/// <summary>
+					/// The Legacy Sitecore ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 92187bb9-32ef-4c18-a546-0bd2e7e7bf43</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Legacy_Sitecore_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Legacy_Sitecore_ID  {get; set;}
+								/// <summary>
 					/// The Featured Image 16 9 field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
@@ -2013,6 +2022,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IArticleConstants.Legacy_PublicationsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Legacy_Publications  {get; set;}
 										/// <summary>
+						/// The Legacy Sitecore ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 92187bb9-32ef-4c18-a546-0bd2e7e7bf43</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Legacy_Sitecore_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Legacy_Sitecore_ID  {get; set;}
+										/// <summary>
 						/// The Featured Image 16 9 field.
 						/// <para></para>
 						/// <para>Field Type: Image</para>		
@@ -2239,6 +2257,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Legacy_PublicationsFieldId = new ID("0f6c8f42-01dc-4e05-b63e-aa25d8aa0e09");
 			public const string Legacy_PublicationsFieldName = "Legacy Publication";
+
+						
+					
+			public static readonly ID Legacy_Sitecore_IDFieldId = new ID("92187bb9-32ef-4c18-a546-0bd2e7e7bf43");
+			public const string Legacy_Sitecore_IDFieldName = "Legacy Sitecore ID";
 
 						
 					
