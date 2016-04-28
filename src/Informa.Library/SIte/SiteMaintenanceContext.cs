@@ -16,30 +16,31 @@ namespace Informa.Library.Site
 		{
 			SiteRootContext = siteRootContext;
 			TextTranslator = textTranslator;
+
+			_info = new Lazy<ISiteMaintenanceInfo>(GetSiteMaintenanceInfo);
 		}
 
-		public ISiteMaintenanceInfo Info
-		{
-			get
-			{
-				var siteRoot = SiteRootContext.Item;
-				var from = siteRoot?.System_Maintenance_Start_Date ?? default(DateTime);
-				var to = siteRoot?.System_Maintenance_End_Date ?? default(DateTime);
-				var message = siteRoot?.System_Maintenance_Text ?? TextTranslator.Translate(DefaultMessageKey);
-				var id = string.Concat(from.ToString("yyyyMMddHHmmss"), to.ToString("yyyyMMddHHmmss"));
-				var show = (@from != default(DateTime) || to != default(DateTime)) && (@from <= DateTime.Now && to >= DateTime.Now);
-
-				return new SiteMaintenanceInfo
-				{
-					From = from,
-					To = to,
-					Message = message,
-					Id = id,
-					Show = show
-				};
-			}
-		}
-
+		private readonly Lazy<ISiteMaintenanceInfo> _info;
+		public ISiteMaintenanceInfo Info => _info.Value;
 		protected string DefaultMessageKey => "MaintenanceMessage";
+
+		private ISiteMaintenanceInfo GetSiteMaintenanceInfo()
+		{
+			var siteRoot = SiteRootContext.Item;
+			var from = siteRoot?.System_Maintenance_Start_Date ?? default(DateTime);
+			var to = siteRoot?.System_Maintenance_End_Date ?? default(DateTime);
+			var message = siteRoot?.System_Maintenance_Text ?? TextTranslator.Translate(DefaultMessageKey);
+			var id = string.Concat(from.ToString("yyyyMMddHHmmss"), to.ToString("yyyyMMddHHmmss"));
+			var show = (@from != default(DateTime) || to != default(DateTime)) && (@from <= DateTime.Now && to >= DateTime.Now);
+
+			return new SiteMaintenanceInfo
+			{
+				From = from,
+				To = to,
+				Message = message,
+				Id = id,
+				Show = show
+			};
+		}
 	}
 }
