@@ -6,112 +6,85 @@ using Jabberwocky.Glass.Autofac.Attributes;
 using System;
 using System.Linq;
 using Informa.Library.User.Profile;
-using Informa.Library.Subscription.User;
 
 namespace Informa.Web.ViewModels
 {
-    [AutowireService(LifetimeScope.PerScope)]
-    public class IndividualRenewalMessageViewModel : IIndividualRenewalMessageViewModel
-    {
-        private const string PRODUCT_CODE = "scrip";
-        private const string PRODUCT_TYPE = "publication";
-        private readonly string[] SUBSCRIPTIONTYPE = new string[] { "individual", "free-trial", "individual internal" };
+	[AutowireService(LifetimeScope.PerScope)]
+	public class IndividualRenewalMessageViewModel : IIndividualRenewalMessageViewModel
+	{
+		private const string PRODUCT_CODE = "scrip";
+		private const string PRODUCT_TYPE = "publication";
+		private readonly string[] SUBSCRIPTIONTYPE = new string[] { "individual", "free-trial", "individual internal" };
 
-        protected readonly ITextTranslator TextTranslator;
-        protected readonly IIndividualSubscriptionRenewalMessageContext Context;
-        protected readonly IAuthenticatedUserContext UserContext;
-        protected readonly ISiteRootContext SiteRootContext;
-        protected readonly IUserSubscriptionsContext UserSubscriptionsContext;
+		protected readonly IIndividualSubscriptionRenewalMessageContext _context;
+		protected readonly ISiteRootContext _siteRootContext;
+		protected readonly IManageSubscriptions _manageSubscriptions;
 
-        public IndividualRenewalMessageViewModel(
-            ITextTranslator textTranslator, 
-            IIndividualSubscriptionRenewalMessageContext context, 
-            IAuthenticatedUserContext userContext, 
-            ISiteRootContext siteRootContext,
-			IUserSubscriptionsContext userSubscriptionsContext)
-        {
-            Context = context;
-            TextTranslator = textTranslator;
-            UserContext = userContext;
-            SiteRootContext = siteRootContext;
-            UserSubscriptionsContext = userSubscriptionsContext;
-        }
+		public IndividualRenewalMessageViewModel(
+				ITextTranslator textTranslator,
+				IIndividualSubscriptionRenewalMessageContext context,
+				IAuthenticatedUserContext userContext,
+				ISiteRootContext siteRootContext,
+				IManageSubscriptions manageSubscriptions)
+		{
+			_context = context;
+			_siteRootContext = siteRootContext;
+			_manageSubscriptions = manageSubscriptions;
 
-        public string DismissText
-        {
-            get
-            {
-                return TextTranslator.Translate("Subscriptions.Renewals.Dismiss");
-            }
-        }
+			ISubscription record = userContext.IsAuthenticated ? GetLatestRecord(userContext.User) : null;
 
-        private ISubscription GetLatestRecord()
-        {
-            return UserSubscriptionsContext.Subscriptions?.OrderByDescending(o => o.ExpirationDate).FirstOrDefault() ?? null;
-        }
+			DismissText = textTranslator.Translate("Subscriptions.Renewals.Dismiss");
+			Display = DisplayMessage(record);
+			Message = Display ? GetMessage(record, userContext.User.Name) : string.Empty;
+			Id = context.ID;
+			RenewURL = context.RenewalLinkURL;
+			RenewURLText = context.RenewalLinkText;
+		}
 
-        public bool Display
-        {
-            get
-            {
-                if (UserContext == null || !UserContext.IsAuthenticated)
-                    return false;
+		private ISubscription GetLatestRecord(IAuthenticatedUser user)
+		{
+			ISubscriptionsReadResult results = _manageSubscriptions.QueryItems(user);
+			return results?.Subscriptions?.OrderByDescending(o => o.ExpirationDate).FirstOrDefault() ?? null;
+		}
 
-                var latestRecord = GetLatestRecord();
+		private bool DisplayMessage(ISubscription subscription)
+		{
+			if (subscription == null
+						|| subscription.ProductCode.ToLower() != PRODUCT_CODE
+						|| (subscription.ExpirationDate - DateTime.Now).TotalDays > _siteRootContext.Item.Days_To_Expiration
+						|| SUBSCRIPTIONTYPE.Contains(subscription.SubscriptionType.ToLower()) == false
+						|| subscription.ProductType.ToLower() != PRODUCT_TYPE)
+				return false;
 
-                if(latestRecord == null
-                    || latestRecord.ProductCode.ToLower() != PRODUCT_CODE
-                    || (latestRecord.ExpirationDate - DateTime.Now).TotalDays > SiteRootContext.Item.Days_To_Expiration
-                    || SUBSCRIPTIONTYPE.Contains(latestRecord.SubscriptionType.ToLower()) == false
-                    || latestRecord.ProductType.ToLower() != PRODUCT_TYPE)
-                    return false;
+			return true;
+		}
 
-                return true;
-            }
-        }
+		private string GetMessage(ISubscription subscription, string userName)
+		{
+			if (subscription == null)
+			{
+				return _context.Message_FreeTrial
+						.Replace("#FIRST_NAME#", userName)
+						.Replace("#SUB_EXPIRATION#", string.Empty);
+			}
 
-        public string Id
-        {
-            get
-            {
-                return Context.ID;
-            }
-        }
+			if (subscription?.SubscriptionType.ToLower() == "free-trial")
+			{
+				return _context.Message_FreeTrial
+						.Replace("#FIRST_NAME#", userName)
+						.Replace("#SUB_EXPIRATION#", subscription.ExpirationDate.ToShortDateString());
+			}
 
-        public string Message
-        {
-            get
-            {
-                var latestRecord = GetLatestRecord();
-                if(latestRecord == null)
-                    return Context.Message_FreeTrial
-                        .Replace("#FIRST_NAME#", UserContext.User.Name)
-                        .Replace("#SUB_EXPIRATION#", string.Empty);
-                else if (latestRecord?.SubscriptionType.ToLower() == "free-trial")
-                    return Context.Message_FreeTrial
-                        .Replace("#FIRST_NAME#", UserContext.User.Name)
-                        .Replace("#SUB_EXPIRATION#", latestRecord.ExpirationDate.ToShortDateString());
-                else
-                    return Context.Message_IndividualSubscriptiong
-                        .Replace("#FIRST_NAME#", UserContext.User.Name)
-                        .Replace("#SUB_EXPIRATION#", latestRecord.ExpirationDate.ToShortDateString());
-            }
-        }
+			return _context.Message_IndividualSubscriptiong
+					.Replace("#FIRST_NAME#", userName)
+					.Replace("#SUB_EXPIRATION#", subscription.ExpirationDate.ToShortDateString());
+		}
 
-        public string RenewURL
-        {
-            get
-            {
-                return Context.RenewalLinkURL;
-            }
-        }
-
-        public string RenewURLText
-        {
-            get
-            {
-                return Context.RenewalLinkText;
-            }
-        }
-    }
+		public string DismissText { get; set; }
+		public bool Display { get; set; }
+		public string Id { get; set; }
+		public string Message { get; set; }
+		public string RenewURL { get; set; }
+		public string RenewURLText { get; set; }
+	}
 }
