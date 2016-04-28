@@ -70,6 +70,13 @@ svg {
   width: 16px;
 }
 
+.icon-external-link {
+    @include svg-fill($color-tree-poppy-orange);
+    vertical-align: text-top;
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
 // Freeze the page/body to prevent scrolling when menu is open on tablet/phone
 body.is-frozen {
     @include breakpoint('medium') {
