@@ -1,4 +1,4 @@
-﻿@model TopicContainerViewModel
+﻿@inherits CustomGlassView<TopicContainerViewModel>
 
 <a id="@Model.Id.ToString("N")"
    class="sub-topic-links__invisible-topic-header-anchor js-topic-anchor"
@@ -6,13 +6,13 @@
 
 <div class="topic-subtopic">
     <h1 class="topic-subtopic__header">
-        @Html.Glass().Editable(x => x.GlassModel.Title)
-        @if (Sitecore.Context.PageMode.IsPageEditor)
+        @Editable(Model.GlassModel, x => x.Title)
+        @if (IsInEditingMode)
         {
             <br/>
-            @Html.Glass().Editable(x => x.GlassModel.Navigation_Link)
+            @Editable(Model.GlassModel, x => x.Navigation_Link)
             <br/>
-            @Html.Glass().Editable(x => x.GlassModel.Navigation_Text)
+            @Editable(Model.GlassModel, x => x.Navigation_Text)
         }
         else {
             <a class="topic-subtopic__header-explore-link" href="@HttpUtility.UrlDecode(Model.Link.LinkableUrl)">@Model.Link.LinkableText</a>
