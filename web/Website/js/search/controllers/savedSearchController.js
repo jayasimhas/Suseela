@@ -9,8 +9,8 @@
     $scope.$watch(function () {
         return searchService.getPager();
     }, function () {
-        savedSearchService.isSaved().then(function(response) {
-            $scope.isSaved = response;
+        savedSearchService.isSaved().then(function (response) {
+            $scope.isSaved = response.data;
         });
     }, true);
 };

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.ModelBinding;
@@ -19,7 +21,7 @@ namespace Informa.Web.Controllers.Search
 
 		public bool Get(string url)
 		{
-			return true;
+			return _savedSearchService.GetContent().Any(x => x.Url.EndsWith(url));
 		}
 
 		public IEnumerable<ISavedSearchDisplayable> Get()
