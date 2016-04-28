@@ -8,7 +8,6 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using System;
-using System.Collections.Generic;
 using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Library.Utilities.References;
@@ -56,7 +55,7 @@ namespace Informa.Web.ViewModels
 			IArticleSearch articleSearch,
 			IItemReferences itemReferences,
 			ITextTranslator textTranslator,
-		    IUserCompanyContext userCompanyContext,
+				IUserCompanyContext userCompanyContext,
 			IUserProfileContext userProfileContext,
 			IEntitlementAccessLevelContext entitlementAccessLevelContext,
 			IUserSubscriptionsContext userSubscriptionsContext,
@@ -98,7 +97,7 @@ namespace Informa.Web.ViewModels
 		public readonly IAppInsightsConfig AppInsightsConfig;
 		public readonly IItemReferences ItemReferences;
 
-		public IArticle Article => GlassModel is IArticle ? (IArticle)GlassModel : null;
+		public IArticle Article => GlassModel as IArticle;
 		public string PrintPageHeaderLogoSrc => SiteRootContext?.Item?.Print_Logo?.Src ?? string.Empty;
 		public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
 		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
@@ -173,41 +172,26 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-                var entitlementList = UserEntitlementsContext.Entitlements;
-                var entitlements = entitlementList as IList<IEntitlement> ?? entitlementList.ToList();
-                if (!entitlements.Any())
-			        return string.Empty;
-                
-                string allEntitlements = string.Join(",", entitlements.Select(a => $"'{a.ProductCode}'"));
-                return $"[{allEntitlements}]";
-            }
+				string allEntitlements = string.Join(",", UserEntitlementsContext.Entitlements.Select(a => $"'{a.ProductCode}'"));
+				return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
+			}
 		}
 		public string UserEntitlementStatus
 		{
 			get
 			{
-				var entitlementList = UserEntitlementsContext.Entitlements;
-			    var entitlements = entitlementList as IList<IEntitlement> ?? entitlementList.ToList();
-			    if (!entitlements.Any())
-                    return string.Empty;
-
-			    string allEntitlements = string.Join(",", entitlements.Select(a => $"'{EntitlementAccessLevelContext.Determine(a)}'"));
-				return $"[{allEntitlements}]";
+				string allEntitlements = string.Join(",", UserEntitlementsContext.Entitlements.Select(a => $"'{EntitlementAccessLevelContext.Determine(a)}'"));
+				return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
 			}
 		}
 		public string SubscribedProducts
 		{
 			get
 			{
-				var subscriptions = UserSubscriptionsContext.Subscriptions;
-			    var enumerable = subscriptions as IList<ISubscription> ?? subscriptions.ToList();
-			    if (!enumerable.Any())
-			        return string.Empty;
-				
-				string allSubscriptions = string.Join(",", enumerable.Select(a => $"'{a.ProductCode}'"));
-			    return $"[{allSubscriptions}]";
+				string allSubscriptions = string.Join(",", UserSubscriptionsContext.Subscriptions.Select(a => $"'{a.ProductCode}'"));
+				return !string.IsNullOrEmpty(allSubscriptions) ? $"[{allSubscriptions}]" : string.Empty;
 			}
-		}   
+		}
 		public string UserCompany => UserCompanyContext?.Company?.Name;
 		public string CompanyId => UserCompanyContext?.Company?.Id;
 		public string UserIndustry => UserProfileContext.Profile?.JobIndustry ?? string.Empty;
@@ -235,7 +219,7 @@ namespace Informa.Web.ViewModels
 			{
 				return "Free View";
 			}
-			else if (EntitledProductContext.IsEntitled(this))
+			if (EntitledProductContext.IsEntitled(this))
 			{
 				return "Entitled Full View";
 			}
