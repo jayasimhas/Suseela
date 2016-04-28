@@ -19,8 +19,9 @@ namespace Informa.Library.Article.Search
         public List<Guid> Taxonomies { get; set; }
         [IndexField(IArticleConstants.Actual_Publish_DateFieldName)]
         public DateTime ActualPublishDate { get; set; }
-
         public string ArticleNumber { get; set; }
+        [IndexField("searchpublicationtitle_s")]
+        public string PublicationTitle { get; set; }
         public long ArticleIntegerNumber { get; set; }
         public string EScenicID { get; set; }
 
