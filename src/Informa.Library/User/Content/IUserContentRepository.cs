@@ -1,3 +1,5 @@
+using System;
+using System.Linq.Expressions;
 using System.Collections.Generic;
 
 namespace Informa.Library.User.Content
@@ -8,6 +10,6 @@ namespace Informa.Library.User.Content
 		IContentResponse Update(T entity);
 		IContentResponse Delete(T entity);
 		T GetById(object id);
-		IEnumerable<T> GetMany(string username);
+		IEnumerable<T> GetMany(string username, Func<T, bool> @where = null);
 	}
 }

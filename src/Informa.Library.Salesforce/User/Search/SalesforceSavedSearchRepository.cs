@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.User.Content;
 using Informa.Library.User.Search;
@@ -22,7 +24,7 @@ namespace Informa.Library.Salesforce.User.Search
 				return new ContentResponse
 				{
 					Success = false,
-					Message = string.Empty
+					Message = "Invalid input has been provided."
 				};
 			}
 
@@ -38,7 +40,7 @@ namespace Informa.Library.Salesforce.User.Search
 				return new ContentResponse
 				{
 					Success = false,
-					Message = string.Empty
+					Message = "Invalid input has been provided."
 				};
 			}
 
@@ -54,7 +56,7 @@ namespace Informa.Library.Salesforce.User.Search
 				return new ContentResponse
 				{
 					Success = false,
-					Message = string.Empty
+					Message = "Invalid input has been provided."
 				};
 			}
 
@@ -69,10 +71,10 @@ namespace Informa.Library.Salesforce.User.Search
 
 			if (string.IsNullOrEmpty(itemId?.Username) || string.IsNullOrEmpty(itemId.Name)) return default(ISavedSearchEntity);
 
-			return GetMany(itemId.Username).FirstOrDefault(s => s.Name == itemId.Name);
+			return GetMany(itemId.Username, s => s.Name == itemId.Name).FirstOrDefault();
 		}
 
-		public IEnumerable<ISavedSearchEntity> GetMany(string username)
+		public IEnumerable<ISavedSearchEntity> GetMany(string username, Func<ISavedSearchEntity, bool> @where = null)
 		{
 			if (string.IsNullOrEmpty(username))
 			{
@@ -95,7 +97,7 @@ namespace Informa.Library.Salesforce.User.Search
 				DateCreated = ssi.SaveDate.GetValueOrDefault()
 			});
 
-			return savedDocuments;
+			return savedDocuments.Where(@where ?? (x => true));
 		}
 
 		private IContentResponse CreateResponse(IEbiResponse webServiceResponse)
