@@ -929,7 +929,7 @@
     <Content Include="js\search\controllers\informaResultsController.js" />
     <Content Include="js\search\controllers\savedSearchController.js" />
     <Content Include="js\search\factories\companiesFactory.js" />
-    <Content Include="js\search\factories\savedSearchesFactory.js" />
+    <Content Include="js\search\factories\savedSearchFactory.js" />
     <Content Include="js\search\informaSearchApp.js" />
     <Content Include="js\search\search.js" />
     <Content Include="js\svg4everybody.js" />
@@ -1176,7 +1176,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config.template" />
-    <None Include="App_Config\Include\UserDefined\ScheduledPublishing.MongoDB.config.disabled" />
     <Content Include="App_Config\Include\UserDefined\Sites.config.template">
       <SubType>Designer</SubType>
     </Content>

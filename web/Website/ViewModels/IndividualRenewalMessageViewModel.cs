@@ -2,10 +2,10 @@
 using Informa.Library.Site;
 using Informa.Library.Subscription;
 using Informa.Library.User.Authentication;
-using Jabberwocky.Glass.Autofac.Attributes;
 using System;
 using System.Linq;
 using Informa.Library.User.Profile;
+using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
 {
@@ -16,9 +16,9 @@ namespace Informa.Web.ViewModels
 		private const string PRODUCT_TYPE = "publication";
 		private readonly string[] SUBSCRIPTIONTYPE = new string[] { "individual", "free-trial", "individual internal" };
 
-		protected readonly IIndividualSubscriptionRenewalMessageContext _context;
-		protected readonly ISiteRootContext _siteRootContext;
-		protected readonly IManageSubscriptions _manageSubscriptions;
+		protected readonly IIndividualSubscriptionRenewalMessageContext Context;
+		protected readonly ISiteRootContext SiteRootContext;
+		protected readonly IManageSubscriptions ManageSubscriptions;
 
 		public IndividualRenewalMessageViewModel(
 				ITextTranslator textTranslator,
@@ -27,9 +27,9 @@ namespace Informa.Web.ViewModels
 				ISiteRootContext siteRootContext,
 				IManageSubscriptions manageSubscriptions)
 		{
-			_context = context;
-			_siteRootContext = siteRootContext;
-			_manageSubscriptions = manageSubscriptions;
+			Context = context;
+			SiteRootContext = siteRootContext;
+			ManageSubscriptions = manageSubscriptions;
 
 			ISubscription record = userContext.IsAuthenticated ? GetLatestRecord(userContext.User) : null;
 
@@ -43,7 +43,7 @@ namespace Informa.Web.ViewModels
 
 		private ISubscription GetLatestRecord(IAuthenticatedUser user)
 		{
-			ISubscriptionsReadResult results = _manageSubscriptions.QueryItems(user);
+			ISubscriptionsReadResult results = ManageSubscriptions.QueryItems(user);
 			return results?.Subscriptions?.OrderByDescending(o => o.ExpirationDate).FirstOrDefault() ?? null;
 		}
 
@@ -51,7 +51,7 @@ namespace Informa.Web.ViewModels
 		{
 			if (subscription == null
 						|| subscription.ProductCode.ToLower() != PRODUCT_CODE
-						|| (subscription.ExpirationDate - DateTime.Now).TotalDays > _siteRootContext.Item.Days_To_Expiration
+						|| (subscription.ExpirationDate - DateTime.Now).TotalDays > SiteRootContext.Item.Days_To_Expiration
 						|| SUBSCRIPTIONTYPE.Contains(subscription.SubscriptionType.ToLower()) == false
 						|| subscription.ProductType.ToLower() != PRODUCT_TYPE)
 				return false;
@@ -63,19 +63,19 @@ namespace Informa.Web.ViewModels
 		{
 			if (subscription == null)
 			{
-				return _context.Message_FreeTrial
+				return Context.Message_FreeTrial
 						.Replace("#FIRST_NAME#", userName)
 						.Replace("#SUB_EXPIRATION#", string.Empty);
 			}
 
 			if (subscription?.SubscriptionType.ToLower() == "free-trial")
 			{
-				return _context.Message_FreeTrial
+				return Context.Message_FreeTrial
 						.Replace("#FIRST_NAME#", userName)
 						.Replace("#SUB_EXPIRATION#", subscription.ExpirationDate.ToShortDateString());
 			}
 
-			return _context.Message_IndividualSubscriptiong
+			return Context.Message_IndividualSubscriptiong
 					.Replace("#FIRST_NAME#", userName)
 					.Replace("#SUB_EXPIRATION#", subscription.ExpirationDate.ToShortDateString());
 		}

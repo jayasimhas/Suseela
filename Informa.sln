@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informa.Web", "web\Website\Informa.Web.csproj", "{EFE15F11-B900-4515-A45E-5B817C483A36}"
 EndProject
@@ -61,6 +61,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informa.Library.Salesforce", "src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj", "{69FF8121-1969-4032-90FA-B4B9148CD780}"
 EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug-NoTds|Any CPU = Debug-NoTds|Any CPU
