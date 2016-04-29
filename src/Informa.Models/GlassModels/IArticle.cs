@@ -95,6 +95,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public IEnumerable<IGlassBase> Child_Articles { get; set; }
 		public string Escenic_ID { get; set; }
 		public IEnumerable<IGlassBase> Legacy_Publications { get; set; }
+		public string Legacy_Sitecore_ID { get; set; }
 		public Image Featured_Image_16_9 { get; set; }
 		public string Featured_Image_Caption { get; set; }
 		public string Featured_Image_Source { get; set; }
