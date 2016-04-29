@@ -327,3 +327,7 @@ tools/vagrant/scripts/localdeploy.bat
 web/Website/App_Config/AppSettings.config
 web/Website/App_Config/Include/UserDefined/Sites.config
 web/Website/App_Config/Include/UserDefined/ScheduledPublishing.config
+
+# ts2
+web/Website/sitecore modules/Shell/Data Import/logs/*
+

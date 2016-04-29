@@ -897,6 +897,95 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="500.html" />
+    <Content Include="App_Config\AppSettings.config" />
+    <Content Include="App_Config\Commands.config" />
+    <Content Include="App_Config\ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\ConnectionStrings.config.template">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\ConnectionStringsOracle.config" />
+    <Content Include="App_Config\FieldTypes.config" />
+    <Content Include="App_Config\Icons.config" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
+    <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
+    <Content Include="App_Config\Include\Jabberwocky.Glass.config" />
+    <Content Include="App_Config\Include\Sitecore.SharedSource.PageEditor.config" />
+    <Content Include="App_Config\Include\UserDefined\AppInsights.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\Article.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\Content.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\Presentation.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\Publishing.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
+    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\Sites.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\Sites.config.template">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\User.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Velir.Search.Web.config" />
+    <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.template" />
+    <Content Include="App_Config\LanguageDefinitions.config" />
+    <Content Include="App_Config\MimeTypes.config" />
+    <Content Include="App_Config\Portraits.config" />
+    <Content Include="App_Config\Prefetch\Common.config" />
+    <Content Include="App_Config\Prefetch\Core.config" />
+    <Content Include="App_Config\Prefetch\Master.config" />
+    <Content Include="App_Config\Prefetch\Webdb.config" />
+    <Content Include="App_Config\Prototypes.config" />
+    <Content Include="App_Config\Salesforce.config" />
+    <Content Include="App_Config\Security\Domains.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Security\GlobalRoles.config" />
+    <Content Include="App_Config\Sitecore.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Web\nwebsec.config" />
+    <Content Include="App_Config\Web\nwebsec.config.template" />
+    <Content Include="App_Config\Web\system.webServer.handlers.config" />
+    <Content Include="App_Config\Web\system.webServer.handlers.config.template" />
+    <Content Include="App_Config\Web\system.webServer.modules.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Web\system.webServer.modules.config.template">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Web\system.webServer.rewrite.config" />
+    <Content Include="App_Config\Web\system.webServer.staticContent.config" />
+    <Content Include="App_Config\Web\system.webServer.staticContent.config.template" />
+    <Content Include="App_Config\XamlSharp.config" />
     <Content Include="Artifacts\PerformanceCounters\Sitecore.CES.DeviceDetection.Counters.xml" />
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
@@ -955,53 +1044,10 @@
     <Content Include="layouts\system\VisitorIdentification.js" />
     <Content Include="layouts\system\VisitorIdentificationCss.aspx" />
     <Content Include="layouts\xmlcontrol.aspx" />
-    <Content Include="App_Config\Commands.config" />
-    <Content Include="App_Config\ConnectionStrings.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\ConnectionStrings.config.template">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\ConnectionStringsOracle.config" />
-    <Content Include="App_Config\FieldTypes.config" />
-    <Content Include="App_Config\Icons.config" />
-    <Content Include="App_Config\Include\Jabberwocky.Glass.config" />
-    <Content Include="App_Config\Include\Velir.Search.Web.config" />
-    <Content Include="App_Config\LanguageDefinitions.config" />
-    <Content Include="App_Config\MimeTypes.config" />
-    <Content Include="App_Config\Portraits.config" />
-    <Content Include="App_Config\Prefetch\Common.config" />
-    <Content Include="App_Config\Prefetch\Core.config" />
-    <Content Include="App_Config\Prefetch\Master.config" />
-    <Content Include="App_Config\Prefetch\Webdb.config" />
-    <Content Include="App_Config\Prototypes.config" />
-    <Content Include="App_Config\Security\Domains.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Security\GlobalRoles.config" />
-    <Content Include="App_Config\Sitecore.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Web\nwebsec.config" />
-    <Content Include="App_Config\Web\nwebsec.config.template" />
-    <Content Include="App_Config\Web\system.webServer.handlers.config" />
-    <Content Include="App_Config\Web\system.webServer.handlers.config.template" />
-    <Content Include="App_Config\Web\system.webServer.modules.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Web\system.webServer.modules.config.template">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Web\system.webServer.staticContent.config" />
-    <Content Include="App_Config\Web\system.webServer.staticContent.config.template" />
-    <Content Include="App_Config\XamlSharp.config" />
     <Content Include="layouts\system\Social\Connector\SocialLogin.ashx" />
     <Content Include=".bowerrc" />
     <Content Include="Areas\Article\Views\web.config" />
     <Content Include="Areas\Article\Views\Index.cshtml" />
-    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Areas\Article\Views\Home\About.cshtml" />
     <Content Include="Areas\Article\Views\Home\Contact.cshtml" />
     <Content Include="Areas\Article\Views\Home\Index.cshtml" />
@@ -1128,56 +1174,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\UserDefined\Presentation.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.template" />
-    <Content Include="App_Config\Include\Sitecore.SharedSource.PageEditor.config" />
-    <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
-    <Content Include="App_Config\Salesforce.config" />
-    <Content Include="App_Config\Include\UserDefined\Content.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\UserDefined\Article.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\UserDefined\User.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="App_Config\Include\Sitecore.Support.405677.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Config\Include\UserDefined\AppInsights.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\AppSettings.config" />
-    <None Include="App_Config\AppSettings.config.template" />
-    <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
-    <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
-    <None Include="App_Config\Include\UserDefined\AppInsights.config.template">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
-    <Content Include="App_Config\Include\UserDefined\CustomSitecore.config.template">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\UserDefined\Publishing.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="App_Config\Include\UserDefined\Salesforce.config.template" />
-    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config.template" />
-    <Content Include="App_Config\Include\UserDefined\Sites.config.template">
-      <SubType>Designer</SubType>
     </Content>
     <Content Include="Areas\Account\Views\ResetPassword\Change.cshtml" />
     <Content Include="Areas\Account\Views\Registration\RegisterUser.cshtml" />
@@ -1189,13 +1188,28 @@
     <Content Include="Areas\Account\Views\Registration\RegisterUserOptIns.cshtml" />
     <Content Include="Areas\Account\Views\Management\OneClickSubscribe.cshtml" />
     <Content Include="Areas\Account\Views\Management\OneClickUnsubscribe.cshtml" />
-    <Content Include="App_Config\Web\system.webServer.rewrite.config" />
     <Content Include="App_Config\Sitecore.config.template" />
     <Content Include="App_Config\Include\UserDefined\Sites.config" />
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config" />
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config.template" />
-    <None Include="App_Config\Web\system.webServer.rewrite.config.template" />
     <Content Include="Areas\Account\Views\Management\SavedSearches.cshtml" />
+    <Content Include="App_Config\AppSettings.config.template" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
+    <Content Include="App_Config\Include\Hi.UrlRewrite.config" />
+    <Content Include="App_Config\Include\Sitecore.Buckets.config" />
+    <Content Include="App_Config\Include\Sitecore.ContentSearch.config" />
+    <Content Include="App_Config\Include\Sitecore.ContentSearch.DefaultConfigurations.config" />
+    <Content Include="App_Config\Include\UserDefined\AppInsights.config.template">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\UserDefined\Salesforce.config.template" />
+    <Content Include="App_Config\Include\UserDefined\WebClientAuth.config" />
+    <Content Include="App_Config\Include\UserDefined\WebClientAuth.config.template" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\Import.config" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\LoginRedirect.config" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.velirTemplate" />
+    <Content Include="App_Config\Sitecore.config.template" />
+    <Content Include="App_Config\Web\system.webServer.rewrite.config.template" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -33,7 +33,7 @@ namespace Informa.Web.Controllers
         public static string GetPublicationPrefix(Guid publicationGuid)
         {
             string value;
-            return Constants.PublicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : null;
+            return Constants.PublicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : string.Empty;
         }
 
         public static UserStatusStruct GetUserStatus(string username, string password)

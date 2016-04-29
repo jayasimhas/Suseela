@@ -61,9 +61,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informa.Library.Salesforce", "src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj", "{69FF8121-1969-4032-90FA-B4B9148CD780}"
 EndProject
 Global
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug-NoTds|Any CPU = Debug-NoTds|Any CPU

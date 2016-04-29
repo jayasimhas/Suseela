@@ -127,6 +127,7 @@
     <Compile Include="Logger\ProcessStatus.cs" />
     <Compile Include="Providers\IDataMap.cs" />
     <Compile Include="Providers\InformaDataMap.cs" />
+    <Compile Include="Providers\PmbiDataMap.cs" />
     <Compile Include="Providers\SitecoreDataMap.cs" />
     <Compile Include="Providers\SqlDataMap.cs" />
     <Compile Include="Mappings\Fields\ToStaticValue.cs" />
