@@ -272,7 +272,7 @@
                         </svg>
                     </button>
                 </legend>
-                @if (Model.IsLoggedIn && Model.Subcriptions.Any())
+                @if (Model.Subcriptions.Any())
                 {
                     <p ng-if="group.id === 'publication'">
                         <button class="facets__button" ng-click="facetController.facetChangeMultiple(group.id, [@string.Join(", ", Model.Subcriptions.Select(s => string.Format("'{0}'", s)))])">@Model.SearchSelectMySubscriptionsText</button>

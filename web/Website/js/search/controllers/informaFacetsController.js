@@ -141,7 +141,10 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         vm.update();
 
         _.each(facetIds, function(id) {
-            vm.searchService.getFacet(id).selected = true;
+            var facet = vm.searchService.getFacet(id);
+            if (facet) {
+                facet.selected = true;
+            }
         });
 
         vm.update();

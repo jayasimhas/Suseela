@@ -10,9 +10,6 @@ namespace Informa.Web.ViewModels
 {
 	public class SearchViewModel : GlassViewModel<ISearch>
 	{
-		private readonly IAuthenticatedUserContext _userContext;
-		private readonly IUserSubscriptionsContext _subscriptionsContext;
-
 		protected readonly ITextTranslator TextTranslator;
 
 		public SearchViewModel() { }
@@ -20,9 +17,10 @@ namespace Informa.Web.ViewModels
 		public SearchViewModel(ITextTranslator textTranslator, IAuthenticatedUserContext userContext, IUserSubscriptionsContext subscriptionsContext)
 		{
 			TextTranslator = textTranslator;
-
-			_userContext = userContext;
-			_subscriptionsContext = subscriptionsContext;
+			
+			Subcriptions = userContext.IsAuthenticated
+				? subscriptionsContext.Subscriptions.Select(s => s.Publication)
+				: Enumerable.Empty<string>();
 		}
 
 		public string PageFirstText => TextTranslator.Translate("Search.Page.First");
@@ -40,7 +38,6 @@ namespace Informa.Web.ViewModels
 		public string SearchClearAllText => TextTranslator.Translate("Search.ClearAll");
 		public string SearchFilterByText => TextTranslator.Translate("Search.FilterBy");
 		public string SearchSelectMySubscriptionsText => TextTranslator.Translate("Search.SelectMySubscriptions");
-		public bool IsLoggedIn => _userContext.IsAuthenticated;
-		public IEnumerable<string> Subcriptions => IsLoggedIn ? _subscriptionsContext.Subscriptions.Select(s => s.Publication) : Enumerable.Empty<string>();
+		public IEnumerable<string> Subcriptions { get; set; }
 	}
 }
