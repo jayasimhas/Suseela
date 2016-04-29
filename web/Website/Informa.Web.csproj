@@ -941,7 +941,6 @@
     <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.MongoDB.config.disabled" />
     <Content Include="App_Config\Include\UserDefined\Sites.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1200,7 +1199,6 @@
     <Content Include="App_Config\Include\Sitecore.Buckets.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.DefaultConfigurations.config" />
-    <Content Include="App_Config\Include\Sitecore.WebDAV.config" />
     <Content Include="App_Config\Include\UserDefined\AppInsights.config.template">
       <SubType>Designer</SubType>
     </Content>
@@ -1211,11 +1209,7 @@
     <Content Include="App_Config\Include\ZZ.UserDefined\LoginRedirect.config" />
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.velirTemplate" />
     <Content Include="App_Config\Sitecore.config.template" />
-    <Content Include="App_Config\Sitecore.config.velirTemplate">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="App_Config\Web\system.webServer.rewrite.config.template" />
-    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.MongoDB.config.disabled" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
