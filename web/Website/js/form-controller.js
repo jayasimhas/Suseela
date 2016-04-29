@@ -65,11 +65,26 @@ function formController(opts) {
 						value = !value;
 					}
 				}
+				if (field.data('checkbox-type') === 'value') {
+					value = this.checked ? field.val() : undefined;
+				}
 				else {
 					value = field.val();
 				}
 
-				inputData[field.attr('name')] = value;
+				if (value != undefined)
+				{
+					if (inputData[field.attr('name')] == undefined) {
+						inputData[field.attr('name')] = value;
+					}
+					else if ($.isArray(inputData[field.attr('name')])) {
+						inputData[field.attr('name')].push(value);
+					}
+					else {
+						inputData[field.attr('name')] = [ inputData[field.attr('name')] ];
+						inputData[field.attr('name')].push(value);
+					}
+				}
 			});
 
 			if(!$(currentForm).data('on-submit')) {
