@@ -33,7 +33,7 @@
                 </p>
 
                 <div class="labeled-checkbox">
-                    @Html.CheckBox("AlertEnabled")
+                    <input type="checkbox" id="AlertEnabled" name="AlertEnabled" data-checkbox-type="boolean" />
                     <label class="checkbox-label" for="AlertEnabled">
                         @Html.Raw(Model.EmailAlertLabelText)
                     </label>
