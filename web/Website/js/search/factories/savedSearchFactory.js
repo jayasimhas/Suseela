@@ -5,8 +5,7 @@
 informaSearchApp.factory('savedSearchService', ['$http', '$location', function ($http, $location) {
 
     var isSaved = function () {
-
-        var fullUrl = '/api/SavedSearches?url=' + $location.url();
+        var fullUrl = '/api/SavedSearches?url=' + escape($location.url());
 
         return $http({
             method: 'GET',

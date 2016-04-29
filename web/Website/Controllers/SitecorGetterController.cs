@@ -741,7 +741,7 @@ namespace Informa.Web.Controllers
         public JsonResult<HDirectoryStruct> Get(string guid)
         {
             var item = _sitecoreService.GetItem<Item>(guid);
-            var children = item.Children.ToArray().Select(child => GetHierarchy(child.Paths.Path)).ToList();
+            var children = item.Children.Select(child => GetHierarchy(child.Paths.Path)).ToList();
 
             var childNode = new HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
             childNode.Children = childNode.ChildrenList.ToArray();
@@ -751,9 +751,8 @@ namespace Informa.Web.Controllers
         public HDirectoryStruct GetHierarchy(string path)
         {
             var item = _sitecoreService.GetItem<Item>(path);
-            List<Item> searchField = item.Children.ToList();
-
-            var children = searchField.Select(child => GetHierarchy(child.Paths.Path)).ToList();
+            
+            var children = item.Children.Select(child => GetHierarchy(child.Paths.Path)).ToList();
             var childNode = new HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
             childNode.Children = childNode.ChildrenList.ToArray();
             return childNode;

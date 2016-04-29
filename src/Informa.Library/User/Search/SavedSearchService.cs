@@ -17,6 +17,16 @@ namespace Informa.Library.User.Search
 	[AutowireService(LifetimeScope.PerScope)]
 	public class SavedSearchService : IUserContentService<ISavedSearchSaveable, ISavedSearchDisplayable>
 	{
+		[AutowireService(true)]
+		public interface IDependencies
+		{
+			IUserContentRepository<ISavedSearchEntity> Repository { get; }
+			ISitecoreContext SitecoreContext { get; }
+			ISiteContextService SiteContext { get; }
+			IAuthenticatedUserContext UserContext { get; }
+			IAuthenticatedUserSession UserSession { get; }
+		}
+
 		private const string SessionKey = nameof(SavedSearchService);
 		
 		protected readonly IDependencies _;
@@ -26,12 +36,25 @@ namespace Informa.Library.User.Search
 
 		private readonly Lazy<bool> _isAuthenticated;
 		protected bool IsAuthenticated => _isAuthenticated.Value;
-
+		
 		public SavedSearchService(IDependencies dependencies)
 		{
 			_ = dependencies;
 			_searchPage = new Lazy<ISearch>(() => _.SitecoreContext.GetHomeItem<IGlassBase>()._ChildrenWithInferType.OfType<ISearch>().FirstOrDefault());
 			_isAuthenticated = new Lazy<bool>(() => _.UserContext.IsAuthenticated);
+		}
+
+		public bool Exists(ISavedSearchSaveable input)
+		{
+			var entity = new SavedSearchEntity
+			{
+				SearchString = ExtractQueryString(input.Url)
+			};
+
+			var comparer = new SearchStringEqualityComparer();
+			var results = GetContentFromSessionOrRepo();
+
+			return results.Any(s => comparer.Equals(s, entity));
 		}
 
 		public virtual IEnumerable<ISavedSearchDisplayable> GetContent()
@@ -41,24 +64,16 @@ namespace Informa.Library.User.Search
 				return Enumerable.Empty<ISavedSearchDisplayable>();
 			}
 
-			var savedSearches = _.UserSession.Get<IEnumerable<SavedSearchDisplayModel>>(SessionKey);
-			if (!savedSearches.HasValue)
+			var results = GetContentFromSessionOrRepo();
+
+			return results.Select(doc => new SavedSearchDisplayModel
 			{
-				var results = _.Repository.GetMany(_.UserContext.User.Username).Select(doc => new SavedSearchDisplayModel
-				{
-					Sources = ExtractSources(doc.SearchString),
-					Title = doc.Name,
-					Url = ConstructUrl(doc.SearchString),
-					DateSaved = doc.DateCreated,
-					AlertEnabled = doc.HasAlert
-				}).ToList();
-
-				_.UserSession.Set(SessionKey, results);
-				
-				return results;
-			}
-
-			return savedSearches.Value;
+				Sources = ExtractSources(doc.SearchString),
+				Title = doc.Name,
+				Url = ConstructUrl(doc.SearchString),
+				DateSaved = doc.DateCreated,
+				AlertEnabled = doc.HasAlert
+			});
 		}
 
 		public virtual IContentResponse SaveContent(ISavedSearchSaveable input)
@@ -136,22 +151,29 @@ namespace Informa.Library.User.Search
 		protected virtual string ExtractQueryString(string url)
 		{
 			string[] urlParts = url.Split('?');
-			return urlParts.Length == 1 ? urlParts[0] : urlParts[1];
+			string querystring = urlParts.Length == 1 ? urlParts[0] : urlParts[1];
+
+			return querystring.Contains("#") ? querystring.Split('#')[0] : querystring;
 		}
 
 		protected virtual string ConstructUrl(string searchString)
 		{
 			return $"{SearchPage._Url}#?{searchString}";
 		}
-	}
 
-	[AutowireService(true)]
-	public interface IDependencies
-	{
-		IUserContentRepository<ISavedSearchEntity> Repository { get; }
-		ISitecoreContext SitecoreContext { get; }
-		ISiteContextService SiteContext { get; }
-		IAuthenticatedUserContext UserContext { get; }
-		IAuthenticatedUserSession UserSession { get; }
+		protected virtual IList<ISavedSearchEntity> GetContentFromSessionOrRepo()
+		{
+			var savedSearches = _.UserSession.Get<IList<ISavedSearchEntity>>(SessionKey);
+			if (!savedSearches.HasValue)
+			{
+				var results = _.Repository.GetMany(_.UserContext.User.Username).ToList();
+
+				_.UserSession.Set(SessionKey, results);
+
+				return results;
+			}
+			
+			return savedSearches.Value;
+		}
 	}
 }
