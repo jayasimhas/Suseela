@@ -17,6 +17,16 @@ namespace Informa.Library.User.Search
 	[AutowireService(LifetimeScope.PerScope)]
 	public class SavedSearchService : IUserContentService<ISavedSearchSaveable, ISavedSearchDisplayable>
 	{
+		[AutowireService(true)]
+		public interface IDependencies
+		{
+			IUserContentRepository<ISavedSearchEntity> Repository { get; }
+			ISitecoreContext SitecoreContext { get; }
+			ISiteContextService SiteContext { get; }
+			IAuthenticatedUserContext UserContext { get; }
+			IAuthenticatedUserSession UserSession { get; }
+		}
+
 		private const string SessionKey = nameof(SavedSearchService);
 		
 		protected readonly IDependencies _;
@@ -165,15 +175,5 @@ namespace Informa.Library.User.Search
 			
 			return savedSearches.Value;
 		}
-	}
-
-	[AutowireService(true)]
-	public interface IDependencies
-	{
-		IUserContentRepository<ISavedSearchEntity> Repository { get; }
-		ISitecoreContext SitecoreContext { get; }
-		ISiteContextService SiteContext { get; }
-		IAuthenticatedUserContext UserContext { get; }
-		IAuthenticatedUserSession UserSession { get; }
 	}
 }

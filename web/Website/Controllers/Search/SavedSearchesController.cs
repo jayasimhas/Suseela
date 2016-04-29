@@ -18,6 +18,8 @@ namespace Informa.Web.Controllers.Search
 
 		public bool Get(string url)
 		{
+			if (string.IsNullOrEmpty(url)) return false;
+
 			return _savedSearchService.Exists(new SavedSearchInput
 			{
 				Url = url

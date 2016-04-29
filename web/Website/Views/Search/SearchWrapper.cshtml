@@ -1,11 +1,8 @@
 ﻿@inherits CustomGlassView<SearchWrapperViewModel>
 
 <div class="search" ng-app="informaSearchApp" ng-cloak>
-
     <header class="search__header action-flags-bar">
-
         <div class="action-flags" ng-controller="EmailRssController as emailRss">
-
             <ul>
                 <li class="action-flag">
                     <a href="#"
@@ -19,7 +16,6 @@
                     </a>
                 </li>
                 <li class="action-flag">
-
                     <a target="_blank" class="search__header-buttons--rss" href="/rss/search-feed.aspx{{currentLocation}}" >
                         <span class="action-flag__label">rss</span>
                         <svg class="action-flag__icon">
@@ -28,8 +24,7 @@
                     </a>
                 </li>
 
-                <li class="action-flag" ng-controller="SavedSearchController as savedSearch">
-
+                <li class="action-flag" ng-controller="SavedSearchController as savedSearch" ng-init="isAuthenticated = @Model.IsAuthenticated.ToString().ToLower()">
                     <a
                         href="#"
                         class="pop-out__trigger js-save-search"
