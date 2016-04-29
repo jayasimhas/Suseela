@@ -34,6 +34,9 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		public bool IsAuthenticated => UserContext.IsAuthenticated;
 		public bool DoNotSendOfferEmails => !OffersOptedInContext.OptedIn;
         public string Title => GlassModel?.Title;
+		public string Body => GlassModel?.Body;
+		public string NewsletterOptInTitleHeading => TextTranslator.Translate("Preferences.NewsletterOptInTitleHeading");
+		public string NewsletterOptInReceiveEmailHeading => TextTranslator.Translate("Preferences.NewsletterOptInReceiveEmailHeading");
         public string GeneralErrorText => TextTranslator.Translate("Preferences.GeneralError");
         public string EmailsLabel => TextTranslator.Translate("Preferences.EmailsLabel");
         public string SubmitText => TextTranslator.Translate("Preferences.SubmitText");

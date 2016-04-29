@@ -5,6 +5,7 @@
     <div class="page-account">
 
         <h1 class="page-account__header">@Model.Title</h1>
+		@Model.Body
         <div class="page-preferences js-preferences-user-container">
 
             <p class="page-account__error js-form-error js-form-error-general">
@@ -18,8 +19,8 @@
 					<table>
 						<thead>
 							<tr>
-								<td>Title</td>
-								<td>Receive Emails</td>
+								<td>@Model.NewsletterOptInTitleHeading</td>
+								<td>@Model.NewsletterOptInReceiveEmailHeading</td>
 							</tr>
 						</thead>
 						<tbody>
