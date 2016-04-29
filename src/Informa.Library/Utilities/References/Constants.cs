@@ -47,6 +47,15 @@ namespace Informa.Library.Utilities.References
             { new Guid(RoseSheetRootNode), RoseSheetNodeIntials},
         };
 
+        public static readonly Dictionary<string, string> PublicationPrefixCollection = new Dictionary<string, string>
+        {
+            { ScripRootNodeIntials, ScripRootNodeIntials},
+            { InVivoRootNodeIntials, InVivoRootNodeIntials},
+            { PinkSheetRootNodeIntials, PinkSheetRootNodeIntials},
+            { MedtechInsightRootNodeIntials, MedtechInsightRootNodeIntials},
+            { RoseSheetNodeIntials, RoseSheetNodeIntials},
+        };
+
         public static int[] PerPageSizes = { 10, 20, 50 };
 
         public static class QueryString
