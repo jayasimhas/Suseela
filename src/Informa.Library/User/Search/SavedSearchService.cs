@@ -26,16 +26,12 @@ namespace Informa.Library.User.Search
 
 		private readonly Lazy<bool> _isAuthenticated;
 		protected bool IsAuthenticated => _isAuthenticated.Value;
-
-		private readonly Lazy<IList<ISavedSearchEntity>> _searches;
-		protected IList<ISavedSearchEntity> SearchEntities => _searches.Value; 
-
+		
 		public SavedSearchService(IDependencies dependencies)
 		{
 			_ = dependencies;
 			_searchPage = new Lazy<ISearch>(() => _.SitecoreContext.GetHomeItem<IGlassBase>()._ChildrenWithInferType.OfType<ISearch>().FirstOrDefault());
 			_isAuthenticated = new Lazy<bool>(() => _.UserContext.IsAuthenticated);
-			_searches = new Lazy<IList<ISavedSearchEntity>>(GetContentFromSessionOrRepo);
 		}
 
 		public bool Exists(ISavedSearchSaveable input)
@@ -46,7 +42,9 @@ namespace Informa.Library.User.Search
 			};
 
 			var comparer = new SearchStringEqualityComparer();
-			return SearchEntities.Any(s => comparer.Equals(s, entity));
+			var results = GetContentFromSessionOrRepo();
+
+			return results.Any(s => comparer.Equals(s, entity));
 		}
 
 		public virtual IEnumerable<ISavedSearchDisplayable> GetContent()
@@ -56,19 +54,7 @@ namespace Informa.Library.User.Search
 				return Enumerable.Empty<ISavedSearchDisplayable>();
 			}
 
-			IList<ISavedSearchEntity> results;
-
-			var savedSearches = _.UserSession.Get<IList<ISavedSearchEntity>>(SessionKey);
-			if (!savedSearches.HasValue)
-			{
-				results = _.Repository.GetMany(_.UserContext.User.Username).ToList();
-
-				_.UserSession.Set(SessionKey, results);
-			}
-			else
-			{
-				results = savedSearches.Value;
-			}
+			var results = GetContentFromSessionOrRepo();
 
 			return results.Select(doc => new SavedSearchDisplayModel
 			{
