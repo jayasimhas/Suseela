@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.ModelBinding;
@@ -21,7 +18,10 @@ namespace Informa.Web.Controllers.Search
 
 		public bool Get(string url)
 		{
-			return _savedSearchService.GetContent().Any(x => x.Url.EndsWith(url));
+			return _savedSearchService.Exists(new SavedSearchInput
+			{
+				Url = url
+			});
 		}
 
 		public IEnumerable<ISavedSearchDisplayable> Get()

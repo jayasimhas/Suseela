@@ -30,7 +30,7 @@ namespace Informa.Library.Utilities.References
         public const string MedtechInsightRootNode = "{989CA96C-8A54-4CC0-BD51-A127930935A9}";
         public const string MedtechInsightRootNodeIntials = "MT";
 
-        public const string RoseSheetRootNode = "{87B710BC-BACD-4D38-895F-90F42D762393}";
+        public const string RoseSheetRootNode = "{204199B0-C381-4B9B-92BE-63E5754F5E90}";
         public const string RoseSheetNodeIntials = "RS";
 
         public const string MSWordDocumentRootNode = "{FDBFCAC8 -03CA-4B0B-BEFE-2171050E19C6}";
