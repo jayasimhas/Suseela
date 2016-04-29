@@ -57,6 +57,11 @@
                     <td class="sortable-table__col js-sortable-table-sorter l-no-wrap"
                         data-sortable-table-col="4">
                         @Html.Raw(Model.EmailAlertText)
+                        <a ng-href="#" title="@Model.EmailAlertTooltipText">
+                            <svg>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg@(Model.EmailAlertTooltipSvg)"></use>
+                            </svg>
+                        </a>
                         <div class="sorting-arrows">
                             <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
                                 <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
