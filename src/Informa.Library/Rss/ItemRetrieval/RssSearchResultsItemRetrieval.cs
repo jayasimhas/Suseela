@@ -125,8 +125,7 @@ namespace Informa.Library.Rss.ItemRetrieval
 
                 var resultItems =
                     results.results.Select(searchResult => Context.Database.GetItem(searchResult.ItemId))
-                        .Where(theItem => theItem != null)
-                        .ToList();
+                        .Where(theItem => theItem != null);
 
 
                 if (Context.RawUrl.ToLower().Contains("emailordering=1"))

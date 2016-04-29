@@ -5,6 +5,7 @@
     <div class="page-account">
 
         <h1 class="page-account__header">@Model.Title</h1>
+		@Model.Body
         <div class="page-preferences js-preferences-user-container">
 
             <p class="page-account__error js-form-error js-form-error-general">
@@ -14,14 +15,32 @@
             <form   class="form-email-preferences"
                     data-on-submit="/Account/api/PreferencesApi/Update/">
 
-                <div class="labeled-checkbox page-preferences__newsletteroptin-confirm">
-                    <input  name="NewsletterOptIn"
-                            id="NewsletterOptIn"
-                            type="checkbox"
-                            data-checkbox-type="boolean"
-                            @(@Model.ReceivesNewsletterEmails ? "checked" : "")>
-                    <label for="NewsletterOptIn" class="checkbox-label">@Model.NewsletterLabel</label>
-                </div>
+				<div>
+					<table>
+						<thead>
+							<tr>
+								<td>@Model.NewsletterOptInTitleHeading</td>
+								<td>@Model.NewsletterOptInReceiveEmailHeading</td>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var newsletterOptIn in Model.NewsletterOptIns)
+							{
+								<tr>
+									<td>@newsletterOptIn.NewsletterType</td>
+									<td>
+										<input name="NewsletterOptIns"
+											   id="@newsletterOptIn.NewsletterType"
+											   type="checkbox"
+											   data-checkbox-type="value"
+											   @(newsletterOptIn.OptIn ? "checked" : "")
+											   value="@newsletterOptIn.NewsletterType">
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
 
                 <div class="labeled-checkbox page-preferences__offersoptin-confirm">
                     @*

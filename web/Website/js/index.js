@@ -386,6 +386,13 @@ $(document).ready(function() {
             $(evt.target).closest('tr').remove();
         }
     });
+
+    var savedSearchesController = new FormController({
+        observe: '.form-remove-saved-search',
+        successCallback: function(form, context, evt) {
+            $(evt.target).closest('tr').remove();
+        }
+    });
     
     svg4everybody();
 

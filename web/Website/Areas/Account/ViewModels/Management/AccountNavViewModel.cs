@@ -1,17 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Informa.Library.Globalization;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
-using System.Web;
-using System.Web.Mvc;
-using Glass.Mapper;
 using Glass.Mapper.Sc;
-using Glass.Mapper.Sc.Configuration.Attributes;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
-using Jabberwocky.Glass.Models;
-using Sitecore.Common;
 using Sitecore.Data.Items;
 
 namespace Informa.Web.Areas.Account.ViewModels.Manangement
@@ -28,7 +19,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Manangement
                     .GetCurrentItem<Item>()
                     .Parent
                     .Children
-	                .ToList()
                     .Select(a => a.GlassCast<I___BasePage>());
 
 	    public string CssClass(I___BasePage p)
