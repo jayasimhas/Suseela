@@ -12,38 +12,25 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly IUpdateOfferUserOptInContext OffersOptIn;
 		protected readonly IUpdateSiteNewsletterUserOptIn UpdateSiteNewsletterOptIn;
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
-		protected readonly INewsletterUserOptInsContext NewsletterUserOptInsContext;
-		protected readonly IUpdateNewsletterUserOptInsContext UpdateNewsletterOptInsContext;
+		protected readonly ISetByTypeNewsletterUserOptInsContext SetNewsletterUserOptInsContext;
 
 		public PreferencesApiController(
 			IUpdateOfferUserOptInContext offersOptIn,
 			IUpdateSiteNewsletterUserOptIn updateSiteNewsletterOptIn,
 			ISiteNewsletterUserOptedInContext newsletterOptedInContext,
-			INewsletterUserOptInsContext newsletterUserOptInsContext,
-			IUpdateNewsletterUserOptInsContext updateNewsletterOptInsContext)
+			ISetByTypeNewsletterUserOptInsContext setNewsletterUserOptInsContext)
 		{
 			OffersOptIn = offersOptIn;
 			UpdateSiteNewsletterOptIn = updateSiteNewsletterOptIn;
 			NewsletterOptedInContext = newsletterOptedInContext;
-			NewsletterUserOptInsContext = newsletterUserOptInsContext;
-			UpdateNewsletterOptInsContext = updateNewsletterOptInsContext;
+			SetNewsletterUserOptInsContext = setNewsletterUserOptInsContext;
 		}
 
 		[HttpPost]
         [ArgumentsRequired]
         public IHttpActionResult Update(PreferencesRequest request)
 		{
-			var newsletterUpdated = true;
-
-			if (request.NewsletterOptIns != null)
-			{
-				var newsletterUserOptins = NewsletterUserOptInsContext.OptIns.ToList();
-
-				newsletterUserOptins.ForEach(noi => noi.OptIn = request.NewsletterOptIns.Contains(noi.NewsletterType));
-
-				newsletterUpdated = UpdateNewsletterOptInsContext.Update(newsletterUserOptins);
-			}
-
+			var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request.NewsletterOptIns ?? Enumerable.Empty<string>());
 			var offersUpdated = OffersOptIn.Update(!request.DoNotSendOffersOptIn);
 
 			return Ok(new
