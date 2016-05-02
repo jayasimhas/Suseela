@@ -30,7 +30,7 @@ namespace Informa.Library.User.Search
 
 			if (xParams.Length != yParams.Length) return false;
 
-			return xParams.Any(xp => !yParams.Contains(xp));
+			return xParams.All(xp => yParams.Contains(xp));
 		}
 
 		public int GetHashCode(ISavedSearchEntity obj)
