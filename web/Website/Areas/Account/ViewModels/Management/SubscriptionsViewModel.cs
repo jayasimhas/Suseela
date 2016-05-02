@@ -22,10 +22,10 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		private readonly Dictionary<string, bool> SubscriptionBtnSettings;
 
 		public SubscriptionsViewModel(
-				ITextTranslator translator,
-				IAuthenticatedUserContext userContext,
-	IUserSubscriptionsContext userSubscriptionsContext,
-				ISignInViewModel signInViewModel)
+			ITextTranslator translator,
+			IAuthenticatedUserContext userContext,
+			IUserSubscriptionsContext userSubscriptionsContext,
+			ISignInViewModel signInViewModel)
 		{
 			TextTranslator = translator;
 			UserContext = userContext;

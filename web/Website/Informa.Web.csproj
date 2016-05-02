@@ -697,6 +697,7 @@
     <Compile Include="Areas\Account\Models\User\ResetPassword\GenerateRequest.cs" />
     <Compile Include="Areas\Account\Models\User\ResetPassword\RetryRequest.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\ArticlePurchasesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\EmailPreferencesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedArticlesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedSearchesViewModel.cs" />
@@ -1209,6 +1210,7 @@
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.velirTemplate" />
     <Content Include="App_Config\Web\system.webServer.rewrite.config.template" />
     <None Include="App_Config\Include\ZZ.UserDefined\Import.config.template" />
+    <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
