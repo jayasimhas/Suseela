@@ -84,7 +84,8 @@ namespace Informa.Library.Search.Results
 				options.SiteResolving = true;
 				options.AlwaysIncludeServerUrl = true;
 
-				return LinkManager.GetItemUrl(GetItem(), options);
+				var item = GetItem();
+				return item != null ? LinkManager.GetItemUrl(item, options) : base.Url;
 			}
 		}
 
@@ -93,10 +94,11 @@ namespace Informa.Library.Search.Results
 		{
 			get
 			{
+				string url = Url ?? string.Empty;
 				Regex regex = new Regex("(.*?://.*?)/");
-				var match = regex.Match(Url);
+				var match = regex.Match(url);
 
-				return match.Success ? regex.Match(Url).Groups[1].Value : string.Empty;
+				return match.Success ? regex.Match(url).Groups[1].Value : string.Empty;
 			}
 		}
 	}
