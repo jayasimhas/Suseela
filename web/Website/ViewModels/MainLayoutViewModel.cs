@@ -188,7 +188,8 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				string allSubscriptions = string.Join(",", UserSubscriptionsContext.Subscriptions.Select(a => $"'{a.ProductCode}'"));
+				var subscriptions = UserSubscriptionsContext.Subscriptions;
+				string allSubscriptions = subscriptions == null ? string.Empty : string.Join(",", UserSubscriptionsContext.Subscriptions.Select(a => $"'{a.ProductCode}'"));
 				return !string.IsNullOrEmpty(allSubscriptions) ? $"[{allSubscriptions}]" : string.Empty;
 			}
 		}
