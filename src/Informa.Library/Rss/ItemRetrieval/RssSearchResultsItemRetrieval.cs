@@ -86,7 +86,8 @@ namespace Informa.Library.Rss.ItemRetrieval
                 //If the default sort has not been chosen fall back to relevance ascending sorting
                 if (searchListing.Default_Sort_Order == null)
                 {
-                    defaultSortBy = "relevance";
+                    //set default to date
+                    defaultSortBy = "date";
                     defaultSortOrder = "asc";
                 }
                 else
