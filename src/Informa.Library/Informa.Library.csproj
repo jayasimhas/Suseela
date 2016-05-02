@@ -361,8 +361,6 @@
     <Compile Include="Site\ISiteRootContext.cs" />
     <Compile Include="Site\ISiteFooterNavigationContext.cs" />
     <Compile Include="Site\SiteFooterNavigationContext.cs" />
-    <Compile Include="Subscription\ISubscriptionProductKeyContext.cs" />
-    <Compile Include="Subscription\SubscriptionProductKeyContext.cs" />
     <Compile Include="Subscription\User\IUserSubscriptionsContext.cs" />
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserSession.cs" />
@@ -832,7 +830,7 @@
     <Compile Include="User\Profile\AccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IAccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IFindUserProfileByUsername.cs" />
-    <Compile Include="User\Profile\IManageSubscriptions.cs" />
+    <Compile Include="User\Profile\IFindUserSubscriptions.cs" />
     <Compile Include="User\Profile\ISubscription.cs" />
     <Compile Include="User\Profile\ISubscriptionsReadResult.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInFactory.cs" />

@@ -2,7 +2,6 @@
 using Informa.Library.User.Profile;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Informa.Library.Subscription.User
 {
@@ -13,19 +12,16 @@ namespace Informa.Library.Subscription.User
 
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IAuthenticatedUserSession UserSession;
-		protected readonly IManageSubscriptions ManageSubscriptions;
-		protected readonly ISubscriptionProductKeyContext SubscriptionProductKeyContext;
+		protected readonly IFindUserSubscriptions ManageSubscriptions;
 
 		public UserSubscriptionsContext(
 			IAuthenticatedUserContext userContext,
 			IAuthenticatedUserSession userSession,
-			IManageSubscriptions manageSubscriptions,
-			ISubscriptionProductKeyContext subscriptionProductKeyContext)
+			IFindUserSubscriptions manageSubscriptions)
 		{
 			UserContext = userContext;
 			UserSession = userSession;
 			ManageSubscriptions = manageSubscriptions;
-			SubscriptionProductKeyContext = subscriptionProductKeyContext;
 		}
 
 		public IEnumerable<ISubscription> Subscriptions
@@ -39,12 +35,7 @@ namespace Informa.Library.Subscription.User
 					return subscriptionSession.Value;
 				}
 
-				var result = ManageSubscriptions.QueryItems(UserContext.User);
-				var subscriptions = (result.Success)
-					? result.Subscriptions.Where(s => s.ProductType.Equals(SubscriptionProductKeyContext.ProductKey))
-					: Enumerable.Empty<ISubscription>();
-
-				Subscriptions = subscriptions;
+				var subscriptions = Subscriptions = ManageSubscriptions.Find(UserContext.User.Username);
 
 				return subscriptions;
 			}
