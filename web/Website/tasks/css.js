@@ -49,6 +49,8 @@ gulp.task("css", function() {
 
     var css = utils.loadTaskConfig("css");
 
+    console.log(css);
+
     var gulpCss = gulp.src(css.src)
         .pipe(utils.drano())
         .pipe(sourcemaps.init())
@@ -66,7 +68,7 @@ gulp.task("css", function() {
     }
 
     return gulpCss
-        .pipe(debug({title: "css: "}))
         .pipe(sourcemaps.write("./"))
-        .pipe(gulp.dest(css.dest));
+        .pipe(gulp.dest(css.dest))
+        .pipe(debug({title: "css: "}));
 });

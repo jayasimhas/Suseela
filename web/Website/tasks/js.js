@@ -62,6 +62,7 @@ gulp.task("js", function(){
 
     var js = utils.loadTaskConfig("js");
 
+    console.log(js);
     // for browserify usage, see https://medium.com/@sogko/gulp-browserify-the-gulp-y-way-bb359b3f9623
     // ^^ we can't use vinyl-transform anymore because it breaks when trying to use b.transform()
     // https://github.com/sogko/gulp-recipes/tree/master/browserify-vanilla
