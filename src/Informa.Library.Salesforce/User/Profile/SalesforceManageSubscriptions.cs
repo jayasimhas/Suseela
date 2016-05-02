@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Informa.Library.Globalization;
 using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
@@ -13,14 +9,11 @@ namespace Informa.Library.Salesforce.User.Profile
     public class SalesforceManageSubscriptions : IManageSubscriptions
     {
         protected readonly ISalesforceServiceContext Service;
-        protected readonly ITextTranslator TextTranslator;
         
         public SalesforceManageSubscriptions(
-            ISalesforceServiceContext service,
-            ITextTranslator textTranslator)
+            ISalesforceServiceContext service)
         {
             Service = service;
-            TextTranslator = textTranslator;
         }
 
         public ISubscriptionsReadResult QueryItems(IAuthenticatedUser user)
