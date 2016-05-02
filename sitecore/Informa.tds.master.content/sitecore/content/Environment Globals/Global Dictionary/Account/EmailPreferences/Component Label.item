@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {F4FFE752-0D2A-4AFD-8C6A-F38CFDED6D7D}
+id: {682E31B2-784E-4957-B7BD-D59C71F9B900}
 database: master
-path: /sitecore/content/Environment Globals/Global Dictionary/Account/EmailPreferences/Newsletter Receive Email Heading
+path: /sitecore/content/Environment Globals/Global Dictionary/Account/EmailPreferences/Component Label
 parent: {8FA45F0D-8C92-4326-91E6-94024692334C}
-name: Newsletter Receive Email Heading
+name: Component Label
 master: {4314E7F7-4F9F-4E16-A43A-8C0BF2A03A2F}
 template: {6D1CD897-1936-4A3A-A511-289A94C2A7B1}
 templatekey: Dictionary entry
@@ -13,9 +13,9 @@ templatekey: Dictionary entry
 field: {580C75A8-C01A-4580-83CB-987776CEB3AF}
 name: Key
 key: key
-content-length: 46
+content-length: 27
 
-Preferences.NewsletterOptInReceiveEmailHeading
+Preferences.NewsletterTitle
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
@@ -33,36 +33,36 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: b65e1db3-6a7a-422e-91ac-c289685dc5ea
+revision: dfa2543f-b2e9-4475-ab0b-9f58a3fe24de
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 13
+content-length: 17
 
-Receive Email
+Newsletter Emails
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20160308T135446Z
+20160308T135730Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-b65e1db3-6a7a-422e-91ac-c289685dc5ea
+dfa2543f-b2e9-4475-ab0b-9f58a3fe24de
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160429T144837Z
+20160429T145716Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

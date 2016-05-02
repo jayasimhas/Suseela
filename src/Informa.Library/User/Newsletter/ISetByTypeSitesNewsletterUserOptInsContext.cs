@@ -2,7 +2,7 @@
 
 namespace Informa.Library.User.Newsletter
 {
-	public interface ISetByTypeNewsletterUserOptInsContext
+	public interface ISetByTypeSitesNewsletterUserOptInsContext
 	{
 		bool Set(IEnumerable<string> newsletterTypes);
 	}

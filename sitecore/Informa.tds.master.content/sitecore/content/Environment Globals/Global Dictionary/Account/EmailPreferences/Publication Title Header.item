@@ -2,9 +2,9 @@
 version: 1
 id: {4EEC561B-9475-4963-B656-D5D5DC9877F9}
 database: master
-path: /sitecore/content/Environment Globals/Global Dictionary/Account/EmailPreferences/Newsletter Title Heading
+path: /sitecore/content/Environment Globals/Global Dictionary/Account/EmailPreferences/Publication Title Header
 parent: {8FA45F0D-8C92-4326-91E6-94024692334C}
-name: Newsletter Title Heading
+name: Publication Title Header
 master: {4314E7F7-4F9F-4E16-A43A-8C0BF2A03A2F}
 template: {6D1CD897-1936-4A3A-A511-289A94C2A7B1}
 templatekey: Dictionary entry
@@ -33,7 +33,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 80279fc2-f0dd-4e41-b492-180464dd12ed
+revision: e18ab8d4-1e74-422a-8559-fba966df3ba9
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-80279fc2-f0dd-4e41-b492-180464dd12ed
+e18ab8d4-1e74-422a-8559-fba966df3ba9
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160429T144814Z
+20160429T145605Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

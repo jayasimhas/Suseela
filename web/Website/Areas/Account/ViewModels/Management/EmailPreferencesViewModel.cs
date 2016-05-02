@@ -14,14 +14,14 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         protected readonly ITextTranslator TextTranslator;
         protected readonly IOfferUserOptedInContext OffersOptedInContext;
         protected readonly IAuthenticatedUserContext UserContext;
-		protected readonly INewsletterUserOptInsContext NewsletterOptInsContext;
+		protected readonly ISitesNewsletterUserOptInsContext NewsletterOptInsContext;
 
 		public EmailPreferencesViewModel(
             ITextTranslator translator,
 			IOfferUserOptedInContext offersOptedInContext,
             ISignInViewModel signInViewModel,
             IAuthenticatedUserContext userContext,
-			INewsletterUserOptInsContext newsletterOptInsContext)
+			ISitesNewsletterUserOptInsContext newsletterOptInsContext)
         {
             TextTranslator = translator;
             OffersOptedInContext = offersOptedInContext;
@@ -35,6 +35,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		public bool DoNotSendOfferEmails => !OffersOptedInContext.OptedIn;
         public string Title => GlassModel?.Title;
 		public string Body => GlassModel?.Body;
+		public string NewsletterTitle => TextTranslator.Translate("Preferences.NewsletterTitle");
 		public string NewsletterOptInTitleHeading => TextTranslator.Translate("Preferences.NewsletterOptInTitleHeading");
 		public string NewsletterOptInReceiveEmailHeading => TextTranslator.Translate("Preferences.NewsletterOptInReceiveEmailHeading");
         public string GeneralErrorText => TextTranslator.Translate("Preferences.GeneralError");

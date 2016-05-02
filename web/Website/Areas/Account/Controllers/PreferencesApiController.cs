@@ -12,13 +12,13 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly IUpdateOfferUserOptInContext OffersOptIn;
 		protected readonly IUpdateSiteNewsletterUserOptIn UpdateSiteNewsletterOptIn;
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
-		protected readonly ISetByTypeNewsletterUserOptInsContext SetNewsletterUserOptInsContext;
+		protected readonly ISetByTypeSitesNewsletterUserOptInsContext SetNewsletterUserOptInsContext;
 
 		public PreferencesApiController(
 			IUpdateOfferUserOptInContext offersOptIn,
 			IUpdateSiteNewsletterUserOptIn updateSiteNewsletterOptIn,
 			ISiteNewsletterUserOptedInContext newsletterOptedInContext,
-			ISetByTypeNewsletterUserOptInsContext setNewsletterUserOptInsContext)
+			ISetByTypeSitesNewsletterUserOptInsContext setNewsletterUserOptInsContext)
 		{
 			OffersOptIn = offersOptIn;
 			UpdateSiteNewsletterOptIn = updateSiteNewsletterOptIn;
