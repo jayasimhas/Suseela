@@ -921,7 +921,7 @@
                             var facet = _lodash2["default"].find(this.facets, { id: id });
 
                             if (!facet) {
-                                _lodash2["defaultgetSelectedFacets"].each(this.facets, function (f) {
+                                _lodash2["default"].each(this.facets, function (f) {
                                     facet = _lodash2["default"].find(f.sublist, { id: id });
                                     return !facet;
                                 });
