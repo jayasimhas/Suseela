@@ -331,6 +331,8 @@
     <Compile Include="Publishing\Scheduled\ScheduledPublishingDateTime.cs" />
     <Compile Include="Purchase\IArticlePurchase.cs" />
     <Compile Include="Purchase\User\IFindUserArticlePurchases.cs" />
+    <Compile Include="Purchase\User\IUserArticlePurchasesContext.cs" />
+    <Compile Include="Purchase\User\UserArticlePurchasesContext.cs" />
     <Compile Include="Rss\FeedGenerators\BaseInformaFeedGenerator.cs" />
     <Compile Include="Rss\FeedGenerators\SearchFeedGenerator.cs" />
     <Compile Include="Rss\Interfaces\IRssFeedGeneration.cs" />

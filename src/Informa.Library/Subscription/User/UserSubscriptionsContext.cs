@@ -11,16 +11,16 @@ namespace Informa.Library.Subscription.User
 
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IAuthenticatedUserSession UserSession;
-		protected readonly IFindUserSubscriptions ManageSubscriptions;
+		protected readonly IFindUserSubscriptions FindSubscriptions;
 
 		public UserSubscriptionsContext(
 			IAuthenticatedUserContext userContext,
 			IAuthenticatedUserSession userSession,
-			IFindUserSubscriptions manageSubscriptions)
+			IFindUserSubscriptions findSubscriptions)
 		{
 			UserContext = userContext;
 			UserSession = userSession;
-			ManageSubscriptions = manageSubscriptions;
+			FindSubscriptions = findSubscriptions;
 		}
 
 		public IEnumerable<ISubscription> Subscriptions
@@ -34,7 +34,7 @@ namespace Informa.Library.Subscription.User
 					return subscriptionSession.Value;
 				}
 
-				var subscriptions = Subscriptions = ManageSubscriptions.Find(UserContext.User.Username);
+				var subscriptions = Subscriptions = FindSubscriptions.Find(UserContext.User.Username);
 
 				return subscriptions;
 			}
