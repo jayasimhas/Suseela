@@ -77,6 +77,8 @@
     <Compile Include="ISalesforceServiceContextEnabled.cs" />
     <Compile Include="ISalesforceServiceContextEnabledCheck.cs" />
     <Compile Include="ISalesforceServiceContextEnabledChecks.cs" />
+    <Compile Include="Purchase\SalesforceArticlePurchase.cs" />
+    <Compile Include="Purchase\User\SalesforceFindUserArticlePurchases.cs" />
     <Compile Include="SalesforceErrorLogger.cs" />
     <Compile Include="SalesforceServiceContextEnabled.cs" />
     <Compile Include="SalesforceServiceContextEnabledChecks.cs" />
@@ -352,9 +354,7 @@
       <Name>Informa.Library</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entitlement\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

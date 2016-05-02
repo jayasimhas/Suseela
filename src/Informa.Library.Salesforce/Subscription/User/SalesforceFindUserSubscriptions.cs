@@ -38,15 +38,15 @@ namespace Informa.Library.Salesforce.Subscription.User
 
 			return response.subscriptionsAndPurchases
 				.Where(sap => string.Equals(sap.productType, "publication", StringComparison.InvariantCultureIgnoreCase))
-				.Select(a => new SalesforceSubscription
+				.Select(sap => new SalesforceSubscription
 				{
-					DocumentID = a.documentId,
-					ProductCode = a.productCode,
-					ProductGuid = a.productGUID,
-					SubscriptionType = a.subscriptionType,
-					Publication = a.name,
-					ProductType = a.productType,
-					ExpirationDate = (a.expirationDateSpecified) ? a.expirationDate.Value : DateTime.Now
+					DocumentID = sap.documentId,
+					ProductCode = sap.productCode,
+					ProductGuid = sap.productGUID,
+					SubscriptionType = sap.subscriptionType,
+					Publication = sap.name,
+					ProductType = sap.productType,
+					ExpirationDate = (sap.expirationDateSpecified) ? sap.expirationDate.Value : DateTime.Now
 				})
 				.ToList();
 		}

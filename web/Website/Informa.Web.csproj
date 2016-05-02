@@ -652,6 +652,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
+    <Compile Include="App_Start\Registrations\PurchaseRegistrar.cs" />
     <Compile Include="App_Start\Registrations\EntitlementsRegistrar.cs" />
     <Compile Include="App_Start\Registrations\SessionRegistrar.cs" />
     <Compile Include="App_Start\Registrations\CompanyRegistrar.cs" />

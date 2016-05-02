@@ -65,6 +65,7 @@ namespace Informa.Web.App_Start
 			SiteDebuggingRegistrar.RegisterDependencies(builder);
 			LoggingRegistrar.RegisterDependencies(builder);
 			EntitlementsRegistrar.RegisterDependencies(builder);
+			PurchaseRegistrar.RegisterDependencies(builder);
 
 			// Custom Modules
 			builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));
