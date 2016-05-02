@@ -15,7 +15,7 @@ var gulp          = require("gulp"),
 utils.setTaskConfig("css", {
     default: {
 
-        src: config.root + "/styles/**/*.scss",
+        src: config.root + "/styles/index.scss",
         dest: config.dest,
 
         filename: "index.css",
