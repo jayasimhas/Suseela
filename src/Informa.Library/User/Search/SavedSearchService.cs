@@ -28,7 +28,8 @@ namespace Informa.Library.User.Search
 		}
 
 		private const string SessionKey = nameof(SavedSearchService);
-		
+		private static IEqualityComparer<ISavedSearchEntity> _comparer = new SearchStringEqualityComparer();
+
 		protected readonly IDependencies _;
 
 		private readonly Lazy<ISearch> _searchPage;
@@ -51,10 +52,9 @@ namespace Informa.Library.User.Search
 				SearchString = ExtractQueryString(input.Url)
 			};
 
-			var comparer = new SearchStringEqualityComparer();
 			var results = GetContentFromSessionOrRepo();
 
-			return results.Any(s => comparer.Equals(s, entity));
+			return results.Any(s => _comparer.Equals(s, entity));
 		}
 
 		public virtual IEnumerable<ISavedSearchDisplayable> GetContent()
@@ -118,13 +118,19 @@ namespace Informa.Library.User.Search
 		{
 			if (IsAuthenticated)
 			{
-				var entity = new SavedSearchEntity
+				ISavedSearchEntity entity = new SavedSearchEntity
 				{
 					Username = _.UserContext.User.Username,
 					Name = input.Title,
 					SearchString = input.Url
 				};
 
+				if (string.IsNullOrWhiteSpace(entity.Name))
+				{
+					var results = GetContentFromSessionOrRepo();
+					entity = results.FirstOrDefault(e => _comparer.Equals(e, entity));
+				}
+				
 				var response = _.Repository.Delete(entity);
 				Clear();
 
