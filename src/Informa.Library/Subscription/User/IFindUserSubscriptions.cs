@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Informa.Library.User.Profile
+namespace Informa.Library.Subscription.User
 {
     public interface IFindUserSubscriptions
 	{

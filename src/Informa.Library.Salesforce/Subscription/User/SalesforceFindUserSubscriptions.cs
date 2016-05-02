@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Salesforce.EBIWebServices;
-using Informa.Library.User.Profile;
+using Informa.Library.Subscription;
+using Informa.Library.Subscription.User;
 
-namespace Informa.Library.Salesforce.User.Profile
+namespace Informa.Library.Salesforce.Subscription.User
 {
     public class SalesforceFindUserSubscriptions : IFindUserSubscriptions
     {

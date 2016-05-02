@@ -1,7 +1,7 @@
-﻿using Informa.Library.User.Profile;
+﻿using Informa.Library.Subscription;
 using System;
 
-namespace Informa.Library.Salesforce.User.Profile
+namespace Informa.Library.Salesforce.Subscription
 {
 	public class SalesforceSubscription : ISubscription
 	{

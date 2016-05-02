@@ -13,6 +13,8 @@ using Informa.Library.Salesforce.User.Newsletter;
 using Informa.Library.Salesforce.User.Offer;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Session;
+using Informa.Library.Salesforce.Subscription.User;
+using Informa.Library.Subscription.User;
 
 namespace Informa.Web.App_Start.Registrations
 {

@@ -1,5 +1,4 @@
 ﻿using Informa.Library.User.Authentication;
-using Informa.Library.User.Profile;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
 

@@ -830,9 +830,8 @@
     <Compile Include="User\Profile\AccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IAccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IFindUserProfileByUsername.cs" />
-    <Compile Include="User\Profile\IFindUserSubscriptions.cs" />
-    <Compile Include="User\Profile\ISubscription.cs" />
-    <Compile Include="User\Profile\ISubscriptionsReadResult.cs" />
+    <Compile Include="Subscription\User\IFindUserSubscriptions.cs" />
+    <Compile Include="Subscription\ISubscription.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInFactory.cs" />
     <Compile Include="User\Newsletter\IFindNewsletterUserOptIns.cs" />
     <Compile Include="User\Offer\IOfferUserOptedIn.cs" />
@@ -848,8 +847,6 @@
     <Compile Include="User\Newsletter\NewsletterUserOptInFactory.cs" />
     <Compile Include="User\Document\SavedDocument.cs" />
     <Compile Include="User\Document\SavedDocumentWriteResult.cs" />
-    <Compile Include="User\Profile\Subscription.cs" />
-    <Compile Include="User\Profile\SubscriptionsReadResult.cs" />
     <Compile Include="User\Registration\INewUser.cs" />
     <Compile Include="User\Registration\INewUserFactory.cs" />
     <Compile Include="User\Registration\IRegisterUser.cs" />
@@ -985,6 +982,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InterfaceFactory\Models\" />
+    <Folder Include="Purchase\User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
