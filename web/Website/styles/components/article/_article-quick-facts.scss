@@ -47,7 +47,7 @@ section: Article Components
     }
 
     &__list {
-        @extend .article-list;
+        @extend .article-list !optional;
         color: $color-zeus-black;
 
         &--ul {

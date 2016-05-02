@@ -68,7 +68,9 @@ gulp.task("css", function() {
     }
 
     return gulpCss
+        .pipe(debug({title: "css-1: ", minimal: false}))
         .pipe(sourcemaps.write("./"))
+        .pipe(debug({title: "css-2: ", minimal: false}))
         .pipe(gulp.dest(css.dest))
-        .pipe(debug({title: "css: "}));
+        .pipe(debug({title: "css-3: ", minimal: false}));
 });
