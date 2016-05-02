@@ -3,6 +3,7 @@
   "author": "Mike Lambert",
   "devDependencies": {
     "babelify": "^6.3.0",
+    "bower": "^1.7.9",
     "browser-sync": "^2.7.3",
     "browserify": "^10.1.1",
     "browserify-shim": "^3.8.12",
