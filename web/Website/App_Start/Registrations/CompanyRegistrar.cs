@@ -11,10 +11,13 @@ namespace Informa.Web.App_Start.Registrations
 		{
 			builder.RegisterType<SalesforceFindCompanyByIpAddress>()
 				.As<IFindCompanyByIpAddress>()
-				.As<ISalesforceFindCompanyByIpAddress>();
+				.As<ISalesforceFindCompanyByIpAddress>()
+                .SingleInstance();
+
 			builder.RegisterType<SalesforceFindCompanyByUser>()
 				.As<IFindCompanyByUser>()
 				.As<ISalesforceFindCompanyByUser>();
+
 			builder.RegisterType<SalesforceRegisterUser>().As<IRegisterCompanyUser>();
 		}
 	}

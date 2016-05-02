@@ -8,6 +8,7 @@ using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Library.Rss.Interfaces;
 using Informa.Library.Search.Utilities;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss;
 using Newtonsoft.Json;
 using Sitecore;
@@ -122,10 +123,18 @@ namespace Informa.Library.Rss.ItemRetrieval
                     return new List<Item>();
                 }
 
-                return
+                var resultItems =
                     results.results.Select(searchResult => Context.Database.GetItem(searchResult.ItemId))
                         .Where(theItem => theItem != null)
                         .ToList();
+
+
+                if (Context.RawUrl.ToLower().Contains("emailordering=1"))
+                {
+                    resultItems = resultItems.OrderByDescending(r => r[IArticleConstants.Sort_OrderFieldId]).ToList();
+                }
+              
+                return resultItems;
             }
             catch (Exception exc)
             {

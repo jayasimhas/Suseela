@@ -1,6 +1,7 @@
 ﻿@model MainLayoutViewModel
 @using System.Configuration
 @using Informa.Library.Utilities.References
+@using StackExchange.Profiling
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,8 +37,8 @@
         "article_content_type": "@Model.ArticleContentType", "article_embargo": "@Model.ArticleEmbargoed", "article_media_type": "@Model.ArticleMediaType", "article_number": "@Model.ArcticleNumber",
         "created_date": "@Model.DateCreated", "custom_tags": "@Model.CustomTags", "page_description": "@Model.PageDescription", "page_title_override": "@Model.PageTitleOverride",
         "taxonomy_region": "@Html.Raw(Model.ArticleRegions)", "taxonomy_subjects": "@Html.Raw(Model.ArticleSubject)", "taxonomy_therapy_areas": "@Html.Raw(Model.ArticleTherapy)", "login_status": "@Model.IsUserLoggedIn", "IsArticleFree": "@Model.IsFree",
-        "user_id": "@Model.UserName", "company": "@Model.UserCompany", "user_entitlement_type": "@Model.UserEntitlements", "entitlement_status": "@Model.UserEntitlementStatus", "industry": "@Model.UserIndustry",
-        "user_email": "@Model.UserEmail", "current_email_subscriptions": "@Model.SubscribedProducts", "page_keywords": "@Model.MetaKeyWords", "company_Id" : "@Model.CompanyId","article_entitlements" : "@Model.Article_Entitlement", "User_IP_Address":"@Model.UserIp"
+        "user_id": "@Model.UserName", "company": "@Model.UserCompany", "user_entitlement_type": "@Html.Raw(Model.UserEntitlements)", "entitlement_status": "@Html.Raw(Model.UserEntitlementStatus)", "industry": "@Model.UserIndustry",
+        "user_email": "@Model.UserEmail", "current_email_subscriptions": "@Html.Raw(Model.SubscribedProducts)", "page_keywords": "@Model.MetaKeyWords", "company_Id" : "@Model.CompanyId","article_entitlements" : "@Model.Article_Entitlement", "User_IP_Address":"@Model.UserIp"
     };
     var utag_data = analytics_data;
 
@@ -133,6 +134,6 @@
     <script src="/dist/js/index.js"></script>
 
     @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
-
+    @MiniProfiler.RenderIncludes()
 </body>
 </html>

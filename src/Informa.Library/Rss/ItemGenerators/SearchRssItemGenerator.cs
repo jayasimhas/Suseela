@@ -26,8 +26,8 @@ namespace Informa.Library.Rss.ItemGenerators
 
 			//Build the basic syndicaton item
 			var searchTerm = Sitecore.Context.Request.QueryString["q"];
-			var articleUrl = string.Format("{0}?utm_source=search&utm_medium=RSS&utm_term={1}&utm_campaign=search_rss", article._AbsoluteUrl, searchTerm);
-			var syndicationItem = new SyndicationItem(GetItemTitle(article),
+            var articleUrl = string.Format("{0}?utm_source=search&amp;utm_medium=RSS&amp;utm_term={1}&amp;utm_campaign=search_rss", article._AbsoluteUrl, searchTerm);
+            var syndicationItem = new SyndicationItem(GetItemTitle(article),
                 GetItemSummary(article),
                 new Uri(articleUrl),
                 article._AbsoluteUrl,
@@ -103,7 +103,7 @@ namespace Informa.Library.Rss.ItemGenerators
         {
             if (!string.IsNullOrEmpty(article.Article_Number))
             {
-                var newElement = new XElement(RssConstants.FieldId);
+                var newElement = new XElement(RssConstants.InformaNamespace + RssConstants.FieldId);
                 newElement.Value = article.Article_Number;
                 syndicationItem.ElementExtensions.Add(newElement.CreateReader());
             }
@@ -123,7 +123,7 @@ namespace Informa.Library.Rss.ItemGenerators
 
         private SyndicationItem AddEmailSortOrderField(SyndicationItem syndicationItem, IArticle article)
         {
-            var emailPriorityElement = new XElement(RssConstants.FieldEmailPriority);
+            var emailPriorityElement = new XElement(RssConstants.InformaNamespace + RssConstants.FieldEmailPriority);
             if (article.Sort_Order > 0)
             {
                 emailPriorityElement.Value = article.Sort_Order.ToString();
@@ -148,7 +148,7 @@ namespace Informa.Library.Rss.ItemGenerators
         {
             if (article.Media_Type != null)
             {
-                var mediaElement = new XElement(RssConstants.FieldMediaIcon);
+                var mediaElement = new XElement(RssConstants.InformaNamespace + RssConstants.FieldMediaIcon);
                 if (!string.IsNullOrEmpty(article.Media_Type.Item_Name))
                 {
                     mediaElement.Value = HttpUtility.HtmlEncode(article.Media_Type.Item_Name);
@@ -171,11 +171,11 @@ namespace Informa.Library.Rss.ItemGenerators
             {
                 if (article.Taxonomies.Any())
                 {
-                    var taxonomyElement = new XElement(RssConstants.FieldTaxonomyItems);
+                    var taxonomyElement = new XElement(RssConstants.InformaNamespace + RssConstants.FieldTaxonomyItems);
 
                     foreach (var taxonomyItem in article.Taxonomies)
                     {
-                        var taxonomyItemElement = new XElement(RssConstants.FieldTaxonomyItem);
+                        var taxonomyItemElement = new XElement(RssConstants.InformaNamespace + RssConstants.FieldTaxonomyItem);
 
                         taxonomyItemElement.Value = HttpUtility.HtmlEncode(taxonomyItem.Item_Name);
 

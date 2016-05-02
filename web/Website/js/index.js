@@ -13,6 +13,11 @@ import FormController from './form-controller';
 import SortableTableController from './sortable-table-controller';
 import { analyticsEvent } from './analytics-controller';
 
+/* Polyfill for scripts expecting `jQuery`
+    Also see: CSS selectors support in zepto.min.js
+*/
+window.jQuery = $;
+
 
 // Make sure proper elm gets the click event
 // When a user submits a Forgot Password request, this will display the proper
@@ -114,6 +119,7 @@ $(document).ready(function() {
                 return;
             }
 
+            e.preventDefault();
             window.bookmark.toggle(e.target);
 
         });
@@ -164,17 +170,17 @@ $(document).ready(function() {
     * * */
     $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
 
-        var searchKeyword = $('.header-search__field').val();
-        if((searchKeyword === "" || searchKeyword === undefined || searchKeyword === null) && (('.search-bar__field').length))
-        {
-            searchKeyword = $('.search-bar__field').val();
-        }
-        var eventDetails = {
-            event_name: "search",
-            search_keyword: '"' + searchKeyword + '"'
-        };
+        //var searchKeyword = $('.header-search__field').val();
+        //if((searchKeyword === "" || searchKeyword === undefined || searchKeyword === null) && (('.search-bar__field').length))
+        //{
+        //    searchKeyword = $('.search-bar__field').val();
+        //}
+        //var eventDetails = {
+        //    event_name: "search",
+        //    search_keyword: '"' + searchKeyword + '"'
+        //};
 
-        analyticsEvent( $.extend(analytics_data, eventDetails) );
+        //analyticsEvent($.extend(analytics_data, eventDetails));
 
 
         if($(window).width() <= 800) {
@@ -237,14 +243,19 @@ $(document).ready(function() {
 
             analyticsEvent( $.extend(analytics_data, loginAnalytics) );
 
-		}
+        }
     });
 
     var resetPassword = new FormController({
         observe: '.form-reset-password',
         successCallback: function() {
             $('.form-reset-password').find('.alert-success').show();
+            analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
+        },
+        failureCallback: function() {
+            analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
         }
+
     });
 
     var newResetPassToken = new FormController({
@@ -255,22 +266,47 @@ $(document).ready(function() {
     });
 
     var userRegistrationController = new FormController({
-        observe: '.form-registration'
+        observe: '.form-registration',
+        successCallback: function(form, context, event) {
+            analyticsEvent( $.extend(analytics_data, { event_name: "form registration successful" }) );
+        },
+        failureCallback: function(form,response) {
+            analyticsEvent( $.extend(analytics_data, { event_name: "form registration failure" }) );
+        }
     });
 
     var userRegistrationFinalController = new FormController({
-        observe: '.form-registration-optins'
+        observe: '.form-registration-optins',
+        successCallback: function(form, context, event) {
+            analyticsEvent( $.extend(analytics_data, { event_name: "registration successful" }) );
+        },
+        failureCallback: function(form, response) {
+            var errorMsg = $(".page-registration__error").text();
+           if (response.reasons && response.reasons.length > 0) {
+                errorMsg = "[";
+                for (var reason in response.reasons) {
+                    errorMsg += response.reasons[reason] + ",";
+                }
+                errorMsg = errorMsg.substring(0, errorMsg.length - 1);
+                errorMsg += "]";
+            }
+            analyticsEvent( $.extend(analytics_data, { event_name: "registration failure", registraion_errors : errorMsg}) );
+        }
     });
 
     var userPreRegistrationController = new FormController({
-		observe: '.form-pre-registration',
-		successCallback: function(form) {
+        observe: '.form-pre-registration',
+        successCallback: function(form) {
             var usernameInput = $(form).find('.js-register-username');
-            var nextStepUrl = $(form).data('forwarding-url') + '?' + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
+
+            var forwardingURL = $(form).data('forwarding-url');
+            var sep = forwardingURL.indexOf('?') < 0 ? '?' : '&';
+            var nextStepUrl = $(form).data('forwarding-url') + sep + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
 
             window.location.href = nextStepUrl;
-		}
-	});
+      
+        }
+    });
 
     $('.click-logout').on('click', function(e) {
         analyticsEvent( $.extend(analytics_data, { event_name: "logout" }) );
@@ -332,12 +368,12 @@ $(document).ready(function() {
 
     var accountUpdatePassController = new FormController({
         observe: '.form-update-account-pass',
-		successCallback: function(form, context, evt) {
-			$(form).find('input, select, textarea').each(function() {
-				$(this).val('');
-			});
-		}
-	});
+        successCallback: function(form, context, evt) {
+            $(form).find('input, select, textarea').each(function() {
+                $(this).val('');
+            });
+        }
+    });
 
     var accountUpdateContactController = new FormController({
         observe: '.form-update-account-contact',
@@ -356,14 +392,14 @@ $(document).ready(function() {
 
     svg4everybody();
 
-    var getHeaderEdge = function() {
-        return $('.header__wrapper').offset().top + $('.header__wrapper').height();
-    };
-
     /* * *
         MAIN SITE MENU
     * * */
     (function MenuController() {
+
+        var getHeaderEdge = function() {
+            return $('.header__wrapper').offset().top + $('.header__wrapper').height();
+        };
 
         var showMenu = function() {
             $('.main-menu').addClass('is-active');
@@ -398,7 +434,7 @@ $(document).ready(function() {
         /* Attach / detach sticky menu */
         $(window).on('scroll', function windowScrolled() {
             // Only stick if the header (including toggler) isn't visible
-            if ($(this).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
+            if ($(window).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
                 $('.header__wrapper .menu-toggler').addClass('is-sticky');
             } else {
                 $('.header__wrapper .menu-toggler').removeClass('is-sticky');
@@ -619,11 +655,15 @@ $(document).ready(function() {
     });
 
     var newsletterOptins = function(){
+        var eventDetails = {event_name : "newsletter optins"};
         if ($('#newsletters').is(':checked')) {
-            $('.registration-final').data("info",{"event_name":"registration-complete-thank-you","newsletter_optin":"true"});
+            var chkDetails = {   newsletter_optin: "true"}
+            $.extend(eventDetails,chkDetails);
         } else {
-            $('.registration-final').data("info",{"event_name":"registration-complete-thank-you","newsletter_optin":"false"});
+            var chkDetails = {   newsletter_optin: "false"}
+            $.extend(eventDetails,chkDetails);
         }
+        analyticsEvent( $.extend(analytics_data, eventDetails) );
     };
 
     // TODO - Refactor this code, update class name to a `js-` name
@@ -666,7 +706,7 @@ $(document).ready(function() {
     smoothScrollingNav();
 
 
-	// Toggle global Informa bar
+    // Toggle global Informa bar
     $('.informa-ribbon__title').on('click', function (e) {
         $('.informa-ribbon').toggleClass('show');
     });
@@ -693,10 +733,10 @@ $(document).ready(function() {
     // Twitter sharing JS
     window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],
         w=window.twttr||{};
-    return t.getElementById(r) ? w : (n=t.createElement(e),
-    n.id=r,n.src="https://platform.twitter.com/widgets.js",
-    i.parentNode.insertBefore(n,i),w._e=[],
-    w.ready=function(t) { w._e.push(t); },
-    w); } (document,"script","twitter-wjs");
+        return t.getElementById(r) ? w : (n=t.createElement(e),
+        n.id=r,n.src="https://platform.twitter.com/widgets.js",
+        i.parentNode.insertBefore(n,i),w._e=[],
+        w.ready=function(t) { w._e.push(t); },
+        w); } (document,"script","twitter-wjs");
 
 });

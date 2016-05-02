@@ -418,7 +418,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             Dictionary<string, string> companies = new Dictionary<string, string>();
 
-            string query = "SELECT[RecordNumber], [Title] FROM [ElsevierSupport_DCD].[dbo].[Companies] ORDER BY [Title] DESC";
+            string query = "SELECT[RecordNumber], [Title] FROM [Informa_DCD].[dbo].[Companies] ORDER BY [Title] DESC";
             string conn = ConfigurationManager.ConnectionStrings["dcd"].ConnectionString;
 
             SqlConnection dbCon = null;
@@ -448,7 +448,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             foreach (DataRow r in returnObj.Rows)
             {
-                companies.Add(r["Title"].ToString().ToLower(), r["RecordNumber"].ToString());
+                
+                companies[r["Title"].ToString().ToLower()] = r["RecordNumber"].ToString();
             }
 
             Context.Items[cacheKey] = companies;

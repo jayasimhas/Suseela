@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
   <rules>
+    #if ($Env.RewriteScrip == "true")
+    <rule name="CanonicalHostNameRule1" enabled="true" stopProcessing="true">
+      <match url="(.*)" />
+      <conditions logicalGrouping="MatchAny">
+        <add input="{HTTP_HOST}" pattern="^www\.scripintelligence\.com$" />
+        <add input="{HTTP_HOST}" pattern="^scripintelligence\.com$" />
+      </conditions>
+      <action type="Redirect" url="https://scrip.pharmamedtechbi.com/{R:1}" />
+    </rule>
+    #end
     #if ($Env.ForceHttps == "true")
     <rule name="HTTP to HTTPS redirect" stopProcessing="true">
       <match url="(.*)" />

@@ -180,89 +180,92 @@ namespace Informa.Library.DCD.XMLImporting
                         {
                             _hasSomeFailures = true;
                         }
-
-                        //COVEO INDEX REBUILDING REMOVED
-
-                        //If it is an "all update" note any discrepancies and send them to the distro
-                        if (content.Feed.type == FeedType.ALLRECORDS)
-                        {
-                            IEnumerable<IDCD> discrepancies = null;
-                            IEnumerable<IDCD> olderItems = null;
-                            IEnumerable<IDCD> noContentItems = null;
-                            string type = string.Empty;
-                            if (content.type == IBIContentType.deal)
-                            {
-                                var imported = dc.DealRecordImportLogs.Where(d => d.ImportLog == _importingLogRecord);
-                                discrepancies = dc.Deals.Where(d => !imported.Any(dl => dl.RecordId == d.RecordId)).Select(i => (IDCD)i);
-                                olderItems = imported.Where(r => r.Notes == "Existing record has a newer Last Modified Date.").Select(r => (IDCD)dc.Deals.FirstOrDefault(c => c.RecordId == r.RecordId.Value));
-                                noContentItems = imported.Where(r => r.Notes == "Record does not have any content.").Select(r => (IDCD)dc.Deals.FirstOrDefault(c => c.RecordId == r.RecordId.Value));
-                                type = "deals";
-                            }
-                            else if (content.type == IBIContentType.company)
-                            {
-                                var imported = dc.CompanyRecordImportLogs.Where(c => c.ImportLog == _importingLogRecord);
-                                discrepancies = dc.Companies.Where(c => !imported.Any(co => co.RecordId == c.RecordId)).Select(i => (IDCD)i);
-                                olderItems = imported.Where(r => r.Notes == "Existing record has a newer Last Modified Date.").Select(r => (IDCD)dc.Companies.FirstOrDefault(c => c.RecordId == r.RecordId.Value));
-                                noContentItems = imported.Where(r => r.Notes == "Record does not have any content.").Select(r => (IDCD)dc.Companies.FirstOrDefault(c => c.RecordId == r.RecordId.Value));
-                                type = "companies";
-                            }
-                            else if (content.type == IBIContentType.drug)
-                            {
-                                var imported = dc.DrugRecordImportLogs.Where(d => d.ImportLog == _importingLogRecord);
-                                discrepancies = dc.Drugs.Where(d => !imported.Any(dl => dl.RecordId == d.RecordId)).Select(i => (IDCD)i);
-                                olderItems = imported.Where(r => r.Notes == "Existing record has a newer Last Modified Date.").Select(r => (IDCD)dc.Drugs.FirstOrDefault(c => c.RecordId == r.RecordId.Value));
-                                noContentItems = imported.Where(r => r.Notes == "Record does not have any content.").Select(r => (IDCD)dc.Drugs.FirstOrDefault(c => c.RecordId == r.RecordId.Value));
-                                type = "drugs";
-                            }
-
-                            //Send email if there are any discrepancies
-                            bool hasDiscrepancies = (discrepancies != null && discrepancies.Count() > 0);
-                            bool hasOlderItems = (olderItems != null && olderItems.Count() > 0);
-                            bool hasNoContentItems = noContentItems != null && noContentItems.Count() > 0;
-                            if (hasDiscrepancies || hasOlderItems || hasNoContentItems)
-                            {
-                                string subject = DCDConstants.BusinessAcronym + " discrepancy report for " + type + " import: " + _fileName;
-                                StringBuilder sb = new StringBuilder();
-                                sb.AppendLine("There were discrepancies when processing the full import file: " + _fileName);
-                                sb.AppendLine();
-                                if (hasDiscrepancies)
-                                {
-                                    sb.AppendLine("These existing " + type + " were not altered by the import.");
-                                    sb.AppendLine();
-                                    foreach (var discrepancy in discrepancies)
-                                    {
-                                        sb.AppendLine(discrepancy.RecordNumber + " - " + discrepancy.Title);
-                                    }
-                                }
-
-                                if (hasOlderItems)
-                                {
-                                    sb.AppendLine("These existing " + type + " have a newer modified date in the database.");
-                                    sb.AppendLine();
-                                    foreach (var olderItem in olderItems)
-                                    {
-                                        sb.AppendLine(olderItem.RecordNumber + " - " + olderItem.Title);
-                                    }
-                                }
-
-                                if (hasNoContentItems)
-                                {
-                                    sb.AppendLine("These existing " + type + " do not have a <Content> node in their record.");
-                                    sb.AppendLine();
-                                    foreach (var noContentItem in noContentItems)
-                                    {
-                                        sb.AppendLine(noContentItem.RecordNumber + " - " + noContentItem.Title);
-                                    }
-                                }
-
-                                DCDImportLogger.SendNotification(subject, sb.ToString());
-                            }
-                        }
-
-                        Event.RaiseEvent("dcdimport:end", content.type);
-                        Sitecore.Eventing.EventManager.QueueEvent<DCDImportEndRemoteEvent>(new DCDImportEndRemoteEvent(content.type));
                     }
                 }
+
+                //COVEO INDEX REBUILDING REMOVED
+
+                using (DCDContext dc = new DCDContext())
+                {
+                    //If it is an "all update" note any discrepancies and send them to the distro
+                    if (content.Feed.type == FeedType.ALLRECORDS)
+                    {
+                        IEnumerable<IDCD> discrepancies = null;
+                        IEnumerable<IDCD> olderItems = null;
+                        IEnumerable<IDCD> noContentItems = null;
+                        string type = string.Empty;
+                        if (content.type == IBIContentType.deal)
+                        {
+                            var imported = dc.DealRecordImportLogs.Where(d => d.ImportLog == _importingLogRecord);
+                            discrepancies = dc.Deals.Where(d => !imported.Any(dl => dl.RecordId == d.RecordId)).Select(i => (IDCD)i);
+                            olderItems = imported.Where(r => r.Notes == "Existing record has a newer Last Modified Date.").Select(r => (IDCD)dc.Deals.FirstOrDefault(c => c.RecordId == r.RecordId.Value));
+                            noContentItems = imported.Where(r => r.Notes == "Record does not have any content.").Select(r => (IDCD)dc.Deals.FirstOrDefault(c => c.RecordId == r.RecordId.Value));
+                            type = "deals";
+                        }
+                        else if (content.type == IBIContentType.company)
+                        {
+                            var imported = dc.CompanyRecordImportLogs.Where(c => c.ImportLog == _importingLogRecord);
+                            discrepancies = dc.Companies.Where(c => !imported.Any(co => co.RecordId == c.RecordId)).Select(i => (IDCD)i);
+                            olderItems = imported.Where(r => r.Notes == "Existing record has a newer Last Modified Date.").Select(r => (IDCD)dc.Companies.FirstOrDefault(c => c.RecordId == r.RecordId.Value));
+                            noContentItems = imported.Where(r => r.Notes == "Record does not have any content.").Select(r => (IDCD)dc.Companies.FirstOrDefault(c => c.RecordId == r.RecordId.Value));
+                            type = "companies";
+                        }
+                        else if (content.type == IBIContentType.drug)
+                        {
+                            var imported = dc.DrugRecordImportLogs.Where(d => d.ImportLog == _importingLogRecord);
+                            discrepancies = dc.Drugs.Where(d => !imported.Any(dl => dl.RecordId == d.RecordId)).Select(i => (IDCD)i);
+                            olderItems = imported.Where(r => r.Notes == "Existing record has a newer Last Modified Date.").Select(r => (IDCD)dc.Drugs.FirstOrDefault(c => c.RecordId == r.RecordId.Value));
+                            noContentItems = imported.Where(r => r.Notes == "Record does not have any content.").Select(r => (IDCD)dc.Drugs.FirstOrDefault(c => c.RecordId == r.RecordId.Value));
+                            type = "drugs";
+                        }
+
+                        //Send email if there are any discrepancies
+                        bool hasDiscrepancies = (discrepancies != null && discrepancies.Count() > 0);
+                        bool hasOlderItems = (olderItems != null && olderItems.Count() > 0);
+                        bool hasNoContentItems = noContentItems != null && noContentItems.Count() > 0;
+                        if (hasDiscrepancies || hasOlderItems || hasNoContentItems)
+                        {
+                            string subject = DCDConstants.BusinessAcronym + " discrepancy report for " + type + " import: " + _fileName;
+                            StringBuilder sb = new StringBuilder();
+                            sb.AppendLine("There were discrepancies when processing the full import file: " + _fileName);
+                            sb.AppendLine();
+                            if (hasDiscrepancies)
+                            {
+                                sb.AppendLine("These existing " + type + " were not altered by the import.");
+                                sb.AppendLine();
+                                foreach (var discrepancy in discrepancies)
+                                {
+                                    sb.AppendLine(discrepancy.RecordNumber + " - " + discrepancy.Title);
+                                }
+                            }
+
+                            if (hasOlderItems)
+                            {
+                                sb.AppendLine("These existing " + type + " have a newer modified date in the database.");
+                                sb.AppendLine();
+                                foreach (var olderItem in olderItems)
+                                {
+                                    sb.AppendLine(olderItem.RecordNumber + " - " + olderItem.Title);
+                                }
+                            }
+
+                            if (hasNoContentItems)
+                            {
+                                sb.AppendLine("These existing " + type + " do not have a <Content> node in their record.");
+                                sb.AppendLine();
+                                foreach (var noContentItem in noContentItems)
+                                {
+                                    sb.AppendLine(noContentItem.RecordNumber + " - " + noContentItem.Title);
+                                }
+                            }
+
+                            DCDImportLogger.SendNotification(subject, sb.ToString());
+                        }
+                    }
+                }
+
+                Event.RaiseEvent("dcdimport:end", content.type);
+                Sitecore.Eventing.EventManager.QueueEvent<DCDImportEndRemoteEvent>(new DCDImportEndRemoteEvent(content.type));
             }
             catch (Exception e)
             {
