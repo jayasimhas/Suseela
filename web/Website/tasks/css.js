@@ -8,14 +8,13 @@ var gulp          = require("gulp"),
     header        = require("gulp-header"),
     concat        = require("gulp-concat"),
     postcss       = require('gulp-postcss'),
-    debug         = require('gulp-debug'),
     sourcemaps    = require("gulp-sourcemaps");
 
 // css settings
 utils.setTaskConfig("css", {
     default: {
 
-        src: config.root + "/styles/index.scss",
+        src: config.root + "/styles/**/*.scss",
         dest: config.dest,
 
         filename: "index.css",
@@ -49,8 +48,6 @@ gulp.task("css", function() {
 
     var css = utils.loadTaskConfig("css");
 
-    console.log(css);
-
     var gulpCss = gulp.src(css.src)
         .pipe(utils.drano())
         .pipe(sourcemaps.init())
@@ -68,9 +65,6 @@ gulp.task("css", function() {
     }
 
     return gulpCss
-        .pipe(debug({title: "css-1: ", minimal: false}))
         .pipe(sourcemaps.write("./"))
-        .pipe(debug({title: "css-2: ", minimal: false}))
-        .pipe(gulp.dest(css.dest))
-        .pipe(debug({title: "css-3: ", minimal: false}));
+        .pipe(gulp.dest(css.dest));
 });
