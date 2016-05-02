@@ -46,23 +46,50 @@
     </div>
 
     <div class="search-bar__footer">
-        <div class="search-bar__headline-toggle" ng-controller="HeadlineSearchController as headline">
-            <input type="checkbox" id="headline-search" ng-model="searchHeadlines" ng-init="searchHeadlines = headline.init()" ng-click="headline.update()">
-            <label for="headline-search">
+
+        <div class="search-bar__footer-option"
+            ng-controller="HeadlineSearchController as headline">
+
+            <input
+                type="checkbox"
+                id="headline-search"
+                name="headline-search"
+                ng-model="searchHeadlines"
+                ng-init="searchHeadlines = headline.init()"
+                ng-click="headline.update()">
+
+            <label class="search-bar__headline-label" for="headline-search">
                 @Model.SearchSearchHeadlinesOnlyText
             </label>
-        </div>
-        
-        <div class="search-bar__headline-toggle onoffswitch js-view-headlines-only" ng-controller="HeadlineToggleController as toggle">
-            <input type="checkbox" name="headline-toggle" class="onoffswitch-checkbox" id="headline-toggle">
-            <label class="onoffswitch-label" for="headline-toggle" ng-click="headlinesOnly.updateValue()">
-                <span class="onoffswitch-inner"></span>
-                <span class="onoffswitch-switch"></span>
-            </label>
+
         </div>
 
-        <div class="search-bar__headline-label">
-            @Model.SearchViewHeadlinesOnlyText
+        <div class="search-bar__footer-option">
+            <div class="onoffswitch js-view-headlines-only"
+                ng-controller="HeadlineToggleController as toggle">
+
+                <input
+                    type="checkbox"
+                    name="headline-toggle"
+                    class="onoffswitch-checkbox"
+                    id="headline-toggle">
+
+                <label
+                    class="onoffswitch-label"
+                    for="headline-toggle"
+                    ng-click="headlinesOnly.updateValue()">
+
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+
+                </label>
+
+            </div>
+
+            <label class="search-bar__headline-label" for="headline-toggle">
+                @Model.SearchViewHeadlinesOnlyText
+            </label>
+
         </div>
 
     </div>

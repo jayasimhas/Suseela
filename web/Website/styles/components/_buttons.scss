@@ -73,8 +73,10 @@ a.button {
 }
 
 .onoffswitch {
-    position: relative;
+	display: inline-block;
+	vertical-align: middle;
 	width: 47px;
+    position: relative;
     -webkit-user-select:none;
 	-moz-user-select:none;
 	-ms-user-select: none;
