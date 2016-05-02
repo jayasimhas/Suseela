@@ -169,6 +169,16 @@
             display: inline-block;
             margin-right: 1.5rem;
             vertical-align: middle;
+
+            input[type=checkbox] {
+                vertical-align: middle;
+            }
+
+            @include breakpoint('small') {
+                display: block;
+                margin-bottom: 1rem;
+                margin-right: 0;
+            }
         }
     }
 
