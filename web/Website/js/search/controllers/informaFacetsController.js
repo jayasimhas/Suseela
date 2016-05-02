@@ -138,11 +138,9 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
             facet.selected = false;
         });
 
-        vm.update();
-
         _.each(facetIds, function(id) {
             var facet = vm.searchService.getFacet(id);
-            if (facet) {
+            if (facet) {    
                 facet.selected = true;
             }
         });

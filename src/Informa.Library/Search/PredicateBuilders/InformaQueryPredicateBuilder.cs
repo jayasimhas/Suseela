@@ -6,7 +6,6 @@ using Informa.Library.Search.Results;
 using Informa.Library.Utilities.References;
 using Sitecore.ContentSearch.Linq;
 using Sitecore.ContentSearch.Linq.Utilities;
-using Sitecore.Mvc.Extensions;
 using Velir.Search.Core.Models;
 using Velir.Search.Core.PredicateBuilders;
 
