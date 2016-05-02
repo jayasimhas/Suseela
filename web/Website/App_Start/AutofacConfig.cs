@@ -14,45 +14,46 @@ using Informa.Library.CustomSitecore.Mvc;
 using Informa.Library.Utilities.Autofac.Modules;
 using Informa.Web.Controllers;
 using Informa.Web.Controllers.Search;
+using Jabberwocky.Autofac.Extras.MiniProfiler;
 using Velir.Search.Autofac.Modules;
 
 namespace Informa.Web.App_Start
 {
-    public static class AutofacConfig
-    {
-        private const string WebsiteDll = "Informa.Web";
-        private const string LibraryDll = "Informa.Library";
-        private const string ModelsDll = "Informa.Models";
-        private const string VelirSearchDll = "Velir.Search.Core";
+	public static class AutofacConfig
+	{
+		private const string WebsiteDll = "Informa.Web";
+		private const string LibraryDll = "Informa.Library";
+		private const string ModelsDll = "Informa.Models";
+		private const string VelirSearchDll = "Velir.Search.Core";
 
-        private const string GlassMapperDll = "Glass.Mapper";
-        private const string GlassMapperScDll = "Glass.Mapper.Sc";
-        private const string GlassMapperMvcDll = "Glass.Mapper.Sc.Mvc";
+		private const string GlassMapperDll = "Glass.Mapper";
+		private const string GlassMapperScDll = "Glass.Mapper.Sc";
+		private const string GlassMapperMvcDll = "Glass.Mapper.Sc.Mvc";
 
-        public static void Start()
-        {
-            var builder = new ContainerBuilder();
+		public static void Start()
+		{
+			var builder = new ContainerBuilder();
 
-            // Auto-Wire
-            builder.AutowireDependencies(assemblyNames: new[] { LibraryDll, WebsiteDll, });
+			// Auto-Wire
+			builder.AutowireDependencies(assemblyNames: new[] { LibraryDll, WebsiteDll, });
 
-            builder.RegisterGlassServices();
-            builder.RegisterCacheServices();
-            builder.RegisterProcessors(new[] { WebsiteDll, LibraryDll });
-            builder.RegisterGlassMvcServices(WebsiteDll);
-            builder.RegisterGlassFactory(LibraryDll, VelirSearchDll, ModelsDll);
-            builder.RegisterApiControllers(Assembly.GetExecutingAssembly()).WithAttributeFilter();
-            builder.RegisterControllers(Assembly.GetExecutingAssembly()).WithAttributeFilter();
-            builder.RegisterType<CustomSitecoreHelper>().AsSelf();
-	        builder.RegisterType<ArticleUtil>().AsSelf();			
+			builder.RegisterGlassServices();
+			builder.RegisterCacheServices();
+			builder.RegisterProcessors(new[] { WebsiteDll, LibraryDll });
+			builder.RegisterGlassMvcServices(WebsiteDll);
+			builder.RegisterGlassFactory(LibraryDll, VelirSearchDll, ModelsDll);
+			builder.RegisterApiControllers(Assembly.GetExecutingAssembly()).WithAttributeFilter();
+			builder.RegisterControllers(Assembly.GetExecutingAssembly()).WithAttributeFilter();
+			builder.RegisterType<CustomSitecoreHelper>().AsSelf();
+			builder.RegisterType<ArticleUtil>().AsSelf();
 			builder.RegisterType<SitecoreSaverUtil>().AsSelf();
 			builder.RegisterType<EmailUtil>().AsSelf();
 
 			//Velir Search Library
 			builder.RegisterModule<SearchDependenciesModule>();
-            builder.RegisterModule<SearchModule>();
-            builder.RegisterModule<SolrSearchModule>();
-            SearchRegistrar.RegisterDependencies(builder);
+			builder.RegisterModule<SearchModule>();
+			builder.RegisterModule<SolrSearchModule>();
+			SearchRegistrar.RegisterDependencies(builder);
 
 			SessionRegistrar.RegisterDependencies(builder);
 			AuthenticationRegistrar.RegisterDependencies(builder);
@@ -60,7 +61,7 @@ namespace Informa.Web.App_Start
 			UserRegistrar.RegisterDependencies(builder);
 			RegistrationRegistrar.RegisterDependencies(builder);
 			CompanyRegistrar.RegisterDependencies(builder);
-            NlmRegistrar.RegisterDependencies(builder);
+			NlmRegistrar.RegisterDependencies(builder);
 			ScheduledPublishingRegistrar.RegisterDependencies(builder);
 			SiteDebuggingRegistrar.RegisterDependencies(builder);
 			LoggingRegistrar.RegisterDependencies(builder);
@@ -68,26 +69,29 @@ namespace Informa.Web.App_Start
 
 			// Custom Modules
 			builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));
-            builder.RegisterModule(new AutomapperModule(LibraryDll));
+			builder.RegisterModule(new AutomapperModule(LibraryDll));
 
+#if DEBUG
+			builder.RegisterModule(new MiniProfilerModule(WebsiteDll, LibraryDll, VelirSearchDll, GlassMapperDll, GlassMapperScDll, GlassMapperMvcDll));
+#endif
 
-            // Custom Registrations
-            CustomMvcRegistrar.RegisterDependencies(builder, WebsiteDll);
-            GlassMapperRegistrar.RegisterDependencies(builder);
+			// Custom Registrations
+			CustomMvcRegistrar.RegisterDependencies(builder, WebsiteDll);
+			GlassMapperRegistrar.RegisterDependencies(builder);
 
-            // This is necessary to 'seal' the container, and make it resolvable from the AutofacStartup.ServiceLocator singleton
-            IContainer container = builder.Build();
-            container.RegisterContainer();
+			// This is necessary to 'seal' the container, and make it resolvable from the AutofacStartup.ServiceLocator singleton
+			IContainer container = builder.Build();
+			container.RegisterContainer();
 
-            // Create the dependency resolver.
-            var resolver = new AutofacWebApiDependencyResolver(container);
+			// Create the dependency resolver.
+			var resolver = new AutofacWebApiDependencyResolver(container);
 
-            // Configure Web API with the dependency resolver.
-            GlobalConfiguration.Configuration.DependencyResolver = resolver;
+			// Configure Web API with the dependency resolver.
+			GlobalConfiguration.Configuration.DependencyResolver = resolver;
 
-            // Configure MVC with dependency resolver
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-        }
+			// Configure MVC with dependency resolver
+			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+		}
 
-    }
+	}
 }

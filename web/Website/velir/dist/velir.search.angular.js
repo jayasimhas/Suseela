@@ -178,7 +178,9 @@
                                 search_Keyword: '"' + this.keywords + '"'
                             };
                             var dataObj = $.extend(analytics_data, eventDetails);
-                            utag.link(dataObj);
+                            if (typeof utag !== 'undefined') {
+                                utag.link(dataObj);
+                            }
                         }
                     }
                     ]);

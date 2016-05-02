@@ -822,10 +822,7 @@
     <Compile Include="ViewModels\IArticlePrologueShareViewModel.cs" />
     <Compile Include="ViewModels\IArticleTagsViewModel.cs" />
     <Compile Include="ViewModels\IPersonModel.cs" />
-    <Compile Include="ViewModels\IFooterViewModel.cs" />
-    <Compile Include="ViewModels\IHeaderViewModel.cs" />
     <Compile Include="ViewModels\IMaintenanceViewModel.cs" />
-    <Compile Include="ViewModels\ISideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\MainLayoutViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailArticlePopOutViewModel.cs" />
