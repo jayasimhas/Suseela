@@ -13,6 +13,7 @@ using Informa.Library.Article.Search;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.DCD;
 using Informa.Web.ViewModels;
+using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Web.Models
 {
@@ -62,7 +63,7 @@ namespace Informa.Web.Models
 
 
 				IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-				filter.ArticleNumber = articleNumber;
+				filter.ArticleNumbers = articleNumber.SingleToList();
 				var results = ArticleSearch.Search(filter);
 
 				HtmlString replace = new HtmlString("");
@@ -91,7 +92,7 @@ namespace Informa.Web.Models
 				string articleNumber = match.Groups[1].Value;
 
 				IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-				filter.ArticleNumber = articleNumber;
+				filter.ArticleNumbers = articleNumber.SingleToList();
 				var results = ArticleSearch.Search(filter);
 
 				HtmlString replace = new HtmlString("");

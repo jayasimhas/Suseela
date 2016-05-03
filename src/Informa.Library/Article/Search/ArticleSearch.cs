@@ -41,7 +41,7 @@ namespace Informa.Library.Article.Search
             {
                 ExcludeManuallyCuratedItems = new List<Guid>(),
                 TaxonomyIds = new List<Guid>(),
-                ArticleNumber = string.Empty
+                ArticleNumbers = new List<string>()
             };
         }
 
@@ -53,7 +53,7 @@ namespace Informa.Library.Article.Search
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
                     .FilterTaxonomies(filter)
                     .ExcludeManuallyCurated(filter)
-                    .FilteryByArticleNumber(filter)
+                    .FilteryByArticleNumbers(filter)
                     .FilteryByEScenicID(filter)
                     .FilteryByRelatedId(filter)
                     .FilteryByLatestVersionAndCurrentLanguage();
@@ -88,7 +88,7 @@ namespace Informa.Library.Article.Search
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
                     .FilterTaxonomies(filter)
                     .ExcludeManuallyCurated(filter)
-                    .FilteryByArticleNumber(filter)
+                    .FilteryByArticleNumbers(filter)
                     .FilteryByEScenicID(filter)
                                         .FilteryByLatestVersionAndCurrentLanguage();
 

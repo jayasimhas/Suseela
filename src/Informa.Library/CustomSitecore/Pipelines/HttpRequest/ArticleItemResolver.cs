@@ -20,6 +20,7 @@ using Sitecore.IO;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.SecurityModel;
 using Sitecore.Sites;
+using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 {
@@ -52,7 +53,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
             IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
             filter.PageSize = 1;
             filter.Page = 1;
-            filter.ArticleNumber = numFormat;
+            filter.ArticleNumbers = numFormat.SingleToList();
 
             var results = ArticleSearcher.Search(filter);
             if (!results.Articles.Any())

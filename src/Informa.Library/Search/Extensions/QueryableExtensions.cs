@@ -29,16 +29,17 @@ namespace Informa.Library.Search.Extensions
             return source.Filter(predicate);
         }
 
-		public static IQueryable<T> FilteryByArticleNumber<T>(this IQueryable<T> source, IArticleNumberFilter filter)
+		public static IQueryable<T> FilteryByArticleNumbers<T>(this IQueryable<T> source, IArticleNumbersFilter filter)
 				where T : IArticleNumber
 		{
-			if (source == null || filter == null || string.IsNullOrEmpty(filter.ArticleNumber))
+			if (source == null || filter == null || !filter.ArticleNumbers.Any())
 			{
 				return source;
 			}
 
 			var predicate = PredicateBuilder.True<T>();
-			predicate = predicate.Or(i => i.ArticleNumber == filter.ArticleNumber);
+
+			predicate = filter.ArticleNumbers.Aggregate(predicate, (current, f) => current.Or(an => an.ArticleNumber == f));
 
 			return source.Filter(predicate);
 		}

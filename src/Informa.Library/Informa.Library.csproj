@@ -329,9 +329,15 @@
     <Compile Include="Publishing\Events\PublishItemProcessing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishingDateTime.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishingDateTime.cs" />
+    <Compile Include="Purchase\ArticlePurchaseItem.cs" />
+    <Compile Include="Purchase\ArticlePurchaseItemsFactory.cs" />
     <Compile Include="Purchase\IArticlePurchase.cs" />
+    <Compile Include="Purchase\IArticlePurchaseItem.cs" />
+    <Compile Include="Purchase\IArticlePurchaseItemsFactory.cs" />
     <Compile Include="Purchase\User\IFindUserArticlePurchases.cs" />
+    <Compile Include="Purchase\User\IUserArticlePurchaseItemsContext.cs" />
     <Compile Include="Purchase\User\IUserArticlePurchasesContext.cs" />
+    <Compile Include="Purchase\User\UserArticlePurchaseItemsContext.cs" />
     <Compile Include="Purchase\User\UserArticlePurchasesContext.cs" />
     <Compile Include="Rss\FeedGenerators\BaseInformaFeedGenerator.cs" />
     <Compile Include="Rss\FeedGenerators\SearchFeedGenerator.cs" />
@@ -782,7 +788,7 @@
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultTitleField.cs" />
     <Compile Include="Search\Extensions\QueryableExtensions.cs" />
     <Compile Include="Search\Filter\IArticleEScenicIDFilter.cs" />
-    <Compile Include="Search\Filter\IArticleNumberFilter.cs" />
+    <Compile Include="Search\Filter\IArticleNumbersFilter.cs" />
     <Compile Include="Search\Filter\ITaxonomySearchFilter.cs" />
     <Compile Include="Search\IProviderSearchContextFactory.cs" />
     <Compile Include="Search\PredicateBuilders\InformaFilterPredicateBuilder.cs" />
@@ -952,6 +958,7 @@
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Utilities\Extensions\ItemExtensions.cs" />
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
+    <Compile Include="Utilities\Extensions\GenericsExtensions.cs" />
     <Compile Include="Utilities\Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\References\Constants.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />

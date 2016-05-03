@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Informa.Library.Article.Search;
+using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Library.Utilities.TokenMatcher
 {
@@ -107,7 +108,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 				IArticleSearch ArticleSearch = DependencyResolver.Current.GetService<IArticleSearch>();
 				IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-				filter.ArticleNumber = articleNumber;
+				filter.ArticleNumbers = articleNumber.SingleToList();
 				var results = ArticleSearch.Search(filter);
 
 				HtmlString replace = new HtmlString("");

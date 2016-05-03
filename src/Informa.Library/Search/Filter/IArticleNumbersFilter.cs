@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Informa.Library.Search.Filter
 {
-    public interface IArticleNumberFilter
+    public interface IArticleNumbersFilter
     {
-        string ArticleNumber { get; set; }
+        IList<string> ArticleNumbers { get; set; }
     }
 
     public interface IReferencedArticleFilter

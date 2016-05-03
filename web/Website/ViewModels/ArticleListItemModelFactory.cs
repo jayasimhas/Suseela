@@ -69,7 +69,7 @@ namespace Informa.Web.ViewModels
 	    public IListableViewModel Create(string articleNumber)
 	    {
             IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-            filter.ArticleNumber = articleNumber;
+            filter.ArticleNumbers = articleNumber.SingleToList();
 	        var results = ArticleSearch.Search(filter);
             if (results.Articles.Any())
             {

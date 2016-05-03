@@ -23,6 +23,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.Data.Items;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
+using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Web.Areas.Article.Controllers
 {
@@ -359,7 +360,7 @@ namespace Informa.Web.Areas.Article.Controllers
 	    protected IArticle GetArticle(string articleNumber)
 	    {
             IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-            filter.ArticleNumber = articleNumber;
+            filter.ArticleNumbers = articleNumber.SingleToList();
             return ArticleSearch.Search(filter).Articles.FirstOrDefault();            
         }
 
