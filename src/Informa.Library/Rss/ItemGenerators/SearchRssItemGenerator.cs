@@ -65,23 +65,34 @@ namespace Informa.Library.Rss.ItemGenerators
                 foreach (var author in article.Authors)
                 {
                     var authorName = author.First_Name + " " + author.Last_Name;
-                    var authorEmail = author.Email_Address;
-
-                    //TamerM - 2016-04-30: if email is present output email only else name (ticket IIS-59)
-                    if (string.IsNullOrEmpty(authorEmail))
+                    if (string.IsNullOrEmpty(authorName))
                     {
-                        if (string.IsNullOrEmpty(authorName))
-                        {
-                            authorName = author._Name;
-                        }
+                        authorName = author._Name;
+                    }
 
-                        syndicationItem.Authors.Add(new SyndicationPerson(string.Empty, HttpUtility.HtmlEncode(authorName), string.Empty));
-                    }
-                    else
-                    {
-                        syndicationItem.Authors.Add(new SyndicationPerson(authorEmail));
-                    }
+                    syndicationItem.Authors.Add(new SyndicationPerson(author.Email_Address, HttpUtility.HtmlEncode(authorName), ""));
                 }
+
+                //foreach (var author in article.Authors)
+                //{
+                //    var authorName = author.First_Name + " " + author.Last_Name;
+                //    var authorEmail = author.Email_Address;
+
+                //    //TamerM - 2016-04-30: if email is present output email only else name (ticket IIS-59)
+                //    if (string.IsNullOrEmpty(authorEmail))
+                //    {
+                //        if (string.IsNullOrEmpty(authorName))
+                //        {
+                //            authorName = author._Name;
+                //        }
+
+                //        syndicationItem.Authors.Add(new SyndicationPerson(string.Empty, HttpUtility.HtmlEncode(authorName), string.Empty));
+                //    }
+                //    else
+                //    {
+                //        syndicationItem.Authors.Add(new SyndicationPerson(authorEmail));
+                //    }
+                //}
             }
 
             return syndicationItem;
