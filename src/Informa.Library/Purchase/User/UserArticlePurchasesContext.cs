@@ -27,11 +27,11 @@ namespace Informa.Library.Purchase.User
 		{
 			get
 			{
-				var subscriptionSession = UserSession.Get<IEnumerable<IArticlePurchase>>(sessionKey);
+				var session = UserSession.Get<IEnumerable<IArticlePurchase>>(sessionKey);
 
-				if (subscriptionSession.HasValue)
+				if (session.HasValue)
 				{
-					return subscriptionSession.Value;
+					return session.Value;
 				}
 
 				var subscriptions = ArticlesPurchases = FindArticlePurchases.Find(UserContext.User.Username);

@@ -1,5 +1,4 @@
-﻿using Glass.Mapper.Sc;
-using Informa.Library.Article.Search;
+﻿using Informa.Library.Article.Search;
 using Jabberwocky.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +8,11 @@ namespace Informa.Library.Purchase
 	[AutowireService]
 	public class ArticlePurchaseItemsFactory : IArticlePurchaseItemsFactory
 	{
-		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly IArticleSearch ArticleSearch;
 
 		public ArticlePurchaseItemsFactory(
-			ISitecoreContext sitecoreContext,
 			IArticleSearch articleSearch)
 		{
-			SitecoreContext = sitecoreContext;
 			ArticleSearch = articleSearch;
 		}
 
