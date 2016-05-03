@@ -1,11 +1,13 @@
 ﻿using Informa.Library.Purchase;
 using Informa.Library.Purchase.User;
 using Informa.Library.User.Authentication;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Jabberwocky.Glass.Models;
 using System.Collections.Generic;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
-	public class ArticlePurchasesViewModel
+	public class ArticlePurchasesViewModel : GlassViewModel<IGlassBase>
 	{
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IUserArticlePurchaseItemsContext UserArticlePurchaseItemsContext;
@@ -18,6 +20,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 			UserArticlePurchaseItemsContext = userArticlePurchaseItemsContext;
 		}
 
+		public string Title => "Purchases";
 		public bool IsAuthenticated => UserContext.IsAuthenticated;
 		public string PublicationHeading => "Publication";
 		public string TitleHeading => "Title";
