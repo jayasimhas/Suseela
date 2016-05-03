@@ -286,11 +286,37 @@ $(document).ready(function() {
         observe: '.form-save-search',
         successCallback: function() {
             toggleIcons('.js-save-search');
+            // If there's a stashed search, remove it.
+            Cookies.remove('saveStashedSearch');
         },
         failureCallback: function() {
-            
+
         }
     });
+
+    var saveSearchLoginController = new FormController({
+        observe: '.form-save-search-login',
+        successCallback: function() {
+            Cookies.set('saveStashedSearch', {
+                'Title': $('.js-save-search-title').val(),
+                'Url': $('.js-save-search-url').val(),
+                'AlertEnabled': $('#AlertEnabled').prop('checked')
+            });
+        }
+    });
+
+    // On page load, check for any stashed searches that need to be saved
+    var saveStashedSearch = Cookies.getJSON('saveStashedSearch');
+    if(saveStashedSearch) {
+
+        // Set `Save Search` values from stashed search data
+        $('.js-save-search-title').val(saveStashedSearch['Title']);
+        $('.js-save-search-url').val(saveStashedSearch['Url']);
+        $('#AlertEnabled').prop('checked', saveStashedSearch['AlertEnabled']);
+
+        // Save the stashed search
+        $('.form-save-search').find('button[type=submit]').click();
+    }
 
     var userPreRegistrationController = new FormController({
         observe: '.form-pre-registration',
@@ -393,7 +419,7 @@ $(document).ready(function() {
             $(evt.target).closest('tr').remove();
         }
     });
-    
+
     svg4everybody();
 
     /* * *
