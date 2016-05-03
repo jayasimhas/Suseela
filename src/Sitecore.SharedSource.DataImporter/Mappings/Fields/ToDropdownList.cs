@@ -9,7 +9,7 @@ using Sitecore.SharedSource.DataImporter.Providers;
 namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 {
  
-    public class ToDropdownList : ToText, IBaseField
+    public class ToDropdownList : ToText
     {
         #region properties
 

@@ -2427,5 +2427,23 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 		}
 	}
 
+	public class ToArticleNumber : ToText
+	{
+		public ToArticleNumber(Item i) : base(i)
+		{
+		}
+
+		public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+		{
+			var pmbiDatamap = map as PmbiDataMap;
+			if (pmbiDatamap != null)
+			{
+				var f = newItem.Fields[NewItemField];
+				var prefix = pmbiDatamap.ArticleNumberPrefix;
+				f.Value = $"{prefix}{(++pmbiDatamap.ArticleNumber).ToString("D6")}";
+			}			
+		}	
+	}
+
     #endregion Scrip
 }
