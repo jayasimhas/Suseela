@@ -1171,7 +1171,6 @@
     <Folder Include="GlassMaps\" />
     <Folder Include="js\search\services\" />
     <Folder Include="packages\" />
-    <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
   </ItemGroup>
   <ItemGroup>
@@ -1295,6 +1294,8 @@
     <Content Include="Views\Shared\Components\JavascriptComponent.cshtml" />
     <Content Include="Views\Shared\Global\MetaNoIndex.cshtml" />
     <Content Include="Views\Shared\PopOuts\SaveSearch.cshtml" />
+    <Content Include="Views\Shared\Layouts\EmailLayout.cshtml" />
+    <Content Include="Views\EmailComponents\FeaturedContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

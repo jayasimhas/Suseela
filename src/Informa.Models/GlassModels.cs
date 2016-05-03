@@ -492,6 +492,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
+{
+
+
+ 	/// <summary>
+	/// IEmails_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Emails/Emails Folder</para>	
+	/// <para>ID: 0736bd0b-f22f-4496-8881-3e2da3a80680</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IEmails_FolderConstants.TemplateIdString)]
+	public partial interface IEmails_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+	{
+				}
+
+	
+		/// <summary>
+		/// IEmails_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Emails/Emails Folder</para>	
+		/// <para>ID: 0736bd0b-f22f-4496-8881-3e2da3a80680</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IEmails_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
+		{
+						}
+	
+	public static partial class IEmails_FolderConstants{
+
+			public const string TemplateIdString = "0736bd0b-f22f-4496-8881-3e2da3a80680";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Emails Folder";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match
 {
 
@@ -5677,6 +5715,164 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
+{
+
+
+ 	/// <summary>
+	/// IExactTarget_Email Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Emails/ExactTarget Email</para>	
+	/// <para>ID: 5b1307c3-8126-491f-ab72-177516787e74</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IExactTarget_EmailConstants.TemplateIdString)]
+	public partial interface IExactTarget_Email : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___CanonicalPage
+	{
+								/// <summary>
+					/// The Character Set field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 019f1ca1-f5f8-40ce-93d3-f7ebeaa8dc0d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.Character_SetFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Character_Set  {get; set;}
+								/// <summary>
+					/// The Subject field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 8409213e-9efa-4019-93c2-432fbfa5c177</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Subject  {get; set;}
+								/// <summary>
+					/// The Text Body field.
+					/// <para>Backup text for email clients that don't display HTML</para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 15746d06-6e3d-4809-9e91-79fe36e34735</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.Text_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Text_Body  {get; set;}
+								/// <summary>
+					/// The Category Id field.
+					/// <para>The CID of the folder where the email will be stored in ExactTarget.</para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 05feb882-d3ad-4026-90e5-c6435a13ad5f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.Category_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Category_Id  {get; set;}
+								/// <summary>
+					/// The ET Email Id field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 7b5f7284-2faf-4566-b626-07fbd93101f2</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.ET_Email_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string ET_Email_Id  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IExactTarget_Email Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Emails/ExactTarget Email</para>	
+		/// <para>ID: 5b1307c3-8126-491f-ab72-177516787e74</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IExactTarget_Email__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___CanonicalPage__Raw
+		{
+										/// <summary>
+						/// The Character Set field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 019f1ca1-f5f8-40ce-93d3-f7ebeaa8dc0d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.Character_SetFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Character_Set  {get; set;}
+										/// <summary>
+						/// The Subject field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 8409213e-9efa-4019-93c2-432fbfa5c177</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Subject  {get; set;}
+										/// <summary>
+						/// The Text Body field.
+						/// <para>Backup text for email clients that don't display HTML</para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 15746d06-6e3d-4809-9e91-79fe36e34735</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.Text_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Text_Body  {get; set;}
+										/// <summary>
+						/// The Category Id field.
+						/// <para>The CID of the folder where the email will be stored in ExactTarget.</para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 05feb882-d3ad-4026-90e5-c6435a13ad5f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.Category_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Category_Id  {get; set;}
+										/// <summary>
+						/// The ET Email Id field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 7b5f7284-2faf-4566-b626-07fbd93101f2</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.ET_Email_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string ET_Email_Id  {get; set;}
+						}
+	
+	public static partial class IExactTarget_EmailConstants{
+
+			public const string TemplateIdString = "5b1307c3-8126-491f-ab72-177516787e74";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "ExactTarget Email";
+
+					
+			public static readonly ID Character_SetFieldId = new ID("019f1ca1-f5f8-40ce-93d3-f7ebeaa8dc0d");
+			public const string Character_SetFieldName = "Character Set";
+
+						
+					
+			public static readonly ID SubjectFieldId = new ID("8409213e-9efa-4019-93c2-432fbfa5c177");
+			public const string SubjectFieldName = "Subject";
+
+						
+					
+			public static readonly ID Text_BodyFieldId = new ID("15746d06-6e3d-4809-9e91-79fe36e34735");
+			public const string Text_BodyFieldName = "Text Body";
+
+						
+					
+			public static readonly ID Category_IdFieldId = new ID("05feb882-d3ad-4026-90e5-c6435a13ad5f");
+			public const string Category_IdFieldName = "Category Id";
+
+						
+					
+			public static readonly ID ET_Email_IdFieldId = new ID("7b5f7284-2faf-4566-b626-07fbd93101f2");
+			public const string ET_Email_IdFieldName = "ET Email Id";
+
+						
+					
+			public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+			public const string Canonical_LinkFieldName = "Canonical Link";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action
 {
 
@@ -8873,6 +9069,136 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.F
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Import Map Folder";
 
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.Components
+{
+
+
+ 	/// <summary>
+	/// IFeatured_Content Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Emails/Components/Featured Content</para>	
+	/// <para>ID: 8e5f9643-90f9-47d6-a90c-c6a3c9699801</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IFeatured_ContentConstants.TemplateIdString)]
+	public partial interface IFeatured_Content : IGlassBase 
+	{
+								/// <summary>
+					/// The Headline field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: a28655b8-e103-40c4-830d-6c2f65a44e32</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ContentConstants.HeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Headline  {get; set;}
+								/// <summary>
+					/// The Image field.
+					/// <para></para>
+					/// <para>Field Type: General Link with Search</para>		
+					/// <para>Field ID: ccd7f4f2-1fa2-441e-865a-19a72fe91fd0</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ContentConstants.ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Image  {get; set;}
+								/// <summary>
+					/// The Read More Url field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 0ec4b370-65b6-4a87-a927-e3204fb4ee81</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ContentConstants.Read_More_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Read_More_Url  {get; set;}
+								/// <summary>
+					/// The Text field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: f089d880-b8de-4f27-99c3-2b131620ac51</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ContentConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Text  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IFeatured_Content Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Emails/Components/Featured Content</para>	
+		/// <para>ID: 8e5f9643-90f9-47d6-a90c-c6a3c9699801</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IFeatured_Content__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Headline field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: a28655b8-e103-40c4-830d-6c2f65a44e32</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ContentConstants.HeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Headline  {get; set;}
+										/// <summary>
+						/// The Image field.
+						/// <para></para>
+						/// <para>Field Type: General Link with Search</para>		
+						/// <para>Field ID: ccd7f4f2-1fa2-441e-865a-19a72fe91fd0</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ContentConstants.ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Image  {get; set;}
+										/// <summary>
+						/// The Read More Url field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 0ec4b370-65b6-4a87-a927-e3204fb4ee81</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ContentConstants.Read_More_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Read_More_Url  {get; set;}
+										/// <summary>
+						/// The Text field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: f089d880-b8de-4f27-99c3-2b131620ac51</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ContentConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Text  {get; set;}
+						}
+	
+	public static partial class IFeatured_ContentConstants{
+
+			public const string TemplateIdString = "8e5f9643-90f9-47d6-a90c-c6a3c9699801";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Featured Content";
+
+					
+			public static readonly ID HeadlineFieldId = new ID("a28655b8-e103-40c4-830d-6c2f65a44e32");
+			public const string HeadlineFieldName = "Headline";
+
+						
+					
+			public static readonly ID ImageFieldId = new ID("ccd7f4f2-1fa2-441e-865a-19a72fe91fd0");
+			public const string ImageFieldName = "Image";
+
+						
+					
+			public static readonly ID Read_More_UrlFieldId = new ID("0ec4b370-65b6-4a87-a927-e3204fb4ee81");
+			public const string Read_More_UrlFieldName = "Read More Url";
+
+						
+					
+			public static readonly ID TextFieldId = new ID("f089d880-b8de-4f27-99c3-2b131620ac51");
+			public const string TextFieldName = "Text";
+
+						
 			
 
 	}
