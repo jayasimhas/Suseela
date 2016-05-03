@@ -18,7 +18,7 @@ namespace Informa.Library.Purchase
 
 		public IEnumerable<IArticlePurchaseItem> Create(IEnumerable<IArticlePurchase> articlePurchases)
 		{
-			if (!articlePurchases.Any())
+			if (articlePurchases == null || !articlePurchases.Any())
 			{
 				return Enumerable.Empty<IArticlePurchaseItem>();
 			}
