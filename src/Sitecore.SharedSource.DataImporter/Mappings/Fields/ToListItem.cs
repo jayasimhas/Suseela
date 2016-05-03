@@ -10,7 +10,7 @@ using Sitecore.SharedSource.DataImporter.Providers;
 namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 {
 
-    public class ToListItem : ToText, IBaseField
+    public class ToListItem : ToText
     {
         #region properties
             

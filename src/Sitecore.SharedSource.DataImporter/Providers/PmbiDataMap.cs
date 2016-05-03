@@ -7,17 +7,32 @@ using System.Threading.Tasks;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.SharedSource.DataImporter.Logger;
+using Sitecore.SharedSource.DataImporter.Mappings.Properties;
 
 namespace Sitecore.SharedSource.DataImporter.Providers
 {
 	public class PmbiDataMap : SitecoreDataMap
 	{
+		public string ArticleNumberPrefix { get; set; }
+		public int ArticleNumber { get; set; }
 		public PmbiDataMap(Database db, string connectionString, Item importItem, ILogger l) : base(db, connectionString, importItem, l)
 		{
+			ArticleNumberPrefix = GetArticleNumberPrefix(importItem);
+			var val = importItem.Fields["Last Article Number"].Value;
+			if (string.IsNullOrWhiteSpace(val))
+			{
+				ArticleNumber = 0;
+			}
+			else
+			{
+				int articleNumber;
+				int.TryParse(importItem.Fields["Last Article Number"].Value, out articleNumber);
+				ArticleNumber = articleNumber;
+			}			
 		}
 
 		/// <summary>
-		/// Get 
+		/// Get Import items from specified start path, template id and year
 		/// </summary>
 		/// <returns></returns>
 		public override IEnumerable<object> GetImportData()
@@ -39,34 +54,42 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 					articles =
 						startItem.Axes.GetDescendants()
 							.Where(i => i.TemplateID.ToString() == TemplateId);
-				}				
+				}
 				sw.Stop();
 				Logger.Log("Performance Statistic", $"Used {sw.Elapsed.TotalSeconds} to Find matches");
 			}
-			
+
 			return articles;
 		}
 
-		protected void GetArticles(Item startItem, IList<Item> list)
+		protected string GetArticleNumberPrefix(Item item)
 		{
-			var parent = startItem;	
-			// Root is null		
-			if (parent == null)
+			var result = string.Empty;
+
+			switch (item.Parent.Name)
 			{
-				return;
+				case "The Pink Sheet":
+					result = "PS";
+					break;
+				case "Medtech Insight":
+					result = "MI";
+					break;
+				case "In Vivo":
+					result = "IV";
+					break;
+				case "The Rose Sheet":
+					result = "RS";
+					break;
 			}
-			// Add root to list
-			list.Add(parent);
-			// The last node in the branch
-			if (!parent.HasChildren)
+
+			return result;
+		}
+
+		public void SetArticleNumber()
+		{
+			using (new EditContext(ImportItem, true, false))
 			{
-				return;
-			}
-			// Recursively get children
-			var count = parent.Children.Count;
-            for (int i = 0; i < count; i++)
-			{
-				GetArticles(parent.Children[i], list);
+				ImportItem.Fields["Last Article Number"].Value = ArticleNumber.ToString();
 			}
 		}
 	}

@@ -6320,7 +6320,71 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Blood Disorders.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Cancer.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Cardiology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Dermatology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Gastroenterology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Gynecology and Urology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Immunology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Metabolic.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Neurology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Ophthalmology.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Orthopedics.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Respiratory.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Device Areas\Wound Management.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Industries.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Industries\BioPharmaceutical.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Industries\Consumer.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Taxonomy\Industries\Medical Device.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>

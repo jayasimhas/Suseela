@@ -9882,6 +9882,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 	public partial interface ISitecore_Import_Map : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map
 	{
 								/// <summary>
+					/// The Last Article Number field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 5ff74032-efc8-401a-beb6-e459a9815585</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISitecore_Import_MapConstants.Last_Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Last_Article_Number  {get; set;}
+								/// <summary>
 					/// The Start Path field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -9939,6 +9948,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 		public partial interface ISitecore_Import_Map__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map__Raw
 		{
 										/// <summary>
+						/// The Last Article Number field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 5ff74032-efc8-401a-beb6-e459a9815585</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISitecore_Import_MapConstants.Last_Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Last_Article_Number  {get; set;}
+										/// <summary>
 						/// The Start Path field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -9991,6 +10009,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Sitecore Import Map";
 
+					
+			public static readonly ID Last_Article_NumberFieldId = new ID("5ff74032-efc8-401a-beb6-e459a9815585");
+			public const string Last_Article_NumberFieldName = "Last Article Number";
+
+						
 					
 			public static readonly ID Start_PathFieldId = new ID("059f68ff-e3e0-49af-8287-68f4faaa364a");
 			public const string Start_PathFieldName = "Start Path";

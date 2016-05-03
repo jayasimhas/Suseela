@@ -91,7 +91,9 @@ namespace Sitecore.SharedSource.DataImporter {
                 }
             }
 
-            //if no messages then you're good
+	        (DataMap as PmbiDataMap)?.SetArticleNumber();
+
+	        //if no messages then you're good
             if (!Logger.LoggedError)
                 Logger.Log("Success", "the import completed successfully");
 
