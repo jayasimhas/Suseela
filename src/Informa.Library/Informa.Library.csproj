@@ -390,6 +390,12 @@
     <Compile Include="User\Content\IContentResponse.cs" />
     <Compile Include="User\Content\IUserContentRepository.cs" />
     <Compile Include="User\Content\IUserContentService.cs" />
+    <Compile Include="User\Document\ISavedDocumentItem.cs" />
+    <Compile Include="User\Document\ISavedDocumentItemsContext.cs" />
+    <Compile Include="User\Document\ISavedDocumentItemsFactory.cs" />
+    <Compile Include="User\Document\SavedDocumentItem.cs" />
+    <Compile Include="User\Document\SavedDocumentItemsContext.cs" />
+    <Compile Include="User\Document\SavedDocumentItemsFactory.cs" />
     <Compile Include="User\Entitlement\DefaultEntitlementsFactory.cs" />
     <Compile Include="User\Entitlement\EntitlementAccessLevelContext.cs" />
     <Compile Include="User\Entitlement\EntitlementChecksEnabled.cs" />

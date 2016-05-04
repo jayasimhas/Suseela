@@ -96,24 +96,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.SavedDocuments)
+                    @foreach (var item in Model.SavedDocumentItems)
                     {
                         <tr>
                             <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
                                 <a href="# @* Model.GetUrl(item.DocumentId) *@">
-                                    Publication@* HttpUtility.HtmlDecode(item.Name) *@
+									@item.Publication
                                 </a>
                             </td>
                             <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
-                                <a href="@Model.GetUrl(item.DocumentId)">
-                                    @HttpUtility.HtmlDecode(item.Name)
-                                    <svg class="icon-external-link">
-                                        <use xlink:href="/dist/img/svg-sprite.svg#external-link"></use>
-                                    </svg>
-                                </a>
+								<a href="@item.Url">
+									@item.Title
+									<svg class="icon-external-link">
+										<use xlink:href="/dist/img/svg-sprite.svg#external-link"></use>
+									</svg>
+								</a>
                             </td>
                             <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--date l-no-wrap">
-                                @Model.GetActualPublishDate(item.DocumentId, "d MMM yyyy")
+								@item.Published.ToString("d MMM yyyy")
                             </td>
                             <td class="sortable-table__col sortable-table__submit-wrapper">
                                 <form   class="form-remove-saved-document"
