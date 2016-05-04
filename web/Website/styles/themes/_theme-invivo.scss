@@ -34,13 +34,17 @@
     }
 
     .article-pullquote,
-    .quote {
+    .quote,
+    .article-sidebar,
+    .topic-subtopic__header {
         border-top-color: $color-rosewood-red;
         border-bottom-color: $color-rosewood-red;
+        border-color: $color-rosewood-red;
     }
 
     .button--filled,
     .search-bar__submit,
+    .banner--alert,
     .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
         background: $color-mojo-red;
         background-color: $color-mojo-red;

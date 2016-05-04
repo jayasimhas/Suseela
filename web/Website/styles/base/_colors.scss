@@ -1,5 +1,6 @@
 /*---
-title: Colors
+title: Global
+section: Colors
 ---
 ```example:color
 @color: #231f20 @name: Zeus Black
@@ -24,54 +25,54 @@ title: Colors
 */
 
 $color-zeus-black:          #231f20;
-
 $color-ship-gray:           #414042;
-
 $color-abbey-gray:          #58595b;
-
 $color-dove-gray:           #6D6E71;
-
 $color-old-silver-gray:     #808285;
-
 $color-dusty-gray:          #979797;
-
 $color-concrete-gray:       #f1f2f2;
-
 $color-mercury-gray:        #e2e4e4;
-
 $color-light-gray:          #d1d3d4;
-
 $color-x11-gray:            #bbbcbe;
-
 $color-cardinal-red:        #be1e2d;
-
 $color-tree-poppy-orange:   #f7941e;
-
 $color-butterscotch-orange: #f9af40;
-
 $color-yellow-orange:       #fbb040;
-
 $color-goldenrod:           #daa520;
-
 $color-lime-green:          #31be48;
-
 $color-iceberg-green:       #d6ebdc;
-
 $color-antique-white:       #ffeedd;
-
 $color-white:               #ffffff;
-
 $color-misty-pink:          #fce5e6;
 
 
-// THEME COLORS - PINK SHEET
+/*---
+title: Pink Sheet
+section: Colors
+---
+```example:color
+@color: #a8618d @name: Light Plum
+@color: #ba336c @name: Hibiscus Pink
+@color: #fbf2f4 @name: Soft Peach
+```
+*/
 
 $color-light-plum:          #a8618d;
 $color-hibiscus-pink:       #ba336c;
 $color-soft-peach:          #fbf2f4;
 
 
-// THEME COLORS - MEDTECH
+/*---
+title: Medtech
+section: Colors
+---
+```example:color
+@color: #0d66b6 @name: Sapphire Blue
+@color: #0a3869 @name: Marine Blue
+@color: #edefef @name: Porcelain White
+@color: #fbd34e @name: Jonquil Yellow
+```
+*/
 
 $color-sapphire-blue:       #0d66b6;
 $color-marine-blue:         #0a3869;
@@ -79,13 +80,28 @@ $color-porcelain-white:     #edefef;
 $color-jonquil-yellow:      #fbd34e;
 
 
-// THEME COLORS - ROSE SHEET
+/*---
+title: Rose Sheet
+section: Colors
+---
+```example:color
+@color: #ba005b @name: Rose Red
+@color: #d2196d @name: Rubine Red
+```
+*/
 
 $color-rose-red:            #ba005b;
 $color-rubine-red:          #d2196d;
 
 
-// THEME COLORS - IN VIVO
-
+/*---
+title: Invivo
+section: Colors
+---
+```example:color
+@color: #bc3822 @name: Mojo Red
+@color: #6a1b13 @name: Rosewood Red
+```
+*/
 $color-mojo-red:            #bc3822;
 $color-rosewood-red:        #6a1b13;

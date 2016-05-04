@@ -17,6 +17,10 @@
         }
     }
 
+    .general-header__navigation a.is-active {
+        border-bottom-color: $color-sapphire-blue;
+    }
+
     .article-preview__headline,
     .topic-featured-article__headline {
         &,
@@ -30,13 +34,17 @@
     }
 
     .article-pullquote,
-    .quote {
+    .quote,
+    .article-sidebar,
+    .topic-subtopic__header {
         border-top-color: $color-marine-blue;
         border-bottom-color: $color-marine-blue;
+        border-color: $color-marine-blue;
     }
 
     .button--filled,
     .search-bar__submit,
+    .banner--alert,
     .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
         background: $color-jonquil-yellow;
         background-color: $color-jonquil-yellow;
