@@ -14,11 +14,11 @@
             </p>
             <p class="page-account__error js-preferences-user-error-request-failed">
                 @Model.RequestFailedText
-            </p>            
+            </p>
             <table class="sortable-table js-sortable-table">
                 <thead class="sortable-table__header">
                 <tr>
-                    <td class="sortable-table__col js-sortable-table-sorter l-no-wrap"
+                    <td class="sortable-table__col sortable-table__col--quarter-width js-sortable-table-sorter l-no-wrap"
                         data-sortable-table-col="1">
                         @Html.Raw(Model.SourceText)
                         <div class="sorting-arrows">
@@ -30,7 +30,7 @@
                             </svg>
                         </div>
                     </td>
-                    <td class="sortable-table__col js-sortable-table-sorter l-no-wrap"
+                    <td class="sortable-table__col sortable-table__col--half-width js-sortable-table-sorter l-no-wrap"
                         data-sortable-table-col="2">
                         @Html.Raw(Model.TitleText)
                         <div class="sorting-arrows">
@@ -57,11 +57,16 @@
                     <td class="sortable-table__col js-sortable-table-sorter l-no-wrap"
                         data-sortable-table-col="4">
                         @Html.Raw(Model.EmailAlertText)
-                        <a ng-href="#" title="@Model.EmailAlertTooltipText">
+                        @*
+
+                        COMING IN TS2a
+                        
+                        <a href="#" title="@Model.EmailAlertTooltipText">
                             <svg>
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg@(Model.EmailAlertTooltipSvg)"></use>
+                                @* <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#@(Model.EmailAlertTooltipSvg)"></use>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#question-mark"></use>
                             </svg>
-                        </a>
+                        </a> *@
                         <div class="sorting-arrows">
                             <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
                                 <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
@@ -147,13 +152,16 @@
                             }
                             else if (item.Sources.Count() > 1)
                             {
-                                @Html.Raw("Multiple: ")
-                                @Html.Raw(string.Join("<br/>", item.Sources))
+                                @Html.Raw("<span class='sortable-table__togglable-list-title'>Multiple:</span>")
+                                <div class="sortable-table__togglable-list js-togglable-list">
+                                    @Html.Raw(string.Join("<br>", item.Sources))
+                                </div>
+                                <span class="sortable-table__list-toggler js-toggle-list">(show list)</span>
                             }
                             else
                             {
                                 @Html.Raw(string.Join(" ", item.Sources))
-}
+                            }
                         </td>
                         <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
                             <a href="@item.Url">@Html.Raw(item.Title)</a>

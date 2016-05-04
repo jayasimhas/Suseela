@@ -748,6 +748,9 @@ $(document).ready(function() {
 
     var sortTheTables = new SortableTableController();
 
+    $('.js-toggle-list').on('click', function(e) {
+        $(e.target).siblings('.js-togglable-list').toggle();
+    });
 
     $('.click-utag').click(function (e) {
         analyticsEvent( $.extend(analytics_data, $(this).data('info')) );

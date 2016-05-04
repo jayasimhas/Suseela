@@ -48,8 +48,8 @@ function sortableTableController() {
 					tfo = document.createElement('tfoot');
 					table.appendChild(tfo);
 				}
-				for (var i=0; i<sortbottomrows.length; i++) {
-					tfo.appendChild(sortbottomrows[i]);
+				for (var j = 0; j < sortbottomrows.length; j++) {
+					tfo.appendChild(sortbottomrows[j]);
 				}
 				sortbottomrows = undefined;
 			}
@@ -137,42 +137,42 @@ function sortableTableController() {
 
 		},
 
-	 guessType: function(table, column) {
+	guessType: function(table, column) {
 
 		// guess the type of a column based on its first non-blank row
-	    sortfn = sorttable.sort_alpha;
+		sortfn = sorttable.sort_alpha;
 
-	    for (var i=0; i<table.tBodies[0].rows.length; i++) {
+		for (var i=0; i<table.tBodies[0].rows.length; i++) {
 
-	      var text = $(table.tBodies[0].rows[i].cells[column]).text().trim();
-	      if (text != '') {
-			  // If column is numeric or appears to be money, sort numeric
-			if (text.match(/^-?[£$¤]?[\d,.]+%?$/)) {
-				return sorttable.sort_numeric;
+			var text = $(table.tBodies[0].rows[i].cells[column]).text().trim();
+			if (text != '') {
+				// If column is numeric or appears to be money, sort numeric
+				if (text.match(/^-?[£$¤]?[\d,.]+%?$/)) {
+					return sorttable.sort_numeric;
+				}
+
+				// Check for valid date
+				// If found, assume column is full of dates, sort by date!
+				if(Date.parse(text) > 0) {
+					return sorttable.sort_by_date;
+				}
+
 			}
+		}
+		return sortfn;
+	},
 
-	        // Check for valid date
-			// If found, assume column is full of dates, sort by date!
-			if(Date.parse(text) > 0) {
-				return sorttable.sort_by_date;
-			}
-
-	      }
-	    }
-	    return sortfn;
-	  },
-
-	  reverse: function(tbody) {
-	    // reverse the rows in a tbody
-	    var newrows = [];
-	    for (var i=0; i<tbody.rows.length; i++) {
-	      newrows[newrows.length] = tbody.rows[i];
-	    }
-	    for (var i=newrows.length-1; i>=0; i--) {
-	       tbody.appendChild(newrows[i]);
-	    }
-	    newrows = undefined;
-	  },
+	reverse: function(tbody) {
+		// reverse the rows in a tbody
+		var newrows = [];
+		for (var i=0; i<tbody.rows.length; i++) {
+			newrows[newrows.length] = tbody.rows[i];
+		}
+		for (var i=newrows.length-1; i>=0; i--) {
+			tbody.appendChild(newrows[i]);
+		}
+		newrows = undefined;
+	},
 
 	  /* sort functions
 	     each sort function takes two parameters, a and b
