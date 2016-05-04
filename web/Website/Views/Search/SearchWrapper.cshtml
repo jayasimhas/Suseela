@@ -29,16 +29,16 @@
                     ng-controller="SavedSearchController as savedSearch" ng-init="isAuthenticated = @Model.IsAuthenticated.ToString().ToLower()">
 
                     <a href="#" class="pop-out__trigger js-save-search"
-                    ng-class=" isSaved ? '' : 'js-pop-out-trigger' "
-                    ng-click="toggleSavedSearch()"
-                    data-pop-out-type="save-search">
+                        ng-class="{'js-pop-out-trigger': !savedSearch.isSaved}"
+                        ng-click="savedSearch.unsaveSearch()"
+                        data-pop-out-type="save-search">
                         <span class="action-flag__label">Save Search / Set Alert</span>
 
-                        <svg ng-class="{'is-visible': !isSaved}" class="action-flag__icon toggleable-icon">
+                        <svg ng-class="{'is-visible': !savedSearch.isSaved}" class="action-flag__icon toggleable-icon">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#save"></use>
                 	    </svg>
 
-                        <svg ng-class="{'is-visible': isSaved}" class="action-flag__icon toggleable-icon">
+                        <svg ng-class="{'is-visible': savedSearch.isSaved}" class="action-flag__icon toggleable-icon">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#saved"></use>
                 	    </svg>
                     </a>
@@ -72,4 +72,3 @@
     @Html.Sitecore().Rendering(Model.ItemReferences.EmailSearchPopOutRendering.ToString())
     @Html.Sitecore().Rendering(Model.ItemReferences.SaveSearchPopOutRendering.ToString())
 </div>
-
