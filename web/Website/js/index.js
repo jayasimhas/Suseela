@@ -284,10 +284,11 @@ $(document).ready(function() {
 
     var saveSearchController = new FormController({
         observe: '.form-save-search',
-        successCallback: function() {
+        successCallback: function(form, context, event) {
             toggleIcons('.js-save-search');
             // If there's a stashed search, remove it.
             Cookies.remove('saveStashedSearch');
+            window.controlPopOuts.closePopOut($(form).closest('.pop-out'));
         },
         failureCallback: function() {
 
