@@ -12,6 +12,7 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     vm.anchorScroll = $anchorScroll;
     vm.searchBootstrapper = searchBootstrapper;
     vm.MaxFacetShow = 5;
+    vm.showingOnlySubscriptions = false;
 
     // Date Facet stuff
     vm.DateFilters = [
@@ -140,13 +141,13 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
 
         _.each(facetIds, function(id) {
             var facet = vm.searchService.getFacet(id);
-            if (facet) {    
+            if (facet) {
                 facet.selected = true;
             }
         });
 
         vm.update();
-    }
+    };
 
     // TODO: this comes from a diff search app, and needs jquery to work.
     //       either hook up jq to this controller or move this elsewhere
