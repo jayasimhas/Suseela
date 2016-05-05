@@ -30,7 +30,7 @@ namespace Informa.Library.User.Document
 					continue;
 				}
 
-				var item = SitecoreService.GetItem<IArticle>(Guid.Empty);
+				var item = SitecoreService.GetItem<IArticle>(itemId);
 
 				if (item == null)
 				{
