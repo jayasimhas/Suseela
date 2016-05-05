@@ -2,7 +2,6 @@
 using Informa.Library.Site;
 using Informa.Library.User.Authentication;
 using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore.Links;
 using System;
 
 namespace Informa.Library.Subscription
@@ -53,15 +52,7 @@ namespace Informa.Library.Subscription
             }
         }
 
-        public string RenewalLinkURL
-        {
-            get
-            {
-                if (_siteRootContext.Item.Subscribe_Link.Type == Glass.Mapper.Sc.Fields.LinkType.Internal)
-                    return LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(new Sitecore.Data.ID(_siteRootContext.Item.Subscribe_Link.TargetId)));
+		public string RenewalLinkURL => _siteRootContext.Item?.Subscribe_Link?.Url;
 
-                return _siteRootContext.Item.Subscribe_Link.Url;
-            }
-        }
-    }
+	}
 }
