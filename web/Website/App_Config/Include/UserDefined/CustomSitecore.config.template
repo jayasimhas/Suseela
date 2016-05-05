@@ -100,6 +100,7 @@ But you can also use "patch:attribute" for clarity:
     <linkManager>
       <providers>
         <add name="sitecore">
+		  <patch:attribute name="type">Informa.Library.CustomSitecore.Providers.CustomLinkProvider, Informa.Library</patch:attribute>
           <patch:attribute name="languageEmbedding">never</patch:attribute>
           <patch:attribute name="lowercaseUrls">true</patch:attribute>
         </add>
