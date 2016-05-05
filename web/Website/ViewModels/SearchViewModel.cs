@@ -38,6 +38,7 @@ namespace Informa.Web.ViewModels
 		public string SearchClearAllText => TextTranslator.Translate("Search.ClearAll");
 		public string SearchFilterByText => TextTranslator.Translate("Search.FilterBy");
 		public string SearchSelectMySubscriptionsText => TextTranslator.Translate("Search.SelectMySubscriptions");
+		public string SearchShowAllPublicationsText => TextTranslator.Translate("Search.ShowAllPublications");
 		public IEnumerable<string> Subcriptions { get; set; }
 	}
 }
