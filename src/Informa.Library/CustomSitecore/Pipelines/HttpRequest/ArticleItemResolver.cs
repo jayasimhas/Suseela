@@ -42,7 +42,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
             if (Context.Item != null || Context.Database == null || args.Url.ItemPath.Length == 0)
                 return;
 
-            Regex r = new Regex(@"^(.*)(/home/)(sc\d{6})(/)(.*)");
+            Regex r = new Regex(@"^(.*)(/home/)(\w{2}\d{6})(/)(.*)");
             MatchCollection mc = r.Matches(args.Url.ItemPath);
             if (mc.Count < 1 || mc[0].Groups.Count < 6)
                 return;

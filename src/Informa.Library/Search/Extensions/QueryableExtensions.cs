@@ -97,7 +97,7 @@ namespace Informa.Library.Search.Extensions
 		public static IQueryable<T> FilteryByCurrentSite<T>(this IQueryable<T> source)
 						where T : SearchResultItem
 		{
-			return source?.Filter(x => x.Sites.Contains(Sitecore.Context.Site.Name));
+			return source?.Filter(x => x.Sites.Contains(Sitecore.Context.Site.Name.ToLowerInvariant()));
 		}
 	}
 }
