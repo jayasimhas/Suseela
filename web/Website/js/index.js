@@ -306,6 +306,14 @@ $(document).ready(function() {
         }
     });
 
+    var toggleSavedSearchAlertController = new FormController({
+        observe: '.form-toggle-saved-search-alert'
+    });
+
+    $('.js-saved-search-alert-toggle').on('click', function(e) {
+        $(e.target.form).find('button[type=submit]').click();
+    });
+
     // On page load, check for any stashed searches that need to be saved
     var saveStashedSearch = Cookies.getJSON('saveStashedSearch');
     if(saveStashedSearch) {

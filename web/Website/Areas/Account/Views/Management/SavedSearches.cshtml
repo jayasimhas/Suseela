@@ -55,12 +55,13 @@
                         </div>
                     </td>
                     <td class="sortable-table__col js-sortable-table-sorter l-no-wrap"
-                        data-sortable-table-col="4">
+                        data-sortable-table-col="4"
+                        data-sortable-type="sort_checkbox">
                         @Html.Raw(Model.EmailAlertText)
                         @*
 
                         COMING IN TS2a
-                        
+
                         <a href="#" title="@Model.EmailAlertTooltipText">
                             <svg>
                                 @* <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#@(Model.EmailAlertTooltipSvg)"></use>
@@ -170,15 +171,25 @@
                             @item.DateSaved.ToString("d MMM yyyy")
                         </td>
                         <td class="sortable-table__col sortable-table__submit-wrapper">
-                            <form class="form-update-saved-search onoffswitch" data-on-submit="/api/SavedSearches" data-submit-type="POST">
+
+                            <form class="form-toggle-saved-search-alert onoffswitch"
+                                data-on-submit="/api/SavedSearches"
+                                data-submit-type="POST">
+
                                 <input name="Title" id="Title" type="hidden" value="@item.Title">
                                 <input name="Url" id="Url" type="hidden" value="@item.Url">
-                                <input type="checkbox" name="AlertEnabled" class="onoffswitch-checkbox" id="alert-toggle-@index" @(item.AlertEnabled ? "checked" : string.Empty)>
+                                <input type="checkbox"
+                                    class="onoffswitch-checkbox js-saved-search-alert-toggle"
+                                    id="alert-toggle-@index"
+                                    name="alert-toggle-@index"
+                                    @(item.AlertEnabled ? "checked='checked'" : string.Empty)>
                                 <label class="onoffswitch-label form-submit" for="alert-toggle-@index">
                                     <span class="onoffswitch-inner"></span>
                                     <span class="onoffswitch-switch"></span>
                                 </label>
+                                <button type="submit" class="onoffswitch__submit"></button>
                             </form>
+
                         </td>
                         <td class="sortable-table__col sortable-table__submit-wrapper">
                             <form class="form-remove-saved-search"  data-on-submit="/api/SavedSearches" data-submit-type="DELETE">

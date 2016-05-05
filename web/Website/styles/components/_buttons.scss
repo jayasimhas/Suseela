@@ -152,4 +152,9 @@ a.button {
 		right: 0;
 		background: $color-yellow-orange;
 	}
+
+	// Submit button is hidden, only used with form controller
+	&__submit {
+		display: none;
+	}
 }
