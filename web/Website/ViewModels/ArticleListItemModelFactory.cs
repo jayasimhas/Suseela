@@ -11,6 +11,7 @@ using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.TokenMatcher;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
@@ -18,15 +19,12 @@ namespace Informa.Web.ViewModels
 	[AutowireService(LifetimeScope.PerScope)]
 	public class ArticleListItemModelFactory : IArticleListItemModelFactory
 	{
-		protected readonly ISiteRootContext SiteRootContext;
 	    protected readonly ISitecoreContext SitecoreContext;
 	    protected readonly IArticleSearch ArticleSearch;
 	    protected readonly ITextTranslator TextTranslator;
 
-        public ArticleListItemModelFactory(
-			ISiteRootContext siteRootContext, ISitecoreContext sitecoreContext, IArticleSearch articleSearch, ITextTranslator textTranslator)
+        public ArticleListItemModelFactory(ISitecoreContext sitecoreContext, IArticleSearch articleSearch, ITextTranslator textTranslator)
 		{
-			SiteRootContext = siteRootContext;
 		    SitecoreContext = sitecoreContext;
 		    ArticleSearch = articleSearch;
             TextTranslator = textTranslator;
@@ -39,7 +37,7 @@ namespace Informa.Web.ViewModels
 				return null;
 			}
 
-			var publication = SiteRootContext?.Item?.Publication_Name?.StripHtml();
+			var publication = article.GetAncestors<ISite_Root>().First(x => x._TemplateId == ISite_RootConstants.TemplateId.ToGuid());
 			var image = article.Featured_Image_16_9?.Src;
 
 			return new ArticleListItemModel
@@ -50,13 +48,13 @@ namespace Informa.Web.ViewModels
 				ListableImage = image,
 				ListableSummary = DCDTokenMatchers.ProcessDCDTokens(article.Summary),
 				ListableTitle = HttpUtility.HtmlDecode(article.Title),
-				ListableByline = publication,
+				ListableByline = publication.Publication_Name,
 				ListableTopics = article.Taxonomies?.Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x) }),
 				ListableType = article.Media_Type?.Item_Name == "Data" ? "chart" : article.Media_Type?.Item_Name?.ToLower() ?? "",
 				ListableUrl = new Link { Url = article._Url, Text = article.Title },
 				LinkableText = article.Content_Type?.Item_Name,
 				LinkableUrl = article._Url,
-				Publication = publication,
+				Publication = publication.Publication_Name,
                 By = TextTranslator.Translate("Article.By")
             };
 		}
