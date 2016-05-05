@@ -1,4 +1,5 @@
 ﻿using Glass.Mapper.Sc;
+using Informa.Library.Site;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using System;
@@ -10,11 +11,14 @@ namespace Informa.Library.User.Document
 	public class SavedDocumentItemsFactory : ISavedDocumentItemsFactory
 	{
 		protected readonly ISitecoreService SitecoreService;
+		protected readonly IIsUrlCurrentSite IsUrlCurrentSite;
 
 		public SavedDocumentItemsFactory(
-			ISitecoreService sitecoreService)
+			ISitecoreService sitecoreService,
+			IIsUrlCurrentSite isUrlCurrentSite)
 		{
 			SitecoreService = sitecoreService;
+			IsUrlCurrentSite = isUrlCurrentSite;
 		}
 
 		public IEnumerable<ISavedDocumentItem> Create(IEnumerable<ISavedDocument> savedDocuments)
@@ -37,13 +41,17 @@ namespace Informa.Library.User.Document
 					continue;
 				}
 
+				var url = item._Url ?? string.Empty;
+				var onCurrentSite = IsUrlCurrentSite.Check(url);
+
 				savedDocumentItems.Add(new SavedDocumentItem
 				{
 					DocumentId = savedDocument.DocumentId,
 					Publication = savedDocument.Description,
-					Published = item?.Actual_Publish_Date ?? default(DateTime),
-					Title = item?.Title ?? savedDocument.Name,
-					Url = item?._Url ?? "#"
+					Published = item.Actual_Publish_Date,
+					Title = item.Title ?? savedDocument.Name,
+					Url = url,
+					OnCurrentSite = onCurrentSite
 				});
 			}
 
