@@ -100,16 +100,17 @@
                     {
                         <tr>
                             <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
-                                <a href="# @* Model.GetUrl(item.DocumentId) *@">
-									@item.Publication
-                                </a>
+								@item.Publication
                             </td>
                             <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
-								<a href="@item.Url">
+								<a href="@item.Url" @(!item.OnCurrentSite ? "target = \"_blank\"" : "")>
 									@item.Title
-									<svg class="icon-external-link">
-										<use xlink:href="/dist/img/svg-sprite.svg#external-link"></use>
-									</svg>
+									@if (!item.OnCurrentSite)
+									{
+										<svg class="icon-external-link">
+											<use xlink:href="/dist/img/svg-sprite.svg#external-link"></use>
+										</svg>
+									}
 								</a>
                             </td>
                             <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--date l-no-wrap">
