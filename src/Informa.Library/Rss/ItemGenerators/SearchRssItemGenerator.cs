@@ -62,37 +62,30 @@ namespace Informa.Library.Rss.ItemGenerators
         {
             if (article.Authors != null)
             {
-                foreach (var author in article.Authors)
+                if (article.Authors.Any())
                 {
-                    var authorName = author.First_Name + " " + author.Last_Name;
-                    if (string.IsNullOrEmpty(authorName))
+                    foreach (var authorItem in article.Authors)
                     {
-                        authorName = author._Name;
+                        var authorElement = new XElement(RssConstants.AtomNamespace + "author");
+
+                        var authorName = authorItem.First_Name + " " + authorItem.Last_Name;
+                        if (string.IsNullOrEmpty(authorName))
+                        {
+                            authorName = authorItem._Name;
+                        }
+
+                        var authorElementName = new XElement(RssConstants.AtomNamespace + "name");
+                        authorElementName.Value = HttpUtility.HtmlEncode(authorName);
+
+                        var authorElementEmail = new XElement(RssConstants.AtomNamespace + "email");
+                        authorElementEmail.Value = HttpUtility.HtmlEncode(authorItem.Email_Address);
+
+                        authorElement.Add(authorElementName);
+                        authorElement.Add(authorElementEmail);
+
+                        syndicationItem.ElementExtensions.Add(authorElement.CreateReader());
                     }
-
-                    syndicationItem.Authors.Add(new SyndicationPerson(author.Email_Address, HttpUtility.HtmlEncode(authorName), ""));
                 }
-
-                //foreach (var author in article.Authors)
-                //{
-                //    var authorName = author.First_Name + " " + author.Last_Name;
-                //    var authorEmail = author.Email_Address;
-
-                //    //TamerM - 2016-04-30: if email is present output email only else name (ticket IIS-59)
-                //    if (string.IsNullOrEmpty(authorEmail))
-                //    {
-                //        if (string.IsNullOrEmpty(authorName))
-                //        {
-                //            authorName = author._Name;
-                //        }
-
-                //        syndicationItem.Authors.Add(new SyndicationPerson(string.Empty, HttpUtility.HtmlEncode(authorName), string.Empty));
-                //    }
-                //    else
-                //    {
-                //        syndicationItem.Authors.Add(new SyndicationPerson(authorEmail));
-                //    }
-                //}
             }
 
             return syndicationItem;
