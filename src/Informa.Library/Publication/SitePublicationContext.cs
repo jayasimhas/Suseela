@@ -1,19 +1,19 @@
 ﻿using Informa.Library.Site;
 using Jabberwocky.Glass.Autofac.Attributes;
 
-namespace Informa.Library.Newsletter
+namespace Informa.Library.Publication
 {
 	[AutowireService(LifetimeScope.Default)]
-	public class SiteNewsletterTypeContext : ISiteNewsletterTypeContext
+	public class SitePublicationContext : ISitePublicationContext
 	{
 		private ISiteRootContext SiteRootContext;
-		public SiteNewsletterTypeContext(
+		public SitePublicationContext(
 						ISiteRootContext siteRootContext
 			)
 		{
 			SiteRootContext = siteRootContext;
 		}
 
-		public string Type => SiteRootContext?.Item?.Publication_Name ?? string.Empty;
+		public string Name => SiteRootContext?.Item?.Publication_Name ?? string.Empty;
 	}
 }

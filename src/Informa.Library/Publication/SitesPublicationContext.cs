@@ -5,20 +5,20 @@ using Jabberwocky.Glass.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Informa.Library.Newsletter
+namespace Informa.Library.Publication
 {
 	[AutowireService(LifetimeScope.Default)]
-	public class SitesNewsletterTypeContext : ISitesNewsletterTypeContext
+	public class SitesPublicationContext : ISitesPublicationContext
 	{
 		protected readonly ISitecoreService SitecoreService;
 
-		public SitesNewsletterTypeContext(
+		public SitesPublicationContext(
 			ISitecoreService sitecoreService)
 		{
 			SitecoreService = sitecoreService;
 		}
 
-		public IEnumerable<string> Types
+		public IEnumerable<string> Names
 		{
 			get
 			{

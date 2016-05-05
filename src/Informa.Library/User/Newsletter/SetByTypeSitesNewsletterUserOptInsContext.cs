@@ -1,4 +1,4 @@
-﻿using Informa.Library.Newsletter;
+﻿using Informa.Library.Publication;
 using Jabberwocky.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +10,12 @@ namespace Informa.Library.User.Newsletter
 	{
 		protected readonly INewsletterUserOptInsContext NewsletterUserOptInsContext;
 		protected readonly IUpdateNewsletterUserOptInsContext UpdateNewsletterOptInsContext;
-		protected readonly ISitesNewsletterTypeContext SitesNewsletterTypeContext;
+		protected readonly ISitesPublicationContext SitesNewsletterTypeContext;
 
 		public SetByTypeSitesNewsletterUserOptInsContext(
 			INewsletterUserOptInsContext newsletterUserOptInsContext,
 			IUpdateNewsletterUserOptInsContext updateNewsletterOptInsContext,
-			ISitesNewsletterTypeContext sitesNewsletterTypeContext)
+			ISitesPublicationContext sitesNewsletterTypeContext)
 		{
 			NewsletterUserOptInsContext = newsletterUserOptInsContext;
 			UpdateNewsletterOptInsContext = updateNewsletterOptInsContext;
@@ -27,7 +27,7 @@ namespace Informa.Library.User.Newsletter
 			var newsletterUserOptins = NewsletterUserOptInsContext.OptIns.ToList();
 
 			newsletterUserOptins
-				.Where(noi => SitesNewsletterTypeContext.Types.Contains(noi.NewsletterType))
+				.Where(noi => SitesNewsletterTypeContext.Names.Contains(noi.NewsletterType))
 				.ToList()
 				.ForEach(noi => noi.OptIn = newsletterTypes.Contains(noi.NewsletterType));
 

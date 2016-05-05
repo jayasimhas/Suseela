@@ -9,5 +9,6 @@ namespace Informa.Library.User.Document
 		public string Title { get; set; }
 		public DateTime Published { get; set; }
 		public string Url { get; set; }
+		public bool OnCurrentSite { get; set; }
 	}
 }

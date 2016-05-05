@@ -5,7 +5,7 @@ using Informa.Web.Areas.Account.ViewModels.Subscription;
 using Sitecore.Data.Items;
 using System;
 using System.Web.Mvc;
-using Informa.Library.Newsletter;
+using Informa.Library.Publication;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Offer;
 using Informa.Library.User.Newsletter;
@@ -21,7 +21,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
         protected readonly IUpdateOfferUserOptIn OffersOptIn;
 		protected readonly IUpdateOfferUserOptInContext OffersOptInContext;
-		protected readonly ISiteNewsletterTypeContext NewsletterTypeContext;
+		protected readonly ISitePublicationContext NewsletterTypeContext;
 		protected readonly IUpdateSiteNewsletterUserOptInContext UpdateNewsletterOptInContext;
 		protected readonly IUpdateSiteNewsletterUserOptIn UpdateNewsletterOptIn;
 
@@ -35,7 +35,7 @@ namespace Informa.Web.Areas.Account.Controllers
             ISignInViewModel signInViewModel,
             IUpdateOfferUserOptIn offersOptIn,
 			IUpdateOfferUserOptInContext offersOptInContext,
-			ISiteNewsletterTypeContext newsletterTypeContext,
+			ISitePublicationContext newsletterTypeContext,
 			IUpdateSiteNewsletterUserOptInContext updateNewsletterOptInContext,
 			IUpdateSiteNewsletterUserOptIn updateNewsletterOptIn)
 		{
@@ -72,7 +72,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
 			//process subscribe
 			if (!string.IsNullOrEmpty(Pub) 
-                && (Pub.ToLower() == NewsletterTypeContext.Type.ToLower()))
+                && (Pub.ToLower() == NewsletterTypeContext.Name.ToLower()))
             {
 				UpdateNewsletterOptInContext.Update(true);
             }
@@ -95,7 +95,7 @@ namespace Informa.Web.Areas.Account.Controllers
 			}
 
 			//process unsubscribe
-			var newsletterType = NewsletterTypeContext.Type;
+			var newsletterType = NewsletterTypeContext.Name;
 
 			if (Type.ToLower() == "newsletter" && !string.IsNullOrEmpty(Pub) && (Pub.ToLower() == newsletterType.ToLower())) {
 				if (UserContext.IsAuthenticated)
