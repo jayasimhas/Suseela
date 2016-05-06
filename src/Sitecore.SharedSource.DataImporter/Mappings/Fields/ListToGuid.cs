@@ -1,70 +1,172 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.SharedSource.DataImporter.Providers;
 using Sitecore.SharedSource.DataImporter.Utility;
-namespace Sitecore.SharedSource.DataImporter.Mappings.Fields {
+namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
+{
 
-    /// <summary>
-    /// This uses imported values to match by name an existing content item in the list provided
-    /// then stores the GUID of the existing item
-    /// </summary>
-    public class ListToGuid : ToText {
+	/// <summary>
+	/// This uses imported values to match by name an existing content item in the list provided
+	/// then stores the GUID of the existing item
+	/// </summary>
+	public class ListToGuid : ToText
+	{
 
-        #region Properties
+		#region Properties
 
-        /// <summary>
-        /// This is the list that you will compare the imported values against
-        /// </summary>
-        public string SourceList { get; set; }
+		/// <summary>
+		/// This is the list that you will compare the imported values against
+		/// </summary>
+		public string SourceList { get; set; }
 
-        #endregion Properties
+		public string OldSourceList { get; set; }
+		public string FieldName { get; set; }
+		public bool SingleValue { get; set; }
 
-        #region Constructor
+		#endregion Properties
 
-        public ListToGuid(Item i)
-            : base(i) {
-            //stores the source list value
-            SourceList = GetItemField(i, "Source List");
-        }
+		#region Constructor
 
-        #endregion Constructor
-
-        #region IBaseField
-
-        /// <summary>
-        /// uses the import value to search for a matching item in the SourceList and then stores the GUID
-        /// </summary>
-        /// <param name="map">provides settings for the import</param>
-        /// <param name="newItem">newly created item</param>
-        /// <param name="importValue">imported value to match</param>
-        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
-        {
-
-            if (string.IsNullOrEmpty(importValue))
-                return;
-
-            //get parent item of list to search
-            Item i = InnerItem.Database.GetItem(SourceList);
-            if (i == null)
-                return;
-
-            //loop through children and look for anything that matches by name
-            string cleanName = StringUtility.GetValidItemName(importValue, map.ItemNameMaxLength);
-            IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
-
-            //if you find one then store the id
-            if (!t.Any())
-                return;
-
-            Field f = newItem.Fields[NewItemField];
-            if (f == null)
-                return;
-
-            f.Value = t.First().ID.ToString();
+		public ListToGuid(Item i)
+			: base(i)
+		{
+			//stores the source list value
+			SourceList = GetItemField(i, "Source List");
+			OldSourceList = GetItemField(i, "Old Source List");
+			FieldName = GetItemField(i, "From What Fields");
+			SingleValue = GetItemField(i, "Singe GUID Value") == "1";
 		}
 
-        #endregion IBaseField
-    }
+		#endregion Constructor
+
+		#region IBaseField
+
+		/// <summary>
+		/// uses the import value to search for a matching item in the SourceList and then stores the GUID
+		/// </summary>
+		/// <param name="map">provides settings for the import</param>
+		/// <param name="newItem">newly created item</param>
+		/// <param name="importValue">imported value to match</param>
+		public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+		{
+
+			if (string.IsNullOrEmpty(importValue))
+				return;
+
+			//get parent item of list to search
+			Item i = InnerItem.Database.GetItem(SourceList);
+			if (i == null)
+				return;
+
+			//loop through children and look for anything that matches by name
+			string cleanName = StringUtility.GetValidItemName(importValue, map.ItemNameMaxLength);
+			IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
+
+			//if you find one then store the id
+			if (!t.Any())
+				return;
+
+			Field f = newItem.Fields[NewItemField];
+			if (f == null)
+				return;
+
+			f.Value = t.First().ID.ToString();
+		}
+
+		#endregion IBaseField
+
+		#region Methods
+
+		public void FillTaxonomyField(IDataMap map, ref Item newItem, string importValue, Dictionary<string, string> mappingDictionary)
+		{
+			// Get target Taxonomy Field
+			var field = newItem.Fields[NewItemField];
+			if (!string.IsNullOrWhiteSpace(importValue) && field != null)
+			{
+				// Get Taxonomy folder in target database
+				var item = newItem.Database.GetItem(SourceList);
+				if (item != null)
+				{
+					var mapping = mappingDictionary;
+					var strs = importValue.Split('|');
+					var transformedValue = string.Empty;
+
+					foreach (var str in strs)
+					{
+						// If we are mapping subject field, don't map Regulatory->Product Approvals->Securities Regulation
+						if (str == "{27E8FA62-AC23-4280-B9D1-744341AD85EF}")
+						{
+							continue;
+						}
+
+						// Get taxonomy name from pmbi database
+						var pmbiTaxonomyItemName = Sitecore.Data.Database.GetDatabase("pmbiContent").GetItem(new ID(str))?.DisplayName;
+						if (pmbiTaxonomyItemName == null)
+						{
+							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not converted", ProcessStatus.FieldError, NewItemField, importValue);
+							return;
+						}
+
+						if (!mapping.ContainsKey(pmbiTaxonomyItemName))
+						{
+							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not converted", ProcessStatus.FieldError, NewItemField, importValue);
+							return;
+						}
+
+						var mappedValue = mapping[pmbiTaxonomyItemName];
+						// If taxonomy maps to empty, dismiss it
+						if (string.IsNullOrWhiteSpace(mappedValue))
+						{
+							// If we are mapping article category field, set default to "News" for any article without a mapping for content type
+							if (FieldName == "Print Article")
+							{
+								mappedValue = "News";
+							}
+							else
+							{
+								continue;
+							}
+						}
+
+						// Get GUID of the new taxonomy item
+						var val = item.Axes.GetDescendants().FirstOrDefault(i => StringUtility.GetValidItemName(i.Fields["Item Name"].Value, map.ItemNameMaxLength) == mappedValue)?.ID.ToString();
+
+						if (string.IsNullOrWhiteSpace(val))
+						{
+							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not found", ProcessStatus.FieldError, NewItemField, importValue);
+							return;
+						}
+
+						// Avoid adding duplicate GUID
+						if (!field.Value.Contains(val))
+						{
+							if (!SingleValue)
+							{
+								transformedValue = string.IsNullOrWhiteSpace(transformedValue) ? val : $"{transformedValue}|{val}";
+							}
+							else
+							{
+								transformedValue = val;
+							}
+						}
+					}
+
+					// Write value to field
+					if (!SingleValue)
+					{
+						field.Value = string.IsNullOrWhiteSpace(field.Value) ? transformedValue : $"{field.Value}|{transformedValue}";
+					}
+					else
+					{
+						field.Value = transformedValue;
+					}
+				}
+			}
+		}
+
+		#endregion
+	}
 }

@@ -17866,6 +17866,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 					/// </summary>
 					[SitecoreField(IListToGuidConstants.Source_ListFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Source_List  {get; set;}
+								/// <summary>
+					/// The Old Source List field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 1829b7b6-107a-43f9-a2f3-6ba920e33a2b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListToGuidConstants.Old_Source_ListFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Old_Source_List  {get; set;}
+								/// <summary>
+					/// The Singe GUID Value field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 98adfec8-0f10-46df-a24a-3b6a1b344973</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IListToGuidConstants.Singe_GUID_ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Singe_GUID_Value  {get; set;}
 				}
 
 	
@@ -17887,6 +17905,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 						/// </summary>
 						[SitecoreField(IListToGuidConstants.Source_ListFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Source_List  {get; set;}
+										/// <summary>
+						/// The Old Source List field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 1829b7b6-107a-43f9-a2f3-6ba920e33a2b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListToGuidConstants.Old_Source_ListFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Old_Source_List  {get; set;}
+										/// <summary>
+						/// The Singe GUID Value field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 98adfec8-0f10-46df-a24a-3b6a1b344973</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IListToGuidConstants.Singe_GUID_ValueFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Singe_GUID_Value  {get; set;}
 						}
 	
 	public static partial class IListToGuidConstants{
@@ -17898,6 +17934,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 					
 			public static readonly ID Source_ListFieldId = new ID("76f71014-cc36-4507-b623-9bbd2851e8ce");
 			public const string Source_ListFieldName = "Source List";
+
+						
+					
+			public static readonly ID Old_Source_ListFieldId = new ID("1829b7b6-107a-43f9-a2f3-6ba920e33a2b");
+			public const string Old_Source_ListFieldName = "Old Source List";
+
+						
+					
+			public static readonly ID Singe_GUID_ValueFieldId = new ID("98adfec8-0f10-46df-a24a-3b6a1b344973");
+			public const string Singe_GUID_ValueFieldName = "Singe GUID Value";
 
 						
 					

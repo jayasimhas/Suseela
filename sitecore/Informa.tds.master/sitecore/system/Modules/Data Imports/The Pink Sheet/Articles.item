@@ -89,7 +89,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: c7e3c8db-7bb4-4504-ac29-3ff59b329824
+revision: cb851bda-0abf-49a5-a01e-4f1a312de93d
 
 ----field----
 field: {1F03F44C-DD3A-4148-BEE7-0724310827B8}
@@ -102,9 +102,9 @@ content-length: 94
 field: {059F68FF-E3E0-49AF-8287-68F4FAAA364A}
 name: Start Path
 key: start path
-content-length: 50
+content-length: 57
 
-/sitecore/content/Home/Publications/The Pink Sheet
+/sitecore/content/Home/Publications/The Pink Sheet/46/001
 ----field----
 field: {18F8FBC8-8AA1-46A1-9698-D89EF5B70766}
 name: Template ID
@@ -123,9 +123,9 @@ content-length: 4
 field: {5FF74032-EFC8-401A-BEB6-E459A9815585}
 name: Last Article Number
 key: last article number
-content-length: 4
+content-length: 2
 
-1745
+36
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -139,18 +139,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c7e3c8db-7bb4-4504-ac29-3ff59b329824
+cb851bda-0abf-49a5-a01e-4f1a312de93d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160503T195837Z
+20160506T155950Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 18
 
-sitecore\admin
+sitecore\Anonymous
