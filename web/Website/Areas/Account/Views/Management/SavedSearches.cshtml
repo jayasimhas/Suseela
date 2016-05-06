@@ -154,10 +154,13 @@
                             else if (item.Sources.Count() > 1)
                             {
                                 @Html.Raw("<span class='sortable-table__togglable-list-title'>Multiple:</span>")
-                                <div class="sortable-table__togglable-list js-togglable-list">
-                                    @Html.Raw(string.Join("<br>", item.Sources))
+                                <div class="sortable-table__togglable-list-wrapper js-togglable-list-wrapper">
+                                    <div class="sortable-table__togglable-list js-togglable-list">
+                                        @Html.Raw(string.Join("<br>", item.Sources))
+                                    </div>
+                                    <span class="sortable-table__list-toggler js-toggle-list">(show list)</span>
+                                    <span class="sortable-table__list-toggler show-when-active js-toggle-list">(hide list)</span>
                                 </div>
-                                <span class="sortable-table__list-toggler js-toggle-list">(show list)</span>
                             }
                             else
                             {

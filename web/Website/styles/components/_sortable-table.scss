@@ -49,16 +49,15 @@
     	margin: 0px auto;
 	}
 
+
 	&__togglable-list-title {
 		float: left;
 	}
-
 	&__togglable-list,
 	&__list-toggler {
 		font-size: 0.875rem;
 		margin-left: 5rem;
 	}
-
 	&__togglable-list {
 		display: none;
 		margin-bottom: 0.5rem;
@@ -67,6 +66,19 @@
 		@extend a;
 		cursor: pointer;
 		display: block;
+
+		&.show-when-active {
+			display: none;
+		}
+	}
+	&__togglable-list-wrapper.is-active {
+		.sortable-table__list-toggler {
+			display: none;
+		}
+		.sortable-table__togglable-list,
+		.sortable-table__list-toggler.show-when-active {
+			display: block;
+		}
 	}
 
 	@include breakpoint('small') {
