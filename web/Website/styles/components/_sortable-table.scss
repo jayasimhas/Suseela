@@ -47,6 +47,10 @@
 	.onoffswitch {
 		display: block;
     	margin: 0px auto;
+
+		@include breakpoint('small') {
+			margin: 0px;
+		}
 	}
 
 
@@ -141,8 +145,16 @@
 				content: "Title";
 			}
 
+			&--sources:before {
+				content: "Sources";
+			}
+
 			&--date:before {
 				content: "Date";
+			}
+
+			&--alert:before {
+				content: "Email Alert";
 			}
 
 			&--publication:before {

@@ -138,9 +138,6 @@
                                 </svg>
                             </div>
                         </td>
-                        <td class="sortable-table__col">
-                            @Html.Raw(Model.EmailAlertText)
-                        </td>
                         <td class="sortable-table__col"></td>
                     </tr>
                 </thead>
@@ -151,7 +148,7 @@
                 @foreach (var item in Model.SavedSearches)
                 {
                     <tr>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
+                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--sources">
                             @if (!item.Sources.Any())
                             {
                                 @Html.Raw("All")
@@ -178,7 +175,7 @@
                         <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--date">
                             @item.DateSaved.ToString("d MMM yyyy")
                         </td>
-                        <td class="sortable-table__col sortable-table__submit-wrapper">
+                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--alert">
 
                             <form class="form-toggle-saved-search-alert onoffswitch"
                                 data-on-submit="/api/SavedSearches"
