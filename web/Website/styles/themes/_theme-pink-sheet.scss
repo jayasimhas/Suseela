@@ -60,7 +60,8 @@
         border-color: $color-hibiscus-pink;
     }
 
-    .newsletter-signup {
+    .newsletter-signup,
+    .quick-facts {
         background-color: $color-soft-peach;
         border-top: 2px solid $color-light-plum;
     }
@@ -88,6 +89,20 @@
                 color: $color-abbey-gray;
             }
         }
+    }
 
+    .article-interview__question:before {
+        background-color: $color-blossom-pink;
+    }
+
+    .article-interview__answer {
+        &,
+        &:before {
+            border-color: $color-flair-pink;
+        }
+
+        &:before {
+            background-color: $color-soft-peach;
+        }
     }
 }
