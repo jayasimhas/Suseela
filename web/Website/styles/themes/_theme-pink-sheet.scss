@@ -10,7 +10,9 @@
         }
     }
 
-    footer a {
+    footer a,
+    .general-header__navigation a,
+    .sortable-table__col a {
         color: inherit;
     }
 
@@ -58,6 +60,12 @@
 
     .button--outline {
         border-color: $color-hibiscus-pink;
+
+        &:hover {
+            background-color: $color-hibiscus-pink;
+            border-color: $color-hibiscus-pink;
+            color: $color-soft-peach;
+        }
     }
 
     .newsletter-signup,
