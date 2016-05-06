@@ -3,8 +3,13 @@
 @if (Model.IsAuthenticated)
 {
     <div class="page-account">
+
         <h1 class="page-account__header">@Editable(Model.GlassModel, model => model.Title)</h1>
-        @Editable(Model.GlassModel, model => model.Body)
+
+        <div class="page-account__introduction">
+            @Editable(Model.GlassModel, model => model.Body)
+        </div>
+
         <div class="page-preferences js-preferences-user-container">
             <p class="page-account__error js-preferences-user-error-general">
                 @Model.GeneralErrorText
