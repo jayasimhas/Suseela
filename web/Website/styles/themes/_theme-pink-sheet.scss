@@ -10,6 +10,10 @@
         }
     }
 
+    footer a {
+        color: inherit;
+    }
+
     .header-account-access {
         &__my-account,
         &__sign-in-out {
@@ -45,7 +49,8 @@
     .button--filled,
     .search-bar__submit,
     .banner--alert,
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch,
+    .latest-news__header:before {
         background: $color-light-plum;
         background-color: $color-light-plum;
         color: $color-soft-peach;
