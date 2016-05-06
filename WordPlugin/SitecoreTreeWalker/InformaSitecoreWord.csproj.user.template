@@ -9,7 +9,6 @@
 		
 	</ItemGroup>
 	<PropertyGroup>
-		<ApplicationVersion>${tstamp.version}</ApplicationVersion>
 		<PublishUrl>${Plugin.PublishUrl}</PublishUrl>
 		<InstallUrl>${Plugin.InstallUrl}</InstallUrl>
 		<TargetCulture>en</TargetCulture>	
