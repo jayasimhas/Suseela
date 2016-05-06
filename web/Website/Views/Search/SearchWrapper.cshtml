@@ -28,7 +28,7 @@
                     class="action-flag"
                     ng-controller="SavedSearchController as savedSearch" ng-init="isAuthenticated = @Model.IsAuthenticated.ToString().ToLower()">
 
-                    <a href="#" class="pop-out__trigger js-save-search"
+                    <a href="#" class="pop-out__trigger js-save-search js-pop-out-trigger"
                         ng-class="{'js-pop-out-trigger': !savedSearch.isSaved}"
                         ng-click="savedSearch.unsaveSearch()"
                         data-pop-out-type="save-search">
