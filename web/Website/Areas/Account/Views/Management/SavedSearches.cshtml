@@ -200,7 +200,10 @@
 
                         </td>
                         <td class="sortable-table__col sortable-table__submit-wrapper">
-                            <form class="form-remove-saved-search"  data-on-submit="/api/SavedSearches" data-submit-type="DELETE">
+                            <form class="form-remove-saved-search"
+                                data-on-submit="/api/SavedSearches"
+                                data-submit-type="DELETE"
+                                data-force-confirm="Are you sure you want to remove this saved search?">
                                 <input name="Title" id="Title" type="hidden" value="@item.Title">
                                 <button type="submit" class="button--outline click-utag" data-info='{"event_name":"saved-search-remove", "id":"@item.Title"}'>@Model.RemoveText</button>
                             </form>

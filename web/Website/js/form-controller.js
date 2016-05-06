@@ -27,11 +27,16 @@ function formController(opts) {
 
 		var form = opts.observe;
 
-        if (!form) return false;
+		if (!form) return false;
 
-        var formSubmit = $(form).find('button[type=submit]');
-	    
+		var formSubmit = $(form).find('button[type=submit]');
+
 		$(formSubmit).on('click', (event) => {
+
+			// Some forms will require user confirmation before action is taken
+			// Default to true (confirmed), set to false later if confirmation is
+			// required and user cancels action
+			var actionConfirmed = true;
 
 			var currentForm;
 			if(event.target.form) {
@@ -40,106 +45,115 @@ function formController(opts) {
 				currentForm = $(event.target).closest('form');
 			}
 
-			if(opts.beforeRequest) {
-				opts.beforeRequest();
+			if($(currentForm).data('force-confirm')) {
+				actionConfirmed = window.confirm($(currentForm).data('force-confirm'));
 			}
 
-			event.preventDefault(); // Prevent form submitting
+			if(actionConfirmed) {
 
-            hideErrors(currentForm); // Reset any visible errors
-
-            // Prevent user from re-submitting form
-			$(formSubmit).attr('disabled', 'disabled');
-
-			var inputData = {};
-
-			$(currentForm).find('input, select, textarea').each(function() {
-
-                var value = '';
-                var field = $(this);
-
-				if (field.data('checkbox-type') === 'boolean') {
-					value = this.checked;
-
-					if (field.data('checkbox-boolean-type') === 'reverse') {
-						value = !value;
-					}
-				}
-				if (field.data('checkbox-type') === 'value') {
-					value = this.checked ? field.val() : undefined;
-				}
-				else {
-					value = field.val();
+				if(opts.beforeRequest) {
+					opts.beforeRequest();
 				}
 
-				if (value != undefined)
-				{
-					if (inputData[field.attr('name')] == undefined) {
-						inputData[field.attr('name')] = value;
-					}
-					else if ($.isArray(inputData[field.attr('name')])) {
-						inputData[field.attr('name')].push(value);
-					}
-					else {
-						inputData[field.attr('name')] = [ inputData[field.attr('name')] ];
-						inputData[field.attr('name')].push(value);
-					}
-				}
-			});
+				event.preventDefault(); // Prevent form submitting
 
-			if(!$(currentForm).data('on-submit')) {
-				console.warn('No submit link for form');
-			}
+				hideErrors(currentForm); // Reset any visible errors
 
-			$.ajax({
-				url: $(currentForm).data('on-submit'),
-				type: $(currentForm).data('submit-type') || 'POST',
-				data: inputData,
-				context: this,
-				success: function (response) {
-					if (response.success) {
+				// Prevent user from re-submitting form
+				$(formSubmit).attr('disabled', 'disabled');
 
-                        showSuccessMessage(currentForm);
+				var inputData = {};
 
-						if (opts.successCallback) {
-							opts.successCallback(currentForm, this, event);
+				$(currentForm).find('input, select, textarea').each(function() {
+
+					var value = '';
+					var field = $(this);
+
+					if (field.data('checkbox-type') === 'boolean') {
+						value = this.checked;
+
+						if (field.data('checkbox-boolean-type') === 'reverse') {
+							value = !value;
 						}
-
-                        if($(form).data('on-success')) {
-                            window.location.href = $(currentForm).data('on-success');
-                        }
+					}
+					if (field.data('checkbox-type') === 'value') {
+						value = this.checked ? field.val() : undefined;
 					}
 					else {
-						if (response.reasons && response.reasons.length > 0) {
-							for (var reason in response.reasons) {
-								showError(form, '.js-form-error-' + response.reasons[reason]);
+						value = field.val();
+					}
+
+					if (value != undefined)
+					{
+						if (inputData[field.attr('name')] == undefined) {
+							inputData[field.attr('name')] = value;
+						}
+						else if ($.isArray(inputData[field.attr('name')])) {
+							inputData[field.attr('name')].push(value);
+						}
+						else {
+							inputData[field.attr('name')] = [ inputData[field.attr('name')] ];
+							inputData[field.attr('name')].push(value);
+						}
+					}
+				});
+
+				if(!$(currentForm).data('on-submit')) {
+					console.warn('No submit link for form');
+				}
+
+				$.ajax({
+					url: $(currentForm).data('on-submit'),
+					type: $(currentForm).data('submit-type') || 'POST',
+					data: inputData,
+					context: this,
+					success: function (response) {
+						if (response.success) {
+
+							showSuccessMessage(currentForm);
+
+							if (opts.successCallback) {
+								opts.successCallback(currentForm, this, event);
 							}
-						} else {
-							showError(currentForm, '.js-form-error-general');
+
+							if($(form).data('on-success')) {
+								window.location.href = $(currentForm).data('on-success');
+							}
 						}
+						else {
+							if (response.reasons && response.reasons.length > 0) {
+								for (var reason in response.reasons) {
+									showError(form, '.js-form-error-' + response.reasons[reason]);
+								}
+							} else {
+								showError(currentForm, '.js-form-error-general');
+							}
+
+							if (opts.failureCallback) {
+								opts.failureCallback(currentForm,response);
+							}
+						}
+					},
+					error: function(response) {
+
+						showError(currentForm, '.js-form-error-general');
 
 						if (opts.failureCallback) {
 							opts.failureCallback(currentForm,response);
 						}
+					},
+					complete: function() {
+						setTimeout((function() {
+							$(formSubmit).removeAttr('disabled');
+						}), 250);
 					}
-				},
-				error: function(response) {
 
-					showError(currentForm, '.js-form-error-general');
+				});
 
-					if (opts.failureCallback) {
-						opts.failureCallback(currentForm,response);
-					}
-				},
-                complete: function() {
-                    setTimeout((function() {
-						$(formSubmit).removeAttr('disabled');
-					}), 250);
-                }
-
-			});
+			} // if actionConfirmed
 
 			return false;
+
 		});
 	})();
 }
