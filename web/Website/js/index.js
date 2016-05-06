@@ -297,12 +297,25 @@ $(document).ready(function() {
 
     var saveSearchLoginController = new FormController({
         observe: '.form-save-search-login',
-        successCallback: function() {
+        successCallback: function(form, context, event) {
             Cookies.set('saveStashedSearch', {
                 'Title': $('.js-save-search-title').val(),
                 'Url': $('.js-save-search-url').val(),
                 'AlertEnabled': $('#AlertEnabled').prop('checked')
             });
+
+            var loginAnalytics =  {
+                event_name: 'login',
+                login_state: 'successful',
+                userName: '"' + $(form).find('input[name=username]').val() + '"'
+            };
+
+            analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
+
+            // If Angular, need location.reload to force page refresh
+            if(typeof angular !== 'undefined') {
+                angular.element($('.search-results')[0]).controller().forceRefresh();
+            }
         }
     });
 
