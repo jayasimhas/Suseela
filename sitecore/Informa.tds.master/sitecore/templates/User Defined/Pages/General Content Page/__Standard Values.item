@@ -19,7 +19,14 @@ content-length: 1174
 ----version----
 language: en
 version: 1
-revision: 5b19ee91-257c-44aa-b825-b4a4210d78e4
+revision: fb59f64e-7dd8-4f66-abcf-4b1b100439a7
+
+----field----
+field: {F2B6EE8B-D5E1-49AE-92F0-BC966269B300}
+name: Include In Search
+key: include in search
+content-length: 0
+
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-5b19ee91-257c-44aa-b825-b4a4210d78e4
+fb59f64e-7dd8-4f66-abcf-4b1b100439a7
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160408T174222Z
+20160506T144134Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
