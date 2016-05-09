@@ -27,6 +27,7 @@ using Jabberwocky.Glass.Models;
 using Sitecore.Globalization;
 using Sitecore.Data;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Velir.Search.Models;
 
@@ -1704,6 +1705,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IArticleConstants.Legacy_PublicationsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Legacy_Publications  {get; set;}
 								/// <summary>
+					/// The Legacy Sitecore ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 92187bb9-32ef-4c18-a546-0bd2e7e7bf43</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Legacy_Sitecore_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Legacy_Sitecore_ID  {get; set;}
+								/// <summary>
 					/// The Featured Image 16 9 field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
@@ -2013,6 +2023,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IArticleConstants.Legacy_PublicationsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Legacy_Publications  {get; set;}
 										/// <summary>
+						/// The Legacy Sitecore ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 92187bb9-32ef-4c18-a546-0bd2e7e7bf43</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Legacy_Sitecore_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Legacy_Sitecore_ID  {get; set;}
+										/// <summary>
 						/// The Featured Image 16 9 field.
 						/// <para></para>
 						/// <para>Field Type: Image</para>		
@@ -2239,6 +2258,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Legacy_PublicationsFieldId = new ID("0f6c8f42-01dc-4e05-b63e-aa25d8aa0e09");
 			public const string Legacy_PublicationsFieldName = "Legacy Publication";
+
+						
+					
+			public static readonly ID Legacy_Sitecore_IDFieldId = new ID("92187bb9-32ef-4c18-a546-0bd2e7e7bf43");
+			public const string Legacy_Sitecore_IDFieldName = "Legacy Sitecore ID";
 
 						
 					
@@ -4587,10 +4611,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 2a2d2353-f2e2-46cc-9c10-8900db007122</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=INumber_Option</para>
 					/// </summary>
 					[SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Number_To_Display  {get; set;}
+					INumber_Option Number_To_Display  {get; set;}
 								/// <summary>
 					/// The Subjects field.
 					/// <para></para>
@@ -4626,10 +4650,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 						/// <para></para>
 						/// <para>Field Type: Droplink</para>		
 						/// <para>Field ID: 2a2d2353-f2e2-46cc-9c10-8900db007122</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: type=INumber_Option</para>
 						/// </summary>
 						[SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Number_To_Display  {get; set;}
+						INumber_Option Number_To_Display  {get; set;}
 										/// <summary>
 						/// The Subjects field.
 						/// <para></para>
@@ -16434,6 +16458,28 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
 			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
+
+						
+					
+			public static readonly ID Lockout_Email_BodyFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
+			public const string Lockout_Email_BodyFieldName = "Lockout Email Body";
+
+							public static readonly ID Lockout_Email_Body__RawFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
+				public const string Lockout_Email_Body__RawFieldName = "Lockout Email Body";
+						
+					
+			public static readonly ID Lockout_Email_FromFieldId = new ID("533cb9d2-b47a-4a9a-9b8a-c4febcdadcab");
+			public const string Lockout_Email_FromFieldName = "Lockout Email From";
+
+						
+					
+			public static readonly ID Lockout_Email_SubjectFieldId = new ID("f432072f-cfcb-4477-8588-61726fdadf23");
+			public const string Lockout_Email_SubjectFieldName = "Lockout Email Subject";
+
+						
+					
+			public static readonly ID Lockout_Email_ToFieldId = new ID("861cb808-ae66-4908-9d46-96b350e302b3");
+			public const string Lockout_Email_ToFieldName = "Lockout Email To";
 
 						
 					
