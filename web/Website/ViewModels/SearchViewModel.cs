@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
 using Informa.Library.Subscription.User;
 using Informa.Library.User.Authentication;
+using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
@@ -10,17 +12,25 @@ namespace Informa.Web.ViewModels
 {
 	public class SearchViewModel : GlassViewModel<ISearch>
 	{
+		private readonly Lazy<IEnumerable<string>> _subcriptions; 
+
 		protected readonly ITextTranslator TextTranslator;
 
-		public SearchViewModel(ITextTranslator textTranslator, IAuthenticatedUserContext userContext, IUserSubscriptionsContext subscriptionsContext)
+		public SearchViewModel(ITextTranslator textTranslator, IAuthenticatedUserContext userContext, IUserSubscriptionsContext subscriptionsContext, IItemReferences itemReferences)
 		{
 			TextTranslator = textTranslator;
-			
-			Subcriptions = userContext.IsAuthenticated
-				? subscriptionsContext.Subscriptions?.Select(s => s.Publication) ?? Enumerable.Empty<string>()
-				: Enumerable.Empty<string>();
-		}
+			ItemReferences = itemReferences;
+			IsAuthenticated = userContext.IsAuthenticated;
 
+			_subcriptions = new Lazy<IEnumerable<string>>(() =>
+			{
+				return userContext.IsAuthenticated
+					? subscriptionsContext.Subscriptions?.Select(s => s.Publication) ?? Enumerable.Empty<string>()
+					: Enumerable.Empty<string>();
+			});
+		}
+		public IItemReferences ItemReferences { get; set; }
+		public bool IsAuthenticated { get; set; }
 		public string PageFirstText => TextTranslator.Translate("Search.Page.First");
 		public string PageLastText => TextTranslator.Translate("Search.Page.Last");
 		public string SearchTipsText => TextTranslator.Translate("Search.Tips");
@@ -37,6 +47,6 @@ namespace Informa.Web.ViewModels
 		public string SearchFilterByText => TextTranslator.Translate("Search.FilterBy");
 		public string SearchSelectMySubscriptionsText => TextTranslator.Translate("Search.SelectMySubscriptions");
 		public string SearchShowAllPublicationsText => TextTranslator.Translate("Search.ShowAllPublications");
-		public IEnumerable<string> Subcriptions { get; set; }
+		public IEnumerable<string> Subcriptions => _subcriptions.Value;
 	}
 }
