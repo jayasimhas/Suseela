@@ -51,13 +51,13 @@ function formController(opts) {
 
 			if(actionConfirmed) {
 
-				if(opts.beforeRequest) {
-					opts.beforeRequest();
-				}
-
 				event.preventDefault(); // Prevent form submitting
 
 				hideErrors(currentForm); // Reset any visible errors
+
+				if(opts.beforeRequest) {
+					opts.beforeRequest(currentForm);
+				}
 
 				// Prevent user from re-submitting form
 				$(formSubmit).attr('disabled', 'disabled');

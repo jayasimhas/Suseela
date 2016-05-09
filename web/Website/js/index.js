@@ -290,8 +290,10 @@ $(document).ready(function() {
             Cookies.remove('saveStashedSearch');
             window.controlPopOuts.closePopOut($(form).closest('.pop-out'));
         },
-        failureCallback: function() {
-
+        beforeRequest: function(form) {
+            if(!$(form).find('.js-save-search-title').val().trim()) {
+                $('.js-form-error-EmptyTitle').show();
+            }
         }
     });
 
@@ -752,7 +754,6 @@ $(document).ready(function() {
         }
 
         analyticsEvent( $.extend(analytics_data, preferencesData) );
-
 
     });
 
