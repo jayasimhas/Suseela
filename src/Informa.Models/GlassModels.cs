@@ -5759,20 +5759,20 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 					/// The Category Id field.
 					/// <para>The CID of the folder where the email will be stored in ExactTarget.</para>
 					/// <para>Field Type: Integer</para>		
-					/// <para>Field ID: 05feb882-d3ad-4026-90e5-c6435a13ad5f</para>
+					/// <para>Field ID: 7b5f7284-2faf-4566-b626-07fbd93101f2</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(IExactTarget_EmailConstants.Category_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
 					int Category_Id  {get; set;}
 								/// <summary>
-					/// The ET Email Id field.
-					/// <para></para>
+					/// The Exact Target External Key field.
+					/// <para>Internal - Do not edit</para>
 					/// <para>Field Type: Integer</para>		
-					/// <para>Field ID: 7b5f7284-2faf-4566-b626-07fbd93101f2</para>
+					/// <para>Field ID: 05feb882-d3ad-4026-90e5-c6435a13ad5f</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IExactTarget_EmailConstants.ET_Email_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
-					int ET_Email_Id  {get; set;}
+					[SitecoreField(IExactTarget_EmailConstants.Exact_Target_External_KeyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					int Exact_Target_External_Key  {get; set;}
 				}
 
 	
@@ -5816,20 +5816,20 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 						/// The Category Id field.
 						/// <para>The CID of the folder where the email will be stored in ExactTarget.</para>
 						/// <para>Field Type: Integer</para>		
-						/// <para>Field ID: 05feb882-d3ad-4026-90e5-c6435a13ad5f</para>
+						/// <para>Field ID: 7b5f7284-2faf-4566-b626-07fbd93101f2</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(IExactTarget_EmailConstants.Category_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
 						int Category_Id  {get; set;}
 										/// <summary>
-						/// The ET Email Id field.
-						/// <para></para>
+						/// The Exact Target External Key field.
+						/// <para>Internal - Do not edit</para>
 						/// <para>Field Type: Integer</para>		
-						/// <para>Field ID: 7b5f7284-2faf-4566-b626-07fbd93101f2</para>
+						/// <para>Field ID: 05feb882-d3ad-4026-90e5-c6435a13ad5f</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IExactTarget_EmailConstants.ET_Email_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
-						int ET_Email_Id  {get; set;}
+						[SitecoreField(IExactTarget_EmailConstants.Exact_Target_External_KeyFieldName, Setting = SitecoreFieldSettings.InferType)]
+						int Exact_Target_External_Key  {get; set;}
 						}
 	
 	public static partial class IExactTarget_EmailConstants{
@@ -5854,13 +5854,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 
 						
 					
-			public static readonly ID Category_IdFieldId = new ID("05feb882-d3ad-4026-90e5-c6435a13ad5f");
+			public static readonly ID Category_IdFieldId = new ID("7b5f7284-2faf-4566-b626-07fbd93101f2");
 			public const string Category_IdFieldName = "Category Id";
 
 						
 					
-			public static readonly ID ET_Email_IdFieldId = new ID("7b5f7284-2faf-4566-b626-07fbd93101f2");
-			public const string ET_Email_IdFieldName = "ET Email Id";
+			public static readonly ID Exact_Target_External_KeyFieldId = new ID("05feb882-d3ad-4026-90e5-c6435a13ad5f");
+			public const string Exact_Target_External_KeyFieldName = "Exact Target External Key";
 
 						
 					

@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {7B5F7284-2FAF-4566-B626-07FBD93101F2}
+id: {05FEB882-D3AD-4026-90E5-C6435A13AD5F}
 database: master
-path: /sitecore/templates/User Defined/Emails/ExactTarget Email/Exact Target/ET Email Id
+path: /sitecore/templates/User Defined/Emails/ExactTarget Email/Exact Target/Exact Target External Key
 parent: {AE70CAAF-39BA-4EE4-A114-757EEED21C0A}
-name: ET Email Id
+name: Exact Target External Key
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -20,21 +20,35 @@ Integer
 field: {9C6106EA-7A5A-48E2-8CAD-F0F693B1E2D4}
 name: __Read Only
 key: __read only
-content-length: 1
+content-length: 0
 
-1
+
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
 content-length: 3
 
-200
+100
 ----version----
 language: en
 version: 1
-revision: f40df8b1-8e4f-468c-aaac-7670db08582b
+revision: c94cd2a6-6dfc-435e-a611-7701abaaece1
 
+----field----
+field: {577F1689-7DE4-4AD2-A15F-7FDC1759285F}
+name: __Long description
+key: __long description
+content-length: 222
+
+This field is used to associate Sitecore email items with their counterparts in ExactTarget.  This is handled internally though code.  Manual changes may cause errors, most likely preventing this email from being sendable.
+----field----
+field: {9541E67D-CE8C-4225-803D-33F7F29F09EF}
+name: __Short description
+key: __short description
+content-length: 22
+
+Internal - Do not edit
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-f40df8b1-8e4f-468c-aaac-7670db08582b
+c94cd2a6-6dfc-435e-a611-7701abaaece1
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160509T210841Z
+20160509T225201Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

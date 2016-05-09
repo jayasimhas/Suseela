@@ -40,7 +40,7 @@ namespace Informa.Library.Mail.ExactTarget
             _dependencies = dependencies;
         }
 
-        private static bool IsEmailNewToExactTarget(IExactTarget_Email emailItem) => emailItem.ET_Email_Id == 0;
+        private static bool IsEmailNewToExactTarget(IExactTarget_Email emailItem) => emailItem.Exact_Target_External_Key == 0;
 
         private static bool IsNullOrEmptyEmailItem(IExactTarget_Email emailItem)
             => emailItem == null || emailItem._Id == Guid.Empty;
@@ -66,13 +66,13 @@ namespace Informa.Library.Mail.ExactTarget
             if (response.Success)
             {
                 _dependencies.LogWrapper.SitecoreInfo(
-                    $"Email push to ExactTarget finished. Email item Sitecore id: {emailItem._Id.ToString("B")}, ET id: {emailItem.ET_Email_Id}, "
+                    $"Email push to ExactTarget finished. Email item Sitecore id: {emailItem._Id.ToString("B")}, ET id: {emailItem.Exact_Target_External_Key}, "
                     + $"Result message: {response.Message}");
             }
             else
             {
                 _dependencies.LogWrapper.SitecoreWarn(
-                    $"Email push to ExactTarget FAILED. Email item Sitecore id: {emailItem._Id.ToString("B")}, ET id: {emailItem.ET_Email_Id}, "
+                    $"Email push to ExactTarget FAILED. Email item Sitecore id: {emailItem._Id.ToString("B")}, ET id: {emailItem.Exact_Target_External_Key}, "
                     + $"Result message: {response.Message}");
             }
 
@@ -81,13 +81,13 @@ namespace Informa.Library.Mail.ExactTarget
         private void UpdateSitecoreWithEmailId(IExactTarget_Email etEmail, ExactTargetResponse response) =>
             _dependencies.SitecoreSecurityWrapper.SecurityDisabledAction(
                 () => _dependencies.SitecoreServiceMaster.Save(
-                    etEmail.InvokeAction(email => email.ET_Email_Id = response.ExactTargetEmailId)));
+                    etEmail.InvokeAction(email => email.Exact_Target_External_Key = response.ExactTargetEmailId)));
 
         public FuelSDK.ET_Email PopulateEtModel(IExactTarget_Email emailItem)
         {
             return new FuelSDK.ET_Email()
             {
-                ID = emailItem.ET_Email_Id,
+                ID = emailItem.Exact_Target_External_Key,
                 Subject = emailItem.Subject,
                 Name = emailItem._Name,
                 HTMLBody = GetEmailHtml(emailItem),

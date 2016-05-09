@@ -145,7 +145,7 @@ namespace Informa.Tests.Library.Mail_Tests
         {
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
-            fakeEmailItem.ET_Email_Id = 0;
+            fakeEmailItem.Exact_Target_External_Key = 0;
             Sub_SiteInfo_HttpContext();
             Sub_CreateResult();
 
@@ -165,7 +165,7 @@ namespace Informa.Tests.Library.Mail_Tests
         {
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
-            fakeEmailItem.ET_Email_Id = 77;
+            fakeEmailItem.Exact_Target_External_Key = 77;
             Sub_SiteInfo_HttpContext();
 
             var fakeUpdateResponse = new ExactTargetResponse
@@ -192,7 +192,7 @@ namespace Informa.Tests.Library.Mail_Tests
         {
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
-            fakeEmailItem.ET_Email_Id = 0;
+            fakeEmailItem.Exact_Target_External_Key = 0;
             Sub_SiteInfo_HttpContext();
             Sub_CreateResult();
 
@@ -207,7 +207,7 @@ namespace Informa.Tests.Library.Mail_Tests
             // ASSERT
             _dependencies.SitecoreSecurityWrapper.Received(1).SecurityDisabledAction(Arg.Any<Action>());
             _dependencies.SitecoreServiceMaster.Received(1)
-                .Save(Arg.Is<IExactTarget_Email>(email => email.ET_Email_Id == 101));
+                .Save(Arg.Is<IExactTarget_Email>(email => email.Exact_Target_External_Key == 101));
         }
 
         [Test]
@@ -215,7 +215,7 @@ namespace Informa.Tests.Library.Mail_Tests
         {
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
-            fakeEmailItem.ET_Email_Id = 77;
+            fakeEmailItem.Exact_Target_External_Key = 77;
             Sub_SiteInfo_HttpContext();
 
             var fakeUpdateResponse = new ExactTargetResponse
