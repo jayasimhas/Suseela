@@ -21,6 +21,15 @@
 		&--half-width {
 			width: 50%;
 		}
+
+		&--full-width {
+			width: 100%;
+		}
+
+		.labeled-checkbox {
+			margin-bottom: 0;
+			display: inline-block;
+		}
 	}
 
 	tbody tr {

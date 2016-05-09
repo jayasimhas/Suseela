@@ -789,6 +789,21 @@ $(document).ready(function() {
             $('#txtShippingPostalCode').val($('#txtBillingPostalCode').val());
         }
     });
+
+
+    // Account - Email Preferences toggler
+    $('.js-account-email-toggle-all').on('click', function(e) {
+        if($(e.target).prop('checked')) {
+            $('.js-account-email-checkbox').prop('checked', null);
+        }
+    });
+
+    $('.js-account-email-checkbox').on('click', function(e) {
+        if($(e.target).prop('checked')) {
+            $('.js-account-email-toggle-all').prop('checked', null);
+        }
+    });
+
     // Twitter sharing JS
     window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],
         w=window.twttr||{};
