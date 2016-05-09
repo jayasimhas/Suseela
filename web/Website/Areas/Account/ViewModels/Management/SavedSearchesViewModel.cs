@@ -3,13 +3,13 @@ using Informa.Library.Globalization;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Content;
 using Informa.Library.User.Search;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
-	public class SavedSearchesViewModel : GlassViewModel<I___BasePage>
+	public class SavedSearchesViewModel : GlassViewModel<ISaved_Searches_Page>
 	{
 		public readonly ISignInViewModel SignInViewModel;
 		
