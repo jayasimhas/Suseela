@@ -12,14 +12,12 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly ITextTranslator TextTranslator;
 
-		public SearchViewModel() { }
-
 		public SearchViewModel(ITextTranslator textTranslator, IAuthenticatedUserContext userContext, IUserSubscriptionsContext subscriptionsContext)
 		{
 			TextTranslator = textTranslator;
 			
 			Subcriptions = userContext.IsAuthenticated
-				? subscriptionsContext.Subscriptions.Select(s => s.Publication)
+				? subscriptionsContext.Subscriptions?.Select(s => s.Publication) ?? Enumerable.Empty<string>()
 				: Enumerable.Empty<string>();
 		}
 
