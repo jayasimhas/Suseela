@@ -5767,12 +5767,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 								/// <summary>
 					/// The ET Email Id field.
 					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field Type: Integer</para>		
 					/// <para>Field ID: 7b5f7284-2faf-4566-b626-07fbd93101f2</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(IExactTarget_EmailConstants.ET_Email_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string ET_Email_Id  {get; set;}
+					int ET_Email_Id  {get; set;}
 				}
 
 	
@@ -5824,12 +5824,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 										/// <summary>
 						/// The ET Email Id field.
 						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field Type: Integer</para>		
 						/// <para>Field ID: 7b5f7284-2faf-4566-b626-07fbd93101f2</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(IExactTarget_EmailConstants.ET_Email_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string ET_Email_Id  {get; set;}
+						int ET_Email_Id  {get; set;}
 						}
 	
 	public static partial class IExactTarget_EmailConstants{

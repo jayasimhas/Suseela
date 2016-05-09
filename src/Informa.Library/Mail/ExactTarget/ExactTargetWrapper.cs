@@ -6,29 +6,46 @@ namespace Informa.Library.Mail.ExactTarget
 {
     public interface IExactTargetWrapper
     {
-        CreateResult CreateEmail(FuelSDK.Email etEmail, out string status);
-        UpdateResult UpdateEmail(FuelSDK.Email etEmail, out string status);
+        ExactTargetResponse CreateEmail(ET_Email etEmail);
+        ExactTargetResponse UpdateEmail(ET_Email etEmail);
     }
 
     [AutowireService]
     public class ExactTargetWrapper : IExactTargetWrapper
     {
-        public CreateResult CreateEmail(FuelSDK.Email etEmail, out string status)
+        public ExactTargetResponse CreateEmail(ET_Email etEmail)
         {
-            string requestId;
-            var proxy = new FuelSDK.SoapClient();
-            CreateResult[] results = proxy.Create(new CreateOptions(), new APIObject[] { etEmail }, out requestId, out status);
-
-            return results.FirstOrDefault();
+            var client = new ET_Client();
+            etEmail.AuthStub = client;
+            var response = etEmail.Post();
+            var result = response.Results.FirstOrDefault();
+            return new ExactTargetResponse
+            {
+                Success = response.Status && result != null,
+                ExactTargetEmailId = result?.NewID ?? 0,
+                Message = response.Message
+            };
         }
 
-        public UpdateResult UpdateEmail(FuelSDK.Email etEmail, out string status)
+        public ExactTargetResponse UpdateEmail(ET_Email etEmail)
         {
-            string requestId;
-            var soapClient = new SoapClient();
-            UpdateResult[] results = soapClient.Update(new UpdateOptions(), new APIObject[] { etEmail }, out requestId, out status);
+            var client = new ET_Client();
+            etEmail.AuthStub = client;
+            var response = etEmail.Patch();
 
-            return results.FirstOrDefault();
+            return new ExactTargetResponse
+            {
+                ExactTargetEmailId = etEmail.ID,
+                Success = response.Status,
+                Message = response.Message
+            };
         }
+    }
+
+    public class ExactTargetResponse
+    {
+        public int ExactTargetEmailId { get; set; }
+        public bool Success { get; set; }
+        public string Message { get; set; }
     }
 }

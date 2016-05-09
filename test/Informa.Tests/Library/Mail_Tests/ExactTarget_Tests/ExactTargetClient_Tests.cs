@@ -86,12 +86,14 @@ namespace Informa.Tests.Library.Mail_Tests
 
         private void Sub_CreateResult()
         {
-            string status;
-            var fakeCreateResult = new CreateResult
+            var fakeCreateResponse = new ExactTargetResponse
             {
-                NewObjectID = "101"
+                ExactTargetEmailId = 101,
+                Success = true,
+                Message = "fun was had by all"
+
             };
-            _dependencies.ExactTargetWrapper.CreateEmail(Arg.Any<FuelSDK.Email>(), out status).Returns(fakeCreateResult);
+            _dependencies.ExactTargetWrapper.CreateEmail(Arg.Any<ET_Email>()).Returns(fakeCreateResponse);
         }
 
         private void Sub_SiteInfo_HttpContext()
@@ -143,7 +145,7 @@ namespace Informa.Tests.Library.Mail_Tests
         {
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
-            fakeEmailItem.ET_Email_Id = null;
+            fakeEmailItem.ET_Email_Id = 0;
             Sub_SiteInfo_HttpContext();
             Sub_CreateResult();
 
@@ -154,19 +156,25 @@ namespace Informa.Tests.Library.Mail_Tests
             _exactTargetClient.PushEmail(fakeEmailItem);
 
             // ASSERT
-            string status;
             _dependencies.ExactTargetWrapper.Received(1)
-                .CreateEmail(Arg.Is<FuelSDK.Email>(email => email.HTMLBody == "<div><h1>Moose</h1></div>"), out status);
+                .CreateEmail(Arg.Is<ET_Email>(email => email.HTMLBody == "<div><h1>Moose</h1></div>"));
         }
 
         [Test]
-        public void PushEmail_EmailItemHasETEmailId_UpdateEtEmail()
+        public void PushEmail_EmailItemHasETEmailId_CallUpdateEmail()
         {
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
-            fakeEmailItem.ET_Email_Id = "77";
+            fakeEmailItem.ET_Email_Id = 77;
             Sub_SiteInfo_HttpContext();
-            Sub_CreateResult();
+
+            var fakeUpdateResponse = new ExactTargetResponse
+            {
+                ExactTargetEmailId = 77,
+                Success = true,
+                Message = "fun was had by all"
+            };
+            _dependencies.ExactTargetWrapper.UpdateEmail(Arg.Any<ET_Email>()).Returns(fakeUpdateResponse);
 
             _dependencies.WebClientWrapper.DownloadString("http://Mooseville.com/emails/MeetTheMoose")
                 .Returns("<div><h1>Moose Update!</h1></div>");
@@ -175,9 +183,8 @@ namespace Informa.Tests.Library.Mail_Tests
             _exactTargetClient.PushEmail(fakeEmailItem);
 
             // ASSERT
-            string status;
             _dependencies.ExactTargetWrapper.Received(1)
-                .UpdateEmail(Arg.Is<FuelSDK.Email>(email => email.HTMLBody == "<div><h1>Moose Update!</h1></div>"), out status);
+                .UpdateEmail(Arg.Is<ET_Email>(email => email.HTMLBody == "<div><h1>Moose Update!</h1></div>"));
         }
 
         [Test]
@@ -185,7 +192,7 @@ namespace Informa.Tests.Library.Mail_Tests
         {
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
-            fakeEmailItem.ET_Email_Id = null;
+            fakeEmailItem.ET_Email_Id = 0;
             Sub_SiteInfo_HttpContext();
             Sub_CreateResult();
 
@@ -200,7 +207,33 @@ namespace Informa.Tests.Library.Mail_Tests
             // ASSERT
             _dependencies.SitecoreSecurityWrapper.Received(1).SecurityDisabledAction(Arg.Any<Action>());
             _dependencies.SitecoreServiceMaster.Received(1)
-                .Save(Arg.Is<IExactTarget_Email>(email => email.ET_Email_Id == "101"));
+                .Save(Arg.Is<IExactTarget_Email>(email => email.ET_Email_Id == 101));
+        }
+
+        [Test]
+        public void PushEmail_UpdateEmailFails_WarnWithMessage()
+        {
+            // ARRANGE
+            var fakeEmailItem = Sub_EmailItem();
+            fakeEmailItem.ET_Email_Id = 77;
+            Sub_SiteInfo_HttpContext();
+
+            var fakeUpdateResponse = new ExactTargetResponse
+            {
+                ExactTargetEmailId = 77,
+                Success = false,
+                Message = "nobody had fun!"
+            };
+            _dependencies.ExactTargetWrapper.UpdateEmail(Arg.Any<ET_Email>()).Returns(fakeUpdateResponse);
+
+            _dependencies.WebClientWrapper.DownloadString("http://Mooseville.com/emails/MeetTheMoose")
+                .Returns("<div><h1>Moose Update!</h1></div>");
+
+            // ACT
+            _exactTargetClient.PushEmail(fakeEmailItem);
+
+            // ASSERT
+            _dependencies.LogWrapper.Received().SitecoreWarn(Arg.Is<string>(s => s.Contains("nobody had fun!")));
         }
     }
 }

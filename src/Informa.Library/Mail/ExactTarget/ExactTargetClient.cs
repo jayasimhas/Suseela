@@ -9,6 +9,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
+using Sitecore.Mvc.Extensions;
 
 namespace Informa.Library.Mail.ExactTarget
 {
@@ -39,9 +40,14 @@ namespace Informa.Library.Mail.ExactTarget
             _dependencies = dependencies;
         }
 
+        private static bool IsEmailNewToExactTarget(IExactTarget_Email emailItem) => emailItem.ET_Email_Id == 0;
+
+        private static bool IsNullOrEmptyEmailItem(IExactTarget_Email emailItem)
+            => emailItem == null || emailItem._Id == Guid.Empty;
+
         public void PushEmail(IExactTarget_Email emailItem)
         {
-            if (emailItem == null || emailItem._Id == Guid.Empty)
+            if (IsNullOrEmptyEmailItem(emailItem))
             {
                 _dependencies.LogWrapper.SitecoreWarn("Email not pushed to ExactTarget.  Email item was null.");
                 return;
@@ -51,36 +57,46 @@ namespace Informa.Library.Mail.ExactTarget
 
             var etEmail = PopulateEtModel(emailItem);
 
-            string status;
-            if (string.IsNullOrEmpty(emailItem.ET_Email_Id))
-            {
-                var result = _dependencies.ExactTargetWrapper.CreateEmail(etEmail, out status);
+            var response = IsEmailNewToExactTarget(emailItem)
+                ? _dependencies.ExactTargetWrapper.CreateEmail(etEmail)
+                : _dependencies.ExactTargetWrapper.UpdateEmail(etEmail);
 
-                emailItem.ET_Email_Id = result.NewObjectID;
-                _dependencies.SitecoreSecurityWrapper.SecurityDisabledAction(
-                    () => _dependencies.SitecoreServiceMaster.Save(emailItem));
+            if (response.Success && IsEmailNewToExactTarget(emailItem)) { UpdateSitecoreWithEmailId(emailItem, response); }
+            
+            if (response.Success)
+            {
+                _dependencies.LogWrapper.SitecoreInfo(
+                    $"Email push to ExactTarget finished. Email item Sitecore id: {emailItem._Id.ToString("B")}, ET id: {emailItem.ET_Email_Id}, "
+                    + $"Result message: {response.Message}");
             }
             else
             {
-                var result = _dependencies.ExactTargetWrapper.UpdateEmail(etEmail, out status);
+                _dependencies.LogWrapper.SitecoreWarn(
+                    $"Email push to ExactTarget FAILED. Email item Sitecore id: {emailItem._Id.ToString("B")}, ET id: {emailItem.ET_Email_Id}, "
+                    + $"Result message: {response.Message}");
             }
-
-            _dependencies.LogWrapper.SitecoreInfo(
-                $"Email push to ExactTarget finished. Email item Sitecore id: {emailItem._Id.ToString("B")}, ET id: {emailItem.ET_Email_Id}");
 
         }
 
-        public FuelSDK.Email PopulateEtModel(IExactTarget_Email emailItem)
+        private void UpdateSitecoreWithEmailId(IExactTarget_Email etEmail, ExactTargetResponse response) =>
+            _dependencies.SitecoreSecurityWrapper.SecurityDisabledAction(
+                () => _dependencies.SitecoreServiceMaster.Save(
+                    etEmail.InvokeAction(email => email.ET_Email_Id = response.ExactTargetEmailId)));
+
+        public FuelSDK.ET_Email PopulateEtModel(IExactTarget_Email emailItem)
         {
-            return new FuelSDK.Email
+            return new FuelSDK.ET_Email()
             {
+                ID = emailItem.ET_Email_Id,
                 Subject = emailItem.Subject,
                 Name = emailItem._Name,
                 HTMLBody = GetEmailHtml(emailItem),
                 TextBody = emailItem.Text_Body,
                 CharacterSet = emailItem.Character_Set,
                 CategoryID = emailItem.Category_Id,
-                CategoryIDSpecified = true
+                CategoryIDSpecified = true,
+                EmailType = "HTML",
+                IsHTMLPaste = true
             };
         }
 
