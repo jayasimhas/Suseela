@@ -1704,15 +1704,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IArticleConstants.Legacy_PublicationsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Legacy_Publications  {get; set;}
 								/// <summary>
-					/// The Legacy Sitecore ID field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 92187bb9-32ef-4c18-a546-0bd2e7e7bf43</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IArticleConstants.Legacy_Sitecore_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Legacy_Sitecore_ID  {get; set;}
-								/// <summary>
 					/// The Featured Image 16 9 field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
@@ -2022,15 +2013,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IArticleConstants.Legacy_PublicationsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Legacy_Publications  {get; set;}
 										/// <summary>
-						/// The Legacy Sitecore ID field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 92187bb9-32ef-4c18-a546-0bd2e7e7bf43</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IArticleConstants.Legacy_Sitecore_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Legacy_Sitecore_ID  {get; set;}
-										/// <summary>
 						/// The Featured Image 16 9 field.
 						/// <para></para>
 						/// <para>Field Type: Image</para>		
@@ -2257,11 +2239,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Legacy_PublicationsFieldId = new ID("0f6c8f42-01dc-4e05-b63e-aa25d8aa0e09");
 			public const string Legacy_PublicationsFieldName = "Legacy Publication";
-
-						
-					
-			public static readonly ID Legacy_Sitecore_IDFieldId = new ID("92187bb9-32ef-4c18-a546-0bd2e7e7bf43");
-			public const string Legacy_Sitecore_IDFieldName = "Legacy Sitecore ID";
 
 						
 					
@@ -2600,6 +2577,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 	[SitecoreType(TemplateId=ISaved_Searches_PageConstants.TemplateIdString)]
 	public partial interface ISaved_Searches_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
+								/// <summary>
+					/// The Getting Started with Saved Search field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 597630b0-2bb3-4603-9b61-d8c29996d426</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISaved_Searches_PageConstants.Getting_Started_With_Saved_SearchFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Getting_Started_With_Saved_Search  {get; set;}
+								/// <summary>
+					/// The Saved Search Intro field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 43541566-8b27-4e9a-b086-2774abab16aa</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISaved_Searches_PageConstants.Saved_Search_IntroFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Saved_Search_Intro  {get; set;}
 				}
 
 	
@@ -2612,6 +2607,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 		[SitecoreType]
 		public partial interface ISaved_Searches_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
+										/// <summary>
+						/// The Getting Started with Saved Search field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 597630b0-2bb3-4603-9b61-d8c29996d426</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISaved_Searches_PageConstants.Getting_Started_With_Saved_SearchFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Getting_Started_With_Saved_Search  {get; set;}
+										/// <summary>
+						/// The Saved Search Intro field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 43541566-8b27-4e9a-b086-2774abab16aa</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISaved_Searches_PageConstants.Saved_Search_IntroFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Saved_Search_Intro  {get; set;}
 						}
 	
 	public static partial class ISaved_Searches_PageConstants{
@@ -2620,6 +2633,20 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Saved Searches Page";
 
+					
+			public static readonly ID Getting_Started_With_Saved_SearchFieldId = new ID("597630b0-2bb3-4603-9b61-d8c29996d426");
+			public const string Getting_Started_With_Saved_SearchFieldName = "Getting Started with Saved Search";
+
+							public static readonly ID Getting_Started_With_Saved_Search__RawFieldId = new ID("597630b0-2bb3-4603-9b61-d8c29996d426");
+				public const string Getting_Started_With_Saved_Search__RawFieldName = "Getting Started with Saved Search";
+						
+					
+			public static readonly ID Saved_Search_IntroFieldId = new ID("43541566-8b27-4e9a-b086-2774abab16aa");
+			public const string Saved_Search_IntroFieldName = "Saved Search Intro";
+
+							public static readonly ID Saved_Search_Intro__RawFieldId = new ID("43541566-8b27-4e9a-b086-2774abab16aa");
+				public const string Saved_Search_Intro__RawFieldName = "Saved Search Intro";
+						
 					
 			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
 			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
@@ -16407,28 +16434,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
 			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
-
-						
-					
-			public static readonly ID Lockout_Email_BodyFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
-			public const string Lockout_Email_BodyFieldName = "Lockout Email Body";
-
-							public static readonly ID Lockout_Email_Body__RawFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
-				public const string Lockout_Email_Body__RawFieldName = "Lockout Email Body";
-						
-					
-			public static readonly ID Lockout_Email_FromFieldId = new ID("533cb9d2-b47a-4a9a-9b8a-c4febcdadcab");
-			public const string Lockout_Email_FromFieldName = "Lockout Email From";
-
-						
-					
-			public static readonly ID Lockout_Email_SubjectFieldId = new ID("f432072f-cfcb-4477-8588-61726fdadf23");
-			public const string Lockout_Email_SubjectFieldName = "Lockout Email Subject";
-
-						
-					
-			public static readonly ID Lockout_Email_ToFieldId = new ID("861cb808-ae66-4908-9d46-96b350e302b3");
-			public const string Lockout_Email_ToFieldName = "Lockout Email To";
 
 						
 					
