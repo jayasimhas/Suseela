@@ -176,4 +176,13 @@
             width: 100%;
         }
     }
+
+    &__table {
+        margin-bottom: 3rem;
+
+        &-headline {
+            color: $color-zeus-black;
+            margin-bottom: 1rem;
+        }
+    }
 }

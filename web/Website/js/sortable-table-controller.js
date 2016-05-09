@@ -7,21 +7,16 @@ function sortableTableController() {
 	Licenced as X11: http://www.kryogenix.org/code/browser/licence.html
 	*/
 
-
-	var stIsIE = /*@cc_on!@*/false;
-
 	var isSortedTable = false;
 	var tfo, mtch, sortfn, hasInputs;
+
 	var sorttable = {
+
 		init: function initing() {
 			// quit if this function has already been called
 			if (isSortedTable) return;
 			// flag this function so we don't do the same thing twice
 			isSortedTable = true;
-
-			if (!document.createElement || !document.getElementsByTagName) return;
-
-			sorttable.DATE_RE = /^(\d\d?)[\/\.-](\d\d?)[\/\.-]((\d\d)?\d\d)$/;
 
 			$('.js-sortable-table').each(function (indx, item) {
 				sorttable.makeSortable(item);
@@ -65,7 +60,7 @@ function sortableTableController() {
 
 			};
 
-			$('.js-sortable-table-sorter').on('click', function(e) {
+			$(table).find('.js-sortable-table-sorter').on('click', function(e) {
 
 				// If child element is clicked, redirect the click to the
 				// proper element: the parent itself.
@@ -119,6 +114,7 @@ function sortableTableController() {
 
 				var row_array = [];
 				var col = colNum;
+
 				var rows = [].slice.call(table.tBodies[0].rows);
 
 				for (var j = 0; j < rows.length; j++) {
@@ -146,7 +142,7 @@ function sortableTableController() {
 		// guess the type of a column based on its first non-blank row
 		sortfn = sorttable.sort_alpha;
 
-		for (var i=0; i<table.tBodies[0].rows.length; i++) {
+		for (var i = 0; i < table.tBodies[0].rows.length; i++) {
 
 			var text = $(table.tBodies[0].rows[i].cells[column]).text().trim();
 			if (text != '') {
