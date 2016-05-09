@@ -5726,7 +5726,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 	/// <para>ID: 5b1307c3-8126-491f-ab72-177516787e74</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IExactTarget_EmailConstants.TemplateIdString)]
-	public partial interface IExactTarget_Email : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___CanonicalPage
+	public partial interface IExactTarget_Email : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___CanonicalPage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem
 	{
 								/// <summary>
 					/// The Character Set field.
@@ -5758,12 +5758,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 								/// <summary>
 					/// The Category Id field.
 					/// <para>The CID of the folder where the email will be stored in ExactTarget.</para>
-					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field Type: Integer</para>		
 					/// <para>Field ID: 05feb882-d3ad-4026-90e5-c6435a13ad5f</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(IExactTarget_EmailConstants.Category_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Category_Id  {get; set;}
+					int Category_Id  {get; set;}
 								/// <summary>
 					/// The ET Email Id field.
 					/// <para></para>
@@ -5783,7 +5783,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 		/// <para>ID: 5b1307c3-8126-491f-ab72-177516787e74</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IExactTarget_Email__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___CanonicalPage__Raw
+		public partial interface IExactTarget_Email__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___CanonicalPage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BaseItem__Raw
 		{
 										/// <summary>
 						/// The Character Set field.
@@ -5815,12 +5815,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 										/// <summary>
 						/// The Category Id field.
 						/// <para>The CID of the folder where the email will be stored in ExactTarget.</para>
-						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field Type: Integer</para>		
 						/// <para>Field ID: 05feb882-d3ad-4026-90e5-c6435a13ad5f</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(IExactTarget_EmailConstants.Category_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Category_Id  {get; set;}
+						int Category_Id  {get; set;}
 										/// <summary>
 						/// The ET Email Id field.
 						/// <para></para>

@@ -13,9 +13,9 @@ templatekey: Template field
 field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
 name: Type
 key: type
-content-length: 16
+content-length: 7
 
-Single-Line Text
+Integer
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
@@ -26,7 +26,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: df7d3656-24e5-44f2-9b7d-d46f98d6a802
+revision: 5b5d69b2-b9b7-4485-af51-9336ac74f0a7
 
 ----field----
 field: {9541E67D-CE8C-4225-803D-33F7F29F09EF}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-df7d3656-24e5-44f2-9b7d-d46f98d6a802
+5b5d69b2-b9b7-4485-af51-9336ac74f0a7
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160503T174827Z
+20160504T233329Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

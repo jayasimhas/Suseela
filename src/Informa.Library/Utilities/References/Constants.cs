@@ -7,6 +7,7 @@ namespace Informa.Library.Utilities.References
     {
         public const string ArticleNumberLength = "000000";
         public const string MasterDb = "master";
+        public const string WebDb = "web";
 
         public const string ContentRootNode = "{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}";
 

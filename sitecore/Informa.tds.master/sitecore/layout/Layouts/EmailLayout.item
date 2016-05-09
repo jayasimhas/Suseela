@@ -13,13 +13,13 @@ templatekey: Layout
 field: {A036B2BC-BA04-44F6-A75F-BAE6CD242ABF}
 name: Path
 key: path
-content-length: 38
+content-length: 40
 
-/Views/Shared/Layouts/EmailLayout.aspx
+/Views/Shared/Layouts/EmailLayout.cshtml
 ----version----
 language: en
 version: 1
-revision: 61e60b1b-df6e-498f-9930-3a69a73d9056
+revision: 9f5595ac-8450-479d-93e5-4a76788eeb59
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-61e60b1b-df6e-498f-9930-3a69a73d9056
+9f5595ac-8450-479d-93e5-4a76788eeb59
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160503T181136Z
+20160505T142930Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
