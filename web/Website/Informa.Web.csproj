@@ -771,7 +771,6 @@
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\SearchRssViewModel.cs" />
-    <Compile Include="ViewModels\SearchWrapperViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IToolbarViewModel.cs" />

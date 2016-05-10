@@ -1,4 +1,4 @@
-﻿@inherits CustomGlassView<SearchWrapperViewModel>
+﻿@inherits CustomGlassView<SearchViewModel>
 
 <div class="search" ng-app="informaSearchApp" ng-cloak>
     <header class="search__header action-flags-bar">
@@ -58,8 +58,9 @@
 
         <div class="search__body">
 
-            <!-- includes search bar, metadata, and sorting -->
-            @Html.Sitecore().Placeholder("search-sort-area")
+            @Html.Partial("~/Views/Search/SearchKeywords.cshtml", Model)
+            @Html.Partial("~/Views/Search/SearchMetadata.cshtml", Model)
+            @Html.Partial("~/Views/Search/SearchSortOptions.cshtml", Model)
 
             @Html.Sitecore().Placeholder("search-main")
 
