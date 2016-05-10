@@ -2,7 +2,7 @@
 
 <section class="search-sort" ng-controller="searchSortController as sorter">
 
-    <div aria-labeledby="aria-label-sort" class="" role="">
+    <div aria-labeledby="aria-label-sort" class="search-sort__sort-by" role="">
 
         <h6 id="aria-label-sort" class="search-sort__title">@Model.SearchSortByText</h6>
 
@@ -15,7 +15,7 @@
                 Add it between every sort option.
             *@
             <span class="search-sort__line-separator"></span>
-            
+
             <li class="search-sort__control-type" ng-class="{ 'is-selected': sorter.sortBy === 'relevance' }">
                 <a href=""
                    title="Relevance"
@@ -25,4 +25,33 @@
 
         </ol>
     </div>
+
+    <div class="search-bar__footer-option">
+        <div class="onoffswitch js-view-headlines-only"
+            ng-controller="HeadlineToggleController as toggle">
+
+            <input
+                type="checkbox"
+                name="headline-toggle"
+                class="onoffswitch-checkbox"
+                id="headline-toggle">
+
+            <label
+                class="onoffswitch-label"
+                for="headline-toggle"
+                ng-click="headlinesOnly.updateValue()">
+
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+
+            </label>
+
+        </div>
+
+        <label class="search-bar__headline-label" for="headline-toggle">
+            @Model.SearchViewHeadlinesOnlyText
+        </label>
+
+    </div>
+
 </section>

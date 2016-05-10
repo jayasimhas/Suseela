@@ -59,9 +59,9 @@
         <div class="search__body">
 
             @Html.Partial("~/Views/Search/SearchKeywords.cshtml", Model)
-            @Html.Partial("~/Views/Search/SearchSortOptions.cshtml", Model)
             @Html.Partial("~/Views/Search/SearchMetadata.cshtml", Model)
-            
+            @Html.Partial("~/Views/Search/SearchSortOptions.cshtml", Model)
+
             @Html.Sitecore().Placeholder("search-main")
 
         </div>
