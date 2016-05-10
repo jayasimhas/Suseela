@@ -26,6 +26,9 @@ namespace Informa.Library.Search.Results
         [IndexField("_latestversion")]
         public bool IsLatestVersion { get; set; }
 
+        [IndexField("sort_order_tf")]
+        public float SortOrder { get; set; }
+
         [IndexField("searchdate")]
         [DataMember]
         public DateTime SearchDate { get; set; }
