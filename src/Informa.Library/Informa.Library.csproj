@@ -348,6 +348,7 @@
     <Compile Include="User\Authentication\Web\SiteDebugging\SiteDebuggingWebLoginUser.cs" />
     <Compile Include="User\Authentication\Web\WebAuthenticateUser.cs" />
     <Compile Include="User\Authentication\Web\WebAuthenticateUserResult.cs" />
+	<Compile Include="User\Authentication\Web\WebHideWelcomeOnLogout.cs" />
     <Compile Include="User\Authentication\Web\WebClearAuthenticatedUserSessionAction.cs" />
     <Compile Include="User\Authentication\Web\WebLoginUserRegisterUserAction.cs" />
     <Compile Include="User\Entitlement\DefaultEntitlementsFactory.cs" />
