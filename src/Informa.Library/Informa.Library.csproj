@@ -298,8 +298,10 @@
     <Compile Include="Company\UserCompanyContext.cs" />
     <Compile Include="Company\Web\WebClearUserCompanyContextLogoutAction.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
+    <Compile Include="CustomSitecore\Pipelines\CheckClientUser.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaSiteResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
+    <Compile Include="CustomSitecore\Pipelines\ISendinUserLockedOutEmail.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
