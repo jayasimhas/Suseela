@@ -321,6 +321,15 @@
     <Compile Include="Logging\IErrorLogger.cs" />
     <Compile Include="Logging\SitecoreDebugLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
+    <Compile Include="Migrations\201605092039013_InitialCreate.cs" />
+    <Compile Include="Migrations\201605092039013_InitialCreate.Designer.cs">
+      <DependentUpon>201605092039013_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Publication\ArticleMappingContext.cs" />
+    <Compile Include="Publication\ArticleMappingRepository.cs" />
+    <Compile Include="Publication\Entity\ArticleMapping.cs" />
+    <Compile Include="Publication\IArticleMappingRepository.cs" />
     <Compile Include="Publication\ISitesPublicationContext.cs" />
     <Compile Include="Publication\ISitePublicationContext.cs" />
     <Compile Include="Publication\SitesPublicationContext.cs" />
@@ -1003,6 +1012,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InterfaceFactory\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605092039013_InitialCreate.resx">
+      <DependentUpon>201605092039013_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

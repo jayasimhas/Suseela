@@ -1696,6 +1696,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IArticleConstants.Escenic_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Escenic_ID  {get; set;}
 								/// <summary>
+					/// The Legacy Article Number field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 4bb4ec7a-e53d-47c6-a096-f34452186938</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Legacy_Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Legacy_Article_Number  {get; set;}
+								/// <summary>
 					/// The Legacy Publication field.
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
@@ -2014,6 +2023,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IArticleConstants.Escenic_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Escenic_ID  {get; set;}
 										/// <summary>
+						/// The Legacy Article Number field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 4bb4ec7a-e53d-47c6-a096-f34452186938</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Legacy_Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Legacy_Article_Number  {get; set;}
+										/// <summary>
 						/// The Legacy Publication field.
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
@@ -2253,6 +2271,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Escenic_IDFieldId = new ID("5795ff15-0942-41ff-8a77-3b73185f5e1b");
 			public const string Escenic_IDFieldName = "Escenic ID";
+
+						
+					
+			public static readonly ID Legacy_Article_NumberFieldId = new ID("4bb4ec7a-e53d-47c6-a096-f34452186938");
+			public const string Legacy_Article_NumberFieldName = "Legacy Article Number";
 
 						
 					

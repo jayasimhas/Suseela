@@ -4,8 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Informa.Library.Publication;
 using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.SharedSource.DataImporter.Extensions;
 using Sitecore.SharedSource.DataImporter.Logger;
 using Sitecore.SharedSource.DataImporter.Mappings.Properties;
 
@@ -28,7 +30,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				int articleNumber;
 				int.TryParse(importItem.Fields["Last Article Number"].Value, out articleNumber);
 				ArticleNumber = articleNumber;
-			}			
+			}
 		}
 
 		/// <summary>
@@ -62,6 +64,61 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			return articles;
 		}
 
+		public void SetArticleNumber()
+		{
+			using (new EditContext(ImportItem, true, false))
+			{
+				ImportItem.Fields["Last Article Number"].Value = ArticleNumber.ToString();
+			}
+		}
+
+		public void SetRelatedArticles()
+		{
+			var articlesToSet = GetImportedArticles();
+			var repo = new ArticleMappingRepository(new ArticleMappingContext());
+
+			foreach (var item in articlesToSet)
+			{
+				var oldValue = item.Fields["Related Articles"].Value;
+				if (!string.IsNullOrWhiteSpace(oldValue))
+				{
+					// Get old guids and map to new guids
+					var ids = oldValue.Split('|').Select(i => new Guid(i));
+					var newIds = repo.GetMappingsByIds(ids).Select(i => i.ArticleId);
+
+					// Transform new guids to sitecore field value
+					var transformedValue = IdsToSitecoreStringValue(newIds);
+
+					if (!string.IsNullOrWhiteSpace(transformedValue))
+					{
+						using (new EditContext(item, true, false))
+						{
+							item.Fields["Related Articles"].Value = transformedValue;
+						}
+					}				
+				}                								
+			}
+		}
+
+		public void AddOrUpdateMapping(Item newItem)
+		{
+			var legacyId = new ID(newItem.Fields["Legacy Sitecore ID"].Value).Guid;
+
+			var repo = new ArticleMappingRepository(new ArticleMappingContext());
+			if (repo.Exist(legacyId))
+			{
+				repo.Update(newItem.ID.Guid, newItem.Fields["Article Number"].Value, legacyId,
+					newItem.Fields["Legacy Article Number"].Value);
+			}
+			else
+			{
+				repo.Insert(newItem.ID.Guid, newItem.Fields["Article Number"].Value, legacyId,
+					newItem.Fields["Legacy Article Number"].Value);
+			}
+		}
+
+		#region Utility Methods
+
 		protected string GetArticleNumberPrefix(Item item)
 		{
 			var result = string.Empty;
@@ -85,12 +142,30 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			return result;
 		}
 
-		public void SetArticleNumber()
+		protected string IdsToSitecoreStringValue(IEnumerable<Guid> guids)
 		{
-			using (new EditContext(ImportItem, true, false))
+			var result = string.Empty;
+			var enumerable = guids as IList<Guid> ?? guids.ToList();
+
+			if (guids != null && enumerable.Any())
 			{
-				ImportItem.Fields["Last Article Number"].Value = ArticleNumber.ToString();
+				foreach (var guid in enumerable)
+				{
+					result = string.IsNullOrWhiteSpace(result) ? new ID(guid).ToString() : $"{result}|{new ID(guid)}";
+				}
 			}
+			return result;
 		}
+
+		protected IEnumerable<Item> GetImportedArticles()
+		{
+			var templateId = ImportItem.GetItemField("Import To What Template", Logger);
+			var articles =
+				ImportToWhere.Axes.GetDescendants()
+					.Where(i => i.TemplateID.ToString() == templateId && i.Fields["Created Date"].Value.Contains(Year));
+			return articles;
+		}
+
+		#endregion
 	}
 }

@@ -525,9 +525,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			return StringUtility.GetValidItemName(strItemName.ToString().Trim(), this.ItemNameMaxLength).Trim();
 		}
 
-		public void CreateNewItem(Item parent, object importRow, string newItemName)
+		public Item CreateNewItem(Item parent, object importRow, string newItemName)
 		{
-
 			CustomItemBase nItemTemplate = GetNewItemTemplate(importRow);
 
 			using (new LanguageSwitcher(ImportToLanguage))
@@ -597,6 +596,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 					//calls the subclass method to handle custom fields and fields
 					ProcessCustomData(ref newItem, importRow);
 				}
+				return newItem;
 			}
 		}
 

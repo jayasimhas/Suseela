@@ -78,7 +78,9 @@ namespace Sitecore.SharedSource.DataImporter {
                             continue;
                         }
 
-                        DataMap.CreateNewItem(thisParent, importRow, newItemName);
+                        var newItem = DataMap.CreateNewItem(thisParent, importRow, newItemName);
+						// Add mapping to database
+						(DataMap as PmbiDataMap).AddOrUpdateMapping(newItem);
                     } catch (Exception ex) {
                         Logger.Log("N/A", string.Format("Exception thrown on import row {0} : {1}", line, ex.Message), ProcessStatus.NewItemError, "All Import Values", string.Join("||", ((Dictionary<string,string>)importRow).Select(a => $"{a.Key}-{a.Value}")));
                     }
@@ -92,6 +94,7 @@ namespace Sitecore.SharedSource.DataImporter {
             }
 
 	        (DataMap as PmbiDataMap)?.SetArticleNumber();
+			(DataMap as PmbiDataMap)?.SetRelatedArticles();
 
 	        //if no messages then you're good
             if (!Logger.LoggedError)
