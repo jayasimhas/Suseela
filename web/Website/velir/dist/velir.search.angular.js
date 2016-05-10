@@ -129,7 +129,7 @@
                             return searchService.getResults();
                         }, function () {
                             _this._initializeData();
-                           
+
                         });
                     }
 
@@ -155,7 +155,7 @@
                             this.keywords = this.searchService.getFilter('q').getValue();
                             this.selectedFacetGroups = this._getActiveFacetGroups();
                             this._utagAnalytics();
-                         
+
                         }
                     }, {
                         key: '_getActiveFacetGroups',
@@ -282,7 +282,7 @@
 
                 exports.PaginationController = PaginationController;
 
-                PaginationController.$inject = ['$scope', '$location','$anchorScroll', 'searchService'];
+                PaginationController.$inject = ['$scope', '$location', '$anchorScroll', 'searchService'];
 
             }).call(this, typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
@@ -492,7 +492,7 @@
                             });
 
                             if (!sortBy) {
-                                sortBy = "relevance";
+                                sortBy = "date";
                             }
 
                             var order;
@@ -1643,6 +1643,11 @@
                     }
 
                     _createClass(SearchService, [{
+                        key: 'getParams',
+                        value: function getParams() {
+                            return this._params;
+                        }
+                    }, {
                         key: 'getSearchId',
                         value: function getSearchId() {
                             return this._searchId;
@@ -1776,6 +1781,34 @@
                                 transport: this._http,
                                 data: this._params.toHash()
                             });
+
+                            if (typeof this._queryTransform === 'function') {
+                                query.beforeTransform = this._queryTransform;
+                            }
+
+                            if (typeof this._responseTransform === 'function') {
+                                query.afterTransform = this._responseTransform;
+                            }
+
+                            return query.exec().then(function (data) {
+                                if (data.hasOwnProperty('data')) {
+                                    data = data.data;
+                                }
+                                _this2._processResults(data);
+                            });
+                        }
+                    }, {
+                        key: 'queryTimePeriod',
+                        value: function queryTimePeriod(passedParams) {
+                            var _this2 = this;
+
+                            var query = new _Query.Query({
+                                url: this._url,
+                                transport: this._http,
+                                data: passedParams
+                            });
+
+
 
                             if (typeof this._queryTransform === 'function') {
                                 query.beforeTransform = this._queryTransform;
