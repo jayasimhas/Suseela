@@ -6,10 +6,11 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templat
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System.Web;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_Content;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
-	public class SavedArticlesViewModel : GlassViewModel<I___BasePage>
+	public class SavedArticlesViewModel : GlassViewModel<IContent_Text>
 	{
 		public readonly ITextTranslator TextTranslator;
 		public readonly IAuthenticatedUserContext UserContext;
@@ -30,8 +31,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 
 		public IEnumerable<ISavedDocumentItem> SavedDocumentItems => SavedDocumentItemsContext.SavedDocumentItems;
 		public bool IsAuthenticated => UserContext.IsAuthenticated;
-		public string Title => GlassModel?.Title;
-		public IHtmlString NoSavedDocumentsBody => new HtmlString("");
+		public IHtmlString NoSavedDocumentsBody => new HtmlString(GlassModel?.Text ?? string.Empty);
 		public string GeneralErrorText => TextTranslator.Translate("SavedDocuments.GeneralError");
 		public string NullUserText => TextTranslator.Translate("SavedDocuments.NullUserError");
 		public string RequestFailedText => TextTranslator.Translate("SavedDocuments.RequestFailedError");

@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {1A30EE8A-00CC-4E21-88C3-D0119E540059}
+database: master
+path: /sitecore/content/MedtechInsight/Home/My Account/Saved Content/Assets
+parent: {525A1707-CFFB-4056-8E22-7C9CCBB6A141}
+name: Assets
+master: {00000000-0000-0000-0000-000000000000}
+template: {EBEB3CE7-6437-4F3F-8140-F5C9A552471F}
+templatekey: Page Assets
+
+----field----
+field: {A791F095-2521-4B4D-BEF9-21DDA221F608}
+name: __Style
+key: __style
+content-length: 35
+
+color: darkgray; font-style: italic
+----version----
+language: en
+version: 1
+revision: d6637e27-404a-4d8c-93d5-ef305df2d456
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160505T155949Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d6637e27-404a-4d8c-93d5-ef305df2d456
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160505T155949Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
