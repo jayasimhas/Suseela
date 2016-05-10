@@ -9,6 +9,6 @@ namespace Informa.Library.User.Document
 		DateTime Published { get; }
 		string Title { get; }
 		string Url { get; }
-		bool OnCurrentSite { get; }
+		bool IsExternalUrl { get; }
 	}
 }

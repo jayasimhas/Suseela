@@ -42,7 +42,7 @@ namespace Informa.Library.User.Document
 				}
 
 				var url = item._Url ?? string.Empty;
-				var onCurrentSite = IsUrlCurrentSite.Check(url);
+				var isExternalUrl = !IsUrlCurrentSite.Check(url);
 
 				savedDocumentItems.Add(new SavedDocumentItem
 				{
@@ -51,7 +51,7 @@ namespace Informa.Library.User.Document
 					Published = item.Actual_Publish_Date,
 					Title = item.Title ?? savedDocument.Name,
 					Url = url,
-					OnCurrentSite = onCurrentSite
+					IsExternalUrl = isExternalUrl
 				});
 			}
 

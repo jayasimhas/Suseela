@@ -1,4 +1,5 @@
 ﻿using Informa.Library.Article.Search;
+using Informa.Library.Site;
 using Jabberwocky.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,14 @@ namespace Informa.Library.Purchase
 	public class ArticlePurchaseItemsFactory : IArticlePurchaseItemsFactory
 	{
 		protected readonly IArticleSearch ArticleSearch;
+		protected readonly IIsUrlCurrentSite IsUrlCurrentSite;
 
 		public ArticlePurchaseItemsFactory(
-			IArticleSearch articleSearch)
+			IArticleSearch articleSearch,
+			IIsUrlCurrentSite isUrlCurrentSite)
 		{
 			ArticleSearch = articleSearch;
+			IsUrlCurrentSite = isUrlCurrentSite;
 		}
 
 		public IEnumerable<IArticlePurchaseItem> Create(IEnumerable<IArticlePurchase> articlePurchases)
@@ -39,12 +43,16 @@ namespace Informa.Library.Purchase
 					continue;
 				}
 
+				var url = article._Url ?? string.Empty;
+				var isExternalUrl = !IsUrlCurrentSite.Check(url);
+
 				articlePurchaseItems.Add(new ArticlePurchaseItem
 				{
 					Expiration = articlePurchase.Expiration,
 					Publication = articlePurchase.Publication,
 					Title = article.Title,
-					Url = article._Url
+					Url = url,
+					IsExternalUrl = isExternalUrl
 				});
 			}
 
