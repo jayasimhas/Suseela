@@ -9956,6 +9956,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 	public partial interface ISitecore_Import_Map : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map
 	{
 								/// <summary>
+					/// The Media Destination Path field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 1b4a053f-6afb-4b41-8102-53cae42eacb5</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISitecore_Import_MapConstants.Media_Destination_PathFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Media_Destination_Path  {get; set;}
+								/// <summary>
+					/// The Media Source Path field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 232c8155-3c1a-427a-9501-672ddb5e7b0f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISitecore_Import_MapConstants.Media_Source_PathFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Media_Source_Path  {get; set;}
+								/// <summary>
 					/// The Last Article Number field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -10022,6 +10040,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 		public partial interface ISitecore_Import_Map__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map__Raw
 		{
 										/// <summary>
+						/// The Media Destination Path field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 1b4a053f-6afb-4b41-8102-53cae42eacb5</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISitecore_Import_MapConstants.Media_Destination_PathFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Media_Destination_Path  {get; set;}
+										/// <summary>
+						/// The Media Source Path field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 232c8155-3c1a-427a-9501-672ddb5e7b0f</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISitecore_Import_MapConstants.Media_Source_PathFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Media_Source_Path  {get; set;}
+										/// <summary>
 						/// The Last Article Number field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -10083,6 +10119,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Sitecore Import Map";
 
+					
+			public static readonly ID Media_Destination_PathFieldId = new ID("1b4a053f-6afb-4b41-8102-53cae42eacb5");
+			public const string Media_Destination_PathFieldName = "Media Destination Path";
+
+						
+					
+			public static readonly ID Media_Source_PathFieldId = new ID("232c8155-3c1a-427a-9501-672ddb5e7b0f");
+			public const string Media_Source_PathFieldName = "Media Source Path";
+
+						
 					
 			public static readonly ID Last_Article_NumberFieldId = new ID("5ff74032-efc8-401a-beb6-e459a9815585");
 			public const string Last_Article_NumberFieldName = "Last Article Number";

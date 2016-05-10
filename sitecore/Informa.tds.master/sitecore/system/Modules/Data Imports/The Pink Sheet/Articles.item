@@ -89,7 +89,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: b41ec5f7-4216-4923-af19-d062cdd06080
+revision: 96d8c0a5-7db5-489c-9c81-f195a3f13e00
 
 ----field----
 field: {1F03F44C-DD3A-4148-BEE7-0724310827B8}
@@ -127,6 +127,20 @@ content-length: 3
 
 131
 ----field----
+field: {232C8155-3C1A-427A-9501-672DDB5E7B0F}
+name: Media Source Path
+key: media source path
+content-length: 43
+
+/sitecore/media library/Media Transfer Test
+----field----
+field: {1B4A053F-6AFB-4B41-8102-53CAE42EACB5}
+name: Media Destination Path
+key: media destination path
+content-length: 33
+
+/sitecore/media library/PmbiMedia
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -139,14 +153,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b41ec5f7-4216-4923-af19-d062cdd06080
+96d8c0a5-7db5-489c-9c81-f195a3f13e00
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160510T151134Z
+20160510T193717Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -6,7 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Informa.Library.Publication;
 using Sitecore.Data;
+using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
+using Sitecore.Data.Managers;
+using Sitecore.Data.Proxies;
+using Sitecore.Diagnostics;
 using Sitecore.SharedSource.DataImporter.Extensions;
 using Sitecore.SharedSource.DataImporter.Logger;
 using Sitecore.SharedSource.DataImporter.Mappings.Properties;
@@ -17,10 +21,22 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 	{
 		public string ArticleNumberPrefix { get; set; }
 		public int ArticleNumber { get; set; }
+
+		private const string PmbiContent = "pmbiContent";
+		private const string LastArticleNumber = "Last Article Number";
+		private const string ArticleDate = "Article Date";
+		private const string RelatedArticles = "Related Articles";
+		private const string LegacySitecoreId = "Legacy Sitecore ID";
+		private const string PmbiArticleNumber = "Article Number";
+		private const string MediaSourcePath = "Media Source Path";
+		private const string MediaDestinationPath = "Media Destination Path";
+		private const string CreatedDate = "Created Date";
+		private const string LegacyArticleNumber = "Legacy Article Number";
+
 		public PmbiDataMap(Database db, string connectionString, Item importItem, ILogger l) : base(db, connectionString, importItem, l)
 		{
 			ArticleNumberPrefix = GetArticleNumberPrefix(importItem);
-			var val = importItem.Fields["Last Article Number"].Value;
+			var val = importItem.Fields[LastArticleNumber].Value;
 			if (string.IsNullOrWhiteSpace(val))
 			{
 				ArticleNumber = 0;
@@ -28,7 +44,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			else
 			{
 				int articleNumber;
-				int.TryParse(importItem.Fields["Last Article Number"].Value, out articleNumber);
+				int.TryParse(importItem.Fields[LastArticleNumber].Value, out articleNumber);
 				ArticleNumber = articleNumber;
 			}
 		}
@@ -39,7 +55,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		/// <returns></returns>
 		public override IEnumerable<object> GetImportData()
 		{
-			var startItem = Sitecore.Data.Database.GetDatabase("pmbiContent").GetItem(StartPath);
+			var startItem = FromDB.GetItem(StartPath);
 			var articles = Enumerable.Empty<Item>();
 			if (startItem != null)
 			{
@@ -49,7 +65,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				{
 					articles =
 						startItem.Axes.GetDescendants()
-							.Where(i => i.TemplateID.ToString() == TemplateId && i.Fields["Article Date"].Value.Contains(Year));
+							.Where(i => i.TemplateID.ToString() == TemplateId && i.Fields[ArticleDate].Value.Contains(Year));
 				}
 				else
 				{
@@ -68,7 +84,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		{
 			using (new EditContext(ImportItem, true, false))
 			{
-				ImportItem.Fields["Last Article Number"].Value = ArticleNumber.ToString();
+				ImportItem.Fields[LastArticleNumber].Value = ArticleNumber.ToString();
 			}
 		}
 
@@ -79,7 +95,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 			foreach (var item in articlesToSet)
 			{
-				var oldValue = item.Fields["Related Articles"].Value;
+				var oldValue = item.Fields[RelatedArticles].Value;
 				if (!string.IsNullOrWhiteSpace(oldValue))
 				{
 					// Get old guids and map to new guids
@@ -93,27 +109,61 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 					{
 						using (new EditContext(item, true, false))
 						{
-							item.Fields["Related Articles"].Value = transformedValue;
+							item.Fields[RelatedArticles].Value = transformedValue;
 						}
-					}				
-				}                								
+					}
+				}
 			}
 		}
 
 		public void AddOrUpdateMapping(Item newItem)
 		{
-			var legacyId = new ID(newItem.Fields["Legacy Sitecore ID"].Value).Guid;
+			var legacyId = new ID(newItem.Fields[LegacySitecoreId].Value).Guid;
 
 			var repo = new ArticleMappingRepository(new ArticleMappingContext());
 			if (repo.Exist(legacyId))
 			{
-				repo.Update(newItem.ID.Guid, newItem.Fields["Article Number"].Value, legacyId,
-					newItem.Fields["Legacy Article Number"].Value);
+				repo.Update(newItem.ID.Guid, newItem.Fields[PmbiArticleNumber].Value, legacyId,
+					newItem.Fields[LegacyArticleNumber].Value);
 			}
 			else
 			{
-				repo.Insert(newItem.ID.Guid, newItem.Fields["Article Number"].Value, legacyId,
-					newItem.Fields["Legacy Article Number"].Value);
+				repo.Insert(newItem.ID.Guid, newItem.Fields[PmbiArticleNumber].Value, legacyId,
+					newItem.Fields[LegacyArticleNumber].Value);
+			}
+		}
+
+		public void TransferMediaLibrary()
+		{
+			var sourcePath = ImportItem.Fields[MediaSourcePath].Value;
+			var destinationPath = ImportItem.Fields[MediaDestinationPath].Value;
+
+			var sourceItem = FromDB.GetItem(sourcePath);
+			var destinationItem = Database.GetDatabase("master").GetItem(destinationPath);
+
+			if (sourceItem != null && destinationItem != null)
+			{
+				using (new ProxyDisabler())
+				{
+					var defaultOptions = ItemSerializerOptions.GetDefaultOptions();
+					defaultOptions.AllowDefaultValues = false;
+					defaultOptions.AllowStandardValues = false;
+					defaultOptions.ProcessChildren = true;
+					var outerXml = sourceItem.GetOuterXml(defaultOptions);
+
+					try
+					{
+						destinationItem.Paste(outerXml, false, PasteMode.Overwrite);
+						if (sourceItem.Paths.IsMediaItem)
+						{
+							TransferMediaItemBlob(sourceItem, destinationItem, true);
+						}
+					}
+					catch (Exception exception)
+					{
+						Log.Error("An error occured while importing media", exception, this);
+					}
+				}
 			}
 		}
 
@@ -162,8 +212,45 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			var templateId = ImportItem.GetItemField("Import To What Template", Logger);
 			var articles =
 				ImportToWhere.Axes.GetDescendants()
-					.Where(i => i.TemplateID.ToString() == templateId && i.Fields["Created Date"].Value.Contains(Year));
+					.Where(i => i.TemplateID.ToString() == templateId && i.Fields[CreatedDate].Value.Contains(Year));
 			return articles;
+		}
+
+		protected void TransferMediaItemBlob(Item source, Item destination, bool processChildren)
+		{
+			Assert.IsNotNull(source, "source is null");
+			Assert.IsNotNull(destination, "destination is null");
+
+			foreach (Field field in source.Fields)
+			{
+				if (field.IsBlobField)
+				{
+					var str = field.Value;
+					if (str.Length > 38)
+						str = str.Substring(0, 38);
+					var guid = MainUtil.GetGuid(str, Guid.Empty);
+					if (!(guid == Guid.Empty))
+					{
+						var blobStream = ItemManager.GetBlobStream(guid, ProxyManager.GetRealDatabase(source));
+						if (blobStream != null)
+						{
+							using (blobStream)
+								ItemManager.SetBlobStream(blobStream, guid, ProxyManager.GetRealDatabase(destination));
+						}
+					}
+				}
+			}
+
+			if (processChildren)
+			{
+				foreach (Item child in source.Children)
+				{
+					if (child != null)
+					{
+						TransferMediaItemBlob(child, destination, true);
+					}
+				}
+			}
 		}
 
 		#endregion
