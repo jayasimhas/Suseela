@@ -76,7 +76,7 @@
             {
                 <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
 			}
-            if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
+            @if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
             {
                 <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
             }
