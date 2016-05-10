@@ -11,6 +11,11 @@
     &__sort-by {
         display: inline-block;
         float: right;
+
+        @include breakpoint('small') {
+            float: none;
+            margin-bottom: 1rem;
+        }
     }
 
     &__title {
