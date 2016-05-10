@@ -75,10 +75,10 @@ namespace Informa.Web.Controllers
             {
                 if (user.IsLockedOut && !wasUserLockedOut)
                 {
-                    ISendPluginUserLockedOutEmail emailSender;
+                    ISendUserLockedOutEmail emailSender;
                     using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
                     {
-                        emailSender = scope.Resolve<ISendPluginUserLockedOutEmail>();
+                        emailSender = scope.Resolve<ISendUserLockedOutEmail>();
                     }
 
                     emailSender.SendEmail(user);
