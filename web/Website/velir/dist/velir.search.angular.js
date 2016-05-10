@@ -1800,7 +1800,7 @@
                             this._results = data.results;
                             this._pager = new _Pager.Pager({
                                 current: data.request.page,
-                                perPage: data.results.length,
+                                perPage: data.request.perPage,
                                 totalResults: data.totalResults
                             });
 
