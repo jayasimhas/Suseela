@@ -14,14 +14,14 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         protected readonly ITextTranslator TextTranslator;
         protected readonly IOfferUserOptedInContext OffersOptedInContext;
         protected readonly IAuthenticatedUserContext UserContext;
-		protected readonly ISitesNewsletterUserOptInsContext NewsletterOptInsContext;
+		protected readonly INewsletterUserOptInsContext NewsletterOptInsContext;
 
 		public EmailPreferencesViewModel(
             ITextTranslator translator,
 			IOfferUserOptedInContext offersOptedInContext,
             ISignInViewModel signInViewModel,
             IAuthenticatedUserContext userContext,
-			ISitesNewsletterUserOptInsContext newsletterOptInsContext)
+			INewsletterUserOptInsContext newsletterOptInsContext)
         {
             TextTranslator = translator;
             OffersOptedInContext = offersOptedInContext;

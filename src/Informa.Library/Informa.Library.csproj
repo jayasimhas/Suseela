@@ -551,12 +551,14 @@
     <Compile Include="Subscription\IndividualSubscriptionRenewalMessageContext.cs" />
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
+    <Compile Include="User\Newsletter\ISetByTypeNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\ISetByTypeSitesNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\ISiteNewsletterUserOptedInContext.cs" />
     <Compile Include="User\Newsletter\ISitesNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptIn.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptInContext.cs" />
+    <Compile Include="User\Newsletter\SetByTypeNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\SetByTypeSitesNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\SitesNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Offer\IOfferUserOptedInContext.cs" />
