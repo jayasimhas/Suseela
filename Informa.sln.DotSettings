@@ -2,6 +2,47 @@
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=7E54273234B848429D4987AD4358D03A/EntryName/@EntryValue">TestableClass</s:String>
 	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=7E54273234B848429D4987AD4358D03A/Position/@EntryValue">6</s:Int64>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=CD4EC5ACB46D6249A2A1C40795C5B8A6/EntryName/@EntryValue">Class Interface and Test</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Applicability/=File/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/CustomProperties/=Extension/@EntryIndexedValue">cs</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/CustomProperties/=FileName/@EntryIndexedValue">ViewModel</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/CustomProperties/=ValidateFileName/@EntryIndexedValue">True</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Description/@EntryValue">ViewModel</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Field/=ClassName/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Field/=ClassName/Expression/@EntryValue">getFileNameWithoutExtension()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Field/=ClassName/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Field/=ClassName/Order/@EntryValue">1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Field/=GlassModel/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Field/=GlassModel/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Field/=Namespace/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Field/=Namespace/Expression/@EntryValue">fileDefaultNamespace()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Field/=Namespace/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Field/=Namespace/Order/@EntryValue">2</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Scope/=E8F0594528C33E45BBFEC6CFE851095D/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Scope/=E8F0594528C33E45BBFEC6CFE851095D/Type/@EntryValue">InCSharpProjectFile</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0547B0ADBBD55047BE1E5211BC76D69F/Text/@EntryValue">using Jabberwocky.Autofac.Attributes;&#xD;
+using Jabberwocky.Glass.Autofac.Mvc.Models;&#xD;
+&#xD;
+namespace $Namespace$&#xD;
+{&#xD;
+	public class $ClassName$ : GlassViewModel&lt;$GlassModel$&gt;&#xD;
+	{&#xD;
+		private readonly IDependencies _dependencies;&#xD;
+&#xD;
+        [AutowireService(true)]&#xD;
+        public interface IDependencies&#xD;
+        {&#xD;
+&#xD;
+        }&#xD;
+&#xD;
+        public $ClassName$(IDependencies dependencies)&#xD;
+        {&#xD;
+			_dependencies = dependencies;&#xD;
+		}&#xD;
+	}&#xD;
+}</s:String>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2276A79784559741ACD4F6D3495082AF/@KeyIndexDefined">True</s:Boolean>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2276A79784559741ACD4F6D3495082AF/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2276A79784559741ACD4F6D3495082AF/Description/@EntryValue">TestFixture</s:String>

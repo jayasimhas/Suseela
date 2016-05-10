@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {CCD7F4F2-1FA2-441E-865A-19A72FE91FD0}
+id: {0EC4B370-65B6-4A87-A927-E3204FB4EE81}
 database: master
-path: /sitecore/templates/User Defined/Emails/Components/Featured Content/Content/Image
-parent: {E346702B-CB11-4AFC-AE3D-3292F7F82340}
-name: Image
+path: /sitecore/templates/User Defined/Emails/Components/Featured Content/Read More/Read More Text
+parent: {7C405B93-282D-4538-86FC-BD18E928AA7D}
+name: Read More Text
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -13,20 +13,20 @@ templatekey: Template field
 field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
 name: Type
 key: type
-content-length: 5
+content-length: 16
 
-Image
+Single-Line Text
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
 content-length: 3
 
-400
+300
 ----version----
 language: en
 version: 1
-revision: 2256c417-01a5-4dcb-9121-c887c1ff0296
+revision: 71ed3aef-4522-4fad-974e-c011b005270c
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,7 +41,7 @@ name: __Revision
 key: __revision
 content-length: 36
 
-2256c417-01a5-4dcb-9121-c887c1ff0296
+71ed3aef-4522-4fad-974e-c011b005270c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated

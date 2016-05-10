@@ -8497,6 +8497,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+ 	/// <summary>
+	/// IOption Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/Option</para>	
+	/// <para>ID: 897873c8-1ebb-427c-a257-caa83eb50ad9</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IOptionConstants.TemplateIdString)]
+	public partial interface IOption : IGlassBase 
+	{
+								/// <summary>
+					/// The Icon field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: ad400dc1-6b7d-45cf-ba21-6e6f23fdc722</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IOptionConstants.IconFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image Icon  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IOption Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/Option</para>	
+		/// <para>ID: 897873c8-1ebb-427c-a257-caa83eb50ad9</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IOption__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Icon field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: ad400dc1-6b7d-45cf-ba21-6e6f23fdc722</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IOptionConstants.IconFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image Icon  {get; set;}
+						}
+	
+	public static partial class IOptionConstants{
+
+			public const string TemplateIdString = "897873c8-1ebb-427c-a257-caa83eb50ad9";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Option";
+
+					
+			public static readonly ID IconFieldId = new ID("ad400dc1-6b7d-45cf-ba21-6e6f23fdc722");
+			public const string IconFieldName = "Icon";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -9088,41 +9149,95 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 	public partial interface IFeatured_Content : IGlassBase 
 	{
 								/// <summary>
-					/// The Headline field.
+					/// The Image field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: ccd7f4f2-1fa2-441e-865a-19a72fe91fd0</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ContentConstants.ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Image Image  {get; set;}
+								/// <summary>
+					/// The Summary field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: f089d880-b8de-4f27-99c3-2b131620ac51</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ContentConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Summary  {get; set;}
+								/// <summary>
+					/// The Title Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link with Search</para>		
+					/// <para>Field ID: 7b7b0a88-4a15-4ca2-a484-d6611acafac2</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ContentConstants.Title_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Title_Link  {get; set;}
+								/// <summary>
+					/// The Title field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
 					/// <para>Field ID: a28655b8-e103-40c4-830d-6c2f65a44e32</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IFeatured_ContentConstants.HeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Headline  {get; set;}
+					[SitecoreField(IFeatured_ContentConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Title  {get; set;}
 								/// <summary>
-					/// The Image field.
+					/// The Download Link Text field.
 					/// <para></para>
-					/// <para>Field Type: General Link with Search</para>		
-					/// <para>Field ID: ccd7f4f2-1fa2-441e-865a-19a72fe91fd0</para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: f743817c-808b-4cad-b5b9-409a819db7c9</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IFeatured_ContentConstants.ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Link Image  {get; set;}
+					[SitecoreField(IFeatured_ContentConstants.Download_Link_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Download_Link_Text  {get; set;}
 								/// <summary>
-					/// The Read More Url field.
+					/// The Download Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link with Search</para>		
+					/// <para>Field ID: 7163ac7f-e9e2-408f-a6ec-8bde5078d2d9</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ContentConstants.Download_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Download_Link  {get; set;}
+								/// <summary>
+					/// The Download Type field.
+					/// <para></para>
+					/// <para>Field Type: Droplist</para>		
+					/// <para>Field ID: 95df58fd-9916-4ae2-abf2-30d5a8ae8144</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ContentConstants.Download_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Download_Type  {get; set;}
+								/// <summary>
+					/// The Read More Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link with Search</para>		
+					/// <para>Field ID: 35a0daa1-ac21-491a-923f-88f22ea4ef32</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ContentConstants.Read_More_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Read_More_Link  {get; set;}
+								/// <summary>
+					/// The Read More Styling field.
+					/// <para></para>
+					/// <para>Field Type: Droplist</para>		
+					/// <para>Field ID: 59de2fa2-3c63-4287-9c3d-6102f3f61b7e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ContentConstants.Read_More_StylingFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Read_More_Styling  {get; set;}
+								/// <summary>
+					/// The Read More Text field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
 					/// <para>Field ID: 0ec4b370-65b6-4a87-a927-e3204fb4ee81</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IFeatured_ContentConstants.Read_More_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Read_More_Url  {get; set;}
-								/// <summary>
-					/// The Text field.
-					/// <para></para>
-					/// <para>Field Type: Multi-Line Text</para>		
-					/// <para>Field ID: f089d880-b8de-4f27-99c3-2b131620ac51</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IFeatured_ContentConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Text  {get; set;}
+					[SitecoreField(IFeatured_ContentConstants.Read_More_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Read_More_Text  {get; set;}
 				}
 
 	
@@ -9136,41 +9251,95 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 		public partial interface IFeatured_Content__Raw : IGlassBase 
 		{
 										/// <summary>
-						/// The Headline field.
+						/// The Image field.
+						/// <para></para>
+						/// <para>Field Type: Image</para>		
+						/// <para>Field ID: ccd7f4f2-1fa2-441e-865a-19a72fe91fd0</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ContentConstants.ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Image Image  {get; set;}
+										/// <summary>
+						/// The Summary field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: f089d880-b8de-4f27-99c3-2b131620ac51</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ContentConstants.SummaryFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Summary  {get; set;}
+										/// <summary>
+						/// The Title Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link with Search</para>		
+						/// <para>Field ID: 7b7b0a88-4a15-4ca2-a484-d6611acafac2</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ContentConstants.Title_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Title_Link  {get; set;}
+										/// <summary>
+						/// The Title field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
 						/// <para>Field ID: a28655b8-e103-40c4-830d-6c2f65a44e32</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IFeatured_ContentConstants.HeadlineFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Headline  {get; set;}
+						[SitecoreField(IFeatured_ContentConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Title  {get; set;}
 										/// <summary>
-						/// The Image field.
+						/// The Download Link Text field.
 						/// <para></para>
-						/// <para>Field Type: General Link with Search</para>		
-						/// <para>Field ID: ccd7f4f2-1fa2-441e-865a-19a72fe91fd0</para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: f743817c-808b-4cad-b5b9-409a819db7c9</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IFeatured_ContentConstants.ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Link Image  {get; set;}
+						[SitecoreField(IFeatured_ContentConstants.Download_Link_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Download_Link_Text  {get; set;}
 										/// <summary>
-						/// The Read More Url field.
+						/// The Download Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link with Search</para>		
+						/// <para>Field ID: 7163ac7f-e9e2-408f-a6ec-8bde5078d2d9</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ContentConstants.Download_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Download_Link  {get; set;}
+										/// <summary>
+						/// The Download Type field.
+						/// <para></para>
+						/// <para>Field Type: Droplist</para>		
+						/// <para>Field ID: 95df58fd-9916-4ae2-abf2-30d5a8ae8144</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ContentConstants.Download_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Download_Type  {get; set;}
+										/// <summary>
+						/// The Read More Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link with Search</para>		
+						/// <para>Field ID: 35a0daa1-ac21-491a-923f-88f22ea4ef32</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ContentConstants.Read_More_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Read_More_Link  {get; set;}
+										/// <summary>
+						/// The Read More Styling field.
+						/// <para></para>
+						/// <para>Field Type: Droplist</para>		
+						/// <para>Field ID: 59de2fa2-3c63-4287-9c3d-6102f3f61b7e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ContentConstants.Read_More_StylingFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Read_More_Styling  {get; set;}
+										/// <summary>
+						/// The Read More Text field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
 						/// <para>Field ID: 0ec4b370-65b6-4a87-a927-e3204fb4ee81</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IFeatured_ContentConstants.Read_More_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Read_More_Url  {get; set;}
-										/// <summary>
-						/// The Text field.
-						/// <para></para>
-						/// <para>Field Type: Multi-Line Text</para>		
-						/// <para>Field ID: f089d880-b8de-4f27-99c3-2b131620ac51</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IFeatured_ContentConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Text  {get; set;}
+						[SitecoreField(IFeatured_ContentConstants.Read_More_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Read_More_Text  {get; set;}
 						}
 	
 	public static partial class IFeatured_ContentConstants{
@@ -9180,23 +9349,55 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 			public const string TemplateName = "Featured Content";
 
 					
-			public static readonly ID HeadlineFieldId = new ID("a28655b8-e103-40c4-830d-6c2f65a44e32");
-			public const string HeadlineFieldName = "Headline";
-
-						
-					
 			public static readonly ID ImageFieldId = new ID("ccd7f4f2-1fa2-441e-865a-19a72fe91fd0");
 			public const string ImageFieldName = "Image";
 
 						
 					
-			public static readonly ID Read_More_UrlFieldId = new ID("0ec4b370-65b6-4a87-a927-e3204fb4ee81");
-			public const string Read_More_UrlFieldName = "Read More Url";
+			public static readonly ID SummaryFieldId = new ID("f089d880-b8de-4f27-99c3-2b131620ac51");
+			public const string SummaryFieldName = "Summary";
+
+							public static readonly ID Summary__RawFieldId = new ID("f089d880-b8de-4f27-99c3-2b131620ac51");
+				public const string Summary__RawFieldName = "Summary";
+						
+					
+			public static readonly ID Title_LinkFieldId = new ID("7b7b0a88-4a15-4ca2-a484-d6611acafac2");
+			public const string Title_LinkFieldName = "Title Link";
 
 						
 					
-			public static readonly ID TextFieldId = new ID("f089d880-b8de-4f27-99c3-2b131620ac51");
-			public const string TextFieldName = "Text";
+			public static readonly ID TitleFieldId = new ID("a28655b8-e103-40c4-830d-6c2f65a44e32");
+			public const string TitleFieldName = "Title";
+
+						
+					
+			public static readonly ID Download_Link_TextFieldId = new ID("f743817c-808b-4cad-b5b9-409a819db7c9");
+			public const string Download_Link_TextFieldName = "Download Link Text";
+
+						
+					
+			public static readonly ID Download_LinkFieldId = new ID("7163ac7f-e9e2-408f-a6ec-8bde5078d2d9");
+			public const string Download_LinkFieldName = "Download Link";
+
+						
+					
+			public static readonly ID Download_TypeFieldId = new ID("95df58fd-9916-4ae2-abf2-30d5a8ae8144");
+			public const string Download_TypeFieldName = "Download Type";
+
+						
+					
+			public static readonly ID Read_More_LinkFieldId = new ID("35a0daa1-ac21-491a-923f-88f22ea4ef32");
+			public const string Read_More_LinkFieldName = "Read More Link";
+
+						
+					
+			public static readonly ID Read_More_StylingFieldId = new ID("59de2fa2-3c63-4287-9c3d-6102f3f61b7e");
+			public const string Read_More_StylingFieldName = "Read More Styling";
+
+						
+					
+			public static readonly ID Read_More_TextFieldId = new ID("0ec4b370-65b6-4a87-a927-e3204fb4ee81");
+			public const string Read_More_TextFieldName = "Read More Text";
 
 						
 			

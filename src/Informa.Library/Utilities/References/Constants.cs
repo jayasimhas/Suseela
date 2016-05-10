@@ -38,6 +38,8 @@ namespace Informa.Library.Utilities.References
 
         public static string EditAfterPublishWorkflowCommand = "{322D0739-B3AC-416F-BF58-5E39E716F003}";
 
+        public static string DownloadTypes = "{3939BE43-6300-4AFA-ABE6-F7798C16E34D}";
+
         public static string ScripWorkflow = "{926E6200-EB76-4AD4-8614-691D002573AC}";
         public static readonly Dictionary<Guid, string> PublicationPrefixDictionary = new Dictionary<Guid, string>
         {
