@@ -3,6 +3,7 @@ using Jabberwocky.Glass.Autofac.Util;
 using Sitecore.Pipelines.LoggingIn;
 using System.Web.Security;
 using Informa.Library.User.Authentication;
+using Informa.Library.Utilities.UserMembership;
 
 namespace Informa.Library.CustomSitecore.Pipelines
 {
