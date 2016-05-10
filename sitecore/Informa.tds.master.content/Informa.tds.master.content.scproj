@@ -1624,7 +1624,7 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Environment Globals\Email Config\Word Plugin Lockout Emails.item">
+    <SitecoreItem Include="sitecore\content\Environment Globals\Email Config\User Lockout Emails.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>

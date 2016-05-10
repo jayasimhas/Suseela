@@ -36,4 +36,53 @@ $(document).ready(function () {
 		}
 	});
 
+
+	/**
+	 * Drag to resize component
+	 */
+
+	$('.iframe-external-wrapper').each(function(elm, ind, arr) {
+
+		var handle = $(elm).find('.iframe-resizer-handle');
+		var thisHandle = null,
+			iframe = null,
+			parentFigure = null;
+
+		var mouseMoveHandler = function (event) {
+			event.preventDefault();
+			var offset = event.pageX - iframe._startX;
+			var newWidth = iframe._startWidth + offset;
+			if(newWidth <= parentFigure.width()) {
+				var readjustmentOffset = parentFigure.width() - newWidth;
+				thisHandle.style.right = readjustmentOffset + 'px';
+				iframe.elm[0].style.width = newWidth + 'px';
+			}
+		};
+
+		var mouseUpHandler = function (event) {
+			document.removeEventListener('mousemove', mouseMoveHandler);
+			document.removeEventListener('mouseup', mouseUpHandler);
+			iframe = thisHandle = parentFigure = null;
+		};
+
+		$(handle).on('mousedown', function (event) {
+			event.preventDefault();
+
+			thisHandle = event.target;
+
+			iframe = {
+				elm: $(event.target).parent().find('iframe'),
+				_startX: event.pageX
+			};
+
+			parentFigure = $(thisHandle).parent();
+
+			iframe._startWidth = iframe.elm.width();
+
+			// `mousemove`, not `onmousemove`, for more accurate updates
+			document.addEventListener('mousemove', mouseMoveHandler, false);
+			document.addEventListener('mouseup', mouseUpHandler, false);
+		});
+	});
+
 });

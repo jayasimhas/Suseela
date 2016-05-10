@@ -7,7 +7,7 @@ namespace Informa.Library.Company
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class UserCompanyContext : IUserCompanyContext
 	{
-		private const string CompanySessionKey = "Company";
+		private const string sessionKey = nameof(UserCompanyContext);
 
 		protected readonly IFindCompanyByIpAddress FindCompanyByIpAddress;
 		protected readonly IFindCompanyByUser FindCompany;
@@ -33,7 +33,7 @@ namespace Informa.Library.Company
 		{
 			get
 			{
-				var companySession = UserSession.Get<ICompany>(CompanySessionKey);
+				var companySession = UserSession.Get<ICompany>(sessionKey);
 
 				if (companySession.HasValue)
 				{
@@ -58,8 +58,13 @@ namespace Informa.Library.Company
 			}
 			set
 			{
-				UserSession.Set(CompanySessionKey, value);
+				UserSession.Set(sessionKey, value);
 			}
+		}
+
+		public void Clear()
+		{
+			UserSession.Clear(sessionKey);
 		}
 	}
 }

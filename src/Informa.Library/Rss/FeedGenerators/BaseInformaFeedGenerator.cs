@@ -25,6 +25,9 @@ namespace Informa.Library.Rss.FeedGenerators
             feed.AttributeExtensions.Add(new XmlQualifiedName("atom", XNamespace.Xmlns.NamespaceName),
                 RssConstants.AtomNamespace.ToString());
 
+            feed.AttributeExtensions.Add(new XmlQualifiedName(RssConstants.InformaNamespace.ToString(), XNamespace.Xmlns.NamespaceName),
+                RssConstants.InformaNamespaceUrl.ToString());
+
             feed.Title = new TextSyndicationContent(rssFeed.Title);
             feed.Language = rssFeed.Language;
             feed.Description = new TextSyndicationContent(rssFeed.Description);

@@ -3262,13 +3262,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 
  	/// <summary>
-	/// IWord_Plugin_Lockout_Emails_Config Interface
+	/// IUser_Lockout_Emails_Config Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Configuration/Word Plugin Lockout Emails Config</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/User Lockout Emails Config</para>	
 	/// <para>ID: 27678fc0-f7cb-40eb-bfbf-9c226b62eece</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=IWord_Plugin_Lockout_Emails_ConfigConstants.TemplateIdString)]
-	public partial interface IWord_Plugin_Lockout_Emails_Config : IGlassBase 
+	[SitecoreType(TemplateId=IUser_Lockout_Emails_ConfigConstants.TemplateIdString)]
+	public partial interface IUser_Lockout_Emails_Config : IGlassBase 
 	{
 								/// <summary>
 					/// The Lockout Email Body field.
@@ -3277,7 +3277,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// <para>Field ID: cc904647-bac3-4fe2-8884-f6106c487670</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IWord_Plugin_Lockout_Emails_ConfigConstants.Lockout_Email_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IUser_Lockout_Emails_ConfigConstants.Lockout_Email_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Lockout_Email_Body  {get; set;}
 								/// <summary>
 					/// The Lockout Email From field.
@@ -3286,7 +3286,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// <para>Field ID: 742c887c-86c6-4d36-b5cf-bb3ba50f49c4</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IWord_Plugin_Lockout_Emails_ConfigConstants.Lockout_Email_FromFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IUser_Lockout_Emails_ConfigConstants.Lockout_Email_FromFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Lockout_Email_From  {get; set;}
 								/// <summary>
 					/// The Lockout Email Subject field.
@@ -3295,7 +3295,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// <para>Field ID: d2c6a078-8cb3-44e7-83e9-a058d6b7d41a</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IWord_Plugin_Lockout_Emails_ConfigConstants.Lockout_Email_SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IUser_Lockout_Emails_ConfigConstants.Lockout_Email_SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Lockout_Email_Subject  {get; set;}
 								/// <summary>
 					/// The Lockout Email To field.
@@ -3304,19 +3304,19 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// <para>Field ID: 9f432906-81e8-49ff-b288-c331dd1b30f2</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IWord_Plugin_Lockout_Emails_ConfigConstants.Lockout_Email_ToFieldName, Setting = SitecoreFieldSettings.InferType)]
+					[SitecoreField(IUser_Lockout_Emails_ConfigConstants.Lockout_Email_ToFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Lockout_Email_To  {get; set;}
 				}
 
 	
 		/// <summary>
-		/// IWord_Plugin_Lockout_Emails_Config Interface
+		/// IUser_Lockout_Emails_Config Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Configuration/Word Plugin Lockout Emails Config</para>	
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/User Lockout Emails Config</para>	
 		/// <para>ID: 27678fc0-f7cb-40eb-bfbf-9c226b62eece</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IWord_Plugin_Lockout_Emails_Config__Raw : IGlassBase 
+		public partial interface IUser_Lockout_Emails_Config__Raw : IGlassBase 
 		{
 										/// <summary>
 						/// The Lockout Email Body field.
@@ -3325,7 +3325,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// <para>Field ID: cc904647-bac3-4fe2-8884-f6106c487670</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IWord_Plugin_Lockout_Emails_ConfigConstants.Lockout_Email_BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						[SitecoreField(IUser_Lockout_Emails_ConfigConstants.Lockout_Email_BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 						string Lockout_Email_Body  {get; set;}
 										/// <summary>
 						/// The Lockout Email From field.
@@ -3334,7 +3334,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// <para>Field ID: 742c887c-86c6-4d36-b5cf-bb3ba50f49c4</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IWord_Plugin_Lockout_Emails_ConfigConstants.Lockout_Email_FromFieldName, Setting = SitecoreFieldSettings.InferType)]
+						[SitecoreField(IUser_Lockout_Emails_ConfigConstants.Lockout_Email_FromFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Lockout_Email_From  {get; set;}
 										/// <summary>
 						/// The Lockout Email Subject field.
@@ -3343,7 +3343,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// <para>Field ID: d2c6a078-8cb3-44e7-83e9-a058d6b7d41a</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IWord_Plugin_Lockout_Emails_ConfigConstants.Lockout_Email_SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
+						[SitecoreField(IUser_Lockout_Emails_ConfigConstants.Lockout_Email_SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Lockout_Email_Subject  {get; set;}
 										/// <summary>
 						/// The Lockout Email To field.
@@ -3352,15 +3352,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// <para>Field ID: 9f432906-81e8-49ff-b288-c331dd1b30f2</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IWord_Plugin_Lockout_Emails_ConfigConstants.Lockout_Email_ToFieldName, Setting = SitecoreFieldSettings.InferType)]
+						[SitecoreField(IUser_Lockout_Emails_ConfigConstants.Lockout_Email_ToFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Lockout_Email_To  {get; set;}
 						}
 	
-	public static partial class IWord_Plugin_Lockout_Emails_ConfigConstants{
+	public static partial class IUser_Lockout_Emails_ConfigConstants{
 
 			public const string TemplateIdString = "27678fc0-f7cb-40eb-bfbf-9c226b62eece";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Word Plugin Lockout Emails Config";
+			public const string TemplateName = "User Lockout Emails Config";
 
 					
 			public static readonly ID Lockout_Email_BodyFieldId = new ID("cc904647-bac3-4fe2-8884-f6106c487670");

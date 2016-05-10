@@ -1,4 +1,5 @@
-﻿@model Informa.Web.ViewModels.IFooterViewModel
+﻿@inherits CustomGlassView<FooterViewModel>
+
 <div class="footer__wrapper">
     @Html.Sitecore().Placeholder("footer")
     <ul class="footer__section footer__section--corporate">
@@ -9,7 +10,10 @@
 
     <div class="footer__section footer__section--double">
         <ul>
-            @if (Model.SubscribeLink != null)
+            @* THE SUBSCRIBE LINK HERE IS INCORRECT AND PULLING THE SAME 
+                LINK/TEXT THAT IS USED FOR THE CALL-TO-ACTION BANNER.  
+                THIS IS GOING TO NEED TO BE IT'S OWN FIELD *@
+            @if (false && Model.SubscribeLink != null)
             {
                 <li>
                     <a href="@Model.SubscribeLink.Url">@Model.SubscribeLink.Text</a>
@@ -44,6 +48,15 @@
                     <svg class="footer__share-icons">
                         <use xlink:href="/dist/img/svg-sprite.svg#facebook-footer"></use>
                     </svg>
+                </a>
+            }
+
+            @if (Model.FooterRssLink != null)
+            {
+                <a href="@Model.FooterRssLink.Url" target="_blank" title="@Model.FooterRssLink.Text" class="click-utag" data-info='{"event_name" : "rss-footer-link-click"}'>
+
+                    <img class="footer__share-icons" src="@Model.FooterRssLogoUrl"/>
+
                 </a>
             }
         </li>

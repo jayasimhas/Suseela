@@ -1,5 +1,4 @@
-﻿using System.EnterpriseServices;
-using Glass.Mapper.Sc;
+﻿using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.User.Authentication;
 using Informa.Library.Company;
@@ -9,15 +8,13 @@ using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global;
-using Jabberwocky.Glass.Autofac.Attributes;
 using System.Web;
-using System.Web.Mvc;
 using Informa.Library.User.Profile;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService]
-	public class HeaderViewModel : IHeaderViewModel
+	public class HeaderViewModel : GlassViewModel<I___BasePage>
 	{
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
 		protected readonly IUserCompanyNameContext CompanyNameContext;
@@ -27,7 +24,7 @@ namespace Informa.Web.ViewModels
 		protected readonly ISitecoreService SitecoreService;
 		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly IItemReferences ItemReferences;
-        protected readonly IUserProfileContext ProfileContext;
+		protected readonly IUserProfileContext ProfileContext;
 
 		public HeaderViewModel(
 			IAuthenticatedUserContext authenticatedUserContext,
@@ -38,7 +35,7 @@ namespace Informa.Web.ViewModels
 			ISitecoreService sitecoreService,
 			ISitecoreContext sitecoreContext,
 			IItemReferences itemReferences,
-            IUserProfileContext profileContext)
+						IUserProfileContext profileContext)
 		{
 			AuthenticatedUserContext = authenticatedUserContext;
 			CompanyNameContext = companyNameContext;
@@ -48,7 +45,7 @@ namespace Informa.Web.ViewModels
 			SitecoreService = sitecoreService;
 			SitecoreContext = sitecoreContext;
 			ItemReferences = itemReferences;
-            ProfileContext = profileContext;
+			ProfileContext = profileContext;
 
 			InformaBar = SitecoreContext.GetItem<IInforma_Bar>(ItemReferences.InformaBar);
 		}
@@ -58,11 +55,11 @@ namespace Informa.Web.ViewModels
 		public string WelcomeText
 		{
 			get
-            {
-                var user = AuthenticatedUserContext.IsAuthenticated
-                     ? ProfileContext.Profile
-                     : null;
-                var accountName = user != null ? user.FirstName : CompanyNameContext.Name;
+			{
+				var user = AuthenticatedUserContext.IsAuthenticated
+						 ? ProfileContext.Profile
+						 : null;
+				var accountName = user != null ? user.FirstName : CompanyNameContext.Name;
 
 				return string.IsNullOrWhiteSpace(accountName) ? string.Empty : string.Concat(TextTranslator.Translate("Header.Greeting"), accountName);
 			}

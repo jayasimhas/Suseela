@@ -7,7 +7,7 @@ using System.Web.Security;
 
 namespace Informa.Library.User.Authentication
 {
-    public interface ISendPluginUserLockedOutEmail
+    public interface ISendUserLockedOutEmail
     {
         bool SendEmail(MembershipUser sitecoreUser);
     }

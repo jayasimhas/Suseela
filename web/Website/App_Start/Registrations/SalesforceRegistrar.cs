@@ -14,7 +14,8 @@ namespace Informa.Web.App_Start.Registrations
 		public static void RegisterDependencies(ContainerBuilder builder)
 		{
 			builder.RegisterType<SalesforceErrorLogger>().As<ISalesforceErrorLogger>();
-			builder.RegisterType<SalesforceServiceConfiguration>().As<ISalesforceServiceConfiguration>();
+            builder.RegisterType<SalesforceDebugLogger>().As<ISalesforceDebugLogger>();
+            builder.RegisterType<SalesforceServiceConfiguration>().As<ISalesforceServiceConfiguration>();
 			builder.RegisterType<SalesforceService>().As<ISalesforceService>();
 			builder.RegisterType<SalesforceServiceContextEnabledChecks>().As<ISalesforceServiceContextEnabledChecks>();
 			builder.RegisterType<SalesforceServiceContextEnabled>().As<ISalesforceServiceContextEnabled>();
@@ -31,7 +32,8 @@ namespace Informa.Web.App_Start.Registrations
             builder.RegisterType<SalesforceGetIPEntitlements>().As<ISalesforceGetIPEntitlements>();
 			builder.RegisterType<SalesforceSiteTypeParser>()
 				.As<ISalesforceCompanyTypeFromSiteType>()
-				.As<ISalesforceSiteTypeFromCompanyType>();
+				.As<ISalesforceSiteTypeFromCompanyType>()
+				.As<ISalesforceCompanyTypeFromAccountType>();
 			builder.RegisterType<SalesforceEntitlmentFactory>().As<ISalesforceEntitlmentFactory>();
 			
         }

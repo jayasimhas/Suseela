@@ -58,13 +58,7 @@ function loginController(requestVerificationToken) {
 						else {
 							$(triggerElement).removeAttr('disabled');
 
-							var registerAnalytics = {
-								event_name: 'register-step-1',
-								registration_state: 'unsuccessful',
-								userName: '"' + inputData.username + '"'
-							};
-
-							analyticsEvent( $.extend(analytics_data, registerAnalytics) );
+							
 
 							var specificErrorDisplayed = false;
 
@@ -80,6 +74,13 @@ function loginController(requestVerificationToken) {
 							{
 								this.showError(triggerElement, '.js-register-user-error-general');
 							}
+
+							var registerAnalytics = {
+							    event_name: "registration failure",
+							    registration_errors: response.reasons
+							  };
+
+							analyticsEvent( $.extend(analytics_data, registerAnalytics) );
 
 							if (failureCallback) {
 								failureCallback(triggerElement);

@@ -20,13 +20,15 @@ namespace Informa.Library.Search.ComputedFields.Facets
     {
         public override object GetFieldValue(Item indexItem)
         {
-            Database masterDatabase = Factory.GetDatabase("master");
-
             try
             {
-                IWorkflow workflow = masterDatabase.WorkflowProvider.GetWorkflow(indexItem);
-                WorkflowState state = workflow.GetState(indexItem);
-                return !state.FinalState;
+                ItemState itemState = indexItem.State;
+                WorkflowState workflowState = itemState?.GetWorkflowState();
+                if (workflowState != null)
+                {
+                    return !workflowState.FinalState;
+                }
+                return false;
             }
             catch (Exception exc)
             {

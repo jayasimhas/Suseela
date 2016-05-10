@@ -54,7 +54,8 @@ namespace Informa.Library.Article.Search
 					.ExcludeManuallyCurated(filter)
 					.FilteryByArticleNumber(filter)
 					.FilteryByEScenicID(filter)
-					.FilteryByRelatedId(filter);
+					.FilteryByRelatedId(filter)
+										.FilteryByLatestVersionAndCurrentLanguage();
 
 				if (filter.PageSize > 0)
 				{
@@ -87,7 +88,8 @@ namespace Informa.Library.Article.Search
 					.FilterTaxonomies(filter)
 					.ExcludeManuallyCurated(filter)
 					.FilteryByArticleNumber(filter)
-					.FilteryByEScenicID(filter);
+					.FilteryByEScenicID(filter)
+										.FilteryByLatestVersionAndCurrentLanguage();
 
 				if (filter.PageSize > 0)
 				{
@@ -151,21 +153,20 @@ namespace Informa.Library.Article.Search
 			return $"/{a.Article_Number}/{procName}";
 		}
 
-		public string  GetArticleAuthors(Guid id)
+		public string GetArticleAuthors(Guid id)
 		{
 			var item = SitecoreContext.GetItem<ArticleItem>(id);
-			if (item != null && item.Authors.Any())
+			if (item?.Authors != null)
 			{
-				var lastItem = item.Authors.LastOrDefault();
 				StringBuilder str = new StringBuilder();
 				foreach (IStaff_Item author in item.Authors)
 				{
-                    if (str.Length > 0)
-                        str.Append(",");
-                    str.Append($"'{author._Name.Trim()}'");
+					if (str.Length > 0)
+						str.Append(",");
+					str.Append($"'{author._Name.Trim()}'");
 				}
-                return $"[{str}]";
-            }
+				return $"[{str}]";
+			}
 
 			return string.Empty;
 		}
@@ -173,26 +174,22 @@ namespace Informa.Library.Article.Search
 		public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
 		{
 			var article = SitecoreContext.GetItem<ArticleItem>(id);
-			if (article != null && article.Taxonomies.Any())
+			var taxonomyItems = article?.Taxonomies?.Where(x => x._Parent._Id.Equals(taxonomyParent));
+			if (taxonomyItems != null)
 			{
-				var taxonomyItems = article.Taxonomies.Where(x => x._Parent._Id.Equals(taxonomyParent));
-				if (taxonomyItems != null && taxonomyItems.Any())
+				StringBuilder str = new StringBuilder();
+				foreach (ITaxonomy_Item taxonomyItem in taxonomyItems)
 				{
-					var lastItem = taxonomyItems.LastOrDefault();
-					StringBuilder str = new StringBuilder();
-					foreach (ITaxonomy_Item taxonomyItem in taxonomyItems)
-					{
-					    if (str.Length > 0)
-					        str.Append(",");
-						str.Append($"'{taxonomyItem.Item_Name.Trim()}'");
-                    }
-                    return $"[{str}]";
-                }
+					if (str.Length > 0)
+						str.Append(",");
+					str.Append($"'{taxonomyItem.Item_Name.Trim()}'");
+				}
+				return $"[{str}]";
 			}
 
 			return string.Empty;
 		}
 
-		
+
 	}
 }
