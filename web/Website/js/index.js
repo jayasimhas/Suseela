@@ -681,12 +681,14 @@ $(document).ready(function() {
         if ($('#newsletters').is(':checked')) {
             var chkDetails = {   newsletter_optin: "true"}
             $.extend(eventDetails,chkDetails);
+            analyticsEvent( $.extend(analytics_data, eventDetails) );
         } else {
             var chkDetails = {   newsletter_optin: "false"}
             $.extend(eventDetails,chkDetails);
-        }
-        analyticsEvent( $.extend(analytics_data, eventDetails) );
+            analyticsEvent( $.extend(analytics_data, eventDetails) );
+        }    
     };
+
 
     // TODO - Refactor this code, update class name to a `js-` name
     $('.manage-preferences').click(function(e) {
