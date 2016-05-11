@@ -90,6 +90,9 @@
       <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CSharpSDK">
+      <HintPath>..\..\lib\ExactTarget\CSharpSDK.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -316,13 +319,17 @@
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaSiteResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
+    <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
+    <Compile Include="Logging\LogWrapper.cs" />
     <Compile Include="Logging\SitecoreDebugLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
     <Compile Include="Migrations\201605092039013_InitialCreate.cs" />
     <Compile Include="Migrations\201605092039013_InitialCreate.Designer.cs">
+    <Compile Include="Mail\ExactTarget\ExactTargetClient.cs" />
+    <Compile Include="Mail\ExactTarget\ExactTargetWrapper.cs" />
       <DependentUpon>201605092039013_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
@@ -1001,6 +1008,10 @@
     <Compile Include="Utilities\WebUtils\IRefreshPage.cs" />
     <Compile Include="Utilities\WebUtils\RefreshPage.cs" />
     <Compile Include="Utilities\WebUtils\UrlUtils.cs" />
+    <Compile Include="Wrappers\HttpContextProvider.cs" />
+    <Compile Include="Wrappers\SitecoreSecurityWrapper.cs" />
+    <Compile Include="Wrappers\SitecoreServiceAliases.cs" />
+    <Compile Include="Wrappers\WebClientWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

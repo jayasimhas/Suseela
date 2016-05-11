@@ -1,0 +1,41 @@
+﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.FeaturedContentViewModel>
+
+<!-- Title with Title Link -->
+@if (Model.HasTitle || IsInEditingMode)
+{
+    using (BeginRenderLink(Model.GlassModel, m => m.Title_Link, isEditable: true))
+    {
+        @Editable(Model.GlassModel, m => m.Title)
+    }
+}
+<br/>
+
+<!-- Summary -->
+@Editable(Model.GlassModel, m => m.Summary)
+<br/>
+
+<!-- Read More Link, Test, and Styling -->
+@if (Model.HasReadMoreLink || IsInEditingMode)
+{
+    <div class="@Model.ReadMoreClass">
+        @using (BeginRenderLink(Model.GlassModel, m => m.Read_More_Link, isEditable: true))
+        {
+            @Editable(Model.GlassModel, m => m.Read_More_Text)
+        }
+    </div>
+}
+<br/>
+
+<!-- Image -->
+@RenderImage(Model.GlassModel, m => m.Image, isEditable:true)
+<br/>
+
+<!-- Download Link and Text -->
+@if (Model.HasDownloadLink || IsInEditingMode)
+{
+    <img src="@(Model.DownloadTypeIconUrl)"/>
+    using (BeginRenderLink(Model.GlassModel, m => m.Download_Link, isEditable: true))
+    {
+        @Editable(Model.GlassModel, m => m.Download_Link_Text)
+    }
+}
