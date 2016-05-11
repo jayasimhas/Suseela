@@ -20,9 +20,9 @@ namespace Informa.Library.User.Authentication
 
 				return new AuthenticatedUser
 				{
-					Email = sitecoreUser.Profile.Email,
+					Email = sitecoreUser.LocalName,
 					Name = sitecoreUser.Profile.Name,
-					Username = sitecoreUser.Profile.Email       
+					Username = sitecoreUser.LocalName
 				};
 			}
 		}
