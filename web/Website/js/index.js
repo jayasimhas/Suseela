@@ -250,10 +250,7 @@ $(document).ready(function() {
         observe: '.form-reset-password',
         successCallback: function() {
             $('.form-reset-password').find('.alert-success').show();
-            analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
-        },
-        failureCallback: function() {
-            analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
+        
         }
 
     });
@@ -262,6 +259,10 @@ $(document).ready(function() {
         observe: '.form-new-reset-pass-token',
         successCallback: function() {
             $('.form-new-reset-pass-token').find('.alert-success').show();
+            analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
+        },
+        failureCallback: function() {
+            analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
         }
     });
 
@@ -282,7 +283,7 @@ $(document).ready(function() {
         },
         failureCallback: function(form, response) {
             var errorMsg = $(".page-registration__error").text();
-           if (response.reasons && response.reasons.length > 0) {
+            if (response.reasons && response.reasons.length > 0) {
                 errorMsg = "[";
                 for (var reason in response.reasons) {
                     errorMsg += response.reasons[reason] + ",";
