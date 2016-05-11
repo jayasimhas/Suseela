@@ -328,10 +328,10 @@
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
     <Compile Include="Migrations\201605092039013_InitialCreate.cs" />
     <Compile Include="Migrations\201605092039013_InitialCreate.Designer.cs">
-    <Compile Include="Mail\ExactTarget\ExactTargetClient.cs" />
-    <Compile Include="Mail\ExactTarget\ExactTargetWrapper.cs" />
       <DependentUpon>201605092039013_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mail\ExactTarget\ExactTargetClient.cs" />
+    <Compile Include="Mail\ExactTarget\ExactTargetWrapper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Publication\ArticleMappingContext.cs" />
     <Compile Include="Publication\ArticleMappingRepository.cs" />
