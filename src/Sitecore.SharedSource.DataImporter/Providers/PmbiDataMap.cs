@@ -32,10 +32,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		private const string MediaDestinationPath = "Media Destination Path";
 		private const string CreatedDate = "Created Date";
 		private const string LegacyArticleNumber = "Legacy Article Number";
+		private const string ArticleNumberPrefixStr = "Article Number Prefix";
 
 		public PmbiDataMap(Database db, string connectionString, Item importItem, ILogger l) : base(db, connectionString, importItem, l)
 		{
-			ArticleNumberPrefix = GetArticleNumberPrefix(importItem);
+			ArticleNumberPrefix = importItem.Fields[ArticleNumberPrefixStr].Value;
 			var val = importItem.Fields[LastArticleNumber].Value;
 			if (string.IsNullOrWhiteSpace(val))
 			{
@@ -74,7 +75,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 							.Where(i => i.TemplateID.ToString() == TemplateId);
 				}
 				sw.Stop();
-				Logger.Log("Performance Statistic", $"Used {sw.Elapsed.TotalSeconds} to Find matches");
+				Logger.Log("Performance Statistic-(Sitecore.SharedSource.DataImporter.Providers.PmbiDataMap.GetImportData)", $"Used {sw.Elapsed.TotalSeconds} to Find matches");
 			}
 
 			return articles;
@@ -100,7 +101,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				{
 					// Get old guids and map to new guids
 					var ids = oldValue.Split('|').Select(i => new Guid(i));
+
+					var sw = new Stopwatch();
+					sw.Start();
 					var newIds = repo.GetMappingsByIds(ids).Select(i => i.ArticleId);
+					sw.Stop();
+					Logger.Log("Performance Statistic-(Informa.Library.Publication.ArticleMappingRepository.GetMappingsByIds)", $"Used {sw.Elapsed.TotalSeconds} to Find matches");
 
 					// Transform new guids to sitecore field value
 					var transformedValue = IdsToSitecoreStringValue(newIds);
@@ -168,29 +174,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		}
 
 		#region Utility Methods
-
-		protected string GetArticleNumberPrefix(Item item)
-		{
-			var result = string.Empty;
-
-			switch (item.Parent.Name)
-			{
-				case "The Pink Sheet":
-					result = "PS";
-					break;
-				case "Medtech Insight":
-					result = "MI";
-					break;
-				case "In Vivo":
-					result = "IV";
-					break;
-				case "The Rose Sheet":
-					result = "RS";
-					break;
-			}
-
-			return result;
-		}
 
 		protected string IdsToSitecoreStringValue(IEnumerable<Guid> guids)
 		{

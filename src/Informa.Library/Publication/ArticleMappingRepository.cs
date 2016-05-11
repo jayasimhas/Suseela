@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,7 +59,15 @@ namespace Informa.Library.Publication
 
 		public IEnumerable<ArticleMapping> GetMappingsByIds(IEnumerable<Guid> ids)
 		{
-			return ids.Select(id => _context.Mappings.Find(id));
+			//return ids.Select(id => _context.Mappings.Find(id));		
+			var values = string.Empty;
+			foreach (var id in ids)
+			{
+				values = string.IsNullOrWhiteSpace(values) ? $"'{id}'" : $"{values},'{id}'";
+			}
+
+			var query = $"SELECT * FROM [Informa_Mapping].[dbo].[ArticleMappings] WHERE [PmbiArticleId] IN ({values})";
+			return _context.Mappings.SqlQuery(query);
 		}
 	}
 }

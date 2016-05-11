@@ -10501,6 +10501,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 					[SitecoreField(ISitecore_Import_MapConstants.Media_Source_PathFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Media_Source_Path  {get; set;}
 								/// <summary>
+					/// The Article Number Prefix field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 23018653-40be-4436-b792-cc0faf9f8790</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISitecore_Import_MapConstants.Article_Number_PrefixFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Article_Number_Prefix  {get; set;}
+								/// <summary>
 					/// The Last Article Number field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -10585,6 +10594,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 						[SitecoreField(ISitecore_Import_MapConstants.Media_Source_PathFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Media_Source_Path  {get; set;}
 										/// <summary>
+						/// The Article Number Prefix field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 23018653-40be-4436-b792-cc0faf9f8790</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISitecore_Import_MapConstants.Article_Number_PrefixFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Article_Number_Prefix  {get; set;}
+										/// <summary>
 						/// The Last Article Number field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -10654,6 +10672,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.P
 					
 			public static readonly ID Media_Source_PathFieldId = new ID("232c8155-3c1a-427a-9501-672ddb5e7b0f");
 			public const string Media_Source_PathFieldName = "Media Source Path";
+
+						
+					
+			public static readonly ID Article_Number_PrefixFieldId = new ID("23018653-40be-4436-b792-cc0faf9f8790");
+			public const string Article_Number_PrefixFieldName = "Article Number Prefix";
 
 						
 					

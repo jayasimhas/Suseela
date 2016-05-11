@@ -89,7 +89,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 825c0132-b217-4071-ba0f-d0552c81e038
+revision: 57d62091-57c9-4ef5-9969-cf082f606ed1
 
 ----field----
 field: {1F03F44C-DD3A-4148-BEE7-0724310827B8}
@@ -127,6 +127,13 @@ content-length: 3
 
 163
 ----field----
+field: {23018653-40BE-4436-B792-CC0FAF9F8790}
+name: Article Number Prefix
+key: article number prefix
+content-length: 2
+
+PS
+----field----
 field: {232C8155-3C1A-427A-9501-672DDB5E7B0F}
 name: Media Source Path
 key: media source path
@@ -153,18 +160,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-825c0132-b217-4071-ba0f-d0552c81e038
+57d62091-57c9-4ef5-9969-cf082f606ed1
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160511T172157Z
+20160511T195104Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 17
+content-length: 14
 
-default\Anonymous
+sitecore\admin
