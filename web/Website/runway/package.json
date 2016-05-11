@@ -1,0 +1,10 @@
+{
+  "name": "runway",
+  "author": "Samuel Fine",
+  "devDependencies": {
+    "fs-extra": "^0.30.0",
+    "marked": "^0.3.5",
+    "node-fetch": "^1.5.2",
+    "postcss": "^5.0.21"
+  }
+}
