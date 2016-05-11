@@ -8,17 +8,13 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using HtmlAgilityPack;
-using Sitecore.Collections;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
 using Sitecore.Resources.Media;
 using Sitecore.SharedSource.DataImporter.Providers;
 using Sitecore.SharedSource.DataImporter.Utility;
-using Debug = System.Diagnostics.Debug;
 using HtmlDocument = Sitecore.WordOCX.HtmlDocument.HtmlDocument;
 
 namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
@@ -960,8 +956,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				return;
 
 			//get parent item of list to search
-			Item i = newItem.Database.GetItem(SourceList);
-			if (i == null)
+			var sourceItems = GetSourceItems(newItem.Database);
+			if (sourceItems == null)
 				return;
 
 			Dictionary<string, string> d = GetMapping();
@@ -976,7 +972,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 			//loop through children and look for anything that matches by name
 			string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-			IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
+			IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
 
 			//if you find one then store the id
 			if (!t.Any())
@@ -994,7 +990,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
 		}
 
-		private Dictionary<string, string> GetMapping()
+		protected virtual Dictionary<string, string> GetMapping()
 		{
 			Dictionary<string, string> d = new Dictionary<string, string>();
 
@@ -1978,13 +1974,14 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				return;
 
 			//get parent item of list to search
-			Item i = newItem.Database.GetItem(SourceList);
-			if (i == null)
+			var sourceItems = GetSourceItems(newItem.Database);
+			if (sourceItems == null)
 				return;
 
 			Dictionary<string, string> d = GetMapping();
 
-			string transformValue = (d.ContainsKey(importValue)) ? d[importValue] : string.Empty;
+			string upperValue = importValue.ToUpper();
+			string transformValue = (d.ContainsKey(upperValue)) ? d[upperValue] : string.Empty;
 			if (string.IsNullOrEmpty(transformValue))
 			{
 				map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, importValue);
@@ -1992,7 +1989,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			}
 
 			string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-			IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.DisplayName.Equals(cleanName));
+			IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
 
 			//if you find one then store the id
 			if (!t.Any())
@@ -2010,7 +2007,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
 		}
 
-		public Dictionary<string, string> GetMapping()
+		public virtual Dictionary<string, string> GetMapping()
 		{
 			Dictionary<string, string> d = new Dictionary<string, string>();
 			d.Add("AFGHANISTAN", "Afghanistan");
@@ -2021,6 +2018,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			d.Add("ANTIGUA AND BARBUDA", "Antigua And Barbuda");
 			d.Add("ARGENTINA", "Argentina");
 			d.Add("ARMENIA", "Armenia");
+			d.Add("ASIA PACIFIC", "Asia");
 			d.Add("AUSTRALIA", "Australia");
 			d.Add("AUSTRIA", "Austria");
 			d.Add("AZERBAIJAN", "Azerbaijan");
@@ -2065,6 +2063,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			d.Add("EL SALVADOR", "El Salvador");
 			d.Add("EQUATORIAL GUINEA", "Equatorial Guinea");
 			d.Add("ERITREA", "");
+			d.Add("EUROPE", "Europe");
 			d.Add("ESTONIA", "Estonia");
 			d.Add("ETHIOPIA", "Ethiopia");
 			d.Add("FIJI", "Fiji");
@@ -2087,6 +2086,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			d.Add("ICELAND", "Iceland");
 			d.Add("INDIA", "India");
 			d.Add("INDONESIA", "Indonesia");
+			d.Add("INSIDE CHINA: INVESTING IN MEDTECH COMPANIES", "China");
 			d.Add("IRAN", "Iran");
 			d.Add("IRAQ", "Iraq");
 			d.Add("IRELAND", "Ireland");
@@ -2102,6 +2102,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			d.Add("KUWAIT", "Kuwait");
 			d.Add("KYRGYZSTAN", "Kyrgyzstan");
 			d.Add("LAOS", "Laos");
+			d.Add("LATIN AMERICA", "Americas");
 			d.Add("LATVIA", "Latvia");
 			d.Add("LEBANON", "Lebanon");
 			d.Add("LESOTHO", "Lesotho");
@@ -2204,12 +2205,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 		public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
 		{
-			if (string.IsNullOrEmpty(importValue))
+			if (string.IsNullOrWhiteSpace(importValue))
 				return;
 
-			//get parent item of list to search
-			Item i = newItem.Database.GetItem(SourceList);
-			if (i == null)
+			var sourceItems = GetSourceItems(newItem.Database);
+			if (sourceItems == null)
 				return;
 
 			Field f = newItem.Fields[NewItemField];
@@ -2228,15 +2228,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 			string[] parts = transformValue.Split(new string[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
 
-			Item[] cl = i.Axes.GetDescendants();
-
-			StringBuilder sb = new StringBuilder();
-
 			//loop through children and look for anything that matches by name
 			foreach (string area in parts)
 			{
 				string cleanName = StringUtility.GetValidItemName(area, map.ItemNameMaxLength);
-				IEnumerable<Item> t = cl.Where(c => c.DisplayName.Equals(cleanName));
+				IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
 
 				//if you find one then store the id
 				if (!t.Any())
@@ -2251,7 +2247,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			}
 		}
 
-		public Dictionary<string, string> GetMapping()
+		public virtual Dictionary<string, string> GetMapping()
 		{
 			Dictionary<string, string> d = new Dictionary<string, string>();
 
@@ -2279,6 +2275,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			d.Add("board appointment", "Companies");
 			d.Add("branded medicines", "");
 			d.Add("business practice", "Companies");
+			d.Add("business", "Companies");
 			d.Add("chapter 11", "Companies");
 			d.Add("clinical trial results", "Clinical Trials");
 			d.Add("clinical trials", "Clinical Trials");
@@ -2290,6 +2287,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			d.Add("court case", "");
 			d.Add("critical path", "");
 			d.Add("cutbacks", "Companies");
+			d.Add("deals", "Deals");
 			d.Add("democrats", "Regulation");
 			d.Add("directives", "Regulation");
 			d.Add("divestment", "Companies");
@@ -2305,14 +2303,17 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			d.Add("eu chmp negative opinion", "Regulation");
 			d.Add("eu chmp opinion", "");
 			d.Add("eu chmp positive opinion", "Regulation");
+			d.Add("events", "Events");
 			d.Add("fda advisory panel", "");
 			d.Add("fda advisory panel meeting", "Approvals");
 			d.Add("fda approvable letter", "");
 			d.Add("fda complete response letter", "Regulation");
 			d.Add("fda non-approvable letter", "");
 			d.Add("financial updates", "Companies");
+			d.Add("financials", "Companies");
 			d.Add("forecast", "Companies");
 			d.Add("foreign aid", "Policy");
+			d.Add("funding", "Funding");
 			d.Add("general approval submission", "");
 			d.Add("generic approval", "Approvals");
 			d.Add("generic approval filing", "Approvals");
@@ -2333,6 +2334,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			d.Add("healthcare systems", "Policy::Market Access");
 			d.Add("herbal medicines", "");
 			d.Add("house of representatives", "Regulation");
+			d.Add("hta", "Health Technology Assessment");
 			d.Add("infringement", "Regulation");
 			d.Add("injunction", "Regulation");
 			d.Add("innovative medicines initiative", "Policy");
