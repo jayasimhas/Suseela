@@ -190,6 +190,7 @@ web/Website/lib/bower_components
 web/Website/data/logs
 web/Website/data/indexes
 .vscode
+web/Website/Web.config
 web/Website/App_Config/ConnectionStrings.config
 web/Website/App_Config/Sitecore.config
 web/Website/App_Config/Web/nwebsec.config
