@@ -34,7 +34,9 @@ namespace InformaSitecoreWord.Util
 				}
 				var url = SitecoreClient.GetDynamicUrl(path);
 				root.SetAttributeValue("href", url);
-				root.SetAttributeValue("target", "_blank");
+                //fix showing supporting document links in edit mode
+                root.SetAttributeValue("style", "display:none;");
+                root.SetAttributeValue("target", "_blank");
                 root.Value = hyperlink.Range.Text;
 				//root.Add(GetDocIcon(url));
 			}
