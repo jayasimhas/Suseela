@@ -43,35 +43,88 @@ namespace InformaSitecoreWord.UI
 
         private void ArticlesBtn_Click(object sender, RibbonControlEventArgs e)
         {
-            ArticlesSidebarsControl myUserControl = new ArticlesSidebarsControl();
-            CheckLoginAndPerformAction(myUserControl, "Articles");
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                ArticlesSidebarsControl myUserControl = new ArticlesSidebarsControl();
+                CheckLoginAndPerformAction(myUserControl, "Articles");
+            }
+            catch
+            {
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private void IntelligenceProductsBtn_Click(object sender, RibbonControlEventArgs e)
         {
-            DealsDrugsCompaniesControl myUserControl = new DealsDrugsCompaniesControl();
-            CheckLoginAndPerformAction(myUserControl, "Intelligence Products");
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                DealsDrugsCompaniesControl myUserControl = new DealsDrugsCompaniesControl();
+                CheckLoginAndPerformAction(myUserControl, "Intelligence Products");
+            }
+            catch
+            {
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private void Multimedia_Click(object sender, RibbonControlEventArgs e)
         {
-            IFrameControl myUserControl = new IFrameControl();
-            CheckLoginAndPerformAction(myUserControl, "Multimedia");
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                IFrameControl myUserControl = new IFrameControl();
+                CheckLoginAndPerformAction(myUserControl, "Multimedia");
+            }
+            catch
+            {
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private void ImagesBtn_Click(object sender, RibbonControlEventArgs e)
         {
-            GraphicsControl myUserControl = new GraphicsControl();
-            CheckLoginAndPerformAction(myUserControl, "Images");
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                GraphicsControl myUserControl = new GraphicsControl();
+                CheckLoginAndPerformAction(myUserControl, "Images");
+            }
+            catch
+            {
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private void SupportingDocsBtn_Click(object sender, RibbonControlEventArgs e)
         {
-            SupportingDocumentsControl myUserControl = new SupportingDocumentsControl();
-            CheckLoginAndPerformAction(myUserControl, "Supporting Documents");
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                SupportingDocumentsControl myUserControl = new SupportingDocumentsControl();
+                CheckLoginAndPerformAction(myUserControl, "Supporting Documents");
+            }
+            catch
+            {
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
-
-
 
         /// <summary>
         /// This is a method which takes in a Function which would be required to be called once the use logs in.
@@ -282,21 +335,37 @@ namespace InformaSitecoreWord.UI
 
         private void ArticlePreviewMenu_Click(object sender, RibbonControlEventArgs e)
         {
-            CheckLoginAndPerformAction(GetPreview);
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                CheckLoginAndPerformAction(GetPreview);
+            }
+            catch { }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private void SaveToSitecoreBtn_Click(object sender, RibbonControlEventArgs e)
         {
-            //var documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
-            //if (!string.IsNullOrEmpty(documentCustomProperties.ArticleNumber))
-            //{
-            if (GetArticleNumber() != null)
+            Cursor.Current = Cursors.WaitCursor;
+            try
             {
-                CheckLoginAndPerformAction(SaveArticleData);
+                if (GetArticleNumber() != null)
+                {
+                    CheckLoginAndPerformAction(SaveArticleData);
+                }
+                else
+                {
+                    CheckLoginAndPerformAction(OpenArticleInformation);
+                }
             }
-            else
+            catch
+            { }
+            finally
             {
-                CheckLoginAndPerformAction(OpenArticleInformation);
+                Cursor.Current = Cursors.Default;
             }
         }
 
