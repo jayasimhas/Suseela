@@ -300,6 +300,7 @@
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaSiteResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
+    <Compile Include="CustomSitecore\Pipelines\PasswordRecoveryPipeline.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
