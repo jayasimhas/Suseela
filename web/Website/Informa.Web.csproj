@@ -1297,6 +1297,9 @@
     <Content Include="Views\Shared\PopOuts\SaveSearch.cshtml" />
     <Content Include="Views\Shared\Layouts\EmailLayout.cshtml" />
     <Content Include="Views\EmailComponents\FeaturedContent.cshtml" />
+    <None Include="Web.config.template">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
