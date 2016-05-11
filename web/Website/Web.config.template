@@ -144,6 +144,8 @@
         <add name="HttpPost" />
       </protocols>
     </webServices>
+
+	<httpCookies domain="${Site.Domain}"/>
     
     
     <!-- If requestValidationMode attribute of httRuntime node is set to 2.0,
