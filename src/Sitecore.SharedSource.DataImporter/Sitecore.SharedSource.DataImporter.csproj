@@ -111,6 +111,7 @@
     <Compile Include="Mappings\Fields\Clinica\ToInformaDeviceMarketArea.cs" />
     <Compile Include="Mappings\Fields\IBaseField.cs" />
     <Compile Include="Mappings\Fields\SRA\FromSectionToRegion.cs" />
+    <Compile Include="Mappings\Fields\SRA\FromSectionToSubjects.cs" />
     <Compile Include="Mappings\Fields\SRA\FromSraToInformaContentType.cs" />
     <Compile Include="Mappings\Fields\SRA\FromSraToInformaIndustry.cs" />
     <Compile Include="Mappings\Fields\SRA\FromTechnologySectionToSubjects.cs" />
