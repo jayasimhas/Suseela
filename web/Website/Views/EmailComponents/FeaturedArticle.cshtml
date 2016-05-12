@@ -1,0 +1,25 @@
+﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.FeaturedArticleViewModel>
+
+<!-- this doesn't have to be a div, just demonstarting -->
+<!-- also feel free to change the "sponsored" class name -->
+<div class="@(Model.GlassModel.Is_Sponsored ? "sponsored" : string.Empty)"></div>
+
+<!-- none of these fields are expected to be editable -->
+
+@if (!Model.GlassModel.Hide_Image)
+{
+    @Model.Article.Featured_Image_16_9
+}
+<br/>
+@Model.Article.Actual_Publish_Date.ToString("dd MMM yyyy")
+<br />
+@Model.Article.Content_Type
+<br />
+@Model.Article.Title
+<br />
+@(Model.Article.Media_Type?.Media_Type_Icon)
+<br />
+@Model.Byline
+<br />
+@Model.Article.Summary
+<br/>

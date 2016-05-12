@@ -1,10 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@inherits CustomGlassView<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.IExactTarget_Email>
+
+<!DOCTYPE html>
 <html>
     <head>
         
     </head>
     <body>
-    <h1>woot fun times</h1>
+    <h1>@Editable(m => m.Subject)</h1>
     <div>
         @Html.Sitecore().Placeholder("email-main")
     </div>

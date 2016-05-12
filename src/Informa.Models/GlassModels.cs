@@ -15558,6 +15558,113 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.Components
+{
+
+
+ 	/// <summary>
+	/// IFeatured_Article Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Emails/Components/Featured Article</para>	
+	/// <para>ID: cb4ca050-2626-4979-a53d-77613b218043</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IFeatured_ArticleConstants.TemplateIdString)]
+	public partial interface IFeatured_Article : IGlassBase 
+	{
+								/// <summary>
+					/// The Article field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: e4af834d-e606-4424-8dde-326953ed32b3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ArticleConstants.ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Article  {get; set;}
+								/// <summary>
+					/// The Hide Image field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 0bfcb376-e720-4969-86eb-da195d8470e1</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ArticleConstants.Hide_ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Hide_Image  {get; set;}
+								/// <summary>
+					/// The Is Sponsored field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: ffe772d1-87c0-4420-942d-f8e45300050c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFeatured_ArticleConstants.Is_SponsoredFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Is_Sponsored  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IFeatured_Article Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Emails/Components/Featured Article</para>	
+		/// <para>ID: cb4ca050-2626-4979-a53d-77613b218043</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IFeatured_Article__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Article field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: e4af834d-e606-4424-8dde-326953ed32b3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ArticleConstants.ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Article  {get; set;}
+										/// <summary>
+						/// The Hide Image field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 0bfcb376-e720-4969-86eb-da195d8470e1</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ArticleConstants.Hide_ImageFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Hide_Image  {get; set;}
+										/// <summary>
+						/// The Is Sponsored field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: ffe772d1-87c0-4420-942d-f8e45300050c</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IFeatured_ArticleConstants.Is_SponsoredFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Is_Sponsored  {get; set;}
+						}
+	
+	public static partial class IFeatured_ArticleConstants{
+
+			public const string TemplateIdString = "cb4ca050-2626-4979-a53d-77613b218043";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Featured Article";
+
+					
+			public static readonly ID ArticleFieldId = new ID("e4af834d-e606-4424-8dde-326953ed32b3");
+			public const string ArticleFieldName = "Article";
+
+						
+					
+			public static readonly ID Hide_ImageFieldId = new ID("0bfcb376-e720-4969-86eb-da195d8470e1");
+			public const string Hide_ImageFieldName = "Hide Image";
+
+						
+					
+			public static readonly ID Is_SponsoredFieldId = new ID("ffe772d1-87c0-4420-942d-f8e45300050c");
+			public const string Is_SponsoredFieldName = "Is Sponsored";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Folders
 {
 
