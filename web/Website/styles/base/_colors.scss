@@ -10,13 +10,6 @@ section: Colors
 @color: #f1f2f2 @name: Concrete Gray
 @color: #e2e4e4 @name: Mercury Gray
 @color: #d1d3d4 @name: Light Gray
-@color: #be1e2d @name: Cardinal Red
-@color: #f7941e @name: Tree Poppy Orange
-@color: #fbb040 @name: Yellow Orange
-@color: #f9af40 @name: Butterscotch Orange
-@color: #d6ebdc @name: Iceberg Green
-@color: #31be48 @name: Lime Green
-@color: #daa520 @name: Goldenrod
 @color: #ffffff @name: White
 @color: #bbbcbe @name: Light Gray B
 @color: #808285 @name: Medium Gray 8
@@ -34,16 +27,33 @@ $color-concrete-gray:       #f1f2f2;
 $color-mercury-gray:        #e2e4e4;
 $color-light-gray:          #d1d3d4;
 $color-x11-gray:            #bbbcbe;
+$color-iceberg-green:       #d6ebdc;
+$color-antique-white:       #ffeedd;
+$color-white:               #ffffff;
+$color-misty-pink:          #fce5e6;
+
+
+/*---
+title: SCRIP
+section: Colors
+---
+```example:color
+@color: #be1e2d @name: Cardinal Red
+@color: #f7941e @name: Tree Poppy Orange
+@color: #f9af40 @name: Butterscotch Orange
+@color: #fbb040 @name: Yellow Orange
+@color: #daa520 @name: Goldenrod
+@color: #31be48 @name: Lime Green
+```
+*/
+
 $color-cardinal-red:        #be1e2d;
 $color-tree-poppy-orange:   #f7941e;
 $color-butterscotch-orange: #f9af40;
 $color-yellow-orange:       #fbb040;
 $color-goldenrod:           #daa520;
 $color-lime-green:          #31be48;
-$color-iceberg-green:       #d6ebdc;
-$color-antique-white:       #ffeedd;
-$color-white:               #ffffff;
-$color-misty-pink:          #fce5e6;
+
 
 
 /*---
