@@ -122,7 +122,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 						if (string.IsNullOrWhiteSpace(mappedValue))
 						{
 							// If we are mapping article category field, set default to "News" for any article without a mapping for content type
-							if (FieldName == "Print Article")
+							if (FieldName == "Print Category")
 							{
 								mappedValue = "News";
 							}
