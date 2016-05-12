@@ -121,11 +121,38 @@
 
 			.sortable-table__col {
 				display: inline-block;
-				font-size: 1rem;
+				font-size: 0.875rem;
 				font-weight: 400;
-				padding: 0 0.5rem 0.5rem 1rem;
+				padding: 0 1rem 0.5rem 0rem;
 				width: auto;
 				vertical-align: middle;
+
+				&:after {
+					display: inline-block;
+					content: "";
+					height: 18px;
+					width: 1px;
+					margin-left: 1.75rem;
+					background-color: $color-light-gray;
+					vertical-align: middle;
+				}
+				&:last-child:after {
+					width: 0;
+				}
+
+				.sorting-arrows {
+					position: absolute;
+					margin-top: -2px;
+				}
+			}
+
+			.sortable-table__sort-by-header {
+				display: block;
+				padding-left: 0;
+
+				&:after {
+					display: none;
+				}
 			}
 		}
 
