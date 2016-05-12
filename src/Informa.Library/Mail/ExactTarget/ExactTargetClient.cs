@@ -23,7 +23,7 @@ namespace Informa.Library.Mail.ExactTarget
     {
         private readonly IDependencies _dependencies;
 
-        [AutowireService(true)]
+        [AutowireService(IsAggregateService = true)]
         public interface IDependencies
         {
             ILogWrapper LogWrapper { get; }
@@ -81,7 +81,8 @@ namespace Informa.Library.Mail.ExactTarget
         private void UpdateSitecoreWithEmailId(IExactTarget_Email etEmail, ExactTargetResponse response) =>
             _dependencies.SitecoreSecurityWrapper.SecurityDisabledAction(
                 () => _dependencies.SitecoreServiceMaster.Save(
-                    etEmail.InvokeAction(email => email.Exact_Target_External_Key = response.ExactTargetEmailId)));
+                    etEmail.InvokeAction(
+                        email => email.Exact_Target_External_Key = response.ExactTargetEmailId)));
 
         public FuelSDK.ET_Email PopulateEtModel(IExactTarget_Email emailItem)
         {

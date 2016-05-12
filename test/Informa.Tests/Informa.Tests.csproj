@@ -121,13 +121,11 @@
     <Compile Include="Library\Mail_Tests\ExactTarget_Tests\ExactTargetClient_Tests.cs" />
     <Compile Include="Library\Services\NlmExport\NlmExportServiceTests.cs" />
     <Compile Include="Library\Services\NlmExport\Serialization\NlmSerializerTests.cs" />
+    <Compile Include="Library\Utilities_Tests\StringUtils_Tests\BylineMaker_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="app.config.template">
       <SubType>Designer</SubType>
     </None>
     <None Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
