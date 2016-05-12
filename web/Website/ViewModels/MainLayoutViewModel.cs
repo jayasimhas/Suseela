@@ -24,6 +24,7 @@ using Informa.Library.User;
 using Sitecore.Social.Infrastructure.Utils;
 using Informa.Library.Salesforce.User.Authentication;
 using Informa.Library.Salesforce.EBIWebServices;
+using Informa.Library.User.Authentication.Web;
 
 namespace Informa.Web.ViewModels
 {
@@ -42,7 +43,7 @@ namespace Informa.Web.ViewModels
 		protected readonly IUserEntitlementsContext UserEntitlementsContext;
 		protected readonly IUserIpAddressContext UserIpAddressContext;
 		protected readonly IEntitledProductContext EntitledProductContext;
-		protected readonly ISalesforceAuthenticateUser SalesforceAuthenticateUser;
+		protected readonly IWebAuthenticateUser WebAuthenticateUser;
 		public MainLayoutViewModel(
 			ISiteRootContext siteRootContext,
 			IMaintenanceViewModel maintenanceViewModel,
@@ -67,7 +68,7 @@ namespace Informa.Web.ViewModels
 			IUserEntitlementsContext userEntitlementsContext,
 			IUserIpAddressContext userIpAddressContext,
 			IEntitledProductContext entitledProductContext,
-			ISalesforceAuthenticateUser salesforceAuthenticateUser)
+			IWebAuthenticateUser webAuthenticateUser)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -92,7 +93,7 @@ namespace Informa.Web.ViewModels
 			UserEntitlementsContext = userEntitlementsContext;
 			UserIpAddressContext = userIpAddressContext;
 			EntitledProductContext = entitledProductContext;
-			SalesforceAuthenticateUser = salesforceAuthenticateUser;
+			WebAuthenticateUser = webAuthenticateUser;
 		}
 
 		public readonly IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
@@ -250,18 +251,18 @@ namespace Informa.Web.ViewModels
 			return "Unentitled Abstract View";
 		}
 
-		public string ContactId => SalesforceAuthenticateUser.LoginResponse?.contactId ?? string.Empty;
-		
+		public string ContactId => WebAuthenticateUser.AuthenticatedUser?.ContactId ?? string.Empty;
+
 		public string AccountId
 		{
 			get
 			{
-				var accountInfo = SalesforceAuthenticateUser.LoginResponse?.accountInfo;
-				var enumerable = accountInfo as IList<EBI_AccountData> ?? accountInfo.ToList();
-				if (!enumerable.Any())
+				var accountInfo = WebAuthenticateUser.AuthenticatedUser?.AccountId;
+				
+				if (accountInfo ==null || !accountInfo.Any())
 					return string.Empty;
 
-				string allAccountIds= string.Join(",", enumerable.Select(a => $"'{a.accountId}'"));
+				string allAccountIds = string.Join(",", accountInfo.Select(a => $"'{a}'"));
 				return $"[{allAccountIds}]";
 			}
 		}
