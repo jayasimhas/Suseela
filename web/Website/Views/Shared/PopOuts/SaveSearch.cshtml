@@ -1,6 +1,6 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.PopOuts.SaveSearchPopOutViewModel>
 
-<div class="pop-out js-pop-out__save-search" ng-controller="EmailRssController as saveSearch">
+<div class="pop-out js-pop-out__save-search" ng-controller="SavedSearchController as saveSearch">
     <div class="pop-out__tab"></div>
     <div class="pop-out__internal">
         <div class="pop-out__sign-in">
@@ -106,7 +106,7 @@
             <input
                 type="text"
                 name="Title"
-                class="pop-out__input pop-out__input--tight js-save-search-title">
+                class="pop-out__input pop-out__input--tight js-save-search-title" value="{{title}}">
 
             <input
                 type="hidden"
