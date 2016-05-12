@@ -51,10 +51,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				ao.Add("FILENAME", cleanTitleHtml);
 				ao.Add("META TITLE OVERRIDE", cleanTitleHtml);
 				ao.Add("ARTICLEID", curFileName.Replace(".xml", ""));
-
-				l.Add(ao);
-				artNumber++;
-
+				
 				//autonomy fields
 				string autFile = $@"{this.Query}\..\Autonomy\{curFileName}";
 
@@ -78,11 +75,20 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				}
 
 				XmlDocument d2 = GetXmlDocument(autFile);
-				if (d2 == null)
-					continue;
+				if (d2 != null)
+				{
+					foreach (string n in autNodes)
+						ao.Add(n, GetXMLData(d2, n));
+				}
 
-				foreach (string n in autNodes)
-					ao.Add(n, GetXMLData(d2, n));
+				string categoryName = ao.ContainsKey("CATEGORY") ? ao["CATEGORY"] : string.Empty;
+				if (categoryName.ToLower().Equals("pdfnewsletter")) continue;
+
+				string sectionName = ao.ContainsKey("SECTION") ? ao["SECTION"] : string.Empty;
+				if (sectionName.ToLower().Equals("pdf library")) continue;
+
+				l.Add(ao);
+				artNumber++;
 			}
 
 			return l;

@@ -20,16 +20,18 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields.Clinica
 			d.Add("funding", "Funding");
 			d.Add("hta", "Health Technology Assessment");
 			d.Add("legal", "Legal Issues");
-			d.Add("manda", "M&A");
+			d.Add("manda", "M A");
+			d.Add("m&a", "M A");
 			d.Add("market sector", "Markets");
-			d.Add("medtech ventures", "Medtech Ventures::StartUps & SMEs");
+			d.Add("medtech ventures", "Medtech Ventures::StartUps SMEs");
 			d.Add("people", "Companies");
 			d.Add("policy", "Policy");
 			d.Add("policy&regulation", "Policy::Regulation");
 			d.Add("policyandregulation", "Policy::Regulation");
 			d.Add("regulation", "Regulation");
 			d.Add("reimbursement", "Reimbursement");
-			d.Add("start-upsandsmes", "StartUps & SMEs");
+			d.Add("start-upsandsmes", "StartUps SMEs");
+			d.Add("StartUps & SMEs", "StartUps SMEs");
 			d.Add("vigilance", "Product Safety");
 
 			d.Add("analysis", "");

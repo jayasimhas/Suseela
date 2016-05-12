@@ -62,14 +62,17 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				//escenic field values
 				string authorNode = "STORYAUTHORNAME";
 				ao.Add(authorNode, AuthorHelper.Authors(GetXMLData(d, authorNode)));
-				string bodyNode = "BODY";
+				string bodyNode = "STORYBODY";
 				ao.Add(bodyNode, GetXMLData(d, bodyNode));
-				string titleNode = "TITLE";
+				string titleNode = "STORYTITLE";
 				string cleanTitleHtml = CleanTitleHtml(GetXMLData(d, titleNode));
 				ao.Add(titleNode, cleanTitleHtml);
 				ao.Add("FILENAME", cleanTitleHtml);
 				ao.Add("META TITLE OVERRIDE", cleanTitleHtml);
 				ao.Add("ARTICLEID", curFileName.Replace(".xml", ""));
+
+				l.Add(ao);
+				artNumber++;
 
 				//autonomy fields
 				string autFile = $@"{this.Query}\..\Autonomy\{curFileName}";
@@ -89,23 +92,16 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 						Logger.Log("N/A", "No Date to parse error", ProcessStatus.DateParseError, "Missing Autonomy File Name", autFile);
 					else
 						ao["STORYUPDATE"] = dateVal;
+
+					continue;
 				}
 
 				XmlDocument d2 = GetXmlDocument(autFile);
-				if (d2 != null)
-				{
-					foreach (string n in autNodes)
-						ao.Add(n, GetXMLData(d2, n));
-				}
+				if (d2 == null)
+					continue;
 
-				string categoryName = ao.ContainsKey("CATEGORY") ? ao["CATEGORY"] : string.Empty;
-				if (categoryName.ToLower().Equals("pdfnewsletter")) continue;
-
-				string sectionName = ao.ContainsKey("SECTION") ? ao["SECTION"] : string.Empty;
-				if (sectionName.ToLower().Equals("pdf library")) continue;
-
-				l.Add(ao);
-				artNumber++;
+				foreach (string n in autNodes)
+					ao.Add(n, GetXMLData(d2, n));
 			}
 
 			return l;
@@ -169,7 +165,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			if (articles == null || !articles.Any())
 				return 1;
 
-			string num = articles.First().Replace(this.PublicationPrefix, "");
+			string num = articles.First().Replace("SC", "");
 			int n = int.Parse(num);
 			return n + 1;
 		}
