@@ -133,7 +133,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 						}
 
 						// Get GUID of the new taxonomy item
-						var val = targetDescendants.FirstOrDefault(i => StringUtility.GetValidItemName(i.Fields["Item Name"].Value, map.ItemNameMaxLength) == mappedValue)?.ID.ToString();
+						var val = targetDescendants.FirstOrDefault(i => StringUtility.TrimInvalidChars(i.Fields["Item Name"].Value) == mappedValue)?.ID.ToString();
 
 						if (string.IsNullOrWhiteSpace(val))
 						{
