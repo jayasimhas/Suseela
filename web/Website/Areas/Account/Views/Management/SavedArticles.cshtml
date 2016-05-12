@@ -125,7 +125,19 @@
 											   type="hidden"
 											   value="@item.DocumentId">
 
-										<button type="submit" class="button--outline click-utag" data-info='{"event_name":"saved-article-remove", "document_id":"@item.DocumentId"}'>@Model.RemoveText</button>
+                                           <button type="button"
+                                               class="button--outline js-lightbox-modal-trigger"
+                                               data-lightbox-modal="js-remove-article-modal"
+                                               data-lightbox-modal-title="Remove Article"
+                                               data-lightbox-modal-body="Are you sure you'd like to remove this article?"
+                                               data-lightbox-modal-success-target="form-remove-saved-document">
+                                               @Model.RemoveText
+                                           </button>
+
+                                           <button type="submit"
+                                               class="click-utag lightbox-modal__hidden-submit"
+                                               data-info='{"event_name":"saved-article-remove", "document_id":"@item.DocumentId"}'>
+                                           </button>
 
 									</form>
 								</td>
@@ -133,6 +145,26 @@
 						}
 					</tbody>
 				</table>
+
+
+                <div class="lightbox-modal js-remove-article-modal">
+                    <div class="dismiss-button js-close-lightbox-modal">
+                        <span>Cancel</span>
+                        <svg class="dismiss-button__icon">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                        </svg>
+                    </div>
+
+                    <div class="lightbox-modal__title">
+                        <svg class="lightbox-modal__title-icon">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                        </svg>
+                        Remove Article
+                    </div>
+                    <p>Are you sure you'd like to remove this article?</p>
+                    <button class="lightbox-modal__submit button--filled js-lightbox-modal-submit">Yes, I'm Sure</button>
+                </div>
+
 
 				<div class="alert-success js-form-success">
 					<svg class="alert__icon">

@@ -11,6 +11,7 @@ import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
 import SortableTableController from './sortable-table-controller';
+import LightboxModalController from './lightbox-modal-controller';
 import { toggleIcons } from './toggle-icons';
 import { analyticsEvent } from './analytics-controller';
 
@@ -769,6 +770,8 @@ $(document).ready(function() {
 
 
     var sortTheTables = new SortableTableController();
+
+    new LightboxModalController();
 
     $('.js-toggle-list').on('click', function(e) {
         $(e.target).closest('.js-togglable-list-wrapper').toggleClass('is-active');
