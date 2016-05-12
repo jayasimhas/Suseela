@@ -54,9 +54,9 @@
 
     <div class="search__content">
 
-        @Html.Sitecore().Placeholder("search-right")
-
         <div class="search__body">
+
+            @Html.Sitecore().Placeholder("search-right")
 
             @Html.Partial("~/Views/Search/SearchKeywords.cshtml", Model)
             @Html.Partial("~/Views/Search/SearchMetadata.cshtml", Model)

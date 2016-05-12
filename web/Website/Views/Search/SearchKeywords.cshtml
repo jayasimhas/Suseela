@@ -66,3 +66,11 @@
 
     </div>
 </form>
+
+<button class="facets__mobile-button facets__mobile-button--show"
+        ng-model="facetsAreCollapsed"
+        ng-click="facetsAreCollapsed = !facetsAreCollapsed"
+        ng-class="{'is-expanded': facetsAreCollapsed}">
+    <h6 ng-if="!facetsAreCollapsed" class="show-filters">Show Filters</h6>
+    <h6 ng-if="facetsAreCollapsed" class="hide-filters">Hide Filters</h6>
+</button>

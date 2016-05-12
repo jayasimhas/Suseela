@@ -525,7 +525,7 @@ $(document).ready(function() {
 
         var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
         dismissedBanners[thisBanner.data('banner-id')] = true;
-        Cookies.set('dismissedBanners', dismissedBanners);
+        Cookies.set('dismissedBanners', dismissedBanners, {expires: 3650 } );
     });
 
     // For each article table, clone and append "view full table" markup

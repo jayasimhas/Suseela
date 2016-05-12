@@ -17,12 +17,12 @@ section: Search
 
     @include breakpoint('medium') {
         display: none;
-    }
+        order: 3;
 
-    &.is-expanded {
-        @include breakpoint('medium') {
+        &.is-expanded {
             display: block;
             margin-right: 0;
+            margin-bottom: 0;
         }
     }
 }
@@ -40,12 +40,22 @@ section: Search
             background-color: $color-yellow-orange;
             text-align: center;
 
-            &--bottom {
+            &--show {
+                order: 2;
+            }
+            &--hide {
                 display: none;
+                order: 3;
+            }
 
-                &.is-expanded {
-                    display: block;
-                }
+            &--show.is-expanded,
+            &--hide.is-expanded {
+                display: block;
+                margin-bottom: 0;
+            }
+
+            &--bottom.is-expanded {
+                margin-bottom: 1rem;
             }
 
             h6.show-filters {

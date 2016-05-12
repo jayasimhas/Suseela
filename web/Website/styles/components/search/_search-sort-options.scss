@@ -1,11 +1,12 @@
 .search-sort {
     margin-bottom: 1rem;
+    @include search-page-structure();
 
     @include breakpoint('medium') {
         display: block;
         float: left;
-        order: 3;
-        margin-bottom: 23px;
+        order: 5;
+        margin-bottom: 1rem;
     }
 
     &__sort-by {

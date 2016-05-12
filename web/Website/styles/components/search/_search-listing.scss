@@ -1,4 +1,6 @@
 .search-results {
+    @include search-page-structure();
+
     // headlines-only view
     &.headlines-only {
         .search-result__publication,
