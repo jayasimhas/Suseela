@@ -198,10 +198,23 @@
                         <td class="sortable-table__col sortable-table__submit-wrapper">
                             <form class="form-remove-saved-search"
                                   data-on-submit="/api/SavedSearches"
-                                  data-submit-type="DELETE"
-                                  data-force-confirm="Are you sure you want to remove this saved search?">
+                                  data-submit-type="DELETE">
                                 <input name="Title" id="Title" type="hidden" value="@item.Title">
-                                <button type="submit" class="button--outline click-utag" data-info='{"event_name":"saved-search-remove", "id":"@item.Title"}'>@Model.RemoveText</button>
+
+                                <button type="button"
+                                    class="button--outline js-lightbox-modal-trigger"
+                                    data-lightbox-modal="js-remove-search-modal"
+                                    data-lightbox-modal-title="Remove Saved Search"
+                                    data-lightbox-modal-body="Are you sure you'd like to remove this saved search?"
+                                    data-lightbox-modal-success-target="form-remove-saved-search">
+                                    @Model.RemoveText
+                                </button>
+
+                                <button type="submit"
+                                    class="click-utag lightbox-modal__hidden-submit"
+                                    data-info='{"event_name":"saved-search-remove", "id":"@item.Title"}'>
+                                </button>
+
                             </form>
                         </td>
                     </tr>
@@ -211,6 +224,24 @@
                 }
                 </tbody>
             </table>
+
+            <div class="lightbox-modal js-remove-search-modal">
+                <div class="dismiss-button js-close-lightbox-modal">
+                    <span>Cancel</span>
+                    <svg class="dismiss-button__icon">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                    </svg>
+                </div>
+
+                <div class="lightbox-modal__title">
+                    <svg class="lightbox-modal__title-icon">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                    </svg>
+                    Remove Saved Search
+                </div>
+                <p>Are you sure you'd like to remove this saved search?</p>
+                <button class="lightbox-modal__submit button--filled js-lightbox-modal-submit">Yes, I'm Sure</button>
+            </div>
 
             <div class="alert-success js-form-success">
                 <svg class="alert__icon">

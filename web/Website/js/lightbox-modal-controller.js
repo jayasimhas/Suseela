@@ -15,7 +15,7 @@ function lightboxModalController() {
         $('.' + targetModal)
             .show()
             .find('.js-lightbox-modal-submit')
-            .on('click', function(f) {
+            .on('click', function() {
                 successForm.find('button[type=submit]').click();
                 closeLightboxModal();
             });
@@ -35,7 +35,7 @@ function lightboxModalController() {
         $('.lightbox-modal__backdrop').remove();
         $('.lightbox-modal').hide();
     };
-    
+
 }
 
 export default lightboxModalController;
