@@ -16,7 +16,7 @@
 
     <div class="facets__content">
 
-        <form class="facets__section" ng-repeat="group in facetController.facetGroups">
+        <form class="facets__section" ng-repeat="group in facetController.facetGroups" ng-if="group.label == 'Companies' || group.label == 'Date Placeholder' || group.facets.length > 0">
 
         @* * * * *
         FACET — COMPANIES
