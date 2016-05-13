@@ -39,5 +39,9 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		public string RemoveText => TextTranslator.Translate("SavedDocuments.RemoveText");
 		public string ItemRemovedMessage => TextTranslator.Translate("SavedDocuments.ItemRemovedMessage");
 		public string BadIDText => TextTranslator.Translate("SavedDocuments.BadIDText");
+		public string RemoveModalCancelText => TextTranslator.Translate("SavedDocuments.RemoveModalCancel");
+		public string RemoveModalConfirmText => TextTranslator.Translate("SavedDocuments.RemoveModalConfirm");
+		public string RemoveModalText => TextTranslator.Translate("SavedDocuments.RemoveModalText");
+		public string RemoveModalTitleText => TextTranslator.Translate("SavedDocuments.RemoveModalTitle");
 	}
 }

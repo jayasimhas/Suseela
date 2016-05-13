@@ -149,7 +149,7 @@
 
                 <div class="lightbox-modal js-remove-article-modal">
                     <div class="dismiss-button js-close-lightbox-modal">
-                        <span>Cancel</span>
+                        <span>@Model.RemoveModalCancelText</span>
                         <svg class="dismiss-button__icon">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
                         </svg>
@@ -159,10 +159,10 @@
                         <svg class="lightbox-modal__title-icon">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
                         </svg>
-                        Remove Article
+                        @Model.RemoveModalTitleText
                     </div>
-                    <p>Are you sure you'd like to remove this article?</p>
-                    <button class="lightbox-modal__submit button--filled js-lightbox-modal-submit">Yes, I'm Sure</button>
+                    <p>@Model.RemoveModalText</p>
+                    <button class="lightbox-modal__submit button--filled js-lightbox-modal-submit">@Model.RemoveModalConfirmText</button>
                 </div>
 
 
