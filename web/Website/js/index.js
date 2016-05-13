@@ -435,6 +435,10 @@ $(document).ready(function() {
         observe: '.form-remove-saved-document',
         successCallback: function(form, context, evt) {
             $(evt.target).closest('tr').remove();
+            if($('.js-sortable-table tbody')[0].rows.length === 0) {
+                $('.js-sortable-table').remove();
+                $('.js-no-articles').show();                
+            }
         }
     });
 
