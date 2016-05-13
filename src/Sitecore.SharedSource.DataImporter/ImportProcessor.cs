@@ -7,6 +7,7 @@ using Sitecore.SharedSource.DataImporter.Providers;
 using Sitecore.SharedSource.DataImporter.Utility;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -71,6 +72,8 @@ namespace Sitecore.SharedSource.DataImporter
 			{ // try to eliminate some of the extra pipeline work
 				foreach (object importRow in importItems)
 				{
+					var sw = new Stopwatch();
+					sw.Start();
 					//import each row of data
 					line++;
 					try
@@ -98,7 +101,8 @@ namespace Sitecore.SharedSource.DataImporter
 					{
 						Logger.Log("N/A", string.Format("Exception thrown on import row {0} : {1}", line, ex.Message), ProcessStatus.NewItemError, "All Import Values", string.Join("||", ((Dictionary<string, string>)importRow).Select(a => $"{a.Key}-{a.Value}")));
 					}
-
+					sw.Stop();
+					Logger.Log("Performance Statistic", $"Used {sw.Elapsed.TotalSeconds} to process this item.");
 					if (Sitecore.Context.Job != null)
 					{
 						Sitecore.Context.Job.Status.Processed = line;
@@ -110,8 +114,11 @@ namespace Sitecore.SharedSource.DataImporter
 			(DataMap as PmbiDataMap)?.SetArticleNumber();
 
 			// Move Media Library
+			var stopWatch = new Stopwatch();
+			stopWatch.Start();
 			(DataMap as PmbiDataMap)?.TransferMediaLibrary();
-
+			stopWatch.Stop();
+			Logger.Log("Performance Statistic", $"Used {stopWatch.Elapsed.TotalSeconds} to move media items.");
 			// Set Related Articles
 			(DataMap as PmbiDataMap)?.SetRelatedArticles();
 

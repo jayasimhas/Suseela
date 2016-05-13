@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using Informa.Library.Publication;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
@@ -22,7 +23,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		public string ArticleNumberPrefix { get; set; }
 		public int ArticleNumber { get; set; }
 
-		private const string PmbiContent = "pmbiContent";
 		private const string LastArticleNumber = "Last Article Number";
 		private const string ArticleDate = "Article Date";
 		private const string RelatedArticles = "Related Articles";
@@ -155,20 +155,24 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 					defaultOptions.AllowDefaultValues = false;
 					defaultOptions.AllowStandardValues = false;
 					defaultOptions.ProcessChildren = true;
-					var outerXml = sourceItem.GetOuterXml(defaultOptions);
 
-					try
-					{
-						destinationItem.Paste(outerXml, false, PasteMode.Overwrite);
-						if (sourceItem.Paths.IsMediaItem)
-						{
-							TransferMediaItemBlob(sourceItem, destinationItem, true);
-						}
-					}
-					catch (Exception exception)
-					{
-						Log.Error("An error occured while importing media", exception, this);
-					}
+					//TransferMediaItem(sourceItem, destinationItem, defaultOptions);
+
+					//var descendants = sourceItem.Axes.GetDescendants();
+					//var checkSet = GetExistingMediaItemsInTargetDb(destinationItem);
+					//foreach (var item in descendants)
+					//{
+					//	var sourceFolderName = MediaSourcePath.Split('/').LastOrDefault();
+					//	var relativePath = item.Paths.FullPath.Replace("/sitecore/media library/", "");
+					//	var pathToCreate = $"{destinationPath}/{sourceFolderName}/{relativePath}";
+					//	var newMediaItem = new Item();
+					//	if (!checkSet.Contains(item.ID.ToString()))
+					//	{
+					//		TransferMediaItem(item, );
+					//	}
+					//}
+
+					TransferMediaItem(sourceItem, destinationItem, defaultOptions);
 				}
 			}
 		}
@@ -204,13 +208,16 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			Assert.IsNotNull(source, "source is null");
 			Assert.IsNotNull(destination, "destination is null");
 
+			Logger.Log("Progress-", $"Processing \"{source.Paths.FullPath}\" - {DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}");
 			foreach (Field field in source.Fields)
 			{
 				if (field.IsBlobField)
 				{
 					var str = field.Value;
 					if (str.Length > 38)
+					{
 						str = str.Substring(0, 38);
+					}
 					var guid = MainUtil.GetGuid(str, Guid.Empty);
 					if (!(guid == Guid.Empty))
 					{
@@ -218,7 +225,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 						if (blobStream != null)
 						{
 							using (blobStream)
+							{
 								ItemManager.SetBlobStream(blobStream, guid, ProxyManager.GetRealDatabase(destination));
+							}
 						}
 					}
 				}
@@ -234,6 +243,69 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 					}
 				}
 			}
+		}
+
+		protected void TransferMediaItem(Item sourceItem, Item destItem, ItemSerializerOptions option)
+		{
+			var outerXml = sourceItem.GetOuterXml(option);
+			try
+			{
+				destItem.Paste(outerXml, false, PasteMode.Overwrite);
+
+				if (sourceItem.Paths.IsMediaItem)
+				{
+					TransferMediaItemBlob(sourceItem, destItem, true);
+				}
+			}
+			catch (Exception ex)
+			{
+				Log.Error("An error occured while importing media", ex, this);
+			}
+		}
+
+		protected void ProcessNodeRecursively(XmlNode current, HashSet<string> checkSet, XmlDocument doc)
+		{
+			if (current.HasChildNodes)
+			{
+				var childNodes = current.ChildNodes.Cast<XmlNode>().Where(i => i.Name == "item").ToList();
+				if (childNodes.Any())
+				{
+					for (int i = 0; i < current.ChildNodes.Count; i++)
+					{
+						ProcessNodeRecursively(current.ChildNodes[i], checkSet, doc);
+					}
+				}
+			}
+
+			if (current.Attributes?["id"] != null)
+			{
+				if (checkSet.Contains(current.Attributes?["id"].Value))
+				{
+					//var attr = doc.CreateAttribute("remove");
+					//attr.Value = "1";
+					//current.Attributes.Append(attr);
+					if (!current.ChildNodes.Cast<XmlNode>().Any(i => i.Name == "item"))
+					{
+						current.ParentNode?.RemoveChild(current);
+					}
+				}
+			}
+		}
+
+		protected HashSet<string> GetExistingMediaItemsInTargetDb(Item startItem)
+		{
+			var result = new HashSet<string>();
+			var descendants = startItem?.Axes.GetDescendants();
+
+			if (descendants != null)
+			{
+				foreach (var item in descendants)
+				{
+					result.Add(item.ID.ToString());
+				}
+			}
+
+			return result;
 		}
 
 		#endregion
