@@ -704,6 +704,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 	[SitecoreType(TemplateId=ISaved_Articles_PageConstants.TemplateIdString)]
 	public partial interface ISaved_Articles_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
+								/// <summary>
+					/// The No Articles field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 90bad8f6-35b6-4e2c-bce3-c8914d422e21</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISaved_Articles_PageConstants.No_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string No_Articles  {get; set;}
 				}
 
 	
@@ -716,6 +725,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 		[SitecoreType]
 		public partial interface ISaved_Articles_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
+										/// <summary>
+						/// The No Articles field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 90bad8f6-35b6-4e2c-bce3-c8914d422e21</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISaved_Articles_PageConstants.No_ArticlesFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string No_Articles  {get; set;}
 						}
 	
 	public static partial class ISaved_Articles_PageConstants{
@@ -724,6 +742,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Saved Articles Page";
 
+					
+			public static readonly ID No_ArticlesFieldId = new ID("90bad8f6-35b6-4e2c-bce3-c8914d422e21");
+			public const string No_ArticlesFieldName = "No Articles";
+
+							public static readonly ID No_Articles__RawFieldId = new ID("90bad8f6-35b6-4e2c-bce3-c8914d422e21");
+				public const string No_Articles__RawFieldName = "No Articles";
+						
 					
 			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
 			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
