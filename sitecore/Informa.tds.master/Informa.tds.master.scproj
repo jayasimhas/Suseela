@@ -2583,7 +2583,7 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-	<SitecoreItem Include="sitecore\templates\User Defined\Configuration\Password Recovery Email Config.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Configuration\Password Recovery Email Config.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
