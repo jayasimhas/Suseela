@@ -35,6 +35,21 @@ namespace InformaSitecoreWord.UI
         private void ESRibbon_Load(object sender, RibbonUIEventArgs e)
         {
             IsNotLoggedIn();
+            Globals.SitecoreAddin.SelectedWordDocumentChanged += SitecoreAddin_SelectedWordDocumentChanged;
+        }
+
+        private void SitecoreAddin_SelectedWordDocumentChanged()
+        {
+            if (_user.IsLoggedIn == false || string.IsNullOrEmpty(GetArticleNumber()))
+            {
+                SaveToSitecoreBtn.Enabled = false;
+                ArticlePreviewMenu.Enabled = false;
+            }
+            else
+            {
+                SaveToSitecoreBtn.Enabled = true;
+                ArticlePreviewMenu.Enabled = true;
+            }
         }
 
         private void OpenPluginBtn_Click(object sender, RibbonControlEventArgs e)
@@ -126,8 +141,6 @@ namespace InformaSitecoreWord.UI
                 Cursor.Current = Cursors.Default;
             }
         }
-
-
 
         /// <summary>
         /// This is a method which takes in a Function which would be required to be called once the use logs in.
