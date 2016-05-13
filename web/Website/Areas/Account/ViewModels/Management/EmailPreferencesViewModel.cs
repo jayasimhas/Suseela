@@ -6,6 +6,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templat
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System.Collections.Generic;
+using System.Web;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
@@ -33,8 +34,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		public readonly ISignInViewModel SignInViewModel;
 		public bool IsAuthenticated => UserContext.IsAuthenticated;
 		public bool DoNotSendOfferEmails => !OffersOptedInContext.OptedIn;
-        public string Title => GlassModel?.Title;
-		public string Body => GlassModel?.Body;
 		public string NewsletterTitle => TextTranslator.Translate("Preferences.NewsletterTitle");
 		public string NewsletterOptInTitleHeading => TextTranslator.Translate("Preferences.NewsletterOptInTitleHeading");
 		public string NewsletterOptInReceiveEmailHeading => TextTranslator.Translate("Preferences.NewsletterOptInReceiveEmailHeading");
