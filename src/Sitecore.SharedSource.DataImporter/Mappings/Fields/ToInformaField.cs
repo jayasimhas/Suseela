@@ -2513,11 +2513,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				var bioOrCon =
 					oldSourceList.GetChildren()
 						.Where(i => i.Fields["Primary Industry"].Value == "{CAC059FE-41BA-403C-B36F-BFEBF3DC16ED}" || i.Fields["Primary Industry"].Value == "{608C58C2-6268-4B6B-908B-1D3F5E637016}");
-				
+
 				// Get Medical Device taxonomy
 				var medicalDevice =
 					oldSourceList.GetChildren().FirstOrDefault(i => i.Fields["Primary Industry"].Value == "{1CEB75FF-46C5-4A8E-90AF-530883EE3C89}");
-				
+
 				// Get all their descendants and add to hash set
 				foreach (var item in bioOrCon)
 				{
@@ -2625,6 +2625,54 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				if (importValue.StartsWith("Video"))
 				{
 					field.Value = videoVal;
+				}
+			}
+		}
+	}
+
+	public class ToAuthors : ListToGuid
+	{
+		public ToAuthors(Item i) : base(i)
+		{
+		}
+
+		public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+		{
+			var field = newItem.Fields[NewItemField];
+			if (!string.IsNullOrWhiteSpace(importValue) && field != null)
+			{
+				var item = newItem.Database.GetItem(SourceList);
+				if (item != null)
+				{
+					var strs = importValue.Split('|');
+					var transformedValue = string.Empty;
+					var descendants = item.Axes.GetDescendants();
+
+					foreach (var str in strs)
+					{
+						var authorItem = Database.GetDatabase("pmbiContent").GetItem(new ID(str));
+						var firstName = authorItem.Fields["First Name"].Value;
+						var lastName = authorItem.Fields["Last Name"].Value;
+						var email = authorItem.Fields["Email"].Value;
+
+						var val = descendants.FirstOrDefault(
+							i =>
+								i.Fields["First Name"].Value == firstName && i.Fields["Last Name"].Value == lastName &&
+								(string.IsNullOrWhiteSpace(email) || i.Fields["Email Address"].Value == email))?.ID.ToString();
+					
+						if (string.IsNullOrWhiteSpace(val))
+						{
+							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not found", ProcessStatus.FieldError, NewItemField, importValue);
+							return;
+						}
+
+						// Avoid adding duplicate GUID
+						if (!field.Value.Contains(val))
+						{
+							transformedValue = string.IsNullOrWhiteSpace(transformedValue) ? val : $"{transformedValue}|{val}";
+						}
+					}
+					field.Value = transformedValue;
 				}
 			}
 		}

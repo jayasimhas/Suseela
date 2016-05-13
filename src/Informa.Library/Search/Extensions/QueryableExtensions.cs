@@ -78,8 +78,7 @@ namespace Informa.Library.Search.Extensions
         {
 			return source?
 				.FilteryByLatestVersion()
-				.FilteryByCurrentLanguage()
-				.FilteryByCurrentSite();
+				.FilteryByCurrentLanguage();
 		}
 
 		public static IQueryable<T> FilteryByLatestVersion<T>(this IQueryable<T> source)

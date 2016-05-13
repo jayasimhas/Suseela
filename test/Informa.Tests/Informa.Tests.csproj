@@ -55,6 +55,9 @@
       <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CSharpSDK">
+      <HintPath>..\..\lib\ExactTarget\CSharpSDK.dll</HintPath>
+    </Reference>
     <Reference Include="Glass.Mapper, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\net45\Glass.Mapper.dll</HintPath>
       <Private>True</Private>
@@ -115,15 +118,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Library\Mail_Tests\ExactTarget_Tests\ExactTargetClient_Tests.cs" />
     <Compile Include="Library\Services\NlmExport\NlmExportServiceTests.cs" />
     <Compile Include="Library\Services\NlmExport\Serialization\NlmSerializerTests.cs" />
+    <Compile Include="Library\Utilities_Tests\StringUtils_Tests\BylineMaker_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="app.config.template">
       <SubType>Designer</SubType>
     </None>
     <None Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />

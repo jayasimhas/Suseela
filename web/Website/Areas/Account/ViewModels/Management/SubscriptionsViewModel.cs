@@ -89,7 +89,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		public string OffSiteRenewLink => GlassModel.Off_Site_Renew_Link?.Url ?? "#";
 		public string OffSiteSubscriptionLink => GlassModel.Off_Site_Subscription_Link?.Url ?? "#";
 		public bool IsAuthenticated => UserContext.IsAuthenticated;
-		public string Title => GlassModel?.Title;
+		public string Title => TextTranslator.Translate("Subscriptions.Title");
 		public string PublicationText => TextTranslator.Translate("Subscriptions.Publication");
 		public string SubscriptionTypeText => TextTranslator.Translate("Subscriptions.SubscriptionType");
 		public string ExpirationDateText => TextTranslator.Translate("Subscriptions.ExpirationDate");

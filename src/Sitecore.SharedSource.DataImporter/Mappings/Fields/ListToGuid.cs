@@ -108,6 +108,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 					var mapping = mappingDictionary;
 					var strs = importValue.Split('|');
 					var transformedValue = string.Empty;
+					var targetDescendants = item.Axes.GetDescendants();
 
 					foreach (var str in strs)
 					{
@@ -119,7 +120,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 						// Get taxonomy name from pmbi database
 						var pmbiTaxonomyItemName = Sitecore.Data.Database.GetDatabase("pmbiContent").GetItem(new ID(str))?.DisplayName;
-						if (pmbiTaxonomyItemName == null)
+						if (string.IsNullOrWhiteSpace(pmbiTaxonomyItemName))
 						{
 							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not converted", ProcessStatus.FieldError, NewItemField, importValue);
 							return;
@@ -136,7 +137,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 						if (string.IsNullOrWhiteSpace(mappedValue))
 						{
 							// If we are mapping article category field, set default to "News" for any article without a mapping for content type
-							if (FieldName == "Print Article")
+							if (FieldName == "Print Category")
 							{
 								mappedValue = "News";
 							}
@@ -147,7 +148,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 						}
 
 						// Get GUID of the new taxonomy item
-						var val = item.Axes.GetDescendants().FirstOrDefault(i => StringUtility.GetValidItemName(i.Fields["Item Name"].Value, map.ItemNameMaxLength) == mappedValue)?.ID.ToString();
+						var val = targetDescendants.FirstOrDefault(i => StringUtility.TrimInvalidChars(i.Fields["Item Name"].Value) == mappedValue)?.ID.ToString();
 
 						if (string.IsNullOrWhiteSpace(val))
 						{

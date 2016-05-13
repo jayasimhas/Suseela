@@ -8,5 +8,6 @@ namespace Informa.Library.Purchase
 		public DateTime Expiration { get; set; }
 		public string Url { get; set; }
 		public string Publication { get; set; }
+		public bool IsExternalUrl { get; set; }
 	}
 }

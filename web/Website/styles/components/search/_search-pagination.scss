@@ -2,6 +2,7 @@
   &__wrapper {
     padding: 10px 0 50px;
     border-top: 2px solid $color-light-gray;
+    @include search-page-structure();
 
     @include breakpoint('medium') {
       order: 5;
@@ -26,7 +27,7 @@
       &.is-active a {
         background: $color-concrete-gray;
         color: $color-abbey-gray;
-        
+
         &:hover {
           text-decoration: none;
         }

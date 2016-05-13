@@ -42,7 +42,7 @@
         border-color: $color-rubine-red;
     }
 
-    .button--filled,
+    .button--filled:not([disabled]),
     .search-bar__submit,
     .banner--alert,
     .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {

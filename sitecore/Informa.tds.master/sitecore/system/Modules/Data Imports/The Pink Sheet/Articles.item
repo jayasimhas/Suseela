@@ -89,7 +89,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: cb851bda-0abf-49a5-a01e-4f1a312de93d
+revision: c119c87b-3782-4775-9996-87ef138e8e31
 
 ----field----
 field: {1F03F44C-DD3A-4148-BEE7-0724310827B8}
@@ -123,9 +123,30 @@ content-length: 4
 field: {5FF74032-EFC8-401A-BEB6-E459A9815585}
 name: Last Article Number
 key: last article number
+content-length: 3
+
+195
+----field----
+field: {23018653-40BE-4436-B792-CC0FAF9F8790}
+name: Article Number Prefix
+key: article number prefix
 content-length: 2
 
-36
+PS
+----field----
+field: {232C8155-3C1A-427A-9501-672DDB5E7B0F}
+name: Media Source Path
+key: media source path
+content-length: 43
+
+/sitecore/media library/Media Transfer Test
+----field----
+field: {1B4A053F-6AFB-4B41-8102-53CAE42EACB5}
+name: Media Destination Path
+key: media destination path
+content-length: 33
+
+/sitecore/media library/PmbiMedia
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -139,18 +160,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-cb851bda-0abf-49a5-a01e-4f1a312de93d
+c119c87b-3782-4775-9996-87ef138e8e31
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160506T155950Z
+20160512T154000Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 18
+content-length: 14
 
-sitecore\Anonymous
+sitecore\admin

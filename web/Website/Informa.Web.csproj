@@ -766,12 +766,13 @@
     <Compile Include="ViewModels\AdvertisementViewModel.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
+    <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\SearchRssViewModel.cs" />
-    <Compile Include="ViewModels\SearchWrapperViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IToolbarViewModel.cs" />
@@ -1171,7 +1172,6 @@
     <Folder Include="GlassMaps\" />
     <Folder Include="js\search\services\" />
     <Folder Include="packages\" />
-    <Folder Include="Views\Layouts\" />
     <Folder Include="Views\Partials\" />
   </ItemGroup>
   <ItemGroup>
@@ -1211,6 +1211,7 @@
     <Content Include="App_Config\Web\system.webServer.rewrite.config.template" />
     <None Include="App_Config\Include\ZZ.UserDefined\Import.config.template" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
+    <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1295,6 +1296,15 @@
     <Content Include="Views\Shared\Components\JavascriptComponent.cshtml" />
     <Content Include="Views\Shared\Global\MetaNoIndex.cshtml" />
     <Content Include="Views\Shared\PopOuts\SaveSearch.cshtml" />
+    <Content Include="Views\Shared\Layouts\EmailLayout.cshtml" />
+    <Content Include="Views\EmailComponents\FeaturedContent.cshtml" />
+    <None Include="Web.config.template">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\EmailComponents\FeaturedArticle.cshtml" />
+    <None Include="Web.config.template">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">

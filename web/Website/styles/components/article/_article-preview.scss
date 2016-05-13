@@ -8,8 +8,8 @@ section: Home/Topic Page Components
 
     <div class="article-metadata">
         <div class="article-preview__bookmarker pop-out__trigger">
-            <span class="article-preview__bookmarker-label">Bookmark</span>
-            <svg class="article-prologue__share-icon">
+            <span class="action-flag__label">Bookmark</span>
+            <svg class="action-flag__icon action-flag__icon--bookmark">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#bookmark"></use>
             </svg>
         </div>
@@ -21,7 +21,7 @@ section: Home/Topic Page Components
                 <h6>News</h6>
             </li>
             <li>
-                <svg class="article-prologue__share-icon">
+                <svg class="action-flag__icon">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#audio"></use>
                 </svg>
             </li>

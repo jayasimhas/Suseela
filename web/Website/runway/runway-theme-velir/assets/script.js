@@ -1,6 +1,18 @@
 /* global examples, Prism */
 
 $(document).ready(function () {
+
+	var currentTheme = location.search.split('theme=')[1];
+
+	$('.js-theme-select').on('change', function() {
+		if(this.selectedIndex === 0 && currentTheme) {
+			window.location.href = 'http://' + location.host;
+		}
+		if(this.selectedIndex === 1 && currentTheme !== 'pink-sheet') {
+			window.location.href = 'http://' + location.host + '?theme=pink-sheet';
+		}
+	});
+
 	$('pre code[class^="lang"]').each(function(code, index, array) {
 		// set pre, wrap, opts, and get meta data from code
 		var pre  = code.parentNode;

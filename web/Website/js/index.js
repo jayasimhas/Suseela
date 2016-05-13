@@ -11,6 +11,7 @@ import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
 import SortableTableController from './sortable-table-controller';
+import LightboxModalController from './lightbox-modal-controller';
 import { toggleIcons } from './toggle-icons';
 import { analyticsEvent } from './analytics-controller';
 
@@ -434,6 +435,10 @@ $(document).ready(function() {
         observe: '.form-remove-saved-document',
         successCallback: function(form, context, evt) {
             $(evt.target).closest('tr').remove();
+            if($('.js-sortable-table tbody')[0].rows.length === 0) {
+                $('.js-sortable-table').remove();
+                $('.js-no-articles').show();                
+            }
         }
     });
 
@@ -525,7 +530,7 @@ $(document).ready(function() {
 
         var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
         dismissedBanners[thisBanner.data('banner-id')] = true;
-        Cookies.set('dismissedBanners', dismissedBanners);
+        Cookies.set('dismissedBanners', dismissedBanners, {expires: 3650 } );
     });
 
     // For each article table, clone and append "view full table" markup
@@ -570,7 +575,7 @@ $(document).ready(function() {
 
     // Display the Forgot Password block when "forgot your password" is clicked
     $('.js-show-forgot-password').on('click', function toggleForgotPass() {
-        $('.pop-out__sign-in-forgot-password').toggleClass('is-active');
+        $('.js-reset-password-container').toggleClass('is-active');
     });
 
     // Global dismiss button for pop-outs
@@ -770,6 +775,8 @@ $(document).ready(function() {
 
     var sortTheTables = new SortableTableController();
 
+    new LightboxModalController();
+
     $('.js-toggle-list').on('click', function(e) {
         $(e.target).closest('.js-togglable-list-wrapper').toggleClass('is-active');
     });
@@ -793,12 +800,14 @@ $(document).ready(function() {
 
     // Account - Email Preferences toggler
     $('.js-account-email-toggle-all').on('click', function(e) {
+        $('.js-update-email-prefs').attr('disabled', null);
         if($(e.target).prop('checked')) {
             $('.js-account-email-checkbox').prop('checked', null);
         }
     });
 
     $('.js-account-email-checkbox').on('click', function(e) {
+        $('.js-update-email-prefs').attr('disabled', null);
         if($(e.target).prop('checked')) {
             $('.js-account-email-toggle-all').prop('checked', null);
         }

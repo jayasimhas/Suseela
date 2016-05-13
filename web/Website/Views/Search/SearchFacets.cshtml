@@ -1,14 +1,6 @@
 @model SearchViewModel
 <!-- SEARCH FILTERS IN LEFT RAIL -->
 
-<button class="facets__mobile-button"
-        ng-model="facetsAreCollapsed"
-        ng-click="facetsAreCollapsed = !facetsAreCollapsed"
-        ng-class="{'is-expanded': facetsAreCollapsed}">
-    <h6 ng-if="!facetsAreCollapsed" class="show-filters">Show Filters</h6>
-    <h6 ng-if="facetsAreCollapsed" class="hide-filters">Hide Filters</h6>
-</button>
-
 <div    id="search-facet-01"
         class="search__facets search__left-sidebar"
         ng-class="{'is-expanded': facetsAreCollapsed}"
@@ -24,7 +16,7 @@
 
     <div class="facets__content">
 
-        <form class="facets__section" ng-repeat="group in facetController.facetGroups">
+        <form class="facets__section" ng-repeat="group in facetController.facetGroups" ng-if="group.label == 'Companies' || group.label == 'Date Placeholder' || group.facets.length > 0">
 
         @* * * * *
         FACET — COMPANIES
@@ -369,7 +361,7 @@
 </div> <!-- / .search__facets -->
 
 <button
-  class="facets__mobile-button facets__mobile-button--bottom"
+  class="facets__mobile-button facets__mobile-button--hide facets__mobile-button--bottom"
   ng-model="facetsAreCollapsed"
   ng-click="facetsAreCollapsed = !facetsAreCollapsed"
   ng-class="{'is-expanded': facetsAreCollapsed}">

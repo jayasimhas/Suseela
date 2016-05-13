@@ -3,10 +3,11 @@
 @if (Model.IsAuthenticated)
 {
     <div class="page-account">
-        <h1 class="page-account__header">@Model.Title</h1>
+		@Html.Sitecore().Placeholder("page-account")
+
         <div class="page-preferences js-preferences-user-container">
 
-            <h2 class="page-account__table-headline">Subscriptions</h2>
+            <h2 class="page-account__table-headline">@Model.Title</h2>
 
             <table class="page-account__table sortable-table js-sortable-table">
                 <thead class="sortable-table__header">
@@ -57,7 +58,7 @@
 
                 <thead class="sortable-table__header sortable-table__header--mobile">
                     <tr>
-                        <td class="sortable-table__col">
+                        <td class="sortable-table__col sortable-table__sort-by-header">
                             <h6>Sort by:</h6>
                         </td>
                         <td class="sortable-table__col js-sortable-table-sorter"
@@ -122,127 +123,6 @@
                         </td>
                     </tr>
                 }
-                </tbody>
-            </table>
-
-            <h2 class="page-account__table-headline">Purchases</h2>
-
-            <table class="page-account__table sortable-table js-sortable-table">
-                <thead class="sortable-table__header">
-                    <tr>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="1">
-                            Publication
-                            <div class="sorting-arrows">
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="2">
-                            Title
-                            <div class="sorting-arrows">
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="3">
-                            Expiration Date
-                            <div class="sorting-arrows">
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                    </tr>
-                </thead>
-
-                <thead class="sortable-table__header sortable-table__header--mobile">
-                    <tr>
-                        <td class="sortable-table__col">
-                            <h6>Sort by:</h6>
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="1">
-                            Publication
-                            <div class="sorting-arrows">
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="2">
-                            Title
-                            <div class="sorting-arrows">
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="3">
-                            Expiration Date
-                            <div class="sorting-arrows">
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--publication">
-                            SCRIP
-                        </td>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
-                            <a href="#">This is a long article title name</a>
-                        </td>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--exp-date">
-                            01 Jan 2017
-                        </td>
-                    </tr>
-                @*
-
-                *** Model needs ArticlePurchases (see ArticlePurchases.cshtml) ***
-
-                foreach (var item in Model.ArticlePurchases)
-                {
-                    <tr>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--publication">
-                            @item.Publication
-                        </td>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
-                            <a href="@item.Url">@item.Title</a>
-                        </td>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--exp-date">
-                            @item.Expiration.ToString("d MMMM yyyy")
-                        </td>
-                    </tr>
-                } *@
                 </tbody>
             </table>
         </div>

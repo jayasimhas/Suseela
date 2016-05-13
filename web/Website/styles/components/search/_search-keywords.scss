@@ -4,9 +4,11 @@
     padding: 20px;
     background-color: $color-concrete-gray;
     margin-bottom: 50px;
+    @include search-page-structure();
 
     @include breakpoint('medium') {
         order: 1;
+        margin-bottom: 1rem;
         min-height: auto;
     }
 
@@ -176,13 +178,14 @@
 
             @include breakpoint('small') {
                 display: block;
-                margin-bottom: 1rem;
+                margin-bottom: 0;
                 margin-right: 0;
             }
         }
     }
 
     &__headline-label {
+        @include textMix('Roboto', 14px, 400);
         display: inline-block;
         padding-left: 0.5rem;
         vertical-align: middle;

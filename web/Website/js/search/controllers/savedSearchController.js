@@ -7,10 +7,12 @@ var SavedSearchController = function ($scope, $location, $http, searchService, s
 
     vm.searchService = searchService;
     vm.isSaved = false;
-
+    
     $scope.$watch(function () {
         return searchService.getPager();
     }, function () {
+        $scope.title = searchService.getFilter('q').getValue();
+        $scope.currentLocation = $location.url();
         if ($scope.isAuthenticated) {
             savedSearchService.isSaved().then(function (response) {
                 vm.isSaved = response.data;
