@@ -47,9 +47,9 @@
 
     @if (!string.IsNullOrEmpty(Model.LeaderboardSlotID) && !string.IsNullOrEmpty(Model.LeaderboardAdZone))
     {
-    <div class="advertising--leaderboard">
-        <script>OAS_AD('@Model.LeaderboardSlotID', '@Model.LeaderboardAdZone');</script>
-    </div>
+        <div class="advertising--leaderboard">
+            <script>OAS_AD('@Model.LeaderboardSlotID', '@Model.LeaderboardAdZone');</script>
+        </div>
     }
     <div class="header__wrapper clearfix">
 
@@ -72,10 +72,15 @@
 
         <div class="header-account-access">
 
-            @if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
+            @if (Request.Cookies["LoggedoutActionFlag"] == null || Model.IsAuthenticated)
             {
-                <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
-			}
+
+                if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
+                {
+                    <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
+                }
+            }
+
             @if (Model.IsAuthenticated)
             {
                 @* TODO: UNTIL WE GET ENTITLED USERS *@
