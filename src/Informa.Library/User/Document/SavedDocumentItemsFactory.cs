@@ -48,7 +48,8 @@ namespace Informa.Library.User.Document
 				{
 					DocumentId = savedDocument.DocumentId,
 					Publication = savedDocument.Description,
-					Published = item.Actual_Publish_Date,
+					PublishedOn = item.Actual_Publish_Date,
+					SavedOn = savedDocument.SaveDate,
 					Title = item.Title ?? savedDocument.Name,
 					Url = url,
 					IsExternalUrl = isExternalUrl

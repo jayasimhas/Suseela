@@ -6,7 +6,8 @@ namespace Informa.Library.User.Document
 	{
 		string DocumentId { get; }
 		string Publication { get; }
-		DateTime Published { get; }
+		DateTime PublishedOn { get; }
+		DateTime SavedOn { get; }
 		string Title { get; }
 		string Url { get; }
 		bool IsExternalUrl { get; }
