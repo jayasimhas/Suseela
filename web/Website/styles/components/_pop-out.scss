@@ -51,7 +51,7 @@ section: UI Elements
 
     .pop-out__internal {
         left: 0;
-        min-width: 360px;
+        min-width: 440px;
         padding: 2.175rem 1.625rem;
         top: 0;
         width: 100%;
@@ -174,5 +174,41 @@ section: UI Elements
             padding-bottom: 1.5rem;
             margin-bottom: 1.5rem;
         }
+
+        &--bordered-top {
+            border-top: 1px solid $color-light-gray;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+        }
+    }
+
+    &__forgot-password {
+        border-top: 1px solid $color-light-gray;
+        display: none;
+        margin-top: 1.5rem;
+        padding-top: 1.625rem;
+
+        &-header {
+            margin-bottom: 0.75rem;
+        }
+
+        & p:last-child {
+            margin-bottom: 0;
+        }
+
+        .alert-success {
+            margin-bottom: 2rem;
+        }
+
+        &.is-active {
+            @extend .is-active;
+            clear: both;
+        }
+
+    }
+
+    &__save-search-container {
+        margin-bottom: 1.5rem;
+        overflow: auto;
     }
 }

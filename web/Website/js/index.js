@@ -571,7 +571,7 @@ $(document).ready(function() {
 
     // Display the Forgot Password block when "forgot your password" is clicked
     $('.js-show-forgot-password').on('click', function toggleForgotPass() {
-        $('.pop-out__sign-in-forgot-password').toggleClass('is-active');
+        $('.js-reset-password-container').toggleClass('is-active');
     });
 
     // Global dismiss button for pop-outs

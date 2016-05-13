@@ -57,7 +57,59 @@
                     </div>
                 </div>
 
-                <!-- <div class="js-reset-password-container">
+            } @* end IsAuthenticated *@
+
+            <h4 class="pop-out__header--tight">
+                @Html.Raw(Model.TitleLabelText)
+            </h4>
+
+            <div class="pop-out__save-search-container">
+                <p class="pop-out__error
+                    js-form-error
+                    js-form-error-EmptyTitle">
+                    @Html.Raw(Model.TitleFieldRequiredText)
+                </p>
+
+                <input
+                    type="text"
+                    name="Title"
+                    class="pop-out__input pop-out__input--tight js-save-search-title" value="{{title}}">
+
+                <input
+                    type="hidden"
+                    name="Url"
+                    class="js-save-search-url"
+                    value="@Model.GlassModel._Url#{{currentLocation}}">
+
+                <p class="pop-out__details">
+                    @Html.Raw(Model.DescriptionText)
+                </p>
+
+                <div class="labeled-checkbox">
+                    <input
+                        type="checkbox"
+                        id="AlertEnabled"
+                        name="AlertEnabled"
+                        data-checkbox-type="boolean"
+                        checked="checked">
+                    <label class="checkbox-label" for="AlertEnabled">
+                        @Html.Raw(Model.EmailAlertLabelText)
+                    </label>
+                </div>
+
+                <button type="submit" class="pop-out__sign-in-submit button--filled">
+                    @(Model.IsAuthenticated
+                        ? @Html.Raw(Model.ButtonLoggedInText)
+                        : @Html.Raw(Model.ButtonLoggedOutText))
+                </button>
+                
+            </div>
+
+            </form>
+
+            @if (!Model.IsAuthenticated) {
+
+                <div class="pop-out__show-hide--bordered-top pop-out__forgot-password js-reset-password-container">
 
                     <form class="form-reset-password" data-on-submit="/Account/api/ResetPasswordApi/Generate/">
                         <div class="alert-success js-reset-password-success">
@@ -89,54 +141,9 @@
                         </p>
                     </form>
 
-                </div>-->
-
+                </div>
             } @* end IsAuthenticated *@
 
-            <h4 class="pop-out__header--tight">
-                @Html.Raw(Model.TitleLabelText)
-            </h4>
-
-            <p class="pop-out__error
-                js-form-error
-                js-form-error-EmptyTitle">
-                @Html.Raw(Model.TitleFieldRequiredText)
-            </p>
-
-            <input
-                type="text"
-                name="Title"
-                class="pop-out__input pop-out__input--tight js-save-search-title" value="{{title}}">
-
-            <input
-                type="hidden"
-                name="Url"
-                class="js-save-search-url"
-                value="@Model.GlassModel._Url#{{currentLocation}}">
-
-            <p class="pop-out__details">
-                @Html.Raw(Model.DescriptionText)
-            </p>
-
-            <div class="labeled-checkbox">
-                <input
-                    type="checkbox"
-                    id="AlertEnabled"
-                    name="AlertEnabled"
-                    data-checkbox-type="boolean"
-                    checked="checked">
-                <label class="checkbox-label" for="AlertEnabled">
-                    @Html.Raw(Model.EmailAlertLabelText)
-                </label>
-            </div>
-
-            <button type="submit" class="pop-out__sign-in-submit button--filled">
-                @(Model.IsAuthenticated
-                    ? @Html.Raw(Model.ButtonLoggedInText)
-                    : @Html.Raw(Model.ButtonLoggedOutText))
-            </button>
-
-            </form>
         </div> @* .pop-out__sign-in *@
     </div> @* .pop-out__internal *@
 </div> @* .pop-out *@

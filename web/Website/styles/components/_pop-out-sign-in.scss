@@ -23,30 +23,8 @@
         }
     }
 
-    &-forgot-password {
-        border-top: 1px solid $color-light-gray;
-        display: none;
-        margin-top: 1.5rem;
-        padding-top: 1.625rem;
-
-        &-header {
-            margin-bottom: 0.75rem;
-        }
-
-        & p:last-child {
-            margin-bottom: 0;
-        }
-
-        .alert-success {
-            margin-bottom: 4rem;
-        }
-
-        &.is-active {
-            @extend .is-active;
-        }
-
-    }
 }
+
 .pop-out__reset-password {
     @extend a;
     cursor: pointer;
