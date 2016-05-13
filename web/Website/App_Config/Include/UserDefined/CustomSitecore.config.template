@@ -50,6 +50,11 @@ But you can also use "patch:attribute" for clarity:
                    factory="Autofac"
                    patch:before="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
                    reusable="false" />
+        <processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NotFoundResolver, Informa.Library"
+                   ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NotFoundResolver, Informa.Library"
+                   factory="Autofac"
+                   patch:before="processor[@type='Informa.Library.CustomSitecore.Pipelines.HttpRequest.ArticleItemResolver, Informa.Library']"
+                   reusable="false" />
         <processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NewRelicTransactionNameProcessor, Informa.Library" 
                    ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NewRelicTransactionNameProcessor, Informa.Library"
                    factory="Autofac"
