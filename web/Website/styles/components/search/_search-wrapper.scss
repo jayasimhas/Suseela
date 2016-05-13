@@ -66,6 +66,16 @@
   }
 }
 
+.saved-search-success-alert {
+    margin-top: 0.5rem;
+    right: 0px;
+    position: absolute;
+
+    &.is-active {
+        display: inline-block;
+    }
+}
+
 /// Proper positioning of non-facet search page elements
 @mixin search-page-structure() {
   & {

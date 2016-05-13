@@ -290,6 +290,11 @@ $(document).ready(function() {
             // If there's a stashed search, remove it.
             Cookies.remove('saveStashedSearch');
             window.controlPopOuts.closePopOut($(form).closest('.pop-out'));
+            $('.js-saved-search-success-alert')
+                .addClass('is-active')
+                .on('animationend', function(e) {
+                    $(e.target).removeClass('is-active');
+                }).addClass('a-fade-alert');
         },
         beforeRequest: function(form) {
             if(!$(form).find('.js-save-search-title').val().trim()) {
@@ -437,7 +442,7 @@ $(document).ready(function() {
             $(evt.target).closest('tr').remove();
             if($('.js-sortable-table tbody')[0].rows.length === 0) {
                 $('.js-sortable-table').remove();
-                $('.js-no-articles').show();                
+                $('.js-no-articles').show();
             }
         }
     });
