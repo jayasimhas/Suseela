@@ -155,7 +155,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			return document.DocumentNode.InnerHtml;
 		}
 
-		protected int GetNextArticleNumber()
+		protected virtual int GetNextArticleNumber()
 		{
 			IEnumerable<string> articles = ImportToWhere.Axes.GetDescendants()
 					.Where(a => a.TemplateName.Equals(ImportToWhatTemplate.DisplayName))
@@ -165,7 +165,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			if (articles == null || !articles.Any())
 				return 1;
 
-			string num = articles.First().Replace("SC", "");
+			string num = articles.First().Replace(PublicationPrefix, "");
 			int n = int.Parse(num);
 			return n + 1;
 		}
