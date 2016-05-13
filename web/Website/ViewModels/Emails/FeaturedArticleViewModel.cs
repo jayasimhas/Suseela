@@ -17,7 +17,6 @@ namespace Informa.Web.ViewModels.Emails
         {
             ISitecoreService SitecoreService { get; }
             IBylineMaker BylineMaker { get; }
-
         }
 
         public FeaturedArticleViewModel(IDependencies dependencies)
