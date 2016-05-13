@@ -173,10 +173,13 @@
 					<p>@Model.ItemRemovedMessage</p>
 				</div>
 			}
-			else
-			{
+			<div class="js-no-articles"
+				 @if (Model.SavedDocumentItems.Any())
+				 {
+					 @:style="display: none;"
+				 }>
 				@Model.NoSavedDocumentsBody
-			}
+			</div>
         </div>
     </div>
 }
