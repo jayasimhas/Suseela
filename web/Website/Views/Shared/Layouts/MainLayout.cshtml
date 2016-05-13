@@ -65,6 +65,7 @@
             @{  Html.RenderPartial("Company/_RegisterMessage", Model.CompanyRegisterMessage); }
 
             <div class="main__content">
+                @Html.Sitecore().Placeholder("top-main-content")
                 @Html.Sitecore().Placeholder("main-content")
             </div>
 

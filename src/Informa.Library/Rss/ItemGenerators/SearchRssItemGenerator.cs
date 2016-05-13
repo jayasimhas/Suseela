@@ -13,7 +13,7 @@ using Sitecore.Data.Items;
 
 namespace Informa.Library.Rss.ItemGenerators
 {
-    public class SearchRssItemGenerator : BaseRssItemGenerator,IRssItemGeneration
+    public class SearchRssItemGenerator : BaseRssItemGenerator, IRssItemGeneration
     {
         public SyndicationItem GetSyndicationItemFromSitecore(ISitecoreContext sitecoreContext, Item item)
         {
@@ -24,8 +24,8 @@ namespace Informa.Library.Rss.ItemGenerators
                 return null;
             }
 
-			//Build the basic syndicaton item
-			var searchTerm = Sitecore.Context.Request.QueryString["q"];
+            //Build the basic syndicaton item
+            var searchTerm = Sitecore.Context.Request.QueryString["q"];
             var articleUrl = string.Format("{0}?utm_source=search&amp;utm_medium=RSS&amp;utm_term={1}&amp;utm_campaign=search_rss", article._AbsoluteUrl, searchTerm);
             var syndicationItem = new SyndicationItem(GetItemTitle(article),
                 GetItemSummary(article),
@@ -49,34 +49,6 @@ namespace Informa.Library.Rss.ItemGenerators
             return syndicationItem;
         }
 
-
-
-
-        /// <summary>
-        ///     Add any authors to the rendered item
-        /// </summary>
-        /// <param name="syndicationItem"></param>
-        /// <param name="article"></param>
-        /// <returns></returns>
-        private SyndicationItem AddAuthorsToFeedItem(SyndicationItem syndicationItem, IArticle article)
-        {
-            if (article.Authors != null)
-            {
-                foreach (var author in article.Authors)
-                {
-                    var authorName = author.First_Name + " " + author.Last_Name;
-                    if (string.IsNullOrEmpty(authorName))
-                    {
-                        authorName = author._Name;
-                    }
-
-                    syndicationItem.Authors.Add(new SyndicationPerson(author.Email_Address, HttpUtility.HtmlEncode(authorName), ""));
-                }
-            }
-            return syndicationItem;
-        }
-
-   
         /// <summary>
         ///     Add the content type to the rendered item
         /// </summary>
