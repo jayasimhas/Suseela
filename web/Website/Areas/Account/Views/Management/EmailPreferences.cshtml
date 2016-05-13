@@ -5,7 +5,9 @@
     <div class="page-account">
 
         <h1 class="page-account__header">@Html.Glass().Editable(m => m.GlassModel.Title)</h1>
-		@Html.Glass().Editable(m => m.GlassModel.Body)
+		<div class="page-account__introduction">
+            @Html.Glass().Editable(m => m.GlassModel.Body)
+        </div>
         <div class="page-preferences js-preferences-user-container">
 
             <p class="page-account__error js-form-error js-form-error-general">
@@ -83,7 +85,7 @@
                 </div>
 
                 <div class="page-account__submit-wrapper">
-                    <button type="submit" class="button--filled button--fly-right manage-preferences">@Model.SubmitText</button>
+                    <button type="submit" class="button--filled button--fly-right manage-preferences js-update-email-prefs" disabled="disabled">@Model.SubmitText</button>
                 </div>
 
                 <div class="alert-success js-form-success">
