@@ -89,7 +89,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: c119c87b-3782-4775-9996-87ef138e8e31
+revision: 3a058572-5334-4ab6-bfc8-3f076d1ea8dd
 
 ----field----
 field: {1F03F44C-DD3A-4148-BEE7-0724310827B8}
@@ -102,9 +102,9 @@ content-length: 94
 field: {059F68FF-E3E0-49AF-8287-68F4FAAA364A}
 name: Start Path
 key: start path
-content-length: 57
+content-length: 50
 
-/sitecore/content/Home/Publications/The Pink Sheet/46/001
+/sitecore/content/Home/Publications/The Pink Sheet
 ----field----
 field: {18F8FBC8-8AA1-46A1-9698-D89EF5B70766}
 name: Template ID
@@ -118,14 +118,14 @@ name: Year
 key: year
 content-length: 4
 
-1984
+2015
 ----field----
 field: {5FF74032-EFC8-401A-BEB6-E459A9815585}
 name: Last Article Number
 key: last article number
 content-length: 3
 
-195
+242
 ----field----
 field: {23018653-40BE-4436-B792-CC0FAF9F8790}
 name: Article Number Prefix
@@ -137,16 +137,16 @@ PS
 field: {232C8155-3C1A-427A-9501-672DDB5E7B0F}
 name: Media Source Path
 key: media source path
-content-length: 43
+content-length: 44
 
-/sitecore/media library/Media Transfer Test
+/sitecore/media library/Supporting Documents
 ----field----
 field: {1B4A053F-6AFB-4B41-8102-53CAE42EACB5}
 name: Media Destination Path
 key: media destination path
-content-length: 33
+content-length: 37
 
-/sitecore/media library/PmbiMedia
+/sitecore/media library/old PMBI site
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -160,18 +160,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c119c87b-3782-4775-9996-87ef138e8e31
+3a058572-5334-4ab6-bfc8-3f076d1ea8dd
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160512T154000Z
+20160516T164050Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 18
 
-sitecore\admin
+sitecore\Anonymous

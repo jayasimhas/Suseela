@@ -10,6 +10,13 @@ template: {C1017482-5549-4245-91F6-D960DE3B00E2}
 templatekey: ToText
 
 ----field----
+field: {FA7B99B1-6BB9-469C-B786-F8A9D52D2F0A}
+name: Handler Class
+key: handler class
+content-length: 72
+
+Sitecore.SharedSource.DataImporter.Mappings.Fields.ToInformaCompanyField
+----field----
 field: {093D915A-4306-4A68-B64A-07CC2A7E4EE5}
 name: To What Field
 key: to what field
@@ -26,7 +33,7 @@ Referenced Companies
 ----version----
 language: en
 version: 1
-revision: 8f37d19b-dcf4-4bb0-b0e0-5f21cf5fabb1
+revision: cc66d0e4-e264-4470-ac5a-5fcd5ba0f148
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-8f37d19b-dcf4-4bb0-b0e0-5f21cf5fabb1
+cc66d0e4-e264-4470-ac5a-5fcd5ba0f148
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160421T162610Z
+20160516T172514Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
