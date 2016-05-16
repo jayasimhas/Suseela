@@ -1594,7 +1594,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IArticleConstants.TemplateIdString)]
-	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing
+	public partial interface IArticle : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlement.IEntitled_Product
 	{
 								/// <summary>
 					/// The Article Filmstrip Slot ID field.
@@ -1623,15 +1623,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// </summary>
 					[SitecoreField(IArticleConstants.Sort_OrderFieldName, Setting = SitecoreFieldSettings.InferType)]
 					float Sort_Order  {get; set;}
-								/// <summary>
-					/// The Actual Publish Date field.
-					/// <para></para>
-					/// <para>Field Type: Datetime</para>		
-					/// <para>Field ID: 7c4fc796-1311-4daa-81ac-85eaa2c1c108</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IArticleConstants.Actual_Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
-					DateTime Actual_Publish_Date  {get; set;}
 								/// <summary>
 					/// The Article Number field.
 					/// <para></para>
@@ -1677,15 +1668,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// </summary>
 					[SitecoreField(IArticleConstants.EmbargoedFieldName, Setting = SitecoreFieldSettings.InferType)]
 					bool Embargoed  {get; set;}
-								/// <summary>
-					/// The Free Article field.
-					/// <para></para>
-					/// <para>Field Type: Checkbox</para>		
-					/// <para>Field ID: b49f314e-d4d4-4e82-81e3-79ae30bb1e46</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IArticleConstants.Free_ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					bool Free_Article  {get; set;}
 								/// <summary>
 					/// The Is Sidebar Article field.
 					/// <para></para>
@@ -1921,7 +1903,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		/// <para>ID: 11380b5d-3531-4570-b213-efc5312266e4</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing__Raw
+		public partial interface IArticle__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Scheduled_Publishing.IScheduled_Publishing__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlement.IEntitled_Product__Raw
 		{
 										/// <summary>
 						/// The Article Filmstrip Slot ID field.
@@ -1950,15 +1932,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// </summary>
 						[SitecoreField(IArticleConstants.Sort_OrderFieldName, Setting = SitecoreFieldSettings.InferType)]
 						float Sort_Order  {get; set;}
-										/// <summary>
-						/// The Actual Publish Date field.
-						/// <para></para>
-						/// <para>Field Type: Datetime</para>		
-						/// <para>Field ID: 7c4fc796-1311-4daa-81ac-85eaa2c1c108</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IArticleConstants.Actual_Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
-						DateTime Actual_Publish_Date  {get; set;}
 										/// <summary>
 						/// The Article Number field.
 						/// <para></para>
@@ -2004,15 +1977,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// </summary>
 						[SitecoreField(IArticleConstants.EmbargoedFieldName, Setting = SitecoreFieldSettings.InferType)]
 						bool Embargoed  {get; set;}
-										/// <summary>
-						/// The Free Article field.
-						/// <para></para>
-						/// <para>Field Type: Checkbox</para>		
-						/// <para>Field ID: b49f314e-d4d4-4e82-81e3-79ae30bb1e46</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IArticleConstants.Free_ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						bool Free_Article  {get; set;}
 										/// <summary>
 						/// The Is Sidebar Article field.
 						/// <para></para>
@@ -2262,11 +2226,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 						
 					
-			public static readonly ID Actual_Publish_DateFieldId = new ID("7c4fc796-1311-4daa-81ac-85eaa2c1c108");
-			public const string Actual_Publish_DateFieldName = "Actual Publish Date";
-
-						
-					
 			public static readonly ID Article_NumberFieldId = new ID("1616fe67-7278-4169-948e-c29b00ec8781");
 			public const string Article_NumberFieldName = "Article Number";
 
@@ -2289,11 +2248,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID EmbargoedFieldId = new ID("3a074327-feb9-47d7-a985-4f0f7c4a66ae");
 			public const string EmbargoedFieldName = "Embargoed";
-
-						
-					
-			public static readonly ID Free_ArticleFieldId = new ID("b49f314e-d4d4-4e82-81e3-79ae30bb1e46");
-			public const string Free_ArticleFieldName = "Free Article";
 
 						
 					
@@ -2525,6 +2479,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Scheduled_Publishing_EnabledFieldId = new ID("d8005a13-dcf5-431c-89a7-4247c18dacaa");
 			public const string Scheduled_Publishing_EnabledFieldName = "Scheduled Publishing Enabled";
+
+						
+					
+			public static readonly ID Actual_Publish_DateFieldId = new ID("7c4fc796-1311-4daa-81ac-85eaa2c1c108");
+			public const string Actual_Publish_DateFieldName = "Actual Publish Date";
+
+						
+					
+			public static readonly ID FreeFieldId = new ID("b49f314e-d4d4-4e82-81e3-79ae30bb1e46");
+			public const string FreeFieldName = "Free";
 
 						
 			
@@ -15574,6 +15538,90 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.S
 					
 			public static readonly ID TitleFieldId = new ID("03cc96c5-7903-41de-a057-2ddd1d7ea034");
 			public const string TitleFieldName = "Title";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlement
+{
+
+
+ 	/// <summary>
+	/// IEntitled_Product Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Entitlement/Entitled Product</para>	
+	/// <para>ID: c7441e11-52c3-4f44-a114-a73cdce13932</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IEntitled_ProductConstants.TemplateIdString)]
+	public partial interface IEntitled_Product : IGlassBase 
+	{
+								/// <summary>
+					/// The Actual Publish Date field.
+					/// <para></para>
+					/// <para>Field Type: Datetime</para>		
+					/// <para>Field ID: 7c4fc796-1311-4daa-81ac-85eaa2c1c108</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IEntitled_ProductConstants.Actual_Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					DateTime Actual_Publish_Date  {get; set;}
+								/// <summary>
+					/// The Free field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: b49f314e-d4d4-4e82-81e3-79ae30bb1e46</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IEntitled_ProductConstants.FreeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Free  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IEntitled_Product Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Entitlement/Entitled Product</para>	
+		/// <para>ID: c7441e11-52c3-4f44-a114-a73cdce13932</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IEntitled_Product__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Actual Publish Date field.
+						/// <para></para>
+						/// <para>Field Type: Datetime</para>		
+						/// <para>Field ID: 7c4fc796-1311-4daa-81ac-85eaa2c1c108</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IEntitled_ProductConstants.Actual_Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						DateTime Actual_Publish_Date  {get; set;}
+										/// <summary>
+						/// The Free field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: b49f314e-d4d4-4e82-81e3-79ae30bb1e46</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IEntitled_ProductConstants.FreeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Free  {get; set;}
+						}
+	
+	public static partial class IEntitled_ProductConstants{
+
+			public const string TemplateIdString = "c7441e11-52c3-4f44-a114-a73cdce13932";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Entitled Product";
+
+					
+			public static readonly ID Actual_Publish_DateFieldId = new ID("7c4fc796-1311-4daa-81ac-85eaa2c1c108");
+			public const string Actual_Publish_DateFieldName = "Actual Publish Date";
+
+						
+					
+			public static readonly ID FreeFieldId = new ID("b49f314e-d4d4-4e82-81e3-79ae30bb1e46");
+			public const string FreeFieldName = "Free";
 
 						
 			

@@ -1,38 +1,42 @@
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Jabberwocky.Glass.Autofac.Attributes;
+using Jabberwocky.Autofac.Attributes;
+using System;
 
 namespace Informa.Library.User.Entitlement
 {
-    [AutowireService(LifetimeScope.Default)]
-    public class EntitledProductContext : IEntitledProductContext
+	[AutowireService]
+	public class EntitledProductContext : IEntitledProductContext
     {
-		protected readonly IEntitlementFactory EntitlementFactory;
-		protected readonly IEntitledContext EntitledContext;
+		protected readonly IEntitlementAccessContext EntitlementAccessContext;
 
 		public EntitledProductContext(
-			IEntitlementFactory entitlementFactory,
-			IEntitledContext entitledContext)
+			IEntitlementAccessContext entitlementAccessContext)
         {
-			EntitlementFactory = entitlementFactory;
-			EntitledContext = entitledContext;
+			EntitlementAccessContext = entitlementAccessContext;
 		}
 
-		public bool IsEntitled(IEntitledProductItem productItem)
+		public bool IsEntitled(IEntitledProduct entitledProduct)
 		{
-			if (productItem == null)
+			if (entitledProduct == null)
 			{
 				return false;
 			}
 
-			if (productItem.IsFree)
+			if (entitledProduct.IsFree)
 			{
 				return true;
 			}
 
-			var entitlement = EntitlementFactory.Create(productItem);
-			var entitled = EntitledContext.IsEntitled(entitlement);
+			var entitlementAccess = EntitlementAccessContext.Create(entitledProduct.ProductCode);
 
-			return entitled;
+			if (entitlementAccess.Entitlement == null || !entitlementAccess.Entitlement.ArchiveLimited)
+			{
+				return entitlementAccess.AccessLevel != EntitledAccessLevel.None;
+			}
+
+			var productPublishedOn = entitledProduct.PublishedOn;
+			var archiveLimit = DateTime.Now.AddDays(entitlementAccess.Entitlement.ArchiveLimitedDays * -1);
+
+			return productPublishedOn >= archiveLimit;
 		}
     }
 }

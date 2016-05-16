@@ -20,11 +20,11 @@ namespace Informa.Web.ViewModels
 			IArticleListItemModelFactory articleListableFactory, ITextTranslator textTranslator, IArticleSearch searcher,
             ISitecoreContext context,
             IArticleComponentFactory articleComponentFactory,
-            IEntitledProductContext entitledProductContext,
+			IIsEntitledProducItemContext isEntitledProductItemContext,
             IAuthenticatedUserContext authenticatedUserContext,
 			IIsSavedDocumentContext isSavedDocumentContext,
             ICallToActionViewModel callToActionViewModel)
-			: base(siterootContext, articleListableFactory, textTranslator, searcher, context, articleComponentFactory, entitledProductContext, authenticatedUserContext, isSavedDocumentContext, callToActionViewModel)
+			: base(siterootContext, articleListableFactory, textTranslator, searcher, context, articleComponentFactory, isEntitledProductItemContext, authenticatedUserContext, isSavedDocumentContext, callToActionViewModel)
 		{
 			RenderingParametersContext = renderingParametersContext;
 		}

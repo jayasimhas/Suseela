@@ -59,21 +59,24 @@ namespace Informa.Library.Company.User.Entitlement
 			UserSession.Clear(EntitlementSessionKey);
 		}
 
-		public EntitledAccessLevel GetProductAccessLevel(string productCode)
+		public EntitledAccessLevel AccessLevel
 		{
-			return (Entitlements != null && Entitlements.Any(e => e.ProductCode == productCode)) ? (CompanyContext.Company == null ? EntitledAccessLevel.UnEntitled : GetCompanyAccessLevel(CompanyContext.Company.Type)) : EntitledAccessLevel.UnEntitled;
-		}
-
-		public EntitledAccessLevel GetCompanyAccessLevel(CompanyType companyType)
-		{
-			switch (companyType)
+			get
 			{
-				case CompanyType.SiteLicenseIP:
-					return EntitledAccessLevel.Site;
-				case CompanyType.TransparentIP:
-					return EntitledAccessLevel.TransparentIP;
-				default:
-					return EntitledAccessLevel.UnEntitled;
+				if (CompanyContext.Company == null)
+				{
+					return EntitledAccessLevel.None;
+				}
+
+				switch (CompanyContext.Company.Type)
+				{
+					case CompanyType.SiteLicenseIP:
+						return EntitledAccessLevel.Site;
+					case CompanyType.TransparentIP:
+						return EntitledAccessLevel.TransparentIP;
+					default:
+						return EntitledAccessLevel.None;
+				}
 			}
 		}
 	}

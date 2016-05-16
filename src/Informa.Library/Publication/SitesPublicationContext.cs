@@ -1,7 +1,5 @@
-﻿using Glass.Mapper.Sc;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+﻿using Informa.Library.Site;
 using Jabberwocky.Autofac.Attributes;
-using Jabberwocky.Glass.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,23 +8,14 @@ namespace Informa.Library.Publication
 	[AutowireService(LifetimeScope.Default)]
 	public class SitesPublicationContext : ISitesPublicationContext
 	{
-		protected readonly ISitecoreService SitecoreService;
+		protected readonly ISiteRootsContext SiteRootsContext;
 
 		public SitesPublicationContext(
-			ISitecoreService sitecoreService)
+			ISiteRootsContext siteRootsContext)
 		{
-			SitecoreService = sitecoreService;
+			SiteRootsContext = siteRootsContext;
 		}
 
-		public IEnumerable<string> Names
-		{
-			get
-			{
-				var contentItem = SitecoreService.GetItem<IGlassBase>("/sitecore/content");
-				var publicationNames = contentItem._ChildrenWithInferType.Where(sr => sr is ISite_Root).Cast<ISite_Root>().Select(sr => sr.Publication_Name).ToList();
-
-				return publicationNames;
-			}
-		}
+		public IEnumerable<string> Names => SiteRootsContext.SiteRoots.Select(sr => sr.Publication_Name).ToList();
 	}
 }

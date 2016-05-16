@@ -2,9 +2,9 @@
 version: 1
 id: {B49F314E-D4D4-4E82-81E3-79AE30BB1E46}
 database: master
-path: /sitecore/templates/User Defined/Pages/Article/Item Information/Free Article
-parent: {C33D0569-BCB4-4B3A-8FE1-23013A855E99}
-name: Free Article
+path: /sitecore/templates/User Defined/Entitlement/Entitled Product/Item Information/Free
+parent: {C187F299-46F7-48FD-AFA5-890DA437F57F}
+name: Free
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -22,11 +22,11 @@ name: __Sortorder
 key: __sortorder
 content-length: 3
 
-900
+500
 ----version----
 language: en
 version: 1
-revision: 175a9747-9d0a-46b5-a51d-a2156554ea16
+revision: b7555093-b9a7-47de-8b38-62c2efd7e413
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-175a9747-9d0a-46b5-a51d-a2156554ea16
+b7555093-b9a7-47de-8b38-62c2efd7e413
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151224T214935Z
+20160516T154016Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

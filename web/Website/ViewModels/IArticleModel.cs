@@ -6,7 +6,7 @@ using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels
 {
-    public interface IArticleModel : IListableViewModel, IEntitledProductItem
+    public interface IArticleModel : IListableViewModel
     {
         string Title { get; }
         string Sub_Title { get; }

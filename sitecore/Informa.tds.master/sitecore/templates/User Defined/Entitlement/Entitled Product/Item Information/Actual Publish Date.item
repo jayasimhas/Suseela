@@ -2,8 +2,8 @@
 version: 1
 id: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
 database: master
-path: /sitecore/templates/User Defined/Pages/Article/Item Information/Actual Publish Date
-parent: {C33D0569-BCB4-4B3A-8FE1-23013A855E99}
+path: /sitecore/templates/User Defined/Entitlement/Entitled Product/Item Information/Actual Publish Date
+parent: {C187F299-46F7-48FD-AFA5-890DA437F57F}
 name: Actual Publish Date
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
@@ -26,7 +26,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: fb1038cf-24a2-46dd-9a0c-b986288fd27b
+revision: 5ba2d890-3c25-4d9b-b5d6-2dfe1a059de8
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-fb1038cf-24a2-46dd-9a0c-b986288fd27b
+5ba2d890-3c25-4d9b-b5d6-2dfe1a059de8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151224T214935Z
+20160516T153504Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
