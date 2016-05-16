@@ -146,7 +146,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				map = new EscenicIdMapping
 				{
 					EscenicId = escenicId,
-					ArticleNumber = $"{PublicationPrefix}{ArticleNumber++:6}"
+					ArticleNumber = $"{PublicationPrefix}{ArticleNumber++:D6}"
 				};
 
 				context.EscenicIdMappings.Add(map);
