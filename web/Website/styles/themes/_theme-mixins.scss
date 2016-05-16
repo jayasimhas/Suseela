@@ -106,6 +106,13 @@
     .banner--cookie-policy,
     .banner--register {
         background-color: $background;
+        color: $text;
+
+        a {
+            @include on-event(true) {
+                color: $text;
+            }
+        }
     }
 }
 

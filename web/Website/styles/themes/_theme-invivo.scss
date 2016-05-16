@@ -1,116 +1,29 @@
 .theme-invivo {
 
-    a,
-    .facets__button,
-    .facets__button svg,
-    .sorting-arrows__arrow.is-active {
-        @include on-event(true) {
-            color: $color-mojo-red;
-            @include svg-fill($color-mojo-red);
-        }
-    }
+    @include theme-links($color-dark-coral);
 
-    footer a,
-    .general-header__navigation a,
-    .sortable-table__col a {
-        color: inherit;
-    }
+    @include theme-buttons(
+        $color-dark-coral,
+        $color-dark-coral,
+        $color-white,
+        $color-mystic-maroon,
+        $color-pearly-pink,
+        $color-white);
 
-    .header-account-access {
-        &__my-account,
-        &__sign-in-out {
-            color: $color-mojo-red;
-        }
-    }
+    @include theme-main-menu($color-rusty-red, $color-rusty-red);
 
-    .general-header__navigation a.is-active {
-        border-bottom-color: $color-rosewood-red;
-    }
+    @include theme-subnav($color-copper-red);
 
-    .article-preview__headline,
-    .topic-featured-article__headline {
-        &,
-        & a {
-            color: $color-zeus-black;
+    @include theme-banners($color-dark-coral, $color-white);
 
-            &:hover {
-                color: $color-mojo-red;
-            }
-        }
-    }
+    @include theme-call-out-boxes(inherit, $color-copper-red);
 
-    .article-pullquote,
-    .quote,
-    .article-sidebar,
-    .topic-subtopic__header {
-        border-top-color: $color-rosewood-red;
-        border-bottom-color: $color-rosewood-red;
-        border-color: $color-rosewood-red;
-    }
+    @include theme-bordered-elements($color-copper-red);
 
-    .button--filled:not([disabled]),
-    .search-bar__submit,
-    .banner--alert,
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch,
-    .latest-news__header:before {
-        background: $color-mojo-red;
-        background-color: $color-mojo-red;
-        color: $color-soft-peach;
-    }
+    @include theme-interviews(
+        $color-copper-red,
+        $color-copper-red,
+        $color-dark-coral,
+        $color-dark-coral);
 
-    .button--outline:not([disabled]) {
-        border-color: $color-mojo-red;
-
-        &:hover {
-            background-color: $color-mojo-red;
-            border-color: $color-mojo-red;
-            color: $color-soft-peach;
-        }
-    }
-
-    .newsletter-signup,
-    .quick-facts {
-        background-color: $color-porcelain-white;
-        border-top: 2px solid $color-rosewood-red;
-    }
-
-
-    .main-menu {
-
-        &__hoverable:hover:before {
-            background-color: $color-rosewood-red;
-        }
-
-        &__section-title a {
-            color: inherit;
-        }
-
-        &__footer-link a {
-            color: $color-abbey-gray;
-
-            @include on-event(false) {
-                color: $color-mojo-red;
-            }
-        }
-        &__section-link {
-            @include on-event(true) {
-                color: $color-abbey-gray;
-            }
-        }
-    }
-    
-    .article-interview__question:before {
-        background-color: $color-blossom-pink;
-    }
-
-    .article-interview__answer {
-        &,
-        &:before {
-            border-color: $color-flair-pink;
-        }
-
-        &:before {
-            background-color: $color-soft-peach;
-        }
-    }
 }
