@@ -1,13 +1,15 @@
 ﻿/* global angular */
 
-var SavedSearchController = function ($scope, $location, $http, searchService, savedSearchService) {
+var SavedSearchController = function ($scope, $location, $timeout, $http, searchService, savedSearchService) {
     "use strict";
 
     var vm = this;
 
     vm.searchService = searchService;
     vm.isSaved = false;
-    
+
+    vm.testValue = savedSearchService.testVal;
+
     $scope.$watch(function () {
         return searchService.getPager();
     }, function () {
@@ -20,28 +22,25 @@ var SavedSearchController = function ($scope, $location, $http, searchService, s
         }
     }, true);
 
+    vm.saveSearch = function() {
+        // Helps ng-class "know" the correct state of vm.isSaved
+        // When click events are triggered by vanilla JS, expressions don't
+        // always update as they should.
+        $timeout(function() {
+            vm.isSaved = true;
+        }, 500);
+    };
+
     vm.unsaveSearch = function() {
-        // If the search isn't saved, don't do anything.
-        // Let the form controller handle it
+        vm.isSaved = false;
+    };
+
+    vm.lightboxCheck = function(e) {
         if(vm.isSaved) {
-            console.log($scope.currentLocation);
-            $http({
-                method: 'DELETE',
-                url: '/api/SavedSearches',
-                data: {
-                    'url': $scope.currentLocation
-                },
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            }).then(function successCallback(response) {
-                vm.isSaved = false;
-            }, function errorCallback(response) {
-                console.log(response);
-            });
+            window.lightboxController.showLightbox($(e.target).closest('.js-lightbox-modal-trigger'));
         }
     };
 
 };
 var informaSearchApp = angular.module('informaSearchApp');
-informaSearchApp.controller("SavedSearchController", ['$scope', '$location', '$http', 'searchService', 'savedSearchService', SavedSearchController]);
+informaSearchApp.controller("SavedSearchController", ['$scope', '$location', '$timeout', '$http', 'searchService', 'savedSearchService', SavedSearchController]);

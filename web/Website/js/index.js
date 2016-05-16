@@ -84,6 +84,7 @@ $(document).ready(function() {
         Bound explicitly to `window` for easier access by Angular.
     * * */
     window.indexPopOuts = function() {
+
         window.controlPopOuts = new PopOutController('.js-pop-out-trigger');
 
         window.controlPopOuts.customize({
@@ -780,7 +781,7 @@ $(document).ready(function() {
 
     var sortTheTables = new SortableTableController();
 
-    new LightboxModalController();
+    window.lightboxController = new LightboxModalController();
 
     $('.js-toggle-list').on('click', function(e) {
         $(e.target).closest('.js-togglable-list-wrapper').toggleClass('is-active');
