@@ -10,6 +10,12 @@
         }
     }
 
+    footer a,
+    .general-header__navigation a,
+    .sortable-table__col a {
+        color: inherit;
+    }
+
     .header-account-access {
         &__my-account,
         &__sign-in-out {
@@ -42,16 +48,28 @@
         border-color: $color-rosewood-red;
     }
 
-    .button--filled,
+    .button--filled:not([disabled]),
     .search-bar__submit,
     .banner--alert,
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch,
+    .latest-news__header:before {
         background: $color-mojo-red;
         background-color: $color-mojo-red;
         color: $color-soft-peach;
     }
 
-    .newsletter-signup {
+    .button--outline:not([disabled]) {
+        border-color: $color-mojo-red;
+
+        &:hover {
+            background-color: $color-mojo-red;
+            border-color: $color-mojo-red;
+            color: $color-soft-peach;
+        }
+    }
+
+    .newsletter-signup,
+    .quick-facts {
         background-color: $color-porcelain-white;
         border-top: 2px solid $color-rosewood-red;
     }
@@ -79,6 +97,20 @@
                 color: $color-abbey-gray;
             }
         }
+    }
+    
+    .article-interview__question:before {
+        background-color: $color-blossom-pink;
+    }
 
+    .article-interview__answer {
+        &,
+        &:before {
+            border-color: $color-flair-pink;
+        }
+
+        &:before {
+            background-color: $color-soft-peach;
+        }
     }
 }

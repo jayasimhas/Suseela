@@ -1,116 +1,24 @@
 .theme-pink-sheet {
 
-    a,
-    .facets__button,
-    .facets__button svg,
-    .sorting-arrows__arrow.is-active {
-        @include on-event(true) {
-            color: $color-hibiscus-pink;
-            @include svg-fill($color-hibiscus-pink);
-        }
-    }
+    @include theme-links($color-dogwood-rose);
 
-    footer a,
-    .general-header__navigation a,
-    .sortable-table__col a {
-        color: inherit;
-    }
+    @include theme-buttons(
+        $color-mystic-maroon,
+        $color-mystic-maroon,
+        #ffffff,
+        $color-mystic-maroon,
+        $color-pearly-pink,
+        #ffffff);
 
-    .header-account-access {
-        &__my-account,
-        &__sign-in-out {
-            color: $color-hibiscus-pink;
-        }
-    }
+    @include theme-main-menu($color-mystic-maroon, $color-dogwood-rose);
 
-    .general-header__navigation a.is-active {
-        border-bottom-color: $color-hibiscus-pink;
-    }
+    @include theme-subnav($color-mystic-maroon);
 
-    .article-preview__headline,
-    .topic-featured-article__headline {
-        &,
-        & a {
-            color: $color-zeus-black;
+    @include theme-banners($color-piggy-pink, inherit);
 
-            &:hover {
-                color: $color-hibiscus-pink;
-            }
-        }
-    }
+    @include theme-call-out-boxes($color-wisp-pink, $color-mystic-maroon);
 
-    .article-pullquote,
-    .quote,
-    .article-sidebar,
-    .topic-subtopic__header {
-        border-top-color: $color-light-plum;
-        border-bottom-color: $color-light-plum;
-        border-color: $color-light-plum;
-    }
+    @include theme-bordered-elements($color-mystic-maroon);
 
-    .button--filled:not([disabled]),
-    .search-bar__submit,
-    .banner--alert,
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch,
-    .latest-news__header:before {
-        background: $color-light-plum;
-        background-color: $color-light-plum;
-        color: $color-soft-peach;
-    }
-
-    .button--outline:not([disabled]) {
-        border-color: $color-hibiscus-pink;
-
-        &:hover {
-            background-color: $color-hibiscus-pink;
-            border-color: $color-hibiscus-pink;
-            color: $color-soft-peach;
-        }
-    }
-
-    .newsletter-signup,
-    .quick-facts {
-        background-color: $color-soft-peach;
-        border-top: 2px solid $color-light-plum;
-    }
-
-
-    .main-menu {
-
-        &__hoverable:hover:before {
-            background-color: $color-light-plum;
-        }
-
-        &__section-title a {
-            color: inherit;
-        }
-
-        &__footer-link a {
-            color: $color-abbey-gray;
-
-            @include on-event(false) {
-                color: $color-hibiscus-pink;
-            }
-        }
-        &__section-link {
-            @include on-event(true) {
-                color: $color-abbey-gray;
-            }
-        }
-    }
-
-    .article-interview__question:before {
-        background-color: $color-blossom-pink;
-    }
-
-    .article-interview__answer {
-        &,
-        &:before {
-            border-color: $color-flair-pink;
-        }
-
-        &:before {
-            background-color: $color-soft-peach;
-        }
-    }
+    @include theme-interviews($color-mystic-maroon, $color-mystic-maroon, $color-dogwood-rose, $color-dogwood-rose);
 }

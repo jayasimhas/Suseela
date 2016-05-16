@@ -61,19 +61,29 @@ title: Pink Sheet
 section: Colors
 ---
 ```example:color
-@color: #a8618d @name: Light Plum
+@color: #d82b6a @name: Dogwood Rose
 @color: #ba336c @name: Hibiscus Pink
-@color: #fbf2f4 @name: Soft Peach
+@color: #a8618d @name: Light Plum
 @color: #e6c0d5 @name: Blossom Pink
 @color: #d3bac3 @name: Flair Pink
+@color: #B2547F @name: Pearly Pink
+@color: #BC608C @name: Mystic Maroon
+@color: #FEE2E7 @name: Piggy Pink
+@color: #FFF2F4 @name: Wisp Pink
+@color: #fbf2f4 @name: Soft Peach
 ```
 */
 
+$color-dogwood-rose:        #d82b6a;
 $color-light-plum:          #a8618d;
 $color-hibiscus-pink:       #ba336c;
 $color-soft-peach:          #fbf2f4;
 $color-blossom-pink:        #e6c0d5;
 $color-flair-pink:          #d3bac3;
+$color-mystic-maroon:       #BC608C;
+$color-pearly-pink:         #B2547F;
+$color-piggy-pink:          #FEE2E7;
+$color-wisp-pink:           #FFF2F4;
 
 /*---
 title: Medtech
