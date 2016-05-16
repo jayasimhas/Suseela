@@ -85,6 +85,24 @@ $color-pearly-pink:         #B2547F;
 $color-piggy-pink:          #FEE2E7;
 $color-wisp-pink:           #FFF2F4;
 
+
+/*---
+title: Rose Sheet
+section: Colors
+---
+```example:color
+@color: #ba005b @name: Rose Red
+@color: #d2196d @name: Rubine Red
+```
+*/
+
+$color-rose-red:            #ba005b;
+$color-rubine-red:          #DD3580;
+$color-valerian-red:        #c8206e;
+$color-cherub-pink:         #f8d7e6;
+
+
+
 /*---
 title: Medtech
 section: Colors
@@ -101,20 +119,6 @@ $color-sapphire-blue:       #0d66b6;
 $color-marine-blue:         #0a3869;
 $color-porcelain-white:     #edefef;
 $color-jonquil-yellow:      #fbd34e;
-
-
-/*---
-title: Rose Sheet
-section: Colors
----
-```example:color
-@color: #ba005b @name: Rose Red
-@color: #d2196d @name: Rubine Red
-```
-*/
-
-$color-rose-red:            #ba005b;
-$color-rubine-red:          #d2196d;
 
 
 /*---

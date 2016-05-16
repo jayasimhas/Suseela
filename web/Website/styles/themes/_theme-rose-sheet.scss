@@ -1,84 +1,29 @@
 .theme-rose-sheet {
 
-    a,
-    .facets__button,
-    .facets__button svg,
-    .sorting-arrows__arrow.is-active {
-        @include on-event(true) {
-            color: $color-rose-red;
-            @include svg-fill($color-rose-red);
-        }
-    }
+    @include theme-links($color-valerian-red);
 
-    .header-account-access {
-        &__my-account,
-        &__sign-in-out {
-            color: $color-rose-red;
-        }
-    }
+    @include theme-buttons(
+        $color-rubine-red,
+        $color-valerian-red,
+        $color-white,
+        $color-valerian-red,
+        $color-hibiscus-pink,
+        $color-white);
 
-    .general-header__navigation a.is-active {
-        border-bottom-color: $color-rose-red;
-    }
+    @include theme-main-menu($color-rubine-red, $color-valerian-red);
 
-    .article-preview__headline,
-    .topic-featured-article__headline {
-        &,
-        & a {
-            color: $color-zeus-black;
+    @include theme-subnav($color-rubine-red);
 
-            &:hover {
-                color: $color-rose-red;
-            }
-        }
-    }
+    @include theme-banners($color-cherub-pink, inherit);
 
-    .article-pullquote,
-    .quote,
-    .article-sidebar,
-    .topic-subtopic__header {
-        border-top-color: $color-rubine-red;
-        border-bottom-color: $color-rubine-red;
-        border-color: $color-rubine-red;
-    }
+    @include theme-call-out-boxes(inherit, $color-rubine-red);
 
-    .button--filled:not([disabled]),
-    .search-bar__submit,
-    .banner--alert,
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-        background: $color-rubine-red;
-        background-color: $color-rubine-red;
-        color: $color-soft-peach;
-    }
+    @include theme-bordered-elements($color-rubine-red);
 
-    .newsletter-signup {
-        background-color: $color-porcelain-white;
-        border-top: 2px solid $color-rubine-red;
-    }
+    @include theme-interviews(
+        $color-valerian-red,
+        $color-valerian-red,
+        $color-rubine-red,
+        $color-rubine-red);
 
-
-    .main-menu {
-
-        &__hoverable:hover:before {
-            background-color: $color-rubine-red;
-        }
-
-        &__section-title a {
-            color: inherit;
-        }
-
-        &__footer-link a {
-            color: $color-abbey-gray;
-
-            @include on-event(false) {
-                color: $color-rose-red;
-            }
-        }
-        &__section-link {
-            @include on-event(true) {
-                color: $color-abbey-gray;
-            }
-        }
-
-    }
 }
