@@ -21,9 +21,9 @@
     @include theme-bordered-elements($color-mystic-maroon);
 
     @include theme-interviews(
-        $color-mystic-maroon,
-        $color-mystic-maroon,
-        $color-dogwood-rose,
-        $color-dogwood-rose);
+        transparentize($color-mystic-maroon, 0.7),
+        transparentize($color-mystic-maroon, 0.3),
+        transparentize($color-dogwood-rose, 0.9),
+        transparentize($color-dogwood-rose, 0.6));
 
 }

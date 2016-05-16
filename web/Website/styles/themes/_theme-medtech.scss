@@ -1,84 +1,29 @@
 .theme-medtech {
 
-    a,
-    .facets__button,
-    .facets__button svg,
-    .sorting-arrows__arrow.is-active {
-        @include on-event(true) {
-            color: $color-sapphire-blue;
-            @include svg-fill($color-sapphire-blue);
-        }
-    }
+    @include theme-links($color-sapphire-blue);
 
-    .header-account-access {
-        &__my-account,
-        &__sign-in-out {
-            color: $color-sapphire-blue;
-        }
-    }
+    @include theme-buttons(
+        $color-jonquil-yellow,
+        $color-jonquil-yellow,
+        $color-zeus-black,
+        $color-jonquil-yellow,
+        $color-maize-yellow,
+        $color-zeus-black);
 
-    .general-header__navigation a.is-active {
-        border-bottom-color: $color-sapphire-blue;
-    }
+    @include theme-main-menu($color-jonquil-yellow, $color-sapphire-blue);
 
-    .article-preview__headline,
-    .topic-featured-article__headline {
-        &,
-        & a {
-            color: $color-zeus-black;
+    @include theme-subnav($color-jonquil-yellow);
 
-            &:hover {
-                color: $color-sapphire-blue;
-            }
-        }
-    }
+    @include theme-banners($color-jonquil-yellow, inherit);
 
-    .article-pullquote,
-    .quote,
-    .article-sidebar,
-    .topic-subtopic__header {
-        border-top-color: $color-marine-blue;
-        border-bottom-color: $color-marine-blue;
-        border-color: $color-marine-blue;
-    }
+    @include theme-call-out-boxes($color-concrete-gray, $color-marine-blue);
 
-    .button--filled,
-    .search-bar__submit,
-    .banner--alert,
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-        background: $color-jonquil-yellow;
-        background-color: $color-jonquil-yellow;
-        color: $color-zeus-black;
-    }
+    @include theme-bordered-elements($color-marine-blue);
 
-    .newsletter-signup {
-        background-color: $color-porcelain-white;
-        border-top: 2px solid $color-marine-blue;
-    }
+    @include theme-interviews(
+    transparentize($color-marine-blue, 0.8),
+    transparentize($color-marine-blue, 0.5),
+    transparentize($color-jonquil-yellow, 0.8),
+    $color-jonquil-yellow);
 
-
-    .main-menu {
-
-        &__hoverable:hover:before {
-            background-color: $color-marine-blue;
-        }
-
-        &__section-title a {
-            color: inherit;
-        }
-
-        &__footer-link a {
-            color: $color-abbey-gray;
-
-            @include on-event(false) {
-                color: $color-sapphire-blue;
-            }
-        }
-        &__section-link {
-            @include on-event(true) {
-                color: $color-abbey-gray;
-            }
-        }
-
-    }
 }

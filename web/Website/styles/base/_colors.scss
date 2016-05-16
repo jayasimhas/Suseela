@@ -108,17 +108,18 @@ title: Medtech
 section: Colors
 ---
 ```example:color
-@color: #0d66b6 @name: Sapphire Blue
-@color: #0a3869 @name: Marine Blue
+@color: #007cc3 @name: Sapphire Blue
+@color: #034a7c @name: Marine Blue
 @color: #edefef @name: Porcelain White
-@color: #fbd34e @name: Jonquil Yellow
+@color: #FDD95F @name: Jonquil Yellow
 ```
 */
 
-$color-sapphire-blue:       #0d66b6;
-$color-marine-blue:         #0a3869;
+$color-sapphire-blue:       #007cc3;
+$color-marine-blue:         #034a7c;
 $color-porcelain-white:     #edefef;
-$color-jonquil-yellow:      #fbd34e;
+$color-jonquil-yellow:      #FDD95F;
+$color-maize-yellow:        #F1CE54;
 
 
 /*---

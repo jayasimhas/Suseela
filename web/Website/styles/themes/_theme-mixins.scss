@@ -140,18 +140,18 @@
 
 @mixin theme-interviews($question-back, $question-border, $answer-back, $answer-border) {
     .article-interview__question:before {
-        background-color: transparentize($question-back, 0.7);
-        border-color: transparentize($question-border, 0.3);
+        background-color: $question-back;
+        border-color: $question-border;
     }
 
     .article-interview__answer {
         &,
         &:before {
-            border-color: transparentize($answer-border, 0.6);
+            border-color: $answer-border;
         }
 
         &:before {
-            background-color: transparentize($answer-back, 0.9);
+            background-color: $answer-back;
         }
     }
 }
