@@ -2506,41 +2506,15 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			if (pmbiItem != null)
 			{
 				var tcVal = pmbiItem.Fields["Industries"].Value.Split('|');
-				var bcArtileCheckingList = new HashSet<string>();
-				var mdArticleCheckingList = new HashSet<string>();
-
-				// Get Biopharmaceuticals and Consumer Products taxonomy
-				var bioOrCon =
-					oldSourceList.GetChildren()
-						.Where(i => i.Fields["Primary Industry"].Value == "{CAC059FE-41BA-403C-B36F-BFEBF3DC16ED}" || i.Fields["Primary Industry"].Value == "{608C58C2-6268-4B6B-908B-1D3F5E637016}");
-
-				// Get Medical Device taxonomy
-				var medicalDevice =
-					oldSourceList.GetChildren().FirstOrDefault(i => i.Fields["Primary Industry"].Value == "{1CEB75FF-46C5-4A8E-90AF-530883EE3C89}");
-
-				// Get all their descendants and add to hash set
-				foreach (var item in bioOrCon)
-				{
-					bcArtileCheckingList.Add(item.ID.ToString());
-					foreach (var descendant in item.Axes.GetDescendants())
-					{
-						bcArtileCheckingList.Add(descendant.ID.ToString());
-					}
-				}
-
-				mdArticleCheckingList.Add(medicalDevice?.ID.ToString());
-				foreach (var descendant in medicalDevice.Axes.GetDescendants())
-				{
-					mdArticleCheckingList.Add(descendant.ID.ToString());
-				}
 
 				// If current article is categorized as Biopharmaceuticals or Consumer Products
-				if (tcVal.Any(val => bcArtileCheckingList.Contains(val)))
+				if (tcVal.Contains("{CAC059FE-41BA-403C-B36F-BFEBF3DC16ED}") ||
+				    tcVal.Contains("{608C58C2-6268-4B6B-908B-1D3F5E637016}"))
 				{
 					mapping = TaxonomyMapping.PharmaTherapyMapping;
 				}
 				// If current article is categorized as Medical Device
-				else if (tcVal.Any(val => mdArticleCheckingList.Contains(val)))
+				else if (tcVal.Contains("{1CEB75FF-46C5-4A8E-90AF-530883EE3C89}"))
 				{
 					mapping = TaxonomyMapping.DeviceMarketMapping;
 				}

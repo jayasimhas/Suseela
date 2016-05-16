@@ -119,17 +119,27 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 						}
 
 						// Get taxonomy name from pmbi database
-						var pmbiTaxonomyItemName = Sitecore.Data.Database.GetDatabase("pmbiContent").GetItem(new ID(str))?.DisplayName;
+						var pmbiItem = Database.GetDatabase("pmbiContent").GetItem(new ID(str));
+						var pmbiTaxonomyItemName = pmbiItem?.DisplayName;
 						if (string.IsNullOrWhiteSpace(pmbiTaxonomyItemName))
 						{
-							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not converted", ProcessStatus.FieldError, NewItemField, importValue);
-							return;
+							map.Logger.Log(newItem.Paths.FullPath, $"Couldn't find {FieldName} in pmbi", ProcessStatus.FieldError, NewItemField, importValue);
+							continue;
 						}
 
-						if (!mapping.ContainsKey(pmbiTaxonomyItemName))
+						// If we are mapping Industry field, set pmbiTaxonomyItemName to main industry name
+						if (FieldName == "Industries")
 						{
-							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not converted", ProcessStatus.FieldError, NewItemField, importValue);
-							return;
+							pmbiTaxonomyItemName = pmbiItem.Axes
+								.GetAncestors()
+								.FirstOrDefault(i => mappingDictionary.ContainsKey(i.Fields["Item Name"].Value))
+								?.DisplayName;
+						}
+
+						if (pmbiTaxonomyItemName != null && !mapping.ContainsKey(pmbiTaxonomyItemName))
+						{
+							map.Logger.Log(newItem.Paths.FullPath, "Couldn't find correct mapping", ProcessStatus.FieldError, NewItemField, $"{importValue}--{pmbiTaxonomyItemName}");
+							continue;
 						}
 
 						var mappedValue = mapping[pmbiTaxonomyItemName];
@@ -152,8 +162,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 						if (string.IsNullOrWhiteSpace(val))
 						{
-							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not found", ProcessStatus.FieldError, NewItemField, importValue);
-							return;
+							map.Logger.Log(newItem.Paths.FullPath, $"Couldn't find {FieldName} in target DB", ProcessStatus.FieldError, NewItemField, $"{importValue}->{mappedValue}");
+							continue;
 						}
 
 						// Avoid adding duplicate GUID
