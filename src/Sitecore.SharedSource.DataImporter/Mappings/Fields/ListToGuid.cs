@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Caching;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
@@ -17,10 +19,23 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 		#region Properties
 
+		private static readonly MemoryCache Cache = new MemoryCache("SourceItems");
+
 		/// <summary>
 		/// This is the list that you will compare the imported values against
 		/// </summary>
 		public string SourceList { get; set; }
+
+		public IEnumerable<Item> GetSourceItems(Database db)
+		{
+			if (db == null) return null;
+
+			var item = db.GetItem(SourceList);
+
+			if (item == null) return null;
+
+			return Cache.AddOrGetExisting($"{db.Name}{SourceList}", item.Axes.GetDescendants(), DateTimeOffset.MaxValue) as IEnumerable<Item>;
+		} 
 
 		public string OldSourceList { get; set; }
 		public string FieldName { get; set; }
