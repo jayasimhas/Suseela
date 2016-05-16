@@ -114,11 +114,12 @@ namespace Sitecore.SharedSource.DataImporter
 			(DataMap as PmbiDataMap)?.SetArticleNumber();
 
 			// Move Media Library
-			var stopWatch = new Stopwatch();
-			stopWatch.Start();
-			(DataMap as PmbiDataMap)?.TransferMediaLibrary();
-			stopWatch.Stop();
-			Logger.Log("Performance Statistic", $"Used {stopWatch.Elapsed.TotalSeconds} to move media items.");
+			//var stopWatch = new Stopwatch();
+			//stopWatch.Start();
+			//(DataMap as PmbiDataMap)?.TransferMediaLibrary();
+			//stopWatch.Stop();
+			//Logger.Log("Performance Statistic", $"Used {stopWatch.Elapsed.TotalSeconds} to move media items.");
+
 			// Set Related Articles
 			(DataMap as PmbiDataMap)?.SetRelatedArticles();
 

@@ -156,22 +156,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 					defaultOptions.AllowStandardValues = false;
 					defaultOptions.ProcessChildren = true;
 
-					//TransferMediaItem(sourceItem, destinationItem, defaultOptions);
-
-					//var descendants = sourceItem.Axes.GetDescendants();
-					//var checkSet = GetExistingMediaItemsInTargetDb(destinationItem);
-					//foreach (var item in descendants)
-					//{
-					//	var sourceFolderName = MediaSourcePath.Split('/').LastOrDefault();
-					//	var relativePath = item.Paths.FullPath.Replace("/sitecore/media library/", "");
-					//	var pathToCreate = $"{destinationPath}/{sourceFolderName}/{relativePath}";
-					//	var newMediaItem = new Item();
-					//	if (!checkSet.Contains(item.ID.ToString()))
-					//	{
-					//		TransferMediaItem(item, );
-					//	}
-					//}
-
 					TransferMediaItem(sourceItem, destinationItem, defaultOptions);
 				}
 			}
@@ -203,11 +187,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			return articles;
 		}
 
-		protected void TransferMediaItemBlob(Item source, Item destination, bool processChildren)
+		protected void TransferMediaItemBlob(Item source, Item destination, bool processChildren, ref long count)
 		{
 			Assert.IsNotNull(source, "source is null");
 			Assert.IsNotNull(destination, "destination is null");
 
+			count++;
 			Logger.Log("Progress-", $"Processing \"{source.Paths.FullPath}\" - {DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}");
 			foreach (Field field in source.Fields)
 			{
@@ -233,13 +218,19 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				}
 			}
 
+			if (Sitecore.Context.Job != null)
+			{
+				Sitecore.Context.Job.Status.Processed = count;
+				Sitecore.Context.Job.Status.Messages.Add($"Processed media item {count}.");
+			}
+
 			if (processChildren)
 			{
 				foreach (Item child in source.Children)
 				{
 					if (child != null)
 					{
-						TransferMediaItemBlob(child, destination, true);
+						TransferMediaItemBlob(child, destination, true, ref count);
 					}
 				}
 			}
@@ -254,7 +245,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 				if (sourceItem.Paths.IsMediaItem)
 				{
-					TransferMediaItemBlob(sourceItem, destItem, true);
+					long itemCount = 0;
+					TransferMediaItemBlob(sourceItem, destItem, true, ref itemCount);
 				}
 			}
 			catch (Exception ex)
