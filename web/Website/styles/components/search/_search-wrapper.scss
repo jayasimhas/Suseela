@@ -69,7 +69,7 @@
 .saved-search-success-alert {
     margin-top: 0.5rem;
     right: 0px;
-    position: absolute;
+    float: right;
 
     &.is-active {
         display: inline-block;
