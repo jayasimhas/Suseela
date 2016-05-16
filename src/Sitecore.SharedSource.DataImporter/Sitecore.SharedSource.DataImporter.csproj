@@ -94,6 +94,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContext\Entities\EscenicIdMapping.cs" />
+    <Compile Include="DataContext\EscenicIdMappingContext.cs" />
     <Compile Include="Editors\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
