@@ -997,6 +997,7 @@
     <Compile Include="Utilities\Extensions\GenericsExtensions.cs" />
     <Compile Include="Utilities\Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\References\Constants.cs" />
+    <Compile Include="Utilities\References\DictionaryKeys.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />
     <Compile Include="Utilities\References\IRenderingReferences.cs" />
     <Compile Include="Utilities\References\ItemReferences.cs" />
@@ -1020,6 +1021,7 @@
     <Compile Include="Wrappers\HttpContextProvider.cs" />
     <Compile Include="Wrappers\SitecoreSecurityWrapper.cs" />
     <Compile Include="Wrappers\SitecoreServiceAliases.cs" />
+    <Compile Include="Wrappers\SitecoreUrlWrapper.cs" />
     <Compile Include="Wrappers\WebClientWrapper.cs" />
   </ItemGroup>
   <ItemGroup>

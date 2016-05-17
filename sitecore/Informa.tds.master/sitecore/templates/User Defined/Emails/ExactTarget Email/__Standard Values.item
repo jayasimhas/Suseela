@@ -10,6 +10,13 @@ template: {5B1307C3-8126-491F-AB72-177516787E74}
 templatekey: ExactTarget Email
 
 ----field----
+field: {019F1CA1-F5F8-40CE-93D3-F7EBEAA8DC0D}
+name: Character Set
+key: character set
+content-length: 10
+
+iso-8859-1
+----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
 name: __Masters
 key: __masters
@@ -28,13 +35,6 @@ language: en
 version: 1
 revision: ddee410e-8677-477d-a5e3-face01d7482d
 
-----field----
-field: {019F1CA1-F5F8-40CE-93D3-F7EBEAA8DC0D}
-name: Character Set
-key: character set
-content-length: 10
-
-iso-8859-1
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created

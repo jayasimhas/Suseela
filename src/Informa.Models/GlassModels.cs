@@ -5801,6 +5801,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 					[SitecoreField(IExactTarget_EmailConstants.Character_SetFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Character_Set  {get; set;}
 								/// <summary>
+					/// The Text Body field.
+					/// <para>Backup text for email clients that don't display HTML</para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 15746d06-6e3d-4809-9e91-79fe36e34735</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.Text_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Text_Body  {get; set;}
+								/// <summary>
+					/// The Date Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 4181bf0a-ecd7-4992-9a3c-3dc7c7c6b380</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.Date_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Date_Text  {get; set;}
+								/// <summary>
 					/// The Subject field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -5810,14 +5828,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 					[SitecoreField(IExactTarget_EmailConstants.SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Subject  {get; set;}
 								/// <summary>
-					/// The Text Body field.
-					/// <para>Backup text for email clients that don't display HTML</para>
+					/// The Top Header Text field.
+					/// <para></para>
 					/// <para>Field Type: Multi-Line Text</para>		
-					/// <para>Field ID: 15746d06-6e3d-4809-9e91-79fe36e34735</para>
+					/// <para>Field ID: 4fe46aa7-debf-4d97-b295-2aceb40b8642</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IExactTarget_EmailConstants.Text_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Text_Body  {get; set;}
+					[SitecoreField(IExactTarget_EmailConstants.Top_Header_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Top_Header_Text  {get; set;}
+								/// <summary>
+					/// The Top Header Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 53a547ce-b0d1-45fe-9106-ff5fb37d2bc8</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.Top_Header_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Top_Header_Title  {get; set;}
 								/// <summary>
 					/// The Category Id field.
 					/// <para>The CID of the folder where the email will be stored in ExactTarget.</para>
@@ -5858,6 +5885,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 						[SitecoreField(IExactTarget_EmailConstants.Character_SetFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Character_Set  {get; set;}
 										/// <summary>
+						/// The Text Body field.
+						/// <para>Backup text for email clients that don't display HTML</para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 15746d06-6e3d-4809-9e91-79fe36e34735</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.Text_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Text_Body  {get; set;}
+										/// <summary>
+						/// The Date Text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 4181bf0a-ecd7-4992-9a3c-3dc7c7c6b380</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.Date_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Date_Text  {get; set;}
+										/// <summary>
 						/// The Subject field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -5867,14 +5912,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 						[SitecoreField(IExactTarget_EmailConstants.SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Subject  {get; set;}
 										/// <summary>
-						/// The Text Body field.
-						/// <para>Backup text for email clients that don't display HTML</para>
+						/// The Top Header Text field.
+						/// <para></para>
 						/// <para>Field Type: Multi-Line Text</para>		
-						/// <para>Field ID: 15746d06-6e3d-4809-9e91-79fe36e34735</para>
+						/// <para>Field ID: 4fe46aa7-debf-4d97-b295-2aceb40b8642</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IExactTarget_EmailConstants.Text_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Text_Body  {get; set;}
+						[SitecoreField(IExactTarget_EmailConstants.Top_Header_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Top_Header_Text  {get; set;}
+										/// <summary>
+						/// The Top Header Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 53a547ce-b0d1-45fe-9106-ff5fb37d2bc8</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.Top_Header_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Top_Header_Title  {get; set;}
 										/// <summary>
 						/// The Category Id field.
 						/// <para>The CID of the folder where the email will be stored in ExactTarget.</para>
@@ -5907,13 +5961,28 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 
 						
 					
+			public static readonly ID Text_BodyFieldId = new ID("15746d06-6e3d-4809-9e91-79fe36e34735");
+			public const string Text_BodyFieldName = "Text Body";
+
+						
+					
+			public static readonly ID Date_TextFieldId = new ID("4181bf0a-ecd7-4992-9a3c-3dc7c7c6b380");
+			public const string Date_TextFieldName = "Date Text";
+
+						
+					
 			public static readonly ID SubjectFieldId = new ID("8409213e-9efa-4019-93c2-432fbfa5c177");
 			public const string SubjectFieldName = "Subject";
 
 						
 					
-			public static readonly ID Text_BodyFieldId = new ID("15746d06-6e3d-4809-9e91-79fe36e34735");
-			public const string Text_BodyFieldName = "Text Body";
+			public static readonly ID Top_Header_TextFieldId = new ID("4fe46aa7-debf-4d97-b295-2aceb40b8642");
+			public const string Top_Header_TextFieldName = "Top Header Text";
+
+						
+					
+			public static readonly ID Top_Header_TitleFieldId = new ID("53a547ce-b0d1-45fe-9106-ff5fb37d2bc8");
+			public const string Top_Header_TitleFieldName = "Top Header Title";
 
 						
 					

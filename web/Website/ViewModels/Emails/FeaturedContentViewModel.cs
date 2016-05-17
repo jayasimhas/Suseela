@@ -18,6 +18,7 @@ namespace Informa.Web.ViewModels.Emails
         public interface IDependencies
         {
             ISitecoreService SitecoreService { get; }
+            IItemReferences ItemReferences { get; }
         }
 
         public FeaturedContentViewModel(IDependencies dependencies)
@@ -38,7 +39,7 @@ namespace Informa.Web.ViewModels.Emails
             !string.IsNullOrEmpty(GlassModel.Download_Link.Url);
 
         public string DownloadTypeIconUrl =>
-            _dependencies.SitecoreService.GetItem<IGlassBase>(Constants.DownloadTypes)?
+            _dependencies.SitecoreService.GetItem<IGlassBase>(_dependencies.ItemReferences.DownloadTypes)?
                 ._ChildrenWithInferType.FirstOrDefault(option => option._Name.Equals(GlassModel.Download_Type))?
                 .CastTo<IOption>()?.Icon.Src;
     }

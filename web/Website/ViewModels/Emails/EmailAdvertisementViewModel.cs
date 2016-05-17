@@ -1,4 +1,5 @@
 ﻿using Informa.Library.Globalization;
+using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
@@ -21,6 +22,6 @@ namespace Informa.Web.ViewModels.Emails
         }
 
         private string _adHeader;
-        public string AdHeader => _adHeader ?? (_adHeader = _dependencies.TextTranslator?.Translate("Ads.Advertisement"));
+        public string AdHeader => _adHeader ?? (_adHeader = _dependencies.TextTranslator?.Translate(DictionaryKeys.AdvertisementHeader));
     }
 }
