@@ -29,48 +29,45 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			List<Dictionary<string, string>> l = new List<Dictionary<string, string>>();
 
 			string[] files = Directory.GetFiles(this.Query);
-			var filteredFiles = new List<Tuple<string, string, XmlDocument, XmlDocument>>();
+			var filteredFiles = new List<Tuple<string, string, string, XmlDocument>>();
 			using (var context = new EscenicIdMappingContext())
 			{
 				foreach (var f in files)
 				{
-					XmlDocument d = GetXmlDocument(f);
-					if (d == null)
-						continue;
-
 					string curFileName = new FileInfo(f).Name;
 					string articleId = curFileName.Replace(".xml", "");
 
 					//autonomy fields
-					XmlDocument d2 = null;
+					XmlDocument dAut = null;
 					string autFile = $@"{this.Query}\..\Autonomy\{curFileName}";
 					if (File.Exists(autFile))
 					{
-						d2 = GetXmlDocument(autFile);
+						dAut = GetXmlDocument(autFile);
 
-						if (d2 != null)
+						if (dAut != null)
 						{
 							// ABORT IF OF THIS TYPE
-							string categoryName = GetXMLData(d2, "CATEGORY") ?? string.Empty;
+							string categoryName = GetXMLData(dAut, "CATEGORY") ?? string.Empty;
 							if (categoryName.ToLower().Equals("pdfnewsletter")) continue;
 
-							string sectionName = GetXMLData(d2, "SECTION") ?? string.Empty;
+							string sectionName = GetXMLData(dAut, "SECTION") ?? string.Empty;
 							if (sectionName.ToLower().Equals("pdf library")) continue;
 						}
 					}
 					
 					string artNumber = SetArticleNumber(context, articleId);
 
-					filteredFiles.Add(new Tuple<string, string, XmlDocument, XmlDocument>(curFileName, artNumber, d, d2));
+					filteredFiles.Add(new Tuple<string, string, string, XmlDocument>(curFileName, artNumber, f, dAut));
 				}
 
 				context.SaveChanges();
 			}
 
-			foreach (Tuple<string, string, XmlDocument, XmlDocument> pair in filteredFiles)
+			foreach (Tuple<string, string, string, XmlDocument> pair in filteredFiles)
 			{
 				Dictionary<string, string> ao = new Dictionary<string, string>();
-				XmlDocument d = pair.Item3;
+				XmlDocument d = GetXmlDocument(pair.Item3);
+				if (d == null) continue;
 
 				//generated field
 				string curFileName = pair.Item1;
@@ -137,22 +134,45 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			set { _articleNumber = value; }
 		}
 
+		private Dictionary<string, string> _idMap;
+
+		protected Dictionary<string, string> IdMap
+		{
+			get
+			{
+				if (_idMap == null)
+				{
+					_idMap = new Dictionary<string, string>();
+					using (var context = new EscenicIdMappingContext())
+					{
+						foreach (var mapping in context.EscenicIdMappings.Where(x => x.ArticleNumber.StartsWith(PublicationPrefix)).ToArray())
+						{
+							_idMap[mapping.EscenicId] = mapping.ArticleNumber;
+						}
+					}
+				}
+
+				return _idMap;
+			}
+		}  
+
 		protected virtual string SetArticleNumber(EscenicIdMappingContext context, string escenicId)
 		{
-			var map = context.EscenicIdMappings.FirstOrDefault(m => m.EscenicId == escenicId);
+			var map = IdMap.ContainsKey(escenicId) ? IdMap[escenicId] : null;
 
-			if (map == null)
+			if (string.IsNullOrEmpty(map))
 			{
-				map = new EscenicIdMapping
+				var addMap = new EscenicIdMapping
 				{
 					EscenicId = escenicId,
 					ArticleNumber = $"{PublicationPrefix}{ArticleNumber++:D6}"
 				};
 
-				context.EscenicIdMappings.Add(map);
+				map = addMap.ArticleNumber;
+				context.EscenicIdMappings.Add(addMap);
 			}
 
-			return map.ArticleNumber;
+			return map;
 		}
 
 		protected override int GetNextArticleNumber()
