@@ -2509,7 +2509,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 				// If current article is categorized as Biopharmaceuticals or Consumer Products
 				if (tcVal.Contains("{CAC059FE-41BA-403C-B36F-BFEBF3DC16ED}") ||
-				    tcVal.Contains("{608C58C2-6268-4B6B-908B-1D3F5E637016}"))
+					tcVal.Contains("{608C58C2-6268-4B6B-908B-1D3F5E637016}"))
 				{
 					mapping = TaxonomyMapping.PharmaTherapyMapping;
 				}
@@ -2625,19 +2625,27 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 					foreach (var str in strs)
 					{
 						var authorItem = Database.GetDatabase("pmbiContent").GetItem(new ID(str));
-						var firstName = authorItem.Fields["First Name"].Value;
-						var lastName = authorItem.Fields["Last Name"].Value;
-						var email = authorItem.Fields["Email"].Value;
+						var firstName = StringUtility.TrimInvalidChars(authorItem.Fields["First Name"].Value.ToLower());
+						var lastName = StringUtility.TrimInvalidChars(authorItem.Fields["Last Name"].Value.ToLower());
+						var email = StringUtility.TrimInvalidChars(authorItem.Fields["Email"].Value.ToLower());
 
-						var val = descendants.FirstOrDefault(
+						var valCollection = descendants.Where(
 							i =>
-								i.Fields["First Name"].Value == firstName && i.Fields["Last Name"].Value == lastName &&
-								(string.IsNullOrWhiteSpace(email) || i.Fields["Email Address"].Value == email))?.ID.ToString();
-					
+								StringUtility.TrimInvalidChars(i.Fields["First Name"].Value.ToLower()) == firstName
+								&& StringUtility.TrimInvalidChars(i.Fields["Last Name"].Value.ToLower()) == lastName
+								&& (string.IsNullOrWhiteSpace(i.Fields["Email Address"].Value) || string.IsNullOrWhiteSpace(email) || StringUtility.TrimInvalidChars(i.Fields["Email Address"].Value.ToLower()) == email)).ToList();
+							//?.ID.ToString();
+						if (valCollection.Count > 1)
+						{
+							map.Logger.Log(newItem.Paths.FullPath, "Find more than 1 authors in target DB", ProcessStatus.FieldError, NewItemField, $"ID:{str}--Name:{firstName} {lastName}--Email: {email}");
+							continue;
+						}
+
+						var val = valCollection.FirstOrDefault()?.ID.ToString();
 						if (string.IsNullOrWhiteSpace(val))
 						{
-							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not found", ProcessStatus.FieldError, NewItemField, importValue);
-							return;
+							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not found in target DB", ProcessStatus.FieldError, NewItemField, $"ID:{str}--Name:{firstName} {lastName}--Email: {email}");
+							continue;
 						}
 
 						// Avoid adding duplicate GUID
