@@ -1,4 +1,4 @@
-/*---
+    /*---
 title: Global
 section: Colors
 ---
@@ -47,12 +47,12 @@ section: Colors
 ```
 */
 
-$color-cardinal-red:        #be1e2d;
-$color-tree-poppy-orange:   #f7941e;
 $color-butterscotch-orange: #f9af40;
-$color-yellow-orange:       #fbb040;
+$color-cardinal-red:        #be1e2d;
 $color-goldenrod:           #daa520;
 $color-lime-green:          #31be48;
+$color-tree-poppy-orange:   #f7941e;
+$color-yellow-orange:       #fbb040;
 
 
 
@@ -62,27 +62,27 @@ section: Colors
 ---
 ```example:color
 @color: #d82b6a @name: Dogwood Rose
-@color: #ba336c @name: Hibiscus Pink
+@color: #BC608C @name: Mystic Maroon
+@color: #b1005b @name: Hibiscus Pink
 @color: #a8618d @name: Light Plum
 @color: #e6c0d5 @name: Blossom Pink
 @color: #d3bac3 @name: Flair Pink
 @color: #B2547F @name: Pearly Pink
-@color: #BC608C @name: Mystic Maroon
 @color: #FEE2E7 @name: Piggy Pink
 @color: #FFF2F4 @name: Wisp Pink
 @color: #fbf2f4 @name: Soft Peach
 ```
 */
 
-$color-dogwood-rose:        #d82b6a;
-$color-light-plum:          #a8618d;
-$color-hibiscus-pink:       #ba336c;
-$color-soft-peach:          #fbf2f4;
 $color-blossom-pink:        #e6c0d5;
+$color-hibiscus-pink:       #b1005b;
+$color-dogwood-rose:        #d82b6a;
 $color-flair-pink:          #d3bac3;
-$color-mystic-maroon:       #BC608C;
+$color-light-plum:          #a8618d;
 $color-pearly-pink:         #B2547F;
+$color-mystic-maroon:       #BC608C;
 $color-piggy-pink:          #FEE2E7;
+$color-soft-peach:          #fbf2f4;
 $color-wisp-pink:           #FFF2F4;
 
 
@@ -92,7 +92,9 @@ section: Colors
 ---
 ```example:color
 @color: #ba005b @name: Rose Red
-@color: #d2196d @name: Rubine Red
+@color: #DD3580 @name: Rubine Red
+@color: #c8206e @name: Valerian Red
+@color: #f8d7e6 @name: Cherub Pink
 ```
 */
 
@@ -110,8 +112,9 @@ section: Colors
 ```example:color
 @color: #007cc3 @name: Sapphire Blue
 @color: #034a7c @name: Marine Blue
-@color: #edefef @name: Porcelain White
 @color: #FDD95F @name: Jonquil Yellow
+@color: #F1CE54 @name: Maize Yellow
+@color: #edefef @name: Porcelain White
 ```
 */
 
@@ -128,7 +131,10 @@ section: Colors
 ---
 ```example:color
 @color: #ca4d2c @name: Dark Coral
+@color: #b03718 @name: Rusty Red
+@color: #7e2718 @name: Copper Red
 @color: #6a1b13 @name: Rosewood Red
+
 ```
 */
 $color-dark-coral:          #ca4d2c;
