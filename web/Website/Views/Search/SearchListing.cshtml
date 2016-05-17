@@ -10,7 +10,7 @@
 
         <div class="search-result__body">
 
-            <div class="search-result__pubdate">
+            <div class="search-result__pubdate" ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'">
                 <time datetime="{{doc.searchDate | date: 'yyyy-MM-dd'}}">{{doc.searchDate | date: 'd MMM yyyy' }}</time>
             </div>
 
@@ -45,9 +45,9 @@
                 </svg>
             </div>
             -->
-            <div class="search-result__publication">
-                {{ ::doc.publicationTitle }}
-            </div>
+					<div class="search-result__publication" ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'">
+						{{ ::doc.publicationTitle }}
+					</div>
 
             <a class="search-result__heading article-preview__headline" ng-href="{{ ::doc.url }}" title="{{ ::doc.title }}">
                 {{ ::doc.title }}
@@ -59,7 +59,7 @@
 
             <p class="search-result__description" ng-bind-html="doc.summary"></p>
 
-            <div class="search-result__tags">
+	        <div class="search-result__tags" ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'">
                 <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
                     <a ng-click="filterResult(tax.url)" href="{{::doc.siteUrl}}{{::tax.url}}">
                         {{::tax.title}}

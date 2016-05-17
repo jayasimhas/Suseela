@@ -14,6 +14,8 @@ informaSearchApp.factory('savedSearchService', ['$http', '$location', function (
 
     };
 
-    return { isSaved: isSaved };
+    return {
+        isSaved: isSaved
+    };
 
 }]);

@@ -1,4 +1,4 @@
-﻿using Informa.Library.Newsletter;
+﻿using Informa.Library.Publication;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
 
@@ -9,12 +9,12 @@ namespace Informa.Library.User.Newsletter
 	{
 		protected readonly INewsletterUserOptInFactory OptInFactory;
 		protected readonly IUpdateNewsletterUserOptIns UpdateOptIns;
-		protected readonly ISiteNewsletterTypeContext NewsletterTypeContext;
+		protected readonly ISitePublicationContext NewsletterTypeContext;
 
 		public UpdateSiteNewsletterUserOptIn(
 			INewsletterUserOptInFactory optInFactory,
 			IUpdateNewsletterUserOptIns updateOptIns,
-			ISiteNewsletterTypeContext newsletterTypeContext)
+			ISitePublicationContext newsletterTypeContext)
 		{
 			OptInFactory = optInFactory;
 			UpdateOptIns = updateOptIns;
@@ -28,7 +28,7 @@ namespace Informa.Library.User.Newsletter
 				return false;
 			}
 
-			var userOptIn = OptInFactory.Create(NewsletterTypeContext.Type, optIn);
+			var userOptIn = OptInFactory.Create(NewsletterTypeContext.Name, optIn);
 
 			return UpdateOptIns.Update(new List<INewsletterUserOptIn>() { { userOptIn } }, username);
 		}

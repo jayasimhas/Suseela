@@ -159,7 +159,10 @@ namespace Informa.Library.User.Search
 			string[] urlParts = url.Split('?');
 			string querystring = urlParts.Length == 1 ? urlParts[0] : urlParts[1];
 
-			return querystring.Contains("#") ? querystring.Split('#')[0] : querystring;
+			var cleansedQuerystring = querystring.Contains("#") ? querystring.Split('#')[0] : querystring;
+			var pairs = cleansedQuerystring.Split('&');
+
+			return string.Join("&", pairs.Where(x => !x.StartsWith($"{SiteSettings.QueryString.PageKey}=")));
 		}
 
 		protected virtual string ConstructUrl(string searchString)

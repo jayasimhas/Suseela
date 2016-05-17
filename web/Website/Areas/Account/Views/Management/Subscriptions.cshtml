@@ -3,9 +3,13 @@
 @if (Model.IsAuthenticated)
 {
     <div class="page-account">
-        <h1 class="page-account__header">@Model.Title</h1>
+		@Html.Sitecore().Placeholder("page-account")
+
         <div class="page-preferences js-preferences-user-container">
-            <table class="sortable-table js-sortable-table">
+
+            <h2 class="page-account__table-headline">@Model.Title</h2>
+
+            <table class="page-account__table sortable-table js-sortable-table">
                 <thead class="sortable-table__header">
                     <tr>
                         <td class="sortable-table__col js-sortable-table-sorter"
@@ -54,12 +58,12 @@
 
                 <thead class="sortable-table__header sortable-table__header--mobile">
                     <tr>
-                        <td class="sortable-table__col">
+                        <td class="sortable-table__col sortable-table__sort-by-header">
                             <h6>Sort by:</h6>
                         </td>
                         <td class="sortable-table__col js-sortable-table-sorter"
                             data-sortable-table-col="1">
-                            Sort by: @Model.PublicationText
+                            @Model.PublicationText
                             <div class="sorting-arrows">
                                 <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
                                     <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>

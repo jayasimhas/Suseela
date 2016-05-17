@@ -1,10 +1,16 @@
-﻿var EmailRssController = function ($scope, $location) {
+/* global angular */
+
+var EmailRssController = function ($scope, $location) {
     "use strict";
 
     $scope.currentLocation = $location.url();
-    $scope.$watch(function () { return $location.search() }, function (params) {
+    $scope.$watch(function () {
+        return $location.search();
+    }, function (params) {
         $scope.currentLocation = $location.url();
     });
+
+    $scope.testvar = 'hello';
 
 };
 var informaSearchApp = angular.module('informaSearchApp');

@@ -326,12 +326,21 @@
     <Compile Include="Logging\LogWrapper.cs" />
     <Compile Include="Logging\SitecoreDebugLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
+    <Compile Include="Migrations\201605092039013_InitialCreate.cs" />
+    <Compile Include="Migrations\201605092039013_InitialCreate.Designer.cs">
+      <DependentUpon>201605092039013_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mail\ExactTarget\ExactTargetClient.cs" />
     <Compile Include="Mail\ExactTarget\ExactTargetWrapper.cs" />
-    <Compile Include="Newsletter\ISitesNewsletterTypeContext.cs" />
-    <Compile Include="Newsletter\ISiteNewsletterTypeContext.cs" />
-    <Compile Include="Newsletter\SitesNewsletterTypeContext.cs" />
-    <Compile Include="Newsletter\SiteNewsletterTypeContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Publication\ArticleMappingContext.cs" />
+    <Compile Include="Publication\ArticleMappingRepository.cs" />
+    <Compile Include="Publication\Entity\ArticleMapping.cs" />
+    <Compile Include="Publication\IArticleMappingRepository.cs" />
+    <Compile Include="Publication\ISitesPublicationContext.cs" />
+    <Compile Include="Publication\ISitePublicationContext.cs" />
+    <Compile Include="Publication\SitesPublicationContext.cs" />
+    <Compile Include="Publication\SitePublicationContext.cs" />
     <Compile Include="Publishing\Events\ItemPublishedPublishItemProcessing.cs" />
     <Compile Include="Publishing\Events\PublishItemProcessing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishingDateTime.cs" />
@@ -375,9 +384,15 @@
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
     <Compile Include="SiteDebugging\SiteDebugger.cs" />
     <Compile Include="Site\GlassSiteRootContext.cs" />
+    <Compile Include="Site\IIsUrlCurrentSite.cs" />
+    <Compile Include="Site\ISiteHostName.cs" />
     <Compile Include="Site\ISiteRootContext.cs" />
     <Compile Include="Site\ISiteFooterNavigationContext.cs" />
+    <Compile Include="Site\ISiteRootsContext.cs" />
+    <Compile Include="Site\IsUrlCurrentSite.cs" />
     <Compile Include="Site\SiteFooterNavigationContext.cs" />
+    <Compile Include="Site\SiteHostName.cs" />
+    <Compile Include="Site\SiteRootsContext.cs" />
     <Compile Include="Subscription\User\IUserSubscriptionsContext.cs" />
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserSession.cs" />
@@ -391,27 +406,41 @@
     <Compile Include="User\Authentication\Web\SiteDebugging\SiteDebuggingWebLoginUser.cs" />
     <Compile Include="User\Authentication\Web\WebAuthenticateUser.cs" />
     <Compile Include="User\Authentication\Web\WebAuthenticateUserResult.cs" />
+    <Compile Include="User\Authentication\Web\WebHideWelcomeOnLogout.cs" />
     <Compile Include="User\Authentication\Web\WebClearAuthenticatedUserSessionAction.cs" />
     <Compile Include="User\Authentication\Web\WebLoginUserRegisterUserAction.cs" />
     <Compile Include="User\Content\ContentResponse.cs" />
     <Compile Include="User\Content\IContentResponse.cs" />
     <Compile Include="User\Content\IUserContentRepository.cs" />
     <Compile Include="User\Content\IUserContentService.cs" />
+    <Compile Include="User\Document\ISavedDocumentItem.cs" />
+    <Compile Include="User\Document\ISavedDocumentItemsContext.cs" />
+    <Compile Include="User\Document\ISavedDocumentItemsFactory.cs" />
+    <Compile Include="User\Document\SavedDocumentItem.cs" />
+    <Compile Include="User\Document\SavedDocumentItemsContext.cs" />
+    <Compile Include="User\Document\SavedDocumentItemsFactory.cs" />
     <Compile Include="User\Entitlement\DefaultEntitlementsFactory.cs" />
-    <Compile Include="User\Entitlement\EntitlementAccessLevelContext.cs" />
+    <Compile Include="User\Entitlement\EntitledProduct.cs" />
+    <Compile Include="User\Entitlement\EntitledProductItemCodeFactory.cs" />
+    <Compile Include="User\Entitlement\EntitlementAccess.cs" />
+    <Compile Include="User\Entitlement\EntitlementAccessContext.cs" />
     <Compile Include="User\Entitlement\EntitlementChecksEnabled.cs" />
+    <Compile Include="User\Entitlement\EntitlementProductFactory.cs" />
     <Compile Include="User\Entitlement\EntitlementsContexts.cs" />
     <Compile Include="User\Entitlement\EntitlementSession.cs" />
     <Compile Include="User\Entitlement\IDefaultEntitlementsFactory.cs" />
-    <Compile Include="User\Entitlement\IEntitlementAccessLevelContext.cs" />
+    <Compile Include="User\Entitlement\IEntitledProduct.cs" />
+    <Compile Include="User\Entitlement\IEntitledProductItemCodeFactory.cs" />
+    <Compile Include="User\Entitlement\IEntitlementAccess.cs" />
+    <Compile Include="User\Entitlement\IEntitlementAccessContext.cs" />
     <Compile Include="User\Entitlement\IEntitlementChecksEnabled.cs" />
-    <Compile Include="User\Entitlement\IEntitlementFactory.cs" />
+    <Compile Include="User\Entitlement\IEntitlementProductFactory.cs" />
     <Compile Include="User\Entitlement\IEntitlementsContexts.cs" />
     <Compile Include="User\Entitlement\IEntitlementSession.cs" />
     <Compile Include="User\Entitlement\IAuthenticatedUserEntitlementsContext.cs" />
+    <Compile Include="User\Entitlement\IIsEntitledProducItemContext.cs" />
+    <Compile Include="User\Entitlement\IsEntitledProducItemContext.cs" />
     <Compile Include="User\Entitlement\IUserEntitlementsContext.cs" />
-    <Compile Include="User\Entitlement\Scrip\ScripEntitlement.cs" />
-    <Compile Include="User\Entitlement\Scrip\ScripEntitlementFactory.cs" />
     <Compile Include="User\Entitlement\SiteDebugging\ISiteDebuggingEntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\SiteDebugging\SiteDebuggingEntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\AuthenticatedUserEntitlementsContext.cs" />
@@ -539,12 +568,14 @@
     <Compile Include="Subscription\IndividualSubscriptionRenewalMessageContext.cs" />
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
+    <Compile Include="User\Newsletter\ISetByTypeNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\ISetByTypeSitesNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\ISiteNewsletterUserOptedInContext.cs" />
     <Compile Include="User\Newsletter\ISitesNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptIn.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptInContext.cs" />
+    <Compile Include="User\Newsletter\SetByTypeNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\SetByTypeSitesNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\SitesNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Offer\IOfferUserOptedInContext.cs" />
@@ -824,12 +855,10 @@
     <Compile Include="User\Entitlement\EntitledAccessLevel.cs" />
     <Compile Include="User\Entitlement\EntitledProductContext.cs" />
     <Compile Include="User\Entitlement\Entitlement.cs" />
-    <Compile Include="User\Entitlement\EntitledContext.cs" />
     <Compile Include="Company\User\Entitlement\ICompanyEntitlementsContext.cs" />
     <Compile Include="User\Entitlement\IEntitledProductContext.cs" />
     <Compile Include="User\Entitlement\IEntitlementsContext.cs" />
     <Compile Include="User\Entitlement\IEntitlement.cs" />
-    <Compile Include="User\Entitlement\IEntitledContext.cs" />
     <Compile Include="User\Entitlement\IGetIPEntitlements.cs" />
     <Compile Include="User\Entitlement\IGetUserEntitlements.cs" />
     <Compile Include="User\FindUserByUsername.cs" />
@@ -1005,6 +1034,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InterfaceFactory\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605092039013_InitialCreate.resx">
+      <DependentUpon>201605092039013_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

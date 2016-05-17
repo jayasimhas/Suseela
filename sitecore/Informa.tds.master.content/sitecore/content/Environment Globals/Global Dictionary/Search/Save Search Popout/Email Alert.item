@@ -33,15 +33,15 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: be71264b-1fea-49dd-a3d2-e5f7c5ab097e
+revision: bf629612-d651-4bb5-a155-baff0e6f561d
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 11
+content-length: 40
 
-Email Alert
+Also set an e-mail alert for this search
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-be71264b-1fea-49dd-a3d2-e5f7c5ab097e
+bf629612-d651-4bb5-a155-baff0e6f561d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160502T214555Z
+20160506T124714Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

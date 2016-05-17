@@ -23,7 +23,7 @@ using Sitecore.Social.Infrastructure.Utils;
 
 namespace Informa.Web.ViewModels
 {
-	public class MainLayoutViewModel : GlassViewModel<I___BasePage>, IEntitledProductItem
+	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
 	{
 		protected readonly ISiteRootContext SiteRootContext;
 		public readonly IUserCompanyContext UserCompanyContext;
@@ -33,11 +33,11 @@ namespace Informa.Web.ViewModels
 		protected readonly ISitecoreService Service;
 		protected readonly IArticleSearch ArticleSearch;
 		protected readonly IUserProfileContext UserProfileContext;
-		protected readonly IEntitlementAccessLevelContext EntitlementAccessLevelContext;
+		protected readonly IEntitlementAccessContext EntitlementAccessLevelContext;
 		protected readonly IUserSubscriptionsContext UserSubscriptionsContext;
 		protected readonly IUserEntitlementsContext UserEntitlementsContext;
 		protected readonly IUserIpAddressContext UserIpAddressContext;
-		protected readonly IEntitledProductContext EntitledProductContext;
+		protected readonly IIsEntitledProducItemContext IsEntitledProductItemContext;
 
 		public MainLayoutViewModel(
 			ISiteRootContext siteRootContext,
@@ -55,13 +55,13 @@ namespace Informa.Web.ViewModels
 			IArticleSearch articleSearch,
 			IItemReferences itemReferences,
 			ITextTranslator textTranslator,
-				IUserCompanyContext userCompanyContext,
+			IUserCompanyContext userCompanyContext,
 			IUserProfileContext userProfileContext,
-			IEntitlementAccessLevelContext entitlementAccessLevelContext,
+			IEntitlementAccessContext entitlementAccessLevelContext,
 			IUserSubscriptionsContext userSubscriptionsContext,
 			IUserEntitlementsContext userEntitlementsContext,
 			IUserIpAddressContext userIpAddressContext,
-			IEntitledProductContext entitledProductContext)
+			IIsEntitledProducItemContext isEntitledProductItemContext)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -84,7 +84,7 @@ namespace Informa.Web.ViewModels
 			UserSubscriptionsContext = userSubscriptionsContext;
 			UserEntitlementsContext = userEntitlementsContext;
 			UserIpAddressContext = userIpAddressContext;
-			EntitledProductContext = entitledProductContext;
+			IsEntitledProductItemContext = isEntitledProductItemContext;
 		}
 
 		public readonly IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
@@ -121,6 +121,11 @@ namespace Informa.Web.ViewModels
 			}
 		}
 		public string PageTitleAnalytics => GlassModel?.Title ?? string.Empty;
+
+		public string BodyCssClass => string.IsNullOrEmpty(SiteRootContext.Item?.Publication_Theme)
+			? string.Empty
+			: $"class={SiteRootContext.Item.Publication_Theme}";
+
 		public string SiteEnvrionment
 		{
 			get
@@ -180,8 +185,9 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				string allEntitlements = string.Join(",", UserEntitlementsContext.Entitlements.Select(a => $"'{EntitlementAccessLevelContext.Determine(a)}'"));
-				return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
+				//string allEntitlements = string.Join(",", UserEntitlementsContext.Entitlements.Select(a => $"'{EntitlementAccessLevelContext.Determine(a)}'"));
+				//return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
+				return string.Empty;
 			}
 		}
 		public string SubscribedProducts
@@ -210,7 +216,7 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				return Article?.Free_Article ?? false;
+				return Article?.Free ?? false;
 			}
 		}
 
@@ -220,7 +226,7 @@ namespace Informa.Web.ViewModels
 			{
 				return "Free View";
 			}
-			if (EntitledProductContext.IsEntitled(this))
+			if (IsEntitledProductItemContext.IsEntitled(Article))
 			{
 				return "Entitled Full View";
 			}

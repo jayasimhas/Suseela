@@ -6,7 +6,7 @@ using Sitecore.SharedSource.DataImporter.Providers;
 namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 {
    
-    public class ToNumber : ToText, IBaseField
+    public class ToNumber : ToText
     {
         public CultureInfo TargetCulture { get; set; }
         public CultureInfo ImportCulture { get; set; }

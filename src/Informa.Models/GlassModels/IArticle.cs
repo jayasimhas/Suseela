@@ -1,29 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Glass.Mapper.Maps;
-using Glass.Mapper.Sc.Configuration;
 using Glass.Mapper.Sc.Configuration.Attributes;
 using Glass.Mapper.Sc.Fields;
 using Glass.Mapper.Sc.Maps;
 using Informa.Models.FactoryInterface;
-using Informa.Models.GlassModels;
-using Informa.Models.Informa.Models.sitecore.templates.Common;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Glass.Models;
-using Sitecore.Buckets.Extensions;
 using Sitecore.Globalization;
 
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 {
-	public partial interface IArticle : IPublicationChild, IEntitledProductItem
+	public partial interface IArticle : IPublicationChild
 	{
 		bool IsPublished { get; set; }
-		bool IsFree { get; }
 	}
 
 	public class ArticleMap : SitecoreGlassMap<IPublicationChild>
@@ -84,7 +73,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public DateTime Created_Date { get; set; }
 		public string Editorial_Notes { get; set; }
 		public bool Embargoed { get; set; }
-		public bool Free_Article { get; set; }
+		public bool Free { get; set; }
 		public bool Is_Sidebar_Article { get; set; }
 		public Guid Label { get; set; }
 		public ITaxonomy_Item Media_Type { get; set; }
@@ -94,6 +83,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public string Article_Category { get; set; }
 		public IEnumerable<IGlassBase> Child_Articles { get; set; }
 		public string Escenic_ID { get; set; }
+		public string Legacy_Article_Number { get; set; }
 		public IEnumerable<IGlassBase> Legacy_Publications { get; set; }
 		public string Legacy_Sitecore_ID { get; set; }
 		public Image Featured_Image_16_9 { get; set; }

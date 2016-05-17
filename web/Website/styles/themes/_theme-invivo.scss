@@ -1,80 +1,29 @@
 .theme-invivo {
 
-    a,
-    .facets__button,
-    .facets__button svg,
-    .sorting-arrows__arrow.is-active {
-        @include on-event(true) {
-            color: $color-mojo-red;
-            @include svg-fill($color-mojo-red);
-        }
-    }
+    @include theme-links($color-dark-coral);
 
-    .header-account-access {
-        &__my-account,
-        &__sign-in-out {
-            color: $color-mojo-red;
-        }
-    }
+    @include theme-buttons(
+        $color-dark-coral,
+        $color-dark-coral,
+        $color-white,
+        $color-mystic-maroon,
+        $color-pearly-pink,
+        $color-white);
 
-    .general-header__navigation a.is-active {
-        border-bottom-color: $color-rosewood-red;
-    }
+    @include theme-main-menu($color-rusty-red, $color-rusty-red);
 
-    .article-preview__headline,
-    .topic-featured-article__headline {
-        &,
-        & a {
-            color: $color-zeus-black;
+    @include theme-subnav($color-copper-red);
 
-            &:hover {
-                color: $color-mojo-red;
-            }
-        }
-    }
+    @include theme-banners($color-dark-coral, $color-white);
 
-    .article-pullquote,
-    .quote {
-        border-top-color: $color-rosewood-red;
-        border-bottom-color: $color-rosewood-red;
-    }
+    @include theme-call-out-boxes($color-concrete-gray, $color-copper-red);
 
-    .button--filled,
-    .search-bar__submit,
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-        background: $color-mojo-red;
-        background-color: $color-mojo-red;
-        color: $color-soft-peach;
-    }
+    @include theme-bordered-elements($color-copper-red);
 
-    .newsletter-signup {
-        background-color: $color-porcelain-white;
-        border-top: 2px solid $color-rosewood-red;
-    }
+    @include theme-interviews(
+        transparentize($color-copper-red, 0.7),
+        transparentize($color-copper-red, 0.5),
+        transparentize($color-dark-coral, 0.85),
+        transparentize($color-dark-coral, 0.5));
 
-
-    .main-menu {
-
-        &__hoverable:hover:before {
-            background-color: $color-rosewood-red;
-        }
-
-        &__section-title a {
-            color: inherit;
-        }
-
-        &__footer-link a {
-            color: $color-abbey-gray;
-
-            @include on-event(false) {
-                color: $color-mojo-red;
-            }
-        }
-        &__section-link {
-            @include on-event(true) {
-                color: $color-abbey-gray;
-            }
-        }
-
-    }
 }

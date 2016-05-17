@@ -56,7 +56,7 @@ namespace Informa.Library.Article.Search
                     .FilteryByArticleNumbers(filter)
                     .FilteryByEScenicID(filter)
                     .FilteryByRelatedId(filter)
-                    .FilteryByLatestVersionAndCurrentLanguage();
+                    .ApplyDefaultFilters();
 
                 if (filter.PageSize > 0)
                 {
@@ -90,7 +90,7 @@ namespace Informa.Library.Article.Search
                     .ExcludeManuallyCurated(filter)
                     .FilteryByArticleNumbers(filter)
                     .FilteryByEScenicID(filter)
-                                        .FilteryByLatestVersionAndCurrentLanguage();
+					.ApplyDefaultFilters();
 
                 if (filter.PageSize > 0)
                 {

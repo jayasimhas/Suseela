@@ -1,7 +1,7 @@
 ﻿using System.Web.Http;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
-using Informa.Library.Newsletter;
+using Informa.Library.Publication;
 using Informa.Library.User.Document;
 using Informa.Library.Utilities.WebApi.Filters;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
@@ -14,7 +14,7 @@ namespace Informa.Web.Areas.Account.Controllers
     {
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly ITextTranslator TextTranslator;
-		protected readonly ISiteNewsletterTypeContext NewsletterTypeContext;
+		protected readonly ISitePublicationContext NewsletterTypeContext;
 		protected readonly ISaveDocumentContext SaveDocumentContext;
 		protected readonly IRemoveDocumentContext RemoveDocumentContext;
 
@@ -23,7 +23,7 @@ namespace Informa.Web.Areas.Account.Controllers
         public SavedDocumentApiController(
             ISitecoreContext sitecoreContext,
             ITextTranslator textTranslator,
-			ISiteNewsletterTypeContext newsletterTypeContext,
+			ISitePublicationContext newsletterTypeContext,
 			ISaveDocumentContext saveDocumentContext,
 			IRemoveDocumentContext removeDocumentContext)
         {
@@ -63,7 +63,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
             var page = SitecoreContext.GetItem<I___BasePage>(itemID.Guid);
             
-            var result = SaveDocumentContext.Save(page.Title, NewsletterTypeContext.Type, request.DocumentID);
+            var result = SaveDocumentContext.Save(page.Title, NewsletterTypeContext.Name, request.DocumentID);
 
             return Ok(new
             {

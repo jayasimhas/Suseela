@@ -159,7 +159,98 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             repJobs.DataBind();       
 	    }
 
-        protected void HandleImport(IDataMap map, DefaultLogger l) {
+		protected void btnMediaImport_Click(object sender, EventArgs e)
+		{
+
+			//check import item
+			if (importItem == null)
+			{
+				Log("Error", "Import item is null");
+				txtMessage.Text = log.ToString();
+				return;
+			}
+
+			//check handler assembly
+			TextField ha = importItem.Fields["Handler Assembly"];
+			if (ha == null || string.IsNullOrEmpty(ha.Value))
+			{
+				Log("Error", "Import handler assembly is not defined");
+				txtMessage.Text = log.ToString();
+				return;
+			}
+
+			//check handler class
+			TextField hc = importItem.Fields["Handler Class"];
+			if (hc == null || string.IsNullOrEmpty(hc.Value))
+			{
+				Log("Error", "Import handler class is not defined");
+				txtMessage.Text = log.ToString();
+				return;
+			}
+
+			//check db
+			if (currentDB == null)
+			{
+				Log("Error", "Database is null");
+				txtMessage.Text = log.ToString();
+				return;
+			}
+
+			//check conn str
+			if (string.IsNullOrEmpty(ddlConnStr.SelectedValue))
+			{
+				Log("Error", "Connection string is empty");
+				txtMessage.Text = log.ToString();
+				return;
+			}
+
+			//try to instantiate object
+			IDataMap map = null;
+			DefaultLogger l = new DefaultLogger();
+			try
+			{
+				map = (IDataMap)Sitecore.Reflection.ReflectionUtil.CreateObject(
+					ha.Value,
+					hc.Value,
+					new object[] { currentDB, ddlConnStr.SelectedValue, importItem, l }
+				);
+			}
+			catch (FileNotFoundException fnfe)
+			{
+				Log("Error", string.Format("the binary {0} could not be found", ha.Value));
+				txtMessage.Text = log.ToString();
+				return;
+			}
+
+			//run process
+			if (map == null)
+			{
+				Log("Error", "the data map provided could not be instantiated");
+				txtMessage.Text = log.ToString();
+				return;
+			}
+
+			var jobOptions = new Sitecore.Jobs.JobOptions(
+									"MediaLibraryImport",
+									"Media",
+									Sitecore.Context.Site.Name,
+									this,
+									"HandleMediaImport",
+									new object[] { map, l });
+
+			Sitecore.Jobs.JobManager.Start(jobOptions);
+
+			repJobs.DataSource = Jobs;
+			repJobs.DataBind();
+		}
+
+	    protected void HandleMediaImport(IDataMap map, DefaultLogger l)
+	    {
+		    var handler = map as PmbiDataMap;
+			handler?.TransferMediaLibrary();
+	    }
+
+		protected void HandleImport(IDataMap map, DefaultLogger l) {
         
             ImportProcessor p = new ImportProcessor(map, l);
             p.Process();

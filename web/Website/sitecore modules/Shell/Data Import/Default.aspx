@@ -86,6 +86,7 @@
             <div class="Controls">
 			    <div class="formRow">
                     <asp:Button ID="btnImport" Text="Run Import" OnClick="btnImport_Click" runat="server" BackColor="#474747" ForeColor="White" BorderWidth="0" Width="100px" Height="30px"  />
+					<asp:Button ID="btnMediaImport" Text="Run Media Import" OnClick="btnMediaImport_Click" runat="server" BackColor="#474747" ForeColor="White" BorderWidth="0" Width="120px" Height="30px"  />
                 </div>
                 <div class="rowSpacer"></div>
                 <div class="formRow">

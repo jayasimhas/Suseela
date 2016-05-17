@@ -1,76 +1,29 @@
 .theme-pink-sheet {
 
-    a,
-    .facets__button,
-    .facets__button svg,
-    .sorting-arrows__arrow.is-active {
-        @include on-event(true) {
-            color: $color-hibiscus-pink;
-            @include svg-fill($color-hibiscus-pink);
-        }
-    }
+    @include theme-links($color-dogwood-rose);
 
-    .header-account-access {
-        &__my-account,
-        &__sign-in-out {
-            color: $color-hibiscus-pink;
-        }
-    }
+    @include theme-buttons(
+        $color-mystic-maroon,
+        $color-mystic-maroon,
+        $color-white,
+        $color-mystic-maroon,
+        $color-pearly-pink,
+        $color-white);
 
-    .article-preview__headline,
-    .topic-featured-article__headline {
-        &,
-        & a {
-            color: $color-zeus-black;
+    @include theme-main-menu($color-mystic-maroon, $color-dogwood-rose);
 
-            &:hover {
-                color: $color-hibiscus-pink;
-            }
-        }
-    }
+    @include theme-subnav($color-mystic-maroon);
 
-    .article-pullquote,
-    .quote {
-        border-top-color: $color-light-plum;
-        border-bottom-color: $color-light-plum;
-    }
+    @include theme-banners($color-piggy-pink, inherit);
 
-    .button--filled,
-    .search-bar__submit,
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-        background: $color-light-plum;
-        background-color: $color-light-plum;
-        color: $color-soft-peach;
-    }
+    @include theme-call-out-boxes($color-wisp-pink, $color-mystic-maroon);
 
-    .newsletter-signup {
-        background-color: $color-soft-peach;
-        border-top: 2px solid $color-light-plum;
-    }
+    @include theme-bordered-elements($color-mystic-maroon);
 
+    @include theme-interviews(
+        transparentize($color-mystic-maroon, 0.7),
+        transparentize($color-mystic-maroon, 0.3),
+        transparentize($color-dogwood-rose, 0.9),
+        transparentize($color-dogwood-rose, 0.6));
 
-    .main-menu {
-
-        &__hoverable:hover:before {
-            background-color: $color-light-plum;
-        }
-
-        &__section-title a {
-            color: inherit;
-        }
-
-        &__footer-link a {
-            color: $color-abbey-gray;
-
-            @include on-event(false) {
-                color: $color-hibiscus-pink;
-            }
-        }
-        &__section-link {
-            @include on-event(true) {
-                color: $color-abbey-gray;
-            }
-        }
-
-    }
 }

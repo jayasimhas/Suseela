@@ -9,7 +9,7 @@ var InformaTypeaheadController = function($scope, getCompaniesService) {
 
             var companies = [];
             companies = $.map(response.data, function(value, index) {
-                return value.CompanyName;
+                return value.companyName;
             });
 
             $scope.companies = companies;

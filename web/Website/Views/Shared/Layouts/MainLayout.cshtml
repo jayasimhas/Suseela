@@ -26,7 +26,7 @@
     @Html.Sitecore().Placeholder("head")
 
 </head>
-<body>
+<body @Model.BodyCssClass>
     <script type="text/javascript">
     /* * *
     ANALYTICS DATA
@@ -64,6 +64,7 @@
             @{  Html.RenderPartial("Company/_RegisterMessage", Model.CompanyRegisterMessage); }
 
             <div class="main__content">
+                @Html.Sitecore().Placeholder("top-main-content")
                 @Html.Sitecore().Placeholder("main-content")
             </div>
 

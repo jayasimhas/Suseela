@@ -55,7 +55,8 @@ section: Home/Topic Page Components
             margin-right: 3rem;
             padding: 1rem 0 0.75rem;
 
-            &.is-active {
+            &.is-active,
+            &:hover {
                 border-bottom: 4px solid $color-tree-poppy-orange;
             }
         }

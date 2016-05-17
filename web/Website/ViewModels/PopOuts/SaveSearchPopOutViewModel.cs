@@ -17,6 +17,7 @@ namespace Informa.Web.ViewModels.PopOuts
 			EmailAlertLabelText = textTranslator.Translate("Search.SavePopout.EmailAlertLabelText");
 			ButtonLoggedInText = textTranslator.Translate("Search.SavePopout.ButtonLoggedInText");
 			ButtonLoggedOutText = textTranslator.Translate("Search.SavePopout.ButtonLoggedOutText");
+			TitleFieldRequiredText = textTranslator.Translate("Search.SavePopout.TitleFieldRequiredText");
 		}
 
 		public bool IsAuthenticated { get; set; }
@@ -27,5 +28,6 @@ namespace Informa.Web.ViewModels.PopOuts
 		public string EmailAlertLabelText { get; set; }
 		public string ButtonLoggedInText { get; set; }
 		public string ButtonLoggedOutText { get; set; }
+		public string TitleFieldRequiredText { get; set; }
 	}
 }

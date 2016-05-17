@@ -8,5 +8,6 @@ namespace Informa.Library.Purchase
 		string Publication { get; }
 		string Title { get; }
 		string Url { get; }
+		bool IsExternalUrl { get; }
 	}
 }

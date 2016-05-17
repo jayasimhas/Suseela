@@ -11,6 +11,7 @@ import ResetPasswordController from './reset-password-controller';
 import RegisterController from './register-controller';
 import FormController from './form-controller';
 import SortableTableController from './sortable-table-controller';
+import LightboxModalController from './lightbox-modal-controller';
 import { toggleIcons } from './toggle-icons';
 import { analyticsEvent } from './analytics-controller';
 
@@ -83,6 +84,7 @@ $(document).ready(function() {
         Bound explicitly to `window` for easier access by Angular.
     * * */
     window.indexPopOuts = function() {
+
         window.controlPopOuts = new PopOutController('.js-pop-out-trigger');
 
         window.controlPopOuts.customize({
@@ -284,13 +286,68 @@ $(document).ready(function() {
 
     var saveSearchController = new FormController({
         observe: '.form-save-search',
-        successCallback: function() {
+        successCallback: function(form, context, event) {
             toggleIcons('.js-save-search');
+            // If there's a stashed search, remove it.
+            Cookies.remove('saveStashedSearch');
+            window.controlPopOuts.closePopOut($(form).closest('.pop-out'));
+            $('.js-saved-search-success-alert')
+                .addClass('is-active')
+                .on('animationend', function(e) {
+                    $(e.target).removeClass('is-active');
+                }).addClass('a-fade-alert');
         },
-        failureCallback: function() {
-            
+        beforeRequest: function(form) {
+            if(!$(form).find('.js-save-search-title').val().trim()) {
+                $('.js-form-error-EmptyTitle').show();
+            }
         }
     });
+
+    var saveSearchLoginController = new FormController({
+        observe: '.form-save-search-login',
+        successCallback: function(form, context, event) {
+            Cookies.set('saveStashedSearch', {
+                'Title': $('.js-save-search-title').val(),
+                'Url': $('.js-save-search-url').val(),
+                'AlertEnabled': $('#AlertEnabled').prop('checked')
+            });
+
+            var loginAnalytics =  {
+                event_name: 'login',
+                login_state: 'successful',
+                userName: '"' + $(form).find('input[name=username]').val() + '"'
+            };
+
+            analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
+
+            // If Angular, need location.reload to force page refresh
+            if(typeof angular !== 'undefined') {
+                angular.element($('.search-results')[0]).controller().forceRefresh();
+            }
+        }
+    });
+
+    var toggleSavedSearchAlertController = new FormController({
+        observe: '.form-toggle-saved-search-alert'
+    });
+
+    $('.js-saved-search-alert-toggle').on('click', function(e) {
+        $(e.target.form).find('button[type=submit]').click();
+    });
+
+    // On page load, check for any stashed searches that need to be saved
+    var saveStashedSearch = Cookies.getJSON('saveStashedSearch');
+    if(saveStashedSearch) {
+
+        // Set `Save Search` values from stashed search data
+        $('.js-save-search-title').val(saveStashedSearch['Title']);
+        $('.js-save-search-url').val(saveStashedSearch['Url']);
+        $('#AlertEnabled').prop('checked', saveStashedSearch['AlertEnabled']);
+
+        // Save the stashed search
+        $('.form-save-search').find('button[type=submit]').click();
+    }
 
     var userPreRegistrationController = new FormController({
         observe: '.form-pre-registration',
@@ -384,6 +441,10 @@ $(document).ready(function() {
         observe: '.form-remove-saved-document',
         successCallback: function(form, context, evt) {
             $(evt.target).closest('tr').remove();
+            if($('.js-sortable-table tbody')[0].rows.length === 0) {
+                $('.js-sortable-table').remove();
+                $('.js-no-articles').show();
+            }
         }
     });
 
@@ -393,7 +454,7 @@ $(document).ready(function() {
             $(evt.target).closest('tr').remove();
         }
     });
-    
+
     svg4everybody();
 
     /* * *
@@ -475,7 +536,7 @@ $(document).ready(function() {
 
         var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
         dismissedBanners[thisBanner.data('banner-id')] = true;
-        Cookies.set('dismissedBanners', dismissedBanners);
+        Cookies.set('dismissedBanners', dismissedBanners, {expires: 3650 } );
     });
 
     // For each article table, clone and append "view full table" markup
@@ -520,7 +581,7 @@ $(document).ready(function() {
 
     // Display the Forgot Password block when "forgot your password" is clicked
     $('.js-show-forgot-password').on('click', function toggleForgotPass() {
-        $('.pop-out__sign-in-forgot-password').toggleClass('is-active');
+        $('.js-reset-password-container').toggleClass('is-active');
     });
 
     // Global dismiss button for pop-outs
@@ -705,7 +766,6 @@ $(document).ready(function() {
 
         analyticsEvent( $.extend(analytics_data, preferencesData) );
 
-
     });
 
     newsletterOptins();
@@ -721,6 +781,11 @@ $(document).ready(function() {
 
     var sortTheTables = new SortableTableController();
 
+    window.lightboxController = new LightboxModalController();
+
+    $('.js-toggle-list').on('click', function(e) {
+        $(e.target).closest('.js-togglable-list-wrapper').toggleClass('is-active');
+    });
 
     $('.click-utag').click(function (e) {
         analyticsEvent( $.extend(analytics_data, $(this).data('info')) );
@@ -737,6 +802,23 @@ $(document).ready(function() {
             $('#txtShippingPostalCode').val($('#txtBillingPostalCode').val());
         }
     });
+
+
+    // Account - Email Preferences toggler
+    $('.js-account-email-toggle-all').on('click', function(e) {
+        $('.js-update-email-prefs').attr('disabled', null);
+        if($(e.target).prop('checked')) {
+            $('.js-account-email-checkbox').prop('checked', null);
+        }
+    });
+
+    $('.js-account-email-checkbox').on('click', function(e) {
+        $('.js-update-email-prefs').attr('disabled', null);
+        if($(e.target).prop('checked')) {
+            $('.js-account-email-toggle-all').prop('checked', null);
+        }
+    });
+
     // Twitter sharing JS
     window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],
         w=window.twttr||{};

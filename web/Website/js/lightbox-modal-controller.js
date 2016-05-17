@@ -1,0 +1,58 @@
+/* global angular */
+function lightboxModalController() {
+
+    this.showLightbox = function(lightbox) {
+        // Freeze the page and add the dark overlay
+        $('body')
+            .addClass('lightboxed')
+            .append('<div class="lightbox-modal__backdrop"></div>');
+
+        // Find the specific modal for this trigger, and the associated form
+        var targetModal = $(lightbox).data('lightbox-modal');
+        var successForm = $(lightbox).closest('.' + $(lightbox).data('lightbox-modal-success-target'));
+
+        // Show the modal, add an on-click listener for the "success" button
+        $('.' + targetModal)
+            .show()
+            .find('.js-lightbox-modal-submit')
+            .on('click', function() {
+
+                successForm.find('button[type=submit]').click();
+                closeLightboxModal();
+                
+            });
+    };
+
+    var showLightbox = this.showLightbox;
+
+    this.buildLightboxes = function() {
+        $('.js-lightbox-modal-trigger').off().on('click', function(e) {
+
+            if (e.target !== this) {
+                this.click();
+                return;
+            }
+
+            showLightbox(e.target);
+
+            // Don't submit any forms for real.
+            return false;
+        });
+    };
+
+    // When the Dismiss button is clicked...
+    $('.js-close-lightbox-modal').on('click', function(e) {
+        closeLightboxModal();
+    });
+
+    var closeLightboxModal = function() {
+        $('body').removeClass('lightboxed');
+        $('.lightbox-modal__backdrop').remove();
+        $('.lightbox-modal').hide();
+    };
+
+    this.buildLightboxes();
+
+}
+
+export default lightboxModalController;

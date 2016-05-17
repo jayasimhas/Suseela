@@ -73,11 +73,30 @@ namespace Informa.Library.Search.Extensions
 			return source.Filter(predicate);
         }
 
-        public static IQueryable<T> FilteryByLatestVersionAndCurrentLanguage<T>(this IQueryable<T> source)
+        public static IQueryable<T> ApplyDefaultFilters<T>(this IQueryable<T> source)
                         where T : ArticleSearchResultItem
         {
-            source = source?.Filter(x => x.IsLatestVersion).Filter(x => x.Language == Sitecore.Context.Language.Name);
-            return source;
+			return source?
+				.FilteryByLatestVersion()
+				.FilteryByCurrentLanguage();
+		}
+
+		public static IQueryable<T> FilteryByLatestVersion<T>(this IQueryable<T> source)
+						where T : ArticleSearchResultItem
+		{
+			return source?.Filter(x => x.IsLatestVersion);
+		}
+
+		public static IQueryable<T> FilteryByCurrentLanguage<T>(this IQueryable<T> source)
+						where T : SearchResultItem
+		{
+			return source?.Filter(x => x.Language == Sitecore.Context.Language.Name);
+		}
+
+		public static IQueryable<T> FilteryByCurrentSite<T>(this IQueryable<T> source)
+						where T : SearchResultItem
+		{
+			return source?.Filter(x => x.Sites.Contains(Sitecore.Context.Site.Name.ToLowerInvariant()));
 		}
 	}
 }

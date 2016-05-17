@@ -40,8 +40,6 @@ function popOutController(triggerElm) {
 		// Reset all z-indexes so new pop-outs are stacked on top properly
 		$('.pop-out').removeClass('is-active').css("z-index", "");
 		$('.js-pop-out-trigger').css("z-index", "");
-
-		state.activeElm = null;
 	};
 
 	// PUBLIC
@@ -62,18 +60,15 @@ function popOutController(triggerElm) {
 			poParent.data('bookmark-id', null);
 		}
 
-		// If the current pop-out is the same as the active pop-out...
-		if(poParent[0] === state.activeElm) {
-			// ...close it
-			this.closePopOut();
-		} else {
-			// Close all open pop-outs
-			this.closePopOut();
+		// Close all pop-outs
+		this.closePopOut();
 
-			// ...update the controller state and open it
+		if(poParent[0] !== state.activeElm) {
+			// Update the controller state and open it
 			state.activeElm = poParent[0];
-
 			updatePosition();
+		} else {
+			state.activeElm = null;
 		}
 
 	};

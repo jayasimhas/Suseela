@@ -33,6 +33,46 @@ namespace Informa.Library.Rss.ItemGenerators
 
             return titleText;
         }
+
+        /// <summary>
+        ///     Add any authors to the rendered item
+        /// </summary>
+        /// <param name="syndicationItem"></param>
+        /// <param name="article"></param>
+        /// <returns></returns>
+        public SyndicationItem AddAuthorsToFeedItem(SyndicationItem syndicationItem, IArticle article)
+        {
+            if (article.Authors != null)
+            {
+                if (article.Authors.Any())
+                {
+                    foreach (var authorItem in article.Authors)
+                    {
+                        var authorElement = new XElement(RssConstants.AtomNamespace + "author");
+
+                        var authorName = authorItem.First_Name + " " + authorItem.Last_Name;
+                        if (string.IsNullOrEmpty(authorName))
+                        {
+                            authorName = authorItem._Name;
+                        }
+
+                        var authorElementName = new XElement(RssConstants.AtomNamespace + "name");
+                        authorElementName.Value = HttpUtility.HtmlEncode(authorName);
+
+                        var authorElementEmail = new XElement(RssConstants.AtomNamespace + "email");
+                        authorElementEmail.Value = HttpUtility.HtmlEncode(authorItem.Email_Address);
+
+                        authorElement.Add(authorElementName);
+                        authorElement.Add(authorElementEmail);
+
+                        syndicationItem.ElementExtensions.Add(authorElement.CreateReader());
+                    }
+                }
+            }
+
+            return syndicationItem;
+        }
+
         public SyndicationItem AddPubDateToFeedItem(SyndicationItem syndicationItem, IArticle article)
         {
             if (!string.IsNullOrEmpty(article.Article_Number))

@@ -20,58 +20,86 @@ namespace Informa.Library.CustomSitecore.Pipelines
 
 			routes.MapHttpRoute("defaultApi", "api/{controller}/{id}",
 				new
+				{
+					id = RouteParameter.Optional
+				});
+
+			routes.MapHttpRoute(
+				"scArticleNumberApi",
+				"SC{articleNumber}",
+				new {controller = "Article", action = "Get", prefix = Constants.ScripRootNodeIntials},
+				new {articleNumber = @"\d+"}
+				);
+
+			routes.MapHttpRoute(
+				"ivArticleNumberApi",
+				"IV{articleNumber}",
+				new {controller = "Article", action = "Get", prefix = Constants.InVivoRootNodeIntials},
+				new {articleNumber = @"\d+"}
+				);
+
+			routes.MapHttpRoute(
+				"rsArticleNumberApi",
+				"RS{articleNumber}",
+				new {controller = "Article", action = "Get", prefix = Constants.RoseSheetNodeIntials},
+				new {articleNumber = @"\d+"}
+				);
+
+			routes.MapHttpRoute(
+				"psArticleNumberApi",
+				"PS{articleNumber}",
+				new {controller = "Article", action = "Get", prefix = Constants.PinkSheetRootNodeIntials},
+				new {articleNumber = @"\d+"}
+				);
+
+			routes.MapHttpRoute(
+				"mtArticleNumberApi",
+				"MT{articleNumber}",
+				new { controller = "Article", action = "Get", prefix = Constants.MedtechInsightRootNodeIntials },
+				new { articleNumber = @"\d+" }
+				);
+
+			routes.MapHttpRoute(
+								"articlePathApi",
+								"articles/{year}/{month}/{day}/{title}",
+								new { controller = "Article", action = "Get" }
+						);
+
+			routes.MapHttpRoute(
+				 "articleEScenicApi",
+				 "legacyscrip/{title}-{escenicID}",
+				 new { controller = "Article", action = "Get" },
+				 new { escenicID = @"\d+" }
+		 );
+
+			routes.MapHttpRoute(
+					"articleTaxonomyAndEScenicApi",
+					"legacyscrip/{taxonomy}/{title}-{escenicID}",
+					new { controller = "Article", action = "Get" },
+					new { escenicID = @"\d+" }
+			);
+
+			routes.MapHttpRoute(
+					"sitemapXml",
+					"sitemap.xml",
+					new { controller = "Sitemap", action = "SitemapXml" }
+			);
+
+			routes.MapHttpRoute(
+					"sitemapNewsXml",
+					"sitemap-news.xml",
+					new { controller = "Sitemap", action = "SitemapXml" }
+			);
+
+			routes.MapHttpRoute(
+					"robotsText",
+					"robots.txt",
+					new { controller = "RobotsText", action = "RobotsText" }
+			);
+
+			var jsonFormatter = new JsonMediaTypeFormatter
 			{
-				id = RouteParameter.Optional
-			});
-
-            routes.MapHttpRoute(
-                "articleNumberApi", 
-                "SC{articleNumber}",
-                new { controller = "Article", action ="Get", prefix = Constants.ScripRootNodeIntials },
-                new { articleNumber = @"\d+" }
-            );
-
-            routes.MapHttpRoute(
-                "articlePathApi",
-                "articles/{year}/{month}/{day}/{title}",
-                new { controller = "Article", action = "Get" }
-            );
-
-            routes.MapHttpRoute(
-               "articleEScenicApi",
-               "{title}-{escenicID}",
-               new { controller = "Article", action = "Get" },
-               new { escenicID = @"\d+" }
-           );
-
-            routes.MapHttpRoute(
-                "articleTaxonomyAndEScenicApi",
-                "{taxonomy}/{title}-{escenicID}",
-                new { controller = "Article", action = "Get" },
-                new { escenicID = @"\d+" }
-            );
-
-            routes.MapHttpRoute(
-                "sitemapXml",
-                "sitemap.xml",
-                new { controller = "Sitemap", action = "SitemapXml" }
-            );
-
-            routes.MapHttpRoute(
-                "sitemapNewsXml",
-                "sitemap-news.xml",
-                new { controller = "Sitemap", action = "SitemapXml" }
-            );
-
-            routes.MapHttpRoute(
-                "robotsText",
-                "robots.txt",
-                new { controller = "RobotsText", action = "RobotsText" }
-            );
-
-            var jsonFormatter = new JsonMediaTypeFormatter
-			{
-				SerializerSettings = { ContractResolver = new CamelCasePropertyNamesContractResolver()},
+				SerializerSettings = { ContractResolver = new CamelCasePropertyNamesContractResolver() },
 			};
 			jsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 			configuration.Formatters.Insert(0, jsonFormatter);

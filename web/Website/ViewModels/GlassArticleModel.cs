@@ -30,17 +30,17 @@ namespace Informa.Web.ViewModels
 		public readonly ICallToActionViewModel CallToActionViewModel;
 
 		public GlassArticleModel(
-				ISiteRootContext siterootContext,
-				IArticleListItemModelFactory articleListableFactory,
-				ITextTranslator textTranslator,
-				IArticleSearch searcher,
-				ISitecoreContext context,
-				IArticleComponentFactory articleComponentFactory,
-				IEntitledProductContext entitledProductContext,
-				IAuthenticatedUserContext authenticatedUserContext,
-	IIsSavedDocumentContext isSavedDocuementContext,
-	ICallToActionViewModel callToActionViewModel)
-	: base(entitledProductContext)
+			ISiteRootContext siterootContext,
+			IArticleListItemModelFactory articleListableFactory,
+			ITextTranslator textTranslator,
+			IArticleSearch searcher,
+			ISitecoreContext context,
+			IArticleComponentFactory articleComponentFactory,
+			IIsEntitledProducItemContext isEntitledProductItemContext,
+			IAuthenticatedUserContext authenticatedUserContext,
+			IIsSavedDocumentContext isSavedDocuementContext,
+			ICallToActionViewModel callToActionViewModel)
+			: base(isEntitledProductItemContext)
 		{
 			SiterootContext = siterootContext;
 			ArticleListableFactory = articleListableFactory;
@@ -128,8 +128,6 @@ namespace Informa.Web.ViewModels
 				return "xls";
 			return "pdf";
 		}
-
-		public override bool IsFree => GlassModel.Free_Article;
 
 		#endregion
 

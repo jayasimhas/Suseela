@@ -1298,6 +1298,9 @@
     <Content Include="Views\Shared\PopOuts\SaveSearch.cshtml" />
     <Content Include="Views\Shared\Layouts\EmailLayout.cshtml" />
     <Content Include="Views\EmailComponents\FeaturedContent.cshtml" />
+    <None Include="Web.config.template">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Views\EmailComponents\FeaturedArticle.cshtml" />
     <Content Include="Views\EmailComponents\SectionHeader.cshtml" />
     <None Include="Web.config.template">
