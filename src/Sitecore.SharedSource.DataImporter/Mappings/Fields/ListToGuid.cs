@@ -123,20 +123,27 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 						var pmbiTaxonomyItemName = StringUtility.TrimInvalidChars(pmbiItem?.DisplayName);
 						if (string.IsNullOrWhiteSpace(pmbiTaxonomyItemName))
 						{
-							map.Logger.Log(newItem.Paths.FullPath, $"Couldn't find {FieldName} in pmbi", ProcessStatus.FieldError, NewItemField, importValue);
+							map.Logger.Log(newItem.Paths.FullPath, $"Couldn't find {FieldName} in pmbi", ProcessStatus.FieldError, NewItemField, str);
 							continue;
 						}
 
 						// If we are mapping Industry field, set pmbiTaxonomyItemName to main industry name
 						if (FieldName == "Industries")
 						{
-							pmbiTaxonomyItemName = pmbiItem.Axes
+							var ancestor = pmbiItem?.Axes
 								.GetAncestors()
-								.FirstOrDefault(i => mappingDictionary.ContainsKey(i.Fields["Item Name"].Value))
-								?.DisplayName;
-						}
+								.FirstOrDefault(i => mappingDictionary.ContainsKey(i.Name));
 
-						if (pmbiTaxonomyItemName != null && !mapping.ContainsKey(pmbiTaxonomyItemName))
+							pmbiTaxonomyItemName = ancestor == null ? pmbiItem?.DisplayName : ancestor.DisplayName;
+
+							if (pmbiTaxonomyItemName == null)
+							{
+								map.Logger.Log(newItem.Paths.FullPath, "Couldn't find main industry", ProcessStatus.FieldError, NewItemField, str);
+								continue;
+							}
+						}
+						
+						if (!mapping.ContainsKey(pmbiTaxonomyItemName))
 						{
 							map.Logger.Log(newItem.Paths.FullPath, "Couldn't find correct mapping", ProcessStatus.FieldError, NewItemField, $"{str}--{pmbiTaxonomyItemName}");
 							continue;
@@ -167,7 +174,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 						}
 
 						// Avoid adding duplicate GUID
-						if (!field.Value.Contains(val))
+						if (!field.Value.Contains(val) && !transformedValue.Contains(val))
 						{
 							if (!SingleValue)
 							{
