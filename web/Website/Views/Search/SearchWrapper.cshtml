@@ -36,10 +36,7 @@
                         <input name="Title" id="Title" type="hidden" value="{{title}}">
 
                         <span class="pop-out__trigger js-save-search"
-                            ng-class="{
-                                'js-pop-out-trigger': !savedSearch.isSaved,
-                                'js-lightbox-modal-trigger': savedSearch.isSaved
-                            }"
+                            ng-class="savedSearch.whichTrigger()"
                             ng-click="savedSearch.lightboxCheck($event)"
                             data-pop-out-type="save-search"
                             data-lightbox-modal="js-remove-search-modal"
@@ -48,11 +45,11 @@
                             data-lightbox-modal-success-target="form-remove-saved-search">
                             <span class="action-flag__label">Save Search / Set Alert</span>
 
-                            <svg ng-class="{'is-visible': !savedSearch.isSaved}" class="action-flag__icon toggleable-icon">
+                            <svg ng-class="savedSearch.whichIcon(false)" class="action-flag__icon toggleable-icon">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#save"></use>
                     	    </svg>
 
-                            <svg ng-class="{'is-visible': savedSearch.isSaved}" class="action-flag__icon toggleable-icon">
+                            <svg ng-class="savedSearch.whichIcon(true)" class="action-flag__icon toggleable-icon">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#saved"></use>
                     	    </svg>
                         </span>

@@ -8,8 +8,6 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
     vm.searchService = searchService;
     vm.isSaved = false;
 
-    vm.testValue = savedSearchService.testVal;
-
     $scope.$watch(function () {
         return searchService.getPager();
     }, function () {
@@ -19,6 +17,7 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
             savedSearchService.isSaved().then(function (response) {
                 vm.isSaved = response.data;
             });
+            window.indexPopOuts();
         }
     }, true);
 
@@ -36,9 +35,22 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
     };
 
     vm.lightboxCheck = function(e) {
+        console.log(vm.isSaved);
         if(vm.isSaved) {
             window.lightboxController.showLightbox($(e.target).closest('.js-lightbox-modal-trigger'));
         }
+    };
+
+    vm.whichIcon = function(isSaved) {
+        if(isSaved) {
+            return vm.isSaved ? 'is-visible' : null;
+        } else {
+            return vm.isSaved ? null : 'is-visible';
+        }
+    };
+
+    vm.whichTrigger = function() {
+        return vm.isSaved ? 'js-lightbox-modal-trigger' : 'js-pop-out-trigger';
     };
 
 };
