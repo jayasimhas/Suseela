@@ -120,7 +120,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 						// Get taxonomy name from pmbi database
 						var pmbiItem = Database.GetDatabase("pmbiContent").GetItem(new ID(str));
-						var pmbiTaxonomyItemName = pmbiItem?.DisplayName;
+						var pmbiTaxonomyItemName = StringUtility.TrimInvalidChars(pmbiItem?.DisplayName);
 						if (string.IsNullOrWhiteSpace(pmbiTaxonomyItemName))
 						{
 							map.Logger.Log(newItem.Paths.FullPath, $"Couldn't find {FieldName} in pmbi", ProcessStatus.FieldError, NewItemField, importValue);
@@ -138,7 +138,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 						if (pmbiTaxonomyItemName != null && !mapping.ContainsKey(pmbiTaxonomyItemName))
 						{
-							map.Logger.Log(newItem.Paths.FullPath, "Couldn't find correct mapping", ProcessStatus.FieldError, NewItemField, $"{importValue}--{pmbiTaxonomyItemName}");
+							map.Logger.Log(newItem.Paths.FullPath, "Couldn't find correct mapping", ProcessStatus.FieldError, NewItemField, $"{str}--{pmbiTaxonomyItemName}");
 							continue;
 						}
 
@@ -162,7 +162,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 						if (string.IsNullOrWhiteSpace(val))
 						{
-							map.Logger.Log(newItem.Paths.FullPath, $"Couldn't find {FieldName} in target DB", ProcessStatus.FieldError, NewItemField, $"{importValue}->{mappedValue}");
+							map.Logger.Log(newItem.Paths.FullPath, $"Couldn't find {FieldName} in target DB", ProcessStatus.FieldError, NewItemField, $"{str}->{mappedValue}");
 							continue;
 						}
 

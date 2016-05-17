@@ -78,8 +78,9 @@ namespace Sitecore.SharedSource.DataImporter.Utility
 
 	    public static string TrimInvalidChars(string val)
 	    {
-		    var regex = "\\r|\\n|\\t|\\s/g";
-		    return Regex.Replace(val, regex, "");
+		    var regex = "\\r|\\n|\\t|\\s{0,}$";
+		    var str = Regex.Replace(val, regex, "");
+		    return str.Replace("  ", " ");
 	    }
     }
 }
