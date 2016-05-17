@@ -15121,6 +15121,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.Components
+{
+
+
+ 	/// <summary>
+	/// ISection_Header Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Emails/Components/Section Header</para>	
+	/// <para>ID: c027a577-343a-4daa-b7eb-9a7ccf3fc09d</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISection_HeaderConstants.TemplateIdString)]
+	public partial interface ISection_Header : IGlassBase 
+	{
+								/// <summary>
+					/// The Section Header Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: fea4650d-14a5-443a-bed9-0905d64cb9b8</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISection_HeaderConstants.Section_Header_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Section_Header_Title  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ISection_Header Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Emails/Components/Section Header</para>	
+		/// <para>ID: c027a577-343a-4daa-b7eb-9a7ccf3fc09d</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ISection_Header__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Section Header Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: fea4650d-14a5-443a-bed9-0905d64cb9b8</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISection_HeaderConstants.Section_Header_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Section_Header_Title  {get; set;}
+						}
+	
+	public static partial class ISection_HeaderConstants{
+
+			public const string TemplateIdString = "c027a577-343a-4daa-b7eb-9a7ccf3fc09d";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Section Header";
+
+					
+			public static readonly ID Section_Header_TitleFieldId = new ID("fea4650d-14a5-443a-bed9-0905d64cb9b8");
+			public const string Section_Header_TitleFieldName = "Section Header Title";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Mappings.Fields
 {
 
