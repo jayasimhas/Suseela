@@ -11,6 +11,15 @@ $(document).ready(function () {
 		if(this.selectedIndex === 1 && currentTheme !== 'pink-sheet') {
 			window.location.href = 'http://' + location.host + '?theme=pink-sheet';
 		}
+		if(this.selectedIndex === 2 && currentTheme !== 'rose-sheet') {
+			window.location.href = 'http://' + location.host + '?theme=rose-sheet';
+		}
+		if(this.selectedIndex === 3 && currentTheme !== 'medtech') {
+			window.location.href = 'http://' + location.host + '?theme=medtech';
+		}
+		if(this.selectedIndex === 4 && currentTheme !== 'invivo') {
+			window.location.href = 'http://' + location.host + '?theme=invivo';
+		}
 	});
 
 	$('pre code[class^="lang"]').each(function(code, index, array) {
