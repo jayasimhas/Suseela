@@ -1,0 +1,16 @@
+﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.EmailAdvertisementViewModel>
+
+@Model.AdHeader
+
+@if (IsInEditingMode)
+{
+    <!-- this is just for easy experience editing, doesn't need to be email-html safe -->
+    <div>Slot Id: @Editable(Model.GlassModel, m => m.Slot_ID) </div>
+    <div>Zone: @Editable(Model.GlassModel, m => m.Zone) </div>
+}
+else
+{
+    <!-- throw these into javascript, I think? -->
+    @Model.GlassModel.Zone
+    @Model.GlassModel.Slot_ID
+}

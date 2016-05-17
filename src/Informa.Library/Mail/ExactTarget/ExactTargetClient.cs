@@ -9,7 +9,6 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
-using Sitecore.Mvc.Extensions;
 
 namespace Informa.Library.Mail.ExactTarget
 {
@@ -81,7 +80,7 @@ namespace Informa.Library.Mail.ExactTarget
         private void UpdateSitecoreWithEmailId(IExactTarget_Email etEmail, ExactTargetResponse response) =>
             _dependencies.SitecoreSecurityWrapper.SecurityDisabledAction(
                 () => _dependencies.SitecoreServiceMaster.Save(
-                    etEmail.InvokeAction(
+                    etEmail.Alter(
                         email => email.Exact_Target_External_Key = response.ExactTargetEmailId)));
 
         public FuelSDK.ET_Email PopulateEtModel(IExactTarget_Email emailItem)
