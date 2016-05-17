@@ -1,4 +1,7 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.FeaturedArticleViewModel>
+@{
+    var mediaTypeIconSrc = Model.Article.Media_Type?.Media_Type_Icon.Src;
+}
 
 <!-- this doesn't have to be a div, just demonstarting -->
 <!-- also feel free to change the "sponsored" class name -->
@@ -16,8 +19,11 @@
 @Model.Article.Content_Type
 <br />
 @Model.Article.Title
-<br />
-@(Model.Article.Media_Type?.Media_Type_Icon)
+<br/>
+@if (!string.IsNullOrEmpty(mediaTypeIconSrc))
+{
+    <img src="@mediaTypeIconSrc"/>
+}
 <br />
 @Model.Byline
 <br />
