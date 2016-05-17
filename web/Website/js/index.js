@@ -250,7 +250,18 @@ $(document).ready(function() {
         observe: '.form-reset-password',
         successCallback: function() {
             $('.form-reset-password').find('.alert-success').show();
-        
+            var isPassword = $(form-reset-password).data("is-password");
+            if( isPassword !==null && $ isPassword === "true")
+            {
+                analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
+            }
+        },
+        failureCallback: function() {
+            var isPassword = $(form-reset-password).data("is-password");
+            if( isPassword !==null && $ isPassword === "true")
+            {
+                analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
+            }
         }
 
     });
@@ -272,7 +283,17 @@ $(document).ready(function() {
             analyticsEvent( $.extend(analytics_data, { event_name: "form registration successful" }) );
         },
         failureCallback: function(form,response) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "form registration failure" }) );
+          
+            var errorMsg = $(".page-registration__error").text();
+            if (response.reasons && response.reasons.length > 0) {
+                errorMsg = "[";
+                for (var reason in response.reasons) {
+                    errorMsg += response.reasons[reason] + ",";
+                }
+                errorMsg = errorMsg.substring(0, errorMsg.length - 1);
+                errorMsg += "]";
+            }
+            analyticsEvent( $.extend(analytics_data, { event_name: "form registration failure", registraion_errors : errorMsg }) );
         }
     });
 
