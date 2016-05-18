@@ -36,8 +36,8 @@
                         <input name="Title" id="Title" type="hidden" value="{{title}}">
 
                         <span class="pop-out__trigger js-save-search"
-                            ng-class="savedSearch.whichTrigger()"
-                            ng-click="savedSearch.lightboxCheck($event)"
+                            ng-class="{ 'js-lightbox-modal-trigger' : searchIsSaved, 'js-pop-out-trigger' : !searchIsSaved }"
+                            ng-click="savedSearch.showLightbox($event)"
                             data-pop-out-type="save-search"
                             data-lightbox-modal="js-remove-search-modal"
                             data-lightbox-modal-title="Remove Saved Search"
@@ -45,11 +45,11 @@
                             data-lightbox-modal-success-target="form-remove-saved-search">
                             <span class="action-flag__label">Save Search / Set Alert</span>
 
-                            <svg ng-class="savedSearch.whichIcon(false)" class="action-flag__icon toggleable-icon">
+                            <svg ng-class="{ 'is-visible' : !searchIsSaved }" class="action-flag__icon toggleable-icon">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#save"></use>
                     	    </svg>
 
-                            <svg ng-class="savedSearch.whichIcon(true)" class="action-flag__icon toggleable-icon">
+                            <svg ng-class="{ 'is-visible' : searchIsSaved }" class="action-flag__icon toggleable-icon">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#saved"></use>
                     	    </svg>
                         </span>
@@ -76,7 +76,7 @@
                             Remove Saved Search
                         </div>
                         <p>Are you sure you'd like to remove this saved search?</p>
-                        <button class="lightbox-modal__submit button--filled js-lightbox-modal-submit" ng-click="savedSearch.unsaveSearch()">Yes, I'm Sure</button>
+                        <button class="lightbox-modal__submit button--filled js-lightbox-modal-submit" ng-click="searchIsSaved = false">Yes, I'm Sure</button>
                     </div>
 
                     @Html.Sitecore().Rendering(Model.ItemReferences.EmailSearchPopOutRendering.ToString())

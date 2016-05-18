@@ -97,7 +97,7 @@
                     </label>
                 </div>
 
-                <button type="submit" class="pop-out__sign-in-submit button--filled" ng-click="savedSearch.saveSearch()">
+                <button type="submit" class="pop-out__sign-in-submit button--filled" ng-click="searchIsSaved = true">
                     @(Model.IsAuthenticated
                         ? @Html.Raw(Model.ButtonLoggedInText)
                         : @Html.Raw(Model.ButtonLoggedOutText))

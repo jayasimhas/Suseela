@@ -6,7 +6,7 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
     var vm = this;
 
     vm.searchService = searchService;
-    vm.isSaved = false;
+    $scope.searchIsSaved = false;
 
     $scope.$watch(function () {
         return searchService.getPager();
@@ -15,42 +15,19 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
         $scope.currentLocation = $location.url();
         if ($scope.isAuthenticated) {
             savedSearchService.isSaved().then(function (response) {
-                vm.isSaved = response.data;
+                $scope.searchIsSaved = response.data;
             });
-            window.indexPopOuts();
         }
     }, true);
 
-    vm.saveSearch = function() {
-        // Helps ng-class "know" the correct state of vm.isSaved
-        // When click events are triggered by vanilla JS, expressions don't
-        // always update as they should.
-        $timeout(function() {
-            vm.isSaved = true;
-        }, 500);
-    };
-
-    vm.unsaveSearch = function() {
-        vm.isSaved = false;
-    };
-
-    vm.lightboxCheck = function(e) {
-        console.log(vm.isSaved);
-        if(vm.isSaved) {
+    // Depending on how quickly Angular bootstraps, some lightbox trigger classes
+    // might not be added before the lightbox event listners are bound. This
+    // manually fires the Saved Search lightbox, in case the normal listener wasn't
+    // bound in time.
+    vm.showLightbox = function(e) {
+        if($scope.searchIsSaved) {
             window.lightboxController.showLightbox($(e.target).closest('.js-lightbox-modal-trigger'));
         }
-    };
-
-    vm.whichIcon = function(isSaved) {
-        if(isSaved) {
-            return vm.isSaved ? 'is-visible' : null;
-        } else {
-            return vm.isSaved ? null : 'is-visible';
-        }
-    };
-
-    vm.whichTrigger = function() {
-        return vm.isSaved ? 'js-lightbox-modal-trigger' : 'js-pop-out-trigger';
     };
 
 };
