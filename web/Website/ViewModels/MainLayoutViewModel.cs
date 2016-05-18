@@ -33,7 +33,6 @@ namespace Informa.Web.ViewModels
 		protected readonly ISitecoreService Service;
 		protected readonly IArticleSearch ArticleSearch;
 		protected readonly IUserProfileContext UserProfileContext;
-		protected readonly IEntitlementAccessContext EntitlementAccessLevelContext;
 		protected readonly IUserSubscriptionsContext UserSubscriptionsContext;
 		protected readonly IUserEntitlementsContext UserEntitlementsContext;
 		protected readonly IUserIpAddressContext UserIpAddressContext;
@@ -57,7 +56,6 @@ namespace Informa.Web.ViewModels
 			ITextTranslator textTranslator,
 			IUserCompanyContext userCompanyContext,
 			IUserProfileContext userProfileContext,
-			IEntitlementAccessContext entitlementAccessLevelContext,
 			IUserSubscriptionsContext userSubscriptionsContext,
 			IUserEntitlementsContext userEntitlementsContext,
 			IUserIpAddressContext userIpAddressContext,
@@ -80,7 +78,6 @@ namespace Informa.Web.ViewModels
 			TextTranslator = textTranslator;
 			UserCompanyContext = userCompanyContext;
 			UserProfileContext = userProfileContext;
-			EntitlementAccessLevelContext = entitlementAccessLevelContext;
 			UserSubscriptionsContext = userSubscriptionsContext;
 			UserEntitlementsContext = userEntitlementsContext;
 			UserIpAddressContext = userIpAddressContext;
@@ -181,15 +178,7 @@ namespace Informa.Web.ViewModels
 				return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
 			}
 		}
-		public string UserEntitlementStatus
-		{
-			get
-			{
-				//string allEntitlements = string.Join(",", UserEntitlementsContext.Entitlements.Select(a => $"'{EntitlementAccessLevelContext.Determine(a)}'"));
-				//return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
-				return string.Empty;
-			}
-		}
+		public string UserEntitlementStatus => IsEntitledProductItemContext.IsEntitled(Article) ? "entitled" : "unentitled";
 		public string SubscribedProducts
 		{
 			get
