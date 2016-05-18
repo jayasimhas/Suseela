@@ -14,9 +14,12 @@
             // This flag disables $log.debug() output
             //$logProvider.debugEnabled(false);
         }]).config(['$compileProvider', function ($compileProvider) {
-            // Disabled to increase performance
+            
             // https://docs.angularjs.org/api/ng/provider/$compileProvider#debugInfoEnabled
-            //$compileProvider.debugInfoEnabled(false);
+            // UNCOMMENT THE LINE BELOW IN PRODUCTION FOR PERFORMANCE GAINS
+
+            $compileProvider.debugInfoEnabled(false);
+
         }]);
 
     informaSearchApp.factory('viewHeadlinesStateService', function () {
