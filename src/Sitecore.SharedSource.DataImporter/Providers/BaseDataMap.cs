@@ -70,21 +70,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		#region IDataMap Fields
 
 		/// <summary>
-		/// Year of articles to import
-		/// </summary>
-		public string Year { get; set; }
-
-		/// <summary>
-		/// The start path to import from
-		/// </summary>
-		public string StartPath { get; set; }
-
-		/// <summary>
-		/// The template id of items that needs to import
-		/// </summary>
-		public string TemplateId { get; set; }
-
-		/// <summary>
 		/// the query used to retrieve the data
 		/// </summary>
 		public string Query { get; set; }
@@ -145,15 +130,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 			//get query
 			Query = ImportItem.GetItemField("Query", Logger);
-
-			// Get start path
-			StartPath = ImportItem.GetItemField("Start Path", Logger);
-
-			// Get template id
-			TemplateId = ImportItem.GetItemField("Template ID", Logger);
-
-			// Get year
-			Year = ImportItem.GetItemField("Year", Logger);
 
 			//get parent item
 			ImportToWhere = GetImportToWhereItem();

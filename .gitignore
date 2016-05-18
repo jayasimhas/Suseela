@@ -333,3 +333,4 @@ web/Website/App_Config/Include/UserDefined/ScheduledPublishing.config
 web/Website/sitecore modules/Shell/Data Import/logs/*
 
 web/Website/App_Config/Include/ZZ.UserDefined/Import.config
+web/Website/App_Config/Include/zzzMustBeLast/Import.config

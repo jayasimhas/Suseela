@@ -22,6 +22,21 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 	{
 		public string ArticleNumberPrefix { get; set; }
 		public int ArticleNumber { get; set; }
+		
+		/// <summary>
+		/// Year of articles to import
+		/// </summary>
+		public string Year { get; set; }
+
+		/// <summary>
+		/// The start path to import from
+		/// </summary>
+		public string StartPath { get; set; }
+
+		/// <summary>
+		/// The template id of items that needs to import
+		/// </summary>
+		public string TemplateId { get; set; }
 
 		private const string LastArticleNumber = "Last Article Number";
 		private const string ArticleDate = "Article Date";
@@ -53,6 +68,17 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		};
 		public PmbiDataMap(Database db, string connectionString, Item importItem, ILogger l) : base(db, connectionString, importItem, l)
 		{
+
+			// Get start path
+			StartPath = ImportItem.GetItemField("Start Path", Logger);
+
+			// Get template id
+			TemplateId = ImportItem.GetItemField("Template ID", Logger);
+
+			// Get year
+			Year = ImportItem.GetItemField("Year", Logger);
+
+
 			ArticleNumberPrefix = importItem.Fields[ArticleNumberPrefixStr].Value;
 			var val = importItem.Fields[LastArticleNumber].Value;
 			if (string.IsNullOrWhiteSpace(val))
@@ -176,6 +202,48 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 					TransferMediaItem(sourceItem, destinationItem, defaultOptions);
 				}
 			}
+		}
+
+		public override Item GetParentNode(object importRow, string newItemName)
+		{
+			Item thisParent = ImportToWhere;
+			if (FolderByDate)
+			{
+				DateTime date = DateTime.Now;
+				string dateValue = string.Empty;
+
+				try
+				{
+					dateValue = GetFieldValue(importRow, DateField);
+				}
+				catch (ArgumentException ex)
+				{
+					Logger.Log(newItemName, (string.IsNullOrEmpty(DateField))
+						? "the date name field is empty"
+						: "the field name does not exist in the import row", ProcessStatus.DateParseError, DateField);
+				}
+
+				if (string.IsNullOrEmpty(dateValue))
+				{
+					string autFile = GetFieldValue(importRow, "ARTICLEID");
+					Logger.Log(newItemName, "Couldn't folder by date. The date value was empty", ProcessStatus.DateParseError, "Missing Autonomy Article ID", autFile);
+					return thisParent;
+				}
+
+				date = DateUtil.ParseDateTime(dateValue, DateTime.MinValue);
+				if (date == DateTime.MinValue)
+				{
+					Logger.Log(newItemName, "date could not be parsed", ProcessStatus.DateParseError, DateField, dateValue);
+					return thisParent;
+				}
+
+				thisParent = GetDateParentNode(ImportToWhere, date, FolderTemplate);
+			}
+			else if (FolderByName)
+			{
+				thisParent = GetNameParentNode(ImportToWhere, newItemName.Substring(0, 1), FolderTemplate);
+			}
+			return thisParent;
 		}
 
 		#region Utility Methods
