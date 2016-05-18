@@ -174,7 +174,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		{
 			if (!nodeName.Equals("THERAPY_SECTOR")
 					&& !nodeName.Equals("TREATABLE_CONDITION")
-					&& !nodeName.Equals("COMPANY"))
+					&& !nodeName.Equals("COMPANY")
+					&& !nodeName.Equals("COUNTRY"))
 			{
 				XmlNode xn = xd.SelectSingleNode($"//{nodeName}");
 				return (xn != null) ? xn.InnerText : string.Empty;
