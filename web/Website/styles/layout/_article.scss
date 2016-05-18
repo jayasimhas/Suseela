@@ -1,10 +1,8 @@
-    
-	.article-body-content p:first-of-type{
-        background-color:aqua;
-    }
-
-
-
+.article-body-content p:first-of-type{
+        font-style: italic;
+		font-weight: bold;
+}
+	
 .article-left-rail {
     max-width: 790px;
     float: left;
