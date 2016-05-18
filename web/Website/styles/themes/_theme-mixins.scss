@@ -3,7 +3,8 @@
     a,
     .facets__button,
     .facets__button svg,
-    .sorting-arrows__arrow.is-active {
+    .sorting-arrows__arrow.is-active,
+    .article-key-document__icon {
         @include on-event(true) {
             color: $color;
             @include svg-fill($color);
