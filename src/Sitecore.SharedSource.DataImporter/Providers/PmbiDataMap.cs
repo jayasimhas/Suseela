@@ -33,7 +33,24 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		private const string CreatedDate = "Created Date";
 		private const string LegacyArticleNumber = "Legacy Article Number";
 		private const string ArticleNumberPrefixStr = "Article Number Prefix";
+		private const string ArticleCategory = "Print Category";
 
+		// Publisher's spotlights GUIDs in PmbiContent DB
+		private HashSet<string> PublisherSpotlights => new HashSet<string>
+		{
+			"{623E323E-4521-4644-97AB-492BCC912CF7}",
+			"{44E8B56E-6808-4AE0-881B-3F328925C3C8}",
+			"{32A6B354-005C-4DD6-B901-B7DA1000BF7B}",
+			"{6522CEA3-1981-497B-8B81-1F59729DB331}",
+			"{FFC8BF2C-6253-4F47-8E82-041208C098AC}",
+			"{B94A2674-A8D8-49F4-9375-1B56012DB5C7}",
+			"{95005EC9-B027-47E1-A51A-56819340B63E}",
+			"{6EBC6F1A-85ED-4B32-83F8-323EA1CDE1C5}",
+			"{E883B8D7-99E2-4F26-BBB9-181FFFE5CE67}",
+			"{32AB72F5-D292-4BE3-AFF2-2D145C922E46}",
+			"{8597AEC6-C755-48C5-84CE-5AEFEF238387}",
+			"{01847DCA-7456-41E5-B310-46E24AB863E0}"
+		};
 		public PmbiDataMap(Database db, string connectionString, Item importItem, ILogger l) : base(db, connectionString, importItem, l)
 		{
 			ArticleNumberPrefix = importItem.Fields[ArticleNumberPrefixStr].Value;
@@ -66,13 +83,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				{
 					articles =
 						startItem.Axes.GetDescendants()
-							.Where(i => i.TemplateID.ToString() == TemplateId && i.Fields[ArticleDate].Value.Contains(Year));
+							.Where(i => i.TemplateID.ToString() == TemplateId && i.Fields[ArticleDate].Value.Contains(Year) && !PublisherSpotlights.Contains(i.Fields[ArticleCategory].Value));
 				}
 				else
 				{
 					articles =
 						startItem.Axes.GetDescendants()
-							.Where(i => i.TemplateID.ToString() == TemplateId);
+							.Where(i => i.TemplateID.ToString() == TemplateId && !PublisherSpotlights.Contains(i.Fields[ArticleCategory].Value));
 				}
 				sw.Stop();
 				Logger.Log("Performance Statistic-(Sitecore.SharedSource.DataImporter.Providers.PmbiDataMap.GetImportData)", $"Used {sw.Elapsed.TotalSeconds} to Find matches");
