@@ -443,7 +443,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 			Dictionary<string, string> companies = new Dictionary<string, string>();
 
-			string query = "SELECT[RecordNumber], [Title] FROM [Informa_DCD].[dbo].[Companies] ORDER BY [Title] DESC";
+			string query = "SELECT[RecordNumber], [Title] FROM [Companies] ORDER BY [Title] DESC";
 			string conn = ConfigurationManager.ConnectionStrings["dcd"].ConnectionString;
 
 			SqlConnection dbCon = null;
@@ -1980,31 +1980,36 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 			Dictionary<string, string> d = GetMapping();
 
-			string upperValue = importValue.ToUpper();
-			string transformValue = (d.ContainsKey(upperValue)) ? d[upperValue] : string.Empty;
-			if (string.IsNullOrEmpty(transformValue))
+			var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
+
+			foreach (var val in values)
 			{
-				map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, importValue);
-				return;
+				string upperValue = val.ToUpper();
+				string transformValue = (d.ContainsKey(upperValue)) ? d[upperValue] : string.Empty;
+				if (string.IsNullOrEmpty(transformValue))
+				{
+					map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
+					return;
+				}
+
+				string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
+				IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
+
+				//if you find one then store the id
+				if (!t.Any())
+				{
+					map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+					return;
+				}
+
+				Field f = newItem.Fields[NewItemField];
+				if (f == null)
+					return;
+
+				string ctID = t.First().ID.ToString();
+				if (!f.Value.Contains(ctID))
+					f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
 			}
-
-			string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-			IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
-
-			//if you find one then store the id
-			if (!t.Any())
-			{
-				map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, importValue);
-				return;
-			}
-
-			Field f = newItem.Fields[NewItemField];
-			if (f == null)
-				return;
-
-			string ctID = t.First().ID.ToString();
-			if (!f.Value.Contains(ctID))
-				f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
 		}
 
 		public virtual Dictionary<string, string> GetMapping()
