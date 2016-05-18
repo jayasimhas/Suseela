@@ -38,5 +38,6 @@ namespace Informa.Web.ViewModels
 		public bool HasSubscribed => NewsletterOptedInContext.OptedIn;
         public string PreferencesURL => SitecoreService.GetItem<I___BasePage>(SiteRootContext.Item.Email_Preferences_Page)?._Url ?? "#";
         public string GeneralError => TextTranslator.Translate("Newsletter.GeneralError");
-	}
+        public string InvalidEmailFormat => TextTranslator.Translate("Newsletter.InvalidEmailFormat");
+    }
 }
