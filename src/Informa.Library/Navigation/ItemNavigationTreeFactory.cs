@@ -1,15 +1,33 @@
-﻿using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation;
-using Jabberwocky.Glass.Autofac.Attributes;
+﻿using System;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation;
+using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Glass.Mapper.Sc;
 
 namespace Informa.Library.Navigation
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class ItemNavigationTreeFactory : IItemNavigationTreeFactory
 	{
-		public IEnumerable<INavigation> Create(INavigation_Root navigationRootItem)
+	    private readonly IDependencies _dependencies;
+
+	    [AutowireService(true)]
+	    public interface IDependencies
+	    {
+            ISitecoreContext SitecoreContext { get; }
+	    }
+
+	    public ItemNavigationTreeFactory(IDependencies dependencies)
+	    {
+	        _dependencies = dependencies;
+	    }
+
+	    public IEnumerable<INavigation> Create(Guid navigationRootGuid)
+	        => Create(_dependencies.SitecoreContext.GetItem<INavigation_Root>(navigationRootGuid));
+
+        public IEnumerable<INavigation> Create(INavigation_Root navigationRootItem)
 		{
 			if (navigationRootItem == null)
 			{

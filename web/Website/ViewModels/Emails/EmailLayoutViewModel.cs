@@ -1,4 +1,7 @@
-﻿using Informa.Library.Globalization;
+﻿using System.Linq;
+using Glass.Mapper.Sc;
+using Informa.Library.Globalization;
+using Informa.Library.Navigation;
 using Informa.Library.Site;
 using Informa.Library.Utilities.References;
 using Informa.Library.Wrappers;
@@ -19,6 +22,8 @@ namespace Informa.Web.ViewModels.Emails
             ITextTranslator TextTranslator { get; }
             ISitecoreUrlWrapper SitecoreUrlWrapper { get; }
             ISiteRootContext SiteRootContext { get; }
+            IItemNavigationTreeFactory ItemNavigationTreeFactory { get; }
+            ISitecoreService SitecoreService { get; }
         }
 
         public EmailLayoutViewModel(IDependencies dependencies)
@@ -41,5 +46,15 @@ namespace Informa.Web.ViewModels.Emails
         private ISite_Root _siteRoot;
         public ISite_Root SiteRoot => _siteRoot ??
                                       (_siteRoot = _dependencies.SiteRootContext.Item);
+
+        private INavigation _headerNavigation;
+        public INavigation HeaderNavigation
+            => _headerNavigation ?? 
+                (_headerNavigation = _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Header_Navigation).First());
+
+        private INavigation _footerNavigation;
+        public INavigation FooterNavigation
+            => _footerNavigation ??
+                (_footerNavigation = _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Footer_Navigation).First());
     }
 }

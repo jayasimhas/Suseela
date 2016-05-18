@@ -11015,6 +11015,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Global_Leaderboard_Slot_ID  {get; set;}
 								/// <summary>
+					/// The Email Footer Navigation field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: c3b51bcd-d830-415d-8e66-53e80bb9cd7d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_Footer_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Email_Footer_Navigation  {get; set;}
+								/// <summary>
 					/// The Email Footer field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -11032,6 +11041,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Email_From_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Email_From_Address  {get; set;}
+								/// <summary>
+					/// The Email Header Navigation field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 4aa86258-477a-4e2f-bf53-64c9cb5ad261</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_Header_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Email_Header_Navigation  {get; set;}
 								/// <summary>
 					/// The Email Logo field.
 					/// <para></para>
@@ -11648,6 +11666,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Global_Leaderboard_Slot_ID  {get; set;}
 										/// <summary>
+						/// The Email Footer Navigation field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: c3b51bcd-d830-415d-8e66-53e80bb9cd7d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_Footer_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Email_Footer_Navigation  {get; set;}
+										/// <summary>
 						/// The Email Footer field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -11665,6 +11692,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Email_From_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Email_From_Address  {get; set;}
+										/// <summary>
+						/// The Email Header Navigation field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 4aa86258-477a-4e2f-bf53-64c9cb5ad261</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_Header_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Email_Header_Navigation  {get; set;}
 										/// <summary>
 						/// The Email Logo field.
 						/// <para></para>
@@ -12249,6 +12285,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Email_Footer_NavigationFieldId = new ID("c3b51bcd-d830-415d-8e66-53e80bb9cd7d");
+			public const string Email_Footer_NavigationFieldName = "Email Footer Navigation";
+
+						
+					
 			public static readonly ID Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
 			public const string Email_FooterFieldName = "Email Footer";
 
@@ -12258,6 +12299,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
 			public const string Email_From_AddressFieldName = "Email From Address";
+
+						
+					
+			public static readonly ID Email_Header_NavigationFieldId = new ID("4aa86258-477a-4e2f-bf53-64c9cb5ad261");
+			public const string Email_Header_NavigationFieldName = "Email Header Navigation";
 
 						
 					
@@ -17116,6 +17162,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Email_Footer_NavigationFieldId = new ID("c3b51bcd-d830-415d-8e66-53e80bb9cd7d");
+			public const string Email_Footer_NavigationFieldName = "Email Footer Navigation";
+
+						
+					
 			public static readonly ID Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
 			public const string Email_FooterFieldName = "Email Footer";
 
@@ -17125,6 +17176,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
 			public const string Email_From_AddressFieldName = "Email From Address";
+
+						
+					
+			public static readonly ID Email_Header_NavigationFieldId = new ID("4aa86258-477a-4e2f-bf53-64c9cb5ad261");
+			public const string Email_Header_NavigationFieldName = "Email Header Navigation";
 
 						
 					

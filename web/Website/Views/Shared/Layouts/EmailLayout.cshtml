@@ -13,6 +13,11 @@
 
         @Model.ViewOnlineVersionPreLink <a href="@Model.OnlineVersionUrl">@Model.ViewOnlineVersionLinkText</a>
 
+        @foreach (var nav in Model.HeaderNavigation.Children)
+        {
+            <a href="@nav.Link.Url">@nav.Text</a>
+        }
+
         @Editable(Model.GlassModel, m => m.Date_Text)
 
         <img src="@Model.SiteRoot.Email_Logo.Src"/>
@@ -32,6 +37,11 @@
         </div>
 
         @Html.Raw(Model.SiteRoot.Email_Footer)
+
+        @foreach (var nav in Model.FooterNavigation.Children)
+        {
+            <a href="@nav.Link.Url">@nav.Text</a>
+        }
 
     </body>
 </html>
