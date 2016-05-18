@@ -6,7 +6,9 @@ namespace Informa.Library.Utilities.Settings
 	{
 	    string GetSetting(string key, string defaultValue);
 
-	    IEnumerable<SiteInfoModel> GetSiteInfoList();
+	    SiteInfoModel GetCurrentSiteInfo();
+
+        IEnumerable<SiteInfoModel> GetSiteInfoList();
 
         string NlmExportPath { get; }
 

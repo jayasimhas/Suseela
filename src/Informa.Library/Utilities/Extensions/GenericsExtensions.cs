@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Informa.Library.Utilities.Extensions
 {
@@ -8,5 +9,11 @@ namespace Informa.Library.Utilities.Extensions
 		{
 			return new List<T> { source };
 		}
+
+	    public static T Alter<T>(this T source, Action<T> action)
+	    {
+	        action(source);
+	        return source;
+	    }
 	}
 }

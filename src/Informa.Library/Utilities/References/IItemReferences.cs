@@ -18,8 +18,10 @@ namespace Informa.Library.Utilities.References
 
 		Guid GeneratedDictionary { get; }
 
-		// Taxonomy Folders
-		Guid SubjectsTaxonomyFolder { get; }
+        Guid DownloadTypes { get; }
+
+        // Taxonomy Folders
+        Guid SubjectsTaxonomyFolder { get; }
 		Guid RegionsTaxonomyFolder { get; }
 		Guid TherapyAreasTaxonomyFolder { get; }
 

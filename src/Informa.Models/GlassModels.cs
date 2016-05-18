@@ -5801,6 +5801,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 					[SitecoreField(IExactTarget_EmailConstants.Character_SetFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Character_Set  {get; set;}
 								/// <summary>
+					/// The Text Body field.
+					/// <para>Backup text for email clients that don't display HTML</para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 15746d06-6e3d-4809-9e91-79fe36e34735</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.Text_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Text_Body  {get; set;}
+								/// <summary>
+					/// The Date Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 4181bf0a-ecd7-4992-9a3c-3dc7c7c6b380</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.Date_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Date_Text  {get; set;}
+								/// <summary>
 					/// The Subject field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -5810,14 +5828,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 					[SitecoreField(IExactTarget_EmailConstants.SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Subject  {get; set;}
 								/// <summary>
-					/// The Text Body field.
-					/// <para>Backup text for email clients that don't display HTML</para>
+					/// The Top Header Text field.
+					/// <para></para>
 					/// <para>Field Type: Multi-Line Text</para>		
-					/// <para>Field ID: 15746d06-6e3d-4809-9e91-79fe36e34735</para>
+					/// <para>Field ID: 4fe46aa7-debf-4d97-b295-2aceb40b8642</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IExactTarget_EmailConstants.Text_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Text_Body  {get; set;}
+					[SitecoreField(IExactTarget_EmailConstants.Top_Header_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Top_Header_Text  {get; set;}
+								/// <summary>
+					/// The Top Header Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 53a547ce-b0d1-45fe-9106-ff5fb37d2bc8</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.Top_Header_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Top_Header_Title  {get; set;}
 								/// <summary>
 					/// The Category Id field.
 					/// <para>The CID of the folder where the email will be stored in ExactTarget.</para>
@@ -5858,6 +5885,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 						[SitecoreField(IExactTarget_EmailConstants.Character_SetFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Character_Set  {get; set;}
 										/// <summary>
+						/// The Text Body field.
+						/// <para>Backup text for email clients that don't display HTML</para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: 15746d06-6e3d-4809-9e91-79fe36e34735</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.Text_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Text_Body  {get; set;}
+										/// <summary>
+						/// The Date Text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 4181bf0a-ecd7-4992-9a3c-3dc7c7c6b380</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.Date_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Date_Text  {get; set;}
+										/// <summary>
 						/// The Subject field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -5867,14 +5912,23 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 						[SitecoreField(IExactTarget_EmailConstants.SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Subject  {get; set;}
 										/// <summary>
-						/// The Text Body field.
-						/// <para>Backup text for email clients that don't display HTML</para>
+						/// The Top Header Text field.
+						/// <para></para>
 						/// <para>Field Type: Multi-Line Text</para>		
-						/// <para>Field ID: 15746d06-6e3d-4809-9e91-79fe36e34735</para>
+						/// <para>Field ID: 4fe46aa7-debf-4d97-b295-2aceb40b8642</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IExactTarget_EmailConstants.Text_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Text_Body  {get; set;}
+						[SitecoreField(IExactTarget_EmailConstants.Top_Header_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Top_Header_Text  {get; set;}
+										/// <summary>
+						/// The Top Header Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 53a547ce-b0d1-45fe-9106-ff5fb37d2bc8</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.Top_Header_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Top_Header_Title  {get; set;}
 										/// <summary>
 						/// The Category Id field.
 						/// <para>The CID of the folder where the email will be stored in ExactTarget.</para>
@@ -5907,13 +5961,28 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 
 						
 					
+			public static readonly ID Text_BodyFieldId = new ID("15746d06-6e3d-4809-9e91-79fe36e34735");
+			public const string Text_BodyFieldName = "Text Body";
+
+						
+					
+			public static readonly ID Date_TextFieldId = new ID("4181bf0a-ecd7-4992-9a3c-3dc7c7c6b380");
+			public const string Date_TextFieldName = "Date Text";
+
+						
+					
 			public static readonly ID SubjectFieldId = new ID("8409213e-9efa-4019-93c2-432fbfa5c177");
 			public const string SubjectFieldName = "Subject";
 
 						
 					
-			public static readonly ID Text_BodyFieldId = new ID("15746d06-6e3d-4809-9e91-79fe36e34735");
-			public const string Text_BodyFieldName = "Text Body";
+			public static readonly ID Top_Header_TextFieldId = new ID("4fe46aa7-debf-4d97-b295-2aceb40b8642");
+			public const string Top_Header_TextFieldName = "Top Header Text";
+
+						
+					
+			public static readonly ID Top_Header_TitleFieldId = new ID("53a547ce-b0d1-45fe-9106-ff5fb37d2bc8");
+			public const string Top_Header_TitleFieldName = "Top Header Title";
 
 						
 					
@@ -10946,6 +11015,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Global_Leaderboard_Slot_ID  {get; set;}
 								/// <summary>
+					/// The Email Footer Navigation field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: c3b51bcd-d830-415d-8e66-53e80bb9cd7d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_Footer_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Email_Footer_Navigation  {get; set;}
+								/// <summary>
 					/// The Email Footer field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -10963,6 +11041,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Email_From_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Email_From_Address  {get; set;}
+								/// <summary>
+					/// The Email Header Navigation field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 4aa86258-477a-4e2f-bf53-64c9cb5ad261</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_Header_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Email_Header_Navigation  {get; set;}
 								/// <summary>
 					/// The Email Logo field.
 					/// <para></para>
@@ -11579,6 +11666,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Global_Leaderboard_Slot_ID  {get; set;}
 										/// <summary>
+						/// The Email Footer Navigation field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: c3b51bcd-d830-415d-8e66-53e80bb9cd7d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_Footer_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Email_Footer_Navigation  {get; set;}
+										/// <summary>
 						/// The Email Footer field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -11596,6 +11692,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Email_From_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Email_From_Address  {get; set;}
+										/// <summary>
+						/// The Email Header Navigation field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: 4aa86258-477a-4e2f-bf53-64c9cb5ad261</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_Header_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Email_Header_Navigation  {get; set;}
 										/// <summary>
 						/// The Email Logo field.
 						/// <para></para>
@@ -12180,6 +12285,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Email_Footer_NavigationFieldId = new ID("c3b51bcd-d830-415d-8e66-53e80bb9cd7d");
+			public const string Email_Footer_NavigationFieldName = "Email Footer Navigation";
+
+						
+					
 			public static readonly ID Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
 			public const string Email_FooterFieldName = "Email Footer";
 
@@ -12189,6 +12299,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
 			public const string Email_From_AddressFieldName = "Email From Address";
+
+						
+					
+			public static readonly ID Email_Header_NavigationFieldId = new ID("4aa86258-477a-4e2f-bf53-64c9cb5ad261");
+			public const string Email_Header_NavigationFieldName = "Email Header Navigation";
 
 						
 					
@@ -17047,6 +17162,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Email_Footer_NavigationFieldId = new ID("c3b51bcd-d830-415d-8e66-53e80bb9cd7d");
+			public const string Email_Footer_NavigationFieldName = "Email Footer Navigation";
+
+						
+					
 			public static readonly ID Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
 			public const string Email_FooterFieldName = "Email Footer";
 
@@ -17056,6 +17176,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
 			public const string Email_From_AddressFieldName = "Email From Address";
+
+						
+					
+			public static readonly ID Email_Header_NavigationFieldId = new ID("4aa86258-477a-4e2f-bf53-64c9cb5ad261");
+			public const string Email_Header_NavigationFieldName = "Email Header Navigation";
 
 						
 					

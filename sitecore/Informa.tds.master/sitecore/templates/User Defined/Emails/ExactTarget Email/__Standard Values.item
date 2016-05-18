@@ -10,12 +10,19 @@ template: {5B1307C3-8126-491F-AB72-177516787E74}
 templatekey: ExactTarget Email
 
 ----field----
+field: {019F1CA1-F5F8-40CE-93D3-F7EBEAA8DC0D}
+name: Character Set
+key: character set
+content-length: 10
+
+iso-8859-1
+----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
 name: __Masters
 key: __masters
-content-length: 77
+content-length: 155
 
-{CB4CA050-2626-4979-A53D-77613B218043}|{8E5F9643-90F9-47D6-A90C-C6A3C9699801}
+{C027A577-343A-4DAA-B7EB-9A7CCF3FC09D}|{CB4CA050-2626-4979-A53D-77613B218043}|{8E5F9643-90F9-47D6-A90C-C6A3C9699801}|{8B3E1556-4C33-46BD-BE35-EEB3D62196E1}
 ----field----
 field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
 name: __Renderings
@@ -26,15 +33,8 @@ content-length: 145
 ----version----
 language: en
 version: 1
-revision: 94bb56ee-d247-4990-801e-d6150b3e3d83
+revision: ddee410e-8677-477d-a5e3-face01d7482d
 
-----field----
-field: {019F1CA1-F5F8-40CE-93D3-F7EBEAA8DC0D}
-name: Character Set
-key: character set
-content-length: 10
-
-iso-8859-1
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-94bb56ee-d247-4990-801e-d6150b3e3d83
+ddee410e-8677-477d-a5e3-face01d7482d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160511T220331Z
+20160517T165147Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

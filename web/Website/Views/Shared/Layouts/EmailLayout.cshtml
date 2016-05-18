@@ -1,4 +1,4 @@
-﻿@inherits CustomGlassView<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.IExactTarget_Email>
+﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.EmailLayoutViewModel>
 
 <!DOCTYPE html>
 <html>
@@ -6,9 +6,42 @@
         
     </head>
     <body>
-    <h1>@Editable(m => m.Subject)</h1>
-    <div>
-        @Html.Sitecore().Placeholder("email-main")
-    </div>
+
+        <!-- Many of these pieces are supposed to disappear if null or empty -->
+        <!-- If HTML needs to disappear, it's better to do that with Razor-->
+        <!-- Let me know if you need any razor syntax added. -->
+
+        @Model.ViewOnlineVersionPreLink <a href="@Model.OnlineVersionUrl">@Model.ViewOnlineVersionLinkText</a>
+
+        @foreach (var nav in Model.HeaderNavigation.Children)
+        {
+            <a href="@nav.Link.Url">@nav.Text</a>
+        }
+
+        @Editable(Model.GlassModel, m => m.Date_Text)
+
+        <img src="@Model.SiteRoot.Email_Logo.Src"/>
+
+        <img src="@Model.SiteRoot.RSS_Logo.Src"/>
+
+        <img src="@Model.SiteRoot.Linkedin_Logo.Src"/>
+
+        <img src="@Model.SiteRoot.Twitter_Logo.Src" />
+
+        @Editable(Model.GlassModel, m => m.Top_Header_Title)
+        @Editable(Model.GlassModel, m => m.Top_Header_Text)
+
+
+        <div>
+            @Html.Sitecore().Placeholder("email-main")
+        </div>
+
+        @Html.Raw(Model.SiteRoot.Email_Footer)
+
+        @foreach (var nav in Model.FooterNavigation.Children)
+        {
+            <a href="@nav.Link.Url">@nav.Text</a>
+        }
+
     </body>
 </html>

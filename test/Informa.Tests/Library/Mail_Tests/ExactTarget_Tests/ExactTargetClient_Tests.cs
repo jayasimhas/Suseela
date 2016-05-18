@@ -1,7 +1,6 @@
 ﻿using System;
 using FuelSDK;
 using Informa.Library.Mail.ExactTarget;
-using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -96,59 +95,16 @@ namespace Informa.Tests.Library.Mail_Tests
             _dependencies.ExactTargetWrapper.CreateEmail(Arg.Any<ET_Email>()).Returns(fakeCreateResponse);
         }
 
-        private void Sub_SiteInfo_HttpContext()
-        {
-            var fakeSiteInfo = new SiteInfoModel
-            {
-                HostName = "Mooseville.com",
-                RootPath = "/sitecore/content/Mooseville"
-            };
-            _dependencies.SiteSettings.GetSiteInfoList().Returns(new[] { fakeSiteInfo });
-
-            var fakeUri = new Uri("http://doesnt.matter");
-            _dependencies.HttpContextProvider.RequestUrl.Returns(fakeUri);
-        }
-
-        [Test]
-        public void GetEmailUrl_GivenEmailItem_ReturnsUrlToNode()
-        {
-            // ARRANGE
-            var fakeEmailItem = Sub_EmailItem();
-            Sub_SiteInfo_HttpContext();
-
-            // ACT
-            var result = _exactTargetClient.GetEmailUrl(fakeEmailItem);
-
-            // ASSERT
-            Assert.AreEqual("http://Mooseville.com/emails/MeetTheMoose", result);
-        }
-
-        [Test]
-        public void GetEmailHtml_GetsEmailItem_ReturnHtmlString()
-        {
-            // ARRANGE
-            var fakeEmailItem = Sub_EmailItem();
-            Sub_SiteInfo_HttpContext();
-
-            _dependencies.WebClientWrapper.DownloadString("http://Mooseville.com/emails/MeetTheMoose")
-                .Returns("<div><h1>Moose</h1></div>");
-
-            // ACT
-            var result = _exactTargetClient.GetEmailHtml(fakeEmailItem);
-
-            // ASSERT
-            Assert.AreEqual("<div><h1>Moose</h1></div>", result);
-        }
-
         [Test]
         public void PushEmail_EmailItemHasNoETEmailId_CreateNewEtEmail()
         {
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
             fakeEmailItem.Exact_Target_External_Key = 0;
-            Sub_SiteInfo_HttpContext();
             Sub_CreateResult();
 
+            _dependencies.SitecoreUrlWrapper.GetItemUrl(fakeEmailItem)
+                .Returns("http://Mooseville.com/emails/MeetTheMoose");
             _dependencies.WebClientWrapper.DownloadString("http://Mooseville.com/emails/MeetTheMoose")
                 .Returns("<div><h1>Moose</h1></div>");
 
@@ -166,7 +122,6 @@ namespace Informa.Tests.Library.Mail_Tests
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
             fakeEmailItem.Exact_Target_External_Key = 77;
-            Sub_SiteInfo_HttpContext();
 
             var fakeUpdateResponse = new ExactTargetResponse
             {
@@ -175,6 +130,8 @@ namespace Informa.Tests.Library.Mail_Tests
                 Message = "fun was had by all"
             };
             _dependencies.ExactTargetWrapper.UpdateEmail(Arg.Any<ET_Email>()).Returns(fakeUpdateResponse);
+            _dependencies.SitecoreUrlWrapper.GetItemUrl(fakeEmailItem)
+                .Returns("http://Mooseville.com/emails/MeetTheMoose");
 
             _dependencies.WebClientWrapper.DownloadString("http://Mooseville.com/emails/MeetTheMoose")
                 .Returns("<div><h1>Moose Update!</h1></div>");
@@ -193,7 +150,6 @@ namespace Informa.Tests.Library.Mail_Tests
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
             fakeEmailItem.Exact_Target_External_Key = 0;
-            Sub_SiteInfo_HttpContext();
             Sub_CreateResult();
 
             _dependencies.WebClientWrapper.DownloadString("http://Mooseville.com/emails/MeetTheMoose")
@@ -216,7 +172,6 @@ namespace Informa.Tests.Library.Mail_Tests
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
             fakeEmailItem.Exact_Target_External_Key = 77;
-            Sub_SiteInfo_HttpContext();
 
             var fakeUpdateResponse = new ExactTargetResponse
             {

@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Linq;
 using Informa.Library.Logging;
 using Informa.Library.Utilities.Extensions;
-using Informa.Library.Utilities.Settings;
 using Informa.Library.Wrappers;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
-using Jabberwocky.Glass.Models;
-using Sitecore.Mvc.Extensions;
 
 namespace Informa.Library.Mail.ExactTarget
 {
@@ -27,12 +21,11 @@ namespace Informa.Library.Mail.ExactTarget
         public interface IDependencies
         {
             ILogWrapper LogWrapper { get; }
-            ISiteSettings SiteSettings { get; }
-            IHttpContextProvider HttpContextProvider { get; }
             IWebClientWrapper WebClientWrapper { get; }
             IExactTargetWrapper ExactTargetWrapper { get; }
             ISitecoreSecurityWrapper SitecoreSecurityWrapper { get; }
             ISitecoreServiceMaster SitecoreServiceMaster { get; }
+            ISitecoreUrlWrapper SitecoreUrlWrapper { get; }
         }
 
         public ExactTargetClient(IDependencies dependencies)
@@ -81,7 +74,7 @@ namespace Informa.Library.Mail.ExactTarget
         private void UpdateSitecoreWithEmailId(IExactTarget_Email etEmail, ExactTargetResponse response) =>
             _dependencies.SitecoreSecurityWrapper.SecurityDisabledAction(
                 () => _dependencies.SitecoreServiceMaster.Save(
-                    etEmail.InvokeAction(
+                    etEmail.Alter(
                         email => email.Exact_Target_External_Key = response.ExactTargetEmailId)));
 
         public FuelSDK.ET_Email PopulateEtModel(IExactTarget_Email emailItem)
@@ -103,46 +96,9 @@ namespace Informa.Library.Mail.ExactTarget
 
         public string GetEmailHtml(IExactTarget_Email emailItem)
         {
-            var url = GetEmailUrl(emailItem);
+            var url = _dependencies.SitecoreUrlWrapper.GetItemUrl(emailItem);
             return _dependencies.WebClientWrapper.DownloadString(url);
         }
 
-        public string GetEmailUrl(IGlassBase glassItem)
-        {
-            var currentSiteItem = glassItem.GetAncestors<IGlassBase>()
-                .FirstOrDefault(item => item._TemplateId == ISite_RootConstants.TemplateId.ToGuid());
-
-            if (currentSiteItem == null)
-            {
-                _dependencies.LogWrapper.SitecoreWarn("Email not pushed to ExactTarget.  Could not find site root node.");
-                return null;
-            }
-
-            var homeItem =
-                currentSiteItem._ChildrenWithInferType.FirstOrDefault(
-                    item => item._TemplateId == IHome_PageConstants.TemplateId.ToGuid());
-
-            if (homeItem == null)
-            {
-                _dependencies.LogWrapper.SitecoreWarn("Email not pushed to ExactTarget.  Could not find site home node.");
-                return null;
-            }
-
-            var currentSite = _dependencies.SiteSettings.GetSiteInfoList()
-                .FirstOrDefault(site => site.RootPath == currentSiteItem._Path);
-
-            if (currentSite == null)
-            {
-                _dependencies.LogWrapper.SitecoreWarn("Email not pushed to ExactTarget.  Could not find current site configuration.");
-                return null;
-            }
-
-            var scheme = _dependencies.HttpContextProvider.RequestUrl?.Scheme + "://"; //This assume CD and CM have the same Scheme
-
-            var url = scheme + currentSite.HostName +
-                      glassItem._Path.Remove(0, homeItem._Path.Length);
-
-            return url;
-        }
     }
 }
