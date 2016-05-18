@@ -37,6 +37,23 @@
 				</NotificationProvider>
 			</database>
 		</databases>
-#end
-	</sitecore>
+
+    <contentSearch>
+      <configuration>
+        <indexes hint="list:AddIndex">
+          <index id="informa_content_master_index" type="Informa.Library.Search.SearchIndex.CustomSolrSearchIndex, Informa.Library">
+            <strategies hint="list:AddStrategy">
+              <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/syncMaster']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
+            </strategies>
+          </index>
+          <index id="sitecore_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+            <strategies hint="list:AddStrategy">
+              <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/syncMaster']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
+            </strategies>
+          </index>
+        </indexes>
+      </configuration>
+    </contentSearch>
+    #end
+  </sitecore>
 </configuration>
