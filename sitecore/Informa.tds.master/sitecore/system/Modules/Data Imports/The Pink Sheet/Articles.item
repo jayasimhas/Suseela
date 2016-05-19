@@ -22,7 +22,7 @@ name: Import To Where
 key: import to where
 content-length: 38
 
-{38863F8B-D323-4416-AA12-DCD1C896260E}
+{0F88E7F5-2663-4976-ACDF-5A7FF4DF29D7}
 ----field----
 field: {8954B459-083B-446F-B8C0-40B90CE2E210}
 name: Import To What Template
@@ -89,7 +89,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 3a058572-5334-4ab6-bfc8-3f076d1ea8dd
+revision: 71f60f85-c270-43c4-a107-d5f2541b8c93
 
 ----field----
 field: {1F03F44C-DD3A-4148-BEE7-0724310827B8}
@@ -123,9 +123,9 @@ content-length: 4
 field: {5FF74032-EFC8-401A-BEB6-E459A9815585}
 name: Last Article Number
 key: last article number
-content-length: 3
+content-length: 1
 
-242
+1
 ----field----
 field: {23018653-40BE-4436-B792-CC0FAF9F8790}
 name: Article Number Prefix
@@ -148,6 +148,13 @@ content-length: 37
 
 /sitecore/media library/old PMBI site
 ----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 17
+
+Legacy Pink Sheet
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -160,18 +167,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3a058572-5334-4ab6-bfc8-3f076d1ea8dd
+71f60f85-c270-43c4-a107-d5f2541b8c93
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160516T164050Z
+20160519T152332Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 18
+content-length: 14
 
-sitecore\Anonymous
+sitecore\admin

@@ -22,7 +22,7 @@ name: Import To Where
 key: import to where
 content-length: 38
 
-{38863F8B-D323-4416-AA12-DCD1C896260E}
+{0F88E7F5-2663-4976-ACDF-5A7FF4DF29D7}
 ----field----
 field: {8954B459-083B-446F-B8C0-40B90CE2E210}
 name: Import To What Template
@@ -89,7 +89,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: e4bdfacc-9a9a-4925-903f-08a39183f860
+revision: 0d4c8c9c-8b61-41cf-9c0b-3311e9cf7222
 
 ----field----
 field: {1F03F44C-DD3A-4148-BEE7-0724310827B8}
@@ -111,7 +111,7 @@ name: Template ID
 key: template id
 content-length: 38
 
-{0303BD47-9155-48C6-B2A9-E722213F6172}
+{7253F0DF-1642-465B-ADFD-31B6FF8F57C8}
 ----field----
 field: {B86AB71D-FC76-413B-9AA1-71BBE4EF57CD}
 name: Year
@@ -123,9 +123,9 @@ content-length: 0
 field: {5FF74032-EFC8-401A-BEB6-E459A9815585}
 name: Last Article Number
 key: last article number
-content-length: 0
+content-length: 4
 
-
+1002
 ----field----
 field: {23018653-40BE-4436-B792-CC0FAF9F8790}
 name: Article Number Prefix
@@ -160,14 +160,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-e4bdfacc-9a9a-4925-903f-08a39183f860
+0d4c8c9c-8b61-41cf-9c0b-3311e9cf7222
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160517T204642Z
+20160519T152455Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
