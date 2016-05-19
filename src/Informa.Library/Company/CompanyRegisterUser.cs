@@ -32,6 +32,11 @@ namespace Informa.Library.Company
 			if (company == null && !string.IsNullOrEmpty(newUser.MasterId))
 			{
 				company = FindCompanyByMasterId.Find(newUser.MasterId, newUser.MasterPassword);
+
+				if (company == null)
+				{
+					return CreateResult(false, Enumerable.Empty<string>());
+				}
 			}
 
 			if (company != null && !AllowedCompanyTypes.Types.Contains(company.Type))
