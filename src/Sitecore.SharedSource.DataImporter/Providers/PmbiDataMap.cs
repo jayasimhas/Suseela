@@ -38,20 +38,20 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		/// </summary>
 		public string TemplateId { get; set; }
 
-		private const string LastArticleNumber = "Last Article Number";
-		private const string ArticleDate = "Article Date";
-		private const string RelatedArticles = "Related Articles";
-		private const string LegacySitecoreId = "Legacy Sitecore ID";
-		private const string PmbiArticleNumber = "Article Number";
-		private const string MediaSourcePath = "Media Source Path";
-		private const string MediaDestinationPath = "Media Destination Path";
-		private const string CreatedDate = "Created Date";
-		private const string LegacyArticleNumber = "Legacy Article Number";
-		private const string ArticleNumberPrefixStr = "Article Number Prefix";
-		private const string ArticleCategory = "Print Category";
+		internal const string LastArticleNumber = "Last Article Number";
+		internal const string ArticleDate = "Article Date";
+		internal const string RelatedArticles = "Related Articles";
+		internal const string LegacySitecoreId = "Legacy Sitecore ID";
+		internal const string PmbiArticleNumber = "Article Number";
+		internal const string MediaSourcePath = "Media Source Path";
+		internal const string MediaDestinationPath = "Media Destination Path";
+		internal const string CreatedDate = "Created Date";
+		internal const string LegacyArticleNumber = "Legacy Article Number";
+		internal const string ArticleNumberPrefixStr = "Article Number Prefix";
+		internal const string ArticleCategory = "Print Category";
 
 		// Publisher's spotlights GUIDs in PmbiContent DB
-		private HashSet<string> PublisherSpotlights => new HashSet<string>
+		internal HashSet<string> PublisherSpotlights => new HashSet<string>
 		{
 			"{623E323E-4521-4644-97AB-492BCC912CF7}",
 			"{44E8B56E-6808-4AE0-881B-3F328925C3C8}",

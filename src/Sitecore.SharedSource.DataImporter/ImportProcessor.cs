@@ -95,7 +95,7 @@ namespace Sitecore.SharedSource.DataImporter
 						var newItem = DataMap.CreateNewItem(thisParent, importRow, newItemName);
 
 						// Add mapping to database
-						(DataMap as PmbiDataMap).AddOrUpdateMapping(newItem);
+						(DataMap as PmbiDataMap)?.AddOrUpdateMapping(newItem);
 					}
 					catch (Exception ex)
 					{
