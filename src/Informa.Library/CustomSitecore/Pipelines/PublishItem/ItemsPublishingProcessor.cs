@@ -47,7 +47,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.PublishItem
                 var targetItem = context.PublishOptions.TargetDatabase.GetItem(itemId);
 
                 // Check if the current item is actually an Article item
-                if (sourceItem == null || sourceItem.TemplateID != IArticleConstants.TemplateId)
+                if ((sourceItem == null && context.Action != PublishAction.DeleteTargetItem) || (sourceItem != null && sourceItem.TemplateID != IArticleConstants.TemplateId))
                 {
                     _logger.Info($"Skipping NLM export for item (not an article): '{itemId}'");
                     return;
@@ -74,7 +74,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.PublishItem
                             var database = _serviceFactory(context.PublishOptions.SourceDatabase);
                             var article = database.Cast<ArticleItem>(sourceItem);
                             var isFirstScheduledPublishForItem = !_publishHistory.Find(sourceItem.ID.Guid).Any();
-                            
+
                             if (!isFirstScheduledPublishForItem)
                             {
                                 _logger.Info($"Skipping NLM export for item (article already published via Scheduled Publishing): '{itemId}'");
