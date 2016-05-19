@@ -2452,6 +2452,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 	}
 
+	#endregion Scrip
+
+	#region PMBI
+
 	public class ToLegacySitecoreId : ToText
 	{
 		public ToLegacySitecoreId(Item i) : base(i) { }
@@ -2460,6 +2464,20 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 		{
 			Field f = newItem.Fields[NewItemField];
 			f.Value = id;
+		}
+	}
+
+	public class ToLegacyArticlePath : ToText
+	{
+		public ToLegacyArticlePath(Item i) : base(i)
+		{
+		}
+
+		public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+		{
+			Field f = newItem.Fields[NewItemField];
+			var item = Database.GetDatabase("pmbiContent").GetItem(new ID(id));
+			f.Value = item.Paths.FullPath;
 		}
 	}
 
@@ -3292,5 +3310,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 		};
 	}
 
-	#endregion Scrip
+	#endregion
+
+
 }

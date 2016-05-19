@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Informa.Library.Article.Search;
 using Informa.Library.Search;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.Data;
 using Sitecore.Data.Items;
@@ -23,7 +25,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			var parent = importItem.Parent.Name == "Articles" ? importItem.Parent.Parent.Name : importItem.Parent.Name;
 			if (parent == "Scrip")
 			{
-				ArticleNumber = (int)GetScripLastArticleNumber();
+				ArticleNumber = (int)GetScripLastArticleNumber("{3818C47E-4B75-4305-8F01-AB994150A1B0}", importItem);
 			}
 		}
 
@@ -65,17 +67,23 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 			return articles;
 		}
 
-		private long GetScripLastArticleNumber()
+		private long GetScripLastArticleNumber(string publicationGuid, Item importItem)
 		{
 			var searchContextFactory = new ProviderSearchContextFactory();
             using (var context = searchContextFactory.Create(Informa.Library.Utilities.References.Constants.MasterDb))
 			{
-				var query = context.GetQueryable<ArticleSearchResultItem>()
-					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
-					.OrderByDescending(i => i.ArticleIntegerNumber)
-					.Take(1);
-				var result = query.GetResults();
-				return result?.Hits?.FirstOrDefault()?.Document.ArticleIntegerNumber ?? 0;
+				var publicationItem = importItem.Database.GetItem(new ID(publicationGuid));
+				if (publicationItem != null)
+				{
+					var query = context.GetQueryable<ArticleSearchResultItem>()
+						.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+						.Filter(i => i.PublicationTitle == publicationItem.Fields["Publication Name"].Value)
+						.OrderByDescending(i => i.ArticleIntegerNumber)
+						.Take(1);
+					var result = query.GetResults();
+					return result?.Hits?.FirstOrDefault()?.Document.ArticleIntegerNumber ?? 0;
+				}
+				return 0;
 			}
 		}
 

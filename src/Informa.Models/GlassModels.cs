@@ -1775,6 +1775,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IArticleConstants.Legacy_Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Legacy_Article_Number  {get; set;}
 								/// <summary>
+					/// The Legacy Article Url field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 6df9fcb7-2309-4baf-816f-465ca61b8d6b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Legacy_Article_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Legacy_Article_Url  {get; set;}
+								/// <summary>
 					/// The Legacy Publication field.
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
@@ -2084,6 +2093,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IArticleConstants.Legacy_Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Legacy_Article_Number  {get; set;}
 										/// <summary>
+						/// The Legacy Article Url field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 6df9fcb7-2309-4baf-816f-465ca61b8d6b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Legacy_Article_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Legacy_Article_Url  {get; set;}
+										/// <summary>
 						/// The Legacy Publication field.
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
@@ -2318,6 +2336,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Legacy_Article_NumberFieldId = new ID("4bb4ec7a-e53d-47c6-a096-f34452186938");
 			public const string Legacy_Article_NumberFieldName = "Legacy Article Number";
+
+						
+					
+			public static readonly ID Legacy_Article_UrlFieldId = new ID("6df9fcb7-2309-4baf-816f-465ca61b8d6b");
+			public const string Legacy_Article_UrlFieldName = "Legacy Article Url";
 
 						
 					
