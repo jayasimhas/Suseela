@@ -240,7 +240,9 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Taxonomy.SubjectPath" value="/sitecore/content/environment globals/taxonomy/subjects"></setting>
       <setting name="Taxonomy.RegionPath" value="/sitecore/content/environment globals/taxonomy/regions"></setting>
       <setting name="Taxonomy.AreaPath" value="/sitecore/content/environment globals/taxonomy/therapy areas"></setting>
-      
+
+      <setting name="Search.NewerArticlesBoosting.Enabled" value="${Search.NewerArticlesBoosting.Enabled}" />
+      <setting name="Search.NewerArticlesBoosting.BoostFunction" value="${Search.NewerArticlesBoosting.BoostFunction}" />
     </settings>
   </sitecore>
 </configuration>
