@@ -1218,7 +1218,6 @@
     <None Include="App_Config\Include\zzzMustBeLast\Import.config.template" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />
-    <Content Include="App_Config\Include\zzzMustBeLast\SwitchMasterToWeb.config.disabled" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>

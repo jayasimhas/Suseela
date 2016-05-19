@@ -305,6 +305,7 @@
     <Compile Include="Article\Service\IArticleSearchService.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
+    <Compile Include="Company\CompanyRegisterUserResult.cs" />
     <Compile Include="Company\CompanyType.cs" />
     <Compile Include="Company\IAllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\IAllowedRegisterUserCompanyTypes.cs" />
@@ -312,6 +313,7 @@
     <Compile Include="Company\IFindCompanyByIpAddress.cs" />
     <Compile Include="Company\IFindCompanyByMasterId.cs" />
     <Compile Include="Company\IFindCompanyByUser.cs" />
+    <Compile Include="Company\IMasterCompany.cs" />
     <Compile Include="Company\IRegisterCompanyUser.cs" />
     <Compile Include="Company\IUserCompanyContext.cs" />
     <Compile Include="Company\CompanyRegisterUser.cs" />
@@ -611,6 +613,7 @@
     <Compile Include="User\Registration\IRestrictedEmailDomainsFactory.cs" />
     <Compile Include="User\Registration\CompetitorRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\PublicRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\RegisterUserResult.cs" />
     <Compile Include="User\Registration\RestrictedEmailDomainsFactory.cs" />
     <Compile Include="User\Registration\Web\IWebIsActiveRegistration.cs" />
     <Compile Include="User\Registration\Web\IWebRegisterUserContext.cs" />

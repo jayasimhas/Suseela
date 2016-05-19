@@ -60,12 +60,14 @@ namespace Informa.Web.Areas.Account.Controllers
 			newUser.LastName = request.LastName;
 			newUser.Password = request.Password;
 			newUser.Username = request.Username;
+			newUser.MasterId = request.MasterId;
+			newUser.MasterPassword = request.MasterPassword;
 
-			var success = RegisterUser.Register(newUser);
+			var registerResult = RegisterUser.Register(newUser);
 
 			return Ok(new
 			{
-				success = success
+				success = registerResult.Success
 			});
 		}
 

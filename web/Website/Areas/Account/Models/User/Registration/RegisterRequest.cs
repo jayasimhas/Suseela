@@ -22,5 +22,7 @@ namespace Informa.Web.Areas.Account.Models.User.Registration
 		public string LastName { get; set; }
 		[MustBeTrue(ErrorMessage = RegisterValidationReason.TermsNotAccepted)]
 		public bool TermsAccepted { get; set; }
+		public string MasterId { get; set; }
+		public string MasterPassword { get; set; }
 	}
 }

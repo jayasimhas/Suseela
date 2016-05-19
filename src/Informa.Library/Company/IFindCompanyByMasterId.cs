@@ -2,6 +2,6 @@
 {
 	public interface IFindCompanyByMasterId
 	{
-		ICompany Find(string masterId, string password);
+		IMasterCompany Find(string masterId, string password);
 	}
 }

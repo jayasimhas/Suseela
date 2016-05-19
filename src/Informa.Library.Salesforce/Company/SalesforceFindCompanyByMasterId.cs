@@ -16,7 +16,7 @@ namespace Informa.Library.Salesforce.Company
 			Service = service;
 		}
 
-		public ICompany Find(string masterid, string masterPassword)
+		public IMasterCompany Find(string masterid, string masterPassword)
 		{
 			var response = Service.Execute(s => s.queryAccountByMasterId(masterid, masterPassword));
 
@@ -27,7 +27,7 @@ namespace Informa.Library.Salesforce.Company
 
 			var account = response.account;
 
-			return new SalesforceCompany
+			return new SalesforceMasterCompany
 			{
 				Id = account.accountId,
 				Name = account.company,
