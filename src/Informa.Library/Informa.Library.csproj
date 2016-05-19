@@ -310,6 +310,7 @@
     <Compile Include="Company\IAllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\ICompany.cs" />
     <Compile Include="Company\IFindCompanyByIpAddress.cs" />
+    <Compile Include="Company\IFindCompanyByMasterId.cs" />
     <Compile Include="Company\IFindCompanyByUser.cs" />
     <Compile Include="Company\IRegisterCompanyUser.cs" />
     <Compile Include="Company\IUserCompanyContext.cs" />
