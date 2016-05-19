@@ -250,15 +250,15 @@ $(document).ready(function() {
         observe: '.form-reset-password',
         successCallback: function() {
             $('.form-reset-password').find('.alert-success').show();
-            var isPassword = $(form-reset-password).data("is-password");
-            if( isPassword !==null && $ isPassword === "true")
+            var isPassword = $('.form-reset-password').data("is-password");
+            if(isPassword)
             {
                 analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
             }
         },
         failureCallback: function() {
-            var isPassword = $(form-reset-password).data("is-password");
-            if( isPassword !==null && $ isPassword === "true")
+            var isPassword = $('.form-reset-password').data("is-password");
+            if(isPassword)
             {
                 analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
             }
@@ -280,7 +280,7 @@ $(document).ready(function() {
     var userRegistrationController = new FormController({
         observe: '.form-registration',
         successCallback: function(form, context, event) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "form registration successful" }) );
+            analyticsEvent( $.extend(analytics_data, { event_name: "registration successful" }) );
         },
         failureCallback: function(form,response) {
           
@@ -293,7 +293,7 @@ $(document).ready(function() {
                 errorMsg = errorMsg.substring(0, errorMsg.length - 1);
                 errorMsg += "]";
             }
-            analyticsEvent( $.extend(analytics_data, { event_name: "form registration failure", registraion_errors : errorMsg }) );
+            analyticsEvent( $.extend(analytics_data, { event_name: "registration failure", registraion_errors : errorMsg }) );
         }
     });
 
