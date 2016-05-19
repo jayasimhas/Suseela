@@ -52,46 +52,47 @@ namespace Informa.Library.Rss.ItemRetrieval
             var feedUrl = string.Format("{0}://{1}{2}?pId={3}", HttpContext.Current.Request.Url.Scheme, WebUtil.GetHostName(),
                 searchListing.Base_Endpoint_Url, searchPageId);
 
-            //If the "Include Url Parameters" is checked then any url params are passed along
-            //to the api, otherwise they will be stripped
-            var useDefaultParams = false;
-            if (rssFeedItem.Include_Url_Parameters)
-            {
-                if (Context.RawUrl.Contains("?"))
-                {
-                    var urlParts = Context.RawUrl.Split('?');
+            ////If the "Include Url Parameters" is checked then any url params are passed along
+            ////to the api, otherwise they will be stripped
+            //var useDefaultParams = false;
+            //if (rssFeedItem.Include_Url_Parameters)
+            //{
+            //    if (Context.RawUrl.Contains("?"))
+            //    {
+            //        var urlParts = Context.RawUrl.Split('?');
 
-                    if (urlParts.Length == 2)
-                    {
-                        feedUrl = string.Format("{0}&{1}", feedUrl, urlParts[1]);
-                    }
-                    else
-                    {
-                        useDefaultParams = true;
-                    }
-                }
-            }
-            else
-            {
-                useDefaultParams = true;
-            }
+            //        if (urlParts.Length == 2)
+            //        {
+            //            feedUrl = string.Format("{0}&{1}", feedUrl, urlParts[1]);
+            //        }
+            //        else
+            //        {
+            //            useDefaultParams = true;
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    useDefaultParams = true;
+            //}
 
             //If we are using the default parameters then build the url string for the api
             //from the Sitecore Sort item.
-            if (useDefaultParams)
-            {
-                var defaultSortBy = "";
+            //if (useDefaultParams)
+            //{
+                var defaultSortBy = "date";
                 var defaultSortOrder = "";
 
                 //If the default sort has not been chosen fall back to relevance ascending sorting
                 if (searchListing.Default_Sort_Order == null)
                 {
-                    defaultSortBy = "relevance";
-                    defaultSortOrder = "asc";
+                    //set default to date
+                    defaultSortBy = "date";
+                    defaultSortOrder = "desc";
                 }
                 else
                 {
-                    defaultSortOrder = "asc";
+                    defaultSortOrder = "desc";
                     if (!searchListing.Default_Sort_Order.Sort_Ascending)
                     {
                         defaultSortOrder = "desc";
@@ -101,7 +102,7 @@ namespace Informa.Library.Rss.ItemRetrieval
                 }
 
                 feedUrl = string.Format("{0}&sortBy={1}&sortOrder={2}", feedUrl, defaultSortBy, defaultSortOrder);
-            }
+            ////}
 
             return feedUrl;
         }
