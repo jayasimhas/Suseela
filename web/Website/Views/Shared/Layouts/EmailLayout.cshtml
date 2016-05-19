@@ -13,9 +13,13 @@
 
         @Model.ViewOnlineVersionPreLink <a href="@Model.OnlineVersionUrl">@Model.ViewOnlineVersionLinkText</a>
 
-        @foreach (var nav in Model.HeaderNavigation.Children)
+        @foreach (var nav in Model.HeaderNavigation)
         {
             <a href="@nav.Link.Url">@nav.Text</a>
+            if (!nav.IsLast)
+            {
+                <!---------------------->
+            }
         }
 
         @Editable(Model.GlassModel, m => m.Date_Text)
@@ -31,16 +35,19 @@
         @Editable(Model.GlassModel, m => m.Top_Header_Title)
         @Editable(Model.GlassModel, m => m.Top_Header_Text)
 
-
         <div>
             @Html.Sitecore().Placeholder("email-main")
         </div>
 
         @Html.Raw(Model.SiteRoot.Email_Footer)
 
-        @foreach (var nav in Model.FooterNavigation.Children)
+        @foreach (var nav in Model.FooterNavigation)
         {
             <a href="@nav.Link.Url">@nav.Text</a>
+            if (!nav.IsLast)
+            {
+                <!---------------------->
+            }
         }
 
     </body>

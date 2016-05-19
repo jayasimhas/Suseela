@@ -50,5 +50,7 @@ namespace Informa.Web.ViewModels.Emails
                 return _article;
             }
         }
+
+        public string MediaTypeIconSrc => Article?.Media_Type?.Media_Type_Icon?.Src;
     }
 }

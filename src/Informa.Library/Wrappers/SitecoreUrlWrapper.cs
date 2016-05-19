@@ -1,4 +1,5 @@
 ﻿using System;
+using Informa.Library.Utilities.References;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 using Sitecore.Data;
@@ -35,7 +36,8 @@ namespace Informa.Library.Wrappers
         public string GetItemUrl(IGlassBase glassItem) => GetItemUrl(glassItem._Id);
         public string GetItemUrl(Guid itemId)
         {
-            var item = Sitecore.Context.Database.GetItem(new ID(itemId));
+            var database = Sitecore.Configuration.Factory.GetDatabase(Constants.MasterDb);
+            var item = database.GetItem(new ID(itemId));
             var itemUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
             var scheme = _dependencies.HttpContextProvider.RequestUrl?.Scheme + "://";
 

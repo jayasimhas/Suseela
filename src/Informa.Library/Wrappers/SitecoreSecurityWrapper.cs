@@ -11,7 +11,7 @@ namespace Informa.Library.Wrappers
     }
 
     [AutowireService]
-    public class SitecoreSecurityWrapper
+    public class SitecoreSecurityWrapper : ISitecoreSecurityWrapper
     {
         public void SecurityDisabledAction(Action action)
         {
