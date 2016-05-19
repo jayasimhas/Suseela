@@ -53,6 +53,10 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 		public string PasswordLabelText => TextTranslator.Translate("Registration.PasswordLabel");
 		public string PasswordPlaceholderText => TextTranslator.Translate("Registration.PasswordPlaceholder");
 		public string PasswordRepeatLabelText => TextTranslator.Translate("Registration.PasswordRepeatLabel");
+		public string MasterToggleLabelText => TextTranslator.Translate("Registration.MasterToggleLabel");
+		public string MasterIdLabelText => TextTranslator.Translate("Registration.MasterIdLabel");
+		public string MasterPasswordLabelText => TextTranslator.Translate("Registration.MasterPasswordLabel");
+		public IHtmlString MasterAlternateVerficationText => new MvcHtmlString(GlassModel?.Corporate_Alternative_Verification_Method);
 		public IHtmlString TermsLabel => new MvcHtmlString(GlassModel?.User_Agreement_Text);
 		public string SubmitText => TextTranslator.Translate("Registration.Submit");
 		public string NewsletterSignUpText => GlassModel?.Newsletter_Sign_Up_Text;

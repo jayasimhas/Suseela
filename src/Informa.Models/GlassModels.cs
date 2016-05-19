@@ -275,6 +275,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	public partial interface IRegistration_Details_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IRegistration_Page
 	{
 								/// <summary>
+					/// The Corporate Alternative Verification Method field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: ba7756f4-010a-47a6-b81c-a887b6ca4dd9</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRegistration_Details_PageConstants.Corporate_Alternative_Verification_MethodFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Corporate_Alternative_Verification_Method  {get; set;}
+								/// <summary>
 					/// The Newsletter Sign Up Text field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -314,6 +323,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public partial interface IRegistration_Details_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IRegistration_Page__Raw
 		{
 										/// <summary>
+						/// The Corporate Alternative Verification Method field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: ba7756f4-010a-47a6-b81c-a887b6ca4dd9</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRegistration_Details_PageConstants.Corporate_Alternative_Verification_MethodFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Corporate_Alternative_Verification_Method  {get; set;}
+										/// <summary>
 						/// The Newsletter Sign Up Text field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -348,6 +366,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Registration Details Page";
 
+					
+			public static readonly ID Corporate_Alternative_Verification_MethodFieldId = new ID("ba7756f4-010a-47a6-b81c-a887b6ca4dd9");
+			public const string Corporate_Alternative_Verification_MethodFieldName = "Corporate Alternative Verification Method";
+
+							public static readonly ID Corporate_Alternative_Verification_Method__RawFieldId = new ID("ba7756f4-010a-47a6-b81c-a887b6ca4dd9");
+				public const string Corporate_Alternative_Verification_Method__RawFieldName = "Corporate Alternative Verification Method";
+						
 					
 			public static readonly ID Newsletter_Sign_Up_TextFieldId = new ID("761d17cf-74db-4658-ad8b-3c3b119d5851");
 			public const string Newsletter_Sign_Up_TextFieldName = "Newsletter Sign Up Text";

@@ -145,12 +145,12 @@
 				<input name="corporateMasterToggle"
 					   type="checkbox"
 					   tabindex="6"
-					   data-checkbox-type="boolean"> <label for="termsAccepted">Do you have a Corporate Master ID and Password?</label>
+					   data-checkbox-type="boolean"> <label for="corporateMasterToggle">@Model.MasterToggleLabelText</label>
 			</div>
 
 			<div class="page-account__field-wrapper page-account__field-wrapper--float">
 				<label for="masterId" class="page-account__text-label">
-					Master ID
+					@Model.MasterIdLabelText
 				</label>
 
 				<input name="masterId"
@@ -161,7 +161,7 @@
 
 			<div class="page-account__field-wrapper page-account__field-wrapper--float">
 				<label for="masterPassword" class="page-account__text-label">
-					Master Password
+					@Model.MasterPasswordLabelText
 				</label>
 
 				<input name="masterPassword"
@@ -171,8 +171,7 @@
 			</div>
 
 			<div>
-				<p>Having trouble registering with your Corporate Account?</p>
-				<p><a href="#">Click here for an alternative verification method ></a></p>
+				@Model.MasterAlternateVerficationText
 			</div>
 
 		</div>
