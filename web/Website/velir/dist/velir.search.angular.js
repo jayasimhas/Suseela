@@ -918,11 +918,12 @@
                         value: function getFacet(id) {
                             var deep = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
 
-                            var facet = _lodash2["default"].find(this.facets, { id: id });
+                            var upperId = id.toUpperCase();
+                            var facet = _lodash2["default"].find(this.facets, function (o) { return o.id.toUpperCase() === upperId; });
 
                             if (!facet) {
                                 _lodash2["default"].each(this.facets, function (f) {
-                                    facet = _lodash2["default"].find(f.sublist, { id: id });
+                                    facet = _lodash2["default"].find(f.sublist, function (o) { return o.id.toUpperCase() === upperId; });
                                     return !facet;
                                 });
                             }
