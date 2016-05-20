@@ -483,7 +483,7 @@
                                     return;
                                 }
 
-                                if (filterParams.indexOf(key !== -1)) {
+                                if (filterParams.indexOf(key) !== -1) {
                                     _this.createFilter(key, value);
                                     return;
                                 }
