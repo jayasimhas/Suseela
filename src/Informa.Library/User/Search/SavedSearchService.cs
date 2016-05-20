@@ -37,7 +37,7 @@ namespace Informa.Library.User.Search
 
 		private readonly Lazy<bool> _isAuthenticated;
 		protected bool IsAuthenticated => _isAuthenticated.Value;
-		
+
 		public SavedSearchService(IDependencies dependencies)
 		{
 			_ = dependencies;
@@ -73,45 +73,45 @@ namespace Informa.Library.User.Search
 				Url = ConstructUrl(doc.SearchString),
 				DateSaved = doc.DateCreated,
 				AlertEnabled = doc.HasAlert
-			});
+			}).OrderByDescending(r => r.DateSaved);
 		}
 
 		public virtual IContentResponse SaveContent(ISavedSearchSaveable input)
 		{
-			if (IsAuthenticated)
+			if (!IsAuthenticated)
 			{
-				var id = new SavedSearchEntity
+				return new ContentResponse
 				{
-					Username = _.UserContext.User.Username,
-					Name = input.Title
+					Success = false,
+					Message = "User is not authenticated"
 				};
+			}
+				
+			var id = new SavedSearchEntity
+			{
+				Username = _.UserContext.User.Username,
+				Name = input.Title
+			};
 
-				var entity = _.Repository.GetById(id);
-				if (entity != null)
-				{
-					entity.HasAlert = input.AlertEnabled;
-
-					var updateResponse = _.Repository.Update(entity);
-					Clear();
-
-					return updateResponse;
-				}
-
-				entity = id;
-				entity.SearchString = ExtractQueryString(input.Url);
+			var entity = _.Repository.GetById(id);
+			if (entity != null)
+			{
 				entity.HasAlert = input.AlertEnabled;
 
-				var addResponse = _.Repository.Add(entity);
+				var updateResponse = _.Repository.Update(entity);
 				Clear();
 
-				return addResponse;
+				return updateResponse;
 			}
 
-			return new ContentResponse
-			{
-				Success = false,
-				Message = "User is not authenticated"
-			};
+			entity = id;
+			entity.SearchString = ExtractQueryString(input.Url);
+			entity.HasAlert = input.AlertEnabled;
+
+			var addResponse = _.Repository.Add(entity);
+			Clear();
+
+			return addResponse;
 		}
 
 		public virtual IContentResponse DeleteContent(ISavedSearchSaveable input)
@@ -130,7 +130,7 @@ namespace Informa.Library.User.Search
 					var results = GetContentFromSessionOrRepo();
 					entity = results.FirstOrDefault(e => _comparer.Equals(e, entity));
 				}
-				
+
 				var response = _.Repository.Delete(entity);
 				Clear();
 
@@ -181,7 +181,7 @@ namespace Informa.Library.User.Search
 
 				return results;
 			}
-			
+
 			return savedSearches.Value;
 		}
 	}
