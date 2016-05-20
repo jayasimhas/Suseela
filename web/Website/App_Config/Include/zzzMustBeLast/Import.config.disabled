@@ -1,6 +1,5 @@
 <configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
 	<sitecore>
-#if ($ContentImport.Enable == "true")
 		<databases>
 			<database id="pmbiContent" singleInstance="true" type="Sitecore.Data.Database, Sitecore.Kernel">
 				<param desc="name">$(id)</param>
@@ -38,22 +37,13 @@
 			</database>
 		</databases>
 
-    <contentSearch>
-      <configuration>
-        <indexes hint="list:AddIndex">
-          <index id="informa_content_master_index" type="Informa.Library.Search.SearchIndex.CustomSolrSearchIndex, Informa.Library">
-            <strategies hint="list:AddStrategy">
-              <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/syncMaster']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
-            </strategies>
-          </index>
-          <index id="sitecore_master_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
-            <strategies hint="list:AddStrategy">
-              <strategy patch:instead="*[@ref='contentSearch/indexConfigurations/indexUpdateStrategies/syncMaster']" ref="contentSearch/indexConfigurations/indexUpdateStrategies/manual" />
-            </strategies>
-          </index>
-        </indexes>
-      </configuration>
-    </contentSearch>
-    #end
+    <settings>
+      <!--App_Config/Include/Sitecore.Buckets.config - set to false-->
+      <setting name="BucketConfiguration.ItemBucketsEnabled" value="false"/>
+
+      <!--App_Config/Sitecore.config - set to 0-->
+      <setting name="Indexing.UpdateInterval" value="00:00:00" />
+    </settings>
+
   </sitecore>
 </configuration>

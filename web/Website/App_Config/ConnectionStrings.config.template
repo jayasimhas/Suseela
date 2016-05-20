@@ -13,8 +13,6 @@
   <add name="session" connectionString="${connstr.session}" />
 #if ($ContentImport.Enable == "true")
   <add name="pmbiContent" connectionString="${connstr.pmbi}" />
-#end
-#if ($ImportMappingDB.Enable == "true")
   <add name="pmbiMapping" connectionString="${constr.pmbi.mapping}" providerName="System.Data.SqlClient"/>
 #end
 </connectionStrings>
