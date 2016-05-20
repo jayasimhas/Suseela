@@ -2,6 +2,6 @@
 {
 	public interface IEntitlementAccessContext
 	{
-		IEntitlementAccess Create(string productCode);
+		IEntitlementAccess Find(IEntitledProduct entitledProduct);
 	}
 }

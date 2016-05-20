@@ -36,7 +36,7 @@ namespace Informa.Web.ViewModels.SiteDebugging
 		public bool IsEntitled => EntitledProductContext.IsEntitled(EntitledProduct);
 		public string SiteProductCode => SitePublicationContext.Name;
 		public IEntitledProduct EntitledProduct => EntitledProductFactory.Create(EntitledProductItem);
-		public IEntitlementAccess EntitlementAccess => EntitlementAccessContext.Create(EntitledProduct?.ProductCode);
+		public IEntitlementAccess EntitlementAccess => EntitlementAccessContext.Find(EntitledProduct);
 		protected override IEntitled_Product UnsafeObject => RenderingItemContext.Get<IEntitled_Product>();
 	}
 }

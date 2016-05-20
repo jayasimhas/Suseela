@@ -19,13 +19,19 @@ namespace Informa.Library.User.Entitlement
 			EntitlementsContexts = entitlementsContexts;
 		}
 
-		public IEntitlementAccess Create(string productCode)
+		public IEntitlementAccess Find(IEntitledProduct entitledProduct)
 		{
 			if (!EntitlementChecksEnabled.Enabled)
 			{
 				return Create(null, EntitledAccessLevel.Individual);
 			}
 
+			if (entitledProduct == null)
+			{
+				return Create(null, EntitledAccessLevel.None);
+			}
+
+			var productCode = entitledProduct.ProductCode;
 			var entitlements = EntitlementsContexts.SelectMany(ec => ec.Entitlements.Where(e => string.Equals(e.ProductCode, productCode, StringComparison.InvariantCultureIgnoreCase)).Select(e => Create(e, ec.AccessLevel)));
 
 			foreach (var accessLevel in OrderedAccessLevels)

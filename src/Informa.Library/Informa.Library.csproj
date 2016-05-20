@@ -430,6 +430,7 @@
     <Compile Include="User\Entitlement\EntitlementAccessContext.cs" />
     <Compile Include="User\Entitlement\EntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\EntitlementProductFactory.cs" />
+    <Compile Include="User\Entitlement\EntitlementAccessContexts.cs" />
     <Compile Include="User\Entitlement\EntitlementsContexts.cs" />
     <Compile Include="User\Entitlement\EntitlementSession.cs" />
     <Compile Include="User\Entitlement\IDefaultEntitlementsFactory.cs" />
@@ -437,6 +438,7 @@
     <Compile Include="User\Entitlement\IEntitledProductItemCodeFactory.cs" />
     <Compile Include="User\Entitlement\IEntitlementAccess.cs" />
     <Compile Include="User\Entitlement\IEntitlementAccessContext.cs" />
+    <Compile Include="User\Entitlement\IEntitlementAccessContexts.cs" />
     <Compile Include="User\Entitlement\IEntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\IEntitlementProductFactory.cs" />
     <Compile Include="User\Entitlement\IEntitlementsContexts.cs" />
@@ -1040,6 +1042,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InterfaceFactory\Models\" />
+    <Folder Include="Purchase\User\Entitlement\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605092039013_InitialCreate.resx">

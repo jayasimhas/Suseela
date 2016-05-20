@@ -1,17 +1,18 @@
 using Jabberwocky.Autofac.Attributes;
 using System;
+using System.Linq;
 
 namespace Informa.Library.User.Entitlement
 {
 	[AutowireService]
 	public class EntitledProductContext : IEntitledProductContext
     {
-		protected readonly IEntitlementAccessContext EntitlementAccessContext;
+		protected readonly IEntitlementAccessContexts EntitlementAccessContexts;
 
 		public EntitledProductContext(
-			IEntitlementAccessContext entitlementAccessContext)
+			IEntitlementAccessContexts entitlementAccessContexts)
         {
-			EntitlementAccessContext = entitlementAccessContext;
+			EntitlementAccessContexts = entitlementAccessContexts;
 		}
 
 		public bool IsEntitled(IEntitledProduct entitledProduct)
@@ -26,17 +27,29 @@ namespace Informa.Library.User.Entitlement
 				return true;
 			}
 
-			var entitlementAccess = EntitlementAccessContext.Create(entitledProduct.ProductCode);
+			var entitlementAccesses = EntitlementAccessContexts.Select(eac => eac.Find(entitledProduct));
+			var filteredEntitlementAccesses = entitlementAccesses
+				.Where(ea =>
+					ea != null &&
+					ea.AccessLevel != EntitledAccessLevel.None &&
+					!IsArchiveLimited(ea.Entitlement, entitledProduct)
+				)
+				.ToList();
 
-			if (entitlementAccess.Entitlement == null || !entitlementAccess.Entitlement.ArchiveLimited)
+			return filteredEntitlementAccesses.Any();
+		}
+
+		public bool IsArchiveLimited(IEntitlement entitlement, IEntitledProduct entitledProduct)
+		{
+			if (entitlement == null || !entitlement.ArchiveLimited)
 			{
-				return entitlementAccess.AccessLevel != EntitledAccessLevel.None;
+				return false;
 			}
 
 			var productPublishedOn = entitledProduct.PublishedOn;
-			var archiveLimit = DateTime.Now.AddDays(entitlementAccess.Entitlement.ArchiveLimitedDays * -1);
+			var archiveLimit = DateTime.Now.AddDays(entitlement.ArchiveLimitedDays * -1);
 
-			return productPublishedOn >= archiveLimit;
+			return archiveLimit >= productPublishedOn;
 		}
     }
 }
