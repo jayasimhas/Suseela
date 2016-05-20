@@ -1,6 +1,7 @@
 ﻿using Informa.Library.User.Authentication;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Informa.Library.Purchase.User
 {
@@ -27,6 +28,11 @@ namespace Informa.Library.Purchase.User
 		{
 			get
 			{
+				if (!UserContext.IsAuthenticated)
+				{
+					return Enumerable.Empty<IArticlePurchase>();
+				}
+
 				var session = UserSession.Get<IEnumerable<IArticlePurchase>>(sessionKey);
 
 				if (session.HasValue)

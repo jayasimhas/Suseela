@@ -21,14 +21,14 @@ namespace Informa.Library.Salesforce.Purchase.User
 		{
 			if (string.IsNullOrWhiteSpace(username))
 			{
-				return null;
+				return Enumerable.Empty<IArticlePurchase>();
 			}
 
 			var response = Service.Execute(s => s.querySubscriptionsAndPurchases(username));
 
 			if (!response.IsSuccess())
 			{
-				return null;
+				return Enumerable.Empty<IArticlePurchase>();
 			}
 
 			if (response.subscriptionsAndPurchases == null || !response.subscriptionsAndPurchases.Any())
