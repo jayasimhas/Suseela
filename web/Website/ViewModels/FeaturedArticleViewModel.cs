@@ -1,36 +1,35 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using Glass.Mapper.Sc;
+using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Presentation;
-using Informa.Library.Search.Utilities;
+using Informa.Library.Site;
+using Informa.Library.User.Authentication;
 using Informa.Library.User.Entitlement;
-using Informa.Models.FactoryInterface;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Library.User.Document;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 
 namespace Informa.Web.ViewModels
 {
-	public class FeaturedArticleViewModel : ArticleBodyContentModel
+	public class FeaturedArticleViewModel : GlassArticleModel
 	{
 		protected readonly IRenderingParametersContext RenderingParametersContext;
 
 		public FeaturedArticleViewModel(
-            IArticle model,
-			IRenderingParametersContext renderingParametersContext, 
-            ITextTranslator textTranslator,
+			IRenderingParametersContext renderingParametersContext,
+			ISiteRootContext siterootContext,
+			IArticleListItemModelFactory articleListableFactory, ITextTranslator textTranslator, IArticleSearch searcher,
+            ISitecoreContext context,
+            IArticleComponentFactory articleComponentFactory,
 			IIsEntitledProducItemContext isEntitledProductItemContext,
+            IAuthenticatedUserContext authenticatedUserContext,
+			IIsSavedDocumentContext isSavedDocumentContext,
             ICallToActionViewModel callToActionViewModel)
-			: base(model, isEntitledProductItemContext, textTranslator, callToActionViewModel)
+			: base(siterootContext, articleListableFactory, textTranslator, searcher, context, articleComponentFactory, isEntitledProductItemContext, authenticatedUserContext, isSavedDocumentContext, callToActionViewModel)
 		{
 			RenderingParametersContext = renderingParametersContext;
 		}
 
-		public IEnumerable<ILinkable> ListableTopics
-				=>
-						GlassModel.Taxonomies?.Take(3)
-								.Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x) });
-
-		public bool DisplayImage => Options.Show_Image && !string.IsNullOrEmpty(Image?.ImageUrl);
+		public override bool DisplayImage => Options.Show_Image ? base.DisplayImage : false;
 
 		public IFeatured_Article_Options Options => RenderingParametersContext.GetParameters<IFeatured_Article_Options>();
 	}
