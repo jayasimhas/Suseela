@@ -6,8 +6,9 @@
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                     <td valign="top" class="two-thirds layout-padded-right">
+                        
                         <!-- Title with Title Link -->
-                        @if (Model.HasTitle || IsInEditingMode)
+                        @if (IsInEditingMode)
                         {
                             using (BeginRenderLink(Model.GlassModel, m => m.Title_Link, isEditable: true))
                             {
@@ -16,21 +17,37 @@
                                 </h3>
                             }
                         }
+                        else if (Model.HasTitle)
+                        {
+                            <a href="@Model.TitleLinkUrl">
+                                <h3 class="featured__title">
+                                    @Model.GlassModel.Title
+                                </h3>
+                            </a>
+                        }
                         <span class="t-paragraph">
                             <!-- Summary -->
                             @Editable(Model.GlassModel, m => m.Summary)
                         </span>
 
                         <!-- Read More Link, Test, and Styling -->
-                        @if (Model.HasReadMoreLink || IsInEditingMode)
+                        @if (IsInEditingMode)
                         {
                             @* <div class="@Model.ReadMoreClass"> *@
                             <div class="featured__read-more">
-                            @using (BeginRenderLink(Model.GlassModel, m => m.Read_More_Link, isEditable: true))
-                            {
-                                @Editable(Model.GlassModel, m => m.Read_More_Text)
-                            }
-
+                                @using (BeginRenderLink(Model.GlassModel, m => m.Read_More_Link, isEditable: true))
+                                {
+                                    @Editable(Model.GlassModel, m => m.Read_More_Text)
+                                }
+                            </div>
+                        }
+                        else if (Model.HasReadMoreLink)
+                        {
+                            @* <div class="@Model.ReadMoreClass"> *@
+                            <div class="featured__read-more">
+                                <a href="@Model.ReadMoreLinkUrl">
+                                    @Model.GlassModel.Read_More_Text
+                                </a>
                             </div>
                         }
                     </td>
@@ -43,7 +60,7 @@
                             @RenderImage(Model.GlassModel, m => m.Image, isEditable: true)
 
                             <!-- Download Link and Text -->
-                            @if (Model.HasDownloadLink || IsInEditingMode)
+                            @if (IsInEditingMode)
                             {
                                 <img class="featured-content__image" src="@(Model.DownloadTypeIconUrl)"/>
                                 using (BeginRenderLink(Model.GlassModel, m => m.Download_Link, isEditable: true))
@@ -52,6 +69,15 @@
                                         @Editable(Model.GlassModel, m => m.Download_Link_Text)
                                     </div>
                                 }
+                            }
+                            else if(Model.HasDownloadLink)
+                            {
+                                <img class="featured-content__image" src="@(Model.DownloadTypeIconUrl)"/>
+                                <a href="">
+                                    <div class="featured__download-link">
+                                        @Editable(Model.GlassModel, m => m.Download_Link_Text)
+                                    </div>
+                                </a>
                             }
 
                         </td>

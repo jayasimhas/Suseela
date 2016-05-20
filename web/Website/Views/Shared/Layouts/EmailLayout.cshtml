@@ -289,7 +289,7 @@
                                             {
                                                 foreach (var nav in Model.HeaderNavigation)
                                                 {
-                                                    <a href="@nav.Link.Url">@nav.Text</a>
+                                                    <a href="@nav.LinkUrl">@nav.Text</a>
                                                     if (!nav.IsLast)
                                                     {
                                                         <span class="vertical-separator">|</span>
@@ -313,17 +313,14 @@
                                             <img src="@Model.SiteRoot.Email_Logo.Src"/>
                                         </td>
                                         <td valign="bottom" align="right">
-
-                                            @* * *
-                                            TODO - Social logos need Sitecore links
-                                            * * *@
-                                            <a href="#RSS_Link_URL#">
+                                            
+                                            <a href="@Model.RssLinkUrl">
                                                 <img src="@Model.SiteRoot.RSS_Logo.Src" width="20" height="20">
                                             </a>&nbsp;&nbsp;&nbsp;
-                                            <a href="#LinkedIn_Link_URL#">
+                                            <a href="@Model.LinkedInLinkUrl">
                                                 <img src="@Model.SiteRoot.Linkedin_Logo.Src" width="20" height="20">
                                             </a>&nbsp;&nbsp;&nbsp;
-                                            <a href="@Model.SiteRoot.Twitter_Link.Url">
+                                            <a href="@Model.TwitterLinkUrl">
                                                 <img src="@Model.SiteRoot.Twitter_Logo.Src" width="20" height="20">
                                             </a>
 
@@ -377,7 +374,7 @@
                                                 {
                                                     foreach (var nav in Model.FooterNavigation)
                                                     {
-                                                        <a href="@nav.Link.Url">@nav.Text</a>
+                                                        <a href="@nav.LinkUrl">@nav.Text</a>
                                                         if (!nav.IsLast)
                                                         {
                                                             <span class="vertical-separator">|</span>

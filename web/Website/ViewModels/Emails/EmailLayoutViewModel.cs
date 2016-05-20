@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Glass.Mapper.Sc;
-using Glass.Mapper.Sc.Fields;
 using Informa.Library.Globalization;
+using Informa.Library.Mail.ExactTarget;
 using Informa.Library.Navigation;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
@@ -26,6 +26,7 @@ namespace Informa.Web.ViewModels.Emails
             ISiteRootContext SiteRootContext { get; }
             IItemNavigationTreeFactory ItemNavigationTreeFactory { get; }
             ISitecoreService SitecoreService { get; }
+            ICampaignQueryBuilder CampaignQueryBuilder { get; }
         }
 
         public EmailLayoutViewModel(IDependencies dependencies)
@@ -42,8 +43,10 @@ namespace Informa.Web.ViewModels.Emails
                                                 (_viewOnlineVersionLinkText = _dependencies.TextTranslator?.Translate(DictionaryKeys.ViewOurOnlineVersionLinkText));
 
         private string _onlineVersionUrl;
+
         public string OnlineVersionUrl => _onlineVersionUrl ??
-                                          (_onlineVersionUrl = _dependencies.SitecoreUrlWrapper.GetItemUrl(GlassModel));
+                                          (_onlineVersionUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(
+                                              _dependencies.SitecoreUrlWrapper.GetItemUrl(GlassModel)));
 
         private ISite_Root _siteRoot;
         public ISite_Root SiteRoot => _siteRoot ??
@@ -56,7 +59,11 @@ namespace Informa.Web.ViewModels.Emails
                    _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Header_Navigation)
                        .FirstOrDefault()?
                        .Children
-                       .Select(nav => new NavItemViewModel {Link = nav.Link, Text = nav.Text})
+                       .Select(nav => new NavItemViewModel
+                       {
+                           LinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(nav.Link?.Url),
+                           Text = nav.Text
+                       })
                        .ToArray()
                        .Alter(SetLastItemIsLast));
 
@@ -67,9 +74,28 @@ namespace Informa.Web.ViewModels.Emails
                    _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Footer_Navigation)
                        .FirstOrDefault()?
                        .Children
-                       .Select(nav => new NavItemViewModel {Link = nav.Link, Text = nav.Text})
+                       .Select(nav => new NavItemViewModel
+                       {
+                           LinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(nav.Link?.Url),
+                           Text = nav.Text
+                       })
                        .ToArray()
                        .Alter(SetLastItemIsLast));
+
+        private string _rssLinkUrl;
+        public string RssLinkUrl => _rssLinkUrl ??
+                                    (_rssLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(SiteRoot.RSS_Link?.Url));
+
+        private string _linkedInLinkUrl;
+        public string LinkedInLinkUrl => _linkedInLinkUrl ??
+                                    (_linkedInLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(SiteRoot.LinkedIn_Link?.Url));
+
+        private string _twitterLinkUrl;
+        public string TwitterLinkUrl => _twitterLinkUrl ??
+                                    (_twitterLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(SiteRoot.Twitter_Link?.Url));
+
+
+
 
         private static void SetLastItemIsLast(NavItemViewModel[] arr)
         {
@@ -79,7 +105,7 @@ namespace Informa.Web.ViewModels.Emails
 
     public class NavItemViewModel
     {
-        public Link Link { get; set; }
+        public string LinkUrl { get; set; }
         public string Text { get; set; }
         public bool IsLast { get; set; }
     }

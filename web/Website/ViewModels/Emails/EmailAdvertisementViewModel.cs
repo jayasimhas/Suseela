@@ -1,4 +1,5 @@
 ﻿using Informa.Library.Globalization;
+using Informa.Library.Mail.ExactTarget;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Jabberwocky.Autofac.Attributes;
@@ -14,6 +15,7 @@ namespace Informa.Web.ViewModels.Emails
         public interface IDependencies
         {
             ITextTranslator TextTranslator { get; }
+            ICampaignQueryBuilder CampaignQueryBuilder { get; }
         }
 
         public EmailAdvertisementViewModel(IDependencies dependencies)
@@ -23,5 +25,7 @@ namespace Informa.Web.ViewModels.Emails
 
         private string _adHeader;
         public string AdHeader => _adHeader ?? (_adHeader = _dependencies.TextTranslator?.Translate(DictionaryKeys.AdvertisementHeader));
+
+        public string CampaignQuery => _dependencies.CampaignQueryBuilder.GetCampaignQuery();
     }
 }

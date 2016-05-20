@@ -1,6 +1,8 @@
 ﻿using System;
 using Glass.Mapper.Sc;
+using Informa.Library.Mail.ExactTarget;
 using Informa.Library.Utilities.StringUtils;
+using Informa.Library.Wrappers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.Components;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
@@ -16,8 +18,9 @@ namespace Informa.Web.ViewModels.Emails
         public interface IDependencies
         {
             ISitecoreService SitecoreService { get; }
+            ISitecoreUrlWrapper SitecoreUrlWrapper { get; }
             IBylineMaker BylineMaker { get; }
-
+            ICampaignQueryBuilder CampaignQueryBuilder { get; }
         }
 
         public FeaturedArticleViewModel(IDependencies dependencies)
@@ -51,6 +54,12 @@ namespace Informa.Web.ViewModels.Emails
             }
         }
 
-        public string MediaTypeIconSrc => Article?.Media_Type?.Media_Type_Icon?.Src;
+        private string _mediaTypeIconSrc;
+        public string MediaTypeIconSrc => _mediaTypeIconSrc ?? (_mediaTypeIconSrc = Article?.Media_Type?.Media_Type_Icon?.Src);
+
+        private string _targetArticleUrl;
+        public string TargetArticleUrl
+            => _targetArticleUrl ?? (_targetArticleUrl = _dependencies.SitecoreUrlWrapper.GetItemUrl(Article));
+
     }
 }

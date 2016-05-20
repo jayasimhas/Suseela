@@ -5863,6 +5863,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 					/// </summary>
 					[SitecoreField(IExactTarget_EmailConstants.Exact_Target_External_KeyFieldName, Setting = SitecoreFieldSettings.InferType)]
 					int Exact_Target_External_Key  {get; set;}
+								/// <summary>
+					/// The Medium field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 9006ddc8-a0b5-4474-a1bc-b115f3a2d178</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.MediumFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Medium  {get; set;}
+								/// <summary>
+					/// The Source field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 3aac10c9-7f61-4bb4-8529-dd5177529d6b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IExactTarget_EmailConstants.SourceFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Source  {get; set;}
 				}
 
 	
@@ -5947,6 +5965,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 						/// </summary>
 						[SitecoreField(IExactTarget_EmailConstants.Exact_Target_External_KeyFieldName, Setting = SitecoreFieldSettings.InferType)]
 						int Exact_Target_External_Key  {get; set;}
+										/// <summary>
+						/// The Medium field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 9006ddc8-a0b5-4474-a1bc-b115f3a2d178</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.MediumFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Medium  {get; set;}
+										/// <summary>
+						/// The Source field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 3aac10c9-7f61-4bb4-8529-dd5177529d6b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IExactTarget_EmailConstants.SourceFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Source  {get; set;}
 						}
 	
 	public static partial class IExactTarget_EmailConstants{
@@ -5993,6 +6029,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 					
 			public static readonly ID Exact_Target_External_KeyFieldId = new ID("05feb882-d3ad-4026-90e5-c6435a13ad5f");
 			public const string Exact_Target_External_KeyFieldName = "Exact Target External Key";
+
+						
+					
+			public static readonly ID MediumFieldId = new ID("9006ddc8-a0b5-4474-a1bc-b115f3a2d178");
+			public const string MediumFieldName = "Medium";
+
+						
+					
+			public static readonly ID SourceFieldId = new ID("3aac10c9-7f61-4bb4-8529-dd5177529d6b");
+			public const string SourceFieldName = "Source";
 
 						
 					
