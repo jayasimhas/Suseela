@@ -1,8 +1,10 @@
 ﻿using System.Linq;
 using Glass.Mapper.Sc;
+using Glass.Mapper.Sc.Fields;
 using Informa.Library.Globalization;
 using Informa.Library.Navigation;
 using Informa.Library.Site;
+using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.References;
 using Informa.Library.Wrappers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
@@ -47,14 +49,38 @@ namespace Informa.Web.ViewModels.Emails
         public ISite_Root SiteRoot => _siteRoot ??
                                       (_siteRoot = _dependencies.SiteRootContext.Item);
 
-        private INavigation _headerNavigation;
-        public INavigation HeaderNavigation
-            => _headerNavigation ?? 
-                (_headerNavigation = _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Header_Navigation).FirstOrDefault());
+        private NavItemViewModel[] _headerNavigation;
+        public NavItemViewModel[] HeaderNavigation
+            => _headerNavigation ??
+               (_headerNavigation =
+                   _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Header_Navigation)
+                       .FirstOrDefault()?
+                       .Children
+                       .Select(nav => new NavItemViewModel {Link = nav.Link, Text = nav.Text})
+                       .ToArray()
+                       .Alter(SetLastItemIsLast));
 
-        private INavigation _footerNavigation;
-        public INavigation FooterNavigation
+        private NavItemViewModel[] _footerNavigation;
+        public NavItemViewModel[] FooterNavigation
             => _footerNavigation ??
-                (_footerNavigation = _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Footer_Navigation).FirstOrDefault());
+               (_footerNavigation =
+                   _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Footer_Navigation)
+                       .FirstOrDefault()?
+                       .Children
+                       .Select(nav => new NavItemViewModel {Link = nav.Link, Text = nav.Text})
+                       .ToArray()
+                       .Alter(SetLastItemIsLast));
+
+        private static void SetLastItemIsLast(NavItemViewModel[] arr)
+        {
+            if (arr.Length != 0) { arr[arr.Length - 1].IsLast = true; }
+        }
+    }
+
+    public class NavItemViewModel
+    {
+        public Link Link { get; set; }
+        public string Text { get; set; }
+        public bool IsLast { get; set; }
     }
 }

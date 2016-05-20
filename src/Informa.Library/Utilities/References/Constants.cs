@@ -65,5 +65,12 @@ namespace Informa.Library.Utilities.References
             public const string SearchHeadlinesOnly = "headlinesOnly";
             public const string PerPageKey = "perPage";
         }
+
+        public static class SettingKeys
+        {
+            public const string ExactTargetUseSandbox = "ExactTarget.UseSandbox";
+            public const string ExactTargetClientId = "ExactTarget.ClientId";
+            public const string ExactTargetSecretKey = "ExactTarget.SecretKey";
+        }
     }
 }

@@ -15,7 +15,6 @@
     .imageFix { display:block; }
     table, td { border-collapse:collapse; }
 
-
     /* CLIENT-SPECIFIC RESETS */
     .ReadMsgBody{width:100%;} .ExternalClass{width:100%;}
     .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div{line-height:100%;}
@@ -233,7 +232,7 @@
             font-size: 15px;
             text-align: right;
         }
-
+        
         #templateFooter {
             background-color: #eee;
         }
@@ -281,16 +280,15 @@
                                         <td valign="top" class="preheaderContent standardPadding layout-text-right">
                                             @if (Model.HeaderNavigation != null)
                                             {
-                                                foreach (var nav in Model.HeaderNavigation.Children)
+                                                foreach (var nav in Model.HeaderNavigation)
                                                 {
                                                     <a href="@nav.Link.Url">@nav.Text</a>
+                                                    if (!nav.IsLast)
+                                                    {
+                                                        <span class="vertical-separator">|</span>
+                                                    }
                                                 }
                                             }
-                                            <a href="#">Link Number 1</a>
-                                            <span class="vertical-separator">|</span>
-                                            <a href="#">Link Number 2</a>
-                                            <span class="vertical-separator">|</span>
-                                            <a href="#">Link Number 3</a>
                                         </td>
                                     </tr>
                                 </table>
@@ -370,15 +368,15 @@
                                             <p>
                                                 @if (Model.FooterNavigation != null)
                                                 {
-                                                    foreach (var nav in Model.FooterNavigation.Children)
+                                                    foreach (var nav in Model.FooterNavigation)
                                                     {
                                                         <a href="@nav.Link.Url">@nav.Text</a>
-                                                        <span class="footer-link-separator">|</span>
+                                                        if (!nav.IsLast)
+                                                        {
+                                                            <span class="vertical-separator">|</span>
+                                                        }
                                                     }
                                                 }
-                                                @* * *
-                                                TODO - No separator on the last loop?
-                                                * * *@
                                             </p>
                                         </td>
                                     </tr>
