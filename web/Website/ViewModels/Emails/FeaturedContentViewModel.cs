@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Glass.Mapper;
 using Glass.Mapper.Sc;
+using Informa.Library.Mail.ExactTarget;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.Components;
@@ -19,6 +20,7 @@ namespace Informa.Web.ViewModels.Emails
         {
             ISitecoreService SitecoreService { get; }
             IItemReferences ItemReferences { get; }
+            ICampaignQueryBuilder CampaignQueryBuilder { get; }
         }
 
         public FeaturedContentViewModel(IDependencies dependencies)
@@ -38,9 +40,26 @@ namespace Informa.Web.ViewModels.Emails
         public bool HasDownloadLink =>
             !string.IsNullOrEmpty(GlassModel.Download_Link.Url);
 
+        private string _downloadTypeIconUrl;
         public string DownloadTypeIconUrl =>
-            _dependencies.SitecoreService.GetItem<IGlassBase>(_dependencies.ItemReferences.DownloadTypes)?
-                ._ChildrenWithInferType.FirstOrDefault(option => option._Name.Equals(GlassModel.Download_Type))?
-                .CastTo<IOption>()?.Icon.Src;
+            _downloadTypeIconUrl ?? (_downloadTypeIconUrl =
+                _dependencies.SitecoreService.GetItem<IGlassBase>(_dependencies.ItemReferences.DownloadTypes)?
+                    ._ChildrenWithInferType.FirstOrDefault(option => option._Name.Equals(GlassModel.Download_Type))?
+                    .CastTo<IOption>()?.Icon.Src);
+
+        private string _titleLinkUrl;
+        public string TitleLinkUrl
+            => _titleLinkUrl ??
+                (_titleLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(GlassModel.Title_Link?.Url));
+
+        private string _readMoreLinkUrl;
+        public string ReadMoreLinkUrl
+            => _readMoreLinkUrl ??
+                (_readMoreLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(GlassModel.Read_More_Link?.Url));
+
+        private string _downloadLinkUrl;
+        public string DownloadLinkUrl
+            => _downloadLinkUrl ??
+                (_downloadLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(GlassModel.Download_Link?.Url));
     }
 }

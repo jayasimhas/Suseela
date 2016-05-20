@@ -1,8 +1,10 @@
 ﻿using System.Linq;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
+using Informa.Library.Mail.ExactTarget;
 using Informa.Library.Navigation;
 using Informa.Library.Site;
+using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.References;
 using Informa.Library.Wrappers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
@@ -24,6 +26,7 @@ namespace Informa.Web.ViewModels.Emails
             ISiteRootContext SiteRootContext { get; }
             IItemNavigationTreeFactory ItemNavigationTreeFactory { get; }
             ISitecoreService SitecoreService { get; }
+            ICampaignQueryBuilder CampaignQueryBuilder { get; }
         }
 
         public EmailLayoutViewModel(IDependencies dependencies)
@@ -40,21 +43,70 @@ namespace Informa.Web.ViewModels.Emails
                                                 (_viewOnlineVersionLinkText = _dependencies.TextTranslator?.Translate(DictionaryKeys.ViewOurOnlineVersionLinkText));
 
         private string _onlineVersionUrl;
+
         public string OnlineVersionUrl => _onlineVersionUrl ??
-                                          (_onlineVersionUrl = _dependencies.SitecoreUrlWrapper.GetItemUrl(GlassModel));
+                                          (_onlineVersionUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(
+                                              _dependencies.SitecoreUrlWrapper.GetItemUrl(GlassModel)));
 
         private ISite_Root _siteRoot;
         public ISite_Root SiteRoot => _siteRoot ??
                                       (_siteRoot = _dependencies.SiteRootContext.Item);
 
-        private INavigation _headerNavigation;
-        public INavigation HeaderNavigation
-            => _headerNavigation ?? 
-                (_headerNavigation = _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Header_Navigation).First());
+        private NavItemViewModel[] _headerNavigation;
+        public NavItemViewModel[] HeaderNavigation
+            => _headerNavigation ??
+               (_headerNavigation =
+                   _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Header_Navigation)
+                       .FirstOrDefault()?
+                       .Children
+                       .Select(nav => new NavItemViewModel
+                       {
+                           LinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(nav.Link?.Url),
+                           Text = nav.Text
+                       })
+                       .ToArray()
+                       .Alter(SetLastItemIsLast));
 
-        private INavigation _footerNavigation;
-        public INavigation FooterNavigation
+        private NavItemViewModel[] _footerNavigation;
+        public NavItemViewModel[] FooterNavigation
             => _footerNavigation ??
-                (_footerNavigation = _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Footer_Navigation).First());
+               (_footerNavigation =
+                   _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Footer_Navigation)
+                       .FirstOrDefault()?
+                       .Children
+                       .Select(nav => new NavItemViewModel
+                       {
+                           LinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(nav.Link?.Url),
+                           Text = nav.Text
+                       })
+                       .ToArray()
+                       .Alter(SetLastItemIsLast));
+
+        private string _rssLinkUrl;
+        public string RssLinkUrl => _rssLinkUrl ??
+                                    (_rssLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(SiteRoot.RSS_Link?.Url));
+
+        private string _linkedInLinkUrl;
+        public string LinkedInLinkUrl => _linkedInLinkUrl ??
+                                    (_linkedInLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(SiteRoot.LinkedIn_Link?.Url));
+
+        private string _twitterLinkUrl;
+        public string TwitterLinkUrl => _twitterLinkUrl ??
+                                    (_twitterLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(SiteRoot.Twitter_Link?.Url));
+
+
+
+
+        private static void SetLastItemIsLast(NavItemViewModel[] arr)
+        {
+            if (arr.Length != 0) { arr[arr.Length - 1].IsLast = true; }
+        }
+    }
+
+    public class NavItemViewModel
+    {
+        public string LinkUrl { get; set; }
+        public string Text { get; set; }
+        public bool IsLast { get; set; }
     }
 }

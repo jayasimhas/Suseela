@@ -107,6 +107,7 @@ namespace Informa.Tests.Library.Mail_Tests
                 .Returns("http://Mooseville.com/emails/MeetTheMoose");
             _dependencies.WebClientWrapper.DownloadString("http://Mooseville.com/emails/MeetTheMoose")
                 .Returns("<div><h1>Moose</h1></div>");
+            _dependencies.Premailer.InlineCss(Arg.Any<string>()).Returns(x => x.Arg<string>());
 
             // ACT
             _exactTargetClient.PushEmail(fakeEmailItem);
@@ -132,6 +133,7 @@ namespace Informa.Tests.Library.Mail_Tests
             _dependencies.ExactTargetWrapper.UpdateEmail(Arg.Any<ET_Email>()).Returns(fakeUpdateResponse);
             _dependencies.SitecoreUrlWrapper.GetItemUrl(fakeEmailItem)
                 .Returns("http://Mooseville.com/emails/MeetTheMoose");
+            _dependencies.Premailer.InlineCss(Arg.Any<string>()).Returns(x => x.Arg<string>());
 
             _dependencies.WebClientWrapper.DownloadString("http://Mooseville.com/emails/MeetTheMoose")
                 .Returns("<div><h1>Moose Update!</h1></div>");
@@ -189,6 +191,33 @@ namespace Informa.Tests.Library.Mail_Tests
 
             // ASSERT
             _dependencies.LogWrapper.Received().SitecoreWarn(Arg.Is<string>(s => s.Contains("nobody had fun!")));
+        }
+
+        [Test]
+        public void GetEmailHtml_DownloadStringHasContent_CssInlinerIsCalled()
+        {
+            // ARRANGE
+            var fakeEmailItem = Sub_EmailItem();
+            fakeEmailItem.Exact_Target_External_Key = 77;
+
+            var fakeUpdateResponse = new ExactTargetResponse
+            {
+                ExactTargetEmailId = 77,
+                Success = false,
+                Message = "nobody had fun!"
+            };
+
+            _dependencies.SitecoreUrlWrapper.GetItemUrl(fakeEmailItem)
+                .Returns("http://Mooseville.com/emails/MeetTheMoose");
+
+            _dependencies.WebClientWrapper.DownloadString("http://Mooseville.com/emails/MeetTheMoose")
+                .Returns("<div><h1>Moose Update!</h1></div>");
+
+            // ACT
+            _exactTargetClient.GetEmailHtml(fakeEmailItem);
+
+            // ASSERT
+            _dependencies.Premailer.Received().InlineCss(Arg.Is<string>(s => s.Contains("Moose Update")));
         }
     }
 }

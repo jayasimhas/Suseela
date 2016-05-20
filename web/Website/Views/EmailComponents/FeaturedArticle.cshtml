@@ -1,31 +1,57 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.FeaturedArticleViewModel>
 @{
-    var mediaTypeIconSrc = Model.Article.Media_Type?.Media_Type_Icon.Src;
+    var mediaTypeIconSrc = Model.Article?.Media_Type?.Media_Type_Icon?.Src;
 }
 
 <!-- this doesn't have to be a div, just demonstarting -->
 <!-- also feel free to change the "sponsored" class name -->
 <div class="@(Model.GlassModel.Is_Sponsored ? "sponsored" : string.Empty)"></div>
 
-<!-- none of these fields are expected to be editable -->
+<table class="manually-curated-section featured__article" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="article-preview-header">
 
-@if (!Model.GlassModel.Hide_Image)
-{
-    @Model.Article.Featured_Image_16_9
-}
-<br/>
-@Model.Article.Actual_Publish_Date.ToString("dd MMM yyyy")
-<br />
-@Model.Article.Content_Type
-<br />
-@Model.Article.Title
-<br/>
-@if (!string.IsNullOrEmpty(mediaTypeIconSrc))
-{
-    <img src="@mediaTypeIconSrc"/>
-}
-<br />
-@Model.Byline
-<br />
-@Model.Article.Summary
-<br/>
+                    @if (!Model.GlassModel.Hide_Image)
+                    {
+                        <td class="one-third layout-padded-right" valign="top">
+                            @Model.Article.Featured_Image_16_9
+                        </td>
+                    }
+
+                    <td valign="top" class="two-thirds">
+                        <div class="article-metadata">
+                            <span class="article-date">
+                                @Model.Article.Actual_Publish_Date.ToString("dd MMM yyyy")
+                            </span>
+                            <span class="vertical-separator">|</span>
+                            <span class="article-category">
+                                @Model.Article.Content_Type
+                            </span>
+                            <span class="vertical-separator">|</span>
+                            <span class="article-content-type">
+                                @if (!string.IsNullOrEmpty(mediaTypeIconSrc))
+                                {
+                                    <img src="@mediaTypeIconSrc"/>
+                                }
+                            </span>
+                        </div>
+
+                        <a href="@Model.TargetArticleUrl">
+                            <h3 class="featured__title">@Model.Article.Title</h3>
+                        </a>
+                        <span class="article-byline">@Model.Byline</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <p>@Html.Raw(Model.Article.Summary)</p>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>

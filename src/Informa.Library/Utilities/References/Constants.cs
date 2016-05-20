@@ -64,6 +64,16 @@ namespace Informa.Library.Utilities.References
             public const string InProgressKey = "inprogress";
             public const string SearchHeadlinesOnly = "headlinesOnly";
             public const string PerPageKey = "perPage";
+            public const string UtmCampaign = "utm_campaign";
+            public const string UtmSource = "utm_source";
+            public const string UtmMedium = "utm_medium";
+        }
+
+        public static class SettingKeys
+        {
+            public const string ExactTargetUseSandbox = "ExactTarget.UseSandbox";
+            public const string ExactTargetClientId = "ExactTarget.ClientId";
+            public const string ExactTargetSecretKey = "ExactTarget.SecretKey";
         }
     }
 }

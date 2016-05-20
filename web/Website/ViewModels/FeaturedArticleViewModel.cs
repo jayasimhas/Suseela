@@ -29,7 +29,7 @@ namespace Informa.Web.ViewModels
 			RenderingParametersContext = renderingParametersContext;
 		}
 
-		public override bool DisplayImage => Options.Show_Image ? base.DisplayImage : false;
+		public override bool DisplayImage => Options.Show_Image && base.DisplayImage;
 
 		public IFeatured_Article_Options Options => RenderingParametersContext.GetParameters<IFeatured_Article_Options>();
 	}

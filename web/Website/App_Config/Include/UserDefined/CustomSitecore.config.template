@@ -193,7 +193,12 @@ But you can also use "patch:attribute" for clarity:
 
       <setting name="MailServerPort">
         <patch:attribute name="value">${Mail.MailServerPort}</patch:attribute>
-      </setting>                                   
+      </setting>
+
+      <!-- ExactTarget Settings -->
+      <setting name="ExactTarget.UseSandbox" value="${ExactTarget.UseSandbox}" />
+      <setting name="ExactTarget.ClientId" value="${ExactTarget.ClientId}" />
+      <setting name="ExactTarget.SecretKey" value="${ExactTarget.SecretKey}" />
 
       <!-- HIDDEN SETTING!  Suggestion from sitecore to speed up the back end content editor. -->
       <setting name="ContentEditor.RenderCollapsedSections" value="false"/>
