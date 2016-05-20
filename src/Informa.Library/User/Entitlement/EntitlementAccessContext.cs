@@ -1,10 +1,11 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Jabberwocky.Autofac.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Informa.Library.User.Entitlement
 {
-	[AutowireService(LifetimeScope.Default)]
+	[AutowireService]
 	public class EntitlementAccessContext : IEntitlementAccessContext
 	{
 		protected readonly IEntitlementChecksEnabled EntitlementChecksEnabled;
@@ -25,7 +26,7 @@ namespace Informa.Library.User.Entitlement
 				return Create(null, EntitledAccessLevel.Individual);
 			}
 
-			var entitlements = EntitlementsContexts.SelectMany(ec => ec.Entitlements.Where(e => e.ProductCode == productCode).Select(e => Create(e, ec.AccessLevel)));
+			var entitlements = EntitlementsContexts.SelectMany(ec => ec.Entitlements.Where(e => string.Equals(e.ProductCode, productCode, StringComparison.InvariantCultureIgnoreCase)).Select(e => Create(e, ec.AccessLevel)));
 
 			foreach (var accessLevel in OrderedAccessLevels)
 			{
