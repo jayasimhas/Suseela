@@ -14,14 +14,11 @@
 				}
 				else
 				{
-					<img src="http://placekitten.com/320/100?random">
-				    <!-- throw these into javascript, I think? -->
-				    @Model.GlassModel.Zone
-				    @Model.GlassModel.Slot_ID
+				    <A HREF="@Model.AdClickLinkUrl" TARGET="_blank">
+				         <IMG SRC="@(Model.AdImageUrl)" Border=0>
+				    </a>
 
-				    <!-- put this on the end of any url (with ampersand) -->
-                    @Model.CampaignQuery
-                    <!-- e.g. http://placekitten.com/320/100?random& + @Model.CampaignQuery -->
+					@* where does Model.GlassModel.Zone go? *@
 				}
 			</p>
 		</td>
