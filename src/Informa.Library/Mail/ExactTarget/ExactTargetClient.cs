@@ -26,6 +26,7 @@ namespace Informa.Library.Mail.ExactTarget
             ISitecoreSecurityWrapper SitecoreSecurityWrapper { get; }
             ISitecoreServiceMaster SitecoreServiceMaster { get; }
             ISitecoreUrlWrapper SitecoreUrlWrapper { get; }
+            IPremailerWrapper Premailer { get; }
         }
 
         public ExactTargetClient(IDependencies dependencies)
@@ -97,7 +98,9 @@ namespace Informa.Library.Mail.ExactTarget
         public string GetEmailHtml(IExactTarget_Email emailItem)
         {
             var url = _dependencies.SitecoreUrlWrapper.GetItemUrl(emailItem);
-            return _dependencies.WebClientWrapper.DownloadString(url);
+            var htmlResponse = _dependencies.WebClientWrapper.DownloadString(url);
+            var inlineHtml = _dependencies.Premailer.InlineCss(htmlResponse);
+            return inlineHtml;
         }
 
     }
