@@ -196,7 +196,7 @@
 
                         </td>
                         <td class="sortable-table__col sortable-table__submit-wrapper">
-                            <form class="form-remove-saved-search"
+                            <form class="form-remove-saved-search form-remove-saved-search-@index"
                                   data-on-submit="/api/SavedSearches"
                                   data-submit-type="DELETE">
                                 <input name="Title" id="Title" type="hidden" value="@item.Title">
@@ -206,7 +206,7 @@
                                     data-lightbox-modal="js-remove-search-modal"
                                     data-lightbox-modal-title="Remove Saved Search"
                                     data-lightbox-modal-body="Are you sure you'd like to remove this saved search?"
-                                    data-lightbox-modal-success-target="form-remove-saved-search">
+                                    data-lightbox-modal-success-target="form-remove-saved-search-@index">
                                     @Model.RemoveText
                                 </button>
 

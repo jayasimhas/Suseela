@@ -15,12 +15,13 @@ function lightboxModalController() {
         $('.' + targetModal)
             .show()
             .find('.js-lightbox-modal-submit')
-            .on('click', function() {
-
+            // .one, not .on, to prevent stacking event listners
+            .one('click', function(e) {
                 successForm.find('button[type=submit]').click();
                 closeLightboxModal();
-                
             });
+
+        return false;
     };
 
     var showLightbox = this.showLightbox;
