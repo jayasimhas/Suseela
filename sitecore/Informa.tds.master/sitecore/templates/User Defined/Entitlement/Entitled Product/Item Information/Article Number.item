@@ -2,8 +2,8 @@
 version: 1
 id: {1616FE67-7278-4169-948E-C29B00EC8781}
 database: master
-path: /sitecore/templates/User Defined/Pages/Article/Item Information/Article Number
-parent: {C33D0569-BCB4-4B3A-8FE1-23013A855E99}
+path: /sitecore/templates/User Defined/Entitlement/Entitled Product/Item Information/Article Number
+parent: {C187F299-46F7-48FD-AFA5-890DA437F57F}
 name: Article Number
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
@@ -26,7 +26,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 58ca81f1-ac57-42b6-bf46-e43b1730353a
+revision: 7b5e7208-8940-4b46-8528-fe61bdcf42db
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-58ca81f1-ac57-42b6-bf46-e43b1730353a
+7b5e7208-8940-4b46-8528-fe61bdcf42db
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151224T214935Z
+20160520T155808Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

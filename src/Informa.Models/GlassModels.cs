@@ -1649,15 +1649,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IArticleConstants.Sort_OrderFieldName, Setting = SitecoreFieldSettings.InferType)]
 					float Sort_Order  {get; set;}
 								/// <summary>
-					/// The Article Number field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 1616fe67-7278-4169-948e-c29b00ec8781</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IArticleConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Article_Number  {get; set;}
-								/// <summary>
 					/// The Content Type field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
@@ -1967,15 +1958,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IArticleConstants.Sort_OrderFieldName, Setting = SitecoreFieldSettings.InferType)]
 						float Sort_Order  {get; set;}
 										/// <summary>
-						/// The Article Number field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 1616fe67-7278-4169-948e-c29b00ec8781</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IArticleConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Article_Number  {get; set;}
-										/// <summary>
 						/// The Content Type field.
 						/// <para></para>
 						/// <para>Field Type: Droplink</para>		
@@ -2269,11 +2251,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 						
 					
-			public static readonly ID Article_NumberFieldId = new ID("1616fe67-7278-4169-948e-c29b00ec8781");
-			public const string Article_NumberFieldName = "Article Number";
-
-						
-					
 			public static readonly ID Content_TypeFieldId = new ID("2c985172-2b37-4cfe-aede-2a42ec833941");
 			public const string Content_TypeFieldName = "Content Type";
 
@@ -2532,6 +2509,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Actual_Publish_DateFieldId = new ID("7c4fc796-1311-4daa-81ac-85eaa2c1c108");
 			public const string Actual_Publish_DateFieldName = "Actual Publish Date";
+
+						
+					
+			public static readonly ID Article_NumberFieldId = new ID("1616fe67-7278-4169-948e-c29b00ec8781");
+			public const string Article_NumberFieldName = "Article Number";
 
 						
 					
@@ -15792,6 +15774,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlem
 					[SitecoreField(IEntitled_ProductConstants.Actual_Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
 					DateTime Actual_Publish_Date  {get; set;}
 								/// <summary>
+					/// The Article Number field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 1616fe67-7278-4169-948e-c29b00ec8781</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IEntitled_ProductConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Article_Number  {get; set;}
+								/// <summary>
 					/// The Free field.
 					/// <para></para>
 					/// <para>Field Type: Checkbox</para>		
@@ -15822,6 +15813,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlem
 						[SitecoreField(IEntitled_ProductConstants.Actual_Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
 						DateTime Actual_Publish_Date  {get; set;}
 										/// <summary>
+						/// The Article Number field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 1616fe67-7278-4169-948e-c29b00ec8781</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IEntitled_ProductConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Article_Number  {get; set;}
+										/// <summary>
 						/// The Free field.
 						/// <para></para>
 						/// <para>Field Type: Checkbox</para>		
@@ -15841,6 +15841,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlem
 					
 			public static readonly ID Actual_Publish_DateFieldId = new ID("7c4fc796-1311-4daa-81ac-85eaa2c1c108");
 			public const string Actual_Publish_DateFieldName = "Actual Publish Date";
+
+						
+					
+			public static readonly ID Article_NumberFieldId = new ID("1616fe67-7278-4169-948e-c29b00ec8781");
+			public const string Article_NumberFieldName = "Article Number";
 
 						
 					
