@@ -21,7 +21,7 @@ namespace Informa.Library.Purchase.User.Entitlement
 
 		public IEntitlementAccess Find(IEntitledProduct entitledProduct)
 		{
-			var matchingPurchase = ArticlePurchasesContext.ArticlesPurchases.FirstOrDefault(ap => string.Equals(ap.DocumentId, entitledProduct.DocumentId, StringComparison.InvariantCultureIgnoreCase));
+			var matchingPurchase = ArticlePurchasesContext.ArticlesPurchases?.FirstOrDefault(ap => string.Equals(ap.DocumentId, entitledProduct.DocumentId, StringComparison.InvariantCultureIgnoreCase));
 
 			if (matchingPurchase == null || entitledProduct.PublishedOn >= matchingPurchase.Expiration)
 			{
