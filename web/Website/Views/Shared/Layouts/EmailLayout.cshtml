@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Untitled</title>
     <style type="text/css">
 
@@ -36,6 +37,15 @@
     .layout-text-right {
         text-align: right;
     }
+    .two-thirds {
+        width: 60%;
+    }
+    .one-third {
+        width: 30%;
+    }
+    .one-third img {
+        width: 100%;
+    }
 
 
     a:link {
@@ -53,210 +63,228 @@
 
 
 
+    body {
+        -webkit-text-size-adjust:100%;
+        -ms-text-size-adjust:100%;
+        mso-table-lspace:0pt;
+        mso-table-rspace:0pt;
+        font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;
+        font-size:12px;
+        border-collapse:collapse !important;;
+    }
+
+    p,
+    .t-paragraph {
+        font-size: 14px;
+        font-family: Georgia, serif;
+        line-height: 150%;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .standardPadding {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    #topViewOnlineLink {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    #templateContainer {
+        -webkit-text-size-adjust:100%;
+        -ms-text-size-adjust:100%;
+        mso-table-lspace:0pt;
+        mso-table-rspace:0pt;
+        width:600px;
+        border:1px solid #DDDDDD;
+        border-collapse:collapse !important;
+        margin-bottom: 32px;
+        max-width: 600px;
+    }
+
+    .preheaderContent {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        font-size: 13px;
+    }
+
+    #templateHeader {
+        margin-bottom: 24px;
+    }
+
+    .header__date {
+        font-size: 13px;
+        color: #888;
+        font-weight: bold;
+    }
+
+    .manually-curated-section {
+        margin-bottom: 32px;
+    }
+
+    .daily-alert {
+        background-color: #eee;
+        margin-bottom: 24px;
+    }
+    .daily-alert__cell {
+        padding-bottom: 16px;
+        padding-top: 16px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .daily-alert-body {
+        font-size: 16px;
+        color: #777;
+        margin-bottom: 0;
+        text-align: center;
+        line-height: 26px;
+    }
+
+    .mobile-ad {
+        margin-bottom: 16px;
+    }
+    .mobile-ad__cell {
+        text-align: center;
+    }
+    .mobile-ad__title {
+        text-align: left;
+        width: 320px;
+        margin: 0px auto;
+        padding-bottom: 4px;
+        letter-spacing: 1px;
+        font-size: 10px;
+        color: #bbb;
+        font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;
+        text-transform: uppercase;
+    }
+    .mobile-ad__image {
+        margin-top: 0;
+
+    }
+
+    .caps-header {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .section-header {
+        border-bottom: 2px solid #ddd;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 16px;
+        width: 100%;
+    }
+    .section-header td {
+        padding-bottom: 8px;
+    }
+
+    .article-preview-header td {
+        padding-bottom: 16px;
+    }
+
+    .article-metadata {
+        margin-bottom: 8px;
+    }
+    .article-date {
+        color: #888;
+        font-size: 13px;
+        vertical-align: middle;
+    }
+
+    .vertical-separator {
+        display: inline-block;
+        margin-left: 8px;
+        margin-right: 8px;
+        color: #ddd;
+        font-size: 16px;
+    }
+
+    .article-category {
+        font-weight: bold;
+        text-transform: uppercase;
+        vertical-align: middle;
+    }
+    .featured__title {
+        margin: 0;
+        margin-bottom: 8px;
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .article-byline {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .featured__image {
+        width: 100%;
+        height: auto;
+    }
+
+    .featured__read-more {
+        margin-top: 16px;
+        font-size: 15px;
+        text-align: right;
+    }
+
+    .featured__article {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 8px;
+    }
+    .featured__article td {
+        padding-bottom: 12px;
+    }
+
+    #templateFooter {
+        background-color: #eee;
+    }
+    #templateFooter,
+    #templateFooter p {
+        font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;
+        font-size: 12px;
+        color: #888;
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .featured__download-link {
+        display: inline-block;
+        margin-top: 16px;
+    }
+
+    </style>
+
+    <style type="text/css" id="ignore">
+    @@media (max-width: 480px) {
+
         body {
-            -webkit-text-size-adjust:100%;
-            -ms-text-size-adjust:100%;
-            mso-table-lspace:0pt;
-            mso-table-rspace:0pt;
-            font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;
-            font-size:12px;
-            border-collapse:collapse !important;;
+            font-size: 100%;
         }
-
-        p,
-        .t-paragraph {
-            font-size: 14px;
-            font-family: Georgia, serif;
-            line-height: 150%;
-            margin-top: 0;
-            padding-top: 0;
-        }
-
-        .standardPadding {
-            padding-left: 24px;
-            padding-right: 24px;
-        }
-
-        #topViewOnlineLink {
-            margin-top: 16px;
-            margin-bottom: 16px;
-        }
-
         #templateContainer {
-            -webkit-text-size-adjust:100%;
-            -ms-text-size-adjust:100%;
-            mso-table-lspace:0pt;
-            mso-table-rspace:0pt;
-            width:600px;
-            border:1px solid #DDDDDD;
-            border-collapse:collapse !important;
-            margin-bottom: 32px;
-            max-width: 600px;
+            width: 100%;
         }
 
-        .preheaderContent {
-            padding-top: 16px;
-            padding-bottom: 16px;
-            font-size: 13px;
+        .header__site-logo img {
+            max-width: 150px;
         }
 
-        #templateHeader {
-            margin-bottom: 24px;
+        .layout-padded-left,
+        .layout-padded-right {
+            padding: 0;
         }
-
-        .header__date {
-            font-size: 13px;
-            color: #888;
-            font-weight: bold;
-        }
-
-        .manually-curated-section {
-            margin-bottom: 32px;
-        }
-
+        .one-third,
         .two-thirds {
-            width: 60%;
-        }
-        .one-third {
-            width: 30%;
-        }
-        .one-third img {
+            display: block;
             width: 100%;
-        }
-
-        .daily-alert {
-            background-color: #eee;
-            margin-bottom: 24px;
-        }
-        .daily-alert__cell {
-            padding-bottom: 16px;
-            padding-top: 16px;
-            padding-left: 24px;
-            padding-right: 24px;
-        }
-        .daily-alert-body {
-            font-size: 16px;
-            color: #777;
-            margin-bottom: 0;
-            text-align: center;
-            line-height: 26px;
-        }
-
-        .mobile-ad {
             margin-bottom: 16px;
         }
-        .mobile-ad__cell {
-            text-align: center;
-        }
-        .mobile-ad__title {
-            text-align: left;
-            width: 320px;
-            margin: 0px auto;
-            padding-bottom: 4px;
-            letter-spacing: 1px;
-            font-size: 10px;
-            color: #bbb;
-            font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;
-            text-transform: uppercase;
-        }
-        .mobile-ad__image {
-            margin-top: 0;
 
-        }
-
-        .caps-header {
-            text-transform: uppercase;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-
-        .section-header {
-            border-bottom: 2px solid #ddd;
-            font-size: 16px;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-bottom: 16px;
-            width: 100%;
-        }
-        .section-header td {
-            padding-bottom: 8px;
-        }
-
-        .article-preview-header td {
-            padding-bottom: 16px;
-        }
-
-        .article-metadata {
-            margin-bottom: 8px;
-        }
-        .article-date {
-            color: #888;
-            font-size: 13px;
-            vertical-align: middle;
-        }
-
-        .vertical-separator {
-            display: inline-block;
-            margin-left: 8px;
-            margin-right: 8px;
-            color: #ddd;
-            font-size: 16px;
-        }
-
-        .article-category {
-            font-weight: bold;
-            text-transform: uppercase;
-            vertical-align: middle;
-        }
-        .featured__title {
-            margin: 0;
-            margin-bottom: 8px;
-            font-size: 22px;
-            line-height: 28px;
-        }
-        .article-byline {
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .featured__image {
-            width: 100%;
-            height: auto;
-        }
-
-        .featured__read-more {
-            margin-top: 16px;
-            font-size: 15px;
-            text-align: right;
-        }
-
-        .featured__article {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 8px;
-        }
-        .featured__article td {
-            padding-bottom: 12px;
-        }
-        
-        #templateFooter {
-            background-color: #eee;
-        }
-        #templateFooter,
-        #templateFooter p {
-            font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;
-            font-size: 12px;
-            color: #888;
-            text-align: center;
-            font-weight: normal;
-        }
-
-        .featured__download-link {
-            display: inline-block;
-            margin-top: 16px;
-        }
-
+    }
     </style>
 </head>
 <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
@@ -309,7 +337,7 @@
                                 <!-- BEGIN HEADER // -->
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
                                     <tr>
-                                        <td width="150" valign="top" class="headerContent">
+                                        <td width="150" valign="top" class="header__site-logo">
                                             <img src="@Model.SiteRoot.Email_Logo.Src"/>
                                         </td>
                                         <td valign="bottom" align="right">
