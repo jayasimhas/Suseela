@@ -50,11 +50,11 @@ namespace Informa.Web.ViewModels.Emails
         private INavigation _headerNavigation;
         public INavigation HeaderNavigation
             => _headerNavigation ?? 
-                (_headerNavigation = _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Header_Navigation).First());
+                (_headerNavigation = _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Header_Navigation).FirstOrDefault());
 
         private INavigation _footerNavigation;
         public INavigation FooterNavigation
             => _footerNavigation ??
-                (_footerNavigation = _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Footer_Navigation).First());
+                (_footerNavigation = _dependencies.ItemNavigationTreeFactory.Create(SiteRoot.Email_Footer_Navigation).FirstOrDefault());
     }
 }
