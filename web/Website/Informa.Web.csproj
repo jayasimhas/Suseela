@@ -1216,7 +1216,7 @@
     <Content Include="App_Config\Include\ZZ.UserDefined\LoginRedirect.config" />
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.velirTemplate" />
     <Content Include="App_Config\Web\system.webServer.rewrite.config.template" />
-    <None Include="App_Config\Include\zzzMustBeLast\Import.config.template" />
+    <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">

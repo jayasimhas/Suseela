@@ -22,11 +22,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 		public StartUpDataMap(Database db, string connectionString, Item importItem, ILogger l) : base(db, connectionString, importItem, l)
 		{
-			var parent = importItem.Parent.Name == "Articles" ? importItem.Parent.Parent.Name : importItem.Parent.Name;
-			if (parent == "Scrip")
-			{
-				ArticleNumber = (int)GetScripLastArticleNumber("{3818C47E-4B75-4305-8F01-AB994150A1B0}", importItem);
-			}
+			//var parent = importItem.Parent.Name == "Articles" ? importItem.Parent.Parent.Name : importItem.Parent.Name;
+			//if (parent == "Scrip")
+			//{
+			//	ArticleNumber = (int)GetScripLastArticleNumber("{3818C47E-4B75-4305-8F01-AB994150A1B0}", importItem);
+			//}
 		}
 
 		public override IEnumerable<object> GetImportData()
