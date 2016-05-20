@@ -7,7 +7,7 @@
 <!-- also feel free to change the "sponsored" class name -->
 <div class="@(Model.GlassModel.Is_Sponsored ? "sponsored" : string.Empty)"></div>
 
-<table class="manually-curated-section" border="0" cellpadding="0" cellspacing="0" width="100%">
+<table class="manually-curated-section featured__article" border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
         <td>
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -47,7 +47,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <p>@Model.Article.Summary</p>
+                        <p>@Html.Raw(Model.Article.Summary)</p>
                     </td>
                 </tr>
 
