@@ -31,12 +31,24 @@ namespace Informa.Library.Company
 
 			if (company == null && !string.IsNullOrEmpty(newUser.MasterId))
 			{
-				company = FindCompanyByMasterId.Find(newUser.MasterId, newUser.MasterPassword);
+				var errors = new List<string>();
+				var masterCompany = FindCompanyByMasterId.Find(newUser.MasterId, newUser.MasterPassword);
 
-				if (company == null)
+				if (masterCompany == null)
 				{
-					return CreateResult(false, Enumerable.Empty<string>());
+					errors.Add(CompanyRegisterUserError.MasterIdInvalid.ToString());
 				}
+				else if (masterCompany.IsExpired)
+				{
+					errors.Add(CompanyRegisterUserError.MasterIdExpired.ToString());
+				}
+
+				if (errors.Any())
+				{
+					return CreateResult(false, errors);
+				}
+
+				company = masterCompany;
 			}
 
 			if (company != null && !AllowedCompanyTypes.Types.Contains(company.Type))

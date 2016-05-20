@@ -1,5 +1,7 @@
 ﻿using Informa.Library.Company;
 using Informa.Library.Salesforce.EBIWebServices;
+using System;
+using System.Linq;
 
 namespace Informa.Library.Salesforce.Company
 {
@@ -22,6 +24,14 @@ namespace Informa.Library.Salesforce.Company
 
 			if (!response.IsSuccess())
 			{
+				if (response.errors.Any(e => string.Equals(e.statusCode, "EXPIRED_MASTERID", StringComparison.InvariantCultureIgnoreCase)))
+				{
+					return new SalesforceMasterCompany
+					{
+						IsExpired = true
+					};
+				}
+
 				return null;
 			}
 
@@ -29,9 +39,10 @@ namespace Informa.Library.Salesforce.Company
 
 			return new SalesforceMasterCompany
 			{
-				Id = account.accountId,
-				Name = account.company,
-				Type = CompanyTypeParser.Parse(account.accountType)
+				Id = account?.accountId,
+				Name = account?.company,
+				Type = CompanyTypeParser.Parse(account?.accountType),
+				IsExpired = response.isMasterIdExpiredSpecified && response.isMasterIdExpired != null ? response.isMasterIdExpired.Value : false
 			};
 		}
 	}

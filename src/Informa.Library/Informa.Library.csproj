@@ -305,6 +305,7 @@
     <Compile Include="Article\Service\IArticleSearchService.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
+    <Compile Include="Company\CompanyRegisterUserError.cs" />
     <Compile Include="Company\CompanyRegisterUserResult.cs" />
     <Compile Include="Company\CompanyType.cs" />
     <Compile Include="Company\IAllowCompanyRegisterUserContext.cs" />

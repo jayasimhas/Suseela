@@ -69,5 +69,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 		public string PasswordRequirementsErrorText => TextTranslator.Translate("Registration.PasswordRequirementsError");
 		public string TermsNotAcceptedErrorText => TextTranslator.Translate("Registration.TermsNotAcceptedError");
 		public string GeneralErrorText => TextTranslator.Translate("Registration.GeneralError");
+		public string MasterIdInvalidErrorText => TextTranslator.Translate("Registration.MasterIdInvalidError");
+		public string MasterIdExpiredErrorText => TextTranslator.Translate("Registration.MasterIdExpiredError");
 	}
 }
