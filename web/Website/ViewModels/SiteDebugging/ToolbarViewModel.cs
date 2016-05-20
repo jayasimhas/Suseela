@@ -14,7 +14,8 @@ namespace Informa.Web.ViewModels.SiteDebugging
 			IEntitlementsCheckEnabledViewModel entitlementsCheckEnabledViewModel,
 			IUserEntitlementsViewModel userEntitlementsViewModel,
 			IUserSubscriptionsViewModel userSubscriptionsViewModel,
-			IUsernameViewModel usernameViewModel)
+			IUsernameViewModel usernameViewModel,
+			IUserPageEntitlementViewModel userPageEntitlementViewModel)
 		{
 			SiteDebuggingAllowedContext = siteDebuggingAllowedContext;
 			UserIpAddressViewModel = userIpAddressViewModel;
@@ -22,6 +23,7 @@ namespace Informa.Web.ViewModels.SiteDebugging
 			UserEntitlementsViewModel = userEntitlementsViewModel;
 			UserSubscriptionsViewModel = userSubscriptionsViewModel;
 			UsernameViewModel = usernameViewModel;
+			UserPageEntitlementViewModel = userPageEntitlementViewModel;
 		}
 
 		public IUserIpAddressViewModel UserIpAddressViewModel { get; set; }
@@ -29,6 +31,7 @@ namespace Informa.Web.ViewModels.SiteDebugging
 		public IUserEntitlementsViewModel UserEntitlementsViewModel { get; set; }
 		public IUserSubscriptionsViewModel UserSubscriptionsViewModel { get; set; }
 		public IUsernameViewModel UsernameViewModel { get; set; }
+		public IUserPageEntitlementViewModel UserPageEntitlementViewModel { get; set; }
 
 		public bool Enabled => SiteDebuggingAllowedContext.IsAllowed;
 		public string ToggleButtonText => "Debugging";

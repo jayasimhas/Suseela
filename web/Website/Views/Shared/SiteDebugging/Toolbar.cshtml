@@ -38,6 +38,12 @@
 			<div class="debugToolbarSection">
 				@{ Html.RenderPartial("SiteDebugging/UserEntitlements", Model.UserEntitlementsViewModel); }
 			</div>
+			@if (Model.UserPageEntitlementViewModel.IsValidPage)
+			{
+				<div class="debugToolbarSection">
+					@{ Html.RenderPartial("SiteDebugging/UserPageEntitlement", Model.UserPageEntitlementViewModel); }
+				</div>
+			}
 			<div class="debugToolbarSection">
 				@{ Html.RenderPartial("SiteDebugging/UserSubscriptions", Model.UserSubscriptionsViewModel); }
 			</div>
