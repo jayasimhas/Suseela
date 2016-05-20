@@ -255,6 +255,14 @@ $(document).ready(function() {
         }
     });
 
+    $('.js-corporate-master-toggle').on('change', function() {
+        if($(this).prop('checked')) {
+            $('.js-registration-corporate-wrapper').show();
+        } else {
+            $('.js-registration-corporate-wrapper').hide();
+        }
+    });
+
     var userRegistrationController = new FormController({
         observe: '.form-registration',
         successCallback: function(form, context, event) {
