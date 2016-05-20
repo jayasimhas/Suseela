@@ -185,8 +185,10 @@ function sortableTableController() {
 		return aa - bb;
 	},
 	sort_alpha: function(a,b) {
-		if (a[0].text().trim() == b[0].text().trim()) return 0;
-		if (a[0].text().trim() < b[0].text().trim()) return -1;
+	    var aClean = a[0].text().trim().toUpperCase();
+	    var bClean = b[0].text().trim().toUpperCase();
+	    if (aClean == bClean) return 0;
+	    if (aClean < bClean) return -1;
 		return 1;
 	},
 
@@ -200,7 +202,7 @@ function sortableTableController() {
 	sort_checkbox: function(a, b) {
 		var aChecked = a[0].find('input[type=checkbox]').prop('checked');
 		var bChecked = b[0].find('input[type=checkbox]').prop('checked');
-		if(aChecked && !bChecked) return 1;
+	    if(aChecked && !bChecked) return 1;
 		if(!aChecked && bChecked) return -1;
 
 		return 0;
