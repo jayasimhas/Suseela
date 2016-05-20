@@ -89,7 +89,6 @@ namespace Informa.Library.Mail.ExactTarget
                 TextBody = emailItem.Text_Body,
                 CharacterSet = emailItem.Character_Set,
                 CategoryID = emailItem.Category_Id,
-                CategoryIDSpecified = true,
                 EmailType = "HTML",
                 IsHTMLPaste = true
             };
