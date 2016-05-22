@@ -38,6 +38,9 @@ namespace Informa.Library.Search.PredicateBuilders
                 predicate = predicate.And(x => x.Val == Sitecore.Configuration.Settings.GetSetting("Search.NewerArticlesBoosting.BoostFunction"));
             }
 
+            //Include Search for authors
+            predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
+
             // If the inprogress flag is available then add that as as filter, this is used in VWB
             if (_request.QueryParameters.ContainsKey("inprogress"))
             {
