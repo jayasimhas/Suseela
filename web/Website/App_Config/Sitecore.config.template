@@ -1617,7 +1617,8 @@
     </loggedin>
     <loggingin argsType="Sitecore.Pipelines.LoggingIn.LoggingInArgs">
       <processor mode="on" type="Sitecore.Pipelines.LoggingIn.ClearCache, Sitecore.Kernel" />
-      <processor mode="on" type="Sitecore.Pipelines.LoggingIn.CheckClientUser, Sitecore.Kernel" />
+
+      <processor mode="on" type="Informa.Library.CustomSitecore.Pipelines.CheckClientUser, Informa.Library" />
       <processor mode="on" type="Sitecore.Pipelines.LoggingIn.CheckStartUrl, Sitecore.Kernel" />
     </loggingin>
     <logout argsType="Sitecore.Pipelines.Logout.LogoutArgs">
@@ -1631,8 +1632,9 @@
       <processor mode="on" type="Sitecore.Pipelines.PasswordRecovery.VerifyUsername, Sitecore.Kernel" />
       <processor mode="on" type="Sitecore.Pipelines.PasswordRecovery.GeneratePassword, Sitecore.Kernel" />
       <processor mode="on" type="Sitecore.Pipelines.PasswordRecovery.PopulateMail, Sitecore.Kernel" />
-      <processor mode="on" type="Sitecore.Pipelines.PasswordRecovery.SendPasswordRecoveryMail, Sitecore.Kernel" />
+      <processor mode="on" type="Informa.Library.CustomSitecore.Pipelines.PasswordRecoveryPipeline, Informa.Library" />
     </passwordRecovery>
+
     <saveUI>
       <processor mode="on" type="Sitecore.Pipelines.Save.BeforeSaveEvent, Sitecore.Kernel" />
       <processor mode="on" type="Sitecore.Pipelines.Save.ParseXml, Sitecore.Kernel" />
