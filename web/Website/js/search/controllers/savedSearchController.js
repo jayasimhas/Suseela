@@ -10,6 +10,23 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
 
     vm.testValue = savedSearchService.testVal;
 
+    function openSaveSearchIf1Click() {
+
+        var urlQuery = $location.search();
+        console.log(urlQuery);
+
+        var clickKey = Object.keys(urlQuery).filter(
+            function (cur) { return cur.toLowerCase() === "1click"; });
+        console.log(clickKey);
+
+        if (clickKey.length > 0 && urlQuery[clickKey[0]] === "1") {
+            console.log(jQuery(".js-save-search"));
+            jQuery(".js-save-search").click();
+            $location.search(clickKey[0], null);
+        }
+    }
+    $timeout(function() { openSaveSearchIf1Click() });
+
     $scope.$watch(function () {
         return searchService.getPager();
     }, function () {
@@ -35,7 +52,7 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
         vm.isSaved = false;
     };
 
-    vm.lightboxCheck = function(e) {
+    vm.lightboxCheck = function (e) {
         if(vm.isSaved) {
             window.lightboxController.showLightbox($(e.target).closest('.js-lightbox-modal-trigger'));
         }
