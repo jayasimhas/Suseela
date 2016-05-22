@@ -29,12 +29,12 @@ function newsletterSignupController() {
                 // Hide any errors
                 $('.js-newsletter-signup-error').hide();
 
-                var inputData = "";
+                var inputData = $("#newsletterUserName").val();
                 var url = $(triggerElement).data('signup-url');
 
-                $(triggerElement).parents('.newsletter-signup').find('input').each(function() {
-                    inputData = $(this).val();
-                });
+                //$(triggerElement).parents('.newsletter-signup').find('input').each(function() {
+                //    inputData = $(this).val();
+                //});
 
                 if(inputData!=='' && this.IsValidEmail(inputData)){
                     $('.js-newsletter-signup--error-invalidemailformat').hide();
