@@ -25,6 +25,11 @@ namespace Informa.Library.Salesforce.User.Newsletter
 				return false;
 			}
 
+			if (!newsletterOptIns.Any())
+			{
+				return true;
+			}
+
             //we can't send just the ones we want to update. we have to send all newsletter optins that a user has
 		    List<string> updateTypes = newsletterOptIns.Select(n => n.NewsletterType.ToLower()).ToList();
             var updatedOptIns = NewsletterContext.OptIns.Where(a => !updateTypes.Contains(a.NewsletterType.ToLower())).Concat(newsletterOptIns);

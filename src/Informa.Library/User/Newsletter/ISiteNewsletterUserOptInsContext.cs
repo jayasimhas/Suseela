@@ -2,7 +2,7 @@
 
 namespace Informa.Library.User.Newsletter
 {
-	public interface ISitesNewsletterUserOptInsContext
+	public interface ISiteNewsletterUserOptInsContext
 	{
 		IEnumerable<INewsletterUserOptIn> OptIns { get; }
 	}

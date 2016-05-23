@@ -11379,6 +11379,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Main_Navigation  {get; set;}
 								/// <summary>
+					/// The Newsletter Breaking Type field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 86e1c6a2-6146-4ab5-a301-4a1c0cafbb61</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Newsletter_Breaking_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Newsletter_Breaking_Type  {get; set;}
+								/// <summary>
+					/// The Newsletter Daily Type field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: a08878df-22c2-41e0-a1af-ddd73a2c7379</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Newsletter_Daily_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Newsletter_Daily_Type  {get; set;}
+								/// <summary>
+					/// The Newsletter Weekly Type field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: f8bd66f3-da05-4c9a-aa10-3e1b69c2afe4</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Newsletter_Weekly_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Newsletter_Weekly_Type  {get; set;}
+								/// <summary>
 					/// The Print Logo field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
@@ -12030,6 +12057,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Main_Navigation  {get; set;}
 										/// <summary>
+						/// The Newsletter Breaking Type field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 86e1c6a2-6146-4ab5-a301-4a1c0cafbb61</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Newsletter_Breaking_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Newsletter_Breaking_Type  {get; set;}
+										/// <summary>
+						/// The Newsletter Daily Type field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: a08878df-22c2-41e0-a1af-ddd73a2c7379</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Newsletter_Daily_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Newsletter_Daily_Type  {get; set;}
+										/// <summary>
+						/// The Newsletter Weekly Type field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: f8bd66f3-da05-4c9a-aa10-3e1b69c2afe4</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Newsletter_Weekly_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Newsletter_Weekly_Type  {get; set;}
+										/// <summary>
 						/// The Print Logo field.
 						/// <para></para>
 						/// <para>Field Type: Image</para>		
@@ -12536,6 +12590,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
 			public const string Main_NavigationFieldName = "Main Navigation";
+
+						
+					
+			public static readonly ID Newsletter_Breaking_TypeFieldId = new ID("86e1c6a2-6146-4ab5-a301-4a1c0cafbb61");
+			public const string Newsletter_Breaking_TypeFieldName = "Newsletter Breaking Type";
+
+						
+					
+			public static readonly ID Newsletter_Daily_TypeFieldId = new ID("a08878df-22c2-41e0-a1af-ddd73a2c7379");
+			public const string Newsletter_Daily_TypeFieldName = "Newsletter Daily Type";
+
+						
+					
+			public static readonly ID Newsletter_Weekly_TypeFieldId = new ID("f8bd66f3-da05-4c9a-aa10-3e1b69c2afe4");
+			public const string Newsletter_Weekly_TypeFieldName = "Newsletter Weekly Type";
 
 						
 					
@@ -17426,6 +17495,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
 			public const string Main_NavigationFieldName = "Main Navigation";
+
+						
+					
+			public static readonly ID Newsletter_Breaking_TypeFieldId = new ID("86e1c6a2-6146-4ab5-a301-4a1c0cafbb61");
+			public const string Newsletter_Breaking_TypeFieldName = "Newsletter Breaking Type";
+
+						
+					
+			public static readonly ID Newsletter_Daily_TypeFieldId = new ID("a08878df-22c2-41e0-a1af-ddd73a2c7379");
+			public const string Newsletter_Daily_TypeFieldName = "Newsletter Daily Type";
+
+						
+					
+			public static readonly ID Newsletter_Weekly_TypeFieldId = new ID("f8bd66f3-da05-4c9a-aa10-3e1b69c2afe4");
+			public const string Newsletter_Weekly_TypeFieldName = "Newsletter Weekly Type";
 
 						
 					
