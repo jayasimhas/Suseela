@@ -314,9 +314,13 @@
                         this.service.getFilter('q').setValue(this.keywords);
 
                         var routerBuilder = this.service.getRouteBuilder();
-                        this.location.search(routerBuilder.getRoute());
+                        this.location.search("q=" + this.keywords + "&page=1&sortBy=date&sortOrder=desc");
+
+                        console.log("?q=" + this.keywords + "&page=1&sortBy=date&sortOrder=desc");
 
                         this.service.query();
+
+
                     }
                 }]);
 
