@@ -651,7 +651,7 @@ $(document).ready(function() {
         init();
     };
 
-    $('#newsletters').on('click',function(e){
+    $('.js-register-final').on('click',function(e){
         newsletterOptins();
     });
 
@@ -702,7 +702,7 @@ $(document).ready(function() {
 
     });
 
-    newsletterOptins();
+ 
     // Execute!
     smoothScrollingNav();
 
