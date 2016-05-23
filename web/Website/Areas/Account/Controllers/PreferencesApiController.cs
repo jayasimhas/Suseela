@@ -12,13 +12,13 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly IUpdateOfferUserOptInContext OffersOptIn;
 		protected readonly IUpdateSiteNewsletterUserOptIn UpdateSiteNewsletterOptIn;
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
-		protected readonly ISetByTypeNewsletterUserOptInsContext SetNewsletterUserOptInsContext;
+		protected readonly ISetPublicationsNewsletterUserOptIns SetNewsletterUserOptInsContext;
 
 		public PreferencesApiController(
 			IUpdateOfferUserOptInContext offersOptIn,
 			IUpdateSiteNewsletterUserOptIn updateSiteNewsletterOptIn,
 			ISiteNewsletterUserOptedInContext newsletterOptedInContext,
-			ISetByTypeNewsletterUserOptInsContext setNewsletterUserOptInsContext)
+			ISetPublicationsNewsletterUserOptIns setNewsletterUserOptInsContext)
 		{
 			OffersOptIn = offersOptIn;
 			UpdateSiteNewsletterOptIn = updateSiteNewsletterOptIn;
@@ -30,7 +30,7 @@ namespace Informa.Web.Areas.Account.Controllers
         [ArgumentsRequired]
         public IHttpActionResult Update(PreferencesRequest request)
 		{
-			var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request.NewsletterOptIns ?? Enumerable.Empty<string>());
+			var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request.Publications ?? Enumerable.Empty<string>());
 			var offersUpdated = OffersOptIn.Update(!request.DoNotSendOffersOptIn);
 
 			return Ok(new

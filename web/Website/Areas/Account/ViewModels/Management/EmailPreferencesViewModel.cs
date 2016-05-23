@@ -6,7 +6,6 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templat
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System.Collections.Generic;
-using System.Web;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
