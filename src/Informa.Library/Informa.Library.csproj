@@ -590,7 +590,6 @@
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
     <Compile Include="User\Newsletter\ISetByTypeNewsletterUserOptInsContext.cs" />
-    <Compile Include="User\Newsletter\ISetByTypeSitesNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\ISiteNewsletterTypes.cs" />
     <Compile Include="User\Newsletter\ISiteNewsletterTypesContext.cs" />
     <Compile Include="User\Newsletter\ISiteNewsletterUserOptedInContext.cs" />
@@ -599,7 +598,6 @@
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptIn.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptInContext.cs" />
     <Compile Include="User\Newsletter\SetByTypeNewsletterUserOptInsContext.cs" />
-    <Compile Include="User\Newsletter\SetByTypeSitesNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\SiteNewsletterTypes.cs" />
     <Compile Include="User\Newsletter\SiteNewsletterTypesContext.cs" />
     <Compile Include="User\Newsletter\SiteNewsletterUserOptInsContext.cs" />
