@@ -1649,6 +1649,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IArticleConstants.Sort_OrderFieldName, Setting = SitecoreFieldSettings.InferType)]
 					float Sort_Order  {get; set;}
 								/// <summary>
+					/// The Article Number field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 1616fe67-7278-4169-948e-c29b00ec8781</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Article_Number  {get; set;}
+								/// <summary>
 					/// The Content Type field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
@@ -1958,6 +1967,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IArticleConstants.Sort_OrderFieldName, Setting = SitecoreFieldSettings.InferType)]
 						float Sort_Order  {get; set;}
 										/// <summary>
+						/// The Article Number field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 1616fe67-7278-4169-948e-c29b00ec8781</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Article_Number  {get; set;}
+										/// <summary>
 						/// The Content Type field.
 						/// <para></para>
 						/// <para>Field Type: Droplink</para>		
@@ -2251,6 +2269,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 						
 					
+			public static readonly ID Article_NumberFieldId = new ID("1616fe67-7278-4169-948e-c29b00ec8781");
+			public const string Article_NumberFieldName = "Article Number";
+
+						
+					
 			public static readonly ID Content_TypeFieldId = new ID("2c985172-2b37-4cfe-aede-2a42ec833941");
 			public const string Content_TypeFieldName = "Content Type";
 
@@ -2509,11 +2532,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Actual_Publish_DateFieldId = new ID("7c4fc796-1311-4daa-81ac-85eaa2c1c108");
 			public const string Actual_Publish_DateFieldName = "Actual Publish Date";
-
-						
-					
-			public static readonly ID Article_NumberFieldId = new ID("1616fe67-7278-4169-948e-c29b00ec8781");
-			public const string Article_NumberFieldName = "Article Number";
 
 						
 					
@@ -17261,11 +17279,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Email_Footer_NavigationFieldId = new ID("c3b51bcd-d830-415d-8e66-53e80bb9cd7d");
-			public const string Email_Footer_NavigationFieldName = "Email Footer Navigation";
-
-						
-					
 			public static readonly ID Email_FooterFieldId = new ID("abdd8a75-dca3-4b79-9922-916dfdb77a4f");
 			public const string Email_FooterFieldName = "Email Footer";
 
@@ -17275,11 +17288,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Email_From_AddressFieldId = new ID("6f5117bc-2706-48da-b5d3-0fd785fd9979");
 			public const string Email_From_AddressFieldName = "Email From Address";
-
-						
-					
-			public static readonly ID Email_Header_NavigationFieldId = new ID("4aa86258-477a-4e2f-bf53-64c9cb5ad261");
-			public const string Email_Header_NavigationFieldName = "Email Header Navigation";
 
 						
 					

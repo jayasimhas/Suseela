@@ -10,112 +10,112 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 
 namespace Informa.Web.ViewModels
 {
-    public class HierarchyLinksViewModel : GlassViewModel<I___BaseTaxonomy>, IHierarchyLinks
-    {
-        private HierarchyLinks model;
-        protected readonly ITextTranslator TextTranslator;
-        public HierarchyLinksViewModel(
-            I___BaseTaxonomy glassModel,
-            ITextTranslator textTranslator)
-        {
-            TextTranslator = textTranslator;
+	public class HierarchyLinksViewModel : GlassViewModel<I___BaseTaxonomy>, IHierarchyLinks
+	{
+		private HierarchyLinks model;
+		protected readonly ITextTranslator TextTranslator;
+		public HierarchyLinksViewModel(
+				I___BaseTaxonomy glassModel,
+				ITextTranslator textTranslator)
+		{
+			TextTranslator = textTranslator;
 
-            model = new HierarchyLinks();
+			model = new HierarchyLinks();
 
-            model.Text = "Related Topics";
-            model.Url = string.Empty;
+			model.Text = "Related Topics";
+			model.Url = string.Empty;
 
-            var children = new List<HierarchyLinks>();
+			var children = new List<HierarchyLinks>();
 
-            Dictionary<Guid, HierarchyLinks> taxonomyItems = new Dictionary<Guid, HierarchyLinks>();
+			Dictionary<Guid, HierarchyLinks> taxonomyItems = new Dictionary<Guid, HierarchyLinks>();
 
-            foreach (var taxonomy in glassModel.Taxonomies)
-            {
-                var taxonomyTree = GetTaxonomyHierarchy(taxonomy);
+			foreach (var taxonomy in glassModel.Taxonomies)
+			{
+				var taxonomyTree = GetTaxonomyHierarchy(taxonomy);
 
-                if (!taxonomyItems.ContainsKey(taxonomyTree.Item1._Id))
-                {
-                    taxonomyItems.Add(taxonomyTree.Item1._Id, new HierarchyLinks
-                    {
-                        Text = taxonomyTree.Item1._Name,
-                        Url = string.Empty,
-                        Children = new List<HierarchyLinks>()
-                    });
-                }        
+				if (!taxonomyItems.ContainsKey(taxonomyTree.Item1._Id))
+				{
+					taxonomyItems.Add(taxonomyTree.Item1._Id, new HierarchyLinks
+					{
+						Text = taxonomyTree.Item1._Name,
+						Url = string.Empty,
+						Children = new List<HierarchyLinks>()
+					});
+				}
 
-                var folderItem = taxonomyItems[taxonomyTree.Item1._Id];
+				var folderItem = taxonomyItems[taxonomyTree.Item1._Id];
 
-                foreach (var item in taxonomyTree.Item3)
-                {
-                    if (!taxonomyItems.ContainsKey(item._Parent._Id))
-                    {
-                        taxonomyItems.Add(item._Parent._Id, new HierarchyLinks
-                        {
-                            Text = item.Item_Name,
-                            Url = SearchTaxonomyUtil.GetSearchUrl(item),
-                            Children = new List<HierarchyLinks>()
-                        });
-                    }
+				foreach (var item in taxonomyTree.Item3)
+				{
+					if (!taxonomyItems.ContainsKey(item._Parent._Id))
+					{
+						taxonomyItems.Add(item._Parent._Id, new HierarchyLinks
+						{
+							Text = item.Item_Name,
+							Url = SearchTaxonomyUtil.GetSearchUrl(item),
+							Children = new List<HierarchyLinks>()
+						});
+					}
 
-                    var lItem = new HierarchyLinks
-                    {
-                        Text = item.Item_Name,
-                        Url = SearchTaxonomyUtil.GetSearchUrl(item),
-                        Children = new List<HierarchyLinks>()
-                    };
+					var lItem = new HierarchyLinks
+					{
+						Text = item.Item_Name,
+						Url = SearchTaxonomyUtil.GetSearchUrl(item),
+						Children = new List<HierarchyLinks>()
+					};
 
-                    if(!taxonomyItems.ContainsKey(item._Id))
-                        taxonomyItems.Add(item._Id, lItem);   
-                    var parent = taxonomyItems[item._Parent._Id];
-                    var pList = parent.Children.ToList();
-                    if(!pList.Any(a => a.Text.Equals(lItem.Text)))
-                        pList.Add(lItem);
+					if (!taxonomyItems.ContainsKey(item._Id))
+						taxonomyItems.Add(item._Id, lItem);
+					var parent = taxonomyItems[item._Parent._Id];
+					var pList = parent.Children.ToList();
+					if (!pList.Any(a => a.Text.Equals(lItem.Text)))
+						pList.Add(lItem);
 
-                    parent.Children = pList; 
-                }
-                
-                if(!children.Any(x => x.Text.Equals(folderItem.Text)))
-                    children.Add(folderItem);
-            }
+					parent.Children = pList;
+				}
 
-            model.Children = children;
-        }
+				if (!children.Any(x => x.Text.Equals(folderItem.Text)))
+					children.Add(folderItem);
+			}
 
-        //private IEnumerable<IGlassBase> GetHierarchy(ITaxonomy_Item item)
-        //{
-        //    this.
-        //} 
+			model.Children = children;
+		}
 
-        private Tuple<IFolder, Guid, IEnumerable<ITaxonomy_Item>> GetTaxonomyHierarchy(ITaxonomy_Item taxonomy)
-        {
-            List<ITaxonomy_Item> taxonomyItems = new List<ITaxonomy_Item>();
+		//private IEnumerable<IGlassBase> GetHierarchy(ITaxonomy_Item item)
+		//{
+		//    this.
+		//} 
 
-            taxonomyItems.Add(taxonomy);
-            var parent = taxonomy._Parent;    
+		private Tuple<IFolder, Guid, IEnumerable<ITaxonomy_Item>> GetTaxonomyHierarchy(ITaxonomy_Item taxonomy)
+		{
+			List<ITaxonomy_Item> taxonomyItems = new List<ITaxonomy_Item>();
 
-            while (parent is ITaxonomy_Item)
-            {
-                var item = parent as ITaxonomy_Item;
+			taxonomyItems.Add(taxonomy);
+			var parent = taxonomy._Parent;
 
-                taxonomyItems.Add(item);
-                parent = item._Parent;
-            }
+			while (parent is ITaxonomy_Item)
+			{
+				var item = parent as ITaxonomy_Item;
 
-            if (!(parent is IFolder))
-            {
-                throw new InvalidCastException("Not the correct data structure");
-            }
-            taxonomyItems.Reverse();
+				taxonomyItems.Add(item);
+				parent = item._Parent;
+			}
 
-            return new Tuple<IFolder, Guid, IEnumerable<ITaxonomy_Item>>(parent as IFolder, taxonomy._Parent._Id, taxonomyItems);
-        }
+			if (!(parent is IFolder))
+			{
+				throw new InvalidCastException("Not the correct data structure");
+			}
+			taxonomyItems.Reverse();
 
-        public IEnumerable<IHierarchyLinks> Children => model.Children;
+			return new Tuple<IFolder, Guid, IEnumerable<ITaxonomy_Item>>(parent as IFolder, taxonomy._Parent._Id, taxonomyItems);
+		}
 
-        public string Text => model.Text;
+		public IEnumerable<IHierarchyLinks> Children => model.Children;
 
-        public string RelatedTaxonomyHeader => TextTranslator.Translate("Article.RelTaxHeader");
+		public string Text => model.Text;
 
-        public string Url => model.Url;
-    }
+		public string RelatedTaxonomyHeader => TextTranslator.Translate("Article.RelTaxHeader");
+
+		public string Url => model.Url;
+	}
 }

@@ -774,6 +774,7 @@
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
+    <Compile Include="ViewModels\RelatedCompaniesModel.cs" />
     <Compile Include="ViewModels\SearchRssViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
@@ -1303,6 +1304,7 @@
     <Content Include="Views\EmailComponents\FeaturedContent.cshtml" />
     <Content Include="Views\EmailComponents\EmailAdvertisement.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\UserPageEntitlement.cshtml" />
+    <Content Include="Views\Article\ArticleRelatedCompanies.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

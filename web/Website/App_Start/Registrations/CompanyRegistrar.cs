@@ -2,6 +2,7 @@
 using Informa.Library.Company;
 using Informa.Library.Salesforce.Company;
 using Informa.Library.Salesforce.User.Registration;
+using Informa.Model.DCD;
 
 namespace Informa.Web.App_Start.Registrations
 {
@@ -20,6 +21,8 @@ namespace Informa.Web.App_Start.Registrations
 
 			builder.RegisterType<SalesforceFindCompanyByMasterId>().As<IFindCompanyByMasterId>();
 			builder.RegisterType<SalesforceRegisterUser>().As<IRegisterCompanyUser>();
+
+			builder.RegisterType<DCDManager>();
 		}
 	}
 }

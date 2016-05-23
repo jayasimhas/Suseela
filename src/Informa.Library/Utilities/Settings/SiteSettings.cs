@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Jabberwocky.Autofac.Attributes;
@@ -13,30 +14,30 @@ namespace Informa.Library.Utilities.Settings
 			return Sitecore.Configuration.Settings.GetSetting(key, defaultValue);
 		}
 
-        public string NlmExportPath => GetSetting("NLM.ExportPath", string.Empty);
-	    public string MailFromAddress => GetSetting("Mail.MailServerFromAddress", string.Empty);
+		public string NlmExportPath => GetSetting("NLM.ExportPath", string.Empty);
+		public string MailFromAddress => GetSetting("Mail.MailServerFromAddress", string.Empty);
+		public string OldCompaniesUrl => GetSetting("DCD.OldCompaniesURL", string.Empty);
 
+		public SiteInfoModel GetCurrentSiteInfo() => Map(Sitecore.Context.Site.SiteInfo);
 
-	    public SiteInfoModel GetCurrentSiteInfo() => Map(Sitecore.Context.Site.SiteInfo);
+		public IEnumerable<SiteInfoModel> GetSiteInfoList() =>
+				Sitecore.Configuration.Factory.GetSiteInfoList().Select(Map);
 
-	    public IEnumerable<SiteInfoModel> GetSiteInfoList() =>
-	        Sitecore.Configuration.Factory.GetSiteInfoList().Select(Map);
-
-	    private static SiteInfoModel Map(SiteInfo scInfo) => new SiteInfoModel
-	    {
-	        Name = scInfo.Name,
-	        HostName = scInfo.HostName,
-	        Domain = scInfo.Domain,
-	        RootPath = scInfo.RootPath
-	    };
+		private static SiteInfoModel Map(SiteInfo scInfo) => new SiteInfoModel
+		{
+			Name = scInfo.Name,
+			HostName = scInfo.HostName,
+			Domain = scInfo.Domain,
+			RootPath = scInfo.RootPath
+		};
 	}
 
-    // This model is an incomplete representation of Sitecor.Web.SiteInfo.  Expand as needed.
-    public class SiteInfoModel
-    {
-        public string Name { get; set; }
-        public string HostName { get; set; }
-        public string Domain { get; set; }
-        public string RootPath { get; set; }
-    }
+	// This model is an incomplete representation of Sitecor.Web.SiteInfo.  Expand as needed.
+	public class SiteInfoModel
+	{
+		public string Name { get; set; }
+		public string HostName { get; set; }
+		public string Domain { get; set; }
+		public string RootPath { get; set; }
+	}
 }

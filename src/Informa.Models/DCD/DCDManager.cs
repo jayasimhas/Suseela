@@ -20,7 +20,7 @@ namespace Informa.Model.DCD
             Deal dbDeal = null;
             using (DCDContext dContext = new DCDContext())
             {
-                dbDeal = dContext.Deals.Where(deal => deal.RecordNumber.Trim() == recordNumber.Trim()).FirstOrDefault();
+                dbDeal = dContext.Deals.FirstOrDefault(deal => deal.RecordNumber.Trim() == recordNumber.Trim());
             }
 
             return dbDeal;
@@ -31,7 +31,7 @@ namespace Informa.Model.DCD
             Deal dbDeal = null;
             using (DCDContext dContext = new DCDContext())
             {
-                dbDeal = dContext.Deals.Where(deal => deal.RecordId == recordId).FirstOrDefault();
+                dbDeal = dContext.Deals.FirstOrDefault(deal => deal.RecordId == recordId);
             }
 
             return dbDeal;
@@ -42,7 +42,7 @@ namespace Informa.Model.DCD
             Company company = null;
             using (DCDContext dContext = new DCDContext())
             {
-                company = dContext.Companies.Where(deal => deal.RecordNumber.Trim() == recordNumber.Trim()).FirstOrDefault();
+                company = dContext.Companies.FirstOrDefault(deal => deal.RecordNumber.Trim() == recordNumber.Trim());
             }
 
             return company;
@@ -53,7 +53,7 @@ namespace Informa.Model.DCD
             Company company = null;
             using (DCDContext dContext = new DCDContext())
             {
-                company = dContext.Companies.Where(deal => deal.RecordId == recordId).FirstOrDefault();
+                company = dContext.Companies.FirstOrDefault(deal => deal.RecordId == recordId);
             }
 
             return company;
@@ -64,7 +64,7 @@ namespace Informa.Model.DCD
             Drug drug = null;
             using (DCDContext dContext = new DCDContext())
             {
-                drug = dContext.Drugs.Where(drg => drg.RecordId == recordId).FirstOrDefault();
+                drug = dContext.Drugs.FirstOrDefault(drg => drg.RecordId == recordId);
             }
 
             return drug;
@@ -135,9 +135,9 @@ namespace Informa.Model.DCD
             int total = 0;
             using (DCDContext dc = new DCDContext())
             {
-                total += dc.DealRecordImportLogs.Where(d => d.ImportLog.Id == log.Id).Count();
-                total += dc.CompanyRecordImportLogs.Where(c => c.ImportLog.Id == log.Id).Count();
-                total += dc.DrugRecordImportLogs.Where(d => d.ImportLog.Id == log.Id).Count();
+                total += dc.DealRecordImportLogs.Count(d => d.ImportLog.Id == log.Id);
+                total += dc.CompanyRecordImportLogs.Count(c => c.ImportLog.Id == log.Id);
+                total += dc.DrugRecordImportLogs.Count(d => d.ImportLog.Id == log.Id);
             }
             return total;
         }
@@ -147,9 +147,9 @@ namespace Informa.Model.DCD
             int total = 0;
             using (DCDContext dc = new DCDContext())
             {
-                total += dc.DealRecordImportLogs.Where(d => d.ImportLog.Id == log.Id && d.Result == RecordImportResult.Success.ToString()).Count();
-                total += dc.CompanyRecordImportLogs.Where(c => c.ImportLog.Id == log.Id && c.Result == RecordImportResult.Success.ToString()).Count();
-                total += dc.DrugRecordImportLogs.Where(d => d.ImportLog.Id == log.Id && d.Result == RecordImportResult.Success.ToString()).Count();
+                total += dc.DealRecordImportLogs.Count(d => d.ImportLog.Id == log.Id && d.Result == RecordImportResult.Success.ToString());
+                total += dc.CompanyRecordImportLogs.Count(c => c.ImportLog.Id == log.Id && c.Result == RecordImportResult.Success.ToString());
+                total += dc.DrugRecordImportLogs.Count(d => d.ImportLog.Id == log.Id && d.Result == RecordImportResult.Success.ToString());
             }
             return total;
         }
@@ -159,9 +159,9 @@ namespace Informa.Model.DCD
             int total = 0;
             using (DCDContext dc = new DCDContext())
             {
-                total += dc.DealRecordImportLogs.Where(d => d.ImportLog.Id == log.Id && d.Result == RecordImportResult.Skipped.ToString()).Count();
-                total += dc.CompanyRecordImportLogs.Where(c => c.ImportLog.Id == log.Id && c.Result == RecordImportResult.Skipped.ToString()).Count();
-                total += dc.DrugRecordImportLogs.Where(d => d.ImportLog.Id == log.Id && d.Result == RecordImportResult.Skipped.ToString()).Count();
+                total += dc.DealRecordImportLogs.Count(d => d.ImportLog.Id == log.Id && d.Result == RecordImportResult.Skipped.ToString());
+                total += dc.CompanyRecordImportLogs.Count(c => c.ImportLog.Id == log.Id && c.Result == RecordImportResult.Skipped.ToString());
+                total += dc.DrugRecordImportLogs.Count(d => d.ImportLog.Id == log.Id && d.Result == RecordImportResult.Skipped.ToString());
             }
             return total;
         }
@@ -171,9 +171,9 @@ namespace Informa.Model.DCD
             int total = 0;
             using (DCDContext dc = new DCDContext())
             {
-                total += dc.DealRecordImportLogs.Where(d => d.ImportLog.Id == log.Id && d.Result == RecordImportResult.Failure.ToString()).Count();
-                total += dc.CompanyRecordImportLogs.Where(c => c.ImportLog.Id == log.Id && c.Result == RecordImportResult.Failure.ToString()).Count();
-                total += dc.DrugRecordImportLogs.Where(d => d.ImportLog.Id == log.Id && d.Result == RecordImportResult.Failure.ToString()).Count();
+                total += dc.DealRecordImportLogs.Count(d => d.ImportLog.Id == log.Id && d.Result == RecordImportResult.Failure.ToString());
+                total += dc.CompanyRecordImportLogs.Count(c => c.ImportLog.Id == log.Id && c.Result == RecordImportResult.Failure.ToString());
+                total += dc.DrugRecordImportLogs.Count(d => d.ImportLog.Id == log.Id && d.Result == RecordImportResult.Failure.ToString());
             }
             return total;
         }

@@ -45,7 +45,7 @@ namespace Informa.Web.Models
 
 			foreach (Match match in dealRegex.Matches(content))
 			{
-				var replace = DCDTokenMatchers.dealMatchEval(match);
+				var replace = DCDTokenMatchers.DealMatchEval(match);
 
 				content = content.Replace(match.Value, replace.ToString());
 			}

@@ -4,14 +4,16 @@ namespace Informa.Library.Utilities.Settings
 {
 	public interface ISiteSettings
 	{
-	    string GetSetting(string key, string defaultValue = "");
+		string GetSetting(string key, string defaultValue = "");
 
-	    SiteInfoModel GetCurrentSiteInfo();
+		SiteInfoModel GetCurrentSiteInfo();
 
-        IEnumerable<SiteInfoModel> GetSiteInfoList();
+		IEnumerable<SiteInfoModel> GetSiteInfoList();
 
-        string NlmExportPath { get; }
+		string NlmExportPath { get; }
 
-        string MailFromAddress { get; }
+		string MailFromAddress { get; }
+
+		string OldCompaniesUrl { get; }
 	}
 }
