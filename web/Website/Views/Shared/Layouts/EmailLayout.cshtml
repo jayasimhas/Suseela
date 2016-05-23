@@ -45,6 +45,7 @@
     }
     .one-third img {
         width: 100%;
+        height: auto;
     }
 
 
@@ -231,6 +232,23 @@
         font-size: 15px;
         text-align: right;
     }
+    .featured__read-more--button {
+        text-align: left;
+        font-size: 11px;
+        text-transform: uppercase;
+        border: 1px solid orange;
+        padding: 12px 16px;
+        display: inline-block;
+    }
+
+    .featured__read-more--button a {
+        font-weight: bold;
+        color: #000;
+    }
+
+    .featured__read-more--button {
+
+    }
 
     .featured__article {
         border-bottom: 1px solid #ccc;
@@ -341,7 +359,7 @@
                                             <img src="@Model.SiteRoot.Email_Logo.Src"/>
                                         </td>
                                         <td valign="bottom" align="right">
-                                            
+
                                             <a href="@Model.RssLinkUrl">
                                                 <img src="@Model.SiteRoot.RSS_Logo.Src" width="20" height="20">
                                             </a>&nbsp;&nbsp;&nbsp;
