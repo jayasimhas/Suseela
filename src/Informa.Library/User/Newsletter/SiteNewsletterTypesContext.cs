@@ -1,5 +1,4 @@
-﻿using Informa.Library.Publication;
-using Informa.Library.Site;
+﻿using Informa.Library.Site;
 using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Library.User.Newsletter
@@ -7,23 +6,17 @@ namespace Informa.Library.User.Newsletter
 	[AutowireService]
 	public class SiteNewsletterTypesContext : ISiteNewsletterTypesContext
 	{
-		protected readonly ISitePublicationContext SitePublicationContext;
 		protected readonly ISiteRootContext SiteRootContext;
+		protected readonly ISiteNewsletterTypesFactory SiteNewsletterTypesFactory;
 
 		public SiteNewsletterTypesContext(
-			ISitePublicationContext sitePublicationContext,
-			ISiteRootContext siteRootContext)
+			ISiteRootContext siteRootContext,
+			ISiteNewsletterTypesFactory siteNewsletterTypesFactory)
 		{
-			SitePublicationContext = sitePublicationContext;
 			SiteRootContext = siteRootContext;
+			SiteNewsletterTypesFactory = siteNewsletterTypesFactory;
 		}
 
-		public ISiteNewsletterTypes Types => new SiteNewsletterTypes
-		{
-			Breaking = SiteRootContext.Item.Newsletter_Breaking_Type,
-			Daily = SiteRootContext.Item.Newsletter_Daily_Type,
-			Weekly = SiteRootContext.Item.Newsletter_Weekly_Type,
-			Publication = SitePublicationContext.Name		
-		};
+		public ISiteNewsletterTypes Types => SiteNewsletterTypesFactory.Create(SiteRootContext.Item);
 	}
 }

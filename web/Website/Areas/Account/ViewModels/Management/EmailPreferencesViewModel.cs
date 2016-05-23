@@ -31,6 +31,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 			NewsletterOptInsContext = newsletterOptInsContext;
         }
 
+		// Require list of publication names to toggle opt-in
 		public readonly ISignInViewModel SignInViewModel;
 		public bool IsAuthenticated => UserContext.IsAuthenticated;
 		public bool DoNotSendOfferEmails => !OffersOptedInContext.OptedIn;

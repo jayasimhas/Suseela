@@ -5,17 +5,20 @@ using System.Linq;
 
 namespace Informa.Library.Publication
 {
-	[AutowireService(LifetimeScope.Default)]
+	[AutowireService]
 	public class SitesPublicationContext : ISitesPublicationContext
 	{
 		protected readonly ISiteRootsContext SiteRootsContext;
+		protected readonly ISitePublicationNameFactory SitePublicationNameFactory;
 
 		public SitesPublicationContext(
-			ISiteRootsContext siteRootsContext)
+			ISiteRootsContext siteRootsContext,
+			ISitePublicationNameFactory sitePublicationNameFactory)
 		{
 			SiteRootsContext = siteRootsContext;
+			SitePublicationNameFactory = sitePublicationNameFactory;
 		}
 
-		public IEnumerable<string> Names => SiteRootsContext.SiteRoots.Select(sr => sr.Publication_Name).ToList();
+		public IEnumerable<string> Names => SiteRootsContext.SiteRoots.Select(sr => SitePublicationNameFactory.Create(sr)).ToList();
 	}
 }
