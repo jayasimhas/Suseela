@@ -12,10 +12,10 @@ namespace Informa.Web.ViewModels.Emails
         private readonly IDependencies _dependencies;
 
         private const string AdClickLink =
-            "http://oasc-eu1.247realmedia.com/RealMedia/ads/click_nx.ads/www.scripdailyemail.com/dailyemail/11001%40";
+            "http://oasc-eu1.247realmedia.com/RealMedia/ads/click_nx.ads/www.scripdailyemail.com/{0}/11001%40{1}";
 
         private const string AdImage =
-            "http://oasc-eu1.247realmedia.com/RealMedia/ads/adstream_nx.ads/www.scripdailyemail.com/dailyemail/11001%40";
+            "http://oasc-eu1.247realmedia.com/RealMedia/ads/adstream_nx.ads/www.scripdailyemail.com/{0}/11001%40{1}";
 
         [AutowireService(IsAggregateService = true)]
         public interface IDependencies
@@ -35,9 +35,9 @@ namespace Informa.Web.ViewModels.Emails
         private string _adClickLinkUrl;
         public string AdClickLinkUrl
             => _adClickLinkUrl ??
-                (_adClickLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(AdClickLink + GlassModel.Slot_ID));
+                (_adClickLinkUrl = _dependencies.CampaignQueryBuilder.AddCampaignQuery(string.Format(AdClickLinkUrl, GlassModel.Zone, GlassModel.Slot_ID)));
 
-        public string AdImageUrl => AdImage + GlassModel.Slot_ID;
+        public string AdImageUrl => string.Format(AdImage, GlassModel.Zone, GlassModel.Slot_ID);
 
         public string CampaignQuery => _dependencies.CampaignQueryBuilder.GetCampaignQuery();
     }
