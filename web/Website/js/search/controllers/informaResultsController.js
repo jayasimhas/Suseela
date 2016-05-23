@@ -20,8 +20,7 @@ var InformaResultsController = function InformaResultsController($scope, $saniti
             if (typeof utag !== 'undefined') {
                 utag.link(dataObj);
             }
-            count = 0;
-        }
+         }
         count = count + 1;
     }
 
