@@ -11046,6 +11046,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					I___BasePage My_Account_Page  {get; set;}
 								/// <summary>
+					/// The Ad Domin field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: a933a49a-de33-48f4-957e-0211e00084a9</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Ad_DominFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Ad_Domin  {get; set;}
+								/// <summary>
 					/// The Global Article Ad Zone field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -11724,6 +11733,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 						I___BasePage My_Account_Page  {get; set;}
 										/// <summary>
+						/// The Ad Domin field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: a933a49a-de33-48f4-957e-0211e00084a9</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Ad_DominFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Ad_Domin  {get; set;}
+										/// <summary>
 						/// The Global Article Ad Zone field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -12387,6 +12405,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID My_Account_PageFieldId = new ID("6b8b6c6d-013a-4ba0-a166-f57747668b0f");
 			public const string My_Account_PageFieldName = "My Account Page";
+
+						
+					
+			public static readonly ID Ad_DominFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
+			public const string Ad_DominFieldName = "Ad Domin";
 
 						
 					
@@ -17302,6 +17325,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID My_Account_PageFieldId = new ID("6b8b6c6d-013a-4ba0-a166-f57747668b0f");
 			public const string My_Account_PageFieldName = "My Account Page";
+
+						
+					
+			public static readonly ID Ad_DominFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
+			public const string Ad_DominFieldName = "Ad Domin";
 
 						
 					

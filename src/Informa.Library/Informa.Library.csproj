@@ -299,6 +299,7 @@
     <Compile Include="Actions\ActionsProcessor`2.cs" />
     <Compile Include="Actions\IActionsProcessor`2.cs" />
     <Compile Include="Actions\IAction`1.cs" />
+    <Compile Include="Advertisement\AdUrlBuilder.cs" />
     <Compile Include="Article\Companies\IRelatedCompaniesService.cs" />
     <Compile Include="Article\Companies\IRelatedDealsService.cs" />
     <Compile Include="Article\Companies\RelatedCompaniesService.cs" />
@@ -1047,6 +1048,7 @@
     <Compile Include="Utilities\References\IRenderingReferences.cs" />
     <Compile Include="Utilities\References\ItemReferences.cs" />
     <Compile Include="Utilities\References\RenderingReferences.cs" />
+    <Compile Include="Utilities\Security\Crypto.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
     <Compile Include="Utilities\StringUtils\BylineMaker.cs" />
