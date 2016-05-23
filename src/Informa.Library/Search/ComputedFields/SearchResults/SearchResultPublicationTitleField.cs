@@ -7,7 +7,7 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
     {
         public override object GetFieldValue(Item indexItem)
         {
-            return "Scrip Intelligence";
+            return "Scrip";
         }
     }
 }
