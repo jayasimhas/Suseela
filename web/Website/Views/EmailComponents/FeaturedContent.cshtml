@@ -33,8 +33,7 @@
                         <!-- Read More Link, Test, and Styling -->
                         @if (IsInEditingMode)
                         {
-                            @* <div class="@Model.ReadMoreClass"> *@
-                            <div class="featured__read-more">
+                            <div class="featured__read-more @Model.ReadMoreClass">
                                 @using (BeginRenderLink(Model.GlassModel, m => m.Read_More_Link, isEditable: true))
                                 {
                                     @Editable(Model.GlassModel, m => m.Read_More_Text)
@@ -43,8 +42,7 @@
                         }
                         else if (Model.HasReadMoreLink)
                         {
-                            @* <div class="@Model.ReadMoreClass"> *@
-                            <div class="featured__read-more">
+                            <div class="featured__read-more @Model.ReadMoreClass">
                                 <a href="@Model.ReadMoreLinkUrl">
                                     @Model.GlassModel.Read_More_Text
                                 </a>
@@ -52,28 +50,32 @@
                         }
                     </td>
 
-                    @* TODO - `if` statement for image existing *@
-                    @if (Model.GlassModel.Image != null || IsInEditingMode)
+                    @if (Model.HasRightRail || IsInEditingMode)
                     {
+
                         <td class="one-third layout-padded-left layout-text-centered" valign="top">
 
-                            @RenderImage(Model.GlassModel, m => m.Image, isEditable: true)
+                            <!-- Right Rail Image -->
+                            @if (Model.HasImage || IsInEditingMode)
+                            {
+                                @RenderImage(Model.GlassModel, m => m.Image, isEditable: true)
+                            }
 
                             <!-- Download Link and Text -->
                             @if (IsInEditingMode)
                             {
-                                <img class="featured-content__image" src="@(Model.DownloadTypeIconUrl)"/>
                                 using (BeginRenderLink(Model.GlassModel, m => m.Download_Link, isEditable: true))
                                 {
+                                    <img class="featured-content__image" src="@(Model.DownloadTypeIconUrl)"/>
                                     <div class="featured__download-link">
                                         @Editable(Model.GlassModel, m => m.Download_Link_Text)
                                     </div>
                                 }
                             }
-                            else if(Model.HasDownloadLink)
+                            else if (Model.HasDownloadLink)
                             {
-                                <img class="featured-content__image" src="@(Model.DownloadTypeIconUrl)"/>
-                                <a href="">
+                                <a href="@Model.DownloadLinkUrl">
+                                    <img class="featured-content__image" src="@(Model.DownloadTypeIconUrl)"/>
                                     <div class="featured__download-link">
                                         @Editable(Model.GlassModel, m => m.Download_Link_Text)
                                     </div>

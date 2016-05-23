@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Glass.Mapper;
 using Glass.Mapper.Sc;
 using Informa.Library.Mail.ExactTarget;
@@ -28,24 +29,27 @@ namespace Informa.Web.ViewModels.Emails
             _dependencies = dependencies;
         }
 
-        public string ReadMoreClass =>
-            string.IsNullOrEmpty(GlassModel.Read_More_Styling) ? null : $"ReadMore-{GlassModel.Read_More_Styling}";
+        public string ReadMoreClass => GlassModel.Read_More_Styling.Equals("Button", StringComparison.InvariantCultureIgnoreCase)
+                                            ? ".featured__read-more--button"
+                                            : string.Empty;
 
-        public bool HasTitle =>
-            !string.IsNullOrEmpty(GlassModel.Title);
+        public bool HasTitle => !string.IsNullOrEmpty(GlassModel.Title);
 
-        public bool HasReadMoreLink =>
-            !string.IsNullOrEmpty(GlassModel.Read_More_Link?.Url);
+        public bool HasReadMoreLink => !string.IsNullOrEmpty(GlassModel.Read_More_Link?.Url);
+
+        public bool HasImage => !string.IsNullOrEmpty(GlassModel.Image?.Src);
 
         public bool HasDownloadLink =>
-            !string.IsNullOrEmpty(GlassModel.Download_Link.Url);
+            !string.IsNullOrEmpty(GlassModel.Download_Link.Url) && !string.IsNullOrEmpty(GlassModel.Download_Link_Text);
+
+        public bool HasRightRail => HasDownloadLink || HasImage;
 
         private string _downloadTypeIconUrl;
         public string DownloadTypeIconUrl =>
             _downloadTypeIconUrl ?? (_downloadTypeIconUrl =
                 _dependencies.SitecoreService.GetItem<IGlassBase>(_dependencies.ItemReferences.DownloadTypes)?
                     ._ChildrenWithInferType.FirstOrDefault(option => option._Name.Equals(GlassModel.Download_Type))?
-                    .CastTo<IOption>()?.Icon.Src);
+                    .CastTo<IOption>()?.Icon?.Src);
 
         private string _titleLinkUrl;
         public string TitleLinkUrl
