@@ -60,6 +60,11 @@ But you can also use "patch:attribute" for clarity:
                    factory="Autofac"
                    patch:after="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
                    reusable="false" />
+		<processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.LegacyRedirectResolver, Informa.Library"
+                   ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.LegacyRedirectResolver, Informa.Library"
+                   factory="Autofac"
+                   patch:before="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
+                   reusable="false" />
         <processor type="Sitecore.Pipelines.HttpRequest.ExecuteRequest, Sitecore.Kernel">
           <patch:attribute name="type">Informa.Library.CustomSitecore.Pipelines.HttpRequest.InformaExecuteRequest,Informa.Library</patch:attribute>
         </processor>

@@ -652,6 +652,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
+    <Compile Include="App_Start\Registrations\DCDRegistrar.cs" />
     <Compile Include="App_Start\Registrations\PurchaseRegistrar.cs" />
     <Compile Include="App_Start\Registrations\EntitlementsRegistrar.cs" />
     <Compile Include="App_Start\Registrations\SessionRegistrar.cs" />
@@ -775,6 +776,7 @@
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\RelatedCompaniesModel.cs" />
+    <Compile Include="ViewModels\RelatedDealsModel.cs" />
     <Compile Include="ViewModels\SearchRssViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
@@ -1305,6 +1307,7 @@
     <Content Include="Views\EmailComponents\EmailAdvertisement.cshtml" />
     <Content Include="Views\Shared\SiteDebugging\UserPageEntitlement.cshtml" />
     <Content Include="Views\Article\ArticleRelatedCompanies.cshtml" />
+    <Content Include="Views\Article\ArticleRelatedDeals.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

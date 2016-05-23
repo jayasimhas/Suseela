@@ -185,6 +185,21 @@ namespace Informa.Library.Article.Search
             return string.Empty;
         }
 
+	    public IArticleSearchResults GetLegacyArticleUrl(string path)
+	    {
+		    path = path.ToLower();
+		    using (var context = SearchContextFactory.Create())
+		    {
+			    var query = context.GetQueryable<ArticleSearchResultItem>()
+				    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+				    .Filter(i => i.LegacyArticleUrl == path);
+			    var results = query.GetResults();
 
+			    return new ArticleSearchResults
+			    {
+					Articles = results.Hits.Select(i => SitecoreContext.GetItem<IArticle>(i.Document.ItemId.Guid))
+			    };
+		    }
+	    }
     }
 }

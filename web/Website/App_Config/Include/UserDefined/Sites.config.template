@@ -36,6 +36,14 @@
         <patch:attribute name="hostName">${Site.Domain.Scrip}</patch:attribute>
         <patch:attribute name="htmlCacheSize">10MB</patch:attribute>
       </site>
+	  <site patch:before="site[@name='website']" database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+			name="LegacyRedirect"
+			hostName="${Site.Domain.LegacyRedirect}" 
+			targetHostName="${Site.Domain.LegacyRedirect}"
+			dictionaryDomain="LegacyRedirectDictionary"
+			rootPath="/sitecore/content/LegacyRedirect" startItem="/home"
+			cacheHtml="true" htmlCacheSize="50MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+			enableTracking="true" allowDebug="true" enablePreview="true" enableWebEdit="true" enableDebugger="true" disableClientData="false"/>
     </sites>
   </sitecore>
 </configuration>

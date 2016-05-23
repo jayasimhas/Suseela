@@ -12,5 +12,6 @@ namespace Informa.Library.Article.Search
 		long GetNextArticleNumber(Guid publicationGuid);
 		string GetArticleAuthors(Guid id);
 		string GetArticleTaxonomies(Guid id, Guid taxonomyParent);
+		IArticleSearchResults GetLegacyArticleUrl(string path);
 	}
 }

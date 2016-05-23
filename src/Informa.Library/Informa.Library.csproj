@@ -299,7 +299,9 @@
     <Compile Include="Actions\ActionsProcessor`2.cs" />
     <Compile Include="Actions\IActionsProcessor`2.cs" />
     <Compile Include="Actions\IAction`1.cs" />
+    <Compile Include="Advertisement\AdUrlBuilder.cs" />
     <Compile Include="Article\Companies\IRelatedCompaniesService.cs" />
+    <Compile Include="Article\Companies\IRelatedDealsService.cs" />
     <Compile Include="Article\Companies\RelatedCompaniesService.cs" />
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Publishing\Events\PublishDateFoldersArticlePublishItemProcessing.cs" />
@@ -332,6 +334,7 @@
     <Compile Include="Company\Web\WebClearUserCompanyContextLogoutAction.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaSiteResolver.cs" />
+    <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
@@ -350,6 +353,8 @@
     <Compile Include="Mail\ExactTarget\ExactTargetClient.cs" />
     <Compile Include="Mail\ExactTarget\ExactTargetWrapper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Navigation\IReturnUrlContext.cs" />
+    <Compile Include="Navigation\ReturnUrlContext.cs" />
     <Compile Include="Publication\ArticleMappingContext.cs" />
     <Compile Include="Publication\ArticleMappingRepository.cs" />
     <Compile Include="Publication\Entity\ArticleMapping.cs" />
@@ -646,10 +651,12 @@
     <Compile Include="User\Registration\ComponentModel\DataAnnotations\PublicEmailRestrictionAttribute.cs" />
     <Compile Include="User\Registration\ICompetitorRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\IPublicRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\IRegisterReturnUrlContext.cs" />
     <Compile Include="User\Registration\IRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\IRestrictedEmailDomainsFactory.cs" />
     <Compile Include="User\Registration\CompetitorRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\PublicRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\RegisterReturnUrlContext.cs" />
     <Compile Include="User\Registration\RegisterUserResult.cs" />
     <Compile Include="User\Registration\RestrictedEmailDomainsFactory.cs" />
     <Compile Include="User\Registration\Web\IWebIsActiveRegistration.cs" />
@@ -1042,6 +1049,7 @@
     <Compile Include="Utilities\References\IRenderingReferences.cs" />
     <Compile Include="Utilities\References\ItemReferences.cs" />
     <Compile Include="Utilities\References\RenderingReferences.cs" />
+    <Compile Include="Utilities\Security\Crypto.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
     <Compile Include="Utilities\StringUtils\BylineMaker.cs" />

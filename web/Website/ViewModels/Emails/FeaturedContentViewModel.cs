@@ -30,7 +30,7 @@ namespace Informa.Web.ViewModels.Emails
         }
 
         public string ReadMoreClass => GlassModel.Read_More_Styling.Equals("Button", StringComparison.InvariantCultureIgnoreCase)
-                                            ? ".featured__read-more--button"
+                                            ? "featured__read-more--button"
                                             : string.Empty;
 
         public bool HasTitle => !string.IsNullOrEmpty(GlassModel.Title);

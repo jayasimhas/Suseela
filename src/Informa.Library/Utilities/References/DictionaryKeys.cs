@@ -8,5 +8,6 @@
 		public static string ViewOurOnlineVersionLinkText = "Email.ViewOurOnlineVersionLink";
 
 		public static string ArticleRelatedCompaniesTitle = "Article.RelatedCompanies.Title";
+		public static string ArticleRelatedDealsTitle = "Article.RelatedDeals.Title";
 	}
 }

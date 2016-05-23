@@ -12,6 +12,7 @@ namespace Informa.Library.Wrappers
         string GetHostName();
         string GetItemUrl(IGlassBase glassItem);
         string GetItemUrl(Guid itemId);
+        string GetMediaUrl(IGlassBase glassItem);
         string GetMediaUrl(Guid mediaItemId);
     }
 
@@ -44,9 +45,9 @@ namespace Informa.Library.Wrappers
             return scheme + GetHostName() + itemUrl;
         }
 
+        public string GetMediaUrl(IGlassBase glassItem) => GetMediaUrl(glassItem._Id);
         public string GetMediaUrl(Guid itemId)
         {
-
             MediaItem imageItem = Sitecore.Context.Database.GetItem(new ID(itemId));
 
             if (imageItem == null) return null;

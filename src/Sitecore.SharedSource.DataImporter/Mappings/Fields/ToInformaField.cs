@@ -2477,7 +2477,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 		{
 			Field f = newItem.Fields[NewItemField];
 			var item = Database.GetDatabase("pmbiContent").GetItem(new ID(id));
-			f.Value = item.Paths.FullPath;
+			f.Value = item.Paths.FullPath.ToLower();
 		}
 	}
 
