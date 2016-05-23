@@ -648,10 +648,12 @@
     <Compile Include="User\Registration\ComponentModel\DataAnnotations\PublicEmailRestrictionAttribute.cs" />
     <Compile Include="User\Registration\ICompetitorRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\IPublicRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\IRegisterReturnUrlContext.cs" />
     <Compile Include="User\Registration\IRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\IRestrictedEmailDomainsFactory.cs" />
     <Compile Include="User\Registration\CompetitorRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\PublicRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\RegisterReturnUrlContext.cs" />
     <Compile Include="User\Registration\RegisterUserResult.cs" />
     <Compile Include="User\Registration\RestrictedEmailDomainsFactory.cs" />
     <Compile Include="User\Registration\Web\IWebIsActiveRegistration.cs" />

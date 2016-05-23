@@ -1,6 +1,7 @@
 ﻿using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Navigation;
+using Informa.Library.User.Registration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
@@ -14,15 +15,18 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IReturnUrlContext ReturnUrlContext;
+		protected readonly IRegisterReturnUrlContext RegisterReturnUrlContex;
 
 		public RegisterUserViewModel(
 			ISitecoreContext sitecoreContext,
 			ITextTranslator textTranslator,
-			IReturnUrlContext returnUrlContext)
+			IReturnUrlContext returnUrlContext,
+			IRegisterReturnUrlContext registerReturnUrlContext)
 		{
 			SitecoreContext = sitecoreContext;
 			TextTranslator = textTranslator;
 			ReturnUrlContext = returnUrlContext;
+			RegisterReturnUrlContex = registerReturnUrlContext;
 		}
 
 		public string Title => GlassModel?.Title;
@@ -75,7 +79,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 		public string GeneralErrorText => TextTranslator.Translate("Registration.GeneralError");
 		public string MasterIdInvalidErrorText => TextTranslator.Translate("Registration.MasterIdInvalidError");
 		public string MasterIdExpiredErrorText => TextTranslator.Translate("Registration.MasterIdExpiredError");
-		public string RegisterReturnUrl => ReturnUrlContext.Url;
+		public string RegisterReturnUrl => RegisterReturnUrlContex.Url;
 		public string RegisterReturnUrlKey => ReturnUrlContext.Key;
 	}
 }

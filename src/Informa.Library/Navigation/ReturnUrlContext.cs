@@ -20,7 +20,7 @@ namespace Informa.Library.Navigation
 		{
 			get
 			{
-				var url = HttpContextProvider.Current.Request[Key];
+				var url = HttpContextProvider.Current.Request[Key] ?? string.Empty;
 
 				return url.StartsWith("/") ? url : string.Empty;
 			}
