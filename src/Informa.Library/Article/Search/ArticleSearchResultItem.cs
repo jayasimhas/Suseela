@@ -24,6 +24,8 @@ namespace Informa.Library.Article.Search
         public string PublicationTitle { get; set; }
         public long ArticleIntegerNumber { get; set; }
         public string EScenicID { get; set; }
+		[IndexField("legacy_article_url_s")]
+		public string LegacyArticleUrl { get; set; }
 
         #region Implementation of IReferencedArticles
 
