@@ -9,10 +9,17 @@ master: {00000000-0000-0000-0000-000000000000}
 template: {897873C8-1EBB-427C-A257-CAA83EB50AD9}
 templatekey: Option
 
+----field----
+field: {AD400DC1-6B7D-45CF-BA21-6E6F23FDC722}
+name: Icon
+key: icon
+content-length: 58
+
+<image mediaid="{BEC89476-15E6-4C9F-84C5-3B844EC0AD13}" />
 ----version----
 language: en
 version: 1
-revision: 69476eba-7697-4d15-b49f-c2048ae0490e
+revision: 0e9b8f61-f0e0-4741-999f-615821488044
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -41,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-69476eba-7697-4d15-b49f-c2048ae0490e
+0e9b8f61-f0e0-4741-999f-615821488044
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160510T154327Z
+20160523T224534Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

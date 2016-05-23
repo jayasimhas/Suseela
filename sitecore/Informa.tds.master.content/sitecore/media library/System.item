@@ -1,25 +1,32 @@
 ----item----
 version: 1
-id: {0F0C7B38-75B8-4621-AE4B-CB4CA8505DBB}
+id: {7F864298-A4D8-4CE5-B8AC-A6D4DBA439D3}
 database: master
-path: /sitecore/system/Informa/Download Types/PDF
-parent: {3939BE43-6300-4AFA-ABE6-F7798C16E34D}
-name: PDF
+path: /sitecore/media library/System
+parent: {3D6658D8-A0BF-4E75-B3E2-D050FABCF4E1}
+name: System
 master: {00000000-0000-0000-0000-000000000000}
-template: {897873C8-1EBB-427C-A257-CAA83EB50AD9}
-templatekey: Option
+template: {FE5DD826-48C6-436D-B87A-7C4210C7413B}
+templatekey: Media folder
 
 ----field----
-field: {AD400DC1-6B7D-45CF-BA21-6E6F23FDC722}
-name: Icon
-key: icon
-content-length: 58
+field: {39C4902E-9960-4469-AEEF-E878E9C8218F}
+name: __Hidden
+key: __hidden
+content-length: 1
 
-<image mediaid="{DFCF1B7E-AA1E-4F64-A85B-0FE30F447080}" />
+1
+----field----
+field: {9C6106EA-7A5A-48E2-8CAD-F0F693B1E2D4}
+name: __Read Only
+key: __read only
+content-length: 1
+
+1
 ----version----
 language: en
 version: 1
-revision: 6a76b88c-643a-4b64-9185-54c57cf9ff67
+revision: 53696f52-1d96-4d29-b8a5-fd2e7e21a8fa
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -32,9 +39,9 @@ sitecore\admin
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 16
+content-length: 15
 
-20160510T154320Z
+20110316T105617
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6a76b88c-643a-4b64-9185-54c57cf9ff67
+53696f52-1d96-4d29-b8a5-fd2e7e21a8fa
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 16
+content-length: 34
 
-20160523T224518Z
+20120929T092553:634845075535872175
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
