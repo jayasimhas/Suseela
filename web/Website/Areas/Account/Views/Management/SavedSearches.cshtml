@@ -186,7 +186,7 @@
                                        class="onoffswitch-checkbox js-saved-search-alert-toggle"
                                        id="alert-toggle-@index"
                                        name="alert-toggle-@index"
-                                       @(item.AlertEnabled ? "checked='checked'" : string.Empty)>
+                                       @(item.AlertEnabled ? "checked='checked'" : string.Empty) value="@(item.AlertEnabled ? "on" : "off")">
                                 <label class="onoffswitch-label form-submit" for="alert-toggle-@index">
                                     <span class="onoffswitch-inner"></span>
                                     <span class="onoffswitch-switch"></span>

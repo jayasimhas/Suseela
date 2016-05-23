@@ -341,6 +341,12 @@ $(document).ready(function() {
 
     $('.js-saved-search-alert-toggle').on('click', function(e) {
         $(e.target.form).find('button[type=submit]').click();
+        var val = $(e.target).val();
+        if (val === "on") {
+            $(e.target).val('off');
+        } else {
+            $(e.target).val('on');
+        }
     });
 
     // On page load, check for any stashed searches that need to be saved

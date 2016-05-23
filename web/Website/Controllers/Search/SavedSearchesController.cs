@@ -68,8 +68,8 @@ namespace Informa.Web.Controllers.Search
 				Url = HttpUtility.UrlDecode(collection["Url"]),
 				AlertEnabled = GetBoolValue(HttpUtility.UrlDecode(collection["AlertEnabled"]))
 			};
-			
-			bool alert = Regex.IsMatch(result, @"alert-toggle-\d+?=on");
+			// reverse the value passed.
+			bool alert = Regex.IsMatch(result, @"alert-toggle-\d+?=off");
 			if (alert)
 			{
 				input.AlertEnabled = alert;
