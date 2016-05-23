@@ -95,7 +95,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
 						var item = Context.Database.GetItem(new ID(article._Id));
 						var domainUri = new Uri(LinkManager.GetItemUrl(item, options));
-						newPath = $"{domainUri.Host}{customPath}";
+						newPath = $"{domainUri.Host}/articles{customPath}";
 					}
 					else
 					{
