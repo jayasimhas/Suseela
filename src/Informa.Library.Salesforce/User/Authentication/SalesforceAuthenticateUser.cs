@@ -40,7 +40,7 @@ namespace Informa.Library.Salesforce.User.Authentication
 			}
 
 			var state = loginResponse.isTempPasswordSpecified && loginResponse.isTempPassword.Value ? AuthenticateUserResultState.TemporaryPassword : AuthenticateUserResultState.Success;
-
+			var userAccount = Service.Execute(s => s.queryAccountByUsername(username));
 			return new SalesforceAuthenticateUserResult
 			{
 				State = state,
@@ -49,7 +49,7 @@ namespace Informa.Library.Salesforce.User.Authentication
 					Username = username,
 					Email = username,
 					Name = string.Format("{0} {1}", profile.FirstName, profile.LastName),
-					AccountId = loginResponse.accountInfo != null ? loginResponse.accountInfo.Select(x => x.accountId).ToList() : null,
+					AccountId = userAccount.accounts != null ? userAccount.accounts.Select(x => x.accountId).ToList() : null,
 					ContactId = loginResponse.contactId
 				}
 			};
