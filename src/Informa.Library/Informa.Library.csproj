@@ -350,6 +350,8 @@
     <Compile Include="Mail\ExactTarget\ExactTargetClient.cs" />
     <Compile Include="Mail\ExactTarget\ExactTargetWrapper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Navigation\IReturnUrlContext.cs" />
+    <Compile Include="Navigation\ReturnUrlContext.cs" />
     <Compile Include="Publication\ArticleMappingContext.cs" />
     <Compile Include="Publication\ArticleMappingRepository.cs" />
     <Compile Include="Publication\Entity\ArticleMapping.cs" />

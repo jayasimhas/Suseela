@@ -1,5 +1,6 @@
 ﻿using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
+using Informa.Library.Navigation;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
@@ -12,13 +13,16 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 	{
 		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly ITextTranslator TextTranslator;
+		protected readonly IReturnUrlContext ReturnUrlContext;
 
 		public RegisterUserViewModel(
 			ISitecoreContext sitecoreContext,
-			ITextTranslator textTranslator)
+			ITextTranslator textTranslator,
+			IReturnUrlContext returnUrlContext)
 		{
 			SitecoreContext = sitecoreContext;
 			TextTranslator = textTranslator;
+			ReturnUrlContext = returnUrlContext;
 		}
 
 		public string Title => GlassModel?.Title;
@@ -71,5 +75,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 		public string GeneralErrorText => TextTranslator.Translate("Registration.GeneralError");
 		public string MasterIdInvalidErrorText => TextTranslator.Translate("Registration.MasterIdInvalidError");
 		public string MasterIdExpiredErrorText => TextTranslator.Translate("Registration.MasterIdExpiredError");
+		public string RegisterReturnUrl => ReturnUrlContext.Url;
+		public string RegisterReturnUrlKey => ReturnUrlContext.Key;
 	}
 }
