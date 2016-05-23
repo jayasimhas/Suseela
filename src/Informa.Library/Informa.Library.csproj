@@ -300,6 +300,7 @@
     <Compile Include="Actions\IActionsProcessor`2.cs" />
     <Compile Include="Actions\IAction`1.cs" />
     <Compile Include="Article\Companies\IRelatedCompaniesService.cs" />
+    <Compile Include="Article\Companies\IRelatedDealsService.cs" />
     <Compile Include="Article\Companies\RelatedCompaniesService.cs" />
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Publishing\Events\PublishDateFoldersArticlePublishItemProcessing.cs" />

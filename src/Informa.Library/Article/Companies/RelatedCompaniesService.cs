@@ -11,12 +11,12 @@ namespace Informa.Library.Article.Companies
 	[AutowireService(LifetimeScope.PerScope)]
 	public class RelatedCompaniesService : IRelatedCompaniesService
 	{
-		private readonly DCDManager _manager;
+		private readonly IDCDReader _reader;
 		private readonly string _oldCompaniesUrl;
 
-		public RelatedCompaniesService(DCDManager manager, ISiteSettings siteSettings)
+		public RelatedCompaniesService(IDCDReader reader, ISiteSettings siteSettings)
 		{
-			_manager = manager;
+			_reader = reader;
 			_oldCompaniesUrl = siteSettings.OldCompaniesUrl;
 		}
 
@@ -24,7 +24,7 @@ namespace Informa.Library.Article.Companies
 		{
 			var companyIds = article?.Referenced_Companies?.Split(',') ?? new string[0];
 
-			return companyIds.Where(id => !string.IsNullOrEmpty(id)).Select(id => _manager.GetCompanyByRecordNumber(id)).Select(c => new Link
+			return companyIds.Where(id => !string.IsNullOrEmpty(id)).Select(id => _reader.GetCompanyByRecordNumber(id)).Select(c => new Link
 			{
 				Text = c.Title,
 				Url = string.Format(_oldCompaniesUrl, c.RecordNumber)

@@ -15,5 +15,7 @@ namespace Informa.Library.Utilities.Settings
 		string MailFromAddress { get; }
 
 		string OldCompaniesUrl { get; }
+
+		string OldDealsUrl { get; }
 	}
 }
