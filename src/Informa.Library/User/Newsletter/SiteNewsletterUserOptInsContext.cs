@@ -1,39 +1,22 @@
 ﻿using Jabberwocky.Autofac.Attributes;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Informa.Library.User.Newsletter
 {
 	[AutowireService]
 	public class SiteNewsletterUserOptInsContext : ISiteNewsletterUserOptInsContext
 	{
-		protected readonly INewsletterUserOptInsContext NewsletterUserOptInsContext;
+		private readonly IFindSiteNewsletterUserOptInsContext FindSiteNewsletterUserOptInsContext;
 		protected readonly ISiteNewsletterTypesContext SiteNewsletterTypesContext;
 
 		public SiteNewsletterUserOptInsContext(
-			INewsletterUserOptInsContext newsletterUserOptInsContext,
+			IFindSiteNewsletterUserOptInsContext findSiteNewsletterUserOptInsContext,
 			ISiteNewsletterTypesContext siteNewsletterTypesContext)
 		{
-			NewsletterUserOptInsContext = newsletterUserOptInsContext;
+			FindSiteNewsletterUserOptInsContext = findSiteNewsletterUserOptInsContext;
 			SiteNewsletterTypesContext = siteNewsletterTypesContext;
 		}
 
-		public IEnumerable<INewsletterUserOptIn> OptIns => NewsletterUserOptInsContext.OptIns.Where(noi => IsSiteMatch(noi.NewsletterType));
-
-		public bool IsSiteMatch(string newsletterType)
-		{
-			var types = SiteNewsletterTypesContext.Types;
-
-			return
-				IsMatch(newsletterType, types.Breaking) ||
-				IsMatch(newsletterType, types.Daily) ||
-				IsMatch(newsletterType, types.Breaking);
-		}
-
-		public bool IsMatch(string newsletterType1, string newsletterType2)
-		{
-			return string.Equals(newsletterType1, newsletterType2, StringComparison.InvariantCultureIgnoreCase);
-		}
+		public IEnumerable<INewsletterUserOptIn> OptIns => FindSiteNewsletterUserOptInsContext.Find(SiteNewsletterTypesContext.Types);
 	}
 }

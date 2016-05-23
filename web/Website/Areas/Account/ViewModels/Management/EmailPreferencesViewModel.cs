@@ -15,23 +15,22 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         protected readonly ITextTranslator TextTranslator;
         protected readonly IOfferUserOptedInContext OffersOptedInContext;
         protected readonly IAuthenticatedUserContext UserContext;
-		protected readonly INewsletterUserOptInsContext NewsletterOptInsContext;
+		protected readonly IPublicationsNewsletterUserOptInContext PublicationNewsletterUserOptInContext;
 
 		public EmailPreferencesViewModel(
             ITextTranslator translator,
 			IOfferUserOptedInContext offersOptedInContext,
             ISignInViewModel signInViewModel,
             IAuthenticatedUserContext userContext,
-			INewsletterUserOptInsContext newsletterOptInsContext)
+			IPublicationsNewsletterUserOptInContext publicationNewsletterUserOptInContext)
         {
             TextTranslator = translator;
             OffersOptedInContext = offersOptedInContext;
             UserContext = userContext;
             SignInViewModel = signInViewModel;
-			NewsletterOptInsContext = newsletterOptInsContext;
+			PublicationNewsletterUserOptInContext = publicationNewsletterUserOptInContext;
         }
 
-		// Require list of publication names to toggle opt-in
 		public readonly ISignInViewModel SignInViewModel;
 		public bool IsAuthenticated => UserContext.IsAuthenticated;
 		public bool DoNotSendOfferEmails => !OffersOptedInContext.OptedIn;
@@ -42,6 +41,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public string EmailsLabel => TextTranslator.Translate("Preferences.EmailsLabel");
         public string SubmitText => TextTranslator.Translate("Preferences.SubmitText");
         public string PreferencesSavedMessage => TextTranslator.Translate("Preferences.PreferencesSavedMessage");
-		public IEnumerable<INewsletterUserOptIn> NewsletterOptIns => NewsletterOptInsContext.OptIns;
+		public IEnumerable<IPublicationNewsletterUserOptIn> PublicationNewsletterOptIns => PublicationNewsletterUserOptInContext.OptIns;
     }
 }

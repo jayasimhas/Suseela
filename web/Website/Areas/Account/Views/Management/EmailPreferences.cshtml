@@ -40,22 +40,22 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach (var newsletterOptIn in Model.NewsletterOptIns)
+						@foreach (var newsletterOptIn in Model.PublicationNewsletterOptIns)
 						{
 							<tr>
                                 <td class="sortable-table__col">
-                                    @newsletterOptIn.NewsletterType
+                                    @newsletterOptIn.Publication
                                 </td>
                                 <td class="sortable-table__col l-centered">
                                     <div class="labeled-checkbox">
     									<input name="NewsletterOptIns"
-    										   id="@newsletterOptIn.NewsletterType"
+    										   id="@newsletterOptIn.Publication"
                                                class="js-account-email-checkbox"
     										   type="checkbox"
     										   data-checkbox-type="value"
     										   @(newsletterOptIn.OptIn ? "checked" : "")
-    										   value="@newsletterOptIn.NewsletterType">
-                                           <label class="checkbox-label">Yes</label>
+    										   value="@newsletterOptIn.Publication">
+                                           <label class="checkbox-label" for="@newsletterOptIn.Publication">Yes</label>
                                     </div>
 								</td>
 							</tr>

@@ -1,5 +1,4 @@
 ﻿using Jabberwocky.Autofac.Attributes;
-using System.Linq;
 
 namespace Informa.Library.User.Newsletter
 {
@@ -7,13 +6,16 @@ namespace Informa.Library.User.Newsletter
 	public class SiteNewsletterUserOptedInContext : ISiteNewsletterUserOptedInContext
 	{
 		protected readonly ISiteNewsletterUserOptInsContext SiteNewsletterUserOptInsContext;
+		protected readonly ISiteNewsletterUserOptedIn SiteNewsletterUserOptedIn;
 
 		public SiteNewsletterUserOptedInContext(
-			ISiteNewsletterUserOptInsContext siteNewsletterUserOptInsContext)
+			ISiteNewsletterUserOptInsContext siteNewsletterUserOptInsContext,
+			ISiteNewsletterUserOptedIn siteNewsletterUserOptedIn)
 		{
 			SiteNewsletterUserOptInsContext = siteNewsletterUserOptInsContext;
+			SiteNewsletterUserOptedIn = siteNewsletterUserOptedIn;
 		}
 
-		public bool OptedIn => SiteNewsletterUserOptInsContext.OptIns.Any(oi => oi.OptIn);
+		public bool OptedIn => SiteNewsletterUserOptedIn.Check(SiteNewsletterUserOptInsContext.OptIns);
 	}
 }
