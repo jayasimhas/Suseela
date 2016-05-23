@@ -299,6 +299,7 @@
     <Compile Include="Actions\ActionsProcessor`2.cs" />
     <Compile Include="Actions\IActionsProcessor`2.cs" />
     <Compile Include="Actions\IAction`1.cs" />
+    <Compile Include="Advertisement\AdUrlBuilder.cs" />
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Publishing\Events\PublishDateFoldersArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Publishing\Events\ActualPublishDateArticlePublishItemProcessing.cs" />
