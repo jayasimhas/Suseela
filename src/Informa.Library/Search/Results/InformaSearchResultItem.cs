@@ -13,8 +13,12 @@ namespace Informa.Library.Search.Results
 {
 	public class InformaSearchResultItem : SearchResultItem
 	{
-		[IndexField("_val_")]
-		public string Val { get; set; }
+        /// <summary>
+        /// This property is used for boosting newer articles
+        /// See http://www.sitecoreblogger.com/2014/09/publication-date-boosting-in-sitecore-7.html
+        /// </summary>
+        [IndexField("_val_")]
+        public string Val { get; set; }
 
 		[IndexField("issearchable_b")]
 		public bool IsSearchable { get; set; }

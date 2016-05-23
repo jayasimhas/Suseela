@@ -6,9 +6,9 @@
 	<add allowedDestination="http://${project.domain}"/>
 	</redirectValidation>
 	<setNoCacheHttpHeaders enabled="false" />
-	<x-Robots-Tag enabled="true"
-				noIndex="true"
-				noFollow="true"
+	<x-Robots-Tag enabled="false"
+				noIndex="false"
+				noFollow="false"
 				noArchive="true"
 				noOdp="true"
 				noSnippet="true"

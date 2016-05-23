@@ -417,7 +417,7 @@ $(document).ready(function() {
 
             var resultIDs = null;
 
-            $('.js-angular-bookmark').each(function(indx, item) {
+            $('.js-search-results-id').each(function(indx, item) {
                 resultIDs = resultIDs ? resultIDs + ',' + $(item).data('bookmark-id') : $(item).data('bookmark-id');
             });
 
