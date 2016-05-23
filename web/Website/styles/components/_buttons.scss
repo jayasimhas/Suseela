@@ -11,6 +11,7 @@ section: UI Elements
 
 .button,
 a.button {
+	&,
 	&--filled,
 	&--outlined,
 	&--outline,
@@ -69,6 +70,29 @@ a.button {
 	}
 
 }
+
+
+/*---
+title: Full Diminished Button
+section: UI Elements
+---
+This isn't a "real" button; rather, a link styled like many other buttons on the site.
+```example:html
+<a class="full-diminished-button" href="#">
+	See All
+</a>
+```
+*/
+
+.full-diminished-button {
+	@extend .button;
+	background-color: $color-concrete-gray;
+	color: $color-zeus-black;
+	cursor: pointer;
+	margin-bottom: 3rem;
+	width: 100%;
+}
+
 
 .onoffswitch {
 	display: inline-block;
