@@ -250,10 +250,18 @@ $(document).ready(function() {
         observe: '.form-reset-password',
         successCallback: function() {
             $('.form-reset-password').find('.alert-success').show();
-            analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
+            var isPassword = $('.form-reset-password').data("is-password");
+            if(isPassword)
+            {
+                analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
+            }
         },
         failureCallback: function() {
-            analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
+            var isPassword = $('.form-reset-password').data("is-password");
+            if(isPassword)
+            {
+                analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
+            }
         }
 
     });
@@ -262,16 +270,30 @@ $(document).ready(function() {
         observe: '.form-new-reset-pass-token',
         successCallback: function() {
             $('.form-new-reset-pass-token').find('.alert-success').show();
+            analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
+        },
+        failureCallback: function() {
+            analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
         }
     });
 
     var userRegistrationController = new FormController({
         observe: '.form-registration',
         successCallback: function(form, context, event) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "form registration successful" }) );
+            analyticsEvent( $.extend(analytics_data, { event_name: "registration successful" }) );
         },
         failureCallback: function(form,response) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "form registration failure" }) );
+          
+            var errorMsg = $(".page-registration__error").text();
+            if (response.reasons && response.reasons.length > 0) {
+                errorMsg = "[";
+                for (var reason in response.reasons) {
+                    errorMsg += response.reasons[reason] + ",";
+                }
+                errorMsg = errorMsg.substring(0, errorMsg.length - 1);
+                errorMsg += "]";
+            }
+            analyticsEvent( $.extend(analytics_data, { event_name: "registration failure", registraion_errors : errorMsg }) );
         }
     });
 
@@ -282,7 +304,7 @@ $(document).ready(function() {
         },
         failureCallback: function(form, response) {
             var errorMsg = $(".page-registration__error").text();
-           if (response.reasons && response.reasons.length > 0) {
+            if (response.reasons && response.reasons.length > 0) {
                 errorMsg = "[";
                 for (var reason in response.reasons) {
                     errorMsg += response.reasons[reason] + ",";
@@ -650,7 +672,7 @@ $(document).ready(function() {
         init();
     };
 
-    $('#newsletters').on('click',function(e){
+    $('.js-register-final').on('click',function(e){
         newsletterOptins();
     });
 
@@ -659,12 +681,14 @@ $(document).ready(function() {
         if ($('#newsletters').is(':checked')) {
             var chkDetails = {   newsletter_optin: "true"}
             $.extend(eventDetails,chkDetails);
+            analyticsEvent( $.extend(analytics_data, eventDetails) );
         } else {
             var chkDetails = {   newsletter_optin: "false"}
             $.extend(eventDetails,chkDetails);
-        }
-        analyticsEvent( $.extend(analytics_data, eventDetails) );
+            analyticsEvent( $.extend(analytics_data, eventDetails) );
+        }    
     };
+
 
     // TODO - Refactor this code, update class name to a `js-` name
     $('.manage-preferences').click(function(e) {
@@ -701,7 +725,7 @@ $(document).ready(function() {
 
     });
 
-    newsletterOptins();
+ 
     // Execute!
     smoothScrollingNav();
 
