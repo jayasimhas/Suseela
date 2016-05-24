@@ -776,7 +776,6 @@
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
-    <Compile Include="ViewModels\GlassArticleModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
@@ -832,7 +831,6 @@
     <Compile Include="ViewModels\HeaderViewModel.cs" />
     <Compile Include="ViewModels\HierarchyLinks.cs" />
     <Compile Include="ViewModels\HighlightViewModel.cs" />
-    <Compile Include="ViewModels\IArticleModel.cs" />
     <Compile Include="ViewModels\IArticlePrologueBookmarkViewModel.cs" />
     <Compile Include="ViewModels\IArticlePrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IArticleProloguePrintViewModel.cs" />
