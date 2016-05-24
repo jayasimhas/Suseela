@@ -11016,14 +11016,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					I___BasePage My_Account_Page  {get; set;}
 								/// <summary>
-					/// The Ad Domin field.
+					/// The Ad Domain field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
 					/// <para>Field ID: a933a49a-de33-48f4-957e-0211e00084a9</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Ad_DominFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Ad_Domin  {get; set;}
+					[SitecoreField(ISite_ConfigConstants.Ad_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Ad_Domain  {get; set;}
 								/// <summary>
 					/// The Global Article Ad Zone field.
 					/// <para></para>
@@ -11676,14 +11676,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 						I___BasePage My_Account_Page  {get; set;}
 										/// <summary>
-						/// The Ad Domin field.
+						/// The Ad Domain field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
 						/// <para>Field ID: a933a49a-de33-48f4-957e-0211e00084a9</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Ad_DominFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Ad_Domin  {get; set;}
+						[SitecoreField(ISite_ConfigConstants.Ad_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Ad_Domain  {get; set;}
 										/// <summary>
 						/// The Global Article Ad Zone field.
 						/// <para></para>
@@ -12324,8 +12324,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Ad_DominFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
-			public const string Ad_DominFieldName = "Ad Domin";
+			public static readonly ID Ad_DomainFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
+			public const string Ad_DomainFieldName = "Ad Domain";
 
 						
 					
@@ -16083,10 +16083,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 					/// <para></para>
 					/// <para>Field Type: Droptree</para>		
 					/// <para>Field ID: e4af834d-e606-4424-8dde-326953ed32b3</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=Pages.IArticle</para>
 					/// </summary>
 					[SitecoreField(IFeatured_ArticleConstants.ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Article  {get; set;}
+					Pages.IArticle Article  {get; set;}
 								/// <summary>
 					/// The Hide Image field.
 					/// <para></para>
@@ -16122,10 +16122,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 						/// <para></para>
 						/// <para>Field Type: Droptree</para>		
 						/// <para>Field ID: e4af834d-e606-4424-8dde-326953ed32b3</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: type=Pages.IArticle</para>
 						/// </summary>
 						[SitecoreField(IFeatured_ArticleConstants.ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Article  {get; set;}
+						Pages.IArticle Article  {get; set;}
 										/// <summary>
 						/// The Hide Image field.
 						/// <para></para>
@@ -17206,8 +17206,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Ad_DominFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
-			public const string Ad_DominFieldName = "Ad Domin";
+			public static readonly ID Ad_DomainFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
+			public const string Ad_DomainFieldName = "Ad Domain";
 
 						
 					
