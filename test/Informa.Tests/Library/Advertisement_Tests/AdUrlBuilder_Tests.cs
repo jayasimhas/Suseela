@@ -29,7 +29,7 @@ namespace Informa.Tests.Library.Advertisement_Tests
         private void BindFakeSite()
         {
             var fakeSite = Substitute.For<ISite_Root>();
-            fakeSite.Ad_Domin.Returns("www.moose4moose.com");
+            fakeSite.Ad_Domain.Returns("www.moose4moose.com");
             _dependencies.SiteRootContext.Item.Returns(fakeSite);
         }
 
@@ -89,7 +89,7 @@ namespace Informa.Tests.Library.Advertisement_Tests
             var fakeAd = FakeAd();
 
             var fakeSite = Substitute.For<ISite_Root>();
-            fakeSite.Ad_Domin.Returns("");
+            fakeSite.Ad_Domain.Returns("");
             _dependencies.SiteRootContext.Item.Returns(fakeSite);
 
             // ACT

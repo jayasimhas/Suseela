@@ -34,7 +34,7 @@ namespace Informa.Library.Wrappers
 
         public string GetHostName() => Sitecore.Web.WebUtil.GetHostName();
 
-        public string GetItemUrl(IGlassBase glassItem) => GetItemUrl(glassItem._Id);
+        public string GetItemUrl(IGlassBase glassItem) => glassItem != null ? GetItemUrl(glassItem._Id) : null;
         public string GetItemUrl(Guid itemId)
         {
             var database = Sitecore.Configuration.Factory.GetDatabase(Constants.MasterDb);
@@ -45,7 +45,7 @@ namespace Informa.Library.Wrappers
             return scheme + GetHostName() + itemUrl;
         }
 
-        public string GetMediaUrl(IGlassBase glassItem) => GetMediaUrl(glassItem._Id);
+        public string GetMediaUrl(IGlassBase glassItem) => glassItem != null ? GetMediaUrl(glassItem._Id) : null;
         public string GetMediaUrl(Guid itemId)
         {
             MediaItem imageItem = Sitecore.Context.Database.GetItem(new ID(itemId));
