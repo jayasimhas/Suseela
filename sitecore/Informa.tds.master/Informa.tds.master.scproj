@@ -8379,6 +8379,7 @@
     <SitecoreItem Include="sitecore\templates\User Defined\View Templates\Latest News Options\Latest News\Subjects.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <CodeGenData>generic=ITaxonomy_Item</CodeGenData>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\User Defined\View Templates\Promotional Options.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>

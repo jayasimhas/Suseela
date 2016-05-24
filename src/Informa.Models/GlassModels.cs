@@ -4700,10 +4700,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: bcb4dcff-2670-4bee-9b07-8cddf1c7cc9b</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: generic=ITaxonomy_Item</para>
 					/// </summary>
 					[SitecoreField(ILatest_News_OptionsConstants.SubjectsFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Subjects  {get; set;}
+					IEnumerable<ITaxonomy_Item> Subjects  {get; set;}
 				}
 
 	
@@ -4739,10 +4739,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: bcb4dcff-2670-4bee-9b07-8cddf1c7cc9b</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: generic=ITaxonomy_Item</para>
 						/// </summary>
 						[SitecoreField(ILatest_News_OptionsConstants.SubjectsFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Subjects  {get; set;}
+						IEnumerable<ITaxonomy_Item> Subjects  {get; set;}
 						}
 	
 	public static partial class ILatest_News_OptionsConstants{
@@ -17682,6 +17682,28 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
 			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
+
+						
+					
+			public static readonly ID Lockout_Email_BodyFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
+			public const string Lockout_Email_BodyFieldName = "Lockout Email Body";
+
+							public static readonly ID Lockout_Email_Body__RawFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
+				public const string Lockout_Email_Body__RawFieldName = "Lockout Email Body";
+						
+					
+			public static readonly ID Lockout_Email_FromFieldId = new ID("533cb9d2-b47a-4a9a-9b8a-c4febcdadcab");
+			public const string Lockout_Email_FromFieldName = "Lockout Email From";
+
+						
+					
+			public static readonly ID Lockout_Email_SubjectFieldId = new ID("f432072f-cfcb-4477-8588-61726fdadf23");
+			public const string Lockout_Email_SubjectFieldName = "Lockout Email Subject";
+
+						
+					
+			public static readonly ID Lockout_Email_ToFieldId = new ID("861cb808-ae66-4908-9d46-96b350e302b3");
+			public const string Lockout_Email_ToFieldName = "Lockout Email To";
 
 						
 					

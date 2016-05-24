@@ -1,11 +1,11 @@
-﻿@model Informa.Web.ViewModels.LatestNewsViewModel
+﻿@inherits GlassView<LatestNewsViewModel>
 
 @if (Model.DisplayTitle && Model.Topics.Any())
 {
 	<h4 class="latest-news__header">
-		<span>@Model.TitleText
+		<span>@Html.Raw(Model.TitleText)
 		@{
-			var take = Model.Topics.Count() - 1;
+			var take = Model.Topics.Count - 1;
 		}
 		@string.Join(", ", Model.Topics.Take(take > 0 ? take : 1))
 		@if (take > 0)
@@ -23,12 +23,4 @@
 	}
 </div>
 
-@* * *
-	IITS2-38 - START
-* * *
-
-<a class="full-diminished-button" href="#">See All</a>
-
-@* * *
-	IITS2-38 - END
-* * *@
+@RenderLink(model => model.SeeAllLink, new { @class = "full-diminished-button" })
