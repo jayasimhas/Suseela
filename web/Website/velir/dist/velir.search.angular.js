@@ -519,6 +519,7 @@
                                 var facet = new _Core.Facet({ id: facetValue, selected: true });
                                 group.addFacet(facet);
                             });
+                            this.searchService.addFacetGroup(group);
                         }
                     }]);
 
@@ -1776,7 +1777,7 @@
                         key: 'query',
                         value: function query() {
                             var _this2 = this;
-
+                            
                             var query = new _Query.Query({
                                 url: this._url,
                                 transport: this._http,

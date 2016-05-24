@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
-using Informa.Library.Utilities.Extensions;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
 using Sitecore.Links;
@@ -13,12 +12,12 @@ namespace Informa.Library.Search.Results
 {
 	public class InformaSearchResultItem : SearchResultItem
 	{
-        /// <summary>
-        /// This property is used for boosting newer articles
-        /// See http://www.sitecoreblogger.com/2014/09/publication-date-boosting-in-sitecore-7.html
-        /// </summary>
-        [IndexField("_val_")]
-        public string Val { get; set; }
+		/// <summary>
+		/// This property is used for boosting newer articles
+		/// See http://www.sitecoreblogger.com/2014/09/publication-date-boosting-in-sitecore-7.html
+		/// </summary>
+		[IndexField("_val_")]
+		public string Val { get; set; }
 
 		[IndexField("issearchable_b")]
 		public bool IsSearchable { get; set; }
@@ -29,8 +28,8 @@ namespace Informa.Library.Search.Results
 		[IndexField("_latestversion")]
 		public bool IsLatestVersion { get; set; }
 
-        [IndexField("sort_order_tf")]
-        public float SortOrder { get; set; }
+		[IndexField("sort_order_tf")]
+		public float SortOrder { get; set; }
 
 		[IndexField("searchdate")]
 		[DataMember]
@@ -39,7 +38,7 @@ namespace Informa.Library.Search.Results
 		[IndexField("plannedpublishdate")]
 		[DataMember]
 		public DateTime PlannedPublishDate { get; set; }
-		
+
 		[IndexField("searchtitle")]
 		[DataMember]
 		public string Title { get; set; }
@@ -75,7 +74,7 @@ namespace Informa.Library.Search.Results
 
 		[IndexField("facetcompanies")]
 		public List<string> CompaniesFacet { get; set; }
-			
+
 		[DataMember]
 		public bool IsArticleBookmarked { get; set; }
 
@@ -93,19 +92,6 @@ namespace Informa.Library.Search.Results
 
 				var item = GetItem();
 				return item != null ? LinkManager.GetItemUrl(item, options) : base.Url;
-			}
-		}
-
-		[DataMember]
-		public string SiteUrl
-		{
-			get
-			{
-				string url = Url ?? string.Empty;
-				Regex regex = new Regex("(.*?://.*?)/");
-				var match = regex.Match(url);
-
-				return match.Success ? regex.Match(url).Groups[1].Value : string.Empty;
 			}
 		}
 	}
