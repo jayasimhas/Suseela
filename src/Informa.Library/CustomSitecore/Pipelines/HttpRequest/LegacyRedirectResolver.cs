@@ -95,7 +95,8 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
 						var item = Context.Database.GetItem(new ID(article._Id));
 						var domainUri = new Uri(LinkManager.GetItemUrl(item, options));
-						newPath = $"{domainUri.Host}/articles{customPath}";
+						var protocol = Sitecore.Configuration.Settings.GetSetting("Site.Protocol", "https");
+						newPath = $"{protocol}://{domainUri.Host}{customPath}";
 					}
 					else
 					{

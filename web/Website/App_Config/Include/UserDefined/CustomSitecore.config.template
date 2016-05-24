@@ -176,7 +176,8 @@ But you can also use "patch:attribute" for clarity:
 			MG: The explicit override here was reverted to the default setting to allow workflow locks/editing to behave as needed
       -->
       <setting name="RequireLockBeforeEditing" value="true"/>
-
+	  <!-- Protocol -->
+	  <setting name="Site.Protocol" value="${Site.Protocol}" />
       <!-- Velir Settings -->
       <setting  name="Env.Value" value="${Env.Value}" />
       <!-- Production Host -->
