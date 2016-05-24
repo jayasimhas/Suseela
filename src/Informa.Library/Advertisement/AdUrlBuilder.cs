@@ -38,7 +38,7 @@ namespace Informa.Library.Advertisement
             if (string.IsNullOrEmpty(adItem?.Slot_ID) || string.IsNullOrEmpty(adItem.Zone))
             { return string.Empty; }
 
-            var adDomain = _dependencies.SiteRootContext.Item?.Ad_Domin;
+            var adDomain = _dependencies.SiteRootContext.Item?.Ad_Domain;
             if (string.IsNullOrEmpty(adDomain))
             { return string.Empty; }
 

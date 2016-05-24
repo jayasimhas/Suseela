@@ -19,15 +19,15 @@ namespace Informa.Web.ViewModels
 	[AutowireService(LifetimeScope.PerScope)]
 	public class ArticleListItemModelFactory : IArticleListItemModelFactory
 	{
-	    protected readonly ISitecoreContext SitecoreContext;
-	    protected readonly IArticleSearch ArticleSearch;
-	    protected readonly ITextTranslator TextTranslator;
+		protected readonly ISitecoreContext SitecoreContext;
+		protected readonly IArticleSearch ArticleSearch;
+		protected readonly ITextTranslator TextTranslator;
 
-        public ArticleListItemModelFactory(ISitecoreContext sitecoreContext, IArticleSearch articleSearch, ITextTranslator textTranslator)
+		public ArticleListItemModelFactory(ISitecoreContext sitecoreContext, IArticleSearch articleSearch, ITextTranslator textTranslator)
 		{
-		    SitecoreContext = sitecoreContext;
-		    ArticleSearch = articleSearch;
-            TextTranslator = textTranslator;
+			SitecoreContext = sitecoreContext;
+			ArticleSearch = articleSearch;
+			TextTranslator = textTranslator;
 		}
 
 		public IListableViewModel Create(IArticle article)
@@ -55,26 +55,27 @@ namespace Informa.Web.ViewModels
 				LinkableText = article.Content_Type?.Item_Name,
 				LinkableUrl = article._Url,
 				Publication = publication.Publication_Name,
-                By = TextTranslator.Translate("Article.By")
-            };
+				By = TextTranslator.Translate("Article.By")
+			};
 		}
 
-	    public IListableViewModel Create(Guid articleId)
-	    {
-	        return Create(SitecoreContext.GetItem<IArticle>(articleId));
-	    }
+		public IListableViewModel Create(Guid articleId)
+		{
+			return Create(SitecoreContext.GetItem<IArticle>(articleId));
+		}
 
-	    public IListableViewModel Create(string articleNumber)
-	    {
-            IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-            filter.ArticleNumbers = articleNumber.SingleToList();
-	        var results = ArticleSearch.Search(filter);
-            if (results.Articles.Any())
-            {
-                return Create(results.Articles.FirstOrDefault());
-            }
+		public IListableViewModel Create(string articleNumber)
+		{
+			IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+			filter.ArticleNumbers = articleNumber.SingleToList();
+			filter.PageSize = 1;
+			var results = ArticleSearch.Search(filter);
+			if (results.Articles.Any())
+			{
+				return Create(results.Articles.FirstOrDefault());
+			}
 
-	        return null;
-	    }
+			return null;
+		}
 	}
 }

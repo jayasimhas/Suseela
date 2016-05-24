@@ -4700,10 +4700,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: bcb4dcff-2670-4bee-9b07-8cddf1c7cc9b</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: generic=ITaxonomy_Item</para>
 					/// </summary>
 					[SitecoreField(ILatest_News_OptionsConstants.SubjectsFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Subjects  {get; set;}
+					IEnumerable<ITaxonomy_Item> Subjects  {get; set;}
 				}
 
 	
@@ -4739,10 +4739,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: bcb4dcff-2670-4bee-9b07-8cddf1c7cc9b</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: generic=ITaxonomy_Item</para>
 						/// </summary>
 						[SitecoreField(ILatest_News_OptionsConstants.SubjectsFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Subjects  {get; set;}
+						IEnumerable<ITaxonomy_Item> Subjects  {get; set;}
 						}
 	
 	public static partial class ILatest_News_OptionsConstants{
@@ -11046,14 +11046,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 					I___BasePage My_Account_Page  {get; set;}
 								/// <summary>
-					/// The Ad Domin field.
+					/// The Ad Domain field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
 					/// <para>Field ID: a933a49a-de33-48f4-957e-0211e00084a9</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Ad_DominFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Ad_Domin  {get; set;}
+					[SitecoreField(ISite_ConfigConstants.Ad_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Ad_Domain  {get; set;}
 								/// <summary>
 					/// The Global Article Ad Zone field.
 					/// <para></para>
@@ -11733,14 +11733,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
 						I___BasePage My_Account_Page  {get; set;}
 										/// <summary>
-						/// The Ad Domin field.
+						/// The Ad Domain field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
 						/// <para>Field ID: a933a49a-de33-48f4-957e-0211e00084a9</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Ad_DominFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Ad_Domin  {get; set;}
+						[SitecoreField(ISite_ConfigConstants.Ad_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Ad_Domain  {get; set;}
 										/// <summary>
 						/// The Global Article Ad Zone field.
 						/// <para></para>
@@ -12408,8 +12408,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Ad_DominFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
-			public const string Ad_DominFieldName = "Ad Domin";
+			public static readonly ID Ad_DomainFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
+			public const string Ad_DomainFieldName = "Ad Domain";
 
 						
 					
@@ -16205,10 +16205,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 					/// <para></para>
 					/// <para>Field Type: Droptree</para>		
 					/// <para>Field ID: e4af834d-e606-4424-8dde-326953ed32b3</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=Pages.IArticle</para>
 					/// </summary>
 					[SitecoreField(IFeatured_ArticleConstants.ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Article  {get; set;}
+					Pages.IArticle Article  {get; set;}
 								/// <summary>
 					/// The Hide Image field.
 					/// <para></para>
@@ -16244,10 +16244,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 						/// <para></para>
 						/// <para>Field Type: Droptree</para>		
 						/// <para>Field ID: e4af834d-e606-4424-8dde-326953ed32b3</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: type=Pages.IArticle</para>
 						/// </summary>
 						[SitecoreField(IFeatured_ArticleConstants.ArticleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Article  {get; set;}
+						Pages.IArticle Article  {get; set;}
 										/// <summary>
 						/// The Hide Image field.
 						/// <para></para>
@@ -17328,8 +17328,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Ad_DominFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
-			public const string Ad_DominFieldName = "Ad Domin";
+			public static readonly ID Ad_DomainFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
+			public const string Ad_DomainFieldName = "Ad Domain";
 
 						
 					
@@ -17682,6 +17682,28 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
 			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
+
+						
+					
+			public static readonly ID Lockout_Email_BodyFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
+			public const string Lockout_Email_BodyFieldName = "Lockout Email Body";
+
+							public static readonly ID Lockout_Email_Body__RawFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
+				public const string Lockout_Email_Body__RawFieldName = "Lockout Email Body";
+						
+					
+			public static readonly ID Lockout_Email_FromFieldId = new ID("533cb9d2-b47a-4a9a-9b8a-c4febcdadcab");
+			public const string Lockout_Email_FromFieldName = "Lockout Email From";
+
+						
+					
+			public static readonly ID Lockout_Email_SubjectFieldId = new ID("f432072f-cfcb-4477-8588-61726fdadf23");
+			public const string Lockout_Email_SubjectFieldName = "Lockout Email Subject";
+
+						
+					
+			public static readonly ID Lockout_Email_ToFieldId = new ID("861cb808-ae66-4908-9d46-96b350e302b3");
+			public const string Lockout_Email_ToFieldName = "Lockout Email To";
 
 						
 					

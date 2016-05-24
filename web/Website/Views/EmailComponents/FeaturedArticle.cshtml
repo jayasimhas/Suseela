@@ -1,57 +1,61 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.FeaturedArticleViewModel>
 @{
-    var mediaTypeIconSrc = Model.Article?.Media_Type?.Media_Type_Icon?.Src;
+    var mediaTypeIconSrc = Model.GlassModel.Article?.Media_Type?.Media_Type_Icon?.Src;
 }
 
-<!-- this doesn't have to be a div, just demonstarting -->
-<!-- also feel free to change the "sponsored" class name -->
-<div class="@(Model.GlassModel.Is_Sponsored ? "sponsored" : string.Empty)"></div>
+@using (BeginEditFrame(Model.GlassModel, "Associate Article", m => m.Article))
+{
+    if (Model.GlassModel.Article == null)
+    {
+        <span>Click here and select Associate Article.  View will update on save.</span>
+    }
 
-<table class="manually-curated-section featured__article" border="0" cellpadding="0" cellspacing="0" width="100%">
-    <tr>
-        <td>
-            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr class="article-preview-header">
+    <table class="manually-curated-section featured__article" border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr class="article-preview-header">
 
-                    @if (!Model.GlassModel.Hide_Image)
-                    {
-                        <td class="one-third layout-padded-right" valign="top">
-                            @Model.Article.Featured_Image_16_9
-                        </td>
-                    }
+                        @if (!Model.GlassModel.Hide_Image)
+                        {
+                            <td class="one-third layout-padded-right" valign="top">
+                                @(Model.GlassModel.Article?.Featured_Image_16_9)
+                            </td>
+                        }
 
-                    <td valign="top" class="two-thirds">
-                        <div class="article-metadata">
-                            <span class="article-date">
-                                @Model.Article.Actual_Publish_Date.ToString("dd MMM yyyy")
+                        <td valign="top" class="two-thirds">
+                            <div class="article-metadata">
+                                <span class="article-date">
+                                @(Model.GlassModel.Article?.Actual_Publish_Date.ToString("dd MMM yyyy"))
                             </span>
-                            <span class="vertical-separator">|</span>
-                            <span class="article-category">
-                                @Model.Article.Content_Type
+                                <span class="vertical-separator">|</span>
+                                <span class="article-category">
+                                @(Model.GlassModel.Article?.Content_Type?.Item_Name)
                             </span>
-                            <span class="vertical-separator">|</span>
-                            <span class="article-content-type">
+                                <span class="vertical-separator">|</span>
+                                <span class="article-content-type">
                                 @if (!string.IsNullOrEmpty(mediaTypeIconSrc))
                                 {
                                     <img src="@mediaTypeIconSrc"/>
                                 }
                             </span>
-                        </div>
+                            </div>
 
-                        <a href="@Model.TargetArticleUrl">
-                            <h3 class="featured__title">@Model.Article.Title</h3>
-                        </a>
-                        <span class="article-byline">@Model.Byline</span>
-                    </td>
-                </tr>
+                            <a href="@Model.TargetArticleUrl">
+                                <h3 class="featured__title">@(Model.GlassModel.Article?.Title)</h3>
+                            </a>
+                            <span class="article-byline">@Model.Byline</span>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td colspan="2">
-                        <p>@Html.Raw(Model.Article.Summary)</p>
-                    </td>
-                </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p>@Html.Raw(Model.GlassModel.Article?.Summary)</p>
+                        </td>
+                    </tr>
 
-            </table>
-        </td>
-    </tr>
-</table>
+                </table>
+            </td>
+        </tr>
+    </table>
+}
