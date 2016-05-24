@@ -32,7 +32,7 @@ namespace Informa.Tests.Library.Mail_Tests
             _exactTargetClient.PushEmail(null);
 
             // ASSERT
-            _dependencies.LogWrapper.Received(1).SitecoreWarn("Email not pushed to ExactTarget.  Email item was null.");
+            _dependencies.LogWrapper.Received(1).SitecoreWarn(Arg.Any<string>());
         }
 
         [Test]
@@ -154,10 +154,13 @@ namespace Informa.Tests.Library.Mail_Tests
             fakeEmailItem.Exact_Target_External_Key = 0;
             Sub_CreateResult();
 
+            _dependencies.SitecoreUrlWrapper.GetItemUrl(fakeEmailItem).Returns("http://Mooseville.com/emails/MeetTheMoose");
             _dependencies.WebClientWrapper.DownloadString("http://Mooseville.com/emails/MeetTheMoose")
                 .Returns("<div><h1>Moose</h1></div>");
 
+            _dependencies.Premailer.InlineCss(Arg.Any<string>()).Returns(x => x.Arg<string>());
             _dependencies.SitecoreSecurityWrapper.SecurityDisabledAction(Arg.Invoke());
+
 
             // ACT
             _exactTargetClient.PushEmail(fakeEmailItem);
@@ -183,8 +186,11 @@ namespace Informa.Tests.Library.Mail_Tests
             };
             _dependencies.ExactTargetWrapper.UpdateEmail(Arg.Any<ET_Email>()).Returns(fakeUpdateResponse);
 
+            _dependencies.SitecoreUrlWrapper.GetItemUrl(fakeEmailItem).Returns("http://Mooseville.com/emails/MeetTheMoose");
             _dependencies.WebClientWrapper.DownloadString("http://Mooseville.com/emails/MeetTheMoose")
                 .Returns("<div><h1>Moose Update!</h1></div>");
+
+            _dependencies.Premailer.InlineCss(Arg.Any<string>()).Returns(x => x.Arg<string>());
 
             // ACT
             _exactTargetClient.PushEmail(fakeEmailItem);

@@ -9,7 +9,7 @@ namespace Informa.Library.Mail.ExactTarget
 {
     public interface IExactTargetClient
     {
-        void PushEmail(IExactTarget_Email emailItem);
+        PushEmailResponse PushEmail(IExactTarget_Email emailItem);
     }
 
     [AutowireService]
@@ -39,17 +39,22 @@ namespace Informa.Library.Mail.ExactTarget
         private static bool IsNullOrEmptyEmailItem(IExactTarget_Email emailItem)
             => emailItem == null || emailItem._Id == Guid.Empty;
 
-        public void PushEmail(IExactTarget_Email emailItem)
+        public PushEmailResponse PushEmail(IExactTarget_Email emailItem)
         {
             if (IsNullOrEmptyEmailItem(emailItem))
-            {
-                _dependencies.LogWrapper.SitecoreWarn("Email not pushed to ExactTarget.  Email item was null.");
-                return;
-            }
+            { return Respond(false, "Email not pushed to ExactTarget. Email item was null."); }
 
             _dependencies.LogWrapper.SitecoreInfo($"Email push to ExactTarget starting.  Email item Sitecore id: {emailItem._Id.ToString("B")}");
 
-            var etEmail = PopulateEtModel(emailItem);
+            FuelSDK.ET_Email etEmail;
+            try
+            {
+                etEmail = PopulateEtModel(emailItem);
+                if(string.IsNullOrWhiteSpace(etEmail.HTMLBody)) { throw new Exception("HTML body was empty."); }
+            } catch (Exception ex)
+            {
+                return Respond(false, $"Failed to populate email to send to ExactTarget.  Error: {ex.Message}");
+            }
 
             var response = IsEmailNewToExactTarget(emailItem)
                 ? _dependencies.ExactTargetWrapper.CreateEmail(etEmail)
@@ -59,17 +64,32 @@ namespace Informa.Library.Mail.ExactTarget
             
             if (response.Success)
             {
-                _dependencies.LogWrapper.SitecoreInfo(
+                return Respond(true,
                     $"Email push to ExactTarget finished. Email item Sitecore id: {emailItem._Id.ToString("B")}, ET id: {emailItem.Exact_Target_External_Key}, "
                     + $"Result message: {response.Message}");
             }
             else
             {
-                _dependencies.LogWrapper.SitecoreWarn(
+                return Respond(false,
                     $"Email push to ExactTarget FAILED. Email item Sitecore id: {emailItem._Id.ToString("B")}, ET id: {emailItem.Exact_Target_External_Key}, "
                     + $"Result message: {response.Message}");
             }
 
+        }
+
+        private PushEmailResponse Respond(bool success, string message)
+        {
+            var response = new PushEmailResponse {Success = success, Message = message};
+            if (success)
+            {
+                _dependencies.LogWrapper.SitecoreInfo(message);
+            }
+            else
+            {
+
+                _dependencies.LogWrapper.SitecoreWarn(message);
+            }
+            return response;
         }
 
         private void UpdateSitecoreWithEmailId(IExactTarget_Email etEmail, ExactTargetResponse response) =>
@@ -102,5 +122,11 @@ namespace Informa.Library.Mail.ExactTarget
             return inlineHtml;
         }
 
+    }
+
+    public class PushEmailResponse
+    {
+        public bool Success { get; set; }
+        public string Message { get; set; }
     }
 }
