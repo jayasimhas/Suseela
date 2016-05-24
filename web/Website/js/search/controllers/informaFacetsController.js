@@ -141,14 +141,14 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     vm.updateTime = function (filter) {
         vm.searchService.getFilter('page').setValue('1');
         var routeBuilder = this.searchService.getRouteBuilder();
-        
+
         var hash = {};
         var urlQuery = "&";
         var h = routeBuilder.getRoute().split("&");
         for (var idx in h) {
             if (h[idx] != "") {
                 var currentParameter = h[idx].split("=");
-               
+
                 if (currentParameter[0] == "dateFilterLabel") {
                     hash[currentParameter[0]] = vm.timesObject[filter].id;
                     urlQuery = urlQuery + "&" + currentParameter[0] + "=" + vm.timesObject[filter].id;

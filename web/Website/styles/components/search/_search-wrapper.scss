@@ -76,6 +76,16 @@
     }
 }
 
+.lightbox-modal__backdrop--save-search {
+    @extend .lightbox-modal__backdrop;
+    display: none;
+
+    &.is-active {
+        display: block;
+        z-index: 9800;
+    }
+}
+
 /// Proper positioning of non-facet search page elements
 @mixin search-page-structure() {
   & {

@@ -8,26 +8,27 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
     vm.searchService = searchService;
     $scope.searchIsSaved = false;
 
+    $scope.oneClickSaveFocus = false;
+
+    // A user can land on the search page from a "1-click Subscribe" link in an email
+    // This handles detection of that query parameter, triggers appropriate UI changes
     function openSaveSearchIf1Click() {
 
         var urlQuery = $location.search();
-        console.log(urlQuery);
-
         var clickKey = Object.keys(urlQuery).filter(function (cur) {
             return cur.toLowerCase() === "1click";
         });
 
         if (clickKey.length > 0 && urlQuery[clickKey[0]] === "1") {
-            console.log(jQuery(".js-save-search"));
             jQuery(".js-save-search").click();
             $location.search(clickKey[0], null);
+            $scope.oneClickSaveFocus = true;
         }
-
     }
 
     $timeout(function() {
         openSaveSearchIf1Click();
-    });
+    }, 1000);
 
     $scope.$watch(function () {
         return searchService.getPager();
