@@ -28,6 +28,7 @@ var InformaResultsController = function InformaResultsController($scope, $saniti
         return searchService.getResults();
     }, function () {
         vm.docs = searchService.getResults();
+        $scope.utagAnalytics();
     });
 
     $scope.filterResult = function (url) {
