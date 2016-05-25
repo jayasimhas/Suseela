@@ -4,7 +4,10 @@
 <div class="article-body-content">
 	<h1>@Html.Raw(Model.Title)</h1>
 	<h3>@Html.Raw(Model.Sub_Title)</h3>
-
+	@if (Model.DisplayLegacyPublication)
+	{
+		<p>@Model.LegacyPublicationText</p>
+	}
 	<div class="article-metadata">
 		<ul>
 			<li>
