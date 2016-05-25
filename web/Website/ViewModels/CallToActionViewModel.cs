@@ -39,7 +39,7 @@ namespace Informa.Web.ViewModels
         public string RegisterSubtitle => TextTranslator.Translate("CallToAction.Register.SubTitle");
         public string SubscribeTitle => TextTranslator.Translate("CallToAction.Subscribe.Title");
         public string SubscribeLinkUrl => SiteRootContext?.Item?.Subscribe_Link?.Url ?? string.Empty;
-        public string SubscribeLinkText => SiteRootContext?.Item?.Subscribe_Link.Text ?? string.Empty;
+        public string SubscribeLinkText => SiteRootContext?.Item?.Subscribe_Link?.Text ?? string.Empty;
         public Link PurchaseLink => SiteRootContext?.Item?.Purchase_Link;
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
 
