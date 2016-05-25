@@ -399,7 +399,7 @@ namespace Informa.Web.Controllers
 			articleStruct.Authors = authors.Select(r => new StaffStruct { ID = r._Id, Name = r.Last_Name + ", " + r.First_Name, }).ToList();
 			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
 
-			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
+			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(_sitecoreMasterService.GetItem<IArticle>(a._Id))).ToList();
 
 			articleStruct.ArticleWorkflowState = GetWorkFlowState(articleItem._Id);
 

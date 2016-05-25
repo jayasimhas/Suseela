@@ -10,6 +10,7 @@ using Informa.Library.Search;
 using Informa.Library.Utilities.References;
 using Sitecore.ContentSearch.Linq;
 using System.Text;
+using Informa.Library.Caching;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
@@ -22,17 +23,20 @@ namespace Informa.Library.Article.Search
         protected readonly ISitecoreService SitecoreContext;
         protected readonly Func<string, ISitecoreService> SitecoreFactory;
         protected readonly IItemReferences ItemReferences;
+        protected readonly ICacheProvider CacheProvider;
 
         public ArticleSearch(
             IProviderSearchContextFactory searchContextFactory,
             ISitecoreService sitecoreContext, Func<string, ISitecoreService> sitecoreFactory,
-             IItemReferences itemReferences
+            IItemReferences itemReferences,
+            ICacheProvider cacheProvider
             )
         {
             SearchContextFactory = searchContextFactory;
             SitecoreContext = sitecoreContext;
             SitecoreFactory = sitecoreFactory;
             ItemReferences = itemReferences;
+            CacheProvider = cacheProvider;
         }
 
         public IArticleSearchFilter CreateFilter()
@@ -168,8 +172,14 @@ namespace Informa.Library.Article.Search
 
         public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
+            string taxKey = $"arttax-{id}";
+            if (CacheProvider.IsInCache(taxKey))
+                return CacheProvider.GetObject<string>(taxKey);
+
             var article = SitecoreContext.GetItem<ArticleItem>(id);
             var taxonomyItems = article?.Taxonomies?.Where(x => x._Parent._Id.Equals(taxonomyParent));
+
+            string returnStr = string.Empty;
             if (taxonomyItems != null)
             {
                 StringBuilder str = new StringBuilder();
@@ -179,13 +189,14 @@ namespace Informa.Library.Article.Search
                         str.Append(",");
                     str.Append($"'{taxonomyItem.Item_Name.Trim()}'");
                 }
-                return $"[{str}]";
+                returnStr = $"[{str}]";
             }
 
+            CacheProvider.SetObject(taxKey, returnStr, DateTime.Now.AddHours(1));
             return string.Empty;
         }
 
-	    public IArticleSearchResults GetLegacyArticleUrl(string path)
+        public IArticleSearchResults GetLegacyArticleUrl(string path)
 	    {
 		    path = path.ToLower();
 		    using (var context = SearchContextFactory.Create())

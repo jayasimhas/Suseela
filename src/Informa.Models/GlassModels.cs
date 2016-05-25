@@ -1869,10 +1869,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: d4a6b8d1-46b4-4a19-8778-e5fd2844606d</para>
-					/// <para>Custom Data: generic=IArticle</para>
+					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(IArticleConstants.Referenced_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IArticle> Referenced_Articles  {get; set;}
+					IEnumerable<IGlassBase> Referenced_Articles  {get; set;}
 								/// <summary>
 					/// The Referenced Companies field.
 					/// <para></para>
@@ -1896,10 +1896,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: dc4c3a27-a361-4fa3-a534-5ccacc374377</para>
-					/// <para>Custom Data: generic=IArticle</para>
+					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(IArticleConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IArticle> Related_Articles  {get; set;}
+					IEnumerable<IGlassBase> Related_Articles  {get; set;}
 								/// <summary>
 					/// The Supporting Documents field.
 					/// <para></para>
@@ -2178,10 +2178,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: d4a6b8d1-46b4-4a19-8778-e5fd2844606d</para>
-						/// <para>Custom Data: generic=IArticle</para>
+						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(IArticleConstants.Referenced_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IArticle> Referenced_Articles  {get; set;}
+						IEnumerable<IGlassBase> Referenced_Articles  {get; set;}
 										/// <summary>
 						/// The Referenced Companies field.
 						/// <para></para>
@@ -2205,10 +2205,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: dc4c3a27-a361-4fa3-a534-5ccacc374377</para>
-						/// <para>Custom Data: generic=IArticle</para>
+						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(IArticleConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IArticle> Related_Articles  {get; set;}
+						IEnumerable<IGlassBase> Related_Articles  {get; set;}
 										/// <summary>
 						/// The Supporting Documents field.
 						/// <para></para>

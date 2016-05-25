@@ -319,6 +319,8 @@
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
+    <Compile Include="Caching\CacheProvider.cs" />
+    <Compile Include="Caching\ICacheProvider.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\CompanyRegisterUserError.cs" />
