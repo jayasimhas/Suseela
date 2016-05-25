@@ -520,9 +520,6 @@
     <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStateInfo.resx">
       <DependentUpon>ArticleVersionStateInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStatePopup.resx">
-      <DependentUpon>ArticleVersionStatePopup.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleWorkflowInfo.resx">
       <DependentUpon>ArticleWorkflowInfo.cs</DependentUpon>
     </EmbeddedResource>
