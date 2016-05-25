@@ -118,7 +118,7 @@ namespace Informa.Web.ViewModels
 			}
 		}
 		public string PageTitleAnalytics => GlassModel?.Title ?? string.Empty;
-
+		public bool DisplayPageTitle => GlassModel is ITopic_Page;
 		public string BodyCssClass => string.IsNullOrEmpty(SiteRootContext.Item?.Publication_Theme)
 			? string.Empty
 			: $"class={SiteRootContext.Item.Publication_Theme}";

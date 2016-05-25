@@ -6,6 +6,8 @@ using Informa.Library.User.Entitlement;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Web.ViewModels
 {
@@ -31,6 +33,21 @@ namespace Informa.Web.ViewModels
 
 		public string Title => GlassModel.Title;
 		public string Sub_Title => GlassModel.Sub_Title;
+		public bool DisplayLegacyPublication => LegacyPublicationNames.Any();
+		public IEnumerable<string> LegacyPublicationNames => GlassModel.Legacy_Publications
+					.Select(lp => lp as ITaxonomy_Item)
+					.Where(lp => lp != null)
+					.Select(lp => lp.Item_Name);
+		public string LegacyPublicationText
+		{
+			get
+			{
+				var legacyText = TextTranslator.Translate("Article.LegacyPublications");
+				var legacyPublicationsText = LegacyPublicationNames.JoinWithFinal(", ", "&");
+
+				return legacyText.Replace("{Legacy Publications}", legacyPublicationsText);
+			}
+		}
 		public DateTime Date { get; set; }
 		public IEnumerable<IPersonModel> Authors { get; set; }
 		public string Category => GlassModel.Article_Category;
