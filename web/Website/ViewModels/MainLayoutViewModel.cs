@@ -20,6 +20,9 @@ using Informa.Library.User.Profile;
 using System.Linq;
 using Informa.Library.User;
 using Sitecore.Social.Infrastructure.Utils;
+using Informa.Library.Salesforce.User.Authentication;
+using Informa.Library.Salesforce.EBIWebServices;
+using Informa.Library.User.Authentication.Web;
 
 namespace Informa.Web.ViewModels
 {
@@ -37,7 +40,7 @@ namespace Informa.Web.ViewModels
 		protected readonly IUserEntitlementsContext UserEntitlementsContext;
 		protected readonly IUserIpAddressContext UserIpAddressContext;
 		protected readonly IIsEntitledProducItemContext IsEntitledProductItemContext;
-
+		protected readonly IWebAuthenticateUser WebAuthenticateUser;
 		public MainLayoutViewModel(
 			ISiteRootContext siteRootContext,
 			IMaintenanceViewModel maintenanceViewModel,
@@ -59,7 +62,8 @@ namespace Informa.Web.ViewModels
 			IUserSubscriptionsContext userSubscriptionsContext,
 			IUserEntitlementsContext userEntitlementsContext,
 			IUserIpAddressContext userIpAddressContext,
-			IIsEntitledProducItemContext isEntitledProductItemContext)
+			IIsEntitledProducItemContext isEntitledProductItemContext,
+			IWebAuthenticateUser webAuthenticateUser)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -82,6 +86,7 @@ namespace Informa.Web.ViewModels
 			UserEntitlementsContext = userEntitlementsContext;
 			UserIpAddressContext = userIpAddressContext;
 			IsEntitledProductItemContext = isEntitledProductItemContext;
+			WebAuthenticateUser = webAuthenticateUser;
 		}
 
 		public readonly IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
@@ -149,7 +154,7 @@ namespace Informa.Web.ViewModels
 				return DateTime.MinValue.ToString("MM/dd/yyyy");
 			}
 		}
-		public string ArticleContentType => Article?.Content_Type?.Item_Name;
+		public string ArticleContentType => Article?.Content_Type?.Item_Name.Trim();
 		public string ArcticleNumber => Article?.Article_Number;
 		public bool ArticleEmbargoed => Article?.Embargoed ?? false;
 		public string ArticleMediaType => Article?.Media_Type?.Item_Name;
@@ -222,5 +227,20 @@ namespace Informa.Web.ViewModels
 			return "Unentitled Abstract View";
 		}
 
+		public string ContactId => WebAuthenticateUser.AuthenticatedUser?.ContactId ?? string.Empty;
+
+		public string AccountId
+		{
+			get
+			{
+				var accountInfo = WebAuthenticateUser.AuthenticatedUser?.AccountId;
+				
+				if (accountInfo ==null || !accountInfo.Any())
+					return string.Empty;
+
+				string allAccountIds = string.Join(",", accountInfo.Select(a => $"'{a}'"));
+				return $"[{allAccountIds}]";
+			}
+		}
 	}
 }
