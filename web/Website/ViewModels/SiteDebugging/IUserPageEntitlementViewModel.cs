@@ -6,7 +6,6 @@ namespace Informa.Web.ViewModels.SiteDebugging
 	{
 		bool IsValidPage { get; }
 		bool IsEntitled { get; }
-		string SiteProductCode { get; }
 		IEntitledProduct EntitledProduct { get; }
 		IEntitlementAccess EntitlementAccess { get; }
 	}
