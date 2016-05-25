@@ -25,34 +25,34 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly IArticleSearch Searcher;
 		protected readonly IArticleListItemModelFactory ArticleListableFactory;
-	    protected readonly ISitecoreService SitecoreService;
+		protected readonly ISitecoreService SitecoreService;
 
-		public RelatedArticlesModel(
-            IArticleListItemModelFactory articleListableFactory, 
-            IArticleSearch searcher,
-            ISitecoreService sitecoreService)
+		public RelatedArticlesModel(IArticle model,
+						IArticleListItemModelFactory articleListableFactory,
+						IArticleSearch searcher,
+						ISitecoreService sitecoreService)
 		{
 			ArticleListableFactory = articleListableFactory;
 			Searcher = searcher;
-		    SitecoreService = sitecoreService;
-            RelatedArticles = GetRelatedArticles();
+			SitecoreService = sitecoreService;
+			RelatedArticles = GetRelatedArticles(model);
 		}
 
-		private IEnumerable<IListable> GetRelatedArticles()
+		private IEnumerable<IListable> GetRelatedArticles(IArticle article)
 		{
-			var relatedArticles = GlassModel.Related_Articles.Concat(GlassModel.Referenced_Articles).Take(10).ToList();
+			var relatedArticles = article.Related_Articles.Concat(article.Referenced_Articles).Take(10).ToList();
 
 			if (relatedArticles.Count < 10)
 			{
 				var filter = Searcher.CreateFilter();
-				filter.ReferencedArticle = GlassModel._Id;
+				filter.ReferencedArticle = article._Id;
 				filter.PageSize = 10 - relatedArticles.Count;
 
 				var results = Searcher.Search(filter);
 				relatedArticles.AddRange(results.Articles);
 			}
 			return relatedArticles.Select(x => ArticleListableFactory.Create(SitecoreService.GetItem<IArticle>(x._Id))).Cast<IListable>().OrderByDescending(x => x.ListableDate);
-		} 
+		}
 
 		public IEnumerable<IListable> RelatedArticles { get; set; }
 	}
