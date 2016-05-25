@@ -89,7 +89,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
 	background-color: $color-concrete-gray;
 	color: $color-zeus-black;
 	cursor: pointer;
+	display: block;
 	margin-bottom: 3rem;
+	text-align: center;
 	width: 100%;
 }
 
