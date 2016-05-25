@@ -292,6 +292,14 @@ $(document).ready(function() {
         }
     });
 
+    // When the Save Search pop-out is toggled, need to update some form fields
+    // with the most recent data. Used to use Angular for this, but for site-wide
+    // reusability we need to do it in Zepto.
+    $('.js-save-search').on('click', function(e) {
+        $('.js-save-search-url').val(window.location.pathname + window.location.hash);
+        $('.js-save-search-title').val($('#js-search-field').val());
+    });
+
     var saveSearchController = new FormController({
         observe: '.form-save-search',
         successCallback: function(form, context, event) {

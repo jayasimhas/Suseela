@@ -70,16 +70,20 @@
                     @Html.Raw(Model.TitleFieldRequiredText)
                 </p>
 
+                @* * *
+                    IF SEARCH PAGE
+                * * *@
                 <input
                     type="text"
                     name="Title"
-                    class="pop-out__input pop-out__input--tight js-save-search-title" value="{{title}}">
+                    class="pop-out__input pop-out__input--tight js-save-search-title"
+                    value="">
 
                 <input
                     type="hidden"
                     name="Url"
                     class="js-save-search-url"
-                    value="@Model.GlassModel._Url#{{currentLocation}}">
+                    value="">
 
                 <p class="pop-out__details">
                     @Html.Raw(Model.DescriptionText)
@@ -96,6 +100,35 @@
                         @Html.Raw(Model.EmailAlertLabelText)
                     </label>
                 </div>
+
+                @* * *
+                    END IF SEARCH PAGE
+
+                    IF HOME/TOPIC PAGE
+
+                    <input
+                        type="hidden"
+                        name="Title"
+                        class="js-save-search-title" value=" *** SEARCH TITLE HERE *** ">
+
+                    <input
+                        type="hidden"
+                        name="Url"
+                        class="js-save-search-url"
+                        value=" *** SEARCH URL HERE *** ">
+
+                    <input
+                        type="hidden"
+                        id="AlertEnabled"
+                        name="AlertEnabled"
+                        value="checked">
+
+                    <p class="pop-out__details">
+                        Your alert for *** SEARCH TITLE HERE*** will be saved to your account - "Saved Searches and Alerts".
+                    </p>
+
+                    END IF HOME/TOPIC PAGE
+                * * *@
 
                 <button type="submit" class="pop-out__sign-in-submit button--filled" ng-click="searchIsSaved = true">
                     @(Model.IsAuthenticated

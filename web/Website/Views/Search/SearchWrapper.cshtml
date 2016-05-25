@@ -33,7 +33,7 @@
                         data-on-submit="/api/SavedSearches"
                         data-submit-type="DELETE">
 
-                        <input name="Title" id="Title" type="hidden" value="{{title}}">
+                        <input name="Title" id="Title" type="hidden" value="">
 
                         <span class="pop-out__trigger js-save-search"
                             ng-class="{ 'js-lightbox-modal-trigger' : searchIsSaved, 'js-pop-out-trigger' : !searchIsSaved }"
@@ -61,6 +61,7 @@
 
                     </form>
 
+
                     <div class="lightbox-modal js-remove-search-modal">
                         <div class="dismiss-button js-close-lightbox-modal">
                             <span>Cancel</span>
@@ -79,17 +80,27 @@
                         <button class="lightbox-modal__submit button--filled js-lightbox-modal-submit" ng-click="searchIsSaved = false">Yes, I'm Sure</button>
                     </div>
 
+
                     @Html.Sitecore().Rendering(Model.ItemReferences.EmailSearchPopOutRendering.ToString())
                     @Html.Sitecore().Rendering(Model.ItemReferences.SaveSearchPopOutRendering.ToString())
 
+
+                    @* * *
+                    This lightbox backdrop appears when a user lands on the page
+                    from a "1-click subscribe" link in an email. Needs to be
+                    here so Angular can control the `is-active` class.
+                    * * *@
                     <div
                         class="lightbox-modal__backdrop--save-search js-one-click-focus"
-                        ng-class="{ 'is-active': oneClickSaveFocus }"></div>
+                        ng-class="{ 'is-active': oneClickSaveFocus }">
+                    </div>
+
 
                 </li>
             </ul>
 
         </div>
+
 
         <div class="alert-success saved-search-success-alert js-saved-search-success-alert">
             <svg class="alert__icon">
@@ -97,6 +108,8 @@
             </svg>
             <p>Your search has been saved to your account - "Saved Searches and Alerts".</p>
         </div>
+
+
 
         <h1 class="search__header-title">Search Results</h1>
         @Html.Sitecore().Placeholder("search-header")
