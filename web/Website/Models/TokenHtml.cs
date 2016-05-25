@@ -10,6 +10,7 @@ using System.Web.Mvc.Html;
 using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Web.Mvc;
 using Informa.Library.Article.Search;
+using Informa.Library.Caching;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.DCD;
 using Informa.Web.ViewModels;
@@ -26,8 +27,8 @@ namespace Informa.Web.Models
 
 		public ISitecoreContext SitecoreContext => GlassHtml.SitecoreContext;
 		public IArticleSearch ArticleSearch { get; }
-
-		private readonly IArticleListItemModelFactory _articleListableFactory;
+	    private readonly ICacheProvider CacheProvider; 
+        private readonly IArticleListItemModelFactory _articleListableFactory;
 
 		public TokenHtml(HtmlHelper<TK> helper)
 		{
@@ -36,7 +37,8 @@ namespace Informa.Web.Models
 			Model = HtmlHelper.ViewData.Model;
 
 			ArticleSearch = DependencyResolver.Current.GetService<IArticleSearch>();
-			_articleListableFactory = DependencyResolver.Current.GetService<IArticleListItemModelFactory>();
+            CacheProvider = DependencyResolver.Current.GetService<ICacheProvider>();
+            _articleListableFactory = DependencyResolver.Current.GetService<IArticleListItemModelFactory>();
 		}
 
 		public string ReplaceCompany(string content)
@@ -60,26 +62,32 @@ namespace Informa.Web.Models
 			foreach (Match match in referenceArticleTokenRegex.Matches(content))
 			{
 				string articleNumber = match.Groups[1].Value;
+                string cacheKey = $"TokenRepRelated-{articleNumber}";
 
+                if (CacheProvider.IsInCache(cacheKey)) { 
+                    content = CacheProvider.GetObject<string>(cacheKey);
+                } else { 
 
-				IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-				filter.ArticleNumbers = articleNumber.SingleToList();
-				var results = ArticleSearch.Search(filter);
+                    IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+				    filter.ArticleNumbers = articleNumber.SingleToList();
+				    var results = ArticleSearch.Search(filter);
 
-				HtmlString replace = new HtmlString("");
+				    HtmlString replace = new HtmlString("");
 
-				if (results.Articles.Any())
-				{
-					var article = results.Articles.FirstOrDefault();
-					if (article != null)
-					{
-						var articleText = $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
-						replace = new HtmlString(articleText);
-					}
-				}
+				    if (results.Articles.Any())
+				    {
+					    var article = results.Articles.FirstOrDefault();
+					    if (article != null)
+					    {
+						    var articleText = $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
+						    replace = new HtmlString(articleText);
+					    }
+				    }
 
-				content = content.Replace(match.Value, replace.ToHtmlString());
-			}
+				    content = content.Replace(match.Value, replace.ToHtmlString());
+                    CacheProvider.SetObject(cacheKey, string.Copy(content), DateTime.Now.AddHours(1));
+                }
+            }
 			return content;
 		}
 
@@ -90,21 +98,27 @@ namespace Informa.Web.Models
 			foreach (Match match in sidebarRegex.Matches(content))
 			{
 				string articleNumber = match.Groups[1].Value;
+                string cacheKey = $"TokenRepSidebar-{articleNumber}";
 
-				IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-				filter.ArticleNumbers = articleNumber.SingleToList();
-				var results = ArticleSearch.Search(filter);
+                if (CacheProvider.IsInCache(cacheKey)) {
+                    content = CacheProvider.GetObject<string>(cacheKey);
+                } else {
+                    IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+				    filter.ArticleNumbers = articleNumber.SingleToList();
+				    var results = ArticleSearch.Search(filter);
 
-				HtmlString replace = new HtmlString("");
+				    HtmlString replace = new HtmlString("");
 
-				if (results.Articles.Any())
-				{
-					var article = results.Articles.FirstOrDefault();
-					if (article != null)
-						replace = HtmlHelper.Partial(partialName, _articleListableFactory.Create(article));
-				}
+				    if (results.Articles.Any())
+				    {
+					    var article = results.Articles.FirstOrDefault();
+					    if (article != null)
+						    replace = HtmlHelper.Partial(partialName, _articleListableFactory.Create(article));
+				    }
 
-				content = content.Replace(match.Value, replace.ToString());
+				    content = content.Replace(match.Value, replace.ToString());
+                    CacheProvider.SetObject(cacheKey, string.Copy(content), DateTime.Now.AddHours(1));
+                }
 			}
 			return content;
 		}

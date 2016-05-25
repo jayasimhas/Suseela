@@ -172,9 +172,9 @@ namespace Informa.Library.Article.Search
 
         public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
-            string taxKey = $"arttax-{id}";
-            if (CacheProvider.IsInCache(taxKey))
-                return CacheProvider.GetObject<string>(taxKey);
+            string cacheKey = $"ArticleSearchTax-{id}";
+            if (CacheProvider.IsInCache(cacheKey))
+                return CacheProvider.GetObject<string>(cacheKey);
 
             var article = SitecoreContext.GetItem<ArticleItem>(id);
             var taxonomyItems = article?.Taxonomies?.Where(x => x._Parent._Id.Equals(taxonomyParent));
@@ -192,7 +192,7 @@ namespace Informa.Library.Article.Search
                 returnStr = $"[{str}]";
             }
 
-            CacheProvider.SetObject(taxKey, returnStr, DateTime.Now.AddHours(1));
+            CacheProvider.SetObject(cacheKey, string.Copy(returnStr), DateTime.Now.AddHours(1));
             return string.Empty;
         }
 

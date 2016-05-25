@@ -5,6 +5,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Informa.Library.Article.Search;
+using Informa.Library.Caching;
 using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Library.Utilities.TokenMatcher
@@ -12,7 +13,8 @@ namespace Informa.Library.Utilities.TokenMatcher
 	public static class DCDTokenMatchers
 	{
 		private static readonly IArticleSearch ArticleSearch = DependencyResolver.Current.GetService<IArticleSearch>();
-		private static readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
+        private static readonly ICacheProvider CacheProvider = DependencyResolver.Current.GetService<ICacheProvider>();
+        private static readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
 		private static readonly string OldDealsUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL");
 
 		public static string ProcessDCDTokens(string text)
@@ -101,10 +103,15 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 		private static string ArticleMatchEval(Match match)
 		{
-			try
-			{
-				string articleNumber = match.Groups[1].Value;
+            string returnStr = string.Empty;
+            string articleNumber = match.Groups[1].Value;
+            string cacheKey = $"DCDArticleText-{articleNumber}";
 
+            if (CacheProvider.IsInCache(cacheKey))
+                return CacheProvider.GetObject<string>(cacheKey);
+
+            try {
+				
 				IArticleSearchFilter filter = ArticleSearch.CreateFilter();
 				filter.ArticleNumbers = articleNumber.SingleToList();
 				filter.PageSize = 1;
@@ -116,19 +123,20 @@ namespace Informa.Library.Utilities.TokenMatcher
 					
 					if (article != null)
 					{
-						var articleText =
+						returnStr =
 							$" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, " +
 							$"{(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
-						return articleText;
 					}
 				}
 			}
 			catch (Exception ex)
 			{
 				Sitecore.Diagnostics.Log.Error("Error when evaluating company match token", ex, "LogFileAppender");
-				return string.Empty;
 			}
-			return string.Empty;
+
+            CacheProvider.SetObject(cacheKey, string.Copy(returnStr), DateTime.Now.AddHours(1));
+
+            return returnStr;
 		}
 	}
 }
