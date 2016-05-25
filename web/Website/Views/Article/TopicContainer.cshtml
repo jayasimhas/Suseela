@@ -5,18 +5,41 @@
    data-topic-link-text="@Model.NavigationText"></a>
 
 <div class="topic-subtopic">
-    <h1 class="topic-subtopic__header">
-        @Editable(Model.GlassModel, x => x.Title)
-        @if (IsInEditingMode)
-        {
-            <br/>
-            @Editable(Model.GlassModel, x => x.Navigation_Link)
-            <br/>
-            @Editable(Model.GlassModel, x => x.Navigation_Text)
-        }
-        else {
-            <a class="topic-subtopic__header-explore-link" href="@HttpUtility.UrlDecode(Model.Link.LinkableUrl)">@Model.Link.LinkableText</a>
-        }
-    </h1>
+    <div class="topic-subtopic__header">
+        <h1 class="topic-subtopic__title">
+            @Editable(Model.GlassModel, x => x.Title)
+            @if (IsInEditingMode)
+            {
+                <br/>
+                @Editable(Model.GlassModel, x => x.Navigation_Link)
+                <br/>
+                @Editable(Model.GlassModel, x => x.Navigation_Text)
+            }
+            else {
+                <a class="topic-subtopic__header-explore-link" href="@HttpUtility.UrlDecode(Model.Link.LinkableUrl)">@Model.Link.LinkableText</a>
+            }
+        </h1>
+        <div class="topic-subtopic__alert">
+
+            @* * *
+
+                This <span> needs a Model var it can toggle a class based on
+                whether or not the user has set an alert for this topic or not.
+                Replace js-pop-out-trigger class with something like:
+
+                @(Model.TopicAlertIsSet ? "js-lightbox-modal-trigger" : "js-pop-out-trigger")
+
+            * * *@
+            <span
+                class="pop-out__trigger js-set-topic-alert js-pop-out-trigger"
+                data-pop-out-type="set-topic-alert">
+                <svg class="topic-subtopic__alert-icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                </svg>
+                <span>Set Alert for CNS</span>
+            </span>
+        </div>
+    </div>
+
 	@Html.Sitecore().DynamicPlaceholder("two-column-curated")
 </div>

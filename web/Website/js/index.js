@@ -335,6 +335,55 @@ $(document).ready(function() {
         }
     });
 
+
+    //
+    // SET TOPIC ALERT
+    //
+    // var topicAlertController = new FormController({
+    //     observe: '.form-topic-alert',
+    //     successCallback: function(form, context, event) {
+    //         // If there's a stashed search, remove it.
+    //         Cookies.remove('setTopicAlert');
+    //         window.controlPopOuts.closePopOut($(form).closest('.pop-out'));
+    //         $('.js-saved-search-success-alert')
+    //             .addClass('is-active')
+    //             .on('animationend', function(e) {
+    //                 $(e.target).removeClass('is-active');
+    //             }).addClass('a-fade-alert');
+    //     },
+    //     beforeRequest: function(form) {
+    //         if(!$(form).find('.js-save-search-title').val().trim()) {
+    //             $('.js-form-error-EmptyTitle').show();
+    //         }
+    //     }
+    // });
+    //
+    // var topicAlertLoginController = new FormController({
+    //     observe: '.form-topic-alert-login',
+    //     successCallback: function(form, context, event) {
+    //         Cookies.set('setTopicAlert', {
+    //             'Title': $('.js-save-search-title').val(),
+    //             'Url': $('.js-save-search-url').val(),
+    //             'AlertEnabled': $('#AlertEnabled').prop('checked')
+    //         });
+    //
+    //         var loginAnalytics =  {
+    //             event_name: 'login',
+    //             login_state: 'successful',
+    //             userName: '"' + $(form).find('input[name=username]').val() + '"'
+    //         };
+    //
+    //         analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
+    //
+    //         // // If Angular, need location.reload to force page refresh
+    //         // if(typeof angular !== 'undefined') {
+    //         //     angular.element($('.search-results')[0]).controller().forceRefresh();
+    //         // }
+    //     }
+    // });
+
+
+
     var toggleSavedSearchAlertController = new FormController({
         observe: '.form-toggle-saved-search-alert'
     });
