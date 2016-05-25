@@ -51,7 +51,7 @@ namespace Informa.Web.ViewModels
 				var results = Searcher.Search(filter);
 				relatedArticles.AddRange(results.Articles);
 			}
-			return relatedArticles.Select(x => ArticleListableFactory.Create(SitecoreService.GetItem<IArticle>(x._Id))).Cast<IListable>().OrderByDescending(x => x.ListableDate);
+			return relatedArticles.Where(r => r != null).Select(x => ArticleListableFactory.Create(SitecoreService.GetItem<IArticle>(x._Id))).Cast<IListable>().OrderByDescending(x => x.ListableDate);
 		}
 
 		public IEnumerable<IListable> RelatedArticles { get; set; }
