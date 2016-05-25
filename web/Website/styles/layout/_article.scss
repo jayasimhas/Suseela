@@ -37,3 +37,8 @@
     line-height: 2rem;
     margin: 0 0 1rem;
 }
+
+.article-legacy-publication {
+    @include textMix('Roboto', 1rem, 400);
+    font-style: italic;
+}
