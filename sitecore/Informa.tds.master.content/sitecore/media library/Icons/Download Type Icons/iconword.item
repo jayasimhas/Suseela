@@ -2,7 +2,7 @@
 version: 1
 id: {BEC89476-15E6-4C9F-84C5-3B844EC0AD13}
 database: master
-path: /sitecore/media library/System/Download Type Icons/iconword
+path: /sitecore/media library/Icons/Download Type Icons/iconword
 parent: {3BD39587-C5D4-47E6-9A71-607112A5468A}
 name: iconword
 master: {00000000-0000-0000-0000-000000000000}
