@@ -1,11 +1,8 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.FeaturedArticleViewModel>
-@{
-    var mediaTypeIconSrc = Model.GlassModel.Article?.Media_Type?.Media_Type_Icon?.Src;
-}
 
 @using (BeginEditFrame(Model.GlassModel, "Associate Article", m => m.Article))
 {
-    if (Model.GlassModel.Article == null)
+    if (Model.GlassModel.Article == null && IsInEditingMode)
     {
         <span>Click here and select Associate Article.  View will update on save.</span>
     }
@@ -34,9 +31,9 @@
                             </span>
                                 <span class="vertical-separator">|</span>
                                 <span class="article-content-type">
-                                @if (!string.IsNullOrEmpty(mediaTypeIconSrc))
+                                @if (!string.IsNullOrEmpty(Model.MediaTypeIconSrc))
                                 {
-                                    <img src="@mediaTypeIconSrc"/>
+                                    <img src="@Model.MediaTypeIconSrc"/>
                                 }
                             </span>
                             </div>

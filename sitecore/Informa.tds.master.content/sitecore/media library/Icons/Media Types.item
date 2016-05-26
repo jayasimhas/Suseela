@@ -1,47 +1,26 @@
 ----item----
 version: 1
-id: {7F864298-A4D8-4CE5-B8AC-A6D4DBA439D3}
+id: {5C1545A2-7736-4B37-8291-9A8C298F0714}
 database: master
-path: /sitecore/media library/System
-parent: {3D6658D8-A0BF-4E75-B3E2-D050FABCF4E1}
-name: System
+path: /sitecore/media library/Icons/Media Types
+parent: {5DF13A1D-298C-4643-8E91-655B9639D0F1}
+name: Media Types
 master: {00000000-0000-0000-0000-000000000000}
 template: {FE5DD826-48C6-436D-B87A-7C4210C7413B}
 templatekey: Media folder
 
-----field----
-field: {39C4902E-9960-4469-AEEF-E878E9C8218F}
-name: __Hidden
-key: __hidden
-content-length: 1
-
-1
-----field----
-field: {9C6106EA-7A5A-48E2-8CAD-F0F693B1E2D4}
-name: __Read Only
-key: __read only
-content-length: 1
-
-1
 ----version----
 language: en
 version: 1
-revision: 53696f52-1d96-4d29-b8a5-fd2e7e21a8fa
+revision: 58496132-9f5f-4247-b343-aea55daa9d36
 
-----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 15
+content-length: 16
 
-20110316T105617
+20160526T151629Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -55,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-53696f52-1d96-4d29-b8a5-fd2e7e21a8fa
+58496132-9f5f-4247-b343-aea55daa9d36
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 34
+content-length: 16
 
-20120929T092553:634845075535872175
+20160526T151629Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

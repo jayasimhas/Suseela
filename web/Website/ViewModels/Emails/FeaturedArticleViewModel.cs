@@ -41,7 +41,6 @@ namespace Informa.Web.ViewModels.Emails
         }
 
         private string _mediaTypeIconSrc;
-
         public string MediaTypeIconSrc
             => _mediaTypeIconSrc ?? (_mediaTypeIconSrc = GlassModel.Article?.Media_Type?.Media_Type_Icon?.Src);
 
