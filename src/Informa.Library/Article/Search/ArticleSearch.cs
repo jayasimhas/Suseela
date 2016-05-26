@@ -151,25 +151,7 @@ namespace Informa.Library.Article.Search
             string procName = a._Name.Replace(" ", "-");
             return $"/{a.Article_Number}/{procName}";
         }
-
-        public string GetArticleAuthors(Guid id)
-        {
-            var item = SitecoreContext.GetItem<ArticleItem>(id);
-            if (item?.Authors != null)
-            {
-                StringBuilder str = new StringBuilder();
-                foreach (IStaff_Item author in item.Authors)
-                {
-                    if (str.Length > 0)
-                        str.Append(",");
-                    str.Append($"'{author._Name.Trim()}'");
-                }
-                return $"[{str}]";
-            }
-
-            return string.Empty;
-        }
-
+        
         public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
             string cacheKey = $"ArticleSearchTax-{id}";
