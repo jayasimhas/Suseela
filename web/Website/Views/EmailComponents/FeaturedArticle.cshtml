@@ -29,13 +29,13 @@
                                 <span class="article-category">
                                     @(Model.GlassModel.Article?.Content_Type?.Item_Name)
                                 </span>
-                                <span class="vertical-separator">|</span>
-                                <span class="article-content-type">
                                 @if (!string.IsNullOrEmpty(Model.MediaTypeIconSrc))
-                                    {
-                                        <img class="featured__article-image" src="@Model.MediaTypeIconSrc"/>
-                                    }
-                                </span>
+                                {
+									<span class="vertical-separator">|</span>
+	                                <span class="article-content-type">
+                                    	<img class="featured__article-image" src="@Model.MediaTypeIconSrc"/>
+									</span>
+                                }
                             </div>
 
                             <a href="@Model.TargetArticleUrl">
