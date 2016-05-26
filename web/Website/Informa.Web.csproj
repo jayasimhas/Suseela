@@ -670,7 +670,6 @@
     <Compile Include="App_Start\Registrations\SearchRegistrar.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="App_Start\TelemetryConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
@@ -768,6 +767,7 @@
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
     <Compile Include="ViewModels\ArticleBodyContentModel.cs" />
     <Compile Include="ViewModels\ArticleEntitledViewModel.cs" />
+    <Compile Include="ViewModels\AnalyticsViewModel.cs" />
     <Compile Include="ViewModels\ArticleKeyDocumentsModel.cs" />
     <Compile Include="ViewModels\ArticleMobileMediaComponentModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
@@ -776,6 +776,7 @@
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
@@ -928,9 +929,6 @@
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.config" />
     <Content Include="App_Config\Include\Sitecore.SharedSource.PageEditor.config" />
-    <Content Include="App_Config\Include\UserDefined\AppInsights.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="App_Config\Include\UserDefined\Article.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1185,9 +1183,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Sitecore.Support.405677.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Areas\Account\Views\ResetPassword\Change.cshtml" />
     <Content Include="Areas\Account\Views\Registration\RegisterUser.cshtml" />
     <Content Include="Areas\Account\Views\Management\SavedArticles.cshtml" />
@@ -1207,9 +1202,6 @@
     <Content Include="App_Config\Include\Sitecore.Buckets.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.DefaultConfigurations.config" />
-    <Content Include="App_Config\Include\UserDefined\AppInsights.config.template">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config" />
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config.template" />
@@ -1281,7 +1273,6 @@
     <Content Include="Views\Shared\Global\SitemapNews.cshtml" />
     <Content Include="Views\Shared\Global\RobotsText.cshtml" />
     <Content Include="Views\Article\ArticleFilmstripAd.cshtml" />
-    <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
     <Content Include="Views\Shared\Global\Sitemap.cshtml" />
@@ -1309,6 +1300,7 @@
     <Content Include="Views\Article\ArticleRelatedCompanies.cshtml" />
     <Content Include="Views\Article\ArticleRelatedDeals.cshtml" />
     <Content Include="Views\Shared\PopOuts\SetTopicAlert.cshtml" />
+    <Content Include="Views\Shared\Global\Analytics.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
