@@ -1,6 +1,6 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.PopOuts.SaveSearchPopOutViewModel>
 
-<div class="pop-out js-pop-out__save-search">
+<div class="pop-out @(Model.IsSearch ? "js-pop-out__save-search" : "js-pop-out__set-topic-alert")">
     <div class="pop-out__tab"></div>
     <div class="pop-out__internal">
         <div class="pop-out__sign-in">
