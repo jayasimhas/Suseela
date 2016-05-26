@@ -13,10 +13,10 @@
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr class="article-preview-header">
 
-                        @if (!Model.GlassModel.Hide_Image)
+                        @if (!Model.GlassModel.Hide_Image && Model.GlassModel.Article != null)
                         {
                             <td class="one-third layout-padded-right" valign="top">
-                                @(Model.GlassModel.Article?.Featured_Image_16_9)
+	                            @RenderImage(Model.GlassModel, m => m.Article.Featured_Image_16_9)
                             </td>
                         }
 
@@ -29,13 +29,13 @@
                                 <span class="article-category">
                                     @(Model.GlassModel.Article?.Content_Type?.Item_Name)
                                 </span>
-                                <span class="vertical-separator">|</span>
-                                <span class="article-content-type">
                                 @if (!string.IsNullOrEmpty(Model.MediaTypeIconSrc))
-                                    {
-                                        <img class="featured__article-image" src="@Model.MediaTypeIconSrc"/>
-                                    }
-                                </span>
+                                {
+									<span class="vertical-separator">|</span>
+	                                <span class="article-content-type">
+                                    	<img class="featured__article-image" src="@Model.MediaTypeIconSrc"/>
+									</span>
+                                }
                             </div>
 
                             <a href="@Model.TargetArticleUrl">

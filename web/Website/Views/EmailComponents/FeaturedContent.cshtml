@@ -75,8 +75,8 @@
                             else if (Model.HasDownloadLink)
                             {
                                 <a href="@Model.DownloadLinkUrl">
-                                    <img class="featured-content__image" src="@(Model.DownloadTypeIconUrl)"/>
                                     <div class="featured__download-link">
+                                        <img class="featured-content__image" src="@(Model.DownloadTypeIconUrl)"/>
                                         @Editable(Model.GlassModel, m => m.Download_Link_Text)
                                     </div>
                                 </a>
