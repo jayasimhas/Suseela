@@ -2,6 +2,7 @@
 using System.Text;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Sitecore.Configuration;
+using Velir.Search.Core.Reference;
 
 namespace Informa.Library.Search.Utilities
 {
@@ -53,7 +54,7 @@ namespace Informa.Library.Search.Utilities
 
 				if (dict.ContainsKey(key))
 				{
-					dict[key] = $"{dict[key]},{item.Item_Name}";
+					dict[key] = $"{dict[key]}{SiteSettings.ValueSeparator}{item.Item_Name}";
 				}
 				else
 				{
