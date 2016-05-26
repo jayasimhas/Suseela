@@ -152,18 +152,19 @@
 
 		<div class="page-registration__floats-wrapper js-registration-corporate-wrapper is-hidden">
 
-			<div class="page-account__field-wrapper page-account__field-wrapper--float">
-				<p class=" page-registration__error
-				   js-form-error
-				   js-form-error-MasterIdInvalid">
-					@Model.MasterIdInvalidErrorText
-				</p>
+			<p class=" page-registration__error
+			   js-form-error
+			   js-form-error-MasterIdInvalid">
+				@Model.MasterIdInvalidErrorText
+			</p>
 
-				<p class=" page-registration__error
-				   js-form-error
-				   js-form-error-MasterIdExpired">
-					@Model.MasterIdExpiredErrorText
-				</p>
+			<p class=" page-registration__error
+			   js-form-error
+			   js-form-error-MasterIdExpired">
+				@Model.MasterIdExpiredErrorText
+			</p>
+
+			<div class="page-account__field-wrapper page-account__field-wrapper--float">
 
 				<label for="masterId" class="page-account__text-label">
 					@Model.MasterIdLabelText
