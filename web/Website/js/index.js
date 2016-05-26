@@ -79,6 +79,10 @@ $(document).ready(function() {
     // Anti Forgery Token
     var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
 
+    var sortTheTables = new SortableTableController();
+
+    window.lightboxController = new LightboxModalController();
+
     /* * *
         Traverses the DOM and registers event listeners for any pop-out triggers.
         Bound explicitly to `window` for easier access by Angular.
@@ -281,7 +285,7 @@ $(document).ready(function() {
             analyticsEvent( $.extend(analytics_data, { event_name: "registration successful" }) );
         },
         failureCallback: function(form,response) {
-          
+
             var errorMsg = $(".page-registration__error").text();
             if (response.reasons && response.reasons.length > 0) {
                 errorMsg = "[";
@@ -333,6 +337,7 @@ $(document).ready(function() {
                 .on('animationend', function(e) {
                     $(e.target).removeClass('is-active');
                 }).addClass('a-fade-alert');
+            window.lightboxController.closeLightboxModal();
         },
         beforeRequest: function(form) {
             if(!$(form).find('.js-save-search-title').val().trim()) {
@@ -824,7 +829,7 @@ $(document).ready(function() {
             chkDetails.newsletter_optin = "false";
             $.extend(eventDetails,chkDetails);
             analyticsEvent( $.extend(analytics_data, eventDetails) );
-        }    
+        }
     };
 
 
@@ -862,7 +867,7 @@ $(document).ready(function() {
 
     });
 
- 
+
     // Execute!
     smoothScrollingNav();
 
@@ -872,10 +877,6 @@ $(document).ready(function() {
         $('.informa-ribbon').toggleClass('show');
     });
 
-
-    var sortTheTables = new SortableTableController();
-
-    window.lightboxController = new LightboxModalController();
 
     $('.js-toggle-list').on('click', function(e) {
         $(e.target).closest('.js-togglable-list-wrapper').toggleClass('is-active');

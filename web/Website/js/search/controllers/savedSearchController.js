@@ -48,9 +48,7 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
     // bound in time.
     vm.showLightbox = function(e) {
         if($scope.searchIsSaved) {
-            vm.lightboxCheck = function (e) {
-                window.lightboxController.showLightbox($(e.target).closest('.js-lightbox-modal-trigger'));
-            };
+            window.lightboxController.showLightbox($(e.target).closest('.js-lightbox-modal-trigger'));
         }
     };
 };
