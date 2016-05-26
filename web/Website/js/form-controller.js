@@ -59,8 +59,10 @@ function formController(opts) {
 					opts.beforeRequest(currentForm);
 				}
 
-				// Prevent user from re-submitting form
-				$(formSubmit).attr('disabled', 'disabled');
+				// Prevent user from re-submitting form, unless explicitly allowed
+				if(!$(currentForm).data('prevent-disabling')) {
+					$(formSubmit).attr('disabled', 'disabled');
+				}
 
 				var inputData = {};
 
