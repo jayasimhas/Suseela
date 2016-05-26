@@ -18,7 +18,16 @@ namespace Informa.Library.User.Authentication
 			{
 				var sitecoreUser = SitecoreUserContext.User;
 
-				return new AuthenticatedUser
+                //Although sitecoreUser.Profile.Email gets filled and saved when creating the user, after the browser gets closed and reopened the Email becomes NULL.
+                //So had to find another way to retrieve it when extranet
+                string email = sitecoreUser.Profile.Email;
+                if (string.IsNullOrEmpty(email) && sitecoreUser.IsAuthenticated && sitecoreUser.Domain.Name == "extranet")
+                {
+                    sitecoreUser.RuntimeSettings.IsVirtual = true;
+                    sitecoreUser.Profile.Email = sitecoreUser.LocalName;
+                }
+
+                return new AuthenticatedUser
 				{
 					Email = sitecoreUser.LocalName,
 					Name = sitecoreUser.Profile.Name,

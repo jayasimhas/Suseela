@@ -149,6 +149,10 @@
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MiniProfiler, Version=3.2.0.157, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MiniProfiler.3.2.0.157\lib\net40\MiniProfiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NewRelic.Api.Agent">
       <HintPath>..\..\lib\NewRelic\NewRelic.Api.Agent.dll</HintPath>
     </Reference>
@@ -300,6 +304,9 @@
     <Compile Include="Actions\IActionsProcessor`2.cs" />
     <Compile Include="Actions\IAction`1.cs" />
     <Compile Include="Advertisement\AdUrlBuilder.cs" />
+    <Compile Include="Article\Companies\IRelatedCompaniesService.cs" />
+    <Compile Include="Article\Companies\IRelatedDealsService.cs" />
+    <Compile Include="Article\Companies\RelatedCompaniesService.cs" />
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Publishing\Events\PublishDateFoldersArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Publishing\Events\ActualPublishDateArticlePublishItemProcessing.cs" />
@@ -312,23 +319,32 @@
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
+    <Compile Include="Caching\CacheProvider.cs" />
+    <Compile Include="Caching\ICacheProvider.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
+    <Compile Include="Company\CompanyRegisterUserError.cs" />
+    <Compile Include="Company\CompanyRegisterUserResult.cs" />
     <Compile Include="Company\CompanyType.cs" />
     <Compile Include="Company\IAllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\IAllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\ICompany.cs" />
     <Compile Include="Company\IFindCompanyByIpAddress.cs" />
+    <Compile Include="Company\IFindCompanyByMasterId.cs" />
     <Compile Include="Company\IFindCompanyByUser.cs" />
+    <Compile Include="Company\IMasterCompany.cs" />
     <Compile Include="Company\IRegisterCompanyUser.cs" />
     <Compile Include="Company\IUserCompanyContext.cs" />
     <Compile Include="Company\CompanyRegisterUser.cs" />
     <Compile Include="Company\UserCompanyContext.cs" />
     <Compile Include="Company\Web\WebClearUserCompanyContextLogoutAction.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\RequiredIfAttribute.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaSiteResolver.cs" />
+    <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
+    <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
@@ -344,12 +360,16 @@
     <Compile Include="Mail\ExactTarget\ExactTargetClient.cs" />
     <Compile Include="Mail\ExactTarget\ExactTargetWrapper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Navigation\IReturnUrlContext.cs" />
+    <Compile Include="Navigation\ReturnUrlContext.cs" />
     <Compile Include="Publication\ArticleMappingContext.cs" />
     <Compile Include="Publication\ArticleMappingRepository.cs" />
     <Compile Include="Publication\Entity\ArticleMapping.cs" />
     <Compile Include="Publication\IArticleMappingRepository.cs" />
+    <Compile Include="Publication\ISitePublicationNameFactory.cs" />
     <Compile Include="Publication\ISitesPublicationContext.cs" />
     <Compile Include="Publication\ISitePublicationContext.cs" />
+    <Compile Include="Publication\SitePublicationNameFactory.cs" />
     <Compile Include="Publication\SitesPublicationContext.cs" />
     <Compile Include="Publication\SitePublicationContext.cs" />
     <Compile Include="Publishing\Events\ItemPublishedPublishItemProcessing.cs" />
@@ -361,6 +381,7 @@
     <Compile Include="Purchase\IArticlePurchase.cs" />
     <Compile Include="Purchase\IArticlePurchaseItem.cs" />
     <Compile Include="Purchase\IArticlePurchaseItemsFactory.cs" />
+    <Compile Include="Purchase\User\Entitlement\PurchaseEntitlementAccessContext.cs" />
     <Compile Include="Purchase\User\IFindUserArticlePurchases.cs" />
     <Compile Include="Purchase\User\IUserArticlePurchaseItemsContext.cs" />
     <Compile Include="Purchase\User\IUserArticlePurchasesContext.cs" />
@@ -435,8 +456,10 @@
     <Compile Include="User\Entitlement\EntitledProductItemCodeFactory.cs" />
     <Compile Include="User\Entitlement\EntitlementAccess.cs" />
     <Compile Include="User\Entitlement\EntitlementAccessContext.cs" />
+    <Compile Include="User\Entitlement\EntitlementAccessFactory.cs" />
     <Compile Include="User\Entitlement\EntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\EntitlementProductFactory.cs" />
+    <Compile Include="User\Entitlement\EntitlementAccessContexts.cs" />
     <Compile Include="User\Entitlement\EntitlementsContexts.cs" />
     <Compile Include="User\Entitlement\EntitlementSession.cs" />
     <Compile Include="User\Entitlement\IDefaultEntitlementsFactory.cs" />
@@ -444,6 +467,8 @@
     <Compile Include="User\Entitlement\IEntitledProductItemCodeFactory.cs" />
     <Compile Include="User\Entitlement\IEntitlementAccess.cs" />
     <Compile Include="User\Entitlement\IEntitlementAccessContext.cs" />
+    <Compile Include="User\Entitlement\IEntitlementAccessContexts.cs" />
+    <Compile Include="User\Entitlement\IEntitlementAccessFactory.cs" />
     <Compile Include="User\Entitlement\IEntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\IEntitlementProductFactory.cs" />
     <Compile Include="User\Entitlement\IEntitlementsContexts.cs" />
@@ -579,16 +604,32 @@
     <Compile Include="Subscription\IndividualSubscriptionRenewalMessageContext.cs" />
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
+    <Compile Include="User\Newsletter\FindSiteNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\IFindSiteNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\IPublicationsNewsletterUserOptInContext.cs" />
     <Compile Include="User\Newsletter\ISetByTypeNewsletterUserOptInsContext.cs" />
-    <Compile Include="User\Newsletter\ISetByTypeSitesNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\ISetPublicationsNewsletterUserOptIns.cs" />
+    <Compile Include="User\Newsletter\ISiteNewsletterTypes.cs" />
+    <Compile Include="User\Newsletter\ISiteNewsletterTypesContext.cs" />
+    <Compile Include="User\Newsletter\ISiteNewsletterTypesFactory.cs" />
+    <Compile Include="User\Newsletter\ISiteNewsletterUserOptedIn.cs" />
     <Compile Include="User\Newsletter\ISiteNewsletterUserOptedInContext.cs" />
-    <Compile Include="User\Newsletter\ISitesNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\IPublicationNewsletterUserOptIn.cs" />
+    <Compile Include="User\Newsletter\ISiteNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\ISitesNewsletterTypes.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptIn.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptInContext.cs" />
+    <Compile Include="User\Newsletter\PublicationsNewsletterUserOptInContext.cs" />
     <Compile Include="User\Newsletter\SetByTypeNewsletterUserOptInsContext.cs" />
-    <Compile Include="User\Newsletter\SetByTypeSitesNewsletterUserOptInsContext.cs" />
-    <Compile Include="User\Newsletter\SitesNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\SetPublicationsNewsletterUserOptIns.cs" />
+    <Compile Include="User\Newsletter\SiteNewsletterTypes.cs" />
+    <Compile Include="User\Newsletter\SiteNewsletterTypesContext.cs" />
+    <Compile Include="User\Newsletter\SiteNewsletterTypesFactory.cs" />
+    <Compile Include="User\Newsletter\PublicationNewsletterUserOptIn.cs" />
+    <Compile Include="User\Newsletter\SiteNewsletterUserOptedIn.cs" />
+    <Compile Include="User\Newsletter\SiteNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\SitesNewsletterTypes.cs" />
     <Compile Include="User\Offer\IOfferUserOptedInContext.cs" />
     <Compile Include="User\Offer\IUpdateOfferUserOptInContext.cs" />
     <Compile Include="User\Document\IFindSavedDocuments.cs" />
@@ -617,10 +658,13 @@
     <Compile Include="User\Registration\ComponentModel\DataAnnotations\PublicEmailRestrictionAttribute.cs" />
     <Compile Include="User\Registration\ICompetitorRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\IPublicRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\IRegisterReturnUrlContext.cs" />
     <Compile Include="User\Registration\IRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\IRestrictedEmailDomainsFactory.cs" />
     <Compile Include="User\Registration\CompetitorRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\PublicRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\RegisterReturnUrlContext.cs" />
+    <Compile Include="User\Registration\RegisterUserResult.cs" />
     <Compile Include="User\Registration\RestrictedEmailDomainsFactory.cs" />
     <Compile Include="User\Registration\Web\IWebIsActiveRegistration.cs" />
     <Compile Include="User\Registration\Web\IWebRegisterUserContext.cs" />
@@ -999,6 +1043,7 @@
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalTitleResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\PublisherResolver.cs" />
     <Compile Include="Utilities\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Utilities\Extensions\EnumerableStringExtensions.cs" />
     <Compile Include="Utilities\Extensions\GlassBaseExtensions.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />

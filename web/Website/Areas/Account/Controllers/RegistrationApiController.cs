@@ -6,6 +6,7 @@ using Informa.Web.Areas.Account.Models.User.Registration;
 using System.Collections.Generic;
 using System.Web.Http;
 using Informa.Library.User.Authentication.Web;
+using System.Linq;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -61,12 +62,39 @@ namespace Informa.Web.Areas.Account.Controllers
 			newUser.Password = request.Password;
 			newUser.Username = request.Username;
 
-			var success = RegisterUser.Register(newUser);
+			if (request.AssociateMaster)
+			{
+				newUser.MasterId = request.MasterId;
+				newUser.MasterPassword = request.MasterPassword;
+			}
+
+			var registerResult = RegisterUser.Register(newUser);
+			var success = registerResult.Success;
+			var reasons = new List<string>();
+
+			if (!success)
+			{
+				reasons.AddRange(registerResult.Errors.Select(e => GetRegisterValidationReason(e)));
+			}
 
 			return Ok(new
 			{
-				success = success
+				success = success,
+				reasons = reasons
 			});
+		}
+
+		public string GetRegisterValidationReason(string error)
+		{
+			switch (error)
+			{
+				case "MasterIdInvalid":
+					return RegisterValidationReason.MasterIdInvalid;
+				case "MasterIdExpired":
+					return RegisterValidationReason.MasterIdExpired;
+				default:
+					return "Unknown";
+			}
 		}
 
 		[HttpPost]

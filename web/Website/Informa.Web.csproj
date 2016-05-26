@@ -652,6 +652,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
+    <Compile Include="App_Start\Registrations\DCDRegistrar.cs" />
     <Compile Include="App_Start\Registrations\PurchaseRegistrar.cs" />
     <Compile Include="App_Start\Registrations\EntitlementsRegistrar.cs" />
     <Compile Include="App_Start\Registrations\SessionRegistrar.cs" />
@@ -669,7 +670,6 @@
     <Compile Include="App_Start\Registrations\SearchRegistrar.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="App_Start\TelemetryConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
@@ -765,25 +765,35 @@
     </Compile>
     <Compile Include="ViewModels\AdvertisementViewModel.cs" />
     <Compile Include="ViewModels\ArticleAdViewModel.cs" />
+    <Compile Include="ViewModels\ArticleBodyContentModel.cs" />
+    <Compile Include="ViewModels\ArticleEntitledViewModel.cs" />
+    <Compile Include="ViewModels\AnalyticsViewModel.cs" />
+    <Compile Include="ViewModels\ArticleKeyDocumentsModel.cs" />
+    <Compile Include="ViewModels\ArticleMobileMediaComponentModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailLayoutViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
+    <Compile Include="ViewModels\RelatedCompaniesModel.cs" />
+    <Compile Include="ViewModels\RelatedDealsModel.cs" />
     <Compile Include="ViewModels\SearchRssViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IToolbarViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IUsernameViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\IUserPageEntitlementViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IUserSubscriptionsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IUserEntitlementsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IUserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\ToolbarViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\UsernameViewModel.cs" />
+    <Compile Include="ViewModels\SiteDebugging\UserPageEntitlementViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\UserSubscriptionsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\UserEntitlementsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\UserIpAddressViewModel.cs" />
@@ -819,11 +829,9 @@
     <Compile Include="ViewModels\ManuallyCuratedContentViewModel.cs" />
     <Compile Include="ViewModels\PersonModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
-    <Compile Include="ViewModels\GlassArticleModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
     <Compile Include="ViewModels\HierarchyLinks.cs" />
     <Compile Include="ViewModels\HighlightViewModel.cs" />
-    <Compile Include="ViewModels\IArticleModel.cs" />
     <Compile Include="ViewModels\IArticlePrologueBookmarkViewModel.cs" />
     <Compile Include="ViewModels\IArticlePrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IArticleProloguePrintViewModel.cs" />
@@ -844,6 +852,7 @@
     <Compile Include="ViewModels\SignInViewModel.cs" />
     <Compile Include="ViewModels\TaxonomyHierarchyViewModel.cs" />
     <Compile Include="ViewModels\TestUserResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\TopicAlertButtonModel.cs" />
     <Compile Include="ViewModels\TopicContainerViewModel.cs" />
     <Compile Include="ViewModels\TopicJumpToViewModel.cs" />
     <Compile Include="VWB\default.aspx.cs">
@@ -921,9 +930,6 @@
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.config" />
     <Content Include="App_Config\Include\Sitecore.SharedSource.PageEditor.config" />
-    <Content Include="App_Config\Include\UserDefined\AppInsights.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="App_Config\Include\UserDefined\Article.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1159,7 +1165,6 @@
     <Content Include="Views\Structure\TwoColumnContent.cshtml" />
     <Content Include="Views\Structure\SingleColumnContent.cshtml" />
     <Content Include="Views\Structure\MainContentWrapper.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedContent.cshtml" />
     <Content Include="Views\Shared\Components\ListableContentWide.cshtml" />
     <Content Include="Views\Article\FeaturedArticle.cshtml" />
@@ -1179,9 +1184,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Sitecore.Support.405677.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Areas\Account\Views\ResetPassword\Change.cshtml" />
     <Content Include="Areas\Account\Views\Registration\RegisterUser.cshtml" />
     <Content Include="Areas\Account\Views\Management\SavedArticles.cshtml" />
@@ -1192,7 +1194,6 @@
     <Content Include="Areas\Account\Views\Registration\RegisterUserOptIns.cshtml" />
     <Content Include="Areas\Account\Views\Management\OneClickSubscribe.cshtml" />
     <Content Include="Areas\Account\Views\Management\OneClickUnsubscribe.cshtml" />
-    <Content Include="App_Config\Include\UserDefined\Sites.config" />
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config" />
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config.template" />
     <Content Include="Areas\Account\Views\Management\SavedSearches.cshtml" />
@@ -1202,16 +1203,13 @@
     <Content Include="App_Config\Include\Sitecore.Buckets.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.DefaultConfigurations.config" />
-    <Content Include="App_Config\Include\UserDefined\AppInsights.config.template">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config" />
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config.template" />
     <Content Include="App_Config\Include\ZZ.UserDefined\LoginRedirect.config" />
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.velirTemplate" />
     <Content Include="App_Config\Web\system.webServer.rewrite.config.template" />
-    <None Include="App_Config\Include\ZZ.UserDefined\Import.config.template" />
+    <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
@@ -1225,7 +1223,6 @@
     <Content Include="Views\Article\ArticleKeyDocuments.cshtml" />
     <Content Include="Views\Article\ArticleRelatedList.cshtml" />
     <Content Include="Views\Article\ArticleRelatedTaxonomy.cshtml" />
-    <Content Include="Views\Shared\Components\ArticleKeyDocuments.cshtml" />
     <Content Include="Views\Article\ArticleTags.cshtml" />
     <Content Include="Views\Shared\Highlight.cshtml" />
     <Content Include="Views\Shared\ChildTaxonomy.cshtml" />
@@ -1277,7 +1274,6 @@
     <Content Include="Views\Shared\Global\SitemapNews.cshtml" />
     <Content Include="Views\Shared\Global\RobotsText.cshtml" />
     <Content Include="Views\Article\ArticleFilmstripAd.cshtml" />
-    <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
     <Content Include="Views\Shared\Global\Sitemap.cshtml" />
@@ -1301,6 +1297,11 @@
     <Content Include="Views\Shared\Layouts\EmailLayout.cshtml" />
     <Content Include="Views\EmailComponents\FeaturedContent.cshtml" />
     <Content Include="Views\EmailComponents\EmailAdvertisement.cshtml" />
+    <Content Include="Views\Shared\SiteDebugging\UserPageEntitlement.cshtml" />
+    <Content Include="Views\Article\ArticleRelatedCompanies.cshtml" />
+    <Content Include="Views\Article\ArticleRelatedDeals.cshtml" />
+    <Content Include="Views\Shared\Components\TopicAlertButton.cshtml" />
+    <Content Include="Views\Shared\Global\Analytics.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

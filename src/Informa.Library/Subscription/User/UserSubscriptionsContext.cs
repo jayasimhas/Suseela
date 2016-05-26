@@ -1,6 +1,7 @@
 ﻿using Informa.Library.User.Authentication;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Informa.Library.Subscription.User
 {
@@ -27,6 +28,11 @@ namespace Informa.Library.Subscription.User
 		{
 			get
 			{
+			    if (!UserContext.IsAuthenticated)
+			    {
+			        return Enumerable.Empty<ISubscription>();
+			    }
+
 				var subscriptionSession = UserSession.Get<IEnumerable<ISubscription>>(subscriptionsSessionKey);
 
 				if (subscriptionSession.HasValue)

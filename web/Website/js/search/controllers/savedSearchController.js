@@ -1,4 +1,4 @@
-﻿/* global angular */
+/* global angular */
 
 var SavedSearchController = function ($scope, $location, $timeout, $http, searchService, savedSearchService) {
     "use strict";
@@ -6,26 +6,29 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
     var vm = this;
 
     vm.searchService = searchService;
-    vm.isSaved = false;
+    $scope.searchIsSaved = false;
 
-    vm.testValue = savedSearchService.testVal;
+    $scope.oneClickSaveFocus = false;
 
+    // A user can land on the search page from a "1-click Subscribe" link in an email
+    // This handles detection of that query parameter, triggers appropriate UI changes
     function openSaveSearchIf1Click() {
 
         var urlQuery = $location.search();
-        console.log(urlQuery);
-
-        var clickKey = Object.keys(urlQuery).filter(
-            function (cur) { return cur.toLowerCase() === "1click"; });
-        console.log(clickKey);
+        var clickKey = Object.keys(urlQuery).filter(function (cur) {
+            return cur.toLowerCase() === "1click";
+        });
 
         if (clickKey.length > 0 && urlQuery[clickKey[0]] === "1") {
-            console.log(jQuery(".js-save-search"));
             jQuery(".js-save-search").click();
             $location.search(clickKey[0], null);
+            $scope.oneClickSaveFocus = true;
         }
     }
-    $timeout(function() { openSaveSearchIf1Click() });
+
+    $timeout(function() {
+        openSaveSearchIf1Click();
+    }, 1000);
 
     $scope.$watch(function () {
         return searchService.getPager();
@@ -34,30 +37,21 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
         $scope.currentLocation = $location.url();
         if ($scope.isAuthenticated) {
             savedSearchService.isSaved().then(function (response) {
-                vm.isSaved = response.data;
+                $scope.searchIsSaved = response.data;
             });
         }
     }, true);
 
-    vm.saveSearch = function() {
-        // Helps ng-class "know" the correct state of vm.isSaved
-        // When click events are triggered by vanilla JS, expressions don't
-        // always update as they should.
-        $timeout(function() {
-            vm.isSaved = true;
-        }, 500);
-    };
-
-    vm.unsaveSearch = function() {
-        vm.isSaved = false;
-    };
-
-    vm.lightboxCheck = function (e) {
-        if(vm.isSaved) {
+    // Depending on how quickly Angular bootstraps, some lightbox trigger classes
+    // might not be added before the lightbox event listners are bound. This
+    // manually fires the Saved Search lightbox, in case the normal listener wasn't
+    // bound in time.
+    vm.showLightbox = function(e) {
+        if($scope.searchIsSaved) {
             window.lightboxController.showLightbox($(e.target).closest('.js-lightbox-modal-trigger'));
         }
     };
-
 };
+
 var informaSearchApp = angular.module('informaSearchApp');
 informaSearchApp.controller("SavedSearchController", ['$scope', '$location', '$timeout', '$http', 'searchService', 'savedSearchService', SavedSearchController]);

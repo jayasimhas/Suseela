@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Informa.Library.User.Entitlement;
 
 namespace Informa.Library.User.Authentication
@@ -9,6 +10,10 @@ namespace Informa.Library.User.Authentication
 		public string Name { get; set; }
 		public string LastName { get; set; }
 		public string Email { get; set; }
-	    public IList<IEntitlement> Entitlements { get; set; }
+		public IList<IEntitlement> Entitlements { get; set; }
+
+		public string ContactId	{ get; set; }
+
+		public IList<string> AccountId { get; set; }
 	}
 }

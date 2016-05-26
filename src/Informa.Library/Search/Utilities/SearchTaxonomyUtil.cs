@@ -2,49 +2,75 @@
 using System.Text;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Sitecore.Configuration;
+using Velir.Search.Core.Reference;
 
 namespace Informa.Library.Search.Utilities
 {
 	public class SearchTaxonomyUtil
 	{
-		public static string GetSearchUrl(ITaxonomy_Item taxonomyItem)
+		private const string Subjects = "subjects";
+		private const string Regions = "subjects";
+		private const string Areas = "subjects";
+		private const string Industries = "subjects";
+		private const string DeviceAreas = "subjects";
+
+		public static string GetSearchUrl(params ITaxonomy_Item[] taxonomyItems)
 		{
+			var dict = new Dictionary<string,string>();
+			foreach (var item in taxonomyItems)
+			{
+				string parentPath = item._Parent._Path;
+				string key = string.Empty;
+
+				//Subject
+				if (IsSubjectTaxonomy(parentPath))
+				{
+					key = Subjects;
+				}
+
+				//Region
+				if (IsRegionTaxonomy(parentPath))
+				{
+					key = Regions;
+				}
+
+				//Area
+				if (IsAreaTaxonomy(parentPath))
+				{
+					key = Areas;
+				}
+
+				//Industry
+				if (IsIndustryTaxonomy(parentPath))
+				{
+					key = Industries;
+				}
+
+				//Device Area
+				if (IsDeviceAreaTaxonomy(parentPath))
+				{
+					key = DeviceAreas;
+				}
+
+				if (dict.ContainsKey(key))
+				{
+					dict[key] = $"{dict[key]}{SiteSettings.ValueSeparator}{item.Item_Name}";
+				}
+				else
+				{
+					dict[key] = item.Item_Name;
+				}
+			}
+
 			StringBuilder url = new StringBuilder();
 
 			url.Append("/search#?");
 
-			string parentPath = taxonomyItem._Parent._Path;
-
-			//Subject
-			if (IsSubjectTaxonomy(parentPath))
+			foreach (var pair in dict)
 			{
-				url.AppendFormat("subjects={0}", taxonomyItem._Name);
+				url.AppendFormat("{0}={1}", pair.Key, pair.Value);
 			}
-
-			//Region
-			if (IsRegionTaxonomy(parentPath))
-			{
-				url.AppendFormat("regions={0}", taxonomyItem._Name);
-			}
-
-			//Area
-			if (IsAreaTaxonomy(parentPath))
-			{
-				url.AppendFormat("areas={0}", taxonomyItem._Name);
-			}
-
-			//Industry
-			if (IsIndustryTaxonomy(parentPath))
-			{
-				url.AppendFormat("industries={0}", taxonomyItem._Name);
-			}
-
-			//Device Area
-			if (IsDeviceAreaTaxonomy(parentPath))
-			{
-				url.AppendFormat("deviceareas={0}", taxonomyItem._Name);
-			}
-
+			
 			return url.ToString();
 		}
 

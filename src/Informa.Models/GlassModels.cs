@@ -275,6 +275,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	public partial interface IRegistration_Details_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IRegistration_Page
 	{
 								/// <summary>
+					/// The Corporate Alternative Verification Method field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: ba7756f4-010a-47a6-b81c-a887b6ca4dd9</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IRegistration_Details_PageConstants.Corporate_Alternative_Verification_MethodFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Corporate_Alternative_Verification_Method  {get; set;}
+								/// <summary>
 					/// The Newsletter Sign Up Text field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -314,6 +323,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public partial interface IRegistration_Details_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IRegistration_Page__Raw
 		{
 										/// <summary>
+						/// The Corporate Alternative Verification Method field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: ba7756f4-010a-47a6-b81c-a887b6ca4dd9</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IRegistration_Details_PageConstants.Corporate_Alternative_Verification_MethodFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Corporate_Alternative_Verification_Method  {get; set;}
+										/// <summary>
 						/// The Newsletter Sign Up Text field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -348,6 +366,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Registration Details Page";
 
+					
+			public static readonly ID Corporate_Alternative_Verification_MethodFieldId = new ID("ba7756f4-010a-47a6-b81c-a887b6ca4dd9");
+			public const string Corporate_Alternative_Verification_MethodFieldName = "Corporate Alternative Verification Method";
+
+							public static readonly ID Corporate_Alternative_Verification_Method__RawFieldId = new ID("ba7756f4-010a-47a6-b81c-a887b6ca4dd9");
+				public const string Corporate_Alternative_Verification_Method__RawFieldName = "Corporate Alternative Verification Method";
+						
 					
 			public static readonly ID Newsletter_Sign_Up_TextFieldId = new ID("761d17cf-74db-4658-ad8b-3c3b119d5851");
 			public const string Newsletter_Sign_Up_TextFieldName = "Newsletter Sign Up Text";
@@ -1624,15 +1649,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IArticleConstants.Sort_OrderFieldName, Setting = SitecoreFieldSettings.InferType)]
 					float Sort_Order  {get; set;}
 								/// <summary>
-					/// The Article Number field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 1616fe67-7278-4169-948e-c29b00ec8781</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IArticleConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Article_Number  {get; set;}
-								/// <summary>
 					/// The Content Type field.
 					/// <para></para>
 					/// <para>Field Type: Droplink</para>		
@@ -1750,6 +1766,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IArticleConstants.Legacy_Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Legacy_Article_Number  {get; set;}
 								/// <summary>
+					/// The Legacy Article Url field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 6df9fcb7-2309-4baf-816f-465ca61b8d6b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IArticleConstants.Legacy_Article_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Legacy_Article_Url  {get; set;}
+								/// <summary>
 					/// The Legacy Publication field.
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
@@ -1844,10 +1869,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: d4a6b8d1-46b4-4a19-8778-e5fd2844606d</para>
-					/// <para>Custom Data: generic=IArticle</para>
+					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(IArticleConstants.Referenced_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IArticle> Referenced_Articles  {get; set;}
+					IEnumerable<IGlassBase> Referenced_Articles  {get; set;}
 								/// <summary>
 					/// The Referenced Companies field.
 					/// <para></para>
@@ -1871,10 +1896,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: dc4c3a27-a361-4fa3-a534-5ccacc374377</para>
-					/// <para>Custom Data: generic=IArticle</para>
+					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(IArticleConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IArticle> Related_Articles  {get; set;}
+					IEnumerable<IGlassBase> Related_Articles  {get; set;}
 								/// <summary>
 					/// The Supporting Documents field.
 					/// <para></para>
@@ -1932,15 +1957,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// </summary>
 						[SitecoreField(IArticleConstants.Sort_OrderFieldName, Setting = SitecoreFieldSettings.InferType)]
 						float Sort_Order  {get; set;}
-										/// <summary>
-						/// The Article Number field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 1616fe67-7278-4169-948e-c29b00ec8781</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IArticleConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Article_Number  {get; set;}
 										/// <summary>
 						/// The Content Type field.
 						/// <para></para>
@@ -2059,6 +2075,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IArticleConstants.Legacy_Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Legacy_Article_Number  {get; set;}
 										/// <summary>
+						/// The Legacy Article Url field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 6df9fcb7-2309-4baf-816f-465ca61b8d6b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IArticleConstants.Legacy_Article_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Legacy_Article_Url  {get; set;}
+										/// <summary>
 						/// The Legacy Publication field.
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
@@ -2153,10 +2178,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: d4a6b8d1-46b4-4a19-8778-e5fd2844606d</para>
-						/// <para>Custom Data: generic=IArticle</para>
+						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(IArticleConstants.Referenced_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IArticle> Referenced_Articles  {get; set;}
+						IEnumerable<IGlassBase> Referenced_Articles  {get; set;}
 										/// <summary>
 						/// The Referenced Companies field.
 						/// <para></para>
@@ -2180,10 +2205,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: dc4c3a27-a361-4fa3-a534-5ccacc374377</para>
-						/// <para>Custom Data: generic=IArticle</para>
+						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(IArticleConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IArticle> Related_Articles  {get; set;}
+						IEnumerable<IGlassBase> Related_Articles  {get; set;}
 										/// <summary>
 						/// The Supporting Documents field.
 						/// <para></para>
@@ -2223,11 +2248,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Sort_OrderFieldId = new ID("09caa578-881b-4252-b94f-59d68c19d7c7");
 			public const string Sort_OrderFieldName = "Sort Order";
-
-						
-					
-			public static readonly ID Article_NumberFieldId = new ID("1616fe67-7278-4169-948e-c29b00ec8781");
-			public const string Article_NumberFieldName = "Article Number";
 
 						
 					
@@ -2293,6 +2313,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Legacy_Article_NumberFieldId = new ID("4bb4ec7a-e53d-47c6-a096-f34452186938");
 			public const string Legacy_Article_NumberFieldName = "Legacy Article Number";
+
+						
+					
+			public static readonly ID Legacy_Article_UrlFieldId = new ID("6df9fcb7-2309-4baf-816f-465ca61b8d6b");
+			public const string Legacy_Article_UrlFieldName = "Legacy Article Url";
 
 						
 					
@@ -2484,6 +2509,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Actual_Publish_DateFieldId = new ID("7c4fc796-1311-4daa-81ac-85eaa2c1c108");
 			public const string Actual_Publish_DateFieldName = "Actual Publish Date";
+
+						
+					
+			public static readonly ID Article_NumberFieldId = new ID("1616fe67-7278-4169-948e-c29b00ec8781");
+			public const string Article_NumberFieldName = "Article Number";
 
 						
 					
@@ -4670,10 +4700,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
 					/// <para>Field ID: bcb4dcff-2670-4bee-9b07-8cddf1c7cc9b</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: generic=ITaxonomy_Item</para>
 					/// </summary>
 					[SitecoreField(ILatest_News_OptionsConstants.SubjectsFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Subjects  {get; set;}
+					IEnumerable<ITaxonomy_Item> Subjects  {get; set;}
 				}
 
 	
@@ -4709,10 +4739,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
 						/// <para>Field ID: bcb4dcff-2670-4bee-9b07-8cddf1c7cc9b</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: generic=ITaxonomy_Item</para>
 						/// </summary>
 						[SitecoreField(ILatest_News_OptionsConstants.SubjectsFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Subjects  {get; set;}
+						IEnumerable<ITaxonomy_Item> Subjects  {get; set;}
 						}
 	
 	public static partial class ILatest_News_OptionsConstants{
@@ -11340,6 +11370,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Guid Main_Navigation  {get; set;}
 								/// <summary>
+					/// The Newsletter Breaking Type field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 86e1c6a2-6146-4ab5-a301-4a1c0cafbb61</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Newsletter_Breaking_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Newsletter_Breaking_Type  {get; set;}
+								/// <summary>
+					/// The Newsletter Daily Type field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: a08878df-22c2-41e0-a1af-ddd73a2c7379</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Newsletter_Daily_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Newsletter_Daily_Type  {get; set;}
+								/// <summary>
+					/// The Newsletter Weekly Type field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: f8bd66f3-da05-4c9a-aa10-3e1b69c2afe4</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Newsletter_Weekly_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Newsletter_Weekly_Type  {get; set;}
+								/// <summary>
 					/// The Print Logo field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
@@ -12000,6 +12057,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Main_NavigationFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Guid Main_Navigation  {get; set;}
 										/// <summary>
+						/// The Newsletter Breaking Type field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 86e1c6a2-6146-4ab5-a301-4a1c0cafbb61</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Newsletter_Breaking_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Newsletter_Breaking_Type  {get; set;}
+										/// <summary>
+						/// The Newsletter Daily Type field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: a08878df-22c2-41e0-a1af-ddd73a2c7379</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Newsletter_Daily_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Newsletter_Daily_Type  {get; set;}
+										/// <summary>
+						/// The Newsletter Weekly Type field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: f8bd66f3-da05-4c9a-aa10-3e1b69c2afe4</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Newsletter_Weekly_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Newsletter_Weekly_Type  {get; set;}
+										/// <summary>
 						/// The Print Logo field.
 						/// <para></para>
 						/// <para>Field Type: Image</para>		
@@ -12511,6 +12595,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
 			public const string Main_NavigationFieldName = "Main Navigation";
+
+						
+					
+			public static readonly ID Newsletter_Breaking_TypeFieldId = new ID("86e1c6a2-6146-4ab5-a301-4a1c0cafbb61");
+			public const string Newsletter_Breaking_TypeFieldName = "Newsletter Breaking Type";
+
+						
+					
+			public static readonly ID Newsletter_Daily_TypeFieldId = new ID("a08878df-22c2-41e0-a1af-ddd73a2c7379");
+			public const string Newsletter_Daily_TypeFieldName = "Newsletter Daily Type";
+
+						
+					
+			public static readonly ID Newsletter_Weekly_TypeFieldId = new ID("f8bd66f3-da05-4c9a-aa10-3e1b69c2afe4");
+			public const string Newsletter_Weekly_TypeFieldName = "Newsletter Weekly Type";
 
 						
 					
@@ -15465,6 +15564,90 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
+
+
+ 	/// <summary>
+	/// ITopic_Alert_Options Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/View Templates/Topic Alert Options</para>	
+	/// <para>ID: c22ae94d-b1d3-417a-88d1-4b152e22fc8f</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ITopic_Alert_OptionsConstants.TemplateIdString)]
+	public partial interface ITopic_Alert_Options : IGlassBase 
+	{
+								/// <summary>
+					/// The Related Search field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 808b637d-dbe9-411e-bed4-9b1ca559ea98</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITopic_Alert_OptionsConstants.Related_SearchFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Related_Search  {get; set;}
+								/// <summary>
+					/// The Search Name field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 852a4740-a81f-4dd7-b3f6-7b681b5536f3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITopic_Alert_OptionsConstants.Search_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Search_Name  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ITopic_Alert_Options Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/View Templates/Topic Alert Options</para>	
+		/// <para>ID: c22ae94d-b1d3-417a-88d1-4b152e22fc8f</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ITopic_Alert_Options__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Related Search field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 808b637d-dbe9-411e-bed4-9b1ca559ea98</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ITopic_Alert_OptionsConstants.Related_SearchFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Related_Search  {get; set;}
+										/// <summary>
+						/// The Search Name field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 852a4740-a81f-4dd7-b3f6-7b681b5536f3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ITopic_Alert_OptionsConstants.Search_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Search_Name  {get; set;}
+						}
+	
+	public static partial class ITopic_Alert_OptionsConstants{
+
+			public const string TemplateIdString = "c22ae94d-b1d3-417a-88d1-4b152e22fc8f";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Topic Alert Options";
+
+					
+			public static readonly ID Related_SearchFieldId = new ID("808b637d-dbe9-411e-bed4-9b1ca559ea98");
+			public const string Related_SearchFieldName = "Related Search";
+
+						
+					
+			public static readonly ID Search_NameFieldId = new ID("852a4740-a81f-4dd7-b3f6-7b681b5536f3");
+			public const string Search_NameFieldName = "Search Name";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
 {
 
@@ -15813,6 +15996,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlem
 					[SitecoreField(IEntitled_ProductConstants.Actual_Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
 					DateTime Actual_Publish_Date  {get; set;}
 								/// <summary>
+					/// The Article Number field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 1616fe67-7278-4169-948e-c29b00ec8781</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IEntitled_ProductConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Article_Number  {get; set;}
+								/// <summary>
 					/// The Free field.
 					/// <para></para>
 					/// <para>Field Type: Checkbox</para>		
@@ -15843,6 +16035,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlem
 						[SitecoreField(IEntitled_ProductConstants.Actual_Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
 						DateTime Actual_Publish_Date  {get; set;}
 										/// <summary>
+						/// The Article Number field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 1616fe67-7278-4169-948e-c29b00ec8781</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IEntitled_ProductConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Article_Number  {get; set;}
+										/// <summary>
 						/// The Free field.
 						/// <para></para>
 						/// <para>Field Type: Checkbox</para>		
@@ -15862,6 +16063,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlem
 					
 			public static readonly ID Actual_Publish_DateFieldId = new ID("7c4fc796-1311-4daa-81ac-85eaa2c1c108");
 			public const string Actual_Publish_DateFieldName = "Actual Publish Date";
+
+						
+					
+			public static readonly ID Article_NumberFieldId = new ID("1616fe67-7278-4169-948e-c29b00ec8781");
+			public const string Article_NumberFieldName = "Article Number";
 
 						
 					
@@ -17393,6 +17599,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Main_NavigationFieldId = new ID("0727143b-4aa3-4853-bb84-b01abc4c2ad4");
 			public const string Main_NavigationFieldName = "Main Navigation";
+
+						
+					
+			public static readonly ID Newsletter_Breaking_TypeFieldId = new ID("86e1c6a2-6146-4ab5-a301-4a1c0cafbb61");
+			public const string Newsletter_Breaking_TypeFieldName = "Newsletter Breaking Type";
+
+						
+					
+			public static readonly ID Newsletter_Daily_TypeFieldId = new ID("a08878df-22c2-41e0-a1af-ddd73a2c7379");
+			public const string Newsletter_Daily_TypeFieldName = "Newsletter Daily Type";
+
+						
+					
+			public static readonly ID Newsletter_Weekly_TypeFieldId = new ID("f8bd66f3-da05-4c9a-aa10-3e1b69c2afe4");
+			public const string Newsletter_Weekly_TypeFieldName = "Newsletter Weekly Type";
 
 						
 					

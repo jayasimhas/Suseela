@@ -141,28 +141,14 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     vm.updateTime = function (filter) {
         vm.searchService.getFilter('page').setValue('1');
         var routeBuilder = this.searchService.getRouteBuilder();
-        //vm.location.search(routeBuilder.getRoute());
-
-
-        var paramsValue = this.searchService.getParams();
 
         var hash = {};
-        //for (var key in paramsValue._params)
-        //{
-        //    if (paramsValue._params[key].id == "dateFilterLabel") {
-        //        hash[paramsValue._params[key].id] = vm.timesObject[filter].id;
-        //    } else {
-        //        hash[paramsValue._params[key].id] = paramsValue._params[key]._value;
-        //    }
-        //}
-        //hash["time"] = vm.timesObject[filter].value;
-
         var urlQuery = "&";
         var h = routeBuilder.getRoute().split("&");
         for (var idx in h) {
             if (h[idx] != "") {
                 var currentParameter = h[idx].split("=");
-               
+
                 if (currentParameter[0] == "dateFilterLabel") {
                     hash[currentParameter[0]] = vm.timesObject[filter].id;
                     urlQuery = urlQuery + "&" + currentParameter[0] + "=" + vm.timesObject[filter].id;

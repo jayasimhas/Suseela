@@ -79,6 +79,10 @@ $(document).ready(function() {
     // Anti Forgery Token
     var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
 
+    var sortTheTables = new SortableTableController();
+
+    window.lightboxController = new LightboxModalController();
+
     /* * *
         Traverses the DOM and registers event listeners for any pop-out triggers.
         Bound explicitly to `window` for easier access by Angular.
@@ -240,10 +244,18 @@ $(document).ready(function() {
         observe: '.form-reset-password',
         successCallback: function() {
             $('.form-reset-password').find('.alert-success').show();
-            analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
+            var isPassword = $('.form-reset-password').data("is-password");
+            if(isPassword)
+            {
+                analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
+            }
         },
         failureCallback: function() {
-            analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
+            var isPassword = $('.form-reset-password').data("is-password");
+            if(isPassword)
+            {
+                analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
+            }
         }
 
     });
@@ -252,16 +264,38 @@ $(document).ready(function() {
         observe: '.form-new-reset-pass-token',
         successCallback: function() {
             $('.form-new-reset-pass-token').find('.alert-success').show();
+            analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
+        },
+        failureCallback: function() {
+            analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
+        }
+    });
+
+    $('.js-corporate-master-toggle').on('change', function() {
+        if($(this).prop('checked')) {
+            $('.js-registration-corporate-wrapper').show();
+        } else {
+            $('.js-registration-corporate-wrapper').hide();
         }
     });
 
     var userRegistrationController = new FormController({
         observe: '.form-registration',
         successCallback: function(form, context, event) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "form registration successful" }) );
+            analyticsEvent( $.extend(analytics_data, { event_name: "registration successful" }) );
         },
         failureCallback: function(form,response) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "form registration failure" }) );
+
+            var errorMsg = $(".page-registration__error").text();
+            if (response.reasons && response.reasons.length > 0) {
+                errorMsg = "[";
+                for (var reason in response.reasons) {
+                    errorMsg += response.reasons[reason] + ",";
+                }
+                errorMsg = errorMsg.substring(0, errorMsg.length - 1);
+                errorMsg += "]";
+            }
+            analyticsEvent( $.extend(analytics_data, { event_name: "registration failure", registraion_errors : errorMsg }) );
         }
     });
 
@@ -272,7 +306,7 @@ $(document).ready(function() {
         },
         failureCallback: function(form, response) {
             var errorMsg = $(".page-registration__error").text();
-           if (response.reasons && response.reasons.length > 0) {
+            if (response.reasons && response.reasons.length > 0) {
                 errorMsg = "[";
                 for (var reason in response.reasons) {
                     errorMsg += response.reasons[reason] + ",";
@@ -284,10 +318,17 @@ $(document).ready(function() {
         }
     });
 
+    // When the Save Search pop-out is toggled, need to update some form fields
+    // with the most recent data. Used to use Angular for this, but for site-wide
+    // reusability we need to do it in Zepto.
+    $('.js-save-search').on('click', function(e) {
+        $('.js-save-search-url').val(window.location.pathname + window.location.hash);
+        $('.js-save-search-title').val($('#js-search-field').val());
+    });
+
     var saveSearchController = new FormController({
         observe: '.form-save-search',
         successCallback: function(form, context, event) {
-            toggleIcons('.js-save-search');
             // If there's a stashed search, remove it.
             Cookies.remove('saveStashedSearch');
             window.controlPopOuts.closePopOut($(form).closest('.pop-out'));
@@ -296,6 +337,7 @@ $(document).ready(function() {
                 .on('animationend', function(e) {
                     $(e.target).removeClass('is-active');
                 }).addClass('a-fade-alert');
+            window.lightboxController.closeLightboxModal();
         },
         beforeRequest: function(form) {
             if(!$(form).find('.js-save-search-title').val().trim()) {
@@ -328,12 +370,67 @@ $(document).ready(function() {
         }
     });
 
+
+    //
+    // SET TOPIC ALERT
+    //
+    // var topicAlertController = new FormController({
+    //     observe: '.form-topic-alert',
+    //     successCallback: function(form, context, event) {
+    //         // If there's a stashed search, remove it.
+    //         Cookies.remove('setTopicAlert');
+    //         window.controlPopOuts.closePopOut($(form).closest('.pop-out'));
+    //         $('.js-saved-search-success-alert')
+    //             .addClass('is-active')
+    //             .on('animationend', function(e) {
+    //                 $(e.target).removeClass('is-active');
+    //             }).addClass('a-fade-alert');
+    //     },
+    //     beforeRequest: function(form) {
+    //         if(!$(form).find('.js-save-search-title').val().trim()) {
+    //             $('.js-form-error-EmptyTitle').show();
+    //         }
+    //     }
+    // });
+    //
+    // var topicAlertLoginController = new FormController({
+    //     observe: '.form-topic-alert-login',
+    //     successCallback: function(form, context, event) {
+    //         Cookies.set('setTopicAlert', {
+    //             'Title': $('.js-save-search-title').val(),
+    //             'Url': $('.js-save-search-url').val(),
+    //             'AlertEnabled': $('#AlertEnabled').prop('checked')
+    //         });
+    //
+    //         var loginAnalytics =  {
+    //             event_name: 'login',
+    //             login_state: 'successful',
+    //             userName: '"' + $(form).find('input[name=username]').val() + '"'
+    //         };
+    //
+    //         analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
+    //
+    //         // // If Angular, need location.reload to force page refresh
+    //         // if(typeof angular !== 'undefined') {
+    //         //     angular.element($('.search-results')[0]).controller().forceRefresh();
+    //         // }
+    //     }
+    // });
+
+
+
     var toggleSavedSearchAlertController = new FormController({
         observe: '.form-toggle-saved-search-alert'
     });
 
     $('.js-saved-search-alert-toggle').on('click', function(e) {
         $(e.target.form).find('button[type=submit]').click();
+        var val = $(e.target).val();
+        if (val === "on") {
+            $(e.target).val('off');
+        } else {
+            $(e.target).val('on');
+        }
     });
 
     // On page load, check for any stashed searches that need to be saved
@@ -404,7 +501,7 @@ $(document).ready(function() {
 
             var resultIDs = null;
 
-            $('.js-angular-bookmark').each(function(indx, item) {
+            $('.js-search-results-id').each(function(indx, item) {
                 resultIDs = resultIDs ? resultIDs + ',' + $(item).data('bookmark-id') : $(item).data('bookmark-id');
             });
 
@@ -715,7 +812,7 @@ $(document).ready(function() {
         init();
     };
 
-    $('#newsletters').on('click',function(e){
+    $('.js-register-final').on('click',function(e){
         newsletterOptins();
     });
 
@@ -727,12 +824,14 @@ $(document).ready(function() {
         if ($('#newsletters').is(':checked')) {
             chkDetails.newsletter_optin = "true";
             $.extend(eventDetails,chkDetails);
+            analyticsEvent( $.extend(analytics_data, eventDetails) );
         } else {
             chkDetails.newsletter_optin = "false";
             $.extend(eventDetails,chkDetails);
+            analyticsEvent( $.extend(analytics_data, eventDetails) );
         }
-        analyticsEvent( $.extend(analytics_data, eventDetails) );
     };
+
 
     // TODO - Refactor this code, update class name to a `js-` name
     $('.manage-preferences').click(function(e) {
@@ -768,7 +867,7 @@ $(document).ready(function() {
 
     });
 
-    newsletterOptins();
+
     // Execute!
     smoothScrollingNav();
 
@@ -778,10 +877,6 @@ $(document).ready(function() {
         $('.informa-ribbon').toggleClass('show');
     });
 
-
-    var sortTheTables = new SortableTableController();
-
-    window.lightboxController = new LightboxModalController();
 
     $('.js-toggle-list').on('click', function(e) {
         $(e.target).closest('.js-togglable-list-wrapper').toggleClass('is-active');

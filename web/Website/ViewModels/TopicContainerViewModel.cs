@@ -23,10 +23,6 @@ namespace Informa.Web.ViewModels
 		public Guid Id => RenderingContext.Id;
 		public string Title => GlassModel?.Title;
 		public string NavigationText => GlassModel?.Navigation_Text;
-		public ILinkable Link => new LinkableModel
-		{
-			LinkableText = TextTranslator.Translate("Topic.Explore"),
-			LinkableUrl = $"{GlassModel?.Navigation_Link?.Url}{GlassModel?.Navigation_Link?.Query}"
-        };
+		public string LinkText => TextTranslator.Translate("Topic.Explore");
 	}
 }

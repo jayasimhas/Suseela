@@ -1,6 +1,14 @@
 /* global angular */
 function lightboxModalController() {
 
+    this.closeLightboxModal = function() {
+        $('body').removeClass('lightboxed');
+        $('.lightbox-modal__backdrop').remove();
+        $('.lightbox-modal').hide();
+    };
+
+    var closeLightboxModal = this.closeLightboxModal;
+
     this.showLightbox = function(lightbox) {
         // Freeze the page and add the dark overlay
         $('body')
@@ -15,12 +23,13 @@ function lightboxModalController() {
         $('.' + targetModal)
             .show()
             .find('.js-lightbox-modal-submit')
-            .on('click', function() {
-
+            // .one, not .on, to prevent stacking event listners
+            .one('click', function(e) {
                 successForm.find('button[type=submit]').click();
                 closeLightboxModal();
-                
             });
+
+        return false;
     };
 
     var showLightbox = this.showLightbox;
@@ -44,12 +53,6 @@ function lightboxModalController() {
     $('.js-close-lightbox-modal').on('click', function(e) {
         closeLightboxModal();
     });
-
-    var closeLightboxModal = function() {
-        $('body').removeClass('lightboxed');
-        $('.lightbox-modal__backdrop').remove();
-        $('.lightbox-modal').hide();
-    };
 
     this.buildLightboxes();
 

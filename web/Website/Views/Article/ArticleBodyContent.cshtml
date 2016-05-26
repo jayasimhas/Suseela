@@ -1,12 +1,13 @@
-﻿@using Glass.Mapper.Sc.Web.Mvc
-@using Informa.Library.User.Entitlement
-@using Informa.Web.Models
-@model GlassArticleModel
+﻿@using Informa.Web.Models
+@model ArticleBodyContentModel
 
 <div class="article-body-content">
-	<h1>@HttpUtility.HtmlDecode(Model.Title)</h1>
-	<h3>@Model.Sub_Title</h3>
-
+	<h1>@Html.Raw(Model.Title)</h1>
+	<h3>@Html.Raw(Model.Sub_Title)</h3>
+	@if (Model.DisplayLegacyPublication)
+	{
+		<p class="article-legacy-publication">@Model.LegacyPublicationText</p>
+	}
 	<div class="article-metadata">
 		<ul>
 			<li>
@@ -89,12 +90,12 @@
 	}
 
 	@* If plugin created summary for article, it's the same as first paragraph... so hide summary. *@
-	@if (!string.IsNullOrEmpty(Model.ListableSummary) && !Model.Body.Contains(Model.ListableSummary))
+	@if (!string.IsNullOrEmpty(Model.Summary) && !Model.Body.Contains(Model.Summary))
 	{
 		@* * * Executive Summary *@
 		<div class="article-executive-summary">
 			<h4>Executive Summary</h4>
-			@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.ListableSummary))
+			@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))
 		</div>
 		@* End Executive Summary  *@
 	}

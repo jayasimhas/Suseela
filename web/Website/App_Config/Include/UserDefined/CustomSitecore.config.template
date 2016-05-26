@@ -50,10 +50,20 @@ But you can also use "patch:attribute" for clarity:
                    factory="Autofac"
                    patch:before="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
                    reusable="false" />
+        <processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NotFoundResolver, Informa.Library"
+                   ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NotFoundResolver, Informa.Library"
+                   factory="Autofac"
+                   patch:after="processor[@type='Informa.Library.CustomSitecore.Pipelines.HttpRequest.ArticleItemResolver, Informa.Library']"
+                   reusable="false" />
         <processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NewRelicTransactionNameProcessor, Informa.Library" 
                    ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NewRelicTransactionNameProcessor, Informa.Library"
                    factory="Autofac"
                    patch:after="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
+                   reusable="false" />
+		<processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.LegacyRedirectResolver, Informa.Library"
+                   ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.LegacyRedirectResolver, Informa.Library"
+                   factory="Autofac"
+                   patch:before="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
                    reusable="false" />
         <processor type="Sitecore.Pipelines.HttpRequest.ExecuteRequest, Sitecore.Kernel">
           <patch:attribute name="type">Informa.Library.CustomSitecore.Pipelines.HttpRequest.InformaExecuteRequest,Informa.Library</patch:attribute>
@@ -166,7 +176,8 @@ But you can also use "patch:attribute" for clarity:
 			MG: The explicit override here was reverted to the default setting to allow workflow locks/editing to behave as needed
       -->
       <setting name="RequireLockBeforeEditing" value="true"/>
-
+	  <!-- Protocol -->
+	  <setting name="Site.Protocol" value="${Site.Protocol}" />
       <!-- Velir Settings -->
       <setting  name="Env.Value" value="${Env.Value}" />
       <!-- Production Host -->
@@ -240,6 +251,8 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Taxonomy.AreaPath" value="/sitecore/content/environment globals/taxonomy/therapy areas"></setting>
       <setting name="Taxonomy.IndustryPath" value="/sitecore/content/environment globals/taxonomy/industries"></setting>
       <setting name="Taxonomy.DeviceAreaPath" value="/sitecore/content/environment globals/taxonomy/device areas"></setting>
+      <setting name="Search.NewerArticlesBoosting.Enabled" value="${Search.NewerArticlesBoosting.Enabled}" />
+      <setting name="Search.NewerArticlesBoosting.BoostFunction" value="${Search.NewerArticlesBoosting.BoostFunction}" />
     </settings>
   </sitecore>
 </configuration>

@@ -27,6 +27,7 @@
                     <use ng-href="/dist/img/svg-sprite.svg#{{::doc.mediaType}}" xlink:href=""></use>
                 </svg> <!-- example media type icon, video -->
             </div>
+            <input type="hidden" class="js-search-results-id" data-bookmark-id="{{::doc.itemId}}" />
             <!--
             <div    class="search-result__bookmark pop-out__trigger js-angular-bookmark"
                     ng-class="doc.isUserAuthenticated ? 'js-bookmark-article' : 'js-pop-out-trigger'"
@@ -61,7 +62,7 @@
 
 	        <div class="search-result__tags" ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'">
                 <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
-                    <a ng-click="filterResult(tax.url)" href="{{::doc.siteUrl}}{{::tax.url}}">
+                    <a ng-click="filterResult(tax.url)" href="{{::tax.url}}">
                         {{::tax.title}}
                     </a>
                     <!-- don't render separator after last tag -->

@@ -20,6 +20,7 @@ namespace Informa.Library.User.Entitlement
 
 			return new EntitledProduct
 			{
+				DocumentId = item.Article_Number,
 				IsFree = item.Free,
 				ProductCode = productCode,
 				PublishedOn = item.Actual_Publish_Date

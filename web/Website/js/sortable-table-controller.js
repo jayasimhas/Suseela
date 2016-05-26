@@ -24,6 +24,37 @@ function sortableTableController() {
 
 		},
 
+		sortColumn: function(table, col) {
+
+			// build an array to sort. This is a Schwartzian transform thing,
+			// i.e., we "decorate" each row with the actual sort key,
+			// sort based on the sort keys, and then put the rows back in order
+			// which is a lot faster because you only do getInnerText once per row
+
+			var row_array = [];
+			var headrow = table.tHead.rows[0].cells;
+			var rows = [].slice.call(table.tBodies[0].rows);
+			var guesstype = sorttable.guessType(table, col);
+
+			for (var j = 0; j < rows.length; j++) {
+				row_array[row_array.length] = [$(rows[j].cells[col]), rows[j]];
+			}
+
+
+			if($(headrow[col]).data('sortable-type')) {
+				row_array.sort(sorttable[$(headrow[col]).data('sortable-type')]);
+			} else {
+				row_array.sort(guesstype);
+			}
+
+			var tb = table.tBodies[0];
+			for (var j = 0; j < row_array.length; j++) {
+				tb.appendChild(row_array[j][1]);
+			}
+
+			row_array = undefined;
+		},
+
 		makeSortable: function(table) {
 
 			// Sorttable v1 put rows with a class of "sortbottom" at the bottom (as
@@ -71,21 +102,27 @@ function sortableTableController() {
 
 				var colNum = $(e.target).closest('.js-sortable-table-sorter').data('sortable-table-col') - 1;
 
-				var guesstype = sorttable.guessType(table, colNum);
+
 
 				if ($(e.target).hasClass('sorttable_sorted')) {
-					// if we're already sorted by this column, just
-					// reverse the table, which is quicker
+					// This column is sorted top to bottom
+					// Re-sort the column to catch any row changes...
+					sorttable.sortColumn(table, colNum);
+					// ...then reverse the column and update the classes (state).
 					sorttable.reverse(table.tBodies[0]);
 					$(e.target).removeClass('sorttable_sorted').addClass('sorttable_sorted_reverse');
+					
 					return;
 				}
 
 				if ($(e.target).hasClass('sorttable_sorted_reverse')) {
-					// if we're already sorted by this column in reverse, just
-					// re-reverse the table, which is quicker
+					// This column is sorted bottom to top
+					// Flip the table back to top-to-bottom (default)...
 					sorttable.reverse(table.tBodies[0]);
+					// ...then re-sort it to catch any row changes.
+					sorttable.sortColumn(table, colNum);
 					$(e.target).removeClass('sorttable_sorted_reverse').addClass('sorttable_sorted');
+
 					return;
 				}
 
@@ -97,42 +134,18 @@ function sortableTableController() {
 					}
 				});
 
-				if ($('sorttable_sortfwdind')) {
-					$('sorttable_sortfwdind').remove();
+				if ($('.sorttable_sortfwdind')) {
+					$('.sorttable_sortfwdind').remove();
 				}
 
-				if ($('sorttable_sortrevind')) {
-					$('sorttable_sortrevind').remove();
+				if ($('.sorttable_sortrevind')) {
+					$('.sorttable_sortrevind').remove();
 				}
 
 				$(e.target).addClass('sorttable_sorted');
 
-				// build an array to sort. This is a Schwartzian transform thing,
-				// i.e., we "decorate" each row with the actual sort key,
-				// sort based on the sort keys, and then put the rows back in order
-				// which is a lot faster because you only do getInnerText once per row
+				sorttable.sortColumn(table, colNum);
 
-				var row_array = [];
-				var col = colNum;
-
-				var rows = [].slice.call(table.tBodies[0].rows);
-
-				for (var j = 0; j < rows.length; j++) {
-					row_array[row_array.length] = [$(rows[j].cells[col]), rows[j]];
-				}
-
-				if($(headrow[col]).data('sortable-type')) {
-					row_array.sort(sorttable[$(headrow[col]).data('sortable-type')]);
-				} else {
-					row_array.sort(guesstype);
-				}
-
-				var tb = table.tBodies[0];
-				for (var j = 0; j < row_array.length; j++) {
-					tb.appendChild(row_array[j][1]);
-				}
-
-				row_array = undefined;
 			});
 
 		},
@@ -185,8 +198,10 @@ function sortableTableController() {
 		return aa - bb;
 	},
 	sort_alpha: function(a,b) {
-		if (a[0].text().trim() == b[0].text().trim()) return 0;
-		if (a[0].text().trim() < b[0].text().trim()) return -1;
+		var aClean = a[0].text().trim().toUpperCase();
+		var bClean = b[0].text().trim().toUpperCase();
+		if (aClean == bClean) return 0;
+		if (aClean < bClean) return -1;
 		return 1;
 	},
 
@@ -200,7 +215,7 @@ function sortableTableController() {
 	sort_checkbox: function(a, b) {
 		var aChecked = a[0].find('input[type=checkbox]').prop('checked');
 		var bChecked = b[0].find('input[type=checkbox]').prop('checked');
-		if(aChecked && !bChecked) return 1;
+	    if(aChecked && !bChecked) return 1;
 		if(!aChecked && bChecked) return -1;
 
 		return 0;

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.ModelBinding;
@@ -31,7 +33,7 @@ namespace Informa.Web.Controllers.Search
 			return _savedSearchService.GetContent();
 		}
 
-		public IHttpActionResult Post(SavedSearchInput model)
+		public IHttpActionResult Post([ModelBinder(typeof(SavedSearchInputPostModelBinder))]SavedSearchInput model)
 		{
 			var result = _savedSearchService.SaveContent(model);
 
@@ -53,16 +55,37 @@ namespace Informa.Web.Controllers.Search
 		}
 	}
 
-	public class SavedSearchInputModelBinder : IModelBinder
+	public class SavedSearchInputPostModelBinder : IModelBinder
 	{
 		public bool BindModel(HttpActionContext actionContext, ModelBindingContext bindingContext)
 		{
-			bindingContext.Model = new SavedSearchInput
+			var result = actionContext.Request.Content.ReadAsStringAsync().Result;
+			var collection = HttpUtility.ParseQueryString(result);
+
+			var input = new SavedSearchInput
 			{
-				Title = bindingContext.ValueProvider.GetValue("Title").RawValue as string
+				Title = HttpUtility.UrlDecode(collection["Title"]),
+				Url = HttpUtility.UrlDecode(collection["Url"]),
+				AlertEnabled = GetBoolValue(HttpUtility.UrlDecode(collection["AlertEnabled"]))
 			};
+			// reverse the value passed.
+			bool alert = Regex.IsMatch(result, @"alert-toggle-\d+?=off");
+			if (alert)
+			{
+				input.AlertEnabled = alert;
+			}
+
+			bindingContext.Model = input;
 
 			return true;
+		}
+
+		private bool GetBoolValue(string rawValue)
+		{
+			bool value = false;
+			bool.TryParse(rawValue, out value);
+
+			return value;
 		}
 	}
 }

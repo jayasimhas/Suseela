@@ -59,8 +59,10 @@ function formController(opts) {
 					opts.beforeRequest(currentForm);
 				}
 
-				// Prevent user from re-submitting form
-				$(formSubmit).attr('disabled', 'disabled');
+				// Prevent user from re-submitting form, unless explicitly allowed
+				if(!$(currentForm).data('prevent-disabling')) {
+					$(formSubmit).attr('disabled', 'disabled');
+				}
 
 				var inputData = {};
 
@@ -75,17 +77,14 @@ function formController(opts) {
 						if (field.data('checkbox-boolean-type') === 'reverse') {
 							value = !value;
 						}
-					}
-					if (field.data('checkbox-type') === 'value') {
+					} else if (field.data('checkbox-type') === 'value') {
 						value = this.checked ? field.val() : undefined;
-					}
-					else {
+					} else {
 						value = field.val();
 					}
 
-					if (value != undefined)
-					{
-						if (inputData[field.attr('name')] == undefined) {
+					if (value !== undefined) {
+						if (inputData[field.attr('name')] === undefined) {
 							inputData[field.attr('name')] = value;
 						}
 						else if ($.isArray(inputData[field.attr('name')])) {

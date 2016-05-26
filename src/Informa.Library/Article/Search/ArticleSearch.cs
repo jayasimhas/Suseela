@@ -10,6 +10,7 @@ using Informa.Library.Search;
 using Informa.Library.Utilities.References;
 using Sitecore.ContentSearch.Linq;
 using System.Text;
+using Informa.Library.Caching;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
@@ -22,17 +23,20 @@ namespace Informa.Library.Article.Search
         protected readonly ISitecoreService SitecoreContext;
         protected readonly Func<string, ISitecoreService> SitecoreFactory;
         protected readonly IItemReferences ItemReferences;
+        protected readonly ICacheProvider CacheProvider;
 
         public ArticleSearch(
             IProviderSearchContextFactory searchContextFactory,
             ISitecoreService sitecoreContext, Func<string, ISitecoreService> sitecoreFactory,
-             IItemReferences itemReferences
+            IItemReferences itemReferences,
+            ICacheProvider cacheProvider
             )
         {
             SearchContextFactory = searchContextFactory;
             SitecoreContext = sitecoreContext;
             SitecoreFactory = sitecoreFactory;
             ItemReferences = itemReferences;
+            CacheProvider = cacheProvider;
         }
 
         public IArticleSearchFilter CreateFilter()
@@ -147,29 +151,17 @@ namespace Informa.Library.Article.Search
             string procName = a._Name.Replace(" ", "-");
             return $"/{a.Article_Number}/{procName}";
         }
-
-        public string GetArticleAuthors(Guid id)
-        {
-            var item = SitecoreContext.GetItem<ArticleItem>(id);
-            if (item?.Authors != null)
-            {
-                StringBuilder str = new StringBuilder();
-                foreach (IStaff_Item author in item.Authors)
-                {
-                    if (str.Length > 0)
-                        str.Append(",");
-                    str.Append($"'{author._Name.Trim()}'");
-                }
-                return $"[{str}]";
-            }
-
-            return string.Empty;
-        }
-
+        
         public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
+            string cacheKey = $"ArticleSearchTax-{id}";
+            if (CacheProvider.IsInCache(cacheKey))
+                return CacheProvider.GetObject<string>(cacheKey);
+
             var article = SitecoreContext.GetItem<ArticleItem>(id);
             var taxonomyItems = article?.Taxonomies?.Where(x => x._Parent._Id.Equals(taxonomyParent));
+
+            string returnStr = string.Empty;
             if (taxonomyItems != null)
             {
                 StringBuilder str = new StringBuilder();
@@ -179,12 +171,28 @@ namespace Informa.Library.Article.Search
                         str.Append(",");
                     str.Append($"'{taxonomyItem.Item_Name.Trim()}'");
                 }
-                return $"[{str}]";
+                returnStr = $"[{str}]";
             }
 
+            CacheProvider.SetObject(cacheKey, string.Copy(returnStr), DateTime.Now.AddHours(1));
             return string.Empty;
         }
 
+        public IArticleSearchResults GetLegacyArticleUrl(string path)
+	    {
+		    path = path.ToLower();
+		    using (var context = SearchContextFactory.Create())
+		    {
+			    var query = context.GetQueryable<ArticleSearchResultItem>()
+				    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+				    .Filter(i => i.LegacyArticleUrl == path);
+			    var results = query.GetResults();
 
+			    return new ArticleSearchResults
+			    {
+					Articles = results.Hits.Select(i => SitecoreContext.GetItem<IArticle>(i.Document.ItemId.Guid))
+			    };
+		    }
+	    }
     }
 }

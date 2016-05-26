@@ -1,23 +1,21 @@
-﻿using Informa.Library.Publication;
-using Jabberwocky.Glass.Autofac.Attributes;
-using System.Linq;
+﻿using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Library.User.Newsletter
 {
-	[AutowireService(LifetimeScope.Default)]
+	[AutowireService]
 	public class SiteNewsletterUserOptedInContext : ISiteNewsletterUserOptedInContext
 	{
-		protected readonly ISitePublicationContext NewsletterTypeContext;
-		protected readonly INewsletterUserOptInsContext OptInsContext;
+		protected readonly ISiteNewsletterUserOptInsContext SiteNewsletterUserOptInsContext;
+		protected readonly ISiteNewsletterUserOptedIn SiteNewsletterUserOptedIn;
 
 		public SiteNewsletterUserOptedInContext(
-			ISitePublicationContext newsletterTypeContext,
-			INewsletterUserOptInsContext optInsContext)
+			ISiteNewsletterUserOptInsContext siteNewsletterUserOptInsContext,
+			ISiteNewsletterUserOptedIn siteNewsletterUserOptedIn)
 		{
-			NewsletterTypeContext = newsletterTypeContext;
-			OptInsContext = optInsContext;
+			SiteNewsletterUserOptInsContext = siteNewsletterUserOptInsContext;
+			SiteNewsletterUserOptedIn = siteNewsletterUserOptedIn;
 		}
 
-		public bool OptedIn => OptInsContext.OptIns.Any(oi => oi.NewsletterType.ToLower() == NewsletterTypeContext.Name.ToLower() && oi.OptIn);
+		public bool OptedIn => SiteNewsletterUserOptedIn.Check(SiteNewsletterUserOptInsContext.OptIns);
 	}
 }

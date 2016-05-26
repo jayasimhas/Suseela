@@ -3,7 +3,8 @@
     a,
     .facets__button,
     .facets__button svg,
-    .sorting-arrows__arrow.is-active {
+    .sorting-arrows__arrow.is-active,
+    .article-key-document__icon {
         @include on-event(true) {
             color: $color;
             @include svg-fill($color);
@@ -42,8 +43,7 @@
     .button--filled:not([disabled]),
     .search-bar__submit,
     .banner--alert,
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch,
-    .latest-news__header:before {
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
         background: $background;
         background-color: $background;
         color: $text;
@@ -134,6 +134,10 @@
         border-top-color: $color;
         border-bottom-color: $color;
         border-color: $color;
+    }
+
+    .latest-news__header:before {
+        background-color: $color;
     }
 }
 

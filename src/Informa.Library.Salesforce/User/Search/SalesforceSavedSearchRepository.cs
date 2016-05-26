@@ -92,7 +92,7 @@ namespace Informa.Library.Salesforce.User.Search
 				Username = username,
 				Name = ssi.name,
 				SearchString = ssi.searchString,
-				HasAlert = ssi.IsReceivingEmailAlertSpecified,
+				HasAlert = ssi.IsReceivingEmailAlert ?? false,
 				DateCreated = ssi.SaveDate.GetValueOrDefault()
 			});
 

@@ -95,11 +95,13 @@ namespace Sitecore.SharedSource.DataImporter
 						var newItem = DataMap.CreateNewItem(thisParent, importRow, newItemName);
 
 						// Add mapping to database
-						(DataMap as PmbiDataMap).AddOrUpdateMapping(newItem);
+						(DataMap as PmbiDataMap)?.AddOrUpdateMapping(newItem);
 					}
 					catch (Exception ex)
 					{
-						Logger.Log("N/A", string.Format("Exception thrown on import row {0} : {1}", line, ex.Message), ProcessStatus.NewItemError, "All Import Values", string.Join("||", ((Dictionary<string, string>)importRow).Select(a => $"{a.Key}-{a.Value}")));
+						var rows = importRow as Dictionary<string, string>;
+						var values = rows == null ? string.Empty : string.Join("||", (rows).Select(a => $"{a.Key}-{a.Value}"));
+						Logger.Log("N/A", string.Format("Exception thrown on import row {0} : {1}", line, ex.Message), ProcessStatus.NewItemError, "All Import Values", values);
 					}
 					sw.Stop();
 					Logger.Log("Performance Statistic", $"Used {sw.Elapsed.TotalSeconds} to process this item.");

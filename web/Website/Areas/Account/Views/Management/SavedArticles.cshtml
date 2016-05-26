@@ -104,7 +104,7 @@
 								</td>
 								<td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
 									<a href="@item.Url" @(item.IsExternalUrl ? "target = \"_blank\"" : "")>
-										@item.Title
+										@Html.Raw(item.Title)
 										@if (item.IsExternalUrl)
 										{
 											<svg class="icon-external-link">

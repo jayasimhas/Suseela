@@ -55,11 +55,14 @@
     <Compile Include="Company\ISalesforceFindCompanyByUser.cs" />
     <Compile Include="Company\ISalesforceSiteTypeFromCompanyType.cs" />
     <Compile Include="Company\SalesforceCompany.cs" />
+    <Compile Include="Company\SalesforceFindCompanyByMasterId.cs" />
     <Compile Include="Company\SalesforceFindCompanyByUser.cs" />
+    <Compile Include="Company\SalesforceMasterCompany.cs" />
     <Compile Include="Company\SalesforceSiteTypeParser.cs" />
     <Compile Include="Company\SalesforceFindCompanyByIpAddress.cs" />
     <Compile Include="EBIWebServices\EBI_CreateProfileResponse.cs" />
     <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryAccountByMasterIdResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryAccountByUsernameResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryAllActiveIPRangesResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryEntitlementsResponse.cs" />
@@ -135,6 +138,7 @@
     <Compile Include="User\Profile\SalesforceUserProfile.cs" />
     <Compile Include="User\Registration\ISalesforceRegisterUser.cs" />
     <Compile Include="User\Registration\SalesforceRegisterUser.cs" />
+    <Compile Include="User\Registration\SalesforceRegisterUserResult.cs" />
     <Compile Include="User\SalesforceFindUserByEmail.cs" />
     <Compile Include="User\SalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\SalesforceUpdateUserPassword.cs" />

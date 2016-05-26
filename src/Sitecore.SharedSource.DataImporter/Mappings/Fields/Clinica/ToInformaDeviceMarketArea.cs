@@ -30,33 +30,37 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields.Clinica
 
 			Dictionary<string, string> d = GetMapping();
 
-			string lowerValue = importValue.ToLower();
-			string transformValue = (d.ContainsKey(lowerValue)) ? d[lowerValue] : string.Empty;
-			if (string.IsNullOrEmpty(transformValue))
+			var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
+
+			foreach (var val in values)
 			{
-				map.Logger.Log(newItem.Paths.FullPath, "Device Market Area(s) not converted", ProcessStatus.FieldError, NewItemField, importValue);
-				return;
-			}
-
-			string[] parts = transformValue.Split(new string[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
-
-			
-			//loop through children and look for anything that matches by name
-			foreach (string area in parts)
-			{
-				string cleanName = StringUtility.GetValidItemName(area, map.ItemNameMaxLength);
-				IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
-
-				//if you find one then store the id
-				if (!t.Any())
+				string lowerValue = val.ToLower();
+				string transformValue = (d.ContainsKey(lowerValue)) ? d[lowerValue] : string.Empty;
+				if (string.IsNullOrEmpty(transformValue))
 				{
-					map.Logger.Log(newItem.Paths.FullPath, "Device Market Area(s) not found in list", ProcessStatus.FieldError, NewItemField, area);
-					continue;
+					map.Logger.Log(newItem.Paths.FullPath, "Device Market Area(s) not converted", ProcessStatus.FieldError, NewItemField, val);
+					return;
 				}
 
-				string ctID = t.First().ID.ToString();
-				if (!f.Value.Contains(ctID))
-					f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
+				string[] parts = transformValue.Split(new string[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
+				
+				//loop through children and look for anything that matches by name
+				foreach (string area in parts)
+				{
+					string cleanName = StringUtility.GetValidItemName(area, map.ItemNameMaxLength);
+					IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
+
+					//if you find one then store the id
+					if (!t.Any())
+					{
+						map.Logger.Log(newItem.Paths.FullPath, "Device Market Area(s) not found in list", ProcessStatus.FieldError, NewItemField, area);
+						continue;
+					}
+
+					string ctID = t.First().ID.ToString();
+					if (!f.Value.Contains(ctID))
+						f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
+				}
 			}
 		}
 

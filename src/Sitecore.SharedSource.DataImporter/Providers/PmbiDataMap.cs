@@ -22,20 +22,63 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 	{
 		public string ArticleNumberPrefix { get; set; }
 		public int ArticleNumber { get; set; }
+		
+		/// <summary>
+		/// Year of articles to import
+		/// </summary>
+		public string Year { get; set; }
 
-		private const string LastArticleNumber = "Last Article Number";
-		private const string ArticleDate = "Article Date";
-		private const string RelatedArticles = "Related Articles";
-		private const string LegacySitecoreId = "Legacy Sitecore ID";
-		private const string PmbiArticleNumber = "Article Number";
-		private const string MediaSourcePath = "Media Source Path";
-		private const string MediaDestinationPath = "Media Destination Path";
-		private const string CreatedDate = "Created Date";
-		private const string LegacyArticleNumber = "Legacy Article Number";
-		private const string ArticleNumberPrefixStr = "Article Number Prefix";
+		/// <summary>
+		/// The start path to import from
+		/// </summary>
+		public string StartPath { get; set; }
 
+		/// <summary>
+		/// The template id of items that needs to import
+		/// </summary>
+		public string TemplateId { get; set; }
+
+		internal const string LastArticleNumber = "Last Article Number";
+		internal const string ArticleDate = "Article Date";
+		internal const string RelatedArticles = "Related Articles";
+		internal const string LegacySitecoreId = "Legacy Sitecore ID";
+		internal const string PmbiArticleNumber = "Article Number";
+		internal const string MediaSourcePath = "Media Source Path";
+		internal const string MediaDestinationPath = "Media Destination Path";
+		internal const string CreatedDate = "Created Date";
+		internal const string LegacyArticleNumber = "Legacy Article Number";
+		internal const string ArticleNumberPrefixStr = "Article Number Prefix";
+		internal const string ArticleCategory = "Print Category";
+
+		// Publisher's spotlights GUIDs in PmbiContent DB
+		internal HashSet<string> PublisherSpotlights => new HashSet<string>
+		{
+			"{623E323E-4521-4644-97AB-492BCC912CF7}",
+			"{44E8B56E-6808-4AE0-881B-3F328925C3C8}",
+			"{32A6B354-005C-4DD6-B901-B7DA1000BF7B}",
+			"{6522CEA3-1981-497B-8B81-1F59729DB331}",
+			"{FFC8BF2C-6253-4F47-8E82-041208C098AC}",
+			"{B94A2674-A8D8-49F4-9375-1B56012DB5C7}",
+			"{95005EC9-B027-47E1-A51A-56819340B63E}",
+			"{6EBC6F1A-85ED-4B32-83F8-323EA1CDE1C5}",
+			"{E883B8D7-99E2-4F26-BBB9-181FFFE5CE67}",
+			"{32AB72F5-D292-4BE3-AFF2-2D145C922E46}",
+			"{8597AEC6-C755-48C5-84CE-5AEFEF238387}",
+			"{01847DCA-7456-41E5-B310-46E24AB863E0}"
+		};
 		public PmbiDataMap(Database db, string connectionString, Item importItem, ILogger l) : base(db, connectionString, importItem, l)
 		{
+
+			// Get start path
+			StartPath = ImportItem.GetItemField("Start Path", Logger);
+
+			// Get template id
+			TemplateId = ImportItem.GetItemField("Template ID", Logger);
+
+			// Get year
+			Year = ImportItem.GetItemField("Year", Logger);
+
+
 			ArticleNumberPrefix = importItem.Fields[ArticleNumberPrefixStr].Value;
 			var val = importItem.Fields[LastArticleNumber].Value;
 			if (string.IsNullOrWhiteSpace(val))
@@ -66,13 +109,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				{
 					articles =
 						startItem.Axes.GetDescendants()
-							.Where(i => i.TemplateID.ToString() == TemplateId && i.Fields[ArticleDate].Value.Contains(Year));
+							.Where(i => i.TemplateID.ToString() == TemplateId && i.Fields[ArticleDate].Value.Contains(Year) && !PublisherSpotlights.Contains(i.Fields[ArticleCategory].Value));
 				}
 				else
 				{
 					articles =
 						startItem.Axes.GetDescendants()
-							.Where(i => i.TemplateID.ToString() == TemplateId);
+							.Where(i => i.TemplateID.ToString() == TemplateId && !PublisherSpotlights.Contains(i.Fields[ArticleCategory].Value));
 				}
 				sw.Stop();
 				Logger.Log("Performance Statistic-(Sitecore.SharedSource.DataImporter.Providers.PmbiDataMap.GetImportData)", $"Used {sw.Elapsed.TotalSeconds} to Find matches");
@@ -159,6 +202,48 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 					TransferMediaItem(sourceItem, destinationItem, defaultOptions);
 				}
 			}
+		}
+
+		public override Item GetParentNode(object importRow, string newItemName)
+		{
+			Item thisParent = ImportToWhere;
+			if (FolderByDate)
+			{
+				DateTime date = DateTime.Now;
+				string dateValue = string.Empty;
+
+				try
+				{
+					dateValue = GetFieldValue(importRow, DateField);
+				}
+				catch (ArgumentException ex)
+				{
+					Logger.Log(newItemName, (string.IsNullOrEmpty(DateField))
+						? "the date name field is empty"
+						: "the field name does not exist in the import row", ProcessStatus.DateParseError, DateField);
+				}
+
+				if (string.IsNullOrEmpty(dateValue))
+				{
+					string autFile = GetFieldValue(importRow, "ARTICLEID");
+					Logger.Log(newItemName, "Couldn't folder by date. The date value was empty", ProcessStatus.DateParseError, "Missing Autonomy Article ID", autFile);
+					return thisParent;
+				}
+
+				date = DateUtil.ParseDateTime(dateValue, DateTime.MinValue);
+				if (date == DateTime.MinValue)
+				{
+					Logger.Log(newItemName, "date could not be parsed", ProcessStatus.DateParseError, DateField, dateValue);
+					return thisParent;
+				}
+
+				thisParent = GetDateParentNode(ImportToWhere, date, FolderTemplate);
+			}
+			else if (FolderByName)
+			{
+				thisParent = GetNameParentNode(ImportToWhere, newItemName.Substring(0, 1), FolderTemplate);
+			}
+			return thisParent;
 		}
 
 		#region Utility Methods

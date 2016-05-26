@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using Informa.Library.Search.Formatting;
 using Informa.Library.Search.Results;
 using Informa.Library.Utilities.References;
+using Sitecore.Configuration;
 using Sitecore.ContentSearch.Linq;
 using Sitecore.ContentSearch.Linq.Utilities;
 using Velir.Search.Core.Models;
@@ -14,8 +15,8 @@ namespace Informa.Library.Search.PredicateBuilders
 	public class InformaQueryPredicateBuilder<T> : SearchQueryPredicateBuilder<T> where T : InformaSearchResultItem
 	{
 		private const float bigSlopFactor = 100000; // See http://wiki.apache.org/solr/SolrRelevancyCookbook "Term Proximity"
-		private readonly ISearchRequest _request;
 		private readonly IQueryFormatter _formatter;
+		private readonly ISearchRequest _request;
 
 		public InformaQueryPredicateBuilder(IQueryFormatter queryFormatter, ISearchRequest request = null) : base(request)
 		{
@@ -28,22 +29,26 @@ namespace Informa.Library.Search.PredicateBuilders
 			var predicate = base.Build();
 
 			// date relevancy
-			predicate = predicate.And(x => x.Val == "recip(ms(NOW, searchdate_tdt), 3.16e-11, 100, 1.8)");
+			if (Settings.GetBoolSetting("Search.NewerArticlesBoosting.Enabled", false))
+			{
+				//Boost newer articles (See http://www.sitecoreblogger.com/2014/09/publication-date-boosting-in-sitecore-7.html)
+				predicate = predicate.And(x => x.Val == Settings.GetSetting("Search.NewerArticlesBoosting.BoostFunction"));
+			}
 
 			return predicate;
 		}
 
 		protected override Expression<Func<T, bool>> AddAllClause(string[] value)
 		{
-			string query = value.FirstOrDefault();
+			var query = value.FirstOrDefault();
 
 			if (string.IsNullOrEmpty(query)) return null;
 
 			var searchHeadlinesValue = string.Empty;
-			bool searchHeadlines =
+			var searchHeadlines =
 				_request.QueryParameters.TryGetValue(Constants.QueryString.SearchHeadlinesOnly, out searchHeadlinesValue) &&
 				!string.IsNullOrEmpty(searchHeadlinesValue);
-			
+
 			if (_formatter.NeedsFormatting(query))
 			{
 				var formattedQuery = _formatter.FormatQuery(query);
@@ -56,11 +61,11 @@ namespace Informa.Library.Search.PredicateBuilders
 			}
 
 			var quotedQuery = $"\"{query}\"";
-      if (searchHeadlines)
+			if (searchHeadlines)
 			{
 				return item => item.Title.Like(quotedQuery, bigSlopFactor);
 			}
-			
+
 			return item => item.Content.Like(quotedQuery, bigSlopFactor);
 		}
 	}
