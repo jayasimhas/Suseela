@@ -15564,6 +15564,90 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates
+{
+
+
+ 	/// <summary>
+	/// ITopic_Alert_Options Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/View Templates/Topic Alert Options</para>	
+	/// <para>ID: c22ae94d-b1d3-417a-88d1-4b152e22fc8f</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ITopic_Alert_OptionsConstants.TemplateIdString)]
+	public partial interface ITopic_Alert_Options : IGlassBase 
+	{
+								/// <summary>
+					/// The Related Search field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 808b637d-dbe9-411e-bed4-9b1ca559ea98</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITopic_Alert_OptionsConstants.Related_SearchFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Related_Search  {get; set;}
+								/// <summary>
+					/// The Search Name field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 852a4740-a81f-4dd7-b3f6-7b681b5536f3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITopic_Alert_OptionsConstants.Search_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Search_Name  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ITopic_Alert_Options Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/View Templates/Topic Alert Options</para>	
+		/// <para>ID: c22ae94d-b1d3-417a-88d1-4b152e22fc8f</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ITopic_Alert_Options__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Related Search field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 808b637d-dbe9-411e-bed4-9b1ca559ea98</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ITopic_Alert_OptionsConstants.Related_SearchFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Related_Search  {get; set;}
+										/// <summary>
+						/// The Search Name field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 852a4740-a81f-4dd7-b3f6-7b681b5536f3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ITopic_Alert_OptionsConstants.Search_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Search_Name  {get; set;}
+						}
+	
+	public static partial class ITopic_Alert_OptionsConstants{
+
+			public const string TemplateIdString = "c22ae94d-b1d3-417a-88d1-4b152e22fc8f";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Topic Alert Options";
+
+					
+			public static readonly ID Related_SearchFieldId = new ID("808b637d-dbe9-411e-bed4-9b1ca559ea98");
+			public const string Related_SearchFieldName = "Related Search";
+
+						
+					
+			public static readonly ID Search_NameFieldId = new ID("852a4740-a81f-4dd7-b3f6-7b681b5536f3");
+			public const string Search_NameFieldName = "Search Name";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates
 {
 

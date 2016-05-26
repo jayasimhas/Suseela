@@ -852,6 +852,7 @@
     <Compile Include="ViewModels\SignInViewModel.cs" />
     <Compile Include="ViewModels\TaxonomyHierarchyViewModel.cs" />
     <Compile Include="ViewModels\TestUserResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\TopicAlertButtonModel.cs" />
     <Compile Include="ViewModels\TopicContainerViewModel.cs" />
     <Compile Include="ViewModels\TopicJumpToViewModel.cs" />
     <Compile Include="VWB\default.aspx.cs">
@@ -1299,7 +1300,7 @@
     <Content Include="Views\Shared\SiteDebugging\UserPageEntitlement.cshtml" />
     <Content Include="Views\Article\ArticleRelatedCompanies.cshtml" />
     <Content Include="Views\Article\ArticleRelatedDeals.cshtml" />
-    <Content Include="Views\Shared\PopOuts\SetTopicAlert.cshtml" />
+    <Content Include="Views\Shared\Components\TopicAlertButton.cshtml" />
     <Content Include="Views\Shared\Global\Analytics.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>

@@ -53,7 +53,7 @@
             @Html.Partial("PopOuts/SignIn", Model.SignInPopOutViewModel)
             @Html.Partial("PopOuts/Register", Model.RegisterPopOutViewModel)
             @Html.Partial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel)
-            @Html.Partial("PopOuts/SetTopicAlert")
+            @Html.Sitecore().Rendering(Model.ItemReferences.SaveSearchPopOutRendering.ToString())
             @* * *  END POP-OUT TEMPLATE MARKUP *@
         </div>
 

@@ -122,7 +122,7 @@ namespace Informa.Library.User.Search
 				{
 					Username = _.UserContext.User.Username,
 					Name = input.Title,
-					SearchString = input.Url
+					SearchString = ExtractQueryString(input.Url)
 				};
 
 				if (string.IsNullOrWhiteSpace(entity.Name))

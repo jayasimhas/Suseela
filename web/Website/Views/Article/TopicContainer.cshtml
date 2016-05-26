@@ -1,4 +1,5 @@
-﻿@inherits CustomGlassView<TopicContainerViewModel>
+﻿@using Informa.Library.Utilities.References
+@inherits CustomGlassView<TopicContainerViewModel>
 
 <a id="@Model.Id.ToString("N")"
    class="sub-topic-links__invisible-topic-header-anchor js-topic-anchor"
@@ -11,34 +12,14 @@
             @if (IsInEditingMode)
             {
                 <br/>
-                @Editable(Model.GlassModel, x => x.Navigation_Link)
-                <br/>
                 @Editable(Model.GlassModel, x => x.Navigation_Text)
             }
-            else {
-                <a class="topic-subtopic__header-explore-link" href="@HttpUtility.UrlDecode(Model.Link.LinkableUrl)">@Model.Link.LinkableText</a>
+            @using (BeginRenderLink(Model.GlassModel, model => model.Navigation_Link, new {@class = "topic-subtopic__header-explore-link"}, true))
+            {
+                @Html.Raw(Model.LinkText)
             }
         </h1>
-        <div class="topic-subtopic__alert">
-
-            @* * *
-
-                This <span> needs a Model var it can toggle a class based on
-                whether or not the user has set an alert for this topic or not.
-                Replace js-pop-out-trigger class with something like:
-
-                @(Model.TopicAlertIsSet ? "js-lightbox-modal-trigger" : "js-pop-out-trigger")
-
-            * * *@
-            <span
-                class="pop-out__trigger js-set-topic-alert js-pop-out-trigger"
-                data-pop-out-type="set-topic-alert">
-                <svg class="topic-subtopic__alert-icon">
-                    <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-                </svg>
-                <span>Set Alert for CNS</span>
-            </span>
-        </div>
+        @Html.Sitecore().Rendering(RenderingReferences.Instance.TopicAlertButton.ToString(), new { Datasource = Model.GlassModel._Id.ToString() })
     </div>
 
 	@Html.Sitecore().DynamicPlaceholder("two-column-curated")
