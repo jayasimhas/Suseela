@@ -23,19 +23,19 @@
                         <td valign="top" class="two-thirds">
                             <div class="article-metadata">
                                 <span class="article-date">
-                                @(Model.GlassModel.Article?.Actual_Publish_Date.ToString("dd MMM yyyy"))
-                            </span>
+                                    @(Model.GlassModel.Article?.Actual_Publish_Date.ToString("dd MMM yyyy"))
+                                </span>
                                 <span class="vertical-separator">|</span>
                                 <span class="article-category">
-                                @(Model.GlassModel.Article?.Content_Type?.Item_Name)
-                            </span>
+                                    @(Model.GlassModel.Article?.Content_Type?.Item_Name)
+                                </span>
                                 <span class="vertical-separator">|</span>
                                 <span class="article-content-type">
                                 @if (!string.IsNullOrEmpty(Model.MediaTypeIconSrc))
-                                {
-                                    <img src="@Model.MediaTypeIconSrc"/>
-                                }
-                            </span>
+                                    {
+                                        <img class="featured__article-image" src="@Model.MediaTypeIconSrc"/>
+                                    }
+                                </span>
                             </div>
 
                             <a href="@Model.TargetArticleUrl">
