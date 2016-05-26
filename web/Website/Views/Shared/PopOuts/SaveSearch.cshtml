@@ -11,122 +11,118 @@
             </div>
 
             @* * *
-            If a user isn't signed in, the entire Save Search form is actually
-            a sign-in form. Upon successful sign-in, all search data is stashed.
-            When the page is reloaded, JS will detect the stashed search and will
-            save the search behind the scenes.
-            * * *@
+                If a user isn't signed in, the entire Save Search form is actually
+                a sign-in form. Upon successful sign-in, all search data is stashed.
+                When the page is reloaded, JS will detect the stashed search and will
+                save the search behind the scenes.
+                * * *@
             <form method="post"
-
                   class="@(Model.IsAuthenticated
-                    ? "form-save-search"
-                    : "form-save-search-login")"
-
+                               ? "form-save-search"
+                               : "form-save-search-login")"
                   data-on-submit="@(Model.IsAuthenticated
-                    ? "/api/SavedSearches"
-                    : "/Account/api/LoginWebUserApi/Login/")">
+                                        ? "/api/SavedSearches"
+                                        : "/Account/api/LoginWebUserApi/Login/")">
 
 
-            @* * *
-            If a user isn't signed in, display a modified version of the sign-in
-            form. Submit button is removed, as the main submit button is at the
-            bottom of the Save Search pop-out, not below the sign-in form itself.
-            * * *@
-            @if (!Model.IsAuthenticated)
-            {
-                <h3 class="pop-out__register-header">@Html.Raw(Model.SignInText)</h3>
+                @* * *
+                    If a user isn't signed in, display a modified version of the sign-in
+                    form. Submit button is removed, as the main submit button is at the
+                    bottom of the Save Search pop-out, not below the sign-in form itself.
+                    * * *@
+                @if (!Model.IsAuthenticated)
+                {
+                    <h3 class="pop-out__register-header">@Html.Raw(Model.SignInText)</h3>
 
-                <div class="pop-out__show-hide--bordered-bottom js-login-container">
+                    <div class="pop-out__show-hide--bordered-bottom js-login-container">
 
-                    <div class="pop-out__form-error js-form-error js-form-error-general">
-                        @Model.SignInViewModel.SignInInvalidText
+                        <div class="pop-out__form-error js-form-error js-form-error-general">
+                            @Model.SignInViewModel.SignInInvalidText
+                        </div>
+
+                        <input name="username"
+                               class="pop-out__input header__hover-input"
+                               placeholder="@Model.SignInViewModel.SignInUsernamePlaceholderText"
+                               type="text">
+                        <input name="password"
+                               class="pop-out__input header__hover-input"
+                               placeholder="@Model.SignInViewModel.SignInPasswordPlaceholderText"
+                               type="password">
+
+                        <span class="pop-out__form-actions pop-out__reset-password js-show-forgot-password">@Model.SignInViewModel.SignInResetPasswordLinkText</span>
+                        <div class="pop-out__sign-in-remember-me">
+                            <input name="persist" type="checkbox" data-checkbox-type="boolean"> @Model.SignInViewModel.SignInRememberMeText
+                        </div>
                     </div>
 
-                    <input name="username"
-                           class="pop-out__input header__hover-input"
-                           placeholder="@Model.SignInViewModel.SignInUsernamePlaceholderText"
-                           type="text">
-                    <input name="password"
-                           class="pop-out__input header__hover-input"
-                           placeholder="@Model.SignInViewModel.SignInPasswordPlaceholderText"
-                           type="password">
-
-                    <span class="pop-out__form-actions pop-out__reset-password js-show-forgot-password">@Model.SignInViewModel.SignInResetPasswordLinkText</span>
-                    <div class="pop-out__sign-in-remember-me">
-                        <input name="persist" type="checkbox" data-checkbox-type="boolean"> @Model.SignInViewModel.SignInRememberMeText
-                    </div>
-                </div>
-
-            } @* end IsAuthenticated *@
-
-            <h4 class="pop-out__header--tight">
-                @Html.Raw(Model.TitleLabelText)
-            </h4>
-
-            <div class="pop-out__save-search-container">
-                <p class="pop-out__error
-                    js-form-error
-                    js-form-error-EmptyTitle">
-                    @Html.Raw(Model.TitleFieldRequiredText)
-                </p>
+                } @* end IsAuthenticated *@
 
                 @if (Model.IsSearch)
                 {
-                    <input type="text"
-                           name="Title"
-                           class="pop-out__input pop-out__input--tight js-save-search-title"
-                           value="">
+                    <h4 class="pop-out__header--tight">
+                        @Html.Raw(Model.TitleLabelText)
+                    </h4>
+                }
+                <div class="pop-out__save-search-container">
+                    @if (Model.IsSearch)
+                    {
+                        <p class="pop-out__error
+                    js-form-error
+                    js-form-error-EmptyTitle">
+                            @Html.Raw(Model.TitleFieldRequiredText)
+                        </p>
 
-                    <input type="hidden"
-                           name="Url"
-                           class="js-save-search-url"
-                           value="">
+                        <input type="text"
+                               name="Title"
+                               class="pop-out__input pop-out__input--tight js-save-search-title"
+                               value="">
 
-                    <p class="pop-out__details">
-                        @Html.Raw(Model.SearchDescriptionText)
-                    </p>
+                        <input type="hidden"
+                               name="Url"
+                               class="js-save-search-url"
+                               value="">
 
-                    <div class="labeled-checkbox">
-                        <input type="checkbox"
+                        <p class="pop-out__details">
+                            @Html.Raw(Model.SearchDescriptionText)
+                        </p>
+
+                        <div class="labeled-checkbox">
+                            <input type="checkbox"
+                                   id="AlertEnabled"
+                                   name="AlertEnabled"
+                                   data-checkbox-type="boolean"
+                                   checked="checked">
+                            <label class="checkbox-label" for="AlertEnabled">
+                                @Html.Raw(Model.EmailAlertLabelText)
+                            </label>
+                        </div>}
+                    else
+                    {
+                        <input type="hidden"
+                               name="Title"
+                               class="js-save-search-title" value="">
+
+                        <input type="hidden"
+                               name="Url"
+                               class="js-save-search-url"
+                               value="">
+
+                        <input type="hidden"
                                id="AlertEnabled"
                                name="AlertEnabled"
-                               data-checkbox-type="boolean"
-                               checked="checked">
-                        <label class="checkbox-label" for="AlertEnabled">
-                            @Html.Raw(Model.EmailAlertLabelText)
-                        </label>
-                    </div>
-                }
-                else
-                {
-                    <input type="hidden"
-                           name="Title"
-                           class="js-save-search-title" value="">
+                               value="true">
 
-                    <input
-                        type="hidden"
-                        name="Url"
-                        class="js-save-search-url"
-                        value="">
+                        <p class="pop-out__details">
+                            @Html.Raw(Model.TopicDescriptionText)
+                        </p>}
 
-                    <input
-                        type="hidden"
-                        id="AlertEnabled"
-                        name="AlertEnabled"
-                        value="true">
+                    <button type="submit" class="pop-out__sign-in-submit button--filled" ng-click="searchIsSaved = true">
+                        @(Model.IsAuthenticated
+                              ? @Html.Raw(Model.ButtonLoggedInText)
+                              : @Html.Raw(Model.ButtonLoggedOutText))
+                    </button>
 
-                    <p class="pop-out__details">
-                        @Html.Raw(Model.TopicDescriptionText)
-                    </p>
-                }
-
-                <button type="submit" class="pop-out__sign-in-submit button--filled" ng-click="searchIsSaved = true">
-                    @(Model.IsAuthenticated
-                        ? @Html.Raw(Model.ButtonLoggedInText)
-                        : @Html.Raw(Model.ButtonLoggedOutText))
-                </button>
-
-            </div>
+                </div>
 
             </form>
 
@@ -164,9 +160,6 @@
                         </p>
                     </form>
 
-                </div>
-            } @* end IsAuthenticated *@
-
-        </div> @* .pop-out__sign-in *@
+                </div>} @* end IsAuthenticated *@</div> @* .pop-out__sign-in *@
     </div> @* .pop-out__internal *@
 </div> @* .pop-out *@
