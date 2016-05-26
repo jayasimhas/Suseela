@@ -1308,6 +1308,7 @@
     <Content Include="Views\Shared\SiteDebugging\UserPageEntitlement.cshtml" />
     <Content Include="Views\Article\ArticleRelatedCompanies.cshtml" />
     <Content Include="Views\Article\ArticleRelatedDeals.cshtml" />
+    <Content Include="Views\Shared\PopOuts\SetTopicAlert.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
