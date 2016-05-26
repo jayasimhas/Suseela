@@ -7,8 +7,10 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Library.User.Authentication;
 using Informa.Library.Utilities.References;
 using System.Web;
+using System.Web.Mvc;
 using Informa.Library.Globalization;
 using Informa.Library.Company;
+using Informa.Library.SiteDebugging;
 
 namespace Informa.Web.ViewModels
 {
@@ -17,6 +19,7 @@ namespace Informa.Web.ViewModels
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        protected readonly ISiteDebuggingAllowedContext SiteDebuggingAllowedContext;
 
         public readonly IItemReferences ItemReferences;
         public readonly IUserCompanyContext UserCompanyContext;
@@ -38,6 +41,7 @@ namespace Informa.Web.ViewModels
         public readonly IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
         public readonly IToolbarViewModel DebugToolbar;
         public readonly IRegisterPopOutViewModel RegisterPopOutViewModel;
+
         
         public MainLayoutViewModel(
 			ISiteRootContext siteRootContext,
@@ -51,8 +55,8 @@ namespace Informa.Web.ViewModels
 			ICompanyRegisterMessageViewModel companyRegisterMessageViewModel,
 			ISignInPopOutViewModel signInPopOutViewModel,
 			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
-			IToolbarViewModel debugToolbar,
-            IRegisterPopOutViewModel registerPopOutViewModel)
+            IRegisterPopOutViewModel registerPopOutViewModel,
+            ISiteDebuggingAllowedContext siteDebuggingAllowedContext)
 		{
 			SiteRootContext = siteRootContext;
             TextTranslator = textTranslator;
@@ -65,7 +69,9 @@ namespace Informa.Web.ViewModels
 			CompanyRegisterMessage = companyRegisterMessageViewModel;
 			SignInPopOutViewModel = signInPopOutViewModel;
 			EmailArticlePopOutViewModel = emailArticlePopOutViewModel;
-			DebugToolbar = debugToolbar;
+            SiteDebuggingAllowedContext = siteDebuggingAllowedContext;
+            if (SiteDebuggingAllowedContext.IsAllowed)
+                DebugToolbar = DependencyResolver.Current.GetService<IToolbarViewModel>();
             RegisterPopOutViewModel = registerPopOutViewModel;
 
         }

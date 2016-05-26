@@ -6,10 +6,7 @@ namespace Informa.Web.ViewModels.SiteDebugging
 	[AutowireService(LifetimeScope.Default)]
 	public class ToolbarViewModel : IToolbarViewModel
 	{
-		protected readonly ISiteDebuggingAllowedContext SiteDebuggingAllowedContext;
-
 		public ToolbarViewModel(
-			ISiteDebuggingAllowedContext siteDebuggingAllowedContext,
 			IUserIpAddressViewModel userIpAddressViewModel,
 			IEntitlementsCheckEnabledViewModel entitlementsCheckEnabledViewModel,
 			IUserEntitlementsViewModel userEntitlementsViewModel,
@@ -17,7 +14,6 @@ namespace Informa.Web.ViewModels.SiteDebugging
 			IUsernameViewModel usernameViewModel,
 			IUserPageEntitlementViewModel userPageEntitlementViewModel)
 		{
-			SiteDebuggingAllowedContext = siteDebuggingAllowedContext;
 			UserIpAddressViewModel = userIpAddressViewModel;
 			EntitlementsCheckEnabledViewModel = entitlementsCheckEnabledViewModel;
 			UserEntitlementsViewModel = userEntitlementsViewModel;
@@ -32,8 +28,6 @@ namespace Informa.Web.ViewModels.SiteDebugging
 		public IUserSubscriptionsViewModel UserSubscriptionsViewModel { get; set; }
 		public IUsernameViewModel UsernameViewModel { get; set; }
 		public IUserPageEntitlementViewModel UserPageEntitlementViewModel { get; set; }
-
-		public bool Enabled => SiteDebuggingAllowedContext.IsAllowed;
-		public string ToggleButtonText => "Debugging";
+        public string ToggleButtonText => "Debugging";
 	}
 }

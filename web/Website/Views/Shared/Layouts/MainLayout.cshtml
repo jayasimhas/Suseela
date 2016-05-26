@@ -71,8 +71,9 @@
     @* end pseudo-if *@
 
     <script src="/dist/js/index.js"></script>
-
-    @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
+    @if(Model.DebugToolbar != null) { 
+        Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar);
+    }
     @MiniProfiler.RenderIncludes()
 </body>
 </html>
