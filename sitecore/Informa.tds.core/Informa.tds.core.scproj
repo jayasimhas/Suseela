@@ -387,21 +387,6 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Applications\WebEdit.item">
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Applications\WebEdit\Edit Frame Buttons.item">
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Applications\WebEdit\Edit Frame Buttons\Set Topic Alert.item">
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\Applications\WebEdit\Edit Frame Buttons\Set Topic Alert\Edit component properties.item">
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Documents and settings.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>

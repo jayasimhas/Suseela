@@ -3,15 +3,12 @@
 @if (Model.DisplayButton)
 {
     <div class="topic-subtopic__alert">
-        @using (BeginEditFrame("/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Set Topic Alert", Model.GlassModel._Id.ToString()))
-        {
-            <span class="pop-out__trigger js-set-topic-alert @(Model.AlertIsSet ? "js-lightbox-modal-trigger" : "js-pop-out-trigger")"
-          data-pop-out-type="set-topic-alert" data-topic-alert-title="@Model.AlertTitle" data-topic-alert-url="@Model.AlertUrl">
-        <svg class="topic-subtopic__alert-icon">
-            <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
-        </svg>
-        <span>@Html.Raw(Model.SetAlertText)@Html.Raw(Model.TopicName)</span>
-    </span>
-        }
+        <span class="pop-out__trigger js-set-topic-alert @(Model.AlertIsSet ? "js-lightbox-modal-trigger" : "js-pop-out-trigger")"
+              data-pop-out-type="set-topic-alert" data-topic-alert-title="@Model.AlertTitle" data-topic-alert-url="@Model.AlertUrl">
+            <svg class="topic-subtopic__alert-icon">
+                <use xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+            </svg>
+            <span>@Html.Raw(Model.SetAlertText)@Html.Raw(Model.TopicName)</span>
+        </span>
     </div>
 }

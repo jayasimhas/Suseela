@@ -19,7 +19,7 @@
                 @Html.Raw(Model.LinkText)
             }
         </h1>
-        @Html.Sitecore().Rendering(RenderingReferences.Instance.TopicAlertButton.ToString(), new { Datasource = Model.GlassModel._Id.ToString() })
+        @Html.Sitecore().Rendering(RenderingReferences.Instance.TopicAlertButton.ToString(), new { Datasource = Model.GlassModel._Id.ToString(), Parameters = @RenderingContext.GetRenderingParameters() })
     </div>
 
 	@Html.Sitecore().DynamicPlaceholder("two-column-curated")
