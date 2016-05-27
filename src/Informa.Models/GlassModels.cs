@@ -4696,6 +4696,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					[SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
 					INumber_Option Number_To_Display  {get; set;}
 								/// <summary>
+					/// The Show See All field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 619b605b-3897-425b-b862-2066649893ca</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ILatest_News_OptionsConstants.Show_See_AllFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Show_See_All  {get; set;}
+								/// <summary>
 					/// The Subjects field.
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
@@ -4735,6 +4744,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 						[SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
 						INumber_Option Number_To_Display  {get; set;}
 										/// <summary>
+						/// The Show See All field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 619b605b-3897-425b-b862-2066649893ca</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ILatest_News_OptionsConstants.Show_See_AllFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Show_See_All  {get; set;}
+										/// <summary>
 						/// The Subjects field.
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
@@ -4759,6 +4777,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					
 			public static readonly ID Number_To_DisplayFieldId = new ID("2a2d2353-f2e2-46cc-9c10-8900db007122");
 			public const string Number_To_DisplayFieldName = "Number To Display";
+
+						
+					
+			public static readonly ID Show_See_AllFieldId = new ID("619b605b-3897-425b-b862-2066649893ca");
+			public const string Show_See_AllFieldName = "Show See All";
 
 						
 					
@@ -17669,11 +17692,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Twitter_LogoFieldId = new ID("c86c6f15-961f-45b6-bd8c-5ae71a9521c3");
 			public const string Twitter_LogoFieldName = "Twitter Logo";
-
-						
-					
-			public static readonly ID Publication_CodeFieldId = new ID("5eea0a43-3174-451d-ab8b-aa348e6352cb");
-			public const string Publication_CodeFieldName = "Publication Code";
 
 						
 					

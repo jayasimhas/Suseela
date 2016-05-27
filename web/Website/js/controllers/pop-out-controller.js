@@ -119,10 +119,6 @@ function popOutController(triggerElm) {
 			case 'save-search':
 				popOut = $('.js-pop-out__save-search');
 				break;
-			// HOME/TOPIC - SET TOPIC ALERT
-			case 'set-topic-alert':
-				popOut = $('.js-pop-out__set-topic-alert');
-				break;
 			default:
 				console.warn('Attempting to fire unidentified pop-out.');
 				return;

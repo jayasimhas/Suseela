@@ -2,19 +2,22 @@
 using System;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Informa.Library.Article.Search;
-using Informa.Library.Caching;
 using Informa.Library.Utilities.Extensions;
+using Jabberwocky.Core.Caching;
 
 namespace Informa.Library.Utilities.TokenMatcher
 {
 	public static class DCDTokenMatchers
 	{
-		private static readonly IArticleSearch ArticleSearch = DependencyResolver.Current.GetService<IArticleSearch>();
-        private static readonly ICacheProvider CacheProvider = DependencyResolver.Current.GetService<ICacheProvider>();
-        private static readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
+		private static readonly Lazy<IArticleSearch> _lazySearch = new Lazy<IArticleSearch>(() => DependencyResolver.Current.GetService<IArticleSearch>());
+		private static IArticleSearch ArticleSearch => _lazySearch.Value;
+		private static readonly Lazy<ICacheProvider> _lazyCache = new Lazy<ICacheProvider>(() => DependencyResolver.Current.GetService<ICacheProvider>());
+		private static ICacheProvider CacheProvider => _lazyCache.Value;
+		private static readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
 		private static readonly string OldDealsUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL");
 
 		public static string ProcessDCDTokens(string text)
@@ -103,40 +106,34 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 		private static string ArticleMatchEval(Match match)
 		{
-            string returnStr = string.Empty;
-            string articleNumber = match.Groups[1].Value;
-            string cacheKey = $"DCDArticleText-{articleNumber}";
-
-            if (CacheProvider.IsInCache(cacheKey))
-                return CacheProvider.GetObject<string>(cacheKey);
-
-            try {
-				
-				IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-				filter.ArticleNumbers = articleNumber.SingleToList();
-				filter.PageSize = 1;
-				var results = ArticleSearch.Search(filter);
-
-				if (results.Articles.Any())
-				{
-					var article = results.Articles.FirstOrDefault();
-					
-					if (article != null)
-					{
-						returnStr =
-							$" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, " +
-							$"{(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				Sitecore.Diagnostics.Log.Error("Error when evaluating company match token", ex, "LogFileAppender");
-			}
-
-            CacheProvider.SetObject(cacheKey, string.Copy(returnStr), DateTime.Now.AddHours(1));
-
-            return returnStr;
+			string articleNumber = match.Groups[1].Value;
+			string cacheKey = $"DCDArticleText-{articleNumber}";
+            return CacheProvider.GetFromCache(cacheKey, () => BuildArticleMatch(articleNumber));
 		}
+
+	    private static string BuildArticleMatch(string articleNumber)
+	    {
+            try {
+
+                IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+                filter.ArticleNumbers = articleNumber.SingleToList();
+                filter.PageSize = 1;
+                var results = ArticleSearch.Search(filter);
+
+                if (results.Articles.Any()) {
+                    var article = results.Articles.FirstOrDefault();
+
+                    if (article != null) {
+                        return
+                            $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, " +
+                            $"{(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
+                    }
+                }
+            } catch (Exception ex) {
+                Sitecore.Diagnostics.Log.Error("Error when evaluating company match token", ex, "LogFileAppender");
+            }
+
+	        return string.Empty;
+	    }
 	}
 }

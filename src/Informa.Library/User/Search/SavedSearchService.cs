@@ -156,6 +156,8 @@ namespace Informa.Library.User.Search
 
 		protected virtual string ExtractQueryString(string url)
 		{
+			if (string.IsNullOrEmpty(url)) return string.Empty;
+
 			string[] urlParts = url.Split('?');
 			string querystring = urlParts.Length == 1 ? urlParts[0] : urlParts[1];
 

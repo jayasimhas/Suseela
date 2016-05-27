@@ -35,7 +35,7 @@ function lightboxModalController() {
     var showLightbox = this.showLightbox;
 
     this.buildLightboxes = function() {
-        $('.js-lightbox-modal-trigger').off().on('click', function(e) {
+        $('.js-lightbox-modal-trigger').on('click', function(e) {
 
             if (e.target !== this) {
                 this.click();
@@ -55,6 +55,10 @@ function lightboxModalController() {
     });
 
     this.buildLightboxes();
+
+	this.clearLightboxes = function() {
+		$('.js-lightbox-modal-trigger').off();
+	};
 
 }
 

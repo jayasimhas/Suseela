@@ -1,4 +1,5 @@
-﻿using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+﻿using System.Linq;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Glass.Mapper.Sc;
 using Sitecore;
 using Jabberwocky.Glass.Autofac.Attributes;
@@ -8,13 +9,12 @@ namespace Informa.Library.Site
 	[AutowireService(LifetimeScope.PerScope)]
 	public class GlassSiteRootContext : ISiteRootContext
 	{
-		protected readonly ISitecoreService SitecoreService;
+		protected readonly ISiteRootsContext SiteRootsContext;
 
-		public GlassSiteRootContext(ISitecoreService sitecoreService)
+		public GlassSiteRootContext(ISiteRootsContext siteRootsContext)
 		{
-			SitecoreService = sitecoreService;
+            SiteRootsContext = siteRootsContext;
 		}
-
-		public ISite_Root Item => SitecoreService.GetItem<ISite_Root>(Context.Site.RootPath);
+        public ISite_Root Item => SiteRootsContext.SiteRoots.FirstOrDefault(a => a._Path.Equals(Context.Site.RootPath));
 	}
 }
