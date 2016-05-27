@@ -11451,6 +11451,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Twitter_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Image Twitter_Logo  {get; set;}
 								/// <summary>
+					/// The Publication Code field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 5eea0a43-3174-451d-ab8b-aa348e6352cb</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Publication_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Publication_Code  {get; set;}
+								/// <summary>
 					/// The Publication Name field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -12138,6 +12147,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Twitter_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Image Twitter_Logo  {get; set;}
 										/// <summary>
+						/// The Publication Code field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 5eea0a43-3174-451d-ab8b-aa348e6352cb</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Publication_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Publication_Code  {get; set;}
+										/// <summary>
 						/// The Publication Name field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -12642,6 +12660,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Twitter_LogoFieldId = new ID("c86c6f15-961f-45b6-bd8c-5ae71a9521c3");
 			public const string Twitter_LogoFieldName = "Twitter Logo";
+
+						
+					
+			public static readonly ID Publication_CodeFieldId = new ID("5eea0a43-3174-451d-ab8b-aa348e6352cb");
+			public const string Publication_CodeFieldName = "Publication Code";
 
 						
 					
@@ -17646,6 +17669,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Twitter_LogoFieldId = new ID("c86c6f15-961f-45b6-bd8c-5ae71a9521c3");
 			public const string Twitter_LogoFieldName = "Twitter Logo";
+
+						
+					
+			public static readonly ID Publication_CodeFieldId = new ID("5eea0a43-3174-451d-ab8b-aa348e6352cb");
+			public const string Publication_CodeFieldName = "Publication Code";
 
 						
 					

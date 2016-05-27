@@ -4,11 +4,11 @@ using Jabberwocky.Autofac.Attributes;
 namespace Informa.Library.Publication
 {
 	[AutowireService]
-	public class SitePublicationNameFactory : ISitePublicationNameFactory
+	public class SitePublicationCodeFactory : ISitePublicationCodeFactory
 	{
 		public string Create(ISite_Root siteRoot)
 		{
-			return siteRoot?.Publication_Name ?? string.Empty;
+			return siteRoot?.Publication_Code ?? string.Empty;
 		}
 	}
 }

@@ -24,6 +24,13 @@ content-length: 16
 
 20160504T140000Z
 ----field----
+field: {5EEA0A43-3174-451D-AB8B-AA348E6352CB}
+name: Publication Code
+key: publication code
+content-length: 5
+
+SCRIP
+----field----
 field: {073E357F-68A0-422F-B188-EB9CC874536A}
 name: Reset Password Page
 key: reset password page
@@ -47,7 +54,7 @@ ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename
 ----version----
 language: en
 version: 1
-revision: 88a22d42-4835-47bc-b636-29a58834f100
+revision: abd10a84-7057-4106-ac4d-77ab2e539885
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -402,14 +409,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-88a22d42-4835-47bc-b636-29a58834f100
+abd10a84-7057-4106-ac4d-77ab2e539885
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160518T133350Z
+20160527T100349Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

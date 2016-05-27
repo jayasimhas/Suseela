@@ -9,16 +9,16 @@ namespace Informa.Library.Publication
 	public class SitesPublicationContext : ISitesPublicationContext
 	{
 		protected readonly ISiteRootsContext SiteRootsContext;
-		protected readonly ISitePublicationNameFactory SitePublicationNameFactory;
+		protected readonly ISitePublicationCodeFactory SitePublicatioCodeFactory;
 
 		public SitesPublicationContext(
 			ISiteRootsContext siteRootsContext,
-			ISitePublicationNameFactory sitePublicationNameFactory)
+			ISitePublicationCodeFactory sitePublicationCodeFactory)
 		{
 			SiteRootsContext = siteRootsContext;
-			SitePublicationNameFactory = sitePublicationNameFactory;
+			SitePublicatioCodeFactory = sitePublicationCodeFactory;
 		}
 
-		public IEnumerable<string> Names => SiteRootsContext.SiteRoots.Select(sr => SitePublicationNameFactory.Create(sr)).ToList();
+		public IEnumerable<string> Names => SiteRootsContext.SiteRoots.Select(sr => SitePublicatioCodeFactory.Create(sr)).ToList();
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace Informa.Library.Publication
 {
-	public interface ISitePublicationNameFactory
+	public interface ISitePublicationCodeFactory
 	{
 		string Create(ISite_Root siteRoot);
 	}

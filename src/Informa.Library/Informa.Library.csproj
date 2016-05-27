@@ -366,10 +366,10 @@
     <Compile Include="Publication\ArticleMappingRepository.cs" />
     <Compile Include="Publication\Entity\ArticleMapping.cs" />
     <Compile Include="Publication\IArticleMappingRepository.cs" />
-    <Compile Include="Publication\ISitePublicationNameFactory.cs" />
+    <Compile Include="Publication\ISitePublicationCodeFactory.cs" />
     <Compile Include="Publication\ISitesPublicationContext.cs" />
     <Compile Include="Publication\ISitePublicationContext.cs" />
-    <Compile Include="Publication\SitePublicationNameFactory.cs" />
+    <Compile Include="Publication\SitePublicationCodeFactory.cs" />
     <Compile Include="Publication\SitesPublicationContext.cs" />
     <Compile Include="Publication\SitePublicationContext.cs" />
     <Compile Include="Publishing\Events\ItemPublishedPublishItemProcessing.cs" />
