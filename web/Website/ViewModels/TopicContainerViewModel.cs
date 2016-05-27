@@ -23,5 +23,6 @@ namespace Informa.Web.ViewModels
 		public string Title => GlassModel?.Title;
 		public string NavigationText => GlassModel?.Navigation_Text;
 		public string LinkText => TextTranslator.Translate("Topic.Explore");
+	    public bool HasLink => GlassModel.Navigation_Link != null;
 	}
 }

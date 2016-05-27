@@ -14,9 +14,11 @@
                 <br/>
                 @Editable(Model.GlassModel, x => x.Navigation_Text)
             }
-            @using (BeginRenderLink(Model.GlassModel, model => model.Navigation_Link, new {@class = "topic-subtopic__header-explore-link"}, true))
-            {
-                @Html.Raw(Model.LinkText)
+            @if(Model.HasLink) { 
+                using (BeginRenderLink(Model.GlassModel, model => model.Navigation_Link, new {@class = "topic-subtopic__header-explore-link"}, true))
+                {
+                    @Html.Raw(Model.LinkText)
+                }
             }
         </h1>
         @Html.Sitecore().Rendering(RenderingReferences.Instance.TopicAlertButton.ToString(), new { Datasource = Model.GlassModel._Id.ToString(), Parameters = @RenderingContext.GetRenderingParameters() })
