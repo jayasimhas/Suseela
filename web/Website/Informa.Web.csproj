@@ -1013,12 +1013,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
-    <Content Include="js\form-controller.js" />
     <Content Include="js\newsletter-signup.js" />
     <Content Include="js\openadstream.js" />
     <Content Include="js\package.json" />
-    <Content Include="js\register-controller.js" />
-    <Content Include="js\reset-password-controller.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
     <Content Include="js\search\controllers\emailRssController.js" />
