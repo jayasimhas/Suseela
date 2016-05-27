@@ -9,6 +9,7 @@ using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Mail;
 using Informa.Library.Search.Utilities;
+using Informa.Library.Services.Article;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.References;
@@ -39,6 +40,7 @@ namespace Informa.Web.Areas.Article.Controllers
 		protected readonly ISitecoreService SitecoreService;
 		private readonly IBaseHtmlEmailFactory BaseEmailFactory;
 	    protected readonly IArticleSearch ArticleSearch;
+	    protected readonly IArticleService ArticleService;
 
 		public EmailFriendController(
             ITextTranslator textTranslator, 
@@ -49,7 +51,8 @@ namespace Informa.Web.Areas.Article.Controllers
 			ISiteSettings siteSettings, 
             ILog logger, 
             ISitecoreService sitecoreService, 
-            IArticleSearch articleSearch)
+            IArticleSearch articleSearch,
+            IArticleService articleService)
 		{
 			EmailSender = emailSender;
 			HtmlEmailTemplateFactory = htmlEmailTemplateFactory;
@@ -60,6 +63,7 @@ namespace Informa.Web.Areas.Article.Controllers
 			_logger = logger;
 			SitecoreService = sitecoreService;
 		    ArticleSearch = articleSearch;
+		    ArticleService = articleService;
 
 		}
 
@@ -176,7 +180,7 @@ namespace Informa.Web.Areas.Article.Controllers
 					? string.Join(",", article.Authors.Select(a => $"{a.First_Name} {a.Last_Name}"))
 					: string.Empty;
 				replacements["#article_summary#"] = (article != null && !string.IsNullOrEmpty(article.Summary))
-                    ? DCDTokenMatchers.ProcessDCDTokens(article.Summary)
+                    ? ArticleService.GetArticleSummary(article)
                     : string.Empty;
 
 				emailHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);

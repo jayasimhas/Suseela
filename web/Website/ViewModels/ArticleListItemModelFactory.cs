@@ -9,6 +9,7 @@ using Glass.Mapper.Sc.Fields;
 using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
+using Informa.Library.Services.Article;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
@@ -22,12 +23,18 @@ namespace Informa.Web.ViewModels
 		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly IArticleSearch ArticleSearch;
 		protected readonly ITextTranslator TextTranslator;
+	    protected readonly IArticleService ArticleService;
 
-		public ArticleListItemModelFactory(ISitecoreContext sitecoreContext, IArticleSearch articleSearch, ITextTranslator textTranslator)
+		public ArticleListItemModelFactory(
+            ISitecoreContext sitecoreContext, 
+            IArticleSearch articleSearch, 
+            ITextTranslator textTranslator,
+            IArticleService articleService)
 		{
 			SitecoreContext = sitecoreContext;
 			ArticleSearch = articleSearch;
 			TextTranslator = textTranslator;
+		    ArticleService = articleService;
 		}
 
 		public IListableViewModel Create(IArticle article)
@@ -46,11 +53,11 @@ namespace Informa.Web.ViewModels
 				ListableAuthors = article.Authors?.Select(x => new LinkableModel { LinkableText = x.First_Name + " " + x.Last_Name }),
 				ListableDate = article.Actual_Publish_Date,
 				ListableImage = image,
-				ListableSummary = DCDTokenMatchers.ProcessDCDTokens(article.Summary),
+				ListableSummary = ArticleService.GetArticleSummary(article),
 				ListableTitle = HttpUtility.HtmlDecode(article.Title),
 				ListableByline = publication.Publication_Name,
-				ListableTopics = article.Taxonomies?.Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x) }),
-				ListableType = article.Media_Type?.Item_Name == "Data" ? "chart" : article.Media_Type?.Item_Name?.ToLower() ?? "",
+				ListableTopics = ArticleService.GetLinkableTaxonomies(article),
+				ListableType = ArticleService.GetMediaTypeName(article),
 				ListableUrl = new Link { Url = article._Url, Text = article.Title },
 				LinkableText = article.Content_Type?.Item_Name,
 				LinkableUrl = article._Url,

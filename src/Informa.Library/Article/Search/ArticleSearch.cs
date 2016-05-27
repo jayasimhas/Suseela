@@ -10,9 +10,9 @@ using Informa.Library.Search;
 using Informa.Library.Utilities.References;
 using Sitecore.ContentSearch.Linq;
 using System.Text;
-using Informa.Library.Caching;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Jabberwocky.Core.Caching;
 
 namespace Informa.Library.Article.Search
 {
@@ -151,17 +151,18 @@ namespace Informa.Library.Article.Search
             string procName = a._Name.Replace(" ", "-");
             return $"/{a.Article_Number}/{procName}";
         }
-        
+
         public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
-            string cacheKey = $"ArticleSearchTax-{id}";
-            if (CacheProvider.IsInCache(cacheKey))
-                return CacheProvider.GetObject<string>(cacheKey);
+            string cacheKey = $"{nameof(ArticleSearch)}-GetTaxonomy-{id}";
+            return CacheProvider.GetFromCache(cacheKey, () => BuildArticleTaxonomies(id, taxonomyParent));
+        }
 
+        public string BuildArticleTaxonomies(Guid id, Guid taxonomyParent)
+        {
             var article = SitecoreContext.GetItem<ArticleItem>(id);
             var taxonomyItems = article?.Taxonomies?.Where(x => x._Parent._Id.Equals(taxonomyParent));
 
-            string returnStr = string.Empty;
             if (taxonomyItems != null)
             {
                 StringBuilder str = new StringBuilder();
@@ -171,10 +172,9 @@ namespace Informa.Library.Article.Search
                         str.Append(",");
                     str.Append($"'{taxonomyItem.Item_Name.Trim()}'");
                 }
-                returnStr = $"[{str}]";
+                return $"[{str}]";
             }
 
-            CacheProvider.SetObject(cacheKey, string.Copy(returnStr), DateTime.Now.AddHours(1));
             return string.Empty;
         }
 

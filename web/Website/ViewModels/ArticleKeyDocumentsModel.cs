@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
+using Informa.Library.Services.Article;
 using Informa.Library.User.Entitlement;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Glass.Models;
@@ -11,27 +12,29 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly ITextTranslator TextTranslator;
+	    protected readonly IArticleService ArticleService;
 
-		public ArticleKeyDocumentsModel(ISitecoreContext context, ITextTranslator textTranslator, IIsEntitledProducItemContext entitledProductContext) : base(entitledProductContext)
+		public ArticleKeyDocumentsModel(
+            ISitecoreContext context, 
+            ITextTranslator textTranslator, 
+            IIsEntitledProducItemContext entitledProductContext,
+            IArticleService articleService) : base(entitledProductContext)
 		{
 			SitecoreContext = context;
 			TextTranslator = textTranslator;
+		    ArticleService = articleService;
+
 		}
 
 		public string KeyDocumentHeader => TextTranslator.Translate("Article.KeyDocs");
-		public IEnumerable<IGlassBase> KeyDocuments => GlassModel.Supporting_Documents;
+		public IEnumerable<IFile> KeyDocuments => ArticleService.GetSupportingDocuments(GlassModel);
 
-		public string GetTitle(IGlassBase g)
-		{
-			IFile f = SitecoreContext.GetItem<IFile>(g._Id);
-			return !string.IsNullOrEmpty(f?.Title)
-					? f.Title
-					: g._Name;
-		}
+		public string GetTitle(IFile f) => !string.IsNullOrEmpty(f?.Title)
+            ? f.Title
+			: f._Name;
 
-		public string GetDocumentIcon(IGlassBase g)
+		public string GetDocumentIcon(IFile f)
 		{
-			IFile f = SitecoreContext.GetItem<IFile>(g._Id);
 			if (string.IsNullOrEmpty(f?.Extension) || f.Extension.Equals("pdf"))
 				return "pdf";
 			if (f.Extension.Equals("doc") || f.Extension.Equals("docx"))
