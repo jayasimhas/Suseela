@@ -1301,6 +1301,7 @@
     <Content Include="Views\Shared\Global\Analytics.cshtml" />
     <Content Include="Views\EmailComponents\FeaturedArticle.cshtml" />
     <Content Include="Views\EmailComponents\SectionHeader.cshtml" />
+    <Content Include="Views\Article\TopicPageTitle.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
