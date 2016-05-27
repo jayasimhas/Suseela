@@ -12,20 +12,20 @@ namespace Informa.Library.Salesforce
 		protected readonly ISalesforceService Service;
 		protected readonly ISalesforceSessionContext SessionContext;
 		protected readonly ISalesforceErrorLogger ErrorLogger;
-	    protected readonly ISalesforceDebugLogger DebugLogger;
+		protected readonly ISalesforceDebugLogger DebugLogger;
 		protected readonly ISalesforceServiceContextEnabled ServiceContextEnabled;
 
 		public SalesforceServiceContext(
 			ISalesforceService service,
 			ISalesforceSessionContext sessionContext,
 			ISalesforceErrorLogger errorLogger,
-            ISalesforceDebugLogger debugLogger,
+						ISalesforceDebugLogger debugLogger,
 			ISalesforceServiceContextEnabled serviceContextEnabled)
 		{
 			Service = service;
 			SessionContext = sessionContext;
 			ErrorLogger = errorLogger;
-		    DebugLogger = debugLogger;
+			DebugLogger = debugLogger;
 			ServiceContextEnabled = serviceContextEnabled;
 
 			Service.SessionHeaderValue = new SessionHeader();
@@ -33,7 +33,7 @@ namespace Informa.Library.Salesforce
 
 		public void RefreshSession()
 		{
-            DebugLogger.Log($"Refresh Session: Header Value: {Service.SessionHeaderValue.sessionId}, ContextValue: {SessionContext.Session.Id}");
+			DebugLogger.Log($"Refresh Session: Header Value: {Service.SessionHeaderValue.sessionId}, ContextValue: {SessionContext.Session.Id}");
 
 			if (string.Equals(Service.SessionHeaderValue.sessionId, SessionContext.Session.Id))
 			{
@@ -50,11 +50,11 @@ namespace Informa.Library.Salesforce
 			}
 		}
 
-		public TResult Execute<TResult>(Expression<Func<ISalesforceService, TResult>> functionExpression, string CallerMemberName = "", string CallerFilePath = "",
+		public TResult Execute<TResult>(Func<ISalesforceService, TResult> function, string CallerMemberName = "", string CallerFilePath = "",
 						int CallerLineNumber = 0)
 			where TResult : IEbiResponse
 		{
-            DebugLogger.Log($"Salesforced called by: {CallerMemberName}, File: {CallerFilePath}, Line Number {CallerLineNumber}");
+			DebugLogger.Log($"Salesforced called by: {CallerMemberName}, File: {CallerFilePath}, Line Number {CallerLineNumber}");
 
 			if (!ServiceContextEnabled.Enabled)
 			{
@@ -71,8 +71,6 @@ namespace Informa.Library.Salesforce
 
 			try
 			{
-				var function = functionExpression.Compile();
-
 				result = function(Service);
 
 				invalidSession = result.errors != null && result.errors.Any(e => e != null && string.Equals(e.statusCode, InvalidSessionIdErrorKey, StringComparison.InvariantCultureIgnoreCase));
@@ -92,15 +90,15 @@ namespace Informa.Library.Salesforce
 			if (invalidSession)
 			{
 				RefreshSession();
-                DebugLogger.Log($"Invalid Session from caller: {functionExpression.Name}");
-				return Execute(functionExpression);
+				DebugLogger.Log($"Invalid Session from caller: {function.Method.Name}");
+				return Execute(function);
 			}
 
 			if (!result.IsSuccess())
 			{
 				foreach (var error in result.errors)
 				{
-                    DebugLogger.Log($"Request Failed: {error?.message}");
+					DebugLogger.Log($"Request Failed: {error?.message}");
 				}
 
 			}

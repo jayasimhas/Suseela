@@ -1,6 +1,5 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.Presentation;
-using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System;
