@@ -5,8 +5,8 @@
 
 function analyticsEvent(dataObj) {
     if(typeof utag !== 'undefined') {
-        utag.link(dataObj)
-    };
+        utag.link(dataObj);
+    }
 };
 
 export { analyticsEvent };
