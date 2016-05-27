@@ -19,6 +19,7 @@ namespace Informa.Web.ViewModels
 
 
         public FeaturedArticleViewModel(
+            IArticle model,
 			IRenderingParametersContext renderingParametersContext, 
             ITextTranslator textTranslator,
 			IIsEntitledProducItemContext isEntitledProductItemContext,

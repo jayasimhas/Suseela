@@ -35,7 +35,7 @@ namespace Informa.Web.ViewModels
 
 			_lazyBody = new Lazy<string>(() => IsFree || IsEntitled() ? DCDTokenMatchers.ProcessDCDTokens(GlassModel.Body) : "");
 			_lazyBody = new Lazy<string>(() => IsFree || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
-			Summary = ArticleService.GetArticleSummary(model);
+			_summary = ArticleService.GetArticleSummary(model);
 		}
 
 		public string Title => GlassModel.Title;
@@ -47,7 +47,7 @@ namespace Informa.Web.ViewModels
 	    public string LegacyPublicationText => ArticleService.GetLegacyPublicationText(GlassModel);
 
 	    private string _summary;
-        public string Summary => _summary ?? (_summary = DCDTokenMatchers.ProcessDCDTokens(GlassModel.Summary));
+        public string Summary => _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
 
 	    private IEnumerable<IPersonModel> _authors;
 	    public IEnumerable<IPersonModel> Authors
