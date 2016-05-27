@@ -10,6 +10,7 @@ using Informa.Library.Search;
 using Informa.Library.Utilities.References;
 using Sitecore.ContentSearch.Linq;
 using System.Text;
+using Informa.Library.Services.Global;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Core.Caching;
@@ -20,20 +21,21 @@ namespace Informa.Library.Article.Search
     public class ArticleSearch : IArticleSearch
     {
         protected readonly IProviderSearchContextFactory SearchContextFactory;
-        protected readonly ISitecoreService SitecoreContext;
+        protected readonly IGlobalService GlobalService;
         protected readonly Func<string, ISitecoreService> SitecoreFactory;
         protected readonly IItemReferences ItemReferences;
         protected readonly ICacheProvider CacheProvider;
 
         public ArticleSearch(
             IProviderSearchContextFactory searchContextFactory,
-            ISitecoreService sitecoreContext, Func<string, ISitecoreService> sitecoreFactory,
+            IGlobalService globalService, 
+            Func<string, ISitecoreService> sitecoreFactory,
             IItemReferences itemReferences,
             ICacheProvider cacheProvider
             )
         {
             SearchContextFactory = searchContextFactory;
-            SitecoreContext = sitecoreContext;
+            GlobalService = globalService;
             SitecoreFactory = sitecoreFactory;
             ItemReferences = itemReferences;
             CacheProvider = cacheProvider;
@@ -73,7 +75,7 @@ namespace Informa.Library.Article.Search
 
                 return new ArticleSearchResults
                 {
-                    Articles = results.Hits.Select(h => SitecoreContext.GetItem<IArticle>(h.Document.ItemId.Guid))
+                    Articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid))
                 };
             }
         }
@@ -115,7 +117,7 @@ namespace Informa.Library.Article.Search
         {
             using (var context = SearchContextFactory.Create(Constants.MasterDb))
             {
-                var publicationItem = SitecoreContext.GetItem<ISite_Root>(publicationGuid);
+                var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
                 if (publicationItem != null)
                 {
                     var filter = CreateFilter();
@@ -160,7 +162,7 @@ namespace Informa.Library.Article.Search
 
         public string BuildArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
-            var article = SitecoreContext.GetItem<ArticleItem>(id);
+            var article = GlobalService.GetItem<ArticleItem>(id);
             var taxonomyItems = article?.Taxonomies?.Where(x => x._Parent._Id.Equals(taxonomyParent));
 
             if (taxonomyItems != null)
@@ -190,7 +192,7 @@ namespace Informa.Library.Article.Search
 
 			    return new ArticleSearchResults
 			    {
-					Articles = results.Hits.Select(i => SitecoreContext.GetItem<IArticle>(i.Document.ItemId.Guid))
+					Articles = results.Hits.Select(i => GlobalService.GetItem<IArticle>(i.Document.ItemId.Guid))
 			    };
 		    }
 	    }

@@ -5,6 +5,7 @@ using System.Web.UI.WebControls;
 using Glass.Mapper.Sc;
 using Informa.Library.Company;
 using Informa.Library.Globalization;
+using Informa.Library.Services.Global;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
 using Informa.Library.Utilities.References;
@@ -24,9 +25,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public readonly ISignInViewModel SignInViewModel;
         public readonly IUserCompanyContext UserCompanyContext;
         public readonly IUserProfileContext ProfileContext;
-        private readonly IItemReferences ItemReferences;
-        public readonly ISitecoreContext SitecoreContext;
-
+        private readonly IGlobalService GlobalService;
+        
         public ContactInformationViewModel(
             ITextTranslator translator,
             IAuthenticatedUserContext userContext,
@@ -34,8 +34,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             ISignInViewModel signInViewModel,
 			IUserCompanyContext userCompanyContext,
             IUserProfileContext profileContext,
-            IItemReferences itemReferences,
-            ISitecoreContext sitecoreContext)
+            IGlobalService globalService)
         {
             TextTranslator = translator;
             UserContext = userContext;
@@ -43,8 +42,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             SignInViewModel = signInViewModel;
             UserCompanyContext = userCompanyContext;
             ProfileContext = profileContext;
-            ItemReferences = itemReferences;
-            SitecoreContext = sitecoreContext;
+            GlobalService = globalService;
         }
         
         public bool IsAuthenticated => UserContext.IsAuthenticated;
@@ -136,22 +134,13 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 
         #region Drop Down Lists 
 
-        public IEnumerable<ListItem> Salutations => GetListing(ItemReferences.AccountSalutations);
-        public IEnumerable<ListItem> Suffixes => GetListing(ItemReferences.AccountNameSuffixes);
-        public IEnumerable<ListItem> JobFunctions => GetListing(ItemReferences.AccountJobFunctions);
-        public IEnumerable<ListItem> JobIndustries => GetListing(ItemReferences.AccountJobIndustries);
-        public IEnumerable<ListItem> PhoneTypes => GetListing(ItemReferences.AccountPhoneTypes);
-        public IEnumerable<ListItem> Countries => GetListing(ItemReferences.AccountCountries);
-
-        private IEnumerable<ListItem> GetListing(Guid g)
-        {
-            var item = SitecoreContext.GetItem<Item>(g);
-            if (item == null)
-                return Enumerable.Empty<ListItem>();
-
-            return item.GetChildren().Select(a => SitecoreContext.GetItem<ITaxonomy_Item>(a.ID.Guid)).Select(b => new ListItem(b.Item_Name, (b.Item_Name.ToLower().Contains("select one")) ? "" : b.Item_Name));
-        }
-
+        public IEnumerable<ListItem> Salutations => GlobalService.GetSalutations();
+        public IEnumerable<ListItem> Suffixes => GlobalService.GetNameSuffixes();
+        public IEnumerable<ListItem> JobFunctions => GlobalService.GetJobFunctions();
+        public IEnumerable<ListItem> JobIndustries => GlobalService.GetJobIndustries();
+        public IEnumerable<ListItem> PhoneTypes => GlobalService.GetPhoneTypes();
+        public IEnumerable<ListItem> Countries => GlobalService.GetCountries();
+        
         #endregion Drop Down Lists
     }
 }

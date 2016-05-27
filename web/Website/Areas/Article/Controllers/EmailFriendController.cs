@@ -10,6 +10,7 @@ using Informa.Library.Globalization;
 using Informa.Library.Mail;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Services.Article;
+using Informa.Library.Services.Global;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.References;
@@ -37,7 +38,7 @@ namespace Informa.Web.Areas.Article.Controllers
 		protected readonly IEmailFactory EmailFactory;
 		protected readonly ISiteSettings SiteSettings;
 		private readonly ILog _logger;
-		protected readonly ISitecoreService SitecoreService;
+		protected readonly IGlobalService GlobalService;
 		private readonly IBaseHtmlEmailFactory BaseEmailFactory;
 	    protected readonly IArticleSearch ArticleSearch;
 	    protected readonly IArticleService ArticleService;
@@ -49,8 +50,8 @@ namespace Informa.Web.Areas.Article.Controllers
 			IEmailSender emailSender, 
             IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
 			ISiteSettings siteSettings, 
-            ILog logger, 
-            ISitecoreService sitecoreService, 
+            ILog logger,
+            IGlobalService globalService, 
             IArticleSearch articleSearch,
             IArticleService articleService)
 		{
@@ -61,7 +62,7 @@ namespace Informa.Web.Areas.Article.Controllers
 			EmailFactory = emailFactory;
 			SiteSettings = siteSettings;
 			_logger = logger;
-			SitecoreService = sitecoreService;
+            GlobalService = globalService;
 		    ArticleSearch = articleSearch;
 		    ArticleService = articleService;
 
@@ -132,7 +133,7 @@ namespace Informa.Web.Areas.Article.Controllers
 
 				var siteRoot = SiteRootContext.Item;
 				emailHtml = htmlEmailTemplate.Html;
-				var footerContent = SitecoreService.GetItem<IEmail_Config>(Constants.ScripEmailConfig);
+				var footerContent = GlobalService.GetItem<IEmail_Config>(Constants.ScripEmailConfig);
 				var replacements = new Dictionary<string, string>
 				{
 					["#Environment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),
@@ -279,7 +280,7 @@ namespace Informa.Web.Areas.Article.Controllers
 				//main email information
 				var siteRoot = SiteRootContext.Item;
 				emailHtml = htmlEmailTemplate.Html.Replace("#Body_Content#", searchTemplate.Html);
-				var footerContent = SitecoreService.GetItem<IEmail_Config>(Constants.ScripEmailConfig);
+				var footerContent = GlobalService.GetItem<IEmail_Config>(Constants.ScripEmailConfig);
 				var replacements = new Dictionary<string, string>
 				{
 					["#Environment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),
@@ -324,12 +325,12 @@ namespace Informa.Web.Areas.Article.Controllers
 					if (!Guid.TryParse(id, out g))
 						continue;
 
-					var result = SitecoreService.GetItem<I___BasePage>(g);
+					var result = GlobalService.GetItem<I___BasePage>(g);
 					if (result == null)
 						continue;
 
 					//article authors
-					var article = SitecoreService.GetItem<IArticle>(g);
+					var article = GlobalService.GetItem<IArticle>(g);
 					bool hasAuthors = article != null && article.Authors.Any();
 					string byline = TextTranslator.Translate("Article.By");
 					string authorInsert = (hasAuthors)
@@ -370,7 +371,7 @@ namespace Informa.Web.Areas.Article.Controllers
 
         public string GetMediaURL(string mediaId)
         {
-            Item imageItem = SitecoreService.GetItem<Item>(mediaId);
+            Item imageItem = GlobalService.GetItem<Item>(mediaId);
             if (imageItem == null)
                 return string.Empty;
 

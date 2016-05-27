@@ -10,17 +10,14 @@ namespace Informa.Web.ViewModels
 {
 	public class ArticleKeyDocumentsModel : ArticleEntitledViewModel
 	{
-		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly ITextTranslator TextTranslator;
 	    protected readonly IArticleService ArticleService;
 
 		public ArticleKeyDocumentsModel(
-            ISitecoreContext context, 
             ITextTranslator textTranslator, 
             IIsEntitledProducItemContext entitledProductContext,
             IArticleService articleService) : base(entitledProductContext)
 		{
-			SitecoreContext = context;
 			TextTranslator = textTranslator;
 		    ArticleService = articleService;
 

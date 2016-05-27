@@ -25,7 +25,6 @@ namespace Informa.Web.Models
 		protected TextWriter Output { get; private set; }
 		protected TK Model { get; set; }
 
-		public ISitecoreContext SitecoreContext => GlassHtml.SitecoreContext;
 		public IArticleSearch ArticleSearch { get; }
 	    private readonly ICacheProvider CacheProvider; 
         private readonly IArticleListItemModelFactory _articleListableFactory;

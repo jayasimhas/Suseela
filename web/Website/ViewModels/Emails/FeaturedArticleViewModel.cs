@@ -16,10 +16,8 @@ namespace Informa.Web.ViewModels.Emails
         [AutowireService(IsAggregateService = true)]
         public interface IDependencies
         {
-            ISitecoreService SitecoreService { get; }
             ISitecoreUrlWrapper SitecoreUrlWrapper { get; }
             IBylineMaker BylineMaker { get; }
-            ICampaignQueryBuilder CampaignQueryBuilder { get; }
         }
 
         public FeaturedArticleViewModel(IDependencies dependencies)

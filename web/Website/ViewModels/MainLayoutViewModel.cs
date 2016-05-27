@@ -1,4 +1,5 @@
-﻿using Informa.Library.Site;
+﻿using System;
+using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Web.ViewModels.SiteDebugging;
@@ -85,11 +86,11 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-				var pageTitle = GlassModel?.Meta_Title_Override.StripHtml() ?? string.Empty;
+				var pageTitle = string.Copy(GlassModel?.Meta_Title_Override.StripHtml() ?? string.Empty);
 				if (string.IsNullOrWhiteSpace(pageTitle))
-					pageTitle = GlassModel?.Title?.StripHtml() ?? string.Empty;
+					pageTitle = string.Copy(GlassModel?.Title?.StripHtml() ?? string.Empty);
 				if (string.IsNullOrWhiteSpace(pageTitle))
-					pageTitle = GlassModel?._Name ?? string.Empty;
+					pageTitle = string.Copy(GlassModel?._Name ?? string.Empty);
 
 				var publicationName = (SiteRootContext.Item == null)
 					? string.Empty

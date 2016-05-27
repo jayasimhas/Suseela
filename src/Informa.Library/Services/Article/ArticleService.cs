@@ -23,16 +23,13 @@ namespace Informa.Library.Services.Article {
     {
         protected readonly ICacheProvider CacheProvider;
         protected readonly ITextTranslator TextTranslator;
-        protected readonly ISitecoreService SitecoreService;
 
         public ArticleService(
             ICacheProvider cacheProvider,
-            ITextTranslator textTranslator,
-            ISitecoreService sitecoreService)
+            ITextTranslator textTranslator)
         {
             CacheProvider = cacheProvider;
             TextTranslator = textTranslator;
-            SitecoreService = sitecoreService;
         }
 
         private string CreateCacheKey(string suffix)

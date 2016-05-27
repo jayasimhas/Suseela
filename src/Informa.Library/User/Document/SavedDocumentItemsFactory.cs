@@ -4,20 +4,21 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using System;
 using System.Collections.Generic;
+using Informa.Library.Services.Global;
 
 namespace Informa.Library.User.Document
 {
 	[AutowireService]
 	public class SavedDocumentItemsFactory : ISavedDocumentItemsFactory
 	{
-		protected readonly ISitecoreService SitecoreService;
+		protected readonly IGlobalService GlobalService;
 		protected readonly IIsUrlCurrentSite IsUrlCurrentSite;
 
 		public SavedDocumentItemsFactory(
-			ISitecoreService sitecoreService,
+			IGlobalService globalService,
 			IIsUrlCurrentSite isUrlCurrentSite)
 		{
-			SitecoreService = sitecoreService;
+            GlobalService = globalService;
 			IsUrlCurrentSite = isUrlCurrentSite;
 		}
 
@@ -34,7 +35,7 @@ namespace Informa.Library.User.Document
 					continue;
 				}
 
-				var item = SitecoreService.GetItem<IArticle>(itemId);
+				var item = GlobalService.GetItem<IArticle>(itemId);
 
 				if (item == null)
 				{

@@ -25,7 +25,6 @@ namespace Informa.Web.ViewModels.Emails
             ISitecoreUrlWrapper SitecoreUrlWrapper { get; }
             ISiteRootContext SiteRootContext { get; }
             IItemNavigationTreeFactory ItemNavigationTreeFactory { get; }
-            ISitecoreService SitecoreService { get; }
             ICampaignQueryBuilder CampaignQueryBuilder { get; }
         }
 

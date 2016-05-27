@@ -7,23 +7,24 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System.Web;
 using System.Web.Mvc;
+using Informa.Library.Services.Global;
 
 namespace Informa.Web.Areas.Account.ViewModels.Registration
 {
 	public class RegisterUserViewModel : GlassViewModel<IRegistration_Details_Page>
 	{
-		protected readonly ISitecoreContext SitecoreContext;
+		protected readonly IGlobalService GlobalService;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IReturnUrlContext ReturnUrlContext;
 		protected readonly IRegisterReturnUrlContext RegisterReturnUrlContex;
 
 		public RegisterUserViewModel(
-			ISitecoreContext sitecoreContext,
+            IGlobalService globalService,
 			ITextTranslator textTranslator,
 			IReturnUrlContext returnUrlContext,
 			IRegisterReturnUrlContext registerReturnUrlContext)
 		{
-			SitecoreContext = sitecoreContext;
+            GlobalService = globalService;
 			TextTranslator = textTranslator;
 			ReturnUrlContext = returnUrlContext;
 			RegisterReturnUrlContex = registerReturnUrlContext;
@@ -41,7 +42,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 					return string.Empty;
 				}
 
-				var nextStepItem = SitecoreContext.GetItem<I___BasePage>(GlassModel.Next_Step_Page);
+				var nextStepItem = GlobalService.GetItem<I___BasePage>(GlassModel.Next_Step_Page);
 
 				if (nextStepItem == null)
 				{
