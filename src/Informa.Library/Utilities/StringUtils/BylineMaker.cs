@@ -1,44 +1,43 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Library.Utilities.Extensions;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Library.Utilities.StringUtils
 {
-    public interface IBylineMaker
-    {
-        string MakeByline(IEnumerable<IStaff_Item> authors);
-    }
+	public interface IBylineMaker
+	{
+		string MakeByline(IEnumerable<I___Person> authors);
+	}
 
-    [AutowireService]
-    public class BylineMaker : IBylineMaker
-    {
-        private readonly IDependencies _dependencies;
+	[AutowireService]
+	public class BylineMaker : IBylineMaker
+	{
+		private readonly IDependencies _dependencies;
 
-        [AutowireService(IsAggregateService = true)]
-        public interface IDependencies
-        {
-            ITextTranslator TextTranslator { get; }
-        }
+		[AutowireService(IsAggregateService = true)]
+		public interface IDependencies
+		{
+			ITextTranslator TextTranslator { get; }
+		}
 
-        public BylineMaker(IDependencies dependencies)
-        {
-            _dependencies = dependencies;
-        }
+		public BylineMaker(IDependencies dependencies)
+		{
+			_dependencies = dependencies;
+		}
 
-        public string MakeByline(IEnumerable<IStaff_Item> authors)
-        {
-            if(authors == null) { return null; }
+		public string MakeByline(IEnumerable<I___Person> authors)
+		{
+			if (authors == null) { return null; }
 
-            var by = _dependencies.TextTranslator.Translate("Article.By") + " ";
+			var by = $"{_dependencies.TextTranslator.Translate("Article.By")} ";
 
-            var names = authors.Select(auth => $"{auth.First_Name} {auth.Last_Name}".Trim());
-            var result = by + string.Join(", ", names);
-            var x = result.LastIndexOf(", ");
-            result = x <= 0 ? result : result.Substring(0, x) + " and" + result.Substring(x + 1);
-
-            return result == by ? string.Empty : result;
-        }
-    }
+			var names = authors.Select(auth => $"{auth.First_Name} {auth.Last_Name}".Trim());
+			var result = $"{by}{names.JoinWithFinal(", ", "and")}";
+			
+			return result == by ? string.Empty : result;
+		}
+	}
 }

@@ -15,7 +15,7 @@ namespace Informa.Models.FactoryInterface
 
     public interface IListable : ILinkable
     {                    
-        IEnumerable<ILinkable> ListableAuthors { get; }  
+        string ListableAuthorByLine { get; }  
         DateTime ListableDate { get; }                 
         string ListableImage { get; }                    
         string ListableSummary { get; }                
@@ -57,7 +57,7 @@ namespace Informa.Models.FactoryInterface
 
         #region Implementation of IListable
 
-        public IEnumerable<ILinkable> ListableAuthors { get; set; }
+        public string ListableAuthorByLine { get; set; }
         public DateTime ListableDate { get; set; }
         public string ListableImage { get; set; }
         public string ListableSummary { get; set; }

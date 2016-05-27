@@ -72,7 +72,7 @@ namespace Informa.Web.TestData
             {
 				DisplayImage = true,
                 ListableTopics = GetRandomTopics(numTaxonomy),
-                ListableAuthors = GetRandomEmployees(numAuthors),
+                ListableAuthorByLine = string.Join(", ", GetRandomEmployees(numAuthors).Select(a => a.LinkableText)),
                 ListableDate = DateTime.Now,
                 ListableImage = "http://lorempixel.com/800/450/technics",
                 ListableSummary = GetRandomSummary(),
@@ -156,7 +156,7 @@ namespace Informa.Web.TestData
     
         public static IListable Article => new ListableModel
         {
-            ListableAuthors = null,
+            ListableAuthorByLine = string.Empty,
             ListableDate = DateTime.Now,
             ListableImage = "http://lorempixel.com/800/450/technics",
             ListableTitle = GetRandomTitle(),

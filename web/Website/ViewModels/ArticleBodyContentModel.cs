@@ -17,63 +17,56 @@ namespace Informa.Web.ViewModels
 	{
 		public readonly ICallToActionViewModel CallToActionViewModel;
 		protected readonly ITextTranslator TextTranslator;
-	    protected readonly IArticleService ArticleService;
+		protected readonly IArticleService ArticleService;
 
-        private readonly Lazy<string> _lazyBody;
+		private readonly Lazy<string> _lazyBody;
 
 		public ArticleBodyContentModel(
-            IArticle model, 
-            IIsEntitledProducItemContext entitledProductContext, 
-            ITextTranslator textTranslator, 
-            ICallToActionViewModel callToActionViewModel,
-            IArticleService articleService) 
-            : base(entitledProductContext)
+						IArticle model,
+						IIsEntitledProducItemContext entitledProductContext,
+						ITextTranslator textTranslator,
+						ICallToActionViewModel callToActionViewModel,
+						IArticleService articleService)
+						: base(entitledProductContext)
 		{
 			TextTranslator = textTranslator;
 			CallToActionViewModel = callToActionViewModel;
-		    ArticleService = articleService;
+			ArticleService = articleService;
 
-			_lazyBody = new Lazy<string>(() => IsFree || IsEntitled() ? DCDTokenMatchers.ProcessDCDTokens(GlassModel.Body) : "");
 			_lazyBody = new Lazy<string>(() => IsFree || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
-			_summary = ArticleService.GetArticleSummary(model);
 		}
 
 		public string Title => GlassModel.Title;
 		public string Sub_Title => GlassModel.Sub_Title;
 		public bool DisplayLegacyPublication => LegacyPublicationNames.Any();
 
-        public IEnumerable<string> LegacyPublicationNames => ArticleService.GetLegacyPublicationNames(GlassModel);
+		public IEnumerable<string> LegacyPublicationNames => ArticleService.GetLegacyPublicationNames(GlassModel);
 
-	    public string LegacyPublicationText => ArticleService.GetLegacyPublicationText(GlassModel);
+		public string LegacyPublicationText => ArticleService.GetLegacyPublicationText(GlassModel);
 
-	    private string _summary;
-        public string Summary => _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
+		private string _summary;
+		public string Summary => _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
 
-	    private IEnumerable<IPersonModel> _authors;
-	    public IEnumerable<IPersonModel> Authors
-	        => _authors ?? (_authors = GlassModel.Authors.Select(x => new PersonModel(x)));
+		private IEnumerable<IPersonModel> _authors;
+		public IEnumerable<IPersonModel> Authors
+				=> _authors ?? (_authors = GlassModel.Authors.Select(x => new PersonModel(x)));
 
-	    private DateTime? _date;
-	    public DateTime Date
-	    {
-	        get
-	        {
-	            if (!_date.HasValue)
-	            {
-	                _date = Sitecore.Context.PageMode.IsPreview && !GlassModel.Planned_Publish_Date.Equals(DateTime.MinValue)
-	                    ? GlassModel.Planned_Publish_Date
-	                    : GlassModel.Actual_Publish_Date;
-	            }
-	            return _date.Value;
-	        }
-	    }
-
-
+		private DateTime? _date;
+		public DateTime Date
+		{
+			get
+			{
+				if (!_date.HasValue)
+				{
+					_date = GlassModel.GetDate();
+				}
+				return _date.Value;
+			}
+		}
 		public string Category => GlassModel.Article_Category;
-	    public string Body => _lazyBody.Value;
-		
-        public string Content_Type => GlassModel.Content_Type?.Item_Name;
-	    public string Media_Type => ArticleService.GetMediaTypeName(GlassModel);
+		public string Body => _lazyBody.Value;
+		public string Content_Type => GlassModel.Content_Type?.Item_Name;
+		public string Media_Type => ArticleService.GetMediaTypeName(GlassModel);
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
 	}

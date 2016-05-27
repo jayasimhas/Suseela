@@ -57,8 +57,7 @@
     </h1>
 
     <span class="article-preview__byline">
-        @*by @string.Join(", ", Model.ListableAuthors?.Select(x => x.LinkableText))*@
-        by @(string.Join(", ", Model.ListableAuthors?.Take(Model.ListableAuthors.Count() - 1).Select(x => x.LinkableText)) + (Model.ListableAuthors?.Count() > 0 ? (Model.ListableAuthors.Count() > 1 ? " and " : "") + Model.ListableAuthors.LastOrDefault().LinkableText : string.Empty))
+        @Html.Raw(Model.ListableAuthorByLine)
     </span>
 
     <div class="article-summary">
