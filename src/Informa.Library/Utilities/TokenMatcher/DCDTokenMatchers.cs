@@ -12,9 +12,11 @@ namespace Informa.Library.Utilities.TokenMatcher
 {
 	public static class DCDTokenMatchers
 	{
-		private static readonly IArticleSearch ArticleSearch = DependencyResolver.Current.GetService<IArticleSearch>();
-        private static readonly ICacheProvider CacheProvider = DependencyResolver.Current.GetService<ICacheProvider>();
-        private static readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
+		private static readonly Lazy<IArticleSearch> _lazySearch = new Lazy<IArticleSearch>(() => DependencyResolver.Current.GetService<IArticleSearch>());
+		private static IArticleSearch ArticleSearch => _lazySearch.Value;
+		private static readonly Lazy<ICacheProvider> _lazyCache = new Lazy<ICacheProvider>(() => DependencyResolver.Current.GetService<ICacheProvider>());
+		private static ICacheProvider CacheProvider => _lazyCache.Value;
+		private static readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
 		private static readonly string OldDealsUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL");
 
 		public static string ProcessDCDTokens(string text)
@@ -103,15 +105,16 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 		private static string ArticleMatchEval(Match match)
 		{
-            string returnStr = string.Empty;
-            string articleNumber = match.Groups[1].Value;
-            string cacheKey = $"DCDArticleText-{articleNumber}";
+			string returnStr = string.Empty;
+			string articleNumber = match.Groups[1].Value;
+			string cacheKey = $"DCDArticleText-{articleNumber}";
 
-            if (CacheProvider.IsInCache(cacheKey))
-                return CacheProvider.GetObject<string>(cacheKey);
+			if (CacheProvider.IsInCache(cacheKey))
+				return CacheProvider.GetObject<string>(cacheKey);
 
-            try {
-				
+			try
+			{
+
 				IArticleSearchFilter filter = ArticleSearch.CreateFilter();
 				filter.ArticleNumbers = articleNumber.SingleToList();
 				filter.PageSize = 1;
@@ -120,7 +123,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 				if (results.Articles.Any())
 				{
 					var article = results.Articles.FirstOrDefault();
-					
+
 					if (article != null)
 					{
 						returnStr =
@@ -134,9 +137,9 @@ namespace Informa.Library.Utilities.TokenMatcher
 				Sitecore.Diagnostics.Log.Error("Error when evaluating company match token", ex, "LogFileAppender");
 			}
 
-            CacheProvider.SetObject(cacheKey, string.Copy(returnStr), DateTime.Now.AddHours(1));
+			CacheProvider.SetObject(cacheKey, string.Copy(returnStr), DateTime.Now.AddHours(1));
 
-            return returnStr;
+			return returnStr;
 		}
 	}
 }

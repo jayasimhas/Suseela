@@ -233,7 +233,7 @@ work and it shouldn't be changed.
           on the local Web server. This setting is recommended for security purposes, so
           that you do not display application detail information to remote clients.
     -->
-    <customErrors mode="RemoteOnly" redirectMode="ResponseRewrite">
+    <customErrors mode="${Errors.CustomErrors.Mode}" redirectMode="ResponseRewrite">
       <error statusCode="500" redirect="/500.html" />
     </customErrors>
     <!--  AUTHENTICATION
