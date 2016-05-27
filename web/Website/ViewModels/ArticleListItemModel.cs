@@ -13,7 +13,7 @@ namespace Informa.Web.ViewModels
 		public string ListableImage { get; set; }
 		public string ListableSummary { get; set; }
 		public string ListableTitle { get; set; }
-		public string ListableByline { get; set; }
+		public string ListablePublication { get; set; }
 		public virtual IEnumerable<ILinkable> ListableTopics { get; set; }
 		public string ListableType { get; set; }
 		public virtual Link ListableUrl { get; set; }
@@ -22,8 +22,7 @@ namespace Informa.Web.ViewModels
 
 		public string LinkableText { get; set; }
 		public string LinkableUrl { get; set; }
-		public string Publication { get; set; }
-
+		
 		#endregion
 		public string SourceArticleID { get { return Sitecore.Context.Item.ID.ToString(); } }
 

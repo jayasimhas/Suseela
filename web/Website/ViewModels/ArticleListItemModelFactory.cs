@@ -51,13 +51,12 @@ namespace Informa.Web.ViewModels
 				ListableImage = image,
 				ListableSummary = ArticleService.GetArticleSummary(article),
 				ListableTitle = HttpUtility.HtmlDecode(article.Title),
-				ListableByline = publication.Publication_Name,
+				ListablePublication = publication.Publication_Name,
 				ListableTopics = ArticleService.GetLinkableTaxonomies(article),
 				ListableType = ArticleService.GetMediaTypeName(article),
 				ListableUrl = new Link { Url = article._Url, Text = article.Title },
 				LinkableText = article.Content_Type?.Item_Name,
-				LinkableUrl = article._Url,
-				Publication = publication.Publication_Name
+				LinkableUrl = article._Url
 			};
 		}
 
@@ -72,12 +71,8 @@ namespace Informa.Web.ViewModels
 			filter.ArticleNumbers = articleNumber.SingleToList();
 			filter.PageSize = 1;
 			var results = ArticleSearch.Search(filter);
-			if (results.Articles.Any())
-			{
-				return Create(results.Articles.FirstOrDefault());
-			}
 
-			return null;
+			return Create(results.Articles.FirstOrDefault());
 		}
 	}
 }
