@@ -7,7 +7,7 @@
 
     @* Storing "bookmark" / "bookmarked" labels in data attributes so Javascript
         can use text provided by Sitecore when toggling state post-load. *@
-	<span 	class="action-flag__label js-bookmark-label"
+	<span class="action-flag__label js-bookmark-label"
           data-label-bookmark="@Model.BookmarkText"
           data-label-bookmarked="@Model.BookmarkedText">
         @( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )

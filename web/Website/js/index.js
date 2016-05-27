@@ -1,23 +1,32 @@
 /* global angular, analytics_data */
 
+// THIRD-PARTY / VENDOR
 import Zepto from './zepto.min';
 import svg4everybody from './svg4everybody';
 import Cookies from './jscookie';
-import PopOutController from './pop-out-controller';
-import NewsletterSignupController  from './newsletter-signup';
-import BookmarkController from './bookmark-controller';
-import SearchScript from './search-page.js';
-import ResetPasswordController from './reset-password-controller';
-import RegisterController from './register-controller';
-import FormController from './form-controller';
-import SortableTableController from './sortable-table-controller';
-import LightboxModalController from './lightbox-modal-controller';
-import { toggleIcons } from './toggle-icons';
-import { analyticsEvent } from './analytics-controller';
 
-/* Polyfill for scripts expecting `jQuery`
-    Also see: CSS selectors support in zepto.min.js
-*/
+
+// CONTROLLERS
+import FormController from './controllers/form-controller';
+import PopOutController from './controllers/pop-out-controller';
+import BookmarkController from './controllers/bookmark-controller';
+import ResetPasswordController from './controllers/reset-password-controller';
+import RegisterController from './controllers/register-controller';
+import SortableTableController from './controllers/sortable-table-controller';
+import LightboxModalController from './controllers/lightbox-modal-controller';
+import { analyticsEvent } from './controllers/analytics-controller';
+
+
+// COMPONENTS
+import './components/save-search-component';
+
+
+// OTHER CODE
+import NewsletterSignupController  from './newsletter-signup';
+import SearchScript from './search-page.js';
+import { toggleIcons } from './toggle-icons';
+
+/* Polyfill for scripts expecting `jQuery`. Also see: CSS selectors support in zepto.min.js */
 window.jQuery = $;
 
 window.toggleIcons = toggleIcons;
@@ -318,133 +327,6 @@ $(document).ready(function() {
         }
     });
 
-    // When the Save Search pop-out is toggled, need to update some form fields
-    // with the most recent data. Used to use Angular for this, but for site-wide
-    // reusability we need to do it in Zepto.
-    $('.js-save-search').on('click', function(e) {
-        $('.js-save-search-url').val(window.location.pathname + window.location.hash);
-        $('.js-save-search-title').val($('#js-search-field').val());
-    });
-
-    var saveSearchController = new FormController({
-        observe: '.form-save-search',
-        successCallback: function(form, context, event) {
-            // If there's a stashed search, remove it.
-            Cookies.remove('saveStashedSearch');
-            window.controlPopOuts.closePopOut($(form).closest('.pop-out'));
-            $('.js-saved-search-success-alert')
-                .addClass('is-active')
-                .on('animationend', function(e) {
-                    $(e.target).removeClass('is-active');
-                }).addClass('a-fade-alert');
-            window.lightboxController.closeLightboxModal();
-        },
-        beforeRequest: function(form) {
-            if(!$(form).find('.js-save-search-title').val().trim()) {
-                $('.js-form-error-EmptyTitle').show();
-            }
-        }
-    });
-
-    var saveSearchLoginController = new FormController({
-        observe: '.form-save-search-login',
-        successCallback: function(form, context, event) {
-            Cookies.set('saveStashedSearch', {
-                'Title': $('.js-save-search-title').val(),
-                'Url': $('.js-save-search-url').val(),
-                'AlertEnabled': $('#AlertEnabled').prop('checked')
-            });
-
-            var loginAnalytics =  {
-                event_name: 'login',
-                login_state: 'successful',
-                userName: '"' + $(form).find('input[name=username]').val() + '"'
-            };
-
-            analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
-
-            // If Angular, need location.reload to force page refresh
-            if(typeof angular !== 'undefined') {
-                angular.element($('.search-results')[0]).controller().forceRefresh();
-            }
-        }
-    });
-
-
-    //
-    // SET TOPIC ALERT
-    //
-    // var topicAlertController = new FormController({
-    //     observe: '.form-topic-alert',
-    //     successCallback: function(form, context, event) {
-    //         // If there's a stashed search, remove it.
-    //         Cookies.remove('setTopicAlert');
-    //         window.controlPopOuts.closePopOut($(form).closest('.pop-out'));
-    //         $('.js-saved-search-success-alert')
-    //             .addClass('is-active')
-    //             .on('animationend', function(e) {
-    //                 $(e.target).removeClass('is-active');
-    //             }).addClass('a-fade-alert');
-    //     },
-    //     beforeRequest: function(form) {
-    //         if(!$(form).find('.js-save-search-title').val().trim()) {
-    //             $('.js-form-error-EmptyTitle').show();
-    //         }
-    //     }
-    // });
-    //
-    // var topicAlertLoginController = new FormController({
-    //     observe: '.form-topic-alert-login',
-    //     successCallback: function(form, context, event) {
-    //         Cookies.set('setTopicAlert', {
-    //             'Title': $('.js-save-search-title').val(),
-    //             'Url': $('.js-save-search-url').val(),
-    //             'AlertEnabled': $('#AlertEnabled').prop('checked')
-    //         });
-    //
-    //         var loginAnalytics =  {
-    //             event_name: 'login',
-    //             login_state: 'successful',
-    //             userName: '"' + $(form).find('input[name=username]').val() + '"'
-    //         };
-    //
-    //         analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
-    //
-    //         // // If Angular, need location.reload to force page refresh
-    //         // if(typeof angular !== 'undefined') {
-    //         //     angular.element($('.search-results')[0]).controller().forceRefresh();
-    //         // }
-    //     }
-    // });
-
-
-
-    var toggleSavedSearchAlertController = new FormController({
-        observe: '.form-toggle-saved-search-alert'
-    });
-
-    $('.js-saved-search-alert-toggle').on('click', function(e) {
-        $(e.target.form).find('button[type=submit]').click();
-        var val = $(e.target).val();
-        if (val === "on") {
-            $(e.target).val('off');
-        } else {
-            $(e.target).val('on');
-        }
-    });
-
-    // On page load, check for any stashed searches that need to be saved
-    var saveStashedSearch = Cookies.getJSON('saveStashedSearch');
-    if(saveStashedSearch) {
-
-        // Set `Save Search` values from stashed search data
-        $('.js-save-search-title').val(saveStashedSearch['Title']);
-        $('.js-save-search-url').val(saveStashedSearch['Url']);
-        $('#AlertEnabled').prop('checked', saveStashedSearch['AlertEnabled']);
-
-        // Save the stashed search
-        $('.form-save-search').find('button[type=submit]').click();
-    }
 
     var userPreRegistrationController = new FormController({
         observe: '.form-pre-registration',
