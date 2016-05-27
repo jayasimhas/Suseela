@@ -4678,15 +4678,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 	public partial interface ILatest_News_Options : IGlassBase 
 	{
 								/// <summary>
-					/// The Display See All Link field.
-					/// <para></para>
-					/// <para>Field Type: Checkbox</para>		
-					/// <para>Field ID: 619b605b-3897-425b-b862-2066649893ca</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ILatest_News_OptionsConstants.Display_See_All_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-					bool Display_See_All_Link  {get; set;}
-								/// <summary>
 					/// The Display Title field.
 					/// <para></para>
 					/// <para>Field Type: Checkbox</para>		
@@ -4704,6 +4695,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					/// </summary>
 					[SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
 					INumber_Option Number_To_Display  {get; set;}
+								/// <summary>
+					/// The Show See All field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 619b605b-3897-425b-b862-2066649893ca</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ILatest_News_OptionsConstants.Show_See_AllFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Show_See_All  {get; set;}
 								/// <summary>
 					/// The Subjects field.
 					/// <para></para>
@@ -4726,15 +4726,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 		public partial interface ILatest_News_Options__Raw : IGlassBase 
 		{
 										/// <summary>
-						/// The Display See All Link field.
-						/// <para></para>
-						/// <para>Field Type: Checkbox</para>		
-						/// <para>Field ID: 619b605b-3897-425b-b862-2066649893ca</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ILatest_News_OptionsConstants.Display_See_All_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-						bool Display_See_All_Link  {get; set;}
-										/// <summary>
 						/// The Display Title field.
 						/// <para></para>
 						/// <para>Field Type: Checkbox</para>		
@@ -4753,6 +4744,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 						[SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
 						INumber_Option Number_To_Display  {get; set;}
 										/// <summary>
+						/// The Show See All field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 619b605b-3897-425b-b862-2066649893ca</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ILatest_News_OptionsConstants.Show_See_AllFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Show_See_All  {get; set;}
+										/// <summary>
 						/// The Subjects field.
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
@@ -4770,11 +4770,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 			public const string TemplateName = "Latest News Options";
 
 					
-			public static readonly ID Display_See_All_LinkFieldId = new ID("619b605b-3897-425b-b862-2066649893ca");
-			public const string Display_See_All_LinkFieldName = "Display See All Link";
-
-						
-					
 			public static readonly ID Display_TitleFieldId = new ID("d5f01d55-fd1f-4ba5-8c6f-953242b9e399");
 			public const string Display_TitleFieldName = "Display Title";
 
@@ -4782,6 +4777,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					
 			public static readonly ID Number_To_DisplayFieldId = new ID("2a2d2353-f2e2-46cc-9c10-8900db007122");
 			public const string Number_To_DisplayFieldName = "Number To Display";
+
+						
+					
+			public static readonly ID Show_See_AllFieldId = new ID("619b605b-3897-425b-b862-2066649893ca");
+			public const string Show_See_AllFieldName = "Show See All";
 
 						
 					

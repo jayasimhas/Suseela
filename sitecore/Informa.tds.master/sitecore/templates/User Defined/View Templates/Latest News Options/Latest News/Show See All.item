@@ -2,9 +2,9 @@
 version: 1
 id: {619B605B-3897-425B-B862-2066649893CA}
 database: master
-path: /sitecore/templates/User Defined/View Templates/Latest News Options/Latest News/Display See All Link
+path: /sitecore/templates/User Defined/View Templates/Latest News Options/Latest News/Show See All
 parent: {7E1D50AC-4175-45D3-A8C1-93A99C998191}
-name: Display See All Link
+name: Show See All
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -33,7 +33,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 7d1031b3-f86a-4707-bf39-4baea2149959
+revision: 0cf6352d-4b50-4ab6-ab6f-2fad946a6c47
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-7d1031b3-f86a-4707-bf39-4baea2149959
+0cf6352d-4b50-4ab6-ab6f-2fad946a6c47
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160527T153651Z
+20160527T154308Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

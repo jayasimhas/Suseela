@@ -40,7 +40,7 @@ namespace Informa.Web.ViewModels
 			}
 			int itemsToDisplay = parameters.Number_To_Display?.Value ?? 6;
 			News = GetLatestNews(datasource._Id, parameters.Subjects.Select(s => s._Id), itemsToDisplay);
-			SeeAllLink = parameters.Display_See_All_Link ? new Link
+			SeeAllLink = parameters.Show_See_All ? new Link
 			{
 				Text = textTranslator.Translate("Article.LatestFrom.SeeAllLink"),
 				Url = SearchTaxonomyUtil.GetSearchUrl(parameters.Subjects.ToArray())
