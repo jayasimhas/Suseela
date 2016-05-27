@@ -9,5 +9,8 @@
 
 		public static string ArticleRelatedCompaniesTitle = "Article.RelatedCompanies.Title";
 		public static string ArticleRelatedDealsTitle = "Article.RelatedDeals.Title";
+
+		public static string TopicSetAlertText = "Topic.SetAlertText";
+		public static string TopicRemoveAlertText = "Topic.RemoveAlertText";
 	}
 }
