@@ -56,6 +56,10 @@ function lightboxModalController() {
 
     this.buildLightboxes();
 
+	this.clearLightboxes = function() {
+		$('.js-lightbox-modal-trigger').off();
+	};
+
 }
 
 export default lightboxModalController;

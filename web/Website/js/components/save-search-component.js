@@ -53,15 +53,20 @@ $(document).ready(function() {
 	var saveSearchController = new FormController({
 		observe: '.form-save-search',
 		successCallback: function(form, context, event) {
+
 			// If there's a stashed search, remove it.
 			Cookies.remove('saveStashedSearch');
+
 			window.controlPopOuts.closePopOut($(form).closest('.pop-out'));
 			$('.js-saved-search-success-alert')
 				.addClass('is-active')
 				.on('animationend', function(e) {
 					$(e.target).removeClass('is-active');
 				}).addClass('a-fade-alert');
+
 			window.lightboxController.closeLightboxModal();
+
+			angular.element($('.js-saved-search-controller')[0]).controller().searchIsSaved();
 		},
 		beforeRequest: function(form) {
 			if(!$(form).find('.js-save-search-title').val().trim()) {
