@@ -1,8 +1,8 @@
 ﻿@model FeaturedArticleViewModel
 
-@if (Model.DisplayImage && !string.IsNullOrEmpty(Model.Image.ImageSource))
+@if (Model.DisplayImage)
 {
-    <img class="topic-featured-article__image" src="@Model.Image.ImageSource">
+    <img class="topic-featured-article__image" src="@Model.Image.ImageUrl">
 }
 
 @if(Model != null && Model.GlassModel != null) {
