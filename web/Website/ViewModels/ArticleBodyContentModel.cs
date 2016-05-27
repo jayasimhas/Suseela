@@ -18,17 +18,12 @@ namespace Informa.Web.ViewModels
 
         private readonly Lazy<string> _lazyBody;
 
-		public ArticleBodyContentModel(IArticle model, IIsEntitledProducItemContext entitledProductContext, ITextTranslator textTranslator, ICallToActionViewModel callToActionViewModel) : base(entitledProductContext)
+		public ArticleBodyContentModel(IIsEntitledProducItemContext entitledProductContext, ITextTranslator textTranslator, ICallToActionViewModel callToActionViewModel) : base(entitledProductContext)
 		{
 			TextTranslator = textTranslator;
 			CallToActionViewModel = callToActionViewModel;
 
-			Date = Sitecore.Context.PageMode.IsPreview && !model.Planned_Publish_Date.Equals(DateTime.MinValue)
-				? model.Planned_Publish_Date
-				: model.Actual_Publish_Date;
-			Authors = model.Authors.Select(x => new PersonModel(x));
-			_lazyBody = new Lazy<string>(() => IsFree || IsEntitled() ? DCDTokenMatchers.ProcessDCDTokens(model.Body) : "");
-			Summary = DCDTokenMatchers.ProcessDCDTokens(model.Summary);
+			_lazyBody = new Lazy<string>(() => IsFree || IsEntitled() ? DCDTokenMatchers.ProcessDCDTokens(GlassModel.Body) : "");
 		}
 
 		public string Title => GlassModel.Title;
@@ -48,12 +43,34 @@ namespace Informa.Web.ViewModels
 				return legacyText.Replace("{Legacy Publications}", legacyPublicationsText);
 			}
 		}
-		public DateTime Date { get; set; }
-		public IEnumerable<IPersonModel> Authors { get; set; }
+
+	    private string _summary;
+        public string Summary => _summary ?? (_summary = DCDTokenMatchers.ProcessDCDTokens(GlassModel.Summary));
+
+	    private IEnumerable<IPersonModel> _authors;
+	    public IEnumerable<IPersonModel> Authors
+	        => _authors ?? (_authors = GlassModel.Authors.Select(x => new PersonModel(x)));
+
+	    private DateTime? _date;
+	    public DateTime Date
+	    {
+	        get
+	        {
+	            if (!_date.HasValue)
+	            {
+	                _date = Sitecore.Context.PageMode.IsPreview && !GlassModel.Planned_Publish_Date.Equals(DateTime.MinValue)
+	                    ? GlassModel.Planned_Publish_Date
+	                    : GlassModel.Actual_Publish_Date;
+	            }
+	            return _date.Value;
+	        }
+	    }
+
+
 		public string Category => GlassModel.Article_Category;
 	    public string Body => _lazyBody.Value;
-		public string Summary { get; set; }
-		public string Content_Type => GlassModel.Content_Type?.Item_Name;
+		
+        public string Content_Type => GlassModel.Content_Type?.Item_Name;
 		public string Media_Type => GlassModel.Media_Type?.Item_Name == "Data" ? "chart" : GlassModel.Media_Type?.Item_Name?.ToLower() ?? "";
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");

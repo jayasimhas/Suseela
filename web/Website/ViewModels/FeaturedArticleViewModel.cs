@@ -16,12 +16,11 @@ namespace Informa.Web.ViewModels
 		protected readonly IRenderingParametersContext RenderingParametersContext;
 
 		public FeaturedArticleViewModel(
-            IArticle model,
 			IRenderingParametersContext renderingParametersContext, 
             ITextTranslator textTranslator,
 			IIsEntitledProducItemContext isEntitledProductItemContext,
             ICallToActionViewModel callToActionViewModel)
-			: base(model, isEntitledProductItemContext, textTranslator, callToActionViewModel)
+			: base(isEntitledProductItemContext, textTranslator, callToActionViewModel)
 		{
 			RenderingParametersContext = renderingParametersContext;
 		}
