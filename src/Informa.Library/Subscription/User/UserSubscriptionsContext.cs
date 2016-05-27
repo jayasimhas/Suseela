@@ -40,7 +40,7 @@ namespace Informa.Library.Subscription.User
 					return subscriptionSession.Value;
 				}
 
-				var subscriptions = Subscriptions = FindSubscriptions.Find(UserContext.User.Username);
+				var subscriptions = Subscriptions = FindSubscriptions.Find(UserContext.User?.Username);
 
 				return subscriptions;
 			}

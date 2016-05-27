@@ -36,7 +36,7 @@ namespace Informa.Web.ViewModels
 
 			DismissText = textTranslator.Translate("Subscriptions.Renewals.Dismiss");
 			Display = DisplayMessage(record);
-			Message = Display ? GetMessage(record, userContext.User.Name) : string.Empty;
+			Message = Display ? GetMessage(record, userContext.User?.Name ?? string.Empty) : string.Empty;
 			Id = context.ID;
 			RenewURL = context.RenewalLinkURL;
 			RenewURLText = context.RenewalLinkText;

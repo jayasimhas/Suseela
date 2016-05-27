@@ -18,8 +18,8 @@ namespace Informa.Web.ViewModels.PopOuts
 			UserContext = userContext;
 		}
 
-		public string AuthUserEmail => UserContext.User.Email;
-		public string AuthUserName => UserContext.User.Name;
+		public string AuthUserEmail => UserContext.User?.Email ?? string.Empty;
+		public string AuthUserName => UserContext.User?.Name ?? string.Empty;
 
 		public string EmailSearchText => TextTranslator.Translate("Search.EmailPopout.EmailSearchResults");
 		public string EmailSentSuccessMessage => TextTranslator.Translate("Search.EmailPopout.EmailSentSuccessMessage");

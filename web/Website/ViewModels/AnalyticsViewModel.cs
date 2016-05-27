@@ -94,7 +94,7 @@ namespace Informa.Web.ViewModels
         public string ArticleTherapy => GetArticleTaxonomy(ItemReferences.TherapyAreasTaxonomyFolder);
         public string SiteEnvrionment => SiteSettings.GetSetting("Env.Value", string.Empty);
         public bool IsUserLoggedIn => AuthenticatedUserContext.IsAuthenticated;
-        public string UserName => AuthenticatedUserContext.User.Name;
+        public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
 
         public string UserCompany => UserCompanyContext?.Company?.Name;
         public string CorporateName => UserCompanyContext?.Company?.Name;

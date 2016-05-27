@@ -79,7 +79,7 @@ namespace Informa.Web.ViewModels
 
         public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
 		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
-		public string UserName => AuthenticatedUserContext.User.Name;
+		public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
 		public string CorporateName => UserCompanyContext?.Company?.Name;
 		public string Title
 		{

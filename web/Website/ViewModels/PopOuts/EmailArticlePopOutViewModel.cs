@@ -26,8 +26,8 @@ namespace Informa.Web.ViewModels.PopOuts
 			Article = ArticleRenderingContext.Get<IArticle>();
 		}
 
-		public string AuthUserEmail => UserContext.User.Email;
-		public string AuthUserName => UserContext.User.Name;
+		public string AuthUserEmail => UserContext.User?.Email ?? string.Empty;
+		public string AuthUserName => UserContext.User?.Name ?? string.Empty;
 
 		public string EmailArticleText => TextTranslator.Translate("Article.EmailPopout.EmailArticle");
 		public string EmailSentSuccessMessage => TextTranslator.Translate("Article.EmailPopout.EmailSentSuccessMessage");

@@ -84,7 +84,7 @@ namespace Informa.Web.ViewModels
 		public string PrintPageHeaderLogoSrc => SiteRoot.Value.Print_Logo?.Src ?? string.Empty;
 		public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRoot.Value.Print_Message);
 		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
-		public string UserName => AuthenticatedUserContext.User.Name;
+		public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
 		public string CorporateName => CompanyNameContext.Name;
 
 		private string BuildLink(Link l)

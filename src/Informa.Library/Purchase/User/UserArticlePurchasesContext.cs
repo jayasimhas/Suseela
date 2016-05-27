@@ -40,7 +40,7 @@ namespace Informa.Library.Purchase.User
 					return session.Value;
 				}
 
-				var subscriptions = ArticlesPurchases = FindArticlePurchases.Find(UserContext.User.Username);
+				var subscriptions = ArticlesPurchases = FindArticlePurchases.Find(UserContext.User?.Username ?? string.Empty);
 
 				return subscriptions;
 			}
