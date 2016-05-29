@@ -13,7 +13,7 @@ namespace Informa.Library.Publishing.Scheduled.Tasks
 
         public void Process()
         {
-            sql.UnLockUsers(sql.GetLockedUsers());
+            sql.UnLockUsers(sql.GetLockedUsers()); 
         }
     }
 }
