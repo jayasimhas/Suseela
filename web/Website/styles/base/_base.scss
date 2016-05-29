@@ -83,3 +83,9 @@ hr {
 	clear: both;
     height: 1px;
 }
+
+@media (max-width: 480px){
+	.main-menu__footer{
+		margin-bottom: 115px;
+	}
+}
