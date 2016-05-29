@@ -9,7 +9,7 @@ namespace Informa.Library.Publishing.Scheduled.Tasks
 {
     public class SchedulingUnlockUser
     {
-        private CustomSqlMembershipProvider sql = new CustomSqlMembershipProvider();
+        private CustomSqlUserUnlocker sql = new CustomSqlUserUnlocker();
 
         public void Process()
         {
