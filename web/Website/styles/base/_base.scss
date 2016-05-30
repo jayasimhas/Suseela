@@ -84,8 +84,14 @@ hr {
     height: 1px;
 }
 
+.bottomSpace{
+	display:none;
+}
+
 @media (max-width: 480px){
-	.main-menu__footer{
-		margin-bottom: 115px;
+	
+	.bottomSpace{
+		display:block;
+		height: 20px;
 	}
 }
