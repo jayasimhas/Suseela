@@ -26,10 +26,10 @@ namespace Informa.Web.ViewModels
         protected readonly IManageSubscriptions _manageSubscriptions;
 
         public IndividualRenewalMessageViewModel(
-            ISalesforceServiceContext service, 
-            ITextTranslator textTranslator, 
-            IIndividualSubscriptionRenewalMessageContext context, 
-            IAuthenticatedUserContext userContext, 
+            ISalesforceServiceContext service,
+            ITextTranslator textTranslator,
+            IIndividualSubscriptionRenewalMessageContext context,
+            IAuthenticatedUserContext userContext,
             ISiteRootContext siteRootContext,
             IManageSubscriptions manageSubscriptions)
         {
@@ -64,7 +64,7 @@ namespace Informa.Web.ViewModels
 
                 var latestRecord = GetLatestRecord();
 
-                if(latestRecord == null
+                if (latestRecord == null
                     || latestRecord.ProductCode.ToLower() != PRODUCT_CODE
                     || (latestRecord.ExpirationDate - DateTime.Now).TotalDays > _siteRootContext.Item.Days_To_Expiration
                     || SUBSCRIPTIONTYPE.Contains(latestRecord.SubscriptionType.ToLower()) == false
@@ -88,18 +88,18 @@ namespace Informa.Web.ViewModels
             get
             {
                 var latestRecord = GetLatestRecord();
-                if(latestRecord == null)
+                if (latestRecord == null)
                     return _context.Message_FreeTrial
                         .Replace("#FIRST_NAME#", _userContext.User.Name)
                         .Replace("#SUB_EXPIRATION#", string.Empty);
                 else if (latestRecord?.SubscriptionType.ToLower() == "free-trial")
                     return _context.Message_FreeTrial
                         .Replace("#FIRST_NAME#", _userContext.User.Name)
-                        .Replace("#SUB_EXPIRATION#", latestRecord.ExpirationDate.ToShortDateString());
+                        .Replace("#SUB_EXPIRATION#", latestRecord.ExpirationDate.ToString("dd MMM yyyy"));
                 else
                     return _context.Message_IndividualSubscriptiong
                         .Replace("#FIRST_NAME#", _userContext.User.Name)
-                        .Replace("#SUB_EXPIRATION#", latestRecord.ExpirationDate.ToShortDateString());
+                        .Replace("#SUB_EXPIRATION#", latestRecord.ExpirationDate.ToString("dd MMM yyyy"));
             }
         }
 
