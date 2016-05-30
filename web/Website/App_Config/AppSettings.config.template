@@ -6,4 +6,5 @@
   <add key="PageInspector:ServerCodeMappingSupport" value="Disabled" />
   
   <add key="NewRelic.AppName" value="${NewRelic.AppName}" />
+  <add key="unlocktimer" value="20" />
 </appSettings>

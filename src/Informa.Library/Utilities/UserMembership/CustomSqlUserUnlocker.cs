@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-
+using System.Web.Configuration;
 
 namespace Informa.Library.Utilities.UserMembership
 {
@@ -25,8 +25,8 @@ namespace Informa.Library.Utilities.UserMembership
                 {
                     string UserId = rdr["UserId"].ToString();
                     DateTime LastLockoutDate = DateTime.Parse(rdr["LastLockoutDate"].ToString());
-                    double gab = (DateTime.Now - LastLockoutDate).TotalMinutes;
-                    if (gab > 20)
+                    double gab = (DateTime.Now - LastLockoutDate.ToLocalTime()).TotalMinutes;
+                    if (gab > Convert.ToInt32( WebConfigurationManager.AppSettings["unlocktimer"].ToString()))
                     {
                         unlockUsers.Add(UserId);
                     }
