@@ -64,6 +64,7 @@
                         this.location = $location;
 
                         $scope.$watch(function () {
+                           
                             return searchService.getFacetGroups();
                         }, function () {
                             _this.facetGroups = searchService.getFacetGroups();
@@ -310,16 +311,17 @@
                 _createClass(QueryController, [{
                     key: 'update',
                     value: function update() {
+                        this.service._isNewSearch = true;
                         this.service.getFilter('page').setValue("1");
                         this.service.getFilter('q').setValue(this.keywords);
 
                         var routerBuilder = this.service.getRouteBuilder();
                         this.location.search("q=" + this.keywords + "&page=1&sortBy=date&sortOrder=desc");
 
-                        console.log("?q=" + this.keywords + "&page=1&sortBy=date&sortOrder=desc");
+                        
 
                         this.service.query();
-
+                        //this.service._isNewSearch = false;
 
                     }
                 }]);
@@ -1641,12 +1643,20 @@
                         this._pager = new _Pager.Pager({});
                         this._results = [];
 
+                        this._isNewSearch = false;
+
                         _lodash2['default'].each(config.filters, function (filter) {
                             _this.addParamable(filter);
                         });
                     }
 
-                    _createClass(SearchService, [{
+                    _createClass(SearchService, [
+                        {
+                            key: 'getNewSearch',
+                            value: function getNewSearch() {
+                                return this._isNewSearch;
+                            }
+                        }, {
                         key: 'getParams',
                         value: function getParams() {
                             return this._params;
