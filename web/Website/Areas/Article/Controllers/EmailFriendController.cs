@@ -166,7 +166,7 @@ namespace Informa.Web.Areas.Article.Controllers
                 replacements["#article_mediatype#"] = article?.Media_Type?.Item_Name ?? string.Empty;
                 replacements["#article_title#"] = article?.Title ?? String.Empty;
                 replacements["#article_titleURL#"] = (article != null)
-                    ? $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{article._Url}"
+                    ? $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{article._Url}?utm_medium=email&utm_campaign=emailfriend"
                     : string.Empty;
                 replacements["#article_authorBy#"] = (article != null && article.Authors.Any())
                     ? TextTranslator.Translate("Article.By")
