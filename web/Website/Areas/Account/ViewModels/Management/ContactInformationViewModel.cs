@@ -8,6 +8,7 @@ using Informa.Library.Globalization;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
 using Informa.Library.Utilities.References;
+using Informa.Library.ViewModels.Account;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 using Informa.Web.ViewModels;

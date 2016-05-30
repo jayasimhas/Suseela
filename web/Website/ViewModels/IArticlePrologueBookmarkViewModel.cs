@@ -1,4 +1,5 @@
-﻿using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+﻿using Informa.Library.ViewModels.Account;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Web.ViewModels
 {

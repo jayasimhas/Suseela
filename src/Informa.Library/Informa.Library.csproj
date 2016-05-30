@@ -425,8 +425,15 @@
     <Compile Include="Site\SiteFooterNavigationContext.cs" />
     <Compile Include="Site\SiteHostName.cs" />
     <Compile Include="Site\SiteRootsContext.cs" />
+    <Compile Include="Subscription\IIndividualSubscriptionRenewalMessageContext.cs" />
+    <Compile Include="Subscription\IndividualSubscriptionRenewalMessageContext.cs" />
+    <Compile Include="Subscription\ISubscription.cs" />
+    <Compile Include="Subscription\User\IFindUserSubscriptions.cs" />
+    <Compile Include="Subscription\User\IUserSubscribedContext.cs" />
     <Compile Include="Subscription\User\IUserSubscriptionsContext.cs" />
+    <Compile Include="Subscription\User\UserSubscribedContext.cs" />
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
+    <Compile Include="User\Newsletter\EmailOptIns\OptInManager.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserSession.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUserSession.cs" />
     <Compile Include="User\Authentication\ISendPluginUserLockedOutEmail.cs" />
@@ -600,10 +607,9 @@
     <Compile Include="Services\NlmExport\Models\Front\NlmJournalMetaModel.cs" />
     <Compile Include="Services\NlmExport\Models\NlmArticleModel.cs" />
     <Compile Include="Services\NlmExport\NlmExportService.cs" />
-    <Compile Include="Subscription\IIndividualSubscriptionRenewalMessageContext.cs" />
-    <Compile Include="Subscription\IndividualSubscriptionRenewalMessageContext.cs" />
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
+    <Compile Include="User\Newsletter\EmailOptIns\OptInResponseModel.cs" />
     <Compile Include="User\Newsletter\FindSiteNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IFindSiteNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IPublicationsNewsletterUserOptInContext.cs" />
@@ -619,7 +625,6 @@
     <Compile Include="User\Newsletter\ISitesNewsletterTypes.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptIn.cs" />
-    <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptInContext.cs" />
     <Compile Include="User\Newsletter\PublicationsNewsletterUserOptInContext.cs" />
     <Compile Include="User\Newsletter\SetByTypeNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\SetPublicationsNewsletterUserOptIns.cs" />
@@ -646,7 +651,6 @@
     <Compile Include="User\Newsletter\SiteNewsletterUserOptedInContext.cs" />
     <Compile Include="User\Newsletter\UpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\UpdateSiteNewsletterUserOptIn.cs" />
-    <Compile Include="User\Newsletter\UpdateSiteNewsletterUserOptInContext.cs" />
     <Compile Include="User\Offer\OfferUserOptedInContext.cs" />
     <Compile Include="User\Offer\UpdateOfferUserOptInContext.cs" />
     <Compile Include="User\Document\RemoveDocumentContext.cs" />
@@ -900,8 +904,6 @@
     <Compile Include="Site\SiteMainNavigationContext.cs" />
     <Compile Include="Site\SiteMaintenanceContext.cs" />
     <Compile Include="Site\SiteMaintenanceInfo.cs" />
-    <Compile Include="Subscription\User\IUserSubscribedContext.cs" />
-    <Compile Include="Subscription\User\UserSubscribedContext.cs" />
     <Compile Include="User\Authentication\Web\WebLogoutUser.cs" />
     <Compile Include="User\Authentication\SitecoreVirtualUsernameFactory.cs" />
     <Compile Include="User\Authentication\Web\WebLogoutUserActions.cs" />
@@ -930,8 +932,6 @@
     <Compile Include="User\Profile\AccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IAccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IFindUserProfileByUsername.cs" />
-    <Compile Include="Subscription\User\IFindUserSubscriptions.cs" />
-    <Compile Include="Subscription\ISubscription.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInFactory.cs" />
     <Compile Include="User\Newsletter\IFindNewsletterUserOptIns.cs" />
     <Compile Include="User\Offer\IOfferUserOptedIn.cs" />
@@ -1074,6 +1074,8 @@
     <Compile Include="Utilities\WebUtils\IRefreshPage.cs" />
     <Compile Include="Utilities\WebUtils\RefreshPage.cs" />
     <Compile Include="Utilities\WebUtils\UrlUtils.cs" />
+    <Compile Include="ViewModels\Account\ISignInViewModel.cs" />
+    <Compile Include="ViewModels\Account\SignInViewModel.cs" />
     <Compile Include="Wrappers\HttpContextProvider.cs" />
     <Compile Include="Wrappers\SitecoreSecurityWrapper.cs" />
     <Compile Include="Wrappers\SitecoreServiceAliases.cs" />

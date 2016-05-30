@@ -706,7 +706,6 @@
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
-    <Compile Include="Areas\Account\ViewModels\Subscription\SubscriptionModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Attributes\AdminOnlyAttribute.cs" />
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
@@ -824,7 +823,6 @@
     <Compile Include="ViewModels\HierarchyLinksViewModel.cs" />
     <Compile Include="ViewModels\IArticleListItemModelFactory.cs" />
     <Compile Include="ViewModels\IListableVIewModel.cs" />
-    <Compile Include="ViewModels\ISignInViewModel.cs" />
     <Compile Include="ViewModels\LatestNewsViewModel.cs" />
     <Compile Include="ViewModels\ManuallyCuratedContentViewModel.cs" />
     <Compile Include="ViewModels\PersonModel.cs" />
@@ -849,7 +847,6 @@
     <Compile Include="ViewModels\PopOuts\SignInPopOutViewModel.cs" />
     <Compile Include="ViewModels\ScheduledPublishTestViewModel.cs" />
     <Compile Include="ViewModels\SideNavigationMenuViewModel.cs" />
-    <Compile Include="ViewModels\SignInViewModel.cs" />
     <Compile Include="ViewModels\TaxonomyHierarchyViewModel.cs" />
     <Compile Include="ViewModels\TestUserResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\TopicAlertButtonModel.cs" />

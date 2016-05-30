@@ -1,0 +1,121 @@
+﻿using System;
+using Glass.Mapper.Sc;
+using Informa.Library.Publication;
+using Informa.Library.User.Authentication;
+using Informa.Library.User.Offer;
+using Informa.Library.ViewModels.Account;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
+using Jabberwocky.Autofac.Attributes;
+
+namespace Informa.Library.User.Newsletter.EmailOptIns
+{
+    public interface IOptInManager
+    {
+        OptInResponseModel OptIn(string publicationName);
+        OptInResponseModel OptOut(string userName, string type, string publicationName);
+    }
+
+    [AutowireService]
+    public class OptInManager : IOptInManager
+    {
+        private readonly IDependencies _dependencies;
+
+        [AutowireService(IsAggregateService = true)]
+        public interface IDependencies
+        {
+            ISitecoreContext SitecoreContext { get; }
+            IAuthenticatedUserContext AuthenticatedUserContext { get; }
+            IUpdateNewsletterUserOptInsContext UpdateNewsletterUserOptInsContext { get; }
+            ISignInViewModel SignInViewModel { get; }
+            ISitePublicationContext SitePublicationContext { get; }
+            INewsletterUserOptInFactory NewsletterUserOptInFactory { get; }
+            IUpdateSiteNewsletterUserOptIn UpdateSiteNewsletterUserOptIn { get; }
+            IUpdateOfferUserOptIn UpdateOfferUserOptIn { get; }
+            IUpdateOfferUserOptInContext UpdateOfferUserOptInContext { get; }
+        }
+
+        public OptInManager(IDependencies dependencies)
+        {
+            _dependencies = dependencies;
+        }
+
+        public OptInResponseModel OptIn(string publicationName)
+        {
+            var page = _dependencies.SitecoreContext.GetCurrentItem<ISubscribe_Page>();
+
+            var responseModel = new OptInResponseModel
+            {
+                BodyText = page.Body.Replace("#USER_EMAIL#", _dependencies.AuthenticatedUserContext?.User?.Username ?? string.Empty),
+                IsAuthenticated = _dependencies.AuthenticatedUserContext?.IsAuthenticated ?? false,
+                SignInViewModel = _dependencies.SignInViewModel
+            };
+
+            if (!responseModel.IsAuthenticated)
+            {
+                //redirect to email preferences
+                var url = page._Parent?._Url ?? string.Empty;
+                if (!string.IsNullOrEmpty(url))
+                {
+                    responseModel.RedirectUrl = url;
+                }
+                return responseModel;
+            }
+
+            var isCurrentPublication = !string.IsNullOrEmpty(publicationName)
+                                       && (string.Equals(publicationName, _dependencies.SitePublicationContext.Name,
+                                           StringComparison.CurrentCultureIgnoreCase));
+            if (isCurrentPublication)
+            {
+                var userOptIn = _dependencies.NewsletterUserOptInFactory.Create(_dependencies.SitePublicationContext.Name, true);
+                _dependencies.UpdateNewsletterUserOptInsContext.Update(new[] { userOptIn });
+            }
+
+            return responseModel;
+        }
+
+        public OptInResponseModel OptOut(string userName, string type, string publicationName)
+        {
+            var page = _dependencies.SitecoreContext.GetCurrentItem<IUnsubscribe_Page>();
+
+            var responseModel = new OptInResponseModel
+            {
+                BodyText = page.Body,
+                SignInViewModel = _dependencies.SignInViewModel
+            };
+
+            if (string.IsNullOrEmpty(type))
+            {
+                return responseModel;
+            }
+
+            //process unsubscribe
+            var newsletterType = _dependencies.SitePublicationContext.Name;
+
+            if (type.ToLower() == "newsletter" && !string.IsNullOrEmpty(publicationName) && (publicationName.ToLower() == newsletterType.ToLower()))
+            {
+                if (_dependencies.AuthenticatedUserContext.IsAuthenticated)
+                {
+                    var userOptIn = _dependencies.NewsletterUserOptInFactory.Create(_dependencies.SitePublicationContext.Name, false);
+                    _dependencies.UpdateNewsletterUserOptInsContext.Update(new[] { userOptIn });
+                }
+                else if (!string.IsNullOrWhiteSpace(userName))
+                {
+                    _dependencies.UpdateSiteNewsletterUserOptIn.Update(userName, false);
+                }
+            }
+            else if (type.ToLower() == "promotions")
+            {
+                if (responseModel.IsAuthenticated)
+                {
+                    _dependencies.UpdateOfferUserOptInContext.Update(false);
+                }
+                else if (!string.IsNullOrWhiteSpace(userName))
+                {
+                    _dependencies.UpdateOfferUserOptIn.Update(userName, false);
+                }
+            }
+
+            return responseModel;
+        }
+    }
+}

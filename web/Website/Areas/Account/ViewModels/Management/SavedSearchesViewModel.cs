@@ -3,6 +3,7 @@ using Informa.Library.Globalization;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Content;
 using Informa.Library.User.Search;
+using Informa.Library.ViewModels.Account;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;

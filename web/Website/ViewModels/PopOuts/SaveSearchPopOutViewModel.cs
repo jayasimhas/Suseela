@@ -1,5 +1,6 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.User.Authentication;
+using Informa.Library.ViewModels.Account;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;

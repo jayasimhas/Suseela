@@ -1,4 +1,6 @@
-﻿namespace Informa.Web.ViewModels.PopOuts
+﻿using Informa.Library.ViewModels.Account;
+
+namespace Informa.Web.ViewModels.PopOuts
 {
 	public interface ISignInPopOutViewModel
 	{
