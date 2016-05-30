@@ -18,6 +18,8 @@ namespace Informa.Library.Utilities.References
 
         public const string DTDPath = "Util\\DTD\\";
 
+        public const string CryptoKey = "Ajv4FMtL7Iuq3H04ZkQC";
+
         public const string ScripRootNode = "{3818C47E-4B75-4305-8F01-AB994150A1B0}";
         public const string ScripRootNodeIntials = "SC";
         public const string ScripEmailConfig = "{077AB43D-8F0F-413E-A585-4DB65EA23234}";

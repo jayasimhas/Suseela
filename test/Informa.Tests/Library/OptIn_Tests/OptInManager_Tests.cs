@@ -2,6 +2,8 @@
 using System.Linq;
 using Informa.Library.User.Newsletter;
 using Informa.Library.User.Newsletter.EmailOptIns;
+using Informa.Library.User.Search;
+using Informa.Library.Utilities.References;
 using NSubstitute;
 using NUnit.Framework;
 
@@ -53,6 +55,40 @@ namespace Informa.Tests.Library.Subscription_Tests
             // ASSERT
             _dependencies.UpdateNewsletterUserOptInsContext.Received(1)
                 .Update(Arg.Is<IEnumerable<INewsletterUserOptIn>>(opts => opts.First().OptIn == false));
+        }
+
+        [Test]
+        public void ParseToken_GetsToken_ReturnsSavedSearchEntity()
+        {
+            // ARRANGE
+            var token = "encryptoFun";
+            _dependencies.Crypto.DecryptStringAes("encryptoFun", Constants.CryptoKey)
+                .Returns("Edward J Moose|moose tennis");
+
+            // ACT
+            var result = _optInManager.ParseToken(token);
+
+            // ASSERT
+            Assert.AreEqual("Edward J Moose", result.Username);
+            Assert.AreEqual("moose tennis", result.Name);
+        }
+
+        [Test]
+        public void AnnonymousOptOut_GetToken_CallsSavedSearchService()
+        {
+            // ARRANGE
+            var token = "encryptoFun";
+            _dependencies.Crypto.DecryptStringAes("encryptoFun", Constants.CryptoKey)
+                .Returns("Edward J Moose|moose tennis");
+
+            // ACT
+            var result = _optInManager.AnnonymousOptOut(token);
+
+            // ASSERT
+            _dependencies.SavedSearchEntityRepository.Received(1)
+                .Delete(
+                    Arg.Is<ISavedSearchEntity>(
+                        arg => arg.Username.Equals("Edward J Moose") && arg.Name.Equals("moose tennis")));
         }
     }
 }

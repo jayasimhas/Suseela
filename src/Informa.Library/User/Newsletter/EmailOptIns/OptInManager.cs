@@ -1,8 +1,14 @@
 ﻿using System;
+using System.Linq;
 using Glass.Mapper.Sc;
 using Informa.Library.Publication;
 using Informa.Library.User.Authentication;
+using Informa.Library.User.Content;
 using Informa.Library.User.Offer;
+using Informa.Library.User.Search;
+using Informa.Library.Utilities.Extensions;
+using Informa.Library.Utilities.References;
+using Informa.Library.Utilities.Security;
 using Informa.Library.ViewModels.Account;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 using Jabberwocky.Autofac.Attributes;
@@ -13,6 +19,7 @@ namespace Informa.Library.User.Newsletter.EmailOptIns
     {
         OptInResponseModel OptIn(string publicationName);
         OptInResponseModel OptOut(string userName, string type, string publicationName);
+        OptInResponseModel AnnonymousOptOut(string token);
     }
 
     [AutowireService]
@@ -32,6 +39,8 @@ namespace Informa.Library.User.Newsletter.EmailOptIns
             IUpdateSiteNewsletterUserOptIn UpdateSiteNewsletterUserOptIn { get; }
             IUpdateOfferUserOptIn UpdateOfferUserOptIn { get; }
             IUpdateOfferUserOptInContext UpdateOfferUserOptInContext { get; }
+            ICrypto Crypto { get; }
+            IUserContentRepository<ISavedSearchEntity> SavedSearchEntityRepository { get; }
         }
 
         public OptInManager(IDependencies dependencies)
@@ -116,6 +125,35 @@ namespace Informa.Library.User.Newsletter.EmailOptIns
             }
 
             return responseModel;
+        }
+
+        public OptInResponseModel AnnonymousOptOut(string token)
+        {
+            var entity = ParseToken(token);
+            var response = new OptInResponseModel {IsAuthenticated = false};
+
+            response.BodyText = entity == null
+                ? "Unsubscribe failed.  The url could not be properly parsed."
+                : _dependencies.SavedSearchEntityRepository.Delete(entity).Message;
+
+            return response;
+        }
+
+        public SavedSearchEntity ParseToken(string token)
+        {
+            var decrypted = _dependencies.Crypto.DecryptStringAes(token, Constants.CryptoKey);
+
+            if (string.IsNullOrEmpty(decrypted)) { return null; }
+
+            var split = decrypted.Split('|');
+            if (split.Length < 2 || split.Any(string.IsNullOrEmpty))
+            { return null; }
+
+            return new SavedSearchEntity
+            {
+                Username = split[0],
+                Name = split[1]
+            };
         }
     }
 }

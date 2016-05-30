@@ -123,7 +123,7 @@
     <Compile Include="Library\Mail_Tests\ExactTarget_Tests\ExactTargetClient_Tests.cs" />
     <Compile Include="Library\Services\NlmExport\NlmExportServiceTests.cs" />
     <Compile Include="Library\Services\NlmExport\Serialization\NlmSerializerTests.cs" />
-    <Compile Include="Library\Subscription_Tests\SubscriptionUpdater_Tests.cs" />
+    <Compile Include="Library\OptIn_Tests\OptInManager_Tests.cs" />
     <Compile Include="Library\Utilities_Tests\StringUtils_Tests\BylineMaker_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,5 +1,7 @@
 ﻿using System.Web.Mvc;
 using Informa.Library.User.Newsletter.EmailOptIns;
+using Informa.Library.Utilities.References;
+using Informa.Library.Utilities.Security;
 using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Web.Areas.Account.Controllers
@@ -12,6 +14,7 @@ namespace Informa.Web.Areas.Account.Controllers
         public interface IDependencies
         {
             IOptInManager OptInManager { get; }
+            ICrypto Crypto { get; }
         }
 
         public SubscriptionPageController(IDependencies dependencies)
@@ -43,6 +46,9 @@ namespace Informa.Web.Areas.Account.Controllers
 
         public ActionResult SafeUnsubscribe(string Token)
         {
+            var decrypted = _dependencies.Crypto.DecryptStringAes(Token, Constants.CryptoKey);
+            
+
             return null;
         }
     }
