@@ -1,8 +1,10 @@
-﻿namespace Informa.Library.User.Newsletter
+﻿using Informa.Library.Publication;
+
+namespace Informa.Library.User.Newsletter
 {
 	public interface ISiteNewsletterTypes
 	{
-		string Publication { get; }
+		ISitePublication Publication { get; }
 		string Breaking { get; }
 		string Daily { get; }
 		string Weekly { get; }

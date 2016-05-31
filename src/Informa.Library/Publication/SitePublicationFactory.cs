@@ -4,7 +4,7 @@ using Jabberwocky.Autofac.Attributes;
 namespace Informa.Library.Publication
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
-	public class SitePublicationFactory
+	public class SitePublicationFactory : ISitePublicationFactory
 	{
 		protected readonly ISitePublicationCodeFactory CodeFactory;
 		protected readonly ISitePublicationNameFactory NameFactory;

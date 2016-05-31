@@ -366,6 +366,7 @@
     <Compile Include="Publication\IArticleMappingRepository.cs" />
     <Compile Include="Publication\ISitePublication.cs" />
     <Compile Include="Publication\ISitePublicationCodeFactory.cs" />
+    <Compile Include="Publication\ISitePublicationFactory.cs" />
     <Compile Include="Publication\ISitePublicationNameFactory.cs" />
     <Compile Include="Publication\ISitesPublicationNameContext.cs" />
     <Compile Include="Publication\ISitePublicationNameContext.cs" />

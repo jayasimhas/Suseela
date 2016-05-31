@@ -7,12 +7,12 @@ namespace Informa.Library.User.Newsletter
 	[AutowireService]
 	public class SiteNewsletterTypesFactory : ISiteNewsletterTypesFactory
 	{
-		protected readonly ISitePublicationCodeFactory SitePublicationCodeFactory;
+		protected readonly ISitePublicationFactory SitePublicationFactory;
 
 		public SiteNewsletterTypesFactory(
-			ISitePublicationCodeFactory sitePublicationCodeFactory)
+			ISitePublicationFactory sitePublicationFactory)
 		{
-			SitePublicationCodeFactory = sitePublicationCodeFactory;
+			SitePublicationFactory = sitePublicationFactory;
 		}
 
 		public ISiteNewsletterTypes Create(ISite_Root siteRoot)
@@ -22,7 +22,7 @@ namespace Informa.Library.User.Newsletter
 				Breaking = siteRoot.Newsletter_Breaking_Type,
 				Daily = siteRoot.Newsletter_Daily_Type,
 				Weekly = siteRoot.Newsletter_Weekly_Type,
-				Publication = SitePublicationCodeFactory.Create(siteRoot)
+				Publication = SitePublicationFactory.Create(siteRoot)
 			};
 		}
 	}
