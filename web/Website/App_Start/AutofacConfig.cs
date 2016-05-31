@@ -13,8 +13,6 @@ using log4net;
 using Informa.Library.CustomSitecore.Mvc;
 using Informa.Library.Utilities.Autofac.Modules;
 using Informa.Web.Controllers;
-using Informa.Web.Controllers.Search;
-using Jabberwocky.Autofac.Extras.MiniProfiler;
 using Velir.Search.Autofac.Modules;
 
 namespace Informa.Web.App_Start
@@ -71,10 +69,6 @@ namespace Informa.Web.App_Start
 			// Custom Modules
 			builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));
 			builder.RegisterModule(new AutomapperModule(LibraryDll));
-
-#if DEBUG
-			builder.RegisterModule(new MiniProfilerModule(WebsiteDll, LibraryDll, VelirSearchDll, GlassMapperDll, GlassMapperScDll, GlassMapperMvcDll));
-#endif
 
 			// Custom Registrations
 			CustomMvcRegistrar.RegisterDependencies(builder, WebsiteDll);

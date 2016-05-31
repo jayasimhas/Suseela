@@ -4,7 +4,6 @@ using Sitecore;
 using Sitecore.Diagnostics;
 using Sitecore.Mvc.Pipelines.Response.RenderRendering;
 using Sitecore.Mvc.Presentation;
-using StackExchange.Profiling;
 
 namespace Informa.Library.CustomSitecore.Pipelines.RenderRenderings
 {
@@ -16,10 +15,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.RenderRenderings
 
 			try
 			{
-				using (MiniProfiler.Current.Step($"Rendering:{args.Rendering.RenderingItem.DisplayName}"))
-				{
-					success = base.Render(renderer, writer, args);
-				}
+				success = base.Render(renderer, writer, args);
 			}
 			catch (Exception e)
 			{
