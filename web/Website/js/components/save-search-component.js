@@ -21,8 +21,13 @@ $(document).ready(function() {
 		$('.js-save-search-title').val($('#js-search-field').val());
 	});
 
-	$('.js-set-topic-alert').on('click', function(e) {
+	// Populates topic alert data when a user is logging in and saving simultaneously
+	$('.js-update-topic-alert').on('click', function(e) {
+		$('.js-save-search-url').val($(this).data('topic-alert-url'));
+		$('.js-save-search-title').val($(this).data('topic-alert-title'));
+	});
 
+	$('.js-set-topic-alert').on('click', function(e) {
 		var isSettingAlert = !$(this).data('has-topic-alert');
 
 		$('.js-save-search-url').val($(this).data('topic-alert-url'));
@@ -66,7 +71,9 @@ $(document).ready(function() {
 
 			window.lightboxController.closeLightboxModal();
 
-			angular.element($('.js-saved-search-controller')[0]).controller().searchIsSaved();
+			if(typeof angular !== 'undefined') {
+				angular.element($('.js-saved-search-controller')[0]).controller().searchIsSaved();
+			}
 		},
 		beforeRequest: function(form) {
 			if(!$(form).find('.js-save-search-title').val().trim()) {
@@ -89,12 +96,13 @@ $(document).ready(function() {
 				login_state: 'successful',
 				userName: '"' + $(form).find('input[name=username]').val() + '"'
 			};
-
 			analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
 
 			// If Angular, need location.reload to force page refresh
 			if(typeof angular !== 'undefined') {
 				angular.element($('.search-results')[0]).controller().forceRefresh();
+			} else {
+				window.location.reload(false);
 			}
 		}
 	});
@@ -115,14 +123,25 @@ $(document).ready(function() {
 
 	// On page load, check for any stashed searches that need to be saved
 	var saveStashedSearch = Cookies.getJSON('saveStashedSearch');
-	if(saveStashedSearch) {
 
+	if(saveStashedSearch) {
+		console.log(saveStashedSearch);
 		// Set `Save Search` values from stashed search data
 		$('.js-save-search-title').val(saveStashedSearch['Title']);
 		$('.js-save-search-url').val(saveStashedSearch['Url']);
 		$('#AlertEnabled').prop('checked', saveStashedSearch['AlertEnabled']);
 
-		// Save the stashed search
-		$('.form-save-search').find('button[type=submit]').click();
+		// Save the stashed search if Search (Angular) page
+		if(typeof angular !== 'undefined') {
+			$('.form-save-search').find('button[type=submit]').click();
+		} else {
+			$('.js-set-topic-alert').each(function(index, item) {
+				if($(item).data('topic-alert-url') === saveStashedSearch['Url']) {
+					$(item).click();
+					// If there's a stashed search, remove it.
+					Cookies.remove('saveStashedSearch');
+				}
+			});
+		}
 	}
 });
