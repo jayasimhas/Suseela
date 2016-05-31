@@ -8,6 +8,7 @@ using Informa.Library.Search.Results;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Document;
 using Informa.Library.Utilities.TokenMatcher;
+using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Factory;
 using Velir.Search.Core.Facets;
 using Velir.Search.Core.Managers;
@@ -27,6 +28,7 @@ namespace Informa.Web.Controllers.Search
 		private readonly ISearchManager<InformaSearchResultItem> _searchManager;
 		private readonly IQueryFormatter _queryFormatter;
 		private readonly IGlassInterfaceFactory _interfaceFactory;
+		private readonly ICacheProvider _cacheProvider;
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IIsSavedDocumentContext IsSavedDocumentContext;
 
@@ -35,6 +37,7 @@ namespace Informa.Web.Controllers.Search
 			ISearchPageParser parser,
 			IQueryFormatter queryFormatter,
 		IGlassInterfaceFactory interfaceFactory,
+		ICacheProvider cacheProvider,
 			IAuthenticatedUserContext userContext,
 			IIsSavedDocumentContext isSavedDocumentContext)
 						: base(searchManager, parser)
@@ -43,6 +46,7 @@ namespace Informa.Web.Controllers.Search
 			_parser = parser;
 			_queryFormatter = queryFormatter;
 			_interfaceFactory = interfaceFactory;
+			_cacheProvider = cacheProvider;
 			UserContext = userContext;
 			IsSavedDocumentContext = isSavedDocumentContext;
 		}
@@ -92,7 +96,9 @@ namespace Informa.Web.Controllers.Search
 
 		private IEnumerable<FacetGroup> GetMultiSelectFacetResults(ApiSearchRequest request)
 		{
-			var facets = _parser.RefinementOptions.OfType<IFacet>().Where(f => f.Is_Multi_Value && !f.And_Filter).Select(f => f.Key);
+			var facets = _cacheProvider.GetFromCache($"GetMulitSelectFacets:ID:{_parser.ListingConfiguration._Id}", () => _parser.RefinementOptions.OfType<IFacet>().Where(f => f.Is_Multi_Value && !f.And_Filter).Select(f => f.Key).ToArray());
+
+			if (!facets.Any()) return Enumerable.Empty<FacetGroup>();
 
 			var newRequest = new ApiSearchRequest(_parser, _interfaceFactory)
 			{
@@ -107,11 +113,17 @@ namespace Informa.Web.Controllers.Search
 				newRequest.QueryParameters.Remove(facet);
 			}
 
-			var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
-			q.FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, newRequest);
-			q.QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, newRequest);
-			q.FacetBuilder = new SearchFacetBuilder<InformaSearchResultItem>(request.GetRefinements().Where(r => facets.Contains(r.RefinementKey)));
-			q.SortBuilder = null;
+			if (request.QueryParameters.Count == newRequest.QueryParameters.Count) return Enumerable.Empty<FacetGroup>();
+
+			var q = new SearchQuery<InformaSearchResultItem>(request, _parser)
+			{
+				FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, newRequest),
+				QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, newRequest),
+				FacetBuilder =
+					new SearchFacetBuilder<InformaSearchResultItem>(
+						request.GetRefinements().Where(r => facets.Contains(r.RefinementKey))),
+				SortBuilder = null
+			};
 
 			var results = _searchManager.GetItems(q);
 
