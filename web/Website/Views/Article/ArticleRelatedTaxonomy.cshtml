@@ -10,14 +10,15 @@
             {
                 <li class="article-topics__section-header">@catagory.Text</li>foreach (var tag in catagory.Children)
                 {
-                    <li class="article-topics__li"><a href="@tag.Url" class="click-utag" data-info='{"event_name"="related-taxonomy", "taxonomy-name"="@tag.Text","taxonomy-category"="@catagory.Text"}'>@tag.Text</a></li>foreach (var childTag in tag.Children)
+                    <li class="article-topics__li"><a href="@tag.Url"
+                                                      class="click-utag"
+                                                      data-info='{"event_name"="related-taxonomy", "taxonomy-name"="@tag.Text","taxonomy-category"="@catagory.Text"}'>@tag.Text</a></li>
+                    foreach (var childTag in tag.Children)
                     {
                         Html.RenderPartial("ChildTaxonomy", childTag);
                     }
                 }
             }
-
-
         </ul>
     </div>
 }

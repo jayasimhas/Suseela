@@ -417,6 +417,8 @@
     <Compile Include="Services\Article\IArticleService.cs" />
     <Compile Include="Services\Global\GlobalService.cs" />
     <Compile Include="Services\Global\IGlobalService.cs" />
+    <Compile Include="Services\Global\ITaxonomyService.cs" />
+    <Compile Include="Services\Global\TaxonomyService.cs" />
     <Compile Include="Session\ISessionValue`1.cs" />
     <Compile Include="Session\ISpecificSessionStore.cs" />
     <Compile Include="Session\ISpecificSessionStores.cs" />
@@ -437,6 +439,8 @@
     <Compile Include="Site\SiteRootsContext.cs" />
     <Compile Include="Subscription\User\IUserSubscriptionsContext.cs" />
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
+    <Compile Include="Taxonomy\HeirarchyLinks.cs" />
+    <Compile Include="Taxonomy\IHeirarchyLinks.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserSession.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUserSession.cs" />
     <Compile Include="User\Authentication\ISendPluginUserLockedOutEmail.cs" />

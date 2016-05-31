@@ -5,6 +5,8 @@ using Jabberwocky.Glass.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Glass.Mapper.Sc;
+using Informa.Library.Services.Global;
+using Jabberwocky.Core.Caching;
 
 namespace Informa.Library.Navigation
 {
@@ -16,7 +18,8 @@ namespace Informa.Library.Navigation
 	    [AutowireService(true)]
 	    public interface IDependencies
 	    {
-            ISitecoreContext SitecoreContext { get; }
+            IGlobalService GlobalService { get; }
+            ICacheProvider CacheProvider { get; }
 	    }
 
 	    public ItemNavigationTreeFactory(IDependencies dependencies)
@@ -25,11 +28,17 @@ namespace Informa.Library.Navigation
 	    }
 
 	    public IEnumerable<INavigation> Create(Guid navigationRootGuid)
-	        => Create(_dependencies.SitecoreContext.GetItem<INavigation_Root>(navigationRootGuid));
+	        => Create(_dependencies.GlobalService.GetItem<INavigation_Root>(navigationRootGuid));
 
-        public IEnumerable<INavigation> Create(INavigation_Root navigationRootItem)
-		{
-			if (navigationRootItem == null)
+	    public IEnumerable<INavigation> Create(INavigation_Root navigationRootItem)
+	    {
+            string cacheKey = $"{nameof(ItemNavigationTreeFactory)}-Create-{navigationRootItem._Id}";
+            return _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildNavigation(navigationRootItem));
+        }
+
+        private IEnumerable<INavigation> BuildNavigation(INavigation_Root navigationRootItem) {
+            
+            if (navigationRootItem == null)
 			{
 				return Enumerable.Empty<INavigation>();
 			}

@@ -15,7 +15,7 @@ namespace Informa.Web.ViewModels
 
         #region Implementation of IPersonModel                       
 
-        public string Name => _author.First_Name + " " + _author.Last_Name;
+        public string Name => $"{_author.First_Name} {_author.Last_Name}";
         public string Twitter => _author.Twitter;
         public string Email_Address => _author.Email_Address;
         public string Image => _author.Image?.Src;

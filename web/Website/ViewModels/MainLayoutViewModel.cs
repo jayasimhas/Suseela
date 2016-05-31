@@ -11,16 +11,18 @@ using System.Web;
 using System.Web.Mvc;
 using Informa.Library.Globalization;
 using Informa.Library.Company;
+using Informa.Library.Services.Global;
 using Informa.Library.SiteDebugging;
 
 namespace Informa.Web.ViewModels
 {
 	public class MainLayoutViewModel : GlassViewModel<I___BasePage>
 	{
-		protected readonly ISiteRootContext SiteRootContext;
+		
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly ISiteDebuggingAllowedContext SiteDebuggingAllowedContext;
+	    protected readonly IGlobalService GlobalService;
 
         public readonly IItemReferences ItemReferences;
         public readonly IUserCompanyContext UserCompanyContext;
@@ -45,7 +47,6 @@ namespace Informa.Web.ViewModels
 
         
         public MainLayoutViewModel(
-			ISiteRootContext siteRootContext,
             ITextTranslator textTranslator,
             IAuthenticatedUserContext authenticatedUserContext,
             IItemReferences itemReferences,
@@ -57,10 +58,10 @@ namespace Informa.Web.ViewModels
 			ISignInPopOutViewModel signInPopOutViewModel,
 			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
             IRegisterPopOutViewModel registerPopOutViewModel,
-            ISiteDebuggingAllowedContext siteDebuggingAllowedContext)
+            ISiteDebuggingAllowedContext siteDebuggingAllowedContext,
+            IGlobalService globalService)
 		{
-			SiteRootContext = siteRootContext;
-            TextTranslator = textTranslator;
+			TextTranslator = textTranslator;
             AuthenticatedUserContext = authenticatedUserContext;
             ItemReferences = itemReferences;
             UserCompanyContext = userCompanyContext;
@@ -74,34 +75,16 @@ namespace Informa.Web.ViewModels
             if (SiteDebuggingAllowedContext.IsAllowed)
                 DebugToolbar = DependencyResolver.Current.GetService<IToolbarViewModel>();
             RegisterPopOutViewModel = registerPopOutViewModel;
+            GlobalService = globalService;
+		}
 
-        }
 
-
-        public HtmlString PrintPageHeaderMessage => new HtmlString(SiteRootContext.Item.Print_Message);
+        public HtmlString PrintPageHeaderMessage => GlobalService.GetPrintHeaderMessage();
 		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
 		public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
 		public string CorporateName => UserCompanyContext?.Company?.Name;
-		public string Title
-		{
-			get
-			{
-				var pageTitle = string.Copy(GlassModel?.Meta_Title_Override.StripHtml() ?? string.Empty);
-				if (string.IsNullOrWhiteSpace(pageTitle))
-					pageTitle = string.Copy(GlassModel?.Title?.StripHtml() ?? string.Empty);
-				if (string.IsNullOrWhiteSpace(pageTitle))
-					pageTitle = string.Copy(GlassModel?._Name ?? string.Empty);
-
-				var publicationName = (SiteRootContext.Item == null)
-					? string.Empty
-					: $" :: {SiteRootContext.Item.Publication_Name.StripHtml()}";
-
-				return string.Concat(pageTitle, publicationName);
-			}
-		}
-		public string BodyCssClass => string.IsNullOrEmpty(SiteRootContext.Item?.Publication_Theme)
-			? string.Empty
-			: $"class={SiteRootContext.Item.Publication_Theme}";
+	    public string Title => GlobalService.GetPageTitle(GlassModel);
+	    public string BodyCssClass => GlobalService.GetBodyCssClass();
 		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	}
 }

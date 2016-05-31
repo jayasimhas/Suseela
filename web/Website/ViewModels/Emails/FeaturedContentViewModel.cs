@@ -3,6 +3,7 @@ using System.Linq;
 using Glass.Mapper;
 using Glass.Mapper.Sc;
 using Informa.Library.Mail.ExactTarget;
+using Informa.Library.Services.Global;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.Components;
@@ -19,7 +20,7 @@ namespace Informa.Web.ViewModels.Emails
         [AutowireService(true)]
         public interface IDependencies
         {
-            ISitecoreService SitecoreService { get; }
+            IGlobalService GlobalService { get; }
             IItemReferences ItemReferences { get; }
             ICampaignQueryBuilder CampaignQueryBuilder { get; }
         }
@@ -47,7 +48,7 @@ namespace Informa.Web.ViewModels.Emails
         private string _downloadTypeIconUrl;
         public string DownloadTypeIconUrl =>
             _downloadTypeIconUrl ?? (_downloadTypeIconUrl =
-                _dependencies.SitecoreService.GetItem<IGlassBase>(_dependencies.ItemReferences.DownloadTypes)?
+                _dependencies.GlobalService.GetItem<IGlassBase>(_dependencies.ItemReferences.DownloadTypes)?
                     ._ChildrenWithInferType.FirstOrDefault(option => option._Name.Equals(GlassModel.Download_Type))?
                     .CastTo<IOption>()?.Icon?.Src);
 

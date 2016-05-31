@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.UI.WebControls;
 using Glass.Mapper.Sc;
+using Informa.Library.Site;
 using Informa.Library.Utilities.References;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Data.Items;
+using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Library.Services.Global {
 
@@ -20,16 +24,19 @@ namespace Informa.Library.Services.Global {
         protected readonly ISitecoreService SitecoreService;
         protected readonly ICacheProvider CacheProvider;
         protected readonly IItemReferences ItemReferences;
+        protected readonly ISiteRootContext SiteRootContext;
 
         public GlobalService(
             ISitecoreService sitecoreService,
             ICacheProvider cacheProvider,
-            IItemReferences itemReferences
+            IItemReferences itemReferences,
+            ISiteRootContext siteRootContext
             )
         {
             SitecoreService = sitecoreService;
             CacheProvider = cacheProvider;
             ItemReferences = itemReferences;
+            SiteRootContext = siteRootContext;
         }
 
         private string CreateCacheKey(string suffix) {
@@ -110,6 +117,50 @@ namespace Informa.Library.Services.Global {
             return (Guid.TryParse(id, out g))
                 ? GetItem<T>(g)
                 : null;
+        }
+
+        public string GetPageTitle(I___BasePage page)
+        {
+            string cacheKey = CreateCacheKey($"GetPageTitle-{page._Id}");
+            return CacheProvider.GetFromCache(cacheKey, () => BuildPageTitle(page));
+        }
+
+        private string BuildPageTitle(I___BasePage page)
+        {
+            var pageTitle = string.Copy(page?.Meta_Title_Override.StripHtml() ?? string.Empty);
+            if (string.IsNullOrWhiteSpace(pageTitle))
+                pageTitle = string.Copy(page?.Title?.StripHtml() ?? string.Empty);
+            if (string.IsNullOrWhiteSpace(pageTitle))
+                pageTitle = string.Copy(page?._Name ?? string.Empty);
+
+            var publicationName = (SiteRootContext.Item == null)
+                ? string.Empty
+                : $" :: {SiteRootContext.Item.Publication_Name.StripHtml()}";
+
+            return string.Concat(pageTitle, publicationName);
+        }
+
+        public string GetBodyCssClass()
+        {
+            string cacheKey = CreateCacheKey($"GetBodyCssClass-{SiteRootContext.Item?._Id}");
+            return CacheProvider.GetFromCache(cacheKey, BuildBodyCssClass);
+        }
+
+        public string BuildBodyCssClass() {
+            return string.IsNullOrEmpty(SiteRootContext.Item?.Publication_Theme)
+                ? string.Empty
+                : $"class={SiteRootContext.Item.Publication_Theme}";
+        }
+
+        public HtmlString GetPrintHeaderMessage()
+        {
+            string cacheKey = CreateCacheKey($"GetPrintHeaderMessage-{SiteRootContext.Item?._Id}");
+            return CacheProvider.GetFromCache(cacheKey, BuildPrintHeaderMessage);
+        }
+
+        public HtmlString BuildPrintHeaderMessage()
+        {
+            return new HtmlString(SiteRootContext.Item?.Print_Message ?? string.Empty);
         }
     }
 }

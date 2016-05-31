@@ -5,6 +5,7 @@ using Informa.Library.Utilities.Settings;
 using Informa.Model.DCD;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
+using Jabberwocky.Core.Caching;
 
 namespace Informa.Library.Article.Companies
 {
@@ -18,15 +19,28 @@ namespace Informa.Library.Article.Companies
 	{
 		private readonly IDCDReader _reader;
 		private readonly string _oldDealsUrl;
-		public RelatedDealsService(IDCDReader reader, ISiteSettings siteSettings)
+	    private readonly ICacheProvider _cacheProvider;
+
+		public RelatedDealsService(
+            IDCDReader reader, 
+            ISiteSettings siteSettings,
+            ICacheProvider cacheProvider)
 		{
 			_reader = reader;
 			_oldDealsUrl = siteSettings.OldDealsUrl;
+		    _cacheProvider = cacheProvider;
+
 		}
 
-		public IEnumerable<Link> GetRelatedDeals(IArticle article)
-		{
-			var dealIds = article?.Referenced_Deals?.Split(',') ?? new string[0];
+	    public IEnumerable<Link> GetRelatedDeals(IArticle article)
+	    {
+            string cacheKey = $"{nameof(RelatedDealsService)}-RelatedDeals-{article._Id}";
+            return _cacheProvider.GetFromCache(cacheKey, () => BuildRelatedDeals(article));
+        }
+
+        private IEnumerable<Link> BuildRelatedDeals(IArticle article) {
+
+            var dealIds = article?.Referenced_Deals?.Split(',') ?? new string[0];
 
 			return dealIds.Where(id => !string.IsNullOrEmpty(id)).Select(id => _reader.GetDealByRecordNumber(id)).Select(c => new Link
 			{

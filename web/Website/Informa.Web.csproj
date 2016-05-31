@@ -819,7 +819,6 @@
     <Compile Include="ViewModels\PersonModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
-    <Compile Include="ViewModels\HierarchyLinks.cs" />
     <Compile Include="ViewModels\HighlightViewModel.cs" />
     <Compile Include="ViewModels\IArticlePrologueBookmarkViewModel.cs" />
     <Compile Include="ViewModels\IArticlePrologueEmailViewModel.cs" />
@@ -839,7 +838,6 @@
     <Compile Include="ViewModels\ScheduledPublishTestViewModel.cs" />
     <Compile Include="ViewModels\SideNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\SignInViewModel.cs" />
-    <Compile Include="ViewModels\TaxonomyHierarchyViewModel.cs" />
     <Compile Include="ViewModels\TestUserResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\TopicAlertButtonModel.cs" />
     <Compile Include="ViewModels\TopicContainerViewModel.cs" />
