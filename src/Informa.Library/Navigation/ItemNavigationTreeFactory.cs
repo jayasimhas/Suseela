@@ -32,6 +32,10 @@ namespace Informa.Library.Navigation
 
 	    public IEnumerable<INavigation> Create(INavigation_Root navigationRootItem)
 	    {
+            if (navigationRootItem == null) {
+                return Enumerable.Empty<INavigation>();
+            }
+
             string cacheKey = $"{nameof(ItemNavigationTreeFactory)}-Create-{navigationRootItem._Id}";
             return _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildNavigation(navigationRootItem));
         }
