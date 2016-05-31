@@ -30,7 +30,7 @@ namespace Informa.Web.ViewModels
 
 			model.Text = "Related Topics";
 			model.Url = string.Empty;
-            model.Children = TaxonomyService.GetHeirarchyChildLinks(GlassModel);
+            model.Children = TaxonomyService.GetHeirarchyChildLinks(glassModel);
 		}
 
 		public IEnumerable<IHierarchyLinks> Children => model.Children;

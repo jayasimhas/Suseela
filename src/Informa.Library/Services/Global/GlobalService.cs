@@ -102,6 +102,9 @@ namespace Informa.Library.Services.Global {
 
         public T GetItem<T>(Guid g) where T : class
         {
+            if (g == Guid.Empty)
+                return default(T);
+
             string cacheKey = CreateCacheKey($"GetItem-{g}");
             return CacheProvider.GetFromCache(cacheKey, () => BuildItem<T>(g));
         }
@@ -116,7 +119,7 @@ namespace Informa.Library.Services.Global {
             Guid g;
             return (Guid.TryParse(id, out g))
                 ? GetItem<T>(g)
-                : null;
+                : default(T);
         }
 
         public string GetPageTitle(I___BasePage page)
