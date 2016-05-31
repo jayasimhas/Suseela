@@ -1,10 +1,10 @@
-﻿using Glass.Mapper.Sc;
-using Informa.Library.Site;
+﻿using Informa.Library.Site;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using System;
 using System.Collections.Generic;
 using Informa.Library.Services.Global;
+using Informa.Library.Publication;
 
 namespace Informa.Library.User.Document
 {
@@ -13,13 +13,16 @@ namespace Informa.Library.User.Document
 	{
 		protected readonly IGlobalService GlobalService;
 		protected readonly IIsUrlCurrentSite IsUrlCurrentSite;
+		protected readonly IFindSitePublicationByCode FindPublication;
 
 		public SavedDocumentItemsFactory(
 			IGlobalService globalService,
-			IIsUrlCurrentSite isUrlCurrentSite)
+			IIsUrlCurrentSite isUrlCurrentSite,
+			IFindSitePublicationByCode findPublication)
 		{
             GlobalService = globalService;
 			IsUrlCurrentSite = isUrlCurrentSite;
+			FindPublication = findPublication;
 		}
 
 		public IEnumerable<ISavedDocumentItem> Create(IEnumerable<ISavedDocument> savedDocuments)
@@ -48,7 +51,7 @@ namespace Informa.Library.User.Document
 				savedDocumentItems.Add(new SavedDocumentItem
 				{
 					DocumentId = savedDocument.DocumentId,
-					Publication = savedDocument.Description,
+					Publication = FindPublication.Find(savedDocument.Description),
 					PublishedOn = item.Actual_Publish_Date,
 					SavedOn = savedDocument.SaveDate,
 					Title = item.Title ?? savedDocument.Name,

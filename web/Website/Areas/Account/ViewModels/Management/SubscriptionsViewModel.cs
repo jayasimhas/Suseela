@@ -64,7 +64,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 				return Subscriptions.Select(s => new SubscriptionViewModel
 				{
 					Expiration = s.ExpirationDate,
-					Publication = FindSitePublication.Find(s.Publication)?.Name,
+					Publication = FindSitePublication.Find(s.Publication)?.Name ?? s.Publication,
 					Renewable = ShowRenewButton(s),
 					Subscribable = ShowSubscribeButton(s.ProductCode),
 					Type = s.ProductType
