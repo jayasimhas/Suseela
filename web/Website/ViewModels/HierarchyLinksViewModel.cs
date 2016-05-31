@@ -34,6 +34,7 @@ namespace Informa.Web.ViewModels
 		}
 
 		public IEnumerable<IHierarchyLinks> Children => model.Children;
+		public string Path { get; set; }
 
 		public string Text => model.Text;
 

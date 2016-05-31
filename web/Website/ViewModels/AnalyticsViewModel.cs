@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Informa.Library.Article.Search;
 using Informa.Library.Company;
+using Informa.Library.Site;
 using Informa.Library.Subscription.User;
 using Informa.Library.User;
 using Informa.Library.User.Authentication;
@@ -31,6 +32,7 @@ namespace Informa.Web.ViewModels
         protected readonly IWebAuthenticateUser WebAuthenticateUser;
         protected readonly IUserEntitlementsContext UserEntitlementsContext;
         protected readonly IUserIpAddressContext UserIpAddressContext;
+	    protected readonly ISiteRootContext SiteRootContext;
 
         public readonly IUserCompanyContext UserCompanyContext;
         public I___BasePage GlassModel { get; set; }
@@ -46,7 +48,8 @@ namespace Informa.Web.ViewModels
             IUserSubscriptionsContext userSubscriptionsContext,
             IWebAuthenticateUser webAuthenticateUser,
             IUserEntitlementsContext userEntitlementsContext,
-            IUserIpAddressContext userIpAddressContext) {
+            IUserIpAddressContext userIpAddressContext,
+			ISiteRootContext siteRootContext) {
 
             ItemReferences = itemReferences;
             IsEntitledProductItemContext = isEntitledProductItemContext;
@@ -59,8 +62,10 @@ namespace Informa.Web.ViewModels
             WebAuthenticateUser = webAuthenticateUser;
             UserEntitlementsContext = userEntitlementsContext;
             UserIpAddressContext = userIpAddressContext;
-        }
+	        SiteRootContext = siteRootContext;
+			}
 
+	    public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PageTitleAnalytics => GlassModel?.Title ?? string.Empty;
         public string PageType { get { return Sitecore.Context.Item.TemplateName; } }
         public string ArticlePublishDate => (Article != null && Article.Actual_Publish_Date > DateTime.MinValue)

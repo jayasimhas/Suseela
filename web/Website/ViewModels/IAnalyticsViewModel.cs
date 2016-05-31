@@ -8,6 +8,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Web.ViewModels {
     public interface IAnalyticsViewModel {
+		string PublicationName { get; }
         string PageTitleAnalytics { get; }
         string PageType { get; }
         string ArticlePublishDate { get; }

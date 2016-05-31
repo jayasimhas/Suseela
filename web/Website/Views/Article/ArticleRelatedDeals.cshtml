@@ -7,7 +7,12 @@
         <ul>
             @foreach (var deal in Model.RelatedDeals)
             {
-                <li class="article-topics__li">@RenderLink(deal, m => m)</li>
+	            <li class="article-topics__li click-utag"
+					data-info='{"event_name":"related_deals_click_through", 
+								"click_through_source":"@Model.ArticleName",
+								"click_through_destination":"@deal.Title"}'>
+		            @RenderLink(deal, m => m)
+	            </li>
             }
         </ul>
     </div>

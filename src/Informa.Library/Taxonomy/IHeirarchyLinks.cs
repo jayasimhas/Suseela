@@ -9,5 +9,6 @@ namespace Informa.Library.Taxonomy {
         string Text { get; }
         string Url { get; }
         IEnumerable<IHierarchyLinks> Children { get; }
+		string Path { get; set; }
     }
 }
