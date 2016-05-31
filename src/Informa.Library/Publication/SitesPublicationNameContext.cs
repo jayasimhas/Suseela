@@ -6,12 +6,12 @@ using System.Linq;
 namespace Informa.Library.Publication
 {
 	[AutowireService]
-	public class SitesPublicationContext : ISitesPublicationContext
+	public class SitesPublicationNameContext : ISitesPublicationNameContext
 	{
 		protected readonly ISiteRootsContext SiteRootsContext;
 		protected readonly ISitePublicationCodeFactory SitePublicatioCodeFactory;
 
-		public SitesPublicationContext(
+		public SitesPublicationNameContext(
 			ISiteRootsContext siteRootsContext,
 			ISitePublicationCodeFactory sitePublicationCodeFactory)
 		{

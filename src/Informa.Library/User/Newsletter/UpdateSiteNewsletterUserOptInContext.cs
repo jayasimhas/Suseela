@@ -9,12 +9,12 @@ namespace Informa.Library.User.Newsletter
 	{
 		protected readonly INewsletterUserOptInFactory OptInFactory;
 		protected readonly IUpdateNewsletterUserOptInsContext UpdateOptIns;
-		protected readonly ISitePublicationContext NewsletterTypeContext;
+		protected readonly ISitePublicationNameContext NewsletterTypeContext;
 
 		public UpdateSiteNewsletterUserOptInContext(
 			INewsletterUserOptInFactory optInFactory,
 			IUpdateNewsletterUserOptInsContext updateOptIns,
-			ISitePublicationContext newsletterTypeContext)
+			ISitePublicationNameContext newsletterTypeContext)
 		{
 			OptInFactory = optInFactory;
 			UpdateOptIns = updateOptIns;

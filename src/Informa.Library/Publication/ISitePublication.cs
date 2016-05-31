@@ -1,7 +1,8 @@
 ﻿namespace Informa.Library.Publication
 {
-	public interface ISitePublicationContext
+	public interface ISitePublication
 	{
+		string Code { get; }
 		string Name { get; }
 	}
 }

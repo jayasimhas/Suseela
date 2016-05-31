@@ -2,7 +2,7 @@
 
 namespace Informa.Library.Publication
 {
-	public interface ISitesPublicationContext
+	public interface ISitesPublicationNameContext
 	{
 		IEnumerable<string> Names { get; }
 	}

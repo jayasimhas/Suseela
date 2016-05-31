@@ -4,12 +4,12 @@ using Jabberwocky.Autofac.Attributes;
 namespace Informa.Library.Publication
 {
 	[AutowireService]
-	public class SitePublicationContext : ISitePublicationContext
+	public class SitePublicationNameContext : ISitePublicationNameContext
 	{
 		protected ISiteRootContext SiteRootContext;
 		protected readonly ISitePublicationCodeFactory SitePublicationNameFactory;
 
-		public SitePublicationContext(
+		public SitePublicationNameContext(
 			ISiteRootContext siteRootContext,
 			ISitePublicationCodeFactory sitePublicationNameFactory)
 		{
