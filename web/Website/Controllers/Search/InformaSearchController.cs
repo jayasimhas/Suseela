@@ -65,18 +65,6 @@ namespace Informa.Web.Controllers.Search
 
 			var results = _searchManager.GetItems(q);
 
-			//Replace DCD tokens in the summary
-			foreach (InformaSearchResultItem queryResult in results.Results)
-			{
-				queryResult.Summary = DCDTokenMatchers.ProcessDCDTokens(queryResult.Summary);
-
-				if (UserContext.IsAuthenticated)
-				{
-					queryResult.IsUserAuthenticated = UserContext.IsAuthenticated;
-					queryResult.IsArticleBookmarked = IsSavedDocumentContext.IsSaved(queryResult.ItemId.ToGuid());
-				}
-			}
-
 			var multiSelectFacetResults = GetMultiSelectFacetResults(request);
 
 			return new QueryResults
@@ -96,7 +84,7 @@ namespace Informa.Web.Controllers.Search
 
 		private IEnumerable<FacetGroup> GetMultiSelectFacetResults(ApiSearchRequest request)
 		{
-			var facets = _cacheProvider.GetFromCache($"GetMulitSelectFacets:ID:{_parser.ListingConfiguration._Id}", () => _parser.RefinementOptions.OfType<IFacet>().Where(f => f.Is_Multi_Value && !f.And_Filter).Select(f => f.Key).ToArray());
+			var facets = _cacheProvider.GetFromCache($"GetMulitSelectFacets:ID:{request.PageId}", () => _parser.RefinementOptions.OfType<IFacet>().Where(f => f.Is_Multi_Value && !f.And_Filter).Select(f => f.Key).ToArray());
 
 			if (!facets.Any()) return Enumerable.Empty<FacetGroup>();
 
