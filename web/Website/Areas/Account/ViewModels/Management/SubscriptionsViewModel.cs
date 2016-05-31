@@ -8,6 +8,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Accoun
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Library.Subscription.User;
+using Informa.Library.Publication;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
@@ -18,6 +19,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		public readonly IUserSubscriptionsContext UserSubscriptionsContext;
 		public readonly ISignInViewModel SignInViewModel;
 
+		protected readonly IFindSitePublicationByCode FindSitePublication;
+
 		private readonly Dictionary<string, bool> RenewBtnSettings;
 		private readonly Dictionary<string, bool> SubscriptionBtnSettings;
 
@@ -25,12 +28,14 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 			ITextTranslator translator,
 			IAuthenticatedUserContext userContext,
 			IUserSubscriptionsContext userSubscriptionsContext,
-			ISignInViewModel signInViewModel)
+			ISignInViewModel signInViewModel,
+			IFindSitePublicationByCode findSitePublication)
 		{
 			TextTranslator = translator;
 			UserContext = userContext;
 			UserSubscriptionsContext = userSubscriptionsContext;
 			SignInViewModel = signInViewModel;
+			FindSitePublication = findSitePublication;
 
 			RenewBtnSettings = new Dictionary<string, bool>();
 			SubscriptionBtnSettings = new Dictionary<string, bool>();
@@ -51,6 +56,21 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		}
 
 		public IList<ISubscription> Subscriptions => UserSubscriptionsContext.Subscriptions.ToList();
+
+		public IList<SubscriptionViewModel> SubscriptionViewModels
+		{
+			get
+			{
+				return Subscriptions.Select(s => new SubscriptionViewModel
+				{
+					Expiration = s.ExpirationDate,
+					Publication = FindSitePublication.Find(s.Publication)?.Name,
+					Renewable = ShowRenewButton(s),
+					Subscribable = ShowSubscribeButton(s.ProductCode),
+					Type = s.ProductType
+				}).ToList();
+			}
+		}
 
 		public bool ShowRenewButton(ISubscription subscription)
 		{

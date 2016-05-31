@@ -100,23 +100,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                @foreach (var item in Model.Subscriptions)
+                @foreach (var item in Model.SubscriptionViewModels)
                 {
                     <tr>
                         <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--publication">
                             @item.Publication
                         </td>
                         <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--sub-type">
-                            @item.SubscriptionType
+                            @item.Type
                         </td>
                         <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--exp-date">
-                            @item.ExpirationDate.ToString("d MMMM yyyy")
+                            @item.Expiration.ToString("d MMMM yyyy")
                         </td>
                         <td class="sortable-table__col">
-                            @if (Model.ShowRenewButton(item)) {
+                            @if (item.Renewable) {
                                 <a class="button button--outline" href="@Model.OffSiteRenewLink">Renew</a>
                             }
-                            @if (Model.ShowSubscribeButton(item.ProductCode)) {
+                            @if (item.Subscribable) {
                                 @Html.Raw("&nbsp;&nbsp;&nbsp;")
                                 <a class="button button--outline" href="@Model.OffSiteSubscriptionLink">Subscribe</a>
                             }
