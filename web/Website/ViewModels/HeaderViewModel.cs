@@ -1,19 +1,14 @@
-﻿using System;
-using Glass.Mapper.Sc;
-using Glass.Mapper.Sc.Fields;
+﻿using Glass.Mapper.Sc.Fields;
 using Informa.Library.User.Authentication;
 using Informa.Library.Company;
 using Informa.Library.Globalization;
 using Informa.Library.Site;
-using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global;
 using System.Web;
 using Informa.Library.Services.Global;
 using Informa.Library.User.Profile;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Web.ViewModels
 {
