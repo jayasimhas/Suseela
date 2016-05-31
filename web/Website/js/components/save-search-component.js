@@ -24,7 +24,9 @@ $(document).ready(function() {
 	// Populates topic alert data when a user is logging in and saving simultaneously
 	$('.js-update-topic-alert').on('click', function(e) {
 		$('.js-save-search-url').val($(this).data('topic-alert-url'));
-		$('.js-save-search-title').val($(this).data('topic-alert-title'));
+		// Search/Topic title exists as <input> and <span>, needs two techniques to properly
+		// update the values.
+		$('.js-save-search-title').val($(this).data('topic-alert-title')).html($(this).data('topic-alert-title'));
 	});
 
 	$('.js-set-topic-alert').on('click', function(e) {
