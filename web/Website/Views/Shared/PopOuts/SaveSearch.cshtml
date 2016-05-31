@@ -112,7 +112,17 @@
                                value="true">
 
                         <p class="pop-out__details">
-                            @Html.Raw(Model.TopicDescriptionText)
+
+							@* * *
+							Commenting this out because we'll need to dynamically insert the
+							topic title, and there's nothing in the original ticket requiring
+							that the description text is in the Dictionary.
+
+							Html.Raw(Model.TopicDescriptionText)
+							
+							* * *@
+
+							Your alert for @* TOPIC TITLE HERE *@ will be saved to your account - "Saved Searches and Alerts".
                         </p>
 					}
 
