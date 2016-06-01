@@ -21,7 +21,7 @@ namespace Informa.Library.Article.Companies
 		private readonly string _oldDealsUrl;
 	    private readonly ICacheProvider _cacheProvider;
 
-		public RelatedDealsService(
+	    public RelatedDealsService(
             IDCDReader reader, 
             ISiteSettings siteSettings,
             ICacheProvider cacheProvider)
@@ -46,7 +46,7 @@ namespace Informa.Library.Article.Companies
 			{
 				Text = c.Title,
 				Url = string.Format(_oldDealsUrl, c.RecordNumber)
-			});
+			}).ToArray();
 		}
 	}
 }

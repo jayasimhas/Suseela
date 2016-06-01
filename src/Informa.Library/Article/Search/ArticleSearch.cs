@@ -14,6 +14,7 @@ using Informa.Library.Services.Global;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Core.Caching;
+using Constants = Informa.Library.Utilities.References.Constants;
 
 namespace Informa.Library.Article.Search
 {

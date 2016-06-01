@@ -1,5 +1,4 @@
-﻿using System;
-using Glass.Mapper.Sc;
+﻿using Glass.Mapper.Sc;
 using Informa.Library.Threading;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Autofac.Attributes;
@@ -32,7 +31,7 @@ namespace Informa.Library.Site
 		{
 		    get
 		    {
-		        return CacheProvider.GetFromCache(cacheKey, () => BuildSiteRootsContext());
+		        return CacheProvider.GetFromCache(cacheKey, BuildSiteRootsContext);
 		    }
 		}
 

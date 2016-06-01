@@ -5,7 +5,6 @@ using System.Web.Http;
 using System.Xml;
 using Informa.Library.Globalization;
 using Jabberwocky.Core.Caching;
-using WebApi.OutputCache.Core.Cache;
 
 namespace Informa.Web.Controllers
 {

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;

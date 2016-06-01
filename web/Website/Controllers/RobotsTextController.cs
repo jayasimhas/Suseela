@@ -2,10 +2,8 @@
 using System.Net;
 using System.Web;
 using System.Web.Http;
-using System.Xml;
 using Informa.Library.Globalization;
 using Jabberwocky.Core.Caching;
-using WebApi.OutputCache.Core.Cache;
 
 namespace Informa.Web.Controllers
 {
@@ -27,7 +25,7 @@ namespace Informa.Web.Controllers
         public void RobotsText()
         {
             string cacheKey = $"{HttpContext.Current.Request.Url.Host}.RobotsText";
-            string text = CacheProvider.GetFromCache(cacheKey, () => BuildRobotsText());
+            string text = CacheProvider.GetFromCache(cacheKey, BuildRobotsText);
 
             //write
             HttpContext.Current.Response.StatusCode = 200;

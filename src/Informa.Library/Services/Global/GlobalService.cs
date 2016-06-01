@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI.WebControls;
 using Glass.Mapper.Sc;
@@ -56,39 +54,40 @@ namespace Informa.Library.Services.Global {
 
         public IEnumerable<ListItem> GetSalutations()
         {
-            string cacheKey = CreateCacheKey("Salutations");
-            return CacheProvider.GetFromCache(cacheKey, () => GetListing(ItemReferences.AccountSalutations));
+            return GetListing(ItemReferences.AccountSalutations);
         }
 
         public IEnumerable<ListItem> GetNameSuffixes()
         {
-            string cacheKey = CreateCacheKey("Suffixes");
-            return CacheProvider.GetFromCache(cacheKey, () => GetListing(ItemReferences.AccountNameSuffixes));
+            return GetListing(ItemReferences.AccountNameSuffixes);
         }
 
         public IEnumerable<ListItem> GetJobFunctions()
         {
-            string cacheKey = CreateCacheKey("JobFunctions");
-            return CacheProvider.GetFromCache(cacheKey, () => GetListing(ItemReferences.AccountJobFunctions));
+            return GetListing(ItemReferences.AccountJobFunctions);
         }
 
         public IEnumerable<ListItem> GetJobIndustries()
         {
-            string cacheKey = CreateCacheKey("JobIndustries");
-            return CacheProvider.GetFromCache(cacheKey, () => GetListing(ItemReferences.AccountJobIndustries));
+            return GetListing(ItemReferences.AccountJobIndustries);
         }
 
         public IEnumerable<ListItem> GetPhoneTypes() {
-            string cacheKey = CreateCacheKey("PhoneTypes");
-            return CacheProvider.GetFromCache(cacheKey, () => GetListing(ItemReferences.AccountPhoneTypes));
+            return GetListing(ItemReferences.AccountPhoneTypes);
         }
 
         public IEnumerable<ListItem> GetCountries() {
-            string cacheKey = CreateCacheKey("Countries");
-            return CacheProvider.GetFromCache(cacheKey, () => GetListing(ItemReferences.AccountCountries));
+            return GetListing(ItemReferences.AccountCountries);
         }
 
-        private IEnumerable<ListItem> GetListing(Guid g) {
+        private IEnumerable<ListItem> GetListing(Guid g)
+        {
+            string cacheKey = CreateCacheKey(g.ToString());
+            return CacheProvider.GetFromCache(cacheKey, () => BuildListing(g));
+        }
+
+        private IEnumerable<ListItem> BuildListing(Guid g) { 
+
             var item = SitecoreService.GetItem<Item>(g);
             if (item == null)
                 return Enumerable.Empty<ListItem>();

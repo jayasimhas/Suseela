@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Web;
-using Glass.Mapper.Sc;
-using Informa.Library.Article.Search;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Jabberwocky.Glass.Autofac.Pipelines.Processors;
-using Sitecore;
 using Sitecore.Configuration;
-using Sitecore.Diagnostics;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Web;
 
