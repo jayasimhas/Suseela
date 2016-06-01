@@ -8,6 +8,7 @@ using Sitecore.Web;
 using Autofac;
 using System.Web;
 using Sitecore.Configuration;
+using StackExchange.Profiling;
 
 namespace Informa.Web
 {
@@ -43,6 +44,21 @@ namespace Informa.Web
 			//RouteConfig.RegisterRoutes(RouteTable.Routes);
 		}
 
+#if DEBUG
+		protected void Application_BeginRequest()
+		{
+			if (Sitecore.Context.Item != null && !Sitecore.Context.PageMode.IsExperienceEditorEditing && !Sitecore.Context.PageMode.IsPreview)
+			{
+				MiniProfiler.Start();
+			}
+		}
+
+		protected void Application_EndRequest()
+		{
+			MiniProfiler.Stop();
+		}
+#endif
+
 		protected virtual void EnableUnobtrusiveValidation()
 		{
 			const string bundlePath = "~/js/jquery.js";
@@ -68,6 +84,7 @@ using System.Web.UI;
 using Autofac;
 using Informa.Web.App_Start;
 using Sitecore.Web;
+using StackExchange.Profiling;
 
 namespace Informa.Web
 {
@@ -89,7 +106,22 @@ public class Global : Application
 
 			 EnableUnobtrusiveValidation();
 	 }
-     
+
+#if DEBUG
+	 protected void Application_BeginRequest()
+	 {
+			 if (Sitecore.Context.Item != null && !Sitecore.Context.PageMode.IsPageEditorEditing && !Sitecore.Context.PageMode.IsPreview)
+			 {
+					 MiniProfiler.Start();
+			 }
+	 }
+
+	 protected void Application_EndRequest()
+	 {
+			 MiniProfiler.Stop();
+	 }
+#endif
+
 	 protected virtual void EnableUnobtrusiveValidation()
 	 {
 			 const string bundlePath = "~/js/jquery.js";
