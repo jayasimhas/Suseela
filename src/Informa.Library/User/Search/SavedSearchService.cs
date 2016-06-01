@@ -177,7 +177,7 @@ namespace Informa.Library.User.Search
 			var savedSearches = _.UserSession.Get<IList<ISavedSearchEntity>>(SessionKey);
 			if (!savedSearches.HasValue)
 			{
-				var results = _.Repository.GetMany(_.UserContext.User?.Username).ToList();
+				IList<ISavedSearchEntity> results = _.Repository.GetMany(_.UserContext.User?.Username).ToList();
 
 				_.UserSession.Set(SessionKey, results);
 
