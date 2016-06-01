@@ -307,6 +307,7 @@
     <Compile Include="Article\Companies\IRelatedCompaniesService.cs" />
     <Compile Include="Article\Companies\IRelatedDealsService.cs" />
     <Compile Include="Article\Companies\RelatedCompaniesService.cs" />
+    <Compile Include="Article\Companies\RelatedDealsService.cs" />
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Publishing\Events\PublishDateFoldersArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Publishing\Events\ActualPublishDateArticlePublishItemProcessing.cs" />
