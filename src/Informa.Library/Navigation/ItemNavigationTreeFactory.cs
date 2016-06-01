@@ -4,10 +4,8 @@ using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 using System.Collections.Generic;
 using System.Linq;
-using Glass.Mapper.Sc;
 using Informa.Library.Services.Global;
 using Jabberwocky.Core.Caching;
-using Sitecore;
 
 namespace Informa.Library.Navigation
 {
@@ -38,9 +36,7 @@ namespace Informa.Library.Navigation
             }
 
             string cacheKey = $"{nameof(ItemNavigationTreeFactory)}-Create-{navigationRootItem._Id}";
-            return (Context.PageMode.IsNormal)
-                ? _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildNavigation(navigationRootItem))
-                : BuildNavigation(navigationRootItem);
+            return _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildNavigation(navigationRootItem));
         }
 
         private IEnumerable<INavigation> BuildNavigation(INavigation_Root navigationRootItem) {

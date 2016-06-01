@@ -2,15 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Taxonomy;
 using Informa.Models.Informa.Models.sitecore.templates.Common;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore;
 
 namespace Informa.Library.Services.Global {
     
@@ -33,9 +30,7 @@ namespace Informa.Library.Services.Global {
         public IEnumerable<HierarchyLinks> GetHeirarchyChildLinks(I___BaseTaxonomy taxItem)
         {
             string cacheKey = CreateCacheKey($"HeirarchyChildLinks-{taxItem._Id}");
-            return (Context.PageMode.IsNormal)
-                ? CacheProvider.GetFromCache(cacheKey, () => BuildHeirarchyChildLinks(taxItem))
-                : BuildHeirarchyChildLinks(taxItem);
+            return CacheProvider.GetFromCache(cacheKey, () => BuildHeirarchyChildLinks(taxItem));
         }
 
         public IEnumerable<HierarchyLinks> BuildHeirarchyChildLinks(I___BaseTaxonomy taxItem)

@@ -7,7 +7,6 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Web.Mvc;
 using Informa.Library.Article.Search;
 using Informa.Library.Utilities.TokenMatcher;
@@ -15,7 +14,6 @@ using Informa.Models.DCD;
 using Informa.Web.ViewModels;
 using Informa.Library.Utilities.Extensions;
 using Jabberwocky.Core.Caching;
-using Sitecore;
 
 namespace Informa.Web.Models
 {
@@ -63,9 +61,7 @@ namespace Informa.Web.Models
 			{
 				string articleNumber = match.Groups[1].Value;
                 string cacheKey = $"TokenRepRelated-{articleNumber}";
-                string replace = (Context.PageMode.IsNormal)
-                    ? CacheProvider.GetFromCache(cacheKey, () => BuildReplaceRelatedArticles(articleNumber))
-                    : BuildReplaceRelatedArticles(articleNumber);
+                string replace = CacheProvider.GetFromCache(cacheKey, () => BuildReplaceRelatedArticles(articleNumber));
 
 				content = content.Replace(match.Value, replace);
             }
@@ -99,9 +95,7 @@ namespace Informa.Web.Models
 			{
 				string articleNumber = match.Groups[1].Value;
                 string cacheKey = $"TokenRepSidebar-{articleNumber}";
-                string replace = (Context.PageMode.IsNormal)
-                    ? CacheProvider.GetFromCache(cacheKey, () => BuildReplaceSidebarArticles(articleNumber, partialName))
-                    : BuildReplaceSidebarArticles(articleNumber, partialName);
+                string replace = CacheProvider.GetFromCache(cacheKey, () => BuildReplaceSidebarArticles(articleNumber, partialName));
                 
 				content = content.Replace(match.Value, replace);
 			}

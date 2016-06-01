@@ -5,8 +5,6 @@ using System.Web.Http;
 using System.Xml;
 using Informa.Library.Globalization;
 using Jabberwocky.Core.Caching;
-using Sitecore;
-using WebApi.OutputCache.Core.Cache;
 
 namespace Informa.Web.Controllers
 {
@@ -29,9 +27,7 @@ namespace Informa.Web.Controllers
         {
             string path = HttpContext.Current.Request.Path.Replace("/", "").Replace(".xml", "");
             string cacheKey = $"{HttpContext.Current.Request.Url.Host}.{path}.Sitemap";
-            string xml = (Context.PageMode.IsNormal)
-                ? CacheProvider.GetFromCache(cacheKey, () => BuildSitemapXml(path))
-                : BuildSitemapXml(path);
+            string xml = CacheProvider.GetFromCache(cacheKey, () => BuildSitemapXml(path));
             
             //provide default
             if (xml.Length == 0)

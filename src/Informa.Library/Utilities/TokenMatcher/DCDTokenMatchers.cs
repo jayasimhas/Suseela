@@ -2,13 +2,11 @@
 using System;
 using System.Linq;
 using System.Net;
-using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Informa.Library.Article.Search;
 using Informa.Library.Utilities.Extensions;
 using Jabberwocky.Core.Caching;
-using Sitecore;
 
 namespace Informa.Library.Utilities.TokenMatcher
 {
@@ -109,9 +107,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 		{
 			string articleNumber = match.Groups[1].Value;
 			string cacheKey = $"DCDArticleText-{articleNumber}";
-            return (Context.PageMode.IsNormal)
-                ? CacheProvider.GetFromCache(cacheKey, () => BuildArticleMatch(articleNumber))
-                : BuildArticleMatch(articleNumber);
+            return CacheProvider.GetFromCache(cacheKey, () => BuildArticleMatch(articleNumber));
 		}
 
 	    private static string BuildArticleMatch(string articleNumber)
