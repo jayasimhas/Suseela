@@ -98,17 +98,17 @@
     <Reference Include="Elsevier.Library">
       <HintPath>..\..\lib\Velir\Elsevier.Library.dll</HintPath>
     </Reference>
-    <Reference Include="Glass.Mapper, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\net45\Glass.Mapper.dll</HintPath>
+    <Reference Include="Glass.Mapper, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\net45\Glass.Mapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Glass.Mapper.Sc, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\81\Glass.Mapper.Sc.dll</HintPath>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\81\Glass.Mapper.Sc.dll</HintPath>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc.Mvc, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Glass.Mapper.Sc.Mvc, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Hi.UrlRewrite, Version=1.7.2.24693, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -910,9 +910,6 @@
     <Content Include="App_Config\FieldTypes.config" />
     <Content Include="App_Config\Icons.config" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.Autofac.Mvc.config" />
     <Content Include="App_Config\Include\Jabberwocky.Glass.config" />
@@ -949,7 +946,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\Velir.Search.Web.config" />
-    <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1182,7 +1178,6 @@
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config.template" />
     <Content Include="Areas\Account\Views\Management\SavedSearches.cshtml" />
     <Content Include="App_Config\AppSettings.config.template" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
     <Content Include="App_Config\Include\Hi.UrlRewrite.config" />
     <Content Include="App_Config\Include\Sitecore.Buckets.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.config" />
@@ -1193,6 +1188,9 @@
     <Content Include="App_Config\Include\ZZ.UserDefined\LoginRedirect.config" />
     <Content Include="App_Config\Include\ZZ.UserDefined\Solr.config.velirTemplate" />
     <Content Include="App_Config\Web\system.webServer.rewrite.config.template" />
+    <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
+    <Content Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
     <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />

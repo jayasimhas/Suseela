@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using Sitecore.ContentSearch.Linq;
 using Velir.Search.Core.Facets.Sort;
 using Velir.Search.Core.Results.Facets;

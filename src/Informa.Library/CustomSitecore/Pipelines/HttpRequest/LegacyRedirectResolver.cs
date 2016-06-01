@@ -11,6 +11,7 @@ using Sitecore.Data;
 using Sitecore.Diagnostics;
 using Sitecore.Links;
 using Sitecore.Pipelines.HttpRequest;
+using Log = Sitecore.Diagnostics.Log;
 
 namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 {

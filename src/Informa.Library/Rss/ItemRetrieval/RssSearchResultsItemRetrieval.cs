@@ -1,21 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Library.Rss.Interfaces;
 using Informa.Library.Search.Utilities;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss;
-using Newtonsoft.Json;
 using Sitecore;
 using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
 using Sitecore.Web;
 using Velir.Search.Models;
+using Log = Sitecore.Diagnostics.Log;
 
 namespace Informa.Library.Rss.ItemRetrieval
 {
