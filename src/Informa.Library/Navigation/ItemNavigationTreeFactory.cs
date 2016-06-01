@@ -7,6 +7,7 @@ using System.Linq;
 using Glass.Mapper.Sc;
 using Informa.Library.Services.Global;
 using Jabberwocky.Core.Caching;
+using Sitecore;
 
 namespace Informa.Library.Navigation
 {
@@ -37,7 +38,9 @@ namespace Informa.Library.Navigation
             }
 
             string cacheKey = $"{nameof(ItemNavigationTreeFactory)}-Create-{navigationRootItem._Id}";
-            return _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildNavigation(navigationRootItem));
+            return (Context.PageMode.IsNormal)
+                ? _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildNavigation(navigationRootItem))
+                : BuildNavigation(navigationRootItem);
         }
 
         private IEnumerable<INavigation> BuildNavigation(INavigation_Root navigationRootItem) {

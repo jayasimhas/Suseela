@@ -12,6 +12,7 @@ using Jabberwocky.Glass.Models;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Core.Caching;
+using Sitecore;
 
 namespace Informa.Library.Services.Article {
 
@@ -37,7 +38,9 @@ namespace Informa.Library.Services.Article {
         public IEnumerable<string> GetLegacyPublicationNames(IArticle article)
         {
             string cacheKey = CreateCacheKey($"PublicationNames-{article._Id}");
-            return CacheProvider.GetFromCache(cacheKey, () => BuildLegacyPublicationNames(article));
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, () => BuildLegacyPublicationNames(article))
+                : BuildLegacyPublicationNames(article);
         }
 
         private IEnumerable<string> BuildLegacyPublicationNames(IArticle article) { 
@@ -56,7 +59,9 @@ namespace Informa.Library.Services.Article {
         public IEnumerable<ILinkable> GetLinkableTaxonomies(IArticle article)
         {
             string cacheKey = CreateCacheKey($"LinkableTaxonomies-{article._Id}");
-            return CacheProvider.GetFromCache(cacheKey, () => BuildLinkableTaxonomies(article));
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, () => BuildLinkableTaxonomies(article))
+                : BuildLinkableTaxonomies(article);
         }
 
         private IEnumerable<ILinkable> BuildLinkableTaxonomies(IArticle article) { 
@@ -80,13 +85,17 @@ namespace Informa.Library.Services.Article {
         public string GetArticleSummary(IArticle article)
         {
             string cacheKey = CreateCacheKey($"Summary-{article._Id}");
-            return CacheProvider.GetFromCache(cacheKey, () => BuildTokenizedArticleText(article.Summary));
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, () => BuildTokenizedArticleText(article.Summary))
+                : BuildTokenizedArticleText(article.Summary);
         }
 
         public string GetArticleBody(IArticle article) 
         {
             string cacheKey = CreateCacheKey($"Body-{article._Id}");
-            return CacheProvider.GetFromCache(cacheKey, () => BuildTokenizedArticleText(article.Body));
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, () => BuildTokenizedArticleText(article.Body))
+                : BuildTokenizedArticleText(article.Body);
         }
 
         private string BuildTokenizedArticleText(string text)
@@ -105,7 +114,9 @@ namespace Informa.Library.Services.Article {
         public IEnumerable<IFile> GetSupportingDocuments(IArticle article)
         {
             string cacheKey = CreateCacheKey($"SupportingDocs-{article._Id}");
-            return CacheProvider.GetFromCache(cacheKey, () => BuildSupportingDocuments(article));
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, () => BuildSupportingDocuments(article))
+                : BuildSupportingDocuments(article);
         }
 
         private IEnumerable<IFile> BuildSupportingDocuments(IArticle article)

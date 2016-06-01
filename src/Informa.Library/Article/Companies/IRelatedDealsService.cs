@@ -6,6 +6,7 @@ using Informa.Model.DCD;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Core.Caching;
+using Sitecore;
 
 namespace Informa.Library.Article.Companies
 {
@@ -35,7 +36,9 @@ namespace Informa.Library.Article.Companies
 	    public IEnumerable<Link> GetRelatedDeals(IArticle article)
 	    {
             string cacheKey = $"{nameof(RelatedDealsService)}-RelatedDeals-{article._Id}";
-            return _cacheProvider.GetFromCache(cacheKey, () => BuildRelatedDeals(article));
+            return (Context.PageMode.IsNormal)
+                ? _cacheProvider.GetFromCache(cacheKey, () => BuildRelatedDeals(article))
+                : BuildRelatedDeals(article);
         }
 
         private IEnumerable<Link> BuildRelatedDeals(IArticle article) {

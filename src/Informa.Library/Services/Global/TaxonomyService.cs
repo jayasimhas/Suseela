@@ -10,6 +10,7 @@ using Informa.Models.Informa.Models.sitecore.templates.Common;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Glass.Autofac.Attributes;
+using Sitecore;
 
 namespace Informa.Library.Services.Global {
     
@@ -32,7 +33,9 @@ namespace Informa.Library.Services.Global {
         public IEnumerable<HierarchyLinks> GetHeirarchyChildLinks(I___BaseTaxonomy taxItem)
         {
             string cacheKey = CreateCacheKey($"HeirarchyChildLinks-{taxItem._Id}");
-            return CacheProvider.GetFromCache(cacheKey, () => BuildHeirarchyChildLinks(taxItem));
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, () => BuildHeirarchyChildLinks(taxItem))
+                : BuildHeirarchyChildLinks(taxItem);
         }
 
         public IEnumerable<HierarchyLinks> BuildHeirarchyChildLinks(I___BaseTaxonomy taxItem)

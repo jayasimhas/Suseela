@@ -14,6 +14,8 @@ using Informa.Library.Services.Global;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Core.Caching;
+using Sitecore;
+using Constants = Informa.Library.Utilities.References.Constants;
 
 namespace Informa.Library.Article.Search
 {
@@ -159,7 +161,9 @@ namespace Informa.Library.Article.Search
 		public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
 		{
 			string cacheKey = $"{nameof(ArticleSearch)}-GetTaxonomy-{id}";
-			return CacheProvider.GetFromCache(cacheKey, () => BuildArticleTaxonomies(id, taxonomyParent));
+			return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, () => BuildArticleTaxonomies(id, taxonomyParent))
+                : BuildArticleTaxonomies(id, taxonomyParent);
 		}
 
 		public string BuildArticleTaxonomies(Guid id, Guid taxonomyParent)

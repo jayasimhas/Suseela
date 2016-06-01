@@ -2,6 +2,7 @@
 using Jabberwocky.Glass.Autofac.Attributes;
 using System;
 using Jabberwocky.Core.Caching;
+using Sitecore;
 
 namespace Informa.Library.Site
 {
@@ -30,7 +31,9 @@ namespace Informa.Library.Site
 	    private ISiteMaintenanceInfo GetSiteMaintenanceInfo()
 	    {
             string cacheKey = $"{nameof(SiteMaintenanceContext)}-Info-{SiteRootContext.Item._Id}";
-            return CacheProvider.GetFromCache(cacheKey, BuildSiteMaintenanceInfo);
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, BuildSiteMaintenanceInfo)
+                : BuildSiteMaintenanceInfo();
         }
         
         private ISiteMaintenanceInfo BuildSiteMaintenanceInfo()

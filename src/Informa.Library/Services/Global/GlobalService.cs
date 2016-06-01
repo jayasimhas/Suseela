@@ -15,6 +15,7 @@ using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Data.Items;
 using Informa.Library.Utilities.Extensions;
+using Sitecore;
 
 namespace Informa.Library.Services.Global {
 
@@ -46,7 +47,9 @@ namespace Informa.Library.Services.Global {
         public IInforma_Bar GetInformaBar()
         {
             string cacheKey = CreateCacheKey("InformaBar");
-            return CacheProvider.GetFromCache(cacheKey, BuildInformaBar);
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, BuildInformaBar)
+                : BuildInformaBar();
         }
 
         private IInforma_Bar BuildInformaBar()
@@ -56,39 +59,42 @@ namespace Informa.Library.Services.Global {
 
         public IEnumerable<ListItem> GetSalutations()
         {
-            string cacheKey = CreateCacheKey("Salutations");
-            return CacheProvider.GetFromCache(cacheKey, () => GetListing(ItemReferences.AccountSalutations));
+            return GetListing(ItemReferences.AccountSalutations);
         }
 
         public IEnumerable<ListItem> GetNameSuffixes()
         {
-            string cacheKey = CreateCacheKey("Suffixes");
-            return CacheProvider.GetFromCache(cacheKey, () => GetListing(ItemReferences.AccountNameSuffixes));
+            return GetListing(ItemReferences.AccountNameSuffixes);
         }
 
         public IEnumerable<ListItem> GetJobFunctions()
         {
-            string cacheKey = CreateCacheKey("JobFunctions");
-            return CacheProvider.GetFromCache(cacheKey, () => GetListing(ItemReferences.AccountJobFunctions));
+            return GetListing(ItemReferences.AccountJobFunctions);
         }
 
         public IEnumerable<ListItem> GetJobIndustries()
         {
-            string cacheKey = CreateCacheKey("JobIndustries");
-            return CacheProvider.GetFromCache(cacheKey, () => GetListing(ItemReferences.AccountJobIndustries));
+            return GetListing(ItemReferences.AccountJobIndustries);
         }
 
         public IEnumerable<ListItem> GetPhoneTypes() {
-            string cacheKey = CreateCacheKey("PhoneTypes");
-            return CacheProvider.GetFromCache(cacheKey, () => GetListing(ItemReferences.AccountPhoneTypes));
+            return GetListing(ItemReferences.AccountPhoneTypes);
         }
 
         public IEnumerable<ListItem> GetCountries() {
-            string cacheKey = CreateCacheKey("Countries");
-            return CacheProvider.GetFromCache(cacheKey, () => GetListing(ItemReferences.AccountCountries));
+            return GetListing(ItemReferences.AccountCountries);
         }
 
-        private IEnumerable<ListItem> GetListing(Guid g) {
+        private IEnumerable<ListItem> GetListing(Guid g)
+        {
+            string cacheKey = CreateCacheKey(g.ToString());
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, () => BuildListing(g))
+                : BuildListing(g);            
+        }
+
+        private IEnumerable<ListItem> BuildListing(Guid g) { 
+
             var item = SitecoreService.GetItem<Item>(g);
             if (item == null)
                 return Enumerable.Empty<ListItem>();
@@ -106,7 +112,9 @@ namespace Informa.Library.Services.Global {
                 return default(T);
 
             string cacheKey = CreateCacheKey($"GetItem-{g}");
-            return CacheProvider.GetFromCache(cacheKey, () => BuildItem<T>(g));
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, () => BuildItem<T>(g))
+                : BuildItem<T>(g);
         }
 
         private T BuildItem<T>(Guid g) where T : class
@@ -146,7 +154,9 @@ namespace Informa.Library.Services.Global {
         public string GetBodyCssClass()
         {
             string cacheKey = CreateCacheKey($"GetBodyCssClass-{SiteRootContext.Item?._Id}");
-            return CacheProvider.GetFromCache(cacheKey, BuildBodyCssClass);
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, BuildBodyCssClass)
+                : BuildBodyCssClass();
         }
 
         public string BuildBodyCssClass() {
@@ -158,7 +168,9 @@ namespace Informa.Library.Services.Global {
         public HtmlString GetPrintHeaderMessage()
         {
             string cacheKey = CreateCacheKey($"GetPrintHeaderMessage-{SiteRootContext.Item?._Id}");
-            return CacheProvider.GetFromCache(cacheKey, BuildPrintHeaderMessage);
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, BuildPrintHeaderMessage)
+                : BuildPrintHeaderMessage();
         }
 
         public HtmlString BuildPrintHeaderMessage()

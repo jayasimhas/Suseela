@@ -15,6 +15,7 @@ using Informa.Models.DCD;
 using Informa.Web.ViewModels;
 using Informa.Library.Utilities.Extensions;
 using Jabberwocky.Core.Caching;
+using Sitecore;
 
 namespace Informa.Web.Models
 {
@@ -62,7 +63,9 @@ namespace Informa.Web.Models
 			{
 				string articleNumber = match.Groups[1].Value;
                 string cacheKey = $"TokenRepRelated-{articleNumber}";
-                string replace = CacheProvider.GetFromCache(cacheKey, () => BuildReplaceRelatedArticles(articleNumber));
+                string replace = (Context.PageMode.IsNormal)
+                    ? CacheProvider.GetFromCache(cacheKey, () => BuildReplaceRelatedArticles(articleNumber))
+                    : BuildReplaceRelatedArticles(articleNumber);
 
 				content = content.Replace(match.Value, replace);
             }
@@ -96,7 +99,9 @@ namespace Informa.Web.Models
 			{
 				string articleNumber = match.Groups[1].Value;
                 string cacheKey = $"TokenRepSidebar-{articleNumber}";
-                string replace = CacheProvider.GetFromCache(cacheKey, () => BuildReplaceSidebarArticles(articleNumber, partialName));
+                string replace = (Context.PageMode.IsNormal)
+                    ? CacheProvider.GetFromCache(cacheKey, () => BuildReplaceSidebarArticles(articleNumber, partialName))
+                    : BuildReplaceSidebarArticles(articleNumber, partialName);
                 
 				content = content.Replace(match.Value, replace);
 			}

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Jabberwocky.Core.Caching;
+using Sitecore;
 
 namespace Informa.Library.ContentCuration.Search
 {
@@ -27,7 +28,9 @@ namespace Informa.Library.ContentCuration.Search
 	    public IEnumerable<Guid> Get(Guid itemId)
 	    {
             string cacheKey = $"{nameof(ItemManuallyCuratedContentSearch)}-Get-{itemId}";
-            return CacheProvider.GetFromCache(cacheKey, () => BuildResults(itemId));
+            return (Context.PageMode.IsNormal)
+                ? CacheProvider.GetFromCache(cacheKey, () => BuildResults(itemId))
+                : BuildResults(itemId);
         }
 
 	    public IEnumerable<Guid> BuildResults(Guid itemId) {
