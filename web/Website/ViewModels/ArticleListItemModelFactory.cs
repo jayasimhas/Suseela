@@ -40,7 +40,7 @@ namespace Informa.Web.ViewModels
 				return null;
 			}
 
-			var publication = article.GetAncestors<ISite_Root>().First(x => x._TemplateId == ISite_RootConstants.TemplateId.ToGuid());
+			var publication = article.Crawl<ISite_Root>();
 			var image = article.Featured_Image_16_9?.Src;
 
 			return new ArticleListItemModel
