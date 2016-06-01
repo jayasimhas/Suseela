@@ -827,11 +827,9 @@
     <Compile Include="ViewModels\IListableVIewModel.cs" />
     <Compile Include="ViewModels\ISignInViewModel.cs" />
     <Compile Include="ViewModels\LatestNewsViewModel.cs" />
-    <Compile Include="ViewModels\ManuallyCuratedContentViewModel.cs" />
     <Compile Include="ViewModels\PersonModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
-    <Compile Include="ViewModels\HighlightViewModel.cs" />
     <Compile Include="ViewModels\IArticlePrologueBookmarkViewModel.cs" />
     <Compile Include="ViewModels\IArticlePrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IArticleProloguePrintViewModel.cs" />
