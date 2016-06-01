@@ -18,8 +18,9 @@ namespace InformaSitecoreWord.Util
             {
                 if (_serverTimezone == null || (DateTime.Now - _serverTimezoneAge).TotalMinutes > 10)
                 {
-                    _serverTimezone = TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time");
-                    //SitecoreClient.GetServerTimezone();
+                    //_serverTimezone = TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time");
+                    SitecoreClient.GetServerTimezone();
+                    _serverTimezoneAge = DateTime.Now;
                 }
 
                 return _serverTimezone;
