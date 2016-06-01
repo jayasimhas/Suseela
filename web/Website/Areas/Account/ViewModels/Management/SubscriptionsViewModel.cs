@@ -16,13 +16,13 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 	{
 		public readonly ITextTranslator TextTranslator;
 		public readonly IAuthenticatedUserContext UserContext;
-		public readonly IUserSubscriptionsContext UserSubscriptionsContext;
 		public readonly ISignInViewModel SignInViewModel;
 
 		protected readonly IFindSitePublicationByCode FindSitePublication;
 
 		private readonly Dictionary<string, bool> RenewBtnSettings;
 		private readonly Dictionary<string, bool> SubscriptionBtnSettings;
+		private readonly IEnumerable<ISubscription> _subcriptions; 
 
 		public SubscriptionsViewModel(
 			ITextTranslator translator,
@@ -33,13 +33,14 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		{
 			TextTranslator = translator;
 			UserContext = userContext;
-			UserSubscriptionsContext = userSubscriptionsContext;
 			SignInViewModel = signInViewModel;
 			FindSitePublication = findSitePublication;
 
 			RenewBtnSettings = new Dictionary<string, bool>();
 			SubscriptionBtnSettings = new Dictionary<string, bool>();
-			foreach (var sub in Subscriptions)
+			_subcriptions = userSubscriptionsContext.Subscriptions;
+
+			foreach (var sub in _subcriptions)
 			{
 				//renew btns
 				if (!RenewBtnSettings.ContainsKey(sub.ProductCode))
@@ -55,27 +56,25 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 			}
 		}
 
-		public IList<ISubscription> Subscriptions => UserSubscriptionsContext.Subscriptions.ToList();
-
-		public IList<SubscriptionViewModel> SubscriptionViewModels
+		public IEnumerable<SubscriptionViewModel> SubscriptionViewModels
 		{
 			get
 			{
-				return Subscriptions.Select(s => new SubscriptionViewModel
+				return _subcriptions.Select(s => new SubscriptionViewModel
 				{
 					Expiration = s.ExpirationDate,
 					Publication = FindSitePublication.Find(s.Publication)?.Name ?? s.Publication,
 					Renewable = ShowRenewButton(s),
 					Subscribable = ShowSubscribeButton(s.ProductCode),
 					Type = s.ProductType
-				}).ToList();
+				});
 			}
 		}
 
 		public bool ShowRenewButton(ISubscription subscription)
 		{
 			//if all subscriptions of this type are within renew range and this subscription is not multi-user 
-			return Subscriptions
+			return _subcriptions
 							.Where(a => a.ProductCode.Equals(subscription.ProductCode))
 							.All(b => WithinRenewRange(b.ExpirationDate))
 					&& !IsMultiUser(subscription.SubscriptionType);
