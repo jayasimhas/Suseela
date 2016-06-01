@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Informa.Library.User.EmailOptIns;
 using Informa.Library.User.Newsletter;
-using Informa.Library.User.Newsletter.EmailOptIns;
 using Informa.Library.User.Search;
 using Informa.Library.Utilities.References;
 using NSubstitute;

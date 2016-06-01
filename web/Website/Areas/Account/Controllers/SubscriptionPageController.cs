@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
-using Informa.Library.User.Newsletter.EmailOptIns;
-using Informa.Library.Utilities.References;
+using Informa.Library.User.EmailOptIns;
 using Informa.Library.Utilities.Security;
 using Jabberwocky.Autofac.Attributes;
 
@@ -9,6 +8,8 @@ namespace Informa.Web.Areas.Account.Controllers
     public class SubscriptionPageController : Controller
     {
         private readonly IDependencies _dependencies;
+        private const string SubscribeViewPath = "~/Areas/Account/Views/Management/OneClickSubscribe.cshtml";
+        private const string UnsubscribeViewPath = "~/Areas/Account/Views/Management/OneClickUnsubscribe.cshtml";
 
         [AutowireService(true)]
         public interface IDependencies
@@ -24,7 +25,6 @@ namespace Informa.Web.Areas.Account.Controllers
 
         public ActionResult Subscribe(string Pub)
         {
-            const string oneClickView = "~/Areas/Account/Views/Management/OneClickUnsubscribe.cshtml";
             var responseModel = _dependencies.OptInManager.OptIn(Pub);
 
             if (!string.IsNullOrEmpty(responseModel.RedirectUrl))
@@ -32,24 +32,21 @@ namespace Informa.Web.Areas.Account.Controllers
                 Redirect(responseModel.RedirectUrl);
             }
 
-            return View(oneClickView, responseModel);
+            return View(SubscribeViewPath, responseModel);
         }
 
         public ActionResult Unsubscribe(string User, string Type, string Pub)
         {
-            const string oneClickView = "~/Areas/Account/Views/Management/OneClickUnsubscribe.cshtml";
-
             var responseModel = _dependencies.OptInManager.OptOut(User, Type, Pub);
 
-            return View(oneClickView, responseModel);
+            return View(UnsubscribeViewPath, responseModel);
         }
 
-        public ActionResult SafeUnsubscribe(string Token)
+        public ActionResult AnonnymousUnsubscribe(string Token)
         {
-            var decrypted = _dependencies.Crypto.DecryptStringAes(Token, Constants.CryptoKey);
-            
+            var responseModel = _dependencies.OptInManager.AnnonymousOptOut(Token);
 
-            return null;
+            return View(UnsubscribeViewPath, responseModel);
         }
     }
 }

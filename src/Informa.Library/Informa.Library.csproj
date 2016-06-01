@@ -433,7 +433,8 @@
     <Compile Include="Subscription\User\IUserSubscriptionsContext.cs" />
     <Compile Include="Subscription\User\UserSubscribedContext.cs" />
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
-    <Compile Include="User\Newsletter\EmailOptIns\OptInManager.cs" />
+    <Compile Include="User\EmailOptIns\OptInManager.cs" />
+    <Compile Include="User\EmailOptIns\OptInResponseModel.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserSession.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUserSession.cs" />
     <Compile Include="User\Authentication\ISendPluginUserLockedOutEmail.cs" />
@@ -458,6 +459,7 @@
     <Compile Include="User\Document\SavedDocumentItem.cs" />
     <Compile Include="User\Document\SavedDocumentItemsContext.cs" />
     <Compile Include="User\Document\SavedDocumentItemsFactory.cs" />
+    <Compile Include="User\EmailOptIns\SavedSearchOptOutViewModel.cs" />
     <Compile Include="User\Entitlement\DefaultEntitlementsFactory.cs" />
     <Compile Include="User\Entitlement\EntitledProduct.cs" />
     <Compile Include="User\Entitlement\EntitledProductItemCodeFactory.cs" />
@@ -609,7 +611,6 @@
     <Compile Include="Services\NlmExport\NlmExportService.cs" />
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
-    <Compile Include="User\Newsletter\EmailOptIns\OptInResponseModel.cs" />
     <Compile Include="User\Newsletter\FindSiteNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IFindSiteNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IPublicationsNewsletterUserOptInContext.cs" />

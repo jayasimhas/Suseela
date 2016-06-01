@@ -9,6 +9,7 @@ namespace Informa.Library.User.Search
 		public virtual string SearchString { get; set; }
 		public bool HasAlert { get; set; }
 		public DateTime DateCreated { get; set; }
+	    public string UnsubscribeToken { get; set; }
 	}
 
 	public class SavedSearchItemId : ISavedSearchItemId, IEquatable<ISavedSearchItemId>

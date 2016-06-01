@@ -5,7 +5,6 @@ using System;
 using System.Linq;
 using Informa.Library.Subscription;
 using Informa.Library.Subscription.User;
-using Informa.Library.User.Newsletter.EmailOptIns;
 using Informa.Library.User.Profile;
 using Jabberwocky.Autofac.Attributes;
 

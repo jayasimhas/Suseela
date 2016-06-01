@@ -27,7 +27,7 @@ namespace Informa.Library.User.Search
 			IAuthenticatedUserSession UserSession { get; }
 		}
 
-		private const string SessionKey = nameof(SavedSearchService);
+		public static string SessionKey = nameof(SavedSearchService);
 		private static IEqualityComparer<ISavedSearchEntity> _comparer = new SearchStringEqualityComparer();
 
 		protected readonly IDependencies _;

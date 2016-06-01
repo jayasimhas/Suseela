@@ -2,9 +2,9 @@
 version: 1
 id: {D8689615-84B5-43C7-A38D-CFC567C036D6}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Newsletter Signup
+path: /sitecore/layout/Renderings/User Defined/Opt Ins
 parent: {97AE523B-BC10-4BA9-8F5B-6877D04E2AC1}
-name: Newsletter Signup
+name: Opt Ins
 master: {00000000-0000-0000-0000-000000000000}
 template: {7EE0975B-0698-493E-B3A2-0B2EF33D0522}
 templatekey: Rendering Folder
@@ -12,7 +12,7 @@ templatekey: Rendering Folder
 ----version----
 language: en
 version: 1
-revision: 69e16d0c-96b5-4add-aa30-02e0030d0bca
+revision: 3d1e2c5b-e1a5-4c88-aa96-b24915828ac5
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,14 +27,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-69e16d0c-96b5-4add-aa30-02e0030d0bca
+3d1e2c5b-e1a5-4c88-aa96-b24915828ac5
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160310T105838Z
+20160531T182516Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

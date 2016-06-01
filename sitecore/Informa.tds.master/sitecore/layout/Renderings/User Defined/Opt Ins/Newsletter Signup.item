@@ -2,7 +2,7 @@
 version: 1
 id: {C6F8944E-D7D7-41CC-987E-E4C30C2468AF}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Newsletter Signup/Newsletter Signup
+path: /sitecore/layout/Renderings/User Defined/Opt Ins/Newsletter Signup
 parent: {D8689615-84B5-43C7-A38D-CFC567C036D6}
 name: Newsletter Signup
 master: {00000000-0000-0000-0000-000000000000}

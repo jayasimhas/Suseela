@@ -40,7 +40,7 @@ namespace Informa.Web.App_Start
 			builder.RegisterGlassServices();
 			builder.RegisterCacheServices();
 			builder.RegisterProcessors(new[] { WebsiteDll, LibraryDll });
-			builder.RegisterGlassMvcServices(WebsiteDll);
+			builder.RegisterGlassMvcServices(WebsiteDll, LibraryDll);
 			builder.RegisterGlassFactory(LibraryDll, VelirSearchDll, ModelsDll);
 			builder.RegisterApiControllers(Assembly.GetExecutingAssembly()).WithAttributeFilter();
 			builder.RegisterControllers(Assembly.GetExecutingAssembly()).WithAttributeFilter();

@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Linq;
 using Glass.Mapper.Sc;
+using Informa.Library.Globalization;
 using Informa.Library.Publication;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Content;
+using Informa.Library.User.Newsletter;
 using Informa.Library.User.Offer;
 using Informa.Library.User.Search;
-using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.References;
 using Informa.Library.Utilities.Security;
 using Informa.Library.ViewModels.Account;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 using Jabberwocky.Autofac.Attributes;
 
-namespace Informa.Library.User.Newsletter.EmailOptIns
+namespace Informa.Library.User.EmailOptIns
 {
     public interface IOptInManager
     {
@@ -41,6 +42,8 @@ namespace Informa.Library.User.Newsletter.EmailOptIns
             IUpdateOfferUserOptInContext UpdateOfferUserOptInContext { get; }
             ICrypto Crypto { get; }
             IUserContentRepository<ISavedSearchEntity> SavedSearchEntityRepository { get; }
+            IAuthenticatedUserSession AuthenticatedUserSession { get; }
+            ITextTranslator TextTranslator { get; }
         }
 
         public OptInManager(IDependencies dependencies)
@@ -133,15 +136,28 @@ namespace Informa.Library.User.Newsletter.EmailOptIns
             var response = new OptInResponseModel {IsAuthenticated = false};
 
             response.BodyText = entity == null
-                ? "Unsubscribe failed.  The url could not be properly parsed."
+                ? _dependencies.TextTranslator.Translate("Account.SavedSearch.OptOutFailed")
                 : _dependencies.SavedSearchEntityRepository.Delete(entity).Message;
+
+            if (_dependencies.AuthenticatedUserContext.IsAuthenticated)
+            {
+                _dependencies.AuthenticatedUserSession.Clear(SavedSearchService.SessionKey);
+            }
 
             return response;
         }
 
         public SavedSearchEntity ParseToken(string token)
         {
-            var decrypted = _dependencies.Crypto.DecryptStringAes(token, Constants.CryptoKey);
+            string decrypted;
+            try
+            {
+                decrypted = _dependencies.Crypto.DecryptStringAes(token, Constants.CryptoKey);
+            }
+            catch
+            {
+                return null;
+            }
 
             if (string.IsNullOrEmpty(decrypted)) { return null; }
 

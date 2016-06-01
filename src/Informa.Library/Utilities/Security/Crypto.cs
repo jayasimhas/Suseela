@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
 using Jabberwocky.Autofac.Attributes;
 
-//Taken and modified from:
+//Taken and heavily modified from:
 //http://stackoverflow.com/a/2791259/3490246
 
 namespace Informa.Library.Utilities.Security
@@ -18,14 +18,13 @@ namespace Informa.Library.Utilities.Security
     [AutowireService]
     public class Crypto : ICrypto
     {
-        private readonly byte[] _salt = Encoding.ASCII.GetBytes("dxk39f6glkw8xotl");
+        private byte[] Salt { get; } = HexStringToByteArray("c04eeb397a32992d98e774a2332b98c6");
+        private static byte[] HexStringToByteArray(string hex) => Enumerable.Range(0, hex.Length/2)
+            .Select(i => Convert.ToByte(hex.Substring(i*2, 2), 16))
+            .ToArray();
+            
 
-        /// <summary>
-        /// Encrypt the given string using AES.  The string can be decrypted using 
-        /// DecryptStringAES().  The sharedSecret parameters must match.
-        /// </summary>
-        /// <param name="plainText">The text to encrypt.</param>
-        /// <param name="sharedSecret">A password used to generate a key for encryption.</param>
+
         public string EncryptStringAes(string plainText, string sharedSecret)
         {
             if (string.IsNullOrEmpty(plainText))
@@ -35,16 +34,14 @@ namespace Informa.Library.Utilities.Security
 
             using (var algorithm = new RijndaelManaged())
             {
-                var key = new Rfc2898DeriveBytes(sharedSecret, _salt);
-                algorithm.Key = key.GetBytes(algorithm.KeySize/8);
+                algorithm.Key = new Rfc2898DeriveBytes(sharedSecret, Salt)
+                    .GetBytes(algorithm.KeySize / 8);
+                algorithm.IV = Salt;
 
                 ICryptoTransform encryptor = algorithm.CreateEncryptor(algorithm.Key, algorithm.IV);
 
                 using (var memoryStream = new MemoryStream())
                 {
-                    memoryStream.Write(BitConverter.GetBytes(algorithm.IV.Length), 0, sizeof(int));
-                    memoryStream.Write(algorithm.IV, 0, algorithm.IV.Length);
-
                     using (var cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write))
                     {
                         using (var streamWriter = new StreamWriter(cryptoStream))
@@ -57,12 +54,7 @@ namespace Informa.Library.Utilities.Security
             }
         }
 
-        /// <summary>
-        /// Decrypt the given string.  Assumes the string was encrypted using 
-        /// EncryptStringAES(), using an identical sharedSecret.
-        /// </summary>
-        /// <param name="cipherText">The text to decrypt.</param>
-        /// <param name="sharedSecret">A password used to generate a key for decryption.</param>
+
         public string DecryptStringAes(string cipherText, string sharedSecret)
         {
             if (string.IsNullOrEmpty(cipherText))
@@ -72,13 +64,14 @@ namespace Informa.Library.Utilities.Security
 
             using (var algorithm = new RijndaelManaged())
             {
-                var key = new Rfc2898DeriveBytes(sharedSecret, _salt);
-                var bytes = Convert.FromBase64String(cipherText);
-                using (var memoryStream = new MemoryStream(bytes))
-                {
-                    algorithm.Key = key.GetBytes(algorithm.KeySize/8);
-                    algorithm.IV = ReadByteArray(memoryStream);
+                algorithm.Key = new Rfc2898DeriveBytes(sharedSecret, Salt)
+                    .GetBytes(algorithm.KeySize/8);
+                algorithm.IV = Salt;
 
+                var cipherBytes = Convert.FromBase64String(cipherText);
+
+                using (var memoryStream = new MemoryStream(cipherBytes))
+                {
                     ICryptoTransform decryptor = algorithm.CreateDecryptor(algorithm.Key, algorithm.IV);
 
                     using (var cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read))
@@ -90,23 +83,6 @@ namespace Informa.Library.Utilities.Security
                     }
                 }
             }
-        }
-
-        private static byte[] ReadByteArray(Stream stream)
-        {
-            var rawLength = new byte[sizeof(int)];
-            if (stream.Read(rawLength, 0, rawLength.Length) != rawLength.Length)
-            {
-                throw new SystemException("Stream did not contain properly formatted byte array");
-            }
-
-            var buffer = new byte[BitConverter.ToInt32(rawLength, 0)];
-            if (stream.Read(buffer, 0, buffer.Length) != buffer.Length)
-            {
-                throw new SystemException("Did not read byte array properly");
-            }
-
-            return buffer;
         }
     }
 }

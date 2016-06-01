@@ -69,6 +69,7 @@ namespace Informa.Library.Utilities.References
             public const string UtmCampaign = "utm_campaign";
             public const string UtmSource = "utm_source";
             public const string UtmMedium = "utm_medium";
+            public const string EncryptedToken = "token";
         }
 
         public static class SettingKeys

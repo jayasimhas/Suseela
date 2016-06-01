@@ -1,6 +1,6 @@
 ﻿using Informa.Library.ViewModels.Account;
 
-namespace Informa.Library.User.Newsletter.EmailOptIns
+namespace Informa.Library.User.EmailOptIns
 {
     public class OptInResponseModel
     {
