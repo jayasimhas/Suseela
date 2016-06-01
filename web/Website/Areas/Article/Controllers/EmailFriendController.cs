@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Http;
-using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
 using Informa.Library.Mail;
@@ -17,7 +16,6 @@ using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Web.Areas.Article.Models.Article.EmailFriend;
 using Informa.Library.Utilities.Settings;
-using Informa.Library.Utilities.TokenMatcher;
 using Informa.Library.Utilities.WebApi.Filters;
 using log4net;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
@@ -25,7 +23,6 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.Data.Items;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
-using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Web.Areas.Article.Controllers
 {

@@ -14,7 +14,6 @@ using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
-using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Sitecore.Social.Infrastructure.Utils;
 
 namespace Informa.Web.ViewModels

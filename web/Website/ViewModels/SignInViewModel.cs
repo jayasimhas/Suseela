@@ -5,7 +5,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class SignInViewModel : ISignInViewModel
 	{
 		protected readonly ISiteRootContext SiteRootContext;

@@ -5,7 +5,6 @@ using Informa.Library.User.Authentication;
 using System;
 using System.Linq;
 using Informa.Library.Subscription.User;
-using Informa.Library.User.Profile;
 using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels

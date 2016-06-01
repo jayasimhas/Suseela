@@ -5,7 +5,6 @@ using Informa.Library.User.Profile;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.Settings;
 using Jabberwocky.Glass.Autofac.Attributes;
-using System;
 using System.Collections.Generic;
 
 namespace Informa.Library.User.ResetPassword.Web

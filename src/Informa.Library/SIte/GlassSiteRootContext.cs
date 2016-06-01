@@ -1,7 +1,5 @@
-﻿using System.Linq;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+﻿using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Glass.Mapper.Sc;
-using Sitecore;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.Site
@@ -11,10 +9,10 @@ namespace Informa.Library.Site
 	{
 		protected readonly ISiteRootsContext SiteRootsContext;
 
-		public GlassSiteRootContext(ISiteRootsContext siteRootsContext)
+		public GlassSiteRootContext(ISitecoreContext sitecoreContext)
 		{
-            SiteRootsContext = siteRootsContext;
+			Item = sitecoreContext.GetRootItem<ISite_Root>();
 		}
-        public ISite_Root Item => SiteRootsContext.SiteRoots.FirstOrDefault(a => a._Path.Equals(Context.Site.RootPath));
+		public ISite_Root Item { get; set; }
 	}
 }

@@ -16,7 +16,7 @@ using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Library.Services.Global {
 
-    [AutowireService(LifetimeScope.SingleInstance)]
+    [AutowireService(LifetimeScope.PerScope)]
     public class GlobalService : IGlobalService
     {
         protected readonly ISitecoreService SitecoreService;

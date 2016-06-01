@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using Informa.Library.Navigation;
-using Glass.Mapper.Sc;
+﻿using Informa.Library.Navigation;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation;
 using Jabberwocky.Glass.Autofac.Attributes;
-using System.Linq;
 using Informa.Library.Services.Global;
 
 namespace Informa.Library.Site
 {
-    [AutowireService(LifetimeScope.SingleInstance)]
+    [AutowireService(LifetimeScope.PerScope)]
     public class SiteFooterNavigationContext : ISiteFooterNavigationContext
     {
         protected readonly IGlobalService GlobalService;

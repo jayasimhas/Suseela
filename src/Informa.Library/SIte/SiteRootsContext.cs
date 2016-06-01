@@ -27,21 +27,15 @@ namespace Informa.Library.Site
 
 		public IEnumerable<ISite_Root> SiteRoots => SafeObject;
 
-		protected override IEnumerable<ISite_Root> UnsafeObject
-		{
-		    get
-		    {
-		        return CacheProvider.GetFromCache(cacheKey, BuildSiteRootsContext);
-		    }
-		}
+		protected override IEnumerable<ISite_Root> UnsafeObject => CacheProvider.GetFromCache(cacheKey, BuildSiteRootsContext);
 
-	    private IEnumerable<ISite_Root> BuildSiteRootsContext()
+		private IEnumerable<ISite_Root> BuildSiteRootsContext()
 	    {
             var contentItem = SitecoreService.GetItem<IGlassBase>("/sitecore/content");
 
-            var SiteRoots = contentItem._ChildrenWithInferType.Where(sr => sr is ISite_Root).Cast<ISite_Root>();
+            var siteRoots = contentItem._ChildrenWithInferType.OfType<ISite_Root>();
             
-            return SiteRoots;
+            return siteRoots;
         }
 	}
 }
