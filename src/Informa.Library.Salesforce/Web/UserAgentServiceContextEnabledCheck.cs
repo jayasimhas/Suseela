@@ -1,9 +1,5 @@
-﻿using System;
-using Informa.Library.Session;
+﻿using Informa.Library.Session;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using Sitecore.Configuration;
 using System.Web;
 
 namespace Informa.Library.Salesforce.Web
