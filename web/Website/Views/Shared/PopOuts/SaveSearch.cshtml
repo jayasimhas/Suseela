@@ -126,7 +126,7 @@
                         </p>
 					}
 
-                    <button type="submit" class="pop-out__sign-in-submit button--filled" ng-click="searchIsSaved = true">
+                    <button type="submit" class="pop-out__sign-in-submit button--filled click-utag" ng-click="searchIsSaved = true" data-info='{"event_name":"toolbar_use", "toolbar_tool":"save search"}'>
                         @(Model.IsAuthenticated
                               ? @Html.Raw(Model.ButtonLoggedInText)
                               : @Html.Raw(Model.ButtonLoggedOutText))

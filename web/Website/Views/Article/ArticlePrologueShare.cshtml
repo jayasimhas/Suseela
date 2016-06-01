@@ -15,7 +15,7 @@
 	<a
 		href="https://www.linkedin.com/shareArticle?mini=true&url=@HttpUtility.UrlEncode(Model.ArticleUrl)&title=@HttpUtility.UrlEncode(Model.ArticleTitle)&summary=&source="
 		target="_blank"
-		class="link__no-hover click-utag" data-info='{"event_name" : "article-share-linkedin"}'>
+		class="link__no-hover click-utag" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"linkedin"}'>
 
 		<svg class="action-flag__icon action-flag__icon--linkedin">
 			<use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
@@ -31,7 +31,7 @@
 	*@
 	<a
 		href="https://twitter.com/intent/tweet?text=@HttpUtility.UrlEncode(Model.ArticleTitle)&url=@HttpUtility.UrlEncode(Model.ArticleUrl)"
-		class="link__no-hover click-utag" data-info='{"event_name" : "article-share-twitter"}'>
+		class="link__no-hover click-utag" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"twitter"}'>
 
 		<svg class="action-flag__icon action-flag__icon--twitter" >
 			<use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>

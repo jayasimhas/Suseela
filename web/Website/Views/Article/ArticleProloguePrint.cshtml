@@ -7,7 +7,7 @@
 <li class="action-flag pop-out__trigger click-utag @( Model.IsUserAuthenticated ? "" : "js-pop-out-trigger" )"
     data-pop-out-type="sign-in"
     data-pop-out-align="center"
-    @(Model.IsUserAuthenticated ? "onclick=window.print();" : string.Empty) data-info='{"event_name" : "article-print"}'>
+    @(Model.IsUserAuthenticated ? "onclick=window.print();" : string.Empty) data-info='{"event_name" : "toolbar_use", "toolbar_tool":"print"}'>
     
     <span class="action-flag__label">Print</span>
 
