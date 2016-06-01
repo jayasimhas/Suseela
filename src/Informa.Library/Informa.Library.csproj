@@ -411,6 +411,7 @@
     <Compile Include="Search\PredicateBuilders\InformaQueryPredicateBuilder.cs" />
     <Compile Include="Search\Results\IArticlePublicationResults.cs" />
     <Compile Include="Search\Results\QueryResults.cs" />
+    <Compile Include="Search\Sort\SitecoreOrderStrategy.cs" />
     <Compile Include="Search\Utilities\SearchSummaryUtil.cs" />
     <Compile Include="Search\Utilities\SearchWebClientUtil.cs" />
     <Compile Include="Services\Article\ArticleService.cs" />
