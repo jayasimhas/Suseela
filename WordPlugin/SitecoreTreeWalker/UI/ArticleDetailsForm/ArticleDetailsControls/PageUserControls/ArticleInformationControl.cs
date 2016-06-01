@@ -615,7 +615,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             //uxArticleNumberLabel.Text = articleDetails.ArticleNumber;
             if (articleDetails.WebPublicationDate > DateTime.MinValue)
             {
-                SetPublicationTime(articleDetails.WebPublicationDate, false);
+                SetPublicationTime(articleDetails.WebPublicationDate, true);
             }
 
             ArticleNumber = articleDetails.ArticleNumber;

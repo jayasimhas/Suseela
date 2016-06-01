@@ -767,9 +767,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
                 var articleDate = articleDetailsPageSelector.GetDate();
 
-                var timeUtc = DateTime.UtcNow;
-                TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-                DateTime currentTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
+                //var timeUtc = DateTime.UtcNow;
+                //TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+                DateTime currentTime = DateTime.Now;// TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
 
                 if (articleDate < currentTime)
                 {
@@ -777,7 +777,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     var result = WantsToSetArticleDateToNow(command);
                     if (result == DialogResult.Yes)
                     {
-                        articleDetailsPageSelector.SetDate(DateTime.Now);
+                        articleDetailsPageSelector.SetDate(DateTime.Now, true);
                     }
                     else if (result == DialogResult.Cancel)
                     {
@@ -878,16 +878,16 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
 
                 var articleDate = articleDetailsPageSelector.GetDate();
-                var timeUtc = DateTime.UtcNow;
-                TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-                DateTime currentTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
+                //var timeUtc = DateTime.UtcNow;
+                //TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+                DateTime currentTime = DateTime.Now;// TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
 
                 if (articleDate < currentTime)
                 {
                     var result = WantsToSetArticleDateToNow(command);
                     if (result == DialogResult.Yes)
                     {
-                        articleDetailsPageSelector.SetDate(DateTime.Now);
+                        articleDetailsPageSelector.SetDate(DateTime.Now, true);
                     }
                     else if (result == DialogResult.Cancel)
                     {
