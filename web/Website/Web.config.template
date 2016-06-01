@@ -202,7 +202,7 @@ work and it shouldn't be changed.
           false at all other times. For more information, refer to the documentation about
           debugging ASP .NET files.
     -->
-    <compilation defaultLanguage="c#" debug="true" targetFramework="4.6">
+    <compilation defaultLanguage="c#" debug="${debug.Mode}" targetFramework="4.6">
       <assemblies>
         <add assembly="System.Web.Abstractions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
         <add assembly="System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
@@ -298,6 +298,16 @@ work and it shouldn't be changed.
     <httpRuntime maxRequestLength="512000" executionTimeout="600" enableKernelOutputCache="false" relaxedUrlToFileSystemMapping="true" enableVersionHeader="false" />
     <!-- <httpRuntime targetFramework="4.6" enableVersionHeader="false" /> -->
   </system.web>
+  <system.net>
+    <connectionManagement>
+      <add address="*" maxconnection="${Http.MaxConcurrentConnections}" />
+    </connectionManagement>
+    <mailSettings>
+      <smtp from="${Mail.MailServerFromAddress}">
+        <network host="${Mail.MailServer}" port="${Mail.MailServerPort}" defaultCredentials="false" />
+      </smtp>
+    </mailSettings>
+  </system.net>
   <runtime>
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
       <dependentAssembly>
