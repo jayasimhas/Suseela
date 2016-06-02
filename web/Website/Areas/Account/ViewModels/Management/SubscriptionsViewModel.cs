@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
-using Informa.Library.User.Authentication;
 using Informa.Library.Subscription;
+using Informa.Library.Subscription.User;
+using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
-using Informa.Library.Subscription.User;
+using Informa.Library.ViewModels.Account;
 using Informa.Library.Publication;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management

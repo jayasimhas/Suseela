@@ -1,6 +1,6 @@
 ﻿using System.Web;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Library.ViewModels.Account
 {
 	public interface ISignInViewModel
 	{

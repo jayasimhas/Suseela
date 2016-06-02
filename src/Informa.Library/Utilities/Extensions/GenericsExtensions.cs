@@ -15,5 +15,10 @@ namespace Informa.Library.Utilities.Extensions
 	        action(source);
 	        return source;
 	    }
-	}
+        public static T Alter<T>(this T source, Action action)
+        {
+            action();
+            return source;
+        }
+    }
 }

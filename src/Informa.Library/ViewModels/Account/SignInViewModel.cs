@@ -1,7 +1,8 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.Site;
 using System.Web;
-using Jabberwocky.Glass.Autofac.Attributes;
+using Informa.Library.ViewModels.Account;
+using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
 {

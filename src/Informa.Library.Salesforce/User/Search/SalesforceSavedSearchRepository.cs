@@ -18,8 +18,9 @@ namespace Informa.Library.Salesforce.User.Search
 
 		public IContentResponse Add(ISavedSearchEntity entity)
 		{
-			if (string.IsNullOrEmpty(entity?.Username) || string.IsNullOrEmpty(entity.Name) || string.IsNullOrEmpty(entity.SearchString))
-			{
+            if( entity == null || 
+                new[]{entity.Username, entity.Name, entity.SearchString, entity.UnsubscribeToken}.Any(string.IsNullOrEmpty))
+		    {
 				return new ContentResponse
 				{
 					Success = false,
@@ -27,7 +28,11 @@ namespace Informa.Library.Salesforce.User.Search
 				};
 			}
 
-			var response = Service.Execute(s => s.createSavedSearchItem(entity.Username, entity.SearchString, entity.Name, entity.HasAlert));
+		    var response =
+		        Service.Execute(
+		            s =>
+		                s.createSavedSearchItem2(entity.Username, entity.SearchString, entity.Name, entity.HasAlert,
+		                    entity.UnsubscribeToken));
 
 			return CreateResponse(response);
 		}

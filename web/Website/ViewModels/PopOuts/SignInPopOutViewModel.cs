@@ -1,4 +1,5 @@
 ﻿using Informa.Library.Globalization;
+using Informa.Library.ViewModels.Account;
 using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels.PopOuts

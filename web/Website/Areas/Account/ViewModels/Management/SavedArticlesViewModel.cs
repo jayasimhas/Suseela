@@ -5,6 +5,7 @@ using Informa.Library.User.Document;
 using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System.Web;
+using Informa.Library.ViewModels.Account;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management

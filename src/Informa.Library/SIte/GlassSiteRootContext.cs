@@ -20,6 +20,10 @@ namespace Informa.Library.Site
 			CacheProvider = cacheProvider;
 		}
 
+	    private ISite_Root _item;
+		public ISite_Root Item => _item ?? 
+            (_item = SitecoreContext?.GetRootItem<ISite_Root>());
+
 		private ISite_Root _rootItem;
 		public ISite_Root Item => _rootItem ?? (_rootItem = SitecoreContext.GetRootItem<ISite_Root>());
 

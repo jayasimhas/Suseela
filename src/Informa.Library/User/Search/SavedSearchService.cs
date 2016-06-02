@@ -6,11 +6,14 @@ using Glass.Mapper.Sc;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Content;
 using Informa.Library.Utilities.Extensions;
+using Informa.Library.Utilities.References;
+using Informa.Library.Utilities.Security;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 using Jabberwocky.Glass.Services;
 using Velir.Search.Core.Reference;
+using Constants = Informa.Library.Utilities.References.Constants;
 
 namespace Informa.Library.User.Search
 {
@@ -25,12 +28,13 @@ namespace Informa.Library.User.Search
 			ISiteContextService SiteContext { get; }
 			IAuthenticatedUserContext UserContext { get; }
 			IAuthenticatedUserSession UserSession { get; }
+            ICrypto Crypto { get; }
 		}
 
-		private const string SessionKey = nameof(SavedSearchService);
+		public static string SessionKey = nameof(SavedSearchService);
 		private static IEqualityComparer<ISavedSearchEntity> _comparer = new SearchStringEqualityComparer();
 
-		protected readonly IDependencies _;
+		private readonly IDependencies _dependencies;
 
 		private readonly Lazy<ISearch> _searchPage;
 		protected ISearch SearchPage => _searchPage.Value;
@@ -40,9 +44,9 @@ namespace Informa.Library.User.Search
 
 		public SavedSearchService(IDependencies dependencies)
 		{
-			_ = dependencies;
-			_searchPage = new Lazy<ISearch>(() => _.SitecoreContext.GetHomeItem<IGlassBase>()._ChildrenWithInferType.OfType<ISearch>().FirstOrDefault());
-			_isAuthenticated = new Lazy<bool>(() => _.UserContext.IsAuthenticated);
+			_dependencies = dependencies;
+			_searchPage = new Lazy<ISearch>(() => _dependencies.SitecoreContext.GetHomeItem<IGlassBase>()._ChildrenWithInferType.OfType<ISearch>().FirstOrDefault());
+			_isAuthenticated = new Lazy<bool>(() => _dependencies.UserContext.IsAuthenticated);
 		}
 
 		public bool Exists(ISavedSearchSaveable input)
@@ -91,16 +95,16 @@ namespace Informa.Library.User.Search
 				
 			var id = new SavedSearchEntity
 			{
-				Username = _.UserContext.User.Username,
+				Username = _dependencies.UserContext.User.Username,
 				Name = input.Title
 			};
 
-			var entity = _.Repository.GetById(id);
+            var entity = _dependencies.Repository.GetById(id);
 			if (entity != null)
 			{
 				entity.HasAlert = input.AlertEnabled;
 
-				var updateResponse = _.Repository.Update(entity);
+				var updateResponse = _dependencies.Repository.Update(entity);
 				Clear();
 
 				return updateResponse;
@@ -108,9 +112,10 @@ namespace Informa.Library.User.Search
 
 			entity = id;
 			entity.SearchString = ExtractQueryString(input.Url);
-			entity.HasAlert = input.AlertEnabled;
+            entity.UnsubscribeToken = GetUnsubscribeToken(entity);
+            entity.HasAlert = input.AlertEnabled;
 
-			var addResponse = _.Repository.Add(entity);
+			var addResponse = _dependencies.Repository.Add(entity);
 			Clear();
 
 			return addResponse;
@@ -129,7 +134,7 @@ namespace Informa.Library.User.Search
 				
 			ISavedSearchEntity entity = new SavedSearchEntity
 			{
-				Username = _.UserContext.User.Username,
+				Username = _dependencies.UserContext.User.Username,
 				Name = input.Title,
 				SearchString = ExtractQueryString(input.Url)
 			};
@@ -140,7 +145,7 @@ namespace Informa.Library.User.Search
 				entity = results.FirstOrDefault(e => _comparer.Equals(e, entity));
 			}
 
-			var response = _.Repository.Delete(entity);
+			var response = _dependencies.Repository.Delete(entity);
 			Clear();
 
 			return response;
@@ -148,8 +153,15 @@ namespace Informa.Library.User.Search
 
 		public virtual void Clear()
 		{
-			_.UserSession.Clear(SessionKey);
+			_dependencies.UserSession.Clear(SessionKey);
 		}
+
+	    private string GetUnsubscribeToken(ISavedSearchEntity entity)
+	    {
+	        var raw = string.Concat(entity.Username, "|", entity.Name);
+	        var encoded = HttpUtility.UrlEncode(raw);
+	        return _dependencies.Crypto.EncryptStringAes(encoded, Constants.CryptoKey);
+	    }
 
 		protected virtual IEnumerable<string> ExtractSources(string url)
 		{
@@ -176,12 +188,12 @@ namespace Informa.Library.User.Search
 
 		protected virtual IList<ISavedSearchEntity> GetContentFromSessionOrRepo()
 		{
-			var savedSearches = _.UserSession.Get<IList<ISavedSearchEntity>>(SessionKey);
+			var savedSearches = _dependencies.UserSession.Get<IList<ISavedSearchEntity>>(SessionKey);
 			if (!savedSearches.HasValue)
 			{
-				IList<ISavedSearchEntity> results = _.Repository.GetMany(_.UserContext.User?.Username).ToList();
+				var results = _dependencies.Repository.GetMany(_dependencies.UserContext.User?.Username).ToList();
 
-				_.UserSession.Set(SessionKey, results);
+				_dependencies.UserSession.Set(SessionKey, results);
 
 				return results;
 			}

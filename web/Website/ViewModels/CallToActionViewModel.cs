@@ -4,6 +4,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 using System.Web;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.User.Authentication;
+using Informa.Library.ViewModels.Account;
 using Informa.Web.ViewModels.PopOuts;
 
 namespace Informa.Web.ViewModels

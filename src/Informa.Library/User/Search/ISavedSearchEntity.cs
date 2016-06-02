@@ -7,5 +7,6 @@ namespace Informa.Library.User.Search
 		string SearchString { get; set; }
 		bool HasAlert { get; set; }
 		DateTime DateCreated { get; set; }
+        string UnsubscribeToken { get; set; }
 	}
 }
