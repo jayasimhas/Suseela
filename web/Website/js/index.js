@@ -131,13 +131,13 @@ $(document).ready(function() {
     window.indexBookmarks = function() { // Toggle bookmark icon
         $('.js-bookmark-article').on('click', function bookmarkArticle(e) {
             // Make sure proper elm gets the click event
-            if (e.target !== this) {
-                this.click();
-                return;
-            }
+            // if (e.target !== this) {
+            //     this.click();
+            //     return;
+            // }
 
             e.preventDefault();
-            window.bookmark.toggle(e.target);
+            window.bookmark.toggle(this);
 
         });
     };

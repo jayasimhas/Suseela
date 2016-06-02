@@ -1,3 +1,6 @@
+/* globals analytics_data */
+import { analyticsEvent } from './analytics-controller';
+
 function bookmarkController() {
 
     // * * *
@@ -38,6 +41,10 @@ function bookmarkController() {
                 success: function (response) {
                     if (response.success) {
 
+						if(bookmark.isBookmarking) {
+							analyticsEvent( $.extend(analytics_data, $(bookmark.elm).data('analytics')) );
+						}
+
                         this.flipIcon(bookmark);
                         return true;
                     }
@@ -47,8 +54,6 @@ function bookmarkController() {
                 },
                 error: function(response) {
                     return false;
-                },
-                complete: function() {
                 }
             });
 
