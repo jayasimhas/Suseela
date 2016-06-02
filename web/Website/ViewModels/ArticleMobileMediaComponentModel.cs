@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
+using Informa.Library.Services.Global;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
@@ -25,16 +26,16 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly IArticleSearch Searcher;
 		protected readonly IArticleListItemModelFactory ArticleListableFactory;
-		protected readonly ISitecoreService SitecoreService;
+		protected readonly IGlobalSitecoreService GlobalService;
 
 		public RelatedArticlesModel(IArticle model,
 						IArticleListItemModelFactory articleListableFactory,
 						IArticleSearch searcher,
-						ISitecoreService sitecoreService)
+						IGlobalSitecoreService globalService)
 		{
 			ArticleListableFactory = articleListableFactory;
 			Searcher = searcher;
-			SitecoreService = sitecoreService;
+            GlobalService = globalService;
 			RelatedArticles = GetRelatedArticles(model);
 		}
 
@@ -51,7 +52,7 @@ namespace Informa.Web.ViewModels
 				var results = Searcher.Search(filter);
 				relatedArticles.AddRange(results.Articles);
 			}
-			return relatedArticles.Where(r => r != null).Select(x => ArticleListableFactory.Create(SitecoreService.GetItem<IArticle>(x._Id))).Cast<IListable>().OrderByDescending(x => x.ListableDate);
+			return relatedArticles.Where(r => r != null).Select(x => ArticleListableFactory.Create(GlobalService.GetItem<IArticle>(x._Id))).Cast<IListable>().OrderByDescending(x => x.ListableDate);
 		}
 
 		public IEnumerable<IListable> RelatedArticles { get; set; }

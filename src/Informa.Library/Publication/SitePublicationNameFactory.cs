@@ -3,12 +3,12 @@ using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Library.Publication
 {
-	[AutowireService]
+	[AutowireService(LifetimeScope.SingleInstance)]
 	public class SitePublicationNameFactory : ISitePublicationNameFactory
 	{
 		public string Create(ISite_Root siteRoot)
 		{
-			return siteRoot?.Publication_Name ?? string.Empty;
+			return siteRoot?.Publication_Name;
 		}
 	}
 }

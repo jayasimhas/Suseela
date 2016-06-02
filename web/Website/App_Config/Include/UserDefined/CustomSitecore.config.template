@@ -235,8 +235,11 @@ But you can also use "patch:attribute" for clarity:
       </setting>
 
       <!-- Scalability Settings -->
-      <setting name="MaxWorkerThreads" value="48" />
-
+      <setting name="MaxWorkerThreads" value="${Sitecore.MaxWorkerThreads}" />
+      
+      <!-- Caching -->
+      <setting name="Caching.DisableCacheSizeLimits" value="${Caching.DisableCacheSizeLimits}" />
+      
       <!-- Glass Interface Factory Settings -->
       <setting name="GlassInterfaceFactory.DebuggingEnabled" value="true" />
 

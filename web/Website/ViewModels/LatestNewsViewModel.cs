@@ -10,6 +10,7 @@ using Glass.Mapper.Sc.Fields;
 using Informa.Library.ContentCuration;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
+using Informa.Library.Site;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
 
 namespace Informa.Web.ViewModels
@@ -25,6 +26,7 @@ namespace Informa.Web.ViewModels
 			IArticleSearch articleSearch,
 			IItemManuallyCuratedContent itemManuallyCuratedContent,
 			IArticleListItemModelFactory articleListableFactory,
+			ISiteRootContext rootContext,
 			ITextTranslator textTranslator)
 		{
 			ArticleSearch = articleSearch;
@@ -39,12 +41,16 @@ namespace Informa.Web.ViewModels
 				Topics = parameters.Subjects.Select(s => s.Item_Name).ToArray();
 			}
 			int itemsToDisplay = parameters.Number_To_Display?.Value ?? 6;
-			News = GetLatestNews(datasource._Id, parameters.Subjects.Select(s => s._Id), itemsToDisplay);
-			SeeAllLink = new Link
+
+			var publicationNames = parameters.Publications.Any()
+				? parameters.Publications.Select(p => p.Publication_Name)
+				: new[] {rootContext.Item.Publication_Name};
+			News = GetLatestNews(datasource._Id, parameters.Subjects.Select(s => s._Id), publicationNames, itemsToDisplay);
+			SeeAllLink = parameters.Show_See_All ? new Link
 			{
 				Text = textTranslator.Translate("Article.LatestFrom.SeeAllLink"),
 				Url = SearchTaxonomyUtil.GetSearchUrl(parameters.Subjects.ToArray())
-			};
+			} : null;
 		}
 
 		public IList<string> Topics { get; set; }
@@ -53,7 +59,7 @@ namespace Informa.Web.ViewModels
 		public bool DisplayTitle { get; set; }
 		public Link SeeAllLink { get; set; }
 
-		private IEnumerable<IListableViewModel> GetLatestNews(Guid datasourceId, IEnumerable<Guid> subjectIds,
+		private IEnumerable<IListableViewModel> GetLatestNews(Guid datasourceId, IEnumerable<Guid> subjectIds, IEnumerable<string> publicationNames,
 			int itemsToDisplay)
 		{
 			var manuallyCuratedContent = ItemManuallyCuratedContent.Get(datasourceId);
@@ -63,6 +69,7 @@ namespace Informa.Web.ViewModels
 			filter.PageSize = itemsToDisplay;
 			filter.ExcludeManuallyCuratedItems.AddRange(manuallyCuratedContent);
 			filter.TaxonomyIds.AddRange(subjectIds);
+			filter.PublicationNames.AddRange(publicationNames);
 
 			var results = ArticleSearch.Search(filter);
 			var articles =

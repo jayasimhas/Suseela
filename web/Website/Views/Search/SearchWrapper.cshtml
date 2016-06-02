@@ -16,7 +16,7 @@
                     </a>
                 </li>
                 <li class="action-flag">
-                    <a target="_blank" class="search__header-buttons--rss" href="/rss/search-feed.aspx{{currentLocation}}" >
+                    <a target="_blank" class="search__header-buttons--rss click-utag" href="/rss/search-feed.aspx{{currentLocation}}" data-info='{"event_name":"toolbar_use", "toolbar_tool":"rss"}'>
                         <span class="action-flag__label">rss</span>
                         <svg class="action-flag__icon">
                       	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#rss"></use>
@@ -25,7 +25,7 @@
                 </li>
 
                 <li
-                    class="action-flag"
+                    class="action-flag js-saved-search-controller"
                     ng-controller="SavedSearchController as savedSearch" ng-init="isAuthenticated = @Model.IsAuthenticated.ToString().ToLower()">
 
                     <form
@@ -36,7 +36,7 @@
                         <input name="Url" class="js-save-search-url" id="Url" type="hidden" value="">
 
                         <span class="pop-out__trigger js-save-search"
-                            ng-class="{ 'js-lightbox-modal-trigger' : searchIsSaved, 'js-pop-out-trigger' : !searchIsSaved }"
+                            ng-class="{ 'angular-lightbox-modal-trigger' : searchIsSaved, 'angular-pop-out-trigger' : !searchIsSaved }"
                             ng-click="savedSearch.showLightbox($event)"
                             data-pop-out-type="save-search"
                             data-lightbox-modal="js-remove-search-modal"
@@ -79,9 +79,9 @@
                         <p>Are you sure you'd like to remove this saved search?</p>
                         <button class="lightbox-modal__submit button--filled js-lightbox-modal-submit" ng-click="searchIsSaved = false">Yes, I'm Sure</button>
                     </div>
-                    
+
                     @Html.Sitecore().Rendering(Model.ItemReferences.EmailSearchPopOutRendering.ToString())
-                    
+
                     @* * *
                     This lightbox backdrop appears when a user lands on the page
                     from a "1-click subscribe" link in an email. Needs to be

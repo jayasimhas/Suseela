@@ -81,7 +81,7 @@ namespace Informa.Library.Salesforce.User.Search
 				return Enumerable.Empty<ISavedSearchEntity>();
 			}
 
-			var response = Service.Execute(s => s.querySavedSearchItems(username));
+			var response = Service.Execute(s => s.querySavedSearchItems2(username));
 
 			if (!response.IsSuccess() || response.savedSearches == null)
 			{

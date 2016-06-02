@@ -70,6 +70,7 @@
     <Compile Include="EBIWebServices\EBI_QueryInformationAndOfferOptInsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryProfileContactInformationResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QuerySavedDocumentResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QuerySavedSearchItems2Response.cs" />
     <Compile Include="EBIWebServices\EBI_QuerySavedSearchItemsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QuerySubscriptionsAndPurchasesResponse.cs" />
     <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
@@ -165,10 +166,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="C:\Work\Clients\Velir\Informa\Git\lib\CRMManager\EBI_WebServices.wsdl">
+    <WebReferenceUrl Include="C:\Users\kevinm\Downloads\IN_WebServices.xml">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\EBIWebServices\</RelPath>
-      <UpdateFromURL>C:\Work\Clients\Velir\Informa\Git\lib\CRMManager\EBI_WebServices.wsdl</UpdateFromURL>
+      <UpdateFromURL>C:\Users\kevinm\Downloads\IN_WebServices.xml</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -260,7 +261,7 @@
     <None Include="Web References\EBIWebServices\EBI_WebServiceResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\EBIWebServices\EBI_WebServices.wsdl" />
+    <None Include="Web References\EBIWebServices\IN_WebServices.wsdl" />
     <None Include="Web References\EBIWebServices\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

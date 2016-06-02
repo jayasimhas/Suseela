@@ -20,16 +20,13 @@ namespace Informa.Library.Services.RobotsText
     {
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IProviderSearchContextFactory SearchContextFactory;
-        protected readonly ISitecoreService SitecoreService;
 
         public RobotsTextService(
             ISitecoreContext context,
-            IProviderSearchContextFactory searchFactory,
-            ISitecoreService service)
+            IProviderSearchContextFactory searchFactory)
         {
             SitecoreContext = context;
             SearchContextFactory = searchFactory;
-            SitecoreService = service;
         }
 
         public string GetDisallowedGeneralContentUrls()

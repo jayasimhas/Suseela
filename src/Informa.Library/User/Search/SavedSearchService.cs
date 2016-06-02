@@ -51,6 +51,8 @@ namespace Informa.Library.User.Search
 
 		public bool Exists(ISavedSearchSaveable input)
 		{
+			if (!IsAuthenticated) return false;
+			
 			var entity = new SavedSearchEntity
 			{
 				SearchString = ExtractQueryString(input.Url)
@@ -121,32 +123,32 @@ namespace Informa.Library.User.Search
 
 		public virtual IContentResponse DeleteContent(ISavedSearchSaveable input)
 		{
-			if (IsAuthenticated)
+			if (!IsAuthenticated)
 			{
-				ISavedSearchEntity entity = new SavedSearchEntity
+				return new ContentResponse
 				{
-					Username = _dependencies.UserContext.User.Username,
-					Name = input.Title,
-					SearchString = ExtractQueryString(input.Url)
+					Success = false,
+					Message = "User is not authenticated"
 				};
+			}
+				
+			ISavedSearchEntity entity = new SavedSearchEntity
+			{
+				Username = _dependencies.UserContext.User.Username,
+				Name = input.Title,
+				SearchString = ExtractQueryString(input.Url)
+			};
 
-				if (string.IsNullOrWhiteSpace(entity.Name))
-				{
-					var results = GetContentFromSessionOrRepo();
-					entity = results.FirstOrDefault(e => _comparer.Equals(e, entity));
-				}
-
-				var response = _dependencies.Repository.Delete(entity);
-				Clear();
-
-				return response;
+			if (string.IsNullOrWhiteSpace(entity.Name))
+			{
+				var results = GetContentFromSessionOrRepo();
+				entity = results.FirstOrDefault(e => _comparer.Equals(e, entity));
 			}
 
-			return new ContentResponse
-			{
-				Success = false,
-				Message = "User is not authenticated"
-			};
+			var response = _dependencies.Repository.Delete(entity);
+			Clear();
+
+			return response;
 		}
 
 		public virtual void Clear()
@@ -168,6 +170,8 @@ namespace Informa.Library.User.Search
 
 		protected virtual string ExtractQueryString(string url)
 		{
+			if (string.IsNullOrEmpty(url)) return string.Empty;
+
 			string[] urlParts = url.Split('?');
 			string querystring = urlParts.Length == 1 ? urlParts[0] : urlParts[1];
 
@@ -187,7 +191,7 @@ namespace Informa.Library.User.Search
 			var savedSearches = _dependencies.UserSession.Get<IList<ISavedSearchEntity>>(SessionKey);
 			if (!savedSearches.HasValue)
 			{
-				var results = _dependencies.Repository.GetMany(_dependencies.UserContext.User.Username).ToList();
+				var results = _dependencies.Repository.GetMany(_dependencies.UserContext.User?.Username).ToList();
 
 				_dependencies.UserSession.Set(SessionKey, results);
 

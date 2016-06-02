@@ -7,17 +7,18 @@ namespace Informa.Library.Utilities.Extensions
 	{
 		public static string JoinWithFinal(this IEnumerable<string> source, string separator, string finalSeparator)
 		{
-			if (!source.Any())
+			IList<string> indexedSource = source as IList<string> ?? source.ToArray();
+			if (!indexedSource.Any())
 			{
 				return string.Empty;
 			}
 
-			if (source.Count() == 1)
+			if (indexedSource.Count == 1)
 			{
-				return source.First();
+				return indexedSource.First();
 			}
 
-			return $"{string.Join(separator, source.Take(source.Count() - 1))} {finalSeparator} {source.Last()}";
+			return $"{string.Join(separator, indexedSource.Take(indexedSource.Count - 1))} {finalSeparator} {indexedSource.Last()}";
 		}
 	}
 }

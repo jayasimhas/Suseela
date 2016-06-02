@@ -193,6 +193,7 @@ web/Website/data/indexes
 web/Website/Web.config
 web/Website/App_Config/ConnectionStrings.config
 web/Website/App_Config/Sitecore.config
+web/Website/App_Config/Prefetch/*.config
 web/Website/App_Config/Web/nwebsec.config
 web/Website/App_Config/Web/system.webServer.handlers.config
 web/Website/App_Config/Web/system.webServer.modules.config

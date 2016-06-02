@@ -5,7 +5,6 @@ using System;
 using System.Linq;
 using Informa.Library.Subscription;
 using Informa.Library.Subscription.User;
-using Informa.Library.User.Profile;
 using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels
@@ -36,7 +35,7 @@ namespace Informa.Web.ViewModels
 
 			DismissText = textTranslator.Translate("Subscriptions.Renewals.Dismiss");
 			Display = DisplayMessage(record);
-			Message = Display ? GetMessage(record, userContext.User.Name) : string.Empty;
+			Message = Display ? GetMessage(record, userContext.User?.Name ?? string.Empty) : string.Empty;
 			Id = context.ID;
 			RenewURL = context.RenewalLinkURL;
 			RenewURLText = context.RenewalLinkText;

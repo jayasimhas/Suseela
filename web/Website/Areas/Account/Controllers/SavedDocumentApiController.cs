@@ -14,7 +14,7 @@ namespace Informa.Web.Areas.Account.Controllers
     {
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly ITextTranslator TextTranslator;
-		protected readonly ISitePublicationContext NewsletterTypeContext;
+		protected readonly ISitePublicationNameContext NewsletterTypeContext;
 		protected readonly ISaveDocumentContext SaveDocumentContext;
 		protected readonly IRemoveDocumentContext RemoveDocumentContext;
 
@@ -23,7 +23,7 @@ namespace Informa.Web.Areas.Account.Controllers
         public SavedDocumentApiController(
             ISitecoreContext sitecoreContext,
             ITextTranslator textTranslator,
-			ISitePublicationContext newsletterTypeContext,
+			ISitePublicationNameContext newsletterTypeContext,
 			ISaveDocumentContext saveDocumentContext,
 			IRemoveDocumentContext removeDocumentContext)
         {

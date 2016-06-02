@@ -10,8 +10,7 @@ namespace Informa.Web.App_Start.Registrations
 	{
 		public static void RegisterDependencies(ContainerBuilder builder)
 		{
-			builder.Register(c => new GeneralCache(new MemoryCache("DcdCache"))).Named<ICacheProvider>("dcdCache")
-				.As<ICacheProvider>().WithMetadata("name", "dcd").SingleInstance();
+			builder.Register(c => new GeneralCache(new MemoryCache("DcdCache"))).Named<ICacheProvider>("dcdCache").WithMetadata("name", "dcd").SingleInstance();
 			builder.RegisterType<RelatedCompaniesService>().As<IRelatedCompaniesService>().InstancePerLifetimeScope();
 			builder.RegisterType<RelatedDealsService>().As<IRelatedDealsService>().InstancePerLifetimeScope();
 

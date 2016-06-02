@@ -16,6 +16,8 @@ namespace Informa.Library.User.Authentication
 		{
 			get
 			{
+                if(!IsAuthenticated) { return null; }
+
 				var sitecoreUser = SitecoreUserContext.User;
 
                 //Although sitecoreUser.Profile.Email gets filled and saved when creating the user, after the browser gets closed and reopened the Email becomes NULL.

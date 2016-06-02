@@ -1,6 +1,6 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.PopOuts.SaveSearchPopOutViewModel>
 
-<div class="pop-out @(Model.IsSearch ? "js-pop-out__save-search" : "js-pop-out__set-topic-alert")">
+<div class="pop-out js-pop-out__save-search">
     <div class="pop-out__tab"></div>
     <div class="pop-out__internal">
         <div class="pop-out__sign-in">
@@ -66,9 +66,7 @@
                 <div class="pop-out__save-search-container">
                     @if (Model.IsSearch)
                     {
-                        <p class="pop-out__error
-                    js-form-error
-                    js-form-error-EmptyTitle">
+                        <p class="pop-out__error js-form-error js-form-error-EmptyTitle">
                             @Html.Raw(Model.TitleFieldRequiredText)
                         </p>
 
@@ -95,7 +93,8 @@
                             <label class="checkbox-label" for="AlertEnabled">
                                 @Html.Raw(Model.EmailAlertLabelText)
                             </label>
-                        </div>}
+                        </div>
+					}
                     else
                     {
                         <input type="hidden"
@@ -113,10 +112,21 @@
                                value="true">
 
                         <p class="pop-out__details">
-                            @Html.Raw(Model.TopicDescriptionText)
-                        </p>}
 
-                    <button type="submit" class="pop-out__sign-in-submit button--filled" ng-click="searchIsSaved = true">
+							@* * *
+							Commenting this out because we'll need to dynamically insert the
+							topic title, and there's nothing in the original ticket requiring
+							that the description text is in the Dictionary.
+
+							Html.Raw(Model.TopicDescriptionText)
+
+							* * *@
+
+							Your alert for <span class="js-save-search-title"></span> will be saved to your account - "Saved Searches and Alerts".
+                        </p>
+					}
+
+                    <button type="submit" class="pop-out__sign-in-submit button--filled click-utag" ng-click="searchIsSaved = true" data-info='{"event_name":"toolbar_use", "toolbar_tool":"save search"}'>
                         @(Model.IsAuthenticated
                               ? @Html.Raw(Model.ButtonLoggedInText)
                               : @Html.Raw(Model.ButtonLoggedOutText))

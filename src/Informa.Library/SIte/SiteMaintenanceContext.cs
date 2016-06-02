@@ -1,6 +1,7 @@
 ﻿using Informa.Library.Globalization;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System;
+using Jabberwocky.Core.Caching;
 
 namespace Informa.Library.Site
 {
@@ -9,22 +10,30 @@ namespace Informa.Library.Site
 	{
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly ITextTranslator TextTranslator;
+        protected readonly ICacheProvider CacheProvider;
 
-		public SiteMaintenanceContext(
+        public SiteMaintenanceContext(
 			ISiteRootContext siteRootContext,
-			ITextTranslator textTranslator)
+			ITextTranslator textTranslator,
+            ICacheProvider cacheProvider)
 		{
 			SiteRootContext = siteRootContext;
 			TextTranslator = textTranslator;
+            CacheProvider = cacheProvider;
 
-			_info = new Lazy<ISiteMaintenanceInfo>(GetSiteMaintenanceInfo);
+            Info = GetSiteMaintenanceInfo();
 		}
 
-		private readonly Lazy<ISiteMaintenanceInfo> _info;
-		public ISiteMaintenanceInfo Info => _info.Value;
+		public ISiteMaintenanceInfo Info { get; set; }
 		protected string DefaultMessageKey => "MaintenanceMessage";
 
-		private ISiteMaintenanceInfo GetSiteMaintenanceInfo()
+	    private ISiteMaintenanceInfo GetSiteMaintenanceInfo()
+	    {
+            string cacheKey = $"{nameof(SiteMaintenanceContext)}-Info-{SiteRootContext.Item._Id}";
+            return CacheProvider.GetFromCache(cacheKey, BuildSiteMaintenanceInfo);
+        }
+        
+        private ISiteMaintenanceInfo BuildSiteMaintenanceInfo()
 		{
 			var siteRoot = SiteRootContext.Item;
 			var from = siteRoot?.System_Maintenance_Start_Date ?? default(DateTime);

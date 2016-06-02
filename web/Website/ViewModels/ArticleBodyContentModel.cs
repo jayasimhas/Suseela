@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
+using Informa.Library.Services.Article;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Library.Utilities.Extensions;
+using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels
 {
@@ -15,46 +17,56 @@ namespace Informa.Web.ViewModels
 	{
 		public readonly ICallToActionViewModel CallToActionViewModel;
 		protected readonly ITextTranslator TextTranslator;
+		protected readonly IArticleService ArticleService;
 
-        private readonly Lazy<string> _lazyBody;
+		private readonly Lazy<string> _lazyBody;
 
-		public ArticleBodyContentModel(IArticle model, IIsEntitledProducItemContext entitledProductContext, ITextTranslator textTranslator, ICallToActionViewModel callToActionViewModel) : base(entitledProductContext)
+		public ArticleBodyContentModel(
+						IArticle model,
+						IIsEntitledProducItemContext entitledProductContext,
+						ITextTranslator textTranslator,
+						ICallToActionViewModel callToActionViewModel,
+						IArticleService articleService)
+						: base(entitledProductContext)
 		{
 			TextTranslator = textTranslator;
 			CallToActionViewModel = callToActionViewModel;
+			ArticleService = articleService;
 
-			Date = Sitecore.Context.PageMode.IsPreview && !model.Planned_Publish_Date.Equals(DateTime.MinValue)
-				? model.Planned_Publish_Date
-				: model.Actual_Publish_Date;
-			Authors = model.Authors.Select(x => new PersonModel(x));
-			_lazyBody = new Lazy<string>(() => IsFree || IsEntitled() ? DCDTokenMatchers.ProcessDCDTokens(model.Body) : "");
-			Summary = DCDTokenMatchers.ProcessDCDTokens(model.Summary);
+			_lazyBody = new Lazy<string>(() => IsFree || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
 		}
 
 		public string Title => GlassModel.Title;
 		public string Sub_Title => GlassModel.Sub_Title;
 		public bool DisplayLegacyPublication => LegacyPublicationNames.Any();
-		public IEnumerable<string> LegacyPublicationNames => GlassModel.Legacy_Publications
-					.Select(lp => lp as ITaxonomy_Item)
-					.Where(lp => lp != null)
-					.Select(lp => lp.Item_Name);
-		public string LegacyPublicationText
+
+		public IEnumerable<string> LegacyPublicationNames => ArticleService.GetLegacyPublicationNames(GlassModel);
+
+		public string LegacyPublicationText => ArticleService.GetLegacyPublicationText(GlassModel);
+
+		private string _summary;
+		public string Summary => _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
+
+		private IEnumerable<IPersonModel> _authors;
+		public IEnumerable<IPersonModel> Authors
+				=> _authors ?? (_authors = GlassModel.Authors.Select(x => new PersonModel(x)));
+
+		private DateTime? _date;
+		public DateTime Date
 		{
 			get
 			{
-				var legacyText = TextTranslator.Translate("Article.LegacyPublications");
-				var legacyPublicationsText = LegacyPublicationNames.JoinWithFinal(", ", "&");
-
-				return legacyText.Replace("{Legacy Publications}", legacyPublicationsText);
+				if (!_date.HasValue)
+				{
+					_date = GlassModel.GetDate();
+				}
+				return _date.Value;
 			}
 		}
-		public DateTime Date { get; set; }
-		public IEnumerable<IPersonModel> Authors { get; set; }
 		public string Category => GlassModel.Article_Category;
-	    public string Body => _lazyBody.Value;
-		public string Summary { get; set; }
+		public string Body => _lazyBody.Value;
 		public string Content_Type => GlassModel.Content_Type?.Item_Name;
-		public string Media_Type => GlassModel.Media_Type?.Item_Name == "Data" ? "chart" : GlassModel.Media_Type?.Item_Name?.ToLower() ?? "";
+		public string Media_Type => ArticleService.GetMediaTypeName(GlassModel);
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
 	}

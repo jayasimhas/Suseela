@@ -4696,6 +4696,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					[SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
 					INumber_Option Number_To_Display  {get; set;}
 								/// <summary>
+					/// The Publications field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: c2692d0b-edba-416d-8f27-525cf485c116</para>
+					/// <para>Custom Data: generic=ISite_Root</para>
+					/// </summary>
+					[SitecoreField(ILatest_News_OptionsConstants.PublicationsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<ISite_Root> Publications  {get; set;}
+								/// <summary>
+					/// The Show See All field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 619b605b-3897-425b-b862-2066649893ca</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ILatest_News_OptionsConstants.Show_See_AllFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Show_See_All  {get; set;}
+								/// <summary>
 					/// The Subjects field.
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
@@ -4735,6 +4753,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 						[SitecoreField(ILatest_News_OptionsConstants.Number_To_DisplayFieldName, Setting = SitecoreFieldSettings.InferType)]
 						INumber_Option Number_To_Display  {get; set;}
 										/// <summary>
+						/// The Publications field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: c2692d0b-edba-416d-8f27-525cf485c116</para>
+						/// <para>Custom Data: generic=ISite_Root</para>
+						/// </summary>
+						[SitecoreField(ILatest_News_OptionsConstants.PublicationsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<ISite_Root> Publications  {get; set;}
+										/// <summary>
+						/// The Show See All field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 619b605b-3897-425b-b862-2066649893ca</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ILatest_News_OptionsConstants.Show_See_AllFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Show_See_All  {get; set;}
+										/// <summary>
 						/// The Subjects field.
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
@@ -4759,6 +4795,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					
 			public static readonly ID Number_To_DisplayFieldId = new ID("2a2d2353-f2e2-46cc-9c10-8900db007122");
 			public const string Number_To_DisplayFieldName = "Number To Display";
+
+						
+					
+			public static readonly ID PublicationsFieldId = new ID("c2692d0b-edba-416d-8f27-525cf485c116");
+			public const string PublicationsFieldName = "Publications";
+
+						
+					
+			public static readonly ID Show_See_AllFieldId = new ID("619b605b-3897-425b-b862-2066649893ca");
+			public const string Show_See_AllFieldName = "Show See All";
 
 						
 					
@@ -15602,7 +15648,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 	{
 								/// <summary>
 					/// The Related Search field.
-					/// <para></para>
+					/// <para>Please paste in the search parameters from the search page that you wish to have users receive notifications form</para>
 					/// <para>Field Type: Single-Line Text</para>		
 					/// <para>Field ID: 808b637d-dbe9-411e-bed4-9b1ca559ea98</para>
 					/// <para>Custom Data: </para>
@@ -15632,7 +15678,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 		{
 										/// <summary>
 						/// The Related Search field.
-						/// <para></para>
+						/// <para>Please paste in the search parameters from the search page that you wish to have users receive notifications form</para>
 						/// <para>Field Type: Single-Line Text</para>		
 						/// <para>Field ID: 808b637d-dbe9-411e-bed4-9b1ca559ea98</para>
 						/// <para>Custom Data: </para>

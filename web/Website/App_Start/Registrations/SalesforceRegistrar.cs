@@ -7,7 +7,6 @@ using Informa.Library.Salesforce.User.Profile;
 using Informa.Library.Salesforce.User.Registration;
 using Informa.Library.Salesforce.User.Search;
 using Informa.Library.Salesforce.Web;
-using Informa.Library.User;
 using Informa.Library.User.Content;
 using Informa.Library.User.Search;
 
@@ -18,8 +17,8 @@ namespace Informa.Web.App_Start.Registrations
 		public static void RegisterDependencies(ContainerBuilder builder)
 		{
 			builder.RegisterType<SalesforceErrorLogger>().As<ISalesforceErrorLogger>();
-            builder.RegisterType<SalesforceDebugLogger>().As<ISalesforceDebugLogger>();
-            builder.RegisterType<SalesforceServiceConfiguration>().As<ISalesforceServiceConfiguration>();
+			builder.RegisterType<SalesforceDebugLogger>().As<ISalesforceDebugLogger>();
+			builder.RegisterType<SalesforceServiceConfiguration>().As<ISalesforceServiceConfiguration>().SingleInstance();
 			builder.RegisterType<SalesforceService>().As<ISalesforceService>();
 			builder.RegisterType<SalesforceServiceContextEnabledChecks>().As<ISalesforceServiceContextEnabledChecks>();
 			builder.RegisterType<SalesforceServiceContextEnabled>().As<ISalesforceServiceContextEnabled>();

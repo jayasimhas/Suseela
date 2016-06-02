@@ -46,7 +46,7 @@ namespace Informa.Library.User.Entitlement
 					return entitlementsSession.Value;
 				}
 
-				var entitlements = GetUserEntitlements.GetEntitlements(AuthenticatedUserContext.User.Username, UserIpAddressContext.IpAddress.ToString());
+				var entitlements = GetUserEntitlements.GetEntitlements(AuthenticatedUserContext.User?.Username, UserIpAddressContext.IpAddress.ToString());
 
 				if (!entitlements.Any())
 				{

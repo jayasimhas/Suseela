@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
+using Informa.Library.Utilities.TokenMatcher;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
 using Sitecore.Links;
@@ -63,9 +64,11 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public string MediaType { get; set; }
 
-		[IndexField("searchsummary_s")]
 		[DataMember]
-		public string Summary { get; set; }
+		public string Summary => DCDTokenMatchers.ProcessDCDTokens(RawSummary);
+
+		[IndexField("searchsummary_s")]
+		public string RawSummary { get; set; }
 
 		[TypeConverter(typeof(HtmlLinkListTypeConverter))]
 		[IndexField("searchdisplaytaxonomy_s")]

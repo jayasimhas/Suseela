@@ -2,15 +2,12 @@
 using System.Linq;
 using System.Web;
 using Glass.Mapper.Sc;
-using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Informa.Library.Site;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.Article.Search;
-using Informa.Library.Globalization;
-using Informa.Library.Search.Utilities;
+using Informa.Library.Services.Article;
 using Informa.Library.Utilities.Extensions;
-using Informa.Library.Utilities.TokenMatcher;
+using Informa.Library.Utilities.StringUtils;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Glass.Autofac.Attributes;
 
@@ -21,13 +18,19 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly IArticleSearch ArticleSearch;
-		protected readonly ITextTranslator TextTranslator;
+		protected readonly IArticleService ArticleService;
+		protected readonly IBylineMaker ByLineMaker;
 
-		public ArticleListItemModelFactory(ISitecoreContext sitecoreContext, IArticleSearch articleSearch, ITextTranslator textTranslator)
+		public ArticleListItemModelFactory(
+						ISitecoreContext sitecoreContext,
+						IArticleSearch articleSearch,
+						IArticleService articleService,
+						IBylineMaker byLineMaker)
 		{
 			SitecoreContext = sitecoreContext;
 			ArticleSearch = articleSearch;
-			TextTranslator = textTranslator;
+			ArticleService = articleService;
+			ByLineMaker = byLineMaker;
 		}
 
 		public IListableViewModel Create(IArticle article)
@@ -37,25 +40,23 @@ namespace Informa.Web.ViewModels
 				return null;
 			}
 
-			var publication = article.GetAncestors<ISite_Root>().First(x => x._TemplateId == ISite_RootConstants.TemplateId.ToGuid());
+			var publication = article.Crawl<ISite_Root>();
 			var image = article.Featured_Image_16_9?.Src;
 
 			return new ArticleListItemModel
 			{
 				DisplayImage = !string.IsNullOrWhiteSpace(image),
-				ListableAuthors = article.Authors?.Select(x => new LinkableModel { LinkableText = x.First_Name + " " + x.Last_Name }),
+				ListableAuthorByLine = ByLineMaker.MakeByline(article.Authors),
 				ListableDate = article.Actual_Publish_Date,
 				ListableImage = image,
-				ListableSummary = DCDTokenMatchers.ProcessDCDTokens(article.Summary),
+				ListableSummary = ArticleService.GetArticleSummary(article),
 				ListableTitle = HttpUtility.HtmlDecode(article.Title),
-				ListableByline = publication.Publication_Name,
-				ListableTopics = article.Taxonomies?.Select(x => new LinkableModel { LinkableText = x.Item_Name, LinkableUrl = SearchTaxonomyUtil.GetSearchUrl(x) }),
-				ListableType = article.Media_Type?.Item_Name == "Data" ? "chart" : article.Media_Type?.Item_Name?.ToLower() ?? "",
+				ListablePublication = publication.Publication_Name,
+				ListableTopics = ArticleService.GetLinkableTaxonomies(article),
+				ListableType = ArticleService.GetMediaTypeName(article),
 				ListableUrl = new Link { Url = article._Url, Text = article.Title },
 				LinkableText = article.Content_Type?.Item_Name,
-				LinkableUrl = article._Url,
-				Publication = publication.Publication_Name,
-				By = TextTranslator.Translate("Article.By")
+				LinkableUrl = article._Url
 			};
 		}
 
@@ -70,12 +71,8 @@ namespace Informa.Web.ViewModels
 			filter.ArticleNumbers = articleNumber.SingleToList();
 			filter.PageSize = 1;
 			var results = ArticleSearch.Search(filter);
-			if (results.Articles.Any())
-			{
-				return Create(results.Articles.FirstOrDefault());
-			}
 
-			return null;
+			return Create(results.Articles.FirstOrDefault());
 		}
 	}
 }

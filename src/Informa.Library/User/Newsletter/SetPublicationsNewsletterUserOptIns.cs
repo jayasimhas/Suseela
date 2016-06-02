@@ -22,7 +22,7 @@ namespace Informa.Library.User.Newsletter
 		{
 			var newsletterTypes = new List<string>();
 
-			foreach (var siteTypes in SitesNewsletterTypes.SiteTypes.Where(st => publications.Any(p => string.Equals(p, st.Publication, System.StringComparison.InvariantCultureIgnoreCase))))
+			foreach (var siteTypes in SitesNewsletterTypes.SiteTypes.Where(st => publications.Any(p => string.Equals(p, st.Publication.Code, System.StringComparison.InvariantCultureIgnoreCase))))
 			{
 				AddType(siteTypes.Breaking, ref newsletterTypes);
 				AddType(siteTypes.Daily, ref newsletterTypes);

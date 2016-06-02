@@ -413,15 +413,20 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				if (string.IsNullOrEmpty(businessID))
 					return;
 
+				Regex companyPattern = new Regex($"({cName})", RegexOptions.IgnoreCase);
 				//the name should be the importValue and not the value from the database
 				Field sf = newItem.Fields["Summary"];
 				if (sf != null)
-					sf.Value = Regex.Replace(sf.Value, $"({cName})", delegate (Match match) { return $"<strong>[C#{businessID}:{match.Value}]</strong>"; }, RegexOptions.IgnoreCase);
+				{
+					sf.Value = companyPattern.Replace(sf.Value, match => $"<strong>[C#{businessID}:{match.Value}]</strong>", 1);
+				}
 
 				Field bf = newItem.Fields["Body"];
 				if (bf != null)
-					bf.Value = Regex.Replace(bf.Value, $"({cName})", delegate (Match match) { return $"<strong>[C#{businessID}:{match.Value}]</strong>"; }, RegexOptions.IgnoreCase);
-
+				{
+					bf.Value = companyPattern.Replace(bf.Value, match => $"<strong>[C#{businessID}:{match.Value}]</strong>", 1);
+				}
+					
 				cIDs.Add(businessID);
 			}
 

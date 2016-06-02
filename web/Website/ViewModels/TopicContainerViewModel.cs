@@ -1,6 +1,5 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.Presentation;
-using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System;
@@ -24,5 +23,6 @@ namespace Informa.Web.ViewModels
 		public string Title => GlassModel?.Title;
 		public string NavigationText => GlassModel?.Navigation_Text;
 		public string LinkText => TextTranslator.Translate("Topic.Explore");
+	    public bool HasLink => GlassModel.Navigation_Link != null;
 	}
 }

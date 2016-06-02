@@ -22,9 +22,13 @@ namespace Informa.Web.ViewModels
 		{
 			ComponentTitle = dependencies.TextTranslator.Translate(DictionaryKeys.ArticleRelatedCompaniesTitle);
 			RelatedCompanies = dependencies.RelatedCompaniesService.GetRelatedCompanyLinks(article);
+			ArticleName = article.Title;
 		}
 
 		public string ComponentTitle { get; set; }
 		public IEnumerable<Link> RelatedCompanies { get; set; } 
+
+		// Click through source
+		public string ArticleName { get; set; }
 	}
 }

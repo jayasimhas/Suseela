@@ -34,7 +34,7 @@
             </h1>
 
             <span class="article-preview__byline">
-                by @Model.Authors.Select(x => x.Name).GetByLine()
+                @Html.Raw(Model.ArticleByLine)
             </span>
 
             <div class="article-summary">

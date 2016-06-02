@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Informa.Library.Article.Search;
 using Informa.Library.Company;
+using Informa.Library.Site;
 using Informa.Library.Subscription.User;
 using Informa.Library.User;
 using Informa.Library.User.Authentication;
@@ -13,7 +14,6 @@ using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
-using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Sitecore.Social.Infrastructure.Utils;
 
 namespace Informa.Web.ViewModels
@@ -31,6 +31,7 @@ namespace Informa.Web.ViewModels
         protected readonly IWebAuthenticateUser WebAuthenticateUser;
         protected readonly IUserEntitlementsContext UserEntitlementsContext;
         protected readonly IUserIpAddressContext UserIpAddressContext;
+	    protected readonly ISiteRootContext SiteRootContext;
 
         public readonly IUserCompanyContext UserCompanyContext;
         public I___BasePage GlassModel { get; set; }
@@ -46,7 +47,8 @@ namespace Informa.Web.ViewModels
             IUserSubscriptionsContext userSubscriptionsContext,
             IWebAuthenticateUser webAuthenticateUser,
             IUserEntitlementsContext userEntitlementsContext,
-            IUserIpAddressContext userIpAddressContext) {
+            IUserIpAddressContext userIpAddressContext,
+			ISiteRootContext siteRootContext) {
 
             ItemReferences = itemReferences;
             IsEntitledProductItemContext = isEntitledProductItemContext;
@@ -59,8 +61,10 @@ namespace Informa.Web.ViewModels
             WebAuthenticateUser = webAuthenticateUser;
             UserEntitlementsContext = userEntitlementsContext;
             UserIpAddressContext = userIpAddressContext;
-        }
+	        SiteRootContext = siteRootContext;
+			}
 
+	    public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PageTitleAnalytics => GlassModel?.Title ?? string.Empty;
         public string PageType { get { return Sitecore.Context.Item.TemplateName; } }
         public string ArticlePublishDate => (Article != null && Article.Actual_Publish_Date > DateTime.MinValue)
@@ -94,7 +98,7 @@ namespace Informa.Web.ViewModels
         public string ArticleTherapy => GetArticleTaxonomy(ItemReferences.TherapyAreasTaxonomyFolder);
         public string SiteEnvrionment => SiteSettings.GetSetting("Env.Value", string.Empty);
         public bool IsUserLoggedIn => AuthenticatedUserContext.IsAuthenticated;
-        public string UserName => AuthenticatedUserContext.User.Name;
+        public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
 
         public string UserCompany => UserCompanyContext?.Company?.Name;
         public string CorporateName => UserCompanyContext?.Company?.Name;

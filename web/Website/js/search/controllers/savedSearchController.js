@@ -48,9 +48,17 @@ var SavedSearchController = function ($scope, $location, $timeout, $http, search
     // bound in time.
     vm.showLightbox = function(e) {
         if($scope.searchIsSaved) {
-            window.lightboxController.showLightbox($(e.target).closest('.js-lightbox-modal-trigger'));
-        }
+            window.lightboxController.showLightbox($(e.target).closest('.angular-lightbox-modal-trigger'));
+        } else {
+			$(e.target).closest('.angular-pop-out-trigger').addClass('js-pop-out-trigger');
+			window.controlPopOuts.togglePopOut($(e.target).closest('.angular-pop-out-trigger'));
+		}
     };
+
+	vm.searchIsSaved = function() {
+		$scope.searchIsSaved = true;
+		$scope.$apply();
+	};
 };
 
 var informaSearchApp = angular.module('informaSearchApp');

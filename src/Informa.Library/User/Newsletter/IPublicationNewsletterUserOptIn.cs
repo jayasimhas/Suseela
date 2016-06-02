@@ -1,8 +1,10 @@
-﻿namespace Informa.Library.User.Newsletter
+﻿using Informa.Library.Publication;
+
+namespace Informa.Library.User.Newsletter
 {
 	public interface IPublicationNewsletterUserOptIn
 	{
 		bool OptIn { get; set; }
-		string Publication { get; }
+		ISitePublication Publication { get; }
 	}
 }

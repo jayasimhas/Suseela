@@ -12,7 +12,7 @@ templatekey: Hierarchical Sort Strategy
 ----version----
 language: en
 version: 1
-revision: cdcc34a5-e06a-4a1c-98a2-ec2f28199f22
+revision: 2168abc9-7236-4fef-b2b4-7afa80ad8380
 
 ----field----
 field: {C57349B0-EAD1-45A7-BE69-A1D53971C900}
@@ -32,9 +32,9 @@ content-length: 38
 field: {32086477-70E7-45B1-A3FE-204B3A73E42D}
 name: Type
 key: type
-content-length: 69
+content-length: 66
 
-Velir.Search.Core.Facets.Sort.HierarchicalStrategy, Velir.Search.Core
+Informa.Library.Search.Sort.SitecoreOrderStrategy, Informa.Library
 ----field----
 field: {3C02E5A7-BC18-4621-8AB6-2DAA34B1EA20}
 name: Valid Templates
@@ -62,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-cdcc34a5-e06a-4a1c-98a2-ec2f28199f22
+2168abc9-7236-4fef-b2b4-7afa80ad8380
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160502T152849Z
+20160601T143845Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

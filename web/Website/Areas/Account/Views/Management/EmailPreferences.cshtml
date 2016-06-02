@@ -44,18 +44,18 @@
 						{
 							<tr>
                                 <td class="sortable-table__col">
-                                    @newsletterOptIn.Publication
+                                    @newsletterOptIn.Publication.Name
                                 </td>
                                 <td class="sortable-table__col l-centered">
                                     <div class="labeled-checkbox">
     									<input name="Publications"
-    										   id="@newsletterOptIn.Publication"
+    										   id="@newsletterOptIn.Publication.Code"
                                                class="js-account-email-checkbox"
     										   type="checkbox"
     										   data-checkbox-type="value"
     										   @(newsletterOptIn.OptIn ? "checked" : "")
-    										   value="@newsletterOptIn.Publication">
-                                           <label class="checkbox-label" for="@newsletterOptIn.Publication">Yes</label>
+    										   value="@newsletterOptIn.Publication.Code">
+                                           <label class="checkbox-label" for="@newsletterOptIn.Publication.Code">Yes</label>
                                     </div>
 								</td>
 							</tr>

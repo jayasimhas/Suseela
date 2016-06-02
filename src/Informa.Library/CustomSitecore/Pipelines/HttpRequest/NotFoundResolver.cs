@@ -8,6 +8,7 @@ using Jabberwocky.Glass.Autofac.Pipelines.Processors;
 using Sitecore;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.HttpRequest;
+using Log = Sitecore.Diagnostics.Log;
 
 namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 {

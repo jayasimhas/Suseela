@@ -42,7 +42,6 @@
 
     .button--filled:not([disabled]),
     .search-bar__submit,
-    .banner--alert,
     .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
         background: $background;
         background-color: $background;
@@ -102,9 +101,9 @@
 
 
 @mixin theme-banners($background, $text) {
-    .banner--maintenance,
     .banner--cookie-policy,
-    .banner--register {
+    .banner--register,
+	.banner--alert {
         background-color: $background;
         color: $text;
 
@@ -121,7 +120,7 @@
     .newsletter-signup,
     .quick-facts {
         background-color: $background;
-        border-top: 2px solid $border;
+        border-top: 4px solid $border;
     }
 }
 

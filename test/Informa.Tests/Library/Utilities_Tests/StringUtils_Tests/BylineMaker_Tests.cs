@@ -97,5 +97,28 @@ namespace Informa.Tests.Library.Utilities_Tests.StringUtils_Tests
             // ASSERT
             Assert.AreEqual("THESE FOLKS: Author McAuthorface, Bob and Alice in Wonderland", result);
         }
-    }
+
+		[Test]
+		public void MakeByline_MultiAuthorsWithSuffixInLastNameField_ReturnsByAllDem()
+		{
+			// ARRANGE
+			_dependencies.TextTranslator.Translate("Article.By").Returns("THESE FOLKS:");
+
+			var authorMcAuthorface = Substitute.For<IStaff_Item>();
+			authorMcAuthorface.First_Name.Returns("Author");
+			authorMcAuthorface.Last_Name.Returns("McAuthorface");
+
+			var bob = Substitute.For<IStaff_Item>();
+			bob.First_Name.Returns("Bob");
+			bob.Last_Name.Returns("McBob, Sr.");
+
+			var authors = new[] { authorMcAuthorface, bob };
+
+			// ACT
+			var result = _bylineMaker.MakeByline(authors);
+
+			// ASSERT
+			Assert.AreEqual("THESE FOLKS: Author McAuthorface and Bob McBob, Sr.", result);
+		}
+	}
 }

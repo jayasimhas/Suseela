@@ -10,6 +10,20 @@ template: {DD003F89-D57D-48CB-B428-FFB519AACA56}
 templatekey: Site Root
 
 ----field----
+field: {5EEA0A43-3174-451D-AB8B-AA348E6352CB}
+name: Publication Code
+key: publication code
+content-length: 3
+
+MTI
+----field----
+field: {F8BD66F3-DA05-4C9A-AA10-3E1B69C2AFE4}
+name: Newsletter Weekly Type
+key: newsletter weekly type
+content-length: 15
+
+Medtech Insight
+----field----
 field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
 name: __Originator
 key: __originator
@@ -26,7 +40,7 @@ ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename
 ----version----
 language: en
 version: 1
-revision: a641ba48-c311-452e-ad57-c2cbb8c1c276
+revision: 8a90f28c-6711-4b6c-9568-68ad7d8e341a
 
 ----field----
 field: {9AEE6C51-8392-4461-B24C-BF22ACF5B07F}
@@ -62,14 +76,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-a641ba48-c311-452e-ad57-c2cbb8c1c276
+8a90f28c-6711-4b6c-9568-68ad7d8e341a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160513T203815Z
+20160527T100520Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

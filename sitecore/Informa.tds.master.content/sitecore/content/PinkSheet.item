@@ -10,12 +10,33 @@ template: {DD003F89-D57D-48CB-B428-FFB519AACA56}
 templatekey: Site Root
 
 ----field----
+field: {5EEA0A43-3174-451D-AB8B-AA348E6352CB}
+name: Publication Code
+key: publication code
+content-length: 4
+
+PINK
+----field----
 field: {073E357F-68A0-422F-B188-EB9CC874536A}
 name: Reset Password Page
 key: reset password page
 content-length: 38
 
 {7BE1AE9B-C439-4D1D-A3CD-BD27EDBA72A2}
+----field----
+field: {A08878DF-22C2-41E0-A1AF-DDD73A2C7379}
+name: Newsletter Daily Type
+key: newsletter daily type
+content-length: 20
+
+The Pink Sheet DAILY
+----field----
+field: {F8BD66F3-DA05-4C9A-AA10-3E1B69C2AFE4}
+name: Newsletter Weekly Type
+key: newsletter weekly type
+content-length: 10
+
+Pink Sheet
 ----field----
 field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
 name: __Originator
@@ -33,7 +54,7 @@ ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename
 ----version----
 language: en
 version: 1
-revision: 3f260178-c880-4e5b-befc-8945f98830a6
+revision: 72b29cb4-99e5-4570-8ea3-dc6b99e267f9
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -181,14 +202,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3f260178-c880-4e5b-befc-8945f98830a6
+72b29cb4-99e5-4570-8ea3-dc6b99e267f9
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160513T202552Z
+20160527T100510Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -13,11 +13,14 @@ namespace Informa.Library.Article.Companies
 	{
 		private readonly IDCDReader _reader;
 		private readonly string _oldCompaniesUrl;
-
-		public RelatedCompaniesService(IDCDReader reader, ISiteSettings siteSettings)
+		
+		public RelatedCompaniesService(
+						IDCDReader reader,
+						ISiteSettings siteSettings)
 		{
 			_reader = reader;
 			_oldCompaniesUrl = siteSettings.OldCompaniesUrl;
+
 		}
 
 		public IEnumerable<Link> GetRelatedCompanyLinks(IArticle article)

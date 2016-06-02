@@ -40,7 +40,7 @@ namespace Informa.Library.User.Newsletter
 					return optInsSession.Value;
 				}
 
-				var optIns = OptIns = UserContext.IsAuthenticated ? NewsletterOptIn.Find(UserContext.User.Username) : Enumerable.Empty<INewsletterUserOptIn>();
+				var optIns = OptIns = UserContext.IsAuthenticated ? NewsletterOptIn.Find(UserContext.User?.Username) : Enumerable.Empty<INewsletterUserOptIn>();
 
 				return optIns;
 			}

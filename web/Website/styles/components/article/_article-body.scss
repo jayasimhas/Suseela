@@ -23,6 +23,11 @@
 		display: none;
 	}
 
+	> ul {
+		@extend .carrot-list;
+		margin-bottom: 1rem;
+	}
+
     @include breakpoint('medium') {
         font-size: 1rem;
 
