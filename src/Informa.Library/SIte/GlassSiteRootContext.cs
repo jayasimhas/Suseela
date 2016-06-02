@@ -9,40 +9,47 @@ namespace Informa.Library.Site
 	[AutowireService(LifetimeScope.PerScope)]
 	public class GlassSiteRootContext : ISiteRootContext
 	{
-	    protected readonly ICacheProvider CacheProvider;
+		protected readonly ICacheProvider CacheProvider;
+		protected readonly ISitecoreContext SitecoreContext;
 
 		public GlassSiteRootContext(
-            ISitecoreContext sitecoreContext,
-            ICacheProvider cacheProvider)
+						ISitecoreContext sitecoreContext,
+						ICacheProvider cacheProvider)
 		{
-			Item = sitecoreContext.GetRootItem<ISite_Root>();
-		    CacheProvider = cacheProvider;
-
+			SitecoreContext = sitecoreContext;
+			CacheProvider = cacheProvider;
 		}
-		public ISite_Root Item { get; set; }
 
-        private string CreateCacheKey(string suffix) {
-            return $"{nameof(GlassSiteRootContext)}-{suffix}";
-        }
-        
-        public string GetBodyCssClass() {
-            string cacheKey = CreateCacheKey($"GetBodyCssClass-{Item?._Id}");
-            return CacheProvider.GetFromCache(cacheKey, BuildBodyCssClass);
-        }
+		private ISite_Root _rootItem;
+		public ISite_Root Item => _rootItem ?? (_rootItem = SitecoreContext.GetRootItem<ISite_Root>());
 
-        public string BuildBodyCssClass() {
-            return string.IsNullOrEmpty(Item?.Publication_Theme)
-                ? string.Empty
-                : $"class={Item.Publication_Theme}";
-        }
+		private string CreateCacheKey(string suffix)
+		{
+			return $"{nameof(GlassSiteRootContext)}-{suffix}";
+		}
 
-        public HtmlString GetPrintHeaderMessage() {
-            string cacheKey = CreateCacheKey($"GetPrintHeaderMessage-{Item?._Id}");
-            return CacheProvider.GetFromCache(cacheKey, BuildPrintHeaderMessage);
-        }
+		public string GetBodyCssClass()
+		{
+			string cacheKey = CreateCacheKey($"GetBodyCssClass-{Item?._Id}");
+			return CacheProvider.GetFromCache(cacheKey, BuildBodyCssClass);
+		}
 
-        public HtmlString BuildPrintHeaderMessage() {
-            return new HtmlString(Item?.Print_Message ?? string.Empty);
-        }
-    }
+		public string BuildBodyCssClass()
+		{
+			return string.IsNullOrEmpty(Item?.Publication_Theme)
+					? string.Empty
+					: $"class={Item.Publication_Theme}";
+		}
+
+		public HtmlString GetPrintHeaderMessage()
+		{
+			string cacheKey = CreateCacheKey($"GetPrintHeaderMessage-{Item?._Id}");
+			return CacheProvider.GetFromCache(cacheKey, BuildPrintHeaderMessage);
+		}
+
+		public HtmlString BuildPrintHeaderMessage()
+		{
+			return new HtmlString(Item?.Print_Message ?? string.Empty);
+		}
+	}
 }
