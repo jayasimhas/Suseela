@@ -47,6 +47,8 @@ namespace Informa.Library.User.Search
 
 		public bool Exists(ISavedSearchSaveable input)
 		{
+			if (!IsAuthenticated) return false;
+			
 			var entity = new SavedSearchEntity
 			{
 				SearchString = ExtractQueryString(input.Url)
@@ -116,32 +118,32 @@ namespace Informa.Library.User.Search
 
 		public virtual IContentResponse DeleteContent(ISavedSearchSaveable input)
 		{
-			if (IsAuthenticated)
+			if (!IsAuthenticated)
 			{
-				ISavedSearchEntity entity = new SavedSearchEntity
+				return new ContentResponse
 				{
-					Username = _.UserContext.User.Username,
-					Name = input.Title,
-					SearchString = ExtractQueryString(input.Url)
+					Success = false,
+					Message = "User is not authenticated"
 				};
+			}
+				
+			ISavedSearchEntity entity = new SavedSearchEntity
+			{
+				Username = _.UserContext.User.Username,
+				Name = input.Title,
+				SearchString = ExtractQueryString(input.Url)
+			};
 
-				if (string.IsNullOrWhiteSpace(entity.Name))
-				{
-					var results = GetContentFromSessionOrRepo();
-					entity = results.FirstOrDefault(e => _comparer.Equals(e, entity));
-				}
-
-				var response = _.Repository.Delete(entity);
-				Clear();
-
-				return response;
+			if (string.IsNullOrWhiteSpace(entity.Name))
+			{
+				var results = GetContentFromSessionOrRepo();
+				entity = results.FirstOrDefault(e => _comparer.Equals(e, entity));
 			}
 
-			return new ContentResponse
-			{
-				Success = false,
-				Message = "User is not authenticated"
-			};
+			var response = _.Repository.Delete(entity);
+			Clear();
+
+			return response;
 		}
 
 		public virtual void Clear()
