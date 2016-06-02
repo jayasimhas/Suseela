@@ -1,5 +1,6 @@
 ﻿using Informa.Models.DCD;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
@@ -53,8 +54,26 @@ namespace Informa.Library.Utilities.TokenMatcher
 			//Find all matches with Company token
 			Regex regex = new Regex(DCDConstants.CompanyTokenRegex);
 
-			MatchEvaluator evaluator = new MatchEvaluator(CompanyMatchEval);
-			return regex.Replace(text, evaluator);
+			var matchSet = new HashSet<string>();
+			var matches = regex.Matches(text);
+            foreach (Match match in matches)
+            {
+	            var replace = string.Empty;
+				// Replace the first occurrence with hyperlink
+				if (!matchSet.Contains(match.Groups[1].Value))
+				{				
+					replace = $"<a href=\"{string.Format(OldCompaniesUrl, match.Groups[1].Value.Split(':')[0])}\">{match.Groups[1].Value.Split(':')[1]}</a>";
+					text = regex.Replace(text, replace, 1);
+					matchSet.Add(match.Groups[1].Value);
+				}
+				// Replace other occurrences with normal names
+				else
+				{
+					replace = match.Groups[1].Value.Split(':')[1];
+					text = text.Replace(match.Value, replace);
+				}			
+			}
+			return text;
 		}
 
 		private static string ProcessDealTokens(string text)
