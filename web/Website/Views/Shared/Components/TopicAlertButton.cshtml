@@ -7,14 +7,15 @@
 		<form
 			class="form-remove-topic-alert"
 			data-on-submit="/api/SavedSearches"
-			data-submit-type="DELETE">
+			data-submit-type="DELETE"
+			data-analytics='{
+				"event_name": "remove_alert",
+				"alert_topic": "@Html.Raw(Model.TopicName)"
+			}'>
 
 			<input name="Url" class="js-save-search-url" id="Url" type="hidden" value="">
 
-			<button type="submit"
-			  class="click-utag lightbox-modal__hidden-submit"
-			  data-info='{"event_name":"saved-search-remove", "id":"{{title}}"}'>
-			</button>
+			<button type="submit" class="lightbox-modal__hidden-submit"></button>
 
 	        <span
 				class="action-flag pop-out__trigger

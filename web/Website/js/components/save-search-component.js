@@ -54,6 +54,9 @@ $(document).ready(function() {
 			$(form).find('.js-set-topic-alert').data('has-topic-alert', null);
 			$('.js-topic-icon-unset').addClass('is-active');
 			$('.js-topic-icon-set').removeClass('is-active');
+
+			analyticsEvent(	$.extend(analytics_data, $(form).data('analytics')) );
+
 		}
 	});
 
@@ -76,6 +79,19 @@ $(document).ready(function() {
 			if(typeof angular !== 'undefined') {
 				angular.element($('.js-saved-search-controller')[0]).controller().searchIsSaved();
 			}
+
+			var event_data = {};
+
+			if($(form).data('is-search') === true) {
+				event_data.event_name = "toolbar_use";
+				event_data.toolbar_tool = "save search";
+			} else {
+				event_data.event_name = "set_alert";
+				event_data.alert_topic = $(form).find('.js-save-search-title').val();
+			}
+
+			analyticsEvent(	$.extend(analytics_data, event_data) );
+
 		},
 		beforeRequest: function(form) {
 			if(!$(form).find('.js-save-search-title').val().trim()) {
