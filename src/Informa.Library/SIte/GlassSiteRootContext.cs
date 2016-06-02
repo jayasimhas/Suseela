@@ -24,9 +24,6 @@ namespace Informa.Library.Site
 		public ISite_Root Item => _item ?? 
             (_item = SitecoreContext?.GetRootItem<ISite_Root>());
 
-		private ISite_Root _rootItem;
-		public ISite_Root Item => _rootItem ?? (_rootItem = SitecoreContext.GetRootItem<ISite_Root>());
-
 		private string CreateCacheKey(string suffix)
 		{
 			return $"{nameof(GlassSiteRootContext)}-{suffix}";

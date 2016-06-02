@@ -1,19 +1,18 @@
 ﻿using Informa.Library.Globalization;
-using Informa.Library.ViewModels.Account;
-using Jabberwocky.Glass.Autofac.Attributes;
+using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels.PopOuts
 {
 	[AutowireService(LifetimeScope.PerScope)]
 	public class SignInPopOutViewModel : ISignInPopOutViewModel
 	{
-	    private readonly ITextTranslator TextTranslator;
+	    private readonly ITextTranslator _textTranslator;
 
 		public SignInPopOutViewModel(ITextTranslator textTranslator)
 		{
-		    TextTranslator = textTranslator;
+		    _textTranslator = textTranslator;
 		}
 
-		public string HeaderText => TextTranslator.Translate("Authentication.SignIn.SignInRequired");
+		public string HeaderText => _textTranslator.Translate("Authentication.SignIn.SignInRequired");
 	}
 }
