@@ -30,17 +30,19 @@ $(document).ready(function() {
 	});
 
 	$('.js-set-topic-alert').on('click', function(e) {
+
 		var isSettingAlert = !$(this).data('has-topic-alert');
+		var topicLabel = $(this).find('.js-set-topic-label');
 
 		$('.js-save-search-url').val($(this).data('topic-alert-url'));
 		$('.js-save-search-title').val($(this).data('topic-alert-title'));
 
 		if(isSettingAlert) {
 			$('.form-save-search').find('button[type=submit]').click();
-			$('.js-set-topic-label').html($('.js-set-topic-label').data('label-is-set'));
+			topicLabel.html(topicLabel.data('label-is-set'));
 			$(this).data('has-topic-alert', 'true');
-			$('.js-topic-icon-unset').removeClass('is-active');
-			$('.js-topic-icon-set').addClass('is-active');
+			$(this).find('.js-topic-icon-unset').removeClass('is-active');
+			$(this).find('.js-topic-icon-set').addClass('is-active');
 		} else {
 			window.lightboxController.showLightbox($(this));
 		}
@@ -50,10 +52,10 @@ $(document).ready(function() {
 	var removeTopicAlert = new FormController({
 		observe: '.form-remove-topic-alert',
 		successCallback: function(form, context, event) {
-			$('.js-set-topic-label').html($('.js-set-topic-label').data('label-not-set'));
+			$(form).find('.js-set-topic-label').html($(form).find('.js-set-topic-label').data('label-not-set'));
 			$(form).find('.js-set-topic-alert').data('has-topic-alert', null);
-			$('.js-topic-icon-unset').addClass('is-active');
-			$('.js-topic-icon-set').removeClass('is-active');
+			$(form).find('.js-topic-icon-unset').addClass('is-active');
+			$(form).find('.js-topic-icon-set').removeClass('is-active');
 
 			analyticsEvent(	$.extend(analytics_data, $(form).data('analytics')) );
 
