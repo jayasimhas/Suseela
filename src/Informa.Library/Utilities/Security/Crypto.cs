@@ -11,6 +11,7 @@ namespace Informa.Library.Utilities.Security
 {
     public interface ICrypto
     {
+        string EncryptStringsAes(string[] pieces, string sharedSecret);
         string EncryptStringAes(string plainText, string sharedSecret);
         string DecryptStringAes(string cipherText, string sharedSecret);
     }
@@ -22,9 +23,13 @@ namespace Informa.Library.Utilities.Security
         private static byte[] HexStringToByteArray(string hex) => Enumerable.Range(0, hex.Length/2)
             .Select(i => Convert.ToByte(hex.Substring(i*2, 2), 16))
             .ToArray();
-            
 
 
+        public string EncryptStringsAes(string[] pieces, string sharedSecret)
+        {
+            var joined = string.Join("|", pieces);
+            return EncryptStringAes(joined, sharedSecret);
+        }
         public string EncryptStringAes(string plainText, string sharedSecret)
         {
             if (string.IsNullOrEmpty(plainText))
