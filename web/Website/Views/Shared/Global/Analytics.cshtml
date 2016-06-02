@@ -5,39 +5,39 @@
     /* * *
     ANALYTICS DATA
     * * */
-    var analytics_data = {
-        "page_name": "@Model.PageTitleAnalytics",
-		"page_type": "@Model.PageType",
+	var analytics_data = {
 		"actual_publish_date": "@Model.ArticlePublishDate",
 		"article_author": "@Html.Raw(Model.ArticleAuthors)",
-        "article_content_type": "@Model.ArticleContentType",
+		"article_content_type": "@Model.ArticleContentType",
 		"article_embargo": "@Model.ArticleEmbargoed",
+		"article_entitlements" : "@Model.Article_Entitlement",
 		"article_media_type": "@Model.ArticleMediaType",
 		"article_number": "@Model.ArcticleNumber",
-        "created_date": "@Model.DateCreated",
-		"custom_tags": "@Model.CustomTags",
-		"page_description": "@Model.PageDescription",
-		"page_title_override": "@Model.PageTitleOverride",
-        "taxonomy_region": "@Html.Raw(Model.ArticleRegions)",
-		"taxonomy_subjects": "@Html.Raw(Model.ArticleSubject)",
-		"taxonomy_therapy_areas": "@Html.Raw(Model.ArticleTherapy)",
-		"login_status": "@Model.IsUserLoggedIn",
-		"IsArticleFree": "@Model.IsFree",
-        "user_id": "@Model.UserName",
+		"company_Id" : "@Model.CompanyId",
 		"company": "@Model.UserCompany",
-		"user_entitlement_type": "@Html.Raw(Model.UserEntitlements)",
+		"created_date": "@Model.DateCreated",
+		"current_email_subscriptions": "@Html.Raw(Model.SubscribedProducts)",
+		"custom_tags": "@Model.CustomTags",
 		"entitlement_status": "@Html.Raw(Model.UserEntitlementStatus)",
 		"industry": "@Model.UserIndustry",
-        "user_email": "@Model.UserEmail",
-		"current_email_subscriptions": "@Html.Raw(Model.SubscribedProducts)",
+		"IsArticleFree": "@Model.IsFree",
+		"login_status": "@Model.IsUserLoggedIn",
+		"page_description": "@Model.PageDescription",
 		"page_keywords": "@Model.MetaKeyWords",
-		"company_Id" : "@Model.CompanyId",
-		"article_entitlements" : "@Model.Article_Entitlement",
-		"User_IP_Address":"@Model.UserIp",
-        "salesforce_contact_id" : "@Model.ContactId",
-		"salesforce_account_id":"@Model.AccountId",
+		"page_name": "@Model.PageTitleAnalytics",
+		"page_title_override": "@Model.PageTitleOverride",
+		"page_type": "@Model.PageType",
 		"publication":"@Model.PublicationName"
-    };
+		"salesforce_account_id":"@Model.AccountId",
+		"salesforce_contact_id" : "@Model.ContactId",
+		"taxonomy_region": "@Html.Raw(Model.ArticleRegions)",
+		"taxonomy_subjects": "@Html.Raw(Model.ArticleSubject)",
+		"taxonomy_therapy_areas": "@Html.Raw(Model.ArticleTherapy)",
+		"user_email": "@Model.UserEmail",
+		"user_entitlement_type": "@Html.Raw(Model.UserEntitlements)",
+		"user_id": "@Model.UserName",
+		"User_IP_Address":"@Model.UserIp",
+	};
 
     var utag_data = analytics_data;
 
