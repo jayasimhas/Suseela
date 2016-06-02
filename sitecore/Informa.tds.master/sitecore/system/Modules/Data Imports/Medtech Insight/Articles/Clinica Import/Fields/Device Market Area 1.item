@@ -13,9 +13,9 @@ templatekey: ListToGuid
 field: {FA7B99B1-6BB9-469C-B786-F8A9D52D2F0A}
 name: Handler Class
 key: handler class
-content-length: 85
+content-length: 84
 
-Sitecore.SharedSource.DataImporter.Mappings.Fields.Clinica.ToInformaDeviceMarketAreas
+Sitecore.SharedSource.DataImporter.Mappings.Fields.Clinica.ToInformaDeviceMarketArea
 ----field----
 field: {093D915A-4306-4A68-B64A-07CC2A7E4EE5}
 name: To What Field
@@ -54,7 +54,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 9da44aee-d479-45c6-b5e2-2b2c4690c229
+revision: 1cb0e033-e3b3-463c-9291-3d1a516bf041
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-9da44aee-d479-45c6-b5e2-2b2c4690c229
+1cb0e033-e3b3-463c-9291-3d1a516bf041
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160518T145041Z
+20160602T200051Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
