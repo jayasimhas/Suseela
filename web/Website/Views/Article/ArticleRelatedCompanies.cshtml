@@ -8,9 +8,9 @@
             @foreach (var company in Model.RelatedCompanies)
             {
 	            <li class="article-topics__li click-utag"
-	                data-info='{"event_name":"related_companies_click_through", 
-								"click_through_source":"@Model.ArticleName",
-								"click_through_destination":"@company.Title"}'>
+	                data-info='{"event_name": "related_companies_click_through",
+								"click_through_source": "@Model.ArticleName",
+								"click_through_destination": "@company.Title"}'>
 		            @RenderLink(company, m => m)
 	            </li>
             }

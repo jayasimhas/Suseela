@@ -16,12 +16,11 @@
 					<li class="article-topics__li">
 						<a href="@tag.Url"
 						   class="click-utag"
-						   data-info='{"event_name":"topics_click_through", 
+						   data-info='{"event_name":"topics_click_through",
 										"taxonomy-name":"@tag.Text",
-										"taxonomy-category":"@catagory.Text", 
-										"click_through_source":"@Sitecore.Context.Item.DisplayName", 
-										"click_through_destination":"@catagory.Text: @tag.Text"}'>
-							@tag.Text
+										"taxonomy-category":"@catagory.Text",
+										"click_through_source":"@Sitecore.Context.Item.DisplayName", 										"click_through_destination":"@catagory.Text: @tag.Text"}'>
+										@tag.Text
 						</a>
 					</li>
 					var nestedTaxonomy = $"{catagory.Text}: {tag.Text}";

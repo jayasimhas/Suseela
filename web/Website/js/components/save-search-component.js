@@ -127,7 +127,6 @@ $(document).ready(function() {
 	var saveStashedSearch = Cookies.getJSON('saveStashedSearch');
 
 	if(saveStashedSearch) {
-		console.log(saveStashedSearch);
 		// Set `Save Search` values from stashed search data
 		$('.js-save-search-title').val(saveStashedSearch['Title']);
 		$('.js-save-search-url').val(saveStashedSearch['Url']);
