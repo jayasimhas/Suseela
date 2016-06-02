@@ -76,14 +76,11 @@ namespace Informa.Web.Controllers
     [Route]
     public class WorkflowController : ApiController
     {
-
-        private ISitecoreService _sitecoreService;
         private readonly IArticleSearch _search;
         private readonly IArticleSearchFilter _articleSearchFilter;
         private readonly ArticleUtil _articleUtil;
-        public WorkflowController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
+        public WorkflowController(ArticleUtil articleUtil)
         {
-            _sitecoreService = sitecoreFactory(Constants.MasterDb);
             _articleUtil = articleUtil;
         }
         // GET api/<controller>
