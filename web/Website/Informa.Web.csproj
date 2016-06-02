@@ -964,9 +964,6 @@
     <Content Include="App_Config\MimeTypes.config" />
     <Content Include="App_Config\Portraits.config" />
     <Content Include="App_Config\Prefetch\Common.config" />
-    <Content Include="App_Config\Prefetch\Core.config" />
-    <Content Include="App_Config\Prefetch\Master.config" />
-    <Content Include="App_Config\Prefetch\Webdb.config" />
     <Content Include="App_Config\Prototypes.config" />
     <Content Include="App_Config\Salesforce.config" />
     <Content Include="App_Config\Security\Domains.config">
@@ -1204,6 +1201,9 @@
     <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />
+    <None Include="App_Config\Prefetch\Core.config.template" />
+    <None Include="App_Config\Prefetch\Master.config.template" />
+    <None Include="App_Config\Prefetch\Webdb.config.template" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
