@@ -28,7 +28,11 @@ namespace Informa.Library.Salesforce.User.Search
 				};
 			}
 
-			var response = Service.Execute(s => s.createSavedSearchItem(entity.Username, entity.SearchString, entity.Name, entity.HasAlert));
+		    var response =
+		        Service.Execute(
+		            s =>
+		                s.createSavedSearchItem2(entity.Username, entity.SearchString, entity.Name, entity.HasAlert,
+		                    entity.UnsubscribeToken));
 
 			return CreateResponse(response);
 		}

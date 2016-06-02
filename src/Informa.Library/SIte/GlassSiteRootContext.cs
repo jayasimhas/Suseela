@@ -10,16 +10,20 @@ namespace Informa.Library.Site
 	public class GlassSiteRootContext : ISiteRootContext
 	{
 	    protected readonly ICacheProvider CacheProvider;
+	    protected readonly ISitecoreContext SitecoreContext;
 
 		public GlassSiteRootContext(
             ISitecoreContext sitecoreContext,
             ICacheProvider cacheProvider)
 		{
-			Item = sitecoreContext.GetRootItem<ISite_Root>();
+		    SitecoreContext = sitecoreContext;
 		    CacheProvider = cacheProvider;
 
 		}
-		public ISite_Root Item { get; set; }
+
+	    private ISite_Root _item;
+		public ISite_Root Item => _item ?? 
+            (_item = SitecoreContext?.GetRootItem<ISite_Root>());
 
         private string CreateCacheKey(string suffix) {
             return $"{nameof(GlassSiteRootContext)}-{suffix}";

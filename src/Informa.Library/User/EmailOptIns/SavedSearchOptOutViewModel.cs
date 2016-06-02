@@ -12,6 +12,7 @@ namespace Informa.Library.User.EmailOptIns
     public class SavedSearchOptOutViewModel : GlassViewModel<IGeneral_Content_Page>
     {
         private readonly IDependencies _dependencies;
+        private const string SavedSearchNameToken = "[SavedSearchName]";
 
         [AutowireService(IsAggregateService = true)]
         public interface IDependencies
@@ -24,24 +25,57 @@ namespace Informa.Library.User.EmailOptIns
         public SavedSearchOptOutViewModel(IDependencies dependencies)
         {
             _dependencies = dependencies;
+
         }
 
-        private string FailText => _dependencies.TextTranslator.Translate("Account.SavedSearch.OptOutFailed");
+        private bool _optOutHasRun;
+        private string _headerText;
+
+        public string HeaderText
+        {
+            get
+            {
+                if(!_optOutHasRun) { PopulateTextProperties(); }
+                return _headerText;
+            }
+        }
 
         private string _bodyText;
-        public string BodyText => _bodyText ?? (_bodyText = GetBodyText());
+        public string BodyText
+        {
+            get
+            {
+                if(!_optOutHasRun) { PopulateTextProperties(); }
+                return _bodyText;
+            }
+        }
 
-        private string GetBodyText()
+        private void PopulateTextProperties()
+        {
+            var response = OptOut();
+            if (response.IsSuccessful)
+            {
+                _headerText = _dependencies.TextTranslator.Translate("Account.SavedSearches.OptOutHeader");
+                _bodyText = GlassModel?.Body.Replace(SavedSearchNameToken, response.BodyText);
+            }
+            else
+            {
+                _headerText = _dependencies.TextTranslator.Translate("Account.SavedSearches.OptOutFailed");
+                _bodyText = string.Empty;
+            }
+            _optOutHasRun = true;
+        }
+
+        private OptInResponseModel OptOut()
         {
             var query = _dependencies.HttpContextProvider.RequestUrl.Query;
-            if(string.IsNullOrEmpty(query)) { return FailText; }
+            if(string.IsNullOrEmpty(query)) { return new OptInResponseModel {IsSuccessful = false}; }
 
             NameValueCollection queryParsed = HttpUtility.ParseQueryString(query);
             var token = queryParsed[Constants.QueryString.EncryptedToken];
-            if (string.IsNullOrEmpty(token)) { return FailText; }
+            if (string.IsNullOrEmpty(token)) { return new OptInResponseModel { IsSuccessful = false }; }
 
-            var optOutResponse = _dependencies.OptInManager.AnnonymousOptOut(token);
-            return optOutResponse.BodyText;
+            return _dependencies.OptInManager.AnnonymousOptOut(token);
         }
     }
 }

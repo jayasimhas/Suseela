@@ -1,3 +1,4 @@
 ﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Library.User.EmailOptIns.SavedSearchOptOutViewModel>
 
-<h2>@Model.BodyText</h2>
+<h2>@Model.HeaderText</h2>
+<p>@Html.Raw(Model.BodyText)</p>

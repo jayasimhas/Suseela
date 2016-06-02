@@ -1,25 +1,25 @@
 ----item----
 version: 1
-id: {E2F1F40B-5BAD-4D53-98BC-D6C915A7E92A}
+id: {D8689615-84B5-43C7-A38D-CFC567C036D6}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Opt Ins/SavedSearchOptOut
-parent: {D8689615-84B5-43C7-A38D-CFC567C036D6}
-name: SavedSearchOptOut
+path: /sitecore/layout/Renderings/User Defined/Account/Opt Ins
+parent: {D285B390-1507-46E5-8398-E55D30988403}
+name: Opt Ins
 master: {00000000-0000-0000-0000-000000000000}
-template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
-templatekey: View rendering
+template: {7EE0975B-0698-493E-B3A2-0B2EF33D0522}
+templatekey: Rendering Folder
 
 ----field----
-field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
-name: Path
-key: path
-content-length: 56
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 1
 
-/Areas/Account/Views/Management/SavedSearchOptOut.cshtml
+0
 ----version----
 language: en
 version: 1
-revision: a11b7887-9e2f-4a50-8f2b-63407d77096d
+revision: d776a43e-8979-4f25-abd3-105b817de0ec
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,21 +27,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160531T182634Z
+20160310T105838Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-a11b7887-9e2f-4a50-8f2b-63407d77096d
+d776a43e-8979-4f25-abd3-105b817de0ec
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160531T184032Z
+20160602T222331Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

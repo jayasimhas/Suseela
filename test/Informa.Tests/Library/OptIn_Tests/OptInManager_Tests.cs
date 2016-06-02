@@ -28,7 +28,7 @@ namespace Informa.Tests.Library.Subscription_Tests
         {
             // ARRANGE
             _dependencies.AuthenticatedUserContext.IsAuthenticated.Returns(true);
-            _dependencies.SitePublicationContext.Name.Returns("MooseMagazine");
+            _dependencies.SitePublicationNameContext.Name.Returns("MooseMagazine");
             _dependencies.NewsletterUserOptInFactory.Create("MooseMagazine", true)
                 .Returns(new NewsletterUserOptIn {OptIn = true});
 
@@ -45,7 +45,7 @@ namespace Informa.Tests.Library.Subscription_Tests
         {
             // ARRANGE
             _dependencies.AuthenticatedUserContext.IsAuthenticated.Returns(true);
-            _dependencies.SitePublicationContext.Name.Returns("MooseMagazine");
+            _dependencies.SitePublicationNameContext.Name.Returns("MooseMagazine");
             _dependencies.NewsletterUserOptInFactory.Create("MooseMagazine", false)
                 .Returns(new NewsletterUserOptIn { OptIn = false });
 

@@ -35,7 +35,7 @@ namespace Informa.Library.User.EmailOptIns
             IAuthenticatedUserContext AuthenticatedUserContext { get; }
             IUpdateNewsletterUserOptInsContext UpdateNewsletterUserOptInsContext { get; }
             ISignInViewModel SignInViewModel { get; }
-            ISitePublicationContext SitePublicationContext { get; }
+            ISitePublicationNameContext SitePublicationNameContext { get; }
             INewsletterUserOptInFactory NewsletterUserOptInFactory { get; }
             IUpdateSiteNewsletterUserOptIn UpdateSiteNewsletterUserOptIn { get; }
             IUpdateOfferUserOptIn UpdateOfferUserOptIn { get; }
@@ -74,11 +74,11 @@ namespace Informa.Library.User.EmailOptIns
             }
 
             var isCurrentPublication = !string.IsNullOrEmpty(publicationName)
-                                       && (string.Equals(publicationName, _dependencies.SitePublicationContext.Name,
+                                       && (string.Equals(publicationName, _dependencies.SitePublicationNameContext.Name,
                                            StringComparison.CurrentCultureIgnoreCase));
             if (isCurrentPublication)
             {
-                var userOptIn = _dependencies.NewsletterUserOptInFactory.Create(_dependencies.SitePublicationContext.Name, true);
+                var userOptIn = _dependencies.NewsletterUserOptInFactory.Create(_dependencies.SitePublicationNameContext.Name, true);
                 _dependencies.UpdateNewsletterUserOptInsContext.Update(new[] { userOptIn });
             }
 
@@ -101,13 +101,13 @@ namespace Informa.Library.User.EmailOptIns
             }
 
             //process unsubscribe
-            var newsletterType = _dependencies.SitePublicationContext.Name;
+            var newsletterType = _dependencies.SitePublicationNameContext.Name;
 
             if (type.ToLower() == "newsletter" && !string.IsNullOrEmpty(publicationName) && (publicationName.ToLower() == newsletterType.ToLower()))
             {
                 if (_dependencies.AuthenticatedUserContext.IsAuthenticated)
                 {
-                    var userOptIn = _dependencies.NewsletterUserOptInFactory.Create(_dependencies.SitePublicationContext.Name, false);
+                    var userOptIn = _dependencies.NewsletterUserOptInFactory.Create(_dependencies.SitePublicationNameContext.Name, false);
                     _dependencies.UpdateNewsletterUserOptInsContext.Update(new[] { userOptIn });
                 }
                 else if (!string.IsNullOrWhiteSpace(userName))
@@ -135,9 +135,13 @@ namespace Informa.Library.User.EmailOptIns
             var entity = ParseToken(token);
             var response = new OptInResponseModel {IsAuthenticated = false};
 
-            response.BodyText = entity == null
-                ? _dependencies.TextTranslator.Translate("Account.SavedSearch.OptOutFailed")
-                : _dependencies.SavedSearchEntityRepository.Delete(entity).Message;
+            response.IsSuccessful = entity != null 
+                && _dependencies.SavedSearchEntityRepository.Delete(entity).Success;
+
+            if (response.IsSuccessful)
+            {
+                response.BodyText = entity.Name;
+            }
 
             if (_dependencies.AuthenticatedUserContext.IsAuthenticated)
             {

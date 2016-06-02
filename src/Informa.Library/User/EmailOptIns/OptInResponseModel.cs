@@ -8,5 +8,6 @@ namespace Informa.Library.User.EmailOptIns
         public bool IsAuthenticated { get; set; }
         public ISignInViewModel SignInViewModel { get; set; }
         public string RedirectUrl { get; set; }
+        public bool IsSuccessful { get; set; }
     }
 }
