@@ -28,11 +28,10 @@
 </head>
 <body @Model.BodyCssClass>
 
-    @Html.Partial("Global/Analytics", Model.AnalyticsViewModelSource)
+    @Html.Sitecore().Placeholder("primary-header")
 
-    @Html.Sitecore().Rendering(Model.ItemReferences.SiteHeaderRendering.ToString())
     <main>
-        @Html.Sitecore().Rendering(Model.ItemReferences.SiteSideNavigationRendering.ToString())
+        @Html.Sitecore().Placeholder("inner-main")
 
         <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
 
@@ -40,27 +39,21 @@
                 @Html.Sitecore().Placeholder("general-header")
             </div>
 
-            @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
-            @{  Html.RenderPartial("_IndividualSubscriptionRenewalMessage", Model.IndividualRenewalMessageInfo); }
-            @{  Html.RenderPartial("Company/_RegisterMessage", Model.CompanyRegisterMessage); }
+            @Html.Sitecore().Placeholder("pre-content")
 
             <div class="main__content">
                 @Html.Sitecore().Placeholder("top-main-content")
                 @Html.Sitecore().Placeholder("main-content")
             </div>
 
-            @* * *  POP-OUT TEMPLATE MARKUP *@
-            @Html.Partial("PopOuts/SignIn", Model.SignInPopOutViewModel)
-            @Html.Partial("PopOuts/Register", Model.RegisterPopOutViewModel)
-            @Html.Partial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel)
-            @Html.Sitecore().Rendering(Model.ItemReferences.SaveSearchPopOutRendering.ToString())
-            @* * *  END POP-OUT TEMPLATE MARKUP *@
+            @Html.Sitecore().Placeholder("post-content")
+
         </div>
 
     </main>
 
     <footer>
-        @Html.Sitecore().Rendering(Model.ItemReferences.SiteFooterRendering.ToString())
+        @Html.Sitecore().Placeholder("footer")
     </footer>
 
     @* If this is an Article page... *@
@@ -71,8 +64,8 @@
     @* end pseudo-if *@
 
     <script src="/dist/js/index.js"></script>
-    @if(Model.DebugToolbar != null) { 
-        Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar);
+    @if (Model.IsSiteDebuggingAllowed) {
+        @Html.Sitecore().Placeholder("site-debugger")
     }
     @MiniProfiler.RenderIncludes()
 </body>

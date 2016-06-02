@@ -16,10 +16,12 @@ namespace Informa.Web.ViewModels
 
 		protected readonly ITextTranslator TextTranslator;
 
-		public SearchViewModel(ITextTranslator textTranslator, IAuthenticatedUserContext userContext, IUserSubscriptionsContext subscriptionsContext, IItemReferences itemReferences)
+		public SearchViewModel(
+            ITextTranslator textTranslator, 
+            IAuthenticatedUserContext userContext, 
+            IUserSubscriptionsContext subscriptionsContext)
 		{
 			TextTranslator = textTranslator;
-			ItemReferences = itemReferences;
 			IsAuthenticated = userContext.IsAuthenticated;
 
 			_subcriptions = new Lazy<IEnumerable<string>>(() =>
@@ -29,7 +31,6 @@ namespace Informa.Web.ViewModels
 					: Enumerable.Empty<string>();
 			});
 		}
-		public IItemReferences ItemReferences { get; set; }
 		public bool IsAuthenticated { get; set; }
 		public string PageFirstText => TextTranslator.Translate("Search.Page.First");
 		public string PageLastText => TextTranslator.Translate("Search.Page.Last");

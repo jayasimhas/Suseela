@@ -14,12 +14,13 @@ using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Sitecore.Social.Infrastructure.Utils;
 
 namespace Informa.Web.ViewModels
 {
     [AutowireService]
-	public class AnalyticsViewModel : IAnalyticsViewModel {
+	public class AnalyticsViewModel : GlassViewModel<I___BasePage>, IAnalyticsViewModel {
 
         public readonly IItemReferences ItemReferences;
         protected readonly IIsEntitledProducItemContext IsEntitledProductItemContext;
@@ -34,8 +35,7 @@ namespace Informa.Web.ViewModels
 	    protected readonly ISiteRootContext SiteRootContext;
 
         public readonly IUserCompanyContext UserCompanyContext;
-        public I___BasePage GlassModel { get; set; }
-
+        
         public AnalyticsViewModel(
 			IItemReferences itemReferences,
             IIsEntitledProducItemContext isEntitledProductItemContext,
@@ -114,7 +114,7 @@ namespace Informa.Web.ViewModels
                 return !string.IsNullOrEmpty(allSubscriptions) ? $"[{allSubscriptions}]" : string.Empty;
             }
         }
-        public string CustomTags => GlassModel.Custom_Meta_Tags;
+        public string CustomTags => GlassModel?.Custom_Meta_Tags ?? string.Empty;
         public string ContactId => WebAuthenticateUser.AuthenticatedUser?.ContactId ?? string.Empty;
         public string AccountId
         {
@@ -141,8 +141,8 @@ namespace Informa.Web.ViewModels
         public string DateCreated => (Sitecore.Context.Item != null && Sitecore.Context.Item.Statistics.Created > DateTime.MinValue) 
                     ? Sitecore.Context.Item.Statistics.Created.ToServerTimeZone().ToString("MM/dd/yyyy")
                     : DateTime.MinValue.ToString("MM/dd/yyyy");
-        public string PageDescription => GlassModel.Meta_Description;
-        public string PageTitleOverride => GlassModel.Meta_Title_Override;
-        public string MetaKeyWords => GlassModel.Meta_Keywords;
+        public string PageDescription => GlassModel?.Meta_Description ?? string.Empty;
+        public string PageTitleOverride => GlassModel?.Meta_Title_Override ?? string.Empty;
+        public string MetaKeyWords => GlassModel?.Meta_Keywords ?? string.Empty;
     }
 }

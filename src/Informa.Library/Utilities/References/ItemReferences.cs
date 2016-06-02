@@ -12,8 +12,7 @@ namespace Informa.Library.Utilities.References
 		public static IItemReferences Instance => AutofacConfig.ServiceLocator.Resolve<Owned<IItemReferences>>().Value;
 
 		public Guid HomePage => new Guid("{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}");
-
-		public Guid DCDConfigurationItem => new Guid("{}");
+        
 		public Guid NlmConfiguration => new Guid("{B0C03A57-0C1E-4BC9-BE7A-5871695FD79B}");
 		public Guid NlmErrorDistributionList => new Guid("{54C6F361-9A73-453F-89E4-6230090C122A}");
 
@@ -41,16 +40,6 @@ namespace Informa.Library.Utilities.References
 		public Guid SubscriptionPage => new Guid("{39611772-CD97-4610-BB55-F96BE4C1F540}");
 
 		public Guid EmailPreferences => new Guid("{BAF1D4FB-7599-4EDA-8926-0A4995E4DC2D}");
-
-		#region Renderings
-
-		public Guid SiteHeaderRendering => new Guid("{83398B37-08CB-43A2-BC0A-7EB47E764AF4}");
-		public Guid SiteFooterRendering => new Guid("{2889497D-2921-4BE1-BBF4-F4B4D2131231}");
-		public Guid SiteSideNavigationRendering => new Guid("{65EDEFC9-82C2-47EE-93CB-A4D9372A45C0}");
-		public Guid EmailSearchPopOutRendering => new Guid("{9D3214C0-84C7-4BA7-8DDE-23E546ADDED7}");
-		public Guid SaveSearchPopOutRendering => new Guid("{099DF785-B86D-45F2-B6FE-5272E8D6EE44}");
-
-		#endregion
 
 		#region Account Contact Info Drop Downs
 

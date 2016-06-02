@@ -3,6 +3,5 @@
 	public interface ISignInPopOutViewModel
 	{
 		string HeaderText { get; }
-		ISignInViewModel SignInViewModel { get; }
 	}
 }
