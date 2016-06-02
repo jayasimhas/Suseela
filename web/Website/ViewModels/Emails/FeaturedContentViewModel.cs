@@ -20,7 +20,7 @@ namespace Informa.Web.ViewModels.Emails
         [AutowireService(true)]
         public interface IDependencies
         {
-            IGlobalService GlobalService { get; }
+            IGlobalSitecoreService GlobalService { get; }
             IItemReferences ItemReferences { get; }
             ICampaignQueryBuilder CampaignQueryBuilder { get; }
         }

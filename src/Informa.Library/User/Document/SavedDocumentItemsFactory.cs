@@ -11,12 +11,12 @@ namespace Informa.Library.User.Document
 	[AutowireService]
 	public class SavedDocumentItemsFactory : ISavedDocumentItemsFactory
 	{
-		protected readonly IGlobalService GlobalService;
+		protected readonly IGlobalSitecoreService GlobalService;
 		protected readonly IIsUrlCurrentSite IsUrlCurrentSite;
 		protected readonly IFindSitePublicationByCode FindPublication;
 
 		public SavedDocumentItemsFactory(
-			IGlobalService globalService,
+			IGlobalSitecoreService globalService,
 			IIsUrlCurrentSite isUrlCurrentSite,
 			IFindSitePublicationByCode findPublication)
 		{

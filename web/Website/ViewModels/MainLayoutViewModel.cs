@@ -22,7 +22,8 @@ namespace Informa.Web.ViewModels
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly ISiteDebuggingAllowedContext SiteDebuggingAllowedContext;
-	    protected readonly IGlobalService GlobalService;
+	    protected readonly IGlobalSitecoreService GlobalService;
+	    protected readonly ISiteRootContext SiteRootContext;
 
         public readonly IItemReferences ItemReferences;
         public readonly IUserCompanyContext UserCompanyContext;
@@ -59,7 +60,8 @@ namespace Informa.Web.ViewModels
 			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
             IRegisterPopOutViewModel registerPopOutViewModel,
             ISiteDebuggingAllowedContext siteDebuggingAllowedContext,
-            IGlobalService globalService)
+            IGlobalSitecoreService globalService,
+            ISiteRootContext siteRootContext)
 		{
 			TextTranslator = textTranslator;
             AuthenticatedUserContext = authenticatedUserContext;
@@ -76,15 +78,16 @@ namespace Informa.Web.ViewModels
                 DebugToolbar = DependencyResolver.Current.GetService<IToolbarViewModel>();
             RegisterPopOutViewModel = registerPopOutViewModel;
             GlobalService = globalService;
+            SiteRootContext = siteRootContext;
+
 		}
 
-
-        public HtmlString PrintPageHeaderMessage => GlobalService.GetPrintHeaderMessage();
 		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
 		public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
 		public string CorporateName => UserCompanyContext?.Company?.Name;
 	    public string Title => GlobalService.GetPageTitle(GlassModel);
-	    public string BodyCssClass => GlobalService.GetBodyCssClass();
-		public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
+	    public string BodyCssClass => SiteRootContext.GetBodyCssClass();
+        public HtmlString PrintPageHeaderMessage => SiteRootContext.GetPrintHeaderMessage();
+        public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	}
 }

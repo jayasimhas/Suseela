@@ -18,14 +18,14 @@ namespace Informa.Library.Mail
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IHtmlEmailTemplateFactory HtmlEmailTemplateFactory;
 		protected readonly IEmailFactory EmailFactory;
-	    protected readonly IGlobalService GlobalService;
+	    protected readonly IGlobalSitecoreService GlobalService;
 
 
         public BaseHtmlEmailFactory(
 			ISiteRootContext siteRootContext,
 			IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
 			IEmailFactory emailFactory,
-            IGlobalService globalService)
+            IGlobalSitecoreService globalService)
 		{
 			SiteRootContext = siteRootContext;
 			HtmlEmailTemplateFactory = htmlEmailTemplateFactory;

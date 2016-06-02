@@ -13,13 +13,13 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 {
 	public class RegisterUserViewModel : GlassViewModel<IRegistration_Details_Page>
 	{
-		protected readonly IGlobalService GlobalService;
+		protected readonly IGlobalSitecoreService GlobalService;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IReturnUrlContext ReturnUrlContext;
 		protected readonly IRegisterReturnUrlContext RegisterReturnUrlContex;
 
 		public RegisterUserViewModel(
-            IGlobalService globalService,
+            IGlobalSitecoreService globalService,
 			ITextTranslator textTranslator,
 			IReturnUrlContext returnUrlContext,
 			IRegisterReturnUrlContext registerReturnUrlContext)

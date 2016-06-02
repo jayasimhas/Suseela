@@ -23,7 +23,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 				ISignInViewModel signInViewModel,
 				IUserCompanyContext userCompanyContext,
 				IUserProfileContext profileContext,
-				IGlobalService globalService)
+				IGlobalSitecoreService globalService)
 		{
 			TextTranslator = translator;
 			SignInViewModel = signInViewModel;

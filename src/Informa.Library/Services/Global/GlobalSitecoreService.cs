@@ -17,7 +17,7 @@ using Informa.Library.Utilities.Extensions;
 namespace Informa.Library.Services.Global {
 
     [AutowireService(LifetimeScope.PerScope)]
-    public class GlobalService : IGlobalService
+    public class GlobalService : IGlobalSitecoreService
     {
         protected readonly ISitecoreService SitecoreService;
         protected readonly ICacheProvider CacheProvider;
@@ -140,29 +140,6 @@ namespace Informa.Library.Services.Global {
                 : $" :: {SiteRootContext.Item.Publication_Name.StripHtml()}";
 
             return string.Concat(pageTitle, publicationName);
-        }
-
-        public string GetBodyCssClass()
-        {
-            string cacheKey = CreateCacheKey($"GetBodyCssClass-{SiteRootContext.Item?._Id}");
-            return CacheProvider.GetFromCache(cacheKey, BuildBodyCssClass);
-        }
-
-        public string BuildBodyCssClass() {
-            return string.IsNullOrEmpty(SiteRootContext.Item?.Publication_Theme)
-                ? string.Empty
-                : $"class={SiteRootContext.Item.Publication_Theme}";
-        }
-
-        public HtmlString GetPrintHeaderMessage()
-        {
-            string cacheKey = CreateCacheKey($"GetPrintHeaderMessage-{SiteRootContext.Item?._Id}");
-            return CacheProvider.GetFromCache(cacheKey, BuildPrintHeaderMessage);
-        }
-
-        public HtmlString BuildPrintHeaderMessage()
-        {
-            return new HtmlString(SiteRootContext.Item?.Print_Message ?? string.Empty);
         }
     }
 }

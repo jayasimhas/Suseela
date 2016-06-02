@@ -19,7 +19,7 @@ namespace Informa.Web.ViewModels
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IUserProfileContext ProfileContext;
 		protected readonly ISiteRootContext SiteRootContext;
-	    protected readonly IGlobalService GlobalService;
+	    protected readonly IGlobalSitecoreService GlobalService;
 		
 		public HeaderViewModel(
 			IAuthenticatedUserContext authenticatedUserContext,
@@ -27,7 +27,7 @@ namespace Informa.Web.ViewModels
 			ITextTranslator textTranslator,
 			ISiteRootContext siteRootContext,
 		    IUserProfileContext profileContext,
-            IGlobalService globalService)
+            IGlobalSitecoreService globalService)
 		{
 			AuthenticatedUserContext = authenticatedUserContext;
 			CompanyNameContext = companyNameContext;

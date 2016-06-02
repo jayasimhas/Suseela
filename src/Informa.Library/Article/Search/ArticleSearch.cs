@@ -22,14 +22,14 @@ namespace Informa.Library.Article.Search
 	public class ArticleSearch : IArticleSearch
 	{
 		protected readonly IProviderSearchContextFactory SearchContextFactory;
-		protected readonly IGlobalService GlobalService;
+		protected readonly IGlobalSitecoreService GlobalService;
 		protected readonly Func<string, ISitecoreService> SitecoreFactory;
 		protected readonly IItemReferences ItemReferences;
 		protected readonly ICacheProvider CacheProvider;
 
 		public ArticleSearch(
 				IProviderSearchContextFactory searchContextFactory,
-				IGlobalService globalService,
+				IGlobalSitecoreService globalService,
 				Func<string, ISitecoreService> sitecoreFactory,
 				IItemReferences itemReferences,
 				ICacheProvider cacheProvider

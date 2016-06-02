@@ -17,7 +17,7 @@ namespace Informa.Library.Navigation
 	    [AutowireService(true)]
 	    public interface IDependencies
 	    {
-            IGlobalService GlobalService { get; }
+            IGlobalSitecoreService GlobalService { get; }
             ICacheProvider CacheProvider { get; }
 	    }
 

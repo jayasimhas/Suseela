@@ -9,7 +9,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templat
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global;
 
 namespace Informa.Library.Services.Global {
-    public interface IGlobalService {
+    public interface IGlobalSitecoreService {
         IInforma_Bar GetInformaBar();
         IEnumerable<ListItem> GetSalutations();
         IEnumerable<ListItem> GetNameSuffixes();
@@ -20,7 +20,5 @@ namespace Informa.Library.Services.Global {
         T GetItem<T>(Guid g) where T : class;
         T GetItem<T>(string id) where T : class;
         string GetPageTitle(I___BasePage page);
-        string GetBodyCssClass();
-        HtmlString GetPrintHeaderMessage();
     }
 }

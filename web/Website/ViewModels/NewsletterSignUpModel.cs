@@ -16,14 +16,14 @@ namespace Informa.Web.ViewModels
 	    protected readonly IAuthenticatedUserContext UserContext;
 	    protected readonly ITextTranslator TextTranslator;
 	    protected readonly ISiteRootContext SiteRootContext;
-	    protected readonly IGlobalService GlobalService;
+	    protected readonly IGlobalSitecoreService GlobalService;
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
 
         public NewsletterSignUpModel(
 	        IAuthenticatedUserContext userContext,
             ITextTranslator textTranslator,
             ISiteRootContext siteRootContext,
-            IGlobalService globalService,
+            IGlobalSitecoreService globalService,
 			ISiteNewsletterUserOptedInContext newsletterOptedInContext)
 	    {
 

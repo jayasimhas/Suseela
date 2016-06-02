@@ -421,8 +421,8 @@
     <Compile Include="Search\Utilities\SearchWebClientUtil.cs" />
     <Compile Include="Services\Article\ArticleService.cs" />
     <Compile Include="Services\Article\IArticleService.cs" />
-    <Compile Include="Services\Global\GlobalService.cs" />
-    <Compile Include="Services\Global\IGlobalService.cs" />
+    <Compile Include="Services\Global\GlobalSitecoreService.cs" />
+    <Compile Include="Services\Global\IGlobalSitecoreService.cs" />
     <Compile Include="Services\Global\ITaxonomyService.cs" />
     <Compile Include="Services\Global\TaxonomyService.cs" />
     <Compile Include="Session\ISessionValue`1.cs" />

@@ -10,12 +10,12 @@ namespace Informa.Library.Presentation
 	{
 		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly IRenderingContext RenderingContext;
-        protected readonly IGlobalService GlobalService;
+        protected readonly IGlobalSitecoreService GlobalService;
 
         public GlassRenderingItemContext(
 			ISitecoreContext sitecoreContext,
 			IRenderingContext renderingContext,
-            IGlobalService globalService)
+            IGlobalSitecoreService globalService)
 		{
 			SitecoreContext = sitecoreContext;
 			RenderingContext = renderingContext;

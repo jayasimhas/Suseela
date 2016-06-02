@@ -35,7 +35,7 @@ namespace Informa.Web.Areas.Article.Controllers
 		protected readonly IEmailFactory EmailFactory;
 		protected readonly ISiteSettings SiteSettings;
 		private readonly ILog _logger;
-		protected readonly IGlobalService GlobalService;
+		protected readonly IGlobalSitecoreService GlobalService;
 		private readonly IBaseHtmlEmailFactory BaseEmailFactory;
 	    protected readonly IArticleSearch ArticleSearch;
 	    protected readonly IArticleService ArticleService;
@@ -48,7 +48,7 @@ namespace Informa.Web.Areas.Article.Controllers
             IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
 			ISiteSettings siteSettings, 
             ILog logger,
-            IGlobalService globalService, 
+            IGlobalSitecoreService globalService, 
             IArticleSearch articleSearch,
             IArticleService articleService)
 		{

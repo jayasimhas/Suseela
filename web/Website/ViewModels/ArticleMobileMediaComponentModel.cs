@@ -26,12 +26,12 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly IArticleSearch Searcher;
 		protected readonly IArticleListItemModelFactory ArticleListableFactory;
-		protected readonly IGlobalService GlobalService;
+		protected readonly IGlobalSitecoreService GlobalService;
 
 		public RelatedArticlesModel(IArticle model,
 						IArticleListItemModelFactory articleListableFactory,
 						IArticleSearch searcher,
-						IGlobalService globalService)
+						IGlobalSitecoreService globalService)
 		{
 			ArticleListableFactory = articleListableFactory;
 			Searcher = searcher;

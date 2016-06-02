@@ -10,14 +10,14 @@ namespace Informa.Library.Site
 	[AutowireService(LifetimeScope.PerScope)]
 	public class SiteMainNavigationContext : ISiteMainNavigationContext
 	{
-		protected readonly IGlobalService GlobalService;
+		protected readonly IGlobalSitecoreService GlobalService;
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IItemNavigationTreeFactory ItemNavigationTreeFactory;
 
 		public SiteMainNavigationContext(
 			ISiteRootContext siteRootContext,
 			IItemNavigationTreeFactory itemNavigationTreeFactory,
-			IGlobalService globalService)
+			IGlobalSitecoreService globalService)
 		{
 			SiteRootContext = siteRootContext;
 			ItemNavigationTreeFactory = itemNavigationTreeFactory;
