@@ -3234,6 +3234,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 		public static Dictionary<string, string> SubjectMapping => new Dictionary<string, string>
 		{
+			{"KeepingTrack", "Keeping Tracker"},
+			{"PerformanceTracker", "Performance Tracker"},
 			{"Bioterrorism", "Bioterrorism"},
 			{"Blood Products", "Blood Products"},
 			{"Business Models", "Business Models"},
