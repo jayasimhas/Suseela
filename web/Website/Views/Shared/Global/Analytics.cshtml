@@ -40,6 +40,15 @@
 		"User_IP_Address":"@Model.UserIp",
 	};
 
+	@*
+		If page is registration, set registration_type below as:
+		corporate, free_trial, master_id, or free_individual
+		See: https://velirs.atlassian.net/browse/IITS2-260
+
+	analytics_data.registration_type = '';
+
+	*@
+
     var utag_data = analytics_data;
 
     (function (a, b, c, d) {
