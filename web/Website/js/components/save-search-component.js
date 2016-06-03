@@ -128,17 +128,29 @@ $(document).ready(function() {
 	});
 
 	var toggleSavedSearchAlertController = new FormController({
-		observe: '.form-toggle-saved-search-alert'
+		observe: '.form-toggle-saved-search-alert',
+		successCallback: function(form, context, e) {
+			var alertToggle = $(form).find('.js-saved-search-alert-toggle');
+			var val = alertToggle.val();
+			var event_data = {
+				saved_search_alert_title: $(form).data('analytics-title'),
+				saved_search_alert_publication: $(form).data('analytics-publication')
+			};
+
+			if (val === "on") {
+				event_data.event_name = 'saved_search_alert_off';
+				alertToggle.val('off');
+			} else {
+				event_data.event_name = 'saved_search_alert_on';
+				alertToggle.val('on');
+			}
+
+			analyticsEvent( $.extend(analytics_data, event_data) );
+		}
 	});
 
 	$('.js-saved-search-alert-toggle').on('click', function(e) {
 		$(e.target.form).find('button[type=submit]').click();
-		var val = $(e.target).val();
-		if (val === "on") {
-			$(e.target).val('off');
-		} else {
-			$(e.target).val('on');
-		}
 	});
 
 	// On page load, check for any stashed searches that need to be saved
