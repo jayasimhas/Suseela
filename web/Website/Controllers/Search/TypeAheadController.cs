@@ -21,34 +21,27 @@ namespace Informa.Web.Controllers.Search
 		private readonly ISearchPageParser _parser;
 		private readonly ISearchManager<InformaSearchResultItem> _searchManager;
 		private readonly IQueryFormatter _queryFormatter;
-		private readonly ICacheProvider _cacheProvider;
 
-		public TypeAheadController(ISearchManager<InformaSearchResultItem> searchManager, ISearchPageParser parser, IQueryFormatter queryFormatter, ICacheProvider cacheProvider)
+		public TypeAheadController(ISearchManager<InformaSearchResultItem> searchManager, ISearchPageParser parser, IQueryFormatter queryFormatter)
 		{
 			_searchManager = searchManager;
 			_parser = parser;
 			_queryFormatter = queryFormatter;
-			_cacheProvider = cacheProvider;
 		}
 
 		public IEnumerable<CompanyTypeAheadResponseItem> GetCompanies([ModelBinder(typeof(ApiSearchRequestModelBinder))] ApiSearchRequest request)
 		{
-			string cacheKey = $"PageId={request.PageId}:{string.Join(":", request.QueryParameters.OrderBy(p => p.Key).Select(pair => $"{pair.Key}={pair.Value}"))}";
-
-			return _cacheProvider.GetFromCache(cacheKey, () =>
+			var q = new SearchQuery<InformaSearchResultItem>(null, null)
 			{
-				var q = new SearchQuery<InformaSearchResultItem>(request, _parser)
-				{
-					Take = 0,
-					Skip = 0,
-					FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request),
-					QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, request),
-					FacetBuilder = new CompaniesFacetBuilder(),
-					SortBuilder = null
-				};
+				Take = 1,
+				Skip = 0,
+				FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request),
+				QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, request),
+				FacetBuilder = new CompaniesFacetBuilder(),
+				SortBuilder = null
+			};
 
-				return _searchManager.GetItems(q).Facets.FirstOrDefault()?.Values.Select(f => new CompanyTypeAheadResponseItem(f.Name)) ?? Enumerable.Empty<CompanyTypeAheadResponseItem>();
-			});
+			return _searchManager.GetItems(q).Facets.FirstOrDefault()?.Values.Select(f => new CompanyTypeAheadResponseItem(f.Name)) ?? Enumerable.Empty<CompanyTypeAheadResponseItem>();
 		}
 	}
 }
