@@ -103,7 +103,14 @@
 									@item.Publication.Name
 								</td>
 								<td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
-									<a href="@item.Url" @(item.IsExternalUrl ? "target = \"_blank\"" : "")>
+									<a
+										href="@item.Url"
+										class="click-utag"
+										data-info="{
+											event_name: 'bookmark_clickthrough',
+											bookmark_title: '@item.Title'
+										}"
+										@(item.IsExternalUrl ? "target = \"_blank\"" : "")>
 										@Html.Raw(item.Title)
 										@if (item.IsExternalUrl)
 										{
@@ -118,7 +125,8 @@
 								</td>
 								<td class="sortable-table__col sortable-table__submit-wrapper">
 									<form class="form-remove-saved-document"
-										  data-on-submit="/Account/api/SavedDocumentApi/RemoveItem/">
+										  data-on-submit="/Account/api/SavedDocumentApi/RemoveItem/"
+										  data-analytics-title="@Html.Raw(item.Title)">
 
 										<input name="DocumentID"
 											   id="DocumentID"

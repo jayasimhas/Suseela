@@ -424,13 +424,13 @@ $(document).ready(function() {
                 $('.js-sortable-table').remove();
                 $('.js-no-articles').show();
             }
-        }
-    });
 
-    var savedSearchesController = new FormController({
-        observe: '.form-remove-saved-search',
-        successCallback: function(form, context, evt) {
-            $(evt.target).closest('tr').remove();
+			var event_data = {
+				event_title: 'bookmark_removal',
+				bookmark_title: $(form).data('analytics-title')
+			};
+
+			analyticsEvent( $.extend(analytics_data, event_data) );
         }
     });
 
