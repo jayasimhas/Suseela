@@ -1,6 +1,7 @@
 ﻿using System.Collections.Specialized;
 using System.Web;
 using Informa.Library.Globalization;
+using Informa.Library.Site;
 using Informa.Library.Utilities.References;
 using Informa.Library.Wrappers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -20,50 +21,40 @@ namespace Informa.Library.User.EmailOptIns
             IHttpContextProvider HttpContextProvider { get; }
             IOptInManager OptInManager { get; }
             ITextTranslator TextTranslator { get; }
+            ISiteRootContext SiteRootContext { get; }
         }
 
         public SavedSearchOptOutViewModel(IDependencies dependencies)
         {
             _dependencies = dependencies;
-
         }
 
-        private bool _optOutHasRun;
-        private string _headerText;
-
-        public string HeaderText
+        public void Init()
         {
-            get
-            {
-                if(!_optOutHasRun) { PopulateTextProperties(); }
-                return _headerText;
-            }
+            PopulatePropertiesFromResponse(OptOut());
+            CurrentPublicationName = _dependencies.SiteRootContext.Item?.Publication_Name;
         }
+        
+        public string HeaderText { get; private set; }
+        public string BodyText { get; private set; }
+        public string SavedSearchName { get; private set; }
+        public bool IsOptOutSuccessful { get; private set; }
+        public string CurrentPublicationName { get; private set; }
 
-        private string _bodyText;
-        public string BodyText
+        private void PopulatePropertiesFromResponse(OptInResponseModel response)
         {
-            get
+            IsOptOutSuccessful = response.IsSuccessful;
+            if (IsOptOutSuccessful)
             {
-                if(!_optOutHasRun) { PopulateTextProperties(); }
-                return _bodyText;
-            }
-        }
-
-        private void PopulateTextProperties()
-        {
-            var response = OptOut();
-            if (response.IsSuccessful)
-            {
-                _headerText = _dependencies.TextTranslator.Translate("Account.SavedSearches.OptOutHeader");
-                _bodyText = GlassModel?.Body.Replace(SavedSearchNameToken, response.BodyText);
+                HeaderText = _dependencies.TextTranslator.Translate("Account.SavedSearches.OptOutHeader");
+                SavedSearchName = response.BodyText;
+                BodyText = GlassModel?.Body.Replace(SavedSearchNameToken, SavedSearchName);
             }
             else
             {
-                _headerText = _dependencies.TextTranslator.Translate("Account.SavedSearches.OptOutFailed");
-                _bodyText = string.Empty;
+                HeaderText = _dependencies.TextTranslator.Translate("Account.SavedSearches.OptOutFailed");
+                BodyText = string.Empty;
             }
-            _optOutHasRun = true;
         }
 
         private OptInResponseModel OptOut()
