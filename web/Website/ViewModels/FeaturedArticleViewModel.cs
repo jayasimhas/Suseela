@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Informa.Library.Globalization;
 using Informa.Library.Presentation;
 using Informa.Library.Services.Article;
+using Informa.Library.User.Authentication;
+using Informa.Library.User.Document;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.StringUtils;
 using Informa.Models.FactoryInterface;
@@ -12,22 +15,35 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 
 namespace Informa.Web.ViewModels
 {
-	public class FeaturedArticleViewModel : GlassViewModel<IArticle>
+	public class FeaturedArticleViewModel : GlassViewModel<IArticle>, IArticleBookmarker
 	{
 		protected readonly IRenderingParametersContext RenderingParametersContext;
 		protected readonly IArticleService ArticleService;
+	    protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+	    protected readonly IIsSavedDocumentContext IsSavedDocumentContext;
+	    protected readonly ITextTranslator TextTranslator;
 		
 		public FeaturedArticleViewModel(
 				IArticle model,
 				IRenderingParametersContext renderingParametersContext,
 				IArticleService articleService,
-				IBylineMaker bylineMaker)
+				IBylineMaker bylineMaker,
+                IAuthenticatedUserContext authenticatedUserContext,
+                IIsSavedDocumentContext isSavedDocumentContext,
+                ITextTranslator textTranslator)
 		{
 			RenderingParametersContext = renderingParametersContext;
 			ArticleService = articleService;
+		    AuthenticatedUserContext = authenticatedUserContext;
+		    IsSavedDocumentContext = isSavedDocumentContext;
+		    TextTranslator = textTranslator;
 
-			ArticleByLine = bylineMaker.MakeByline(model.Authors);
-		}
+            ArticleByLine = bylineMaker.MakeByline(model.Authors);
+		    IsUserAuthenticated = AuthenticatedUserContext.IsAuthenticated;
+		    IsArticleBookmarked = IsSavedDocumentContext.IsSaved(model._Id);
+		    BookmarkText = TextTranslator.Translate("Bookmark");
+            BookmarkedText = TextTranslator.Translate("Bookmarked");
+        }
 
 		public string Title => GlassModel.Title;
 		private string _summary;
@@ -52,5 +68,9 @@ namespace Informa.Web.ViewModels
 		public string Content_Type => GlassModel.Content_Type?.Item_Name;
 		public string Media_Type => ArticleService.GetMediaTypeName(GlassModel);
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
+        public bool IsUserAuthenticated { get; set; }
+        public bool IsArticleBookmarked { get; set; }
+        public string BookmarkText { get; set; }
+        public string BookmarkedText { get; set; }
 	}
 }

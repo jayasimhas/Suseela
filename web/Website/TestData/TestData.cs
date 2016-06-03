@@ -355,5 +355,9 @@ namespace Informa.Web.TestData
 	public class TestListableViewModel : ListableModel, IListableViewModel
 	{
 		public bool DisplayImage { get; set; }
-	}
+        public bool IsUserAuthenticated { get; set; }
+        public bool IsArticleBookmarked { get; set; }
+        public string BookmarkText { get; set; }
+        public string BookmarkedText { get; set; }
+    }
 }
