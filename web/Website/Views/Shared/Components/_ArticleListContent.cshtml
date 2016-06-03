@@ -51,7 +51,12 @@
 
 <div class="topic-featured-article__inner-wrapper">
     <h3 class="topic-featured-article__headline">
-        <a href="@Model.Url">@Html.Raw(Model.Title)</a>
+        <a
+			href="@Model.Url"
+			class="click-utag"
+			data-info='{ "event_name": "article_click_through", "click_through_destination": "@Model.Title" }'>
+			@Html.Raw(Model.Title)
+		</a>
     </h3>
 
     <span class="article-preview__byline">

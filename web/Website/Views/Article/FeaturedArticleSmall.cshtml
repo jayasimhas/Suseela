@@ -30,7 +30,12 @@
 
         <div class="article-preview__inner-wrapper">
             <h1 class="article-preview__headline">
-                <a href="@Model.GlassModel._Url">@HttpUtility.HtmlDecode(Model.Title)</a>
+                <a
+					href="@Model.GlassModel._Url"
+					class="click-utag"
+					data-info='{ "event_name": "article_click_through", "click_through_destination": "@Model.Title" }'>
+					@HttpUtility.HtmlDecode(Model.Title)
+				</a>
             </h1>
 
             <span class="article-preview__byline">
