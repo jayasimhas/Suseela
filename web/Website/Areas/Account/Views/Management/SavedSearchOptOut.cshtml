@@ -7,9 +7,13 @@
 @if (Model.IsOptOutSuccessful)
 {
     <script type="text/javascript">
-        var event_name = "one_click_unsubscribe";
-        var unsubscribe_publication = "@Model.CurrentPublicationName";
-        var unsubscribe_topic = "@Model.SavedSearchName";
-        var unsubscribe_email_type = "daily_alert";
+
+		analyticsEvent( $.extend( analytics_data, {
+			event_name: "one_click_unsubscribe",
+	        unsubscribe_publication: "@Model.CurrentPublicationName",
+	        unsubscribe_topic: "@Model.SavedSearchName",
+	        unsubscribe_email_type: "daily_alert"
+		}) );
+
     </script>
 }
