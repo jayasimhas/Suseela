@@ -13,6 +13,9 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     vm.searchBootstrapper = searchBootstrapper;
     vm.MaxFacetShow = 5;
 
+    vm.isCompanySelected = false;
+    vm.companies = { "companies": "" };
+
     // Date Facet stuff
     vm.DateFilters = [
         { label: 'Last 24 hours', key: 'day', selected: false },
@@ -161,7 +164,7 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         for (var idx in h) {
             if (h[idx] != "") {
                 var currentParameter = h[idx].split("=");
-               
+
                 if (currentParameter[0] == "dateFilterLabel") {
                     hash[currentParameter[0]] = vm.timesObject[filter].id;
                     urlQuery = urlQuery + "&" + currentParameter[0] + "=" + vm.timesObject[filter].id;
@@ -170,13 +173,31 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
                         hash[currentParameter[0]] = currentParameter[1];
                         urlQuery = urlQuery + "&" + currentParameter[0] + "=" + currentParameter[1];
                     }
+
                 }
+
             }
         }
         hash["time"] = vm.timesObject[filter].value;
         urlQuery = urlQuery + "&time=" + vm.timesObject[filter].value;
 
+
+        if (vm.isCompanySelected) {
+            hash["companies"] = vm.companies["companies"];
+        }
+
+        if ("companies" in hash) {
+            vm.isCompanySelected = true;
+            hash["companies"] = hash["companies"].replace(/%20/g, " ").replace(/%3B/g, ';');
+            vm.companies["companies"] = hash["companies"].replace(/%20/g, " ").replace(/%3B/g, ';');
+        }
+
+
+
+
         vm.location.search(urlQuery);
+
+
         vm.searchService.queryTimePeriod(hash);
         //Scroll to the top of the results when a new page is chosen
         vm.location.hash("searchTop");
