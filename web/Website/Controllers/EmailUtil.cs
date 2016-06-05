@@ -177,7 +177,7 @@ namespace Informa.Web.Controllers
 			var emailHtml = htmlEmailTemplate.Html;
 			var replacements = new Dictionary<string, string>();
 			replacements["#Email_Title#"] = emailTitle;
-			replacements["#Article_Title#"] = articleStruct.Title;
+			replacements["#Article_Title#"] = string.IsNullOrEmpty(articleStruct.Title) ? article.Fields["Title"].Value : articleStruct.Title;
 			replacements["#Publish_Date#"] = articleStruct.WebPublicationDate.ToString();
 			replacements["#word_url#"] = GetWordURL(articleStruct);
 
@@ -235,7 +235,7 @@ namespace Informa.Web.Controllers
 			var emailHtml = htmlEmailTemplate.Html;
 			var replacements = new Dictionary<string, string>();
 			replacements["#Email_Title#"] = emailTitle;
-			replacements["#Article_Title#"] = articleStruct.Title;
+			replacements["#Article_Title#"] = string.IsNullOrEmpty(articleStruct.Title) ? article.Fields["Title"].Value : articleStruct.Title;
 			replacements["#Publish_Date#"] = articleStruct.WebPublicationDate.ToString();
 			replacements["#word_url#"] = GetWordURL(articleStruct);
 
