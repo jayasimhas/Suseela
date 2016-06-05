@@ -17,7 +17,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 		public bool HasChanged { set; get; }
 
 		
-		public void UpdateBackground()
+		public void UpdateBackground() 
 		{
 			if(Selected)
 			{

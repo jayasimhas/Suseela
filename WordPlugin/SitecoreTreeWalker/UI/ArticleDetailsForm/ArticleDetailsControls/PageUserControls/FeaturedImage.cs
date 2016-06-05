@@ -20,6 +20,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 {
     public partial class FeaturedImage : ArticleDetailsPageUserControl
     {
+        private bool isImageSelected { get; set; }
         public string imageSelected { get; set; }
         protected SitecoreItemGetter _siteCoreItemGetter;
         public FeaturedImage()
@@ -137,7 +138,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                 }
 
                 UpdateIcon();
-
+                isImageSelected = true;
             }
             catch (WebException)
             {
@@ -230,6 +231,13 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             imageSelected = null;
             ShowHideElements(false);
             MenuItem.SetIndicatorIcon(Properties.Resources.redx);
+            if (isImageSelected)
+            {
+                MenuItem.HasChanged = true;
+                MenuItem.UpdateBackground();
+                isImageSelected = false;
+            }
+            
         }
 
         private void UpdateIcon()
