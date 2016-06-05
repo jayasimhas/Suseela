@@ -4,10 +4,10 @@ using Jabberwocky.Glass.Autofac.Attributes;
 namespace Informa.Web.ViewModels
 {
     [AutowireService(LifetimeScope.SingleInstance)]
-    public class ArticlePrologueAskTheAnalystViewModel : IArticlePrologueAskTheAnalystViewModel
+    public class ArticleProloguePrintViewModel : IArticleProloguePrintViewModel
     {
         public IAuthenticatedUserContext _authenticatedUserContext;
-        public ArticlePrologueAskTheAnalystViewModel(IAuthenticatedUserContext authenticatedUserContext)
+        public ArticleProloguePrintViewModel(IAuthenticatedUserContext authenticatedUserContext)
         {
             _authenticatedUserContext = authenticatedUserContext;
         }
