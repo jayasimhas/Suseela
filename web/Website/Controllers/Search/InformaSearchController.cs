@@ -13,6 +13,8 @@ using Velir.Search.Core.Queries;
 using Velir.Search.Core.Results;
 using Velir.Search.WebApi.Controllers;
 using Velir.Search.WebApi.Models;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Library.Search.ComputedFields.SearchResults.Converter;
 
 namespace Informa.Web.Controllers.Search
 {
@@ -62,9 +64,21 @@ namespace Informa.Web.Controllers.Search
 
             var results = _searchManager.GetItems(q);
 
+
+            foreach (InformaSearchResultItem queryResult in results.Results)
+            {
+                var taxenomy = _context.GetItem<IArticle>(Sitecore.Data.ID.Parse(queryResult.ItemId).ToGuid());
+                if (taxenomy != null)
+                {
+                    List<HtmlLink> lTax2 = _context.GetItem<IArticle>(Sitecore.Data.ID.Parse(queryResult.ItemId).ToGuid()).Taxonomies.Take(3).Select((tax) => { return new HtmlLink() { Url = "#?areas=" + tax._Name, Title = tax._Name }; }).ToList();
+                    queryResult.SearchDisplayTaxonomy = new HtmlLinkList() { Links = lTax2 };
+                }
+                //var lTax = _context.GetItem<IArticle>(new Guid(queryResult.ItemId.ToString())).Taxonomies.Take(3).Select(tax => tax);
+            }
+
             //Loop through the results and add the authenticaton and bookmarking property values to be used
             //on the front end.
-			if (UserContext.IsAuthenticated)
+            if (UserContext.IsAuthenticated)
 			{
 				List<InformaSearchResultItem> resultsWithBookmarks = new List<InformaSearchResultItem>();
 				foreach (InformaSearchResultItem queryResult in results.Results)
