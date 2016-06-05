@@ -27,7 +27,7 @@ namespace Informa.Library.Article.Publishing.Events
         ISitecoreService _sitecoreService => AutofacConfig.ServiceLocator.Resolve<Owned<ISitecoreService>>().Value;
         public IEnumerable<ID> TemplateIds => new List<ID> { IArticleConstants.TemplateId };
 
-        private Dictionary<string, Item> mediaItems { get; set; }
+        private List<ID> mediaItems { get; set; }
         private PublishContext processArgs { get; set; }
         public void ProcessPublish(ID itemId)
         {
@@ -38,7 +38,7 @@ namespace Informa.Library.Article.Publishing.Events
                 if (TemplateIds.Contains(item.TemplateID) == false)
                     return;
 
-                mediaItems = new Dictionary<string, Item>();
+                mediaItems = new List<ID>();
 
                 //Find and Parse media items from Body section
                 if (item.Fields["Body"] != null && string.IsNullOrEmpty(item.Fields["Body"].Value) == false)
@@ -139,10 +139,10 @@ namespace Informa.Library.Article.Publishing.Events
 
         private void addMediaItemsByIdToDictionary(ID id)
         {
-            MediaItem mediaItem = processArgs.PublishOptions.SourceDatabase.GetItem(id, Sitecore.Context.Language);
+            //MediaItem mediaItem = processArgs.PublishOptions.SourceDatabase.GetItem(id, Sitecore.Context.Language);
 
-            if (mediaItem != null && mediaItems.ContainsKey(id.Guid.ToString()) == false)
-                mediaItems.Add(id.Guid.ToString(), mediaItem);
+            if (mediaItems.Exists(e => e.Guid.ToString() == id.Guid.ToString()) == false)
+                mediaItems.Add(id);
         }
 
         public override void Process(PublishContext context)
@@ -167,7 +167,7 @@ namespace Informa.Library.Article.Publishing.Events
                 //Make the mode smart in order not to publish already published items
                 options.Mode = PublishMode.Smart;
                 //Add media items to publish into the current publish context's queue
-                context.Queue.Add(mediaItems.Select(s => new PublishingCandidate(new ID(s.Key), options)).ToList());
+                context.Queue.Add(mediaItems.Select(s => new PublishingCandidate(s, options)).ToList());
             }
         }
     }
