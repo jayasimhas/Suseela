@@ -378,6 +378,13 @@ $(document).ready(function() {
                 $('.js-email-search-success').hide();
             });
 
+			var event_data = {
+				event_name: "toolbar_use",
+				toolbar_tool: "email"
+			};
+
+			analyticsEvent( $.extend(analytics_data, event_data) );
+
         },
         beforeRequest: function() {
 

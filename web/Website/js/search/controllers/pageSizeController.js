@@ -1,10 +1,13 @@
-﻿var PageSizeController = function ($scope, $location, $anchorScroll, searchService, searchBootstrapper) {
+/* global angular, analytics_data */
+import { analyticsEvent } from '../../controllers/analytics-controller';
+
+var PageSizeController = function ($scope, $location, $anchorScroll, searchService, searchBootstrapper) {
     "use strict";
 
     var perPageKey = 'perPage';
 
     var vm = this;
-    
+
     vm.location = $location;
     vm.anchorScroll = $anchorScroll;
     vm.searchService = searchService;
@@ -27,6 +30,12 @@
         //Scroll to the top of the results when a new page is chosen
         vm.location.hash("searchTop");
         vm.anchorScroll();
+
+		analyticsEvent( $.extend(analytics_data, {
+			event_name: 'search_utility',
+			search_utility: 'results_per_page_' + pageSize
+		}));
+
     };
 
     vm.init = function() {

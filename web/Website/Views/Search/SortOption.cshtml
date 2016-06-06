@@ -7,15 +7,20 @@
     <a href=""
        title="@Model.Sort_Title"
        class="btn btn--sort btn--icon-group"
-       ng-click="sorter.setByOrFlipOrder('@Model.Key', '@(Model.Sort_Ascending ? Velir.Search.Core.Reference.SiteSettings.QueryString.SortAscendingValue : Velir.Search.Core.Reference.SiteSettings.QueryString.SortDescendingValue)')">
+       ng-click="sorter.setByOrFlipOrder('@Model.Key', '@(Model.Sort_Ascending ? Velir.Search.Core.Reference.SiteSettings.QueryString.SortAscendingValue : Velir.Search.Core.Reference.SiteSettings.QueryString.SortDescendingValue)')"
+	   ng-controller="SortByDateController as dateSort">
         <span>@Editable(model => model.Sort_Title)</span>
-        <div class="sorting-arrows">
+        <div
+			class="sorting-arrows"
+			ng-click="dateSort.resultsSorted(sorter.isSortedAsc('@Model.Key'))">
+
             <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
                 <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
             </svg>
             <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
                 <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
             </svg>
+			
         </div>
     </a>
 </li>

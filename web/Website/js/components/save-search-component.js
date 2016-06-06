@@ -86,7 +86,7 @@ $(document).ready(function() {
 
 			if($(form).data('is-search') === true) {
 				event_data.event_name = "toolbar_use";
-				event_data.toolbar_tool = "save search";
+				event_data.toolbar_tool = "save_search";
 			} else {
 				event_data.event_name = "set_alert";
 				event_data.alert_topic = $(form).find('.js-save-search-title').val();

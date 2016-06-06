@@ -1,4 +1,7 @@
-﻿var HeadlineSearchController = function ($scope, searchService, searchBootstrapper) {
+/* global analytics_data */
+import { analyticsEvent } from '../../controllers/analytics-controller';
+
+var HeadlineSearchController = function ($scope, searchService, searchBootstrapper) {
     "use strict";
 
     var vm = this;
@@ -13,9 +16,17 @@
             vm.searchBootstrapper.createFilter('headlinesOnly', '1');
         } else {
             if (filter._value === '1') {
-                filter.setValue('');
+
+				filter.setValue('');
+
             } else {
+
                 filter.setValue('1');
+				analyticsEvent( $.extend(analytics_data, {
+					event_name: 'search_utility',
+					search_utility: 'search_headlines_only'
+				}) );
+
             }
         }
     };

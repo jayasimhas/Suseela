@@ -10,5 +10,6 @@ import TypeaheadController from './controllers/TypeaheadController.js';
 import HeadlineSearchController from './controllers/headlineSearchController.js';
 import PageSizeController from './controllers/pageSizeController.js';
 import SavedSearchController from './controllers/savedSearchController.js';
+import SortByDateController from './controllers/sortByDateController.js';
 
 import AngularUIBootstrap from './ui-bootstrap-custom-tpls-1.2.4.min.js';
