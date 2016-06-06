@@ -67,16 +67,6 @@ namespace Informa.Web.Controllers.Search
             var results = _searchManager.GetItems(q);
 
 
-            foreach (InformaSearchResultItem queryResult in results.Results)
-            {
-                var taxenomy = _context.GetItem<IArticle>(Sitecore.Data.ID.Parse(queryResult.ItemId).ToGuid());
-                if (taxenomy != null)
-                {
-                    List<HtmlLink> lTaxenomy = _context.GetItem<IArticle>(Sitecore.Data.ID.Parse(queryResult.ItemId).ToGuid()).Taxonomies.Take(3).Select((tax) => { return new HtmlLink() { Url = "#?areas=" + tax._Name, Title = tax._Name }; }).ToList();
-                    queryResult.SearchDisplayTaxonomy = new HtmlLinkList() { Links = lTaxenomy };
-                }
-                //var lTax = _context.GetItem<IArticle>(new Guid(queryResult.ItemId.ToString())).Taxonomies.Take(3).Select(tax => tax);
-            }
 
             //Loop through the results and add the authenticaton and bookmarking property values to be used
             //on the front end.

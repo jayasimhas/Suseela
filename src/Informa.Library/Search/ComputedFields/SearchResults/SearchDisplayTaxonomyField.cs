@@ -26,7 +26,7 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
 				displayTaxonomies.Add(new HtmlLink { Title = taxonomy.Item_Name?.Trim() ?? string.Empty, Url = SearchTaxonomyUtil.GetSearchUrl(taxonomy) });
 				count++;
 
-				if (count == 2)
+				if (count == 3)
 				{
 					break;
 				}
