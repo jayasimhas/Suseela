@@ -72,5 +72,7 @@ namespace Informa.Web.ViewModels
         public bool IsArticleBookmarked { get; set; }
         public string BookmarkText { get; set; }
         public string BookmarkedText { get; set; }
+
+		public Guid ID => GlassModel._Id;
 	}
 }

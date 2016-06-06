@@ -1,4 +1,5 @@
-﻿using Informa.Models.FactoryInterface;
+﻿using System;
+using Informa.Models.FactoryInterface;
 
 namespace Informa.Web.ViewModels
 {
@@ -13,5 +14,6 @@ namespace Informa.Web.ViewModels
         bool IsArticleBookmarked { get; set; }
         string BookmarkText { get; set; }
         string BookmarkedText { get; set; }
+				Guid ID { get; }
     }
 }

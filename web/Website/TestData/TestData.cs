@@ -359,5 +359,6 @@ namespace Informa.Web.TestData
         public bool IsArticleBookmarked { get; set; }
         public string BookmarkText { get; set; }
         public string BookmarkedText { get; set; }
-    }
+		public Guid ID { get; set; }
+	}
 }

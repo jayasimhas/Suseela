@@ -70,6 +70,7 @@ namespace Informa.Web.ViewModels
 				ListableUrl = new Link { Url = article._Url, Text = article.Title },
 				LinkableText = article.Content_Type?.Item_Name,
 				LinkableUrl = article._Url,
+				ID = article._Id,
                 IsUserAuthenticated = AuthenticatedUserContext.IsAuthenticated,
                 IsArticleBookmarked = IsSavedDocumentContext.IsSaved(article._Id),
                 BookmarkText = TextTranslator.Translate("Bookmark"),
