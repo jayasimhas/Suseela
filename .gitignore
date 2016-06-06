@@ -340,3 +340,5 @@ web/Website/App_Config/Include/ZZ.UserDefined/Import.config
 web/Website/App_Config/Include/zzzMustBeLast/Import.config
 solr/informa/data/index/segments_1
 solr/informa/data/index/write.lock
+web/Website/App_Config/Include/LiveMode.config
+web/Website/sitecore/*
