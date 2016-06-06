@@ -70,8 +70,8 @@ namespace Informa.Web.Controllers.Search
                 var taxenomy = _context.GetItem<IArticle>(Sitecore.Data.ID.Parse(queryResult.ItemId).ToGuid());
                 if (taxenomy != null)
                 {
-                    List<HtmlLink> lTax2 = _context.GetItem<IArticle>(Sitecore.Data.ID.Parse(queryResult.ItemId).ToGuid()).Taxonomies.Take(3).Select((tax) => { return new HtmlLink() { Url = "#?areas=" + tax._Name, Title = tax._Name }; }).ToList();
-                    queryResult.SearchDisplayTaxonomy = new HtmlLinkList() { Links = lTax2 };
+                    List<HtmlLink> lTaxenomy = _context.GetItem<IArticle>(Sitecore.Data.ID.Parse(queryResult.ItemId).ToGuid()).Taxonomies.Take(3).Select((tax) => { return new HtmlLink() { Url = "#?areas=" + tax._Name, Title = tax._Name }; }).ToList();
+                    queryResult.SearchDisplayTaxonomy = new HtmlLinkList() { Links = lTaxenomy };
                 }
                 //var lTax = _context.GetItem<IArticle>(new Guid(queryResult.ItemId.ToString())).Taxonomies.Take(3).Select(tax => tax);
             }
