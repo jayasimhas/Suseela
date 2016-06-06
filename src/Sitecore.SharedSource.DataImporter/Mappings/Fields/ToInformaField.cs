@@ -411,7 +411,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 				string businessID = pair.Value;
 				if (string.IsNullOrEmpty(businessID))
-					return;
+					continue;
 
 				Regex companyPattern = new Regex($"(?<!<[^>]*)({cName})(?![^<]*</a)", RegexOptions.IgnoreCase);
 				//the name should be the importValue and not the value from the database
@@ -1102,7 +1102,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				if (string.IsNullOrEmpty(transformValue))
 				{
 					map.Logger.Log(newItem.Paths.FullPath, "Therapy Area(s) not converted", ProcessStatus.FieldError, NewItemField, importPart);
-					return;
+					continue;
 				}
 
 				string[] parts = transformValue.Split(new string[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
@@ -1994,7 +1994,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				if (string.IsNullOrEmpty(transformValue))
 				{
 					map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
-					return;
+					continue;
 				}
 
 				string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
@@ -2004,12 +2004,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				if (!t.Any())
 				{
 					map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
-					return;
+					continue;
 				}
 
 				Field f = newItem.Fields[NewItemField];
 				if (f == null)
-					return;
+					continue;
 
 				string ctID = t.First().ID.ToString();
 				if (!f.Value.Contains(ctID))
