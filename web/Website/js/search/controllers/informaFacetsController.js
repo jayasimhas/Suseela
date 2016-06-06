@@ -13,8 +13,8 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     vm.searchBootstrapper = searchBootstrapper;
     vm.MaxFacetShow = 5;
 
-    vm.isCompanySelected = false;
-    vm.companies = { "companies": "" };
+    
+    vm.companies = { "companies": "", "isCompanySelected": false };
 
     // Date Facet stuff
     vm.DateFilters = [
@@ -130,6 +130,22 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
 
     //** This updates the router/url with the latest search parameters **//
     vm.update = function () {
+        var params = this.searchService.getRouteBuilder().getRoute().split('&');
+        if (this.searchService.getRouteBuilder().getRoute().includes("companies")) {
+            for (var idx_param in params) {
+                if (params[idx_param].includes("companies")) {
+                    var compValue = params[idx_param].split('=')[1];
+                    vm.companies["isCompanySelected"] = true;
+                    vm.companies["companies"] = compValue;
+                }
+            }
+        } else {
+            vm.companies["isCompanySelected"] = false;
+            vm.companies["companies"] = "";
+        }
+
+
+
         vm.searchService.getFilter('page').setValue('1');
         var routeBuilder = this.searchService.getRouteBuilder();
         vm.location.search(routeBuilder.getRoute());
@@ -182,7 +198,7 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         urlQuery = urlQuery + "&time=" + vm.timesObject[filter].value;
 
 
-        if (vm.isCompanySelected) {
+        if (vm.companies["isCompanySelected"]) {
             hash["companies"] = vm.companies["companies"];
         }
 
