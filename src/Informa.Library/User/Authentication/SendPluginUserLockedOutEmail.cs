@@ -30,38 +30,39 @@ namespace Informa.Library.User.Authentication
 
         public bool SendEmail(MembershipUser user)
         {
-            try
-            {
-                string htmlBody = _siteRootContext.Item.Lockout_Email_Body;
-                string from = _siteRootContext.Item.Lockout_Email_From;
-                string subject = _siteRootContext.Item.Lockout_Email_Subject;
-                string to = _siteRootContext.Item.Lockout_Email_To;
+            //try
+            //{
+            //    string htmlBody = _siteRootContext.Item.Lockout_Email_Body;
+            //    string from = _siteRootContext.Item.Lockout_Email_From;
+            //    string subject = _siteRootContext.Item.Lockout_Email_Subject;
+            //    string to = _siteRootContext.Item.Lockout_Email_To;
 
-                //If any of them are empty just return
-                if (string.IsNullOrEmpty(htmlBody) || string.IsNullOrEmpty(from) || string.IsNullOrEmpty(to))
-                    return false;
+            //    //If any of them are empty just return
+            //    if (string.IsNullOrEmpty(htmlBody) || string.IsNullOrEmpty(from) || string.IsNullOrEmpty(to))
+            //        return false;
 
-                //replace body tokens with user values
-                string messageBody = htmlBody;
-                messageBody = messageBody.Replace("{logo}", UrlUtils.GetMediaURL(_siteRootContext.Item.Email_Logo.MediaId.ToString()));
-                messageBody = messageBody.Replace("{username}", user.UserName);
-                messageBody = messageBody.Replace("{dateLockedOut}", user.LastLockoutDate.ToString(CultureInfo.InvariantCulture));
+            //    //replace body tokens with user values
+            //    string messageBody = htmlBody;
+            //    messageBody = messageBody.Replace("{logo}", UrlUtils.GetMediaURL(_siteRootContext.Item.Email_Logo.MediaId.ToString()));
+            //    messageBody = messageBody.Replace("{username}", user.UserName);
+            //    messageBody = messageBody.Replace("{dateLockedOut}", user.LastLockoutDate.ToString(CultureInfo.InvariantCulture));
 
-                //Prepare Email variable
-                var message = new Email();
-                message.Body = messageBody;
-                message.From = from;
-                message.IsBodyHtml = true;
-                message.Subject = string.IsNullOrEmpty(subject) ? "User Lockout Notification" : subject;
-                message.To = to;
+            //    //Prepare Email variable
+            //    var message = new Email();
+            //    message.Body = messageBody;
+            //    message.From = from;
+            //    message.IsBodyHtml = true;
+            //    message.Subject = string.IsNullOrEmpty(subject) ? "User Lockout Notification" : subject;
+            //    message.To = to;
 
-                //Send email
-                return _emailSender.Send(message);
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            //    //Send email
+            //    return _emailSender.Send(message);
+            //}
+            //catch (Exception ex)
+            //{
+            //    return false;
+            //}
+            return true;
         }
     }
 }
