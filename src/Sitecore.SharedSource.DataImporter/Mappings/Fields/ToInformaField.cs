@@ -418,7 +418,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				Field sf = newItem.Fields["Summary"];
 				if (sf != null)
 				{
-					sf.Value = companyPattern.Replace(sf.Value, match => $"<strong>[C#{businessID}:{match.Groups[0].Value}]</strong>", 1);
+					sf.Value = companyPattern.Replace(sf.Value, match => $"<strong>[C#{businessID}:{match.Value}]</strong>", 1);
 				}
 
 				Field bf = newItem.Fields["Body"];
