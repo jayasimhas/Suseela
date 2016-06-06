@@ -32,29 +32,41 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 
         private void refreshState()
         {
-            var documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
-            using (ArticleDetailFieldsUpdateDisabler disabler = new ArticleDetailFieldsUpdateDisabler())
+            try
             {
-                var updatedArticleDetail = new ArticleDetail();
-
-                var localDocVersion = documentCustomProperties.WordSitecoreVersionNumber;
-                var sitecoreDocVersion = SitecoreClient.GetWordVersionNumber(_parentForm.ArticleDetails.ArticleGuid);
-
-                if (sitecoreDocVersion > localDocVersion)
+                var documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
+                using (ArticleDetailFieldsUpdateDisabler disabler = new ArticleDetailFieldsUpdateDisabler())
                 {
-                    Color color = (Color)new ColorConverter().ConvertFromString("#F4CCCC");
-                    this.BackColor = color;
-                    lblTitle.Text = "This document is Outdated";
-                }
-                else
-                {
-                    Color color = (Color)new ColorConverter().ConvertFromString("#d9ead3");
-                    this.BackColor = color;
-                    lblTitle.Text = "This document is Up to Date";
-                }
+                    var updatedArticleDetail = new ArticleDetail();
 
-                lblBy.Text = updatedArticleDetail.ArticleDetails.WordDocLastUpdatedBy;
-                lblUpdatedOn.Text = SitecoreWordUtil.FormatUserName(Convert.ToDateTime(updatedArticleDetail.ArticleDetails.WordDocLastUpdateDate).ToLocalTime().ToString(CultureInfo.InvariantCulture));
+                    var localDocVersion = documentCustomProperties.WordSitecoreVersionNumber;
+                    var sitecoreDocVersion = SitecoreClient.GetWordVersionNumber(_parentForm.ArticleDetails.ArticleGuid);
+
+                    if (sitecoreDocVersion > localDocVersion)
+                    {
+                        Color color = (Color)new ColorConverter().ConvertFromString("#F4CCCC");
+                        this.BackColor = color;
+                        lblTitle.Text = "This document is Outdated";
+                    }
+                    else
+                    {
+                        Color color = (Color)new ColorConverter().ConvertFromString("#d9ead3");
+                        this.BackColor = color;
+                        lblTitle.Text = "This document is Up to Date";
+                    }
+
+                    lblBy.Text = SitecoreWordUtil.FormatUserName(updatedArticleDetail.ArticleDetails.WordDocLastUpdatedBy);
+
+                    DateTime dt;
+                    if (updatedArticleDetail.ArticleDetails != null && DateTime.TryParse(updatedArticleDetail.ArticleDetails.WordDocLastUpdateDate, out dt))
+                        lblUpdatedOn.Text = dt.ToLocalTime().ToString(CultureInfo.InvariantCulture);
+                    else
+                        lblUpdatedOn.Text = _parentForm.ArticleDetails.WordDocLastUpdateDate.ToString(CultureInfo.InvariantCulture);
+                }
+            }
+            catch (Exception ex)
+            {
+                Globals.SitecoreAddin.LogException("refreshState ex: " + ex.ToString());
             }
         }
 
