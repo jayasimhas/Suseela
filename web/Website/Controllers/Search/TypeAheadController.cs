@@ -8,7 +8,6 @@ using Informa.Library.Search.Formatting;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
 using Informa.Library.Search.TypeAhead;
-using Jabberwocky.Core.Caching;
 using Velir.Search.Core.Managers;
 using Velir.Search.Core.Page;
 using Velir.Search.Core.Queries;
@@ -31,7 +30,7 @@ namespace Informa.Web.Controllers.Search
 
 		public IEnumerable<CompanyTypeAheadResponseItem> GetCompanies([ModelBinder(typeof(ApiSearchRequestModelBinder))] ApiSearchRequest request)
 		{
-			var q = new SearchQuery<InformaSearchResultItem>(null, null)
+			var q = new SearchQuery<InformaSearchResultItem>(request, _parser)
 			{
 				Take = 1,
 				Skip = 0,
@@ -40,8 +39,8 @@ namespace Informa.Web.Controllers.Search
 				FacetBuilder = new CompaniesFacetBuilder(),
 				SortBuilder = null
 			};
-
-			return _searchManager.GetItems(q).Facets.FirstOrDefault()?.Values.Select(f => new CompanyTypeAheadResponseItem(f.Name)) ?? Enumerable.Empty<CompanyTypeAheadResponseItem>();
+			var results = _searchManager.GetItems(q);
+			return results.Facets.FirstOrDefault()?.Values.Select(f => new CompanyTypeAheadResponseItem(f.Name)) ?? Enumerable.Empty<CompanyTypeAheadResponseItem>();
 		}
 	}
 }
