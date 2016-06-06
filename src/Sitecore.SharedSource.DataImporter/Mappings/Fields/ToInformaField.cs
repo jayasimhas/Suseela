@@ -2665,14 +2665,14 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 							//?.ID.ToString();
 						if (valCollection.Count > 1)
 						{
-							map.Logger.Log(newItem.Paths.FullPath, "Find more than 1 authors in target DB", ProcessStatus.FieldError, NewItemField, $"ID:{str}--Name:{firstName} {lastName}--Email: {email}");
+							map.Logger.Log(newItem.Paths.FullPath, "Find more than 1 authors in target DB", ProcessStatus.FieldError, NewItemField, str, $"Name:{firstName} {lastName}--Email: {email}");
 							continue;
 						}
 
 						var val = valCollection.FirstOrDefault()?.ID.ToString();
 						if (string.IsNullOrWhiteSpace(val))
 						{
-							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not found in target DB", ProcessStatus.FieldError, NewItemField, $"ID:{str}--Name:{firstName} {lastName}--Email: {email}");
+							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not found in target DB", ProcessStatus.FieldError, NewItemField, str, $"Name:{firstName} {lastName}--Email: {email}");
 							continue;
 						}
 

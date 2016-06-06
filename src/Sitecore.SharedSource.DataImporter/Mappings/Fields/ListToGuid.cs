@@ -145,7 +145,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 						
 						if (!mapping.ContainsKey(pmbiTaxonomyItemName))
 						{
-							map.Logger.Log(newItem.Paths.FullPath, "Couldn't find correct mapping", ProcessStatus.FieldError, NewItemField, $"{str}--{pmbiTaxonomyItemName}");
+							map.Logger.Log(newItem.Paths.FullPath, "Couldn't find correct mapping", ProcessStatus.FieldError, NewItemField, str, pmbiTaxonomyItemName);
 							continue;
 						}
 
@@ -169,7 +169,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 						if (string.IsNullOrWhiteSpace(val))
 						{
-							map.Logger.Log(newItem.Paths.FullPath, $"Couldn't find {FieldName} in target DB", ProcessStatus.FieldError, NewItemField, $"{str}->{mappedValue}");
+							map.Logger.Log(newItem.Paths.FullPath, $"Couldn't find {FieldName} in target DB", ProcessStatus.FieldError, NewItemField, str, mappedValue);
 							continue;
 						}
 
