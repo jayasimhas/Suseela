@@ -1,6 +1,0 @@
-----role----
-name: sitecore\Social Message Author
-
-----role-in-role----
-rolename: sitecore\Operations Access
-
