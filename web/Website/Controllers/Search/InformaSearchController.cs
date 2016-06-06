@@ -16,6 +16,8 @@ using Velir.Search.WebApi.Models;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
 
+using System.Linq;
+
 namespace Informa.Web.Controllers.Search
 {
     public class InformaSearchController : VelirSearchController<InformaSearchResultItem>
@@ -83,9 +85,12 @@ namespace Informa.Web.Controllers.Search
 				List<InformaSearchResultItem> resultsWithBookmarks = new List<InformaSearchResultItem>();
 				foreach (InformaSearchResultItem queryResult in results.Results)
 				{
-					queryResult.IsUserAuthenticated = UserContext.IsAuthenticated;
-					queryResult.IsArticleBookmarked = IsSavedDocumentContext.IsSaved(queryResult.ItemId.ToGuid());
-					resultsWithBookmarks.Add(queryResult);
+                    if (queryResult.Title != "")
+                    {
+                        queryResult.IsUserAuthenticated = UserContext.IsAuthenticated;
+                        queryResult.IsArticleBookmarked = IsSavedDocumentContext.IsSaved(queryResult.ItemId.ToGuid());
+                        resultsWithBookmarks.Add(queryResult);
+                    }
 				}
 
 				results.Results = resultsWithBookmarks;
