@@ -20,10 +20,10 @@ namespace Informa.Web.App_Start.Registrations
 			builder.RegisterType<SalesforceDebugLogger>().As<ISalesforceDebugLogger>();
 			builder.RegisterType<SalesforceServiceConfiguration>().As<ISalesforceServiceConfiguration>().SingleInstance();
 			builder.RegisterType<SalesforceService>().As<ISalesforceService>();
-			builder.RegisterType<SalesforceServiceContextEnabledChecks>().As<ISalesforceServiceContextEnabledChecks>();
-			builder.RegisterType<SalesforceServiceContextEnabled>().As<ISalesforceServiceContextEnabled>();
+			builder.RegisterType<SalesforceServiceContextEnabledChecks>().As<ISalesforceServiceContextEnabledChecks>().InstancePerLifetimeScope();
+			builder.RegisterType<SalesforceServiceContextEnabled>().As<ISalesforceServiceContextEnabled>().InstancePerLifetimeScope();
 			builder.RegisterType<UserAgentServiceContextEnabledCheckConfiguration>().As<IUserAgentServiceContextEnabledCheckConfiguration>().SingleInstance();
-			builder.RegisterType<UserAgentServiceContextEnabledCheck>().As<ISalesforceServiceContextEnabledCheck>();
+			builder.RegisterType<UserAgentServiceContextEnabledCheck>().As<ISalesforceServiceContextEnabledCheck>().InstancePerLifetimeScope();
 			builder.RegisterType<SalesforceServiceContext>().As<ISalesforceServiceContext>();
 			builder.RegisterType<SalesforceSessionContext>().As<ISalesforceSessionContext>().SingleInstance();
 			builder.RegisterType<SalesforceSessionFactory>().As<ISalesforceSessionFactory>();

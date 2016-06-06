@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace Informa.Library.Salesforce
 {
@@ -10,8 +11,11 @@ namespace Informa.Library.Salesforce
 			ISalesforceServiceContextEnabledChecks enabledChecks)
 		{
 			EnabledChecks = enabledChecks;
+
+			_lazyEnabled = new Lazy<bool>(!EnabledChecks.Any() || EnabledChecks.All(ec => ec.Enabled));
 		}
 
-		public bool Enabled => !EnabledChecks.Any() || EnabledChecks.All(ec => ec.Enabled);
+		private readonly Lazy<bool> _lazyEnabled; 
+		public bool Enabled => _lazyEnabled.Value;
 	}
 }

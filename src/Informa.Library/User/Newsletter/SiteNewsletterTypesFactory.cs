@@ -4,7 +4,7 @@ using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Library.User.Newsletter
 {
-	[AutowireService]
+	[AutowireService(LifetimeScope.SingleInstance)]
 	public class SiteNewsletterTypesFactory : ISiteNewsletterTypesFactory
 	{
 		protected readonly ISitePublicationFactory SitePublicationFactory;
