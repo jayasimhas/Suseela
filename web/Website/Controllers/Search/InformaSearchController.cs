@@ -65,6 +65,16 @@ namespace Informa.Web.Controllers.Search
 
 			var results = _searchManager.GetItems(q);
 
+			//Bookmarking setup
+			if (UserContext.IsAuthenticated)
+			{
+				foreach (InformaSearchResultItem queryResult in results.Results)
+				{
+					queryResult.IsUserAuthenticated = UserContext.IsAuthenticated;
+					queryResult.IsArticleBookmarked = IsSavedDocumentContext.IsSaved(queryResult.ItemId.ToGuid());
+				}
+			}
+
 			var multiSelectFacetResults = GetMultiSelectFacetResults(request);
 
 			return new QueryResults
