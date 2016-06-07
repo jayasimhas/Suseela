@@ -349,7 +349,7 @@
     <Compile Include="User\Authentication\Web\SiteDebugging\SiteDebuggingWebLoginUser.cs" />
     <Compile Include="User\Authentication\Web\WebAuthenticateUser.cs" />
     <Compile Include="User\Authentication\Web\WebAuthenticateUserResult.cs" />
-	<Compile Include="User\Authentication\Web\WebHideWelcomeOnLogout.cs" />
+    <Compile Include="User\Authentication\Web\WebHideWelcomeOnLogout.cs" />
     <Compile Include="User\Authentication\Web\WebClearAuthenticatedUserSessionAction.cs" />
     <Compile Include="User\Authentication\Web\WebLoginUserRegisterUserAction.cs" />
     <Compile Include="User\Entitlement\DefaultEntitlementsFactory.cs" />
@@ -922,6 +922,7 @@
     <Compile Include="Utilities\References\RenderingReferences.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
+    <Compile Include="Utilities\SitecoreUtils\WorkflowUtil.cs" />
     <Compile Include="Utilities\StringUtils\HtmlUtil.cs" />
     <Compile Include="Utilities\StringUtils\WordUtil.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />

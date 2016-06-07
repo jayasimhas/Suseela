@@ -886,5 +886,14 @@ namespace InformaSitecoreWord.Sitecore
                 return result;
             }
         }
+
+        public static List<Tuple<DateTime, string, bool>> GetItemWorkflowHistory(Guid itemID)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleWorkflowHistory?itemID=" + itemID).Result;
+                return JsonConvert.DeserializeObject<List<Tuple<DateTime, string, bool>>>(response.Content.ReadAsStringAsync().Result);
+            }
+        }
     }
 }

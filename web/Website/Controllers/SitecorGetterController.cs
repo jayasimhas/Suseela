@@ -14,7 +14,6 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_Nodes;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Informa.Web.Areas.Account.Models;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Glass.Models;
@@ -23,8 +22,7 @@ using Sitecore.Data.Items;
 using Sitecore.Links;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
-using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
-
+using Sitecore.Data;
 
 namespace Informa.Web.Controllers
 {
@@ -876,6 +874,12 @@ namespace Informa.Web.Controllers
         }
     }
 
-
+    public class GetArticleWorkflowHistoryController : ApiController
+    {
+        public JsonResult<List<Tuple<DateTime, string, bool>>> Get(Guid itemID)
+        {
+            return Json(new Informa.Library.Utilities.SitecoreUtils.WorkflowUtil().GetWorkflowHistory(new ID(itemID)));
+        }
+    }
 
 }
