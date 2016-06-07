@@ -6,14 +6,14 @@ using Glass.Mapper.Sc;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Content;
 using Informa.Library.Utilities.Extensions;
-using Informa.Library.Utilities.References;
 using Informa.Library.Utilities.Security;
+using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 using Jabberwocky.Glass.Services;
-using Velir.Search.Core.Reference;
 using Constants = Informa.Library.Utilities.References.Constants;
+using SiteSettings = Velir.Search.Core.Reference.SiteSettings;
 
 namespace Informa.Library.User.Search
 {
@@ -29,10 +29,11 @@ namespace Informa.Library.User.Search
 			IAuthenticatedUserContext UserContext { get; }
 			IAuthenticatedUserSession UserSession { get; }
             ICrypto Crypto { get; }
-		}
+            ISiteSettings SiteSettings { get; }
+        }
 
 		public static string SessionKey = nameof(SavedSearchService);
-		private static IEqualityComparer<ISavedSearchEntity> _comparer = new SearchStringEqualityComparer();
+		private static readonly IEqualityComparer<ISavedSearchEntity> SavedSearchComparer = new SearchStringEqualityComparer();
 
 		private readonly IDependencies _dependencies;
 
@@ -60,7 +61,7 @@ namespace Informa.Library.User.Search
 
 			var results = GetContentFromSessionOrRepo();
 
-			return results.Any(s => _comparer.Equals(s, entity));
+			return results.Any(s => SavedSearchComparer.Equals(s, entity));
 		}
 
 		public virtual IEnumerable<ISavedSearchDisplayable> GetContent()
@@ -113,6 +114,7 @@ namespace Informa.Library.User.Search
 			entity = id;
 			entity.SearchString = ExtractQueryString(input.Url);
             entity.UnsubscribeToken = GetUnsubscribeToken(entity);
+		    entity.Publication = _dependencies.SiteSettings.GetCurrentSiteInfo()?.HostName;
             entity.HasAlert = input.AlertEnabled;
 
 			var addResponse = _dependencies.Repository.Add(entity);
@@ -142,7 +144,7 @@ namespace Informa.Library.User.Search
 			if (string.IsNullOrWhiteSpace(entity.Name))
 			{
 				var results = GetContentFromSessionOrRepo();
-				entity = results.FirstOrDefault(e => _comparer.Equals(e, entity));
+				entity = results.FirstOrDefault(e => SavedSearchComparer.Equals(e, entity));
 			}
 
 			var response = _dependencies.Repository.Delete(entity);
