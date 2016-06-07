@@ -38,6 +38,8 @@ namespace InformaSitecoreWord.Util
 
             if (article.WebPublicationDate != DateTime.MinValue && article.WebPublicationDate != DateTime.MaxValue)
                 article.WebPublicationDate = TimeZoneInfo.ConvertTime(article.WebPublicationDate, ServerTimezone, TimeZoneInfo.Local);
+
+            article.WordDocLastUpdateDate = ConvertDateToLocalTimezone(article.WordDocLastUpdateDate);
         }
 
         public static void ConvertArticleDatesToLocalTimezone(ArticlePreviewInfo article)
@@ -77,6 +79,8 @@ namespace InformaSitecoreWord.Util
 
             if (article.WebPublicationDate != DateTime.MinValue && article.WebPublicationDate != DateTime.MaxValue)
                 article.WebPublicationDate = TimeZoneInfo.ConvertTime(article.WebPublicationDate, ServerTimezone);
+
+            article.WordDocLastUpdateDate = ConvertDateToServerTimezone(article.WordDocLastUpdateDate);
         }
 
         public static void ConvertArticleDatesToServerTimezone(ArticlePreviewInfo article)
