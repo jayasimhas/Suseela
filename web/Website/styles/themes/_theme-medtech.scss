@@ -21,10 +21,10 @@
     @include theme-bordered-elements($color-marine-blue);
 
     @include theme-interviews(
-    transparentize($color-marine-blue, 0.8),
-    transparentize($color-marine-blue, 0.5),
-    transparentize($color-jonquil-yellow, 0.8),
-    $color-jonquil-yellow);
+    	transparentize($color-marine-blue, 0.8),
+    	transparentize($color-marine-blue, 0.5),
+    	transparentize($color-jonquil-yellow, 0.8),
+    	$color-jonquil-yellow);
 
     .article-topics__li:before,
     .quickfactsbulleted li:before,
@@ -38,4 +38,9 @@
 	.quick-facts__list--ul li ul li:before {
         color: $color-marine-blue;
     }
+
+
+	@include theme-quick-facts(
+		transparentize($color-jonquil-yellow, 0.7),
+		transparentize($color-jonquil-yellow, 0.2));
 }
