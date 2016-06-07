@@ -93,6 +93,11 @@ But you can also use "patch:attribute" for clarity:
       </speak.client.resolveScript>
     </pipelines>
 
+    <events>
+      <event name="item:added">
+        <handler type="Informa.Library.CustomSitecore.Events.AddFromBranchPreset, Informa.Library" method="OnItemAdded" />
+      </event>
+    </events>
 
     <hooks>
       <hook type="Sitecore.Diagnostics.MemoryMonitorHook, Sitecore.Kernel">
