@@ -403,7 +403,35 @@ $(document).ready(function() {
 
 
     var accountEmailPreferencesController = new FormController({
-        observe: '.form-email-preferences'
+        observe: '.form-email-preferences',
+        successCallback: function(form, context, event) {
+
+            var event_data = {};
+            var optingIn = null;
+            var optingOut = null;
+
+            if($('#DoNotSendOffersOptIn').prop('checked')) {
+                event_data.event_title = 'email_preferences_opt_out';
+            } else {
+            
+                event_data.event_title = 'email_preferences_update';
+            
+                $('.js-account-email-checkbox').each(function(index, item) {
+                    if(this.checked) {
+                        optingIn = optingIn ? optingIn + '|' + this.value : this.value;
+                    } else {
+                        optingOut = optingOut ? optingOut + '|' + this.value : this.value;
+                    }
+                });
+
+                event_data.email_preferences_optin = optingIn;
+                event_data.email_preferences_optout = optingOut;
+
+            }
+
+            analyticsEvent( $.extend(analytics_data, event_data) );
+
+        }
     });
 
 
@@ -604,7 +632,7 @@ $(document).ready(function() {
             linkString = this.href;
         }
 
-        $(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_destination": ' + linkString + '}');
+        $(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_destination": "' + linkString + '"}');
 
 	});
 
