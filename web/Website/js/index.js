@@ -581,6 +581,7 @@ $(document).ready(function() {
         window.controlPopOuts.closePopOut(e.target);
     });
 
+
     // Make sure all external links open in a new window/tab
     $("a[href^=http]").each(function(){
         if(this.href.indexOf(location.hostname) == -1) {
@@ -589,6 +590,23 @@ $(document).ready(function() {
             });
         }
     });
+
+	// Adds analytics for article page clicks
+	$('.root').find('a').each(function(index, item) {
+
+        $(this).addClass('click-utag');
+
+        var linkString;
+
+	    if(this.href.indexOf(location.hostname) == -1) {
+            linkString = 'External:' + this.href;
+        } else {
+            linkString = this.href;
+        }
+
+        $(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_destination": ' + linkString + '}');
+
+	});
 
     $('.general-header__navigation').each(function() {
 
