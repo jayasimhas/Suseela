@@ -3307,7 +3307,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			{"Preclinical Through Proof-Of-Concept", "Preclinical Through Proof-Of-Concept"},
 			{"Proof-Of-Concept Through Filing", "Proof-Of-Concept Through Filing"},
 			{"Social Media", "Social Media"},
-			{"Surgical Procedures", "Surgical Procedures"}
+			{"Surgical Procedures", "Surgical Procedures"},
+			{"KeepingTrack", "Keeping Track"},
+			{"PerformanceTracker", "Performance Tracker"},
+			{"Keeping Track", "Keeping Track"},
+			{"Performance Tracker", "Performance Tracker"}
 		};
 		public static Dictionary<string, string> IndustryMapping => new Dictionary<string, string>
 		{
