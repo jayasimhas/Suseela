@@ -105,7 +105,13 @@
     .banner--register,
 	.banner--alert {
         background-color: $background;
-        color: $text;
+
+		&,
+		& span,
+		& svg {
+			@include svg-fill($text);
+			color: $text;
+		}
 
         a {
             @include on-event(true) {
