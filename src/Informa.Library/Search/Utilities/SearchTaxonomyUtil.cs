@@ -9,10 +9,10 @@ namespace Informa.Library.Search.Utilities
 	public class SearchTaxonomyUtil
 	{
 		private const string Subjects = "subjects";
-		private const string Regions = "subjects";
-		private const string Areas = "subjects";
-		private const string Industries = "subjects";
-		private const string DeviceAreas = "subjects";
+		private const string Regions = "regions";
+		private const string Areas = "areas";
+		private const string Industries = "industries";
+		private const string DeviceAreas = "deviceareas";
 
 		public static string GetSearchUrl(params ITaxonomy_Item[] taxonomyItems)
 		{

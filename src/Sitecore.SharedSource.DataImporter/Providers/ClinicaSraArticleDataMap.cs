@@ -90,7 +90,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				//autonomy fields
 				XmlDocument d2 = pair.Item4;
 
-				List<string> autNodes = new List<string>() { "CATEGORY", "COMPANY", "STORYUPDATE", "SECTION", "COUNTRY", "KEYWORD", "THERAPY_SECTOR", "TREATABLE_CONDITION" };
+				List<string> autNodes = new List<string>() { "CATEGORY", "COMPANY", "STORYUPDATE", "SECTION", "COUNTRY", "KEYWORD", "THERAPY_SECTOR", "TREATABLE_CONDITION", "TECHNOLOGYSECTION", "COUNTRYSECTION" };
 				//if no autonomy file then fill fields with empty
 				if (d2 == null)
 				{

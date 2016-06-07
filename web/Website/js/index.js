@@ -378,6 +378,13 @@ $(document).ready(function() {
                 $('.js-email-search-success').hide();
             });
 
+			var event_data = {
+				event_name: "toolbar_use",
+				toolbar_tool: "email"
+			};
+
+			analyticsEvent( $.extend(analytics_data, event_data) );
+
         },
         beforeRequest: function() {
 
@@ -396,7 +403,35 @@ $(document).ready(function() {
 
 
     var accountEmailPreferencesController = new FormController({
-        observe: '.form-email-preferences'
+        observe: '.form-email-preferences',
+        successCallback: function(form, context, event) {
+
+            var event_data = {};
+            var optingIn = null;
+            var optingOut = null;
+
+            if($('#DoNotSendOffersOptIn').prop('checked')) {
+                event_data.event_title = 'email_preferences_opt_out';
+            } else {
+            
+                event_data.event_title = 'email_preferences_update';
+            
+                $('.js-account-email-checkbox').each(function(index, item) {
+                    if(this.checked) {
+                        optingIn = optingIn ? optingIn + '|' + this.value : this.value;
+                    } else {
+                        optingOut = optingOut ? optingOut + '|' + this.value : this.value;
+                    }
+                });
+
+                event_data.email_preferences_optin = optingIn;
+                event_data.email_preferences_optout = optingOut;
+
+            }
+
+            analyticsEvent( $.extend(analytics_data, event_data) );
+
+        }
     });
 
 
@@ -424,13 +459,13 @@ $(document).ready(function() {
                 $('.js-sortable-table').remove();
                 $('.js-no-articles').show();
             }
-        }
-    });
 
-    var savedSearchesController = new FormController({
-        observe: '.form-remove-saved-search',
-        successCallback: function(form, context, evt) {
-            $(evt.target).closest('tr').remove();
+			var event_data = {
+				event_title: 'bookmark_removal',
+				bookmark_title: $(form).data('analytics-title')
+			};
+
+			analyticsEvent( $.extend(analytics_data, event_data) );
         }
     });
 
@@ -574,6 +609,7 @@ $(document).ready(function() {
         window.controlPopOuts.closePopOut(e.target);
     });
 
+
     // Make sure all external links open in a new window/tab
     $("a[href^=http]").each(function(){
         if(this.href.indexOf(location.hostname) == -1) {
@@ -582,6 +618,23 @@ $(document).ready(function() {
             });
         }
     });
+
+	// Adds analytics for article page clicks
+	$('.root').find('a').each(function(index, item) {
+
+        $(this).addClass('click-utag');
+
+        var linkString;
+
+	    if(this.href.indexOf(location.hostname) == -1) {
+            linkString = 'External:' + this.href;
+        } else {
+            linkString = this.href;
+        }
+
+        $(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_destination": "' + linkString + '"}');
+
+	});
 
     $('.general-header__navigation').each(function() {
 

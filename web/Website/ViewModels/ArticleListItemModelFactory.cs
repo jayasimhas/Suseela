@@ -5,7 +5,10 @@ using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.Article.Search;
+using Informa.Library.Globalization;
 using Informa.Library.Services.Article;
+using Informa.Library.User.Authentication;
+using Informa.Library.User.Document;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.StringUtils;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
@@ -20,17 +23,27 @@ namespace Informa.Web.ViewModels
 		protected readonly IArticleSearch ArticleSearch;
 		protected readonly IArticleService ArticleService;
 		protected readonly IBylineMaker ByLineMaker;
+	    protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+	    protected readonly IIsSavedDocumentContext IsSavedDocumentContext;
+	    protected readonly ITextTranslator TextTranslator;
 
 		public ArticleListItemModelFactory(
 						ISitecoreContext sitecoreContext,
 						IArticleSearch articleSearch,
 						IArticleService articleService,
-						IBylineMaker byLineMaker)
+						IBylineMaker byLineMaker,
+                        IAuthenticatedUserContext authenticatedUserContext,
+                        IIsSavedDocumentContext isSavedDocumentContext,
+                        ITextTranslator textTranslator)
 		{
 			SitecoreContext = sitecoreContext;
 			ArticleSearch = articleSearch;
 			ArticleService = articleService;
 			ByLineMaker = byLineMaker;
+		    AuthenticatedUserContext = authenticatedUserContext;
+            IsSavedDocumentContext = isSavedDocumentContext;
+		    TextTranslator = textTranslator;
+
 		}
 
 		public IListableViewModel Create(IArticle article)
@@ -56,8 +69,13 @@ namespace Informa.Web.ViewModels
 				ListableType = ArticleService.GetMediaTypeName(article),
 				ListableUrl = new Link { Url = article._Url, Text = article.Title },
 				LinkableText = article.Content_Type?.Item_Name,
-				LinkableUrl = article._Url
-			};
+				LinkableUrl = article._Url,
+				ID = article._Id,
+                IsUserAuthenticated = AuthenticatedUserContext.IsAuthenticated,
+                IsArticleBookmarked = IsSavedDocumentContext.IsSaved(article._Id),
+                BookmarkText = TextTranslator.Translate("Bookmark"),
+                BookmarkedText = TextTranslator.Translate("Bookmarked")
+            };
 		}
 
 		public IListableViewModel Create(Guid articleId)

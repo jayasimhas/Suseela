@@ -1,3 +1,6 @@
+/* global analytics_data */
+import { analyticsEvent } from '../controllers/analytics-controller';
+
 ﻿(function () {
     'use strict';
 
@@ -14,11 +17,11 @@
             // This flag disables $log.debug() output
             //$logProvider.debugEnabled(false);
         }]).config(['$compileProvider', function ($compileProvider) {
-            
+
             // https://docs.angularjs.org/api/ng/provider/$compileProvider#debugInfoEnabled
             // UNCOMMENT THE LINE BELOW IN PRODUCTION FOR PERFORMANCE GAINS
 
-            $compileProvider.debugInfoEnabled(false);
+            // $compileProvider.debugInfoEnabled(false);
 
         }]);
 
@@ -28,7 +31,16 @@
         return {
             showOnlyHeadlines: function () { return headlines; },
             updateValue: function () {
-                headlines = !headlines;
+
+				if(!headlines) {
+					analyticsEvent( $.extend(analytics_data, {
+						event_name: 'search_utility',
+						search_utility: 'view_headlines_only'
+					}) );
+				}
+
+				headlines = !headlines;
+
             }
         };
     });

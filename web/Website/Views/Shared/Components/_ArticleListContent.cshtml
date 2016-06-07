@@ -7,7 +7,7 @@
 
 @if(Model != null && Model.GlassModel != null) {
 <div class="article-metadata">
-    @* <div class="article-preview__bookmarker pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
+     <div class="article-preview__bookmarker pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
          data-pop-out-type="sign-in"
          data-pop-out-align="right"
          data-bookmark-id="@Model.GlassModel._Id"
@@ -27,7 +27,7 @@
         <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
     </svg>
 
-    </div>*@
+    </div>
     <ul>
         <li>
             <time class="article-metadata__date">@Model.Date.ToString("dd MMM yyyy")</time>
@@ -51,7 +51,12 @@
 
 <div class="topic-featured-article__inner-wrapper">
     <h3 class="topic-featured-article__headline">
-        <a href="@Model.Url">@Html.Raw(Model.Title)</a>
+        <a
+			href="@Model.Url"
+			class="click-utag"
+			data-info='{ "event_name": "article_click_through", "click_through_destination": "@Model.Title" }'>
+			@Html.Raw(Model.Title)
+		</a>
     </h3>
 
     <span class="article-preview__byline">

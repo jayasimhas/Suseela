@@ -16,13 +16,15 @@
                 When the page is reloaded, JS will detect the stashed search and will
                 save the search behind the scenes.
                 * * *@
-            <form method="post"
-                  class="@(Model.IsAuthenticated
-                               ? "form-save-search"
-                               : "form-save-search-login")"
-                  data-on-submit="@(Model.IsAuthenticated
-                                        ? "/api/SavedSearches"
-                                        : "/Account/api/LoginWebUserApi/Login/")">
+            <form
+				method="post"
+                class="@(Model.IsAuthenticated
+                	? "form-save-search"
+                    : "form-save-search-login")"
+                data-on-submit="@(Model.IsAuthenticated
+                    ? "/api/SavedSearches"
+                    : "/Account/api/LoginWebUserApi/Login/")"
+				data-is-search="@(Model.IsSearch ? "true" : "false")">
 
 
                 @* * *
@@ -126,10 +128,15 @@
                         </p>
 					}
 
-                    <button type="submit" class="pop-out__sign-in-submit button--filled click-utag" ng-click="searchIsSaved = true" data-info='{"event_name":"toolbar_use", "toolbar_tool":"save search"}'>
+                    <button
+						type="submit"
+						class="pop-out__sign-in-submit button--filled"
+						ng-click="searchIsSaved = true">
+
                         @(Model.IsAuthenticated
                               ? @Html.Raw(Model.ButtonLoggedInText)
                               : @Html.Raw(Model.ButtonLoggedOutText))
+
                     </button>
 
                 </div>

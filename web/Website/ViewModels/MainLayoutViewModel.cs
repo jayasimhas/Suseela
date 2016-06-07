@@ -24,65 +24,28 @@ namespace Informa.Web.ViewModels
         protected readonly ISiteDebuggingAllowedContext SiteDebuggingAllowedContext;
 	    protected readonly IGlobalSitecoreService GlobalService;
 	    protected readonly ISiteRootContext SiteRootContext;
-
-        public readonly IItemReferences ItemReferences;
+        
         public readonly IUserCompanyContext UserCompanyContext;
-
-	    public IAnalyticsViewModel AnalyticsViewModelSource
-	    {
-	        get
-	        {
-	            AnalyticsViewModel.GlassModel = GlassModel;
-	            return AnalyticsViewModel;
-	        }
-	    }
-
-	    private readonly IAnalyticsViewModel AnalyticsViewModel;
-        public readonly IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
-        public readonly IMaintenanceViewModel MaintenanceMessage;
-        public readonly ICompanyRegisterMessageViewModel CompanyRegisterMessage;
-        public readonly ISignInPopOutViewModel SignInPopOutViewModel;
-        public readonly IEmailArticlePopOutViewModel EmailArticlePopOutViewModel;
-        public readonly IToolbarViewModel DebugToolbar;
-        public readonly IRegisterPopOutViewModel RegisterPopOutViewModel;
-
         
         public MainLayoutViewModel(
             ITextTranslator textTranslator,
             IAuthenticatedUserContext authenticatedUserContext,
-            IItemReferences itemReferences,
             IUserCompanyContext userCompanyContext,
-            IAnalyticsViewModel analyticsViewModel,
-            IIndividualRenewalMessageViewModel renewalInfo,
-            IMaintenanceViewModel maintenanceViewModel,
-			ICompanyRegisterMessageViewModel companyRegisterMessageViewModel,
-			ISignInPopOutViewModel signInPopOutViewModel,
-			IEmailArticlePopOutViewModel emailArticlePopOutViewModel,
-            IRegisterPopOutViewModel registerPopOutViewModel,
             ISiteDebuggingAllowedContext siteDebuggingAllowedContext,
             IGlobalSitecoreService globalService,
             ISiteRootContext siteRootContext)
 		{
 			TextTranslator = textTranslator;
             AuthenticatedUserContext = authenticatedUserContext;
-            ItemReferences = itemReferences;
             UserCompanyContext = userCompanyContext;
-            AnalyticsViewModel = analyticsViewModel;
-            IndividualRenewalMessageInfo = renewalInfo;
-            MaintenanceMessage = maintenanceViewModel;
-			CompanyRegisterMessage = companyRegisterMessageViewModel;
-			SignInPopOutViewModel = signInPopOutViewModel;
-			EmailArticlePopOutViewModel = emailArticlePopOutViewModel;
             SiteDebuggingAllowedContext = siteDebuggingAllowedContext;
-            if (SiteDebuggingAllowedContext.IsAllowed)
-                DebugToolbar = DependencyResolver.Current.GetService<IToolbarViewModel>();
-            RegisterPopOutViewModel = registerPopOutViewModel;
             GlobalService = globalService;
             SiteRootContext = siteRootContext;
 
 		}
 
-		public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
+	    public bool IsSiteDebuggingAllowed => SiteDebuggingAllowedContext.IsAllowed;
+        public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
 		public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
 		public string CorporateName => UserCompanyContext?.Company?.Name;
 	    public string Title => GlobalService.GetPageTitle(GlassModel);

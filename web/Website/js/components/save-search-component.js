@@ -30,17 +30,19 @@ $(document).ready(function() {
 	});
 
 	$('.js-set-topic-alert').on('click', function(e) {
+
 		var isSettingAlert = !$(this).data('has-topic-alert');
+		var topicLabel = $(this).find('.js-set-topic-label');
 
 		$('.js-save-search-url').val($(this).data('topic-alert-url'));
 		$('.js-save-search-title').val($(this).data('topic-alert-title'));
 
 		if(isSettingAlert) {
 			$('.form-save-search').find('button[type=submit]').click();
-			$('.js-set-topic-label').html($('.js-set-topic-label').data('label-is-set'));
+			topicLabel.html(topicLabel.data('label-is-set'));
 			$(this).data('has-topic-alert', 'true');
-			$('.js-topic-icon-unset').removeClass('is-active');
-			$('.js-topic-icon-set').addClass('is-active');
+			$(this).find('.js-topic-icon-unset').removeClass('is-active');
+			$(this).find('.js-topic-icon-set').addClass('is-active');
 		} else {
 			window.lightboxController.showLightbox($(this));
 		}
@@ -50,10 +52,13 @@ $(document).ready(function() {
 	var removeTopicAlert = new FormController({
 		observe: '.form-remove-topic-alert',
 		successCallback: function(form, context, event) {
-			$('.js-set-topic-label').html($('.js-set-topic-label').data('label-not-set'));
+			$(form).find('.js-set-topic-label').html($(form).find('.js-set-topic-label').data('label-not-set'));
 			$(form).find('.js-set-topic-alert').data('has-topic-alert', null);
-			$('.js-topic-icon-unset').addClass('is-active');
-			$('.js-topic-icon-set').removeClass('is-active');
+			$(form).find('.js-topic-icon-unset').addClass('is-active');
+			$(form).find('.js-topic-icon-set').removeClass('is-active');
+
+			analyticsEvent(	$.extend(analytics_data, $(form).data('analytics')) );
+
 		}
 	});
 
@@ -76,6 +81,19 @@ $(document).ready(function() {
 			if(typeof angular !== 'undefined') {
 				angular.element($('.js-saved-search-controller')[0]).controller().searchIsSaved();
 			}
+
+			var event_data = {};
+
+			if($(form).data('is-search') === true) {
+				event_data.event_name = "toolbar_use";
+				event_data.toolbar_tool = "save_search";
+			} else {
+				event_data.event_name = "set_alert";
+				event_data.alert_topic = $(form).find('.js-save-search-title').val();
+			}
+
+			analyticsEvent(	$.extend(analytics_data, event_data) );
+
 		},
 		beforeRequest: function(form) {
 			if(!$(form).find('.js-save-search-title').val().trim()) {
@@ -110,17 +128,28 @@ $(document).ready(function() {
 	});
 
 	var toggleSavedSearchAlertController = new FormController({
-		observe: '.form-toggle-saved-search-alert'
+		observe: '.form-toggle-saved-search-alert',
+		successCallback: function(form, context, e) {
+			var alertToggle = $(form).find('.js-saved-search-alert-toggle');
+			var val = alertToggle.val();
+			var event_data = {
+				saved_search_alert_title: $(form).data('analytics-title')
+			};
+
+			if (val === "on") {
+				event_data.event_name = 'saved_search_alert_off';
+				alertToggle.val('off');
+			} else {
+				event_data.event_name = 'saved_search_alert_on';
+				alertToggle.val('on');
+			}
+
+			analyticsEvent( $.extend(analytics_data, event_data) );
+		}
 	});
 
 	$('.js-saved-search-alert-toggle').on('click', function(e) {
 		$(e.target.form).find('button[type=submit]').click();
-		var val = $(e.target).val();
-		if (val === "on") {
-			$(e.target).val('off');
-		} else {
-			$(e.target).val('on');
-		}
 	});
 
 	// On page load, check for any stashed searches that need to be saved
@@ -145,4 +174,20 @@ $(document).ready(function() {
 			});
 		}
 	}
+
+
+	var removeSavedSearch = new FormController({
+        observe: '.form-remove-saved-search',
+        successCallback: function(form, context, evt) {
+            $(evt.target).closest('tr').remove();
+
+			var event_data = {
+				event_name: 'saved_search_alert_removal',
+				saved_search_alert_title: $(form).data('analytics-title')
+			};
+
+			analyticsEvent( $.extend(analytics_data, event_data) );
+
+        }
+    });
 });

@@ -44,6 +44,8 @@ namespace Informa.Web.ViewModels {
         string PageDescription { get; }
         string PageTitleOverride { get; }
         string MetaKeyWords { get; }
-        I___BasePage GlassModel { get; set; }
+		string ArticleEntitlements { get; }
+		string ContentEntitlementType { get; }
+		string EntitlementType { get; }
     }
 }

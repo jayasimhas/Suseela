@@ -6,8 +6,8 @@
         $color-dark-coral,
         $color-dark-coral,
         $color-white,
-        $color-mystic-maroon,
-        $color-pearly-pink,
+        $color-rusty-red,
+        $color-rusty-red,
         $color-white);
 
     @include theme-main-menu($color-rusty-red, $color-rusty-red);
@@ -38,5 +38,9 @@
 	.quick-facts__list--ul li ul li:before {
         color: $color-copper-red;
     }
+
+	@include theme-quick-facts(
+		transparentize($color-dark-coral, 0.9),
+		transparentize($color-copper-red, 0.5));
 
 }

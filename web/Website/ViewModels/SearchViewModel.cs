@@ -4,7 +4,6 @@ using System.Linq;
 using Informa.Library.Globalization;
 using Informa.Library.Subscription.User;
 using Informa.Library.User.Authentication;
-using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
@@ -16,10 +15,12 @@ namespace Informa.Web.ViewModels
 
 		protected readonly ITextTranslator TextTranslator;
 
-		public SearchViewModel(ITextTranslator textTranslator, IAuthenticatedUserContext userContext, IUserSubscriptionsContext subscriptionsContext, IItemReferences itemReferences)
+		public SearchViewModel(
+            ITextTranslator textTranslator, 
+            IAuthenticatedUserContext userContext, 
+            IUserSubscriptionsContext subscriptionsContext)
 		{
 			TextTranslator = textTranslator;
-			ItemReferences = itemReferences;
 			IsAuthenticated = userContext.IsAuthenticated;
 
 			_subcriptions = new Lazy<IEnumerable<string>>(() =>
@@ -29,7 +30,6 @@ namespace Informa.Web.ViewModels
 					: Enumerable.Empty<string>();
 			});
 		}
-		public IItemReferences ItemReferences { get; set; }
 		public bool IsAuthenticated { get; set; }
 		public string PageFirstText => TextTranslator.Translate("Search.Page.First");
 		public string PageLastText => TextTranslator.Translate("Search.Page.Last");

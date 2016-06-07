@@ -27,9 +27,16 @@ Taxonomy
 field: {A534B62B-9C6B-449F-8B88-93753EFE6AEC}
 name: From What Fields
 key: from what fields
-content-length: 7
+content-length: 22
 
-SECTION
+SECTION,COUNTRYSECTION
+----field----
+field: {EBB47640-52E2-4BC3-8231-AF6FC5113DA3}
+name: Delimiter
+key: delimiter
+content-length: 1
+
+,
 ----field----
 field: {76F71014-CC36-4507-B623-9BBD2851E8CE}
 name: Source List
@@ -47,7 +54,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: dfe154b2-eadb-4831-8bfa-9862821c39c2
+revision: 5203492d-dbb4-4dfd-ab7a-5bd7966aed8e
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -62,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-dfe154b2-eadb-4831-8bfa-9862821c39c2
+5203492d-dbb4-4dfd-ab7a-5bd7966aed8e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160511T141513Z
+20160606T152850Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

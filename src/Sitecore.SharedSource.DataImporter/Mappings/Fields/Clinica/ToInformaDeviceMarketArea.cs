@@ -39,7 +39,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields.Clinica
 				if (string.IsNullOrEmpty(transformValue))
 				{
 					map.Logger.Log(newItem.Paths.FullPath, "Device Market Area(s) not converted", ProcessStatus.FieldError, NewItemField, val);
-					return;
+					continue;
 				}
 
 				string[] parts = transformValue.Split(new string[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
@@ -81,7 +81,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields.Clinica
 			d.Add("imagingandit", "Diagnostic Imaging");
 			d.Add("imminological", "Immunology");
 			d.Add("infection", "");
-			d.Add("ivds", "In Vitro Diagnotics");
+			d.Add("ivds", "In Vitro Diagnostics");
 			d.Add("metabolic", "Metabolic");
 			d.Add("musculoskeletal", "Orthopedics");
 			d.Add("neurological", "Neurology");

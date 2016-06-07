@@ -24,7 +24,11 @@ namespace Informa.Web.ViewModels
 		public string LinkableUrl { get; set; }
 		
 		#endregion
-		public string SourceArticleID { get { return Sitecore.Context.Item.ID.ToString(); } }
 
+        public bool IsUserAuthenticated { get; set; }
+        public bool IsArticleBookmarked { get; set; }
+        public string BookmarkText { get; set; }
+        public string BookmarkedText { get; set; }
+		public Guid ID { get; set; }
 	}
 }

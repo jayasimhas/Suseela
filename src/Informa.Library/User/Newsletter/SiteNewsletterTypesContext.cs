@@ -3,7 +3,7 @@ using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Library.User.Newsletter
 {
-	[AutowireService]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class SiteNewsletterTypesContext : ISiteNewsletterTypesContext
 	{
 		protected readonly ISiteRootContext SiteRootContext;
@@ -17,6 +17,7 @@ namespace Informa.Library.User.Newsletter
 			SiteNewsletterTypesFactory = siteNewsletterTypesFactory;
 		}
 
-		public ISiteNewsletterTypes Types => SiteNewsletterTypesFactory.Create(SiteRootContext.Item);
+		private ISiteNewsletterTypes _types;
+		public ISiteNewsletterTypes Types => _types ?? (_types = SiteNewsletterTypesFactory.Create(SiteRootContext.Item));
 	}
 }

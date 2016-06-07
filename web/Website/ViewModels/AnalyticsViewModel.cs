@@ -14,12 +14,13 @@ using Informa.Library.Utilities.Settings;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Sitecore.Social.Infrastructure.Utils;
 
 namespace Informa.Web.ViewModels
 {
     [AutowireService]
-	public class AnalyticsViewModel : IAnalyticsViewModel {
+	public class AnalyticsViewModel : GlassViewModel<I___BasePage>, IAnalyticsViewModel {
 
         public readonly IItemReferences ItemReferences;
         protected readonly IIsEntitledProducItemContext IsEntitledProductItemContext;
@@ -32,10 +33,8 @@ namespace Informa.Web.ViewModels
         protected readonly IUserEntitlementsContext UserEntitlementsContext;
         protected readonly IUserIpAddressContext UserIpAddressContext;
 	    protected readonly ISiteRootContext SiteRootContext;
-
-        public readonly IUserCompanyContext UserCompanyContext;
-        public I___BasePage GlassModel { get; set; }
-
+        protected readonly IUserCompanyContext UserCompanyContext;
+        
         public AnalyticsViewModel(
 			IItemReferences itemReferences,
             IIsEntitledProducItemContext isEntitledProductItemContext,
@@ -62,6 +61,9 @@ namespace Informa.Web.ViewModels
             UserEntitlementsContext = userEntitlementsContext;
             UserIpAddressContext = userIpAddressContext;
 	        SiteRootContext = siteRootContext;
+	        UserEntitlementStatus = IsEntitledProductItemContext.IsEntitled(Article) ? "entitled" : "unentitled";
+	        ContentEntitlementType = GetContentEntitlement(UserCompanyContext);
+	        EntitlementType = GetEntitlementType(UserCompanyContext);
 			}
 
 	    public string PublicationName => SiteRootContext.Item.Publication_Name;
@@ -78,7 +80,7 @@ namespace Informa.Web.ViewModels
         public string ArticleAuthors => (Article?.Authors == null)
                 ? string.Empty
                 : $"[{string.Join(",", Article.Authors.Select(x => $"'{x._Name.Trim()}'"))}]";
-        public string UserEntitlementStatus => IsEntitledProductItemContext.IsEntitled(Article) ? "entitled" : "unentitled";
+        public string UserEntitlementStatus { get; }
         public string GetArticleTaxonomy(Guid itemId) {
             return Article != null ? ArticleSearch.GetArticleTaxonomies(Article._Id, itemId) : string.Empty;
         }
@@ -114,7 +116,7 @@ namespace Informa.Web.ViewModels
                 return !string.IsNullOrEmpty(allSubscriptions) ? $"[{allSubscriptions}]" : string.Empty;
             }
         }
-        public string CustomTags => GlassModel.Custom_Meta_Tags;
+        public string CustomTags => GlassModel?.Custom_Meta_Tags ?? string.Empty;
         public string ContactId => WebAuthenticateUser.AuthenticatedUser?.ContactId ?? string.Empty;
         public string AccountId
         {
@@ -141,8 +143,53 @@ namespace Informa.Web.ViewModels
         public string DateCreated => (Sitecore.Context.Item != null && Sitecore.Context.Item.Statistics.Created > DateTime.MinValue) 
                     ? Sitecore.Context.Item.Statistics.Created.ToServerTimeZone().ToString("MM/dd/yyyy")
                     : DateTime.MinValue.ToString("MM/dd/yyyy");
-        public string PageDescription => GlassModel.Meta_Description;
-        public string PageTitleOverride => GlassModel.Meta_Title_Override;
-        public string MetaKeyWords => GlassModel.Meta_Keywords;
-    }
+        public string PageDescription => GlassModel?.Meta_Description ?? string.Empty;
+        public string PageTitleOverride => GlassModel?.Meta_Title_Override ?? string.Empty;
+        public string MetaKeyWords => GlassModel?.Meta_Keywords ?? string.Empty;
+		public string ArticleEntitlements
+		{
+			get
+			{
+				if (IsFree)
+				{
+					return "Free View";
+				}
+
+				if (IsEntitledProductItemContext.IsEntitled(Article))
+				{
+					return "Entitled Full View";
+				}
+
+				return "Abstract View";
+			}
+		}
+
+	    public string ContentEntitlementType { get; }
+
+	    public string EntitlementType { get; }
+
+		private string GetContentEntitlement(IUserCompanyContext context)
+		{
+			if (UserEntitlementStatus == "unentitled")
+			{
+				return "unentitled";
+			}
+
+			return $"entitled - {GetContentEntitlement(context)}";
+		}
+
+		private string GetEntitlementType(IUserCompanyContext context)
+		{
+			if (context.Company == null)
+			{
+				return "Free User";
+			}
+
+			if (context.Company.Type == CompanyType.TransparentIP)
+			{
+				return "Transparent IP";
+			}
+			return "Corporate";
+		}
+	}
 }

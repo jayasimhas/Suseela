@@ -114,11 +114,25 @@
                         </td>
                         <td class="sortable-table__col">
                             @if (item.Renewable) {
-                                <a class="button button--outline" href="@Model.OffSiteRenewLink">Renew</a>
+                                <a
+									class="button button--outline click-utag"
+									data-info='{
+										"event_name": "subscription_renew"
+									}'
+									href="@Model.OffSiteRenewLink">
+									Renew
+								</a>
                             }
                             @if (item.Subscribable) {
                                 @Html.Raw("&nbsp;&nbsp;&nbsp;")
-                                <a class="button button--outline" href="@Model.OffSiteSubscriptionLink">Subscribe</a>
+                                <a
+									class="button button--outline click-utag"
+									data-info='{
+										"event_name": "subscription_subscribe"
+									}'
+									href="@Model.OffSiteSubscriptionLink">
+									Subscribe
+								</a>
                             }
                         </td>
                     </tr>

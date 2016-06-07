@@ -24,7 +24,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields.SRA
 				return;
 
 			string lowerValue = importValue.ToLower();
-			string transformValue = lowerValue.Equals("medical device") ? "Medical Device" : "BioPharmaceutical";
+			string transformValue = lowerValue.Equals("medical device") || lowerValue.Equals("medical devices") ? "Medical Device" : "BioPharmaceutical";
 			if (string.IsNullOrEmpty(transformValue))
 			{
 				map.Logger.Log(newItem.Paths.FullPath, "Industry not converted", ProcessStatus.FieldError, NewItemField, importValue);

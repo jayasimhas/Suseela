@@ -179,7 +179,8 @@
                             <form class="form-toggle-saved-search-alert onoffswitch"
                                   data-on-submit="/api/SavedSearches"
                                   data-submit-type="POST"
-								  data-prevent-disabling="true">
+								  data-prevent-disabling="true"
+								  data-analytics-title="@item.Title">
 
                                 <input name="Title" id="Title" type="hidden" value="@item.Title">
                                 <input name="Url" id="Url" type="hidden" value="@item.Url">
@@ -199,7 +200,8 @@
                         <td class="sortable-table__col sortable-table__submit-wrapper">
                             <form class="form-remove-saved-search form-remove-saved-search-@index"
                                   data-on-submit="/api/SavedSearches"
-                                  data-submit-type="DELETE">
+                                  data-submit-type="DELETE"
+								  data-analytics-title="@item.Title">
                                 <input name="Title" id="Title" type="hidden" value="@item.Title">
 
                                 <button type="button"
@@ -211,10 +213,8 @@
                                     @Model.RemoveText
                                 </button>
 
-                                <button type="submit"
-                                    class="click-utag lightbox-modal__hidden-submit"
-                                    data-info='{"event_name":"saved-search-remove", "id":"@item.Title"}'>
-                                </button>
+                                <button type="submit" class="lightbox-modal__hidden-submit">
+								</button>
 
                             </form>
                         </td>

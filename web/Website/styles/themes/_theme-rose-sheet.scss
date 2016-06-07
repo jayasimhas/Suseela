@@ -38,4 +38,9 @@
 	.quick-facts__list--ul li ul li:before {
         color: $color-rubine-red;
     }
+
+	@include theme-quick-facts(
+		transparentize($color-rubine-red, 0.88),
+		transparentize($color-rubine-red, 0.5));
+
 }

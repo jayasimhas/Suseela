@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.Serialization;
-using System.Text.RegularExpressions;
+using System.Web.Mvc;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
+using Informa.Library.User.Document;
 using Informa.Library.Utilities.TokenMatcher;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
@@ -79,11 +80,8 @@ namespace Informa.Library.Search.Results
 		public List<string> CompaniesFacet { get; set; }
 
 		[DataMember]
-		public bool IsArticleBookmarked { get; set; }
-
-		[DataMember]
-		public bool IsUserAuthenticated { get; set; }
-
+		public bool IsArticleBookmarked => DocumentContext.IsSaved(ItemId.Guid);
+		
 		[DataMember]
 		public new string Url
 		{
@@ -97,5 +95,7 @@ namespace Informa.Library.Search.Results
 				return item != null ? LinkManager.GetItemUrl(item, options) : base.Url;
 			}
 		}
+
+		protected IIsSavedDocumentContext DocumentContext => DependencyResolver.Current.GetService<IIsSavedDocumentContext>();
 	}
 }

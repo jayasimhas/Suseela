@@ -1,17 +1,12 @@
 ﻿using Sitecore.Data.Items;
-using Sitecore.Globalization;
 using Sitecore.SharedSource.DataImporter.Extensions;
 using Sitecore.SharedSource.DataImporter.Logger;
-using Sitecore.SharedSource.DataImporter.Mappings.Fields;
 using Sitecore.SharedSource.DataImporter.Providers;
-using Sitecore.SharedSource.DataImporter.Utility;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using Sitecore.Data;
 using Sitecore.Jobs;
 
@@ -129,6 +124,7 @@ namespace Sitecore.SharedSource.DataImporter
 			if (!Logger.LoggedError)
 				Logger.Log("Success", "the import completed successfully");
 
+			Logger.Log("N/A", string.Format("Total Items Processed: {0}", totalLines));
 			Logger.Log("N/A", string.Format("Import Finished at: {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
 
 			if (Sitecore.Context.Job != null)

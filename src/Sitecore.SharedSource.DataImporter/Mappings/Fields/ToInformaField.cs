@@ -9,6 +9,7 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
@@ -411,9 +412,9 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 				string businessID = pair.Value;
 				if (string.IsNullOrEmpty(businessID))
-					return;
+					continue;
 
-				Regex companyPattern = new Regex($"({cName})", RegexOptions.IgnoreCase);
+				Regex companyPattern = new Regex($"(?<!<[^>]*)({cName})(?![^<]*</a)", RegexOptions.IgnoreCase);
 				//the name should be the importValue and not the value from the database
 				Field sf = newItem.Fields["Summary"];
 				if (sf != null)
@@ -1102,7 +1103,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				if (string.IsNullOrEmpty(transformValue))
 				{
 					map.Logger.Log(newItem.Paths.FullPath, "Therapy Area(s) not converted", ProcessStatus.FieldError, NewItemField, importPart);
-					return;
+					continue;
 				}
 
 				string[] parts = transformValue.Split(new string[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
@@ -1994,7 +1995,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				if (string.IsNullOrEmpty(transformValue))
 				{
 					map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
-					return;
+					continue;
 				}
 
 				string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
@@ -2004,12 +2005,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				if (!t.Any())
 				{
 					map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
-					return;
+					continue;
 				}
 
 				Field f = newItem.Fields[NewItemField];
 				if (f == null)
-					return;
+					continue;
 
 				string ctID = t.First().ID.ToString();
 				if (!f.Value.Contains(ctID))
@@ -2228,32 +2229,37 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 			Dictionary<string, string> d = GetMapping();
 
-			string lowerValue = importValue.ToLower();
-			string transformValue = (d.ContainsKey(lowerValue)) ? d[lowerValue] : string.Empty;
-			if (string.IsNullOrEmpty(transformValue))
+			var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
+
+			foreach (var value in values)
 			{
-				map.Logger.Log(newItem.Paths.FullPath, "Subject(s) not converted", ProcessStatus.FieldError, NewItemField, importValue);
-				return;
-			}
-
-			string[] parts = transformValue.Split(new string[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
-
-			//loop through children and look for anything that matches by name
-			foreach (string area in parts)
-			{
-				string cleanName = StringUtility.GetValidItemName(area, map.ItemNameMaxLength);
-				IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
-
-				//if you find one then store the id
-				if (!t.Any())
+				string lowerValue = value.ToLower();
+				string transformValue = (d.ContainsKey(lowerValue)) ? d[lowerValue] : string.Empty;
+				if (string.IsNullOrEmpty(transformValue))
 				{
-					map.Logger.Log(newItem.Paths.FullPath, "Subject(s) not found in list", ProcessStatus.FieldError, NewItemField, area);
+					map.Logger.Log(newItem.Paths.FullPath, "Subject(s) not converted", ProcessStatus.FieldError, NewItemField, value);
 					continue;
 				}
 
-				string ctID = t.First().ID.ToString();
-				if (!f.Value.Contains(ctID))
-					f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
+				string[] parts = transformValue.Split(new string[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
+
+				//loop through children and look for anything that matches by name
+				foreach (string area in parts)
+				{
+					string cleanName = StringUtility.GetValidItemName(area, map.ItemNameMaxLength);
+					IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
+
+					//if you find one then store the id
+					if (!t.Any())
+					{
+						map.Logger.Log(newItem.Paths.FullPath, "Subject(s) not found in list", ProcessStatus.FieldError, NewItemField, area);
+						continue;
+					}
+
+					string ctID = t.First().ID.ToString();
+					if (!f.Value.Contains(ctID))
+						f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
+				}
 			}
 		}
 
@@ -2653,26 +2659,46 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 					foreach (var str in strs)
 					{
 						var authorItem = Database.GetDatabase("pmbiContent").GetItem(new ID(str));
+
+						if (authorItem == null)
+						{
+							map.Logger.Log(newItem.Paths.FullPath, "Could not find matching Author item in PMBI for given ID", ProcessStatus.FieldError, NewItemField, str);
+							continue;
+						}
+
 						var firstName = StringUtility.TrimInvalidChars(authorItem.Fields["First Name"].Value.ToLower());
 						var lastName = StringUtility.TrimInvalidChars(authorItem.Fields["Last Name"].Value.ToLower());
 						var email = StringUtility.TrimInvalidChars(authorItem.Fields["Email"].Value.ToLower());
 
 						var valCollection = descendants.Where(
 							i =>
-								StringUtility.TrimInvalidChars(i.Fields["First Name"].Value.ToLower()) == firstName
-								&& StringUtility.TrimInvalidChars(i.Fields["Last Name"].Value.ToLower()) == lastName
-								&& (string.IsNullOrWhiteSpace(i.Fields["Email Address"].Value) || string.IsNullOrWhiteSpace(email) || StringUtility.TrimInvalidChars(i.Fields["Email Address"].Value.ToLower()) == email)).ToList();
-							//?.ID.ToString();
+								StringUtility.TrimInvalidChars(i?.Fields["First Name"]?.Value?.ToLower() ?? string.Empty) == firstName
+								&& StringUtility.TrimInvalidChars(i?.Fields["Last Name"]?.Value?.ToLower() ?? string.Empty) == lastName
+								&& (string.IsNullOrWhiteSpace(i?.Fields["Email Address"]?.Value) || string.IsNullOrWhiteSpace(email) || StringUtility.TrimInvalidChars(i.Fields["Email Address"].Value.ToLower()) == email)).ToList();
+
+						if (valCollection.Count == 0)
+						{
+							var staffitem = item.Add(ItemUtil.ProposeValidItemName($"{firstName} {lastName}"), new TemplateID(IStaff_ItemConstants.TemplateId));
+							using (new EditContext(staffitem))
+							{
+								staffitem.Fields[IStaff_ItemConstants.First_NameFieldName].Value = authorItem.Fields["First Name"].Value;
+								staffitem.Fields[IStaff_ItemConstants.Last_NameFieldName].Value = authorItem.Fields["Last Name"].Value;
+								staffitem.Fields[IStaff_ItemConstants.Email_AddressFieldName].Value = authorItem.Fields["Email"].Value;
+							}
+
+							valCollection = new List<Item> {staffitem};
+						}
+
 						if (valCollection.Count > 1)
 						{
-							map.Logger.Log(newItem.Paths.FullPath, "Find more than 1 authors in target DB", ProcessStatus.FieldError, NewItemField, $"ID:{str}--Name:{firstName} {lastName}--Email: {email}");
+							map.Logger.Log(newItem.Paths.FullPath, "Find more than 1 authors in target DB", ProcessStatus.FieldError, NewItemField, str, $"Name:{firstName} {lastName}--Email: {email}");
 							continue;
 						}
 
 						var val = valCollection.FirstOrDefault()?.ID.ToString();
 						if (string.IsNullOrWhiteSpace(val))
 						{
-							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not found in target DB", ProcessStatus.FieldError, NewItemField, $"ID:{str}--Name:{firstName} {lastName}--Email: {email}");
+							map.Logger.Log(newItem.Paths.FullPath, $"{FieldName}(s) not found in target DB", ProcessStatus.FieldError, NewItemField, str, $"Name:{firstName} {lastName}--Email: {email}");
 							continue;
 						}
 
@@ -3234,6 +3260,8 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 		public static Dictionary<string, string> SubjectMapping => new Dictionary<string, string>
 		{
+			{"KeepingTrack", "Keeping Tracker"},
+			{"PerformanceTracker", "Performance Tracker"},
 			{"Bioterrorism", "Bioterrorism"},
 			{"Blood Products", "Blood Products"},
 			{"Business Models", "Business Models"},
@@ -3300,7 +3328,9 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			{"Preclinical Through Proof-Of-Concept", "Preclinical Through Proof-Of-Concept"},
 			{"Proof-Of-Concept Through Filing", "Proof-Of-Concept Through Filing"},
 			{"Social Media", "Social Media"},
-			{"Surgical Procedures", "Surgical Procedures"}
+			{"Surgical Procedures", "Surgical Procedures"},
+			{"Keeping Track", "Keeping Track"},
+			{"Performance Tracker", "Performance Tracker"}
 		};
 		public static Dictionary<string, string> IndustryMapping => new Dictionary<string, string>
 		{

@@ -30,7 +30,7 @@ namespace Informa.Library.Salesforce.Web
 					return enabledSession.Value;
 				}
 
-			    return !(Configuration.UserAgents.Any(ua => ua == HttpContext.Current.Request.UserAgent));
+				return Enabled = Configuration.UserAgents.All(ua => ua != HttpContext.Current.Request.UserAgent);
 			}
 			set
 			{

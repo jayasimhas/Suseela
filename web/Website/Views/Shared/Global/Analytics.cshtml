@@ -1,8 +1,9 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
-@model Informa.Web.ViewModels.IAnalyticsViewModel
+@using Informa.Web.ViewModels
+@model IAnalyticsViewModel
 
 <script type="text/javascript">
-    /* * *
+	/* * *
     ANALYTICS DATA
     * * */
 	var analytics_data = {
@@ -10,10 +11,10 @@
 		"article_author": "@Html.Raw(Model.ArticleAuthors)",
 		"article_content_type": "@Model.ArticleContentType",
 		"article_embargo": "@Model.ArticleEmbargoed",
-		"article_entitlements" : "@Model.Article_Entitlement",
+		"article_entitlements": "@Model.ArticleEntitlements",
 		"article_media_type": "@Model.ArticleMediaType",
 		"article_number": "@Model.ArcticleNumber",
-		"company_Id" : "@Model.CompanyId",
+		"company_Id": "@Model.CompanyId",
 		"company": "@Model.UserCompany",
 		"created_date": "@Model.DateCreated",
 		"current_email_subscriptions": "@Html.Raw(Model.SubscribedProducts)",
@@ -27,26 +28,28 @@
 		"page_name": "@Model.PageTitleAnalytics",
 		"page_title_override": "@Model.PageTitleOverride",
 		"page_type": "@Model.PageType",
-		"publication":"@Model.PublicationName",
-		"salesforce_account_id":"@Model.AccountId",
-		"salesforce_contact_id" : "@Model.ContactId",
+		"publication": "@Model.PublicationName",
+		"salesforce_account_id": "@Model.AccountId",
+		"salesforce_contact_id": "@Model.ContactId",
 		"taxonomy_region": "@Html.Raw(Model.ArticleRegions)",
 		"taxonomy_subjects": "@Html.Raw(Model.ArticleSubject)",
 		"taxonomy_therapy_areas": "@Html.Raw(Model.ArticleTherapy)",
 		"user_email": "@Model.UserEmail",
 		"user_entitlement_type": "@Html.Raw(Model.UserEntitlements)",
 		"user_id": "@Model.UserName",
-		"User_IP_Address":"@Model.UserIp",
+		"User_IP_Address": "@Model.UserIp",
+		"content_entitlement_type": "@Model.ContentEntitlementType",
+		"entitlement_type": "@Model.EntitlementType"
 	};
 
-    var utag_data = analytics_data;
+	var utag_data = analytics_data;
 
-    (function (a, b, c, d) {
-        a = '//tags.tiqcdn.com/utag/informa/main/@Model.SiteEnvrionment/utag.js';
-        b = document; c = 'script'; d = b.createElement(c); d.src = a;
-        d.type = 'text/java' + c; d.async = true;
-        a = b.getElementsByTagName(c)[0];
-        a.parentNode.insertBefore(d, a);
-    })();
+	(function (a, b, c, d) {
+		a = '//tags.tiqcdn.com/utag/informa/main/@Model.SiteEnvrionment/utag.js';
+		b = document; c = 'script'; d = b.createElement(c); d.src = a;
+		d.type = 'text/java' + c; d.async = true;
+		a = b.getElementsByTagName(c)[0];
+		a.parentNode.insertBefore(d, a);
+	})();
 
 </script>

@@ -6,8 +6,7 @@
             <ul>
                 <li class="action-flag">
                     <a href="#"
-                       class="click-utag pop-out__trigger js-pop-out-trigger"
-                       data-info='{"event_name" : "mail-to-someone"}'
+                       class="pop-out__trigger js-pop-out-trigger"
                        data-pop-out-type="email-search">
                         <span class="action-flag__label">email</span>
                         <svg class="action-flag__icon">
@@ -16,7 +15,14 @@
                     </a>
                 </li>
                 <li class="action-flag">
-                    <a target="_blank" class="search__header-buttons--rss click-utag" href="/rss/search-feed.aspx{{currentLocation}}" data-info='{"event_name":"toolbar_use", "toolbar_tool":"rss"}'>
+                    <a
+						target="_blank"
+						class="search__header-buttons--rss click-utag"
+						href="/rss/search-feed.aspx{{currentLocation}}"
+						data-info='{
+							"event_name": "toolbar_use",
+							"toolbar_tool": "rss"
+						}'>
                         <span class="action-flag__label">rss</span>
                         <svg class="action-flag__icon">
                       	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#rss"></use>
@@ -80,7 +86,7 @@
                         <button class="lightbox-modal__submit button--filled js-lightbox-modal-submit" ng-click="searchIsSaved = false">Yes, I'm Sure</button>
                     </div>
 
-                    @Html.Sitecore().Rendering(Model.ItemReferences.EmailSearchPopOutRendering.ToString())
+                    @Html.Sitecore().Placeholder("search-email-popout")
 
                     @* * *
                     This lightbox backdrop appears when a user lands on the page
