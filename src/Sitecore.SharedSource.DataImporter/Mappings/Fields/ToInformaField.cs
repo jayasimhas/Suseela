@@ -2672,18 +2672,18 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 						var valCollection = descendants.Where(
 							i =>
-								StringUtility.TrimInvalidChars(i.Fields["First Name"].Value.ToLower()) == firstName
-								&& StringUtility.TrimInvalidChars(i.Fields["Last Name"].Value.ToLower()) == lastName
-								&& (string.IsNullOrWhiteSpace(i.Fields["Email Address"].Value) || string.IsNullOrWhiteSpace(email) || StringUtility.TrimInvalidChars(i.Fields["Email Address"].Value.ToLower()) == email)).ToList();
+								StringUtility.TrimInvalidChars(i?.Fields["First Name"]?.Value?.ToLower() ?? string.Empty) == firstName
+								&& StringUtility.TrimInvalidChars(i?.Fields["Last Name"]?.Value?.ToLower() ?? string.Empty) == lastName
+								&& (string.IsNullOrWhiteSpace(i?.Fields["Email Address"]?.Value) || string.IsNullOrWhiteSpace(email) || StringUtility.TrimInvalidChars(i.Fields["Email Address"].Value.ToLower()) == email)).ToList();
 
 						if (valCollection.Count == 0)
 						{
-							var staffitem = item.Add($"{firstName} {lastName}", new TemplateID(IStaff_ItemConstants.TemplateId));
+							var staffitem = item.Add(ItemUtil.ProposeValidItemName($"{firstName} {lastName}"), new TemplateID(IStaff_ItemConstants.TemplateId));
 							using (new EditContext(staffitem))
 							{
-								staffitem.Fields[IStaff_ItemConstants.First_NameFieldName].Value = firstName;
-								staffitem.Fields[IStaff_ItemConstants.Last_NameFieldName].Value = lastName;
-								staffitem.Fields[IStaff_ItemConstants.Email_AddressFieldName].Value = email;
+								staffitem.Fields[IStaff_ItemConstants.First_NameFieldName].Value = authorItem.Fields["First Name"].Value;
+								staffitem.Fields[IStaff_ItemConstants.Last_NameFieldName].Value = authorItem.Fields["Last Name"].Value;
+								staffitem.Fields[IStaff_ItemConstants.Email_AddressFieldName].Value = authorItem.Fields["Email"].Value;
 							}
 
 							valCollection = new List<Item> {staffitem};
@@ -3329,8 +3329,6 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			{"Proof-Of-Concept Through Filing", "Proof-Of-Concept Through Filing"},
 			{"Social Media", "Social Media"},
 			{"Surgical Procedures", "Surgical Procedures"},
-			{"KeepingTrack", "Keeping Track"},
-			{"PerformanceTracker", "Performance Tracker"},
 			{"Keeping Track", "Keeping Track"},
 			{"Performance Tracker", "Performance Tracker"}
 		};
