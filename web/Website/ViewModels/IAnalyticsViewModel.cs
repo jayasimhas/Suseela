@@ -44,5 +44,8 @@ namespace Informa.Web.ViewModels {
         string PageDescription { get; }
         string PageTitleOverride { get; }
         string MetaKeyWords { get; }
+		string ArticleEntitlements { get; }
+		string ContentEntitlementType { get; }
+		string EntitlementType { get; }
     }
 }
