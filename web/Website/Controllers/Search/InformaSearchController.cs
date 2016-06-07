@@ -7,7 +7,6 @@ using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Document;
-using Informa.Library.Utilities.TokenMatcher;
 using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Factory;
 using Velir.Search.Core.Facets;
@@ -29,17 +28,13 @@ namespace Informa.Web.Controllers.Search
 		private readonly IQueryFormatter _queryFormatter;
 		private readonly IGlassInterfaceFactory _interfaceFactory;
 		private readonly ICacheProvider _cacheProvider;
-		protected readonly IAuthenticatedUserContext UserContext;
-		protected readonly IIsSavedDocumentContext IsSavedDocumentContext;
-
+		
 		public InformaSearchController(
 			ISearchManager<InformaSearchResultItem> searchManager,
 			ISearchPageParser parser,
 			IQueryFormatter queryFormatter,
 		IGlassInterfaceFactory interfaceFactory,
-		ICacheProvider cacheProvider,
-			IAuthenticatedUserContext userContext,
-			IIsSavedDocumentContext isSavedDocumentContext)
+		ICacheProvider cacheProvider)
 						: base(searchManager, parser)
 		{
 			_searchManager = searchManager;
@@ -47,8 +42,6 @@ namespace Informa.Web.Controllers.Search
 			_queryFormatter = queryFormatter;
 			_interfaceFactory = interfaceFactory;
 			_cacheProvider = cacheProvider;
-			UserContext = userContext;
-			IsSavedDocumentContext = isSavedDocumentContext;
 		}
 
 		public override IQueryResults Get([ModelBinder(typeof(ApiSearchRequestModelBinder))]ApiSearchRequest request)
