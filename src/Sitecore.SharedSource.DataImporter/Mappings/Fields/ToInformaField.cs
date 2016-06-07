@@ -9,6 +9,7 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
@@ -2658,6 +2659,13 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 					foreach (var str in strs)
 					{
 						var authorItem = Database.GetDatabase("pmbiContent").GetItem(new ID(str));
+
+						if (authorItem == null)
+						{
+							map.Logger.Log(newItem.Paths.FullPath, "Could not find matching Author item in PMBI for given ID", ProcessStatus.FieldError, NewItemField, str);
+							continue;
+						}
+
 						var firstName = StringUtility.TrimInvalidChars(authorItem.Fields["First Name"].Value.ToLower());
 						var lastName = StringUtility.TrimInvalidChars(authorItem.Fields["Last Name"].Value.ToLower());
 						var email = StringUtility.TrimInvalidChars(authorItem.Fields["Email"].Value.ToLower());
@@ -2667,7 +2675,20 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 								StringUtility.TrimInvalidChars(i.Fields["First Name"].Value.ToLower()) == firstName
 								&& StringUtility.TrimInvalidChars(i.Fields["Last Name"].Value.ToLower()) == lastName
 								&& (string.IsNullOrWhiteSpace(i.Fields["Email Address"].Value) || string.IsNullOrWhiteSpace(email) || StringUtility.TrimInvalidChars(i.Fields["Email Address"].Value.ToLower()) == email)).ToList();
-							//?.ID.ToString();
+
+						if (valCollection.Count == 0)
+						{
+							var staffitem = item.Add($"{firstName} {lastName}", new TemplateID(IStaff_ItemConstants.TemplateId));
+							using (new EditContext(staffitem))
+							{
+								staffitem.Fields[IStaff_ItemConstants.First_NameFieldName].Value = firstName;
+								staffitem.Fields[IStaff_ItemConstants.Last_NameFieldName].Value = lastName;
+								staffitem.Fields[IStaff_ItemConstants.Email_AddressFieldName].Value = email;
+							}
+
+							valCollection = new List<Item> {staffitem};
+						}
+
 						if (valCollection.Count > 1)
 						{
 							map.Logger.Log(newItem.Paths.FullPath, "Find more than 1 authors in target DB", ProcessStatus.FieldError, NewItemField, str, $"Name:{firstName} {lastName}--Email: {email}");
