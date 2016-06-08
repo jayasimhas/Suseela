@@ -5,8 +5,6 @@ using Informa.Library.Search;
 using Informa.Library.Search.Formatting;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
-using Informa.Library.User.Authentication;
-using Informa.Library.User.Document;
 using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Factory;
 using Velir.Search.Core.Facets;
@@ -57,16 +55,6 @@ namespace Informa.Web.Controllers.Search
 			q.QueryPredicateBuilder = new InformaQueryPredicateBuilder<InformaSearchResultItem>(_queryFormatter, request);
 
 			var results = _searchManager.GetItems(q);
-
-			//Bookmarking setup
-			if (UserContext.IsAuthenticated)
-			{
-				foreach (InformaSearchResultItem queryResult in results.Results)
-				{
-					queryResult.IsUserAuthenticated = UserContext.IsAuthenticated;
-					queryResult.IsArticleBookmarked = IsSavedDocumentContext.IsSaved(queryResult.ItemId.ToGuid());
-				}
-			}
 
 			var multiSelectFacetResults = GetMultiSelectFacetResults(request);
 
