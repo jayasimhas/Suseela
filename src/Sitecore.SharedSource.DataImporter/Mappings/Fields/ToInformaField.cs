@@ -487,6 +487,52 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			return companies;
 		}
 
+		public Dictionary<string, string> GetDBCompaniesById(IDataMap map, string itemPath)
+		{
+			string cacheKey = "CompaniesById";
+			Dictionary<string, string> o = Context.Items[cacheKey] as Dictionary<string, string>;
+			if (o != null)
+				return o;
+
+			Dictionary<string, string> companies = new Dictionary<string, string>();
+
+			string query = "SELECT[RecordNumber], [Title] FROM [Companies] ORDER BY [Title] DESC";
+			string conn = ConfigurationManager.ConnectionStrings["dcd"].ConnectionString;
+
+			SqlConnection dbCon = null;
+			DataTable returnObj = null;
+			try
+			{
+				dbCon = new SqlConnection(conn);
+				dbCon.Open();
+
+				SqlCommand cmd = new SqlCommand(query);
+				cmd.Connection = new SqlConnection(conn);
+				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+				DataSet ds = new DataSet();
+				adapter.Fill(ds);
+
+				returnObj = ds.Tables[0].Copy();
+			}
+			catch (Exception e)
+			{
+				map.Logger.Log(itemPath, "GetAllCompanies Failed", ProcessStatus.FieldError, NewItemField);
+			}
+			finally
+			{
+				if (dbCon != null)
+					dbCon.Close();
+			}
+
+			foreach (DataRow r in returnObj.Rows)
+			{
+				companies[r["RecordNumber"].ToString()] = r["Title"].ToString();
+			}
+
+			Context.Items[cacheKey] = companies;
+			return companies;
+		}
+
 		public Dictionary<string, string> GetFileCompanies()
 		{
 			Dictionary<string, string> d = new Dictionary<string, string>();
