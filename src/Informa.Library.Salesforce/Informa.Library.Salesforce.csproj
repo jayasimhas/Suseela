@@ -166,10 +166,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="C:\Users\kevinm\Downloads\IN_WebServices.xml">
+    <WebReferenceUrl Include="D:\Projects\Informa\IN_WebServices.xml">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\EBIWebServices\</RelPath>
-      <UpdateFromURL>C:\Users\kevinm\Downloads\IN_WebServices.xml</UpdateFromURL>
+      <UpdateFromURL>D:\Projects\Informa\IN_WebServices.xml</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

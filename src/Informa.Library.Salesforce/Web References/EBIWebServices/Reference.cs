@@ -63,6 +63,8 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         
         private System.Threading.SendOrPostCallback INquerySiteEntitlementsIPOperationCompleted;
         
+        private System.Threading.SendOrPostCallback INquerySubscriptionsAndPurchasesOperationCompleted;
+        
         private System.Threading.SendOrPostCallback isCouponCodeValidOperationCompleted;
         
         private System.Threading.SendOrPostCallback loginOperationCompleted;
@@ -259,6 +261,9 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         
         /// <remarks/>
         public event INquerySiteEntitlementsIPCompletedEventHandler INquerySiteEntitlementsIPCompleted;
+        
+        /// <remarks/>
+        public event INquerySubscriptionsAndPurchasesCompletedEventHandler INquerySubscriptionsAndPurchasesCompleted;
         
         /// <remarks/>
         public event isCouponCodeValidCompletedEventHandler isCouponCodeValidCompleted;
@@ -640,23 +645,24 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
-        public EBI_WebServiceResponse createSavedSearchItem2([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string searchString, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] System.Nullable<bool> IsReceivingEmailAlert, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string UnsubscribeToken) {
+        public EBI_WebServiceResponse createSavedSearchItem2([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string searchString, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] System.Nullable<bool> IsReceivingEmailAlert, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string UnsubscribeToken, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string Publication) {
             object[] results = this.Invoke("createSavedSearchItem2", new object[] {
                         userName,
                         searchString,
                         name,
                         IsReceivingEmailAlert,
-                        UnsubscribeToken});
+                        UnsubscribeToken,
+                        Publication});
             return ((EBI_WebServiceResponse)(results[0]));
         }
         
         /// <remarks/>
-        public void createSavedSearchItem2Async(string userName, string searchString, string name, System.Nullable<bool> IsReceivingEmailAlert, string UnsubscribeToken) {
-            this.createSavedSearchItem2Async(userName, searchString, name, IsReceivingEmailAlert, UnsubscribeToken, null);
+        public void createSavedSearchItem2Async(string userName, string searchString, string name, System.Nullable<bool> IsReceivingEmailAlert, string UnsubscribeToken, string Publication) {
+            this.createSavedSearchItem2Async(userName, searchString, name, IsReceivingEmailAlert, UnsubscribeToken, Publication, null);
         }
         
         /// <remarks/>
-        public void createSavedSearchItem2Async(string userName, string searchString, string name, System.Nullable<bool> IsReceivingEmailAlert, string UnsubscribeToken, object userState) {
+        public void createSavedSearchItem2Async(string userName, string searchString, string name, System.Nullable<bool> IsReceivingEmailAlert, string UnsubscribeToken, string Publication, object userState) {
             if ((this.createSavedSearchItem2OperationCompleted == null)) {
                 this.createSavedSearchItem2OperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateSavedSearchItem2OperationCompleted);
             }
@@ -665,7 +671,8 @@ namespace Informa.Library.Salesforce.EBIWebServices {
                         searchString,
                         name,
                         IsReceivingEmailAlert,
-                        UnsubscribeToken}, this.createSavedSearchItem2OperationCompleted, userState);
+                        UnsubscribeToken,
+                        Publication}, this.createSavedSearchItem2OperationCompleted, userState);
         }
         
         private void OncreateSavedSearchItem2OperationCompleted(object arg) {
@@ -818,6 +825,41 @@ namespace Informa.Library.Salesforce.EBIWebServices {
             if ((this.INquerySiteEntitlementsIPCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.INquerySiteEntitlementsIPCompleted(this, new INquerySiteEntitlementsIPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public EBI_QuerySubscriptionsAndPurchasesResponse INquerySubscriptionsAndPurchases([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName) {
+            object[] results = this.Invoke("INquerySubscriptionsAndPurchases", new object[] {
+                        userName});
+            return ((EBI_QuerySubscriptionsAndPurchasesResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void INquerySubscriptionsAndPurchasesAsync(string userName) {
+            this.INquerySubscriptionsAndPurchasesAsync(userName, null);
+        }
+        
+        /// <remarks/>
+        public void INquerySubscriptionsAndPurchasesAsync(string userName, object userState) {
+            if ((this.INquerySubscriptionsAndPurchasesOperationCompleted == null)) {
+                this.INquerySubscriptionsAndPurchasesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnINquerySubscriptionsAndPurchasesOperationCompleted);
+            }
+            this.InvokeAsync("INquerySubscriptionsAndPurchases", new object[] {
+                        userName}, this.INquerySubscriptionsAndPurchasesOperationCompleted, userState);
+        }
+        
+        private void OnINquerySubscriptionsAndPurchasesOperationCompleted(object arg) {
+            if ((this.INquerySubscriptionsAndPurchasesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.INquerySubscriptionsAndPurchasesCompleted(this, new INquerySubscriptionsAndPurchasesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -2933,280 +2975,6 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
-    public partial class EBI_SubscriptionAndPurchase {
-        
-        private string archiveCodeField;
-        
-        private string descriptionField;
-        
-        private string documentIdField;
-        
-        private System.Nullable<System.DateTime> expirationDateField;
-        
-        private bool expirationDateFieldSpecified;
-        
-        private string nameField;
-        
-        private string productCodeField;
-        
-        private string productGUIDField;
-        
-        private string productratePlanIDField;
-        
-        private string productTypeField;
-        
-        private System.Nullable<System.DateTime> purchaseDateField;
-        
-        private bool purchaseDateFieldSpecified;
-        
-        private string subscriptionTypeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string ArchiveCode {
-            get {
-                return this.archiveCodeField;
-            }
-            set {
-                this.archiveCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string documentId {
-            get {
-                return this.documentIdField;
-            }
-            set {
-                this.documentIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> expirationDate {
-            get {
-                return this.expirationDateField;
-            }
-            set {
-                this.expirationDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool expirationDateSpecified {
-            get {
-                return this.expirationDateFieldSpecified;
-            }
-            set {
-                this.expirationDateFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string productCode {
-            get {
-                return this.productCodeField;
-            }
-            set {
-                this.productCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string productGUID {
-            get {
-                return this.productGUIDField;
-            }
-            set {
-                this.productGUIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string productratePlanID {
-            get {
-                return this.productratePlanIDField;
-            }
-            set {
-                this.productratePlanIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string productType {
-            get {
-                return this.productTypeField;
-            }
-            set {
-                this.productTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> purchaseDate {
-            get {
-                return this.purchaseDateField;
-            }
-            set {
-                this.purchaseDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool purchaseDateSpecified {
-            get {
-                return this.purchaseDateFieldSpecified;
-            }
-            set {
-                this.purchaseDateFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string subscriptionType {
-            get {
-                return this.subscriptionTypeField;
-            }
-            set {
-                this.subscriptionTypeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
-    public partial class EBI_QuerySubscriptionsAndPurchasesResponse {
-        
-        private EBI_Error[] errorsField;
-        
-        private EBI_SubscriptionAndPurchase[] subscriptionsAndPurchasesField;
-        
-        private System.Nullable<bool> successField;
-        
-        private bool successFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("errors", IsNullable=true)]
-        public EBI_Error[] errors {
-            get {
-                return this.errorsField;
-            }
-            set {
-                this.errorsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("subscriptionsAndPurchases", IsNullable=true)]
-        public EBI_SubscriptionAndPurchase[] subscriptionsAndPurchases {
-            get {
-                return this.subscriptionsAndPurchasesField;
-            }
-            set {
-                this.subscriptionsAndPurchasesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<bool> success {
-            get {
-                return this.successField;
-            }
-            set {
-                this.successField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool successSpecified {
-            get {
-                return this.successFieldSpecified;
-            }
-            set {
-                this.successFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
-    public partial class EBI_Error {
-        
-        private string messageField;
-        
-        private string statusCodeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string message {
-            get {
-                return this.messageField;
-            }
-            set {
-                this.messageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string statusCode {
-            get {
-                return this.statusCodeField;
-            }
-            set {
-                this.statusCodeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
     public partial class EBI_SavedSearch2 {
         
         private System.Nullable<bool> isReceivingEmailAlertField;
@@ -3214,6 +2982,8 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         private bool isReceivingEmailAlertFieldSpecified;
         
         private string nameField;
+        
+        private string publicationField;
         
         private System.Nullable<System.DateTime> saveDateField;
         
@@ -3253,6 +3023,17 @@ namespace Informa.Library.Salesforce.EBIWebServices {
             }
             set {
                 this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Publication {
+            get {
+                return this.publicationField;
+            }
+            set {
+                this.publicationField = value;
             }
         }
         
@@ -3358,6 +3139,41 @@ namespace Informa.Library.Salesforce.EBIWebServices {
             }
             set {
                 this.successFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
+    public partial class EBI_Error {
+        
+        private string messageField;
+        
+        private string statusCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string statusCode {
+            get {
+                return this.statusCodeField;
+            }
+            set {
+                this.statusCodeField = value;
             }
         }
     }
@@ -5595,6 +5411,245 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
+    public partial class EBI_SubscriptionAndPurchase {
+        
+        private string archiveCodeField;
+        
+        private string descriptionField;
+        
+        private string documentIdField;
+        
+        private System.Nullable<System.DateTime> expirationDateField;
+        
+        private bool expirationDateFieldSpecified;
+        
+        private string nameField;
+        
+        private string productCodeField;
+        
+        private string productGUIDField;
+        
+        private string productratePlanIDField;
+        
+        private string productTypeField;
+        
+        private System.Nullable<System.DateTime> purchaseDateField;
+        
+        private bool purchaseDateFieldSpecified;
+        
+        private string subscriptionTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string ArchiveCode {
+            get {
+                return this.archiveCodeField;
+            }
+            set {
+                this.archiveCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string documentId {
+            get {
+                return this.documentIdField;
+            }
+            set {
+                this.documentIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<System.DateTime> expirationDate {
+            get {
+                return this.expirationDateField;
+            }
+            set {
+                this.expirationDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool expirationDateSpecified {
+            get {
+                return this.expirationDateFieldSpecified;
+            }
+            set {
+                this.expirationDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string productCode {
+            get {
+                return this.productCodeField;
+            }
+            set {
+                this.productCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string productGUID {
+            get {
+                return this.productGUIDField;
+            }
+            set {
+                this.productGUIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string productratePlanID {
+            get {
+                return this.productratePlanIDField;
+            }
+            set {
+                this.productratePlanIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string productType {
+            get {
+                return this.productTypeField;
+            }
+            set {
+                this.productTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<System.DateTime> purchaseDate {
+            get {
+                return this.purchaseDateField;
+            }
+            set {
+                this.purchaseDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool purchaseDateSpecified {
+            get {
+                return this.purchaseDateFieldSpecified;
+            }
+            set {
+                this.purchaseDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string subscriptionType {
+            get {
+                return this.subscriptionTypeField;
+            }
+            set {
+                this.subscriptionTypeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
+    public partial class EBI_QuerySubscriptionsAndPurchasesResponse {
+        
+        private EBI_Error[] errorsField;
+        
+        private EBI_SubscriptionAndPurchase[] subscriptionsAndPurchasesField;
+        
+        private System.Nullable<bool> successField;
+        
+        private bool successFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("errors", IsNullable=true)]
+        public EBI_Error[] errors {
+            get {
+                return this.errorsField;
+            }
+            set {
+                this.errorsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("subscriptionsAndPurchases", IsNullable=true)]
+        public EBI_SubscriptionAndPurchase[] subscriptionsAndPurchases {
+            get {
+                return this.subscriptionsAndPurchasesField;
+            }
+            set {
+                this.subscriptionsAndPurchasesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<bool> success {
+            get {
+                return this.successField;
+            }
+            set {
+                this.successField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool successSpecified {
+            get {
+                return this.successFieldSpecified;
+            }
+            set {
+                this.successFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
     public partial class IN_Entitlement {
         
         private string archiveCodeField;
@@ -7007,6 +7062,32 @@ namespace Informa.Library.Salesforce.EBIWebServices {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((IN_QueryEntitlementsResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void INquerySubscriptionsAndPurchasesCompletedEventHandler(object sender, INquerySubscriptionsAndPurchasesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class INquerySubscriptionsAndPurchasesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal INquerySubscriptionsAndPurchasesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public EBI_QuerySubscriptionsAndPurchasesResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((EBI_QuerySubscriptionsAndPurchasesResponse)(this.results[0]));
             }
         }
     }

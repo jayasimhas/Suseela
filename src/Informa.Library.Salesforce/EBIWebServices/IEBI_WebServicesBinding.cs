@@ -22,7 +22,7 @@ namespace Informa.Library.Salesforce.EBIWebServices
 
 
 	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "EBI_WebServicesBinding", Namespace = "http://soap.sforce.com/schemas/class/EBI_WebServices")]
 	public interface IEBI_WebServicesBinding
 	{
@@ -148,7 +148,7 @@ namespace Informa.Library.Salesforce.EBIWebServices
 		[System.Web.Services.WebMethodAttribute()]
 		[System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace = "http://soap.sforce.com/schemas/class/EBI_WebServices", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
 		[return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable = true)]
-		EBI_WebServiceResponse createSavedSearchItem2([System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string searchString, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] System.Nullable<bool> IsReceivingEmailAlert, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string UnsubscribeToken);
+		EBI_WebServiceResponse createSavedSearchItem2([System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string searchString, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] System.Nullable<bool> IsReceivingEmailAlert, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string UnsubscribeToken, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string Publication);
 
 		/// <remarks/>
 		[System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
@@ -193,6 +193,17 @@ namespace Informa.Library.Salesforce.EBIWebServices
 		[System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace = "http://soap.sforce.com/schemas/class/EBI_WebServices", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
 		[return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable = true)]
 		IN_QueryEntitlementsResponse INquerySiteEntitlementsIP([System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string ipAddress);
+
+		/// <remarks/>
+		[System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+		[System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+		[System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+		[System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+		[System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+		[System.Web.Services.WebMethodAttribute()]
+		[System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace = "http://soap.sforce.com/schemas/class/EBI_WebServices", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+		[return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable = true)]
+		EBI_QuerySubscriptionsAndPurchasesResponse INquerySubscriptionsAndPurchases([System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string userName);
 
 		/// <remarks/>
 		[System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
@@ -623,4 +634,5 @@ namespace Informa.Library.Salesforce.EBIWebServices
 		[return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable = true)]
 		EBI_WebServiceResponse updateShippingName([System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] EBI_Name ShippingName);
 	}
+
 }
