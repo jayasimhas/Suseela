@@ -42,9 +42,6 @@ But you can also use "patch:attribute" for clarity:
       </mvc.renderRendering>
 
       <httpRequestBegin>
-        <processor type="Sitecore.Pipelines.HttpRequest.SiteResolver, Sitecore.Kernel">
-          <patch:attribute name="type">Informa.Library.CustomSitecore.Pipelines.HttpRequest.InformaSiteResolver,Informa.Library</patch:attribute>
-        </processor>
         <processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.ArticleItemResolver, Informa.Library"
                    ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.ArticleItemResolver, Informa.Library"
                    factory="Autofac"
@@ -183,6 +180,11 @@ But you can also use "patch:attribute" for clarity:
       <setting name="RequireLockBeforeEditing" value="true"/>
 	  <!-- Protocol -->
 	  <setting name="Site.Protocol" value="${Site.Protocol}" />
+
+		<setting name="Preview.ResolveSite">
+			<patch:attribute name="value">true</patch:attribute>
+		</setting>
+		
       <!-- Velir Settings -->
       <setting  name="Env.Value" value="${Env.Value}" />
       <!-- Production Host -->

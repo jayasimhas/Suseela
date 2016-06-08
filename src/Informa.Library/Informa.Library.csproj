@@ -341,7 +341,6 @@
     <Compile Include="ComponentModel\DataAnnotations\RequiredIfAttribute.cs" />
     <Compile Include="CustomSitecore\Events\AddFromBranchPreset.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
-    <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaSiteResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
