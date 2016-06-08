@@ -1270,7 +1270,7 @@
     <Content Include="Views\Shared\Components\JavascriptComponent.cshtml" />
     <Content Include="Views\Shared\Global\MetaNoIndex.cshtml" />
     <Content Include="Views\Article\ArticlePrologueAskTheAnalyst.cshtml" />
-    <Content Include="Views\Shared\PopOuts\AskTheAnalyst.cshtml" />
+    <Content Include="Views\Shared\PopOuts\ATA.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
