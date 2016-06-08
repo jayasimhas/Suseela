@@ -4,7 +4,7 @@ namespace Informa.Library.Salesforce.User.Entitlement
 {
 	public class SalesforceEntitlmentFactory : ISalesforceEntitlmentFactory
 	{
-		public SalesforceEntitlement Create(EBI_Entitlement entitlement)
+		public SalesforceEntitlement Create(IN_Entitlement entitlement)
 		{
 			var archiveLimitedDays = ArchiveCodeToDays(entitlement.ArchiveCode);
 			var archiveLimited = archiveLimitedDays != -1;
@@ -17,7 +17,9 @@ namespace Informa.Library.Salesforce.User.Entitlement
 				DocumentId = entitlement.documentId,
 				ProductCode = entitlement.ProductCode,
 				ProductId = entitlement.productGUID,
-				ProductType = entitlement.ProductType
+				ProductType = entitlement.ProductType,
+				OpportunityId = entitlement.opportunityId,
+				OpportunityLineItemId = entitlement.opportunityLineItemId
 			};
 		}
 

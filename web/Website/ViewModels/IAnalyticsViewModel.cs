@@ -47,5 +47,7 @@ namespace Informa.Web.ViewModels {
 		string ArticleEntitlements { get; }
 		string ContentEntitlementType { get; }
 		string EntitlementType { get; }
+	    string OpportunityIds { get; }
+	    string OpportunityLineItemIds { get; }
     }
 }

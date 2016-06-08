@@ -116,7 +116,7 @@ namespace Informa.Web.ViewModels
                 return !string.IsNullOrEmpty(allSubscriptions) ? $"[{allSubscriptions}]" : string.Empty;
             }
         }
-        public string CustomTags => GlassModel?.Custom_Meta_Tags ?? string.Empty;
+	    public string CustomTags => GlassModel?.Custom_Meta_Tags ?? string.Empty;
         public string ContactId => WebAuthenticateUser.AuthenticatedUser?.ContactId ?? string.Empty;
         public string AccountId
         {
@@ -139,7 +139,23 @@ namespace Informa.Web.ViewModels
                 return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
             }
         }
-        public string UserIp => UserIpAddressContext.IpAddress.ToString();
+		public string OpportunityIds
+		{
+			get
+			{
+				var ids = string.Join("|", UserEntitlementsContext.Entitlements.Select(i => $"'{i.OpportunityId}'"));
+				return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
+			}
+		}
+		public string OpportunityLineItemIds
+		{
+			get
+			{
+				var ids = string.Join("|", UserEntitlementsContext.Entitlements.Select(i => $"'{i.OpportunityLineItemId}'"));
+				return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
+			}
+		}
+		public string UserIp => UserIpAddressContext.IpAddress.ToString();
         public string DateCreated => (Sitecore.Context.Item != null && Sitecore.Context.Item.Statistics.Created > DateTime.MinValue) 
                     ? Sitecore.Context.Item.Statistics.Created.ToServerTimeZone().ToString("MM/dd/yyyy")
                     : DateTime.MinValue.ToString("MM/dd/yyyy");
