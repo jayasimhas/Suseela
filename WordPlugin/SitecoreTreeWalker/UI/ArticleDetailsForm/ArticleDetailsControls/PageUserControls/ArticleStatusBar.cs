@@ -70,7 +70,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             var history = SitecoreClient.GetItemWorkflowHistory(_parent.ArticleDetails.ArticleGuid);
             if (_parent.ArticleDetails.IsPublished)
             {
-                MessageBox.Show(string.Format("Published on '{0}'", history.LastOrDefault().Item1.ToLocalTime().ToString("MM/dd/yyyy hh:mm:00 tt")));
+                DateTime actualPublishDate = SitecoreClient.GetArticleActualPublishedDate(_parent.ArticleDetails.ArticleGuid);
+
+                if (actualPublishDate != DateTime.MinValue)
+                    MessageBox.Show(string.Format("Published on '{0}'", actualPublishDate.ToLocalTime().ToString("MM/dd/yyyy hh:mm:00 tt")));
             }
             else
             {

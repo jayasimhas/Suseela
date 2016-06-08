@@ -874,14 +874,6 @@ namespace Informa.Web.Controllers
         }
     }
 
-    public class GetArticleWorkflowHistoryController : ApiController
-    {
-        public JsonResult<List<Tuple<DateTime, string, bool>>> Get(Guid itemID)
-        {
-            return Json(new Informa.Library.Utilities.SitecoreUtils.WorkflowUtil().GetWorkflowHistory(new ID(itemID)));
-        }
-    }
-
     public class GetArticleActualPublishedDateController : ApiController
     {
         ArticleUtil _articleUtil;
@@ -896,4 +888,11 @@ namespace Informa.Web.Controllers
         }
     }
 
+    public class GetArticleWorkflowHistoryController : ApiController
+    {
+        public JsonResult<List<Tuple<DateTime, string, bool>>> Get(Guid itemID)
+        {
+            return Json(new Informa.Library.Utilities.SitecoreUtils.WorkflowUtil().GetWorkflowHistory(new ID(itemID)));
+        }
+    }
 }
