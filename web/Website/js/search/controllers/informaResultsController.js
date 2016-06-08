@@ -1,4 +1,5 @@
-/* global angular */
+/* global angular, analytics_data, utag */
+
 var informaSearchApp = angular.module('informaSearchApp');
 
 var InformaResultsController = function InformaResultsController($scope, $sanitize, searchService, viewHeadlinesStateService, $timeout, $window) {
@@ -22,7 +23,7 @@ var InformaResultsController = function InformaResultsController($scope, $saniti
             }
          }
         count = count + 1;
-    }
+    };
 
     $scope.$watchCollection(function () {
         return searchService.getResults();

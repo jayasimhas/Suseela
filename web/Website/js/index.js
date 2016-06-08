@@ -288,7 +288,9 @@ $(document).ready(function() {
     var userRegistrationController = new FormController({
         observe: '.form-registration',
         successCallback: function(form, context, event) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "registration successful" }) );
+            analyticsEvent( $.extend(analytics_data, {
+				registration_type: context.response.registration_type
+			}) );
         },
         failureCallback: function(form,response) {
 
@@ -308,7 +310,9 @@ $(document).ready(function() {
     var userRegistrationFinalController = new FormController({
         observe: '.form-registration-optins',
         successCallback: function(form, context, event) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "registration successful" }) );
+			analyticsEvent( $.extend(analytics_data, {
+				registration_type: context.response.registration_type
+			}) );
         },
         failureCallback: function(form, response) {
             var errorMsg = $(".page-registration__error").text();
