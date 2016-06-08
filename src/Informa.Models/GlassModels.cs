@@ -929,6 +929,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IGeneral_Content_PageConstants.Subnavigation_ItemsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Subnavigation_Items  {get; set;}
 								/// <summary>
+					/// The Summary field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: a7387240-ca22-44c6-a7a4-75bda76fbc70</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IGeneral_Content_PageConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Summary  {get; set;}
+								/// <summary>
 					/// The Exclude From Google Search field.
 					/// <para></para>
 					/// <para>Field Type: Checkbox</para>		
@@ -986,6 +995,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IGeneral_Content_PageConstants.Subnavigation_ItemsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Subnavigation_Items  {get; set;}
 										/// <summary>
+						/// The Summary field.
+						/// <para></para>
+						/// <para>Field Type: Multi-Line Text</para>		
+						/// <para>Field ID: a7387240-ca22-44c6-a7a4-75bda76fbc70</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IGeneral_Content_PageConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Summary  {get; set;}
+										/// <summary>
 						/// The Exclude From Google Search field.
 						/// <para></para>
 						/// <para>Field Type: Checkbox</para>		
@@ -1020,6 +1038,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Subnavigation_ItemsFieldId = new ID("7d43ad1f-9748-4438-9cb0-74c457376526");
 			public const string Subnavigation_ItemsFieldName = "Subnavigation Items";
+
+						
+					
+			public static readonly ID SummaryFieldId = new ID("a7387240-ca22-44c6-a7a4-75bda76fbc70");
+			public const string SummaryFieldName = "Summary";
 
 						
 					
