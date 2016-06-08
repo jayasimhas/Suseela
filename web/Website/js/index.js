@@ -24,12 +24,14 @@ import './components/save-search-component';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';
+
 import { toggleIcons } from './toggle-icons';
+// Global scope to play nicely with Angular
+window.toggleIcons = toggleIcons;
 
 /* Polyfill for scripts expecting `jQuery`. Also see: CSS selectors support in zepto.min.js */
 window.jQuery = $;
 
-window.toggleIcons = toggleIcons;
 
 // Make sure proper elm gets the click event
 // When a user submits a Forgot Password request, this will display the proper
@@ -130,11 +132,6 @@ $(document).ready(function() {
     * * */
     window.indexBookmarks = function() { // Toggle bookmark icon
         $('.js-bookmark-article').on('click', function bookmarkArticle(e) {
-            // Make sure proper elm gets the click event
-            // if (e.target !== this) {
-            //     this.click();
-            //     return;
-            // }
 
             e.preventDefault();
             window.bookmark.toggle(this);
@@ -413,9 +410,9 @@ $(document).ready(function() {
             if($('#DoNotSendOffersOptIn').prop('checked')) {
                 event_data.event_title = 'email_preferences_opt_out';
             } else {
-            
+
                 event_data.event_title = 'email_preferences_update';
-            
+
                 $('.js-account-email-checkbox').each(function(index, item) {
                     if(this.checked) {
                         optingIn = optingIn ? optingIn + '|' + this.value : this.value;
@@ -461,8 +458,9 @@ $(document).ready(function() {
             }
 
 			var event_data = {
-				event_title: 'bookmark_removal',
-				bookmark_title: $(form).data('analytics-title')
+				event_name: 'bookmark_removal',
+				bookmark_title: $(form).data('analytics-title'),
+				bookmark_publication: $(form).data('analytics-publication')
 			};
 
 			analyticsEvent( $.extend(analytics_data, event_data) );

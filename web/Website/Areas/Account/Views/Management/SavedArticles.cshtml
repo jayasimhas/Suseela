@@ -126,7 +126,8 @@
 								<td class="sortable-table__col sortable-table__submit-wrapper">
 									<form class="form-remove-saved-document"
 										  data-on-submit="/Account/api/SavedDocumentApi/RemoveItem/"
-										  data-analytics-title="@Html.Raw(item.Title)">
+										  data-analytics-title="@Html.Raw(item.Title)"
+										  data-analytics-publication="@Html.Raw(item.Publication.Name)">
 
 										<input name="DocumentID"
 											   id="DocumentID"
