@@ -895,5 +895,14 @@ namespace InformaSitecoreWord.Sitecore
                 return JsonConvert.DeserializeObject<List<Tuple<DateTime, string, bool>>>(response.Content.ReadAsStringAsync().Result);
             }
         }
+
+        public static DateTime GetArticleActualPublishedDate(Guid itemID)
+        {
+            using (var client = new HttpClient(_handler, false))
+            {
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleActualPublishedDate?itemID=" + itemID).Result;
+                return JsonConvert.DeserializeObject<DateTime>(response.Content.ReadAsStringAsync().Result);
+    }
+        }
     }
 }
