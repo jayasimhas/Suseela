@@ -25,11 +25,11 @@ namespace Informa.Library.Site
 
 		public IEnumerable<ISite_Root> SiteRoots => CacheProvider.GetFromCache(cacheKey, BuildSiteRootsContext);
 
-		private IEnumerable<ISite_Root> BuildSiteRootsContext()
+		private IList<ISite_Root> BuildSiteRootsContext()
 		{
 			var contentItem = SitecoreService.GetItem<IGlassBase>("/sitecore/content");
 			var siteRoots = contentItem._ChildrenWithInferType.OfType<ISite_Root>();
-			return siteRoots;
+			return siteRoots.ToList();
 		}
 	}
 }
