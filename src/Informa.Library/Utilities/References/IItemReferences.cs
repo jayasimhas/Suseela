@@ -35,8 +35,7 @@ namespace Informa.Library.Utilities.References
     //Issues Items
     Guid IssuesRootCurrent { get; }
     Guid IssuesRootArchive { get; }
-    Guid IssueTemplate { get; }
-    Guid IssueArchivedTemplate { get; }
+
      
     // Templates
     Guid FolderTemplate { get; }

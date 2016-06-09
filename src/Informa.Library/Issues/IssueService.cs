@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Glass.Mapper.Sc;
-using Informa.Library.Navigation;
-using Informa.Library.Services.Global;
 using Informa.Library.Utilities.References;
-using Jabberwocky.Autofac.Attributes;
-using Jabberwocky.Core.Caching;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Issues;
 using Sitecore;
 using Sitecore.Data;
 using Sitecore.Data.Items;
@@ -20,8 +14,8 @@ namespace Informa.Library.Issues
   //[AutowireService(LifetimeScope.SingleInstance)]
   public class IssueService : IIssueService
   {
-    private readonly ISitecoreContext _sitecoreContext;
     private readonly IItemReferences _itemReferences;
+    private readonly ISitecoreContext _sitecoreContext;
 
     public IssueService(ISitecoreContext sitecoreContext, IItemReferences itemReferences)
     {
@@ -29,47 +23,57 @@ namespace Informa.Library.Issues
       _itemReferences = itemReferences;
     }
 
-
+    /// <summary>
+    ///   Create an issue
+    /// </summary>
+    /// <param name="title"></param>
+    /// <param name="date"></param>
+    /// <param name="notes"></param>
+    /// <returns></returns>
     public Item Create(string title, DateTime date, string notes)
     {
-      Item currentIssuesRoot = _sitecoreContext.GetItem<Item>(_itemReferences.IssuesRootCurrent);
+      var currentIssuesRoot = _sitecoreContext.GetItem<Item>(_itemReferences.IssuesRootCurrent);
 
       if (currentIssuesRoot == null)
       {
-        Log.Error("Could not find Current Issues Root item",this);
+        Log.Error("Could not find Current Issues Root item", this);
         return null;
       }
-      string issueItemName = ItemUtil.ProposeValidItemName(title);
-     
+
+      var issueItemName = ItemUtil.ProposeValidItemName(title);
 
       using (new SecurityDisabler())
       {
-        Item newItem = currentIssuesRoot.Add(issueItemName,
-       new TemplateItem(_sitecoreContext.GetItem<Item>(_itemReferences.IssueTemplate)));
+        var newItem = currentIssuesRoot.Add(issueItemName,
+          new TemplateItem(_sitecoreContext.GetItem<Item>(IIssueConstants.TemplateId.ToString())));
 
         newItem.Editing.BeginEdit();
 
-        newItem["Title"] = title;
-        newItem["Publish Date"] = DateUtil.ToIsoDate(date); ;
-        newItem["Issue Notes"] = notes;
+        newItem[IIssueConstants.TitleFieldName] = title;
+        newItem[IIssueConstants.Publish_DateFieldName] = DateUtil.ToIsoDate(date);
+        ;
+        newItem[IIssueConstants.Issue_NotesFieldName] = notes;
 
         newItem.Editing.EndEdit();
 
         return newItem;
       }
-
-      
     }
 
+    /// <summary>
+    ///   Delete an issue
+    /// </summary>
+    /// <param name="issueItemId"></param>
+    /// <returns></returns>
     public bool Delete(string issueItemId)
     {
       if (!ID.IsID(issueItemId))
       {
-        Log.Error("Invalid ID for Deletion: " + issueItemId,this);
+        Log.Error("Invalid ID for Deletion: " + issueItemId, this);
         return false;
       }
 
-      Item issueItem = GetIssueItem(issueItemId);
+      var issueItem = GetIssueItem(issueItemId);
       if (issueItem == null)
       {
         return false;
@@ -80,45 +84,42 @@ namespace Informa.Library.Issues
         issueItem.Delete();
       }
 
-      return (_sitecoreContext.GetItem<Item>(issueItemId) == null);
+      return _sitecoreContext.GetItem<Item>(issueItemId) == null;
     }
 
-    private Item GetIssueItem(string issueItemId)
-    {
-      Item issueItem = _sitecoreContext.GetItem<Item>(issueItemId);
-
-      if (issueItem == null)
-      {
-        Log.Error("Issue not found for ID: " + issueItemId, this);
-        return null;
-      }
-
-      return issueItem;
-    }
-
+    /// <summary>
+    ///   Arhive an issue.  This will do the following
+    ///   1) Move the issue item and change the template to archived issue
+    ///   2) Remove the children cloned items and put their ids in the archived issue
+    /// </summary>
+    /// <param name="issueItemId"></param>
+    /// <returns></returns>
     public Item Archive(string issueItemId)
     {
-
-      Item issueItem = GetIssueItem(issueItemId); 
+      var issueItem = GetIssueItem(issueItemId);
       if (issueItem == null)
       {
-        return null; 
+        return null;
       }
       using (new SecurityDisabler())
       {
         //Move the item to the archive folder
-        issueItem.MoveTo(_sitecoreContext.GetItem<Item>(_itemReferences.IssuesRootArchive));
+        var archiveRoot = _sitecoreContext.GetItem<Item>(_itemReferences.IssuesRootArchive);
+        var year = issueItem.Statistics.Created.Year;
+        var archivedFolder = GetOrCreateItem(_sitecoreContext.Database, archiveRoot, year.ToString(),
+          _sitecoreContext.GetItem<Item>(IIssue_FolderConstants.TemplateId.ToString()));
+        issueItem.MoveTo(archivedFolder);
 
         //Get all of the current article IDs and remove them
-        List<string> issueItemIds =
+        var issueItemIds =
           issueItem.Axes.GetDescendants().Select(descendant => descendant.Source.ID.ToString()).ToList();
-        
+
         //Change the template to archived issue template
-        issueItem.ChangeTemplate(new TemplateItem(_sitecoreContext.GetItem<Item>(_itemReferences.IssueArchivedTemplate)));
+        issueItem.ChangeTemplate(_sitecoreContext.GetItem<Item>(IArchived_IssueConstants.TemplateId.ToString()));
 
         //Save the list of article ids to the archived issue multi list
         issueItem.Editing.BeginEdit();
-        issueItem["Issue Content"] = string.Join("|", issueItemIds);
+        issueItem[IArchived_IssueConstants.Issue_ContentsFieldName] = string.Join("|", issueItemIds);
         issueItem.Editing.EndEdit();
 
         //Delete any children items as they are now saved in the multilist
@@ -127,5 +128,56 @@ namespace Informa.Library.Issues
         return issueItem;
       }
     }
-  } 
+
+    /// <summary>
+    ///   Gets an issue and verifies that it is the correct type of item
+    /// </summary>
+    /// <param name="issueItemId"></param>
+    /// <returns></returns>
+    private Item GetIssueItem(string issueItemId)
+    {
+      var issueItem = _sitecoreContext.GetItem<Item>(issueItemId);
+
+      if (issueItem == null)
+      {
+        Log.Error("Issue not found for ID: " + issueItemId, this);
+        return null;
+      }
+
+      //if(issueItem.TemplateID != [Add ID])
+      //{
+      //  Log.Error("Item was not an issue: " + issueItem.Paths.Path, this);
+      //  return null;
+      //}
+
+      return issueItem;
+    }
+
+    private Item GetOrCreateItem(Database database, Item root, string name, TemplateItem template)
+    {
+      if (string.IsNullOrEmpty(name))
+      {
+        return null;
+      }
+
+      if (database == null || root == null || template == null)
+      {
+        return null;
+      }
+
+      var cleanName = ItemUtil.ProposeValidItemName(name);
+
+      var path = root.Paths.Path + "/" + cleanName;
+
+      var item = database.GetItem(path);
+
+      if (item == null)
+      {
+        var newContentItem = root.Add(cleanName, template);
+        return newContentItem;
+      }
+
+      return item;
+    }
+  }
 }
