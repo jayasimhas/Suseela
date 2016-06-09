@@ -412,10 +412,10 @@ $(document).ready(function() {
             var optingOut = null;
 
             if($('#DoNotSendOffersOptIn').prop('checked')) {
-                event_data.event_title = 'email_preferences_opt_out';
+                event_data.event_name = 'email_preferences_opt_out';
             } else {
 
-                event_data.event_title = 'email_preferences_update';
+                event_data.event_name = 'email_preferences_update';
 
                 $('.js-account-email-checkbox').each(function(index, item) {
                     if(this.checked) {
@@ -628,7 +628,7 @@ $(document).ready(function() {
 
         var linkString;
 
-	    if(this.href.indexOf(location.hostname) == -1) {
+		if(this.href.indexOf(location.hostname) == -1) {
             linkString = 'External:' + this.href;
         } else {
             linkString = this.href;
