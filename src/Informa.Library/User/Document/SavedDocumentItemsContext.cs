@@ -3,20 +3,16 @@ using System.Collections.Generic;
 
 namespace Informa.Library.User.Document
 {
-	[AutowireService]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class SavedDocumentItemsContext : ISavedDocumentItemsContext
 	{
-		protected readonly ISavedDocumentsContext SavedDocumentsContext;
-		protected readonly ISavedDocumentItemsFactory SavedDocumentItemsFactory;
-
 		public SavedDocumentItemsContext(
 			ISavedDocumentsContext savedDocumentsContext,
 			ISavedDocumentItemsFactory savedDocumentItemsFactory)
 		{
-			SavedDocumentsContext = savedDocumentsContext;
-			SavedDocumentItemsFactory = savedDocumentItemsFactory;
+			SavedDocumentItems = savedDocumentItemsFactory.Create(savedDocumentsContext.SavedDocuments);
 		}
 
-		public IEnumerable<ISavedDocumentItem> SavedDocumentItems => SavedDocumentItemsFactory.Create(SavedDocumentsContext.SavedDocuments);
+		public IEnumerable<ISavedDocumentItem> SavedDocumentItems { get; set; }
 	}
 }
