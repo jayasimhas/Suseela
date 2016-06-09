@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Informa.Library.Utilities;
 using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Events;
 using Sitecore.SecurityModel;
-using Sitecore.StringExtensions;
 
 namespace Informa.Library.CustomSitecore.Events {
     
@@ -50,9 +46,11 @@ namespace Informa.Library.CustomSitecore.Events {
                 && string.IsNullOrEmpty(finalLayout))
                     continue;
 
+                //replace original datasources with new ones
                 layout = UpdateMatches(layout, branchItemPath, allBranchItems, allNewItems);
                 finalLayout = UpdateMatches(finalLayout, branchItemPath, allBranchItems, allNewItems);
 
+                //update new item layout values
                 using (new SecurityDisabler())
                 {
                     using (new EditContext(i)) {
