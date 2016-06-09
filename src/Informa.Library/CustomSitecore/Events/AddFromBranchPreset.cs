@@ -2,69 +2,93 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Informa.Library.Utilities;
+using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Events;
+using Sitecore.SecurityModel;
 using Sitecore.StringExtensions;
 
 namespace Informa.Library.CustomSitecore.Events {
-    /// <summary>
-    /// Augments the functionality of Branch Templates by making any rendering data sources set in the layout on the branch
-    /// that point to other children of the branch be repointed to the newly created branch item
-    /// instead of the source branch item. This allows for templating including data source items using branches.
-    /// </summary>
-    /// <remarks>
-    /// See the following for inspiration: https://github.com/kamsar/BranchPresets
-    /// </remarks>
+    
     public class AddFromBranchPreset {
         public virtual void OnItemAdded(object sender, EventArgs args) {
             Assert.ArgumentNotNull(args, "args");
 
-            Item targetItem = Event.ExtractParameter(args, 0) as Item;
-            if (targetItem?.Branch == null || targetItem.Branch.InnerItem.Children.Count != 1)
+            Item newItem = Event.ExtractParameter(args, 0) as Item;
+            if (newItem?.Branch == null || newItem.Branch.InnerItem.Children.Count != 1)
                 return;
 
-            // find all rendering data sources on the branch root item that point to an item under the branch template,
-            // and repoint them to the equivalent subitem under the branch instance
-            RewriteBranchRenderingDataSources(targetItem, targetItem.Branch);
+            Item branchItem = newItem.Branch.InnerItem;
+
+            //build dictionary of items of the branch items: guid/item 
+            string branchItemPath = branchItem.Children.First().Paths.FullPath;
+            var allBranchItems = branchItem.Axes
+                .GetDescendants()
+                .Concat(new Item[] { branchItem })
+                .ToDictionary(a => a.ID.ToString());
+            
+            //build dictionary of items in new tree: path/item
+            string newRootPath = newItem.Paths.FullPath;
+            var allNewItems = newItem.Axes
+                .GetDescendants()
+                .Concat(new Item[] { newItem })
+                .ToDictionary(a => a.Paths.FullPath.Replace(newRootPath, string.Empty));
+            
+            //loop through all new items 
+            foreach (Item i in allNewItems.Values)
+            {
+                //pull the shared and final layout fields
+                string layout = i[FieldIDs.LayoutField];
+                string finalLayout = i[FieldIDs.FinalLayoutField];
+
+                //if there's no layout skip it
+                if (string.IsNullOrEmpty(layout)
+                && string.IsNullOrEmpty(finalLayout))
+                    continue;
+
+                layout = UpdateMatches(layout, branchItemPath, allBranchItems, allNewItems);
+                finalLayout = UpdateMatches(finalLayout, branchItemPath, allBranchItems, allNewItems);
+
+                using (new SecurityDisabler())
+                {
+                    using (new EditContext(i)) {
+                        i[FieldIDs.LayoutField] = layout;
+                        i[FieldIDs.FinalLayoutField] = finalLayout;
+                    }
+                }
+            }
         }
 
-        protected virtual void RewriteBranchRenderingDataSources(Item item, BranchItem branchTemplateItem) {
-            string branchBasePath = branchTemplateItem.InnerItem.Paths.FullPath;
+        protected string UpdateMatches(string layout, string branchRootPath, Dictionary<string, Item> branchItems, Dictionary<string, Item> newItems)
+        {
+            //ds="{0413669C-3852-4459-862F-8A3BE5FADDA3}"
+            Regex r = new Regex(@"(ds=[\""])({[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}})", RegexOptions.IgnoreCase);
+            foreach (Match m in r.Matches(layout)) {
+                if (!m.Success)
+                    continue;
 
-            LayoutHelper.ApplyActionToAllRenderings(item, rendering => {
-                if (string.IsNullOrWhiteSpace(rendering.Datasource))
-                    return RenderingActionResult.None;
+                //if ds is found in the old branch set, replace it with corresponding relative  new item
+                string originalDS = m.Groups[2].Value;
+                if (!branchItems.ContainsKey(originalDS))
+                    continue;
 
-                // note: queries and multiple item datasources are not supported
-                var renderingTargetItem = item.Database.GetItem(rendering.Datasource);
+                //if any match exists in the dictionary get the relative path and find the new item
+                Item originalItem = branchItems[originalDS];
+                string relativePath = originalItem.Paths.FullPath.Replace(branchRootPath, string.Empty);
 
-                if (renderingTargetItem == null)
-                    Log.Warn("Error while expanding branch template rendering datasources: data source {0} was not resolvable.".FormatWith(rendering.Datasource), this);
+                if (!newItems.ContainsKey(relativePath))
+                    continue;
 
-                // if there was no valid target item OR the target item is not a child of the branch template we skip out
-                if (renderingTargetItem == null || !renderingTargetItem.Paths.FullPath.StartsWith(branchBasePath, StringComparison.OrdinalIgnoreCase))
-                    return RenderingActionResult.None;
+                //replace the id with the new item
+                Item relativeItem = newItems[relativePath];
+                layout = layout.Replace(originalDS, relativeItem.ID.ToString());
+            }
 
-                var relativeRenderingPath = renderingTargetItem.Paths.FullPath.Substring(branchBasePath.Length).TrimStart('/');
-                relativeRenderingPath = relativeRenderingPath.Substring(relativeRenderingPath.IndexOf('/')); // we need to skip the "/$name" at the root of the branch children
-
-                var newTargetPath = item.Paths.FullPath + relativeRenderingPath;
-
-                var newTargetItem = item.Database.GetItem(newTargetPath);
-
-                // if the target item was a valid under branch item, but the same relative path does not exist under the branch instance
-                // we set the datasource to something invalid to avoid any potential unintentional edits of a shared data source item
-                if (newTargetItem == null) {
-                    rendering.Datasource = "INVALID_BRANCH_SUBITEM_ID";
-                    return RenderingActionResult.None;
-                }
-
-                rendering.Datasource = newTargetItem.ID.ToString();
-                return RenderingActionResult.None;
-            });
+            return layout;
         }
     }
 }

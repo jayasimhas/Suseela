@@ -1073,14 +1073,12 @@
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
     <Compile Include="Utilities\Extensions\GenericsExtensions.cs" />
     <Compile Include="Utilities\Extensions\StringExtensions.cs" />
-    <Compile Include="Utilities\LayoutHelper.cs" />
     <Compile Include="Utilities\References\Constants.cs" />
     <Compile Include="Utilities\References\DictionaryKeys.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />
     <Compile Include="Utilities\References\IRenderingReferences.cs" />
     <Compile Include="Utilities\References\ItemReferences.cs" />
     <Compile Include="Utilities\References\RenderingReferences.cs" />
-    <Compile Include="Utilities\RenderingActionResult.cs" />
     <Compile Include="Utilities\Security\Crypto.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
