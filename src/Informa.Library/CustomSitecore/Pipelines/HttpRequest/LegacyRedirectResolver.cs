@@ -72,32 +72,13 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 					Match match = r.Match(args.Url.ItemPath);
 
 					IArticleSearchResults results;
-					IArticle article;
-					var newPath = string.Empty;
 					// If it is a pmbi legacy article url
 					if (!match.Success || match.Groups.Count < 2)
 					{
 						// Get legacy article path
 						var basePath = "/sitecore/content/Home";
-                        var path = $"{basePath}{args.Url.FilePath}";
-                        results = ArticleSearcher.GetLegacyArticleUrl(path);
-						article = results?.Articles?.FirstOrDefault();
-
-						if (article == null)
-						{
-							return;
-						}
-
-						var customPath = ArticleSearch.GetArticleCustomPath(article);
-
-						var options = LinkManager.GetDefaultUrlOptions();
-						options.SiteResolving = true;
-						options.AlwaysIncludeServerUrl = true;
-
-						var item = Context.Database.GetItem(new ID(article._Id));
-						var domainUri = new Uri(LinkManager.GetItemUrl(item, options));
-						var protocol = Sitecore.Configuration.Settings.GetSetting("Site.Protocol", "https");
-						newPath = $"{protocol}://{domainUri.Host}{customPath}";
+						var path = $"{basePath}{args.Url.FilePath}";
+						results = ArticleSearcher.GetLegacyArticleUrl(path);
 					}
 					else
 					{
@@ -107,19 +88,28 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 						filter.EScenicID = match.Groups[1].Value;
 
 						results = ArticleSearcher.Search(filter);
-						article = results?.Articles?.FirstOrDefault();
-						if (article == null)
-						{
-							return;
-						}
-
-						newPath = ArticleSearch.GetArticleCustomPath(article);
 					}
 
 					//redirect 
+					IArticle article = results?.Articles?.FirstOrDefault();
+
+					if (article == null)
+					{
+						return;
+					}
+
+					string newPath = ArticleSearch.GetArticleCustomPath(article);
+
+					var options = LinkManager.GetDefaultUrlOptions();
+					options.SiteResolving = true;
+					options.AlwaysIncludeServerUrl = true;
+
+					var item = Context.Database.GetItem(new ID(article._Id));
+					var domainUri = new Uri(LinkManager.GetItemUrl(item, options));
+					var protocol = Sitecore.Configuration.Settings.GetSetting("Site.Protocol", "https");
 
 					args.Context.Response.Status = "301 Moved Permanently";
-					args.Context.Response.AddHeader("Location", newPath);
+					args.Context.Response.AddHeader("Location", $"{protocol}://{domainUri.Host}{newPath}");
 					args.Context.Response.End();
 				}
 				catch (ThreadAbortException)
