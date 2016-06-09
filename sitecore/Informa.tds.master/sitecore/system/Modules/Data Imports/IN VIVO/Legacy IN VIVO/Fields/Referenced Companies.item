@@ -30,10 +30,17 @@ key: from what fields
 content-length: 20
 
 Referenced Companies
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+300
 ----version----
 language: en
 version: 1
-revision: de00615d-64a5-4d80-9824-d70db8c8e2ac
+revision: e4308426-b6ef-4126-b0fc-ab6320f8612a
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-de00615d-64a5-4d80-9824-d70db8c8e2ac
+e4308426-b6ef-4126-b0fc-ab6320f8612a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160608T143726Z
+20160608T204516Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
