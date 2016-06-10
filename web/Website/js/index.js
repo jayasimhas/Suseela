@@ -15,7 +15,7 @@ import RegisterController from './controllers/register-controller';
 import SortableTableController from './controllers/sortable-table-controller';
 import LightboxModalController from './controllers/lightbox-modal-controller';
 import { analyticsEvent } from './controllers/analytics-controller';
-
+import tooltipController from './controllers/tooltip-controller';
 
 // COMPONENTS
 import './components/article-sidebar-component';
@@ -627,7 +627,7 @@ $(document).ready(function() {
 
         var linkString;
 
-	    if(this.href.indexOf(location.hostname) == -1) {
+		if(this.href.indexOf(location.hostname) == -1) {
             linkString = 'External:' + this.href;
         } else {
             linkString = this.href;
@@ -849,6 +849,32 @@ $(document).ready(function() {
             $('.js-account-email-toggle-all').prop('checked', null);
         }
     });
+
+
+	var tooltipIsVisible = false;
+	$('.js-toggle-tooltip').each(function(index, item) {
+		$(item).on('mouseover', function() {
+			console.log(tooltipIsVisible);
+			if(!tooltipIsVisible) {
+				const offsets = $(item).offset();
+				tooltipController({
+					isHidden: false,
+					html: $(item).data('tooltip-text'),
+					top: offsets.top,
+					left: offsets.left + $(this).width()/2,
+					triangle: 'bottom'
+				});
+				console.log('here we are');
+				tooltipIsVisible = true;
+				console.log(tooltipIsVisible);
+			}
+		});
+		$(item).on('mouseout', function() {
+			console.log('mouseout');
+			//tooltipIsVisible = false;
+		});
+	});
+
 
     // Twitter sharing JS
     window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],

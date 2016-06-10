@@ -40,7 +40,7 @@
         }
         @if (!string.IsNullOrEmpty(Model.Media_Type))
         {
-            <li>
+            <li class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
                 <svg class="article-metadata__media-type">
                     <use xlink:href="/dist/img/svg-sprite.svg#@Model.Media_Type"></use>
                 </svg>
