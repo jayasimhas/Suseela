@@ -18,6 +18,7 @@ import { analyticsEvent } from './controllers/analytics-controller';
 
 
 // COMPONENTS
+import './components/article-sidebar-component';
 import './components/save-search-component';
 
 
@@ -413,9 +414,9 @@ $(document).ready(function() {
             if($('#DoNotSendOffersOptIn').prop('checked')) {
                 event_data.event_title = 'email_preferences_opt_out';
             } else {
-            
+
                 event_data.event_title = 'email_preferences_update';
-            
+
                 $('.js-account-email-checkbox').each(function(index, item) {
                     if(this.checked) {
                         optingIn = optingIn ? optingIn + '|' + this.value : this.value;
