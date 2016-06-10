@@ -10,19 +10,23 @@ $(document).ready(function () {
 });
 
 $(window).on('scroll', function() {
-	// pageYOffset instead of scrollY for IE / pre-Edge compatibility
-	stickyFloor = lastActionFlagsBar.offset().top - window.pageYOffset - articleSidebarAd.height();
+	console.log(articleSidebarAdParent);
+	if(articleSidebarAdParent) {
 
-	if(articleSidebarAdParent.offset().top - window.pageYOffset <= 16) {
-		articleSidebarAdParent.addClass('advertising--sticky');
-	} else {
-		articleSidebarAdParent.removeClass('advertising--sticky');
+		// pageYOffset instead of scrollY for IE / pre-Edge compatibility
+		stickyFloor = lastActionFlagsBar.offset().top - window.pageYOffset - articleSidebarAd.height();
+
+		if(articleSidebarAdParent.offset().top - window.pageYOffset <= 16) {
+			articleSidebarAdParent.addClass('advertising--sticky');
+		} else {
+			articleSidebarAdParent.removeClass('advertising--sticky');
+		}
+
+		if(stickyFloor <= 40) {
+			articleSidebarAd.css('top', (stickyFloor - 40) + 'px');
+		} else {
+			articleSidebarAd.css('top', '');
+		}
+
 	}
-
-	if(stickyFloor <= 40) {
-		articleSidebarAd.css('top', (stickyFloor - 40) + 'px');
-	} else {
-		articleSidebarAd.css('top', '');
-	}
-
 });
