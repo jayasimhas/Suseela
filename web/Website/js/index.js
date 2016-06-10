@@ -634,8 +634,9 @@ $(document).ready(function() {
             linkString = this.href;
         }
 
-        $(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_destination": "' + linkString + '"}');
-
+	    if ($(this).data('info') == undefined) {
+	    	$(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_source": "' + $('h1').text + '", "click_through_destination": "' + linkString + '"}');
+	    }
 	});
 
     $('.general-header__navigation').each(function() {
