@@ -10,8 +10,7 @@ $(document).ready(function () {
 });
 
 $(window).on('scroll', function() {
-	console.log(articleSidebarAdParent);
-	if(articleSidebarAdParent) {
+	if(articleSidebarAdParent.length) {
 
 		// pageYOffset instead of scrollY for IE / pre-Edge compatibility
 		stickyFloor = lastActionFlagsBar.offset().top - window.pageYOffset - articleSidebarAd.height();
