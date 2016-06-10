@@ -12,6 +12,8 @@ using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Informa.Library.Page;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 
 namespace Informa.Web.ViewModels
 {
@@ -22,21 +24,24 @@ namespace Informa.Web.ViewModels
 	    protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
 	    protected readonly IIsSavedDocumentContext IsSavedDocumentContext;
 	    protected readonly ITextTranslator TextTranslator;
-		
+		protected readonly IPageItemContext PageItemContext;
+
 		public FeaturedArticleViewModel(
-				IArticle model,
-				IRenderingParametersContext renderingParametersContext,
-				IArticleService articleService,
-				IBylineMaker bylineMaker,
-                IAuthenticatedUserContext authenticatedUserContext,
-                IIsSavedDocumentContext isSavedDocumentContext,
-                ITextTranslator textTranslator)
+			IArticle model,
+			IRenderingParametersContext renderingParametersContext,
+			IArticleService articleService,
+			IBylineMaker bylineMaker,
+            IAuthenticatedUserContext authenticatedUserContext,
+            IIsSavedDocumentContext isSavedDocumentContext,
+            ITextTranslator textTranslator,
+			IPageItemContext pageItemContext)
 		{
 			RenderingParametersContext = renderingParametersContext;
 			ArticleService = articleService;
 		    AuthenticatedUserContext = authenticatedUserContext;
 		    IsSavedDocumentContext = isSavedDocumentContext;
 		    TextTranslator = textTranslator;
+			PageItemContext = pageItemContext;
 
             ArticleByLine = bylineMaker.MakeByline(model.Authors);
 		    IsUserAuthenticated = AuthenticatedUserContext.IsAuthenticated;
@@ -72,7 +77,7 @@ namespace Informa.Web.ViewModels
         public bool IsArticleBookmarked { get; set; }
         public string BookmarkText { get; set; }
         public string BookmarkedText { get; set; }
-
 		public Guid ID => GlassModel._Id;
+		public string PageTitle => PageItemContext.Get<I___BasePage>()?.Title;
 	}
 }

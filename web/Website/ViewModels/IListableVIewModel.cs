@@ -6,6 +6,7 @@ namespace Informa.Web.ViewModels
 	public interface IListableViewModel : IListable, IArticleBookmarker
 	{
 		bool DisplayImage { get; set; }
+		string PageTitle { get; set; }
 	}
 
     public interface IArticleBookmarker

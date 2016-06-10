@@ -66,7 +66,7 @@ namespace Informa.Library.Publication
 				values = string.IsNullOrWhiteSpace(values) ? $"'{id}'" : $"{values},'{id}'";
 			}
 
-			var query = $"SELECT * FROM [Informa_Mapping].[dbo].[ArticleMappings] WHERE [PmbiArticleId] IN ({values})";
+			var query = $"SELECT * FROM [ArticleMappings] WHERE [PmbiArticleId] IN ({values})";
 			return _context.Mappings.SqlQuery(query);
 		}
 	}
