@@ -364,6 +364,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Navigation\IReturnUrlContext.cs" />
     <Compile Include="Navigation\ReturnUrlContext.cs" />
+    <Compile Include="Page\IPageItemContext.cs" />
+    <Compile Include="Page\PageItemContext.cs" />
     <Compile Include="Publication\ArticleMappingContext.cs" />
     <Compile Include="Publication\ArticleMappingRepository.cs" />
     <Compile Include="Publication\Entity\ArticleMapping.cs" />
