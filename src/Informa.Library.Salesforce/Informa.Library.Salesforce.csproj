@@ -252,6 +252,12 @@
     <None Include="Web References\EBIWebServices\EBI_QuerySavedDocumentResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\EBIWebServices\EBI_QuerySavedDocumentResponse2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QuerySavedSearchItems2Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\EBIWebServices\EBI_QuerySavedSearchItemsResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -259,6 +265,9 @@
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\EBIWebServices\EBI_WebServiceResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\IN_QueryEntitlementsResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\EBIWebServices\IN_WebServices.wsdl" />
