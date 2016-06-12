@@ -22,6 +22,7 @@ using Sitecore.Resources.Media;
 using Sitecore.Web.UI.Sheer;
 using Sitecore.Workflows;
 using Constants = Informa.Library.Utilities.References.Constants;
+using Sitecore.Web.UI;
 
 namespace Informa.Web.Controllers
 {
@@ -200,14 +201,16 @@ namespace Informa.Web.Controllers
 			var oldState = _service.Database.WorkflowProvider.GetWorkflow(oldWorkflow.StateID);
 			if (oldState != null)
 			{
-				//replacements["#old_state_image#"] = "https://" + siteRoot + oldState.Appearance.Icon;
-				replacements["#old_state#"] = oldState.Appearance.DisplayName;
+                var oldiconUrl = Sitecore.Resources.Images.GetThemedImageSource(oldState.Appearance.Icon, ImageDimension.id24x24);
+                replacements["#old_state_image#"] = "http://" + siteRoot + oldiconUrl;
+                replacements["#old_state#"] = oldState.Appearance.DisplayName;
 			}
 			var newState = _service.Database.WorkflowProvider.GetWorkflow(articleStruct.CommandID.ToString());
 			if (newState != null)
 			{
-				//replacements["#new_state_image#"] = "https://" + siteRoot + newState.Appearance.Icon;
-				replacements["#new_state#"] = newState.Appearance.DisplayName;
+                var newiconUrl = Sitecore.Resources.Images.GetThemedImageSource(newState.Appearance.Icon, ImageDimension.id24x24);
+                replacements["#new_state_image#"] = "http://" + siteRoot + newiconUrl;
+                replacements["#new_state#"] = newState.Appearance.DisplayName;
 			}
 
 
@@ -318,20 +321,24 @@ namespace Informa.Web.Controllers
 
 		public string HistoryTableCreation(List<WorkflowEvent> history)
 		{
-			StringBuilder outputString = new StringBuilder();
-			if (!history.Any()) return outputString.ToString();
-			outputString.Append("<u>Prior Workflow History:</u>");
-			outputString.Append("<table style='border: 1px solid black;border-collapse: collapse;'><th style='border: 1px solid black'>To State</th><th style='border: 1px solid black'>By...</th><th style='border: 1px solid black'>At...</th>");
-			foreach (var eachWorkflow in history)
-			{
-				var state = _service.Database.WorkflowProvider.GetWorkflow(eachWorkflow.NewState);
-				outputString.Append("<tr><td style='border: 1px solid black'>" + state.Appearance.DisplayName + "</td><td style='border: 1px solid black'>" +
-									eachWorkflow.User + "</td><td style='border: 1px solid black'>" + eachWorkflow.Date.ToString(CultureInfo.InvariantCulture));
-				outputString.Append("</tr>");
-			}
-			outputString.Append("</table>");
+            string siteRoot = HttpContext.Current.Request.Url.Host;
+            StringBuilder outputString = new StringBuilder();
+            if (!history.Any()) return outputString.ToString();
+            outputString.Append("<u>Prior Workflow History:</u>");
+            outputString.Append("<table style='border: 1px solid black;border-collapse: collapse;'><th style='border: 1px solid black'>To State</th><th style='border: 1px solid black'>icon</th><th style='border: 1px solid black'>By...</th><th style='border: 1px solid black'>At...</th>");
+            foreach (var eachWorkflow in history)//"https://" + siteRoot + oldState.Appearance.Icon;
+            {
+                var state = _service.Database.WorkflowProvider.GetWorkflow(eachWorkflow.NewState);
+                var iconUrl = Sitecore.Resources.Images.GetThemedImageSource(state.Appearance.Icon, ImageDimension.id24x24);
 
-			return outputString.ToString();
-		}
+                outputString.Append("<tr><td style='border: 1px solid black'>" + state.Appearance.DisplayName + "</td>" +
+                    "<td style='border: 1px solid black'>" + "<img src='http://" + siteRoot + iconUrl + "'/> </td>" +
+                                    eachWorkflow.User + "</td><td style='border: 1px solid black'>" + eachWorkflow.Date.ToString(CultureInfo.InvariantCulture));
+                outputString.Append("</tr>");
+            }
+            outputString.Append("</table>");
+
+            return outputString.ToString();
+        }
 	}
 }
