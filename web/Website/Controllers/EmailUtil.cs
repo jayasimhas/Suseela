@@ -331,8 +331,8 @@ namespace Informa.Web.Controllers
                 var state = _service.Database.WorkflowProvider.GetWorkflow(eachWorkflow.NewState);
                 var iconUrl = Sitecore.Resources.Images.GetThemedImageSource(state.Appearance.Icon, ImageDimension.id24x24);
 
-                outputString.Append("<td style='border: 1px solid black'>" + "<img src='http://" + siteRoot + iconUrl + "'/> </td>" + 
-                    "<tr><td style='border: 1px solid black'>" + state.Appearance.DisplayName + "</td>" +
+                outputString.Append("<tr><td style='border: 1px solid black'>" + "<img src='http://" + siteRoot + iconUrl + "'/> </td>" + 
+                    "<td style='border: 1px solid black'>" + state.Appearance.DisplayName + "</td>" +
                     
                                     eachWorkflow.User + "</td><td style='border: 1px solid black'>" + eachWorkflow.Date.ToString(CultureInfo.InvariantCulture));
                 outputString.Append("</tr>");
