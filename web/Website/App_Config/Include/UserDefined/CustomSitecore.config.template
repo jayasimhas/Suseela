@@ -94,6 +94,27 @@ But you can also use "patch:attribute" for clarity:
       <event name="item:added">
         <handler type="Informa.Library.CustomSitecore.Events.AddFromBranchPreset, Informa.Library" method="OnItemAdded" />
       </event>
+
+      <event name="publish:end">
+        <handler type="Sitecore.Publishing.HtmlCacheClearer, Sitecore.Kernel" method="ClearCache">
+          <sites hint="list">
+            <site name="invivo">InVivo</site>
+            <site name="medtech">MedtechInsight</site>
+            <site name="pink">PinkSheet</site>
+            <site name="rose">RoseSheet</site>
+          </sites>
+        </handler>
+      </event>
+      <event name="publish:end:remote">
+        <handler type="Sitecore.Publishing.HtmlCacheClearer, Sitecore.Kernel" method="ClearCache">
+          <sites hint="list">
+            <site name="invivo">InVivo</site>
+            <site name="medtech">MedtechInsight</site>
+            <site name="pink">PinkSheet</site>
+            <site name="rose">RoseSheet</site>
+          </sites>
+        </handler>
+      </event>
     </events>
 
     <hooks>
@@ -130,8 +151,20 @@ But you can also use "patch:attribute" for clarity:
     <cacheSizes>
       <sites>
         <website>
-          <html>10MB</html>
+          <html>${Cache.HtmlCache.Website}</html>
         </website>
+        <InVivo>
+          <html>${Cache.HtmlCache.Website}</html>
+        </InVivo>
+        <MedtechInsight>
+          <html>${Cache.HtmlCache.Website}</html>
+        </MedtechInsight>
+        <PinkSheet>
+          <html>${Cache.HtmlCache.Website}</html>
+        </PinkSheet>
+        <RoseSheet>
+          <html>${Cache.HtmlCache.Website}</html>
+        </RoseSheet>
       </sites>
     </cacheSizes>
 
