@@ -21,19 +21,19 @@ namespace Informa.Library.Search.Utilities
             //Subject
             if (IsSubjectTaxonomy(parentPath))
             {
-                url.AppendFormat("subjects={0}", taxonomyItem._Name);
+                url.AppendFormat("subjects={0}", taxonomyItem.Item_Name);
             }
 
             //Region
             if (IsRegionTaxonomy(parentPath))
             {
-                url.AppendFormat("regions={0}", taxonomyItem._Name);
+                url.AppendFormat("regions={0}", taxonomyItem.Item_Name);
             }
 
             //Area
             if (IsAreaTaxonomy(parentPath))
             {
-                url.AppendFormat("areas={0}", taxonomyItem._Name);
+                url.AppendFormat("areas={0}", taxonomyItem.Item_Name);
             }
 
             return url.ToString();
