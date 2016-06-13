@@ -2,7 +2,7 @@
 
 @if (Model.DisplayImage)
 {
-    <img class="topic-featured-article__image" src="@Model.Image.ImageUrl">
+    <img class="topic-featured-article__image" src="@Model.Image.GetScaledImage(784)">
 }
 
 @if(Model != null && Model.GlassModel != null) {

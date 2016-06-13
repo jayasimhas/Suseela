@@ -4,12 +4,9 @@ using System.Linq;
 using Informa.Library.Globalization;
 using Informa.Library.Services.Article;
 using Informa.Library.User.Entitlement;
-using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Library.Utilities.Extensions;
-using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels
 {

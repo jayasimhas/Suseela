@@ -1,9 +1,10 @@
-﻿@model FeaturedArticleViewModel
+﻿@using Sitecore.Resources.Media
+@model FeaturedArticleViewModel
 <section class="article-preview">
 
     @if (Model.DisplayImage)
     {
-        <img class="article-preview__image" src="@Model.Image.ImageUrl">
+        <img class="article-preview__image" src="@Model.Image.GetScaledImage(784)">
     }
 
     @if (Model != null && Model.GlassModel != null)
