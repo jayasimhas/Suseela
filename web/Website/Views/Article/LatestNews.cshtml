@@ -22,4 +22,8 @@
 		Html.RenderPartial("Components/ListableContentSmall", listable);
 	}
 </div>
-@RenderLink(model => model.SeeAllLink, new { @class = "full-diminished-button click-utag", data_info = "{ 'event_name': 'see_all', 'see_all_topic': '" + Model.TitleText +"' }" })
+@{
+	var dataInfo = "{{ 'event_name': 'see_all', 'see_all_topic': '" + Model.TitleText + "' }}";
+	
+}
+@RenderLink(model => model.SeeAllLink, new { @class = "full-diminished-button click-utag", data_info = dataInfo })
