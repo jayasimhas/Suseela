@@ -128,6 +128,10 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
 
     //** This updates the router/url with the latest search parameters **//
     vm.update = function () {
+
+		// Disable all facet options while updating search results
+		$('.facets__section input').attr('disabled', 'disabled');
+
         vm.searchService.getFilter('page').setValue('1');
         var routeBuilder = this.searchService.getRouteBuilder();
         vm.location.search(routeBuilder.getRoute());

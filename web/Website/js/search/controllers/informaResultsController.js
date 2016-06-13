@@ -11,6 +11,7 @@ var InformaResultsController = function InformaResultsController($scope, $saniti
 
     $scope.headlinesOnly = viewHeadlinesStateService;
     var count = 0;
+
     $scope.utagAnalytics = function () {
         if (count > 0) {
              var eventDetails = {
@@ -44,6 +45,10 @@ var InformaResultsController = function InformaResultsController($scope, $saniti
     };
 
     $scope.$on('refreshPopOuts', function (ngRepeatFinishedEvent) {
+
+		// Enable all facet options when search results land
+		$('.facets__section input').attr('disabled', null);
+
         window.indexPopOuts();
         window.indexBookmarks();
         window.autoBookmark();
