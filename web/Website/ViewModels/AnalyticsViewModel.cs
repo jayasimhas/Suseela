@@ -47,7 +47,8 @@ namespace Informa.Web.ViewModels
             IWebAuthenticateUser webAuthenticateUser,
             IUserEntitlementsContext userEntitlementsContext,
             IUserIpAddressContext userIpAddressContext,
-			ISiteRootContext siteRootContext) {
+			ISiteRootContext siteRootContext,
+			I___BasePage article) {
 
             ItemReferences = itemReferences;
             IsEntitledProductItemContext = isEntitledProductItemContext;
@@ -61,7 +62,7 @@ namespace Informa.Web.ViewModels
             UserEntitlementsContext = userEntitlementsContext;
             UserIpAddressContext = userIpAddressContext;
 	        SiteRootContext = siteRootContext;
-	        UserEntitlementStatus = IsEntitledProductItemContext.IsEntitled(Article) ? "entitled" : "unentitled";
+	        UserEntitlementStatus = IsEntitledProductItemContext.IsEntitled(article as IArticle) ? "entitled" : "unentitled";
 	        ContentEntitlementType = GetContentEntitlement(UserCompanyContext);
 	        EntitlementType = GetEntitlementType(UserCompanyContext);
 			}
