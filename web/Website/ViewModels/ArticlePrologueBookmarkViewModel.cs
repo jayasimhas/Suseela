@@ -48,6 +48,8 @@ namespace Informa.Web.ViewModels
 					return "Medtech";
 				case "RS":
 					return "Rose";
+				case "SC":
+					return "Scrip";
 				default:
 					return "";
 			}
