@@ -634,9 +634,9 @@ $(document).ready(function() {
             linkString = this.href;
         }
 
-	    if ($(this).data('info') == undefined) {
-	    	$(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_source": "' + $('h1').text + '", "click_through_destination": "' + linkString + '"}');
-	    }
+		if ($(this).data('info') == undefined) {
+			$(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_source": "' + $('h1').text + '", "click_through_destination": "' + linkString + '"}');
+		}
 	});
 
     $('.general-header__navigation').each(function() {
@@ -751,12 +751,9 @@ $(document).ready(function() {
     };
 
     $('.js-register-final').on('click',function(e){
-        newsletterOptins();
-    });
 
-    var newsletterOptins = function(){
         var eventDetails = {
-            event_name: "newsletter optins"
+            // event_name: "newsletter optins"
         };
         var chkDetails = {};
         if ($('#newsletters').is(':checked')) {
@@ -768,7 +765,7 @@ $(document).ready(function() {
             $.extend(eventDetails,chkDetails);
             analyticsEvent( $.extend(analytics_data, eventDetails) );
         }
-    };
+    });
 
 
     // TODO - Refactor this code, update class name to a `js-` name
