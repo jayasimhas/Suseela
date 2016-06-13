@@ -25,7 +25,13 @@ namespace Informa.Web.Controllers
         [HttpGet]
         public void SitemapXml()
         {
-            string path = HttpContext.Current.Request.Path.Replace("/", "").Replace(".xml", "");
+            int pageNo = Convert.ToInt32(HttpContext.Current.Request.QueryString["page"]);
+            string SitemapQueryString = string.Empty;
+            if (pageNo != 0)
+            {
+                SitemapQueryString = "?page=" + pageNo;
+            }
+            string path = HttpContext.Current.Request.Path.Replace("/", "").Replace(".xml", "")+ SitemapQueryString;
             string cacheKey = $"{HttpContext.Current.Request.Url.Host}.{path}.Sitemap";
             string xml = string.Empty;
             if (Cache.Contains(cacheKey))
@@ -36,6 +42,7 @@ namespace Informa.Web.Controllers
             else
             {
                 //get it fresh
+                
                 string url = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}/{path}";
                 using (WebClient client = new WebClient())
                 {
@@ -52,7 +59,7 @@ namespace Informa.Web.Controllers
                     }
                 }
             }
-            
+
             //provide default
             if (xml.Length == 0)
                 xml = new XmlDocument().OuterXml;
