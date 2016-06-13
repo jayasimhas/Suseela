@@ -434,6 +434,7 @@
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
     <Compile Include="SiteDebugging\SiteDebugger.cs" />
     <Compile Include="Site\GlassSiteRootContext.cs" />
+    <Compile Include="Site\HeadMetaDataGenerator.cs" />
     <Compile Include="Site\IIsUrlCurrentSite.cs" />
     <Compile Include="Site\ISiteHostName.cs" />
     <Compile Include="Site\ISiteRootContext.cs" />

@@ -59,7 +59,7 @@ namespace Informa.Library.User.EmailOptIns
 
         private OptInResponseModel OptOut()
         {
-            var query = _dependencies.HttpContextProvider.RequestUrl.Query;
+            var query = _dependencies.HttpContextProvider.RequestUri.Query;
             if(string.IsNullOrEmpty(query)) { return new OptInResponseModel {IsSuccessful = false}; }
 
             NameValueCollection queryParsed = HttpUtility.ParseQueryString(query);

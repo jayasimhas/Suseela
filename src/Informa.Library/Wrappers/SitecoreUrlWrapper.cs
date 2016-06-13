@@ -40,7 +40,7 @@ namespace Informa.Library.Wrappers
             var database = Sitecore.Configuration.Factory.GetDatabase(Constants.MasterDb);
             var item = database.GetItem(new ID(itemId));
             var itemUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
-            var scheme = _dependencies.HttpContextProvider.RequestUrl?.Scheme + "://";
+            var scheme = _dependencies.HttpContextProvider.RequestUri?.Scheme + "://";
 
             return scheme + GetHostName() + itemUrl;
         }
@@ -52,7 +52,7 @@ namespace Informa.Library.Wrappers
 
             if (imageItem == null) return null;
 
-            var scheme = _dependencies.HttpContextProvider.RequestUrl?.Scheme + "://";
+            var scheme = _dependencies.HttpContextProvider.RequestUri?.Scheme + "://";
 
             return scheme + GetHostName() + Sitecore.Resources.Media.MediaManager.GetMediaUrl(imageItem);
         }
