@@ -574,6 +574,13 @@ $(document).ready(function() {
         $(e).after(tableLink);
     });
 
+
+	// Find duplicate embeds on article page
+	// IITS2-312
+	$('[class^=ewf-desktop-iframe] ~ [class^=ewf-mobile-iframe]').each(function(index, item) {
+		$(item).remove();
+	});
+
     // When DOM loads, render the appropriate iFrame components
     // Also add a listener for winder resize, render appropriate containers
     renderIframeComponents();
