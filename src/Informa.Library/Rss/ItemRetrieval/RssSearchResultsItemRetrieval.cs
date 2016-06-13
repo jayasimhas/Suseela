@@ -44,41 +44,18 @@ namespace Informa.Library.Rss.ItemRetrieval
 			}
 
 			ISearch_Listing searchListing = searchPageItem.GlassCast<ISearch_Listing>(inferType: true);
-			ISite_Root siteRoot = rssFeedItem.Crawl<ISite_Root>();
-
+			
 			//Build the base api URL
 			var searchPageId = searchPageItem.ID.ToGuid().ToString("D").ToLower();
-			var feedUrl = string.Format("{0}://{1}{2}?pId={3}&publication={4}", HttpContext.Current.Request.Url.Scheme, WebUtil.GetHostName(),
-					searchListing.Base_Endpoint_Url, searchPageId, siteRoot.Publication_Name);
+			var feedUrl = string.Format("{0}://{1}{2}?pId={3}", HttpContext.Current.Request.Url.Scheme, WebUtil.GetHostName(),
+					searchListing.Base_Endpoint_Url, searchPageId);
 
-			////If the "Include Url Parameters" is checked then any url params are passed along
-			////to the api, otherwise they will be stripped
-			//var useDefaultParams = false;
-			//if (rssFeedItem.Include_Url_Parameters)
-			//{
-			//    if (Context.RawUrl.Contains("?"))
-			//    {
-			//        var urlParts = Context.RawUrl.Split('?');
+			ISite_Root siteRoot = rssFeedItem.Crawl<ISite_Root>();
+			if (siteRoot != null)
+			{
+				feedUrl = $"{feedUrl}&publication={siteRoot.Publication_Name}";
+			}
 
-			//        if (urlParts.Length == 2)
-			//        {
-			//            feedUrl = string.Format("{0}&{1}", feedUrl, urlParts[1]);
-			//        }
-			//        else
-			//        {
-			//            useDefaultParams = true;
-			//        }
-			//    }
-			//}
-			//else
-			//{
-			//    useDefaultParams = true;
-			//}
-
-			//If we are using the default parameters then build the url string for the api
-			//from the Sitecore Sort item.
-			//if (useDefaultParams)
-			//{
 			var defaultSortBy = "date";
 			var defaultSortOrder = "";
 
