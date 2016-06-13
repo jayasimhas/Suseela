@@ -63,7 +63,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields.PMBI
 				if (string.IsNullOrEmpty(companyName))
 					continue;
 
-				Regex companyPattern = new Regex($"[C#({cID})]", RegexOptions.IgnoreCase);
+				Regex companyPattern = new Regex($"\\[C#({cID})\\]", RegexOptions.IgnoreCase);
 				//the name should be the importValue and not the value from the database
 				Field sf = newItem.Fields["Summary"];
 				if (sf != null)
