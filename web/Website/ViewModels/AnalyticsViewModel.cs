@@ -47,8 +47,7 @@ namespace Informa.Web.ViewModels
             IWebAuthenticateUser webAuthenticateUser,
             IUserEntitlementsContext userEntitlementsContext,
             IUserIpAddressContext userIpAddressContext,
-			ISiteRootContext siteRootContext,
-			I___BasePage article) {
+			ISiteRootContext siteRootContext) {
 
             ItemReferences = itemReferences;
             IsEntitledProductItemContext = isEntitledProductItemContext;
@@ -62,7 +61,6 @@ namespace Informa.Web.ViewModels
             UserEntitlementsContext = userEntitlementsContext;
             UserIpAddressContext = userIpAddressContext;
 	        SiteRootContext = siteRootContext;
-	        UserEntitlementStatus = IsEntitledProductItemContext.IsEntitled(article as IArticle) ? "entitled" : "unentitled";
 	        ContentEntitlementType = GetContentEntitlement(UserCompanyContext);
 	        EntitlementType = GetEntitlementType(UserCompanyContext);
 			}
@@ -81,8 +79,8 @@ namespace Informa.Web.ViewModels
         public string ArticleAuthors => (Article?.Authors == null)
                 ? string.Empty
                 : $"[{string.Join(",", Article.Authors.Select(x => $"'{x._Name.Trim()}'"))}]";
-        public string UserEntitlementStatus { get; }
-        public string GetArticleTaxonomy(Guid itemId) {
+        public string UserEntitlementStatus => IsEntitledProductItemContext.IsEntitled(Article) ? "entitled" : "unentitled";
+		public string GetArticleTaxonomy(Guid itemId) {
             return Article != null ? ArticleSearch.GetArticleTaxonomies(Article._Id, itemId) : string.Empty;
         }
         public string Article_Entitlement => GetArticleEntitlements();
