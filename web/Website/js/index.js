@@ -288,9 +288,15 @@ $(document).ready(function() {
     var userRegistrationController = new FormController({
         observe: '.form-registration',
         successCallback: function(form, context, event) {
+
+			// Stash registration type so next page can know it without
+			// an additional Salesforce call
+			Cookies.set('registrationType', context.response.registration_type, {} );
+
             analyticsEvent( $.extend(analytics_data, {
 				registration_type: context.response.registration_type
 			}) );
+
         },
         failureCallback: function(form,response) {
 
@@ -310,9 +316,14 @@ $(document).ready(function() {
     var userRegistrationFinalController = new FormController({
         observe: '.form-registration-optins',
         successCallback: function(form, context, event) {
+
+			var registrationType = Cookies.get('registrationType');
+
 			analyticsEvent( $.extend(analytics_data, {
-				registration_type: context.response.registration_type
+				registration_type: registrationType
 			}) );
+
+			Cookies.remove('registrationType');
         },
         failureCallback: function(form, response) {
             var errorMsg = $(".page-registration__error").text();
