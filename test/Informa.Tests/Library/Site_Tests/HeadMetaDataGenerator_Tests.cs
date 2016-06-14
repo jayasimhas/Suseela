@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using NSubstitute;
 using NUnit.Framework;
 
@@ -26,16 +29,20 @@ namespace Informa.Tests.Library.Site_Tests
         }
 
         [Test]
-        public void GetMetaHtml_CurrentPageIsNotIGlassBase_ReturnsEmptyString()
+        public void GetMetaHtml_NullPage_LogsErrorBackendAndFront()
         {
             // ARRANGE
             _dependencies.SitecoreContext.GetCurrentItem<I___BasePage>().Returns((I___BasePage)null);
+
+            var uri = new Uri("http://www.moosemonthly.com/buggypage/");
+            _dependencies.HttpContextProvider.RequestUri.Returns(uri);
 
             // ACT
             var result = _headMetaDataGenerator.GetMetaHtml();
 
             // ASSERT
-            Assert.AreEqual(result, string.Empty);
+            _dependencies.LogWrapper.Received(1).SitecoreError(Arg.Any<string>());
+            Assert.AreEqual(result, "<script type='text/javascript'>if(console){console.error('Failed to load page metadata.')}</script>");
         }
 
         [Test]
@@ -70,13 +77,13 @@ namespace Informa.Tests.Library.Site_Tests
             _dependencies.SiteRootContext.Item.Returns(Substitute.For<ISite_Root>());
 
             // ACT
-            var result = _headMetaDataGenerator.GetMetaHtml();
+            var result = _headMetaDataGenerator.BuildPropertyDictionary().ToArray();
 
             // ASSERT
-            Assert.IsTrue(result.Contains("<meta property=\"og:title\" content=\"Home Title\">"));
-            Assert.IsTrue(result.Contains("<meta property=\"twitter:title\" content=\"Home Title\">"));
-            Assert.IsTrue(result.Contains("<meta property=\"og:description\" content=\"description of descriptions\">"));
-            Assert.IsTrue(result.Contains("<meta property=\"twitter:description\" content=\"description of descriptions\">"));
+            Assert.Contains(new KeyValuePair<string,string>("og:title", "Home Title"), result);
+            Assert.Contains(new KeyValuePair<string,string>("twitter:title", "Home Title"), result);
+            Assert.Contains(new KeyValuePair<string,string>("og:description", "description of descriptions"), result);
+            Assert.Contains(new KeyValuePair<string,string>("twitter:description", "description of descriptions"), result);
         }
 
         [Test]
@@ -91,10 +98,10 @@ namespace Informa.Tests.Library.Site_Tests
             _dependencies.SiteRootContext.Item.Returns(Substitute.For<ISite_Root>());
 
             // ACT
-            var result = _headMetaDataGenerator.GetMetaHtml();
+            var result = _headMetaDataGenerator.BuildPropertyDictionary().ToArray();
 
             // ASSERT
-            Assert.IsTrue(result.Contains("<meta property=\"og:title\" content=\"More Awesome Title\">"));
+            Assert.Contains(new KeyValuePair<string,string>("og:title", "More Awesome Title"), result);
         }
 
         [Test]
@@ -114,14 +121,14 @@ namespace Informa.Tests.Library.Site_Tests
             _dependencies.HttpContextProvider.RequestUri.Returns(uri);
 
             // ACT
-            var result = _headMetaDataGenerator.GetMetaHtml();
+            var result = _headMetaDataGenerator.BuildPropertyDictionary().ToArray();
 
             // ASSERT
-            Assert.IsTrue(result.Contains("<meta property=\"og:site_name\" content=\"Moose Monthly\">"));
-            Assert.IsTrue(result.Contains("<meta property=\"og:image\" content=\"www.moosemonthly.com/bunnies\">"));
-            Assert.IsTrue(result.Contains("<meta property=\"twitter:image\" content=\"www.moosemonthly.com/bunnies\">"));
-            Assert.IsTrue(result.Contains("<meta property=\"twitter:card\" content=\"www.moosemonthly.com/bunnies\">"));
-            Assert.IsTrue(result.Contains("<meta property=\"twitter:site\" content=\"moose2daMAX\">"));
+            Assert.Contains(new KeyValuePair<string,string>("og:site_name", "Moose Monthly"), result);
+            Assert.Contains(new KeyValuePair<string,string>("og:image", "www.moosemonthly.com/bunnies"), result);
+            Assert.Contains(new KeyValuePair<string,string>("twitter:image", "www.moosemonthly.com/bunnies"), result);
+            Assert.Contains(new KeyValuePair<string,string>("twitter:card", "www.moosemonthly.com/bunnies"), result);
+            Assert.Contains(new KeyValuePair<string,string>("twitter:site", "moose2daMAX"), result);
         }
 
         [Test]
@@ -135,11 +142,104 @@ namespace Informa.Tests.Library.Site_Tests
             _dependencies.HttpContextProvider.RequestUri.Returns(uri);
 
             // ACT
-            var result = _headMetaDataGenerator.GetMetaHtml();
+            var result = _headMetaDataGenerator.BuildPropertyDictionary().ToArray();
 
             // ASSERT
-            Assert.IsTrue(result.Contains("<meta property=\"og:url\" content=\"http://www.moosemonthly.com/\">"));
-            Assert.IsTrue(result.Contains("<meta property=\"og:type\" content=\"website\">"));
+            Assert.Contains(new KeyValuePair<string,string>("og:url", "http://www.moosemonthly.com/"), result);
+            Assert.Contains(new KeyValuePair<string,string>("og:type", "website"), result);
+        }
+
+        [Test]
+        public void GetMetaHtml_ArticlePage_ReturnsUniqueArticleMeta()
+        {
+            // ARRANGE
+            var fakeArticle = Substitute.For<IArticle>();
+            fakeArticle.Actual_Publish_Date.Returns(DateTime.Parse("2016-06-13T23:36:53Z"));
+            fakeArticle.Modified_Date.Returns(DateTime.Parse("2017-06-13T23:36:53Z"));
+
+            var fakeAuthor = Substitute.For<IStaff_Item>();
+            fakeAuthor.First_Name = "Jason";
+            fakeAuthor.Last_Name = "Moosterpolis";
+            fakeArticle.Authors.Returns(new[] {fakeAuthor});
+
+            var fakeTax1 = Substitute.For<ITaxonomy_Item>().Alter(x => x.Item_Name = "Amazing Mamals");
+            var fakeTax2 = Substitute.For<ITaxonomy_Item>().Alter(x => x.Item_Name = "beautiful");
+            var fakeTax3 = Substitute.For<ITaxonomy_Item>().Alter(x => x.Item_Name = "powerful");
+            var fakeTax4 = Substitute.For<ITaxonomy_Item>().Alter(x => x.Item_Name = "cuddly");
+            fakeArticle.Taxonomies.Returns(new[] {fakeTax1, fakeTax2, fakeTax3, fakeTax4});
+
+            _dependencies.SitecoreContext.GetCurrentItem<I___BasePage>().Returns(fakeArticle);
+            _dependencies.SiteRootContext.Item.Returns(Substitute.For<ISite_Root>());
+
+            var uri = new Uri("http://www.moosemonthly.com/");
+            _dependencies.HttpContextProvider.RequestUri.Returns(uri);
+
+            // ACT
+            var result = _headMetaDataGenerator.BuildPropertyDictionary().ToArray();
+
+            // ASSERT
+            Assert.Contains(new KeyValuePair<string, string>("article:published_time", "2016-06-13T23:36:53.0000000Z"), result);
+            Assert.Contains(new KeyValuePair<string, string>("article:modified_time", "2017-06-13T23:36:53.0000000Z"), result);
+            Assert.Contains(new KeyValuePair<string, string>("article:author", "Jason Moosterpolis"), result);
+            Assert.Contains(new KeyValuePair<string, string>("article:section", "Amazing Mamals"), result);
+            Assert.Contains(new KeyValuePair<string, string>("article:tag", "beautiful,powerful,cuddly"), result);
+        }
+
+        [Test]
+        public void GetMetaHtml_ArticlePage_ReturnsAlteredArticleMeta()
+        {
+            // ARRANGE
+            var fakeArticle = Substitute.For<IArticle>();
+            fakeArticle.Featured_Image_16_9.Returns(Substitute.For<Image>().Alter(x => x.Src = "/bunnies"));
+            fakeArticle.Summary = "Summary Town";
+
+            _dependencies.SitecoreContext.GetCurrentItem<I___BasePage>().Returns(fakeArticle);
+            _dependencies.SiteRootContext.Item.Returns(Substitute.For<ISite_Root>());
+
+            var uri = new Uri("http://www.moosemonthly.com/");
+            _dependencies.HttpContextProvider.RequestUri.Returns(uri);
+
+            // ACT
+            var result = _headMetaDataGenerator.BuildPropertyDictionary().ToArray();
+
+            // ASSERT
+            Assert.Contains(new KeyValuePair<string, string>("og:type", "article"), result);
+            Assert.Contains(new KeyValuePair<string, string>("og:image", "www.moosemonthly.com/bunnies"), result);
+            Assert.Contains(new KeyValuePair<string, string>("twitter:image", "www.moosemonthly.com/bunnies"), result);
+            Assert.Contains(new KeyValuePair<string, string>("og:description", "Summary Town"), result);
+            Assert.Contains(new KeyValuePair<string, string>("twitter:description", "Summary Town"), result);
+        }
+
+        [Test]
+        public void GetMetaHtml_ArticlePage_ReturnsCommaDelimitedAuthors()
+        {
+            // ARRANGE
+            var fakeArticle = Substitute.For<IArticle>();
+            var fakeAuthor1 = Substitute.For<IStaff_Item>();
+            fakeAuthor1.First_Name = "Jason";
+            fakeAuthor1.Last_Name = "Moosterpolis";
+            var fakeAuthor2 = Substitute.For<IStaff_Item>();
+            fakeAuthor2.First_Name = "Moosfriend";
+            fakeAuthor2.Last_Name = "McAnimalpal";
+            var fakeAuthor3 = Substitute.For<IStaff_Item>();
+            fakeAuthor3.First_Name = "Lilbunny";
+            fakeAuthor3.Last_Name = "Mooserider";
+
+            fakeArticle.Authors.Returns(new[] { fakeAuthor1, fakeAuthor2, fakeAuthor3 });
+
+            _dependencies.SitecoreContext.GetCurrentItem<I___BasePage>().Returns(fakeArticle);
+            _dependencies.SiteRootContext.Item.Returns(Substitute.For<ISite_Root>());
+
+            var uri = new Uri("http://www.moosemonthly.com/");
+            _dependencies.HttpContextProvider.RequestUri.Returns(uri);
+
+            // ACT
+            var result = _headMetaDataGenerator.BuildPropertyDictionary().ToArray();
+
+            // ASSERT
+            Assert.Contains(
+                new KeyValuePair<string, string>("article:author",
+                    "Jason Moosterpolis, Moosfriend McAnimalpal, Lilbunny Mooserider"), result);
         }
     }
 }
