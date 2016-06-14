@@ -2,7 +2,7 @@
 
 var informaSearchApp = angular.module('informaSearchApp');
 
-var InformaResultsController = function InformaResultsController($scope, $sanitize, searchService, viewHeadlinesStateService, $timeout, $window) {
+var InformaResultsController = function InformaResultsController($scope, $sanitize, searchService, viewHeadlinesStateService, $timeout, $window, facetAvailabilityService) {
 
     var vm = this;
 
@@ -47,7 +47,8 @@ var InformaResultsController = function InformaResultsController($scope, $saniti
     $scope.$on('refreshPopOuts', function (ngRepeatFinishedEvent) {
 
 		// Enable all facet options when search results land
-		$('.facets__section input').attr('disabled', null);
+		// $('.facets__section input').attr('disabled', null);
+		facetAvailabilityService.enableFacets();
 
         window.indexPopOuts();
         window.indexBookmarks();
@@ -73,4 +74,4 @@ informaSearchApp.directive('onFinishRender', function ($timeout) {
     };
 });
 
-informaSearchApp.controller("InformaResultsController", ['$scope', '$sanitize', 'searchService', 'viewHeadlinesStateService', '$timeout', '$window', InformaResultsController]);
+informaSearchApp.controller("InformaResultsController", ['$scope', '$sanitize', 'searchService', 'viewHeadlinesStateService', '$timeout', '$window', 'facetAvailabilityService', InformaResultsController]);
