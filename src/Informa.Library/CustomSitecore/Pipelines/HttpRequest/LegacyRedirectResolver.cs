@@ -77,7 +77,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 					{
 						// Get legacy article path
 						var basePath = "/sitecore/content/Home";
-						var path = $"{basePath}{args.Url.FilePath}";
+						var path = $"{basePath}{args.Url.FilePath}".Replace("-", " ");
 						results = ArticleSearcher.GetLegacyArticleUrl(path);
 					}
 					else
