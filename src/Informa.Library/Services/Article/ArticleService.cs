@@ -10,6 +10,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 using Informa.Library.Utilities.Extensions;
+using Informa.Models.Informa.Models.sitecore.templates.System.Dictionary;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Core.Caching;
 
@@ -77,7 +78,16 @@ namespace Informa.Library.Services.Article {
           ? "chart"
           : article.Media_Type?.Item_Name?.ToLower() ?? "";
 
-      return new MediaTypeIconData() {MediaType = mediaType,ToolTip = "This is Tooltip Text"};
+      string tooltipText = "";
+      if (article.Media_Type != null)
+      {
+        if (!string.IsNullOrEmpty(article.Media_Type.Tooltip_Text.Key))
+        {
+          tooltipText = TextTranslator.Translate(article.Media_Type.Tooltip_Text.Key);
+        }
+      }
+
+      return new MediaTypeIconData() {MediaType = mediaType, Tooltip = tooltipText };
     }
 
     public string GetArticleSummary(IArticle article)

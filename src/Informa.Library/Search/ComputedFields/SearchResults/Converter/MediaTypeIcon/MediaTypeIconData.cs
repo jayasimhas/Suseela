@@ -3,6 +3,6 @@
   public class MediaTypeIconData
   {
     public string MediaType { get; set; }
-    public string ToolTip { get; set; }
+    public string Tooltip { get; set; }
   }
 }

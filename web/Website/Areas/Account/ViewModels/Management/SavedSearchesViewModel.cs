@@ -33,6 +33,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 			EmailAlertText = translator.Translate("SavedSearches.EmailAlertText");
 			RemoveText = translator.Translate("SavedSearches.RemoveText");
 			ItemRemovedMessage = translator.Translate("SavedSearches.ItemRemovedMessage");
+      EmailAlertTooltipText = translator.Translate("IconTooltips.Email.EmailAlert");
 		}
 
 		public IEnumerable<ISavedSearchDisplayable> SavedSearches { get; set; }

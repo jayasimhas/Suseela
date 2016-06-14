@@ -29,6 +29,7 @@ using Sitecore.Data;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Models.Informa.Models.sitecore.templates.System.Dictionary;
 using Velir.Search.Models;
 
 
@@ -6974,10 +6975,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					/// <para></para>
 					/// <para>Field Type: Droptree</para>		
 					/// <para>Field ID: e1b065cf-c9fb-4e91-8aff-617082c9ce19</para>
-					/// <para>Custom Data: </para>
+					/// <para>Custom Data: type=IDictionary_Entry__Raw</para>
 					/// </summary>
 					[SitecoreField(ITaxonomy_ItemConstants.Tooltip_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-					Guid Tooltip_Text  {get; set;}
+					IDictionary_Entry__Raw Tooltip_Text  {get; set;}
 				}
 
 	
@@ -7013,10 +7014,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 						/// <para></para>
 						/// <para>Field Type: Droptree</para>		
 						/// <para>Field ID: e1b065cf-c9fb-4e91-8aff-617082c9ce19</para>
-						/// <para>Custom Data: </para>
+						/// <para>Custom Data: type=IDictionary_Entry__Raw</para>
 						/// </summary>
 						[SitecoreField(ITaxonomy_ItemConstants.Tooltip_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-						Guid Tooltip_Text  {get; set;}
+						IDictionary_Entry__Raw Tooltip_Text  {get; set;}
 						}
 	
 	public static partial class ITaxonomy_ItemConstants{
