@@ -6969,6 +6969,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					/// </summary>
 					[SitecoreField(ITaxonomy_ItemConstants.Media_Type_IconFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Image Media_Type_Icon  {get; set;}
+								/// <summary>
+					/// The Tooltip Text field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: e1b065cf-c9fb-4e91-8aff-617082c9ce19</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITaxonomy_ItemConstants.Tooltip_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Tooltip_Text  {get; set;}
 				}
 
 	
@@ -6999,6 +7008,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 						/// </summary>
 						[SitecoreField(ITaxonomy_ItemConstants.Media_Type_IconFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Image Media_Type_Icon  {get; set;}
+										/// <summary>
+						/// The Tooltip Text field.
+						/// <para></para>
+						/// <para>Field Type: Droptree</para>		
+						/// <para>Field ID: e1b065cf-c9fb-4e91-8aff-617082c9ce19</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ITaxonomy_ItemConstants.Tooltip_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Tooltip_Text  {get; set;}
 						}
 	
 	public static partial class ITaxonomy_ItemConstants{
@@ -7015,6 +7033,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					
 			public static readonly ID Media_Type_IconFieldId = new ID("1cfbe05b-a4af-4b00-90fb-734cba008f42");
 			public const string Media_Type_IconFieldName = "Media Type Icon";
+
+						
+					
+			public static readonly ID Tooltip_TextFieldId = new ID("e1b065cf-c9fb-4e91-8aff-617082c9ce19");
+			public const string Tooltip_TextFieldName = "Tooltip Text";
 
 						
 					

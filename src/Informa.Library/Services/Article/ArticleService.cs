@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
+using Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.FactoryInterface;
@@ -70,13 +71,16 @@ namespace Informa.Library.Services.Article {
             return taxItems;
         }
 
-        public string GetMediaTypeName(IArticle article) {
-            return article.Media_Type?.Item_Name == "Data" 
-                ? "chart" 
-                : article.Media_Type?.Item_Name?.ToLower() ?? "";
-        }
+    public MediaTypeIconData GetMediaTypeIconData(IArticle article)
+    {
+      string mediaType = article.Media_Type?.Item_Name == "Data"
+          ? "chart"
+          : article.Media_Type?.Item_Name?.ToLower() ?? "";
 
-        public string GetArticleSummary(IArticle article)
+      return new MediaTypeIconData() {MediaType = mediaType,ToolTip = "This is Tooltip Text"};
+    }
+
+    public string GetArticleSummary(IArticle article)
         {
             string cacheKey = CreateCacheKey($"Summary-{article._Id}");
             return CacheProvider.GetFromCache(cacheKey, () => BuildTokenizedArticleText(article.Summary));

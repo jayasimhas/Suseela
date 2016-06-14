@@ -1,4 +1,5 @@
-﻿@model FeaturedArticleViewModel
+﻿@using Informa.Library.Utilities.References
+@model FeaturedArticleViewModel
 <section class="article-preview article-preview--small">
     @if (Model != null && Model.GlassModel != null)
     {
@@ -41,9 +42,7 @@
                 @if (!string.IsNullOrEmpty(Model.Media_Type))
                 {
                     <li>
-                        <svg class="article-metadata__media-type">
-                            <use xlink:href="/dist/img/svg-sprite.svg#@Model.Media_Type"></use>
-                        </svg>
+                        @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model })
                     </li>
                 }
             </ul>

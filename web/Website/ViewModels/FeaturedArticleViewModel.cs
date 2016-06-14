@@ -66,7 +66,7 @@ namespace Informa.Web.ViewModels
 			}
 		}
 		public string Content_Type => GlassModel.Content_Type?.Item_Name;
-		public string Media_Type => ArticleService.GetMediaTypeName(GlassModel);
+		public string Media_Type => ArticleService.GetMediaTypeIconData(GlassModel).MediaType;
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
         public bool IsUserAuthenticated { get; set; }
         public bool IsArticleBookmarked { get; set; }

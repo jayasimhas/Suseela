@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
+using Informa.Library.Search.ComputedFields.SearchResults.Converter.DisplayTaxonomy;
 using Informa.Library.Utilities.TokenMatcher;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;

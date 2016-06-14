@@ -409,6 +409,8 @@
     <Compile Include="Rss\Utils\RssConstants.cs" />
     <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
     <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\MediaTypeIcon\MediaTypeIconData.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\MediaTypeIcon\MediaTypeIconDataConverter.cs" />
     <Compile Include="Search\FacetBuilders\CompaniesFacetBuilder.cs" />
     <Compile Include="Search\Formatting\IQueryFormatter.cs" />
     <Compile Include="Search\Formatting\SolrQueryFormatter.cs" />
@@ -888,9 +890,9 @@
     <Compile Include="ContentCuration\Search\Filter\IManuallyCuratedContentFilter.cs" />
     <Compile Include="ContentCuration\Search\Extensions\QueryableExtensions.cs" />
     <Compile Include="Search\ComputedFields\Base\IsSearchableField.cs" />
-    <Compile Include="Search\ComputedFields\SearchResults\Converter\HtmlLink.cs" />
-    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomyTypeConverter.cs" />
-    <Compile Include="Search\ComputedFields\SearchResults\Converter\HtmlLinkList.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomy\HtmlLink.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomy\HtmlLinkListTypeConverter.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomy\HtmlLinkList.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchDisplayTaxonomyField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultBylineField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultDateField.cs" />

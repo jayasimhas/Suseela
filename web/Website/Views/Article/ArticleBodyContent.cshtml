@@ -1,4 +1,5 @@
-﻿@using Informa.Web.Models
+﻿@using Informa.Library.Utilities.References
+@using Informa.Web.Models
 @model ArticleBodyContentModel
 
 <div class="article-body-content">
@@ -19,13 +20,12 @@
 					<h6>@Model.Content_Type</h6>
 				</li>
 			}
-			@if (!string.IsNullOrEmpty(Model.Media_Type))
-			{
-				<li>
-					<svg class="article-metadata__media-type">
-						<use xlink:href="/dist/img/svg-sprite.svg#@Model.Media_Type"></use>
-					</svg>
-				</li>
+			@if (!string.IsNullOrEmpty(Model.Media_Type_Icon_Data.MediaType))
+            {
+
+			    <li>
+                    @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model.GlassModel._Id })
+			    </li>
 			}
 		</ul>
 	</div>

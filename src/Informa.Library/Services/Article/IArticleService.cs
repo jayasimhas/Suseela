@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -12,7 +13,7 @@ namespace Informa.Library.Services.Article {
     {
         IEnumerable<string> GetLegacyPublicationNames(IArticle article);
         IEnumerable<ILinkable> GetLinkableTaxonomies(IArticle article);
-        string GetMediaTypeName(IArticle article);
+        MediaTypeIconData GetMediaTypeIconData(IArticle article);
         string GetArticleSummary(IArticle article);
         string GetArticleBody(IArticle article);
         string GetLegacyPublicationText(IArticle glassModel);
