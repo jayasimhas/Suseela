@@ -311,7 +311,7 @@ namespace Informa.Library.Services.Sitemap
                 //xml declaration
                 XmlNode declarationNode = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
                 doc.AppendChild(declarationNode);
-                IEnumerable<I___BasePage> items = GetAllPages(home._Path).Skip(200 * page - 1).Take(200);
+                IEnumerable<I___BasePage> items = GetAllPages(home._Path).Skip(200 * (page - 1)).Take(200);
                 //urlset
                 XmlNode urlsetNode = doc.CreateElement("urlset");
                 //xmlnls
