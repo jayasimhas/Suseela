@@ -22,8 +22,13 @@
 		Html.RenderPartial("Components/ListableContentSmall", listable);
 	}
 </div>
-@{
+<!-- Unable to format data-info string, use hardcoded a tag instead.-->
+@*@{
 	var dataInfo = "{{ 'event_name': 'see_all', 'see_all_topic': '" + Model.TitleText + "' }}";
-	
 }
-@RenderLink(model => model.SeeAllLink, new { @class = "full-diminished-button click-utag", data_info = dataInfo })
+@RenderLink(model => model.SeeAllLink, new { @class = "full-diminished-button click-utag", data_info = dataInfo })*@
+
+<a href="@Model.SeeAllLink.Url"
+   class="full-diminished-button click-utag"
+   data-info="{'event_name': 'see_all', 'see_all_topic': '@Model.TitleText'}"
+   >@Model.SeeAllLink.Text</a>
