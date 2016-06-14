@@ -1065,6 +1065,7 @@
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalTitleResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\PublisherResolver.cs" />
     <Compile Include="Utilities\Extensions\ArticleExtensions.cs" />
+    <Compile Include="Utilities\Extensions\BooleanExtensions.cs" />
     <Compile Include="Utilities\Extensions\EnumerableExtensions.cs" />
     <Compile Include="Utilities\Extensions\EnumerableStringExtensions.cs" />
     <Compile Include="Utilities\Extensions\GlassBaseExtensions.cs" />
