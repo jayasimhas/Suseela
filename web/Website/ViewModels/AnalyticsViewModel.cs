@@ -61,7 +61,6 @@ namespace Informa.Web.ViewModels
             UserEntitlementsContext = userEntitlementsContext;
             UserIpAddressContext = userIpAddressContext;
 	        SiteRootContext = siteRootContext;
-	        ContentEntitlementType = GetContentEntitlement(UserCompanyContext);
 	        EntitlementType = GetEntitlementType(UserCompanyContext);
 	        UserEntitlements = GetUserEntitlements();
 	        SubscribedProducts = GetSubscribedProducts();
@@ -154,18 +153,18 @@ namespace Informa.Web.ViewModels
 			}
 		}
 
-	    public string ContentEntitlementType { get; }
+	    public string ContentEntitlementType => GetContentEntitlement(UserCompanyContext);
 
 	    public string EntitlementType { get; }
 
 		private string GetContentEntitlement(IUserCompanyContext context)
 		{
-			if (UserEntitlementStatus == "unentitled")
+			if (!IsEntitledProductItemContext.IsEntitled(Article))
 			{
 				return "unentitled";
 			}
 
-			return $"entitled - {GetContentEntitlement(context)}";
+			return $"entitled - {GetEntitlementType(context)}";
 		}
 
 		private string GetEntitlementType(IUserCompanyContext context)
