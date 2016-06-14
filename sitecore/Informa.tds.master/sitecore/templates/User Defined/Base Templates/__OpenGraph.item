@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {77604558-3056-497B-93D8-E53BC5619DDB}
+id: {C8E61F64-8645-4917-892D-CDE98B89E1E8}
 database: master
-path: /sitecore/templates/User Defined/Pages/Topic Page
-parent: {8D510CBE-EC0E-42E1-983B-748AD8332249}
-name: Topic Page
+path: /sitecore/templates/User Defined/Base Templates/__OpenGraph
+parent: {614D6759-0A94-418A-9FC3-72E9000F9742}
+name: __OpenGraph
 master: {00000000-0000-0000-0000-000000000000}
 template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
 templatekey: Template
@@ -13,27 +13,13 @@ templatekey: Template
 field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
 name: __Base template
 key: __base template
-content-length: 155
-
-{1930BBEB-7805-471A-A3BE-4858AC7CF696}|{8CB9B3DC-FB05-4F6C-A73B-19EADB3A6391}|{A3EC5DA5-C37C-44A5-83F3-96D45B53389F}|{C8E61F64-8645-4917-892D-CDE98B89E1E8}
-----field----
-field: {F7D48A55-2158-4F02-9356-756654404F73}
-name: __Standard values
-key: __standard values
 content-length: 38
 
-{80FBFFE4-1598-4D5A-A942-8635A15F6DF5}
-----field----
-field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
-name: __Icon
-key: __icon
-content-length: 28
-
-Apps/32x32/Text-Document.png
+{1930BBEB-7805-471A-A3BE-4858AC7CF696}
 ----version----
 language: en
 version: 1
-revision: 593d70d6-bb73-45f1-943f-4da812a13947
+revision: acb52900-13c1-4eab-bc2d-e814b6c87e07
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,7 +27,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20151218T012740Z
+20160614T191817Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -55,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-593d70d6-bb73-45f1-943f-4da812a13947
+acb52900-13c1-4eab-bc2d-e814b6c87e07
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160614T192507Z
+20160614T192341Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
