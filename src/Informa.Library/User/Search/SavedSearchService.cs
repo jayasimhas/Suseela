@@ -56,12 +56,15 @@ namespace Informa.Library.User.Search
 			
 			var entity = new SavedSearchEntity
 			{
-				SearchString = ExtractQueryString(input.Url)
+				SearchString = ExtractQueryString(input.Url),
+				HasAlert = input.AlertEnabled
 			};
 
 			var results = GetContentFromSessionOrRepo();
 
-			return results.Any(s => SavedSearchComparer.Equals(s, entity));
+			var result = results.FirstOrDefault(s => SavedSearchComparer.Equals(s, entity));
+
+			return result != null && entity.HasAlert ? result.HasAlert : result != null;
 		}
 
 		public virtual IEnumerable<ISavedSearchDisplayable> GetContent()
