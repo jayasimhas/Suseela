@@ -15,13 +15,6 @@ version: 1
 revision: 5140a730-a812-4cfa-ae7f-4dcd4aca309e
 
 ----field----
-field: {89DB27D7-1FB5-4260-A219-3DAF504D76C5}
-name: Contact Email
-key: contact email
-content-length: 19
-
-support@informa.com
-----field----
 field: {C86C6F15-961F-45B6-BD8C-5AE71A9521C3}
 name: Twitter Logo
 key: twitter logo
@@ -42,20 +35,6 @@ key: rss logo
 content-length: 58
 
 <image mediaid="{23CDBC28-15AC-48D7-8542-D073EADAA519}" />
-----field----
-field: {E90AD04D-B62B-4118-B3FC-8C535DFED2EB}
-name: Email Title
-key: email title
-content-length: 37
-
-Informa Insight Platform Notification
-----field----
-field: {C89FA3B2-0D80-4086-A9F0-24A5A3E9D14E}
-name: From Email Address
-key: from email address
-content-length: 19
-
-support@informa.com
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner

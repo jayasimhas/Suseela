@@ -40,9 +40,18 @@ namespace Informa.Library.Utilities.References
 
 		public Guid EmailPreferences => new Guid("{BAF1D4FB-7599-4EDA-8926-0A4995E4DC2D}");
 
-		#region Renderings
+        #region Environment Globals
 
-		public Guid SiteHeaderRendering => new Guid("{83398B37-08CB-43A2-BC0A-7EB47E764AF4}");
+        public Guid SupportingDocumentsRootNodePointer => new Guid("{76483552-F714-47C4-89E5-CEE081F95A7A}");
+        public Guid ContactEmailForSupport => new Guid("{B611B955-D084-418F-B91F-74F0781B2514}");
+        public Guid FromEmailAddressForWorkflowNotifications => new Guid("{A4B7D7FE-00CF-4100-996F-537E4558DB98}");
+        public Guid EmailTitleForWorkflowNotifications => new Guid("{00F04673-7A2F-4A7B-A949-1F423D30B719}");
+
+        #endregion
+
+        #region Renderings
+
+        public Guid SiteHeaderRendering => new Guid("{83398B37-08CB-43A2-BC0A-7EB47E764AF4}");
 		public Guid SiteFooterRendering => new Guid("{2889497D-2921-4BE1-BBF4-F4B4D2131231}");
 		public Guid SiteSideNavigationRendering => new Guid("{65EDEFC9-82C2-47EE-93CB-A4D9372A45C0}");
 		public Guid SignInPopOutRendering => new Guid("{82E58C71-9C3A-4967-AA0D-85AEB64D2E72}");

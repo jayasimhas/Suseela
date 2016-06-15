@@ -90,15 +90,15 @@ namespace InformaSitecoreWord
             { // we want to silently fail here. Logging won't work, but at least it won't bring down the app.
             }
 
-            try
-            {
-                SupportEmailAddress = SitecoreClient.GetContactEmail();
-            }
-            catch (Exception ex)
-            {
-                SupportEmailAddress = "";
-                this.LogException("Unable to retrieve email for support!", ex);
-            }
+            //try
+            //{
+            //    SupportEmailAddress = SitecoreClient.GetContactEmail();
+            //}
+            //catch (Exception ex)
+            //{
+            //    SupportEmailAddress = "";
+            //    this.LogException("Unable to retrieve email for support!", ex);
+            //}
 
             try
             {
