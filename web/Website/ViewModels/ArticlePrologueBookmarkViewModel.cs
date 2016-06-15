@@ -1,5 +1,6 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.Presentation;
+using Informa.Library.Site;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Document;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -11,19 +12,22 @@ namespace Informa.Web.ViewModels
 	public class ArticlePrologueBookmarkViewModel : IArticlePrologueBookmarkViewModel
 	{
 		protected readonly ITextTranslator TextTranslator;
-		
+		protected readonly ISiteRootContext SiteRootContext;
+
 		public ArticlePrologueBookmarkViewModel(
 			ITextTranslator textTranslator,
 			IRenderingItemContext articleRenderingContext,
 			IAuthenticatedUserContext authenticatedUserContext,
-			IIsSavedDocumentContext isSavedDocuementContext)
+			IIsSavedDocumentContext isSavedDocuementContext,
+			ISiteRootContext siteRootContext)
 		{
 			TextTranslator = textTranslator;
+			SiteRootContext = siteRootContext;
 
 			Article = articleRenderingContext.Get<IArticle>();
 			IsUserAuthenticated = authenticatedUserContext.IsAuthenticated;
 			IsArticleBookmarked = IsUserAuthenticated && isSavedDocuementContext.IsSaved(Article._Id);
-			BookmarkPublication = GetPublicationType();
+			BookmarkPublication = SiteRootContext.Item.Publication_Name;
             BookmarkTitle = Article?.Title;
 		}
 
@@ -34,25 +38,5 @@ namespace Informa.Web.ViewModels
 		public string BookmarkTitle { get; }
 		public string BookmarkPublication { get; }
 		public string BookmarkedText => TextTranslator.Translate("Bookmarked");
-
-		private string GetPublicationType()
-		{
-			var prefix = Article?.Article_Number.Substring(0, 2);
-			switch (prefix)
-			{
-				case "IV":
-					return "InVivo";
-				case "PS":
-					return "Pink";
-				case "MT":
-					return "Medtech";
-				case "RS":
-					return "Rose";
-				case "SC":
-					return "Scrip";
-				default:
-					return "";
-			}
-		}
 	}
 }

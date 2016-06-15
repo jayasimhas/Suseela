@@ -108,7 +108,8 @@
 										class="click-utag"
 										data-info='{
 											"event_name": "bookmark_clickthrough",
-											"bookmark_title": "@item.Title"
+											"bookmark_title": "@item.Title",
+											"bookmark_publication": "@Model.PublicationCode"
 										}'
 										@(item.IsExternalUrl ? "target = \"_blank\"" : "")>
 										@Html.Raw(item.Title)
