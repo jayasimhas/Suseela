@@ -9,10 +9,11 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
 	{
 		public override object GetFieldValue(I___BasePage indexItem)
 		{
-			if (indexItem is IGeneral_Content_Page)
+			
+			var generalContentPage = indexItem as IGeneral_Content_Page;
+			if (generalContentPage != null)
 			{
-				var page = indexItem as IGeneral_Content_Page;
-				return SearchSummaryUtil.GetTruncatedSearchSummary(page.Summary);
+				return SearchSummaryUtil.GetTruncatedSearchSummary(generalContentPage.Summary);
 			}
 
 			IArticle articleItem = indexItem as IArticle;
