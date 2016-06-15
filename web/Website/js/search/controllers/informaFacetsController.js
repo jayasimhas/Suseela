@@ -1,5 +1,5 @@
 ﻿/* global _, datesObject, angular */
-var InformaFacetController = function ($scope, $rootScope, $location, $http, $anchorScroll, searchService, searchBootstrapper, facetAvailabilityService) {
+var InformaFacetController = function ($scope, $rootScope, $location, $http, $anchorScroll, $timeout,  searchService, searchBootstrapper, facetAvailabilityService) {
     "use strict";
 
     // Bind `this` to vm - a representation of the view model
@@ -145,6 +145,7 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
         //Scroll to the top of the results when a new page is chosen
         vm.location.hash("searchTop");
         vm.anchorScroll();
+
     };
 
 
@@ -185,22 +186,37 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
         vm.update();
     };
 
+	// facetGroupId: 'publication'
+	// facetIds: ['In Vivo', 'Rose Sheet']
     vm.facetChangeMultiple = function(facetGroupId, facetIds) {
-        var facets = vm.searchService.getFacetGroup(facetGroupId).getSelectedFacets();
 
-        _.each(facets, function (facet) {
-            facet.selected = false;
+		vm.update();
+
+		var facets;
+
+		_.each(vm.facetGroups, function(group) {
+			if(group.id === facetGroupId) {
+				facets = group;
+			}
+		});
+
+        _.each(facets.getSelectedFacets(), function (facet) {
+			if(facet) {
+				facet.selected = false;
+			}
         });
 
         _.each(facetIds, function(id) {
-			var facet = vm.searchService.getFacet(id);
+			var facet = facets.getFacet(id);
 			if (facet) {
 				facet.selected = true;
 			}
         });
 
-        vm.update();
+		vm.update();
+
     };
+
 
     // TODO: this comes from a diff search app, and needs jquery to work.
     //       either hook up jq to this controller or move this elsewhere
@@ -344,4 +360,4 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 };
 
 var informaSearchApp = angular.module('informaSearchApp');
-informaSearchApp.controller("InformaFacetController", ['$scope', '$rootScope', '$location', '$http', '$anchorScroll', 'searchService', 'searchBootstrapper', 'facetAvailabilityService', InformaFacetController]);
+informaSearchApp.controller("InformaFacetController", ['$scope', '$rootScope', '$location', '$http', '$anchorScroll', '$timeout', 'searchService', 'searchBootstrapper', 'facetAvailabilityService', InformaFacetController]);
