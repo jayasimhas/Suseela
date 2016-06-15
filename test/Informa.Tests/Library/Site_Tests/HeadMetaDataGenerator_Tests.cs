@@ -293,5 +293,24 @@ namespace Informa.Tests.Library.Site_Tests
             // ASSERT
             Assert.Contains(new KeyValuePair<string, string>("twitter:card", "summary_large_image"), result);
         }
+
+        [Test]
+        public void AddArticleMeta_ArticlePageWithNoDates_ReturnsEmptyDates()
+        {
+            // ARRANGE
+            var props = new Dictionary<string, string>();
+
+            var fakeArticle = Substitute.For<IArticle>();
+            fakeArticle.Planned_Publish_Date.Returns(default(DateTime));
+            fakeArticle.Modified_Date.Returns(default(DateTime));
+            _dependencies.SitecoreContext.GetCurrentItem<IGlassBase>(inferType: true).Returns(fakeArticle);
+
+            // ACT
+            _headMetaDataGenerator.AddArticleMeta(props, fakeArticle);
+
+            // ASSERT
+            Assert.Contains(new KeyValuePair<string, string>("article:published_time", ""), props);
+            Assert.Contains(new KeyValuePair<string, string>("article:modified_time", ""), props);
+        }
     }
 }

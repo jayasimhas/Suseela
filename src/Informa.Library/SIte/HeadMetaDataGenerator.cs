@@ -135,14 +135,21 @@ namespace Informa.Library.Site
             props["og:image"] = imageUrl;
             props["twitter:image"] = imageUrl;
 
-            props["article:published_time"] = article.Actual_Publish_Date.ToUniversalTime().ToString("o");
-            props["article:modified_time"] = article.Modified_Date.ToUniversalTime().ToString("o");
+            props["article:published_time"] = FormatDateTime(article.Actual_Publish_Date);
+            props["article:modified_time"] = FormatDateTime(article.Modified_Date);
             props["article:author"] = ParseAuthors(article.Authors);
 
             string section, tags;
             ParseTags(article.Taxonomies.ToArray(), out section, out tags);
             props["article:section"] = section;
             props["article:tag"] = tags;
+        }
+
+        private string FormatDateTime(DateTime time)
+        {
+            return time == DateTime.MinValue
+                ? string.Empty
+                : time.ToUniversalTime().ToString("o");
         }
 
         private string GetImageFullUrl(string src)
