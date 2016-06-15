@@ -1,5 +1,6 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.Presentation;
+using Informa.Library.Services.Article;
 using Informa.Library.Site;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Document;
@@ -13,21 +14,24 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteRootContext SiteRootContext;
+		protected readonly IArticleService ArticleService;
 
 		public ArticlePrologueBookmarkViewModel(
 			ITextTranslator textTranslator,
 			IRenderingItemContext articleRenderingContext,
 			IAuthenticatedUserContext authenticatedUserContext,
 			IIsSavedDocumentContext isSavedDocuementContext,
-			ISiteRootContext siteRootContext)
+			ISiteRootContext siteRootContext,
+			IArticleService articleService)
 		{
 			TextTranslator = textTranslator;
 			SiteRootContext = siteRootContext;
+			ArticleService = articleService;
 
 			Article = articleRenderingContext.Get<IArticle>();
 			IsUserAuthenticated = authenticatedUserContext.IsAuthenticated;
 			IsArticleBookmarked = IsUserAuthenticated && isSavedDocuementContext.IsSaved(Article._Id);
-			BookmarkPublication = SiteRootContext.Item.Publication_Name;
+			BookmarkPublication = ArticleService.GetArticlePublicationCode(Article);
             BookmarkTitle = Article?.Title;
 		}
 
