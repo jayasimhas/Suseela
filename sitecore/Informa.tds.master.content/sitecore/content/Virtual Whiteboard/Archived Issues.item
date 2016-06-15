@@ -2,12 +2,12 @@
 version: 1
 id: {AAB11244-7D15-4A43-A709-DC8951893FD2}
 database: master
-path: /sitecore/content/Issues/Archived
-parent: {ECE677C9-3CC5-41F5-ADCB-D103C60783A7}
-name: Archived
+path: /sitecore/content/Virtual Whiteboard/Archived Issues
+parent: {C3A391BC-5E4D-4197-A945-2B4E1B82D86F}
+name: Archived Issues
 master: {00000000-0000-0000-0000-000000000000}
-template: {ABEDA53B-D419-4E96-A19F-F4B456D8CF0B}
-templatekey: Issue Folder
+template: {F09ECF2E-7474-42E8-AD7A-280602B326D8}
+templatekey: Archived Issue Folder
 
 ----field----
 field: {9C6106EA-7A5A-48E2-8CAD-F0F693B1E2D4}
@@ -19,7 +19,7 @@ content-length: 1
 ----version----
 language: en
 version: 1
-revision: 91888f95-422a-4f92-8ca2-bc13e360329a
+revision: 1084eb01-3d73-4b3c-8c05-86f5243c89da
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-91888f95-422a-4f92-8ca2-bc13e360329a
+1084eb01-3d73-4b3c-8c05-86f5243c89da
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160608T153123Z
+20160615T214708Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

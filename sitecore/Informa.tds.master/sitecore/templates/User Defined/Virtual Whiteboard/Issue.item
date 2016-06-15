@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {2975BE8F-36CC-4565-9443-E6366FDE5E13}
+id: {90C7C95A-2D6F-49D8-B471-7626E3135201}
 database: master
-path: /sitecore/templates/User Defined/Issues/Issue Root Folder
+path: /sitecore/templates/User Defined/Virtual Whiteboard/Issue
 parent: {CA208F13-5338-417C-BEB9-CF87E678A531}
-name: Issue Root Folder
+name: Issue
 master: {00000000-0000-0000-0000-000000000000}
 template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
 templatekey: Template
@@ -22,18 +22,18 @@ name: __Standard values
 key: __standard values
 content-length: 38
 
-{5FAF31AD-CFE0-472D-A1E5-30FD8F617DD8}
+{046E4447-530C-4682-B067-C56791332CEF}
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
-content-length: 26
+content-length: 27
 
-Apps/32x32/Importation.png
+People/32x32/book_green.png
 ----version----
 language: en
 version: 1
-revision: c8c5e6e8-4385-48a5-8601-5fd0bef6774b
+revision: 8b9f281e-ea0b-4f32-b01e-205bd20e1e28
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,7 +41,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20160608T151916Z
+20160608T145523Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c8c5e6e8-4385-48a5-8601-5fd0bef6774b
+8b9f281e-ea0b-4f32-b01e-205bd20e1e28
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160608T153042Z
+20160615T213803Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

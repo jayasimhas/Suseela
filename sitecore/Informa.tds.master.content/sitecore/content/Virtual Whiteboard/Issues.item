@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {B2F62FA2-91B1-424D-889A-CE8276984660}
+id: {ECE677C9-3CC5-41F5-ADCB-D103C60783A7}
 database: master
-path: /sitecore/content/Issues/Current
-parent: {ECE677C9-3CC5-41F5-ADCB-D103C60783A7}
-name: Current
+path: /sitecore/content/Virtual Whiteboard/Issues
+parent: {C3A391BC-5E4D-4197-A945-2B4E1B82D86F}
+name: Issues
 master: {00000000-0000-0000-0000-000000000000}
 template: {ABEDA53B-D419-4E96-A19F-F4B456D8CF0B}
 templatekey: Issue Folder
@@ -26,7 +26,7 @@ content-length: 1
 ----version----
 language: en
 version: 1
-revision: f8ff1488-a6e1-42fb-8d72-a4af0878492a
+revision: 8325c679-d701-47f2-af28-1f4afdd84076
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160608T153104Z
+20160608T152736Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-f8ff1488-a6e1-42fb-8d72-a4af0878492a
+8325c679-d701-47f2-af28-1f4afdd84076
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160608T153204Z
+20160615T214706Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

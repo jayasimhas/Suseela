@@ -2,7 +2,7 @@
 version: 1
 id: {046E4447-530C-4682-B067-C56791332CEF}
 database: master
-path: /sitecore/templates/User Defined/Issues/Issue/__Standard Values
+path: /sitecore/templates/User Defined/Virtual Whiteboard/Issue/__Standard Values
 parent: {90C7C95A-2D6F-49D8-B471-7626E3135201}
 name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}

@@ -1,18 +1,18 @@
 ----item----
 version: 1
-id: {CA208F13-5338-417C-BEB9-CF87E678A531}
+id: {C727FB63-F273-4A9A-BCFB-51F2F0EC6FF0}
 database: master
-path: /sitecore/templates/User Defined/Issues
-parent: {B29EE504-861C-492F-95A3-0D890B6FCA09}
-name: Issues
+path: /sitecore/templates/User Defined/Virtual Whiteboard/Archived Issue/Archive Data
+parent: {6467B31C-4196-44EB-A215-EEC8F733FFF8}
+name: Archive Data
 master: {00000000-0000-0000-0000-000000000000}
-template: {0437FEE2-44C9-46A6-ABE9-28858D9FEE8C}
-templatekey: Template Folder
+template: {E269FBB5-3750-427A-9149-7AA950B49301}
+templatekey: Template section
 
 ----version----
 language: en
 version: 1
-revision: 08bd8d9c-5b0e-4b87-8efd-ceacdff37635
+revision: 1756ecd9-6529-43e9-8c84-5c69ccba47bc
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -20,7 +20,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20160608T145437Z
+20160608T153520Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-08bd8d9c-5b0e-4b87-8efd-ceacdff37635
+1756ecd9-6529-43e9-8c84-5c69ccba47bc
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160608T145437Z
+20160615T215142Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

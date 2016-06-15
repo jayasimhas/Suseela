@@ -3512,44 +3512,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Dictionary
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Issues
-{
-
-
- 	/// <summary>
-	/// IIssue_Root_Folder Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Issues/Issue Root Folder</para>	
-	/// <para>ID: 2975be8f-36cc-4565-9443-e6366fde5e13</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IIssue_Root_FolderConstants.TemplateIdString)]
-	public partial interface IIssue_Root_Folder : IGlassBase 
-	{
-				}
-
-	
-		/// <summary>
-		/// IIssue_Root_Folder Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Issues/Issue Root Folder</para>	
-		/// <para>ID: 2975be8f-36cc-4565-9443-e6366fde5e13</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IIssue_Root_Folder__Raw : IGlassBase 
-		{
-						}
-	
-	public static partial class IIssue_Root_FolderConstants{
-
-			public const string TemplateIdString = "2975be8f-36cc-4565-9443-e6366fde5e13";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Issue Root Folder";
-
-			
-
-	}
-
-}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping
 {
 
@@ -6444,49 +6406,49 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Issues
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard
 {
 
 
  	/// <summary>
 	/// IArchived_Issue Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Issues/Archived Issue</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Virtual Whiteboard/Archived Issue</para>	
 	/// <para>ID: 6467b31c-4196-44eb-a215-eec8f733fff8</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IArchived_IssueConstants.TemplateIdString)]
-	public partial interface IArchived_Issue : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Issues.IIssue
+	public partial interface IArchived_Issue : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard.IIssue
 	{
 								/// <summary>
-					/// The Issue Content field.
+					/// The Issue Articles field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: 1b000c0c-6a90-409a-ba21-fc91d90ef455</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IArchived_IssueConstants.Issue_ContentsFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Issue_Contents  {get; set;}
+					[SitecoreField(IArchived_IssueConstants.Issue_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Issue_Articles  {get; set;}
 				}
 
 	
 		/// <summary>
 		/// IArchived_Issue Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Issues/Archived Issue</para>	
+		/// <para>Path: /sitecore/templates/User Defined/Virtual Whiteboard/Archived Issue</para>	
 		/// <para>ID: 6467b31c-4196-44eb-a215-eec8f733fff8</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IArchived_Issue__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Issues.IIssue__Raw
+		public partial interface IArchived_Issue__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard.IIssue__Raw
 		{
 										/// <summary>
-						/// The Issue Content field.
+						/// The Issue Articles field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: 1b000c0c-6a90-409a-ba21-fc91d90ef455</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IArchived_IssueConstants.Issue_ContentsFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Issue_Contents  {get; set;}
+						[SitecoreField(IArchived_IssueConstants.Issue_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Issue_Articles  {get; set;}
 						}
 	
 	public static partial class IArchived_IssueConstants{
@@ -6496,20 +6458,20 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Issues
 			public const string TemplateName = "Archived Issue";
 
 					
-			public static readonly ID Issue_ContentsFieldId = new ID("1b000c0c-6a90-409a-ba21-fc91d90ef455");
-			public const string Issue_ContentsFieldName = "Issue Content";
+			public static readonly ID Issue_ArticlesFieldId = new ID("1b000c0c-6a90-409a-ba21-fc91d90ef455");
+			public const string Issue_ArticlesFieldName = "Issue Articles";
 
 						
 					
-			public static readonly ID Issue_NotesFieldId = new ID("1a83fd14-2fa1-47ec-85a6-a424cab26258");
-			public const string Issue_NotesFieldName = "Issue Notes";
+			public static readonly ID NotesFieldId = new ID("1a83fd14-2fa1-47ec-85a6-a424cab26258");
+			public const string NotesFieldName = "Notes";
 
-							public static readonly ID Issue_Notes__RawFieldId = new ID("1a83fd14-2fa1-47ec-85a6-a424cab26258");
-				public const string Issue_Notes__RawFieldName = "Issue Notes";
+							public static readonly ID Notes__RawFieldId = new ID("1a83fd14-2fa1-47ec-85a6-a424cab26258");
+				public const string Notes__RawFieldName = "Notes";
 						
 					
-			public static readonly ID Publish_DateFieldId = new ID("205b5967-3f09-4ecb-bea8-d1f01ca4e4ad");
-			public const string Publish_DateFieldName = "Publish Date";
+			public static readonly ID Published_DateFieldId = new ID("205b5967-3f09-4ecb-bea8-d1f01ca4e4ad");
+			public const string Published_DateFieldName = "Published Date";
 
 						
 					
@@ -9775,37 +9737,37 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.C
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Issues
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard
 {
 
 
  	/// <summary>
 	/// IIssue Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Issues/Issue</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Virtual Whiteboard/Issue</para>	
 	/// <para>ID: 90c7c95a-2d6f-49d8-b471-7626e3135201</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IIssueConstants.TemplateIdString)]
 	public partial interface IIssue : IGlassBase 
 	{
 								/// <summary>
-					/// The Issue Notes field.
+					/// The Notes field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
 					/// <para>Field ID: 1a83fd14-2fa1-47ec-85a6-a424cab26258</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IIssueConstants.Issue_NotesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Issue_Notes  {get; set;}
+					[SitecoreField(IIssueConstants.NotesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Notes  {get; set;}
 								/// <summary>
-					/// The Publish Date field.
+					/// The Published Date field.
 					/// <para></para>
 					/// <para>Field Type: Datetime</para>		
 					/// <para>Field ID: 205b5967-3f09-4ecb-bea8-d1f01ca4e4ad</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IIssueConstants.Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
-					DateTime Publish_Date  {get; set;}
+					[SitecoreField(IIssueConstants.Published_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+					DateTime Published_Date  {get; set;}
 								/// <summary>
 					/// The Title field.
 					/// <para></para>
@@ -9821,30 +9783,30 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Issues
 		/// <summary>
 		/// IIssue Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Issues/Issue</para>	
+		/// <para>Path: /sitecore/templates/User Defined/Virtual Whiteboard/Issue</para>	
 		/// <para>ID: 90c7c95a-2d6f-49d8-b471-7626e3135201</para>	
 		/// </summary>
 		[SitecoreType]
 		public partial interface IIssue__Raw : IGlassBase 
 		{
 										/// <summary>
-						/// The Issue Notes field.
+						/// The Notes field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
 						/// <para>Field ID: 1a83fd14-2fa1-47ec-85a6-a424cab26258</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IIssueConstants.Issue_NotesFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
-						string Issue_Notes  {get; set;}
+						[SitecoreField(IIssueConstants.NotesFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Notes  {get; set;}
 										/// <summary>
-						/// The Publish Date field.
+						/// The Published Date field.
 						/// <para></para>
 						/// <para>Field Type: Datetime</para>		
 						/// <para>Field ID: 205b5967-3f09-4ecb-bea8-d1f01ca4e4ad</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IIssueConstants.Publish_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
-						DateTime Publish_Date  {get; set;}
+						[SitecoreField(IIssueConstants.Published_DateFieldName, Setting = SitecoreFieldSettings.InferType)]
+						DateTime Published_Date  {get; set;}
 										/// <summary>
 						/// The Title field.
 						/// <para></para>
@@ -9863,15 +9825,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Issues
 			public const string TemplateName = "Issue";
 
 					
-			public static readonly ID Issue_NotesFieldId = new ID("1a83fd14-2fa1-47ec-85a6-a424cab26258");
-			public const string Issue_NotesFieldName = "Issue Notes";
+			public static readonly ID NotesFieldId = new ID("1a83fd14-2fa1-47ec-85a6-a424cab26258");
+			public const string NotesFieldName = "Notes";
 
-							public static readonly ID Issue_Notes__RawFieldId = new ID("1a83fd14-2fa1-47ec-85a6-a424cab26258");
-				public const string Issue_Notes__RawFieldName = "Issue Notes";
+							public static readonly ID Notes__RawFieldId = new ID("1a83fd14-2fa1-47ec-85a6-a424cab26258");
+				public const string Notes__RawFieldName = "Notes";
 						
 					
-			public static readonly ID Publish_DateFieldId = new ID("205b5967-3f09-4ecb-bea8-d1f01ca4e4ad");
-			public const string Publish_DateFieldName = "Publish Date";
+			public static readonly ID Published_DateFieldId = new ID("205b5967-3f09-4ecb-bea8-d1f01ca4e4ad");
+			public const string Published_DateFieldName = "Published Date";
 
 						
 					
@@ -14593,14 +14555,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 	}
 
 }
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Issues
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard
 {
 
 
  	/// <summary>
 	/// IIssue_Folder Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Issues/Issue Folder</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Virtual Whiteboard/Issue Folder</para>	
 	/// <para>ID: abeda53b-d419-4e96-a19f-f4b456d8cf0b</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IIssue_FolderConstants.TemplateIdString)]
@@ -14612,7 +14574,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Issues
 		/// <summary>
 		/// IIssue_Folder Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Issues/Issue Folder</para>	
+		/// <para>Path: /sitecore/templates/User Defined/Virtual Whiteboard/Issue Folder</para>	
 		/// <para>ID: abeda53b-d419-4e96-a19f-f4b456d8cf0b</para>	
 		/// </summary>
 		[SitecoreType]
@@ -19896,6 +19858,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Tem
 			public const string TaxonomiesFieldName = "Taxonomy";
 
 						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard
+{
+
+
+ 	/// <summary>
+	/// IArchived_Issue_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Virtual Whiteboard/Archived Issue Folder</para>	
+	/// <para>ID: f09ecf2e-7474-42e8-ad7a-280602b326d8</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IArchived_Issue_FolderConstants.TemplateIdString)]
+	public partial interface IArchived_Issue_Folder : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IArchived_Issue_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Virtual Whiteboard/Archived Issue Folder</para>	
+		/// <para>ID: f09ecf2e-7474-42e8-ad7a-280602b326d8</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IArchived_Issue_Folder__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IArchived_Issue_FolderConstants{
+
+			public const string TemplateIdString = "f09ecf2e-7474-42e8-ad7a-280602b326d8";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Archived Issue Folder";
+
 			
 
 	}

@@ -1,25 +1,25 @@
 ----item----
 version: 1
-id: {CE405F2E-0D6A-466D-85AB-0ECA8C2F1211}
+id: {59AD9B7B-6B25-4D5C-AAE7-67AC3144D23E}
 database: master
-path: /sitecore/templates/User Defined/Issues/Issue Folder/__Standard Values
-parent: {ABEDA53B-D419-4E96-A19F-F4B456D8CF0B}
+path: /sitecore/templates/User Defined/Virtual Whiteboard/Archived Issue Folder/__Standard Values
+parent: {F09ECF2E-7474-42E8-AD7A-280602B326D8}
 name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}
-template: {ABEDA53B-D419-4E96-A19F-F4B456D8CF0B}
-templatekey: Issue Folder
+template: {F09ECF2E-7474-42E8-AD7A-280602B326D8}
+templatekey: Archived Issue Folder
 
 ----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
 name: __Masters
 key: __masters
-content-length: 38
+content-length: 77
 
-{90C7C95A-2D6F-49D8-B471-7626E3135201}
+{6467B31C-4196-44EB-A215-EEC8F733FFF8}|{F09ECF2E-7474-42E8-AD7A-280602B326D8}
 ----version----
 language: en
 version: 1
-revision: 998390ea-dc35-4bbc-a46f-44b44f186036
+revision: da2a1656-ce52-4ae9-a086-1cdf57b9c166
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -34,7 +34,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20160608T152621Z
+20160615T214454Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-998390ea-dc35-4bbc-a46f-44b44f186036
+da2a1656-ce52-4ae9-a086-1cdf57b9c166
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160608T152704Z
+20160615T214515Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
