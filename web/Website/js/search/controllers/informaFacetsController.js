@@ -1,4 +1,6 @@
-﻿/* global _, datesObject, angular */
+﻿/* global _, datesObject, angular, analytics_data */
+import { analyticsEvent } from '../../controllers/analytics-controller';
+
 var InformaFacetController = function ($scope, $rootScope, $location, $http, $anchorScroll, $timeout,  searchService, searchBootstrapper, facetAvailabilityService) {
     "use strict";
 
@@ -131,9 +133,43 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
         delete $scope.savedCompanies[$item.label];
     };
 
-
+	var facetsForAnalytics = false;
     //** This updates the router/url with the latest search parameters **//
-    vm.update = function () {
+    vm.update = function (facetGroupId) {
+
+		if(facetGroupId) {
+
+			var facetGroup;
+			facetsForAnalytics = false;
+
+			_.each(vm.facetGroups, function(group) {
+				if(group.id === facetGroupId) {
+					facetGroup = group;
+				}
+			});
+
+			_.each(facetGroup.getSelectedFacets(), function (facet) {
+				if(facet) {
+					if(!facetsForAnalytics) {
+						facetsForAnalytics = facet.label;
+					} else {
+						facetsForAnalytics += '|' + facet.label;
+					}
+				}
+			});
+
+			var event_data = {
+				event_name: 'search_facets',
+				search_facet_category: facetGroupId
+			};
+
+			if(facetsForAnalytics) {
+				event_data.search_facet = facetsForAnalytics;
+			}
+
+			analyticsEvent(	$.extend(analytics_data, event_data) );
+
+		}
 
 		// Disable all facet options while updating search results
 		facetAvailabilityService.disableFacets();
@@ -182,15 +218,15 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
     };
 
     vm.facetChange = function (facet) {
-        vm.searchService.getFacetGroup(facet.parentId).getFacet(facet.id).selected = facet.selected;
-        vm.update();
+
+		vm.searchService.getFacetGroup(facet.parentId).getFacet(facet.id).selected = facet.selected;
+        vm.update(facet.parentId);
+
     };
 
 	// facetGroupId: 'publication'
 	// facetIds: ['In Vivo', 'Rose Sheet']
     vm.facetChangeMultiple = function(facetGroupId, facetIds) {
-
-		vm.update();
 
 		var facets;
 
@@ -213,7 +249,7 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 			}
         });
 
-		vm.update();
+		vm.update(facetGroupId);
 
     };
 
