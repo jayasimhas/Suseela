@@ -50,7 +50,7 @@ h3 {
 }
 
 table.box
-{	
+{
     padding: 15px;
 	height: 200px;
 	margin:5px auto;
@@ -68,7 +68,7 @@ table.box td {
 }
 
 
-div.top 
+div.top
 {
 	width: 500px;
 }
@@ -98,7 +98,7 @@ table.box td table {
 	margin:0;
 }
 
-.left 
+.left
 {
 	float:left;
 }
@@ -234,7 +234,7 @@ select.left
 }
 
 textarea, input {
-	font-family: arial,helvetica,sans-serif;    
+	font-family: arial,helvetica,sans-serif;
 }
 
 .block:active {
@@ -287,15 +287,15 @@ div.appbuttons
 #tblResults > tbody > tr > td
 {
 	padding: 10px 8px;
-	border-left:1px solid #ffd6ad; 
-	border-right:1px solid #ffd6ad; 
-	border-bottom:2px solid #ffd6ad; 
-	border-top:1px solid #ffd6ad; 
+	border-left:1px solid #ffd6ad;
+	border-right:1px solid #ffd6ad;
+	border-bottom:2px solid #ffd6ad;
+	border-top:1px solid #ffd6ad;
 	text-align:left;
 }
 
 .report table tr.tableheader td {
-	padding:15px 9px 5px; 
+	padding:15px 9px 5px;
 	background:url("/VWB/images/vwb/back_right_tabbox.gif") repeat-x;
 	padding:10px;
 	font: 125%/1.2 Helvetica Neue,Helvetica,"HelveticaNeueW01-57Cn",arial,sans-serif;
@@ -338,21 +338,131 @@ tr.doubletop > td
 }
 
 .radioButtonWrapper {
-    padding-top: 4px; 
+    padding-top: 4px;
     width: 100px;
 }
 
 .inputWrapper {
-    padding-top: 2px; 
-    padding-left: 5px; 
+    padding-top: 2px;
+    padding-left: 5px;
     width: 215px;
 }
 
 #dateRangeWrapper {
-    clear: both; 
+    clear: both;
 }
 
 .dateRangeLabel {
-    width: 40px; 
+    width: 40px;
     padding-top: 2px;
+}
+
+.draggable-wrapper {
+	border-collapse: collapse;
+	display: table;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 20px 0;
+}
+
+.draggable,
+.draggable-header {
+cursor: move;
+	display: table-row;
+}
+
+.draggable-header {
+	cursor:auto;	
+}
+
+.draggable div {
+	border: 1px solid black;
+	display: table-cell;
+	padding: 10px;
+}
+
+.delete-button,
+.re-add-button {
+	display: block;
+	font-size: 0;
+	height: 20px;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	width: 20px;
+}
+
+.delete-button:after,
+.delete-button:before {
+	background-color: red;
+	content: "";
+	display: block;
+	height: 20px;
+	position: absolute;
+		top: -1px;
+		left: calc(50% - 1px);
+	transform: rotate(45deg);
+	width: 2px;
+}
+
+.delete-button:before {
+	transform: rotate(-45deg);
+}
+
+.re-add-button:after,
+.re-add-button:before {
+	background-color: green;
+	content: "";
+	display: block;
+	height: 18px;
+	position: absolute;
+		top: 0;
+		left: calc(50% - 1px);
+	width: 2px;
+}
+
+.re-add-button:before {
+	transform: rotate(90deg);
+}
+
+.to-delete .delete-button,
+.re-add-button {
+	display: none;
+}
+
+.to-delete .re-add-button {
+	display: block;
+}
+
+.pad-it {
+	padding: 20px;
+}
+
+.draggable.to-delete {
+	color: grey;
+	text-decoration: line-through;
+}
+
+.issue-notes {
+	margin: 20px 0;
+}
+
+.issue-notes textarea {
+	max-width: 800px;
+	width: 100%;
+}
+
+body.bigger {
+	font-size: 16px;
+	line-height: 20px;
+}
+
+table.basic {
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+table.basic td {
+	border: 1px solid black;
+	padding: 10px;
 }
