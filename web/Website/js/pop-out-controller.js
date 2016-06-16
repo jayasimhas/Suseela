@@ -108,6 +108,10 @@ function popOutController(triggerElm) {
 			case 'sign-in':
 				popOut = $('.js-pop-out__sign-in');
 				break;
+            //Social Sign in
+		    case 'social-sign-in':
+		        popOut = $('.js-pop-out__social-sign-in');
+		        break;
 			// EMAIL ARTICLE
 			case 'email-article':
 				popOut = $('.js-pop-out__email-article');
