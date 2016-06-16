@@ -109,7 +109,7 @@
 										data-info='{
 											"event_name": "bookmark_clickthrough",
 											"bookmark_title": "@item.Title",
-											"bookmark_publication": "@Model.PublicationCode"
+											"bookmark_publication": "@item.Publication.Name"
 										}'
 										@(item.IsExternalUrl ? "target = \"_blank\"" : "")>
 										@Html.Raw(item.Title)

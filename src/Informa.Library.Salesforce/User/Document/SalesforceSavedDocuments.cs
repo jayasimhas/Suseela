@@ -2,8 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Salesforce.EBIWebServices;
+using Informa.Library.Services.Article;
+using Informa.Library.Wrappers;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Library.Salesforce.User.Profile
 {
@@ -11,6 +15,8 @@ namespace Informa.Library.Salesforce.User.Profile
 	{
         protected readonly ISalesforceServiceContext Service;
         protected readonly ITextTranslator TextTranslator;
+	    protected readonly IArticleService ArticleService;
+	    protected readonly ISitecoreService SitecoreService;
 
         protected string BadIDKey => TextTranslator.Translate("SavedDocument.BadID");
         protected string NullUserKey => TextTranslator.Translate("SavedDocument.NullUser");
@@ -18,10 +24,14 @@ namespace Informa.Library.Salesforce.User.Profile
 
         public SalesforceSavedDocuments(
             ISalesforceServiceContext service,
-            ITextTranslator textTranslator)
+            ITextTranslator textTranslator, 
+			IArticleService articleService, 
+			ISitecoreService sitecoreService)
         {
             Service = service;
             TextTranslator = textTranslator;
+	        ArticleService = articleService;
+	        SitecoreService = sitecoreService;
         }
 
 		public IEnumerable<ISavedDocument> Find(string username)
@@ -43,11 +53,19 @@ namespace Informa.Library.Salesforce.User.Profile
 				SaveDate = (sd.saveDateSpecified) ? sd.saveDate.Value : DateTime.Now,
 				DocumentId = sd.documentId,
 				Name = sd.name,
-				Description = sd.description
+				Description = GetArticleDescription(sd.documentId)
 			});
 
 			return savedDocuments;
 		}
+
+	    private string GetArticleDescription(string documentId)
+	    {
+		    Guid id;
+		    Guid.TryParse(documentId, out id);
+		    var article = SitecoreService.GetItem<IArticle>(id);
+		    return ArticleService.GetArticlePublicationName(article);
+	    }
 
         public ISavedDocumentWriteResult Remove(string username, string documentId)
         {

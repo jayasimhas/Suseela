@@ -116,20 +116,20 @@ namespace Informa.Library.Services.Article {
             return article.Supporting_Documents.Select(a => (IFile) a).ToList();
         }
 
-	    public string GetArticlePublicationCode(IArticle article)
+	    public string GetArticlePublicationName(IArticle article)
 	    {
 			string cacheKey = CreateCacheKey($"ArticlePublicationCode-{article._Id}");
-			return CacheProvider.GetFromCache(cacheKey, () => BuildArticlePublicationCode(article));
+			return CacheProvider.GetFromCache(cacheKey, () => BuildArticlePublicationName(article));
 		}
 
-		private string BuildArticlePublicationCode(IArticle article)
+		private string BuildArticlePublicationName(IArticle article)
 		{
 			var siteRoot = SiteRootsContext
 				.SiteRoots
 				.FirstOrDefault(i => article._Path.StartsWith(i._Path));
 
 		    return (siteRoot != null)
-			    ? siteRoot.Publication_Code
+			    ? siteRoot.Publication_Name
 			    : string.Empty;
 	    }
     }

@@ -31,7 +31,7 @@ namespace Informa.Web.ViewModels
 			Article = articleRenderingContext.Get<IArticle>();
 			IsUserAuthenticated = authenticatedUserContext.IsAuthenticated;
 			IsArticleBookmarked = IsUserAuthenticated && isSavedDocuementContext.IsSaved(Article._Id);
-			BookmarkPublication = ArticleService.GetArticlePublicationCode(Article);
+			BookmarkPublication = ArticleService.GetArticlePublicationName(Article);
             BookmarkTitle = Article?.Title;
 		}
 
