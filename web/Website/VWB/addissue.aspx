@@ -22,8 +22,9 @@
 					Issue Number
 				</td>
 				<td>
-					<!-- PLACEHOLDER! -->
+					<!-- PLACEHOLDER! BE should fill hidden field and visible text -->
 					4735687436573
+					<input type="hidden" name="issue" value="4735687436573" />
 				</td>
 			</tr>
 			<tr>
@@ -76,6 +77,30 @@
 			<div class="draggable js-draggable" id="12345678901234">
 				<div>
 					12345678901234
+				</div>
+				<div>
+					Placeholder Article Title with some other things
+				</div>
+				<div class="delete-article js-delete-article">
+					<a class="re-add-button">Add back</a>
+					<a class="delete-button">Delete</a>
+				</div>
+			</div>
+			<div class="draggable js-draggable" id="27485629873465">
+				<div>
+					27485629873465
+				</div>
+				<div>
+					Placeholder Article Title with some other things
+				</div>
+				<div class="delete-article js-delete-article">
+					<a class="re-add-button">Add back</a>
+					<a class="delete-button">Delete</a>
+				</div>
+			</div>
+			<div class="draggable js-draggable" id="36450246589694">
+				<div>
+					36450246589694
 				</div>
 				<div>
 					Placeholder Article Title with some other things

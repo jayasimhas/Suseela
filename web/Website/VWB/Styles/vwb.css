@@ -367,18 +367,25 @@ tr.doubletop > td
 
 .draggable,
 .draggable-header {
-cursor: move;
+	background-color: white;
+	cursor: move;
 	display: table-row;
 }
 
 .draggable-header {
-	cursor:auto;	
+	cursor:auto;
 }
 
 .draggable div {
+	background-color: white;
 	border: 1px solid black;
 	display: table-cell;
 	padding: 10px;
+	margin: 0;
+}
+
+.delete-article {
+	width: 130px;
 }
 
 .delete-button,
@@ -465,4 +472,8 @@ table.basic {
 table.basic td {
 	border: 1px solid black;
 	padding: 10px;
+}
+
+table.basic input {
+	min-width: 200px;
 }
