@@ -41,7 +41,7 @@
         }
         @if (!string.IsNullOrEmpty(Model.Media_Type))
         {
-            <li class="js-toggle-tooltip" data-tooltip-text="This article includes data.">
+            <li>
                 @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model.ID })
             </li>
         }

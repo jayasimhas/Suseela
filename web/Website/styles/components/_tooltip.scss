@@ -196,3 +196,9 @@ $transition-duration: 250ms;
         @include triangle("left");
     }
 }
+
+.email-alert-tooltip {
+	@include svg-fill($color-cardinal-red);
+	height: 15px;
+	width: 15px;
+}

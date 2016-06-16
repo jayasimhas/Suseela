@@ -851,27 +851,27 @@ $(document).ready(function() {
     });
 
 
-	var tooltipIsVisible = false;
+	// var tooltipIsVisible = false;
 	$('.js-toggle-tooltip').each(function(index, item) {
-		$(item).on('mouseover', function() {
-			console.log(tooltipIsVisible);
-			if(!tooltipIsVisible) {
+		var tooltip;
+		$(item).on('mouseenter touchstart', function(e) {
+			e.preventDefault();
+			// console.log(tooltipIsVisible);
+			// if(!tooltipIsVisible) {
 				const offsets = $(item).offset();
-				tooltipController({
+				tooltip = tooltipController({
 					isHidden: false,
 					html: $(item).data('tooltip-text'),
 					top: offsets.top,
 					left: offsets.left + $(this).width()/2,
 					triangle: 'bottom'
 				});
-				console.log('here we are');
-				tooltipIsVisible = true;
-				console.log(tooltipIsVisible);
-			}
+				// tooltipIsVisible = true;
+			// }
 		});
-		$(item).on('mouseout', function() {
-			console.log('mouseout');
-			//tooltipIsVisible = false;
+		$(item).on('mouseleave', function() {
+			tooltip.hidePopup();
+			// tooltipIsVisible = false;
 		});
 	});
 
