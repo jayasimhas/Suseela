@@ -105,7 +105,7 @@ function getCorrespondingSectr(sector) {
     return sector;
 }
 
-@if(Model.PublicationName == "Scrip") {
+@if(Model.PublicationName == "SCRIP Intelligence") {
     @Html.Raw("OAS_publication = 'www.scripnews.com/';");
 } else if(Model.PublicationName == "Medtech Insight") {
 	@Html.Raw("OAS_publication = 'medtech.pharmamedtechbi.com/';");
@@ -115,7 +115,9 @@ function getCorrespondingSectr(sector) {
 	@Html.Raw("OAS_publication = 'rosesheet.pharmamedtechbi.com/';");
 } else if(Model.PublicationName == "Pink Sheet") {
 	@Html.Raw("OAS_publication = 'pinksheet.pharmamedtechbi.com/';");
-}
+} else (
+	@Html.Raw("OAS_publication = '';");
+)
 
 //configuration
 OAS_url = 'https://oasc-eu1.247realmedia.com/RealMedia/ads/';
