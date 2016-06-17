@@ -1,5 +1,4 @@
-$( document ).ready(function() {
-	jQuery(function ($) {
+$(function() {
 		var orderOfArticles = [];
 		var articlesToDelete = [];
 
@@ -15,7 +14,6 @@ $( document ).ready(function() {
 				$(this).parent().addClass("to-delete");
 				articlesToDelete.push($(this).parent().attr("id"));
 			}
-			console.log("To Delete: ", articlesToDelete);
 		});
 
 		$(".js-draggable-wrapper").sortable({
@@ -25,14 +23,12 @@ $( document ).ready(function() {
 			},
 			stop: function( event, ui ) {
 				orderOfArticles = $( ".draggable-wrapper" ).sortable( "toArray" );
-				console.log("Article order: ", orderOfArticles);
 			},
 			over: function (event, ui) {
-				$(ui.item).css("width", ui.item.parent().width() + "px");
+				$(ui.item).css("width", ui.item.parent().outerWidth() + "px");
 			},
 			out: function (event, ui) {
 				$(ui.item).css("width", "100%");
 			}
 		});
 	});
-});

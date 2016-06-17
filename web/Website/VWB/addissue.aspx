@@ -25,6 +25,7 @@
 					<!-- PLACEHOLDER! BE should fill hidden field and visible text -->
 					4735687436573
 					<input type="hidden" name="issue" value="4735687436573" />
+					<button class="js-archive">Archive Issue</button>
 				</td>
 			</tr>
 			<tr>
@@ -70,8 +71,8 @@
 					Placeholder Article Title with some other things
 				</div>
 				<div class="delete-article js-delete-article">
-					<a class="re-add-button">Add back</a>
-					<a class="delete-button">Delete</a>
+
+					<a class="delete-button">Toggle Delete</a>
 				</div>
 			</div>
 			<div class="draggable js-draggable" id="12345678901234">
@@ -82,8 +83,8 @@
 					Placeholder Article Title with some other things
 				</div>
 				<div class="delete-article js-delete-article">
-					<a class="re-add-button">Add back</a>
-					<a class="delete-button">Delete</a>
+
+					<a class="delete-button">Toggle Delete</a>
 				</div>
 			</div>
 			<div class="draggable js-draggable" id="27485629873465">
@@ -94,8 +95,8 @@
 					Placeholder Article Title with some other things
 				</div>
 				<div class="delete-article js-delete-article">
-					<a class="re-add-button">Add back</a>
-					<a class="delete-button">Delete</a>
+
+					<a class="delete-button">Toggle Delete</a>
 				</div>
 			</div>
 			<div class="draggable js-draggable" id="36450246589694">
@@ -106,8 +107,8 @@
 					Placeholder Article Title with some other things
 				</div>
 				<div class="delete-article js-delete-article">
-					<a class="re-add-button">Add back</a>
-					<a class="delete-button">Delete</a>
+
+					<a class="delete-button">Toggle Delete</a>
 				</div>
 			</div>
 		</div>

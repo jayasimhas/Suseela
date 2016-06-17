@@ -392,53 +392,28 @@ tr.doubletop > td
 .re-add-button {
 	display: block;
 	font-size: 0;
-	height: 20px;
+	height: 0px;
 	margin: 0 auto;
 	padding: 0;
 	position: relative;
-	width: 20px;
+	width: 0px;
 }
 
-.delete-button:after,
-.delete-button:before {
-	background-color: red;
-	content: "";
+.delete-button:after {
+	color: red;
+	content: "+";
 	display: block;
-	height: 20px;
+	font-size: 60px;
 	position: absolute;
-		top: -1px;
-		left: calc(50% - 1px);
+		top: -6px; /* These numbers are fairly arbitrary */
+		left: -20px; /* These numbers are fairly arbitrary */
 	transform: rotate(45deg);
-	width: 2px;
+	transition: transform 0.2s;
 }
 
-.delete-button:before {
-	transform: rotate(-45deg);
-}
-
-.re-add-button:after,
-.re-add-button:before {
-	background-color: green;
-	content: "";
-	display: block;
-	height: 18px;
-	position: absolute;
-		top: 0;
-		left: calc(50% - 1px);
-	width: 2px;
-}
-
-.re-add-button:before {
-	transform: rotate(90deg);
-}
-
-.to-delete .delete-button,
-.re-add-button {
-	display: none;
-}
-
-.to-delete .re-add-button {
-	display: block;
+.to-delete .delete-button:after {
+	color: green;
+	transform: rotate(0deg);
 }
 
 .pad-it {
