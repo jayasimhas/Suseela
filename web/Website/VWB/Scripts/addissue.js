@@ -3,50 +3,70 @@ $(function() {
 		var articlesToDelete = [];
 		var issueID = $("input[name=issue]").val();
 
-		$( "#datepicker" ).datepicker();
+		// initialize jQuery-ui datepicker field
+		$( "#js-datepicker" ).datepicker();
 
+		// Delete article toggle
 		$(".js-delete-article").click(function() {
 			var locInDeleteArray = articlesToDelete.indexOf($(this).parent().attr("id"));
+
+			// If the article is in the deletion array
 			if (locInDeleteArray >= 0 ) {
+				// we must have changed our minds, so add back
 				$(this).parent().removeClass("to-delete");
 				articlesToDelete.splice(locInDeleteArray, 1);
 			}
 			else {
+				// otherwise, delete
 				$(this).parent().addClass("to-delete");
 				articlesToDelete.push($(this).parent().attr("id"));
 			}
 		});
 
+		// jQuery-ui sortable table
 		$(".js-draggable-wrapper").sortable({
-			items: "> .js-draggable",
+			items: "> .js-draggable", // Only allow sorting on things that aren't the table header
 			create: function( event, ui ) {
+				// When we initialize, grab the starting order of the articles
 				orderOfArticles = $( ".draggable-wrapper" ).sortable( "toArray" );
 			},
 			stop: function( event, ui ) {
+				// Any time we complete a drag, grab the order of articles again
 				orderOfArticles = $( ".draggable-wrapper" ).sortable( "toArray" );
 			},
 			over: function (event, ui) {
+				// Force the item width while dragging...
 				$(ui.item).css("width", ui.item.parent().outerWidth() + "px");
 			},
 			out: function (event, ui) {
+				// ...and reset it when we drop
 				$(ui.item).css("width", "100%");
 			}
 		});
 
+		// Archive this article
 		$(".js-archive").click(function(e) {
 			e.preventDefault();
 
+			// Ini dialog & dialog text
 			$("#js-dialog").html("<p>Are you sure you want to archive this issue?</p>");
-
 			$("#js-dialog").dialog({
 				closeText: "",
 				resizable: false,
+				modal: true,
 				buttons: [
 					{
 						text: "Archive Now",
 						click: function() {
+							// Change dialog text to working spinner and hide the buttons so people
+							//   don't try to submit twice
 							$("#js-dialog").html('<p class="centered">Archiving now... <img class="archive-dialog__spinner" src="images/vwb/spinner_gray_160.gif" /></p>');
 							$("#js-dialog + .ui-dialog-buttonpane").hide();
+							// Also hide close button so people don't try to work while the
+							//   issue is archiving
+							$("#js-dialog").siblings(".ui-dialog-titlebar").hide();
+
+							// post to BE
 							// TODO: Update URL!
 							$.post( "archive/endpoint/goes/here",
 								{'id': issueID},
@@ -55,9 +75,12 @@ $(function() {
 											$("#js-dialog").html('<p>Archive successful! <a href="/VWB">Return to Virtual White Board home.</a></p>');
 										}
 										else {
+											// Show the close button again on failure
 											$("#js-dialog").html("<p>Archive failed.  Please contact your system administrator.</p>");
 										}
 									}).fail(function() {
+										// Show the close button again on failure 
+										$("#js-dialog").siblings(".ui-dialog-titlebar").show();
 										$("#js-dialog").html("<p>Archive failed.  Please contact your system administrator.</p>");
 									});
 						}

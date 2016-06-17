@@ -43,7 +43,7 @@
 				</td>
 				<td>
 					<!-- PLACEHOLDER! BE should fill initial value -->
-					<input type="text" name="date" id="datepicker" value="06/08/2016" />
+					<input type="text" name="date" id="js-datepicker" value="06/08/2016" />
 				</td>
 			</tr>
 		</table>
