@@ -22,8 +22,9 @@ namespace Informa.Library.Utilities.References
         public const string CryptoKey = "Ajv4FMtL7Iuq3H04ZkQC";
 
         public const string VirtualWhiteboardIssuesFolder = "{ECE677C9-3CC5-41F5-ADCB-D103C60783A7}";
+	    public const string VirtualWhiteboardArchivedIssuesFolder = "{AAB11244-7D15-4A43-A709-DC8951893FD2}";
 
-        public const string ScripRootNode = "{3818C47E-4B75-4305-8F01-AB994150A1B0}";
+		public const string ScripRootNode = "{3818C47E-4B75-4305-8F01-AB994150A1B0}";
         public const string ScripRootNodeIntials = "SC";
         public const string ScripEmailConfig = "{077AB43D-8F0F-413E-A585-4DB65EA23234}";
 

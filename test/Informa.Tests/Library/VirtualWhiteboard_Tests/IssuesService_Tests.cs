@@ -43,7 +43,7 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
             };
 
             // ACT
-            _issuesService.CreateIssueItem(model.Title);
+            _issuesService.CreateIssueItem<IIssue, IIssue_Folder>(model.Title, Constants.VirtualWhiteboardIssuesFolder);
 
             // ASSERT
             _dependencies.SitecoreServiceMaster.Received(1).Create<IIssue, IIssue_Folder>(
@@ -62,7 +62,7 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
                 .Returns(fakeIssue);
 
             // ACT
-            var result = _issuesService.CreateIssueItem("Snake Issssssssue");
+            var result = _issuesService.CreateIssueItem<IIssue, IIssue_Folder>("Snake Issssssssue", Constants.VirtualWhiteboardIssuesFolder);
 
             // ASSERT
             Assert.AreEqual(new Guid("{67864C37-12DE-42FF-8F1E-52ECECAE9214}"), result);
@@ -181,5 +181,43 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
             Assert.AreEqual("Moose have eaten all the data.", response.DebugErrorMessage);
         }
 
+	    [Test]
+	    public void ArchiveIssue_NoIssueFound_ReturnFail()
+	    {
+			// ARRANGE
+			var id = new Guid("2603A6E4-6591-4D1E-80E0-05A6FA63FA22");
+			_dependencies.SitecoreServiceMaster.GetItem<IIssue>(id).Returns((IIssue)null);
+
+			// ACT
+			var result = _issuesService.ArchiveIssue(id);
+
+		    // ASSERT
+			Assert.IsFalse(result.IsSuccess);
+	    }
+
+	    [Test]
+	    public void ArchiveIssue_NoIssueCreated_ReturnFail()
+	    {
+		    // ARRANGE
+		    _dependencies.SitecoreServiceMaster.GetItem<IArchived_Issue>(Arg.Any<Guid>()).Returns((IArchived_Issue) null);
+
+		    // ACT
+		    var result = _issuesService.ArchiveIssue(Arg.Any<Guid>());
+
+		    // ASSERT
+			Assert.IsFalse(result.IsSuccess);
+	    }
+
+	    [Test]
+	    public void ArchiveIssue_IssueArchived_ReturnSuccess()
+	    {
+		    // ARRANGE
+
+		    // ACT
+		    var result = _issuesService.ArchiveIssue(Arg.Any<Guid>());
+
+		    // ASSERT
+			Assert.IsTrue(result.IsSuccess);
+	    }
     }
 }
