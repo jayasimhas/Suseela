@@ -82,18 +82,18 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
             _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.Invoke());
 
             var id = new Guid("{5773462b-b659-4f2f-91ae-b65598da54a8}");
-            var fakeIssue = Substitute.For<IIssue>();
-            _dependencies.SitecoreServiceMaster.GetItem<IIssue>(id).Returns(fakeIssue);
+            var fakeIssue = Substitute.For<IIssue__Raw>();
+            _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(id).Returns(fakeIssue);
 
             // ACT
             _issuesService.UpdateIssueItem(model, id);
 
             // ASSERT
-            _dependencies.SitecoreServiceMaster.Received(1).Save(Arg.Is<IIssue>(issue =>
+            _dependencies.SitecoreServiceMaster.Received(1).Save(Arg.Is<IIssue__Raw>(issue =>
                 issue.Title == "Antlers Up Vol 6"));
-            _dependencies.SitecoreServiceMaster.Received(1).Save(Arg.Is<IIssue>(issue =>
+            _dependencies.SitecoreServiceMaster.Received(1).Save(Arg.Is<IIssue__Raw>(issue =>
                 issue.Published_Date == new DateTime(123456789)));
-            _dependencies.SitecoreServiceMaster.Received(1).Save(Arg.Is<IIssue>(issue =>
+            _dependencies.SitecoreServiceMaster.Received(1).Save(Arg.Is<IIssue__Raw>(issue =>
                 issue.Notes == "This issue is all about what household appliance moose might store in their antlers."));
         }
 
@@ -111,7 +111,7 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
             var articles = new[] {fakeId1, fakeId2};
 
             // ACT
-            _issuesService.AddArticlesToIssue(fakeIssue, articles);
+            _issuesService.AddArticlesToIssue(fakeIssue._Id, articles);
 
             // ASSERT
             _dependencies.SitecoreClonesWrapper.Received(1).CreateClone(
@@ -145,7 +145,7 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
             // ASSERT
             _dependencies.SitecoreServiceMaster.Received(1)
                 .Create<IIssue, IIssue_Folder>(Arg.Any<IIssue_Folder>(), Arg.Any<string>());
-            _dependencies.SitecoreServiceMaster.Received(1).Save(Arg.Any<IIssue>());
+            _dependencies.SitecoreServiceMaster.Received(1).Save(Arg.Any<IIssue__Raw>());
             _dependencies.SitecoreClonesWrapper.Received(2).CreateClone(Arg.Any<Guid>(), Arg.Any<Guid>());
 
             Assert.IsTrue(response.IsSuccess);

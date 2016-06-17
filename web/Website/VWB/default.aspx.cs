@@ -306,13 +306,13 @@ namespace Elsevier.Web.VWB
 
             using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
             {
-                var issueBuilder = scope.Resolve<ISitecoreService>();
-                //var result = issueBuilder.CreateIssueFromModel(model);
+                var issueBuilder = scope.Resolve<IIssuesService>();
+                var result = issueBuilder.CreateIssueFromModel(model);
 
-                //if (result.IsSuccess)
-                //{
-                //    Response.Redirect("http://example.com/issue-page");
-                //}
+                if (result.IsSuccess)
+                {
+                    Response.Redirect("http://example.com/issue-page");
+                }
             }
         }
 

@@ -72,7 +72,7 @@ namespace Informa.Library.VirtualWhiteboard
 
         public void UpdateIssueItem(IssueModel model, Guid issueId)
         {
-            var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId);
+            var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(issueId);
 
             if(issue == null) { return; }
 
@@ -83,15 +83,15 @@ namespace Informa.Library.VirtualWhiteboard
             _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
                 _dependencies.SitecoreServiceMaster.Save(issue));
 
-            AddArticlesToIssue(issue, model.ArticleIds);
+            AddArticlesToIssue(issue._Id, model.ArticleIds);
         }
 
-        public void AddArticlesToIssue(IIssue issue, IEnumerable<Guid> itemIds)
+        public void AddArticlesToIssue(Guid issueId, IEnumerable<Guid> itemIds)
         {
             if (itemIds == null) return;
 
             _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
-                itemIds.Each(id => _dependencies.SitecoreClonesWrapper.CreateClone(issue._Id, id)));
+                itemIds.Each(id => _dependencies.SitecoreClonesWrapper.CreateClone(issueId, id)));
         }
     }
 }
