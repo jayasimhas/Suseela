@@ -147,9 +147,10 @@ namespace Informa.Library.Rss.ItemGenerators
 
                     foreach (var taxonomyItem in article.Taxonomies)
                     {
+                        if(taxonomyItem == null) continue;
                         var taxonomyItemElement = new XElement(RssConstants.InformaNamespace + RssConstants.FieldTaxonomyItem);
-
-                        taxonomyItemElement.Value = HttpUtility.HtmlEncode(taxonomyItem.Item_Name);
+                        
+                        taxonomyItemElement.Value = HttpUtility.HtmlEncode(taxonomyItem.Item_Name ?? string.Empty);
 
                         taxonomyElement.Add(taxonomyItemElement);
                     }
