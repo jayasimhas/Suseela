@@ -45,29 +45,28 @@ var showForgotPassSuccess = function() {
 
 var renderIframeComponents = function() {
     $('.iframe-component').each(function(index, elm) {
-        var desktopEmbed = $(elm).find('.iframe-component__desktop iframe');
-        var mobileEmbed = $(elm).find('.iframe-component__mobile iframe');
-        var mobileEmbedLink = mobileEmbed.data('embed-link');
+        var desktopEmbed = $(elm).find('.iframe-component__desktop');
+        var mobileEmbed = $(elm).find('.iframe-component__mobile');
 
-        // Check if the user is viewing inside the page editor
-        // Don't hide/show desktop and/or mobile, just keep both visible
-        // so users can add, edit, or delete either.
-        if(desktopEmbed.hasClass('is-page-editor')) {
-            return;
-        }
+        var isEditMode = $(this).hasClass('is-page-editor');
 
-        if($(window).width() <= 480) {
+        var showMobile = ($(window).width() <= 480) || isEditMode;
+        var showDesktop = !showMobile || isEditMode;
+
+        if (showMobile) {
             mobileEmbed.show();
-            desktopEmbed.hide();
-            if(mobileEmbed.html() == '') {
-                mobileEmbed.html(mobileEmbed.data('embed-link'));
-            }
+            if (mobileEmbed.html() == '') 
+                mobileEmbed.html(decodeHtml(mobileEmbed.data('embed-link')));
         } else {
+            desktopEmbed.hide();
+        }
+        
+        if (showDesktop) {
             desktopEmbed.show();
+            if (desktopEmbed.html() == '') 
+                desktopEmbed.html(decodeHtml(desktopEmbed.data('embed-link')));
+        } else {
             mobileEmbed.hide();
-            if(desktopEmbed.html() == '') {
-                desktopEmbed.html(desktopEmbed.data('embed-link'));
-            }
         }
 
         var desktopMediaId = $(elm).find('.iframe-component__desktop').data("mediaid");
@@ -84,6 +83,12 @@ var renderIframeComponents = function() {
         $(elm).find('.iframe-component__mobile a').data('mediaid', url).attr('href', null);
     });
 };
+
+var decodeHtml = function(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
 
 $(document).ready(function() {
 
