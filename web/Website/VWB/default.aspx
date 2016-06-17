@@ -1,6 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Elsevier.Web.VWB._default"  %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Elsevier.Web.VWB._default"  %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -16,6 +14,9 @@
 </head>
 <body>
 	<form id="form1" runat="server">
+
+	<!-- This is where we stash the pipe-separated list of selected articles -->
+	<input type="hidden" class="js-hidden-selected-articles" name="selectedArticles" value="">
 	<div class="wrapper">
 		<img class="banner" width="317" height="122" src="<%= LogoUrl %>"
 			alt="<%= Elsevier.Library.Reference.Constants.BusinessName %> - Virtual Whiteboard">
@@ -56,6 +57,10 @@
 
 			<input type="checkbox" class="js-article-checkbox" name="selectedArticle" value="article1234"> Placeholder checkbox for testing
 
+			<input type="checkbox" class="js-article-checkbox" name="selectedArticle" value="verwvawev"> Placeholder checkbox for testing
+
+			<input type="checkbox" class="js-article-checkbox" name="selectedArticle" value=",u8fmcfgnf"> Placeholder checkbox for testing
+
 			<!-- THIS TABLE NEEDS CHECKBOXES WITH CLASS .js-article-checkbox -->
 			<asp:Table ID="tblResults" runat="server" border="1">
 			</asp:Table>
@@ -68,22 +73,16 @@
 
 				<hr>
 
-				<form action="/" method="post">
-					<input type="hidden" class="js-hidden-selected-articles" name="selectedArticles" value="">
-					<button disabled class="orange-button js-create-new-issue">Add Selected Articles to New Issue</button>
-				</form>
+				<button disabled class="orange-button js-create-new-issue">Add Selected Articles to New Issue</button>
 
 				<hr>
 
-				<form action="/" method="post">
-					<input type="hidden" class="js-hidden-selected-articles" name="selectedArticles" value="">
-					<select class="js-existing-issue">
-						<option value="DEFAULT">Select an existing issue...</option>
-						<option value="1">Sample Issue 1</option>
-						<option value="2">Sample Issue 2</option>
-					</select><br><br>
-					<button disabled class="orange-button js-append-to-issue">Add Selected Articles to Existing Issue</button>
-				</form>
+				<select class="js-existing-issue">
+					<option value="DEFAULT">Select an existing issue...</option>
+					<option value="1">Sample Issue 1</option>
+					<option value="2">Sample Issue 2</option>
+				</select><br><br>
+				<button disabled class="orange-button js-append-to-issue">Add Selected Articles to Existing Issue</button>
 
 			</div>
 
@@ -91,52 +90,16 @@
 	</div>
 	</form>
 
-	<script type="text/javascript">
+	<!-- NEW ISSUE MODAL -->
+	<div class="new-issue-modal js-new-issue-modal" title="Dialog Title">
+		<label>Issue Title</label>
+		<input type="text">
+		<label>Published Date</label>
+		<input class="js-new-issue-pub-date" type="text">
+		<button class="orange-button js-submit-new-issue">Create New Issue</button>
+	</div>
 
-	var checkSelectedArticles = function() {
-		if($('.js-article-checkbox:checked').length) {
-
-			$('.js-create-new-issue').prop('disabled', null);
-
-			var existingIssue = $('.js-existing-issue').val();
-
-			if(existingIssue && existingIssue !== 'DEFAULT') {
-				$('.js-append-to-issue').prop('disabled', null);
-			} else {
-				$('.js-append-to-issue').prop('disabled', 'disabled');
-			}
-
-		} else {
-			$('.js-create-new-issue, .js-append-to-issue').prop('disabled', 'disabled');
-		}
-	};
-
-	var serializeSelectedArticles = function() {
-		return $('.js-article-checkbox:checked').serialize();
-	};
-
-	$(document).ready(function() {
-		checkSelectedArticles();
-
-		$('.js-append-to-issue, .js-create-new-issue').on('click', function(e) {
-			// Prevents instant form submit, before we can append selected articles
-			e.preventDefault();
-
-			var articles = serializeSelectedArticles();
-
-			var thisForm = $(e.target.form);
-			thisForm.find('.js-hidden-selected-articles').val(articles);
-			// thisForm.submit();
-		});
-
-	});
-
-	$('.js-article-checkbox, .js-existing-issue').on('change', function(e) {
-		checkSelectedArticles();
-	});
-
-	</script>
-
+	<script src="/VWB/Scripts/selected-articles.js"></script>
 
 	<script>
 		jQuery(function ($) {
