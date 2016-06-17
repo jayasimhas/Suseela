@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="/VWB/Scripts/addissue.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="/VWB//Scripts/jquery-ui/jquery-ui-1.8.11.custom.css" />
+	<link rel="stylesheet" type="text/css" href="/VWB/Scripts/jquery-ui/jquery-ui-1.10.4.custom.css" />
 	<link rel="stylesheet" type="text/css" href="/VWB//Styles/vwb.css" />
 	<title>Add Issue - Virtual Whiteboard</title>
 
