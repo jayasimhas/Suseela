@@ -2,7 +2,7 @@
 using System.Linq;
 using Glass.Mapper.Sc;
 using Informa.Library.Utilities.References;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Issues;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard;
 using Sitecore;
 using Sitecore.Data;
 using Sitecore.Data.Items;
@@ -50,9 +50,9 @@ namespace Informa.Library.Issues
         newItem.Editing.BeginEdit();
 
         newItem[IIssueConstants.TitleFieldName] = title;
-        newItem[IIssueConstants.Publish_DateFieldName] = DateUtil.ToIsoDate(date);
+        newItem[IIssueConstants.Published_DateFieldName] = DateUtil.ToIsoDate(date);
         ;
-        newItem[IIssueConstants.Issue_NotesFieldName] = notes;
+        newItem[IIssueConstants.NotesFieldName] = notes;
 
         newItem.Editing.EndEdit();
 
@@ -119,7 +119,7 @@ namespace Informa.Library.Issues
 
         //Save the list of article ids to the archived issue multi list
         issueItem.Editing.BeginEdit();
-        issueItem[IArchived_IssueConstants.Issue_ContentsFieldName] = string.Join("|", issueItemIds);
+        issueItem[IArchived_IssueConstants.Issue_ArticlesFieldName] = string.Join("|", issueItemIds);
         issueItem.Editing.EndEdit();
 
         //Delete any children items as they are now saved in the multilist

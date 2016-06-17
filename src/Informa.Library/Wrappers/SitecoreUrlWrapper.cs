@@ -17,7 +17,7 @@ namespace Informa.Library.Wrappers
     }
 
     [AutowireService]
-    public class SitecoreUrlWrapper : ISitecoreUrlWrapper
+    public class SitecoreUrlWrapper : BaseSitecoreWrapper, ISitecoreUrlWrapper
     {
         private readonly IDependencies _dependencies;
 
@@ -37,8 +37,7 @@ namespace Informa.Library.Wrappers
         public string GetItemUrl(IGlassBase glassItem) => glassItem != null ? GetItemUrl(glassItem._Id) : null;
         public string GetItemUrl(Guid itemId)
         {
-            var database = Sitecore.Configuration.Factory.GetDatabase(Constants.MasterDb);
-            var item = database.GetItem(new ID(itemId));
+            var item = GetItem(itemId, Constants.MasterDb);
             var itemUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
             var scheme = _dependencies.HttpContextProvider.RequestUrl?.Scheme + "://";
 

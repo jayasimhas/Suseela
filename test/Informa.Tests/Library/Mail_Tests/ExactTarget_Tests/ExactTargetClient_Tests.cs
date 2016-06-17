@@ -159,14 +159,14 @@ namespace Informa.Tests.Library.Mail_Tests
                 .Returns("<div><h1>Moose</h1></div>");
 
             _dependencies.Premailer.InlineCss(Arg.Any<string>()).Returns(x => x.Arg<string>());
-            _dependencies.SitecoreSecurityWrapper.SecurityDisabledAction(Arg.Invoke());
+            _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.Invoke());
 
 
             // ACT
             _exactTargetClient.PushEmail(fakeEmailItem);
 
             // ASSERT
-            _dependencies.SitecoreSecurityWrapper.Received(1).SecurityDisabledAction(Arg.Any<Action>());
+            _dependencies.SitecoreSecurityWrapper.Received(1).WithSecurityDisabled(Arg.Any<Action>());
             _dependencies.SitecoreServiceMaster.Received(1)
                 .Save(Arg.Is<IExactTarget_Email>(email => email.Exact_Target_External_Key == 101));
         }

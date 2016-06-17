@@ -6,14 +6,14 @@ namespace Informa.Library.Wrappers
 {
     public interface ISitecoreSecurityWrapper
     {
-        void SecurityDisabledAction(Action action);
-        TResult SecurityDisabledFunction<TResult>(Func<TResult> function);
+        void WithSecurityDisabled(Action action);
+        TResult WithSecurityDisabled<TResult>(Func<TResult> function);
     }
 
     [AutowireService]
     public class SitecoreSecurityWrapper : ISitecoreSecurityWrapper
     {
-        public void SecurityDisabledAction(Action action)
+        public void WithSecurityDisabled(Action action)
         {
             using (new SecurityDisabler())
             {
@@ -21,7 +21,7 @@ namespace Informa.Library.Wrappers
             }
         }
 
-        public TResult SecurityDisabledFunction<TResult>(Func<TResult> function)
+        public TResult WithSecurityDisabled<TResult>(Func<TResult> function)
         {
             using (new SecurityDisabler())
             {

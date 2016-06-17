@@ -125,6 +125,7 @@
     <Compile Include="Library\Services\NlmExport\Serialization\NlmSerializerTests.cs" />
     <Compile Include="Library\OptIn_Tests\OptInManager_Tests.cs" />
     <Compile Include="Library\Utilities_Tests\StringUtils_Tests\BylineMaker_Tests.cs" />
+    <Compile Include="Library\VirtualWhiteboard_Tests\IssuesService_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
