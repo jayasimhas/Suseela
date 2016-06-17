@@ -1,10 +1,25 @@
 $(function() {
 		var orderOfArticles = [];
+		var orderedArticlesToKeep = [];
 		var articlesToDelete = [];
 		var issueID = $("input[name=issue]").val();
 
 		// initialize jQuery-ui datepicker field
 		$( "#js-datepicker" ).datepicker();
+
+
+		// Split off kept articles (for BE) from all articles (for display)
+		var makeKeepArray = function(allarticles, delarticles) {
+			var keep = allarticles.slice(0);
+			for (var i = 0; i < delarticles.length; i++) {
+				var locInArray = keep.indexOf(delarticles[i]);
+				if (locInArray >= 0) {
+					keep.splice(locInArray, 1);
+				}
+
+			}
+			return keep;
+		}
 
 		// Delete article toggle
 		$(".js-delete-article").click(function() {
@@ -15,11 +30,15 @@ $(function() {
 				// we must have changed our minds, so add back
 				$(this).parent().removeClass("to-delete");
 				articlesToDelete.splice(locInDeleteArray, 1);
+				$('#js-todelete').val(articlesToDelete.join('|'));
+				$('#js-order').val(makeKeepArray(orderOfArticles, articlesToDelete).join('|'));
 			}
 			else {
 				// otherwise, delete
 				$(this).parent().addClass("to-delete");
 				articlesToDelete.push($(this).parent().attr("id"));
+				$('#js-todelete').val(articlesToDelete.join('|'));
+				$('#js-order').val(makeKeepArray(orderOfArticles, articlesToDelete).join('|'));
 			}
 		});
 
@@ -29,10 +48,12 @@ $(function() {
 			create: function( event, ui ) {
 				// When we initialize, grab the starting order of the articles
 				orderOfArticles = $( ".draggable-wrapper" ).sortable( "toArray" );
+				$('#js-order').val(makeKeepArray(orderOfArticles, articlesToDelete).join('|'));
 			},
 			stop: function( event, ui ) {
 				// Any time we complete a drag, grab the order of articles again
 				orderOfArticles = $( ".draggable-wrapper" ).sortable( "toArray" );
+				$('#js-order').val(makeKeepArray(orderOfArticles, articlesToDelete).join('|'));
 			},
 			over: function (event, ui) {
 				// Force the item width while dragging...
@@ -79,7 +100,7 @@ $(function() {
 											$("#js-dialog").html("<p>Archive failed.  Please contact your system administrator.</p>");
 										}
 									}).fail(function() {
-										// Show the close button again on failure 
+										// Show the close button again on failure
 										$("#js-dialog").siblings(".ui-dialog-titlebar").show();
 										$("#js-dialog").html("<p>Archive failed.  Please contact your system administrator.</p>");
 									});
@@ -93,39 +114,5 @@ $(function() {
 					}
 				]
 			});
-		});
-
-
-
-		$(".js-save").click(function(e) {
-			e.preventDefault();
-
-			$.post( "save/endpoint/goes/here",
-				{
-					'id': issueID,
-					'order': orderOfArticles,
-					'delete': articlesToDelete,
-					'title': $('input[name=title]').val(),
-					'date': $('#datepicker').val(),
-					'notes': $('textarea[name=notes]').val()
-				},
-				function( data ) {
-					if (data.success)  {
-						window.location.href = '/VWB';
-					}
-					else {
-						$("#js-dialog").html("Save failed.  Please contact your system administrator.");
-						$("#js-dialog").dialog({
-							closeText: "",
-							resizable: false
-						});
-					}
-				}).fail(function() {
-					$("#js-dialog").html("Save failed.  Please contact your system administrator.");
-					$("#js-dialog").dialog({
-						closeText: "",
-						resizable: false
-					});
-				});
 		});
 	});

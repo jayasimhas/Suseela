@@ -25,6 +25,8 @@
 					<!-- PLACEHOLDER! BE should fill hidden field and visible text -->
 					4735687436573
 					<input type="hidden" name="issue" value="4735687436573" />
+					<input type="hidden" id="js-order" name="order" value="" />
+					<input type="hidden" id="js-todelete" name="todelete" value="" />
 					<button class="js-archive">Archive Issue</button>
 				</td>
 			</tr>
@@ -118,8 +120,8 @@
 			<textarea name="notes"></textarea>
 		</div>
 
-		<button class="js-save">Save Updates to Issue</button>
-		<button class="js-save">Save and Add a New Article</button>
+		<button>Save Updates to Issue</button>
+		<button>Save and Add a New Article</button>
 		<a href="/vwb">Leave Without Saving</a>
 
 		</form>
