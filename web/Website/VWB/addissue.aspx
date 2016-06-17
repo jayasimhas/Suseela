@@ -27,7 +27,7 @@
 					<input type="hidden" id="js-issue" name="issue" value="4735687436573" />
 					<input type="hidden" id="js-order" name="order" value="" />
 					<input type="hidden" id="js-todelete" name="todelete" value="" />
-					<button class="js-archive">Archive Issue</button>
+					<button class="js-archive orange-button">Archive Issue</button>
 				</td>
 			</tr>
 			<tr>
@@ -120,8 +120,8 @@
 			<textarea name="notes"></textarea>
 		</div>
 
-		<button>Save Updates to Issue</button>
-		<button>Save and Add a New Article</button>
+		<button class="orange-button">Save Updates to Issue</button>
+		<button class="orange-button">Save and Add a New Article</button>
 		<a href="/vwb">Leave Without Saving</a>
 
 		</form>
