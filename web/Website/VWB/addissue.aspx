@@ -124,5 +124,8 @@
 
 		</form>
 	</div>
+
+	<div id="js-dialog">
+	</div>
 </body>
 </html>

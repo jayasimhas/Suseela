@@ -388,8 +388,7 @@ tr.doubletop > td
 	width: 130px;
 }
 
-.delete-button,
-.re-add-button {
+.delete-button {
 	display: block;
 	font-size: 0;
 	height: 0px;
@@ -402,6 +401,7 @@ tr.doubletop > td
 .delete-button:after {
 	color: red;
 	content: "+";
+	cursor: pointer;
 	display: block;
 	font-size: 60px;
 	position: absolute;
@@ -451,4 +451,13 @@ table.basic td {
 
 table.basic input {
 	min-width: 200px;
+}
+
+.archive-dialog__spinner {
+	height: 20px;
+	width: auto;
+}
+
+.centered {
+	text-align: center;
 }
