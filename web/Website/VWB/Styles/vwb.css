@@ -414,6 +414,11 @@ body.bigger {
 	display: table-row;
 }
 
+.draggable a:hover,
+.draggable a {
+	text-decoration: none;
+}
+
 .draggable div {
 	background-color: white;
 	border: 1px solid black;
@@ -422,10 +427,15 @@ body.bigger {
 	margin: 0;
 }
 
-.draggable.to-delete {
+.draggable.to-delete div:not(.delete-article) {
 	color: grey;
 	text-decoration: line-through;
 }
+
+.draggable.to-delete a {
+	text-decoration: none !important;
+}
+
 
 .draggable-header {
 	cursor:auto;
