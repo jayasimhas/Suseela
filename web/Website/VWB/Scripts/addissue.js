@@ -77,14 +77,6 @@ $(function() {
 		$(".js-save").click(function(e) {
 			e.preventDefault();
 
-			console.log({
-				'id': issueID,
-				'order': orderOfArticles,
-				'delete': articlesToDelete,
-				'title': $('input[name=title]').val(),
-				'date': $('#datepicker').val(),
-				'notes': $('textarea[name=notes]').val()
-			});
 			$.post( "save/endpoint/goes/here",
 				{
 					'id': issueID,
