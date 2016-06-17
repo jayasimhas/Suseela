@@ -36,7 +36,7 @@ namespace Informa.Web.ViewModels.PopOuts
 		public string UsernameExistsErrorText => TextTranslator.Translate("Registration.UsernameExistsError");
 		public string GeneralErrorText => TextTranslator.Translate("Registration.GeneralError");
 		public string Username { get; set; }
-		public string RegisterReturnUrl => HttpContextProvider.RequestUrl.AbsolutePath;
+		public string RegisterReturnUrl => HttpContextProvider.RequestUri.AbsolutePath;
 		public string RegisterReturnUrlKey => ReturnUrlContext.Key;
 	}
 }

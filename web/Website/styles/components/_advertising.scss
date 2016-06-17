@@ -25,6 +25,7 @@ section: Advertising
 */
 
 .advertising {
+	top: 0;
 
 	&--leaderboard {
 		width: 100%;
@@ -64,6 +65,16 @@ section: Advertising
         text-transform: uppercase;
         color: $color-light-gray;
 		margin-bottom: 0.25rem;
+	}
+
+	@include breakpoint('wide') {
+		// The last advertisement in the right sidebar of article pages should become sticky when scrolled past
+		// on desktop/wide resolution only
+		&--sticky .advertising {
+			position: fixed;
+			top: 4px;
+			max-width: 290px;
+		}
 	}
 
 }

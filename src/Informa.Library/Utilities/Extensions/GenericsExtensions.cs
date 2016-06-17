@@ -20,5 +20,5 @@ namespace Informa.Library.Utilities.Extensions
             action();
             return source;
         }
-    }
+	}
 }

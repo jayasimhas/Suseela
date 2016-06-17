@@ -436,6 +436,7 @@
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
     <Compile Include="SiteDebugging\SiteDebugger.cs" />
     <Compile Include="Site\GlassSiteRootContext.cs" />
+    <Compile Include="Site\HeadMetaDataGenerator.cs" />
     <Compile Include="Site\IIsUrlCurrentSite.cs" />
     <Compile Include="Site\ISiteHostName.cs" />
     <Compile Include="Site\ISiteRootContext.cs" />
@@ -1066,6 +1067,7 @@
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalTitleResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\PublisherResolver.cs" />
     <Compile Include="Utilities\Extensions\ArticleExtensions.cs" />
+    <Compile Include="Utilities\Extensions\BooleanExtensions.cs" />
     <Compile Include="Utilities\Extensions\EnumerableExtensions.cs" />
     <Compile Include="Utilities\Extensions\EnumerableStringExtensions.cs" />
     <Compile Include="Utilities\Extensions\GlassBaseExtensions.cs" />

@@ -71,9 +71,9 @@ namespace Informa.Library.Utilities.Extensions
 			return $"{string.Join(", ", names.Take(count - 1))} and {names.LastOrDefault()}";
 		}
 
-	    public static bool HasContent(this string _this)
+	    public static bool HasContent(this string source)
 	    {
-	        return string.IsNullOrEmpty(_this);
+	        return !string.IsNullOrEmpty(source);
 	    }
     }
 }
