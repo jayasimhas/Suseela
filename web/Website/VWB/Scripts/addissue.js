@@ -2,7 +2,7 @@ $(function() {
 		var orderOfArticles = [];
 		var orderedArticlesToKeep = [];
 		var articlesToDelete = [];
-		var issueID = $("input[name=issue]").val();
+		var issueID = $("#js-issue").val();
 
 		// initialize jQuery-ui datepicker field
 		$( "#js-datepicker" ).datepicker();
@@ -19,7 +19,7 @@ $(function() {
 
 			}
 			return keep;
-		}
+		};
 
 		// Delete article toggle
 		$(".js-delete-article").click(function() {

@@ -22,9 +22,9 @@
 					Issue Number
 				</td>
 				<td>
-					<!-- PLACEHOLDER! BE should fill hidden field and visible text -->
+					<!-- PLACEHOLDER! BE should fill hidden issue field and visible text; order should probably be filled to avoid any accidents in a no-javascript situation.  todelete can be left blank -->
 					4735687436573
-					<input type="hidden" name="issue" value="4735687436573" />
+					<input type="hidden" id="js-issue" name="issue" value="4735687436573" />
 					<input type="hidden" id="js-order" name="order" value="" />
 					<input type="hidden" id="js-todelete" name="todelete" value="" />
 					<button class="js-archive">Archive Issue</button>
