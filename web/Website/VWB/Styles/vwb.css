@@ -357,31 +357,20 @@ tr.doubletop > td
     padding-top: 2px;
 }
 
-.draggable-wrapper {
-	border-collapse: collapse;
-	display: table;
+
+/* *********** Add Issue form *********** */
+.archive-dialog__spinner {
+	height: 20px;
+	width: auto;
+}
+
+body.bigger {
 	font-size: 16px;
 	line-height: 20px;
-	margin: 20px 0;
 }
 
-.draggable,
-.draggable-header {
-	background-color: white;
-	cursor: move;
-	display: table-row;
-}
-
-.draggable-header {
-	cursor:auto;
-}
-
-.draggable div {
-	background-color: white;
-	border: 1px solid black;
-	display: table-cell;
-	padding: 10px;
-	margin: 0;
+.centered {
+	text-align: center;
 }
 
 .delete-article {
@@ -398,6 +387,7 @@ tr.doubletop > td
 	width: 0px;
 }
 
+/* Necessary to show togglable x & + symbols for deletion column */
 .delete-button:after {
 	color: red;
 	content: "+";
@@ -411,18 +401,42 @@ tr.doubletop > td
 	transition: transform 0.2s;
 }
 
+/* Necessary to show togglable x & + symbols for deletion column */
 .to-delete .delete-button:after {
 	color: green;
 	transform: rotate(0deg);
 }
 
-.pad-it {
-	padding: 20px;
+.draggable,
+.draggable-header {
+	background-color: white;
+	cursor: move;
+	display: table-row;
+}
+
+.draggable div {
+	background-color: white;
+	border: 1px solid black;
+	display: table-cell;
+	padding: 10px;
+	margin: 0;
 }
 
 .draggable.to-delete {
 	color: grey;
 	text-decoration: line-through;
+}
+
+.draggable-header {
+	cursor:auto;
+}
+
+.draggable-wrapper {
+	border-collapse: collapse;
+	display: table;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 20px 0;
 }
 
 .issue-notes {
@@ -434,9 +448,8 @@ tr.doubletop > td
 	width: 100%;
 }
 
-body.bigger {
-	font-size: 16px;
-	line-height: 20px;
+.pad-it {
+	padding: 20px;
 }
 
 table.basic {
@@ -451,13 +464,4 @@ table.basic td {
 
 table.basic input {
 	min-width: 200px;
-}
-
-.archive-dialog__spinner {
-	height: 20px;
-	width: auto;
-}
-
-.centered {
-	text-align: center;
 }
