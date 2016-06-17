@@ -71,6 +71,8 @@ $(function() {
 
 			// Ini dialog & dialog text
 			$("#js-dialog").html("<p>Are you sure you want to archive this issue?</p>");
+			// Just in case it's been hidden
+			$("#js-dialog + .ui-dialog-buttonpane").show();
 			$("#js-dialog").dialog({
 				closeText: "",
 				resizable: false,
