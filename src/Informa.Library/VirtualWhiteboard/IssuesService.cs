@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using AutoMapper.Internal;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.References;
 using Informa.Library.VirtualWhiteboard.Models;
@@ -8,6 +7,7 @@ using Informa.Library.Wrappers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
+
 
 namespace Informa.Library.VirtualWhiteboard
 {
