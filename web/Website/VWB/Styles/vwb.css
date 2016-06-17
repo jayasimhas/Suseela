@@ -393,3 +393,140 @@ tr.doubletop > td
 	clear: both;
 	margin-bottom: 0.5rem;
 }
+
+
+
+/* *********** Add Issue form *********** */
+.archive-dialog__spinner {
+	height: 20px;
+	width: auto;
+}
+
+body.bigger {
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.centered {
+	text-align: center;
+}
+
+.delete-article {
+	width: 130px;
+}
+
+.delete-button {
+	display: block;
+	font-size: 0;
+	height: 0px;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	width: 0px;
+}
+
+/* Necessary to show togglable x & + symbols for deletion column */
+.delete-button:after {
+	color: red;
+	content: "+";
+	cursor: pointer;
+	display: block;
+	font-size: 60px;
+	position: absolute;
+		top: -6px; /* These numbers are fairly arbitrary */
+		left: -20px; /* These numbers are fairly arbitrary */
+	-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	transition: color 0.2s, transform 0.2s;
+}
+
+/* Necessary to show togglable x & + symbols for deletion column */
+.to-delete .delete-button:after {
+	color: green;
+	-webkit-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+		    transform: rotate(0deg);
+}
+
+.draggable,
+.draggable-header {
+	background-color: white;
+	cursor: move;
+	display: table-row;
+}
+
+.draggable a:hover,
+.draggable a {
+	text-decoration: none;
+}
+
+.draggable div {
+	background-color: white;
+	border: 1px solid black;
+	box-sizing: border-box;
+	display: table-cell;
+	padding: 10px;
+	margin: 0;
+	min-width: 500px;
+	width: 500px;
+}
+
+.draggable div:first-child {
+	min-width: 200px;
+	width: 200px;
+}
+
+.draggable div:last-child {
+	min-width: 170px;
+	width: 170px;
+}
+
+.draggable.to-delete div:not(.delete-article) {
+	color: grey;
+	text-decoration: line-through;
+}
+
+.draggable.to-delete a {
+	text-decoration: none !important;
+}
+
+
+.draggable-header {
+	cursor:auto;
+}
+
+.draggable-wrapper {
+	border-collapse: collapse;
+	display: table;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 20px 0;
+}
+
+.issue-notes {
+	margin: 20px 0;
+}
+
+.issue-notes textarea {
+	max-width: 800px;
+	width: 100%;
+}
+
+.pad-it {
+	padding: 20px;
+}
+
+table.basic {
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+table.basic td {
+	border: 1px solid black;
+	padding: 10px;
+}
+
+table.basic input {
+	min-width: 200px;
+}
