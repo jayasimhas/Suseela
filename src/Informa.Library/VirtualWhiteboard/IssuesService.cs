@@ -107,7 +107,7 @@ namespace Informa.Library.VirtualWhiteboard
 				return new VwbResponseModel
 				{
 					DebugErrorMessage = "Issue is null.",
-					FrientdlyErrorMessage = "Can't find issue.",
+					FriendlyErrorMessage = "Can't find issue.",
 					IsSuccess = false
 				};
 			}
@@ -121,7 +121,7 @@ namespace Informa.Library.VirtualWhiteboard
 				return new VwbResponseModel
 				{
 					DebugErrorMessage = "newIssue is null.",
-					FrientdlyErrorMessage = "Create archived issue failed.",
+					FriendlyErrorMessage = "Create archived issue failed.",
 					IsSuccess = false
 				};
 			}
