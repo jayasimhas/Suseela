@@ -36,10 +36,25 @@ namespace Informa.Library.VirtualWhiteboard
         public VwbResponseModel CreateIssueFromModel(IssueModel model)
         {
             model.Title = model.Title.HasContent() ? model.Title : "New Issue";
-            var issueId = CreateIssueItem(model.Title);
-            UpdateIssueItem(model, issueId);
 
-            return null;
+            try
+            {
+                var issueId = CreateIssueItem(model.Title);
+                UpdateIssueItem(model, issueId);
+            }
+            catch (Exception ex)
+            {
+                return new VwbResponseModel
+                {
+                    IsSuccess = false,
+                    FriendlyErrorMessage =
+                        "Creation of new Issue failed.  Reload the Virtual Whiteboard and try again. "
+                        + "If the problem persists, please contact your systems administrator.",
+                    DebugErrorMessage = ex.Message
+                };
+            }
+
+            return new VwbResponseModel {IsSuccess = true};
         }
 
         public Guid CreateIssueItem(string newIssueName)

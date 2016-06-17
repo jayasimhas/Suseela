@@ -47,6 +47,16 @@
 					&nbsp;<asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="Logout"/>
 				</div>
 			</div>
+            
+            <!-- This next Div is written by one of those derpy back end devs.  
+                 Please ignore all his dumb markup and just keep the IDs. -->
+            <div id="temporary_demo_div">
+                <asp:TextBox runat="server" ID="NewIssueTitleInput"></asp:TextBox>
+                <asp:TextBox runat="server" ID="NewIssuePublishedDateInput"></asp:TextBox> <!--how make date picker??-->
+                <asp:TextBox runat="server" ID="NewIssueArticleIdsInput"></asp:TextBox> <!-- pipe bar separated guids? -->
+                <asp:Button runat="server" Text="TestNewIssue" OnClick="CreateNewIssue"/>
+            </div>
+            
 
 		</div>
 		<br />

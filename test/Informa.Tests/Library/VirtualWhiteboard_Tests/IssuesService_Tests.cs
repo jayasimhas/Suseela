@@ -140,14 +140,46 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
             };
 
             // ACT
-            _issuesService.CreateIssueFromModel(model);
+            var response = _issuesService.CreateIssueFromModel(model);
 
             // ASSERT
             _dependencies.SitecoreServiceMaster.Received(1)
                 .Create<IIssue, IIssue_Folder>(Arg.Any<IIssue_Folder>(), Arg.Any<string>());
             _dependencies.SitecoreServiceMaster.Received(1).Save(Arg.Any<IIssue>());
             _dependencies.SitecoreClonesWrapper.Received(2).CreateClone(Arg.Any<Guid>(), Arg.Any<Guid>());
+
+            Assert.IsTrue(response.IsSuccess);
         }
-        
+
+        [Test]
+        public void CreateIssueFromModel_GetModelThatErrors_ReturnsExceptionMessage()
+        {
+            // ARRANGE
+            SetUpFakeIssuesFolder();
+            _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.InvokeDelegate<Func<IIssue>>());
+            _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.Invoke());
+
+            var model = new IssueModel
+            {
+                Title = "Moose Monthly",
+                PublishedDate = new DateTime(123456789),
+                ArticleIds = new[]
+                {
+                    new Guid("{F1F1C2C5-A4B4-49C4-BC68-D155B309D2F8}"),
+                    new Guid("{EA514FAA-522A-4CC3-9117-98DC7A2A0425}")
+                }
+            };
+
+            _dependencies.SitecoreServiceMaster.GetItem<IIssue_Folder>(Constants.VirtualWhiteboardIssuesFolder)
+                .Returns(x => { throw new Exception("Moose have eaten all the data."); });
+
+            // ACT
+            var response = _issuesService.CreateIssueFromModel(model);
+
+            // ASSERT
+            Assert.IsFalse(response.IsSuccess);
+            Assert.AreEqual("Moose have eaten all the data.", response.DebugErrorMessage);
+        }
+
     }
 }
