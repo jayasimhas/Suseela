@@ -6486,6 +6486,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_
 
 						
 					
+			public static readonly ID Articles_OrderFieldId = new ID("182780c9-c0b4-4e7e-b18c-186e8a5fedc1");
+			public const string Articles_OrderFieldName = "Articles Order";
+
+						
+					
 			public static readonly ID NotesFieldId = new ID("1a83fd14-2fa1-47ec-85a6-a424cab26258");
 			public const string NotesFieldName = "Notes";
 
@@ -9804,6 +9809,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_
 	public partial interface IIssue : IGlassBase 
 	{
 								/// <summary>
+					/// The Articles Order field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 182780c9-c0b4-4e7e-b18c-186e8a5fedc1</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IIssueConstants.Articles_OrderFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Articles_Order  {get; set;}
+								/// <summary>
 					/// The Notes field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -9843,6 +9857,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_
 		public partial interface IIssue__Raw : IGlassBase 
 		{
 										/// <summary>
+						/// The Articles Order field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 182780c9-c0b4-4e7e-b18c-186e8a5fedc1</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IIssueConstants.Articles_OrderFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Articles_Order  {get; set;}
+										/// <summary>
 						/// The Notes field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -9877,6 +9900,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Issue";
 
+					
+			public static readonly ID Articles_OrderFieldId = new ID("182780c9-c0b4-4e7e-b18c-186e8a5fedc1");
+			public const string Articles_OrderFieldName = "Articles Order";
+
+						
 					
 			public static readonly ID NotesFieldId = new ID("1a83fd14-2fa1-47ec-85a6-a424cab26258");
 			public const string NotesFieldName = "Notes";
