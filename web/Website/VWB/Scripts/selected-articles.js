@@ -33,7 +33,7 @@ var serializeSelectedArticles = function() {
 		});
 	}
 
-	$('.js-hidden-selected-articles').val(pipedArticles);
+	$('#IssueArticleIdsInput').val(pipedArticles);
 
 };
 
@@ -52,13 +52,20 @@ $(document).ready(function() {
 	$('.js-append-to-issue, .js-create-new-issue').on('click', function(e) {
 
 		// Prevents instant form submit, just in case
-		e.preventDefault();
+        e.preventDefault();
 		var articles = serializeSelectedArticles();
 
 	});
 
 	$('.js-create-new-issue').on('click', function(e) {
 		$(".js-new-issue-modal").dialog( "open" );
+	});
+
+	$('.js-submit-new-issue').on('click', function(e) {
+	    $('#IssueTitleInput').val($('.js-new-issue-title').val());
+	    $('#IssuePublishedDateInput').val($('.js-new-issue-pub-date').val());
+	    selectedArticlesUpdated();
+	    document.forms[0].submit();
 	});
 
 });
