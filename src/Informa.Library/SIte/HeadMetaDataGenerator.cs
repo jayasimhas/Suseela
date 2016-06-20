@@ -87,8 +87,10 @@ namespace Informa.Library.Site
             //Meta meta data
             properties["twitter:card"] = properties.ContainsKey("twitter:image")
                                          && properties["twitter:image"].HasContent()
-                                                ? "summary_large_image"
-                                                : "summary";
+                                         && !properties["twitter:image"].Equals(GetImageFullUrl(siteRoot.Site_Logo?.Src),
+                                                StringComparison.InvariantCultureIgnoreCase)
+                                                    ? "summary_large_image"
+                                                    : "summary";
 
             return properties;
         }
@@ -128,6 +130,7 @@ namespace Informa.Library.Site
         public void AddArticleMeta(IDictionary<string, string> props, IArticle article)
         {
             props["og:type"] = "article";
+            props["og:title"] = props["twitter:title"] = article.Title;
             props["og:description"] = article.Summary;
             props["twitter:description"] = article.Summary;
 
