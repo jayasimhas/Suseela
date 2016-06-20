@@ -14,9 +14,11 @@
 </head>
 <body>
 	<form id="form1" runat="server">
+    <asp:HiddenField runat="server" ID="IssueTitleInput"></asp:HiddenField>
+    <asp:HiddenField runat="server" ID="IssuePublishedDateInput"></asp:HiddenField> <!--how make date picker??-->
+    <asp:HiddenField runat="server" ID="IssueArticleIdsInput"></asp:HiddenField> <!-- pipe bar separated guids? -->
+        
 
-	<!-- This is where we stash the pipe-separated list of selected articles -->
-	<input type="hidden" class="js-hidden-selected-articles" name="selectedArticles" value="">
 	<div class="wrapper">
 		<img class="banner" width="317" height="122" src="<%= LogoUrl %>"
 			alt="<%= Elsevier.Library.Reference.Constants.BusinessName %> - Virtual Whiteboard">
@@ -80,11 +82,11 @@
 				<asp:DropDownList ID="ddColumns" runat="server"
 				AutoPostBack="true" OnSelectedIndexChanged="AddColumn">
 				</asp:DropDownList>
-
-				<hr>
-
-				<button disabled class="orange-button js-create-new-issue">Add Selected Articles to New Issue</button>
-
+					<asp:Repeater runat="server" ID="ExistingIssuesOptions">
+					    <ItemTemplate>
+					        '
+					    </ItemTemplate>
+					</asp:Repeater>
 				<hr>
 
 				<select class="js-existing-issue">
@@ -99,7 +101,7 @@
 		</div>
 	</div>
 	</form>
-
+		<input class="js-new-issue-title" type="text">
 	<!-- NEW ISSUE MODAL -->
 	<div class="new-issue-modal js-new-issue-modal" title="Dialog Title">
 		<label>Issue Title</label>
@@ -125,14 +127,14 @@
 				$("#txtEnd").attr("disabled", "disabled");
 				$("#txtStartTime").attr("disabled", "disabled");
 				$("#txtEndTime").attr("disabled", "disabled");
-				$("#ddIssue").attr("disabled", "");
+				$("#ddIssue").attr("disabled", null);
 			});
 
 			$('#rbDateRange').click(function () {
-				$("#txtStart").attr("disabled", "");
-				$("#txtEnd").attr("disabled", "");
-				$("#txtStartTime").attr("disabled", "");
-				$("#txtEndTime").attr("disabled", "");
+				$("#txtStart").attr("disabled", null);
+				$("#txtEnd").attr("disabled", null);
+				$("#txtStartTime").attr("disabled", null);
+				$("#txtEndTime").attr("disabled", null);
 				$("#ddIssue").attr("disabled", "disabled");
 			});
 		});
