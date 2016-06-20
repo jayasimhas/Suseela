@@ -274,12 +274,14 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 			var idString = "4137ED60-1ABE-42CB-B305-119C05B696D3|E94F2832-A519-48AA-9413-FF823BF710E9|8C268BA6-9AE0-4D1E-A16A-24F5B22648F8";
 		    var issue = Substitute.For<IIssue>();
 		    _dependencies.SitecoreServiceMaster.GetItem<IIssue>(Arg.Any<Guid>()).Returns(issue);
-		    
+		    _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.Invoke());
+
 			// ACT
 			_issuesService.ReorderArticles(Arg.Any<Guid>(), idString);
 		    
 			// ASSERT
 			Assert.AreEqual(issue.Articles_Order, idString);
+			_dependencies.SitecoreServiceMaster.Received(1).Save(issue);
 	    }
 	}
 }

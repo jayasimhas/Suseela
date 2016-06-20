@@ -161,6 +161,8 @@ namespace Informa.Library.VirtualWhiteboard
 			{
 				var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId);
 				issue.Articles_Order = ids;
+				_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
+				_dependencies.SitecoreServiceMaster.Save(issue));
 			}
 		}
 	}
