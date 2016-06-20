@@ -346,6 +346,8 @@
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
+    <Compile Include="Issues\IIssueService.cs" />
+    <Compile Include="Issues\IssueService.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
     <Compile Include="Logging\LogWrapper.cs" />
@@ -1100,7 +1102,12 @@
     <Compile Include="Utilities\WebUtils\UrlUtils.cs" />
     <Compile Include="ViewModels\Account\ISignInViewModel.cs" />
     <Compile Include="ViewModels\Account\SignInViewModel.cs" />
+    <Compile Include="VirtualWhiteboard\Models\IssueModel.cs" />
+    <Compile Include="VirtualWhiteboard\Models\VWBResponseModel.cs" />
+    <Compile Include="VirtualWhiteboard\IssuesService.cs" />
+    <Compile Include="Wrappers\BaseSitecoreWrapper.cs" />
     <Compile Include="Wrappers\HttpContextProvider.cs" />
+    <Compile Include="Wrappers\SitecoreClonesWrapper.cs" />
     <Compile Include="Wrappers\SitecoreSecurityWrapper.cs" />
     <Compile Include="Wrappers\SitecoreServiceAliases.cs" />
     <Compile Include="Wrappers\SitecoreUrlWrapper.cs" />

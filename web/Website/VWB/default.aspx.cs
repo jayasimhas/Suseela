@@ -1,30 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Web;
-using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Elsevier.Library.CustomItems.Publication.General;
-using Elsevier.Library.LuceneSearch.Indexes;
-using Elsevier.Library.LuceneSearch.Parameters;
-using Elsevier.Library.LuceneSearch.Searchers;
-using Elsevier.Library.Reference;
-using Elsevier.Library.Util;
-//using Elsevier.Library.CustomItems.Global.TextNodes;
-//using Elsevier.Library.CustomItems.Publication.General;
-//using Elsevier.Library.LuceneSearch.Indexes;
-//using Elsevier.Library.LuceneSearch.Parameters;
-//using Elsevier.Library.LuceneSearch.Searchers;
-//using Elsevier.Library.Reference;
-//using Elsevier.Library.Util;
+using Autofac;
 using Elsevier.Web.VWB.Report;
 using Elsevier.Web.VWB.Report.Columns;
+using Glass.Mapper.Sc;
+using Informa.Library.VirtualWhiteboard;
+using Informa.Web.App_Start;
+using Microsoft.Practices.ServiceLocation;
 using Sitecore.Caching;
 using Sitecore.Configuration;
-using Sitecore.Data;
-using Sitecore.Data.Items;
+using Sitecore.Mvc.Extensions;
 using Sitecore.Shell.Applications.ContentEditor;
 using Sitecore.Web;
 using Sitecore.Web.Authentication;
@@ -304,5 +292,31 @@ namespace Elsevier.Web.VWB
 
 			Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?redirect=" + Request.RawUrl);
 		}
-	}
+
+        #region issue management
+
+        protected void CreateNewIssue(object sender, EventArgs e)
+        {
+            var model = new Informa.Library.VirtualWhiteboard.Models.IssueModel
+            {
+                Title = NewIssueTitleInput.Text,
+                PublishedDate = DateTime.Parse(NewIssuePublishedDateInput.Text),
+                ArticleIds = NewIssueArticleIdsInput.Text?.Split('|').Select(Guid.Parse)
+            };
+
+            using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
+            {
+                var issueBuilder = scope.Resolve<IIssuesService>();
+                var result = issueBuilder.CreateIssueFromModel(model);
+
+                if (result.IsSuccess)
+                {
+                    Response.Redirect("http://example.com/issue-page");
+                }
+            }
+        }
+
+        #endregion
+
+    }
 }

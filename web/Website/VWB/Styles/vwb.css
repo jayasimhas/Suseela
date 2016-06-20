@@ -50,7 +50,7 @@ h3 {
 }
 
 table.box
-{	
+{
     padding: 15px;
 	height: 200px;
 	margin:5px auto;
@@ -68,7 +68,7 @@ table.box td {
 }
 
 
-div.top 
+div.top
 {
 	width: 500px;
 }
@@ -98,7 +98,7 @@ table.box td table {
 	margin:0;
 }
 
-.left 
+.left
 {
 	float:left;
 }
@@ -234,7 +234,7 @@ select.left
 }
 
 textarea, input {
-	font-family: arial,helvetica,sans-serif;    
+	font-family: arial,helvetica,sans-serif;
 }
 
 .block:active {
@@ -247,23 +247,34 @@ div.appbuttons
     padding-top: 5px;
 }
 
-#btnRunReport, #btnReset, #btnLogout, #tblResults > tbody > tr > td input
+#btnRunReport,
+#btnReset,
+#btnLogout,
+#tblResults > tbody > tr > td input,
+.orange-button,
+.ui-widget button
 {
-	margin: auto;
 	border-radius: 4px 4px 4px 4px;
+	cursor: pointer;
+	line-height: 1rem;
+	margin: auto;
+	max-width: 100%;
+    -moz-text-shadow: 0 -0.1em 0.2em #D06D1A, 0 0.1em 0.2em #FFFFFF;
+    background-color: #D06D1A;
     background: -moz-linear-gradient(0% 10% 270deg, #F4BC50, #DF7B29) repeat scroll 0 0 #DF7B29;
-    border: medium none;
+	background: -webkit-linear-gradient(270deg, #F4BC50, #DF7B29) repeat scroll 0 0 #DF7B29;
+    border: 0;
     color: #FFFFFF;
     display: inline-block;
-    font: bold 91.7%/1.1 arial,helvetica,sans-serif;
+    font: 500 0.75rem/0.9375rem Helvetica Neue, Helvetica, arial, sans-serif;
     letter-spacing: 0.03em;
     padding: 3px 7px !important;
     text-decoration: none;
-    -moz-text-shadow: 0 -0.1em 0.2em #D06D1A, 0 0.1em 0.2em #FFFFFF;
     text-transform: uppercase;
-    white-space: nowrap;
-	cursor:pointer;
-    background-color: #D06D1A;
+}
+
+.orange-button:disabled {
+	background: #ccc;
 }
 
 #tblResults > tbody > tr > td input
@@ -276,38 +287,32 @@ div.appbuttons
     clear: both;
 }
 
-#tblResults
-{
-	border-collapse:collapse;
-	border:none;
+#tblResults {
+	border-collapse: collapse;
+	border: none;
 	border-spacing: 0;
     float: left;
+	max-width: calc(100% - 200px);
 }
 
 #tblResults > tbody > tr > td
 {
 	padding: 10px 8px;
-	border-left:1px solid #ffd6ad; 
-	border-right:1px solid #ffd6ad; 
-	border-bottom:2px solid #ffd6ad; 
-	border-top:1px solid #ffd6ad; 
+	border-left:1px solid #ffd6ad;
+	border-right:1px solid #ffd6ad;
+	border-bottom:2px solid #ffd6ad;
+	border-top:1px solid #ffd6ad;
 	text-align:left;
 }
 
 .report table tr.tableheader td {
-	padding:15px 9px 5px; 
+	padding:15px 9px 5px;
 	background:url("/VWB/images/vwb/back_right_tabbox.gif") repeat-x;
 	padding:10px;
 	font: 125%/1.2 Helvetica Neue,Helvetica,"HelveticaNeueW01-57Cn",arial,sans-serif;
     margin-bottom: 0.7em;
 	color: #C76700;
 	font-weight:bold;
-}
-
-#ddColumns
-{
-	position:absolute;
-	margin-left:15px;
 }
 
 .moveto
@@ -338,21 +343,190 @@ tr.doubletop > td
 }
 
 .radioButtonWrapper {
-    padding-top: 4px; 
+    padding-top: 4px;
     width: 100px;
 }
 
 .inputWrapper {
-    padding-top: 2px; 
-    padding-left: 5px; 
+    padding-top: 2px;
+    padding-left: 5px;
     width: 215px;
 }
 
 #dateRangeWrapper {
-    clear: both; 
+    clear: both;
 }
 
 .dateRangeLabel {
-    width: 40px; 
+    width: 40px;
     padding-top: 2px;
+}
+
+
+.vwb-report-options {
+	position: fixed;
+	right: 1rem;
+	width: calc(200px - 1rem);
+}
+.vwb-report-options hr {
+	border: 0;
+	height: 1px;
+	width: 100%;
+	background-color: #ebebeb;
+	margin: 1rem 0;
+}
+
+.ui-widget {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.new-issue-modal label {
+	display: block;
+}
+.new-issue-modal input {
+	margin-bottom: 1rem;
+	display: block;
+	width: 100%;
+}
+.new-issue-modal button {
+	float: right;
+	clear: both;
+	margin-bottom: 0.5rem;
+}
+
+
+
+/* *********** Add Issue form *********** */
+.archive-dialog__spinner {
+	height: 20px;
+	width: auto;
+}
+
+body.bigger {
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.centered {
+	text-align: center;
+}
+
+.delete-article {
+	width: 130px;
+}
+
+.delete-button {
+	display: block;
+	font-size: 0;
+	height: 0px;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	width: 0px;
+}
+
+/* Necessary to show togglable x & + symbols for deletion column */
+.delete-button:after {
+	color: red;
+	content: "+";
+	cursor: pointer;
+	display: block;
+	font-size: 60px;
+	position: absolute;
+		top: -6px; /* These numbers are fairly arbitrary */
+		left: -20px; /* These numbers are fairly arbitrary */
+	-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	transition: color 0.2s, transform 0.2s;
+}
+
+/* Necessary to show togglable x & + symbols for deletion column */
+.to-delete .delete-button:after {
+	color: green;
+	-webkit-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+		    transform: rotate(0deg);
+}
+
+.draggable,
+.draggable-header {
+	background-color: white;
+	cursor: move;
+	display: table-row;
+}
+
+.draggable a:hover,
+.draggable a {
+	text-decoration: none;
+}
+
+.draggable div {
+	background-color: white;
+	border: 1px solid black;
+	box-sizing: border-box;
+	display: table-cell;
+	padding: 10px;
+	margin: 0;
+	min-width: 500px;
+	width: 500px;
+}
+
+.draggable div:first-child {
+	min-width: 200px;
+	width: 200px;
+}
+
+.draggable div:last-child {
+	min-width: 170px;
+	width: 170px;
+}
+
+.draggable.to-delete div:not(.delete-article) {
+	color: grey;
+	text-decoration: line-through;
+}
+
+.draggable.to-delete a {
+	text-decoration: none !important;
+}
+
+
+.draggable-header {
+	cursor:auto;
+}
+
+.draggable-wrapper {
+	border-collapse: collapse;
+	display: table;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 20px 0;
+}
+
+.issue-notes {
+	margin: 20px 0;
+}
+
+.issue-notes textarea {
+	max-width: 800px;
+	width: 100%;
+}
+
+.pad-it {
+	padding: 20px;
+}
+
+table.basic {
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+table.basic td {
+	border: 1px solid black;
+	padding: 10px;
+}
+
+table.basic input {
+	min-width: 200px;
 }
