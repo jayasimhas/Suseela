@@ -71,7 +71,7 @@ namespace Informa.Web.ViewModels
                 TextTranslator.Translate("Article.LatestFrom"), 
                 string.Join(", ", Topics.Take(take > 0 ? take : 1)));
 	        if (take > 0) 
-                sb.AppendFormat("&amp; {0}", Topics.Last());
+                sb.AppendFormat(" &amp; {0}", Topics.Last());
            
             return sb.ToString();
         }
