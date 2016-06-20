@@ -55,6 +55,9 @@
 		<div class="draggable-wrapper js-draggable-wrapper">
 			<div class="draggable draggable-header">
 				<div>
+
+				</div>
+				<div>
 					Article Number
 				</div>
 				<div>
@@ -66,6 +69,9 @@
 			</div>
 			<!-- PLACEHOLDER! BE should create row for each article -->
 			<div class="draggable js-draggable" id="98765432109876">
+				<div>
+
+				</div>
 				<div>
 					98765432109876
 				</div>
@@ -79,6 +85,9 @@
 			</div>
 			<div class="draggable js-draggable" id="12345678901234">
 				<div>
+
+				</div>
+				<div>
 					12345678901234
 				</div>
 				<div>
@@ -91,6 +100,9 @@
 			</div>
 			<div class="draggable js-draggable" id="27485629873465">
 				<div>
+
+				</div>
+				<div>
 					27485629873465
 				</div>
 				<div>
@@ -102,6 +114,9 @@
 				</div>
 			</div>
 			<div class="draggable js-draggable" id="36450246589694">
+				<div>
+
+				</div>
 				<div>
 					36450246589694
 				</div>
