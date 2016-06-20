@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.References;
 using Informa.Library.VirtualWhiteboard.Models;
 using Informa.Library.Wrappers;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
@@ -11,10 +13,10 @@ using Jabberwocky.Glass.Models;
 
 namespace Informa.Library.VirtualWhiteboard
 {
-    public interface IIssuesService
-    {
-        VwbResponseModel CreateIssueFromModel(IssueModel model);
-    }
+	public interface IIssuesService
+	{
+		VwbResponseModel CreateIssueFromModel(IssueModel model);
+	}
 
 	[AutowireService]
 	public class IssuesService : IIssuesService
@@ -38,24 +40,24 @@ namespace Informa.Library.VirtualWhiteboard
 		{
 			model.Title = model.Title.HasContent() ? model.Title : "New Issue";
 
-            try
-            {
-			var issueId = CreateIssueItem<IIssue, IIssue_Folder>(model.Title, Constants.VirtualWhiteboardIssuesFolder);
-            UpdateIssueItem(model, issueId);
-            }
-            catch (Exception ex)
-            {
-                return new VwbResponseModel
-                {
-                    IsSuccess = false,
-                    FriendlyErrorMessage =
-                        "Creation of new Issue failed.  Reload the Virtual Whiteboard and try again. "
-                        + "If the problem persists, please contact your systems administrator.",
-                    DebugErrorMessage = ex.Message
-                };
-            }
+			try
+			{
+				var issueId = CreateIssueItem<IIssue, IIssue_Folder>(model.Title, Constants.VirtualWhiteboardIssuesFolder);
+				UpdateIssueItem(model, issueId);
+			}
+			catch (Exception ex)
+			{
+				return new VwbResponseModel
+				{
+					IsSuccess = false,
+					FriendlyErrorMessage =
+						"Creation of new Issue failed.  Reload the Virtual Whiteboard and try again. "
+						+ "If the problem persists, please contact your systems administrator.",
+					DebugErrorMessage = ex.Message
+				};
+			}
 
-            return new VwbResponseModel {IsSuccess = true};
+			return new VwbResponseModel { IsSuccess = true };
 		}
 
 		public Guid CreateIssueItem<I, F>(string newIssueName, string folderId) where I : class, IGlassBase
@@ -74,7 +76,7 @@ namespace Informa.Library.VirtualWhiteboard
 
 		public void UpdateIssueItem(IssueModel model, Guid issueId)
 		{
-            var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(issueId);
+			var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(issueId);
 
 			if (issue == null)
 			{
@@ -88,15 +90,15 @@ namespace Informa.Library.VirtualWhiteboard
 			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
 				_dependencies.SitecoreServiceMaster.Save(issue));
 
-            AddArticlesToIssue(issue._Id, model.ArticleIds);
+			AddArticlesToIssue(issue._Id, model.ArticleIds);
 		}
 
-        public void AddArticlesToIssue(Guid issueId, IEnumerable<Guid> itemIds)
+		public void AddArticlesToIssue(Guid issueId, IEnumerable<Guid> itemIds)
 		{
 			if (itemIds == null) return;
 
 			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
-                itemIds.Each(id => _dependencies.SitecoreClonesWrapper.CreateClone(issueId, id)));
+				itemIds.Each(id => _dependencies.SitecoreClonesWrapper.CreateClone(issueId, id)));
 		}
 
 		public VwbResponseModel ArchiveIssue(Guid issueId)
@@ -139,6 +141,29 @@ namespace Informa.Library.VirtualWhiteboard
 			{
 				IsSuccess = true
 			};
+		}
+
+		public void DeleteArticles(string ids)
+		{
+			if (string.IsNullOrWhiteSpace(ids))
+			{
+				return;
+			}
+
+			ids.Split('|')
+				.Select(i => _dependencies.SitecoreServiceMaster.GetItem<IArticle>(new Guid(i)))
+				.Each(x =>_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() => _dependencies.SitecoreServiceMaster.Delete(x)));
+		}
+
+		public void ReorderArticles(Guid issueId, string ids)
+		{
+			if (!string.IsNullOrWhiteSpace(ids))
+			{
+				var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId);
+				issue.Articles_Order = ids;
+				_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
+				_dependencies.SitecoreServiceMaster.Save(issue));
+			}
 		}
 	}
 }
