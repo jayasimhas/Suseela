@@ -474,8 +474,17 @@ body.bigger {
 
 
 .draggable div:first-child {
+	/* Creative Commons icon by Valera Zvonko: https://www.iconfinder.com/happyiconstudio */
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAB1UlEQVR4Xu2YURLDIAhE7f0P3U6myYxNoyxEllrpt5bdJyLkURb/PRb3XxJAZsDiBKKvwHPnH6YjLHAp5TB/5GCIlpCgF+bDIEQAOJ/8uQpRNVGDdU4+DAITgHTyIRBYALTmaTWBAcBqngLBG8Bd8+4QvAFIfebSjdAGJwGs3ApnBuQVyBqQRTBfgVlfge3kRjRRIzPApMliYrToLQksOs5dpkmXNnDd22v3XrXFJtGN/tqkTWPC4xueFwA4q1AAV1Mdurc3EHkCgCAgJlojLbKXOQ2adEomevO8tFcyP3oWMGntmZA+ZswEoHkdWiYk88jp/uKaL78JoHNMUhb89RU4uJgKiyL3vZ9B8aMqcoqm5wWEwADQ9YgAqJ+r2he6d/pGqHUdfh0ApA9aVB2haeAACq1WR2+wglpgsTiQRY8EoPov1eJTJlj31mxHF0G1JvUGsLqjy0YCQGN+rEsAJmzjNmUG7CzDMjEs8G48MyAz4E0gLBPDAucVeBP4+xogfVRBH1S3THX748YAhRoePXY34zIA1KmuBeCuzz3AjUygaKMEMUCg6aIFUkCgaqIGAyDQ9dADdiCEaAkJegEhTEdYYO176LU+AXiRneV/MwNmOSkvnS9+GlZBPfGNewAAAABJRU5ErkJggg==);
+	background-size: 25px 25px;
+	background-repeat: no-repeat;
+	background-position: center center;
 	min-width: 40px;
 	width: 40px;
+}
+
+.draggable-header.draggable div:first-child {
+	background-image: none;
 }
 
 .draggable div:nth-child(2) {
