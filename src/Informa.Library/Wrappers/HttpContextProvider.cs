@@ -7,7 +7,7 @@ namespace Informa.Library.Wrappers
     public interface IHttpContextProvider
     {
         HttpContextBase Current { get; }
-        Uri RequestUrl { get; }
+        Uri RequestUri { get; }
     }
 
     [AutowireService]
@@ -15,6 +15,6 @@ namespace Informa.Library.Wrappers
     {
         public HttpContextBase Current => new HttpContextWrapper(HttpContext.Current);
 
-        public Uri RequestUrl => HttpContext.Current?.Request.Url;
+        public Uri RequestUri => HttpContext.Current?.Request.Url;
     }
 }

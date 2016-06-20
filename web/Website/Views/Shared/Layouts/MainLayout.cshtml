@@ -7,7 +7,8 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	@Html.Raw(Model.MetaDataHtml)
 
     <title>@Html.Raw(Model.Title)</title>
 
@@ -24,94 +25,6 @@
 
     @* @Html.Sitecore().VisitorIdentification() *@
     @Html.Sitecore().Placeholder("head")
-
-
-	@* * *
-		OPEN GRAPH TAGS FOR HOME, TOPIC, AND ARTICLE PAGES
-		Replace the `content` attribute of each tag depending on the current page.
-
-	* * *@
-
-	@*
-		HOME: 		sitecore/content/<pub name>: og:title
-		TOPIC:		sitecore/content/<pub name>/path to page/<topic page>: og:title
-		ARTICLE:	sitecore/content/<pub name>/path to article/<article>:Title
-	*@
-	<meta property="og:title" content="">
-
-	@*
-		HOME / TOPIC:	sitecore/content/<pub name>: og:image
-		ARTICLE:		sitecore/content/<pub name>/path to article/<article>:Featured Image 16 9
-	*@
-	<meta property="og:image" content="">
-
-	@*
-		HOME: 		sitecore/content/<pub name>: og:description
-		TOPIC:		sitecore/content/<pub name>/path to page/<topic page>: og:description
-		ARTICLE:	sitecore/content/<pub name>/path to article/<article>: Summary
-	*@
-	<meta property="og:description" content="">
-
-	@*
-		HOME / TOPIC / ARTICLE: the current page URL
-	*@
-	<meta property="og:url" content="">
-
-	@*
-		HOME / TOPIC:	hard-coded to "website"
-		ARTICLE:		hard-coded to "article"
-	*@
-	<meta property="og:type" content="">
-
-	@*
-		HOME / TOPIC / ARTICLE: sitecore/content/<pub name>: Publication Name
-	*@
-	<meta property="og:site_name" content="">
-
-	@*
-		HOME / TOPIC / ARTICLE:
-		Hard-coded value of "summary_large_image" if an image exists.
-		Otherwise, hard-coded value of "summary"
-	*@
-	<meta name="twitter:card" content="">
-
-	@*
-		HOME / TOPIC / ARTICLE: sitecore/content/<pub node>:Twitter Handle
-	*@
-	<meta name="twitter:site" content="">
-
-	@* * *
-		These `article:____` tags are for ARTICLE PAGES ONLY
-		Hide on all other pages
-
-		sitecore/content/<pub name>/path to article/<article>:Actual Publish Date
-	* * *@
-	<meta property="article:published_time" content="">
-
-	@*
-		sitecore/content/<pub name>/path to article/<article>:Modified Date
-	*@
-	<meta property="article:modified_time" content="">
-
-	@*
-		sitecore/content/<pub name>/path to article/<article>:Authors
-			Comma-separated list. "FirstName LastName, FirstName2 LastName2, ..."
-	*@
-	<meta property="article:author" content="">
-
-	@*
-		sitecore/content/<pub name>/path to article/<article>:Taxonomy
-			NOTE - only the top-most item
-	*@
-	<meta property="article:section" content="">
-
-	@*
-		sitecore/content/<pub name>/path to article/<article>:Taxonomy
-			Comma-separated list of all Taxonomy items except the first one (see `article:section`)
-	*@
-	<meta property="article:tag" content="">
-
-
 </head>
 <body @Model.BodyCssClass>
 
