@@ -160,7 +160,7 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 
 			var event_data = {
 				event_name: 'search_facets',
-				search_facet_category: facetGroupId
+				search_facet_category: facetGroup.Label
 			};
 
 			if(facetsForAnalytics) {
