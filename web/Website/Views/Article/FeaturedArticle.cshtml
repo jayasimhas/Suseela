@@ -35,13 +35,13 @@
                 <li>
                     <time class="article-metadata__date">@Model.Date.ToString("dd MMM yyyy")</time>
                 </li>
-                @if (!string.IsNullOrEmpty(Model.Content_Type))
+                @if (!string.IsNullOrEmpty(Model.ContentType))
                 {
                     <li>
-                        <h6>@Html.Raw(Model.Content_Type)</h6>
+                        <h6>@Html.Raw(Model.ContentType)</h6>
                     </li>
                 }
-                @if (!string.IsNullOrEmpty(Model.Media_Type))
+                @if (!string.IsNullOrEmpty(Model.MediaType))
                 {
                     <li>
                         @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model.ID })

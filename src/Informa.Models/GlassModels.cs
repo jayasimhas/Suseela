@@ -6996,7 +6996,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 								/// <summary>
 					/// The Tooltip Text field.
 					/// <para></para>
-					/// <para>Field Type: Droptree</para>		
+					/// <para>Field Type: Single-Line Text</para>		
 					/// <para>Field ID: e1b065cf-c9fb-4e91-8aff-617082c9ce19</para>
 					/// <para>Custom Data: type=IDictionary_Entry__Raw</para>
 					/// </summary>
@@ -7035,7 +7035,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 										/// <summary>
 						/// The Tooltip Text field.
 						/// <para></para>
-						/// <para>Field Type: Droptree</para>		
+						/// <para>Field Type: Single-Line Text</para>		
 						/// <para>Field ID: e1b065cf-c9fb-4e91-8aff-617082c9ce19</para>
 						/// <para>Custom Data: type=IDictionary_Entry__Raw</para>
 						/// </summary>

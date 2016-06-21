@@ -1,5 +1,5 @@
 ﻿@model ArticleBodyContentModel
 
-<svg class="article-metadata__media-type js-toggle-tooltip" data-tooltip-text="This article includes data.">
-    <use xlink:href="/dist/img/svg-sprite.svg#@Model.Media_Type_Icon_Data.MediaType"></use>
+<svg class="article-metadata__media-type js-toggle-tooltip" data-tooltip-text="@Model.MediaTypeIconData.Tooltip">
+    <use xlink:href="/dist/img/svg-sprite.svg#@Model.MediaTypeIconData.MediaType"></use>
 </svg>

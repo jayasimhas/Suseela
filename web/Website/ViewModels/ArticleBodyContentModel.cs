@@ -66,8 +66,8 @@ namespace Informa.Web.ViewModels
 		}
 		public string Category => GlassModel.Article_Category;
 		public string Body => _lazyBody.Value;
-		public string Content_Type => GlassModel.Content_Type?.Item_Name;
-		public MediaTypeIconData Media_Type_Icon_Data => ArticleService.GetMediaTypeIconData(GlassModel);
+		public string ContentType => GlassModel.Content_Type?.Item_Name;
+		public MediaTypeIconData MediaTypeIconData => ArticleService.GetMediaTypeIconData(GlassModel);
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
 	}

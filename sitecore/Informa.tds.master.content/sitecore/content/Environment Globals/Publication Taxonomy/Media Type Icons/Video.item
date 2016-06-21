@@ -12,7 +12,7 @@ templatekey: Taxonomy Item
 ----version----
 language: en
 version: 1
-revision: de2ff4c6-03d3-4d07-be32-b5ce1dcac415
+revision: 281731c2-a1aa-4efe-84ad-ad595da2a445
 
 ----field----
 field: {1CFBE05B-A4AF-4B00-90FB-734CBA008F42}
@@ -32,9 +32,9 @@ Video
 field: {E1B065CF-C9FB-4E91-8AFF-617082C9CE19}
 name: Tooltip Text
 key: tooltip text
-content-length: 38
+content-length: 28
 
-{6DA101C7-C419-4A25-B882-B9360D2E523E}
+This article includes video.
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-de2ff4c6-03d3-4d07-be32-b5ce1dcac415
+281731c2-a1aa-4efe-84ad-ad595da2a445
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160614T152156Z
+20160621T152605Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

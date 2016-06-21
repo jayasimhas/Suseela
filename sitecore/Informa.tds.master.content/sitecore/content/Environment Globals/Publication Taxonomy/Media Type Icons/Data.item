@@ -12,7 +12,7 @@ templatekey: Taxonomy Item
 ----version----
 language: en
 version: 1
-revision: b5031099-f16f-4c3b-82c7-0ef0587a8621
+revision: 347bba24-00b0-4f38-8054-a4ea79feb1ff
 
 ----field----
 field: {1CFBE05B-A4AF-4B00-90FB-734CBA008F42}
@@ -32,9 +32,9 @@ Data
 field: {E1B065CF-C9FB-4E91-8AFF-617082C9CE19}
 name: Tooltip Text
 key: tooltip text
-content-length: 38
+content-length: 27
 
-{D042A8B8-DF0C-44CD-B7BD-E4A32B9AC03E}
+This article includes data.
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b5031099-f16f-4c3b-82c7-0ef0587a8621
+347bba24-00b0-4f38-8054-a4ea79feb1ff
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160614T152149Z
+20160621T152556Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

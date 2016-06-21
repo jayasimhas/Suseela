@@ -72,25 +72,21 @@ namespace Informa.Library.Services.Article {
             return taxItems;
         }
 
-    public MediaTypeIconData GetMediaTypeIconData(IArticle article)
-    {
-      string mediaType = article.Media_Type?.Item_Name == "Data"
-          ? "chart"
-          : article.Media_Type?.Item_Name?.ToLower() ?? "";
-
-      string tooltipText = "";
-      if (article.Media_Type != null)
-      {
-        if (!string.IsNullOrEmpty(article.Media_Type.Tooltip_Text.Key))
+        public MediaTypeIconData GetMediaTypeIconData(IArticle article)
         {
-          tooltipText = TextTranslator.Translate(article.Media_Type.Tooltip_Text.Key);
+            var mediaType = article.Media_Type?.Item_Name == "Data"
+                ? "chart"
+                : article.Media_Type?.Item_Name?.ToLower() ?? string.Empty;
+
+            var key = article.Media_Type?.Tooltip_Text?.Key;
+            var tooltipText = key.HasContent()
+                ? TextTranslator.Translate(article.Media_Type.Tooltip_Text.Key)
+                : string.Empty;
+
+            return new MediaTypeIconData() {MediaType = mediaType, Tooltip = tooltipText};
         }
-      }
 
-      return new MediaTypeIconData() {MediaType = mediaType, Tooltip = tooltipText };
-    }
-
-    public string GetArticleSummary(IArticle article)
+        public string GetArticleSummary(IArticle article)
         {
             string cacheKey = CreateCacheKey($"Summary-{article._Id}");
             return CacheProvider.GetFromCache(cacheKey, () => BuildTokenizedArticleText(article.Summary));

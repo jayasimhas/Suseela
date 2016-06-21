@@ -14,13 +14,13 @@
 			<li>
 				<time class="article-metadata__date">@Model.Date.ToString("dd MMM yyyy")</time>
 			</li>
-			@if (!string.IsNullOrEmpty(Model.Content_Type))
+			@if (!string.IsNullOrEmpty(Model.ContentType))
 			{
 				<li>
-					<h6>@Model.Content_Type</h6>
+					<h6>@Model.ContentType</h6>
 				</li>
 			}
-			@if (!string.IsNullOrEmpty(Model.Media_Type_Icon_Data.MediaType))
+			@if (!string.IsNullOrEmpty(Model.MediaTypeIconData.MediaType))
             {
 
 			    <li>
