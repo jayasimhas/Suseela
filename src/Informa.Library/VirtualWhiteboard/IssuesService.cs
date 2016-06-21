@@ -16,6 +16,11 @@ namespace Informa.Library.VirtualWhiteboard
 	public interface IIssuesService
 	{
 		VwbResponseModel CreateIssueFromModel(IssueModel model);
+		IEnumerable<IArticle> GetArticles(Guid issueId);
+		VwbResponseModel ArchiveIssue(Guid issueId);
+		void ReorderArticles(Guid issueId, string ids);
+		void DeleteArticles(string ids);
+		void UpdateIssueInfo(Guid issueId, string title, string date);
 	}
 
 	[AutowireService]
@@ -116,8 +121,8 @@ namespace Informa.Library.VirtualWhiteboard
 
 			// Create archived issue item
 			var newIssueId = CreateIssueItem<IArchived_Issue, IArchived_Issue_Folder>(issue._Name,
-				Constants.VirtualWhiteboardIssuesFolder);
-			var newIssue = _dependencies.SitecoreServiceMaster.GetItem<IArchived_Issue>(newIssueId);
+				Constants.VirtualWhiteboardArchivedIssuesFolder);
+			var newIssue = _dependencies.SitecoreServiceMaster.GetItem<IArchived_Issue__Raw>(newIssueId);
 			if (newIssue == null)
 			{
 				return new VwbResponseModel
@@ -133,6 +138,7 @@ namespace Informa.Library.VirtualWhiteboard
 			newIssue.Published_Date = issue.Published_Date;
 			newIssue.Notes = issue.Notes;
 			newIssue.Issue_Articles = issue._ChildrenWithInferType;
+			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() => _dependencies.SitecoreServiceMaster.Save(newIssue));
 
 			// Delete issue with children
 			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() => _dependencies.SitecoreServiceMaster.Delete(issue));
@@ -159,11 +165,39 @@ namespace Informa.Library.VirtualWhiteboard
 		{
 			if (!string.IsNullOrWhiteSpace(ids))
 			{
-				var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId);
+				var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(issueId);
 				issue.Articles_Order = ids;
 				_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
 				_dependencies.SitecoreServiceMaster.Save(issue));
 			}
+		}
+
+		public void UpdateIssueInfo(Guid issueId, string title, string date)
+		{
+			var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(issueId);
+			issue.Title = title;
+			DateTime publishDate;
+			if (DateTime.TryParse(date, out publishDate))
+			{
+				issue.Published_Date = publishDate;
+			}
+			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
+				_dependencies.SitecoreServiceMaster.Save(issue));
+		}
+
+		public IEnumerable<IArticle> GetArticles(Guid issueId)
+		{
+			var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId);
+			if (issue == null || !issue._ChildrenWithInferType.Any())
+			{
+				return Enumerable.Empty<IArticle>();
+			}
+
+			return string.IsNullOrWhiteSpace(issue.Articles_Order) ?
+				issue._ChildrenWithInferType.Cast<IArticle>() :
+                issue.Articles_Order.Split('|')
+				.Select(i => new Guid(i))
+				.Each(i=> _dependencies.SitecoreServiceMaster.GetItem<IArticle>(i));
 		}
 	}
 }
