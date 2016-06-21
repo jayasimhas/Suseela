@@ -4,7 +4,6 @@ using System.Linq;
 using Informa.Library.Globalization;
 using Informa.Library.Subscription.User;
 using Informa.Library.User.Authentication;
-using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 

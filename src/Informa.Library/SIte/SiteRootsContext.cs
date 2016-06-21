@@ -1,41 +1,36 @@
-﻿using Glass.Mapper.Sc;
-using Informa.Library.Threading;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Glass.Mapper.Sc;
+using Informa.Library.Caching;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Autofac.Attributes;
-using Jabberwocky.Glass.Models;
-using System.Collections.Generic;
-using System.Linq;
 using Jabberwocky.Core.Caching;
+using Jabberwocky.Glass.Models;
 
 namespace Informa.Library.Site
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
-	public class SiteRootsContext : ThreadSafe<IEnumerable<ISite_Root>>, ISiteRootsContext
+	public class SiteRootsContext : ISiteRootsContext
 	{
+		private static readonly string cacheKey = nameof(SiteRootsContext);
+		protected readonly ICrossSiteCacheProvider CacheProvider;
 		protected readonly ISitecoreService SitecoreService;
-	    protected readonly ICacheProvider CacheProvider;
-	    private static readonly string cacheKey = nameof(SiteRootsContext);
 
 		public SiteRootsContext(
 			ISitecoreService sitecoreService,
-            ICacheProvider cacheProvider)
+			ICrossSiteCacheProvider cacheProvider)
 		{
 			SitecoreService = sitecoreService;
-		    CacheProvider = cacheProvider;
-
+			CacheProvider = cacheProvider;
 		}
 
-		public IEnumerable<ISite_Root> SiteRoots => SafeObject;
+		public IEnumerable<ISite_Root> SiteRoots => CacheProvider.GetFromCache(cacheKey, BuildSiteRootsContext);
 
-		protected override IEnumerable<ISite_Root> UnsafeObject => CacheProvider.GetFromCache(cacheKey, BuildSiteRootsContext);
-
-		private IEnumerable<ISite_Root> BuildSiteRootsContext()
-	    {
-            var contentItem = SitecoreService.GetItem<IGlassBase>("/sitecore/content");
-
-            var siteRoots = contentItem._ChildrenWithInferType.OfType<ISite_Root>();
-            
-            return siteRoots;
-        }
+		private IList<ISite_Root> BuildSiteRootsContext()
+		{
+			var contentItem = SitecoreService.GetItem<IGlassBase>("/sitecore/content");
+			var siteRoots = contentItem._ChildrenWithInferType.OfType<ISite_Root>();
+			return siteRoots.ToList();
+		}
 	}
 }

@@ -24,7 +24,7 @@ namespace Informa.Library.Salesforce.Purchase.User
 				return Enumerable.Empty<IArticlePurchase>();
 			}
 
-			var response = Service.Execute(s => s.querySubscriptionsAndPurchases(username));
+			var response = Service.Execute(s => s.INquerySubscriptionsAndPurchases(username));
 
 			if (!response.IsSuccess())
 			{

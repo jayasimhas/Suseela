@@ -5,21 +5,26 @@ using Informa.Library.User.Content;
 using Informa.Library.User.Search;
 using Informa.Library.ViewModels.Account;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
-using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Informa.Library.Publication;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
 	public class SavedSearchesViewModel : GlassViewModel<ISaved_Searches_Page>
 	{
+		protected readonly ISitePublicationNameContext PublicationNameContext;
+
 		public readonly ISignInViewModel SignInViewModel;
 		
 		public SavedSearchesViewModel(
 			ITextTranslator translator,
 			IAuthenticatedUserContext userContext,
 			ISignInViewModel signInViewModel,
-			IUserContentService<ISavedSearchSaveable, ISavedSearchDisplayable> savedSearchService)
+			IUserContentService<ISavedSearchSaveable, ISavedSearchDisplayable> savedSearchService,
+			ISitePublicationNameContext publicationNameContext)
 		{
+			PublicationNameContext = publicationNameContext;
+
 			SignInViewModel = signInViewModel;
 			
 			SavedSearches = savedSearchService.GetContent();
@@ -49,5 +54,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		public string EmailAlertTooltipText { get; set; }
 		public string RemoveText { get; set; }
 		public string ItemRemovedMessage { get; set; }
+		public string Publication => PublicationNameContext.Name;
 	}
 }

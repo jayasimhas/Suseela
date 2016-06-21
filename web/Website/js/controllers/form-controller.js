@@ -31,7 +31,7 @@ function formController(opts) {
 
 		var formSubmit = $(form).find('button[type=submit]');
 
-		$(formSubmit).on('click', (event) => {
+		$(formSubmit).on('click', function(event) {
 
 			// Some forms will require user confirmation before action is taken
 			// Default to true (confirmed), set to false later if confirmation is
@@ -110,6 +110,10 @@ function formController(opts) {
 						if (response.success) {
 
 							showSuccessMessage(currentForm);
+
+							// Passes the form response through with the "context"
+							// successCallback is ripe for refactoring, improving parameters
+							this.response = response;
 
 							if (opts.successCallback) {
 								opts.successCallback(currentForm, this, event);

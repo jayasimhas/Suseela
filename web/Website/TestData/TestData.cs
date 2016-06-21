@@ -360,5 +360,6 @@ namespace Informa.Web.TestData
         public string BookmarkText { get; set; }
         public string BookmarkedText { get; set; }
 		public Guid ID { get; set; }
+		public string PageTitle { get; set; }
 	}
 }

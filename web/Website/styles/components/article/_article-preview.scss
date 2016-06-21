@@ -95,15 +95,21 @@ section: Home/Topic Page Components
 
     &__bookmarker {
         float: right;
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-    &__bookmarker-label {
-        @include breakpoint('medium') {
-            display: none;
-        }
+		padding-top: 0;
+
+		.action-flag__label {
+			@include textMix('Roboto', 11px, 500);
+			letter-spacing: 1px;
+			color: $color-dusty-gray;
+
+	        @include breakpoint('medium') {
+	            display: none;
+	        }
+		}
+
+		&:hover .action-flag__label {
+			color: $color-zeus-black;
+		}
     }
 
     &__category {

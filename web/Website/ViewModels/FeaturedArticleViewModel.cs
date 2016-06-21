@@ -13,12 +13,15 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Informa.Library.Page;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 
 namespace Informa.Web.ViewModels
 {
 	public class FeaturedArticleViewModel : GlassViewModel<IArticle>, IArticleBookmarker
 	{
 	    private readonly IDependencies _dependencies;
+		protected readonly IPageItemContext PageItemContext;
 
 	    [AutowireService(true)]
 	    public interface IDependencies
@@ -61,7 +64,6 @@ namespace Informa.Web.ViewModels
 	    public bool IsUserAuthenticated { get; set; }
 	    public string BookmarkText { get; set; }
         public string BookmarkedText { get; set; }
-
 	    private bool? _isArticleBookmarked;
         public bool IsArticleBookmarked {
             get
@@ -73,5 +75,6 @@ namespace Informa.Web.ViewModels
 
 
         public Guid ID => GlassModel._Id;
+		public string PageTitle => PageItemContext.Get<I___BasePage>()?.Title;
 	}
 }

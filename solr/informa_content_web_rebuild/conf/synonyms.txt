@@ -1,4 +1,4 @@
-April, Apr
+﻿April, Apr
 China, People's Republic of China, mainland China, Communist China, Red China, PRC, Cathay
 December, Dec
 Earth, earth, world, globe
@@ -1519,3 +1519,18 @@ wizard, sorcerer, magician
 y'all, you, you lot, yous
 year, solar year
 zero, null
+
+#Custom Informa Synonyms
+
+biogeneric,biosimilar,biosimilars
+Biotech,biotechnology
+dx,diagnostic
+pharma,pharmaceutical,biopharma,biopharmaceutical
+gsk,glaxosmithline,glaxo
+hemophilia,haemophilia
+haemoglobin,hemoglobin
+haematology,hematology
+anaesthesia,anesthesia
+anaesthetic,anesthetic
+anaemia,anemia
+gynaecology,gynecology

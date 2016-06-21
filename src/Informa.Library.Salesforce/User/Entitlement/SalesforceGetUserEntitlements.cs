@@ -23,7 +23,7 @@ namespace Informa.Library.Salesforce.User.Entitlement
             if(string.IsNullOrEmpty(email))
                 return Enumerable.Empty<IEntitlement>().ToList();
 
-            var response = Service.Execute(x => x.queryEntitlements(email, ipaddress));
+            var response = Service.Execute(x => x.INqueryEntitlements(email, ipaddress));
 
 			if (!response.IsSuccess() || response.entitlements == null)
 			{

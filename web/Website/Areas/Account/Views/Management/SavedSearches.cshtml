@@ -175,7 +175,8 @@
                                   data-on-submit="/api/SavedSearches"
                                   data-submit-type="POST"
 								  data-prevent-disabling="true"
-								  data-analytics-title="@item.Title">
+								  data-analytics-title="@item.Title"
+								  data-analytics-publication="@Model.Publication">
 
                                 <input name="Title" id="Title" type="hidden" value="@item.Title">
                                 <input name="Url" id="Url" type="hidden" value="@item.Url">
@@ -196,7 +197,8 @@
                             <form class="form-remove-saved-search form-remove-saved-search-@index"
                                   data-on-submit="/api/SavedSearches"
                                   data-submit-type="DELETE"
-								  data-analytics-title="@item.Title">
+								  data-analytics-title="@item.Title"
+								  data-analytics-publication="@Model.Publication">
                                 <input name="Title" id="Title" type="hidden" value="@item.Title">
 
                                 <button type="button"

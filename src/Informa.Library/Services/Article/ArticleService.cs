@@ -3,6 +3,7 @@ using System.Linq;
 using Informa.Library.Globalization;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon;
 using Informa.Library.Search.Utilities;
+using Informa.Library.Site;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
@@ -21,13 +22,16 @@ namespace Informa.Library.Services.Article {
     {
         protected readonly ICacheProvider CacheProvider;
         protected readonly ITextTranslator TextTranslator;
+		protected readonly ISiteRootsContext SiteRootsContext;
 
-        public ArticleService(
+		public ArticleService(
             ICacheProvider cacheProvider,
-            ITextTranslator textTranslator)
+            ITextTranslator textTranslator, 
+			ISiteRootsContext siteRootsContext)
         {
             CacheProvider = cacheProvider;
             TextTranslator = textTranslator;
+			SiteRootsContext = siteRootsContext;
         }
 
         private string CreateCacheKey(string suffix)
@@ -120,6 +124,23 @@ namespace Informa.Library.Services.Article {
         private IEnumerable<IFile> BuildSupportingDocuments(IArticle article)
         {
             return article.Supporting_Documents.Select(a => (IFile) a).ToList();
-        } 
+        }
+
+	    public string GetArticlePublicationName(IArticle article)
+	    {
+			string cacheKey = CreateCacheKey($"ArticlePublicationCode-{article._Id}");
+			return CacheProvider.GetFromCache(cacheKey, () => BuildArticlePublicationName(article));
+		}
+
+		private string BuildArticlePublicationName(IArticle article)
+		{
+			var siteRoot = SiteRootsContext
+				.SiteRoots
+				.FirstOrDefault(i => article._Path.StartsWith(i._Path));
+
+		    return (siteRoot != null)
+			    ? siteRoot.Publication_Name
+			    : string.Empty;
+	    }
     }
 }

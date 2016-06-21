@@ -10,6 +10,13 @@ template: {C1017482-5549-4245-91F6-D960DE3B00E2}
 templatekey: ToText
 
 ----field----
+field: {FA7B99B1-6BB9-469C-B786-F8A9D52D2F0A}
+name: Handler Class
+key: handler class
+content-length: 74
+
+Sitecore.SharedSource.DataImporter.Mappings.Fields.PMBI.ToTextWithFallback
+----field----
 field: {093D915A-4306-4A68-B64A-07CC2A7E4EE5}
 name: To What Field
 key: to what field
@@ -20,13 +27,20 @@ Actual Publish Date
 field: {A534B62B-9C6B-449F-8B88-93753EFE6AEC}
 name: From What Fields
 key: from what fields
-content-length: 20
+content-length: 33
 
-Web Publication Date
+Web Publication Date,Article Date
+----field----
+field: {EBB47640-52E2-4BC3-8231-AF6FC5113DA3}
+name: Delimiter
+key: delimiter
+content-length: 1
+
+,
 ----version----
 language: en
 version: 1
-revision: e1f7dd7d-a9c9-4c67-bd7f-734c9f17c023
+revision: 263e6ce7-c2a3-4474-9f39-9ab073046137
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-e1f7dd7d-a9c9-4c67-bd7f-734c9f17c023
+263e6ce7-c2a3-4474-9f39-9ab073046137
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160421T161301Z
+20160608T195523Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

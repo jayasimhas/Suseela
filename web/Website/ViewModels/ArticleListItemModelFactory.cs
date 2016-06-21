@@ -13,6 +13,8 @@ using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.StringUtils;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Glass.Autofac.Attributes;
+using Informa.Library.Page;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 
 namespace Informa.Web.ViewModels
 {
@@ -26,15 +28,17 @@ namespace Informa.Web.ViewModels
 	    protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
 	    protected readonly IIsSavedDocumentContext IsSavedDocumentContext;
 	    protected readonly ITextTranslator TextTranslator;
+		protected readonly IPageItemContext PageItemContext;
 
 		public ArticleListItemModelFactory(
-						ISitecoreContext sitecoreContext,
-						IArticleSearch articleSearch,
-						IArticleService articleService,
-						IBylineMaker byLineMaker,
-                        IAuthenticatedUserContext authenticatedUserContext,
-                        IIsSavedDocumentContext isSavedDocumentContext,
-                        ITextTranslator textTranslator)
+			ISitecoreContext sitecoreContext,
+			IArticleSearch articleSearch,
+			IArticleService articleService,
+			IBylineMaker byLineMaker,
+            IAuthenticatedUserContext authenticatedUserContext,
+            IIsSavedDocumentContext isSavedDocumentContext,
+            ITextTranslator textTranslator,
+			IPageItemContext pageItemContext)
 		{
 			SitecoreContext = sitecoreContext;
 			ArticleSearch = articleSearch;
@@ -43,7 +47,7 @@ namespace Informa.Web.ViewModels
 		    AuthenticatedUserContext = authenticatedUserContext;
             IsSavedDocumentContext = isSavedDocumentContext;
 		    TextTranslator = textTranslator;
-
+			PageItemContext = pageItemContext;
 		}
 
 		public IListableViewModel Create(IArticle article)
@@ -74,8 +78,9 @@ namespace Informa.Web.ViewModels
                 IsUserAuthenticated = AuthenticatedUserContext.IsAuthenticated,
                 IsArticleBookmarked = IsSavedDocumentContext.IsSaved(article._Id),
                 BookmarkText = TextTranslator.Translate("Bookmark"),
-                BookmarkedText = TextTranslator.Translate("Bookmarked")
-            };
+                BookmarkedText = TextTranslator.Translate("Bookmarked"),
+				PageTitle = PageItemContext.Get<I___BasePage>()?.Title
+			};
 		}
 
 		public IListableViewModel Create(Guid articleId)

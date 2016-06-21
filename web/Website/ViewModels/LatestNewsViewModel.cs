@@ -6,6 +6,7 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.ContentCuration;
 using Informa.Library.Globalization;
@@ -20,6 +21,7 @@ namespace Informa.Web.ViewModels
 		protected readonly IArticleSearch ArticleSearch;
 		protected readonly IItemManuallyCuratedContent ItemManuallyCuratedContent;
 		protected readonly IArticleListItemModelFactory ArticleListableFactory;
+	    protected readonly ITextTranslator TextTranslator;
 		
 		public LatestNewsViewModel(IGlassBase datasource,
 			IRenderingContextService renderingParametersService,
@@ -32,15 +34,17 @@ namespace Informa.Web.ViewModels
 			ArticleSearch = articleSearch;
 			ItemManuallyCuratedContent = itemManuallyCuratedContent;
 			ArticleListableFactory = articleListableFactory;
-			
+		    TextTranslator = textTranslator;
+
+
 			var parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_News_Options>();
 			DisplayTitle = parameters.Display_Title;
 			if (DisplayTitle)
 			{
-				TitleText = textTranslator.Translate("Article.LatestFrom");
-				Topics = parameters.Subjects.Select(s => s.Item_Name).ToArray();
-			}
-			int itemsToDisplay = parameters.Number_To_Display?.Value ?? 6;
+			    Topics = parameters.Subjects.Select(s => s.Item_Name).ToArray();
+                TitleText = GetTitleText();
+            }
+            int itemsToDisplay = parameters.Number_To_Display?.Value ?? 6;
 
 			var publicationNames = parameters.Publications.Any()
 				? parameters.Publications.Select(p => p.Publication_Name)
@@ -59,6 +63,18 @@ namespace Informa.Web.ViewModels
 		public bool DisplayTitle { get; set; }
 		public Link SeeAllLink { get; set; }
 
+	    private string GetTitleText()
+	    {
+            var take = Topics.Count - 1;
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("{0} {1}", 
+                TextTranslator.Translate("Article.LatestFrom"), 
+                string.Join(", ", Topics.Take(take > 0 ? take : 1)));
+	        if (take > 0) 
+                sb.AppendFormat(" &amp; {0}", Topics.Last());
+           
+            return sb.ToString();
+        }
 		private IEnumerable<IListableViewModel> GetLatestNews(Guid datasourceId, IEnumerable<Guid> subjectIds, IEnumerable<string> publicationNames,
 			int itemsToDisplay)
 		{
