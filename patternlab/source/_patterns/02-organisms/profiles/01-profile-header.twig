@@ -1,0 +1,40 @@
+{% if personName == false %}
+	{% set personName = "John Doe" %}
+{% endif %}
+{% if personTitle == false %}
+	{% set personTitle = "Person Business Title" %}
+{% endif %}
+{% if location == false %}
+	{% set location = "Location, LO" %}
+{% endif %}
+{% if email == false and not email == " " %}
+	{% set email = "#" %}
+{% endif %}
+{% if twitter == false and not twitter == " " %}
+	{% set twitter = "@TwitterName" %}
+{% endif %}
+{% if twitterUrl == false %}
+	{% set twitterUrl = "#" %}
+{% endif %}
+{% if linkedin == false and not linkedin == " " %}
+	{% set linkedin = "Public LinkedIn Profile Link" %}
+{% endif %}
+{% if linkedinUrl == false %}
+	{% set linkedinUrl = "#" %}
+{% endif %}
+{% if personPhoto == false and not personPhoto == " " %}
+	{% set personPhoto = "http://placehold.it/200x200" %}
+{% endif %}
+
+<div class="profile__header">
+	<h1 class="profile__name">{{personName}}</h1>
+	<h2 class="profile__title">{{personTitle}}</h2>
+	<div class="profile__location">{{location}}</div>
+	<img class="profile__img" src="{{personPhoto}}" />
+	<ul class="profile__links">
+		{% include "molecules-icon-as-bullet" with {"icon": "email", "linkText": "email@email.com"} %}
+		{% include "molecules-icon-as-bullet" with {"icon": "twitter", "linkText": twitter} %}
+		{% include "molecules-icon-as-bullet" with {"icon": "linkedin", "linkText": linkedin} %}
+	</ul>
+
+</div>
