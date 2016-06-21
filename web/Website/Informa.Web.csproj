@@ -1028,7 +1028,6 @@
     <Content Include="js\search\search.js" />
     <Content Include="js\svg4everybody.js" />
     <Content Include="js\toggle-icons.js" />
-    <Content Include="js\tooltip-controller.js" />
     <Content Include="js\zepto.min.js" />
     <Content Include="layouts\QueryableRulesRunner.ascx" />
     <Content Include="layouts\Sample Datasource Sublayout.ascx" />

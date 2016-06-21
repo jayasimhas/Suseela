@@ -21,7 +21,6 @@ namespace Informa.Web.ViewModels
 	public class FeaturedArticleViewModel : GlassViewModel<IArticle>, IArticleBookmarker
 	{
 	    private readonly IDependencies _dependencies;
-		protected readonly IPageItemContext PageItemContext;
 
 	    [AutowireService(true)]
 	    public interface IDependencies
@@ -32,6 +31,7 @@ namespace Informa.Web.ViewModels
             IIsSavedDocumentContext IsSavedDocumentContext { get; }
             ITextTranslator TextTranslator { get; }
             IBylineMaker BylineMaker { get; }
+            IPageItemContext PageItemContext { get; }
 	    }
 
 		public FeaturedArticleViewModel(IDependencies dependencies)
@@ -75,6 +75,6 @@ namespace Informa.Web.ViewModels
 
 
         public Guid ID => GlassModel._Id;
-		public string PageTitle => PageItemContext.Get<I___BasePage>()?.Title;
+		public string PageTitle => _dependencies.PageItemContext.Get<I___BasePage>()?.Title;
 	}
 }
