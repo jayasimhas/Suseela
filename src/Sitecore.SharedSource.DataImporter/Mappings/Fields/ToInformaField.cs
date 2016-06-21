@@ -10,7 +10,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
-using Sitecore.ContentSearch.Utilities;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
@@ -206,22 +205,12 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				{ // if it's not being removed
 					if (nodeName.Equals("table"))
 					{
-						var classAttr = node.Attributes["class"];
 						node.Attributes.RemoveAll();
-						if (classAttr != null)
-						{
-							node.Attributes.Add(classAttr);
-						}
 					}
 					else if (!nodeName.Equals("iframe") && !nodeName.Equals("img"))
 					{ //skip iframe and imgs
-						foreach (string s in unwantedAttrs)
-						{
-							if(s.Equals("class") && (nodeName.Equals("tr") || nodeName.Equals("td") || nodeName.Equals("th"))) continue;
-
-							// remove unwanted attributes
+						foreach (string s in unwantedAttrs) // remove unwanted attributes
 							node.Attributes.Remove(s);
-						} 
 					}
 
 					if (nodeName.Equals("iframe") || nodeName.Equals("embed") || nodeName.Equals("form") || nodeName.Equals("script")) // warn about iframes, embed, form or script in body
