@@ -146,7 +146,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
 			//strip out the tags, attributes and remap images
 			List<string> removeTags = new List<string>() { "font", "preform" };
-			List<string> removeAttrs = new List<string>() { "style", "align", "height", "width", "class" };
+			List<string> removeAttrs = new List<string>() { "style", "align", "height", "width" };
 			DateTime dt = new DateTime(1800, 1, 1);
 			DateField df = newItem.Fields["Created Date"];
 			if (df != null && !string.IsNullOrEmpty(df.Value))
@@ -209,8 +209,17 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 					}
 					else if (!nodeName.Equals("iframe") && !nodeName.Equals("img"))
 					{ //skip iframe and imgs
-						foreach (string s in unwantedAttrs) // remove unwanted attributes
+						foreach (string s in unwantedAttrs)
+						{
+							// remove unwanted attributes
 							node.Attributes.Remove(s);
+						}
+
+						if (node.Attributes.Contains("class"))
+						{
+							var classNames = node.Attributes["class"].Value.Split(' ').Where(c => c.StartsWith("exhibit-"));
+							node.Attributes["class"].Value = string.Join(" ", classNames);
+						}
 					}
 
 					if (nodeName.Equals("iframe") || nodeName.Equals("embed") || nodeName.Equals("form") || nodeName.Equals("script")) // warn about iframes, embed, form or script in body
