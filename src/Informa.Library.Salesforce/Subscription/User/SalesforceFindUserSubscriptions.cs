@@ -24,7 +24,7 @@ namespace Informa.Library.Salesforce.Subscription.User
 				return null;
 			}
 
-			var response = Service.Execute(s => s.querySubscriptionsAndPurchases(username));
+			var response = Service.Execute(s => s.INquerySubscriptionsAndPurchases(username));
 
 			if (!response.IsSuccess())
 			{

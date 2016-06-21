@@ -191,6 +191,10 @@ section: Search
             font-size: 0.75rem;
             margin-left: 0.25rem;
         }
+
+		input[disabled] ~ & {
+			opacity: 0.5;
+		}
     }
 
     input[type="checkbox"]:checked + &__label,

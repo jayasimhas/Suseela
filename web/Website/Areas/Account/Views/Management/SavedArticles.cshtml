@@ -106,10 +106,11 @@
 									<a
 										href="@item.Url"
 										class="click-utag"
-										data-info="{
-											event_name: 'bookmark_clickthrough',
-											bookmark_title: '@item.Title'
-										}"
+										data-info='{
+											"event_name": "bookmark_clickthrough",
+											"bookmark_title": "@item.Title",
+											"bookmark_publication": "@item.Publication.Name"
+										}'
 										@(item.IsExternalUrl ? "target = \"_blank\"" : "")>
 										@Html.Raw(item.Title)
 										@if (item.IsExternalUrl)
@@ -126,7 +127,8 @@
 								<td class="sortable-table__col sortable-table__submit-wrapper">
 									<form class="form-remove-saved-document"
 										  data-on-submit="/Account/api/SavedDocumentApi/RemoveItem/"
-										  data-analytics-title="@Html.Raw(item.Title)">
+										  data-analytics-title="@Html.Raw(item.Title)"
+										  data-analytics-publication="@Html.Raw(item.Publication.Name)">
 
 										<input name="DocumentID"
 											   id="DocumentID"
@@ -142,9 +144,7 @@
                                                @Model.RemoveText
                                            </button>
 
-                                           <button type="submit"
-                                               class="click-utag lightbox-modal__hidden-submit"
-                                               data-info='{"event_name":"saved-article-remove", "document_id":"@item.DocumentId"}'>
+                                           <button type="submit" class="lightbox-modal__hidden-submit">
                                            </button>
 
 									</form>

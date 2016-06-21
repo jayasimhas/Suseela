@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Web.Http;
 using Informa.Library.User.Authentication.Web;
 using System.Linq;
+using Glass.Mapper.Sc.IoC;
+using Informa.Library.Company;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -16,17 +18,20 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly INewUserFactory NewUserFactory;
 		protected readonly IWebRegisterUser RegisterUser;
 		protected readonly IWebSetOptInsRegisterUser SetOptInsRegisterUser;
+		protected readonly IUserCompanyContext UserCompanyContext;
 
         public RegistrationApiController(
 			IFindUserByEmail findUser,
 			INewUserFactory newUserFactory,
 			IWebRegisterUser registerUser,
-			IWebSetOptInsRegisterUser setOptInsRegisterUser)
+			IWebSetOptInsRegisterUser setOptInsRegisterUser,
+			IUserCompanyContext userCompanyContext)
 		{
 			FindUser = findUser;
 			NewUserFactory = newUserFactory;
 			RegisterUser = registerUser;
 			SetOptInsRegisterUser = setOptInsRegisterUser;
+	        UserCompanyContext = userCompanyContext;
 		}
 
 		[HttpPost]
@@ -77,11 +82,28 @@ namespace Informa.Web.Areas.Account.Controllers
 				reasons.AddRange(registerResult.Errors.Select(e => GetRegisterValidationReason(e)));
 			}
 
+			var registrationType = GetRegistrationType(UserCompanyContext);
+
 			return Ok(new
 			{
 				success = success,
-				reasons = reasons
+				reasons = reasons,
+				registration_type = registrationType
 			});
+		}
+
+		private string GetRegistrationType(IUserCompanyContext context)
+		{
+			if (context.Company == null)
+			{
+				return "Free User";
+			}
+
+			if (context.Company.Type == CompanyType.TransparentIP)
+			{
+				return "Transparent IP";
+			}
+			return "Corporate";
 		}
 
 		public string GetRegisterValidationReason(string error)

@@ -39,5 +39,7 @@ namespace Informa.Web.ViewModels
 		public bool HasSubscribed => NewsletterOptedInContext.OptedIn;
         public string PreferencesURL => GlobalService.GetItem<I___BasePage>(SiteRootContext.Item.Email_Preferences_Page)?._Url ?? "#";
         public string GeneralError => TextTranslator.Translate("Newsletter.GeneralError");
-	}
+        public string NewsletterSignupEmail => TextTranslator.Translate("Global.NewsletterSignupEmail");
+        public string ManagePreferences => TextTranslator.Translate("Global.ManagePreferences");
+    }
 }

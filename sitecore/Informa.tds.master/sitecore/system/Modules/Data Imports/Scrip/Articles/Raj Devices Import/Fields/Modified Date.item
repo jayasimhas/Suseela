@@ -1,32 +1,39 @@
 ----item----
 version: 1
-id: {B615B48B-A767-46E2-8A78-0742CF036980}
+id: {233A1792-4224-443B-A581-2D310DE97D6C}
 database: master
-path: /sitecore/system/Modules/Data Imports/Rose Sheet/Legacy Rose Sheet/Fields/Legacy Publication
-parent: {93D2692A-D8A6-4DC5-B94C-BA3E7161246D}
-name: Legacy Publication
+path: /sitecore/system/Modules/Data Imports/Scrip/Articles/Raj Devices Import/Fields/Modified Date
+parent: {C529E5A8-498D-4BAF-9093-0A1858697A69}
+name: Modified Date
 master: {00000000-0000-0000-0000-000000000000}
-template: {BD069A3B-1C64-4644-9D1A-F1F12CC00186}
-templatekey: ToStaticValue
+template: {E5AC18C6-CFDE-4E63-8AE6-AED5F10EAEB2}
+templatekey: ToDate
 
 ----field----
 field: {093D915A-4306-4A68-B64A-07CC2A7E4EE5}
 name: To What Field
 key: to what field
-content-length: 18
+content-length: 13
 
-Legacy Publication
+Modified Date
 ----field----
-field: {97E16F71-04EC-4940-B73C-EBAA2BDFAEDC}
-name: Value
-key: value
-content-length: 38
+field: {A534B62B-9C6B-449F-8B88-93753EFE6AEC}
+name: From What Fields
+key: from what fields
+content-length: 11
 
-{1A258257-0EB5-48BD-B3CE-F7C7AA31BA8D}
+STORYUPDATE
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+400
 ----version----
 language: en
 version: 1
-revision: d89648a2-b0f0-4ca5-9bd6-7aedead39481
+revision: b6e16c44-3727-45f8-9c90-c2f0988237e9
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +41,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160421T163001Z
+20160120T203820Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-d89648a2-b0f0-4ca5-9bd6-7aedead39481
+b6e16c44-3727-45f8-9c90-c2f0988237e9
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160519T200218Z
+20160120T203845Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -1,5 +1,4 @@
-﻿@using Informa.Library.Utilities.References
-@inherits GlassView<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 
-<h1>@Editable(x => x.Title)</h1>
-@Html.Sitecore().Rendering(RenderingReferences.Instance.TopicAlertButton.ToString(), new { Datasource = Model._Id.ToString(), Parameters = @RenderingContext.GetRenderingParameters() })
+<h1>@Html.Glass().Editable(x => x.Title)</h1>

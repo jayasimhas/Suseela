@@ -2,9 +2,11 @@
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Publication;
+using Informa.Library.Services.Article;
 using Informa.Library.User.Document;
 using Informa.Library.Utilities.WebApi.Filters;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models.User.Management;
 using Sitecore.Data;
 
@@ -17,6 +19,7 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly ISitePublicationNameContext NewsletterTypeContext;
 		protected readonly ISaveDocumentContext SaveDocumentContext;
 		protected readonly IRemoveDocumentContext RemoveDocumentContext;
+		protected readonly IArticleService ArticleService;
 
 		protected string BadIDKey => TextTranslator.Translate("SavedDocument.BadID");
 
@@ -25,13 +28,15 @@ namespace Informa.Web.Areas.Account.Controllers
             ITextTranslator textTranslator,
 			ISitePublicationNameContext newsletterTypeContext,
 			ISaveDocumentContext saveDocumentContext,
-			IRemoveDocumentContext removeDocumentContext)
+			IRemoveDocumentContext removeDocumentContext,
+			IArticleService articleService)
         {
             SitecoreContext = sitecoreContext;
             TextTranslator = textTranslator;
 			NewsletterTypeContext = newsletterTypeContext;
 			SaveDocumentContext = saveDocumentContext;
 			RemoveDocumentContext = removeDocumentContext;
+	        ArticleService = articleService;
         }
 
         [HttpPost]
@@ -62,8 +67,9 @@ namespace Informa.Web.Areas.Account.Controllers
             }
 
             var page = SitecoreContext.GetItem<I___BasePage>(itemID.Guid);
-            
-            var result = SaveDocumentContext.Save(page.Title, NewsletterTypeContext.Name, request.DocumentID);
+	        var article = SitecoreContext.GetItem<IArticle>(itemID.Guid);
+	        var publicationName = ArticleService.GetArticlePublicationName(article);
+            var result = SaveDocumentContext.Save(page.Title, publicationName, request.DocumentID);
 
             return Ok(new
             {

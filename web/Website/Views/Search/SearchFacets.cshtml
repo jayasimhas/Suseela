@@ -41,6 +41,7 @@
                              class="visuallyhidden click-utag"
                              ng-checked="f.selected"
                              ng-model="f.selected"
+							 ng-disabled="facetController.areFacetsDisabled"
                              ng-change="facetController.update()" data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group_name":"{{group.label}}"}'>
                       <label class="facets__label" ng-if="f.label" for="{{ group.id }}-{{ $index }}">
                           {{ f.label }}
@@ -103,6 +104,7 @@
                       type="text"
                       id="company-field"
                       name="company-field"
+					  ng-disabled="facetController.areFacetsDisabled"
                       placeholder="Enter a Company"
                       ng-model="myCompany.selected"
                       uib-typeahead="company for company in companies | filter:$viewValue | limitTo:5"
@@ -163,6 +165,7 @@
                                    name="date-facet"
                                    id="{{dateFilter.key}}"
                                    ng-model="dateFilter.selected"
+								   ng-disabled="facetController.areFacetsDisabled"
                                    ng-value=true
                                    ng-checked="{{dateFilter.selected}}"
                                    ng-click="facetController.dateRangeSearch('date', dateFilter.key)" class="click-utag" data-info='{"event_name":"search-facet","facet_selected":"{{dateFilter.label}}","facet_group":"{{group.label}}"}'>
@@ -281,6 +284,7 @@
                         </button>
                     </p>
                 }
+
                 <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
                     <ul class="facets__section-list" ng-if="($index < facetController.MaxFacetShow) || group.ShowMore">
                     <li>
@@ -288,7 +292,8 @@
                         <input  id="{{ group.id }}-{{ $index }}"
                               type="checkbox"
                               class="visuallyhidden click-utag"
-                              ng-model="f.selected"
+							  ng-model="f.selected"
+							  ng-disabled="facetController.areFacetsDisabled"
                               ng-change="facetController.facetChange(f)"  data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
 
                         <label  class="facets__label"
