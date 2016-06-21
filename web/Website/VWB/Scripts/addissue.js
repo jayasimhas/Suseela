@@ -91,10 +91,10 @@ $(function() {
 
 							// post to BE
 							// TODO: Update URL!
-							$.post( "archive/endpoint/goes/here",
+							$.post( "AddIssue/ArchiveIssue",
 								{'id': issueID},
 								function( data ) {
-										if (data.success)  {
+										if (data.IsSuccess)  {
 											$("#js-dialog").html('<p>Archive successful! <a href="/VWB">Return to Virtual White Board home.</a></p>');
 										}
 										else {

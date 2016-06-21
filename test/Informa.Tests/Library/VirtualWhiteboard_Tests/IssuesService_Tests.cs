@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Informa.Library.Services.NlmExport.Parser.Legacy.Link;
 using Informa.Library.Utilities.References;
 using Informa.Library.VirtualWhiteboard;
 using Informa.Library.VirtualWhiteboard.Models;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard;
+using Jabberwocky.Glass.Models;
 using NSubstitute;
 using NUnit.Framework;
 
@@ -200,7 +204,7 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 	    public void ArchiveIssue_NoIssueCreated_ReturnFail()
 	    {
 		    // ARRANGE
-		    _dependencies.SitecoreServiceMaster.GetItem<IArchived_Issue>(Arg.Any<Guid>()).Returns((IArchived_Issue) null);
+		    _dependencies.SitecoreServiceMaster.GetItem<IArchived_Issue__Raw>(Arg.Any<Guid>()).Returns((IArchived_Issue__Raw) null);
 
 		    // ACT
 		    var result = _issuesService.ArchiveIssue(Arg.Any<Guid>());
@@ -272,8 +276,8 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 	    {
 			// ARRANGE
 			var idString = "4137ED60-1ABE-42CB-B305-119C05B696D3|E94F2832-A519-48AA-9413-FF823BF710E9|8C268BA6-9AE0-4D1E-A16A-24F5B22648F8";
-		    var issue = Substitute.For<IIssue>();
-		    _dependencies.SitecoreServiceMaster.GetItem<IIssue>(Arg.Any<Guid>()).Returns(issue);
+		    var issue = Substitute.For<IIssue__Raw>();
+		    _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(Arg.Any<Guid>()).Returns(issue);
 		    _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.Invoke());
 
 			// ACT
@@ -281,6 +285,67 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 		    
 			// ASSERT
 			Assert.AreEqual(issue.Articles_Order, idString);
+			_dependencies.SitecoreServiceMaster.Received(1).Save(issue);
+	    }
+
+	    [Test]
+	    public void GetArticles_IssueIsNull_GetEmptyResult()
+	    {
+		    // ARRANGE
+		    _dependencies.SitecoreServiceMaster.GetItem<IIssue>(Arg.Any<Guid>()).Returns((IIssue)null);
+
+		    // ACT
+		    var result = _issuesService.GetArticles(Arg.Any<Guid>());
+
+		    // ASSERT
+			Assert.IsEmpty(result);
+	    }
+
+		[Test]
+		public void GetArticles_IssueIsEmpty_GetEmptyResult()
+		{
+			// ARRANGE
+			var issue = Substitute.For<IIssue>();
+			_dependencies.SitecoreServiceMaster.GetItem<IIssue>(Arg.Any<Guid>()).Returns(issue);
+
+			// ACT
+			var result = _issuesService.GetArticles(Arg.Any<Guid>());
+
+			// ASSERT
+			Assert.IsEmpty(result);
+		}
+
+	    [Test]
+	    public void GetArticles_EmptyArticlesOrder_ReturnArticles()
+	    {
+		    // ARRANGE
+		    var issue = Substitute.For<IIssue>();
+		    _dependencies.SitecoreServiceMaster.GetItem<IIssue>(Arg.Any<Guid>()).Returns(issue);
+		    var children = Substitute.For<IEnumerable<IGlassBase>>();
+		    issue._ChildrenWithInferType.Returns(children);
+
+		    // ACT
+		    var result = _issuesService.GetArticles(Arg.Any<Guid>());
+
+		    // ASSERT
+			Assert.IsInstanceOf<IEnumerable<IArticle>>(result);
+	    }
+
+	    [Test]
+	    public void UpdateIssueInfo_AllValidInput_UpdateTitleAndDateForIssue()
+	    {
+		    // ARRANGE
+		    var issue = Substitute.For<IIssue__Raw>();
+		    _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(Arg.Any<Guid>()).Returns(issue);
+		    var title = "title";
+		    var date = new DateTime(2016,6,21);
+		    _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.Invoke());
+		    // ACT
+			_issuesService.UpdateIssueInfo(Arg.Any<Guid>(), title, date.ToString());
+
+		    // ASSERT
+			Assert.AreEqual(issue.Title, title);
+			Assert.AreEqual(issue.Published_Date, date);
 			_dependencies.SitecoreServiceMaster.Received(1).Save(issue);
 	    }
 	}
