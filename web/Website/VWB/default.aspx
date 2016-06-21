@@ -17,6 +17,7 @@
     <asp:HiddenField runat="server" ID="IssueTitleInput"></asp:HiddenField>
     <asp:HiddenField runat="server" ID="IssuePublishedDateInput"></asp:HiddenField>
     <asp:HiddenField runat="server" ID="IssueArticleIdsInput"></asp:HiddenField> <!-- pipe bar separated guids -->
+    <asp:Button runat="server" ID="NewIssueSubmitButton" OnClick="NewIssueSubmitButton_OnClick" CssClass="hidden-button"/>
         
 
 	<div class="wrapper">

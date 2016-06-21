@@ -40,6 +40,8 @@ namespace Elsevier.Web.VWB
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+
+
 			if (!Sitecore.Context.User.IsAuthenticated)
 			{
                 Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?returnUrl=" + Request.RawUrl);
@@ -250,15 +252,6 @@ namespace Elsevier.Web.VWB
 			}
 		}
 
-        protected void BuildExistingIssuesList()
-        {
-            ExistingIssuesDdl.CssClass = "js-existing-issue";
-            ExistingIssuesDdl.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
-            ExistingIssuesDdl.Items.Add(new ListItem("Test 1", "1"));
-            ExistingIssuesDdl.Items.Add(new ListItem("Test 2", "2"));
-        }
-
-
         protected string GetCurrentPageUrl()
 		{
 			bool httpsOn = Request.ServerVariables["HTTPS"].Equals("ON");
@@ -304,7 +297,7 @@ namespace Elsevier.Web.VWB
 
         #region issue management
 
-        protected void CreateNewIssue(object sender, EventArgs e)
+        protected void NewIssueSubmitButton_OnClick(object sender, EventArgs e)
         {
             var model = new Informa.Library.VirtualWhiteboard.Models.IssueModel
             {
@@ -325,7 +318,16 @@ namespace Elsevier.Web.VWB
             }
         }
 
+        protected void BuildExistingIssuesList()
+        {
+            ExistingIssuesDdl.CssClass = "js-existing-issue";
+            ExistingIssuesDdl.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
+            ExistingIssuesDdl.Items.Add(new ListItem("Test 1", "1"));
+            ExistingIssuesDdl.Items.Add(new ListItem("Test 2", "2"));
+        }
+
         #endregion
+
 
     }
 }

@@ -64,8 +64,10 @@ $(document).ready(function() {
 	$('.js-submit-new-issue').on('click', function(e) {
 	    $('#IssueTitleInput').val($('.js-new-issue-title').val());
 	    $('#IssuePublishedDateInput').val($('.js-new-issue-pub-date').val());
+
 	    selectedArticlesUpdated();
-	    document.forms[0].submit();
+	    //document.forms[0].submit();
+	    $('#NewIssueSubmitButton').click();
 	});
 
 });

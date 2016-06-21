@@ -277,6 +277,10 @@ div.appbuttons
 	background: #ccc;
 }
 
+.hidden-button {
+	display: none;
+}
+
 #tblResults > tbody > tr > td input
 {
 	float:right;
