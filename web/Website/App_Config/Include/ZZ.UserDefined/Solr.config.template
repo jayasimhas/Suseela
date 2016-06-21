@@ -31,7 +31,8 @@
 
           <indexFieldStorageValueFormatter>
             <converters hint="raw:AddConverter">
-              <converter handlesType="Informa.Library.Search.ComputedFields.SearchResults.Converter.HtmlLinkList"      typeConverter="Informa.Library.Search.ComputedFields.SearchResults.Converter.HtmlLinkListTypeConverter, Informa.Library" />
+              <converter handlesType="Informa.Library.Search.ComputedFields.SearchResults.Converter.HtmlLinkList"      
+                         typeConverter="Informa.Library.Search.ComputedFields.SearchResults.Converter.HtmlLinkListTypeConverter, Informa.Library" />
             </converters>
           </indexFieldStorageValueFormatter>
         </defaultSolrIndexConfiguration>
