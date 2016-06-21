@@ -1,0 +1,18 @@
+{% if alertText == false %}
+	{% set alertText = "Set Alert for This Page" %}
+{% endif %}
+<div class="topic-subtopic__alert {{classes}}">
+	<form class="form-remove-topic-alert">
+		<input name="Url" class="js-save-search-url" id="Url" type="hidden" value="">
+		<button type="submit" class="lightbox-modal__hidden-submit"></button>
+		<span class="action-flag pop-out__trigger js-pop-out-trigger js-update-topic-alert">
+			<svg class="action-flag__icon js-topic-icon-unset topic-subtopic__alert-icon is-active">
+				<use xlink:href="/web/Website/dist/img/svg-sprite.svg#bell"></use>
+			</svg>
+			<svg class="action-flag__icon js-topic-icon-set topic-subtopic__alert-icon">
+				<use xlink:href="/web/Website/dist/img/svg-sprite.svg#bell-filled"></use>
+			</svg>
+			<span class="js-set-topic-label">{{alertText}}</span>
+		</span>
+	</form>
+</div>

@@ -1,6 +1,18 @@
 {% include "organisms-raw-header" %}
 <main>
 	{% include "organisms-raw-main-menu" %}
+	<div class="main__wrapper">
+		<div class="general-header">
+		</div>
+
+		<div class="main__content">
+			{% include "organisms-action-flags-bar" with {"hidePrint" : true, "hideBookmark" : true} %}
+			{% include "organisms-profile-header" %}
+			{% include "molecules-set-alert" %}
+			{% include "molecules-barred-divider" %}
+			{% include "molecules-button-full-diminished" with {"buttonText" : "See All"} %}
+		</div>
+	</div>
 </main>
 {% include "organisms-raw-footer" %}
 <script src="/web/Website/dist/js/index.js"></script>
