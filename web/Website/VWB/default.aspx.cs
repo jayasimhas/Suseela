@@ -17,6 +17,7 @@ using Sitecore.Shell.Applications.ContentEditor;
 using Sitecore.Web;
 using Sitecore.Web.Authentication;
 using DateTime = System.DateTime;
+using Jabberwocky.Autofac.Attributes;
 
 namespace Elsevier.Web.VWB
 {
@@ -38,7 +39,7 @@ namespace Elsevier.Web.VWB
 		private readonly List<Control> ReportBuilderBlacklist = new List<Control>();
 		protected string LogoUrl;
 
-		protected void Page_Load(object sender, EventArgs e)
+	    protected void Page_Load(object sender, EventArgs e)
 		{
 
 
@@ -322,8 +323,13 @@ namespace Elsevier.Web.VWB
         {
             ExistingIssuesDdl.CssClass = "js-existing-issue";
             ExistingIssuesDdl.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
-            ExistingIssuesDdl.Items.Add(new ListItem("Test 1", "1"));
-            ExistingIssuesDdl.Items.Add(new ListItem("Test 2", "2"));
+
+	        using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
+	        {
+		        var issuesService = scope.Resolve<IIssuesService>();
+		        var issues = issuesService.GetActiveIssues();
+		        issues.Each(i => ExistingIssuesDdl.Items.Add(new ListItem(i._Name, i._Id.ToString())));
+	        }
         }
 
         #endregion

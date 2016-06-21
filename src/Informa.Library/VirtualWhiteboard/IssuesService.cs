@@ -21,6 +21,7 @@ namespace Informa.Library.VirtualWhiteboard
 		void ReorderArticles(Guid issueId, string ids);
 		void DeleteArticles(string ids);
 		void UpdateIssueInfo(Guid issueId, string title, string date);
+		IEnumerable<IIssue> GetActiveIssues();
 	}
 
 	[AutowireService]
@@ -198,6 +199,13 @@ namespace Informa.Library.VirtualWhiteboard
                 issue.Articles_Order.Split('|')
 				.Select(i => new Guid(i))
 				.Each(i=> _dependencies.SitecoreServiceMaster.GetItem<IArticle>(i));
+		}
+
+		public IEnumerable<IIssue> GetActiveIssues()
+		{
+			return
+				_dependencies.SitecoreServiceMaster.GetItem<IIssue_Folder>(new Guid(Constants.VirtualWhiteboardIssuesFolder))
+					._ChildrenWithInferType.Cast<IIssue>();
 		}
 	}
 }
