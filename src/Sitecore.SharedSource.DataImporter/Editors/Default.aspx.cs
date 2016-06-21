@@ -24,6 +24,7 @@ using CsvHelper;
 using Sitecore.Web;
 using Sitecore.SharedSource.DataImporter.Logger;
 using Sitecore.SharedSource.DataImporter;
+using Sitecore.SharedSource.DataImporter.PostProcess;
 
 namespace Sitecore.SharedSource.DataImporter.Editors
 { 
@@ -67,6 +68,8 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             } 
         }
 
+        #region Logging
+
         protected void Log(string message) {
             log.Append(message).AppendLine().AppendLine();
         }
@@ -75,7 +78,11 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             log.AppendFormat("{0} : {1}", errorType, message).AppendLine().AppendLine();
         }
 
-	    protected void btnImport_Click(object sender, EventArgs e) {
+        #endregion Loggging
+
+        #region Import
+
+        protected void btnImport_Click(object sender, EventArgs e) {
 
             //check import item
             if (importItem == null)
@@ -158,8 +165,32 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             repJobs.DataSource = Jobs;
             repJobs.DataBind();       
 	    }
+        protected void HandleImport(IDataMap map, DefaultLogger l) {
 
-		protected void btnMediaImport_Click(object sender, EventArgs e)
+            ImportProcessor p = new ImportProcessor(map, l);
+            p.Process();
+            txtMessage.Text = l.GetLog();
+
+
+            foreach (KeyValuePair<string, List<ImportRow>> kvp in l.GetLogRecords()) {
+                string logPath = string.Format(@"{0}sitecore modules\Shell\Data Import\logs\{1}.{2}.{3}.csv",
+                                    HttpRuntime.AppDomainAppPath, importItem.DisplayName.Replace(" ", "-"),
+                                    DateTime.Now.ToString("yyyy.MM.dd.H.mm.ss"),
+                                    kvp.Key);
+                var file = File.CreateText(logPath);
+                var csvFile = new CsvWriter(file);
+                csvFile.WriteHeader<ImportRow>();
+                foreach (ImportRow ir in kvp.Value)
+                    csvFile.WriteRecord(ir);
+                file.Close();
+            }
+        }
+
+        #endregion Import
+
+        #region Media Import
+
+        protected void btnMediaImport_Click(object sender, EventArgs e)
 		{
 
 			//check import item
@@ -250,27 +281,33 @@ namespace Sitecore.SharedSource.DataImporter.Editors
 			handler?.TransferMediaLibrary();
 	    }
 
-		protected void HandleImport(IDataMap map, DefaultLogger l) {
-        
-            ImportProcessor p = new ImportProcessor(map, l);
-            p.Process();
-            txtMessage.Text = l.GetLog();
+        #endregion Media Import
 
-            
-            foreach (KeyValuePair<string, List<ImportRow>> kvp in l.GetLogRecords())
-            {
-                string logPath = string.Format(@"{0}sitecore modules\Shell\Data Import\logs\{1}.{2}.{3}.csv",
-                                    HttpRuntime.AppDomainAppPath, importItem.DisplayName.Replace(" ", "-"),
-                                    DateTime.Now.ToString("yyyy.MM.dd.H.mm.ss"),
-                                    kvp.Key);
-                var file = File.CreateText(logPath);
-                var csvFile = new CsvWriter(file);
-                csvFile.WriteHeader<ImportRow>();
-                foreach (ImportRow ir in kvp.Value)
-                    csvFile.WriteRecord(ir);
-                file.Close();
-            }
+        #region Post Import
+
+        protected void btnPostImport_Click(object sender, EventArgs e)
+        {
+            var jobOptions = new Sitecore.Jobs.JobOptions(
+                                    "PostImport",
+                                    "Post Import",
+                                    Sitecore.Context.Site.Name,
+                                    this,
+                                    "HandlePostImport",
+                                    new object[] { });
+
+            Sitecore.Jobs.JobManager.Start(jobOptions);
+
+            repJobs.DataSource = Jobs;
+            repJobs.DataBind();
         }
+
+        protected void HandlePostImport()
+        {
+            InformaPostProcess p = new InformaPostProcess();
+            p.UpdateArticleReferences();
+        }
+
+        #endregion Post Import
 
         public IEnumerable<Sitecore.Jobs.Job> Jobs
         {
