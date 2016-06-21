@@ -15,8 +15,9 @@
 <body>
 	<form id="form1" runat="server">
     <asp:HiddenField runat="server" ID="IssueTitleInput"></asp:HiddenField>
-    <asp:HiddenField runat="server" ID="IssuePublishedDateInput"></asp:HiddenField> <!--how make date picker??-->
-    <asp:HiddenField runat="server" ID="IssueArticleIdsInput"></asp:HiddenField> <!-- pipe bar separated guids? -->
+    <asp:HiddenField runat="server" ID="IssuePublishedDateInput"></asp:HiddenField>
+    <asp:HiddenField runat="server" ID="IssueArticleIdsInput"></asp:HiddenField> <!-- pipe bar separated guids -->
+    <asp:Button runat="server" ID="NewIssueSubmitButton" OnClick="NewIssueSubmitButton_OnClick" CssClass="hidden-button"/>
         
 
 	<div class="wrapper">
@@ -50,50 +51,31 @@
 					&nbsp;<asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="Logout"/>
 				</div>
 			</div>
-            
-            <!-- This next Div is written by one of those derpy back end devs.  
-                 Please ignore all his dumb markup and just keep the IDs. -->
-            <div id="temporary_demo_div">
-                <asp:TextBox runat="server" ID="NewIssueTitleInput"></asp:TextBox>
-                <asp:TextBox runat="server" ID="NewIssuePublishedDateInput"></asp:TextBox> <!--how make date picker??-->
-                <asp:TextBox runat="server" ID="NewIssueArticleIdsInput"></asp:TextBox> <!-- pipe bar separated guids? -->
-                <asp:Button runat="server" Text="TestNewIssue" OnClick="CreateNewIssue"/>
-            </div>
-            
-
 		</div>
 		<br />
 		<br />
 		<br />
 		<div class="report">
-
-			<input type="checkbox" class="js-article-checkbox" name="selectedArticle" value="article1234"> Placeholder checkbox for testing
-
-			<input type="checkbox" class="js-article-checkbox" name="selectedArticle" value="verwvawev"> Placeholder checkbox for testing
-
-			<input type="checkbox" class="js-article-checkbox" name="selectedArticle" value=",u8fmcfgnf"> Placeholder checkbox for testing
-
+		    
 			<!-- THIS TABLE NEEDS CHECKBOXES WITH CLASS .js-article-checkbox -->
 			<asp:Table ID="tblResults" runat="server" border="1">
 			</asp:Table>
 
 			<div class="vwb-report-options">
+			    
+                <asp:DropDownList ID="ddColumns" runat="server"
+				    AutoPostBack="true" OnSelectedIndexChanged="AddColumn" />
+                
+                <hr />
 
-				<asp:DropDownList ID="ddColumns" runat="server"
-				AutoPostBack="true" OnSelectedIndexChanged="AddColumn">
-				</asp:DropDownList>
-					<asp:Repeater runat="server" ID="ExistingIssuesOptions">
-					    <ItemTemplate>
-					        '
-					    </ItemTemplate>
-					</asp:Repeater>
-				<hr>
+                <button disabled class="orange-button js-create-new-issue">Add Selected Articles to New Issue</button>
 
-				<select class="js-existing-issue">
-					<option value="DEFAULT">Select an existing issue...</option>
-					<option value="1">Sample Issue 1</option>
-					<option value="2">Sample Issue 2</option>
-				</select><br><br>
+                <hr/>
+                
+                <asp:DropDownList runat="server" ID="ExistingIssuesDdl" AutoPostBack="False"/>
+
+			    <br/><br />
+
 				<button disabled class="orange-button js-append-to-issue">Add Selected Articles to Existing Issue</button>
 
 			</div>
@@ -101,13 +83,13 @@
 		</div>
 	</div>
 	</form>
-		<input class="js-new-issue-title" type="text">
+		
 	<!-- NEW ISSUE MODAL -->
 	<div class="new-issue-modal js-new-issue-modal" title="Dialog Title">
 		<label>Issue Title</label>
-		<input type="text">
+		<input type="text" class="js-new-issue-title" />
 		<label>Published Date</label>
-		<input class="js-new-issue-pub-date" type="text">
+	    <input class="js-new-issue-pub-date" type="text"/>
 		<button class="orange-button js-submit-new-issue">Create New Issue</button>
 	</div>
 

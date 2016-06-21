@@ -40,6 +40,8 @@ namespace Elsevier.Web.VWB
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+
+
 			if (!Sitecore.Context.User.IsAuthenticated)
 			{
                 Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?returnUrl=" + Request.RawUrl);
@@ -65,9 +67,9 @@ namespace Elsevier.Web.VWB
 
 			UpdateFields();
 			BuildOptionalColumnDropdown();
+		    BuildExistingIssuesList();
 
-            
-        }
+		}
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
@@ -250,7 +252,7 @@ namespace Elsevier.Web.VWB
 			}
 		}
 
-		protected string GetCurrentPageUrl()
+        protected string GetCurrentPageUrl()
 		{
 			bool httpsOn = Request.ServerVariables["HTTPS"].Equals("ON");
 			string http = httpsOn ? "https://" : "http://";
@@ -295,13 +297,13 @@ namespace Elsevier.Web.VWB
 
         #region issue management
 
-        protected void CreateNewIssue(object sender, EventArgs e)
+        protected void NewIssueSubmitButton_OnClick(object sender, EventArgs e)
         {
             var model = new Informa.Library.VirtualWhiteboard.Models.IssueModel
             {
-                Title = NewIssueTitleInput.Text,
-                PublishedDate = DateTime.Parse(NewIssuePublishedDateInput.Text),
-                ArticleIds = NewIssueArticleIdsInput.Text?.Split('|').Select(Guid.Parse)
+                Title = IssueTitleInput.Value,
+                PublishedDate = DateTime.Parse(IssuePublishedDateInput.Value),
+                ArticleIds = IssueArticleIdsInput.Value.Split('|').Select(Guid.Parse)
             };
 
             using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
@@ -316,7 +318,16 @@ namespace Elsevier.Web.VWB
             }
         }
 
+        protected void BuildExistingIssuesList()
+        {
+            ExistingIssuesDdl.CssClass = "js-existing-issue";
+            ExistingIssuesDdl.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
+            ExistingIssuesDdl.Items.Add(new ListItem("Test 1", "1"));
+            ExistingIssuesDdl.Items.Add(new ListItem("Test 2", "2"));
+        }
+
         #endregion
+
 
     }
 }

@@ -1,5 +1,5 @@
-var selectedArticlesUpdated = function() {
-	if($('.js-article-checkbox:checked').length) {
+var selectedArticlesUpdated = function () {
+	if($('.js-article-checkbox input:checked').length) {
 
 		$('.js-create-new-issue').prop('disabled', null);
 
@@ -22,7 +22,7 @@ var selectedArticlesUpdated = function() {
 var serializeSelectedArticles = function() {
 
 	var pipedArticles = '';
-	var selectedArticles = $('.js-article-checkbox:checked');
+	var selectedArticles = $('.js-article-checkbox input:checked');
 	if(selectedArticles.length) {
 		selectedArticles.each(function(ind, elm) {
 			if(ind > 0) {
@@ -64,12 +64,14 @@ $(document).ready(function() {
 	$('.js-submit-new-issue').on('click', function(e) {
 	    $('#IssueTitleInput').val($('.js-new-issue-title').val());
 	    $('#IssuePublishedDateInput').val($('.js-new-issue-pub-date').val());
+
 	    selectedArticlesUpdated();
-	    document.forms[0].submit();
+	    //document.forms[0].submit();
+	    $('#NewIssueSubmitButton').click();
 	});
 
 });
 
-$('.js-article-checkbox, .js-existing-issue').on('change', function(e) {
+$('.js-article-checkbox input, .js-existing-issue').on('change', function (e) {
 	selectedArticlesUpdated();
 });

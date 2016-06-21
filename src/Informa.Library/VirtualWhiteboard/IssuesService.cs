@@ -103,7 +103,7 @@ namespace Informa.Library.VirtualWhiteboard
 			if (itemIds == null) return;
 
 			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
-				itemIds.Each(id => _dependencies.SitecoreClonesWrapper.CreateClone(issueId, id)));
+				itemIds.Each(id => _dependencies.SitecoreClonesWrapper.CreateClone(id, issueId)));
 		}
 
 		public VwbResponseModel ArchiveIssue(Guid issueId)
