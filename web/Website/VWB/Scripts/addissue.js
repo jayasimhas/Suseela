@@ -70,7 +70,7 @@ $(function() {
 			e.preventDefault();
 
 			// Ini dialog & dialog text
-			$("#js-dialog").html("<p>Are you sure you want to archive this issue?</p>");
+			$("#js-dialog").html("<p>Are you sure you wish to archive this issue? Once you do this the issue cannot be recovered programatically.</p>");
 			// Just in case it's been hidden
 			$("#js-dialog + .ui-dialog-buttonpane").show();
 			$("#js-dialog").dialog({
