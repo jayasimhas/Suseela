@@ -8,9 +8,10 @@
 		<div class="main__content">
 			{% include "organisms-action-flags-bar" with {"hidePrint" : true, "hideBookmark" : true} %}
 			{% include "organisms-profile-header" %}
+			{% include "molecules-ad-rect" %}
 			{% include "molecules-set-alert" %}
-			{% include "molecules-barred-divider" %}
-			{% include "molecules-button-full-diminished" with {"buttonText" : "See All"} %}
+			{% include "organisms-recent-news" with {"buttonText" : "See All"} %}
+			{% include "molecules-ad-leaderboard" %}
 		</div>
 	</div>
 </main>
