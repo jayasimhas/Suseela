@@ -4,6 +4,27 @@
 			"text": "What’s On CEO Andrew Witty’s To-Do List Before Exiting GSK"
 		},
 		{
+			"text": "Melancholy for orthopaedics in most markets"
+		},
+		{
+			"text": "Biomaterials bill makes last ditch attempt to pass Congress"
+		},
+		{
+			"text": "Alembic Setting Up For US Oncology Play"
+		},
+		{
+			"text": "Sanofi Goes Public With Hostile Medivation Bid"
+		},
+		{
+			"text": "Heptares-Powered Sosei's Incoming CEO Explains What Happens Next"
+		},
+		{
+			"text": "Bayer Thins R&D Pipeline, Backs Finerenone In Kidney But Not Heart Disease"
+		},
+		{
+			"text": "Panel: Investing Beyond IO Set To Heat Up"
+		},
+		{
 			"text": "INTERVIEW: Evotec CEO On Tears, Transparency And Trying Again"
 		},
 		{
@@ -72,6 +93,40 @@
 		},
 		{
 			"text" : "Search"
+		}
+	],
+	"randomParas" : [
+		{
+			"text": "Praesent laoreet orci quam, nec lacinia dolor sagittis id. Pellentesque vitae odio id enim condimentum ultrices ac et enim. Sed hendrerit justo nec lectus lobortis, quis viverra nisl sodales. Sed pharetra fringilla arcu, ut commodo massa gravida nec. Etiam sed pharetra odio, et maximus metus. Maecenas ac magna lorem. Nunc imperdiet tellus dolor, at rhoncus mi efficitur vitae. Vivamus fermentum odio sed urna dapibus ornare. Quisque molestie a quam ac ultricies."
+		},
+		{
+			"text": "Vestibulum blandit erat eu efficitur congue. Duis at enim pellentesque, maximus eros id, sollicitudin nulla. Nam lobortis sem eu pharetra efficitur. Etiam mattis pretium velit in blandit. Duis congue, eros nec ultricies dignissim, purus nunc elementum tellus, in hendrerit eros eros eu libero. "
+		},
+		{
+			"text": "Aenean et pulvinar neque. Fusce feugiat pharetra ligula gravida volutpat. In dignissim feugiat risus eget mattis. Proin tincidunt luctus massa, ac eleifend felis porttitor vestibulum. Quisque condimentum nisi ante, non sollicitudin nisl euismod ac. Donec facilisis risus a eros faucibus ultricies. Morbi posuere ac augue eget pulvinar. Pellentesque sit amet ante purus. Integer varius accumsan nisi nec aliquam. Quisque a accumsan felis. In hac habitasse platea dictumst. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse euismod tellus nec magna iaculis scelerisque. Vestibulum fermentum aliquam risus, sed elementum odio laoreet ac. Morbi eget mollis nunc. Aenean vel maximus arcu, sit amet ornare urna. "
+		},
+		{
+			"text": "Sed ut consectetur ante. Nam orci risus, efficitur ac semper vitae, euismod mattis eros. Nam a sem ut nulla tempus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis justo sapien, a commodo est molestie id."
+		},
+		{
+			"text": "Nunc ornare augue elit, ac malesuada justo pulvinar in. Vestibulum pellentesque tellus mi, vel tincidunt purus efficitur consectetur. Nulla eu lacus mauris. "
+		},
+		{
+			"text": "Sed convallis ex ac risus pretium fringilla. Quisque et tellus ut lectus auctor euismod at in dui. Mauris maximus pretium sodales. Nunc at metus sapien. Phasellus viverra erat ut massa aliquam lacinia. Sed interdum posuere magna, non interdum mi. Quisque blandit interdum metus, pharetra varius sem. Maecenas bibendum porta ultricies. Cras vitae odio ullamcorper, viverra diam vitae, finibus elit. Aliquam non est tempus tortor bibendum ultrices. Nunc ut tristique turpis. "
+		},
+		{
+			"text": "Cras pulvinar condimentum facilisis. Suspendisse a lacinia nibh. Mauris iaculis lorem dui, non ultricies enim luctus in. Quisque dapibus molestie tempor. Aliquam faucibus semper fringilla. Sed in purus id nisi rhoncus malesuada vel sit amet dolor. Nullam luctus sollicitudin magna, sed aliquet urna rhoncus sit amet. Suspendisse nulla leo, congue in varius non, luctus et purus. Phasellus sed sem sed nisi tincidunt vehicula eget quis tellus. Donec blandit, dolor lobortis rhoncus condimentum, mauris mauris aliquet sem, vitae vestibulum arcu sem ut nisi. Maecenas tempor nunc odio, nec lobortis turpis egestas vitae. Vestibulum blandit erat eu efficitur congue. Duis at enim pellentesque, maximus eros id, sollicitudin nulla. Nam lobortis sem eu pharetra efficitur. Etiam mattis pretium velit in blandit. Duis congue, eros nec ultricies dignissim, purus nunc elementum tellus, in hendrerit eros eros eu libero. "
+		}
+	],
+	"randomArticleTypes" : [
+		{
+			"text": "News"
+		},
+		{
+			"text": "Analysis"
+		},
+		{
+			"text": "Opinion"
 		}
 	]
 }
