@@ -78,7 +78,7 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 			var siteInfos = Sitecore.Configuration.Factory.GetSiteInfoList();
 			foreach (SiteInfo si in siteInfos)
 			{
-				var articleNode = db.GetItem($"{si.ContentStartItem}/articles");
+				var articleNode = db.GetItem($"{si.RootPath}{si.StartItem}/articles");
 				if (articleNode == null)
 					continue;
 
@@ -97,7 +97,7 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 			string body = a[bodyFieldName];
 			string summary = a[summaryFieldName];
 
-			string pattern1 = @"<a[^>]*?>\[A#(\d)*\]<\/a>";
+			string pattern1 = @"\[A#(\d*)\]";
 
 			body = ReplacePattern(pattern1, body);
 			summary = ReplacePattern(pattern1, summary);
@@ -119,13 +119,15 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 			{
 				var newArticleNumber = GetNewArticleNumber(match);
 				if (!string.IsNullOrEmpty(newArticleNumber))
-					text = text.Replace(match.Value, $"<a>[A#{newArticleNumber}]</a>");
+					text = text.Replace(match.Value, $"[A#{newArticleNumber}]");
 			}
 			return text;
 		}
 
 		public string GetNewArticleNumber(Match match)
 		{
+			if (!match.Success || string.IsNullOrEmpty(match.Groups[1].Value)) return null;
+
 			using (var context = ContentSearchManager.GetIndex("sitecore_master_index").CreateSearchContext())
 			{
 				var query = context.GetQueryable<ImportSearchResultItem>();
