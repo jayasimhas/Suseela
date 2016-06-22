@@ -59,21 +59,24 @@
 		<h2>Articles in Issue</h2>
 
 		<div class="draggable-wrapper js-draggable-wrapper">
+
 			<div class="draggable draggable-header">
-				<div>
-					Article Number
-				</div>
-				<div>
-					Article Name
-				</div>
-				<div>
-					Delete/Re-Add
-				</div>
-			</div>
+		<div></div>
+		<div>
+			Article Number
+		</div>
+		<div>
+			Article Name
+		</div>
+		<div>
+			Delete/Re-Add
+		</div>
+	</div>
 			<!-- PLACEHOLDER! BE should create row for each article -->
 			@foreach (var article in Model.Articles)
 			{
 				<div class="draggable js-draggable" id="@article._Id">
+					<div></div>
 					<div>
 						@article.Article_Number
 					</div>
