@@ -1,0 +1,8 @@
+{% if dividerText == false %}
+	{% set dividerText = "Divider Text" %}
+{% elseif dividerText == "random" %}
+	{% set dividerText = random(randomTitles).text %}
+{% endif %}
+<div class="divider divider--barred">
+	<span class="divider__text">{{dividerText}}</span>
+</div>
