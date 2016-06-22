@@ -75,9 +75,7 @@
                 <asp:DropDownList runat="server" ID="ExistingIssuesDdl" AutoPostBack="False"/>
 
 			    <br/><br />
-
-				<button disabled class="orange-button js-append-to-issue">Add Selected Articles to Existing Issue</button>
-
+				<asp:Button runat="server" ID="btnAddArticleToExistingIssue" Text="Add Selected Articles to Existing Issue" OnClick="btnAddArticleToExistingIssue_OnClick" CssClass="orange-button js-append-to-issue"/>
 			</div>
 
 		</div>

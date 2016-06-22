@@ -49,15 +49,13 @@ $(document).ready(function() {
 
 	$('.js-new-issue-pub-date').datepicker();
 
-	$('.js-append-to-issue, .js-create-new-issue').on('click', function(e) {
-
-		// Prevents instant form submit, just in case
-        e.preventDefault();
+	$('.js-append-to-issue, .js-create-new-issue').on('click', function(e) {       
 		var articles = serializeSelectedArticles();
-
 	});
 
-	$('.js-create-new-issue').on('click', function(e) {
+	$('.js-create-new-issue').on('click', function (e) {
+		// Prevents instant form submit, just in case
+		e.preventDefault();
 		$(".js-new-issue-modal").dialog( "open" );
 	});
 

@@ -8,7 +8,10 @@ using Informa.Library.Wrappers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard;
 using Jabberwocky.Autofac.Attributes;
+using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Models;
+using Sitecore.Mvc.Extensions;
+using EnumerableExtensions = Informa.Library.Utilities.Extensions.EnumerableExtensions;
 
 
 namespace Informa.Library.VirtualWhiteboard
@@ -22,6 +25,8 @@ namespace Informa.Library.VirtualWhiteboard
 		void DeleteArticles(string ids);
 		void UpdateIssueInfo(Guid issueId, string title, string date);
 		IEnumerable<IIssue> GetActiveIssues();
+		bool DoesIssueContains(Guid issueId, string articleId);
+		void AddArticlesToIssue(Guid issueId, IEnumerable<Guid> itemIds);
 	}
 
 	[AutowireService]
@@ -31,10 +36,11 @@ namespace Informa.Library.VirtualWhiteboard
 
 		[AutowireService(IsAggregateService = true)]
 		public interface IDependencies
-		{
+		{		
 			ISitecoreServiceMaster SitecoreServiceMaster { get; }
 			ISitecoreSecurityWrapper SitecoreSecurityWrapper { get; }
 			ISitecoreClonesWrapper SitecoreClonesWrapper { get; }
+			ICacheProvider CacheProvider { get; }
 		}
 
 		public IssuesService(IDependencies dependencies)
@@ -45,10 +51,10 @@ namespace Informa.Library.VirtualWhiteboard
 		public VwbResponseModel CreateIssueFromModel(IssueModel model)
 		{
 			model.Title = model.Title.HasContent() ? model.Title : "New Issue";
-
+			Guid issueId;
 			try
 			{
-				var issueId = CreateIssueItem<IIssue, IIssue_Folder>(model.Title, Constants.VirtualWhiteboardIssuesFolder);
+				issueId = CreateIssueItem<IIssue, IIssue_Folder>(model.Title, Constants.VirtualWhiteboardIssuesFolder);
 				UpdateIssueItem(model, issueId);
 			}
 			catch (Exception ex)
@@ -63,7 +69,7 @@ namespace Informa.Library.VirtualWhiteboard
 				};
 			}
 
-			return new VwbResponseModel { IsSuccess = true };
+			return new VwbResponseModel { IsSuccess = true, IssueId = issueId};
 		}
 
 		public Guid CreateIssueItem<I, F>(string newIssueName, string folderId) where I : class, IGlassBase
@@ -104,7 +110,7 @@ namespace Informa.Library.VirtualWhiteboard
 			if (itemIds == null) return;
 
 			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
-				itemIds.Each(id => _dependencies.SitecoreClonesWrapper.CreateClone(id, issueId)));
+				EnumerableExtensions.Each(itemIds, id => _dependencies.SitecoreClonesWrapper.CreateClone(id, issueId)));
 		}
 
 		public VwbResponseModel ArchiveIssue(Guid issueId)
@@ -157,9 +163,8 @@ namespace Informa.Library.VirtualWhiteboard
 				return;
 			}
 
-			ids.Split('|')
-				.Select(i => _dependencies.SitecoreServiceMaster.GetItem<IArticle>(new Guid(i)))
-				.Each(x =>_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() => _dependencies.SitecoreServiceMaster.Delete(x)));
+			EnumerableExtensions.Each(ids.Split('|')
+					.Select(i => _dependencies.SitecoreServiceMaster.GetItem<IArticle>(new Guid(i))), x =>_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() => _dependencies.SitecoreServiceMaster.Delete(x)));
 		}
 
 		public void ReorderArticles(Guid issueId, string ids)
@@ -206,6 +211,25 @@ namespace Informa.Library.VirtualWhiteboard
 			return
 				_dependencies.SitecoreServiceMaster.GetItem<IIssue_Folder>(new Guid(Constants.VirtualWhiteboardIssuesFolder))
 					._ChildrenWithInferType.Cast<IIssue>();
+		}
+
+		public HashSet<string> GetIssueArticlesSet(Guid issueId)
+		{
+			var cacheKey = $"Issue-{issueId}";
+			return _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildIssueDictionary(issueId));
+		}
+
+		private HashSet<string> BuildIssueDictionary(Guid issueId)
+		{
+			var dict = new HashSet<string>();
+			_dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId)
+				._ChildrenWithInferType.Each(i => dict.Add(i._Id.ToString()));
+			return dict;
+		}
+
+		public bool DoesIssueContains(Guid issueId, string articleId)
+		{
+			return GetIssueArticlesSet(issueId).Contains(articleId);
 		}
 	}
 }

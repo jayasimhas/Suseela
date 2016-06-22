@@ -8,6 +8,8 @@ using Elsevier.Web.VWB.Report;
 using Elsevier.Web.VWB.Report.Columns;
 using Glass.Mapper.Sc;
 using Informa.Library.VirtualWhiteboard;
+using Informa.Library.Wrappers;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard;
 using Informa.Web.App_Start;
 using Microsoft.Practices.ServiceLocation;
 using Sitecore.Caching;
@@ -38,8 +40,9 @@ namespace Elsevier.Web.VWB
 		private ReportBuilder _reportBuilder;
 		private readonly List<Control> ReportBuilderBlacklist = new List<Control>();
 		protected string LogoUrl;
+	    private const string IssuePageUrl = "/vwb/AddIssue?id=";
 
-	    protected void Page_Load(object sender, EventArgs e)
+		protected void Page_Load(object sender, EventArgs e)
 		{
 
 
@@ -75,6 +78,7 @@ namespace Elsevier.Web.VWB
 		protected void Page_Init(object sender, EventArgs e)
 		{
             ReportBuilderBlacklist.Add(btnReset);
+			ReportBuilderBlacklist.Add(btnAddArticleToExistingIssue);
 
 			_vwbQuery = new VwbQuery(Request);
 			if (!IsPostBack
@@ -314,7 +318,7 @@ namespace Elsevier.Web.VWB
 
                 if (result.IsSuccess)
                 {
-                    Response.Redirect("http://example.com/issue-page");
+                    Response.Redirect(IssuePageUrl + result.IssueId);
                 }
             }
         }
@@ -334,6 +338,26 @@ namespace Elsevier.Web.VWB
 
         #endregion
 
-
-    }
+	    protected void btnAddArticleToExistingIssue_OnClick(object sender, EventArgs e)
+	    {
+		    Guid issueId;
+		    if (Guid.TryParse(ExistingIssuesDdl.SelectedItem.Value, out issueId))
+		    {
+			    using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
+			    {
+				    var sitecoreService = scope.Resolve<ISitecoreServiceMaster>();
+				    var issuesService = scope.Resolve<IIssuesService>();
+				    var issue = sitecoreService.GetItem<IIssue>(issueId);
+				    if (issue != null)
+				    {
+					    var articleIds = IssueArticleIdsInput.Value.Split('|');
+					    var articlesToAdd = articleIds.Where(i => !issuesService.DoesIssueContains(issueId, i)).Select(i => new Guid(i));
+						issuesService.AddArticlesToIssue(issueId, articlesToAdd);
+						Response.Redirect(IssuePageUrl + issueId);
+				    }
+				}
+			}
+			Response.Redirect(Request.Url.PathAndQuery);
+	    }
+	}
 }

@@ -173,5 +173,14 @@ namespace Elsevier.Web.VWB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ExistingIssuesDdl;
+        
+        /// <summary>
+        /// btnAddArticleToExistingIssue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddArticleToExistingIssue;
     }
 }
