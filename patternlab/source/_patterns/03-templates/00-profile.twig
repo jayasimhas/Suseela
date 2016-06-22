@@ -7,9 +7,13 @@
 
 		<div class="main__content">
 			{% include "organisms-action-flags-bar" with {"hidePrint" : true, "hideBookmark" : true} %}
-			{% include "organisms-profile-header" %}
-			{% include "molecules-ad-rect" %}
-			{% include "molecules-set-alert" %}
+			<div class="article-left-rail">
+				{% include "organisms-profile-header" %}
+			</div>
+			<div class="article-right-rail">
+				{% include "molecules-set-alert" with {"classes" : "profile__set-alert"} %}
+				{% include "molecules-ad-rect" %}
+			</div>
 			{% include "organisms-recent-news" with {"buttonText" : "See All", "listArticleType" : "News"} %}
 			{% include "molecules-ad-leaderboard" %}
 		</div>

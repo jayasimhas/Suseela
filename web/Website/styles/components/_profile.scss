@@ -1,0 +1,58 @@
+.profile {
+
+
+	&__header {
+		color: $color-zeus-black;
+	}
+
+	/* Speficificity issues since we're stealing the columns from article */
+	&__header &__expertise,
+	&__header &__links {
+
+		li {
+			@include textMix('Roboto', 18px, 700)
+			line-height: 18px;
+			margin: 0 0 18px 0;
+		}
+
+		li:before {
+			display: none;
+		}
+	}
+
+	&__header &__links {
+		li {
+			font-size: 15px;
+			line-height: normal;
+			margin: 0 0 18px 0;
+		}
+	}
+
+	&__img {
+		height: auto;
+		float: left;
+		margin: 0 32px 32px 0;
+		width: 160px;
+	}
+
+	&__img + &__links {
+		padding-top: 26px;
+	}
+
+	&__location {
+		@include textMix('Roboto', 18px, 500);
+		margin-bottom: 32px;
+	}
+
+	&__profile {
+		border-bottom: 1px solid $color-light-gray;
+		clear: both;
+		color: $color-abbey-gray;
+		margin-bottom: 32px;
+		padding-bottom: 32px;
+	}
+
+	&__title {
+		margin-bottom: 8px;
+	}
+}

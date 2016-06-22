@@ -29,7 +29,7 @@
 	{% set personProfile = "Vestibulum ut justo metus. Quisque eu mauris turpis. Nam suscipit commodo sapien, vel porta arcu condimentum nec. Aliquam eget leo et nisl lacinia molestie. Morbi vel mi nec erat sodales imperdiet. Donec at mauris luctus, dictum metus sit amet, dignissim nisi. Vestibulum est nibh, molestie id sagittis pretium, viverra at erat. Morbi rhoncus nunc sed venenatis consequat. " %}
 {% endif %}
 
-<div class="profile__header">
+<div class="article-body-content profile__header">
 	<h1 class="profile__name">{{personName}}</h1>
 	<h2 class="profile__title">{{personTitle}}</h2>
 	<div class="profile__location">{{location}}</div>
@@ -37,9 +37,15 @@
 		<img class="profile__img" src="{{personPhoto}}" />
 	{% endif %}
 	<ul class="profile__links">
-		{% include "molecules-icon-as-bullet" with {"icon": "email", "linkText": "email@email.com"} %}
-		{% include "molecules-icon-as-bullet" with {"icon": "twitter", "linkText": twitter} %}
-		{% include "molecules-icon-as-bullet" with {"icon": "linkedin", "linkText": linkedin} %}
+		<li>
+			{% include "molecules-icon-as-bullet" with {"icon": "email", "linkText": "email@email.com", "classes" : "action-flag__icon profile__icon"} %}
+		</li>
+		<li>
+			{% include "molecules-icon-as-bullet" with {"icon": "twitter", "linkText": twitter, "classes" : "action-flag__icon profile__icon"} %}
+		</li>
+		<li>
+			{% include "molecules-icon-as-bullet" with {"icon": "linkedin", "linkText": linkedin, "classes" : "action-flag__icon profile__icon action-flag__icon--linkedin"} %}
+		</li>
 	</ul>
 	<div class="profile__profile">
 		{{personProfile}}
