@@ -144,7 +144,9 @@ namespace Informa.Library.VirtualWhiteboard
 			newIssue.Title = issue.Title;
 			newIssue.Published_Date = issue.Published_Date;
 			newIssue.Notes = issue.Notes;
-			newIssue.Issue_Articles = issue._ChildrenWithInferType;
+			newIssue.Issue_Articles =
+				issue._ChildrenWithInferType.Cast<IArticle>()
+					.Each(i => _dependencies.SitecoreServiceMaster.GetItem<IArticle>(new Guid(i.SourceId.ExtractGuidString())));
 			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() => _dependencies.SitecoreServiceMaster.Save(newIssue));
 
 			// Delete issue with children
