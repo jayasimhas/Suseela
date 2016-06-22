@@ -6,122 +6,145 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using Informa.Library.Search.Results;
 using Informa.Models.DCD;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.Linq;
+using Sitecore.ContentSearch.SearchTypes;
 using Sitecore.Data.Items;
 using Sitecore.Jobs;
 using Sitecore.SecurityModel;
 
-namespace Sitecore.SharedSource.DataImporter.PostProcess {
-    public class InformaPostProcess {
+namespace Sitecore.SharedSource.DataImporter.PostProcess
+{
+	public class InformaPostProcess
+	{
 
 
-        public InformaPostProcess()
-        {
-            
-        }
+		public InformaPostProcess()
+		{
 
-        public void UpdateArticleReferences()
-        {
-            if (Sitecore.Context.Job != null)
-                Sitecore.Context.Job.Options.Priority = ThreadPriority.Highest;
+		}
 
-            IEnumerable<Item> articleItems;
+		public void UpdateArticleReferences()
+		{
+			if (Sitecore.Context.Job != null)
+				Sitecore.Context.Job.Options.Priority = ThreadPriority.Highest;
 
-            try
-            {
-                articleItems = GetAllArticles();
-            }
-            catch (Exception ex)
-            {
-                if (Sitecore.Context.Job != null)
-                    Sitecore.Context.Job.Status.State = JobState.Finished;
+			IEnumerable<Item> articleItems;
 
-                return;
-            }
+			try
+			{
+				articleItems = GetAllArticles();
+			}
+			catch (Exception ex)
+			{
+				if (Sitecore.Context.Job != null)
+					Sitecore.Context.Job.Status.State = JobState.Finished;
 
-            int totalLines = articleItems.Count();
-            if (Sitecore.Context.Job != null)
-                Sitecore.Context.Job.Status.Total = totalLines;
+				return;
+			}
 
-            int line = 1;
-            foreach (Item a in articleItems)
-            {
-                ReplaceArticleRef(a);
-                
-                if (Sitecore.Context.Job != null)
-                {
-                    Sitecore.Context.Job.Status.Processed = line;
-                    Sitecore.Context.Job.Status.Messages.Add(string.Format("Processed item {0} of {1}", line, totalLines));
-                }
-                line++;
-            }
+			int totalLines = articleItems.Count();
+			if (Sitecore.Context.Job != null)
+				Sitecore.Context.Job.Status.Total = totalLines;
 
-            if (Sitecore.Context.Job != null)
-                Sitecore.Context.Job.Status.State = JobState.Finished;
-        }
+			int line = 1;
+			foreach (Item a in articleItems)
+			{
+				ReplaceArticleRef(a);
 
-        public IEnumerable<Item> GetAllArticles() { 
+				if (Sitecore.Context.Job != null)
+				{
+					Sitecore.Context.Job.Status.Processed = line;
+					Sitecore.Context.Job.Status.Messages.Add(string.Format("Processed item {0} of {1}", line, totalLines));
+				}
+				line++;
+			}
 
-            List<Item> l = new List<Item>();
+			if (Sitecore.Context.Job != null)
+				Sitecore.Context.Job.Status.State = JobState.Finished;
+		}
 
-            var db = Sitecore.Context.ContentDatabase;
+		public IEnumerable<Item> GetAllArticles()
+		{
 
-            //get all sites
-            var siteInfos = Sitecore.Configuration.Factory.GetSiteInfoList();
-            foreach (SiteInfo si in siteInfos)
-            {
-                var articleNode = db.GetItem($"{si.ContentStartItem}/articles");
-                if (articleNode == null)
-                    continue;
+			List<Item> l = new List<Item>();
 
-                var articles = articleNode.Axes.GetDescendants().Where(a => a.TemplateName.Equals("Article"));
-                l.AddRange(articles);
-            }
+			var db = Sitecore.Context.ContentDatabase;
 
-            return l;
-        }
+			//get all sites
+			var siteInfos = Sitecore.Configuration.Factory.GetSiteInfoList();
+			foreach (SiteInfo si in siteInfos)
+			{
+				var articleNode = db.GetItem($"{si.ContentStartItem}/articles");
+				if (articleNode == null)
+					continue;
 
-        public void ReplaceArticleRef(Item a)
-        {
-            string bodyFieldName = "Body";
-            string summaryFieldName = "Summary";
+				var articles = articleNode.Axes.GetDescendants().Where(a => a.TemplateName.Equals("Article"));
+				l.AddRange(articles);
+			}
 
-            string body = a[bodyFieldName];
-            string summary = a[summaryFieldName];
+			return l;
+		}
 
-            string pattern1 = @"<a>\[A#(\d)*\]<\/a>";
-            string pattern2 = string.Empty; 
-            //temporary pattern 2: @"\(<a( href=\"[a-zA-Z0-9%&=_?/:\-]*\")*( target=\"[a-z_]*\")*>\[A#(\d)*\]<\/a>\)";
-            //pattern 2 should match this: "(<a href="http://auth.pharmamedtechbi.com/?sc_itemid=%7b2f6f19c3-cf09-4c7b-80ec-bde580d43efa%7d&sc_mode=preview&sc_lang=en" target="_new">[A#00150511012]</a>)";
-            
-            body = ReplacePattern(pattern1, body);
-            body = ReplacePattern(pattern2, body);
-            summary = ReplacePattern(pattern1, summary);
-            summary = ReplacePattern(pattern2, summary);
+		public void ReplaceArticleRef(Item a)
+		{
+			string bodyFieldName = "Body";
+			string summaryFieldName = "Summary";
 
-            using (new SecurityDisabler()) {
-                using (new EditContext(a))
-                {
-                    a[bodyFieldName] = body;
-                    a[summaryFieldName] = summary;
-                }
-            }
-        }
+			string body = a[bodyFieldName];
+			string summary = a[summaryFieldName];
 
-        public string ReplacePattern(string pattern, string text)
-        {
-            Regex regex = new Regex(pattern);
-            foreach (Match match in regex.Matches(text)) {
-                var newArticleNumber = GetNewArticleNumber();
-                if (!string.IsNullOrEmpty(newArticleNumber))
-                    text = text.Replace(match.Value, $"(<a>[A#{newArticleNumber}]</a>)");
-            }
-            return text;
-        }
+			string pattern1 = @"<a[^>]*?>\[A#(\d)*\]<\/a>";
 
-        public string GetNewArticleNumber()
-        {
-            return string.Empty;
-        }
-    }
+			body = ReplacePattern(pattern1, body);
+			summary = ReplacePattern(pattern1, summary);
+
+			using (new SecurityDisabler())
+			{
+				using (new EditContext(a))
+				{
+					a[bodyFieldName] = body;
+					a[summaryFieldName] = summary;
+				}
+			}
+		}
+
+		public string ReplacePattern(string pattern, string text)
+		{
+			Regex regex = new Regex(pattern);
+			foreach (Match match in regex.Matches(text))
+			{
+				var newArticleNumber = GetNewArticleNumber(match);
+				if (!string.IsNullOrEmpty(newArticleNumber))
+					text = text.Replace(match.Value, $"<a>[A#{newArticleNumber}]</a>");
+			}
+			return text;
+		}
+
+		public string GetNewArticleNumber(Match match)
+		{
+			using (var context = ContentSearchManager.GetIndex("sitecore_master_index").CreateSearchContext())
+			{
+				var query = context.GetQueryable<ImportSearchResultItem>();
+				query = query.Where(x => x.LegacyArticleNumber == match.Groups[1].Value);
+				query.Page(1, 1);
+
+				var results = query.GetResults();
+
+				return results?.Hits?.Select(h => h?.Document?.NewArticleNumber).FirstOrDefault();
+			}
+		}
+	}
+
+	public class ImportSearchResultItem : SearchResultItem
+	{
+		[IndexField(IArticleConstants.Legacy_Article_NumberFieldName)]
+		public string LegacyArticleNumber { get; set; }
+
+		[IndexField(IArticleConstants.Article_NumberFieldName)]
+		public string NewArticleNumber { get; set; }
+	}
 }
