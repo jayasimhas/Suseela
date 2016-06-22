@@ -214,12 +214,6 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 							// remove unwanted attributes
 							node.Attributes.Remove(s);
 						}
-
-						if (node.Attributes.Contains("class"))
-						{
-							var classNames = node.Attributes["class"].Value.Split(' ').Where(c => c.StartsWith("exhibit-"));
-							node.Attributes["class"].Value = string.Join(" ", classNames);
-						}
 					}
 
 					if (nodeName.Equals("iframe") || nodeName.Equals("embed") || nodeName.Equals("form") || nodeName.Equals("script")) // warn about iframes, embed, form or script in body
