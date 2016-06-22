@@ -87,11 +87,14 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 		private static string ProcessArticleTokens(string text)
 		{
-			//Find all matches with Company token
+			//Find all matches with Article token
 			Regex regex = new Regex(DCDConstants.ArticleTokenRegex);
 
 			MatchEvaluator evaluator = new MatchEvaluator(ArticleMatchEval);
-			return regex.Replace(text, evaluator);
+			var replacedText = regex.Replace(text, evaluator);
+
+			Regex legacyRegex = new Regex(DCDConstants.LegacyArticleTokenRegex);
+			return legacyRegex.Replace(replacedText, evaluator);
 		}
 
 		private static string CompanyMatchEval(Match match)
