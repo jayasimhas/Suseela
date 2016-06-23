@@ -70,7 +70,7 @@ namespace Informa.Web.ViewModels
 				ListableTitle = HttpUtility.HtmlDecode(article.Title),
 				ListablePublication = publication.Publication_Name,
 				ListableTopics = ArticleService.GetLinkableTaxonomies(article),
-				ListableType = ArticleService.GetMediaTypeName(article),
+				ListableType = ArticleService.GetMediaTypeIconData(article).MediaType,
 				ListableUrl = new Link { Url = article._Url, Text = article.Title },
 				LinkableText = article.Content_Type?.Item_Name,
 				LinkableUrl = article._Url,

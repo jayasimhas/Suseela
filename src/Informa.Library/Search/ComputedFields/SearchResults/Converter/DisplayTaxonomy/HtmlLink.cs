@@ -1,4 +1,4 @@
-﻿namespace Informa.Library.Search.ComputedFields.SearchResults.Converter
+﻿namespace Informa.Library.Search.ComputedFields.SearchResults.Converter.DisplayTaxonomy
 {
     public class HtmlLink
     {

@@ -15,7 +15,7 @@ import RegisterController from './controllers/register-controller';
 import SortableTableController from './controllers/sortable-table-controller';
 import LightboxModalController from './controllers/lightbox-modal-controller';
 import { analyticsEvent } from './controllers/analytics-controller';
-
+import tooltipController from './controllers/tooltip-controller';
 
 // COMPONENTS
 import './components/article-sidebar-component';
@@ -865,6 +865,32 @@ $(document).ready(function() {
     $('.js-account-email-checkbox').on('click', function(e) {
         $('.js-update-email-prefs').attr('disabled', null);
     });
+
+
+	// var tooltipIsVisible = false;
+	$('.js-toggle-tooltip').each(function(index, item) {
+		var tooltip;
+		$(item).on('mouseenter touchstart', function(e) {
+			e.preventDefault();
+			// console.log(tooltipIsVisible);
+			// if(!tooltipIsVisible) {
+				const offsets = $(item).offset();
+				tooltip = tooltipController({
+					isHidden: false,
+					html: $(item).data('tooltip-text'),
+					top: offsets.top,
+					left: offsets.left + $(this).width()/2,
+					triangle: 'bottom'
+				});
+				// tooltipIsVisible = true;
+			// }
+		});
+		$(item).on('mouseleave', function() {
+			tooltip.hidePopup();
+			// tooltipIsVisible = false;
+		});
+	});
+
 
     // Twitter sharing JS
     window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],

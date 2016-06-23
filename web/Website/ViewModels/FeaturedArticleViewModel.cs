@@ -11,6 +11,7 @@ using Informa.Library.Utilities.StringUtils;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
+using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Library.Page;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
@@ -19,65 +20,61 @@ namespace Informa.Web.ViewModels
 {
 	public class FeaturedArticleViewModel : GlassViewModel<IArticle>, IArticleBookmarker
 	{
-		protected readonly IRenderingParametersContext RenderingParametersContext;
-		protected readonly IArticleService ArticleService;
-	    protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-	    protected readonly IIsSavedDocumentContext IsSavedDocumentContext;
-	    protected readonly ITextTranslator TextTranslator;
-		protected readonly IPageItemContext PageItemContext;
+	    private readonly IDependencies _dependencies;
 
-		public FeaturedArticleViewModel(
-			IArticle model,
-			IRenderingParametersContext renderingParametersContext,
-			IArticleService articleService,
-			IBylineMaker bylineMaker,
-            IAuthenticatedUserContext authenticatedUserContext,
-            IIsSavedDocumentContext isSavedDocumentContext,
-            ITextTranslator textTranslator,
-			IPageItemContext pageItemContext)
+	    [AutowireService(true)]
+	    public interface IDependencies
+	    {
+            IRenderingParametersContext RenderingParametersContext { get; }
+            IArticleService ArticleService { get; }
+            IAuthenticatedUserContext AuthenticatedUserContext { get; }
+            IIsSavedDocumentContext IsSavedDocumentContext { get; }
+            ITextTranslator TextTranslator { get; }
+            IBylineMaker BylineMaker { get; }
+            IPageItemContext PageItemContext { get; }
+	    }
+
+		public FeaturedArticleViewModel(IDependencies dependencies)
 		{
-			RenderingParametersContext = renderingParametersContext;
-			ArticleService = articleService;
-		    AuthenticatedUserContext = authenticatedUserContext;
-		    IsSavedDocumentContext = isSavedDocumentContext;
-		    TextTranslator = textTranslator;
-			PageItemContext = pageItemContext;
+		    _dependencies = dependencies;
 
-            ArticleByLine = bylineMaker.MakeByline(model.Authors);
-		    IsUserAuthenticated = AuthenticatedUserContext.IsAuthenticated;
-		    IsArticleBookmarked = IsSavedDocumentContext.IsSaved(model._Id);
-		    BookmarkText = TextTranslator.Translate("Bookmark");
-            BookmarkedText = TextTranslator.Translate("Bookmarked");
-        }
+		    BookmarkText = _dependencies.TextTranslator.Translate("Bookmark");
+            BookmarkedText = _dependencies.TextTranslator.Translate("Bookmarked");
+		    IsUserAuthenticated = _dependencies.AuthenticatedUserContext.IsAuthenticated;
+		}
 
 		public string Title => GlassModel.Title;
 		private string _summary;
-		public string Summary => _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
+		public string Summary => _summary ?? (_summary = _dependencies.ArticleService.GetArticleSummary(GlassModel));
 		public string Url => GlassModel._Url;
-		public IEnumerable<ILinkable> ListableTopics => ArticleService.GetLinkableTaxonomies(GlassModel).Take(3);
+		public IEnumerable<ILinkable> ListableTopics => _dependencies.ArticleService.GetLinkableTaxonomies(GlassModel).Take(3);
 		public bool DisplayImage => Options.Show_Image && !string.IsNullOrEmpty(Image?.ImageUrl);
-		public IFeatured_Article_Options Options => RenderingParametersContext.GetParameters<IFeatured_Article_Options>();
-		public string ArticleByLine { get; set; }
+		public IFeatured_Article_Options Options => _dependencies.RenderingParametersContext.GetParameters<IFeatured_Article_Options>();
+
+	    private string _articleByLine;
+	    public string ArticleByLine
+	        => _articleByLine ?? (_articleByLine = _dependencies.BylineMaker.MakeByline(GlassModel.Authors));
+
 		private DateTime? _date;
-		public DateTime Date
-		{
-			get
-			{
-				if (!_date.HasValue)
-				{
-					_date = GlassModel.GetDate();
-				}
-				return _date.Value;
-			}
-		}
-		public string Content_Type => GlassModel.Content_Type?.Item_Name;
-		public string Media_Type => ArticleService.GetMediaTypeName(GlassModel);
+	    public DateTime Date => _date ?? (_date = GlassModel.GetDate()).Value;
+		
+		public string ContentType => GlassModel.Content_Type?.Item_Name;
+		public string MediaType => _dependencies.ArticleService.GetMediaTypeIconData(GlassModel)?.MediaType;
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
-        public bool IsUserAuthenticated { get; set; }
-        public bool IsArticleBookmarked { get; set; }
-        public string BookmarkText { get; set; }
+	    public bool IsUserAuthenticated { get; set; }
+	    public string BookmarkText { get; set; }
         public string BookmarkedText { get; set; }
-		public Guid ID => GlassModel._Id;
-		public string PageTitle => PageItemContext.Get<I___BasePage>()?.Title;
+	    private bool? _isArticleBookmarked;
+        public bool IsArticleBookmarked {
+            get
+            {
+                return _isArticleBookmarked ??
+                       (_isArticleBookmarked = _dependencies.IsSavedDocumentContext.IsSaved(GlassModel._Id)).Value;
+            }
+            set { _isArticleBookmarked = value; } }
+
+
+        public Guid ID => GlassModel._Id;
+		public string PageTitle => _dependencies.PageItemContext.Get<I___BasePage>()?.Title;
 	}
 }

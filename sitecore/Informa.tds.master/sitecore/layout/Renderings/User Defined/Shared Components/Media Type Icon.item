@@ -1,32 +1,25 @@
 ----item----
 version: 1
-id: {AC58F381-3D7F-4D90-966D-41813DC66E87}
+id: {EBEB54C0-7008-4E3B-994D-CE9737A56745}
 database: master
-path: /sitecore/templates/User Defined/Objects/Taxonomy Item/Taxonomy Section/Item Name
-parent: {C40BF3E6-92DC-4817-A4AD-498C030A6380}
-name: Item Name
+path: /sitecore/layout/Renderings/User Defined/Shared Components/Media Type Icon
+parent: {C89B6A9F-E766-4320-BCB2-A9ECD153E4E6}
+name: Media Type Icon
 master: {00000000-0000-0000-0000-000000000000}
-template: {455A3E98-A627-4B40-8035-E683A0331AC7}
-templatekey: Template field
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
 
 ----field----
-field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
-name: Type
-key: type
-content-length: 16
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 45
 
-Single-Line Text
-----field----
-field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
-name: __Sortorder
-key: __sortorder
-content-length: 3
-
-100
+/Views/Shared/Components/MediaTypeIcon.cshtml
 ----version----
 language: en
 version: 1
-revision: 72f933f6-7679-4487-9b33-66e00dfacaaf
+revision: 67747c93-eebd-45b9-9b9f-4bd38e5bad7d
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +27,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20151224T192153Z
+20160614T152539Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-72f933f6-7679-4487-9b33-66e00dfacaaf
+67747c93-eebd-45b9-9b9f-4bd38e5bad7d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160623T210111Z
+20160614T181017Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

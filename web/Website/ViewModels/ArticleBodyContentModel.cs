@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
+using Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon;
 using Informa.Library.Services.Article;
 using Informa.Library.User.Entitlement;
 using Informa.Models.FactoryInterface;
@@ -62,8 +63,8 @@ namespace Informa.Web.ViewModels
 		}
 		public string Category => GlassModel.Article_Category;
 		public string Body => _lazyBody.Value;
-		public string Content_Type => GlassModel.Content_Type?.Item_Name;
-		public string Media_Type => ArticleService.GetMediaTypeName(GlassModel);
+		public string ContentType => GlassModel.Content_Type?.Item_Name;
+		public MediaTypeIconData MediaTypeIconData => ArticleService.GetMediaTypeIconData(GlassModel);
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
 	}

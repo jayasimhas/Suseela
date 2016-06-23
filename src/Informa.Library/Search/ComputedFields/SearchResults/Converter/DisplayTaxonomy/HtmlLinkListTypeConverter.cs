@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Web.Script.Serialization;
 
-namespace Informa.Library.Search.ComputedFields.SearchResults.Converter
+namespace Informa.Library.Search.ComputedFields.SearchResults.Converter.DisplayTaxonomy
 {
 	public class HtmlLinkListTypeConverter : TypeConverter
 	{

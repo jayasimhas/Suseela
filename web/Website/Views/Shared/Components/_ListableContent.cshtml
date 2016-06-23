@@ -1,4 +1,5 @@
-﻿@model Informa.Web.ViewModels.IListableViewModel
+﻿@using Informa.Library.Utilities.References
+@model Informa.Web.ViewModels.IListableViewModel
 
 @if (Model.DisplayImage && !string.IsNullOrEmpty(Model.ListableImage))
 {
@@ -47,9 +48,7 @@
         @if (!string.IsNullOrEmpty(Model.ListableType))
         {
             <li>
-                <svg class="article-metadata__media-type">
-                    <use xlink:href="/dist/img/svg-sprite.svg#@Model.ListableType"></use>
-                </svg>
+                @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model.ID })
             </li>
         }
     </ul>
