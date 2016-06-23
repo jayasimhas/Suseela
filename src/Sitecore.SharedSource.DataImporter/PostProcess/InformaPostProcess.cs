@@ -97,10 +97,16 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 			string body = a[bodyFieldName];
 			string summary = a[summaryFieldName];
 
-			string pattern1 = @"\[A#(\d*)\]";
+			string pattern1 = @"\(<a[^>]*?>[A#(\d*)\]</a>)";
+			string pattern2 = @"\<a[^>]*?>[A#(\d*)\]</a>";
+			string pattern3 = @"\[A#(\d*)\]";
 
 			body = ReplacePattern(pattern1, body);
+			body = ReplacePattern(pattern2, body);
+			body = ReplacePattern(pattern3, body);
 			summary = ReplacePattern(pattern1, summary);
+			summary = ReplacePattern(pattern2, summary);
+			summary = ReplacePattern(pattern3, summary);
 
 			using (new SecurityDisabler())
 			{
@@ -119,7 +125,7 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 			{
 				var newArticleNumber = GetNewArticleNumber(match);
 				if (!string.IsNullOrEmpty(newArticleNumber))
-					text = text.Replace(match.Value, $"[A#{newArticleNumber}]");
+					text = text.Replace(match.Value, $"(<a>[A#{newArticleNumber}]</a>)");
 			}
 			return text;
 		}
