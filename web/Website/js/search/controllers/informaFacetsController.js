@@ -191,7 +191,7 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 
         var hash = {};
         var urlQuery = "&";
-        var h = routeBuilder.getRoute().split("&");
+        var h = decodeURIComponent(routeBuilder.getRoute()).split("&");
         for (var idx in h) {
             if (h[idx] != "") {
                 var currentParameter = h[idx].split("=");
