@@ -7,6 +7,7 @@
 
 		<div class="main__content">
 			{% include "organisms-action-flags-bar" with {"hidePrint" : true, "hideBookmark" : true} %}
+<<<<<<< HEAD
 			<div class="l-left-rail">
 				{% include "organisms-profile-header" %}
 			</div>
@@ -16,6 +17,12 @@
 			</div>
 			{% include "organisms-recent-news" with {"buttonText" : "See All", "listArticleType" : "News"} %}
 			{% include "molecules-ad-leaderboard" %}
+=======
+			{% include "organisms-profile-header" %}
+			{% include "molecules-set-alert" %}
+			{% include "molecules-barred-divider" %}
+			{% include "molecules-button-full-diminished" with {"buttonText" : "See All"} %}
+>>>>>>> meet-the-team
 		</div>
 	</div>
 </main>

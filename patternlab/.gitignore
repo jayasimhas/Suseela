@@ -1,2 +1,6 @@
 .DS_Store
+<<<<<<< HEAD
 public/*
+=======
+public/patterns/*
+>>>>>>> meet-the-team
