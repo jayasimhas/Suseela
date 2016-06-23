@@ -173,8 +173,7 @@ case, instance, example
 catch, grab
 #cell, jail cell, prison cell
 cellular telephone, cellphone, cell
-center, centre, middle, heart, eye
-center, centre, midpoint
+center, centre, middle, midpoint, eye
 central, exchange
 certain, sure
 championship, title
