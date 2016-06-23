@@ -15,16 +15,17 @@
 @import 'vendor/normalize';
 
 
-/* * * * HELPERS * * * */
-@import 'helpers/layout-helpers';
-
-
 /* * * * BASE * * * */
 @import 'base/colors'; // first!
 @import 'base/base';
 @import 'base/fonts';
 @import 'base/helpers';
 @import 'base/typography';
+
+
+/* * * * HELPERS * * * */
+@import 'helpers/layout-helpers';
+
 
 
 /* * * * COMPONENTS — GLOBAL * * * */
