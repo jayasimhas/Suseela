@@ -78,14 +78,13 @@ namespace Informa.Library.Services.Article {
 
         public MediaTypeIconData GetMediaTypeIconData(IArticle article)
         {
-            var mediaType = article.Media_Type?.Item_Name == "Data"
-                ? "chart"
-                : article.Media_Type?.Item_Name?.ToLower() ?? string.Empty;
+            if(article?.Media_Type == null) { return null; }
 
-            var key = article.Media_Type?.Tooltip_Text?.Key;
-            var tooltipText = key.HasContent()
-                ? TextTranslator.Translate(article.Media_Type.Tooltip_Text.Key)
-                : string.Empty;
+            var mediaType = article.Media_Type.Item_Name == "Data"
+                ? "chart"
+                : article.Media_Type.Item_Name?.ToLower() ?? string.Empty;
+
+            var tooltipText = article.Media_Type.Tooltip;
 
             return new MediaTypeIconData() {MediaType = mediaType, Tooltip = tooltipText};
         }

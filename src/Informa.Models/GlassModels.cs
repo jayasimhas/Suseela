@@ -6994,14 +6994,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					[SitecoreField(ITaxonomy_ItemConstants.Media_Type_IconFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Image Media_Type_Icon  {get; set;}
 								/// <summary>
-					/// The Tooltip Text field.
+					/// The Tooltip field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: e1b065cf-c9fb-4e91-8aff-617082c9ce19</para>
-					/// <para>Custom Data: type=IDictionary_Entry__Raw</para>
+					/// <para>Field ID: 58aeb695-872c-4038-b602-2fb8a6f17d5c</para>
+					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(ITaxonomy_ItemConstants.Tooltip_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IDictionary_Entry__Raw Tooltip_Text  {get; set;}
+					[SitecoreField(ITaxonomy_ItemConstants.TooltipFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Tooltip  {get; set;}
 				}
 
 	
@@ -7033,14 +7033,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 						[SitecoreField(ITaxonomy_ItemConstants.Media_Type_IconFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Image Media_Type_Icon  {get; set;}
 										/// <summary>
-						/// The Tooltip Text field.
+						/// The Tooltip field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: e1b065cf-c9fb-4e91-8aff-617082c9ce19</para>
-						/// <para>Custom Data: type=IDictionary_Entry__Raw</para>
+						/// <para>Field ID: 58aeb695-872c-4038-b602-2fb8a6f17d5c</para>
+						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(ITaxonomy_ItemConstants.Tooltip_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IDictionary_Entry__Raw Tooltip_Text  {get; set;}
+						[SitecoreField(ITaxonomy_ItemConstants.TooltipFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Tooltip  {get; set;}
 						}
 	
 	public static partial class ITaxonomy_ItemConstants{
@@ -7060,8 +7060,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 
 						
 					
-			public static readonly ID Tooltip_TextFieldId = new ID("e1b065cf-c9fb-4e91-8aff-617082c9ce19");
-			public const string Tooltip_TextFieldName = "Tooltip Text";
+			public static readonly ID TooltipFieldId = new ID("58aeb695-872c-4038-b602-2fb8a6f17d5c");
+			public const string TooltipFieldName = "Tooltip";
 
 						
 					

@@ -50,12 +50,12 @@ namespace Informa.Web.ViewModels
 				? parameters.Publications.Select(p => p.Publication_Name)
 				: new[] {rootContext.Item.Publication_Name};
 			News = GetLatestNews(datasource._Id, parameters.Subjects.Select(s => s._Id), publicationNames, itemsToDisplay);
-			SeeAllLink = parameters.Show_See_All ? new Link
-			{
-				Text = textTranslator.Translate("Article.LatestFrom.SeeAllLink"),
-				Url = SearchTaxonomyUtil.GetSearchUrl(parameters.Subjects.ToArray())
-			} : null;
-		}
+            SeeAllLink = parameters.Show_See_All ? new Link
+            {
+                Text = textTranslator.Translate("Article.LatestFrom.SeeAllLink"),
+                Url = SearchTaxonomyUtil.GetSearchUrl(parameters.Subjects.ToArray())
+            } : null;
+        }
 
 		public IList<string> Topics { get; set; }
 		public IEnumerable<IListableViewModel> News { get; set; }

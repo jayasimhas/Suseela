@@ -59,7 +59,7 @@ namespace Informa.Web.ViewModels
 	    public DateTime Date => _date ?? (_date = GlassModel.GetDate()).Value;
 		
 		public string ContentType => GlassModel.Content_Type?.Item_Name;
-		public string MediaType => _dependencies.ArticleService.GetMediaTypeIconData(GlassModel).MediaType;
+		public string MediaType => _dependencies.ArticleService.GetMediaTypeIconData(GlassModel)?.MediaType;
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 	    public bool IsUserAuthenticated { get; set; }
 	    public string BookmarkText { get; set; }
