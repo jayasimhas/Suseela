@@ -22,9 +22,18 @@
 	}
 
 	&__links {
+
+		svg {
+			display: inline-block;
+			fill: $color-dusty-gray;
+			margin-right: 5px;
+			overflow: visible;
+			vertical-align: middle;
+		}
+
 		li {
 			font-size: 15px;
-			line-height: normal;
+			line-height: 18px;
 			margin: 0 0 18px 0;
 		}
 	}
@@ -69,7 +78,7 @@
 
 	p {
 		@include breakpoint('medium') {
-			line-height: 1.75rem; 
+			line-height: 1.75rem;
 		}
 	}
 }
