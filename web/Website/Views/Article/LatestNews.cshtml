@@ -3,7 +3,7 @@
 @if (Model.DisplayTitle && Model.Topics.Any())
 {
 	<h4 class="latest-news__header">
-		<span>@Html.Raw(Model.TitleText)</span>
+		<span>@Html.Raw(Model.TitleTextPrefix) @Html.Raw(Model.TitleText)</span>
 	</h4>
 }
 

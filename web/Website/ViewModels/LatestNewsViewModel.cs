@@ -44,6 +44,7 @@ namespace Informa.Web.ViewModels
 			if (DisplayTitle)
 			{
 				Topics = subjects.Select(s => s.Item_Name).ToArray();
+				TitleTextPrefix = textTranslator.Translate("Article.LatestFrom");
 				TitleText = GetTitleText();
 			}
 			int itemsToDisplay = parameters?.Number_To_Display?.Value ?? 6;
@@ -61,6 +62,7 @@ namespace Informa.Web.ViewModels
 
 		public IList<string> Topics { get; set; }
 		public IEnumerable<IListableViewModel> News { get; set; }
+		public string TitleTextPrefix { get; set; }
 		public string TitleText { get; set; }
 		public bool DisplayTitle { get; set; }
 		public Link SeeAllLink { get; set; }
@@ -69,9 +71,7 @@ namespace Informa.Web.ViewModels
 		{
 			var take = Topics.Count - 1;
 			StringBuilder sb = new StringBuilder();
-			sb.AppendFormat("{0} {1}",
-					TextTranslator.Translate("Article.LatestFrom"),
-					string.Join(", ", Topics.Take(take > 0 ? take : 1)));
+			sb.Append(string.Join(", ", Topics.Take(take > 0 ? take : 1)));
 			if (take > 0)
 				sb.AppendFormat(" &amp; {0}", Topics.Last());
 
