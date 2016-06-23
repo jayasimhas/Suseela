@@ -12,6 +12,7 @@ using Informa.Library.ContentCuration;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
 
 namespace Informa.Web.ViewModels
@@ -21,8 +22,8 @@ namespace Informa.Web.ViewModels
 		protected readonly IArticleSearch ArticleSearch;
 		protected readonly IItemManuallyCuratedContent ItemManuallyCuratedContent;
 		protected readonly IArticleListItemModelFactory ArticleListableFactory;
-	    protected readonly ITextTranslator TextTranslator;
-		
+		protected readonly ITextTranslator TextTranslator;
+
 		public LatestNewsViewModel(IGlassBase datasource,
 			IRenderingContextService renderingParametersService,
 			IArticleSearch articleSearch,
@@ -34,26 +35,27 @@ namespace Informa.Web.ViewModels
 			ArticleSearch = articleSearch;
 			ItemManuallyCuratedContent = itemManuallyCuratedContent;
 			ArticleListableFactory = articleListableFactory;
-		    TextTranslator = textTranslator;
+			TextTranslator = textTranslator;
 
 
 			var parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_News_Options>();
-			DisplayTitle = parameters.Display_Title;
+			var subjects = parameters?.Subjects ?? Enumerable.Empty<ITaxonomy_Item>();
+			DisplayTitle = parameters?.Display_Title ?? false;
 			if (DisplayTitle)
 			{
-			    Topics = parameters.Subjects.Select(s => s.Item_Name).ToArray();
-                TitleText = GetTitleText();
-            }
-            int itemsToDisplay = parameters.Number_To_Display?.Value ?? 6;
+				Topics = subjects.Select(s => s.Item_Name).ToArray();
+				TitleText = GetTitleText();
+			}
+			int itemsToDisplay = parameters?.Number_To_Display?.Value ?? 6;
 
-			var publicationNames = parameters.Publications.Any()
+			var publicationNames = parameters != null && parameters.Publications.Any()
 				? parameters.Publications.Select(p => p.Publication_Name)
-				: new[] {rootContext.Item.Publication_Name};
-			News = GetLatestNews(datasource._Id, parameters.Subjects.Select(s => s._Id), publicationNames, itemsToDisplay);
-			SeeAllLink = parameters.Show_See_All ? new Link
+				: new[] { rootContext.Item.Publication_Name };
+			News = GetLatestNews(datasource._Id, subjects.Select(s => s._Id), publicationNames, itemsToDisplay);
+			SeeAllLink = parameters != null && parameters.Show_See_All ? new Link
 			{
 				Text = textTranslator.Translate("Article.LatestFrom.SeeAllLink"),
-				Url = SearchTaxonomyUtil.GetSearchUrl(parameters.Subjects.ToArray())
+				Url = SearchTaxonomyUtil.GetSearchUrl(subjects.ToArray())
 			} : null;
 		}
 
@@ -63,18 +65,18 @@ namespace Informa.Web.ViewModels
 		public bool DisplayTitle { get; set; }
 		public Link SeeAllLink { get; set; }
 
-	    private string GetTitleText()
-	    {
-            var take = Topics.Count - 1;
-            StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("{0} {1}", 
-                TextTranslator.Translate("Article.LatestFrom"), 
-                string.Join(", ", Topics.Take(take > 0 ? take : 1)));
-	        if (take > 0) 
-                sb.AppendFormat(" &amp; {0}", Topics.Last());
-           
-            return sb.ToString();
-        }
+		private string GetTitleText()
+		{
+			var take = Topics.Count - 1;
+			StringBuilder sb = new StringBuilder();
+			sb.AppendFormat("{0} {1}",
+					TextTranslator.Translate("Article.LatestFrom"),
+					string.Join(", ", Topics.Take(take > 0 ? take : 1)));
+			if (take > 0)
+				sb.AppendFormat(" &amp; {0}", Topics.Last());
+
+			return sb.ToString();
+		}
 		private IEnumerable<IListableViewModel> GetLatestNews(Guid datasourceId, IEnumerable<Guid> subjectIds, IEnumerable<string> publicationNames,
 			int itemsToDisplay)
 		{
