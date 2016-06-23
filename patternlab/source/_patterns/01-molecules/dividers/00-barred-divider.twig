@@ -1,9 +1,8 @@
-{# aka: latest-news__header #}
-{% if latestLabelText == false %}
-	{% set latestLabelText = "This Page's Topic" %}
-{% elseif latestLabelText == "random" %}
-	{% set latestLabelText = random(randomTitles).text %}
+{% if dividerText == false %}
+	{% set dividerText = "Divider Text" %}
+{% elseif dividerText == "random" %}
+	{% set dividerText = random(randomTitles).text %}
 {% endif %}
-<h4 class="latest-news__header">
-	<span>Latest From {{latestLabelText}}</span>
-</h4>
+<div class="divider divider--barred">
+	<span class="divider__text">{{dividerText}}</span>
+</div>

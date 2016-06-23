@@ -1,15 +1,8 @@
-
 <div class="bar-separated-link-list {{classes}}">
 	{% if labelText %}
 		<span class="bar-separated-link-list__label">{{labelText}}: </span>
 	{% endif %}
-	{% if items %}
-		{% for item in items %}
-			<a href="{{item.linkUrl}}">{{item.linkText}}</a>
-		{% endfor %}
-	{% else %}
-		<a href="#">Person</a>
-		<a href="#">Place</a>
-		<a href="#">Thing</a>
-	{% endif %}
+	<a href="#">Person</a>
+	<a href="#">Place</a>
+	<a href="#">Thing</a>
 </div>

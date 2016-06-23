@@ -1,0 +1,19 @@
+&lt;form class=&quot;form-toggle-saved-search-alert onoffswitch&quot;
+	  data-on-submit=&quot;/api/SavedSearches&quot;
+	  data-submit-type=&quot;POST&quot;
+	  data-prevent-disabling=&quot;true&quot;
+	  data-analytics-title=&quot;@item.Title&quot;&gt;
+
+	&lt;input name=&quot;Title&quot; id=&quot;Title&quot; type=&quot;hidden&quot; value=&quot;title&quot;&gt;
+	&lt;input name=&quot;Url&quot; id=&quot;Url&quot; type=&quot;hidden&quot; value=&quot;#&quot;&gt;
+	&lt;input type=&quot;checkbox&quot;
+		   class=&quot;onoffswitch-checkbox js-saved-search-alert-toggle&quot;
+		   id=&quot;id&quot;
+		   name=&quot;name&quot;
+		   checked=&quot;checked&quot; value=&quot;on&quot;&gt;
+	&lt;label class=&quot;onoffswitch-label form-submit&quot; for=&quot;id&quot;&gt;
+		&lt;span class=&quot;onoffswitch-inner&quot;&gt;&lt;/span&gt;
+		&lt;span class=&quot;onoffswitch-switch&quot;&gt;&lt;/span&gt;
+	&lt;/label&gt;
+	&lt;button type=&quot;submit&quot; class=&quot;onoffswitch__submit&quot;&gt;&lt;/button&gt;
+&lt;/form&gt;

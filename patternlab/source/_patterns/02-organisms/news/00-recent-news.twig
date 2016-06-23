@@ -1,3 +1,6 @@
+{% if latestLabelText == false %}
+	{% set latestLabelText = "This Page's Topic" %}
+{% endif %}
 {% if max == false %}
 	{% set max = 9 %}
 {% endif %}
@@ -7,11 +10,12 @@
 			<h1 class="topic-subtopic__title">{{topicSubtopicHeaderText}} <a href='#' >Explore this Topic</a></h1>
 		</div>
 	{% endif %}
-	{% include "molecules-barred-divider" %}
+	<h4 class="latest-news__header">
+		<span>Latest From {{latestLabelText}}</span>
+	</h4>
 	<div class="latest-news__articles">
 		{% for i in 1..max %}
 			{% include "organisms-article-preview--small" %}
 		{% endfor %}
-		{% include "molecules-button-full-diminished" %}
 	</div>
 </div>

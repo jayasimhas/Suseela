@@ -1,11 +1,11 @@
 .profile {
-
-
 	&__header {
 		color: $color-zeus-black;
 	}
 
-	/* Speficificity issues since we're stealing the columns from article */
+	/* Speficificity issues since we're stealing the columns from article.
+	 * TODO: refactor while I have time?
+	 */
 	&__header &__expertise,
 	&__header &__links {
 
