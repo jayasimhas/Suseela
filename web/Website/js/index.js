@@ -853,6 +853,10 @@ $(document).ready(function() {
         analyticsEvent( $.extend(analytics_data, $(this).data('info')) );
     });
 
+    $('.search-results').on('click', '.click-utag', function (e) {
+        analyticsEvent( $.extend(analytics_data, $(this).data('info')) );
+    });
+
     $('#chkASBilling').click(function(e){
         if($(this).is(':checked'))
         {
