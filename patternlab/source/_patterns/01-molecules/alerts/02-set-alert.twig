@@ -5,7 +5,7 @@
 	<form class="form-remove-topic-alert">
 		<input name="Url" class="js-save-search-url" id="Url" type="hidden" value="">
 		<button type="submit" class="lightbox-modal__hidden-submit"></button>
-		<span class="action-flag pop-out__trigger js-pop-out-trigger js-update-topic-alert">
+		<span class="action-flag pop-out__trigger js-pop-out-trigger js-update-topic-alert{% if actionFlagColor %} action-flag--{{actionFlagColor}}{% endif %}">
 			<svg class="action-flag__icon js-topic-icon-unset topic-subtopic__alert-icon is-active">
 				<use xlink:href="/web/Website/dist/img/svg-sprite.svg#bell"></use>
 			</svg>

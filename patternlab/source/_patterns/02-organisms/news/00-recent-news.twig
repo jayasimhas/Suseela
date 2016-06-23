@@ -10,6 +10,13 @@
 			<h1 class="topic-subtopic__title">{{topicSubtopicHeaderText}} <a href='#' >Explore this Topic</a></h1>
 		</div>
 	{% endif %}
+
+
+	{% if showSetAlert %}
+		<div class="topic-subtopic__set-alert">
+			{% include "molecules-set-alert" with {"classes" : "profile__set-alert", "actionFlagColor": "red"} %}
+		</div>
+	{% endif %}
 	<h4 class="latest-news__header">
 		<span>Latest From {{latestLabelText}}</span>
 	</h4>
