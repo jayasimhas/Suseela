@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Glass.Mapper.Sc;
@@ -6,7 +7,9 @@ using Informa.Library.Services.Global;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Jabberwocky.Glass.Models;
 using Sitecore.Web;
+using Microsoft.Ajax.Utilities;
 
 namespace Informa.Web.ViewModels
 {
@@ -41,7 +44,11 @@ namespace Informa.Web.ViewModels
 
 		private IEnumerable<IListable> GetRelatedArticles(IArticle article)
 		{
-			var relatedArticles = article.Related_Articles.Concat(article.Referenced_Articles).Take(10).ToList();
+			var relatedArticles = article
+                .Related_Articles
+                .Concat(article.Referenced_Articles)
+                .DistinctBy(a => a._Id)
+                .Take(10).ToList();
 
 			if (relatedArticles.Count < 10)
 			{
