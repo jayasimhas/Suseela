@@ -6,12 +6,16 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
+using Glass.Mapper.Sc.Configuration.Fluent;
 using Informa.Library.Search.Results;
 using Informa.Models.DCD;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Linq;
 using Sitecore.ContentSearch.SearchTypes;
+using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Jobs;
 using Sitecore.SecurityModel;
@@ -20,9 +24,24 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 {
 	public class InformaPostProcess
 	{
+        public List<string> TextFields = new List<string>()
+        {
+            "Body",
+            "Summary"
+        };
 
+        public List<string> LinkPatterns = new List<string>()
+        {
+            @"\(<a[^>]*?>\[A#(\d*)\]</a>\)",
+            @"<a[^>]*?>\[A#(\d*)\]</a>",
+            @"\[A#(\d*)\]"
+        };
 
-		public InformaPostProcess()
+        public string ReferenceField = "Referenced Articles";
+
+	    public string NewLinkFormat = "(<a>[A#{0}]</a>)";
+
+        public InformaPostProcess()
 		{
 
 		}
@@ -91,46 +110,79 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 
 		public void ReplaceArticleRef(Item a)
 		{
-			string bodyFieldName = "Body";
-			string summaryFieldName = "Summary";
+            foreach (string f in TextFields)
+            {
+                string textValue = a[f];
+                string referenceValue = a[ReferenceField];
+                if (string.IsNullOrEmpty(textValue))
+                    continue;
 
-			string body = a[bodyFieldName];
-			string summary = a[summaryFieldName];
+                KeyValuePair<string, string> newValues = UpdateArticleReferences(
+                    LinkPatterns, 
+                    textValue, 
+                    string.IsNullOrEmpty(referenceValue) 
+                        ? string.Empty 
+                        : referenceValue, 
+                    GetMatchingArticle);
 
-			string pattern1 = @"\(<a[^>]*?>[A#(\d*)\]</a>)";
-			string pattern2 = @"\<a[^>]*?>[A#(\d*)\]</a>";
-			string pattern3 = @"\[A#(\d*)\]";
+                if(!string.IsNullOrEmpty(newValues.Key))
+                    EditItem(a, f, newValues.Key);
+                if (!string.IsNullOrEmpty(newValues.Value))
+                    EditItem(a, ReferenceField, newValues.Value);
+            }
+        }
 
-			body = ReplacePattern(pattern1, body);
-			body = ReplacePattern(pattern2, body);
-			body = ReplacePattern(pattern3, body);
-			summary = ReplacePattern(pattern1, summary);
-			summary = ReplacePattern(pattern2, summary);
-			summary = ReplacePattern(pattern3, summary);
-
-			using (new SecurityDisabler())
-			{
-				using (new EditContext(a))
-				{
-					a[bodyFieldName] = body;
-					a[summaryFieldName] = summary;
-				}
-			}
-		}
-
-		public string ReplacePattern(string pattern, string text)
+		public KeyValuePair<string, string> UpdateArticleReferences(
+            List<string> patterns, 
+            string textValue, 
+            string referenceValue, 
+            Func<Match, ImportSearchResultItem> findMatchingArticle)
 		{
-			Regex regex = new Regex(pattern);
-			foreach (Match match in regex.Matches(text))
-			{
-				var newArticleNumber = GetNewArticleNumber(match);
-				if (!string.IsNullOrEmpty(newArticleNumber))
-					text = text.Replace(match.Value, $"(<a>[A#{newArticleNumber}]</a>)");
-			}
-			return text;
-		}
+		    if (string.IsNullOrEmpty(textValue))
+		        return new KeyValuePair<string, string>(string.Empty, string.Empty);
 
-		public string GetNewArticleNumber(Match match)
+            string text = textValue;
+		    string references = (string.IsNullOrEmpty(referenceValue)) 
+                ? string.Empty 
+                : referenceValue;
+
+            foreach (string p in patterns) { 
+			    Regex regex = new Regex(p);
+			    foreach (Match match in regex.Matches(text))
+			    {
+                    var matchedArticle = findMatchingArticle(match);
+			        if (matchedArticle == null)
+			            continue;
+
+			        var newArticleNumber = matchedArticle.NewArticleNumber;
+			        if (string.IsNullOrEmpty(newArticleNumber))
+			            continue;
+
+					text = text.Replace(match.Value, string.Format(NewLinkFormat, newArticleNumber));
+
+                    string referenceID = matchedArticle.SitecoreID.ToString();
+                    if (references.Contains(referenceID))
+                        continue;
+
+                    references = (references.Length > 0)
+                        ? $"{references}|{referenceID}"
+                        : referenceID;
+			    }
+            }
+
+		    return new KeyValuePair<string, string>(text, references);
+		}
+        
+	    public void EditItem(Item a, string fieldName, string fieldValue)
+	    {
+            using (new SecurityDisabler()) {
+                using (new EditContext(a)) {
+                    a[fieldName] = fieldValue;
+                }
+            }
+        }
+
+		public ImportSearchResultItem GetMatchingArticle(Match match)
 		{
 			if (!match.Success || string.IsNullOrEmpty(match.Groups[1].Value)) return null;
 
@@ -142,7 +194,7 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 
 				var results = query.GetResults();
 
-				return results?.Hits?.Select(h => h?.Document?.NewArticleNumber).FirstOrDefault();
+				return results?.Hits?.Select(h => h?.Document).FirstOrDefault();
 			}
 		}
 	}
@@ -154,5 +206,7 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 
 		[IndexField(IArticleConstants.Article_NumberFieldName)]
 		public string NewArticleNumber { get; set; }
-	}
+
+        public ID SitecoreID { get; set; }
+    }
 }
