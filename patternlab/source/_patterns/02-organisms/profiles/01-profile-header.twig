@@ -1,15 +1,15 @@
 {# Defaults and Randoms #}
 {% if personName == false %}
-	{% set personName = "John Doe" %}
+	{% set personName = random(randomNames).text %}
 {% endif %}
 {% if personTitle == false %}
-	{% set personTitle = "Person Business Title" %}
+	{% set personTitle = random(randomJobs).text %}
 {% endif %}
 {% if location == false %}
-	{% set location = "Location, LO" %}
+	{% set location = random(randomLocations).text %}
 {% endif %}
 {% if email == false and not email == " " %}
-	{% set email = "email@email.com" %}
+	{% set email = random(randomEmails).text %}
 {% elseif email == " " %}
 	{% set email = false %}
 {% endif %}
@@ -30,7 +30,9 @@
 	{% set linkedinUrl = "#" %}
 {% endif %}
 {% if personPhoto == false and not personPhoto == " " %}
-	{% set personPhoto = "http://placehold.it/200x200" %}
+	{% set personPhoto = "https://unsplash.it/200/" ~ (random(300) + 100) ~ "/?random
+
+" %}
 {% endif %}
 {% if personProfile == false and not personProfile == " " %}
 	{% set personProfile = "Vestibulum ut justo metus. Quisque eu mauris turpis. Nam suscipit commodo sapien, vel porta arcu condimentum nec. Aliquam eget leo et nisl lacinia molestie. Morbi vel mi nec erat sodales imperdiet. Donec at mauris luctus, dictum metus sit amet, dignissim nisi. Vestibulum est nibh, molestie id sagittis pretium, viverra at erat. Morbi rhoncus nunc sed venenatis consequat. " %}
