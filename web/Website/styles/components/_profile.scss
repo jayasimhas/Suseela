@@ -45,6 +45,17 @@
 		width: 160px;
 	}
 
+	@include breakpoint('small') {
+		&__img {
+			display: block;
+			float: none;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 300px;
+			width: 100%;
+		}
+	}
+
 	&__img + &__links {
 		padding-top: 26px;
 	}
