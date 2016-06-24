@@ -1,0 +1,6 @@
+{
+	"alertText": "Set Alert for Articles by This Person",
+	"showSetAlert": true,
+	"max": 9,
+	"listArticleType" : "News"
+}

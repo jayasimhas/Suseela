@@ -8,6 +8,9 @@
 	"linkedin": "Donna Young",
 	"linkedinUrl": "#",
 	"personPhoto": "https://unsplash.it/200",
+	"latestLabelText": "Donna Young",
+	"alertText": "Set Alert for Articles by Donna Young",
+	"showSetAlert": true,
 	"expertise": [
 		{
 			"classes": "bar-separated-link-list--wrap",
