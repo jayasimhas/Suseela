@@ -19,7 +19,6 @@
 		{% set maxTags = (random(8) + 1) %}
 	{% endif %}
 	{% for i in 1..maxTags %}
-		{{maxTags}}
 		{% set tempListItem = {"itemURL": "#", "itemText" : random(randomTags).text} %}
 	    {% set listItems = listItems|merge([tempListItem]) %}
 	{% endfor %}
