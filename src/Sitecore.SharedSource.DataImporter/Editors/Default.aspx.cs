@@ -1,29 +1,19 @@
 ﻿using System;
-using System.Collections;
 using System.Configuration;
-using System.Data;
 using System.Linq;
 using System.Web;
-using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
-using System.Data.SqlClient;
 using Sitecore.Data.Items;
 using System.Collections.Generic;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
-using Sitecore.Shell.Web.UI;
 using Sitecore.SharedSource.DataImporter.Providers;
-using Sitecore.SharedSource.DataImporter.Extensions;
 using System.Text;
 using System.IO;
 using CsvHelper;
 using Sitecore.Web;
 using Sitecore.SharedSource.DataImporter.Logger;
-using Sitecore.SharedSource.DataImporter;
 using Sitecore.SharedSource.DataImporter.PostProcess;
 
 namespace Sitecore.SharedSource.DataImporter.Editors
@@ -170,20 +160,8 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             ImportProcessor p = new ImportProcessor(map, l);
             p.Process();
             txtMessage.Text = l.GetLog();
-
-
-            foreach (KeyValuePair<string, List<ImportRow>> kvp in l.GetLogRecords()) {
-                string logPath = string.Format(@"{0}sitecore modules\Shell\Data Import\logs\{1}.{2}.{3}.csv",
-                                    HttpRuntime.AppDomainAppPath, importItem.DisplayName.Replace(" ", "-"),
-                                    DateTime.Now.ToString("yyyy.MM.dd.H.mm.ss"),
-                                    kvp.Key);
-                var file = File.CreateText(logPath);
-                var csvFile = new CsvWriter(file);
-                csvFile.WriteHeader<ImportRow>();
-                foreach (ImportRow ir in kvp.Value)
-                    csvFile.WriteRecord(ir);
-                file.Close();
-            }
+            
+            WriteLogs(l);
         }
 
         #endregion Import
@@ -303,8 +281,11 @@ namespace Sitecore.SharedSource.DataImporter.Editors
 
         protected void HandlePostImport()
         {
-            InformaPostProcess p = new InformaPostProcess();
+            DefaultLogger l = new DefaultLogger();
+            InformaPostProcess p = new InformaPostProcess(l);
             p.UpdateArticleReferences();
+
+            WriteLogs(l);
         }
 
         #endregion Post Import
@@ -314,6 +295,22 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             get
             {
                 return Sitecore.Jobs.JobManager.GetJobs().OrderBy(job => job.QueueTime);
+            }
+        }
+
+        private void WriteLogs(DefaultLogger l)
+        {
+            foreach (KeyValuePair<string, List<ImportRow>> kvp in l.GetLogRecords()) {
+                string logPath = string.Format(@"{0}sitecore modules\Shell\Data Import\logs\{1}.{2}.{3}.csv",
+                                    HttpRuntime.AppDomainAppPath, importItem.DisplayName.Replace(" ", "-"),
+                                    DateTime.Now.ToString("yyyy.MM.dd.H.mm.ss"),
+                                    kvp.Key);
+                var file = File.CreateText(logPath);
+                var csvFile = new CsvWriter(file);
+                csvFile.WriteHeader<ImportRow>();
+                foreach (ImportRow ir in kvp.Value)
+                    csvFile.WriteRecord(ir);
+                file.Close();
             }
         }
     }

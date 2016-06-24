@@ -19,6 +19,8 @@ using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Jobs;
 using Sitecore.SecurityModel;
+using Sitecore.SharedSource.DataImporter.Logger;
+using Sitecore.SharedSource.DataImporter.Providers;
 
 namespace Sitecore.SharedSource.DataImporter.PostProcess
 {
@@ -41,10 +43,12 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 
 	    public string NewLinkFormat = "(<a>[A#{0}]</a>)";
 
-        public InformaPostProcess()
-		{
+	    protected ILogger Log;
 
-		}
+        public InformaPostProcess(ILogger l)
+        {
+            Log = l;
+        }
 
 		public void UpdateArticleReferences()
 		{
@@ -56,25 +60,26 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 			try
 			{
 				articleItems = GetAllArticles();
-			}
-			catch (Exception ex)
-			{
-				if (Sitecore.Context.Job != null)
-					Sitecore.Context.Job.Status.State = JobState.Finished;
+            } catch (Exception ex) {
+                Log.Log(string.Empty, ex.ToString(), ProcessStatus.ReferenceError, string.Empty);
 
-				return;
-			}
+                return;
+            }
 
-			int totalLines = articleItems.Count();
+            int totalLines = articleItems.Count();
 			if (Sitecore.Context.Job != null)
 				Sitecore.Context.Job.Status.Total = totalLines;
 
 			int line = 1;
 			foreach (Item a in articleItems)
 			{
-				ReplaceArticleRef(a);
+                try { 
+				    ReplaceArticleRef(a);
+                } catch (Exception ex) {
+                    Log.Log(a.Paths.FullPath, ex.ToString(), ProcessStatus.ReferenceError, string.Empty);
+                }
 
-				if (Sitecore.Context.Job != null)
+                if (Sitecore.Context.Job != null)
 				{
 					Sitecore.Context.Job.Status.Processed = line;
 					Sitecore.Context.Job.Status.Messages.Add(string.Format("Processed item {0} of {1}", line, totalLines));
@@ -82,7 +87,7 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 				line++;
 			}
 
-			if (Sitecore.Context.Job != null)
+            if (Sitecore.Context.Job != null)
 				Sitecore.Context.Job.Status.State = JobState.Finished;
 		}
 
@@ -160,7 +165,7 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 
 					text = text.Replace(match.Value, string.Format(NewLinkFormat, newArticleNumber));
 
-                    string referenceID = matchedArticle.SitecoreID.ToString();
+                    string referenceID = matchedArticle.ItemId.ToString();
                     if (references.Contains(referenceID))
                         continue;
 

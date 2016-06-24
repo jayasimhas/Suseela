@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Text.RegularExpressions;
+using Castle.Core.Logging;
 using NSubstitute;
 using NUnit.Framework;
 using Sitecore.Data;
@@ -17,7 +18,8 @@ namespace Informa.Tests.DataImporter
         [SetUp]
         public void SetUp()
         {
-            _classUnderTest = new InformaPostProcess();
+            Sitecore.SharedSource.DataImporter.Logger.ILogger l = Substitute.For<Sitecore.SharedSource.DataImporter.Logger.ILogger>();
+            _classUnderTest = new InformaPostProcess(l);
         }
 
         protected ImportSearchResultItem NullResult(Match match)
@@ -25,7 +27,7 @@ namespace Informa.Tests.DataImporter
             var result = new ImportSearchResultItem();
             result.NewArticleNumber = "";
             result.LegacyArticleNumber = "";
-            result.SitecoreID = new ID("");
+            result.ItemId = new ID("");
 
             return result;
         }
@@ -57,7 +59,7 @@ namespace Informa.Tests.DataImporter
                 var result = new ImportSearchResultItem();
                 result.NewArticleNumber = "SC0001";
                 result.LegacyArticleNumber = "1111";
-                result.SitecoreID = new ID("{11111111-1111-1111-1111-111111111111}");
+                result.ItemId = new ID("{11111111-1111-1111-1111-111111111111}");
 
                 return result;
             }
@@ -69,7 +71,7 @@ namespace Informa.Tests.DataImporter
                 var result = new ImportSearchResultItem();
                 result.NewArticleNumber = "SC0002";
                 result.LegacyArticleNumber = "2222";
-                result.SitecoreID = new ID("{22222222-2222-2222-2222-222222222222}");
+                result.ItemId = new ID("{22222222-2222-2222-2222-222222222222}");
 
                 return result;
             }
@@ -91,7 +93,7 @@ namespace Informa.Tests.DataImporter
 
             Assert.IsTrue(result.Key.Contains(string.Format(_classUnderTest.NewLinkFormat, Result1.NewArticleNumber)));
             Assert.IsTrue(!result.Key.Contains(Result1.LegacyArticleNumber));
-            Assert.IsTrue(result.Value.Equals(Result1.SitecoreID.ToString()));
+            Assert.IsTrue(result.Value.Equals(Result1.ItemId.ToString()));
         }
 
         [Test]
@@ -103,7 +105,7 @@ namespace Informa.Tests.DataImporter
 
             Assert.IsTrue(result.Key.Contains(string.Format(_classUnderTest.NewLinkFormat, Result1.NewArticleNumber)));
             Assert.IsTrue(!result.Key.Contains(Result1.LegacyArticleNumber));
-            Assert.IsTrue(result.Value.Equals(Result1.SitecoreID.ToString()));
+            Assert.IsTrue(result.Value.Equals(Result1.ItemId.ToString()));
         }
         
         [Test]
@@ -152,7 +154,7 @@ namespace Informa.Tests.DataImporter
             var result = new ImportSearchResultItem();
             result.NewArticleNumber = null;
             result.LegacyArticleNumber = "3333";
-            result.SitecoreID = new ID("{33333333-3333-3333-3333-333333333333}");
+            result.ItemId = new ID("{33333333-3333-3333-3333-333333333333}");
 
             return result;
         }

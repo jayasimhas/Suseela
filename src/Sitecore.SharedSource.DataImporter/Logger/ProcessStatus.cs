@@ -13,7 +13,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 		DateParseError,
 		NotFoundError,
 		ImportDefinitionError,
-		DuplicateError
+		DuplicateError,
+        ReferenceError
 	}
 
 	public class ImportRow
