@@ -10,6 +10,7 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 using Sitecore.Web;
 using Microsoft.Ajax.Utilities;
+using Velir.Core.Extensions.System.Collections.Generic;
 
 namespace Informa.Web.ViewModels
 {
@@ -55,6 +56,7 @@ namespace Informa.Web.ViewModels
 				var filter = Searcher.CreateFilter();
 				filter.ReferencedArticle = article._Id;
 				filter.PageSize = 10 - relatedArticles.Count;
+				filter.ExcludeManuallyCuratedItems.AddRange(relatedArticles.Select(a => a._Id));
 
 				var results = Searcher.Search(filter);
 				relatedArticles.AddRange(results.Articles);
