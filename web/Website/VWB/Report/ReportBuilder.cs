@@ -7,10 +7,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Elsevier.Library.Config;
 using Elsevier.Library.CustomItems.Publication.General;
-using Elsevier.Library.LuceneSearch.Indexes;
-using Elsevier.Library.LuceneSearch.Parameters;
-using Elsevier.Library.LuceneSearch.Searchers;
-using Elsevier.Library.Reference;
 using Elsevier.Web.VWB.Report.Columns;
 using Glass.Mapper.Sc;
 using Informa.Library.Rss;
@@ -19,7 +15,6 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Newtonsoft.Json;
 using Sitecore.Configuration;
 using Sitecore.Data;
-using Sitecore.Data.Items;
 using Sitecore.Web;
 using ArticleItem = Elsevier.Library.CustomItems.Publication.General.ArticleItem;
 
@@ -31,8 +26,9 @@ namespace Elsevier.Web.VWB.Report
 		static readonly ColumnFactory ColumnFactory = ColumnFactory.GetColumnFactory();
 		private PublicationItem _publication;
 		private List<ArticleItemWrapper> _results;
-		IVwbColumn articleNumberColumn;
-		IVwbColumn titleColumn;
+	    private IVwbColumn _articleCheckboxes;
+        private IVwbColumn _articleNumberColumn;
+        private IVwbColumn _titleColumn;
 		private IssueItem _iitem;
 		private readonly VwbQuery _query;
 		private readonly Page _page;
@@ -277,10 +273,10 @@ namespace Elsevier.Web.VWB.Report
 			Columns = query.ColumnKeysInOrder != null
 									? ColumnFactory.GetColumns(query.ColumnKeysInOrder).ToList()
 									: new List<IVwbColumn>();
-			articleNumberColumn = ColumnFactory.GetArticleNumberColumn();
-			titleColumn = ColumnFactory.GetTitleColumn();
-			Columns.Insert(0, titleColumn);
-			Columns.Insert(0, articleNumberColumn);
+		    _articleCheckboxes = ColumnFactory.GetArticleCheckboxes();
+			_articleNumberColumn = ColumnFactory.GetArticleNumberColumn();
+			_titleColumn = ColumnFactory.GetTitleColumn();
+            Columns.InsertRange(0, new[] {_articleCheckboxes, _articleNumberColumn, _titleColumn});
 		}
 
 		private void BuildHeaderRows(Table report)
@@ -299,13 +295,15 @@ namespace Elsevier.Web.VWB.Report
 			{
 				CssClass = "sort-move"
 			};
-			TableCell cell = GetImmutableSubHeaderCell(articleNumberColumn);
+            TableCell cell = GetImmutableSubHeaderCell(_articleCheckboxes);
+            header.Cells.Add(cell); //add cell for article checkboxes column
+            cell = GetImmutableSubHeaderCell(_articleNumberColumn);
 			header.Cells.Add(cell); //add cell for article number column
-			cell = GetImmutableSubHeaderCell(titleColumn);
+			cell = GetImmutableSubHeaderCell(_titleColumn);
 			header.Cells.Add(cell); //add cell for title column
 			foreach (var col in Columns)
 			{
-				if (articleNumberColumn == col || titleColumn == col) continue;
+				if (_articleCheckboxes == col || _articleNumberColumn == col || _titleColumn == col) continue;
 				TableCell tableCell = GetTableSubHeaderCell(col);
 				header.Cells.Add(tableCell);
 			}
@@ -342,27 +340,26 @@ namespace Elsevier.Web.VWB.Report
 
 		private void AddMoveButtons(TableCell tableCell, IVwbColumn column)
 		{
-			if (column == articleNumberColumn || column == titleColumn) return;
+			if (column == _articleCheckboxes || column == _articleNumberColumn || column == _titleColumn) return;
 
-			if (_query.ColumnKeysInOrder.Count() > 0)
-			{
-				if (column.Key() != _query.ColumnKeysInOrder.FirstOrDefault())
-				{
-					var link = new HyperLink { CssClass = "moveleft" };
-					var query = _query.Clone();
-					query.MoveColumnLeft(column.Key());
-					link.Attributes.Add("href", GetUrlForQuery(query));
-					tableCell.Controls.Add(link);
-				}
-				if (column.Key() != _query.ColumnKeysInOrder.Last())
-				{
-					var link = new HyperLink { CssClass = "moveright" };
-					var query = _query.Clone();
-					query.MoveColumnRight(column.Key());
-					link.Attributes.Add("href", GetUrlForQuery(query));
-					tableCell.Controls.Add(link);
-				}
-			}
+		    if (!_query.ColumnKeysInOrder.Any()) return;
+
+		    if (column.Key() != _query.ColumnKeysInOrder.FirstOrDefault())
+		    {
+		        var link = new HyperLink {CssClass = "moveleft"};
+		        var query = _query.Clone();
+		        query.MoveColumnLeft(column.Key());
+		        link.Attributes.Add("href", GetUrlForQuery(query));
+		        tableCell.Controls.Add(link);
+		    }
+		    if (column.Key() != _query.ColumnKeysInOrder.Last())
+		    {
+		        var link = new HyperLink {CssClass = "moveright"};
+		        var query = _query.Clone();
+		        query.MoveColumnRight(column.Key());
+		        link.Attributes.Add("href", GetUrlForQuery(query));
+		        tableCell.Controls.Add(link);
+		    }
 		}
 
 		private string GetUrlForQuery(VwbQuery query)
@@ -397,7 +394,7 @@ namespace Elsevier.Web.VWB.Report
 			{
 				Text = col.GetHeader()
 			});
-			if (col != articleNumberColumn && col != titleColumn)
+			if (col != _articleCheckboxes && col != _articleNumberColumn && col != _titleColumn)
 			{
 				var linkButton = new HyperLink { CssClass = "right space" };
 				var q = _query.Clone();

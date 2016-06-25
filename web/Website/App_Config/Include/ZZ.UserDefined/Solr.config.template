@@ -31,8 +31,10 @@
 
           <indexFieldStorageValueFormatter>
             <converters hint="raw:AddConverter">
-              <converter handlesType="Informa.Library.Search.ComputedFields.SearchResults.Converter.DisplayTaxonomy.HtmlLinkList"      typeConverter="Informa.Library.Search.ComputedFields.SearchResults.Converter.DisplayTaxonomy.HtmlLinkListTypeConverter, Informa.Library" />
-              <converter handlesType="Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon.MediaTypeIconData"      typeConverter="Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon.MediaTypeIconDataConverter, Informa.Library" />
+              <converter handlesType="Informa.Library.Search.ComputedFields.SearchResults.Converter.DisplayTaxonomy.HtmlLinkList"
+                typeConverter="Informa.Library.Search.ComputedFields.SearchResults.Converter.DisplayTaxonomy.HtmlLinkListTypeConverter, Informa.Library" />
+              <converter handlesType="Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon.MediaTypeIconData"
+                typeConverter="Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon.MediaTypeIconDataConverter, Informa.Library" />
             </converters>
           </indexFieldStorageValueFormatter>
         </defaultSolrIndexConfiguration>

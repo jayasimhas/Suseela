@@ -1,16 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Elsevier.Library.CustomItems.Publication.General;
+using Autofac;
 using Elsevier.Web.VWB.Report;
 using Elsevier.Web.VWB.Report.Columns;
+using Glass.Mapper.Sc;
+using Informa.Library.VirtualWhiteboard;
+using Informa.Library.Wrappers;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard;
+using Informa.Web.App_Start;
+using Microsoft.Practices.ServiceLocation;
 using Sitecore.Caching;
 using Sitecore.Configuration;
+using Sitecore.Data;
+using Sitecore.Mvc.Extensions;
 using Sitecore.Shell.Applications.ContentEditor;
 using Sitecore.Web;
 using Sitecore.Web.Authentication;
 using DateTime = System.DateTime;
+using Jabberwocky.Autofac.Attributes;
 
 namespace Elsevier.Web.VWB
 {
@@ -31,9 +41,12 @@ namespace Elsevier.Web.VWB
 		private ReportBuilder _reportBuilder;
 		private readonly List<Control> ReportBuilderBlacklist = new List<Control>();
 		protected string LogoUrl;
+	    private const string IssuePageUrl = "/vwb/AddIssue?id=";
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+
+
 			if (!Sitecore.Context.User.IsAuthenticated)
 			{
 				Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?returnUrl=" + Request.RawUrl);
@@ -58,13 +71,14 @@ namespace Elsevier.Web.VWB
 
 			UpdateFields();
 			BuildOptionalColumnDropdown();
-
+		    BuildExistingIssuesList();
 
 		}
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
 			ReportBuilderBlacklist.Add(btnReset);
+			ReportBuilderBlacklist.Add(btnAddArticleToExistingIssue);
 
 			_vwbQuery = new VwbQuery(Request);
 			if (!IsPostBack
@@ -243,7 +257,7 @@ namespace Elsevier.Web.VWB
 			}
 		}
 
-		protected string GetCurrentPageUrl()
+        protected string GetCurrentPageUrl()
 		{
 			bool httpsOn = Request.ServerVariables["HTTPS"].Equals("ON");
 			string http = httpsOn ? "https://" : "http://";
@@ -285,5 +299,65 @@ namespace Elsevier.Web.VWB
 
 			Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?redirect=" + Request.RawUrl);
 		}
+
+        #region issue management
+
+        protected void NewIssueSubmitButton_OnClick(object sender, EventArgs e)
+        {
+            var model = new Informa.Library.VirtualWhiteboard.Models.IssueModel
+            {
+                Title = IssueTitleInput.Value,
+                PublishedDate = DateTime.Parse(IssuePublishedDateInput.Value),
+                ArticleIds = IssueArticleIdsInput.Value.Split('|').Select(Guid.Parse)
+            };
+
+            using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
+            {
+                var issueBuilder = scope.Resolve<IIssuesService>();
+                var result = issueBuilder.CreateIssueFromModel(model);
+
+                if (result.IsSuccess)
+                {
+                    Response.Redirect(IssuePageUrl + result.IssueId);
+                }
+            }
+        }
+
+        protected void BuildExistingIssuesList()
+        {
+            ExistingIssuesDdl.CssClass = "js-existing-issue";
+            ExistingIssuesDdl.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
+
+	        using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
+	        {
+		        var issuesService = scope.Resolve<IIssuesService>();
+		        var issues = issuesService.GetActiveIssues();
+		        issues.Each(i => ExistingIssuesDdl.Items.Add(new ListItem(i._Name, i._Id.ToString())));
+	        }
+        }
+
+        #endregion
+
+	    protected void btnAddArticleToExistingIssue_OnClick(object sender, EventArgs e)
+	    {
+		    Guid issueId;
+		    if (Guid.TryParse(ExistingIssuesDdl.SelectedItem.Value, out issueId))
+		    {
+			    using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
+			    {
+				    var sitecoreService = scope.Resolve<ISitecoreServiceMaster>();
+				    var issuesService = scope.Resolve<IIssuesService>();
+				    var issue = sitecoreService.GetItem<IIssue>(issueId);
+				    if (issue != null)
+				    {
+					    var articleIds = IssueArticleIdsInput.Value.Split('|');
+					    var articlesToAdd = articleIds.Where(i => !issuesService.DoesIssueContains(issueId, i)).Select(i => new Guid(i));
+						issuesService.AddArticlesToIssue(issueId, articlesToAdd);
+						Response.Redirect(IssuePageUrl + issueId);
+				    }
+				}
+			}
+			Response.Redirect(Request.Url.PathAndQuery);
+	    }
 	}
 }
