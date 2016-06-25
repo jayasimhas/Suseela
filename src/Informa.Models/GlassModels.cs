@@ -6487,6 +6487,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_
 
 						
 					
+			public static readonly ID Articles_OrderFieldId = new ID("182780c9-c0b4-4e7e-b18c-186e8a5fedc1");
+			public const string Articles_OrderFieldName = "Articles Order";
+
+						
+					
 			public static readonly ID NotesFieldId = new ID("1a83fd14-2fa1-47ec-85a6-a424cab26258");
 			public const string NotesFieldName = "Notes";
 

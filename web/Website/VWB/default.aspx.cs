@@ -1,30 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Elsevier.Library.CustomItems.Publication.General;
 using Autofac;
 using Elsevier.Web.VWB.Report;
 using Elsevier.Web.VWB.Report.Columns;
-using Glass.Mapper.Sc;
 using Informa.Library.VirtualWhiteboard;
 using Informa.Library.Wrappers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard;
-using Informa.Web.App_Start;
-using Microsoft.Practices.ServiceLocation;
 using Sitecore.Caching;
 using Sitecore.Configuration;
-using Sitecore.Data;
 using Sitecore.Mvc.Extensions;
 using Sitecore.Shell.Applications.ContentEditor;
 using Sitecore.Web;
 using Sitecore.Web.Authentication;
 using DateTime = System.DateTime;
-using Jabberwocky.Autofac.Attributes;
 
 namespace Elsevier.Web.VWB
 {
-	public struct ItemStruct
+    public struct ItemStruct
 	{
 		public string Name { get; set; }
 		public Guid ID { get; set; }
