@@ -138,6 +138,20 @@
     <input type="hidden" value="#Environment#" id="hdnEnvironment" />
     <input type="hidden" value="#UserName#" id="hdnUserName" />
     <input type="hidden" value="#Page_Type#" id="hdnPageType" />
+    <script>
+        var userName = document.getElementById("hdnEnvironment").value;
+        var pageType = document.getElementById("hdnPageType").value;
+        var utag_data = { "page-type": '"' + pageType + '"', "username": '"' + userName + '"' };
+    </script>
+    <script type="text/javascript">
+        (function (a, b, c, d) {
+            var environment = document.getElementById("hdnEnvironment").value;
+            a = '//tags.tiqcdn.com/utag/informa/main/' + environment + '/utag.js';
+            b = document; c = 'script'; d = b.createElement(c); d.src = a;
+            d.type = 'text/java' + c; d.async = true;
+            a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a)
+        })();
+    </script>
     <center>
         <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;padding:0;background-color:#FFF;border-collapse:collapse !important;height:100% !important;width:100% !important">
             <tr>
