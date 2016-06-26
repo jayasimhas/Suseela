@@ -740,6 +740,13 @@
     <Compile Include="sitecore\shell\client\Applications\View NLM\model\ViewNlmViewModel.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
+    <Compile Include="Util\Reports\UsersRolesReport.aspx.cs">
+      <DependentUpon>UsersRolesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Util\Reports\UsersRolesReport.aspx.designer.cs">
+      <DependentUpon>UsersRolesReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="velir\services\TypeAhead.asmx.cs">
       <DependentUpon>TypeAhead.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -1027,6 +1034,7 @@
     <Content Include="Util\DCD\styles\jquery-ui-1.8.11.custom.css" />
     <Content Include="Util\DCD\styles\jquery.multiSelect.css" />
     <Content Include="Util\DCD\styles\style.css" />
+    <Content Include="Util\Reports\UsersRolesReport.aspx" />
     <Content Include="velir\services\TypeAhead.asmx" />
     <Content Include="Util\DCD\DcdImportReport.aspx" />
     <Content Include="Util\DCD\ViewDCDXML.aspx" />
