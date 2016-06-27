@@ -1112,6 +1112,7 @@
     <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\jquery-ui-1.10.4.custom.css" />
     <Content Include="VWB\Scripts\jquery-ui\jquery-ui-1.8.11.custom.css" />
     <Content Include="VWB\Scripts\jquery-ui\jquery-ui.js" />
     <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.css" />
