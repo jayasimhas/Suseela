@@ -341,7 +341,7 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 		    var date = new DateTime(2016,6,21);
 		    _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.Invoke());
 		    // ACT
-			_issuesService.UpdateIssueInfo(Arg.Any<Guid>(), title, date.ToString());
+			_issuesService.UpdateIssueInfo(Arg.Any<Guid>(), title, date.ToString(), string.Empty);
 
 		    // ASSERT
 			Assert.AreEqual(issue.Title, title);

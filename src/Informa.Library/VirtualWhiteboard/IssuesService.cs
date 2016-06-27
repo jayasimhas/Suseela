@@ -23,7 +23,7 @@ namespace Informa.Library.VirtualWhiteboard
 		VwbResponseModel ArchiveIssue(Guid issueId);
 		void ReorderArticles(Guid issueId, string ids);
 		void DeleteArticles(string ids);
-		void UpdateIssueInfo(Guid issueId, string title, string date);
+		void UpdateIssueInfo(Guid issueId, string title, string date, string notes);
 		IEnumerable<IIssue> GetActiveIssues();
 		bool DoesIssueContains(Guid issueId, string articleId);
 		void AddArticlesToIssue(Guid issueId, IEnumerable<Guid> itemIds);
@@ -180,10 +180,11 @@ namespace Informa.Library.VirtualWhiteboard
 			}
 		}
 
-		public void UpdateIssueInfo(Guid issueId, string title, string date)
+		public void UpdateIssueInfo(Guid issueId, string title, string date, string notes)
 		{
 			var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(issueId);
 			issue.Title = title;
+		    issue.Notes = notes;
 			DateTime publishDate;
 			if (DateTime.TryParse(date, out publishDate))
 			{
