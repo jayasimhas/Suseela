@@ -271,6 +271,7 @@ div.appbuttons
     padding: 3px 7px !important;
     text-decoration: none;
     text-transform: uppercase;
+	white-space: normal;
 }
 
 .orange-button:disabled {

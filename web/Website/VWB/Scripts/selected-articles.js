@@ -37,38 +37,67 @@ var serializeSelectedArticles = function() {
 
 };
 
-$(document).ready(function() {
+$(document)
+    .ready(function() {
 
-	selectedArticlesUpdated();
+        selectedArticlesUpdated();
 
-	$(".js-new-issue-modal").dialog({
-		autoOpen: false,
-		minWidth: 400,
-		title: 'Create a New Issue'
-	});
+        $(".js-new-issue-modal")
+            .dialog({
+                autoOpen: false,
+                minWidth: 400,
+                title: 'Create a New Issue'
+            });
 
-	$('.js-new-issue-pub-date').datepicker();
+        $('.js-new-issue-pub-date').datepicker();
 
-	$('.js-append-to-issue, .js-create-new-issue').on('click', function(e) {       
-		var articles = serializeSelectedArticles();
-	});
+        $('.js-append-to-issue, .js-create-new-issue')
+            .on('click',
+                function(e) {
+                    var articles = serializeSelectedArticles();
+                });
 
-	$('.js-create-new-issue').on('click', function (e) {
-		// Prevents instant form submit, just in case
-		e.preventDefault();
-		$(".js-new-issue-modal").dialog( "open" );
-	});
+        $('.js-create-new-issue')
+            .on('click',
+                function(e) {
+                    // Prevents instant form submit, just in case
+                    e.preventDefault();
+                    $(".js-new-issue-modal").dialog("open");
+                });
 
-	$('.js-submit-new-issue').on('click', function(e) {
-	    $('#IssueTitleInput').val($('.js-new-issue-title').val());
-	    $('#IssuePublishedDateInput').val($('.js-new-issue-pub-date').val());
+        $('.js-submit-new-issue')
+            .on('click',
+                function(e) {
+                    $('#IssueTitleInput').val($('.js-new-issue-title').val());
+                    $('#IssuePublishedDateInput').val($('.js-new-issue-pub-date').val());
 
-	    selectedArticlesUpdated();
-	    //document.forms[0].submit();
-	    $('#NewIssueSubmitButton').click();
-	});
+                    selectedArticlesUpdated();
+                    //document.forms[0].submit();
+                    $('#NewIssueSubmitButton').click();
+                });
 
-});
+        $('.js-existing-issue')
+            .on('change',
+                function(e) {
+                    var existingIssue = $('.js-existing-issue').val();
+                    if (existingIssue && existingIssue !== 'DEFAULT') {
+                        $('.js-go-to-issue').prop('disabled', null);
+                    } else {
+                        $('.js-go-to-issue').prop('disabled', 'disabled');
+                    }
+                });
+
+        $('.js-go-to-issue')
+            .on('click',
+                function (e) {
+                    e.preventDefault();
+                    var existingIssue = $('.js-existing-issue').val();
+                    if (existingIssue && existingIssue !== 'DEFAULT') {
+                        window.location = "/vwb/addissue?id=" + existingIssue;
+                    }
+                });
+
+    });
 
 $('.js-article-checkbox input, .js-existing-issue').on('change', function (e) {
 	selectedArticlesUpdated();
