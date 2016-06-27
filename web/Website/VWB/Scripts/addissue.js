@@ -83,7 +83,7 @@ $(function() {
 						click: function() {
 							// Change dialog text to working spinner and hide the buttons so people
 							//   don't try to submit twice
-							$("#js-dialog").html('<p class="centered">Archiving now... <img class="archive-dialog__spinner" src="images/vwb/spinner_gray_160.gif" /></p>');
+							$("#js-dialog").html('<p class="centered">Archiving now... <img class="archive-dialog__spinner" src="/VWB/images/vwb/spinner_gray_160.gif" /></p>');
 							$("#js-dialog + .ui-dialog-buttonpane").hide();
 							// Also hide close button so people don't try to work while the
 							//   issue is archiving
