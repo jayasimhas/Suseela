@@ -1,17 +1,82 @@
-﻿
 @{
     Layout = null;
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>ProfileHeaders</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>
+<div class="profile">
+	<h1 class="profile__name">@(Model.PersonName)</h1>
+	<div class="l-left-rail">
+		<h2 class="profile__title">@(Model.PersonTitle)</h2>
+		<div class="profile__location">@(Model.PersonLocation)</div>
+		@if (PersonImageExists) {
+			<img class="profile__img" src="@(Model.PersonImageUrl)" />
+		}
+		<ul class="profile__links">
+			@if (PersonEmailExists) {
+				<li>
+					<svg class="alert__icon">
+						<use xlink:href="/web/Website/dist/img/svg-sprite.svg#email"></use>
+					</svg>
+					<a href="mailto:@(Model.PersonEmail)">@(Model.PersonEmail)</a>
+				</li>
+			}
+			@if (PersonTwitterExists) {
+				<li>
+					<svg class="alert__icon">
+						<use xlink:href="/web/Website/dist/img/svg-sprite.svg#twitter"></use>
+					</svg>
+					<a href="@(Model.PersonTwitterUrl)">@(Model.PersonTwitterName)</a>
+				</li>
+			}
+			@if (PersonLinkedInExists) {
+				<li>
+					@* NOTE: This extra class on the linkedIn svg is important! *@
+					<svg class="alert__icon icon--linked-in">
+						<use xlink:href="/web/Website/dist/img/svg-sprite.svg#linkedin"></use>
+					</svg>
+					<a href="@(Model.PersonLinkedInUrl)">@(Model.PersonLinkedInName)</a>
+				</li>
+			}
+		</ul>
+		<div class="profile__profile">
+			@(Model.PersonProfile)
+		</div>
+		<ul class="profile__expertise">
+			@if (PersonHasAreasOfExpertise) {
+				<li>
+					<div class="bar-separated-link-list">
+						<span class="bar-separated-link-list__label">Areas of Expertise: </span>
+						@foreach (var tag in Model.Tags)
+						{
+				            <a href="@tag.LinkableUrl">@tag.LinkableText</a>
+				        }
+					</div>
+				</li>
+			}
+			@if (PersonHasIndustryExpertise) {
+				<li>
+					<div class="bar-separated-link-list">
+						<span class="bar-separated-link-list__label">Industry Expertise: </span>
+				       @foreach (var tag in Model.Tags)
+						{
+				            <a href="@tag.LinkableUrl">@tag.LinkableText</a>
+				        }
+					</div>
+				</li>
+			}
+			@if (PersonWritesFor) {
+				<li>
+					<div class="bar-separated-link-list">
+						<span class="bar-separated-link-list__label">Writes for: </span>
+						@foreach (var tag in Model.Tags)
+						{
+				            <a href="@tag.LinkableUrl">@tag.LinkableText</a>
+				        }
+					</div>
+				</li>
+			}
+		</ul>
+	</div>
+	<div class="l-right-rail">
+		@* NOTE: This may be the incorrect sort of ad; confirm with someone who knows for sure --> *@
+	    @Html.Sitecore().Placeholder("article-med-ad")
+	</div>
+</div>
