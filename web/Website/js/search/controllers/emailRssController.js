@@ -23,6 +23,10 @@ var EmailRssController = function ($scope, $location) {
                 nUrl = nUrl + "&" + idxkey + "=" + params[idxkey];
             }
         }
+				// strip leading &
+        if (nUrl.startsWith('&')) {
+	        nUrl = nUrl.substr(1);
+        }
         $scope.currentLocation = "?" + nUrl;
     });
 
