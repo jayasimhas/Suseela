@@ -869,12 +869,11 @@ $(document).ready(function() {
         }
     });
     
-    // Account - Email Preferences toggler
-    $('.js-account-email-toggle-all').on('click', function(e) {
+    $('.js-account-email-toggle-all').on('click', function (e) {
         $('.js-update-email-prefs').attr('disabled', null);
     });
- 
-    $('.js-account-email-checkbox').on('click', function(e) {
+
+    $('.js-account-email-checkbox').on('click', function (e) {
         $('.js-update-email-prefs').attr('disabled', null);
     });
 
