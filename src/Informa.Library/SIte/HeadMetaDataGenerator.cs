@@ -98,7 +98,12 @@ namespace Informa.Library.Site
         public string TransformToHtml(IEnumerable<KeyValuePair<string, string>> properties)
         {
             var result = new StringBuilder();
-            properties.Each(prop => result.AppendLine($"<meta property=\"{prop.Key}\" content=\"{prop.Value}\">"));
+
+            foreach (var pair in properties)
+            {
+                result.AppendLine($"<meta property=\"{pair.Key}\" content=\"{pair.Value}\">");
+            }
+
             return result.ToString();
         }
 
