@@ -28,7 +28,6 @@
 					Issue Number
 				</td>
 				<td>
-					<!-- PLACEHOLDER! BE should fill hidden issue field and visible text; order should probably be filled to avoid any accidents in a no-javascript situation. todelete can be left blank -->
 					@Model.Issue._Id
 					<input type="hidden" id="js-issue" name="issue" value="@Model.Issue._Id" />
 					<input type="hidden" id="js-order" name="order" value="" />
@@ -41,7 +40,6 @@
 					Title
 				</td>
 				<td>
-					<!-- PLACEHOLDER! BE should fill initial value -->
 					<input type="text" name="title" value="@Model.Issue.Title" />
 				</td>
 			</tr>
@@ -50,7 +48,6 @@
 					Date Published
 				</td>
 				<td>
-					<!-- PLACEHOLDER! BE should fill initial value -->
 					<input type="text" name="date" id="js-datepicker" value="@Model.Issue.Published_Date.ToString("d")" />
 				</td>
 			</tr>
@@ -72,7 +69,6 @@
 			Delete/Re-Add
 		</div>
 	</div>
-			<!-- PLACEHOLDER! BE should create row for each article -->
 			@foreach (var article in Model.Articles)
 			{
 				<div class="draggable js-draggable" id="@article._Id">
@@ -93,7 +89,7 @@
 
 		<div class="issue-notes">
 			<h3>Issue Notes</h3>
-			<textarea name="notes"></textarea>
+			<textarea name="notes">@Model.Issue.Notes</textarea>
 		</div>
 
 		<button type="submit" class="orange-button">Save Updates to Issue</button>
