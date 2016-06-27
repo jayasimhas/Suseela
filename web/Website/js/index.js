@@ -869,20 +869,12 @@ $(document).ready(function() {
         }
     });
     
-    // when you toggle the agree checkbox, it enables submission button and if it's been unchecked, it will also uncheck all publications
     $('.js-account-email-toggle-all').on('click', function (e) {
         $('.js-update-email-prefs').attr('disabled', null);
-        if (!$(e.target).prop('checked')) {
-            $('.js-account-email-checkbox').prop('checked', null);
-        }
     });
 
-    // when you toggle a single checkbox, it enables submission button and if it's checked it will also check the agree box
     $('.js-account-email-checkbox').on('click', function (e) {
         $('.js-update-email-prefs').attr('disabled', null);
-        if ($(e.target).prop('checked')) {
-            $('.js-account-email-toggle-all').prop('checked', 'checked');
-        }
     });
 
     // Twitter sharing JS
