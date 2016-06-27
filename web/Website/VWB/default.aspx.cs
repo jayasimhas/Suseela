@@ -316,6 +316,10 @@ namespace Elsevier.Web.VWB
                 {
                     Response.Redirect(IssuePageUrl + result.IssueId);
                 }
+                else
+                {
+                    throw new Exception($"Failed to created new issue, error: {result.DebugErrorMessage}");
+                }
             }
         }
 

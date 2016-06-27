@@ -92,7 +92,7 @@ namespace Informa.Library.VirtualWhiteboard
 
 			if (issue == null)
 			{
-				return;
+				throw new Exception($"Failed to fetch IIssue__Raw with id = {issueId}");
 			}
 
 			issue.Title = model.Title;
