@@ -8,6 +8,12 @@ namespace Informa.Web
 	{
 		public static void RegisterRoutes(RouteCollection routes, params string[] areaNames)
 		{
+			routes.MapRoute(
+				"addIssue",
+				"vwb/{controller}/{action}/{id}",
+				new {controller = "AddIssue", action = "Get", id = UrlParameter.Optional }
+			);
+
 			// Setup a custom AreaControllerFactory
 			var innerFactory = ControllerBuilder.Current.GetControllerFactory();
 			var delegatedAreaFactory = new AreaControllerFactory(innerFactory, areaNames);

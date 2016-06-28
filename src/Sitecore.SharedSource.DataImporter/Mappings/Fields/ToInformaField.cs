@@ -9,6 +9,8 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Sitecore.ContentSearch.Utilities;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
@@ -204,12 +206,22 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 				{ // if it's not being removed
 					if (nodeName.Equals("table"))
 					{
+						var classAttr = node.Attributes["class"];
 						node.Attributes.RemoveAll();
+						if (classAttr != null)
+						{
+							node.Attributes.Add(classAttr);
+						}
 					}
 					else if (!nodeName.Equals("iframe") && !nodeName.Equals("img"))
 					{ //skip iframe and imgs
-						foreach (string s in unwantedAttrs) // remove unwanted attributes
+						foreach (string s in unwantedAttrs)
+						{
+							if(s.Equals("class") && (nodeName.Equals("tr") || nodeName.Equals("td") || nodeName.Equals("th"))) continue;
+
+							// remove unwanted attributes
 							node.Attributes.Remove(s);
+						} 
 					}
 
 					if (nodeName.Equals("iframe") || nodeName.Equals("embed") || nodeName.Equals("form") || nodeName.Equals("script")) // warn about iframes, embed, form or script in body
@@ -480,6 +492,52 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			{
 
 				companies[r["Title"].ToString().ToLower()] = r["RecordNumber"].ToString();
+			}
+
+			Context.Items[cacheKey] = companies;
+			return companies;
+		}
+
+		public Dictionary<string, string> GetDBCompaniesById(IDataMap map, string itemPath)
+		{
+			string cacheKey = "CompaniesById";
+			Dictionary<string, string> o = Context.Items[cacheKey] as Dictionary<string, string>;
+			if (o != null)
+				return o;
+
+			Dictionary<string, string> companies = new Dictionary<string, string>();
+
+			string query = "SELECT[RecordNumber], [Title] FROM [Companies] ORDER BY [Title] DESC";
+			string conn = ConfigurationManager.ConnectionStrings["dcd"].ConnectionString;
+
+			SqlConnection dbCon = null;
+			DataTable returnObj = null;
+			try
+			{
+				dbCon = new SqlConnection(conn);
+				dbCon.Open();
+
+				SqlCommand cmd = new SqlCommand(query);
+				cmd.Connection = new SqlConnection(conn);
+				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+				DataSet ds = new DataSet();
+				adapter.Fill(ds);
+
+				returnObj = ds.Tables[0].Copy();
+			}
+			catch (Exception e)
+			{
+				map.Logger.Log(itemPath, "GetAllCompanies Failed", ProcessStatus.FieldError, NewItemField);
+			}
+			finally
+			{
+				if (dbCon != null)
+					dbCon.Close();
+			}
+
+			foreach (DataRow r in returnObj.Rows)
+			{
+				companies[r["RecordNumber"].ToString()] = r["Title"].ToString();
 			}
 
 			Context.Items[cacheKey] = companies;
@@ -2658,16 +2716,36 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 					foreach (var str in strs)
 					{
 						var authorItem = Database.GetDatabase("pmbiContent").GetItem(new ID(str));
+
+						if (authorItem == null)
+						{
+							map.Logger.Log(newItem.Paths.FullPath, "Could not find matching Author item in PMBI for given ID", ProcessStatus.FieldError, NewItemField, str);
+							continue;
+						}
+
 						var firstName = StringUtility.TrimInvalidChars(authorItem.Fields["First Name"].Value.ToLower());
 						var lastName = StringUtility.TrimInvalidChars(authorItem.Fields["Last Name"].Value.ToLower());
 						var email = StringUtility.TrimInvalidChars(authorItem.Fields["Email"].Value.ToLower());
 
 						var valCollection = descendants.Where(
 							i =>
-								StringUtility.TrimInvalidChars(i.Fields["First Name"].Value.ToLower()) == firstName
-								&& StringUtility.TrimInvalidChars(i.Fields["Last Name"].Value.ToLower()) == lastName
-								&& (string.IsNullOrWhiteSpace(i.Fields["Email Address"].Value) || string.IsNullOrWhiteSpace(email) || StringUtility.TrimInvalidChars(i.Fields["Email Address"].Value.ToLower()) == email)).ToList();
-							//?.ID.ToString();
+								StringUtility.TrimInvalidChars(i?.Fields["First Name"]?.Value?.ToLower() ?? string.Empty) == firstName
+								&& StringUtility.TrimInvalidChars(i?.Fields["Last Name"]?.Value?.ToLower() ?? string.Empty) == lastName
+								&& (string.IsNullOrWhiteSpace(i?.Fields["Email Address"]?.Value) || string.IsNullOrWhiteSpace(email) || StringUtility.TrimInvalidChars(i.Fields["Email Address"].Value.ToLower()) == email)).ToList();
+
+						if (valCollection.Count == 0)
+						{
+							var staffitem = item.Add(ItemUtil.ProposeValidItemName($"{firstName} {lastName}"), new TemplateID(IStaff_ItemConstants.TemplateId));
+							using (new EditContext(staffitem))
+							{
+								staffitem.Fields[IStaff_ItemConstants.First_NameFieldName].Value = authorItem.Fields["First Name"].Value;
+								staffitem.Fields[IStaff_ItemConstants.Last_NameFieldName].Value = authorItem.Fields["Last Name"].Value;
+								staffitem.Fields[IStaff_ItemConstants.Email_AddressFieldName].Value = authorItem.Fields["Email"].Value;
+							}
+
+							valCollection = new List<Item> {staffitem};
+						}
+
 						if (valCollection.Count > 1)
 						{
 							map.Logger.Log(newItem.Paths.FullPath, "Find more than 1 authors in target DB", ProcessStatus.FieldError, NewItemField, str, $"Name:{firstName} {lastName}--Email: {email}");
@@ -3307,7 +3385,9 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			{"Preclinical Through Proof-Of-Concept", "Preclinical Through Proof-Of-Concept"},
 			{"Proof-Of-Concept Through Filing", "Proof-Of-Concept Through Filing"},
 			{"Social Media", "Social Media"},
-			{"Surgical Procedures", "Surgical Procedures"}
+			{"Surgical Procedures", "Surgical Procedures"},
+			{"Keeping Track", "Keeping Track"},
+			{"Performance Tracker", "Performance Tracker"}
 		};
 		public static Dictionary<string, string> IndustryMapping => new Dictionary<string, string>
 		{

@@ -849,6 +849,7 @@
     <Compile Include="ViewModels\TopicAlertButtonModel.cs" />
     <Compile Include="ViewModels\TopicContainerViewModel.cs" />
     <Compile Include="ViewModels\TopicJumpToViewModel.cs" />
+    <Compile Include="Areas\VWB\Controllers\AddIssueController.cs" />
     <Compile Include="VWB\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -864,6 +865,7 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="VWB\Report\ArticleItemWrapper.cs" />
+    <Compile Include="VWB\Report\Columns\ArticleCheckboxes.cs" />
     <Compile Include="VWB\Report\Columns\ContentTypeColumn.cs" />
     <Compile Include="VWB\Report\Columns\CreatedDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleLengthEstimateColumn.cs" />
@@ -900,6 +902,7 @@
       <DependentUpon>LoginRedirectToPreview.aspx</DependentUpon>
     </Compile>
     <Compile Include="VWB\Util\VWBUtil.cs" />
+    <Compile Include="ViewModels\VWB\AddIssueViewModel.cs" />
     <Compile Include="VWB\VwbQuery.cs" />
     <Compile Include="VWB\VwbSessionInfo.cs" />
   </ItemGroup>
@@ -1000,11 +1003,21 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\components\save-search-component.js" />
+    <Content Include="js\controllers\analytics-controller.js" />
+    <Content Include="js\controllers\bookmark-controller.js" />
+    <Content Include="js\controllers\form-controller.js" />
+    <Content Include="js\controllers\lightbox-modal-controller.js" />
+    <Content Include="js\controllers\pop-out-controller.js" />
+    <Content Include="js\controllers\register-controller.js" />
+    <Content Include="js\controllers\reset-password-controller.js" />
+    <Content Include="js\controllers\sortable-table-controller.js" />
     <Content Include="js\newsletter-signup.js" />
     <Content Include="js\openadstream.js" />
     <Content Include="js\package.json" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
+    <Content Include="js\search-page.js" />
     <Content Include="js\search\controllers\emailRssController.js" />
     <Content Include="js\search\controllers\pageSizeController.js" />
     <Content Include="js\search\controllers\headlineSearchController.js" />
@@ -1017,6 +1030,7 @@
     <Content Include="js\search\informaSearchApp.js" />
     <Content Include="js\search\search.js" />
     <Content Include="js\svg4everybody.js" />
+    <Content Include="js\toggle-icons.js" />
     <Content Include="js\zepto.min.js" />
     <Content Include="layouts\QueryableRulesRunner.ascx" />
     <Content Include="layouts\Sample Datasource Sublayout.ascx" />
@@ -1057,6 +1071,7 @@
     <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.js" />
     <Content Include="sitecore\shell\client\Applications\Nlm Export\css\ExportNlm.css" />
     <Content Include="sitecore\shell\client\Applications\Nlm Export\scripts\ExportNlm.js" />
+    <Content Include="sitecore\shell\client\Sitecore\ExperienceEditor\ExperienceEditor.js" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
     <Content Include="tasks\copy.js" />
@@ -1082,6 +1097,7 @@
     <Content Include="Util\DCD\ViewDCDXML.aspx" />
     <Content Include="VWB\default.aspx" />
     <Content Include="VWB\login.aspx" />
+    <Content Include="VWB\Scripts\addissue.js" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
@@ -1096,11 +1112,13 @@
     <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\jquery-ui-1.10.4.custom.css" />
     <Content Include="VWB\Scripts\jquery-ui\jquery-ui-1.8.11.custom.css" />
     <Content Include="VWB\Scripts\jquery-ui\jquery-ui.js" />
     <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.css" />
     <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.js" />
     <Content Include="VWB\Scripts\jquery.js" />
+    <Content Include="VWB\Scripts\selected-articles.js" />
     <Content Include="VWB\services\VirtualWhiteBoard.asmx" />
     <Content Include="VWB\Styles\vwb.css" />
     <Content Include="VWB\Util\LoginRedirectToPreview.aspx" />
@@ -1164,6 +1182,7 @@
     <Folder Include="js\search\services\" />
     <Folder Include="packages\" />
     <Folder Include="Views\Partials\" />
+    <Folder Include="Views\VWB\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1202,6 +1221,7 @@
     <None Include="App_Config\Prefetch\Core.config.template" />
     <None Include="App_Config\Prefetch\Master.config.template" />
     <None Include="App_Config\Prefetch\Webdb.config.template" />
+    <Content Include="Areas\VWB\Views\web.config" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1295,6 +1315,8 @@
     <Content Include="Views\EmailComponents\FeaturedArticle.cshtml" />
     <Content Include="Views\EmailComponents\SectionHeader.cshtml" />
     <Content Include="Views\Article\TopicPageTitle.cshtml" />
+    <Content Include="Views\Shared\Components\MediaTypeIcon.cshtml" />
+    <Content Include="Areas\VWB\Views\AddIssue.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

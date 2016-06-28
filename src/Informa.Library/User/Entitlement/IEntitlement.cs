@@ -9,5 +9,7 @@ namespace Informa.Library.User.Entitlement
 		string DocumentId { get; }
 		string ProductId { get; }
 		string ProductType { get; }
+		string OpportunityId { get; }
+		string OpportunityLineItemId { get; }
 	}
 }

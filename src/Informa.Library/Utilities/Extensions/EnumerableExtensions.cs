@@ -28,5 +28,21 @@ namespace Informa.Library.Utilities.Extensions
             e.Reset();
 	        return !any;
 	    }
-	}
+
+        public static void Each<T>(this IEnumerable<T> items, Action<T> action)
+        {
+            foreach (T obj in items)
+            {
+                action(obj);
+            }
+        }
+
+		public static IEnumerable<TR> Each<T, TR>(this IEnumerable<T> items, Func<T, TR> func)
+		{
+			foreach (T item in items)
+			{
+				yield return func(item);
+			}
+		}
+    }
 }

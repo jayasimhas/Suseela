@@ -25,7 +25,7 @@ function loginController(requestVerificationToken) {
 					}
 
 					inputData[$(this).attr('name')] = value;
-				})
+				});
 
 				$.ajax({
 					url: url,
@@ -33,7 +33,7 @@ function loginController(requestVerificationToken) {
 					data: inputData,
 					context: this,
 					success: function (response) {
-					    if (response.success) {
+						if (response.success) {
 
 							var registerAnalytics = {
 								event_name: 'register-step-1',
@@ -41,7 +41,7 @@ function loginController(requestVerificationToken) {
 								userName: '"' + inputData.username + '"'
 							};
 
-					        analyticsEvent( $.extend(analytics_data, registerAnalytics) );
+							analyticsEvent( $.extend(analytics_data, registerAnalytics) );
 
 							if (successCallback) {
 								successCallback(triggerElement);
@@ -58,7 +58,7 @@ function loginController(requestVerificationToken) {
 						else {
 							$(triggerElement).removeAttr('disabled');
 
-							
+
 
 							var specificErrorDisplayed = false;
 
@@ -76,9 +76,9 @@ function loginController(requestVerificationToken) {
 							}
 
 							var registerAnalytics = {
-							    event_name: "registration failure",
-							    registration_errors: response.reasons
-							  };
+								event_name: "registration failure",
+								registration_errors: response.reasons
+							};
 
 							analyticsEvent( $.extend(analytics_data, registerAnalytics) );
 

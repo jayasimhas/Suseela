@@ -26,7 +26,7 @@ namespace Informa.Library.Salesforce.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://cs50.salesforce.com/services/Soap/class/EBI_WebServices")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://cs52.salesforce.com/services/Soap/class/EBI_WebServices")]
         public string Informa_Library_Salesforce_EBIWebServices_EBI_WebServicesService {
             get {
                 return ((string)(this["Informa_Library_Salesforce_EBIWebServices_EBI_WebServicesService"]));

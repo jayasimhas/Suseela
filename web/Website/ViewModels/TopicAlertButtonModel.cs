@@ -26,7 +26,8 @@ namespace Informa.Web.ViewModels
 			{
 				AlertIsSet = savedSearchService.Exists(new SavedSearchDisplayModel
 				{
-					Url = parameters?.Related_Search ?? string.Empty
+					Url = parameters?.Related_Search ?? string.Empty,
+					AlertEnabled = true
 				});
 				TopicName = GetTopicTitle(model);
 				AlertTitle = !string.IsNullOrEmpty(parameters?.Search_Name) ? parameters.Search_Name : TopicName;

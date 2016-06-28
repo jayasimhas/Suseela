@@ -52,6 +52,7 @@ namespace Informa.Library.Search.Utilities
 		/// <returns></returns>
 		private static Tuple<string, Dictionary<string, string>> ArticleTokenProcessingStart(string summary)
 		{
+			summary = summary ?? string.Empty;
 			var tokenMappings = new Dictionary<string, string>();
 
 			var ItemRegex = new Regex(DCDConstants.ArticleTokenRegex, RegexOptions.Compiled);

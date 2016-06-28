@@ -39,4 +39,8 @@
         color: $color-mystic-maroon;
     }
 
+	@include theme-quick-facts(
+		transparentize($color-wisp-pink, 0),
+		transparentize($color-mystic-maroon, 0.5));
+
 }

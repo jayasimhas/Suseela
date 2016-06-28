@@ -16,6 +16,7 @@ $max-width: 1200px !default;
 $breakpoints: (
   'small': (max-width: 480px),
   'medium': (max-width: 800px),
+  'wide': (min-width: 801px),
 ) !default;
 
 

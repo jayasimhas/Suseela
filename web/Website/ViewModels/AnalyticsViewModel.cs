@@ -33,8 +33,7 @@ namespace Informa.Web.ViewModels
         protected readonly IUserEntitlementsContext UserEntitlementsContext;
         protected readonly IUserIpAddressContext UserIpAddressContext;
 	    protected readonly ISiteRootContext SiteRootContext;
-
-        public readonly IUserCompanyContext UserCompanyContext;
+        protected readonly IUserCompanyContext UserCompanyContext;
         
         public AnalyticsViewModel(
 			IItemReferences itemReferences,
@@ -62,12 +61,17 @@ namespace Informa.Web.ViewModels
             UserEntitlementsContext = userEntitlementsContext;
             UserIpAddressContext = userIpAddressContext;
 	        SiteRootContext = siteRootContext;
+	        EntitlementType = GetEntitlementType(UserCompanyContext);
+	        UserEntitlements = GetUserEntitlements();
+	        SubscribedProducts = GetSubscribedProducts();
+	        OpportunityLineItemIds = GetOpportunityLineItemIds();
+	        OpportunityIds = GetOpportunityIds();
 			}
 
 	    public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PageTitleAnalytics => GlassModel?.Title ?? string.Empty;
-        public string PageType { get { return Sitecore.Context.Item.TemplateName; } }
-        public string ArticlePublishDate => (Article != null && Article.Actual_Publish_Date > DateTime.MinValue)
+        public string PageType => Sitecore.Context.Item.TemplateName;
+	    public string ArticlePublishDate => (Article != null && Article.Actual_Publish_Date > DateTime.MinValue)
                     ? Article.Actual_Publish_Date.ToString("MM/dd/yyyy")
                     : DateTime.MinValue.ToString("MM/dd/yyyy");
         public IArticle Article => GlassModel as IArticle;
@@ -79,7 +83,7 @@ namespace Informa.Web.ViewModels
                 ? string.Empty
                 : $"[{string.Join(",", Article.Authors.Select(x => $"'{x._Name.Trim()}'"))}]";
         public string UserEntitlementStatus => IsEntitledProductItemContext.IsEntitled(Article) ? "entitled" : "unentitled";
-        public string GetArticleTaxonomy(Guid itemId) {
+		public string GetArticleTaxonomy(Guid itemId) {
             return Article != null ? ArticleSearch.GetArticleTaxonomies(Article._Id, itemId) : string.Empty;
         }
         public string Article_Entitlement => GetArticleEntitlements();
@@ -105,16 +109,8 @@ namespace Informa.Web.ViewModels
         public string UserEmail => UserProfileContext.Profile?.Email ?? string.Empty;
         public string UserIndustry => UserProfileContext.Profile?.JobIndustry ?? string.Empty;
         public string CompanyId => UserCompanyContext?.Company?.Id;
-        public string SubscribedProducts
-        {
-            get
-            {
-                var subscriptions = UserSubscriptionsContext.Subscriptions;
-                string allSubscriptions = subscriptions == null ? string.Empty : string.Join(",", UserSubscriptionsContext.Subscriptions.Select(a => $"'{a.ProductCode}'"));
-                return !string.IsNullOrEmpty(allSubscriptions) ? $"[{allSubscriptions}]" : string.Empty;
-            }
-        }
-        public string CustomTags => GlassModel?.Custom_Meta_Tags ?? string.Empty;
+        public string SubscribedProducts { get; }
+	    public string CustomTags => GlassModel?.Custom_Meta_Tags ?? string.Empty;
         public string ContactId => WebAuthenticateUser.AuthenticatedUser?.ContactId ?? string.Empty;
         public string AccountId
         {
@@ -129,20 +125,85 @@ namespace Informa.Web.ViewModels
                 return $"[{allAccountIds}]";
             }
         }
-        public string UserEntitlements
-        {
-            get
-            {
-                string allEntitlements = string.Join(",", UserEntitlementsContext.Entitlements.Select(a => $"'{a.ProductCode}'"));
-                return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
-            }
-        }
-        public string UserIp => UserIpAddressContext.IpAddress.ToString();
+        public string UserEntitlements { get; }
+		public string OpportunityIds { get; }
+		public string OpportunityLineItemIds { get; }
+		public string UserIp => UserIpAddressContext.IpAddress.ToString();
         public string DateCreated => (Sitecore.Context.Item != null && Sitecore.Context.Item.Statistics.Created > DateTime.MinValue) 
                     ? Sitecore.Context.Item.Statistics.Created.ToServerTimeZone().ToString("MM/dd/yyyy")
                     : DateTime.MinValue.ToString("MM/dd/yyyy");
         public string PageDescription => GlassModel?.Meta_Description ?? string.Empty;
         public string PageTitleOverride => GlassModel?.Meta_Title_Override ?? string.Empty;
         public string MetaKeyWords => GlassModel?.Meta_Keywords ?? string.Empty;
+		public string ArticleEntitlements
+		{
+			get
+			{
+				if (IsFree)
+				{
+					return "Free View";
+				}
+
+				if (IsEntitledProductItemContext.IsEntitled(Article))
+				{
+					return "Entitled Full View";
+				}
+
+				return "Abstract View";
+			}
+		}
+
+	    public string ContentEntitlementType => GetContentEntitlement(UserCompanyContext);
+
+	    public string EntitlementType { get; }
+
+		private string GetContentEntitlement(IUserCompanyContext context)
+		{
+			if (!IsEntitledProductItemContext.IsEntitled(Article))
+			{
+				return "unentitled";
+			}
+
+			return $"entitled - {GetEntitlementType(context)}";
+		}
+
+		private string GetEntitlementType(IUserCompanyContext context)
+		{
+			if (context.Company == null)
+			{
+				return "Free User";
+			}
+
+			if (context.Company.Type == CompanyType.TransparentIP)
+			{
+				return "Transparent IP";
+			}
+			return "Corporate";
+		}
+
+	    private string GetUserEntitlements()
+	    {
+			string allEntitlements = string.Join(",", UserEntitlementsContext.Entitlements.Select(a => $"'{a.ProductCode}'"));
+			return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
+		}
+
+	    private string GetSubscribedProducts()
+	    {
+			var subscriptions = UserSubscriptionsContext.Subscriptions;
+			string allSubscriptions = subscriptions == null ? string.Empty : string.Join(",", UserSubscriptionsContext.Subscriptions.Select(a => $"'{a.ProductCode}'"));
+			return !string.IsNullOrEmpty(allSubscriptions) ? $"[{allSubscriptions}]" : string.Empty;
+		}
+
+	    private string GetOpportunityIds()
+	    {
+			var ids = string.Join("|", UserEntitlementsContext.Entitlements.Select(i => $"'{i.OpportunityId}'"));
+			return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
+		}
+
+	    private string GetOpportunityLineItemIds()
+	    {
+			var ids = string.Join("|", UserEntitlementsContext.Entitlements.Select(i => $"'{i.OpportunityLineItemId}'"));
+			return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
+		}
     }
 }

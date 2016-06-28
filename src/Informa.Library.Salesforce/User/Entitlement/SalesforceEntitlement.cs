@@ -11,5 +11,7 @@ namespace Informa.Library.Salesforce.User.Entitlement
 		public string DocumentId { get; set; }
 		public string ProductId { get; set; }
 		public string ProductType { get; set; }
+		public string OpportunityId { get; set; }
+		public string OpportunityLineItemId { get; set; }
 	}
 }

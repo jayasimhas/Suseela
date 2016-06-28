@@ -2,10 +2,12 @@
 using Informa.Library.Globalization;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Document;
-using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System.Web;
+using Informa.Library.Services.Article;
+using Informa.Library.Site;
 using Informa.Library.ViewModels.Account;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
@@ -28,7 +30,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 			SignInViewModel = signInViewModel;
 			SavedDocumentItemsContext = savedDocumentItemsContext;
 		}
-
 		public IEnumerable<ISavedDocumentItem> SavedDocumentItems => SavedDocumentItemsContext.SavedDocumentItems;
 		public bool IsAuthenticated => UserContext.IsAuthenticated;
 		public IHtmlString NoSavedDocumentsBody => new HtmlString(GlassModel?.No_Articles ?? string.Empty);
@@ -44,5 +45,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 		public string RemoveModalConfirmText => TextTranslator.Translate("SavedDocuments.RemoveModalConfirm");
 		public string RemoveModalText => TextTranslator.Translate("SavedDocuments.RemoveModalText");
 		public string RemoveModalTitleText => TextTranslator.Translate("SavedDocuments.RemoveModalTitle");
+
 	}
 }

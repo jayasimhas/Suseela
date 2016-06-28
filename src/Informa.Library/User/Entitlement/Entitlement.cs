@@ -12,5 +12,7 @@ namespace Informa.Library.User.Entitlement
 		public string ProductCode { get; set; }
 		public string ProductId { get; set; }
 		public string ProductType { get; set; }
-	}
+	    public string OpportunityId { get; set; }
+	    public string OpportunityLineItemId { get; set; }
+    }
 }

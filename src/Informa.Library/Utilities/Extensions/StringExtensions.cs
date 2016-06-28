@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
 
@@ -69,6 +70,18 @@ namespace Informa.Library.Utilities.Extensions
 			if (count == 2) return $"{names.First()} and {names.Last()}";
 
 			return $"{string.Join(", ", names.Take(count - 1))} and {names.LastOrDefault()}";
+		}
+
+	    public static bool HasContent(this string source)
+	    {
+	        return !string.IsNullOrEmpty(source);
+	    }
+
+		public static string ExtractGuidString(this string source)
+		{
+			var startIndex = source.IndexOf("{", StringComparison.Ordinal);
+			var endIndex = source.IndexOf('}');
+			return source.Substring(startIndex, endIndex - startIndex + 1);
 		}
     }
 }

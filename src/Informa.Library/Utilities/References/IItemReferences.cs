@@ -31,9 +31,14 @@ namespace Informa.Library.Utilities.References
 		Guid AccountNameSuffixes { get; }
 		Guid AccountPhoneTypes { get; }
 		Guid AccountSalutations { get; }
-        
-		// Templates
-		Guid FolderTemplate { get; }
+
+    //Issues Items
+    Guid IssuesRootCurrent { get; }
+    Guid IssuesRootArchive { get; }
+
+     
+    // Templates
+    Guid FolderTemplate { get; }
 
 		Guid TaxonomyRoot { get; }
 

@@ -1,5 +1,6 @@
-﻿@using Informa.Web.Models
-@model ArticleBodyContentModel
+﻿@using Informa.Library.Utilities.References
+@using Informa.Web.Models
+@inherits CustomGlassView<ArticleBodyContentModel>
 
 <div class="article-body-content">
 	<h1>@Html.Raw(Model.Title)</h1>
@@ -13,19 +14,18 @@
 			<li>
 				<time class="article-metadata__date">@Model.Date.ToString("dd MMM yyyy")</time>
 			</li>
-			@if (!string.IsNullOrEmpty(Model.Content_Type))
+			@if (!string.IsNullOrEmpty(Model.ContentType))
 			{
 				<li>
-					<h6>@Model.Content_Type</h6>
+					<h6>@Model.ContentType</h6>
 				</li>
 			}
-			@if (!string.IsNullOrEmpty(Model.Media_Type))
-			{
-				<li>
-					<svg class="article-metadata__media-type">
-						<use xlink:href="/dist/img/svg-sprite.svg#@Model.Media_Type"></use>
-					</svg>
-				</li>
+			@if (!string.IsNullOrEmpty(Model.MediaTypeIconData?.MediaType))
+            {
+
+			    <li>
+                    @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model.GlassModel._Id })
+			    </li>
 			}
 		</ul>
 	</div>
@@ -41,10 +41,10 @@
 		<div class="article-author article-author--solo">
 			<ul class="article-author__list">
 				<li>
-					@if (!string.IsNullOrWhiteSpace(author?.Image))
+					@if (author.Image != null)
 					{
 						<div class="article-author__photo">
-							<img src="@author.Image">
+						    @RenderImage(author, model => model.Image, new { width = 120 })
 						</div>
 					}
 					<div class="article-author__solo-wrapper">
@@ -118,7 +118,7 @@
 		@* * *  ARTICLE - FEATURED IMAGE
 			IIPP-117 *@
 		<aside class="article-inline-image">
-			<img src="@Model.Image.ImageUrl" alt="@Model.Image.ImageAltText">
+			<img src="@Model.Image.GetScaledImage(790)" alt="@Model.Image.ImageAltText">
 			@if (!string.IsNullOrEmpty(Model.Image.ImageSource))
 			{
 				<span class="article-inline-image__source">
