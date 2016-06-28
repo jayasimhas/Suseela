@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Web;
 using System.Xml;
-using Glass.Mapper;
 using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
@@ -22,7 +21,7 @@ namespace Informa.Library.Services.Sitemap
         string GetNewsSitemapXML();
     }
 
-    [AutowireService(LifetimeScope.SingleInstance)]
+    [AutowireService(LifetimeScope.PerScope)]
     public class SitemapService : ISitemapService
     {
         protected readonly IProviderSearchContextFactory SearchContextFactory;

@@ -1,4 +1,6 @@
 .search-results {
+    @include search-page-structure();
+
     // headlines-only view
     &.headlines-only {
         .search-result__publication,
@@ -19,7 +21,7 @@
 }
 
 .search-result {
-    border-top: 2px solid $informa-light-gray-d;
+    border-top: 2px solid $color-light-gray;
     display: block;
     padding: 22px 0;
 
@@ -27,13 +29,13 @@
         @include textMix('Roboto', 14px, 400);
         display: inline-block;;
         line-height: 22px;
-        color: $informa-dark-gray;
+        color: $color-abbey-gray;
         margin-bottom: 1.5rem;
     }
 
     &__publication {
         @include textMix('Roboto', 12px, 400);
-        color: $color-medium-gray-8;
+        color: $color-old-silver-gray;
         letter-spacing: 1px;
         text-transform: uppercase;
         margin-bottom: 0.5rem;
@@ -42,7 +44,7 @@
     &__heading {
         display: inline-block;
         margin-bottom: 1rem;
-        color: $informa-black;
+        color: $color-zeus-black;
 
         &:hover {
             color: $color-cardinal-red;
@@ -51,7 +53,7 @@
 
     &__author {
         @include textMix('Roboto', 15px, 700);
-        color: $informa-dark-gray;
+        color: $color-abbey-gray;
         margin-bottom: 1rem;
     }
 
@@ -59,21 +61,21 @@
     &__content-type {
         @include textMix('Roboto Condensed', 15px, 700);
         display: inline;
-        color: $informa-black;
+        color: $color-zeus-black;
         text-transform: uppercase;
     }
 
     &__description {
         @include textMix('PTSerif', 15px, 400);
         line-height: 25px;
-        color: $informa-dark-gray;
+        color: $color-abbey-gray;
     }
 
   &__media-type {
     display: inline-block;
 
     svg {
-      @include svg-fill($informa-mid-gray);
+      @include svg-fill($color-dusty-gray);
       width: 26px;
       height: 24px;
       vertical-align: bottom;
@@ -86,16 +88,17 @@
     height: 20px;
     margin: 0 15px;
     vertical-align: sub;
-    background-color: $informa-light-gray-d;
+    background-color: $color-light-gray;
   }
 
   &__bookmark {
-    @extend .article-preview__bookmarker;
-    //z-index: -1; // overrides .pop-out__trigger z-index:993
+      @extend .action-flag;
+      float: right;
+      padding-top: 0;
 
-    .icon__bookmark {
-      @extend .article-prologue__share-icon;
-    }
+      .icon__bookmark {
+          @extend .action-flag__icon;
+      }
 
     &--not-bookmarked {
       .icon__bookmark--outlined {

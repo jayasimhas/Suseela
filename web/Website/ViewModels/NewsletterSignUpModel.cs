@@ -1,5 +1,6 @@
 ﻿using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
+using Informa.Library.Services.Global;
 using Informa.Library.Site;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Newsletter;
@@ -15,28 +16,30 @@ namespace Informa.Web.ViewModels
 	    protected readonly IAuthenticatedUserContext UserContext;
 	    protected readonly ITextTranslator TextTranslator;
 	    protected readonly ISiteRootContext SiteRootContext;
-	    protected readonly ISitecoreService SitecoreService;
+	    protected readonly IGlobalSitecoreService GlobalService;
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
 
         public NewsletterSignUpModel(
 	        IAuthenticatedUserContext userContext,
             ITextTranslator textTranslator,
             ISiteRootContext siteRootContext,
-            ISitecoreService sitecoreService,
+            IGlobalSitecoreService globalService,
 			ISiteNewsletterUserOptedInContext newsletterOptedInContext)
 	    {
 
             UserContext = userContext;
             TextTranslator = textTranslator;
             SiteRootContext = siteRootContext;
-            SitecoreService = sitecoreService;
+            GlobalService = globalService;
 			NewsletterOptedInContext = newsletterOptedInContext;
 	    }
 
         public bool IsAuthenticated => UserContext.IsAuthenticated;
 
 		public bool HasSubscribed => NewsletterOptedInContext.OptedIn;
-        public string PreferencesURL => SitecoreService.GetItem<I___BasePage>(SiteRootContext.Item.Email_Preferences_Page)?._Url ?? "#";
+        public string PreferencesURL => GlobalService.GetItem<I___BasePage>(SiteRootContext.Item.Email_Preferences_Page)?._Url ?? "#";
         public string GeneralError => TextTranslator.Translate("Newsletter.GeneralError");
-	}
+        public string NewsletterSignupEmail => TextTranslator.Translate("Global.NewsletterSignupEmail");
+        public string ManagePreferences => TextTranslator.Translate("Global.ManagePreferences");
+    }
 }

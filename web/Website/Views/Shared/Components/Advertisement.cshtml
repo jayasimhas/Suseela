@@ -1,10 +1,9 @@
-﻿@using Glass.Mapper.Sc.Web.Mvc
-@model AdvertisementViewModel
+﻿@inherits CustomGlassView<AdvertisementViewModel>
 
-@if (Sitecore.Context.PageMode.IsExperienceEditor)
+@if (IsInEditingMode)
 {
-    @Html.Glass().Editable(x => x.GlassModel.Slot_ID)
-    @Html.Glass().Editable(x => x.GlassModel.Zone)
+    @Editable(Model.GlassModel, x => x.Slot_ID)
+    @Editable(Model.GlassModel, x => x.Zone)
 }
 @if (!string.IsNullOrEmpty(Model.GlassModel.Slot_ID) && !string.IsNullOrEmpty(Model.GlassModel.Zone))
 {
