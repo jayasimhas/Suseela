@@ -77,7 +77,7 @@ namespace Informa.Web.Areas.VWB.Controllers
 			{
 				if (!string.IsNullOrWhiteSpace(todelete))
 				{
-					_dependencies.IssuesService.DeleteArticles(todelete);
+					_dependencies.IssuesService.DeleteArticles(issueId, todelete);
 				}
 
 				if (!string.IsNullOrWhiteSpace(order))

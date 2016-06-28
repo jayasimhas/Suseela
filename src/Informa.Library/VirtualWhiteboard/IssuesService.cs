@@ -22,7 +22,7 @@ namespace Informa.Library.VirtualWhiteboard
 		IEnumerable<IArticle> GetArticles(Guid issueId);
 		VwbResponseModel ArchiveIssue(Guid issueId);
 		void ReorderArticles(Guid issueId, string ids);
-		void DeleteArticles(string ids);
+		void DeleteArticles(Guid issueId, string ids);
 		void UpdateIssueInfo(Guid issueId, string title, string date);
 		IEnumerable<IIssue> GetActiveIssues();
 		bool DoesIssueContains(Guid issueId, string articleId);
@@ -168,15 +168,31 @@ namespace Informa.Library.VirtualWhiteboard
 			};
 		}
 
-		public void DeleteArticles(string ids)
+		public void DeleteArticles(Guid issueId, string ids)
 		{
 			if (string.IsNullOrWhiteSpace(ids))
 			{
 				return;
 			}
 
-			EnumerableExtensions.Each(ids.Split('|')
-					.Select(i => _dependencies.SitecoreServiceMaster.GetItem<IArticle>(new Guid(i))), x =>_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() => _dependencies.SitecoreServiceMaster.Delete(x)));
+			var toDeleteIds = ids.Split('|');            
+			var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(issueId);
+			var articleOrders = issue.Articles_Order.Split('|');
+			var resultIds = Sitecore.ContentSearch.Utilities.EnumerableExtensions.RemoveWhere(articleOrders,
+				i => toDeleteIds.Contains(i));
+			var resultString = string.Empty;
+			foreach (var resultId in resultIds)
+			{
+				if (!string.IsNullOrWhiteSpace(resultString))
+				{
+					resultString = $"{resultString}|{resultId}";
+				}
+			}
+			issue.Articles_Order = resultString;
+			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() => _dependencies.SitecoreServiceMaster.Save(issue));
+
+			EnumerableExtensions.Each(
+				toDeleteIds.Select(i => _dependencies.SitecoreServiceMaster.GetItem<IArticle>(new Guid(i))),x => _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>_dependencies.SitecoreServiceMaster.Delete(x)));		
 		}
 
 		public void ReorderArticles(Guid issueId, string ids)
@@ -226,12 +242,6 @@ namespace Informa.Library.VirtualWhiteboard
 		}
 
 		public HashSet<string> GetIssueArticlesSet(Guid issueId)
-		{
-			var cacheKey = $"Issue-{issueId}";
-			return _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildIssueDictionary(issueId));
-		}
-
-		private HashSet<string> BuildIssueDictionary(Guid issueId)
 		{
 			var dict = new HashSet<string>();
 			_dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId)

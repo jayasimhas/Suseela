@@ -234,7 +234,7 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 			    "4137ED60-1ABE-42CB-B305-119C05B696D3|E94F2832-A519-48AA-9413-FF823BF710E9|8C268BA6-9AE0-4D1E-A16A-24F5B22648F8";
 
 			// ACT
-			_issuesService.DeleteArticles(idString);
+			_issuesService.DeleteArticles(Arg.Any<Guid>(),idString);
 
 		    // ASSERT
 			_dependencies.SitecoreServiceMaster.Received(3).Delete(Arg.Any<IArticle>());
@@ -251,24 +251,10 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 			var idString = "4137ED60-1ABE-42CB-B305-119C05B696D3";
 
 			// ACT
-			_issuesService.DeleteArticles(idString);
+			_issuesService.DeleteArticles(Arg.Any<Guid>(), idString);
 
 			// ASSERT
 			_dependencies.SitecoreServiceMaster.Received(1).Delete(Arg.Is<IArticle>(a => a._Id == new Guid("4137ED60-1ABE-42CB-B305-119C05B696D3")));
-		}
-
-	    [Test]
-	    public void DeleteArticles_EmptyString_Returned()
-	    {
-			// ARRANGE
-			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.Invoke());
-			var idString = "";
-
-			// ACT
-			_issuesService.DeleteArticles(idString);
-
-			// ASSERT
-			_dependencies.SitecoreServiceMaster.DidNotReceive().Delete(Arg.Any<IArticle>());
 		}
 
 	    [Test]
