@@ -150,7 +150,7 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
             // ASSERT
             _dependencies.SitecoreServiceMaster.Received(1)
                 .Create<IIssue, IIssue_Folder>(Arg.Any<IIssue_Folder>(), Arg.Any<string>());
-            _dependencies.SitecoreServiceMaster.Received(1).Save(Arg.Any<IIssue__Raw>());
+            _dependencies.SitecoreServiceMaster.Received(2).Save(Arg.Any<IIssue__Raw>());
             _dependencies.SitecoreClonesWrapper.Received(2).CreateClone(Arg.Any<Guid>(), Arg.Any<Guid>());
 
             Assert.IsTrue(response.IsSuccess);

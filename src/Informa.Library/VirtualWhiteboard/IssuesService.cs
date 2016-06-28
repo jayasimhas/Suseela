@@ -107,10 +107,20 @@ namespace Informa.Library.VirtualWhiteboard
 
 		public void AddArticlesToIssue(Guid issueId, IEnumerable<Guid> itemIds)
 		{
-			if (itemIds == null) return;
+			if (itemIds == null)
+			{
+				return;
+			}
+			// Save new articles to articles order
+			var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(issueId);
+			var enumerable = itemIds as IList<Guid> ?? itemIds.ToList();
+			issue.Articles_Order = enumerable.Aggregate(issue.Articles_Order, (current, itemId) => !string.IsNullOrWhiteSpace(current) ? $"{current}|{itemId}" : itemId.ToString());
 
 			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
-				EnumerableExtensions.Each(itemIds, id => _dependencies.SitecoreClonesWrapper.CreateClone(id, issueId)));
+			{
+				EnumerableExtensions.Each(enumerable, id => _dependencies.SitecoreClonesWrapper.CreateClone(id, issueId));
+				_dependencies.SitecoreServiceMaster.Save(issue);
+			});
 		}
 
 		public VwbResponseModel ArchiveIssue(Guid issueId)
