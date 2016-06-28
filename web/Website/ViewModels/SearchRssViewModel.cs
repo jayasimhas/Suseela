@@ -10,8 +10,7 @@ using Informa.Library.Rss.Utils;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss;
 using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
-using Sitecore.Web;
+using Log = Sitecore.Diagnostics.Log;
 
 namespace Informa.Web.ViewModels
 {

@@ -7,7 +7,7 @@
 		IUserEntitlementsViewModel UserEntitlementsViewModel { get; }
 		IUserSubscriptionsViewModel UserSubscriptionsViewModel { get; }
 		IUsernameViewModel UsernameViewModel { get; }
-		bool Enabled { get; }
+		IUserPageEntitlementViewModel UserPageEntitlementViewModel { get; }
 		string ToggleButtonText { get; }
 	}
 }

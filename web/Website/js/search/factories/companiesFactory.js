@@ -4,12 +4,12 @@ var informaSearchApp = angular.module('informaSearchApp');
 // note: a factory lives through the entire application lifecycle
 informaSearchApp.factory('getCompaniesService', ['$http', '$location', function ($http, $location) {
 
-    var fetchCompanies = function() {
+    var fetchCompanies = function(pageId) {
 
-        var fullUrl = '/velir/services/TypeAhead.asmx/TypeAheadCompaniesFromSearch';
+        var fullUrl = '/api/typeahead/getcompanies?pId=' + pageId;
 
         if ($location.url()) {
-            fullUrl += $location.url();
+            fullUrl += '&' + $location.url().replace('?', '');
         }
 
         return $http({
