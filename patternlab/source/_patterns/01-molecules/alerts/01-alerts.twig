@@ -1,25 +1,6 @@
-{% if alertType == false %}
-	{% set alertType = "success" %}
-{% endif %}
-{% if alertIcon == false %}
-	{% set alertIcon = "check" %}
-{% endif %}
-{% if alertText == false %}
-	{% set alertText = "Good work! The thing you did was a success." %}
-{% endif %}
-
 <div class="alert-{{alertType}}" style="display: block !important;">
-    <svg class="alert__icon">
-        <use xlink:href="/web/Website/dist/img/svg-sprite.svg#{{alertIcon}}"></use>
-    </svg>
-    <p>{{alertText}}</p>
+	<svg class="alert__icon">
+		<use xlink:href="/web/Website/dist/img/svg-sprite.svg#{{alertIcon}}"></use>
+	</svg>
+	<p>{{alertText}}</p>
 </div>
-
-<!--
-<div class="alert-error" style="display: block !important;">
-    <svg class="alert__icon">
-        <use xlink:href="/web/Website/dist/img/svg-sprite.svg#alert"></use>
-    </svg>
-    <p>Uh oh, something didn't work. Please try again.</p>
-</div>
--->

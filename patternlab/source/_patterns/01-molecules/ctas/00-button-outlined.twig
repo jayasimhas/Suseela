@@ -1,4 +1,6 @@
 {% if buttonText == false %}
 	{% set buttonText = "Button, Outlined" %}
+{% elseif buttonText == "random" %}
+	{% set buttonText = random(randomButtons).text %}
 {% endif %}
 <button href="#" class="button--outlined">{{buttonText}}</button>
