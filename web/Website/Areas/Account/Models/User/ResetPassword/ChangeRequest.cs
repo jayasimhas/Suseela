@@ -9,7 +9,7 @@ namespace Informa.Web.Areas.Account.Models.User.ResetPassword
 		public string Token { get; set; }
 		[Password(ErrorMessage = ChangeValidationReason.PasswordRequirements)]
 		public string NewPassword { get; set; }
-		[Compare("NewPassword", ErrorMessage = ChangeValidationReason.PasswordMismatch)]
+		[Compare(nameof(NewPassword), ErrorMessage = ChangeValidationReason.PasswordMismatch)]
 		public string NewPasswordRepeat { get; set; }
 	}
 }

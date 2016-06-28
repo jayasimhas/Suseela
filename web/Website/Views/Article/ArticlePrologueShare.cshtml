@@ -1,6 +1,6 @@
 ﻿@model Informa.Web.ViewModels.IArticlePrologueShareViewModel
-<li class="article-prologue__share-item--social">
-	<span class="article-prologue__share-label">@Model.ShareText</span>
+<li class="action-flag action-flag--social">
+	<span class="action-flag__label">@Model.ShareText</span>
 
 	@*
 		LAST UPDATED — FEBRAURY 02 2016
@@ -15,8 +15,9 @@
 	<a
 		href="https://www.linkedin.com/shareArticle?mini=true&url=@HttpUtility.UrlEncode(Model.ArticleUrl)&title=@HttpUtility.UrlEncode(Model.ArticleTitle)&summary=&source="
 		target="_blank"
-		class="link__no-hover click-utag" data-info='{"event_name" : "article-share-linkedin"}'>
-		<svg class="article-prologue__share-icon article-prologue__share-icon--linkedin">
+		class="link__no-hover click-utag" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"linkedin"}'>
+
+		<svg class="action-flag__icon action-flag__icon--linkedin">
 			<use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
 		</svg>
 	</a>
@@ -30,8 +31,9 @@
 	*@
 	<a
 		href="https://twitter.com/intent/tweet?text=@HttpUtility.UrlEncode(Model.ArticleTitle)&url=@HttpUtility.UrlEncode(Model.ArticleUrl)"
-		class="link__no-hover click-utag" data-info='{"event_name" : "article-share-twitter"}'>
-		<svg class="article-prologue__share-icon article-prologue__share-icon--twitter" >
+		class="link__no-hover click-utag" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"twitter"}'>
+
+		<svg class="action-flag__icon action-flag__icon--twitter" >
 			<use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
 		</svg>
 	</a>

@@ -2,7 +2,7 @@
 
 <header>
 
-    <div class="banner banner--cookie-policy" data-banner-id="cookie-policy-0001">
+    <div class="banner banner--cookie-policy" data-banner-id="cookie-policy-0001" data-dismiss-all-subdomains="true">
         <div class="banner__wrapper">
             <div class="dismiss-button js-dismiss-banner">
                 <svg class="dismiss-button__icon">
@@ -62,13 +62,13 @@
         </div>
 
         <div class="header__logo">
-            <a href="@Model.LogoUrl"><img src="@Model.LogoImageUrl"></a>
+            <a href="/"><img src="@Model.LogoImageUrl"></a>
         </div>
         <div class="header-logo-print">
-            <a href="@Model.LogoUrl"><img src="@Model.PrintPageHeaderLogoSrc"></a>
+            <a href="/"><img src="@Model.PrintPageHeaderLogoSrc"></a>
         </div>
 
-        @Html.Sitecore().Rendering("{ACBBD086-F6F2-4327-B3FF-2D36716E3AFC}")
+        @Html.Sitecore().Placeholder("header-search")
 
         <div class="header-account-access">
 

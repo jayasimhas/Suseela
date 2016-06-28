@@ -1,9 +1,5 @@
-﻿using System;
-using Informa.Library.Session;
+﻿using Informa.Library.Session;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using Sitecore.Configuration;
 using System.Web;
 
 namespace Informa.Library.Salesforce.Web
@@ -34,7 +30,7 @@ namespace Informa.Library.Salesforce.Web
 					return enabledSession.Value;
 				}
 
-			    return !(Configuration.UserAgents.Any(ua => ua == HttpContext.Current.Request.UserAgent));
+				return Enabled = Configuration.UserAgents.All(ua => ua != HttpContext.Current.Request.UserAgent);
 			}
 			set
 			{

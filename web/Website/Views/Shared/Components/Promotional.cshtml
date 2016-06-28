@@ -1,13 +1,13 @@
-﻿@model PromotionalViewModel
+﻿@inherits CustomGlassView<PromotionalViewModel>
 
 @if(null != Model) {
     <div class="promotional-sidebar">
         @if (Model.DisplayImage)
         {
-            @Html.Glass().Editable(x => x.GlassModel.Image)
+            @Editable(Model.GlassModel, x => x.Image)
         }
-        <h3>@Html.Glass().Editable(x => x.GlassModel.Title)</h3>
-        <div>@Html.Glass().Editable(x => x.GlassModel.Text)</div>
-        @Html.Glass().Editable(x => x.GlassModel.Link, new {@class = "button--outlined button--gilded"})
+        <h3>@Editable(Model.GlassModel, x => x.Title)</h3>
+        <div>@Editable(Model.GlassModel, x => x.Text)</div>
+        @Editable(Model.GlassModel, x => x.Link, new {@class = "button--outlined button--gilded"})
     </div>
 }
