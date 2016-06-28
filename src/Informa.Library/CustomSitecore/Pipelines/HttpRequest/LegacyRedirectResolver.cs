@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
+using Informa.Library.Logging;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Pipelines.Processors;
 using Sitecore;
@@ -19,16 +20,21 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 	{
 		protected readonly IArticleSearch ArticleSearcher;
 		protected readonly ISitecoreContext SitecoreContext;
+	    protected readonly ILogWrapper Logger;
 
-		public LegacyRedirectResolver(IArticleSearch searcher, ISitecoreContext context)
+        public LegacyRedirectResolver(
+            IArticleSearch searcher, 
+            ISitecoreContext context,
+            ILogWrapper logger)
 		{
 			ArticleSearcher = searcher;
 			SitecoreContext = context;
+            Logger = logger;
 		}
 
 		public void Process(HttpRequestArgs args)
 		{
-			Assert.ArgumentNotNull(args, "args");
+            Assert.ArgumentNotNull(args, "args");
 
 			if (Context.Item == null)
 			{
@@ -79,7 +85,9 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 						var basePath = "/sitecore/content/Home";
 						var path = $"{basePath}{args.Url.FilePath}".Replace("-", " ");
 						results = ArticleSearcher.GetLegacyArticleUrl(path);
-					}
+
+                        Logger.SitecoreInfo($"LegacyRedirectResolver path request: {path}");
+                    }
 					else
 					{
 						IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
@@ -88,19 +96,23 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 						filter.EScenicID = match.Groups[1].Value;
 
 						results = ArticleSearcher.Search(filter);
-					}
+
+                        Logger.SitecoreInfo($"LegacyRedirectResolver pattern request: {match.Groups[1].Value}");
+                    }
 
 					//redirect 
 					IArticle article = results?.Articles?.FirstOrDefault();
 
 					if (article == null)
 					{
-						return;
+                        Logger.SitecoreInfo("LegacyRedirectResolver article not found");
+                        return;
 					}
 
 					string newPath = ArticleSearch.GetArticleCustomPath(article);
+                    Logger.SitecoreInfo($"LegacyRedirectResolver article path: {newPath}");
 
-					var options = LinkManager.GetDefaultUrlOptions();
+                    var options = LinkManager.GetDefaultUrlOptions();
 					options.SiteResolving = true;
 					options.AlwaysIncludeServerUrl = true;
 
@@ -108,7 +120,9 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 					var domainUri = new Uri(LinkManager.GetItemUrl(item, options));
 					var protocol = Sitecore.Configuration.Settings.GetSetting("Site.Protocol", "https");
 
-					args.Context.Response.Status = "301 Moved Permanently";
+                    Logger.SitecoreInfo($"LegacyRedirectResolver article url: {protocol}://{domainUri.Host}{newPath}");
+
+                    args.Context.Response.Status = "301 Moved Permanently";
 					args.Context.Response.AddHeader("Location", $"{protocol}://{domainUri.Host}{newPath}");
 					args.Context.Response.End();
 				}
