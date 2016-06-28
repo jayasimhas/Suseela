@@ -3,21 +3,34 @@
 
 @if (Model.Children.Any())
 {
-    <div class="article-topics">
-        <h2>@Model.RelatedTaxonomyHeader</h2>
-        <ul>
-            @foreach (var catagory in Model.Children)
-            {
-                <li class="article-topics__section-header">@catagory.Text</li>foreach (var tag in catagory.Children)
-                {
-                    <li class="article-topics__li"><a href="@tag.Url" class="click-utag" data-info='{"event_name"="related-taxonomy", "taxonomy-name"="@tag.Text","taxonomy-category"="@catagory.Text"}'>@tag.Text</a></li>foreach (var childTag in tag.Children)
-                    {
-                        Html.RenderPartial("ChildTaxonomy", childTag);
-                    }
-                }
-            }
-
-
-        </ul>
-    </div>
+	<div class="article-topics">
+		<h2>@Model.RelatedTaxonomyHeader</h2>
+		<ul>
+			@foreach (var catagory in Model.Children)
+			{
+				<li class="article-topics__section-header">
+					@catagory.Text
+				</li>
+				foreach (var tag in catagory.Children)
+				{
+					<li class="article-topics__li">
+						<a href="@tag.Url"
+						   class="click-utag"
+						   data-info='{"event_name":"topics_click_through",
+										"taxonomy-name":"@tag.Text",
+										"taxonomy-category":"@catagory.Text",
+										"click_through_source":"@Sitecore.Context.Item.DisplayName", 										"click_through_destination":"@catagory.Text: @tag.Text"}'>
+										@tag.Text
+						</a>
+					</li>
+					var nestedTaxonomy = $"{catagory.Text}: {tag.Text}";
+					foreach (var childTag in tag.Children)
+					{
+						childTag.Path = nestedTaxonomy;
+						Html.RenderPartial("ChildTaxonomy", childTag);
+					}
+				}
+			}
+		</ul>
+	</div>
 }
