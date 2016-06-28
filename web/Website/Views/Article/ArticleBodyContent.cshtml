@@ -1,6 +1,5 @@
 ﻿@using Informa.Library.Utilities.References
 @using Informa.Web.Models
-@using Sitecore.Resources.Media
 @inherits CustomGlassView<ArticleBodyContentModel>
 
 <div class="article-body-content">
@@ -21,7 +20,7 @@
 					<h6>@Model.ContentType</h6>
 				</li>
 			}
-			@if (!string.IsNullOrEmpty(Model.MediaTypeIconData.MediaType))
+			@if (!string.IsNullOrEmpty(Model.MediaTypeIconData?.MediaType))
             {
 
 			    <li>
