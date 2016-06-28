@@ -110,3 +110,33 @@
 		float: none;
 	}
 }
+
+// COLUMNS WITH DIVIDING BARS
+.l-columns {
+	display: flex;
+	flex: auto;
+	flex-wrap: wrap;
+	margin: 0 0 30px;
+
+	&--with-divider {
+		.l-columns__column {
+			border-right: 1px solid $color-light-gray;
+			padding: 0 30px;
+		}
+	}
+
+	&--three-up {
+		.l-columns__column {
+			width: 33.3333333%;
+		}
+
+		.l-columns__column:nth-child(3n + 1) {
+			padding-left: 0;
+		}
+
+		.l-columns__column:nth-child(3n) {
+			border-right: none;
+			padding-right: 0;
+		}
+	}
+}
