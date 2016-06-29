@@ -26,13 +26,15 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields {
         /// <returns></returns>
         string Name { get; set; }
 
-        /// <summary>
-        /// This uses the imported value to modify the newly created item. 
-        /// </summary>
-        /// <param name="map">provides settings related to the import</param>
-        /// <param name="newItem">the newly created item</param>
-        /// <param name="importValue">the imported value</param>
-        void FillField(IDataMap map, ref Item newItem, string importValue);
+		bool DoUpdate { get; set; }
+
+		/// <summary>
+		/// This uses the imported value to modify the newly created item. 
+		/// </summary>
+		/// <param name="map">provides settings related to the import</param>
+		/// <param name="newItem">the newly created item</param>
+		/// <param name="importValue">the imported value</param>
+		void FillField(IDataMap map, ref Item newItem, string importValue, string id = null);
 
         /// <summary>
         /// returns a list of the field names from the import row that you want to import into this field 

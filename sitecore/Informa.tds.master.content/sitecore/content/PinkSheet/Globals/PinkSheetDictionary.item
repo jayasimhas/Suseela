@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {A1F87E18-3F3D-4E05-AB6F-DE30F46D87B7}
+database: master
+path: /sitecore/content/PinkSheet/Globals/PinkSheetDictionary
+parent: {C7CB87BE-4EF1-4A36-B462-811B7DC109D9}
+name: PinkSheetDictionary
+master: {CBA15CFC-A70C-4146-8A11-25AA3F4FDDB4}
+template: {0A2847E6-9885-450B-B61E-F9E6528480EF}
+templatekey: Dictionary Domain
+
+----field----
+field: {CD72E892-D8BB-487C-9EB1-6A57C48C72CC}
+name: Fallback Domain
+key: fallback domain
+content-length: 38
+
+{97286D9D-452D-48E6-AD4E-682D52869459}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 20
+
+apps/32x32/books.png
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 77
+
+{4314E7F7-4F9F-4E16-A43A-8C0BF2A03A2F}|{21E73669-E1E7-4DB1-8B6D-A6366366CC29}
+----version----
+language: en
+version: 1
+revision: 856f65f0-e629-47d7-9770-eb781a42080b
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160418T200732Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+856f65f0-e629-47d7-9770-eb781a42080b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160418T200732Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

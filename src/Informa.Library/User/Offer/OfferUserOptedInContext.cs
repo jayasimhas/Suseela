@@ -38,7 +38,7 @@ namespace Informa.Library.User.Offer
 					return optedInSession.Value;
 				}
 
-				var optedIn = OptedIn = OfferOptedIn.OptedIn(UserContext.User.Username);
+				var optedIn = OptedIn = OfferOptedIn.OptedIn(UserContext.User?.Username);
 
 				return optedIn;
 			}

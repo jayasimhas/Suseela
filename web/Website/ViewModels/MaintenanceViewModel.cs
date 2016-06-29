@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class MaintenanceViewModel : IMaintenanceViewModel
 	{
 		protected readonly ISiteMaintenanceContext SiteMaintenanceContext;

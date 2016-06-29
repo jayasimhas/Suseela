@@ -1,8 +1,6 @@
-﻿using System;
-using Informa.Library.User.Newsletter;
+﻿using Informa.Library.User.Newsletter;
 using System.Collections.Generic;
 using System.Linq;
-using Informa.Library.Newsletter;
 using Informa.Library.Salesforce.EBIWebServices;
 
 namespace Informa.Library.Salesforce.User.Newsletter
@@ -11,6 +9,7 @@ namespace Informa.Library.Salesforce.User.Newsletter
 	{
 		protected readonly ISalesforceServiceContext Service;
 	    protected readonly INewsletterUserOptInsContext NewsletterContext;
+
         public SalesforceUpdateNewsletterUserOptIns(
 			ISalesforceServiceContext service,
             INewsletterUserOptInsContext newsletterContext)
@@ -24,6 +23,11 @@ namespace Informa.Library.Salesforce.User.Newsletter
 			if (string.IsNullOrEmpty(userName))
 			{
 				return false;
+			}
+
+			if (!newsletterOptIns.Any())
+			{
+				return true;
 			}
 
             //we can't send just the ones we want to update. we have to send all newsletter optins that a user has

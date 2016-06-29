@@ -154,8 +154,7 @@
                             this.totalResults = pager.totalResults;
                             this.keywords = this.searchService.getFilter('q').getValue();
                             this.selectedFacetGroups = this._getActiveFacetGroups();
-                            this._utagAnalytics();
-
+                           
                         }
                     }, {
                         key: '_getActiveFacetGroups',
@@ -168,19 +167,6 @@
                             });
 
                             return groupsWithActive;
-                        }
-                    },
-                    {
-                        key: '_utagAnalytics',
-                        value: function _utagAnalytics() {
-                            var eventDetails = {
-                                Number_of_Results: '"' + this.totalResults + '"',
-                                search_Keyword: '"' + this.keywords + '"'
-                            };
-                            var dataObj = $.extend(analytics_data, eventDetails);
-                            if (typeof utag !== 'undefined') {
-                                utag.link(dataObj);
-                            }
                         }
                     }
                     ]);
@@ -483,7 +469,7 @@
                                     return;
                                 }
 
-                                if (filterParams.indexOf(key !== -1)) {
+                                if (filterParams.indexOf(key) !== -1) {
                                     _this.createFilter(key, value);
                                     return;
                                 }
@@ -519,6 +505,7 @@
                                 var facet = new _Core.Facet({ id: facetValue, selected: true });
                                 group.addFacet(facet);
                             });
+                            this.searchService.addFacetGroup(group);
                         }
                     }]);
 
@@ -918,11 +905,12 @@
                         value: function getFacet(id) {
                             var deep = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
 
-                            var facet = _lodash2["default"].find(this.facets, { id: id });
+                            var upperId = id.toUpperCase();
+                            var facet = _lodash2["default"].find(this.facets, function (o) { return o.id.toUpperCase() === upperId; });
 
                             if (!facet) {
-                                _lodash2["defaultgetSelectedFacets"].each(this.facets, function (f) {
-                                    facet = _lodash2["default"].find(f.sublist, { id: id });
+                                _lodash2["default"].each(this.facets, function (f) {
+                                    facet = _lodash2["default"].find(f.sublist, function (o) { return o.id.toUpperCase() === upperId; });
                                     return !facet;
                                 });
                             }
@@ -1775,7 +1763,7 @@
                         key: 'query',
                         value: function query() {
                             var _this2 = this;
-
+                            
                             var query = new _Query.Query({
                                 url: this._url,
                                 transport: this._http,
@@ -1833,7 +1821,7 @@
                             this._results = data.results;
                             this._pager = new _Pager.Pager({
                                 current: data.request.page,
-                                perPage: data.results.length,
+                                perPage: data.request.perPage,
                                 totalResults: data.totalResults
                             });
 

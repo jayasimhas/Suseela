@@ -10,7 +10,11 @@ using Informa.Library.Search;
 using Informa.Library.Utilities.References;
 using Sitecore.ContentSearch.Linq;
 using System.Text;
+using Informa.Library.Services.Global;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Jabberwocky.Core.Caching;
+using Constants = Informa.Library.Utilities.References.Constants;
 
 namespace Informa.Library.Article.Search
 {
@@ -18,20 +22,24 @@ namespace Informa.Library.Article.Search
 	public class ArticleSearch : IArticleSearch
 	{
 		protected readonly IProviderSearchContextFactory SearchContextFactory;
-		protected readonly ISitecoreService SitecoreContext;
+		protected readonly IGlobalSitecoreService GlobalService;
 		protected readonly Func<string, ISitecoreService> SitecoreFactory;
 		protected readonly IItemReferences ItemReferences;
+		protected readonly ICacheProvider CacheProvider;
 
 		public ArticleSearch(
-			IProviderSearchContextFactory searchContextFactory,
-			ISitecoreService sitecoreContext, Func<string, ISitecoreService> sitecoreFactory,
-			 IItemReferences itemReferences
-			)
+				IProviderSearchContextFactory searchContextFactory,
+				IGlobalSitecoreService globalService,
+				Func<string, ISitecoreService> sitecoreFactory,
+				IItemReferences itemReferences,
+				ICacheProvider cacheProvider
+				)
 		{
 			SearchContextFactory = searchContextFactory;
-			SitecoreContext = sitecoreContext;
+			GlobalService = globalService;
 			SitecoreFactory = sitecoreFactory;
 			ItemReferences = itemReferences;
+			CacheProvider = cacheProvider;
 		}
 
 		public IArticleSearchFilter CreateFilter()
@@ -40,7 +48,8 @@ namespace Informa.Library.Article.Search
 			{
 				ExcludeManuallyCuratedItems = new List<Guid>(),
 				TaxonomyIds = new List<Guid>(),
-				ArticleNumber = string.Empty
+				ArticleNumbers = new List<string>(),
+				PublicationNames = new List<string>()
 			};
 		}
 
@@ -49,13 +58,14 @@ namespace Informa.Library.Article.Search
 			using (var context = SearchContextFactory.Create())
 			{
 				var query = context.GetQueryable<ArticleSearchResultItem>()
-					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
-					.FilterTaxonomies(filter)
-					.ExcludeManuallyCurated(filter)
-					.FilteryByArticleNumber(filter)
-					.FilteryByEScenicID(filter)
-					.FilteryByRelatedId(filter)
-										.FilteryByLatestVersionAndCurrentLanguage();
+						.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+						.FilterByPublications(filter)
+						.FilterTaxonomies(filter)
+						.ExcludeManuallyCurated(filter)
+						.FilteryByArticleNumbers(filter)
+						.FilteryByEScenicID(filter)
+						.FilteryByRelatedId(filter)
+						.ApplyDefaultFilters();
 
 				if (filter.PageSize > 0)
 				{
@@ -68,7 +78,7 @@ namespace Informa.Library.Article.Search
 
 				return new ArticleSearchResults
 				{
-					Articles = results.Hits.Select(h => SitecoreContext.GetItem<IArticle>(h.Document.ItemId.Guid))
+					Articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid))
 				};
 			}
 		}
@@ -87,9 +97,9 @@ namespace Informa.Library.Article.Search
 					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
 					.FilterTaxonomies(filter)
 					.ExcludeManuallyCurated(filter)
-					.FilteryByArticleNumber(filter)
+					.FilteryByArticleNumbers(filter)
 					.FilteryByEScenicID(filter)
-										.FilteryByLatestVersionAndCurrentLanguage();
+					.ApplyDefaultFilters();
 
 				if (filter.PageSize > 0)
 				{
@@ -108,32 +118,26 @@ namespace Informa.Library.Article.Search
 
 		public long GetNextArticleNumber(Guid publicationGuid)
 		{
-			using (var context = SearchContextFactory.Create("master"))
+			using (var context = SearchContextFactory.Create(Constants.MasterDb))
 			{
-				var filter = CreateFilter();
+				var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
+				if (publicationItem != null)
+				{
+					var filter = CreateFilter();
 
-				var query = context.GetQueryable<ArticleSearchResultItem>()
-					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
-					.FilterTaxonomies(filter)
-					//.Max(x => x.ArticleIntegerNumber);
-					.OrderByDescending(i => i.ArticleIntegerNumber)
-					.Take(1);
+					var query = context.GetQueryable<ArticleSearchResultItem>()
+							.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+							.Filter(i => i.PublicationTitle == publicationItem.Publication_Name)
+							.FilterTaxonomies(filter)
+							.OrderByDescending(i => i.ArticleIntegerNumber)
+							.Take(1);
 
-				var results = query.GetResults();
+					var results = query.GetResults();
 
-
-				return results.Hits.FirstOrDefault().Document.ArticleIntegerNumber + 1;
-
-
-				//var results = articleSearchResultItem.GetResults();
-
-
-				//var articleResults2 = context.GetQueryable<ArticleSearchResultItem>()     Max(x => x.ArticleIntegerNumber);
-
-
-				//return results.Hits.FirstOrDefault().Document.ArticleIntegerNumber;
+					return results?.Hits?.FirstOrDefault()?.Document?.ArticleIntegerNumber + 1 ?? 0;
+				}
+				return 0;
 			}
-			return 0;
 		}
 
 		/// <summary>
@@ -153,28 +157,17 @@ namespace Informa.Library.Article.Search
 			return $"/{a.Article_Number}/{procName}";
 		}
 
-		public string GetArticleAuthors(Guid id)
-		{
-			var item = SitecoreContext.GetItem<ArticleItem>(id);
-			if (item?.Authors != null)
-			{
-				StringBuilder str = new StringBuilder();
-				foreach (IStaff_Item author in item.Authors)
-				{
-					if (str.Length > 0)
-						str.Append(",");
-					str.Append($"'{author._Name.Trim()}'");
-				}
-				return $"[{str}]";
-			}
-
-			return string.Empty;
-		}
-
 		public string GetArticleTaxonomies(Guid id, Guid taxonomyParent)
 		{
-			var article = SitecoreContext.GetItem<ArticleItem>(id);
+			string cacheKey = $"{nameof(ArticleSearch)}-GetTaxonomy-{id}";
+			return CacheProvider.GetFromCache(cacheKey, () => BuildArticleTaxonomies(id, taxonomyParent));
+		}
+
+		public string BuildArticleTaxonomies(Guid id, Guid taxonomyParent)
+		{
+			var article = GlobalService.GetItem<ArticleItem>(id);
 			var taxonomyItems = article?.Taxonomies?.Where(x => x._Parent._Id.Equals(taxonomyParent));
+
 			if (taxonomyItems != null)
 			{
 				StringBuilder str = new StringBuilder();
@@ -190,6 +183,21 @@ namespace Informa.Library.Article.Search
 			return string.Empty;
 		}
 
+		public IArticleSearchResults GetLegacyArticleUrl(string path)
+		{
+			path = path.ToLower();
+			using (var context = SearchContextFactory.Create())
+			{
+				var query = context.GetQueryable<ArticleSearchResultItem>()
+					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+					.Filter(i => i.LegacyArticleUrl == path);
+				var results = query.GetResults();
 
+				return new ArticleSearchResults
+				{
+					Articles = results.Hits.Select(i => GlobalService.GetItem<IArticle>(i.Document.ItemId.Guid))
+				};
+			}
+		}
 	}
 }
