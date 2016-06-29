@@ -37,6 +37,8 @@ using Glass.Mapper.Sc.Fields;
 using Jabberwocky.Glass.Models;
 using Sitecore.Globalization;
 using Sitecore.Data;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Velir.Search.Models;
 

@@ -9,7 +9,7 @@ using Sitecore.SharedSource.DataImporter.Providers;
 namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 {
  
-    public class ToDropdownList : ToText, IBaseField
+    public class ToDropdownList : ToText
     {
         #region properties
 
@@ -24,7 +24,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region private methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
             string selectedValue = string.Empty;
 

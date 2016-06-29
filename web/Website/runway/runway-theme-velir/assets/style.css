@@ -77,7 +77,7 @@ pre code {
 	margin: 1rem 0;
 	vertical-align: top;
 	padding: 0 1rem;
-	flex: 0 1 auto;
+	flex: 1 1 auto;
 	width: 25%;
 	position: relative;
 }
