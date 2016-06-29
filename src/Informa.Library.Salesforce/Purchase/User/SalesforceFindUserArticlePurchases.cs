@@ -4,17 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Purchase;
 using Informa.Library.Salesforce.EBIWebServices;
+using Informa.Library.Services.Global;
 
 namespace Informa.Library.Salesforce.Purchase.User
 {
 	public class SalesforceFindUserArticlePurchases : IFindUserArticlePurchases
 	{
 		protected readonly ISalesforceServiceContext Service;
+	    protected readonly IGlobalSitecoreService GlobalService;
 
 		public SalesforceFindUserArticlePurchases(
-			ISalesforceServiceContext service)
+			ISalesforceServiceContext service,
+            IGlobalSitecoreService globalService)
 		{
 			Service = service;
+		    GlobalService = globalService;
+
 		}
 
 		public IEnumerable<IArticlePurchase> Find(string username)
@@ -42,9 +47,9 @@ namespace Informa.Library.Salesforce.Purchase.User
 				{
 					DocumentId = sap.documentId,
 					Expiration = (sap.expirationDateSpecified) ? sap.expirationDate.Value : DateTime.Now,
-					Publication = sap.subscriptionType
-				})
+					Publication = GlobalService.GetPublicationName(new Guid(sap.documentId))
+                })
 				.ToList();
-		}
+		}	    
 	}
 }

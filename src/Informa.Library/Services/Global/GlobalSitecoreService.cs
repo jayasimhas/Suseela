@@ -164,5 +164,16 @@ namespace Informa.Library.Services.Global {
 
             return SitecoreService.GetItem<ISite_Root>(rootItem.ID.Guid);
         }
+
+        public string GetPublicationName(Guid g)
+        {
+            if (g == null || g == Guid.Empty)
+                return string.Empty;
+
+            ISite_Root r = GetSiteRootAncestor(g);
+            return (r == null)
+                ? string.Empty
+                : r.Publication_Name;
+        }
     }
 }
