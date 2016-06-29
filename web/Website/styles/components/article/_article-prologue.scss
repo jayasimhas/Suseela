@@ -1,109 +1,17 @@
 .article-prologue {
-    @include textMix('Roboto Condensed', 14px, 700);
-    border-top: 2px solid $informa-light-gray-d;
-    clear: both;
-    color: $informa-black;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 36px;
-    text-transform: uppercase;
 
-    li {
-        display: inline-block;
-    }
-
-    &__share-bar {
+    .action-flags {
         order: 2;
-        margin-top: 14px;
-    }
-    &__share-item {
-        margin-left: 2rem;
-
-        &:first-child {
-            margin-left: 0;
-        }
-
-        &:hover .article-prologue__share-icon {
-            @include svg-fill($color-zeus-black);
-        }
-
-        &--social {
-            @extend .article-prologue__share-item;
-
-            &:hover .article-prologue__share-icon {
-                @include svg-fill($informa-mid-gray);
-            }
-
-            & a:hover .article-prologue__share-icon {
-                @include svg-fill($color-zeus-black);
-            }
-        }
-    }
-    &__share-icon {
-        @include svg-fill($informa-mid-gray);
-        height: 22px;
-        vertical-align: middle;
-        width: 20px;
-
-        &--email {
-            width: 21px;
-            height: 21px;
-            margin-top: -3px;
-        }
-
-        &--bookmark {
-            margin-top: -1px;
-        }
-
-        &--linkedin {
-            margin-top: -4px;
-        }
-
-        &--twitter {
-            margin-top: -3px;
-            width: 23px;
-            height: 23px;
-            margin-left: 1rem;
-        }
-
-        &--email {
-            width: 21px;
-            height: 21px;
-            margin-top: -3px;
-        }
-
-        &--bookmark {
-            margin-top: -1px;
-        }
-
-        &--linkedin {
-            margin-top: -4px;
-        }
-
-        &--twitter {
-            margin-top: -3px;
-            width: 23px;
-            height: 23px;
-        }
-    }
-    &__share-label {
-        margin-right: 0.4375rem;
-    }
-
-    @include breakpoint('medium') {
-        &__share-label {
-            display: none;
-        }
     }
 
     @include breakpoint('small') {
         flex-flow: column;
 
-        &__share-bar {
+        .action-flags {
             align-self: flex-end;
         }
-        &__share-item {
-            margin: 0 0.5rem;
-        }
     }
+
 }

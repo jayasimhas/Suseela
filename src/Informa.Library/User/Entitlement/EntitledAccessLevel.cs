@@ -2,7 +2,7 @@ namespace Informa.Library.User.Entitlement
 {
     public enum EntitledAccessLevel
     {
-        UnEntitled,
+        None,
 		Individual,
 		Site,
 		TransparentIP

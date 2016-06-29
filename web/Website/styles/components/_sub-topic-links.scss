@@ -32,7 +32,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 
     a {
         @include textMix('Roboto', 0.9375rem, 400);
-        border-right: 1px solid $informa-light-gray-d;
+        border-right: 1px solid $color-light-gray;
         color: $color-dove-gray;
         display: inline-block;
         flex: 0 0 auto;

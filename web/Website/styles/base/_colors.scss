@@ -1,5 +1,6 @@
-/*---
-title: Colors
+    /*---
+title: Global
+section: Colors
 ---
 ```example:color
 @color: #231f20 @name: Zeus Black
@@ -9,13 +10,6 @@ title: Colors
 @color: #f1f2f2 @name: Concrete Gray
 @color: #e2e4e4 @name: Mercury Gray
 @color: #d1d3d4 @name: Light Gray
-@color: #be1e2d @name: Cardinal Red
-@color: #f7941e @name: Tree Poppy Orange
-@color: #fbb040 @name: Yellow Orange
-@color: #f9af40 @name: Butterscotch Orange
-@color: #d6ebdc @name: Iceberg Green
-@color: #31be48 @name: Lime Green
-@color: #daa520 @name: Goldenrod
 @color: #ffffff @name: White
 @color: #bbbcbe @name: Light Gray B
 @color: #808285 @name: Medium Gray 8
@@ -23,52 +17,127 @@ title: Colors
 ```
 */
 
-$informa-black:             #231f20;
 $color-zeus-black:          #231f20;
-
-$informa-darker-gray:       #414042;
 $color-ship-gray:           #414042;
-
-$informa-dark-gray:         #58595b;
 $color-abbey-gray:          #58595b;
-
 $color-dove-gray:           #6D6E71;
-
-$color-medium-gray-8:       #808285; // replace with $color-dove-gray ?
-
-$informa-mid-gray:          #979797;
+$color-old-silver-gray:     #808285;
 $color-dusty-gray:          #979797;
-
-$informa-light-gray-f:      #f1f2f2;
 $color-concrete-gray:       #f1f2f2;
-
-$informa-light-gray-e:      #e2e4e4; // replace with $color-mercury-gray ?
 $color-mercury-gray:        #e2e4e4;
-
-$informa-light-gray-d:      #d1d3d4;
 $color-light-gray:          #d1d3d4;
+$color-x11-gray:            #bbbcbe;
+$color-iceberg-green:       #d6ebdc;
+$color-antique-white:       #ffeedd;
+$color-white:               #ffffff;
+$color-misty-pink:          #fce5e6;
 
-$color-light-gray-b:        #bbbcbe; // replace with $color-light-gray ?
 
-$informa-red:               #be1e2d;
-$color-cardinal-red:        #be1e2d;
-
-$informa-dark-orange:       #f7941e;
-$color-tree-poppy-orange:   #f7941e;
+/*---
+title: SCRIP
+section: Colors
+---
+```example:color
+@color: #be1e2d @name: Cardinal Red
+@color: #f7941e @name: Tree Poppy Orange
+@color: #f9af40 @name: Butterscotch Orange
+@color: #fbb040 @name: Yellow Orange
+@color: #daa520 @name: Goldenrod
+@color: #31be48 @name: Lime Green
+```
+*/
 
 $color-butterscotch-orange: #f9af40;
-
-$informa-light-orange:      #fbb040;
+$color-cardinal-red:        #be1e2d;
+$color-goldenrod:           #daa520;
+$color-lime-green:          #31be48;
+$color-tree-poppy-orange:   #f7941e;
 $color-yellow-orange:       #fbb040;
 
-$color-goldenrod:           #daa520;
 
-$color-lime-green:          #31be48;
 
-$color-iceberg-green:       #d6ebdc;
+/*---
+title: Pink Sheet
+section: Colors
+---
+```example:color
+@color: #b1005b @name: Hibiscus Pink
+@color: #d82b6a @name: Dogwood Rose
+@color: #B2547F @name: Pearly Pink
+@color: #a8618d @name: Light Plum
+@color: #BC608C @name: Mystic Maroon
+@color: #e6c0d5 @name: Blossom Pink
+@color: #d3bac3 @name: Flair Pink
+@color: #FEE2E7 @name: Piggy Pink
+@color: #FFF2F4 @name: Wisp Pink
+@color: #fbf2f4 @name: Soft Peach
+```
+*/
 
-$color-antique-white:       #ffeedd;
+$color-hibiscus-pink:       #b1005b;
+$color-dogwood-rose:        #d82b6a;
+$color-pearly-pink:         #B2547F;
+$color-light-plum:          #a8618d;
+$color-mystic-maroon:       #BC608C;
+$color-flair-pink:          #d3bac3;
+$color-blossom-pink:        #e6c0d5;
+$color-piggy-pink:          #FEE2E7;
+$color-soft-peach:          #fbf2f4;
+$color-wisp-pink:           #FFF2F4;
 
-$color-white:               #ffffff;
 
-$color-misty-pink:          #fce5e6;
+/*---
+title: Rose Sheet
+section: Colors
+---
+```example:color
+@color: #ba005b @name: Rose Red
+@color: #DD3580 @name: Rubine Red
+@color: #c8206e @name: Valerian Red
+@color: #f8d7e6 @name: Cherub Pink
+```
+*/
+
+$color-rose-red:            #ba005b;
+$color-rubine-red:          #DD3580;
+$color-valerian-red:        #c8206e;
+$color-cherub-pink:         #f8d7e6;
+
+
+
+/*---
+title: Medtech
+section: Colors
+---
+```example:color
+@color: #007cc3 @name: Sapphire Blue
+@color: #034a7c @name: Marine Blue
+@color: #FDD95F @name: Jonquil Yellow
+@color: #F1CE54 @name: Maize Yellow
+@color: #edefef @name: Porcelain White
+```
+*/
+
+$color-sapphire-blue:       #007cc3;
+$color-marine-blue:         #034a7c;
+$color-jonquil-yellow:      #FDD95F;
+$color-maize-yellow:        #F1CE54;
+$color-porcelain-white:     #edefef;
+
+
+/*---
+title: Invivo
+section: Colors
+---
+```example:color
+@color: #6a1b13 @name: Rosewood Red
+@color: #7e2718 @name: Copper Red
+@color: #b03718 @name: Rusty Red
+@color: #ca4d2c @name: Dark Coral
+
+```
+*/
+$color-rosewood-red:        #6a1b13;
+$color-copper-red:          #7e2718;
+$color-rusty-red:           #b03718;
+$color-dark-coral:          #ca4d2c;
