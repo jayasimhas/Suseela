@@ -49,5 +49,7 @@
 	</div>
 
 
-	{% include "molecules-bar-separated-list" with {"classes": "article-preview__tags", "maxTags": 3} %}
+	{% if hideTags == false %}
+		{% include "molecules-bar-separated-list" with {"classes": "article-preview__tags", "maxTags": 3} %}
+	{% endif %}
 </section>

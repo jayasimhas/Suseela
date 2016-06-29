@@ -1,0 +1,88 @@
+{# Randoms #}
+{% if topicsListHeader == false %}
+	{% set topicsListHeader = random(randomTitles).text %}
+{% endif %}
+{% if topicsListWords == false %}
+	{% set topicsListWords = [{
+		"sectionHeader": "Section Header",
+		"items": [
+				{
+					"itemText" : random(randomTags).text
+				},
+				{
+					"itemURL": "#",
+					"itemText" : random(randomTags).text
+				},
+				{
+					"itemURL": "#",
+					"itemText" : random(randomTags).text,
+					"subsection": [
+						{
+							"itemText" : random(randomTags).text
+						},
+						{
+							"itemURL": "#",
+							"itemText" : random(randomTags).text
+						},
+						{
+							"itemURL": "#",
+							"itemText" : random(randomTags).text
+						}
+					]
+				},
+				{
+					"itemURL": "#",
+					"itemText" : random(randomTags).text
+				},
+				{
+					"itemURL": "#",
+					"itemText" : random(randomTags).text
+				},
+				{
+					"itemURL": "#",
+					"itemText" : random(randomTags).text
+				}
+			]
+		}]
+	%}
+{% endif %}
+
+{# Pattern #}
+<div class="article-topics">
+	<h2>{{topicsListHeader}}</h2>
+
+	{% for section in topicsListWords %}
+		<ul>
+			<li class="article-topics__section-header">
+				{{section.sectionHeader}}
+			</li>
+			{% if section.sectionDesc%}
+				<li>
+					{{section.sectionDesc}}
+				</li>
+			{% endif %}
+			{% for item in section.items %}
+				<li class="article-topics__li">
+					{% if item.itemURL %}
+						<a href="{{item.itemURL}}">{{item.itemText}}</a>
+					{% else %}
+						{{item.itemText}}
+					{% endif %}
+					{% if item.subsection %}
+						<ul>
+							{% for subitem in item.subsection %}
+								<li class="article-topics__li">
+									{% if subitem.itemURL %}
+										<a href="{{subitem.itemURL}}">{{subitem.itemText}}</a>
+									{% else %}
+										{{subitem.itemText}}
+									{% endif %}
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	{% endfor %}
+</div>

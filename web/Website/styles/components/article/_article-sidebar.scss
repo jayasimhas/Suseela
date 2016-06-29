@@ -29,6 +29,16 @@ Styles for a floated sidebar within an article body.
     padding: 1.75rem 2rem;
     width: 50%;
 
+	&--full-width {
+		float: none;
+		margin: 0 0 2rem 0;
+		width: 100%;
+	}
+
+	.advertising + & {
+		margin-top: 2rem;
+	}
+
     h3 {
         @include textMix('Roboto Condensed', 24px, 600);
         color: $color-zeus-black;
