@@ -94,8 +94,16 @@ namespace Informa.Web.ViewModels
                 feed.SaveAsRss20(writer);
                 writer.Flush();
                 writer.Close();
-                return output.ToString();
+                string rs = output.ToString().Replace("utf-16", "utf-8");
+                rs = RemoveInvalidXmlChars(rs);
+                return rs;
             }
+        }
+
+        private string RemoveInvalidXmlChars(string text)
+        {
+            var validXmlChars = text.Where(ch => XmlConvert.IsXmlChar(ch)).ToArray();
+            return new string(validXmlChars);
         }
 
         public IRssFeedGeneration GetFeedGenerator(I_Base_Rss_Feed rssFeedItem)

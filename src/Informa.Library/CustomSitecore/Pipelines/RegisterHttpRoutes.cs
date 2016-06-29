@@ -36,21 +36,7 @@ namespace Informa.Library.CustomSitecore.Pipelines
                 "articles/{year}/{month}/{day}/{title}",
                 new { controller = "Article", action = "Get" }
             );
-
-            routes.MapHttpRoute(
-               "articleEScenicApi",
-               "{title}-{escenicID}",
-               new { controller = "Article", action = "Get" },
-               new { escenicID = @"\d+" }
-           );
-
-            routes.MapHttpRoute(
-                "articleTaxonomyAndEScenicApi",
-                "{taxonomy}/{title}-{escenicID}",
-                new { controller = "Article", action = "Get" },
-                new { escenicID = @"\d+" }
-            );
-
+			
             routes.MapHttpRoute(
                 "sitemapXml",
                 "sitemap.xml",

@@ -22,6 +22,9 @@ using System.Text;
 using System.Linq;
 using Informa.Library.User;
 using Sitecore.Social.Infrastructure.Utils;
+using Informa.Library.Salesforce.User.Authentication;
+using Informa.Library.Salesforce.EBIWebServices;
+using Informa.Library.User.Authentication.Web;
 
 namespace Informa.Web.ViewModels
 {
@@ -40,7 +43,7 @@ namespace Informa.Web.ViewModels
 		protected readonly IUserEntitlementsContext UserEntitlementsContext;
 		protected readonly IUserIpAddressContext UserIpAddressContext;
 		protected readonly IEntitledProductContext EntitledProductContext;
-
+		protected readonly IWebAuthenticateUser WebAuthenticateUser;
 		public MainLayoutViewModel(
 			ISiteRootContext siteRootContext,
 			IMaintenanceViewModel maintenanceViewModel,
@@ -58,13 +61,14 @@ namespace Informa.Web.ViewModels
 			IArticleSearch articleSearch,
 			IItemReferences itemReferences,
 			ITextTranslator textTranslator,
-		    IUserCompanyContext userCompanyContext,
+			IUserCompanyContext userCompanyContext,
 			IUserProfileContext userProfileContext,
 			IEntitlementAccessLevelContext entitlementAccessLevelContext,
 			IUserSubscriptionsContext userSubscriptionsContext,
 			IUserEntitlementsContext userEntitlementsContext,
 			IUserIpAddressContext userIpAddressContext,
-			IEntitledProductContext entitledProductContext)
+			IEntitledProductContext entitledProductContext,
+			IWebAuthenticateUser webAuthenticateUser)
 		{
 			SiteRootContext = siteRootContext;
 			MaintenanceMessage = maintenanceViewModel;
@@ -89,6 +93,7 @@ namespace Informa.Web.ViewModels
 			UserEntitlementsContext = userEntitlementsContext;
 			UserIpAddressContext = userIpAddressContext;
 			EntitledProductContext = entitledProductContext;
+			WebAuthenticateUser = webAuthenticateUser;
 		}
 
 		public readonly IIndividualRenewalMessageViewModel IndividualRenewalMessageInfo;
@@ -152,7 +157,7 @@ namespace Informa.Web.ViewModels
 				return DateTime.MinValue.ToString("MM/dd/yyyy");
 			}
 		}
-		public string ArticleContentType => Article?.Content_Type?.Item_Name;
+		public string ArticleContentType => Article?.Content_Type?.Item_Name.Trim();
 		public string ArcticleNumber => Article?.Article_Number;
 		public bool ArticleEmbargoed => Article?.Embargoed ?? false;
 		public string ArticleMediaType => Article?.Media_Type?.Item_Name;
@@ -177,25 +182,25 @@ namespace Informa.Web.ViewModels
 		{
 			get
 			{
-                var entitlementList = UserEntitlementsContext.Entitlements;
-                var entitlements = entitlementList as IList<IEntitlement> ?? entitlementList.ToList();
-                if (!entitlements.Any())
-			        return string.Empty;
-                
-                string allEntitlements = string.Join(",", entitlements.Select(a => $"'{a.ProductCode}'"));
-                return $"[{allEntitlements}]";
-            }
+				var entitlementList = UserEntitlementsContext.Entitlements;
+				var entitlements = entitlementList as IList<IEntitlement> ?? entitlementList.ToList();
+				if (!entitlements.Any())
+					return string.Empty;
+
+				string allEntitlements = string.Join(",", entitlements.Select(a => $"'{a.ProductCode}'"));
+				return $"[{allEntitlements}]";
+			}
 		}
 		public string UserEntitlementStatus
 		{
 			get
 			{
 				var entitlementList = UserEntitlementsContext.Entitlements;
-			    var entitlements = entitlementList as IList<IEntitlement> ?? entitlementList.ToList();
-			    if (!entitlements.Any())
-                    return string.Empty;
+				var entitlements = entitlementList as IList<IEntitlement> ?? entitlementList.ToList();
+				if (!entitlements.Any())
+					return string.Empty;
 
-			    string allEntitlements = string.Join(",", entitlements.Select(a => $"'{EntitlementAccessLevelContext.Determine(a)}'"));
+				string allEntitlements = string.Join(",", entitlements.Select(a => $"'{EntitlementAccessLevelContext.Determine(a)}'"));
 				return $"[{allEntitlements}]";
 			}
 		}
@@ -204,14 +209,14 @@ namespace Informa.Web.ViewModels
 			get
 			{
 				var subscriptions = UserSubscriptionsContext.Subscriptions;
-			    var enumerable = subscriptions as IList<ISubscription> ?? subscriptions.ToList();
-			    if (!enumerable.Any())
-			        return string.Empty;
-				
+				var enumerable = subscriptions as IList<ISubscription> ?? subscriptions.ToList();
+				if (!enumerable.Any())
+					return string.Empty;
+
 				string allSubscriptions = string.Join(",", enumerable.Select(a => $"'{a.ProductCode}'"));
-			    return $"[{allSubscriptions}]";
+				return $"[{allSubscriptions}]";
 			}
-		}   
+		}
 		public string UserCompany => UserCompanyContext?.Company?.Name;
 		public string CompanyId => UserCompanyContext?.Company?.Id;
 		public string UserIndustry => UserProfileContext.Profile?.JobIndustry ?? string.Empty;
@@ -246,5 +251,20 @@ namespace Informa.Web.ViewModels
 			return "Unentitled Abstract View";
 		}
 
+		public string ContactId => WebAuthenticateUser.AuthenticatedUser?.ContactId ?? string.Empty;
+
+		public string AccountId
+		{
+			get
+			{
+				var accountInfo = WebAuthenticateUser.AuthenticatedUser?.AccountId;
+				
+				if (accountInfo ==null || !accountInfo.Any())
+					return string.Empty;
+
+				string allAccountIds = string.Join(",", accountInfo.Select(a => $"'{a}'"));
+				return $"[{allAccountIds}]";
+			}
+		}
 	}
 }

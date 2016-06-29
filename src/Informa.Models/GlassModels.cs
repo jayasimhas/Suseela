@@ -6197,6 +6197,173 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Dictionary
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers
+{
+
+
+ 	/// <summary>
+	/// IInforma_Import_Map Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Modules/Data Import/Providers/Informa Import Map</para>	
+	/// <para>ID: 6d3fc7eb-4f92-401f-8fe9-786ff3b94111</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IInforma_Import_MapConstants.TemplateIdString)]
+	public partial interface IInforma_Import_Map : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map
+	{
+								/// <summary>
+					/// The Encoding Type field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 800d0940-f246-4a57-aef9-dc4a04c3b3cf</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IInforma_Import_MapConstants.Encoding_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Encoding_Type  {get; set;}
+								/// <summary>
+					/// The Field Delimiter field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: fbccd18e-bb5e-40ab-942a-5ed1658f5e42</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IInforma_Import_MapConstants.Field_DelimiterFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Field_Delimiter  {get; set;}
+								/// <summary>
+					/// The Publication Prefix field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: ae52df37-b0d7-4548-a4d0-3a470ada56ad</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IInforma_Import_MapConstants.Publication_PrefixFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Publication_Prefix  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// IInforma_Import_Map Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Modules/Data Import/Providers/Informa Import Map</para>	
+		/// <para>ID: 6d3fc7eb-4f92-401f-8fe9-786ff3b94111</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IInforma_Import_Map__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.Providers.IBase_Import_Map__Raw
+		{
+										/// <summary>
+						/// The Encoding Type field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 800d0940-f246-4a57-aef9-dc4a04c3b3cf</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IInforma_Import_MapConstants.Encoding_TypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Encoding_Type  {get; set;}
+										/// <summary>
+						/// The Field Delimiter field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: fbccd18e-bb5e-40ab-942a-5ed1658f5e42</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IInforma_Import_MapConstants.Field_DelimiterFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Field_Delimiter  {get; set;}
+										/// <summary>
+						/// The Publication Prefix field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: ae52df37-b0d7-4548-a4d0-3a470ada56ad</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IInforma_Import_MapConstants.Publication_PrefixFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Publication_Prefix  {get; set;}
+						}
+	
+	public static partial class IInforma_Import_MapConstants{
+
+			public const string TemplateIdString = "6d3fc7eb-4f92-401f-8fe9-786ff3b94111";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Informa Import Map";
+
+					
+			public static readonly ID Encoding_TypeFieldId = new ID("800d0940-f246-4a57-aef9-dc4a04c3b3cf");
+			public const string Encoding_TypeFieldName = "Encoding Type";
+
+						
+					
+			public static readonly ID Field_DelimiterFieldId = new ID("fbccd18e-bb5e-40ab-942a-5ed1658f5e42");
+			public const string Field_DelimiterFieldName = "Field Delimiter";
+
+						
+					
+			public static readonly ID Publication_PrefixFieldId = new ID("ae52df37-b0d7-4548-a4d0-3a470ada56ad");
+			public const string Publication_PrefixFieldName = "Publication Prefix";
+
+						
+					
+			public static readonly ID Handler_AssemblyFieldId = new ID("0639f8e7-44ab-41ce-ae67-9987baf47e96");
+			public const string Handler_AssemblyFieldName = "Handler Assembly";
+
+						
+					
+			public static readonly ID Handler_ClassFieldId = new ID("0790a745-13e8-44f1-aa17-469e8fc7d20e");
+			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+					
+			public static readonly ID Import_To_LanguageFieldId = new ID("56c326ef-f5da-4818-ae74-e85130b60b84");
+			public const string Import_To_LanguageFieldName = "Import To Language";
+
+						
+					
+			public static readonly ID Import_To_What_TemplateFieldId = new ID("8954b459-083b-446f-b8c0-40b90ce2e210");
+			public const string Import_To_What_TemplateFieldName = "Import To What Template";
+
+						
+					
+			public static readonly ID Import_To_WhereFieldId = new ID("d01499f0-1e31-4cd6-a2f4-ee17bd095ab1");
+			public const string Import_To_WhereFieldName = "Import To Where";
+
+						
+					
+			public static readonly ID Item_Name_Max_LengthFieldId = new ID("02bab16b-d351-4502-a579-f3d6e0edb4f8");
+			public const string Item_Name_Max_LengthFieldName = "Item Name Max Length";
+
+						
+					
+			public static readonly ID Pull_Item_Name_From_What_FieldsFieldId = new ID("a7c05d14-ebc8-4f08-a8c7-183fab7061cc");
+			public const string Pull_Item_Name_From_What_FieldsFieldName = "Pull Item Name from What Fields";
+
+						
+					
+			public static readonly ID QueryFieldId = new ID("1f03f44c-dd3a-4148-bee7-0724310827b8");
+			public const string QueryFieldName = "Query";
+
+						
+					
+			public static readonly ID Date_FieldFieldId = new ID("b40c055b-3a62-4dd6-8cbd-88045e42f80d");
+			public const string Date_FieldFieldName = "Date Field";
+
+						
+					
+			public static readonly ID Folder_By_DateFieldId = new ID("2d49a4e9-c26d-435b-9207-4a8d1e3cf044");
+			public const string Folder_By_DateFieldName = "Folder By Date";
+
+						
+					
+			public static readonly ID Folder_By_NameFieldId = new ID("1cb87007-972b-4d25-abd1-f85107d29637");
+			public const string Folder_By_NameFieldName = "Folder By Name";
+
+						
+					
+			public static readonly ID Folder_TemplateFieldId = new ID("346d949c-b439-40bf-aeca-d43b7d7639c1");
+			public const string Folder_TemplateFieldName = "Folder Template";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 {
 
@@ -16024,28 +16191,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
 			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
-
-						
-					
-			public static readonly ID Lockout_Email_BodyFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
-			public const string Lockout_Email_BodyFieldName = "Lockout Email Body";
-
-							public static readonly ID Lockout_Email_Body__RawFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
-				public const string Lockout_Email_Body__RawFieldName = "Lockout Email Body";
-						
-					
-			public static readonly ID Lockout_Email_FromFieldId = new ID("533cb9d2-b47a-4a9a-9b8a-c4febcdadcab");
-			public const string Lockout_Email_FromFieldName = "Lockout Email From";
-
-						
-					
-			public static readonly ID Lockout_Email_SubjectFieldId = new ID("f432072f-cfcb-4477-8588-61726fdadf23");
-			public const string Lockout_Email_SubjectFieldName = "Lockout Email Subject";
-
-						
-					
-			public static readonly ID Lockout_Email_ToFieldId = new ID("861cb808-ae66-4908-9d46-96b350e302b3");
-			public const string Lockout_Email_ToFieldName = "Lockout Email To";
 
 						
 					

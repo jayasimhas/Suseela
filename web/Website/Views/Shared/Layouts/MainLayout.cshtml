@@ -38,7 +38,9 @@
         "created_date": "@Model.DateCreated", "custom_tags": "@Model.CustomTags", "page_description": "@Model.PageDescription", "page_title_override": "@Model.PageTitleOverride",
         "taxonomy_region": "@Html.Raw(Model.ArticleRegions)", "taxonomy_subjects": "@Html.Raw(Model.ArticleSubject)", "taxonomy_therapy_areas": "@Html.Raw(Model.ArticleTherapy)", "login_status": "@Model.IsUserLoggedIn", "IsArticleFree": "@Model.IsFree",
         "user_id": "@Model.UserName", "company": "@Model.UserCompany", "user_entitlement_type": "@Html.Raw(Model.UserEntitlements)", "entitlement_status": "@Html.Raw(Model.UserEntitlementStatus)", "industry": "@Model.UserIndustry",
-        "user_email": "@Model.UserEmail", "current_email_subscriptions": "@Html.Raw(Model.SubscribedProducts)", "page_keywords": "@Model.MetaKeyWords", "company_Id" : "@Model.CompanyId","article_entitlements" : "@Model.Article_Entitlement", "User_IP_Address":"@Model.UserIp"
+        "user_email": "@Model.UserEmail", "current_email_subscriptions": "@Html.Raw(Model.SubscribedProducts)", "page_keywords": "@Model.MetaKeyWords", "company_Id" : "@Model.CompanyId","article_entitlements" : "@Model.Article_Entitlement", "User_IP_Address":"@Model.UserIp",
+        "salesforce_contact_id" : "@Model.ContactId", "salesforce_account_id":"@Model.AccountId"
+      
     };
     var utag_data = analytics_data;
 
@@ -65,6 +67,7 @@
             @{  Html.RenderPartial("Company/_RegisterMessage", Model.CompanyRegisterMessage); }
 
             <div class="main__content">
+                @Html.Sitecore().Placeholder("top-main-content")
                 @Html.Sitecore().Placeholder("main-content")
             </div>
 

@@ -710,10 +710,10 @@ namespace Informa.Web.Controllers
     }
     public class MediaPreviewUrlController : ApiController
     {
-        private readonly ISitecoreService _sitecoreService;
-        public MediaPreviewUrlController(ISitecoreService service)
+        Func<string, ISitecoreService> _serviceFactory { get; }
+        public MediaPreviewUrlController(Func<string, ISitecoreService> serviceFactory)
         {
-            _sitecoreService = service;
+            _serviceFactory = serviceFactory;
         }
         // GET api/<controller>
         public JsonResult<string> Get()
@@ -723,11 +723,14 @@ namespace Informa.Web.Controllers
 
         public JsonResult<string> Get(string path)
         {
-            Item media = _sitecoreService.GetItem<Item>(path);
-            string url = "http://" + WebUtil.GetHostName() + MediaManager.GetMediaUrl(media);
-            return Json(url);
+            //Read from MasterDb
+            using (var serviceScope = _serviceFactory(Constants.MasterDb))
+            {
+                Item media = serviceScope.GetItem<Item>(path);
+                string url = "http://" + WebUtil.GetHostName() + MediaManager.GetMediaUrl(media);
+                return Json(url);
+            }
         }
-
     }
 
     public class GetDynamicUrlController : ApiController
