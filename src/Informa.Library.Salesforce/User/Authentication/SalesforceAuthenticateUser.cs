@@ -1,6 +1,8 @@
 ﻿using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.Salesforce.User.Profile;
+using Informa.Library.User;
 using Informa.Library.User.Authentication;
+using System.Linq;
 
 namespace Informa.Library.Salesforce.User.Authentication
 {
@@ -8,6 +10,8 @@ namespace Informa.Library.Salesforce.User.Authentication
 	{
 		protected readonly ISalesforceServiceContext Service;
 		protected readonly ISalesforceFindUserProfile FindUserProfile;
+		
+	
 
 		public SalesforceAuthenticateUser(
 			ISalesforceServiceContext service,
@@ -15,12 +19,17 @@ namespace Informa.Library.Salesforce.User.Authentication
 		{
 			Service = service;
 			FindUserProfile = findUserProfile;
+		
 		}
 
+		
 		public IAuthenticateUserResult Authenticate(string username, string password)
 		{
-			var loginResponse = Service.Execute(s => s.login(username, password));
-			
+            if(string.IsNullOrEmpty(username))
+                return ErrorResult;
+
+            var loginResponse = Service.Execute(s => s.login(username, password));
+		
 			if (!loginResponse.IsSuccess())
 			{
 				return ErrorResult;
@@ -34,7 +43,7 @@ namespace Informa.Library.Salesforce.User.Authentication
 			}
 
 			var state = loginResponse.isTempPasswordSpecified && loginResponse.isTempPassword.Value ? AuthenticateUserResultState.TemporaryPassword : AuthenticateUserResultState.Success;
-
+			var userAccount = Service.Execute(s => s.queryAccountByUsername(username));
 			return new SalesforceAuthenticateUserResult
 			{
 				State = state,
@@ -42,7 +51,9 @@ namespace Informa.Library.Salesforce.User.Authentication
 				{
 					Username = username,
 					Email = username,
-					Name = string.Format("{0} {1}", profile.FirstName, profile.LastName)
+					Name = string.Format("{0} {1}", profile.FirstName, profile.LastName),
+					AccountId = userAccount.accounts != null ? userAccount.accounts.Select(x => x.accountId).ToList() : null,
+					ContactId = loginResponse.contactId
 				}
 			};
 		}

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Informa.Library.Utilities.StringUtils;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.DCD;
@@ -55,6 +52,7 @@ namespace Informa.Library.Search.Utilities
 		/// <returns></returns>
 		private static Tuple<string, Dictionary<string, string>> ArticleTokenProcessingStart(string summary)
 		{
+			summary = summary ?? string.Empty;
 			var tokenMappings = new Dictionary<string, string>();
 
 			var ItemRegex = new Regex(DCDConstants.ArticleTokenRegex, RegexOptions.Compiled);

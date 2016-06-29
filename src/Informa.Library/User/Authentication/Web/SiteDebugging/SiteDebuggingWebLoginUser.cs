@@ -4,7 +4,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Authentication.Web.SiteDebugging
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService]
 	public class SiteDebuggingWebLoginUser : ISiteDebuggingWebLoginUser
 	{
 		private const string DebugWebLoginUserKey = "WebLoginUser";

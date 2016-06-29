@@ -23,7 +23,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="EBI_WebServicesBinding", Namespace="http://soap.sforce.com/schemas/class/EBI_WebServices")]
@@ -53,9 +53,17 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         
         private System.Threading.SendOrPostCallback createSavedSearchItemOperationCompleted;
         
+        private System.Threading.SendOrPostCallback createSavedSearchItem2OperationCompleted;
+        
         private System.Threading.SendOrPostCallback deleteSavedDocumentOperationCompleted;
         
         private System.Threading.SendOrPostCallback deleteSavedSearchOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback INqueryEntitlementsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback INquerySiteEntitlementsIPOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback INquerySubscriptionsAndPurchasesOperationCompleted;
         
         private System.Threading.SendOrPostCallback isCouponCodeValidOperationCompleted;
         
@@ -91,7 +99,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         
         private System.Threading.SendOrPostCallback querySavedDocumentsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback querySavedDocuments2OperationCompleted;
+        
         private System.Threading.SendOrPostCallback querySavedSearchItemsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback querySavedSearchItems2OperationCompleted;
         
         private System.Threading.SendOrPostCallback querySiteEntitlementsIPOperationCompleted;
         
@@ -124,6 +136,8 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         private System.Threading.SendOrPostCallback updateProfileOperationCompleted;
         
         private System.Threading.SendOrPostCallback updateSavedSearchItemOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback updateSavedSearchItem2OperationCompleted;
         
         private System.Threading.SendOrPostCallback updateShippingAddressAndPhoneOperationCompleted;
         
@@ -234,10 +248,22 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         public event createSavedSearchItemCompletedEventHandler createSavedSearchItemCompleted;
         
         /// <remarks/>
+        public event createSavedSearchItem2CompletedEventHandler createSavedSearchItem2Completed;
+        
+        /// <remarks/>
         public event deleteSavedDocumentCompletedEventHandler deleteSavedDocumentCompleted;
         
         /// <remarks/>
         public event deleteSavedSearchCompletedEventHandler deleteSavedSearchCompleted;
+        
+        /// <remarks/>
+        public event INqueryEntitlementsCompletedEventHandler INqueryEntitlementsCompleted;
+        
+        /// <remarks/>
+        public event INquerySiteEntitlementsIPCompletedEventHandler INquerySiteEntitlementsIPCompleted;
+        
+        /// <remarks/>
+        public event INquerySubscriptionsAndPurchasesCompletedEventHandler INquerySubscriptionsAndPurchasesCompleted;
         
         /// <remarks/>
         public event isCouponCodeValidCompletedEventHandler isCouponCodeValidCompleted;
@@ -291,7 +317,13 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         public event querySavedDocumentsCompletedEventHandler querySavedDocumentsCompleted;
         
         /// <remarks/>
+        public event querySavedDocuments2CompletedEventHandler querySavedDocuments2Completed;
+        
+        /// <remarks/>
         public event querySavedSearchItemsCompletedEventHandler querySavedSearchItemsCompleted;
+        
+        /// <remarks/>
+        public event querySavedSearchItems2CompletedEventHandler querySavedSearchItems2Completed;
         
         /// <remarks/>
         public event querySiteEntitlementsIPCompletedEventHandler querySiteEntitlementsIPCompleted;
@@ -340,6 +372,9 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         
         /// <remarks/>
         public event updateSavedSearchItemCompletedEventHandler updateSavedSearchItemCompleted;
+        
+        /// <remarks/>
+        public event updateSavedSearchItem2CompletedEventHandler updateSavedSearchItem2Completed;
         
         /// <remarks/>
         public event updateShippingAddressAndPhoneCompletedEventHandler updateShippingAddressAndPhoneCompleted;
@@ -610,6 +645,51 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public EBI_WebServiceResponse createSavedSearchItem2([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string searchString, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] System.Nullable<bool> IsReceivingEmailAlert, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string UnsubscribeToken, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string Publication) {
+            object[] results = this.Invoke("createSavedSearchItem2", new object[] {
+                        userName,
+                        searchString,
+                        name,
+                        IsReceivingEmailAlert,
+                        UnsubscribeToken,
+                        Publication});
+            return ((EBI_WebServiceResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void createSavedSearchItem2Async(string userName, string searchString, string name, System.Nullable<bool> IsReceivingEmailAlert, string UnsubscribeToken, string Publication) {
+            this.createSavedSearchItem2Async(userName, searchString, name, IsReceivingEmailAlert, UnsubscribeToken, Publication, null);
+        }
+        
+        /// <remarks/>
+        public void createSavedSearchItem2Async(string userName, string searchString, string name, System.Nullable<bool> IsReceivingEmailAlert, string UnsubscribeToken, string Publication, object userState) {
+            if ((this.createSavedSearchItem2OperationCompleted == null)) {
+                this.createSavedSearchItem2OperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateSavedSearchItem2OperationCompleted);
+            }
+            this.InvokeAsync("createSavedSearchItem2", new object[] {
+                        userName,
+                        searchString,
+                        name,
+                        IsReceivingEmailAlert,
+                        UnsubscribeToken,
+                        Publication}, this.createSavedSearchItem2OperationCompleted, userState);
+        }
+        
+        private void OncreateSavedSearchItem2OperationCompleted(object arg) {
+            if ((this.createSavedSearchItem2Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.createSavedSearchItem2Completed(this, new createSavedSearchItem2CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
         public EBI_WebServiceResponse deleteSavedDocument([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string documentID) {
             object[] results = this.Invoke("deleteSavedDocument", new object[] {
                         userName,
@@ -673,6 +753,113 @@ namespace Informa.Library.Salesforce.EBIWebServices {
             if ((this.deleteSavedSearchCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.deleteSavedSearchCompleted(this, new deleteSavedSearchCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public IN_QueryEntitlementsResponse INqueryEntitlements([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string ipAddress) {
+            object[] results = this.Invoke("INqueryEntitlements", new object[] {
+                        userName,
+                        ipAddress});
+            return ((IN_QueryEntitlementsResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void INqueryEntitlementsAsync(string userName, string ipAddress) {
+            this.INqueryEntitlementsAsync(userName, ipAddress, null);
+        }
+        
+        /// <remarks/>
+        public void INqueryEntitlementsAsync(string userName, string ipAddress, object userState) {
+            if ((this.INqueryEntitlementsOperationCompleted == null)) {
+                this.INqueryEntitlementsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnINqueryEntitlementsOperationCompleted);
+            }
+            this.InvokeAsync("INqueryEntitlements", new object[] {
+                        userName,
+                        ipAddress}, this.INqueryEntitlementsOperationCompleted, userState);
+        }
+        
+        private void OnINqueryEntitlementsOperationCompleted(object arg) {
+            if ((this.INqueryEntitlementsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.INqueryEntitlementsCompleted(this, new INqueryEntitlementsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public IN_QueryEntitlementsResponse INquerySiteEntitlementsIP([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string ipAddress) {
+            object[] results = this.Invoke("INquerySiteEntitlementsIP", new object[] {
+                        ipAddress});
+            return ((IN_QueryEntitlementsResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void INquerySiteEntitlementsIPAsync(string ipAddress) {
+            this.INquerySiteEntitlementsIPAsync(ipAddress, null);
+        }
+        
+        /// <remarks/>
+        public void INquerySiteEntitlementsIPAsync(string ipAddress, object userState) {
+            if ((this.INquerySiteEntitlementsIPOperationCompleted == null)) {
+                this.INquerySiteEntitlementsIPOperationCompleted = new System.Threading.SendOrPostCallback(this.OnINquerySiteEntitlementsIPOperationCompleted);
+            }
+            this.InvokeAsync("INquerySiteEntitlementsIP", new object[] {
+                        ipAddress}, this.INquerySiteEntitlementsIPOperationCompleted, userState);
+        }
+        
+        private void OnINquerySiteEntitlementsIPOperationCompleted(object arg) {
+            if ((this.INquerySiteEntitlementsIPCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.INquerySiteEntitlementsIPCompleted(this, new INquerySiteEntitlementsIPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public EBI_QuerySubscriptionsAndPurchasesResponse INquerySubscriptionsAndPurchases([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName) {
+            object[] results = this.Invoke("INquerySubscriptionsAndPurchases", new object[] {
+                        userName});
+            return ((EBI_QuerySubscriptionsAndPurchasesResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void INquerySubscriptionsAndPurchasesAsync(string userName) {
+            this.INquerySubscriptionsAndPurchasesAsync(userName, null);
+        }
+        
+        /// <remarks/>
+        public void INquerySubscriptionsAndPurchasesAsync(string userName, object userState) {
+            if ((this.INquerySubscriptionsAndPurchasesOperationCompleted == null)) {
+                this.INquerySubscriptionsAndPurchasesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnINquerySubscriptionsAndPurchasesOperationCompleted);
+            }
+            this.InvokeAsync("INquerySubscriptionsAndPurchases", new object[] {
+                        userName}, this.INquerySubscriptionsAndPurchasesOperationCompleted, userState);
+        }
+        
+        private void OnINquerySubscriptionsAndPurchasesOperationCompleted(object arg) {
+            if ((this.INquerySubscriptionsAndPurchasesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.INquerySubscriptionsAndPurchasesCompleted(this, new INquerySubscriptionsAndPurchasesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1285,6 +1472,41 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public EBI_QuerySavedDocumentResponse2 querySavedDocuments2([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName) {
+            object[] results = this.Invoke("querySavedDocuments2", new object[] {
+                        userName});
+            return ((EBI_QuerySavedDocumentResponse2)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void querySavedDocuments2Async(string userName) {
+            this.querySavedDocuments2Async(userName, null);
+        }
+        
+        /// <remarks/>
+        public void querySavedDocuments2Async(string userName, object userState) {
+            if ((this.querySavedDocuments2OperationCompleted == null)) {
+                this.querySavedDocuments2OperationCompleted = new System.Threading.SendOrPostCallback(this.OnquerySavedDocuments2OperationCompleted);
+            }
+            this.InvokeAsync("querySavedDocuments2", new object[] {
+                        userName}, this.querySavedDocuments2OperationCompleted, userState);
+        }
+        
+        private void OnquerySavedDocuments2OperationCompleted(object arg) {
+            if ((this.querySavedDocuments2Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.querySavedDocuments2Completed(this, new querySavedDocuments2CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
         public EBI_QuerySavedSearchItemsResponse querySavedSearchItems([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName) {
             object[] results = this.Invoke("querySavedSearchItems", new object[] {
                         userName});
@@ -1309,6 +1531,41 @@ namespace Informa.Library.Salesforce.EBIWebServices {
             if ((this.querySavedSearchItemsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.querySavedSearchItemsCompleted(this, new querySavedSearchItemsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public EBI_QuerySavedSearchItems2Response querySavedSearchItems2([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName) {
+            object[] results = this.Invoke("querySavedSearchItems2", new object[] {
+                        userName});
+            return ((EBI_QuerySavedSearchItems2Response)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void querySavedSearchItems2Async(string userName) {
+            this.querySavedSearchItems2Async(userName, null);
+        }
+        
+        /// <remarks/>
+        public void querySavedSearchItems2Async(string userName, object userState) {
+            if ((this.querySavedSearchItems2OperationCompleted == null)) {
+                this.querySavedSearchItems2OperationCompleted = new System.Threading.SendOrPostCallback(this.OnquerySavedSearchItems2OperationCompleted);
+            }
+            this.InvokeAsync("querySavedSearchItems2", new object[] {
+                        userName}, this.querySavedSearchItems2OperationCompleted, userState);
+        }
+        
+        private void OnquerySavedSearchItems2OperationCompleted(object arg) {
+            if ((this.querySavedSearchItems2Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.querySavedSearchItems2Completed(this, new querySavedSearchItems2CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1912,6 +2169,49 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public EBI_WebServiceResponse updateSavedSearchItem2([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string searchString, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string Name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] System.Nullable<bool> IsReceivingEmailAlert, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string UnsubscribeToken) {
+            object[] results = this.Invoke("updateSavedSearchItem2", new object[] {
+                        userName,
+                        searchString,
+                        Name,
+                        IsReceivingEmailAlert,
+                        UnsubscribeToken});
+            return ((EBI_WebServiceResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void updateSavedSearchItem2Async(string userName, string searchString, string Name, System.Nullable<bool> IsReceivingEmailAlert, string UnsubscribeToken) {
+            this.updateSavedSearchItem2Async(userName, searchString, Name, IsReceivingEmailAlert, UnsubscribeToken, null);
+        }
+        
+        /// <remarks/>
+        public void updateSavedSearchItem2Async(string userName, string searchString, string Name, System.Nullable<bool> IsReceivingEmailAlert, string UnsubscribeToken, object userState) {
+            if ((this.updateSavedSearchItem2OperationCompleted == null)) {
+                this.updateSavedSearchItem2OperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateSavedSearchItem2OperationCompleted);
+            }
+            this.InvokeAsync("updateSavedSearchItem2", new object[] {
+                        userName,
+                        searchString,
+                        Name,
+                        IsReceivingEmailAlert,
+                        UnsubscribeToken}, this.updateSavedSearchItem2OperationCompleted, userState);
+        }
+        
+        private void OnupdateSavedSearchItem2OperationCompleted(object arg) {
+            if ((this.updateSavedSearchItem2Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.updateSavedSearchItem2Completed(this, new updateSavedSearchItem2CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
         public EBI_WebServiceResponse updateShippingAddressAndPhone([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] EBI_Address shippingAddress, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] EBI_PhoneFax shippingPhoneFax) {
             object[] results = this.Invoke("updateShippingAddressAndPhone", new object[] {
                         userName,
@@ -2000,7 +2300,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2022,7 +2322,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2070,7 +2370,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2131,7 +2431,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2361,7 +2661,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2461,7 +2761,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2535,7 +2835,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2609,7 +2909,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2670,91 +2970,48 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
-    public partial class EBI_SubscriptionAndPurchase {
+    public partial class EBI_SavedSearch2 {
         
-        private string archiveCodeField;
+        private System.Nullable<bool> isReceivingEmailAlertField;
         
-        private string descriptionField;
-        
-        private string documentIdField;
-        
-        private System.Nullable<System.DateTime> expirationDateField;
-        
-        private bool expirationDateFieldSpecified;
+        private bool isReceivingEmailAlertFieldSpecified;
         
         private string nameField;
         
-        private string productCodeField;
+        private string publicationField;
         
-        private string productGUIDField;
+        private System.Nullable<System.DateTime> saveDateField;
         
-        private string productratePlanIDField;
+        private bool saveDateFieldSpecified;
         
-        private string productTypeField;
+        private string searchStringField;
         
-        private System.Nullable<System.DateTime> purchaseDateField;
-        
-        private bool purchaseDateFieldSpecified;
-        
-        private string subscriptionTypeField;
+        private string unsubscribeTokenField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string ArchiveCode {
+        public System.Nullable<bool> IsReceivingEmailAlert {
             get {
-                return this.archiveCodeField;
+                return this.isReceivingEmailAlertField;
             }
             set {
-                this.archiveCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string documentId {
-            get {
-                return this.documentIdField;
-            }
-            set {
-                this.documentIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> expirationDate {
-            get {
-                return this.expirationDateField;
-            }
-            set {
-                this.expirationDateField = value;
+                this.isReceivingEmailAlertField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool expirationDateSpecified {
+        public bool IsReceivingEmailAlertSpecified {
             get {
-                return this.expirationDateFieldSpecified;
+                return this.isReceivingEmailAlertFieldSpecified;
             }
             set {
-                this.expirationDateFieldSpecified = value;
+                this.isReceivingEmailAlertFieldSpecified = value;
             }
         }
         
@@ -2771,93 +3028,71 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string productCode {
+        public string Publication {
             get {
-                return this.productCodeField;
+                return this.publicationField;
             }
             set {
-                this.productCodeField = value;
+                this.publicationField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string productGUID {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", IsNullable=true)]
+        public System.Nullable<System.DateTime> SaveDate {
             get {
-                return this.productGUIDField;
+                return this.saveDateField;
             }
             set {
-                this.productGUIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string productratePlanID {
-            get {
-                return this.productratePlanIDField;
-            }
-            set {
-                this.productratePlanIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string productType {
-            get {
-                return this.productTypeField;
-            }
-            set {
-                this.productTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> purchaseDate {
-            get {
-                return this.purchaseDateField;
-            }
-            set {
-                this.purchaseDateField = value;
+                this.saveDateField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool purchaseDateSpecified {
+        public bool SaveDateSpecified {
             get {
-                return this.purchaseDateFieldSpecified;
+                return this.saveDateFieldSpecified;
             }
             set {
-                this.purchaseDateFieldSpecified = value;
+                this.saveDateFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string subscriptionType {
+        public string searchString {
             get {
-                return this.subscriptionTypeField;
+                return this.searchStringField;
             }
             set {
-                this.subscriptionTypeField = value;
+                this.searchStringField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string UnsubscribeToken {
+            get {
+                return this.unsubscribeTokenField;
+            }
+            set {
+                this.unsubscribeTokenField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
-    public partial class EBI_QuerySubscriptionsAndPurchasesResponse {
+    public partial class EBI_QuerySavedSearchItems2Response {
         
         private EBI_Error[] errorsField;
         
-        private EBI_SubscriptionAndPurchase[] subscriptionsAndPurchasesField;
+        private EBI_SavedSearch2[] savedSearchesField;
         
         private System.Nullable<bool> successField;
         
@@ -2875,13 +3110,13 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("subscriptionsAndPurchases", IsNullable=true)]
-        public EBI_SubscriptionAndPurchase[] subscriptionsAndPurchases {
+        [System.Xml.Serialization.XmlElementAttribute("savedSearches", IsNullable=true)]
+        public EBI_SavedSearch2[] savedSearches {
             get {
-                return this.subscriptionsAndPurchasesField;
+                return this.savedSearchesField;
             }
             set {
-                this.subscriptionsAndPurchasesField = value;
+                this.savedSearchesField = value;
             }
         }
         
@@ -2909,7 +3144,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2944,7 +3179,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3031,7 +3266,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3092,7 +3327,168 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
+    public partial class EBI_SavedDocument2 {
+        
+        private string descriptionField;
+        
+        private string documentIdField;
+        
+        private string documentTypeField;
+        
+        private string nameField;
+        
+        private string productGUIDField;
+        
+        private System.Nullable<System.DateTime> saveDateField;
+        
+        private bool saveDateFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string documentId {
+            get {
+                return this.documentIdField;
+            }
+            set {
+                this.documentIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string documentType {
+            get {
+                return this.documentTypeField;
+            }
+            set {
+                this.documentTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string productGUID {
+            get {
+                return this.productGUIDField;
+            }
+            set {
+                this.productGUIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<System.DateTime> saveDate {
+            get {
+                return this.saveDateField;
+            }
+            set {
+                this.saveDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool saveDateSpecified {
+            get {
+                return this.saveDateFieldSpecified;
+            }
+            set {
+                this.saveDateFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
+    public partial class EBI_QuerySavedDocumentResponse2 {
+        
+        private EBI_Error[] errorsField;
+        
+        private EBI_SavedDocument2[] savedDocumentsField;
+        
+        private System.Nullable<bool> successField;
+        
+        private bool successFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("errors", IsNullable=true)]
+        public EBI_Error[] errors {
+            get {
+                return this.errorsField;
+            }
+            set {
+                this.errorsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("savedDocuments", IsNullable=true)]
+        public EBI_SavedDocument2[] savedDocuments {
+            get {
+                return this.savedDocumentsField;
+            }
+            set {
+                this.savedDocumentsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<bool> success {
+            get {
+                return this.successField;
+            }
+            set {
+                this.successField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool successSpecified {
+            get {
+                return this.successFieldSpecified;
+            }
+            set {
+                this.successFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3153,7 +3549,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3253,7 +3649,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3314,7 +3710,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3427,7 +3823,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3514,7 +3910,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3601,7 +3997,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3662,7 +4058,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3736,7 +4132,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3797,7 +4193,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3858,7 +4254,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3919,7 +4315,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4110,7 +4506,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4327,7 +4723,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4414,7 +4810,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4475,7 +4871,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4536,7 +4932,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4610,7 +5006,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4684,7 +5080,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4784,7 +5180,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4858,7 +5254,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5010,7 +5406,407 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
+    public partial class EBI_SubscriptionAndPurchase {
+        
+        private string archiveCodeField;
+        
+        private string descriptionField;
+        
+        private string documentIdField;
+        
+        private System.Nullable<System.DateTime> expirationDateField;
+        
+        private bool expirationDateFieldSpecified;
+        
+        private string nameField;
+        
+        private string productCodeField;
+        
+        private string productGUIDField;
+        
+        private string productratePlanIDField;
+        
+        private string productTypeField;
+        
+        private System.Nullable<System.DateTime> purchaseDateField;
+        
+        private bool purchaseDateFieldSpecified;
+        
+        private string subscriptionTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string ArchiveCode {
+            get {
+                return this.archiveCodeField;
+            }
+            set {
+                this.archiveCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string documentId {
+            get {
+                return this.documentIdField;
+            }
+            set {
+                this.documentIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<System.DateTime> expirationDate {
+            get {
+                return this.expirationDateField;
+            }
+            set {
+                this.expirationDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool expirationDateSpecified {
+            get {
+                return this.expirationDateFieldSpecified;
+            }
+            set {
+                this.expirationDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string productCode {
+            get {
+                return this.productCodeField;
+            }
+            set {
+                this.productCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string productGUID {
+            get {
+                return this.productGUIDField;
+            }
+            set {
+                this.productGUIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string productratePlanID {
+            get {
+                return this.productratePlanIDField;
+            }
+            set {
+                this.productratePlanIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string productType {
+            get {
+                return this.productTypeField;
+            }
+            set {
+                this.productTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<System.DateTime> purchaseDate {
+            get {
+                return this.purchaseDateField;
+            }
+            set {
+                this.purchaseDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool purchaseDateSpecified {
+            get {
+                return this.purchaseDateFieldSpecified;
+            }
+            set {
+                this.purchaseDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string subscriptionType {
+            get {
+                return this.subscriptionTypeField;
+            }
+            set {
+                this.subscriptionTypeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
+    public partial class EBI_QuerySubscriptionsAndPurchasesResponse {
+        
+        private EBI_Error[] errorsField;
+        
+        private EBI_SubscriptionAndPurchase[] subscriptionsAndPurchasesField;
+        
+        private System.Nullable<bool> successField;
+        
+        private bool successFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("errors", IsNullable=true)]
+        public EBI_Error[] errors {
+            get {
+                return this.errorsField;
+            }
+            set {
+                this.errorsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("subscriptionsAndPurchases", IsNullable=true)]
+        public EBI_SubscriptionAndPurchase[] subscriptionsAndPurchases {
+            get {
+                return this.subscriptionsAndPurchasesField;
+            }
+            set {
+                this.subscriptionsAndPurchasesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<bool> success {
+            get {
+                return this.successField;
+            }
+            set {
+                this.successField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool successSpecified {
+            get {
+                return this.successFieldSpecified;
+            }
+            set {
+                this.successFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
+    public partial class IN_Entitlement {
+        
+        private string archiveCodeField;
+        
+        private string documentIdField;
+        
+        private string opportunityIdField;
+        
+        private string opportunityLineItemIdField;
+        
+        private string productCodeField;
+        
+        private string productGUIDField;
+        
+        private string productTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string ArchiveCode {
+            get {
+                return this.archiveCodeField;
+            }
+            set {
+                this.archiveCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string documentId {
+            get {
+                return this.documentIdField;
+            }
+            set {
+                this.documentIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string opportunityId {
+            get {
+                return this.opportunityIdField;
+            }
+            set {
+                this.opportunityIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string opportunityLineItemId {
+            get {
+                return this.opportunityLineItemIdField;
+            }
+            set {
+                this.opportunityLineItemIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string ProductCode {
+            get {
+                return this.productCodeField;
+            }
+            set {
+                this.productCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string productGUID {
+            get {
+                return this.productGUIDField;
+            }
+            set {
+                this.productGUIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string ProductType {
+            get {
+                return this.productTypeField;
+            }
+            set {
+                this.productTypeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
+    public partial class IN_QueryEntitlementsResponse {
+        
+        private IN_Entitlement[] entitlementsField;
+        
+        private EBI_Error[] errorsField;
+        
+        private System.Nullable<bool> successField;
+        
+        private bool successFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("entitlements", IsNullable=true)]
+        public IN_Entitlement[] entitlements {
+            get {
+                return this.entitlementsField;
+            }
+            set {
+                this.entitlementsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("errors", IsNullable=true)]
+        public EBI_Error[] errors {
+            get {
+                return this.errorsField;
+            }
+            set {
+                this.errorsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<bool> success {
+            get {
+                return this.successField;
+            }
+            set {
+                this.successField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool successSpecified {
+            get {
+                return this.successFieldSpecified;
+            }
+            set {
+                this.successFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5071,7 +5867,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5210,7 +6006,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5258,7 +6054,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5410,7 +6206,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5549,7 +6345,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5610,7 +6406,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5671,7 +6467,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5732,7 +6528,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5765,7 +6561,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBI_WebServices")]
     public enum LogCategory {
@@ -5799,10 +6595,13 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBI_WebServices")]
     public enum LogCategoryLevel {
+        
+        /// <remarks/>
+        None,
         
         /// <remarks/>
         Internal,
@@ -5830,7 +6629,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5852,7 +6651,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5874,7 +6673,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5909,7 +6708,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBI_WebServices")]
     public enum LogType {
@@ -5934,7 +6733,7 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5956,11 +6755,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void createAccountCompletedEventHandler(object sender, createAccountCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class createAccountCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5982,11 +6781,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void createCartCompletedEventHandler(object sender, createCartCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class createCartCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6008,11 +6807,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void createCartItemsCompletedEventHandler(object sender, createCartItemsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class createCartItemsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6034,11 +6833,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void createOrderCompletedEventHandler(object sender, createOrderCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class createOrderCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6060,11 +6859,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void createProfileCompletedEventHandler(object sender, createProfileCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class createProfileCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6086,11 +6885,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void createSavedDocumentCompletedEventHandler(object sender, createSavedDocumentCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class createSavedDocumentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6112,11 +6911,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void createSavedSearchItemCompletedEventHandler(object sender, createSavedSearchItemCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class createSavedSearchItemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6138,11 +6937,37 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void createSavedSearchItem2CompletedEventHandler(object sender, createSavedSearchItem2CompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class createSavedSearchItem2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal createSavedSearchItem2CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public EBI_WebServiceResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((EBI_WebServiceResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void deleteSavedDocumentCompletedEventHandler(object sender, deleteSavedDocumentCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class deleteSavedDocumentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6164,11 +6989,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void deleteSavedSearchCompletedEventHandler(object sender, deleteSavedSearchCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class deleteSavedSearchCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6190,11 +7015,89 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void INqueryEntitlementsCompletedEventHandler(object sender, INqueryEntitlementsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class INqueryEntitlementsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal INqueryEntitlementsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public IN_QueryEntitlementsResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((IN_QueryEntitlementsResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void INquerySiteEntitlementsIPCompletedEventHandler(object sender, INquerySiteEntitlementsIPCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class INquerySiteEntitlementsIPCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal INquerySiteEntitlementsIPCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public IN_QueryEntitlementsResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((IN_QueryEntitlementsResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void INquerySubscriptionsAndPurchasesCompletedEventHandler(object sender, INquerySubscriptionsAndPurchasesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class INquerySubscriptionsAndPurchasesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal INquerySubscriptionsAndPurchasesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public EBI_QuerySubscriptionsAndPurchasesResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((EBI_QuerySubscriptionsAndPurchasesResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void isCouponCodeValidCompletedEventHandler(object sender, isCouponCodeValidCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class isCouponCodeValidCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6216,11 +7119,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void loginCompletedEventHandler(object sender, loginCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class loginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6242,11 +7145,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryAccountByIPAddressCompletedEventHandler(object sender, queryAccountByIPAddressCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryAccountByIPAddressCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6268,11 +7171,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryAccountByMasterIdCompletedEventHandler(object sender, queryAccountByMasterIdCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryAccountByMasterIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6294,11 +7197,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryAccountBySubscriberIdCompletedEventHandler(object sender, queryAccountBySubscriberIdCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryAccountBySubscriberIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6320,11 +7223,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryAccountByUsernameCompletedEventHandler(object sender, queryAccountByUsernameCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryAccountByUsernameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6346,11 +7249,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryAccountByVerificationCodeCompletedEventHandler(object sender, queryAccountByVerificationCodeCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryAccountByVerificationCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6372,11 +7275,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryAllActiveIPRangesCompletedEventHandler(object sender, queryAllActiveIPRangesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryAllActiveIPRangesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6398,11 +7301,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryCartCompletedEventHandler(object sender, queryCartCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryCartCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6424,11 +7327,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryCartByIdCompletedEventHandler(object sender, queryCartByIdCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryCartByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6450,11 +7353,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryEmailNewsletterOptinsCompletedEventHandler(object sender, queryEmailNewsletterOptinsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryEmailNewsletterOptinsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6476,11 +7379,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryEntitlementsCompletedEventHandler(object sender, queryEntitlementsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryEntitlementsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6502,11 +7405,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryFreeELetterOptinsCompletedEventHandler(object sender, queryFreeELetterOptinsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryFreeELetterOptinsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6528,11 +7431,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryInformationAndOfferOptinsCompletedEventHandler(object sender, queryInformationAndOfferOptinsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryInformationAndOfferOptinsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6554,11 +7457,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryOptInsCompletedEventHandler(object sender, queryOptInsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryOptInsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6580,11 +7483,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void queryProfileContactInformationCompletedEventHandler(object sender, queryProfileContactInformationCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class queryProfileContactInformationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6606,11 +7509,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void querySavedDocumentsCompletedEventHandler(object sender, querySavedDocumentsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class querySavedDocumentsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6632,11 +7535,37 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void querySavedDocuments2CompletedEventHandler(object sender, querySavedDocuments2CompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class querySavedDocuments2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal querySavedDocuments2CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public EBI_QuerySavedDocumentResponse2 Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((EBI_QuerySavedDocumentResponse2)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void querySavedSearchItemsCompletedEventHandler(object sender, querySavedSearchItemsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class querySavedSearchItemsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6658,11 +7587,37 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void querySavedSearchItems2CompletedEventHandler(object sender, querySavedSearchItems2CompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class querySavedSearchItems2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal querySavedSearchItems2CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public EBI_QuerySavedSearchItems2Response Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((EBI_QuerySavedSearchItems2Response)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void querySiteEntitlementsIPCompletedEventHandler(object sender, querySiteEntitlementsIPCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class querySiteEntitlementsIPCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6684,11 +7639,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void querySubscriptionsAndPurchasesCompletedEventHandler(object sender, querySubscriptionsAndPurchasesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class querySubscriptionsAndPurchasesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6710,11 +7665,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void transferCartCompletedEventHandler(object sender, transferCartCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class transferCartCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6736,11 +7691,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateBillingAddressAndPhoneCompletedEventHandler(object sender, updateBillingAddressAndPhoneCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateBillingAddressAndPhoneCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6762,11 +7717,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateBillingNameCompletedEventHandler(object sender, updateBillingNameCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateBillingNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6788,11 +7743,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateCartCompletedEventHandler(object sender, updateCartCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateCartCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6814,11 +7769,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateCartItemsCompletedEventHandler(object sender, updateCartItemsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateCartItemsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6840,11 +7795,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateCompanyJobCompletedEventHandler(object sender, updateCompanyJobCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateCompanyJobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6866,11 +7821,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateDoNotSendInformationAndOffersCompletedEventHandler(object sender, updateDoNotSendInformationAndOffersCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateDoNotSendInformationAndOffersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6892,11 +7847,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateEmailNewsletterOptInsCompletedEventHandler(object sender, updateEmailNewsletterOptInsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateEmailNewsletterOptInsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6918,11 +7873,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateFreeELetterOptinsCompletedEventHandler(object sender, updateFreeELetterOptinsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateFreeELetterOptinsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6944,11 +7899,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateInformationAndOfferOptinsCompletedEventHandler(object sender, updateInformationAndOfferOptinsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateInformationAndOfferOptinsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6970,11 +7925,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updatePasswordCompletedEventHandler(object sender, updatePasswordCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updatePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6996,11 +7951,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updatePhoneFaxCompletedEventHandler(object sender, updatePhoneFaxCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updatePhoneFaxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7022,11 +7977,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateProfileCompletedEventHandler(object sender, updateProfileCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateProfileCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7048,11 +8003,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateSavedSearchItemCompletedEventHandler(object sender, updateSavedSearchItemCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateSavedSearchItemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7074,11 +8029,37 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void updateSavedSearchItem2CompletedEventHandler(object sender, updateSavedSearchItem2CompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class updateSavedSearchItem2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal updateSavedSearchItem2CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public EBI_WebServiceResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((EBI_WebServiceResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateShippingAddressAndPhoneCompletedEventHandler(object sender, updateShippingAddressAndPhoneCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateShippingAddressAndPhoneCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7100,11 +8081,11 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void updateShippingNameCompletedEventHandler(object sender, updateShippingNameCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateShippingNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
