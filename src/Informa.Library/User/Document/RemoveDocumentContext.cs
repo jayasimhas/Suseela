@@ -22,7 +22,7 @@ namespace Informa.Library.User.Document
 
 		public ISavedDocumentWriteResult Remove(string documentId)
 		{
-			var result = RemoveDocument.Remove(UserContext.User.Username, documentId);
+			var result = RemoveDocument.Remove(UserContext.User?.Username, documentId);
 
 			if (result.Success)
 			{

@@ -1,7 +1,8 @@
 .search-pagination {
   &__wrapper {
     padding: 10px 0 50px;
-    border-top: 2px solid $informa-light-gray-d;
+    border-top: 2px solid $color-light-gray;
+    @include search-page-structure();
 
     @include breakpoint('medium') {
       order: 5;
@@ -24,9 +25,9 @@
       }
 
       &.is-active a {
-        background: $informa-light-gray-f;
-        color: $informa-dark-gray;
-        
+        background: $color-concrete-gray;
+        color: $color-abbey-gray;
+
         &:hover {
           text-decoration: none;
         }
