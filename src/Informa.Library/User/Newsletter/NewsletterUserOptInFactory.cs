@@ -1,5 +1,4 @@
-﻿using Informa.Library.Newsletter;
-using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Newsletter
 {

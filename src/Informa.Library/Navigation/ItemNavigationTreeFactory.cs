@@ -1,17 +1,47 @@
-﻿using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation;
-using Jabberwocky.Glass.Autofac.Attributes;
+﻿using System;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation;
+using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Informa.Library.Services.Global;
+using Jabberwocky.Core.Caching;
 
 namespace Informa.Library.Navigation
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
 	public class ItemNavigationTreeFactory : IItemNavigationTreeFactory
 	{
-		public IEnumerable<INavigation> Create(INavigation_Root navigationRootItem)
-		{
-			if (navigationRootItem == null)
+	    private readonly IDependencies _dependencies;
+
+	    [AutowireService(true)]
+	    public interface IDependencies
+	    {
+            IGlobalSitecoreService GlobalService { get; }
+            ICacheProvider CacheProvider { get; }
+	    }
+
+	    public ItemNavigationTreeFactory(IDependencies dependencies)
+	    {
+	        _dependencies = dependencies;
+	    }
+
+	    public IEnumerable<INavigation> Create(Guid navigationRootGuid)
+	        => Create(_dependencies.GlobalService.GetItem<INavigation_Root>(navigationRootGuid));
+
+	    public IEnumerable<INavigation> Create(INavigation_Root navigationRootItem)
+	    {
+            if (navigationRootItem == null) {
+                return Enumerable.Empty<INavigation>();
+            }
+
+            string cacheKey = $"{nameof(ItemNavigationTreeFactory)}-Create-{navigationRootItem._Id}";
+            return _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildNavigation(navigationRootItem));
+        }
+
+        private IEnumerable<INavigation> BuildNavigation(INavigation_Root navigationRootItem) {
+            
+            if (navigationRootItem == null)
 			{
 				return Enumerable.Empty<INavigation>();
 			}

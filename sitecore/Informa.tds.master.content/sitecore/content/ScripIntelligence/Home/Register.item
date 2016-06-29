@@ -26,7 +26,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 18906d03-7448-49f7-827f-def9b6d733e3
+revision: b66e8058-addb-4f0a-ba9b-5da909b0e6e8
 
 ----field----
 field: {761D17CF-74DB-4658-AD8B-3C3B119D5851}
@@ -49,6 +49,14 @@ key: next step page
 content-length: 38
 
 {63843B6D-A1F0-4B02-A5E8-84E40D4D9A7A}
+----field----
+field: {BA7756F4-010A-47A6-B81C-A887B6CA4DD9}
+name: Corporate Alternative Verification Method
+key: corporate alternative verification method
+content-length: 140
+
+<p>Having trouble registering with your Corporate Account?</p>
+<p><a href="#">Click here for an alternative verification method &gt;</a></p>
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
 name: Title
@@ -91,14 +99,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-18906d03-7448-49f7-827f-def9b6d733e3
+b66e8058-addb-4f0a-ba9b-5da909b0e6e8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160411T202906Z
+20160519T131436Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

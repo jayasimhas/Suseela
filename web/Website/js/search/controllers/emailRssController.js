@@ -1,10 +1,12 @@
-﻿var EmailRssController = function ($scope, $location) {
+/* global angular */
+
+var EmailRssController = function ($scope, $location) {
     "use strict";
 
 
-    $scope.$watch(function () { return $location.search() }, function (params) {
-       
-
+    $scope.$watch(function () {
+        return $location.search();
+    }, function (params) {
         var params = $location.search();
        
         var nUrl = "";
@@ -21,8 +23,14 @@
                 nUrl = nUrl + "&" + idxkey + "=" + params[idxkey];
             }
         }
+				// strip leading &
+        if (nUrl.startsWith('&')) {
+	        nUrl = nUrl.substr(1);
+        }
         $scope.currentLocation = "?" + nUrl;
     });
+
+    $scope.testvar = 'hello';
 
 };
 var informaSearchApp = angular.module('informaSearchApp');
