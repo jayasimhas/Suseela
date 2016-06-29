@@ -1,10 +1,10 @@
 ﻿using Informa.Library.User.Authentication;
-using Jabberwocky.Glass.Autofac.Attributes;
+using Jabberwocky.Autofac.Attributes;
 using System.Collections.Generic;
 
 namespace Informa.Library.User.Newsletter
 {
-	[AutowireService(LifetimeScope.Default)]
+	[AutowireService]
 	public class UpdateNewsletterUserOptInsContext : IUpdateNewsletterUserOptInsContext
 	{
 		protected readonly IUpdateNewsletterUserOptIns UpdateUserOptIns;
@@ -28,7 +28,7 @@ namespace Informa.Library.User.Newsletter
 				return false;
 			}
 
-			var success = UpdateUserOptIns.Update(optIns, UserContext.User.Username);
+			var success = UpdateUserOptIns.Update(optIns, UserContext.User?.Username);
 
 			if (success)
 			{

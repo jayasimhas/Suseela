@@ -3,7 +3,7 @@ using System.Net;
 
 namespace Informa.Library.User
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class UserIpAddressSession : IUserIpAddressSession
 	{
 		private const string UserIpAddressSessionKey = "UserIpAddress";

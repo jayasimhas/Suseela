@@ -1390,12 +1390,12 @@
   <hooks>
     <hook type="Sitecore.Diagnostics.HealthMonitorHook, Sitecore.Kernel" />
     <hook type="Sitecore.Diagnostics.MemoryMonitorHook, Sitecore.Kernel">
-      <param desc="Threshold">2GB</param>
+      <param desc="Threshold">${MemoryMonitorHook.Threshold}</param>
       <param desc="Check interval">00:00:05</param>
       <param desc="Minimum time between log entries">00:01:00</param>
-      <ClearCaches>false</ClearCaches>
-      <GarbageCollect>false</GarbageCollect>
-      <AdjustLoadFactor>false</AdjustLoadFactor>
+      <ClearCaches>${MemoryMonitorHook.ClearCaches}</ClearCaches>
+      <GarbageCollect>${MemoryMonitorHook.GarbageCollect}</GarbageCollect>
+      <AdjustLoadFactor>${MemoryMonitorHook.AdjustLoadFactor}</AdjustLoadFactor>
     </hook>
   </hooks>
   <!-- SCHEDULING -->
