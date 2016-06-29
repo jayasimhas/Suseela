@@ -41,5 +41,6 @@ namespace Informa.Web.ViewModels
         public string GeneralError => TextTranslator.Translate("Newsletter.GeneralError");
         public string NewsletterSignupEmail => TextTranslator.Translate("Global.NewsletterSignupEmail");
         public string ManagePreferences => TextTranslator.Translate("Global.ManagePreferences");
+        public string InvalidEmailFormat => TextTranslator.Translate("Newsletter.InvalidEmailFormat");
     }
 }
