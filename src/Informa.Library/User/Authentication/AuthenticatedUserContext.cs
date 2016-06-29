@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Informa.Library.User.Entitlement;
-using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Authentication
 {
@@ -10,8 +7,7 @@ namespace Informa.Library.User.Authentication
 	{
 		protected readonly ISitecoreUserContext SitecoreUserContext;
 
-		public AuthenticatedUserContext(
-			ISitecoreUserContext sitecoreUserContext)
+		public AuthenticatedUserContext(ISitecoreUserContext sitecoreUserContext)
 		{
 			SitecoreUserContext = sitecoreUserContext;
 		}
@@ -20,6 +16,8 @@ namespace Informa.Library.User.Authentication
 		{
 			get
 			{
+                if(!IsAuthenticated) { return null; }
+
 				var sitecoreUser = SitecoreUserContext.User;
 
                 //Although sitecoreUser.Profile.Email gets filled and saved when creating the user, after the browser gets closed and reopened the Email becomes NULL.
@@ -33,9 +31,9 @@ namespace Informa.Library.User.Authentication
 
                 return new AuthenticatedUser
 				{
-					Email = sitecoreUser.Profile.Email,
+					Email = sitecoreUser.LocalName,
 					Name = sitecoreUser.Profile.Name,
-					Username = sitecoreUser.Profile.Email       
+					Username = sitecoreUser.LocalName
 				};
 			}
 		}

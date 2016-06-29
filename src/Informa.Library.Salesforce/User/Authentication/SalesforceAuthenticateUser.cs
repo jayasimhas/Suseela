@@ -25,7 +25,10 @@ namespace Informa.Library.Salesforce.User.Authentication
 		
 		public IAuthenticateUserResult Authenticate(string username, string password)
 		{
-			var loginResponse = Service.Execute(s => s.login(username, password));
+            if(string.IsNullOrEmpty(username))
+                return ErrorResult;
+
+            var loginResponse = Service.Execute(s => s.login(username, password));
 		
 			if (!loginResponse.IsSuccess())
 			{

@@ -8,6 +8,7 @@ namespace Informa.Web.App_Start.Registrations
 		public static void RegisterDependencies(ContainerBuilder builder)
 		{
 			builder.RegisterType<EntitlementsContexts>().As<IEntitlementsContexts>();
+			builder.RegisterType<EntitlementAccessContexts>().As<IEntitlementAccessContexts>();
 		}
 	}
 }

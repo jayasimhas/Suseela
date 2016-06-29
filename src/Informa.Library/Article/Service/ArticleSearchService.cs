@@ -8,6 +8,7 @@ using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Util;
+using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Library.Article.Service
 {
@@ -34,7 +35,7 @@ namespace Informa.Library.Article.Service
                     var search = searchScope.Value;
 
                     IArticleSearchFilter filter = search.CreateFilter();
-                    filter.ArticleNumber = number;
+                    filter.ArticleNumbers = number.SingleToList();
                     var results = search.SearchCustomDatabase(filter, Constants.MasterDb);
                     if (results.Articles.Any())
                     {
