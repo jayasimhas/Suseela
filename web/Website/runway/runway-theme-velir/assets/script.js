@@ -1,6 +1,30 @@
 /* global examples, Prism */
 
 $(document).ready(function () {
+
+	var currentTheme = location.search.split('theme=')[1];
+
+	$('.js-theme-select').on('change', function() {
+
+		var siteRoot = 'http://' + location.host + location.pathname;
+
+		if(this.selectedIndex === 0 && currentTheme) {
+			window.location.href = siteRoot;
+		}
+		if(this.selectedIndex === 1 && currentTheme !== 'pink-sheet') {
+			window.location.href = siteRoot + '?theme=pink-sheet';
+		}
+		if(this.selectedIndex === 2 && currentTheme !== 'rose-sheet') {
+			window.location.href = siteRoot + '?theme=rose-sheet';
+		}
+		if(this.selectedIndex === 3 && currentTheme !== 'medtech') {
+			window.location.href = siteRoot + '?theme=medtech';
+		}
+		if(this.selectedIndex === 4 && currentTheme !== 'invivo') {
+			window.location.href = siteRoot + '?theme=invivo';
+		}
+	});
+
 	$('pre code[class^="lang"]').each(function(code, index, array) {
 		// set pre, wrap, opts, and get meta data from code
 		var pre  = code.parentNode;

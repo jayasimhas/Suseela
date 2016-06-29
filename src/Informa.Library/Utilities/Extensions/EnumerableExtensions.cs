@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Informa.Library.Utilities.Extensions
@@ -17,5 +18,15 @@ namespace Informa.Library.Utilities.Extensions
 				}
 			}
 		}
+
+	    public static bool IsNullOrEmpty(IEnumerable collection)
+	    {
+            if(collection == null) { return true; }
+
+	        var e = collection.GetEnumerator();
+            var any = !e.MoveNext();
+            e.Reset();
+	        return !any;
+	    }
 	}
 }

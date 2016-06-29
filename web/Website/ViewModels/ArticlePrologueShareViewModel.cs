@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web;
-using Informa.Library.Article;
 using Informa.Library.Globalization;
 using Informa.Library.Presentation;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;

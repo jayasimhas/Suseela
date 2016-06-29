@@ -1,0 +1,121 @@
+﻿@model Informa.Web.Areas.Account.ViewModels.Management.ArticlePurchasesViewModel
+
+@if (Model.IsAuthenticated && Model.ArticlePurchases.Any())
+{
+    <div class="page-account">
+        <div class="page-preferences js-preferences-user-container">
+			<h2 class="page-account__table-headline">@Model.Title</h2>
+			<table class="page-account__table sortable-table js-sortable-table">
+				<thead class="sortable-table__header">
+					<tr>
+						<td class="sortable-table__col js-sortable-table-sorter"
+							data-sortable-table-col="1">
+							@Model.PublicationHeading
+							<div class="sorting-arrows">
+								<svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+									<use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+								</svg>
+								<svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+									<use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+								</svg>
+							</div>
+
+						</td>
+						<td class="sortable-table__col js-sortable-table-sorter"
+							data-sortable-table-col="2">
+							@Model.TitleHeading
+							<div class="sorting-arrows">
+								<svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+									<use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+								</svg>
+								<svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+									<use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+								</svg>
+							</div>
+						</td>
+						<td class="sortable-table__col js-sortable-table-sorter"
+							data-sortable-table-col="3">
+							@Model.ExpirationHeading
+							<div class="sorting-arrows">
+								<svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+									<use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+								</svg>
+								<svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+									<use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+								</svg>
+							</div>
+						</td>
+					</tr>
+				</thead>
+
+				<thead class="sortable-table__header sortable-table__header--mobile">
+					<tr>
+						<td class="sortable-table__col">
+							<h6>Sort by:</h6>
+						</td>
+						<td class="sortable-table__col js-sortable-table-sorter"
+							data-sortable-table-col="1">
+							@Model.PublicationHeading
+							<div class="sorting-arrows">
+								<svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+									<use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+								</svg>
+								<svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+									<use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+								</svg>
+							</div>
+						</td>
+						<td class="sortable-table__col js-sortable-table-sorter"
+							data-sortable-table-col="2">
+							@Model.TitleHeading
+							<div class="sorting-arrows">
+								<svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+									<use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+								</svg>
+								<svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+									<use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+								</svg>
+							</div>
+						</td>
+						<td class="sortable-table__col js-sortable-table-sorter"
+							data-sortable-table-col="3">
+							@Model.ExpirationHeading
+							<div class="sorting-arrows">
+								<svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+									<use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+								</svg>
+								<svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+									<use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+								</svg>
+							</div>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model.ArticlePurchases)
+					{
+						<tr>
+							<td class="sortable-table__col sortable-table__col--has-title sortable-table__col--publication">
+								@item.Publication
+							</td>
+							<td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
+								<a href="@item.Url" @(item.IsExternalUrl ? "target = \"_blank\"" : "")>
+									@item.Title
+									@if (item.IsExternalUrl)
+									{
+										<svg class="icon-external-link">
+											<use xlink:href="/dist/img/svg-sprite.svg#external-link"></use>
+										</svg>
+									}
+								</a>
+							</td>
+							<td class="sortable-table__col sortable-table__col--has-title sortable-table__col--exp-date">
+								@item.Expiration.ToString("d MMMM yyyy")
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+        </div>
+    </div>
+}
