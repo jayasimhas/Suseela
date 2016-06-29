@@ -7,8 +7,7 @@ namespace Informa.Library.Company
 	{
 		protected readonly IUserCompanyContext UserCompanyContext;
 
-		public UserCompanyNameContext(
-			IUserCompanyContext userCompanyContext)
+		public UserCompanyNameContext(IUserCompanyContext userCompanyContext)
 		{
 			UserCompanyContext = userCompanyContext;
 		}
