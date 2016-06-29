@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Web;
 using Glass.Mapper.Sc;
+using Informa.Library.Services.Global;
 using Informa.Library.Utilities.Extensions;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Data.Items;
@@ -11,25 +12,25 @@ using Sitecore.Web;
 
 namespace Informa.Library.Mail
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class BaseHtmlEmailFactory : IBaseHtmlEmailFactory
 	{
 		protected readonly ISiteRootContext SiteRootContext;
 		protected readonly IHtmlEmailTemplateFactory HtmlEmailTemplateFactory;
 		protected readonly IEmailFactory EmailFactory;
-	    protected readonly ISitecoreService SitecoreService;
+	    protected readonly IGlobalSitecoreService GlobalService;
 
 
         public BaseHtmlEmailFactory(
 			ISiteRootContext siteRootContext,
 			IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
 			IEmailFactory emailFactory,
-            ISitecoreService sitecoreService)
+            IGlobalSitecoreService globalService)
 		{
 			SiteRootContext = siteRootContext;
 			HtmlEmailTemplateFactory = htmlEmailTemplateFactory;
 			EmailFactory = emailFactory;
-            SitecoreService = sitecoreService;
+            GlobalService = globalService;
 		}
 
 		public IEmail Create()
@@ -89,7 +90,7 @@ namespace Informa.Library.Mail
 
         public string GetMediaURL(string mediaId)
         {
-            Item imageItem = SitecoreService.GetItem<Item>(mediaId);
+            Item imageItem = GlobalService.GetItem<Item>(mediaId);
             if (imageItem == null)
                 return string.Empty;
             

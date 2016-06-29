@@ -7,7 +7,7 @@ using Informa.Library.Utilities.Settings;
 
 namespace Informa.Library.User.Registration.Web
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class WebRegisterUserEmailFactory : IWebRegisterUserEmailFactory
 	{
 		protected readonly ISiteRootContext SiteRootContext;

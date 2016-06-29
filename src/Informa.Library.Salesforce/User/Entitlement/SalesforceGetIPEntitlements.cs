@@ -26,7 +26,7 @@ namespace Informa.Library.Salesforce.User.Entitlement
 
 		public IList<IEntitlement> GetEntitlements(string ipaddress)
         {
-            var response = Service.Execute(x => x.querySiteEntitlementsIP(ipaddress));
+            var response = Service.Execute(x => x.INquerySiteEntitlementsIP(ipaddress));
 
             if (!response.IsSuccess() || response.entitlements == null)
             {

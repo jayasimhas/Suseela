@@ -75,21 +75,5 @@ namespace Informa.Library.Utilities.WebUtils
 			}
 		}
 
-		public static string GetMediaURL(string mediaId)
-		{
-			ISitecoreService service = new SitecoreService("master");
-
-			Item imageItem = service.GetItem<Item>(mediaId);
-			if (imageItem != null)
-			{
-				MediaItem mediaItem = new MediaItem(imageItem);
-
-				var imageUrl = HttpContext.Current.Request.Url.Scheme + "://" + WebUtil.GetHostName() +
-							   MediaManager.GetMediaUrl(imageItem);
-				//Sitecore.StringUtil.EnsurePrefix('/', Sitecore.Resources.Media.MediaManager.GetMediaUrl(mediaItem));
-				return imageUrl;
-			}
-			return string.Empty;
-		}
 	}
 }

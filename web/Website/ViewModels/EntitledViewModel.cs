@@ -1,24 +1,24 @@
 using Informa.Library.User.Entitlement;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlement;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
-using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels
 {
-    public abstract class EntitledViewModel<T> : GlassViewModel<T> where T : class, IEntitledProductItem, IGlassBase
-    {   
-        public readonly IEntitledProductContext EntitledProductContext;
+    public abstract class EntitledViewModel<T> : GlassViewModel<T> where T : class, IEntitled_Product
+    {
+        public readonly IIsEntitledProducItemContext IsEntitledProductItemContext;
 
-        protected EntitledViewModel(IEntitledProductContext entitledProductContext)
+        protected EntitledViewModel(
+			IIsEntitledProducItemContext isEntitledItemProductContext)
         {
-            EntitledProductContext = entitledProductContext;
+            IsEntitledProductItemContext = isEntitledItemProductContext;
         }
 
-        public virtual bool IsFree => false;
+        public virtual bool IsFree => GlassModel.Free;
 
         public bool IsEntitled()
         {
-			return IsFree || EntitledProductContext.IsEntitled(GlassModel);
+			return IsFree || IsEntitledProductItemContext.IsEntitled(GlassModel);
         }
     }
 }

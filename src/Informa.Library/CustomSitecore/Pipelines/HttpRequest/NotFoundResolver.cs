@@ -8,6 +8,7 @@ using Jabberwocky.Glass.Autofac.Pipelines.Processors;
 using Sitecore;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.HttpRequest;
+using Log = Sitecore.Diagnostics.Log;
 
 namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 {
@@ -61,39 +62,11 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 					return;
 				}
 
-				try
+				var notFoundItem = Context.Database.GetItem($"{Context.Site.StartPath}/404");
+
+				if (notFoundItem != null)
 				{
-					// Does the url end in a 6 digit number?
-					Regex r = new Regex(@"^.*-(\d{6})$");
-					Match match = r.Match(args.Url.ItemPath);
-
-					if (!match.Success || match.Groups.Count < 2) return;
-
-					IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
-					filter.PageSize = 1;
-					filter.Page = 1;
-					filter.EScenicID = match.Groups[1].Value;
-
-					var results = ArticleSearcher.Search(filter);
-					var article = results?.Articles?.FirstOrDefault();
-					if (article == null)
-						return;
-
-					//redirect 
-					string newPath = ArticleSearch.GetArticleCustomPath(article);
-
-					args.Context.Response.Status = "301 Moved Permanently";
-					args.Context.Response.AddHeader("Location", newPath);
-					args.Context.Response.End();
-				}
-				catch (ThreadAbortException)
-				{
-					//This is a valid error resulting from an aborted redirect.
-					//No need to log.
-				}
-				catch (Exception ex)
-				{
-					Log.Error("Could not get site configuration to serve a 404 page for the request " + args.LocalPath, ex, this);
+					Context.Item = notFoundItem;
 				}
 			}
 		}

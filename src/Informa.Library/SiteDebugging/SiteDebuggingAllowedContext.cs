@@ -26,6 +26,6 @@ namespace Informa.Library.SiteDebugging
 			IpAddressContext.IpAddress != null &&
 			Configuration.IpAddresses.Any(ia => ia.Equals(IpAddressContext.IpAddress));
 
-		public bool IsAllowedByEmailAddress => UserContext.IsAuthenticated && Configuration.EmailAddresses.Any(ia => ia.Equals(UserContext.User.Email));
+		public bool IsAllowedByEmailAddress => UserContext.IsAuthenticated && Configuration.EmailAddresses.Any(ia => ia.Equals(UserContext.User?.Email ?? string.Empty));
 	}
 }
