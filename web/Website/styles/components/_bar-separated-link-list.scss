@@ -2,7 +2,8 @@
 title: Bar-separated Link List
 section: UI Elements
 ---
-Styling for a horizontal list of links, separated by a thin bar.
+Styling for a horizontal list of links, separated by a thin bar. This design pattern
+is found on most pages of the site, usually for displaying a list of tags.
 
 ```example:html
 <div class="bar-separated-link-list">
@@ -19,7 +20,7 @@ Styling for a horizontal list of links, separated by a thin bar.
 
     a {
         @include textMix('Roboto', 0.9375rem, 400);
-        border-right: 1px solid $informa-light-gray-d;
+        border-right: 1px solid $color-light-gray;
         display: inline-block;
         padding: 0 0.75rem;
         flex: 0 0 auto;

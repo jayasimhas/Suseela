@@ -28,7 +28,7 @@ An interview (questions and answers) added via the Word plugin.
     position: relative;
 
     h2 {
-        color: $informa-black;
+        color: $color-zeus-black;
         margin-bottom: 1rem;
     }
 
@@ -54,7 +54,7 @@ An interview (questions and answers) added via the Word plugin.
 
     &__question {
         @include textMix('Roboto', 1.125rem, 500);
-        color: $informa-black;
+        color: $color-zeus-black;
         padding-left: 2.5rem;
 
         &:before {
@@ -69,6 +69,8 @@ An interview (questions and answers) added via the Word plugin.
         font-size: 0.925rem;
         margin-left: 3.5rem;
         padding-left: 1.6125rem;
+        position: relative;
+        z-index: 4;
 
         &:before {
             background-color: #fae4be;
@@ -76,6 +78,19 @@ An interview (questions and answers) added via the Word plugin.
             content: "A";
             position: relative;
             top: -1px;
+            z-index: 2;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -1px;
+            width: 1px;
+            height: 27px;
+            background-color: #fff;
+            z-index: 1;
         }
     }
 

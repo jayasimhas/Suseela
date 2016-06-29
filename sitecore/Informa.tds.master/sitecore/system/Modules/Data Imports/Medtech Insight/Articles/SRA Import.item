@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {D339A801-5B5A-4383-B971-A62D27A8DFD6}
+database: master
+path: /sitecore/system/Modules/Data Imports/Medtech Insight/Articles/SRA Import
+parent: {54E887D0-428A-4B93-BBBE-5FCAAF62F1C5}
+name: SRA Import
+master: {00000000-0000-0000-0000-000000000000}
+template: {6D3FC7EB-4F92-401F-8FE9-786FF3B94111}
+templatekey: Informa Import Map
+
+----field----
+field: {0790A745-13E8-44F1-AA17-469E8FC7D20E}
+name: Handler Class
+key: handler class
+content-length: 69
+
+Sitecore.SharedSource.DataImporter.Providers.ClinicaSraArticleDataMap
+----field----
+field: {0639F8E7-44AB-41CE-AE67-9987BAF47E96}
+name: Handler Assembly
+key: handler assembly
+content-length: 34
+
+Sitecore.SharedSource.DataImporter
+----field----
+field: {D01499F0-1E31-4CD6-A2F4-EE17BD095AB1}
+name: Import To Where
+key: import to where
+content-length: 38
+
+{D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+----field----
+field: {8954B459-083B-446F-B8C0-40B90CE2E210}
+name: Import To What Template
+key: import to what template
+content-length: 38
+
+{11380B5D-3531-4570-B213-EFC5312266E4}
+----field----
+field: {A7C05D14-EBC8-4F08-A8C7-183FAB7061CC}
+name: Pull Item Name from What Fields
+key: pull item name from what fields
+content-length: 8
+
+FILENAME
+----field----
+field: {56C326EF-F5DA-4818-AE74-E85130B60B84}
+name: Import To Language
+key: import to language
+content-length: 38
+
+{AF584191-45C9-4201-8740-5409F4CF8BDD}
+----field----
+field: {2D49A4E9-C26D-435B-9207-4A8D1E3CF044}
+name: Folder By Date
+key: folder by date
+content-length: 1
+
+1
+----field----
+field: {B40C055B-3A62-4DD6-8CBD-88045E42F80D}
+name: Date Field
+key: date field
+content-length: 11
+
+STORYUPDATE
+----field----
+field: {346D949C-B439-40BF-AECA-D43B7D7639C1}
+name: Folder Template
+key: folder template
+content-length: 38
+
+{D0DFAF98-BB2A-4EB3-A931-13C335201D25}
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 1
+
+0
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: c614cc22-dd19-404c-a23f-1c12424a459e
+
+----field----
+field: {1F03F44C-DD3A-4148-BEE7-0724310827B8}
+name: Query
+key: query
+content-length: 68
+
+C:\inetpub\wwwroot\informa\Website\upload\Import\clinica_sra\sratest
+----field----
+field: {AE52DF37-B0D7-4548-A4D0-3A470ADA56AD}
+name: Publication Prefix
+key: publication prefix
+content-length: 2
+
+MT
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160120T201457Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c614cc22-dd19-404c-a23f-1c12424a459e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T130312Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
