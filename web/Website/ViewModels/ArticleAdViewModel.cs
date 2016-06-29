@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Glass.Mapper.Sc;
-using Informa.Library.Globalization;
-using Informa.Library.Services.Sitemap;
-using Informa.Library.Utilities.References;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+﻿using Informa.Library.Globalization;
+using Informa.Library.Site;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
@@ -14,24 +7,24 @@ namespace Informa.Web.ViewModels
 {
     public class ArticleAdViewModel : GlassViewModel<IArticle>
     {
-        protected readonly ISitecoreService SitecoreService;
+        protected readonly ISiteRootContext SiteRootContext;
         protected readonly ITextTranslator TextTranslator;
 
         public ArticleAdViewModel(
-            ISitecoreService sitecoreService,
+						ISiteRootContext siteRootContext,
             ITextTranslator textTranslator)
         {
-            SitecoreService = sitecoreService;
+            SiteRootContext = siteRootContext;
             TextTranslator = textTranslator;
         }
 
         public string MediumAdID => (!string.IsNullOrEmpty(GlassModel?.Article_Medium_Slot_ID)) 
             ? GlassModel.Article_Medium_Slot_ID 
-            : SitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode)?.Global_Article_Medium_Slot_ID ?? string.Empty;
+            : SiteRootContext.Item?.Global_Article_Medium_Slot_ID ?? string.Empty;
         public string FilmstripAdID => (!string.IsNullOrEmpty(GlassModel?.Article_Filmstrip_Slot_ID))
             ? GlassModel.Article_Filmstrip_Slot_ID
-            : SitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode)?.Global_Article_Filmstrip_Slot_ID ?? string.Empty;
-        public string AdZone => SitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode)?.Global_Article_Ad_Zone ?? string.Empty;
+            : SiteRootContext.Item?.Global_Article_Filmstrip_Slot_ID ?? string.Empty;
+        public string AdZone => SiteRootContext.Item?.Global_Article_Ad_Zone ?? string.Empty;
         public string AdvertisementText => TextTranslator.Translate("Ads.Advertisement");
     }
 }

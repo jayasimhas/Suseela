@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Informa.Library.User.Entitlement;
-using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Security.Authentication;
 using Informa.Library.User.Profile;
 
