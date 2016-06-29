@@ -25,7 +25,7 @@ $main-menu-handle-width: 70px;
 	// At smaller widths, we use the `--mini` toggler instead
 	// Remove the thick handle, don't show permatoggler on the left when closed
 	@include breakpoint('medium') {
-		border-right: 1px solid $informa-light-gray-d;
+		border-right: 1px solid $color-light-gray;
 		margin-right: $main-menu-handle-width;
 		transform: translate3d(0, 0, 0);
 		width: 260px;
@@ -37,10 +37,10 @@ $main-menu-handle-width: 70px;
 	}
 
 	&__section {
-		border-bottom: 1px solid $informa-light-gray-d;
+		border-bottom: 1px solid $color-light-gray;
 		margin: 0;
 		padding: 1rem 0;
-		background-color: $informa-light-gray-f;
+		background-color: $color-concrete-gray;
 	}
 
 	&__section-title,
@@ -65,7 +65,7 @@ $main-menu-handle-width: 70px;
 		}
 	}
 	&__arrow-icon {
-		@include svg-fill($informa-dark-gray);
+		@include svg-fill($color-abbey-gray);
 		position: absolute;
 		right: 1rem;
 		top: 0.5rem;
@@ -96,11 +96,11 @@ $main-menu-handle-width: 70px;
 		font-size: 0.9375rem;
 
 		a {
-			color: $informa-dark-gray;
+			color: $color-abbey-gray;
 
 			&:hover,
 			&:active {
-				color: $informa-red;
+				color: $color-cardinal-red;
 			}
 			&:after {
 				content: "\a0 ›"; // "\ao " is a non-breaking space
@@ -137,7 +137,7 @@ $main-menu-handle-width: 70px;
 		padding-left: 2.5rem;
 	}
 	&:hover:before {
-		background-color: $informa-dark-orange;
+		background-color: $color-tree-poppy-orange;
 		content: "";
 		display: block;
 		height: 100%;
