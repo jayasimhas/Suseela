@@ -1,14 +1,6 @@
 @model SearchViewModel
 <!-- SEARCH FILTERS IN LEFT RAIL -->
 
-<button class="facets__mobile-button"
-        ng-model="facetsAreCollapsed"
-        ng-click="facetsAreCollapsed = !facetsAreCollapsed"
-        ng-class="{'is-expanded': facetsAreCollapsed}">
-    <h6 ng-if="!facetsAreCollapsed" class="show-filters">Show Filters</h6>
-    <h6 ng-if="facetsAreCollapsed" class="hide-filters">Hide Filters</h6>
-</button>
-
 <div    id="search-facet-01"
         class="search__facets search__left-sidebar"
         ng-class="{'is-expanded': facetsAreCollapsed}"
@@ -24,13 +16,13 @@
 
     <div class="facets__content">
 
-        <form class="facets__section" ng-repeat="group in facetController.facetGroups">
+        <form class="facets__section" ng-repeat="group in facetController.facetGroups" ng-if="group.label == 'Companies' || group.label == 'Date Placeholder' || group.facets.length > 0">
 
         @* * * * *
         FACET — COMPANIES
         * * * * *@
 
-        <fieldset ng-if="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController">
+        <fieldset ng-if="group.label == 'Companies'" class="facets__fieldset" ng-controller="InformaTypeaheadController" ng-init="pageId = '@Sitecore.Context.Item.ID.ToString()'">
           <legend class="facets__legend facets__section-header">
               <h4>Companies</h4>
               <button class="facets__button facets__button--toggle-section"
@@ -49,6 +41,7 @@
                              class="visuallyhidden click-utag"
                              ng-checked="f.selected"
                              ng-model="f.selected"
+							 ng-disabled="facetController.areFacetsDisabled"
                              ng-change="facetController.update()" data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group_name":"{{group.label}}"}'>
                       <label class="facets__label" ng-if="f.label" for="{{ group.id }}-{{ $index }}">
                           {{ f.label }}
@@ -111,6 +104,7 @@
                       type="text"
                       id="company-field"
                       name="company-field"
+					  ng-disabled="facetController.areFacetsDisabled"
                       placeholder="Enter a Company"
                       ng-model="myCompany.selected"
                       uib-typeahead="company for company in companies | filter:$viewValue | limitTo:5"
@@ -171,6 +165,7 @@
                                    name="date-facet"
                                    id="{{dateFilter.key}}"
                                    ng-model="dateFilter.selected"
+								   ng-disabled="facetController.areFacetsDisabled"
                                    ng-value=true
                                    ng-checked="{{dateFilter.selected}}"
                                    ng-click="facetController.dateRangeSearch('date', dateFilter.key)" class="click-utag" data-info='{"event_name":"search-facet","facet_selected":"{{dateFilter.label}}","facet_group":"{{group.label}}"}'>
@@ -254,7 +249,6 @@
             </ul>
           </fieldset>
 
-
           @* * * * *
           FACETS - DYNAMIC
           * * * * *@
@@ -264,24 +258,42 @@
                 <legend class="facets__legend facets__section-header">
                     <h4>{{ ::group.label }}</h4>
                     <button
-                      class="facets__button facets__button--toggle-section"
-                      ng-model="collapsefacet"
-                      ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
-                      ng-class="{'collapsed': isCollapsed}">
+                        class="facets__button facets__button--toggle-section"
+                        ng-model="collapsefacet"
+                        ng-click="collapsefacet=!collapsefacet; isCollapsed=!isCollapsed"
+                        ng-class="{'collapsed': isCollapsed}">
                         <svg>
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
                         </svg>
                     </button>
                 </legend>
+                @if (Model.Subcriptions.Any())
+                {
+                    <p ng-if="group.id === 'publication'">
+                        <button class="facets__button"
+                            ng-if="!facetController.showingOnlySubscriptions"
+                            ng-click="facetController.facetChangeMultiple(group.id, [@string.Join(", ", Model.Subcriptions.Select(s => string.Format("'{0}'", s)))]); facetController.showingOnlySubscriptions = true">
+                            @Model.SearchSelectMySubscriptionsText
+                        </button>
+
+                        <button class="facets__button"
+                            ng-if="facetController.showingOnlySubscriptions"
+                            ng-click="facetController.facetChangeMultiple(group.id, []); facetController.showingOnlySubscriptions = false">
+                            @* * * "Show All Subscriptions" dictionary item here * * *@
+                            @Model.SearchShowAllPublicationsText
+                        </button>
+                    </p>
+                }
 
                 <div class="facets__repeat-wrapper" ng-repeat="f in group.facets | limitTo:limit" ng-if="!collapsefacet">
-                <ul class="facets__section-list" ng-if="($index < facetController.MaxFacetShow) || group.ShowMore">
+                    <ul class="facets__section-list" ng-if="($index < facetController.MaxFacetShow) || group.ShowMore">
                     <li>
                         @* Hidden input field *@
                         <input  id="{{ group.id }}-{{ $index }}"
                               type="checkbox"
                               class="visuallyhidden click-utag"
-                              ng-model="f.selected"
+							  ng-model="f.selected"
+							  ng-disabled="facetController.areFacetsDisabled"
                               ng-change="facetController.facetChange(f)"  data-info='{"event_name":"search-facet","facet_selected":"{{f.label}}","facet_group":"{{group.label}}"}'>
 
                         <label  class="facets__label"
@@ -354,7 +366,7 @@
 </div> <!-- / .search__facets -->
 
 <button
-  class="facets__mobile-button facets__mobile-button--bottom"
+  class="facets__mobile-button facets__mobile-button--hide facets__mobile-button--bottom"
   ng-model="facetsAreCollapsed"
   ng-click="facetsAreCollapsed = !facetsAreCollapsed"
   ng-class="{'is-expanded': facetsAreCollapsed}">
