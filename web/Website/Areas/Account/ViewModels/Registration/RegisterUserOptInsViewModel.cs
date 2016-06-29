@@ -1,5 +1,6 @@
 ﻿using Informa.Library.Company;
 using Informa.Library.Globalization;
+using Informa.Library.Navigation;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
@@ -12,13 +13,16 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 	{
 		protected readonly IUserCompanyContext UserCompanyContext;
 		protected readonly ITextTranslator TextTranslator;
+		protected readonly IReturnUrlContext ReturnUrlContext;
 
 		public RegisterUserOptInsViewModel(
 			IUserCompanyContext userCompanyContext,
-			ITextTranslator textTranslator)
+			ITextTranslator textTranslator,
+			IReturnUrlContext returnUrlContext)
 		{
 			UserCompanyContext = userCompanyContext;
 			TextTranslator = textTranslator;
+			ReturnUrlContext = returnUrlContext;
 		}
 
 		public string Title => GlassModel?.Title;
@@ -28,5 +32,14 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 		public string GeneralErrorText => TextTranslator.Translate("Registration.OptIn.GeneralError");
 		public string OffersLabelText => TextTranslator.Translate("Registration.OptIn.OffersLabel");
 		public string NewslettersLabelText => TextTranslator.Translate("Registration.OptIn.NewslettersLabel");
+		public string RegisterReturnUrl
+		{
+			get
+			{
+				var url = ReturnUrlContext.Url;
+
+				return string.IsNullOrEmpty(url) ? "/" : url;
+			}
+		}
 	}
 }

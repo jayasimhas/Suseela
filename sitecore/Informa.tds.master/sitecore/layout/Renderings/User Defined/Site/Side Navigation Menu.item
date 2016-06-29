@@ -23,10 +23,24 @@ key: cacheable
 content-length: 1
 
 1
+----field----
+field: {8B6D532B-6128-4486-A044-CA06D90948BA}
+name: VaryByData
+key: varybydata
+content-length: 1
+
+1
+----field----
+field: {308E88F5-CD6E-4F8F-BAFE-95A47DEDEFDC}
+name: Editable
+key: editable
+content-length: 0
+
+
 ----version----
 language: en
 version: 1
-revision: 80f1ed5d-c3d8-4eec-a10e-c9c4714df07d
+revision: 3929ba4a-33d6-478d-a5d3-2052fe434d24
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-80f1ed5d-c3d8-4eec-a10e-c9c4714df07d
+3929ba4a-33d6-478d-a5d3-2052fe434d24
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160425T151359Z
+20160607T191703Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
