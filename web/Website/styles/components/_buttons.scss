@@ -2,17 +2,15 @@
 title: Buttons
 section: UI Elements
 ---
-This file contains all styles related to the button component.
-
 ```example:html
 <button class="button--filled">Button</button>
 <button class="button--outline">Button</button>
-<button class="button--gilded">Button</button>
 ```
 */
 
 .button,
 a.button {
+	&,
 	&--filled,
 	&--outlined,
 	&--outline,
@@ -20,17 +18,17 @@ a.button {
 		@include smooth-transition;
 		@include textMix('Roboto', 12px, 700);
 		border: 0;
-		color: $informa-black;
+		color: $color-zeus-black;
 		letter-spacing: 1px;
 		padding: 12px 16px;
 		text-transform: uppercase;
 	}
 
 	&--filled {
-		background-color: $informa-light-orange;
+		background-color: $color-yellow-orange;
 
 		&:hover {
-			background-color: $informa-dark-orange;
+			background-color: $color-tree-poppy-orange;
             text-decoration:none;
 		}
 
@@ -43,11 +41,11 @@ a.button {
 	&--outline:enabled {
 		@include smooth-transition(all, 50ms, ease-out);
 		background-color: $color-white;
-		border: 1px solid $informa-light-orange;
+		border: 1px solid $color-yellow-orange;
 
 		&:hover {
-			border-color: $informa-dark-orange;
-			background-color: $informa-dark-orange;
+			border-color: $color-tree-poppy-orange;
+			background-color: $color-tree-poppy-orange;
 		}
 	}
 
@@ -72,9 +70,36 @@ a.button {
 
 }
 
+
+/*---
+title: Full Diminished Button
+section: UI Elements
+---
+This isn't a "real" button; rather, a link styled like many other buttons on the site.
+```example:html
+<a class="full-diminished-button" href="#">
+	See All
+</a>
+```
+*/
+
+.full-diminished-button {
+	@extend .button;
+	background-color: $color-concrete-gray;
+	color: $color-zeus-black;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 3rem;
+	text-align: center;
+	width: 100%;
+}
+
+
 .onoffswitch {
-    position: relative;
+	display: inline-block;
+	vertical-align: middle;
 	width: 47px;
+    position: relative;
     -webkit-user-select:none;
 	-moz-user-select:none;
 	-ms-user-select: none;
@@ -88,7 +113,7 @@ a.button {
 		display: block;
 		overflow: hidden;
 		cursor: pointer;
-	    border: 1px solid $color-light-gray-b; // also try $informa-light-gray-d
+	    border: 1px solid $color-x11-gray; // also try $color-light-gray
 		border-radius: 11px;
 		background-color: $color-white;
 	}
@@ -96,7 +121,7 @@ a.button {
 	&-inner {
 		display: block;
 		width: 200%;
-		margin-left: -100%;
+		margin-left: -2px;
 	    transition: margin 0.3s ease-in 0s;
 
 		&:before,
@@ -113,17 +138,17 @@ a.button {
 		}
 
 		&:before {
-			content: "ON";
+			content: "OFF";
 		    padding-left: 9px;
 		    background-color: $color-white;
-			color: $color-medium-gray-8; // also try $informa-mid-gray
+			color: $color-old-silver-gray; // also try $color-dusty-gray
 		}
 
 		&:after {
-			content: "OFF";
+			content: "ON";
 		    padding-right: 9px;
 		    background-color: $color-white;
-			color: $color-medium-gray-8; // also try $informa-mid-gray
+			color: $color-old-silver-gray; // also try $color-dusty-gray
 		    text-align: right;
 		}
 	}
@@ -133,21 +158,26 @@ a.button {
 		width: 14px;
 		height: 14px;
 		margin: 4px;
-	    background: $informa-light-gray-d;
+	    background: $color-light-gray;
 	    position: absolute;
 		top: 1px;
 		bottom: 0;
-	    right: 24px;
+	    left: 24px;
 	    border-radius: 50%;
 	    transition: all 0.3s ease-in 0s;
 	}
 
 	&-checkbox:checked + &-label &-inner {
-		margin-left: 0;
+		margin-left: -46px;
 	}
 
 	&-checkbox:checked + &-label &-switch {
-		right: 0;
-		background: $informa-light-orange;
+		left: 0;
+		background: $color-yellow-orange;
+	}
+
+	// Submit button is hidden, only used
+	&__submit {
+		display: none;
 	}
 }

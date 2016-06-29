@@ -1,11 +1,15 @@
 .article-tags-bar {
     align-self: flex-start;
-    background-color: $informa-light-gray-f;
+    background-color: $color-concrete-gray;
     display: inline-block;
     padding: 12px;
 
     a {
         text-transform: none;
+    }
+
+    &__label {
+        @extend h6;
     }
 
     @include breakpoint('medium') {
