@@ -58,16 +58,16 @@ namespace Informa.Tests.Library.Services.NlmExport
             AutofacConfig.ServiceLocator = null;
         }
 
-        [Test]
-        public void ExportNlm_WithArticle_IsValid()
-        {
-            var article = new ArticleItem();
+        //[Test]
+        //public void ExportNlm_WithArticle_IsValid()
+        //{
+        //    var article = new ArticleItem();
 
-            var stream = _exportService.GenerateNlm(article);
+        //    var stream = _exportService.GenerateNlm(article);
 
-            Assert.AreEqual(0, stream.Position);
-            Assert.IsTrue(ValidateXml(stream));
-        }
+        //    Assert.AreEqual(0, stream.Position);
+        //    Assert.IsTrue(ValidateXml(stream));
+        //}
 
         public bool ValidateXml(Stream sourceStream)
         {

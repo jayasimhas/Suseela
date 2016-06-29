@@ -8,8 +8,8 @@ section: Home/Topic Page Components
 
     <div class="article-metadata">
         <div class="article-preview__bookmarker pop-out__trigger">
-            <span class="article-preview__bookmarker-label">Bookmark</span>
-            <svg class="article-prologue__share-icon">
+            <span class="action-flag__label">Bookmark</span>
+            <svg class="action-flag__icon action-flag__icon--bookmark">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#bookmark"></use>
             </svg>
         </div>
@@ -21,7 +21,7 @@ section: Home/Topic Page Components
                 <h6>News</h6>
             </li>
             <li>
-                <svg class="article-prologue__share-icon">
+                <svg class="action-flag__icon">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#audio"></use>
                 </svg>
             </li>
@@ -86,7 +86,7 @@ section: Home/Topic Page Components
     }
 
     &__icon {
-        @include svg-fill($informa-mid-gray);
+        @include svg-fill($color-dusty-gray);
         height: 24px;
         width: 24px;
         display: inline-block;
@@ -95,15 +95,21 @@ section: Home/Topic Page Components
 
     &__bookmarker {
         float: right;
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-    &__bookmarker-label {
-        @include breakpoint('medium') {
-            display: none;
-        }
+		padding-top: 0;
+
+		.action-flag__label {
+			@include textMix('Roboto', 11px, 500);
+			letter-spacing: 1px;
+			color: $color-dusty-gray;
+
+	        @include breakpoint('medium') {
+	            display: none;
+	        }
+		}
+
+		&:hover .action-flag__label {
+			color: $color-zeus-black;
+		}
     }
 
     &__category {
@@ -117,7 +123,7 @@ section: Home/Topic Page Components
         margin-bottom: 0.5rem;
         &,
         & a {
-            color: $informa-black;
+            color: $color-zeus-black;
 
             &:hover {
                 color: $color-cardinal-red;
@@ -126,7 +132,7 @@ section: Home/Topic Page Components
     }
     &__byline {
         @include textMix('Roboto', 16px, 500);
-        color: $informa-dark-gray;
+        color: $color-abbey-gray;
         display: block;
         line-height: 18px;
         margin-bottom: 1rem;
@@ -159,7 +165,7 @@ section: Home/Topic Page Components
     p {
         font-size: 18px;
         line-height: 30px;
-        color: $informa-dark-gray;
+        color: $color-abbey-gray;
     }
 
 

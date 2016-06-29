@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: c45aea20-34c0-49cd-a700-a45ff68974ee
+revision: c0892ad8-d3bc-414b-81a2-74ec0d685ef5
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -29,12 +29,19 @@ content-length: 4
 
 user
 ----field----
+field: {B3E3F7B7-3E08-4CBF-ABED-1932BB8639A7}
+name: Inactive
+key: inactive
+content-length: 1
+
+1
+----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
 key: email address
-content-length: 21
+content-length: 24
 
-aghangurde@@yahoo.com
+anju.ghangurde@yahoo.com
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,18 +55,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c45aea20-34c0-49cd-a700-a45ff68974ee
+c0892ad8-d3bc-414b-81a2-74ec0d685ef5
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190931Z
+20160423T081828Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 15
 
-sitecore\admin
+sitecore\srigby
