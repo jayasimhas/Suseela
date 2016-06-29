@@ -1,0 +1,177 @@
+----item----
+version: 1
+id: {52537DE9-5A7A-4819-974F-71F14547AA4A}
+database: master
+path: /sitecore/system/Modules/Data Imports/Medtech Insight/Articles/Legacy Medtech Insight
+parent: {54E887D0-428A-4B93-BBBE-5FCAAF62F1C5}
+name: Legacy Medtech Insight
+master: {F1199728-0560-43DB-80AA-46EC0B5D0ECE}
+template: {96AAC80C-CE36-43C5-93EB-EDA101794AAC}
+templatekey: Sitecore Import Map
+
+----field----
+field: {0790A745-13E8-44F1-AA17-469E8FC7D20E}
+name: Handler Class
+key: handler class
+content-length: 56
+
+Sitecore.SharedSource.DataImporter.Providers.PmbiDataMap
+----field----
+field: {D01499F0-1E31-4CD6-A2F4-EE17BD095AB1}
+name: Import To Where
+key: import to where
+content-length: 38
+
+{D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+----field----
+field: {8954B459-083B-446F-B8C0-40B90CE2E210}
+name: Import To What Template
+key: import to what template
+content-length: 38
+
+{11380B5D-3531-4570-B213-EFC5312266E4}
+----field----
+field: {A7C05D14-EBC8-4F08-A8C7-183FAB7061CC}
+name: Pull Item Name from What Fields
+key: pull item name from what fields
+content-length: 5
+
+Title
+----field----
+field: {56C326EF-F5DA-4818-AE74-E85130B60B84}
+name: Import To Language
+key: import to language
+content-length: 38
+
+{AF584191-45C9-4201-8740-5409F4CF8BDD}
+----field----
+field: {2D49A4E9-C26D-435B-9207-4A8D1E3CF044}
+name: Folder By Date
+key: folder by date
+content-length: 1
+
+1
+----field----
+field: {B40C055B-3A62-4DD6-8CBD-88045E42F80D}
+name: Date Field
+key: date field
+content-length: 12
+
+Article Date
+----field----
+field: {346D949C-B439-40BF-AECA-D43B7D7639C1}
+name: Folder Template
+key: folder template
+content-length: 38
+
+{D0DFAF98-BB2A-4EB3-A931-13C335201D25}
+----field----
+field: {F8B6F833-D85A-48E7-A17F-C926E39D9E65}
+name: Import From Language
+key: import from language
+content-length: 38
+
+{AF584191-45C9-4201-8740-5409F4CF8BDD}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 31
+
+Business/32x32/data_refresh.png
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: 94ef3a1e-49b6-40d7-b137-e86c33b00390
+
+----field----
+field: {1F03F44C-DD3A-4148-BEE7-0724310827B8}
+name: Query
+key: query
+content-length: 94
+
+/sitecore/content/Home/Publications/The Pink Sheet//*[@@templatename='The Pink Sheet Article']
+----field----
+field: {059F68FF-E3E0-49AF-8287-68F4FAAA364A}
+name: Start Path
+key: start path
+content-length: 51
+
+/sitecore/content/Home/Publications/Medtech Insight
+----field----
+field: {18F8FBC8-8AA1-46A1-9698-D89EF5B70766}
+name: Template ID
+key: template id
+content-length: 38
+
+{DE4A6374-53E9-4F06-95EC-EDEB6FA1CDCF}
+----field----
+field: {B86AB71D-FC76-413B-9AA1-71BBE4EF57CD}
+name: Year
+key: year
+content-length: 0
+
+
+----field----
+field: {5FF74032-EFC8-401A-BEB6-E459A9815585}
+name: Last Article Number
+key: last article number
+content-length: 0
+
+
+----field----
+field: {23018653-40BE-4436-B792-CC0FAF9F8790}
+name: Article Number Prefix
+key: article number prefix
+content-length: 2
+
+MT
+----field----
+field: {232C8155-3C1A-427A-9501-672DDB5E7B0F}
+name: Media Source Path
+key: media source path
+content-length: 44
+
+/sitecore/media library/Supporting Documents
+----field----
+field: {1B4A053F-6AFB-4B41-8102-53CAE42EACB5}
+name: Media Destination Path
+key: media destination path
+content-length: 37
+
+/sitecore/media library/old PMBI site
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160421T144825Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+94ef3a1e-49b6-40d7-b137-e86c33b00390
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160519T152021Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

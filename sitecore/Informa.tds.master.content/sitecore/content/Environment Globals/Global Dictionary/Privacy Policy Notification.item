@@ -33,15 +33,15 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 154c8a9e-d5cd-4925-a977-929d8400f739
+revision: 3739fa6b-ff21-4852-8e32-07a2a70c100f
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 432
+content-length: 464
 
-In order to deliver a personalized, responsive service and to improve the site, we remember and store information about how you use it. This is done using simple text files called cookies which site on your computer. By continuing to use this site and access its features, you are consenting to our use of cookies. To find out more about the way Informa uses cookies please go to our <a href="/cookie-policy">Cookie Policy</a> page.
+In order to deliver a personalized, responsive service and to improve the site, we remember and store information about how you use it. This is done using simple text files called cookies which sit on your computer. By continuing to use this site and access its features, you are consenting to our use of cookies. To find out more about the way Informa uses cookies please go to our <a href="https://pharmaintelligence.informa.com/cookies/">Cookie Policy</a> page.
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-154c8a9e-d5cd-4925-a977-929d8400f739
+3739fa6b-ff21-4852-8e32-07a2a70c100f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160309T135707Z
+20160419T192258Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

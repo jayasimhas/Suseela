@@ -19,6 +19,7 @@ using PluginModels;
 using Sitecore;
 using Constants = Informa.Library.Utilities.References.Constants;
 using IWorkflow = Sitecore.Workflows.IWorkflow;
+using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Web.Controllers
 {
@@ -28,7 +29,7 @@ namespace Informa.Web.Controllers
 		protected readonly IArticleSearch ArticleSearcher;
 		protected readonly ISitecoreContext SitecoreContext;
 
-        public ArticleController(IArticleSearch searcher, ISitecoreContext context)
+		public ArticleController(IArticleSearch searcher, ISitecoreContext context)
 		{
 			ArticleSearcher = searcher;
 			SitecoreContext = context;
@@ -47,7 +48,7 @@ namespace Informa.Web.Controllers
 			IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
 			filter.PageSize = 1;
 			filter.Page = 1;
-			filter.ArticleNumber = numFormat;
+			filter.ArticleNumbers = numFormat.SingleToList();
 
 			var results = ArticleSearcher.Search(filter);
 			if (!results.Articles.Any())
@@ -71,59 +72,7 @@ namespace Informa.Web.Controllers
 			HttpContext.Current.Response.RedirectPermanent(newPath);
 		}
 
-		/// <summary>
-		/// redirects all article urls that end with an escenic id
-		/// </summary>
-		/// <param name="title"></param>
-		/// <param name="escenicID"></param>
-		public void Get(string title, int escenicID)
-		{
-			string uRef = HttpContext.Current.Request.UrlReferrer?.Host ?? "";
-			//if (!uRef.Contains("scripintelligence.com"))
-			//    return;
-
-			//find the new article page
-			IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
-			filter.PageSize = 1;
-			filter.Page = 1;
-			filter.EScenicID = escenicID.ToString();
-
-			var results = ArticleSearcher.Search(filter);
-			if (!results.Articles.Any())
-				return;
-
-			//redirect 
-			string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
-			HttpContext.Current.Response.RedirectPermanent(newPath);
-		}
-
-        /// <summary>
-		/// redirects all article urls that end with an escenic id
-		/// </summary>
-		/// <param name="taxonomy"></param>
-		/// <param name="title"></param>
-		/// <param name="escenicID"></param>
-		public void Get(string taxonomy, string title, int escenicID)
-        {
-            string uRef = HttpContext.Current.Request.UrlReferrer?.Host ?? "";
-            //if (!uRef.Contains("scripintelligence.com"))
-            //    return;
-
-            //find the new article page
-            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
-            filter.PageSize = 1;
-            filter.Page = 1;
-            filter.EScenicID = escenicID.ToString();
-
-            var results = ArticleSearcher.Search(filter);
-            if (!results.Articles.Any())
-                return;
-
-            //redirect 
-            string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
-            HttpContext.Current.Response.RedirectPermanent(newPath);
-        }
-    }
+	}
 
 	public class ArticleUtil
 	{
@@ -133,19 +82,19 @@ namespace Informa.Web.Controllers
 		protected readonly string _tempFolderFallover = System.IO.Path.GetTempPath();
 		protected string _tempFileLocation;
 		private readonly IArticleSearch _articleSearcher;
-        protected readonly Func<string, ISitecoreService> SitecoreFactory;
+		protected readonly Func<string, ISitecoreService> SitecoreFactory;
 
-        //protected readonly IWorkFlowUtil WorkflowUtil;
-        /// <summary>
-        /// Constructor
-        /// </summary
-        /// <param name="searcher"></param>
-        /// <param name="sitecoreFactory"></param>
-        /// <param name="siteRootContext"></param>
-        public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
-        {
-            SitecoreFactory = sitecoreFactory;
-            _sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
+		//protected readonly IWorkFlowUtil WorkflowUtil;
+		/// <summary>
+		/// Constructor
+		/// </summary
+		/// <param name="searcher"></param>
+		/// <param name="sitecoreFactory"></param>
+		/// <param name="siteRootContext"></param>
+		public ArticleUtil(IArticleSearch searcher, Func<string, ISitecoreService> sitecoreFactory)
+		{
+			SitecoreFactory = sitecoreFactory;
+			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			_articleSearcher = searcher;
 		}
 
@@ -173,30 +122,30 @@ namespace Informa.Web.Controllers
 		/// <returns></returns>
 		public ArticleItem GetArticleByNumber(string articleNumber)
 		{
-		    return GetArticleByNumber(articleNumber, Constants.MasterDb);
+			return GetArticleByNumber(articleNumber, Constants.MasterDb);
 		}
 
-        public ArticleItem GetArticleByNumber(string articleNumber,string databaseName)
-        {
-            IArticleSearchFilter filter = _articleSearcher.CreateFilter();
-            filter.ArticleNumber = articleNumber;
-            var results = _articleSearcher.SearchCustomDatabase(filter, databaseName);
-            if (results.Articles.Any())
-            {
-                var foundArticle = results.Articles.FirstOrDefault();
-                var service = SitecoreFactory(databaseName);
-                if (foundArticle != null)
-                    return service.GetItem<ArticleItem>(foundArticle._Id);
-            }
-            return null;
-        }
+		public ArticleItem GetArticleByNumber(string articleNumber, string databaseName)
+		{
+			IArticleSearchFilter filter = _articleSearcher.CreateFilter();
+            filter.ArticleNumbers = articleNumber.SingleToList();
+			var results = _articleSearcher.SearchCustomDatabase(filter, databaseName);
+			if (results.Articles.Any())
+			{
+				var foundArticle = results.Articles.FirstOrDefault();
+				var service = SitecoreFactory(databaseName);
+				if (foundArticle != null)
+					return service.GetItem<ArticleItem>(foundArticle._Id);
+			}
+			return null;
+		}
 
-        /// <summary>
-        /// Returns the Version Number of Article
-        /// </summary>
-        /// <param name="article"></param>
-        /// <returns></returns>
-        public int GetWordVersionNumber(ArticleItem article)
+		/// <summary>
+		/// Returns the Version Number of Article
+		/// </summary>
+		/// <param name="article"></param>
+		/// <returns></returns>
+		public int GetWordVersionNumber(ArticleItem article)
 		{
 			if (article.Word_Document == null) return -1;
 			var wordDocURL = article.Word_Document.Url;
@@ -450,7 +399,7 @@ namespace Informa.Web.Controllers
 			articleStruct.Authors = authors.Select(r => new StaffStruct { ID = r._Id, Name = r.Last_Name + ", " + r.First_Name, }).ToList();
 			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
 
-			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
+			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(_sitecoreMasterService.GetItem<IArticle>(a._Id))).ToList();
 
 			articleStruct.ArticleWorkflowState = GetWorkFlowState(articleItem._Id);
 

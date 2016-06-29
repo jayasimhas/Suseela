@@ -2,26 +2,28 @@ using System;
 
 namespace Sitecore.SharedSource.DataImporter.Providers
 {
-    public enum ProcessStatus
-    {
-        Info,
-        Error,
-        Warning,
-        ConnectionError,
-        NewItemError,
-        FieldError,
-        DateParseError,
-        NotFoundError,
-        ImportDefinitionError,
-        DuplicateError
-    }
+	public enum ProcessStatus
+	{
+		Info,
+		Error,
+		Warning,
+		ConnectionError,
+		NewItemError,
+		FieldError,
+		DateParseError,
+		NotFoundError,
+		ImportDefinitionError,
+		DuplicateError,
+        ReferenceError
+	}
 
-    public class ImportRow
-    {
-        //Should have properties which correspond to the Column Names in the file   
-        public virtual string AffectedItem { get; set; }
-        public virtual string ErrorMessage { get; set; }  
-        public virtual string FieldName { get; set; }
-        public virtual string FieldValue { get; set; }
-    }
+	public class ImportRow
+	{
+		//Should have properties which correspond to the Column Names in the file   
+		public virtual string AffectedItem { get; set; }
+		public virtual string ErrorMessage { get; set; }
+		public virtual string FieldName { get; set; }
+		public virtual string FieldValue1 { get; set; }
+		public virtual string FieldValue2 { get; set; }
+	}
 }
