@@ -1,6 +1,6 @@
 /* global analytics_data */
 
-import { analyticsEvent } from './analytics-controller';
+import { analyticsEvent } from './controllers/analytics-controller';
 
 function newsletterSignupController() {
 

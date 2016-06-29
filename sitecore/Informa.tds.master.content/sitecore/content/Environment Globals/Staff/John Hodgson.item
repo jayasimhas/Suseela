@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: 7a88b91d-9d32-4d3f-85ce-3ea9cc82cb43
+revision: a64b0754-ce90-4842-a813-2b663b68cd1c
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -28,6 +28,20 @@ key: last name
 content-length: 7
 
 Hodgson
+----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{9019E681-417A-4A60-B22B-254D1A7C0553}" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 9
+
+ScripJohn
 ----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
@@ -48,18 +62,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-7a88b91d-9d32-4d3f-85ce-3ea9cc82cb43
+a64b0754-ce90-4842-a813-2b663b68cd1c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190928Z
+20160421T204953Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 17
 
-sitecore\admin
+sitecore\ctrudeau

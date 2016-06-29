@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: 489b78e3-4f9e-4e7f-a377-c88879e96fda
+revision: 9e00321f-c0da-414e-8c3b-270f9d032887
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -28,6 +28,13 @@ key: last name
 content-length: 5
 
 Davis
+----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{F1A18F68-E35F-4119-8562-6231A060E25F}" />
 ----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
@@ -48,18 +55,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-489b78e3-4f9e-4e7f-a377-c88879e96fda
+9e00321f-c0da-414e-8c3b-270f9d032887
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190933Z
+20160422T152127Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 17
 
-sitecore\admin
+default\Anonymous

@@ -1,27 +1,118 @@
-﻿<div class="search" ng-app="informaSearchApp" ng-cloak>
+﻿@inherits CustomGlassView<SearchViewModel>
 
-    <header class="search__header">
+<div class="search" ng-app="informaSearchApp" ng-cloak>
+    <header class="search__header action-flags-bar">
+        <div class="action-flags" ng-controller="EmailRssController as emailRss">
+            <ul>
+                <li class="action-flag">
+                    <a href="#"
+                       class="pop-out__trigger js-pop-out-trigger"
+                       data-pop-out-type="email-search">
+                        <span class="action-flag__label">email</span>
+                        <svg class="action-flag__icon">
+                      	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#email"></use>
+                    	</svg>
+                    </a>
+                </li>
+                <li class="action-flag">
+                    <a
+						target="_blank"
+						class="search__header-buttons--rss click-utag"
+						href="/rss/search-feed.aspx{{currentLocation}}"
+						data-info='{
+							"event_name": "toolbar_use",
+							"toolbar_tool": "rss"
+						}'>
+                        <span class="action-flag__label">rss</span>
+                        <svg class="action-flag__icon">
+                      	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#rss"></use>
+                    	</svg>
+                    </a>
+                </li>
 
-        <div class="search__header-buttons" ng-controller="EmailRssController as emailRss">
+                <li
+                    class="action-flag js-saved-search-controller"
+                    ng-controller="SavedSearchController as savedSearch" ng-init="isAuthenticated = @Model.IsAuthenticated.ToString().ToLower()">
 
-            <a href="#"
-               class="click-utag search__header-buttons--email pop-out__trigger js-pop-out-trigger"
-               data-info='{"event_name" : "mail-to-someone"}'
-               data-pop-out-type="email-search">
-                <h6>email</h6>
-                <svg class="icon icon--email">
-              	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#email"></use>
-            	</svg>
-            </a>
+                    <form
+                        class="form-remove-saved-search"
+                        data-on-submit="/api/SavedSearches"
+                        data-submit-type="DELETE">
 
-            <a target="_blank" class="search__header-buttons--rss" href="/rss/search-feed.aspx{{currentLocation}}" >
-                <h6>rss</h6>
-                <svg class="icon icon--rss">
-              	     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#rss"></use>
-            	</svg>
-            </a>
+                        <input name="Url" class="js-save-search-url" id="Url" type="hidden" value="">
+
+                        <span class="pop-out__trigger js-save-search"
+                            ng-class="{ 'angular-lightbox-modal-trigger' : searchIsSaved, 'angular-pop-out-trigger' : !searchIsSaved }"
+                            ng-click="savedSearch.showLightbox($event)"
+                            data-pop-out-type="save-search"
+                            data-lightbox-modal="js-remove-search-modal"
+                            data-lightbox-modal-title="Remove Saved Search"
+                            data-lightbox-modal-body="Are you sure you'd like to remove this saved search?"
+                            data-lightbox-modal-success-target="form-remove-saved-search">
+                            <span class="action-flag__label">Save Search / Set Alert</span>
+
+                            <svg ng-class="{ 'is-visible' : !searchIsSaved }" class="action-flag__icon toggleable-icon">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#save"></use>
+                    	    </svg>
+
+                            <svg ng-class="{ 'is-visible' : searchIsSaved }" class="action-flag__icon toggleable-icon">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#saved"></use>
+                    	    </svg>
+                        </span>
+
+                        <button type="submit"
+                          class="click-utag lightbox-modal__hidden-submit"
+                          data-info='{"event_name":"saved-search-remove", "id":"{{title}}"}'>
+                        </button>
+
+                    </form>
+
+
+                    <div class="lightbox-modal js-remove-search-modal">
+                        <div class="dismiss-button js-close-lightbox-modal">
+                            <span>Cancel</span>
+                            <svg class="dismiss-button__icon">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                            </svg>
+                        </div>
+
+                        <div class="lightbox-modal__title">
+                            <svg class="lightbox-modal__title-icon">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                            </svg>
+                            Remove Saved Search
+                        </div>
+                        <p>Are you sure you'd like to remove this saved search?</p>
+                        <button class="lightbox-modal__submit button--filled js-lightbox-modal-submit" ng-click="searchIsSaved = false">Yes, I'm Sure</button>
+                    </div>
+
+                    @Html.Sitecore().Placeholder("search-email-popout")
+
+                    @* * *
+                    This lightbox backdrop appears when a user lands on the page
+                    from a "1-click subscribe" link in an email. Needs to be
+                    here so Angular can control the `is-active` class.
+                    * * *@
+                    <div
+                        class="lightbox-modal__backdrop lightbox-modal__backdrop--save-search js-one-click-focus"
+                        ng-class="{ 'is-active': oneClickSaveFocus }">
+                    </div>
+
+
+                </li>
+            </ul>
 
         </div>
+
+
+        <div class="alert-success saved-search-success-alert js-saved-search-success-alert">
+            <svg class="alert__icon">
+                <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+            </svg>
+            <p>Your search has been saved to your account - "Saved Searches and Alerts".</p>
+        </div>
+
+
 
         <h1 class="search__header-title">Search Results</h1>
         @Html.Sitecore().Placeholder("search-header")
@@ -29,12 +120,13 @@
 
     <div class="search__content">
 
-        @Html.Sitecore().Placeholder("search-right")
-
         <div class="search__body">
 
-            <!-- includes search bar, metadata, and sorting -->
-            @Html.Sitecore().Placeholder("search-sort-area")
+            @Html.Sitecore().Placeholder("search-right")
+
+            @Html.Partial("~/Views/Search/SearchKeywords.cshtml", Model)
+            @Html.Partial("~/Views/Search/SearchMetadata.cshtml", Model)
+            @Html.Partial("~/Views/Search/SearchSortOptions.cshtml", Model)
 
             @Html.Sitecore().Placeholder("search-main")
 
