@@ -1,0 +1,13 @@
+{# Defaults and Randoms #}
+{% if genericTitle == false %}
+	{% set genericTitle = random(randomTitles).text %}
+{% endif %}
+{% if genericPageContent == false %}
+	{% set genericPageContent = "<p>" ~ random(randomParas).text ~ "</p>" %}
+{% endif %}
+
+{# Pattern #}
+<div class="generic-content">
+	<h1>{{genericTitle}}</h1>
+	{{genericPageContent | raw }}
+</div>
