@@ -1,6 +1,8 @@
 ﻿using Informa.Library.Globalization;
+using Informa.Library.Navigation;
 using Informa.Library.Site;
-using Jabberwocky.Glass.Autofac.Attributes;
+using Informa.Library.Wrappers;
+using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels.PopOuts
 {
@@ -9,13 +11,19 @@ namespace Informa.Web.ViewModels.PopOuts
 	{
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteRootContext SiteRootContext;
+		protected readonly IReturnUrlContext ReturnUrlContext;
+		protected readonly IHttpContextProvider HttpContextProvider;
 
 		public RegisterPopOutViewModel(
 			ITextTranslator textTranslator,
-			ISiteRootContext siteRootContext)
+			ISiteRootContext siteRootContext,
+			IReturnUrlContext returnUrlContext,
+			IHttpContextProvider httpContextProvider)
 		{
 			TextTranslator = textTranslator;
 			SiteRootContext = siteRootContext;
+			ReturnUrlContext = returnUrlContext;
+			HttpContextProvider = httpContextProvider;
 		}
 
 		public string RegisterText => TextTranslator.Translate("Header.Register");
@@ -28,5 +36,7 @@ namespace Informa.Web.ViewModels.PopOuts
 		public string UsernameExistsErrorText => TextTranslator.Translate("Registration.UsernameExistsError");
 		public string GeneralErrorText => TextTranslator.Translate("Registration.GeneralError");
 		public string Username { get; set; }
+		public string RegisterReturnUrl => HttpContextProvider.RequestUrl.AbsolutePath;
+		public string RegisterReturnUrlKey => ReturnUrlContext.Key;
 	}
 }
