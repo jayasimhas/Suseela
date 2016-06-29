@@ -16194,28 +16194,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Lockout_Email_BodyFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
-			public const string Lockout_Email_BodyFieldName = "Lockout Email Body";
-
-							public static readonly ID Lockout_Email_Body__RawFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
-				public const string Lockout_Email_Body__RawFieldName = "Lockout Email Body";
-						
-					
-			public static readonly ID Lockout_Email_FromFieldId = new ID("533cb9d2-b47a-4a9a-9b8a-c4febcdadcab");
-			public const string Lockout_Email_FromFieldName = "Lockout Email From";
-
-						
-					
-			public static readonly ID Lockout_Email_SubjectFieldId = new ID("f432072f-cfcb-4477-8588-61726fdadf23");
-			public const string Lockout_Email_SubjectFieldName = "Lockout Email Subject";
-
-						
-					
-			public static readonly ID Lockout_Email_ToFieldId = new ID("861cb808-ae66-4908-9d46-96b350e302b3");
-			public const string Lockout_Email_ToFieldName = "Lockout Email To";
-
-						
-					
 			public static readonly ID Email_TitleFieldId = new ID("e90ad04d-b62b-4118-b3fc-8c535dfed2eb");
 			public const string Email_TitleFieldName = "Email Title";
 

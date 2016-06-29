@@ -32,6 +32,12 @@ namespace Informa.Library.Search.PredicateBuilders
             predicate = predicate.And(x => x.IsSearchable);
             predicate = predicate.And(x => x.IsLatestVersion);
 
+            if (Sitecore.Configuration.Settings.GetBoolSetting("Search.NewerArticlesBoosting.Enabled", false))
+            {
+                //Boost newer articles (See http://www.sitecoreblogger.com/2014/09/publication-date-boosting-in-sitecore-7.html)
+                predicate = predicate.And(x => x.Val == Sitecore.Configuration.Settings.GetSetting("Search.NewerArticlesBoosting.BoostFunction"));
+            }
+
             // If the inprogress flag is available then add that as as filter, this is used in VWB
             if (_request.QueryParameters.ContainsKey("inprogress"))
             {
