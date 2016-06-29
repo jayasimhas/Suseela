@@ -10,5 +10,7 @@
 		public const string PasswordMismatch = "PasswordMismatch";
 		public const string PasswordRequirements = "PasswordRequirements";
 		public const string TermsNotAccepted = "TermsNotAccepted";
+		public const string MasterIdInvalid = "MasterIdInvalid";
+		public const string MasterIdExpired = "MasterIdExpired";
 	}
 }
