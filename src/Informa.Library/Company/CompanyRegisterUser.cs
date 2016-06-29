@@ -1,34 +1,71 @@
 ﻿using Informa.Library.User.Registration;
-using Jabberwocky.Glass.Autofac.Attributes;
+using Jabberwocky.Autofac.Attributes;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Informa.Library.Company
 {
-	[AutowireService(LifetimeScope.Default)]
+	[AutowireService]
 	public class CompanyRegisterUser : IRegisterUser
 	{
 		protected readonly IUserCompanyContext UserCompanyContext;
 		protected readonly IRegisterCompanyUser RegisterCompanyUser;
 		protected readonly IAllowedRegisterUserCompanyTypes AllowedCompanyTypes;
+		protected readonly IFindCompanyByMasterId FindCompanyByMasterId;
 
 		public CompanyRegisterUser(
 			IUserCompanyContext userCompanyContext,
 			IRegisterCompanyUser registerCompanyUser,
-			IAllowedRegisterUserCompanyTypes allowedCompanyTypes)
+			IAllowedRegisterUserCompanyTypes allowedCompanyTypes,
+			IFindCompanyByMasterId findCompanyByMasterId)
 		{
 			UserCompanyContext = userCompanyContext;
 			RegisterCompanyUser = registerCompanyUser;
 			AllowedCompanyTypes = allowedCompanyTypes;
+			FindCompanyByMasterId = findCompanyByMasterId;
 		}
 
-		public bool Register(INewUser newUser)
+		public IRegisterUserResult Register(INewUser newUser)
 		{
 			var company = UserCompanyContext.Company;
 
-		    if (UserCompanyContext.Company == null)
-		        return RegisterCompanyUser.Register(newUser, null);
+			if (company == null && !string.IsNullOrEmpty(newUser.MasterId))
+			{
+				var errors = new List<string>();
+				var masterCompany = FindCompanyByMasterId.Find(newUser.MasterId, newUser.MasterPassword);
 
-			return RegisterCompanyUser.Register(newUser, AllowedCompanyTypes.Types.Contains(company.Type) ? company : null);
+				if (masterCompany == null)
+				{
+					errors.Add(CompanyRegisterUserError.MasterIdInvalid.ToString());
+				}
+				else if (masterCompany.IsExpired)
+				{
+					errors.Add(CompanyRegisterUserError.MasterIdExpired.ToString());
+				}
+
+				if (errors.Any())
+				{
+					return CreateResult(false, errors);
+				}
+
+				company = masterCompany;
+			}
+
+			if (company != null && !AllowedCompanyTypes.Types.Contains(company.Type))
+			{
+				company = null;
+			}
+
+			return RegisterCompanyUser.Register(newUser, company);
+		}
+
+		public CompanyRegisterUserResult CreateResult(bool success, IEnumerable<string> errors)
+		{
+			return new CompanyRegisterUserResult
+			{
+				Errors = errors,
+				Success = success
+			};
 		}
 	}
 }

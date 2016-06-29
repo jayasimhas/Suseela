@@ -9,6 +9,7 @@ using Autofac.Extras.CommonServiceLocator;
 using AutofacContrib.SolrNet;
 using AutofacContrib.SolrNet.Config;
 using Microsoft.Practices.ServiceLocation;
+using Sitecore.Configuration;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SolrProvider;
 using Sitecore.ContentSearch.SolrProvider.DocumentSerializers;
@@ -35,6 +36,9 @@ namespace Informa.Web.App_Start
 		private ISolrCoreAdmin BuildCoreAdmin()
 		{
 			SolrConnection solrConnection = new SolrConnection(SolrContentSearchManager.ServiceAddress);
+			int timeout;
+			int.TryParse(Settings.GetSetting("SolrConnectionTimeout", "200000"), out timeout);
+			solrConnection.Timeout = timeout;
 			if (SolrContentSearchManager.EnableHttpCache)
 				solrConnection.Cache = ResolutionExtensions.Resolve<ISolrCache>((IComponentContext)this.container) ?? (ISolrCache)new NullCache();
 			return (ISolrCoreAdmin)new SolrCoreAdmin((ISolrConnection)solrConnection, ResolutionExtensions.Resolve<ISolrHeaderResponseParser>((IComponentContext)this.container), ResolutionExtensions.Resolve<ISolrStatusResponseParser>((IComponentContext)this.container));

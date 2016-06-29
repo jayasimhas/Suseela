@@ -20,8 +20,8 @@ Styles for a floated sidebar within an article body.
 */
 
 .article-sidebar {
-    background-color: $informa-light-gray-f;
-    border-top: 4px solid $informa-red;
+    background-color: $color-concrete-gray;
+    border-top: 4px solid $color-cardinal-red;
     float: right;
     line-height: 1.5rem;
     margin: 2rem 0 2rem 2rem;
@@ -31,7 +31,7 @@ Styles for a floated sidebar within an article body.
 
     h3 {
         @include textMix('Roboto Condensed', 24px, 600);
-        color: $informa-black;
+        color: $color-zeus-black;
         line-height: 2rem;
         margin-bottom: 1rem;
         font-style: normal;

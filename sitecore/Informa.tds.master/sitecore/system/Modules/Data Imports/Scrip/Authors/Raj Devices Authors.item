@@ -1,0 +1,100 @@
+----item----
+version: 1
+id: {D61684DA-E579-4530-B469-66CC53B098CD}
+database: master
+path: /sitecore/system/Modules/Data Imports/Scrip/Authors/Raj Devices Authors
+parent: {B99A773C-94AB-4AF7-BFF4-84B4F15E3915}
+name: Raj Devices Authors
+master: {00000000-0000-0000-0000-000000000000}
+template: {E70ADEF9-B551-4648-9FCA-3EFB17B491B1}
+templatekey: CSV Import Map
+
+----field----
+field: {0790A745-13E8-44F1-AA17-469E8FC7D20E}
+name: Handler Class
+key: handler class
+content-length: 73
+
+Sitecore.SharedSource.DataImporter.Providers.EscenicAutonomyAuthorDataMap
+----field----
+field: {0639F8E7-44AB-41CE-AE67-9987BAF47E96}
+name: Handler Assembly
+key: handler assembly
+content-length: 34
+
+Sitecore.SharedSource.DataImporter
+----field----
+field: {D01499F0-1E31-4CD6-A2F4-EE17BD095AB1}
+name: Import To Where
+key: import to where
+content-length: 38
+
+{5C4D8806-C74E-465E-AB61-FC50F168BCBC}
+----field----
+field: {8954B459-083B-446F-B8C0-40B90CE2E210}
+name: Import To What Template
+key: import to what template
+content-length: 38
+
+{DAF954E3-BCC7-4353-996F-1CAF9D35B44C}
+----field----
+field: {A7C05D14-EBC8-4F08-A8C7-183FAB7061CC}
+name: Pull Item Name from What Fields
+key: pull item name from what fields
+content-length: 15
+
+STORYAUTHORNAME
+----field----
+field: {56C326EF-F5DA-4818-AE74-E85130B60B84}
+name: Import To Language
+key: import to language
+content-length: 38
+
+{AF584191-45C9-4201-8740-5409F4CF8BDD}
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: 40e61bb4-5dd8-4d35-a03a-5cc042b8d841
+
+----field----
+field: {1F03F44C-DD3A-4148-BEE7-0724310827B8}
+name: Query
+key: query
+content-length: 64
+
+C:\inetpub\wwwroot\informa\Website\upload\Import\clinica_sra\raj
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160120T201627Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+40e61bb4-5dd8-4d35-a03a-5cc042b8d841
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160608T145943Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

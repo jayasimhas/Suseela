@@ -15,363 +15,369 @@ using Sitecore.SharedSource.DataImporter.Logger;
 
 namespace Sitecore.SharedSource.DataImporter.Providers
 {
-    public class EscenicAutonomyArticleDataMap : BaseDataMap
-    {
-        #region Properties
+	public class EscenicAutonomyArticleDataMap : BaseDataMap
+	{
+		#region Properties
 
-        public string PublicationPrefix { get; set; }
-        
-        #endregion Properties
+		public string PublicationPrefix { get; set; }
 
-        #region Constructor
+		#endregion Properties
 
-        public EscenicAutonomyArticleDataMap(Database db, string ConnectionString, Item importItem, ILogger l)
-            : base(db, ConnectionString, importItem, l) {
-            PublicationPrefix = ImportItem.GetItemField("Publication Prefix", Logger);
-        }
+		#region Constructor
 
-        #endregion Constructor
-        
-        #region Override Methods
+		public EscenicAutonomyArticleDataMap(Database db, string ConnectionString, Item importItem, ILogger l)
+				: base(db, ConnectionString, importItem, l)
+		{
+			PublicationPrefix = ImportItem.GetItemField("Publication Prefix", Logger);
+		}
 
-        public override IEnumerable<object> GetImportData()
-        {
-            if (!Directory.Exists(this.Query)) {
-                Logger.Log("N/A", string.Format("the folder '{0}' could not be found. Try moving the folder under the webroot.", this.Query), ProcessStatus.ImportDefinitionError);
-                return Enumerable.Empty<object>();
-            }
+		#endregion Constructor
 
-            List<Dictionary<string, string>> l = new List<Dictionary<string, string>>();
+		#region Override Methods
 
-            long artNumber = GetNextArticleNumber();
+		public override IEnumerable<object> GetImportData()
+		{
+			if (!Directory.Exists(this.Query))
+			{
+				Logger.Log("N/A", string.Format("the folder '{0}' could not be found. Try moving the folder under the webroot.", this.Query), ProcessStatus.ImportDefinitionError);
+				return Enumerable.Empty<object>();
+			}
 
-            string[] files = Directory.GetFiles(this.Query);
-            foreach (string f in files)
-            {
-                Dictionary<string, string> ao = new Dictionary<string, string>();
-                XmlDocument d = GetXmlDocument(f);
-                if(d == null)
-                    continue;
+			List<Dictionary<string, string>> l = new List<Dictionary<string, string>>();
 
-                //generated field
-                string curFileName = new FileInfo(f).Name;
-                ao["ARTICLE NUMBER"] = $"{PublicationPrefix}{artNumber:D6}";
-                
-                //escenic field values
-                string authorNode = "STORYAUTHORNAME";
-                ao.Add(authorNode, AuthorHelper.Authors(GetXMLData(d, authorNode)));
-                string bodyNode = "STORYBODY";
-                ao.Add(bodyNode, GetXMLData(d, bodyNode));
-                string titleNode = "STORYTITLE";
-                string cleanTitleHtml = CleanTitleHtml(GetXMLData(d, titleNode));
-                ao.Add(titleNode, cleanTitleHtml);
-                ao.Add("FILENAME", cleanTitleHtml);
-                ao.Add("META TITLE OVERRIDE", cleanTitleHtml);
-                ao.Add("ARTICLEID", curFileName.Replace(".xml", ""));
+			long artNumber = GetNextArticleNumber();
 
-                l.Add(ao);
-                artNumber++;
+			string[] files = Directory.GetFiles(this.Query);
+			foreach (string f in files)
+			{
+				Dictionary<string, string> ao = new Dictionary<string, string>();
+				XmlDocument d = GetXmlDocument(f);
+				if (d == null)
+					continue;
 
-                //autonomy fields
-                string autFile = $@"{this.Query}\..\Autonomy\{curFileName}";
+				//generated field
+				string curFileName = new FileInfo(f).Name;
+				ao["ARTICLE NUMBER"] = $"{PublicationPrefix}{artNumber:D6}";
 
-                List<string> autNodes = new List<string>() {"CATEGORY", "COMPANY", "STORYUPDATE", "SECTION", "COUNTRY", "KEYWORD", "THERAPY_SECTOR", "TREATABLE_CONDITION" };
-                //if no autonomy file then fill fields with empty
-                if (!File.Exists(autFile)) {
-                    Logger.Log("N/A", "File not found", ProcessStatus.NotFoundError, "File", autFile);
-                    foreach (string n in autNodes)
-                        ao.Add(n, string.Empty);
+				//escenic field values
+				string authorNode = "STORYAUTHORNAME";
+				ao.Add(authorNode, AuthorHelper.Authors(GetXMLData(d, authorNode)));
+				string bodyNode = "STORYBODY";
+				ao.Add(bodyNode, GetXMLData(d, bodyNode));
+				string titleNode = "STORYTITLE";
+				string cleanTitleHtml = CleanTitleHtml(GetXMLData(d, titleNode));
+				ao.Add(titleNode, cleanTitleHtml);
+				ao.Add("FILENAME", cleanTitleHtml);
+				ao.Add("META TITLE OVERRIDE", cleanTitleHtml);
+				ao.Add("ARTICLEID", curFileName.Replace(".xml", ""));
 
-                    //default back to the date from escenic
-                    string dateVal = GetXMLData(d, "DATEPUBLISHED");
-                    DateTime date;
-                    if (!DateTimeUtil.ParseInformaDate(dateVal, out date))
-                        Logger.Log("N/A", "No Date to parse error", ProcessStatus.DateParseError, "Missing Autonomy File Name", autFile);
-                    else
-                        ao["STORYUPDATE"] = dateVal;
+				l.Add(ao);
+				artNumber++;
 
-                    continue;
-                }
+				//autonomy fields
+				string autFile = $@"{this.Query}\..\Autonomy\{curFileName}";
 
-                XmlDocument d2 = GetXmlDocument(autFile);
-                if (d2 == null)
-                    continue;
+				List<string> autNodes = new List<string>() { "CATEGORY", "COMPANY", "STORYUPDATE", "SECTION", "COUNTRY", "KEYWORD", "THERAPY_SECTOR", "TREATABLE_CONDITION" };
+				//if no autonomy file then fill fields with empty
+				if (!File.Exists(autFile))
+				{
+					Logger.Log("N/A", "File not found", ProcessStatus.NotFoundError, "File", autFile);
+					foreach (string n in autNodes)
+						ao.Add(n, string.Empty);
 
-                foreach (string n in autNodes)
-                    ao.Add(n, GetXMLData(d2, n));
-            }
+					//default back to the date from escenic
+					string dateVal = GetXMLData(d, "DATEPUBLISHED");
+					DateTime date;
+					if (!DateTimeUtil.ParseInformaDate(dateVal, out date))
+						Logger.Log("N/A", "No Date to parse error", ProcessStatus.DateParseError, "Missing Autonomy File Name", autFile);
+					else
+						ao["STORYUPDATE"] = dateVal;
 
-            return l;
-        }
+					continue;
+				}
 
-        public string CleanTitleHtml(string html)
-        {
-            List<string> unwantedTags = new List<string>() { "a", "b", "body", "blockquote", "br", "button", "center", "td", "tr", "em", "i",
-                "embed", "form", "frame", "iframe", "h1", "h2", "h3", "h4", "h5", "h6", "hr", "img", "legend", "li", "ul", "ol", "map",
-                "script", "strong", "sup", "sub", "p", "thead", "tbody", "u", "span", "table", "div", "label", "font" };
+				XmlDocument d2 = GetXmlDocument(autFile);
+				if (d2 == null)
+					continue;
 
-            if (String.IsNullOrEmpty(html))
-                return html;
+				foreach (string n in autNodes)
+					ao.Add(n, GetXMLData(d2, n));
+			}
 
-            var document = new HtmlDocument();
-            document.LoadHtml(html);
+			return l;
+		}
 
-            HtmlNodeCollection tryGetNodes = document.DocumentNode.SelectNodes("./*|./text()");
+		public string CleanTitleHtml(string html)
+		{
+			List<string> unwantedTags = new List<string>() { "a", "b", "body", "blockquote", "br", "button", "center", "td", "tr", "em", "i",
+								"embed", "form", "frame", "iframe", "h1", "h2", "h3", "h4", "h5", "h6", "hr", "img", "legend", "li", "ul", "ol", "map",
+								"script", "strong", "sup", "sub", "p", "thead", "tbody", "u", "span", "table", "div", "label", "font" };
 
-            if (tryGetNodes == null || !tryGetNodes.Any())
-                return html;
+			if (String.IsNullOrEmpty(html))
+				return html;
 
-            var nodes = new Queue<HtmlNode>(tryGetNodes);
+			var document = new HtmlDocument();
+			document.LoadHtml(html);
 
-            int i = 0;
-            while (nodes.Count > 0)
-            {
-                var node = nodes.Dequeue();
-                var nodeName = node.Name.ToLower();
-                var parentNode = node.ParentNode;
-                var childNodes = node.SelectNodes("./*|./text()");
+			HtmlNodeCollection tryGetNodes = document.DocumentNode.SelectNodes("./*|./text()");
 
-                if (childNodes != null)
-                {
-                    foreach (var child in childNodes)
-                        nodes.Enqueue(child);
-                }
+			if (tryGetNodes == null || !tryGetNodes.Any())
+				return html;
 
-                if (unwantedTags.Any(tag => tag == nodeName))
-                { // if this node is one to remove
-                    if (childNodes != null)
-                    { // make sure children are added back
-                        foreach (var child in childNodes)
-                            parentNode.InsertBefore(child, node);
-                    }
+			var nodes = new Queue<HtmlNode>(tryGetNodes);
 
-                    parentNode.RemoveChild(node);
-                }
-            }
+			int i = 0;
+			while (nodes.Count > 0)
+			{
+				var node = nodes.Dequeue();
+				var nodeName = node.Name.ToLower();
+				var parentNode = node.ParentNode;
+				var childNodes = node.SelectNodes("./*|./text()");
 
-            return document.DocumentNode.InnerHtml;
-        }
+				if (childNodes != null)
+				{
+					foreach (var child in childNodes)
+						nodes.Enqueue(child);
+				}
 
-        private int GetNextArticleNumber()
-        {
-            IEnumerable<string> articles = ImportToWhere.Axes.GetDescendants()
-                .Where(a => a.TemplateName.Equals(ImportToWhatTemplate.DisplayName))
-                .Select(b => b.Fields["Article Number"].Value)
-                .OrderByDescending(c => c);
+				if (unwantedTags.Any(tag => tag == nodeName))
+				{ // if this node is one to remove
+					if (childNodes != null)
+					{ // make sure children are added back
+						foreach (var child in childNodes)
+							parentNode.InsertBefore(child, node);
+					}
 
-            if (articles == null || !articles.Any())
-                return 1;
+					parentNode.RemoveChild(node);
+				}
+			}
 
-            string num = articles.First().Replace("SC", "");
-            int n = int.Parse(num);
-            return n + 1;
-        }
+			return document.DocumentNode.InnerHtml;
+		}
 
-        public string GetXMLData(XmlDocument xd, string nodeName)
-        {
-            if(!nodeName.Equals("THERAPY_SECTOR") 
-                && !nodeName.Equals("TREATABLE_CONDITION") 
-                && !nodeName.Equals("COMPANY")) { 
-                XmlNode xn = xd.SelectSingleNode($"//{nodeName}");
-                return (xn != null) ? xn.InnerText : string.Empty;
-            }
+		protected virtual int GetNextArticleNumber()
+		{
+			IEnumerable<string> articles = ImportToWhere.Axes.GetDescendants()
+					.Where(a => a.TemplateName.Equals(ImportToWhatTemplate.DisplayName))
+					.Select(b => b.Fields["Article Number"].Value)
+					.OrderByDescending(c => c);
 
-            XmlNodeList list = xd.SelectNodes(string.Format("//{0}", nodeName));
-            StringBuilder sb = new StringBuilder();
-            foreach (XmlNode xn in list)
-            {
-                string nodeValue = xn.InnerText;
-                if (sb.Length > 0)
-                    sb.Append(",");
-                sb.Append(nodeValue);
-            }
-            return sb.ToString();
-        }
+			if (articles == null || !articles.Any())
+				return 1;
 
-        /// There is no custom data for this type
-        public override void ProcessCustomData(ref Item newItem, object importRow)
-        {
-            
-        }
+			string num = articles.First().Replace(PublicationPrefix, "");
+			int n = int.Parse(num);
+			return n + 1;
+		}
 
-        /// gets a field value from an item
-        public override string GetFieldValue(object importRow, string fieldName)
-        {
-            Dictionary<string, string> r = (Dictionary<string, string>)importRow;
+		public string GetXMLData(XmlDocument xd, string nodeName)
+		{
+			if (!nodeName.Equals("THERAPY_SECTOR")
+					&& !nodeName.Equals("TREATABLE_CONDITION")
+					&& !nodeName.Equals("COMPANY")
+					&& !nodeName.Equals("COUNTRY"))
+			{
+				XmlNode xn = xd.SelectSingleNode($"//{nodeName}");
+				return (xn != null) ? xn.InnerText : string.Empty;
+			}
 
-            return r[fieldName];
-        }
-        
-        #endregion Override Methods
+			XmlNodeList list = xd.SelectNodes(string.Format("//{0}", nodeName));
+			StringBuilder sb = new StringBuilder();
+			foreach (XmlNode xn in list)
+			{
+				string nodeValue = xn.InnerText;
+				if (sb.Length > 0)
+					sb.Append(",");
+				sb.Append(nodeValue);
+			}
+			return sb.ToString();
+		}
 
-        #region Methods
+		/// There is no custom data for this type
+		public override void ProcessCustomData(ref Item newItem, object importRow)
+		{
 
-        protected List<string> SplitString(string str, string splitter)
-        {
-            // string split options set to none so that empty columns are allowed
-            // useful for importing large csv files, so you don't have to check the content
-            return str.Split(new string[] { splitter }, StringSplitOptions.None).ToList();
-        }
+		}
 
-        protected string GetFileAsString(string path)
-        {
-            Encoding et = Encoding.GetEncoding("utf-8");
-            byte[] aBytes = GetFileBytes(path);
-            return et.GetString(aBytes);
-        }
+		/// gets a field value from an item
+		public override string GetFieldValue(object importRow, string fieldName)
+		{
+			Dictionary<string, string> r = (Dictionary<string, string>)importRow;
 
-        protected byte[] GetFileBytes(string filePath)
-        {
-            //open the file selected
-            FileInfo f = new FileInfo(filePath);
-            FileStream s = f.OpenRead();
-            byte[] bytes = new byte[s.Length];
-            s.Position = 0;
-            s.Read(bytes, 0, int.Parse(s.Length.ToString()));
-            return bytes;
-        }
+			return r[fieldName];
+		}
 
-        protected XmlDocument GetXmlDocument(string filePath)
-        {
-            string data = GetFileAsString(filePath);
+		#endregion Override Methods
 
-            XmlDocument d = new XmlDocument();
-            try
-            {
-                d.LoadXml(data);
-                return d;
-            }
-            catch (Exception ex)
-            {
-                Logger.Log("N/A", string.Format("Xml file data was malformed: {0}", ex.Message), ProcessStatus.Error, "File", filePath);
-            }
-            return null;
-        }
+		#region Methods
 
-        #endregion Methods
-    }
-    
-    public static class AuthorHelper
-    {
-        public static string Authors(string value)
-        {
-            return value
-                .Replace("kelly@informa.com", ",")
-                .Replace("brizmohun@informa.com", ",")
-                .Replace("cathy.kelly@informa.com", ",")
-                .Replace("neena.brizmohun@informa.com", ",")
-                .Replace("(analysis)", ",")
-                .Replace("(commentary)", ",")
-                .Replace("(reporting);", ",")
-                .Replace("ShimmingsPial", "Shimmings,Pial")
-                .Replace("Ch ristopher", "Christopher")
-                .Replace("Scrip Intelligence", ",")
-                .Replace("Datamonitor", ",")
-                .Replace("Dr", "")
-                .Replace("Professor", "")
-                .Replace("Jr", "")
-                .Replace("is the Author", ",")
-                .Replace("&middot;", " ")
-                .Replace("SimonVarcoe", "Simon Varcoe")
-                .Replace("Head of Life Sciences at Stevens & Bolton LLP", "")
-                .Replace("Head of Life Sciences at Stevens Bolton LLP", "")
-                .Replace("Head of Life Sciences at Stevens", "")
-                .Replace("IP Litigation Partner", "")
-                .Replace("with additional reporting from", ",")
-                .Replace("with reporting from India by", ",")
-                .Replace("reporting and", ",")
-                .Replace("reporting from India by", ",")
-                .Replace("with contributions from", ",")
-                .Replace("with input from", ",")
-                .Replace("analysis", ",")
-                .Replace("commentary", ",")
-                .Replace("reporting", ",")
-                .Replace(" and ", ",")
-                .Replace("amp;", ",")
-                .Replace("amp", ",")
-                .Replace("LLP", "")
-                .Replace(".", " ")
-                .Replace(";", ",")
-                .Replace("&", ",")
-                .Replace("  ", " ");
-        }
-    }
+		protected List<string> SplitString(string str, string splitter)
+		{
+			// string split options set to none so that empty columns are allowed
+			// useful for importing large csv files, so you don't have to check the content
+			return str.Split(new string[] { splitter }, StringSplitOptions.None).ToList();
+		}
 
-    public class EscenicAutonomyAuthorDataMap : EscenicAutonomyArticleDataMap
-    {
-        #region Constructor
+		protected string GetFileAsString(string path)
+		{
+			Encoding et = Encoding.GetEncoding("utf-8");
+			byte[] aBytes = GetFileBytes(path);
+			return et.GetString(aBytes);
+		}
 
-        public EscenicAutonomyAuthorDataMap(Database db, string ConnectionString, Item importItem, ILogger l)
-            : base(db, ConnectionString, importItem, l)
-        {
+		protected byte[] GetFileBytes(string filePath)
+		{
+			//open the file selected
+			FileInfo f = new FileInfo(filePath);
+			FileStream s = f.OpenRead();
+			byte[] bytes = new byte[s.Length];
+			s.Position = 0;
+			s.Read(bytes, 0, int.Parse(s.Length.ToString()));
+			return bytes;
+		}
 
-        }
+		protected XmlDocument GetXmlDocument(string filePath)
+		{
+			string data = GetFileAsString(filePath);
 
-        #endregion Constructor
+			XmlDocument d = new XmlDocument();
+			try
+			{
+				d.LoadXml(data);
+				return d;
+			}
+			catch (Exception ex)
+			{
+				Logger.Log("N/A", string.Format("Xml file data was malformed: {0}", ex.Message), ProcessStatus.Error, "File", filePath);
+			}
+			return null;
+		}
 
-        #region Override Methods
+		#endregion Methods
+	}
 
-        public override IEnumerable<object> GetImportData()
-        {
-            if (!Directory.Exists(this.Query))
-            {
-                Logger.Log("N/A", string.Format("the folder: '{0}' could not be found. Try moving the folder under the webroot.", this.Query), ProcessStatus.ImportDefinitionError);
-                return Enumerable.Empty<object>();
-            }
+	public static class AuthorHelper
+	{
+		public static string Authors(string value)
+		{
+			return value
+					.Replace("kelly@informa.com", ",")
+					.Replace("brizmohun@informa.com", ",")
+					.Replace("cathy.kelly@informa.com", ",")
+					.Replace("neena.brizmohun@informa.com", ",")
+					.Replace("(analysis)", ",")
+					.Replace("(commentary)", ",")
+					.Replace("(reporting);", ",")
+					.Replace("ShimmingsPial", "Shimmings,Pial")
+					.Replace("Ch ristopher", "Christopher")
+					.Replace("Scrip Intelligence", ",")
+					.Replace("Datamonitor", ",")
+					.Replace("Dr", "")
+					.Replace("Professor", "")
+					.Replace("Jr", "")
+					.Replace("is the Author", ",")
+					.Replace("&middot;", " ")
+					.Replace("SimonVarcoe", "Simon Varcoe")
+					.Replace("Head of Life Sciences at Stevens & Bolton LLP", "")
+					.Replace("Head of Life Sciences at Stevens Bolton LLP", "")
+					.Replace("Head of Life Sciences at Stevens", "")
+					.Replace("IP Litigation Partner", "")
+					.Replace("with additional reporting from", ",")
+					.Replace("with reporting from India by", ",")
+					.Replace("reporting and", ",")
+					.Replace("reporting from India by", ",")
+					.Replace("with contributions from", ",")
+					.Replace("with input from", ",")
+					.Replace("analysis", ",")
+					.Replace("commentary", ",")
+					.Replace("reporting", ",")
+					.Replace(" and ", ",")
+					.Replace("amp;", ",")
+					.Replace("amp", ",")
+					.Replace("LLP", "")
+					.Replace(".", " ")
+					.Replace(";", ",")
+					.Replace("&", ",")
+					.Replace("  ", " ");
+		}
+	}
 
-            List<Dictionary<string, string>> l = new List<Dictionary<string, string>>();
+	public class EscenicAutonomyAuthorDataMap : EscenicAutonomyArticleDataMap
+	{
+		#region Constructor
 
-            string[] files = Directory.GetFiles(this.Query);
-            foreach (string f in files)
-            {
-                Encoding et = Encoding.GetEncoding("utf-8");
-                byte[] bytes = GetFileBytes(f);
-                string data = et.GetString(bytes);
-                
-                XmlDocument d = new XmlDocument();
-                try
-                {
-                    d.LoadXml(data);
-                }
-                catch (Exception ex)
-                {
-                    Logger.Log("N/A", string.Format("Xml file data was malformed: {0}", ex.Message), ProcessStatus.Error, "File", f);
-                    continue;
-                }
+		public EscenicAutonomyAuthorDataMap(Database db, string ConnectionString, Item importItem, ILogger l)
+				: base(db, ConnectionString, importItem, l)
+		{
 
-                XmlNode nameNode = d.SelectSingleNode("//STORYAUTHORNAME");
-                string name = (nameNode != null) ? nameNode.InnerText : string.Empty;
-                string[] nameArr = AuthorHelper.Authors(name).Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+		}
 
-                XmlNode emailNode = d.SelectSingleNode("//STORYAUTHOREMAIL");
-                string email = (emailNode != null) ? emailNode.InnerText : string.Empty;
-                string[] emailArr = email.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+		#endregion Constructor
 
-                for (int i = 0; i < nameArr.Length; i++)
-                {
-                    string n = nameArr[i];
+		#region Override Methods
 
-                    List<string> nameParts = n.Trim().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                    if (nameParts.Count < 2) { 
-                        Logger.Log("N/A", string.Format("Author name was too short so it was ignored: {0}", n), ProcessStatus.FieldError, "STORYAUTHORNAME", name);
-                        continue;
-                    }
-                    Dictionary<string, string> ao = new Dictionary<string, string>();
-                    ao.Add("STORYAUTHORNAME", n.Trim());
-                    ao.Add("FIRSTNAME", nameParts[0].Trim());
-                    ao.Add("LASTNAME", string.Join(" ", nameParts.Skip(1).ToArray()).Trim());
-                    string curEmail = (i < emailArr.Length) ? emailArr[i] : string.Empty;
-                    ao.Add("EMAIL", curEmail);
-                    if(!string.IsNullOrEmpty(curEmail))
-                        Logger.Log("N/A", string.Format("Matching {0} with {1}", n.Trim(), curEmail));
+		public override IEnumerable<object> GetImportData()
+		{
+			if (!Directory.Exists(this.Query))
+			{
+				Logger.Log("N/A", string.Format("the folder: '{0}' could not be found. Try moving the folder under the webroot.", this.Query), ProcessStatus.ImportDefinitionError);
+				return Enumerable.Empty<object>();
+			}
 
-                    l.Add(ao);
-                }
-            }
+			List<Dictionary<string, string>> l = new List<Dictionary<string, string>>();
 
-            return l;
-        }
-        
-        #endregion Override Methods
-    }
+			string[] files = Directory.GetFiles(this.Query);
+			foreach (string f in files)
+			{
+				Encoding et = Encoding.GetEncoding("utf-8");
+				byte[] bytes = GetFileBytes(f);
+				string data = et.GetString(bytes);
+
+				XmlDocument d = new XmlDocument();
+				try
+				{
+					d.LoadXml(data);
+				}
+				catch (Exception ex)
+				{
+					Logger.Log("N/A", string.Format("Xml file data was malformed: {0}", ex.Message), ProcessStatus.Error, "File", f);
+					continue;
+				}
+
+				XmlNode nameNode = d.SelectSingleNode("//STORYAUTHORNAME");
+				string name = (nameNode != null) ? nameNode.InnerText : string.Empty;
+				string[] nameArr = AuthorHelper.Authors(name).Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+
+				XmlNode emailNode = d.SelectSingleNode("//STORYAUTHOREMAIL");
+				string email = (emailNode != null) ? emailNode.InnerText : string.Empty;
+				string[] emailArr = email.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+
+				for (int i = 0; i < nameArr.Length; i++)
+				{
+					string n = nameArr[i];
+
+					List<string> nameParts = n.Trim().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToList();
+					if (nameParts.Count < 2)
+					{
+						Logger.Log("N/A", string.Format("Author name was too short so it was ignored: {0}", n), ProcessStatus.FieldError, "STORYAUTHORNAME", name);
+						continue;
+					}
+					Dictionary<string, string> ao = new Dictionary<string, string>();
+					ao.Add("STORYAUTHORNAME", n.Trim());
+					ao.Add("FIRSTNAME", nameParts[0].Trim());
+					ao.Add("LASTNAME", string.Join(" ", nameParts.Skip(1).ToArray()).Trim());
+					string curEmail = (i < emailArr.Length) ? emailArr[i] : string.Empty;
+					ao.Add("EMAIL", curEmail);
+					if (!string.IsNullOrEmpty(curEmail))
+						Logger.Log("N/A", string.Format("Matching {0} with {1}", n.Trim(), curEmail));
+
+					l.Add(ao);
+				}
+			}
+
+			return l;
+		}
+
+		#endregion Override Methods
+	}
 }
