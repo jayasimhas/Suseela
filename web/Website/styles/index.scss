@@ -15,16 +15,18 @@
 @import 'vendor/normalize';
 
 
-/* * * * HELPERS * * * */
-@import 'helpers/layout-helpers';
-
-
 /* * * * BASE * * * */
 @import 'base/colors'; // first!
 @import 'base/base';
 @import 'base/fonts';
 @import 'base/helpers';
+@import 'base/icons';
 @import 'base/typography';
+
+
+/* * * * HELPERS * * * */
+@import 'helpers/layout-helpers';
+
 
 
 /* * * * COMPONENTS — GLOBAL * * * */
@@ -83,6 +85,9 @@
 @import 'components/article/article-tables';
 @import 'components/article/article-tags';
 @import 'components/article/article-topics';
+
+/* * * * COMPONENTS — PROFILE * * * */
+@import 'components/profile'; 
 
 /* * * * COMPONENTS — SEARCH RESULTS * * * */
 @import 'components/search/search-wrapper';
