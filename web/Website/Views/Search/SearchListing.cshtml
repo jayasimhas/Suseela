@@ -60,7 +60,7 @@
             <a class="search-result__heading article-preview__headline click-utag"
                ng-href="{{ ::doc.url }}"
                title="{{ ::doc.title }}"
-               data-info='{ "event_name": "search_click_through", "click_through_destination": "{{ ::doc.url }}", "click_through_source": "{{ ::doc.title }}" }' ng-bind-html="doc.title">
+               data-info='{ "event_name": "search_click_through", "click_through_destination": "{{ ::doc.title }}", "click_through_source": "@Model.GlassModel.Title" }' ng-bind-html="doc.title">
             </a>
 
             <div class="search-result__author" ng-if="doc.byline">
