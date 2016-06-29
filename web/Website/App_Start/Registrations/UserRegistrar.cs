@@ -13,6 +13,8 @@ using Informa.Library.Salesforce.User.Newsletter;
 using Informa.Library.Salesforce.User.Offer;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Session;
+using Informa.Library.Salesforce.Subscription.User;
+using Informa.Library.Subscription.User;
 
 namespace Informa.Web.App_Start.Registrations
 {
@@ -57,7 +59,7 @@ namespace Informa.Web.App_Start.Registrations
 				.As<IFindSavedDocuments>()
 				.As<ISaveDocument>()
 				.As<IRemoveDocument>();
-            builder.RegisterType<SalesforceManageSubscriptions>().As<IManageSubscriptions>();
+            builder.RegisterType<SalesforceFindUserSubscriptions>().As<IFindUserSubscriptions>();
             builder.RegisterType<SalesforceManageAccountInfo>().As<IManageAccountInfo>();
             builder.RegisterType<SalesforceUserProfile>().As<ISalesforceUserProfile>();
             builder.RegisterType<SalesforceFindUserProfile>().As<ISalesforceFindUserProfile>();
