@@ -1,0 +1,6 @@
+{% if buttonText == false %}
+	{% set buttonText = &quot;Full Diminished Button (Fake Button)&quot; %}
+{% elseif buttonText == &quot;random&quot; %}
+	{% set buttonText = random(randomButtons).text %}
+{% endif %}
+&lt;a class=&quot;full-diminished-button&quot; href=&quot;#&quot;&gt;{{buttonText}}&lt;/a&gt;
