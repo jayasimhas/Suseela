@@ -29,6 +29,7 @@ using Sitecore.Data;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Models.Informa.Models.sitecore.templates.System.Dictionary;
 using Velir.Search.Models;
 
 
@@ -7075,6 +7076,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					/// </summary>
 					[SitecoreField(ITaxonomy_ItemConstants.Media_Type_IconFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Image Media_Type_Icon  {get; set;}
+								/// <summary>
+					/// The Tooltip field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 58aeb695-872c-4038-b602-2fb8a6f17d5c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITaxonomy_ItemConstants.TooltipFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Tooltip  {get; set;}
 				}
 
 	
@@ -7105,6 +7115,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 						/// </summary>
 						[SitecoreField(ITaxonomy_ItemConstants.Media_Type_IconFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Image Media_Type_Icon  {get; set;}
+										/// <summary>
+						/// The Tooltip field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 58aeb695-872c-4038-b602-2fb8a6f17d5c</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ITaxonomy_ItemConstants.TooltipFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Tooltip  {get; set;}
 						}
 	
 	public static partial class ITaxonomy_ItemConstants{
@@ -7121,6 +7140,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					
 			public static readonly ID Media_Type_IconFieldId = new ID("1cfbe05b-a4af-4b00-90fb-734cba008f42");
 			public const string Media_Type_IconFieldName = "Media Type Icon";
+
+						
+					
+			public static readonly ID TooltipFieldId = new ID("58aeb695-872c-4038-b602-2fb8a6f17d5c");
+			public const string TooltipFieldName = "Tooltip";
 
 						
 					

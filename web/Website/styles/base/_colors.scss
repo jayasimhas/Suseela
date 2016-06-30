@@ -61,26 +61,26 @@ title: Pink Sheet
 section: Colors
 ---
 ```example:color
-@color: #d82b6a @name: Dogwood Rose
-@color: #BC608C @name: Mystic Maroon
 @color: #b1005b @name: Hibiscus Pink
+@color: #d82b6a @name: Dogwood Rose
+@color: #B2547F @name: Pearly Pink
 @color: #a8618d @name: Light Plum
+@color: #BC608C @name: Mystic Maroon
 @color: #e6c0d5 @name: Blossom Pink
 @color: #d3bac3 @name: Flair Pink
-@color: #B2547F @name: Pearly Pink
 @color: #FEE2E7 @name: Piggy Pink
 @color: #FFF2F4 @name: Wisp Pink
 @color: #fbf2f4 @name: Soft Peach
 ```
 */
 
-$color-blossom-pink:        #e6c0d5;
 $color-hibiscus-pink:       #b1005b;
 $color-dogwood-rose:        #d82b6a;
-$color-flair-pink:          #d3bac3;
-$color-light-plum:          #a8618d;
 $color-pearly-pink:         #B2547F;
+$color-light-plum:          #a8618d;
 $color-mystic-maroon:       #BC608C;
+$color-flair-pink:          #d3bac3;
+$color-blossom-pink:        #e6c0d5;
 $color-piggy-pink:          #FEE2E7;
 $color-soft-peach:          #fbf2f4;
 $color-wisp-pink:           #FFF2F4;
@@ -120,9 +120,9 @@ section: Colors
 
 $color-sapphire-blue:       #007cc3;
 $color-marine-blue:         #034a7c;
-$color-porcelain-white:     #edefef;
 $color-jonquil-yellow:      #FDD95F;
 $color-maize-yellow:        #F1CE54;
+$color-porcelain-white:     #edefef;
 
 
 /*---
@@ -130,14 +130,14 @@ title: Invivo
 section: Colors
 ---
 ```example:color
-@color: #ca4d2c @name: Dark Coral
-@color: #b03718 @name: Rusty Red
-@color: #7e2718 @name: Copper Red
 @color: #6a1b13 @name: Rosewood Red
+@color: #7e2718 @name: Copper Red
+@color: #b03718 @name: Rusty Red
+@color: #ca4d2c @name: Dark Coral
 
 ```
 */
-$color-dark-coral:          #ca4d2c;
-$color-rusty-red:           #b03718;
 $color-rosewood-red:        #6a1b13;
 $color-copper-red:          #7e2718;
+$color-rusty-red:           #b03718;
+$color-dark-coral:          #ca4d2c;

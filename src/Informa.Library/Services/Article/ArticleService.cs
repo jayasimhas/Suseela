@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
+using Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon;
 using Informa.Library.Search.Utilities;
+using Informa.Library.Site;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
@@ -9,6 +11,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 using Informa.Library.Utilities.Extensions;
+using Informa.Models.Informa.Models.sitecore.templates.System.Dictionary;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Core.Caching;
 
@@ -19,13 +22,16 @@ namespace Informa.Library.Services.Article {
     {
         protected readonly ICacheProvider CacheProvider;
         protected readonly ITextTranslator TextTranslator;
+		protected readonly ISiteRootsContext SiteRootsContext;
 
-        public ArticleService(
+		public ArticleService(
             ICacheProvider cacheProvider,
-            ITextTranslator textTranslator)
+            ITextTranslator textTranslator, 
+			ISiteRootsContext siteRootsContext)
         {
             CacheProvider = cacheProvider;
             TextTranslator = textTranslator;
+			SiteRootsContext = siteRootsContext;
         }
 
         private string CreateCacheKey(string suffix)
@@ -70,10 +76,17 @@ namespace Informa.Library.Services.Article {
             return taxItems;
         }
 
-        public string GetMediaTypeName(IArticle article) {
-            return article.Media_Type?.Item_Name == "Data" 
-                ? "chart" 
-                : article.Media_Type?.Item_Name?.ToLower() ?? "";
+        public MediaTypeIconData GetMediaTypeIconData(IArticle article)
+        {
+            if(article?.Media_Type == null) { return null; }
+
+            var mediaType = article.Media_Type.Item_Name == "Data"
+                ? "chart"
+                : article.Media_Type.Item_Name?.ToLower() ?? string.Empty;
+
+            var tooltipText = article.Media_Type.Tooltip;
+
+            return new MediaTypeIconData() {MediaType = mediaType, Tooltip = tooltipText};
         }
 
         public string GetArticleSummary(IArticle article)
@@ -110,6 +123,23 @@ namespace Informa.Library.Services.Article {
         private IEnumerable<IFile> BuildSupportingDocuments(IArticle article)
         {
             return article.Supporting_Documents.Select(a => (IFile) a).ToList();
-        } 
+        }
+
+	    public string GetArticlePublicationName(IArticle article)
+	    {
+			string cacheKey = CreateCacheKey($"ArticlePublicationCode-{article._Id}");
+			return CacheProvider.GetFromCache(cacheKey, () => BuildArticlePublicationName(article));
+		}
+
+		private string BuildArticlePublicationName(IArticle article)
+		{
+			var siteRoot = SiteRootsContext
+				.SiteRoots
+				.FirstOrDefault(i => article._Path.StartsWith(i._Path));
+
+		    return (siteRoot != null)
+			    ? siteRoot.Publication_Name
+			    : string.Empty;
+	    }
     }
 }

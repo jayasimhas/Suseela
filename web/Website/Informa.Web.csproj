@@ -1003,11 +1003,21 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\components\save-search-component.js" />
+    <Content Include="js\controllers\analytics-controller.js" />
+    <Content Include="js\controllers\bookmark-controller.js" />
+    <Content Include="js\controllers\form-controller.js" />
+    <Content Include="js\controllers\lightbox-modal-controller.js" />
+    <Content Include="js\controllers\pop-out-controller.js" />
+    <Content Include="js\controllers\register-controller.js" />
+    <Content Include="js\controllers\reset-password-controller.js" />
+    <Content Include="js\controllers\sortable-table-controller.js" />
     <Content Include="js\newsletter-signup.js" />
     <Content Include="js\openadstream.js" />
     <Content Include="js\package.json" />
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
+    <Content Include="js\search-page.js" />
     <Content Include="js\search\controllers\emailRssController.js" />
     <Content Include="js\search\controllers\pageSizeController.js" />
     <Content Include="js\search\controllers\headlineSearchController.js" />
@@ -1020,6 +1030,7 @@
     <Content Include="js\search\informaSearchApp.js" />
     <Content Include="js\search\search.js" />
     <Content Include="js\svg4everybody.js" />
+    <Content Include="js\toggle-icons.js" />
     <Content Include="js\zepto.min.js" />
     <Content Include="layouts\QueryableRulesRunner.ascx" />
     <Content Include="layouts\Sample Datasource Sublayout.ascx" />
@@ -1060,6 +1071,7 @@
     <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.js" />
     <Content Include="sitecore\shell\client\Applications\Nlm Export\css\ExportNlm.css" />
     <Content Include="sitecore\shell\client\Applications\Nlm Export\scripts\ExportNlm.js" />
+    <Content Include="sitecore\shell\client\Sitecore\ExperienceEditor\ExperienceEditor.js" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
     <Content Include="tasks\copy.js" />
@@ -1100,6 +1112,7 @@
     <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="VWB\Scripts\jquery-ui\jquery-ui-1.10.4.custom.css" />
     <Content Include="VWB\Scripts\jquery-ui\jquery-ui-1.8.11.custom.css" />
     <Content Include="VWB\Scripts\jquery-ui\jquery-ui.js" />
     <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.css" />
@@ -1302,6 +1315,7 @@
     <Content Include="Views\EmailComponents\FeaturedArticle.cshtml" />
     <Content Include="Views\EmailComponents\SectionHeader.cshtml" />
     <Content Include="Views\Article\TopicPageTitle.cshtml" />
+    <Content Include="Views\Shared\Components\MediaTypeIcon.cshtml" />
     <Content Include="Areas\VWB\Views\AddIssue.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>

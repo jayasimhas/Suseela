@@ -105,7 +105,13 @@
     .banner--register,
 	.banner--alert {
         background-color: $background;
-        color: $text;
+
+		&,
+		& span,
+		& svg {
+			@include svg-fill($text);
+			color: $text;
+		}
 
         a {
             @include on-event(true) {
@@ -120,8 +126,20 @@
     .newsletter-signup,
     .quick-facts {
         background-color: $background;
-        border-top: 4px solid $border;
     }
+	.newsletter-signup {
+		border-top: 4px solid $border;
+	}
+}
+
+@mixin theme-quick-facts($background, $divider) {
+	.quick-facts {
+		background-color: $background;
+
+		hr {
+			background-color: $divider;
+		}
+	}
 }
 
 

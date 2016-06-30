@@ -15,7 +15,7 @@ import RegisterController from './controllers/register-controller';
 import SortableTableController from './controllers/sortable-table-controller';
 import LightboxModalController from './controllers/lightbox-modal-controller';
 import { analyticsEvent } from './controllers/analytics-controller';
-
+import tooltipController from './controllers/tooltip-controller';
 
 // COMPONENTS
 import './components/article-sidebar-component';
@@ -25,12 +25,14 @@ import './components/save-search-component';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';
+
 import { toggleIcons } from './toggle-icons';
+// Global scope to play nicely with Angular
+window.toggleIcons = toggleIcons;
 
 /* Polyfill for scripts expecting `jQuery`. Also see: CSS selectors support in zepto.min.js */
 window.jQuery = $;
 
-window.toggleIcons = toggleIcons;
 
 // Make sure proper elm gets the click event
 // When a user submits a Forgot Password request, this will display the proper
@@ -44,29 +46,28 @@ var showForgotPassSuccess = function() {
 
 var renderIframeComponents = function() {
     $('.iframe-component').each(function(index, elm) {
-        var desktopEmbed = $(elm).find('.iframe-component__desktop iframe');
-        var mobileEmbed = $(elm).find('.iframe-component__mobile iframe');
-        var mobileEmbedLink = mobileEmbed.data('embed-link');
+        var desktopEmbed = $(elm).find('.iframe-component__desktop');
+        var mobileEmbed = $(elm).find('.iframe-component__mobile');
 
-        // Check if the user is viewing inside the page editor
-        // Don't hide/show desktop and/or mobile, just keep both visible
-        // so users can add, edit, or delete either.
-        if(desktopEmbed.hasClass('is-page-editor')) {
-            return;
-        }
+        var isEditMode = $(this).hasClass('is-page-editor');
 
-        if($(window).width() <= 480) {
+        var showMobile = ($(window).width() <= 480) || isEditMode;
+        var showDesktop = !showMobile || isEditMode;
+
+        if (showMobile) {
             mobileEmbed.show();
-            desktopEmbed.hide();
-            if(mobileEmbed.html() == '') {
-                mobileEmbed.html(mobileEmbed.data('embed-link'));
-            }
+            if (mobileEmbed.html() == '') 
+                mobileEmbed.html(decodeHtml(mobileEmbed.data('embed-link')));
         } else {
+            desktopEmbed.hide();
+        }
+        
+        if (showDesktop) {
             desktopEmbed.show();
+            if (desktopEmbed.html() == '') 
+                desktopEmbed.html(decodeHtml(desktopEmbed.data('embed-link')));
+        } else {
             mobileEmbed.hide();
-            if(desktopEmbed.html() == '') {
-                desktopEmbed.html(desktopEmbed.data('embed-link'));
-            }
         }
 
         var desktopMediaId = $(elm).find('.iframe-component__desktop').data("mediaid");
@@ -83,6 +84,12 @@ var renderIframeComponents = function() {
         $(elm).find('.iframe-component__mobile a').data('mediaid', url).attr('href', null);
     });
 };
+
+var decodeHtml = function(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
 
 $(document).ready(function() {
 
@@ -131,11 +138,6 @@ $(document).ready(function() {
     * * */
     window.indexBookmarks = function() { // Toggle bookmark icon
         $('.js-bookmark-article').on('click', function bookmarkArticle(e) {
-            // Make sure proper elm gets the click event
-            // if (e.target !== this) {
-            //     this.click();
-            //     return;
-            // }
 
             e.preventDefault();
             window.bookmark.toggle(this);
@@ -292,7 +294,15 @@ $(document).ready(function() {
     var userRegistrationController = new FormController({
         observe: '.form-registration',
         successCallback: function(form, context, event) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "registration successful" }) );
+
+			// Stash registration type so next page can know it without
+			// an additional Salesforce call
+			Cookies.set('registrationType', context.response.registration_type, {} );
+
+            analyticsEvent( $.extend(analytics_data, {
+				registration_type: context.response.registration_type
+			}) );
+
         },
         failureCallback: function(form,response) {
 
@@ -312,7 +322,14 @@ $(document).ready(function() {
     var userRegistrationFinalController = new FormController({
         observe: '.form-registration-optins',
         successCallback: function(form, context, event) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "registration successful" }) );
+
+			var registrationType = Cookies.get('registrationType');
+
+			analyticsEvent( $.extend(analytics_data, {
+				registration_type: registrationType
+			}) );
+
+			Cookies.remove('registrationType');
         },
         failureCallback: function(form, response) {
             var errorMsg = $(".page-registration__error").text();
@@ -412,10 +429,10 @@ $(document).ready(function() {
             var optingOut = null;
 
             if($('#DoNotSendOffersOptIn').prop('checked')) {
-                event_data.event_title = 'email_preferences_opt_out';
+                event_data.event_name = 'email_preferences_opt_out';
             } else {
 
-                event_data.event_title = 'email_preferences_update';
+                event_data.event_name = 'email_preferences_update';
 
                 $('.js-account-email-checkbox').each(function(index, item) {
                     if(this.checked) {
@@ -462,8 +479,9 @@ $(document).ready(function() {
             }
 
 			var event_data = {
-				event_title: 'bookmark_removal',
-				bookmark_title: $(form).data('analytics-title')
+				event_name: 'bookmark_removal',
+				bookmark_title: $(form).data('analytics-title'),
+				bookmark_publication: $(form).data('analytics-publication')
 			};
 
 			analyticsEvent( $.extend(analytics_data, event_data) );
@@ -573,6 +591,13 @@ $(document).ready(function() {
         $(e).after(tableLink);
     });
 
+
+	// Find duplicate embeds on article page
+	// IITS2-312
+	$('[class^=ewf-desktop-iframe] ~ [class^=ewf-mobile-iframe]').each(function(index, item) {
+		$(item).remove();
+	});
+
     // When DOM loads, render the appropriate iFrame components
     // Also add a listener for winder resize, render appropriate containers
     renderIframeComponents();
@@ -627,14 +652,15 @@ $(document).ready(function() {
 
         var linkString;
 
-	    if(this.href.indexOf(location.hostname) == -1) {
+		if(this.href.indexOf(location.hostname) == -1) {
             linkString = 'External:' + this.href;
         } else {
             linkString = this.href;
         }
 
-        $(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_destination": "' + linkString + '"}');
-
+		if ($(this).data('info') == undefined) {
+			$(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_source": "' + $('h1').text + '", "click_through_destination": "' + linkString + '"}');
+		}
 	});
 
     $('.general-header__navigation').each(function() {
@@ -749,12 +775,9 @@ $(document).ready(function() {
     };
 
     $('.js-register-final').on('click',function(e){
-        newsletterOptins();
-    });
 
-    var newsletterOptins = function(){
         var eventDetails = {
-            event_name: "newsletter optins"
+            // event_name: "newsletter optins"
         };
         var chkDetails = {};
         if ($('#newsletters').is(':checked')) {
@@ -766,7 +789,7 @@ $(document).ready(function() {
             $.extend(eventDetails,chkDetails);
             analyticsEvent( $.extend(analytics_data, eventDetails) );
         }
-    };
+    });
 
 
     // TODO - Refactor this code, update class name to a `js-` name
@@ -833,22 +856,41 @@ $(document).ready(function() {
             $('#txtShippingPostalCode').val($('#txtBillingPostalCode').val());
         }
     });
-
-
+    
     // Account - Email Preferences toggler
     $('.js-account-email-toggle-all').on('click', function(e) {
         $('.js-update-email-prefs').attr('disabled', null);
-        if($(e.target).prop('checked')) {
-            $('.js-account-email-checkbox').prop('checked', null);
-        }
     });
-
+ 
     $('.js-account-email-checkbox').on('click', function(e) {
         $('.js-update-email-prefs').attr('disabled', null);
-        if($(e.target).prop('checked')) {
-            $('.js-account-email-toggle-all').prop('checked', null);
-        }
     });
+
+
+	// var tooltipIsVisible = false;
+	$('.js-toggle-tooltip').each(function(index, item) {
+		var tooltip;
+		$(item).on('mouseenter touchstart', function(e) {
+			e.preventDefault();
+			// console.log(tooltipIsVisible);
+			// if(!tooltipIsVisible) {
+				const offsets = $(item).offset();
+				tooltip = tooltipController({
+					isHidden: false,
+					html: $(item).data('tooltip-text'),
+					top: offsets.top,
+					left: offsets.left + $(this).width()/2,
+					triangle: 'bottom'
+				});
+				// tooltipIsVisible = true;
+			// }
+		});
+		$(item).on('mouseleave', function() {
+			tooltip.hidePopup();
+			// tooltipIsVisible = false;
+		});
+	});
+
 
     // Twitter sharing JS
     window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],

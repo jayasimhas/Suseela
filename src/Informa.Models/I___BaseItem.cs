@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Glass.Mapper.Sc.Fields;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Factory.Attributes;
+using Sitecore.Resources.Media;
 
 namespace Informa.Models.FactoryInterface
 {
@@ -31,16 +32,21 @@ namespace Informa.Models.FactoryInterface
 		string ImageCaption { get; }
 		string ImageSource { get; }
 		string ImageAltText { get; }
+		string GetScaledImage(int width);
 	}
 
 	public class FeaturedImage : IFeaturedImage
 	{
 		#region Implementation of IFeaturedImage
 
-		public string ImageUrl { get; set; }
-		public string ImageCaption { get; set; }
-		public string ImageSource { get; set; }
-		public string ImageAltText { get; }
+		public virtual string ImageUrl { get; set; }
+		public virtual string ImageCaption { get; set; }
+		public virtual string ImageSource { get; set; }
+		public virtual string ImageAltText { get; }
+		public string GetScaledImage(int width)
+		{
+			return HashingUtils.ProtectAssetUrl($"{ImageUrl}?w={width}");
+		}
 
 		#endregion
 	}

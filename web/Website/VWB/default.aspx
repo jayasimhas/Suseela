@@ -2,8 +2,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="/VWB/Scripts/jquery-ui/jquery.ui.timepicker.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="/VWB/Scripts/jquery-ui/jquery-ui-1.10.4.custom.css" />
@@ -57,7 +57,6 @@
 		<br />
 		<div class="report">
 		    
-			<!-- THIS TABLE NEEDS CHECKBOXES WITH CLASS .js-article-checkbox -->
 			<asp:Table ID="tblResults" runat="server" border="1">
 			</asp:Table>
 
@@ -96,7 +95,7 @@
 		<button class="orange-button js-submit-new-issue">Create New Issue</button>
 	</div>
 
-	<script src="/VWB/Scripts/selected-articles.js"></script>
+	<script type="text/javascript" src="/VWB/Scripts/selected-articles.js"></script>
 
 	<script>
 		jQuery(function ($) {

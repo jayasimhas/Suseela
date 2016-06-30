@@ -10,5 +10,7 @@ namespace Informa.Web.ViewModels
 		bool IsArticleBookmarked { get; }
 		string BookmarkedText { get; }
 		string BookmarkText { get; }
+		string BookmarkTitle { get; }
+		string BookmarkPublication { get; }
 	}
 }

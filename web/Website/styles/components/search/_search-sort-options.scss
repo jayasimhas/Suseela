@@ -55,8 +55,8 @@
             @include svg-fill($color-light-gray);
         }
 
-        &.is-sorted-up .sorting-arrows__arrow--up,
-        &.is-sorted-down .sorting-arrows__arrow--down {
+        &.is-sorted-up .sorting-arrows__arrow--down,
+        &.is-sorted-down .sorting-arrows__arrow--up {
             @extend .sorting-arrows__arrow.is-active;
         }
 

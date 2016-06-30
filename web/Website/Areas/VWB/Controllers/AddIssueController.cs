@@ -70,7 +70,7 @@ namespace Informa.Web.Areas.VWB.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult Save(string issue, string order, string todelete, string title, string date)
+		public ActionResult Save(string issue, string order, string todelete, string title, string date, string notes)
 		{
 			Guid issueId;
 			if (Guid.TryParse(issue, out issueId))
@@ -85,7 +85,7 @@ namespace Informa.Web.Areas.VWB.Controllers
 					_dependencies.IssuesService.ReorderArticles(issueId, order);
 				}
 
-				_dependencies.IssuesService.UpdateIssueInfo(issueId, title, date);
+				_dependencies.IssuesService.UpdateIssueInfo(issueId, title, date, notes);
 				return Redirect("/vwb");
 			}
 			return Redirect(Request?.Url?.ToString());
