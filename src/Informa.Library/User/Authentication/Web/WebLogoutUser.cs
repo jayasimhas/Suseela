@@ -1,9 +1,9 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Jabberwocky.Autofac.Attributes;
 using Sitecore.Security.Authentication;
 
 namespace Informa.Library.User.Authentication.Web
 {
-	[AutowireService(LifetimeScope.Default)]
+	[AutowireService]
 	public class WebLogoutUser : IWebLogoutUser
 	{
 		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
@@ -23,7 +23,8 @@ namespace Informa.Library.User.Authentication.Web
 
 			var user = AuthenticatedUserContext.User;
 
-			Actions.Process(user);
+            if(user != null)
+			    Actions.Process(user);
 		}
 	}
 }

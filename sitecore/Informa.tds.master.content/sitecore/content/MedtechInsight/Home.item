@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {C161BAA2-CD78-4400-8A60-0652D5B79EEB}
+database: master
+path: /sitecore/content/MedtechInsight/Home
+parent: {989CA96C-8A54-4CC0-BD51-A127930935A9}
+name: Home
+master: {CBA15CFC-A70C-4146-8A11-25AA3F4FDDB4}
+template: {88CACA5D-2AE1-4739-8145-399F3486C2DE}
+templatekey: Home Page
+
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 116
+
+{0933B8E2-67C4-4D83-A43D-A4C67B863F4D}|{77604558-3056-497B-93D8-E53BC5619DDB}|{BC324106-766F-4E09-A82C-328FA7BD55CA}
+----version----
+language: en
+version: 1
+revision: a8028367-fc35-4dd2-92e7-12c2584d5ded
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 4
+
+Home
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 4
+
+Home
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 4
+
+Home
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160418T200759Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a8028367-fc35-4dd2-92e7-12c2584d5ded
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160418T200759Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

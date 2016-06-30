@@ -1,37 +1,42 @@
-﻿using Informa.Model.DCD;
-using Informa.Models.DCD;
+﻿using Informa.Models.DCD;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using Informa.Library.Article.Search;
+using Informa.Library.Utilities.Extensions;
+using Jabberwocky.Core.Caching;
 
 namespace Informa.Library.Utilities.TokenMatcher
 {
 	public static class DCDTokenMatchers
 	{
+		private static readonly Lazy<IArticleSearch> _lazySearch = new Lazy<IArticleSearch>(() => DependencyResolver.Current.GetService<IArticleSearch>());
+		private static IArticleSearch ArticleSearch => _lazySearch.Value;
+		private static readonly Lazy<ICacheProvider> _lazyCache = new Lazy<ICacheProvider>(() => DependencyResolver.Current.GetService<ICacheProvider>());
+		private static ICacheProvider CacheProvider => _lazyCache.Value;
+		private static readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
+		private static readonly string OldDealsUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL");
+
 		public static string ProcessDCDTokens(string text)
 		{
 			string body = text;
 
 			try
 			{
-				string tempText = processCompanyTokens(body);
+				string tempText = ProcessCompanyTokens(body);
 
 				if (string.IsNullOrEmpty(tempText) == false)
 					body = tempText;
 
-				tempText = processDealTokens(body);
+				tempText = ProcessDealTokens(body);
 
 				if (string.IsNullOrEmpty(tempText) == false)
 					body = tempText;
 
-				tempText = processArticleTokens(body);
+				tempText = ProcessArticleTokens(body);
 
 				if (string.IsNullOrEmpty(tempText) == false)
 					body = tempText;
@@ -44,39 +49,60 @@ namespace Informa.Library.Utilities.TokenMatcher
 			return body;
 		}
 
-		private static string processCompanyTokens(string text)
+		private static string ProcessCompanyTokens(string text)
 		{
 			//Find all matches with Company token
 			Regex regex = new Regex(DCDConstants.CompanyTokenRegex);
 
-			MatchEvaluator evaluator = new MatchEvaluator(companyMatchEval);
-			return regex.Replace(text, evaluator);
+			var matchSet = new HashSet<string>();
+			var matches = regex.Matches(text);
+            foreach (Match match in matches)
+            {
+	            var replace = string.Empty;
+				// Replace the first occurrence with hyperlink
+				if (!matchSet.Contains(match.Groups[1].Value))
+				{				
+					replace = $"<a href=\"{string.Format(OldCompaniesUrl, match.Groups[1].Value.Split(':')[0])}\">{match.Groups[1].Value.Split(':')[1]}</a>";
+					text = regex.Replace(text, replace, 1);
+					matchSet.Add(match.Groups[1].Value);
+				}
+				// Replace other occurrences with normal names
+				else
+				{
+					replace = match.Groups[1].Value.Split(':')[1];
+					text = text.Replace(match.Value, replace);
+				}			
+			}
+			return text;
 		}
 
-		private static string processDealTokens(string text)
+		private static string ProcessDealTokens(string text)
 		{
 			//Find all matches with Deal token
 			Regex regex = new Regex(DCDConstants.DealTokenRegex);
 
-			MatchEvaluator evaluator = new MatchEvaluator(dealMatchEval);
+			MatchEvaluator evaluator = new MatchEvaluator(DealMatchEval);
 			return regex.Replace(text, evaluator);
 		}
 
-		private static string processArticleTokens(string text)
+		private static string ProcessArticleTokens(string text)
 		{
-			//Find all matches with Company token
+			//Find all matches with Article token
 			Regex regex = new Regex(DCDConstants.ArticleTokenRegex);
 
-			MatchEvaluator evaluator = new MatchEvaluator(articleMatchEval);
-			return regex.Replace(text, evaluator);
+			MatchEvaluator evaluator = new MatchEvaluator(ArticleMatchEval);
+			var replacedText = regex.Replace(text, evaluator);
+
+			Regex legacyRegex = new Regex(DCDConstants.LegacyArticleTokenRegex);
+			return legacyRegex.Replace(replacedText, evaluator);
 		}
 
-		private static string companyMatchEval(Match match)
+		private static string CompanyMatchEval(Match match)
 		{
 			try
 			{
 				//return a strong link of the company name (from the token itself) to replace the token
-				return string.Format("<a href=\"{0}\">{1}</a>", string.Format(Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL"), match.Groups[1].Value.Split(':')[0]), match.Groups[1].Value.Split(':')[1]);
+				return string.Format("<a href=\"{0}\">{1}</a>", string.Format(OldCompaniesUrl, match.Groups[1].Value.Split(':')[0]), match.Groups[1].Value.Split(':')[1]);
 			}
 			catch (Exception ex)
 			{
@@ -85,12 +111,12 @@ namespace Informa.Library.Utilities.TokenMatcher
 			}
 		}
 
-		public static string dealMatchEval(Match match)
+		public static string DealMatchEval(Match match)
 		{
 			try
 			{
 				//return a see deal (deal reference) (from the token itself) to replace the token
-				return string.Format("<a href=\"{0}\">[See Deal]</a>", string.Format(Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL"), match.Groups[1].Value));
+				return string.Format("<a href=\"{0}\">[See Deal]</a>", string.Format(OldDealsUrl, match.Groups[1].Value));
 			}
 			catch (Exception ex)
 			{
@@ -99,40 +125,36 @@ namespace Informa.Library.Utilities.TokenMatcher
 			}
 		}
 
-		private static string articleMatchEval(Match match)
+		private static string ArticleMatchEval(Match match)
 		{
-			try
-			{
-				string articleNumber = match.Groups[1].Value;
-
-				IArticleSearch ArticleSearch = DependencyResolver.Current.GetService<IArticleSearch>();
-				IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-				filter.ArticleNumber = articleNumber;
-				var results = ArticleSearch.Search(filter);
-
-				HtmlString replace = new HtmlString("");
-
-				if (results.Articles.Any())
-				{
-					var article = results.Articles.FirstOrDefault();
-					//if (article != null)
-					//    return string.Format("<a href='{0}'>{1}</a>", article._Url, HttpUtility.HtmlDecode(article.Title));
-
-					if (article != null)
-					{
-						var articleText =
-							$" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, " +
-							$"{(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
-						return articleText;
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				Sitecore.Diagnostics.Log.Error("Error when evaluating company match token", ex, "LogFileAppender");
-				return string.Empty;
-			}
-			return string.Empty;
+			string articleNumber = match.Groups[1].Value;
+			string cacheKey = $"DCDArticleText-{articleNumber}";
+            return CacheProvider.GetFromCache(cacheKey, () => BuildArticleMatch(articleNumber));
 		}
+
+	    private static string BuildArticleMatch(string articleNumber)
+	    {
+            try {
+
+                IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+                filter.ArticleNumbers = articleNumber.SingleToList();
+                filter.PageSize = 1;
+                var results = ArticleSearch.Search(filter);
+
+                if (results.Articles.Any()) {
+                    var article = results.Articles.FirstOrDefault();
+
+                    if (article != null) {
+                        return
+                            $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, " +
+                            $"{(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
+                    }
+                }
+            } catch (Exception ex) {
+                Sitecore.Diagnostics.Log.Error("Error when evaluating company match token", ex, "LogFileAppender");
+            }
+
+	        return string.Empty;
+	    }
 	}
 }
