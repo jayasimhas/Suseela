@@ -102,6 +102,19 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
                 issue.Notes == "This issue is all about what household appliance moose might store in their antlers."));
         }
 
+	    [Test]
+	    public void UpdateIssueItem_NoMatchingIssueFound_Returned()
+	    {
+		    // ARRANGE
+		    _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(Arg.Any<Guid>()).Returns((IIssue__Raw)null);
+
+		    // ACT
+			_issuesService.UpdateIssueItem(null, Arg.Any<Guid>());
+		    
+			// ASSERT
+		    _dependencies.SitecoreSecurityWrapper.DidNotReceive().WithSecurityDisabled(Arg.Any<Action>());
+	    }	
+
         [Test]
         public void AddArticlesToIssue_GetsArticleGuids_CallsCloneForEach()
         {
@@ -120,9 +133,9 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 
             // ASSERT
             _dependencies.SitecoreClonesWrapper.Received(1).CreateClone(
-                new Guid("{45D643CB-9F39-417E-900D-ECEAD18B2189}"), fakeId1);
+                fakeId1, new Guid("{45D643CB-9F39-417E-900D-ECEAD18B2189}"));
             _dependencies.SitecoreClonesWrapper.Received(1).CreateClone(
-                new Guid("{45D643CB-9F39-417E-900D-ECEAD18B2189}"), fakeId2);
+               fakeId2, new Guid("{45D643CB-9F39-417E-900D-ECEAD18B2189}"));
         }
 
         [Test]
@@ -150,7 +163,7 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
             // ASSERT
             _dependencies.SitecoreServiceMaster.Received(1)
                 .Create<IIssue, IIssue_Folder>(Arg.Any<IIssue_Folder>(), Arg.Any<string>());
-            _dependencies.SitecoreServiceMaster.Received(2).Save(Arg.Any<IIssue__Raw>());
+            _dependencies.SitecoreServiceMaster.Received(1).Save(Arg.Any<IIssue__Raw>());
             _dependencies.SitecoreClonesWrapper.Received(2).CreateClone(Arg.Any<Guid>(), Arg.Any<Guid>());
 
             Assert.IsTrue(response.IsSuccess);
@@ -234,7 +247,7 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 			    "4137ED60-1ABE-42CB-B305-119C05B696D3|E94F2832-A519-48AA-9413-FF823BF710E9|8C268BA6-9AE0-4D1E-A16A-24F5B22648F8";
 
 			// ACT
-			_issuesService.DeleteArticles(Arg.Any<Guid>(),idString);
+			_issuesService.DeleteArticles(idString);
 
 		    // ASSERT
 			_dependencies.SitecoreServiceMaster.Received(3).Delete(Arg.Any<IArticle>());
@@ -251,28 +264,13 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 			var idString = "4137ED60-1ABE-42CB-B305-119C05B696D3";
 
 			// ACT
-			_issuesService.DeleteArticles(Arg.Any<Guid>(), idString);
+			_issuesService.DeleteArticles(idString);
 
 			// ASSERT
 			_dependencies.SitecoreServiceMaster.Received(1).Delete(Arg.Is<IArticle>(a => a._Id == new Guid("4137ED60-1ABE-42CB-B305-119C05B696D3")));
 		}
 
-	    [Test]
-	    public void ReorderArticles_SequenceIsNotEmpty_SaveOrder()
-	    {
-			// ARRANGE
-			var idString = "4137ED60-1ABE-42CB-B305-119C05B696D3|E94F2832-A519-48AA-9413-FF823BF710E9|8C268BA6-9AE0-4D1E-A16A-24F5B22648F8";
-		    var issue = Substitute.For<IIssue__Raw>();
-		    _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(Arg.Any<Guid>()).Returns(issue);
-		    _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.Invoke());
-
-			// ACT
-			_issuesService.ReorderArticles(Arg.Any<Guid>(), idString);
-		    
-			// ASSERT
-			Assert.AreEqual(issue.Articles_Order, idString);
-			_dependencies.SitecoreServiceMaster.Received(1).Save(issue);
-	    }
+	    
 
 	    [Test]
 	    public void GetArticles_IssueIsNull_GetEmptyResult()
@@ -333,6 +331,57 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 			Assert.AreEqual(issue.Title, title);
 			Assert.AreEqual(issue.Published_Date, date);
 			_dependencies.SitecoreServiceMaster.Received(1).Save(issue);
+	    }
+
+	    [Test]
+	    public void ReorderArticles_ArticleOrderedIdsAndCouldntFindMatchingArticles_NothingHappened()
+	    {
+		    // ARRANGE
+		    _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.Invoke());
+		    _dependencies.SitecoreServiceMaster.GetItem<IArticle__Raw>(Arg.Any<Guid>()).Returns((IArticle__Raw) null);
+
+		    // ACT
+			_issuesService.ReorderArticles(string.Empty);
+
+		    // ASSERT
+			_dependencies.SitecoreServiceMaster.DidNotReceive().Save(Arg.Any<IArticle__Raw>());
+	    }
+
+	    [Test]
+	    public void ReorderArticles_OrderedIdsAndArticlesAreFoundInSitecore_SetSortOrderAndSave()
+	    {
+			// ARRANGE
+			var idString = "5CCCFC14-DAAC-42ED-99BA-289DA08742C0|6831C1D6-5089-44E8-8158-A6CE55E4AE8C";
+		    float order = 100;
+		    var article1 = Substitute.For<IArticle__Raw>();
+		    article1.Sortorder = 800;
+		    var article2 = Substitute.For<IArticle__Raw>();
+		    article2.Sortorder = 900;
+			_dependencies.SitecoreServiceMaster.GetItem<IArticle__Raw>(new Guid("5CCCFC14-DAAC-42ED-99BA-289DA08742C0")).Returns(article1);
+			_dependencies.SitecoreServiceMaster.GetItem<IArticle__Raw>(new Guid("6831C1D6-5089-44E8-8158-A6CE55E4AE8C")).Returns(article2);
+		    _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.Invoke());
+			// ACT
+			_issuesService.ReorderArticles(idString);
+
+			// ASSERT
+			Assert.AreEqual(order,article1.Sortorder);
+			Assert.AreEqual(++order,article2.Sortorder);
+		}
+
+	    [Test]
+	    public void GetIssueArticlesSet_IssueId_ASetOfChildren()
+	    {
+		    // ARRANGE
+		    var issue = Substitute.For<IIssue>();
+		    _dependencies.SitecoreServiceMaster.GetItem<IIssue>(Arg.Any<Guid>()).Returns(issue);
+		    var article = Substitute.For<IGlassBase>();
+		    issue._ChildrenWithInferType.Returns(new[] {article, article});
+
+		    // ACT
+		    var result = _issuesService.GetIssueArticlesSet(Arg.Any<Guid>());
+
+		    // ASSERT
+			Assert.IsNotEmpty(result);
 	    }
 	}
 }

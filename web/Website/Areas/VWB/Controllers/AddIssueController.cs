@@ -77,12 +77,12 @@ namespace Informa.Web.Areas.VWB.Controllers
 			{
 				if (!string.IsNullOrWhiteSpace(todelete))
 				{
-					_dependencies.IssuesService.DeleteArticles(issueId, todelete);
+					_dependencies.IssuesService.DeleteArticles(todelete);
 				}
 
 				if (!string.IsNullOrWhiteSpace(order))
 				{
-					_dependencies.IssuesService.ReorderArticles(issueId, order);
+					_dependencies.IssuesService.ReorderArticles(order);
 				}
 
 				_dependencies.IssuesService.UpdateIssueInfo(issueId, title, date, notes);

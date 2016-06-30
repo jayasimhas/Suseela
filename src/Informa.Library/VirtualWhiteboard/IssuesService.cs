@@ -11,6 +11,7 @@ using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Models;
 using Sitecore.Mvc.Extensions;
+using Velir.Core.Extensions.System.Collections.Generic;
 using EnumerableExtensions = Informa.Library.Utilities.Extensions.EnumerableExtensions;
 
 
@@ -21,9 +22,9 @@ namespace Informa.Library.VirtualWhiteboard
 		VwbResponseModel CreateIssueFromModel(IssueModel model);
 		IEnumerable<IArticle> GetArticles(Guid issueId);
 		VwbResponseModel ArchiveIssue(Guid issueId);
-		void ReorderArticles(Guid issueId, string ids);
-		void DeleteArticles(Guid issueId, string ids);
-		void UpdateIssueInfo(Guid issueId, string title, string date, string notes);
+		void ReorderArticles(string ids);
+		void DeleteArticles(string ids);
+		void UpdateIssueInfo(Guid issueId, string title, string date);
 		IEnumerable<IIssue> GetActiveIssues();
 		bool DoesIssueContains(Guid issueId, string articleId);
 		void AddArticlesToIssue(Guid issueId, IEnumerable<Guid> itemIds);
@@ -36,7 +37,7 @@ namespace Informa.Library.VirtualWhiteboard
 
 		[AutowireService(IsAggregateService = true)]
 		public interface IDependencies
-		{		
+		{
 			ISitecoreServiceMaster SitecoreServiceMaster { get; }
 			ISitecoreSecurityWrapper SitecoreSecurityWrapper { get; }
 			ISitecoreClonesWrapper SitecoreClonesWrapper { get; }
@@ -69,7 +70,7 @@ namespace Informa.Library.VirtualWhiteboard
 				};
 			}
 
-			return new VwbResponseModel { IsSuccess = true, IssueId = issueId};
+			return new VwbResponseModel { IsSuccess = true, IssueId = issueId };
 		}
 
 		public Guid CreateIssueItem<I, F>(string newIssueName, string folderId) where I : class, IGlassBase
@@ -111,15 +112,11 @@ namespace Informa.Library.VirtualWhiteboard
 			{
 				return;
 			}
-			// Save new articles to articles order
-			var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(issueId);
-			var enumerable = itemIds as IList<Guid> ?? itemIds.ToList();
-			issue.Articles_Order = enumerable.Aggregate(issue.Articles_Order, (current, itemId) => !string.IsNullOrWhiteSpace(current) ? $"{current}|{itemId}" : itemId.ToString());
 
+			var enumerable = itemIds as IList<Guid> ?? itemIds.ToList();
 			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
 			{
-				EnumerableExtensions.Each(enumerable, id => _dependencies.SitecoreClonesWrapper.CreateClone(id, issueId));
-				_dependencies.SitecoreServiceMaster.Save(issue);
+				enumerable.ForEach(id => _dependencies.SitecoreClonesWrapper.CreateClone(id, issueId));
 			});
 		}
 
@@ -168,41 +165,38 @@ namespace Informa.Library.VirtualWhiteboard
 			};
 		}
 
-		public void DeleteArticles(Guid issueId, string ids)
+		public void DeleteArticles(string ids)
 		{
 			if (string.IsNullOrWhiteSpace(ids))
 			{
 				return;
 			}
-
-			var toDeleteIds = ids.Split('|');            
-			var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(issueId);
-			var articleOrders = issue.Articles_Order.Split('|');
-			var resultIds = Sitecore.ContentSearch.Utilities.EnumerableExtensions.RemoveWhere(articleOrders,
-				i => toDeleteIds.Contains(i));
-			var resultString = string.Empty;
-			foreach (var resultId in resultIds)
+			ids.Split('|').Select(i => new Guid(i)).ForEach(i =>
 			{
-				if (!string.IsNullOrWhiteSpace(resultString))
-				{
-					resultString = $"{resultString}|{resultId}";
-				}
-			}
-			issue.Articles_Order = resultString;
-			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() => _dependencies.SitecoreServiceMaster.Save(issue));
-
-			EnumerableExtensions.Each(
-				toDeleteIds.Select(i => _dependencies.SitecoreServiceMaster.GetItem<IArticle>(new Guid(i))),x => _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>_dependencies.SitecoreServiceMaster.Delete(x)));		
+				_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
+				{			
+					_dependencies.SitecoreServiceMaster.Delete(_dependencies.SitecoreServiceMaster.GetItem<IArticle>(i));
+				});
+			});
 		}
 
-		public void ReorderArticles(Guid issueId, string ids)
+		public void ReorderArticles(string ids)
 		{
 			if (!string.IsNullOrWhiteSpace(ids))
 			{
-				var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(issueId);
-				issue.Articles_Order = ids;
-				_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
-				_dependencies.SitecoreServiceMaster.Save(issue));
+				float startOrderNumber = 100;
+				ids.Split('|').Select(i => new Guid(i)).ForEach(i =>
+				{
+					_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
+					{
+						var article = _dependencies.SitecoreServiceMaster.GetItem<IArticle__Raw>(i);
+						if (article != null)
+						{
+							article.Sortorder = startOrderNumber++;
+							_dependencies.SitecoreServiceMaster.Save(article);
+						}
+					});
+				});
 			}
 		}
 
@@ -223,16 +217,9 @@ namespace Informa.Library.VirtualWhiteboard
 		public IEnumerable<IArticle> GetArticles(Guid issueId)
 		{
 			var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId);
-			if (issue == null || !issue._ChildrenWithInferType.Any())
-			{
-				return Enumerable.Empty<IArticle>();
-			}
-
-			return string.IsNullOrWhiteSpace(issue.Articles_Order) ?
-				issue._ChildrenWithInferType.Cast<IArticle>() :
-                issue.Articles_Order.Split('|')
-				.Select(i => new Guid(i))
-				.Each(i=> _dependencies.SitecoreServiceMaster.GetItem<IArticle>(i));
+			return issue == null || !issue._ChildrenWithInferType.Any()
+				? Enumerable.Empty<IArticle>()
+				: issue._ChildrenWithInferType.Cast<IArticle>();
 		}
 
 		public IEnumerable<IIssue> GetActiveIssues()
@@ -246,7 +233,7 @@ namespace Informa.Library.VirtualWhiteboard
 		{
 			var dict = new HashSet<string>();
 			_dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId)
-				._ChildrenWithInferType.Each(i => dict.Add(i._Id.ToString()));
+				._ChildrenWithInferType.ForEach(i => dict.Add(i._Id.ToString()));
 			return dict;
 		}
 
