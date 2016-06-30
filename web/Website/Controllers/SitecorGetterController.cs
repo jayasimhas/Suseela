@@ -76,14 +76,11 @@ namespace Informa.Web.Controllers
     [Route]
     public class WorkflowController : ApiController
     {
-
-        private ISitecoreService _sitecoreService;
         private readonly IArticleSearch _search;
         private readonly IArticleSearchFilter _articleSearchFilter;
         private readonly ArticleUtil _articleUtil;
-        public WorkflowController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
+        public WorkflowController(ArticleUtil articleUtil)
         {
-            _sitecoreService = sitecoreFactory(Constants.MasterDb);
             _articleUtil = articleUtil;
         }
         // GET api/<controller>
@@ -307,9 +304,9 @@ namespace Informa.Web.Controllers
         // GET api/<controller>
         public JsonResult<List<ItemStruct>> Get()
         {
-            var contentFolder = _sitecoreService.GetItem<IMain_Section>(new Guid("{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}"));
+            var contentFolder = _sitecoreService.GetItem<IMain_Section>(new Guid(Constants.ContentRootNode));
             var members = contentFolder?._ChildrenWithInferType.OfType<ISite_Root>().Select(eachChild => new ItemStruct()
-            { Name = eachChild.Publication_Name, ID = eachChild._Id }).ToList();
+            { Name = string.IsNullOrEmpty(eachChild.Publication_Name) ? eachChild._Name : eachChild.Publication_Name, ID = eachChild._Id }).ToList();
             return Json(members);
         }
     }
@@ -320,58 +317,6 @@ namespace Informa.Web.Controllers
         public IsAvailableController() { }
         // GET api/<controller>
         public JsonResult<bool> Get() { return Json(true); }
-    }
-
-    [Route]
-    public class GetArticleSizeForPublicationController : ApiController
-    {
-        private ISitecoreService _sitecoreService;
-        public GetArticleSizeForPublicationController(Func<string, ISitecoreService> sitecoreFactory)
-        {
-            _sitecoreService = sitecoreFactory(Constants.MasterDb);
-        }
-        // GET api/<controller>
-        public JsonResult<List<ArticleSize>> Get(Guid publicationID)
-        {
-            var articleSizesRootNode = _sitecoreService.GetItem<Item>("{F5C84045-7B2B-4725-8D9B-3680BEA0AFCE}");
-            if (articleSizesRootNode == null)
-            {
-                //_logger.Error("Root article size node not found!");
-                return null;
-            }
-
-            var publicationArticleSizeNodeList = articleSizesRootNode.Children.Where
-                (x =>
-                    (((IArticle_Sizes_Folder)x).Publication != null && ((IArticle_Sizes_Folder)x).Publication == publicationID
-                    )).ToList();
-
-            if (!publicationArticleSizeNodeList.Any())
-            {
-                //_logger.Warn("No matching article sizes for this publication: [" + publicationID.ToString() + "]");
-                return Json(new List<ArticleSize>());
-            }
-
-            List<ArticleSize> sizes = null;
-            try
-            {
-                var publicationArticleSizeNode = publicationArticleSizeNodeList.Single();
-
-                sizes = publicationArticleSizeNode.Children.ToList().Select
-                    (x => new ArticleSize()
-                    {
-                        MaximumWordCount = Int32.Parse(((IArticle_Size)x).Maximum_Word_Count),
-                        MinimumWordCount = Int32.Parse(((IArticle_Size)x).Minimum_Word_Count),
-                        Name = x.Name,
-                        ID = x.ID.ToGuid()
-                    }).ToList();
-            }
-            catch (Exception ex)
-            {
-                //_logger.Error("Error getting the article sizes for this publication: [" + publicationID.ToString() + "]", ex);
-            }
-
-            return Json(sizes);
-        }
     }
 
     [Route]
@@ -800,7 +745,7 @@ namespace Informa.Web.Controllers
         public JsonResult<HDirectoryStruct> Get(string guid)
         {
             var item = _sitecoreService.GetItem<Item>(guid);
-            var children = item.Children.ToArray().Select(child => GetHierarchy(child.Paths.Path)).ToList();
+            var children = item.Children.Select(child => GetHierarchy(child.Paths.Path)).ToList();
 
             var childNode = new HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
             childNode.Children = childNode.ChildrenList.ToArray();
@@ -810,9 +755,8 @@ namespace Informa.Web.Controllers
         public HDirectoryStruct GetHierarchy(string path)
         {
             var item = _sitecoreService.GetItem<Item>(path);
-            List<Item> searchField = item.Children.ToList();
-
-            var children = searchField.Select(child => GetHierarchy(child.Paths.Path)).ToList();
+            
+            var children = item.Children.Select(child => GetHierarchy(child.Paths.Path)).ToList();
             var childNode = new HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
             childNode.Children = childNode.ChildrenList.ToArray();
             return childNode;

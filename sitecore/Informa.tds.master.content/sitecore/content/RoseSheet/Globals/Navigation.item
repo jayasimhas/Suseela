@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {CF54774F-DBDF-4750-8D29-57581625DED2}
+database: master
+path: /sitecore/content/RoseSheet/Globals/Navigation
+parent: {40D52E62-C654-4A86-92E8-66ABB604F0A6}
+name: Navigation
+master: {CBA15CFC-A70C-4146-8A11-25AA3F4FDDB4}
+template: {D3BE4330-FFCF-42CA-8E64-D0184E1217A3}
+templatekey: Navigation Folder
+
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: d323e7ae-4fc0-4116-86b7-85d721c8db82
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160418T200838Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d323e7ae-4fc0-4116-86b7-85d721c8db82
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160418T200838Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

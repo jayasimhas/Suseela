@@ -2,35 +2,42 @@
 <section class="article-preview article-preview--small">
     @if (Model != null && Model.GlassModel != null)
     {
-        if (Model.DisplayImage && !string.IsNullOrEmpty(Model.ListableImage))
+        if (Model.DisplayImage)
         {
-            <img class="article-preview__image" src="@Model.ListableImage">
+            <img class="article-preview__image" src="@Model.Image.ImageUrl">
         }
         <div class="article-metadata">
-            <!--<div class="article-preview__bookmarker pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
-                 data-pop-out-type="sign-in"
-                 data-bookmark-id="@Model.GlassModel._Id"
-                 @( Model.IsArticleBookmarked ? "data-is-bookmarked=true" : null)>
+            <div
+				class="action-flag article-preview__bookmarker pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
+                data-pop-out-type="sign-in"
+                data-pop-out-align="right"
+                data-bookmark-id="@Model.GlassModel._Id"
+                @( Model.IsArticleBookmarked ? "data-is-bookmarked=true" : null)
+				
+								data-analytics='{
+									"bookmark": "true",
+									"bookmark_title": "@Model.Title",
+									"bookmark_publication": "@Model.BookmarkPublication"
+								}'>
 
-                 <span class="article-prologue__share-label js-bookmark-label"
-                       data-label-bookmark="@Model.BookmarkText"
-                       data-label-bookmarked="@Model.BookmarkedText">
-                     @( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )
-                 </span>
+				<span	class="action-flag__label js-bookmark-label"
+						data-label-bookmark="@Model.BookmarkText"
+						data-label-bookmarked="@Model.BookmarkedText">
+					@( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )
+				</span>
 
-            <svg class="article-bookmark article-bookmark__bookmarked click-utag @( Model.IsArticleBookmarked ? "is-visible" : null)" data-info='{"event_name" : "bookmark"}'>
-                <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-            </svg>
+				<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @( Model.IsArticleBookmarked ? "is-visible" : null)">
+			        <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+			    </svg>
 
-            <svg class="article-bookmark click-utag @( Model.IsArticleBookmarked ? null : "is-visible")" data-info='{"event_name" : "bookmark"}'>
-                <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-            </svg>
+				<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark @( Model.IsArticleBookmarked ? null : "is-visible")">
+			        <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+			    </svg>
 
-
-            </div> -->
+            </div>
             <ul>
                 <li>
-                    <time class="article-metadata__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
+                    <time class="article-metadata__date">@Model.Date.ToString("dd MMM yyyy")</time>
                 </li>
                 @if (!string.IsNullOrEmpty(Model.Content_Type))
                 {
@@ -38,11 +45,11 @@
                         <h6>@string.Join(", ", Model.Content_Type)</h6>
                     </li>
                 }
-                @if (!string.IsNullOrEmpty(Model.ListableType))
+                @if (!string.IsNullOrEmpty(Model.Media_Type))
                 {
                     <li>
                         <svg class="article-metadata__media-type">
-                            <use xlink:href="/dist/img/svg-sprite.svg#@Model.ListableType"></use>
+                            <use xlink:href="/dist/img/svg-sprite.svg#@Model.Media_Type"></use>
                         </svg>
                     </li>
                 }
@@ -51,16 +58,20 @@
 
         <div class="article-preview__inner-wrapper">
             <h1 class="article-preview__headline">
-                <a href="@Model.LinkableUrl">@HttpUtility.HtmlDecode(Model.ListableTitle)</a>
+                <a
+					href="@Model.GlassModel._Url"
+					class="click-utag"
+					data-info='{ "event_name": "article_click_through", "click_through_source": "@Model.PageTitle", "click_through_destination": "@Model.Title" }'>
+					@HttpUtility.HtmlDecode(Model.Title)
+				</a>
             </h1>
 
             <span class="article-preview__byline">
-                @*by @string.Join(", ", Model.ListableAuthors?.Select(x => x.LinkableText))*@
-                by @(string.Join(", ", Model.ListableAuthors?.Take(Model.ListableAuthors.Count() - 1).Select(x => x.LinkableText)) + (Model.ListableAuthors?.Count() > 0 ? (Model.ListableAuthors.Count() > 1 ? " and " : "") + Model.ListableAuthors.LastOrDefault().LinkableText : string.Empty))
+                @Html.Raw(Model.ArticleByLine)
             </span>
 
             <div class="article-summary">
-                @Html.Raw(Model.ListableSummary)
+                @Html.Raw(Model.Summary)
             </div>
         </div>
 

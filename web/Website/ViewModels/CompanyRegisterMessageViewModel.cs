@@ -10,7 +10,7 @@ using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class CompanyRegisterMessageViewModel : ICompanyRegisterMessageViewModel
 	{
 		protected readonly ITextTranslator TextTranslator;
