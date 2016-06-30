@@ -1,5 +1,6 @@
 using System.Web.Mvc;
 using Glass.Mapper.Sc.Fields;
+using Informa.Library.ViewModels.Account;
 using Informa.Web.ViewModels.PopOuts;
 
 namespace Informa.Web.ViewModels
