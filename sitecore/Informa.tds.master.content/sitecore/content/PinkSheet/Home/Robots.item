@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {79690E11-64D2-4AA0-A583-F6E36C9A9D2A}
+database: master
+path: /sitecore/content/PinkSheet/Home/Robots
+parent: {31ADDF3A-90CA-45E8-AD0E-F77CE7921F2A}
+name: Robots
+master: {CBA15CFC-A70C-4146-8A11-25AA3F4FDDB4}
+template: {80965242-C533-4034-9FB0-95B903BCEF35}
+templatekey: Robots Text Page
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+825
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: d5c1c6dd-a482-4e5f-b95a-2c48c1d38d6b
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160418T200733Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d5c1c6dd-a482-4e5f-b95a-2c48c1d38d6b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160418T200733Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

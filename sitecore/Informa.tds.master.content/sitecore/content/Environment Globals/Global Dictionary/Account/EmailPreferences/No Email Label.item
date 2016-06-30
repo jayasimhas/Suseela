@@ -33,15 +33,15 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 4c97440d-3775-439a-8ae1-48d1837edc03
+revision: e8fcbbbd-6c44-427a-a3ce-fd8a004a88f9
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 69
+content-length: 161
 
-Please do not send me any promotional information or offers via email
+By ticking this box, you agree to receive emails such as relevant news, updates and offers from Scrip, and carefully selected similar products from our portfolio
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -55,18 +55,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-4c97440d-3775-439a-8ae1-48d1837edc03
+e8fcbbbd-6c44-427a-a3ce-fd8a004a88f9
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160308T135625Z
+20160424T170340Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 15
 
-sitecore\admin
+sitecore\srigby

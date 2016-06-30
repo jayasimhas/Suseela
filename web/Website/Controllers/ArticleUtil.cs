@@ -19,6 +19,7 @@ using PluginModels;
 using Sitecore;
 using Constants = Informa.Library.Utilities.References.Constants;
 using IWorkflow = Sitecore.Workflows.IWorkflow;
+using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Web.Controllers
 {
@@ -47,7 +48,7 @@ namespace Informa.Web.Controllers
 			IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
 			filter.PageSize = 1;
 			filter.Page = 1;
-			filter.ArticleNumber = numFormat;
+			filter.ArticleNumbers = numFormat.SingleToList();
 
 			var results = ArticleSearcher.Search(filter);
 			if (!results.Articles.Any())
@@ -127,7 +128,7 @@ namespace Informa.Web.Controllers
 		public ArticleItem GetArticleByNumber(string articleNumber, string databaseName)
 		{
 			IArticleSearchFilter filter = _articleSearcher.CreateFilter();
-			filter.ArticleNumber = articleNumber;
+            filter.ArticleNumbers = articleNumber.SingleToList();
 			var results = _articleSearcher.SearchCustomDatabase(filter, databaseName);
 			if (results.Articles.Any())
 			{
@@ -398,7 +399,7 @@ namespace Informa.Web.Controllers
 			articleStruct.Authors = authors.Select(r => new StaffStruct { ID = r._Id, Name = r.Last_Name + ", " + r.First_Name, }).ToList();
 			articleStruct.NotesToEditorial = articleItem.Editorial_Notes;
 
-			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(a)).ToList();
+			articleStruct.RelatedArticlesInfo = articleItem.Related_Articles.Select(a => GetPreviewInfo(_sitecoreMasterService.GetItem<IArticle>(a._Id))).ToList();
 
 			articleStruct.ArticleWorkflowState = GetWorkFlowState(articleItem._Id);
 

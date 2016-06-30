@@ -1,0 +1,58 @@
+﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.FeaturedArticleViewModel>
+
+@using (BeginEditFrame(Model.GlassModel, "Associate Article", m => m.Article))
+{
+    if (Model.GlassModel.Article == null && IsInEditingMode)
+    {
+        <span>Click here and select Associate Article.  View will update on save.</span>
+    }
+
+    <table class="manually-curated-section featured__article" border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr class="article-preview-header">
+
+                        @if (!Model.GlassModel.Hide_Image && Model.GlassModel.Article != null)
+                        {
+                            <td class="one-third layout-padded-right" valign="top">
+	                            @RenderImage(Model.GlassModel, m => m.Article.Featured_Image_16_9)
+                            </td>
+                        }
+
+                        <td valign="top" class="two-thirds">
+                            <div class="article-metadata">
+                                <span class="article-date">
+                                    @(Model.GlassModel.Article?.Actual_Publish_Date.ToString("dd MMM yyyy"))
+                                </span>
+                                <span class="vertical-separator">|</span>
+                                <span class="article-category">
+                                    @(Model.GlassModel.Article?.Content_Type?.Item_Name)
+                                </span>
+                                @if (!string.IsNullOrEmpty(Model.MediaTypeIconSrc))
+                                {
+									<span class="vertical-separator">|</span>
+	                                <span class="article-content-type">
+                                    	<img class="featured__article-image" src="@Model.MediaTypeIconSrc"/>
+									</span>
+                                }
+                            </div>
+
+                            <a href="@Model.TargetArticleUrl">
+                                <h3 class="featured__title">@(Model.GlassModel.Article?.Title)</h3>
+                            </a>
+                            <span class="article-byline">@Model.Byline</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <p>@Html.Raw(Model.GlassModel.Article?.Summary)</p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+}
