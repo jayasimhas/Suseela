@@ -73,6 +73,10 @@ section: Article Components
         margin-left: 18px;
     }
 
+	&__section-desc {
+		margin-bottom: 1.25rem;
+	}
+
     &__section-header {
         @extend h6;
         color: $color-zeus-black;

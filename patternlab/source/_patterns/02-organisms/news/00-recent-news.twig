@@ -11,11 +11,12 @@
 		</div>
 	{% endif %}
 	<h4 class="latest-news__header">
-		<span>Latest From {{latestLabelText}}</span>
+		<span>Latest Articles From {{latestLabelText}}</span>
 	</h4>
 	<div class="latest-news__articles">
 		{% for i in 1..max %}
 			{% include "organisms-article-preview--small" %}
 		{% endfor %}
+		{% include "molecules-button-full-diminished" %}
 	</div>
 </div>

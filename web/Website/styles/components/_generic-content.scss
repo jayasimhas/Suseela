@@ -1,0 +1,24 @@
+.generic-content {
+	margin-bottom: 2rem;
+
+	h1 {
+		@extend h1;
+		color: $color-zeus-black;
+		margin-bottom: 0.75rem;
+
+		@include breakpoint('medium') {
+			font-size: 2.25rem;
+			margin-bottom: 1rem;
+		}
+	}
+
+	h2, h3, h4, h5, h6 {
+		color: $color-zeus-black;
+	}
+
+	p {
+		@include breakpoint('medium') {
+			line-height: 1.75rem;
+		}
+	}
+}

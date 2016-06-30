@@ -14,13 +14,13 @@
 			{% include "organisms-action-flags-bar" with {"hidePrint" : true, "hideBookmark" : true} %}
 			<div class="l-left-rail">
 				{% include "organisms-page-content" %}
-				{% include "organisms-recent-news" with {"buttonText" : "See All"} %}
-				{% include "organisms-deals" with {"buttonText" : "See All"} %}
+				{% include "organisms-recent-news" with {"buttonText" : "See All", "max": maxNews} %}
+				{% include "organisms-deals" with {"buttonText" : "See All", "max": maxDeals} %}
 			</div>
 			<div class="l-right-rail">
-				{% include "organisms-article-topic" %}
+				{% include "organisms-article-topics" %}
 				{% include "molecules-ad-rect" %}
-				{% include "organisms-article-sidebar" %}
+				{% include "organisms-callout" %}
 			</div>
 		</div>
 		{% include "molecules-ad-leaderboard" %}

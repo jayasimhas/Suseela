@@ -49,7 +49,7 @@
 
 {# Pattern #}
 <div class="article-topics">
-	<h2>{{topicsListHeader}}</h2>
+	<h2 class="article-topics__header">{{topicsListHeader}}</h2>
 
 	{% for section in topicsListWords %}
 		<ul>
@@ -57,8 +57,8 @@
 				{{section.sectionHeader}}
 			</li>
 			{% if section.sectionDesc%}
-				<li>
-					{{section.sectionDesc}}
+				<li class="article-topics__section-desc">
+					{{section.sectionDesc | raw}}
 				</li>
 			{% endif %}
 			{% for item in section.items %}
@@ -77,6 +77,21 @@
 									{% else %}
 										{{subitem.itemText}}
 									{% endif %}
+
+									{% if subitem.subsection %}
+										<ul>
+											{% for subsubitem in subitem.subsection %}
+												<li class="article-topics__li">
+													{% if subsubitem.itemURL %}
+														<a href="{{subsubitem.itemURL}}">{{subsubitem.itemText}}</a>
+													{% else %}
+														{{subsubitem.itemText}}
+													{% endif %}
+												</li>
+											{% endfor %}
+										</ul>
+									{% endif %}
+
 								</li>
 							{% endfor %}
 						</ul>

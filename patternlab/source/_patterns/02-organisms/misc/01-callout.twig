@@ -1,0 +1,20 @@
+{# Randoms #}
+{% if calloutHeader == false %}
+	{% set calloutHeader = random(randomTitles).text %}
+{% endif %}
+{% if calloutBody == false %}
+	{% set calloutBody = "<p>" ~ random(randomParas).text ~ "</p>" %}
+{% endif %}
+
+{# Pattern #}
+<aside class="callout{% if callOutType %} callout--{{callOutType}}{% endif %}">
+	<h3 class="callout__header">{{calloutHeader}}</h3>
+	<div class="callout__body">
+		{{calloutBody | raw}}
+	</div>
+	<div class="callout__footer">
+		{% if calloutButton %}
+			<button href="{{calloutButtonUrl}}" class="button--filled">{{calloutButton}}</button>
+		{% endif %}
+	</div>
+</aside>

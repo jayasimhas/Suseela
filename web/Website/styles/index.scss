@@ -36,8 +36,10 @@
 @import 'components/banners';
 @import 'components/bar-separated-link-list';
 @import 'components/buttons';
+@import 'components/callout';
 @import 'components/dismiss-button';
 @import 'components/forms';
+@import 'components/generic-content';
 @import 'components/iframe-component';
 @import 'components/image-cutline-block';
 @import 'components/informa-bar';
@@ -87,7 +89,7 @@
 @import 'components/article/article-topics';
 
 /* * * * COMPONENTS — PROFILE * * * */
-@import 'components/profile'; 
+@import 'components/profile';
 
 /* * * * COMPONENTS — SEARCH RESULTS * * * */
 @import 'components/search/search-wrapper';
