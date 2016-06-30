@@ -1,8 +1,8 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Library.User.Registration.Web
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService]
 	public class WebRegisterUser : IWebRegisterUser
 	{
 		protected readonly IRegisterUser RegisterUser;
@@ -19,17 +19,17 @@ namespace Informa.Library.User.Registration.Web
 			RegisterUserActions = registerUserActions;
 		}
 
-		public bool Register(INewUser newUser)
+		public IRegisterUserResult Register(INewUser newUser)
 		{
-			var registered = RegisterUser.Register(newUser);
+			var registerResult = RegisterUser.Register(newUser);
 
-			if (registered)
+			if (registerResult.Success)
 			{
 				RegisterUserContext.NewUser = newUser;
 				RegisterUserActions.Process(newUser);
 			}
 
-			return registered;
+			return registerResult;
 		}
 	}
 }

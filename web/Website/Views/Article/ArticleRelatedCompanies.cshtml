@@ -1,0 +1,19 @@
+﻿@inherits GlassView<RelatedCompaniesModel>
+
+@if (Model.RelatedCompanies != null && Model.RelatedCompanies.Any())
+{
+    <div class="article-topics">
+        <h2>@Html.Raw(Model.ComponentTitle)</h2>
+        <ul>
+            @foreach (var company in Model.RelatedCompanies)
+            {
+	            <li class="article-topics__li click-utag"
+	                data-info='{"event_name": "related_companies_click_through",
+								"click_through_source": "@Model.ArticleName",
+								"click_through_destination": "@company.Text"}'>
+		            @RenderLink(company, m => m)
+	            </li>
+            }
+        </ul>
+    </div>
+}
