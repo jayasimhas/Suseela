@@ -53,7 +53,7 @@ export default function createPopup(initialState) {
 
         render();
     }
-
+ 
     // initialize popup
     // always start hidden so it can animate in
     const $popup = $("<div class='popup'>")
