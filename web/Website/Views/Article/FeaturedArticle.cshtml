@@ -2,10 +2,7 @@
 @model FeaturedArticleViewModel
 <section class="article-preview">
 
-	@if (Model.DisplayImage)
-	{
-		<img class="article-preview__image" src="@Model.Image.GetScaledImage(784)">
-	}
+
 
 	@if (Model != null && Model.GlassModel != null)
 	{
@@ -72,6 +69,11 @@
 			<span class="article-preview__byline">
                 @Html.Raw(Model.ArticleByLine)
             </span>
+
+            @if (Model.DisplayImage)
+            {
+                <img class="article-preview__image" src="@Model.Image.GetScaledImage(784)">
+            }
 
 			<div class="article-summary">
 				@Html.Raw(Model.Summary)

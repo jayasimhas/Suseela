@@ -1,9 +1,6 @@
 ﻿@model Informa.Web.ViewModels.IListableViewModel
 
-@if (Model.DisplayImage && !string.IsNullOrEmpty(Model.ListableImage))
-{
-    <img class="article-preview__image" src="@Model.ListableImage">
-}
+
 
 <div class="article-metadata">
      <div
@@ -61,6 +58,11 @@
     <span class="article-preview__byline">
         @Html.Raw(Model.ListableAuthorByLine)
     </span>
+
+    @if (Model.DisplayImage && !string.IsNullOrEmpty(Model.ListableImage))
+    {
+        <img class="article-preview__image" src="@Model.ListableImage">
+    }
 
     <div class="article-summary">
         @Html.Raw(Model.ListableSummary)

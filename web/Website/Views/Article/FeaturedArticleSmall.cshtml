@@ -2,10 +2,7 @@
 <section class="article-preview article-preview--small">
     @if (Model != null && Model.GlassModel != null)
     {
-        if (Model.DisplayImage)
-        {
-            <img class="article-preview__image" src="@Model.Image.ImageUrl">
-        }
+
         <div class="article-metadata">
             <div
 				class="action-flag article-preview__bookmarker pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
@@ -69,6 +66,11 @@
             <span class="article-preview__byline">
                 @Html.Raw(Model.ArticleByLine)
             </span>
+
+            @if (Model.DisplayImage)
+            {
+            <img class="article-preview__image" src="@Model.Image.ImageUrl">
+            }
 
             <div class="article-summary">
                 @Html.Raw(Model.Summary)
