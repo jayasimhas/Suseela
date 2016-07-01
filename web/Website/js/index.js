@@ -56,15 +56,15 @@ var renderIframeComponents = function() {
 
         if (showMobile) {
             mobileEmbed.show();
-            if (mobileEmbed.html() == '') 
+            if (mobileEmbed.html() == '')
                 mobileEmbed.html(decodeHtml(mobileEmbed.data('embed-link')));
         } else {
             desktopEmbed.hide();
         }
-        
+
         if (showDesktop) {
             desktopEmbed.show();
-            if (desktopEmbed.html() == '') 
+            if (desktopEmbed.html() == '')
                 desktopEmbed.html(decodeHtml(desktopEmbed.data('embed-link')));
         } else {
             mobileEmbed.hide();
@@ -856,12 +856,12 @@ $(document).ready(function() {
             $('#txtShippingPostalCode').val($('#txtBillingPostalCode').val());
         }
     });
-    
+
     // Account - Email Preferences toggler
     $('.js-account-email-toggle-all').on('click', function(e) {
         $('.js-update-email-prefs').attr('disabled', null);
     });
- 
+
     $('.js-account-email-checkbox').on('click', function(e) {
         $('.js-update-email-prefs').attr('disabled', null);
     });

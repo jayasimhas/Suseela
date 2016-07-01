@@ -39,15 +39,15 @@ export default function createPopup(initialState) {
         flipToContain: false
     };
 
-    let state = Object.assign({}, prevState, initialState);
+    let state = $.extend({}, prevState, initialState);
 
 
     function setState(newState){
 
         // copy the old state into prevState
-        prevState = Object.assign({}, state);
+        prevState = $.extend({}, state);
 
-        Object.assign(state, newState);
+        $.extend(state, newState);
 
         // console.log(state);
 
