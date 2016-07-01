@@ -1,17 +1,42 @@
-﻿
 @{
     Layout = null;
 }
 
-<!DOCTYPE html>
+@* General FE Note: Clearly this is only the bits of the Deals page mentioned in IITS2A-139, IITS2A-140, and IITS2A-141; it will need to be wrapped inside header/footer/etc and have related news and leaderboard ads (all extant code) tagged on, much as seen on the home page.  Exactly how that markup should look can be extrapolated from the patternlab files for the Company template or the Company example page *@
+<div class="company">
+	<div class="l-left-rail">
+		<div class="generic-content">
+			@* CompanyName: Exactly what it sounds like  *@
+			<h1>@(Model.CompanyName)</h1>
+			@* CompanyProfile: HTML paragraph or two of deal information from an RTE  *@
+			@(Model.CompanyProfile)
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>CompanyProfile</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>
+			@* This doesn't seem to be defined in any ticket, though it's in the designs, but show this h5
+			  if the company has a website to display or division information *@
+			@if (CompanyIsADivisionOfSomething || CompanyHasAWebsite) {
+				<h5>
+					@if (CompanyIsADivisionOfSomething) {
+						@* CompanyDivisionInfo: Company of which this company is a division *@
+						A division of @(Model.CompanyDivisionInfo) <br />
+					}
+					@if (CompanyHasAWebsite) {
+						@* CompanyWebsite: Company's website, logic isn't shown here, but protocol should show in the href, but not the visible link text *@
+						<a href="@(Model.CompanyWebsite)">@(Model.CompanyWebsite)</a>
+					}
+				</h5>
+			}
+		</div>
+	</div>
+	<div class="l-right-rail">
+		@* This sidebar is an odd sort of thing; it's a collection of lists of tags, with some plain text throw in for good measure.  Markup is ugly, and I suspect logic will be uglier. *@
+		<div class="article-topics">
+
+
+
+
+
+		</div>
+		@* This may be the incorrect sort of ad; confirm with someone who knows for sure.  Designs show tall square ad. *@
+	    @Html.Sitecore().Placeholder("article-med-ad")
+	</div>
+</div>
