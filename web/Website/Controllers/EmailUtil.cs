@@ -68,7 +68,7 @@ namespace Informa.Web.Controllers
 			var notificationList = !articleStruct.ArticleSpecificNotifications.Any() ? new List<StaffStruct>() :
 				articleStruct.ArticleSpecificNotifications;
 
-            Logger.SitecoreInfo($"EmailUtil.SendNotification: Notification List {string.Join(",", notificationList.Select(a => GetStaffEmail(a.ID)))}");
+            Logger.SitecoreInfo($"EmailUtil.SendNotification: Notification List - {string.Join(",", notificationList.Select(a => GetStaffEmail(a.ID)))}");
 
             //IIPP-1092
             try
@@ -116,7 +116,7 @@ namespace Informa.Web.Controllers
 					IsBodyHtml = true
 				};
 
-                Logger.SitecoreError($"EmailUtil.SendNotification: notifying {staffEmail}");
+                Logger.SitecoreInfo($"EmailUtil.SendNotification: notifying - {staffEmail}");
 
                 EmailSender.SendWorkflowNotification(email, replyToEmail);
 				if (replyToEmail == staffEmail)
@@ -136,7 +136,7 @@ namespace Informa.Web.Controllers
 				IsBodyHtml = true
 			};
 
-            Logger.SitecoreError($"EmailUtil.SendNotification: sending author. {contentAuthorEmail}");
+            Logger.SitecoreInfo($"EmailUtil.SendNotification: sending author - {contentAuthorEmail}");
 
             EmailSender.SendWorkflowNotification(contentAuthorEmail, replyToEmail);
 		}
