@@ -43,7 +43,9 @@
 		</div>
 	</div>
 
-	{% include "molecules-ad-leaderboard" %}
+	{% if showHeaderAd %}
+		{% include "molecules-ad-leaderboard" %}
+	{% endif %}
 
 	<div class="header__wrapper clearfix">
 

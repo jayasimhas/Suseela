@@ -53,10 +53,12 @@
 
 	{% for section in topicsListWords %}
 		<ul>
-			<li class="article-topics__section-header">
-				{{section.sectionHeader}}
-			</li>
-			{% if section.sectionDesc%}
+			{% if section.sectionHeader %}
+				<li class="article-topics__section-header">
+					{{section.sectionHeader}}
+				</li>
+			{% endif %}
+			{% if section.sectionDesc %}
 				<li class="article-topics__section-desc">
 					{{section.sectionDesc | raw}}
 				</li>

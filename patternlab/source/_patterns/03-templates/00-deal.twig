@@ -3,7 +3,7 @@
 	{% set genericTitle = random(randomCompanies).text %}
 {% endif %}
 
-{% include "organisms-raw-header" with {"showHeaderAd": true} %}
+{% include "organisms-raw-header" %}
 <main>
 	{% include "organisms-raw-main-menu" %}
 	<div class="main__wrapper">
@@ -12,20 +12,19 @@
 
 		<div class="main__content">
 			{% include "organisms-action-flags-bar" with {"hidePrint" : true, "hideBookmark" : true} %}
-			<div class="company">
+			<div class="deal">
 				<div class="l-left-rail">
-					{% include "organisms-page-content" %}
-					{% include "organisms-recent-news" with {"buttonText" : "See All", "max": maxNews} %}
-					{% include "organisms-deals" with {"buttonText" : "See All", "max": maxDeals} %}
+					{% include "molecules-deal-sponsor" %}
+					{% include "organisms-page-content" with {"showDateLine": true} %}
+					{% include "organisms-three-columns-bordered" %}
+					{% include "organisms-article-call-to-action" %}
 				</div>
 				<div class="l-right-rail">
 					{% include "organisms-article-topics" %}
 					{% include "molecules-ad-rect" %}
-					{% include "organisms-callout" %}
 				</div>
 			</div>
 		</div>
-		{% include "molecules-ad-leaderboard" %}
 	</div>
 </main>
 {% include "organisms-raw-footer" %}

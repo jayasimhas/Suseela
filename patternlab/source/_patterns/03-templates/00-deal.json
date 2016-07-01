@@ -1,0 +1,25 @@
+{
+	"dealSponsor": "https://unsplash.it/330/90/?random",
+	"threeColumnData": {
+		"type": "raw",
+		"columns": [
+			{
+				"text": "<h6>Deal Header</h6><ul class=\"carrot-list\"><li><a href=\"#\">List Item</a></li><li><a href=\"#\">List Item</a></li></ul>"
+			},
+			{
+				"text": "<h6>Deal Header</h6><ul class=\"carrot-list\"><li><a href=\"#\">List Item</a></li><li><a href=\"#\">List Item</a></li><li><a href=\"#\">List Item</a></li><li><a href=\"#\">List Item</a></li></ul>"
+			},
+			{
+				"text": "<h6>Deal Header</h6><ul class=\"carrot-list\"><li><a href=\"#\">List Item</a></li><li><a href=\"#\">List Item</a></li><li><a href=\"#\">List Item</a></li><li><a href=\"#\">List Item</a></li><li><a href=\"#\">List Item</a></li></ul>"
+			}
+		]
+	},
+	"articleCallsToAction" : [
+		{
+			"body": "<span class=\"article-call-to-action__title\">Left Action Title</span><span class=\"article-call-to-action__subtitle\">Short example subtitle.</span><button type=\"submit\" class=\"button--filled js-pre-register-user-submit\"> Long-ish Button Example </button>"
+		},
+		{
+			"body": "<span class=\"article-call-to-action__title\">Right Action Title</span><span class=\"article-call-to-action__subtitle\">Another example subtitle.</span><button type=\"submit\" class=\"button--filled js-pre-register-user-submit\">Short Button</button><hr /><span class=\"article-call-to-action__subtitle\">Secondary Subtitle</span><p>Paragraph</p>"
+		}
+	]
+}
