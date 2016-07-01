@@ -1,0 +1,115 @@
+&lt;header&gt;
+
+	&lt;div class=&quot;banner banner--cookie-policy&quot; data-banner-id=&quot;cookie-policy-0001&quot;&gt;
+		&lt;div class=&quot;banner__wrapper&quot;&gt;
+			&lt;div class=&quot;dismiss-button js-dismiss-banner&quot;&gt;
+				&lt;svg class=&quot;dismiss-button__icon&quot;&gt;
+					&lt;use xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#x&quot;&gt;&lt;/use&gt;
+				&lt;/svg&gt;
+			&lt;/div&gt;
+			&lt;span&gt;In order to deliver a personalized, responsive service and to improve the site, we remember and store information about how you use it. This is done using simple text files called cookies which site on your computer. By continuing to use this site and access its features, you are consenting to our use of cookies. To find out more about the way Informa uses cookies please go to our &lt;a href=&quot;/cookie-policy&quot;&gt;Cookie Policy&lt;/a&gt; page.&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;informa-ribbon&quot;&gt;
+		&lt;div class=&quot;informa-ribbon__wrapper&quot;&gt;
+			&lt;div class=&quot;informa-ribbon__detail&quot;&gt;
+				&lt;div class=&quot;informa-ribbon__left&quot;&gt;
+					&lt;p&gt;Scrip is part of the Business Intelligence Division of Informa PLC&lt;/p&gt;
+					&lt;ul&gt;
+						&lt;li class=&quot;iribbon-mainlink&quot;&gt;
+							&lt;a href='http://www.google.com' target=''&gt;Informa PLC&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href='http://www.google.com' target=''&gt;About us&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href='http://www.google.com' target=''&gt;Investor relations&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href='http://www.google.com' target=''&gt;Talent&lt;/a&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/div&gt;
+
+				&lt;div class=&quot;informa-ribbon__right&quot;&gt;
+					&lt;p&gt;This site is operated by a business or businesses owned by Informa PLC and all copyright resides with them. Informa PLC&rsquo;s registered office is 5 Howick Place, London SW1P 1WG. Registered in England and Wales. Number 8860726.&lt;/p&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;button class=&quot;informa-ribbon__title&quot;&gt;
+				Informa
+			&lt;/button&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	{% if showHeaderAd %}
+		{% include &quot;molecules-ad-leaderboard&quot; %}
+	{% endif %}
+
+	&lt;div class=&quot;header__wrapper clearfix&quot;&gt;
+
+
+		&lt;div class=&quot;menu-toggler menu-toggler--mini js-menu-toggle-button&quot;&gt;
+			&lt;button class=&quot;menu-toggler__button&quot;&gt;
+				&lt;span&gt;Toggle Menu&lt;/span&gt;
+			&lt;/button&gt;
+			Menu
+		&lt;/div&gt;
+
+		&lt;div class=&quot;header__logo&quot;&gt;
+			&lt;a href=&quot;/&quot;&gt;&lt;img src=&quot;http://scrip.dev.ibi.velir.com/-/media/scriplogo.png&quot;&gt;&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;header-logo-print&quot;&gt;
+			&lt;a href=&quot;/&quot;&gt;&lt;img src=&quot;/-/media/scriplogoprint.png&quot;&gt;&lt;/a&gt;
+		&lt;/div&gt;
+
+
+
+&lt;div class=&quot;header-search__wrapper&quot;&gt;
+
+&lt;form action=&quot;/&quot; method=&quot;post&quot;&gt;&lt;input name=&quot;__RequestVerificationToken&quot; type=&quot;hidden&quot; value=&quot;4_qG1fJdkLwFiDtvIQVGLNhsAC3AAt_bsjoN7zaN1PztxrsbYAJqG7D0Wm_lK2tRCS7qaf6gbSUtxG7x0Yg85aoLUszMgxhNWMr7C3bMtQA1&quot; /&gt;&lt;input id=&quot;fhController&quot; name=&quot;fhController&quot; type=&quot;hidden&quot; value=&quot;HeaderSearch&quot; /&gt;&lt;input id=&quot;fhAction&quot; name=&quot;fhAction&quot; type=&quot;hidden&quot; value=&quot;Search&quot; /&gt;		&lt;input class=&quot;header-search__field&quot; type=&quot;search&quot; placeholder=&quot;Search the site&quot; name=&quot;SearchTerm&quot;&gt;
+		&lt;svg class=&quot;header__icons header__icons--search js-header-search-trigger&quot;&gt;
+			&lt;use xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#search&quot;&gt;&lt;/use&gt;
+		&lt;/svg&gt;
+		&lt;svg class=&quot;header__icons header__icons--dismiss-search js-header-search-trigger&quot;&gt;
+			&lt;use xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#x&quot;&gt;&lt;/use&gt;
+		&lt;/svg&gt;
+&lt;/form&gt;&lt;/div&gt;
+
+
+		&lt;div class=&quot;header-account-access&quot;&gt;
+
+
+				&lt;div class=&quot;header-account-access__my-account pop-out__trigger js-pop-out-trigger&quot;
+					 data-pop-out-id=&quot;header-register&quot;
+					 data-pop-out-type=&quot;register&quot;&gt;
+
+					&lt;svg class=&quot;header__icons icon-register&quot;&gt;
+						&lt;use xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#register&quot;&gt;&lt;/use&gt;
+					&lt;/svg&gt;
+					&lt;span class=&quot;header-account-access__label&quot;&gt;Register&lt;/span&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger&quot;
+					 data-pop-out-id=&quot;header-signin&quot;
+					 data-pop-out-align=&quot;right&quot;
+					 data-pop-out-type=&quot;sign-in&quot;
+					 data-pop-out-tab-height=&quot;87&quot;&gt;
+					&lt;svg class=&quot;header__icons icon-sign-in&quot;&gt;
+						&lt;use xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#sign-in&quot;&gt;&lt;/use&gt;
+					&lt;/svg&gt;
+					&lt;span class=&quot;header-account-access__label&quot;&gt;Sign In&lt;/span&gt;
+				&lt;/div&gt;
+		&lt;/div&gt;
+
+
+
+		&lt;div class=&quot;boxout-print-info&quot;&gt;
+			&lt;p&gt;&lt;em style=&quot;color: #58595b;&quot;&gt;After years of warding off generics, large pharma companies are embracing generic drug manufacturers and vying for a share of the off-patent drugs business. Indian generic companies, once considered business pariahs, are the focus of plenty of action, Anju Ghangurde reports.&lt;/em&gt;&lt;/p&gt;
+			&lt;p&gt;Printed By &lt;b&gt;  &lt;/b&gt;&lt;/p&gt;
+		&lt;/div&gt;
+
+
+	&lt;/div&gt;
+
+&lt;/header&gt;

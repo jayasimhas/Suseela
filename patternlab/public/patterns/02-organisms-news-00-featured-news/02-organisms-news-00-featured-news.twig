@@ -1,0 +1,19 @@
+&lt;div class=&quot;topic-subtopic&quot;&gt;
+	{% if topicSubtopicHeaderText %}
+		&lt;div class=&quot;topic-subtopic__header&quot;&gt;
+			&lt;h1 class=&quot;topic-subtopic__title&quot;&gt;{{topicSubtopicHeaderText}} &lt;a href='#' &gt;Explore this Topic&lt;/a&gt;&lt;/h1&gt;
+		&lt;/div&gt;
+	{% endif %}
+
+	{% if showSetAlert %}
+		&lt;div class=&quot;topic-subtopic__set-alert&quot;&gt;
+			{% include &quot;molecules-set-alert&quot; with {&quot;classes&quot; : &quot;profile__set-alert&quot;, &quot;actionFlagColor&quot;: &quot;red&quot;} %}
+		&lt;/div&gt;
+	{% endif %}
+	&lt;h4 class=&quot;latest-news__header&quot;&gt;
+		&lt;span&gt;Latest Articles From {{latestLabelText}}&lt;/span&gt;
+	&lt;/h4&gt;
+	{% for i in 1..max %}
+		{% include &quot;organisms-article-preview&quot; with {&quot;classes&quot;: &quot;topic-featured-article&quot;} %}
+	{% endfor %}
+&lt;/div&gt;

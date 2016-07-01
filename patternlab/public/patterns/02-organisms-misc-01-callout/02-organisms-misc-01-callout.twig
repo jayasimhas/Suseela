@@ -1,0 +1,20 @@
+{# Randoms #}
+{% if calloutHeader == false %}
+	{% set calloutHeader = random(randomTitles).text %}
+{% endif %}
+{% if calloutBody == false %}
+	{% set calloutBody = &quot;&lt;p&gt;&quot; ~ random(randomParas).text ~ &quot;&lt;/p&gt;&quot; %}
+{% endif %}
+
+{# Pattern #}
+&lt;aside class=&quot;callout{% if callOutType %} callout--{{callOutType}}{% endif %}&quot;&gt;
+	&lt;h3 class=&quot;callout__header&quot;&gt;{{calloutHeader}}&lt;/h3&gt;
+	&lt;div class=&quot;callout__body&quot;&gt;
+		{{calloutBody | raw}}
+	&lt;/div&gt;
+	&lt;div class=&quot;callout__footer&quot;&gt;
+		{% if calloutButton %}
+			&lt;button href=&quot;{{calloutButtonUrl}}&quot; class=&quot;button--filled&quot;&gt;{{calloutButton}}&lt;/button&gt;
+		{% endif %}
+	&lt;/div&gt;
+&lt;/aside&gt;

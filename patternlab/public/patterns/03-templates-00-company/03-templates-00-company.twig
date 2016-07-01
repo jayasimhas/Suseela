@@ -1,0 +1,31 @@
+{# Defaults and Randoms #}
+{% if genericTitle == false %}
+	{% set genericTitle = random(randomCompanies).text %}
+{% endif %}
+
+{% include &quot;organisms-raw-header&quot; with {&quot;showHeaderAd&quot;: true} %}
+&lt;main&gt;
+	{% include &quot;organisms-raw-main-menu&quot; %}
+	&lt;div class=&quot;main__wrapper&quot;&gt;
+		&lt;div class=&quot;general-header&quot;&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;main__content&quot;&gt;
+			{% include &quot;organisms-action-flags-bar&quot; with {&quot;hidePrint&quot; : true, &quot;hideBookmark&quot; : true} %}
+			&lt;div class=&quot;company&quot;&gt;
+				&lt;div class=&quot;l-left-rail&quot;&gt;
+					{% include &quot;organisms-page-content&quot; %}
+					{% include &quot;organisms-recent-news&quot; with {&quot;buttonText&quot; : &quot;See All&quot;, &quot;max&quot;: maxNews} %}
+				&lt;/div&gt;
+				&lt;div class=&quot;l-right-rail&quot;&gt;
+					{% include &quot;organisms-article-topics&quot; %}
+					{% include &quot;molecules-ad-rect&quot; %}
+					{% include &quot;organisms-callout&quot; %}
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		{% include &quot;molecules-ad-leaderboard&quot; %}
+	&lt;/div&gt;
+&lt;/main&gt;
+{% include &quot;organisms-raw-footer&quot; %}
+&lt;script src=&quot;/web/Website/dist/js/index.js&quot;&gt;&lt;/script&gt;

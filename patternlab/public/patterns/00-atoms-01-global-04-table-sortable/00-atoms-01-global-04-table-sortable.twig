@@ -1,0 +1,86 @@
+{# Randoms #}
+{% if sortableTableData == false %}
+	{% set sortableTableData = {
+		&quot;rows&quot;: [
+			[{
+				&quot;itemText&quot; : &quot;Pharmaceutical&quot;
+			},
+			{
+				&quot;itemText&quot; : &quot;1 Deal&quot;,
+				&quot;itemURL&quot; : &quot;#&quot;
+			},
+			{
+				&quot;itemText&quot; : &quot;1 Deal&quot;,
+				&quot;itemURL&quot; : &quot;#&quot;
+			},
+			{
+				&quot;itemText&quot; : &quot;1 Deal&quot;,
+				&quot;itemURL&quot; : &quot;#&quot;
+			}],
+			[{
+				&quot;itemText&quot; : &quot;Device&quot;
+			},
+			{
+				&quot;itemText&quot; : &quot;1 Deal&quot;,
+				&quot;itemURL&quot; : &quot;#&quot;
+			},
+			{
+				&quot;itemText&quot; : &quot;N/A&quot;
+			},
+			{
+				&quot;itemText&quot; : &quot;1 Deal&quot;,
+				&quot;itemURL&quot; : &quot;#&quot;
+			}],
+			[{
+				&quot;itemText&quot; : &quot;OTC&quot;
+			},
+			{
+				&quot;itemText&quot; : &quot;1 Deal&quot;,
+				&quot;itemURL&quot; : &quot;#&quot;
+			},
+			{
+				&quot;itemText&quot; : &quot;1 Deal&quot;,
+				&quot;itemURL&quot; : &quot;#&quot;
+			},
+			{
+				&quot;itemText&quot; : &quot;1 Deal&quot;,
+				&quot;itemURL&quot; : &quot;#&quot;
+			}]
+		]
+	} %}
+{% endif %}
+
+{# Pattern #}
+&lt;table class=&quot;sortable-table{% if sortThisTable %} js-sortable-table{% endif %}&quot;&gt;
+	&lt;thead class=&quot;sortable-table__header&quot;&gt;
+		&lt;tr&gt;
+			&lt;td class=&quot;sortable-table__col&quot;&gt;
+				Industry
+			&lt;/td&gt;
+			&lt;td class=&quot;sortable-table__col&quot;&gt;
+				Acquisitions
+			&lt;/td&gt;
+			&lt;td class=&quot;sortable-table__col&quot;&gt;
+				Alliances
+			&lt;/td&gt;
+			&lt;td class=&quot;sortable-table__col&quot;&gt;
+				Financings
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		{% for row in sortableTableData.rows %}
+		&lt;tr&gt;
+			{% for data in row %}
+				&lt;td class=&quot;sortable-table__col&quot;&gt;
+					{% if data.itemURL %}
+						&lt;a href=&quot;{{data.itemURL}}&quot;&gt;{{data.itemText}}&lt;/a&gt;
+					{% else %}
+						{{data.itemText}}
+					{% endif %}
+				&lt;/td&gt;
+			{% endfor %}
+		&lt;/tr&gt;
+		{% endfor %}
+	&lt;/tbody&gt;
+&lt;/table&gt;

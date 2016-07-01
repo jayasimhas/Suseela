@@ -1,0 +1,30 @@
+&lt;div class=&quot;topic-subtopic&quot;&gt;
+	{% if topicSubtopicHeaderText %}
+		&lt;div class=&quot;topic-subtopic__header&quot;&gt;
+			&lt;h1 class=&quot;topic-subtopic__title&quot;&gt;{{topicSubtopicHeaderText}} &lt;a href='#' &gt;Explore this Topic&lt;/a&gt;&lt;/h1&gt;
+		&lt;/div&gt;
+	{% endif %}
+
+	&lt;h4 class=&quot;latest-news__header&quot;&gt;
+		&lt;span&gt;{{dealsLabelText}} Deals&lt;/span&gt;
+	&lt;/h4&gt;
+
+	{% if dealSponsor %}
+	&lt;div class=&quot;topic-subtopic__sponsor&quot;&gt;
+		Brought to you by &lt;img src=&quot;{{dealSponsor}}&quot; /&gt;
+	&lt;/div&gt;
+	{% endif %}
+
+	&lt;h5 class=&quot;topic-subtopic__subtitle&quot;&gt;Latest Deals&lt;/h5&gt;
+
+	{% for i in 1..max %}
+		{% include &quot;organisms-article-preview--boxed&quot; with {&quot;hideTags&quot;: true} %}
+	{% endfor %}
+
+	{% include &quot;molecules-button-full-diminished&quot; %}
+
+	&lt;h5 class=&quot;topic-subtopic__subtitle&quot;&gt;Deal Activity since 1991&lt;/h5&gt;
+
+	{% include &quot;atoms-table-sortable&quot; %}
+
+&lt;/div&gt;
