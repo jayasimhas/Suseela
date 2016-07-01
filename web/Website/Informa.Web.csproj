@@ -1317,6 +1317,8 @@
     <Content Include="Views\Article\TopicPageTitle.cshtml" />
     <Content Include="Views\Shared\Components\MediaTypeIcon.cshtml" />
     <Content Include="Areas\VWB\Views\AddIssue.cshtml" />
+    <Content Include="Views\Companies\CompanyProfile.cshtml" />
+    <Content Include="Views\Deals\DealProfile.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
