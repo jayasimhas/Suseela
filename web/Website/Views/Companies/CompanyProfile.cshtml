@@ -28,103 +28,31 @@
 		</div>
 
 
+
+
+
+
+
+
 		@*
 			RELATED NEWS AND SET ALERT BUTTON GO HERE!
 			This code already exists and should be reused!
 		*@
 
 
-		@* This next section is very similar to, but not exactly the same as Related/Recent News.  May be generalizable, almost certainly benefit from being , but be very careful to pay attention to the differences *@
 
-		<div class="topic-subtopic">
-			<h4 class="latest-news__header">
-				@* CompanyName: Same as what's used in the page title  *@
-				<span>@(Model.CompanyName) Deals</span>
-			</h4>
 
-			@* DealSponsorExists: Should a sponsor show for these deals?  *@
-			@if (DealSponsorExists) {
-				<div class="deal-sponsor">
-					@* DealSponsorImageUrl: Path to sponsor logo  *@
-					Brought to you by <img src="@(Model.DealSponsorImageUrl)" />
-				</div>
-			}
 
-			<h5 class="topic-subtopic__subtitle">Latest Deals</h5>
 
-			@* This may be entirely incorrect razor syntax, but the idea is to pull in three Deals rendered as article previews (type "--boxed").  Extremely similar to FeaturedArticleFull and FeaturedArticleSmall; primary difference is that modifications may need to be made to hide the tags section which should not appear in Deals.  View should already have been made for this; may not be added in Visual Studio *@
 
-			@* Model.Deals: list of deals *@
-			@foreach (var deal in Model.Deals)
-			{
-				Html.RenderPartial("Article/FeaturedArticleBoxed", listable);
-			}
 
-			<a class="full-diminished-button" href="#">See All</a>
 
-			@* Not clear where "1991" is coming from; may want to check with SA; sourcing says "Dictionary" *@
-			<h5 class="topic-subtopic__subtitle">Deal Activity since 1991</h5>
 
-			<table class="sortable-table">
-				<thead class="sortable-table__header">
-					<tr>
-						@* The following four labels are #2, 4, 6 and 8 in IIPL-101; appear to be the same in every table, nothing exciting going on here *@
-						<td class="sortable-table__col">
-							@(Model.IndustryLabel)
-						</td>
-						<td class="sortable-table__col">
-							@(Model.AcquisitionsLabel)
-						</td>
-						<td class="sortable-table__col">
-							@(Model.AlliancesLabel)
-						</td>
-						<td class="sortable-table__col">
-							@(Model.FinancingsLabel)
-						</td>
-					</tr>
-				</thead>
-				<tbody>
-					@* CompanyDealTableEntries: List of table rows with data for each cell, and links where appropriate (see IIPL-101; links seem to be in flux?) *@
-					@foreach (var entry in Model.CompanyDealTableEntries)
-						<tr>
-							<td class="sortable-table__col">
-								@if (entry.IndustryIsLinked) {
-									<a href="entry.IndustryUrl">@(entry.IndustryText)</a>
-								}
-								@else {
-									@(entry.IndustryText)
-								}
-							</td>
-							<td class="sortable-table__col">
-								@if (entry.AcquisitionsIsLinked) {
-									<a href="entry.AcquisitionsUrl">@(entry.AcquisitionsText)</a>
-								}
-								@else {
-									@(entry.AcquisitionsText)
-								}
-							</td>
-							<td class="sortable-table__col">
-								@if (entry.AlliancesIsLinked) {
-									<a href="entry.AlliancesUrl">@(entry.AlliancesText)</a>
-								}
-								@else {
-									@(entry.AlliancesText)
-								}
-							</td>
-							<td class="sortable-table__col">
-								@if (entry.FinancingsIsLinked) {
-									<a href="entry.FinancingsUrl">@(entry.FinancingsText)</a>
-								}
-								@else {
-									@(entry.FinancingsText)
-								}
-							</td>
-						</tr>
-					}
-				</tbody>
-			</table>
-		</div>
+		
 	</div>
+
+
+
 	<div class="l-right-rail">
 		@* This sidebar is an odd sort of thing; it's a collection of lists of tags, with some plain text throw in for good measure.  Markup is ugly, and I suspect logic will be uglier. *@
 		<div class="article-topics">
