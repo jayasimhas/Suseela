@@ -94,6 +94,7 @@
 	float: left;
 
 	@include breakpoint('large') {
+		margin-bottom: 2rem;
 		width: 100%;
 		clear: both;
 		float: none;
