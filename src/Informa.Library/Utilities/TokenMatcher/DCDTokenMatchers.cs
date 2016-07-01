@@ -24,28 +24,42 @@ namespace Informa.Library.Utilities.TokenMatcher
 		{
 			string body = text;
 
-			try
-			{
-				string tempText = ProcessCompanyTokens(body);
+		    try
+		    {
+		        string tempText = ProcessCompanyTokens(body);
 
-				if (string.IsNullOrEmpty(tempText) == false)
-					body = tempText;
+		        if (string.IsNullOrEmpty(tempText) == false)
+		            body = tempText;
+		    }
+		    catch (Exception ex1)
+		    {
+                Sitecore.Diagnostics.Log.Error("Error Processing DCD Company Tokens", ex1);
+            }
 
-				tempText = ProcessDealTokens(body);
+		    try
+		    {
+		        string tempText = ProcessDealTokens(body);
 
-				if (string.IsNullOrEmpty(tempText) == false)
-					body = tempText;
+		        if (string.IsNullOrEmpty(tempText) == false)
+		            body = tempText;
+		    }
+		    catch (Exception ex2)
+		    {
+                Sitecore.Diagnostics.Log.Error("Error Processing DCD Deal Tokens", ex2);
+            }
 
-				tempText = ProcessArticleTokens(body);
+            try { 
+                string tempText = ProcessArticleTokens(body);
 
 				if (string.IsNullOrEmpty(tempText) == false)
 					body = tempText;
 
 			}
-			catch (Exception ex)
+			catch (Exception ex3)
 			{
-				Sitecore.Diagnostics.Log.Error("Error ProcessingDCDTokens", ex);
+				Sitecore.Diagnostics.Log.Error("Error Processing DCD Article Tokens", ex3);
 			}
+
 			return body;
 		}
 
@@ -59,18 +73,25 @@ namespace Informa.Library.Utilities.TokenMatcher
             foreach (Match match in matches)
             {
 	            var replace = string.Empty;
-				// Replace the first occurrence with hyperlink
-				if (!matchSet.Contains(match.Groups[1].Value))
-				{				
-					replace = $"<a href=\"{string.Format(OldCompaniesUrl, match.Groups[1].Value.Split(':')[0])}\">{match.Groups[1].Value.Split(':')[1]}</a>";
+                if (match.Groups.Count < 2)
+                    continue;
+
+                string matchValue = match.Groups[1].Value;
+                string[] splitArr = matchValue.Split(':');
+                string cDigit = (splitArr.Length > 0) ? splitArr[0] : string.Empty;
+                string cName = (splitArr.Length > 1) ? splitArr[1] : string.Empty;
+
+                // Replace the first occurrence with hyperlink
+                if (!matchSet.Contains(matchValue))
+                {
+                    replace = $"<a href=\"{string.Format(OldCompaniesUrl, cDigit)}\">{cName}</a>";
 					text = regex.Replace(text, replace, 1);
-					matchSet.Add(match.Groups[1].Value);
+					matchSet.Add(matchValue);
 				}
 				// Replace other occurrences with normal names
 				else
 				{
-					replace = match.Groups[1].Value.Split(':')[1];
-					text = text.Replace(match.Value, replace);
+					text = text.Replace(match.Value, cName);
 				}			
 			}
 			return text;
