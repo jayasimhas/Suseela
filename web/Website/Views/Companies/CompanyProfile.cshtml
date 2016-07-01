@@ -48,7 +48,7 @@
 
 
 
-		
+
 	</div>
 
 
@@ -92,5 +92,19 @@
 		</div>
 		@* This may be the incorrect sort of ad; confirm with someone who knows for sure.  Designs show tall square ad. *@
 	    @Html.Sitecore().Placeholder("article-med-ad")
+
+		<aside class="callout callout--full-width">
+			@* See IITS2A-90 for details on the sourcing for this one; most things below are just what they sound like unless otherwise noted. *@
+			<img src="@(Model.StrategicTransactionsImageUrl)" />
+			@* StrategicTransactionsHeader and StrategicTransactionsBody are considered the same RTE according to the ticket; this isn't realistic for styling this section and they should probably be separated; if that can't be done, come talk to Rebecca Mazur and we'll see how we can get around it *@
+			<h3 class="callout__header">@(Model.StrategicTransactionsHeader)</h3>
+			<div class="callout__body">@(Model.StrategicTransactionsBody)</div>
+			<div class="callout__footer">
+				<button href="@(Model.StrategicTransactionsButtonUrl)" class="button--filled">
+					@(Model.StrategicTransactionsButtonText)
+				</button>
+			</div>
+		</aside>
+
 	</div>
 </div>
