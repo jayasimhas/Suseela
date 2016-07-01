@@ -93,7 +93,7 @@
 	max-width: 790px;
 	float: left;
 
-	@include breakpoint('medium') {
+	@include breakpoint('large') {
 		width: 100%;
 		clear: both;
 		float: none;
@@ -105,7 +105,8 @@
 	float: right;
 	max-width: 290px;
 
-	@include breakpoint('medium') {
+	@include breakpoint('large') {
+		margin-bottom: 1rem;
 		max-width: 100%;
 		float: none;
 	}
@@ -141,5 +142,17 @@
 			border-right: none;
 			padding-right: 0;
 		}
+
+		@include breakpoint('medium') {
+			.l-columns__column,
+			.l-columns__column:nth-child(3n),
+			.l-columns__column:nth-child(3n + 1) {
+				border-right: none;
+				margin-bottom: 2rem;
+				padding: 0;
+				width: 100%;
+			}
+		}
+
 	}
 }
