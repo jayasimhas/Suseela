@@ -1166,7 +1166,6 @@
     <Content Include="Views\FrontendWrappers\ArticleWrapper.cshtml" />
     <Content Include="Views\Shared\_SignInForm.cshtml" />
     <Content Include="Views\Structure\TwoColumnContent.cshtml" />
-    <Content Include="Views\Structure\SingleColumnContent.cshtml" />
     <Content Include="Views\Structure\MainContentWrapper.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedContent.cshtml" />
     <Content Include="Views\Shared\Components\ListableContentWide.cshtml" />

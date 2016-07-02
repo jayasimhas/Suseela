@@ -1,25 +1,18 @@
 ----item----
 version: 1
-id: {50AACC73-CB48-4C4E-9013-213FFFDB957A}
+id: {1DC576E9-332E-4AF2-9598-A84C38DDA3F0}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Structure/Single Column Content
-parent: {D223AFD5-3382-4371-ADED-C924C825F95B}
-name: Single Column Content
+path: /sitecore/templates/Branches/User Defined/Site Root/$name/Home/Emails
+parent: {CC415F4B-ABA4-4582-9ACF-45DF19E0C1AD}
+name: Emails
 master: {00000000-0000-0000-0000-000000000000}
-template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
-templatekey: View rendering
+template: {0736BD0B-F22F-4496-8881-3E2DA3A80680}
+templatekey: Emails Folder
 
-----field----
-field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
-name: Path
-key: path
-content-length: 43
-
-/Views/Structure/SingleColumnContent.cshtml
 ----version----
 language: en
 version: 1
-revision: cb6f6bde-4de3-45b5-a5ee-a8ccc542478e
+revision: 927e297a-cc91-4c1c-965f-738c24138fa0
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,21 +20,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20151207T081656Z
+20160701T123109Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-cb6f6bde-4de3-45b5-a5ee-a8ccc542478e
+927e297a-cc91-4c1c-965f-738c24138fa0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20151230T205629Z
+20160701T123109Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
