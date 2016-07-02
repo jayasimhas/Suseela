@@ -37,7 +37,13 @@ namespace Informa.Library.Utilities.References
 		public Guid SearchPage => new Guid("{0FF66777-7EC7-40BE-ABC4-6A20C8ED1EF0}");
 		public Guid VwbSearchPage => new Guid("{A0163A51-2FF8-4A9C-8FBA-6516546E5AE1}");
 
-		public Guid SubscriptionPage => new Guid("{39611772-CD97-4610-BB55-F96BE4C1F540}");
+    public Guid IssuesRootCurrent => new Guid("{B2F62FA2-91B1-424D-889A-CE8276984660}");
+    public Guid IssuesRootArchive => new Guid("{AAB11244-7D15-4A43-A709-DC8951893FD2}");
+    public Guid IssueTemplate => new Guid("{90C7C95A-2D6F-49D8-B471-7626E3135201}");
+    public Guid IssueArchivedTemplate => new Guid("{6467B31C-4196-44EB-A215-EEC8F733FFF8}");
+     
+
+    public Guid SubscriptionPage => new Guid("{39611772-CD97-4610-BB55-F96BE4C1F540}");
 
 		public Guid EmailPreferences => new Guid("{BAF1D4FB-7599-4EDA-8926-0A4995E4DC2D}");
 
@@ -50,7 +56,7 @@ namespace Informa.Library.Utilities.References
 		public Guid AccountPhoneTypes => new Guid("{361E7AC5-BF4B-4FD2-A840-5BE7457BBDD5}");
 		public Guid AccountSalutations => new Guid("{E7366564-0E17-43FF-8ECA-0BD9829392AC}");
 
-		#endregion Account Contact Info Drop Downs
+	  #endregion Account Contact Info Drop Downs
 
 		#region Templates
 

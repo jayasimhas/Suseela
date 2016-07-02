@@ -1,6 +1,4 @@
-﻿using System.Web;
-using System.Web.UI.WebControls;
-using Elsevier.Library.CustomItems.Publication.General;
+﻿using System.Web.UI.WebControls;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.Configuration;
@@ -10,7 +8,7 @@ using Sitecore.Resources.Media;
 
 namespace Elsevier.Web.VWB.Report.Columns
 {
-	public class ArticleNumberColumn : IVwbColumn
+    public class ArticleNumberColumn : IVwbColumn
 	{
 		#region IVwbColumn Members
 

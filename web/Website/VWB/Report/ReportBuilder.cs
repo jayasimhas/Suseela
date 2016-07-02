@@ -7,10 +7,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Elsevier.Library.Config;
 using Elsevier.Library.CustomItems.Publication.General;
-using Elsevier.Library.LuceneSearch.Indexes;
-using Elsevier.Library.LuceneSearch.Parameters;
-using Elsevier.Library.LuceneSearch.Searchers;
-using Elsevier.Library.Reference;
 using Elsevier.Web.VWB.Report.Columns;
 using Glass.Mapper.Sc;
 using Informa.Library.Rss;
@@ -19,7 +15,6 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Newtonsoft.Json;
 using Sitecore.Configuration;
 using Sitecore.Data;
-using Sitecore.Data.Items;
 using Sitecore.Web;
 using ArticleItem = Elsevier.Library.CustomItems.Publication.General.ArticleItem;
 
@@ -31,22 +26,23 @@ namespace Elsevier.Web.VWB.Report
 		static readonly ColumnFactory ColumnFactory = ColumnFactory.GetColumnFactory();
 		private PublicationItem _publication;
 		private List<ArticleItemWrapper> _results;
-		IVwbColumn articleNumberColumn;
-		IVwbColumn titleColumn;
+	    private IVwbColumn _articleCheckboxes;
+        private IVwbColumn _articleNumberColumn;
+        private IVwbColumn _titleColumn;
 		private IssueItem _iitem;
 		private readonly VwbQuery _query;
 		private readonly Page _page;
-		public ReportBuilder(Page page,VwbQuery query)
+		public ReportBuilder(Page page, VwbQuery query)
 		{
 			_page = page;
 			_query = query.Clone();
 			IEnumerable<string> immutableColKeys = ColumnFactory.ImmutableColumns.Select(i => i.Key());
-			if(_query.SortColumnKey != null && !_query.ColumnKeysInOrder.Contains(_query.SortColumnKey) 
+			if (_query.SortColumnKey != null && !_query.ColumnKeysInOrder.Contains(_query.SortColumnKey)
 				&& !immutableColKeys.Contains(_query.SortColumnKey))
 			{
 				_query.SortColumnKey = null;
 			}
-			if(string.IsNullOrEmpty(_query.SortColumnKey))
+			if (string.IsNullOrEmpty(_query.SortColumnKey))
 			{ //if no sort defined, sort by article number
 				_query.SortColumnKey = ColumnFactory.GetArticleNumberColumn().Key();
 			}
@@ -74,8 +70,8 @@ namespace Elsevier.Web.VWB.Report
 			if (_query.IssueIdValue == VwbQuery.NextIssueValue && _iitem == null && (_results == null || _results.Count() == 0))
 			{
 				report.Rows.Add(_publication.IsDaily()
-				                	? CreateAlert("There are no articles tomorrow!")
-				                	: CreateAlert("There is no future issue for this publication!"));
+													? CreateAlert("There are no articles tomorrow!")
+													: CreateAlert("There is no future issue for this publication!"));
 				return true;
 			}
 			return false;
@@ -83,7 +79,7 @@ namespace Elsevier.Web.VWB.Report
 
 		private bool AlertNoPublicationSelected(Table report)
 		{
-			if(string.IsNullOrEmpty(_query.PublicationIdValue))
+			if (string.IsNullOrEmpty(_query.PublicationIdValue))
 			{
 				report.Rows.Add(CreateAlert("Please select a publication"));
 				return true;
@@ -109,11 +105,11 @@ namespace Elsevier.Web.VWB.Report
 				{
 					report.Rows.Add(CreateAlert("The start date is after the end date!"));
 					return true;
-				} 
+				}
 			}
 			var appConfig = new ApplicationConfig();
 			int maxRange = appConfig.VwbMaximumDateRange;
-			if(startDate != null && endDate != null && Math.Abs(endDate.Value.Subtract(startDate.Value).Days) > maxRange)
+			if (startDate != null && endDate != null && Math.Abs(endDate.Value.Subtract(startDate.Value).Days) > maxRange)
 			{
 				report.Rows.Add(CreateAlert(String.Format("Range of start and end date too large! Limit is {0} days.", maxRange)));
 				return true;
@@ -145,19 +141,19 @@ namespace Elsevier.Web.VWB.Report
 			foreach (var result in _results)
 			{
 				var resultRow = new TableRow();
-				
-				foreach(var col in Columns)
+
+				foreach (var col in Columns)
 				{
-					if(!first && (result.IsFirstArticleInCategory))
+					if (!first && (result.IsFirstArticleInCategory))
 					{
 						resultRow.CssClass = "double";
 					}
 					TableCell tableCell = col.GetCell(result);
 					if (tableCell != null)
 					{
-						resultRow.Cells.Add(tableCell); 
+						resultRow.Cells.Add(tableCell);
 					}
-					
+
 				}
 				first = false;
 				report.Rows.Add(resultRow);
@@ -171,123 +167,124 @@ namespace Elsevier.Web.VWB.Report
 		/// <returns>Sorted list of ArticleItemProxies based on query</returns>
 		public List<ArticleItemWrapper> RunSearch(VwbQuery query)
 		{
-           // var param = new ArticleSearchParam();
-            //param.IncludeSidebarArticles();
-            List<ArticleItemWrapper> articles;
+			// var param = new ArticleSearchParam();
+			//param.IncludeSidebarArticles();
+			List<ArticleItemWrapper> articles;
 
-            using (new Sitecore.SecurityModel.SecurityDisabler())
-            {
-                string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
-                string url = string.Format("{0}://{1}/api/informasearch?pId={2}&sortBy=plannedpublishdate&sortOrder=desc", HttpContext.Current.Request.Url.Scheme, WebUtil.GetHostName(), searchPageId);
+			using (new Sitecore.SecurityModel.SecurityDisabler())
+			{
+				string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
+				string hostName = Factory.GetSiteInfo("website")?.TargetHostName ?? WebUtil.GetHostName();
+				string url = string.Format("{0}://{1}/api/informasearch?pId={2}&sortBy=plannedpublishdate&sortOrder=desc", HttpContext.Current.Request.Url.Scheme, hostName, searchPageId);
 
-                if (query.InProgressValue)
-                {
-                    url += "&inprogress=1";
-                }
+				if (query.InProgressValue)
+				{
+					url += "&inprogress=1";
+				}
 
-                DateTime startDate;
-                DateTime endDate;
-                
-                //Check to see if the dates are provided in the query string
-                if (query.StartDate != null && query.EndDate != null)
-                {
-                    startDate = query.StartDate ?? DateTime.MinValue;
+				DateTime startDate;
+				DateTime endDate;
 
-
-                    endDate = query.EndDate ?? DateTime.MaxValue;
-
-                }
-                else
-                {
-                    //Default the dates
-                    DateTime now = DateTime.Now.AddDays(-1);
-
-                    //The start date is yesterday with the time being set at midnight
-                    startDate = new DateTime(now.Year, now.Month, now.Day,0, 0, 0, 0, 0);
-
-                    DateTime nowPlusMonth = DateTime.Now.AddDays(30);
-
-                    //The end date is in a month with the time being set at 11:59
-                    endDate = new DateTime(nowPlusMonth.Year, nowPlusMonth.Month, nowPlusMonth.Day, 23, 59, 0, 0, 0);
-                }
-
-                url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
-                url += ";" + endDate.ToString("MM/dd/yyyy");
-
-                var client = new WebClient();
-                var content = client.DownloadString(url);
-
-                var results = JsonConvert.DeserializeObject<SearchResults>(content);
-
-                var resultItems = new List<ArticleItem>();
-
-                Database masterDb = Factory.GetDatabase("master");
-
-                foreach (var searchResult in results.results)
-                {
-                    var theItem = (ArticleItem)masterDb.GetItem(searchResult.ItemId);
-
-                    if (theItem == null)
-                    {
-                        continue;
-                    }
-
-                    //Manually filtering for time
-                    IArticle article = theItem.InnerItem.GlassCast<IArticle>(inferType: true);
-
-                    if (article.Planned_Publish_Date.Ticks >= startDate.Ticks &&
-                        article.Planned_Publish_Date.Ticks <= endDate.Ticks)
-                    {
-                        resultItems.Add(theItem);
-                    }
-
-                }
-
-                articles = ArticleItemWrapper.GetArticleItemProxies(resultItems).ToList();
+				//Check to see if the dates are provided in the query string
+				if (query.StartDate != null && query.EndDate != null)
+				{
+					startDate = query.StartDate ?? DateTime.MinValue;
 
 
-            }
-            if (query.SortColumnKey != null && ColumnFactory.GetColumn(query.SortColumnKey) != null)
-            {
-                articles.Sort(ColumnFactory.GetColumn(query.SortColumnKey));
-            }
-            if (query.SortColumnKey == ColumnFactory.GetArticleNumberColumn().Key())
-            {
-                articles.Sort(ColumnFactory.GetArticleNumberColumn());
-            }
-            if (query.SortColumnKey == ColumnFactory.GetTitleColumn().Key())
-            {
-                articles.Sort(ColumnFactory.GetTitleColumn());
-            }
-            if (query.Descending)
-            {
-                articles.Reverse();
-            }
-            if (query.NumResultsValue != null)
-            {
-                return articles.GetRange(0, Math.Min(articles.Count, (int)query.NumResultsValue));
-            }
+					endDate = query.EndDate ?? DateTime.MaxValue;
 
-            return articles;
+				}
+				else
+				{
+					//Default the dates
+					DateTime now = DateTime.Now.AddDays(-1);
+
+					//The start date is yesterday with the time being set at midnight
+					startDate = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0, 0, 0);
+
+					DateTime nowPlusMonth = DateTime.Now.AddDays(30);
+
+					//The end date is in a month with the time being set at 11:59
+					endDate = new DateTime(nowPlusMonth.Year, nowPlusMonth.Month, nowPlusMonth.Day, 23, 59, 0, 0, 0);
+				}
+
+				url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
+				url += ";" + endDate.ToString("MM/dd/yyyy");
+
+				var client = new WebClient();
+				var content = client.DownloadString(url);
+
+				var results = JsonConvert.DeserializeObject<SearchResults>(content);
+
+				var resultItems = new List<ArticleItem>();
+
+				Database masterDb = Factory.GetDatabase("master");
+
+				foreach (var searchResult in results.results)
+				{
+					var theItem = (ArticleItem)masterDb.GetItem(searchResult.ItemId);
+
+					if (theItem == null)
+					{
+						continue;
+					}
+
+					//Manually filtering for time
+					IArticle article = theItem.InnerItem.GlassCast<IArticle>(inferType: true);
+
+					if (article.Planned_Publish_Date.Ticks >= startDate.Ticks &&
+							article.Planned_Publish_Date.Ticks <= endDate.Ticks)
+					{
+						resultItems.Add(theItem);
+					}
+
+				}
+
+				articles = ArticleItemWrapper.GetArticleItemProxies(resultItems).ToList();
+
+
+			}
+			if (query.SortColumnKey != null && ColumnFactory.GetColumn(query.SortColumnKey) != null)
+			{
+				articles.Sort(ColumnFactory.GetColumn(query.SortColumnKey));
+			}
+			if (query.SortColumnKey == ColumnFactory.GetArticleNumberColumn().Key())
+			{
+				articles.Sort(ColumnFactory.GetArticleNumberColumn());
+			}
+			if (query.SortColumnKey == ColumnFactory.GetTitleColumn().Key())
+			{
+				articles.Sort(ColumnFactory.GetTitleColumn());
+			}
+			if (query.Descending)
+			{
+				articles.Reverse();
+			}
+			if (query.NumResultsValue != null)
+			{
+				return articles.GetRange(0, Math.Min(articles.Count, (int)query.NumResultsValue));
+			}
+
+			return articles;
 		}
 
 		private void InitializeColumns(VwbQuery query)
 		{
-			Columns = query.ColumnKeysInOrder != null 
-			          	? ColumnFactory.GetColumns(query.ColumnKeysInOrder).ToList()
-			          	: new List<IVwbColumn>();
-			articleNumberColumn = ColumnFactory.GetArticleNumberColumn();
-			titleColumn = ColumnFactory.GetTitleColumn();
-			Columns.Insert(0, titleColumn);
-			Columns.Insert(0, articleNumberColumn);
+			Columns = query.ColumnKeysInOrder != null
+									? ColumnFactory.GetColumns(query.ColumnKeysInOrder).ToList()
+									: new List<IVwbColumn>();
+		    _articleCheckboxes = ColumnFactory.GetArticleCheckboxes();
+			_articleNumberColumn = ColumnFactory.GetArticleNumberColumn();
+			_titleColumn = ColumnFactory.GetTitleColumn();
+            Columns.InsertRange(0, new[] {_articleCheckboxes, _articleNumberColumn, _titleColumn});
 		}
 
 		private void BuildHeaderRows(Table report)
 		{
 			var header = new TableRow
-			             	{
-			             		CssClass = "tableheader"
-			             	};
+			{
+				CssClass = "tableheader"
+			};
 			foreach (var col in Columns)
 			{
 				TableCell tableCell = GetTableHeaderCell(col);
@@ -295,16 +292,18 @@ namespace Elsevier.Web.VWB.Report
 			}
 			report.Rows.Add(header);
 			header = new TableRow
-			         	{
-			         		CssClass = "sort-move"
-			         	};
-			TableCell cell = GetImmutableSubHeaderCell(articleNumberColumn);
-			header.Cells.Add(cell); //add cell for article number column
-			cell = GetImmutableSubHeaderCell(titleColumn);
-			header.Cells.Add(cell); //add cell for title column
-			foreach(var col in Columns)
 			{
-				if (articleNumberColumn == col || titleColumn == col) continue;
+				CssClass = "sort-move"
+			};
+            TableCell cell = GetImmutableSubHeaderCell(_articleCheckboxes);
+            header.Cells.Add(cell); //add cell for article checkboxes column
+            cell = GetImmutableSubHeaderCell(_articleNumberColumn);
+			header.Cells.Add(cell); //add cell for article number column
+			cell = GetImmutableSubHeaderCell(_titleColumn);
+			header.Cells.Add(cell); //add cell for title column
+			foreach (var col in Columns)
+			{
+				if (_articleCheckboxes == col || _articleNumberColumn == col || _titleColumn == col) continue;
 				TableCell tableCell = GetTableSubHeaderCell(col);
 				header.Cells.Add(tableCell);
 			}
@@ -320,7 +319,7 @@ namespace Elsevier.Web.VWB.Report
 		private TableCell GetImmutableSubHeaderCell(IVwbColumn column)
 		{
 			var cell = new TableCell();
-			var link = new HyperLink {CssClass = "right space" };
+			var link = new HyperLink { CssClass = "right space" };
 			LinkButtonToSortColumn(link, column);
 			cell.Controls.Add(link);
 			return cell;
@@ -334,34 +333,33 @@ namespace Elsevier.Web.VWB.Report
 
 			var link = new HyperLink { CssClass = "right space" };
 			LinkButtonToSortColumn(link, col);
-			tableCell.Controls.Add(link); 
-			
+			tableCell.Controls.Add(link);
+
 			return tableCell;
 		}
 
 		private void AddMoveButtons(TableCell tableCell, IVwbColumn column)
 		{
-			if (column == articleNumberColumn || column == titleColumn) return;
-			
-			if (_query.ColumnKeysInOrder.Count() > 0)
-			{
-				if (column.Key() != _query.ColumnKeysInOrder.FirstOrDefault())
-				{
-					var link = new HyperLink {CssClass = "moveleft"};
-					var query = _query.Clone();
-					query.MoveColumnLeft(column.Key());
-					link.Attributes.Add("href", GetUrlForQuery(query));
-					tableCell.Controls.Add(link);
-				}
-				if (column.Key() != _query.ColumnKeysInOrder.Last())
-				{
-					var link = new HyperLink {CssClass = "moveright"};
-					var query = _query.Clone();
-					query.MoveColumnRight(column.Key());
-					link.Attributes.Add("href", GetUrlForQuery(query));
-					tableCell.Controls.Add(link);
-				}
-			}
+			if (column == _articleCheckboxes || column == _articleNumberColumn || column == _titleColumn) return;
+
+		    if (!_query.ColumnKeysInOrder.Any()) return;
+
+		    if (column.Key() != _query.ColumnKeysInOrder.FirstOrDefault())
+		    {
+		        var link = new HyperLink {CssClass = "moveleft"};
+		        var query = _query.Clone();
+		        query.MoveColumnLeft(column.Key());
+		        link.Attributes.Add("href", GetUrlForQuery(query));
+		        tableCell.Controls.Add(link);
+		    }
+		    if (column.Key() != _query.ColumnKeysInOrder.Last())
+		    {
+		        var link = new HyperLink {CssClass = "moveright"};
+		        var query = _query.Clone();
+		        query.MoveColumnRight(column.Key());
+		        link.Attributes.Add("href", GetUrlForQuery(query));
+		        tableCell.Controls.Add(link);
+		    }
 		}
 
 		private string GetUrlForQuery(VwbQuery query)
@@ -372,7 +370,7 @@ namespace Elsevier.Web.VWB.Report
 		private void LinkButtonToSortColumn(HyperLink link, IVwbColumn column)
 		{
 			var q = _query.Clone();
-			if(q.SortColumnKey == column.Key())
+			if (q.SortColumnKey == column.Key())
 			{
 				q.Descending = !_query.Descending;
 			}
@@ -389,20 +387,20 @@ namespace Elsevier.Web.VWB.Report
 		private TableCell GetTableHeaderCell(IVwbColumn col)
 		{
 			var tableCell = new TableCell
-			                      	{
-			                      		Text = col.GetHeader()
-			                      	};
-			tableCell.Controls.Add(new Label
-			                       	{
-			                       		Text = col.GetHeader()
-			                       	});
-			if (col != articleNumberColumn && col != titleColumn)
 			{
-				var linkButton = new HyperLink {CssClass = "right space" };
+				Text = col.GetHeader()
+			};
+			tableCell.Controls.Add(new Label
+			{
+				Text = col.GetHeader()
+			});
+			if (col != _articleCheckboxes && col != _articleNumberColumn && col != _titleColumn)
+			{
+				var linkButton = new HyperLink { CssClass = "right space" };
 				var q = _query.Clone();
 				q.ColumnKeysInOrder.Remove(col.Key());
 				linkButton.Attributes.Add("href", _page.Request.ServerVariables["URL"] + "?" + q.GetQueryString());
-				tableCell.Controls.Add(linkButton); 
+				tableCell.Controls.Add(linkButton);
 			}
 			return tableCell;
 		}

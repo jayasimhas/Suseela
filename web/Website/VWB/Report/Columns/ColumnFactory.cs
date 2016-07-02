@@ -41,10 +41,13 @@ namespace Elsevier.Web.VWB.Report.Columns
                      
 
                           };
+
+            _articleCheckboxes = new ArticleCheckboxes();
 			_articleNumberColumn = new ArticleNumberColumn();
 			_titleColumn = new TitleColumn();
 			ImmutableColumns = new List<IVwbColumn>
 								{
+                                    _articleCheckboxes,
 									_articleNumberColumn,
 									_titleColumn
 								}; 
@@ -53,12 +56,18 @@ namespace Elsevier.Web.VWB.Report.Columns
 
 		public readonly List<IVwbColumn> Columns;
 		private static readonly ColumnFactory _columnFactory = new ColumnFactory();
+	    private static ArticleCheckboxes _articleCheckboxes;
 		private static ArticleNumberColumn _articleNumberColumn;
 		private static TitleColumn _titleColumn;
 
-		public List<IVwbColumn> ImmutableColumns; 
+		public List<IVwbColumn> ImmutableColumns;
 
-		public static IVwbColumn GetArticleNumberColumn()
+        public static IVwbColumn GetArticleCheckboxes()
+        {
+            return _articleCheckboxes;
+        }
+
+        public static IVwbColumn GetArticleNumberColumn()
 		{
 			return _articleNumberColumn;
 		}
@@ -80,7 +89,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 		/// <returns>Null if no column with specified key exists; else the column</returns>
 		public IVwbColumn GetColumn(string key)
 		{
-			return Columns.Where(c => c.Key().Equals(key)).FirstOrDefault();
+			return Columns.FirstOrDefault(c => c.Key().Equals(key));
 		}
 
 		public List<IVwbColumn> GetColumns(IEnumerable<string> keys)
@@ -101,11 +110,12 @@ namespace Elsevier.Web.VWB.Report.Columns
 		/// <returns></returns>
 		public IEnumerable<IVwbColumn> GetColumnsNot(IEnumerable<string> keys)
 		{
-			if(keys == null || keys.Count() == 0)
+		    var keyArr = keys as string[] ?? keys.ToArray();
+		    if(keys == null || !keyArr.Any())
 			{
 				return Columns;
 			}
-			return Columns.Where(c => !keys.Contains(c.Key()));
+			return Columns.Where(c => !keyArr.Contains(c.Key()));
 		}
 	}
 }

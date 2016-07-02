@@ -209,6 +209,7 @@ namespace Informa.Tests.Library.Site_Tests
             var fakeArticle = Substitute.For<IArticle>();
             fakeArticle.Featured_Image_16_9.Returns(Substitute.For<Image>().Alter(x => x.Src = "/bunnies"));
             fakeArticle.Summary = "Summary Town";
+            fakeArticle.Title = "The Fast and the Fluffy";
             _dependencies.SitecoreContext.GetCurrentItem<IGlassBase>(inferType:true).Returns(fakeArticle);
 
             var uri = new Uri("http://www.moosemonthly.com/");
@@ -219,6 +220,8 @@ namespace Informa.Tests.Library.Site_Tests
 
             // ASSERT
             Assert.Contains(new KeyValuePair<string, string>("og:type", "article"), props);
+            Assert.Contains(new KeyValuePair<string, string>("og:title", "The Fast and the Fluffy"), props);
+            Assert.Contains(new KeyValuePair<string, string>("twitter:title", "The Fast and the Fluffy"), props);
             Assert.Contains(new KeyValuePair<string, string>("og:image", "www.moosemonthly.com/bunnies"), props);
             Assert.Contains(new KeyValuePair<string, string>("twitter:image", "www.moosemonthly.com/bunnies"), props);
             Assert.Contains(new KeyValuePair<string, string>("og:description", "Summary Town"), props);
@@ -262,6 +265,7 @@ namespace Informa.Tests.Library.Site_Tests
             _dependencies.SitecoreContext.GetCurrentItem<IGlassBase>(inferType:true).Returns(fakeArticle);
 
             var fakeRoot = Substitute.For<ISite_Root>();
+            fakeRoot.Site_Logo.Returns(Substitute.For<Image>().Alter(i => i.Src = "/Pantlers"));    //pants, for your antlers!
             _dependencies.SiteRootContext.Item.Returns(fakeRoot);
 
             var uri = new Uri("http://www.moosemonthly.com/");

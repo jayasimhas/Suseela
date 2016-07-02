@@ -187,8 +187,7 @@ web/Website/App_Data/*.ldf
 web/Website/App_Data/*.mdf
 web/Databases
 web/Data/license.xml
-web/Website/bower_components
-web/Website/lib/bower_components
+web/Website/**/bower_components
 web/Website/data/logs
 web/Website/data/indexes
 .vscode

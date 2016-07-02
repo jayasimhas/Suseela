@@ -32,7 +32,7 @@ namespace Informa.Library.Salesforce.User.Search
 		        Service.Execute(
 		            s =>
 		                s.createSavedSearchItem2(entity.Username, entity.SearchString, entity.Name, entity.HasAlert,
-		                    entity.UnsubscribeToken));
+		                    entity.UnsubscribeToken, entity.Publication));
 
 			return CreateResponse(response);
 		}

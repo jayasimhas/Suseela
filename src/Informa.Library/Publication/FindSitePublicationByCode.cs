@@ -17,7 +17,7 @@ namespace Informa.Library.Publication
 
 		public ISitePublication Find(string publicationCode)
 		{
-			return PublicationsContext.Publications.FirstOrDefault(p => string.Equals(p.Code, publicationCode, StringComparison.InvariantCultureIgnoreCase));
+			return PublicationsContext.Publications.FirstOrDefault(p => string.Equals(p.Name, publicationCode, StringComparison.InvariantCultureIgnoreCase));
 		}
 	}
 }

@@ -1,7 +1,7 @@
-/* global analytics_data */
+/* global angular, analytics_data */
 import { analyticsEvent } from '../controllers/analytics-controller';
 
-﻿(function () {
+(function () {
     'use strict';
 
     var informaSearchApp = angular.module('informaSearchApp', [
@@ -43,6 +43,30 @@ import { analyticsEvent } from '../controllers/analytics-controller';
 
             }
         };
+    });
+
+	informaSearchApp.factory('facetAvailabilityService', function ($rootScope) {
+
+		var facetsState = false;
+
+        return {
+			facetsAreEnabled: function() {
+				return facetsState;
+			},
+            enableFacets: function () {
+				facetsState = false;
+				$rootScope.facetAvailability = facetsState;
+			},
+			disableFacets: function () {
+				facetsState = true;
+				$rootScope.facetAvailability = facetsState;
+            },
+			toggleFacets: function () {
+				facetsState = !facetsState;
+				$rootScope.facetAvailability = facetsState;
+            }
+        };
+
     });
 
 })();

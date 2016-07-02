@@ -16,10 +16,17 @@ key: path
 content-length: 41
 
 /Views/Shared/PopOuts/EmailArticle.cshtml
+----field----
+field: {308E88F5-CD6E-4F8F-BAFE-95A47DEDEFDC}
+name: Editable
+key: editable
+content-length: 0
+
+
 ----version----
 language: en
 version: 1
-revision: 0e9ffb6e-2c16-4816-b79c-2a72a2a349a3
+revision: c2ed944c-3592-433a-8bde-9ffec1ff587f
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-0e9ffb6e-2c16-4816-b79c-2a72a2a349a3
+c2ed944c-3592-433a-8bde-9ffec1ff587f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160602T145645Z
+20160614T184450Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

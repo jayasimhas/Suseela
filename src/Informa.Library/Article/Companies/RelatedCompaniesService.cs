@@ -27,7 +27,7 @@ namespace Informa.Library.Article.Companies
 		{
 			var companyIds = article?.Referenced_Companies?.Split(',') ?? new string[0];
 
-			return companyIds.Where(id => !string.IsNullOrEmpty(id)).Select(id => _reader.GetCompanyByRecordNumber(id)).Select(c => new Link
+			return companyIds.Where(id => !string.IsNullOrEmpty(id)).Select(id => _reader.GetCompanyByRecordNumber(id)).Where(c => c != null).Select(c => new Link
 			{
 				Text = c.Title,
 				Url = string.Format(_oldCompaniesUrl, c.RecordNumber)

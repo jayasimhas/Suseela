@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
 
@@ -75,5 +76,12 @@ namespace Informa.Library.Utilities.Extensions
 	    {
 	        return !string.IsNullOrEmpty(source);
 	    }
+
+		public static string ExtractGuidString(this string source)
+		{
+			var startIndex = source.IndexOf("{", StringComparison.Ordinal);
+			var endIndex = source.IndexOf('}');
+			return source.Substring(startIndex, endIndex - startIndex + 1);
+		}
     }
 }

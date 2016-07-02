@@ -321,6 +321,7 @@
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
+    <Compile Include="Caching\CrossSiteCacheProvider.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\CompanyRegisterUserError.cs" />
@@ -339,8 +340,9 @@
     <Compile Include="Company\UserCompanyContext.cs" />
     <Compile Include="Company\Web\WebClearUserCompanyContextLogoutAction.cs" />
     <Compile Include="ComponentModel\DataAnnotations\RequiredIfAttribute.cs" />
+    <Compile Include="CustomSitecore\Events\AddFromBranchPreset.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
-    <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaSiteResolver.cs" />
+    <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
@@ -362,6 +364,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Navigation\IReturnUrlContext.cs" />
     <Compile Include="Navigation\ReturnUrlContext.cs" />
+    <Compile Include="Page\IPageItemContext.cs" />
+    <Compile Include="Page\PageItemContext.cs" />
     <Compile Include="Publication\ArticleMappingContext.cs" />
     <Compile Include="Publication\ArticleMappingRepository.cs" />
     <Compile Include="Publication\Entity\ArticleMapping.cs" />
@@ -409,6 +413,8 @@
     <Compile Include="Rss\Utils\RssConstants.cs" />
     <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
     <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\MediaTypeIcon\MediaTypeIconData.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\MediaTypeIcon\MediaTypeIconDataConverter.cs" />
     <Compile Include="Search\FacetBuilders\CompaniesFacetBuilder.cs" />
     <Compile Include="Search\Formatting\IQueryFormatter.cs" />
     <Compile Include="Search\Formatting\SolrQueryFormatter.cs" />
@@ -889,9 +895,9 @@
     <Compile Include="ContentCuration\Search\Filter\IManuallyCuratedContentFilter.cs" />
     <Compile Include="ContentCuration\Search\Extensions\QueryableExtensions.cs" />
     <Compile Include="Search\ComputedFields\Base\IsSearchableField.cs" />
-    <Compile Include="Search\ComputedFields\SearchResults\Converter\HtmlLink.cs" />
-    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomyTypeConverter.cs" />
-    <Compile Include="Search\ComputedFields\SearchResults\Converter\HtmlLinkList.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomy\HtmlLink.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomy\HtmlLinkListTypeConverter.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomy\HtmlLinkList.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchDisplayTaxonomyField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultBylineField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultDateField.cs" />
@@ -1100,7 +1106,12 @@
     <Compile Include="Utilities\WebUtils\UrlUtils.cs" />
     <Compile Include="ViewModels\Account\ISignInViewModel.cs" />
     <Compile Include="ViewModels\Account\SignInViewModel.cs" />
+    <Compile Include="VirtualWhiteboard\Models\IssueModel.cs" />
+    <Compile Include="VirtualWhiteboard\Models\VWBResponseModel.cs" />
+    <Compile Include="VirtualWhiteboard\IssuesService.cs" />
+    <Compile Include="Wrappers\BaseSitecoreWrapper.cs" />
     <Compile Include="Wrappers\HttpContextProvider.cs" />
+    <Compile Include="Wrappers\SitecoreClonesWrapper.cs" />
     <Compile Include="Wrappers\SitecoreSecurityWrapper.cs" />
     <Compile Include="Wrappers\SitecoreServiceAliases.cs" />
     <Compile Include="Wrappers\SitecoreUrlWrapper.cs" />

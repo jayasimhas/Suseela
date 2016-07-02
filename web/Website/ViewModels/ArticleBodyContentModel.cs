@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Globalization;
+using Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon;
 using Informa.Library.Services.Article;
 using Informa.Library.User.Entitlement;
-using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Library.Utilities.Extensions;
-using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels
 {
@@ -65,8 +63,8 @@ namespace Informa.Web.ViewModels
 		}
 		public string Category => GlassModel.Article_Category;
 		public string Body => _lazyBody.Value;
-		public string Content_Type => GlassModel.Content_Type?.Item_Name;
-		public string Media_Type => ArticleService.GetMediaTypeName(GlassModel);
+		public string ContentType => GlassModel.Content_Type?.Item_Name;
+		public MediaTypeIconData MediaTypeIconData => ArticleService.GetMediaTypeIconData(GlassModel);
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
 	}

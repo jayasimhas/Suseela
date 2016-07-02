@@ -62,7 +62,9 @@ function bookmarkController() {
 
     this.flipIcon = function(bookmark) {
 
-        $(bookmark.elm).find('.article-bookmark').removeClass('is-visible');
+		if(!bookmark.elm.hasClass('js-angular-bookmark')) {
+			$(bookmark.elm).find('.article-bookmark').removeClass('is-visible');
+		}
 
         if(bookmark.isBookmarking) {
             if(!bookmark.elm.hasClass('js-angular-bookmark')) {

@@ -166,10 +166,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="C:\Users\kevinm\Downloads\IN_WebServices.xml">
+    <WebReferenceUrl Include="D:\Projects\Informa\IN_WebServices.xml">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\EBIWebServices\</RelPath>
-      <UpdateFromURL>C:\Users\kevinm\Downloads\IN_WebServices.xml</UpdateFromURL>
+      <UpdateFromURL>D:\Projects\Informa\IN_WebServices.xml</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -252,6 +252,12 @@
     <None Include="Web References\EBIWebServices\EBI_QuerySavedDocumentResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\EBIWebServices\EBI_QuerySavedDocumentResponse2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QuerySavedSearchItems2Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\EBIWebServices\EBI_QuerySavedSearchItemsResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -259,6 +265,9 @@
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\EBIWebServices\EBI_WebServiceResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\IN_QueryEntitlementsResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\EBIWebServices\IN_WebServices.wsdl" />
