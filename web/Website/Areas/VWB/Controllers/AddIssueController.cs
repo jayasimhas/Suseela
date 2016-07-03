@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Web.Mvc;
+using Informa.Library.Utilities.Extensions;
 using Informa.Library.VirtualWhiteboard;
+using Informa.Library.VirtualWhiteboard.Models;
 using Informa.Library.Wrappers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard;
 using Informa.Web.ViewModels.VWB;
@@ -82,10 +84,17 @@ namespace Informa.Web.Areas.VWB.Controllers
 
 				if (!string.IsNullOrWhiteSpace(order))
 				{
-					_dependencies.IssuesService.ReorderArticles(issueId, order);
+					_dependencies.IssuesService.ReorderArticles(order);
 				}
 
-				_dependencies.IssuesService.UpdateIssueInfo(issueId, title, date, notes);
+			    var model = new IssueModel
+			    {
+			        Title = title,
+                    PublishedDate = date.ToDate(),
+			        Notes = notes
+			    };
+
+				_dependencies.IssuesService.UpdateIssueItem(model, issueId);
 				return Redirect("/vwb");
 			}
 			return Redirect(Request?.Url?.ToString());
