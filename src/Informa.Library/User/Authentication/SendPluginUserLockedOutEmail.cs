@@ -11,7 +11,7 @@ using Informa.Library.Wrappers;
 namespace Informa.Library.User.Authentication
 {
     [AutowireService]
-    public class SendPluginUserLockedOutEmail : ISendPluginUserLockedOutEmail
+    public class SendPluginUserLockedOutEmail : ISendUserLockedOutEmail
     {
         private readonly IDependencies _dependencies;
 
@@ -43,15 +43,9 @@ namespace Informa.Library.User.Authentication
 
                 //replace body tokens with user values
                 string messageBody = htmlBody;
-                try
-                {
-                    messageBody = messageBody.Replace("{logo}", UrlUtils.GetMediaURL(_siteRootContext.Item.Email_Logo.MediaId.ToString()));
-                }
-                catch
-                {
-                    messageBody = messageBody.Replace("{logo}", string.Empty);
-                }
+                messageBody = messageBody.Replace("{logo}", _dependencies.SitecoreUrlWrapper.GetMediaUrl(_dependencies.SiteRootContext.Item.Email_Logo.MediaId));
                 messageBody = messageBody.Replace("{username}", user.UserName);
+                messageBody = messageBody.Replace("{dateLockedOut}", user.LastLockoutDate.ToString(CultureInfo.InvariantCulture));
                 messageBody = messageBody.Replace("{dateLockedOut}", user.LastLockoutDate.ToString(CultureInfo.InvariantCulture));
 
                 //Prepare Email variable
