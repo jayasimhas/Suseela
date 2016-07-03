@@ -172,7 +172,6 @@ namespace Informa.Library.VirtualWhiteboard
 				return;
 			}
 			ids.Split('|').Select(i => new Guid(i)).ForEach(i =>
-			{
 				_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
 				{			
 					_dependencies.SitecoreServiceMaster.Delete(_dependencies.SitecoreServiceMaster.GetItem<IArticle>(i));
@@ -230,6 +229,12 @@ namespace Informa.Library.VirtualWhiteboard
 		}
 
 		public HashSet<string> GetIssueArticlesSet(Guid issueId)
+		{
+			var cacheKey = $"Issue-{issueId}";
+			return _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildIssueDictionary(issueId));
+		}
+
+		private HashSet<string> BuildIssueDictionary(Guid issueId)
 		{
 			var dict = new HashSet<string>();
 			_dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId)

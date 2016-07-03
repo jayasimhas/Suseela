@@ -270,6 +270,20 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 			_dependencies.SitecoreServiceMaster.Received(1).Delete(Arg.Is<IArticle>(a => a._Id == new Guid("4137ED60-1ABE-42CB-B305-119C05B696D3")));
 		}
 
+	    [Test]
+	    public void DeleteArticles_EmptyString_Returned()
+	    {
+			// ARRANGE
+			_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(Arg.Invoke());
+			var idString = "";
+
+			// ACT
+			_issuesService.DeleteArticles(idString);
+
+			// ASSERT
+			_dependencies.SitecoreServiceMaster.DidNotReceive().Delete(Arg.Any<IArticle>());
+		}
+
 	    
 
 	    [Test]
