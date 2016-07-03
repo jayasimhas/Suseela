@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: 64754d9f-b9c8-4f8f-a5ef-f9f0f6c8d4cc
+revision: febd6141-a29c-4c60-ac74-1edfb888d2cf
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -29,6 +29,20 @@ content-length: 3
 
 Cox
 ----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{A55BB7E5-4C05-4254-AC0B-AE63821408BF}" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 15
+
+GoldSheetBowman
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -41,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-64754d9f-b9c8-4f8f-a5ef-f9f0f6c8d4cc
+febd6141-a29c-4c60-ac74-1edfb888d2cf
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190930Z
+20160424T001053Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -55,32 +55,35 @@
       <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\net45\Glass.Mapper.dll</HintPath>
+    <Reference Include="CSharpSDK">
+      <HintPath>..\..\lib\ExactTarget\CSharpSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Glass.Mapper, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\net45\Glass.Mapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Glass.Mapper.Sc, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\81\Glass.Mapper.Sc.dll</HintPath>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\81\Glass.Mapper.Sc.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Autofac, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Jabberwocky.Autofac.1.0.1.0\lib\net45\Jabberwocky.Autofac.dll</HintPath>
+    <Reference Include="Jabberwocky.Autofac, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Autofac.1.1.0.0\lib\net45\Jabberwocky.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Core, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Jabberwocky.Core.1.0.1.0\lib\net45\Jabberwocky.Core.dll</HintPath>
+    <Reference Include="Jabberwocky.Core, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Core.1.0.2.0\lib\net45\Jabberwocky.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Jabberwocky.Glass, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Jabberwocky.Glass.1.0.1.0\lib\net45\Jabberwocky.Glass.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Glass.Autofac, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.1.0.1.0\lib\net45\Jabberwocky.Glass.Autofac.dll</HintPath>
+    <Reference Include="Jabberwocky.Glass.Autofac, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.1.1.0.0\lib\net45\Jabberwocky.Glass.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NSubstitute, Version=1.9.2.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
@@ -115,15 +118,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataImporter\InformaPostProcess_Tests.cs" />
+    <Compile Include="Library\Advertisement_Tests\AdUrlBuilder_Tests.cs" />
+    <Compile Include="Library\Mail_Tests\ExactTarget_Tests\CampaignQueryBuilder_Tests.cs" />
+    <Compile Include="Library\Mail_Tests\ExactTarget_Tests\ExactTargetClient_Tests.cs" />
     <Compile Include="Library\Services\NlmExport\NlmExportServiceTests.cs" />
     <Compile Include="Library\Services\NlmExport\Serialization\NlmSerializerTests.cs" />
+    <Compile Include="Library\OptIn_Tests\OptInManager_Tests.cs" />
+    <Compile Include="Library\Utilities_Tests\StringUtils_Tests\BylineMaker_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="app.config.template">
       <SubType>Designer</SubType>
     </None>
     <None Include="App_Config\Include\Jabberwocky.Glass.Autofac.config" />
@@ -138,6 +144,10 @@
     <ProjectReference Include="..\..\src\Informa.Models\Informa.Models.csproj">
       <Project>{79466a53-db00-47d6-ba80-b02bd8a87337}</Project>
       <Name>Informa.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Sitecore.SharedSource.DataImporter\Sitecore.SharedSource.DataImporter.csproj">
+      <Project>{0e4f3486-8733-4e18-a5d0-51f2b92b2974}</Project>
+      <Name>Sitecore.SharedSource.DataImporter</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

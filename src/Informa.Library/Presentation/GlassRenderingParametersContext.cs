@@ -4,7 +4,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.Presentation
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class GlassRenderingParametersContext : IRenderingParametersContext
 	{
 		protected readonly ISitecoreContext SitecoreContext;

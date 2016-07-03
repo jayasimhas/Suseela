@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Informa.Library.Utilities.References;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Sitecore.Data.Items;
 
 namespace Informa.Library.Utilities
@@ -10,7 +10,7 @@ namespace Informa.Library.Utilities
 
 		public static Item GetAncestorItemBasedOnTemplateID(Item item)
 		{
-			IEnumerable<Item> pages = item.Axes.GetAncestors().Where(a => IsID(a.Template, Constants.Site_Root_Template_ID));
+			IEnumerable<Item> pages = item.Axes.GetAncestors().Where(a => IsID(a.Template, ISite_RootConstants.TemplateId.ToString()));
 			return pages.FirstOrDefault();
 		}
 

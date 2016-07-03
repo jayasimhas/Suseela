@@ -1,11 +1,37 @@
-﻿var EmailRssController = function ($scope, $location) {
+/* global angular */
+
+var EmailRssController = function ($scope, $location) {
     "use strict";
 
-    $scope.currentLocation = $location.url();
-    $scope.$watch(function () { return $location.search() }, function (params) {
-        $scope.currentLocation = $location.url();
+
+    $scope.$watch(function () {
+        return $location.search();
+    }, function (params) {
+        var params = $location.search();
+       
+        var nUrl = "";
+        for (var idxkey in params) {
+            if (idxkey == "sortBy") {
+                nUrl = nUrl + "&" + "sortBy=date";
+            }
+
+            if (idxkey == "sortOrder") {
+                nUrl = nUrl + "&" + "sortOrder=desc";
+            }
+
+            if (idxkey != "sortBy" && idxkey != "sortOrder") {
+                nUrl = nUrl + "&" + idxkey + "=" + params[idxkey];
+            }
+        }
+				// strip leading &
+        if (nUrl.startsWith('&')) {
+	        nUrl = nUrl.substr(1);
+        }
+        $scope.currentLocation = "?" + nUrl;
     });
+
+    $scope.testvar = 'hello';
 
 };
 var informaSearchApp = angular.module('informaSearchApp');
-informaSearchApp.controller("EmailRssController", ['$scope', '$location' , EmailRssController]);
+informaSearchApp.controller("EmailRssController", ['$scope', '$location', EmailRssController]);

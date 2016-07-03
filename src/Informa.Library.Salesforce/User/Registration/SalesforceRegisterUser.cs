@@ -3,6 +3,7 @@ using Informa.Library.Salesforce.Company;
 using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.User.Registration;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Informa.Library.Salesforce.User.Registration
 {
@@ -19,16 +20,21 @@ namespace Informa.Library.Salesforce.User.Registration
 			Service = service;
 		}
 
-		public bool Register(INewUser newUser)
+		public IRegisterUserResult Register(INewUser newUser)
 		{
-			return Register(newUser, null);
+			return RegisterUser(newUser, null);
 		}
 
-		public bool Register(INewUser newUser, ICompany company)
+		public IRegisterUserResult Register(INewUser newUser, ICompany company)
+		{
+			return RegisterUser(newUser, company);
+		}
+
+		public SalesforceRegisterUserResult RegisterUser(INewUser newUser, ICompany company)
 		{
 			if (newUser == null)
 			{
-				return false;
+				return CreateResult(false, Enumerable.Empty<string>());
 			}
 
 			var salesforceCompanies = new List<EBI_AccountData>();
@@ -61,7 +67,16 @@ namespace Informa.Library.Salesforce.User.Registration
 
 			var response = Service.Execute(s => s.createProfile(createProfileRequest));
 
-			return response.IsSuccess();
+			return CreateResult(response.IsSuccess(), Enumerable.Empty<string>());
+		}
+
+		public SalesforceRegisterUserResult CreateResult(bool success, IEnumerable<string> errors)
+		{
+			return new SalesforceRegisterUserResult
+			{
+				Errors = errors,
+				Success = success
+			};
 		}
 	}
 }

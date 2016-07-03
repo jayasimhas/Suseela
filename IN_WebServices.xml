@@ -1,0 +1,2557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Web Services API : EBI_WebServices
+-->
+<definitions targetNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soap.sforce.com/schemas/class/EBI_WebServices" xmlns:EBI_CreateAccountResponse="http://soap.sforce.com/schemas/class/EBIWebServiceSchema">
+ <types>
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema">
+   <xsd:complexType name="EBI_AccountData">
+    <xsd:sequence>
+     <xsd:element name="accountId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="accountNumber" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="accountType" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="company" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_Address">
+    <xsd:sequence>
+     <xsd:element name="addressLine1" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="addressLine2" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="city" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="company" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="country" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="postalCode" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="stateProvince" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_Cart">
+    <xsd:sequence>
+     <xsd:element name="cartItems" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_CartItem" nillable="true"/>
+     <xsd:element name="discountCode" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="elsca1" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="elsca2" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="elsca3" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="errorMessage" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="httpReferer" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="id" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="ipAddress" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="lastTouchedDate" minOccurs="0" type="xsd:dateTime" nillable="true"/>
+     <xsd:element name="name" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="status" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="userName" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_CartItem">
+    <xsd:sequence>
+     <xsd:element name="articleId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="cartId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="discountCode" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="discountPrice" minOccurs="0" type="xsd:double" nillable="true"/>
+     <xsd:element name="id" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="name" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="pricePerUnit" minOccurs="0" type="xsd:double" nillable="true"/>
+     <xsd:element name="quantity" minOccurs="0" type="xsd:int" nillable="true"/>
+     <xsd:element name="status" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="totalPrice" minOccurs="0" type="xsd:double" nillable="true"/>
+     <xsd:element name="zuoraId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="zuoraRatePlan" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_CartItemResponse">
+    <xsd:sequence>
+     <xsd:element name="cartItemId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_CartResponse">
+    <xsd:sequence>
+     <xsd:element name="cartId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_CompanyJob">
+    <xsd:sequence>
+     <xsd:element name="company" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="function" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="industry" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="title" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_CreateAccountResponse">
+    <xsd:sequence>
+     <xsd:element name="accounts" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_AccountData" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_CreateProfileRequest">
+    <xsd:sequence>
+     <xsd:element name="accounts" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_AccountData" nillable="true"/>
+     <xsd:element name="doNotSendInformationAndOffers" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="freeELetterOptins" minOccurs="0" maxOccurs="unbounded" type="xsd:string" nillable="true"/>
+     <xsd:element name="informationAndOffersOptins" minOccurs="0" maxOccurs="unbounded" type="xsd:string" nillable="true"/>
+     <xsd:element name="password" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="profile" minOccurs="0" type="EBI_CreateAccountResponse:EBI_Profile" nillable="true"/>
+     <xsd:element name="tosAccepted" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="userName" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_CreateProfileResponse">
+    <xsd:sequence>
+     <xsd:element name="contactId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_EmailNewsLetterOptin">
+    <xsd:sequence>
+     <xsd:element name="frequency" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="IsReceivingEmailAlert" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="IsReceivingEmailNewsletter" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="optinName" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_Entitlement">
+    <xsd:sequence>
+     <xsd:element name="ArchiveCode" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="documentId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="ProductCode" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="productGUID" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="ProductType" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_Error">
+    <xsd:sequence>
+     <xsd:element name="message" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="statusCode" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_IPRange">
+    <xsd:sequence>
+     <xsd:element name="account" minOccurs="0" type="EBI_CreateAccountResponse:EBI_AccountData" nillable="true"/>
+     <xsd:element name="beginRange" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="endRange" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="siteId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="siteName" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="siteType" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_LoginResponse">
+    <xsd:sequence>
+     <xsd:element name="accountInfo" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_AccountData" nillable="true"/>
+     <xsd:element name="contactId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="isEmailVerfied" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="isProfileComplete" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="isTempPassword" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_Name">
+    <xsd:sequence>
+     <xsd:element name="firstName" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="lastName" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="middleInitial" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="nameSuffix" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="salutation" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_Order">
+    <xsd:sequence>
+     <xsd:element name="account" minOccurs="0" type="EBI_CreateAccountResponse:EBI_AccountData" nillable="true"/>
+     <xsd:element name="accountNumber" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="contactId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="invoiceId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="orderDate" minOccurs="0" type="xsd:dateTime" nillable="true"/>
+     <xsd:element name="orderItems" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_OrderItem" nillable="true"/>
+     <xsd:element name="paymentTransactionNumber" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="subscriptionId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="username" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_OrderItem">
+    <xsd:sequence>
+     <xsd:element name="documentId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="entitlementAccessType" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="entitlementArchiveCode" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="entitlementLicenseType" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="entitlementProductCode" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="entitlementProductType" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="entitlementType" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="productGUID" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="productRatePlanChargeId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="productRatePlanId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="quantity" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_PhoneFax">
+    <xsd:sequence>
+     <xsd:element name="countryCode" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="fax" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="phoneExtension" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="phoneNumber" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="phoneType" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_Profile">
+    <xsd:sequence>
+     <xsd:element name="billingAddress" minOccurs="0" type="EBI_CreateAccountResponse:EBI_Address" nillable="true"/>
+     <xsd:element name="billingName" minOccurs="0" type="EBI_CreateAccountResponse:EBI_Name" nillable="true"/>
+     <xsd:element name="billingPhoneFax" minOccurs="0" type="EBI_CreateAccountResponse:EBI_PhoneFax" nillable="true"/>
+     <xsd:element name="companyJob" minOccurs="0" type="EBI_CreateAccountResponse:EBI_CompanyJob" nillable="true"/>
+     <xsd:element name="emailVerified" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="name" minOccurs="0" type="EBI_CreateAccountResponse:EBI_Name" nillable="true"/>
+     <xsd:element name="phoneFax" minOccurs="0" type="EBI_CreateAccountResponse:EBI_PhoneFax" nillable="true"/>
+     <xsd:element name="resendVerificationCode" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="SendVerificationEMail" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="shippingAddress" minOccurs="0" type="EBI_CreateAccountResponse:EBI_Address" nillable="true"/>
+     <xsd:element name="shippingName" minOccurs="0" type="EBI_CreateAccountResponse:EBI_Name" nillable="true"/>
+     <xsd:element name="shippingPhoneFax" minOccurs="0" type="EBI_CreateAccountResponse:EBI_PhoneFax" nillable="true"/>
+     <xsd:element name="tosAccepted" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryAccountByIPAddressResponse">
+    <xsd:sequence>
+     <xsd:element name="accounts" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_AccountData" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="siteName" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryAccountByMasterIdResponse">
+    <xsd:sequence>
+     <xsd:element name="account" minOccurs="0" type="EBI_CreateAccountResponse:EBI_AccountData" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="isMasterIdExpired" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="siteName" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryAccountBySubscriberIdResponse">
+    <xsd:sequence>
+     <xsd:element name="accounts" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_AccountData" nillable="true"/>
+     <xsd:element name="contactId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryAccountByUsernameResponse">
+    <xsd:sequence>
+     <xsd:element name="accounts" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_AccountData" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="verificationCode" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryAccountByVerificationCodeResponse">
+    <xsd:sequence>
+     <xsd:element name="accounts" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_AccountData" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryAllActiveIPRangesResponse">
+    <xsd:sequence>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="ipRanges" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_IPRange" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryCartResponse">
+    <xsd:sequence>
+     <xsd:element name="carts" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Cart" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryEmailNewsletterOptInsResponse">
+    <xsd:sequence>
+     <xsd:element name="emailNewsletterOptins" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_EmailNewsLetterOptin" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryEntitlementsResponse">
+    <xsd:sequence>
+     <xsd:element name="entitlements" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Entitlement" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryFreeELetterOptInsResponse">
+    <xsd:sequence>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="freeELetterOptins" minOccurs="0" maxOccurs="unbounded" type="xsd:string" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryInformationAndOfferOptInsResponse">
+    <xsd:sequence>
+     <xsd:element name="doNotSendInformationAndOffers" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="informationAndOfferOptins" minOccurs="0" maxOccurs="unbounded" type="xsd:string" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryOptInsResponse">
+    <xsd:sequence>
+     <xsd:element name="doNotSendInformationAndOffers" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="emailNewsletterOptins" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_EmailNewsLetterOptin" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="freeELetterOptins" minOccurs="0" maxOccurs="unbounded" type="xsd:string" nillable="true"/>
+     <xsd:element name="informationAndOfferOptin" minOccurs="0" maxOccurs="unbounded" type="xsd:string" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QueryProfileContactInformationResponse">
+    <xsd:sequence>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="profile" minOccurs="0" type="EBI_CreateAccountResponse:EBI_Profile" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QuerySavedDocumentResponse">
+    <xsd:sequence>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="savedDocuments" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_SavedDocument" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QuerySavedDocumentResponse2">
+    <xsd:sequence>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="savedDocuments" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_SavedDocument2" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QuerySavedSearchItems2Response">
+    <xsd:sequence>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="savedSearches" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_SavedSearch2" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QuerySavedSearchItemsResponse">
+    <xsd:sequence>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="savedSearches" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_SavedSearch" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_QuerySubscriptionsAndPurchasesResponse">
+    <xsd:sequence>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="subscriptionsAndPurchases" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_SubscriptionAndPurchase" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_SavedDocument">
+    <xsd:sequence>
+     <xsd:element name="description" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="documentId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="documentType" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="name" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="productGUID" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="saveDate" minOccurs="0" type="xsd:date" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_SavedDocument2">
+    <xsd:sequence>
+     <xsd:element name="description" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="documentId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="documentType" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="name" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="productGUID" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="saveDate" minOccurs="0" type="xsd:dateTime" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_SavedSearch">
+    <xsd:sequence>
+     <xsd:element name="IsReceivingEmailAlert" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="name" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="SaveDate" minOccurs="0" type="xsd:date" nillable="true"/>
+     <xsd:element name="searchString" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_SavedSearch2">
+    <xsd:sequence>
+     <xsd:element name="IsReceivingEmailAlert" minOccurs="0" type="xsd:boolean" nillable="true"/>
+     <xsd:element name="name" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="Publication" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="SaveDate" minOccurs="0" type="xsd:date" nillable="true"/>
+     <xsd:element name="searchString" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="UnsubscribeToken" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_SubscriptionAndPurchase">
+    <xsd:sequence>
+     <xsd:element name="ArchiveCode" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="description" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="documentId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="expirationDate" minOccurs="0" type="xsd:dateTime" nillable="true"/>
+     <xsd:element name="name" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="productCode" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="productGUID" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="productratePlanID" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="productType" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="purchaseDate" minOccurs="0" type="xsd:dateTime" nillable="true"/>
+     <xsd:element name="subscriptionType" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_UpdateProfileRequest">
+    <xsd:sequence>
+     <xsd:element name="accounts" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_AccountData" nillable="true"/>
+     <xsd:element name="profile" minOccurs="0" type="EBI_CreateAccountResponse:EBI_Profile" nillable="true"/>
+     <xsd:element name="userName" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EBI_WebServiceResponse">
+    <xsd:sequence>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="IN_Entitlement">
+    <xsd:sequence>
+     <xsd:element name="ArchiveCode" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="documentId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="opportunityId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="opportunityLineItemId" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="ProductCode" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="productGUID" minOccurs="0" type="xsd:string" nillable="true"/>
+     <xsd:element name="ProductType" minOccurs="0" type="xsd:string" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="IN_QueryEntitlementsResponse">
+    <xsd:sequence>
+     <xsd:element name="entitlements" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:IN_Entitlement" nillable="true"/>
+     <xsd:element name="errors" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_Error" nillable="true"/>
+     <xsd:element name="success" minOccurs="0" type="xsd:boolean" nillable="true"/>
+    </xsd:sequence>
+   </xsd:complexType>
+  </xsd:schema>
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices">
+   <xsd:import namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema"/>
+   <xsd:element name="AllowFieldTruncationHeader">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="allowFieldTruncation" type="xsd:boolean"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="CallOptions">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="client" type="xsd:string"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="DebuggingHeader">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="categories" minOccurs="0" maxOccurs="unbounded" type="tns:LogInfo"/>
+      <xsd:element name="debugLevel" type="tns:LogType"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:complexType name="LogInfo">
+    <xsd:sequence>
+     <xsd:element name="category" type="tns:LogCategory"/>
+     <xsd:element name="level" type="tns:LogCategoryLevel"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:simpleType name="LogCategory">
+    <xsd:restriction base="xsd:string">
+     <xsd:enumeration value="Db"/>
+     <xsd:enumeration value="Workflow"/>
+     <xsd:enumeration value="Validation"/>
+     <xsd:enumeration value="Callout"/>
+     <xsd:enumeration value="Apex_code"/>
+     <xsd:enumeration value="Apex_profiling"/>
+     <xsd:enumeration value="Visualforce"/>
+     <xsd:enumeration value="System"/>
+     <xsd:enumeration value="All"/>
+    </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="LogCategoryLevel">
+    <xsd:restriction base="xsd:string">
+     <xsd:enumeration value="None"/>
+     <xsd:enumeration value="Internal"/>
+     <xsd:enumeration value="Finest"/>
+     <xsd:enumeration value="Finer"/>
+     <xsd:enumeration value="Fine"/>
+     <xsd:enumeration value="Debug"/>
+     <xsd:enumeration value="Info"/>
+     <xsd:enumeration value="Warn"/>
+     <xsd:enumeration value="Error"/>
+    </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="LogType">
+    <xsd:restriction base="xsd:string">
+     <xsd:enumeration value="None"/>
+     <xsd:enumeration value="Debugonly"/>
+     <xsd:enumeration value="Db"/>
+     <xsd:enumeration value="Profiling"/>
+     <xsd:enumeration value="Callout"/>
+     <xsd:enumeration value="Detail"/>
+    </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:element name="DebuggingInfo">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="debugLog" type="xsd:string"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="SessionHeader">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="sessionId" type="xsd:string"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:simpleType name="ID">
+    <xsd:restriction base="xsd:string">
+     <xsd:length value="18"/>
+     <xsd:pattern value="[a-zA-Z0-9]{18}"/>
+    </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:element name="createAccount">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="name" type="EBI_CreateAccountResponse:EBI_Name" nillable="true"/>
+      <xsd:element name="CompanyJob" type="EBI_CreateAccountResponse:EBI_CompanyJob" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createAccountResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_CreateAccountResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createCart">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="newCart" type="EBI_CreateAccountResponse:EBI_Cart" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createCartResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_CartResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createCartItems">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="newCartItems" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_CartItem" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createCartItemsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_CartItemResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createOrder">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="newOrder" type="EBI_CreateAccountResponse:EBI_Order" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createOrderResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createProfile">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="createProfileRequest" type="EBI_CreateAccountResponse:EBI_CreateProfileRequest" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createProfileResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_CreateProfileResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createSavedDocument">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="savedDocument" type="EBI_CreateAccountResponse:EBI_SavedDocument" nillable="true"/>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createSavedDocumentResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createSavedSearchItem">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="searchString" type="xsd:string" nillable="true"/>
+      <xsd:element name="name" type="xsd:string" nillable="true"/>
+      <xsd:element name="IsReceivingEmailAlert" type="xsd:boolean" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createSavedSearchItemResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createSavedSearchItem2">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="searchString" type="xsd:string" nillable="true"/>
+      <xsd:element name="name" type="xsd:string" nillable="true"/>
+      <xsd:element name="IsReceivingEmailAlert" type="xsd:boolean" nillable="true"/>
+      <xsd:element name="UnsubscribeToken" type="xsd:string" nillable="true"/>
+      <xsd:element name="Publication" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="createSavedSearchItem2Response">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="deleteSavedDocument">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="documentID" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="deleteSavedDocumentResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="deleteSavedSearch">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="name" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="deleteSavedSearchResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="INqueryEntitlements">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="ipAddress" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="INqueryEntitlementsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:IN_QueryEntitlementsResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="INquerySiteEntitlementsIP">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="ipAddress" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="INquerySiteEntitlementsIPResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:IN_QueryEntitlementsResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="INquerySubscriptionsAndPurchases">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="INquerySubscriptionsAndPurchasesResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QuerySubscriptionsAndPurchasesResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="isCouponCodeValid">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="couponCode" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="isCouponCodeValidResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="login">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="password" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="loginResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_LoginResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryAccountByIPAddress">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="ipAddress" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryAccountByIPAddressResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryAccountByIPAddressResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryAccountByMasterId">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="masterId" type="xsd:string" nillable="true"/>
+      <xsd:element name="masterPassword" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryAccountByMasterIdResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryAccountByMasterIdResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryAccountBySubscriberId">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="subscriberId" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryAccountBySubscriberIdResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryAccountBySubscriberIdResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryAccountByUsername">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryAccountByUsernameResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryAccountByUsernameResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryAccountByVerificationCode">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="verificationCode" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryAccountByVerificationCodeResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryAccountByVerificationCodeResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryAllActiveIPRanges">
+    <xsd:complexType>
+     <xsd:sequence/>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryAllActiveIPRangesResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryAllActiveIPRangesResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryCart">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryCartResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryCartResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryCartById">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="cartId" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryCartByIdResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryCartResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryEmailNewsletterOptins">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryEmailNewsletterOptinsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryEmailNewsletterOptInsResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryEntitlements">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="ipAddress" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryEntitlementsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryEntitlementsResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryFreeELetterOptins">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryFreeELetterOptinsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryFreeELetterOptInsResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryInformationAndOfferOptins">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryInformationAndOfferOptinsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryInformationAndOfferOptInsResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryOptIns">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryOptInsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryOptInsResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryProfileContactInformation">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="queryProfileContactInformationResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryProfileContactInformationResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="querySavedDocuments">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="querySavedDocumentsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QuerySavedDocumentResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="querySavedDocuments2">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="querySavedDocuments2Response">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QuerySavedDocumentResponse2" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="querySavedSearchItems">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="querySavedSearchItemsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QuerySavedSearchItemsResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="querySavedSearchItems2">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="querySavedSearchItems2Response">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QuerySavedSearchItems2Response" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="querySiteEntitlementsIP">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="ipAddress" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="querySiteEntitlementsIPResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QueryEntitlementsResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="querySubscriptionsAndPurchases">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="querySubscriptionsAndPurchasesResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_QuerySubscriptionsAndPurchasesResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="transferCart">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="cartId" type="xsd:string" nillable="true"/>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="transferCartResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateBillingAddressAndPhone">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="billingAddress" type="EBI_CreateAccountResponse:EBI_Address" nillable="true"/>
+      <xsd:element name="billingPhoneFax" type="EBI_CreateAccountResponse:EBI_PhoneFax" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateBillingAddressAndPhoneResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateBillingName">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="billingName" type="EBI_CreateAccountResponse:EBI_Name" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateBillingNameResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateCart">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="newCart" type="EBI_CreateAccountResponse:EBI_Cart" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateCartResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_CartResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateCartItems">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="newCartItems" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_CartItem" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateCartItemsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_CartItemResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateCompanyJob">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="companyJob" type="EBI_CreateAccountResponse:EBI_CompanyJob" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateCompanyJobResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateDoNotSendInformationAndOffers">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="doNotSendInformationAndOffers" type="xsd:boolean" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateDoNotSendInformationAndOffersResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateEmailNewsletterOptIns">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="emailNewsletterOptins" minOccurs="0" maxOccurs="unbounded" type="EBI_CreateAccountResponse:EBI_EmailNewsLetterOptin" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateEmailNewsletterOptInsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateFreeELetterOptins">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="freeELetterOptins" minOccurs="0" maxOccurs="unbounded" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateFreeELetterOptinsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateInformationAndOfferOptins">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="InformationAndOfferOptins" minOccurs="0" maxOccurs="unbounded" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateInformationAndOfferOptinsResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updatePassword">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="currentPassword" type="xsd:string" nillable="true"/>
+      <xsd:element name="isTempPassword" type="xsd:boolean" nillable="true"/>
+      <xsd:element name="newPassword" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updatePasswordResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updatePhoneFax">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="phone" type="EBI_CreateAccountResponse:EBI_PhoneFax" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updatePhoneFaxResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateProfile">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="profileRequest" type="EBI_CreateAccountResponse:EBI_UpdateProfileRequest" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateProfileResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateSavedSearchItem">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="searchString" type="xsd:string" nillable="true"/>
+      <xsd:element name="Name" type="xsd:string" nillable="true"/>
+      <xsd:element name="IsReceivingEmailAlert" type="xsd:boolean" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateSavedSearchItemResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateSavedSearchItem2">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="searchString" type="xsd:string" nillable="true"/>
+      <xsd:element name="Name" type="xsd:string" nillable="true"/>
+      <xsd:element name="IsReceivingEmailAlert" type="xsd:boolean" nillable="true"/>
+      <xsd:element name="UnsubscribeToken" type="xsd:string" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateSavedSearchItem2Response">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateShippingAddressAndPhone">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="shippingAddress" type="EBI_CreateAccountResponse:EBI_Address" nillable="true"/>
+      <xsd:element name="shippingPhoneFax" type="EBI_CreateAccountResponse:EBI_PhoneFax" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateShippingAddressAndPhoneResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateShippingName">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="userName" type="xsd:string" nillable="true"/>
+      <xsd:element name="ShippingName" type="EBI_CreateAccountResponse:EBI_Name" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="updateShippingNameResponse">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="result" type="EBI_CreateAccountResponse:EBI_WebServiceResponse" nillable="true"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+  </xsd:schema>
+ </types>
+ <!-- Message for the header parts -->
+ <message name="Header">
+  <part name="AllowFieldTruncationHeader" element="tns:AllowFieldTruncationHeader"/>
+  <part name="CallOptions" element="tns:CallOptions"/>
+  <part name="DebuggingHeader" element="tns:DebuggingHeader"/>
+  <part name="DebuggingInfo" element="tns:DebuggingInfo"/>
+  <part name="SessionHeader" element="tns:SessionHeader"/>
+ </message>
+ <!-- Operation Messages -->
+ <message name="createAccountRequest">
+  <part element="tns:createAccount" name="parameters"/>
+ </message>
+ <message name="createAccountResponse">
+  <part element="tns:createAccountResponse" name="parameters"/>
+ </message>
+ <message name="createCartRequest">
+  <part element="tns:createCart" name="parameters"/>
+ </message>
+ <message name="createCartResponse">
+  <part element="tns:createCartResponse" name="parameters"/>
+ </message>
+ <message name="createCartItemsRequest">
+  <part element="tns:createCartItems" name="parameters"/>
+ </message>
+ <message name="createCartItemsResponse">
+  <part element="tns:createCartItemsResponse" name="parameters"/>
+ </message>
+ <message name="createOrderRequest">
+  <part element="tns:createOrder" name="parameters"/>
+ </message>
+ <message name="createOrderResponse">
+  <part element="tns:createOrderResponse" name="parameters"/>
+ </message>
+ <message name="createProfileRequest">
+  <part element="tns:createProfile" name="parameters"/>
+ </message>
+ <message name="createProfileResponse">
+  <part element="tns:createProfileResponse" name="parameters"/>
+ </message>
+ <message name="createSavedDocumentRequest">
+  <part element="tns:createSavedDocument" name="parameters"/>
+ </message>
+ <message name="createSavedDocumentResponse">
+  <part element="tns:createSavedDocumentResponse" name="parameters"/>
+ </message>
+ <message name="createSavedSearchItemRequest">
+  <part element="tns:createSavedSearchItem" name="parameters"/>
+ </message>
+ <message name="createSavedSearchItemResponse">
+  <part element="tns:createSavedSearchItemResponse" name="parameters"/>
+ </message>
+ <message name="createSavedSearchItem2Request">
+  <part element="tns:createSavedSearchItem2" name="parameters"/>
+ </message>
+ <message name="createSavedSearchItem2Response">
+  <part element="tns:createSavedSearchItem2Response" name="parameters"/>
+ </message>
+ <message name="deleteSavedDocumentRequest">
+  <part element="tns:deleteSavedDocument" name="parameters"/>
+ </message>
+ <message name="deleteSavedDocumentResponse">
+  <part element="tns:deleteSavedDocumentResponse" name="parameters"/>
+ </message>
+ <message name="deleteSavedSearchRequest">
+  <part element="tns:deleteSavedSearch" name="parameters"/>
+ </message>
+ <message name="deleteSavedSearchResponse">
+  <part element="tns:deleteSavedSearchResponse" name="parameters"/>
+ </message>
+ <message name="INqueryEntitlementsRequest">
+  <part element="tns:INqueryEntitlements" name="parameters"/>
+ </message>
+ <message name="INqueryEntitlementsResponse">
+  <part element="tns:INqueryEntitlementsResponse" name="parameters"/>
+ </message>
+ <message name="INquerySiteEntitlementsIPRequest">
+  <part element="tns:INquerySiteEntitlementsIP" name="parameters"/>
+ </message>
+ <message name="INquerySiteEntitlementsIPResponse">
+  <part element="tns:INquerySiteEntitlementsIPResponse" name="parameters"/>
+ </message>
+ <message name="INquerySubscriptionsAndPurchasesRequest">
+  <part element="tns:INquerySubscriptionsAndPurchases" name="parameters"/>
+ </message>
+ <message name="INquerySubscriptionsAndPurchasesResponse">
+  <part element="tns:INquerySubscriptionsAndPurchasesResponse" name="parameters"/>
+ </message>
+ <message name="isCouponCodeValidRequest">
+  <part element="tns:isCouponCodeValid" name="parameters"/>
+ </message>
+ <message name="isCouponCodeValidResponse">
+  <part element="tns:isCouponCodeValidResponse" name="parameters"/>
+ </message>
+ <message name="loginRequest">
+  <part element="tns:login" name="parameters"/>
+ </message>
+ <message name="loginResponse">
+  <part element="tns:loginResponse" name="parameters"/>
+ </message>
+ <message name="queryAccountByIPAddressRequest">
+  <part element="tns:queryAccountByIPAddress" name="parameters"/>
+ </message>
+ <message name="queryAccountByIPAddressResponse">
+  <part element="tns:queryAccountByIPAddressResponse" name="parameters"/>
+ </message>
+ <message name="queryAccountByMasterIdRequest">
+  <part element="tns:queryAccountByMasterId" name="parameters"/>
+ </message>
+ <message name="queryAccountByMasterIdResponse">
+  <part element="tns:queryAccountByMasterIdResponse" name="parameters"/>
+ </message>
+ <message name="queryAccountBySubscriberIdRequest">
+  <part element="tns:queryAccountBySubscriberId" name="parameters"/>
+ </message>
+ <message name="queryAccountBySubscriberIdResponse">
+  <part element="tns:queryAccountBySubscriberIdResponse" name="parameters"/>
+ </message>
+ <message name="queryAccountByUsernameRequest">
+  <part element="tns:queryAccountByUsername" name="parameters"/>
+ </message>
+ <message name="queryAccountByUsernameResponse">
+  <part element="tns:queryAccountByUsernameResponse" name="parameters"/>
+ </message>
+ <message name="queryAccountByVerificationCodeRequest">
+  <part element="tns:queryAccountByVerificationCode" name="parameters"/>
+ </message>
+ <message name="queryAccountByVerificationCodeResponse">
+  <part element="tns:queryAccountByVerificationCodeResponse" name="parameters"/>
+ </message>
+ <message name="queryAllActiveIPRangesRequest">
+  <part element="tns:queryAllActiveIPRanges" name="parameters"/>
+ </message>
+ <message name="queryAllActiveIPRangesResponse">
+  <part element="tns:queryAllActiveIPRangesResponse" name="parameters"/>
+ </message>
+ <message name="queryCartRequest">
+  <part element="tns:queryCart" name="parameters"/>
+ </message>
+ <message name="queryCartResponse">
+  <part element="tns:queryCartResponse" name="parameters"/>
+ </message>
+ <message name="queryCartByIdRequest">
+  <part element="tns:queryCartById" name="parameters"/>
+ </message>
+ <message name="queryCartByIdResponse">
+  <part element="tns:queryCartByIdResponse" name="parameters"/>
+ </message>
+ <message name="queryEmailNewsletterOptinsRequest">
+  <part element="tns:queryEmailNewsletterOptins" name="parameters"/>
+ </message>
+ <message name="queryEmailNewsletterOptinsResponse">
+  <part element="tns:queryEmailNewsletterOptinsResponse" name="parameters"/>
+ </message>
+ <message name="queryEntitlementsRequest">
+  <part element="tns:queryEntitlements" name="parameters"/>
+ </message>
+ <message name="queryEntitlementsResponse">
+  <part element="tns:queryEntitlementsResponse" name="parameters"/>
+ </message>
+ <message name="queryFreeELetterOptinsRequest">
+  <part element="tns:queryFreeELetterOptins" name="parameters"/>
+ </message>
+ <message name="queryFreeELetterOptinsResponse">
+  <part element="tns:queryFreeELetterOptinsResponse" name="parameters"/>
+ </message>
+ <message name="queryInformationAndOfferOptinsRequest">
+  <part element="tns:queryInformationAndOfferOptins" name="parameters"/>
+ </message>
+ <message name="queryInformationAndOfferOptinsResponse">
+  <part element="tns:queryInformationAndOfferOptinsResponse" name="parameters"/>
+ </message>
+ <message name="queryOptInsRequest">
+  <part element="tns:queryOptIns" name="parameters"/>
+ </message>
+ <message name="queryOptInsResponse">
+  <part element="tns:queryOptInsResponse" name="parameters"/>
+ </message>
+ <message name="queryProfileContactInformationRequest">
+  <part element="tns:queryProfileContactInformation" name="parameters"/>
+ </message>
+ <message name="queryProfileContactInformationResponse">
+  <part element="tns:queryProfileContactInformationResponse" name="parameters"/>
+ </message>
+ <message name="querySavedDocumentsRequest">
+  <part element="tns:querySavedDocuments" name="parameters"/>
+ </message>
+ <message name="querySavedDocumentsResponse">
+  <part element="tns:querySavedDocumentsResponse" name="parameters"/>
+ </message>
+ <message name="querySavedDocuments2Request">
+  <part element="tns:querySavedDocuments2" name="parameters"/>
+ </message>
+ <message name="querySavedDocuments2Response">
+  <part element="tns:querySavedDocuments2Response" name="parameters"/>
+ </message>
+ <message name="querySavedSearchItemsRequest">
+  <part element="tns:querySavedSearchItems" name="parameters"/>
+ </message>
+ <message name="querySavedSearchItemsResponse">
+  <part element="tns:querySavedSearchItemsResponse" name="parameters"/>
+ </message>
+ <message name="querySavedSearchItems2Request">
+  <part element="tns:querySavedSearchItems2" name="parameters"/>
+ </message>
+ <message name="querySavedSearchItems2Response">
+  <part element="tns:querySavedSearchItems2Response" name="parameters"/>
+ </message>
+ <message name="querySiteEntitlementsIPRequest">
+  <part element="tns:querySiteEntitlementsIP" name="parameters"/>
+ </message>
+ <message name="querySiteEntitlementsIPResponse">
+  <part element="tns:querySiteEntitlementsIPResponse" name="parameters"/>
+ </message>
+ <message name="querySubscriptionsAndPurchasesRequest">
+  <part element="tns:querySubscriptionsAndPurchases" name="parameters"/>
+ </message>
+ <message name="querySubscriptionsAndPurchasesResponse">
+  <part element="tns:querySubscriptionsAndPurchasesResponse" name="parameters"/>
+ </message>
+ <message name="transferCartRequest">
+  <part element="tns:transferCart" name="parameters"/>
+ </message>
+ <message name="transferCartResponse">
+  <part element="tns:transferCartResponse" name="parameters"/>
+ </message>
+ <message name="updateBillingAddressAndPhoneRequest">
+  <part element="tns:updateBillingAddressAndPhone" name="parameters"/>
+ </message>
+ <message name="updateBillingAddressAndPhoneResponse">
+  <part element="tns:updateBillingAddressAndPhoneResponse" name="parameters"/>
+ </message>
+ <message name="updateBillingNameRequest">
+  <part element="tns:updateBillingName" name="parameters"/>
+ </message>
+ <message name="updateBillingNameResponse">
+  <part element="tns:updateBillingNameResponse" name="parameters"/>
+ </message>
+ <message name="updateCartRequest">
+  <part element="tns:updateCart" name="parameters"/>
+ </message>
+ <message name="updateCartResponse">
+  <part element="tns:updateCartResponse" name="parameters"/>
+ </message>
+ <message name="updateCartItemsRequest">
+  <part element="tns:updateCartItems" name="parameters"/>
+ </message>
+ <message name="updateCartItemsResponse">
+  <part element="tns:updateCartItemsResponse" name="parameters"/>
+ </message>
+ <message name="updateCompanyJobRequest">
+  <part element="tns:updateCompanyJob" name="parameters"/>
+ </message>
+ <message name="updateCompanyJobResponse">
+  <part element="tns:updateCompanyJobResponse" name="parameters"/>
+ </message>
+ <message name="updateDoNotSendInformationAndOffersRequest">
+  <part element="tns:updateDoNotSendInformationAndOffers" name="parameters"/>
+ </message>
+ <message name="updateDoNotSendInformationAndOffersResponse">
+  <part element="tns:updateDoNotSendInformationAndOffersResponse" name="parameters"/>
+ </message>
+ <message name="updateEmailNewsletterOptInsRequest">
+  <part element="tns:updateEmailNewsletterOptIns" name="parameters"/>
+ </message>
+ <message name="updateEmailNewsletterOptInsResponse">
+  <part element="tns:updateEmailNewsletterOptInsResponse" name="parameters"/>
+ </message>
+ <message name="updateFreeELetterOptinsRequest">
+  <part element="tns:updateFreeELetterOptins" name="parameters"/>
+ </message>
+ <message name="updateFreeELetterOptinsResponse">
+  <part element="tns:updateFreeELetterOptinsResponse" name="parameters"/>
+ </message>
+ <message name="updateInformationAndOfferOptinsRequest">
+  <part element="tns:updateInformationAndOfferOptins" name="parameters"/>
+ </message>
+ <message name="updateInformationAndOfferOptinsResponse">
+  <part element="tns:updateInformationAndOfferOptinsResponse" name="parameters"/>
+ </message>
+ <message name="updatePasswordRequest">
+  <part element="tns:updatePassword" name="parameters"/>
+ </message>
+ <message name="updatePasswordResponse">
+  <part element="tns:updatePasswordResponse" name="parameters"/>
+ </message>
+ <message name="updatePhoneFaxRequest">
+  <part element="tns:updatePhoneFax" name="parameters"/>
+ </message>
+ <message name="updatePhoneFaxResponse">
+  <part element="tns:updatePhoneFaxResponse" name="parameters"/>
+ </message>
+ <message name="updateProfileRequest">
+  <part element="tns:updateProfile" name="parameters"/>
+ </message>
+ <message name="updateProfileResponse">
+  <part element="tns:updateProfileResponse" name="parameters"/>
+ </message>
+ <message name="updateSavedSearchItemRequest">
+  <part element="tns:updateSavedSearchItem" name="parameters"/>
+ </message>
+ <message name="updateSavedSearchItemResponse">
+  <part element="tns:updateSavedSearchItemResponse" name="parameters"/>
+ </message>
+ <message name="updateSavedSearchItem2Request">
+  <part element="tns:updateSavedSearchItem2" name="parameters"/>
+ </message>
+ <message name="updateSavedSearchItem2Response">
+  <part element="tns:updateSavedSearchItem2Response" name="parameters"/>
+ </message>
+ <message name="updateShippingAddressAndPhoneRequest">
+  <part element="tns:updateShippingAddressAndPhone" name="parameters"/>
+ </message>
+ <message name="updateShippingAddressAndPhoneResponse">
+  <part element="tns:updateShippingAddressAndPhoneResponse" name="parameters"/>
+ </message>
+ <message name="updateShippingNameRequest">
+  <part element="tns:updateShippingName" name="parameters"/>
+ </message>
+ <message name="updateShippingNameResponse">
+  <part element="tns:updateShippingNameResponse" name="parameters"/>
+ </message>
+ <portType name="EBI_WebServicesPortType">
+  <operation name="createAccount">
+   <input message="tns:createAccountRequest"/>
+   <output message="tns:createAccountResponse"/>
+  </operation>
+  <operation name="createCart">
+   <input message="tns:createCartRequest"/>
+   <output message="tns:createCartResponse"/>
+  </operation>
+  <operation name="createCartItems">
+   <input message="tns:createCartItemsRequest"/>
+   <output message="tns:createCartItemsResponse"/>
+  </operation>
+  <operation name="createOrder">
+   <input message="tns:createOrderRequest"/>
+   <output message="tns:createOrderResponse"/>
+  </operation>
+  <operation name="createProfile">
+   <input message="tns:createProfileRequest"/>
+   <output message="tns:createProfileResponse"/>
+  </operation>
+  <operation name="createSavedDocument">
+   <input message="tns:createSavedDocumentRequest"/>
+   <output message="tns:createSavedDocumentResponse"/>
+  </operation>
+  <operation name="createSavedSearchItem">
+   <input message="tns:createSavedSearchItemRequest"/>
+   <output message="tns:createSavedSearchItemResponse"/>
+  </operation>
+  <operation name="createSavedSearchItem2">
+   <input message="tns:createSavedSearchItem2Request"/>
+   <output message="tns:createSavedSearchItem2Response"/>
+  </operation>
+  <operation name="deleteSavedDocument">
+   <input message="tns:deleteSavedDocumentRequest"/>
+   <output message="tns:deleteSavedDocumentResponse"/>
+  </operation>
+  <operation name="deleteSavedSearch">
+   <input message="tns:deleteSavedSearchRequest"/>
+   <output message="tns:deleteSavedSearchResponse"/>
+  </operation>
+  <operation name="INqueryEntitlements">
+   <input message="tns:INqueryEntitlementsRequest"/>
+   <output message="tns:INqueryEntitlementsResponse"/>
+  </operation>
+  <operation name="INquerySiteEntitlementsIP">
+   <input message="tns:INquerySiteEntitlementsIPRequest"/>
+   <output message="tns:INquerySiteEntitlementsIPResponse"/>
+  </operation>
+  <operation name="INquerySubscriptionsAndPurchases">
+   <input message="tns:INquerySubscriptionsAndPurchasesRequest"/>
+   <output message="tns:INquerySubscriptionsAndPurchasesResponse"/>
+  </operation>
+  <operation name="isCouponCodeValid">
+   <input message="tns:isCouponCodeValidRequest"/>
+   <output message="tns:isCouponCodeValidResponse"/>
+  </operation>
+  <operation name="login">
+   <input message="tns:loginRequest"/>
+   <output message="tns:loginResponse"/>
+  </operation>
+  <operation name="queryAccountByIPAddress">
+   <input message="tns:queryAccountByIPAddressRequest"/>
+   <output message="tns:queryAccountByIPAddressResponse"/>
+  </operation>
+  <operation name="queryAccountByMasterId">
+   <input message="tns:queryAccountByMasterIdRequest"/>
+   <output message="tns:queryAccountByMasterIdResponse"/>
+  </operation>
+  <operation name="queryAccountBySubscriberId">
+   <input message="tns:queryAccountBySubscriberIdRequest"/>
+   <output message="tns:queryAccountBySubscriberIdResponse"/>
+  </operation>
+  <operation name="queryAccountByUsername">
+   <input message="tns:queryAccountByUsernameRequest"/>
+   <output message="tns:queryAccountByUsernameResponse"/>
+  </operation>
+  <operation name="queryAccountByVerificationCode">
+   <input message="tns:queryAccountByVerificationCodeRequest"/>
+   <output message="tns:queryAccountByVerificationCodeResponse"/>
+  </operation>
+  <operation name="queryAllActiveIPRanges">
+   <input message="tns:queryAllActiveIPRangesRequest"/>
+   <output message="tns:queryAllActiveIPRangesResponse"/>
+  </operation>
+  <operation name="queryCart">
+   <input message="tns:queryCartRequest"/>
+   <output message="tns:queryCartResponse"/>
+  </operation>
+  <operation name="queryCartById">
+   <input message="tns:queryCartByIdRequest"/>
+   <output message="tns:queryCartByIdResponse"/>
+  </operation>
+  <operation name="queryEmailNewsletterOptins">
+   <input message="tns:queryEmailNewsletterOptinsRequest"/>
+   <output message="tns:queryEmailNewsletterOptinsResponse"/>
+  </operation>
+  <operation name="queryEntitlements">
+   <input message="tns:queryEntitlementsRequest"/>
+   <output message="tns:queryEntitlementsResponse"/>
+  </operation>
+  <operation name="queryFreeELetterOptins">
+   <input message="tns:queryFreeELetterOptinsRequest"/>
+   <output message="tns:queryFreeELetterOptinsResponse"/>
+  </operation>
+  <operation name="queryInformationAndOfferOptins">
+   <input message="tns:queryInformationAndOfferOptinsRequest"/>
+   <output message="tns:queryInformationAndOfferOptinsResponse"/>
+  </operation>
+  <operation name="queryOptIns">
+   <input message="tns:queryOptInsRequest"/>
+   <output message="tns:queryOptInsResponse"/>
+  </operation>
+  <operation name="queryProfileContactInformation">
+   <input message="tns:queryProfileContactInformationRequest"/>
+   <output message="tns:queryProfileContactInformationResponse"/>
+  </operation>
+  <operation name="querySavedDocuments">
+   <input message="tns:querySavedDocumentsRequest"/>
+   <output message="tns:querySavedDocumentsResponse"/>
+  </operation>
+  <operation name="querySavedDocuments2">
+   <input message="tns:querySavedDocuments2Request"/>
+   <output message="tns:querySavedDocuments2Response"/>
+  </operation>
+  <operation name="querySavedSearchItems">
+   <input message="tns:querySavedSearchItemsRequest"/>
+   <output message="tns:querySavedSearchItemsResponse"/>
+  </operation>
+  <operation name="querySavedSearchItems2">
+   <input message="tns:querySavedSearchItems2Request"/>
+   <output message="tns:querySavedSearchItems2Response"/>
+  </operation>
+  <operation name="querySiteEntitlementsIP">
+   <input message="tns:querySiteEntitlementsIPRequest"/>
+   <output message="tns:querySiteEntitlementsIPResponse"/>
+  </operation>
+  <operation name="querySubscriptionsAndPurchases">
+   <input message="tns:querySubscriptionsAndPurchasesRequest"/>
+   <output message="tns:querySubscriptionsAndPurchasesResponse"/>
+  </operation>
+  <operation name="transferCart">
+   <input message="tns:transferCartRequest"/>
+   <output message="tns:transferCartResponse"/>
+  </operation>
+  <operation name="updateBillingAddressAndPhone">
+   <input message="tns:updateBillingAddressAndPhoneRequest"/>
+   <output message="tns:updateBillingAddressAndPhoneResponse"/>
+  </operation>
+  <operation name="updateBillingName">
+   <input message="tns:updateBillingNameRequest"/>
+   <output message="tns:updateBillingNameResponse"/>
+  </operation>
+  <operation name="updateCart">
+   <input message="tns:updateCartRequest"/>
+   <output message="tns:updateCartResponse"/>
+  </operation>
+  <operation name="updateCartItems">
+   <input message="tns:updateCartItemsRequest"/>
+   <output message="tns:updateCartItemsResponse"/>
+  </operation>
+  <operation name="updateCompanyJob">
+   <input message="tns:updateCompanyJobRequest"/>
+   <output message="tns:updateCompanyJobResponse"/>
+  </operation>
+  <operation name="updateDoNotSendInformationAndOffers">
+   <input message="tns:updateDoNotSendInformationAndOffersRequest"/>
+   <output message="tns:updateDoNotSendInformationAndOffersResponse"/>
+  </operation>
+  <operation name="updateEmailNewsletterOptIns">
+   <input message="tns:updateEmailNewsletterOptInsRequest"/>
+   <output message="tns:updateEmailNewsletterOptInsResponse"/>
+  </operation>
+  <operation name="updateFreeELetterOptins">
+   <input message="tns:updateFreeELetterOptinsRequest"/>
+   <output message="tns:updateFreeELetterOptinsResponse"/>
+  </operation>
+  <operation name="updateInformationAndOfferOptins">
+   <input message="tns:updateInformationAndOfferOptinsRequest"/>
+   <output message="tns:updateInformationAndOfferOptinsResponse"/>
+  </operation>
+  <operation name="updatePassword">
+   <input message="tns:updatePasswordRequest"/>
+   <output message="tns:updatePasswordResponse"/>
+  </operation>
+  <operation name="updatePhoneFax">
+   <input message="tns:updatePhoneFaxRequest"/>
+   <output message="tns:updatePhoneFaxResponse"/>
+  </operation>
+  <operation name="updateProfile">
+   <input message="tns:updateProfileRequest"/>
+   <output message="tns:updateProfileResponse"/>
+  </operation>
+  <operation name="updateSavedSearchItem">
+   <input message="tns:updateSavedSearchItemRequest"/>
+   <output message="tns:updateSavedSearchItemResponse"/>
+  </operation>
+  <operation name="updateSavedSearchItem2">
+   <input message="tns:updateSavedSearchItem2Request"/>
+   <output message="tns:updateSavedSearchItem2Response"/>
+  </operation>
+  <operation name="updateShippingAddressAndPhone">
+   <input message="tns:updateShippingAddressAndPhoneRequest"/>
+   <output message="tns:updateShippingAddressAndPhoneResponse"/>
+  </operation>
+  <operation name="updateShippingName">
+   <input message="tns:updateShippingNameRequest"/>
+   <output message="tns:updateShippingNameResponse"/>
+  </operation>
+ </portType>
+ <binding name="EBI_WebServicesBinding" type="tns:EBI_WebServicesPortType">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="createAccount">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="createCart">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="createCartItems">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="createOrder">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="createProfile">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="createSavedDocument">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="createSavedSearchItem">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="createSavedSearchItem2">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="deleteSavedDocument">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="deleteSavedSearch">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="INqueryEntitlements">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="INquerySiteEntitlementsIP">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="INquerySubscriptionsAndPurchases">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="isCouponCodeValid">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="login">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryAccountByIPAddress">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryAccountByMasterId">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryAccountBySubscriberId">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryAccountByUsername">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryAccountByVerificationCode">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryAllActiveIPRanges">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryCart">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryCartById">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryEmailNewsletterOptins">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryEntitlements">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryFreeELetterOptins">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryInformationAndOfferOptins">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryOptIns">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="queryProfileContactInformation">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="querySavedDocuments">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="querySavedDocuments2">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="querySavedSearchItems">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="querySavedSearchItems2">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="querySiteEntitlementsIP">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="querySubscriptionsAndPurchases">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="transferCart">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateBillingAddressAndPhone">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateBillingName">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateCart">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateCartItems">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateCompanyJob">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateDoNotSendInformationAndOffers">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateEmailNewsletterOptIns">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateFreeELetterOptins">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateInformationAndOfferOptins">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updatePassword">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updatePhoneFax">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateProfile">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateSavedSearchItem">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateSavedSearchItem2">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateShippingAddressAndPhone">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="updateShippingName">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:header use="literal" part="SessionHeader" message="tns:Header"/>
+    <soap:header use="literal" part="CallOptions" message="tns:Header"/>
+    <soap:header use="literal" part="DebuggingHeader" message="tns:Header"/>
+    <soap:header use="literal" part="AllowFieldTruncationHeader" message="tns:Header"/>
+    <soap:body use="literal" parts="parameters"/>
+   </input>
+   <output>
+    <soap:header use="literal" part="DebuggingInfo" message="tns:Header"/>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+ </binding>
+ <service name="EBI_WebServicesService">
+  <documentation></documentation>
+  <port binding="tns:EBI_WebServicesBinding" name="EBI_WebServices">
+   <soap:address location="https://cs52.salesforce.com/services/Soap/class/EBI_WebServices"/>
+  </port>
+ </service>
+</definitions>

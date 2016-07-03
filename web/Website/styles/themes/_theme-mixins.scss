@@ -1,0 +1,178 @@
+@mixin theme-links($color) {
+
+    a,
+    .facets__button,
+    .facets__button svg,
+    .sorting-arrows__arrow.is-active,
+    .article-key-document__icon {
+        @include on-event(true) {
+            color: $color;
+            @include svg-fill($color);
+        }
+    }
+
+    footer a,
+    .general-header__navigation a,
+    .sortable-table__col a {
+        color: inherit;
+    }
+
+    .header-account-access {
+        &__my-account,
+        &__sign-in-out {
+            color: $color;
+        }
+    }
+
+    .article-preview__headline,
+    .topic-featured-article__headline {
+        &,
+        & a {
+            color: $color-zeus-black;
+
+            &:hover {
+                color: $color;
+            }
+        }
+    }
+}
+
+
+@mixin theme-buttons($border, $background, $text, $border-hover: $border, $background-hover: $background, $text-hover: $text) {
+
+    .button--filled:not([disabled]),
+    .search-bar__submit,
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        background: $background;
+        background-color: $background;
+        color: $text;
+
+        &:hover {
+            background: $background-hover;
+            background-color: $background-hover;
+        }
+    }
+
+    .button--outline:not([disabled]) {
+        border-color: $border;
+
+        &:hover {
+            background-color: $background-hover;
+            border-color: $border-hover;
+            color: $text-hover;
+        }
+    }
+}
+
+
+@mixin theme-main-menu($hover-bars, $footer-links) {
+    .main-menu {
+
+        &__hoverable:hover:before {
+            background-color: $hover-bars;
+        }
+
+        &__section-title a {
+            color: inherit;
+        }
+
+        &__footer-link a {
+            color: $color-abbey-gray;
+
+            @include on-event(false) {
+                color: $footer-links;
+            }
+        }
+        &__section-link {
+            @include on-event(true) {
+                color: $color-abbey-gray;
+            }
+        }
+    }
+}
+
+
+@mixin theme-subnav($underline) {
+    .general-header__navigation a.is-active,
+    .general-header__navigation a:hover, {
+        border-bottom-color: $underline;
+    }
+}
+
+
+@mixin theme-banners($background, $text) {
+    .banner--cookie-policy,
+    .banner--register,
+	.banner--alert {
+        background-color: $background;
+
+		&,
+		& span,
+		& svg {
+			@include svg-fill($text);
+			color: $text;
+		}
+
+        a {
+            @include on-event(true) {
+                color: $text;
+            }
+        }
+    }
+}
+
+
+@mixin theme-call-out-boxes($background, $border) {
+    .newsletter-signup,
+    .quick-facts {
+        background-color: $background;
+    }
+	.newsletter-signup {
+		border-top: 4px solid $border;
+	}
+}
+
+@mixin theme-quick-facts($background, $divider) {
+	.quick-facts {
+		background-color: $background;
+
+		hr {
+			background-color: $divider;
+		}
+	}
+}
+
+
+@mixin theme-bordered-elements($color) {
+    .article-pullquote,
+    .quote,
+    .article-sidebar,
+    .topic-subtopic__header {
+        border-top-color: $color;
+        border-bottom-color: $color;
+        border-color: $color;
+    }
+
+    .latest-news__header:before {
+        background-color: $color;
+    }
+}
+
+
+@mixin theme-interviews($question-back, $question-border, $answer-back, $answer-border) {
+    .article-interview__question:before {
+        background-color: $question-back;
+        border-color: $question-border;
+    }
+
+    .article-interview__answer {
+        &,
+        &:before {
+            border-color: $answer-border;
+        }
+
+        &:before {
+            background-color: $answer-back;
+        }
+    }
+}
