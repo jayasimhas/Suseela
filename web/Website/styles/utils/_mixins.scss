@@ -39,6 +39,8 @@
     font-family: "Roboto", Helvetica, Arial, sans-serif;
   } @else if $stack == 'Roboto Condensed' {
     font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+  } @else if $stack == 'RobotoCondensed' {
+    font-family: "Roboto Condensed", Arial Narrow, sans-serif;
   } @else if $stack == 'PT Serif' {
     font-family: "PT Serif", Georgia, serif;
   }

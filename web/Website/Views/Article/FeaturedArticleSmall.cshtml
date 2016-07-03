@@ -49,7 +49,7 @@
                 @if (!string.IsNullOrEmpty(Model.MediaType))
                 {
                     <li>
-                        @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model })
+                        @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model.ID })
                     </li>
                 }
             </ul>

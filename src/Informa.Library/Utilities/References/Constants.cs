@@ -6,6 +6,7 @@ namespace Informa.Library.Utilities.References
 	public static class Constants
 	{
 		public const string ArticleNumberLength = "000000";
+        public const string CoreDb = "core";
 		public const string MasterDb = "master";
 		public const string WebDb = "web";
 
@@ -19,6 +20,9 @@ namespace Informa.Library.Utilities.References
 		public const string DTDPath = "Util\\DTD\\";
 
 		public const string CryptoKey = "Ajv4FMtL7Iuq3H04ZkQC";
+
+        public const string VirtualWhiteboardIssuesFolder = "{ECE677C9-3CC5-41F5-ADCB-D103C60783A7}";
+	    public const string VirtualWhiteboardArchivedIssuesFolder = "{AAB11244-7D15-4A43-A709-DC8951893FD2}";
 
 		public const string ScripRootNode = "{3818C47E-4B75-4305-8F01-AB994150A1B0}";
 		public const string ScripRootNodeIntials = "SC";
