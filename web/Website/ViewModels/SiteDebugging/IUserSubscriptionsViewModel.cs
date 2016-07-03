@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Informa.Library.User.Profile;
+using Informa.Library.Subscription;
 
 namespace Informa.Web.ViewModels.SiteDebugging
 {

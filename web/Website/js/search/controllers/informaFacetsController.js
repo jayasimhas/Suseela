@@ -1,5 +1,7 @@
-﻿/* global _, datesObject, angular */
-var InformaFacetController = function ($scope, $location, $http, $anchorScroll, searchService, searchBootstrapper) {
+﻿/* global _, datesObject, angular, analytics_data */
+import { analyticsEvent } from '../../controllers/analytics-controller';
+
+var InformaFacetController = function ($scope, $rootScope, $location, $http, $anchorScroll, $timeout,  searchService, searchBootstrapper, facetAvailabilityService) {
     "use strict";
 
     // Bind `this` to vm - a representation of the view model
@@ -12,9 +14,13 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     vm.anchorScroll = $anchorScroll;
     vm.searchBootstrapper = searchBootstrapper;
     vm.MaxFacetShow = 5;
+    vm.showingOnlySubscriptions = false;
 
     
     vm.companies = { "companies": "", "isCompanySelected": false };
+	$rootScope.$watch('facetAvailability', function () {
+		vm.areFacetsDisabled = facetAvailabilityService.facetsAreEnabled();
+    });
 
     // Date Facet stuff
     vm.DateFilters = [
@@ -127,9 +133,47 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         delete $scope.savedCompanies[$item.label];
     };
 
-
+	var facetsForAnalytics = false;
     //** This updates the router/url with the latest search parameters **//
-    vm.update = function () {
+    vm.update = function (facetGroupId) {
+
+		if(facetGroupId) {
+
+			var facetGroup;
+			facetsForAnalytics = false;
+
+			_.each(vm.facetGroups, function(group) {
+				if(group.id === facetGroupId) {
+					facetGroup = group;
+				}
+			});
+
+			_.each(facetGroup.getSelectedFacets(), function (facet) {
+				if(facet) {
+					if(!facetsForAnalytics) {
+						facetsForAnalytics = facet.label;
+					} else {
+						facetsForAnalytics += '|' + facet.label;
+					}
+				}
+			});
+
+			var event_data = {
+				event_name: 'search_facets',
+				search_facet_category: facetGroup.label
+			};
+
+			if(facetsForAnalytics) {
+				event_data.search_facet = facetGroup.label + ": " + facetsForAnalytics;
+			}
+
+			analyticsEvent(	$.extend(analytics_data, event_data) );
+
+		}
+
+		// Disable all facet options while updating search results
+		facetAvailabilityService.disableFacets();
+
         var params = this.searchService.getRouteBuilder().getRoute().split('&');
         if (this.searchService.getRouteBuilder().getRoute().includes("companies")) {
             for (var idx_param in params) {
@@ -153,30 +197,17 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         //Scroll to the top of the results when a new page is chosen
         vm.location.hash("searchTop");
         vm.anchorScroll();
+
     };
 
 
     vm.updateTime = function (filter) {
         vm.searchService.getFilter('page').setValue('1');
         var routeBuilder = this.searchService.getRouteBuilder();
-        //vm.location.search(routeBuilder.getRoute());
-
-
-        var paramsValue = this.searchService.getParams();
 
         var hash = {};
-        //for (var key in paramsValue._params)
-        //{
-        //    if (paramsValue._params[key].id == "dateFilterLabel") {
-        //        hash[paramsValue._params[key].id] = vm.timesObject[filter].id;
-        //    } else {
-        //        hash[paramsValue._params[key].id] = paramsValue._params[key]._value;
-        //    }
-        //}
-        //hash["time"] = vm.timesObject[filter].value;
-
         var urlQuery = "&";
-        var h = routeBuilder.getRoute().split("&");
+        var h = decodeURIComponent(routeBuilder.getRoute()).split("&");
         for (var idx in h) {
             if (h[idx] != "") {
                 var currentParameter = h[idx].split("=");
@@ -221,9 +252,41 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     };
 
     vm.facetChange = function (facet) {
-        vm.searchService.getFacetGroup(facet.parentId).getFacet(facet.id).selected = facet.selected;
-        vm.update();
+
+		vm.searchService.getFacetGroup(facet.parentId).getFacet(facet.id).selected = facet.selected;
+        vm.update(facet.parentId);
+
     };
+
+	// facetGroupId: 'publication'
+	// facetIds: ['In Vivo', 'Rose Sheet']
+    vm.facetChangeMultiple = function(facetGroupId, facetIds) {
+
+		var facets;
+
+		_.each(vm.facetGroups, function(group) {
+			if(group.id === facetGroupId) {
+				facets = group;
+			}
+		});
+
+        _.each(facets.getSelectedFacets(), function (facet) {
+			if(facet) {
+				facet.selected = false;
+			}
+        });
+
+        _.each(facetIds, function(id) {
+			var facet = facets.getFacet(id);
+			if (facet) {
+				facet.selected = true;
+			}
+        });
+
+		vm.update(facetGroupId);
+
+    };
+
 
     // TODO: this comes from a diff search app, and needs jquery to work.
     //       either hook up jq to this controller or move this elsewhere
@@ -367,4 +430,4 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
 };
 
 var informaSearchApp = angular.module('informaSearchApp');
-informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', '$anchorScroll', 'searchService', 'searchBootstrapper', InformaFacetController]);
+informaSearchApp.controller("InformaFacetController", ['$scope', '$rootScope', '$location', '$http', '$anchorScroll', '$timeout', 'searchService', 'searchBootstrapper', 'facetAvailabilityService', InformaFacetController]);

@@ -1,3 +1,4 @@
+using Glass.Mapper.Sc.Fields;
 using Informa.Models.FactoryInterface;
 
 namespace Informa.Web.ViewModels
@@ -7,6 +8,6 @@ namespace Informa.Web.ViewModels
         string Name { get; }
         string Twitter { get; }
         string Email_Address { get; }
-        string Image { get; }
+        Image Image { get; }
     }
 }

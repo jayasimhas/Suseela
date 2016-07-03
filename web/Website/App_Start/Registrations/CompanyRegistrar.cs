@@ -18,6 +18,7 @@ namespace Informa.Web.App_Start.Registrations
 				.As<IFindCompanyByUser>()
 				.As<ISalesforceFindCompanyByUser>();
 
+			builder.RegisterType<SalesforceFindCompanyByMasterId>().As<IFindCompanyByMasterId>();
 			builder.RegisterType<SalesforceRegisterUser>().As<IRegisterCompanyUser>();
 		}
 	}

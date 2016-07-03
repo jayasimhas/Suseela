@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: bb092e43-066c-4b35-87c3-5ccecc6160f9
+revision: 77493fb8-d42d-4a8e-80ca-a16bc3b36d2c
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -29,6 +29,27 @@ content-length: 8
 
 Gangurde
 ----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{4BAD91AC-68D4-41CE-BB2A-82B6254769CC}" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 10
+
+ScripAnjuG
+----field----
+field: {B3E3F7B7-3E08-4CBF-ABED-1932BB8639A7}
+name: Inactive
+key: inactive
+content-length: 1
+
+1
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -41,18 +62,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-bb092e43-066c-4b35-87c3-5ccecc6160f9
+77493fb8-d42d-4a8e-80ca-a16bc3b36d2c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190923Z
+20160420T134808Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 17
 
-sitecore\admin
+sitecore\ctrudeau

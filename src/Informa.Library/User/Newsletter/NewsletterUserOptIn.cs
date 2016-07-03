@@ -1,6 +1,4 @@
-﻿using Informa.Library.Newsletter;
-
-namespace Informa.Library.User.Newsletter
+﻿namespace Informa.Library.User.Newsletter
 {
 	public class NewsletterUserOptIn : INewsletterUserOptIn
 	{
