@@ -325,23 +325,21 @@ namespace Elsevier.Web.VWB
 
         protected void BuildExistingIssuesList()
         {
-            ExistingIssuesDdl.CssClass = "js-existing-issue";
-            ExistingIssuesDdl.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
+            ExistingIssueSelector.CssClass = "js-existing-issue";
+            ExistingIssueSelector.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
 
 	        using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
 	        {
 		        var issuesService = scope.Resolve<IIssuesService>();
 		        var issues = issuesService.GetActiveIssues();
-		        issues.Each(i => ExistingIssuesDdl.Items.Add(new ListItem(i._Name, i._Id.ToString())));
+		        issues.Each(i => ExistingIssueSelector.Items.Add(new ListItem(i._Name, i._Id.ToString())));
 	        }
         }
-
-        #endregion
 
 	    protected void btnAddArticleToExistingIssue_OnClick(object sender, EventArgs e)
 	    {
 		    Guid issueId;
-		    if (Guid.TryParse(ExistingIssuesDdl.SelectedItem.Value, out issueId))
+		    if (Guid.TryParse(ExistingIssueSelector.SelectedItem.Value, out issueId))
 		    {
 			    using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
 			    {
@@ -359,5 +357,7 @@ namespace Elsevier.Web.VWB
 			}
 			Response.Redirect(Request.Url.PathAndQuery);
 	    }
-	}
+
+        #endregion
+    }
 }
