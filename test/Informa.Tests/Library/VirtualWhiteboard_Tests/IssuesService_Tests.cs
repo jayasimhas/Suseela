@@ -103,16 +103,15 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
         }
 
 	    [Test]
-	    public void UpdateIssueItem_NoMatchingIssueFound_Returned()
+	    public void UpdateIssueItem_NoMatchingIssueFound_ThrowsExceptionWithBadId()
 	    {
 		    // ARRANGE
+            var badGuid = new Guid("E6008282-9ABC-4FF8-B618-5862CD2955A3");
 		    _dependencies.SitecoreServiceMaster.GetItem<IIssue__Raw>(Arg.Any<Guid>()).Returns((IIssue__Raw)null);
 
-		    // ACT
-			_issuesService.UpdateIssueItem(null, Arg.Any<Guid>());
-		    
-			// ASSERT
-		    _dependencies.SitecoreSecurityWrapper.DidNotReceive().WithSecurityDisabled(Arg.Any<Action>());
+		    // ACT & ASSERT
+	        var ex = Assert.Throws<Exception>(() => _issuesService.UpdateIssueItem(null, badGuid));
+            Assert.IsTrue(ex.Message.Contains(badGuid.ToString()));
 	    }	
 
         [Test]
@@ -383,16 +382,17 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 		}
 
 	    [Test]
-	    public void GetIssueArticlesSet_IssueId_ASetOfChildren()
+	    public void BuildIssueDictionary_IssueId_ASetOfChildren()
 	    {
 		    // ARRANGE
 		    var issue = Substitute.For<IIssue>();
-		    _dependencies.SitecoreServiceMaster.GetItem<IIssue>(Arg.Any<Guid>()).Returns(issue);
+	        issue._Id.Returns(new Guid("38FFB1E3-7748-4F8F-ACFF-F98676D22012"));
+		    _dependencies.SitecoreServiceMaster.GetItem<IIssue>(issue._Id).Returns(issue);
 		    var article = Substitute.For<IGlassBase>();
 		    issue._ChildrenWithInferType.Returns(new[] {article, article});
 
-		    // ACT
-		    var result = _issuesService.GetIssueArticlesSet(Arg.Any<Guid>());
+            // ACT
+            var result = _issuesService.BuildIssueDictionary(issue._Id);
 
 		    // ASSERT
 			Assert.IsNotEmpty(result);

@@ -24,8 +24,8 @@ namespace Informa.Library.VirtualWhiteboard
 		VwbResponseModel ArchiveIssue(Guid issueId);
 		void ReorderArticles(string ids);
 		void DeleteArticles(string ids);
-		void UpdateIssueInfo(Guid issueId, string title, string date);
-		IEnumerable<IIssue> GetActiveIssues();
+	    void UpdateIssueItem(IssueModel model, Guid issueId);
+        IEnumerable<IIssue> GetActiveIssues();
 		bool DoesIssueContains(Guid issueId, string articleId);
 		void AddArticlesToIssue(Guid issueId, IEnumerable<Guid> itemIds);
 	}
@@ -173,13 +173,11 @@ namespace Informa.Library.VirtualWhiteboard
 			}
 			ids.Split('|').Select(i => new Guid(i)).ForEach(i =>
 				_dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
-				{			
-					_dependencies.SitecoreServiceMaster.Delete(_dependencies.SitecoreServiceMaster.GetItem<IArticle>(i));
-				});
-			});
+					_dependencies.SitecoreServiceMaster.Delete(_dependencies.SitecoreServiceMaster.GetItem<IArticle>(i))
+				));
 		}
 
-		public void ReorderArticles(string ids)
+	    public void ReorderArticles(string ids)
 		{
 			if (!string.IsNullOrWhiteSpace(ids))
 			{
@@ -234,7 +232,7 @@ namespace Informa.Library.VirtualWhiteboard
 			return _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildIssueDictionary(issueId));
 		}
 
-		private HashSet<string> BuildIssueDictionary(Guid issueId)
+		public HashSet<string> BuildIssueDictionary(Guid issueId)
 		{
 			var dict = new HashSet<string>();
 			_dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId)
