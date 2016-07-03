@@ -1,3 +1,5 @@
+@using Informa.Library.Utilities.References
+
 @model SearchViewModel
  @*TODO: What is the max # of numbered pages to list?
      TODO: Will there be 2 ellipsis if you're in the middle, e.g.  "First ... 7 8 9 10 11 ... Last" ?
@@ -6,6 +8,12 @@
 
 
 <div class="search-pagination__wrapper" ng-controller="searchPaginationController as paginator">
+    <select ng-controller="PageSizeController as sizer" ng-model="pageSize" ng-init="sizer.init()" ng-change="sizer.update(pageSize)">
+        @foreach (int page in Constants.PerPageSizes)
+        {
+        <option value="@page">@page</option>
+        }
+    </select>
     <ol class="search-pagination__pagination-list" ng-if="paginator.showPagination">
         <li ng-if="!paginator.isFirstPageInBlock()">
             <a href="" title="Page {{paginator.pageFirst}}" ng-click="paginator.goto(paginator.pageFirst)">@Model.PageFirstText</a>

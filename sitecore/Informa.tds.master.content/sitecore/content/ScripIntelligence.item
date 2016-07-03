@@ -24,12 +24,26 @@ content-length: 16
 
 20160504T140000Z
 ----field----
+field: {5EEA0A43-3174-451D-AB8B-AA348E6352CB}
+name: Publication Code
+key: publication code
+content-length: 5
+
+SCRIP
+----field----
 field: {073E357F-68A0-422F-B188-EB9CC874536A}
 name: Reset Password Page
 key: reset password page
 content-length: 38
 
 {1F568EC6-31C4-490E-AF33-B46FB3524A30}
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+200
 ----field----
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
@@ -40,7 +54,7 @@ ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename
 ----version----
 language: en
 version: 1
-revision: 9bbb17a8-b6e8-4c1a-838c-7a88f4b191a0
+revision: abd10a84-7057-4106-ac4d-77ab2e539885
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -116,9 +130,9 @@ content-length: 58
 field: {ACA9D1AD-7C13-40BB-ACB6-C584EB6623BD}
 name: Local Footer Links
 key: local footer links
-content-length: 38
+content-length: 155
 
-{8571D053-5A3C-44C5-82DF-68537628956F}
+{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}|{FE0B4566-CDDD-49A5-BF3D-40E154E83377}|{EA088B7F-FC39-4695-9848-6BC63A16E85E}|{CF48173B-0B5C-417F-952A-E82CDBC4D277}
 ----field----
 field: {9C4CAA71-E34E-4489-91C3-ED76AB9700BD}
 name: Menu One Header
@@ -266,6 +280,20 @@ content-length: 200
 <p><strong><a href="mailto:#email#">#email#</a></strong></p>
 <p><strong><a href="~/link.aspx?_id=110D559FDEA542EA9C1C8A5DF7E70EF9&amp;_z=z">Home</a></strong></p>
 ----field----
+field: {4AA86258-477A-4E2F-BF53-64C9CB5AD261}
+name: Email Header Navigation
+key: email header navigation
+content-length: 38
+
+{00BFD43D-CF33-45FF-9736-13C698B49DE0}
+----field----
+field: {C3B51BCD-D830-415D-8E66-53E80BB9CD7D}
+name: Email Footer Navigation
+key: email footer navigation
+content-length: 38
+
+{52FFAEEE-8909-488A-96CE-9538BD818AF8}
+----field----
 field: {6B8B6C6D-013A-4BA0-A166-F57747668B0F}
 name: My Account Page
 key: my account page
@@ -327,6 +355,20 @@ content-length: 72
 
 #FIRST_NAME#, your subscription is up for renewal in on #SUB_EXPIRATION#
 ----field----
+field: {ED1FB2F5-C40A-469B-BB1D-44CE20263493}
+name: Debug IP Access
+key: debug ip access
+content-length: 9
+
+127.0.0.1
+----field----
+field: {FA009CBE-F5EE-4934-A608-29F6471FB59A}
+name: Debug Email Access
+key: debug email access
+content-length: 0
+
+
+----field----
 field: {3071922D-4EF9-4ABB-AE03-3DAFEC2544F4}
 name: Days To Expiration
 key: days to expiration
@@ -367,14 +409,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-9bbb17a8-b6e8-4c1a-838c-7a88f4b191a0
+abd10a84-7057-4106-ac4d-77ab2e539885
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160418T115832Z
+20160527T100349Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

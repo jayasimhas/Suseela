@@ -1,6 +1,5 @@
 ﻿@model MainLayoutViewModel
-@using System.Configuration
-@using Informa.Library.Utilities.References
+
 @using StackExchange.Profiling
 <!DOCTYPE html>
 <html>
@@ -21,38 +20,16 @@
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/dist/index-generated.css">
 
-    <script src="/js/openadstream.js"></script>
-
     @* @Html.Sitecore().VisitorIdentification() *@
     @Html.Sitecore().Placeholder("head")
 
 </head>
-<body>
-    <script type="text/javascript">
-    /* * *
-    ANALYTICS DATA
-    * * */
-    var analytics_data = {
-        "page_name": "@Model.PageTitleAnalytics", "page_type": "@Model.PageType", "actual_publish_date": "@Model.ArticlePublishDate", "article_author": "@Html.Raw(Model.ArticleAuthors)",
-        "article_content_type": "@Model.ArticleContentType", "article_embargo": "@Model.ArticleEmbargoed", "article_media_type": "@Model.ArticleMediaType", "article_number": "@Model.ArcticleNumber",
-        "created_date": "@Model.DateCreated", "custom_tags": "@Model.CustomTags", "page_description": "@Model.PageDescription", "page_title_override": "@Model.PageTitleOverride",
-        "taxonomy_region": "@Html.Raw(Model.ArticleRegions)", "taxonomy_subjects": "@Html.Raw(Model.ArticleSubject)", "taxonomy_therapy_areas": "@Html.Raw(Model.ArticleTherapy)", "login_status": "@Model.IsUserLoggedIn", "IsArticleFree": "@Model.IsFree",
-        "user_id": "@Model.UserName", "company": "@Model.UserCompany", "user_entitlement_type": "@Html.Raw(Model.UserEntitlements)", "entitlement_status": "@Html.Raw(Model.UserEntitlementStatus)", "industry": "@Model.UserIndustry",
-        "user_email": "@Model.UserEmail", "current_email_subscriptions": "@Html.Raw(Model.SubscribedProducts)", "page_keywords": "@Model.MetaKeyWords", "company_Id" : "@Model.CompanyId","article_entitlements" : "@Model.Article_Entitlement", "User_IP_Address":"@Model.UserIp"
-    };
-    var utag_data = analytics_data;
+<body @Model.BodyCssClass>
 
-    (function (a, b, c, d) {
-        a = '//tags.tiqcdn.com/utag/informa/main/@Model.SiteEnvrionment/utag.js';
-        b = document; c = 'script'; d = b.createElement(c); d.src = a;
-        d.type = 'text/java' + c; d.async = true;
-        a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a)
-    })();
+    @Html.Sitecore().Placeholder("primary-header")
 
-    </script>
-    @Html.Sitecore().Rendering(Model.ItemReferences.SiteHeaderRendering.ToString())
     <main>
-        @Html.Sitecore().Rendering(Model.ItemReferences.SiteSideNavigationRendering.ToString())
+        @Html.Sitecore().Placeholder("inner-main")
 
         <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
 
@@ -60,27 +37,21 @@
                 @Html.Sitecore().Placeholder("general-header")
             </div>
 
-            @{  Html.RenderPartial("_MaintainenceMessage", Model.MaintenanceMessage); }
-            @{  Html.RenderPartial("_IndividualSubscriptionRenewalMessage", Model.IndividualRenewalMessageInfo); }
-            @{  Html.RenderPartial("Company/_RegisterMessage", Model.CompanyRegisterMessage); }
+            @Html.Sitecore().Placeholder("pre-content")
 
             <div class="main__content">
+                @Html.Sitecore().Placeholder("top-main-content")
                 @Html.Sitecore().Placeholder("main-content")
             </div>
 
-            @* * *  POP-OUT TEMPLATE MARKUP *@
-            @Html.Partial("PopOuts/SignIn", Model.SignInPopOutViewModel)
-            @Html.Partial("PopOuts/Register", Model.RegisterPopOutViewModel)
-            @Html.Partial("PopOuts/EmailArticle", Model.EmailArticlePopOutViewModel)
-            @Html.Partial("PopOuts/EmailSearch", Model.EmailSearchPopOutViewModel)
-            @* * *  END POP-OUT TEMPLATE MARKUP *@
+            @Html.Sitecore().Placeholder("post-content")
 
         </div>
 
     </main>
 
     <footer>
-        @Html.Sitecore().Rendering(Model.ItemReferences.SiteFooterRendering.ToString())
+        @Html.Sitecore().Placeholder("footer")
     </footer>
 
     @* If this is an Article page... *@
@@ -90,44 +61,10 @@
     </div>
     @* end pseudo-if *@
 
-    @*
-    To collect end-user usage analytics about your application,
-    insert the following script into each page you want to track.
-    Place this code immediately before the closing </head> tag,
-    and before any other scripts. Your first data will appear
-    automatically in just a few seconds.
-    *@
-    @if (Model.AppInsightsConfig.Enabled)
-    {
-        <script type="text/javascript">
-            var appInsights = window.appInsights || function (config) {
-                function r(config) {
-                    t[config] = function () {
-                        var i = arguments;
-                        t.queue.push(function () { t[config].apply(t, i) })
-                    }
-                }
-
-                var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f;
-                for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) r("track" + i.pop());
-                return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) {
-                    var s = f && f(config, r, u, e, o);
-                    return s !== !0 && t["_" + i](config, r, u, e, o), s
-                }), t
-            }({
-                instrumentationKey: "@Model.AppInsightsConfig.InstrumentationKey"
-            });
-
-            window.appInsights = appInsights;
-            appInsights.trackPageView();
-        </script>
-    }
-
-
-
     <script src="/dist/js/index.js"></script>
-
-    @{ Html.RenderPartial("SiteDebugging/Toolbar", Model.DebugToolbar); }
+    @if (Model.IsSiteDebuggingAllowed) {
+        @Html.Sitecore().Placeholder("site-debugger")
+    }
     @MiniProfiler.RenderIncludes()
 </body>
 </html>

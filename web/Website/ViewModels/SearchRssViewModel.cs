@@ -10,8 +10,7 @@ using Informa.Library.Rss.Utils;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss;
 using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
-using Sitecore.Web;
+using Log = Sitecore.Diagnostics.Log;
 
 namespace Informa.Web.ViewModels
 {
@@ -94,8 +93,16 @@ namespace Informa.Web.ViewModels
                 feed.SaveAsRss20(writer);
                 writer.Flush();
                 writer.Close();
-                return output.ToString();
+                string rs = output.ToString().Replace("utf-16", "utf-8");
+                rs = RemoveInvalidXmlChars(rs);
+                return rs;
             }
+        }
+
+        private string RemoveInvalidXmlChars(string text)
+        {
+            var validXmlChars = text.Where(ch => XmlConvert.IsXmlChar(ch)).ToArray();
+            return new string(validXmlChars);
         }
 
         public IRssFeedGeneration GetFeedGenerator(I_Base_Rss_Feed rssFeedItem)

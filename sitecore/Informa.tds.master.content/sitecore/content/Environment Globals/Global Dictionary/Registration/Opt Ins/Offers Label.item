@@ -33,15 +33,15 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 334ae76e-ffe3-44fc-bbaa-67f24ee5aa62
+revision: 30068d8c-36d8-41de-b8c9-2c1bbcd5738b
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 69
+content-length: 161
 
-Please do not send me any promotional information or offers via email
+By ticking this box, you agree to receive emails such as relevant news, updates and offers from SCRIP, and carefully selected similar products from our portfolio
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -55,18 +55,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-334ae76e-ffe3-44fc-bbaa-67f24ee5aa62
+30068d8c-36d8-41de-b8c9-2c1bbcd5738b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160308T154314Z
+20160423T221104Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 17
 
-sitecore\admin
+sitecore\distaula

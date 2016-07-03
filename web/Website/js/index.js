@@ -1,21 +1,35 @@
 /* global angular, analytics_data */
 
+// THIRD-PARTY / VENDOR
 import Zepto from './zepto.min';
 import svg4everybody from './svg4everybody';
 import Cookies from './jscookie';
-import PopOutController from './pop-out-controller';
-import NewsletterSignupController  from './newsletter-signup';
-import BookmarkController from './bookmark-controller';
-import SearchScript from './search-page.js';
-import ResetPasswordController from './reset-password-controller';
-import RegisterController from './register-controller';
-import FormController from './form-controller';
-import SortableTableController from './sortable-table-controller';
-import { analyticsEvent } from './analytics-controller';
 
-/* Polyfill for scripts expecting `jQuery`
-    Also see: CSS selectors support in zepto.min.js
-*/
+
+// CONTROLLERS
+import FormController from './controllers/form-controller';
+import PopOutController from './controllers/pop-out-controller';
+import BookmarkController from './controllers/bookmark-controller';
+import ResetPasswordController from './controllers/reset-password-controller';
+import RegisterController from './controllers/register-controller';
+import SortableTableController from './controllers/sortable-table-controller';
+import LightboxModalController from './controllers/lightbox-modal-controller';
+import { analyticsEvent } from './controllers/analytics-controller';
+
+
+// COMPONENTS
+import './components/save-search-component';
+
+
+// OTHER CODE
+import NewsletterSignupController  from './newsletter-signup';
+import SearchScript from './search-page.js';
+
+import { toggleIcons } from './toggle-icons';
+// Global scope to play nicely with Angular
+window.toggleIcons = toggleIcons;
+
+/* Polyfill for scripts expecting `jQuery`. Also see: CSS selectors support in zepto.min.js */
 window.jQuery = $;
 
 
@@ -31,29 +45,28 @@ var showForgotPassSuccess = function() {
 
 var renderIframeComponents = function() {
     $('.iframe-component').each(function(index, elm) {
-        var desktopEmbed = $(elm).find('.iframe-component__desktop iframe');
-        var mobileEmbed = $(elm).find('.iframe-component__mobile iframe');
-        var mobileEmbedLink = mobileEmbed.data('embed-link');
+        var desktopEmbed = $(elm).find('.iframe-component__desktop');
+        var mobileEmbed = $(elm).find('.iframe-component__mobile');
 
-        // Check if the user is viewing inside the page editor
-        // Don't hide/show desktop and/or mobile, just keep both visible
-        // so users can add, edit, or delete either.
-        if(desktopEmbed.hasClass('is-page-editor')) {
-            return;
-        }
+        var isEditMode = $(this).hasClass('is-page-editor');
 
-        if($(window).width() <= 480) {
+        var showMobile = ($(window).width() <= 480) || isEditMode;
+        var showDesktop = !showMobile || isEditMode;
+
+        if (showMobile) {
             mobileEmbed.show();
-            desktopEmbed.hide();
-            if(mobileEmbed.html() == '') {
-                mobileEmbed.html(mobileEmbed.data('embed-link'));
-            }
+            if (mobileEmbed.html() == '') 
+                mobileEmbed.html(decodeHtml(mobileEmbed.data('embed-link')));
         } else {
+            desktopEmbed.hide();
+        }
+        
+        if (showDesktop) {
             desktopEmbed.show();
+            if (desktopEmbed.html() == '') 
+                desktopEmbed.html(decodeHtml(desktopEmbed.data('embed-link')));
+        } else {
             mobileEmbed.hide();
-            if(desktopEmbed.html() == '') {
-                desktopEmbed.html(desktopEmbed.data('embed-link'));
-            }
         }
 
         var desktopMediaId = $(elm).find('.iframe-component__desktop').data("mediaid");
@@ -71,16 +84,27 @@ var renderIframeComponents = function() {
     });
 };
 
+var decodeHtml = function(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
+
 $(document).ready(function() {
 
     // Anti Forgery Token
     var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
+
+    var sortTheTables = new SortableTableController();
+
+    window.lightboxController = new LightboxModalController();
 
     /* * *
         Traverses the DOM and registers event listeners for any pop-out triggers.
         Bound explicitly to `window` for easier access by Angular.
     * * */
     window.indexPopOuts = function() {
+
         window.controlPopOuts = new PopOutController('.js-pop-out-trigger');
 
         window.controlPopOuts.customize({
@@ -113,14 +137,9 @@ $(document).ready(function() {
     * * */
     window.indexBookmarks = function() { // Toggle bookmark icon
         $('.js-bookmark-article').on('click', function bookmarkArticle(e) {
-            // Make sure proper elm gets the click event
-            if (e.target !== this) {
-                this.click();
-                return;
-            }
 
             e.preventDefault();
-            window.bookmark.toggle(e.target);
+            window.bookmark.toggle(this);
 
         });
     };
@@ -169,20 +188,6 @@ $(document).ready(function() {
         (toggles at tablet/smartphone sizes, always visible at desktop size)
     * * */
     $('.js-header-search-trigger').on('click', function toggleMenuItems(e) {
-
-        //var searchKeyword = $('.header-search__field').val();
-        //if((searchKeyword === "" || searchKeyword === undefined || searchKeyword === null) && (('.search-bar__field').length))
-        //{
-        //    searchKeyword = $('.search-bar__field').val();
-        //}
-        //var eventDetails = {
-        //    event_name: "search",
-        //    search_keyword: '"' + searchKeyword + '"'
-        //};
-
-        //analyticsEvent($.extend(analytics_data, eventDetails));
-
-
         if($(window).width() <= 800) {
             $('.header-search__wrapper').toggleClass('is-active').focus();
         } else {
@@ -250,10 +255,18 @@ $(document).ready(function() {
         observe: '.form-reset-password',
         successCallback: function() {
             $('.form-reset-password').find('.alert-success').show();
-            analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
+            var isPassword = $('.form-reset-password').data("is-password");
+            if(isPassword)
+            {
+                analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
+            }
         },
         failureCallback: function() {
-            analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
+            var isPassword = $('.form-reset-password').data("is-password");
+            if(isPassword)
+            {
+                analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
+            }
         }
 
     });
@@ -262,27 +275,64 @@ $(document).ready(function() {
         observe: '.form-new-reset-pass-token',
         successCallback: function() {
             $('.form-new-reset-pass-token').find('.alert-success').show();
+            analyticsEvent( $.extend(analytics_data, { event_name: "password reset success" }) );
+        },
+        failureCallback: function() {
+            analyticsEvent( $.extend(analytics_data, { event_name: "password reset failure" }) );
+        }
+    });
+
+    $('.js-corporate-master-toggle').on('change', function() {
+        if($(this).prop('checked')) {
+            $('.js-registration-corporate-wrapper').show();
+        } else {
+            $('.js-registration-corporate-wrapper').hide();
         }
     });
 
     var userRegistrationController = new FormController({
         observe: '.form-registration',
         successCallback: function(form, context, event) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "form registration successful" }) );
+
+			// Stash registration type so next page can know it without
+			// an additional Salesforce call
+			Cookies.set('registrationType', context.response.registration_type, {} );
+
+            analyticsEvent( $.extend(analytics_data, {
+				registration_type: context.response.registration_type
+			}) );
+
         },
         failureCallback: function(form,response) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "form registration failure" }) );
+
+            var errorMsg = $(".page-registration__error").text();
+            if (response.reasons && response.reasons.length > 0) {
+                errorMsg = "[";
+                for (var reason in response.reasons) {
+                    errorMsg += response.reasons[reason] + ",";
+                }
+                errorMsg = errorMsg.substring(0, errorMsg.length - 1);
+                errorMsg += "]";
+            }
+            analyticsEvent( $.extend(analytics_data, { event_name: "registration failure", registraion_errors : errorMsg }) );
         }
     });
 
     var userRegistrationFinalController = new FormController({
         observe: '.form-registration-optins',
         successCallback: function(form, context, event) {
-            analyticsEvent( $.extend(analytics_data, { event_name: "registration successful" }) );
+
+			var registrationType = Cookies.get('registrationType');
+
+			analyticsEvent( $.extend(analytics_data, {
+				registration_type: registrationType
+			}) );
+
+			Cookies.remove('registrationType');
         },
         failureCallback: function(form, response) {
             var errorMsg = $(".page-registration__error").text();
-           if (response.reasons && response.reasons.length > 0) {
+            if (response.reasons && response.reasons.length > 0) {
                 errorMsg = "[";
                 for (var reason in response.reasons) {
                     errorMsg += response.reasons[reason] + ",";
@@ -294,6 +344,7 @@ $(document).ready(function() {
         }
     });
 
+
     var userPreRegistrationController = new FormController({
         observe: '.form-pre-registration',
         successCallback: function(form) {
@@ -304,7 +355,7 @@ $(document).ready(function() {
             var nextStepUrl = $(form).data('forwarding-url') + sep + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
 
             window.location.href = nextStepUrl;
-      
+
         }
     });
 
@@ -344,12 +395,19 @@ $(document).ready(function() {
                 $('.js-email-search-success').hide();
             });
 
+			var event_data = {
+				event_name: "toolbar_use",
+				toolbar_tool: "email"
+			};
+
+			analyticsEvent( $.extend(analytics_data, event_data) );
+
         },
         beforeRequest: function() {
 
             var resultIDs = null;
 
-            $('.js-angular-bookmark').each(function(indx, item) {
+            $('.js-search-results-id').each(function(indx, item) {
                 resultIDs = resultIDs ? resultIDs + ',' + $(item).data('bookmark-id') : $(item).data('bookmark-id');
             });
 
@@ -362,7 +420,35 @@ $(document).ready(function() {
 
 
     var accountEmailPreferencesController = new FormController({
-        observe: '.form-email-preferences'
+        observe: '.form-email-preferences',
+        successCallback: function(form, context, event) {
+
+            var event_data = {};
+            var optingIn = null;
+            var optingOut = null;
+
+            if($('#DoNotSendOffersOptIn').prop('checked')) {
+                event_data.event_name = 'email_preferences_opt_out';
+            } else {
+
+                event_data.event_name = 'email_preferences_update';
+
+                $('.js-account-email-checkbox').each(function(index, item) {
+                    if(this.checked) {
+                        optingIn = optingIn ? optingIn + '|' + this.value : this.value;
+                    } else {
+                        optingOut = optingOut ? optingOut + '|' + this.value : this.value;
+                    }
+                });
+
+                event_data.email_preferences_optin = optingIn;
+                event_data.email_preferences_optout = optingOut;
+
+            }
+
+            analyticsEvent( $.extend(analytics_data, event_data) );
+
+        }
     });
 
 
@@ -386,9 +472,20 @@ $(document).ready(function() {
         observe: '.form-remove-saved-document',
         successCallback: function(form, context, evt) {
             $(evt.target).closest('tr').remove();
+            if($('.js-sortable-table tbody')[0].rows.length === 0) {
+                $('.js-sortable-table').remove();
+                $('.js-no-articles').show();
+            }
+
+			var event_data = {
+				event_name: 'bookmark_removal',
+				bookmark_title: $(form).data('analytics-title'),
+				bookmark_publication: $(form).data('analytics-publication')
+			};
+
+			analyticsEvent( $.extend(analytics_data, event_data) );
         }
     });
-
 
     svg4everybody();
 
@@ -471,7 +568,16 @@ $(document).ready(function() {
 
         var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
         dismissedBanners[thisBanner.data('banner-id')] = true;
-        Cookies.set('dismissedBanners', dismissedBanners);
+
+        // if banner has a 'dismiss-all-subdomains' attribute = true, set the domain of the cookie
+        // to the top-level domain.
+        var domain = document.location.hostname;
+        if (thisBanner.data('dismiss-all-subdomains')) {
+            var parts = domain.split('.');
+            parts.shift();
+            domain = parts.join('.');
+        }
+        Cookies.set('dismissedBanners', dismissedBanners, {expires: 3650, domain: domain } );
     });
 
     // For each article table, clone and append "view full table" markup
@@ -492,6 +598,13 @@ $(document).ready(function() {
         $(tableLink).find('a').data("table-url", url).attr('href', null);
         $(e).after(tableLink);
     });
+
+
+	// Find duplicate embeds on article page
+	// IITS2-312
+	$('[class^=ewf-desktop-iframe] ~ [class^=ewf-mobile-iframe]').each(function(index, item) {
+		$(item).remove();
+	});
 
     // When DOM loads, render the appropriate iFrame components
     // Also add a listener for winder resize, render appropriate containers
@@ -516,7 +629,7 @@ $(document).ready(function() {
 
     // Display the Forgot Password block when "forgot your password" is clicked
     $('.js-show-forgot-password').on('click', function toggleForgotPass() {
-        $('.pop-out__sign-in-forgot-password').toggleClass('is-active');
+        $('.js-reset-password-container').toggleClass('is-active');
     });
 
     // Global dismiss button for pop-outs
@@ -530,6 +643,7 @@ $(document).ready(function() {
         window.controlPopOuts.closePopOut(e.target);
     });
 
+
     // Make sure all external links open in a new window/tab
     $("a[href^=http]").each(function(){
         if(this.href.indexOf(location.hostname) == -1) {
@@ -538,6 +652,24 @@ $(document).ready(function() {
             });
         }
     });
+
+	// Adds analytics for article page clicks
+	$('.root').find('a').each(function(index, item) {
+
+        $(this).addClass('click-utag');
+
+        var linkString;
+
+		if(this.href.indexOf(location.hostname) == -1) {
+            linkString = 'External:' + this.href;
+        } else {
+            linkString = this.href;
+        }
+
+		if ($(this).data('info') == undefined) {
+			$(this).data('info', '{ "event_name": "embeded_link_click_through", "click_through_source": "' + $('h1').text + '", "click_through_destination": "' + linkString + '"}');
+		}
+	});
 
     $('.general-header__navigation').each(function() {
 
@@ -650,21 +782,23 @@ $(document).ready(function() {
         init();
     };
 
-    $('#newsletters').on('click',function(e){
-        newsletterOptins();
+    $('.js-register-final').on('click',function(e){
+
+        var eventDetails = {
+            // event_name: "newsletter optins"
+        };
+        var chkDetails = {};
+        if ($('#newsletters').is(':checked')) {
+            chkDetails.newsletter_optin = "true";
+            $.extend(eventDetails,chkDetails);
+            analyticsEvent( $.extend(analytics_data, eventDetails) );
+        } else {
+            chkDetails.newsletter_optin = "false";
+            $.extend(eventDetails,chkDetails);
+            analyticsEvent( $.extend(analytics_data, eventDetails) );
+        }
     });
 
-    var newsletterOptins = function(){
-        var eventDetails = {event_name : "newsletter optins"};
-        if ($('#newsletters').is(':checked')) {
-            var chkDetails = {   newsletter_optin: "true"}
-            $.extend(eventDetails,chkDetails);
-        } else {
-            var chkDetails = {   newsletter_optin: "false"}
-            $.extend(eventDetails,chkDetails);
-        }
-        analyticsEvent( $.extend(analytics_data, eventDetails) );
-    };
 
     // TODO - Refactor this code, update class name to a `js-` name
     $('.manage-preferences').click(function(e) {
@@ -698,10 +832,9 @@ $(document).ready(function() {
 
         analyticsEvent( $.extend(analytics_data, preferencesData) );
 
-
     });
 
-    newsletterOptins();
+
     // Execute!
     smoothScrollingNav();
 
@@ -712,10 +845,15 @@ $(document).ready(function() {
     });
 
 
-    var sortTheTables = new SortableTableController();
-
+    $('.js-toggle-list').on('click', function(e) {
+        $(e.target).closest('.js-togglable-list-wrapper').toggleClass('is-active');
+    });
 
     $('.click-utag').click(function (e) {
+        analyticsEvent( $.extend(analytics_data, $(this).data('info')) );
+    });
+
+    $('.search-results').on('click', '.click-utag', function (e) {
         analyticsEvent( $.extend(analytics_data, $(this).data('info')) );
     });
 
@@ -730,6 +868,15 @@ $(document).ready(function() {
             $('#txtShippingPostalCode').val($('#txtBillingPostalCode').val());
         }
     });
+    
+    $('.js-account-email-toggle-all').on('click', function (e) {
+        $('.js-update-email-prefs').attr('disabled', null);
+    });
+
+    $('.js-account-email-checkbox').on('click', function (e) {
+        $('.js-update-email-prefs').attr('disabled', null);
+    });
+
     // Twitter sharing JS
     window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],
         w=window.twttr||{};

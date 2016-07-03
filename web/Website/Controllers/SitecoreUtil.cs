@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Web.Security;
-using Informa.Library.Article.Search;
 using Informa.Library.Utilities.References;
 using Informa.Web.Areas.Account.Models;
-using Informa.Models.FactoryInterface;
 using PluginModels;
 using Sitecore.Security.Authentication;
 using Jabberwocky.Glass.Autofac.Util;
@@ -38,7 +33,7 @@ namespace Informa.Web.Controllers
         public static string GetPublicationPrefix(Guid publicationGuid)
         {
             string value;
-            return Constants.PublicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : null;
+            return Constants.PublicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : string.Empty;
         }
 
         public static UserStatusStruct GetUserStatus(string username, string password)
