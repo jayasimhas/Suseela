@@ -5,6 +5,7 @@ using Sitecore.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Jabberwocky.Core.Caching;
 
 namespace Informa.Library.ContentCuration.Search
 {
@@ -12,16 +13,26 @@ namespace Informa.Library.ContentCuration.Search
 	public class ItemManuallyCuratedContentSearch : IItemManuallyCuratedContent
 	{
 		protected readonly IProviderSearchContextFactory SearchContextFactory;
+	    protected readonly ICacheProvider CacheProvider;
 
 		public ItemManuallyCuratedContentSearch(
-			IProviderSearchContextFactory searchContextFactory)
+			IProviderSearchContextFactory searchContextFactory,
+            ICacheProvider cacheProvider)
 		{
 			SearchContextFactory = searchContextFactory;
+		    CacheProvider = cacheProvider;
+
 		}
 
-		public IEnumerable<Guid> Get(Guid itemId)
-		{
-			using (var context = SearchContextFactory.Create())
+	    public IEnumerable<Guid> Get(Guid itemId)
+	    {
+            string cacheKey = $"{nameof(ItemManuallyCuratedContentSearch)}-Get-{itemId}";
+            return CacheProvider.GetFromCache(cacheKey, () => BuildResults(itemId));
+        }
+
+	    public IEnumerable<Guid> BuildResults(Guid itemId) {
+
+            using (var context = SearchContextFactory.Create())
 			{
 				var query = context.GetQueryable<ManuallyCuratedContentSearchResult>().Filter(i => i.ItemId == ID.Parse(itemId));
 				var results = query.GetResults();

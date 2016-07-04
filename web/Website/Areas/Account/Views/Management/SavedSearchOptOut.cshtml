@@ -1,0 +1,19 @@
+﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Library.User.EmailOptIns.SavedSearchOptOutViewModel>
+@{ Model.Init(); }
+
+<h2>@Model.HeaderText</h2>
+<p>@Html.Raw(Model.BodyText)</p>
+
+@if (Model.IsOptOutSuccessful)
+{
+    <script type="text/javascript">
+
+		analyticsEvent( $.extend( analytics_data, {
+			event_name: "one_click_unsubscribe",
+	        unsubscribe_publication: "@Model.CurrentPublicationName",
+	        unsubscribe_topic: "@Model.SavedSearchName",
+	        unsubscribe_email_type: "daily_alert"
+		}) );
+
+    </script>
+}
