@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {CC654F2D-4843-4DAB-B73C-9A13C6BA9048}
+database: master
+path: /sitecore/content/MedtechInsight/Home/My Account/Contact Information
+parent: {4A58A953-796D-4E54-9197-6AE2A1CC4FEC}
+name: Contact Information
+master: {CBA15CFC-A70C-4146-8A11-25AA3F4FDDB4}
+template: {AD6C16AC-05CE-45E4-A56B-9FCA24CBAF57}
+templatekey: Contact Information Page
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+100
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: 3417bcda-8ef7-4dcb-98f3-dc969f1d5271
+
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 19
+
+Contact Information
+----field----
+field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
+name: Sub Title
+key: sub title
+content-length: 19
+
+Contact Information
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 19
+
+Contact Information
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160418T200759Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3417bcda-8ef7-4dcb-98f3-dc969f1d5271
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160418T200759Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

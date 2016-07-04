@@ -51,10 +51,10 @@
 
         &,
         & a {
-            color: $informa-black;
+            color: $color-zeus-black;
 
             @include on-event() {
-                color: $informa-red;
+                color: $color-cardinal-red;
             }
         }
 

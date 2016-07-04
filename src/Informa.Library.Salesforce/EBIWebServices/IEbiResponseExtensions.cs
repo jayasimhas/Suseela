@@ -4,7 +4,7 @@
 	{
 		public static bool IsSuccess(this IEbiResponse source)
 		{
-			return source != null && source.success.HasValue && source.success.Value;
+			return source?.success != null && source.success.Value;
 		}
 	}
 }

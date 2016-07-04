@@ -11,7 +11,7 @@
 
 			<h3 class="pop-out__register-header">@Model.HeaderText</h3>
 
-			@{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
+            @Html.Sitecore().Placeholder("signin-popout-form")
 
 		</div>
 	</div>

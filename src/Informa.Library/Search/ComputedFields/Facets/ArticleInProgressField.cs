@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Glass.Mapper.Sc;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Sitecore.Configuration;
-using Sitecore.Data;
 using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
-using Sitecore.Shell.Applications.ContentEditor;
 using Sitecore.Workflows;
 using Velir.Search.Core.ComputedFields;
-using DateTime = System.DateTime;
+using Log = Sitecore.Diagnostics.Log;
 
 namespace Informa.Library.Search.ComputedFields.Facets
 {

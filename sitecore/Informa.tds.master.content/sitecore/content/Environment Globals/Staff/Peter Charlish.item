@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: ddc6cff3-72de-4401-9ce7-788f71f6599a
+revision: 771d8cf6-66fc-43ac-8f82-542d07b70a74
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -28,6 +28,20 @@ key: last name
 content-length: 8
 
 Charlish
+----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 118
+
+<image mediaid="{06F68390-6CA2-4FFE-ADE0-A6392D7E79F0}" alt="Peter Charlish" height="" width="" hspace="" vspace="" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 13
+
+PeterCharlish
 ----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
@@ -48,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ddc6cff3-72de-4401-9ce7-788f71f6599a
+771d8cf6-66fc-43ac-8f82-542d07b70a74
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190931Z
+20160424T000210Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
