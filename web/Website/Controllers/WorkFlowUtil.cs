@@ -1,30 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.UI;
 using Glass.Mapper.Sc;
+using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
-using Jabberwocky.Glass.Autofac.Attributes;
 using PluginModels;
-using Sitecore.Common;
-using Sitecore.Data;
 using Sitecore.Data.Items;
-using Sitecore.Tasks;
-using Sitecore.Workflows;
 using IWorkflow = Sitecore.Workflows.IWorkflow;
-using WorkflowCommand = Sitecore.Workflows.WorkflowCommand;
-
 
 namespace Informa.Web.Controllers
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
 	public interface IWorkFlowUtil
 	{
 		/// <summary>
@@ -51,13 +36,12 @@ namespace Informa.Web.Controllers
 	public class WorkFlowUtil : IWorkFlowUtil
 	{
 		private readonly ISitecoreService _sitecoreMasterService;
-		public const string MasterDb = "master";
 		protected SitecoreSaverUtil SitecoreUtil;
 		protected ArticleUtil ArticleUtil;
 
 		public WorkFlowUtil(Func<string, ISitecoreService> sitecoreFactory, SitecoreSaverUtil sitecoreSaverUtil, ArticleUtil articleUtil)
 		{
-			_sitecoreMasterService = sitecoreFactory(MasterDb);
+			_sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
 			SitecoreUtil = sitecoreSaverUtil;
 			ArticleUtil = articleUtil;
 		}
