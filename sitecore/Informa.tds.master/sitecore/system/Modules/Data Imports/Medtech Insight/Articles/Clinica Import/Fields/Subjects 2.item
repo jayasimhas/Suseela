@@ -1,0 +1,86 @@
+----item----
+version: 1
+id: {D30DC395-59B9-47EE-84E1-CA46FC6059EC}
+database: master
+path: /sitecore/system/Modules/Data Imports/Medtech Insight/Articles/Clinica Import/Fields/Subjects 2
+parent: {64C62A01-5CA2-4FE3-8B58-50A1CD2AB410}
+name: Subjects 2
+master: {00000000-0000-0000-0000-000000000000}
+template: {EC4E9590-F027-4C6F-AC08-DCABD8877F1B}
+templatekey: ListToGuid
+
+----field----
+field: {FA7B99B1-6BB9-469C-B786-F8A9D52D2F0A}
+name: Handler Class
+key: handler class
+content-length: 90
+
+Sitecore.SharedSource.DataImporter.Mappings.Fields.Clinica.FromTechnologySectionToSubjects
+----field----
+field: {093D915A-4306-4A68-B64A-07CC2A7E4EE5}
+name: To What Field
+key: to what field
+content-length: 8
+
+Taxonomy
+----field----
+field: {A534B62B-9C6B-449F-8B88-93753EFE6AEC}
+name: From What Fields
+key: from what fields
+content-length: 17
+
+TECHNOLOGYSECTION
+----field----
+field: {EBB47640-52E2-4BC3-8231-AF6FC5113DA3}
+name: Delimiter
+key: delimiter
+content-length: 1
+
+,
+----field----
+field: {76F71014-CC36-4507-B623-9BBD2851E8CE}
+name: Source List
+key: source list
+content-length: 38
+
+{46D8B99F-4A19-4D67-A083-0EFE313154AC}
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+900
+----version----
+language: en
+version: 1
+revision: 75fd52c5-1861-4497-bc69-1812c6a6fe5e
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160120T204058Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+75fd52c5-1861-4497-bc69-1812c6a6fe5e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160607T142414Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

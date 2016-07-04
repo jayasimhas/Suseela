@@ -95,7 +95,7 @@ DocProject/Help/html
 *.Publish.xml
 
 # NuGet Packages Directory
-packages/
+packages/*
 !packages/repositories.config
 !packages/Velir.*
 !packages/Jabberwocky.*
@@ -155,6 +155,9 @@ web/Website/sitecore/shell/client/Applications/*
 !web/Website/sitecore/shell/client/Applications/Nlm Export/
 !web/Website/sitecore/shell/client/Applications/View NLM/
 
+!web/Website/sitecore/admin/Tools/*
+
+
 web/Data/indexes/*
 web/Data/packages/*
 web/Data/serialization/*
@@ -190,8 +193,10 @@ web/Website/lib/bower_components
 web/Website/data/logs
 web/Website/data/indexes
 .vscode
+web/Website/Web.config
 web/Website/App_Config/ConnectionStrings.config
 web/Website/App_Config/Sitecore.config
+web/Website/App_Config/Prefetch/*.config
 web/Website/App_Config/Web/nwebsec.config
 web/Website/App_Config/Web/system.webServer.handlers.config
 web/Website/App_Config/Web/system.webServer.modules.config
@@ -325,4 +330,15 @@ web/Website/App_Config/Include/Social/Sitecore.Social.Twitter.config
 web/Website/App_Config/Include/Social/Sitecore.Social.config
 tools/vagrant/scripts/localdeploy.bat
 web/Website/App_Config/AppSettings.config
+web/Website/App_Config/Include/UserDefined/Sites.config
 web/Website/App_Config/Include/UserDefined/ScheduledPublishing.config
+
+# ts2
+web/Website/sitecore modules/Shell/Data Import/logs/*
+
+web/Website/App_Config/Include/ZZ.UserDefined/Import.config
+web/Website/App_Config/Include/zzzMustBeLast/Import.config
+solr/informa/data/index/segments_1
+solr/informa/data/index/write.lock
+web/Website/App_Config/Include/LiveMode.config
+web/Website/sitecore/*

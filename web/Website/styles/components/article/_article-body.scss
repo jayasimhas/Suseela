@@ -5,7 +5,7 @@
     > h1 {
         @extend h1;
         margin-bottom: 0.75rem;
-        color: $informa-black;
+        color: $color-zeus-black;
     }
 
     > h3 {
@@ -21,6 +21,11 @@
 
 	.plugin-hide {
 		display: none;
+	}
+
+	> ul {
+		@extend .carrot-list;
+		margin-bottom: 1rem;
 	}
 
     @include breakpoint('medium') {

@@ -13,13 +13,13 @@ templatekey: Site Root
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
-content-length: 382
+content-length: 157
 
-ar|sitecore\Article Read Access|pe|+item:read|pd|+item:read|ar|sitecore\General Content Access|pe|+item:rename|+item:write|+item:read|+item:delete|+item:create|pd|+item:rename|+item:write|+item:read|+item:delete|+item:create|ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:read|-item:rename|pd|-item:create|-item:write|-item:delete|-item:read|-item:rename|
+ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename|-item:read|pd|-item:create|-item:write|-item:delete|-item:rename|-item:read|
 ----version----
 language: en
 version: 1
-revision: 426699cb-fb77-405f-8f37-f1c9a6003790
+revision: e5df481c-c8e7-446b-ac84-7b4fe9eaf6d5
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-426699cb-fb77-405f-8f37-f1c9a6003790
+e5df481c-c8e7-446b-ac84-7b4fe9eaf6d5
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160412T204558Z
+20160418T195635Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
