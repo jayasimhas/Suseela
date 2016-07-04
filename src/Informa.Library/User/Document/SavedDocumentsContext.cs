@@ -40,7 +40,7 @@ namespace Informa.Library.User.Document
 					return savedDocumentsSession.Value;
 				}
 
-				var savedDocuments = SavedDocuments = FindSavedDocuments.Find(UserContext.User.Username);
+				var savedDocuments = SavedDocuments = FindSavedDocuments.Find(UserContext.User?.Username);
 
 				return savedDocuments;
 			}

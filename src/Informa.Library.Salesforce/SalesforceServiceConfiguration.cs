@@ -6,6 +6,7 @@ namespace Informa.Library.Salesforce
 	{
 		public const string UrlConfigKey = "SalesforceServiceConfiguration.Url";
 
-		public string Url => Settings.GetSetting(UrlConfigKey);
+		private string _url;
+		public string Url => _url ?? (_url = Settings.GetSetting(UrlConfigKey));
 	}
 }
