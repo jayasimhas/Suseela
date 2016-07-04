@@ -1,22 +1,28 @@
-﻿@model TopicContainerViewModel
+﻿@using Informa.Library.Utilities.References
+@inherits CustomGlassView<TopicContainerViewModel>
 
 <a id="@Model.Id.ToString("N")"
    class="sub-topic-links__invisible-topic-header-anchor js-topic-anchor"
    data-topic-link-text="@Model.NavigationText"></a>
 
 <div class="topic-subtopic">
-    <h1 class="topic-subtopic__header">
-        @Html.Glass().Editable(x => x.GlassModel.Title)
-        @if (Sitecore.Context.PageMode.IsPageEditor)
-        {
-            <br/>
-            @Html.Glass().Editable(x => x.GlassModel.Navigation_Link)
-            <br/>
-            @Html.Glass().Editable(x => x.GlassModel.Navigation_Text)
-        }
-        else {
-            <a class="topic-subtopic__header-explore-link" href="@HttpUtility.UrlDecode(Model.Link.LinkableUrl)">@Model.Link.LinkableText</a>
-        }
-    </h1>
+    <div class="topic-subtopic__header">
+        <h1 class="topic-subtopic__title">
+            @Editable(Model.GlassModel, x => x.Title)
+            @if (IsInEditingMode)
+            {
+                <br/>
+                @Editable(Model.GlassModel, x => x.Navigation_Text)
+            }
+            @if(Model.HasLink) { 
+                using (BeginRenderLink(Model.GlassModel, model => model.Navigation_Link, new {@class = "topic-subtopic__header-explore-link"}, true))
+                {
+                    @Html.Raw(Model.LinkText)
+                }
+            }
+        </h1>
+        @Html.Sitecore().Rendering(RenderingReferences.Instance.TopicAlertButton.ToString(), new { Datasource = Model.GlassModel._Id.ToString(), Parameters = @RenderingContext.GetRenderingParameters() })
+    </div>
+
 	@Html.Sitecore().DynamicPlaceholder("two-column-curated")
 </div>

@@ -1,0 +1,7 @@
+.toggleable-icon {
+    display: none;
+
+    &.is-visible {
+        display: inherit;
+    }
+}

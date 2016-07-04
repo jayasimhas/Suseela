@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: f872f0ae-da04-45b9-a832-f695661685f4
+revision: f1f43b0d-5e92-45e8-a5d8-73e619fbe344
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -29,12 +29,26 @@ content-length: 7
 
 Stovall
 ----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 116
+
+<image mediaid="{795F6685-B79C-4ABA-A26D-C3F7FD02D97F}" alt="Sten Stovall" height="" width="" hspace="" vspace="" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 12
+
+stenstovall	
+----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
 key: email address
-content-length: 27
+content-length: 24
 
-Sten.Stovall@informausa.com
+sten.stovall@informa.com
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-f872f0ae-da04-45b9-a832-f695661685f4
+f1f43b0d-5e92-45e8-a5d8-73e619fbe344
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190930Z
+20160424T000349Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

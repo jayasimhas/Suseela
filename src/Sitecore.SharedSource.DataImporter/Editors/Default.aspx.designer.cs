@@ -58,6 +58,24 @@ namespace Sitecore.SharedSource.DataImporter.Editors {
         protected global::System.Web.UI.WebControls.Button btnImport;
         
         /// <summary>
+        /// btnMediaImport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMediaImport;
+        
+        /// <summary>
+        /// btnPostImport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPostImport;
+        
+        /// <summary>
         /// txtMessage control.
         /// </summary>
         /// <remarks>

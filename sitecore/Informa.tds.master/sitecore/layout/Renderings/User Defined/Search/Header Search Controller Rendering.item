@@ -23,10 +23,17 @@ key: controller action
 content-length: 6
 
 Search
+----field----
+field: {308E88F5-CD6E-4F8F-BAFE-95A47DEDEFDC}
+name: Editable
+key: editable
+content-length: 0
+
+
 ----version----
 language: en
 version: 1
-revision: 1a6d669b-9940-4ba6-9c03-c546369820cb
+revision: c9368d64-eda8-454a-b218-ce17f257d0eb
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-1a6d669b-9940-4ba6-9c03-c546369820cb
+c9368d64-eda8-454a-b218-ce17f257d0eb
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160302T191100Z
+20160607T194513Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

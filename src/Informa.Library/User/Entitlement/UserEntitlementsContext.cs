@@ -1,11 +1,10 @@
-﻿using Jabberwocky.Glass.Autofac.Attributes;
+﻿using Jabberwocky.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
-using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Library.User.Entitlement
 {
-	[AutowireService(LifetimeScope.Default)]
+	[AutowireService]
 	public class UserEntitlementsContext : IUserEntitlementsContext
 	{
 		protected readonly IEntitlementsContexts EntitlementsContexts;
@@ -16,7 +15,7 @@ namespace Informa.Library.User.Entitlement
 			EntitlementsContexts = entitlementsContexts;
 		}
 
-		public IEnumerable<IEntitlement> Entitlements => EntitlementsContexts.SelectMany(ec => ec.Entitlements).DistinctBy(e => e.ProductCode);
+		public IEnumerable<IEntitlement> Entitlements => EntitlementsContexts.SelectMany(ec => ec.Entitlements);
 
 		public void RefreshEntitlements()
 		{
