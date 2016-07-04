@@ -68,11 +68,11 @@ namespace Informa.Library.CustomSitecore.Pipelines
                 return;
             
             var key = args.Key;
-            var dictionaryKey = key.Split('.').ToList();
+            var dictionaryKey = key.Split('.');
 
             IGlassBase lastItem = generated;
             IDictionary_Entry newEntry = null;
-            int total = dictionaryKey.Count;
+            int total = dictionaryKey.Length;
             using (new SecurityDisabler())
             {
                 int i = 0;
