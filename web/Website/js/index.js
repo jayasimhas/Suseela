@@ -879,7 +879,7 @@ $(document).ready(function() {
 				$(item).data("ttTouchTriggered", true);
 			}
 
-			if (e.type.includes("mouse") && $(item).data("ttTouchTriggered")) {
+			if ((e.type === ("mouseover") || e.type === ("mouseout") || e.type === ("mouseenter")) && $(item).data("ttTouchTriggered")) {
 				// Do nothing
 			}
 			else if ($(item).data("ttVisible") && e.type === "touchstart") {
