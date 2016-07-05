@@ -412,6 +412,7 @@
     <Compile Include="Rss\ItemGenerators\SearchRssItemGenerator.cs" />
     <Compile Include="Rss\ItemRetrieval\RssSearchResultsItemRetrieval.cs" />
     <Compile Include="Rss\Utils\RssConstants.cs" />
+    <Compile Include="Search\ComputedFields\Authors\AuthorUrlName.cs" />
     <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
     <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\Converter\MediaTypeIcon\MediaTypeIconData.cs" />
