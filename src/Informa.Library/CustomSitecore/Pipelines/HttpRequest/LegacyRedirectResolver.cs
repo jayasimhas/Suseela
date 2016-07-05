@@ -5,6 +5,8 @@ using System.Threading;
 using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Library.Logging;
+using Informa.Library.Services.Global;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Pipelines.Processors;
 using Sitecore;
 using Sitecore.Configuration;
@@ -20,6 +22,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 		protected readonly IArticleSearch ArticleSearcher;
 		protected readonly ILogWrapper Logger;
 		protected readonly ISitecoreContext SitecoreContext;
+	    protected readonly IGlobalSitecoreService GlobalService;
 
 		private readonly string[] excludePaths =
 		{
@@ -34,11 +37,14 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 		public LegacyRedirectResolver(
 			IArticleSearch searcher,
 			ISitecoreContext context,
-			ILogWrapper logger)
+			ILogWrapper logger,
+            IGlobalSitecoreService globalService)
 		{
 			ArticleSearcher = searcher;
 			SitecoreContext = context;
 			Logger = logger;
+		    GlobalService = globalService;
+
 		}
 
 		public void Process(HttpRequestArgs args)
@@ -61,7 +67,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 					? GetResultsByPath(args.Url.FilePath)
 					: GetResultsByLegacyID(match.Groups[1].Value);
 
-				var article = results?.Articles?.FirstOrDefault();
+			    var article = results?.Articles?.FirstOrDefault();
 				if (article == null)
 				{
 					Logger.SitecoreInfo("LegacyRedirectResolver article not found");
@@ -71,14 +77,26 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 				var newPath = ArticleSearch.GetArticleCustomPath(article);
 				Logger.SitecoreInfo($"LegacyRedirectResolver article path: {newPath}");
 
-				var item = Context.Database.GetItem(new ID(article._Id));
-				var domainUri = new Uri(LinkManager.GetItemUrl(item, GetUrlOptions()));
-				var protocol = Settings.GetSetting("Site.Protocol", "https");
+				var siteRoot = GlobalService.GetSiteRootAncestor(article._Id);
+			    if (siteRoot == null)
+			    {
+                    Logger.SitecoreInfo($"LegacyRedirectResolver didn't find site root for: {article._Path}");
+                }
 
-				Logger.SitecoreInfo($"LegacyRedirectResolver article url: {protocol}://{domainUri.Host}{newPath}");
+                var siteInfo = Factory.GetSiteInfoList().FirstOrDefault(a => a.RootPath.Equals(siteRoot._Path));
+			    if (siteInfo == null)
+			    {
+                    Logger.SitecoreInfo($"LegacyRedirectResolver couldn't find site info match for: {siteRoot._Path}");
+			        return;
+			    }
+
+			    var host = siteInfo.TargetHostName;
+                var protocol = Settings.GetSetting("Site.Protocol", "https");
+
+				Logger.SitecoreInfo($"LegacyRedirectResolver article url: {protocol}://{host}{newPath}");
 
 				args.Context.Response.Status = "301 Moved Permanently";
-				args.Context.Response.AddHeader("Location", $"{protocol}://{domainUri.Host}{newPath}");
+				args.Context.Response.AddHeader("Location", $"{protocol}://{host}{newPath}");
 				args.Context.Response.End();
 			}
 			catch (ThreadAbortException)
@@ -117,16 +135,6 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 			Logger.SitecoreInfo($"LegacyRedirectResolver pattern request: {legacyID}");
 
 			return results;
-		}
-
-		private UrlOptions GetUrlOptions()
-		{
-			var options = LinkManager.GetDefaultUrlOptions();
-			options.SiteResolving = true;
-			options.AlwaysIncludeServerUrl = true;
-
-			return options;
-			;
 		}
 	}
 }
