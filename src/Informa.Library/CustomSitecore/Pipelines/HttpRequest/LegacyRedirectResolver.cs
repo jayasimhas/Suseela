@@ -68,11 +68,15 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 					: GetResultsByLegacyID(match.Groups[1].Value);
 
 			    var article = results?.Articles?.FirstOrDefault();
-				if (article == null)
-				{
-					Logger.SitecoreInfo("LegacyRedirectResolver article not found");
-					return;
-				}
+			    if (article == null)
+			    {
+			        Logger.SitecoreInfo("LegacyRedirectResolver article not found");
+			        return;
+			    }
+			    else
+			    {
+			        Logger.SitecoreInfo($"LegacyRedirectResolver article found: {article._Path}"); 
+			    }
 
 				var newPath = ArticleSearch.GetArticleCustomPath(article);
 				Logger.SitecoreInfo($"LegacyRedirectResolver article path: {newPath}");
@@ -80,15 +84,25 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 				var siteRoot = GlobalService.GetSiteRootAncestor(article._Id);
 			    if (siteRoot == null)
 			    {
-                    Logger.SitecoreInfo($"LegacyRedirectResolver didn't find site root for: {article._Path}");
+			        Logger.SitecoreInfo($"LegacyRedirectResolver didn't find site root for: {article._Path}");
+			        return;
+			    }
+			    else
+			    {
+                    Logger.SitecoreInfo($"LegacyRedirectResolver did find site root for: {article._Path}");
                 }
+
 
                 var siteInfo = Factory.GetSiteInfoList().FirstOrDefault(a => a.RootPath.Equals(siteRoot._Path));
 			    if (siteInfo == null)
 			    {
-                    Logger.SitecoreInfo($"LegacyRedirectResolver couldn't find site info match for: {siteRoot._Path}");
+			        Logger.SitecoreInfo($"LegacyRedirectResolver couldn't find site info match for: {siteRoot._Path}");
 			        return;
 			    }
+			    else
+			    {
+                    Logger.SitecoreInfo($"LegacyRedirectResolver found site info match: {siteInfo.Name}");
+                }
 
 			    var host = siteInfo.TargetHostName;
                 var protocol = Settings.GetSetting("Site.Protocol", "https");
