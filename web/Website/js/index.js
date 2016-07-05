@@ -867,13 +867,29 @@ $(document).ready(function() {
     });
 
 
-	// var tooltipIsVisible = false;
 	$('.js-toggle-tooltip').each(function(index, item) {
 		var tooltip;
+		$(item).data("ttVisible", false);
+		$(item).data("ttTouchTriggered", false);
+
 		$(item).on('mouseenter touchstart', function(e) {
 			e.preventDefault();
-			// console.log(tooltipIsVisible);
-			// if(!tooltipIsVisible) {
+
+			if (e.type === "touchstart") {
+				$(item).data("ttTouchTriggered", true);
+			}
+
+			// Actual mouse events thrown can be any number of things... 
+			if ((e.type === ("mouseover") || e.type === ("mouseenter")) && $(item).data("ttTouchTriggered")) {
+				// Do nothing
+			}
+			else if ($(item).data("ttVisible") && e.type === "touchstart") {
+				$(item).data("ttVisible", false);
+				$(item).data("ttTouchTriggered", false);
+				tooltip.hidePopup();
+			}
+			else {
+				$(item).data("ttVisible", true);
 				const offsets = $(item).offset();
 				tooltip = tooltipController({
 					isHidden: false,
@@ -882,12 +898,12 @@ $(document).ready(function() {
 					left: offsets.left + $(this).width()/2,
 					triangle: 'bottom'
 				});
-				// tooltipIsVisible = true;
-			// }
+			}
 		});
+
 		$(item).on('mouseleave', function() {
+			$(item).data("ttVisible", false);
 			tooltip.hidePopup();
-			// tooltipIsVisible = false;
 		});
 	});
 
