@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using Autofac;
+using Jabberwocky.Glass.Autofac.Util;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.ComputedFields;
 using Sitecore.Data.Items;
@@ -18,12 +19,10 @@ namespace Informa.Library.Authors.ComputedFields
                 return null;
             }
 
-		    var name = item.DisplayName.ToLower();
-		    var nonChars = new Regex(@"[^a-z]+");
-		    name = nonChars.Replace(name, "-");
-		    name = name.Trim('-');
-            
-			return name;
+		    using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
+		    {
+		        return scope.Resolve<IAuthorService>().ConvertAuthorNameToUrlName(item.Name);
+		    }
 		}
 	}
 }

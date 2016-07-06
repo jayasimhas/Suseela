@@ -1317,9 +1317,9 @@
     <Content Include="Views\EmailComponents\SectionHeader.cshtml" />
     <Content Include="Views\Article\TopicPageTitle.cshtml" />
     <Content Include="Views\Authors\ProfileHeaders.cshtml" />
-    <Content Include="Views\Authors\AuthorProfile.cshtml" />
     <Content Include="Views\Shared\Components\MediaTypeIcon.cshtml" />
     <Content Include="Areas\VWB\Views\AddIssue.cshtml" />
+    <Content Include="Views\Authors\AuthorProfile.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

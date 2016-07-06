@@ -1,17 +1,18 @@
 ﻿using System;
+using System.Linq;
 using Glass.Mapper.Sc;
-using Informa.Library.Utilities.Attributes;
+using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Autofac.Attributes;
+using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.Linq;
 
 namespace Informa.Library.Authors
 {
     public interface IAuthorIndexClient
     {
-        string GetUrlName([NotNull] IStaff_Item authorItem);
-        string GetUrlName(Guid authorId);
-        Guid GetAuthorIdByUrlName(string urlName);
         IStaff_Item GetAuthorByUrlName(string urlName);
+        Guid? GetAuthorIdByUrlName(string urlName);
     }
 
     [AutowireService]
@@ -29,23 +30,30 @@ namespace Informa.Library.Authors
             _dependencies = dependencies;
         }
 
-
-        public string GetUrlName([NotNull] IStaff_Item authorItem)
-            => GetUrlName(authorItem._Id);
-        public string GetUrlName(Guid authorId)
-        {
-            return "fake-aakash-shah";
-        }
-
-        public Guid GetAuthorIdByUrlName(string urlName)
-        {
-            return new Guid("{EAE673A9-87BF-4383-A4E5-046362DD3204}");
-        }
         public IStaff_Item GetAuthorByUrlName(string urlName)
         {
-            return _dependencies.SitecoreService.GetItem<IStaff_Item>(
-                GetAuthorIdByUrlName(urlName));
+            var id = GetAuthorIdByUrlName(urlName);
+            if(!id.HasValue) { return null; }
+
+            return _dependencies.SitecoreService.GetItem<IStaff_Item>(id.Value);
+        }
+        public Guid? GetAuthorIdByUrlName(string urlName)
+        {
+            using (var context = ContentSearchManager.GetIndex(Constants.AuthorsIndexName).CreateSearchContext())
+            {
+                var query = context.GetQueryable<AuthorSearchResult>()
+                    .Filter(i => i.IsValid)
+                    .Filter(i => i.AuthorUrlName.Equals(urlName, StringComparison.InvariantCultureIgnoreCase));
+                var hit = query.GetResults()?.Hits?.FirstOrDefault();
+                return hit?.Document?.ItemId?.ToGuid();
+            }
         }
         
+    }
+
+    public class AuthorSearchResult : Sitecore.ContentSearch.SearchTypes.SearchResultItem
+    {
+        public string AuthorUrlName { get; set; }
+        public bool IsValid { get; set; }
     }
 }

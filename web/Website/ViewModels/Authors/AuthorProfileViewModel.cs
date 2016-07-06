@@ -1,9 +1,13 @@
-﻿using Informa.Library.Authors;
+﻿using System.Linq;
+using System.Web;
+using Informa.Library.Authors;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Autofac.Attributes;
+using Jabberwocky.Glass.Autofac.Mvc.Models;
 
 namespace Informa.Web.ViewModels.Authors
 {
-    public class AuthorProfileViewModel
+    public class AuthorProfileViewModel : GlassViewModel<IStaff_Item>
     {
         private readonly IDependencies _dependencies;
 
@@ -15,8 +19,16 @@ namespace Informa.Web.ViewModels.Authors
         public AuthorProfileViewModel(IDependencies dependencies)
         {
             _dependencies = dependencies;
+            Author = _dependencies.AuthorIndexClient.GetAuthorByUrlName(NameFromUrl);
+            if (Author == null)
+            {
+                var curUrl = HttpContext.Current.Request.RawUrl;
+                HttpContext.Current.Response.Redirect($"/404?url={curUrl}", true);
+            }
         }
 
-        public string Output => _dependencies.AuthorIndexClient.GetAuthorIdByUrlName("moose").ToString();
+        public IStaff_Item Author { get; }
+        private string NameFromUrl => HttpContext.Current.Request.Url.Segments.Last();
+        
     }
 }
