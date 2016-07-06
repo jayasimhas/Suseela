@@ -3,7 +3,7 @@
     <contentSearch>
       <configuration>
         <indexes hint="list:AddIndex">
-          
+
           <index id="informa_authors" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
             <param desc="name">$(id)</param>
             <param desc="core">${Solr.CustomIndex.CoreName}_authors</param>
@@ -19,7 +19,7 @@
               </crawler>
             </locations>
           </index>
-          
+
         </indexes>
       </configuration>
 
@@ -171,14 +171,24 @@
               <converter handlesType="System.Guid" typeConverter="Sitecore.ContentSearch.Converters.IndexFieldGuidValueConverter, Sitecore.ContentSearch"/>
               <converter handlesType="Sitecore.Data.ID, Sitecore.Kernel" typeConverter="Sitecore.ContentSearch.Converters.IndexFieldIDValueConverter, Sitecore.ContentSearch"/>
               <converter handlesType="Sitecore.Data.ShortID, Sitecore.Kernel" typeConverter="Sitecore.ContentSearch.Converters.IndexFieldShortIDValueConverter, Sitecore.ContentSearch"/>
+              <converter handlesType="System.DateTime" typeConverter="Sitecore.ContentSearch.Converters.IndexFieldUTCDateTimeValueConverter, Sitecore.ContentSearch"/>
+              <converter handlesType="System.DateTimeOffset" typeConverter="Sitecore.ContentSearch.Converters.IndexFieldDateTimeOffsetValueConverter, Sitecore.ContentSearch"/>
+              <converter handlesType="System.TimeSpan" typeConverter="Sitecore.ContentSearch.Converters.IndexFieldTimeSpanValueConverter, Sitecore.ContentSearch"/>
               <converter handlesType="Sitecore.ContentSearch.SitecoreItemId, Sitecore.ContentSearch" typeConverter="Sitecore.ContentSearch.Converters.IndexFieldSitecoreItemIDValueConvertor, Sitecore.ContentSearch">
                 <param type="Sitecore.ContentSearch.Converters.IndexFieldIDValueConverter, Sitecore.ContentSearch"/>
               </converter>
               <converter handlesType="Sitecore.ContentSearch.SitecoreItemUniqueId, Sitecore.ContentSearch" typeConverter="Sitecore.ContentSearch.SolrProvider.Converters.SolrIndexFieldSitecoreItemUniqueIDValueConverter, Sitecore.ContentSearch.SolrProvider">
                 <param type="Sitecore.ContentSearch.Converters.IndexFieldItemUriValueConverter, Sitecore.ContentSearch"/>
               </converter>
+              <converter handlesType="Sitecore.Data.ItemUri, Sitecore.Kernel" typeConverter="Sitecore.ContentSearch.Converters.IndexFieldItemUriValueConverter, Sitecore.ContentSearch"/>
+              <converter handlesType="Sitecore.Globalization.Language, Sitecore.Kernel" typeConverter="Sitecore.ContentSearch.Converters.IndexFieldLanguageValueConverter, Sitecore.ContentSearch"/>
+              <converter handlesType="System.Globalization.CultureInfo" typeConverter="Sitecore.ContentSearch.Converters.IndexFieldCultureInfoValueConverter, Sitecore.ContentSearch"/>
+              <converter handlesType="Sitecore.Data.Version, Sitecore.Kernel" typeConverter="Sitecore.ContentSearch.Converters.IndexFieldVersionValueConverter, Sitecore.ContentSearch"/>
+              <converter handlesType="Sitecore.Data.Database, Sitecore.Kernel" typeConverter="Sitecore.ContentSearch.Converters.IndexFieldDatabaseValueConverter, Sitecore.ContentSearch"/>
               <converter handlesType="Sitecore.ContentSearch.IIndexableId, Sitecore.ContentSearch" typeConverter="Sitecore.ContentSearch.Converters.IndexableIdConverter, Sitecore.ContentSearch"/>
               <converter handlesType="Sitecore.ContentSearch.IIndexableUniqueId, Sitecore.ContentSearch" typeConverter="Sitecore.ContentSearch.Converters.IndexableUniqueIdConverter, Sitecore.ContentSearch"/>
+              <converter handlesType="Informa.Library.Search.ComputedFields.SearchResults.Converter.DisplayTaxonomy.HtmlLinkList" typeConverter="Informa.Library.Search.ComputedFields.SearchResults.Converter.DisplayTaxonomy.HtmlLinkListTypeConverter, Informa.Library" patch:source="Solr.config"/>
+              <converter handlesType="Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon.MediaTypeIconData" typeConverter="Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon.MediaTypeIconDataConverter, Informa.Library" patch:source="Solr.config"/>
             </converters>
           </indexFieldStorageValueFormatter>
           <!--
@@ -217,7 +227,7 @@
 
         </authorsSolrIndexConfiguration>
       </indexConfigurations>
-      
+
     </contentSearch>
   </sitecore>
 </configuration>
