@@ -12,7 +12,6 @@ namespace Informa.Web.ViewModels
 	[AutowireService(LifetimeScope.PerScope)]
 	public class IndividualRenewalMessageViewModel : IIndividualRenewalMessageViewModel
 	{
-		private const string PRODUCT_CODE = "scrip";
 		private const string PRODUCT_TYPE = "publication";
 		private readonly string[] SUBSCRIPTIONTYPE = new string[] { "individual", "free-trial", "individual internal" };
 
@@ -49,7 +48,7 @@ namespace Informa.Web.ViewModels
 		private bool DisplayMessage(ISubscription subscription)
 		{
 			if (subscription == null
-						|| subscription.ProductCode.ToLower() != PRODUCT_CODE
+						|| subscription.ProductCode.ToLower() != SiteRootContext.Item.Publication_Code.ToLower()
 						|| (subscription.ExpirationDate - DateTime.Now).TotalDays > SiteRootContext.Item.Days_To_Expiration
 						|| SUBSCRIPTIONTYPE.Contains(subscription.SubscriptionType.ToLower()) == false
 						|| subscription.ProductType.ToLower() != PRODUCT_TYPE)

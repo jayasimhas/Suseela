@@ -6,6 +6,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Informa.Library.Article.Search;
+using Informa.Library.Services.Global;
 using Informa.Library.Utilities.Extensions;
 using Jabberwocky.Core.Caching;
 
@@ -19,6 +20,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 		private static ICacheProvider CacheProvider => _lazyCache.Value;
 		private static readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
 		private static readonly string OldDealsUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL");
+	    private static IGlobalSitecoreService GlobalService = DependencyResolver.Current.GetService<IGlobalSitecoreService>();
 
 		public static string ProcessDCDTokens(string text)
 		{
@@ -167,7 +169,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 
                     if (article != null) {
                         return
-                            $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, " +
+                            $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {GlobalService.GetPublicationName(article._Id)}, " +
                             $"{(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
                     }
                 }
