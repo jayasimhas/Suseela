@@ -30,8 +30,8 @@ namespace Informa.Web.ViewModels
             {
                 using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
                 {
-                    var authorIndexClient = scope.Resolve<IAuthorIndexClient>();
-                    return authorIndexClient.GetUrlName(_author._Id);
+                    var authorClient = scope.Resolve<IAuthorService>();
+                    return authorClient.GetUrlName(_author._Id);
                 }
             }
         }
