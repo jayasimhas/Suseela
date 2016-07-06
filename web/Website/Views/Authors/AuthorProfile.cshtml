@@ -1,4 +1,50 @@
 @model Informa.Web.ViewModels.Authors.AuthorProfileViewModel
 
-<h1>Fun Test</h1>
-<h2>#@(Model.Author.First_Name + " " + Model.Author.Last_Name)</h2>
+
+<div class="profile">
+	<h1 class="profile__name">@(Model.FirstName + " " + Model.LastName)</h1>
+	<div class="l-left-rail">
+		<h2 class="profile__title">@(Model.Credentials)</h2>
+		<div class="profile__location">@(Model.Location)</div>
+
+		@if (Model.HasImage)
+		{
+			<img class="profile__img" src="@(Model.ImageUrl)" />
+		}
+		<ul class="profile__links">
+			@if (Model.HasEmail)
+			{
+				<li>
+					<svg class="alert__icon">
+						<use xlink:href="/web/Website/dist/img/svg-sprite.svg#email"></use>
+					</svg>
+					<a href="mailto:@(Model.Email)">@(Model.Email)</a>
+				</li>
+			}
+			
+			@if (Model.HasTwitter)
+			{
+				<li>
+					<svg class="alert__icon">
+						<use xlink:href="/web/Website/dist/img/svg-sprite.svg#twitter"></use>
+					</svg>
+					<a href="@(Model.TwitterUrl)">@(Model.TwitterHandle)</a>
+				</li>
+			}
+
+			@if (@Model.HasLinkedIn)
+			{
+				<li>
+					@* NOTE: This extra class on the linkedIn svg is important!  Don't remove it!  And don't add it to the other SVGs! *@
+					<svg class="alert__icon icon--linked-in">
+						<use xlink:href="/web/Website/dist/img/svg-sprite.svg#linkedin"></use>
+					</svg>
+					<a href="@(Model.LinkedInUrl)">@(Model.FirstName + " " + Model.LastName)</a>
+				</li>
+			}
+		</ul>
+		<div class="profile__profile">
+			@(Model.Bio)
+		</div>
+	</div>
+</div>
