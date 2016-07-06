@@ -22,7 +22,7 @@ namespace Informa.Library.Utilities.StringUtils
         public interface IDependencies
         {
             ITextTranslator TextTranslator { get; }
-            IAuthorIndexClient AuthorIndexClient { get; }
+            IAuthorService AuthorClient { get; }
         }
 
         public BylineMaker(IDependencies dependencies)
@@ -36,7 +36,7 @@ namespace Informa.Library.Utilities.StringUtils
 
             var by = $"{_dependencies.TextTranslator.Translate("Article.By")} ";
 
-            var names = authors.Select(auth => $"<a href='{_dependencies.AuthorIndexClient.GetUrlName(auth._Id)}'>{auth.First_Name} {auth.Last_Name}</a>".Trim());
+            var names = authors.Select(auth => $"<a href='{_dependencies.AuthorClient.GetUrlName(auth._Id)}'>{auth.First_Name} {auth.Last_Name}</a>".Trim());
 
             var result = $"{by}{names.JoinWithFinal(", ", "and")}";
 
