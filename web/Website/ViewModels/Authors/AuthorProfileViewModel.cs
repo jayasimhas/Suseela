@@ -1,4 +1,5 @@
-﻿using Jabberwocky.Autofac.Attributes;
+﻿using Informa.Library.Authors;
+using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels.Authors
 {
@@ -9,13 +10,13 @@ namespace Informa.Web.ViewModels.Authors
         [AutowireService(IsAggregateService = true)]
         public interface IDependencies
         {
-
+            IAuthorIndexClient AuthorIndexClient { get; set; }
         }
         public AuthorProfileViewModel(IDependencies dependencies)
         {
             _dependencies = dependencies;
         }
 
-
+        public string Output => _dependencies.AuthorIndexClient.GetAuthorIdByUrlName("moose").ToString();
     }
 }

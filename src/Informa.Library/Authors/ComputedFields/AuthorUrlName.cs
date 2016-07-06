@@ -3,7 +3,7 @@ using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.ComputedFields;
 using Sitecore.Data.Items;
 
-namespace Informa.Library.Search.ComputedFields.Authors
+namespace Informa.Library.Authors.ComputedFields
 {
     public class AuthorUrlName : IComputedIndexField
 	{
