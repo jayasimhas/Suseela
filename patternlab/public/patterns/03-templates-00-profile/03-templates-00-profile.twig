@@ -1,0 +1,17 @@
+{% include &quot;organisms-raw-header&quot; %}
+&lt;main&gt;
+	{% include &quot;organisms-raw-main-menu&quot; %}
+	&lt;div class=&quot;main__wrapper&quot;&gt;
+		&lt;div class=&quot;general-header&quot;&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;main__content&quot;&gt;
+			{% include &quot;organisms-action-flags-bar&quot; with {&quot;hidePrint&quot; : true, &quot;hideBookmark&quot; : true} %}
+			{% include &quot;organisms-profile-header&quot; %}
+			{% include &quot;organisms-recent-news&quot; with {&quot;buttonText&quot; : &quot;See All&quot;} %}
+			{% include &quot;molecules-ad-leaderboard&quot; %}
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/main&gt;
+{% include &quot;organisms-raw-footer&quot; %}
+&lt;script src=&quot;/web/Website/dist/js/index.js&quot;&gt;&lt;/script&gt;

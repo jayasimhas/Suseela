@@ -9,5 +9,6 @@ namespace Informa.Web.ViewModels
         string Twitter { get; }
         string Email_Address { get; }
         Image Image { get; }
+        string AuthorLink { get; }
     }
 }

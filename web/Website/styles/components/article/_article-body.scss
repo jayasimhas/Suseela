@@ -1,23 +1,23 @@
 .article-body-content {
-    @include textMix('PTSerif', 18px, 400);
-    margin-bottom: 1.5rem;
+	@include textMix('PTSerif', 18px, 400);
+	margin-bottom: 1.5rem;
 
-    > h1 {
-        @extend h1;
-        margin-bottom: 0.75rem;
-        color: $color-zeus-black;
-    }
+	> h1 {
+		@extend h1;
+		margin-bottom: 0.75rem;
+		color: $color-zeus-black;
+	}
 
-    > h3 {
-        @include textMix('PT Serif', 1.5rem, 400);
-        color: $color-zeus-black;
-        margin-bottom: 2rem;
-        font-style: italic;
-    }
+	> h3 {
+		@include textMix('PT Serif', 1.5rem, 400);
+		color: $color-zeus-black;
+		margin-bottom: 2rem;
+		font-style: italic;
+	}
 
-    img {
-        max-width: 100%;
-    }
+	img {
+		max-width: 100%;
+	}
 
 	.plugin-hide {
 		display: none;
@@ -28,20 +28,18 @@
 		margin-bottom: 1rem;
 	}
 
-    @include breakpoint('medium') {
-        font-size: 1rem;
+	@include breakpoint('medium') {
+		font-size: 1rem;
 
-        p { line-height: 1.75rem; }
+		p { line-height: 1.75rem; }
 
-        h1,
-        h3 {
-            margin-bottom: 1rem;
-        }
+		h1,
+		h3 {
+			margin-bottom: 1rem;
+		}
 
-        h1 { font-size: 2.25rem; }
+		h1 { font-size: 2.25rem; }
 
-        h3 { font-size: 1.5rem; }
-    }
-
-
+		h3 { font-size: 1.5rem; }
+	}
 }

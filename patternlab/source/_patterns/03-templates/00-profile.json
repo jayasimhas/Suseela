@@ -1,0 +1,7 @@
+{
+	"alertText": "Set Alert for Articles by This Person",
+	"showSetAlert": true,
+	"max": 9,
+	"personPhoto": "https://unsplash.it/200/200/?random",
+	"listArticleType" : "News"
+}

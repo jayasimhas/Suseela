@@ -124,6 +124,7 @@ function popOutController(triggerElm) {
 				return;
 		}
 
+
 		// Make pop-out visible so we can query for its width
 		popOut.addClass('is-active');
 

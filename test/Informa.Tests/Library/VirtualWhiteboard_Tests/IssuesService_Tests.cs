@@ -131,10 +131,10 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
             _issuesService.AddArticlesToIssue(fakeIssue._Id, articles);
 
             // ASSERT
-            _dependencies.SitecoreClonesWrapper.Received(1).CreateClone(
-                fakeId1, new Guid("{45D643CB-9F39-417E-900D-ECEAD18B2189}"));
-            _dependencies.SitecoreClonesWrapper.Received(1).CreateClone(
-               fakeId2, new Guid("{45D643CB-9F39-417E-900D-ECEAD18B2189}"));
+            _dependencies.SitecoreClonesWrapper.Received(1).CreateClone(fakeId1,
+                new Guid("{45D643CB-9F39-417E-900D-ECEAD18B2189}"));
+            _dependencies.SitecoreClonesWrapper.Received(1).CreateClone(fakeId2,
+                new Guid("{45D643CB-9F39-417E-900D-ECEAD18B2189}"));
         }
 
         [Test]

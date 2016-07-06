@@ -1,0 +1,110 @@
+&lt;div class=&quot;topic-subtopic__alert &quot;&gt;
+	&lt;form
+		class=&quot;form-remove-topic-alert&quot;
+		data-on-submit=&quot;/api/SavedSearches&quot;
+		data-submit-type=&quot;DELETE&quot;
+		data-analytics='{
+			&quot;event_name&quot;: &quot;remove_alert&quot;,
+			&quot;alert_topic&quot;: &quot;Topic Page QA 30&quot;
+		}'&gt;
+
+		&lt;input name=&quot;Url&quot; class=&quot;js-save-search-url&quot; id=&quot;Url&quot; type=&quot;hidden&quot; value=&quot;&quot;&gt;
+
+		&lt;button type=&quot;submit&quot; class=&quot;lightbox-modal__hidden-submit&quot;&gt;&lt;/button&gt;
+
+		&lt;span
+			class=&quot;action-flag pop-out__trigger
+				js-pop-out-trigger js-update-topic-alert&quot;
+			data-pop-out-type=&quot;save-search&quot;
+			data-topic-alert-title=&quot;Last News Save!&quot;
+			data-topic-alert-url=&quot;q=last news&quot;
+			data-lightbox-modal=&quot;js-remove-topic-alert-modal&quot;
+			data-lightbox-modal-title=&quot;Remove Saved Search&quot;
+			data-lightbox-modal-body=&quot;Are you sure you'd like to remove this alert? You will no longer receive email updates about this topic.&quot;
+			data-lightbox-modal-success-target=&quot;form-remove-topic-alert&quot;&gt;
+
+			&lt;svg class=&quot;action-flag__icon js-topic-icon-unset topic-subtopic__alert-icon is-active&quot;&gt;
+				&lt;use xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#bell&quot;&gt;&lt;/use&gt;
+			&lt;/svg&gt;
+
+			&lt;svg class=&quot;action-flag__icon js-topic-icon-set topic-subtopic__alert-icon &quot;&gt;
+				&lt;use xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#bell-filled&quot;&gt;&lt;/use&gt;
+			&lt;/svg&gt;
+			&lt;span
+				class=&quot;js-set-topic-label&quot;
+				data-label-not-set=&quot;QA Set Alert for Topic Page QA 30&quot;
+				data-label-is-set=&quot;Remove Alert for Topic Page QA 30&quot;&gt;Set Alert for This Page&lt;/span&gt;
+		&lt;/span&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;z-index: 9997; transform: translate3d(432px, 427px, 0px);&quot; class=&quot;pop-out js-pop-out__save-search&quot;&gt;
+	&lt;div style=&quot;height: 56px; width: 278px; left: auto; right: 0px; top: -55px; z-index: 9998;&quot; class=&quot;pop-out__tab&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;pop-out__internal&quot;&gt;
+		&lt;div class=&quot;pop-out__sign-in&quot;&gt;
+			&lt;div class=&quot;dismiss-button js-close-lightbox-modal&quot; ng-click=&quot;oneClickSaveFocus = false&quot; data-target-element=&quot;.js-pop-out__sign-in&quot;&gt;
+				&lt;svg class=&quot;dismiss-button__icon&quot;&gt;
+					&lt;use xlink:href=&quot;/dist/img/svg-sprite.svg#x&quot;&gt;&lt;/use&gt;
+				&lt;/svg&gt;
+			&lt;/div&gt;
+
+
+			&lt;form method=&quot;post&quot; class=&quot;form-save-search-login&quot; data-on-submit=&quot;/Account/api/LoginWebUserApi/Login/&quot; data-is-search=&quot;false&quot;&gt;
+				&lt;h3 class=&quot;pop-out__register-header&quot;&gt;Sign In To Set a Search Alert&lt;/h3&gt;
+				&lt;div class=&quot;pop-out__show-hide--bordered-bottom js-login-container&quot;&gt;
+
+					&lt;div class=&quot;pop-out__form-error js-form-error js-form-error-general&quot;&gt;
+						Your login and/or password information does not match our records. Please try again.
+					&lt;/div&gt;
+
+					&lt;input name=&quot;username&quot; class=&quot;pop-out__input header__hover-input&quot; placeholder=&quot;Email Address (User Name)&quot; type=&quot;text&quot;&gt;
+					&lt;input name=&quot;password&quot; class=&quot;pop-out__input header__hover-input&quot; placeholder=&quot;Password&quot; type=&quot;password&quot;&gt;
+
+					&lt;span class=&quot;pop-out__form-actions pop-out__reset-password js-show-forgot-password&quot;&gt;Forgot your password?&lt;/span&gt;
+					&lt;div class=&quot;pop-out__sign-in-remember-me&quot;&gt;
+						&lt;input name=&quot;persist&quot; data-checkbox-type=&quot;boolean&quot; type=&quot;checkbox&quot;&gt; Remember Me
+					&lt;/div&gt;
+				&lt;/div&gt;
+
+				&lt;div class=&quot;pop-out__save-search-container&quot;&gt;
+					&lt;input name=&quot;Title&quot; class=&quot;js-save-search-title&quot; value=&quot;Last News Save!&quot; type=&quot;hidden&quot;&gt;
+					&lt;input name=&quot;Url&quot; class=&quot;js-save-search-url&quot; value=&quot;q=last news&quot; type=&quot;hidden&quot;&gt;
+					&lt;input id=&quot;AlertEnabled&quot; name=&quot;AlertEnabled&quot; value=&quot;true&quot; type=&quot;hidden&quot;&gt;
+					&lt;p class=&quot;pop-out__details&quot;&gt;Your alert for &lt;span class=&quot;js-save-search-title&quot;&gt;Last News Save!&lt;/span&gt; will be saved to your account - &quot;Saved Searches and Alerts&quot;.&lt;/p&gt;
+					&lt;button type=&quot;submit&quot; class=&quot;pop-out__sign-in-submit button--filled&quot; ng-click=&quot;searchIsSaved = true&quot;&gt;Log In &amp;amp; Save&lt;/button&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+
+			&lt;div class=&quot;pop-out__show-hide--bordered-top pop-out__forgot-password js-reset-password-container&quot;&gt;
+
+				&lt;form class=&quot;form-reset-password&quot; data-on-submit=&quot;/Account/api/ResetPasswordApi/Generate/&quot;&gt;
+					&lt;div class=&quot;alert-success js-reset-password-success&quot;&gt;
+						&lt;svg class=&quot;alert__icon&quot;&gt;
+							&lt;use xlink:href=&quot;/dist/img/svg-sprite.svg#check&quot;&gt;&lt;/use&gt;
+						&lt;/svg&gt;
+						&lt;p&gt;Thanks, we've sent a link to reset your password&lt;/p&gt;
+					&lt;/div&gt;
+
+					&lt;div class=&quot;pop-out__sign-in-forgot-password-nested js-reset-password-request-form&quot;&gt;
+						&lt;h3&gt;Forgot your password?&lt;/h3&gt;
+						&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+						&lt;p&gt;Enter the email address associated with your account and an email will be sent to you to reset your password.&lt;/p&gt;
+						&lt;p class=&quot;pop-out__form-error js-form-error js-form-error-EmailRequirement&quot;&gt;Please enter a valid email address.&lt;/p&gt;
+						&lt;p class=&quot;pop-out__form-error js-form-error js-form-error-general&quot;&gt;Unfortunately we've not been able to process this request.&lt;/p&gt;
+
+						&lt;input name=&quot;email&quot; class=&quot;pop-out__input&quot; placeholder=&quot;Email Address&quot; type=&quot;text&quot;&gt;
+						&lt;div class=&quot;pop-out__form-actions-wrapper&quot;&gt;
+							&lt;div&gt;&lt;/div&gt;
+							&lt;div class=&quot;sign-in__submit-wrapper&quot;&gt;
+								&lt;button class=&quot;button--filled  click-utag&quot; type=&quot;submit&quot; data-info=&quot;{&amp;quot;event_name&amp;quot; : &amp;quot;reset-password&amp;quot;}&quot;&gt;Submit&lt;/button&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;p class=&quot;pop-out__details pop-out__details--inset u-italic u-centered&quot;&gt;
+						Need help? Contact us at &lt;strong&gt;(800) 332-2181&lt;/strong&gt;, &lt;strong&gt;+1 (908) 748-1221&lt;/strong&gt;, or &lt;a href=&quot;\'#\'&quot;&gt;custcare@informa.com&lt;/a&gt;
+					&lt;/p&gt;
+				&lt;/form&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
