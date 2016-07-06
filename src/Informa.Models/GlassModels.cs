@@ -17592,6 +17592,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 	[SitecoreType(TemplateId=IStaff_ItemConstants.TemplateIdString)]
 	public partial interface IStaff_Item : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Person, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable
 	{
+								/// <summary>
+					/// The Areas of Expertise field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: 7f9c81ec-c74d-47e3-aa4c-3c519de7fa77</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStaff_ItemConstants.Areas_Of_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Areas_Of_Expertises  {get; set;}
+								/// <summary>
+					/// The Industry Expertise field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: c3a459db-aa9f-481a-b6e9-082bd7781c4c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStaff_ItemConstants.Industry_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Industry_Expertises  {get; set;}
+								/// <summary>
+					/// The Write for Expertise field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 2c527b2c-25e8-47d0-9356-8f21757ba897</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStaff_ItemConstants.Write_For_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Write_For_Expertises  {get; set;}
 				}
 
 	
@@ -17604,6 +17631,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 		[SitecoreType]
 		public partial interface IStaff_Item__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___Person__Raw, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable__Raw, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable__Raw
 		{
+										/// <summary>
+						/// The Areas of Expertise field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: 7f9c81ec-c74d-47e3-aa4c-3c519de7fa77</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStaff_ItemConstants.Areas_Of_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Areas_Of_Expertises  {get; set;}
+										/// <summary>
+						/// The Industry Expertise field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: c3a459db-aa9f-481a-b6e9-082bd7781c4c</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStaff_ItemConstants.Industry_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Industry_Expertises  {get; set;}
+										/// <summary>
+						/// The Write for Expertise field.
+						/// <para></para>
+						/// <para>Field Type: Multilist</para>		
+						/// <para>Field ID: 2c527b2c-25e8-47d0-9356-8f21757ba897</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStaff_ItemConstants.Write_For_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Write_For_Expertises  {get; set;}
 						}
 	
 	public static partial class IStaff_ItemConstants{
@@ -17612,6 +17666,21 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Staff Item";
 
+					
+			public static readonly ID Areas_Of_ExpertisesFieldId = new ID("7f9c81ec-c74d-47e3-aa4c-3c519de7fa77");
+			public const string Areas_Of_ExpertisesFieldName = "Areas of Expertise";
+
+						
+					
+			public static readonly ID Industry_ExpertisesFieldId = new ID("c3a459db-aa9f-481a-b6e9-082bd7781c4c");
+			public const string Industry_ExpertisesFieldName = "Industry Expertise";
+
+						
+					
+			public static readonly ID Write_For_ExpertisesFieldId = new ID("2c527b2c-25e8-47d0-9356-8f21757ba897");
+			public const string Write_For_ExpertisesFieldName = "Write for Expertise";
+
+						
 					
 			public static readonly ID Email_AddressFieldId = new ID("0ecf54f6-157b-49b0-aad2-ce5ea3b5a568");
 			public const string Email_AddressFieldName = "Email Address";
