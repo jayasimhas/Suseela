@@ -89,8 +89,8 @@
       <site name="website">
         <patch:attribute name="rootPath">/sitecore/content/ScripIntelligence</patch:attribute>
         <patch:attribute name="dictionaryDomain">ScriptIntelligenceDictionary</patch:attribute>
-        <patch:attribute name="targetHostName">${project.Domain}</patch:attribute>
-        <patch:attribute name="hostName">${project.Domain}</patch:attribute>
+        <patch:attribute name="targetHostName">${project.domain}</patch:attribute>
+        <patch:attribute name="hostName">${project.domain}</patch:attribute>
         <patch:attribute name="htmlCacheSize">${Cache.HtmlCache.Website}</patch:attribute>
         #if ($Env.DeliveryOnly == "true")
         <patch:attribute name="enablePreview">false</patch:attribute>
