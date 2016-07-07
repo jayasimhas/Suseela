@@ -45,7 +45,7 @@ namespace Informa.Library.Utilities.StringUtils
                 }
                 else
                 {
-                    names.Add($"<a href='{_dependencies.AuthorClient.GetUrlName(eachAuthor._Id)}'>{eachAuthor.First_Name} {eachAuthor.Last_Name}</a>".Trim());
+                    names.Add($"<a href='{_dependencies.AuthorClient.ConvertUrlNameToLink(_dependencies.AuthorClient.GetUrlName(eachAuthor._Id))}'>{eachAuthor.First_Name} {eachAuthor.Last_Name}</a>".Trim());
                 }
             }
 
