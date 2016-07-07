@@ -332,7 +332,7 @@ namespace Elsevier.Web.VWB
 	        {
 		        var issuesService = scope.Resolve<IIssuesService>();
 		        var issues = issuesService.GetActiveIssues();
-		        issues.Each(i => ExistingIssueSelector.Items.Add(new ListItem(i._Name, i._Id.ToString())));
+		        issues.Each(i => ExistingIssueSelector.Items.Add(new ListItem($"{i._Name} - {Math.Abs(i._Name.GetHashCode())}", i._Id.ToString())));
 	        }
         }
 
