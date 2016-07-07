@@ -53,10 +53,13 @@ namespace Informa.Web.ViewModels
             var publicationNames = parameters.Publications.Any()
                 ? parameters.Publications.Select(p => p.Publication_Name)
                 : new[] { rootContext.Item.Publication_Name };
-
-            //TODO - base condition for the author field if its filled up.
-            //var authorGuids = this will be populated from the parameter. If parameter is empty / null then we check if its the author profile page and try and get the author GUID.
+            
             var authorGuids = GetAuthor();
+
+            if (authorGuids.Any() && parameters.Authors.Any())
+            {
+                authorGuids.AddRange(parameters.Authors.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())));
+            }
 
             News = GetLatestNews(datasource._Id, parameters.Subjects.Select(s => s._Id), publicationNames, authorGuids, itemsToDisplay);
             SeeAllLink = parameters.Show_See_All ? new Link
@@ -77,10 +80,15 @@ namespace Informa.Web.ViewModels
 
                 if (author != null)
                 {
-                    authorGuids.Add(author.ToString().Replace("-", "").Replace("{", "").Replace("}", "").ToLower());
+                    authorGuids.Add(RemoveSpecialCharactersFromGuid(author.ToString()));
                 }
             }
             return authorGuids;
+        }
+
+        public string RemoveSpecialCharactersFromGuid(string guid)
+        {
+            return guid.Replace("-", "").Replace("{", "").Replace("}", "").ToLower();
         }
 
         public IList<string> Topics { get; set; }
