@@ -12,6 +12,10 @@
         }
     }
 
+	&__set-alert {
+		text-align: right;
+	}
+
     &__title {
         color: $color-zeus-black;
         border-left: 12px solid $color-cardinal-red;
@@ -46,7 +50,7 @@
 		& .action-flag {
 			padding-top: 0;
 		}
-		
+
         &-icon {
             @include svg-fill($color-dusty-gray);
 			display: none;

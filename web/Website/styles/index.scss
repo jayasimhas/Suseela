@@ -15,16 +15,18 @@
 @import 'vendor/normalize';
 
 
-/* * * * HELPERS * * * */
-@import 'helpers/layout-helpers';
-
-
 /* * * * BASE * * * */
 @import 'base/colors'; // first!
 @import 'base/base';
 @import 'base/fonts';
 @import 'base/helpers';
+@import 'base/icons';
 @import 'base/typography';
+
+
+/* * * * HELPERS * * * */
+@import 'helpers/layout-helpers';
+
 
 
 /* * * * COMPONENTS — GLOBAL * * * */
@@ -63,6 +65,9 @@
 
 /* * * * COMPONENTS — HEADER * * * */
 @import 'components/header/header-account-access';
+
+/* * * * COMPONENTS — PROFILE * * * */
+@import 'components/profile';
 
 /* * * * COMPONENTS — ARTICLE * * * */
 @import 'components/article/article-author';

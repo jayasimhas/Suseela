@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {7F9C81EC-C74D-47E3-AA4C-3C519DE7FA77}
+database: master
+path: /sitecore/templates/User Defined/Objects/Staff Item/Expertise/Areas of Expertise
+parent: {02BC5F4E-15DB-43BD-A98A-2E04C2EE0AA3}
+name: Areas of Expertise
+master: {00000000-0000-0000-0000-000000000000}
+template: {455A3E98-A627-4B40-8035-E683A0331AC7}
+templatekey: Template field
+
+----field----
+field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
+name: Type
+key: type
+content-length: 8
+
+Treelist
+----field----
+field: {1EB8AE32-E190-44A6-968D-ED904C794EBF}
+name: Source
+key: source
+content-length: 119
+
+DataSource=/sitecore/content/Environment Globals/Taxonomy&ExcludeItemsForDisplay={D10B7B8F-588B-4209-A319-2BC3A19828B7}
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+100
+----version----
+language: en
+version: 1
+revision: d7aa2c76-024c-41d3-a005-6892428a2664
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160705T205112Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d7aa2c76-024c-41d3-a005-6892428a2664
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160706T175139Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

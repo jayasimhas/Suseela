@@ -770,6 +770,7 @@
     <Compile Include="ViewModels\AnalyticsViewModel.cs" />
     <Compile Include="ViewModels\ArticleKeyDocumentsModel.cs" />
     <Compile Include="ViewModels\ArticleMobileMediaComponentModel.cs" />
+    <Compile Include="ViewModels\Authors\AuthorProfileViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailLayoutViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
@@ -1165,7 +1166,6 @@
     <Content Include="Views\FrontendWrappers\ArticleWrapper.cshtml" />
     <Content Include="Views\Shared\_SignInForm.cshtml" />
     <Content Include="Views\Structure\TwoColumnContent.cshtml" />
-    <Content Include="Views\Structure\SingleColumnContent.cshtml" />
     <Content Include="Views\Structure\MainContentWrapper.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedContent.cshtml" />
     <Content Include="Views\Shared\Components\ListableContentWide.cshtml" />
@@ -1214,6 +1214,8 @@
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config.template" />
     <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />
@@ -1315,8 +1317,10 @@
     <Content Include="Views\EmailComponents\FeaturedArticle.cshtml" />
     <Content Include="Views\EmailComponents\SectionHeader.cshtml" />
     <Content Include="Views\Article\TopicPageTitle.cshtml" />
+    <Content Include="Views\Authors\ProfileHeaders.cshtml" />
     <Content Include="Views\Shared\Components\MediaTypeIcon.cshtml" />
     <Content Include="Areas\VWB\Views\AddIssue.cshtml" />
+    <Content Include="Views\Authors\AuthorProfile.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

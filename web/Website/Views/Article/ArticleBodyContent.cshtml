@@ -49,7 +49,7 @@
 						</div>
 					}
 					<div class="article-author__solo-wrapper">
-						<span class="article-author__name">@author.Name</span>
+						<span class="article-author__name"><a href="@author.AuthorLink">@author.Name</a></span>
 						<span class="article-author__contact">
 							@if (!string.IsNullOrEmpty(author.Twitter))
 							{
@@ -75,7 +75,7 @@
 				@foreach (var author in authors)
 				{
 					<li>
-						<span class="article-author__name">@author.Name</span>
+					    <span class="article-author__name"><a href="@author.AuthorLink">@author.Name</a></span>
 						<span class="article-author__contact">
 							@if (!string.IsNullOrEmpty(author.Twitter))
 							{

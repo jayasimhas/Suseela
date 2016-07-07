@@ -1,139 +1,144 @@
 .search-results {
-    @include search-page-structure();
+	@include search-page-structure();
 
-    // headlines-only view
-    &.headlines-only {
-        .search-result__publication,
-        .search-result__author,
-        .search-result__description,
-        .search-result__tags {
-            display: none;
-        }
+	// headlines-only view
+	&.headlines-only {
+		.search-result__publication,
+		.search-result__author,
+		.search-result__description,
+		.search-result__tags {
+			display: none;
+		}
 
-        .search-result__heading {
-            width: 100%;
-        }
-    }
+		.search-result__heading {
+			width: 100%;
+		}
+	}
 
-    @include breakpoint('medium') {
-        order: 4;
-    }
+	@include breakpoint('medium') {
+		order: 4;
+	}
 }
 
 .search-result {
-    border-top: 2px solid $color-light-gray;
-    display: block;
-    padding: 22px 0;
+	border-top: 2px solid $color-light-gray;
+	display: block;
+	padding: 22px 0;
 
-    &__pubdate {
-        @include textMix('Roboto', 14px, 400);
-        display: inline-block;;
-        line-height: 22px;
-        color: $color-abbey-gray;
-        margin-bottom: 1.5rem;
-    }
+	&__pubdate {
+		@include textMix('Roboto', 14px, 400);
+		display: inline-block;;
+		line-height: 22px;
+		color: $color-abbey-gray;
+		margin-bottom: 1.5rem;
+	}
 
-    &__publication {
-        @include textMix('Roboto', 12px, 400);
-        color: $color-old-silver-gray;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        margin-bottom: 0.5rem;
-    }
+	&__publication {
+		@include textMix('Roboto', 12px, 400);
+		color: $color-old-silver-gray;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		margin-bottom: 0.5rem;
+	}
 
-    &__heading {
-        display: inline-block;
-        margin-bottom: 1rem;
-        color: $color-zeus-black;
+	&__heading {
+		display: inline-block;
+		margin-bottom: 1rem;
+		color: $color-zeus-black;
 
-        &:hover {
-            color: $color-cardinal-red;
-        }
-    }
+		&:hover {
+			color: $color-cardinal-red;
+		}
+	}
 
-    &__author {
-        @include textMix('Roboto', 15px, 700);
-        color: $color-abbey-gray;
-        margin-bottom: 1rem;
-    }
+	&__author {
+		@include textMix('Roboto', 15px, 700);
+		color: $color-abbey-gray;
+		margin-bottom: 1rem;
+
+		a {
+			@include textMix('Roboto', 15px, 700);
+			color: $color-abbey-gray;
+		}
+	}
 
 
-    &__content-type {
-        @include textMix('Roboto Condensed', 15px, 700);
-        display: inline;
-        color: $color-zeus-black;
-        text-transform: uppercase;
-    }
+	&__content-type {
+		@include textMix('Roboto Condensed', 15px, 700);
+		display: inline;
+		color: $color-zeus-black;
+		text-transform: uppercase;
+	}
 
-    &__description {
-        @include textMix('PTSerif', 15px, 400);
-        line-height: 25px;
-        color: $color-abbey-gray;
-    }
+	&__description {
+		@include textMix('PTSerif', 15px, 400);
+		line-height: 25px;
+		color: $color-abbey-gray;
+	}
 
   &__media-type {
-    display: inline-block;
+	display: inline-block;
 
-    svg {
-      @include svg-fill($color-dusty-gray);
-      width: 26px;
-      height: 24px;
-      vertical-align: bottom;
-    }
+	svg {
+	  @include svg-fill($color-dusty-gray);
+	  width: 26px;
+	  height: 24px;
+	  vertical-align: bottom;
+	}
   }
 
   &__line-separator {
-    display: inline-block;
-    width: 1px;
-    height: 20px;
-    margin: 0 15px;
-    vertical-align: sub;
-    background-color: $color-light-gray;
+	display: inline-block;
+	width: 1px;
+	height: 20px;
+	margin: 0 15px;
+	vertical-align: sub;
+	background-color: $color-light-gray;
   }
 
   &__bookmark {
-      @extend .action-flag;
-      float: right;
-      padding-top: 0;
+	  @extend .action-flag;
+	  float: right;
+	  padding-top: 0;
 
-      .icon__bookmark {
-          @extend .action-flag__icon;
-      }
+	  .icon__bookmark {
+		  @extend .action-flag__icon;
+	  }
 
-    &--not-bookmarked {
-      .icon__bookmark--outlined {
-        display: inline-block;
-      }
-      .icon__bookmark--filled {
-        display: none;
-      }
-    }
+	&--not-bookmarked {
+	  .icon__bookmark--outlined {
+		display: inline-block;
+	  }
+	  .icon__bookmark--filled {
+		display: none;
+	  }
+	}
 
-    &--bookmarked {
-      .icon__bookmark--outlined {
-        display: none;
-      }
-      .icon__bookmark--filled {
-        display: inline-block;
-      }
-    }
+	&--bookmarked {
+	  .icon__bookmark--outlined {
+		display: none;
+	  }
+	  .icon__bookmark--filled {
+		display: inline-block;
+	  }
+	}
   }
 
 
   &__tags {
-    @extend .bar-separated-link-list;
+	@extend .bar-separated-link-list;
 
-    a {
-      @include textMix('Roboto', 15px, 400);
-      padding: 0;
-      margin: 0;
-      cursor: pointer;
-      border-right: 0;
-    }
+	a {
+	  @include textMix('Roboto', 15px, 400);
+	  padding: 0;
+	  margin: 0;
+	  cursor: pointer;
+	  border-right: 0;
+	}
   }
 
   .highlighted-term {
-    font-weight: 700;
-    background-color: rgba(251, 176, 64, 0.3); // TODO: add to color variables;
+	font-weight: 700;
+	background-color: rgba(251, 176, 64, 0.3); // TODO: add to color variables;
   }
 }
