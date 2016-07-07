@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Informa.Library.Article.Search;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 using Informa.Library.Utilities.Extensions;
@@ -7,12 +8,16 @@ using Jabberwocky.Glass.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
+using Autofac;
 using Glass.Mapper.Sc.Fields;
+using Informa.Library.Authors;
 using Informa.Library.ContentCuration;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
+using Jabberwocky.Glass.Autofac.Util;
 
 namespace Informa.Web.ViewModels
 {
@@ -36,7 +41,6 @@ namespace Informa.Web.ViewModels
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
 
-
             var parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_News_Options>();
             DisplayTitle = parameters.Display_Title;
             if (DisplayTitle)
@@ -50,9 +54,9 @@ namespace Informa.Web.ViewModels
                 ? parameters.Publications.Select(p => p.Publication_Name)
                 : new[] { rootContext.Item.Publication_Name };
 
-            //TODO
-            //var authorGuids = parameters.Publications.Any()? parameters.Publications.Select(p => p.Publication_Name): new[] { rootContext.Item.Publication_Name };
-            IEnumerable<string> authorGuids = null;
+            //TODO - base condition for the author field if its filled up.
+            //var authorGuids = this will be populated from the parameter. If parameter is empty / null then we check if its the author profile page and try and get the author GUID.
+            var authorGuids = GetAuthor();
 
             News = GetLatestNews(datasource._Id, parameters.Subjects.Select(s => s._Id), publicationNames, authorGuids, itemsToDisplay);
             SeeAllLink = parameters.Show_See_All ? new Link
@@ -60,6 +64,23 @@ namespace Informa.Web.ViewModels
                 Text = textTranslator.Translate("Article.LatestFrom.SeeAllLink"),
                 Url = SearchTaxonomyUtil.GetSearchUrl(parameters.Subjects.ToArray())
             } : null;
+        }
+
+        public List<string> GetAuthor()
+        {
+            List<string> authorGuids = null;
+            var nameFromUrl = HttpContext.Current.Request.Url.Segments.Last();
+            using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
+            {
+                var authorClient = scope.Resolve<IAuthorIndexClient>();
+                var author = authorClient.GetAuthorIdByUrlName(nameFromUrl);
+
+                if (author != null)
+                {
+                    authorGuids.Add(author.ToString().Replace("-", "").Replace("{", "").Replace("}", "").ToLower());
+                }
+            }
+            return authorGuids;
         }
 
         public IList<string> Topics { get; set; }

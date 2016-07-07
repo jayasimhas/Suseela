@@ -50,8 +50,8 @@ namespace Informa.Library.Search.Extensions
             }
 
             var predicate = PredicateBuilder.False<T>();
-            //TODO
-            predicate = filter.AuthorNames.Aggregate(predicate, (current, f) => current.Or(i => i.AuthorGuid == f));
+
+            predicate = filter.AuthorNames.Aggregate(predicate, (current, f) => current.Or(i => f.Contains(i.AuthorGuid)));
 
             return source.Filter(predicate);
         }
