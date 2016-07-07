@@ -10,5 +10,6 @@ namespace Informa.Web.ViewModels
         string Email_Address { get; }
         Image Image { get; }
         string AuthorLink { get; }
+        bool InActive { get; }
     }
 }
