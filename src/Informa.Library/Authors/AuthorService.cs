@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Web;
 using Glass.Mapper.Sc;
 using Informa.Library.Utilities.Attributes;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
@@ -12,6 +14,7 @@ namespace Informa.Library.Authors
         string ConvertAuthorNameToUrlName(string authorName);
         string GetUrlName(Guid authorId);
         string GetUrlName([NotNull] IStaff_Item authorItem);
+        string ConvertUrlNameToLink(string authorUrlName);
     }
 
     [AutowireService]
@@ -36,7 +39,7 @@ namespace Informa.Library.Authors
         {
             return ConvertAuthorNameToUrlName(authorItem._Name);
         }
-        
+
 
         public string ConvertAuthorNameToUrlName(string authorName)
         {
@@ -46,6 +49,14 @@ namespace Informa.Library.Authors
             name = name.Trim('-');
 
             return name;
+        }
+
+        public string ConvertUrlNameToLink(string authorUrlName)
+        {
+            StringBuilder authorUrl = new StringBuilder();
+            authorUrl.Append(HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath.TrimEnd('/') + "/");
+            authorUrl.Append("authors/" + authorUrlName);
+            return authorUrl.ToString();
         }
     }
 }

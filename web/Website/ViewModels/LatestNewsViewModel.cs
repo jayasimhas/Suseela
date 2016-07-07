@@ -68,7 +68,7 @@ namespace Informa.Web.ViewModels
 
         public List<string> GetAuthor()
         {
-            List<string> authorGuids = null;
+            List<string> authorGuids = new List<string>();
             var nameFromUrl = HttpContext.Current.Request.Url.Segments.Last();
             using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
             {
