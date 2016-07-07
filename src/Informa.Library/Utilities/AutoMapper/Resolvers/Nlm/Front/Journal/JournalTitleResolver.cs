@@ -20,7 +20,7 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Journal
         {
             var pubRoot = _globalService.GetSiteRootAncestor(source._Id);
             var title = (pubRoot != null)
-                ? pubRoot.Publication_Name
+                ? pubRoot.Journal_Title
                 : string.Empty;
             
             return new NlmJournalTitleModel
