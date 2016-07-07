@@ -7,7 +7,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Library.Article.Search
 {
-	public class ArticleSearchResultItem : SearchResultItem, ITaxonomySearchResults, IArticleNumber, IArticleEScenicID, IReferencedArticles, IArticlePublicationResults
+	public class ArticleSearchResultItem : SearchResultItem, ITaxonomySearchResults, IArticleNumber, IArticleEScenicID, IReferencedArticles, IArticlePublicationResults, IArticleAuthorResults
 	{
 		[IndexField("_latestversion")]
 		public bool IsLatestVersion { get; set; }
@@ -22,10 +22,10 @@ namespace Informa.Library.Article.Search
 		public string EScenicID { get; set; }
 		[IndexField("legacy_article_url_s")]
 		public string LegacyArticleUrl { get; set; }
-		
-		#region Implementation of IReferencedArticles
+        public string AuthorGuid { get; set; }
+        #region Implementation of IReferencedArticles
 
-		public List<Guid> ReferencedArticles { get; set; }
+        public List<Guid> ReferencedArticles { get; set; }
 
 		#endregion
 	}

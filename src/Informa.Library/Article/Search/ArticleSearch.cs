@@ -49,8 +49,9 @@ namespace Informa.Library.Article.Search
 				ExcludeManuallyCuratedItems = new List<Guid>(),
 				TaxonomyIds = new List<Guid>(),
 				ArticleNumbers = new List<string>(),
-				PublicationNames = new List<string>()
-			};
+				PublicationNames = new List<string>(),
+                AuthorNames = new List<string>(),
+            };
 		}
 
 		public IArticleSearchResults Search(IArticleSearchFilter filter)
