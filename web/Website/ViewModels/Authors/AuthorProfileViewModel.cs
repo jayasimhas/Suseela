@@ -59,17 +59,41 @@ namespace Informa.Web.ViewModels.Authors
 		public bool HasLinkedIn => Author.LinkedIn != null;
 		public string LinkedInUrl => HasLinkedIn ? (Author.LinkedIn.Url) : string.Empty;
 
-		public string Bio => Author.Bio;		
+		public string Bio => Author.Bio;
 
-		public TaxonomyLinkViewModel[] AreasOfExpertise
-			=> Author.Areas_Of_Expertises.Cast<ITaxonomy_Item>().Select(i => ConvertToTaxonomyLink(i, Author)).ToArray();
+		public TaxonomyLinkViewModel[] AreasOfExpertise {
+			get
+			{
+				return Author.Areas_Of_Expertises != null
+					? Author.Areas_Of_Expertises?.Cast<ITaxonomy_Item>().Select(i => ConvertToTaxonomyLink(i, Author)).ToArray()
+					: new List<TaxonomyLinkViewModel>().ToArray();
+			}
+		}
+	
 		public bool PersonHasAreasOfExpertise => AreasOfExpertise.Any();
-		public TaxonomyLinkViewModel[] IndustryExpertise 
-			=> Author.Industry_Expertises.Cast<ITaxonomy_Item>().Select(i => ConvertToTaxonomyLink(i, Author)).ToArray();
+
+		public TaxonomyLinkViewModel[] IndustryExpertise
+		{
+
+			get
+			{
+				return Author.Industry_Expertises != null
+					? Author.Industry_Expertises?.Cast<ITaxonomy_Item>().Select(i => ConvertToTaxonomyLink(i, Author)).ToArray()
+					: new List<TaxonomyLinkViewModel>().ToArray();
+			}
+		}
 
 		public bool PersonHasIndustryExpertise => IndustryExpertise.Any();
-        public TaxonomyLinkViewModel[] WriteForExpertise 
-			=> Author.Write_For_Expertises.Cast<ISite_Root>().Select(i => ConvertToTaxonomyLink(i, Author)).ToArray();
+
+		public TaxonomyLinkViewModel[] WriteForExpertise
+		{
+			get
+			{
+				return Author.Write_For_Expertises != null
+					? Author.Write_For_Expertises.Cast<ISite_Root>().Select(i => ConvertToTaxonomyLink(i, Author)).ToArray()
+					: new List<TaxonomyLinkViewModel>().ToArray();
+			}
+		}
 
 		public bool PersonWritesFor => WriteForExpertise.Any();
 
