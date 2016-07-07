@@ -21,7 +21,7 @@
 					<a href="mailto:@(Model.Email)">@(Model.Email)</a>
 				</li>
 			}
-			
+
 			@if (Model.HasTwitter)
 			{
 				<li>
@@ -32,7 +32,7 @@
 				</li>
 			}
 
-			@if (@Model.HasLinkedIn)
+			@if (Model.HasLinkedIn)
 			{
 				<li>
 					@* NOTE: This extra class on the linkedIn svg is important!  Don't remove it!  And don't add it to the other SVGs! *@
@@ -46,5 +46,45 @@
 		<div class="profile__profile">
 			@(Model.Bio)
 		</div>
+		<ul class="profile__expertise">
+			@if (Model.PersonHasAreasOfExpertise)
+			{
+				<li>
+					<div class="bar-separated-link-list">
+						<span class="bar-separated-link-list__label">Areas of Expertise: </span>
+
+						@foreach (var item in Model.AreasOfExpertise)
+						{
+							<a href="@item.LinkUrl">@item.LinkText</a>
+						}
+					</div>
+				</li>
+			}
+			@if (Model.PersonHasIndustryExpertise)
+			{
+				<li>
+					<div class="bar-separated-link-list">
+						<span class="bar-separated-link-list__label">Industry Expertise: </span>
+
+						@foreach (var item in Model.IndustryExpertise)
+						{
+							<a href="@item.LinkUrl">@item.LinkText</a>
+						}
+					</div>
+				</li>
+			}
+			@if (Model.PersonWritesFor)
+			{
+				<li>
+					<div class="bar-separated-link-list">
+						<span class="bar-separated-link-list__label">Writes for: </span>
+						@foreach (var item in Model.WriteForExpertise)
+						{
+							<a href="@item.LinkUrl">@item.LinkText</a>
+						}
+					</div>
+				</li>
+			}
+		</ul>
 	</div>
 </div>

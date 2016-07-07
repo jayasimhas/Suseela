@@ -4702,6 +4702,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 	public partial interface ILatest_News_Options : IGlassBase 
 	{
 								/// <summary>
+					/// The Authors field.
+					/// <para></para>
+					/// <para>Field Type: Treelist</para>		
+					/// <para>Field ID: 4dd4c91f-13e2-4023-9204-69bfca0cf2be</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ILatest_News_OptionsConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Authors  {get; set;}
+								/// <summary>
 					/// The Display Title field.
 					/// <para></para>
 					/// <para>Field Type: Checkbox</para>		
@@ -4759,6 +4768,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 		public partial interface ILatest_News_Options__Raw : IGlassBase 
 		{
 										/// <summary>
+						/// The Authors field.
+						/// <para></para>
+						/// <para>Field Type: Treelist</para>		
+						/// <para>Field ID: 4dd4c91f-13e2-4023-9204-69bfca0cf2be</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ILatest_News_OptionsConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Authors  {get; set;}
+										/// <summary>
 						/// The Display Title field.
 						/// <para></para>
 						/// <para>Field Type: Checkbox</para>		
@@ -4811,6 +4829,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Latest News Options";
 
+					
+			public static readonly ID AuthorsFieldId = new ID("4dd4c91f-13e2-4023-9204-69bfca0cf2be");
+			public const string AuthorsFieldName = "Authors";
+
+						
 					
 			public static readonly ID Display_TitleFieldId = new ID("d5f01d55-fd1f-4ba5-8c6f-953242b9e399");
 			public const string Display_TitleFieldName = "Display Title";

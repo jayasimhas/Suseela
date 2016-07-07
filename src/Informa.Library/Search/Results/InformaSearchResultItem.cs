@@ -80,6 +80,9 @@ namespace Informa.Library.Search.Results
 		[IndexField("facetcompanies")]
 		public List<string> CompaniesFacet { get; set; }
 
+		[IndexField("authors_sm")]
+		public List<string> Authors { get; set; }
+
 		[DataMember]
 		public bool IsArticleBookmarked => DocumentContext.IsSaved(ItemId.Guid);
 		

@@ -36,6 +36,7 @@ namespace Informa.Web.ViewModels
             }
         }
 
+        public bool InActive => _author.Inactive;
         #endregion
     }
 }
