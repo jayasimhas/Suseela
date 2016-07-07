@@ -16,7 +16,7 @@
 			{
 				<li>
 					<svg class="alert__icon">
-						<use xlink:href="/web/Website/dist/img/svg-sprite.svg#email"></use>
+						<use xlink:href="/dist/img/svg-sprite.svg#email"></use>
 					</svg>
 					<a href="mailto:@(Model.Email)">@(Model.Email)</a>
 				</li>
@@ -26,7 +26,7 @@
 			{
 				<li>
 					<svg class="alert__icon">
-						<use xlink:href="/web/Website/dist/img/svg-sprite.svg#twitter"></use>
+						<use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
 					</svg>
 					<a href="@(Model.TwitterUrl)">@(Model.TwitterHandle)</a>
 				</li>
@@ -37,7 +37,7 @@
 				<li>
 					@* NOTE: This extra class on the linkedIn svg is important!  Don't remove it!  And don't add it to the other SVGs! *@
 					<svg class="alert__icon icon--linked-in">
-						<use xlink:href="/web/Website/dist/img/svg-sprite.svg#linkedin"></use>
+						<use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
 					</svg>
 					<a href="@(Model.LinkedInUrl)">@(Model.FirstName + " " + Model.LastName)</a>
 				</li>
