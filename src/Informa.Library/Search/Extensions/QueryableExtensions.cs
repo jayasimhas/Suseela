@@ -51,7 +51,7 @@ namespace Informa.Library.Search.Extensions
 
             var predicate = PredicateBuilder.False<T>();
 
-            predicate = filter.AuthorNames.Aggregate(predicate, (current, f) => current.Or(i => f.Contains(i.AuthorGuid)));
+            predicate = filter.AuthorNames.Aggregate(predicate, (current, f) => current.Or(i => i.AuthorGuid.Contains(f)));
 
             return source.Filter(predicate);
         }
