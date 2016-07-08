@@ -763,8 +763,7 @@
     <Compile Include="Util\DCD\ViewDCDXML.aspx.designer.cs">
       <DependentUpon>ViewDCDXML.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AdvertisementViewModel.cs" />
-    <Compile Include="ViewModels\ArticleAdViewModel.cs" />
+    <Compile Include="ViewModels\AdViewModel.cs" />
     <Compile Include="ViewModels\ArticleBodyContentModel.cs" />
     <Compile Include="ViewModels\ArticleEntitledViewModel.cs" />
     <Compile Include="ViewModels\AnalyticsViewModel.cs" />

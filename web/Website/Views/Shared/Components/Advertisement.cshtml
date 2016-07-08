@@ -1,16 +1,16 @@
-﻿@inherits CustomGlassView<AdvertisementViewModel>
+﻿@inherits CustomGlassView<AdViewModel>
 
-@if (IsInEditingMode)
+@if (IsInEditingMode && Model.AdModel != null)
 {
-    @Editable(Model.GlassModel, x => x.Slot_ID)
-    @Editable(Model.GlassModel, x => x.Zone)
+    @Editable(Model.AdModel, x => x.Slot_ID)
+    @Editable(Model.AdModel, x => x.Zone)
 }
-@if (!string.IsNullOrEmpty(Model.GlassModel.Slot_ID) && !string.IsNullOrEmpty(Model.GlassModel.Zone))
+@if (Model.IsValidAd(Model.SlotId))
 {
     <div class="article-preview__ad advertising">
         <span class="advertising__label">@Model.AdvertisementText</span>
         <script>
-            OAS_AD('@Model.GlassModel.Slot_ID', '@Model.GlassModel.Zone');
+            OAS_AD('@Model.SlotId', '@Model.AdZone');
         </script>
     </div>
 }
