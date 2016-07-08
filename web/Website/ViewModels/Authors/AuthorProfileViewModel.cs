@@ -89,8 +89,8 @@ namespace Informa.Web.ViewModels.Authors
 		{
 			get
 			{
-				return Author.Write_For_Expertises != null
-					? Author.Write_For_Expertises.Cast<ISite_Root>().Select(i => ConvertToTaxonomyLink(i, Author)).ToArray()
+				return Author.Writes_Fors != null
+					? Author.Writes_Fors.Cast<ISite_Root>().Select(i => ConvertToTaxonomyLink(i, Author)).ToArray()
 					: new List<TaxonomyLinkViewModel>().ToArray();
 			}
 		}
