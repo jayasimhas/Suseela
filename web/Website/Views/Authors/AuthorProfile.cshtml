@@ -44,7 +44,7 @@
 			}
 		</ul>
 		<div class="profile__profile">
-			@(Model.Bio)
+			@Html.Raw(Model.Bio)
 		</div>
 		<ul class="profile__expertise">
 			@if (Model.PersonHasAreasOfExpertise)
