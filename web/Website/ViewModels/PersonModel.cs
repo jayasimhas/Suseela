@@ -31,11 +31,12 @@ namespace Informa.Web.ViewModels
                 using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
                 {
                     var authorClient = scope.Resolve<IAuthorService>();
-                    return authorClient.GetUrlName(_author._Id);
+                    return authorClient.ConvertUrlNameToLink(authorClient.GetUrlName(_author._Id));
                 }
             }
         }
 
+        public bool InActive => _author.Inactive;
         #endregion
     }
 }

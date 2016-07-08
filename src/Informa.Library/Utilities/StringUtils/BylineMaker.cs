@@ -36,7 +36,18 @@ namespace Informa.Library.Utilities.StringUtils
 
             var by = $"{_dependencies.TextTranslator.Translate("Article.By")} ";
 
-            var names = authors.Select(auth => $"<a href='{_dependencies.AuthorClient.GetUrlName(auth._Id)}'>{auth.First_Name} {auth.Last_Name}</a>".Trim());
+            var names = new List<string>();
+            foreach (var eachAuthor in authors)
+            {
+                if (eachAuthor.Inactive)
+                {
+                    names.Add($"{eachAuthor.First_Name} {eachAuthor.Last_Name}");
+                }
+                else
+                {
+                    names.Add($"<a href='{_dependencies.AuthorClient.ConvertUrlNameToLink(_dependencies.AuthorClient.GetUrlName(eachAuthor._Id))}'>{eachAuthor.First_Name} {eachAuthor.Last_Name}</a>".Trim());
+                }
+            }
 
             var result = $"{by}{names.JoinWithFinal(", ", "and")}";
 
