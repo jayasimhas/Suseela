@@ -28,7 +28,7 @@
 					Issue Number
 				</td>
 				<td>
-					@Model.Issue._Id
+					@Math.Abs(Model.Issue._Name.GetHashCode())
 					<input type="hidden" id="js-issue" name="issue" value="@Model.Issue._Id" />
 					<input type="hidden" id="js-order" name="order" value="" />
 					<input type="hidden" id="js-todelete" name="todelete" value="" />
