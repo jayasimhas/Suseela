@@ -9,6 +9,7 @@ using Informa.Library.Company;
 using Informa.Library.Services.Global;
 using Informa.Library.SiteDebugging;
 using Jabberwocky.Autofac.Attributes;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Web.ViewModels
 {
@@ -43,5 +44,17 @@ namespace Informa.Web.ViewModels
         public HtmlString PrintPageHeaderMessage => _dependencies.SiteRootContext.GetPrintHeaderMessage();
         public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	    public string MetaDataHtml => _dependencies.HeadMetaDataGenerator.GetMetaHtml();
+
+	    public bool IsRestricted
+	    {
+	        get
+	        {
+	            bool isRestrictedByRegistration = GlassModel is IGeneral_Content_Page
+	                ? ((IGeneral_Content_Page) GlassModel).Restrict_To_Registered_Users
+	                : false;
+
+	            return (isRestrictedByRegistration && !_dependencies.AuthenticatedUserContext.IsAuthenticated);
+	        }
+	    }
 	}
 }
