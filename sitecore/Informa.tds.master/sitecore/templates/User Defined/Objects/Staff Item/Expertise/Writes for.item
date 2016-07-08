@@ -2,9 +2,9 @@
 version: 1
 id: {2C527B2C-25E8-47D0-9356-8F21757BA897}
 database: master
-path: /sitecore/templates/User Defined/Objects/Staff Item/Expertise/Write for Expertise
+path: /sitecore/templates/User Defined/Objects/Staff Item/Expertise/Writes for
 parent: {02BC5F4E-15DB-43BD-A98A-2E04C2EE0AA3}
-name: Write for Expertise
+name: Writes for
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -33,7 +33,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: f1d54f29-9fa6-47d5-84c0-af40a56e7a73
+revision: 4d804803-6e91-4bca-b35d-57a65c04eb2c
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-f1d54f29-9fa6-47d5-84c0-af40a56e7a73
+4d804803-6e91-4bca-b35d-57a65c04eb2c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160706T174758Z
+20160708T153654Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
