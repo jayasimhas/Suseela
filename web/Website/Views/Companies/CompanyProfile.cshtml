@@ -3,6 +3,13 @@
 }
 
 @* General FE Note: Clearly this is only the bits of the Deals page mentioned in IITS2A-139, IITS2A-140, and IITS2A-141; it will need to be wrapped inside header/footer/etc and have related news and leaderboard ads (all extant code) tagged on, much as seen on the home page.  Exactly how that markup should look can be extrapolated from the patternlab files for the Company template or the Company example page *@
+
+
+
+@* Header goes up here! *@
+@* Main nav goes up here! *@
+@* Share bar goes here! (Reuse from Authors) *@
+
 <div class="company">
 	<div class="l-left-rail">
 		<div class="generic-content">
@@ -89,6 +96,8 @@
 					}
 				</ul>
 			}
+
+
 		</div>
 		@* This may be the incorrect sort of ad; confirm with someone who knows for sure.  Designs show tall square ad. *@
 	    @Html.Sitecore().Placeholder("article-med-ad")
@@ -108,3 +117,7 @@
 
 	</div>
 </div>
+
+
+
+@* Footer goes down here! *@
