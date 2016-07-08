@@ -246,7 +246,9 @@ namespace Elsevier.Web.VWB
 		/// </summary>
 		protected void BuildOptionalColumnDropdown()
 		{
-			ddColumns.Items.Add("Add New Field...");
+            if (IsPostBack)
+                return;
+            ddColumns.Items.Add("Add New Field...");
 			foreach (var column in ColumnFactory.GetColumnFactory().GetColumnsNot(_vwbQuery.ColumnKeysInOrder))
 			{
 				ddColumns.Items.Add(new ListItem(column.GetHeader(), column.Key()));
@@ -325,6 +327,9 @@ namespace Elsevier.Web.VWB
 
         protected void BuildExistingIssuesList()
         {
+            if (IsPostBack)
+                return;
+
             ExistingIssueSelector.CssClass = "js-existing-issue";
             ExistingIssueSelector.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
 
