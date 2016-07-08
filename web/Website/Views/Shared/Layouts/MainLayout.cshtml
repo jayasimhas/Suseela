@@ -41,7 +41,14 @@
 
             <div class="main__content">
                 @Html.Sitecore().Placeholder("top-main-content")
-                @Html.Sitecore().Placeholder("main-content")
+                @if (!Model.IsRestricted || Sitecore.Context.PageMode.IsExperienceEditor)
+                {
+                    @Html.Sitecore().Placeholder("main-content")
+                }
+                @if (Model.IsRestricted || Sitecore.Context.PageMode.IsExperienceEditor)
+                {
+                    @Html.Sitecore().Placeholder("restricted-content")
+                }
             </div>
 
             @Html.Sitecore().Placeholder("post-content")
