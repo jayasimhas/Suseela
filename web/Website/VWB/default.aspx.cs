@@ -88,31 +88,28 @@ namespace Elsevier.Web.VWB
 			}
 		}
 
-		public Control GetPostBackControl()
-		{
-			Control control = null;
+        public Control GetPostBackControl()
+        {
+            Control control = null;
 
-			string ctrlname = Request.Params.Get("__EVENTTARGET");
-			if (!string.IsNullOrEmpty(ctrlname))
-			{
-				control = FindControl(ctrlname);
-			}
-			else
-			{
-				foreach (string ctl in Request.Form)
-				{
-					Control c = FindControl(ctl);
-					if (c is Button)
-					{
-						control = c;
-						break;
-					}
-				}
-			}
-			return control;
-		}
+            string ctrlname = Request.Params.Get("__EVENTTARGET");
+            if (!string.IsNullOrEmpty(ctrlname))
+                return FindControl(ctrlname);
 
-		private static int? GetMaxNumResults()
+            List<string> names = new List<string>();
+            foreach (string s in Request.Form)
+                names.Add(s);
+
+            var buttons = names
+                .Where(a => a.Contains("btn"));
+
+            if (buttons.Any())
+                return FindControl(buttons.First());
+
+            return null;
+        }
+
+        private static int? GetMaxNumResults()
 		{
 
 			//TextNodeItem maxResults = ItemReference.MaxResultsPerSearch.InnerItem;
@@ -246,8 +243,6 @@ namespace Elsevier.Web.VWB
 		/// </summary>
 		protected void BuildOptionalColumnDropdown()
 		{
-            if (IsPostBack)
-                return;
             ddColumns.Items.Add("Add New Field...");
 			foreach (var column in ColumnFactory.GetColumnFactory().GetColumnsNot(_vwbQuery.ColumnKeysInOrder))
 			{
@@ -327,9 +322,6 @@ namespace Elsevier.Web.VWB
 
         protected void BuildExistingIssuesList()
         {
-            if (IsPostBack)
-                return;
-
             ExistingIssueSelector.CssClass = "js-existing-issue";
             ExistingIssueSelector.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
 
