@@ -35,7 +35,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 		    }
 		    catch (Exception ex1)
 		    {
-                Sitecore.Diagnostics.Log.Error("Error Processing DCD Company Tokens", ex1);
+                Sitecore.Diagnostics.Log.Error("Error Processing DCD Company Tokens", ex1, typeof(DCDTokenMatchers));
             }
 
 		    try
@@ -47,7 +47,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 		    }
 		    catch (Exception ex2)
 		    {
-                Sitecore.Diagnostics.Log.Error("Error Processing DCD Deal Tokens", ex2);
+                Sitecore.Diagnostics.Log.Error("Error Processing DCD Deal Tokens", ex2, typeof(DCDTokenMatchers));
             }
 
             try { 
@@ -59,7 +59,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 			}
 			catch (Exception ex3)
 			{
-				Sitecore.Diagnostics.Log.Error("Error Processing DCD Article Tokens", ex3);
+				Sitecore.Diagnostics.Log.Error("Error Processing DCD Article Tokens", ex3, typeof(DCDTokenMatchers));
 			}
 
 			return body;
@@ -138,12 +138,16 @@ namespace Informa.Library.Utilities.TokenMatcher
 		{
 			try
 			{
+				if (match == null || match.Groups.Count < 2)
+				{
+					return string.Empty;
+				}
 				//return a see deal (deal reference) (from the token itself) to replace the token
 				return string.Format("<a href=\"{0}\">[See Deal]</a>", string.Format(OldDealsUrl, match.Groups[1].Value));
 			}
 			catch (Exception ex)
 			{
-				Sitecore.Diagnostics.Log.Error("Error when evaluating deal match token", ex, "LogFileAppender");
+				Sitecore.Diagnostics.Log.Error($"Error when evaluating deal match token. Match: {match.Value}", ex, "LogFileAppender");
 				return string.Empty;
 			}
 		}
