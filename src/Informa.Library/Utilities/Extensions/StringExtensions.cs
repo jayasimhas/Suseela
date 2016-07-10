@@ -49,5 +49,26 @@ namespace Informa.Library.Utilities.Extensions
 
             return ReplacePatternCaseInsensitive(source, Regex.Escape(oldValue), newValue);
         }
+		public static string ExtractParamValue(this string url, string key)
+		{
+			var querystring = url.Split('&');
+			var param = querystring.FirstOrDefault(p => p.StartsWith($"{key}="));
+			return param?.Split('=')[1] ?? string.Empty;
+		}
+		
+		public static string GetByLine(this IEnumerable<string> names)
+		{
+			if (names == null) return string.Empty;
+
+			var count = names.Count();
+
+			if (count == 0) return string.Empty;
+
+			if (count == 1) return names.FirstOrDefault();
+
+			if (count == 2) return $"{names.First()} and {names.Last()}";
+
+			return $"{string.Join(", ", names.Take(count - 1))} and {names.LastOrDefault()}";
+		}
     }
 }

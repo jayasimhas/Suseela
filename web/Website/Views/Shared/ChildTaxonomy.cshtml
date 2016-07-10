@@ -1,10 +1,21 @@
-﻿@model Informa.Web.ViewModels.HierarchyLinks
+﻿@model Informa.Library.Taxonomy.HierarchyLinks
 <ul>
-    <li class="article-topics__li article-topics__li--grandchild"><a href="@Model.Url" class="click-utag" data-inf='{"event_name"="related-taxonomy-child","child-taxonomy"="@Model.Text"}'>@Model.Text</a></li>
-    @foreach (var tag in Model.Children)
-    {
-        <ul>
-            @{ Html.RenderPartial("ChildTaxonomy", tag); }
-        </ul>
-                }
+	<li class="article-topics__li article-topics__li--grandchild">
+		<a href="@Model.Url"
+		   class="click-utag"
+		   data-info='{"event_name":"topics_click_through",
+					  "child-taxonomy":"@Model.Text",
+					  "click_through_source":"@Sitecore.Context.Item.DisplayName",
+					  "click_through_destination":"@Model.Path: @Model.Text"}'>
+			@Model.Text
+		</a>
+	</li>
+	@{ var nestedTaxonomy = $"{Model.Path}: {Model.Text}";}
+	@foreach (var tag in Model.Children)
+	{
+		tag.Path = nestedTaxonomy;
+		<ul>
+			@{ Html.RenderPartial("ChildTaxonomy", tag); }
+		</ul>
+	}
 </ul>

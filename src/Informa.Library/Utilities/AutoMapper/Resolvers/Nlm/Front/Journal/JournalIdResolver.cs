@@ -1,29 +1,27 @@
 ﻿using System;
 using AutoMapper;
-using Glass.Mapper.Sc;
+using Informa.Library.Services.Global;
 using Informa.Library.Services.NlmExport.Models.Front.Journal;
-using Informa.Library.Utilities.References;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Journal
 {
     public class JournalIdResolver : BaseValueResolver<ArticleItem, NlmJournalIdModel>
     {
-        private readonly IItemReferences _itemReferences;
-        private readonly ISitecoreService _service;
+        private readonly IGlobalSitecoreService _globalService;
 
-        public JournalIdResolver(IItemReferences itemReferences, ISitecoreService service)
+        public JournalIdResolver(IGlobalSitecoreService globalService)
         {
-            if (itemReferences == null) throw new ArgumentNullException(nameof(itemReferences));
-            if (service == null) throw new ArgumentNullException(nameof(service));
-            _itemReferences = itemReferences;
-            _service = service;
+            if (globalService == null) throw new ArgumentNullException(nameof(globalService));
+            _globalService = globalService;
         }
 
         protected override NlmJournalIdModel Resolve(ArticleItem source, ResolutionContext context)
         {
-            var id = _service.GetItem<INLM_Config>(_itemReferences.NlmConfiguration)?.Journal_ID;
+            var pubRoot = _globalService.GetSiteRootAncestor(source._Id);
+            var id = (pubRoot != null) 
+                ? pubRoot.Journal_ID
+                : string.Empty;
 
             return new NlmJournalIdModel
             {

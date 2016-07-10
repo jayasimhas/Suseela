@@ -1,0 +1,182 @@
+﻿@inherits CustomGlassView<Informa.Web.ViewModels.PopOuts.SaveSearchPopOutViewModel>
+
+<div class="pop-out js-pop-out__save-search">
+    <div class="pop-out__tab"></div>
+    <div class="pop-out__internal">
+        <div class="pop-out__sign-in">
+            <div class="dismiss-button js-close-lightbox-modal" ng-click="oneClickSaveFocus = false" data-target-element=".js-pop-out__sign-in">
+                <svg class="dismiss-button__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+            </div>
+
+            @* * *
+                If a user isn't signed in, the entire Save Search form is actually
+                a sign-in form. Upon successful sign-in, all search data is stashed.
+                When the page is reloaded, JS will detect the stashed search and will
+                save the search behind the scenes.
+                * * *@
+            <form
+				method="post"
+                class="@(Model.IsAuthenticated
+                	? "form-save-search"
+                    : "form-save-search-login")"
+                data-on-submit="@(Model.IsAuthenticated
+                    ? "/api/SavedSearches"
+                    : "/Account/api/LoginWebUserApi/Login/")"
+				data-is-search="@(Model.IsSearch ? "true" : "false")">
+
+
+                @* * *
+                    If a user isn't signed in, display a modified version of the sign-in
+                    form. Submit button is removed, as the main submit button is at the
+                    bottom of the Save Search pop-out, not below the sign-in form itself.
+                    * * *@
+                @if (!Model.IsAuthenticated)
+                {
+                    <h3 class="pop-out__register-header">@Html.Raw(Model.SignInText)</h3>
+
+                    <div class="pop-out__show-hide--bordered-bottom js-login-container">
+
+                        <div class="pop-out__form-error js-form-error js-form-error-general">
+                            @Model.SignInViewModel.SignInInvalidText
+                        </div>
+
+                        <input name="username"
+                               class="pop-out__input header__hover-input"
+                               placeholder="@Model.SignInViewModel.SignInUsernamePlaceholderText"
+                               type="text">
+                        <input name="password"
+                               class="pop-out__input header__hover-input"
+                               placeholder="@Model.SignInViewModel.SignInPasswordPlaceholderText"
+                               type="password">
+
+                        <span class="pop-out__form-actions pop-out__reset-password js-show-forgot-password">@Model.SignInViewModel.SignInResetPasswordLinkText</span>
+                        <div class="pop-out__sign-in-remember-me">
+                            <input name="persist" type="checkbox" data-checkbox-type="boolean"> @Model.SignInViewModel.SignInRememberMeText
+                        </div>
+                    </div>
+
+                } @* end IsAuthenticated *@
+
+                @if (Model.IsSearch)
+                {
+                    <h4 class="pop-out__header--tight">
+                        @Html.Raw(Model.TitleLabelText)
+                    </h4>
+                }
+                <div class="pop-out__save-search-container">
+                    @if (Model.IsSearch)
+                    {
+                        <p class="pop-out__error js-form-error js-form-error-EmptyTitle">
+                            @Html.Raw(Model.TitleFieldRequiredText)
+                        </p>
+
+                        <input type="text"
+                               name="Title"
+                               class="pop-out__input pop-out__input--tight js-save-search-title"
+                               value="">
+
+                        <input type="hidden"
+                               name="Url"
+                               class="js-save-search-url"
+                               value="">
+
+                        <p class="pop-out__details">
+                            @Html.Raw(Model.SearchDescriptionText)
+                        </p>
+
+                        <div class="labeled-checkbox pop-out__save-search-email-alert">
+                            <input type="checkbox"
+                                   id="AlertEnabled"
+                                   name="AlertEnabled"
+                                   data-checkbox-type="boolean"
+                                   checked="checked">
+                            <label class="checkbox-label" for="AlertEnabled">
+                                @Html.Raw(Model.EmailAlertLabelText)
+                            </label>
+                        </div>
+					}
+                    else
+                    {
+                        <input type="hidden"
+                               name="Title"
+                               class="js-save-search-title" value="">
+
+                        <input type="hidden"
+                               name="Url"
+                               class="js-save-search-url"
+                               value="">
+
+                        <input type="hidden"
+                               id="AlertEnabled"
+                               name="AlertEnabled"
+                               value="true">
+
+                        <p class="pop-out__details">
+
+							@* * *
+							Commenting this out because we'll need to dynamically insert the
+							topic title, and there's nothing in the original ticket requiring
+							that the description text is in the Dictionary.
+
+							Html.Raw(Model.TopicDescriptionText)
+
+							* * *@
+
+							Your alert for <span class="js-save-search-title"></span> will be saved to your account - "Saved Searches and Alerts".
+                        </p>
+					}
+
+                    <button
+						type="submit"
+						class="pop-out__sign-in-submit button--filled"
+						ng-click="searchIsSaved = true">
+
+                        @(Model.IsAuthenticated
+                              ? @Html.Raw(Model.ButtonLoggedInText)
+                              : @Html.Raw(Model.ButtonLoggedOutText))
+
+                    </button>
+
+                </div>
+
+            </form>
+
+            @if (!Model.IsAuthenticated)
+            {
+                <div class="pop-out__show-hide--bordered-top pop-out__forgot-password js-reset-password-container">
+
+                    <form class="form-reset-password" data-on-submit="/Account/api/ResetPasswordApi/Generate/">
+                        <div class="alert-success js-reset-password-success">
+                            <svg class="alert__icon">
+                                <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+                            </svg>
+                            <p>@Model.SignInViewModel.ResetPasswordSuccessText</p>
+                        </div>
+
+                        <div class="pop-out__sign-in-forgot-password-nested js-reset-password-request-form">
+                            @Model.SignInViewModel.ResetPasswordBody
+
+                            <p class="pop-out__form-error js-form-error js-form-error-EmailRequirement">@Model.SignInViewModel.ResetPasswordErrorEmailText</p>
+                            <p class="pop-out__form-error js-form-error js-form-error-general">@Model.SignInViewModel.ResetPasswordErrorGeneralText</p>
+
+                            <input name="email"
+                                   class="pop-out__input"
+                                   type="text"
+                                   placeholder="@Model.SignInViewModel.ResetPasswordEmailPlaceholderText">
+                            <div class="pop-out__form-actions-wrapper">
+                                <div></div>
+                                <div class="sign-in__submit-wrapper">
+                                    <button class="button--filled  click-utag" type="submit" data-info='{"event_name" : "reset-password"}'>@Model.SignInViewModel.ResetPasswordSubmitText</button>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="pop-out__details pop-out__details--inset u-italic u-centered">
+                            @Model.SignInViewModel.ResetPasswordContactText
+                        </p>
+                    </form>
+
+                </div>} @* end IsAuthenticated *@</div> @* .pop-out__sign-in *@
+    </div> @* .pop-out__internal *@
+</div> @* .pop-out *@

@@ -4,7 +4,10 @@
 {
     <div class="page-account">
 
-        <h1 class="page-account__header">@Model.Title</h1>
+        <h1 class="page-account__header">@Html.Glass().Editable(m => m.GlassModel.Title)</h1>
+		<div class="page-account__introduction">
+            @Html.Glass().Editable(m => m.GlassModel.Body)
+        </div>
         <div class="page-preferences js-preferences-user-container">
 
             <p class="page-account__error js-form-error js-form-error-general">
@@ -14,14 +17,51 @@
             <form   class="form-email-preferences"
                     data-on-submit="/Account/api/PreferencesApi/Update/">
 
-                <div class="labeled-checkbox page-preferences__newsletteroptin-confirm">
-                    <input  name="NewsletterOptIn"
-                            id="NewsletterOptIn"
-                            type="checkbox"
-                            data-checkbox-type="boolean"
-                            @(@Model.ReceivesNewsletterEmails ? "checked" : "")>
-                    <label for="NewsletterOptIn" class="checkbox-label">@Model.NewsletterLabel</label>
-                </div>
+				<h2 class="page-account__table-headline">@Model.NewsletterTitle</h2>
+
+				<table class="page-account__table sortable-table js-sortable-table">
+					<thead class="sortable-table__header">
+						<tr>
+							<td class="sortable-table__col sortable-table__col--full-width js-sortable-table-sorter"
+                                data-sortable-table-col="1">
+                                @Model.NewsletterOptInTitleHeading
+                                <div class="sorting-arrows">
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                                        <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                    </svg>
+                                    <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                                        <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                    </svg>
+                                </div>
+                            </td>
+                            <td class="sortable-table__col l-no-wrap">
+                                @Model.NewsletterOptInReceiveEmailHeading
+                            </td>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var newsletterOptIn in Model.PublicationNewsletterOptIns)
+						{
+							<tr>
+                                <td class="sortable-table__col">
+                                    @newsletterOptIn.Publication.Name
+                                </td>
+                                <td class="sortable-table__col l-centered">
+                                    <div class="labeled-checkbox">
+    									<input name="Publications"
+    										   id="@newsletterOptIn.Publication.Code"
+                                               class="js-account-email-checkbox"
+    										   type="checkbox"
+    										   data-checkbox-type="value"
+    										   @(newsletterOptIn.OptIn ? "checked" : "")
+    										   value="@newsletterOptIn.Publication.Code">
+                                           <label class="checkbox-label" for="@newsletterOptIn.Publication.Code">Yes</label>
+                                    </div>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
 
                 <div class="labeled-checkbox page-preferences__offersoptin-confirm">
                     @*
@@ -36,6 +76,7 @@
                     *@
                     <input  name="DoNotSendOffersOptIn"
                             id="DoNotSendOffersOptIn"
+                            class="js-account-email-toggle-all"
                             type="checkbox"
                             data-checkbox-type="boolean"
                             data-checkbox-boolean-type="reverse"
@@ -44,7 +85,7 @@
                 </div>
 
                 <div class="page-account__submit-wrapper">
-                    <button type="submit" class="button--filled button--fly-right manage-preferences">@Model.SubmitText</button>
+                    <button type="submit" class="button--filled button--fly-right js-update-email-prefs" disabled="disabled">@Model.SubmitText</button>
                 </div>
 
                 <div class="alert-success js-form-success">

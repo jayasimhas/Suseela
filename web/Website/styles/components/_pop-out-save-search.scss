@@ -1,0 +1,9 @@
+.pop-out__save-search {
+    &-email-alert {
+        & input[type=checkbox] {
+            height: 1.5rem;
+            width: 1.625rem;
+            vertical-align: middle;
+        }
+    }
+}

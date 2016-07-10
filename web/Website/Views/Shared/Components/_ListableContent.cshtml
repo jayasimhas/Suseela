@@ -6,30 +6,27 @@
 }
 
 <div class="article-metadata">
-    <!-- <div class="article-preview__bookmarker pop-out__trigger @(true /*Model.IsUserAuthenticated*/ ? "js-bookmark-article" : "js-pop-out-trigger" )"
-         data-pop-out-type="sign-in"
-         data-bookmark-id="@*Model.Article._Id*@"
-         @( false/*Model.IsArticleBookmarked*/ ? "data-is-bookmarked=true" : null)>
+     <div
+	 	class="action-flag article-preview__bookmarker pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
+        data-pop-out-type="sign-in"
+        data-bookmark-id="@Model.ID"
+        @( Model.IsArticleBookmarked ? "data-is-bookmarked=true" : null)
+		data-analytics='{
+			"bookmark": "true",
+ 			"bookmark_title": "@Model.ListableTitle",
+ 			"bookmark_publication": "@Model.ListablePublication"
+		}'>
 
-        @* Storing "bookmark" / "bookmarked" labels in data attributes so Javascript
-        can use text provided by Sitecore when toggling state post-load. *@
-        <span   class="article-prologue__share-label js-bookmark-label"
-                data-label-bookmark="@*Model.BookmarkText*@"
-                data-label-bookmarked="@*Model.BookmarkedText*@">
-            @*@( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )*@
-        </span>
+        
+		<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @( Model.IsArticleBookmarked ? "is-visible" : null)">
+	        <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+	    </svg>
 
-        @* SAM, THIS NEEDS SOME BACKEND WORK, THE VIEW MODEL DOESN'T HAVE THE PROPERTY *@
+		<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark @( Model.IsArticleBookmarked ? null : "is-visible")">
+	        <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+	    </svg>
 
-        <svg class="article-bookmark article-bookmark__bookmarked click-utag @( false /*Model.IsArticleBookmarked*/ ? "is-visible" : null)" data-info='{"event_name" : "bookmark"}'>
-            <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-        </svg>
-
-        <svg class="article-bookmark click-utag @( false /*Model.IsArticleBookmarked*/ ? null : "is-visible")" data-info='{"event_name" : "bookmark"}'>
-            <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-        </svg>
-
-    </div> -->
+    </div>
     <ul>
         <li>
             <time class="article-metadata__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
@@ -53,12 +50,16 @@
 
 <div class="article-preview__inner-wrapper">
     <h1 class="article-preview__headline">
-        <a href="@Model.LinkableUrl">@Model.ListableTitle</a>
+        <a
+			href="@Model.LinkableUrl"
+			class="click-utag"
+			data-info='{ "event_name": "article_click_through", "click_through_source": "@Model.PageTitle", "click_through_destination": "@Model.ListableTitle" }'>
+			@Html.Raw(Model.ListableTitle)
+		</a>
     </h1>
 
     <span class="article-preview__byline">
-        @*by @string.Join(", ", Model.ListableAuthors?.Select(x => x.LinkableText))*@
-        by @(string.Join(", ", Model.ListableAuthors?.Take(Model.ListableAuthors.Count() - 1).Select(x => x.LinkableText)) + (Model.ListableAuthors?.Count() > 0 ? (Model.ListableAuthors.Count() > 1 ? " and " : "") + Model.ListableAuthors.LastOrDefault().LinkableText : string.Empty))
+        @Html.Raw(Model.ListableAuthorByLine)
     </span>
 
     <div class="article-summary">

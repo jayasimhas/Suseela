@@ -13,6 +13,8 @@ using Informa.Library.Salesforce.User.Newsletter;
 using Informa.Library.Salesforce.User.Offer;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Session;
+using Informa.Library.Salesforce.Subscription.User;
+using Informa.Library.Subscription.User;
 
 namespace Informa.Web.App_Start.Registrations
 {
@@ -31,12 +33,6 @@ namespace Informa.Web.App_Start.Registrations
 			builder.RegisterType<SalesforceUpdateUserPassword>().As<IUpdateUserPassword>();
 
 			builder.RegisterType<WebGenerateUserResetPasswordActions>().As<IWebGenerateUserResetPasswordActions>();
-
-            //builder.RegisterType<Library.User.ResetPassword.MongoDB.MongoDbUserResetPasswordConfiguration>().As<Library.User.ResetPassword.MongoDB.IMongoDbUserResetPasswordConfiguration>();
-            //builder.RegisterType<Library.User.ResetPassword.MongoDB.MongoDbUserResetPasswordContext>().As<Library.User.ResetPassword.MongoDB.IMongoDbUserResetPasswordContext>();
-            //builder.RegisterType<Library.User.ResetPassword.MongoDB.UserResetPasswordDocumentFactory>().As<Library.User.ResetPassword.MongoDB.IUserResetPasswordDocumentFactory>();
-            //builder.RegisterType<Library.User.ResetPassword.MongoDB.MongoDbFindUserResetPassword>().As<IFindUserResetPassword>();
-            //builder.RegisterType<Library.User.ResetPassword.MongoDB.MongoDbStoreUserResetPassword>().As<IStoreUserResetPassword>();
 
             builder.RegisterType<Library.User.ResetPassword.Entity.EntityUserResetPasswordContextFactory>().As<Library.User.ResetPassword.Entity.IEntityUserResetPasswordContextFactory>();
             builder.RegisterType<Library.User.ResetPassword.Entity.EntityFindUserResetPassword>().As<IFindUserResetPassword>();
@@ -57,7 +53,7 @@ namespace Informa.Web.App_Start.Registrations
 				.As<IFindSavedDocuments>()
 				.As<ISaveDocument>()
 				.As<IRemoveDocument>();
-            builder.RegisterType<SalesforceManageSubscriptions>().As<IManageSubscriptions>();
+            builder.RegisterType<SalesforceFindUserSubscriptions>().As<IFindUserSubscriptions>();
             builder.RegisterType<SalesforceManageAccountInfo>().As<IManageAccountInfo>();
             builder.RegisterType<SalesforceUserProfile>().As<ISalesforceUserProfile>();
             builder.RegisterType<SalesforceFindUserProfile>().As<ISalesforceFindUserProfile>();

@@ -7,8 +7,8 @@
     td.header.colored, // Table header
     td.cell p.highlight { // Table sub-header
         @include textMix('Roboto', 16px, 500);
-        background-color: $informa-darker-gray;
-        color: $informa-light-gray-f;
+        background-color: $color-ship-gray;
+        color: $color-concrete-gray;
         border: 0;
         padding: 0.75rem;
         text-align: left;
@@ -30,11 +30,11 @@
 
     th,
     tr {
-        border-bottom: 1px solid $informa-light-gray-e;
+        border-bottom: 1px solid $color-mercury-gray;
     }
     th {
         @include textMix('Roboto', 16px, 500);
-        background-color: $informa-light-gray-f;
+        background-color: $color-concrete-gray;
         color: $color-zeus-black;
     }
     td {
@@ -42,7 +42,7 @@
     }
 
     &__rowspan {
-        border-right: 1px solid $informa-light-gray-e;
+        border-right: 1px solid $color-mercury-gray;
     }
 
     &--mobile-link {
@@ -77,7 +77,7 @@
         }
 
         &__expand-table {
-            @include svg-fill($informa-mid-gray);
+            @include svg-fill($color-dusty-gray);
             float: right;
             height: 20px;
             width: 20px;
