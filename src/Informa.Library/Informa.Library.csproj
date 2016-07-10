@@ -311,6 +311,7 @@
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Publishing\Events\PublishDateFoldersArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Publishing\Events\ActualPublishDateArticlePublishItemProcessing.cs" />
+    <Compile Include="Article\Publishing\Events\PublishMediaItemsArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Search\ArticleSearch.cs" />
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
     <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
