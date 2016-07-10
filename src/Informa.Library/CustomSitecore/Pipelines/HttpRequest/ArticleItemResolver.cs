@@ -14,10 +14,10 @@ using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 {
-	public class ArticleItemResolver : IProcessor<HttpRequestArgs>
-	{
-		protected IArticleSearch ArticleSearcher;
-		protected ISitecoreContext SitecoreContext;
+    public class ArticleItemResolver : IProcessor<HttpRequestArgs>
+    {
+        protected IArticleSearch ArticleSearcher;
+        protected ISitecoreContext SitecoreContext;
 
         public ArticleItemResolver(IArticleSearch searcher, ISitecoreContext context)
         {
@@ -25,43 +25,43 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
             SitecoreContext = context;
         }
 
-	    public void Process(HttpRequestArgs args)
-	    {
-	        Assert.ArgumentNotNull((object) args, "args");
-	        if (Context.Item != null || Context.Database == null || args.Url.ItemPath.Length == 0)
-	            return;
+        public void Process(HttpRequestArgs args)
+        {
+            Assert.ArgumentNotNull((object) args, "args");
+            if (Context.Item != null || Context.Database == null || args.Url.ItemPath.Length == 0)
+                return;
 
-	        Regex r = new Regex(@"^(.*)(/home/)(\w{2}\d{6})(/)(.*)");
-	        MatchCollection mc = r.Matches(args.Url.ItemPath);
-	        if (mc.Count < 1 || mc[0].Groups.Count < 6)
-	            return;
+            Regex r = new Regex(@"^(.*)(/home/)(\w{2}\d{6})(/)(.*)");
+            MatchCollection mc = r.Matches(args.Url.ItemPath);
+            if (mc.Count < 1 || mc[0].Groups.Count < 6)
+                return;
 
-	        string numFormat = mc[0].Groups[3].Value;
+            string numFormat = mc[0].Groups[3].Value;
 
-	        //find the new article page
-	        IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
-	        filter.PageSize = 1;
-	        filter.Page = 1;
-	        filter.ArticleNumbers = numFormat.SingleToList();
+            //find the new article page
+            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
+            filter.PageSize = 1;
+            filter.Page = 1;
+            filter.ArticleNumbers = numFormat.SingleToList();
 
-	        var results = ArticleSearcher.Search(filter);
+            var results = ArticleSearcher.Search(filter);
 
-	        IArticle a = results.Articles.FirstOrDefault();
-	        if (a == null)
-	            return;
+            IArticle a = results.Articles.FirstOrDefault();
+            if (a == null)
+                return;
 
-	        string matchTitle = mc[0].Groups[5].Value;
-	        string urlTitle = a._Name.ToLower().Replace(" ", "-");
-	        if (!urlTitle.Equals(matchTitle))
-	            HttpContext.Current.Response.RedirectPermanent(ArticleSearch.GetArticleCustomPath(a));
+            string matchTitle = mc[0].Groups[5].Value;
+            string urlTitle = ArticleSearch.GetCleansedArticleTitle(a);
+            if (!urlTitle.Equals(matchTitle, System.StringComparison.InvariantCultureIgnoreCase))
+                HttpContext.Current.Response.RedirectPermanent(urlTitle);
 
-	        Item i = SitecoreContext.GetItem<Item>(a._Id);
-	        if (i == null)
-	            return;
+            Item i = SitecoreContext.GetItem<Item>(a._Id);
+            if (i == null)
+                return;
 
-	        Context.Item = i;
-	        args.Url.ItemPath = i.Paths.FullPath;
-	        Context.Request.ItemPath = i.Paths.FullPath;
-	    }
-	}
+            Context.Item = i;
+            args.Url.ItemPath = i.Paths.FullPath;
+            Context.Request.ItemPath = i.Paths.FullPath;
+        }
+    }
 }
