@@ -306,6 +306,12 @@
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStateInfo.Designer.cs">
       <DependentUpon>ArticleVersionStateInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStatePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStatePopup.Designer.cs">
+      <DependentUpon>ArticleVersionStatePopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleWorkflowInfo.cs">
       <SubType>Form</SubType>
     </Compile>
