@@ -5,7 +5,7 @@ using System;
 
 namespace Informa.Library.Presentation
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class GlassRenderingContext : RenderingContextMvcWrapper, IRenderingContext
 	{
 		public Guid Id => RenderingContext.Current.Rendering.Id;

@@ -5,8 +5,7 @@ namespace Informa.Library.Utilities.References
 	public interface IItemReferences
 	{
 		Guid HomePage { get; }
-
-		Guid DCDConfigurationItem { get; }
+        
 
 		Guid NlmConfiguration { get; }
 
@@ -18,8 +17,10 @@ namespace Informa.Library.Utilities.References
 
 		Guid GeneratedDictionary { get; }
 
-		// Taxonomy Folders
-		Guid SubjectsTaxonomyFolder { get; }
+        Guid DownloadTypes { get; }
+
+        // Taxonomy Folders
+        Guid SubjectsTaxonomyFolder { get; }
 		Guid RegionsTaxonomyFolder { get; }
 		Guid TherapyAreasTaxonomyFolder { get; }
 
@@ -30,13 +31,7 @@ namespace Informa.Library.Utilities.References
 		Guid AccountNameSuffixes { get; }
 		Guid AccountPhoneTypes { get; }
 		Guid AccountSalutations { get; }
-
-		// Renderings
-		Guid SiteHeaderRendering { get; }
-		Guid SiteFooterRendering { get; }
-		Guid SiteSideNavigationRendering { get; }
-		Guid SignInPopOutRendering { get; }
-		
+        
 		// Templates
 		Guid FolderTemplate { get; }
 

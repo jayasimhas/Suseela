@@ -2,6 +2,9 @@
 title: Headers
 section: Typography
 ---
+These headers aren't often used on their own as standalone &lt;hx&gt; tags. They're usually
+extended (@extend in Sass/SCSS) and used as "foundational" styles for component-specific
+headers/titles.
 
 ```example:html
 <h1>H1 Header</h1>
@@ -14,7 +17,7 @@ section: Typography
 */
 
 body {
-  color: $informa-dark-gray;
+  color: $color-abbey-gray;
   @include textMix('PT Serif', 16px, 400);
 }
 

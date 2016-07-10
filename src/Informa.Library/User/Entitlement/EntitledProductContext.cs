@@ -1,38 +1,55 @@
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Jabberwocky.Glass.Autofac.Attributes;
+using Jabberwocky.Autofac.Attributes;
+using System;
+using System.Linq;
 
 namespace Informa.Library.User.Entitlement
 {
-    [AutowireService(LifetimeScope.Default)]
-    public class EntitledProductContext : IEntitledProductContext
+	[AutowireService]
+	public class EntitledProductContext : IEntitledProductContext
     {
-		protected readonly IEntitlementFactory EntitlementFactory;
-		protected readonly IEntitledContext EntitledContext;
+		protected readonly IEntitlementAccessContexts EntitlementAccessContexts;
 
 		public EntitledProductContext(
-			IEntitlementFactory entitlementFactory,
-			IEntitledContext entitledContext)
+			IEntitlementAccessContexts entitlementAccessContexts)
         {
-			EntitlementFactory = entitlementFactory;
-			EntitledContext = entitledContext;
+			EntitlementAccessContexts = entitlementAccessContexts;
 		}
 
-		public bool IsEntitled(IEntitledProductItem productItem)
+		public bool IsEntitled(IEntitledProduct entitledProduct)
 		{
-			if (productItem == null)
+			if (entitledProduct == null)
 			{
 				return false;
 			}
 
-			if (productItem.IsFree)
+			if (entitledProduct.IsFree)
 			{
 				return true;
 			}
 
-			var entitlement = EntitlementFactory.Create(productItem);
-			var entitled = EntitledContext.IsEntitled(entitlement);
+			var entitlementAccesses = EntitlementAccessContexts.Select(eac => eac.Find(entitledProduct));
+			var filteredEntitlementAccesses = entitlementAccesses
+				.Where(ea =>
+					ea != null &&
+					ea.AccessLevel != EntitledAccessLevel.None &&
+					!IsArchiveLimited(ea.Entitlement, entitledProduct)
+				)
+				.ToList();
 
-			return entitled;
+			return filteredEntitlementAccesses.Any();
+		}
+
+		public bool IsArchiveLimited(IEntitlement entitlement, IEntitledProduct entitledProduct)
+		{
+			if (entitlement == null || !entitlement.ArchiveLimited)
+			{
+				return false;
+			}
+
+			var productPublishedOn = entitledProduct.PublishedOn;
+			var archiveLimit = DateTime.Now.AddDays(entitlement.ArchiveLimitedDays * -1);
+
+			return archiveLimit >= productPublishedOn;
 		}
     }
 }

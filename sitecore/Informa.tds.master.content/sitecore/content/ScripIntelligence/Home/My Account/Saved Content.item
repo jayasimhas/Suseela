@@ -19,7 +19,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 356153a6-8527-4efc-ab85-129f538ebfe2
+revision: 80f608d2-712b-4794-9643-77096c4b35e7
 
 ----field----
 field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
@@ -35,6 +35,14 @@ key: sub title
 content-length: 14
 
 Saved Articles
+----field----
+field: {90BAD8F6-35B6-4E2C-BCE3-C8914D422E21}
+name: No Articles
+key: no articles
+content-length: 190
+
+<p>It looks like you haven't bookmarked any articles yet! Here's a quick animation showing you how to bookmark articles across the site:</p>
+<p><strong>&lt;Animated GIF Here&gt;</strong></p>
 ----field----
 field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
 name: Navigation Title
@@ -55,14 +63,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-356153a6-8527-4efc-ab85-129f538ebfe2
+80f608d2-712b-4794-9643-77096c4b35e7
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160310T190553Z
+20160513T104613Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

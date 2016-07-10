@@ -4,6 +4,6 @@ namespace Informa.Library.User.Entitlement
 {
     public interface IEntitledProductContext
     {
-		bool IsEntitled(IEntitledProductItem productItem);
+		bool IsEntitled(IEntitledProduct entitledProduct);
 	}
 }

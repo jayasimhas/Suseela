@@ -8,7 +8,7 @@
             <h3>@Editable(x => x.GlassModel.Headline_Text)</h3>
             @Editable(x => x.GlassModel.Sign_Up_Call_To_Action)
             <div class="form--single-row">
-                <input class="inf-standard-form-field" name="userName" placeholder="@Translate.Text("Global.NewsletterSignupEmail")">
+                <input class="inf-standard-form-field" name="userName" placeholder="@Model.NewsletterSignupEmail">
                 <div class="sign-in__submit-wrapper">
                     @if(Sitecore.Context.PageMode.IsExperienceEditor) {
                         @Editable(x => x.GlassModel.Sign_Up_Button_Text)
@@ -24,7 +24,7 @@
             <h3>@Editable(x => x.GlassModel.Confirmation_Text)</h3>
             @Editable(x => x.GlassModel.Confirmation_Summary)
             <div class="form--single-row">
-                <a href="@Model.PreferencesURL" class="button--filled">@Translate.Text("Global.ManagePreferences")</a>
+                <a href="@Model.PreferencesURL" class="button--filled">@Model.ManagePreferences</a>
             </div>
         </div>
     </div>

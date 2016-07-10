@@ -25,32 +25,11 @@ namespace Informa.Library.CustomSitecore.Pipelines
 			});
 
             routes.MapHttpRoute(
-                "articleNumberApi", 
-                "SC{articleNumber}",
-                new { controller = "Article", action ="Get", prefix = Constants.ScripRootNodeIntials },
-                new { articleNumber = @"\d+" }
-            );
-
-            routes.MapHttpRoute(
                 "articlePathApi",
                 "articles/{year}/{month}/{day}/{title}",
                 new { controller = "Article", action = "Get" }
             );
-
-            routes.MapHttpRoute(
-               "articleEScenicApi",
-               "{title}-{escenicID}",
-               new { controller = "Article", action = "Get" },
-               new { escenicID = @"\d+" }
-           );
-
-            routes.MapHttpRoute(
-                "articleTaxonomyAndEScenicApi",
-                "{taxonomy}/{title}-{escenicID}",
-                new { controller = "Article", action = "Get" },
-                new { escenicID = @"\d+" }
-            );
-
+			
             routes.MapHttpRoute(
                 "sitemapXml",
                 "sitemap.xml",

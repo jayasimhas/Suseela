@@ -1,0 +1,86 @@
+----item----
+version: 1
+id: {0ED631A0-97D6-44D0-801E-B6BE10FB5FEE}
+database: master
+path: /sitecore/system/Modules/Data Imports/The Pink Sheet/Legacy Gold Sheet/Fields/Content Type
+parent: {64D8C887-A1D8-4D6D-8D8B-92AA8FD5339D}
+name: Content Type
+master: {00000000-0000-0000-0000-000000000000}
+template: {EC4E9590-F027-4C6F-AC08-DCABD8877F1B}
+templatekey: ListToGuid
+
+----field----
+field: {FA7B99B1-6BB9-469C-B786-F8A9D52D2F0A}
+name: Handler Class
+key: handler class
+content-length: 64
+
+Sitecore.SharedSource.DataImporter.Mappings.Fields.ToContentType
+----field----
+field: {093D915A-4306-4A68-B64A-07CC2A7E4EE5}
+name: To What Field
+key: to what field
+content-length: 12
+
+Content Type
+----field----
+field: {A534B62B-9C6B-449F-8B88-93753EFE6AEC}
+name: From What Fields
+key: from what fields
+content-length: 14
+
+Print Category
+----field----
+field: {76F71014-CC36-4507-B623-9BBD2851E8CE}
+name: Source List
+key: source list
+content-length: 38
+
+{CAAD10A6-51CF-41F4-B6CE-773C8CA94CB9}
+----version----
+language: en
+version: 1
+revision: b0a3d06b-d316-4dd4-9f9a-3a652e7b0ff3
+
+----field----
+field: {1829B7B6-107A-43F9-A2F3-6BA920E33A2B}
+name: Old Source List
+key: old source list
+content-length: 49
+
+/sitecore/content/Home/Globals/Article Categories
+----field----
+field: {98ADFEC8-0F10-46DF-A24A-3B6A1B344973}
+name: Singe GUID Value
+key: singe guid value
+content-length: 1
+
+1
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160505T142318Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b0a3d06b-d316-4dd4-9f9a-3a652e7b0ff3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160506T142430Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

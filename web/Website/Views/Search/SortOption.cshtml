@@ -2,16 +2,27 @@
 
 <li class="search-sort__control-type"
     ng-class="{ 'is-selected': sorter.sortBy === '@Model.Key',
-                                'is-sorted-up': sorter.isSortedAsc('@Model.Key'),
-                                'is-sorted-down': sorter.isSortedDesc('@Model.Key') }">
+                                'is-sorted-down': sorter.isSortedAsc('@Model.Key'),
+                                'is-sorted-up': sorter.isSortedDesc('@Model.Key') }">
     <a href=""
        title="@Model.Sort_Title"
        class="btn btn--sort btn--icon-group"
-       ng-click="sorter.setByOrFlipOrder('@Model.Key', '@(Model.Sort_Ascending ? Velir.Search.Core.Reference.SiteSettings.QueryString.SortAscendingValue : Velir.Search.Core.Reference.SiteSettings.QueryString.SortDescendingValue)')">
+       ng-click="sorter.setByOrFlipOrder('@Model.Key', '@(Model.Sort_Ascending ? Velir.Search.Core.Reference.SiteSettings.QueryString.SortAscendingValue : Velir.Search.Core.Reference.SiteSettings.QueryString.SortDescendingValue)')"
+	   ng-controller="SortByDateController as dateSort">
         <span>@Editable(model => model.Sort_Title)</span>
-        <div class="search-sort__icon-group">
-            <svg class="icon icon-triangle icon-triangle--up"><use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use></svg>
-            <svg class="icon icon-triangle icon-triangle--down"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg>
+        <div
+			class="sorting-arrows"
+			ng-click="dateSort.resultsSorted(sorter.isSortedAsc('@Model.Key'))">
+
+            <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+            </svg>
+            <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+            </svg>
+			
         </div>
     </a>
 </li>
+
+<span class="search-sort__line-separator"></span>

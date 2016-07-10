@@ -1,0 +1,114 @@
+----item----
+version: 1
+id: {204199B0-C381-4B9B-92BE-63E5754F5E90}
+database: master
+path: /sitecore/content/RoseSheet
+parent: {0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+name: RoseSheet
+master: {CBA15CFC-A70C-4146-8A11-25AA3F4FDDB4}
+template: {DD003F89-D57D-48CB-B428-FFB519AACA56}
+templatekey: Site Root
+
+----field----
+field: {5EEA0A43-3174-451D-AB8B-AA348E6352CB}
+name: Publication Code
+key: publication code
+content-length: 4
+
+ROSE
+----field----
+field: {86E1C6A2-6146-4AB5-A301-4A1C0CAFBB61}
+name: Newsletter Breaking Type
+key: newsletter breaking type
+content-length: 0
+
+
+----field----
+field: {F8BD66F3-DA05-4C9A-AA10-3E1B69C2AFE4}
+name: Newsletter Weekly Type
+key: newsletter weekly type
+content-length: 10
+
+Rose Sheet
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----field----
+field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
+name: __Security
+key: __security
+content-length: 157
+
+ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename|-item:read|pd|-item:create|-item:write|-item:delete|-item:rename|-item:read|
+----version----
+language: en
+version: 1
+revision: a26cb270-188c-4e80-a165-0a231a5d9da9
+
+----field----
+field: {9AEE6C51-8392-4461-B24C-BF22ACF5B07F}
+name: Publication Name
+key: publication name
+content-length: 10
+
+Rose Sheet
+----field----
+field: {21E92B06-95E5-45BD-9AD3-D2FE207EEF7B}
+name: Publication Theme
+key: publication theme
+content-length: 16
+
+theme-rose-sheet
+----field----
+field: {1E44223B-5A22-4FE5-AE46-1E814AC36CAB}
+name: Journal Title
+key: journal title
+content-length: 14
+
+The Rose Sheet
+----field----
+field: {8EEF4C5D-E765-4F76-AF30-A6168FDDDD08}
+name: Journal ID
+key: journal id
+content-length: 4
+
+rose
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 10
+
+Rose Sheet
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160418T200838Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a26cb270-188c-4e80-a165-0a231a5d9da9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160707T181132Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

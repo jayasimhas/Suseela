@@ -3,114 +3,193 @@
 @if (Model.IsAuthenticated)
 {
     <div class="page-account">
-        <h1 class="page-account__header">@Model.Title</h1>
+
+		@Html.Sitecore().Placeholder("page-account")
+
         <div class="page-preferences js-preferences-user-container">
-            <div style="display: none;" class="js-preferences-user-error-container">
-                <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-general">@Model.GeneralErrorText</p>
-                <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-null-user">@Model.NullUserText</p>
-                <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-request-failed">@Model.RequestFailedText</p>
-                <p style="display: none;" class="js-preferences-user-error js-preferences-user-error-bad-id">@Model.BadIDText</p>
-            </div>
+			@if (Model.SavedDocumentItems.Any())
+			{
+				<p class="page-account__error js-preferences-user-error-general">
+					@Model.GeneralErrorText
+				</p>
+				<p class="page-account__error js-preferences-user-error-null-user">
+					@Model.NullUserText
+				</p>
+				<p class="page-account__error js-preferences-user-error-request-failed">
+					@Model.RequestFailedText
+				</p>
+				<p class="page-account__error js-preferences-user-error-bad-id">
+					@Model.BadIDText
+				</p>
 
-            <table class="sortable-table js-sortable-table">
-                <thead class="sortable-table__header">
-                    <tr>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="1">
-                            @Model.TitleText
-                            <div class="sortable-table__sort-arrows">
-                                <svg class="sortable-table__sort-arrows--up click-utag" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"up"}'>
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sortable-table__sort-arrows--down" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"down"}'>
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="2">
-                            @Model.DateText
-                            <div class="sortable-table__sort-arrows">
-                                <svg class="sortable-table__sort-arrows--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sortable-table__sort-arrows--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="sortable-table__col"></td>
-                    </tr>
-                </thead>
-                <thead class="sortable-table__header sortable-table__header--mobile">
-                    <tr>
-                        <td class="sortable-table__col">
-                            <h6>Sort by:</h6>
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="1">
-                            @Model.TitleText
-                            <div class="sortable-table__sort-arrows">
-                                <svg class="sortable-table__sort-arrows--up click-utag" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"up"}'>
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sortable-table__sort-arrows--down" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"down"}'>
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="2">
-                            @Model.DateText
-                            <div class="sortable-table__sort-arrows">
-                                <svg class="sortable-table__sort-arrows--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sortable-table__sort-arrows--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="sortable-table__col"></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.SavedDocuments)
-                    {
-                        <tr>
-                            <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
-                                <a href="@Model.GetUrl(item.DocumentId)">
-                                    @HttpUtility.HtmlDecode(item.Name)
-                                </a>
-                            </td>
-                            <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--date">
-                                @Model.GetActualPublishDate(item.DocumentId, "d MMMM yyyy")
-                            </td>
-                            <td class="sortable-table__col sortable-table__submit-wrapper">
-                                <form   class="form-remove-saved-document"
-                                        data-on-submit="/Account/api/SavedDocumentApi/RemoveItem/">
+				<table class="sortable-table js-sortable-table">
+					<thead class="sortable-table__header">
+						<tr>
+							<td class="sortable-table__col js-sortable-table-sorter l-no-wrap"
+								data-sortable-table-col="1">
+								Publication @* Model.TitleText *@
+								<div class="sorting-arrows">
+									<svg class="sorting-arrows__arrow sorting-arrows__arrow--up click-utag" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"up"}'>
+										<use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+									</svg>
+									<svg class="sorting-arrows__arrow sorting-arrows__arrow--down" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"down"}'>
+										<use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+									</svg>
+								</div>
+							</td>
+							<td class="sortable-table__col js-sortable-table-sorter l-no-wrap"
+								data-sortable-table-col="1">
+								@Model.TitleText
+								<div class="sorting-arrows">
+									<svg class="sorting-arrows__arrow sorting-arrows__arrow--up click-utag" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"up"}'>
+										<use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+									</svg>
+									<svg class="sorting-arrows__arrow sorting-arrows__arrow--down" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"down"}'>
+										<use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+									</svg>
+								</div>
+							</td>
+							<td class="sortable-table__col js-sortable-table-sorter l-no-wrap"
+								data-sortable-table-col="2">
+								@Model.DateText
+								<div class="sorting-arrows">
+									<svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+										<use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+									</svg>
+									<svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+										<use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+									</svg>
+								</div>
+							</td>
+							<td class="sortable-table__col"></td>
+						</tr>
+					</thead>
+					<thead class="sortable-table__header sortable-table__header--mobile">
+						<tr>
+							<td class="sortable-table__col sortable-table__sort-by-header">
+								<h6>Sort by:</h6>
+							</td>
+							<td class="sortable-table__col js-sortable-table-sorter"
+								data-sortable-table-col="1">
+								@Model.TitleText
+								<div class="sorting-arrows">
+									<svg class="sorting-arrows__arrow sorting-arrows__arrow--up click-utag" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"up"}'>
+										<use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+									</svg>
+									<svg class="sorting-arrows__arrow sorting-arrows__arrow--down" data-info='{"event_name":"saved-article-title-sort" "sort-direction":"down"}'>
+										<use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+									</svg>
+								</div>
+							</td>
+							<td class="sortable-table__col js-sortable-table-sorter"
+								data-sortable-table-col="2">
+								@Model.DateText
+								<div class="sorting-arrows">
+									<svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+										<use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+									</svg>
+									<svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+										<use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+									</svg>
+								</div>
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model.SavedDocumentItems)
+						{
+							<tr>
+								<td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
+									@Html.Raw(item.Publication?.Name)
+								</td>
+								<td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
+									<a
+										href="@item.Url"
+										class="click-utag"
+										data-info='{
+											"event_name": "bookmark_clickthrough",
+											"bookmark_title": "@item.Title",
+											"bookmark_publication": "@(item.Publication?.Name)"
+										}'
+										@(item.IsExternalUrl ? "target = \"_blank\"" : "")>
+										@Html.Raw(item.Title)
+										@if (item.IsExternalUrl)
+										{
+											<svg class="icon-external-link">
+												<use xlink:href="/dist/img/svg-sprite.svg#external-link"></use>
+											</svg>
+										}
+									</a>
+								</td>
+								<td class="sortable-table__col sortable-table__col--has-title sortable-table__col--date l-no-wrap">
+									@item.SavedOn.ToString("d MMM yyyy")
+								</td>
+								<td class="sortable-table__col sortable-table__submit-wrapper">
+									<form class="form-remove-saved-document"
+										  data-on-submit="/Account/api/SavedDocumentApi/RemoveItem/"
+										  data-analytics-title="@Html.Raw(item.Title)"
+										  data-analytics-publication="@Html.Raw(item.Publication?.Name)">
 
-                                    <input name="DocumentID"
-                                           id="DocumentID"
-                                           type="hidden"
-                                           value="@item.DocumentId">
+										<input name="DocumentID"
+											   id="DocumentID"
+											   type="hidden"
+											   value="@item.DocumentId">
 
-                                    <button type="submit" class="button--outline click-utag" data-info='{"event_name":"saved-article-remove", "document_id":"@item.DocumentId"}'>@Model.RemoveText</button>
+                                           <button type="button"
+                                               class="button--outline js-lightbox-modal-trigger"
+                                               data-lightbox-modal="js-remove-article-modal"
+                                               data-lightbox-modal-title="Remove Article"
+                                               data-lightbox-modal-body="Are you sure you'd like to remove this article?"
+                                               data-lightbox-modal-success-target="form-remove-saved-document">
+                                               @Model.RemoveText
+                                           </button>
 
-                                </form>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+                                           <button type="submit" class="lightbox-modal__hidden-submit">
+                                           </button>
 
-            <div class="alert-success js-form-success">
-                <svg class="alert__icon">
-                    <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
-                </svg>
-                <p>@Model.ItemRemovedMessage</p>
-            </div>
+									</form>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
 
+
+                <div class="lightbox-modal js-remove-article-modal">
+                    <div class="dismiss-button js-close-lightbox-modal">
+                        <span>@Model.RemoveModalCancelText</span>
+                        <svg class="dismiss-button__icon">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                        </svg>
+                    </div>
+
+                    <div class="lightbox-modal__title">
+                        <svg class="lightbox-modal__title-icon">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                        </svg>
+                        @Model.RemoveModalTitleText
+                    </div>
+                    <p>@Model.RemoveModalText</p>
+                    <button class="lightbox-modal__submit button--filled js-lightbox-modal-submit">@Model.RemoveModalConfirmText</button>
+                </div>
+
+
+				<div class="alert-success js-form-success">
+					<svg class="alert__icon">
+						<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+					</svg>
+					<p>@Model.ItemRemovedMessage</p>
+				</div>
+			}
+			<div class="js-no-articles"
+
+				 @if (Model.SavedDocumentItems.Any())
+				 {
+					 @:style="display: none;"
+				 }>
+
+				@Model.NoSavedDocumentsBody
+			</div>
         </div>
     </div>
 }

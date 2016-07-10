@@ -10,7 +10,7 @@ using Sitecore.SharedSource.DataImporter.Providers;
 namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 {
 
-    public class ToListItem : ToText, IBaseField
+    public class ToListItem : ToText
     {
         #region properties
             
@@ -24,7 +24,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
             Delimiter = GetItemField(i, "Delimiter");
         }
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
             List<string> selectedList = new List<string>();
             if (string.IsNullOrEmpty(SelectionRootItem))

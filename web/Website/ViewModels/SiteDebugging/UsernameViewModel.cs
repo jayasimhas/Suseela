@@ -58,6 +58,6 @@ namespace Informa.Web.ViewModels.SiteDebugging
 			}
 		}
 		public bool IsCleared => !string.IsNullOrWhiteSpace(HttpContext.Current.Request[ClearInputName]);
-		public string InputValue => IsDebugging ? AuthenticatedUserContext.User.Username : string.Empty;
+		public string InputValue => IsDebugging ? AuthenticatedUserContext.User?.Username ?? string.Empty : string.Empty;
 	}
 }

@@ -26,6 +26,7 @@
 				<exclude name="${dir.web}/**/node_modules/**/*" />-->
 				<include name="${dir.web}/Website/App_Config/**/*.template" />
 				<include name="${dir.web}/Website/ApplicationInsights.config.template" />
+				<include name="${dir.web}/Website/Web.config.template" />
 				<include name="${dir.sitecore}/**/*.template" />				
 				<include name="${dir.src}/**/*.template" />				
 				<include name="${dir.test}/**/*.template" />				

@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: b8b47f19-a873-430c-b9f5-101abae783cc
+revision: 6d7b3a38-fe01-4e09-951f-f48a60d08018
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -28,6 +28,20 @@ key: last name
 content-length: 10
 
 Shorthouse
+----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{F0452CBC-F46C-4DDD-B720-7837C724BE2F}" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 7
+
+ScripJo
 ----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
@@ -48,18 +62,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b8b47f19-a873-430c-b9f5-101abae783cc
+6d7b3a38-fe01-4e09-951f-f48a60d08018
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190923Z
+20160421T204843Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 17
 
-sitecore\admin
+sitecore\ctrudeau

@@ -3,7 +3,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Profile
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class UserProfileContext : IUserProfileContext
 	{
 		private const string sessionKey = "Profile";

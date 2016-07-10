@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using Glass.Mapper.Sc;
 using Informa.Library.Services.NlmExport.Models.Front.Article;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
@@ -22,21 +23,25 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
 
         private IEnumerable<NlmRelatedArticleModel> GetRelatedArticles(ArticleItem source)
         {
+            SitecoreContext ctx = new SitecoreContext();
             Func<IArticle, string, NlmRelatedArticleModel> toModel = (item, category) => new NlmRelatedArticleModel
             {
                 ArticleType = category,
                 Href = item.Article_Number
             };
 
+            var relArticles = source.Related_Articles?.Select(x => ctx.GetItem<IArticle>(x._Id));
+            var refArticles = source.Referenced_Articles?.Select(x => ctx.GetItem<IArticle>(x._Id));
+
             // Sidebar Articles
-            var sidebarArticles = source.Related_Articles?.Where(article => article.Is_Sidebar_Article) ?? Enumerable.Empty<IArticle>();
+            var sidebarArticles = relArticles?.Where(article => article.Is_Sidebar_Article) ?? Enumerable.Empty<IArticle>();
             foreach (var article in sidebarArticles)
             {
                 yield return toModel(article, "sidebar");
             }
 
             // Companion Articles
-            var companionArticles = source.Related_Articles?.Concat(source.Referenced_Articles ?? Enumerable.Empty<IArticle>())
+            var companionArticles = relArticles?.Concat(refArticles ?? Enumerable.Empty<IArticle>())
                 .Where(article => !article.Is_Sidebar_Article)
                     ?? Enumerable.Empty<IArticle>();
             foreach (var article in companionArticles)

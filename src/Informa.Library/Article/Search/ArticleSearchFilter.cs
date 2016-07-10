@@ -9,9 +9,11 @@ namespace Informa.Library.Article.Search
 		public IList<Guid> Taxonomies { get; set; }
 		public int Page { get; set; }
 		public int PageSize { get; set; }
+		public string PublicationTitle { get; set; }
 		public IList<Guid> TaxonomyIds { get; set; }
-        public string ArticleNumber { get; set; }
-        public string EScenicID { get; set; }
-        public Guid ReferencedArticle { get; set; } 
+		public IList<string> ArticleNumbers { get; set; }
+		public string EScenicID { get; set; }
+		public Guid ReferencedArticle { get; set; }
+		public IList<string> PublicationNames { get; set; }
 	}
 }

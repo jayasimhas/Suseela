@@ -1,5 +1,5 @@
-﻿@model GlassArticleModel
-@using Informa.Library.Utilities.References
+﻿@model ArticleBodyContentModel
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +37,7 @@
             </div>
 
             <div class="main__content">
+                @Html.Sitecore().Placeholder("top-main-content")
                 @Html.Sitecore().Placeholder("main-content")
             </div>
 

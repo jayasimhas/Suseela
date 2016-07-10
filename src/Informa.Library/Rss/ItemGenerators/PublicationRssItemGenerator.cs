@@ -21,27 +21,28 @@ namespace Informa.Library.Rss.ItemGenerators
         public SyndicationItem GetSyndicationItemFromSitecore(ISitecoreContext sitecoreContext, Item item)
         {
             var article = sitecoreContext.GetItem<IArticle>(item.ID.ToString());
-			string publicationName = "None";
-			if (article == null)
+            string publicationName = "None";
+            if (article == null)
             {
                 return null;
             }
 
-			if (article.Publication != null)
-			{
-				var publication = sitecoreContext.GetItem<Item>(article.Publication);
-			    publicationName = publication?.Name;
-			}
-			var articleUrl = string.Format("{0}?utm_source={1}&amp;utm_medium=RSS&amp;utm_campaign={2}_RSS_Feed", article._AbsoluteUrl, publicationName, publicationName);
-			//Build the basic syndicaton item
-			var syndicationItem = new SyndicationItem(GetItemTitle(article),
+            if (article.Publication != null)
+            {
+                var publication = sitecoreContext.GetItem<Item>(article.Publication);
+                publicationName = publication?.Name;
+            }
+            var articleUrl = string.Format("{0}?utm_source={1}&amp;utm_medium=RSS&amp;utm_campaign={2}_RSS_Feed", article._AbsoluteUrl, publicationName, publicationName);
+            //Build the basic syndicaton item
+            var syndicationItem = new SyndicationItem(GetItemTitle(article),
                 GetItemSummary(article),
                 new Uri(articleUrl),
                 article._AbsoluteUrl,
                 article.Actual_Publish_Date);
 
-            string siteLink  = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
+            string siteLink = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
             syndicationItem = AddImageToFeedItem(syndicationItem, article, siteLink);
+            syndicationItem = AddAuthorsToFeedItem(syndicationItem, article);
             syndicationItem = AddPubDateToFeedItem(syndicationItem, article);
 
             var content = syndicationItem.Content as TextSyndicationContent;
@@ -51,10 +52,7 @@ namespace Informa.Library.Rss.ItemGenerators
             return syndicationItem;
         }
 
-      
-
-
-        private SyndicationItem AddImageToFeedItem(SyndicationItem syndicationItem, IArticle article,string siteLink)
+        private SyndicationItem AddImageToFeedItem(SyndicationItem syndicationItem, IArticle article, string siteLink)
         {
             if (article.Featured_Image_16_9 != null)
             {

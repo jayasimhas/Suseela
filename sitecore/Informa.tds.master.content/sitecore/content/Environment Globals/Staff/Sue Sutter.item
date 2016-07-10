@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: b4602c43-ae94-4bcf-ad9a-ee8fe6bf611c
+revision: 95a9398e-186b-495d-9413-873ac0146493
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -28,6 +28,13 @@ key: last name
 content-length: 6
 
 Sutter
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 15
+
+PinkSheetSutter
 ----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
@@ -48,18 +55,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b4602c43-ae94-4bcf-ad9a-ee8fe6bf611c
+95a9398e-186b-495d-9413-873ac0146493
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190932Z
+20160420T135743Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 17
 
-sitecore\admin
+sitecore\ctrudeau

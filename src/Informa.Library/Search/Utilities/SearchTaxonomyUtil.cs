@@ -1,61 +1,108 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Sitecore.Configuration;
+using Velir.Search.Core.Reference;
 
 namespace Informa.Library.Search.Utilities
 {
-    public class SearchTaxonomyUtil
-    {
-        public static string GetSearchUrl(ITaxonomy_Item taxonomyItem)
-        {
-            StringBuilder url = new StringBuilder();
+	public class SearchTaxonomyUtil
+	{
+		private const string Subjects = "subjects";
+		private const string Regions = "regions";
+		private const string Areas = "areas";
+		private const string Industries = "industries";
+		private const string DeviceAreas = "deviceareas";
 
-            url.Append("/search#?");
+		public static string GetSearchUrl(params ITaxonomy_Item[] taxonomyItems)
+		{
+			var dict = new Dictionary<string,string>();
+			foreach (var item in taxonomyItems)
+			{
+				string parentPath = item._Parent._Path;
+				string key = string.Empty;
 
-            string parentPath = taxonomyItem._Parent._Path;
+				//Subject
+				if (IsSubjectTaxonomy(parentPath))
+				{
+					key = Subjects;
+				}
 
-            //Subject
-            if (IsSubjectTaxonomy(parentPath))
-            {
-                url.AppendFormat("subjects={0}", taxonomyItem._Name);
-            }
+				//Region
+				if (IsRegionTaxonomy(parentPath))
+				{
+					key = Regions;
+				}
 
-            //Region
-            if (IsRegionTaxonomy(parentPath))
-            {
-                url.AppendFormat("regions={0}", taxonomyItem._Name);
-            }
+				//Area
+				if (IsAreaTaxonomy(parentPath))
+				{
+					key = Areas;
+				}
 
-            //Area
-            if (IsAreaTaxonomy(parentPath))
-            {
-                url.AppendFormat("areas={0}", taxonomyItem._Name);
-            }
+				//Industry
+				if (IsIndustryTaxonomy(parentPath))
+				{
+					key = Industries;
+				}
 
-            return url.ToString();
-        }
-                
-        public static bool IsSubjectTaxonomy(string itemPath)
-        {
-            return itemPath.ToLower()
-                .StartsWith(Settings.GetSetting("Taxonomy.SubjectPath"));
-        }
-        public static bool IsRegionTaxonomy(string itemPath)
-        {
-            return itemPath.ToLower()
-                .StartsWith(Settings.GetSetting("Taxonomy.RegionPath"));
-        }
-        public static bool IsAreaTaxonomy(string itemPath)
-        {
-            return itemPath.ToLower()
-                .StartsWith(Settings.GetSetting("Taxonomy.AreaPath"));
-        }
+				//Device Area
+				if (IsDeviceAreaTaxonomy(parentPath))
+				{
+					key = DeviceAreas;
+				}
 
-        public static IEnumerable<string> GetHierarchicalFacetFieldValue(IEnumerable<ITaxonomy_Item> taxonomyItems)
+				if (dict.ContainsKey(key))
+				{
+					dict[key] = $"{dict[key]}{SiteSettings.ValueSeparator}{item.Item_Name}";
+				}
+				else
+				{
+					dict[key] = item.Item_Name;
+				}
+			}
+
+			StringBuilder url = new StringBuilder();
+
+			url.Append("/search#?");
+
+			foreach (var pair in dict)
+			{
+				url.AppendFormat("{0}={1}", pair.Key, pair.Value);
+			}
+			
+			return url.ToString();
+		}
+
+		public static bool IsSubjectTaxonomy(string itemPath)
+		{
+			return itemPath.ToLower()
+					.StartsWith(Settings.GetSetting("Taxonomy.SubjectPath"));
+		}
+		public static bool IsRegionTaxonomy(string itemPath)
+		{
+			return itemPath.ToLower()
+					.StartsWith(Settings.GetSetting("Taxonomy.RegionPath"));
+		}
+		public static bool IsAreaTaxonomy(string itemPath)
+		{
+			return itemPath.ToLower()
+					.StartsWith(Settings.GetSetting("Taxonomy.AreaPath"));
+		}
+
+		public static bool IsIndustryTaxonomy(string itemPath)
+		{
+			return itemPath.ToLower()
+					.StartsWith(Settings.GetSetting("Taxonomy.IndustryPath"));
+		}
+
+		public static bool IsDeviceAreaTaxonomy(string itemPath)
+		{
+			return itemPath.ToLower()
+					.StartsWith(Settings.GetSetting("Taxonomy.DeviceAreaPath"));
+		}
+		
+		 public static IEnumerable<string> GetHierarchicalFacetFieldValue(IEnumerable<ITaxonomy_Item> taxonomyItems)
         {
             List<string> fullTaxonomyList =new List<string>();
 
@@ -78,5 +125,5 @@ namespace Informa.Library.Search.Utilities
 
             return fullTaxonomyList;
         }
-    }
+	}
 }

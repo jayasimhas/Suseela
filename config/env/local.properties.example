@@ -23,6 +23,12 @@ and running. There are additional default properties from dev.properties that yo
 	<property name="Site.Address" value="${Site.Protocol}://${Site.Domain}" />
 	<property name="host.production" value="${Site.Domain}" />
 	
+	<property name="Site.Domain.InVivo" value="invivo.${Site.Domain}" />
+	<property name="Site.Domain.MedtechInsight" value="medtech.${Site.Domain}" />
+	<property name="Site.Domain.PinkSheet" value="pinksheet.${Site.Domain}" />
+	<property name="Site.Domain.RoseSheet" value="rosesheet.${Site.Domain}" />
+	<property name="Site.Domain.Scrip" value="scrip.${Site.Domain}" />
+	
   	<!-- Connection Strings -->
 	<property name="connstr.core" value="user id=sitecore;password=password;Data Source=localhost\SQLEXPRESS;Database=Sitecore_Core"/>
 	<property name="connstr.master" value="user id=sitecore;password=password;Data Source=localhost\SQLEXPRESS;Database=Sitecore_Master"/>
@@ -32,10 +38,11 @@ and running. There are additional default properties from dev.properties that yo
 	<property name="connstr.tracking.live" value="mongodb://localhost/Informa_tracking_live" />
 	<property name="connstr.tracking.history" value="mongodb://localhost/Informa_tracking_history" />
 	<property name="connstr.tracking.contact" value="mongodb://localhost/Informa_tracking_contact" />
-  <property name="connstr.scheduledpublishing" value="mongodb://localhost/Informa_scheduled_publishing" />
-  <property name="connstr.dcd" value="user id=sitecore;password=password;Data Source=localhost\SQLEXPRESS;Database=Sitecore_Companies" />
+	<property name="connstr.scheduledpublishing" value="mongodb://localhost/Informa_scheduled_publishing" />
+	<property name="connstr.dcd" value="user id=sitecore;password=password;Data Source=localhost\SQLEXPRESS;Database=Sitecore_Companies" />
 	<property name="connstr.custom" value="user id=sitecore;password=password;Data Source=localhost\SQLEXPRESS;Database=Informa_Custom" />
-		
+	<property name="connstr.pmbi" value="user id=SitecoreUser;password=felixx;Data Source=vwibisql;Database=Informa_Support_Master" />
+	<property name="constr.pmbi.mapping" value="user id=sitecore;password=password;Data Source=localhost\SQLEXPRESS;Database=Informa_Mapping"/>
 		
 	<!-- Web.config settings -->
 	<property name="data.folder" value="${project.folder}\web\Data" />
@@ -77,14 +84,6 @@ and running. There are additional default properties from dev.properties that yo
 	<!-- For web deployments, the URL end-users visit for the application -->
 	<property name="installpath" value="http://informa8.ashah.velir.com/wordinstaller/" />
 	<property name="updatepath" value="http://informa8.ashah.velir.com/wordinstaller/" />
-	
-	<!-- CRM Manager -->
-	<property name="CRMManager.SalesforceUrl" value="https://test.salesforce.com/services/Soap/c/22.0/0DFR0000000CeVX" />
-	<property name="CRMManager.EbiUrl" value="https://cs51.salesforce.com/services/Soap/class/EBI_WebServices" />
-	<property name="CRMManager.SalesforceUserName" value="apiuserweb@elsevier.com.datareload" />
-	<property name="CRMManager.SalesforcePassword" value="ebI3Zuser!" />
-	<property name="CRMManager.SalesforceToken" value="IuVQbQcTweaxDM6dDu9Q2xEBy" />
-	<property name="CRMManager.SalesforceTimeout" value="1000" />
 	
 	<!-- DCD Modules Related Configuration-->
 	<property name="DCD.ImportFolder" value="C:\Projects\Velir\DCDXML"/>

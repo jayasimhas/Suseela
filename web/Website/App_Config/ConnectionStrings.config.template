@@ -11,4 +11,8 @@
   <add name="dcd" connectionString="${connstr.dcd}" />
   <add name="custom" connectionString="${connstr.custom}" providerName="System.Data.SqlClient" />
   <add name="session" connectionString="${connstr.session}" />
+#if ($ContentImport.Enable == "true")
+  <add name="pmbiContent" connectionString="${connstr.pmbi}" />
+  <add name="pmbiMapping" connectionString="${constr.pmbi.mapping}" providerName="System.Data.SqlClient"/>
+#end
 </connectionStrings>

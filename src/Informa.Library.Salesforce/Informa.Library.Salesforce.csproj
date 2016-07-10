@@ -55,11 +55,14 @@
     <Compile Include="Company\ISalesforceFindCompanyByUser.cs" />
     <Compile Include="Company\ISalesforceSiteTypeFromCompanyType.cs" />
     <Compile Include="Company\SalesforceCompany.cs" />
+    <Compile Include="Company\SalesforceFindCompanyByMasterId.cs" />
     <Compile Include="Company\SalesforceFindCompanyByUser.cs" />
+    <Compile Include="Company\SalesforceMasterCompany.cs" />
     <Compile Include="Company\SalesforceSiteTypeParser.cs" />
     <Compile Include="Company\SalesforceFindCompanyByIpAddress.cs" />
     <Compile Include="EBIWebServices\EBI_CreateProfileResponse.cs" />
     <Compile Include="EBIWebServices\EBI_LoginResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QueryAccountByMasterIdResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryAccountByUsernameResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryAllActiveIPRangesResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryEntitlementsResponse.cs" />
@@ -67,6 +70,8 @@
     <Compile Include="EBIWebServices\EBI_QueryInformationAndOfferOptInsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QueryProfileContactInformationResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QuerySavedDocumentResponse.cs" />
+    <Compile Include="EBIWebServices\EBI_QuerySavedSearchItems2Response.cs" />
+    <Compile Include="EBIWebServices\EBI_QuerySavedSearchItemsResponse.cs" />
     <Compile Include="EBIWebServices\EBI_QuerySubscriptionsAndPurchasesResponse.cs" />
     <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponse.cs" />
@@ -76,6 +81,8 @@
     <Compile Include="ISalesforceServiceContextEnabled.cs" />
     <Compile Include="ISalesforceServiceContextEnabledCheck.cs" />
     <Compile Include="ISalesforceServiceContextEnabledChecks.cs" />
+    <Compile Include="Purchase\SalesforceArticlePurchase.cs" />
+    <Compile Include="Purchase\User\SalesforceFindUserArticlePurchases.cs" />
     <Compile Include="SalesforceErrorLogger.cs" />
     <Compile Include="SalesforceServiceContextEnabled.cs" />
     <Compile Include="SalesforceServiceContextEnabledChecks.cs" />
@@ -120,7 +127,7 @@
     <Compile Include="User\Profile\ISalesforceUserProfile.cs" />
     <Compile Include="User\Profile\ISalesforceFindUserProfile.cs" />
     <Compile Include="User\Profile\SalesforceManageAccountInfo.cs" />
-    <Compile Include="User\Profile\SalesforceManageSubscriptions.cs" />
+    <Compile Include="Subscription\User\SalesforceFindUserSubscriptions.cs" />
     <Compile Include="User\Offer\SalesforceOfferUserOptedIn.cs" />
     <Compile Include="User\Profile\SalesforceFindUserProfile.cs" />
     <Compile Include="User\Newsletter\SalesforceFindNewsletterUserOptIns.cs" />
@@ -128,13 +135,16 @@
     <Compile Include="User\Newsletter\SalesforceUpdateNewsletterUserOptIns.cs" />
     <Compile Include="User\Offer\SalesforceUpdateOfferUserOptIn.cs" />
     <Compile Include="User\Document\SalesforceSavedDocument.cs" />
+    <Compile Include="Subscription\SalesforceSubscription.cs" />
     <Compile Include="User\Profile\SalesforceUserProfile.cs" />
     <Compile Include="User\Registration\ISalesforceRegisterUser.cs" />
     <Compile Include="User\Registration\SalesforceRegisterUser.cs" />
+    <Compile Include="User\Registration\SalesforceRegisterUserResult.cs" />
     <Compile Include="User\SalesforceFindUserByEmail.cs" />
     <Compile Include="User\SalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\SalesforceUpdateUserPassword.cs" />
     <Compile Include="User\SalesforceUser.cs" />
+    <Compile Include="User\Search\SalesforceSavedSearchRepository.cs" />
     <Compile Include="Web References\EBIWebServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -156,10 +166,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="C:\Work\Clients\Velir\Informa\Git\lib\CRMManager\EBI_WebServices.wsdl">
+    <WebReferenceUrl Include="D:\Projects\Informa\IN_WebServices.xml">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\EBIWebServices\</RelPath>
-      <UpdateFromURL>C:\Work\Clients\Velir\Informa\Git\lib\CRMManager\EBI_WebServices.wsdl</UpdateFromURL>
+      <UpdateFromURL>D:\Projects\Informa\IN_WebServices.xml</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -242,6 +252,12 @@
     <None Include="Web References\EBIWebServices\EBI_QuerySavedDocumentResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\EBIWebServices\EBI_QuerySavedDocumentResponse2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\EBI_QuerySavedSearchItems2Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\EBIWebServices\EBI_QuerySavedSearchItemsResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -251,7 +267,10 @@
     <None Include="Web References\EBIWebServices\EBI_WebServiceResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\EBIWebServices\EBI_WebServices.wsdl" />
+    <None Include="Web References\EBIWebServices\IN_QueryEntitlementsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EBIWebServices\IN_WebServices.wsdl" />
     <None Include="Web References\EBIWebServices\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -349,9 +368,7 @@
       <Name>Informa.Library</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entitlement\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

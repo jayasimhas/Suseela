@@ -1,18 +1,9 @@
-﻿@model Informa.Web.ViewModels.LatestNewsViewModel
+﻿@inherits GlassView<LatestNewsViewModel>
 
 @if (Model.DisplayTitle && Model.Topics.Any())
 {
 	<h4 class="latest-news__header">
-		<span>@Model.TitleText
-		@{
-			var take = Model.Topics.Count() - 1;
-		}
-		@string.Join(", ", Model.Topics.Take(take > 0 ? take : 1))
-		@if (take > 0)
-		{
-			@:&amp;&nbsp;@Model.Topics.Last()
-		}
-		</span>
+		<span>@Html.Raw(Model.TitleTextPrefix) @Html.Raw(Model.TitleText)</span>
 	</h4>
 }
 
@@ -22,3 +13,15 @@
 		Html.RenderPartial("Components/ListableContentSmall", listable);
 	}
 </div>
+<!-- Unable to format data-info string, use hardcoded a tag instead.-->
+@*@{
+	var dataInfo = "{{ 'event_name': 'see_all', 'see_all_topic': '" + Model.TitleText + "' }}";
+}
+@RenderLink(model => model.SeeAllLink, new { @class = "full-diminished-button click-utag", data_info = dataInfo })*@
+
+@if (Model.SeeAllLink != null)
+{
+    <a href="@Model.SeeAllLink.Url"
+       class="full-diminished-button click-utag"
+       data-info='{"event_name": "see_all", "see_all_topic": "@Model.TitleText"}'>@Model.SeeAllLink.Text</a>
+}

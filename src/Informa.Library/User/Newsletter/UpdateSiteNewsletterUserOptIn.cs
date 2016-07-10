@@ -1,24 +1,20 @@
-﻿using Informa.Library.Newsletter;
-using Jabberwocky.Glass.Autofac.Attributes;
-using System.Collections.Generic;
+﻿using Jabberwocky.Autofac.Attributes;
+using System.Linq;
 
 namespace Informa.Library.User.Newsletter
 {
-	[AutowireService(LifetimeScope.Default)]
+	[AutowireService]
 	public class UpdateSiteNewsletterUserOptIn : IUpdateSiteNewsletterUserOptIn
 	{
-		protected readonly INewsletterUserOptInFactory OptInFactory;
 		protected readonly IUpdateNewsletterUserOptIns UpdateOptIns;
-		protected readonly ISiteNewsletterTypeContext NewsletterTypeContext;
+		protected readonly ISiteNewsletterUserOptInsContext SiteNewsletterUserOptInsContext;
 
 		public UpdateSiteNewsletterUserOptIn(
-			INewsletterUserOptInFactory optInFactory,
 			IUpdateNewsletterUserOptIns updateOptIns,
-			ISiteNewsletterTypeContext newsletterTypeContext)
+			ISiteNewsletterUserOptInsContext siteNewsletterUserOptInsContext)
 		{
-			OptInFactory = optInFactory;
 			UpdateOptIns = updateOptIns;
-			NewsletterTypeContext = newsletterTypeContext;
+			SiteNewsletterUserOptInsContext = siteNewsletterUserOptInsContext;
 		}
 
 		public bool Update(string username, bool optIn)
@@ -28,9 +24,11 @@ namespace Informa.Library.User.Newsletter
 				return false;
 			}
 
-			var userOptIn = OptInFactory.Create(NewsletterTypeContext.Type, optIn);
+			var optIns = SiteNewsletterUserOptInsContext.OptIns.ToList();
 
-			return UpdateOptIns.Update(new List<INewsletterUserOptIn>() { { userOptIn } }, username);
+			optIns.ForEach(oi => oi.OptIn = optIn);
+
+			return UpdateOptIns.Update(optIns, username);
 		}
 	}
 }

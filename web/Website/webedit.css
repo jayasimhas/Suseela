@@ -542,7 +542,7 @@ div.scTlHoverFrameCorner, div.scTrHoverFrameCorner, div.scBlHoverFrameCorner, di
 .scEnabledChrome[sc-part-of], .scLooseFrameZone.scEnabledChrome, .scWebEditInput.scEnabledChrome
 {
   cursor: pointer;
-  width: 100%;
+  /*width: 100%;*/
 }
 
 div.scLooseFrameZone

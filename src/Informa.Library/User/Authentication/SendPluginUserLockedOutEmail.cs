@@ -2,40 +2,40 @@
 using Informa.Library.Mail;
 using Informa.Library.Site;
 using Informa.Library.Utilities.WebUtils;
-using Jabberwocky.Glass.Autofac.Attributes;
-using Sitecore.Data.Items;
-using Sitecore.Resources.Media;
-using Sitecore.Web;
+using Jabberwocky.Autofac.Attributes;
 using System;
 using System.Globalization;
-using System.Web;
 using System.Web.Security;
+using Informa.Library.Wrappers;
 
 namespace Informa.Library.User.Authentication
 {
-    [AutowireService(LifetimeScope.Default)]
+    [AutowireService]
     public class SendPluginUserLockedOutEmail : ISendPluginUserLockedOutEmail
     {
-        IEmailSender _emailSender;
-        ISiteRootContext _siteRootContext;
-        ISitecoreService _sitecoreService;
-        public SendPluginUserLockedOutEmail(IEmailSender emailSender,
-            ISiteRootContext siteRootContext,
-            ISitecoreService sitecoreService)
+        private readonly IDependencies _dependencies;
+
+        [AutowireService(true)]
+        public interface IDependencies
         {
-            _emailSender = emailSender;
-            _siteRootContext = siteRootContext;
-            _sitecoreService = sitecoreService;
+            IEmailSender EmailSender { get; }
+            ISiteRootContext SiteRootContext { get; }
+            ISitecoreUrlWrapper SitecoreUrlWrapper { get; }
+        }
+
+        public SendPluginUserLockedOutEmail(IDependencies dependencies)
+        {
+            _dependencies = dependencies;
         }
 
         public bool SendEmail(MembershipUser user)
         {
             try
             {
-                string htmlBody = _siteRootContext.Item.Lockout_Email_Body;
-                string from = _siteRootContext.Item.Lockout_Email_From;
-                string subject = _siteRootContext.Item.Lockout_Email_Subject;
-                string to = _siteRootContext.Item.Lockout_Email_To;
+                string htmlBody = _dependencies.SiteRootContext.Item.Lockout_Email_Body;
+                string from = _dependencies.SiteRootContext.Item.Lockout_Email_From;
+                string subject = _dependencies.SiteRootContext.Item.Lockout_Email_Subject;
+                string to = _dependencies.SiteRootContext.Item.Lockout_Email_To;
 
                 //If any of them are empty just return
                 if (string.IsNullOrEmpty(htmlBody) || string.IsNullOrEmpty(from) || string.IsNullOrEmpty(to))
@@ -43,7 +43,7 @@ namespace Informa.Library.User.Authentication
 
                 //replace body tokens with user values
                 string messageBody = htmlBody;
-                messageBody = messageBody.Replace("{logo}", UrlUtils.GetMediaURL(_siteRootContext.Item.Email_Logo.MediaId.ToString()));
+                messageBody = messageBody.Replace("{logo}", _dependencies.SitecoreUrlWrapper.GetMediaUrl(_dependencies.SiteRootContext.Item.Email_Logo.MediaId));
                 messageBody = messageBody.Replace("{username}", user.UserName);
                 messageBody = messageBody.Replace("{dateLockedOut}", user.LastLockoutDate.ToString(CultureInfo.InvariantCulture));
 
@@ -56,7 +56,7 @@ namespace Informa.Library.User.Authentication
                 message.To = to;
 
                 //Send email
-                return _emailSender.Send(message);
+                return _dependencies.EmailSender.Send(message);
             }
             catch (Exception ex)
             {

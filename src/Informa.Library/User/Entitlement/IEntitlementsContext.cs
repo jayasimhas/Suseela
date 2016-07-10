@@ -5,7 +5,7 @@ namespace Informa.Library.User.Entitlement
     public interface IEntitlementsContext
     {
         IEnumerable<IEntitlement> Entitlements { get; }
-		EntitledAccessLevel GetProductAccessLevel(string productCode);
+		EntitledAccessLevel AccessLevel { get; }
 		void RefreshEntitlements();
     }
 }

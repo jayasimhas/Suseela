@@ -1,9 +1,0 @@
-﻿<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
-	<sitecore>
-		<settings>
-			<setting name="ApplicationInsights.Enabled" value="${ApplicationInsights.Enabled}" />
-      <setting name="ApplicationInsights.InstrumentationKey" value="${ApplicationInsights.InstrumentationKey}" />
-      <setting name="ApplicationInsights.ResourceID" value="${ApplicationInsights.ResourceID}" />
-    </settings>                                                              
-	</sitecore>
-</configuration>

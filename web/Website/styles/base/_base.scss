@@ -23,11 +23,11 @@ html {
  * Basic styles for links
  */
 a {
-  color: $informa-red;
+  color: $color-cardinal-red;
   text-decoration: none;
 
   @include on-event {
-    color: $informa-red;
+    color: $color-cardinal-red;
     text-decoration: underline;
   }
 
@@ -68,6 +68,13 @@ svg {
   @include svg-fill(black);
   height: 16px;
   width: 16px;
+}
+
+.icon-external-link {
+    @include svg-fill($color-tree-poppy-orange);
+    vertical-align: text-top;
+    display: inline-block;
+    margin-left: 0.5rem;
 }
 
 // Freeze the page/body to prevent scrolling when menu is open on tablet/phone

@@ -6,9 +6,13 @@ namespace Informa.Library.User.Entitlement
     public class Entitlement : IEntitlement
     {
 		public string ArchiveCode { get; set; }
+		public int ArchiveLimitedDays { get; set; }
+		public bool ArchiveLimited { get; set; }
 		public string DocumentId { get; set; }
 		public string ProductCode { get; set; }
 		public string ProductId { get; set; }
 		public string ProductType { get; set; }
-	}
+	    public string OpportunityId { get; set; }
+	    public string OpportunityLineItemId { get; set; }
+    }
 }

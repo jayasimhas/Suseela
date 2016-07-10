@@ -116,6 +116,11 @@ examples.lang = {
 			idoc.body.setAttribute('style', resetStyles);
 		}
 
+		var siteTheme = location.search.split('theme=')[1];
+		if(siteTheme) {
+			idoc.body.className += 'theme-' + siteTheme;
+		}
+
 		idoc.body.innerHTML = '<div class="iframe-wrapper" contenteditable spellcheck="false">' + idoc.body.innerHTML + '<div style="clear: both;"></div></div>';
 
 		if (conf.width) style.width = String(conf.width);

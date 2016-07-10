@@ -9,17 +9,10 @@ master: {00000000-0000-0000-0000-000000000000}
 template: {FCAC1C62-C004-463F-89E4-940D248895FF}
 templatekey: NLM Copyright Statement
 
-----field----
-field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
-name: __Sortorder
-key: __sortorder
-content-length: 3
-
-300
 ----version----
 language: en
 version: 1
-revision: c5fed1aa-956e-475c-920b-c135ec13e137
+revision: 3e2f99d0-03fe-4ed2-8aa0-43eab80b76fe
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +27,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c5fed1aa-956e-475c-920b-c135ec13e137
+3e2f99d0-03fe-4ed2-8aa0-43eab80b76fe
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160406T175745Z
+20160407T201607Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -2,7 +2,7 @@
 
 namespace Informa.Library.User.Authentication.Web
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class WebClearAuthenticatedUserSessionAction : IWebLoginUserAction, IWebLogoutUserAction
 	{
 		protected readonly IAuthenticatedUserSession UserSession;

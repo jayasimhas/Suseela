@@ -1,4 +1,4 @@
-﻿@model Informa.Web.ViewModels.GlassArticleModel
+﻿@model ArticleKeyDocumentsModel
 
 @* * *  ARTICLE - KEY DOCUMENTS
         IIPP-158 *@
@@ -9,7 +9,10 @@
         <ul>
         @foreach (var doc in Model.KeyDocuments)
             {
-                <li class="article-key-document">
+	            <li class="article-key-document click-utag"
+					data-info='{"event_name":"key_document_click_through", 
+								"click_through_source":"@Model.GlassModel.Title",
+								"click_through_destination":"@Model.GetTitle(doc)"}'>
                     <svg class="article-key-document__icon">
                         <use xlink:href="/dist/img/svg-sprite.svg#@Model.GetDocumentIcon(doc)"></use>
                     </svg>

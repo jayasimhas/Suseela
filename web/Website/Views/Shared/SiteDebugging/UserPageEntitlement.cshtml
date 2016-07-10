@@ -1,0 +1,40 @@
+﻿@model Informa.Web.ViewModels.SiteDebugging.IUserPageEntitlementViewModel
+@if (!Model.IsValidPage)
+{
+	return;
+}
+<style>
+	.debugToolbarPageEntitlement {
+		display: none;
+	}
+</style>
+<button class="js-debug-expand-page-entitlement-button button--filled" type="button">View Page Entitlement Info</button>
+<div class="debugToolbarPageEntitlement">
+	<table>
+		<tr>
+			<td><strong>User Is Entitled</strong></td>
+			<td>@Model.IsEntitled</td>
+		</tr>
+		<tr>
+			<td><strong>Is Free</strong></td>
+			<td>@Model.EntitledProduct.IsFree</td>
+		</tr>
+		<tr>
+			<td><strong>Product Code</strong></td>
+			<td>@Model.EntitledProduct.ProductCode</td>
+		</tr>
+		<tr>
+			<td><strong>Published On</strong></td>
+			<td>@Model.EntitledProduct.PublishedOn</td>
+		</tr>
+		<tr>
+			<td><strong>Access Level</strong></td>
+			<td>@Model.EntitlementAccess.AccessLevel</td>
+		</tr>
+	</table>
+</div>
+<script>
+	$('.js-debug-expand-page-entitlement-button').on('click', function toggle(e) {
+		$(e.target).siblings('.debugToolbarPageEntitlement').toggle();
+	});
+</script>

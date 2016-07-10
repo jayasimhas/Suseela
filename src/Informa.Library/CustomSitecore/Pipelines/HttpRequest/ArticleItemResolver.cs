@@ -1,33 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Web;
-using System.Web.Http;
+using Autofac;
 using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Pipelines.Processors;
 using Sitecore;
-using Sitecore.Data.ItemResolvers;
 using Sitecore.Data.Items;
-using Sitecore.Data.Managers;
 using Sitecore.Diagnostics;
-using Sitecore.Globalization;
-using Sitecore.IO;
 using Sitecore.Pipelines.HttpRequest;
-using Sitecore.SecurityModel;
-using Sitecore.Sites;
+using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 {
-    public class ArticleItemResolver : IProcessor<HttpRequestArgs>
-    {
-
-        protected readonly IArticleSearch ArticleSearcher;
-        protected readonly ISitecoreContext SitecoreContext;
+	public class ArticleItemResolver : IProcessor<HttpRequestArgs>
+	{
+		protected IArticleSearch ArticleSearcher;
+		protected ISitecoreContext SitecoreContext;
 
         public ArticleItemResolver(IArticleSearch searcher, ISitecoreContext context)
         {
@@ -35,45 +25,43 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
             SitecoreContext = context;
         }
 
-        public void Process(HttpRequestArgs args)
-        {
-            Assert.ArgumentNotNull((object)args, "args");
-            if (Context.Item != null || Context.Database == null || args.Url.ItemPath.Length == 0)
-                return;
+	    public void Process(HttpRequestArgs args)
+	    {
+	        Assert.ArgumentNotNull((object) args, "args");
+	        if (Context.Item != null || Context.Database == null || args.Url.ItemPath.Length == 0)
+	            return;
 
-            Regex r = new Regex(@"^(.*)(/home/)(sc\d{6})(/)(.*)");
-            MatchCollection mc = r.Matches(args.Url.ItemPath);
-            if (mc.Count < 1 || mc[0].Groups.Count < 6)
-                return;
+	        Regex r = new Regex(@"^(.*)(/home/)(\w{2}\d{6})(/)(.*)");
+	        MatchCollection mc = r.Matches(args.Url.ItemPath);
+	        if (mc.Count < 1 || mc[0].Groups.Count < 6)
+	            return;
 
-            string numFormat = mc[0].Groups[3].Value;
+	        string numFormat = mc[0].Groups[3].Value;
 
-            //find the new article page
-            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
-            filter.PageSize = 1;
-            filter.Page = 1;
-            filter.ArticleNumber = numFormat;
+	        //find the new article page
+	        IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
+	        filter.PageSize = 1;
+	        filter.Page = 1;
+	        filter.ArticleNumbers = numFormat.SingleToList();
 
-            var results = ArticleSearcher.Search(filter);
-            if (!results.Articles.Any())
-                return;
+	        var results = ArticleSearcher.Search(filter);
 
-            IArticle a = results.Articles.First();
-            if (a == null)
-                return;
+	        IArticle a = results.Articles.FirstOrDefault();
+	        if (a == null)
+	            return;
 
-            string matchTitle = mc[0].Groups[5].Value;
-            string urlTitle = a._Name.ToLower().Replace(" ", "-");
-            if (!urlTitle.Equals(matchTitle))
-                HttpContext.Current.Response.RedirectPermanent(ArticleSearch.GetArticleCustomPath(a));
+	        string matchTitle = mc[0].Groups[5].Value;
+	        string urlTitle = a._Name.ToLower().Replace(" ", "-");
+	        if (!urlTitle.Equals(matchTitle))
+	            HttpContext.Current.Response.RedirectPermanent(ArticleSearch.GetArticleCustomPath(a));
 
-            Item i = SitecoreContext.GetItem<Item>(a._Id);
-            if (i == null)
-                return;
+	        Item i = SitecoreContext.GetItem<Item>(a._Id);
+	        if (i == null)
+	            return;
 
-            Context.Item = i;
-            args.Url.ItemPath = i.Paths.FullPath;
-            Context.Request.ItemPath = i.Paths.FullPath;
-        }
-    }
+	        Context.Item = i;
+	        args.Url.ItemPath = i.Paths.FullPath;
+	        Context.Request.ItemPath = i.Paths.FullPath;
+	    }
+	}
 }

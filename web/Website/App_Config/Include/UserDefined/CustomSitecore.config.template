@@ -42,13 +42,20 @@ But you can also use "patch:attribute" for clarity:
       </mvc.renderRendering>
 
       <httpRequestBegin>
-        <processor type="Sitecore.Pipelines.HttpRequest.SiteResolver, Sitecore.Kernel">
-          <patch:attribute name="type">Informa.Library.CustomSitecore.Pipelines.HttpRequest.InformaSiteResolver,Informa.Library</patch:attribute>
-        </processor>
+        <processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.LegacyRedirectResolver, Informa.Library"
+                   ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.LegacyRedirectResolver, Informa.Library"
+                   factory="Autofac"
+                   patch:before="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
+                   reusable="false" />
         <processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.ArticleItemResolver, Informa.Library"
                    ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.ArticleItemResolver, Informa.Library"
                    factory="Autofac"
                    patch:before="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
+                   reusable="false" />
+        <processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NotFoundResolver, Informa.Library"
+                   ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NotFoundResolver, Informa.Library"
+                   factory="Autofac"
+                   patch:after="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
                    reusable="false" />
         <processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NewRelicTransactionNameProcessor, Informa.Library" 
                    ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NewRelicTransactionNameProcessor, Informa.Library"
@@ -83,6 +90,32 @@ But you can also use "patch:attribute" for clarity:
       </speak.client.resolveScript>
     </pipelines>
 
+    <events>
+      <event name="item:added">
+        <handler type="Informa.Library.CustomSitecore.Events.AddFromBranchPreset, Informa.Library" method="OnItemAdded" />
+      </event>
+
+      <event name="publish:end">
+        <handler type="Sitecore.Publishing.HtmlCacheClearer, Sitecore.Kernel" method="ClearCache">
+          <sites hint="list">
+            <site name="invivo">InVivo</site>
+            <site name="medtech">MedtechInsight</site>
+            <site name="pink">PinkSheet</site>
+            <site name="rose">RoseSheet</site>
+          </sites>
+        </handler>
+      </event>
+      <event name="publish:end:remote">
+        <handler type="Sitecore.Publishing.HtmlCacheClearer, Sitecore.Kernel" method="ClearCache">
+          <sites hint="list">
+            <site name="invivo">InVivo</site>
+            <site name="medtech">MedtechInsight</site>
+            <site name="pink">PinkSheet</site>
+            <site name="rose">RoseSheet</site>
+          </sites>
+        </handler>
+      </event>
+    </events>
 
     <hooks>
       <hook type="Sitecore.Diagnostics.MemoryMonitorHook, Sitecore.Kernel">
@@ -100,6 +133,7 @@ But you can also use "patch:attribute" for clarity:
     <linkManager>
       <providers>
         <add name="sitecore">
+		  <patch:attribute name="type">Informa.Library.CustomSitecore.Providers.CustomLinkProvider, Informa.Library</patch:attribute>
           <patch:attribute name="languageEmbedding">never</patch:attribute>
           <patch:attribute name="lowercaseUrls">true</patch:attribute>
         </add>
@@ -107,9 +141,6 @@ But you can also use "patch:attribute" for clarity:
     </linkManager>
 
     <sites>
-      <site name="website">
-        <patch:attribute name="htmlCacheSize">10MB</patch:attribute>
-      </site>
       <site name="shell">
         <patch:attribute name="enableWorkflow">true</patch:attribute>
         <patch:attribute name="startItem">/sites</patch:attribute>
@@ -120,8 +151,20 @@ But you can also use "patch:attribute" for clarity:
     <cacheSizes>
       <sites>
         <website>
-          <html>10MB</html>
+          <html>${Cache.HtmlCache.Website}</html>
         </website>
+        <InVivo>
+          <html>${Cache.HtmlCache.Website}</html>
+        </InVivo>
+        <MedtechInsight>
+          <html>${Cache.HtmlCache.Website}</html>
+        </MedtechInsight>
+        <PinkSheet>
+          <html>${Cache.HtmlCache.Website}</html>
+        </PinkSheet>
+        <RoseSheet>
+          <html>${Cache.HtmlCache.Website}</html>
+        </RoseSheet>
       </sites>
     </cacheSizes>
 
@@ -168,7 +211,13 @@ But you can also use "patch:attribute" for clarity:
 			MG: The explicit override here was reverted to the default setting to allow workflow locks/editing to behave as needed
       -->
       <setting name="RequireLockBeforeEditing" value="true"/>
+	  <!-- Protocol -->
+	  <setting name="Site.Protocol" value="${Site.Protocol}" />
 
+		<setting name="Preview.ResolveSite">
+			<patch:attribute name="value">true</patch:attribute>
+		</setting>
+		
       <!-- Velir Settings -->
       <setting  name="Env.Value" value="${Env.Value}" />
       <!-- Production Host -->
@@ -195,7 +244,12 @@ But you can also use "patch:attribute" for clarity:
 
       <setting name="MailServerPort">
         <patch:attribute name="value">${Mail.MailServerPort}</patch:attribute>
-      </setting>                                   
+      </setting>
+
+      <!-- ExactTarget Settings -->
+      <setting name="ExactTarget.UseSandbox" value="${ExactTarget.UseSandbox}" />
+      <setting name="ExactTarget.ClientId" value="${ExactTarget.ClientId}" />
+      <setting name="ExactTarget.SecretKey" value="${ExactTarget.SecretKey}" />
 
       <!-- HIDDEN SETTING!  Suggestion from sitecore to speed up the back end content editor. -->
       <setting name="ContentEditor.RenderCollapsedSections" value="false"/>
@@ -220,9 +274,16 @@ But you can also use "patch:attribute" for clarity:
         <patch:attribute name="value">/bundles/|/html_templates/|/GenerateSitemap/CreateSitemap.axd|/sitecore/default.aspx|/trace.axd|/webresource.axd|/sitecore/shell/Controls/Rich Text Editor/Telerik.Web.UI.DialogHandler.aspx|/BotDetectCaptcha.ashx|/sitecore/shell/applications/content manager/telerik.web.ui.dialoghandler.aspx|/sitecore/shell/Controls/Rich Text Editor/Telerik.Web.UI.SpellCheckHandler.axd|/Telerik.Web.UI.WebResource.axd|/sitecore/admin/upgrade/|/layouts/testing|/sitecore/service/</patch:attribute>
       </setting>
 
-      <!-- Scalability Settings -->
-      <setting name="MaxWorkerThreads" value="48" />
+      <setting name="MasterVariablesReplacer">
+        <patch:attribute name="value">Informa.Library.CustomSitecore.Pipelines.ExpandNewTokensOnAllItems.InformaMasterVariablesReplacer,Informa.Library</patch:attribute>
+      </setting>
 
+      <!-- Scalability Settings -->
+      <setting name="MaxWorkerThreads" value="${Sitecore.MaxWorkerThreads}" />
+      
+      <!-- Caching -->
+      <setting name="Caching.DisableCacheSizeLimits" value="${Caching.DisableCacheSizeLimits}" />
+      
       <!-- Glass Interface Factory Settings -->
       <setting name="GlassInterfaceFactory.DebuggingEnabled" value="true" />
 
@@ -235,7 +296,10 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Taxonomy.SubjectPath" value="/sitecore/content/environment globals/taxonomy/subjects"></setting>
       <setting name="Taxonomy.RegionPath" value="/sitecore/content/environment globals/taxonomy/regions"></setting>
       <setting name="Taxonomy.AreaPath" value="/sitecore/content/environment globals/taxonomy/therapy areas"></setting>
-      
+      <setting name="Taxonomy.IndustryPath" value="/sitecore/content/environment globals/taxonomy/industries"></setting>
+      <setting name="Taxonomy.DeviceAreaPath" value="/sitecore/content/environment globals/taxonomy/device areas"></setting>
+      <setting name="Search.NewerArticlesBoosting.Enabled" value="${Search.NewerArticlesBoosting.Enabled}" />
+      <setting name="Search.NewerArticlesBoosting.BoostFunction" value="${Search.NewerArticlesBoosting.BoostFunction}" />
     </settings>
   </sitecore>
 </configuration>

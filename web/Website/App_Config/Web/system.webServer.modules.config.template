@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modules runAllManagedModulesForAllRequests="true">
 	<remove name="WebDAVModule" />
-  #if($ApplicationInsights.Enabled == "true")
-  <add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web" />
-  #end
   <add type="Sitecore.Web.RewriteModule, Sitecore.Kernel" name="SitecoreRewriteModule" />
   <add type="Sitecore.Nexus.Web.HttpModule,Sitecore.Nexus" name="SitecoreHttpModule" />
 	#if ($Env.IsProduction == "false")

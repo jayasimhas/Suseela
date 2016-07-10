@@ -30,10 +30,17 @@ key: area
 content-length: 7
 
 Account
+----field----
+field: {308E88F5-CD6E-4F8F-BAFE-95A47DEDEFDC}
+name: Editable
+key: editable
+content-length: 0
+
+
 ----version----
 language: en
 version: 1
-revision: 46efa0f5-7bac-4ec6-b2c0-15c7db930526
+revision: 7a4d520f-1c81-4916-8b68-06dc1263c20e
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-46efa0f5-7bac-4ec6-b2c0-15c7db930526
+7a4d520f-1c81-4916-8b68-06dc1263c20e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160208T181613Z
+20160614T184516Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

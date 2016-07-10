@@ -4,14 +4,12 @@ namespace Informa.Library.Salesforce
 {
 	public class SalesforceServiceContextEnabled : ISalesforceServiceContextEnabled
 	{
-		protected readonly ISalesforceServiceContextEnabledChecks EnabledChecks;
-
 		public SalesforceServiceContextEnabled(
 			ISalesforceServiceContextEnabledChecks enabledChecks)
 		{
-			EnabledChecks = enabledChecks;
+			Enabled = !enabledChecks.Any() || enabledChecks.All(ec => ec.Enabled);
 		}
 
-		public bool Enabled => !EnabledChecks.Any() || EnabledChecks.All(ec => ec.Enabled);
+		public bool Enabled { get; set; }
 	}
 }

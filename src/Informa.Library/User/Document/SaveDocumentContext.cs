@@ -31,7 +31,7 @@ namespace Informa.Library.User.Document
 				};
 			}
 
-			var result = SaveDocument.Save(UserContext.User.Username, documentName, documentDescription, documentId);
+			var result = SaveDocument.Save(UserContext.User?.Username, documentName, documentDescription, documentId);
 
 			if (result.Success)
 			{

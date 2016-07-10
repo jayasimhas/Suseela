@@ -6,7 +6,7 @@
 .article-inline-image--pull-right {
 	@include textMix('Roboto', 13px, 400);
 	clear: both;
-	color: $informa-mid-gray;
+	color: $color-dusty-gray;
 	margin-bottom: 2rem;
 	display: flex;
 	flex-direction:	row;
@@ -34,7 +34,7 @@
 	&__caption,
 	&__source {
 		@include textMix('Roboto', 13px, 400);
-	    color: $informa-mid-gray;
+	    color: $color-dusty-gray;
 	    margin-bottom: 0 !important;
 	    line-height: 1.5rem !important;
 	    display: block;

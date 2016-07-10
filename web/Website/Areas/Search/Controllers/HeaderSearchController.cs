@@ -3,6 +3,7 @@ using Glass.Mapper.Sc.Web.Mvc;
 using Informa.Library.CustomSitecore.Mvc;
 using Jabberwocky.Glass.Autofac.Mvc.Attributes;
 using SolrNet.Utils;
+using Velir.Search.Core.Reference;
 
 namespace Informa.Web.Areas.Search.Controllers
 {
@@ -26,7 +27,7 @@ namespace Informa.Web.Areas.Search.Controllers
            viewModel.SearchTerm = string.IsNullOrEmpty(viewModel.SearchTerm) ? string.Empty : viewModel.SearchTerm;
 
             //TODO put in non hardcoded values
-            return Redirect(string.Format("{0}#?{1}={2}", "/search", "q", HttpUtility.UrlEncode(viewModel.SearchTerm)));
+            return Redirect(string.Format("{0}#?{1}={2}", "/search", SiteSettings.QueryString.QueryKey, HttpUtility.UrlEncode(viewModel.SearchTerm)));
         }
     }
 }

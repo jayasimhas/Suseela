@@ -9,7 +9,7 @@ namespace Sitecore.SharedSource.DataImporter.Logger {
     public interface ILogger {
         bool LoggedError { get; set; }
 
-        void Log(string message, string affectedItem, ProcessStatus pResult = ProcessStatus.Info, string fieldName = "", string fieldValue = "");
+        void Log(string message, string affectedItem, ProcessStatus pResult = ProcessStatus.Info, string fieldName = "", string fieldValue1 = "", string fieldValue2 = "");
         string GetLog();
         void Clear();
     }

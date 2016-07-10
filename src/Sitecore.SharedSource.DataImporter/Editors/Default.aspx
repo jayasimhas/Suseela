@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Debug="true" CodeBehind="Default.aspx.cs" Inherits="Sitecore.SharedSource.DataImporter.Editors.Default" %>
-<%@ Import Namespace="Sitecore" %>
-<%@ Import Namespace="Sitecore.Jobs" %>
+<%@ Import namespace="Sitecore" %>
+<%@ Import namespace="Sitecore.Jobs" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -85,13 +85,9 @@
         <div class="Section">
             <div class="Controls">
 			    <div class="formRow">
-                    <div class="btnBox">
-                        <div class="btn">
-                            <asp:Button ID="btnImport" CssClass="runBtn" Text="Run Import" OnClick="btnImport_Click" runat="server" />
-                            <div class="clear"></div>
-                        </div>
-                        <div class="clear"></div>
-			        </div>
+                    <asp:Button ID="btnImport" Text="Run Import" OnClick="btnImport_Click" runat="server" BackColor="#474747" ForeColor="White" BorderWidth="0" Width="100px" Height="30px"  />
+					<asp:Button ID="btnMediaImport" Text="Run Media Import" OnClick="btnMediaImport_Click" runat="server" BackColor="#474747" ForeColor="White" BorderWidth="0" Width="120px" Height="30px"  />
+                    <asp:Button ID="btnPostImport" Text="Run Post Import Cleanup" OnClick="btnPostImport_Click" runat="server" BackColor="#474747" ForeColor="White" BorderWidth="0" Width="150px" Height="30px" />
                 </div>
                 <div class="rowSpacer"></div>
                 <div class="formRow">

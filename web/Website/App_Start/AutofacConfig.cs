@@ -5,6 +5,7 @@ using Autofac;
 using Autofac.Extras.Attributed;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using Informa.Library.Caching;
 using Informa.Web.App_Start.Registrations;
 using Jabberwocky.Autofac.Modules;
 using Jabberwocky.Glass.Autofac.Extensions;
@@ -15,6 +16,7 @@ using Informa.Library.Utilities.Autofac.Modules;
 using Informa.Web.Controllers;
 using Informa.Web.Controllers.Search;
 using Jabberwocky.Autofac.Extras.MiniProfiler;
+using Jabberwocky.Core.Caching;
 using Velir.Search.Autofac.Modules;
 
 namespace Informa.Web.App_Start
@@ -35,12 +37,12 @@ namespace Informa.Web.App_Start
 			var builder = new ContainerBuilder();
 
 			// Auto-Wire
-			builder.AutowireDependencies(assemblyNames: new[] { LibraryDll, WebsiteDll, });
+			builder.AutowireDependencies(assemblyNames: new[] { LibraryDll, WebsiteDll });
 
 			builder.RegisterGlassServices();
 			builder.RegisterCacheServices();
 			builder.RegisterProcessors(new[] { WebsiteDll, LibraryDll });
-			builder.RegisterGlassMvcServices(WebsiteDll);
+			builder.RegisterGlassMvcServices(WebsiteDll, LibraryDll);
 			builder.RegisterGlassFactory(LibraryDll, VelirSearchDll, ModelsDll);
 			builder.RegisterApiControllers(Assembly.GetExecutingAssembly()).WithAttributeFilter();
 			builder.RegisterControllers(Assembly.GetExecutingAssembly()).WithAttributeFilter();
@@ -50,7 +52,6 @@ namespace Informa.Web.App_Start
 			builder.RegisterType<EmailUtil>().AsSelf();
 
 			//Velir Search Library
-			builder.RegisterModule<SearchDependenciesModule>();
 			builder.RegisterModule<SearchModule>();
 			builder.RegisterModule<SolrSearchModule>();
 			SearchRegistrar.RegisterDependencies(builder);
@@ -66,6 +67,8 @@ namespace Informa.Web.App_Start
 			SiteDebuggingRegistrar.RegisterDependencies(builder);
 			LoggingRegistrar.RegisterDependencies(builder);
 			EntitlementsRegistrar.RegisterDependencies(builder);
+			PurchaseRegistrar.RegisterDependencies(builder);
+			DCDRegistrar.RegisterDependencies(builder);
 
 			// Custom Modules
 			builder.RegisterModule(new LogInjectionModule<ILog>(LogManager.GetLogger));
@@ -78,6 +81,7 @@ namespace Informa.Web.App_Start
 			// Custom Registrations
 			CustomMvcRegistrar.RegisterDependencies(builder, WebsiteDll);
 			GlassMapperRegistrar.RegisterDependencies(builder);
+			builder.RegisterType<Library.Caching.CrossSiteCacheProvider>().As<Library.Caching.ICrossSiteCacheProvider>().SingleInstance();
 
 			// This is necessary to 'seal' the container, and make it resolvable from the AutofacStartup.ServiceLocator singleton
 			IContainer container = builder.Build();

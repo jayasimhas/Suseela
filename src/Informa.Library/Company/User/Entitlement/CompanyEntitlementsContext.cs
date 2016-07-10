@@ -6,13 +6,13 @@ using Informa.Library.User.Entitlement;
 
 namespace Informa.Library.Company.User.Entitlement
 {
-    [AutowireService(LifetimeScope.Default)]
-    public class CompanyEntitlementsContext : ICompanyEntitlementsContext
-    {
+	[AutowireService(LifetimeScope.Default)]
+	public class CompanyEntitlementsContext : ICompanyEntitlementsContext
+	{
 		protected readonly IUserCompanyContext CompanyContext;
 		protected readonly IUserIpAddressContext UserIpAddressContext;
-        protected readonly IUserSession UserSession;
-        protected readonly IGetIPEntitlements GetIpEntitlements;
+		protected readonly IUserSession UserSession;
+		protected readonly IGetIPEntitlements GetIpEntitlements;
 		protected readonly IDefaultEntitlementsFactory DefaultEntitlementsFactory;
 
 		public CompanyEntitlementsContext(
@@ -21,59 +21,62 @@ namespace Informa.Library.Company.User.Entitlement
 			IUserSession userSession,
 			IGetIPEntitlements getIpEntitlements,
 			IDefaultEntitlementsFactory defaultEntitlementsFactory)
-        {
+		{
 			CompanyContext = companyContext;
-            UserIpAddressContext = userIpAddressContext;
-            UserSession = userSession;
-            GetIpEntitlements = getIpEntitlements;
+			UserIpAddressContext = userIpAddressContext;
+			UserSession = userSession;
+			GetIpEntitlements = getIpEntitlements;
 			DefaultEntitlementsFactory = defaultEntitlementsFactory;
 		}
 
-        private const string EntitlementSessionKeyPrefix = nameof(CompanyEntitlementsContext);
+		private const string EntitlementSessionKeyPrefix = nameof(CompanyEntitlementsContext);
 
 		public string EntitlementSessionKey => $"{EntitlementSessionKeyPrefix}{UserIpAddressContext.IpAddress}";
 
 		public IEnumerable<IEntitlement> Entitlements
-        {
-            get
-            {
+		{
+			get
+			{
 				var entitlementsSession = UserSession.Get<IEnumerable<IEntitlement>>(EntitlementSessionKey);
 
-                if (entitlementsSession.HasValue)
+				if (entitlementsSession.HasValue)
 				{
 					return entitlementsSession.Value;
 				}
-                    
-                var entitlements = new List<IEntitlement>();
-                entitlements.AddRange(GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress));
 
-                Entitlements = entitlements.Any() ? entitlements : DefaultEntitlementsFactory.Create();
+				var entitlements = new List<IEntitlement>();
+				entitlements.AddRange(GetIpEntitlements.GetEntitlements(UserIpAddressContext.IpAddress));
 
-                return entitlements;
-            }
+				Entitlements = entitlements.Any() ? entitlements : DefaultEntitlementsFactory.Create();
+
+				return entitlements;
+			}
 			set { UserSession.Set(EntitlementSessionKey, value); }
-        }
+		}
 
 		public void RefreshEntitlements()
-        {
+		{
 			UserSession.Clear(EntitlementSessionKey);
 		}
 
-		public EntitledAccessLevel GetProductAccessLevel(string productCode)
+		public EntitledAccessLevel AccessLevel
 		{
-			return (Entitlements != null && Entitlements.Any(e => e.ProductCode == productCode)) ? (CompanyContext.Company == null ? EntitledAccessLevel.UnEntitled : GetCompanyAccessLevel(CompanyContext.Company.Type)) : EntitledAccessLevel.UnEntitled;
-		}
-
-		public EntitledAccessLevel GetCompanyAccessLevel(CompanyType companyType)
-		{
-			switch (companyType)
+			get
 			{
-				case CompanyType.SiteLicenseIP:
-					return EntitledAccessLevel.Site;
-				case CompanyType.TransparentIP:
-					return EntitledAccessLevel.TransparentIP;
-				default:
-					return EntitledAccessLevel.UnEntitled;
+				if (CompanyContext.Company == null)
+				{
+					return EntitledAccessLevel.None;
+				}
+
+				switch (CompanyContext.Company.Type)
+				{
+					case CompanyType.SiteLicenseIP:
+						return EntitledAccessLevel.Site;
+					case CompanyType.TransparentIP:
+						return EntitledAccessLevel.TransparentIP;
+					default:
+						return EntitledAccessLevel.None;
+				}
 			}
 		}
 	}

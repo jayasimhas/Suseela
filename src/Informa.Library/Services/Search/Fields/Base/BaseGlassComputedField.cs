@@ -1,5 +1,6 @@
 using System;
 using Glass.Mapper.Sc;
+using Informa.Library.Utilities.Extensions;
 using Jabberwocky.Glass.Models;
 using Sitecore.Configuration;
 using Sitecore.ContentSearch;
@@ -10,8 +11,7 @@ using Sitecore.Sites;
 namespace Informa.Library.Services.Search.Fields.Base
 {
 	public abstract class BaseGlassComputedField<T> : IComputedIndexField where T : class, IGlassBase
-    {
-		private const string WebsiteName = "website";
+	{
 		private const string SitecoreCoreDatabaseName = "core";
 
 		public virtual string FieldName { get; set; }
@@ -27,9 +27,15 @@ namespace Informa.Library.Services.Search.Fields.Base
 				return null;
 			}
 
+			string siteName = indexItem.GetSiteName();
+			if (string.IsNullOrEmpty(siteName))
+			{
+				return null;
+			}
+
 			try
 			{
-				using (new SiteContextSwitcher(Factory.GetSite(WebsiteName)))
+				using (new SiteContextSwitcher(Factory.GetSite(siteName)))
 				{
 					return GetFieldValue(indexItem);
 				}

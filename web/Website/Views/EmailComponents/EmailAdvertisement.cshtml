@@ -1,0 +1,24 @@
+﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.EmailAdvertisementViewModel>
+
+<table class="mobile-ad" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td class="mobile-ad__cell">
+			<p class="mobile-ad__title">@Model.AdHeader</p>
+			<p class="mobile-ad__image">
+
+				@if (IsInEditingMode)
+				{
+				    <!-- this is just for easy experience editing, doesn't need to be email-html safe -->
+				    <div>Slot Id: @Editable(Model.GlassModel, m => m.Slot_ID) </div>
+				    <div>Zone: @Editable(Model.GlassModel, m => m.Zone) </div>
+				}
+				else
+				{
+				    <A HREF="@Model.AdClickLinkUrl" TARGET="_blank">
+				         <IMG SRC="@(Model.AdImageUrl)" Border="0">
+				    </a>
+				}
+			</p>
+		</td>
+	</tr>
+</table>

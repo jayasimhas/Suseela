@@ -57,19 +57,7 @@ gulp.task("css", function() {
         .pipe(concat(css.filename, {newLine: ""}))
         .pipe(rename({
             suffix: "-generated"
-        }))
-        /*.pipe(postcss([
-            require('mdcss')({
-                title: "Informa Style Guide",
-                logo: "https://pbs.twimg.com/profile_images/537287811724881921/JrtNWIt5.png",
-                css: ['style.css', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic'],
-                assets: ['dist/img/svg-sprite.svg', 'dist/index-generated.css'],
-                examples: {
-                    css: ["https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic", "index-generated.css"]
-                },
-                theme: require('runway-theme-velir')
-            })
-        ]))*/;
+        }));
 
     // only add the header text if this css isn't compressed
     if (css.sass && css.sass.outputStyle !== "compressed"){

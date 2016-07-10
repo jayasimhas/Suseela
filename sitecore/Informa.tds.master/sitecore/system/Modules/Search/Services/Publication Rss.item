@@ -12,7 +12,7 @@ templatekey: Search
 ----version----
 language: en
 version: 1
-revision: 80a94b67-10a6-4d81-998b-9a0a8f5fc3ea
+revision: 922378a1-f8c8-478e-99ba-399a393fde04
 
 ----field----
 field: {9F76D8DF-EF1C-4B6D-AF33-B2655FD0CC74}
@@ -32,9 +32,9 @@ Search
 field: {3DD8AA26-2B10-4305-831C-7FCC78A674BE}
 name: Refinements
 key: refinements
-content-length: 38
+content-length: 77
 
-{B09AEDF8-FAEA-43E1-BE86-67FF6DFE8FE9}
+{B09AEDF8-FAEA-43E1-BE86-67FF6DFE8FE9}|{3304B9BB-7884-41D0-AE56-91E9E041CCDD}
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-80a94b67-10a6-4d81-998b-9a0a8f5fc3ea
+922378a1-f8c8-478e-99ba-399a393fde04
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160315T035317Z
+20160613T164649Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

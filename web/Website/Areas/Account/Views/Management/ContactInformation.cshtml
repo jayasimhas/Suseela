@@ -1,6 +1,6 @@
-﻿@model Informa.Web.Areas.Account.ViewModels.Management.ContactInformationViewModel
+﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.Areas.Account.ViewModels.Management.ContactInformationViewModel>
 
-@if (Model.IsAuthenticated || Sitecore.Context.PageMode.IsExperienceEditor)
+@if (Model.IsAuthenticated || IsInEditingMode)
 {
     <div class="page-account page-account-contact">
         <h1 class="page-account__header">@Model.Title</h1>
@@ -11,7 +11,7 @@
 
                 <p>
                     <label class="page-account__text-label">
-                        @Model.UserContext.User.Username
+                        @Model.Username
                     </label>
                 </p>
 
@@ -158,7 +158,7 @@
                                 <select name="Salutation">
                                     @foreach (var o in Model.Salutations)
                                     {
-                                        <option @(@Model.ProfileContext.Profile.Salutation.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(@Model.Profile.Salutation.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </p>
@@ -169,7 +169,7 @@
                                 </label>
                                 <input type="text"
                                        name="FirstName"
-                                       value="@Model.ProfileContext.Profile.FirstName"
+                                       value="@Model.Profile.FirstName"
                                        placeholder="@Model.FirstNamePlaceholderText">
                             </p>
 
@@ -179,7 +179,7 @@
                                 </label>
                                 <input type="text"
                                        name="MiddleInitial"
-                                       value="@Model.ProfileContext.Profile.MiddleInitial"
+                                       value="@Model.Profile.MiddleInitial"
                                        placeholder="@Model.MiddleInitialPlaceholderText">
                             </p>
 
@@ -189,7 +189,7 @@
                                 </label>
                                 <input type="text"
                                        name="LastName"
-                                       value="@Model.ProfileContext.Profile.LastName"
+                                       value="@Model.Profile.LastName"
                                        placeholder="@Model.LastNamePlaceholderText">
                             </p>
 
@@ -200,7 +200,7 @@
                                 <select name="NameSuffix">
                                     @foreach (var o in Model.Suffixes)
                                     {
-                                        <option @(@Model.ProfileContext.Profile.NameSuffix.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(@Model.Profile.NameSuffix.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </p>
@@ -216,7 +216,7 @@
                                 </label>
                                 <input type="text"
                                        name="Company"
-                                       value="@Model.ProfileContext.Profile.Company"
+                                       value="@Model.Profile.Company"
                                        placeholder="@Model.CompanyPlaceholderText">
                             </p>
 
@@ -236,7 +236,7 @@
                                 </label>
                                 <input type="text"
                                        name="JobTitle"
-                                       value="@Model.ProfileContext.Profile.JobTitle"
+                                       value="@Model.Profile.JobTitle"
                                        placeholder="@Model.JobTitlePlaceholderText">
                             </p>
 
@@ -247,7 +247,7 @@
                                 <select name="JobFunction">
                                     @foreach (var o in Model.JobFunctions)
                                     {
-                                        <option @(@Model.ProfileContext.Profile.JobFunction.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(@Model.Profile.JobFunction.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </p>
@@ -259,7 +259,7 @@
                                 <select name="JobIndustry">
                                     @foreach (var o in Model.JobIndustries)
                                     {
-                                        <option @(@Model.ProfileContext.Profile.JobIndustry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(@Model.Profile.JobIndustry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </div>
@@ -276,7 +276,7 @@
                                 <select name="PhoneType">
                                     @foreach (var o in Model.PhoneTypes)
                                     {
-                                        <option @(@Model.ProfileContext.Profile.PhoneType.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(@Model.Profile.PhoneType.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </p>
@@ -287,7 +287,7 @@
                                 </label>
                                 <input type="text"
                                        name="CountryCode"
-                                       value="@Model.ProfileContext.Profile.CountryCode"
+                                       value="@Model.Profile.CountryCode"
                                        placeholder="@Model.CountryCodePlaceholderText">
                             </p>
 
@@ -297,7 +297,7 @@
                                 </label>
                                 <input type="text"
                                        name="Phone"
-                                       value="@Model.ProfileContext.Profile.Phone"
+                                       value="@Model.Profile.Phone"
                                        placeholder="@Model.PhonePlaceholderText">
                             </p>
 
@@ -307,7 +307,7 @@
                                 </label>
                                 <input type="text"
                                        name="PhoneExtension"
-                                       value="@Model.ProfileContext.Profile.PhoneExtension"
+                                       value="@Model.Profile.PhoneExtension"
                                        placeholder="@Model.PhoneExtensionPlaceholderText">
                             </p>
 
@@ -317,7 +317,7 @@
                                 </label>
                                 <input type="text"
                                        name="Fax"
-                                       value="@Model.ProfileContext.Profile.Fax"
+                                       value="@Model.Profile.Fax"
                                        placeholder="@Model.FaxPlaceholderText">
                             </p>
                         </div>
@@ -335,7 +335,7 @@
                                 <select name="BillCountry" id="ddlBillingCountry">
                                     @foreach (var o in Model.Countries)
                                     {
-                                        <option @(@Model.ProfileContext.Profile.BillCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(@Model.Profile.BillCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </p>
@@ -346,7 +346,7 @@
                                 </label>
                                 <input type="text"
                                        name="BillAddress1"
-                                       value="@Model.ProfileContext.Profile.BillAddress1"
+                                       value="@Model.Profile.BillAddress1"
                                        placeholder="@Model.BillAddress1PlaceholderText" id="txtBillingAddress1">
                             </p>
 
@@ -356,7 +356,7 @@
                                 </label>
                                 <input type="text"
                                        name="BillAddress2"
-                                       value="@Model.ProfileContext.Profile.BillAddress2"
+                                       value="@Model.Profile.BillAddress2"
                                        placeholder="@Model.BillAddress2PlaceholderText" id="txtBillingAddress2">
                             </p>
 
@@ -366,7 +366,7 @@
                                 </label>
                                 <input type="text"
                                        name="BillCity"
-                                       value="@Model.ProfileContext.Profile.BillCity"
+                                       value="@Model.Profile.BillCity"
                                        placeholder="@Model.BillCityPlaceholderText" id="txtBillingCity">
                             </p>
 
@@ -376,7 +376,7 @@
                                 </label>
                                 <input type="text"
                                        name="BillState"
-                                       value="@Model.ProfileContext.Profile.BillState"
+                                       value="@Model.Profile.BillState"
                                        placeholder="@Model.BillStatePlaceholderText" id="txtBillingState">
                             </p>
 
@@ -386,7 +386,7 @@
                                 </label>
                                 <input type="text"
                                        name="BillPostalCode"
-                                       value="@Model.ProfileContext.Profile.BillPostalCode"
+                                       value="@Model.Profile.BillPostalCode"
                                        placeholder="@Model.BillPostalCodePlaceholderText" id="txtBillingPostalCode">
                             </p>
 
@@ -410,7 +410,7 @@
                                 <select name="ShipCountry" id="ddlShippingCountry">
                                     @foreach (var o in Model.Countries)
                                     {
-                                        <option @(@Model.ProfileContext.Profile.ShipCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                                        <option @(@Model.Profile.ShipCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                                     }
                                 </select>
                             </p>
@@ -421,7 +421,7 @@
                                 </label>
                                 <input type="text"
                                        name="ShipAddress1"
-                                       value="@Model.ProfileContext.Profile.ShipAddress1"
+                                       value="@Model.Profile.ShipAddress1"
                                        placeholder="@Model.ShipAddress1PlaceholderText" id="txtShippingAddress1">
                             </p>
 
@@ -431,7 +431,7 @@
                                 </label>
                                 <input type="text"
                                        name="ShipAddress2"
-                                       value="@Model.ProfileContext.Profile.ShipAddress2"
+                                       value="@Model.Profile.ShipAddress2"
                                        placeholder="@Model.ShipAddress2PlaceholderText" id="txtShippingAddress2">
                             </p>
 
@@ -441,7 +441,7 @@
                                 </label>
                                 <input type="text"
                                        name="ShipCity"
-                                       value="@Model.ProfileContext.Profile.ShipCity"
+                                       value="@Model.Profile.ShipCity"
                                        placeholder="@Model.ShipCityPlaceholderText" id="txtShippingCity">
                             </p>
 
@@ -451,7 +451,7 @@
                                 </label>
                                 <input type="text"
                                        name="ShipState"
-                                       value="@Model.ProfileContext.Profile.ShipState"
+                                       value="@Model.Profile.ShipState"
                                        placeholder="@Model.ShipStatePlaceholderText" id="txtShippingState">
                             </p>
 
@@ -461,7 +461,7 @@
                                 </label>
                                 <input type="text"
                                        name="ShipPostalCode"
-                                       value="@Model.ProfileContext.Profile.ShipPostalCode"
+                                       value="@Model.Profile.ShipPostalCode"
                                        placeholder="@Model.ShipPostalCodePlaceholderText" id="txtShippingPostalCode">
                             </p>
 

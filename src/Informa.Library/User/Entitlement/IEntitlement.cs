@@ -2,10 +2,14 @@ namespace Informa.Library.User.Entitlement
 {
     public interface IEntitlement
     {
-		string ProductCode { get; set; }
-		string ArchiveCode { get; set; }
-		string DocumentId { get; set; }
-		string ProductId { get; set; }
-		string ProductType { get; set; }
+		string ProductCode { get; }
+		string ArchiveCode { get; }
+		int ArchiveLimitedDays { get; }
+		bool ArchiveLimited { get; }
+		string DocumentId { get; }
+		string ProductId { get; }
+		string ProductType { get; }
+		string OpportunityId { get; }
+		string OpportunityLineItemId { get; }
 	}
 }

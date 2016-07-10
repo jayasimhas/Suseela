@@ -105,7 +105,7 @@ gulp.task("dev-nowatch", function(){
     utils.setConfig({
         env   : "dev",
         watch : false,
-        notify: true,
+        notify: false,
         tasks: ["js", "css", "copy", "bower", "svg-sprite"]
     });
 

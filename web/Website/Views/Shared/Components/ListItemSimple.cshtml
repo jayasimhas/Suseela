@@ -5,6 +5,19 @@
     <img class="article-related-content__img" src="@Model.ListableImage">
 }
 @*<h6>@Model.ListableByline</h6>*@
-<span class="article-related-content__category">@Model.ListableByline</span>
-<h5><a class="click-utag" data-info='{"event_name"="related-article-click","main-article"="@Sitecore.Context.Item.DisplayName","related-article"="@Model.ListableTitle"}' href="@Model.LinkableUrl">@Html.Raw(Model.ListableTitle)</a></h5>
+<span class="article-related-content__category">@Model.ListablePublication</span>
+<h5>
+	<a
+		class="click-utag"
+		href="@Model.LinkableUrl"
+	   	data-info='{
+			"event_name": "related_content_click_through",
+			"main-article": "@Sitecore.Context.Item.DisplayName",
+			"related-article": "@Model.ListableTitle",
+			"click_through_source": "@Sitecore.Context.Item.DisplayName",
+			"click_through_destination": "@Model.ListableTitle"
+		}'>
+		@Html.Raw(Model.ListableTitle)
+	</a>
+</h5>
 <time class="article-related-content__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>

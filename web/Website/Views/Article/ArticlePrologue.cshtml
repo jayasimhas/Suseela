@@ -1,7 +1,7 @@
 @model Informa.Web.ViewModels.ArticlePrologueViewModel
 
-<div class="article-prologue">
-        <div class="article-prologue__share-bar">
+<div class="action-flags-bar article-prologue">
+        <div class="action-flags article-prologue__share-bar">
             <ul>
 				@{ Html.RenderPartial("/Views/Article/ArticlePrologueEmail.cshtml", Model.EmailViewModel); }
                 @{ Html.RenderPartial("/Views/Article/ArticleProloguePrint.cshtml", Model.PrintViewModel); }

@@ -5,7 +5,7 @@
 
 		<form	class="pop-out__register form-pre-registration"
 				data-on-submit="/Account/api/RegistrationApi/PreRegister/"
-				data-forwarding-url="@(Model.RegisterUrl+"?returnUrl="+ HttpContext.Current.Request.Url.AbsolutePath)">
+				data-forwarding-url="@( Model.RegisterUrl+"?"+Model.RegisterReturnUrlKey+"="+Model.RegisterReturnUrl )">
 
 			<div class="dismiss-button" data-target-element=".js-pop-out__register">
 				<svg class="dismiss-button__icon">

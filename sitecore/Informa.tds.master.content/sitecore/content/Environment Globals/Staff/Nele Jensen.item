@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: 05caf2a5-3894-44ee-92a6-0b64bade06de
+revision: 53de23d9-04d3-4d76-a3e4-d7f80df430a3
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -28,6 +28,13 @@ key: last name
 content-length: 6
 
 Jensen
+----field----
+field: {B3E3F7B7-3E08-4CBF-ABED-1932BB8639A7}
+name: Inactive
+key: inactive
+content-length: 1
+
+1
 ----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
@@ -48,18 +55,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-05caf2a5-3894-44ee-92a6-0b64bade06de
+53de23d9-04d3-4d76-a3e4-d7f80df430a3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190911Z
+20160420T093451Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 15
 
-sitecore\admin
+sitecore\srigby

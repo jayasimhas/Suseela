@@ -16,10 +16,17 @@ key: path
 content-length: 28
 
 /Views/Shared/_Header.cshtml
+----field----
+field: {308E88F5-CD6E-4F8F-BAFE-95A47DEDEFDC}
+name: Editable
+key: editable
+content-length: 0
+
+
 ----version----
 language: en
 version: 1
-revision: 26c2ac2e-0634-4613-a8c2-fa3e9bdaa1e8
+revision: 31fa837d-0d87-4a82-95cc-dbc4fee1972f
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-26c2ac2e-0634-4613-a8c2-fa3e9bdaa1e8
+31fa837d-0d87-4a82-95cc-dbc4fee1972f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160425T145833Z
+20160607T191658Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

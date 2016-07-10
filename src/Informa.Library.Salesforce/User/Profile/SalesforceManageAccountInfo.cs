@@ -70,6 +70,9 @@ namespace Informa.Library.Salesforce.User.Profile
             string JobTitle
             )
         {
+            if (string.IsNullOrEmpty(user?.Username))
+                return WriteErrorResult(RequestFailedKey);
+
             var EBIName = new EBI_Name()
             {
                 firstName = FirstName,

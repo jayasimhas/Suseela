@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: 1655f183-cd8c-4125-b4d4-cf04e231a766
+revision: 41688b3b-70a4-4182-ba5b-29f96691ae59
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -29,12 +29,26 @@ content-length: 4
 
 Ward
 ----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 113
+
+<image mediaid="{1FDEE756-39B8-491E-BF04-7E2F8A1A3A24}" alt="Mike Ward" height="" width="" hspace="" vspace="" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 13
+
+ScripMikeWard
+----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
 key: email address
 content-length: 21
 
-mike.ward@informa.com
+Mike.Ward@informa.com
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-1655f183-cd8c-4125-b4d4-cf04e231a766
+41688b3b-70a4-4182-ba5b-29f96691ae59
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190924Z
+20160423T235943Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

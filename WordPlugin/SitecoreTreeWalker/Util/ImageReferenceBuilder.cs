@@ -45,10 +45,12 @@ namespace InformaSitecoreWord.Util
                         return null;
                     }
 
-                    var src = hyperline.Address;
+                    Uri tempUri = new Uri(hyperline.Address);
+                    var src = tempUri.AbsolutePath;
                     //XElement wrapper = GetImageElement(src, hyperline.ScreenTip);
                     XElement wrapper = GetImageElement(src);
                     return wrapper;
+                    
                 }
                 catch (WebException e)
                 {

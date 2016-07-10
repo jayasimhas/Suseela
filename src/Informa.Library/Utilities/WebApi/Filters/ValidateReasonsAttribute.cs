@@ -16,10 +16,7 @@ namespace Informa.Library.Utilities.WebApi.Filters
 			{
 				var reasons = new List<string>();
 
-				if (modelState != null)
-				{
-					reasons.AddRange(modelState.SelectMany(ms => ms.Value.Errors.Select(e => e.ErrorMessage)).Distinct().ToList());
-				}
+				reasons.AddRange(modelState.SelectMany(ms => ms.Value.Errors.Select(e => e.ErrorMessage)).Distinct());
 
 				if (!reasons.Any())
 				{

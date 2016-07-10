@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: 12637f87-637d-4455-93b4-666225f2e500
+revision: cd8bba9b-1164-4a9b-b505-d9d5e2b1d281
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -28,6 +28,20 @@ key: last name
 content-length: 3
 
 Tan
+----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 112
+
+<image mediaid="{5477F547-BFE3-4395-887A-0AEEDCB44448}" alt="Tina Tan" height="" width="" hspace="" vspace="" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 14
+
+MedtechTinaTan
 ----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
@@ -48,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-12637f87-637d-4455-93b4-666225f2e500
+cd8bba9b-1164-4a9b-b505-d9d5e2b1d281
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190927Z
+20160424T000554Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -77,7 +77,7 @@
 
 		span {
 			display: block;
-		    background: $informa-light-gray-f;
+		    background: $color-concrete-gray;
 		    height: 2px;
 		    left: 25px;
 		    position: absolute;
@@ -87,7 +87,7 @@
 
 			&:before, /* c.hamburger span */
 			&:after {
-				background-color: $informa-light-gray-f;
+				background-color: $color-concrete-gray;
 				content: "";
 				display: block;
 				height: 2px;

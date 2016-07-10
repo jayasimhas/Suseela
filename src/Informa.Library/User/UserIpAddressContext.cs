@@ -4,7 +4,7 @@ using Informa.Library.Net;
 
 namespace Informa.Library.User
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class UserIpAddressContext : IUserIpAddressContext, ISetUserIpAddressContext
 	{
 		protected readonly IIpAddressContext IpAddressContext;

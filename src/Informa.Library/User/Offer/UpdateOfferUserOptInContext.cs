@@ -27,7 +27,7 @@ namespace Informa.Library.User.Offer
 				return false;
 			}
 
-			var success = UpdateOfferOptIn.Update(UserContext.User.Username, optIn);
+			var success = UpdateOfferOptIn.Update(UserContext.User?.Username, optIn);
 
 			if (success)
 			{

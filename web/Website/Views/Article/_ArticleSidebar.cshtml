@@ -2,13 +2,25 @@
 @using Informa.Library.Utilities.StringUtils
 @model ArticleListItemModel
 <aside class="article-sidebar">
+	
 	<h3>@HttpUtility.HtmlDecode(Model.ListableTitle)</h3>
-	@if(Model.ListableAuthors.Any()){
-	<span class="article-sidebar__byline">@Model.By @string.Join(", ", Model.ListableAuthors.Select(x => x.LinkableText))</span>
+	@if(!string.IsNullOrEmpty(Model.ListableAuthorByLine))
+    {
+	    <span class="article-sidebar__byline">@Model.ListableAuthorByLine</span>
 	}
 	<time class="article-sidebar__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
 
 	@Html.Raw(WordUtil.TruncateArticle(Model.ListableSummary, 60))
-    
-    <a class="article-sidebar__read-more click-utag" data-info='{"event_name" : "article-sidebar-read-more-click","source_article"="@Model.SourceArticleID","destination_article"="@Model.LinkableUrl"}' href="@Model.LinkableUrl" >Read the full article here </a>
+
+    <a
+		class="article-sidebar__read-more click-utag"
+		data-info='{
+			"event_name": "sidebar_article_click_through",
+			"click_through_source": "@Sitecore.Context.Item.DisplayName",
+			"click_through_destination": "@Model.ListableTitle"
+		}'
+		href="@Model.LinkableUrl">
+		Read the full article here
+	</a>
+
 </aside>

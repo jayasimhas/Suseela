@@ -1,5 +1,5 @@
 .page-account {
-    padding-bottom: 2rem;
+    padding: 2rem 0;
 
     &__header,
     &__subheader {
@@ -174,6 +174,15 @@
 
         @include breakpoint('small') {
             width: 100%;
+        }
+    }
+
+    &__table {
+        margin-bottom: 3rem;
+
+        &-headline {
+            color: $color-zeus-black;
+            margin-bottom: 1rem;
         }
     }
 }

@@ -58,6 +58,10 @@
     </CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.9.5.41771, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AngleSharp.0.9.5\lib\net45\AngleSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
       <Private>True</Private>
@@ -78,6 +82,10 @@
       <HintPath>..\..\packages\Autofac.Mef.3.0.3\lib\net40\Autofac.Integration.Mef.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -85,6 +93,9 @@
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="CSharpSDK">
+      <HintPath>..\..\lib\ExactTarget\CSharpSDK.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -94,40 +105,40 @@
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>True</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\net45\Glass.Mapper.dll</HintPath>
+    <Reference Include="Glass.Mapper, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\net45\Glass.Mapper.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>True</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\81\Glass.Mapper.Sc.dll</HintPath>
+    <Reference Include="Glass.Mapper.Sc, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\81\Glass.Mapper.Sc.dll</HintPath>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc.Mvc, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>True</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
+    <Reference Include="Glass.Mapper.Sc.Mvc, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Autofac, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Jabberwocky.Autofac.1.0.1.0\lib\net45\Jabberwocky.Autofac.dll</HintPath>
+    <Reference Include="Jabberwocky.Autofac, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Autofac.1.1.0.0\lib\net45\Jabberwocky.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Core, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Jabberwocky.Core.1.0.1.0\lib\net45\Jabberwocky.Core.dll</HintPath>
+    <Reference Include="Jabberwocky.Core, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Core.1.0.2.0\lib\net45\Jabberwocky.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Jabberwocky.Glass, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Jabberwocky.Glass.1.0.1.0\lib\net45\Jabberwocky.Glass.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Glass.Autofac, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.1.0.1.0\lib\net45\Jabberwocky.Glass.Autofac.dll</HintPath>
+    <Reference Include="Jabberwocky.Glass.Autofac, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.1.1.0.0\lib\net45\Jabberwocky.Glass.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Jabberwocky.Glass.Autofac.Mvc, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.Mvc.1.0.2.0\lib\net45\Jabberwocky.Glass.Autofac.Mvc.dll</HintPath>
+    <Reference Include="Jabberwocky.Glass.Autofac.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Glass.Autofac.Mvc.1.1.0.0\lib\net45\Jabberwocky.Glass.Autofac.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Jabberwocky.WebApi, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -138,12 +149,24 @@
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MiniProfiler, Version=3.2.0.157, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MiniProfiler.3.2.0.157\lib\net40\MiniProfiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NewRelic.Api.Agent">
       <HintPath>..\..\lib\NewRelic\NewRelic.Api.Agent.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="PreMailer.Net, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PreMailer.Net.1.5.3\lib\net45\PreMailer.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Abstractions, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -192,6 +215,10 @@
     <Reference Include="Sitecore.SharedSource.PageEditor">
       <HintPath>..\..\lib\Sitecore\SharedSource\Sitecore.SharedSource.PageEditor\Sitecore.SharedSource.PageEditor.dll</HintPath>
     </Reference>
+    <Reference Include="SolrNet, Version=0.4.0.2002, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Solr\SolrNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -219,8 +246,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
@@ -259,6 +286,10 @@
       <HintPath>..\..\packages\Velir.Search.Models.1.2.0\lib\net45\Velir.Search.Models.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Velir.Search.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Velir.Search.WebApi.1.0.3\lib\net45\Velir.Search.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebApi.OutputCache.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Strathweb.CacheOutput.WebApi2.0.9.0\lib\net45\WebApi.OutputCache.Core.dll</HintPath>
       <Private>True</Private>
@@ -272,6 +303,11 @@
     <Compile Include="Actions\ActionsProcessor`2.cs" />
     <Compile Include="Actions\IActionsProcessor`2.cs" />
     <Compile Include="Actions\IAction`1.cs" />
+    <Compile Include="Advertisement\AdUrlBuilder.cs" />
+    <Compile Include="Article\Companies\IRelatedCompaniesService.cs" />
+    <Compile Include="Article\Companies\IRelatedDealsService.cs" />
+    <Compile Include="Article\Companies\RelatedCompaniesService.cs" />
+    <Compile Include="Article\Companies\RelatedDealsService.cs" />
     <Compile Include="Article\Publishing\Events\ArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Publishing\Events\PublishDateFoldersArticlePublishItemProcessing.cs" />
     <Compile Include="Article\Publishing\Events\ActualPublishDateArticlePublishItemProcessing.cs" />
@@ -279,38 +315,92 @@
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
     <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
     <Compile Include="Article\Search\ArticleSearchResults.cs" />
+    <Compile Include="Article\Search\IArticlePublicationFilter.cs" />
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
+    <Compile Include="Caching\CrossSiteCacheProvider.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
+    <Compile Include="Company\CompanyRegisterUserError.cs" />
+    <Compile Include="Company\CompanyRegisterUserResult.cs" />
     <Compile Include="Company\CompanyType.cs" />
     <Compile Include="Company\IAllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\IAllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\ICompany.cs" />
     <Compile Include="Company\IFindCompanyByIpAddress.cs" />
+    <Compile Include="Company\IFindCompanyByMasterId.cs" />
     <Compile Include="Company\IFindCompanyByUser.cs" />
+    <Compile Include="Company\IMasterCompany.cs" />
     <Compile Include="Company\IRegisterCompanyUser.cs" />
     <Compile Include="Company\IUserCompanyContext.cs" />
     <Compile Include="Company\CompanyRegisterUser.cs" />
     <Compile Include="Company\UserCompanyContext.cs" />
     <Compile Include="Company\Web\WebClearUserCompanyContextLogoutAction.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\RequiredIfAttribute.cs" />
+    <Compile Include="CustomSitecore\Events\AddFromBranchPreset.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
-    <Compile Include="CustomSitecore\Pipelines\HttpRequest\InformaSiteResolver.cs" />
+    <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
+    <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
+    <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
+    <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
+    <Compile Include="Logging\LogWrapper.cs" />
     <Compile Include="Logging\SitecoreDebugLogger.cs" />
     <Compile Include="Logging\SitecoreErrorLogger.cs" />
-    <Compile Include="Newsletter\ISiteNewsletterTypeContext.cs" />
-    <Compile Include="Newsletter\SiteNewsletterTypeContext.cs" />
+    <Compile Include="Mail\ExactTarget\CampaignQueryBuilder.cs" />
+    <Compile Include="Mail\ExactTarget\PremailerWrapper.cs" />
+    <Compile Include="Migrations\201605092039013_InitialCreate.cs" />
+    <Compile Include="Migrations\201605092039013_InitialCreate.Designer.cs">
+      <DependentUpon>201605092039013_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mail\ExactTarget\ExactTargetClient.cs" />
+    <Compile Include="Mail\ExactTarget\ExactTargetWrapper.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Navigation\IReturnUrlContext.cs" />
+    <Compile Include="Navigation\ReturnUrlContext.cs" />
+    <Compile Include="Page\IPageItemContext.cs" />
+    <Compile Include="Page\PageItemContext.cs" />
+    <Compile Include="Publication\ArticleMappingContext.cs" />
+    <Compile Include="Publication\ArticleMappingRepository.cs" />
+    <Compile Include="Publication\Entity\ArticleMapping.cs" />
+    <Compile Include="Publication\FindSitePublicationByCode.cs" />
+    <Compile Include="Publication\IArticleMappingRepository.cs" />
+    <Compile Include="Publication\IFindSitePublicationByCode.cs" />
+    <Compile Include="Publication\ISitePublication.cs" />
+    <Compile Include="Publication\ISitePublicationCodeFactory.cs" />
+    <Compile Include="Publication\ISitePublicationFactory.cs" />
+    <Compile Include="Publication\ISitePublicationNameFactory.cs" />
+    <Compile Include="Publication\ISitePublicationsContext.cs" />
+    <Compile Include="Publication\ISitesPublicationNameContext.cs" />
+    <Compile Include="Publication\ISitePublicationNameContext.cs" />
+    <Compile Include="Publication\SitePublication.cs" />
+    <Compile Include="Publication\SitePublicationCodeFactory.cs" />
+    <Compile Include="Publication\SitePublicationFactory.cs" />
+    <Compile Include="Publication\SitePublicationNameFactory.cs" />
+    <Compile Include="Publication\SitePublicationsContext.cs" />
+    <Compile Include="Publication\SitesPublicationNameContext.cs" />
+    <Compile Include="Publication\SitePublicationNameContext.cs" />
     <Compile Include="Publishing\Events\ItemPublishedPublishItemProcessing.cs" />
     <Compile Include="Publishing\Events\PublishItemProcessing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishingDateTime.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishingDateTime.cs" />
+    <Compile Include="Purchase\ArticlePurchaseItem.cs" />
+    <Compile Include="Purchase\ArticlePurchaseItemsFactory.cs" />
+    <Compile Include="Purchase\IArticlePurchase.cs" />
+    <Compile Include="Purchase\IArticlePurchaseItem.cs" />
+    <Compile Include="Purchase\IArticlePurchaseItemsFactory.cs" />
+    <Compile Include="Purchase\User\Entitlement\PurchaseEntitlementAccessContext.cs" />
+    <Compile Include="Purchase\User\IFindUserArticlePurchases.cs" />
+    <Compile Include="Purchase\User\IUserArticlePurchaseItemsContext.cs" />
+    <Compile Include="Purchase\User\IUserArticlePurchasesContext.cs" />
+    <Compile Include="Purchase\User\UserArticlePurchaseItemsContext.cs" />
+    <Compile Include="Purchase\User\UserArticlePurchasesContext.cs" />
     <Compile Include="Rss\FeedGenerators\BaseInformaFeedGenerator.cs" />
     <Compile Include="Rss\FeedGenerators\SearchFeedGenerator.cs" />
     <Compile Include="Rss\Interfaces\IRssFeedGeneration.cs" />
@@ -321,8 +411,24 @@
     <Compile Include="Rss\ItemGenerators\SearchRssItemGenerator.cs" />
     <Compile Include="Rss\ItemRetrieval\RssSearchResultsItemRetrieval.cs" />
     <Compile Include="Rss\Utils\RssConstants.cs" />
+    <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
+    <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
+    <Compile Include="Search\FacetBuilders\CompaniesFacetBuilder.cs" />
+    <Compile Include="Search\Formatting\IQueryFormatter.cs" />
+    <Compile Include="Search\Formatting\SolrQueryFormatter.cs" />
+    <Compile Include="Search\InformaApiSearchRequest.cs" />
+    <Compile Include="Search\PredicateBuilders\InformaQueryPredicateBuilder.cs" />
+    <Compile Include="Search\Results\IArticlePublicationResults.cs" />
+    <Compile Include="Search\Results\QueryResults.cs" />
+    <Compile Include="Search\Sort\SitecoreOrderStrategy.cs" />
     <Compile Include="Search\Utilities\SearchSummaryUtil.cs" />
     <Compile Include="Search\Utilities\SearchWebClientUtil.cs" />
+    <Compile Include="Services\Article\ArticleService.cs" />
+    <Compile Include="Services\Article\IArticleService.cs" />
+    <Compile Include="Services\Global\GlobalSitecoreService.cs" />
+    <Compile Include="Services\Global\IGlobalSitecoreService.cs" />
+    <Compile Include="Services\Global\ITaxonomyService.cs" />
+    <Compile Include="Services\Global\TaxonomyService.cs" />
     <Compile Include="Session\ISessionValue`1.cs" />
     <Compile Include="Session\ISpecificSessionStore.cs" />
     <Compile Include="Session\ISpecificSessionStores.cs" />
@@ -331,12 +437,28 @@
     <Compile Include="SiteDebugging\ISiteDebugger.cs" />
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
     <Compile Include="SiteDebugging\SiteDebugger.cs" />
+    <Compile Include="Site\GlassSiteRootContext.cs" />
+    <Compile Include="Site\IIsUrlCurrentSite.cs" />
+    <Compile Include="Site\ISiteHostName.cs" />
+    <Compile Include="Site\ISiteRootContext.cs" />
     <Compile Include="Site\ISiteFooterNavigationContext.cs" />
+    <Compile Include="Site\ISiteRootsContext.cs" />
+    <Compile Include="Site\IsUrlCurrentSite.cs" />
     <Compile Include="Site\SiteFooterNavigationContext.cs" />
-    <Compile Include="Subscription\ISubscriptionProductKeyContext.cs" />
-    <Compile Include="Subscription\SubscriptionProductKeyContext.cs" />
+    <Compile Include="Site\SiteHostName.cs" />
+    <Compile Include="Site\SiteRootsContext.cs" />
+    <Compile Include="Subscription\IIndividualSubscriptionRenewalMessageContext.cs" />
+    <Compile Include="Subscription\IndividualSubscriptionRenewalMessageContext.cs" />
+    <Compile Include="Subscription\ISubscription.cs" />
+    <Compile Include="Subscription\User\IFindUserSubscriptions.cs" />
+    <Compile Include="Subscription\User\IUserSubscribedContext.cs" />
     <Compile Include="Subscription\User\IUserSubscriptionsContext.cs" />
+    <Compile Include="Subscription\User\UserSubscribedContext.cs" />
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
+    <Compile Include="User\EmailOptIns\OptInManager.cs" />
+    <Compile Include="User\EmailOptIns\OptInResponseModel.cs" />
+    <Compile Include="Taxonomy\HeirarchyLinks.cs" />
+    <Compile Include="Taxonomy\IHeirarchyLinks.cs" />
     <Compile Include="User\Authentication\AuthenticatedUserSession.cs" />
     <Compile Include="User\Authentication\IAuthenticatedUserSession.cs" />
     <Compile Include="User\Authentication\ISendPluginUserLockedOutEmail.cs" />
@@ -348,23 +470,46 @@
     <Compile Include="User\Authentication\Web\SiteDebugging\SiteDebuggingWebLoginUser.cs" />
     <Compile Include="User\Authentication\Web\WebAuthenticateUser.cs" />
     <Compile Include="User\Authentication\Web\WebAuthenticateUserResult.cs" />
+    <Compile Include="User\Authentication\Web\WebHideWelcomeOnLogout.cs" />
     <Compile Include="User\Authentication\Web\WebClearAuthenticatedUserSessionAction.cs" />
     <Compile Include="User\Authentication\Web\WebLoginUserRegisterUserAction.cs" />
+    <Compile Include="User\Content\ContentResponse.cs" />
+    <Compile Include="User\Content\IContentResponse.cs" />
+    <Compile Include="User\Content\IUserContentRepository.cs" />
+    <Compile Include="User\Content\IUserContentService.cs" />
+    <Compile Include="User\Document\ISavedDocumentItem.cs" />
+    <Compile Include="User\Document\ISavedDocumentItemsContext.cs" />
+    <Compile Include="User\Document\ISavedDocumentItemsFactory.cs" />
+    <Compile Include="User\Document\SavedDocumentItem.cs" />
+    <Compile Include="User\Document\SavedDocumentItemsContext.cs" />
+    <Compile Include="User\Document\SavedDocumentItemsFactory.cs" />
+    <Compile Include="User\EmailOptIns\SavedSearchOptOutViewModel.cs" />
     <Compile Include="User\Entitlement\DefaultEntitlementsFactory.cs" />
-    <Compile Include="User\Entitlement\EntitlementAccessLevelContext.cs" />
+    <Compile Include="User\Entitlement\EntitledProduct.cs" />
+    <Compile Include="User\Entitlement\EntitledProductItemCodeFactory.cs" />
+    <Compile Include="User\Entitlement\EntitlementAccess.cs" />
+    <Compile Include="User\Entitlement\EntitlementAccessContext.cs" />
+    <Compile Include="User\Entitlement\EntitlementAccessFactory.cs" />
     <Compile Include="User\Entitlement\EntitlementChecksEnabled.cs" />
+    <Compile Include="User\Entitlement\EntitlementProductFactory.cs" />
+    <Compile Include="User\Entitlement\EntitlementAccessContexts.cs" />
     <Compile Include="User\Entitlement\EntitlementsContexts.cs" />
     <Compile Include="User\Entitlement\EntitlementSession.cs" />
     <Compile Include="User\Entitlement\IDefaultEntitlementsFactory.cs" />
-    <Compile Include="User\Entitlement\IEntitlementAccessLevelContext.cs" />
+    <Compile Include="User\Entitlement\IEntitledProduct.cs" />
+    <Compile Include="User\Entitlement\IEntitledProductItemCodeFactory.cs" />
+    <Compile Include="User\Entitlement\IEntitlementAccess.cs" />
+    <Compile Include="User\Entitlement\IEntitlementAccessContext.cs" />
+    <Compile Include="User\Entitlement\IEntitlementAccessContexts.cs" />
+    <Compile Include="User\Entitlement\IEntitlementAccessFactory.cs" />
     <Compile Include="User\Entitlement\IEntitlementChecksEnabled.cs" />
-    <Compile Include="User\Entitlement\IEntitlementFactory.cs" />
+    <Compile Include="User\Entitlement\IEntitlementProductFactory.cs" />
     <Compile Include="User\Entitlement\IEntitlementsContexts.cs" />
     <Compile Include="User\Entitlement\IEntitlementSession.cs" />
     <Compile Include="User\Entitlement\IAuthenticatedUserEntitlementsContext.cs" />
+    <Compile Include="User\Entitlement\IIsEntitledProducItemContext.cs" />
+    <Compile Include="User\Entitlement\IsEntitledProducItemContext.cs" />
     <Compile Include="User\Entitlement\IUserEntitlementsContext.cs" />
-    <Compile Include="User\Entitlement\Scrip\ScripEntitlement.cs" />
-    <Compile Include="User\Entitlement\Scrip\ScripEntitlementFactory.cs" />
     <Compile Include="User\Entitlement\SiteDebugging\ISiteDebuggingEntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\SiteDebugging\SiteDebuggingEntitlementChecksEnabled.cs" />
     <Compile Include="User\Entitlement\AuthenticatedUserEntitlementsContext.cs" />
@@ -488,14 +633,33 @@
     <Compile Include="Services\NlmExport\Models\Front\NlmJournalMetaModel.cs" />
     <Compile Include="Services\NlmExport\Models\NlmArticleModel.cs" />
     <Compile Include="Services\NlmExport\NlmExportService.cs" />
-    <Compile Include="Subscription\IIndividualSubscriptionRenewalMessageContext.cs" />
-    <Compile Include="Subscription\IndividualSubscriptionRenewalMessageContext.cs" />
     <Compile Include="Session\SpecificSessionStore.cs" />
     <Compile Include="SiteDebugging\SiteDebuggingAllowedConfiguration.cs" />
+    <Compile Include="User\Newsletter\FindSiteNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\IFindSiteNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\IPublicationsNewsletterUserOptInContext.cs" />
+    <Compile Include="User\Newsletter\ISetByTypeNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\ISetPublicationsNewsletterUserOptIns.cs" />
+    <Compile Include="User\Newsletter\ISiteNewsletterTypes.cs" />
+    <Compile Include="User\Newsletter\ISiteNewsletterTypesContext.cs" />
+    <Compile Include="User\Newsletter\ISiteNewsletterTypesFactory.cs" />
+    <Compile Include="User\Newsletter\ISiteNewsletterUserOptedIn.cs" />
     <Compile Include="User\Newsletter\ISiteNewsletterUserOptedInContext.cs" />
+    <Compile Include="User\Newsletter\IPublicationNewsletterUserOptIn.cs" />
+    <Compile Include="User\Newsletter\ISiteNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\ISitesNewsletterTypes.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptIn.cs" />
-    <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptInContext.cs" />
+    <Compile Include="User\Newsletter\PublicationsNewsletterUserOptInContext.cs" />
+    <Compile Include="User\Newsletter\SetByTypeNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\SetPublicationsNewsletterUserOptIns.cs" />
+    <Compile Include="User\Newsletter\SiteNewsletterTypes.cs" />
+    <Compile Include="User\Newsletter\SiteNewsletterTypesContext.cs" />
+    <Compile Include="User\Newsletter\SiteNewsletterTypesFactory.cs" />
+    <Compile Include="User\Newsletter\PublicationNewsletterUserOptIn.cs" />
+    <Compile Include="User\Newsletter\SiteNewsletterUserOptedIn.cs" />
+    <Compile Include="User\Newsletter\SiteNewsletterUserOptInsContext.cs" />
+    <Compile Include="User\Newsletter\SitesNewsletterTypes.cs" />
     <Compile Include="User\Offer\IOfferUserOptedInContext.cs" />
     <Compile Include="User\Offer\IUpdateOfferUserOptInContext.cs" />
     <Compile Include="User\Document\IFindSavedDocuments.cs" />
@@ -512,7 +676,6 @@
     <Compile Include="User\Newsletter\SiteNewsletterUserOptedInContext.cs" />
     <Compile Include="User\Newsletter\UpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\UpdateSiteNewsletterUserOptIn.cs" />
-    <Compile Include="User\Newsletter\UpdateSiteNewsletterUserOptInContext.cs" />
     <Compile Include="User\Offer\OfferUserOptedInContext.cs" />
     <Compile Include="User\Offer\UpdateOfferUserOptInContext.cs" />
     <Compile Include="User\Document\RemoveDocumentContext.cs" />
@@ -524,15 +687,26 @@
     <Compile Include="User\Registration\ComponentModel\DataAnnotations\PublicEmailRestrictionAttribute.cs" />
     <Compile Include="User\Registration\ICompetitorRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\IPublicRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\IRegisterReturnUrlContext.cs" />
     <Compile Include="User\Registration\IRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\IRestrictedEmailDomainsFactory.cs" />
     <Compile Include="User\Registration\CompetitorRestrictedEmailDomains.cs" />
     <Compile Include="User\Registration\PublicRestrictedEmailDomains.cs" />
+    <Compile Include="User\Registration\RegisterReturnUrlContext.cs" />
+    <Compile Include="User\Registration\RegisterUserResult.cs" />
     <Compile Include="User\Registration\RestrictedEmailDomainsFactory.cs" />
     <Compile Include="User\Registration\Web\IWebIsActiveRegistration.cs" />
     <Compile Include="User\Registration\Web\IWebRegisterUserContext.cs" />
     <Compile Include="User\Registration\Web\WebIsActiveRegistration.cs" />
     <Compile Include="User\Registration\Web\WebRegisterUserContext.cs" />
+    <Compile Include="User\Search\ISavedSearchDisplayable.cs" />
+    <Compile Include="User\Search\ISavedSearchEntity.cs" />
+    <Compile Include="User\Search\ISavedSearchItemId.cs" />
+    <Compile Include="User\Search\ISavedSearchSaveable.cs" />
+    <Compile Include="User\Search\SavedSearchDisplayModel.cs" />
+    <Compile Include="User\Search\SavedSearchEntity.cs" />
+    <Compile Include="User\Search\SavedSearchInput.cs" />
+    <Compile Include="User\Search\SavedSearchService.cs" />
     <Compile Include="User\SitecoreUserContext.cs" />
     <Compile Include="User\SiteDebugging\SiteDebuggingUserIpAddressContext.cs" />
     <Compile Include="SiteDebugging\ISiteDebuggingAllowedConfiguration.cs" />
@@ -686,7 +860,6 @@
     <Compile Include="Navigation\INavigation.cs" />
     <Compile Include="Navigation\ItemNavigationTreeFactory.cs" />
     <Compile Include="Navigation\Navigation.cs" />
-    <Compile Include="Navigation\TaxonomyItemTreeFactory.cs" />
     <Compile Include="Presentation\GlassRenderingContext.cs" />
     <Compile Include="Presentation\GlassRenderingItemContext.cs" />
     <Compile Include="Presentation\GlassRenderingItemContext`1.cs" />
@@ -734,13 +907,12 @@
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultPublicationTitleField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultSummaryField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultTitleField.cs" />
-    <Compile Include="Search\ComputedFields\SearchResults\SearchResultUrlField.cs" />
     <Compile Include="Search\Extensions\QueryableExtensions.cs" />
     <Compile Include="Search\Filter\IArticleEScenicIDFilter.cs" />
-    <Compile Include="Search\Filter\IArticleNumberFilter.cs" />
+    <Compile Include="Search\Filter\IArticleNumbersFilter.cs" />
     <Compile Include="Search\Filter\ITaxonomySearchFilter.cs" />
     <Compile Include="Search\IProviderSearchContextFactory.cs" />
-    <Compile Include="Search\PredicateBuilders\InformaPredicateBuilder.cs" />
+    <Compile Include="Search\PredicateBuilders\InformaFilterPredicateBuilder.cs" />
     <Compile Include="Search\ProviderSearchContextFactory.cs" />
     <Compile Include="Search\Results\IArticleEScenicID.cs" />
     <Compile Include="Search\Results\IArticleNumber.cs" />
@@ -751,18 +923,12 @@
     <Compile Include="Search\SearchIndex\CustomSwitchOnRebuildSolrSearchIndex.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseGlassComputedField.cs" />
     <Compile Include="Services\Search\Fields\Base\BaseInterfaceFactoryComputedField.cs" />
-    <Compile Include="Site\GlassSiteRootContext.cs" />
-    <Compile Include="Site\ISiteHomeContext.cs" />
     <Compile Include="Site\ISiteMainNavigationContext.cs" />
     <Compile Include="Site\ISiteMaintenanceContext.cs" />
     <Compile Include="Site\ISiteMaintenanceInfo.cs" />
-    <Compile Include="Site\ISiteRootContext.cs" />
-    <Compile Include="Site\GlassSiteHomeContext.cs" />
     <Compile Include="Site\SiteMainNavigationContext.cs" />
     <Compile Include="Site\SiteMaintenanceContext.cs" />
     <Compile Include="Site\SiteMaintenanceInfo.cs" />
-    <Compile Include="Subscription\User\IUserSubscribedContext.cs" />
-    <Compile Include="Subscription\User\UserSubscribedContext.cs" />
     <Compile Include="User\Authentication\Web\WebLogoutUser.cs" />
     <Compile Include="User\Authentication\SitecoreVirtualUsernameFactory.cs" />
     <Compile Include="User\Authentication\Web\WebLogoutUserActions.cs" />
@@ -770,12 +936,10 @@
     <Compile Include="User\Entitlement\EntitledAccessLevel.cs" />
     <Compile Include="User\Entitlement\EntitledProductContext.cs" />
     <Compile Include="User\Entitlement\Entitlement.cs" />
-    <Compile Include="User\Entitlement\EntitledContext.cs" />
     <Compile Include="Company\User\Entitlement\ICompanyEntitlementsContext.cs" />
     <Compile Include="User\Entitlement\IEntitledProductContext.cs" />
     <Compile Include="User\Entitlement\IEntitlementsContext.cs" />
     <Compile Include="User\Entitlement\IEntitlement.cs" />
-    <Compile Include="User\Entitlement\IEntitledContext.cs" />
     <Compile Include="User\Entitlement\IGetIPEntitlements.cs" />
     <Compile Include="User\Entitlement\IGetUserEntitlements.cs" />
     <Compile Include="User\FindUserByUsername.cs" />
@@ -793,9 +957,6 @@
     <Compile Include="User\Profile\AccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IAccountInfoWriteResult.cs" />
     <Compile Include="User\Profile\IFindUserProfileByUsername.cs" />
-    <Compile Include="User\Profile\IManageSubscriptions.cs" />
-    <Compile Include="User\Profile\ISubscription.cs" />
-    <Compile Include="User\Profile\ISubscriptionsReadResult.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInFactory.cs" />
     <Compile Include="User\Newsletter\IFindNewsletterUserOptIns.cs" />
     <Compile Include="User\Offer\IOfferUserOptedIn.cs" />
@@ -811,8 +972,6 @@
     <Compile Include="User\Newsletter\NewsletterUserOptInFactory.cs" />
     <Compile Include="User\Document\SavedDocument.cs" />
     <Compile Include="User\Document\SavedDocumentWriteResult.cs" />
-    <Compile Include="User\Profile\Subscription.cs" />
-    <Compile Include="User\Profile\SubscriptionsReadResult.cs" />
     <Compile Include="User\Registration\INewUser.cs" />
     <Compile Include="User\Registration\INewUserFactory.cs" />
     <Compile Include="User\Registration\IRegisterUser.cs" />
@@ -908,18 +1067,26 @@
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalIdResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalTitleResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\PublisherResolver.cs" />
+    <Compile Include="Utilities\Extensions\ArticleExtensions.cs" />
     <Compile Include="Utilities\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Utilities\Extensions\EnumerableStringExtensions.cs" />
+    <Compile Include="Utilities\Extensions\GlassBaseExtensions.cs" />
     <Compile Include="Utilities\Extensions\GlassLinkExtensions.cs" />
     <Compile Include="Utilities\Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Utilities\Extensions\ItemExtensions.cs" />
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
+    <Compile Include="Utilities\Extensions\GenericsExtensions.cs" />
     <Compile Include="Utilities\Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\References\Constants.cs" />
+    <Compile Include="Utilities\References\DictionaryKeys.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />
     <Compile Include="Utilities\References\IRenderingReferences.cs" />
     <Compile Include="Utilities\References\ItemReferences.cs" />
     <Compile Include="Utilities\References\RenderingReferences.cs" />
+    <Compile Include="Utilities\Security\Crypto.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
+    <Compile Include="Utilities\StringUtils\BylineMaker.cs" />
     <Compile Include="Utilities\StringUtils\HtmlUtil.cs" />
     <Compile Include="Utilities\StringUtils\WordUtil.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
@@ -933,6 +1100,13 @@
     <Compile Include="Utilities\WebUtils\IRefreshPage.cs" />
     <Compile Include="Utilities\WebUtils\RefreshPage.cs" />
     <Compile Include="Utilities\WebUtils\UrlUtils.cs" />
+    <Compile Include="ViewModels\Account\ISignInViewModel.cs" />
+    <Compile Include="ViewModels\Account\SignInViewModel.cs" />
+    <Compile Include="Wrappers\HttpContextProvider.cs" />
+    <Compile Include="Wrappers\SitecoreSecurityWrapper.cs" />
+    <Compile Include="Wrappers\SitecoreServiceAliases.cs" />
+    <Compile Include="Wrappers\SitecoreUrlWrapper.cs" />
+    <Compile Include="Wrappers\WebClientWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -946,6 +1120,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InterfaceFactory\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605092039013_InitialCreate.resx">
+      <DependentUpon>201605092039013_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

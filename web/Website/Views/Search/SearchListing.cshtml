@@ -1,4 +1,5 @@
-﻿@model dynamic
+﻿@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
+@model SearchViewModel
 
 <section class="search-results"
          ng-class="{ 'headlines-only': headlinesOnly.showOnlyHeadlines() }"
@@ -9,13 +10,13 @@
 
         <div class="search-result__body">
 
-            <div class="search-result__pubdate">
-                <time datetime="2015-01-15">{{doc.searchDate | date: 'd MMM yyyy' }}</time>
+            <div class="search-result__pubdate" ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'">
+                <time datetime="{{doc.searchDate | date: 'yyyy-MM-dd'}}">{{doc.searchDate | date: 'd MMM yyyy' }}</time>
             </div>
 
-            <span class="search-result__line-separator" ng-if="doc.contentType !== ''"></span>
+            <span class="search-result__line-separator" ng-if="doc.contentType"></span>
 
-            <div class="search-result__content-type">
+            <div class="search-result__content-type" ng-if="doc.contentType">
                 {{::doc.contentType}}
             </div>
 
@@ -26,39 +27,49 @@
                     <use ng-href="/dist/img/svg-sprite.svg#{{::doc.mediaType}}" xlink:href=""></use>
                 </svg> <!-- example media type icon, video -->
             </div>
-            <!--
-            <div    class="search-result__bookmark pop-out__trigger js-angular-bookmark"
-                    ng-class="doc.isUserAuthenticated ? 'js-bookmark-article' : 'js-pop-out-trigger'"
-                    data-pop-out-type="sign-in"
-                    data-pop-out-align="right"
-                    data-bookmark-id="{{::doc.itemId}}"
-                    ng-click="doc.isUserAuthenticated ? fireBookmark(doc, $event, $index) : null"
-                    data-is-bookmarked="{{doc.isArticleBookmarked}}">
+            <input type="hidden" class="js-search-results-id" data-bookmark-id="{{::doc.itemId}}" />
 
-                <svg ng-if="doc.isArticleBookmarked" class="icon__bookmark">
+
+            <div class="search-result__bookmark pop-out__trigger js-angular-bookmark @(Model.IsAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger")"
+                 data-pop-out-type="sign-in"
+                 data-pop-out-align="right"
+                 data-bookmark-id="{{::doc.itemId}}"
+                 ng-click="@(Model.IsAuthenticated ? "fireBookmark(doc, $event, $index)" : "null")"
+                 data-is-bookmarked="{{doc.isArticleBookmarked}}"
+				 data-analytics='{
+ 					"bookmark": "true",
+ 					"bookmark_title": "{{ ::doc.title }}",
+ 					"bookmark_publication": "{{ ::doc.publicationTitle }}"}'>
+
+                <svg ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'" class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked js-angular-bookmark"
+				ng-class="{ 'is-visible': doc.isArticleBookmarked }">
                     <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
                 </svg>
 
-                <svg ng-if="!doc.isArticleBookmarked" class="icon__bookmark">
+                <svg ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'" class="action-flag__icon action-flag__icon--bookmark article-bookmark js-angular-bookmark"
+				ng-class="{ 'is-visible': !doc.isArticleBookmarked }">
                     <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
                 </svg>
             </div>
-            -->
-            <div class="search-result__publication">
+
+
+            <div class="search-result__publication" ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'">
                 {{ ::doc.publicationTitle }}
             </div>
 
-            <a class="search-result__heading article-preview__headline" ng-href="{{ ::doc.url }}" title="{{ ::doc.title }}">
-                {{ ::doc.title }}
+            <a class="search-result__heading article-preview__headline click-utag"
+               ng-href="{{ ::doc.url }}"
+               title="{{ ::doc.title }}"
+               data-info='{ "event_name": "search_click_through", "click_through_destination": "{{ ::doc.title }}", "click_through_source": "@Model.GlassModel.Title" }' ng-bind-html="doc.title">
             </a>
 
-            <div class="search-result__author" ng-if="doc.byline !== ''">
+            <div class="search-result__author" ng-if="doc.byline">
                 By {{ ::doc.byline }}
             </div>
 
             <p class="search-result__description" ng-bind-html="doc.summary"></p>
 
-            <div class="search-result__tags">
+            <div class="search-result__tags" ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'">
                 <span ng-repeat="tax in doc.searchDisplayTaxonomy.links">
                     <a ng-click="filterResult(tax.url)" href="{{::tax.url}}">
                         {{::tax.title}}

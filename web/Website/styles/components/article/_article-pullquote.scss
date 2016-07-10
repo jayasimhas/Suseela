@@ -13,17 +13,17 @@ Styles for a pull quote or blockquote.
 
 .article-pullquote {
     @include textMix('Roboto', 22px, 500);
-    border-bottom: 1px solid $informa-dark-orange;
-    border-top: 4px solid $informa-dark-orange;
+    border-bottom: 1px solid $color-tree-poppy-orange;
+    border-top: 4px solid $color-tree-poppy-orange;
     clear: both;
-    color: $informa-black;
+    color: $color-zeus-black;
     line-height: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
     padding: 1.75rem 0.75rem;
 
     p {
-        color: $informa-black;
+        color: $color-zeus-black;
 
         &:last-child,
         &:only-child {

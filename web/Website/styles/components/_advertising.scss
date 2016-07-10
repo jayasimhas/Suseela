@@ -2,7 +2,7 @@
 title: Leaderboard
 section: Advertising
 ---
-
+Leaderboard-style ads are replaced with smaller images at smartphone width (480px)
 ```example:html
 <div class="advertising advertising--leaderboard">
 	<span class="advertising__label">Advertisement</span>
@@ -62,7 +62,7 @@ section: Advertising
 		display: block;
         letter-spacing: 1px;
         text-transform: uppercase;
-        color: $informa-light-gray-d;
+        color: $color-light-gray;
 		margin-bottom: 0.25rem;
 	}
 

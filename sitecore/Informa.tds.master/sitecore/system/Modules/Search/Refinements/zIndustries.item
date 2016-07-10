@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {00D42A79-03DE-4504-B2E0-6AFAF1ECFC33}
+database: master
+path: /sitecore/system/Modules/Search/Refinements/zIndustries
+parent: {CB643BB4-F947-48F8-A112-0F80239E64C6}
+name: zIndustries
+master: {00000000-0000-0000-0000-000000000000}
+template: {2463DE7D-4C6E-4E02-AB46-45833E0408C3}
+templatekey: Facet
+
+----version----
+language: en
+version: 1
+revision: 5f289083-99c6-4dae-abfe-6a9cc5094b3e
+
+----field----
+field: {3162CD52-3D1C-41F1-88A1-E5D7C4E89215}
+name: Facet Title
+key: facet title
+content-length: 8
+
+Industry
+----field----
+field: {D1C9128F-881B-4951-A9A3-96F7D60CF743}
+name: Key
+key: key
+content-length: 10
+
+industries
+----field----
+field: {605FCDD4-DB1F-43B1-A138-FC22F5C563F8}
+name: Field Name
+key: field name
+content-length: 15
+
+FacetIndustries
+----field----
+field: {0C554F2D-ABED-43C5-80BB-3236EDB7884A}
+name: Filter By Label
+key: filter by label
+content-length: 8
+
+Industry
+----field----
+field: {524CF7F5-8ED0-4CD5-9AAC-FF92E5BD6FBD}
+name: Is Multi Value
+key: is multi value
+content-length: 1
+
+1
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160414T141606Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5f289083-99c6-4dae-abfe-6a9cc5094b3e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160414T141717Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

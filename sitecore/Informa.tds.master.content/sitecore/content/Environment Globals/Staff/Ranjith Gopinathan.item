@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: ea7d48ce-f51b-41d0-b3cb-57193a0c74e0
+revision: b6672063-69d0-4797-b15d-d42fbe302c1b
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -29,6 +29,13 @@ content-length: 10
 
 Gopinathan
 ----field----
+field: {B3E3F7B7-3E08-4CBF-ABED-1932BB8639A7}
+name: Inactive
+key: inactive
+content-length: 1
+
+1
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -41,18 +48,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ea7d48ce-f51b-41d0-b3cb-57193a0c74e0
+b6672063-69d0-4797-b15d-d42fbe302c1b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190854Z
+20160420T094058Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 15
 
-sitecore\admin
+sitecore\srigby

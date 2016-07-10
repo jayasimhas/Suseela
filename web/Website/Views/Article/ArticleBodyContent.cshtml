@@ -1,12 +1,14 @@
-﻿@using Glass.Mapper.Sc.Web.Mvc
-@using Informa.Library.User.Entitlement
-@using Informa.Web.Models
-@model GlassArticleModel
+﻿@using Informa.Web.Models
+@using Sitecore.Resources.Media
+@inherits CustomGlassView<ArticleBodyContentModel>
 
 <div class="article-body-content">
-	<h1>@HttpUtility.HtmlDecode(Model.Title)</h1>
-	<h3>@Model.Sub_Title</h3>
-
+	<h1>@Html.Raw(Model.Title)</h1>
+	<h3>@Html.Raw(Model.Sub_Title)</h3>
+	@if (Model.DisplayLegacyPublication)
+	{
+		<p class="article-legacy-publication">@Model.LegacyPublicationText</p>
+	}
 	<div class="article-metadata">
 		<ul>
 			<li>
@@ -29,18 +31,21 @@
 		</ul>
 	</div>
 
-	@* MULTIPLE AUTHORS *@
-	@if (Model.Authors.Count() == 1)
+    @* MULTIPLE AUTHORS *@
+    @{
+        var authors = Model.Authors.Take(3).ToArray();
+    }
+	@if (authors.Length == 1)
 	{
-		var author = Model.Authors.FirstOrDefault();
+		var author = authors.FirstOrDefault();
 		@* SINGLE AUTHOR*@
 		<div class="article-author article-author--solo">
 			<ul class="article-author__list">
 				<li>
-					@if (!string.IsNullOrWhiteSpace(author?.Image))
+					@if (author.Image != null)
 					{
 						<div class="article-author__photo">
-							<img src="@author.Image">
+						    @RenderImage(author, model => model.Image, new { width = 120 })
 						</div>
 					}
 					<div class="article-author__solo-wrapper">
@@ -63,11 +68,11 @@
 		@* END SINGLE AUTHOR *@
 
 	}
-	else if (Model.Authors.Count() > 1)
+	else if (authors.Length > 1)
 	{
 		<div class="article-author">
 			<ul class="article-author__list">
-				@foreach (var author in Model.Authors.Take(3))
+				@foreach (var author in authors)
 				{
 					<li>
 						<span class="article-author__name">@author.Name</span>
@@ -89,12 +94,12 @@
 	}
 
 	@* If plugin created summary for article, it's the same as first paragraph... so hide summary. *@
-	@if (!string.IsNullOrEmpty(Model.ListableSummary) && !Model.Body.Contains(Model.ListableSummary))
+	@if (!string.IsNullOrEmpty(Model.Summary) && !Model.Body.Contains(Model.Summary))
 	{
 		@* * * Executive Summary *@
 		<div class="article-executive-summary">
 			<h4>Executive Summary</h4>
-			@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.ListableSummary))
+			@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))
 		</div>
 		@* End Executive Summary  *@
 	}
@@ -114,7 +119,7 @@
 		@* * *  ARTICLE - FEATURED IMAGE
 			IIPP-117 *@
 		<aside class="article-inline-image">
-			<img src="@Model.Image.ImageUrl" alt="@Model.Image.ImageAltText">
+			<img src="@Model.Image.GetScaledImage(790)" alt="@Model.Image.ImageAltText">
 			@if (!string.IsNullOrEmpty(Model.Image.ImageSource))
 			{
 				<span class="article-inline-image__source">

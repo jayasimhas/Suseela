@@ -8,7 +8,21 @@ section: Article Components
     <h2 class="article-topics__header">Topics</h2>
     <ul>
         <li class="article-topics__section-header">Therapy Areas</li>
-        <li class="article-topics__li"><a href="#">Infectious Diseases</a></li>
+        <li class="article-topics__li">
+            <a href="#">Infectious Diseases</a>
+            <ul>
+                <li><a href="#">Grandchild Topic</a></li>
+                <li>
+                    <a href="#">Grandchild Topic</a>
+                    <ul>
+                        <li><a href="#">Great Grandchild Topic</a></li>
+                        <li><a href="#">Great Grandchild Topic</a></li>
+                        <li><a href="#">Great Grandchild Topic</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Grandchild Topic</a></li>
+            </ul>
+        </li>
         <li class="article-topics__li"><a href="#">Orthopedics</a></li>
         <li class="article-topics__li"><a href="#">Respiratory</a></li>
         <li class="article-topics__li"><a href="#">Immune Disorders</a></li>
@@ -34,24 +48,29 @@ section: Article Components
         margin-left: 18px;
 
         &:before {
-
             // See shame.scss
-
         }
 
-        &--grandchild {
+        & ul li {
+            padding: 6px 0 12px;
+
             &:before {
+                color: $color-tree-poppy-orange;
                 background: none;
                 content: "•";
                 margin-left: -18px;
+                padding-right: 0.5rem;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
             }
         }
     }
 
     ul ul {
+        margin-top: 0.75rem;
         margin-left: 18px;
-
-
     }
 
     &__section-header {

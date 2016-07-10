@@ -10,7 +10,7 @@ section: Article Components
   <ul class="quick-facts__list--ul">
       <li>Quick text bullets</li>
   </ul>
-
+  <hr>
   <ol class="quick-facts__list--ol">
       <li>Quick facts numbered</li>
   </ol>
@@ -36,13 +36,13 @@ section: Article Components
     p,
     ul,
     ol {
-        color: $informa-black;
+        color: $color-zeus-black;
         margin-bottom: 2rem;
     }
 
     &__header {
         @include textMix('Roboto Condensed', 1.625rem, 700);
-        color: $informa-black;
+        color: $color-zeus-black;
         margin: 0 0 1rem;
     }
 
@@ -61,7 +61,7 @@ section: Article Components
 
     &__source {
         @include textMix('Roboto', 0.9375rem, 400);
-        color: $informa-dark-gray;
+        color: $color-abbey-gray;
         float: right;
         font-style: italic;
     }

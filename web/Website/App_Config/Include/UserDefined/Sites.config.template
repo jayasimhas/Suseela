@@ -1,0 +1,102 @@
+﻿<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <sites>
+      <site patch:before="site[@name='website']" name="InVivo"
+          database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+				  dictionaryDomain="InVivoDictionary"
+				  hostName="${Site.Domain.InVivo}" targetHostName="${Site.Domain.InVivo}"
+				  rootPath="/sitecore/content/InVivo" startItem="/home"
+				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+				  enableTracking="true" allowDebug="true"
+          enablePreview="true" enableWebEdit="true"
+          enableDebugger="true" disableClientData="false">
+        #if ($Env.DeliveryOnly == "true")
+        <patch:attribute name="enablePreview">false</patch:attribute>
+        <patch:attribute name="enableWebEdit">false</patch:attribute>
+        #end
+      </site>
+      <site patch:before="site[@name='website']" name="MedtechInsight"
+          database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+				  dictionaryDomain="MedtechInsightDictionary"
+				  hostName="${Site.Domain.MedtechInsight}" targetHostName="${Site.Domain.MedtechInsight}"
+				  rootPath="/sitecore/content/MedtechInsight" startItem="/home"
+				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+				  enableTracking="true" allowDebug="true"
+          enablePreview="true" enableWebEdit="true"
+          enableDebugger="true" disableClientData="false">
+        #if ($Env.DeliveryOnly == "true")
+        <patch:attribute name="enablePreview">false</patch:attribute>
+        <patch:attribute name="enableWebEdit">false</patch:attribute>
+        #end
+      </site>
+      <site patch:before="site[@name='website']" name="PinkSheet"
+          database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+				  dictionaryDomain="PinkSheetDictionary"
+				  hostName="${Site.Domain.PinkSheet}" targetHostName="${Site.Domain.PinkSheet}"
+				  rootPath="/sitecore/content/PinkSheet" startItem="/home"
+				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+				  enableTracking="true" allowDebug="true"
+          enablePreview="true" enableWebEdit="true"
+          enableDebugger="true" disableClientData="false">
+        #if ($Env.DeliveryOnly == "true")
+        <patch:attribute name="enablePreview">false</patch:attribute>
+        <patch:attribute name="enableWebEdit">false</patch:attribute>
+        #end
+      </site>
+      <site patch:before="site[@name='website']" name="RoseSheet"
+          database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+				  dictionaryDomain="RoseSheetDictionary"
+				  hostName="${Site.Domain.RoseSheet}" targetHostName="${Site.Domain.RoseSheet}"
+				  rootPath="/sitecore/content/RoseSheet" startItem="/home"
+				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+				  enableTracking="true" allowDebug="true"
+          enablePreview="true" enableWebEdit="true"
+          enableDebugger="true" disableClientData="false">
+        #if ($Env.DeliveryOnly == "true")
+        <patch:attribute name="enablePreview">false</patch:attribute>
+        <patch:attribute name="enableWebEdit">false</patch:attribute>
+        #end
+      </site>
+      <site patch:before="site[@name='website']" name="ScripIntelligence"
+          database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+				  dictionaryDomain="ScriptIntelligenceDictionary"
+				  hostName="${Site.Domain.Scrip}" targetHostName="${Site.Domain.Scrip}"
+				  rootPath="/sitecore/content/ScripIntelligence" startItem="/home"
+				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+				  enableTracking="true" allowDebug="true"
+          enablePreview="true" enableWebEdit="true"
+          enableDebugger="true" disableClientData="false">
+        #if ($Env.DeliveryOnly == "true")
+        <patch:attribute name="enablePreview">false</patch:attribute>
+        <patch:attribute name="enableWebEdit">false</patch:attribute>
+        #end
+      </site>
+      <site patch:before="site[@name='website']" name="LegacyRedirect"
+            database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+            hostName="${Site.Domain.LegacyRedirect}"
+            targetHostName="${Site.Domain.LegacyRedirect}"
+            dictionaryDomain="LegacyRedirectDictionary"
+            rootPath="/sitecore/content/LegacyRedirect" startItem="/home"
+            cacheHtml="true" htmlCacheSize="50MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+            enableTracking="true" allowDebug="true"
+            enablePreview="true" enableWebEdit="true"
+            enableDebugger="true" disableClientData="false">
+        #if ($Env.DeliveryOnly == "true")
+        <patch:attribute name="enablePreview">false</patch:attribute>
+        <patch:attribute name="enableWebEdit">false</patch:attribute>
+        #end
+      </site>
+      <site name="website">
+        <patch:attribute name="rootPath">/sitecore/content/ScripIntelligence</patch:attribute>
+        <patch:attribute name="dictionaryDomain">ScriptIntelligenceDictionary</patch:attribute>
+        <patch:attribute name="targetHostName">${project.domain}</patch:attribute>
+        <patch:attribute name="hostName">${project.domain}</patch:attribute>
+        <patch:attribute name="htmlCacheSize">${Cache.HtmlCache.Website}</patch:attribute>
+        #if ($Env.DeliveryOnly == "true")
+        <patch:attribute name="enablePreview">false</patch:attribute>
+        <patch:attribute name="enableWebEdit">false</patch:attribute>
+        #end
+      </site>
+    </sites>
+  </sitecore>
+</configuration>

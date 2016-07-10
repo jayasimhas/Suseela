@@ -17,7 +17,7 @@
           width: 100%;
           margin-bottom: 30px;
           border: 0;
-          background-color: $informa-light-orange;
+          background-color: $color-yellow-orange;
           text-align: center;
 
           h6 {
@@ -31,7 +31,7 @@
       float: right;
       line-height: 29px;
       cursor: pointer;
-      color: $informa-red;
+      color: $color-cardinal-red;
     }
 
     &--clear-company {
@@ -39,7 +39,7 @@
       margin-right: 11px;
 
       svg {
-        @include svg-fill($informa-red);
+        @include svg-fill($color-cardinal-red);
         margin: 0;
         width: 15px;
         height: 15px;
@@ -48,7 +48,7 @@
 
     &--toggle-section {
         @extend .main-menu__arrow-icon;
-        @include svg-fill($color-medium-gray-8);
+        @include svg-fill($color-old-silver-gray);
         top: 0;
         right: 0;
 
@@ -62,7 +62,7 @@
       float: right;
 
       svg {
-        @include svg-fill($informa-light-gray-d);
+        @include svg-fill($color-light-gray);
         width: 18px;
       }
     }
@@ -72,10 +72,10 @@
     &--add {
         margin: 0 auto 0.5rem;
         width: 100%;
-        color: $informa-red;
+        color: $color-cardinal-red;
 
         svg {
-            @include svg-fill($informa-red);
+            @include svg-fill($color-cardinal-red);
             width: 10px;
             vertical-align: middle;
             margin-left: 3px;

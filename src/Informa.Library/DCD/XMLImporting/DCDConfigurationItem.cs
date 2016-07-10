@@ -10,8 +10,6 @@ namespace Informa.Library.DCD.XMLImporting
 {
     public class DCDConfigurationItem : CustomItem
     {
-        //public static readonly string TemplateId = "{4A364237-B3C3-43C9-88CB-41B8D11598BF}";
-
         #region Boilerplate CustomItem Code
 
         public DCDConfigurationItem(Item innerItem) : base(innerItem)
@@ -38,7 +36,6 @@ namespace Informa.Library.DCD.XMLImporting
             get
             {
                 return InnerItem.Fields["Error Distribution List"];
-                //return new CustomTextField(InnerItem, InnerItem.Fields["Error Distribution List"]); 
             }
         }
 
@@ -57,7 +54,6 @@ namespace Informa.Library.DCD.XMLImporting
             //This is called in a weird context, so the FieldRenderer throws a null exception
             //Use the raw value instead
             return InnerItem.Fields["Error Distribution List"].GetValue(true).Split(',').Select(s => s.Trim()).ToList();
-            //return ErrorDistributionList.Raw.Split(',').Select(s => s.Trim()).ToList();
         }
     }
 }

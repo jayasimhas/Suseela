@@ -7,6 +7,7 @@ using Informa.Web.App_Start;
 using Sitecore.Web;
 using Autofac;
 using System.Web;
+using Sitecore.Configuration;
 using StackExchange.Profiling;
 
 namespace Informa.Web
@@ -19,6 +20,11 @@ namespace Informa.Web
 			AutofacConfig.Start();
 
 			// Setup SOLR
+			var containerBuilder = new ContainerBuilder();
+			int timeout;
+			int.TryParse(Settings.GetSetting("SolrConnectionTimeout", "200000"), out timeout);
+			containerBuilder.RegisterType<SolrNet.Impl.SolrConnection>().WithParameter(new NamedParameter("Timeout", timeout));
+
 			new CustomAutoFacSolrStartUp(new ContainerBuilder()).Initialize();
 
 			// Code that runs on application startup

@@ -12,36 +12,19 @@ templatekey: Email Config
 ----version----
 language: en
 version: 1
-revision: 4be8a8a2-79b0-4f31-9010-b3ef15fe0499
+revision: 56b771f1-7245-43c4-bb25-39894fc71b9d
 
 ----field----
 field: {23B4E9BC-9D9C-44F8-80AC-93230012F320}
 name: Email A Friend Footer Content
 key: email a friend footer content
-content-length: 2985
+content-length: 1181
 
-											<p style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding-bottom:12px">Sent to <a href="mailto:#RECIPIENT_EMAIL#">#RECIPIENT_EMAIL#</a> on behalf of <a href="mailto:#SENDER_EMAIL#">#SENDER_EMAIL#</a>. If you have questions about this email or Scrip Intelligence, please call UK support at +44 (0)20 7017 4161 / US support at +1 617 374 22 42 or <a href="mailto:emailonlineaccess@informa.com">emailonlineaccess@informa.com</a>.</p>
-											<p style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding-bottom:12px">To ensure delivery please add <a href="mailto:info@scripintelligence.com">info@scripintelligence.com</a> to your address book.</p>
-											<p style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding-bottom:12px">
-												© 2015 Informa plc. All rights reserved.<br />
-												Scrip Intelligence is owned and operated by Informa plc ("informa") whose registered office is 5 Howick Place, London, SW1P 1WG. Registered in England and Wales. Number 3099067. UK VAT Group GB 365 4626 36
-											</p>
-											<p style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding-bottom: 12px">
-												<a href="#" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #be1e2d; font-weight: normal; text-decoration: none">Advertise</a>
-												<span class="footer-link-separator" style="padding-left: 8px; padding-right: 8px; color: #d1d3d4; font-weight: 100; vertical-align: middle">|</span>
-												<a href="#" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #be1e2d; font-weight: normal; text-decoration: none">About Us</a>
-												<span class="footer-link-separator" style="padding-left: 8px; padding-right: 8px; color: #d1d3d4; font-weight: 100; vertical-align: middle">|</span>
-												<a href="#" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #be1e2d; font-weight: normal; text-decoration: none">Login</a>
-												<span class="footer-link-separator" style="padding-left: 8px; padding-right: 8px; color: #d1d3d4; font-weight: 100; vertical-align: middle">|</span>
-												<a href="#" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #be1e2d; font-weight: normal; text-decoration: none">Contact Us</a>
-												<span class="footer-link-separator" style="padding-left: 8px; padding-right: 8px; color: #d1d3d4; font-weight: 100; vertical-align: middle">|</span>
-												<a href="#" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #be1e2d; font-weight: normal; text-decoration: none">Privacy</a>
-												<span class="footer-link-separator" style="padding-left: 8px; padding-right: 8px; color: #d1d3d4; font-weight: 100; vertical-align: middle">|</span>
-												<a href="#" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #be1e2d; font-weight: normal; text-decoration: none">Help</a>
-
-
-
-											</p>
+<p style="padding-bottom: 12px;">Sent to&nbsp;<a href="mailto:#RECIPIENT_EMAIL#">#RECIPIENT_EMAIL#</a>&nbsp;on behalf of&nbsp;<a href="mailto:#SENDER_EMAIL#">#SENDER_EMAIL#</a>. If you have questions about this email or Scrip, please call UK support at +44 (0)20 7017 4161 / US support at +1 617 374 22 42 or&nbsp;<a href="mailto:clientservices@scripintelligence.com">clientservices@scripintelligence.com</a>.</p>
+<p style="padding-bottom: 12px;">To ensure delivery please add&nbsp;<a href="mailto:pmbi-notifications@informa.com">pmbi-notifications@informa.com</a>&nbsp;to your address book.</p>
+<p style="padding-bottom: 12px;">&copy; 2016 Informa plc. All rights reserved.<br />
+Scrip is owned and operated by Informa plc ("informa") whose registered office is 5 Howick Place, London, SW1P 1WG. Registered in England and Wales. Number 3099067. UK VAT Group GB 365 4626 36</p>
+<a href="https://subscribe.scripintelligence.com">Subscribe</a> | <a href="http://advertising.scripintelligence.com/" target="_blank">Advertise</a> | <a href="https://scrip.pharmamedtechbi.com/customer-support">Customer Support</a> | <a href="https://scrip.pharmamedtechbi.com/contact-us">Contact Us</a>
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -69,14 +52,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-4be8a8a2-79b0-4f31-9010-b3ef15fe0499
+56b771f1-7245-43c4-bb25-39894fc71b9d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160316T212613Z
+20160423T171256Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

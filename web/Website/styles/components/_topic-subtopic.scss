@@ -2,10 +2,21 @@
     clear: both;
 
     &__header {
-        color: $informa-black;
-        border-left: 12px solid $informa-red;
-        padding-left: 18px;
+        align-items: flex-end;
+        display: flex;
+        flex-wrap: nowrap;
         margin-bottom: 1.5rem;
+
+        @include breakpoint('medium') {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__title {
+        color: $color-zeus-black;
+        border-left: 12px solid $color-cardinal-red;
+        flex: 1 1 auto;
+        padding-left: 18px;
 
         .topic-subtopic__header-explore-link {
             @include textMix('Roboto', 1rem, 500);
@@ -13,8 +24,6 @@
         }
 
         @include breakpoint('medium') {
-            margin-bottom: 3rem;
-
             .topic-subtopic__header-explore-link {
                 margin-left: 0;
                 display: block;
@@ -28,6 +37,39 @@
             .topic-subtopic__header-explore-link {
                 margin-top: 0.5rem;
             }
+        }
+    }
+
+    &__alert {
+        @include textMix('Roboto', 0.875rem, 400);
+
+		& .action-flag {
+			padding-top: 0;
+		}
+		
+        &-icon {
+            @include svg-fill($color-dusty-gray);
+			display: none;
+            height: 1.5rem;
+            margin-right: 0.5rem;
+            width: 1.5rem;
+            vertical-align: middle;
+
+			&.is-active {
+				display: inline-block;
+			}
+        }
+
+        @include breakpoint('small') {
+
+            &-icon {
+                margin: 0;
+            }
+
+            span {
+                display: none;
+            }
+
         }
     }
 

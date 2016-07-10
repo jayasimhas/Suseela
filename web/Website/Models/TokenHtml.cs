@@ -7,12 +7,14 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Web.Mvc;
 using Informa.Library.Article.Search;
+using Informa.Library.Services.Global;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.DCD;
 using Informa.Web.ViewModels;
+using Informa.Library.Utilities.Extensions;
+using Jabberwocky.Core.Caching;
 
 namespace Informa.Web.Models
 {
@@ -23,19 +25,22 @@ namespace Informa.Web.Models
 		protected TextWriter Output { get; private set; }
 		protected TK Model { get; set; }
 
-		public ISitecoreContext SitecoreContext => GlassHtml.SitecoreContext;
 		public IArticleSearch ArticleSearch { get; }
+	    private readonly ICacheProvider CacheProvider; 
+        private readonly IArticleListItemModelFactory _articleListableFactory;
+	    private readonly IGlobalSitecoreService GlobalService;
 
-		private readonly IArticleListItemModelFactory _articleListableFactory;
-
-		public TokenHtml(HtmlHelper<TK> helper)
+		public TokenHtml(HtmlHelper<TK> helper,
+            IGlobalSitecoreService globalService)
 		{
 			HtmlHelper = helper;
 			GlassHtml = helper.Glass();
 			Model = HtmlHelper.ViewData.Model;
 
 			ArticleSearch = DependencyResolver.Current.GetService<IArticleSearch>();
-			_articleListableFactory = DependencyResolver.Current.GetService<IArticleListItemModelFactory>();
+            CacheProvider = DependencyResolver.Current.GetService<ICacheProvider>();
+            _articleListableFactory = DependencyResolver.Current.GetService<IArticleListItemModelFactory>();
+            GlobalService = globalService;
 		}
 
 		public string ReplaceCompany(string content)
@@ -44,7 +49,7 @@ namespace Informa.Web.Models
 
 			foreach (Match match in dealRegex.Matches(content))
 			{
-				var replace = DCDTokenMatchers.dealMatchEval(match);
+				var replace = DCDTokenMatchers.DealMatchEval(match);
 
 				content = content.Replace(match.Value, replace.ToString());
 			}
@@ -59,28 +64,33 @@ namespace Informa.Web.Models
 			foreach (Match match in referenceArticleTokenRegex.Matches(content))
 			{
 				string articleNumber = match.Groups[1].Value;
+                string cacheKey = $"TokenRepRelated-{articleNumber}";
+                string replace = CacheProvider.GetFromCache(cacheKey, () => BuildReplaceRelatedArticles(articleNumber));
 
-
-				IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-				filter.ArticleNumber = articleNumber;
-				var results = ArticleSearch.Search(filter);
-
-				HtmlString replace = new HtmlString("");
-
-				if (results.Articles.Any())
-				{
-					var article = results.Articles.FirstOrDefault();
-					if (article != null)
-					{
-						var articleText = $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
-						replace = new HtmlString(articleText);
-					}
-				}
-
-				content = content.Replace(match.Value, replace.ToHtmlString());
-			}
+				content = content.Replace(match.Value, replace);
+            }
 			return content;
 		}
+
+	    public string BuildReplaceRelatedArticles(string articleNumber)
+	    {
+            HtmlString replace = new HtmlString("");
+
+            IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+            filter.ArticleNumbers = articleNumber.SingleToList();
+            var results = ArticleSearch.Search(filter);
+
+            if (results.Articles.Any()) {
+                var article = results.Articles.FirstOrDefault();
+                if (article != null)
+                {
+                    var articleText = $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {GlobalService.GetPublicationName(article._Id)}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
+                    replace = new HtmlString(articleText);
+                }
+            }
+
+	        return replace.ToHtmlString();
+	    }
 
 		public string ReplaceSidebarArticles(string content, string partialName)
 		{
@@ -89,24 +99,30 @@ namespace Informa.Web.Models
 			foreach (Match match in sidebarRegex.Matches(content))
 			{
 				string articleNumber = match.Groups[1].Value;
-
-				IArticleSearchFilter filter = ArticleSearch.CreateFilter();
-				filter.ArticleNumber = articleNumber;
-				var results = ArticleSearch.Search(filter);
-
-				HtmlString replace = new HtmlString("");
-
-				if (results.Articles.Any())
-				{
-					var article = results.Articles.FirstOrDefault();
-					if (article != null)
-						replace = HtmlHelper.Partial(partialName, _articleListableFactory.Create(article));
-				}
-
-				content = content.Replace(match.Value, replace.ToString());
+                string cacheKey = $"TokenRepSidebar-{articleNumber}";
+                string replace = CacheProvider.GetFromCache(cacheKey, () => BuildReplaceSidebarArticles(articleNumber, partialName));
+                
+				content = content.Replace(match.Value, replace);
 			}
 			return content;
 		}
+
+	    private string BuildReplaceSidebarArticles(string articleNumber, string partialName)
+	    {
+            HtmlString replace = new HtmlString("");
+
+            IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+            filter.ArticleNumbers = articleNumber.SingleToList();
+            var results = ArticleSearch.Search(filter);
+            
+            if (results.Articles.Any()) {
+                var article = results.Articles.FirstOrDefault();
+                if (article != null)
+                    replace = HtmlHelper.Partial(partialName, _articleListableFactory.Create(article));
+            }
+
+	        return replace.ToHtmlString();
+	    }
 
 		public virtual IHtmlString RenderCompanyLink(Expression<Func<TK, string>> expression)
 		{
@@ -139,7 +155,7 @@ namespace Informa.Web.Models
 	{
 		public static TokenHtml<T> TokenTransform<T>(this HtmlHelper<T> htmlHelper)
 		{
-			return new TokenHtml<T>(htmlHelper);
+            return new TokenHtml<T>(htmlHelper, DependencyResolver.Current.GetService<IGlobalSitecoreService>());
 		}
 	}
 }

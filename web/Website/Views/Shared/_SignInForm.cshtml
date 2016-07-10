@@ -1,4 +1,4 @@
-@model ISignInViewModel
+@model Informa.Library.ViewModels.Account.ISignInViewModel
 
 <div class="js-login-container">
 	<form 	method="post"
@@ -32,9 +32,9 @@
 	</form>
 </div>
 
-<div class="pop-out__sign-in-forgot-password js-reset-password-container">
+<div class="pop-out__forgot-password js-reset-password-container">
 
-	<form class="form-reset-password" data-on-submit="/Account/api/ResetPasswordApi/Generate/">
+	<form class="form-reset-password" data-on-submit="/Account/api/ResetPasswordApi/Generate/" data-is-password="false">
 		<div class="alert-success js-reset-password-success">
 			<svg class="alert__icon">
 				<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
@@ -55,7 +55,7 @@
 			<div class="pop-out__form-actions-wrapper">
 				<div></div>
 				<div class="sign-in__submit-wrapper">
-					<button class="button--filled  click-utag" type="submit" data-info='{"event_name" : "reset-password"}'>@Model.ResetPasswordSubmitText</button>
+					<button class="button--filled  click-utag" type="submit" data-info='{"event_name" : "reset-password-request"}'>@Model.ResetPasswordSubmitText</button>
 				</div>
 			</div>
 		</div>

@@ -22,7 +22,7 @@ namespace Sitecore.SharedSource.DataImporter.Logger {
             log = new StringBuilder();
         }
         
-        public void Log(string affectedItem, string message, ProcessStatus pResult = ProcessStatus.Info, string fieldName = "", string fieldValue = "")
+        public void Log(string affectedItem, string message, ProcessStatus pResult = ProcessStatus.Info, string fieldName = "", string fieldValue1 = "", string fieldValue2 = "")
         {
             if (pResult.ToString().ToLower().Contains("error"))
                 LoggedError = true;
@@ -35,7 +35,7 @@ namespace Sitecore.SharedSource.DataImporter.Logger {
             if (!LogRecords.ContainsKey(fileName))
                 LogRecords.Add(fileName, new List<ImportRow>());
 
-            LogRecords[fileName].Add(new ImportRow { AffectedItem = affectedItem, ErrorMessage = message, FieldName = fieldName, FieldValue = fieldValue });
+            LogRecords[fileName].Add(new ImportRow { AffectedItem = affectedItem, ErrorMessage = message, FieldName = fieldName, FieldValue1 = fieldValue1, FieldValue2 = fieldValue2 });
         }
 
         public string GetLog(){

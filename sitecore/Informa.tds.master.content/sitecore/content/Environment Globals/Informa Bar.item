@@ -12,7 +12,7 @@ templatekey: Informa Bar
 ----version----
 language: en
 version: 1
-revision: 9ec52d9a-c7c3-4c26-80e2-efe651c58c4b
+revision: 91b4d094-6078-4bf5-8523-03cbd0224b6b
 
 ----field----
 field: {4C2DD301-15F2-464C-A7B7-E45697E0EF64}
@@ -32,30 +32,30 @@ content-length: 231
 field: {DA3E3085-51DB-4B93-941E-265EEE3D1BDE}
 name: Link 1
 key: link 1
-content-length: 104
+content-length: 102
 
-<link text="Informa PLC" linktype="external" url="http://www.google.com" anchor="" class="" target="" />
+<link text="Informa PLC" linktype="external" url="http://informa.com/" anchor="" class="" target="" />
 ----field----
 field: {4ADB8FE0-7EC7-40A9-A5B5-4F438438791E}
 name: Link 2
 key: link 2
-content-length: 101
+content-length: 108
 
-<link text="About us" linktype="external" url="http://www.google.com" anchor="" class="" target="" />
+<link text="About us" linktype="external" url="http://informa.com/About-Us/" anchor="" class="" target="" />
 ----field----
 field: {D7A43A40-AE84-4D28-9959-CD09C78DED63}
 name: Link 3
 key: link 3
-content-length: 111
+content-length: 119
 
-<link text="Investor relations" linktype="external" url="http://www.google.com" anchor="" class="" target="" />
+<link text="Investor relations" linktype="external" url="http://informa.com/Investors/" anchor="" class="" target="" />
 ----field----
 field: {039CA390-5C48-4CB5-9374-2228DD95C0DD}
 name: Link 4
 key: link 4
-content-length: 99
+content-length: 104
 
-<link text="Talent" linktype="external" url="http://www.google.com" anchor="" class="" target="" />
+<link text="Talent" linktype="external" url="http://informa.com/Talent/" anchor="" class="" target="" />
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -83,14 +83,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-9ec52d9a-c7c3-4c26-80e2-efe651c58c4b
+91b4d094-6078-4bf5-8523-03cbd0224b6b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160316T203406Z
+20160411T062914Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

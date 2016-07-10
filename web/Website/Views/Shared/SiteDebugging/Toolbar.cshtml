@@ -1,51 +1,54 @@
 ﻿@model Informa.Web.ViewModels.SiteDebugging.IToolbarViewModel
-@if (Model.Enabled)
-{
-	<style>
-		.debugToolbar {
-			margin: 5px;
-			position: fixed;
-			top: 0;
-			z-index: 99999;
+<style>
+	.debugToolbar {
+		margin: 5px;
+		position: fixed;
+		top: 0;
+		z-index: 99999;
+	}
+	.debugToolbarContainer {
+		background-color: #f1f2f2;
+		border: 3px solid #d1d3d4;
+		display: none;
+	}
+	.debugToggleButton {
+		border: 3px solid #d1d3d4;
+		margin-bottom: 5px;
+	}
+	.debugToolbarSection {
+		margin: 5px;
+		padding: 5px;
+		border-bottom: 1px solid #d1d3d4;
+	}
+</style>
+<div class="debugToolbar">
+	<button class="js-debug-expand-button button--filled debugToggleButton">@Model.ToggleButtonText</button>
+	<div class="debugToolbarContainer">
+		<div class="debugToolbarSection">
+			@{ Html.RenderPartial("SiteDebugging/UserIpAddress", Model.UserIpAddressViewModel); }
+		</div>
+		<div class="debugToolbarSection">
+			@{ Html.RenderPartial("SiteDebugging/Username", Model.UsernameViewModel); }
+		</div>
+		<div class="debugToolbarSection">
+			@{ Html.RenderPartial("SiteDebugging/EntitlementsCheckEnabled", Model.EntitlementsCheckEnabledViewModel); }
+		</div>
+		<div class="debugToolbarSection">
+			@{ Html.RenderPartial("SiteDebugging/UserEntitlements", Model.UserEntitlementsViewModel); }
+		</div>
+		@if (Model.UserPageEntitlementViewModel.IsValidPage)
+		{
+			<div class="debugToolbarSection">
+				@{ Html.RenderPartial("SiteDebugging/UserPageEntitlement", Model.UserPageEntitlementViewModel); }
+			</div>
 		}
-		.debugToolbarContainer {
-			background-color: #f1f2f2;
-			border: 3px solid #d1d3d4;
-			display: none;
-		}
-		.debugToggleButton {
-			border: 3px solid #d1d3d4;
-			margin-bottom: 5px;
-		}
-		.debugToolbarSection {
-			margin: 5px;
-			padding: 5px;
-			border-bottom: 1px solid #d1d3d4;
-		}
-	</style>
-	<div class="debugToolbar">
-		<button class="js-debug-expand-button button--filled debugToggleButton">@Model.ToggleButtonText</button>
-		<div class="debugToolbarContainer">
-			<div class="debugToolbarSection">
-				@{ Html.RenderPartial("SiteDebugging/UserIpAddress", Model.UserIpAddressViewModel); }
-			</div>
-			<div class="debugToolbarSection">
-				@{ Html.RenderPartial("SiteDebugging/Username", Model.UsernameViewModel); }
-			</div>
-			<div class="debugToolbarSection">
-				@{ Html.RenderPartial("SiteDebugging/EntitlementsCheckEnabled", Model.EntitlementsCheckEnabledViewModel); }
-			</div>
-			<div class="debugToolbarSection">
-				@{ Html.RenderPartial("SiteDebugging/UserEntitlements", Model.UserEntitlementsViewModel); }
-			</div>
-			<div class="debugToolbarSection">
-				@{ Html.RenderPartial("SiteDebugging/UserSubscriptions", Model.UserSubscriptionsViewModel); }
-			</div>
+		<div class="debugToolbarSection">
+			@{ Html.RenderPartial("SiteDebugging/UserSubscriptions", Model.UserSubscriptionsViewModel); }
 		</div>
 	</div>
-	<script>
-		$('.js-debug-expand-button').on('click', function toggle(e) {
-			$(e.target).siblings('.debugToolbarContainer').toggle();
-		});
-	</script>
-}
+</div>
+<script>
+	$('.js-debug-expand-button').on('click', function toggle(e) {
+		$(e.target).siblings('.debugToolbarContainer').toggle();
+	});
+</script>

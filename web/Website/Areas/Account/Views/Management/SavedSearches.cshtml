@@ -1,0 +1,271 @@
+﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.Areas.Account.ViewModels.Management.SavedSearchesViewModel>
+
+@if (Model.IsAuthenticated)
+{
+    <div class="page-account">
+
+        <h1 class="page-account__header">@Editable(Model.GlassModel, model => model.Title)</h1>
+
+        @if (Model.SavedSearches.Any())
+        {
+            <div class="page-account__introduction">
+                @Editable(Model.GlassModel, model => model.Saved_Search_Intro)
+            </div>
+
+            <div class="page-preferences js-preferences-user-container">
+            <p class="page-account__error js-preferences-user-error-general">
+                @Model.GeneralErrorText
+            </p>
+            <p class="page-account__error js-preferences-user-error-null-user">
+                @Model.NullUserText
+            </p>
+            <p class="page-account__error js-preferences-user-error-request-failed">
+                @Model.RequestFailedText
+            </p>
+            <table class="sortable-table js-sortable-table">
+                <thead class="sortable-table__header">
+                <tr>
+                    <td class="sortable-table__col sortable-table__col--quarter-width js-sortable-table-sorter l-no-wrap"
+                        data-sortable-table-col="1">
+                        @Html.Raw(Model.SourceText)
+                        <div class="sorting-arrows">
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                            </svg>
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                            </svg>
+                        </div>
+                    </td>
+                    <td class="sortable-table__col sortable-table__col--half-width js-sortable-table-sorter l-no-wrap"
+                        data-sortable-table-col="2">
+                        @Html.Raw(Model.TitleText)
+                        <div class="sorting-arrows">
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--up click-utag" data-info='{"event_name":"saved-search-title-sort" "sort-direction":"up"}'>
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                            </svg>
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--down" data-info='{"event_name":"saved-search-title-sort" "sort-direction":"down"}'>
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                            </svg>
+                        </div>
+                    </td>
+                    <td class="sortable-table__col js-sortable-table-sorter l-no-wrap"
+                        data-sortable-table-col="3">
+                        @Html.Raw(Model.DateText)
+                        <div class="sorting-arrows">
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                            </svg>
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                            </svg>
+                        </div>
+                    </td>
+                    <td class="sortable-table__col js-sortable-table-sorter l-no-wrap"
+                        data-sortable-table-col="4"
+                        data-sortable-type="sort_checkbox">
+                        @Html.Raw(Model.EmailAlertText)
+                        @*
+
+                                COMING IN TS2a
+
+                                <a href="#" title="@Model.EmailAlertTooltipText">
+                                    <svg>
+                                        @* <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#@(Model.EmailAlertTooltipSvg)"></use>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#question-mark"></use>
+                                    </svg>
+                                </a> *@
+                        <div class="sorting-arrows">
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                            </svg>
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                            </svg>
+                        </div>
+                    </td>
+                    <td class="sortable-table__col"></td>
+                </tr>
+                </thead>
+                <thead class="sortable-table__header sortable-table__header--mobile">
+                <tr>
+                    <td class="sortable-table__col sortable-table__sort-by-header">
+                        <h6>Sort by:</h6>
+                    </td>
+                    <td class="sortable-table__col js-sortable-table-sorter"
+                        data-sortable-table-col="1">
+                        @Html.Raw(Model.SourceText)
+                        <div class="sorting-arrows">
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                            </svg>
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                            </svg>
+                        </div>
+                    </td>
+                    <td class="sortable-table__col js-sortable-table-sorter"
+                        data-sortable-table-col="2">
+                        @Html.Raw(Model.TitleText)
+                        <div class="sorting-arrows">
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--up click-utag" data-info='{"event_name":"saved-search-title-sort" "sort-direction":"up"}'>
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                            </svg>
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--down" data-info='{"event_name":"saved-search-title-sort" "sort-direction":"down"}'>
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                            </svg>
+                        </div>
+                    </td>
+                    <td class="sortable-table__col js-sortable-table-sorter"
+                        data-sortable-table-col="3">
+                        @Html.Raw(Model.DateText)
+                        <div class="sorting-arrows">
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                            </svg>
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                            </svg>
+                        </div>
+                    </td>
+                    <td class="sortable-table__col js-sortable-table-sorter"
+                        data-sortable-table-col="4">
+                        @Html.Raw(Model.EmailAlertText)
+                        <div class="sorting-arrows">
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                            </svg>
+                            <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                                <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                            </svg>
+                        </div>
+                    </td>
+                </tr>
+                </thead>
+                <tbody>
+                @{ int index = 1; }
+                @foreach (var item in Model.SavedSearches)
+                {
+                    <tr>
+                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--sources">
+                            @if (!item.Sources.Any())
+                            {
+                                @Html.Raw("All")
+                            }
+                            else if (item.Sources.Count() > 1)
+                            {
+                                @Html.Raw("<span class='sortable-table__togglable-list-title'>Multiple:</span>")
+                                <div class="sortable-table__togglable-list-wrapper js-togglable-list-wrapper">
+                                    <div class="sortable-table__togglable-list js-togglable-list">
+                                        @Html.Raw(string.Join("<br>", item.Sources))
+                                    </div>
+                                    <span class="sortable-table__list-toggler js-toggle-list">(show list)</span>
+                                    <span class="sortable-table__list-toggler show-when-active js-toggle-list">(hide list)</span>
+                                </div>
+                            }
+                            else
+                            {
+                                @Html.Raw(string.Join(" ", item.Sources))
+                            }
+                        </td>
+                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
+                            <a href="@item.Url">@Html.Raw(item.Title)</a>
+                        </td>
+                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--date">
+                            @item.DateSaved.ToString("d MMM yyyy")
+                        </td>
+                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--alert">
+
+                            <form class="form-toggle-saved-search-alert onoffswitch"
+                                  data-on-submit="/api/SavedSearches"
+                                  data-submit-type="POST"
+								  data-prevent-disabling="true"
+								  data-analytics-title="@item.Title"
+								  data-analytics-publication="@Model.Publication">
+
+                                <input name="Title" id="Title" type="hidden" value="@item.Title">
+                                <input name="Url" id="Url" type="hidden" value="@item.Url">
+                                <input type="checkbox"
+                                       class="onoffswitch-checkbox js-saved-search-alert-toggle"
+                                       id="alert-toggle-@index"
+                                       name="alert-toggle-@index"
+                                       @(item.AlertEnabled ? "checked='checked'" : string.Empty) value="@(item.AlertEnabled ? "on" : "off")">
+                                <label class="onoffswitch-label form-submit" for="alert-toggle-@index">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                                <button type="submit" class="onoffswitch__submit"></button>
+                            </form>
+
+                        </td>
+                        <td class="sortable-table__col sortable-table__submit-wrapper">
+                            <form class="form-remove-saved-search form-remove-saved-search-@index"
+                                  data-on-submit="/api/SavedSearches"
+                                  data-submit-type="DELETE"
+								  data-analytics-title="@item.Title"
+								  data-analytics-publication="@Model.Publication">
+                                <input name="Title" id="Title" type="hidden" value="@item.Title">
+
+                                <button type="button"
+                                    class="button--outline js-lightbox-modal-trigger"
+                                    data-lightbox-modal="js-remove-search-modal"
+                                    data-lightbox-modal-title="Remove Saved Search"
+                                    data-lightbox-modal-body="Are you sure you'd like to remove this saved search?"
+                                    data-lightbox-modal-success-target="form-remove-saved-search-@index">
+                                    @Model.RemoveText
+                                </button>
+
+                                <button type="submit" class="lightbox-modal__hidden-submit">
+								</button>
+
+                            </form>
+                        </td>
+                    </tr>
+                    {
+                        index++;
+                    }
+                }
+                </tbody>
+            </table>
+
+            <div class="lightbox-modal js-remove-search-modal">
+                <div class="dismiss-button js-close-lightbox-modal">
+                    <span>Cancel</span>
+                    <svg class="dismiss-button__icon">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                    </svg>
+                </div>
+
+                <div class="lightbox-modal__title">
+                    <svg class="lightbox-modal__title-icon">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>
+                    </svg>
+                    Remove Saved Search
+                </div>
+                <p>Are you sure you'd like to remove this saved search?</p>
+                <button class="lightbox-modal__submit button--filled js-lightbox-modal-submit">Yes, I'm Sure</button>
+            </div>
+
+            <div class="alert-success js-form-success">
+                <svg class="alert__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+                </svg>
+                <p>@Html.Raw(Model.ItemRemovedMessage)</p>
+            </div>
+
+            </div>
+        }
+        else
+        {
+            <div class="page-account__introduction">
+                @Editable(Model.GlassModel, model => model.Getting_Started_With_Saved_Search)
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="page-account__sign-in-solo">
+        @Html.Partial("_SignInForm", Model.SignInViewModel)
+    </div>
+}

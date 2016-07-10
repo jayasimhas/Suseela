@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {82F004AF-27C8-4E03-963C-71FC23141EF6}
+database: master
+path: /sitecore/system/Modules/Data Imports/Scrip/Articles/Raj Devices Import/Fields/Meta Title Override
+parent: {C529E5A8-498D-4BAF-9093-0A1858697A69}
+name: Meta Title Override
+master: {00000000-0000-0000-0000-000000000000}
+template: {C1017482-5549-4245-91F6-D960DE3B00E2}
+templatekey: ToText
+
+----field----
+field: {093D915A-4306-4A68-B64A-07CC2A7E4EE5}
+name: To What Field
+key: to what field
+content-length: 19
+
+Meta Title Override
+----field----
+field: {A534B62B-9C6B-449F-8B88-93753EFE6AEC}
+name: From What Fields
+key: from what fields
+content-length: 19
+
+META TITLE OVERRIDE
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+225
+----version----
+language: en
+version: 1
+revision: 12083c8f-e872-4751-8fb6-3e0bbcb33d42
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160125T212514Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+12083c8f-e872-4751-8fb6-3e0bbcb33d42
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160125T215247Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: 2bbf9a38-9d18-4185-aa4d-0c3bbaea577d
+revision: 993a644e-0023-47e6-88b8-03c9a332a291
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -29,6 +29,27 @@ content-length: 4
 
 Haas
 ----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{2DFD7F29-F0B7-4666-AA32-4952E22F2CB0}" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 0
+
+
+----field----
+field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
+name: Email Address
+key: email address
+content-length: 23
+
+Joseph.Haas@informa.com
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
@@ -41,18 +62,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-2bbf9a38-9d18-4185-aa4d-0c3bbaea577d
+993a644e-0023-47e6-88b8-03c9a332a291
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190930Z
+20160421T204919Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 17
 
-sitecore\admin
+sitecore\ctrudeau

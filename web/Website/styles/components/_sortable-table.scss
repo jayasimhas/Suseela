@@ -4,8 +4,32 @@
 	color: $color-abbey-gray;
 	width: 100%;
 
+	// When this is used with one ultra-wide column, it forces all other columns
+	// to only be as wide as their content requires. Closest thing to a
+	// flexbox-like table without actual flexbox.
+	// See .sortable-table__col--stretch-to-fill below
+	// Via: http://stackoverflow.com/a/26915414
+	table-layout: auto;
+
 	&__col {
 		padding: 1rem 1.25rem;
+
+		&--quarter-width {
+			width: 25%;
+		}
+
+		&--half-width {
+			width: 50%;
+		}
+
+		&--full-width {
+			width: 100%;
+		}
+
+		.labeled-checkbox {
+			margin-bottom: 0;
+			display: inline-block;
+		}
 	}
 
 	tbody tr {
@@ -23,22 +47,51 @@
 		}
 	}
 
-	&__sort-arrows {
-		display: inline-block;
-		height: 17px;
-		width: 14px;
+	.sorttable_sorted .sorting-arrows__arrow--up,
+	.sorttable_sorted_reverse .sorting-arrows__arrow--down {
+		@extend .sorting-arrows__arrow.is-active;
+	}
 
-		svg {
-			@include svg-fill($color-dusty-gray);
-			display: block;
-			height: 10px;
-			width: 14px;
+	// Center toggle switches in their column
+	.onoffswitch {
+		display: block;
+    	margin: 0px auto;
+
+		@include breakpoint('small') {
+			margin: 0px;
 		}
 	}
 
-	.sorttable_sorted &__sort-arrows svg.sortable-table__sort-arrows--up,
-	.sorttable_sorted_reverse &__sort-arrows svg.sortable-table__sort-arrows--down {
-		@include svg-fill($color-cardinal-red);
+
+	&__togglable-list-title {
+		float: left;
+	}
+	&__togglable-list,
+	&__list-toggler {
+		font-size: 0.875rem;
+		margin-left: 5rem;
+	}
+	&__togglable-list {
+		display: none;
+		margin-bottom: 0.5rem;
+	}
+	&__list-toggler {
+		@extend a;
+		cursor: pointer;
+		display: block;
+
+		&.show-when-active {
+			display: none;
+		}
+	}
+	&__togglable-list-wrapper.is-active {
+		.sortable-table__list-toggler {
+			display: none;
+		}
+		.sortable-table__togglable-list,
+		.sortable-table__list-toggler.show-when-active {
+			display: block;
+		}
 	}
 
 	@include breakpoint('small') {
@@ -68,11 +121,38 @@
 
 			.sortable-table__col {
 				display: inline-block;
-				font-size: 1rem;
+				font-size: 0.875rem;
 				font-weight: 400;
-				padding: 0 0.5rem 0.5rem 1rem;
+				padding: 0 1rem 0.5rem 0rem;
 				width: auto;
 				vertical-align: middle;
+
+				&:after {
+					display: inline-block;
+					content: "";
+					height: 18px;
+					width: 1px;
+					margin-left: 1.75rem;
+					background-color: $color-light-gray;
+					vertical-align: middle;
+				}
+				&:last-child:after {
+					width: 0;
+				}
+
+				.sorting-arrows {
+					position: absolute;
+					margin-top: -2px;
+				}
+			}
+
+			.sortable-table__sort-by-header {
+				display: block;
+				padding-left: 0;
+
+				&:after {
+					display: none;
+				}
 			}
 		}
 
@@ -101,8 +181,16 @@
 				content: "Title";
 			}
 
+			&--sources:before {
+				content: "Sources";
+			}
+
 			&--date:before {
 				content: "Date";
+			}
+
+			&--alert:before {
+				content: "Email Alert";
 			}
 
 			&--publication:before {

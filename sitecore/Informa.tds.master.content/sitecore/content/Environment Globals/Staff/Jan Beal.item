@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: 72306790-2259-49cd-b0a3-d2774897ee80
+revision: cb2c5a36-03cb-49ba-91f8-db940504bd88
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -28,6 +28,13 @@ key: last name
 content-length: 4
 
 Beal
+----field----
+field: {B3E3F7B7-3E08-4CBF-ABED-1932BB8639A7}
+name: Inactive
+key: inactive
+content-length: 1
+
+1
 ----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
@@ -48,18 +55,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-72306790-2259-49cd-b0a3-d2774897ee80
+cb2c5a36-03cb-49ba-91f8-db940504bd88
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190932Z
+20160420T090705Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 15
 
-sitecore\admin
+sitecore\srigby

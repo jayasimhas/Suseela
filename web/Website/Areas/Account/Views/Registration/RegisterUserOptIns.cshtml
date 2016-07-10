@@ -7,7 +7,7 @@
     <p class="page-registration__introduction">@Model.Body</p>
     <form class="form-registration-optins"
           data-on-submit="/Account/api/RegistrationApi/SetOptIns/"
-          data-on-success="@Request.QueryString["returnUrl"]">
+          data-on-success="@Model.RegisterReturnUrl">
 
         <p class="page-registration__error
 		   js-form-error
@@ -34,7 +34,7 @@
             </div>
 
             <div class="page-account__submit-wrapper">
-				<button  type="submit" class="button--filled registration-final" >@Model.SubmitText</button>
+				<button  type="submit" class="button--filled registration-final js-register-final" >@Model.SubmitText</button>
             </div>
         </div>
     </form>

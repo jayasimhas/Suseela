@@ -12,8 +12,15 @@ templatekey: Taxonomy Item
 ----version----
 language: en
 version: 1
-revision: 093f1d2e-914f-4dcf-83d1-38085aa175dd
+revision: 1a213000-4aa9-49f1-8774-841d9137ba85
 
+----field----
+field: {1CFBE05B-A4AF-4B00-90FB-734CBA008F42}
+name: Media Type Icon
+key: media type icon
+content-length: 58
+
+<image mediaid="{5C67831F-3C79-49D4-AF7A-2B0D814378F6}" />
 ----field----
 field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
 name: Item Name
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-093f1d2e-914f-4dcf-83d1-38085aa175dd
+1a213000-4aa9-49f1-8774-841d9137ba85
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160219T172325Z
+20160526T152157Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

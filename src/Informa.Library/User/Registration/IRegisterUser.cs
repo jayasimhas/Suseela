@@ -2,6 +2,6 @@
 {
 	public interface IRegisterUser
 	{
-		bool Register(INewUser newUser);
+		IRegisterUserResult Register(INewUser newUser);
 	}
 }

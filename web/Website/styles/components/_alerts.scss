@@ -67,3 +67,22 @@ section: Alerts
         @include svg-fill($color-cardinal-red);
     }
 }
+
+.a-fade-alert {
+    animation-duration: 4s;
+    animation-name: fade-alert;
+}
+
+@keyframes fade-alert {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+      opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,92 @@
+/*---
+title: Lightbox Modal
+section: Global Components
+---
+
+```example:html
+<div class="lightbox-modal">
+    <div class="dismiss-button">
+        <span>Cancel</span>
+        <svg class="dismiss-button__icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#x"></use>
+        </svg>
+    </div>
+
+    <h4 class="lightbox-modal__title">
+        <svg class="lightbox-modal__title-icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#alert"></use>
+        </svg>
+        Remove Article
+    </h4>
+    <p>Are you sure you'd like to remove this article?</p>
+    <button class="lightbox-modal__submit button--filled">Yes, I'm Sure</button>
+</div>
+```
+*/
+
+.lightbox-modal {
+    @include textMix('Roboto', 14px, 400);
+    background: #fff;
+    display: none;
+    left: calc(50% - 250px);
+    margin: 0px auto;
+    padding: 1.5rem 1.5rem 2rem;
+    position: fixed;
+    text-align: center;
+    top: 30%;
+    width: 500px;
+    z-index: 9998;
+
+    &.is-active {
+        display: block;
+    }
+
+
+    &__backdrop {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.50);
+        z-index: 9997;
+    }
+
+
+    &__title {
+        @extend h4;
+        color: $color-zeus-black;
+        clear: both;
+        margin: 2rem 0 1rem;
+        text-align: center;
+        vertical-align: middle;
+
+        &-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            vertical-align: bottom;
+            margin-right: 0.5rem;
+        }
+    }
+
+
+    &__submit {
+        margin-top: 1.5rem;
+    }
+
+    &__hidden-submit {
+        display: none;
+    }
+
+    @include breakpoint('small') {
+        left: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+}
+
+body.lightboxed {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}

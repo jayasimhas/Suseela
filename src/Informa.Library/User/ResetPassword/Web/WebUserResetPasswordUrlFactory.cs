@@ -5,7 +5,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.ResetPassword.Web
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService(LifetimeScope.PerScope)]
 	public class WebUserResetPasswordUrlFactory : IWebUserResetPasswordUrlFactory
 	{
 		protected readonly ISitecoreContext SitecoreContext;

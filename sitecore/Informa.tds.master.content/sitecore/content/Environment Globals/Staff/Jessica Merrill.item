@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: 3fcbf1c2-902a-4899-9f39-00b8d9aa0d32
+revision: cf7c9e30-d5cb-4530-8301-977e9d06e8b3
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -29,12 +29,26 @@ content-length: 7
 
 Merrill
 ----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{F16769B4-02A5-4D28-9E1C-5733BC28E63E}" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 15
+
+Jessicaemerrill
+----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
 key: email address
 content-length: 27
 
-Jessica.Merrill@informa.com
+Jessica.merrill@informa.com
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,18 +62,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3fcbf1c2-902a-4899-9f39-00b8d9aa0d32
+cf7c9e30-d5cb-4530-8301-977e9d06e8b3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190930Z
+20160422T152127Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 17
 
-sitecore\admin
+default\Anonymous

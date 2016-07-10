@@ -1,6 +1,5 @@
 ﻿@model SearchViewModel
 
-
 <section class="search-metadata" ng-controller="searchMetaController as meta">
 
     <div class="search-header__results-meta">
@@ -10,12 +9,12 @@
             {{ meta.currentResults }}
         </strong>
         @Model.SearchShowingResults2Text
-        <strong>
+        <strong class="js-searchTotalResults">
             {{ meta.totalResults | number }}
         </strong>
         @Model.SearchShowingResults3Text
         <span ng-if="meta.keywords">
-         @Model.SearchShowingResults4Text <strong>&ldquo;{{ meta.keywords }}&rdquo;</strong>
+         @Model.SearchShowingResults4Text <strong class="js-searchKeyword">&ldquo;{{ meta.keywords }}&rdquo;</strong>
         </span>
     </div>
 

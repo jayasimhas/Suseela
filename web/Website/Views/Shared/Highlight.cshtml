@@ -1,7 +1,7 @@
-﻿@inherits CustomGlassView<HighlightViewModel>
+﻿@inherits CustomGlassView<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Highlights.IHighlights>
 <div class="banner banner--highlights">
-	@if (Model.GlassModel != null)
+	@if (Model != null)
 	{
-		@Editable(Model.GlassModel, gm => gm.Highlight)
+		@Editable(Model, gm => gm.Highlight)
 	}
 </div>

@@ -12,5 +12,7 @@
 		string UsernameExistsErrorText { get; }
 		string GeneralErrorText { get; }
 		string Username { get; }
+		string RegisterReturnUrl { get; }
+		string RegisterReturnUrlKey { get; }
 	}
 }

@@ -12,17 +12,17 @@ section: Search
 
 .search__facets {
     @include textMix('Roboto', 13px, 400);
-    border: 1px solid $informa-light-gray-d;
+    border: 1px solid $color-light-gray;
     margin-bottom: 20px;
 
     @include breakpoint('medium') {
         display: none;
-    }
+        order: 3;
 
-    &.is-expanded {
-        @include breakpoint('medium') {
+        &.is-expanded {
             display: block;
             margin-right: 0;
+            margin-bottom: 0;
         }
     }
 }
@@ -37,15 +37,25 @@ section: Search
             width: 100%;
             margin-bottom: 30px;
             border: 0;
-            background-color: $informa-light-orange;
+            background-color: $color-yellow-orange;
             text-align: center;
 
-            &--bottom {
+            &--show {
+                order: 2;
+            }
+            &--hide {
                 display: none;
+                order: 3;
+            }
 
-                &.is-expanded {
-                    display: block;
-                }
+            &--show.is-expanded,
+            &--hide.is-expanded {
+                display: block;
+                margin-bottom: 0;
+            }
+
+            &--bottom.is-expanded {
+                margin-bottom: 1rem;
             }
 
             h6.show-filters {
@@ -72,11 +82,11 @@ section: Search
 
     &__header {
         padding: 20px;
-        border-bottom: 2px solid $informa-light-gray-d;
+        border-bottom: 2px solid $color-light-gray;
 
         h3 {
             display: inline-block;
-            color: $informa-black;
+            color: $color-zeus-black;
         }
         cursor: pointer;
       cursor: pointer;
@@ -92,7 +102,7 @@ section: Search
 
         &:not(:first-child) {
             padding-top: 20px;
-            border-top: 1px solid $informa-light-gray-d;
+            border-top: 1px solid $color-light-gray;
         }
     }
 
@@ -106,7 +116,7 @@ section: Search
         display: inline-block;
         width: 100%;
         padding-bottom: 15px;
-        color: $informa-black;
+        color: $color-zeus-black;
         position: relative;
 
         h4 {
@@ -163,10 +173,11 @@ section: Search
 
         &:before {
             content: " ";
+            display: block;
             flex: 0 0 auto;
             height: 17px;
             width: 17px;
-            border: 1px solid $informa-light-gray-d;
+            border: 1px solid $color-light-gray;
             border-radius: 20%;
             margin-right: 15px;
             margin-top: 2px;
@@ -180,6 +191,10 @@ section: Search
             font-size: 0.75rem;
             margin-left: 0.25rem;
         }
+
+		input[disabled] ~ & {
+			opacity: 0.5;
+		}
     }
 
     input[type="checkbox"]:checked + &__label,
@@ -213,7 +228,7 @@ section: Search
         }
 
         label {
-            color: $color-medium-gray-8;
+            color: $color-old-silver-gray;
             font-size: 13px;
             display: block;
 
@@ -229,7 +244,7 @@ section: Search
         }
 
         svg {
-            @include svg-fill($informa-mid-gray);
+            @include svg-fill($color-dusty-gray);
             width: 20px;
             height: 30px;
             margin-left: 10px;
@@ -261,7 +276,7 @@ section: Search
 
     &__button {
         @extend .button--plain;
-        color: $informa-red;
+        color: $color-cardinal-red;
 
         &--clear {
             float: right;
@@ -274,7 +289,7 @@ section: Search
             margin-right: 11px;
 
             svg {
-                @include svg-fill($informa-red);
+                @include svg-fill($color-cardinal-red);
                 margin: 0;
                 width: 15px;
                 height: 15px;
@@ -289,7 +304,7 @@ section: Search
             }
 
             svg {
-                @include svg-fill($informa-red);
+                @include svg-fill($color-cardinal-red);
                 width: 10px;
                 vertical-align: middle;
                 margin-left: 3px;
@@ -303,7 +318,7 @@ section: Search
         }
 
         &--toggle-section {
-            @include svg-fill($color-medium-gray-8);
+            @include svg-fill($color-old-silver-gray);
             // transition: all 300ms ease-in 0s;
             // transform-origin: 50%;
             width: 16px;
@@ -318,7 +333,7 @@ section: Search
             float: right;
 
             svg {
-                @include svg-fill($informa-light-gray-d);
+                @include svg-fill($color-light-gray);
                 width: 18px;
             }
         }

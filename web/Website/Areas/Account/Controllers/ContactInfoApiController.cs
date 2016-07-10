@@ -16,20 +16,17 @@ namespace Informa.Web.Areas.Account.Controllers
     {
         protected readonly IAuthenticatedUserContext UserContext;
         protected readonly IManageAccountInfo AccountInfo;
-        protected readonly ISitecoreContext SitecoreContext;
         protected readonly ITextTranslator TextTranslator;
         protected readonly IUserProfileContext ProfileContext;
 
         public ContactInfoApiController(
             IAuthenticatedUserContext userContext,
             IManageAccountInfo accountInfo,
-            ISitecoreContext sitecoreContext,
             ITextTranslator textTranslator,
             IUserProfileContext profileContext)
         {
             UserContext = userContext;
             AccountInfo = accountInfo;
-            SitecoreContext = sitecoreContext;
             TextTranslator = textTranslator;
             ProfileContext = profileContext;
         }

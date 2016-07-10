@@ -5,21 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using Glass.Mapper.Sc;
-using Informa.Library.Article.Search;
+using Informa.Library.Logging;
 using Informa.Library.Mail;
-using Informa.Library.User.ResetPassword;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Jabberwocky.Glass.Models;
 using PluginModels;
 using Sitecore;
-using Sitecore.Configuration;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Resources.Media;
-using Sitecore.Web.UI.Sheer;
 using Sitecore.Workflows;
 using Constants = Informa.Library.Utilities.References.Constants;
 
@@ -31,20 +27,35 @@ namespace Informa.Web.Controllers
 		private ArticleUtil _articleUtil;
 		protected readonly IEmailSender EmailSender;
 		protected readonly IHtmlEmailTemplateFactory HtmlEmailTemplateFactory;
+	    protected readonly ILogWrapper Logger;
 
-		public EmailUtil(ArticleUtil articleUtil, Func<string, ISitecoreService> sitecoreFactory, IEmailSender emailSender, IHtmlEmailTemplateFactory htmlEmailTemplateFactory)
+		public EmailUtil(
+            ArticleUtil articleUtil, 
+            Func<string, ISitecoreService> 
+            sitecoreFactory, 
+            IEmailSender emailSender, 
+            IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
+            ILogWrapper logger)
 		{
 			EmailSender = emailSender;
 			_articleUtil = articleUtil;
 			_service = sitecoreFactory(Constants.MasterDb);
 			HtmlEmailTemplateFactory = htmlEmailTemplateFactory;
+		    Logger = logger;
 		}
+
+	    private string GetStaffEmail(Guid g)
+	    {
+            var notificationUser = _service.GetItem<IStaff_Item>(g);
+	        return notificationUser?.Email_Address ?? string.Empty;
+	    }
 
 		/// <summary>
 		/// 
 		/// </summary>
 		public void SendNotification(ArticleStruct articleStruct, WorkflowInfo oldWorkflow)
 		{
+            Logger.SitecoreInfo("EmailUtil.SendNotification");
 			if (articleStruct.Publication == Guid.NewGuid()) return;
 			var siteConfigItem = _service.GetItem<ISite_Config>(articleStruct.Publication);
 			if (siteConfigItem == null) return;
@@ -57,8 +68,10 @@ namespace Informa.Web.Controllers
 			var notificationList = !articleStruct.ArticleSpecificNotifications.Any() ? new List<StaffStruct>() :
 				articleStruct.ArticleSpecificNotifications;
 
-			//IIPP-1092
-			try
+            Logger.SitecoreInfo($"EmailUtil.SendNotification: Notification List - {string.Join(",", notificationList.Select(a => GetStaffEmail(a.ID)))}");
+
+            //IIPP-1092
+            try
 			{
 				var stateItem =
 					_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.ICommand>(
@@ -77,33 +90,36 @@ namespace Informa.Web.Controllers
 						}
 						catch (Exception ex)
 						{
-							//TODO - Add logging
-						}
+                            Logger.SitecoreError($"EmailUtil.SendNotification: {ex}");
+                        }
 					}
 
 				}
 			}
 			catch (Exception ex)
 			{
-				//TODO Logging - Failed to find the workflow item.
-			}
+                Logger.SitecoreError($"EmailUtil.SendNotification: Failed to find the workflow item. {ex}");
+            }
 
 			var emailBody = CreateBody(articleStruct, title, siteConfigItem.Publication_Name, oldWorkflow);
 
 			foreach (var eachEmail in notificationList)
 			{
-				var notificationUser = _service.GetItem<IStaff_Item>(eachEmail.ID);
-				if (string.IsNullOrEmpty(notificationUser?.Email_Address)) continue;
+                var staffEmail = GetStaffEmail(eachEmail.ID);
+				if (string.IsNullOrEmpty(staffEmail)) continue;
 				Email email = new Email
 				{
-					To = notificationUser.Email_Address,
+					To = staffEmail,
 					Subject = title,
 					From = fromEmail,
 					Body = emailBody,
 					IsBodyHtml = true
 				};
-				EmailSender.SendWorkflowNotification(email, replyToEmail);
-				if (replyToEmail == notificationUser.Email_Address)
+
+                Logger.SitecoreInfo($"EmailUtil.SendNotification: notifying - {staffEmail}");
+
+                EmailSender.SendWorkflowNotification(email, replyToEmail);
+				if (replyToEmail == staffEmail)
 				{
 					isAuthorInSenderList = true;
 				}
@@ -119,7 +135,10 @@ namespace Informa.Web.Controllers
 				Body = emailBody,
 				IsBodyHtml = true
 			};
-			EmailSender.SendWorkflowNotification(contentAuthorEmail, replyToEmail);
+
+            Logger.SitecoreInfo($"EmailUtil.SendNotification: sending author - {contentAuthorEmail}");
+
+            EmailSender.SendWorkflowNotification(contentAuthorEmail, replyToEmail);
 		}
 
 		/// <summary>

@@ -1,0 +1,16 @@
+.sorting-arrows {
+    display: inline-block;
+    height: 17px;
+    width: 14px;
+
+    &__arrow {
+        @include svg-fill($color-dusty-gray);
+        display: block;
+        height: 10px;
+        width: 14px;
+
+        &.is-active {
+            @include svg-fill($color-cardinal-red);
+        }
+    }
+}

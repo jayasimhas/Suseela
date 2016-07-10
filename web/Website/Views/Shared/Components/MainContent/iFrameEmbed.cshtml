@@ -1,22 +1,21 @@
-@using Glass.Mapper.Sc.Web.Mvc
-@model Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.MainContent.IIFrame_Embed
+@inherits CustomGlassView<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.MainContent.IIFrame_Embed>
 
-<div class="iframe-component">
-    @if (!Sitecore.Context.PageMode.IsPageEditor)
-    {
-        <div class="iframe-component__desktop" data-embed-link="@HttpUtility.HtmlEncode(Html.Glass().Editable(x => x.Desktop_Embed_Code))"></div>
-        <div class="iframe-component__mobile" data-embed-link="@HttpUtility.HtmlEncode(Html.Glass().Editable(x => x.Mobile_Embed_Code))"></div>
-        <noscript>
-            @Html.Glass().Editable(x => x.Desktop_Embed_Code)
-        </noscript>
-    }
-    else
-    {
-        <div class="iframe-component__desktop is-page-editor">
-            @Html.Glass().Editable(x => x.Desktop_Embed_Code)
-        </div>
-        <div class="iframe-component__mobile is-page-editor">
-            @Html.Glass().Editable(x => x.Mobile_Embed_Code)
+<div class="iframe-component @(IsInEditingMode ? "is-page-editor" : string.Empty)">
+    
+    @if (IsInEditingMode) {
+        <div>
+            @Editable(x => x.Desktop_Embed_Code)
         </div>
     }
+    <div class="iframe-component__desktop" data-embed-link="@HttpUtility.HtmlEncode(Model.Desktop_Embed_Code)"></div>
+
+    @if (IsInEditingMode) {
+        <div>
+            @Editable(x => x.Mobile_Embed_Code)
+        </div>
+    }
+    <div class="iframe-component__mobile" data-embed-link="@HttpUtility.HtmlEncode(Model.Mobile_Embed_Code)"></div>
+    <noscript>
+        @Model.Desktop_Embed_Code
+    </noscript>
 </div>

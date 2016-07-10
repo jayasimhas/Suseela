@@ -103,6 +103,7 @@
       trailing underscores (e.g. _version_) are reserved.
    -->
   <fields>
+	<field name="_val_" type="string" />
     <field name="_content" type="text_general" indexed="true" stored="false" />
     <field name="_database" type="string" indexed="true" stored="true" />
     <field name="_path" type="string" indexed="true" stored="false" multiValued="true" />

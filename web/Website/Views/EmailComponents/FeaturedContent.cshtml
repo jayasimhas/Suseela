@@ -1,0 +1,91 @@
+﻿@inherits CustomGlassView<Informa.Web.ViewModels.Emails.FeaturedContentViewModel>
+
+<table class="manually-curated-section" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td valign="top" class="two-thirds layout-padded-right">
+
+                        <!-- Title with Title Link -->
+                        @if (IsInEditingMode)
+                        {
+                            using (BeginRenderLink(Model.GlassModel, m => m.Title_Link, isEditable: true))
+                            {
+                                <h3 class="featured__title">
+                                    @Editable(Model.GlassModel, m => m.Title)
+                                </h3>
+                            }
+                        }
+                        else if (Model.HasTitle)
+                        {
+                            <a href="@Model.TitleLinkUrl">
+                                <h3 class="featured__title">
+                                    @Model.GlassModel.Title
+                                </h3>
+                            </a>
+                        }
+                        <div class="t-paragraph">
+                            <!-- Summary -->
+                            @Editable(Model.GlassModel, m => m.Summary)
+                        </div>
+
+                        <!-- Read More Link, Test, and Styling -->
+                        @if (IsInEditingMode)
+                        {
+                            <span class="featured__read-more @Model.ReadMoreClass">
+                                @using (BeginRenderLink(Model.GlassModel, m => m.Read_More_Link, isEditable: true))
+                                {
+                                    @Editable(Model.GlassModel, m => m.Read_More_Text)
+                                }
+                            </span>
+                        }
+                        else if (Model.HasReadMoreLink)
+                        {
+                            <span class="featured__read-more @Model.ReadMoreClass">
+                                <a href="@Model.ReadMoreLinkUrl">
+                                    @Model.GlassModel.Read_More_Text
+                                </a>
+                            </span>
+                        }
+                    </td>
+
+                    @if (Model.HasRightRail || IsInEditingMode)
+                    {
+
+                        <td class="one-third layout-padded-left layout-text-centered" valign="top">
+
+                            <!-- Right Rail Image -->
+                            @if (Model.HasImage || IsInEditingMode)
+                            {
+                                @RenderImage(Model.GlassModel, m => m.Image, isEditable: true)
+                            }
+
+                            <!-- Download Link and Text -->
+                            @if (IsInEditingMode)
+                            {
+                                using (BeginRenderLink(Model.GlassModel, m => m.Download_Link, isEditable: true))
+                                {
+                                    <img class="featured-content__image" src="@(Model.DownloadTypeIconUrl)"/>
+                                    <div class="featured__download-link">
+                                        @Editable(Model.GlassModel, m => m.Download_Link_Text)
+                                    </div>
+                                }
+                            }
+                            else if (Model.HasDownloadLink)
+                            {
+                                <a href="@Model.DownloadLinkUrl">
+                                    <div class="featured__download-link">
+                                        <img class="featured-content__image" src="@(Model.DownloadTypeIconUrl)"/>
+                                        @Editable(Model.GlassModel, m => m.Download_Link_Text)
+                                    </div>
+                                </a>
+                            }
+
+                        </td>
+                    }
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

@@ -1,5 +1,7 @@
-﻿/* global _, datesObject, angular */
-var InformaFacetController = function ($scope, $location, $http, $anchorScroll, searchService, searchBootstrapper) {
+﻿/* global _, datesObject, angular, analytics_data */
+import { analyticsEvent } from '../../controllers/analytics-controller';
+
+var InformaFacetController = function ($scope, $rootScope, $location, $http, $anchorScroll, $timeout,  searchService, searchBootstrapper, facetAvailabilityService) {
     "use strict";
 
     // Bind `this` to vm - a representation of the view model
@@ -12,6 +14,13 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     vm.anchorScroll = $anchorScroll;
     vm.searchBootstrapper = searchBootstrapper;
     vm.MaxFacetShow = 5;
+    vm.showingOnlySubscriptions = false;
+
+	vm.areFacetsDisabled = facetAvailabilityService.facetsAreEnabled();
+
+	$rootScope.$watch('facetAvailability', function () {
+		vm.areFacetsDisabled = facetAvailabilityService.facetsAreEnabled();
+    });
 
     // Date Facet stuff
     vm.DateFilters = [
@@ -23,17 +32,18 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         { label: 'Select date range', key: 'custom', selected: false }
     ];
 
+
     /* Real talk: the Javascript Date() method is a trash fire. */
     var dToday = function () {
         return new Date().clearTime();
     };
 
     var jsDates = {
-        minus1Year: function() {
+        minus1Year: function () {
             var jsDateToday = new Date();
             return new Date(jsDateToday.setFullYear(jsDateToday.getFullYear() - 1));
         },
-        minus1Month: function() {
+        minus1Month: function () {
             var jsDateToday = new Date();
             var m = jsDateToday.getMonth();
             jsDateToday.setMonth(jsDateToday.getMonth() - 1);
@@ -42,15 +52,15 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
             if (jsDateToday.getMonth() == m) {
                 jsDateToday.setDate(0);
             }
-            return new Date(jsDateToday.setHours(0,0,0));
+            return new Date(jsDateToday.setHours(0, 0, 0));
         },
-        minusXdays: function(days) {
+        minusXdays: function (days) {
             var jsDateToday = new Date();
             return new Date(jsDateToday.setDate(jsDateToday.getDate() - days));
         }
     };
 
-    var formatDateObject = function(d) {
+    var formatDateObject = function (d) {
         return (d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear();
     };
 
@@ -60,6 +70,15 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         threedays: formatDateObject(jsDates.minusXdays(3)),
         month: formatDateObject(jsDates.minus1Month()),
         week: formatDateObject(jsDates.minusXdays(7))
+    };
+
+
+    vm.timesObject = {
+        year: { id: "year", value: "1" },
+        day: { id: "hour", value: "24" },
+        threedays: { id: "day", value: "3" },
+        month: { id: "month", value: "1" },
+        week: { id: "week", value: "1" }
     };
 
     // Create placeholder values for From: and To: date values
@@ -82,7 +101,7 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
             vm.DateFilters[i].selected = true;
 
             // If date filter is a date range filter...
-            if(vm.DateFilters[i].key === 'custom') {
+            if (vm.DateFilters[i].key === 'custom') {
                 // ...convert the date data in the URL to `Date`s...
                 // example: date=3/29/2015;4/5/2016
                 var splitDates = $location.search().date.split(';');
@@ -93,9 +112,9 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         }
     }
 
-    $scope.$watch(function() {
+    $scope.$watch(function () {
         return searchService.getPager();
-    }, function() {
+    }, function () {
         vm.facetGroups = searchService.getFacetGroups();
     }, true);
 
@@ -103,47 +122,150 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
     //** This collects the user's saved companies **//
     vm.savedCompanies = {};
 
-    vm.saveCompany = function($item, model, label) {
+    vm.saveCompany = function ($item, model, label) {
         vm.savedCompanies[$item] = {
             selected: true,
             label: $item
         };
     };
 
-    $scope.removeCompany = function($item, model, label) {
+    $scope.removeCompany = function ($item, model, label) {
         delete $scope.savedCompanies[$item.label];
     };
 
-
+	var facetsForAnalytics = false;
     //** This updates the router/url with the latest search parameters **//
-    vm.update = function() {
+    vm.update = function (facetGroupId) {
+
+		if(facetGroupId) {
+
+			var facetGroup;
+			facetsForAnalytics = false;
+
+			_.each(vm.facetGroups, function(group) {
+				if(group.id === facetGroupId) {
+					facetGroup = group;
+				}
+			});
+
+			_.each(facetGroup.getSelectedFacets(), function (facet) {
+				if(facet) {
+					if(!facetsForAnalytics) {
+						facetsForAnalytics = facet.label;
+					} else {
+						facetsForAnalytics += '|' + facet.label;
+					}
+				}
+			});
+
+			var event_data = {
+				event_name: 'search_facets',
+				search_facet_category: facetGroup.label
+			};
+
+			if(facetsForAnalytics) {
+				event_data.search_facet = facetGroup.label + ": " + facetsForAnalytics;
+			}
+
+			analyticsEvent(	$.extend(analytics_data, event_data) );
+
+		}
+
+		// Disable all facet options while updating search results
+		facetAvailabilityService.disableFacets();
+
         vm.searchService.getFilter('page').setValue('1');
         var routeBuilder = this.searchService.getRouteBuilder();
         vm.location.search(routeBuilder.getRoute());
         vm.searchService.query();
+        //Scroll to the top of the results when a new page is chosen
+        vm.location.hash("searchTop");
+        vm.anchorScroll();
 
+    };
+
+
+    vm.updateTime = function (filter) {
+        vm.searchService.getFilter('page').setValue('1');
+        var routeBuilder = this.searchService.getRouteBuilder();
+
+        var hash = {};
+        var urlQuery = "&";
+        var h = decodeURIComponent(routeBuilder.getRoute()).split("&");
+        for (var idx in h) {
+            if (h[idx] != "") {
+                var currentParameter = h[idx].split("=");
+
+                if (currentParameter[0] == "dateFilterLabel") {
+                    hash[currentParameter[0]] = vm.timesObject[filter].id;
+                    urlQuery = urlQuery + "&" + currentParameter[0] + "=" + vm.timesObject[filter].id;
+                } else {
+                    if (currentParameter[0] != "date") {
+                        hash[currentParameter[0]] = currentParameter[1];
+                        urlQuery = urlQuery + "&" + currentParameter[0] + "=" + currentParameter[1];
+                    }
+                }
+            }
+        }
+        hash["time"] = vm.timesObject[filter].value;
+        urlQuery = urlQuery + "&time=" + vm.timesObject[filter].value;
+
+        vm.location.search(urlQuery);
+        vm.searchService.queryTimePeriod(hash);
         //Scroll to the top of the results when a new page is chosen
         vm.location.hash("searchTop");
         vm.anchorScroll();
     };
 
-    vm.facetChange = function(facet) {
-        vm.searchService.getFacetGroup(facet.parentId).getFacet(facet.id).selected = facet.selected;
-        vm.update();
+    vm.facetChange = function (facet) {
+
+		vm.searchService.getFacetGroup(facet.parentId).getFacet(facet.id).selected = facet.selected;
+        vm.update(facet.parentId);
+
     };
+
+	// facetGroupId: 'publication'
+	// facetIds: ['In Vivo', 'Rose Sheet']
+    vm.facetChangeMultiple = function(facetGroupId, facetIds) {
+
+		var facets;
+
+		_.each(vm.facetGroups, function(group) {
+			if(group.id === facetGroupId) {
+				facets = group;
+			}
+		});
+
+        _.each(facets.getSelectedFacets(), function (facet) {
+			if(facet) {
+				facet.selected = false;
+			}
+        });
+
+        _.each(facetIds, function(id) {
+			var facet = facets.getFacet(id);
+			if (facet) {
+				facet.selected = true;
+			}
+        });
+
+		vm.update(facetGroupId);
+
+    };
+
 
     // TODO: this comes from a diff search app, and needs jquery to work.
     //       either hook up jq to this controller or move this elsewhere
-    vm.scrollTop = function() {
+    vm.scrollTop = function () {
         // var location = jq(".search-facets__header").offset().top;
         //window.scrollTo(0, location - 80);
     };
 
-    vm.hasSelected = function(values) {
+    vm.hasSelected = function (values) {
         return _.find(values, { selected: true }) ? true : false;
     };
 
-    vm.getFilter = function(filterKey) {
+    vm.getFilter = function (filterKey) {
         var filter = vm.searchService.getFilter(filterKey);
         if (!filter) {
             vm.searchBootstrapper.createFilter(filterKey, "");
@@ -154,13 +276,13 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
 
     /* This deselects any selected facet checkboxes, clears all facet parameters
         from the search query, and runs the clearDateRange function */
-    vm.clearAllFacets = function() {
+    vm.clearAllFacets = function () {
         var facetClear = this;
         var facetGroups = facetClear.facetGroups;
-        _.each(facetGroups, function(group) {
+        _.each(facetGroups, function (group) {
             // vm.clearGroup(group.id)
             var facets = vm.searchService.getFacetGroup(group.id).getSelectedFacets();
-            _.each(facets, function(facet) {
+            _.each(facets, function (facet) {
                 facet.selected = false;
             });
         });
@@ -168,27 +290,27 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         vm.update();
     };
 
-    vm.clearFilter = function(filterKey) {
+    vm.clearFilter = function (filterKey) {
         var filter = vm.getFilter(filterKey);
         filter.setValue("");
     };
 
     /* This clears the date parameters from the search, deselcts any date radio
     buttons, and clears both custom date input fields **/
-    vm.clearDateRange = function() {
+    vm.clearDateRange = function () {
         var filter = vm.getFilter('date');
         filter.setValue("");
         filter.selected = false;
         var filterDateLabel = vm.getFilter('dateFilterLabel');
         filterDateLabel.setValue("");
         var dates = vm.DateFilters;
-        _.each(dates, function(date) {
+        _.each(dates, function (date) {
             date.selected = false;
         });
 
     };
 
-    vm.getDateFilterLabel = function() {
+    vm.getDateFilterLabel = function () {
         var filterDateLabel = vm.getFilter('dateFilterLabel');
         return filterDateLabel._value;
     };
@@ -213,14 +335,14 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         vm.update();
     };
 
-    vm.customDateRangeSearch = function(filterKey, startDate, endDate) {
+    vm.customDateRangeSearch = function (filterKey, startDate, endDate) {
 
         var filter = vm.getFilter(filterKey);
         var filterDateLabel = vm.getFilter('dateFilterLabel');
         filterDateLabel.setValue('custom');
-        if(startDate > 0 && endDate > 0 && startDate < endDate) {
+        if (startDate > 0 && endDate > 0 && startDate < endDate) {
             var date1Unparsed = new Date(startDate);
-            var date1 = (date1Unparsed.getMonth() + 1) + '/' +date1Unparsed.getDate() + '/'  + date1Unparsed.getFullYear();
+            var date1 = (date1Unparsed.getMonth() + 1) + '/' + date1Unparsed.getDate() + '/' + date1Unparsed.getFullYear();
 
             var date2Unparsed = new Date(endDate);
             var date2 = (date2Unparsed.getMonth() + 1) + '/' + date2Unparsed.getDate() + '/' + date2Unparsed.getFullYear();
@@ -248,8 +370,12 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
         filterDateLabel.setValue(dateFilter);
         filter.setValue(startDate + ";" + endDate);
 
+
+
+
         vm.updateSelectedDate(dateFilter);
-        vm.update();
+        vm.updateTime(dateFilter);
+        //vm.update();
     };
 
     vm.updateSelectedDate = function (dateFilter) {
@@ -270,4 +396,4 @@ var InformaFacetController = function ($scope, $location, $http, $anchorScroll, 
 };
 
 var informaSearchApp = angular.module('informaSearchApp');
-informaSearchApp.controller("InformaFacetController", ['$scope', '$location', '$http', '$anchorScroll', 'searchService', 'searchBootstrapper', InformaFacetController]);
+informaSearchApp.controller("InformaFacetController", ['$scope', '$rootScope', '$location', '$http', '$anchorScroll', '$timeout', 'searchService', 'searchBootstrapper', 'facetAvailabilityService', InformaFacetController]);

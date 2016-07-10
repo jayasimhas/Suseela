@@ -1,4 +1,7 @@
-﻿(function () {
+/* global angular, analytics_data */
+import { analyticsEvent } from '../controllers/analytics-controller';
+
+(function () {
     'use strict';
 
     var informaSearchApp = angular.module('informaSearchApp', [
@@ -14,9 +17,12 @@
             // This flag disables $log.debug() output
             //$logProvider.debugEnabled(false);
         }]).config(['$compileProvider', function ($compileProvider) {
-            // Disabled to increase performance
+
             // https://docs.angularjs.org/api/ng/provider/$compileProvider#debugInfoEnabled
-            //$compileProvider.debugInfoEnabled(false);
+            // UNCOMMENT THE LINE BELOW IN PRODUCTION FOR PERFORMANCE GAINS
+
+            // $compileProvider.debugInfoEnabled(false);
+
         }]);
 
     informaSearchApp.factory('viewHeadlinesStateService', function () {
@@ -25,9 +31,42 @@
         return {
             showOnlyHeadlines: function () { return headlines; },
             updateValue: function () {
-                headlines = !headlines;
+
+				if(!headlines) {
+					analyticsEvent( $.extend(analytics_data, {
+						event_name: 'search_utility',
+						search_utility: 'view_headlines_only'
+					}) );
+				}
+
+				headlines = !headlines;
+
             }
         };
+    });
+
+	informaSearchApp.factory('facetAvailabilityService', function ($rootScope) {
+
+		var facetsState = false;
+
+        return {
+			facetsAreEnabled: function() {
+				return facetsState;
+			},
+            enableFacets: function () {
+				facetsState = false;
+				$rootScope.facetAvailability = facetsState;
+			},
+			disableFacets: function () {
+				facetsState = true;
+				$rootScope.facetAvailability = facetsState;
+            },
+			toggleFacets: function () {
+				facetsState = !facetsState;
+				$rootScope.facetAvailability = facetsState;
+            }
+        };
+
     });
 
 })();

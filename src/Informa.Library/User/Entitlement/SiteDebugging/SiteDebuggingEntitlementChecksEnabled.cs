@@ -3,7 +3,7 @@ using Jabberwocky.Glass.Autofac.Attributes;
 
 namespace Informa.Library.User.Entitlement.SiteDebugging
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
+	[AutowireService]
 	public class SiteDebuggingEntitlementChecksEnabled : ISiteDebuggingEntitlementChecksEnabled
 	{
 		private const string DebuggerKey = "EntitlementChecksEnabled.IsDebugging";

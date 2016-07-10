@@ -38,7 +38,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
         #region public methods
 
-        public override void FillField(IDataMap map, ref Item newItem, string importValue)
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
         {
             if (importValue.IsNullOrEmpty())
                 return;

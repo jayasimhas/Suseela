@@ -1390,12 +1390,12 @@
   <hooks>
     <hook type="Sitecore.Diagnostics.HealthMonitorHook, Sitecore.Kernel" />
     <hook type="Sitecore.Diagnostics.MemoryMonitorHook, Sitecore.Kernel">
-      <param desc="Threshold">2GB</param>
+      <param desc="Threshold">${MemoryMonitorHook.Threshold}</param>
       <param desc="Check interval">00:00:05</param>
       <param desc="Minimum time between log entries">00:01:00</param>
-      <ClearCaches>false</ClearCaches>
-      <GarbageCollect>false</GarbageCollect>
-      <AdjustLoadFactor>false</AdjustLoadFactor>
+      <ClearCaches>${MemoryMonitorHook.ClearCaches}</ClearCaches>
+      <GarbageCollect>${MemoryMonitorHook.GarbageCollect}</GarbageCollect>
+      <AdjustLoadFactor>${MemoryMonitorHook.AdjustLoadFactor}</AdjustLoadFactor>
     </hook>
   </hooks>
   <!-- SCHEDULING -->
@@ -3135,20 +3135,20 @@
             Is used by MainUtil.SendMail()
             Default value: ""
       -->
-    <setting name="MailServer" value="" />
+    <setting name="MailServer" value="email-smtp.us-east-1.amazonaws.com" />
     <!--  MAIL SERVER USER
             If the SMTP server requires login, enter the user name in this setting
       -->
-    <setting name="MailServerUserName" value="" />
+    <setting name="MailServerUserName" value="AKIAIZZ7Y33MH5TBTWYA" />
     <!--  MAIL SERVER PASSWORD
             If the SMTP server requires login, enter the password in this setting
       -->
-    <setting name="MailServerPassword" value="" />
+    <setting name="MailServerPassword" value="AsVq4CG86fQt11lAQw0SWOOduTiBWS0DNI9eZ6L++O6w" />
     <!--  MAIL SERVER PORT
             If the SMTP server requires a custom port number, enter the value in this setting.
             The default value is: 25
       -->
-    <setting name="MailServerPort" value="25" />
+    <setting name="MailServerPort" value="587" />
     <!--  MASTER VARIABLES REPLACER
             Specifies that class that will replace variables when creating
             a new master, e.g. "$/id" and "$/parentid"

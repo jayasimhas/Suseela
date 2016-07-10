@@ -12,6 +12,7 @@ namespace Informa.Web.ViewModels.PopOuts
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IRenderingItemContext ArticleRenderingContext;
 		protected readonly IAuthenticatedUserContext UserContext;
+		protected readonly IArticle Article;
 
 		public EmailArticlePopOutViewModel(
 				ITextTranslator textTranslator,
@@ -21,10 +22,12 @@ namespace Informa.Web.ViewModels.PopOuts
 			TextTranslator = textTranslator;
 			ArticleRenderingContext = articleRenderingContext;
 			UserContext = userContext;
+
+			Article = ArticleRenderingContext.Get<IArticle>();
 		}
 
-		public string AuthUserEmail => UserContext.User.Email;
-		public string AuthUserName => UserContext.User.Name;
+		public string AuthUserEmail => UserContext.User?.Email ?? string.Empty;
+		public string AuthUserName => UserContext.User?.Name ?? string.Empty;
 
 		public string EmailArticleText => TextTranslator.Translate("Article.EmailPopout.EmailArticle");
 		public string EmailSentSuccessMessage => TextTranslator.Translate("Article.EmailPopout.EmailSentSuccessMessage");
@@ -40,7 +43,7 @@ namespace Informa.Web.ViewModels.PopOuts
 		public string InvalidEmailText => TextTranslator.Translate("Article.EmailPopout.InvalidEmail");
 		public string EmptyFieldText => TextTranslator.Translate("Article.EmailPopout.EmptyField");
 		public string NoticeText => TextTranslator.Translate("Article.EmailPopout.Notice");
-		public string ArticleTitle => ArticleRenderingContext.Get<IArticle>().Title;
-		public string ArticleNumber => ArticleRenderingContext.Get<IArticle>().Article_Number;
+		public string ArticleTitle => Article.Title;
+		public string ArticleNumber => Article.Article_Number;
 	}
 }

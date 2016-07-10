@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {620D8388-6C6C-4DBC-8C2E-B02F4B76B682}
+database: master
+path: /sitecore/content/MedtechInsight/Globals
+parent: {989CA96C-8A54-4CC0-BD51-A127930935A9}
+name: Globals
+master: {CBA15CFC-A70C-4146-8A11-25AA3F4FDDB4}
+template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
+templatekey: Folder
+
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 21
+
+apps/32x32/folder.png
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 38
+
+{BC324106-766F-4E09-A82C-328FA7BD55CA}
+----version----
+language: en
+version: 1
+revision: 039eecc6-76d1-4490-8039-155cb5770aa1
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160418T200758Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+039eecc6-76d1-4490-8039-155cb5770aa1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160418T200758Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

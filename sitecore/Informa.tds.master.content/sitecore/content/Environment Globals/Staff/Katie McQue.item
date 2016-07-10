@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: 342977ba-18ee-4f91-b716-5227224d6856
+revision: 7bece5db-9490-430c-9932-ce6927bd5299
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -29,12 +29,19 @@ content-length: 5
 
 McQue
 ----field----
+field: {B3E3F7B7-3E08-4CBF-ABED-1932BB8639A7}
+name: Inactive
+key: inactive
+content-length: 1
+
+1
+----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
 key: email address
 content-length: 23
 
-Katie.mcque@informa.com
+katie.mcque@informa.com
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,18 +55,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-342977ba-18ee-4f91-b716-5227224d6856
+7bece5db-9490-430c-9932-ce6927bd5299
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190933Z
+20160420T091735Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 15
 
-sitecore\admin
+sitecore\srigby

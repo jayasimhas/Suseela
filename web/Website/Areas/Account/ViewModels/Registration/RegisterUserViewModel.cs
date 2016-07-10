@@ -1,24 +1,33 @@
 ﻿using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
+using Informa.Library.Navigation;
+using Informa.Library.User.Registration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System.Web;
 using System.Web.Mvc;
+using Informa.Library.Services.Global;
 
 namespace Informa.Web.Areas.Account.ViewModels.Registration
 {
 	public class RegisterUserViewModel : GlassViewModel<IRegistration_Details_Page>
 	{
-		protected readonly ISitecoreContext SitecoreContext;
+		protected readonly IGlobalSitecoreService GlobalService;
 		protected readonly ITextTranslator TextTranslator;
+		protected readonly IReturnUrlContext ReturnUrlContext;
+		protected readonly IRegisterReturnUrlContext RegisterReturnUrlContex;
 
 		public RegisterUserViewModel(
-			ISitecoreContext sitecoreContext,
-			ITextTranslator textTranslator)
+            IGlobalSitecoreService globalService,
+			ITextTranslator textTranslator,
+			IReturnUrlContext returnUrlContext,
+			IRegisterReturnUrlContext registerReturnUrlContext)
 		{
-			SitecoreContext = sitecoreContext;
+            GlobalService = globalService;
 			TextTranslator = textTranslator;
+			ReturnUrlContext = returnUrlContext;
+			RegisterReturnUrlContex = registerReturnUrlContext;
 		}
 
 		public string Title => GlassModel?.Title;
@@ -33,7 +42,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 					return string.Empty;
 				}
 
-				var nextStepItem = SitecoreContext.GetItem<I___BasePage>(GlassModel.Next_Step_Page);
+				var nextStepItem = GlobalService.GetItem<I___BasePage>(GlassModel.Next_Step_Page);
 
 				if (nextStepItem == null)
 				{
@@ -53,6 +62,10 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 		public string PasswordLabelText => TextTranslator.Translate("Registration.PasswordLabel");
 		public string PasswordPlaceholderText => TextTranslator.Translate("Registration.PasswordPlaceholder");
 		public string PasswordRepeatLabelText => TextTranslator.Translate("Registration.PasswordRepeatLabel");
+		public string MasterToggleLabelText => TextTranslator.Translate("Registration.MasterToggleLabel");
+		public string MasterIdLabelText => TextTranslator.Translate("Registration.MasterIdLabel");
+		public string MasterPasswordLabelText => TextTranslator.Translate("Registration.MasterPasswordLabel");
+		public IHtmlString MasterAlternateVerficationText => new MvcHtmlString(GlassModel?.Corporate_Alternative_Verification_Method);
 		public IHtmlString TermsLabel => new MvcHtmlString(GlassModel?.User_Agreement_Text);
 		public string SubmitText => TextTranslator.Translate("Registration.Submit");
 		public string NewsletterSignUpText => GlassModel?.Newsletter_Sign_Up_Text;
@@ -65,5 +78,9 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 		public string PasswordRequirementsErrorText => TextTranslator.Translate("Registration.PasswordRequirementsError");
 		public string TermsNotAcceptedErrorText => TextTranslator.Translate("Registration.TermsNotAcceptedError");
 		public string GeneralErrorText => TextTranslator.Translate("Registration.GeneralError");
+		public string MasterIdInvalidErrorText => TextTranslator.Translate("Registration.MasterIdInvalidError");
+		public string MasterIdExpiredErrorText => TextTranslator.Translate("Registration.MasterIdExpiredError");
+		public string RegisterReturnUrl => RegisterReturnUrlContex.Url;
+		public string RegisterReturnUrlKey => ReturnUrlContext.Key;
 	}
 }

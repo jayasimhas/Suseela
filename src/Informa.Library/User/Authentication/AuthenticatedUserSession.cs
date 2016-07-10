@@ -16,7 +16,7 @@ namespace Informa.Library.User.Authentication
 			AuthenticatedUserContext = authenticatedUserContext;
 		}
 
-		public override string Id => string.Concat(sessionStoreId, ".", AuthenticatedUserContext.User.Username);
+		public override string Id => string.Concat(sessionStoreId, ".", AuthenticatedUserContext.User?.Username ?? string.Empty);
 
 		public override ISessionValue<T> Get<T>(string key)
 		{

@@ -14,7 +14,7 @@
 
 		<form	class="form-registration"
 				data-on-submit="/Account/api/RegistrationApi/Register/"
-				data-on-success="@(Model.NextStepUrl+"?returnUrl="+Request.QueryString["returnUrl"])">
+				data-on-success="@( Model.NextStepUrl+"?"+Model.RegisterReturnUrlKey+"="+Model.RegisterReturnUrl )">
 
 		<p class="	page-registration__error
 					js-register-user-error
@@ -137,6 +137,63 @@
 		</div>
 
 		<hr>
+
+		<div class="page-registration__labeled-checkbox">
+
+			<input
+				name="associateMaster"
+				class="js-corporate-master-toggle"
+				type="checkbox"
+				tabindex="6"
+				data-checkbox-type="boolean">
+			<label for="associateMaster">@Model.MasterToggleLabelText</label>
+
+		</div>
+
+		<div class="page-registration__floats-wrapper js-registration-corporate-wrapper is-hidden">
+
+			<p class=" page-registration__error
+			   js-form-error
+			   js-form-error-MasterIdInvalid">
+				@Model.MasterIdInvalidErrorText
+			</p>
+
+			<p class=" page-registration__error
+			   js-form-error
+			   js-form-error-MasterIdExpired">
+				@Model.MasterIdExpiredErrorText
+			</p>
+
+			<div class="page-account__field-wrapper page-account__field-wrapper--float">
+
+				<label for="masterId" class="page-account__text-label">
+					@Model.MasterIdLabelText
+				</label>
+
+				<input name="masterId"
+					   class="inf-standard-form-field"
+					   type="text"
+					   tabindex="4">
+			</div>
+
+			<div class="page-account__field-wrapper page-account__field-wrapper--float">
+				<label for="masterPassword" class="page-account__text-label">
+					@Model.MasterPasswordLabelText
+				</label>
+
+				<input name="masterPassword"
+					   class="inf-standard-form-field"
+					   type="password"
+					   tabindex="4">
+			</div>
+
+			<div class="checkbox-label">
+				@Model.MasterAlternateVerficationText
+			</div>
+
+		</div>
+
+		<hr />
 
 	    <div class="page-registration__labeled-checkbox page-registration__tos-confirm">
 			<p class="	page-registration__error

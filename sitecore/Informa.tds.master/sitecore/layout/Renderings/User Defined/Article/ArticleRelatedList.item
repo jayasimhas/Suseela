@@ -16,10 +16,24 @@ key: path
 content-length: 40
 
 /Views/Article/ArticleRelatedList.cshtml
+----field----
+field: {3D08DB46-2267-41B0-BC52-BE69FD618633}
+name: Cacheable
+key: cacheable
+content-length: 0
+
+
+----field----
+field: {8B6D532B-6128-4486-A044-CA06D90948BA}
+name: VaryByData
+key: varybydata
+content-length: 1
+
+1
 ----version----
 language: en
 version: 1
-revision: b38c4b34-1dd0-47e7-87a0-0a96c43a7a6b
+revision: 4132e99f-c22b-4a6a-bd13-272a2d34b1cf
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b38c4b34-1dd0-47e7-87a0-0a96c43a7a6b
+4132e99f-c22b-4a6a-bd13-272a2d34b1cf
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160115T051340Z
+20160606T202716Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

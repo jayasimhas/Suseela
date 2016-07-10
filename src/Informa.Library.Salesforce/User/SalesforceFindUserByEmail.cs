@@ -15,6 +15,9 @@ namespace Informa.Library.Salesforce.User
 
 		public IUser Find(string email)
 		{
+		    if (string.IsNullOrEmpty(email))
+		        return null;
+
 			var response = Service.Execute(s => s.queryProfileContactInformation(email));
 
 			if (!response.IsSuccess())

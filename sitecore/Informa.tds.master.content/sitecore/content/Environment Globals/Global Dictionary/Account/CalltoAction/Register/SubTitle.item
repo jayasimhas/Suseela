@@ -19,15 +19,15 @@ CallToAction.Register.SubTitle
 ----version----
 language: en
 version: 1
-revision: 6e664773-b331-46fd-a22c-21e8a5e85ec4
+revision: 83cdb3e1-fa77-40cc-b660-839055d223bd
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 29
+content-length: 35
 
-Register to read this article
+Register for our free email digests
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6e664773-b331-46fd-a22c-21e8a5e85ec4
+83cdb3e1-fa77-40cc-b660-839055d223bd
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160331T143355Z
+20160426T000224Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

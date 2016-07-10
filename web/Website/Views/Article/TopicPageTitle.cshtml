@@ -1,0 +1,9 @@
+﻿@using Informa.Library.Utilities.References
+@inherits GlassView<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>
+
+<div class="topic-subtopic__header">
+	<h1 class="topic-subtopic__title">
+    	@Editable(x => x.Title)
+	</h1>
+	@Html.Sitecore().Rendering(RenderingReferences.Instance.TopicAlertButton.ToString(), new { Datasource = Model._Id.ToString(), Parameters = @RenderingContext.GetRenderingParameters() })
+</div>

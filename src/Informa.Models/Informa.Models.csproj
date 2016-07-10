@@ -61,16 +61,16 @@
       <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>True</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\net45\Glass.Mapper.dll</HintPath>
+    <Reference Include="Glass.Mapper, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\net45\Glass.Mapper.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc, Version=4.0.6.55, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>True</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.0.6.55\lib\81\Glass.Mapper.Sc.dll</HintPath>
+    <Reference Include="Glass.Mapper.Sc, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\81\Glass.Mapper.Sc.dll</HintPath>
     </Reference>
-    <Reference Include="Jabberwocky.Core, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Jabberwocky.Core.1.0.1.0\lib\net45\Jabberwocky.Core.dll</HintPath>
+    <Reference Include="Jabberwocky.Core, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Jabberwocky.Core.1.0.2.0\lib\net45\Jabberwocky.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Jabberwocky.Glass, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -113,12 +113,13 @@
     </Compile>
     <Compile Include="DCD\DCDContext.Partials.cs" />
     <Compile Include="DCD\DCDManager.cs" />
+    <Compile Include="DCD\DCDReaderCacheDecorator.cs" />
     <Compile Include="DCD\Enumerations.cs" />
     <Compile Include="DCD\IDCD.cs" />
+    <Compile Include="DCD\IDCDReader.cs" />
     <Compile Include="DCD\IDCDRecordImporting.cs" />
     <Compile Include="FieldSources\FactoryInterfaceModels.cs" />
     <Compile Include="GlassModels.cs" />
-    <Compile Include="GlassModels\IEntitledProductItem.cs" />
     <Compile Include="GlassModels\IPage_Assets.cs" />
     <Compile Include="GlassModels\ITaxonomyHierarchy.cs" />
     <Compile Include="GlassModels\IStaff_Item.cs" />
@@ -135,7 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Config\Include\Jabberwocky.Glass.config" />
     <None Include="DCD\DCDContext.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DCDContext.designer.cs</LastGenOutput>

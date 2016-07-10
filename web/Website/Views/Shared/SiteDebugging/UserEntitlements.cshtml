@@ -10,6 +10,8 @@
 		<thead class="sortable-table__header">
 			<tr>
 				<td>Archive Code</td>
+				<td>Archive Limited</td>
+				<td>Archive Limit Date/Time</td>
 				<td>Document ID</td>
 				<td>Product Code</td>
 				<td>Product ID</td>
@@ -21,6 +23,8 @@
 			{
 				<tr>
 					<td>@entitlement.ArchiveCode</td>
+					<td>@entitlement.ArchiveLimited</td>
+					<td>@(entitlement.ArchiveLimited ? DateTime.Now.AddDays(entitlement.ArchiveLimitedDays * -1).ToString() : "N/A")</td>
 					<td>@entitlement.DocumentId</td>
 					<td>@entitlement.ProductCode</td>
 					<td>@entitlement.ProductId</td>

@@ -1,30 +1,28 @@
-﻿using System.Collections.Generic;
-using Informa.Library.Navigation;
-using Glass.Mapper.Sc;
+﻿using Informa.Library.Navigation;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation;
 using Jabberwocky.Glass.Autofac.Attributes;
-using System.Linq;
+using Informa.Library.Services.Global;
 
 namespace Informa.Library.Site
 {
-    [AutowireService(LifetimeScope.SingleInstance)]
+    [AutowireService(LifetimeScope.PerScope)]
     public class SiteFooterNavigationContext : ISiteFooterNavigationContext
     {
-        protected readonly ISitecoreService SitecoreService;
+        protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IItemNavigationTreeFactory ItemNavigationTreeFactory;
         public SiteFooterNavigationContext(
              ISiteRootContext siteRootContext,
              IItemNavigationTreeFactory itemNavigationTreeFactory,
-             ISitecoreService sitecoreService)
+             IGlobalSitecoreService globalService)
         {
             SiteRootContext = siteRootContext;
             ItemNavigationTreeFactory = itemNavigationTreeFactory;
-            SitecoreService = sitecoreService;
+            GlobalService = globalService;
         }
         
-        public INavigation_Root NavigationMenuOneRoot => SiteRootContext.Item == null ? null : SitecoreService.GetItem<INavigation_Root>(SiteRootContext.Item.Footer_Menu_1_Navigation);
+        public INavigation_Root NavigationMenuOneRoot => SiteRootContext.Item == null ? null : GlobalService.GetItem<INavigation_Root>(SiteRootContext.Item.Footer_Menu_1_Navigation);
 
-        public INavigation_Root NavigationMenuTwoRoot => SiteRootContext.Item == null ? null : SitecoreService.GetItem<INavigation_Root>(SiteRootContext.Item.Footer_Menu_2_Navigation);
+        public INavigation_Root NavigationMenuTwoRoot => SiteRootContext.Item == null ? null : GlobalService.GetItem<INavigation_Root>(SiteRootContext.Item.Footer_Menu_2_Navigation);
     }
 }

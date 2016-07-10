@@ -1,6 +1,7 @@
-﻿using System;
-using Informa.Library.Globalization;
+﻿using Informa.Library.Globalization;
 using Informa.Library.Presentation;
+using Informa.Library.Services.Article;
+using Informa.Library.Site;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Document;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -12,32 +13,34 @@ namespace Informa.Web.ViewModels
 	public class ArticlePrologueBookmarkViewModel : IArticlePrologueBookmarkViewModel
 	{
 		protected readonly ITextTranslator TextTranslator;
-		
+		protected readonly ISiteRootContext SiteRootContext;
+		protected readonly IArticleService ArticleService;
+
 		public ArticlePrologueBookmarkViewModel(
 			ITextTranslator textTranslator,
 			IRenderingItemContext articleRenderingContext,
-			ISignInViewModel signInViewModel,
 			IAuthenticatedUserContext authenticatedUserContext,
-			IIsSavedDocumentContext isSavedDocuementContext)
+			IIsSavedDocumentContext isSavedDocuementContext,
+			ISiteRootContext siteRootContext,
+			IArticleService articleService)
 		{
 			TextTranslator = textTranslator;
-			SignInViewModel = signInViewModel;
-			
-			_article = new Lazy<IArticle>(articleRenderingContext.Get<IArticle>);
-			_isAuthenticated = authenticatedUserContext.IsAuthenticated;
-			_isArticleBookmarked = IsUserAuthenticated && isSavedDocuementContext.IsSaved(Article._Id);
+			SiteRootContext = siteRootContext;
+			ArticleService = articleService;
+
+			Article = articleRenderingContext.Get<IArticle>();
+			IsUserAuthenticated = authenticatedUserContext.IsAuthenticated;
+			IsArticleBookmarked = IsUserAuthenticated && isSavedDocuementContext.IsSaved(Article._Id);
+			BookmarkPublication = ArticleService.GetArticlePublicationName(Article);
+            BookmarkTitle = Article?.Title;
 		}
 
-		private readonly Lazy<IArticle> _article; 
-		public IArticle Article => _article.Value;
-
-		private readonly bool _isAuthenticated; 
-		public bool IsUserAuthenticated => _isAuthenticated;
-
-		private readonly bool _isArticleBookmarked; 
-		public bool IsArticleBookmarked => _isArticleBookmarked;
+		public IArticle Article { get; set; }
+		public bool IsUserAuthenticated { get; set; }
+		public bool IsArticleBookmarked { get; set; }
 		public string BookmarkText => TextTranslator.Translate("Bookmark");
+		public string BookmarkTitle { get; }
+		public string BookmarkPublication { get; }
 		public string BookmarkedText => TextTranslator.Translate("Bookmarked");
-		public ISignInViewModel SignInViewModel { get; set; }
 	}
 }

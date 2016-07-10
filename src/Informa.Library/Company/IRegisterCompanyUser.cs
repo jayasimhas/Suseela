@@ -4,6 +4,6 @@ namespace Informa.Library.Company
 {
 	public interface IRegisterCompanyUser
 	{
-		bool Register(INewUser newUser, ICompany company);
+		IRegisterUserResult Register(INewUser newUser, ICompany company);
 	}
 }

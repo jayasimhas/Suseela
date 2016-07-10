@@ -33,15 +33,15 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 9896fd4d-9d17-414a-9d4d-bc8f801de4ce
+revision: efecce05-f399-4a1f-a040-1d1f840d73d1
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 12
+content-length: 7
 
-Image Source
+Source:
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -55,18 +55,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-9896fd4d-9d17-414a-9d4d-bc8f801de4ce
+efecce05-f399-4a1f-a040-1d1f840d73d1
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160315T212853Z
+20160427T133424Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 15
 
-sitecore\admin
+sitecore\srigby
