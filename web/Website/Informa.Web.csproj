@@ -1087,6 +1087,7 @@
     <Content Include="Util\DCD\img\back_body_leftshadow.png" />
     <Content Include="Util\DCD\img\back_body_rightshadow.png" />
     <Content Include="Util\DCD\img\header_logo.gif" />
+    <Content Include="Util\DCD\img\header_logo.png" />
     <Content Include="Util\DCD\js\jquery-ui.js" />
     <Content Include="Util\DCD\js\jquery.js" />
     <Content Include="Util\DCD\js\jquery.multiSelect.js" />
