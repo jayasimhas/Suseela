@@ -13,7 +13,7 @@ namespace Informa.Web.Areas.Account.Models.User.Registration
 		public string Username { get; set; }
 		[Password(ErrorMessage = RegisterValidationReason.PasswordRequirements)]
 		public string Password { get; set; }
-		[Compare("Password", ErrorMessage = RegisterValidationReason.PasswordMismatch)]
+		[Compare(nameof(Password), ErrorMessage = RegisterValidationReason.PasswordMismatch)]
 		public string PasswordRepeat { get; set; }
 		[Required(ErrorMessage = RegisterValidationReason.Required)]
 		[MinLength(2, ErrorMessage = RegisterValidationReason.Required)]
@@ -22,5 +22,10 @@ namespace Informa.Web.Areas.Account.Models.User.Registration
 		public string LastName { get; set; }
 		[MustBeTrue(ErrorMessage = RegisterValidationReason.TermsNotAccepted)]
 		public bool TermsAccepted { get; set; }
+		public bool AssociateMaster { get; set; }
+		[RequiredIf(nameof(AssociateMaster), true, ErrorMessage = RegisterValidationReason.MasterIdInvalid)]
+		public string MasterId { get; set; }
+		[RequiredIf(nameof(AssociateMaster), true, ErrorMessage = RegisterValidationReason.MasterIdInvalid)]
+		public string MasterPassword { get; set; }
 	}
 }

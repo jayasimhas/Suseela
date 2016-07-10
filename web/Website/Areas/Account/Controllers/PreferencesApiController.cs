@@ -3,6 +3,7 @@ using Informa.Library.User.Offer;
 using Informa.Library.User.Newsletter;
 using Informa.Web.Areas.Account.Models.User.Management;
 using Informa.Library.Utilities.WebApi.Filters;
+using System.Linq;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -10,33 +11,31 @@ namespace Informa.Web.Areas.Account.Controllers
 	{
 		protected readonly IUpdateOfferUserOptInContext OffersOptIn;
 		protected readonly IUpdateSiteNewsletterUserOptIn UpdateSiteNewsletterOptIn;
-		protected readonly IUpdateSiteNewsletterUserOptInContext UpdateSiteNewsletterOptInContext;
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
+		protected readonly ISetPublicationsNewsletterUserOptIns SetNewsletterUserOptInsContext;
 
 		public PreferencesApiController(
 			IUpdateOfferUserOptInContext offersOptIn,
 			IUpdateSiteNewsletterUserOptIn updateSiteNewsletterOptIn,
-			IUpdateSiteNewsletterUserOptInContext updateSiteNewsletterOptInContext,
-			ISiteNewsletterUserOptedInContext newsletterOptedInContext)
+			ISiteNewsletterUserOptedInContext newsletterOptedInContext,
+			ISetPublicationsNewsletterUserOptIns setNewsletterUserOptInsContext)
 		{
 			OffersOptIn = offersOptIn;
 			UpdateSiteNewsletterOptIn = updateSiteNewsletterOptIn;
-			UpdateSiteNewsletterOptInContext = updateSiteNewsletterOptInContext;
 			NewsletterOptedInContext = newsletterOptedInContext;
+			SetNewsletterUserOptInsContext = setNewsletterUserOptInsContext;
 		}
 
 		[HttpPost]
         [ArgumentsRequired]
         public IHttpActionResult Update(PreferencesRequest request)
 		{
-			var nResp = UpdateSiteNewsletterOptInContext.Update(request.NewsletterOptIn);
-			var oResp = OffersOptIn.Update(!request.DoNotSendOffersOptIn);
-
-			var success = nResp && oResp;
+			var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request.Publications ?? Enumerable.Empty<string>());
+			var offersUpdated = OffersOptIn.Update(!request.DoNotSendOffersOptIn);
 
 			return Ok(new
 			{
-				success = success
+				success = newsletterUpdated && offersUpdated
 			});
 		}
 

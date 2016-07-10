@@ -12,7 +12,7 @@ templatekey: Staff Item
 ----version----
 language: en
 version: 1
-revision: d65f7916-c762-4ee1-9488-3dcde72e99ec
+revision: 6ffb656b-f243-451c-ae96-6d251dbf94ac
 
 ----field----
 field: {CF238D7D-3C1B-4CDE-B2B5-01CDBBD23A58}
@@ -28,6 +28,20 @@ key: last name
 content-length: 6
 
 Sharma
+----field----
+field: {3E617952-E635-4B9D-9CF7-F7ADFA549B6A}
+name: Image
+key: image
+content-length: 116
+
+<image mediaid="{8A2FC4D2-0CF5-47D0-912C-A340093F3648}" alt="Vibha Sharma" height="" width="" hspace="" vspace="" />
+----field----
+field: {EA38CC14-799A-4FED-A58C-4BED8C57A81E}
+name: Twitter
+key: twitter
+content-length: 13
+
+ScripRegVibha
 ----field----
 field: {0ECF54F6-157B-49B0-AAD2-CE5EA3B5A568}
 name: Email Address
@@ -48,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d65f7916-c762-4ee1-9488-3dcde72e99ec
+6ffb656b-f243-451c-ae96-6d251dbf94ac
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160119T190926Z
+20160424T000629Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
