@@ -24,7 +24,7 @@ using Sitecore.Links;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
 using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
-
+using Sitecore.Data;
 
 namespace Informa.Web.Controllers
 {
@@ -756,7 +756,7 @@ namespace Informa.Web.Controllers
         public HDirectoryStruct GetHierarchy(string path)
         {
             var item = _sitecoreService.GetItem<Item>(path);
-            
+
             var children = item.Children.Select(child => GetHierarchy(child.Paths.Path)).ToList();
             var childNode = new HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
             childNode.Children = childNode.ChildrenList.ToArray();
@@ -837,7 +837,7 @@ namespace Informa.Web.Controllers
         }
     }
 
-public class GetArticleActualPublishedDateController : ApiController
+    public class GetArticleActualPublishedDateController : ApiController
     {
         ArticleUtil _articleUtil;
         public GetArticleActualPublishedDateController(ArticleUtil articleUtil)
@@ -852,4 +852,11 @@ public class GetArticleActualPublishedDateController : ApiController
         }
     }
 
+    public class GetArticleWorkflowHistoryController : ApiController
+    {
+        public JsonResult<List<Tuple<DateTime, string, bool>>> Get(Guid itemID)
+        {
+            return Json(new Informa.Library.Utilities.SitecoreUtils.WorkflowUtil().GetWorkflowHistory(new ID(itemID)));
+        }
+    }
 }
