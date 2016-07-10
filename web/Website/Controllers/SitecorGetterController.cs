@@ -832,4 +832,19 @@ namespace Informa.Web.Controllers
         }
     }
 
+public class GetArticleActualPublishedDateController : ApiController
+    {
+        ArticleUtil _articleUtil;
+        public GetArticleActualPublishedDateController(ArticleUtil articleUtil)
+        {
+            _articleUtil = articleUtil;
+        }
+
+
+        public JsonResult<DateTime> Get(Guid itemID)
+        {
+            return Json(_articleUtil.GetArticleActualPublishedDate(itemID));
+        }
+    }
+
 }
