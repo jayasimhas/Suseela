@@ -89,8 +89,25 @@ var decodeHtml = function(html) {
     txt.innerHTML = html;
     return txt.value;
 }
-
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
 $(document).ready(function() {
+
+
+    var mediaTable = getParameterByName('mobilemedia');
+    if(mediaTable=="true"){
+        $("table").each(function(){
+            $(this).attr("style","display:block");
+        });
+    }
+
 
     // Anti Forgery Token
     var requestVerificationToken = $('.main__wrapper').data('request-verification-token');
