@@ -52,6 +52,15 @@ namespace Informa.Library.Utilities.References
 		
 		#endregion
 
+		#region Environment Globals
+
+        public Guid SupportingDocumentsRootNodePointer => new Guid("{76483552-F714-47C4-89E5-CEE081F95A7A}");
+        public Guid ContactEmailForSupport => new Guid("{B611B955-D084-418F-B91F-74F0781B2514}");
+        public Guid FromEmailAddressForWorkflowNotifications => new Guid("{A4B7D7FE-00CF-4100-996F-537E4558DB98}");
+        public Guid EmailTitleForWorkflowNotifications => new Guid("{00F04673-7A2F-4A7B-A949-1F423D30B719}");
+
+        #endregion
+
 		#region Account Contact Info Drop Downs
 
 		public Guid AccountCountries => new Guid("{C1479FF7-F581-4A71-B25A-5FCB6312A0CF}");

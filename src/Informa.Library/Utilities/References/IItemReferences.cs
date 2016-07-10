@@ -42,5 +42,9 @@ namespace Informa.Library.Utilities.References
 		Guid EmailPreferences { get; }
 
         Guid PasswordRecoveryEmail { get; }
+		Guid SupportingDocumentsRootNodePointer { get; }
+        Guid ContactEmailForSupport { get; }
+        Guid FromEmailAddressForWorkflowNotifications { get; }
+        Guid EmailTitleForWorkflowNotifications { get; }
     }
 }
