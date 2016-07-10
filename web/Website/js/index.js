@@ -877,6 +877,9 @@ $(document).ready(function() {
         $('.js-update-email-prefs').attr('disabled', null);
     });
 
+
+    $('iframe').attr("webkitallowfullscreen","true").attr("mozallowfullscreen","true").attr("allowfullscreen","true");
+
     // Twitter sharing JS
     window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],
         w=window.twttr||{};
