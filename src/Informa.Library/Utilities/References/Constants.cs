@@ -40,7 +40,9 @@ namespace Informa.Library.Utilities.References
 
 		public static string EditAfterPublishWorkflowCommand = "{322D0739-B3AC-416F-BF58-5E39E716F003}";
 
-		public static string ScripWorkflow = "{926E6200-EB76-4AD4-8614-691D002573AC}";
+        public static string NavigationItemTemplateID = "{354B0538-CB81-4B26-A25E-7B5DBA03C2F5}";
+
+        public static string ScripWorkflow = "{926E6200-EB76-4AD4-8614-691D002573AC}";
 		public static readonly Dictionary<Guid, string> PublicationPrefixDictionary = new Dictionary<Guid, string>
 				{
 						{ new Guid(ScripRootNode), ScripRootNodeIntials},
