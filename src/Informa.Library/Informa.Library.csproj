@@ -390,6 +390,7 @@
     <Compile Include="Publishing\Events\PublishItemProcessing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishingDateTime.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishingDateTime.cs" />
+<Compile Include="Publishing\Scheduled\Tasks\SchedulingUnlockUser.cs" />
     <Compile Include="Purchase\ArticlePurchaseItem.cs" />
     <Compile Include="Purchase\ArticlePurchaseItemsFactory.cs" />
     <Compile Include="Purchase\IArticlePurchase.cs" />
