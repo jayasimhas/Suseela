@@ -27,7 +27,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
 	    public void Process(HttpRequestArgs args)
 	    {
-	        Assert.ArgumentNotNull((object) args, "args");
+            Assert.ArgumentNotNull((object) args, "args");
 	        if (Context.Item != null || Context.Database == null || args.Url.ItemPath.Length == 0)
 	            return;
 
