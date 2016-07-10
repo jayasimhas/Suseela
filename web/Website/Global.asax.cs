@@ -9,6 +9,7 @@ using Autofac;
 using System.Web;
 using Sitecore.Configuration;
 using StackExchange.Profiling;
+using System.Net;
 
 namespace Informa.Web
 {
@@ -38,11 +39,13 @@ namespace Informa.Web
 			Library.DCD.XMLImporting.FileImportingManager mgr = new Library.DCD.XMLImporting.FileImportingManager();
 			mgr.StartIfStartable();
 
-			//AreaRegistration.RegisterAllAreas();
-			//GlobalConfiguration.Configure(WebApiConfig.Register);
-			//FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-			//RouteConfig.RegisterRoutes(RouteTable.Routes);
-		}
+            //AreaRegistration.RegisterAllAreas();
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
+            //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+        }
 
 #if DEBUG
 		protected void Application_BeginRequest()

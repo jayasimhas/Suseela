@@ -638,6 +638,12 @@ $(document).ready(function() {
     // Display the Forgot Password block when "forgot your password" is clicked
     $('.js-show-forgot-password').on('click', function toggleForgotPass() {
         $('.js-reset-password-container').toggleClass('is-active');
+        if($(".informa-ribbon").hasClass("show")){
+            $("body").scrollTop($(".pop-out__sign-in-forgot-password").position().top + 570);
+        }else{
+            $("body").scrollTop($(".pop-out__sign-in-forgot-password").position().top);
+        }
+
     });
 
     // Global dismiss button for pop-outs
@@ -884,6 +890,9 @@ $(document).ready(function() {
     $('.js-account-email-checkbox').on('click', function (e) {
         $('.js-update-email-prefs').attr('disabled', null);
     });
+
+
+    $('iframe').attr("webkitallowfullscreen","true").attr("mozallowfullscreen","true").attr("allowfullscreen","true");
 
     // Twitter sharing JS
     window.twttr = function(t,e,r){var n,i=t.getElementsByTagName(e)[0],
