@@ -820,6 +820,16 @@ namespace Informa.Web.Controllers
         }
     }
 
+    public class GetServerTimezoneController : ApiController
+    {
+        public GetServerTimezoneController()
+        {
+        }
 
+        public JsonResult<TimeZoneInfo> Get()
+        {
+            return Json(TimeZoneInfo.Local);
+        }
+    }
 
 }

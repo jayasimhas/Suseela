@@ -136,7 +136,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			var articleDetails = new ArticleStruct();
 			try
 			{
-				articleDetails.ArticleNumber = pageArticleInformationControl.GetArticleNumber();
+                articleDetails.ArticleNumber = pageArticleInformationControl.GetArticleNumber();
 				articleDetails.WebPublicationDate = pageArticleInformationControl.GetWebPublishDate();
 				articleDetails.Publication = pageArticleInformationControl.GetSelectedPublicationGuid();
 				articleDetails.Authors = pageArticleInformationControl.GetSelectedAuthors().ToList();
@@ -186,12 +186,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 
 		public DateTime GetDate()
 		{
-			return pageArticleInformationControl.GetWebPublishDate();
+            return pageArticleInformationControl.GetWebPublishDate();
 		}
 
-		public void SetDate(DateTime time)
+		public void SetDate(DateTime time, bool isLocalTimezone)
 		{
-			pageArticleInformationControl.SetPublicationTime(time, true);
+			pageArticleInformationControl.SetPublicationTime(time, isLocalTimezone);
 		}
 
 		#endregion
