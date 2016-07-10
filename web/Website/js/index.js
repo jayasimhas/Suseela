@@ -630,6 +630,12 @@ $(document).ready(function() {
     // Display the Forgot Password block when "forgot your password" is clicked
     $('.js-show-forgot-password').on('click', function toggleForgotPass() {
         $('.js-reset-password-container').toggleClass('is-active');
+        if($(".informa-ribbon").hasClass("show")){
+            $("body").scrollTop($(".pop-out__sign-in-forgot-password").position().top + 570);
+        }else{
+            $("body").scrollTop($(".pop-out__sign-in-forgot-password").position().top);
+        }
+
     });
 
     // Global dismiss button for pop-outs
