@@ -38,8 +38,11 @@ namespace Informa.Library.Search.PredicateBuilders
 				}
 			}
 
-			// fiure-out time parameter
-			if (_request.QueryParameters.ContainsKey(Constants.QueryString.DateRangeFilterLabelKey))
+            //Include Search for authors
+            predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
+
+            // fiure-out time parameter
+            if (_request.QueryParameters.ContainsKey(Constants.QueryString.DateRangeFilterLabelKey))
 			{
 				string dateRangeFilterLabelValue = _request.QueryParameters[Constants.QueryString.DateRangeFilterLabelKey];
 				if (_request.QueryParameters.ContainsKey(Constants.QueryString.TimeKey))
