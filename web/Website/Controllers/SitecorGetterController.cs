@@ -148,7 +148,8 @@ namespace Informa.Web.Controllers
 
         public JsonResult<List<TaxonomyStruct>> Get(string searchTerm)
         {
-            var taxonomyItem = _sitecoreService.GetItem<Item>(new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}"));
+            var taxoGuid = new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}");
+            var taxonomyItem = _sitecoreService.GetItem<Item>(taxoGuid);
             if (taxonomyItem == null)
             {
                 return null;
@@ -162,7 +163,7 @@ namespace Informa.Web.Controllers
             {
                 children = taxonomyItem.Axes.GetDescendants().ToList();
             }
-            var matches = children.Select(child => new TaxonomyStruct { ID = child.ID.Guid, Name = child.DisplayName }).ToList();
+            var matches = children.Select(child => new TaxonomyStruct { ID = child.ID.Guid, Name = child.DisplayName, Section = child.ParentID.Guid.Equals(taxoGuid) ? null : child.ParentID.Guid.ToString() }).ToList();
 
             return Json(matches);
 
@@ -209,9 +210,11 @@ namespace Informa.Web.Controllers
         // GET api/<controller>
         public JsonResult<string> Get()
         {
-            var siteConfigItem = _sitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode);
-            if (siteConfigItem == null) return Json(string.Empty);
-            var supportingEmailFieldValue = siteConfigItem.Contact_Email;
+            //var siteConfigItem = _sitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode);
+            var contactEmail = _sitecoreService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_Nodes.IText_Node>(ItemReferences.Instance.ContactEmailForSupport);
+
+            if (contactEmail == null) return Json(string.Empty);
+            var supportingEmailFieldValue = contactEmail.Text;
             if (string.IsNullOrEmpty(supportingEmailFieldValue)) return Json(string.Empty);
             return Json(supportingEmailFieldValue);
         }
@@ -449,9 +452,11 @@ namespace Informa.Web.Controllers
         public JsonResult<string[]> Get()
         {
             List<string> result = new List<string>();
-            var siteConfigItem = _sitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode);
-            if (siteConfigItem == null) return Json(result.ToArray());
-            var supportingDocumentFieldValue = siteConfigItem.Supporting_Documents_Folder;
+            //var siteConfigItem = _sitecoreService.GetItem<ISite_Config>(Constants.ScripRootNode);
+            var supportingDoc = _sitecoreService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.IItem_Pointer_Config>(ItemReferences.Instance.SupportingDocumentsRootNodePointer);
+
+            if (supportingDoc == null) return Json(result.ToArray());
+            var supportingDocumentFieldValue = supportingDoc.Item_Pointer;
             if (supportingDocumentFieldValue == new Guid()) return Json(result.ToArray());
             var supportingDocumentFolder = _sitecoreService.GetItem<IGlassBase>(supportingDocumentFieldValue);
             if (supportingDocumentFolder == null) return Json(result.ToArray());

@@ -22,6 +22,7 @@ using Sitecore.Resources.Media;
 using Sitecore.Web.UI.Sheer;
 using Sitecore.Workflows;
 using Constants = Informa.Library.Utilities.References.Constants;
+using Informa.Library.Utilities.References;
 
 namespace Informa.Web.Controllers
 {
@@ -46,10 +47,15 @@ namespace Informa.Web.Controllers
         public void SendNotification(ArticleStruct articleStruct, WorkflowInfo oldWorkflow)
         {
             if (articleStruct.Publication == Guid.NewGuid()) return;
+
             var siteConfigItem = _service.GetItem<ISite_Config>(articleStruct.Publication);
-            if (siteConfigItem == null) return;
-            var fromEmail = siteConfigItem.From_Email_Address;
-            var title = siteConfigItem.Email_Title;
+            var workflowNotifEmailTitle = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_Nodes.IText_Node>(ItemReferences.Instance.EmailTitleForWorkflowNotifications);
+            var workflowNotifFromEmail = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_Nodes.IText_Node>(ItemReferences.Instance.FromEmailAddressForWorkflowNotifications);
+
+            if (siteConfigItem == null || workflowNotifEmailTitle == null || workflowNotifFromEmail == null) return;
+            var fromEmail = workflowNotifFromEmail.Text; //siteConfigItem.From_Email_Address;
+
+            var title = workflowNotifEmailTitle.Text;
             var replyToEmail = Sitecore.Context.User.Profile.Email;
             if (string.IsNullOrEmpty(fromEmail) || string.IsNullOrEmpty(replyToEmail)) return;
             var isAuthorInSenderList = false;
@@ -129,9 +135,12 @@ namespace Informa.Web.Controllers
         {
             if (articleStruct.Publication == Guid.NewGuid()) return;
             var siteConfigItem = _service.GetItem<ISite_Config>(articleStruct.Publication);
-            if (siteConfigItem == null) return;
-            var fromEmail = siteConfigItem.From_Email_Address;
-            var title = siteConfigItem.Email_Title;
+            var workflowNotifFromEmail = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_Nodes.IText_Node>(ItemReferences.Instance.FromEmailAddressForWorkflowNotifications);
+            var workflowNotifEmailTitle = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_Nodes.IText_Node>(ItemReferences.Instance.EmailTitleForWorkflowNotifications);
+
+            if (siteConfigItem == null || workflowNotifFromEmail == null || workflowNotifEmailTitle == null) return;
+            var fromEmail = workflowNotifFromEmail.Text;// siteConfigItem.From_Email_Address;
+            var title = workflowNotifEmailTitle.Text;
             var replyToEmail = Sitecore.Context.User.Profile.Email;
             if (string.IsNullOrEmpty(fromEmail) || string.IsNullOrEmpty(replyToEmail)) return;
 

@@ -261,10 +261,13 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
         /// </summary>
         public void UpdateFields()
         {
+            if (ArticleDetailFieldsUpdateDisabler.DisableFieldsUpdate == false)
+            {
             Globals.SitecoreAddin.Log("Updating fields...");
             articleDetailsPageSelector.UpdateFields(ArticleDetails);
             articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState, ArticleDetails);
             articleStatusBar1.RefreshWorkflowDetails();
+        }
         }
 
         /// <summary>
@@ -1001,6 +1004,21 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                         MessageBoxIcon.Exclamation);
             }
             return false;
+        }
+    }
+
+    public class ArticleDetailFieldsUpdateDisabler : IDisposable
+    {
+        public static bool DisableFieldsUpdate { get; private set; }
+
+        public ArticleDetailFieldsUpdateDisabler()
+        {
+            DisableFieldsUpdate = true;
+        }
+
+        public void Dispose()
+        {
+            DisableFieldsUpdate = false;
         }
     }
 }

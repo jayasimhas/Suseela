@@ -41,14 +41,14 @@ namespace Informa.Web.Areas.Article.Controllers
 	    protected readonly IArticleService ArticleService;
 
 		public EmailFriendController(
-            ITextTranslator textTranslator, 
-            ISiteRootContext siteRootContext, 
+            ITextTranslator textTranslator,
+            ISiteRootContext siteRootContext,
             IEmailFactory emailFactory,
-			IEmailSender emailSender, 
+            IEmailSender emailSender,
             IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
-			ISiteSettings siteSettings, 
+            ISiteSettings siteSettings,
             ILog logger,
-            IGlobalSitecoreService globalService, 
+            IGlobalSitecoreService globalService,
             IArticleSearch articleSearch,
             IArticleService articleService)
 		{
@@ -82,7 +82,8 @@ namespace Informa.Web.Areas.Article.Controllers
 				});
 			}
 
-			var emailFrom = GetValue(siteRoot?.Email_From_Address);
+            //var emailFrom = GetValue(siteRoot?.Email_From_Address);
+            var emailFrom = string.Format("{0} <{1}>", siteRoot.Publication_Name, GetValue(siteRoot?.Email_From_Address));
 			var allEmails = request.RecipientEmail.Split(';');
 			var result = true;
 			var emailBody = GetEmailBody(request.SenderEmail, request.SenderName,
@@ -158,11 +159,10 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#Footer_Content#"] = GetValue(footerContent?.Email_A_Friend_Footer_Content)
 						.ReplacePatternCaseInsensitive("#SENDER_EMAIL#", senderEmail),
                     ["#sender_name_message#"] = !string.IsNullOrEmpty(message)
-                        ? $"{senderName} {TextTranslator.Translate("Search.Message")}:"
+                        ? TextTranslator.Translate("Search.Message").Replace("#SENDER_NAME#", senderName)
                         : string.Empty
-
                 };
-                
+
 				// Article Body
 				var article = GetArticle(articleNumber);
 				replacements["#article_date#"] = article?.Actual_Publish_Date.ToString("dd MMMM yyyy") ?? string.Empty;
@@ -218,7 +218,7 @@ namespace Informa.Web.Areas.Article.Controllers
 				});
 			}
 
-			var emailFrom = GetValue(siteRoot?.Email_From_Address);
+            var emailFrom = string.Format("{0} <{1}>", siteRoot.Publication_Name, GetValue(siteRoot?.Email_From_Address));
 			var allEmails = request.RecipientEmail.Split(';');
 			var result = true;
 			var emailBody = GetEmailSearchBody(
@@ -309,7 +309,7 @@ namespace Informa.Web.Areas.Article.Controllers
 					["#search_query#"] = queryTerm,
 					["#see_more#"] = TextTranslator.Translate("Search.SeeMore"),
                     ["#sender_name_message#"] = !string.IsNullOrEmpty(message)
-                        ? $"{senderName} {TextTranslator.Translate("Search.Message")}:"
+                        ? TextTranslator.Translate("Search.Message").Replace("#SENDER_NAME#", senderName)
                         : string.Empty
                 };
 
@@ -363,7 +363,7 @@ namespace Informa.Web.Areas.Article.Controllers
 	    {
             IArticleSearchFilter filter = ArticleSearch.CreateFilter();
             filter.ArticleNumbers = articleNumber.SingleToList();
-            return ArticleSearch.Search(filter).Articles.FirstOrDefault();            
+            return ArticleSearch.Search(filter).Articles.FirstOrDefault();
         }
 
         public string GetMediaURL(string mediaId)
