@@ -372,3 +372,14 @@
   ng-class="{'is-expanded': facetsAreCollapsed}">
   <h6 class="hide-filters">Hide Filters</h6>
 </button>
+<style type="text/css">
+    *::-ms-backdrop, .facets__section-list input[type='checkbox'], .facets__section-list input[type='radio'] {
+        opacity: 1 !important;
+        margin-top: 5px !important;
+    }
+
+    *::-ms-backdrop, .facets__label::before {
+        border: none !important;
+        margin-left: 3px !important;
+    }
+</style>
