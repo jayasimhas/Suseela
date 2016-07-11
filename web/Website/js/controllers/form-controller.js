@@ -59,11 +59,6 @@ function formController(opts) {
 			        opts.beforeRequest(currentForm);
 			    }
 
-			    // Prevent user from re-submitting form, unless explicitly allowed
-			    if(!$(currentForm).data('prevent-disabling')) {
-			        $(formSubmit).attr('disabled', 'disabled');
-			    }
-
 			    var inputData = {};
 			    var IsValid = true;//Skip Validation if the form is not Update Contact Informatin Form
 			    if($(currentForm).hasClass('form-update-account-contact'))
@@ -71,6 +66,10 @@ function formController(opts) {
 			        IsValid = ValidateContactInforForm();
 			    }
 			    if(IsValid){
+			        // Prevent user from re-submitting form, unless explicitly allowed
+			        if(!$(currentForm).data('prevent-disabling')) {
+			            $(formSubmit).attr('disabled', 'disabled');
+			        }
 			        $(currentForm).find('input, select, textarea').each(function() {
 
 			            var value = '';
