@@ -111,6 +111,10 @@ function popOutController(triggerElm) {
 			case 'email-search':
 				popOut = $('.js-pop-out__email-search');
 				break;
+			// EMAIL AUTHOR
+			case 'email-author':
+				popOut = $('.js-pop-out__email-author');
+				break;
 			// GLOBAL HEADER REGISTRATION
 			case 'register':
 				popOut = $('.js-pop-out__register');

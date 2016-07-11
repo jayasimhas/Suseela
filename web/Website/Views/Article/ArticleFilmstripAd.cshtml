@@ -1,12 +1,13 @@
-@model ArticleAdViewModel
+@model AdViewModel
 
-@if(!string.IsNullOrEmpty(Model.FilmstripAdID) && !string.IsNullOrEmpty(Model.AdZone)) {
-<section class="article-preview article-preview--small">
-    <div class="article-preview__ad advertising">
-        <span class="advertising__label">@Model.AdvertisementText</span>
-        <script>
-        OAS_AD('@Model.FilmstripAdID', '@Model.AdZone');
-        </script>
-    </div>
-</section>
+@if (Model.IsValidAd(Model.FilmstripAdId)) {
+
+    <section class="article-preview article-preview--small">
+        <div class="article-preview__ad advertising">
+            <span class="advertising__label">@Model.AdvertisementText</span>
+            <script>
+                OAS_AD('@Model.FilmstripAdId', '@Model.AdZone');
+            </script>
+        </div>
+    </section>
 }

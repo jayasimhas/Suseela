@@ -2,9 +2,9 @@
 version: 1
 id: {E8FA6785-AEAD-473F-B24E-D80B8A89BE51}
 database: master
-path: /sitecore/templates/User Defined/Pages/Author Profile
+path: /sitecore/templates/User Defined/Pages/Author Page
 parent: {8D510CBE-EC0E-42E1-983B-748AD8332249}
-name: Author Profile
+name: Author Page
 master: {00000000-0000-0000-0000-000000000000}
 template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
 templatekey: Template
@@ -40,7 +40,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: f6a31dd5-12b4-4cf1-a7ce-b344b0593962
+revision: 33b097f5-b3a2-4983-841f-5c4269af1b68
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -62,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-f6a31dd5-12b4-4cf1-a7ce-b344b0593962
+33b097f5-b3a2-4983-841f-5c4269af1b68
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160702T002804Z
+20160706T151857Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

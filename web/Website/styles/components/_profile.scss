@@ -7,6 +7,12 @@
 		font-size: 1rem;
 	}
 
+    &:after {
+		clear: both;
+		content: "";
+		display: block;
+	}
+
 	&__expertise,
 	&__links {
 

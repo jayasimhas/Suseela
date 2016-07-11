@@ -105,21 +105,8 @@
 		return sector;
 	}
 
-@if(Model.PublicationName == "SCRIP Intelligence") {
-    @Html.Raw("OAS_publication = 'www.scripnews.com/';");
-} else if(Model.PublicationName == "Medtech Insight") {
-	@Html.Raw("OAS_publication = 'medtech.pharmamedtechbi.com/';");
-} else if(Model.PublicationName == "In Vivo") {
-	@Html.Raw("OAS_publication = 'invivo.pharmamedtechbi.com/';");
-} else if(Model.PublicationName == "Rose Sheet") {
-	@Html.Raw("OAS_publication = 'rosesheet.pharmamedtechbi.com/';");
-} else if(Model.PublicationName == "Pink Sheet") {
-	@Html.Raw("OAS_publication = 'pinksheet.pharmamedtechbi.com/';");
-} else {
-	@Html.Raw("OAS_publication = '';");
-}
-
-//configuration
+    //configuration
+OAS_publication = '@Model.AdDomain' + '/';
 OAS_url = 'https://oasc-eu1.247realmedia.com/RealMedia/ads/';
 OAS_sitepage = OAS_publication + getCorrespondingSectr('home');
 OAS_listpos = 'Top,Top1,Bottom,Right,Right1,TopRight,Top2,Top3,Middle,Middle1,Position2,Position3';

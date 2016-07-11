@@ -90,10 +90,12 @@
 
 // COLUMN HELPERS
 .l-left-rail {
+	min-width: 70%;
 	max-width: 790px;
 	float: left;
 
-	@include breakpoint('medium') {
+	@include breakpoint('large') {
+		margin-bottom: 2rem;
 		width: 100%;
 		clear: both;
 		float: none;
@@ -105,9 +107,12 @@
 	float: right;
 	max-width: 290px;
 
-	@include breakpoint('medium') {
-		max-width: 100%;
+	@include breakpoint('large') {
+		clear: both;
 		float: none;
+		margin-bottom: 1rem;
+		max-width: 100%;
+		width: 100%;
 	}
 }
 
@@ -116,7 +121,7 @@
 	display: flex;
 	flex: auto;
 	flex-wrap: wrap;
-	margin: 0 0 30px;
+	margin: 0 0 2.5em;
 
 	&--with-divider {
 		.l-columns__column {
@@ -127,16 +132,31 @@
 
 	&--three-up {
 		.l-columns__column {
-			width: 33.3333333%;
+			width: calc(33.3333333% + 30px);
+			padding: 0 30px;
 		}
 
 		.l-columns__column:nth-child(3n + 1) {
+			width: calc(33.3333333% - 15px);
 			padding-left: 0;
 		}
 
 		.l-columns__column:nth-child(3n) {
+			width: calc(33.3333333% - 15px);
 			border-right: none;
 			padding-right: 0;
 		}
+
+		@include breakpoint('medium') {
+			.l-columns__column,
+			.l-columns__column:nth-child(3n),
+			.l-columns__column:nth-child(3n + 1) {
+				border-right: none;
+				margin-bottom: 2rem;
+				padding: 0;
+				width: 100%;
+			}
+		}
+
 	}
 }

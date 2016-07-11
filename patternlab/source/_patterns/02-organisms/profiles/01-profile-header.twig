@@ -57,7 +57,7 @@
 		{% endif %}
 		<ul class="profile__links">
 			{% if email %}
-				<li>
+				<li class="js-tealium-click" data-tealium-click='{"event_name": "author_profile_email_click_through", "click_through_source": "{{personName}}", "click_through_destination": "{{email}}"}'>
 					{% include "molecules-icon-as-bullet" with {"icon": "email", "linkText": email} %}
 				</li>
 			{% endif %}

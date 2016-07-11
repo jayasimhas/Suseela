@@ -17728,14 +17728,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					[SitecoreField(IStaff_ItemConstants.Industry_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Industry_Expertises  {get; set;}
 								/// <summary>
-					/// The Writes for field.
+					/// The Write for Expertise field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: 2c527b2c-25e8-47d0-9356-8f21757ba897</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IStaff_ItemConstants.Writes_ForsFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Writes_Fors  {get; set;}
+					[SitecoreField(IStaff_ItemConstants.Write_For_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Write_For_Expertises  {get; set;}
 				}
 
 	
@@ -17767,14 +17767,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 						[SitecoreField(IStaff_ItemConstants.Industry_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Industry_Expertises  {get; set;}
 										/// <summary>
-						/// The Writes for field.
+						/// The Write for Expertise field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: 2c527b2c-25e8-47d0-9356-8f21757ba897</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IStaff_ItemConstants.Writes_ForsFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Writes_Fors  {get; set;}
+						[SitecoreField(IStaff_ItemConstants.Write_For_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Write_For_Expertises  {get; set;}
 						}
 	
 	public static partial class IStaff_ItemConstants{
@@ -17794,8 +17794,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 
 						
 					
-			public static readonly ID Writes_ForsFieldId = new ID("2c527b2c-25e8-47d0-9356-8f21757ba897");
-			public const string Writes_ForsFieldName = "Writes for";
+			public static readonly ID Write_For_ExpertisesFieldId = new ID("2c527b2c-25e8-47d0-9356-8f21757ba897");
+			public const string Write_For_ExpertisesFieldName = "Write for Expertise";
 
 						
 					
@@ -19617,33 +19617,33 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 
  	/// <summary>
-	/// IAuthor_Profile Interface
+	/// IAuthor_Page Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Pages/Author Profile</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Pages/Author Page</para>	
 	/// <para>ID: e8fa6785-aead-473f-b24e-d80b8a89be51</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=IAuthor_ProfileConstants.TemplateIdString)]
-	public partial interface IAuthor_Profile : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+	[SitecoreType(TemplateId=IAuthor_PageConstants.TemplateIdString)]
+	public partial interface IAuthor_Page : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
 	{
 				}
 
 	
 		/// <summary>
-		/// IAuthor_Profile Interface
+		/// IAuthor_Page Interface
 		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Pages/Author Profile</para>	
+		/// <para>Path: /sitecore/templates/User Defined/Pages/Author Page</para>	
 		/// <para>ID: e8fa6785-aead-473f-b24e-d80b8a89be51</para>	
 		/// </summary>
 		[SitecoreType]
-		public partial interface IAuthor_Profile__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+		public partial interface IAuthor_Page__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
 		{
 						}
 	
-	public static partial class IAuthor_ProfileConstants{
+	public static partial class IAuthor_PageConstants{
 
 			public const string TemplateIdString = "e8fa6785-aead-473f-b24e-d80b8a89be51";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Author Profile";
+			public const string TemplateName = "Author Page";
 
 					
 			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
