@@ -12,8 +12,8 @@
         <div class="profile__location">@(Model.Location)</div>
 
         @if (Model.HasImage)
-		{
-            <img class="profile__img" src="@(Model.ImageUrl)" />}
+        {
+            <img class="profile__img" src="@(Model.ImageUrl)"/>}
         <ul class="profile__links">
             @if (Model.HasEmail)
             {
@@ -95,5 +95,8 @@
                     </div>
                 </li>}
         </ul>
+    </div>
+    <div class="l-right-rail">
+        @Html.Sitecore().Placeholder("article-med-ad")
     </div>
 </div>
