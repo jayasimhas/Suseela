@@ -25,13 +25,6 @@ namespace Informa.Library.CustomSitecore.Pipelines
 			});
 
             routes.MapHttpRoute(
-                "articleNumberApi", 
-                "SC{articleNumber}",
-                new { controller = "Article", action ="Get", prefix = Constants.ScripRootNodeIntials },
-                new { articleNumber = @"\d+" }
-            );
-
-            routes.MapHttpRoute(
                 "articlePathApi",
                 "articles/{year}/{month}/{day}/{title}",
                 new { controller = "Article", action = "Get" }

@@ -13,6 +13,7 @@ using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.Data.Items;
 using Informa.Library.Utilities.Extensions;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 
 namespace Informa.Library.Services.Global {
 
@@ -140,6 +141,39 @@ namespace Informa.Library.Services.Global {
                 : $" :: {SiteRootContext.Item.Publication_Name.StripHtml()}";
 
             return string.Concat(pageTitle, publicationName);
+        }
+
+        public ISite_Root GetSiteRootAncestor(Guid g)
+        {
+            string cacheKey = CreateCacheKey($"BuildSiteRootAncestor-{g}");
+            return CacheProvider.GetFromCache(cacheKey, () => BuildSiteRootAncestor(g));
+        }
+
+        private ISite_Root BuildSiteRootAncestor(Guid g)
+        {
+            var curItem = SitecoreService.GetItem<Item>(g);
+            if (curItem == null)
+                return null; 
+
+            var rootItem = curItem.Axes
+                  .GetAncestors()
+                  .FirstOrDefault(a => a.Template.ID.Guid.Equals(ISite_RootConstants.TemplateId.Guid));
+
+            if (rootItem == null)
+                return null;
+
+            return SitecoreService.GetItem<ISite_Root>(rootItem.ID.Guid);
+        }
+
+        public string GetPublicationName(Guid g)
+        {
+            if (g == null || g == Guid.Empty)
+                return string.Empty;
+
+            ISite_Root r = GetSiteRootAncestor(g);
+            return (r == null)
+                ? string.Empty
+                : r.Publication_Name;
         }
     }
 }

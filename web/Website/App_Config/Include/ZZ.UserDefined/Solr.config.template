@@ -34,6 +34,18 @@
               <converter handlesType="Informa.Library.Search.ComputedFields.SearchResults.Converter.HtmlLinkList"      typeConverter="Informa.Library.Search.ComputedFields.SearchResults.Converter.HtmlLinkListTypeConverter, Informa.Library" />
             </converters>
           </indexFieldStorageValueFormatter>
+          <fieldMap type="Sitecore.ContentSearch.SolrProvider.SolrFieldMap, Sitecore.ContentSearch.SolrProvider">
+            <!-- This element must be first -->
+            <typeMatches hint="raw:AddTypeMatch">
+              <typeMatch typeName="lowercase"  type="System.String"  fieldNameFormat="{0}_lc"  settingType="Sitecore.ContentSearch.SolrProvider.SolrSearchFieldConfiguration, Sitecore.ContentSearch.SolrProvider" />
+            </typeMatches>
+
+            <!-- This allows you to map a field name in Sitecore to the index and store it in the appropriate way -->
+            <!-- Add schema fields here to enable multi-language processing -->
+            <fieldNames hint="raw:AddFieldByFieldName">
+              <field fieldName="legacy_article_url"	  returnType="lowercase" />
+            </fieldNames>
+          </fieldMap>
         </defaultSolrIndexConfiguration>
       </indexConfigurations>
       <configuration>

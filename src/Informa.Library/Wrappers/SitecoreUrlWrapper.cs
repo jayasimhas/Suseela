@@ -42,7 +42,7 @@ namespace Informa.Library.Wrappers
             var itemUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
             var scheme = _dependencies.HttpContextProvider.RequestUrl?.Scheme + "://";
 
-            return scheme + GetHostName() + itemUrl;
+            return itemUrl;
         }
 
         public string GetMediaUrl(IGlassBase glassItem) => glassItem != null ? GetMediaUrl(glassItem._Id) : null;

@@ -41,7 +41,7 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 
         public string ReferenceField = "Referenced Articles";
 
-	    public string NewLinkFormat = "(<a>[A#{0}]</a>)";
+	    public string NewLinkFormat = "[A#{0}]";
 
 	    protected ILogger Log;
 

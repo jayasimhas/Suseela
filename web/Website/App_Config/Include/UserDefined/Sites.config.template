@@ -57,12 +57,15 @@
         <patch:attribute name="enableWebEdit">false</patch:attribute>
         #end
       </site>
-      <site name="website">
-        <patch:attribute name="rootPath">/sitecore/content/ScripIntelligence</patch:attribute>
-        <patch:attribute name="dictionaryDomain">ScriptIntelligenceDictionary</patch:attribute>
-        <patch:attribute name="targetHostName">${Site.Domain.Scrip}</patch:attribute>
-        <patch:attribute name="hostName">${Site.Domain.Scrip}</patch:attribute>
-        <patch:attribute name="htmlCacheSize">${Cache.HtmlCache.Website}</patch:attribute>
+      <site patch:before="site[@name='website']" name="ScripIntelligence"
+          database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+				  dictionaryDomain="ScriptIntelligenceDictionary"
+				  hostName="${Site.Domain.Scrip}" targetHostName="${Site.Domain.Scrip}"
+				  rootPath="/sitecore/content/ScripIntelligence" startItem="/home"
+				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+				  enableTracking="true" allowDebug="true"
+          enablePreview="true" enableWebEdit="true"
+          enableDebugger="true" disableClientData="false">
         #if ($Env.DeliveryOnly == "true")
         <patch:attribute name="enablePreview">false</patch:attribute>
         <patch:attribute name="enableWebEdit">false</patch:attribute>
@@ -78,6 +81,17 @@
             enableTracking="true" allowDebug="true"
             enablePreview="true" enableWebEdit="true"
             enableDebugger="true" disableClientData="false">
+        #if ($Env.DeliveryOnly == "true")
+        <patch:attribute name="enablePreview">false</patch:attribute>
+        <patch:attribute name="enableWebEdit">false</patch:attribute>
+        #end
+      </site>
+      <site name="website">
+        <patch:attribute name="rootPath">/sitecore/content/ScripIntelligence</patch:attribute>
+        <patch:attribute name="dictionaryDomain">ScriptIntelligenceDictionary</patch:attribute>
+        <patch:attribute name="targetHostName">${project.domain}</patch:attribute>
+        <patch:attribute name="hostName">${project.domain}</patch:attribute>
+        <patch:attribute name="htmlCacheSize">${Cache.HtmlCache.Website}</patch:attribute>
         #if ($Env.DeliveryOnly == "true")
         <patch:attribute name="enablePreview">false</patch:attribute>
         <patch:attribute name="enableWebEdit">false</patch:attribute>

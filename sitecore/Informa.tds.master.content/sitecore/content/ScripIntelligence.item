@@ -54,7 +54,7 @@ ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename
 ----version----
 language: en
 version: 1
-revision: abd10a84-7057-4106-ac4d-77ab2e539885
+revision: 4d2ce8fe-c824-4a12-8649-3fdbcf0d76df
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -119,6 +119,20 @@ key: publication name
 content-length: 18
 
 SCRIP Intelligence
+----field----
+field: {1E44223B-5A22-4FE5-AE46-1E814AC36CAB}
+name: Journal Title
+key: journal title
+content-length: 18
+
+Scrip Intelligence
+----field----
+field: {8EEF4C5D-E765-4F76-AF30-A6168FDDDD08}
+name: Journal ID
+key: journal id
+content-length: 5
+
+Scrip
 ----field----
 field: {EBE9A930-123D-4FD8-9A28-4662C389893B}
 name: Footer Logo
@@ -409,14 +423,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-abd10a84-7057-4106-ac4d-77ab2e539885
+4d2ce8fe-c824-4a12-8649-3fdbcf0d76df
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160527T100349Z
+20160707T181151Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
