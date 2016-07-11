@@ -25,7 +25,13 @@ namespace Informa.Web.Controllers
         [HttpGet]
         public void SitemapXml()
         {
-            string path = HttpContext.Current.Request.Path.Replace("/", "").Replace(".xml", "");
+            int pageNo = Convert.ToInt32(HttpContext.Current.Request.QueryString["page"]);
+            string SitemapQueryString = string.Empty;
+            if (pageNo != 0)
+            {
+                SitemapQueryString = "?page=" + pageNo;
+            }
+            string path = HttpContext.Current.Request.Path.Replace("/", "").Replace(".xml", "") + SitemapQueryString;
             string cacheKey = $"{HttpContext.Current.Request.Url.Host}.{path}.Sitemap";
             string xml = CacheProvider.GetFromCache(cacheKey, () => BuildSitemapXml(path));
             
