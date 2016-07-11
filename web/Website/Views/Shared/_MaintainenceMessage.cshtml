@@ -1,18 +1,18 @@
 ﻿@inherits CustomGlassView<IMaintenanceViewModel>
 @if (Model.Display)
 {
-	<div class="banner banner--maintenance" data-banner-id="@Model.Id">
-		<div class="banner__wrapper">
-			<div class="dismiss-button js-dismiss-banner">
-				<span>@Model.DismissText</span>
-				<svg class="dismiss-button__icon">
-					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-				</svg>
-			</div>
-			<svg class="banner__lead-icon">
-				<use xlink:href="/dist/img/svg-sprite.svg#tool-maintenance"></use>
-			</svg>
-			<span>@Model.Message</span>
-		</div>
-	</div>
+    <div class="banner banner--maintenance" data-banner-id="@Model.Id">
+        <div class="banner__wrapper">
+            <div class="dismiss-button js-dismiss-banner">
+                <span>@Model.DismissText</span>
+                <svg class="dismiss-button__icon click-utag" data-info='{"event_name":"highlights_system","highlight_click":"dismiss","message":"@Model.Message"}'>
+                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+            </div>
+            <svg class="banner__lead-icon">
+                <use xlink:href="/dist/img/svg-sprite.svg#tool-maintenance"></use>
+            </svg>
+            <span>@Model.Message</span>
+        </div>
+    </div>
 }
