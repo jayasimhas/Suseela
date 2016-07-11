@@ -519,6 +519,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.Print_Studio_Templates.Publishing_Engine
+{
+
+
+ 	/// <summary>
+	/// IP_TextFrame Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Print Studio Templates/Publishing Engine/P_TextFrame</para>	
+	/// <para>ID: 0637de6e-33fe-40c1-9233-98a3a6b88792</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IP_TextFrameConstants.TemplateIdString)]
+	public partial interface IP_TextFrame : IGlassBase 
+	{
+				}
+
+	
+		/// <summary>
+		/// IP_TextFrame Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Print Studio Templates/Publishing Engine/P_TextFrame</para>	
+		/// <para>ID: 0637de6e-33fe-40c1-9233-98a3a6b88792</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface IP_TextFrame__Raw : IGlassBase 
+		{
+						}
+	
+	public static partial class IP_TextFrameConstants{
+
+			public const string TemplateIdString = "0637de6e-33fe-40c1-9233-98a3a6b88792";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "P_TextFrame";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails
 {
 
@@ -930,15 +968,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IGeneral_Content_PageConstants.Subnavigation_ItemsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Subnavigation_Items  {get; set;}
 								/// <summary>
-					/// The Summary field.
-					/// <para></para>
-					/// <para>Field Type: Multi-Line Text</para>		
-					/// <para>Field ID: a7387240-ca22-44c6-a7a4-75bda76fbc70</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IGeneral_Content_PageConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Summary  {get; set;}
-								/// <summary>
 					/// The Exclude From Google Search field.
 					/// <para></para>
 					/// <para>Field Type: Checkbox</para>		
@@ -996,15 +1025,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IGeneral_Content_PageConstants.Subnavigation_ItemsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Subnavigation_Items  {get; set;}
 										/// <summary>
-						/// The Summary field.
-						/// <para></para>
-						/// <para>Field Type: Multi-Line Text</para>		
-						/// <para>Field ID: a7387240-ca22-44c6-a7a4-75bda76fbc70</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IGeneral_Content_PageConstants.SummaryFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Summary  {get; set;}
-										/// <summary>
 						/// The Exclude From Google Search field.
 						/// <para></para>
 						/// <para>Field Type: Checkbox</para>		
@@ -1039,11 +1059,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Subnavigation_ItemsFieldId = new ID("7d43ad1f-9748-4438-9cb0-74c457376526");
 			public const string Subnavigation_ItemsFieldName = "Subnavigation Items";
-
-						
-					
-			public static readonly ID SummaryFieldId = new ID("a7387240-ca22-44c6-a7a4-75bda76fbc70");
-			public const string SummaryFieldName = "Summary";
 
 						
 					
@@ -11933,15 +11948,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.LinkedIn_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Link LinkedIn_Link  {get; set;}
 								/// <summary>
-					/// The Twitter Handle field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 24b1fcde-9947-4432-a486-12e279388e66</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Twitter_HandleFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Twitter_Handle  {get; set;}
-								/// <summary>
 					/// The Twitter Link field.
 					/// <para></para>
 					/// <para>Field Type: General Link</para>		
@@ -12638,15 +12644,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.LinkedIn_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Link LinkedIn_Link  {get; set;}
 										/// <summary>
-						/// The Twitter Handle field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 24b1fcde-9947-4432-a486-12e279388e66</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Twitter_HandleFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Twitter_Handle  {get; set;}
-										/// <summary>
 						/// The Twitter Link field.
 						/// <para></para>
 						/// <para>Field Type: General Link</para>		
@@ -13104,11 +13101,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID LinkedIn_LinkFieldId = new ID("31f9f75c-54a7-43a5-a248-66e1f19a5469");
 			public const string LinkedIn_LinkFieldName = "LinkedIn Link";
-
-						
-					
-			public static readonly ID Twitter_HandleFieldId = new ID("24b1fcde-9947-4432-a486-12e279388e66");
-			public const string Twitter_HandleFieldName = "Twitter Handle";
 
 						
 					
@@ -18263,11 +18255,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID LinkedIn_LinkFieldId = new ID("31f9f75c-54a7-43a5-a248-66e1f19a5469");
 			public const string LinkedIn_LinkFieldName = "LinkedIn Link";
-
-						
-					
-			public static readonly ID Twitter_HandleFieldId = new ID("24b1fcde-9947-4432-a486-12e279388e66");
-			public const string Twitter_HandleFieldName = "Twitter Handle";
 
 						
 					
