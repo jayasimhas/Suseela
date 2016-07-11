@@ -56,10 +56,10 @@ namespace Informa.Web.ViewModels
             
             var authorGuids = GetAuthor();
 
-            if (authorGuids.Any() && parameters.Authors.Any())
-            {
-                authorGuids.AddRange(parameters.Authors.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())));
-            }
+            //if (authorGuids.Any() && parameters.Authors.Any())
+            //{
+            //    authorGuids.AddRange(parameters.Authors.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())));
+            //}
 
             News = GetLatestNews(datasource._Id, parameters.Subjects.Select(s => s._Id), publicationNames, authorGuids, itemsToDisplay);
             SeeAllLink = parameters.Show_See_All ? new Link

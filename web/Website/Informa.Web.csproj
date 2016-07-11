@@ -769,17 +769,21 @@
     <Compile Include="ViewModels\AnalyticsViewModel.cs" />
     <Compile Include="ViewModels\ArticleKeyDocumentsModel.cs" />
     <Compile Include="ViewModels\ArticleMobileMediaComponentModel.cs" />
+    <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorProfileViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailLayoutViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
-    <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
+    <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\RelatedCompaniesModel.cs" />
     <Compile Include="ViewModels\RelatedDealsModel.cs" />
@@ -1321,7 +1325,10 @@
     <Content Include="Views\Shared\Components\MediaTypeIcon.cshtml" />
     <Content Include="Areas\VWB\Views\AddIssue.cshtml" />
     <Content Include="Views\Authors\AuthorProfile.cshtml" />
-    <Content Include="Views\Shared\Components\ExecutiveSummary.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Authors\AuthorShare.cshtml" />
+    <Content Include="Views\Authors\AuthorPrologueEmail.cshtml" />
+    <Content Include="Views\Shared\PopOuts\EmailAuthor.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
