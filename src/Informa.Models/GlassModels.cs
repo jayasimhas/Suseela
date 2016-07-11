@@ -17728,14 +17728,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					[SitecoreField(IStaff_ItemConstants.Industry_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Industry_Expertises  {get; set;}
 								/// <summary>
-					/// The Write for Expertise field.
+					/// The Writes for field.
 					/// <para></para>
 					/// <para>Field Type: Multilist</para>		
 					/// <para>Field ID: 2c527b2c-25e8-47d0-9356-8f21757ba897</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IStaff_ItemConstants.Write_For_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
-					IEnumerable<IGlassBase> Write_For_Expertises  {get; set;}
+					[SitecoreField(IStaff_ItemConstants.Writes_ForsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					IEnumerable<IGlassBase> Writes_Fors  {get; set;}
 				}
 
 	
@@ -17767,14 +17767,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 						[SitecoreField(IStaff_ItemConstants.Industry_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Industry_Expertises  {get; set;}
 										/// <summary>
-						/// The Write for Expertise field.
+						/// The Writes for field.
 						/// <para></para>
 						/// <para>Field Type: Multilist</para>		
 						/// <para>Field ID: 2c527b2c-25e8-47d0-9356-8f21757ba897</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IStaff_ItemConstants.Write_For_ExpertisesFieldName, Setting = SitecoreFieldSettings.InferType)]
-						IEnumerable<IGlassBase> Write_For_Expertises  {get; set;}
+						[SitecoreField(IStaff_ItemConstants.Writes_ForsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						IEnumerable<IGlassBase> Writes_Fors  {get; set;}
 						}
 	
 	public static partial class IStaff_ItemConstants{
@@ -17794,8 +17794,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 
 						
 					
-			public static readonly ID Write_For_ExpertisesFieldId = new ID("2c527b2c-25e8-47d0-9356-8f21757ba897");
-			public const string Write_For_ExpertisesFieldName = "Write for Expertise";
+			public static readonly ID Writes_ForsFieldId = new ID("2c527b2c-25e8-47d0-9356-8f21757ba897");
+			public const string Writes_ForsFieldName = "Writes for";
 
 						
 					
