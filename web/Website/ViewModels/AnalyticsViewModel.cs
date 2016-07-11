@@ -89,9 +89,14 @@ namespace Informa.Web.ViewModels
         }
         public string Article_Entitlement => GetArticleEntitlements();
         public bool IsFree => Article?.Free ?? false;
+        public bool IsFreeWithRegistration => Article?.Free_With_Registration ?? false;
         public string GetArticleEntitlements() {
             if (IsFree) {
                 return "Free View";
+            }
+            if (IsFreeWithRegistration)
+            {
+                return "Free With Registration View";
             }
             if (IsEntitledProductItemContext.IsEntitled(Article)) {
                 return "Entitled Full View";
@@ -144,6 +149,11 @@ namespace Informa.Web.ViewModels
 				{
 					return "Free View";
 				}
+
+			    if (IsFreeWithRegistration)
+			    {
+			        return "Free With Registration View";
+			    }
 
 				if (IsEntitledProductItemContext.IsEntitled(Article))
 				{

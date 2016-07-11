@@ -2564,6 +2564,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 						
 					
+			public static readonly ID Free_With_RegistrationFieldId = new ID("df3ba324-c51e-430b-b396-7b0a24245605");
+			public const string Free_With_RegistrationFieldName = "Free With Registration";
+
+						
+					
 			public static readonly ID FreeFieldId = new ID("b49f314e-d4d4-4e82-81e3-79ae30bb1e46");
 			public const string FreeFieldName = "Free";
 
@@ -16567,6 +16572,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlem
 					[SitecoreField(IEntitled_ProductConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Article_Number  {get; set;}
 								/// <summary>
+					/// The Free With Registration field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: df3ba324-c51e-430b-b396-7b0a24245605</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IEntitled_ProductConstants.Free_With_RegistrationFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Free_With_Registration  {get; set;}
+								/// <summary>
 					/// The Free field.
 					/// <para></para>
 					/// <para>Field Type: Checkbox</para>		
@@ -16606,6 +16620,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlem
 						[SitecoreField(IEntitled_ProductConstants.Article_NumberFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Article_Number  {get; set;}
 										/// <summary>
+						/// The Free With Registration field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: df3ba324-c51e-430b-b396-7b0a24245605</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IEntitled_ProductConstants.Free_With_RegistrationFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Free_With_Registration  {get; set;}
+										/// <summary>
 						/// The Free field.
 						/// <para></para>
 						/// <para>Field Type: Checkbox</para>		
@@ -16630,6 +16653,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlem
 					
 			public static readonly ID Article_NumberFieldId = new ID("1616fe67-7278-4169-948e-c29b00ec8781");
 			public const string Article_NumberFieldName = "Article Number";
+
+						
+					
+			public static readonly ID Free_With_RegistrationFieldId = new ID("df3ba324-c51e-430b-b396-7b0a24245605");
+			public const string Free_With_RegistrationFieldName = "Free With Registration";
 
 						
 					
