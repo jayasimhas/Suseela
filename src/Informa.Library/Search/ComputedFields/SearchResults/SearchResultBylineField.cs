@@ -41,8 +41,8 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
                     }
                     else
                     {
-                        authorList.Append("<a href='" + authorClient.ConvertUrlNameToLink(authorClient.GetUrlName(eachAuthor._Id)) +
-                                          "'>" + eachAuthor.First_Name + eachAuthor.Last_Name + "</a>");
+	                    var urlName = authorClient.GetUrlName(eachAuthor._Id);
+                        authorList.Append($"<a href='/authors/{urlName}'>{eachAuthor.First_Name} {eachAuthor.Last_Name}</a>");
                     }
 
                     if (currentCount < authorCount - 1)
