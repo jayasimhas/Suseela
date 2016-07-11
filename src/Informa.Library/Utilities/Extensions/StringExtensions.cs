@@ -98,5 +98,10 @@ namespace Informa.Library.Utilities.Extensions
 	        }
             return parsed;
 	    }
-    }
+
+		public static string NullIfNoContent(this string source)
+		{
+			return string.IsNullOrEmpty(source) ? null : source;
+		}
+	}
 }
