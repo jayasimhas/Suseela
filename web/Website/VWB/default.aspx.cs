@@ -73,13 +73,8 @@ namespace Elsevier.Web.VWB
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			//ReportBuilderBlacklist.Add(btnReset);
-			//ReportBuilderBlacklist.Add(btnAddArticleToExistingIssue);
-
 			_vwbQuery = new VwbQuery(Request);
-			if (!IsPostBack
-				|| (Request.Params.Get("__EVENTTARGET") == ""
-				&& !ReportBuilderBlacklist.Contains(GetPostBackControl())))
+			if (!IsPostBack)
 			{
 				if (_vwbQuery.ShouldRun)
 				{
