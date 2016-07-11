@@ -900,13 +900,4 @@ $(document).ready(function() {
 		i.parentNode.insertBefore(n,i),w._e=[],
 		w.ready=function(t) { w._e.push(t); },
 		w); } (document,"script","twitter-wjs");
-
-
-
-
-	// Generic Analytics click class
-	$('.js-tealium-click').on('click', function(e) {
-		analyticsEvent( $.extend(analytics_data, $(this).data('tealium-click')) );
-	});
-
 });
