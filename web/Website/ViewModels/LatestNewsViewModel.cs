@@ -75,6 +75,17 @@ namespace Informa.Web.ViewModels
                 Text = textTranslator.Translate("Article.LatestFrom.SeeAllLink"),
                 Url = SearchTaxonomyUtil.GetSearchUrl(parameters.Subjects.ToArray())
             } : null;
+
+            if (!IsAuthorPage) return;
+            var url = new StringBuilder();
+            url.AppendFormat("/search#?author={0}", RemoveSpecialCharactersFromGuid(authorGuids.FirstOrDefault()));
+
+            SeeAllLink = parameters.Show_See_All ? new Link
+            {
+                Text = textTranslator.Translate("Article.LatestFrom.SeeAllLink"),
+                Url = url.ToString()
+            } : null;
+            //scrip.informa.ashah.velir.com/search#?author=82dfa523c3a141a0a50fd8a52b45592e&publication=SCRIP%20Intelligence
         }
 
         public List<string> GetAuthor()
@@ -84,7 +95,7 @@ namespace Informa.Web.ViewModels
             Guid? author = Guid.Empty;
             author = AuthorIndexClient.GetAuthorIdByUrlName(nameFromUrl);
 
-            if (author == Guid.Empty)
+            if (author == Guid.Empty || author == null)
                 return authorGuids;
 
             authorGuids.Add(RemoveSpecialCharactersFromGuid(author.ToString()));
