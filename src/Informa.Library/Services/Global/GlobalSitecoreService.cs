@@ -153,9 +153,12 @@ namespace Informa.Library.Services.Global {
         {
             var curItem = SitecoreService.GetItem<Item>(g);
             if (curItem == null)
-                return null; 
+                return null;
 
-            var rootItem = curItem.Axes
+					if (curItem.TemplateID == ISite_RootConstants.TemplateId)
+		        return SitecoreService.GetItem<ISite_Root>(curItem.ID.Guid);
+
+	        var rootItem = curItem.Axes
                   .GetAncestors()
                   .FirstOrDefault(a => a.Template.ID.Guid.Equals(ISite_RootConstants.TemplateId.Guid));
 

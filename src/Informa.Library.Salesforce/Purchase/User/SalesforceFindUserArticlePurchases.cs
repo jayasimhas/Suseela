@@ -56,7 +56,7 @@ namespace Informa.Library.Salesforce.Purchase.User
 
 			// To get the Publication name we have to lookup the publication root based on the article number prefix. 
 			// The fastest way to do this is to use the prefix to siteroot dictionary in the constants class
-			var articlePrefix = string.IsNullOrEmpty(purchase.documentId) || purchase.documentId.Length < 8 ? purchase.documentId.Substring(0,2) : "";
+			var articlePrefix = string.IsNullOrEmpty(purchase.documentId) || purchase.documentId.Length < 8 ? "" : purchase.documentId.Substring(0, 2);
 			Guid siteRoot = Guid.Empty;
 			foreach (var entry in Constants.PublicationPrefixDictionary)
 			{
