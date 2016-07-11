@@ -769,6 +769,7 @@
     <Compile Include="ViewModels\AnalyticsViewModel.cs" />
     <Compile Include="ViewModels\ArticleKeyDocumentsModel.cs" />
     <Compile Include="ViewModels\ArticleMobileMediaComponentModel.cs" />
+    <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorProfileViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
@@ -778,8 +779,11 @@
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
+    <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\RelatedCompaniesModel.cs" />
     <Compile Include="ViewModels\RelatedDealsModel.cs" />

@@ -12,15 +12,15 @@ namespace Informa.Web.ViewModels
 	public class AuthorShareViewModel : GlassViewModel<IGlassBase>
 	{
 		public AuthorShareViewModel(
-			IArticlePrologueEmailViewModel articlePrologueEmailViewModel,
+			IAuthorPrologueEmailViewModel authorPrologueEmailViewModel,
 			IArticlePrologueShareViewModel articlePrologueShareViewModel
 			)
 		{
-			EmailViewModel = articlePrologueEmailViewModel;
+			EmailViewModel = authorPrologueEmailViewModel;
 			ShareViewModel = articlePrologueShareViewModel;
 		}
 
-		public IArticlePrologueEmailViewModel EmailViewModel;
+		public IAuthorPrologueEmailViewModel EmailViewModel;
 
 		public IArticlePrologueShareViewModel ShareViewModel;
 	}
