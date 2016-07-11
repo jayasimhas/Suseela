@@ -457,6 +457,9 @@
     <Compile Include="Subscription\User\IUserSubscriptionsContext.cs" />
     <Compile Include="Subscription\User\UserSubscribedContext.cs" />
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
+    <Compile Include="User\Authentication\AuthenticatedFormToken.cs" />
+    <Compile Include="User\Authentication\AuthorizeToken.cs" />
+    <Compile Include="User\Authentication\IAuthenticatedFormToken.cs" />
     <Compile Include="User\EmailOptIns\OptInManager.cs" />
     <Compile Include="User\EmailOptIns\OptInResponseModel.cs" />
     <Compile Include="Taxonomy\HeirarchyLinks.cs" />
