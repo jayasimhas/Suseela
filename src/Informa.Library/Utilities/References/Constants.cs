@@ -50,6 +50,9 @@ namespace Informa.Library.Utilities.References
 						{ new Guid(RoseSheetRootNode), RoseSheetNodeIntials},
 				};
 
+		/// <summary>
+		/// Why is this a dictionary?  Not changing because I'm afraid the word plugin will blow up.
+		/// </summary>
 		public static readonly Dictionary<string, string> PublicationPrefixCollection = new Dictionary<string, string>
 				{
 						{ ScripRootNodeIntials, ScripRootNodeIntials},
