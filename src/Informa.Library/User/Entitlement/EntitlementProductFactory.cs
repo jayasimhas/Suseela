@@ -22,6 +22,7 @@ namespace Informa.Library.User.Entitlement
 			{
 				DocumentId = item.Article_Number,
 				IsFree = item.Free,
+                IsFreeWithRegistration = item.Free_With_Registration,
 				ProductCode = productCode,
 				PublishedOn = item.Actual_Publish_Date
 			};

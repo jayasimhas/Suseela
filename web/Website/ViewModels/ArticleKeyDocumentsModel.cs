@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Services.Article;
+using Informa.Library.User.Authentication;
 using Informa.Library.User.Entitlement;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Glass.Models;
@@ -12,11 +13,12 @@ namespace Informa.Web.ViewModels
 	{
 		protected readonly ITextTranslator TextTranslator;
 	    protected readonly IArticleService ArticleService;
-
+        
 		public ArticleKeyDocumentsModel(
             ITextTranslator textTranslator, 
             IIsEntitledProducItemContext entitledProductContext,
-            IArticleService articleService) : base(entitledProductContext)
+            IArticleService articleService,
+            IAuthenticatedUserContext authenticatedUserContext) : base(entitledProductContext, authenticatedUserContext)
 		{
 			TextTranslator = textTranslator;
 		    ArticleService = articleService;

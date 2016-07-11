@@ -4,6 +4,7 @@ using System.Linq;
 using Informa.Library.Globalization;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon;
 using Informa.Library.Services.Article;
+using Informa.Library.User.Authentication;
 using Informa.Library.User.Entitlement;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -24,14 +25,15 @@ namespace Informa.Web.ViewModels
 						IIsEntitledProducItemContext entitledProductContext,
 						ITextTranslator textTranslator,
 						ICallToActionViewModel callToActionViewModel,
-						IArticleService articleService)
-						: base(entitledProductContext)
+						IArticleService articleService,
+                        IAuthenticatedUserContext authenticatedUserContext)
+						: base(entitledProductContext, authenticatedUserContext)
 		{
 			TextTranslator = textTranslator;
 			CallToActionViewModel = callToActionViewModel;
 			ArticleService = articleService;
 
-			_lazyBody = new Lazy<string>(() => IsFree || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
+            _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
 		}
 
 		public string Title => GlassModel.Title;
