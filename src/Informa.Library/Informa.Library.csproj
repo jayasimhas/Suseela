@@ -431,6 +431,8 @@
     <Compile Include="Search\Sort\SitecoreOrderStrategy.cs" />
     <Compile Include="Search\Utilities\SearchSummaryUtil.cs" />
     <Compile Include="Search\Utilities\SearchWebClientUtil.cs" />
+    <Compile Include="Services\AccountManagement\AccountManagementService.cs" />
+    <Compile Include="Services\AccountManagement\IAccountManagementService.cs" />
     <Compile Include="Services\Article\ArticleService.cs" />
     <Compile Include="Services\Article\IArticleService.cs" />
     <Compile Include="Services\Global\GlobalSitecoreService.cs" />
