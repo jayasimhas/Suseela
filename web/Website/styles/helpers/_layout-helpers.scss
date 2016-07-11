@@ -90,6 +90,7 @@
 
 // COLUMN HELPERS
 .l-left-rail {
+	min-width: 70%;
 	max-width: 790px;
 	float: left;
 
@@ -107,9 +108,11 @@
 	max-width: 290px;
 
 	@include breakpoint('large') {
+		clear: both;
+		float: none;
 		margin-bottom: 1rem;
 		max-width: 100%;
-		float: none;
+		width: 100%;
 	}
 }
 
