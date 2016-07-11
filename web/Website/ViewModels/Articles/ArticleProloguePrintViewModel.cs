@@ -1,7 +1,7 @@
 ﻿using Informa.Library.User.Authentication;
 using Jabberwocky.Glass.Autofac.Attributes;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Web.ViewModels.Articles
 {
     [AutowireService(LifetimeScope.SingleInstance)]
     public class ArticleProloguePrintViewModel : IArticleProloguePrintViewModel

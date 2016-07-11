@@ -12,6 +12,7 @@ using Informa.Library.ContentCuration;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
+using Informa.Web.ViewModels.Articles;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
 
 namespace Informa.Web.ViewModels

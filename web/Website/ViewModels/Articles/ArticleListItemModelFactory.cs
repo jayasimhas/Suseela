@@ -2,21 +2,21 @@
 using System.Linq;
 using System.Web;
 using Glass.Mapper.Sc;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
+using Informa.Library.Page;
 using Informa.Library.Services.Article;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Document;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.StringUtils;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
-using Jabberwocky.Glass.Autofac.Attributes;
-using Informa.Library.Page;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Jabberwocky.Glass.Autofac.Attributes;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Web.ViewModels.Articles
 {
 	[AutowireService(LifetimeScope.PerScope)]
 	public class ArticleListItemModelFactory : IArticleListItemModelFactory

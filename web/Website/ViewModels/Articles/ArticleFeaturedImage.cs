@@ -1,7 +1,7 @@
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Web.ViewModels.Articles
 {
 	public class ArticleFeaturedImage : FeaturedImage
 	{

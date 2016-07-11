@@ -1,4 +1,4 @@
-﻿namespace Informa.Web.ViewModels
+﻿namespace Informa.Web.ViewModels.Articles
 {
 	public interface IArticlePrologueEmailViewModel
 	{

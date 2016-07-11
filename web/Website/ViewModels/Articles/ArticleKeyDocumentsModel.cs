@@ -1,12 +1,10 @@
 using System.Collections.Generic;
-using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Services.Article;
 using Informa.Library.User.Entitlement;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
-using Jabberwocky.Glass.Models;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Web.ViewModels.Articles
 {
 	public class ArticleKeyDocumentsModel : ArticleEntitledViewModel
 	{

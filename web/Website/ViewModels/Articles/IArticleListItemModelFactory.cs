@@ -1,7 +1,7 @@
 ﻿using System;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Web.ViewModels.Articles
 {
 	public interface IArticleListItemModelFactory
 	{

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Glass.Mapper.Sc.Fields;
 using Informa.Models.FactoryInterface;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Web.ViewModels.Articles
 {
 	public class ArticleListItemModel : IListableViewModel
 	{

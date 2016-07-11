@@ -7,7 +7,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Web.ViewModels.CompaniesAndDeals
 {
 	public class RelatedDealsModel : GlassViewModel<IArticle>
 	{

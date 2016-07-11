@@ -5,11 +5,11 @@ using Informa.Library.Globalization;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon;
 using Informa.Library.Services.Article;
 using Informa.Library.User.Entitlement;
+using Informa.Library.Utilities.Extensions;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Informa.Library.Utilities.Extensions;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Web.ViewModels.Articles
 {
 	public class ArticleBodyContentModel : ArticleEntitledViewModel
 	{
