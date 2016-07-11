@@ -1,8 +1,8 @@
-﻿@model Informa.Web.ViewModels.PopOuts.IEmailArticlePopOutViewModel
+﻿@model Informa.Web.ViewModels.PopOuts.IEmailAuthorPopOutViewModel
 <div class="pop-out js-pop-out__email-author">
 	<div class="pop-out__form-error">
 		<!--TODO Add error message-->
-		@Model.ArticleNumber
+		@Model.AuthorName
 	</div>
 	<div class="pop-out__tab"></div>
 	<div class="pop-out__internal">
@@ -14,7 +14,7 @@
 		</div>
 
 		<h3 class="pop-out__header">
-			@Model.EmailArticleText
+			@Model.EmailAuthorText
 		</h3>
 
 		<div class="alert-success js-email-author-success">
@@ -72,8 +72,8 @@
 		               	value="@Model.AuthUserEmail">
 
 				<p>
-					<span class="pop-out__run-in">@Model.SubjectText</span> @Html.Raw(Model.ArticleTitle)
-					<input type="hidden" name="ArticleTitle" value="@Model.ArticleTitle">
+					<span class="pop-out__run-in">@Model.SubjectText</span> @Html.Raw(Model.AuthorName)
+					<input type="hidden" name="ArticleTitle" value="@Model.AuthorName">
 				</p>
 
 				<p>
@@ -82,7 +82,7 @@
 
 				<textarea name="PersonalMessage" class="pop-out__input pop-out__textarea"></textarea>
 
-				<input type="hidden" name="ArticleNumber" value="@Model.ArticleNumber">
+				@*<input type="hidden" name="ArticleNumber" value="@Model.ArticleNumber">*@
 
 				<div class="pop-out__form-actions-wrapper">
 					<div class="dismiss-button" data-target-element=".js-pop-out__email-author">
