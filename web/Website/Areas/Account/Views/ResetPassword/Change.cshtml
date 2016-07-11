@@ -1,101 +1,107 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.ResetPassword.ChangeViewModel
+@if (!Model.IsAuthenticated)
+{
+    <div class="page-account js-reset-password-container">
+        <h1 class="page-account__header">@Model.Title</h1>
+        @if (Model.IsValidToken)
+    {
+    <div class="page-account__introduction">@Model.ResetBody</div>
+    <hr>
+    <form class="form-reset-password"
+          data-on-submit="/Account/api/ResetPasswordApi/Change/" data-is-password="true">
 
-<div class="page-account js-reset-password-container">
-	<h1 class="page-account__header">@Model.Title</h1>
-	@if (Model.IsValidToken)
-	{
-		<div class="page-account__introduction">@Model.ResetBody</div>
-		<hr>
-		<form 	class="form-reset-password"
-				data-on-submit="/Account/api/ResetPasswordApi/Change/" data-is-password="true">
+        <p class=" page-account__error
+           js-form-error
+           js-form-error-PasswordRequirements">
+            @Model.ResetErrorRequirementsText
+        </p>
+        <p class=" page-account__error
+           js-form-error
+           js-form-error-PasswordMismatch">
+            @Model.ResetErrorMismatchText
+        </p>
+        <p class=" page-account__error
+           js-form-error
+           js-form-error-general">
+            @Model.ResetErrorGeneralText
+        </p>
 
-			<p class="	page-account__error
-						js-form-error
-						js-form-error-PasswordRequirements">
-				@Model.ResetErrorRequirementsText
-			</p>
-			<p class="	page-account__error
-						js-form-error
-						js-form-error-PasswordMismatch">
-				@Model.ResetErrorMismatchText
-			</p>
-			<p class="	page-account__error
-						js-form-error
-						js-form-error-general">
-				@Model.ResetErrorGeneralText
-			</p>
+        <input name="token"
+               type="hidden"
+               value="@Model.Token">
 
-			<input	name="token"
-				   	type="hidden"
-				   	value="@Model.Token">
+        <div class="page-account__field-wrapper">
+            <label class="page-account__text-label" for="newPassword">@Model.NewPasswordLabelText</label>
+            <input id="newPassword"
+                   name="newPassword"
+                   class=""
+                   placeholder="@Model.NewPasswordPlaceholderText"
+                   type="password">
+        </div>
+        <div class="page-account__field-wrapper">
+            <label class="page-account__text-label"
+                   for="newPasswordRepeat">@Model.NewPasswordRepeatLabelText</label>
+                <input name="newPasswordRepeat"
+                       id="newPasswordRepeat"
+                       class=""
+                       placeholder="@Model.NewPasswordRepeatPlaceholderText"
+                       type="password">
+            </div>
+            <hr>
+            <div class="page-account__field-wrapper">
+                <button type="submit" class="button--filled">@Model.SendNewLinkButtonText</button>
+            </div>
 
-			<div class="page-account__field-wrapper">
-				<label 	class="page-account__text-label" for="newPassword">@Model.NewPasswordLabelText</label>
-				<input 	id="newPassword"
-						name="newPassword"
-					   	class=""
-					   	placeholder="@Model.NewPasswordPlaceholderText"
-					   	type="password">
-			</div>
-			<div class="page-account__field-wrapper">
-				<label 	class="page-account__text-label"
-						for="newPasswordRepeat">@Model.NewPasswordRepeatLabelText</label>
-				<input 	name="newPasswordRepeat"
-						id="newPasswordRepeat"
-				   		class=""
-				   		placeholder="@Model.NewPasswordRepeatPlaceholderText"
-						type="password">
-			</div>
-			<hr>
-			<div class="page-account__field-wrapper">
-				<button type="submit" class="button--filled">@Model.SendNewLinkButtonText</button>
-			</div>
+            <div class="alert-success js-reset-password-success">
+                <svg class="alert__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+                </svg>
+                <p>@Model.ResetSuccessText</p>
+            </div>
 
-			<div class="alert-success js-reset-password-success">
-				<svg class="alert__icon">
-					<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
-				</svg>
-				<p>@Model.ResetSuccessText</p>
-			</div>
+        </form>
 
-		</form>
+    }
+    else
+    {
+        if (Model.TokenFound)
+        {
+    <div class="page-account__introduction">
+        @Model.RetryBody
+    </div>
 
-	}
-	else
-	{
-		if (Model.TokenFound)
-		{
-			<div class="page-account__introduction">
-				@Model.RetryBody
-			</div>
+    <form class="form-new-reset-pass-token"
+          data-on-submit="/Account/api/ResetPasswordApi/Retry/">
 
-			<form 	class="form-new-reset-pass-token"
-					data-on-submit="/Account/api/ResetPasswordApi/Retry/">
+        <div class="page-account__field-wrapper">
+            <button type="submit" class="button--filled">@Model.SubmitButtonText</button>
+        </div>
 
-			<div class="page-account__field-wrapper">
-				<button type="submit" class="button--filled">@Model.SubmitButtonText</button>
-			</div>
-
-			<div class="page-account__error
+        <div class="page-account__error
 						js-form-error
 						js-form-error-general" style="display: none;">
-					<p>@Model.RetryErrorGeneralText</p>
-			</div>
+            <p>@Model.RetryErrorGeneralText</p>
+        </div>
 
-			<div class="alert-success js-new-reset-pass-token-success">
-				<svg class="alert__icon">
-					<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
-				</svg>
-				<p>@Model.RetrySuccessText</p>
-			</div>
+        <div class="alert-success js-new-reset-pass-token-success">
+            <svg class="alert__icon">
+                <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+            </svg>
+            <p>@Model.RetrySuccessText</p>
+        </div>
 
-			</form>
+    </form>
 
-		}
-		else
-		{
-			<hr>
-			<p>@Model.TokenNotFoundBody</p>
-		}
-	}
-</div>
+        }
+        else
+        {
+    <hr>
+    <p>@Model.TokenNotFoundBody</p>
+        }
+    }
+    </div>
+}
+else
+{
+    Response.Redirect("/");
+}  
