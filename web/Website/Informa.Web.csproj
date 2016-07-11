@@ -311,6 +311,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.PrintStudio.Configuration">
+      <HintPath>..\..\lib\Sitecore\Sitecore.PrintStudio.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.DashBoardClient">
+      <HintPath>..\..\lib\Sitecore\Sitecore.PrintStudio.DashBoardClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.InDesign.Soap">
+      <HintPath>..\..\lib\Sitecore\Sitecore.PrintStudio.InDesign.Soap.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.InDesignConnectorService">
+      <HintPath>..\..\lib\Sitecore\Sitecore.PrintStudio.InDesignConnectorService.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.PublishingEngine">
+      <HintPath>..\..\lib\Sitecore\Sitecore.PrintStudio.PublishingEngine.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Services.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Core.dll</HintPath>
