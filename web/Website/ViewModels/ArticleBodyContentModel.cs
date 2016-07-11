@@ -67,5 +67,6 @@ namespace Informa.Web.ViewModels
 		public MediaTypeIconData MediaTypeIconData => ArticleService.GetMediaTypeIconData(GlassModel);
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
-	}
+        public string ExecutiveSummary => TextTranslator.Translate("SharedContent.ExecutiveSummary");
+    }
 }

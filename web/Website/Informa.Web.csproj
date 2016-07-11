@@ -775,6 +775,7 @@
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
+    <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
@@ -1320,6 +1321,7 @@
     <Content Include="Views\Shared\Components\MediaTypeIcon.cshtml" />
     <Content Include="Areas\VWB\Views\AddIssue.cshtml" />
     <Content Include="Views\Authors\AuthorProfile.cshtml" />
+    <Content Include="Views\Shared\Components\ExecutiveSummary.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

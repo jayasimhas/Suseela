@@ -105,7 +105,7 @@
     {
         @* * * Executive Summary *@
         <div class="article-executive-summary">
-            <h4>Executive Summary</h4>
+            <h4>@Model.ExecutiveSummary</h4>
             @Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))
         </div>
         @* End Executive Summary  *@

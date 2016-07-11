@@ -73,8 +73,8 @@ namespace Elsevier.Web.VWB
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			ReportBuilderBlacklist.Add(btnReset);
-			ReportBuilderBlacklist.Add(btnAddArticleToExistingIssue);
+			//ReportBuilderBlacklist.Add(btnReset);
+			//ReportBuilderBlacklist.Add(btnAddArticleToExistingIssue);
 
 			_vwbQuery = new VwbQuery(Request);
 			if (!IsPostBack
@@ -88,31 +88,28 @@ namespace Elsevier.Web.VWB
 			}
 		}
 
-		public Control GetPostBackControl()
-		{
-			Control control = null;
+        public Control GetPostBackControl()
+        {
+            Control control = null;
 
-			string ctrlname = Request.Params.Get("__EVENTTARGET");
-			if (!string.IsNullOrEmpty(ctrlname))
-			{
-				control = FindControl(ctrlname);
-			}
-			else
-			{
-				foreach (string ctl in Request.Form)
-				{
-					Control c = FindControl(ctl);
-					if (c is Button)
-					{
-						control = c;
-						break;
-					}
-				}
-			}
-			return control;
-		}
+            string ctrlname = Request.Params.Get("__EVENTTARGET");
+            if (!string.IsNullOrEmpty(ctrlname))
+                return FindControl(ctrlname);
 
-		private static int? GetMaxNumResults()
+            List<string> names = new List<string>();
+            foreach (string s in Request.Form)
+                names.Add(s);
+
+            var buttons = names
+                .Where(a => a.Contains("btn"));
+
+            if (buttons.Any())
+                return FindControl(buttons.First());
+
+            return null;
+        }
+
+        private static int? GetMaxNumResults()
 		{
 
 			//TextNodeItem maxResults = ItemReference.MaxResultsPerSearch.InnerItem;
@@ -246,7 +243,7 @@ namespace Elsevier.Web.VWB
 		/// </summary>
 		protected void BuildOptionalColumnDropdown()
 		{
-			ddColumns.Items.Add("Add New Field...");
+            ddColumns.Items.Add("Add New Field...");
 			foreach (var column in ColumnFactory.GetColumnFactory().GetColumnsNot(_vwbQuery.ColumnKeysInOrder))
 			{
 				ddColumns.Items.Add(new ListItem(column.GetHeader(), column.Key()));

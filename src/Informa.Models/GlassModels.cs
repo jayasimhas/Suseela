@@ -912,6 +912,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IGeneral_Content_PageConstants.JavascriptFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Javascript  {get; set;}
 								/// <summary>
+					/// The Restrict To Registered Users field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 32294ac3-a931-4fe6-abc5-23b466f9b3b6</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IGeneral_Content_PageConstants.Restrict_To_Registered_UsersFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Restrict_To_Registered_Users  {get; set;}
+								/// <summary>
 					/// The Section Title field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -978,6 +987,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IGeneral_Content_PageConstants.JavascriptFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Javascript  {get; set;}
 										/// <summary>
+						/// The Restrict To Registered Users field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 32294ac3-a931-4fe6-abc5-23b466f9b3b6</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IGeneral_Content_PageConstants.Restrict_To_Registered_UsersFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Restrict_To_Registered_Users  {get; set;}
+										/// <summary>
 						/// The Section Title field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -1029,6 +1047,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID JavascriptFieldId = new ID("89f93105-8d7e-42e3-a647-416c00ac24a0");
 			public const string JavascriptFieldName = "Javascript";
+
+						
+					
+			public static readonly ID Restrict_To_Registered_UsersFieldId = new ID("32294ac3-a931-4fe6-abc5-23b466f9b3b6");
+			public const string Restrict_To_Registered_UsersFieldName = "Restrict To Registered Users";
 
 						
 					
