@@ -13,6 +13,7 @@ using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.DCD;
 using Informa.Web.ViewModels;
 using Informa.Library.Utilities.Extensions;
+using Informa.Web.ViewModels.Articles;
 using Jabberwocky.Core.Caching;
 
 namespace Informa.Web.Models

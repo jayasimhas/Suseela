@@ -7,7 +7,7 @@ using Informa.Library.User.Document;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Web.ViewModels.Articles
 {
 	[AutowireService(LifetimeScope.PerScope)]
 	public class ArticlePrologueBookmarkViewModel : IArticlePrologueBookmarkViewModel

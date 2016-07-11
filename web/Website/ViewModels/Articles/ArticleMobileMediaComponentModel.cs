@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Glass.Mapper.Sc;
 using Informa.Library.Article.Search;
 using Informa.Library.Services.Global;
 using Informa.Models.FactoryInterface;
@@ -8,7 +7,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Sitecore.Web;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Web.ViewModels.Articles
 {
 	public class ArticleMobileMediaComponentModel : GlassViewModel<IArticle>
 	{
