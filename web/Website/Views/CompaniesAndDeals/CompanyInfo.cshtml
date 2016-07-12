@@ -21,12 +21,12 @@
             @foreach (var loc in Model.LocationPath)
             {
                 @:<li class="article-topics__li">
-                    @loc
-                    @:<ul>
+                @loc
+                @:<ul>
             }
             @foreach (var i in Model.LocationPath)
             {
-                    @:</ul>
+                @:</ul>
                 @:</li>
             }
             @if (@Model.ShowCompanyType)
@@ -38,5 +38,7 @@
             @Model.SubsidiariesTree.Value
         </ul>
     </div>
+
+    @Html.Sitecore().Placeholder("strategy-transactions")
 </div>
 

@@ -25,6 +25,7 @@
 
 
 /* * * * HELPERS * * * */
+@import 'helpers/class-helpers';
 @import 'helpers/layout-helpers';
 
 
@@ -36,10 +37,8 @@
 @import 'components/banners';
 @import 'components/bar-separated-link-list';
 @import 'components/buttons';
-@import 'components/callout';
 @import 'components/dismiss-button';
 @import 'components/forms';
-@import 'components/generic-content';
 @import 'components/iframe-component';
 @import 'components/image-cutline-block';
 @import 'components/informa-bar';
@@ -68,6 +67,9 @@
 /* * * * COMPONENTS — HEADER * * * */
 @import 'components/header/header-account-access';
 
+/* * * * COMPONENTS — PROFILE * * * */
+@import 'components/profile';
+
 /* * * * COMPONENTS — ARTICLE * * * */
 @import 'components/article/article-author';
 @import 'components/article/article-body';
@@ -87,12 +89,6 @@
 @import 'components/article/article-tables';
 @import 'components/article/article-tags';
 @import 'components/article/article-topics';
-
-/* * * * COMPONENTS — DEAL * * * */
-@import 'components/deal';
-
-/* * * * COMPONENTS — PROFILE * * * */
-@import 'components/profile';
 
 /* * * * COMPONENTS — SEARCH RESULTS * * * */
 @import 'components/search/search-wrapper';

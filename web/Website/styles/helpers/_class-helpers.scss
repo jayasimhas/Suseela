@@ -54,7 +54,6 @@
 // element lables
 // NOTE: for wireframing use only.
 .label {
-    @include zero;
     display: inline-block;
     padding: rem(10);
     font-size: rem(13);
