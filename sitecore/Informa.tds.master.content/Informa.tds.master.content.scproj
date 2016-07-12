@@ -4824,6 +4824,10 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Strategic Transactions.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Style Mapping.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
