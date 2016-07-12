@@ -11538,6 +11538,42 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Ad_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Ad_Domain  {get; set;}
 								/// <summary>
+					/// The Author Leaderboard Author Ad Zone field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: d86906cc-bd41-42d4-86dc-e6e9e571a9f0</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Author_Leaderboard_Author_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Author_Leaderboard_Author_Ad_Zone  {get; set;}
+								/// <summary>
+					/// The Author Leaderboard Author Slot ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: e1a05015-e03b-410b-9bf8-0b5eaa3ece7b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Author_Leaderboard_Author_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Author_Leaderboard_Author_Slot_ID  {get; set;}
+								/// <summary>
+					/// The Author Rectangular Ad Zone field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: af5e0a82-6c4d-4c28-be97-ca2df0c4d2d8</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Author_Rectangular_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Author_Rectangular_Ad_Zone  {get; set;}
+								/// <summary>
+					/// The Author Rectangular Slot ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Author_Rectangular_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Author_Rectangular_Slot_ID  {get; set;}
+								/// <summary>
 					/// The Global Article Ad Zone field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -12243,6 +12279,42 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Ad_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Ad_Domain  {get; set;}
 										/// <summary>
+						/// The Author Leaderboard Author Ad Zone field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: d86906cc-bd41-42d4-86dc-e6e9e571a9f0</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Author_Leaderboard_Author_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Author_Leaderboard_Author_Ad_Zone  {get; set;}
+										/// <summary>
+						/// The Author Leaderboard Author Slot ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: e1a05015-e03b-410b-9bf8-0b5eaa3ece7b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Author_Leaderboard_Author_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Author_Leaderboard_Author_Slot_ID  {get; set;}
+										/// <summary>
+						/// The Author Rectangular Ad Zone field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: af5e0a82-6c4d-4c28-be97-ca2df0c4d2d8</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Author_Rectangular_Ad_ZoneFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Author_Rectangular_Ad_Zone  {get; set;}
+										/// <summary>
+						/// The Author Rectangular Slot ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: ed6e6c2d-925b-49e7-98f9-db3177c0b29b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Author_Rectangular_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Author_Rectangular_Slot_ID  {get; set;}
+										/// <summary>
 						/// The Global Article Ad Zone field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -12929,6 +13001,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Ad_DomainFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
 			public const string Ad_DomainFieldName = "Ad Domain";
+
+						
+					
+			public static readonly ID Author_Leaderboard_Author_Ad_ZoneFieldId = new ID("d86906cc-bd41-42d4-86dc-e6e9e571a9f0");
+			public const string Author_Leaderboard_Author_Ad_ZoneFieldName = "Author Leaderboard Author Ad Zone";
+
+						
+					
+			public static readonly ID Author_Leaderboard_Author_Slot_IDFieldId = new ID("e1a05015-e03b-410b-9bf8-0b5eaa3ece7b");
+			public const string Author_Leaderboard_Author_Slot_IDFieldName = "Author Leaderboard Author Slot ID";
+
+						
+					
+			public static readonly ID Author_Rectangular_Ad_ZoneFieldId = new ID("af5e0a82-6c4d-4c28-be97-ca2df0c4d2d8");
+			public const string Author_Rectangular_Ad_ZoneFieldName = "Author Rectangular Ad Zone";
+
+						
+					
+			public static readonly ID Author_Rectangular_Slot_IDFieldId = new ID("ed6e6c2d-925b-49e7-98f9-db3177c0b29b");
+			public const string Author_Rectangular_Slot_IDFieldName = "Author Rectangular Slot ID";
 
 						
 					
@@ -18202,6 +18294,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Ad_DomainFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
 			public const string Ad_DomainFieldName = "Ad Domain";
+
+						
+					
+			public static readonly ID Author_Leaderboard_Author_Ad_ZoneFieldId = new ID("d86906cc-bd41-42d4-86dc-e6e9e571a9f0");
+			public const string Author_Leaderboard_Author_Ad_ZoneFieldName = "Author Leaderboard Author Ad Zone";
+
+						
+					
+			public static readonly ID Author_Leaderboard_Author_Slot_IDFieldId = new ID("e1a05015-e03b-410b-9bf8-0b5eaa3ece7b");
+			public const string Author_Leaderboard_Author_Slot_IDFieldName = "Author Leaderboard Author Slot ID";
+
+						
+					
+			public static readonly ID Author_Rectangular_Ad_ZoneFieldId = new ID("af5e0a82-6c4d-4c28-be97-ca2df0c4d2d8");
+			public const string Author_Rectangular_Ad_ZoneFieldName = "Author Rectangular Ad Zone";
+
+						
+					
+			public static readonly ID Author_Rectangular_Slot_IDFieldId = new ID("ed6e6c2d-925b-49e7-98f9-db3177c0b29b");
+			public const string Author_Rectangular_Slot_IDFieldName = "Author Rectangular Slot ID";
 
 						
 					

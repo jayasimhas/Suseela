@@ -1,11 +1,7 @@
 @model Informa.Web.ViewModels.Authors.AuthorProfileViewModel
 
-<script>
-    (function () {
-        document.title = '@(Model.FirstName + " " + Model.LastName)';
-    })();
-</script>
 <div class="profile">
+    <script type="text/javascript"> (function () { document.title = '@(Model.FirstName + " " + Model.LastName)'; })(); </script>
     <h1 class="profile__name">@(Model.FirstName + " " + Model.LastName)</h1>
     <div class="l-left-rail">
         <h2 class="profile__title">@(Model.Credentials)</h2>
@@ -13,7 +9,8 @@
 
         @if (Model.HasImage)
         {
-            <img class="profile__img" src="@(Model.ImageUrl)"/>}
+            <img class="profile__img" src="@(Model.ImageUrl)"/>
+        }
         <ul class="profile__links">
             @if (Model.HasEmail)
             {
@@ -97,6 +94,6 @@
         </ul>
     </div>
     <div class="l-right-rail">
-        @Html.Sitecore().Placeholder("article-med-ad")
+        @Html.Sitecore().Placeholder("author-leaderboard-ad")
     </div>
 </div>

@@ -14,7 +14,7 @@ namespace Informa.Web.ViewModels
         protected readonly ITextTranslator TextTranslator;
 
         public AdViewModel(
-						ISiteRootContext siteRootContext,
+            ISiteRootContext siteRootContext,
             ITextTranslator textTranslator)
         {
             SiteRootContext = siteRootContext;
@@ -48,9 +48,12 @@ namespace Informa.Web.ViewModels
         
         public string AdZone => SiteRootContext.Item?.Global_Article_Ad_Zone ?? string.Empty;
         public string AdvertisementText => TextTranslator.Translate("Ads.Advertisement");
+        
+        public string AuthorLeaderboardAdZone => SiteRootContext.Item?.Author_Leaderboard_Author_Ad_Zone;
+        public string AuthorLeaderboardSlotID => SiteRootContext.Item?.Author_Leaderboard_Author_Slot_ID;
+        public string AuthorRectangularAdZone => SiteRootContext.Item?.Author_Rectangular_Ad_Zone;
+        public string AuthorRectangularSlotID => SiteRootContext.Item?.Author_Rectangular_Slot_ID;
 
         public bool IsValidAd(string adId) => !string.IsNullOrEmpty(AdZone) && !string.IsNullOrEmpty(adId);
     }
-
-    
 }
