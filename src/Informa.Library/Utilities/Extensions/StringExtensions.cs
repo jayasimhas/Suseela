@@ -83,5 +83,10 @@ namespace Informa.Library.Utilities.Extensions
 			var endIndex = source.IndexOf('}');
 			return source.Substring(startIndex, endIndex - startIndex + 1);
 		}
+
+        public static string NullIfNoContent(this string source)
+        {
+            return string.IsNullOrEmpty(source) ? null : source;
+        }
     }
 }

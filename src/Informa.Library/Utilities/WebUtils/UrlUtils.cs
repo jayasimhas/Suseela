@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
-using Glass.Mapper.Sc;
-using Sitecore.Data.Items;
-using Sitecore.Resources.Media;
-using Sitecore.Web;
 
 namespace Informa.Library.Utilities.WebUtils
 {
@@ -75,5 +68,9 @@ namespace Informa.Library.Utilities.WebUtils
 			}
 		}
 
+	    public static string GetLastUrlSement(HttpContextBase context)
+	    {
+	        return context?.Request?.Url?.Segments.Last();
+	    }
 	}
 }

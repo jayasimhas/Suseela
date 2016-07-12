@@ -9,8 +9,31 @@
           <form runat="server">
               
               <h2>DCD Inspector</h2>
-              <asp:Button runat="server" UseSubmitBehavior="True" Text="Get Companies" OnClick="GetCompaniesClick"/>
-              <asp:TextBox runat="server" ID="DCDOutput" TextMode="MultiLine"></asp:TextBox>
+              <h4>Instructions</h4>
+              <p>
+                  Enter a Record Id OR a Record Number of a Company or Deal.  The Id is the numerical database identifier.
+                  The record number is the value seen in the URL when searching for a company or deal on 
+                  www.pharmamedtechbi.com.
+                  For example, the deal found here: https://www.pharmamedtechbi.com/deals/200130604
+                  Has a record number of 200130604, but the record id is totally different (25128).
+                  Once an id or number is entered, click Get Company or Get Deal.
+                  Results should display in the box below.
+              </p>
+              
+              <p>
+                  Note: This is a hastily thrown together test utility.  There is no guarantee that it will function.
+              </p>
+
+              <asp:Label runat="server" AssociatedControlID="DCDInput">Record Id</asp:Label>
+              <asp:TextBox runat="server" ID="DCDInput"></asp:TextBox>
+              <br/>
+              <asp:Label runat="server" AssociatedControlID="DCDInputRecordNumber">Record Number</asp:Label>
+              <asp:TextBox runat="server" ID="DCDInputRecordNumber"></asp:TextBox>
+              <br/>
+              <asp:Button runat="server" UseSubmitBehavior="True" Text="Get Company" OnClick="GetCompanyClick"/>
+              <asp:Button runat="server" UseSubmitBehavior="True" Text="Get Deal" OnClick="GetDealClick"/>
+              <br/>
+              <asp:TextBox runat="server" ID="DCDOutput" TextMode="MultiLine" Height="400" Width="650"></asp:TextBox>
               
               <hr />
 

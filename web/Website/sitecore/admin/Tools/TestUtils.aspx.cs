@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Autofac;
-using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.Security;
 using Informa.Model.DCD;
 using Jabberwocky.Glass.Autofac.Util;
@@ -13,10 +11,57 @@ namespace Informa.Web.sitecore.admin.Tools
 {
     public class TestUtils : Page
     {
+
+#region DCD Inspector
+        protected TextBox DCDInput { get; set; }
+        protected TextBox DCDOutput { get; set; }
+        protected TextBox DCDInputRecordNumber { get; set; }
+
+        protected void GetCompanyClick(object sender, EventArgs e)
+        {
+            int recordId;
+            var hasRecordId = int.TryParse(DCDInput.Text, out recordId);
+            var recordNumber = DCDInputRecordNumber.Text;
+
+            using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
+            {
+                var reader = scope.Resolve<IDCDReader>();
+                var company = hasRecordId
+                    ? reader.GetCompanyByRecordId(recordId)
+                    : reader.GetCompanyByRecordNumber(recordNumber);
+
+                DCDOutput.Text = company != null
+                    ? $"{company.Title} | {company.RecordId} | {company.RecordNumber} |\r\n {company.Content}"
+                    : "No company found.";
+            }
+        }
+
+        protected void GetDealClick(object sender, EventArgs e)
+        {
+            int recordId;
+            var hasRecordId = int.TryParse(DCDInput.Text, out recordId);
+            var recordNumber = DCDInputRecordNumber.Text;
+
+            using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
+            {
+                var reader = scope.Resolve<IDCDReader>();
+                var deal = hasRecordId
+                    ? reader.GetDealByRecordId(recordId)
+                    : reader.GetDealByRecordNumber(recordNumber);
+
+                
+                DCDOutput.Text = deal != null 
+                    ? $"{deal.Title} | {deal.RecordId} | {deal.RecordNumber} |\r\n {deal.Content}"
+                    : "No deal found.";
+            }
+        }
+
+#endregion
+
+        #region Crypto Tester
         protected TextBox InputTxt { get; set; }
         protected TextBox KeyTxt { get; set; }
         protected TextBox OutputTxt { get; set; }
-        protected TextBox DCDOutput { get; set; }
 
         protected void EncryptClick(object sender, EventArgs e)
         {
@@ -40,17 +85,8 @@ namespace Informa.Web.sitecore.admin.Tools
                 InputTxt.Text = crypto.DecryptStringAes(cipher, key);
             }
         }
+#endregion
 
-        protected void GetCompaniesClick(object sender, EventArgs e)
-        {
-            var recordId = int.Parse(DCDOutput.Text);
-            using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
-            {
-                var reader = scope.Resolve<IDCDReader>();
-                var company = reader.GetCompanyByRecordId(recordId);
-
-                DCDOutput.Text = $"{company.Title} | {company.RecordId} | {company.RecordNumber} | {company.Content}";
-            }
-        }
+        
     }
 }
