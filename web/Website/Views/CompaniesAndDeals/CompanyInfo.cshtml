@@ -20,19 +20,21 @@
             @foreach (var loc in Model.LocationPath)
             {
                 @:<li class="article-topics__li">
-                    @loc
-                    @:<ul>
+                @loc
+                @:<ul>
             }
             @foreach (var i in Model.LocationPath)
             {
-                    @:</ul>
+                @:</ul>
                 @:</li>
             }
             <li class="article-topics__section-header">@Model.CompanyTypeHeader</li>
             <li class="article-topics__li">@Model.Content.CompanyInfo.Description</li> <!-- Company Type-->
             <li class="article-topics__section-header">@Model.ParentSubHeader</li>
-            
+
         </ul>
     </div>
+
+    @Html.Sitecore().Placeholder("strategy-transactions")
 </div>
 
