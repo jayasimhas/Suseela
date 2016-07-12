@@ -50,7 +50,7 @@ namespace Elsevier.Web.VWB
 				RunQuery(true);
 			}
 
-			LogoUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.TargetHostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
+			LogoUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
 
 			const string defaultTime = "12:00 AM";
 			txtStartTime.Text = defaultTime;

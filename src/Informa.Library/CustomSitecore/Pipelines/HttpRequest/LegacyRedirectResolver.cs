@@ -108,6 +108,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
                 var protocol = Settings.GetSetting("Site.Protocol", "https");
 
 				Logger.SitecoreInfo($"LegacyRedirectResolver article url: {protocol}://{host}{newPath}");
+				var host = siteInfo.HostName;
 
 				args.Context.Response.Status = "301 Moved Permanently";
 				args.Context.Response.AddHeader("Location", $"{protocol}://{host}{newPath}");
