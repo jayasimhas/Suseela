@@ -27,6 +27,9 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             Logo = strategicTransactionComponent.Logo.Src;
             Body = strategicTransactionComponent.Body;
             SubscribeButtonText = strategicTransactionComponent.Subscribe_Button_Text;
+            SubscribeButtonURL = strategicTransactionComponent.Subscribe_Button_URL != null
+                ? strategicTransactionComponent.Subscribe_Button_URL.Url
+                : string.Empty;
         }
 
         public string Logo { get; set; }
