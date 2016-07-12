@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace Informa.Models.DCD
 {
@@ -60,7 +59,7 @@ namespace Informa.Models.DCD
     public class CompanyPath
     {
         [XmlAttribute(AttributeName = "id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [XmlText]
         public string Path { get; set; }
         [XmlIgnore]
@@ -80,17 +79,17 @@ namespace Informa.Models.DCD
     public class FiscalYearEnd
     {
         [XmlAttribute("month")]
-        public int Month { get; set; }
+        public string Month { get; set; }
 
         [XmlAttribute("day")]
-        public int Day { get; set; }
+        public string Day { get; set; }
     }
 
     public class Financial
     {
-        public int FinancialYear { get; set; }
-        public long FinancialSales { get; set; }
-        public long FinancialEarnings { get; set; }
+        public string FinancialYear { get; set; }
+        public string FinancialSales { get; set; }
+        public string FinancialEarnings { get; set; }
     }
 
     public class CodingSet
