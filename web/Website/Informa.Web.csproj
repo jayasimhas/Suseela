@@ -1321,7 +1321,6 @@
     <Content Include="Views\EmailComponents\FeaturedArticle.cshtml" />
     <Content Include="Views\EmailComponents\SectionHeader.cshtml" />
     <Content Include="Views\Article\TopicPageTitle.cshtml" />
-    <Content Include="Views\Authors\ProfileHeaders.cshtml" />
     <Content Include="Views\Shared\Components\MediaTypeIcon.cshtml" />
     <Content Include="Areas\VWB\Views\AddIssue.cshtml" />
     <Content Include="Views\Authors\AuthorProfile.cshtml" />
@@ -1330,6 +1329,8 @@
     <Content Include="Views\Authors\AuthorPrologueEmail.cshtml" />
     <Content Include="Views\Shared\PopOuts\EmailAuthor.cshtml" />
     <Content Include="Views\Shared\Components\ExecutiveSummary.cshtml" />
+    <Content Include="Views\Authors\AuthorRectangularAd.cshtml" />
+    <Content Include="Views\Authors\AuthorLeaderboardAd.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
