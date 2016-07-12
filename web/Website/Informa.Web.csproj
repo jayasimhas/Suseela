@@ -775,6 +775,7 @@
     <Compile Include="ViewModels\Articles\ArticleKeyDocumentsModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleMobileMediaComponentModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\StratrgicTransactionViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailLayoutViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
@@ -1328,6 +1329,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\CompaniesAndDeals\Company.cshtml" />
     <Content Include="Views\CompaniesAndDeals\CompanyInfo.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\StrategicTransactions.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

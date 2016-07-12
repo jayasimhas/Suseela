@@ -13,9 +13,5 @@ namespace Informa.Library.Utilities.Settings
 		string NlmExportPath { get; }
 
 		string MailFromAddress { get; }
-
-		string OldCompaniesUrl { get; }
-
-		string OldDealsUrl { get; }
 	}
 }
