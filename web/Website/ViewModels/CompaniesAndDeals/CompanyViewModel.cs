@@ -1,4 +1,6 @@
-﻿using Informa.Library.DCD;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Informa.Library.DCD;
 using Informa.Library.Globalization;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.WebUtils;
@@ -20,7 +22,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         {
             IDCDReader DcdReader { get; }
             IHttpContextProvider HttpContextProvider { get; }
-            ICompanyContentXmlParser CompanyContentXmlParser { get; }
+            ICompanyContentParser CompanyContentParser { get; }
             ITextTranslator TextTranslator { get; }
         }
 
@@ -29,7 +31,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             _dependencies = dependencies;
             RecordNumber = UrlUtils.GetLastUrlSement(_dependencies.HttpContextProvider.Current);
             Company = _dependencies.DcdReader.GetCompanyByRecordNumber(RecordNumber);
-            Content = _dependencies.CompanyContentXmlParser.ParseContent(Company.Content, RecordNumber);
+            Content = _dependencies.CompanyContentParser.ParseContent(Company.Content, RecordNumber);
 
             if (Company == null || Content == null)
             {
@@ -48,12 +50,28 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             {
                 if (!_divisionOfText.HasContent())
                 {
-                    var parent = _dependencies.CompanyContentXmlParser.GetParentCompany(Content);
+                    var parent = _dependencies.CompanyContentParser.GetParentCompany(Content);
                     var text = _dependencies.TextTranslator.Translate("DCD.DivisionOf");
                     _divisionOfText = parent.HasContent() ? $"{text} {parent}" : null;
                 }
                 return _divisionOfText;
             }
         }
+
+        public Coding[] Industries => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("indstry"))?.Codings;
+        public Coding[] TherapyAreas => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("theracat"))?.Codings;
+        public string[] LocationPath => Content.CompanyInfo.LocationPath.Split('/');
+
+        public string CompanyInformationHeader => _dependencies.TextTranslator.Translate("DCD.CompanyInformation");
+        public string IndustryHeader => _dependencies.TextTranslator.Translate("DCD.Industry");
+        public string TherapyAreasHeader => _dependencies.TextTranslator.Translate("DCD.TherapeuticAreas");
+        public string OwnershipHeader => _dependencies.TextTranslator.Translate("DCD.Ownership");
+        public string HeadquartersHeader => _dependencies.TextTranslator.Translate("DCD.Headquarters");
+        public string CompanyTypeHeader => _dependencies.TextTranslator.Translate("DCD.CompanyType");
+        public string AliasHeader => _dependencies.TextTranslator.Translate("DCD.Alias");
+        public string ParentSubHeader => _dependencies.TextTranslator.Translate("DCD.ParentAndSubsidiaries");
+        public string SeniorManagementHeader => _dependencies.TextTranslator.Translate("DCD.SeniorManagement");
+        public string ContentHeader => _dependencies.TextTranslator.Translate("DCD.ContactInfo");
+
     }
 }

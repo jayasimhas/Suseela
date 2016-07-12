@@ -1327,6 +1327,7 @@
     <Content Include="Views\Shared\Company\_RegisterMessage.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\CompaniesAndDeals\Company.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompanyInfo.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

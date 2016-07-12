@@ -12,7 +12,7 @@ namespace Informa.Models.DCD
         public ParentsAndDivisions ParentsAndDivisions { get; set; }
 
         [XmlElement("CodingSet")]
-        public List<CodingSet> CodingSets { get; set; }
+        public CodingSet[] CodingSets { get; set; }
 
         [XmlElement("Financials")]
         public FinancialData FinancialData { get; set; }
@@ -53,13 +53,8 @@ namespace Informa.Models.DCD
 
     public class ParentsAndDivisions
     {
-        public ParentsAndDivisions()
-        {
-            CompanyPaths = new List<CompanyPath>();
-        }
-
         [XmlElement(ElementName = "CompanyPath")]
-        public List<CompanyPath> CompanyPaths { get; set; }
+        public CompanyPath[] CompanyPaths { get; set; }
     }
 
     public class CompanyPath
@@ -72,16 +67,11 @@ namespace Informa.Models.DCD
 
     public class FinancialData
     {
-        public FinancialData()
-        {
-            Financials = new List<Financial>();
-        }
-
         public FiscalYearEnd FiscalYearEnd { get; set; }
         public string Source { get; set; }
 
         [XmlElement(ElementName = "Financial")]
-        public List<Financial> Financials { get; set; }
+        public Financial[] Financials { get; set; }
         
     }
 
@@ -107,7 +97,7 @@ namespace Informa.Models.DCD
         public string Type { get; set; }
 
         [XmlElement("Coding")]
-        public List<Coding> Codings { get; set; }
+        public Coding[] Codings { get; set; }
     }
 
     public class Coding

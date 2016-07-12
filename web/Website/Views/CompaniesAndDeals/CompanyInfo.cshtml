@@ -1,0 +1,38 @@
+@model Informa.Web.ViewModels.CompaniesAndDeals.CompanyViewModel
+
+<div class="l-right-rail">
+    <div class="article-topics">
+        <h2 class="article-topics__header">@Model.CompanyInformationHeader</h2>
+        <ul>
+            <li class="article-topics__section-header">@Model.IndustryHeader</li>
+            @foreach (var industry in Model.Industries)
+            {
+                <li class="article-topics__li">@industry.Name</li>
+            }
+            <li class="article-topics__section-header">@Model.TherapyAreasHeader</li>
+            @foreach (var area in Model.TherapyAreas)
+            {
+                <li class="article-topics__li">@area.Name</li>
+            }
+            <li class="article-topics__section-header">@Model.OwnershipHeader</li>
+            <li class="article-topics__li">@Model.Content.CompanyInfo.Ownership</li>
+            <li class="article-topics__section-header">@Model.HeadquartersHeader</li>
+            @foreach (var loc in Model.LocationPath)
+            {
+                @:<li class="article-topics__li">
+                    @loc
+                    @:<ul>
+            }
+            @foreach (var i in Model.LocationPath)
+            {
+                    @:</ul>
+                @:</li>
+            }
+            <li class="article-topics__section-header">@Model.CompanyTypeHeader</li>
+            <li class="article-topics__li">@Model.Content.CompanyInfo.Description</li> <!-- Company Type-->
+            <li class="article-topics__section-header">@Model.ParentSubHeader</li>
+            
+        </ul>
+    </div>
+</div>
+

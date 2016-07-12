@@ -9,14 +9,14 @@ using Jabberwocky.Core.Caching;
 
 namespace Informa.Library.DCD
 {
-    public interface ICompanyContentXmlParser
+    public interface ICompanyContentParser
     {
         CompanyContent ParseContent(string xmlContent, string recordNumber);
         string GetParentCompany(CompanyContent content);
     }
 
     [AutowireService]
-    public class CompanyContentXmlParser : ICompanyContentXmlParser
+    public class CompanyContentParser : ICompanyContentParser
     {
         private readonly IDependencies _dependencies;
         private readonly TimeSpan _timeSpan = new TimeSpan(0, 5, 0);
@@ -27,7 +27,7 @@ namespace Informa.Library.DCD
             ICacheProvider CacheProvider { get; set; }
         }
 
-        public CompanyContentXmlParser(IDependencies dependencies)
+        public CompanyContentParser(IDependencies dependencies)
         {
             _dependencies = dependencies;
         }
@@ -54,5 +54,6 @@ namespace Informa.Library.DCD
         {
             return content.ParentsAndDivisions.CompanyPaths.FirstOrDefault()?.Path;
         }
+
     }
 }
