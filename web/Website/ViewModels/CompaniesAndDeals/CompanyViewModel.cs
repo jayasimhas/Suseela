@@ -2,6 +2,7 @@
 using System.Linq;
 using Informa.Library.DCD;
 using Informa.Library.Globalization;
+using Informa.Library.Utilities.DataModels;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.WebUtils;
 using Informa.Library.Wrappers;
@@ -61,6 +62,8 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         public Coding[] Industries => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("indstry"))?.Codings;
         public Coding[] TherapyAreas => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("theracat"))?.Codings;
         public string[] LocationPath => Content.CompanyInfo.LocationPath.Split('/');
+        public TreeNode<string> SubsidiariesTree
+            => _dependencies.CompanyContentParser.GetSubsidiaryTree(Content.ParentsAndDivisions);
 
         public string CompanyInformationHeader => _dependencies.TextTranslator.Translate("DCD.CompanyInformation");
         public string IndustryHeader => _dependencies.TextTranslator.Translate("DCD.Industry");
@@ -73,5 +76,6 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         public string SeniorManagementHeader => _dependencies.TextTranslator.Translate("DCD.SeniorManagement");
         public string ContentHeader => _dependencies.TextTranslator.Translate("DCD.ContactInfo");
 
+        public bool ShowCompanyType => Content?.CompanyInfo?.Description.HasContent() ?? false;
     }
 }

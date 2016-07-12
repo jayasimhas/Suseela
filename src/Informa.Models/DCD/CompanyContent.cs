@@ -63,6 +63,8 @@ namespace Informa.Models.DCD
         public int Id { get; set; }
         [XmlText]
         public string Path { get; set; }
+        [XmlIgnore]
+        public string[] Segments { get; set; }
     }
 
     public class FinancialData

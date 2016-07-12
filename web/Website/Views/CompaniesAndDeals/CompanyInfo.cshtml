@@ -1,3 +1,4 @@
+@using Glass.Mapper
 @model Informa.Web.ViewModels.CompaniesAndDeals.CompanyViewModel
 
 <div class="l-right-rail">
@@ -28,10 +29,13 @@
                     @:</ul>
                 @:</li>
             }
-            <li class="article-topics__section-header">@Model.CompanyTypeHeader</li>
-            <li class="article-topics__li">@Model.Content.CompanyInfo.Description</li> <!-- Company Type-->
+            @if (@Model.ShowCompanyType)
+            {
+                <li class="article-topics__section-header">@Model.CompanyTypeHeader</li>
+                <li class="article-topics__li">@Model.Content.CompanyInfo.Description</li>
+            }
             <li class="article-topics__section-header">@Model.ParentSubHeader</li>
-            
+            @Model.SubsidiariesTree.Value
         </ul>
     </div>
 </div>
