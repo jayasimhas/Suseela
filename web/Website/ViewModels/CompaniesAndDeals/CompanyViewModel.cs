@@ -30,13 +30,33 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         public CompanyViewModel(IDependencies dependencies)
         {
             _dependencies = dependencies;
-            RecordNumber = UrlUtils.GetLastUrlSement(_dependencies.HttpContextProvider.Current);
-            Company = _dependencies.DcdReader.GetCompanyByRecordNumber(RecordNumber);
-            Content = _dependencies.CompanyContentParser.ParseContent(Company.Content, RecordNumber);
 
-            if (Company == null || Content == null)
+            RecordNumber = UrlUtils.GetLastUrlSement(_dependencies.HttpContextProvider.Current);
+            RedirectIfRecordId(RecordNumber);
+
+            Company = _dependencies.DcdReader.GetCompanyByRecordNumber(RecordNumber);
+            if (Company == null) RedirectTo404();
+
+            Content = _dependencies.CompanyContentParser.ParseContent(Company.Content, RecordNumber);
+            if (Content == null) RedirectTo404();
+        }
+
+        private void RedirectTo404()
+        {
+            _dependencies.HttpContextProvider.Current.Response.Redirect($"/404?url=/companies/{RecordNumber}");
+        }
+
+        private void RedirectIfRecordId(string segment)
+        {
+            if(!segment.StartsWith("_id")) { return; }  //Not a record id, yay!
+
+            int id;
+            if (!int.TryParse(segment.Substring(3), out id)) return;
+
+            var company = _dependencies.DcdReader.GetCompanyByRecordId(id);
+            if ((company?.RecordNumber).HasContent())
             {
-                _dependencies.HttpContextProvider.Current.Response.Redirect($"/404?url=/companies/{RecordNumber}");
+                _dependencies.HttpContextProvider.Current.Response.Redirect($"/companies/{company.RecordNumber}");
             }
         }
 
@@ -59,6 +79,16 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             }
         }
 
+        public string RegionAddressLine
+        {
+            get
+            {
+                var text = Content.ContactInfo.PoBox.HasContent() ? $"P.O. Box {Content.ContactInfo.PoBox} " : string.Empty;
+                text += $"{Content.ContactInfo.City}, {Content.ContactInfo.State} {Content.ContactInfo.Zip}";
+                return text;
+            }
+        }
+
         public Coding[] Industries => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("indstry"))?.Codings;
         public Coding[] TherapyAreas => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("theracat"))?.Codings;
         public string[] LocationPath => Content.CompanyInfo.LocationPath.Split('/');
@@ -74,7 +104,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         public string AliasHeader => _dependencies.TextTranslator.Translate("DCD.Alias");
         public string ParentSubHeader => _dependencies.TextTranslator.Translate("DCD.ParentAndSubsidiaries");
         public string SeniorManagementHeader => _dependencies.TextTranslator.Translate("DCD.SeniorManagement");
-        public string ContentHeader => _dependencies.TextTranslator.Translate("DCD.ContactInfo");
+        public string ContactHeader => _dependencies.TextTranslator.Translate("DCD.ContactInfo");
 
         public bool ShowCompanyType => Content?.CompanyInfo?.Description.HasContent() ?? false;
     }
