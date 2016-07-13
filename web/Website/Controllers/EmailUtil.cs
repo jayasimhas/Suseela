@@ -200,7 +200,7 @@ namespace Informa.Web.Controllers
             {
                 replacements["#show_notes#"] = "";
                 replacements["#Body_Content#"] = "";
-            }
+            } 
 
             replacements["#content_editor#"] = Sitecore.Context.User.Profile.FullName;
 			replacements["#current_time#"] = DateTime.Now.ToString();
