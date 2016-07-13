@@ -18,7 +18,7 @@
         <div>
             @for (int i = 0; i < Model.PublicationNewsletterOptIns.Count; i++)
             {
-                var item = Model.PublicationNewsletterOptIns [i];
+                var item = Model.PublicationNewsletterOptIns[i];
                 <div class="page-registration__labeled-checkbox">
                     <input type="hidden" name="Newsletters[@i].PublicationCode" value="@item.Publication.Code" />
                     <input name="Newsletters[@i].NewsletterChecked"
@@ -26,9 +26,10 @@
                            type="checkbox"
                            @(item.OptIn ? "checked='checked'" : string.Empty)
                            data-checkbox-type="boolean">
-                    <label class="checkbox-label" >@Model.NewslettersLabelTemplateText.Replace("#PubName#", item.Publication.Name)</label>
+                    <label class="checkbox-label">@Model.NewslettersLabelTemplateText.Replace("#PubName#", item.Publication.Name)</label>
                 </div>
             }
+            <br />
             <div class="page-registration__labeled-checkbox">
                 <input name="offers"
                        id="offers"
