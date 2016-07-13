@@ -1,25 +1,18 @@
 ----item----
 version: 1
-id: {11907324-B620-4680-A4C7-B5976FBD0A0B}
+id: {15D11892-6768-4E8D-8CA5-24783E806CB0}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Detail Pages/Company Info
-parent: {15D11892-6768-4E8D-8CA5-24783E806CB0}
-name: Company Info
+path: /sitecore/layout/Renderings/User Defined/Authors
+parent: {97AE523B-BC10-4BA9-8F5B-6877D04E2AC1}
+name: Authors
 master: {00000000-0000-0000-0000-000000000000}
-template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
-templatekey: View rendering
+template: {7EE0975B-0698-493E-B3A2-0B2EF33D0522}
+templatekey: Rendering Folder
 
-----field----
-field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
-name: Path
-key: path
-content-length: 43
-
-/Views/CompaniesAndDeals/CompanyInfo.cshtml
 ----version----
 language: en
 version: 1
-revision: d4768355-bea9-43a5-94aa-b58a233f36f6
+revision: 232c2da6-a087-4a02-9b08-afb285f23423
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,21 +20,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160713T135101Z
+20160701T124449Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-d4768355-bea9-43a5-94aa-b58a233f36f6
+232c2da6-a087-4a02-9b08-afb285f23423
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160713T135112Z
+20160713T142808Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -2,8 +2,8 @@
 version: 1
 id: {CA6C8173-7911-4AA8-8141-F63C17B60096}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Detail Pages/Company Details
-parent: {15D11892-6768-4E8D-8CA5-24783E806CB0}
+path: /sitecore/layout/Renderings/User Defined/DCD/Company Details
+parent: {16ABC9F4-FFB9-48EB-959A-1474AD8E7190}
 name: Company Details
 master: {00000000-0000-0000-0000-000000000000}
 template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
@@ -19,7 +19,7 @@ content-length: 46
 ----version----
 language: en
 version: 1
-revision: 337e48c6-334a-431f-8ded-1a205dc6dd9e
+revision: 3081edcb-b3a4-4d4f-9509-eab08660633b
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-337e48c6-334a-431f-8ded-1a205dc6dd9e
+3081edcb-b3a4-4d4f-9509-eab08660633b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160713T135809Z
+20160713T142759Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
