@@ -681,6 +681,8 @@
     <Compile Include="User\Document\ISaveDocument.cs" />
     <Compile Include="User\Document\ISaveDocumentContext.cs" />
     <Compile Include="User\Document\IsSavedDocumentContext.cs" />
+    <Compile Include="User\Orders\ICreateUserOrderResult.cs" />
+    <Compile Include="User\Orders\IUserOrder.cs" />
     <Compile Include="User\Profile\IUserProfileContext.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\NewsletterUserOptInsContext.cs" />
