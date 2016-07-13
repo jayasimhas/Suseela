@@ -1331,6 +1331,7 @@
     <Content Include="Views\CompaniesAndDeals\CompanyInfo.cshtml" />
     <Content Include="Views\CompaniesAndDeals\StrategicTransactions.cshtml" />
     <Content Include="Views\Structure\DetailPageSublayout.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\SubsidiariesTree.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
