@@ -57,7 +57,7 @@
 		{% endif %}
 		&lt;ul class=&quot;profile__links&quot;&gt;
 			{% if email %}
-				&lt;li&gt;
+				&lt;li class=&quot;js-tealium-click&quot; data-tealium-click='{&quot;event_name&quot;: &quot;author_profile_email_click_through&quot;, &quot;click_through_source&quot;: &quot;{{personName}}&quot;, &quot;click_through_destination&quot;: &quot;{{email}}&quot;}'&gt;
 					{% include &quot;molecules-icon-as-bullet&quot; with {&quot;icon&quot;: &quot;email&quot;, &quot;linkText&quot;: email} %}
 				&lt;/li&gt;
 			{% endif %}

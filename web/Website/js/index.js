@@ -32,6 +32,7 @@ window.toggleIcons = toggleIcons;
 
 /* Polyfill for scripts expecting `jQuery`. Also see: CSS selectors support in zepto.min.js */
 window.jQuery = $;
+import selectivity from './selectivity-full';
 
 
 // Make sure proper elm gets the click event
@@ -879,7 +880,7 @@ $(document).ready(function() {
 				$(item).data("ttTouchTriggered", true);
 			}
 
-			// Actual mouse events thrown can be any number of things... 
+			// Actual mouse events thrown can be any number of things...
 			if ((e.type === ("mouseover") || e.type === ("mouseenter")) && $(item).data("ttTouchTriggered")) {
 				// Do nothing
 			}
@@ -916,4 +917,11 @@ $(document).ready(function() {
 		i.parentNode.insertBefore(n,i),w._e=[],
 		w.ready=function(t) { w._e.push(t); },
 		w); } (document,"script","twitter-wjs");
+
+
+
+	// Pretty select boxes
+	$('select').selectivity({
+		showSearchInputInDropdown: false
+	});
 });

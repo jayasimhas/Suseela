@@ -112,6 +112,152 @@
 	&lt;/div&gt;
 
 &lt;/header&gt;
+ &lt;script type=&quot;text/javascript&quot;&gt;
+	/* * *
+	ANALYTICS DATA
+	* * */
+	var analytics_data = {
+		&quot;actual_publish_date&quot;: &quot;01/01/0001&quot;,
+		&quot;article_author&quot;: &quot;&quot;,
+		&quot;article_content_type&quot;: &quot;&quot;,
+		&quot;article_embargo&quot;: &quot;False&quot;,
+		&quot;article_entitlements&quot;: &quot;Abstract View&quot;,
+		&quot;article_media_type&quot;: &quot;&quot;,
+		&quot;article_number&quot;: &quot;&quot;,
+		&quot;company_Id&quot;: &quot;&quot;,
+		&quot;company&quot;: &quot;&quot;,
+		&quot;created_date&quot;: &quot;04/07/2008&quot;,
+		&quot;current_email_subscriptions&quot;: &quot;&quot;,
+		&quot;custom_tags&quot;: &quot;&quot;,
+		&quot;entitlement_status&quot;: &quot;unentitled&quot;,
+		&quot;industry&quot;: &quot;&quot;,
+		&quot;IsArticleFree&quot;: &quot;False&quot;,
+		&quot;login_status&quot;: &quot;False&quot;,
+		&quot;page_description&quot;: &quot;&quot;,
+		&quot;page_keywords&quot;: &quot;&quot;,
+		&quot;page_name&quot;: &quot;Home&quot;,
+		&quot;page_title_override&quot;: &quot;&quot;,
+		&quot;page_type&quot;: &quot;Home Page&quot;,
+		&quot;publication&quot;: &quot;Scrip&quot;,
+		&quot;salesforce_account_id&quot;: &quot;&quot;,
+		&quot;salesforce_contact_id&quot;: &quot;&quot;,
+		&quot;taxonomy_region&quot;: &quot;&quot;,
+		&quot;taxonomy_subjects&quot;: &quot;&quot;,
+		&quot;taxonomy_therapy_areas&quot;: &quot;&quot;,
+		&quot;user_email&quot;: &quot;&quot;,
+		&quot;user_entitlement_type&quot;: &quot;&quot;,
+		&quot;user_id&quot;: &quot;&quot;,
+		&quot;User_IP_Address&quot;: &quot;172.28.10.45&quot;,
+		&quot;content_entitlement_type&quot;: &quot;unentitled&quot;,
+		&quot;entitlement_type&quot;: &quot;Free User&quot;,
+		&quot;opportunity_id&quot;: &quot;&quot;,
+		&quot;opportunity_line_item_id&quot;: &quot;&quot;
+	};
+
+	var utag_data = analytics_data;
+
+	(function (a, b, c, d) {
+		a = '//tags.tiqcdn.com/utag/informa/main/dev/utag.js';
+		b = document; c = 'script'; d = b.createElement(c); d.src = a;
+		d.type = 'text/java' + c; d.async = true;
+		a = b.getElementsByTagName(c)[0];
+		a.parentNode.insertBefore(d, a);
+	})();
+
+	function getCorrespondingSectr(sector) {
+		if (sector == 'comment' || sector == 'features' || sector == 'analysis') {
+			sector = 'analysis';
+		} else if (sector == 'supplementsreports' || sector == 'multimedia' || sector == 'scienceabstracts') {
+			sector = 'home';
+		} else if (sector == 'therapysector' || sector == 'other') {
+			sector = 'therapy';
+		} else if (sector == 'cardiovascular') {
+			sector = 'cardio';
+		} else if (sector == 'musculoskeletal') {
+			sector = 'musculo';
+		} else if (sector == 'gastrointestinal') {
+			sector = 'gastro';
+		} else if (sector == 'genericsbusiness') {
+			sector = 'genbusiness';
+		} else if (sector == 'manda') {
+			sector = 'merger';
+		} else if (sector == 'businessstrategy') {
+			sector = 'corp';
+		} else if (sector == 'lifecyclemanagement') {
+			sector = 'lifecycle';
+		} else if (sector == 'policyregulation') {
+			sector = 'policyandreg';
+		} else if (sector == 'pricingreimbursement') {
+			sector = 'pandr';
+		} else if (sector == 'healthcarepolicy') {
+			sector = 'hpolicy';
+		} else if (sector == 'pharmacovigilance') {
+			sector = 'pharmacv';
+		} else if (sector == 'intellectualproperty') {
+			sector = 'ip';
+		} else if (sector == 'researchdevelopment') {
+			sector = 'randd';
+		} else if (sector == 'productapprovals') {
+			sector = 'approvals';
+		} else if (sector == 'clinicaltrials') {
+			sector = 'ctrials';
+		} else if (sector == 'productfilings') {
+			sector = 'filings';
+		} else if (sector == 'productsafety') {
+			sector = 'safety';
+		} else if (sector == 'productdelays') {
+			sector = 'delays';
+		} else if (sector == 'latinamerica') {
+			sector = 'lamerica';
+		} else if (sector == 'world') {
+			sector = 'row';
+		}
+		return sector;
+	}
+
+OAS_publication = 'www.scripnews.com/';
+//configuration
+OAS_url = 'https://oasc-eu1.247realmedia.com/RealMedia/ads/';
+OAS_sitepage = OAS_publication + getCorrespondingSectr('home');
+OAS_listpos = 'Top,Top1,Bottom,Right,Right1,TopRight,Top2,Top3,Middle,Middle1,Position2,Position3';
+OAS_query = '';
+OAS_target = 'ad';
+//end of configuration
+OAS_version = 11;
+OAS_rn = '001234567890';
+OAS_rns = '1234567890';
+OAS_rn = new String (Math.random()); OAS_rns = OAS_rn.substring (2, 11);
+
+function OAS_NORMAL(pos,sector,keyword) {
+    document.write('&lt;A HREF=&quot;' + OAS_url + 'click_nx.ads/' + OAS_sitepage + '/1' + OAS_rns + '%40' + OAS_listpos + '!' + pos + OAS_query + '&quot; TARGET=&quot;' + OAS_target + '&quot;&gt;');
+    document.write('&lt;IMG SRC=&quot;' + OAS_url + 'adstream_nx.ads/' + OAS_sitepage + '/1' + OAS_rns + '%40' + OAS_listpos + '!' + pos + OAS_query + '&quot; BORDER=0 ALT=&quot;Advertisement&quot; Title=&quot;&quot;&gt;&lt;/a&gt;');
+}
+
+if (navigator.userAgent.indexOf('Mozilla/3') != -1)
+    OAS_version = 10;
+if (OAS_version &gt;= 11)
+    document.write('&lt;SC'+'RIPT LANGUAGE=&quot;JavaScript1.1&quot; SRC=&quot;' + OAS_url + 'adstream_mjx.ads/' + OAS_sitepage + '/1' + OAS_rns + '%40' + OAS_listpos + OAS_query + '&quot;&gt;&lt;\/SCRIPT&gt;');
+
+document.write('');
+function OAS_AD(pos,sector) {
+    if (OAS_version &gt;= 11 &amp;&amp; typeof(OAS_RICH)!='undefined')
+        OAS_RICH(pos);
+    else
+        OAS_NORMAL(pos,sector,'');
+}
+function OAS_AD_SEARCH(pos,sector,keyword) {
+
+    var sectorName = getCorrespondingSectr(sector);
+
+    if (OAS_version &gt;= 11 &amp;&amp; typeof(OAS_RICH)!='undefined'){
+        OAS_RICH(pos);
+    }
+    else{
+        OAS_NORMAL(pos,sectorName,keyword);
+    }
+}
+
+&lt;/script&gt;
 &lt;main&gt;
 	 &lt;div class=&quot;main-menu js-full-menu-toggle&quot;&gt;
 	&lt;div class=&quot;menu-toggler js-menu-toggle-button&quot;&gt;
@@ -268,17 +414,17 @@
 													
 
 &lt;div class=&quot;profile&quot;&gt;
-	&lt;h1 class=&quot;profile__name&quot;&gt;Rodrigo Ramos&lt;/h1&gt;
+	&lt;h1 class=&quot;profile__name&quot;&gt;Danna Hensley&lt;/h1&gt;
 	&lt;div class=&quot;l-left-rail&quot;&gt;
-		&lt;h2 class=&quot;profile__title&quot;&gt;Foreign Exchange Clerk&lt;/h2&gt;
+		&lt;h2 class=&quot;profile__title&quot;&gt;Acrobat&lt;/h2&gt;
 		&lt;div class=&quot;profile__location&quot;&gt;Plum, AZ&lt;/div&gt;
 					&lt;img class=&quot;profile__img&quot; src=&quot;https://unsplash.it/200/200/?random&quot; /&gt;
 				&lt;ul class=&quot;profile__links&quot;&gt;
-							&lt;li&gt;
+							&lt;li class=&quot;js-tealium-click&quot; data-tealium-click='{&quot;event_name&quot;: &quot;author_profile_email_click_through&quot;, &quot;click_through_source&quot;: &quot;Danna Hensley&quot;, &quot;click_through_destination&quot;: &quot;abc@example.com&quot;}'&gt;
 					&lt;svg class=&quot;alert__icon &quot;&gt;
 	&lt;use xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#email&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;
-&lt;a href=&quot;&quot;&gt;i.am.a.very.long.email.with+a.modifier@example.com&lt;/a&gt;
+&lt;a href=&quot;&quot;&gt;abc@example.com&lt;/a&gt;
 				&lt;/li&gt;
 										&lt;li&gt;
 					&lt;svg class=&quot;alert__icon &quot;&gt;
@@ -298,37 +444,57 @@
 		&lt;/div&gt;
 		&lt;ul class=&quot;profile__expertise&quot;&gt;
 							&lt;li&gt;
-						
-									    	
+					
 &lt;div class=&quot;bar-separated-link-list bar-separated-link-list--wrap&quot;&gt;
 			&lt;span class=&quot;bar-separated-link-list__label&quot;&gt;Areas of Expertise: &lt;/span&gt;
-				&lt;a href=&quot;#&quot;&gt;Ordovician&lt;/a&gt;
+				&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
 	&lt;/div&gt;
 				&lt;/li&gt;
 							&lt;li&gt;
-						
-									    				    				    				    				    				    	
+					
 &lt;div class=&quot;bar-separated-link-list bar-separated-link-list--wrap&quot;&gt;
 			&lt;span class=&quot;bar-separated-link-list__label&quot;&gt;Industry Expertise: &lt;/span&gt;
-				&lt;a href=&quot;#&quot;&gt;Platen&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Bibliopegist&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Singularize&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Hexameter&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Hexameter&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Nonaeumlrobiotics&lt;/a&gt;
+				&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
 	&lt;/div&gt;
 				&lt;/li&gt;
 							&lt;li&gt;
-						
-									    				    				    				    				    				    	
+					
 &lt;div class=&quot;bar-separated-link-list bar-separated-link-list--wrap&quot;&gt;
 			&lt;span class=&quot;bar-separated-link-list__label&quot;&gt;Writes for: &lt;/span&gt;
-				&lt;a href=&quot;#&quot;&gt;Hexameter&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Picayune&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Enneahedral&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Singularize&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Ordovician&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Jinglingly&lt;/a&gt;
+				&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
 	&lt;/div&gt;
 				&lt;/li&gt;
 					&lt;/ul&gt;
@@ -472,53 +638,6 @@
 				&lt;time class=&quot;article-metadata__date&quot;&gt;15 Sep 2015&lt;/time&gt;
 			&lt;/li&gt;
 			&lt;li&gt;
-				&lt;h6&gt;Opinion&lt;/h6&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;svg class=&quot;action-flag__icon&quot;&gt;
-					&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#audio&quot;&gt;&lt;/use&gt;
-				&lt;/svg&gt;
-			&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;article-preview__inner-wrapper&quot;&gt;
-		&lt;h1 class=&quot;article-preview__headline&quot;&gt;
-			&lt;a href=&quot;#&quot;&gt;Stockwatch: No Earnings Disappointments Are The New Black &lt;/a&gt;
-		&lt;/h1&gt;
-
-		&lt;span class=&quot;article-preview__byline&quot;&gt;
-			by Rodrigo Ramos
-		&lt;/span&gt;
-
-		&lt;div class=&quot;article-summary&quot;&gt;
-			&lt;p&gt; Curabitur pharetra sagittis pulvinar. Nam vestibulum laoreet aliquam. Nam id volutpat quam, eget volutpat felis. Mauris sagittis, neque sagittis aliquam rhoncus, mauris ante ultrices elit, vitae pretium erat velit eu turpis. Integer vehicula sapien quam, ut hendrerit orci ullamcorper a. Maecenas efficitur urna et arcu suscipit, ut malesuada ipsum pellentesque. In pretium ante vel leo ornare gravida. Curabitur ultrices felis nisl, eget vulputate elit faucibus non. Pellentesque gravida lorem at massa sollicitudin consequat. Maecenas eleifend, velit sed suscipit rhoncus, nisi enim pulvinar velit, ac faucibus nunc mauris a turpis. Pellentesque nec imperdiet est, vitae feugiat velit. In quis ultricies sem, quis elementum erat. Proin vitae lectus lacinia, bibendum felis id, finibus felis. Etiam dapibus eu justo nec tempor. Nulla pulvinar bibendum ante, vel volutpat dolor tincidunt sit amet. Sed et neque quis nisl suscipit auctor eget id enim. Maecenas malesuada magna neque, et sagittis libero volutpat tincidunt. In hac habitasse platea dictumst. Maecenas nisl purus, egestas ornare rhoncus et, iaculis vel mi. Cras quis urna id diam facilisis rhoncus. Donec auctor rutrum neque, a sollicitudin turpis gravida sed. Cras tincidunt urna quis quam commodo aliquam. Proin vulputate libero vel est scelerisque, ut pellentesque est mattis. Aliquam vel tempus massa. Mauris vel nunc non elit pellentesque ultricies. Pellentesque gravida neque ac rutrum vestibulum. Integer vehicula viverra orci ut luctus. Aenean et ex vitae eros finibus fringilla. Curabitur eget bibendum massa, ac lobortis felis. Maecenas vel laoreet turpis. Etiam vehicula non eros vitae laoreet. Suspendisse potenti. &lt;/p&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-
-		
-						    				    				    	
-&lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
-				&lt;a href=&quot;#&quot;&gt;Singularize&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Hexameter&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Jinglingly&lt;/a&gt;
-	&lt;/div&gt;
-&lt;/section&gt;
-									&lt;section class=&quot;article-preview article-preview--small&quot;&gt;
-
-	&lt;div class=&quot;article-metadata&quot;&gt;
-		&lt;div class=&quot;article-preview__bookmarker pop-out__trigger&quot;&gt;
-			&lt;span class=&quot;action-flag__label&quot;&gt;Bookmark&lt;/span&gt;
-			&lt;svg class=&quot;action-flag__icon action-flag__icon--bookmark&quot;&gt;
-				&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#bookmark&quot;&gt;&lt;/use&gt;
-			&lt;/svg&gt;
-		&lt;/div&gt;
-		&lt;ul&gt;
-			&lt;li&gt;
-				&lt;time class=&quot;article-metadata__date&quot;&gt;15 Sep 2015&lt;/time&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
 				&lt;h6&gt;Type&lt;/h6&gt;
 			&lt;/li&gt;
 			&lt;li&gt;
@@ -531,148 +650,7 @@
 
 	&lt;div class=&quot;article-preview__inner-wrapper&quot;&gt;
 		&lt;h1 class=&quot;article-preview__headline&quot;&gt;
-			&lt;a href=&quot;#&quot;&gt;Stockwatch: No Earnings Disappointments Are The New Black &lt;/a&gt;
-		&lt;/h1&gt;
-
-		&lt;span class=&quot;article-preview__byline&quot;&gt;
-			by Ella Glass
-		&lt;/span&gt;
-
-		&lt;div class=&quot;article-summary&quot;&gt;
-			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate mauris sed placerat placerat. Sed condimentum maximus neque, nec aliquam mauris porta in. Sed dapibus sollicitudin bibendum. In at urna et lorem pulvinar efficitur quis eget turpis. Suspendisse sed accumsan tortor. Etiam in metus risus. Donec sodales magna et fringilla dictum. Phasellus a libero sollicitudin, sodales eros quis, elementum dui. Sed faucibus, orci ac viverra feugiat, lacus libero rhoncus lorem, tempus rhoncus lectus nulla rhoncus lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi finibus, sapien at semper sollicitudin, est erat pharetra libero, non dictum metus orci in lorem. &lt;/p&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-
-		
-						    				    				    	
-&lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
-				&lt;a href=&quot;#&quot;&gt;Singularize&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Stupefacient&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Stupefacient&lt;/a&gt;
-	&lt;/div&gt;
-&lt;/section&gt;
-									&lt;section class=&quot;article-preview article-preview--small&quot;&gt;
-
-	&lt;div class=&quot;article-metadata&quot;&gt;
-		&lt;div class=&quot;article-preview__bookmarker pop-out__trigger&quot;&gt;
-			&lt;span class=&quot;action-flag__label&quot;&gt;Bookmark&lt;/span&gt;
-			&lt;svg class=&quot;action-flag__icon action-flag__icon--bookmark&quot;&gt;
-				&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#bookmark&quot;&gt;&lt;/use&gt;
-			&lt;/svg&gt;
-		&lt;/div&gt;
-		&lt;ul&gt;
-			&lt;li&gt;
-				&lt;time class=&quot;article-metadata__date&quot;&gt;15 Sep 2015&lt;/time&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;h6&gt;News&lt;/h6&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;svg class=&quot;action-flag__icon&quot;&gt;
-					&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#audio&quot;&gt;&lt;/use&gt;
-				&lt;/svg&gt;
-			&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;article-preview__inner-wrapper&quot;&gt;
-		&lt;h1 class=&quot;article-preview__headline&quot;&gt;
-			&lt;a href=&quot;#&quot;&gt;Lucentis Biosimilar To Be Sold To Emerging Markets By Xbrane Biopharma &lt;/a&gt;
-		&lt;/h1&gt;
-
-		&lt;span class=&quot;article-preview__byline&quot;&gt;
-			by Kassidy Archer
-		&lt;/span&gt;
-
-		&lt;div class=&quot;article-summary&quot;&gt;
-			&lt;p&gt;Proin arcu neque, ultrices quis nulla sit amet, facilisis finibus nulla. Praesent aliquet risus a massa imperdiet tempus. Praesent pulvinar efficitur dignissim. Suspendisse vehicula ex eu justo rutrum porta. Suspendisse eu bibendum dui, pulvinar elementum metus. Vestibulum placerat aliquam velit, vel vehicula nibh lobortis id. Aenean id volutpat neque. Quisque non porttitor magna, tincidunt pellentesque eros. &lt;/p&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-
-		
-						    				    				    	
-&lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
-				&lt;a href=&quot;#&quot;&gt;Picayune&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Stupefacient&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Tachygraphy&lt;/a&gt;
-	&lt;/div&gt;
-&lt;/section&gt;
-									&lt;section class=&quot;article-preview article-preview--small&quot;&gt;
-
-	&lt;div class=&quot;article-metadata&quot;&gt;
-		&lt;div class=&quot;article-preview__bookmarker pop-out__trigger&quot;&gt;
-			&lt;span class=&quot;action-flag__label&quot;&gt;Bookmark&lt;/span&gt;
-			&lt;svg class=&quot;action-flag__icon action-flag__icon--bookmark&quot;&gt;
-				&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#bookmark&quot;&gt;&lt;/use&gt;
-			&lt;/svg&gt;
-		&lt;/div&gt;
-		&lt;ul&gt;
-			&lt;li&gt;
-				&lt;time class=&quot;article-metadata__date&quot;&gt;15 Sep 2015&lt;/time&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;h6&gt;Type&lt;/h6&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;svg class=&quot;action-flag__icon&quot;&gt;
-					&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#audio&quot;&gt;&lt;/use&gt;
-				&lt;/svg&gt;
-			&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;article-preview__inner-wrapper&quot;&gt;
-		&lt;h1 class=&quot;article-preview__headline&quot;&gt;
-			&lt;a href=&quot;#&quot;&gt;Regrets For Valeant&amp;#039;s Ackman, Pearson; Big Pay For Papa &lt;/a&gt;
-		&lt;/h1&gt;
-
-		&lt;span class=&quot;article-preview__byline&quot;&gt;
-			by Ella Glass
-		&lt;/span&gt;
-
-		&lt;div class=&quot;article-summary&quot;&gt;
-			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate mauris sed placerat placerat. Sed condimentum maximus neque, nec aliquam mauris porta in. Sed dapibus sollicitudin bibendum. In at urna et lorem pulvinar efficitur quis eget turpis. Suspendisse sed accumsan tortor. Etiam in metus risus. Donec sodales magna et fringilla dictum. Phasellus a libero sollicitudin, sodales eros quis, elementum dui. Sed faucibus, orci ac viverra feugiat, lacus libero rhoncus lorem, tempus rhoncus lectus nulla rhoncus lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi finibus, sapien at semper sollicitudin, est erat pharetra libero, non dictum metus orci in lorem. &lt;/p&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-
-		
-						    				    				    	
-&lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
-				&lt;a href=&quot;#&quot;&gt;Quartenylic&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Tachygraphy&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Nonaeumlrobiotics&lt;/a&gt;
-	&lt;/div&gt;
-&lt;/section&gt;
-									&lt;section class=&quot;article-preview article-preview--small&quot;&gt;
-
-	&lt;div class=&quot;article-metadata&quot;&gt;
-		&lt;div class=&quot;article-preview__bookmarker pop-out__trigger&quot;&gt;
-			&lt;span class=&quot;action-flag__label&quot;&gt;Bookmark&lt;/span&gt;
-			&lt;svg class=&quot;action-flag__icon action-flag__icon--bookmark&quot;&gt;
-				&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#bookmark&quot;&gt;&lt;/use&gt;
-			&lt;/svg&gt;
-		&lt;/div&gt;
-		&lt;ul&gt;
-			&lt;li&gt;
-				&lt;time class=&quot;article-metadata__date&quot;&gt;15 Sep 2015&lt;/time&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;h6&gt;News&lt;/h6&gt;
-			&lt;/li&gt;
-			&lt;li&gt;
-				&lt;svg class=&quot;action-flag__icon&quot;&gt;
-					&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#audio&quot;&gt;&lt;/use&gt;
-				&lt;/svg&gt;
-			&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;article-preview__inner-wrapper&quot;&gt;
-		&lt;h1 class=&quot;article-preview__headline&quot;&gt;
-			&lt;a href=&quot;#&quot;&gt;Stockwatch: No Earnings Disappointments Are The New Black &lt;/a&gt;
+			&lt;a href=&quot;#&quot;&gt;Saudi Arabia&amp;#039;s Pharma Market Is &amp;#039;Open For Business&amp;#039;&lt;/a&gt;
 		&lt;/h1&gt;
 
 		&lt;span class=&quot;article-preview__byline&quot;&gt;
@@ -680,17 +658,25 @@
 		&lt;/span&gt;
 
 		&lt;div class=&quot;article-summary&quot;&gt;
-			&lt;p&gt; Curabitur pharetra sagittis pulvinar. Nam vestibulum laoreet aliquam. Nam id volutpat quam, eget volutpat felis. Mauris sagittis, neque sagittis aliquam rhoncus, mauris ante ultrices elit, vitae pretium erat velit eu turpis. Integer vehicula sapien quam, ut hendrerit orci ullamcorper a. Maecenas efficitur urna et arcu suscipit, ut malesuada ipsum pellentesque. In pretium ante vel leo ornare gravida. Curabitur ultrices felis nisl, eget vulputate elit faucibus non. Pellentesque gravida lorem at massa sollicitudin consequat. Maecenas eleifend, velit sed suscipit rhoncus, nisi enim pulvinar velit, ac faucibus nunc mauris a turpis. Pellentesque nec imperdiet est, vitae feugiat velit. In quis ultricies sem, quis elementum erat. Proin vitae lectus lacinia, bibendum felis id, finibus felis. Etiam dapibus eu justo nec tempor. Nulla pulvinar bibendum ante, vel volutpat dolor tincidunt sit amet. Sed et neque quis nisl suscipit auctor eget id enim. Maecenas malesuada magna neque, et sagittis libero volutpat tincidunt. In hac habitasse platea dictumst. Maecenas nisl purus, egestas ornare rhoncus et, iaculis vel mi. Cras quis urna id diam facilisis rhoncus. Donec auctor rutrum neque, a sollicitudin turpis gravida sed. Cras tincidunt urna quis quam commodo aliquam. Proin vulputate libero vel est scelerisque, ut pellentesque est mattis. Aliquam vel tempus massa. Mauris vel nunc non elit pellentesque ultricies. Pellentesque gravida neque ac rutrum vestibulum. Integer vehicula viverra orci ut luctus. Aenean et ex vitae eros finibus fringilla. Curabitur eget bibendum massa, ac lobortis felis. Maecenas vel laoreet turpis. Etiam vehicula non eros vitae laoreet. Suspendisse potenti. &lt;/p&gt;
+			&lt;p&gt;Proin arcu neque, ultrices quis nulla sit amet, facilisis finibus nulla. Praesent aliquet risus a massa imperdiet tempus. Praesent pulvinar efficitur dignissim. Suspendisse vehicula ex eu justo rutrum porta. Suspendisse eu bibendum dui, pulvinar elementum metus. Vestibulum placerat aliquam velit, vel vehicula nibh lobortis id. Aenean id volutpat neque. Quisque non porttitor magna, tincidunt pellentesque eros. &lt;/p&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 
 
-		
-						    				    				    	
+	
 &lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
-				&lt;a href=&quot;#&quot;&gt;Quartenylic&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Ordovician&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Stupefacient&lt;/a&gt;
+				&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
 	&lt;/div&gt;
 &lt;/section&gt;
 									&lt;section class=&quot;article-preview article-preview--small&quot;&gt;
@@ -707,7 +693,7 @@
 				&lt;time class=&quot;article-metadata__date&quot;&gt;15 Sep 2015&lt;/time&gt;
 			&lt;/li&gt;
 			&lt;li&gt;
-				&lt;h6&gt;Type&lt;/h6&gt;
+				&lt;h6&gt;News&lt;/h6&gt;
 			&lt;/li&gt;
 			&lt;li&gt;
 				&lt;svg class=&quot;action-flag__icon&quot;&gt;
@@ -719,25 +705,33 @@
 
 	&lt;div class=&quot;article-preview__inner-wrapper&quot;&gt;
 		&lt;h1 class=&quot;article-preview__headline&quot;&gt;
-			&lt;a href=&quot;#&quot;&gt;Regrets For Valeant&amp;#039;s Ackman, Pearson; Big Pay For Papa &lt;/a&gt;
+			&lt;a href=&quot;#&quot;&gt;Data Trumps Anecdotes, Emotion At Sarepta Panel&lt;/a&gt;
 		&lt;/h1&gt;
 
 		&lt;span class=&quot;article-preview__byline&quot;&gt;
-			by Lucy Schultz
+			by Mckenzie Espinoza
 		&lt;/span&gt;
 
 		&lt;div class=&quot;article-summary&quot;&gt;
-			&lt;p&gt;Proin arcu neque, ultrices quis nulla sit amet, facilisis finibus nulla. Praesent aliquet risus a massa imperdiet tempus. Praesent pulvinar efficitur dignissim. Suspendisse vehicula ex eu justo rutrum porta. Suspendisse eu bibendum dui, pulvinar elementum metus. Vestibulum placerat aliquam velit, vel vehicula nibh lobortis id. Aenean id volutpat neque. Quisque non porttitor magna, tincidunt pellentesque eros. &lt;/p&gt;
+			&lt;p&gt;Phasellus maximus eros id felis hendrerit, quis pellentesque nibh maximus. Integer non mauris diam. Sed aliquet a turpis ut condimentum. Aenean scelerisque vel odio vel ultricies. Nunc sagittis ultrices justo, quis tincidunt justo molestie sit amet. Etiam mollis neque ut nibh mattis, vel convallis nunc ullamcorper. Praesent molestie, ante vitae maximus tristique, nibh tellus malesuada risus, vitae sagittis odio augue et mi. Nunc at metus sem.&lt;/p&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 
 
-		
-						    				    				    	
+	
 &lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
-				&lt;a href=&quot;#&quot;&gt;Picayune&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Enneahedral&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Ordovician&lt;/a&gt;
+				&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
 	&lt;/div&gt;
 &lt;/section&gt;
 									&lt;section class=&quot;article-preview article-preview--small&quot;&gt;
@@ -754,7 +748,62 @@
 				&lt;time class=&quot;article-metadata__date&quot;&gt;15 Sep 2015&lt;/time&gt;
 			&lt;/li&gt;
 			&lt;li&gt;
-				&lt;h6&gt;Type&lt;/h6&gt;
+				&lt;h6&gt;News&lt;/h6&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;svg class=&quot;action-flag__icon&quot;&gt;
+					&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#audio&quot;&gt;&lt;/use&gt;
+				&lt;/svg&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;article-preview__inner-wrapper&quot;&gt;
+		&lt;h1 class=&quot;article-preview__headline&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;Saudi Arabia&amp;#039;s Pharma Market Is &amp;#039;Open For Business&amp;#039;&lt;/a&gt;
+		&lt;/h1&gt;
+
+		&lt;span class=&quot;article-preview__byline&quot;&gt;
+			by Tate Salas
+		&lt;/span&gt;
+
+		&lt;div class=&quot;article-summary&quot;&gt;
+			&lt;p&gt; Curabitur pharetra sagittis pulvinar. Nam vestibulum laoreet aliquam. Nam id volutpat quam, eget volutpat felis. Mauris sagittis, neque sagittis aliquam rhoncus, mauris ante ultrices elit, vitae pretium erat velit eu turpis. Integer vehicula sapien quam, ut hendrerit orci ullamcorper a. Maecenas efficitur urna et arcu suscipit, ut malesuada ipsum pellentesque. In pretium ante vel leo ornare gravida. Curabitur ultrices felis nisl, eget vulputate elit faucibus non. Pellentesque gravida lorem at massa sollicitudin consequat. Maecenas eleifend, velit sed suscipit rhoncus, nisi enim pulvinar velit, ac faucibus nunc mauris a turpis. Pellentesque nec imperdiet est, vitae feugiat velit. In quis ultricies sem, quis elementum erat. Proin vitae lectus lacinia, bibendum felis id, finibus felis. Etiam dapibus eu justo nec tempor. Nulla pulvinar bibendum ante, vel volutpat dolor tincidunt sit amet. Sed et neque quis nisl suscipit auctor eget id enim. Maecenas malesuada magna neque, et sagittis libero volutpat tincidunt. In hac habitasse platea dictumst. Maecenas nisl purus, egestas ornare rhoncus et, iaculis vel mi. Cras quis urna id diam facilisis rhoncus. Donec auctor rutrum neque, a sollicitudin turpis gravida sed. Cras tincidunt urna quis quam commodo aliquam. Proin vulputate libero vel est scelerisque, ut pellentesque est mattis. Aliquam vel tempus massa. Mauris vel nunc non elit pellentesque ultricies. Pellentesque gravida neque ac rutrum vestibulum. Integer vehicula viverra orci ut luctus. Aenean et ex vitae eros finibus fringilla. Curabitur eget bibendum massa, ac lobortis felis. Maecenas vel laoreet turpis. Etiam vehicula non eros vitae laoreet. Suspendisse potenti. &lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+
+	
+&lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
+				&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+									&lt;section class=&quot;article-preview article-preview--small&quot;&gt;
+
+	&lt;div class=&quot;article-metadata&quot;&gt;
+		&lt;div class=&quot;article-preview__bookmarker pop-out__trigger&quot;&gt;
+			&lt;span class=&quot;action-flag__label&quot;&gt;Bookmark&lt;/span&gt;
+			&lt;svg class=&quot;action-flag__icon action-flag__icon--bookmark&quot;&gt;
+				&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#bookmark&quot;&gt;&lt;/use&gt;
+			&lt;/svg&gt;
+		&lt;/div&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;time class=&quot;article-metadata__date&quot;&gt;15 Sep 2015&lt;/time&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;h6&gt;Opinion&lt;/h6&gt;
 			&lt;/li&gt;
 			&lt;li&gt;
 				&lt;svg class=&quot;action-flag__icon&quot;&gt;
@@ -770,21 +819,29 @@
 		&lt;/h1&gt;
 
 		&lt;span class=&quot;article-preview__byline&quot;&gt;
-			by Valerie Fuentes
+			by Lucy Schultz
 		&lt;/span&gt;
 
 		&lt;div class=&quot;article-summary&quot;&gt;
-			&lt;p&gt;Praesent et enim ullamcorper, tristique tortor nec, dapibus tortor. Quisque viverra nunc nec metus ultrices iaculis id ac nisi. Donec vitae tempus sem. Donec non laoreet diam. In at elit laoreet, viverra neque vitae, pulvinar nulla. Donec libero massa, condimentum vel fermentum nec, vestibulum sit amet turpis. Donec pharetra, felis eget mattis congue, orci enim vehicula metus, vel feugiat justo felis nec enim. Mauris varius nec mauris consectetur mattis. Curabitur porttitor rhoncus mollis. &lt;/p&gt;
+			&lt;p&gt;Phasellus maximus eros id felis hendrerit, quis pellentesque nibh maximus. Integer non mauris diam. Sed aliquet a turpis ut condimentum. Aenean scelerisque vel odio vel ultricies. Nunc sagittis ultrices justo, quis tincidunt justo molestie sit amet. Etiam mollis neque ut nibh mattis, vel convallis nunc ullamcorper. Praesent molestie, ante vitae maximus tristique, nibh tellus malesuada risus, vitae sagittis odio augue et mi. Nunc at metus sem.&lt;/p&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 
 
-		
-						    				    				    	
+	
 &lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
-				&lt;a href=&quot;#&quot;&gt;Jinglingly&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Epistilbite&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Telekinesis&lt;/a&gt;
+				&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
 	&lt;/div&gt;
 &lt;/section&gt;
 									&lt;section class=&quot;article-preview article-preview--small&quot;&gt;
@@ -813,25 +870,33 @@
 
 	&lt;div class=&quot;article-preview__inner-wrapper&quot;&gt;
 		&lt;h1 class=&quot;article-preview__headline&quot;&gt;
-			&lt;a href=&quot;#&quot;&gt;Regrets For Valeant&amp;#039;s Ackman, Pearson; Big Pay For Papa &lt;/a&gt;
+			&lt;a href=&quot;#&quot;&gt;Data Trumps Anecdotes, Emotion At Sarepta Panel&lt;/a&gt;
 		&lt;/h1&gt;
 
 		&lt;span class=&quot;article-preview__byline&quot;&gt;
-			by Jimmy Bright
+			by Kassidy Archer
 		&lt;/span&gt;
 
 		&lt;div class=&quot;article-summary&quot;&gt;
-			&lt;p&gt;Praesent et enim ullamcorper, tristique tortor nec, dapibus tortor. Quisque viverra nunc nec metus ultrices iaculis id ac nisi. Donec vitae tempus sem. Donec non laoreet diam. In at elit laoreet, viverra neque vitae, pulvinar nulla. Donec libero massa, condimentum vel fermentum nec, vestibulum sit amet turpis. Donec pharetra, felis eget mattis congue, orci enim vehicula metus, vel feugiat justo felis nec enim. Mauris varius nec mauris consectetur mattis. Curabitur porttitor rhoncus mollis. &lt;/p&gt;
+			&lt;p&gt; Curabitur pharetra sagittis pulvinar. Nam vestibulum laoreet aliquam. Nam id volutpat quam, eget volutpat felis. Mauris sagittis, neque sagittis aliquam rhoncus, mauris ante ultrices elit, vitae pretium erat velit eu turpis. Integer vehicula sapien quam, ut hendrerit orci ullamcorper a. Maecenas efficitur urna et arcu suscipit, ut malesuada ipsum pellentesque. In pretium ante vel leo ornare gravida. Curabitur ultrices felis nisl, eget vulputate elit faucibus non. Pellentesque gravida lorem at massa sollicitudin consequat. Maecenas eleifend, velit sed suscipit rhoncus, nisi enim pulvinar velit, ac faucibus nunc mauris a turpis. Pellentesque nec imperdiet est, vitae feugiat velit. In quis ultricies sem, quis elementum erat. Proin vitae lectus lacinia, bibendum felis id, finibus felis. Etiam dapibus eu justo nec tempor. Nulla pulvinar bibendum ante, vel volutpat dolor tincidunt sit amet. Sed et neque quis nisl suscipit auctor eget id enim. Maecenas malesuada magna neque, et sagittis libero volutpat tincidunt. In hac habitasse platea dictumst. Maecenas nisl purus, egestas ornare rhoncus et, iaculis vel mi. Cras quis urna id diam facilisis rhoncus. Donec auctor rutrum neque, a sollicitudin turpis gravida sed. Cras tincidunt urna quis quam commodo aliquam. Proin vulputate libero vel est scelerisque, ut pellentesque est mattis. Aliquam vel tempus massa. Mauris vel nunc non elit pellentesque ultricies. Pellentesque gravida neque ac rutrum vestibulum. Integer vehicula viverra orci ut luctus. Aenean et ex vitae eros finibus fringilla. Curabitur eget bibendum massa, ac lobortis felis. Maecenas vel laoreet turpis. Etiam vehicula non eros vitae laoreet. Suspendisse potenti. &lt;/p&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 
 
-		
-						    				    				    	
+	
 &lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
-				&lt;a href=&quot;#&quot;&gt;Jinglingly&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Bibliopegist&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Jinglingly&lt;/a&gt;
+				&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
 	&lt;/div&gt;
 &lt;/section&gt;
 									&lt;section class=&quot;article-preview article-preview--small&quot;&gt;
@@ -849,6 +914,171 @@
 			&lt;/li&gt;
 			&lt;li&gt;
 				&lt;h6&gt;Type&lt;/h6&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;svg class=&quot;action-flag__icon&quot;&gt;
+					&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#audio&quot;&gt;&lt;/use&gt;
+				&lt;/svg&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;article-preview__inner-wrapper&quot;&gt;
+		&lt;h1 class=&quot;article-preview__headline&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;Stockwatch: No Earnings Disappointments Are The New Black &lt;/a&gt;
+		&lt;/h1&gt;
+
+		&lt;span class=&quot;article-preview__byline&quot;&gt;
+			by Ella Glass
+		&lt;/span&gt;
+
+		&lt;div class=&quot;article-summary&quot;&gt;
+			&lt;p&gt;Curabitur pharetra sagittis pulvinar. Nam vestibulum laoreet aliquam. Nam id volutpat quam, eget volutpat felis. Mauris sagittis, neque sagittis aliquam rhoncus, mauris ante ultrices elit, vitae pretium erat velit eu turpis.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+
+	
+&lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
+				&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+									&lt;section class=&quot;article-preview article-preview--small&quot;&gt;
+
+	&lt;div class=&quot;article-metadata&quot;&gt;
+		&lt;div class=&quot;article-preview__bookmarker pop-out__trigger&quot;&gt;
+			&lt;span class=&quot;action-flag__label&quot;&gt;Bookmark&lt;/span&gt;
+			&lt;svg class=&quot;action-flag__icon action-flag__icon--bookmark&quot;&gt;
+				&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#bookmark&quot;&gt;&lt;/use&gt;
+			&lt;/svg&gt;
+		&lt;/div&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;time class=&quot;article-metadata__date&quot;&gt;15 Sep 2015&lt;/time&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;h6&gt;News&lt;/h6&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;svg class=&quot;action-flag__icon&quot;&gt;
+					&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#audio&quot;&gt;&lt;/use&gt;
+				&lt;/svg&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;article-preview__inner-wrapper&quot;&gt;
+		&lt;h1 class=&quot;article-preview__headline&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;Stockwatch: No Earnings Disappointments Are The New Black &lt;/a&gt;
+		&lt;/h1&gt;
+
+		&lt;span class=&quot;article-preview__byline&quot;&gt;
+			by Nicole Barker
+		&lt;/span&gt;
+
+		&lt;div class=&quot;article-summary&quot;&gt;
+			&lt;p&gt;Praesent et enim ullamcorper, tristique tortor nec, dapibus tortor. Quisque viverra nunc nec metus ultrices iaculis id ac nisi. Donec vitae tempus sem. Donec non laoreet diam. In at elit laoreet, viverra neque vitae, pulvinar nulla. Donec libero massa, condimentum vel fermentum nec, vestibulum sit amet turpis. Donec pharetra, felis eget mattis congue, orci enim vehicula metus, vel feugiat justo felis nec enim. Mauris varius nec mauris consectetur mattis. Curabitur porttitor rhoncus mollis. &lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+
+	
+&lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
+				&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+									&lt;section class=&quot;article-preview article-preview--small&quot;&gt;
+
+	&lt;div class=&quot;article-metadata&quot;&gt;
+		&lt;div class=&quot;article-preview__bookmarker pop-out__trigger&quot;&gt;
+			&lt;span class=&quot;action-flag__label&quot;&gt;Bookmark&lt;/span&gt;
+			&lt;svg class=&quot;action-flag__icon action-flag__icon--bookmark&quot;&gt;
+				&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#bookmark&quot;&gt;&lt;/use&gt;
+			&lt;/svg&gt;
+		&lt;/div&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;time class=&quot;article-metadata__date&quot;&gt;15 Sep 2015&lt;/time&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;h6&gt;News&lt;/h6&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;svg class=&quot;action-flag__icon&quot;&gt;
+					&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#audio&quot;&gt;&lt;/use&gt;
+				&lt;/svg&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;article-preview__inner-wrapper&quot;&gt;
+		&lt;h1 class=&quot;article-preview__headline&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;Data Trumps Anecdotes, Emotion At Sarepta Panel&lt;/a&gt;
+		&lt;/h1&gt;
+
+		&lt;span class=&quot;article-preview__byline&quot;&gt;
+			by Mike Walter
+		&lt;/span&gt;
+
+		&lt;div class=&quot;article-summary&quot;&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate mauris sed placerat placerat. Sed condimentum maximus neque, nec aliquam mauris porta in. Sed dapibus sollicitudin bibendum. In at urna et lorem pulvinar efficitur quis eget turpis. Suspendisse sed accumsan tortor. Etiam in metus risus. Donec sodales magna et fringilla dictum. Phasellus a libero sollicitudin, sodales eros quis, elementum dui. Sed faucibus, orci ac viverra feugiat, lacus libero rhoncus lorem, tempus rhoncus lectus nulla rhoncus lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi finibus, sapien at semper sollicitudin, est erat pharetra libero, non dictum metus orci in lorem. &lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+
+	
+&lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
+				&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+									&lt;section class=&quot;article-preview article-preview--small&quot;&gt;
+
+	&lt;div class=&quot;article-metadata&quot;&gt;
+		&lt;div class=&quot;article-preview__bookmarker pop-out__trigger&quot;&gt;
+			&lt;span class=&quot;action-flag__label&quot;&gt;Bookmark&lt;/span&gt;
+			&lt;svg class=&quot;action-flag__icon action-flag__icon--bookmark&quot;&gt;
+				&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;/web/Website/dist/img/svg-sprite.svg#bookmark&quot;&gt;&lt;/use&gt;
+			&lt;/svg&gt;
+		&lt;/div&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;time class=&quot;article-metadata__date&quot;&gt;15 Sep 2015&lt;/time&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;h6&gt;Opinion&lt;/h6&gt;
 			&lt;/li&gt;
 			&lt;li&gt;
 				&lt;svg class=&quot;action-flag__icon&quot;&gt;
@@ -864,21 +1094,29 @@
 		&lt;/h1&gt;
 
 		&lt;span class=&quot;article-preview__byline&quot;&gt;
-			by Maren Hardy
+			by Tate Salas
 		&lt;/span&gt;
 
 		&lt;div class=&quot;article-summary&quot;&gt;
-			&lt;p&gt;Phasellus maximus eros id felis hendrerit, quis pellentesque nibh maximus. Integer non mauris diam. Sed aliquet a turpis ut condimentum. Aenean scelerisque vel odio vel ultricies. Nunc sagittis ultrices justo, quis tincidunt justo molestie sit amet. Etiam mollis neque ut nibh mattis, vel convallis nunc ullamcorper. Praesent molestie, ante vitae maximus tristique, nibh tellus malesuada risus, vitae sagittis odio augue et mi. Nunc at metus sem.&lt;/p&gt;
+			&lt;p&gt;Praesent et enim ullamcorper, tristique tortor nec, dapibus tortor. Quisque viverra nunc nec metus ultrices iaculis id ac nisi. Donec vitae tempus sem. Donec non laoreet diam. In at elit laoreet, viverra neque vitae, pulvinar nulla. Donec libero massa, condimentum vel fermentum nec, vestibulum sit amet turpis. Donec pharetra, felis eget mattis congue, orci enim vehicula metus, vel feugiat justo felis nec enim. Mauris varius nec mauris consectetur mattis. Curabitur porttitor rhoncus mollis. &lt;/p&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 
 
-		
-						    				    				    	
+	
 &lt;div class=&quot;bar-separated-link-list article-preview__tags&quot;&gt;
-				&lt;a href=&quot;#&quot;&gt;Hexameter&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Epistilbite&lt;/a&gt;
-			&lt;a href=&quot;#&quot;&gt;Picayune&lt;/a&gt;
+				&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+			&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
 	&lt;/div&gt;
 &lt;/section&gt;
 			&lt;/div&gt;
