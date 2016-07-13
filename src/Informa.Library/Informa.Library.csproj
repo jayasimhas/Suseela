@@ -315,6 +315,7 @@
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
     <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
     <Compile Include="Article\Search\ArticleSearchResults.cs" />
+    <Compile Include="Article\Search\IArticleCompanyFilter.cs" />
     <Compile Include="Article\Search\IArticleAuthorFilter.cs" />
     <Compile Include="Article\Search\IArticlePublicationFilter.cs" />
     <Compile Include="Article\Search\IArticleSearch.cs" />
@@ -352,6 +353,7 @@
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
+    <Compile Include="DCD\CompanyContentParser.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
     <Compile Include="Logging\LogWrapper.cs" />
@@ -425,6 +427,7 @@
     <Compile Include="Search\Formatting\SolrQueryFormatter.cs" />
     <Compile Include="Search\InformaApiSearchRequest.cs" />
     <Compile Include="Search\PredicateBuilders\InformaQueryPredicateBuilder.cs" />
+    <Compile Include="Search\Results\IArticleCompanyResults.cs" />
     <Compile Include="Search\Results\IArticleAuthorResults.cs" />
     <Compile Include="Search\Results\IArticlePublicationResults.cs" />
     <Compile Include="Search\Results\QueryResults.cs" />
@@ -1081,6 +1084,7 @@
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalIdResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalTitleResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\PublisherResolver.cs" />
+    <Compile Include="Utilities\DataModels\TreeNode%271.cs" />
     <Compile Include="Utilities\Extensions\ArticleExtensions.cs" />
     <Compile Include="Utilities\Extensions\BooleanExtensions.cs" />
     <Compile Include="Utilities\Extensions\EnumerableExtensions.cs" />

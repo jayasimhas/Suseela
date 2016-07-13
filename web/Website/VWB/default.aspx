@@ -1,7 +1,7 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Elsevier.Web.VWB._default"  %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<head runat="server">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="/VWB/Scripts/jquery-ui/jquery.ui.timepicker.js"></script>
@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="/VWB/Scripts/jquery-ui/jquery-ui-1.10.4.custom.css" />
 	<link rel="stylesheet" type="text/css" href="/VWB/Styles/vwb.css" />
 	<link rel="stylesheet" type="text/css" href="/VWB/Scripts/jquery-ui/jquery.ui.timepicker.css" />
-	<title><%= Elsevier.Library.Reference.Constants.BusinessName %> - Virtual Whiteboard</title>
+	<title>Informa Business Information - Virtual Whiteboard</title>
 
 </head>
 <body>
@@ -21,8 +21,7 @@
         
 
 	<div class="wrapper">
-		<img class="banner" width="317" height="122" src="<%= LogoUrl %>"
-			alt="<%= Elsevier.Library.Reference.Constants.BusinessName %> - Virtual Whiteboard">
+	    <asp:Image ID="imgLogo" CssClass="banner" AlternateText="Informa Business Information - Virtual Whiteboard" runat="server"/>
 		<div class="top">
 
 			<div id="dateRangeWrapper">

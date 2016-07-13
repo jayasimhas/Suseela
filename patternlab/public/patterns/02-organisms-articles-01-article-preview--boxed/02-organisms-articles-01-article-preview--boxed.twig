@@ -26,11 +26,11 @@
 			&lt;li&gt;
 				&lt;h6&gt;{{newsTypeText}}&lt;/h6&gt;
 			&lt;/li&gt;
-			&lt;li&gt;
+			&lt;!--&lt;li&gt;
 				&lt;svg class=&quot;action-flag__icon&quot;&gt;
 					&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#audio&quot;&gt;&lt;/use&gt;
 				&lt;/svg&gt;
-			&lt;/li&gt;
+			&lt;/li&gt;--&gt;
 		&lt;/ul&gt;
 	&lt;/div&gt;
 
@@ -48,6 +48,7 @@
 		&lt;/div&gt;
 	&lt;/div&gt;
 
-
-	{% include &quot;molecules-bar-separated-list&quot; with {&quot;classes&quot;: &quot;article-preview__tags&quot;, &quot;maxTags&quot;: 3} %}
+	{% if hideTags == false %}
+		{% include &quot;molecules-bar-separated-list&quot; with {&quot;classes&quot;: &quot;article-preview__tags&quot;, &quot;maxTags&quot;: 3} %}
+	{% endif %}
 &lt;/section&gt;

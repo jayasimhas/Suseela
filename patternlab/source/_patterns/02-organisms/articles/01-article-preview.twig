@@ -10,7 +10,7 @@
 {% if newsTypeText == false %}
 	{% set newsTypeText = random(['News', 'Opinion', 'Type']) %}
 {% endif %}
-<section class="article-preview">
+<section class="article-preview {{classes}}">
 
 	<div class="article-metadata">
 		<div class="article-preview__bookmarker pop-out__trigger">
@@ -26,11 +26,11 @@
 			<li>
 				<h6>{{newsTypeText}}</h6>
 			</li>
-			<li>
+			<!--<li>
 				<svg class="action-flag__icon">
 					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#audio"></use>
 				</svg>
-			</li>
+			</li>-->
 		</ul>
 	</div>
 
@@ -40,7 +40,7 @@
 		</h1>
 
 		<span class="article-preview__byline">
-			<a href="#">by {{newsAuthorText}}</a>
+			by {{newsAuthorText}}
 		</span>
 
 		<div class="article-summary">
@@ -48,6 +48,7 @@
 		</div>
 	</div>
 
-
-	{% include "molecules-bar-separated-list" with {"classes": "article-preview__tags", "maxTags": 3} %}
+	{% if hideTags == false %}
+		{% include "molecules-bar-separated-list" with {"classes": "article-preview__tags", "maxTags": 3} %}
+	{% endif %}
 </section>

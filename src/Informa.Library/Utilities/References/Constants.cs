@@ -23,6 +23,8 @@ namespace Informa.Library.Utilities.References
 
 		public const string CryptoKey = "Ajv4FMtL7Iuq3H04ZkQC";
 
+	    public const string StrategicTransactionsComponent = "{7072BDB1-1398-4C51-986F-404251CF3E8A}";
+
         public const string VirtualWhiteboardIssuesFolder = "{ECE677C9-3CC5-41F5-ADCB-D103C60783A7}";
 	    public const string VirtualWhiteboardArchivedIssuesFolder = "{AAB11244-7D15-4A43-A709-DC8951893FD2}";
 
@@ -79,7 +81,8 @@ namespace Informa.Library.Utilities.References
 			public const string DateRangeFilterLabelKey = "dateFilterLabel";
 			public const string TimeKey = "time";
 			public const string Author = "author";
-			public const string Publication = "publication";
+            public const string Company = "company";
+            public const string Publication = "publication";
 		}
 
 		public static class SettingKeys

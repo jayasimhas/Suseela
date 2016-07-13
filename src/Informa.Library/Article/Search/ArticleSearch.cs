@@ -51,6 +51,7 @@ namespace Informa.Library.Article.Search
 				ArticleNumbers = new List<string>(),
 				PublicationNames = new List<string>(),
                 AuthorNames = new List<string>(),
+                CompanyRecordNumbers = new List<string>(),
             };
 		}
 
@@ -62,6 +63,7 @@ namespace Informa.Library.Article.Search
 						.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
 						.FilterByPublications(filter)
                         .FilterByAuthor(filter)
+                        .FilterByCompany(filter)
                         .FilterTaxonomies(filter)
 						.ExcludeManuallyCurated(filter)
 						.FilteryByArticleNumbers(filter)

@@ -83,7 +83,9 @@ namespace Informa.Library.Search.Results
 		[IndexField("authors_sm")]
 		public List<string> Authors { get; set; }
 
-		[DataMember]
+        [IndexField("referenced_companies_t")]
+        public string ReferencedCompany { get; set; }
+        [DataMember]
 		public bool IsArticleBookmarked => DocumentContext.IsSaved(ItemId.Guid);
 		
 		[DataMember]

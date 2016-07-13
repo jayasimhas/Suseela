@@ -78,7 +78,12 @@ namespace Informa.Library.Search.PredicateBuilders
 				predicate = predicate.And(x => x.Authors.Contains(_request.QueryParameters[Constants.QueryString.Author]));
 			}
 
-			if (_request.QueryParameters.ContainsKey(Constants.QueryString.Publication))
+            if (_request.QueryParameters.ContainsKey(Constants.QueryString.Company))
+            {
+                predicate = predicate.And(x => x.ReferencedCompany.Contains(_request.QueryParameters[Constants.QueryString.Company]));
+            }
+
+            if (_request.QueryParameters.ContainsKey(Constants.QueryString.Publication))
 			{
 				predicate =
 					predicate.And(

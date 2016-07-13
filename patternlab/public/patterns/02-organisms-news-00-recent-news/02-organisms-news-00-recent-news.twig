@@ -11,11 +11,12 @@
 		&lt;/div&gt;
 	{% endif %}
 	&lt;h4 class=&quot;latest-news__header&quot;&gt;
-		&lt;span&gt;Latest From {{latestLabelText}}&lt;/span&gt;
+		&lt;span&gt;Latest Articles From {{latestLabelText}}&lt;/span&gt;
 	&lt;/h4&gt;
 	&lt;div class=&quot;latest-news__articles&quot;&gt;
 		{% for i in 1..max %}
 			{% include &quot;organisms-article-preview--small&quot; %}
 		{% endfor %}
+		{% include &quot;molecules-button-full-diminished&quot; %}
 	&lt;/div&gt;
 &lt;/div&gt;

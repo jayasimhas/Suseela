@@ -36,14 +36,14 @@ namespace Elsevier.Web.VWB
 		private VwbQuery _vwbQuery;
 		private ReportBuilder _reportBuilder;
 		private readonly List<Control> ReportBuilderBlacklist = new List<Control>();
-		protected string LogoUrl;
-	    private const string IssuePageUrl = "/vwb/AddIssue?id=";
+		private const string IssuePageUrl = "/vwb/AddIssue?id=";
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+		    imgLogo.ImageUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.TargetHostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
+		    imgLogo.Attributes.Add("style", "width:317px;height:122px");
 
-
-			if (!Sitecore.Context.User.IsAuthenticated)
+            if (!Sitecore.Context.User.IsAuthenticated)
 			{
 				Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?returnUrl=" + Request.RawUrl);
 			}
@@ -58,9 +58,7 @@ namespace Elsevier.Web.VWB
 			{
 				RunQuery(true);
 			}
-
-			LogoUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.TargetHostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
-
+            
 			const string defaultTime = "12:00 AM";
 			txtStartTime.Text = defaultTime;
 			txtEndTime.Text = defaultTime;

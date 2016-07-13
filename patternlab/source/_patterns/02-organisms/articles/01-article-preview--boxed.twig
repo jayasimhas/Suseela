@@ -26,11 +26,11 @@
 			<li>
 				<h6>{{newsTypeText}}</h6>
 			</li>
-			<li>
+			<!--<li>
 				<svg class="action-flag__icon">
 					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-sprite.svg#audio"></use>
 				</svg>
-			</li>
+			</li>-->
 		</ul>
 	</div>
 
@@ -48,6 +48,7 @@
 		</div>
 	</div>
 
-
-	{% include "molecules-bar-separated-list" with {"classes": "article-preview__tags", "maxTags": 3} %}
+	{% if hideTags == false %}
+		{% include "molecules-bar-separated-list" with {"classes": "article-preview__tags", "maxTags": 3} %}
+	{% endif %}
 </section>

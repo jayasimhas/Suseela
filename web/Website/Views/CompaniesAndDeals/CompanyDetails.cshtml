@@ -1,0 +1,14 @@
+﻿@model Informa.Web.ViewModels.CompaniesAndDeals.CompanyViewModel
+
+<div class="generic-content">
+    <h1>@Model.Company.Title</h1>
+
+    <h5>
+        @Model.DivisionOfText
+        @if (Model.Content.ContactInfo.Website.HasContent())
+        {
+            <br/>
+            <a href="@(Model.Content.ContactInfo.Website)">@(Model.Content.ContactInfo.Website)</a>
+        }
+    </h5>
+</div>
