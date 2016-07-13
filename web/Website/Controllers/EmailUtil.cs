@@ -213,8 +213,14 @@ namespace Informa.Web.Controllers
 
 			replacements["#Authors#"] = string.IsNullOrEmpty(authorString) ? "No authors selected" : authorString;
 			replacements["#Publication#"] = publication;
-			replacements["#Body_Content#"] = articleStruct.NotificationText;
-			replacements["#content_editor#"] = Sitecore.Context.User.Profile.FullName;
+
+            replacements["#show_notes#"] = "Notes:";
+            replacements["#Body_Content#"] = articleStruct.NotificationText;
+            if (articleStruct.NotificationText == "")
+            {
+                replacements["#show_notes#"] = "";
+                replacements["#Body_Content#"] = "";
+            } 
 			replacements["#current_time#"] = DateTime.Now.ToString();
 
 			var oldState = _service.Database.WorkflowProvider.GetWorkflow(oldWorkflow.StateID);
