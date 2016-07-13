@@ -15,7 +15,7 @@ using Informa.Library.ContentCuration;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
-using Informa.Library.Utilities.WebUtils;
+using Informa.Library.Utilities.References;
 using Informa.Model.DCD;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
@@ -66,7 +66,7 @@ namespace Informa.Web.ViewModels
 
             Authors = Parameters.Authors.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())).ToArray();
             CompanyRecordNumbers = string.IsNullOrEmpty(Parameters.CompanyID)
-                ? (IList<string>) new List<string>()
+                ? (IList<string>)new List<string>()
                 : Parameters.CompanyID.Split(',');
 
             if (datasource._TemplateId.ToString() == IAuthor_PageConstants.TemplateIdString)
@@ -103,7 +103,7 @@ namespace Informa.Web.ViewModels
 
             if (SeeAllLink != null)
             {
-                SeeAllLink.Url = string.Format("/search#?author={0}", RemoveSpecialCharactersFromGuid(author.ToString()));
+                SeeAllLink.Url = string.Format("/search#?{0}={1}", Constants.QueryString.Author, RemoveSpecialCharactersFromGuid(author.ToString()));
             }
         }
 
@@ -121,7 +121,10 @@ namespace Informa.Web.ViewModels
             {
                 TitleText = GetTitleText(company.Title);
             }
-
+            if (SeeAllLink != null)
+            {
+                SeeAllLink.Url = string.Format("/search#?{0}={1}", Constants.QueryString.Company, recordNumber);
+            }
         }
 
         public void Other_Page()

@@ -24,7 +24,10 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             var strategicTransactionComponent =
                 dependencies.SitecoreService.GetItem<IStrategic_Transactions>(Constants.StrategicTransactionsComponent);
             if (strategicTransactionComponent == null) return;
-            Logo = strategicTransactionComponent.Logo.Src;
+            if (strategicTransactionComponent.Logo != null)
+            {
+                Logo = strategicTransactionComponent.Logo.Src;
+            }            
             Body = strategicTransactionComponent.Body;
             SubscribeButtonText = strategicTransactionComponent.Subscribe_Button_Text;
             SubscribeButtonURL = strategicTransactionComponent.Subscribe_Button_URL != null
