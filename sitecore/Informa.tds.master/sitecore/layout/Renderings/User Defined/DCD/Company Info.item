@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {92B76CFB-BCB2-439F-AA3E-7DF363576078}
+id: {11907324-B620-4680-A4C7-B5976FBD0A0B}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Detail Pages/Deal Details
-parent: {15D11892-6768-4E8D-8CA5-24783E806CB0}
-name: Deal Details
+path: /sitecore/layout/Renderings/User Defined/DCD/Company Info
+parent: {16ABC9F4-FFB9-48EB-959A-1474AD8E7190}
+name: Company Info
 master: {00000000-0000-0000-0000-000000000000}
 template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
 templatekey: View rendering
@@ -13,13 +13,13 @@ templatekey: View rendering
 field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
 name: Path
 key: path
-content-length: 36
+content-length: 43
 
-/Views/CompaniesAndDeals/Deal.cshtml
+/Views/CompaniesAndDeals/CompanyInfo.cshtml
 ----version----
 language: en
 version: 1
-revision: acaacf2c-654a-4b7a-8798-8b7f7f302009
+revision: 1d772142-55e7-4825-93f9-2aaef125431c
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,21 +27,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160711T175307Z
+20160713T135101Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-acaacf2c-654a-4b7a-8798-8b7f7f302009
+1d772142-55e7-4825-93f9-2aaef125431c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160711T175320Z
+20160713T142754Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
