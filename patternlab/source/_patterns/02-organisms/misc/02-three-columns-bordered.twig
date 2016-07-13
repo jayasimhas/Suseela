@@ -1,0 +1,30 @@
+{% if threeColumnData == false %}
+	{% set threeColumnData = {
+			"type": "raw",
+			"columns": [
+				{
+					"text": "Data"
+				},
+				{
+					"text": "Data Data"
+				},
+				{
+					"text": "Data<br />Data<br />Data<br />Data<br />Data"
+				}
+			]
+		}
+	%}
+{% endif %}
+
+
+<div class="l-columns l-columns--with-divider l-columns--three-up">
+	{% for item in threeColumnData.columns %}
+		<div class="l-columns__column">
+			{% if threeColumnData.type == "raw" %}
+				{{item.text | raw}}
+			{% else %}
+				{% include threeColumnData.type %}
+			{% endif %}
+		</div>
+	{% endfor %}
+</div>

@@ -1,0 +1,134 @@
+@{
+    Layout = null;
+}
+
+@* General FE Note: Clearly this is only the bits of the Deals page mentioned in IITS2A-139, IITS2A-140, and IITS2A-141; it will need to be wrapped inside header/footer/etc and have leaderboard ads (all extant code) tagged on, much as seen on the home page.  Exactly how that markup should look can be extrapolated from the patternlab files for the Deal template or the Deal example page *@
+
+
+
+
+@* Header goes up here! *@
+@* Main nav goes up here! *@
+@* Share bar goes here! (Reuse from Authors) *@
+
+
+<div class="deal">
+	<div class="l-left-rail">
+		@* DealSponsorExists: Should a sponsor show for this deal?  *@
+		@if (DealSponsorExists) {
+			<div class="deal-sponsor">
+				@* DealSponsorImageUrl: Path to sponsor logo  *@
+				Brought to you by <img src="@(Model.DealSponsorImageUrl)" />
+			</div>
+		}
+
+		<div class="generic-content">
+			@* DealTitle: Exactly what it sounds like  *@
+			<h1>@(Model.DealTitle)</h1>
+			<div class="generic-content__dateline">
+				@* DealDate: Date of deal in MMM YYYY format (eg. Jul 2016)  *@
+				@(Model.DealDate)
+			</div>
+			@* DealProfile: HTML paragraph or two of deal information from an RTE  *@
+			@(Model.DealProfile)
+		</div>
+
+
+		<div class="l-columns l-columns--with-divider l-columns--three-up">
+			@* Unclear to me if every deal will have all three columns, so do what you need to do here in terms of logic; Markup should work even with fewer columns *@
+			<div class="l-columns__column">
+				<h6>Deal Industry</h6>
+				<ul class="carrot-list">
+					@* Industries: List of industry tags; this can actually be multiple levels deep and
+					*   the appropriate look can be obtained simply by nesting uls, eg:
+					*	<ul class="carrot-list">
+					*		<li class="article-topics__li">
+					*			<a href="#">Top Level</a>
+					*			<ul>
+					*				<li class="article-topics__li">...</li>
+					*			</ul>
+					*		</li>
+					*	</ul>
+					*   Also, if this isn't a legit multi-line comment style, I apologize for
+					*	  breaking the site
+					*@
+					@foreach (var industry in Model.Industries) {
+						<li class="article-topics__li"><a href="@industry.LinkableUrl">@industry.LinkableText</a></li>
+					}
+				</ul>
+			</div>
+			<div class="l-columns__column">
+				<h6>Deal Industry</h6>
+				<ul class="carrot-list">
+					@* Statuses: list of status tags; see Industries for information on nesting *@
+					@foreach (var status in Model.Statuses) {
+						<li class="article-topics__li"><a href="@industry.LinkableUrl">@industry.LinkableText</a></li>
+					}
+				</ul>
+			</div>
+			<div class="l-columns__column">
+				<h6>Deal Type</h6>
+				<ul class="carrot-list">
+					@* Types: list of type tags; see Industries for information on nesting *@
+					@foreach (var type in Model.Types) {
+						<li class="article-topics__li"><a href="@type.LinkableUrl">@type.LinkableText</a></li>
+					}
+				</ul>
+			</div>
+		</div>
+
+		@* It's possible that this section may be reusable from Articles; doesn't look like it's chunked out yet, but potentially could be?  Really ugly as it stands. *@
+		<div class="article-call-to-action">
+			<div class="article-call-to-action--sign-in-up">
+				<div class="article-call-to-action__column">
+					@* PurchaseHeadline: purchase headline, or #1 in IITS2A-141 *@
+					<span class="article-call-to-action__title">@(Model.PurchaseHeadline)</span>
+					@* PurchaseSubHeading: purchase subhead, or #2 in IITS2A-141 *@
+					<span class="article-call-to-action__subtitle">@(Model.PurchaseSubHeading)</span>
+					@* PurchaseButtonUrl: path to go to on click of purchase button, or #3 in IITS2A-141 *@
+					@* PurchaseButtonText: purchase button text, or #4 in IITS2A-141 *@
+					<button href="@(Model.PurchaseButtonUrl)" class="button--filled">
+						@(Model.PurchaseButtonText)
+					</button>
+				</div>
+				<div class="article-call-to-action__column">
+					@* SubscriberHeadline: subscription headline text, or #5 in IITS2A-141 *@
+					<span class="article-call-to-action__title">@(Model.SubscriberHeadline)</span>
+					@* PurchaseButtonText: subscription subhead, or #6 in IITS2A-141 *@
+					<span class="article-call-to-action__subtitle">@(Model.SubscriberSubHeading)</span>
+					@* PurchaseButtonText: path to go to from subscription button, or #7 in IITS2A-141 *@
+					@* PurchaseButtonText: subscription button text, or #8 in IITS2A-141 *@
+					<button href="@(Model.SubscriberButtonUrl)" class="button--filled">
+						@(Model.SubscriberButtonText)
+					</button>
+					<hr />
+					@* PurchaseButtonText: contact headline, or #9 in IITS2A-141 *@
+					<span class="article-call-to-action__subtitle">@(Model.ContactHeadline)</span>
+					@* PurchaseButtonText: contact info text, or #10 in IITS2A-141 *@
+					<p>@(Model.ContactInfo)</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="l-right-rail">
+		@* Very likely that this can be abstracted and used in multiple places *@
+		<div class="article-topics">
+			<h2 class="article-topics__header">Related Companies</h2>
+			<ul>
+				@* Companies: List of all companies related to this deal; See Industries above for information on nesting multiple levels *@
+				@foreach (var company in Model.Companies) {
+					@* CompanyUrl: URL to company information *@
+					@* CompanyName: Name of company *@
+					<li class="article-topics__li"><a href="@company.CompanyUrl">@company.CompanyName</a></li>
+				}
+			</ul>
+		</div>
+		@* This may be the incorrect sort of ad; confirm with someone who knows for sure.  Designs show tall rectagular ad. *@
+	    @Html.Sitecore().Placeholder("article-med-ad")
+        @* This is for the strategic transaction*@
+        @Html.Sitecore().Placeholder("strategy-transactions")
+	</div>
+</div>
+
+
+@* Footer goes down here! *@

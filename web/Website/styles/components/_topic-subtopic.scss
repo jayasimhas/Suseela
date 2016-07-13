@@ -16,6 +16,22 @@
 		text-align: right;
 	}
 
+	&__sponsor {
+		@include textMix('Roboto', 1.5rem, 300);
+		margin-bottom: 2rem;
+		text-align: center;
+
+		img {
+			display: inline-block;
+			margin-left: 0.5rem;
+			vertical-align: middle;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 1.5rem;
+	}
+
     &__title {
         color: $color-zeus-black;
         border-left: 12px solid $color-cardinal-red;

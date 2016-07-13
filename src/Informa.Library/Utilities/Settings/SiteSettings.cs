@@ -16,9 +16,6 @@ namespace Informa.Library.Utilities.Settings
 
 		public string NlmExportPath => GetSetting("NLM.ExportPath", string.Empty);
 		public string MailFromAddress => GetSetting("Mail.MailServerFromAddress", string.Empty);
-		public string OldCompaniesUrl => GetSetting("DCD.OldCompaniesURL", string.Empty);
-		public string OldDealsUrl => GetSetting("DCD.OldDealsURL", string.Empty);
-
 		public SiteInfoModel GetCurrentSiteInfo() => Map(Sitecore.Context.Site.SiteInfo);
 
 		public IEnumerable<SiteInfoModel> GetSiteInfoList() =>
