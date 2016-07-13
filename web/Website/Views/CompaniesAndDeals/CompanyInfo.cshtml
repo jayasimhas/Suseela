@@ -42,18 +42,34 @@
         @Html.Partial("~/Views/CompaniesAndDeals/SubsidiariesTree.cshtml", @Model.SubsidiariesTree)
 
         <li class="article-topics__section-header">@Model.SeniorManagementHeader</li>
-        @foreach (var employee in Model.Content.Employees)
-        {
-            <li class="article-topics__section-desc">@(employee)</li>
-        }
+        <li class="article-topics__section-desc">
+            @Html.Raw(string.Join("<br/>", Model.Content.Employees))
+        </li>
 
         <li class="article-topics__section-header">@Model.ContactHeader</li>
-        <li class="article-topics__section-desc"><strong>@(Model.Content.Name)</strong></li>
-        <li class="article-topics__section-desc">Phone: @(Model.Content.ContactInfo.Phone)</li>
-        <li class="article-topics__section-desc">@(Model.Content.ContactInfo.Street) @(Model.Content.ContactInfo.Street2)</li>
-        <li class="article-topics__section-desc">@(Model.RegionAddressLine)</li>
-        <li class="article-topics__section-desc">@(Model.Content.ContactInfo.Country)</li>
-
+        <li class="article-topics__section-desc">
+            <strong>@(Model.Content.Name)</strong><br/>
+            @if (Model.Content.ContactInfo.Phone.HasContent())
+            {
+                @:Phone: @(Model.Content.ContactInfo.Phone) <br/>
+            }
+            @if (Model.Content.ContactInfo.Street.HasContent())
+            {
+                @(Model.Content.ContactInfo.Street) <br/>
+            }
+            @if (Model.Content.ContactInfo.Street2.HasContent())
+            {
+                @(Model.Content.ContactInfo.Street2) <br/>
+            }
+            @if (Model.RegionAddressLine.HasContent())
+            {
+                @(Model.RegionAddressLine) <br/>
+            }
+            @if (Model.Content.ContactInfo.Country.HasContent())
+            {
+                @(Model.Content.ContactInfo.Country) <br/>
+            }
+        </li>
     </ul>
 </div>
 
