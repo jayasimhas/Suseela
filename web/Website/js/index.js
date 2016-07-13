@@ -922,6 +922,13 @@ $(document).ready(function() {
 
 	// Pretty select boxes
 	$('select').selectivity({
-		showSearchInputInDropdown: false
+		showSearchInputInDropdown: false,
+		positionDropdown: function($dropdownEl,  $selectEl) {
+			$dropdownEl.css("width", $selectEl.width() + "px");
+		}
 	});
+
+	$(".selectivity-input .selectivity-single-select").each(function() {
+		$(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/web/Website/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
+	})
 });

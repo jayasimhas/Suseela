@@ -1,6 +1,7 @@
 /*
- * This steals and modifies the base selectivity styles, so don't just drop in
- * selectivity-full.css and expect it to work if you're upgrading selectivity
+ * This borrows and modifies the base selectivity styles, so don't just drop in
+ * selectivity-full.css and expect it to work if you're upgrading selectivity,
+ * you may need to do some line-by-line work
  */
 
 .selectivity-clearfix {
@@ -34,6 +35,11 @@
  * Dropdown
  */
 .selectivity-dropdown {
+	@extend .inf-standard-form-field;
+	border-top-width: 0;
+	padding-bottom: 0;
+	padding-right: 0;
+	padding-top: 0;
 	position: absolute;
 	z-index: 1046;
 }
@@ -100,8 +106,6 @@
 .selectivity-multiple-input-container {
 	cursor: text;
 	max-height: 10em;
-	min-height: -webkit-calc(2em + 4px);
-	min-height: calc(2em + 4px);
 	overflow: auto;
 	padding: 5px;
 }
@@ -162,9 +166,8 @@ input[type='text'].selectivity-multiple-input {
  * Single-selection input
  */
 .selectivity-single-select {
+	@extend .inf-standard-form-field;
 	cursor: pointer;
-	min-height: 2em;
-	padding: 5px;
 	position: relative;
 	box-sizing: content-box;
 }
@@ -215,4 +218,18 @@ input[type='text'].selectivity-multiple-input {
 .selectivity-submenu-icon {
 	position: absolute;
 	right: 4px;
+}
+
+
+
+.selectivity-arrow {
+	position: absolute;
+		top: calc(50% - 10px);
+		right: 8px;
+
+	svg {
+		fill: $color-abbey-gray;
+		height: 12px;
+		width: 12px;
+	}
 }
