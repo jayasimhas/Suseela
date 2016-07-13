@@ -5372,7 +5372,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(IStrategic_TransactionsConstants.Subscribe_Button_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
-					object /* UNKNOWN */ Subscribe_Button_URL  {get; set;}
+					Link Subscribe_Button_URL  {get; set;}
 				}
 
 	

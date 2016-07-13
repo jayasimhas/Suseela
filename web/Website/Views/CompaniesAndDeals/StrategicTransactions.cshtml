@@ -6,7 +6,7 @@
         <img src="@(Model.Logo)" />
         <div class="callout__body">@Html.Raw(Model.Body)</div>
         <div class="callout__footer">
-            <button href="@(Model.SubscribeButtonURL)" class="button--filled">
+            <button onclick="location.href='@(Model.SubscribeButtonURL)'" class="button--filled">
                 @(Model.SubscribeButtonText)
             </button>
         </div>
