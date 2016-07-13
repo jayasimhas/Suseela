@@ -15,6 +15,8 @@ using Informa.Library.ContentCuration;
 using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
+using Informa.Library.Utilities.WebUtils;
+using Informa.Model.DCD;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.ViewModels.Articles;
@@ -30,6 +32,7 @@ namespace Informa.Web.ViewModels
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISitecoreService SitecoreService;
         protected readonly IAuthorIndexClient AuthorIndexClient;
+        protected IDCDReader DcdReader;
 
         public LatestNewsViewModel(IGlassBase datasource,
             IRenderingContextService renderingParametersService,
@@ -37,7 +40,7 @@ namespace Informa.Web.ViewModels
             IItemManuallyCuratedContent itemManuallyCuratedContent,
             IArticleListItemModelFactory articleListableFactory,
             ISiteRootContext rootContext,
-            ITextTranslator textTranslator, ISitecoreService sitecoreService, IAuthorIndexClient authorIndexClient)
+            ITextTranslator textTranslator, ISitecoreService sitecoreService, IAuthorIndexClient authorIndexClient, IDCDReader dcdReader)
         {
             ArticleSearch = articleSearch;
             ItemManuallyCuratedContent = itemManuallyCuratedContent;
@@ -45,6 +48,7 @@ namespace Informa.Web.ViewModels
             TextTranslator = textTranslator;
             SitecoreService = sitecoreService;
             AuthorIndexClient = authorIndexClient;
+            DcdReader = dcdReader;
 
             Authors = new List<string>();
             Parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_News_Options>();
@@ -89,7 +93,7 @@ namespace Informa.Web.ViewModels
 
             if (DisplayTitle)
             {
-                TitleText = GetAuthorTitleText($"{currentAuthor.First_Name} {currentAuthor.Last_Name}");
+                TitleText = GetTitleText($"{currentAuthor.First_Name} {currentAuthor.Last_Name}");
             }
 
             Authors = new List<string> { RemoveSpecialCharactersFromGuid(author.ToString()) };
@@ -103,26 +107,18 @@ namespace Informa.Web.ViewModels
         public void Company_Page()
         {
             ItemsToDisplay = 4;
-            var nameFromUrl = HttpContext.Current.Request.Url.Segments.Last();
-            Guid? author = AuthorIndexClient.GetAuthorIdByUrlName(nameFromUrl);
-            if (author == null) return;
+            CompanyRecordNumber = HttpContext.Current.Request.Url.Segments.Last();
+            RedirectIfRecordId(CompanyRecordNumber);
 
-            var currentAuthor = SitecoreService.GetItem<IStaff_Item>(author.Value);
-            if (currentAuthor == null) return;
+            var company = DcdReader.GetCompanyByRecordNumber(CompanyRecordNumber);
 
             if (DisplayTitle)
             {
-                TitleText = GetAuthorTitleText($"{currentAuthor.First_Name} {currentAuthor.Last_Name}");
+                TitleText = GetTitleText(company.Title);
             }
 
-            Authors = new List<string> { RemoveSpecialCharactersFromGuid(author.ToString()) };
-
-            if (SeeAllLink != null)
-            {
-                SeeAllLink.Url = string.Format("/search#?author={0}", RemoveSpecialCharactersFromGuid(author.ToString()));
-            }
         }
-
+        
         public void Other_Page()
         {
             if (DisplayTitle)
@@ -139,31 +135,32 @@ namespace Informa.Web.ViewModels
 
         public IList<string> Topics { get; set; }
         public IList<string> Authors { get; set; }
+        public string CompanyRecordNumber { get; set; }
         public IEnumerable<IListableViewModel> News { get; set; }
         public string TitleText { get; set; }
         public bool DisplayTitle { get; set; }
         public Link SeeAllLink { get; set; }
         public ILatest_News_Options Parameters { get; set; }
         public int ItemsToDisplay { get; set; }
-        private string GetAuthorTitleText(string authorName)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("{0} {1}",
-                TextTranslator.Translate("Article.LatestFrom"), authorName);
-            return sb.ToString();
-        }
+
         private string GetTitleText()
         {
             var take = Topics.Count - 1;
-            StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("{0} {1}",
-                TextTranslator.Translate("Article.LatestFrom"),
-                string.Join(", ", Topics.Take(take > 0 ? take : 1)));
+            var title = GetTitleText(string.Join(", ", Topics.Take(take > 0 ? take : 1)));
             if (take > 0)
-                sb.AppendFormat(" &amp; {0}", Topics.Last());
+            {
+                title = title + "&amp;" + Topics.Last();
+            }
+            return title;
+ ;       }
 
+        private string GetTitleText(string title)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("{0} {1}",TextTranslator.Translate("Article.LatestFrom"), title);
             return sb.ToString();
         }
+
         private IEnumerable<IListableViewModel> GetLatestNews(Guid datasourceId, IEnumerable<Guid> subjectIds, IEnumerable<string> publicationNames, IEnumerable<string> authorNames,
             int itemsToDisplay)
         {
@@ -189,5 +186,16 @@ namespace Informa.Web.ViewModels
             return guid.Replace("-", "").Replace("{", "").Replace("}", "").ToLower();
         }
 
+        private void RedirectIfRecordId(string segment)
+        {
+            if (!segment.StartsWith("_id")) { return; }  //Not a record id, yay!
+
+            int id;
+            if (!int.TryParse(segment.Substring(3), out id)) return;
+
+            var company = DcdReader.GetCompanyByRecordId(id);
+            if (!(company?.RecordNumber).HasContent()) return;
+            HttpContext.Current.Response.Redirect($"/companies/{company.RecordNumber}");
+        }
     }
 }
