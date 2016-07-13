@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using Informa.Library.Article.Search;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 using Informa.Library.Utilities.Extensions;
@@ -9,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
-using Autofac;
 using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.Authors;
@@ -18,10 +16,9 @@ using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.ViewModels.Articles;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
-using Jabberwocky.Glass.Autofac.Util;
-using Jabberwocky.Glass.Services;
 
 namespace Informa.Web.ViewModels
 {
@@ -49,79 +46,105 @@ namespace Informa.Web.ViewModels
             SitecoreService = sitecoreService;
             AuthorIndexClient = authorIndexClient;
 
-            var parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_News_Options>();
-            DisplayTitle = parameters.Display_Title;
-            if (DisplayTitle)
-            {
-                Topics = parameters.Subjects.Select(s => s.Item_Name).ToArray();
-                TitleText = GetTitleText();
-            }
-            int itemsToDisplay = parameters.Number_To_Display?.Value ?? 6;
+            Authors = new List<string>();
+            Parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_News_Options>();
+            if (Parameters == null) return;
 
-            var publicationNames = parameters.Publications.Any()
-                ? parameters.Publications.Select(p => p.Publication_Name)
+            DisplayTitle = Parameters.Display_Title;
+            ItemsToDisplay = Parameters.Number_To_Display?.Value ?? 6;
+            SeeAllLink = Parameters.Show_See_All ? new Link
+            {
+                Text = TextTranslator.Translate("Article.LatestFrom.SeeAllLink")
+            } : null;
+            var publicationNames = Parameters.Publications.Any()
+                ? Parameters.Publications.Select(p => p.Publication_Name)
                 : new[] { rootContext.Item.Publication_Name };
 
-            var authorGuids = GetAuthor();
-            IsAuthorPage = authorGuids.Any();
+            Authors = Parameters.Authors.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())).ToArray();
 
-            if (!authorGuids.Any() && parameters.Authors.Any())
+            if (datasource._TemplateId.ToString() == IAuthor_PageConstants.TemplateIdString)
             {
-                authorGuids.AddRange(parameters.Authors.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())));
+                Author_Page();
+            }
+            else if (datasource._TemplateId.ToString() == ICompany_PageConstants.TemplateIdString)
+            {
+                Company_Page();
+            }
+            else
+            {
+                Other_Page();
             }
 
-            News = GetLatestNews(datasource._Id, parameters.Subjects.Select(s => s._Id), publicationNames, authorGuids, itemsToDisplay);
-            SeeAllLink = parameters.Show_See_All ? new Link
-            {
-                Text = textTranslator.Translate("Article.LatestFrom.SeeAllLink"),
-                Url = SearchTaxonomyUtil.GetSearchUrl(parameters.Subjects.ToArray())
-            } : null;
-
-            if (!IsAuthorPage) return;
-            var url = new StringBuilder();
-            url.AppendFormat("/search#?author={0}", RemoveSpecialCharactersFromGuid(authorGuids.FirstOrDefault()));
-
-            SeeAllLink = parameters.Show_See_All ? new Link
-            {
-                Text = textTranslator.Translate("Article.LatestFrom.SeeAllLink"),
-                Url = url.ToString()
-            } : null;
-            //scrip.informa.ashah.velir.com/search#?author=82dfa523c3a141a0a50fd8a52b45592e&publication=SCRIP%20Intelligence
+            News = GetLatestNews(datasource._Id, Parameters.Subjects.Select(s => s._Id), publicationNames, Authors, ItemsToDisplay);
         }
 
-        public List<string> GetAuthor()
+        public void Author_Page()
         {
-            List<string> authorGuids = new List<string>();
             var nameFromUrl = HttpContext.Current.Request.Url.Segments.Last();
-            Guid? author = Guid.Empty;
-            author = AuthorIndexClient.GetAuthorIdByUrlName(nameFromUrl);
-
-            if (author == Guid.Empty || author == null)
-                return authorGuids;
-
-            authorGuids.Add(RemoveSpecialCharactersFromGuid(author.ToString()));
+            Guid? author = AuthorIndexClient.GetAuthorIdByUrlName(nameFromUrl);
+            if (author == null) return;
 
             var currentAuthor = SitecoreService.GetItem<IStaff_Item>(author.Value);
-            if (currentAuthor == null)
-                return authorGuids;
+            if (currentAuthor == null) return;
 
-            TitleText = GetAuthorTitleText($"{currentAuthor.First_Name} {currentAuthor.Last_Name}");
+            if (DisplayTitle)
+            {
+                TitleText = GetAuthorTitleText($"{currentAuthor.First_Name} {currentAuthor.Last_Name}");
+            }
 
-            return authorGuids;
+            Authors = new List<string> { RemoveSpecialCharactersFromGuid(author.ToString()) };
+
+            if (SeeAllLink != null)
+            {
+                SeeAllLink.Url = string.Format("/search#?author={0}", RemoveSpecialCharactersFromGuid(author.ToString()));
+            }
         }
 
-        public string RemoveSpecialCharactersFromGuid(string guid)
+        public void Company_Page()
         {
-            return guid.Replace("-", "").Replace("{", "").Replace("}", "").ToLower();
+            ItemsToDisplay = 4;
+            var nameFromUrl = HttpContext.Current.Request.Url.Segments.Last();
+            Guid? author = AuthorIndexClient.GetAuthorIdByUrlName(nameFromUrl);
+            if (author == null) return;
+
+            var currentAuthor = SitecoreService.GetItem<IStaff_Item>(author.Value);
+            if (currentAuthor == null) return;
+
+            if (DisplayTitle)
+            {
+                TitleText = GetAuthorTitleText($"{currentAuthor.First_Name} {currentAuthor.Last_Name}");
+            }
+
+            Authors = new List<string> { RemoveSpecialCharactersFromGuid(author.ToString()) };
+
+            if (SeeAllLink != null)
+            {
+                SeeAllLink.Url = string.Format("/search#?author={0}", RemoveSpecialCharactersFromGuid(author.ToString()));
+            }
+        }
+
+        public void Other_Page()
+        {
+            if (DisplayTitle)
+            {
+                Topics = Parameters.Subjects.Select(s => s.Item_Name).ToArray();
+                TitleText = GetTitleText();
+            }
+
+            if (SeeAllLink != null)
+            {
+                SeeAllLink.Url = SearchTaxonomyUtil.GetSearchUrl(Parameters.Subjects.ToArray());
+            }
         }
 
         public IList<string> Topics { get; set; }
+        public IList<string> Authors { get; set; }
         public IEnumerable<IListableViewModel> News { get; set; }
         public string TitleText { get; set; }
         public bool DisplayTitle { get; set; }
         public Link SeeAllLink { get; set; }
-        public bool IsAuthorPage { get; set; }
-
+        public ILatest_News_Options Parameters { get; set; }
+        public int ItemsToDisplay { get; set; }
         private string GetAuthorTitleText(string authorName)
         {
             StringBuilder sb = new StringBuilder();
@@ -129,7 +152,6 @@ namespace Informa.Web.ViewModels
                 TextTranslator.Translate("Article.LatestFrom"), authorName);
             return sb.ToString();
         }
-
         private string GetTitleText()
         {
             var take = Topics.Count - 1;
@@ -162,5 +184,10 @@ namespace Informa.Web.ViewModels
 
             return articles;
         }
+        public string RemoveSpecialCharactersFromGuid(string guid)
+        {
+            return guid.Replace("-", "").Replace("{", "").Replace("}", "").ToLower();
+        }
+
     }
 }
