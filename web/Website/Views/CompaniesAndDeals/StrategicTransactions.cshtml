@@ -3,7 +3,10 @@
 @if (Model != null)
 {
     <aside class="callout callout--full-width">
-        <img src="@(Model.Logo)" />
+        @if (!string.IsNullOrEmpty(Model.Logo))
+        {
+            <img src="@(Model.Logo)" />
+        }
         <div class="callout__body">@Html.Raw(Model.Body)</div>
         <div class="callout__footer">
             <button onclick="location.href='@(Model.SubscribeButtonURL)'" class="button--filled">

@@ -81,7 +81,8 @@ namespace Informa.Library.Utilities.References
 			public const string DateRangeFilterLabelKey = "dateFilterLabel";
 			public const string TimeKey = "time";
 			public const string Author = "author";
-			public const string Publication = "publication";
+            public const string Company = "company";
+            public const string Publication = "publication";
 		}
 
 		public static class SettingKeys
