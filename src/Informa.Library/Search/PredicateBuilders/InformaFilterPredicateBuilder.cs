@@ -73,6 +73,17 @@ namespace Informa.Library.Search.PredicateBuilders
 				}
 			}
 
+			if (_request.QueryParameters.ContainsKey(Constants.QueryString.Author))
+			{
+				predicate = predicate.And(x => x.Authors.Contains(_request.QueryParameters[Constants.QueryString.Author]));
+			}
+
+			if (_request.QueryParameters.ContainsKey(Constants.QueryString.Publication))
+			{
+				predicate =
+					predicate.And(
+						x => x.PublicationTitle.Equals(_request.QueryParameters[Constants.QueryString.Publication]));
+			}
 			return predicate;
 		}
 	}

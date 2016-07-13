@@ -1,6 +1,7 @@
 using Jabberwocky.Autofac.Attributes;
 using System;
 using System.Linq;
+using Informa.Library.User.Authentication;
 
 namespace Informa.Library.User.Entitlement
 {
@@ -8,12 +9,16 @@ namespace Informa.Library.User.Entitlement
 	public class EntitledProductContext : IEntitledProductContext
     {
 		protected readonly IEntitlementAccessContexts EntitlementAccessContexts;
+	    protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
 
 		public EntitledProductContext(
-			IEntitlementAccessContexts entitlementAccessContexts)
+			IEntitlementAccessContexts entitlementAccessContexts,
+            IAuthenticatedUserContext authenticatedUserContext)
         {
 			EntitlementAccessContexts = entitlementAccessContexts;
-		}
+		    AuthenticatedUserContext = authenticatedUserContext;
+
+        }
 
 		public bool IsEntitled(IEntitledProduct entitledProduct)
 		{
@@ -22,7 +27,7 @@ namespace Informa.Library.User.Entitlement
 				return false;
 			}
 
-			if (entitledProduct.IsFree)
+			if (entitledProduct.IsFree || (entitledProduct.IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated))
 			{
 				return true;
 			}

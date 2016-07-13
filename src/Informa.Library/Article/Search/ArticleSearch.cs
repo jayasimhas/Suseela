@@ -49,8 +49,9 @@ namespace Informa.Library.Article.Search
 				ExcludeManuallyCuratedItems = new List<Guid>(),
 				TaxonomyIds = new List<Guid>(),
 				ArticleNumbers = new List<string>(),
-				PublicationNames = new List<string>()
-			};
+				PublicationNames = new List<string>(),
+                AuthorNames = new List<string>(),
+            };
 		}
 
 		public IArticleSearchResults Search(IArticleSearchFilter filter)
@@ -60,7 +61,8 @@ namespace Informa.Library.Article.Search
 				var query = context.GetQueryable<ArticleSearchResultItem>()
 						.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
 						.FilterByPublications(filter)
-						.FilterTaxonomies(filter)
+                        .FilterByAuthor(filter)
+                        .FilterTaxonomies(filter)
 						.ExcludeManuallyCurated(filter)
 						.FilteryByArticleNumbers(filter)
 						.FilteryByEScenicID(filter)

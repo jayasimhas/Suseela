@@ -66,9 +66,11 @@
                         data-sortable-type="sort_checkbox">
                         @Html.Raw(Model.EmailAlertText)
 
-						<svg class="email-alert-tooltip js-toggle-tooltip" data-tooltip-text="@Model.EmailAlertTooltipText">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#@(Model.EmailAlertTooltipSvg)"></use>
-						</svg>
+						<span class="js-toggle-tooltip" data-tooltip-text="@Model.EmailAlertTooltipText">
+							<svg class="email-alert-tooltip">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#question-mark"></use>
+							</svg>
+						</span>
 
                         <div class="sorting-arrows">
                             <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">

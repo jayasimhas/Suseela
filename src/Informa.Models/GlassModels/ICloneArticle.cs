@@ -14,4 +14,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		[SitecoreField("__Source")]
 		string SourceId { get; set; }
 	}
+
+	public partial interface IArticle__Raw
+	{
+		[SitecoreField("__Sortorder")]
+		float Sortorder { get; set; }
+	}
 }

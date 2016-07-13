@@ -1,0 +1,99 @@
+@model Informa.Web.ViewModels.Authors.AuthorProfileViewModel
+
+<div class="profile">
+    <script type="text/javascript"> (function () { document.title = '@(Model.FirstName + " " + Model.LastName)'; })(); </script>
+    <h1 class="profile__name">@(Model.FirstName + " " + Model.LastName)</h1>
+    <div class="l-left-rail">
+        <h2 class="profile__title">@(Model.Credentials)</h2>
+        <div class="profile__location">@(Model.Location)</div>
+
+        @if (Model.HasImage)
+        {
+            <img class="profile__img" src="@(Model.ImageUrl)"/>
+        }
+        <ul class="profile__links">
+            @if (Model.HasEmail)
+            {
+                <li>
+                    <svg class="alert__icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#email"></use>
+                    </svg>
+                    <a class="click-utag"
+                       data-info='{ "event_name": "author_profile_email_click_through", "click_through_source": "@Model.Author._Name", "click_through_destination": "@Model.Email" }'
+                       href="mailto:@(Model.Email)">@(Model.Email)</a>
+                </li>}
+
+            @if (Model.HasTwitter)
+            {
+                <li>
+                    <svg class="alert__icon">
+                        <use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
+                    </svg>
+                    <a class="click-utag"
+                       data-info='{ "event_name": "author_profile_twitter_click_through", "click_through_source": "@Model.Author._Name", "click_through_destination": "@Model.TwitterHandle" }'
+                       href="@(Model.TwitterUrl)">@(Model.TwitterHandle)</a>
+                </li>}
+
+            @if (Model.HasLinkedIn)
+            {
+                <li>
+                    @* NOTE: This extra class on the linkedIn svg is important!  Don't remove it!  And don't add it to the other SVGs! *@
+                    <svg class="alert__icon icon--linked-in">
+                        <use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
+                    </svg>
+                    <a class="click-utag"
+                       data-info='{ "event_name": "author_profile_linkedin_click_through", "click_through_source": "@Model.Author._Name", "click_through_destination": "@(Model.FirstName + " " + Model.LastName)" }'
+                       href="@(Model.LinkedInUrl)">@(Model.FirstName + " " + Model.LastName)</a>
+                </li>}
+        </ul>
+        <div class="profile__profile">
+            @Html.Raw(Model.Bio)
+        </div>
+        <ul class="profile__expertise">
+            @if (Model.PersonHasAreasOfExpertise)
+            {
+                <li>
+                    <div class="bar-separated-link-list bar-separated-link-list--wrap">
+                        <span class="bar-separated-link-list__label">Areas of Expertise: </span>
+
+                        @foreach (var item in Model.AreasOfExpertise)
+                        {
+                            <a class="click-utag"
+                               data-info='{ "event_name": "author_profile_taxonomy_click_through", "click_through_source": "@Model.Author._Name", "click_through_destination": "Areas of Expertise:@item.LinkText" }'
+                               href="@item.LinkUrl">@item.LinkText</a>
+                        }
+                    </div>
+                </li>}
+            @if (Model.PersonHasIndustryExpertise)
+            {
+                <li>
+                    <div class="bar-separated-link-list bar-separated-link-lis--wrap">
+                        <span class="bar-separated-link-list__label">Industry Expertise: </span>
+
+                        @foreach (var item in Model.IndustryExpertise)
+                        {
+                            <a class="click-utag"
+                               data-info='{ "event_name": "author_profile_taxonomy_click_through", "click_through_source": "@Model.Author._Name", "click_through_destination": "Industry Expertise:@item.LinkText" }'
+                               href="@item.LinkUrl">@item.LinkText</a>
+                        }
+                    </div>
+                </li>}
+            @if (Model.PersonWritesFor)
+            {
+                <li>
+                    <div class="bar-separated-link-list bar-separated-link-lis--wrap">
+                        <span class="bar-separated-link-list__label">Writes for: </span>
+                        @foreach (var item in Model.WriteForExpertise)
+                        {
+                            <a class="click-utag"
+                               data-info='{ "event_name": "author_profile_taxonomy_click_through", "click_through_source": "@Model.Author._Name", "click_through_destination": "Writes for:@item.LinkText" }'
+                               href="@item.LinkUrl">@item.LinkText</a>
+                        }
+                    </div>
+                </li>}
+        </ul>
+    </div>
+    <div class="l-right-rail">
+        @Html.Sitecore().Placeholder("author-leaderboard-ad")
+    </div>
+</div>

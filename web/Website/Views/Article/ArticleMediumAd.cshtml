@@ -1,11 +1,12 @@
 @model Informa.Web.ViewModels.Articles.ArticleAdViewModel
-@if (!string.IsNullOrEmpty(Model.MediumAdID) && !string.IsNullOrEmpty(Model.AdZone))
+
+@if (Model.IsValidAd(Model.MediumAdId))
 {
     <section class="article-preview article-preview--small">
         <div class="article-preview__ad advertising">
             <span class="advertising__label">@Model.AdvertisementText</span>
             <script>
-            OAS_AD('@Model.MediumAdID', '@Model.AdZone');
+            OAS_AD('@Model.MediumAdId', '@Model.AdZone');
             </script>
         </div>
     </section>

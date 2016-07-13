@@ -71,6 +71,7 @@ namespace Informa.Web.ViewModels
 	    public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PageTitleAnalytics => GlassModel?.Title ?? string.Empty;
         public string PageType => Sitecore.Context.Item.TemplateName;
+        public string AdDomain => SiteRootContext.Item.Ad_Domain;
 	    public string ArticlePublishDate => (Article != null && Article.Actual_Publish_Date > DateTime.MinValue)
                     ? Article.Actual_Publish_Date.ToString("MM/dd/yyyy")
                     : DateTime.MinValue.ToString("MM/dd/yyyy");
@@ -88,9 +89,14 @@ namespace Informa.Web.ViewModels
         }
         public string Article_Entitlement => GetArticleEntitlements();
         public bool IsFree => Article?.Free ?? false;
+        public bool IsFreeWithRegistration => Article?.Free_With_Registration ?? false;
         public string GetArticleEntitlements() {
             if (IsFree) {
                 return "Free View";
+            }
+            if (IsFreeWithRegistration)
+            {
+                return "Free With Registration View";
             }
             if (IsEntitledProductItemContext.IsEntitled(Article)) {
                 return "Entitled Full View";
@@ -143,6 +149,11 @@ namespace Informa.Web.ViewModels
 				{
 					return "Free View";
 				}
+
+			    if (IsFreeWithRegistration)
+			    {
+			        return "Free With Registration View";
+			    }
 
 				if (IsEntitledProductItemContext.IsEntitled(Article))
 				{

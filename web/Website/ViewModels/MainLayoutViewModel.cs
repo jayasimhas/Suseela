@@ -9,6 +9,8 @@ using Informa.Library.Company;
 using Informa.Library.Services.Global;
 using Informa.Library.SiteDebugging;
 using Jabberwocky.Autofac.Attributes;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Library.Services.AccountManagement;
 
 namespace Informa.Web.ViewModels
 {
@@ -27,7 +29,8 @@ namespace Informa.Web.ViewModels
             ISiteRootContext SiteRootContext { get; }
             IUserCompanyContext UserCompanyContext { get; }
             IHeadMetaDataGenerator HeadMetaDataGenerator { get; }
-	    }
+            IAccountManagementService AccountManagementService { get; }
+        }
 
 	    public MainLayoutViewModel(IDependencies dependencies)
 	    {
@@ -43,5 +46,6 @@ namespace Informa.Web.ViewModels
         public HtmlString PrintPageHeaderMessage => _dependencies.SiteRootContext.GetPrintHeaderMessage();
         public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	    public string MetaDataHtml => _dependencies.HeadMetaDataGenerator.GetMetaHtml();
+	    public bool IsRestricted => _dependencies.AccountManagementService.IsRestricted(GlassModel);
 	}
 }

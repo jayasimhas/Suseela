@@ -71,7 +71,7 @@
 
                 <hr/>
                 
-                <asp:DropDownList runat="server" ID="ExistingIssuesDdl" AutoPostBack="False"/>
+                <asp:DropDownList runat="server" ID="ExistingIssueSelector" AutoPostBack="False"/>
 
 			    <br/><br />
                 

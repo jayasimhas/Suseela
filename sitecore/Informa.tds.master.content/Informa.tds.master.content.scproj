@@ -2920,6 +2920,14 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Global Dictionary\Shared Content.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Environment Globals\Global Dictionary\Shared Content\Executive Summary.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Global Dictionary\Sitemap Cache Minutes.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
@@ -8180,6 +8188,14 @@
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\InVivo\Home\Authors.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\InVivo\Home\Authors\#Asterisk.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\InVivo\Home\cookie policy.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
@@ -8298,6 +8314,14 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\MedtechInsight\Home\Articles.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\MedtechInsight\Home\Authors.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\MedtechInsight\Home\Authors\#Asterisk.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\MedtechInsight\Home\cookie policy.item">
@@ -8420,6 +8444,14 @@
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\PinkSheet\Home\Authors.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\PinkSheet\Home\Authors\#Asterisk.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\PinkSheet\Home\cookie policy.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
@@ -8538,6 +8570,14 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\RoseSheet\Home\Articles.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\RoseSheet\Home\Authors.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\RoseSheet\Home\Authors\#Asterisk.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\RoseSheet\Home\cookie policy.item">
@@ -8734,6 +8774,14 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Authors.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Authors\#Asterisk.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\cookie policy.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
@@ -8805,6 +8853,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Saved Search Opt Out.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\ScripIntelligence\Home\Search.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
