@@ -5344,12 +5344,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 								/// <summary>
 					/// The Subscribe Button URL field.
 					/// <para></para>
-					/// <para>Field Type: link</para>		
+					/// <para>Field Type: General Link</para>		
 					/// <para>Field ID: f6f1f643-66dd-4424-9996-45d11f8bfdd7</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(IStrategic_TransactionsConstants.Subscribe_Button_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
-					object /* UNKNOWN */ Subscribe_Button_URL  {get; set;}
+					Link Subscribe_Button_URL  {get; set;}
 				}
 
 	
@@ -5392,12 +5392,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 										/// <summary>
 						/// The Subscribe Button URL field.
 						/// <para></para>
-						/// <para>Field Type: link</para>		
+						/// <para>Field Type: General Link</para>		
 						/// <para>Field ID: f6f1f643-66dd-4424-9996-45d11f8bfdd7</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(IStrategic_TransactionsConstants.Subscribe_Button_URLFieldName, Setting = SitecoreFieldSettings.InferType)]
-						object /* UNKNOWN */ Subscribe_Button_URL  {get; set;}
+						Link Subscribe_Button_URL  {get; set;}
 						}
 	
 	public static partial class IStrategic_TransactionsConstants{
