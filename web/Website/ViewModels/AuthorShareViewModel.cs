@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Informa.Models.FactoryInterface;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+﻿using Informa.Web.ViewModels.Articles;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 
