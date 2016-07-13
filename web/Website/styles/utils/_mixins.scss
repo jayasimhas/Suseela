@@ -167,6 +167,11 @@
 		font-style: normal;
 	}
 
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+
 	&__body + &__footer {
 		margin-top: 1.5rem;
 	}
