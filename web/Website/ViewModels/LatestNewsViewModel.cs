@@ -65,6 +65,9 @@ namespace Informa.Web.ViewModels
                 : new[] { rootContext.Item.Publication_Name };
 
             Authors = Parameters.Authors.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())).ToArray();
+            CompanyRecordNumbers = string.IsNullOrEmpty(Parameters.CompanyID)
+                ? (IList<string>) new List<string>()
+                : Parameters.CompanyID.Split(',');
 
             if (datasource._TemplateId.ToString() == IAuthor_PageConstants.TemplateIdString)
             {
@@ -79,7 +82,7 @@ namespace Informa.Web.ViewModels
                 Other_Page();
             }
 
-            News = GetLatestNews(datasource._Id, Parameters.Subjects.Select(s => s._Id), publicationNames, Authors, ItemsToDisplay);
+            News = GetLatestNews(datasource._Id, Parameters.Subjects.Select(s => s._Id), publicationNames, Authors, CompanyRecordNumbers, ItemsToDisplay);
         }
 
         public void Author_Page()
@@ -107,10 +110,12 @@ namespace Informa.Web.ViewModels
         public void Company_Page()
         {
             ItemsToDisplay = 4;
-            CompanyRecordNumber = HttpContext.Current.Request.Url.Segments.Last();
-            RedirectIfRecordId(CompanyRecordNumber);
+            var recordNumber = HttpContext.Current.Request.Url.Segments.Last();
+            RedirectIfRecordId(recordNumber);
 
-            var company = DcdReader.GetCompanyByRecordNumber(CompanyRecordNumber);
+            CompanyRecordNumbers = new List<string> { recordNumber };
+
+            var company = DcdReader.GetCompanyByRecordNumber(recordNumber);
 
             if (DisplayTitle)
             {
@@ -118,7 +123,7 @@ namespace Informa.Web.ViewModels
             }
 
         }
-        
+
         public void Other_Page()
         {
             if (DisplayTitle)
@@ -135,7 +140,7 @@ namespace Informa.Web.ViewModels
 
         public IList<string> Topics { get; set; }
         public IList<string> Authors { get; set; }
-        public string CompanyRecordNumber { get; set; }
+        public IList<string> CompanyRecordNumbers { get; set; }
         public IEnumerable<IListableViewModel> News { get; set; }
         public string TitleText { get; set; }
         public bool DisplayTitle { get; set; }
@@ -152,17 +157,18 @@ namespace Informa.Web.ViewModels
                 title = title + "&amp;" + Topics.Last();
             }
             return title;
- ;       }
+            ;
+        }
 
         private string GetTitleText(string title)
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("{0} {1}",TextTranslator.Translate("Article.LatestFrom"), title);
+            sb.AppendFormat("{0} {1}", TextTranslator.Translate("Article.LatestFrom"), title);
             return sb.ToString();
         }
 
-        private IEnumerable<IListableViewModel> GetLatestNews(Guid datasourceId, IEnumerable<Guid> subjectIds, IEnumerable<string> publicationNames, IEnumerable<string> authorNames,
-            int itemsToDisplay)
+        private IEnumerable<IListableViewModel> GetLatestNews(Guid datasourceId, IEnumerable<Guid> subjectIds, IEnumerable<string> publicationNames,
+            IEnumerable<string> authorNames, IEnumerable<string> companyRecordNumbers, int itemsToDisplay)
         {
             var manuallyCuratedContent = ItemManuallyCuratedContent.Get(datasourceId);
             var filter = ArticleSearch.CreateFilter();
@@ -173,6 +179,7 @@ namespace Informa.Web.ViewModels
             filter.TaxonomyIds.AddRange(subjectIds);
             filter.PublicationNames.AddRange(publicationNames);
             filter.AuthorNames.AddRange(authorNames);
+            filter.CompanyRecordNumbers.AddRange(companyRecordNumbers);
 
             var results = ArticleSearch.Search(filter);
             var articles =
@@ -181,6 +188,7 @@ namespace Informa.Web.ViewModels
 
             return articles;
         }
+
         public string RemoveSpecialCharactersFromGuid(string guid)
         {
             return guid.Replace("-", "").Replace("{", "").Replace("}", "").ToLower();

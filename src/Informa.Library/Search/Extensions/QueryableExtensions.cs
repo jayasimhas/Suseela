@@ -56,6 +56,20 @@ namespace Informa.Library.Search.Extensions
             return source.Filter(predicate);
         }
 
+        public static IQueryable<T> FilterByCompany<T>(this IQueryable<T> source, IArticleCompanyFilter filter)
+            where T : IArticleCompanyResults
+        {
+            if (source == null || filter == null || !filter.CompanyRecordNumbers.Any())
+            {
+                return source;
+            }
+
+            var predicate = PredicateBuilder.False<T>();
+
+            predicate = filter.CompanyRecordNumbers.Aggregate(predicate, (current, f) => current.Or(i => i.CompanyRecordIDs.Contains(f)));
+
+            return source.Filter(predicate);
+        }
 
         public static IQueryable<T> FilteryByArticleNumbers<T>(this IQueryable<T> source, IArticleNumbersFilter filter)
                 where T : IArticleNumber
@@ -66,7 +80,7 @@ namespace Informa.Library.Search.Extensions
             }
 
             var predicate = PredicateBuilder.True<T>();
-            
+
             predicate = filter.ArticleNumbers.Aggregate(predicate, (current, f) => current.Or(an => an.ArticleNumber == f));
 
             return source.Filter(predicate);
