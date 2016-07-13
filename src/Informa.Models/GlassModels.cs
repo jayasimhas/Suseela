@@ -4739,6 +4739,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					[SitecoreField(ILatest_News_OptionsConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Authors  {get; set;}
 								/// <summary>
+					/// The CompanyID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 9414673a-dbe2-493d-8da1-c80f73b9ed73</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ILatest_News_OptionsConstants.CompanyIDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string CompanyID  {get; set;}
+								/// <summary>
 					/// The Display Title field.
 					/// <para></para>
 					/// <para>Field Type: Checkbox</para>		
@@ -4805,6 +4814,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 						[SitecoreField(ILatest_News_OptionsConstants.AuthorsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Authors  {get; set;}
 										/// <summary>
+						/// The CompanyID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 9414673a-dbe2-493d-8da1-c80f73b9ed73</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ILatest_News_OptionsConstants.CompanyIDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string CompanyID  {get; set;}
+										/// <summary>
 						/// The Display Title field.
 						/// <para></para>
 						/// <para>Field Type: Checkbox</para>		
@@ -4860,6 +4878,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 					
 			public static readonly ID AuthorsFieldId = new ID("4dd4c91f-13e2-4023-9204-69bfca0cf2be");
 			public const string AuthorsFieldName = "Authors";
+
+						
+					
+			public static readonly ID CompanyIDFieldId = new ID("9414673a-dbe2-493d-8da1-c80f73b9ed73");
+			public const string CompanyIDFieldName = "CompanyID";
 
 						
 					
