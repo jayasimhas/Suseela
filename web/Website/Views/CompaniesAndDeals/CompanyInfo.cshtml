@@ -1,59 +1,59 @@
 @model Informa.Web.ViewModels.CompaniesAndDeals.CompanyViewModel
 
-    <div class="article-topics">
-        <h2 class="article-topics__header">@Model.CompanyInformationHeader</h2>
-        <ul>
+<div class="article-topics">
+    <h2 class="article-topics__header">@Model.CompanyInformationHeader</h2>
+    <ul>
             
-            <li class="article-topics__section-header">@Model.IndustryHeader</li>
-            @foreach (var industry in Model.Industries)
-            {
-                <li class="article-topics__li">@industry.Name</li>
-            }
-            <li class="article-topics__section-header">@Model.TherapyAreasHeader</li>
+        <li class="article-topics__section-header">@Model.IndustryHeader</li>
+        @foreach (var industry in Model.Industries)
+        {
+            <li class="article-topics__li">@industry.Name</li>
+        }
+        <li class="article-topics__section-header">@Model.TherapyAreasHeader</li>
 
-            @foreach (var area in Model.TherapyAreas)
-            {
-                <li class="article-topics__li">@area.Name</li>
-            }
+        @foreach (var area in Model.TherapyAreas)
+        {
+            <li class="article-topics__li">@area.Name</li>
+        }
 
-            <li class="article-topics__section-header">@Model.OwnershipHeader</li>
-            <li class="article-topics__li">@Model.Content.CompanyInfo.Ownership</li>
+        <li class="article-topics__section-header">@Model.OwnershipHeader</li>
+        <li class="article-topics__li">@Model.Content.CompanyInfo.Ownership</li>
 
-            <li class="article-topics__section-header">@Model.HeadquartersHeader</li>
-            @foreach (var loc in Model.LocationPath)
-            {
-                @:<li class="article-topics__li">
-                @loc
-                @:<ul>
-            }
-            @foreach (var i in Model.LocationPath)
-            {
-                @:</ul>
-                @:</li>
-            }
+        <li class="article-topics__section-header">@Model.HeadquartersHeader</li>
+        @foreach (var loc in Model.LocationPath)
+        {
+            @:<li class="article-topics__li">
+            @loc
+            @:<ul>
+        }
+        @foreach (var i in Model.LocationPath)
+        {
+            @:</ul>
+            @:</li>
+        }
 
-            @if (@Model.ShowCompanyType)
-            {
-                <li class="article-topics__section-header">@Model.CompanyTypeHeader</li>
-                <li class="article-topics__li">@Model.Content.CompanyInfo.Description</li>
-            }
+        @if (@Model.ShowCompanyType)
+        {
+            <li class="article-topics__section-header">@Model.CompanyTypeHeader</li>
+            <li class="article-topics__li">@Model.Content.CompanyInfo.Description</li>
+        }
 
-            <li class="article-topics__section-header">@Model.ParentSubHeader</li>
-            @Html.Partial("~/Views/CompaniesAndDeals/SubsidiariesTree.cshtml", @Model.SubsidiariesTree)
+        <li class="article-topics__section-header">@Model.ParentSubHeader</li>
+        @Html.Partial("~/Views/CompaniesAndDeals/SubsidiariesTree.cshtml", @Model.SubsidiariesTree)
 
-            <li class="article-topics__section-header">@Model.SeniorManagementHeader</li>
-            @foreach (var employee in Model.Content.Employees)
-            {
-                <li class="article-topics__section-desc">@(employee)</li>
-            }
+        <li class="article-topics__section-header">@Model.SeniorManagementHeader</li>
+        @foreach (var employee in Model.Content.Employees)
+        {
+            <li class="article-topics__section-desc">@(employee)</li>
+        }
 
-            <li class="article-topics__section-header">@Model.ContactHeader</li>
-            <li class="article-topics__section-desc"><strong>@(Model.Content.Name)</strong></li>
-            <li class="article-topics__section-desc">Phone: @(Model.Content.ContactInfo.Phone)</li>
-            <li class="article-topics__section-desc">@(Model.Content.ContactInfo.Street) @(Model.Content.ContactInfo.Street2)</li>
-            <li class="article-topics__section-desc">@(Model.RegionAddressLine)</li>
-            <li class="article-topics__section-desc">@(Model.Content.ContactInfo.Country)</li>
+        <li class="article-topics__section-header">@Model.ContactHeader</li>
+        <li class="article-topics__section-desc"><strong>@(Model.Content.Name)</strong></li>
+        <li class="article-topics__section-desc">Phone: @(Model.Content.ContactInfo.Phone)</li>
+        <li class="article-topics__section-desc">@(Model.Content.ContactInfo.Street) @(Model.Content.ContactInfo.Street2)</li>
+        <li class="article-topics__section-desc">@(Model.RegionAddressLine)</li>
+        <li class="article-topics__section-desc">@(Model.Content.ContactInfo.Country)</li>
 
-        </ul>
-    </div>
+    </ul>
+</div>
 
