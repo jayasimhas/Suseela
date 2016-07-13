@@ -1,0 +1,31 @@
+{# Defaults and Randoms #}
+{% if genericTitle == false %}
+	{% set genericTitle = random(randomCompanies).text %}
+{% endif %}
+
+{% include "organisms-raw-header" %}
+<main>
+	{% include "organisms-raw-main-menu" %}
+	<div class="main__wrapper">
+		<div class="general-header">
+		</div>
+
+		<div class="main__content">
+			{% include "organisms-action-flags-bar" with {"hidePrint" : true, "hideBookmark" : true} %}
+			<div class="deal">
+				<div class="l-left-rail">
+					{% include "molecules-deal-sponsor" %}
+					{% include "organisms-page-content" with {"showDateLine": true} %}
+					{% include "organisms-three-columns-bordered" %}
+					{% include "organisms-article-call-to-action" %}
+				</div>
+				<div class="l-right-rail">
+					{% include "organisms-article-topics" %}
+					{% include "molecules-ad-rect" %}
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+{% include "organisms-raw-footer" %}
+<script src="/web/Website/dist/js/index.js"></script>

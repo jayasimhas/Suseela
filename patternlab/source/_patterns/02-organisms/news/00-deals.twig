@@ -1,0 +1,30 @@
+<div class="topic-subtopic">
+	{% if topicSubtopicHeaderText %}
+		<div class="topic-subtopic__header">
+			<h1 class="topic-subtopic__title">{{topicSubtopicHeaderText}} <a href='#' >Explore this Topic</a></h1>
+		</div>
+	{% endif %}
+
+	<h4 class="latest-news__header">
+		<span>{{dealsLabelText}} Deals</span>
+	</h4>
+
+	{% if dealSponsor %}
+	<div class="topic-subtopic__sponsor">
+		Brought to you by <img src="{{dealSponsor}}" />
+	</div>
+	{% endif %}
+
+	<h5 class="topic-subtopic__subtitle">Latest Deals</h5>
+
+	{% for i in 1..max %}
+		{% include "organisms-article-preview--boxed" with {"hideTags": true} %}
+	{% endfor %}
+
+	{% include "molecules-button-full-diminished" %}
+
+	<h5 class="topic-subtopic__subtitle">Deal Activity since 1991</h5>
+
+	{% include "atoms-table-sortable" %}
+
+</div>

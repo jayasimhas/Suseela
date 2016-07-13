@@ -18,6 +18,7 @@ using Informa.Library.Globalization;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Site;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Web.ViewModels.Articles;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
 using Jabberwocky.Glass.Autofac.Util;
 using Jabberwocky.Glass.Services;

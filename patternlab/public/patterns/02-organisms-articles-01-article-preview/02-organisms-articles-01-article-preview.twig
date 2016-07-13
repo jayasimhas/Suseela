@@ -10,7 +10,7 @@
 {% if newsTypeText == false %}
 	{% set newsTypeText = random(['News', 'Opinion', 'Type']) %}
 {% endif %}
-&lt;section class=&quot;article-preview&quot;&gt;
+&lt;section class=&quot;article-preview {{classes}}&quot;&gt;
 
 	&lt;div class=&quot;article-metadata&quot;&gt;
 		&lt;div class=&quot;article-preview__bookmarker pop-out__trigger&quot;&gt;
@@ -26,11 +26,11 @@
 			&lt;li&gt;
 				&lt;h6&gt;{{newsTypeText}}&lt;/h6&gt;
 			&lt;/li&gt;
-			&lt;li&gt;
+			&lt;!--&lt;li&gt;
 				&lt;svg class=&quot;action-flag__icon&quot;&gt;
 					&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;svg-sprite.svg#audio&quot;&gt;&lt;/use&gt;
 				&lt;/svg&gt;
-			&lt;/li&gt;
+			&lt;/li&gt;--&gt;
 		&lt;/ul&gt;
 	&lt;/div&gt;
 
@@ -40,7 +40,7 @@
 		&lt;/h1&gt;
 
 		&lt;span class=&quot;article-preview__byline&quot;&gt;
-			&lt;a href=&quot;#&quot;&gt;by {{newsAuthorText}}&lt;/a&gt;
+			by {{newsAuthorText}}
 		&lt;/span&gt;
 
 		&lt;div class=&quot;article-summary&quot;&gt;
@@ -48,6 +48,7 @@
 		&lt;/div&gt;
 	&lt;/div&gt;
 
-
-	{% include &quot;molecules-bar-separated-list&quot; with {&quot;classes&quot;: &quot;article-preview__tags&quot;, &quot;maxTags&quot;: 3} %}
+	{% if hideTags == false %}
+		{% include &quot;molecules-bar-separated-list&quot; with {&quot;classes&quot;: &quot;article-preview__tags&quot;, &quot;maxTags&quot;: 3} %}
+	{% endif %}
 &lt;/section&gt;
