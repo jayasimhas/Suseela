@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Glass.Mapper.Sc;
@@ -8,6 +9,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
+using Informa.Library.Utilities.References;
 
 namespace Informa.Web.ViewModels.Authors
 {
@@ -20,6 +22,7 @@ namespace Informa.Web.ViewModels.Authors
 		{
 			IAuthorIndexClient AuthorIndexClient { get; set; }
 			ISitecoreContext SitecoreContext { get; }
+            IItemReferences ItemReferences { get; }
 		}
 		public AuthorProfileViewModel(IDependencies dependencies)
 		{
@@ -65,7 +68,7 @@ namespace Informa.Web.ViewModels.Authors
 			get
 			{
 				return Author.Areas_Of_Expertises != null
-					? Author.Areas_Of_Expertises?.Cast<ITaxonomy_Item>().Select(i => ConvertToTaxonomyLink(i, Author)).ToArray()
+					? Author.Areas_Of_Expertises?.Cast<ITaxonomy_Item>().Select(i => ConvertToTaxonomyLink(i, Author, GetKeyName(i))).ToArray()
 					: new List<TaxonomyLinkViewModel>().ToArray();
 			}
 		}
@@ -78,7 +81,7 @@ namespace Informa.Web.ViewModels.Authors
 			get
 			{
 				return Author.Industry_Expertises != null
-					? Author.Industry_Expertises?.Cast<ITaxonomy_Item>().Select(i => ConvertToTaxonomyLink(i, Author)).ToArray()
+					? Author.Industry_Expertises?.Cast<ITaxonomy_Item>().Select(i => ConvertToTaxonomyLink(i, Author, "industries")).ToArray()
 					: new List<TaxonomyLinkViewModel>().ToArray();
 			}
 		}
@@ -97,12 +100,12 @@ namespace Informa.Web.ViewModels.Authors
 
 		public bool PersonWritesFor => WriteForExpertise.Any();
 
-		private TaxonomyLinkViewModel ConvertToTaxonomyLink(ITaxonomy_Item item, IGlassBase glassItem)
+		private TaxonomyLinkViewModel ConvertToTaxonomyLink(ITaxonomy_Item item, IGlassBase glassItem, string type)
 		{
 			return new TaxonomyLinkViewModel
 			{
 				LinkText = item.Item_Name,
-				LinkUrl = $"/search#?author={glassItem._Id.ToString("N")}&areas={HttpUtility.UrlEncode(item.Item_Name)}"
+				LinkUrl = $"/search#?author={glassItem._Id.ToString("N")}&{type}={HttpUtility.UrlEncode(item.Item_Name)}"
 			};
 		}
 		private TaxonomyLinkViewModel ConvertToTaxonomyLink(ISite_Root item, IGlassBase glassItem)
@@ -112,6 +115,25 @@ namespace Informa.Web.ViewModels.Authors
 				LinkText = item.Publication_Name,
 				LinkUrl = $"/search#?author={glassItem._Id.ToString("N")}&publication={HttpUtility.UrlEncode(item.Publication_Name)}"
 			};
+		}
+
+		private string GetKeyName(ITaxonomy_Item item){
+            
+            IGlassBase parent = item._Parent;
+            while (!parent._TemplateId.Equals(_dependencies.ItemReferences.FolderTemplate) || parent._Name.ToLower().Equals("content")) {
+                parent = parent._Parent;
+            }
+
+            if (parent._Id.Equals(_dependencies.ItemReferences.DeviceAreasTaxonomyFolder))
+                return "deviceareas";
+            else if (parent._Id.Equals(_dependencies.ItemReferences.TherapyAreasTaxonomyFolder))
+                return "areas";
+            else if (parent._Id.Equals(_dependencies.ItemReferences.SubjectsTaxonomyFolder))
+                return "subjects";
+            else if (parent._Id.Equals(_dependencies.ItemReferences.RegionsTaxonomyFolder))
+                return "regions";
+            else
+                return "value";
 		}
 	}
 

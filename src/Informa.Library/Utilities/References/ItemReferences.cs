@@ -15,7 +15,7 @@ namespace Informa.Library.Utilities.References
         
 		public Guid NlmConfiguration => new Guid("{B0C03A57-0C1E-4BC9-BE7A-5871695FD79B}");
 		public Guid NlmErrorDistributionList => new Guid("{54C6F361-9A73-453F-89E4-6230090C122A}");
-
+        
 		#region Pharma Globals
 
 		public Guid NlmCopyrightStatement => new Guid("{EE38E489-23F7-4637-A152-3FDC696FAACF}");
@@ -28,9 +28,11 @@ namespace Informa.Library.Utilities.References
 
         #region Taxonomy Folders
 
+        public Guid Folder => new Guid("{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}");
         public Guid SubjectsTaxonomyFolder => new Guid("{46D8B99F-4A19-4D67-A083-0EFE313154AC}");
 		public Guid RegionsTaxonomyFolder => new Guid("{5728D226-839C-44E3-B044-C88321A53421}");
 		public Guid TherapyAreasTaxonomyFolder => new Guid("{49A93890-E459-44F1-9453-A6F3FF0AF4C1}");
+        public Guid DeviceAreasTaxonomyFolder => new Guid("{3DA2C962-4C2C-4B08-91F9-D64BA1C314F5}");
 
 		#endregion
 
