@@ -11,48 +11,15 @@ using Jabberwocky.Core.Caching;
 
 namespace Informa.Library.DCD
 {
-    public interface ICompanyContentParser
+    public interface ICompanyContentAnalyzer
     {
-        CompanyContent ParseContent(string xmlContent, string recordNumber);
         string GetParentCompany(CompanyContent content);
         TreeNode<string> GetSubsidiaryTree(ParentsAndDivisions content);
     }
 
     [AutowireService]
-    public class CompanyContentParser : ICompanyContentParser
+    public class CompanyContentAnalyzer : ICompanyContentAnalyzer
     {
-        private readonly IDependencies _dependencies;
-        private readonly TimeSpan _timeSpan = new TimeSpan(0, 5, 0);
-
-        [AutowireService(IsAggregateService = true)]
-        public interface IDependencies
-        {
-            ICacheProvider CacheProvider { get; set; }
-        }
-
-        public CompanyContentParser(IDependencies dependencies)
-        {
-            _dependencies = dependencies;
-        }
-
-        public CompanyContent ParseContent(string xmlContent, string recordNumber)
-        {
-            return _dependencies.CacheProvider
-                .GetFromCache($"CompanyContentXmlParser:GetParsedConteny:{recordNumber}", _timeSpan,
-                    () => ParseContentImplementation(xmlContent));
-        }
-
-        private static CompanyContent ParseContentImplementation(string xmlContent)
-        {
-            if (!xmlContent.HasContent()) { return null; }
-
-            var serializer = new XmlSerializer(typeof(CompanyContent));
-            using (var xmlReader = new StringReader(xmlContent))
-            {
-                return serializer.Deserialize(xmlReader) as CompanyContent;
-            }
-        }
-
         public string GetParentCompany(CompanyContent content)
         {
             return content.ParentsAndDivisions.CompanyPaths.FirstOrDefault()?.Path;
