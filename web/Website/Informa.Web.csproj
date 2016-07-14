@@ -1350,7 +1350,7 @@
     <Content Include="Views\CompaniesAndDeals\SubsidiariesTree.cshtml" />
     <Content Include="Views\CompaniesAndDeals\CompanyLeaderboardAd.cshtml" />
     <Content Include="Views\CompaniesAndDeals\CompanyRectangularAd.cshtml" />
-    <Content Include="Views\CompaniesAndDeals\DealsandCompaniesSubscribe.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealsAndCompaniesSubscribe.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
