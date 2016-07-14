@@ -405,6 +405,7 @@
     <Compile Include="Purchase\User\IUserArticlePurchasesContext.cs" />
     <Compile Include="Purchase\User\UserArticlePurchaseItemsContext.cs" />
     <Compile Include="Purchase\User\UserArticlePurchasesContext.cs" />
+    <Compile Include="PXM\BodyContentProcessor.cs" />
     <Compile Include="Rss\FeedGenerators\BaseInformaFeedGenerator.cs" />
     <Compile Include="Rss\FeedGenerators\SearchFeedGenerator.cs" />
     <Compile Include="Rss\Interfaces\IRssFeedGeneration.cs" />
@@ -1099,6 +1100,7 @@
     <Compile Include="Utilities\StringUtils\WordUtil.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
     <Compile Include="Utilities\TokenMatcher\DCDTokenMatchers.cs" />
+    <Compile Include="Utilities\TokenMatcher\TokenToHtml.cs" />
     <Compile Include="Utilities\WebApi\Caching\ApiOutputCacheAdapter.cs" />
     <Compile Include="Utilities\WebApi\Filters\ArgumentsRequiredAttribute.cs" />
     <Compile Include="Utilities\WebApi\Filters\ValidateCsrfAttribute.cs" />
