@@ -311,20 +311,25 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.PrintStudio.Configuration">
-      <HintPath>..\..\lib\Sitecore\Sitecore.PrintStudio.Configuration.dll</HintPath>
+    <Reference Include="Sitecore.PrintStudio.Configuration, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.PrintStudio.DashBoardClient">
-      <HintPath>..\..\lib\Sitecore\Sitecore.PrintStudio.DashBoardClient.dll</HintPath>
+    <Reference Include="Sitecore.PrintStudio.DashBoardClient, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.DashBoardClient.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.PrintStudio.InDesign.Soap">
-      <HintPath>..\..\lib\Sitecore\Sitecore.PrintStudio.InDesign.Soap.dll</HintPath>
+    <Reference Include="Sitecore.PrintStudio.InDesign.Soap, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.InDesign.Soap.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.PrintStudio.InDesignConnectorService">
-      <HintPath>..\..\lib\Sitecore\Sitecore.PrintStudio.InDesignConnectorService.dll</HintPath>
+    <Reference Include="Sitecore.PrintStudio.InDesignConnectorService, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.InDesignConnectorService.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.PrintStudio.PublishingEngine">
-      <HintPath>..\..\lib\Sitecore\Sitecore.PrintStudio.PublishingEngine.dll</HintPath>
+    <Reference Include="Sitecore.PrintStudio.PublishingEngine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.PublishingEngine.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Services.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -603,6 +608,10 @@
     <Reference Include="WebGrease">
       <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="zxing, Version=1.0.4391.16826, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\zxing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

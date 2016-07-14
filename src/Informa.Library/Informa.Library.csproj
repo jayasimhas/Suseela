@@ -203,6 +203,10 @@
     <Reference Include="Sitecore.Mvc">
       <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.PrintStudio.PublishingEngine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.PublishingEngine.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Services.Core">
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Core.dll</HintPath>
     </Reference>
