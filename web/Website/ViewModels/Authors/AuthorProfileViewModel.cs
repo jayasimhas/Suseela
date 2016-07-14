@@ -102,7 +102,7 @@ namespace Informa.Web.ViewModels.Authors
 			return new TaxonomyLinkViewModel
 			{
 				LinkText = item.Item_Name,
-				LinkUrl = $"/search#?author={glassItem._Id.ToString("N")}&areas={item.Item_Name}"
+				LinkUrl = $"/search#?author={glassItem._Id.ToString("N")}&areas={HttpUtility.UrlEncode(item.Item_Name)}"
 			};
 		}
 		private TaxonomyLinkViewModel ConvertToTaxonomyLink(ISite_Root item, IGlassBase glassItem)
@@ -110,7 +110,7 @@ namespace Informa.Web.ViewModels.Authors
 			return new TaxonomyLinkViewModel
 			{
 				LinkText = item.Publication_Name,
-				LinkUrl = $"/search#?author={glassItem._Id.ToString("N")}&publication={item.Publication_Name}"
+				LinkUrl = $"/search#?author={glassItem._Id.ToString("N")}&publication={HttpUtility.UrlEncode(item.Publication_Name)}"
 			};
 		}
 	}
