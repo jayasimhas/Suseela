@@ -2,8 +2,8 @@
 version: 1
 id: {BCA21C85-C15B-450A-B1F1-642381FCB103}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Company/Strategic Transactions
-parent: {E7FF597C-2713-4692-AC86-2652394E45E5}
+path: /sitecore/layout/Renderings/User Defined/DCD/Strategic Transactions
+parent: {16ABC9F4-FFB9-48EB-959A-1474AD8E7190}
 name: Strategic Transactions
 master: {00000000-0000-0000-0000-000000000000}
 template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
@@ -19,7 +19,7 @@ content-length: 53
 ----version----
 language: en
 version: 1
-revision: 70668746-b1f7-44eb-b2c6-b162750ed865
+revision: 4d2a113a-71e3-46e5-a370-145aa00aa7ca
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-70668746-b1f7-44eb-b2c6-b162750ed865
+4d2a113a-71e3-46e5-a370-145aa00aa7ca
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160712T191759Z
+20160714T143604Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

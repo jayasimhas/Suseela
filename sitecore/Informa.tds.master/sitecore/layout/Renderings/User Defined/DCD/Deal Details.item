@@ -13,13 +13,13 @@ templatekey: View rendering
 field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
 name: Path
 key: path
-content-length: 36
+content-length: 43
 
-/Views/CompaniesAndDeals/Deal.cshtml
+/Views/CompaniesAndDeals/DealDetails.cshtml
 ----version----
 language: en
 version: 1
-revision: 7d97d56b-f1f6-40a8-a67e-bb1829bc41bf
+revision: d047fead-46f9-4797-923b-3dfad09d955e
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-7d97d56b-f1f6-40a8-a67e-bb1829bc41bf
+d047fead-46f9-4797-923b-3dfad09d955e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160713T142750Z
+20160714T144618Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

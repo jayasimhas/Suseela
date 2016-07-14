@@ -776,6 +776,7 @@
     <Compile Include="ViewModels\Articles\ArticleMobileMediaComponentModel.cs" />
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\DealViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompanyViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\StratrgicTransactionViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorProfileViewModel.cs" />
@@ -1349,6 +1350,7 @@
     <Content Include="Views\CompaniesAndDeals\SubsidiariesTree.cshtml" />
     <Content Include="Views\CompaniesAndDeals\CompanyLeaderboardAd.cshtml" />
     <Content Include="Views\CompaniesAndDeals\CompanyRectangularAd.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealDetails.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

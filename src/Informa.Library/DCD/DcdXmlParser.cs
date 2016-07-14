@@ -41,7 +41,7 @@ namespace Informa.Library.DCD
         {
             if (!xmlContent.HasContent()) { return default(T); }
 
-            var serializer = new XmlSerializer(typeof(CompanyContent));
+            var serializer = new XmlSerializer(typeof(T));
             using (var xmlReader = new StringReader(xmlContent))
             {
                 return serializer.Deserialize(xmlReader) as T;

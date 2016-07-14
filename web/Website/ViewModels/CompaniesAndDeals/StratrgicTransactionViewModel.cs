@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using Glass.Mapper.Sc;
-using Glass.Mapper.Sc.Fields;
-using Informa.Library.Article.Companies;
-using Informa.Library.Globalization;
+﻿using Glass.Mapper.Sc;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
