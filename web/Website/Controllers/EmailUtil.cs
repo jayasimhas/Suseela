@@ -49,6 +49,7 @@ namespace Informa.Web.Controllers
             if (articleStruct.Publication == Guid.NewGuid()) return;
 
             var siteConfigItem = _service.GetItem<ISite_Config>(articleStruct.Publication);
+
             var workflowNotifEmailTitle = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_Nodes.IText_Node>(ItemReferences.Instance.EmailTitleForWorkflowNotifications);
             var workflowNotifFromEmail = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_Nodes.IText_Node>(ItemReferences.Instance.FromEmailAddressForWorkflowNotifications);
 
