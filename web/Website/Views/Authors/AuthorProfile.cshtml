@@ -57,7 +57,7 @@
             {
                 <li>
                     <div class="bar-separated-link-list bar-separated-link-list--wrap">
-                        <span class="bar-separated-link-list__label">Areas of Expertise: </span>
+                        <span class="bar-separated-link-list__label">@Model.AreasOfExpertiseLabel: </span>
 
                         @foreach (var item in Model.AreasOfExpertise)
                         {
@@ -71,7 +71,7 @@
             {
                 <li>
                     <div class="bar-separated-link-list bar-separated-link-list--wrap">
-                        <span class="bar-separated-link-list__label">Industry Expertise: </span>
+                        <span class="bar-separated-link-list__label">@Model.IndustryExpertiseLabel: </span>
 
                         @foreach (var item in Model.IndustryExpertise)
                         {
@@ -85,7 +85,7 @@
             {
                 <li>
                     <div class="bar-separated-link-list bar-separated-link-list--wrap">
-                        <span class="bar-separated-link-list__label">Writes for: </span>
+                        <span class="bar-separated-link-list__label">@Model.WritesForLabel: </span>
                         @foreach (var item in Model.WriteForExpertise)
                         {
                             <a class="click-utag"

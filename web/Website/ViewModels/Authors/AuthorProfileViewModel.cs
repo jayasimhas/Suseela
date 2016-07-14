@@ -10,6 +10,7 @@ using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 using Informa.Library.Utilities.References;
+using Informa.Library.Globalization;
 
 namespace Informa.Web.ViewModels.Authors
 {
@@ -23,7 +24,8 @@ namespace Informa.Web.ViewModels.Authors
 			IAuthorIndexClient AuthorIndexClient { get; set; }
 			ISitecoreContext SitecoreContext { get; }
             IItemReferences ItemReferences { get; }
-		}
+            ITextTranslator TextTranslator { get; }
+        }
 		public AuthorProfileViewModel(IDependencies dependencies)
 		{
 			_dependencies = dependencies;
@@ -137,7 +139,11 @@ namespace Informa.Web.ViewModels.Authors
             else
                 return "value";
 		}
-	}
+
+        public string AreasOfExpertiseLabel => _dependencies.TextTranslator.Translate("Author.AreasOfExpertise");
+        public string IndustryExpertiseLabel => _dependencies.TextTranslator.Translate("Author.IndustryExpertise");
+        public string WritesForLabel => _dependencies.TextTranslator.Translate("Author.WritesFor");
+    }
 
 	public class TaxonomyLinkViewModel
 	{
