@@ -315,6 +315,7 @@
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
     <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
     <Compile Include="Article\Search\ArticleSearchResults.cs" />
+    <Compile Include="Article\Search\IArticleCompanyFilter.cs" />
     <Compile Include="Article\Search\IArticleAuthorFilter.cs" />
     <Compile Include="Article\Search\IArticlePublicationFilter.cs" />
     <Compile Include="Article\Search\IArticleSearch.cs" />
@@ -427,6 +428,7 @@
     <Compile Include="Search\Formatting\SolrQueryFormatter.cs" />
     <Compile Include="Search\InformaApiSearchRequest.cs" />
     <Compile Include="Search\PredicateBuilders\InformaQueryPredicateBuilder.cs" />
+    <Compile Include="Search\Results\IArticleCompanyResults.cs" />
     <Compile Include="Search\Results\IArticleAuthorResults.cs" />
     <Compile Include="Search\Results\IArticlePublicationResults.cs" />
     <Compile Include="Search\Results\QueryResults.cs" />
