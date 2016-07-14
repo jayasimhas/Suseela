@@ -79,7 +79,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
                 return _divisionOfText;
             }
         }
-
+        public string WebsiteHref => ("http://" + Content.ContactInfo.Website).Replace("http://http", "http");
         public string RegionAddressLine
         {
             get
