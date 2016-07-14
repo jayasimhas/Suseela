@@ -67,6 +67,13 @@ namespace Informa.Library.Utilities.References
 
 
 
-		#endregion
-	}
+        #endregion
+
+        #region Restriction Access
+
+        public Guid FreeWithEntitlement => new Guid("{AFDFD507-A124-4F37-86B9-6599C0E44F5D}");
+        public Guid FreeWithRegistration => new Guid("{1A8FB076-2CBF-4CD7-9D9C-92E2B4296D12}");
+
+        #endregion Restriction Access
+    }
 }

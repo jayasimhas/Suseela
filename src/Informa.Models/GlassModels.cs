@@ -912,14 +912,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					[SitecoreField(IGeneral_Content_PageConstants.JavascriptFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Javascript  {get; set;}
 								/// <summary>
-					/// The Restrict To Registered Users field.
+					/// The Restrict Access field.
 					/// <para></para>
-					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field Type: Droplink</para>		
 					/// <para>Field ID: 32294ac3-a931-4fe6-abc5-23b466f9b3b6</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IGeneral_Content_PageConstants.Restrict_To_Registered_UsersFieldName, Setting = SitecoreFieldSettings.InferType)]
-					bool Restrict_To_Registered_Users  {get; set;}
+					[SitecoreField(IGeneral_Content_PageConstants.Restrict_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Restrict_Access  {get; set;}
 								/// <summary>
 					/// The Section Title field.
 					/// <para></para>
@@ -929,6 +929,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// </summary>
 					[SitecoreField(IGeneral_Content_PageConstants.Section_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Section_Title  {get; set;}
+								/// <summary>
+					/// The Show Summary When Entitled field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 17b77805-69a4-4e86-ae59-c495937b6752</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IGeneral_Content_PageConstants.Show_Summary_When_EntitledFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Show_Summary_When_Entitled  {get; set;}
 								/// <summary>
 					/// The Subnavigation Items field.
 					/// <para></para>
@@ -987,14 +996,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						[SitecoreField(IGeneral_Content_PageConstants.JavascriptFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Javascript  {get; set;}
 										/// <summary>
-						/// The Restrict To Registered Users field.
+						/// The Restrict Access field.
 						/// <para></para>
-						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field Type: Droplink</para>		
 						/// <para>Field ID: 32294ac3-a931-4fe6-abc5-23b466f9b3b6</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
-						[SitecoreField(IGeneral_Content_PageConstants.Restrict_To_Registered_UsersFieldName, Setting = SitecoreFieldSettings.InferType)]
-						bool Restrict_To_Registered_Users  {get; set;}
+						[SitecoreField(IGeneral_Content_PageConstants.Restrict_AccessFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Restrict_Access  {get; set;}
 										/// <summary>
 						/// The Section Title field.
 						/// <para></para>
@@ -1004,6 +1013,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 						/// </summary>
 						[SitecoreField(IGeneral_Content_PageConstants.Section_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Section_Title  {get; set;}
+										/// <summary>
+						/// The Show Summary When Entitled field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: 17b77805-69a4-4e86-ae59-c495937b6752</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IGeneral_Content_PageConstants.Show_Summary_When_EntitledFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Show_Summary_When_Entitled  {get; set;}
 										/// <summary>
 						/// The Subnavigation Items field.
 						/// <para></para>
@@ -1050,13 +1068,18 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 
 						
 					
-			public static readonly ID Restrict_To_Registered_UsersFieldId = new ID("32294ac3-a931-4fe6-abc5-23b466f9b3b6");
-			public const string Restrict_To_Registered_UsersFieldName = "Restrict To Registered Users";
+			public static readonly ID Restrict_AccessFieldId = new ID("32294ac3-a931-4fe6-abc5-23b466f9b3b6");
+			public const string Restrict_AccessFieldName = "Restrict Access";
 
 						
 					
 			public static readonly ID Section_TitleFieldId = new ID("e3a3e51e-a8f0-4ee1-986f-2562f9d279de");
 			public const string Section_TitleFieldName = "Section Title";
+
+						
+					
+			public static readonly ID Show_Summary_When_EntitledFieldId = new ID("17b77805-69a4-4e86-ae59-c495937b6752");
+			public const string Show_Summary_When_EntitledFieldName = "Show Summary When Entitled";
 
 						
 					

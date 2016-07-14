@@ -47,7 +47,9 @@
                 }
                 @if (Model.IsRestricted || Sitecore.Context.PageMode.IsExperienceEditor)
                 {
-                    @Html.Sitecore().Placeholder("restricted-content")
+                    <div>
+                        @Html.Sitecore().Placeholder("restricted-content")
+                    </div>
                 }
             </div>
 
