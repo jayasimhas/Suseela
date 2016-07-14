@@ -120,6 +120,7 @@
   <ItemGroup>
     <Compile Include="DataImporter\InformaPostProcess_Tests.cs" />
     <Compile Include="Library\Advertisement_Tests\AdUrlBuilder_Tests.cs" />
+    <Compile Include="Library\CustomSitecore\Pipelines\HttpRequest\ArticleItemResolver_Tests.cs" />
     <Compile Include="Library\Mail_Tests\ExactTarget_Tests\CampaignQueryBuilder_Tests.cs" />
     <Compile Include="Library\Mail_Tests\ExactTarget_Tests\ExactTargetClient_Tests.cs" />
     <Compile Include="Library\Services\NlmExport\NlmExportServiceTests.cs" />

@@ -22,7 +22,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 		protected readonly IArticleSearch ArticleSearcher;
 		protected readonly ILogWrapper Logger;
 		protected readonly ISitecoreContext SitecoreContext;
-	    protected readonly IGlobalSitecoreService GlobalService;
+		protected readonly IGlobalSitecoreService GlobalService;
 
 		private readonly string[] excludePaths =
 		{
@@ -38,18 +38,17 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 			IArticleSearch searcher,
 			ISitecoreContext context,
 			ILogWrapper logger,
-            IGlobalSitecoreService globalService)
+			IGlobalSitecoreService globalService)
 		{
 			ArticleSearcher = searcher;
 			SitecoreContext = context;
 			Logger = logger;
-		    GlobalService = globalService;
-
+			GlobalService = globalService;
 		}
 
 		public void Process(HttpRequestArgs args)
 		{
-			Logger.SitecoreInfo($"LegacyRedirectResolver started");
+			Logger.SitecoreDebug($"LegacyRedirectResolver started");
 			Assert.ArgumentNotNull(args, "args");
 
 			if ((Context.Item != null)
@@ -59,55 +58,55 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
 			try
 			{
-				// Does the url end in a 6 digit number?
-				var r = new Regex(@"^.*-(\d{6})$");
+				// Does the url end in a 3-8 digit number?
+				var r = new Regex(@"^.*-(\d{3,8})$");
 				var match = r.Match(args.Url.ItemPath);
 
 				var results = !match.Success || match.Groups.Count < 2
 					? GetResultsByPath(args.Url.FilePath)
 					: GetResultsByLegacyID(match.Groups[1].Value);
 
-			    var article = results?.Articles?.FirstOrDefault();
-			    if (article == null)
-			    {
-			        Logger.SitecoreInfo("LegacyRedirectResolver article not found");
-			        return;
-			    }
-			    else
-			    {
-			        Logger.SitecoreInfo($"LegacyRedirectResolver article found: {article._Path}"); 
-			    }
+				var article = results?.Articles?.FirstOrDefault();
+				if (article == null)
+				{
+					Logger.SitecoreDebug("LegacyRedirectResolver article not found");
+					return;
+				}
+				else
+				{
+					Logger.SitecoreDebug($"LegacyRedirectResolver article found: {article._Path}");
+				}
 
 				var newPath = ArticleSearch.GetArticleCustomPath(article);
-				Logger.SitecoreInfo($"LegacyRedirectResolver article path: {newPath}");
+				Logger.SitecoreDebug($"LegacyRedirectResolver article path: {newPath}");
 
 				var siteRoot = GlobalService.GetSiteRootAncestor(article._Id);
-			    if (siteRoot == null)
-			    {
-			        Logger.SitecoreInfo($"LegacyRedirectResolver didn't find site root for: {article._Path}");
-			        return;
-			    }
-			    else
-			    {
-                    Logger.SitecoreInfo($"LegacyRedirectResolver did find site root for: {article._Path}");
-                }
+				if (siteRoot == null)
+				{
+					Logger.SitecoreDebug($"LegacyRedirectResolver didn't find site root for: {article._Path}");
+					return;
+				}
+				else
+				{
+					Logger.SitecoreDebug($"LegacyRedirectResolver did find site root for: {article._Path}");
+				}
 
 
-                var siteInfo = Factory.GetSiteInfoList().FirstOrDefault(a => a.RootPath.Equals(siteRoot._Path));
-			    if (siteInfo == null)
-			    {
-			        Logger.SitecoreInfo($"LegacyRedirectResolver couldn't find site info match for: {siteRoot._Path}");
-			        return;
-			    }
-			    else
-			    {
-                    Logger.SitecoreInfo($"LegacyRedirectResolver found site info match: {siteInfo.Name}");
-                }
+				var siteInfo = Factory.GetSiteInfoList().FirstOrDefault(a => a.RootPath.Equals(siteRoot._Path));
+				if (siteInfo == null)
+				{
+					Logger.SitecoreDebug($"LegacyRedirectResolver couldn't find site info match for: {siteRoot._Path}");
+					return;
+				}
+				else
+				{
+					Logger.SitecoreDebug($"LegacyRedirectResolver found site info match: {siteInfo.Name}");
+				}
 
-			    var host = siteInfo.TargetHostName;
-                var protocol = Settings.GetSetting("Site.Protocol", "https");
+				var host = siteInfo.HostName;
+				var protocol = Settings.GetSetting("Site.Protocol", "https");
 
-				Logger.SitecoreInfo($"LegacyRedirectResolver article url: {protocol}://{host}{newPath}");
+				Logger.SitecoreDebug($"LegacyRedirectResolver article url: {protocol}://{host}{newPath}");
 
 				args.Context.Response.Status = "301 Moved Permanently";
 				args.Context.Response.AddHeader("Location", $"{protocol}://{host}{newPath}");
@@ -132,7 +131,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 			var path = $"{basePath}{filePath}".Replace("-", " ");
 			var results = ArticleSearcher.GetLegacyArticleUrl(path);
 
-			Logger.SitecoreInfo($"LegacyRedirectResolver path request: {path}");
+			Logger.SitecoreDebug($"LegacyRedirectResolver path request: {path}");
 
 			return results;
 		}
@@ -146,7 +145,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
 			var results = ArticleSearcher.Search(filter);
 
-			Logger.SitecoreInfo($"LegacyRedirectResolver pattern request: {legacyID}");
+			Logger.SitecoreDebug($"LegacyRedirectResolver pattern request: {legacyID}");
 
 			return results;
 		}

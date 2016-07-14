@@ -6,6 +6,7 @@ namespace Informa.Library.Utilities.References
 	public static class Constants
 	{
 		public const string ArticleNumberLength = "000000";
+		public const string CoreDb = "core";
 		public const string MasterDb = "master";
 		public const string WebDb = "web";
 
