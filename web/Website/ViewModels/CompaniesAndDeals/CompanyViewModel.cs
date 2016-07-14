@@ -23,7 +23,8 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         {
             IDCDReader DcdReader { get; }
             IHttpContextProvider HttpContextProvider { get; }
-            ICompanyContentParser CompanyContentParser { get; }
+            ICompanyContentAnalyzer CompanyContentAnalyzer { get; }
+            IDcdXmlParser DcdXmlParser { get; set; }
             ITextTranslator TextTranslator { get; }
         }
 
@@ -37,7 +38,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             Company = _dependencies.DcdReader.GetCompanyByRecordNumber(RecordNumber);
             if (Company == null) RedirectTo404();
 
-            Content = _dependencies.CompanyContentParser.ParseContent(Company.Content, RecordNumber);
+            Content = _dependencies.DcdXmlParser.ParseContent<CompanyContent>(Company.Content, RecordNumber);
             if (Content == null) RedirectTo404();
         }
 
@@ -71,7 +72,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             {
                 if (!_divisionOfText.HasContent())
                 {
-                    var parent = _dependencies.CompanyContentParser.GetParentCompany(Content);
+                    var parent = _dependencies.CompanyContentAnalyzer.GetParentCompany(Content);
                     var text = _dependencies.TextTranslator.Translate("DCD.DivisionOf");
                     _divisionOfText = parent.HasContent() ? $"{text} {parent}" : null;
                 }
@@ -93,7 +94,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         public Coding[] TherapyAreas => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("theracat"))?.Codings;
         public string[] LocationPath => Content.CompanyInfo.LocationPath.Split('/');
         public TreeNode<string> SubsidiariesTree
-            => _dependencies.CompanyContentParser.GetSubsidiaryTree(Content.ParentsAndDivisions);
+            => _dependencies.CompanyContentAnalyzer.GetSubsidiaryTree(Content.ParentsAndDivisions);
 
         public string CompanyInformationHeader => _dependencies.TextTranslator.Translate("DCD.CompanyInformation");
         public string IndustryHeader => _dependencies.TextTranslator.Translate("DCD.Industry");
