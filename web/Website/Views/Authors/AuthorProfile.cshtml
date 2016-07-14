@@ -1,7 +1,10 @@
 @model Informa.Web.ViewModels.Authors.AuthorProfileViewModel
 
 <div class="profile">
-    <script type="text/javascript"> (function () { document.title = '@(Model.FirstName + " " + Model.LastName)'; })(); </script>
+    <script type="text/javascript">
+        (function () { document.title = '@Model.FullName'; })(); 
+        analytics_data.author_profile = '@Model.FullName';
+    </script>
     <h1 class="profile__name">@(Model.FirstName + " " + Model.LastName)</h1>
     <div class="l-left-rail">
         <h2 class="profile__title">@(Model.Credentials)</h2>

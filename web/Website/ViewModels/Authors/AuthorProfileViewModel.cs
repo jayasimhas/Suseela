@@ -44,7 +44,9 @@ namespace Informa.Web.ViewModels.Authors
 
 		public string FirstName => Author.First_Name ?? string.Empty;
 		public string LastName => Author.Last_Name ?? string.Empty;
-		public string Credentials => Author.Credentials ?? string.Empty;
+        public string FullName => $"{FirstName} {LastName}";
+
+        public string Credentials => Author.Credentials ?? string.Empty;
 		public string Location => Author.Location ?? string.Empty;
 
 		public bool HasTwitter => Author.Twitter?.Length > 0;
