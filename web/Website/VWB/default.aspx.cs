@@ -104,7 +104,12 @@ namespace Elsevier.Web.VWB
 
 		private static int? GetMaxNumResults()
 		{
-
+            int count = 250;
+            try
+            {
+                count = int.Parse(HttpContext.Current.Request.QueryString["max"]);
+            }
+            catch { }
 			//TextNodeItem maxResults = ItemReference.MaxResultsPerSearch.InnerItem;
 			//if (maxResults != null)
 			//{
@@ -117,7 +122,7 @@ namespace Elsevier.Web.VWB
 			//		return 60;
 			//	}
 			//}
-			return 60;
+			return count;
 		}
 
 		private void UpdateFields()
