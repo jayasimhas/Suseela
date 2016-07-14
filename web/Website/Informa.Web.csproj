@@ -759,6 +759,7 @@
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
     <Compile Include="Controllers\WorkFlowUtil.cs" />
     <Compile Include="CustomMvc\CustomHtmlNodeParser.cs" />
+    <Compile Include="CustomMvc\Parsers\CustomImageParser.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomConvertToXml.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
