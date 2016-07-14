@@ -8,10 +8,11 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels.CompaniesAndDeals
 {
-    public class StratrgicTransactionViewModel : GlassViewModel<IArticle>
+    public class StratrgicTransactionViewModel : GlassViewModel<IGlassBase>
     {
         [AutowireService(true)]
         public interface IDependencies
@@ -27,7 +28,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             if (strategicTransactionComponent.Logo != null)
             {
                 Logo = strategicTransactionComponent.Logo.Src;
-            }            
+            }
             Body = strategicTransactionComponent.Body;
             SubscribeButtonText = strategicTransactionComponent.Subscribe_Button_Text;
             SubscribeButtonURL = strategicTransactionComponent.Subscribe_Button_URL != null
