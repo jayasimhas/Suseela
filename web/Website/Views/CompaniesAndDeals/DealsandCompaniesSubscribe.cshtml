@@ -1,0 +1,26 @@
+﻿@model Informa.Web.ViewModels.CompaniesAndDeals.DealsAndCompaniesSubscribeViewModel
+
+@if (Model != null)
+{
+    <div class="article-call-to-action">
+        <div class="article-call-to-action--sign-in-up">
+            <div class="article-call-to-action__column">
+                <span class="article-call-to-action__title">@(Model.PurchaseHeadline)</span>
+                <span class="article-call-to-action__subtitle">@(Model.PurchaseSubHeading)</span>
+                <button onclick="location.href='@(Model.PurchaseButtonLink)'" class="button--filled">
+                    @(Model.PurchaseButtonText)
+                </button>
+            </div>
+            <div class="article-call-to-action__column">
+                <span class="article-call-to-action__title">@(Model.SubscriberHeadline)</span>
+                <span class="article-call-to-action__subtitle">@(Model.SubscriberSubHeading)</span>
+                <button onclick="location.href='@(Model.SubscriberButtonLink)'" class="button--filled">
+                    @(Model.SubscriberButtonText)
+                </button>
+                <hr />
+                <span class="article-call-to-action__subtitle">@(Model.ContactHeadline)</span>
+                <p>@(Model.ContactInfo)</p>
+            </div>
+        </div>
+    </div>
+}
