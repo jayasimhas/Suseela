@@ -650,6 +650,7 @@
     <Compile Include="User\Newsletter\ISitesNewsletterTypes.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptIn.cs" />
+    <Compile Include="User\Newsletter\PublicationNewsletterOptInModel.cs" />
     <Compile Include="User\Newsletter\PublicationsNewsletterUserOptInContext.cs" />
     <Compile Include="User\Newsletter\SetByTypeNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\SetPublicationsNewsletterUserOptIns.cs" />
