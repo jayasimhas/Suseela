@@ -8,9 +8,10 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Library.Services.AccountManagement {
     public interface IAccountManagementService {
-        bool IsRestricted(I___BasePage page);
-        bool IsRestrictedByRegistration(IGeneral_Content_Page page);
-        bool IsRestrictedByEntitlement(IGeneral_Content_Page page);
-        bool IsEntitled(IGeneral_Content_Page page);
+        bool IsUserRestricted(I___BasePage page);
+        bool IsPageRestrictionSet(IGeneral_Content_Page page);
+        bool IsUserRestrictedByRegistration(IGeneral_Content_Page page);
+        bool IsUserRestrictedByEntitlement(IGeneral_Content_Page page);
+        bool IsUserEntitled(IGeneral_Content_Page page);
     }
 }

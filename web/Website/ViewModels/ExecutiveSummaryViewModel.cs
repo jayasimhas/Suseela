@@ -27,7 +27,6 @@ namespace Informa.Web.ViewModels {
 
         public string ExecutiveSummary => TextTranslator.Translate("SharedContent.ExecutiveSummary");
 
-        public bool ShowSummary => AccountService.IsRestricted(GlassModel) || 
-            (GlassModel.Restrict_Access.Equals(ItemReferences.FreeWithEntitlement) && GlassModel.Show_Summary_When_Entitled && AccountService.IsEntitled(GlassModel));
+        public bool ShowSummary => AccountService.IsUserRestricted(GlassModel) || (AccountService.IsPageRestrictionSet(GlassModel) && GlassModel.Show_Summary_When_Entitled);
     }
 }
