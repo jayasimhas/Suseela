@@ -15,7 +15,7 @@
 
     <div class="generic-content__dateline">
         @* DealDate: Date of deal in MMM YYYY format (eg. Jul 2016)  *@
-        @(Model.Content.DealInfo.PublishedDate.ToDate().ToString("MM YYYY"))
+        @(Model.Content.DealInfo.PublishedDate.ToDate().ToString("MMM yyyy"))
     </div>
     <h5>@Model.DealsSummaryText</h5>
     <div>
