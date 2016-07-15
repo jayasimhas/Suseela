@@ -30,4 +30,17 @@
 			line-height: 1.75rem;
 		}
 	}
+
+	h6, ul, ul li {
+		padding-bottom: .75rem;
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	hr {
+		clear: both;
+		margin: 2rem 0;
+	}
 }
