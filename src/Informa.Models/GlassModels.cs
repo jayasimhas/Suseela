@@ -19130,6 +19130,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Company_Leaderboard_Author_Ad_ZoneFieldId = new ID("b0b01376-d608-4a95-a402-7e6a5b6f31ba");
+			public const string Company_Leaderboard_Author_Ad_ZoneFieldName = "Company Leaderboard Author Ad Zone";
+
+						
+					
+			public static readonly ID Company_Leaderboard_Author_Slot_IDFieldId = new ID("ec5a4404-140e-43dd-8846-3c8df2c2c6f4");
+			public const string Company_Leaderboard_Author_Slot_IDFieldName = "Company Leaderboard Author Slot ID";
+
+						
+					
+			public static readonly ID Company_Rectangular_Ad_ZoneFieldId = new ID("821541d4-f4f1-447f-85eb-2c7e59ea12d3");
+			public const string Company_Rectangular_Ad_ZoneFieldName = "Company Rectangular Ad Zone";
+
+						
+					
+			public static readonly ID Company_Rectangular_Slot_IDFieldId = new ID("9cabd426-9102-406f-82a8-592cf1d42362");
+			public const string Company_Rectangular_Slot_IDFieldName = "Company Rectangular Slot ID";
+
+						
+					
 			public static readonly ID Global_Article_Ad_ZoneFieldId = new ID("58330274-e29e-4fb9-802b-b7a508d15075");
 			public const string Global_Article_Ad_ZoneFieldName = "Global Article Ad Zone";
 
