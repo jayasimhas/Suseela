@@ -1,18 +1,3 @@
-.deal {
-	h6, ul, ul li {
-		padding-bottom: .75rem;
-
-		&:last-child {
-			padding-bottom: 0;
-		}
-	}
-
-	hr {
-		clear: both;
-		margin: 2rem 0;
-	}
-}
-
 /* This may be reusable, break it out */
 .deal-sponsor {
 	@include textMix('Roboto', 1.5rem, 300);
@@ -23,6 +8,8 @@
 	img {
 		display: inline-block;
 		margin-left: 0.5rem;
+		max-height: 2rem;
 		vertical-align: middle;
+		width: auto;
 	}
 }
