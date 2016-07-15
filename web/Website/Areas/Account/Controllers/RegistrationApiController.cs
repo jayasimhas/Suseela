@@ -128,18 +128,18 @@ namespace Informa.Web.Areas.Account.Controllers
                 return Ok(new
                 {
                     success = false,
-                    reasons = "GeneralErrorText"
+                    reasons = "LoginFailed"
                 });
 
             var updateResult = AccountInfo.UpdateContactInfo(
                 userContext.User, form.FirstName, form.LastName, string.Empty, string.Empty, string.Empty, form.Country, form.Address1, form.Address2,
                 form.City, form.PostalCode, form.State, form.Country, form.Address1, form.Address2, form.City, form.PostalCode, form.State,
-                string.Empty, string.Empty, string.Empty, form.Phone, string.Empty, form.Company, string.Empty, string.Empty, string.Empty);
+                string.Empty, string.Empty, string.Empty, form.Phone, string.Empty, form.Company, string.Empty, string.Empty, form.JobTitle);
             if (!updateResult.Success)
                 return Ok(new
                 {
                     success = false,
-                    reasons = "GeneralErrorText"
+                    reasons = "AccountUpdatedFailed"
                 });
             
             var userSubsContext = System.Web.Mvc.DependencyResolver.Current.GetService(typeof(IUserSubscriptionsContext)) as IUserSubscriptionsContext;
@@ -148,12 +148,13 @@ namespace Informa.Web.Areas.Account.Controllers
                 return Ok(new 
                 {
                     success = false,
-                    reasons = "GeneralErrorText"
+                    reasons = "CreateOrderFailed"
                 });
             
             return Ok(new {
                 success = true,
                 reasons = string.Empty,
+                registration_type = "Free Trial"
             });
         }
 
