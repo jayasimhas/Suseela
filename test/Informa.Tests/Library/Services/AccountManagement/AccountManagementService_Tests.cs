@@ -38,7 +38,7 @@ namespace Informa.Tests.Library.Services.AccountManagement
         {
             GeneralPage.Restrict_Access = ItemReferences.FreeWithEntitlement;
             
-            bool b = AccountManagementService.IsRestricted(GeneralPage);
+            bool b = AccountManagementService.IsUserRestricted(GeneralPage);
             
             Assert.IsTrue(b);
         }
@@ -48,7 +48,7 @@ namespace Informa.Tests.Library.Services.AccountManagement
         {
             GeneralPage.Restrict_Access = ItemReferences.FreeWithRegistration;
             
-            bool b = AccountManagementService.IsRestricted(GeneralPage);
+            bool b = AccountManagementService.IsUserRestricted(GeneralPage);
 
             Assert.IsTrue(b);
         }
@@ -56,7 +56,7 @@ namespace Informa.Tests.Library.Services.AccountManagement
         [Test]
         public void NonGeneralPage_Test()
         {
-            bool b = AccountManagementService.IsRestricted(BasePage);
+            bool b = AccountManagementService.IsUserRestricted(BasePage);
 
             Assert.IsFalse(b);
         }

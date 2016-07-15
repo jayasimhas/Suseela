@@ -34,29 +34,33 @@ namespace Informa.Library.Services.AccountManagement {
             SiteRootsContext = siteRootsContext;
         }
 
-        public bool IsRestricted(I___BasePage page)
+        public bool IsUserRestricted(I___BasePage page)
         {
             bool isGeneralContentPage = page is IGeneral_Content_Page;
             if (!isGeneralContentPage)
                 return false;
 
             IGeneral_Content_Page gPage = (IGeneral_Content_Page)page;
-            return (IsRestrictedByRegistration(gPage) || IsRestrictedByEntitlement(gPage))
+            return (IsUserRestrictedByRegistration(gPage) || IsUserRestrictedByEntitlement(gPage))
                 ? true
                 : false;
         }
 
-        public bool IsRestrictedByRegistration(IGeneral_Content_Page page) {
+        public bool IsPageRestrictionSet(IGeneral_Content_Page page) {
+            return (page.Restrict_Access.Equals(ItemReferences.FreeWithRegistration) || page.Restrict_Access.Equals(ItemReferences.FreeWithEntitlement));
+        }
+
+        public bool IsUserRestrictedByRegistration(IGeneral_Content_Page page) {
             bool isRestricted = page.Restrict_Access.Equals(ItemReferences.FreeWithRegistration);
             return (isRestricted && !AuthenticatedUserContext.IsAuthenticated);
         }
 
-        public bool IsRestrictedByEntitlement(IGeneral_Content_Page page) {
+        public bool IsUserRestrictedByEntitlement(IGeneral_Content_Page page) {
             bool isRestricted = ((IGeneral_Content_Page)page).Restrict_Access.Equals(ItemReferences.FreeWithEntitlement);            
-            return (isRestricted && !IsEntitled(page));
+            return (isRestricted && !IsUserEntitled(page));
         }
 
-        public bool IsEntitled(IGeneral_Content_Page page) {
+        public bool IsUserEntitled(IGeneral_Content_Page page) {
             var siteRoot = SiteRootsContext.SiteRoots.FirstOrDefault(sr => page._Path.StartsWith(sr._Path));
             if (siteRoot == null)
                 return false;

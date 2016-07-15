@@ -6,16 +6,12 @@ using Informa.Library.Utilities.WebApi.Filters;
 using Informa.Web.Areas.Account.Models.User.Registration;
 using System.Collections.Generic;
 using System.Web.Http;
-using Informa.Library.User.Authentication.Web;
 using System.Linq;
-using Glass.Mapper.Sc.IoC;
 using Informa.Library.Company;
-using Informa.Library.Subscription;
 using Informa.Library.Subscription.User;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Orders;
 using Informa.Library.User.Profile;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Action;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
