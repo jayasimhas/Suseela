@@ -49,6 +49,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         public string RecordNumber { get; set; }
         public Deal Deal { get; set; }
         public DealContent Content { get; set; }
+        public string DealsSummaryText =>_dependencies.TextTranslator.Translate("DCD.Summary");
 
         public string BroughtToYouByText => _dependencies.TextTranslator.Translate("DCD.BroughToYouBy");
 
