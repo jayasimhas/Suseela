@@ -94,11 +94,7 @@ namespace Informa.Web.ViewModels
             if (IsFree) {
                 return "Free View";
             }
-            if (IsFreeWithRegistration)
-            {
-                return "Free With Registration View";
-            }
-            if (IsEntitledProductItemContext.IsEntitled(Article)) {
+            if (IsFreeWithRegistration || IsEntitledProductItemContext.IsEntitled(Article)) {
                 return "Entitled Full View";
             }
             return "Unentitled Abstract View";
@@ -180,6 +176,10 @@ namespace Informa.Web.ViewModels
 
 		private string GetEntitlementType(IUserCompanyContext context)
 		{
+            if (IsFreeWithRegistration) {
+                return "Free Trial";
+            }
+
 			if (context.Company == null)
 			{
 				return "Free User";
