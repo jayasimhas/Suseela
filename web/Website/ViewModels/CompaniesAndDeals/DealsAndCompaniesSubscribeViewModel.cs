@@ -7,6 +7,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
+using Informa.Library.Utilities.Settings;
 
 namespace Informa.Web.ViewModels.CompaniesAndDeals
 {
@@ -18,6 +19,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             ISitecoreService SitecoreService { get; set; }
             IHttpContextProvider HttpContextProvider { get; }
             ISiteRootContext SiteRootContext { get; }
+            ISiteSettings SiteSettingsContext { get; set; }
         }
 
         public DealsAndCompaniesSubscribeViewModel(IDependencies dependencies)
@@ -32,7 +34,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 
             var recordNumber = UrlUtils.GetLastUrlSement(dependencies.HttpContextProvider.Current);
 
-            PurchaseButtonLink = string.Format("{0}deals/{1}", dependencies.SiteRootContext.Item?._Url, recordNumber);
+            PurchaseButtonLink = string.Format(dependencies.SiteSettingsContext.OldDealsUrl, recordNumber);
             SubscriberHeadline = dcdSubscribeComponent.Subscriber_Headline;
             SubscriberSubHeading = dcdSubscribeComponent.Subscriber_SubHeadline;
             SubscriberButtonText = dcdSubscribeComponent.Subscribe_Button_Text;
