@@ -1,32 +1,18 @@
 ----item----
 version: 1
-id: {7E2B4D51-F520-4489-8A9A-C85401F8BB39}
+id: {80CFBF5D-696A-44EA-BA88-70D251CBA186}
 database: master
-path: /sitecore/templates/User Defined/Pages/Deal Page
-parent: {8D510CBE-EC0E-42E1-983B-748AD8332249}
-name: Deal Page
+path: /sitecore/content/RoseSheet/Home/Companies
+parent: {B1A867BE-9056-46BC-A60E-CF7FBEA8360C}
+name: Companies
 master: {00000000-0000-0000-0000-000000000000}
-template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
-templatekey: Template
+template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
+templatekey: Folder
 
-----field----
-field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
-name: __Base template
-key: __base template
-content-length: 77
-
-{1930BBEB-7805-471A-A3BE-4858AC7CF696}|{8CB9B3DC-FB05-4F6C-A73B-19EADB3A6391}
-----field----
-field: {F7D48A55-2158-4F02-9356-756654404F73}
-name: __Standard values
-key: __standard values
-content-length: 38
-
-{C97E8448-4626-43F2-B87F-AAE7EA96A524}
 ----version----
 language: en
 version: 1
-revision: bf02e06a-aff2-4c05-8843-93ac869913d2
+revision: ffdaaf06-f0c4-4734-bade-6bb3bad8e0e0
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,7 +20,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20160711T174930Z
+20160711T175016Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-bf02e06a-aff2-4c05-8843-93ac869913d2
+ffdaaf06-f0c4-4734-bade-6bb3bad8e0e0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160714T142514Z
+20160711T175016Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
