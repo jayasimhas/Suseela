@@ -212,10 +212,15 @@ $(document).ready(function() {
 		observe: '.js-sign-in-submit',
 		successCallback: function(form, context, event) {
 
+		    var loginRegisterMethod = "login_register_component";
+		    if($(form).parents('.pop-out__sign-in').length > 0)
+		        loginRegisterMethod = "global_login";
+
 			var loginAnalytics =  {
 				event_name: 'login',
 				login_state: 'successful',
-				userName: '"' + $(form).find('input[name=username]').val() + '"'
+				userName: '"' + $(form).find('input[name=username]').val() + '"',
+				login_register_method: loginRegisterMethod
 			};
 
 			analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
@@ -356,8 +361,13 @@ $(document).ready(function() {
 			var sep = forwardingURL.indexOf('?') < 0 ? '?' : '&';
 			var nextStepUrl = $(form).data('forwarding-url') + sep + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
 
+			var loginRegisterMethod = "global_registration";
+			if($(form).hasClass("user-calltoaction"))
+			    loginRegisterMethod = "login_register_component";
+                
+			analyticsEvent( $.extend(analytics_data, { event_name: "registration", login_register_method : loginRegisterMethod }) );
+			
 			window.location.href = nextStepUrl;
-
 		}
 	});
 
