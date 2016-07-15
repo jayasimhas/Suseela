@@ -12284,6 +12284,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Twitter_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Image Twitter_Logo  {get; set;}
 								/// <summary>
+					/// The Free Trial Rate Plan Charge Id field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 64c48243-dfce-4e94-985c-e0441fff76aa</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Free_Trial_Rate_Plan_Charge_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Free_Trial_Rate_Plan_Charge_Id  {get; set;}
+								/// <summary>
+					/// The Free Trial Rate Plan Id field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 79d023a1-b034-4228-8add-17802896ce53</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Free_Trial_Rate_Plan_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Free_Trial_Rate_Plan_Id  {get; set;}
+								/// <summary>
 					/// The Publication Code field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -13061,6 +13079,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Twitter_LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Image Twitter_Logo  {get; set;}
 										/// <summary>
+						/// The Free Trial Rate Plan Charge Id field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 64c48243-dfce-4e94-985c-e0441fff76aa</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Free_Trial_Rate_Plan_Charge_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Free_Trial_Rate_Plan_Charge_Id  {get; set;}
+										/// <summary>
+						/// The Free Trial Rate Plan Id field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 79d023a1-b034-4228-8add-17802896ce53</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Free_Trial_Rate_Plan_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Free_Trial_Rate_Plan_Id  {get; set;}
+										/// <summary>
 						/// The Publication Code field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -13623,6 +13659,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Twitter_LogoFieldId = new ID("c86c6f15-961f-45b6-bd8c-5ae71a9521c3");
 			public const string Twitter_LogoFieldName = "Twitter Logo";
+
+						
+					
+			public static readonly ID Free_Trial_Rate_Plan_Charge_IdFieldId = new ID("64c48243-dfce-4e94-985c-e0441fff76aa");
+			public const string Free_Trial_Rate_Plan_Charge_IdFieldName = "Free Trial Rate Plan Charge Id";
+
+						
+					
+			public static readonly ID Free_Trial_Rate_Plan_IdFieldId = new ID("79d023a1-b034-4228-8add-17802896ce53");
+			public const string Free_Trial_Rate_Plan_IdFieldName = "Free Trial Rate Plan Id";
 
 						
 					
@@ -19130,6 +19176,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
+			public static readonly ID Company_Leaderboard_Author_Ad_ZoneFieldId = new ID("b0b01376-d608-4a95-a402-7e6a5b6f31ba");
+			public const string Company_Leaderboard_Author_Ad_ZoneFieldName = "Company Leaderboard Author Ad Zone";
+
+						
+					
+			public static readonly ID Company_Leaderboard_Author_Slot_IDFieldId = new ID("ec5a4404-140e-43dd-8846-3c8df2c2c6f4");
+			public const string Company_Leaderboard_Author_Slot_IDFieldName = "Company Leaderboard Author Slot ID";
+
+						
+					
+			public static readonly ID Company_Rectangular_Ad_ZoneFieldId = new ID("821541d4-f4f1-447f-85eb-2c7e59ea12d3");
+			public const string Company_Rectangular_Ad_ZoneFieldName = "Company Rectangular Ad Zone";
+
+						
+					
+			public static readonly ID Company_Rectangular_Slot_IDFieldId = new ID("9cabd426-9102-406f-82a8-592cf1d42362");
+			public const string Company_Rectangular_Slot_IDFieldName = "Company Rectangular Slot ID";
+
+						
+					
 			public static readonly ID Global_Article_Ad_ZoneFieldId = new ID("58330274-e29e-4fb9-802b-b7a508d15075");
 			public const string Global_Article_Ad_ZoneFieldName = "Global Article Ad Zone";
 
@@ -19359,6 +19425,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Twitter_LogoFieldId = new ID("c86c6f15-961f-45b6-bd8c-5ae71a9521c3");
 			public const string Twitter_LogoFieldName = "Twitter Logo";
+
+						
+					
+			public static readonly ID Free_Trial_Rate_Plan_Charge_IdFieldId = new ID("64c48243-dfce-4e94-985c-e0441fff76aa");
+			public const string Free_Trial_Rate_Plan_Charge_IdFieldName = "Free Trial Rate Plan Charge Id";
+
+						
+					
+			public static readonly ID Free_Trial_Rate_Plan_IdFieldId = new ID("79d023a1-b034-4228-8add-17802896ce53");
+			public const string Free_Trial_Rate_Plan_IdFieldName = "Free Trial Rate Plan Id";
 
 						
 					

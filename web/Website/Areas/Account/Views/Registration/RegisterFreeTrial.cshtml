@@ -76,6 +76,7 @@
                             class="inf-standard-form-field"
                             tabindex="2"
                             name="FirstName"
+                            value="@Model.ProfileFirstName"
                             placeholder="@Model.FirstNamePlaceholderText">
                 </div>
 
@@ -88,6 +89,7 @@
                             class="inf-standard-form-field"
                             placeholder=""
                             tabindex="3"
+                            value="@Model.ProfileLastName"
                             name="LastName">
                 </div>
 
@@ -145,7 +147,7 @@
                     </label>
                     <input type="text"
                             name="Company"
-                            value="@Model.Profile.Company"
+                            value="@Model.ProfileCompany"
                             tabindex="6"
                             placeholder="@Model.CompanyPlaceholderText">
                 </div>
@@ -156,7 +158,7 @@
                     </label>
                     <input type="text"
                             name="JobTitle"
-                            value="@Model.Profile.JobTitle"
+                            value="@Model.ProfileJobTitle"
                             tabindex="7"
                             placeholder="@Model.JobTitlePlaceholderText">
                 </div>
@@ -167,7 +169,7 @@
                     </label>
                     <input type="text"
                             name="Address1"
-                            value="@Model.Profile.ShipAddress1"
+                            value="@Model.ProfileAddress1"
                             tabindex="8"
                             placeholder="@Model.Address1PlaceholderText" id="txtAddress1">
                 </div>
@@ -178,7 +180,7 @@
                     </label>
                     <input type="text"
                             name="Address2"
-                            value="@Model.Profile.ShipAddress2"
+                            value="@Model.ProfileAddress2"
                             tabindex="9"
                             placeholder="@Model.Address2PlaceholderText" id="txtAddress2">
                 </div>
@@ -189,7 +191,7 @@
                     </label>
                     <input type="text"
                             name="City"
-                            value="@Model.Profile.ShipCity"
+                            value="@Model.ProfileCity"
                             tabindex="10"
                             placeholder="@Model.CityPlaceholderText" id="txtCity">
                 </div>
@@ -200,7 +202,7 @@
                     </label>
                     <input type="text"
                             name="State"
-                            value="@Model.Profile.ShipState"
+                            value="@Model.ProfileState"
                             tabindex="11"
                             placeholder="@Model.StatePlaceholderText" id="txtState">
                 </div>
@@ -211,7 +213,7 @@
                     </label>
                     <input type="text"
                             name="PostalCode"
-                            value="@Model.Profile.ShipPostalCode"
+                            value="@Model.ProfilePostalCode"
                             tabindex="12"
                             placeholder="@Model.PostalCodePlaceholderText" id="txtPostalCode">
                 </div>
@@ -223,7 +225,7 @@
                     <select name="Country" id="ddlCountry" tabindex="13">
                         @foreach (var o in Model.Countries)
                         {
-                            <option @(@Model.Profile.ShipCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
+                            <option @(@Model.ProfileCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
                         }
                     </select>
                 </div>
@@ -234,7 +236,7 @@
                     </label>
                     <input type="text"
                             name="Phone"
-                            value="@Model.Profile.Phone"
+                            value="@Model.ProfilePhone"
                             tabindex="14"
                             placeholder="@Model.PhonePlaceholderText">
                 </div>

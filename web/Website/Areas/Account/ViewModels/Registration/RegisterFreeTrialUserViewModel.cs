@@ -9,9 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using Informa.Library.Services.Global;
-using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
-using Informa.Library.ViewModels.Account;
 
 namespace Informa.Web.Areas.Account.ViewModels.Registration
 {
@@ -56,6 +54,24 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
 			}
 		}
 
+        #region Profile Fields
+
+        public string ProfileFirstName => Profile?.FirstName ?? string.Empty;
+        public string ProfileLastName => Profile?.LastName ?? string.Empty;
+        public string ProfileCompany => Profile?.Company ?? string.Empty;
+        public string ProfileJobTitle => Profile?.JobTitle ?? string.Empty;
+        public string ProfileAddress1 => Profile?.ShipAddress1 ?? string.Empty;
+        public string ProfileAddress2 => Profile?.ShipAddress2 ?? string.Empty;
+        public string ProfileCity => Profile?.ShipCity ?? string.Empty;
+        public string ProfileState => Profile?.ShipState ?? string.Empty;
+        public string ProfilePostalCode => Profile?.ShipPostalCode ?? string.Empty;
+        public string ProfileCountry => Profile?.ShipCountry ?? string.Empty;
+        public string ProfilePhone => Profile?.Phone ?? string.Empty;
+
+        #endregion Profile Fields
+
+        #region Labels Properties and Errors
+
         public string GeneralErrorText => TextTranslator.Translate("ContactInfo.GeneralError");
         public string RequiedFieldsText => TextTranslator.Translate("Registration.RequiredFields");
         public string RegisterReturnUrlKey => ReturnUrlContext.Key;
@@ -77,7 +93,9 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
         public IHtmlString TermsLabel => new MvcHtmlString(GlassModel?.User_Agreement_Text);
         public string SubmitText => TextTranslator.Translate("Registration.Submit");
         public string NewsletterSignUpText => GlassModel?.Newsletter_Sign_Up_Text;
-        
+
+        #endregion Labels Properties and Errors
+
         #region Contact Info
 
         public string FirstNameLabelText => TextTranslator.Translate("ContactInfo.FirstNameLabel");
