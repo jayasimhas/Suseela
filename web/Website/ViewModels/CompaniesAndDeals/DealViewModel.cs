@@ -53,8 +53,16 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 
         public string BroughtToYouByText => _dependencies.TextTranslator.Translate("DCD.BroughToYouBy");
 
-        public string LogoUrl =>
-            _dependencies.SitecoreService.GetItem<IStrategic_Transactions>(Constants.StrategicTransactionsComponent)?
-                .Logo?.Src;
+        public string LogoUrl
+        {
+            get
+            {
+                var strategicComponent =
+                    _dependencies.SitecoreService.GetItem<IStrategic_Transactions>(
+                        Constants.StrategicTransactionsComponent);
+                return strategicComponent?.Logo != null ? strategicComponent.Logo.Src : string.Empty;
+            }
+        }
+           
     }
 }
