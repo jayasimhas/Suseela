@@ -234,6 +234,7 @@ namespace Elsevier.Web.VWB
 			q.ShouldRun = execute;
 			q.NumResultsValue = GetMaxNumResults();
 			RedirectTo(q);
+
 		}
 
 		/// <summary>

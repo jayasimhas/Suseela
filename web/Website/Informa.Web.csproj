@@ -1004,6 +1004,7 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="VWB\Report\ArticleItemWrapper.cs" />
+    <Compile Include="VWB\Report\Columns\ArticlePublicationNameColumn.cs" />
     <Compile Include="VWB\Report\Columns\ContentTypeColumn.cs" />
     <Compile Include="VWB\Report\Columns\CreatedDateTimeColumn.cs" />
     <Compile Include="VWB\Report\Columns\ArticleLengthEstimateColumn.cs" />
