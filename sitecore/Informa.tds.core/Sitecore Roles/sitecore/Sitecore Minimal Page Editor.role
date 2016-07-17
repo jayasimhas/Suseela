@@ -1,6 +1,0 @@
-----role----
-name: sitecore\Sitecore Minimal Page Editor
-
-----role-in-role----
-rolename: sitecore\Production
-

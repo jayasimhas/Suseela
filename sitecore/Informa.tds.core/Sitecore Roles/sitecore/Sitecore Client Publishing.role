@@ -1,6 +1,0 @@
-----role----
-name: sitecore\Sitecore Client Publishing
-
-----role-in-role----
-rolename: sitecore\Sitecore Client Advanced Publishing
-

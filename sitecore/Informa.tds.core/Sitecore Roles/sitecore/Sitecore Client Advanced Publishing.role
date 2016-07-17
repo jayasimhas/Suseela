@@ -1,9 +1,0 @@
-----role----
-name: sitecore\Sitecore Client Advanced Publishing
-
-----role-in-role----
-rolename: sitecore\Operations Access
-
-----role-in-role----
-rolename: sitecore\Production
-

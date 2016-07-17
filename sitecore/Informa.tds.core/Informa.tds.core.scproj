@@ -481,29 +481,5 @@
   <ItemGroup>
     <CodeGenReferencedProject Include="{0707d4fe-c860-4127-bae4-463e673d4d69}" />
   </ItemGroup>
-  <ItemGroup>
-    <SitecoreRole Include="Sitecore Roles\sitecore\Author.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Designer.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Developer.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Editor.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Experience Explorer.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\List Manager Editors.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Operations Access.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Production.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Sitecore Client Advanced Publishing.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Sitecore Client Authoring.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Sitecore Client Designing.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Sitecore Client Developing.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Sitecore Client Maintaining.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Sitecore Client Publishing.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Sitecore Client Translating.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Sitecore Client Users.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Sitecore Limited Content Editor.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Sitecore Local Administrators.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Sitecore Minimal Page Editor.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Social Message Author.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Social Message Workflow Editor.role" />
-    <SitecoreRole Include="Sitecore Roles\sitecore\Social Message Workflow Reviewer.role" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
 </Project>
