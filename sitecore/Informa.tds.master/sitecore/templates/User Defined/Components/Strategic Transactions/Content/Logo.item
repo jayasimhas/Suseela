@@ -1,6 +1,6 @@
 ----item----
 version: 1
-id: {115DC518-7FB6-4151-A7BD-D6B95A4CAB74}
+id: {669C4BE3-9A09-4278-80B6-C5E49C09EC30}
 database: master
 path: /sitecore/templates/User Defined/Components/Strategic Transactions/Content/Logo
 parent: {46FF3F30-267E-4E20-9925-0D4506BB091A}
@@ -26,7 +26,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: ea768920-ccff-4cd9-b772-231956316db8
+revision: 90b1efba-bd4b-47c1-b929-332be1b3d0d1
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160712T171022Z
+20160718T135845Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-ea768920-ccff-4cd9-b772-231956316db8
+90b1efba-bd4b-47c1-b929-332be1b3d0d1
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160712T171022Z
+20160718T135851Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -12,21 +12,7 @@ templatekey: Company Page
 ----version----
 language: en
 version: 1
-revision: cc4ff1c2-9fb2-4de2-87e3-45a73102c34a
-
-----field----
-field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
-name: Title
-key: title
-content-length: 15
-
-Company Details
-----field----
-field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
-name: Sub Title
-key: sub title
-content-length: 0
-
+revision: 2b912773-7470-40cf-8897-5314dbd53c1b
 
 ----field----
 field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
@@ -48,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-cc4ff1c2-9fb2-4de2-87e3-45a73102c34a
+2b912773-7470-40cf-8897-5314dbd53c1b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160711T191338Z
+20160718T130343Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
