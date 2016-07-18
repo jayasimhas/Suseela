@@ -4,6 +4,7 @@ using Informa.Library.DCD;
 using Informa.Library.Globalization;
 using Informa.Library.Utilities.DataModels;
 using Informa.Library.Utilities.Extensions;
+using Informa.Library.Utilities.Parsers;
 using Informa.Library.Utilities.WebUtils;
 using Informa.Library.Wrappers;
 using Informa.Model.DCD;
@@ -24,7 +25,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             IDCDReader DcdReader { get; }
             IHttpContextProvider HttpContextProvider { get; }
             ICompanyContentAnalyzer CompanyContentAnalyzer { get; }
-            IDcdXmlParser DcdXmlParser { get; set; }
+            ICachedXmlParser CachedXmlParser { get; set; }
             ITextTranslator TextTranslator { get; }
         }
 
@@ -38,7 +39,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             Company = _dependencies.DcdReader.GetCompanyByRecordNumber(RecordNumber);
             if (Company == null) RedirectTo404();
 
-            Content = _dependencies.DcdXmlParser.ParseContent<CompanyContent>(Company.Content, RecordNumber);
+            Content = _dependencies.CachedXmlParser.ParseContent<CompanyContent>(Company.Content, RecordNumber);
             if (Content == null) RedirectTo404();
         }
 

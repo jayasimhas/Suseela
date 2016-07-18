@@ -2,38 +2,37 @@
 using System.IO;
 using System.Xml.Serialization;
 using Informa.Library.Utilities.Extensions;
-using Informa.Models.DCD;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Core.Caching;
 
-namespace Informa.Library.DCD
+namespace Informa.Library.Utilities.Parsers
 {
-    public interface IDcdXmlParser
+    public interface ICachedXmlParser
     {
-        T ParseContent<T>(string xmlContent, string recordNumber) where T : class;
+        T ParseContent<T>(string xmlContent, string cacheKey, TimeSpan? timeSpan = null) where T : class;
     }
 
     [AutowireService]
-    public class DcdXmlParser : IDcdXmlParser
+    public class CachedXmlParser : ICachedXmlParser
     {
         private readonly IDependencies _dependencies;
-        private readonly TimeSpan _timeSpan = new TimeSpan(0, 5, 0);
+        private readonly TimeSpan _defaultTimeSpan = new TimeSpan(0, 5, 0);
 
         [AutowireService(IsAggregateService = true)]
         public interface IDependencies
         {
             ICacheProvider CacheProvider { get; set; }
         }
-
-        public DcdXmlParser(IDependencies dependencies)
+        public CachedXmlParser(IDependencies dependencies)
         {
             _dependencies = dependencies;
         }
 
-        public T ParseContent<T>(string xmlContent, string recordNumber) where T : class
+        public T ParseContent<T>(string xmlContent, string cacheKey, TimeSpan? timeSpan = null) where T : class
         {
+            var finalTimeSpan = timeSpan ?? _defaultTimeSpan;
             return _dependencies.CacheProvider
-                .GetFromCache($"DcdXmlParser:ParseContent:{recordNumber}", _timeSpan,
+                .GetFromCache($"CachedXmlParser:ParseContent:{cacheKey}", finalTimeSpan,
                     () => ParseContentImplementation<T>(xmlContent));
         }
 
