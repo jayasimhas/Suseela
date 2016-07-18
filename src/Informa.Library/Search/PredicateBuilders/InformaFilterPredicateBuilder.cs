@@ -50,10 +50,10 @@ namespace Informa.Library.Search.PredicateBuilders
 				{
 					predicate = predicate.And(x => x.InProgress);
 				}
-			}
 
-            //Include Search for authors
-            predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
+                //Include Search for authors
+                predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
+            }
 
             // fiure-out time parameter
             if (_request.QueryParameters.ContainsKey(Constants.QueryString.DateRangeFilterLabelKey))
