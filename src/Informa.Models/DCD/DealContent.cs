@@ -24,10 +24,10 @@ namespace Informa.Models.DCD
         public string TransactionDate { get; set; }
         public string PublishedDate { get; set; }
         public string DealStatus { get; set; }
-        public string DealFinancing { get; set; }
+        public string DealType { get; set; }
 
         [XmlElement(ElementName = "Characteristic")]
-        public string[] Characteristic { get; set; }
+        public string[] Characteristics { get; set; }
     }
 
     public class DealUpdate

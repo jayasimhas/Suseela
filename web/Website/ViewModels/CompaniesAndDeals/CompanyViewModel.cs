@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Informa.Library.DCD;
 using Informa.Library.Globalization;
 using Informa.Library.Utilities.DataModels;

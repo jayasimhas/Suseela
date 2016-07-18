@@ -1,5 +1,5 @@
-﻿using Glass.Mapper.Sc;
-using Informa.Library.DCD;
+﻿using System.Linq;
+using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Utilities.Parsers;
 using Informa.Library.Utilities.References;
@@ -53,6 +53,9 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 
         public string DealsSummaryText =>_dependencies.TextTranslator.Translate("DCD.Summary");
         public string BroughtToYouByText => _dependencies.TextTranslator.Translate("DCD.BroughToYouBy");
+        public string DealIndustryHeader => _dependencies.TextTranslator.Translate("DCD.DealIndustry");
+        public string DealStatusHeader => _dependencies.TextTranslator.Translate("DCD.DealStatus");
+        public string DealTypeHeader => _dependencies.TextTranslator.Translate("DCD.DealType");
 
         public string LogoUrl
         {
@@ -64,6 +67,8 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
                 return strategicComponent?.Logo != null ? strategicComponent.Logo.Src : string.Empty;
             }
         }
-           
+
+        public Coding[] Industries => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("indstry"))?.Codings;
+
     }
 }
