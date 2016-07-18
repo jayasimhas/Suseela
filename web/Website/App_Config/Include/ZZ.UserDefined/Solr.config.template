@@ -13,6 +13,7 @@
             <field fieldName="SearchDate" returnType="datetime">Informa.Library.Search.ComputedFields.SearchResults.SearchResultDateField, Informa.Library</field>
             <field fieldName="SearchTitle" returnType="text">Informa.Library.Search.ComputedFields.SearchResults.SearchResultTitleField, Informa.Library</field>
             <field fieldName="SearchPublicationTitle" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchResultPublicationTitleField, Informa.Library</field>
+            <field fieldName="SearchPublicationCode" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchResultPublicationCodeField, Informa.Library</field>
             <field fieldName="SearchSummary" returnType="text">Informa.Library.Search.ComputedFields.SearchResults.SearchResultSummaryField, Informa.Library</field>
             <field fieldName="SearchByline" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchResultBylineField, Informa.Library</field>
             <field fieldName="SearchDisplayTaxonomy" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchDisplayTaxonomyField, Informa.Library</field>

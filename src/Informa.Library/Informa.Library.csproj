@@ -413,6 +413,7 @@
     <Compile Include="Rss\Utils\RssConstants.cs" />
     <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
     <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchResultPublicationCodeField.cs" />
     <Compile Include="Search\FacetBuilders\CompaniesFacetBuilder.cs" />
     <Compile Include="Search\Formatting\IQueryFormatter.cs" />
     <Compile Include="Search\Formatting\SolrQueryFormatter.cs" />
@@ -650,7 +651,6 @@
     <Compile Include="User\Newsletter\ISitesNewsletterTypes.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptIn.cs" />
-
     <Compile Include="User\Newsletter\PublicationsNewsletterUserOptInContext.cs" />
     <Compile Include="User\Newsletter\SetByTypeNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\SetPublicationsNewsletterUserOptIns.cs" />

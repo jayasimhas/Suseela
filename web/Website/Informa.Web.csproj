@@ -1025,6 +1025,7 @@
     <Compile Include="VWB\Report\IVwbArticleItemCollection.cs" />
     <Compile Include="VWB\Report\ReportBuilder.cs" />
     <Compile Include="VWB\Report\VwbArticleItemCollection.cs" />
+    <Content Include="VWB\Scripts\jquery.multiselect.js" />
     <Compile Include="VWB\services\VirtualWhiteBoard.asmx.cs">
       <DependentUpon>VirtualWhiteBoard.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -1232,6 +1233,8 @@
     <Content Include="Util\DCD\ViewDCDXML.aspx" />
     <Content Include="VWB\default.aspx" />
     <Content Include="VWB\login.aspx" />
+    <Content Include="VWB\Scripts\chosen.jquery.min.js" />
+    <Content Include="VWB\Scripts\chosen.proto.min.js" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
     <Content Include="VWB\Scripts\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
@@ -1252,6 +1255,7 @@
     <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.js" />
     <Content Include="VWB\Scripts\jquery.js" />
     <Content Include="VWB\services\VirtualWhiteBoard.asmx" />
+    <Content Include="VWB\Styles\chosen.css" />
     <Content Include="VWB\Styles\vwb.css" />
     <Content Include="VWB\Util\LoginRedirectToPreview.aspx" />
     <Content Include="webedit.css" />
