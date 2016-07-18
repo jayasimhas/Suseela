@@ -1091,6 +1091,8 @@
     <Content Include="Areas\Article\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Account\Views\web.config" />
+    <Content Include="PrintStudio\Data\special.xml" />
+    <Content Include="PrintStudio\Services\InDesignConnectorService.asmx" />
     <Content Include="sitecore\login\login.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\css\ViewNlm.css" />
@@ -1252,6 +1254,8 @@
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="PrintStudio\Data\PublishingEngine.dtd" />
+    <Content Include="PrintStudio\Handlers\PrintCacheHandler.ashx" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_MainContent.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
