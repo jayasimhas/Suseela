@@ -11,6 +11,8 @@ using Sitecore.Shell.Applications.ContentEditor;
 using Sitecore.Web;
 using Sitecore.Web.Authentication;
 using DateTime = System.DateTime;
+using System.Data;
+using System.Linq;
 
 namespace Elsevier.Web.VWB
 {
@@ -45,6 +47,8 @@ namespace Elsevier.Web.VWB
 				return;
 			}
 
+            fillPublicationsList();
+
 			if (Request.QueryString.Count == 0 || (Request.QueryString.Count == 1 && Request.QueryString["sc_lang"] != null))
 			{
 				RunQuery(true);
@@ -58,8 +62,6 @@ namespace Elsevier.Web.VWB
 
 			UpdateFields();
 			BuildOptionalColumnDropdown();
-
-
 		}
 
 		protected void Page_Init(object sender, EventArgs e)
@@ -101,6 +103,33 @@ namespace Elsevier.Web.VWB
 			}
 			return control;
 		}
+
+        private void fillPublicationsList()
+        {
+            var dbMaster = Sitecore.Data.Database.GetDatabase("master");
+
+            var pubItems = dbMaster.GetItem("/sitecore/content/").Children;
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Code");
+            dt.Columns.Add("Name");
+            foreach (Sitecore.Data.Items.Item item in pubItems)
+            {
+                try
+                {
+                    string pubName = item.Fields["Publication Name"].Value;
+                    string pubCode = item.Fields["Publication Code"].Value;
+
+                    dt.Rows.Add(pubCode, pubName);
+                }
+                catch { }
+            }
+
+            chkPublications.DataSource = dt;
+            chkPublications.DataValueField = "Code";
+            chkPublications.DataTextField = "Name";
+            chkPublications.DataBind();
+        }
 
 		private static int? GetMaxNumResults()
 		{
@@ -158,7 +187,15 @@ namespace Elsevier.Web.VWB
 				chkShowInProgressArticles.Checked = true;
 			}
 
+            if (string.IsNullOrEmpty(_vwbQuery.PublicationCodes) == false)
+            {
+                List<string> codes = _vwbQuery.PublicationCodes.Split(',').ToList();
+                foreach (var item in codes)
+                {
+                    chkPublications.Items.FindByValue(item).Selected = true;
 		}
+            }
+        }
 
 		protected void EnableDate()
 		{
@@ -232,6 +269,10 @@ namespace Elsevier.Web.VWB
 			{ q.InProgressValue = false; }
 
 			q.ShouldRun = execute;
+
+            List<ListItem> selected = chkPublications.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+            q.PublicationCodes = string.Join(",", selected.Select(s => s.Value));
+
 			q.NumResultsValue = GetMaxNumResults();
 			RedirectTo(q);
 

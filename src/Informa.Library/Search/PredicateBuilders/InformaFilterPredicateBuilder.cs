@@ -29,6 +29,20 @@ namespace Informa.Library.Search.PredicateBuilders
 			predicate = predicate.And(x => x.IsSearchable);
 			predicate = predicate.And(x => x.IsLatestVersion);
 
+            if (_request.QueryParameters.ContainsKey("SearchPublicationTitle") && string.IsNullOrEmpty(_request.QueryParameters["SearchPublicationTitle"]) == false)
+            {
+                var pubs = _request.QueryParameters["SearchPublicationTitle"].Split(',');
+
+                var codesPredicate = PredicateBuilder.True<T>();
+
+                foreach (var item in pubs)
+                {
+                    codesPredicate = codesPredicate.Or(x => x.PublicationCode == item);
+                }
+
+                predicate = predicate.And(codesPredicate);
+            }
+
 			// If the inprogress flag is available then add that as as filter, this is used in VWB
 			if (_request.QueryParameters.ContainsKey(Constants.QueryString.InProgressKey))
 			{

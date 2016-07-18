@@ -197,9 +197,7 @@ namespace Elsevier.Web.VWB.Report
                 {
                     startDate = query.StartDate ?? DateTime.MinValue;
 
-
                     endDate = query.EndDate ?? DateTime.MaxValue;
-
                 }
                 else
                 {
@@ -217,6 +215,8 @@ namespace Elsevier.Web.VWB.Report
 
                 url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
                 url += ";" + endDate.ToString("MM/dd/yyyy");
+                if (string.IsNullOrEmpty(query.PublicationCodes) == false)
+                    url += "&SearchPublicationTitle=" + query.PublicationCodes;
 
                 var client = new WebClient();
                 var content = client.DownloadString(url);
