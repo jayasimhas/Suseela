@@ -172,6 +172,7 @@ work and it shouldn't be changed.
         <add name="sitecore" type="Sitecore.Security.SitecoreMembershipProvider, Sitecore.Kernel" realProviderName="sql" providerWildcard="%" raiseEvents="true" />
         <add name="sql" type="Informa.Web.Controllers.CustomSqlMembershipProvider" connectionStringName="core" applicationName="sitecore" minRequiredPasswordLength="1" minRequiredNonalphanumericCharacters="0" requiresQuestionAndAnswer="false" requiresUniqueEmail="false" maxInvalidPasswordAttempts="5" />
         <add name="switcher" type="Sitecore.Security.SwitchingMembershipProvider, Sitecore.Kernel" applicationName="sitecore" mappings="switchingProviders/membership" />
+        <add name="sqlCustom" type="Informa.Library.Utilities.UserMembership.CustomSqlMembershipProvider" connectionStringName="core" applicationName="sitecore" minRequiredPasswordLength="1" minRequiredNonalphanumericCharacters="0" requiresQuestionAndAnswer="false" requiresUniqueEmail="false" maxInvalidPasswordAttempts="5" />
       </providers>
     </membership>
     <roleManager defaultProvider="sitecore" enabled="true">
