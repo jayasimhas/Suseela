@@ -38,8 +38,15 @@ namespace Informa.Library.Search.PredicateBuilders
 				}
 			}
 
-            //Include Search for authors
-            predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
+            if (_request.QueryParameters.ContainsKey("plannedpublishdate") || _request.QueryParameters.ContainsKey("SearchPublicationTitle"))
+            {//VWB
+
+            }
+            else
+            {
+                //Include Search for authors
+                predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
+            }
 
             // fiure-out time parameter
             if (_request.QueryParameters.ContainsKey(Constants.QueryString.DateRangeFilterLabelKey))
