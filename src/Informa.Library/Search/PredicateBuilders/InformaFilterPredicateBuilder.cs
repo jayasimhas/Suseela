@@ -9,25 +9,25 @@ using Velir.Search.Core.PredicateBuilders;
 
 namespace Informa.Library.Search.PredicateBuilders
 {
-	public class InformaPredicateBuilder<T> : SearchFilterPredicateBuilder<T> where T : InformaSearchResultItem
-	{
-		public DateTime DateRangeStart { get; set; }
-		public DateTime DateRangeEnd { get; set; }
+    public class InformaPredicateBuilder<T> : SearchFilterPredicateBuilder<T> where T : InformaSearchResultItem
+    {
+        public DateTime DateRangeStart { get; set; }
+        public DateTime DateRangeEnd { get; set; }
 
-		private readonly ISearchRequest _request;
+        private readonly ISearchRequest _request;
 
-		public InformaPredicateBuilder(ISearchPageParser pageParser, ISearchRequest request = null)
-				: base(pageParser, request)
-		{
-			_request = request;
-		}
+        public InformaPredicateBuilder(ISearchPageParser pageParser, ISearchRequest request = null)
+                : base(pageParser, request)
+        {
+            _request = request;
+        }
 
-		public override Expression<Func<T, bool>> Build()
-		{
-			var predicate = base.Build();
+        public override Expression<Func<T, bool>> Build()
+        {
+            var predicate = base.Build();
 
-			predicate = predicate.And(x => x.IsSearchable);
-			predicate = predicate.And(x => x.IsLatestVersion);
+            predicate = predicate.And(x => x.IsSearchable);
+            predicate = predicate.And(x => x.IsLatestVersion);
 
             if (_request.QueryParameters.ContainsKey("SearchPublicationTitle") && string.IsNullOrEmpty(_request.QueryParameters["SearchPublicationTitle"]) == false)
             {
@@ -43,54 +43,61 @@ namespace Informa.Library.Search.PredicateBuilders
                 predicate = predicate.And(codesPredicate);
             }
 
-			// If the inprogress flag is available then add that as as filter, this is used in VWB
-			if (_request.QueryParameters.ContainsKey(Constants.QueryString.InProgressKey))
-			{
-				if (_request.QueryParameters[Constants.QueryString.InProgressKey] == "1")
-				{
-					predicate = predicate.And(x => x.InProgress);
-				}
+            // If the inprogress flag is available then add that as as filter, this is used in VWB
+            if (_request.QueryParameters.ContainsKey(Constants.QueryString.InProgressKey))
+            {
+                if (_request.QueryParameters[Constants.QueryString.InProgressKey] == "1")
+                {
+                    predicate = predicate.And(x => x.InProgress);
+                }
+            }
 
+            if (_request.QueryParameters.ContainsKey("plannedpublishdate") || _request.QueryParameters.ContainsKey("SearchPublicationTitle"))
+            {//VWB
+
+            }
+            else
+            {
                 //Include Search for authors
                 predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
             }
 
             // fiure-out time parameter
             if (_request.QueryParameters.ContainsKey(Constants.QueryString.DateRangeFilterLabelKey))
-			{
-				string dateRangeFilterLabelValue = _request.QueryParameters[Constants.QueryString.DateRangeFilterLabelKey];
-				if (_request.QueryParameters.ContainsKey(Constants.QueryString.TimeKey))
-				{
-					int timeQuery = -1 * Convert.ToInt32(_request.QueryParameters[Constants.QueryString.TimeKey]);
+            {
+                string dateRangeFilterLabelValue = _request.QueryParameters[Constants.QueryString.DateRangeFilterLabelKey];
+                if (_request.QueryParameters.ContainsKey(Constants.QueryString.TimeKey))
+                {
+                    int timeQuery = -1 * Convert.ToInt32(_request.QueryParameters[Constants.QueryString.TimeKey]);
 
-					DateTime searchDate = DateTime.MinValue;
-					switch (dateRangeFilterLabelValue)
-					{
-						case "hour":
-							searchDate = DateTime.Now.AddHours(timeQuery);
-							break;
-						case "day":
-							searchDate = DateTime.Now.AddDays(timeQuery);
-							break;
-						case "year":
-							searchDate = DateTime.Now.AddYears(timeQuery);
-							break;
-						case "month":
-							searchDate = DateTime.Now.AddMonths(timeQuery);
-							break;
-						case "week":
-							searchDate = DateTime.Now.AddDays(timeQuery * 7);
-							break;
-					}
+                    DateTime searchDate = DateTime.MinValue;
+                    switch (dateRangeFilterLabelValue)
+                    {
+                        case "hour":
+                            searchDate = DateTime.Now.AddHours(timeQuery);
+                            break;
+                        case "day":
+                            searchDate = DateTime.Now.AddDays(timeQuery);
+                            break;
+                        case "year":
+                            searchDate = DateTime.Now.AddYears(timeQuery);
+                            break;
+                        case "month":
+                            searchDate = DateTime.Now.AddMonths(timeQuery);
+                            break;
+                        case "week":
+                            searchDate = DateTime.Now.AddDays(timeQuery * 7);
+                            break;
+                    }
 
-					if (searchDate > DateTime.MinValue)
-					{
-						predicate = predicate.And(x => x.SearchDate > searchDate);
-					}
-				}
-			}
+                    if (searchDate > DateTime.MinValue)
+                    {
+                        predicate = predicate.And(x => x.SearchDate > searchDate);
+                    }
+                }
+            }
 
-			return predicate;
-		}
-	}
+            return predicate;
+        }
+    }
 }
