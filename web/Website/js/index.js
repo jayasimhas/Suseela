@@ -32,6 +32,7 @@ window.toggleIcons = toggleIcons;
 
 /* Polyfill for scripts expecting `jQuery`. Also see: CSS selectors support in zepto.min.js */
 window.jQuery = $;
+import selectivity from './selectivity-full';
 
 
 // Make sure proper elm gets the click event
@@ -211,10 +212,15 @@ $(document).ready(function() {
 		observe: '.js-sign-in-submit',
 		successCallback: function(form, context, event) {
 
+		    var loginRegisterMethod = "login_register_component";
+		    if($(form).parents('.pop-out__sign-in').length > 0)
+		        loginRegisterMethod = "global_login";
+
 			var loginAnalytics =  {
 				event_name: 'login',
 				login_state: 'successful',
-				userName: '"' + $(form).find('input[name=username]').val() + '"'
+				userName: '"' + $(form).find('input[name=username]').val() + '"',
+				login_register_method: loginRegisterMethod
 			};
 
 			analyticsEvent(	$.extend(analytics_data, loginAnalytics) );
@@ -355,8 +361,13 @@ $(document).ready(function() {
 			var sep = forwardingURL.indexOf('?') < 0 ? '?' : '&';
 			var nextStepUrl = $(form).data('forwarding-url') + sep + usernameInput.attr('name') + '=' + encodeURIComponent(usernameInput.val());
 
+			var loginRegisterMethod = "global_registration";
+			if($(form).hasClass("user-calltoaction"))
+			    loginRegisterMethod = "login_register_component";
+                
+			analyticsEvent( $.extend(analytics_data, { event_name: "registration", login_register_method : loginRegisterMethod }) );
+			
 			window.location.href = nextStepUrl;
-
 		}
 	});
 
@@ -879,7 +890,7 @@ $(document).ready(function() {
 				$(item).data("ttTouchTriggered", true);
 			}
 
-			// Actual mouse events thrown can be any number of things... 
+			// Actual mouse events thrown can be any number of things...
 			if ((e.type === ("mouseover") || e.type === ("mouseenter")) && $(item).data("ttTouchTriggered")) {
 				// Do nothing
 			}
@@ -916,4 +927,18 @@ $(document).ready(function() {
 		i.parentNode.insertBefore(n,i),w._e=[],
 		w.ready=function(t) { w._e.push(t); },
 		w); } (document,"script","twitter-wjs");
+
+
+
+	// Pretty select boxes
+	$('select').selectivity({
+		showSearchInputInDropdown: false,
+		positionDropdown: function($dropdownEl,  $selectEl) {
+			$dropdownEl.css("width", $selectEl.width() + "px");
+		}
+	});
+
+	$(".selectivity-input .selectivity-single-select").each(function() {
+		$(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/web/Website/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
+	})
 });

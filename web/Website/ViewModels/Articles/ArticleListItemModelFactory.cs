@@ -64,6 +64,7 @@ namespace Informa.Web.ViewModels.Articles
 
             var publication = article.Crawl<ISite_Root>();
             var image = article.Featured_Image_16_9?.Src;
+            var curPage = PageItemContext.Get<I___BasePage>();
 
             var model = new ArticleListItemModel
             {
@@ -84,10 +85,10 @@ namespace Informa.Web.ViewModels.Articles
                 IsArticleBookmarked = IsSavedDocumentContext.IsSaved(article._Id),
                 BookmarkText = TextTranslator.Translate("Bookmark"),
                 BookmarkedText = TextTranslator.Translate("Bookmarked"),
-                PageTitle = PageItemContext.Get<I___BasePage>()?.Title
+                PageTitle = curPage?.Title
             };
-
-            if (PageItemContext.Get<ICompany_Page>() != null)
+            
+            if (curPage._TemplateId.Equals(ICompany_PageConstants.TemplateId.Guid))
             {
                 var recordNumber = HttpContext.Current.Request.Url.Segments.Last();
                 var company = DcdReader.GetCompanyByRecordNumber(recordNumber);

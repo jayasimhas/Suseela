@@ -32,7 +32,9 @@ namespace Informa.Web.ViewModels
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISitecoreService SitecoreService;
         protected readonly IAuthorIndexClient AuthorIndexClient;
+        protected readonly IAuthorService AuthorService;
         protected IDCDReader DcdReader;
+        protected IGlassBase Datasource;
 
         public LatestNewsViewModel(IGlassBase datasource,
             IRenderingContextService renderingParametersService,
@@ -40,14 +42,20 @@ namespace Informa.Web.ViewModels
             IItemManuallyCuratedContent itemManuallyCuratedContent,
             IArticleListItemModelFactory articleListableFactory,
             ISiteRootContext rootContext,
-            ITextTranslator textTranslator, ISitecoreService sitecoreService, IAuthorIndexClient authorIndexClient, IDCDReader dcdReader)
+            ITextTranslator textTranslator, 
+            ISitecoreService sitecoreService, 
+            IAuthorIndexClient authorIndexClient, 
+            IAuthorService authorService,
+            IDCDReader dcdReader)
         {
+            Datasource = datasource;
             ArticleSearch = articleSearch;
             ItemManuallyCuratedContent = itemManuallyCuratedContent;
             ArticleListableFactory = articleListableFactory;
             TextTranslator = textTranslator;
             SitecoreService = sitecoreService;
             AuthorIndexClient = authorIndexClient;
+            AuthorService = authorService;
             DcdReader = dcdReader;
 
             Authors = new List<string>();
@@ -68,10 +76,12 @@ namespace Informa.Web.ViewModels
             CompanyRecordNumbers = string.IsNullOrEmpty(Parameters.CompanyID)
                 ? (IList<string>)new List<string>()
                 : Parameters.CompanyID.Split(',');
-
-            if (datasource._TemplateId.ToString() == IAuthor_PageConstants.TemplateIdString)
+            
+            if (IsAuthorPage)
             {
                 Author_Page();
+                if (!Parameters.Publications.Any()) // authors page shouldn't filter on the current publication
+                    publicationNames = Enumerable.Empty<string>();
             }
             else if (datasource._TemplateId.ToString() == ICompany_PageConstants.TemplateIdString)
             {
@@ -85,26 +95,21 @@ namespace Informa.Web.ViewModels
             News = GetLatestNews(datasource._Id, Parameters.Subjects.Select(s => s._Id), publicationNames, Authors, CompanyRecordNumbers, ItemsToDisplay);
         }
 
+        private bool IsAuthorPage => Datasource._TemplateId.ToString() == IAuthor_PageConstants.TemplateIdString;
+
+        private IStaff_Item CurrentAuthor => AuthorService.GetCurrentAuthor();
+        
+        private string CurrentAuthorName => (CurrentAuthor != null) ? $"{CurrentAuthor.First_Name} {CurrentAuthor.Last_Name}" : string.Empty;
+
         public void Author_Page()
         {
-            var nameFromUrl = HttpContext.Current.Request.Url.Segments.Last();
-            Guid? author = AuthorIndexClient.GetAuthorIdByUrlName(nameFromUrl);
-            if (author == null) return;
-
-            var currentAuthor = SitecoreService.GetItem<IStaff_Item>(author.Value);
-            if (currentAuthor == null) return;
-
             if (DisplayTitle)
-            {
-                TitleText = GetTitleText($"{currentAuthor.First_Name} {currentAuthor.Last_Name}");
-            }
-
-            Authors = new List<string> { RemoveSpecialCharactersFromGuid(author.ToString()) };
+                TitleText = GetTitleText(CurrentAuthorName);
+            
+            Authors = new List<string> { RemoveSpecialCharactersFromGuid(CurrentAuthor._Id.ToString()) };
 
             if (SeeAllLink != null)
-            {
-                SeeAllLink.Url = string.Format("/search#?{0}={1}", Constants.QueryString.Author, RemoveSpecialCharactersFromGuid(author.ToString()));
-            }
+                SeeAllLink.Url = string.Format("/search#?{0}={1}", Constants.QueryString.Author, RemoveSpecialCharactersFromGuid(CurrentAuthor._Id.ToString()));
         }
 
         public void Company_Page()
@@ -163,6 +168,24 @@ namespace Informa.Web.ViewModels
             ;
         }
 
+        public string EventSourceValue {
+            get
+            {
+                return (IsAuthorPage)
+                    ? CurrentAuthorName
+                    : TitleText;
+            }
+        }
+
+        public string EventSource
+        {
+            get { 
+                return (IsAuthorPage)
+                    ? "see_all_articles"
+                    : "see_all_topic";
+            }
+        }
+
         private string GetTitleText(string title)
         {
             StringBuilder sb = new StringBuilder();
@@ -188,6 +211,8 @@ namespace Informa.Web.ViewModels
             var articles =
                 results.Articles.Where(a => a != null)
                     .Select(a => ArticleListableFactory.Create(a).Alter(l => l.DisplayImage = false));
+            if (IsAuthorPage) // articles pages are wildcard and don't have a title
+                articles = articles.Select(a => a.Alter(b => b.PageTitle = CurrentAuthorName));
 
             return articles;
         }

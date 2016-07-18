@@ -203,6 +203,10 @@
     <Reference Include="Sitecore.Mvc">
       <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.PrintStudio.PublishingEngine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.PublishingEngine.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Services.Core">
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Core.dll</HintPath>
     </Reference>
@@ -324,8 +328,10 @@
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
     <Compile Include="Authors\AuthorIndexClient.cs" />
+    <Compile Include="Authors\AuthorsAlertOptions.cs" />
     <Compile Include="Authors\AuthorService.cs" />
     <Compile Include="Authors\ComputedFields\IsValid.cs" />
+    <Compile Include="Authors\IAuthorAlertOptions.cs" />
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
@@ -408,6 +414,7 @@
     <Compile Include="Purchase\User\IUserArticlePurchasesContext.cs" />
     <Compile Include="Purchase\User\UserArticlePurchaseItemsContext.cs" />
     <Compile Include="Purchase\User\UserArticlePurchasesContext.cs" />
+    <Compile Include="PXM\BodyContentProcessor.cs" />
     <Compile Include="Rss\FeedGenerators\BaseInformaFeedGenerator.cs" />
     <Compile Include="Rss\FeedGenerators\SearchFeedGenerator.cs" />
     <Compile Include="Rss\Interfaces\IRssFeedGeneration.cs" />
@@ -685,6 +692,8 @@
     <Compile Include="User\Document\ISaveDocument.cs" />
     <Compile Include="User\Document\ISaveDocumentContext.cs" />
     <Compile Include="User\Document\IsSavedDocumentContext.cs" />
+    <Compile Include="User\Orders\ICreateUserOrderResult.cs" />
+    <Compile Include="User\Orders\IUserOrder.cs" />
     <Compile Include="User\Profile\IUserProfileContext.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\NewsletterUserOptInsContext.cs" />
@@ -1109,6 +1118,7 @@
     <Compile Include="Utilities\StringUtils\WordUtil.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
     <Compile Include="Utilities\TokenMatcher\DCDTokenMatchers.cs" />
+    <Compile Include="Utilities\TokenMatcher\TokenToHtml.cs" />
     <Compile Include="Utilities\WebApi\Caching\ApiOutputCacheAdapter.cs" />
     <Compile Include="Utilities\WebApi\Filters\ArgumentsRequiredAttribute.cs" />
     <Compile Include="Utilities\WebApi\Filters\ValidateCsrfAttribute.cs" />

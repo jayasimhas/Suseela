@@ -1,0 +1,235 @@
+/*
+ * This borrows and modifies the base selectivity styles, so don't just drop in
+ * selectivity-full.css and expect it to work if you're upgrading selectivity,
+ * you may need to do some line-by-line work
+ */
+
+.selectivity-clearfix {
+	clear: both;
+}
+
+.selectivity-input {
+	display: inline-block;
+	width: 250px;
+}
+.selectivity-input select {
+	display: none;
+}
+
+.selectivity-placeholder {
+}
+
+/**
+ * Backdrop
+ */
+.selectivity-backdrop {
+	position: fixed;
+	z-index: 1045;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+/**
+ * Dropdown
+ */
+.selectivity-dropdown {
+	@extend .inf-standard-form-field;
+	border-top-width: 0;
+	padding-bottom: 0;
+	padding-right: 0;
+	padding-top: 0;
+	position: absolute;
+	z-index: 1046;
+}
+
+.selectivity-search-input-container {
+}
+
+.selectivity-search-input {
+	width: 100%;
+}
+
+.selectivity-results-container {
+	max-height: 28em;
+	overflow: auto;
+	position: relative;
+}
+
+.selectivity-load-more,
+.selectivity-result-item {
+	cursor: pointer;
+	padding: 7px;
+}
+
+.selectivity-result-children .selectivity-result-item {
+	padding-left: 17px;
+}
+
+.selectivity-load-more.highlight,
+.selectivity-result-item.highlight {
+}
+
+.selectivity-result-item.disabled {
+	cursor: default;
+}
+
+.selectivity-result-item:first-child {
+}
+
+.selectivity-dropdown.has-search-input .selectivity-result-item:first-child {
+}
+
+.selectivity-result-label {
+	font-weight: bold;
+}
+
+.selectivity-load-more,
+.selectivity-result-item:last-child,
+.selectivity-result-children:last-child .selectivity-result-item:last-child {
+}
+
+.selectivity-result-children .selectivity-result-item:last-child {
+}
+
+.selectivity-error,
+.selectivity-loading,
+.selectivity-search-input-container,
+.selectivity-result-label {
+	padding: 7px;
+}
+
+/**
+ * Multi-selection input
+ */
+.selectivity-multiple-input-container {
+	cursor: text;
+	max-height: 10em;
+	overflow: auto;
+	padding: 5px;
+}
+
+.selectivity-multiple-input-container .selectivity-placeholder {
+	height: -webkit-calc(2em + 4px);
+	height: calc(2em + 4px);
+	line-height: -webkit-calc(2em + 4px);
+	line-height: calc(2em + 4px);
+}
+
+.selectivity-multiple-input,
+input[type='text'].selectivity-multiple-input {
+	float: left;
+	font: inherit;
+	height: -webkit-calc(2em + 4px);
+	height: calc(2em + 4px);
+	max-width: 100%;
+	padding: 0;
+}
+	.selectivity-multiple-input:focus,
+	input[type='text'].selectivity-multiple-input:focus {
+	}
+
+.selectivity-multiple-input::-ms-clear {
+	display: none;
+}
+
+.selectivity-multiple-input.selectivity-width-detector {
+	position: absolute;
+	top: -10000px;
+	left: 0;
+	white-space: pre;
+}
+
+.selectivity-multiple-selected-item {
+	cursor: default;
+	float: left;
+	line-height: 2em;
+	margin: 2px;
+	padding-right: 5px;
+	position: relative;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+}
+	.selectivity-multiple-selected-item.highlighted {
+}
+
+.selectivity-multiple-selected-item-remove {
+	cursor: pointer;
+	padding: 5px;
+}
+
+/**
+ * Single-selection input
+ */
+.selectivity-single-select {
+	@extend .inf-standard-form-field;
+	cursor: pointer;
+	position: relative;
+	box-sizing: content-box;
+}
+
+.selectivity-single-select-input {
+	opacity: 0;
+}
+
+.selectivity-single-result-container {
+	position: absolute;
+	top: 0.8em;
+	right: 15px;
+	left: 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.selectivity-single-selected-item {
+}
+
+.selectivity-single-selected-item-remove {
+	float: right;
+	padding: 0 5px;
+}
+
+.selectivity-caret {
+	position: absolute;
+	right: 5px;
+	top: 0.7em;
+}
+
+@media only screen and (max-device-width: 480px) {
+	.selectivity-single-select {
+}
+
+	.selectivity-single-result-container {
+		right: 5px;
+}
+
+	.selectivity-caret {
+		display: none;
+}
+}
+/**
+ * Submenu
+ */
+.selectivity-submenu-icon {
+	position: absolute;
+	right: 4px;
+}
+
+
+
+.selectivity-arrow {
+	position: absolute;
+		top: calc(50% - 10px);
+		right: 8px;
+
+	svg {
+		fill: $color-abbey-gray;
+		height: 12px;
+		width: 12px;
+	}
+}

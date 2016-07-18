@@ -311,6 +311,26 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.PrintStudio.Configuration, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.DashBoardClient, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.DashBoardClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.InDesign.Soap, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.InDesign.Soap.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.InDesignConnectorService, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.InDesignConnectorService.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.PublishingEngine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.PublishingEngine.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Services.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Core.dll</HintPath>
@@ -589,6 +609,10 @@
       <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="zxing, Version=1.0.4391.16826, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\zxing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http.Formatting">
@@ -688,6 +712,7 @@
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentRemoveRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentSaveRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\PreRegisterRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Registration\RegisterFreeTrialRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\SetOptInsRequest.cs" />
@@ -705,6 +730,7 @@
     <Compile Include="Areas\Account\ViewModels\Management\ContactInformationViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SubscriptionViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Registration\RegisterFreeTrialUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
@@ -734,6 +760,9 @@
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
     <Compile Include="Controllers\WorkFlowUtil.cs" />
+    <Compile Include="CustomMvc\CustomHtmlNodeParser.cs" />
+    <Compile Include="CustomMvc\Parsers\CustomImageParser.cs" />
+    <Compile Include="CustomMvc\Pipelines\CustomConvertToXml.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
     <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
@@ -786,6 +815,7 @@
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
+    <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
@@ -1238,6 +1268,7 @@
     <None Include="App_Config\Prefetch\Master.config.template" />
     <None Include="App_Config\Prefetch\Webdb.config.template" />
     <Content Include="Areas\VWB\Views\web.config" />
+    <Content Include="Areas\Account\Views\Registration\RegisterFreeTrial.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>

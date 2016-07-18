@@ -1,4 +1,150 @@
 {% include &quot;organisms-raw-header&quot; %}
+ &lt;script type=&quot;text/javascript&quot;&gt;
+	/* * *
+	ANALYTICS DATA
+	* * */
+	var analytics_data = {
+		&quot;actual_publish_date&quot;: &quot;01/01/0001&quot;,
+		&quot;article_author&quot;: &quot;&quot;,
+		&quot;article_content_type&quot;: &quot;&quot;,
+		&quot;article_embargo&quot;: &quot;False&quot;,
+		&quot;article_entitlements&quot;: &quot;Abstract View&quot;,
+		&quot;article_media_type&quot;: &quot;&quot;,
+		&quot;article_number&quot;: &quot;&quot;,
+		&quot;company_Id&quot;: &quot;&quot;,
+		&quot;company&quot;: &quot;&quot;,
+		&quot;created_date&quot;: &quot;04/07/2008&quot;,
+		&quot;current_email_subscriptions&quot;: &quot;&quot;,
+		&quot;custom_tags&quot;: &quot;&quot;,
+		&quot;entitlement_status&quot;: &quot;unentitled&quot;,
+		&quot;industry&quot;: &quot;&quot;,
+		&quot;IsArticleFree&quot;: &quot;False&quot;,
+		&quot;login_status&quot;: &quot;False&quot;,
+		&quot;page_description&quot;: &quot;&quot;,
+		&quot;page_keywords&quot;: &quot;&quot;,
+		&quot;page_name&quot;: &quot;Home&quot;,
+		&quot;page_title_override&quot;: &quot;&quot;,
+		&quot;page_type&quot;: &quot;Home Page&quot;,
+		&quot;publication&quot;: &quot;Scrip&quot;,
+		&quot;salesforce_account_id&quot;: &quot;&quot;,
+		&quot;salesforce_contact_id&quot;: &quot;&quot;,
+		&quot;taxonomy_region&quot;: &quot;&quot;,
+		&quot;taxonomy_subjects&quot;: &quot;&quot;,
+		&quot;taxonomy_therapy_areas&quot;: &quot;&quot;,
+		&quot;user_email&quot;: &quot;&quot;,
+		&quot;user_entitlement_type&quot;: &quot;&quot;,
+		&quot;user_id&quot;: &quot;&quot;,
+		&quot;User_IP_Address&quot;: &quot;172.28.10.45&quot;,
+		&quot;content_entitlement_type&quot;: &quot;unentitled&quot;,
+		&quot;entitlement_type&quot;: &quot;Free User&quot;,
+		&quot;opportunity_id&quot;: &quot;&quot;,
+		&quot;opportunity_line_item_id&quot;: &quot;&quot;
+	};
+
+	var utag_data = analytics_data;
+
+	(function (a, b, c, d) {
+		a = '//tags.tiqcdn.com/utag/informa/main/dev/utag.js';
+		b = document; c = 'script'; d = b.createElement(c); d.src = a;
+		d.type = 'text/java' + c; d.async = true;
+		a = b.getElementsByTagName(c)[0];
+		a.parentNode.insertBefore(d, a);
+	})();
+
+	function getCorrespondingSectr(sector) {
+		if (sector == 'comment' || sector == 'features' || sector == 'analysis') {
+			sector = 'analysis';
+		} else if (sector == 'supplementsreports' || sector == 'multimedia' || sector == 'scienceabstracts') {
+			sector = 'home';
+		} else if (sector == 'therapysector' || sector == 'other') {
+			sector = 'therapy';
+		} else if (sector == 'cardiovascular') {
+			sector = 'cardio';
+		} else if (sector == 'musculoskeletal') {
+			sector = 'musculo';
+		} else if (sector == 'gastrointestinal') {
+			sector = 'gastro';
+		} else if (sector == 'genericsbusiness') {
+			sector = 'genbusiness';
+		} else if (sector == 'manda') {
+			sector = 'merger';
+		} else if (sector == 'businessstrategy') {
+			sector = 'corp';
+		} else if (sector == 'lifecyclemanagement') {
+			sector = 'lifecycle';
+		} else if (sector == 'policyregulation') {
+			sector = 'policyandreg';
+		} else if (sector == 'pricingreimbursement') {
+			sector = 'pandr';
+		} else if (sector == 'healthcarepolicy') {
+			sector = 'hpolicy';
+		} else if (sector == 'pharmacovigilance') {
+			sector = 'pharmacv';
+		} else if (sector == 'intellectualproperty') {
+			sector = 'ip';
+		} else if (sector == 'researchdevelopment') {
+			sector = 'randd';
+		} else if (sector == 'productapprovals') {
+			sector = 'approvals';
+		} else if (sector == 'clinicaltrials') {
+			sector = 'ctrials';
+		} else if (sector == 'productfilings') {
+			sector = 'filings';
+		} else if (sector == 'productsafety') {
+			sector = 'safety';
+		} else if (sector == 'productdelays') {
+			sector = 'delays';
+		} else if (sector == 'latinamerica') {
+			sector = 'lamerica';
+		} else if (sector == 'world') {
+			sector = 'row';
+		}
+		return sector;
+	}
+
+OAS_publication = 'www.scripnews.com/';
+//configuration
+OAS_url = 'https://oasc-eu1.247realmedia.com/RealMedia/ads/';
+OAS_sitepage = OAS_publication + getCorrespondingSectr('home');
+OAS_listpos = 'Top,Top1,Bottom,Right,Right1,TopRight,Top2,Top3,Middle,Middle1,Position2,Position3';
+OAS_query = '';
+OAS_target = 'ad';
+//end of configuration
+OAS_version = 11;
+OAS_rn = '001234567890';
+OAS_rns = '1234567890';
+OAS_rn = new String (Math.random()); OAS_rns = OAS_rn.substring (2, 11);
+
+function OAS_NORMAL(pos,sector,keyword) {
+    document.write('&lt;A HREF=&quot;' + OAS_url + 'click_nx.ads/' + OAS_sitepage + '/1' + OAS_rns + '%40' + OAS_listpos + '!' + pos + OAS_query + '&quot; TARGET=&quot;' + OAS_target + '&quot;&gt;');
+    document.write('&lt;IMG SRC=&quot;' + OAS_url + 'adstream_nx.ads/' + OAS_sitepage + '/1' + OAS_rns + '%40' + OAS_listpos + '!' + pos + OAS_query + '&quot; BORDER=0 ALT=&quot;Advertisement&quot; Title=&quot;&quot;&gt;&lt;/a&gt;');
+}
+
+if (navigator.userAgent.indexOf('Mozilla/3') != -1)
+    OAS_version = 10;
+if (OAS_version &gt;= 11)
+    document.write('&lt;SC'+'RIPT LANGUAGE=&quot;JavaScript1.1&quot; SRC=&quot;' + OAS_url + 'adstream_mjx.ads/' + OAS_sitepage + '/1' + OAS_rns + '%40' + OAS_listpos + OAS_query + '&quot;&gt;&lt;\/SCRIPT&gt;');
+
+document.write('');
+function OAS_AD(pos,sector) {
+    if (OAS_version &gt;= 11 &amp;&amp; typeof(OAS_RICH)!='undefined')
+        OAS_RICH(pos);
+    else
+        OAS_NORMAL(pos,sector,'');
+}
+function OAS_AD_SEARCH(pos,sector,keyword) {
+
+    var sectorName = getCorrespondingSectr(sector);
+
+    if (OAS_version &gt;= 11 &amp;&amp; typeof(OAS_RICH)!='undefined'){
+        OAS_RICH(pos);
+    }
+    else{
+        OAS_NORMAL(pos,sectorName,keyword);
+    }
+}
+
+&lt;/script&gt;
 &lt;main&gt;
 	{% include &quot;organisms-raw-main-menu&quot; %}
 	&lt;div class=&quot;main__wrapper&quot;&gt;

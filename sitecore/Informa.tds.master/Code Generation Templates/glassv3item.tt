@@ -227,7 +227,7 @@ public static string GetGlassFieldType(SitecoreField field)
 				return "string";
 			case "attachment":
 			case "word document":
-				return "System.IO.Stream";	   
+				return "global::System.IO.Stream";	   
 			case "name lookup value list":
 			case "name value list":
 				return "NameValueCollection";                                                                                                                         
