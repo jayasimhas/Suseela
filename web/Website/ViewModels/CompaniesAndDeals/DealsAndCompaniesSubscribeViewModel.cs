@@ -1,9 +1,13 @@
 ﻿using Glass.Mapper.Sc;
+using Informa.Library.Site;
 using Informa.Library.Utilities.References;
+using Informa.Library.Utilities.WebUtils;
+using Informa.Library.Wrappers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
+using Informa.Library.Utilities.Settings;
 
 namespace Informa.Web.ViewModels.CompaniesAndDeals
 {
@@ -13,6 +17,9 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         public interface IDependencies
         {
             ISitecoreService SitecoreService { get; set; }
+            IHttpContextProvider HttpContextProvider { get; }
+            ISiteRootContext SiteRootContext { get; }
+            ISiteSettings SiteSettingsContext { get; set; }
         }
 
         public DealsAndCompaniesSubscribeViewModel(IDependencies dependencies)
@@ -24,7 +31,10 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             PurchaseHeadline = dcdSubscribeComponent.Purchase_Headline;
             PurchaseSubHeading = dcdSubscribeComponent.Purchase_Subheading;
             PurchaseButtonText = dcdSubscribeComponent.Purchase_Button_Text;
-            //PurchaseButtonLink = dcdSubscribeComponent.Purchase_Headline;
+
+            var recordNumber = UrlUtils.GetLastUrlSement(dependencies.HttpContextProvider.Current);
+
+            PurchaseButtonLink = string.Format(dependencies.SiteSettingsContext.OldDealsUrl, recordNumber);
             SubscriberHeadline = dcdSubscribeComponent.Subscriber_Headline;
             SubscriberSubHeading = dcdSubscribeComponent.Subscriber_SubHeadline;
             SubscriberButtonText = dcdSubscribeComponent.Subscribe_Button_Text;
