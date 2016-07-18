@@ -1,11 +1,10 @@
 ﻿@model Informa.Web.ViewModels.CompaniesAndDeals.DealViewModel
 
-<script type="text/javascript"> (function () { document.title = '@(Model.Deal.Title)'; })(); </script>
+<script type="text/javascript"> (function () { document.title = document.title.replace('*', '@(Model.Deal.Title)'); })(); </script>
 
 @if (!string.IsNullOrEmpty(Model.LogoUrl))
 {
     <div class="deal-sponsor">
-        @* DealSponsorImageUrl: Path to sponsor logo  *@
         @Model.BroughtToYouByText <img src="@(Model.LogoUrl)" />
     </div>
 }
@@ -14,7 +13,6 @@
     <h1>@Model.Deal.Title</h1>
 
     <div class="generic-content__dateline">
-        @* DealDate: Date of deal in MMM YYYY format (eg. Jul 2016)  *@
         @(Model.Content.DealInfo.PublishedDate.ToDate().ToString("MMM yyyy"))
     </div>
     <h5>@Model.DealsSummaryText</h5>

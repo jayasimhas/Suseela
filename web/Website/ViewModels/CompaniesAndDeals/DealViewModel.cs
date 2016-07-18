@@ -1,6 +1,7 @@
 ﻿using Glass.Mapper.Sc;
 using Informa.Library.DCD;
 using Informa.Library.Globalization;
+using Informa.Library.Utilities.Parsers;
 using Informa.Library.Utilities.References;
 using Informa.Library.Utilities.WebUtils;
 using Informa.Library.Wrappers;
@@ -22,7 +23,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         {
             IDCDReader DcdReader { get; }
             IHttpContextProvider HttpContextProvider { get; }
-            IDcdXmlParser DcdXmlParser { get; set; }
+            ICachedXmlParser CachedXmlParser { get; set; }
             ITextTranslator TextTranslator { get; }
             ISitecoreService SitecoreService { get; set; }
         }
@@ -36,7 +37,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             Deal = _dependencies.DcdReader.GetDealByRecordNumber(RecordNumber);
             if (Deal == null) RedirectTo404();
 
-            Content = _dependencies.DcdXmlParser.ParseContent<DealContent>(Deal.Content, RecordNumber);
+            Content = _dependencies.CachedXmlParser.ParseContent<DealContent>(Deal.Content, RecordNumber);
             if (Content == null) RedirectTo404();
 
         }
@@ -49,8 +50,8 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         public string RecordNumber { get; set; }
         public Deal Deal { get; set; }
         public DealContent Content { get; set; }
-        public string DealsSummaryText =>_dependencies.TextTranslator.Translate("DCD.Summary");
 
+        public string DealsSummaryText =>_dependencies.TextTranslator.Translate("DCD.Summary");
         public string BroughtToYouByText => _dependencies.TextTranslator.Translate("DCD.BroughToYouBy");
 
         public string LogoUrl

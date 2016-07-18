@@ -12,22 +12,8 @@ templatekey: Deal Page
 ----version----
 language: en
 version: 1
-revision: 6adc5f3a-12a4-4b8b-9210-84c7232174eb
+revision: a36fa211-763e-4b78-a9f6-3d066cece6f6
 
-----field----
-field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
-name: Title
-key: title
-content-length: 1
-
-*
-----field----
-field: {F1D1DC93-63DF-4AFA-B60F-B3A3E9D36675}
-name: Sub Title
-key: sub title
-content-length: 1
-
-*
 ----field----
 field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
 name: Navigation Title
@@ -48,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6adc5f3a-12a4-4b8b-9210-84c7232174eb
+a36fa211-763e-4b78-a9f6-3d066cece6f6
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160711T175124Z
+20160718T130354Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -13669,7 +13669,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 					/// The Logo field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
-					/// <para>Field ID: 115dc518-7fb6-4151-a7bd-d6b95a4cab74</para>
+					/// <para>Field ID: 669c4be3-9a09-4278-80b6-c5e49c09ec30</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
 					[SitecoreField(IStrategic_TransactionsConstants.LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
@@ -13717,7 +13717,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 						/// The Logo field.
 						/// <para></para>
 						/// <para>Field Type: Image</para>		
-						/// <para>Field ID: 115dc518-7fb6-4151-a7bd-d6b95a4cab74</para>
+						/// <para>Field ID: 669c4be3-9a09-4278-80b6-c5e49c09ec30</para>
 						/// <para>Custom Data: </para>
 						/// </summary>
 						[SitecoreField(IStrategic_TransactionsConstants.LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
@@ -13756,7 +13756,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 				public const string Body__RawFieldName = "Body";
 						
 					
-			public static readonly ID LogoFieldId = new ID("115dc518-7fb6-4151-a7bd-d6b95a4cab74");
+			public static readonly ID LogoFieldId = new ID("669c4be3-9a09-4278-80b6-c5e49c09ec30");
 			public const string LogoFieldName = "Logo";
 
 						
