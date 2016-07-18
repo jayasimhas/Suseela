@@ -10,6 +10,13 @@ template: {D0DFAF98-BB2A-4EB3-A931-13C335201D25}
 templatekey: Article Date Folder
 
 ----field----
+field: {A0CB3965-8884-4C7A-8815-B6B2E5CED162}
+name: __Editors
+key: __editors
+content-length: 77
+
+{7A4C4B6F-DF37-456D-ABE7-4557F6C79F56}|{A0C460F4-DBAE-4A5A-8F3A-C4ADFCDACEEA}
+----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
 name: __Masters
 key: __masters
@@ -19,7 +26,7 @@ content-length: 77
 ----version----
 language: en
 version: 1
-revision: 6566e018-143c-4cb1-a54a-aff6909e23e7
+revision: da6ee7c6-3a65-4bcd-b6f4-57a449a2ecab
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6566e018-143c-4cb1-a54a-aff6909e23e7
+da6ee7c6-3a65-4bcd-b6f4-57a449a2ecab
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160314T113846Z
+20160718T181237Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
