@@ -72,7 +72,7 @@ namespace Informa.Web.ViewModels
                 ? Parameters.Publications.Select(p => p.Publication_Name)
                 : new[] { rootContext.Item.Publication_Name };
 
-            Authors = Parameters.Authors.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())).ToArray();
+            Authors = Parameters.Authors?.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())).ToArray();
             CompanyRecordNumbers = string.IsNullOrEmpty(Parameters.CompanyID)
                 ? (IList<string>)new List<string>()
                 : Parameters.CompanyID.Split(',');
@@ -128,7 +128,7 @@ namespace Informa.Web.ViewModels
             }
             if (SeeAllLink != null)
             {
-                SeeAllLink.Url = string.Format("/search#?{0}={1}", Constants.QueryString.Company, recordNumber);
+                SeeAllLink.Url = string.Format("/search#?{0}={1}", Constants.QueryString.Company, company.Title);
             }
         }
 
@@ -201,11 +201,11 @@ namespace Informa.Web.ViewModels
 
             filter.Page = 1;
             filter.PageSize = itemsToDisplay;
-            filter.ExcludeManuallyCuratedItems.AddRange(manuallyCuratedContent);
-            filter.TaxonomyIds.AddRange(subjectIds);
-            filter.PublicationNames.AddRange(publicationNames);
-            filter.AuthorNames.AddRange(authorNames);
-            filter.CompanyRecordNumbers.AddRange(companyRecordNumbers);
+            if(manuallyCuratedContent != null) filter.ExcludeManuallyCuratedItems.AddRange(manuallyCuratedContent);
+            if(subjectIds != null) filter.TaxonomyIds.AddRange(subjectIds);
+            if(publicationNames != null) filter.PublicationNames.AddRange(publicationNames);
+            if(authorNames != null) filter.AuthorNames.AddRange(authorNames);
+            if(companyRecordNumbers != null) filter.CompanyRecordNumbers.AddRange(companyRecordNumbers);
 
             var results = ArticleSearch.Search(filter);
             var articles =

@@ -1384,6 +1384,7 @@
     <Content Include="Views\CompaniesAndDeals\CompanyRectangularAd.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealDetails.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealsAndCompaniesSubscribe.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealRelatedCompanies.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

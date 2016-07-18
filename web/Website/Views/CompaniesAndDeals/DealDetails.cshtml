@@ -5,8 +5,9 @@
 @if (!string.IsNullOrEmpty(Model.LogoUrl))
 {
     <div class="deal-sponsor">
-        @Model.BroughtToYouByText <img src="@(Model.LogoUrl)" />
+        @Model.BroughtToYouByText <img src="@(Model.LogoUrl)"/>
     </div>
+    <hr />
 }
 
 <div class="generic-content">
@@ -18,5 +19,40 @@
     <h5>@Model.DealsSummaryText</h5>
     <div>
         @(Model.Content.DealSummary)
+    </div>
+</div>
+
+<div class="l-columns l-columns--with-divider l-columns--three-up">
+
+    <div class="l-columns__column">
+        <h6>@Model.DealIndustryHeader</h6>
+        <ul class="carrot-list">
+            @foreach (var industry in Model.Industries)
+            {
+                <li class="article-topics__li">@(industry.Name)</li>
+            }
+        </ul>
+    </div>
+
+    <div class="l-columns__column">
+        <h6>@Model.DealStatusHeader</h6>
+        <ul class="carrot-list">
+                <li class="article-topics__li">@Model.Content.DealInfo.DealStatus</li>
+        </ul>
+    </div>
+
+    <div class="l-columns__column">
+        <h6>@Model.DealTypeHeader</h6>
+        <ul class="carrot-list">
+            <li class="article-topics__li">
+                @Model.Content.DealInfo.DealType
+                <ul>
+                    @foreach (var characteristic in Model.Content.DealInfo.Characteristics)
+                    {
+                        <li class="article-topics__li">@characteristic</li>
+                    }
+                </ul>
+            </li>
+        </ul>
     </div>
 </div>

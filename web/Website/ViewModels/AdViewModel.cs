@@ -49,14 +49,6 @@ namespace Informa.Web.ViewModels
         public string AdZone => SiteRootContext.Item?.Global_Article_Ad_Zone ?? string.Empty;
         public string AdvertisementText => TextTranslator.Translate("Ads.Advertisement");
         
-        public string AuthorLeaderboardAdZone => SiteRootContext.Item?.Author_Leaderboard_Author_Ad_Zone;
-        public string AuthorLeaderboardSlotID => SiteRootContext.Item?.Author_Leaderboard_Author_Slot_ID;
-        public string AuthorRectangularAdZone => SiteRootContext.Item?.Author_Rectangular_Ad_Zone;
-        public string AuthorRectangularSlotID => SiteRootContext.Item?.Author_Rectangular_Slot_ID;
-        public string CompanyLeaderboardAdZone => SiteRootContext.Item?.Company_Leaderboard_Author_Ad_Zone;
-        public string CompanyLeaderboardSlotID => SiteRootContext.Item?.Company_Leaderboard_Author_Slot_ID;
-        public string CompanyRectangularAdZone => SiteRootContext.Item?.Company_Rectangular_Ad_Zone;
-        public string CompanyRectangularSlotID => SiteRootContext.Item?.Company_Rectangular_Slot_ID;
         public bool IsValidAd(string adId) => !string.IsNullOrEmpty(AdZone) && !string.IsNullOrEmpty(adId);
     }
 }
