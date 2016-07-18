@@ -34,17 +34,6 @@ namespace Informa.Web.CustomMvc.Parsers
 					XElement element = this.CreateImageParagraphElement(htmlNode, (Item)mediaItem, parseContext);
 					element.Add(new XCData("Image name:" + mediaItem.Name));
 					resultElement.Add((object)element);
-
-					string width;
-					string height;
-					StyleParser.ParseDimensions(htmlNode, out width, out height);
-					if (string.IsNullOrEmpty(width))
-						width = HtmlParseHelper.ParseDimensionValue(mediaItem.InnerItem["Width"], true);
-					if (string.IsNullOrEmpty(height))
-						height = HtmlParseHelper.ParseDimensionValue(mediaItem.InnerItem["Height"], true);
-					xelement = this.CreateInlineElement(width, height);
-					XElement imageElement = this.CreateImageElement(htmlNode, (Item)mediaItem, parseContext, width, height);
-					xelement.Add((object)imageElement);
 				}
 			}
 			if (xelement == null)
