@@ -328,8 +328,10 @@
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
     <Compile Include="Authors\AuthorIndexClient.cs" />
+    <Compile Include="Authors\AuthorsAlertOptions.cs" />
     <Compile Include="Authors\AuthorService.cs" />
     <Compile Include="Authors\ComputedFields\IsValid.cs" />
+    <Compile Include="Authors\IAuthorAlertOptions.cs" />
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
