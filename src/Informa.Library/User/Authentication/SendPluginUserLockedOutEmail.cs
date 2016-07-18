@@ -46,7 +46,7 @@ namespace Informa.Library.User.Authentication
                 messageBody = messageBody.Replace("{logo}", _dependencies.SitecoreUrlWrapper.GetMediaUrl(_dependencies.SiteRootContext.Item.Email_Logo.MediaId));
                 messageBody = messageBody.Replace("{username}", user.UserName);
                 messageBody = messageBody.Replace("{dateLockedOut}", user.LastLockoutDate.ToString(CultureInfo.InvariantCulture));
-                messageBody = messageBody.Replace("{dateLockedOut}", user.LastLockoutDate.ToString(CultureInfo.InvariantCulture));
+                
 
                 //Prepare Email variable
                 var message = new Email();
