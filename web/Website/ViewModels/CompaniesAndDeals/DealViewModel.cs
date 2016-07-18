@@ -56,6 +56,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         public string DealIndustryHeader => _dependencies.TextTranslator.Translate("DCD.DealIndustry");
         public string DealStatusHeader => _dependencies.TextTranslator.Translate("DCD.DealStatus");
         public string DealTypeHeader => _dependencies.TextTranslator.Translate("DCD.DealType");
+        public string RelatedCompaniesHeader => _dependencies.TextTranslator.Translate("DCD.RelatedCompanies");
 
         public string LogoUrl
         {
@@ -69,6 +70,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         }
 
         public Coding[] Industries => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("indstry"))?.Codings;
+        public InnerCompany[] RelatedCompanies => Content.DealCompanies.Select(x => x.Company).ToArray();
 
     }
 }

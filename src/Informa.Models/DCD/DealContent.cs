@@ -17,6 +17,8 @@ namespace Informa.Models.DCD
         public CodingSet[] CodingSets { get; set; }
 
         public DealFinancials DealFinancials { get; set; }
+
+        public DealCompany[] DealCompanies { get; set; }
     }
 
     public class DealInfo
@@ -84,6 +86,12 @@ namespace Informa.Models.DCD
     }
 
     public class DealCompany
+    {
+        [XmlElement(ElementName = "Company")]
+        public InnerCompany Company { get; set; }
+    }
+
+    public class InnerCompany
     {
         [XmlAttribute(AttributeName = "id")]
         public string Id { get; set; }
