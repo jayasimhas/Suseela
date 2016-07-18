@@ -10,7 +10,7 @@
 			data-submit-type="DELETE"
 			data-analytics='{
 				"event_name": "remove_alert",
-				"alert_topic": "@Html.Raw(Model.TopicName)"
+				"alert_topic": "@Html.Raw(Model.AlertTitle)"
 			}'>
 
 			<input name="Url" class="js-save-search-url" id="Url" type="hidden" value="">
@@ -38,14 +38,14 @@
 	            </svg>
 	            <span
 					class="js-set-topic-label"
-					data-label-not-set="@Html.Raw(Model.SetAlertText)@Html.Raw(Model.TopicName)"
-					data-label-is-set="@Html.Raw(Model.RemoveAlertText)@Html.Raw(Model.TopicName)">
+					data-label-not-set="@Html.Raw(Model.SetAlertText)@Html.Raw(Model.AlertTitle)"
+					data-label-is-set="@Html.Raw(Model.RemoveAlertText)@Html.Raw(Model.AlertTitle)">
 					@if (Model.AlertIsSet)
 					{
-						@Html.Raw(Model.RemoveAlertText)@Html.Raw(Model.TopicName)
+						@Html.Raw(Model.RemoveAlertText)@Html.Raw(Model.AlertTitle)
 					} else
 					{
-						@Html.Raw(Model.SetAlertText)@Html.Raw(Model.TopicName)
+						@Html.Raw(Model.SetAlertText)@Html.Raw(Model.AlertTitle)
 					}
 				</span>
 

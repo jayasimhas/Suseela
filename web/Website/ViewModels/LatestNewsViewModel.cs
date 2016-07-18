@@ -32,6 +32,7 @@ namespace Informa.Web.ViewModels
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISitecoreService SitecoreService;
         protected readonly IAuthorIndexClient AuthorIndexClient;
+        protected readonly IAuthorService AuthorService;
         protected IDCDReader DcdReader;
         protected IGlassBase Datasource;
 
@@ -41,7 +42,11 @@ namespace Informa.Web.ViewModels
             IItemManuallyCuratedContent itemManuallyCuratedContent,
             IArticleListItemModelFactory articleListableFactory,
             ISiteRootContext rootContext,
-            ITextTranslator textTranslator, ISitecoreService sitecoreService, IAuthorIndexClient authorIndexClient, IDCDReader dcdReader)
+            ITextTranslator textTranslator, 
+            ISitecoreService sitecoreService, 
+            IAuthorIndexClient authorIndexClient, 
+            IAuthorService authorService,
+            IDCDReader dcdReader)
         {
             Datasource = datasource;
             ArticleSearch = articleSearch;
@@ -50,6 +55,7 @@ namespace Informa.Web.ViewModels
             TextTranslator = textTranslator;
             SitecoreService = sitecoreService;
             AuthorIndexClient = authorIndexClient;
+            AuthorService = authorService;
             DcdReader = dcdReader;
 
             Authors = new List<string>();
@@ -91,24 +97,8 @@ namespace Informa.Web.ViewModels
 
         private bool IsAuthorPage => Datasource._TemplateId.ToString() == IAuthor_PageConstants.TemplateIdString;
 
-        private IStaff_Item _CurrentAuthor;
-        private IStaff_Item CurrentAuthor
-        {
-            get
-            {
-                if (_CurrentAuthor != null)
-                    return _CurrentAuthor;
-
-                var nameFromUrl = HttpContext.Current.Request.Url.Segments.Last();
-                Guid? author = AuthorIndexClient.GetAuthorIdByUrlName(nameFromUrl);
-                if (author == null)
-                    return _CurrentAuthor;
-
-                _CurrentAuthor = SitecoreService.GetItem<IStaff_Item>(author.Value);
-                    return _CurrentAuthor;
-            }
-        }
-
+        private IStaff_Item CurrentAuthor => AuthorService.GetCurrentAuthor();
+        
         private string CurrentAuthorName => (CurrentAuthor != null) ? $"{CurrentAuthor.First_Name} {CurrentAuthor.Last_Name}" : string.Empty;
 
         public void Author_Page()
