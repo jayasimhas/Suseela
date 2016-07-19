@@ -212,9 +212,9 @@ $(document).ready(function() {
 		observe: '.js-sign-in-submit',
 		successCallback: function(form, context, event) {
 
-		    var loginRegisterMethod = "login_register_component";
-		    if($(form).parents('.pop-out__sign-in').length > 0)
-		        loginRegisterMethod = "global_login";
+			var loginRegisterMethod = "login_register_component";
+			if($(form).parents('.pop-out__sign-in').length > 0)
+				loginRegisterMethod = "global_login";
 
 			var loginAnalytics =  {
 				event_name: 'login',
@@ -363,10 +363,10 @@ $(document).ready(function() {
 
 			var loginRegisterMethod = "global_registration";
 			if($(form).hasClass("user-calltoaction"))
-			    loginRegisterMethod = "login_register_component";
-                
+				loginRegisterMethod = "login_register_component";
+
 			analyticsEvent( $.extend(analytics_data, { event_name: "registration", login_register_method : loginRegisterMethod }) );
-			
+
 			window.location.href = nextStepUrl;
 		}
 	});
@@ -939,6 +939,6 @@ $(document).ready(function() {
 	});
 
 	$(".selectivity-input .selectivity-single-select").each(function() {
-		$(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/web/Website/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
-	})
+		$(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
+	});
 });
