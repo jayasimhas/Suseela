@@ -1,18 +1,18 @@
 ﻿@model Informa.Web.ViewModels.PopOuts.ISignInPopOutViewModel
 <div class="pop-out js-pop-out__social-sign-in">
-	<div class="pop-out__tab"></div>
-	<div class="pop-out__internal">
-		<div class="pop-out__social-sign-in">
-			<div class="dismiss-button" data-target-element=".js-pop-out__social-sign-in">
-				<svg class="dismiss-button__icon">
-					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-				</svg>
-			</div>
+    <div class="pop-out__tab"></div>
+    <div class="pop-out__internal">
+        <div class="pop-out__social-sign-in">
+            <div class="dismiss-button" data-target-element=".js-pop-out__social-sign-in">
+                <svg class="dismiss-button__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+            </div>
 
-			<h3 class="pop-out__register-header">@Model.HeaderText</h3>
+            <h3 class="pop-out__register-header">@Model.SocialHeaderText</h3>
 
             @Html.Sitecore().Placeholder("signin-popout-form")
 
-		</div>
-	</div>
+        </div>
+    </div>
 </div>

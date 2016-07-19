@@ -52,9 +52,6 @@
     <CodeAnalysisRuleSet />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime">
-      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="AspNet.ScriptManager.jQuery, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\AspNet.ScriptManager.jQuery.2.1.4\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
       <Private>True</Private>
@@ -95,26 +92,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\AutofacContrib.SolrNet.dll</HintPath>
     </Reference>
-    <Reference Include="ComponentArt.Web.UI">
-      <HintPath>..\..\lib\Sitecore\ComponentArt.Web.UI.dll</HintPath>
-    </Reference>
     <Reference Include="CustomItemGenerator">
       <HintPath>..\..\lib\Velir\CustomItemGenerator.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetOpenAuth">
-      <HintPath>..\..\lib\Sitecore\DotNetOpenAuth.dll</HintPath>
-    </Reference>
-    <Reference Include="EcmaScript.NET">
-      <HintPath>..\..\lib\Sitecore\EcmaScript.NET.dll</HintPath>
-    </Reference>
     <Reference Include="Elsevier.Library">
       <HintPath>..\..\lib\Velir\Elsevier.Library.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook">
-      <HintPath>..\..\lib\Sitecore\Facebook.dll</HintPath>
-    </Reference>
-    <Reference Include="FacebookAPI">
-      <HintPath>..\..\lib\Sitecore\FacebookAPI.dll</HintPath>
     </Reference>
     <Reference Include="Glass.Mapper, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\net45\Glass.Mapper.dll</HintPath>
@@ -128,18 +110,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\Mvc52\Glass.Mapper.Sc.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis">
-      <HintPath>..\..\lib\Sitecore\Google.Apis.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Authentication.OAuth2">
-      <HintPath>..\..\lib\Sitecore\Google.Apis.Authentication.OAuth2.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Plus.v1">
-      <HintPath>..\..\lib\Sitecore\Google.Apis.Plus.v1.dll</HintPath>
-    </Reference>
-    <Reference Include="Hammock.ClientProfile">
-      <HintPath>..\..\lib\Sitecore\Hammock.ClientProfile.dll</HintPath>
-    </Reference>
     <Reference Include="Hi.UrlRewrite, Version=1.7.2.24693, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\URLRewrite\Hi.UrlRewrite.dll</HintPath>
@@ -147,12 +117,6 @@
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="Iesi.Collections">
-      <HintPath>..\..\lib\Sitecore\Iesi.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="ITHit.WebDAV.Server">
-      <HintPath>..\..\lib\Sitecore\ITHit.WebDAV.Server.dll</HintPath>
     </Reference>
     <Reference Include="Jabberwocky.Autofac, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Jabberwocky.Autofac.1.1.0.0\lib\net45\Jabberwocky.Autofac.dll</HintPath>
@@ -243,17 +207,6 @@
       <HintPath>..\..\packages\MiniProfiler.MVC4.3.0.11\lib\net40\MiniProfiler.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MongoDB.Bson, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\MongoDB.Bson.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Driver, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\MongoDB.Driver.dll</HintPath>
-    </Reference>
-    <Reference Include="Netbiscuits.OnPremise">
-      <HintPath>..\..\lib\Sitecore\Netbiscuits.OnPremise.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -270,26 +223,14 @@
       <HintPath>..\..\packages\NWebsec.Mvc.4.2.0\lib\45\NWebsec.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="OAuthLinkedIn">
-      <HintPath>..\..\lib\Sitecore\OAuthLinkedIn.dll</HintPath>
-    </Reference>
-    <Reference Include="RadEditor.Net2">
-      <HintPath>..\..\lib\Sitecore\RadEditor.Net2.dll</HintPath>
-    </Reference>
     <Reference Include="Sitecore.Abstractions">
       <HintPath>..\..\lib\Sitecore\Sitecore.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics">
       <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Analytics.Aggregation">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Aggregation.dll</HintPath>
-    </Reference>
     <Reference Include="Sitecore.Analytics.Automation">
       <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Automation.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Automation.Aggregation">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Automation.Aggregation.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Automation.MongoDB, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -303,30 +244,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Analytics.OmniChannel">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.OmniChannel.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Outcome">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Processing">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Processing.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Sql">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Analytics.Sql.dll</HintPath>
-    </Reference>
     <Reference Include="Sitecore.Buckets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Buckets.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.CES">
-      <HintPath>..\..\lib\Sitecore\Sitecore.CES.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.CES.DeviceDetection">
-      <HintPath>..\..\lib\Sitecore\Sitecore.CES.DeviceDetection.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Client">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Client.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -350,12 +270,6 @@
     <Reference Include="Sitecore.ContentTesting, Version=8.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.ContentTesting.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceAnalytics">
-      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceAnalytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceAnalytics.Client">
-      <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceAnalytics.Client.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.HtmlCache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -385,9 +299,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.ExperienceEditor.Speak.Ribbon.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.ItemWebApi">
-      <HintPath>..\..\lib\Sitecore\Sitecore.ItemWebApi.dll</HintPath>
-    </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
@@ -396,24 +307,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Logging.Client">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Logging.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Marketing.Core">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Marketing.Taxonomy">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.Taxonomy.dll</HintPath>
-    </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Mvc.Analytics">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.NVelocity">
-      <HintPath>..\..\lib\Sitecore\Sitecore.NVelocity.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Services.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -570,24 +466,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Social.Twitter.Client.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Speak.Applications">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Applications.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Speak.Client">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Speak.Components, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Components.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Speak.ItemWebApi">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Speak.ItemWebApi.dll</HintPath>
-    </Reference>
     <Reference Include="Sitecore.Speak.Web">
       <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Support.88491">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Support.88491.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Web, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -596,24 +476,9 @@
     <Reference Include="Sitecore.Xdb.Configuration">
       <HintPath>..\..\lib\Sitecore\Sitecore.Xdb.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Zip">
-      <HintPath>..\..\lib\Sitecore\Sitecore.Zip.dll</HintPath>
-    </Reference>
     <Reference Include="SolrNet, Version=0.4.0.2002, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Solr\SolrNet.dll</HintPath>
-    </Reference>
-    <Reference Include="Stimulsoft.Base">
-      <HintPath>..\..\lib\Sitecore\Stimulsoft.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Stimulsoft.Report">
-      <HintPath>..\..\lib\Sitecore\Stimulsoft.Report.dll</HintPath>
-    </Reference>
-    <Reference Include="Stimulsoft.Report.Web">
-      <HintPath>..\..\lib\Sitecore\Stimulsoft.Report.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Stimulsoft.Report.WebDesign">
-      <HintPath>..\..\lib\Sitecore\Stimulsoft.Report.WebDesign.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -685,12 +550,6 @@
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Telerik.Web.UI">
-      <HintPath>..\..\lib\Sitecore\Telerik.Web.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="TweetSharp">
-      <HintPath>..\..\lib\Sitecore\TweetSharp.dll</HintPath>
-    </Reference>
     <Reference Include="Velir.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Velir.Library.Core.1.0.4\lib\net45\Velir.Core.dll</HintPath>
       <Private>True</Private>
@@ -1227,7 +1086,6 @@
     <Content Include="Util\DCD\img\back_body_leftshadow.png" />
     <Content Include="Util\DCD\img\back_body_rightshadow.png" />
     <Content Include="Util\DCD\img\header_logo.gif" />
-    <Content Include="Util\DCD\img\header_logo.png" />
     <Content Include="Util\DCD\js\jquery-ui.js" />
     <Content Include="Util\DCD\js\jquery.js" />
     <Content Include="Util\DCD\js\jquery.multiSelect.js" />
@@ -1452,8 +1310,8 @@
     <Content Include="Views\EmailComponents\FeaturedArticle.cshtml" />
     <Content Include="Views\EmailComponents\SectionHeader.cshtml" />
     <Content Include="Views\Article\TopicPageTitle.cshtml" />
-    <Content Include="Views\Article\ArticlePrologueAskTheAnalyst.cshtml" />
     <Content Include="Views\Shared\PopOuts\SocialSignIn.cshtml" />
+    <Content Include="Views\Article\ArticlePrologueAskTheAnalyst.cshtml" />
     <Content Include="Views\Shared\PopOuts\ATA.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
