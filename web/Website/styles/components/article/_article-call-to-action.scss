@@ -51,8 +51,12 @@
 		color: $color-dusty-gray;
 		margin-bottom: 0 !important;
 		line-height: 1.5rem !important;
-		display: block;
+		display: block; 
 		text-transform: uppercase;
 		letter-spacing: 1px;
+	}
+
+	hr {
+		margin: 1.8rem 0;
 	}
 }
