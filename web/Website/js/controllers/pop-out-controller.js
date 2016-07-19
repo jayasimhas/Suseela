@@ -123,6 +123,9 @@ function popOutController(triggerElm) {
 			case 'save-search':
 				popOut = $('.js-pop-out__save-search');
 				break;
+		    case 'ata':
+		        popOut = $('.js-pop-out__ata');
+		        break;
 			default:
 				console.warn('Attempting to fire unidentified pop-out.');
 				return;
