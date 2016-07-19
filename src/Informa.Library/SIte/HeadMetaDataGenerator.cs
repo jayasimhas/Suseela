@@ -101,7 +101,7 @@ namespace Informa.Library.Site
 
             foreach (var pair in properties)
             {
-                result.AppendLine($"<meta property=\"{pair.Key}\" content=\"{pair.Value}\">");
+                result.AppendLine($"<meta name=\"{pair.Key}\" content=\"{pair.Value}\">");
             }
 
             return result.ToString();

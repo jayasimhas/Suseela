@@ -412,6 +412,10 @@ body.bigger {
 	line-height: 20px;
 }
 
+body.bigger input {
+	font-size: 16px;
+}
+
 .centered {
 	text-align: center;
 }

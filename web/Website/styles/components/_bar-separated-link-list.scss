@@ -16,13 +16,33 @@ is found on most pages of the site, usually for displaying a list of tags.
 
 .bar-separated-link-list {
     display: inline-flex;
-    align-items: flex-start;
+
+	&--wrap {
+    	align-items: flex-start;
+		flex-wrap: wrap;
+		line-height: 20px;
+
+		.bar-separated-link-list__label {
+			line-height: 18px;
+		}
+
+		a {
+			margin-bottom: 6px;
+		}
+	}
+
+	&__label {
+		line-height: 18px;
+		padding-right: 0.75rem;
+		white-space: nowrap;
+	}
 
     a {
         @include textMix('Roboto', 0.9375rem, 400);
         border-right: 1px solid $color-light-gray;
         display: inline-block;
-        padding: 0 0.75rem;
+        padding: 0 0.75rem 0 0;
+        margin-right: 0.75rem;
         flex: 0 0 auto;
 
         &:last-child {

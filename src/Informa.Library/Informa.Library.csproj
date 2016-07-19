@@ -328,12 +328,19 @@
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
     <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
     <Compile Include="Article\Search\ArticleSearchResults.cs" />
+    <Compile Include="Article\Search\IArticleCompanyFilter.cs" />
+    <Compile Include="Article\Search\IArticleAuthorFilter.cs" />
     <Compile Include="Article\Search\IArticlePublicationFilter.cs" />
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
+    <Compile Include="Authors\AuthorIndexClient.cs" />
+    <Compile Include="Authors\AuthorsAlertOptions.cs" />
+    <Compile Include="Authors\AuthorService.cs" />
+    <Compile Include="Authors\ComputedFields\IsValid.cs" />
+    <Compile Include="Authors\IAuthorAlertOptions.cs" />
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
@@ -361,6 +368,8 @@
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
+    <Compile Include="DCD\CompanyContentAnalyzer.cs" />
+    <Compile Include="Utilities\Parsers\CachedXmlParser.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
     <Compile Include="Logging\LogWrapper.cs" />
@@ -425,6 +434,7 @@
     <Compile Include="Rss\ItemGenerators\SearchRssItemGenerator.cs" />
     <Compile Include="Rss\ItemRetrieval\RssSearchResultsItemRetrieval.cs" />
     <Compile Include="Rss\Utils\RssConstants.cs" />
+    <Compile Include="Authors\ComputedFields\AuthorUrlName.cs" />
     <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
     <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\Converter\MediaTypeIcon\MediaTypeIconData.cs" />
@@ -434,11 +444,15 @@
     <Compile Include="Search\Formatting\SolrQueryFormatter.cs" />
     <Compile Include="Search\InformaApiSearchRequest.cs" />
     <Compile Include="Search\PredicateBuilders\InformaQueryPredicateBuilder.cs" />
+    <Compile Include="Search\Results\IArticleCompanyResults.cs" />
+    <Compile Include="Search\Results\IArticleAuthorResults.cs" />
     <Compile Include="Search\Results\IArticlePublicationResults.cs" />
     <Compile Include="Search\Results\QueryResults.cs" />
     <Compile Include="Search\Sort\SitecoreOrderStrategy.cs" />
     <Compile Include="Search\Utilities\SearchSummaryUtil.cs" />
     <Compile Include="Search\Utilities\SearchWebClientUtil.cs" />
+    <Compile Include="Services\AccountManagement\AccountManagementService.cs" />
+    <Compile Include="Services\AccountManagement\IAccountManagementService.cs" />
     <Compile Include="Services\Article\ArticleService.cs" />
     <Compile Include="Services\Article\IArticleService.cs" />
     <Compile Include="Services\Global\GlobalSitecoreService.cs" />
@@ -687,6 +701,8 @@
     <Compile Include="User\Document\ISaveDocument.cs" />
     <Compile Include="User\Document\ISaveDocumentContext.cs" />
     <Compile Include="User\Document\IsSavedDocumentContext.cs" />
+    <Compile Include="User\Orders\ICreateUserOrderResult.cs" />
+    <Compile Include="User\Orders\IUserOrder.cs" />
     <Compile Include="User\Profile\IUserProfileContext.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\NewsletterUserOptInsContext.cs" />
@@ -1061,6 +1077,7 @@
     <Compile Include="User\UserIpAddressContext.cs" />
     <Compile Include="User\UserIpAddressSession.cs" />
     <Compile Include="User\UserSession.cs" />
+    <Compile Include="Utilities\Attributes\NotNullAttribute.cs" />
     <Compile Include="Utilities\Autofac\Modules\AutoMapperModule.cs" />
     <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleBodyProfile.cs" />
     <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleFrontProfile.cs" />
@@ -1084,6 +1101,7 @@
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalIdResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalTitleResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\PublisherResolver.cs" />
+    <Compile Include="Utilities\DataModels\TreeNode%271.cs" />
     <Compile Include="Utilities\Extensions\ArticleExtensions.cs" />
     <Compile Include="Utilities\Extensions\BooleanExtensions.cs" />
     <Compile Include="Utilities\Extensions\EnumerableExtensions.cs" />

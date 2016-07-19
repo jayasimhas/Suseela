@@ -1,5 +1,6 @@
-﻿@model ArticleBodyContentModel
-
-<svg class="article-metadata__media-type js-toggle-tooltip" data-tooltip-text="@Model.MediaTypeIconData.Tooltip">
+﻿@model Informa.Web.ViewModels.Articles.ArticleBodyContentModel
+<span class="js-toggle-tooltip" data-tooltip-text="@Model.MediaTypeIconData.Tooltip">
+<svg class="article-metadata__media-type">
     <use xlink:href="/dist/img/svg-sprite.svg#@Model.MediaTypeIconData.MediaType"></use>
 </svg>
+</span>

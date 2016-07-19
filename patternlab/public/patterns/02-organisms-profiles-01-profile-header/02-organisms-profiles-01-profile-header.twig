@@ -1,0 +1,89 @@
+{# Defaults and Randoms #}
+{% if personName == false %}
+	{% set personName = random(randomNames).text %}
+{% endif %}
+{% if personTitle == false %}
+	{% set personTitle = random(randomJobs).text %}
+{% endif %}
+{% if location == false %}
+	{% set location = random(randomLocations).text %}
+{% endif %}
+{% if email == false and not email == &quot; &quot; %}
+	{% set email = random(randomEmails).text %}
+{% elseif email == &quot; &quot; %}
+	{% set email = false %}
+{% endif %}
+{% if twitter == false and not twitter == &quot; &quot; %}
+	{% set twitter = &quot;@TwitterName&quot; %}
+{% elseif twitter == &quot; &quot; %}
+	{% set twitter = false %}
+{% endif %}
+{% if twitterUrl == false %}
+	{% set twitterUrl = &quot;#&quot; %}
+{% endif %}
+{% if linkedin == false and not linkedin == &quot; &quot; %}
+	{% set linkedin = &quot;Public LinkedIn Profile Link&quot; %}
+{% elseif linkedin == &quot; &quot; %}
+	{% set linkedin = false %}
+{% endif %}
+{% if linkedinUrl == false %}
+	{% set linkedinUrl = &quot;#&quot; %}
+{% endif %}
+{% if personPhoto == false and not personPhoto == &quot; &quot; %}
+	{% set personPhoto = &quot;https://unsplash.it/200/&quot; ~ (random(300) + 100) ~ &quot;/?random
+
+&quot; %}
+{% endif %}
+{% if personProfile == false and not personProfile == &quot; &quot; %}
+	{% set personProfile = &quot;Vestibulum ut justo metus. Quisque eu mauris turpis. Nam suscipit commodo sapien, vel porta arcu condimentum nec. Aliquam eget leo et nisl lacinia molestie. Morbi vel mi nec erat sodales imperdiet. Donec at mauris luctus, dictum metus sit amet, dignissim nisi. Vestibulum est nibh, molestie id sagittis pretium, viverra at erat. Morbi rhoncus nunc sed venenatis consequat. &quot; %}
+{% endif %}
+{% if expertise == false and not expertise == &quot; &quot; %}
+	{% set expertise = [
+		{&quot;labelText&quot;: &quot;Areas of Expertise&quot;, &quot;classes&quot;: &quot;bar-separated-link-list--wrap&quot;},
+		{&quot;labelText&quot;: &quot;Industry Expertise&quot;, &quot;classes&quot;: &quot;bar-separated-link-list--wrap&quot;},
+		{&quot;labelText&quot;: &quot;Writes for&quot;, &quot;classes&quot;: &quot;bar-separated-link-list--wrap&quot;}
+	] %}
+{% endif %}
+
+
+{# Pattern #}
+&lt;div class=&quot;profile&quot;&gt;
+	&lt;h1 class=&quot;profile__name&quot;&gt;{{personName}}&lt;/h1&gt;
+	&lt;div class=&quot;l-left-rail&quot;&gt;
+		&lt;h2 class=&quot;profile__title&quot;&gt;{{personTitle}}&lt;/h2&gt;
+		&lt;div class=&quot;profile__location&quot;&gt;{{location}}&lt;/div&gt;
+		{% if hideProfilePhoto == false %}
+			&lt;img class=&quot;profile__img&quot; src=&quot;{{personPhoto}}&quot; /&gt;
+		{% endif %}
+		&lt;ul class=&quot;profile__links&quot;&gt;
+			{% if email %}
+				&lt;li class=&quot;js-tealium-click&quot; data-tealium-click='{&quot;event_name&quot;: &quot;author_profile_email_click_through&quot;, &quot;click_through_source&quot;: &quot;{{personName}}&quot;, &quot;click_through_destination&quot;: &quot;{{email}}&quot;}'&gt;
+					{% include &quot;molecules-icon-as-bullet&quot; with {&quot;icon&quot;: &quot;email&quot;, &quot;linkText&quot;: email} %}
+				&lt;/li&gt;
+			{% endif %}
+			{% if twitter %}
+				&lt;li&gt;
+					{% include &quot;molecules-icon-as-bullet&quot; with {&quot;icon&quot;: &quot;twitter&quot;, &quot;linkText&quot;: twitter} %}
+				&lt;/li&gt;
+			{% endif %}
+			{% if linkedin %}
+				&lt;li&gt;
+					{% include &quot;molecules-icon-as-bullet&quot; with {&quot;icon&quot;: &quot;linkedin&quot;, &quot;linkText&quot;: linkedin, &quot;classes&quot; : &quot;icon--linked-in&quot;} %}
+				&lt;/li&gt;
+			{% endif %}
+		&lt;/ul&gt;
+		&lt;div class=&quot;profile__profile&quot;&gt;
+			{{personProfile}}
+		&lt;/div&gt;
+		&lt;ul class=&quot;profile__expertise&quot;&gt;
+			{% for ex in expertise %}
+				&lt;li&gt;
+					{% include &quot;molecules-bar-separated-list&quot; with ex %}
+				&lt;/li&gt;
+			{% endfor %}
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;l-right-rail&quot;&gt;
+		{% include &quot;molecules-ad-rect&quot; %}
+	&lt;/div&gt;
+&lt;/div&gt;

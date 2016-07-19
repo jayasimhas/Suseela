@@ -7,6 +7,7 @@ namespace Informa.Library.User.Entitlement
 		string DocumentId { get; }
 		string ProductCode { get; }
 		bool IsFree { get; }
-		DateTime PublishedOn { get; }
+        bool IsFreeWithRegistration { get; }
+        DateTime PublishedOn { get; }
 	}
 }

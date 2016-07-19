@@ -47,7 +47,7 @@ namespace Informa.Tests.Library.Utilities_Tests.StringUtils_Tests
             var result = _bylineMaker.MakeByline(authors);
 
             // ASSERT
-            Assert.AreEqual("THESE FOLKS: Author McAuthorface", result);
+            Assert.AreEqual("THESE FOLKS: <a href=''>Author McAuthorface</a>", result);
         }
 
         [Test]
@@ -69,7 +69,7 @@ namespace Informa.Tests.Library.Utilities_Tests.StringUtils_Tests
             var result = _bylineMaker.MakeByline(authors);
 
             // ASSERT
-            Assert.AreEqual("THESE FOLKS: Author McAuthorface and Bob", result);
+            Assert.AreEqual("THESE FOLKS: <a href=''>Author McAuthorface</a> and <a href=''>Bob </a>", result);
         }
 
         [Test]
@@ -95,7 +95,7 @@ namespace Informa.Tests.Library.Utilities_Tests.StringUtils_Tests
             var result = _bylineMaker.MakeByline(authors);
 
             // ASSERT
-            Assert.AreEqual("THESE FOLKS: Author McAuthorface, Bob and Alice in Wonderland", result);
+            Assert.AreEqual("THESE FOLKS: <a href=''>Author McAuthorface</a>, <a href=''>Bob </a> and <a href=''>Alice in Wonderland</a>", result);
         }
 
 		[Test]
@@ -118,7 +118,7 @@ namespace Informa.Tests.Library.Utilities_Tests.StringUtils_Tests
 			var result = _bylineMaker.MakeByline(authors);
 
 			// ASSERT
-			Assert.AreEqual("THESE FOLKS: Author McAuthorface and Bob McBob, Sr.", result);
+			Assert.AreEqual("THESE FOLKS: <a href=''>Author McAuthorface</a> and <a href=''>Bob McBob, Sr.</a>", result);
 		}
 	}
 }

@@ -1,0 +1,56 @@
+{
+	"genericTitle": "Gene therapy company Immusoft acquires Discover Genomics",
+	"genericPageContent": "<h3>Executive Summary</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+	"dealSponsor": "https://unsplash.it/330/90/?random",
+	"topicsListHeader": "Related Companies",
+	"topicsListWords" : [{
+		"items": [
+				{
+					"itemURL": "#",
+					"itemText" : "Amgen, Inc."
+				},
+				{
+					"itemURL": "#",
+					"itemText" : "Novartis AG"
+				},
+				{
+					"itemURL": "#",
+					"itemText" : "Sandoz International GMBH"
+				},
+				{
+					"itemURL": "#",
+					"itemText" : "Sandoz Inc."
+				},
+				{
+					"itemURL": "#",
+					"itemText" : "Goodwin Proctor"
+				},
+				{
+					"itemURL": "#",
+					"itemText" : "Pfizer Inc."
+				}
+			]
+		}],
+	"threeColumnData": {
+		"type": "raw",
+		"columns": [
+			{
+				"text": "<h6>Deal Industry</h6><ul class=\"carrot-list\"><li class=\"article-topics__li\"><a href=\"#\">Biopharma</a><ul><li class=\"article-topics__li\"><a href=\"#\">Gene Therapy, Cell Therapy</a></li></ul></li><li class=\"article-topics__li\"><a href=\"#\">OTC</a></li></ul>"
+			},
+			{
+				"text": "<h6>Deal Industry</h6><ul class=\"carrot-list\"><li class=\"article-topics__li\"><a href=\"#\">Final</a></li></ul>"
+			},
+			{
+				"text": "<h6>Deal Type</h6><ul class=\"carrot-list\"><li class=\"article-topics__li\"><a href=\"#\">Acquisition</a><ul><li class=\"article-topics__li\"><a href=\"#\">Full Acquisition</a></li><li class=\"article-topics__li\"><a href=\"#\">Intra-Biotech Deal</a></li><li class=\"article-topics__li\"><a href=\"#\">Acquisition of Privite Biotech</a></li></ul></li></ul>"
+			}
+		]
+	},
+	"articleCallsToAction" : [
+		{
+			"body": "<span class=\"article-call-to-action__title\">Already a Strategic Transactions subscriber?</span><span class=\"article-call-to-action__subtitle\">You have access to the full deal record through your subscription</span><button type=\"submit\" class=\"button--filled js-pre-register-user-submit\">Purchase on Strategic Transactions</button>"
+		},
+		{
+			"body": "<span class=\"article-call-to-action__title\">Want to become a subscriber?</span><span class=\"article-call-to-action__subtitle\">Subscribers get more deal details, updates, deal financials and deal products</span><button type=\"submit\" class=\"button--filled js-pre-register-user-submit\">Learn More</button><hr /><span class=\"article-call-to-action__subtitle\">Questions?</span><p>Call Toll-Free (888) 670-8900 or (908) 547-2200</p>"
+		}
+	]
+}

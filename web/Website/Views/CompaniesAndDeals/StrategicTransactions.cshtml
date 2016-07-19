@@ -1,0 +1,17 @@
+﻿@model Informa.Web.ViewModels.CompaniesAndDeals.StratrgicTransactionViewModel
+
+@if (Model != null)
+{
+    <aside class="callout callout--full-width">
+        @if (!string.IsNullOrEmpty(Model.Logo))
+        {
+            <img src="@(Model.Logo)" />
+        }
+        <div class="callout__body">@Html.Raw(Model.Body)</div>
+        <div class="callout__footer">
+            <button onclick="location.href='@(Model.SubscribeButtonURL)'" class="button--filled">
+                @(Model.SubscribeButtonText)
+            </button>
+        </div>
+    </aside>
+}

@@ -1,0 +1,8 @@
+﻿@model Informa.Web.ViewModels.AdViewModel
+
+<div class="advertising advertising">
+    <span class="advertising__label">@Model.AdvertisementText</span>
+    <script>
+        OAS_AD('@Model.MediumAdId', '@Model.AdZone');
+    </script>
+</div>

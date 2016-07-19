@@ -15,6 +15,7 @@ using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Library.Page;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Informa.Web.ViewModels.Articles;
 
 namespace Informa.Web.ViewModels
 {

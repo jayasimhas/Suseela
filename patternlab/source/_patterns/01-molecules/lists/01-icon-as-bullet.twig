@@ -1,14 +1,4 @@
-{% if icon == false %}
-	{% set icon = "twitter" %}
-{% endif %}
-{% if linkText == false %}
-	{% set linkText = "Link Text" %}
-{% endif %}
-{% if linkUrl == false %}
-	{% set linkUrl = "#" %}
-{% endif %}
-
-<svg class="alert__icon">
+<svg class="alert__icon {{classes}}">
 	<use xlink:href="/web/Website/dist/img/svg-sprite.svg#{{icon}}"></use>
 </svg>
 <a href="{{linkUrl}}">{{linkText}}</a>

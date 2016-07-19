@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Jabberwocky.Glass, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Jabberwocky.Glass.1.0.1.0\lib\net45\Jabberwocky.Glass.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
@@ -124,6 +128,8 @@
     <Compile Include="User\ISalesforceSetUserTemporaryPassword.cs" />
     <Compile Include="User\ISalesforceUpdateUserPassword.cs" />
     <Compile Include="User\ISalesforceUser.cs" />
+    <Compile Include="User\Orders\SalesforceCreateUserOrderResult.cs" />
+    <Compile Include="User\Orders\SalesforceUserOrder.cs" />
     <Compile Include="User\Profile\ISalesforceUserProfile.cs" />
     <Compile Include="User\Profile\ISalesforceFindUserProfile.cs" />
     <Compile Include="User\Profile\SalesforceManageAccountInfo.cs" />
@@ -366,6 +372,10 @@
     <ProjectReference Include="..\Informa.Library\Informa.Library.csproj">
       <Project>{4fb3b700-30c7-4b1b-b377-59c15a58cb3d}</Project>
       <Name>Informa.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Informa.Models\Informa.Models.csproj">
+      <Project>{79466a53-db00-47d6-ba80-b02bd8a87337}</Project>
+      <Name>Informa.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

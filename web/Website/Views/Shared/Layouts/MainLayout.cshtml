@@ -17,7 +17,7 @@
     {
         <link rel="canonical" href="@Model.CanonicalUrl" />
     }
-
+    
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/dist/index-generated.css">
 
@@ -41,7 +41,16 @@
 
             <div class="main__content">
                 @Html.Sitecore().Placeholder("top-main-content")
-                @Html.Sitecore().Placeholder("main-content")
+                @if (!Model.IsRestricted || Sitecore.Context.PageMode.IsExperienceEditor)
+                {
+                    @Html.Sitecore().Placeholder("main-content")
+                }
+                @if (Model.IsRestricted || Sitecore.Context.PageMode.IsExperienceEditor)
+                {
+                    <div>
+                        @Html.Sitecore().Placeholder("restricted-content")
+                    </div>
+                }
             </div>
 
             @Html.Sitecore().Placeholder("post-content")

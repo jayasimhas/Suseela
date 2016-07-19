@@ -119,8 +119,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\Advertisement_Tests\AdUrlBuilder_Tests.cs" />
+    <Compile Include="Library\Authors_Tests\AuthorService_Tests.cs" />
     <Compile Include="Library\Mail_Tests\ExactTarget_Tests\CampaignQueryBuilder_Tests.cs" />
     <Compile Include="Library\Mail_Tests\ExactTarget_Tests\ExactTargetClient_Tests.cs" />
+    <Compile Include="Library\Services\AccountManagement\AccountManagementService_Tests.cs" />
     <Compile Include="Library\Services\NlmExport\NlmExportServiceTests.cs" />
     <Compile Include="Library\Services\NlmExport\Serialization\NlmSerializerTests.cs" />
     <Compile Include="Library\OptIn_Tests\OptInManager_Tests.cs" />

@@ -1,0 +1,86 @@
+{# Randoms #}
+{% if sortableTableData == false %}
+	{% set sortableTableData = {
+		"rows": [
+			[{
+				"itemText" : "Pharmaceutical"
+			},
+			{
+				"itemText" : "1 Deal",
+				"itemURL" : "#"
+			},
+			{
+				"itemText" : "1 Deal",
+				"itemURL" : "#"
+			},
+			{
+				"itemText" : "1 Deal",
+				"itemURL" : "#"
+			}],
+			[{
+				"itemText" : "Device"
+			},
+			{
+				"itemText" : "1 Deal",
+				"itemURL" : "#"
+			},
+			{
+				"itemText" : "N/A"
+			},
+			{
+				"itemText" : "1 Deal",
+				"itemURL" : "#"
+			}],
+			[{
+				"itemText" : "OTC"
+			},
+			{
+				"itemText" : "1 Deal",
+				"itemURL" : "#"
+			},
+			{
+				"itemText" : "1 Deal",
+				"itemURL" : "#"
+			},
+			{
+				"itemText" : "1 Deal",
+				"itemURL" : "#"
+			}]
+		]
+	} %}
+{% endif %}
+
+{# Pattern #}
+<table class="sortable-table{% if sortThisTable %} js-sortable-table{% endif %}">
+	<thead class="sortable-table__header">
+		<tr>
+			<td class="sortable-table__col">
+				Industry
+			</td>
+			<td class="sortable-table__col">
+				Acquisitions
+			</td>
+			<td class="sortable-table__col">
+				Alliances
+			</td>
+			<td class="sortable-table__col">
+				Financings
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% for row in sortableTableData.rows %}
+		<tr>
+			{% for data in row %}
+				<td class="sortable-table__col">
+					{% if data.itemURL %}
+						<a href="{{data.itemURL}}">{{data.itemText}}</a>
+					{% else %}
+						{{data.itemText}}
+					{% endif %}
+				</td>
+			{% endfor %}
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>

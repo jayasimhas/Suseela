@@ -90,6 +90,10 @@ Contains information about an article's author or authors.
     &__name {
         display: inline-block;
         width: 290px;
+
+		a {
+			color: $color-abbey-gray;
+		}
     }
 
     &__contact {
