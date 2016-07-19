@@ -2,6 +2,8 @@
 using AutoMapper;
 using Informa.Library.Services.Global;
 using Informa.Library.Services.NlmExport.Models.Front.Journal;
+using Informa.Library.Utilities.Extensions;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Journal
@@ -18,7 +20,7 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Journal
 
 		protected override NlmJournalTitleModel Resolve(ArticleItem source, ResolutionContext context)
 		{
-			var pubRoot = _globalService.GetSiteRootAncestor(source._Id);
+			var pubRoot =  source.Crawl<ISite_Root>();
 			if (pubRoot == null)
 			{
 				throw new ArgumentNullException("pubRoot", $"Journal Title could not be resolved for {source._Path} because the site root could not be located.");
