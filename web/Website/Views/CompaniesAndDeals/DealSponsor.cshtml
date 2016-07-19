@@ -2,7 +2,9 @@
 
 @if (!string.IsNullOrEmpty(Model.LogoUrl))
 {
-    <div class="deal-sponsor">
-        @Model.BroughtToYouByText <img src="@(Model.LogoUrl)"/>
-    </div>
+    <div class="l-left-rail">
+	    <div class="deal-sponsor">
+	        @Model.BroughtToYouByText <img src="@(Model.LogoUrl)"/>
+	    </div>
+	</div>
 }
