@@ -1,0 +1,13 @@
+﻿@model Informa.Web.ViewModels.CompaniesAndDeals.DealViewModel
+    
+<div class="article-topics">
+    <h2 class="article-topics__header">@Model.RelatedCompaniesHeader</h2>
+    <ul>
+        @foreach (var company in Model.RelatedCompanies)
+        {
+            <li class="article-topics__li">
+                <a href="/companies/_id@(company.Id)">@company.Name</a>
+            </li>
+        }
+    </ul>
+</div>

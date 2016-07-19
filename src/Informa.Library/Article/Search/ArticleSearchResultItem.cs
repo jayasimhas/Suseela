@@ -26,6 +26,8 @@ namespace Informa.Library.Article.Search
         public string CompanyRecordIDs { get; set; }
         #region Implementation of IReferencedArticles
         public List<Guid> ReferencedArticles { get; set; }
+        [IndexField("free_with_registration_b")]
+        public bool FreeWithRegistration { get; set; }
 
         #endregion
     }

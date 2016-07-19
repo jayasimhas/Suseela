@@ -775,6 +775,13 @@
     <Compile Include="Models\PageLinksFactory.cs" />
     <Compile Include="Models\TokenHtml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx.cs">
+      <DependentUpon>FreeTrialArticleSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx.designer.cs">
+      <DependentUpon>FreeTrialArticleSearch.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sitecore\admin\Tools\TestUtils.aspx.cs">
       <DependentUpon>TestUtils.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1108,6 +1115,7 @@
     <Content Include="Areas\Article\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Account\Views\web.config" />
+    <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
     <Content Include="sitecore\login\login.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
@@ -1384,6 +1392,7 @@
     <Content Include="Views\CompaniesAndDeals\CompanyRectangularAd.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealDetails.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealsAndCompaniesSubscribe.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealRelatedCompanies.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

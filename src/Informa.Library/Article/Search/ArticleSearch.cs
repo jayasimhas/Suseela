@@ -120,7 +120,20 @@ namespace Informa.Library.Article.Search
 			}
 		}
 
-		public long GetNextArticleNumber(Guid publicationGuid)
+        public IArticleSearchResults FreeWithRegistrationArticles(string database) {
+            using (var context = SearchContextFactory.Create(database)) {
+                var query = context.GetQueryable<ArticleSearchResultItem>()
+                    .Where(a => a.TemplateId == IArticleConstants.TemplateId && a.FreeWithRegistration == true)
+                    .ApplyDefaultFilters();
+                
+                ISitecoreService localSearchContext = SitecoreFactory(database);
+                return new ArticleSearchResults {
+                    Articles = query.OrderByDescending(i => i.ActualPublishDate).GetResults().Hits.Select(h => localSearchContext.GetItem<IArticle>(h.Document.ItemId.Guid))
+                };
+            }
+        }
+
+        public long GetNextArticleNumber(Guid publicationGuid)
 		{
 			using (var context = SearchContextFactory.Create(Constants.MasterDb))
 			{
