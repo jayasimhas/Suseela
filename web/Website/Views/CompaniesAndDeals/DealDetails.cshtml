@@ -7,7 +7,6 @@
     <div class="deal-sponsor">
         @Model.BroughtToYouByText <img src="@(Model.LogoUrl)"/>
     </div>
-    <hr />
 }
 
 <div class="generic-content">
@@ -16,7 +15,7 @@
     <div class="generic-content__dateline">
         @(Model.Content.DealInfo.PublishedDate.ToDate().ToString("MMM yyyy"))
     </div>
-    <h5>@Model.DealsSummaryText</h5>
+    <h3>@Model.DealsSummaryText</h3>
     <div>
         @(Model.Content.DealSummary)
     </div>
