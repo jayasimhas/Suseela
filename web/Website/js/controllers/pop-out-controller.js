@@ -103,8 +103,10 @@ function popOutController(triggerElm) {
 			case 'sign-in':
 				popOut = $('.js-pop-out__sign-in');
 				break;
+            //Social Sign in
 		    case 'social-sign-in':
 		        popOut = $('.js-pop-out__social-sign-in');
+		        break;
 			// EMAIL ARTICLE
 			case 'email-article':
 				popOut = $('.js-pop-out__email-article');
@@ -121,9 +123,6 @@ function popOutController(triggerElm) {
 			case 'save-search':
 				popOut = $('.js-pop-out__save-search');
 				break;
-		    case 'ata':
-		        popOut = $('.js-pop-out__ata');
-		        break;
 			default:
 				console.warn('Attempting to fire unidentified pop-out.');
 				return;
