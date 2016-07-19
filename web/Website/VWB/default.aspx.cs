@@ -40,6 +40,9 @@ namespace Elsevier.Web.VWB
             {
                 Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?returnUrl=" + Request.RawUrl);
             }
+
+            LogoUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
+
             if (IsPostBack)
             {
                 //let the event handlers for the control causing postback
@@ -53,8 +56,6 @@ namespace Elsevier.Web.VWB
             {
                 RunQuery(true);
             }
-
-            LogoUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
 
             const string defaultTime = "12:00 AM";
             txtStartTime.Text = defaultTime;
@@ -215,6 +216,20 @@ namespace Elsevier.Web.VWB
 
         protected void RunReport(object sender, EventArgs e)
         {
+            var pubCount = chkPublications.Items.Cast<ListItem>().Where(li => li.Selected).Count();
+            if (pubCount == 0)
+            {
+                lblMsg.Text = "You must select at least one publication";
+                lblMsg.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+            else if (pubCount > 1 && rbNoDate.Checked)
+            {
+                lblMsg.Text = "You must specify a date range when selecting more than one publication";
+                lblMsg.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
             RunQuery(true);
         }
 
