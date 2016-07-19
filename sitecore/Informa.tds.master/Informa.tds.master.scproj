@@ -1456,508 +1456,398 @@
       </ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\aside.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\aside\Height.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\aside\Type.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\aside\Width.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\br.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\em characterstyle.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\em characterstyle\style 1.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\em characterstyle\style 2.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\em characterstyle\style 3.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h1.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h1\default style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h1\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h2.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h2\default style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h2\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h3.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h3\default style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h3\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h4.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h4\default style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h4\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h5.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h5\default style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h5\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h6.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h6\default style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h6\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\img.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\img\default style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\img\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\list ol.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\list ol\default style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\list ol\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\list ul.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\list ul\default style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\list ul\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\default style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\style default.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\style none.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\span characterstyle.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\span characterstyle\style 1.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\span characterstyle\style 2.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\span characterstyle\style 3.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\strong characterstyle.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\strong characterstyle\style 1.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\strong characterstyle\style 2.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\strong characterstyle\style 3.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\table.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\table\default style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\table\repeat footer.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\table\repeat header.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\table\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\td.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\td\default width.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\td\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\th.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\th\default width.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\th\style.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\tr.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\tr\keep with next.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\tr\row height.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\tr\row max.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\tr\row min.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\tr\start row.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
-      <ItemDeployment>
-      </ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Print Studio Projects.item">
       <ChildItemSynchronization>
