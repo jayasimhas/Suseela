@@ -1,0 +1,11 @@
+﻿@model Informa.Web.ViewModels.IArticlePrologueAskTheAnalystViewModel
+
+<li class="article-prologue__share-item pop-out__trigger click-utag js-pop-out-trigger"
+    data-pop-out-type="@( Model.IsUserAuthenticated ? "ata" : "social-sign-in" )"
+    data-pop-out-align="center"
+     data-info='{"event_name" : "ata"}'>
+    <span class="article-prologue__share-label">Ask The Analyst</span>
+    <svg class="article-prologue__share-icon">
+        <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
+    </svg>
+</li>

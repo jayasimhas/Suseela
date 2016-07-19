@@ -3,10 +3,12 @@
 <div class="action-flags-bar article-prologue">
         <div class="action-flags article-prologue__share-bar">
             <ul>
-				@{ Html.RenderPartial("/Views/Article/ArticlePrologueEmail.cshtml", Model.EmailViewModel); }
+				@{ Html.RenderPartial("/Views/Article/ArticlePrologueAskTheAnalyst.cshtml", Model.AskTheAnalystViewModel); }
+                @{ Html.RenderPartial("/Views/Article/ArticlePrologueEmail.cshtml", Model.EmailViewModel); }
                 @{ Html.RenderPartial("/Views/Article/ArticleProloguePrint.cshtml", Model.PrintViewModel); }
 				@{ Html.RenderPartial("/Views/Article/ArticlePrologueBookmark.cshtml", Model.BookmarkViewModel); }
 				@{ Html.RenderPartial("/Views/Article/ArticlePrologueShare.cshtml", Model.ShareViewModel); }
+                
             </ul>
         </div>
         @{ Html.RenderPartial("/Views/Article/ArticleTags.cshtml", Model.ArticleTagsViewModel); }

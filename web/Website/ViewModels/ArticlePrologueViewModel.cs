@@ -16,14 +16,16 @@ namespace Informa.Web.ViewModels
 			IArticlePrologueEmailViewModel articlePrologueEmailViewModel,
 			IArticlePrologueBookmarkViewModel articlePrologueBookmarkViewModel,
 			IArticlePrologueShareViewModel articlePrologueShareViewModel,
-			IArticleTagsViewModel articleTagsViewModel)
+			IArticleTagsViewModel articleTagsViewModel,
+            IArticlePrologueAskTheAnalystViewModel articlePrologueAskTheAnalystViewModel)
 		{
 			PrintViewModel = articleProloguePrintViewModel;
 			EmailViewModel = articlePrologueEmailViewModel;
 			BookmarkViewModel = articlePrologueBookmarkViewModel;
 			ShareViewModel = articlePrologueShareViewModel;
 			ArticleTagsViewModel = articleTagsViewModel;
-		}
+            AskTheAnalystViewModel = articlePrologueAskTheAnalystViewModel;
+        }
 
 		public IArticleProloguePrintViewModel PrintViewModel;
 
@@ -34,5 +36,7 @@ namespace Informa.Web.ViewModels
 		public IArticlePrologueShareViewModel ShareViewModel;
 
 		public IArticleTagsViewModel ArticleTagsViewModel;
-	}
+
+        public IArticlePrologueAskTheAnalystViewModel AskTheAnalystViewModel;
+    }
 }
