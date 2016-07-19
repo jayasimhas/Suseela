@@ -168,17 +168,30 @@ input[type='text'].selectivity-multiple-input {
 .selectivity-single-select {
 	@extend .inf-standard-form-field;
 	cursor: pointer;
+	/*
+		specificity being a pain to track down; this should be
+		reworked when there's time to ditch the important
+	*/
+	padding: 0 !important;
 	position: relative;
 	box-sizing: content-box;
 }
 
-.selectivity-single-select-input {
+.page-account .selectivity-single-select-input {
+	/*
+		specificity being a pain to track down; this should be
+		reworked when there's time to ditch the important
+	*/
+	padding: 7px 8px 7px 8px !important;
+}
+
+.page-account input.selectivity-single-select-input {
 	opacity: 0;
 }
 
 .selectivity-single-result-container {
 	position: absolute;
-	top: 0.8em;
+	top: 0.5em;
 	right: 15px;
 	left: 5px;
 	overflow: hidden;
