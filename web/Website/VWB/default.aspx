@@ -7,7 +7,7 @@
     <script type="text/javascript" src="/VWB/Scripts/jquery.js"></script>
     <script type="text/javascript" src="/VWB/Scripts/jquery-ui/jquery-ui.js"></script>
     <script type="text/javascript" src="/VWB/Scripts/jquery-ui/jquery.ui.timepicker.js"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="/VWB//Scripts/jquery-ui/jquery-ui-1.8.11.custom.css" />
     <link rel="stylesheet" type="text/css" href="/VWB//Styles/vwb.css" />
     <link rel="stylesheet" type="text/css" href="/VWB//Scripts/jquery-ui/jquery.ui.timepicker.css" />
@@ -20,7 +20,8 @@
             <img class="banner" width="317" height="122" src="<%= LogoUrl %>"
                 alt="<%= Elsevier.Library.Reference.Constants.BusinessName %> - Virtual Whiteboard">
             <div class="top">
-                <asp:CheckBoxList runat="server" ID="chkPublications" Width="250px"></asp:CheckBoxList>
+
+                <asp:CheckBoxList runat="server" ID="chkPublications" Width="250px" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" ></asp:CheckBoxList>
                 <div id="dateRangeWrapper">
                     <div class="left radioButtonWrapper">
                         <asp:RadioButton ID="rbNoDate" runat="server" Text="Default" GroupName="choice" class="enabledate" />
@@ -42,6 +43,7 @@
 
 
                     <div class="appbuttons">
+                        <asp:Label runat="server" ID="lblMsg"></asp:Label>
                         <asp:Button ID="btnRunReport" runat="server" Text="Run Report" OnClick="RunReport" OnClientClick="$('#hidPubs').val($('#ddlP').val())" />
                         &nbsp;<asp:Button ID="btnReset" runat="server" Text="Reset" OnClick="ResetReport" />
                         &nbsp;<asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="Logout" />
