@@ -30,6 +30,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 	{
 		private readonly IDependencies _dependencies;
 		private readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
+		private static readonly string OldDealsUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL");
 
 		[AutowireService(IsAggregateService = true)]
 		public interface IDependencies
@@ -88,15 +89,18 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 		private HtmlString BuildSideArticleHtml(IArticle article)
 		{
-			var readAllArticle = "Read the full article here";
+			var spanClass = "article-sidebar__byline";
+			var timeClass = "article-sidebar__date";
+            var readAllArticle = "Read the full article here";
 			var document = new HtmlDocument();
-			document.LoadHtml("<aside class=\"article-sidebar\"><h3></h3><span class=\"article-sidebar__byline\"></span><time class=\"article-sidebar__date\"></time><div></div><a class=\"article-sidebar__read-more click-utag\" href=\"\"></a></aside>");
+			document.LoadHtml($"<aside type=\"\" height=\"\" width=\"\" class=\"article-sidebar\"><h3></h3><p class=\"{spanClass}\"></p><p class=\"{timeClass}\"></p><div></div><a class=\"article-sidebar__read-more click-utag\" href=\"\"></a></aside>");
 
 			var root = document.DocumentNode.FirstChild;
 			// Set title
 			document.DocumentNode.SelectSingleNode("//h3").InnerHtml = HttpUtility.HtmlDecode(article.Title);
 			// Set author
-			var span = document.DocumentNode.SelectSingleNode("//span");
+			var nodes = document.DocumentNode.SelectNodes("//p");
+			var span = GetNodeByClass(nodes, spanClass);
 			var author = _dependencies.ByLineMaker.MakeByline(article.Authors);
             if (!string.IsNullOrEmpty(author))
 			{
@@ -107,7 +111,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 				span.Remove();
 			}
 			// Set time
-			var time = document.DocumentNode.SelectSingleNode("//time");
+			var time = GetNodeByClass(nodes, timeClass);
 			time.InnerHtml = article.Actual_Publish_Date.ToString("dd MMM yyyy");
 			// Set linkable url
 			var a = document.DocumentNode.SelectSingleNode("//a");
@@ -118,6 +122,11 @@ namespace Informa.Library.Utilities.TokenMatcher
 			div.InnerHtml = WordUtil.TruncateArticle(_dependencies.ArticleService.GetArticleSummary(article), 60);
 
 			return new HtmlString(document.DocumentNode.OuterHtml);
+		}
+
+		private HtmlNode GetNodeByClass(HtmlNodeCollection nodes, string cssClass)
+		{
+			return nodes.FirstOrDefault(i => i.HasAttributes && i.Attributes["class"].Value.Equals(cssClass));
 		}
 
 		public string ReplaceRelatedArticles(string content)
@@ -148,7 +157,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 				var article = results.Articles.FirstOrDefault();
 				if (article != null)
 				{
-					var articleText = $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
+					var articleText = $" <aside type=\"\" height=\"10\" width=\"\">(Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)</aside>";
 					replace = new HtmlString(articleText);
 				}
 			}
@@ -162,12 +171,26 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 			foreach (Match match in dealRegex.Matches(content))
 			{
-				var replace = DCDTokenMatchers.DealMatchEval(match);
+				var replace = DealMatchEval(match);
 
 				content = content.Replace(match.Value, replace);
 			}
 
 			return content;
+		}
+
+		public static string DealMatchEval(Match match)
+		{
+			try
+			{
+				//return a see deal (deal reference) (from the token itself) to replace the token
+				return string.Format("<aside type=\"\" height=\"10\" width=\"\"><a href=\"{0}\">[See Deal]</a></aside>", string.Format(OldDealsUrl, match.Groups[1].Value));
+			}
+			catch (Exception ex)
+			{
+				Sitecore.Diagnostics.Log.Error("Error when evaluating deal match token", ex, "LogFileAppender");
+				return string.Empty;
+			}
 		}
 
 		public string ReplaceCompanies(string content)
@@ -183,7 +206,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 				// Replace the first occurrence with hyperlink
 				if (!matchSet.Contains(match.Groups[1].Value))
 				{
-					replace = $"<a href=\"{string.Format(OldCompaniesUrl, match.Groups[1].Value.Split(':')[0])}\">{match.Groups[1].Value.Split(':')[1]}</a>";
+					replace = $"<aside type=\"\" height=\"10\" width=\"\"><a href=\"{string.Format(OldCompaniesUrl, match.Groups[1].Value.Split(':')[0])}\">{match.Groups[1].Value.Split(':')[1]}</a></aside>";
 					content = regex.Replace(content, replace, 1);
 					matchSet.Add(match.Groups[1].Value);
 				}
