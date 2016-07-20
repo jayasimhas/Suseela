@@ -1396,6 +1396,7 @@
     <Content Include="Views\CompaniesAndDeals\DealRelatedCompanies.cshtml" />
     <Content Include="Views\Advertisements\RectangularAd.cshtml" />
     <Content Include="Views\Advertisements\LeaderboardAd.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealSponsor.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
