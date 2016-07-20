@@ -1,17 +1,16 @@
 ﻿@inherits CustomGlassView<AdViewModel>
-
-<!-- DEPRECATED -->
-<!-- Work should be done in Views/Advertisements, this is only here for backward compatability. -->
+@{ Model.Init(); }
 
 @if (IsInEditingMode && Model.IsEditable)
 {
     @Editable(Model.AdComponentModel, x => x.Slot_ID)
     @Editable(Model.AdComponentModel, x => x.Zone)
 }
+<!-- I'm an edit -->
 @if (Model.IsValidRectangularAd)
 {
     <section class="article-preview article-preview--small">
-        <div class="article-preview__ad advertising">
+        <div class="advertising advertising">
             <span class="advertising__label">@Model.AdvertisementText</span>
             <script>
                 OAS_AD('@Model.RectangularSlotId', '@Model.RectangularAdZone');

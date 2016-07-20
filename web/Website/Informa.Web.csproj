@@ -1312,7 +1312,6 @@
     <Content Include="Views\Shared\Components\PageTitle.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedNewsletterSignUp.cshtml" />
     <Content Include="Views\Shared\Components\GeneralRTEComponent.cshtml" />
-    <Content Include="Views\Article\ArticleMediumAd.cshtml" />
     <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
     <Content Include="Views\Shared\Components\LandscapeImage.cshtml" />
@@ -1342,7 +1341,7 @@
     <Content Include="Views\Shared\Layouts\BlankLayout.cshtml" />
     <Content Include="Views\Shared\Global\SitemapNews.cshtml" />
     <Content Include="Views\Shared\Global\RobotsText.cshtml" />
-    <Content Include="Views\Article\ArticleFilmstripAd.cshtml" />
+    <Content Include="Views\Advertisements\FilmstripAd.cshtml" />
     <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
     <Content Include="Views\Shared\Global\Sitemap.cshtml" />
@@ -1392,11 +1391,11 @@
     <Content Include="Views\CompaniesAndDeals\StrategicTransactions.cshtml" />
     <Content Include="Views\Structure\DetailPageSublayout.cshtml" />
     <Content Include="Views\CompaniesAndDeals\SubsidiariesTree.cshtml" />
-    <Content Include="Views\CompaniesAndDeals\CompanyLeaderboardAd.cshtml" />
-    <Content Include="Views\CompaniesAndDeals\CompanyRectangularAd.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealDetails.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealsAndCompaniesSubscribe.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealRelatedCompanies.cshtml" />
+    <Content Include="Views\Advertisements\RectangularAd.cshtml" />
+    <Content Include="Views\Advertisements\LeaderboardAd.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
