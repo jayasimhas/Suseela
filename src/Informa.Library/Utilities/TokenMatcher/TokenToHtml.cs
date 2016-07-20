@@ -95,7 +95,6 @@ namespace Informa.Library.Utilities.TokenMatcher
 			var document = new HtmlDocument();
 			document.LoadHtml($"<aside type=\"\" height=\"\" width=\"\" class=\"article-sidebar\"><h3></h3><p class=\"{spanClass}\"></p><p class=\"{timeClass}\"></p><div></div><a class=\"article-sidebar__read-more click-utag\" href=\"\"></a></aside>");
 
-			var root = document.DocumentNode.FirstChild;
 			// Set title
 			document.DocumentNode.SelectSingleNode("//h3").InnerHtml = HttpUtility.HtmlDecode(article.Title);
 			// Set author
@@ -157,7 +156,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 				var article = results.Articles.FirstOrDefault();
 				if (article != null)
 				{
-					var articleText = $" <aside type=\"\" height=\"10\" width=\"\">(Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)</aside>";
+					var articleText = $"(Also see \"<a href=\'{article._Url}\'>{WebUtility.HtmlDecode(article.Title)}</a>\".)";
 					replace = new HtmlString(articleText);
 				}
 			}
