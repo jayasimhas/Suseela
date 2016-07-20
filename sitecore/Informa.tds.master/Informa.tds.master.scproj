@@ -1448,8 +1448,7 @@
       </ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Default TransformationSet.item">
-      <ChildItemSynchronization>
-      </ChildItemSynchronization>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
       </ExcludeItemFrom>
       <ItemDeployment>
