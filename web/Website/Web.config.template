@@ -235,7 +235,7 @@ work and it shouldn't be changed.
     -->
     <authentication mode="None">
       <!--<forms name=".ASPXAUTH" cookieless="UseCookies" timeout="87660" />-->
-	  <forms name=".ASPXAUTH" cookieless="UseCookies" timeout="180" domain="${Site.Domain}" />
+	  <forms name=".ASPXAUTH" cookieless="UseCookies" timeout="87660" domain="${Site.Domain}" />
     </authentication>
     <!--  IDENTITY
           If this setting is true, aspnet will run in the security context of the IIS authenticated
