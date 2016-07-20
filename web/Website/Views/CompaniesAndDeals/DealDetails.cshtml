@@ -2,13 +2,6 @@
 
 <script type="text/javascript"> (function () { document.title = document.title.replace('*', '@(Model.Deal.Title)'); })(); </script>
 
-@if (!string.IsNullOrEmpty(Model.LogoUrl))
-{
-    <div class="deal-sponsor">
-        @Model.BroughtToYouByText <img src="@(Model.LogoUrl)"/>
-    </div>
-}
-
 <div class="generic-content">
     <h1>@Model.Deal.Title</h1>
 
