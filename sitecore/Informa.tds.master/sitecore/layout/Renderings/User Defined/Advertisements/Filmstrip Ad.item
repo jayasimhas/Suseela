@@ -2,9 +2,9 @@
 version: 1
 id: {4033E46D-5D17-495E-9401-C6A433CB6F21}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Article/Article Filmstrip Ad
-parent: {0C163767-797D-4331-9537-DC26007C1B84}
-name: Article Filmstrip Ad
+path: /sitecore/layout/Renderings/User Defined/Advertisements/Filmstrip Ad
+parent: {67A1ECD7-CC64-4682-87E7-60B068B28EB4}
+name: Filmstrip Ad
 master: {00000000-0000-0000-0000-000000000000}
 template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
 templatekey: View rendering
@@ -15,7 +15,7 @@ name: Path
 key: path
 content-length: 40
 
-/Views/Article/ArticleFilmstripAd.cshtml
+/Views/Advertisements/FilmstripAd.cshtml
 ----field----
 field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
 name: Open Properties after Add
@@ -57,7 +57,7 @@ name: Compatible Renderings
 key: compatible renderings
 content-length: 194
 
-{3B91B663-7ECB-4964-9145-0F3DD02EA49B}|{231A0FB2-657C-4A34-A8C9-BC490DEDAD1C}|{B302F679-C10E-4D17-B387-C06D275E9F78}|{9DCE5D27-9823-40F0-BBDE-28F8862318B5}|{B835C69E-153A-49E1-96C4-F073E1B6A8E3}
+{3B91B663-7ECB-4964-9145-0F3DD02EA49B}|{4B2573E1-BD9A-4DD1-A75F-F49167A5E9E2}|{B302F679-C10E-4D17-B387-C06D275E9F78}|{9DCE5D27-9823-40F0-BBDE-28F8862318B5}|{B835C69E-153A-49E1-96C4-F073E1B6A8E3}
 ----field----
 field: {A2F5D9DF-8CBA-4A1D-99EB-51ACB94CB057}
 name: Page Editor Buttons
@@ -68,7 +68,7 @@ content-length: 116
 ----version----
 language: en
 version: 1
-revision: 4b131f6c-c9d6-4732-8a87-68472f4b0c85
+revision: bf97e70e-45e2-4b2a-b8f1-aee5e40974f0
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -83,14 +83,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-4b131f6c-c9d6-4732-8a87-68472f4b0c85
+bf97e70e-45e2-4b2a-b8f1-aee5e40974f0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160526T200734Z
+20160719T201626Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

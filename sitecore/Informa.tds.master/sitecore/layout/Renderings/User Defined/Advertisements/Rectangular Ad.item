@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {4B2573E1-BD9A-4DD1-A75F-F49167A5E9E2}
+database: master
+path: /sitecore/layout/Renderings/User Defined/Advertisements/Rectangular Ad
+parent: {67A1ECD7-CC64-4682-87E7-60B068B28EB4}
+name: Rectangular Ad
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 42
+
+/Views/Advertisements/RectangularAd.cshtml
+----field----
+field: {E441ABE7-2CA3-4640-AE26-3789967925D7}
+name: Compatible Renderings
+key: compatible renderings
+content-length: 194
+
+{3B91B663-7ECB-4964-9145-0F3DD02EA49B}|{B302F679-C10E-4D17-B387-C06D275E9F78}|{9DCE5D27-9823-40F0-BBDE-28F8862318B5}|{B835C69E-153A-49E1-96C4-F073E1B6A8E3}|{4B2573E1-BD9A-4DD1-A75F-F49167A5E9E2}
+----field----
+field: {A2F5D9DF-8CBA-4A1D-99EB-51ACB94CB057}
+name: Page Editor Buttons
+key: page editor buttons
+content-length: 116
+
+{028DFE18-F0FE-431B-B5D2-9D944FD8B3C6}|{E0C30162-EA09-4244-8261-81FD8456D4AF}|{28E37FE8-6561-4854-8B11-468E64DF5374}
+----version----
+language: en
+version: 1
+revision: 736afda3-28d8-466c-afdb-977f0885baf9
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160719T182523Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+736afda3-28d8-466c-afdb-977f0885baf9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160719T201217Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
