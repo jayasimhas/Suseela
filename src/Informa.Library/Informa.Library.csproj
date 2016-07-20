@@ -369,6 +369,7 @@
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="DCD\CompanyContentAnalyzer.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchMediaTooltipField.cs" />
     <Compile Include="Utilities\Parsers\CachedXmlParser.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />

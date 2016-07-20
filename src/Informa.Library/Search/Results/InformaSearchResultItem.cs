@@ -66,7 +66,11 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public string MediaType { get; set; }
 
-		[DataMember]
+        [IndexField("searchmediatooltip_s")]
+        [DataMember]
+        public string MediaTooltip { get; set; }
+
+        [DataMember]
 		public string Summary => DCDTokenMatchers.ProcessDCDTokens(RawSummary);
 
 		[IndexField("searchsummary_s")]
