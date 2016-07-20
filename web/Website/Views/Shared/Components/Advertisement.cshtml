@@ -10,10 +10,12 @@
 }
 @if (Model.IsValidRectangularAd)
 {
-    <div class="article-preview__ad advertising">
-        <span class="advertising__label">@Model.AdvertisementText</span>
-        <script>
-            OAS_AD('@Model.RectangularSlotId', '@Model.RectangularAdZone');
-        </script>
-    </div>
+    <section class="article-preview article-preview--small">
+        <div class="article-preview__ad advertising">
+            <span class="advertising__label">@Model.AdvertisementText</span>
+            <script>
+                OAS_AD('@Model.RectangularSlotId', '@Model.RectangularAdZone');
+            </script>
+        </div>
+    </section>
 }

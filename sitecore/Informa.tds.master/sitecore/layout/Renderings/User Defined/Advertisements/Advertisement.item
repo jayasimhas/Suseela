@@ -2,8 +2,8 @@
 version: 1
 id: {8C64BF41-EFAF-4867-A5A1-91EEB97F2985}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Shared Components/Advertisement
-parent: {C89B6A9F-E766-4320-BCB2-A9ECD153E4E6}
+path: /sitecore/layout/Renderings/User Defined/Advertisements/Advertisement
+parent: {67A1ECD7-CC64-4682-87E7-60B068B28EB4}
 name: Advertisement
 master: {00000000-0000-0000-0000-000000000000}
 template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
@@ -75,7 +75,7 @@ content-length: 116
 ----version----
 language: en
 version: 1
-revision: 54cdd178-09f0-4b73-9be4-3207e0b97bc4
+revision: 8e7f9ecb-668d-4e1a-b200-e5b3fb3cb18d
 
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
@@ -97,14 +97,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-54cdd178-09f0-4b73-9be4-3207e0b97bc4
+8e7f9ecb-668d-4e1a-b200-e5b3fb3cb18d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160719T205317Z
+20160720T145209Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
