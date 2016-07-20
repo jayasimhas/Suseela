@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Xml.Linq;
+using Glass.Mapper;
 using HtmlAgilityPack;
 using Sitecore.PrintStudio.PublishingEngine.Helpers;
 using Sitecore.PrintStudio.PublishingEngine.Text;
@@ -79,16 +81,27 @@ namespace Informa.Web.CustomMvc
 			ParseDefinition definition = parseContext.ParseDefinitions[htmlNode];
 			if (definition != null)
 			{
-				HtmlNodeParser parser = HtmlParseHelper.GetParser(definition);
+				Type typeInfo = ReflectionUtil.GetTypeInfo(definition.HtmlParserType);
+				object parser = null;
+
+				if (typeInfo.Name == "CustomHtmlNodeParser")
+				{
+					parser = CustomHtmlParseHelper.GetParser<CustomHtmlNodeParser>(definition);
+					((CustomHtmlNodeParser)parser)?.ParseNode(htmlNode, resultElement, parseContext, baseFormattingElement);
+				}
+				else
+				{
+					parser = CustomHtmlParseHelper.GetParser<HtmlNodeParser>(definition);
+					((HtmlNodeParser)parser)?.ParseNode(htmlNode, resultElement, parseContext, baseFormattingElement);
+				}
+
 				if (parser == null)
 					return;
-				parser.ParseNode(htmlNode, resultElement, parseContext, baseFormattingElement);
 
 				var paragraphElement = resultElement.Element("ParagraphStyle");
 				if (definition.HtmlTag == "p" && paragraphElement!= null)
 				{
-					
-					if (paragraphElement?.Attribute("Style") != null)
+					if (paragraphElement.Attribute("Style") != null)
 					{
 						paragraphElement.Attribute("Style").Value = parseContext.DefaultParagraphStyle;
 					}
@@ -118,7 +131,7 @@ namespace Informa.Web.CustomMvc
 			}
 		}
 
-		public static CustomHtmlNodeParser GetParser(ParseDefinition definition)
+		public static CustomHtmlNodeParser GetParser2(ParseDefinition definition)
 		{
 			if (!string.IsNullOrEmpty(definition.HtmlParserType))
 			{

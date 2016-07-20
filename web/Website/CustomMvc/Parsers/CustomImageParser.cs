@@ -32,7 +32,7 @@ namespace Informa.Web.CustomMvc.Parsers
 				if (mediaItem != null)
 				{
 					XElement element = this.CreateImageParagraphElement(htmlNode, (Item)mediaItem, parseContext);
-					element.Add(new XCData("Image name:" + mediaItem.Name));
+					element.Add(new XCData("Image Path:" + mediaPath));
 					resultElement.Add((object)element);
 
 					string width;
@@ -55,7 +55,6 @@ namespace Informa.Web.CustomMvc.Parsers
 		protected virtual XElement CreateImageParagraphElement(HtmlNode htmlNode, Item mediaContentItem, ParseContext parseContext)
 		{
 			XElement xelement = new XElement((XName)"ParagraphStyle");
-			xelement.SetAttributeValue((XName)"Style", (object)"5.1 Exhibit Title");
 			return xelement;
 		}
 
