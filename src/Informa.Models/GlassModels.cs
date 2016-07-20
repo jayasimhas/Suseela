@@ -11836,6 +11836,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.System_Maintenance_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string System_Maintenance_Text  {get; set;}
 								/// <summary>
+					/// The Contact Email field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 89db27d7-1fb5-4260-a219-3daf504d76c5</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Contact_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Contact_Email  {get; set;}
+								/// <summary>
+					/// The Supporting Documents Folder field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: aad3d91b-491c-4330-8127-9db6346734d5</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Supporting_Documents_FolderFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Supporting_Documents_Folder  {get; set;}
+								/// <summary>
 					/// The Lockout Email Body field.
 					/// <para></para>
 					/// <para>Field Type: Rich Text</para>		
@@ -11871,6 +11889,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Lockout_Email_ToFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Lockout_Email_To  {get; set;}
+								/// <summary>
+					/// The Email Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: e90ad04d-b62b-4118-b3fc-8c535dfed2eb</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Email_Title  {get; set;}
+								/// <summary>
+					/// The From Email Address field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string From_Email_Address  {get; set;}
 				}
 
 	
@@ -12514,6 +12550,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.System_Maintenance_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
 						string System_Maintenance_Text  {get; set;}
 										/// <summary>
+						/// The Contact Email field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 89db27d7-1fb5-4260-a219-3daf504d76c5</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Contact_EmailFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Contact_Email  {get; set;}
+										/// <summary>
+						/// The Supporting Documents Folder field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: aad3d91b-491c-4330-8127-9db6346734d5</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Supporting_Documents_FolderFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Supporting_Documents_Folder  {get; set;}
+										/// <summary>
 						/// The Lockout Email Body field.
 						/// <para></para>
 						/// <para>Field Type: Rich Text</para>		
@@ -12549,6 +12603,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Lockout_Email_ToFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Lockout_Email_To  {get; set;}
+										/// <summary>
+						/// The Email Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: e90ad04d-b62b-4118-b3fc-8c535dfed2eb</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Email_Title  {get; set;}
+										/// <summary>
+						/// The From Email Address field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string From_Email_Address  {get; set;}
 						}
 	
 	public static partial class ISite_ConfigConstants{
@@ -12930,6 +13002,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 				public const string System_Maintenance_Text__RawFieldName = "System Maintenance Text";
 						
 					
+			public static readonly ID Contact_EmailFieldId = new ID("89db27d7-1fb5-4260-a219-3daf504d76c5");
+			public const string Contact_EmailFieldName = "Contact Email";
+
+						
+					
+			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
+			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
+
+						
+					
 			public static readonly ID Lockout_Email_BodyFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
 			public const string Lockout_Email_BodyFieldName = "Lockout Email Body";
 
@@ -12949,6 +13031,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Lockout_Email_ToFieldId = new ID("861cb808-ae66-4908-9d46-96b350e302b3");
 			public const string Lockout_Email_ToFieldName = "Lockout Email To";
+
+						
+					
+			public static readonly ID Email_TitleFieldId = new ID("e90ad04d-b62b-4118-b3fc-8c535dfed2eb");
+			public const string Email_TitleFieldName = "Email Title";
+
+						
+					
+			public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
+			public const string From_Email_AddressFieldName = "From Email Address";
 
 						
 			
@@ -14376,115 +14468,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 					
 			public static readonly ID Substatus_CodeFieldId = new ID("503ecb1c-c7a9-4dff-a756-3786e24a730c");
 			public const string Substatus_CodeFieldName = "Substatus code";
-
-						
-			
-
-	}
-
-}
-namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
-{
-
-
- 	/// <summary>
-	/// IPassword_Recovery_Email_Config Interface
-	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Configuration/Password Recovery Email Config</para>	
-	/// <para>ID: ab2f64e7-6de6-47ca-a351-e0c55c5cdb7a</para>	
-	/// </summary>
-	[SitecoreType(TemplateId=IPassword_Recovery_Email_ConfigConstants.TemplateIdString)]
-	public partial interface IPassword_Recovery_Email_Config : IGlassBase 
-	{
-								/// <summary>
-					/// The Email Body field.
-					/// <para></para>
-					/// <para>Field Type: Rich Text</para>		
-					/// <para>Field ID: a6fe8357-4b73-486e-a2f5-16cdc579c014</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IPassword_Recovery_Email_ConfigConstants.Email_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Email_Body  {get; set;}
-								/// <summary>
-					/// The Email From field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: c6740db7-9d9a-40fb-9565-07f1a8780645</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IPassword_Recovery_Email_ConfigConstants.Email_FromFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Email_From  {get; set;}
-								/// <summary>
-					/// The Email Subject field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 5ddc0c6d-20c2-496a-846c-b36743470423</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IPassword_Recovery_Email_ConfigConstants.Email_SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
-					string Email_Subject  {get; set;}
-				}
-
-	
-		/// <summary>
-		/// IPassword_Recovery_Email_Config Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Configuration/Password Recovery Email Config</para>	
-		/// <para>ID: ab2f64e7-6de6-47ca-a351-e0c55c5cdb7a</para>	
-		/// </summary>
-		[SitecoreType]
-		public partial interface IPassword_Recovery_Email_Config__Raw : IGlassBase 
-		{
-										/// <summary>
-						/// The Email Body field.
-						/// <para></para>
-						/// <para>Field Type: Rich Text</para>		
-						/// <para>Field ID: a6fe8357-4b73-486e-a2f5-16cdc579c014</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IPassword_Recovery_Email_ConfigConstants.Email_BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
-						string Email_Body  {get; set;}
-										/// <summary>
-						/// The Email From field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: c6740db7-9d9a-40fb-9565-07f1a8780645</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IPassword_Recovery_Email_ConfigConstants.Email_FromFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Email_From  {get; set;}
-										/// <summary>
-						/// The Email Subject field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 5ddc0c6d-20c2-496a-846c-b36743470423</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(IPassword_Recovery_Email_ConfigConstants.Email_SubjectFieldName, Setting = SitecoreFieldSettings.InferType)]
-						string Email_Subject  {get; set;}
-						}
-	
-	public static partial class IPassword_Recovery_Email_ConfigConstants{
-
-			public const string TemplateIdString = "ab2f64e7-6de6-47ca-a351-e0c55c5cdb7a";
-			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Password Recovery Email Config";
-
-					
-			public static readonly ID Email_BodyFieldId = new ID("a6fe8357-4b73-486e-a2f5-16cdc579c014");
-			public const string Email_BodyFieldName = "Email Body";
-
-							public static readonly ID Email_Body__RawFieldId = new ID("a6fe8357-4b73-486e-a2f5-16cdc579c014");
-				public const string Email_Body__RawFieldName = "Email Body";
-						
-					
-			public static readonly ID Email_FromFieldId = new ID("c6740db7-9d9a-40fb-9565-07f1a8780645");
-			public const string Email_FromFieldName = "Email From";
-
-						
-					
-			public static readonly ID Email_SubjectFieldId = new ID("5ddc0c6d-20c2-496a-846c-b36743470423");
-			public const string Email_SubjectFieldName = "Email Subject";
 
 						
 			
@@ -18038,6 +18021,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 				public const string System_Maintenance_Text__RawFieldName = "System Maintenance Text";
 						
 					
+			public static readonly ID Contact_EmailFieldId = new ID("89db27d7-1fb5-4260-a219-3daf504d76c5");
+			public const string Contact_EmailFieldName = "Contact Email";
+
+						
+					
+			public static readonly ID Supporting_Documents_FolderFieldId = new ID("aad3d91b-491c-4330-8127-9db6346734d5");
+			public const string Supporting_Documents_FolderFieldName = "Supporting Documents Folder";
+
+						
+					
 			public static readonly ID Lockout_Email_BodyFieldId = new ID("d8e65269-0027-42af-9c13-994eff890119");
 			public const string Lockout_Email_BodyFieldName = "Lockout Email Body";
 
@@ -18057,6 +18050,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Lockout_Email_ToFieldId = new ID("861cb808-ae66-4908-9d46-96b350e302b3");
 			public const string Lockout_Email_ToFieldName = "Lockout Email To";
+
+						
+					
+			public static readonly ID Email_TitleFieldId = new ID("e90ad04d-b62b-4118-b3fc-8c535dfed2eb");
+			public const string Email_TitleFieldName = "Email Title";
+
+						
+					
+			public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
+			public const string From_Email_AddressFieldName = "From Email Address";
 
 						
 			
