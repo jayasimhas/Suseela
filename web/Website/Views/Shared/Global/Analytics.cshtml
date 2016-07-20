@@ -163,8 +163,13 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
 }
 
 
-$(document).ready(function () {
-    $("head").append("@Model.CustomTags");
-})
+    document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+            var head = document.getElementsByTagName('head').item(0);
+            var meta = document.createElement("meta");
+            head.appendChild(meta);
+            meta.outerHTML = '@Html.Raw(Model.CustomTags)';
+        }
+    }
 
 </script>
