@@ -17,7 +17,7 @@
             <field fieldName="SearchByline" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchResultBylineField, Informa.Library</field>
             <field fieldName="SearchDisplayTaxonomy" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchDisplayTaxonomyField, Informa.Library</field>
             <field fieldName="SearchMediaIcon" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchMediaIconField, Informa.Library</field>
-            <field fieldName="SearchMediaTooltip" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchMediaIconField, Informa.Library</field>
+            <field fieldName="SearchMediaTooltip" returnType="string">Informa.Library.Search.ComputedFields.SearchResults.SearchMediaTooltipField, Informa.Library</field>
             
             <field fieldName="FacetContentType" returnType="string">Informa.Library.Search.ComputedFields.Facets.ContentTypeField, Informa.Library</field>
             <field fieldName="FacetMediaType" returnType="string">Informa.Library.Search.ComputedFields.Facets.MediaTypeField, Informa.Library</field>
