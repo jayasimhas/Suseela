@@ -23,6 +23,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 		string ReplaceRelatedArticles(string content);
 		string ReplaceDeals(string content);
 		string ReplaceCompanies(string content);
+		string ReplaceSectionBreaks(string content);
 	}
 
 	[AutowireService]
@@ -52,6 +53,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 			result = ReplaceRelatedArticles(result);
 			result = ReplaceCompanies(result);
 			result = ReplaceDeals(result);
+			result = ReplaceSectionBreaks(result);
 			return result;
 		}
 
@@ -215,6 +217,19 @@ namespace Informa.Library.Utilities.TokenMatcher
 					replace = match.Groups[1].Value.Split(':')[1];
 					content = content.Replace(match.Value, replace);
 				}
+			}
+			return content;
+		}
+
+		public string ReplaceSectionBreaks(string content)
+		{
+			string pattern = "<section.*?>(.*?)<\\/section>";
+			MatchCollection matches = Regex.Matches(content, pattern);
+			foreach (Match match in matches)
+			{
+				string replace = match.Value.Replace("<br/>", "").Replace("<br />", "");
+
+				content = content.Replace(match.Value, replace);
 			}
 			return content;
 		}
