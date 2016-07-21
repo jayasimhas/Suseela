@@ -1285,6 +1285,9 @@
     </None>
     <Content Include="PrintStudio\Data\PublishingEngine.dtd" />
     <Content Include="PrintStudio\Handlers\PrintCacheHandler.ashx" />
+    <None Include="PrintStudio\Data\PublishingEngine.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_MainContent.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
