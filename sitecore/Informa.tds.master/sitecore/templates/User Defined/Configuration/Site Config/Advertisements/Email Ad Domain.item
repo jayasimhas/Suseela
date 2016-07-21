@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {A933A49A-DE33-48F4-957E-0211E00084A9}
+id: {A53FA92E-913B-46D2-BA54-BE48E04156FC}
 database: master
-path: /sitecore/templates/User Defined/Configuration/Site Config/Advertisements/Ad Domain
+path: /sitecore/templates/User Defined/Configuration/Site Config/Advertisements/Email Ad Domain
 parent: {8F6D2205-B02C-44BE-A260-0E5FFEA32DCD}
-name: Ad Domain
+name: Email Ad Domain
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -20,13 +20,13 @@ Single-Line Text
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
-content-length: 1
+content-length: 2
 
-0
+50
 ----version----
 language: en
 version: 1
-revision: 234c477e-0ed2-42c0-9556-be088ede36dc
+revision: 9eaf608a-389f-4ad0-b8bb-fcb561c2fab2
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160523T202657Z
+20160721T142747Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-234c477e-0ed2-42c0-9556-be088ede36dc
+9eaf608a-389f-4ad0-b8bb-fcb561c2fab2
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160721T142809Z
+20160721T142819Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

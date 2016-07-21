@@ -25435,6 +25435,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Deal_Rectangular_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Deal_Rectangular_Slot_ID  {get; set;}
 								/// <summary>
+					/// The Email Ad Domain field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: a53fa92e-913b-46d2-ba54-be48e04156fc</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Email_Ad_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Email_Ad_Domain  {get; set;}
+								/// <summary>
 					/// The Global Article Ad Zone field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -26248,6 +26257,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Deal_Rectangular_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Deal_Rectangular_Slot_ID  {get; set;}
 										/// <summary>
+						/// The Email Ad Domain field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: a53fa92e-913b-46d2-ba54-be48e04156fc</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Email_Ad_DomainFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Email_Ad_Domain  {get; set;}
+										/// <summary>
 						/// The Global Article Ad Zone field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -27002,6 +27020,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Deal_Rectangular_Slot_IDFieldId = new ID("9d353af5-ab32-4b9f-8ebb-c499395270a1");
 			public const string Deal_Rectangular_Slot_IDFieldName = "Deal Rectangular Slot ID";
+
+						
+					
+			public static readonly ID Email_Ad_DomainFieldId = new ID("a53fa92e-913b-46d2-ba54-be48e04156fc");
+			public const string Email_Ad_DomainFieldName = "Email Ad Domain";
 
 						
 					
@@ -41468,6 +41491,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Deal_Rectangular_Slot_IDFieldId = new ID("9d353af5-ab32-4b9f-8ebb-c499395270a1");
 			public const string Deal_Rectangular_Slot_IDFieldName = "Deal Rectangular Slot ID";
+
+						
+					
+			public static readonly ID Email_Ad_DomainFieldId = new ID("a53fa92e-913b-46d2-ba54-be48e04156fc");
+			public const string Email_Ad_DomainFieldName = "Email Ad Domain";
 
 						
 					
