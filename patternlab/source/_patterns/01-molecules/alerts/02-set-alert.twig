@@ -1,18 +1,110 @@
-{% if alertText == false %}
-	{% set alertText = "Set Alert for This Page" %}
-{% endif %}
 <div class="topic-subtopic__alert {{classes}}">
-	<form class="form-remove-topic-alert">
+	<form
+		class="form-remove-topic-alert"
+		data-on-submit="/api/SavedSearches"
+		data-submit-type="DELETE"
+		data-analytics='{
+			"event_name": "remove_alert",
+			"alert_topic": "Topic Page QA 30"
+		}'>
+
 		<input name="Url" class="js-save-search-url" id="Url" type="hidden" value="">
+
 		<button type="submit" class="lightbox-modal__hidden-submit"></button>
-		<span class="action-flag pop-out__trigger js-pop-out-trigger js-update-topic-alert">
+
+		<span
+			class="action-flag{% if actionFlagColor %} action-flag--{{actionFlagColor}}{% endif %} pop-out__trigger
+				js-pop-out-trigger js-update-topic-alert"
+			data-pop-out-type="save-search"
+			data-topic-alert-title="Last News Save!"
+			data-topic-alert-url="q=last news"
+			data-lightbox-modal="js-remove-topic-alert-modal"
+			data-lightbox-modal-title="Remove Saved Search"
+			data-lightbox-modal-body="Are you sure you'd like to remove this alert? You will no longer receive email updates about this topic."
+			data-lightbox-modal-success-target="form-remove-topic-alert">
+
 			<svg class="action-flag__icon js-topic-icon-unset topic-subtopic__alert-icon is-active">
 				<use xlink:href="/web/Website/dist/img/svg-sprite.svg#bell"></use>
 			</svg>
-			<svg class="action-flag__icon js-topic-icon-set topic-subtopic__alert-icon">
+
+			<svg class="action-flag__icon js-topic-icon-set topic-subtopic__alert-icon ">
 				<use xlink:href="/web/Website/dist/img/svg-sprite.svg#bell-filled"></use>
 			</svg>
-			<span class="js-set-topic-label">{{alertText}}</span>
+			<span
+				class="js-set-topic-label"
+				data-label-not-set="QA Set Alert for Topic Page QA 30"
+				data-label-is-set="Remove Alert for Topic Page QA 30">{{alertText}}</span>
 		</span>
 	</form>
+</div>
+
+<div style="z-index: 9997; transform: translate3d(432px, 427px, 0px);" class="pop-out js-pop-out__save-search">
+	<div style="height: 56px; width: 278px; left: auto; right: 0px; top: -55px; z-index: 9998;" class="pop-out__tab"></div>
+	<div class="pop-out__internal">
+		<div class="pop-out__sign-in">
+			<div class="dismiss-button js-close-lightbox-modal" ng-click="oneClickSaveFocus = false" data-target-element=".js-pop-out__sign-in">
+				<svg class="dismiss-button__icon">
+					<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+				</svg>
+			</div>
+
+
+			<form method="post" class="form-save-search-login" data-on-submit="/Account/api/LoginWebUserApi/Login/" data-is-search="false">
+				<h3 class="pop-out__register-header">Sign In To Set a Search Alert</h3>
+				<div class="pop-out__show-hide--bordered-bottom js-login-container">
+
+					<div class="pop-out__form-error js-form-error js-form-error-general">
+						Your login and/or password information does not match our records. Please try again.
+					</div>
+
+					<input name="username" class="pop-out__input header__hover-input" placeholder="Email Address (User Name)" type="text">
+					<input name="password" class="pop-out__input header__hover-input" placeholder="Password" type="password">
+
+					<span class="pop-out__form-actions pop-out__reset-password js-show-forgot-password">Forgot your password?</span>
+					<div class="pop-out__sign-in-remember-me">
+						<input name="persist" data-checkbox-type="boolean" type="checkbox"> Remember Me
+					</div>
+				</div>
+
+				<div class="pop-out__save-search-container">
+					<input name="Title" class="js-save-search-title" value="Last News Save!" type="hidden">
+					<input name="Url" class="js-save-search-url" value="q=last news" type="hidden">
+					<input id="AlertEnabled" name="AlertEnabled" value="true" type="hidden">
+					<p class="pop-out__details">Your alert for <span class="js-save-search-title">Last News Save!</span> will be saved to your account - "Saved Searches and Alerts".</p>
+					<button type="submit" class="pop-out__sign-in-submit button--filled" ng-click="searchIsSaved = true">Log In &amp; Save</button>
+				</div>
+			</form>
+
+			<div class="pop-out__show-hide--bordered-top pop-out__forgot-password js-reset-password-container">
+
+				<form class="form-reset-password" data-on-submit="/Account/api/ResetPasswordApi/Generate/">
+					<div class="alert-success js-reset-password-success">
+						<svg class="alert__icon">
+							<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+						</svg>
+						<p>Thanks, we've sent a link to reset your password</p>
+					</div>
+
+					<div class="pop-out__sign-in-forgot-password-nested js-reset-password-request-form">
+						<h3>Forgot your password?</h3>
+						<p>&nbsp;</p>
+						<p>Enter the email address associated with your account and an email will be sent to you to reset your password.</p>
+						<p class="pop-out__form-error js-form-error js-form-error-EmailRequirement">Please enter a valid email address.</p>
+						<p class="pop-out__form-error js-form-error js-form-error-general">Unfortunately we've not been able to process this request.</p>
+
+						<input name="email" class="pop-out__input" placeholder="Email Address" type="text">
+						<div class="pop-out__form-actions-wrapper">
+							<div></div>
+							<div class="sign-in__submit-wrapper">
+								<button class="button--filled  click-utag" type="submit" data-info="{&quot;event_name&quot; : &quot;reset-password&quot;}">Submit</button>
+							</div>
+						</div>
+					</div>
+					<p class="pop-out__details pop-out__details--inset u-italic u-centered">
+						Need help? Contact us at <strong>(800) 332-2181</strong>, <strong>+1 (908) 748-1221</strong>, or <a href="\'#\'">custcare@informa.com</a>
+					</p>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>

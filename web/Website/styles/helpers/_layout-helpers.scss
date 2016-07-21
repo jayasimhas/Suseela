@@ -3,21 +3,21 @@
 
 // full width
 .l-full {
-    width: 100%;
+	width: 100%;
 }
 
 // float left
 .l-pull-left {
-    float: left;
-    margin-bottom: rem(20);
-    margin-right: rem(20);
+	float: left;
+	margin-bottom: rem(20);
+	margin-right: rem(20);
 }
 
 // float right
 .l-pull-right {
-    float: right;
-    margin-bottom: rem(20);
-    margin-left: rem(20);
+	float: right;
+	margin-bottom: rem(20);
+	margin-left: rem(20);
 }
 
 // positioning - inspired by http://howtocenterincss.com/
@@ -26,58 +26,145 @@
 
 // horizontal and vertical alignment: center
 .l-centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 // horizontal alignment: left, vertical alignment: center
 .l-left-centered {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 // horizontal alignment: left, vertical alignment: bottom
 .l-left-bottom {
-    display: flex;
-    align-items: flex-end;
+	display: flex;
+	align-items: flex-end;
 }
 
 // horizontal alignment: center, vertical alignment: top
 .l-center-top {
-    margin-left: auto;
-    margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 // horizontal alignment: center, vertical alignment: bottom
 .l-center-bottom {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
 }
 
 // horizontal alignment: right, vertical alignment: top
 .l-right-top {
-    margin-left: auto;
+	margin-left: auto;
 }
 
 // horizontal alignment: right, vertical alignment: centered
 .l-right-centered {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 // horizontal alignment: right, vertical alignment: bottom
 .l-right-bottom {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
 }
 
 
 // prevents line breaking/wrapping
 // mostly used on table cells in
 .l-no-wrap {
-    white-space: nowrap;
+	white-space: nowrap;
+}
+
+
+
+
+
+
+
+// COLUMN HELPERS
+.l-row {
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+	}
+}
+
+.l-left-rail {
+	min-width: 70%;
+	max-width: 790px;
+	float: left;
+
+	@include breakpoint('large') {
+		margin-bottom: 2rem;
+		width: 100%;
+		clear: both;
+		float: none;
+	}
+}
+
+
+.l-right-rail {
+	float: right;
+	max-width: 290px;
+
+	@include breakpoint('large') {
+		clear: both;
+		float: none;
+		margin-bottom: 1rem;
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+// COLUMNS WITH DIVIDING BARS
+.l-columns {
+	display: flex;
+	flex: auto;
+	flex-wrap: wrap;
+	margin: 0 0 2.5em;
+
+	&--with-divider {
+		.l-columns__column {
+			border-right: 1px solid $color-light-gray;
+			padding: 0 30px;
+		}
+	}
+
+	&--three-up {
+		.l-columns__column {
+			width: calc(33.3333333% + 30px);
+			padding: 0 30px;
+		}
+
+		.l-columns__column:nth-child(3n + 1) {
+			width: calc(33.3333333% - 15px);
+			padding-left: 0;
+		}
+
+		.l-columns__column:nth-child(3n) {
+			width: calc(33.3333333% - 15px);
+			border-right: none;
+			padding-right: 0;
+		}
+
+		@include breakpoint('medium') {
+			.l-columns__column,
+			.l-columns__column:nth-child(3n),
+			.l-columns__column:nth-child(3n + 1) {
+				border-right: none;
+				margin-bottom: 2rem;
+				padding: 0;
+				width: 100%;
+			}
+		}
+
+	}
 }

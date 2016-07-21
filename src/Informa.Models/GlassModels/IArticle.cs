@@ -74,7 +74,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 		public string Editorial_Notes { get; set; }
 		public bool Embargoed { get; set; }
 		public bool Free { get; set; }
-		public bool Is_Sidebar_Article { get; set; }
+        public bool Free_With_Registration { get; set; }
+        public bool Is_Sidebar_Article { get; set; }
 		public Guid Label { get; set; }
 		public ITaxonomy_Item Media_Type { get; set; }
 		public DateTime Modified_Date { get; set; }

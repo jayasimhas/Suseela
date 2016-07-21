@@ -20,60 +20,11 @@ Styles for a floated sidebar within an article body.
 */
 
 .article-sidebar {
-    background-color: $color-concrete-gray;
-    border-top: 4px solid $color-cardinal-red;
-    float: right;
-    line-height: 1.5rem;
-    margin: 2rem 0 2rem 2rem;
-    overflow: auto; // Sneaky way to force-`clear` any floating elements
-    padding: 1.75rem 2rem;
-    width: 50%;
-
-    h3 {
-        @include textMix('Roboto Condensed', 24px, 600);
-        color: $color-zeus-black;
-        line-height: 2rem;
-        margin-bottom: 1rem;
-        font-style: normal;
-    }
-
-    &__byline,
-    &__date {
-        @include textMix('Roboto', 1rem, 400);
-        display: block;
-    }
-
-    &__byline {
-        margin-bottom: 0.25rem;
-    }
-
-    &__date {
-        margin-bottom: 1rem;
-    }
-
-    &__read-more {
-        @include textMix('Roboto', 1rem, 400);
-        float: right;
-
-        &:after {
-            content: "\276f";
-            display: inline-block;
-            font-size: 10px;
-            line-height: 1rem;
-            vertical-align: middle;
-        }
-    }
-
-    p {
-        color: $color-zeus-black;
-        font-size: 1rem;
-        line-height: 1.75rem;
-    }
-
-    @include breakpoint('small') {
-        width: 100%;
-        float: none;
-        margin: 1rem 0;
-        padding: 1rem;
-    }
+	/*
+	 * Moved primary code for this to a mixin to allow for reuse without
+	 *  significant changes on the backend.
+	 * For future callouts of all sorts, please use the callout and
+	 *   callout--full-width classes instead of article-sidebar
+	 */
+	@include callout('default');
 }

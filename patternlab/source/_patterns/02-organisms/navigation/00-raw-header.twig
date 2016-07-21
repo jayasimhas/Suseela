@@ -43,9 +43,10 @@
 		</div>
 	</div>
 
-		<div class="advertising--leaderboard">
-			<script>OAS_AD('Top1', 'home');</script>
-		</div>
+	{% if showHeaderAd %}
+		{% include "molecules-ad-leaderboard" %}
+	{% endif %}
+
 	<div class="header__wrapper clearfix">
 
 

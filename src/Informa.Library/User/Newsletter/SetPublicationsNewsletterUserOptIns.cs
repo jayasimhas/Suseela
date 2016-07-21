@@ -29,11 +29,6 @@ namespace Informa.Library.User.Newsletter
 				AddType(siteTypes.Weekly, ref newsletterTypes);
 			}
 
-			if (!newsletterTypes.Any())
-			{
-				return true;
-			}
-
 			return SetNewsletterOptIns.Set(newsletterTypes);
 		}
 

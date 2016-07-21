@@ -1,0 +1,7 @@
+.callout {
+	@include callout('default');
+
+	&--full-width {
+		@include callout('sidebar');
+	}
+}

@@ -136,6 +136,12 @@ section: Home/Topic Page Components
         display: block;
         line-height: 18px;
         margin-bottom: 1rem;
+
+		a {
+	        @include textMix('Roboto', 16px, 500);
+	        color: $color-abbey-gray;
+	        line-height: 18px;
+		}
     }
 
     &__ad {
@@ -189,6 +195,7 @@ section: Home/Topic Page Components
     }
     &--boxed {
         border: 2px solid #ccc;
+		margin-bottom: 2.25rem;
         padding: 12px;
     }
 

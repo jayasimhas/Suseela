@@ -1,0 +1,96 @@
+{
+	"genericTitle": "Amgen, Inc.",
+	"genericPageContent": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><h5>A division of Quest Diagnostics Inc.<br /><a href=\"#\">www.amgen.com</a></h5>",
+	"dealsLabelText": "Amgen, Inc.",
+	"latestLabelText": "Amgen, Inc.",
+	"showSetAlert": true,
+	"alertText": "Set Alert for Amgen, Inc. Articles",
+	"dealSponsor": "https://unsplash.it/400/80?random",
+	"topicsListHeader": "Company Information",
+	"calloutHeader": "The most trusted and reliable source for analyzing and tracking health care deals",
+	"calloutBody": "<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
+	"calloutButton": "Become a Subscriber",
+	"calloutButtonUrl": "#",
+	"callOutType": "full-width",
+	"maxNews": 4,
+	"maxDeals": 3,
+	"topicsListWords" : [{
+		"sectionHeader": "Headquarters",
+		"items": [
+				{
+					"itemURL": "#",
+					"itemText" : "Europe",
+					"subsection": [
+						{
+							"itemURL": "#",
+							"itemText" : "Western Europe",
+							"subsection": [
+								{
+									"itemURL": "#",
+									"itemText" : "Switzerland"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+		"sectionHeader": "Senior Management",
+		"sectionDesc": "<p>Tej Tadi, PhD, CEO<br />Pierre-Emanuel Meyer, CFO</p>"
+		},
+		{
+		"sectionHeader": "Contact Info",
+		"sectionDesc": "<p><strong>Amgen, Inc.</strong><br />Phone: (555) 555-5555<br />55555 Newbrook Drive<br />P.O. Box 55555 City, ST 00000-0000<br />USA</p>"
+		}],
+	"sortableTableData": {
+		"rows": [
+			[
+				{
+						"itemText" : "Pharmaceutical"
+				},
+				{
+						"itemText" : "N/A"
+				},
+				{
+						"itemText" : "2 Deals",
+						"itemURL" : "#"
+				},
+				{
+						"itemText" : "1 Deal",
+						"itemURL" : "#"
+				}
+			],
+			[
+				{
+						"itemText" : "Device"
+				},
+				{
+						"itemText" : "N/A"
+				},
+				{
+						"itemText" : "2 Deals",
+						"itemURL" : "#"
+				},
+				{
+						"itemText" : "2 Deals",
+						"itemURL" : "#"
+				}
+			],
+			[
+				{
+						"itemText" : "OTC"
+				},
+				{
+						"itemText" : "N/A"
+				},
+				{
+						"itemText" : "N/A"
+				},
+				{
+						"itemText" : "N/A"
+				}
+			]
+		]
+	}
+}

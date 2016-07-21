@@ -84,6 +84,11 @@ namespace Informa.Library.Utilities.Extensions
 			return source.Substring(startIndex, endIndex - startIndex + 1);
 		}
 
+        public static string NullIfNoContent(this string source)
+        {
+            return string.IsNullOrEmpty(source) ? null : source;
+        }
+        
         /// <summary>
         /// Uses DateTime.TryParse to parse the string as a DateTime.  If the TryParse fails, returns DateTime.MinValue.
         /// </summary>
@@ -98,5 +103,5 @@ namespace Informa.Library.Utilities.Extensions
 	        }
             return parsed;
 	    }
-    }
+	}
 }

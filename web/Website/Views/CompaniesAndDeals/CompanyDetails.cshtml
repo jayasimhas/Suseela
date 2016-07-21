@@ -1,0 +1,15 @@
+﻿@model Informa.Web.ViewModels.CompaniesAndDeals.CompanyViewModel
+
+<script type="text/javascript"> (function () { document.title = document.title.replace('*', '@(Model.Company.Title)'); })(); </script>
+<div class="generic-content">
+    <h1>@Model.Company.Title</h1>
+
+    <h5>
+        @Model.DivisionOfText
+        @if (Model.Content.ContactInfo.Website.HasContent())
+        {
+            <br/>
+            <a target="_blank" href="@(Model.WebsiteHref)">@(Model.Content.ContactInfo.Website)</a>
+        }
+    </h5>
+</div>

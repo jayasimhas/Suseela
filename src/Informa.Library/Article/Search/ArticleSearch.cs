@@ -49,8 +49,10 @@ namespace Informa.Library.Article.Search
 				ExcludeManuallyCuratedItems = new List<Guid>(),
 				TaxonomyIds = new List<Guid>(),
 				ArticleNumbers = new List<string>(),
-				PublicationNames = new List<string>()
-			};
+				PublicationNames = new List<string>(),
+                AuthorNames = new List<string>(),
+                CompanyRecordNumbers = new List<string>(),
+            };
 		}
 
 		public IArticleSearchResults Search(IArticleSearchFilter filter)
@@ -60,7 +62,9 @@ namespace Informa.Library.Article.Search
 				var query = context.GetQueryable<ArticleSearchResultItem>()
 						.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
 						.FilterByPublications(filter)
-						.FilterTaxonomies(filter)
+                        .FilterByAuthor(filter)
+                        .FilterByCompany(filter)
+                        .FilterTaxonomies(filter)
 						.ExcludeManuallyCurated(filter)
 						.FilteryByArticleNumbers(filter)
 						.FilteryByEScenicID(filter)
@@ -116,7 +120,20 @@ namespace Informa.Library.Article.Search
 			}
 		}
 
-		public long GetNextArticleNumber(Guid publicationGuid)
+        public IArticleSearchResults FreeWithRegistrationArticles(string database) {
+            using (var context = SearchContextFactory.Create(database)) {
+                var query = context.GetQueryable<ArticleSearchResultItem>()
+                    .Where(a => a.TemplateId == IArticleConstants.TemplateId && a.FreeWithRegistration == true)
+                    .ApplyDefaultFilters();
+                
+                ISitecoreService localSearchContext = SitecoreFactory(database);
+                return new ArticleSearchResults {
+                    Articles = query.OrderByDescending(i => i.ActualPublishDate).GetResults().Hits.Select(h => localSearchContext.GetItem<IArticle>(h.Document.ItemId.Guid))
+                };
+            }
+        }
+
+        public long GetNextArticleNumber(Guid publicationGuid)
 		{
 			using (var context = SearchContextFactory.Create(Constants.MasterDb))
 			{

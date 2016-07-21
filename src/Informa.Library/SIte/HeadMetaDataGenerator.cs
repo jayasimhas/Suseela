@@ -13,6 +13,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
+using System.Text.RegularExpressions;
 
 namespace Informa.Library.Site
 {
@@ -101,7 +102,7 @@ namespace Informa.Library.Site
 
             foreach (var pair in properties)
             {
-                result.AppendLine($"<meta property=\"{pair.Key}\" content=\"{pair.Value}\">");
+                result.AppendLine($"<meta name=\"{pair.Key}\" content=\"{pair.Value}\">");
             }
 
             return result.ToString();
@@ -190,7 +191,8 @@ namespace Informa.Library.Site
             }
 
             section = first.Item_Name;
-            tags = string.Join(",", taxonomy.Skip(1).Select(t => t.Item_Name));
+            string temp = string.Join(",", taxonomy.Skip(1).Select(t => t.Item_Name));
+            tags = Regex.Replace(temp, @"\r\n?|\n|\t", string.Empty);
         }
     }
 }

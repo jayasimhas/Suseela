@@ -8,7 +8,8 @@ namespace Informa.Library.Article.Search
 	{
 		IArticleSearchResults Search(IArticleSearchFilter filter);
 		IArticleSearchResults SearchCustomDatabase(IArticleSearchFilter filter, string database);
-		IArticleSearchFilter CreateFilter();
+        IArticleSearchResults FreeWithRegistrationArticles(string database);
+        IArticleSearchFilter CreateFilter();
 		long GetNextArticleNumber(Guid publicationGuid);
 		string GetArticleTaxonomies(Guid id, Guid taxonomyParent);
 		IArticleSearchResults GetLegacyArticleUrl(string path);

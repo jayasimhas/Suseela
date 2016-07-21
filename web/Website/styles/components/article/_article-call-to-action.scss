@@ -1,39 +1,62 @@
 .article-call-to-action {
-    @include textMix('Roboto', 1rem, 400);
+	@include textMix('Roboto', 1rem, 400);
 
-    &--sign-in-up,
-    &--subscribe {
-        margin-bottom: 1.5rem;
-        background-color: $color-concrete-gray;
-        border: 1px solid $color-light-gray;
-        overflow: auto;
-        padding: 1.5rem;
-    }
+	&--sign-in-up,
+	&--subscribe {
+		background-color: $color-concrete-gray;
+		border: 1px solid $color-light-gray;
+		display: flex;
+		margin-bottom: 1.5rem;
+		overflow: auto;
+		padding: 1.5rem 0;
 
-    &__column {
-        @include columnize(2, 4, 1px solid $color-light-gray);
-    }
+		@include breakpoint('medium-small') {
+			display: block;
+		}
+	}
 
-    &__title {
+	&__column {
+		/*@include columnize(2, 4, 1px solid $color-light-gray);*/
+		border-right: 1px solid $color-light-gray;
+		flex: auto;
+		min-width: 50%;
+		padding: 0 1.5rem;
+
+		@include breakpoint('medium-small') {
+			border-right: none;
+			margin-bottom: 40px;
+		}
+
+		&:last-child {
+			border-right: none;
+			margin-bottom: 0;
+		}
+	}
+
+	&__title {
 		@extend h3;
-        color: $color-zeus-black;
-        display: block;
+		color: $color-zeus-black;
+		display: block;
 		margin-bottom: 1rem;
 	}
-    &__subtitle {
-        @extend h5;
-        display: block;
-        margin-bottom: 1rem;
-        color: $color-zeus-black;
-    }
+	&__subtitle {
+		@extend h5;
+		display: block;
+		margin-bottom: 1rem;
+		color: $color-zeus-black;
+	}
 	&__caption,
 	&__source {
 		@include textMix('Roboto', 13px, 400);
-	    color: $color-dusty-gray;
-	    margin-bottom: 0 !important;
-	    line-height: 1.5rem !important;
-	    display: block;
-	    text-transform: uppercase;
-	    letter-spacing: 1px;
+		color: $color-dusty-gray;
+		margin-bottom: 0 !important;
+		line-height: 1.5rem !important;
+		display: block; 
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	hr {
+		margin: 1.8rem 0;
 	}
 }

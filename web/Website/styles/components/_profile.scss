@@ -1,0 +1,101 @@
+.profile {
+	@include textMix('PTSerif', 18px, 400);
+	margin-bottom: 1.5rem;
+	color: $color-zeus-black;
+
+	@include breakpoint('medium') {
+		font-size: 1rem;
+	}
+
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+	}
+
+	&__expertise,
+	&__links {
+
+		li {
+			@include textMix('Roboto', 18px, 700)
+			line-height: 18px;
+			margin: 0 0 18px 0;
+		}
+
+		li:before {
+			display: none;
+		}
+	}
+
+	&__links {
+
+		svg {
+			display: inline-block;
+			fill: $color-dusty-gray;
+			margin-right: 5px;
+			overflow: visible;
+			vertical-align: middle;
+		}
+
+		li {
+			font-size: 15px;
+			line-height: 18px;
+			margin: 0 0 18px 0;
+		}
+	}
+
+	&__img {
+		height: auto;
+		float: left;
+		margin: 0 32px 32px 0;
+		width: 160px;
+	}
+
+	@include breakpoint('small') {
+		&__img {
+			display: block;
+			float: none;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 300px;
+			width: 100%;
+		}
+	}
+
+	&__img + &__links {
+		padding-top: 26px;
+	}
+
+	&__location {
+		@include textMix('Roboto', 18px, 500);
+		margin-bottom: 32px;
+	}
+
+	&__profile {
+		border-bottom: 1px solid $color-light-gray;
+		clear: both;
+		color: $color-abbey-gray;
+		margin-bottom: 32px;
+		padding-bottom: 32px;
+	}
+
+	&__title {
+		margin-bottom: 8px;
+	}
+
+	h1 {
+		@extend h1;
+		margin-bottom: 0.75rem;
+
+		@include breakpoint('medium') {
+			font-size: 2.25rem;
+			margin-bottom: 1rem;
+		}
+	}
+
+	p {
+		@include breakpoint('medium') {
+			line-height: 1.75rem;
+		}
+	}
+}

@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Glass.Mapper.Sc.Fields;
+using Informa.Library.Site;
 using Informa.Library.Utilities.Settings;
 using Informa.Model.DCD;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
+
 
 namespace Informa.Library.Article.Companies
 {
@@ -12,15 +14,13 @@ namespace Informa.Library.Article.Companies
 	public class RelatedDealsService : IRelatedDealsService
 	{
 		private readonly IDCDReader _reader;
-		private readonly string _oldDealsUrl;
-		
-		public RelatedDealsService(
-			IDCDReader reader,
-			ISiteSettings siteSettings)
+        protected readonly ISiteRootContext SiteRootContext;
+
+        public RelatedDealsService(ISiteRootContext siteRootContext,IDCDReader reader)
 		{
 			_reader = reader;
-			_oldDealsUrl = siteSettings.OldDealsUrl;
-		}
+            SiteRootContext = siteRootContext;
+        }
 
 		public IEnumerable<Link> GetRelatedDeals(IArticle article)
 		{
@@ -29,8 +29,8 @@ namespace Informa.Library.Article.Companies
 			return dealIds.Where(id => !string.IsNullOrEmpty(id)).Select(id => _reader.GetDealByRecordNumber(id)).Select(c => new Link
 			{
 				Text = c.Title,
-				Url = string.Format(_oldDealsUrl, c.RecordNumber)
-			});
+				Url = $"{SiteRootContext.Item?._Url}deals/{c.RecordNumber}"
+            });
 		}
 	}
 }

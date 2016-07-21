@@ -23,9 +23,11 @@
             <span class="search-result__line-separator" ng-if="doc.mediaType"></span> <!-- only prints if media type isn't blank -->
 
             <div class="search-result__media-type" ng-if="doc.mediaType">
-				<svg class="js-toggle-tooltip" data-tooltip-text="TOOLTIP LABEL HERE">
-					<use ng-href="/dist/img/svg-sprite.svg#{{::doc.mediaType}}" xlink:href=""></use>
-				</svg>
+				<span class="js-toggle-tooltip" data-tooltip-text="{{::doc.mediaTooltip}}">
+					<svg>
+						<use ng-href="/dist/img/svg-sprite.svg#{{::doc.mediaType}}" xlink:href=""></use>
+					</svg>
+				</span>
             </div>
             <input type="hidden" class="js-search-results-id" data-bookmark-id="{{::doc.itemId}}" />
 
@@ -36,18 +38,18 @@
                  data-bookmark-id="{{::doc.itemId}}"
                  ng-click="@(Model.IsAuthenticated ? "fireBookmark(doc, $event, $index)" : "null")"
                  data-is-bookmarked="{{doc.isArticleBookmarked}}"
-				 data-analytics='{
+                 data-analytics='{
  					"bookmark": "true",
  					"bookmark_title": "{{ ::doc.title }}",
  					"bookmark_publication": "{{ ::doc.publicationTitle }}"}'>
 
                 <svg ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'" class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked js-angular-bookmark"
-				ng-class="{ 'is-visible': doc.isArticleBookmarked }">
+                     ng-class="{ 'is-visible': doc.isArticleBookmarked }">
                     <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
                 </svg>
 
                 <svg ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'" class="action-flag__icon action-flag__icon--bookmark article-bookmark js-angular-bookmark"
-				ng-class="{ 'is-visible': !doc.isArticleBookmarked }">
+                     ng-class="{ 'is-visible': !doc.isArticleBookmarked }">
                     <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
                 </svg>
             </div>
@@ -63,7 +65,7 @@
             </a>
 
             <div class="search-result__author" ng-if="doc.byline">
-                By {{ ::doc.byline }}
+                By <span ng-bind-html="::doc.byline"></span>
             </div>
 
             <p class="search-result__description" ng-bind-html="doc.summary"></p>

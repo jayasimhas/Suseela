@@ -1,0 +1,75 @@
+{
+	"personName": "Donna Young",
+	"personTitle": "Journalist, PhD, SVP, Research",
+	"location": "London, UK",
+	"email": "donnayoung@emaildomain.com",
+	"twitter": "@DonnaYoung",
+	"twitterUrl": "#",
+	"linkedin": "Donna Young",
+	"linkedinUrl": "#",
+	"personPhoto": "https://unsplash.it/200/200/?random",
+	"latestLabelText": "Donna Young",
+	"alertText": "Set Alert for Articles by Donna Young",
+	"showSetAlert": true,
+	"expertise": [
+		{
+			"classes": "bar-separated-link-list--wrap",
+			"labelText": "Areas of Expertise",
+			"listItems": [
+				{
+					"itemURL": "#",
+					"itemText" : "Biosimilars"
+				},
+				{
+					"itemURL": "#",
+					"itemText" : "Policy"
+				},
+				{
+					"itemURL": "#",
+					"itemText" : "Deals"
+				},
+				{
+					"itemURL": "#",
+					"itemText" : "Strategy"
+				}
+			]
+		},
+		{
+			"classes": "bar-separated-link-list--wrap",
+			"labelText": "Industry Expertise",
+			"listItems": [
+				{
+					"itemURL": "#",
+					"itemText" : "Device"
+				},
+				{
+					"itemURL": "#",
+					"itemText" : "OTC"
+				},
+				{
+					"itemURL": "#",
+					"itemText" : "Biopharma"
+				}
+			]
+		},
+		{
+			"classes": "bar-separated-link-list--wrap",
+			"labelText": "Writes for",
+			"listItems": [
+				{
+					"itemURL": "#",
+					"itemText" : "SCRIP"
+				},
+				{
+					"itemURL": "#",
+					"itemText" : "In Vivo"
+				},
+				{
+					"itemURL": "#",
+					"itemText" : "Pink Sheet"
+				}
+			]
+		}
+	],
+	"max": 9
+}

@@ -311,6 +311,26 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.PrintStudio.Configuration, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.DashBoardClient, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.DashBoardClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.InDesign.Soap, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.InDesign.Soap.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.InDesignConnectorService, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.InDesignConnectorService.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.PublishingEngine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.PublishingEngine.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Services.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Core.dll</HintPath>
@@ -589,6 +609,10 @@
       <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="zxing, Version=1.0.4391.16826, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\zxing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http.Formatting">
@@ -688,6 +712,7 @@
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentRemoveRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentSaveRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\PreRegisterRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Registration\RegisterFreeTrialRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterValidationReason.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\SetOptInsRequest.cs" />
@@ -705,6 +730,7 @@
     <Compile Include="Areas\Account\ViewModels\Management\ContactInformationViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SubscriptionViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Registration\RegisterFreeTrialUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\ResetPassword\ChangeViewModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
@@ -734,6 +760,10 @@
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
     <Compile Include="Controllers\WorkFlowUtil.cs" />
+    <Compile Include="CustomMvc\CustomHtmlNodeParser.cs" />
+    <Compile Include="CustomMvc\CustomHtmlParseHelper.cs" />
+    <Compile Include="CustomMvc\Parsers\CustomImageParser.cs" />
+    <Compile Include="CustomMvc\Pipelines\CustomConvertToXml.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
     <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
@@ -746,6 +776,17 @@
     <Compile Include="Models\PageLinksFactory.cs" />
     <Compile Include="Models\TokenHtml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx.cs">
+      <DependentUpon>FreeTrialArticleSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx.designer.cs">
+      <DependentUpon>FreeTrialArticleSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sitecore\admin\Tools\TestUtils.aspx.cs">
+      <DependentUpon>TestUtils.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="sitecore\shell\client\Applications\View NLM\model\ViewNlmViewModel.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="TestData\TestData.cs" />
@@ -763,25 +804,36 @@
     <Compile Include="Util\DCD\ViewDCDXML.aspx.designer.cs">
       <DependentUpon>ViewDCDXML.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AdvertisementViewModel.cs" />
-    <Compile Include="ViewModels\ArticleAdViewModel.cs" />
-    <Compile Include="ViewModels\ArticleBodyContentModel.cs" />
-    <Compile Include="ViewModels\ArticleEntitledViewModel.cs" />
+    <Compile Include="ViewModels\AdViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleAdViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleBodyContentModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleEntitledViewModel.cs" />
     <Compile Include="ViewModels\AnalyticsViewModel.cs" />
-    <Compile Include="ViewModels\ArticleKeyDocumentsModel.cs" />
-    <Compile Include="ViewModels\ArticleMobileMediaComponentModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleKeyDocumentsModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleMobileMediaComponentModel.cs" />
+    <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\DealViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\DealsAndCompaniesSubscribeViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\StratrgicTransactionViewModel.cs" />
+    <Compile Include="ViewModels\Authors\AuthorProfileViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailLayoutViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedContentViewModel.cs" />
+    <Compile Include="ViewModels\ExecutiveSummaryViewModel.cs" />
     <Compile Include="ViewModels\FooterNavigationMenuViewModel.cs" />
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
+    <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
+    <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
-    <Compile Include="ViewModels\RelatedCompaniesModel.cs" />
-    <Compile Include="ViewModels\RelatedDealsModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\RelatedCompaniesModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\RelatedDealsModel.cs" />
     <Compile Include="ViewModels\SearchRssViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
@@ -798,7 +850,7 @@
     <Compile Include="ViewModels\SiteDebugging\UserEntitlementsViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\UserIpAddressViewModel.cs" />
     <Compile Include="ViewModels\EntitledViewModel.cs" />
-    <Compile Include="ViewModels\IArticleComponentFactory.cs" />
+    <Compile Include="ViewModels\Articles\IArticleComponentFactory.cs" />
     <Compile Include="ViewModels\ICallToActionViewModel.cs" />
     <Compile Include="ViewModels\ICompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\IIndividualRenewalMessageViewModel.cs" />
@@ -809,30 +861,30 @@
     <Compile Include="ViewModels\SitemapViewModel.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="ViewModels\SubnavigationViewModel.cs" />
-    <Compile Include="ViewModels\ArticleFeaturedImage.cs" />
-    <Compile Include="ViewModels\ArticleListItemModel.cs" />
-    <Compile Include="ViewModels\ArticleListItemModelFactory.cs" />
-    <Compile Include="ViewModels\ArticlePrologueBookmarkViewModel.cs" />
-    <Compile Include="ViewModels\ArticlePrologueEmailViewModel.cs" />
-    <Compile Include="ViewModels\ArticleProloguePrintViewModel.cs" />
-    <Compile Include="ViewModels\ArticlePrologueShareViewModel.cs" />
-    <Compile Include="ViewModels\ArticlePrologueViewModel.cs" />
-    <Compile Include="ViewModels\ArticleTagsViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleFeaturedImage.cs" />
+    <Compile Include="ViewModels\Articles\ArticleListItemModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleListItemModelFactory.cs" />
+    <Compile Include="ViewModels\Articles\ArticlePrologueBookmarkViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticlePrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleProloguePrintViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticlePrologueShareViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticlePrologueViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleTagsViewModel.cs" />
     <Compile Include="ViewModels\PromotionalViewModel.cs" />
     <Compile Include="ViewModels\ContentListing\ContentListingViewModel.cs" />
     <Compile Include="ViewModels\FeaturedArticleViewModel.cs" />
     <Compile Include="ViewModels\HierarchyLinksViewModel.cs" />
-    <Compile Include="ViewModels\IArticleListItemModelFactory.cs" />
+    <Compile Include="ViewModels\Articles\IArticleListItemModelFactory.cs" />
     <Compile Include="ViewModels\IListableVIewModel.cs" />
     <Compile Include="ViewModels\LatestNewsViewModel.cs" />
     <Compile Include="ViewModels\PersonModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
-    <Compile Include="ViewModels\IArticlePrologueBookmarkViewModel.cs" />
-    <Compile Include="ViewModels\IArticlePrologueEmailViewModel.cs" />
-    <Compile Include="ViewModels\IArticleProloguePrintViewModel.cs" />
-    <Compile Include="ViewModels\IArticlePrologueShareViewModel.cs" />
-    <Compile Include="ViewModels\IArticleTagsViewModel.cs" />
+    <Compile Include="ViewModels\Articles\IArticlePrologueBookmarkViewModel.cs" />
+    <Compile Include="ViewModels\Articles\IArticlePrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\Articles\IArticleProloguePrintViewModel.cs" />
+    <Compile Include="ViewModels\Articles\IArticlePrologueShareViewModel.cs" />
+    <Compile Include="ViewModels\Articles\IArticleTagsViewModel.cs" />
     <Compile Include="ViewModels\IPersonModel.cs" />
     <Compile Include="ViewModels\IMaintenanceViewModel.cs" />
     <Compile Include="ViewModels\MainLayoutViewModel.cs" />
@@ -1064,6 +1116,10 @@
     <Content Include="Areas\Article\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Account\Views\web.config" />
+    <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
+    <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
+    <Content Include="PrintStudio\Data\special.xml" />
+    <Content Include="PrintStudio\Services\InDesignConnectorService.asmx" />
     <Content Include="sitecore\login\login.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\css\ViewNlm.css" />
@@ -1165,7 +1221,6 @@
     <Content Include="Views\FrontendWrappers\ArticleWrapper.cshtml" />
     <Content Include="Views\Shared\_SignInForm.cshtml" />
     <Content Include="Views\Structure\TwoColumnContent.cshtml" />
-    <Content Include="Views\Structure\SingleColumnContent.cshtml" />
     <Content Include="Views\Structure\MainContentWrapper.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedContent.cshtml" />
     <Content Include="Views\Shared\Components\ListableContentWide.cshtml" />
@@ -1214,6 +1269,8 @@
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config.template" />
     <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />
@@ -1222,9 +1279,12 @@
     <None Include="App_Config\Prefetch\Master.config.template" />
     <None Include="App_Config\Prefetch\Webdb.config.template" />
     <Content Include="Areas\VWB\Views\web.config" />
+    <Content Include="Areas\Account\Views\Registration\RegisterFreeTrial.cshtml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="PrintStudio\Data\PublishingEngine.dtd" />
+    <Content Include="PrintStudio\Handlers\PrintCacheHandler.ashx" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_MainContent.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
@@ -1253,7 +1313,6 @@
     <Content Include="Views\Shared\Components\PageTitle.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedNewsletterSignUp.cshtml" />
     <Content Include="Views\Shared\Components\GeneralRTEComponent.cshtml" />
-    <Content Include="Views\Article\ArticleMediumAd.cshtml" />
     <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
     <Content Include="Views\Shared\Components\LandscapeImage.cshtml" />
@@ -1283,12 +1342,11 @@
     <Content Include="Views\Shared\Layouts\BlankLayout.cshtml" />
     <Content Include="Views\Shared\Global\SitemapNews.cshtml" />
     <Content Include="Views\Shared\Global\RobotsText.cshtml" />
-    <Content Include="Views\Article\ArticleFilmstripAd.cshtml" />
+    <Content Include="Views\Advertisements\FilmstripAd.cshtml" />
     <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
     <Content Include="Views\Shared\Global\Sitemap.cshtml" />
     <Content Include="Views\Shared\Components\Advertisement.cshtml" />
-    <Content Include="Views\Shared\Company\_RegisterMessage.cshtml" />
     <Content Include="sitecore\shell\client\Applications\Nlm Export\components\ExportPrompt.cshtml" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.cshtml" />
     <Content Include="Views\Article\UserCallToAction.cshtml" />
@@ -1317,6 +1375,29 @@
     <Content Include="Views\Article\TopicPageTitle.cshtml" />
     <Content Include="Views\Shared\Components\MediaTypeIcon.cshtml" />
     <Content Include="Areas\VWB\Views\AddIssue.cshtml" />
+    <Content Include="Views\Authors\AuthorProfile.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Authors\AuthorShare.cshtml" />
+    <Content Include="Views\Authors\AuthorPrologueEmail.cshtml" />
+    <Content Include="Views\Shared\PopOuts\EmailAuthor.cshtml" />
+    <Content Include="Views\Shared\Components\ExecutiveSummary.cshtml" />
+    <Content Include="Views\Authors\AuthorRectangularAd.cshtml" />
+    <Content Include="Views\Authors\AuthorLeaderboardAd.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompanyProfile.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealProfile.cshtml" />
+    <Content Include="Views\Shared\Company\_RegisterMessage.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompanyDetails.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompanyInfo.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\StrategicTransactions.cshtml" />
+    <Content Include="Views\Structure\DetailPageSublayout.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\SubsidiariesTree.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealDetails.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealsAndCompaniesSubscribe.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealRelatedCompanies.cshtml" />
+    <Content Include="Views\Advertisements\RectangularAd.cshtml" />
+    <Content Include="Views\Advertisements\LeaderboardAd.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealSponsor.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

@@ -66,7 +66,11 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public string MediaType { get; set; }
 
-		[DataMember]
+        [IndexField("searchmediatooltip_s")]
+        [DataMember]
+        public string MediaTooltip { get; set; }
+
+        [DataMember]
 		public string Summary => DCDTokenMatchers.ProcessDCDTokens(RawSummary);
 
 		[IndexField("searchsummary_s")]
@@ -80,7 +84,12 @@ namespace Informa.Library.Search.Results
 		[IndexField("facetcompanies")]
 		public List<string> CompaniesFacet { get; set; }
 
-		[DataMember]
+		[IndexField("authors_sm")]
+		public List<string> Authors { get; set; }
+
+        [IndexField("referenced_companies_t")]
+        public string ReferencedCompany { get; set; }
+        [DataMember]
 		public bool IsArticleBookmarked => DocumentContext.IsSaved(ItemId.Guid);
 		
 		[DataMember]

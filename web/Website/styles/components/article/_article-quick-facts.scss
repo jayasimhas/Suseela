@@ -47,15 +47,19 @@ section: Article Components
     }
 
     &__list {
-        @extend .article-list;
         color: $color-zeus-black;
 
         &--ul {
-            @extend .article-list--ul;
+	        @extend .default-style-list;
+	        @extend .carrot-list;
         }
 
         &--ol {
-            @extend .article-list--ol;
+	        @extend .default-style-list;
+
+			li {
+		        list-style-type: decimal;
+			}
         }
     }
 

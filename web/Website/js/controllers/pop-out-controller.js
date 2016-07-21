@@ -111,6 +111,10 @@ function popOutController(triggerElm) {
 			case 'email-search':
 				popOut = $('.js-pop-out__email-search');
 				break;
+			// EMAIL AUTHOR
+			case 'email-author':
+				popOut = $('.js-pop-out__email-author');
+				break;
 			// GLOBAL HEADER REGISTRATION
 			case 'register':
 				popOut = $('.js-pop-out__register');
@@ -123,6 +127,7 @@ function popOutController(triggerElm) {
 				console.warn('Attempting to fire unidentified pop-out.');
 				return;
 		}
+
 
 		// Make pop-out visible so we can query for its width
 		popOut.addClass('is-active');

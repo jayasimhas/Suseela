@@ -6,19 +6,19 @@ namespace Informa.Library.Salesforce
 	public class SalesforceSessionFactory : ISalesforceSessionFactory
 	{
 		protected readonly ISalesforceSessionFactoryConfiguration Configuration;
-	    protected readonly ISalesforceErrorLogger ErrorLogger;
+	    protected readonly ISalesforceDebugLogger DebugLogger;
 
 		public SalesforceSessionFactory(
-			ISalesforceSessionFactoryConfiguration configuration, ISalesforceErrorLogger errorLogger)
+			ISalesforceSessionFactoryConfiguration configuration, ISalesforceDebugLogger debugLogger)
 		{
-		    ErrorLogger = errorLogger;
+            DebugLogger = debugLogger;
 			Configuration = configuration;
 		}
 
 		public ISalesforceSession Create([CallerMemberName] string CallerMemberName = "", [CallerFilePath] string CallerFilePath = "", [CallerLineNumber] int CallerLineNumber = 0)
 		{
             //TODO: Salesforce logging.
-            ErrorLogger.Log($"Salesforced called by: {CallerMemberName}, File: {CallerFilePath}, Line Number {CallerLineNumber}", null);
+            DebugLogger.Log($"Salesforced called by: {CallerMemberName}, File: {CallerFilePath}, Line Number {CallerLineNumber}");
             var username = Configuration.Username;
 			var password = string.Concat(Configuration.Password, Configuration.Token);
 			var service = new SforceService
