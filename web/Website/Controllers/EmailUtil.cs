@@ -50,7 +50,7 @@ namespace Informa.Web.Controllers
 			var siteConfigItem = _service.GetItem<ISite_Config>(articleStruct.Publication);
 			if (siteConfigItem == null) return;
 			var fromEmail = siteConfigItem.From_Email_Address;
-			var title = siteConfigItem.Email_Title;
+			var title = siteConfigItem.Email_Title; 
 			var replyToEmail = Sitecore.Context.User.Profile.Email;
 			if (string.IsNullOrEmpty(fromEmail) || string.IsNullOrEmpty(replyToEmail)) return;
 			var isAuthorInSenderList = false;
