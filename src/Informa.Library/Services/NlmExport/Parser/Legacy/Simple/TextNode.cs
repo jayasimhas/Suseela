@@ -42,10 +42,10 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Simple
         //    }
         //    return text;
         //}
-        
+
         private static string ConvertSidebars(string text)
         {
-            return Regex.Replace(text, "\\[Sidebar#\\d*\\]", string.Empty);
+            return Regex.Replace(text, Informa.Models.DCD.DCDConstants.SidebarTokenRegex, string.Empty);
         }
 
         private static string ConvertLinks(string text)
