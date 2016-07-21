@@ -520,8 +520,6 @@ body.bigger input {
 .draggable-wrapper {
 	border-collapse: collapse;
 	display: table;
-	font-size: 16px;
-	line-height: 20px;
 	margin: 20px 0;
 }
 
