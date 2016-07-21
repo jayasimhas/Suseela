@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {231A0FB2-657C-4A34-A8C9-BC490DEDAD1C}
+id: {8C64BF41-EFAF-4867-A5A1-91EEB97F2985}
 database: master
-path: /sitecore/layout/Renderings/User Defined/Article/Article Medium Ad
-parent: {0C163767-797D-4331-9537-DC26007C1B84}
-name: Article Medium Ad
+path: /sitecore/layout/Renderings/User Defined/Advertisements/Advertisement
+parent: {67A1ECD7-CC64-4682-87E7-60B068B28EB4}
+name: Advertisement
 master: {00000000-0000-0000-0000-000000000000}
 template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
 templatekey: View rendering
@@ -13,9 +13,16 @@ templatekey: View rendering
 field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
 name: Path
 key: path
-content-length: 37
+content-length: 45
 
-/Views/Article/ArticleMediumAd.cshtml
+/Views/Shared/Components/Advertisement.cshtml
+----field----
+field: {FE7C64B6-FCF8-4F00-A5E8-C2D9A8CF3048}
+name: Parameters
+key: parameters
+content-length: 60
+
+contentFolderTemplate={EBEB3CE7-6437-4F3F-8140-F5C9A552471F}
 ----field----
 field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
 name: Open Properties after Add
@@ -41,23 +48,23 @@ content-length: 1
 field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
 name: Datasource Location
 key: datasource location
-content-length: 0
+content-length: 30
 
-
+./PageAssets|/sitecore/content
 ----field----
 field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
 name: Datasource Template
 key: datasource template
-content-length: 0
+content-length: 57
 
-
+/sitecore/templates/User Defined/Components/Advertisement
 ----field----
 field: {E441ABE7-2CA3-4640-AE26-3789967925D7}
 name: Compatible Renderings
 key: compatible renderings
-content-length: 194
+content-length: 0
 
-{3B91B663-7ECB-4964-9145-0F3DD02EA49B}|{231A0FB2-657C-4A34-A8C9-BC490DEDAD1C}|{B302F679-C10E-4D17-B387-C06D275E9F78}|{9DCE5D27-9823-40F0-BBDE-28F8862318B5}|{B835C69E-153A-49E1-96C4-F073E1B6A8E3}
+
 ----field----
 field: {A2F5D9DF-8CBA-4A1D-99EB-51ACB94CB057}
 name: Page Editor Buttons
@@ -68,8 +75,15 @@ content-length: 116
 ----version----
 language: en
 version: 1
-revision: e0eea4b9-7b0e-4758-bb5a-40aaf290a86e
+revision: 8e7f9ecb-668d-4e1a-b200-e5b3fb3cb18d
 
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 26
+
+Advertisement - Deprecated
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -83,14 +97,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-e0eea4b9-7b0e-4758-bb5a-40aaf290a86e
+8e7f9ecb-668d-4e1a-b200-e5b3fb3cb18d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160526T200742Z
+20160720T145209Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

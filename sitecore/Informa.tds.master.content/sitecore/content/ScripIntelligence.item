@@ -24,13 +24,6 @@ content-length: 16
 
 20160504T140000Z
 ----field----
-field: {5EEA0A43-3174-451D-AB8B-AA348E6352CB}
-name: Publication Code
-key: publication code
-content-length: 5
-
-SCRIP
-----field----
 field: {073E357F-68A0-422F-B188-EB9CC874536A}
 name: Reset Password Page
 key: reset password page
@@ -54,7 +47,7 @@ ar|sitecore\Globals Access|pe|-item:create|-item:write|-item:delete|-item:rename
 ----version----
 language: en
 version: 1
-revision: abd10a84-7057-4106-ac4d-77ab2e539885
+revision: 28cf1199-129e-4882-b005-dbdf1d9fbfb8
 
 ----field----
 field: {AAD3D91B-491C-4330-8127-9DB6346734D5}
@@ -105,6 +98,83 @@ key: global leaderboard ad zone
 content-length: 4
 
 home
+----field----
+field: {A933A49A-DE33-48F4-957E-0211E00084A9}
+name: Ad Domain
+key: ad domain
+content-length: 17
+
+www.scripnews.com
+----field----
+field: {AF5E0A82-6C4D-4C28-BE97-CA2DF0C4D2D8}
+name: Author Rectangular Ad Zone
+key: author rectangular ad zone
+content-length: 4
+
+home
+----field----
+field: {ED6E6C2D-925B-49E7-98F9-DB3177C0B29B}
+name: Author Rectangular Slot ID
+key: author rectangular slot id
+content-length: 9
+
+Position2
+----field----
+field: {D86906CC-BD41-42D4-86DC-E6E9E571A9F0}
+name: Author Leaderboard Ad Zone
+key: author leaderboard ad zone
+content-length: 4
+
+home
+----field----
+field: {E1A05015-E03B-410B-9BF8-0B5EAA3ECE7B}
+name: Author Leaderboard Slot ID
+key: author leaderboard slot id
+content-length: 4
+
+Top1
+----field----
+field: {821541D4-F4F1-447F-85EB-2C7E59EA12D3}
+name: Company Rectangular Ad Zone
+key: company rectangular ad zone
+content-length: 4
+
+home
+----field----
+field: {9CABD426-9102-406F-82A8-592CF1D42362}
+name: Company Rectangular Slot ID
+key: company rectangular slot id
+content-length: 9
+
+Position2
+----field----
+field: {B0B01376-D608-4A95-A402-7E6A5B6F31BA}
+name: Company Leaderboard Ad Zone
+key: company leaderboard ad zone
+content-length: 4
+
+home
+----field----
+field: {EC5A4404-140E-43DD-8846-3C8DF2C2C6F4}
+name: Company Leaderboard Slot ID
+key: company leaderboard slot id
+content-length: 4
+
+Top1
+----field----
+field: {BC8E7904-1DB8-4DD4-B353-E42648818854}
+name: Deal Rectangular Ad Zone
+key: deal rectangular ad zone
+content-length: 4
+
+home
+----field----
+field: {9D353AF5-AB32-4B9F-8EBB-C499395270A1}
+name: Deal Rectangular Slot ID
+key: deal rectangular slot id
+content-length: 9
+
+Position2
 ----field----
 field: {D0EA1C84-68E4-4811-87C2-14FF280C8FC2}
 name: Site Logo
@@ -182,6 +252,13 @@ key: twitter link
 content-length: 92
 
 <link text="Twitter" linktype="external" url="http://www.twitter.com" anchor="" target="" />
+----field----
+field: {24B1FCDE-9947-4432-A486-12E279388E66}
+name: Twitter Handle
+key: twitter handle
+content-length: 18
+
+ScripIntellicopter
 ----field----
 field: {8A7F6685-C505-419F-9BB0-0769F24C9947}
 name: Customer Support Text
@@ -279,20 +356,6 @@ content-length: 200
 <p><strong>Footer Content</strong></p>
 <p><strong><a href="mailto:#email#">#email#</a></strong></p>
 <p><strong><a href="~/link.aspx?_id=110D559FDEA542EA9C1C8A5DF7E70EF9&amp;_z=z">Home</a></strong></p>
-----field----
-field: {4AA86258-477A-4E2F-BF53-64C9CB5AD261}
-name: Email Header Navigation
-key: email header navigation
-content-length: 38
-
-{00BFD43D-CF33-45FF-9736-13C698B49DE0}
-----field----
-field: {C3B51BCD-D830-415D-8E66-53E80BB9CD7D}
-name: Email Footer Navigation
-key: email footer navigation
-content-length: 38
-
-{52FFAEEE-8909-488A-96CE-9538BD818AF8}
 ----field----
 field: {6B8B6C6D-013A-4BA0-A166-F57747668B0F}
 name: My Account Page
@@ -409,14 +472,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-abd10a84-7057-4106-ac4d-77ab2e539885
+28cf1199-129e-4882-b005-dbdf1d9fbfb8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160527T100349Z
+20160719T191701Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

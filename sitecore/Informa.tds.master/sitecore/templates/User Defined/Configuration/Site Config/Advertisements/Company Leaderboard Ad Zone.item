@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {EC5A4404-140E-43DD-8846-3C8DF2C2C6F4}
+id: {B0B01376-D608-4A95-A402-7E6A5B6F31BA}
 database: master
-path: /sitecore/templates/User Defined/Configuration/Site Config/Advertisements/Company Leaderboard Author Slot ID
+path: /sitecore/templates/User Defined/Configuration/Site Config/Advertisements/Company Leaderboard Ad Zone
 parent: {8F6D2205-B02C-44BE-A260-0E5FFEA32DCD}
-name: Company Leaderboard Author Slot ID
+name: Company Leaderboard Ad Zone
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -22,11 +22,11 @@ name: __Sortorder
 key: __sortorder
 content-length: 4
 
-1400
+1300
 ----version----
 language: en
 version: 1
-revision: ab04f02c-09da-4525-9868-94514bbb96bf
+revision: 37418ec1-ded1-49cf-848e-78b8bb92be0e
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20160714T140345Z
+20160714T140344Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-ab04f02c-09da-4525-9868-94514bbb96bf
+37418ec1-ded1-49cf-848e-78b8bb92be0e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160714T140345Z
+20160719T191216Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

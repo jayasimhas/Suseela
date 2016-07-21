@@ -23,7 +23,7 @@
             <span class="search-result__line-separator" ng-if="doc.mediaType"></span> <!-- only prints if media type isn't blank -->
 
             <div class="search-result__media-type" ng-if="doc.mediaType">
-				<span class="js-toggle-tooltip" data-tooltip-text="TOOLTIP LABEL HERE">
+				<span class="js-toggle-tooltip" data-tooltip-text="{{::doc.mediaTooltip}}">
 					<svg>
 						<use ng-href="/dist/img/svg-sprite.svg#{{::doc.mediaType}}" xlink:href=""></use>
 					</svg>

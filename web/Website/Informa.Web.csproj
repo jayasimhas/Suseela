@@ -761,6 +761,7 @@
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
     <Compile Include="Controllers\WorkFlowUtil.cs" />
     <Compile Include="CustomMvc\CustomHtmlNodeParser.cs" />
+    <Compile Include="CustomMvc\CustomHtmlParseHelper.cs" />
     <Compile Include="CustomMvc\Parsers\CustomImageParser.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomConvertToXml.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
@@ -1117,6 +1118,8 @@
     <Content Include="Areas\Account\Views\web.config" />
     <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
+    <Content Include="PrintStudio\Data\special.xml" />
+    <Content Include="PrintStudio\Services\InDesignConnectorService.asmx" />
     <Content Include="sitecore\login\login.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\css\ViewNlm.css" />
@@ -1280,6 +1283,8 @@
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="PrintStudio\Data\PublishingEngine.dtd" />
+    <Content Include="PrintStudio\Handlers\PrintCacheHandler.ashx" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_MainContent.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
@@ -1308,7 +1313,6 @@
     <Content Include="Views\Shared\Components\PageTitle.cshtml" />
     <Content Include="Views\Shared\Components\_ManuallyCuratedNewsletterSignUp.cshtml" />
     <Content Include="Views\Shared\Components\GeneralRTEComponent.cshtml" />
-    <Content Include="Views\Article\ArticleMediumAd.cshtml" />
     <Content Include="Views\Article\FeaturedArticleSmall.cshtml" />
     <Content Include="Views\Shared\Components\_ArticleListContent.cshtml" />
     <Content Include="Views\Shared\Components\LandscapeImage.cshtml" />
@@ -1338,7 +1342,7 @@
     <Content Include="Views\Shared\Layouts\BlankLayout.cshtml" />
     <Content Include="Views\Shared\Global\SitemapNews.cshtml" />
     <Content Include="Views\Shared\Global\RobotsText.cshtml" />
-    <Content Include="Views\Article\ArticleFilmstripAd.cshtml" />
+    <Content Include="Views\Advertisements\FilmstripAd.cshtml" />
     <Content Include="Views\Shared\Layouts\MobileMediaLayout.cshtml" />
     <Content Include="Views\Article\ArticleMobileMediaComponent.cshtml" />
     <Content Include="Views\Shared\Global\Sitemap.cshtml" />
@@ -1388,11 +1392,12 @@
     <Content Include="Views\CompaniesAndDeals\StrategicTransactions.cshtml" />
     <Content Include="Views\Structure\DetailPageSublayout.cshtml" />
     <Content Include="Views\CompaniesAndDeals\SubsidiariesTree.cshtml" />
-    <Content Include="Views\CompaniesAndDeals\CompanyLeaderboardAd.cshtml" />
-    <Content Include="Views\CompaniesAndDeals\CompanyRectangularAd.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealDetails.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealsAndCompaniesSubscribe.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealRelatedCompanies.cshtml" />
+    <Content Include="Views\Advertisements\RectangularAd.cshtml" />
+    <Content Include="Views\Advertisements\LeaderboardAd.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealSponsor.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

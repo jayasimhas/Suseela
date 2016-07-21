@@ -1,9 +1,9 @@
 ----item----
 version: 1
-id: {309CEC2C-BA8E-41E0-B4A8-8F317E844D65}
+id: {F26C7DA1-0F9A-4022-B7AC-598B5744D4AC}
 database: master
 path: /sitecore/content/ScripIntelligence/Home/Deals/*
-parent: {16A9AA55-B452-422E-999D-A2269135FA9C}
+parent: {58A159A5-9BEB-4601-8344-F2BEEE9EC782}
 name: *
 master: {00000000-0000-0000-0000-000000000000}
 template: {7E2B4D51-F520-4489-8A9A-C85401F8BB39}
@@ -12,7 +12,7 @@ templatekey: Deal Page
 ----version----
 language: en
 version: 1
-revision: a36fa211-763e-4b78-a9f6-3d066cece6f6
+revision: 1ecf34f0-a0bb-433d-8eac-e360bf9bbf2d
 
 ----field----
 field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-a36fa211-763e-4b78-a9f6-3d066cece6f6
+1ecf34f0-a0bb-433d-8eac-e360bf9bbf2d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160718T130354Z
+20160718T150718Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

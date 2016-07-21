@@ -1,16 +1,21 @@
 ﻿@inherits CustomGlassView<AdViewModel>
 
-@if (IsInEditingMode && Model.AdModel != null)
+<!-- DEPRECATED -->
+<!-- Work should be done in Views/Advertisements, this is only here for backward compatability. -->
+
+@if (IsInEditingMode && Model.IsEditable)
 {
-    @Editable(Model.AdModel, x => x.Slot_ID)
-    @Editable(Model.AdModel, x => x.Zone)
+    @Editable(Model.AdComponentModel, x => x.Slot_ID)
+    @Editable(Model.AdComponentModel, x => x.Zone)
 }
-@if (Model.IsValidAd(Model.SlotId))
+@if (Model.IsValidRectangularAd)
 {
-    <div class="article-preview__ad advertising">
-        <span class="advertising__label">@Model.AdvertisementText</span>
-        <script>
-            OAS_AD('@Model.SlotId', '@Model.AdZone');
-        </script>
-    </div>
+    <section class="article-preview article-preview--small">
+        <div class="article-preview__ad advertising">
+            <span class="advertising__label">@Model.AdvertisementText</span>
+            <script>
+                OAS_AD('@Model.RectangularSlotId', '@Model.RectangularAdZone');
+            </script>
+        </div>
+    </section>
 }

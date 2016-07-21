@@ -1,0 +1,18 @@
+﻿@inherits CustomGlassView<AdViewModel>
+@{ Model.Init(); }
+
+@if (IsInEditingMode && Model.IsEditable)
+{
+    @Editable(Model.AdComponentModel, x => x.Slot_ID)
+    @Editable(Model.AdComponentModel, x => x.Zone)
+}
+
+@if (Model.IsValidLeaderboardAd)
+{
+    <div class="article-preview__ad advertising--leaderboard">
+        <span class="advertising__label">@Model.AdvertisementText</span>
+        <script>
+            OAS_AD('@Model.LeaderboardSlotId', '@Model.LeaderboardAdZone');
+        </script>
+    </div>
+}
