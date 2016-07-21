@@ -8,6 +8,7 @@
 
 
 <div class="search-pagination__wrapper" ng-controller="searchPaginationController as paginator">
+    @Model.ResultsPerPage
     <select ng-controller="PageSizeController as sizer" ng-model="pageSize" ng-init="sizer.init()" ng-change="sizer.update(pageSize)">
         @foreach (int page in Constants.PerPageSizes)
         {
