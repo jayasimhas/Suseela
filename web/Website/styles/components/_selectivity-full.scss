@@ -178,7 +178,8 @@ input[type='text'].selectivity-multiple-input {
 	box-sizing: content-box;
 }
 
-.page-account .selectivity-single-select-input {
+.selectivity-single-select-input {
+	border-color: transparent;
 	/*
 		specificity being a pain to track down; this should be
 		reworked when there's time to ditch the important
