@@ -13,7 +13,7 @@ using Jabberwocky.Glass.Models;
 using Sitecore.Mvc.Extensions;
 using Velir.Core.Extensions.System.Collections.Generic;
 using EnumerableExtensions = Informa.Library.Utilities.Extensions.EnumerableExtensions;
-
+using Sitecore.Data.Items;
 
 namespace Informa.Library.VirtualWhiteboard
 {
@@ -80,7 +80,7 @@ namespace Informa.Library.VirtualWhiteboard
 				_dependencies.SitecoreServiceMaster.GetItem<F>(folderId);
 
 			var newIssue = _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(() =>
-				_dependencies.SitecoreServiceMaster.Create<I, F>(issuesFolder, newIssueName));
+				_dependencies.SitecoreServiceMaster.Create<I, F>(issuesFolder, ItemUtil.ProposeValidItemName(newIssueName)));
 
 			return newIssue._Id;
 			//Due to a limitation with Glass & RTE fields, this item must be refetched before editing.

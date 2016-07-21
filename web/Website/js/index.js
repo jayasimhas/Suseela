@@ -931,7 +931,7 @@ $(document).ready(function() {
 
 
 	// Pretty select boxes
-	$('select').selectivity({
+	$('select:not(.ng-scope)').selectivity({
 		showSearchInputInDropdown: false,
 		positionDropdown: function($dropdownEl,  $selectEl) {
 			$dropdownEl.css("width", $selectEl.width() + "px");
