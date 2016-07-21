@@ -84,6 +84,11 @@ namespace Informa.Web.CustomMvc
 				Type typeInfo = ReflectionUtil.GetTypeInfo(definition.HtmlParserType);
 				object parser = null;
 
+				if (definition.HtmlTag == "p" && htmlNode.Attributes["class"] == null)
+				{
+					htmlNode.Attributes.Add("class", parseContext.DefaultParagraphStyle);
+				}
+
 				if (typeInfo.Name == "CustomHtmlNodeParser")
 				{
 					parser = CustomHtmlParseHelper.GetParser<CustomHtmlNodeParser>(definition);
@@ -98,19 +103,19 @@ namespace Informa.Web.CustomMvc
 				if (parser == null)
 					return;
 
-				var paragraphElement = resultElement.Element("ParagraphStyle");
-				if (definition.HtmlTag == "p" && paragraphElement!= null)
-				{
-					if (paragraphElement.Attribute("Style") != null)
-					{
-						paragraphElement.Attribute("Style").Value = parseContext.DefaultParagraphStyle;
-					}
-					else
-					{
-						XAttribute attribute = new XAttribute("Style", parseContext.DefaultParagraphStyle);
-						paragraphElement.Add(attribute);
-					}
-				}
+				//var paragraphElement = resultElement.Element("ParagraphStyle");
+				//if (definition.HtmlTag == "p" && paragraphElement!= null)
+				//{
+				//	if (paragraphElement.Attribute("Style") != null)
+				//	{
+				//		paragraphElement.Attribute("Style").Value = parseContext.DefaultParagraphStyle;
+				//	}
+				//	else
+				//	{
+				//		XAttribute attribute = new XAttribute("Style", parseContext.DefaultParagraphStyle);
+				//		paragraphElement.Add(attribute);
+				//	}
+				//}
 			}
 			else if (HtmlParseHelper.IsPlainTextNode(htmlNode))
 			{
