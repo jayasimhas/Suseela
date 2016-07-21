@@ -86,6 +86,8 @@ namespace Informa.Web.ViewModels
             else if (datasource._TemplateId.ToString() == ICompany_PageConstants.TemplateIdString)
             {
                 Company_Page();
+                if (!Parameters.Publications.Any()) // authors page shouldn't filter on the current publication
+                    publicationNames = Enumerable.Empty<string>();
             }
             else
             {

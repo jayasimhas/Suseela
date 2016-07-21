@@ -16,13 +16,7 @@
                 data-pop-out-align="right"
                 data-bookmark-id="@Model.GlassModel._Id"
                 @( Model.IsArticleBookmarked ? "data-is-bookmarked=true" : null)
-				@*
-				data-analytics='{
- 					"bookmark": "true",
- 					"bookmark_title": "@Model.Title",
- 					"bookmark_publication": "@Model.BookmarkPublication"
- 				}'
-				*@>
+				>
 
 				<span	class="action-flag__label js-bookmark-label"
 						data-label-bookmark="@Model.BookmarkText"

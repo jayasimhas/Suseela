@@ -97,9 +97,12 @@
         </ul>
     </div>
     <div class="l-right-rail">
-        @Html.Sitecore().Placeholder("author-leaderboard-ad")
+        @Html.Sitecore().Placeholder("right-rail")
     </div>
 </div>
 <div class="topic-subtopic">
-    @Html.Sitecore().Placeholder("post-profile")
+    <div class="topic-subtopic__set-alert">
+        @Html.Sitecore().Placeholder("profile-alert")
+    </div>
+    @Html.Sitecore().Placeholder("profile-news")
 </div>
