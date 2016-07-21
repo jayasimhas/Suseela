@@ -194,7 +194,7 @@ namespace Informa.Web.Controllers
 			replacements["#Authors#"] = string.IsNullOrEmpty(authorString) ? "No authors selected" : authorString;
 			replacements["#Publication#"] = publication;
 
-            replacements["#show_notes#"] = "Notes:";
+            replacements["#show_notes#"] = "Notes: ";
             replacements["#Body_Content#"] = articleStruct.NotificationText;
             if (articleStruct.NotificationText == "")
             {
