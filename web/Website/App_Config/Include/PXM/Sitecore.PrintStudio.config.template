@@ -34,6 +34,7 @@ Purpose: This include file configures PrintStudio. The file is mandatory for Pri
 		<processor type="Informa.Library.PXM.BodyContentProcessor, Informa.Library" />
         <processor type="Informa.Web.CustomMvc.Pipelines.CustomConvertToXml, Informa.Web" />
         <processor type="Sitecore.PrintStudio.PublishingEngine.Pipelines.ConvertHtmlToXml.FinalizeXml, Sitecore.PrintStudio.PublishingEngine" />
+		<processor type="Informa.Library.PXM.CustomFinalizeProcessor, Informa.Library" />
       </convertHtmlToXml>
       <convertXmlToHtml>
         <processor type="Sitecore.PrintStudio.PublishingEngine.Pipelines.ConvertXmlToHtml.ConvertToHtml, Sitecore.PrintStudio.PublishingEngine" />
