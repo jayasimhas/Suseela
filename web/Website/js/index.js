@@ -879,6 +879,7 @@ $(document).ready(function() {
 
 window.findTooltips = function() {
 	$('.js-toggle-tooltip').each(function(index, item) {
+		console.log("hi");
 		var tooltip;
 		$(item).data("ttVisible", false);
 		$(item).data("ttTouchTriggered", false);
