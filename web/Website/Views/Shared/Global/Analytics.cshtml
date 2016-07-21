@@ -40,7 +40,16 @@
 		"User_IP_Address": "@Model.UserIp",
 		"content_entitlement_type": "@Model.ContentEntitlementType",
 		"entitlement_type": "@Model.EntitlementType",
-		"opportunity_id": "@Model.OpportunityIds",
+		"entitlement_type": "@Model.EntitlementType",
+        @{
+            var OpportunityIds = Model.OpportunityIds.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries);
+            string result = string.Empty;
+            for (int i = 0; i < OpportunityIds.Length; i++)
+            {
+                result += "\"opportunity_id_" + i + "\":" + "\"" + OpportunityIds[i] + "\"" + ",";
+            }
+        }
+        @Html.Raw(result)
 		"opportunity_line_item_id": "@Model.OpportunityLineItemIds"
 	};
 
