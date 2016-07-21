@@ -56,7 +56,7 @@ namespace Informa.Web.Controllers
 			var isAuthorInSenderList = false;
 
 			var notificationList = !articleStruct.ArticleSpecificNotifications.Any() ? new List<StaffStruct>() :
-				articleStruct.ArticleSpecificNotifications;
+				articleStruct.ArticleSpecificNotifications; 
 
 			//IIPP-1092
 			try
