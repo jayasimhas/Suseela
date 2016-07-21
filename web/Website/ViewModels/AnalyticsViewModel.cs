@@ -11,6 +11,10 @@ using Informa.Library.User.Entitlement;
 using Informa.Library.User.Profile;
 using Informa.Library.Utilities.References;
 using Informa.Library.Utilities.Settings;
+using Informa.Library.Utilities.WebUtils;
+using Informa.Library.Wrappers;
+using Informa.Model.DCD;
+using Informa.Models.DCD;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
@@ -34,6 +38,8 @@ namespace Informa.Web.ViewModels
         protected readonly IUserIpAddressContext UserIpAddressContext;
 	    protected readonly ISiteRootContext SiteRootContext;
         protected readonly IUserCompanyContext UserCompanyContext;
+        protected readonly IHttpContextProvider HttpContextProvider;
+        protected readonly IDCDReader DcdReader;
         
         public AnalyticsViewModel(
 			IItemReferences itemReferences,
@@ -47,7 +53,9 @@ namespace Informa.Web.ViewModels
             IWebAuthenticateUser webAuthenticateUser,
             IUserEntitlementsContext userEntitlementsContext,
             IUserIpAddressContext userIpAddressContext,
-			ISiteRootContext siteRootContext) {
+			ISiteRootContext siteRootContext,
+            IHttpContextProvider httpContextProvider,
+            IDCDReader dcdReader) {
 
             ItemReferences = itemReferences;
             IsEntitledProductItemContext = isEntitledProductItemContext;
@@ -61,6 +69,8 @@ namespace Informa.Web.ViewModels
             UserEntitlementsContext = userEntitlementsContext;
             UserIpAddressContext = userIpAddressContext;
 	        SiteRootContext = siteRootContext;
+            HttpContextProvider = httpContextProvider;
+            DcdReader = dcdReader;
 	        EntitlementType = GetEntitlementType(UserCompanyContext);
 	        UserEntitlements = GetUserEntitlements();
 	        SubscribedProducts = GetSubscribedProducts();
@@ -68,14 +78,15 @@ namespace Informa.Web.ViewModels
 	        OpportunityIds = GetOpportunityIds();
 			}
 
-	    public string PublicationName => SiteRootContext.Item.Publication_Name;
+        public IArticle Article => GlassModel as IArticle;
+
+        public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PageTitleAnalytics => GlassModel?.Title ?? string.Empty;
         public string PageType => Sitecore.Context.Item.TemplateName;
         public string AdDomain => SiteRootContext.Item.Ad_Domain;
 	    public string ArticlePublishDate => (Article != null && Article.Actual_Publish_Date > DateTime.MinValue)
                     ? Article.Actual_Publish_Date.ToString("MM/dd/yyyy")
                     : DateTime.MinValue.ToString("MM/dd/yyyy");
-        public IArticle Article => GlassModel as IArticle;
         public string ArticleContentType => Article?.Content_Type?.Item_Name.Trim();
         public string ArcticleNumber => Article?.Article_Number;
         public bool ArticleEmbargoed => Article?.Embargoed ?? false;
@@ -137,7 +148,7 @@ namespace Informa.Web.ViewModels
         public string PageDescription => GlassModel?.Meta_Description ?? string.Empty;
         public string PageTitleOverride => GlassModel?.Meta_Title_Override ?? string.Empty;
         public string MetaKeyWords => GlassModel?.Meta_Keywords ?? string.Empty;
-		public string ArticleEntitlements
+        public string ArticleEntitlements
 		{
 			get
 			{
@@ -159,12 +170,34 @@ namespace Informa.Web.ViewModels
 				return "Abstract View";
 			}
 		}
-
 	    public string ContentEntitlementType => GetContentEntitlement(UserCompanyContext);
-
 	    public string EntitlementType { get; }
+        public string DealName
+        {
+            get
+            {
+                if (!(GlassModel is IDeal_Page)) return null;
+                var recordNumber = UrlUtils.GetLastUrlSement(HttpContextProvider.Current);
+                var deal = DcdReader.GetDealByRecordNumber(recordNumber);
+                return deal?.Title;
+            }
+        }
 
-		private string GetContentEntitlement(IUserCompanyContext context)
+        public string CompanyName
+        {
+            get
+            {
+                if (!(GlassModel is ICompany_Page)) return null;
+                var recordNumber = UrlUtils.GetLastUrlSement(HttpContextProvider.Current);
+                var company = DcdReader.GetCompanyByRecordNumber(recordNumber);
+                return company?.Title;
+            }
+        }
+
+        
+
+        /***** Privates *****/
+        private string GetContentEntitlement(IUserCompanyContext context)
 		{
 			if (!IsEntitledProductItemContext.IsEntitled(Article))
 			{

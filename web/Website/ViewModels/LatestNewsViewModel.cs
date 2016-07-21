@@ -98,6 +98,7 @@ namespace Informa.Web.ViewModels
         }
 
         private bool IsAuthorPage => Datasource._TemplateId.ToString() == IAuthor_PageConstants.TemplateIdString;
+        private bool IsCompanyPage => Datasource._TemplateId.ToString() == ICompany_PageConstants.TemplateIdString;
 
         private IStaff_Item CurrentAuthor => AuthorService.GetCurrentAuthor();
         
@@ -113,7 +114,7 @@ namespace Informa.Web.ViewModels
             if (SeeAllLink != null)
                 SeeAllLink.Url = string.Format("/search#?{0}={1}", Constants.QueryString.Author, RemoveSpecialCharactersFromGuid(CurrentAuthor._Id.ToString()));
         }
-
+        public string AnalyticsName { get; private set; }
         public void Company_Page()
         {
             ItemsToDisplay = 4;
@@ -123,6 +124,7 @@ namespace Informa.Web.ViewModels
             CompanyRecordNumbers = new List<string> { recordNumber };
 
             var company = DcdReader.GetCompanyByRecordNumber(recordNumber);
+            AnalyticsName = company.Title;
 
             if (DisplayTitle)
             {
@@ -170,23 +172,15 @@ namespace Informa.Web.ViewModels
             ;
         }
 
-        public string EventSourceValue {
-            get
-            {
-                return (IsAuthorPage)
-                    ? CurrentAuthorName
+        public string EventSourceValue => 
+            IsAuthorPage ? CurrentAuthorName
+                : IsCompanyPage ? $"{AnalyticsName} articles"
                     : TitleText;
-            }
-        }
 
-        public string EventSource
-        {
-            get { 
-                return (IsAuthorPage)
-                    ? "see_all_articles"
+        public string EventSource 
+            => IsAuthorPage ? "see_all_articles"
+                : IsCompanyPage ? "see_all_deals"
                     : "see_all_topic";
-            }
-        }
 
         private string GetTitleText(string title)
         {
