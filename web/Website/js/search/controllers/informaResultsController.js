@@ -53,6 +53,7 @@ var InformaResultsController = function InformaResultsController($scope, $saniti
         window.indexPopOuts();
         window.indexBookmarks();
         window.autoBookmark();
+		window.findTooltips();
     });
 
     this.forceRefresh = function () {
