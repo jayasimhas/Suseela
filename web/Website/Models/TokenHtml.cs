@@ -40,7 +40,7 @@ namespace Informa.Web.Models
             _articleListableFactory = DependencyResolver.Current.GetService<IArticleListItemModelFactory>();
 		}
 
-		public string ReplaceCompany(string content)
+		public string ReplaceDeals(string content)
 		{
 			var dealRegex = new Regex(DCDConstants.DealTokenRegex);
 
@@ -48,7 +48,7 @@ namespace Informa.Web.Models
 			{
 				var replace = DCDTokenMatchers.DealMatchEval(match);
 
-				content = content.Replace(match.Value, replace.ToString());
+				content = content.Replace(match.Value, replace);
 			}
 
 			return content;
@@ -123,7 +123,7 @@ namespace Informa.Web.Models
 		public virtual IHtmlString RenderCompanyLink(Expression<Func<TK, string>> expression)
 		{
 			var fieldValue = expression.Compile()(this.Model);
-			return HtmlHelper.Raw(ReplaceCompany(fieldValue));
+			return HtmlHelper.Raw(ReplaceDeals(fieldValue));
 		}
 
 		/// <summary>
@@ -135,7 +135,7 @@ namespace Informa.Web.Models
 		public virtual IHtmlString RenderTokenBody(Expression<Func<TK, string>> expression, string partialName)
 		{
 			var fieldValue = expression.Compile()(this.Model);
-			fieldValue = ReplaceCompany(fieldValue);
+			fieldValue = ReplaceDeals(fieldValue);
 
 			fieldValue = ReplaceSidebarArticles(fieldValue, partialName);
 
