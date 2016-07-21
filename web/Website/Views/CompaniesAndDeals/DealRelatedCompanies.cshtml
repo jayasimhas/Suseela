@@ -6,7 +6,13 @@
         @foreach (var company in Model.RelatedCompanies)
         {
             <li class="article-topics__li">
-                <a href="/companies/_id@(company.Id)">@company.Name</a>
+                <a class="click-utag"
+                   data-info='{
+			            "event_name": "deal_information_click_through",
+			            "click_through_source": "@Model.Deal.Title",
+			            "click_through_destination": "@company.Name"
+		            }'
+                   href="/companies/_id@(company.Id)">@company.Name</a>
             </li>
         }
     </ul>
