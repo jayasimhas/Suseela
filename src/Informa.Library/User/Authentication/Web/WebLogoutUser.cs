@@ -19,12 +19,12 @@ namespace Informa.Library.User.Authentication.Web
 
 		public void Logout()
 		{
-			var user = AuthenticatedUserContext.User;
+            AuthenticationManager.Logout();
+
+            var user = AuthenticatedUserContext.User;
 
             if(user != null)
 			    Actions.Process(user);
-
-            AuthenticationManager.Logout();
         }
 	}
 }
