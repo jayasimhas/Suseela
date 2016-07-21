@@ -95,7 +95,7 @@ namespace Informa.Web.Areas.VWB.Controllers
 			    };
 
 				_dependencies.IssuesService.UpdateIssueItem(model, issueId);
-				return Redirect("/vwb");
+				return Redirect($"/vwb/addissue?id={issueId.ToString("D")}");
 			}
 			return Redirect(Request?.Url?.ToString());
 		}
