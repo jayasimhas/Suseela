@@ -172,9 +172,6 @@ namespace Informa.Web.ViewModels
 		}
 	    public string ContentEntitlementType => GetContentEntitlement(UserCompanyContext);
 	    public string EntitlementType { get; }
-
-        /***** Deals and Companies *****/
-
         public string DealName
         {
             get
@@ -183,6 +180,17 @@ namespace Informa.Web.ViewModels
                 var recordNumber = UrlUtils.GetLastUrlSement(HttpContextProvider.Current);
                 var deal = DcdReader.GetDealByRecordNumber(recordNumber);
                 return deal?.Title;
+            }
+        }
+
+        public string CompanyName
+        {
+            get
+            {
+                if (!(GlassModel is ICompany_Page)) return null;
+                var recordNumber = UrlUtils.GetLastUrlSement(HttpContextProvider.Current);
+                var company = DcdReader.GetCompanyByRecordNumber(recordNumber);
+                return company?.Title;
             }
         }
 
