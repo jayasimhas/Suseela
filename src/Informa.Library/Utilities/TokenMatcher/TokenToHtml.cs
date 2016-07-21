@@ -53,6 +53,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 			result = ReplaceRelatedArticles(result);
 			result = ReplaceCompanies(result);
 			result = ReplaceDeals(result);
+			result = ModifyColspan(result);
 			result = ReplaceSectionBreaks(result);
 			return result;
 		}
@@ -123,6 +124,24 @@ namespace Informa.Library.Utilities.TokenMatcher
 			div.InnerHtml = WordUtil.TruncateArticle(_dependencies.ArticleService.GetArticleSummary(article), 60);
 
 			return new HtmlString(document.DocumentNode.OuterHtml);
+		}
+
+		public string ModifyColspan(string content)
+		{
+			var document = new HtmlDocument();
+			document.LoadHtml(content);
+			var nodes = document.DocumentNode.SelectNodes("//td");
+			if (nodes != null)
+			{
+				foreach (var node in nodes)
+				{
+					if (node.Attributes["colspan"] != null && Convert.ToInt16(node.Attributes["colspan"].Value) >= 2)
+					{
+						node.Attributes["colspan"].Value = "1";
+					}
+				}
+			}			
+			return document.DocumentNode.OuterHtml;
 		}
 
 		private HtmlNode GetNodeByClass(HtmlNodeCollection nodes, string cssClass)
