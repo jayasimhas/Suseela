@@ -185,7 +185,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 			try
 			{
 				//return a see deal (deal reference) (from the token itself) to replace the token
-				return string.Format("<aside type=\"\" height=\"10\" width=\"\"><a href=\"{0}\">[See Deal]</a></aside>", string.Format(OldDealsUrl, match.Groups[1].Value));
+				return string.Format("<aside type=\"\" height=\"10\" width=\"\" articlesource=\"\"><a href=\"{0}\">[See Deal]</a></aside>", string.Format(OldDealsUrl, match.Groups[1].Value));
 			}
 			catch (Exception ex)
 			{

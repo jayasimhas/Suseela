@@ -36,7 +36,7 @@ namespace Informa.Library.Utilities
 			{
 				foreach (XmlNode inline in inlines)
 				{
-					var children = inline.SelectNodes("//Inline/ParagraphStyle");
+					var children = inline.SelectNodes("//Inline[@ArticleSource='sidebar']/ParagraphStyle");
 					if (children != null)
 					{
 						foreach (XmlNode child in children)
