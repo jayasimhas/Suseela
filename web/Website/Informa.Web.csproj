@@ -1252,7 +1252,6 @@
     <Content Include="VWB\Scripts\jquery-ui\jquery.ui.timepicker.js" />
     <Content Include="VWB\Scripts\jquery.js" />
     <Content Include="VWB\services\VirtualWhiteBoard.asmx" />
-    <Content Include="VWB\Styles\chosen.css" />
     <Content Include="VWB\Styles\vwb.css" />
     <Content Include="VWB\Util\LoginRedirectToPreview.aspx" />
     <Content Include="webedit.css" />
