@@ -2,14 +2,12 @@
 @using Informa.Web.ViewModels
 @model AnalyticsViewModel
 
-
-
 <script type="text/javascript">
 	/* * *
 	ANALYTICS DATA
 	* * */
 	var analytics_data = {
-		//"actual_publish_date": "@Model.ArticlePublishDate",
+		"actual_publish_date": "@Model.ArticlePublishDate",
 		"article_author": "@Html.Raw(Model.ArticleAuthors)",
 		"article_content_type": "@Model.ArticleContentType",
 		"article_embargo": "@Model.ArticleEmbargoed",
@@ -42,12 +40,18 @@
 		"User_IP_Address": "@Model.UserIp",
 		"content_entitlement_type": "@Model.ContentEntitlementType",
 		"entitlement_type": "@Model.EntitlementType",
-		"opportunity_id": "@Model.OpportunityIds",
+		"entitlement_type": "@Model.EntitlementType",
+        @{
+            var OpportunityIds = Model.OpportunityIds.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries);
+            string result = string.Empty;
+            for (int i = 0; i < OpportunityIds.Length; i++)
+            {
+                result += "\"opportunity_id_" + i + "\":" + "\"" + OpportunityIds[i] + "\"" + ",";
+            }
+        }
+        @Html.Raw(result)
 		"opportunity_line_item_id": "@Model.OpportunityLineItemIds"
 	};
-
-    if ('@Model.ArcticleNumber' != '')
-        analytics_data["actual_publish_date"] = "@Model.ArticlePublishDate";
 
 	var utag_data = analytics_data;
 
@@ -164,15 +168,5 @@ function OAS_AD_SEARCH(pos,sector,keyword) {
         OAS_NORMAL(pos,sectorName,keyword);
     }
 }
-
-
-    document.onreadystatechange = function () {
-        if (document.readyState === "complete") {
-            var head = document.getElementsByTagName('head').item(0);
-            var meta = document.createElement("meta");
-            head.appendChild(meta);
-            meta.outerHTML = '@Html.Raw(Model.CustomTags)';
-        }
-    }
 
 </script>
