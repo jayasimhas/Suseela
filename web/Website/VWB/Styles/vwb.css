@@ -408,12 +408,9 @@ tr.doubletop > td
 }
 
 body.bigger {
-	font-size: 16px;
-	line-height: 20px;
 }
 
 body.bigger input {
-	font-size: 16px;
 }
 
 .centered {
