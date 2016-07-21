@@ -345,6 +345,7 @@
     <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
+    <Compile Include="CustomSitecore\Providers\EmailLinkProvider.cs" />
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
@@ -650,7 +651,6 @@
     <Compile Include="User\Newsletter\ISitesNewsletterTypes.cs" />
     <Compile Include="User\Newsletter\IUpdateNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IUpdateSiteNewsletterUserOptIn.cs" />
-
     <Compile Include="User\Newsletter\PublicationsNewsletterUserOptInContext.cs" />
     <Compile Include="User\Newsletter\SetByTypeNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\SetPublicationsNewsletterUserOptIns.cs" />
