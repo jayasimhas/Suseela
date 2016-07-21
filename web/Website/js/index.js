@@ -877,7 +877,7 @@ $(document).ready(function() {
 		$('.js-update-email-prefs').attr('disabled', null);
 	});
 
-
+window.findTooltips = function() {
 	$('.js-toggle-tooltip').each(function(index, item) {
 		var tooltip;
 		$(item).data("ttVisible", false);
@@ -917,6 +917,10 @@ $(document).ready(function() {
 			tooltip.hidePopup();
 		});
 	});
+};
+
+window.findTooltips();
+
 
 
 	// Twitter sharing JS
