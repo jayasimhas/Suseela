@@ -227,7 +227,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 			MatchCollection matches = Regex.Matches(content, pattern);
 			foreach (Match match in matches)
 			{
-				string replace = match.Value.Replace("<br/>", "");
+				string replace = match.Value.Replace("<br/>", "").Replace("<br />", "");
 
 				content = content.Replace(match.Value, replace);
 			}
