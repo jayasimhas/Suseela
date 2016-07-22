@@ -58,11 +58,8 @@ namespace Informa.Web.ViewModels.Articles
         public IListableViewModel Create(IArticle article)
         {
             if (article == null)
-            {
                 return null;
-            }
-
-            var publication = article.Crawl<ISite_Root>();
+            
             var image = article.Featured_Image_16_9?.Src;
             var curPage = PageItemContext.Get<I___BasePage>();
 
@@ -73,7 +70,7 @@ namespace Informa.Web.ViewModels.Articles
             model.ListableImage = image;
             model.ListableSummary = ArticleService.GetArticleSummary(article);
             model.ListableTitle = HttpUtility.HtmlDecode(article.Title);
-            model.ListablePublication = publication.Publication_Name;
+            model.ListablePublication = ArticleService.GetArticlePublicationName(article);
             model.ListableTopics = ArticleService.GetLinkableTaxonomies(article);
             model.ListableType = ArticleService.GetMediaTypeIconData(article)?.MediaType;
             model.ListableUrl = new Link { Url = article._Url, Text = article.Title };
