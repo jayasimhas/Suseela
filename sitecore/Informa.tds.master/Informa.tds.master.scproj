@@ -1303,6 +1303,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\aside\ArticleSource.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\aside\Height.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
@@ -1314,6 +1315,9 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\aside\Width.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\blockquote.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\br.item">
