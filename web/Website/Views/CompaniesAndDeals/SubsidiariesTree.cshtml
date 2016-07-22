@@ -1,7 +1,7 @@
-﻿@model Informa.Library.Utilities.DataModels.TreeNode<string>
+﻿@model Informa.Library.Utilities.DataModels.TreeNode<string,string>
 
 <li class="article-topics__li">
-    <a href="/companies/_id@(Model.Note)">@Model.Value</a>
+    <a href="/companies/_id@(Model.Data)">@Model.Key</a>
     @if (Model.Children.Any())
     {
         <ul>
@@ -12,3 +12,4 @@
         </ul>
     }
 </li>
+ 

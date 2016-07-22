@@ -18,12 +18,12 @@
 
     <div class="l-columns__column">
         <h6>@Model.DealIndustryHeader</h6>
-        <ul class="carrot-list">
-            @foreach (var industry in Model.Industries)
-            {
-                <li class="article-topics__li">@(industry.Name)</li>
-            }
-        </ul>
+            <ul class="carrot-list">
+                @foreach (var rootNode in Model.Industries)
+                {
+                    @Html.Partial("~/Views/CompaniesAndDeals/SubsidiariesTree.cshtml", rootNode)
+                }
+            </ul>
     </div>
 
     <div class="l-columns__column">
