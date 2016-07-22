@@ -7,7 +7,7 @@ namespace Informa.Library.Utilities
 {
 	public interface IPxmXmlHelper
 	{
-		string AddSidebarStyles(string content);
+		string FinalizeStyles(string content);
 	}
 
 	[AutowireService]
@@ -15,6 +15,7 @@ namespace Informa.Library.Utilities
 	{
 		private readonly IDependencies _dependencies;
 		private const string SidebarStyling = "Sidebar styling";
+		private const string BlockquoteStyle = "2.4 Quote Box";
 
 		[AutowireService(IsAggregateService = true)]
 		public interface IDependencies
@@ -27,35 +28,55 @@ namespace Informa.Library.Utilities
 			_dependencies = dependencies;
 		}
 
-		public string AddSidebarStyles(string content)
+		public string FinalizeStyles(string content)
 		{
 			var doc = new XmlDocument();
 			doc.LoadXml(content);
+			AddSidebarStyles(doc);
+			AddBlockquoteStyles(doc);
+			return doc.OuterXml.Replace("<TextFrame>", "").Replace("</TextFrame>", "");
+			//return outputXML;
+		}	
+
+		public void AddSidebarStyles(XmlDocument doc)
+		{
 			var inlines = doc.SelectNodes("//Inline");
 			if (inlines != null)
 			{
-				foreach (XmlNode inline in inlines)
+				ApplyStyles(ref doc, inlines, "Inline", "sidebar", SidebarStyling);
+			}
+		}
+
+		public void  AddBlockquoteStyles(XmlDocument doc)
+		{
+			var inlines = doc.SelectNodes("//Inline");
+			if (inlines != null)
+			{
+				ApplyStyles(ref doc, inlines, "Inline", "blockquote", BlockquoteStyle);
+			}
+		}
+
+		public void ApplyStyles(ref XmlDocument doc, XmlNodeList xmlNodeList, string parentNodeType, string childNodeType, string style)
+		{
+			foreach (XmlNode xmlNode in xmlNodeList)
+			{
+				var children = xmlNode.SelectNodes("//" + parentNodeType + "[@ArticleSource='" + childNodeType + "']/ParagraphStyle");
+				if (children == null) continue;
+
+				foreach (XmlNode child in children)
 				{
-					var children = inline.SelectNodes("//Inline[@ArticleSource='sidebar']/ParagraphStyle");
-					if (children != null)
+					if (child.Attributes?["Style"] != null)
 					{
-						foreach (XmlNode child in children)
-						{
-							if (child.Attributes?["Style"] != null)
-							{
-								child.Attributes["Style"].Value = SidebarStyling;
-							}
-							else
-							{
-								var attr = doc.CreateAttribute("Style");
-								attr.Value = SidebarStyling;
-								child.Attributes?.Append(attr);
-							}
-						}
+						child.Attributes["Style"].Value = style;
+					}
+					else
+					{
+						var attr = doc.CreateAttribute("Style");
+						attr.Value = style;
+						child.Attributes?.Append(attr);
 					}
 				}
 			}
-			return doc.OuterXml.Replace("<TextFrame>", "").Replace("</TextFrame>", "");
 		}
 	}
 }

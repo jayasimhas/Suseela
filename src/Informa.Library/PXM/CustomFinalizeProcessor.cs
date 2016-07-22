@@ -16,7 +16,7 @@ namespace Informa.Library.PXM
 			using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
 			{
 				var helper = scope.Resolve<IPxmXmlHelper>();
-				args.OutputText = helper.AddSidebarStyles(args.OutputXml.ToString());
+				args.OutputText = helper.FinalizeStyles(args.OutputXml.ToString());
 			}
 		}
 	}

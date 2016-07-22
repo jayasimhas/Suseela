@@ -1,1 +1,1 @@
-<%@ WebService Language="C#" CodeBehind="InDesignConnectorService.cs" Class="Sitecore.PrintStudio.InDesignConnectorService.InDesignConnectorService" %>
+<%@ WebService Language="C#" CodeBehind="CustomInDesignConnectorService.cs" Class="Informa.Library.PXM.InDesignConnectorService" %>
