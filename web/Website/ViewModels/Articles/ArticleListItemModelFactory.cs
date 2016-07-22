@@ -66,27 +66,25 @@ namespace Informa.Web.ViewModels.Articles
             var image = article.Featured_Image_16_9?.Src;
             var curPage = PageItemContext.Get<I___BasePage>();
 
-            var model = new ArticleListItemModel
-            {
-                DisplayImage = !string.IsNullOrWhiteSpace(image),
-                ListableAuthorByLine = ByLineMaker.MakeByline(article.Authors),
-                ListableDate = article.Actual_Publish_Date,
-                ListableImage = image,
-                ListableSummary = ArticleService.GetArticleSummary(article),
-                ListableTitle = HttpUtility.HtmlDecode(article.Title),
-                ListablePublication = publication.Publication_Name,
-                ListableTopics = ArticleService.GetLinkableTaxonomies(article),
-                ListableType = ArticleService.GetMediaTypeIconData(article)?.MediaType,
-                ListableUrl = new Link { Url = article._Url, Text = article.Title },
-                LinkableText = article.Content_Type?.Item_Name,
-                LinkableUrl = article._Url,
-                ID = article._Id,
-                IsUserAuthenticated = AuthenticatedUserContext.IsAuthenticated,
-                IsArticleBookmarked = IsSavedDocumentContext.IsSaved(article._Id),
-                BookmarkText = TextTranslator.Translate("Bookmark"),
-                BookmarkedText = TextTranslator.Translate("Bookmarked"),
-                PageTitle = curPage?.Title
-            };
+            var model = new ArticleListItemModel();
+            model.DisplayImage = !string.IsNullOrWhiteSpace(image);
+            model.ListableAuthorByLine = ByLineMaker.MakeByline(article.Authors);
+            model.ListableDate = article.Actual_Publish_Date;
+            model.ListableImage = image;
+            model.ListableSummary = ArticleService.GetArticleSummary(article);
+            model.ListableTitle = HttpUtility.HtmlDecode(article.Title);
+            model.ListablePublication = publication.Publication_Name;
+            model.ListableTopics = ArticleService.GetLinkableTaxonomies(article);
+            model.ListableType = ArticleService.GetMediaTypeIconData(article)?.MediaType;
+            model.ListableUrl = new Link { Url = article._Url, Text = article.Title };
+            model.LinkableText = article.Content_Type?.Item_Name;
+            model.LinkableUrl = article._Url;
+            model.ID = article._Id;
+            model.IsUserAuthenticated = AuthenticatedUserContext.IsAuthenticated;
+            model.IsArticleBookmarked = IsSavedDocumentContext.IsSaved(article._Id);
+            model.BookmarkText = TextTranslator.Translate("Bookmark");
+            model.BookmarkedText = TextTranslator.Translate("Bookmarked");
+            model.PageTitle = curPage?.Title;
             
             if (curPage._TemplateId.Equals(ICompany_PageConstants.TemplateId.Guid))
             {
