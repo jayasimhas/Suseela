@@ -63,7 +63,7 @@ ipch/
 # Visual Studio Web Service References
 *.svcinfo
 *.disco
-*.xsd
+
 *.wsdl
 *.datasource
 
