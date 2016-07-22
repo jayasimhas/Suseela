@@ -549,3 +549,4 @@ table.basic td {
 table.basic input {
 	min-width: 200px;
 }
+.js-form-error { display:none; color:#ff0000; }

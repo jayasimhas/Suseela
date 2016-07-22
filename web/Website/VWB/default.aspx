@@ -88,8 +88,14 @@
 	<!-- NEW ISSUE MODAL -->
 	<div class="new-issue-modal js-new-issue-modal" title="Dialog Title">
 		<label>Issue Title</label>
-		<input type="text" class="js-new-issue-title" />
+		<p class="title-error js-form-error">
+            Issue Title is required
+        </p>
+        <input type="text" class="js-new-issue-title" />
 		<label>Published Date</label>
+        <p class="date-error js-form-error">
+            Published Date is required
+        </p>
 	    <input class="js-new-issue-pub-date" type="text"/>
 		<button class="orange-button js-submit-new-issue">Create New Issue</button>
 	</div>
