@@ -374,6 +374,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Search\ComputedFields\SearchResults\SearchMediaTooltipField.cs" />
+    <Compile Include="Search\Crawlers\InformaItemCrawler.cs" />
     <Compile Include="Utilities\Parsers\CachedXmlParser.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
