@@ -7,7 +7,7 @@
         <li class="article-topics__section-header">@Model.IndustryHeader</li>
         @foreach (var industry in Model.Industries)
         {
-            <li class="article-topics__li">@industry.Name</li>
+            <li class="article-topics__li">@Html.Raw(industry.Name)</li>
         }
         <li class="article-topics__section-header">@Model.TherapyAreasHeader</li>
 
