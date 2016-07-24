@@ -35,7 +35,17 @@ namespace Informa.Library.Search.PredicateBuilders
 				predicate = predicate.And(x => x.Val == Settings.GetSetting("Search.NewerArticlesBoosting.BoostFunction"));
 			}
 
-			return predicate;
+            if (_request.QueryParameters.ContainsKey("plannedpublishdate") || _request.QueryParameters.ContainsKey("SearchPublicationTitle"))
+            {//VWB
+
+            }
+            else
+            {
+                //Include Search for authors
+                predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
+            }
+
+            return predicate;
 		}
 
 		protected override Expression<Func<T, bool>> AddAllClause(string[] value)
