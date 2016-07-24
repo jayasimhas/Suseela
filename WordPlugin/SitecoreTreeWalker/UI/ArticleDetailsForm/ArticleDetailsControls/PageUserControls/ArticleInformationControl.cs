@@ -579,14 +579,24 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         {
             if (outOfDate)
             {
+                Color color = (Color)new ColorConverter().ConvertFromString("#F4CCCC");
+                _parent.articleStatusBar1.uxVersionStateButton.BackColor = color;
+                _parent.articleStatusBar1.uxVersionStateButton.ToolTipText = "More Recent Version Available. Download it from Sitecore. Click for more information.";
+                _parent.articleStatusBar1.uxVersionStateButton.Text = "Out of Date";
+
+
                 //uxVersionStatus.BackColor = Color.FromArgb(255, 244, 204, 204);
-                _parent.articleStatusBar1.uxVersionStateButton.BackColor = Color.FromArgb(255, 244, 204, 204);
+                //_parent.articleStatusBar1.uxVersionStateButton.BackColor = Color.FromArgb(255, 244, 204, 204);
+
                 //uxVersionText.Text = @"More Recent Version Available";
                 //uxVersionText.Font = new Font(uxVersionText.Font, FontStyle.Italic | FontStyle.Bold);
-
             }
             else
             {
+                Color color = (Color)new ColorConverter().ConvertFromString("#d9ead3");
+                _parent.articleStatusBar1.uxVersionStateButton.BackColor = color;
+                _parent.articleStatusBar1.uxVersionStateButton.ToolTipText = "Document Content is Up To Date. Click for more information.";
+                _parent.articleStatusBar1.uxVersionStateButton.Text = "Up To Date";
                 //uxVersionStatus.BackColor = Color.FromArgb(255, 217, 234, 211);
                 //uxVersionText.Text = @"Document Content is Up To Date";
                 //uxVersionText.Font = new Font(uxVersionText.Font, FontStyle.Bold);

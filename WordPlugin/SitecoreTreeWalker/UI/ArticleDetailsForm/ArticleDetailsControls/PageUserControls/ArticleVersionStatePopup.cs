@@ -55,7 +55,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                         lblTitle.Text = "This document is Up to Date";
                     }
 
-                    lblBy.Text = SitecoreWordUtil.FormatUserName(updatedArticleDetail.ArticleDetails.WordDocLastUpdatedBy);
+                    var user = SitecoreClient.GetFullNameAndEmail(updatedArticleDetail.ArticleDetails.WordDocLastUpdatedBy);
+
+                    lblBy.Text = user[0];
 
                     DateTime dt;
                     if (updatedArticleDetail.ArticleDetails != null && DateTime.TryParse(updatedArticleDetail.ArticleDetails.WordDocLastUpdateDate, out dt))
