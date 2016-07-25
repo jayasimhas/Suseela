@@ -75,7 +75,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
                 {
                     var parent = _dependencies.DcdContentAnalyzer.GetParentCompany(Content);
                     var text = _dependencies.TextTranslator.Translate("DCD.DivisionOf");
-                    _divisionOfText = parent.HasContent() ? $"{text} {parent}" : null;
+                    _divisionOfText = (parent.HasContent() && !Company.Title.Trim().Equals(parent.Trim())) ? $"{text} {parent}" : null;
                 }
                 return _divisionOfText;
             }

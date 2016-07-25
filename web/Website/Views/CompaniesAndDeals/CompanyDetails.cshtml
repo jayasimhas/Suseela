@@ -5,10 +5,12 @@
     <h1>@Model.Company.Title</h1>
 
     <h5>
-        @Model.DivisionOfText
+        @if (!string.IsNullOrEmpty(Model.DivisionOfText)) {
+            @Model.DivisionOfText
+            <br />
+        }
         @if (Model.Content.ContactInfo.Website.HasContent())
         {
-            <br/>
             <a target="_blank" href="@(Model.WebsiteHref)">@(Model.Content.ContactInfo.Website)</a>
         }
     </h5>
