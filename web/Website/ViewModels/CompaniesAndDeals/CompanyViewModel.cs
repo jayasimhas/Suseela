@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Informa.Library.DCD;
 using Informa.Library.Globalization;
 using Informa.Library.Utilities.DataModels;
@@ -23,7 +24,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         {
             IDCDReader DcdReader { get; }
             IHttpContextProvider HttpContextProvider { get; }
-            ICompanyContentAnalyzer CompanyContentAnalyzer { get; }
+            IDcdContentAnalyzer DcdContentAnalyzer { get; }
             ICachedXmlParser CachedXmlParser { get; set; }
             ITextTranslator TextTranslator { get; }
         }
@@ -72,7 +73,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             {
                 if (!_divisionOfText.HasContent())
                 {
-                    var parent = _dependencies.CompanyContentAnalyzer.GetParentCompany(Content);
+                    var parent = _dependencies.DcdContentAnalyzer.GetParentCompany(Content);
                     var text = _dependencies.TextTranslator.Translate("DCD.DivisionOf");
                     _divisionOfText = parent.HasContent() ? $"{text} {parent}" : null;
                 }
@@ -90,11 +91,15 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             }
         }
 
-        public Coding[] Industries => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("indstry"))?.Codings;
+        public TreeNode<string,string>[] Industries
+            => _dependencies.DcdContentAnalyzer.GetCodingSetTrees(
+                    Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("indstry"))?.Codings, "&gt;")
+            ?? new TreeNode<string, string>[0];
         public Coding[] TherapyAreas => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("theracat"))?.Codings;
         public string[] LocationPath => Content.CompanyInfo.LocationPath.Split('/');
-        public TreeNode<string> SubsidiariesTree
-            => _dependencies.CompanyContentAnalyzer.GetSubsidiaryTree(Content.ParentsAndDivisions);
+        public TreeNode<string,string>[] SubsidiariesTree
+            => _dependencies.DcdContentAnalyzer.GetCompanySubsidiaryTree(Content.ParentsAndDivisions)
+            ?? new TreeNode<string, string>[0];
 
         public string CompanyInformationHeader => _dependencies.TextTranslator.Translate("DCD.CompanyInformation");
         public string IndustryHeader => _dependencies.TextTranslator.Translate("DCD.Industry");

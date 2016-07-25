@@ -18,7 +18,8 @@ namespace Informa.Library.Utilities.TokenMatcher
 {
 	public interface ITokenToHtml
 	{
-		string ReplaceAllTokens(string content);
+		string ReplaceBodyContentTokens(string content);
+        string ReplaceAllTokens(string content);
 		string ReplaceSidebarArticles(string content);
 		string ReplaceRelatedArticles(string content);
 		string ReplaceDeals(string content);
@@ -49,12 +50,18 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 		public string ReplaceAllTokens(string content)
 		{
+			var result = ReplaceBodyContentTokens(content);
+			result = ModifyColspan(result);
+			result = ReplaceSectionBreaks(result);
+			return result;
+		}
+
+		public string ReplaceBodyContentTokens(string content)
+		{
 			var result = ReplaceSidebarArticles(content);
 			result = ReplaceRelatedArticles(result);
 			result = ReplaceCompanies(result);
 			result = ReplaceDeals(result);
-			result = ModifyColspan(result);
-			result = ReplaceSectionBreaks(result);
 			return result;
 		}
 
@@ -121,7 +128,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 			a.InnerHtml = readAllArticle;
 			// Add summary
 			var div = document.DocumentNode.SelectSingleNode("//div");
-			div.InnerHtml = WordUtil.TruncateArticle(_dependencies.ArticleService.GetArticleSummary(article), 60);
+			div.InnerHtml = _dependencies.ArticleService.GetArticleBody(article);
 
 			return new HtmlString(document.DocumentNode.OuterHtml);
 		}

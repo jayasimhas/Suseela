@@ -3,17 +3,23 @@
 <div class="article-topics">
     <h2 class="article-topics__header">@Model.CompanyInformationHeader</h2>
     <ul>
-            
+
         <li class="article-topics__section-header">@Model.IndustryHeader</li>
-        @foreach (var industry in Model.Industries)
+        @foreach (var rootNode in Model.Industries)
         {
-            <li class="article-topics__li">@industry.Name</li>
+            @Html.Partial("~/Views/CompaniesAndDeals/SubsidiariesTree.cshtml", rootNode)
         }
+
         <li class="article-topics__section-header">@Model.TherapyAreasHeader</li>
 
         @foreach (var area in Model.TherapyAreas)
         {
             <li class="article-topics__li">@area.Name</li>
+        }
+
+        <li class="article-topics__section-header">@Model.AliasHeader</li>
+        @foreach(var syn in Model.Content.Synonyms) {
+            <li class="article-topics__li">@syn</li>
         }
 
         <li class="article-topics__section-header">@Model.OwnershipHeader</li>
@@ -39,7 +45,10 @@
         }
 
         <li class="article-topics__section-header">@Model.ParentSubHeader</li>
-        @Html.Partial("~/Views/CompaniesAndDeals/SubsidiariesTree.cshtml", @Model.SubsidiariesTree)
+        @foreach (var rootNode in Model.SubsidiariesTree)
+        {
+            @Html.Partial("~/Views/CompaniesAndDeals/SubsidiariesTree.cshtml", rootNode)
+        }
 
         <li class="article-topics__section-header">@Model.SeniorManagementHeader</li>
         <li class="article-topics__section-desc">

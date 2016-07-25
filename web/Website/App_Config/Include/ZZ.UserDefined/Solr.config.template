@@ -71,9 +71,12 @@
               #end
             </strategies>
             <locations hint="list:AddCrawler">
-              <crawler type="Sitecore.ContentSearch.SitecoreItemCrawler, Sitecore.ContentSearch">
+              <crawler type="Informa.Library.Search.Crawlers.InformaItemCrawler, Informa.Library">
                 <Database>web</Database>
                 <Root>/sitecore/Content</Root>
+                <ExcludeItemsList hint="list">
+                  <VirtualWhiteBoard>/Virtual Whiteboard</VirtualWhiteBoard>
+                </ExcludeItemsList>
               </crawler>
             </locations>
           </index>
@@ -104,9 +107,12 @@
               <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/syncMaster" />
             </strategies>
             <locations hint="list:AddCrawler">
-              <crawler type="Sitecore.ContentSearch.SitecoreItemCrawler, Sitecore.ContentSearch">
+              <crawler type="Informa.Library.Search.Crawlers.InformaItemCrawler, Informa.Library">
                 <Database>master</Database>
                 <Root>/sitecore/Content</Root>
+                <ExcludeItemsList hint="list">
+                  <VirtualWhiteBoard>/Virtual Whiteboard</VirtualWhiteBoard>
+                </ExcludeItemsList>
               </crawler>
             </locations>
           </index>
