@@ -84,6 +84,10 @@
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Glass.Mapper.Sc, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\81\Glass.Mapper.Sc.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
@@ -175,6 +179,7 @@
     <Compile Include="Mappings\Fields\UrlToLink.cs" />
     <Compile Include="Mappings\IBaseMapping.cs" />
     <Compile Include="Mappings\Templates\TemplateMapping.cs" />
+    <Compile Include="PostProcess\InformaPostProcess.cs" />
     <Compile Include="Providers\BaseDataMap.cs" />
     <Compile Include="Mappings\Fields\ListToGuid.cs" />
     <Compile Include="Mappings\Fields\ToText.cs" />

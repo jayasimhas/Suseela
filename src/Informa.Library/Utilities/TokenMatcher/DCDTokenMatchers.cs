@@ -6,6 +6,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Informa.Library.Article.Search;
+using Informa.Library.Services.Global;
 using Informa.Library.Utilities.Extensions;
 using Jabberwocky.Core.Caching;
 
@@ -19,33 +20,48 @@ namespace Informa.Library.Utilities.TokenMatcher
 		private static ICacheProvider CacheProvider => _lazyCache.Value;
 		private static readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
 		private static readonly string OldDealsUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL");
+	    private static IGlobalSitecoreService GlobalService = DependencyResolver.Current.GetService<IGlobalSitecoreService>();
 
 		public static string ProcessDCDTokens(string text)
 		{
 			string body = text;
 
-			try
-			{
-				string tempText = ProcessCompanyTokens(body);
+		    try
+		    {
+		        string tempText = ProcessCompanyTokens(body);
 
-				if (string.IsNullOrEmpty(tempText) == false)
-					body = tempText;
+		        if (string.IsNullOrEmpty(tempText) == false)
+		            body = tempText;
+		    }
+		    catch (Exception ex1)
+		    {
+                Sitecore.Diagnostics.Log.Error("Error Processing DCD Company Tokens", ex1, typeof(DCDTokenMatchers));
+            }
 
-				tempText = ProcessDealTokens(body);
+		    try
+		    {
+		        string tempText = ProcessDealTokens(body);
 
-				if (string.IsNullOrEmpty(tempText) == false)
-					body = tempText;
+		        if (string.IsNullOrEmpty(tempText) == false)
+		            body = tempText;
+		    }
+		    catch (Exception ex2)
+		    {
+                Sitecore.Diagnostics.Log.Error("Error Processing DCD Deal Tokens", ex2, typeof(DCDTokenMatchers));
+            }
 
-				tempText = ProcessArticleTokens(body);
+            try { 
+                string tempText = ProcessArticleTokens(body);
 
 				if (string.IsNullOrEmpty(tempText) == false)
 					body = tempText;
 
 			}
-			catch (Exception ex)
+			catch (Exception ex3)
 			{
-				Sitecore.Diagnostics.Log.Error("Error ProcessingDCDTokens", ex);
+				Sitecore.Diagnostics.Log.Error("Error Processing DCD Article Tokens", ex3, typeof(DCDTokenMatchers));
 			}
+
 			return body;
 		}
 
@@ -59,18 +75,25 @@ namespace Informa.Library.Utilities.TokenMatcher
             foreach (Match match in matches)
             {
 	            var replace = string.Empty;
-				// Replace the first occurrence with hyperlink
-				if (!matchSet.Contains(match.Groups[1].Value))
-				{				
-					replace = $"<a href=\"{string.Format(OldCompaniesUrl, match.Groups[1].Value.Split(':')[0])}\">{match.Groups[1].Value.Split(':')[1]}</a>";
+                if (match.Groups.Count < 2)
+                    continue;
+
+                string matchValue = match.Groups[1].Value;
+                string[] splitArr = matchValue.Split(':');
+                string cDigit = (splitArr.Length > 0) ? splitArr[0] : string.Empty;
+                string cName = (splitArr.Length > 1) ? splitArr[1] : string.Empty;
+
+                // Replace the first occurrence with hyperlink
+                if (!matchSet.Contains(matchValue))
+                {
+                    replace = $"<a href=\"{string.Format(OldCompaniesUrl, cDigit)}\">{cName}</a>";
 					text = regex.Replace(text, replace, 1);
-					matchSet.Add(match.Groups[1].Value);
+					matchSet.Add(matchValue);
 				}
 				// Replace other occurrences with normal names
 				else
 				{
-					replace = match.Groups[1].Value.Split(':')[1];
-					text = text.Replace(match.Value, replace);
+					text = text.Replace(match.Value, cName);
 				}			
 			}
 			return text;
@@ -87,11 +110,14 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 		private static string ProcessArticleTokens(string text)
 		{
-			//Find all matches with Company token
+			//Find all matches with Article token
 			Regex regex = new Regex(DCDConstants.ArticleTokenRegex);
 
 			MatchEvaluator evaluator = new MatchEvaluator(ArticleMatchEval);
-			return regex.Replace(text, evaluator);
+			var replacedText = regex.Replace(text, evaluator);
+
+			Regex legacyRegex = new Regex(DCDConstants.LegacyArticleTokenRegex);
+			return legacyRegex.Replace(replacedText, evaluator);
 		}
 
 		private static string CompanyMatchEval(Match match)
@@ -112,12 +138,16 @@ namespace Informa.Library.Utilities.TokenMatcher
 		{
 			try
 			{
+				if (match == null || match.Groups.Count < 2)
+				{
+					return string.Empty;
+				}
 				//return a see deal (deal reference) (from the token itself) to replace the token
 				return string.Format("<a href=\"{0}\">[See Deal]</a>", string.Format(OldDealsUrl, match.Groups[1].Value));
 			}
 			catch (Exception ex)
 			{
-				Sitecore.Diagnostics.Log.Error("Error when evaluating deal match token", ex, "LogFileAppender");
+				Sitecore.Diagnostics.Log.Error($"Error when evaluating deal match token. Match: {match.Value}", ex, "LogFileAppender");
 				return string.Empty;
 			}
 		}
@@ -143,7 +173,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 
                     if (article != null) {
                         return
-                            $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, " +
+                            $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {GlobalService.GetPublicationName(article._Id)}, " +
                             $"{(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
                     }
                 }

@@ -160,11 +160,11 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 
 			var event_data = {
 				event_name: 'search_facets',
-				search_facet_category: facetGroup.Label
+				search_facet_category: facetGroup.label
 			};
 
 			if(facetsForAnalytics) {
-				event_data.search_facet = facetsForAnalytics;
+				event_data.search_facet = facetGroup.label + ": " + facetsForAnalytics;
 			}
 
 			analyticsEvent(	$.extend(analytics_data, event_data) );
@@ -191,7 +191,7 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 
         var hash = {};
         var urlQuery = "&";
-        var h = routeBuilder.getRoute().split("&");
+        var h = decodeURIComponent(routeBuilder.getRoute()).split("&");
         for (var idx in h) {
             if (h[idx] != "") {
                 var currentParameter = h[idx].split("=");

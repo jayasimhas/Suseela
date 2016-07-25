@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using Glass.Mapper.Sc.Web.Mvc;
 using Informa.Library.Article.Search;
+using Informa.Library.Services.Global;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Models.DCD;
 using Informa.Web.ViewModels;
@@ -28,8 +29,10 @@ namespace Informa.Web.Models
 		public IArticleSearch ArticleSearch { get; }
 	    private readonly ICacheProvider CacheProvider; 
         private readonly IArticleListItemModelFactory _articleListableFactory;
+	    private readonly IGlobalSitecoreService GlobalService;
 
-		public TokenHtml(HtmlHelper<TK> helper)
+		public TokenHtml(HtmlHelper<TK> helper,
+            IGlobalSitecoreService globalService)
 		{
 			HtmlHelper = helper;
 			GlassHtml = helper.Glass();
@@ -38,6 +41,7 @@ namespace Informa.Web.Models
 			ArticleSearch = DependencyResolver.Current.GetService<IArticleSearch>();
             CacheProvider = DependencyResolver.Current.GetService<ICacheProvider>();
             _articleListableFactory = DependencyResolver.Current.GetService<IArticleListItemModelFactory>();
+            GlobalService = globalService;
 		}
 
 		public string ReplaceDeals(string content)
@@ -79,8 +83,9 @@ namespace Informa.Web.Models
 
             if (results.Articles.Any()) {
                 var article = results.Articles.FirstOrDefault();
-                if (article != null) {
-                    var articleText = $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {"Scrip"}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
+                if (article != null)
+                {
+                    var articleText = $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {GlobalService.GetPublicationName(article._Id)}, {(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
                     replace = new HtmlString(articleText);
                 }
             }
@@ -151,7 +156,7 @@ namespace Informa.Web.Models
 	{
 		public static TokenHtml<T> TokenTransform<T>(this HtmlHelper<T> htmlHelper)
 		{
-			return new TokenHtml<T>(htmlHelper);
+            return new TokenHtml<T>(htmlHelper, DependencyResolver.Current.GetService<IGlobalSitecoreService>());
 		}
 	}
 }

@@ -42,6 +42,11 @@ But you can also use "patch:attribute" for clarity:
       </mvc.renderRendering>
 
       <httpRequestBegin>
+        <processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.LegacyRedirectResolver, Informa.Library"
+                   ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.LegacyRedirectResolver, Informa.Library"
+                   factory="Autofac"
+                   patch:before="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
+                   reusable="false" />
         <processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.ArticleItemResolver, Informa.Library"
                    ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.ArticleItemResolver, Informa.Library"
                    factory="Autofac"
@@ -56,11 +61,6 @@ But you can also use "patch:attribute" for clarity:
                    ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.NewRelicTransactionNameProcessor, Informa.Library"
                    factory="Autofac"
                    patch:after="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
-                   reusable="false" />
-		<processor type="Informa.Library.CustomSitecore.Pipelines.HttpRequest.LegacyRedirectResolver, Informa.Library"
-                   ref="Informa.Library.CustomSitecore.Pipelines.HttpRequest.LegacyRedirectResolver, Informa.Library"
-                   factory="Autofac"
-                   patch:before="processor[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']"
                    reusable="false" />
         <processor type="Sitecore.Pipelines.HttpRequest.ExecuteRequest, Sitecore.Kernel">
           <patch:attribute name="type">Informa.Library.CustomSitecore.Pipelines.HttpRequest.InformaExecuteRequest,Informa.Library</patch:attribute>
@@ -137,6 +137,7 @@ But you can also use "patch:attribute" for clarity:
           <patch:attribute name="languageEmbedding">never</patch:attribute>
           <patch:attribute name="lowercaseUrls">true</patch:attribute>
         </add>
+        <add name="informaEmailLinkProvider" type="Informa.Library.CustomSitecore.Providers.EmailLinkProvider, Informa.Library" lowercaseUrls="true"  />
       </providers>
     </linkManager>
 

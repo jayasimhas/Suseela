@@ -3,6 +3,7 @@ using System.Text;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Sitecore.Configuration;
 using Velir.Search.Core.Reference;
+using System.Web;
 
 namespace Informa.Library.Search.Utilities
 {
@@ -63,15 +64,12 @@ namespace Informa.Library.Search.Utilities
 			}
 
 			StringBuilder url = new StringBuilder();
-
-			url.Append("/search#?");
-
-			foreach (var pair in dict)
+            foreach (var pair in dict)
 			{
 				url.AppendFormat("{0}={1}", pair.Key, pair.Value);
 			}
 			
-			return url.ToString();
+			return $"/search#?{HttpUtility.UrlEncode(url.ToString())}";
 		}
 
 		public static bool IsSubjectTaxonomy(string itemPath)

@@ -7,11 +7,11 @@ namespace Informa.Library.Publication
 	public class SitePublicationNameContext : ISitePublicationNameContext
 	{
 		protected ISiteRootContext SiteRootContext;
-		protected readonly ISitePublicationCodeFactory SitePublicationNameFactory;
+		protected readonly ISitePublicationNameFactory SitePublicationNameFactory;
 
 		public SitePublicationNameContext(
 			ISiteRootContext siteRootContext,
-			ISitePublicationCodeFactory sitePublicationNameFactory)
+			ISitePublicationNameFactory sitePublicationNameFactory)
 		{
 			SiteRootContext = siteRootContext;
 			SitePublicationNameFactory = sitePublicationNameFactory;

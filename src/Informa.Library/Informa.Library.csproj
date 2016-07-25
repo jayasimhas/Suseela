@@ -365,15 +365,17 @@
     <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
+    <Compile Include="CustomSitecore\Providers\EmailLinkProvider.cs" />
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
-    <Compile Include="DCD\CompanyContentAnalyzer.cs" />
+    <Compile Include="DCD\DcdContentAnalyzer.cs" />
     <Compile Include="PXM\CustomFinalizeProcessor.cs" />
     <Compile Include="PXM\CustomInDesignConnectorService.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Search\ComputedFields\SearchResults\SearchMediaTooltipField.cs" />
+    <Compile Include="Search\Crawlers\InformaItemCrawler.cs" />
     <Compile Include="Utilities\Parsers\CachedXmlParser.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
@@ -1106,7 +1108,7 @@
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalIdResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalTitleResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\PublisherResolver.cs" />
-    <Compile Include="Utilities\DataModels\TreeNode%271.cs" />
+    <Compile Include="Utilities\DataModels\TreeNode%272.cs" />
     <Compile Include="Utilities\Extensions\ArticleExtensions.cs" />
     <Compile Include="Utilities\Extensions\BooleanExtensions.cs" />
     <Compile Include="Utilities\Extensions\EnumerableExtensions.cs" />

@@ -100,7 +100,7 @@
 						{
 							<tr>
 								<td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
-									@item.Publication.Name
+									@Html.Raw(item.Publication?.Name)
 								</td>
 								<td class="sortable-table__col sortable-table__col--has-title sortable-table__col--title">
 									<a
@@ -109,7 +109,7 @@
 										data-info='{
 											"event_name": "bookmark_clickthrough",
 											"bookmark_title": "@item.Title",
-											"bookmark_publication": "@item.Publication.Name"
+											"bookmark_publication": "@(item.Publication?.Name)"
 										}'
 										@(item.IsExternalUrl ? "target = \"_blank\"" : "")>
 										@Html.Raw(item.Title)
@@ -128,7 +128,7 @@
 									<form class="form-remove-saved-document"
 										  data-on-submit="/Account/api/SavedDocumentApi/RemoveItem/"
 										  data-analytics-title="@Html.Raw(item.Title)"
-										  data-analytics-publication="@Html.Raw(item.Publication.Name)">
+										  data-analytics-publication="@Html.Raw(item.Publication?.Name)">
 
 										<input name="DocumentID"
 											   id="DocumentID"

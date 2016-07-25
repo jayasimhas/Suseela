@@ -119,8 +119,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataImporter\InformaPostProcess_Tests.cs" />
     <Compile Include="Library\Advertisement_Tests\AdUrlBuilder_Tests.cs" />
     <Compile Include="Library\Authors_Tests\AuthorService_Tests.cs" />
+    <Compile Include="Library\CustomSitecore\Pipelines\HttpRequest\ArticleItemResolver_Tests.cs" />
     <Compile Include="Library\Mail_Tests\ExactTarget_Tests\CampaignQueryBuilder_Tests.cs" />
     <Compile Include="Library\Mail_Tests\ExactTarget_Tests\ExactTargetClient_Tests.cs" />
     <Compile Include="Library\Services\AccountManagement\AccountManagementService_Tests.cs" />
@@ -148,6 +150,10 @@
     <ProjectReference Include="..\..\src\Informa.Models\Informa.Models.csproj">
       <Project>{79466a53-db00-47d6-ba80-b02bd8a87337}</Project>
       <Name>Informa.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Sitecore.SharedSource.DataImporter\Sitecore.SharedSource.DataImporter.csproj">
+      <Project>{0e4f3486-8733-4e18-a5d0-51f2b92b2974}</Project>
+      <Name>Sitecore.SharedSource.DataImporter</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

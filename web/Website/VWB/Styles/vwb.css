@@ -530,6 +530,7 @@ body.bigger input {
 .issue-notes textarea {
 	max-width: 800px;
 	width: 100%;
+    font-size:12px;
 }
 
 .pad-it {
@@ -548,4 +549,6 @@ table.basic td {
 
 table.basic input {
 	min-width: 200px;
+    font-size:12px;
 }
+.js-form-error { display:none; color:#ff0000; }

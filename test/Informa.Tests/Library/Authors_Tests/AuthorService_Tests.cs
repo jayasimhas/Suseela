@@ -36,13 +36,6 @@ namespace Informa.Tests.Library.Authors_Tests
         public void ConvertAuthorNameToUrlName_GetsWeirdName_ReturnsCleanUrlName()
         {
             // ARRANGE
-            var fakeContext = Substitute.For<HttpContextBase>();
-            var fakeRequest = Substitute.For<HttpRequestBase>();
-            var fakeUri = new Uri("http://moose.com/features/antlers?size=huge");
-            fakeContext.Request.Returns(fakeRequest);
-            fakeRequest.Url.Returns(fakeUri);
-            _dependencies.HttpContextProvider.Current.Returns(fakeContext);
-            
 
             // ACT
             var result = _authorService.ConvertAuthorNameToUrlName("!!Ja7zzy!  !Br00ke...");

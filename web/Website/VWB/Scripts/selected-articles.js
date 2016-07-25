@@ -68,11 +68,28 @@ $(document)
         $('.js-submit-new-issue')
             .on('click',
                 function(e) {
-                    $('#IssueTitleInput').val($('.js-new-issue-title').val());
-                    $('#IssuePublishedDateInput').val($('.js-new-issue-pub-date').val());
+                    var title = $('.js-new-issue-title').val();
+                    if (title.length < 1) {
+                        $('.title-error').show();
+                        return;
+                    } else {
+                        $('.title-error').hide();
+                    }
+                        
+                    var date = $('.js-new-issue-pub-date').val();
+                    if (date.length < 1) {
+                        $('.date-error').show();
+                        return;
+                    } else {
+                        $('.date-error').hide();
+                    }
+
+                    $('#IssueTitleInput').val(title);
+                    $('#IssuePublishedDateInput').val(date);
 
                     selectedArticlesUpdated();
                     //document.forms[0].submit();
+
                     $('#NewIssueSubmitButton').click();
                 });
 

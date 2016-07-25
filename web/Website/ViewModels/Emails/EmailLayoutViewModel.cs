@@ -3,6 +3,7 @@ using Glass.Mapper.Sc;
 using Informa.Library.Globalization;
 using Informa.Library.Mail.ExactTarget;
 using Informa.Library.Navigation;
+using Informa.Library.Services.Global;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.References;
@@ -11,6 +12,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuratio
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Sitecore.Data.Items;
 
 namespace Informa.Web.ViewModels.Emails
 {
@@ -26,6 +28,7 @@ namespace Informa.Web.ViewModels.Emails
             ISiteRootContext SiteRootContext { get; }
             IItemNavigationTreeFactory ItemNavigationTreeFactory { get; }
             ICampaignQueryBuilder CampaignQueryBuilder { get; }
+            IGlobalSitecoreService SitecoreService { get; }
         }
 
         public EmailLayoutViewModel(IDependencies dependencies)
@@ -48,8 +51,23 @@ namespace Informa.Web.ViewModels.Emails
                                               _dependencies.SitecoreUrlWrapper.GetItemUrl(GlassModel)));
 
         private ISite_Root _siteRoot;
-        public ISite_Root SiteRoot => _siteRoot ??
-                                      (_siteRoot = _dependencies.SiteRootContext.Item);
+        public ISite_Root SiteRoot  {
+            get
+            {
+                if (_siteRoot == null)
+                    _siteRoot = _dependencies.SitecoreService.GetSiteRootAncestor(GlassModel._Id);
+                
+                return _siteRoot;
+            }
+        }
+
+        public string EmailLogoUrl => SiteRoot.Email_Logo?.Src ?? string.Empty;
+
+        public string RssLogoUrl => SiteRoot.RSS_Logo?.Src ?? string.Empty;
+
+        public string LinkedInLogoUrl => SiteRoot.Linkedin_Logo?.Src ?? string.Empty;
+
+        public string TwitterLogoUrl => SiteRoot.Twitter_Logo?.Src ?? string.Empty;
 
         private NavItemViewModel[] _headerNavigation;
         public NavItemViewModel[] HeaderNavigation

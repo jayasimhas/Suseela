@@ -8,16 +8,15 @@
 
 <div class="article-metadata">
      <div
-	 	class="action-flag pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
+	 	class="action-flag article-preview__bookmarker pop-out__trigger @( Model.IsUserAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger" )"
         data-pop-out-type="sign-in"
         data-bookmark-id="@Model.ID"
         @( Model.IsArticleBookmarked ? "data-is-bookmarked=true" : null)
-		@*data-analytics='{
+		data-analytics='{
 			"bookmark": "true",
- 			"bookmark_title": "@Model.BookmarkTitle",
- 			"bookmark_publication": "@Model.BookmarkPublication"
-		}'*@>
-
+ 			"bookmark_title": "@Model.ListableTitle",
+ 			"bookmark_publication": "@Model.ListablePublication"
+		}'>
         @* Storing "bookmark" / "bookmarked" labels in data attributes so Javascript
         can use text provided by Sitecore when toggling state post-load. *@
         <span   class="action-flag__label js-bookmark-label"
@@ -26,6 +25,7 @@
             @( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )
         </span>
 
+        
 		<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @( Model.IsArticleBookmarked ? "is-visible" : null)">
 	        <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
 	    </svg>
@@ -60,7 +60,7 @@
 			href="@Model.LinkableUrl"
 			class="click-utag"
 			data-info='{ "event_name": "article_click_through", "click_through_source": "@Model.PageTitle", "click_through_destination": "@Model.ListableTitle" }'>
-			@Model.ListableTitle
+			@Html.Raw(Model.ListableTitle)
 		</a>
     </h1>
 

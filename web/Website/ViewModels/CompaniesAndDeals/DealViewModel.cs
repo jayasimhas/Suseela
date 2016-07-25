@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using Glass.Mapper.Sc;
+using Informa.Library.DCD;
 using Informa.Library.Globalization;
+using Informa.Library.Utilities.DataModels;
 using Informa.Library.Utilities.Parsers;
 using Informa.Library.Utilities.References;
 using Informa.Library.Utilities.WebUtils;
@@ -26,6 +28,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             ICachedXmlParser CachedXmlParser { get; set; }
             ITextTranslator TextTranslator { get; }
             ISitecoreService SitecoreService { get; set; }
+            IDcdContentAnalyzer DcdContentAnalyzer { get; set; }
         }
 
         public DealViewModel(IDependencies dependencies)
@@ -69,7 +72,10 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             }
         }
 
-        public Coding[] Industries => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("indstry"))?.Codings;
+        public TreeNode<string,string>[] Industries
+            => _dependencies.DcdContentAnalyzer.GetCodingSetTrees(
+                    Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("indstry"))?.Codings, "/")
+            ?? new TreeNode<string, string>[0];
         public InnerCompany[] RelatedCompanies => Content.DealCompanies.Select(x => x.Company).ToArray();
 
     }

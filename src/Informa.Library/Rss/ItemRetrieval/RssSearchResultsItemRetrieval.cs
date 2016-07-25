@@ -21,7 +21,7 @@ namespace Informa.Library.Rss.ItemRetrieval
 	{
 		public IEnumerable<Item> GetSitecoreItems(Item feedItem)
 		{
-			ISearch_Rss_Feed searchRssFeed = feedItem.GlassCast<ISearch_Rss_Feed>(inferType: true);
+			var searchRssFeed = feedItem.GlassCast<ISearch_Rss_Feed>(inferType: true);
 
 			var feedUrl = GetSearchApiUrl(searchRssFeed);
 			return GetItemsFromApi(feedUrl);
@@ -35,7 +35,7 @@ namespace Informa.Library.Rss.ItemRetrieval
 				return string.Empty;
 			}
 
-			Item searchPageItem = Sitecore.Context.Database.GetItem(rssFeedItem.Search_Page.ToString());
+			var searchPageItem = Context.Database.GetItem(rssFeedItem.Search_Page.ToString());
 
 			if (searchPageItem == null)
 			{
@@ -43,49 +43,75 @@ namespace Informa.Library.Rss.ItemRetrieval
 				return string.Empty;
 			}
 
-			ISearch_Listing searchListing = searchPageItem.GlassCast<ISearch_Listing>(inferType: true);
-			
+			var searchListing = searchPageItem.GlassCast<ISearch_Listing>(inferType: true);
+
 			//Build the base api URL
 			var searchPageId = searchPageItem.ID.ToGuid().ToString("D").ToLower();
 			var feedUrl = string.Format("{0}://{1}{2}?pId={3}", HttpContext.Current.Request.Url.Scheme, WebUtil.GetHostName(),
-					searchListing.Base_Endpoint_Url, searchPageId);
+				searchListing.Base_Endpoint_Url, searchPageId);
 
-			ISite_Root siteRoot = rssFeedItem.Crawl<ISite_Root>();
-			if (siteRoot != null)
+			// If the "Include Url Parameters" is checked then any url params are passed along
+			// to the api, otherwise they will be stripped
+			var useDefaultParams = false;
+			if (rssFeedItem.Include_Url_Parameters)
 			{
-				feedUrl = $"{feedUrl}&publication={siteRoot.Publication_Name}";
-			}
-
-			var defaultSortBy = "date";
-			var defaultSortOrder = "";
-
-			//If the default sort has not been chosen fall back to relevance ascending sorting
-			if (searchListing.Default_Sort_Order == null)
-			{
-				//set default to date
-				defaultSortBy = "date";
-				defaultSortOrder = "desc";
+				if (Context.RawUrl.Contains("?"))
+				{
+					var urlParts = Context.RawUrl.Split('?');
+					if (urlParts.Length == 2)
+					{
+						feedUrl = string.Format("{0}&{1}", feedUrl, urlParts[1]);
+					}
+					else
+					{
+						useDefaultParams = true;
+					}
+				}
 			}
 			else
 			{
-				defaultSortOrder = "desc";
-				if (!searchListing.Default_Sort_Order.Sort_Ascending)
-				{
-					defaultSortOrder = "desc";
-				}
-
-				defaultSortBy = searchListing.Default_Sort_Order.Key;
+				useDefaultParams = true;
 			}
 
-			feedUrl = string.Format("{0}&sortBy={1}&sortOrder={2}", feedUrl, defaultSortBy, defaultSortOrder);
-			////}
+			if (useDefaultParams)
+			{
+				var defaultSortBy = "";
+				var defaultSortOrder = "";
+
+				//If the default sort has not been chosen fall back to relevance ascending sorting
+				if (searchListing.Default_Sort_Order == null)
+				{
+					//set default to date
+					defaultSortBy = "date";
+					defaultSortOrder = "desc";
+				}
+				else
+				{
+					defaultSortOrder = "asc";
+					if (!searchListing.Default_Sort_Order.Sort_Ascending)
+					{
+						defaultSortOrder = "desc";
+					}
+
+					defaultSortBy = searchListing.Default_Sort_Order.Key;
+				}
+
+				var siteRoot = rssFeedItem.Crawl<ISite_Root>();
+				string publicationParam = "";
+				if (siteRoot != null)
+				{
+					publicationParam = $"&publication={siteRoot.Publication_Name}";
+				}
+
+				feedUrl = string.Format("{0}&sortBy={1}&sortOrder={2}{3}", feedUrl, defaultSortBy, defaultSortOrder, publicationParam);
+			}
 
 			return feedUrl;
 		}
 
 
 		/// <summary>
-		///     Retrieves Sitecore items from the search API
+		///   Retrieves Sitecore items from the search API
 		/// </summary>
 		/// <param name="apiUrl"></param>
 		/// <returns></returns>
@@ -101,8 +127,8 @@ namespace Informa.Library.Rss.ItemRetrieval
 				}
 
 				var resultItems =
-						results.results.Select(searchResult => Context.Database.GetItem(searchResult.ItemId))
-								.Where(theItem => theItem != null);
+					results.results.Select(searchResult => Context.Database.GetItem(searchResult.ItemId))
+						.Where(theItem => theItem != null);
 
 
 				if (Context.RawUrl.ToLower().Contains("emailordering=1"))
