@@ -53,7 +53,7 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public string PublicationTitle { get; set; }
 
-		[IndexField("searchbyline_s")]
+		[IndexField("searchbyline_t")]
 		[DataMember]
 		public string Byline { get; set; }
 
