@@ -1015,6 +1015,9 @@
     <Content Include="js\index.js" />
     <Content Include="js\jscookie.js" />
     <Content Include="js\search-page.js" />
+    <Content Include="js\search\angular-1.5.1.min.js" />
+    <Content Include="js\search\angular-animate-1.5.1.min.js" />
+    <Content Include="js\search\angular-sanitize-1.5.1.min.js" />
     <Content Include="js\search\controllers\emailRssController.js" />
     <Content Include="js\search\controllers\pageSizeController.js" />
     <Content Include="js\search\controllers\headlineSearchController.js" />
