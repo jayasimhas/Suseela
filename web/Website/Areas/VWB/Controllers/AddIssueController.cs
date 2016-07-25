@@ -33,8 +33,8 @@ namespace Informa.Web.Areas.VWB.Controllers
 		[HttpGet]
 		public ActionResult Get(string id)
 		{
-            if (!Sitecore.Context.User.IsAuthenticated || !Sitecore.Context.Domain.Name.ToLower().Equals("sitecore")) 
-                Redirect($"{WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage)}?returnUrl={Request.RawUrl}");
+            if (!Sitecore.Context.User.IsAuthenticated) 
+                return Redirect($"{WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage)}?returnUrl={Request.RawUrl}");
             
             Guid issueId;
 			if (Guid.TryParse(id, out issueId))
