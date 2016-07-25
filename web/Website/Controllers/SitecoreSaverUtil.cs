@@ -111,6 +111,10 @@ namespace Informa.Web.Controllers
             var newVersion = article;
             var info = new WorkflowInfo(Guid.Empty.ToString(), Guid.Empty.ToString());
 
+            //Get initial workflow state before saving
+            WorkflowState workflowStateBefore = articleItem.State.GetWorkflowState();
+            bool isInitiallyFinalState = workflowStateBefore.FinalState;
+
             try
             {
                 Item updatedVersion;
@@ -183,12 +187,12 @@ namespace Informa.Web.Controllers
                             //newVersion.NotificationTransientField.ShouldSend.Checked = true;
                             _articleUtil.ExecuteCommandAndGetWorkflowState(newVersionItem, articleStruct.CommandID.ToString());
 
-                            bool notifyAuthors = false;
-                            if (articleItem.Fields[Sitecore.FieldIDs.WorkflowState].Value != Constants.EditAfterPublishWorkflowCommand
-                                && newVersionItem.Fields[Sitecore.FieldIDs.WorkflowState].Value != Constants.EditAfterPublishWorkflowCommand)
-                            {
+                            //Get workflow state after saving
+                            WorkflowState workflowStateAfter = articleItem.State.GetWorkflowState();
+                            bool isFinalState = workflowStateAfter.FinalState;
+
+                            if (isInitiallyFinalState == false && isFinalState)
                                 notifyAuthors = true;
-                            }
 
                             if (shouldNotify)
                             {
