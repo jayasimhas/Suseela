@@ -17,6 +17,11 @@
             <li class="article-topics__li">@area.Name</li>
         }
 
+        <li class="article-topics__section-header">@Model.AliasHeader</li>
+        @foreach(var syn in Model.Content.Synonyms) {
+            <li class="article-topics__li">@syn</li>
+        }
+
         <li class="article-topics__section-header">@Model.OwnershipHeader</li>
         <li class="article-topics__li">@Model.Content.CompanyInfo.Ownership</li>
 

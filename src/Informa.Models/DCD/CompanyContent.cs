@@ -6,6 +6,7 @@ namespace Informa.Models.DCD
     public class CompanyContent
     {
         public string Name { get; set; }
+        
         public CompanyContactInfo ContactInfo { get; set; }
         public CompanyInfo CompanyInfo { get; set; }
         public ParentsAndDivisions ParentsAndDivisions { get; set; }
@@ -19,6 +20,10 @@ namespace Informa.Models.DCD
         [XmlArray("Employees")]
         [XmlArrayItem("Employee")]
         public string[] Employees { get; set; }
+
+        [XmlArray("Synonyms")]
+        [XmlArrayItem("Synonym")]
+        public string[] Synonyms { get; set; }
     }
 
     public class CompanyInfo
