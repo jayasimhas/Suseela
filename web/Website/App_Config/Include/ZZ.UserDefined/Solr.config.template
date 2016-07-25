@@ -59,7 +59,7 @@
               #end
             </strategies>
             <locations hint="list:AddCrawler">
-              <crawler type="Sitecore.ContentSearch.InformaItemCrawler, Sitecore.ContentSearch">
+              <crawler type="Informa.Library.Search.Crawlers.InformaItemCrawler, Sitecore.ContentSearch">
                 <Database>web</Database>
                 <Root>/sitecore/Content</Root>
                 <ExcludeItemsList hint="list">
@@ -95,7 +95,7 @@
               <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/syncMaster" />
             </strategies>
             <locations hint="list:AddCrawler">
-              <crawler type="Sitecore.ContentSearch.InformaItemCrawler, Sitecore.ContentSearch">
+              <crawler type="Informa.Library.Search.Crawlers.InformaItemCrawler, Sitecore.ContentSearch">
                 <Database>master</Database>
                 <Root>/sitecore/Content</Root>
                 <ExcludeItemsList hint="list">
