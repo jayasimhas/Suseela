@@ -14,7 +14,7 @@ namespace Informa.Library.Publication
 		{
 			PublicationsContext = publicationsContext;
 		}
-
+		// TODO : 2016/07/11 - We really should make one to find by name and find by code.  This is used in 2 different ways and the variable naming is confusing. Results are inconsistent.
 		public ISitePublication Find(string publicationCode)
 		{
 			return PublicationsContext.Publications.FirstOrDefault(p => string.Equals(p.Name, publicationCode, StringComparison.InvariantCultureIgnoreCase));

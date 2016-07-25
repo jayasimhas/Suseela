@@ -1,29 +1,20 @@
 ﻿using System;
-using System.Collections;
 using System.Configuration;
-using System.Data;
 using System.Linq;
 using System.Web;
-using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
-using System.Data.SqlClient;
 using Sitecore.Data.Items;
 using System.Collections.Generic;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
-using Sitecore.Shell.Web.UI;
 using Sitecore.SharedSource.DataImporter.Providers;
-using Sitecore.SharedSource.DataImporter.Extensions;
 using System.Text;
 using System.IO;
 using CsvHelper;
 using Sitecore.Web;
 using Sitecore.SharedSource.DataImporter.Logger;
-using Sitecore.SharedSource.DataImporter;
+using Sitecore.SharedSource.DataImporter.PostProcess;
 
 namespace Sitecore.SharedSource.DataImporter.Editors
 { 
@@ -67,6 +58,8 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             } 
         }
 
+        #region Logging
+
         protected void Log(string message) {
             log.Append(message).AppendLine().AppendLine();
         }
@@ -75,7 +68,11 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             log.AppendFormat("{0} : {1}", errorType, message).AppendLine().AppendLine();
         }
 
-	    protected void btnImport_Click(object sender, EventArgs e) {
+        #endregion Loggging
+
+        #region Import
+
+        protected void btnImport_Click(object sender, EventArgs e) {
 
             //check import item
             if (importItem == null)
@@ -158,8 +155,20 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             repJobs.DataSource = Jobs;
             repJobs.DataBind();       
 	    }
+        protected void HandleImport(IDataMap map, DefaultLogger l) {
 
-		protected void btnMediaImport_Click(object sender, EventArgs e)
+            ImportProcessor p = new ImportProcessor(map, l);
+            p.Process();
+            txtMessage.Text = l.GetLog();
+            
+            WriteLogs(l);
+        }
+
+        #endregion Import
+
+        #region Media Import
+
+        protected void btnMediaImport_Click(object sender, EventArgs e)
 		{
 
 			//check import item
@@ -250,15 +259,48 @@ namespace Sitecore.SharedSource.DataImporter.Editors
 			handler?.TransferMediaLibrary();
 	    }
 
-		protected void HandleImport(IDataMap map, DefaultLogger l) {
-        
-            ImportProcessor p = new ImportProcessor(map, l);
-            p.Process();
-            txtMessage.Text = l.GetLog();
+        #endregion Media Import
 
-            
-            foreach (KeyValuePair<string, List<ImportRow>> kvp in l.GetLogRecords())
+        #region Post Import
+
+        protected void btnPostImport_Click(object sender, EventArgs e)
+        {
+            var jobOptions = new Sitecore.Jobs.JobOptions(
+                                    "PostImport",
+                                    "Post Import",
+                                    Sitecore.Context.Site.Name,
+                                    this,
+                                    "HandlePostImport",
+                                    new object[] { });
+
+            Sitecore.Jobs.JobManager.Start(jobOptions);
+
+            repJobs.DataSource = Jobs;
+            repJobs.DataBind();
+        }
+
+        protected void HandlePostImport()
+        {
+            DefaultLogger l = new DefaultLogger();
+            InformaPostProcess p = new InformaPostProcess(l);
+            p.UpdateArticleReferences();
+
+            WriteLogs(l);
+        }
+
+        #endregion Post Import
+
+        public IEnumerable<Sitecore.Jobs.Job> Jobs
+        {
+            get
             {
+                return Sitecore.Jobs.JobManager.GetJobs().OrderBy(job => job.QueueTime);
+            }
+        }
+
+        private void WriteLogs(DefaultLogger l)
+        {
+            foreach (KeyValuePair<string, List<ImportRow>> kvp in l.GetLogRecords()) {
                 string logPath = string.Format(@"{0}sitecore modules\Shell\Data Import\logs\{1}.{2}.{3}.csv",
                                     HttpRuntime.AppDomainAppPath, importItem.DisplayName.Replace(" ", "-"),
                                     DateTime.Now.ToString("yyyy.MM.dd.H.mm.ss"),
@@ -269,14 +311,6 @@ namespace Sitecore.SharedSource.DataImporter.Editors
                 foreach (ImportRow ir in kvp.Value)
                     csvFile.WriteRecord(ir);
                 file.Close();
-            }
-        }
-
-        public IEnumerable<Sitecore.Jobs.Job> Jobs
-        {
-            get
-            {
-                return Sitecore.Jobs.JobManager.GetJobs().OrderBy(job => job.QueueTime);
             }
         }
     }

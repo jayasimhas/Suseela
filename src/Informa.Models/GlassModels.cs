@@ -25858,6 +25858,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Free_Trial_Rate_Plan_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Free_Trial_Rate_Plan_Id  {get; set;}
 								/// <summary>
+					/// The Journal ID field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 8eef4c5d-e765-4f76-af30-a6168fdddd08</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Journal_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Journal_ID  {get; set;}
+								/// <summary>
+					/// The Journal Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 1e44223b-5a22-4fe5-ae46-1e814ac36cab</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Journal_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Journal_Title  {get; set;}
+								/// <summary>
 					/// The Publication Code field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -26680,6 +26698,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Free_Trial_Rate_Plan_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Free_Trial_Rate_Plan_Id  {get; set;}
 										/// <summary>
+						/// The Journal ID field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 8eef4c5d-e765-4f76-af30-a6168fdddd08</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Journal_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Journal_ID  {get; set;}
+										/// <summary>
+						/// The Journal Title field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 1e44223b-5a22-4fe5-ae46-1e814ac36cab</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Journal_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string Journal_Title  {get; set;}
+										/// <summary>
 						/// The Publication Code field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -27267,6 +27303,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Free_Trial_Rate_Plan_IdFieldId = new ID("79d023a1-b034-4228-8add-17802896ce53");
 			public const string Free_Trial_Rate_Plan_IdFieldName = "Free Trial Rate Plan Id";
+
+						
+					
+			public static readonly ID Journal_IDFieldId = new ID("8eef4c5d-e765-4f76-af30-a6168fdddd08");
+			public const string Journal_IDFieldName = "Journal ID";
+
+						
+					
+			public static readonly ID Journal_TitleFieldId = new ID("1e44223b-5a22-4fe5-ae46-1e814ac36cab");
+			public const string Journal_TitleFieldName = "Journal Title";
 
 						
 					
@@ -41738,6 +41784,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Free_Trial_Rate_Plan_IdFieldId = new ID("79d023a1-b034-4228-8add-17802896ce53");
 			public const string Free_Trial_Rate_Plan_IdFieldName = "Free Trial Rate Plan Id";
+
+						
+					
+			public static readonly ID Journal_IDFieldId = new ID("8eef4c5d-e765-4f76-af30-a6168fdddd08");
+			public const string Journal_IDFieldName = "Journal ID";
+
+						
+					
+			public static readonly ID Journal_TitleFieldId = new ID("1e44223b-5a22-4fe5-ae46-1e814ac36cab");
+			public const string Journal_TitleFieldName = "Journal Title";
 
 						
 					

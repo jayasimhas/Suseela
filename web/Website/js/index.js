@@ -580,7 +580,16 @@ $(document).ready(function() {
 
 		var dismissedBanners = Cookies.getJSON('dismissedBanners') || {};
 		dismissedBanners[thisBanner.data('banner-id')] = true;
-		Cookies.set('dismissedBanners', dismissedBanners, {expires: 3650 } );
+
+        // if banner has a 'dismiss-all-subdomains' attribute = true, set the domain of the cookie
+        // to the top-level domain.
+        var domain = document.location.hostname;
+        if (thisBanner.data('dismiss-all-subdomains')) {
+            var parts = domain.split('.');
+            parts.shift();
+            domain = parts.join('.');
+        }
+        Cookies.set('dismissedBanners', dismissedBanners, {expires: 3650, domain: domain } );
 	});
 
 	// For each article table, clone and append "view full table" markup
@@ -855,6 +864,10 @@ $(document).ready(function() {
 	$('.click-utag').click(function (e) {
 		analyticsEvent( $.extend(analytics_data, $(this).data('info')) );
 	});
+
+    $('.search-results').on('click', '.click-utag', function (e) {
+        analyticsEvent( $.extend(analytics_data, $(this).data('info')) );
+    });
 
 	$('#chkASBilling').click(function(e){
 		if($(this).is(':checked'))

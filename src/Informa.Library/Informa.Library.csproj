@@ -365,6 +365,7 @@
     <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
+    <Compile Include="CustomSitecore\Providers\EmailLinkProvider.cs" />
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />

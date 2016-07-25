@@ -31,11 +31,12 @@ namespace Informa.Library.Publishing.Scheduled
             {
                 AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, plannedPublishDateField.DateTime, ScheduledPublishType.Planned);
 
+                var wfState = item.State.GetWorkflowState();
                 //To prevent publishing of articles according to their PublishDate or ValidFrom before their Planned Publish Date
-                if (plannedPublishDateField.DateTime <= ScheduledPublishingDateTime.Now)
+                if (plannedPublishDateField.DateTime <= ScheduledPublishingDateTime.Now && wfState != null && wfState.FinalState)
                 {
                     AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, item.Publishing.PublishDate, ScheduledPublishType.From);
-                    AddScheduledPublish(scheduledPublishes, itemId, language, version, item.Publishing.ValidFrom, ScheduledPublishType.From);                    
+                    AddScheduledPublish(scheduledPublishes, itemId, language, version, item.Publishing.ValidFrom, ScheduledPublishType.From);
                 }
             }
 

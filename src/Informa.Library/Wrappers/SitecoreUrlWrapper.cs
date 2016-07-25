@@ -20,6 +20,7 @@ namespace Informa.Library.Wrappers
     public class SitecoreUrlWrapper : BaseSitecoreWrapper, ISitecoreUrlWrapper
     {
         private readonly IDependencies _dependencies;
+				public Database ContextDatabase { get; private set; }
 
         [AutowireService(IsAggregateService = true)]
         public interface IDependencies
@@ -30,6 +31,7 @@ namespace Informa.Library.Wrappers
         public SitecoreUrlWrapper(IDependencies dependencies)
         {
             _dependencies = dependencies;
+	        ContextDatabase = Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database;
         }
 
         public string GetHostName() => Sitecore.Web.WebUtil.GetHostName();
@@ -37,17 +39,17 @@ namespace Informa.Library.Wrappers
         public string GetItemUrl(IGlassBase glassItem) => glassItem != null ? GetItemUrl(glassItem._Id) : null;
         public string GetItemUrl(Guid itemId)
         {
-            var item = GetItem(itemId, Constants.MasterDb);
+            var item = ContextDatabase.GetItem(new ID(itemId));
             var itemUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
             var scheme = _dependencies.HttpContextProvider.RequestUri?.Scheme + "://";
 
-            return scheme + GetHostName() + itemUrl;
+            return itemUrl;
         }
 
         public string GetMediaUrl(IGlassBase glassItem) => glassItem != null ? GetMediaUrl(glassItem._Id) : null;
         public string GetMediaUrl(Guid itemId)
         {
-            MediaItem imageItem = Sitecore.Context.Database.GetItem(new ID(itemId));
+            MediaItem imageItem = ContextDatabase.GetItem(new ID(itemId));
 
             if (imageItem == null) return null;
 

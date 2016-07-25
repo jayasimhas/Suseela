@@ -159,6 +159,7 @@
     <dynamicField name="*_i" type="int" indexed="true" stored="true" />
     <dynamicField name="*_s" type="string" indexed="true" stored="true" />
     <dynamicField name="*_sm" type="string" indexed="true" stored="true" multiValued="true" />
+    <dynamicField name="*_lc" type="string_lowerCase" indexed="true" stored="true" />
     <dynamicField name="*_im" type="int" indexed="true" stored="true" multiValued="true" />
     <dynamicField name="*_b" type="boolean" indexed="true" stored="true" />
     <dynamicField name="*_dt" type="date" indexed="true" stored="true" />
@@ -205,6 +206,12 @@
        single-valued and either required or have a default value.
       -->
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+	<fieldType name="string_lowerCase" class="solr.TextField" sortMissingLast="true" >
+		<analyzer>
+			<tokenizer class="solr.KeywordTokenizerFactory"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+    </fieldType>
     <!-- boolean type: "true" or "false" -->
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" />
     <!-- sortMissingLast and sortMissingFirst attributes are optional attributes are

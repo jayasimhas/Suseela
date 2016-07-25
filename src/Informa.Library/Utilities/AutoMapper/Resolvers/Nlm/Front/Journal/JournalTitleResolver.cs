@@ -1,34 +1,44 @@
 ﻿using System;
 using AutoMapper;
-using Glass.Mapper.Sc;
+using Informa.Library.Services.Global;
 using Informa.Library.Services.NlmExport.Models.Front.Journal;
-using Informa.Library.Utilities.References;
+using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 
 namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Journal
 {
-    public class JournalTitleResolver : BaseValueResolver<ArticleItem, NlmJournalTitleModel>
-    {
-        private readonly IItemReferences _itemReferences;
-        private readonly ISitecoreService _service;
+	public class JournalTitleResolver : BaseValueResolver<ArticleItem, NlmJournalTitleModel>
+	{
+		private readonly IGlobalSitecoreService _globalService;
 
-        public JournalTitleResolver(IItemReferences itemReferences, ISitecoreService service)
-        {
-            if (itemReferences == null) throw new ArgumentNullException(nameof(itemReferences));
-            if (service == null) throw new ArgumentNullException(nameof(service));
-            _itemReferences = itemReferences;
-            _service = service;
-        }
+		public JournalTitleResolver(IGlobalSitecoreService globalService)
+		{
+			if (globalService == null) throw new ArgumentNullException(nameof(globalService));
+			_globalService = globalService;
+		}
 
-        protected override NlmJournalTitleModel Resolve(ArticleItem source, ResolutionContext context)
-        {
-            var title = _service.GetItem<INLM_Config>(_itemReferences.NlmConfiguration)?.Journal_Title;
+		protected override NlmJournalTitleModel Resolve(ArticleItem source, ResolutionContext context)
+		{
+			var pubRoot =  source.Crawl<ISite_Root>();
+			if (pubRoot == null)
+			{
+				throw new ArgumentNullException("pubRoot", $"Journal Title could not be resolved for {source._Path} because the site root could not be located.");
+			}
 
-            return new NlmJournalTitleModel
-            {
-                Title = title
-            };
-        }
-    }
+			var title = (pubRoot != null)
+				? pubRoot.Journal_Title
+				: string.Empty;
+
+			if (string.IsNullOrEmpty(title))
+			{
+				throw new ArgumentNullException("journalTitle", $"Journal Title could not be resolved for {source._Path}");
+			}
+
+			return new NlmJournalTitleModel
+			{
+				Title = title
+			};
+		}
+	}
 }

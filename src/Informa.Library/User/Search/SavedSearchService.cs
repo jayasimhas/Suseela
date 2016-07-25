@@ -161,14 +161,14 @@ namespace Informa.Library.User.Search
 			_dependencies.UserSession.Clear(SessionKey);
 		}
 
-	    private string GetUnsubscribeToken(ISavedSearchEntity entity)
-	    {
-	        var raw = string.Concat(entity.Username, "|", entity.Name);
-	        var encoded = HttpUtility.UrlEncode(raw);
-	        return _dependencies.Crypto.EncryptStringAes(encoded, Constants.CryptoKey);
-	    }
+        private string GetUnsubscribeToken(ISavedSearchEntity entity)
+        {
+            var toEncrypt = string.Concat(entity.Username, "|", entity.Name);
+            var encrypted = _dependencies.Crypto.EncryptStringAes(toEncrypt, Constants.CryptoKey);
+            return HttpUtility.UrlEncode(encrypted);
+        }
 
-		protected virtual IEnumerable<string> ExtractSources(string url)
+        protected virtual IEnumerable<string> ExtractSources(string url)
 		{
 			return url.ExtractParamValue("publication").Split(SiteSettings.ValueSeparator).Where(s => !string.IsNullOrEmpty(s)).Select(HttpUtility.UrlDecode);
 		}
