@@ -14,6 +14,11 @@ using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.System.Dictionary;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Core.Caching;
+using Sitecore.Resources.Media;
+using Informa.Library.Services.Global;
+using Sitecore.Data.Items;
+using Sitecore.Web;
+using System.Web;
 
 namespace Informa.Library.Services.Article {
 
@@ -23,15 +28,18 @@ namespace Informa.Library.Services.Article {
         protected readonly ICacheProvider CacheProvider;
         protected readonly ITextTranslator TextTranslator;
 		protected readonly ISiteRootsContext SiteRootsContext;
+        protected readonly IGlobalSitecoreService GlobalService;
 
 		public ArticleService(
             ICacheProvider cacheProvider,
             ITextTranslator textTranslator, 
-			ISiteRootsContext siteRootsContext)
+			ISiteRootsContext siteRootsContext,
+            IGlobalSitecoreService globalService)
         {
             CacheProvider = cacheProvider;
             TextTranslator = textTranslator;
 			SiteRootsContext = siteRootsContext;
+            GlobalService = globalService;
         }
 
         private string CreateCacheKey(string suffix)
@@ -141,5 +149,36 @@ namespace Informa.Library.Services.Article {
 			    ? siteRoot.Publication_Name
 			    : string.Empty;
 	    }
+
+        public string GetDownloadUrl(IArticle article) {
+            string cacheKey = CreateCacheKey($"GetDownloadLink-{article._Id}");
+            return CacheProvider.GetFromCache(cacheKey, () => BuildDownloadUrl(article));
+        }
+        protected string BuildDownloadUrl(IArticle article) {
+
+            if (article.Word_Document == null)
+                return string.Empty;
+
+            Item wordDoc =  GlobalService.GetItem<Item>(article.Word_Document.TargetId);
+            if (wordDoc == null) 
+                return string.Empty;
+            
+            string url = MediaManager.GetMediaUrl(wordDoc)
+                .Replace("/-/", "/~/")
+                .Replace("-", " ");
+            return url;
+        }
+
+        public string GetPreviewUrl(IArticle article) {
+            string cacheKey = CreateCacheKey($"GetPreviewLink-{article._Id}");
+            return CacheProvider.GetFromCache(cacheKey, () => BuildPreviewUrl(article));
+        }
+
+        protected string BuildPreviewUrl(IArticle article) {
+            string previewUrl = HttpContext.Current.Request.Url.Scheme + "://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en";
+            string fullLink = $"/VWB/Util/LoginRedirectToPreview.aspx?redirect={HttpUtility.UrlEncode(previewUrl)}";
+
+            return fullLink;
+        }
     }
 }

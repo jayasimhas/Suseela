@@ -63,7 +63,7 @@
 			Article Number
 		</div>
 		<div>
-			Article Name
+			Title
 		</div>
 		<div>
 			Delete/Re-Add
@@ -74,13 +74,21 @@
 				<div class="draggable js-draggable" id="@article._Id">
 					<div></div>
 					<div>
-						@article.Article_Number
+                        @if (!string.IsNullOrEmpty(Model.ArticleService.GetDownloadUrl(article))) {
+                        <a target="_blank" href="@Model.ArticleService.GetDownloadUrl(article)">
+                            <img width="16" height="16" align="absmiddle" src="/VWB/images/vwb/wordicon.png" alt="Hyperlink"/>
+                            @article.Article_Number
+                        </a>
+                        } else {
+                            @article.Article_Number
+                        }
 					</div>
 					<div>
-						@Html.Raw(article.Title)
+                        <a target="_blank" href="@Model.ArticleService.GetPreviewUrl(article)">
+                            @Html.Raw(article.Title)
+                        </a>
 					</div>
 					<div class="delete-article js-delete-article">
-
 						<a class="delete-button">Toggle Delete</a>
 					</div>
 				</div>

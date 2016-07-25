@@ -7,7 +7,9 @@ using Informa.Library.Wrappers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard;
 using Informa.Web.ViewModels.VWB;
 using Jabberwocky.Autofac.Attributes;
-
+using Sitecore.Web;
+using Sitecore.Configuration;
+using Informa.Library.Services.Article;
 
 namespace Informa.Web.Areas.VWB.Controllers
 {
@@ -31,17 +33,21 @@ namespace Informa.Web.Areas.VWB.Controllers
 		[HttpGet]
 		public ActionResult Get(string id)
 		{
-			Guid issueId;
+            if (!Sitecore.Context.User.IsAuthenticated) 
+                Redirect($"{WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage)}?returnUrl={Request.RawUrl}");
+            
+            Guid issueId;
 			if (Guid.TryParse(id, out issueId))
 			{
 				var issue = _dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId);
-				
+                var articleService = DependencyResolver.Current.GetService<IArticleService>();
+
 				if (issue != null)
 				{
-					var model = new AddIssueViewModel
-					{
-						Issue = issue,
-						Articles = _dependencies.IssuesService.GetArticles(issueId)
+                    var model = new AddIssueViewModel {
+                        Issue = issue,
+                        Articles = _dependencies.IssuesService.GetArticles(issueId),
+                        ArticleService = articleService
 					};
 					return View("~/Areas/VWB/Views/AddIssue.cshtml", model);
 				}               												

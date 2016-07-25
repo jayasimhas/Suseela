@@ -16,5 +16,7 @@ namespace Informa.Library.Services.Article
         string GetLegacyPublicationText(IArticle glassModel);
         IEnumerable<IFile> GetSupportingDocuments(IArticle glassModel);
 	    string GetArticlePublicationName(IArticle article);
+        string GetDownloadUrl(IArticle article);
+        string GetPreviewUrl(IArticle article);
     }
 }
