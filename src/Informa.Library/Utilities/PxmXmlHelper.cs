@@ -8,6 +8,7 @@ namespace Informa.Library.Utilities
 	public interface IPxmXmlHelper
 	{
 		string FinalizeStyles(string content);
+		string ProcessIframeTag(string content);
 	}
 
 	[AutowireService]
@@ -36,7 +37,7 @@ namespace Informa.Library.Utilities
 			AddBlockquoteStyles(doc);
 			return doc.OuterXml.Replace("<TextFrame>", "").Replace("</TextFrame>", "");
 			//return outputXML;
-		}	
+		}
 
 		public void AddSidebarStyles(XmlDocument doc)
 		{
@@ -47,7 +48,7 @@ namespace Informa.Library.Utilities
 			}
 		}
 
-		public void  AddBlockquoteStyles(XmlDocument doc)
+		public void AddBlockquoteStyles(XmlDocument doc)
 		{
 			var inlines = doc.SelectNodes("//Inline");
 			if (inlines != null)
@@ -77,6 +78,29 @@ namespace Informa.Library.Utilities
 					}
 				}
 			}
+		}
+
+		public string ProcessIframeTag(string content)
+		{
+			var doc = new HtmlDocument();
+			doc.LoadHtml(content);
+			var xpath = @"//iframe";
+			var iframes = doc.DocumentNode.SelectNodes(xpath);
+			if (iframes == null)
+				return doc.DocumentNode.OuterHtml;
+			
+			foreach (HtmlNode iframe in iframes)
+			{
+				var parent = iframe.ParentNode;
+				var attr = iframe.Attributes["class"];
+				if (attr != null && attr.Value.Contains("mobile")) 
+					continue;
+				
+				var src = iframe.Attributes["src"];
+				if (src != null)
+					parent.InnerHtml = $"<p class=\"iframe-content\"><pre type=\"\" height=\"\" width=\"\"><p>Iframe Content: {src.Value}</p></pre></p>";
+			}
+			return doc.DocumentNode.OuterHtml;
 		}
 	}
 }

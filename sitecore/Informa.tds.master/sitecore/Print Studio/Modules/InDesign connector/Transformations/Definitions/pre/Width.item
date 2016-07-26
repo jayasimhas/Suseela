@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {A351334C-7AD2-47ED-9719-424BD68E59CD}
+id: {F825E245-5DFD-40BF-8BCA-D35974F96BAA}
 database: master
-path: /sitecore/Print Studio/Modules/InDesign connector/Transformations/Definitions/div/interview answer
-parent: {58113987-7FF4-4C81-B53C-55A6E91566B2}
-name: interview answer
+path: /sitecore/Print Studio/Modules/InDesign connector/Transformations/Definitions/pre/Width
+parent: {C8389ECE-F401-4EBB-81F6-164F11EE20E0}
+name: Width
 master: {00000000-0000-0000-0000-000000000000}
 template: {7CD0ED9C-975D-41ED-B106-E4C60E06D4F7}
 templatekey: TransformationAttribute
@@ -15,32 +15,25 @@ name: XML Attribute
 key: xml attribute
 content-length: 5
 
-Style
+Width
 ----field----
 field: {9F94D809-627E-468E-99DC-AB523D8F2E56}
 name: XML Default value
 key: xml default value
-content-length: 20
+content-length: 3
 
-2.4 Interview Answer
+100
 ----field----
 field: {89AD5209-B1C5-44D0-99E8-46F391B12E0F}
 name: XHTML Attribute
 key: xhtml attribute
 content-length: 5
 
-class
-----field----
-field: {6BCB71D1-9FB5-4AF5-96D5-9FC1E4284E49}
-name: XHTML Default value
-key: xhtml default value
-content-length: 25
-
-article-interview__answer
+width
 ----version----
 language: en
 version: 1
-revision: ef80164e-2bfd-4c1d-afc2-4d7c56de0066
+revision: b6075b6b-2cc0-4cd6-8276-8525187c162f
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -55,7 +48,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20160725T175654Z
+20160719T154240Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -69,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ef80164e-2bfd-4c1d-afc2-4d7c56de0066
+b6075b6b-2cc0-4cd6-8276-8525187c162f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160725T180044Z
+20160719T154623Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -2,7 +2,7 @@
 version: 1
 id: {D071DFB9-B3E0-4D38-AA2C-BA7D6F0714E0}
 database: master
-path: /sitecore/Print Studio/Modules/InDesign connector/Transformations/Definitions/div/interview question
+path: /sitecore/Print Studio/Modules/InDesign connector/Transformations/Definitions/interview div/interview question
 parent: {58113987-7FF4-4C81-B53C-55A6E91566B2}
 name: interview question
 master: {00000000-0000-0000-0000-000000000000}

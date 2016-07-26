@@ -78,5 +78,8 @@ Purpose: This include file configures PrintStudio. The file is mandatory for Pri
         </ignoreSites>
       </requestProtection>
     </mediaLibrary>
+    <settings>
+	  <setting name="PrintStudio.UseSampleFile" value="false" />
+	</settings>
   </sitecore>
 </configuration>
