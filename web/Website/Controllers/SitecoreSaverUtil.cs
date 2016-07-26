@@ -188,9 +188,10 @@ namespace Informa.Web.Controllers
                             _articleUtil.ExecuteCommandAndGetWorkflowState(newVersionItem, articleStruct.CommandID.ToString());
 
                             //Get workflow state after saving
-                            WorkflowState workflowStateAfter = articleItem.State.GetWorkflowState();
+                            WorkflowState workflowStateAfter = newVersionItem.State.GetWorkflowState();
                             bool isFinalState = workflowStateAfter.FinalState;
 
+                            var notifyAuthors = false;
                             if (isInitiallyFinalState == false && isFinalState)
                                 notifyAuthors = true;
 

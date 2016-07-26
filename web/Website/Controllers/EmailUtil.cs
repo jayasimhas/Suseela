@@ -90,7 +90,10 @@ namespace Informa.Web.Controllers
 
             var emailBody = CreateBody(articleStruct, title, siteConfigItem.Publication_Name, oldWorkflow);
 
-            foreach (var eachEmail in notificationList.Concat(articleStruct.Authors))
+            if (notifyAuthors)
+                notificationList = notificationList.Concat(articleStruct.Authors).ToList();
+
+            foreach (var eachEmail in notificationList)
             {
                 var notificationUser = _service.GetItem<IStaff_Item>(eachEmail.ID);
                 if (string.IsNullOrEmpty(notificationUser?.Email_Address)) continue;
