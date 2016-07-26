@@ -48,6 +48,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
         public void Process(HttpRequestArgs args)
         {
+            Models.Informa.Models.sitecore.templates.User_Defined.Configuration.ISite_Root siteRoot = null;
             Logger.SitecoreDebug($"LegacyRedirectResolver started");
             Assert.ArgumentNotNull(args, "args");
 
@@ -87,7 +88,8 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
                 var newPath = ArticleSearch.GetArticleCustomPath(article);
                 Logger.SitecoreDebug($"LegacyRedirectResolver article path: {newPath}");
 
-                var siteRoot = GlobalService.GetSiteRootAncestor(article._Id);
+                siteRoot = GlobalService.GetSiteRootAncestor(article._Id);
+
                 if (siteRoot == null)
                 {
                     Logger.SitecoreDebug($"LegacyRedirectResolver didn't find site root for: {article._Path}");
@@ -97,7 +99,6 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
                 {
                     Logger.SitecoreDebug($"LegacyRedirectResolver did find site root for: {article._Path}");
                 }
-
 
                 var siteInfo = Factory.GetSiteInfoList().FirstOrDefault(a => a.RootPath.Equals(siteRoot._Path));
                 if (siteInfo == null)
