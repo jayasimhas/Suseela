@@ -20,6 +20,7 @@ namespace Informa.Library.PXM
 				var helper = scope.Resolve<IPxmXmlHelper>();
 				args.InputText = tokenToHtml.ReplaceAllTokens(args.InputText);
 				args.InputText = helper.ProcessIframeTag(args.InputText);
+				args.InputText = helper.AddCssClassToQuickFactsText(args.InputText);
 			}
 		}
 	}
