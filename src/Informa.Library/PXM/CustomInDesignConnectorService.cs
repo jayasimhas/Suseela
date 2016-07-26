@@ -2638,8 +2638,10 @@ namespace Informa.Library.PXM
 			xElement.SetAttributeValue("ItemReferenceID", contentItemId);
 			string str1 = Path.Combine(printOption1.CacheFolder, string.Concat(str, ".xml"));
 			RenderItemHelper.OutputToFile(str1, xElement);
-			empty = string.Concat(WebConfigHandler.CommonSettings.WebHost, "/PrintStudio/Handlers/PrintCacheHandler.ashx?fileName=", printOption1.FormatResourceLink(str1));
-			//empty = string.Concat(WebConfigHandler.CommonSettings.WebHost, "/PrintStudio/Handlers/PrintCacheHandler.ashx?fileName=sample.xml");
+			string fileVal = Settings.GetSetting("PrintStudio.UseSampleFile");
+            bool useFile = System.Convert.ToBoolean(fileVal);
+			string filePath = (useFile) ? "sample.xml" : printOption1.FormatResourceLink(str1);
+			empty = string.Concat(WebConfigHandler.CommonSettings.WebHost, "/PrintStudio/Handlers/PrintCacheHandler.ashx?fileName=", filePath);
 			return empty;
 		}
 
