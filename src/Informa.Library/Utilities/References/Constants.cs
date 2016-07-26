@@ -39,7 +39,6 @@ namespace Informa.Library.Utilities.References
 		public const string MSWordDocumentRootNode = "{FDBFCAC8 -03CA-4B0B-BEFE-2171050E19C6}";
 
 		public static string EditAfterPublishWorkflowCommand = "{322D0739-B3AC-416F-BF58-5E39E716F003}";
-        public static string ReadyForProductionWorkflowCommand = "{322D0739-B3AC-416F-BF58-5E39E716F003}";
 
         public static string ScripWorkflow = "{926E6200-EB76-4AD4-8614-691D002573AC}";
 		public static readonly Dictionary<Guid, string> PublicationPrefixDictionary = new Dictionary<Guid, string>
