@@ -110,18 +110,6 @@ namespace Elsevier.Web.VWB
                 count = int.Parse(HttpContext.Current.Request.QueryString["max"]);
             }
             catch { }
-			//TextNodeItem maxResults = ItemReference.MaxResultsPerSearch.InnerItem;
-			//if (maxResults != null)
-			//{
-			//	try
-			//	{
-			//		return Int32.Parse(maxResults.Text.Text);
-			//	}
-			//	catch (Exception)
-			//	{
-			//		return 60;
-			//	}
-			//}
 			return count;
 		}
 
@@ -184,57 +172,27 @@ namespace Elsevier.Web.VWB
 		private void RunQuery(bool execute)
 		{
 			var q = _vwbQuery.Clone();
-			if (rbDateRange.Checked)
-			{
-				DateTime startDate;
-				DateTime.TryParse(txtStart.Text, out startDate);
-				DateTime endDate;
-				DateTime.TryParse(txtEnd.Text, out endDate);
-
-				if (!endDate.Equals(DateTime.MinValue) && !startDate.Equals(DateTime.MinValue))
-				{
-					q.StartDate = startDate;
-					//endDate = endDate.AddDays(1); //setting up the range so that it include the end date
-					q.EndDate = endDate;
-				}
-
-				if (q.StartDate.HasValue && !string.IsNullOrEmpty(txtStartTime.Text))
-				{
-					DateTime startTime;
-					var combinedStartTime = string.Format("{0} {1}", txtStart.Text, txtStartTime.Text);
-					if (DateTime.TryParse(combinedStartTime, out startTime))
-					{
-						q.StartDate = startTime;
-					}
-				}
-
-				if (q.EndDate.HasValue && !string.IsNullOrEmpty(txtEndTime.Text))
-				{
-					DateTime endTime;
-					var combinedEndTime = string.Format("{0} {1}", txtEnd.Text, txtEndTime.Text);
-					if (DateTime.TryParse(combinedEndTime, out endTime))
-					{
-						q.EndDate = endTime;
-					}
-				}
-			}
-			else
-			{
-				q.StartDate = null;
-				q.EndDate = null;
-			}
-
-			if (chkShowInProgressArticles.Checked)
-			{
-				q.InProgressValue = true;
-			}
-			else
-			{ q.InProgressValue = false; }
-
+            q.StartDate = (rbDateRange.Checked) ? GetDateValue(txtStart.Text, txtStartTime.Text) : null;
+            q.EndDate = (rbDateRange.Checked) ? GetDateValue(txtEnd.Text, txtEndTime.Text) : null;
+            q.InProgressValue = chkShowInProgressArticles.Checked;
+			
 			q.ShouldRun = execute;
 			q.NumResultsValue = GetMaxNumResults();
 			RedirectTo(q);
 		}
+
+        protected DateTime? GetDateValue(string date, string time) {
+            if (string.IsNullOrEmpty(date))
+                return null;
+
+            DateTime dt;
+            string formattedDate = (string.IsNullOrEmpty(time)) ? date : string.Format("{0} {1}", date, time);
+            bool validStart = DateTime.TryParse(formattedDate, out dt);
+            if (validStart)
+                return dt;
+            else
+                return null;
+        }
 
 		/// <summary>
 		/// Populates ddColumns with all columns not already spoken for in generated report
