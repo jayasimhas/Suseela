@@ -97,20 +97,6 @@ namespace Informa.Web.CustomMvc
 
 				if (parser == null)
 					return;
-
-				//var paragraphElement = resultElement.Element("ParagraphStyle");
-				//if (definition.HtmlTag == "p" && paragraphElement!= null)
-				//{
-				//	if (paragraphElement.Attribute("Style") != null)
-				//	{
-				//		paragraphElement.Attribute("Style").Value = parseContext.DefaultParagraphStyle;
-				//	}
-				//	else
-				//	{
-				//		XAttribute attribute = new XAttribute("Style", parseContext.DefaultParagraphStyle);
-				//		paragraphElement.Add(attribute);
-				//	}
-				//}
 			}
 			else if (HtmlParseHelper.IsPlainTextNode(htmlNode))
 			{
