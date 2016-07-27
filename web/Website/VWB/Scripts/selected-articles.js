@@ -110,7 +110,7 @@ $(document)
                     e.preventDefault();
                     var existingIssue = $('.js-existing-issue').val();
                     if (existingIssue && existingIssue !== 'DEFAULT') {
-                        window.location = "/vwb/addissue?id=" + existingIssue;
+                        window.open("/vwb/addissue?id=" + existingIssue, "_blank");
                     }
                 });
 

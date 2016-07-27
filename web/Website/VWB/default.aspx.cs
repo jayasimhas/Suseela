@@ -17,6 +17,7 @@ using Sitecore.Shell.Applications.ContentEditor;
 using Sitecore.Web;
 using Sitecore.Web.Authentication;
 using DateTime = System.DateTime;
+using System.Web.Mvc;
 
 namespace Elsevier.Web.VWB
 {
@@ -267,7 +268,9 @@ namespace Elsevier.Web.VWB
 
                 if (result.IsSuccess)
                 {
-                    Response.Redirect(IssuePageUrl + result.IssueId);
+                    BuildReport();
+                    string url = $"{IssuePageUrl}{result.IssueId}";
+                    Response.Write($"<script>window.open('{ResolveUrl(url)}','_blank')</script>");
                 }
                 else
                 {
@@ -292,23 +295,21 @@ namespace Elsevier.Web.VWB
 	    protected void btnAddArticleToExistingIssue_OnClick(object sender, EventArgs e)
 	    {
 		    Guid issueId;
-		    if (Guid.TryParse(ExistingIssueSelector.SelectedItem.Value, out issueId))
-		    {
-			    using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
-			    {
-				    var sitecoreService = scope.Resolve<ISitecoreServiceMaster>();
-				    var issuesService = scope.Resolve<IIssuesService>();
-				    var issue = sitecoreService.GetItem<IIssue>(issueId);
-				    if (issue != null)
-				    {
-					    var articleIds = IssueArticleIdsInput.Value.Split('|');
-					    var articlesToAdd = articleIds.Where(i => !issuesService.DoesIssueContains(issueId, i)).Select(i => new Guid(i));
-						issuesService.AddArticlesToIssue(issueId, articlesToAdd);
-						Response.Redirect(IssuePageUrl + issueId);
-				    }
-				}
-			}
-			Response.Redirect(Request.Url.PathAndQuery);
+		    if (!Guid.TryParse(ExistingIssueSelector.SelectedItem.Value, out issueId))
+                Response.Redirect(Request.Url.PathAndQuery);
+            
+			var sitecoreService = DependencyResolver.Current.GetService<ISitecoreServiceMaster>();
+			var issuesService = DependencyResolver.Current.GetService<IIssuesService>();
+			var issue = sitecoreService.GetItem<IIssue>(issueId);
+			if (issue == null)
+                Response.Redirect(Request.Url.PathAndQuery);
+            
+			var articleIds = IssueArticleIdsInput.Value.Split('|');
+			var articlesToAdd = articleIds.Where(i => !issuesService.DoesIssueContains(issueId, i)).Select(i => new Guid(i));
+			issuesService.AddArticlesToIssue(issueId, articlesToAdd);
+			BuildReport();
+            string url = $"{IssuePageUrl}{issueId}";
+            Response.Write($"<script>window.open('{ResolveUrl(url)}','_blank')</script>");			
 	    }
 
         #endregion
