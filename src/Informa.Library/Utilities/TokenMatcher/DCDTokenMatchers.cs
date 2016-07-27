@@ -67,8 +67,11 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 		private static string ProcessCompanyTokens(string text)
 		{
-			//Find all matches with Company token
-			Regex regex = new Regex(DCDConstants.CompanyTokenRegex);
+            if (string.IsNullOrEmpty(text))
+                return string.Empty;
+
+            //Find all matches with Company token
+            Regex regex = new Regex(DCDConstants.CompanyTokenRegex);
 
 			var matchSet = new HashSet<string>();
 			var matches = regex.Matches(text);
@@ -101,8 +104,11 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 		private static string ProcessDealTokens(string text)
 		{
-			//Find all matches with Deal token
-			Regex regex = new Regex(DCDConstants.DealTokenRegex);
+            if (string.IsNullOrEmpty(text))
+                return string.Empty;
+
+            //Find all matches with Deal token
+            Regex regex = new Regex(DCDConstants.DealTokenRegex);
 
 			MatchEvaluator evaluator = new MatchEvaluator(DealMatchEval);
 			return regex.Replace(text, evaluator);
@@ -110,8 +116,11 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 		private static string ProcessArticleTokens(string text)
 		{
-			//Find all matches with Article token
-			Regex regex = new Regex(DCDConstants.ArticleTokenRegex);
+            if (string.IsNullOrEmpty(text))
+                return string.Empty;
+
+            //Find all matches with Article token
+            Regex regex = new Regex(DCDConstants.ArticleTokenRegex);
 
 			MatchEvaluator evaluator = new MatchEvaluator(ArticleMatchEval);
 			var replacedText = regex.Replace(text, evaluator);
