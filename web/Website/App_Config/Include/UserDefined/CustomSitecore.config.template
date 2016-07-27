@@ -137,6 +137,7 @@ But you can also use "patch:attribute" for clarity:
           <patch:attribute name="languageEmbedding">never</patch:attribute>
           <patch:attribute name="lowercaseUrls">true</patch:attribute>
         </add>
+        <add name="informaEmailLinkProvider" type="Informa.Library.CustomSitecore.Providers.EmailLinkProvider, Informa.Library" lowercaseUrls="true"  />
       </providers>
     </linkManager>
 
