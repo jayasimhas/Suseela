@@ -1,7 +1,14 @@
-﻿@model Informa.Library.Utilities.DataModels.TreeNode<string,string>
+﻿@model Informa.Library.Utilities.DataModels.TreeNode<string, string>
 
 <li class="article-topics__li">
-    <a href="/companies/_id@(Model.Data)">@Model.Key</a>
+    @if (Model.Data.HasContent())
+    {
+        <a href="/companies/_id@(Model.Data)">@Model.Key</a>
+    }
+    else
+    {
+        @Model.Key
+    }
     @if (Model.Children.Any())
     {
         <ul>
