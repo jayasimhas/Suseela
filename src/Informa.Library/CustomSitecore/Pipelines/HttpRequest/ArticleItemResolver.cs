@@ -37,24 +37,26 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 			{
 	            return;
 			}
+            string numFormat = mc[0].Groups[3].Value;
 
-	        //find the new article page
-	        IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
-	        filter.PageSize = 1;
-	        filter.Page = 1;
-			filter.ArticleNumbers = match.ArticleNumber.SingleToList();
+            //find the new article page
+            IArticleSearchFilter filter = ArticleSearcher.CreateFilter();
+            filter.PageSize = 1;
+            filter.Page = 1;
+            filter.ArticleNumbers = numFormat.SingleToList();
 
-	        var results = ArticleSearcher.Search(filter);
+            var results = ArticleSearcher.Search(filter);
 
 	        IArticle a = results.Articles.FirstOrDefault();
 	        if (a == null)
 	            return;
 
+            string matchTitle = mc[0].Groups[5].Value;
             string urlTitle = ArticleSearch.GetCleansedArticleTitle(a);
-	        if (!urlTitle.Equals(matchTitle))
+            if (!urlTitle.Equals(matchTitle, System.StringComparison.InvariantCultureIgnoreCase))
                 HttpContext.Current.Response.RedirectPermanent(urlTitle);
 
-	        Item i = SitecoreContext.GetItem<Item>(a._Id);
+            Item i = SitecoreContext.GetItem<Item>(a._Id);
 	        if (i == null)
 	            return;
 
