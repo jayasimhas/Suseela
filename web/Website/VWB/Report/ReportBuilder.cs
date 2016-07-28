@@ -182,32 +182,14 @@ namespace Elsevier.Web.VWB.Report
 					url += "&inprogress=1";
 				}
 
-				DateTime startDate;
-				DateTime endDate;
+				DateTime startDate = (query.StartDate != null) 
+                    ? query.StartDate.Value 
+                    : DateTime.MinValue;
 
-				//Check to see if the dates are provided in the query string
-				if (query.StartDate != null && query.EndDate != null)
-				{
-					startDate = query.StartDate ?? DateTime.MinValue;
-
-
-					endDate = query.EndDate ?? DateTime.MaxValue;
-
-				}
-				else
-				{
-					//Default the dates
-					DateTime now = DateTime.Now.AddDays(-1);
-
-					//The start date is yesterday with the time being set at midnight
-					startDate = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0, 0, 0);
-
-					DateTime nowPlusMonth = DateTime.Now.AddDays(30);
-
-					//The end date is in a month with the time being set at 11:59
-					endDate = new DateTime(nowPlusMonth.Year, nowPlusMonth.Month, nowPlusMonth.Day, 23, 59, 0, 0, 0);
-				}
-
+                DateTime endDate = (query.EndDate != null)
+                    ? query.EndDate.Value
+                    : DateTime.MaxValue;
+                
 				url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
 				url += ";" + endDate.ToString("MM/dd/yyyy");
 

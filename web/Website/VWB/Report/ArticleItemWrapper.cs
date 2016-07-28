@@ -142,14 +142,10 @@ namespace Elsevier.Web.VWB.Report
 
             SidebarArticleNumbers.Sort();
 
-		    TaxonomyString = "";
-		    string sep = "";
-            foreach (var taxonomy in article.Taxonomies)
-            {
-                TaxonomyString += sep + taxonomy.Item_Name;
-                sep = ",";
-            }
-
+		    TaxonomyString = (article.Taxonomies != null)
+                ? string.Join(",", article.Taxonomies.Select(t => t.Item_Name))
+                : string.Empty;
+		    
 		    ContentType = "";
 
             if (article.Content_Type != null)
