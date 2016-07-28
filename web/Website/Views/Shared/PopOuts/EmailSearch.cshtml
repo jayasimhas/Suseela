@@ -1,46 +1,46 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.PopOuts.EmailSearchPopOutViewModel>
 
 <div class="pop-out js-pop-out__email-search">
-	<div class="pop-out__tab"></div>
-	<div class="pop-out__internal">
+    <div class="pop-out__tab"></div>
+    <div class="pop-out__internal">
 
-		<div class="dismiss-button js-dismiss-email-search" data-target-element=".js-pop-out__email-search">
-			<svg class="dismiss-button__icon">
-				<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
-			</svg>
-		</div>
+        <div class="dismiss-button js-dismiss-email-search" data-target-element=".js-pop-out__email-search">
+            <svg class="dismiss-button__icon">
+                <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+            </svg>
+        </div>
 
-		<h3 class="pop-out__header">
-			@Model.EmailSearchText
-		</h3>
+        <h3 class="pop-out__header">
+            @Model.EmailSearchText
+        </h3>
 
-		<div class="alert-success js-email-search-success">
-			<svg class="alert__icon">
-				<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
-			</svg>
-			<p>@Model.EmailSentSuccessMessage <b class="js-email-search-recip-success">my&#64;email.address</b>.</p>
-		</div>
+        <div class="alert-success js-email-search-success">
+            <svg class="alert__icon">
+                <use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+            </svg>
+            <p>@Model.EmailSentSuccessMessage <b class="js-email-search-recip-success">my&#64;email.address</b>.</p>
+        </div>
 
-		<div class="js-email-search-form-wrapper">
+        <div class="js-email-search-form-wrapper">
 
-			<p class="pop-out__details u-italic">
-				@Model.EmailFormInstructionsText
-			</p>
+            <p class="pop-out__details u-italic">
+                @Model.EmailFormInstructionsText
+            </p>
 
-			<form 	class="form-email-search"
-					data-on-submit="/Account/api/EmailFriend/EmailSearch/">
+            <form class="form-email-search"
+                  data-on-submit="/Account/api/EmailFriend/EmailSearch/">
 
-			    <p class="	pop-out__error
-							js-form-error
-							js-form-error-general">
-			        @Model.GeneralError
-			    </p>
+                <p class=" pop-out__error
+                   js-form-error
+                   js-form-error-general">
+                    @Model.GeneralError
+                </p>
 
-			    <p class=" pop-out__error
+                <p class=" pop-out__error
                    js-form-error
                    js-form-error-Required">
-			        @Model.EmptyFieldText
-			    </p>
+                    @Model.EmptyFieldText
+                </p>
 
                 <p class=" pop-out__error
                    js-form-error
@@ -48,83 +48,80 @@
                     @Model.InvalidEmailText
                 </p>
 
-			    <p class="	pop-out__error
-							js-form-error
-							js-form-error-failType">
-			        @Model.InvalidEmailText
-			    </p>
-			    <p>
+                <p class=" pop-out__error
+                   js-form-error
+                   js-form-error-failType">
+                    @Model.InvalidEmailText
+                </p>
+                <p>
                     <span class="pop-out__run-in">@Model.ToLabel</span> <span class="asterisk-required"></span>
-			        <input name="RecipientEmail"
-			               class="pop-out__input js-email-search-recip-addr"
-			               type="text"
-			               placeholder="@Model.RecipientEmailPlaceholderText">
-			    </p>
+                    <input name="RecipientEmail"
+                           class="pop-out__input js-email-search-recip-addr"
+                           type="text"
+                           placeholder="@Model.RecipientEmailPlaceholderText">
+                </p>
 
-			    <p class="	pop-out__error
-							js-form-error
-							js-form-error-failType">
-			        @Model.EmptyFieldText
-			    </p>
-			    <p>
+                <p class=" pop-out__error
+                   js-form-error
+                   js-form-error-failType">
+                    @Model.EmptyFieldText
+                </p>
+                <p>
                     <span class="pop-out__run-in">@Model.NameLabel</span> <span class="asterisk-required"></span>
-			        <input name="SenderName"
-			               class="pop-out__input"
-			               type="text"
-			               placeholder="@Model.YourNamePlaceholderText"
-			               value="@Model.AuthUserName">
-			    </p>
+                    <input name="SenderName"
+                           class="pop-out__input"
+                           type="text"
+                           placeholder="@Model.YourNamePlaceholderText"
+                           value="@Model.AuthUserName">
+                </p>
 
-			    <p class="	pop-out__error
-							js-form-error
-							js-form-error-failType">
-			        @Model.EmptyFieldText
-			    </p>
-			    <p>
+                <p class=" pop-out__error
+                   js-form-error
+                   js-form-error-failType">
+                    @Model.EmptyFieldText
+                </p>
+                <p>
                     <span class="pop-out__run-in">@Model.EmailLabel</span> <span class="asterisk-required"></span>
-			        <input name="SenderEmail"
-			               class="pop-out__input"
-			               type="text"
-			               placeholder="@Model.YourEmailPlaceholderText"
-			               value="@Model.AuthUserEmail">
-			    </p>
+                    <input name="SenderEmail"
+                           class="pop-out__input"
+                           type="text"
+                           placeholder="@Model.YourEmailPlaceholderText"
+                           value="@Model.AuthUserEmail">
+                </p>
 
-				<p>
-					<span class="pop-out__run-in">@Model.SubjectLabel</span>
-				    <input name="Subject"
+                <p>
+                    <span class="pop-out__run-in">@Model.SubjectLabel</span><span class="asterisk-required"></span>
+                    <input name="Subject"
                            class="pop-out__input"
                            type="text"
                            placeholder="@Model.SubjectPlaceholderText"
-                           value="@Model.AuthUserEmail">
-				</p>
+                           value="">
+                </p>
 
-				<p>
-					<span class="pop-out__run-in">@Model.AddMessageLabel</span> <span class="asterisk-required"></span>
-				</p>
+                <p>
+                    <span class="pop-out__run-in">@Model.AddMessageLabel</span> <span class="asterisk-required"></span>
+                </p>
 
-				<textarea name="PersonalMessage" class="pop-out__input pop-out__textarea"></textarea>
+                <textarea name="PersonalMessage" class="pop-out__input pop-out__textarea"></textarea>
 
-			    <input type="hidden" name="ResultIDs" class="js-email-search-results-ids" value="">
-			    <input type="hidden" name="QueryTerm" class="js-email-search-query" value="">
+                <input type="hidden" name="ResultIDs" class="js-email-search-results-ids" value="">
+                <input type="hidden" name="QueryTerm" class="js-email-search-query" value="">
                 <input type="hidden" name="QueryUrl" class="js-email-search-query-url" value="">
 
-				<div class="pop-out__form-actions-wrapper">
-					<div class="dismiss-button" data-target-element=".js-pop-out__email-search">
+                <div class="pop-out__form-actions-wrapper">
+                    <div class="dismiss-button" data-target-element=".js-pop-out__email-search">
                         <span class="highlight-link">@Model.CancelText</span>
-					</div>
-					<div class="sign-in__submit-wrapper">
-						<button type="submit" class="button--filled click-utag"  data-info='{"event_name" : "email-a-friend", "emailFrom" : "@Model.AuthUserName" }'>@Model.SendText</button>
-					</div>
-				</div>
+                    </div>
+                    <div class="sign-in__submit-wrapper">
+                        <button type="submit" class="button--filled click-utag" data-info='{"event_name" : "email-a-friend", "emailFrom" : "@Model.AuthUserName" }'>@Model.SendText</button>
+                    </div>
+                </div>
+            </form>
 
-                @Html.AuthToken()
+            <p class="pop-out__details u-italic">
+                @Html.Raw(Model.NoticeText)
+            </p>
+        </div>
 
-			</form>
-
-			<p class="pop-out__details u-italic">
-				@Html.Raw(Model.NoticeText)
-			</p>
-		</div>
-
-	</div>
+    </div>
 </div>
