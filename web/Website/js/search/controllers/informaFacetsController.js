@@ -32,6 +32,7 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
         { label: 'Select date range', key: 'custom', selected: false }
     ];
 
+    vm.originalGroup = [];
 
     /* Real talk: the Javascript Date() method is a trash fire. */
     var dToday = function () {
@@ -116,7 +117,20 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
         return searchService.getPager();
     }, function () {
         vm.facetGroups = searchService.getFacetGroups();
+        vm.originalGroup = searchService.getFacetGroups();
+
+        if (searchService.getNewSearch()) {
+
+            vm.facetGroups = vm.originalGroup;
+            vm.clearAllFacets();
+
+            searchService._isNewSearch = false;
+        }
+
     }, true);
+
+
+
 
 
     //** This collects the user's saved companies **//
@@ -277,13 +291,13 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
     /* This deselects any selected facet checkboxes, clears all facet parameters
         from the search query, and runs the clearDateRange function */
     vm.clearAllFacets = function () {
-        var facetClear = this;
-        var facetGroups = facetClear.facetGroups;
-        _.each(facetGroups, function (group) {
+       
+        _.each(vm.facetGroups, function (group) {
             // vm.clearGroup(group.id)
-            var facets = vm.searchService.getFacetGroup(group.id).getSelectedFacets();
+            var facets = group.facets;
             _.each(facets, function (facet) {
                 facet.selected = false;
+               
             });
         });
         vm.clearDateRange();
