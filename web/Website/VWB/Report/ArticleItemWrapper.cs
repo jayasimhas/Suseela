@@ -131,15 +131,14 @@ namespace Elsevier.Web.VWB.Report
                     WordCount = 0;
                 }
             }
-           
-            foreach (IArticle referencedArticle in article.Referenced_Articles)
-            {
-                if (!string.IsNullOrEmpty(referencedArticle.Article_Number))
-                {
-                    SidebarArticleNumbers.Add(referencedArticle.Article_Number);
-                }
-            }
 
+            var ra = (article.Referenced_Articles != null)
+                ? article.Referenced_Articles.Select(a => ((IArticle)a).Article_Number).Where(b => !string.IsNullOrEmpty(b))
+                : Enumerable.Empty<string>();
+
+            if (ra.Any())
+                SidebarArticleNumbers.AddRange(ra);
+            
             SidebarArticleNumbers.Sort();
 
 		    TaxonomyString = (article.Taxonomies != null)
