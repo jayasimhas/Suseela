@@ -66,7 +66,6 @@ namespace Informa.Web.Areas.Article.Controllers
         }
 
         [HttpPost]
-        [AuthorizeToken]
         public IHttpActionResult Email(EmailFriendRequest request)
         {
             var siteRoot = SiteRootContext.Item;
