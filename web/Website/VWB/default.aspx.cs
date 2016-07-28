@@ -290,6 +290,7 @@ namespace Elsevier.Web.VWB
 
             q.NumResultsValue = GetMaxNumResults();
             RedirectTo(q);
+
         }
 
         /// <summary>
