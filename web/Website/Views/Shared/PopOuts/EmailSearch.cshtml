@@ -116,6 +116,9 @@
 						<button type="submit" class="button--filled click-utag"  data-info='{"event_name" : "email-a-friend", "emailFrom" : "@Model.AuthUserName" }'>@Model.SendText</button>
 					</div>
 				</div>
+
+                @Html.AuthToken()
+
 			</form>
 
 			<p class="pop-out__details u-italic">
