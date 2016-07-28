@@ -126,10 +126,10 @@ namespace Elsevier.Web.VWB
                 catch { }
             }
 
-            chkPublications.DataSource = dt;
-            chkPublications.DataValueField = "Code";
-            chkPublications.DataTextField = "Name";
-            chkPublications.DataBind();
+            ddlPublications.DataSource = dt;
+            ddlPublications.DataValueField = "Code";
+            ddlPublications.DataTextField = "Name";
+            ddlPublications.DataBind();
         }
 
         private static int? GetMaxNumResults()
@@ -193,7 +193,7 @@ namespace Elsevier.Web.VWB
                 List<string> codes = _vwbQuery.PublicationCodes.Split(',').ToList();
                 foreach (var item in codes)
                 {
-                    chkPublications.Items.FindByValue(item).Selected = true;
+                    ddlPublications.Items.FindByValue(item).Selected = true;
                 }
             }
         }
@@ -216,7 +216,7 @@ namespace Elsevier.Web.VWB
 
         protected void RunReport(object sender, EventArgs e)
         {
-            var pubCount = chkPublications.Items.Cast<ListItem>().Where(li => li.Selected).Count();
+            var pubCount = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).Count();
             if (pubCount == 0)
             {
                 lblMsg.Text = "You must select at least one publication";
@@ -285,7 +285,7 @@ namespace Elsevier.Web.VWB
 
             q.ShouldRun = execute;
 
-            List<ListItem> selected = chkPublications.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+            List<ListItem> selected = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
             q.PublicationCodes = string.Join(",", selected.Select(s => s.Value));
 
             q.NumResultsValue = GetMaxNumResults();
