@@ -2639,7 +2639,8 @@ namespace Informa.Library.PXM
 			string str1 = Path.Combine(printOption1.CacheFolder, string.Concat(str, ".xml"));
 			RenderItemHelper.OutputToFile(str1, xElement);
 			string fileVal = Settings.GetSetting("PrintStudio.UseSampleFile");
-            bool useFile = System.Convert.ToBoolean(fileVal);
+            bool useFile;
+			Boolean.TryParse(fileVal, out useFile);
 			string filePath = (useFile) ? "sample.xml" : printOption1.FormatResourceLink(str1);
 			empty = string.Concat(WebConfigHandler.CommonSettings.WebHost, "/PrintStudio/Handlers/PrintCacheHandler.ashx?fileName=", filePath);
 			return empty;
