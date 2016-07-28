@@ -22,13 +22,13 @@ namespace Elsevier.Web.VWB {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ddlPublications control.
+        /// chkPublications control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Saplin.Controls.DropDownCheckBoxes ddlPublications;
+        protected global::System.Web.UI.WebControls.CheckBoxList chkPublications;
         
         /// <summary>
         /// rbNoDate control.

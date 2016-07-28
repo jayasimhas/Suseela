@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Elsevier.Web.VWB._default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<%@ Register TagPrefix="asp" Namespace="Saplin.Controls" Assembly="DropDownCheckBoxes" %>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <script type="text/javascript" src="/VWB/Scripts/jquery.js"></script>
@@ -20,11 +20,8 @@
             <img class="banner" width="317" height="122" src="<%= LogoUrl %>"
                 alt="<%= Elsevier.Library.Reference.Constants.BusinessName %> - Virtual Whiteboard">
             <div class="top">
-                <asp:DropDownCheckBoxes ID="ddlPublications" runat="server" Width="200px" UseSelectAllNode="true">
-                    <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
-                    <Items>
-                    </Items>
-                </asp:DropDownCheckBoxes>
+
+                <asp:CheckBoxList runat="server" ID="chkPublications" Width="250px" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" ></asp:CheckBoxList>
                 <div id="dateRangeWrapper">
                     <div class="left radioButtonWrapper">
                         <asp:RadioButton ID="rbNoDate" runat="server" Text="Default" GroupName="choice" class="enabledate" />
@@ -47,18 +44,17 @@
 
                     <div class="appbuttons">
                         <asp:Label runat="server" ID="lblMsg"></asp:Label>
-                        <br />
                         <asp:Button ID="btnRunReport" runat="server" Text="Run Report" OnClick="RunReport" OnClientClick="$('#hidPubs').val($('#ddlP').val())" />
                         &nbsp;<asp:Button ID="btnReset" runat="server" Text="Reset" OnClick="ResetReport" />
                         &nbsp;<asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="Logout" />
                     </div>
                 </div>
+
             </div>
             <br />
             <br />
             <br />
             <div class="report">
-                <br />
                 <asp:Table ID="tblResults" runat="server" border="1">
                 </asp:Table>
                 <asp:DropDownList ID="ddColumns" runat="server"
