@@ -78,32 +78,34 @@ namespace Informa.Web.Areas.VWB.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult Save(string issue, string order, string todelete, string title, string date, string notes)
+		public ActionResult Save(string issue, string order, string todelete, string title, string date, string notes, string submit)
 		{
 			Guid issueId;
-			if (Guid.TryParse(issue, out issueId))
+			if (!Guid.TryParse(issue, out issueId))
+                return Redirect(Request?.Url?.ToString());
+            
+			if (!string.IsNullOrWhiteSpace(todelete))
 			{
-				if (!string.IsNullOrWhiteSpace(todelete))
-				{
-					_dependencies.IssuesService.DeleteArticles(todelete);
-				}
-
-				if (!string.IsNullOrWhiteSpace(order))
-				{
-					_dependencies.IssuesService.ReorderArticles(order);
-				}
-
-			    var model = new IssueModel
-			    {
-			        Title = title,
-                    PublishedDate = date.ToDate(),
-			        Notes = notes
-			    };
-
-				_dependencies.IssuesService.UpdateIssueItem(model, issueId);
-				return Redirect($"/vwb/addissue?id={issueId.ToString("D")}");
+				_dependencies.IssuesService.DeleteArticles(todelete);
 			}
-			return Redirect(Request?.Url?.ToString());
+
+			if (!string.IsNullOrWhiteSpace(order))
+			{
+				_dependencies.IssuesService.ReorderArticles(order);
+			}
+
+			var model = new IssueModel
+			{
+			    Title = title,
+                PublishedDate = date.ToDate(),
+			    Notes = notes
+			};
+
+			_dependencies.IssuesService.UpdateIssueItem(model, issueId);
+            if (submit.Equals("save"))
+                return Redirect($"/vwb/addissue?id={issueId.ToString("D")}");
+            else
+                return Redirect("/vwb");
 		}
 	}
 }
