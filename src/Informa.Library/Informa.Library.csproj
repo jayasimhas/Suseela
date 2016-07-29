@@ -370,10 +370,15 @@
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="DCD\DcdContentAnalyzer.cs" />
+    <Compile Include="PXM\CustomConvertToXml.cs" />
     <Compile Include="PXM\CustomFinalizeProcessor.cs" />
+    <Compile Include="PXM\Parsers\CustomHtmlNodeParser.cs" />
+    <Compile Include="PXM\CustomHtmlParseHelper.cs" />
     <Compile Include="PXM\CustomInDesignConnectorService.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PXM\CustomXmlTextFrameRenderer.cs" />
+    <Compile Include="PXM\Parsers\CustomImageParser.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchMediaTooltipField.cs" />
     <Compile Include="Search\Crawlers\InformaItemCrawler.cs" />
     <Compile Include="Utilities\Parsers\CachedXmlParser.cs" />

@@ -15,7 +15,7 @@ using Sitecore.PrintStudio.PublishingEngine.Text;
 using Sitecore.PrintStudio.PublishingEngine.Text.Parsers.Html;
 using Sitecore.Resources.Media;
 
-namespace Informa.Web.CustomMvc.Parsers
+namespace Informa.Library.PXM.Parsers
 {
 	public class CustomImageParser : HtmlNodeParser
 	{

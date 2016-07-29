@@ -16,7 +16,7 @@ using System.Xml.Linq;
 using Sitecore.PrintStudio.PublishingEngine;
 using Sitecore.PrintStudio.PublishingEngine.Rendering;
 
-namespace Informa.Web.CustomMvc
+namespace Informa.Library.PXM
 {
 	public class CustomXmlTextFrameRenderer : InDesignItemRendererBase
 	{

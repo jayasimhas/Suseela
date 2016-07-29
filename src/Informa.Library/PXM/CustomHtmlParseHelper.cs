@@ -7,7 +7,7 @@ using Sitecore.PrintStudio.PublishingEngine.Text;
 using Sitecore.PrintStudio.PublishingEngine.Text.Parsers.Html;
 using Sitecore.Reflection;
 
-namespace Informa.Web.CustomMvc
+namespace Informa.Library.PXM
 {
 	public class CustomHtmlParseHelper
 	{

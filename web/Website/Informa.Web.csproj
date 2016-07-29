@@ -897,11 +897,6 @@
     <Compile Include="Controllers\VelirController.cs" />
     <Compile Include="Controllers\WordDocToMediaLibrary.cs" />
     <Compile Include="Controllers\WorkFlowUtil.cs" />
-    <Compile Include="CustomMvc\CustomHtmlNodeParser.cs" />
-    <Compile Include="CustomMvc\CustomHtmlParseHelper.cs" />
-    <Compile Include="CustomMvc\CustomXmlTextFrameRenderer.cs" />
-    <Compile Include="CustomMvc\Parsers\CustomImageParser.cs" />
-    <Compile Include="CustomMvc\Pipelines\CustomConvertToXml.cs" />
     <Compile Include="CustomMvc\Pipelines\CustomDataSource.cs" />
     <Compile Include="CustomMvc\Pipelines\RegisterMvcRoutes.cs" />
     <Compile Include="CustomMvc\Pipelines\SuggestedTestsCountRequest.cs" />
@@ -1371,6 +1366,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Views\Account\" />
+    <Folder Include="CustomMvc\Parsers\" />
     <Folder Include="GlassMaps\" />
     <Folder Include="js\search\services\" />
     <Folder Include="packages\" />
