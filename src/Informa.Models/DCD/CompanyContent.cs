@@ -23,7 +23,7 @@ namespace Informa.Models.DCD
 
         [XmlArray("Synonyms")]
         [XmlArrayItem("Synonym")]
-        public string[] Synonyms { get; set; }
+        public string[] Synonyms = new string[0];
     }
 
     public class CompanyInfo
