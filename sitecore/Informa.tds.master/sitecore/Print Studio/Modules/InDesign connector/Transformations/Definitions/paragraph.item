@@ -108,15 +108,15 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: fa75651f-568a-41c6-86e4-d5950abf269e
+revision: e9aace92-59c9-47f0-ad9b-d23f4e4940c0
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 15
+content-length: 16
 
-20100708T173200
+20100709T003200Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -130,21 +130,21 @@ name: __Revision
 key: __revision
 content-length: 36
 
-fa75651f-568a-41c6-86e4-d5950abf269e
+e9aace92-59c9-47f0-ad9b-d23f4e4940c0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 34
+content-length: 16
 
-20131030T143044:635187402444542639
+20160729T152432Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
 content-length: 14
 
-sitecore\Admin
+sitecore\admin
 ----version----
 language: ja-JP
 version: 1

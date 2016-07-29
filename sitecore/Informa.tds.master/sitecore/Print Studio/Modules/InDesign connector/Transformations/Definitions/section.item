@@ -13,9 +13,9 @@ templatekey: TransformationElement
 field: {F29087BF-DE4D-46EB-8C9F-072D8F098458}
 name: Type
 key: type
-content-length: 55
+content-length: 65
 
-Informa.Web.CustomMvc.CustomHtmlNodeParser, Informa.Web
+Informa.Library.PXM.Parsers.CustomHtmlNodeParser, Informa.Library
 ----field----
 field: {80090593-07B3-4E16-843D-336D83DBD355}
 name: XML Name
@@ -33,7 +33,7 @@ section
 ----version----
 language: en
 version: 1
-revision: de7ceb42-fc88-4152-9519-7f2953126970
+revision: ae0f4b4a-8d4c-40dc-861b-f11f19f951c5
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-de7ceb42-fc88-4152-9519-7f2953126970
+ae0f4b4a-8d4c-40dc-861b-f11f19f951c5
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160719T170124Z
+20160729T194748Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

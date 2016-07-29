@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Xml.Linq;
+using Informa.Library.PXM.Parsers;
 using Sitecore.Layouts;
 using Sitecore.PrintStudio.PublishingEngine.Pipelines.ConvertHtmlToXml;
 using Sitecore.PrintStudio.PublishingEngine.Text.Parsers.Html;
 
-namespace Informa.Web.CustomMvc.Pipelines
+namespace Informa.Library.PXM
 {
 	public class CustomConvertToXml
 	{
