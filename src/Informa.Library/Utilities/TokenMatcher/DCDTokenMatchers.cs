@@ -183,5 +183,24 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 	        return string.Empty;
 	    }
+
+        /// <summary>
+        /// This will replace company and product tokens like this: [Company Name] or {Product Name} with <b>Company Name</b> or <i>Product Name</i>
+        /// </summary>
+        /// <returns></returns>
+        public static string ReplaceDealNameTokens(string text) {
+
+            Regex companyRegex = new Regex(DCDConstants.DealCompanyNameRegex);
+            foreach(Match cm in companyRegex.Matches(text)) {
+                text = text.Replace(cm.Value, $"<strong>{cm.Groups[1].Value}</strong>");
+            }
+
+            Regex productRegex = new Regex(DCDConstants.DealProductNameRegext);
+            foreach (Match pm in productRegex.Matches(text)) {
+                text = text.Replace(pm.Value, $"<em>{pm.Groups[1].Value}</em>");
+            }
+
+            return text;
+        }
 	}
 }

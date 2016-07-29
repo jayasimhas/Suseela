@@ -13,6 +13,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
+using Informa.Library.Utilities.TokenMatcher; 
 
 namespace Informa.Web.ViewModels.CompaniesAndDeals
 {
@@ -54,6 +55,9 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
         public Deal Deal { get; set; }
         public DealContent Content { get; set; }
 
+        public string DealSummary => (Content == null || Content.DealSummary == null)
+            ? string.Empty
+            : DCDTokenMatchers.ReplaceDealNameTokens(Content.DealSummary);
         public string DealsSummaryText =>_dependencies.TextTranslator.Translate("DCD.Summary");
         public string BroughtToYouByText => _dependencies.TextTranslator.Translate("DCD.BroughToYouBy");
         public string DealIndustryHeader => _dependencies.TextTranslator.Translate("DCD.DealIndustry");
