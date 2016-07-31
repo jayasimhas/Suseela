@@ -26,7 +26,8 @@ namespace Informa.Library.Utilities.References
         public const string DTDPath = "Util\\DTD\\";
 
         public const string CryptoKey = "Ajv4FMtL7Iuq3H04ZkQC";
-
+        public static string PublicationRootTemplateID = "{DD003F89-D57D-48CB-B428-FFB519AACA56}";
+        public static string HomeRootTemplateID = "{88CACA5D-2AE1-4739-8145-399F3486C2DE}";
 
         public static string StrategicTransactionsComponent = ItemIdResolver.GetItemIdByKey("StrategicTransactionsComponent");
         public static string DCDSubscribeComponent = ItemIdResolver.GetItemIdByKey("DCDSubscribeComponent");
