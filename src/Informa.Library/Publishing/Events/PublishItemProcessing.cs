@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Informa.Library.CustomSitecore.Extensions;
+using Informa.Library.Utilities.References;
 
 namespace Informa.Library.Publishing.Events
 {
@@ -14,7 +15,21 @@ namespace Informa.Library.Publishing.Events
 		{
 			var publishArgs = args as ItemProcessingEventArgs;
 
-			if (publishArgs == null)
+            //This prevents from publishing the whole site by mistake
+            if (publishArgs.Context.PublishOptions.Deep)
+            {
+                var rootItem = publishArgs.Context.PublishOptions.RootItem;
+                if (rootItem != null && (rootItem.TemplateID.Guid.Equals(new Guid(Constants.PublicationRootTemplateID))
+                    ||
+                    rootItem.TemplateID.Guid.Equals(new Guid(Constants.HomeRootTemplateID))
+                    ))
+                {
+                    publishArgs.Context.PublishOptions.Deep = false;
+                    publishArgs.Context.AddMessage("Subitems were not published. Publishing subitems from Publication/Home Root items has been stopped");
+                }
+            }
+
+            if (publishArgs == null)
 			{
 				return;
 			}

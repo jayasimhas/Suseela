@@ -49,6 +49,10 @@ namespace Informa.Library.Utilities.References
 
 		//public static string EditAfterPublishWorkflowCommand = "{322D0739-B3AC-416F-BF58-5E39E716F003}";
 
+        public static string PublicationRootTemplateID = "{DD003F89-D57D-48CB-B428-FFB519AACA56}";
+
+        public static string HomeRootTemplateID = "{88CACA5D-2AE1-4739-8145-399F3486C2DE}";
+
 		//public static string ScripWorkflow = "{926E6200-EB76-4AD4-8614-691D002573AC}";
 		public static readonly Dictionary<Guid, string> PublicationPrefixDictionary = new Dictionary<Guid, string>
 				{
