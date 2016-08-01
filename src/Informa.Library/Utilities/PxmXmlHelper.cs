@@ -97,6 +97,7 @@ namespace Informa.Library.Utilities
 				var attr = iframe.Attributes["class"];
 				if (attr != null && attr.Value.Contains("mobile"))
 				{
+					parent.RemoveChild(iframe);
 					continue;
 				}
 
