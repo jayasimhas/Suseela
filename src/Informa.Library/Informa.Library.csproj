@@ -1094,7 +1094,7 @@
     <Compile Include="Utilities\Security\Crypto.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
-	<Compile Include="Utilities\SitecoreUtils\WorkflowUtil.cs" />
+    <Compile Include="Utilities\SitecoreUtils\WorkflowUtil.cs" />
     <Compile Include="Utilities\StringUtils\BylineMaker.cs" />
     <Compile Include="Utilities\StringUtils\HtmlUtil.cs" />
     <Compile Include="Utilities\StringUtils\WordUtil.cs" />
@@ -1105,6 +1105,7 @@
     <Compile Include="Utilities\UserMembership\UserAttemp.cs" />
     <Compile Include="Utilities\WebApi\Caching\ApiOutputCacheAdapter.cs" />
     <Compile Include="Utilities\WebApi\Filters\ArgumentsRequiredAttribute.cs" />
+    <Compile Include="Utilities\WebApi\Filters\CSPFilterAttribute.cs" />
     <Compile Include="Utilities\WebApi\Filters\ValidateCsrfAttribute.cs" />
     <Compile Include="AntiForgery\AntiForgeryValidate.cs" />
     <Compile Include="AntiForgery\HtmlHelperExtensions.cs" />
