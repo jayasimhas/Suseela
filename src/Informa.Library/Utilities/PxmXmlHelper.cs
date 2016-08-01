@@ -17,7 +17,7 @@ namespace Informa.Library.Utilities
 	{
 		private readonly IDependencies _dependencies;
 		private const string SidebarStyling = "Sidebar styling";
-		private const string BlockquoteStyle = "Callout";
+		private const string BlockquoteStyle = "quote";
 
 		[AutowireService(IsAggregateService = true)]
 		public interface IDependencies
