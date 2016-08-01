@@ -4,13 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <script type="text/javascript" src="/VWB/Scripts/jquery.js"></script>
-    <script type="text/javascript" src="/VWB/Scripts/jquery-ui/jquery-ui.js"></script>
-    <script type="text/javascript" src="/VWB/Scripts/jquery-ui/jquery.ui.timepicker.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/VWB//Scripts/jquery-ui/jquery-ui-1.8.11.custom.css" />
     <link rel="stylesheet" type="text/css" href="/VWB//Styles/vwb.css" />
     <link rel="stylesheet" type="text/css" href="/VWB//Scripts/jquery-ui/jquery.ui.timepicker.css" />
+
+
+
     <title><%= Elsevier.Library.Reference.Constants.BusinessName %> - Virtual Whiteboard</title>
 
 </head>
@@ -33,6 +33,7 @@
                         <div class="left dateRangeLabel">From</div>
                         <asp:TextBox ID="txtStart" runat="server" class="date" Enabled="false"></asp:TextBox>
                         <asp:TextBox ID="txtStartTime" runat="server" class="time" Enabled="false"></asp:TextBox>
+
                         <br />
                         <div class="left dateRangeLabel">To</div>
                         <asp:TextBox ID="txtEnd" runat="server" class="date" Enabled="false"></asp:TextBox>
@@ -63,8 +64,15 @@
             </div>
         </div>
     </form>
+
+        <script type="text/javascript" src="/VWB/Scripts/jquery.js"></script>
+    <script type="text/javascript" src="/VWB/Scripts/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="/VWB/Scripts/jquery-ui/jquery.ui.timepicker.js"></script>
+
     <script>
-        jQuery(function ($) {
+
+        $(document).ready(function () {
+
             $('#txtStartTime, #txtEndTime').timepicker({
                 showPeriod: true,
                 showLeadingZero: false
@@ -87,7 +95,9 @@
                 $("#txtEndTime").attr("disabled", "");
                 $("#ddIssue").attr("disabled", "disabled");
             });
+
         });
+
 
     </script>
     <script type="text/javascript">
