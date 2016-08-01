@@ -388,7 +388,21 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
         var filter = vm.getFilter(filterKey);
         var filterDateLabel = vm.getFilter('dateFilterLabel');
         filterDateLabel.setValue('custom');
+
+
+        if(startDate > new Date()){
+            alert("you can't select date bigger than today");
+            $scope.dateValues.dtFrom="";
+        }
+
+        if(endDate > new Date()){
+            alert("you can't select date bigger than today");
+            $scope.dateValues.dtTo="";
+        }
+
+
         if (startDate > 0 && endDate > 0 && startDate < endDate) {
+
             var date1Unparsed = new Date(startDate);
             var date1 = (date1Unparsed.getMonth() + 1) + '/' + date1Unparsed.getDate() + '/' + date1Unparsed.getFullYear();
 
@@ -399,7 +413,20 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 
             vm.update();
         }
+        else{
+            if( (startDate!="" && startDate != undefined) && (endDate!="" && endDate!=undefined) ){
+                if(startDate > endDate){
+                    alert("You cant put 'from' date bigger than 'to' date");
+                    $scope.dateValues.dtFrom="";
+                    $scope.dateValues.dtTo="";
+                }
+            }
+        }
 
+    };
+
+    $scope.options = {
+        showWeeks: false
     };
 
     //** This builds date parameters for the search query **//
