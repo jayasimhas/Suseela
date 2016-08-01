@@ -57,7 +57,7 @@ namespace Informa.Web.Controllers
         /// <summary>
         /// 
         /// </summary>
-        public void SendNotification(ArticleStruct articleStruct, WorkflowInfo oldWorkflow)
+        public void SendNotification(ArticleStruct articleStruct, WorkflowInfo oldWorkflow, bool notifyAuthors = false)
         {
             Logger.SitecoreInfo("EmailUtil.SendNotification");
             if (articleStruct.Publication == Guid.NewGuid()) return;
@@ -106,6 +106,9 @@ namespace Informa.Web.Controllers
             }
 
             var emailBody = CreateBody(articleStruct, title, siteConfigItem.Publication_Name, oldWorkflow);
+
+            if (notifyAuthors)
+                notificationList = notificationList.Concat(articleStruct.Authors).ToList();
 
             foreach (var eachEmail in notificationList)
             {
