@@ -3,11 +3,6 @@
 	<PropertyGroup>
 		<ApplicationVersion>${tstamp.version}</ApplicationVersion>
 	</PropertyGroup>
-#if ($Plugin.CertificateThumbprint != "")
-	<ItemGroup>
-		<None Include="${Plugin.Certificate}" />
-		
-	</ItemGroup>
 	<PropertyGroup>
 		<PublishUrl>${Plugin.PublishUrl}</PublishUrl>
 		<InstallUrl>${Plugin.InstallUrl}</InstallUrl>
@@ -17,6 +12,10 @@
 		<SupportUrlHistory />
 		<ProjectView>ShowAllFiles</ProjectView>
 	</PropertyGroup>
+#if ($Plugin.CertificateThumbprint != "")
+	<ItemGroup>
+		<None Include="${Plugin.Certificate}" />
+	</ItemGroup>
 	<PropertyGroup>
 		<ManifestCertificateThumbprint>${Plugin.CertificateThumbprint}</ManifestCertificateThumbprint>
 	</PropertyGroup>
