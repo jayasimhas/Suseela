@@ -105,15 +105,15 @@
 		return sector;
 	}
 
-@if(Model.PublicationName == "SCRIP Intelligence") {
+@if(Model.PublicationName.ToLower().Equals("scrip")) {
     @Html.Raw("OAS_publication = 'www.scripnews.com/';");
-} else if(Model.PublicationName == "Medtech Insight") {
+} else if(Model.PublicationName.ToLower().Equals("medtech insight")) {
 	@Html.Raw("OAS_publication = 'medtech.pharmamedtechbi.com/';");
-} else if(Model.PublicationName == "In Vivo") {
+} else if(Model.PublicationName.ToLower().Equals("in vivo")) {
 	@Html.Raw("OAS_publication = 'invivo.pharmamedtechbi.com/';");
-} else if(Model.PublicationName == "Rose Sheet") {
+} else if(Model.PublicationName.ToLower().Equals("rose sheet")) {
 	@Html.Raw("OAS_publication = 'rosesheet.pharmamedtechbi.com/';");
-} else if(Model.PublicationName == "Pink Sheet") {
+} else if(Model.PublicationName.ToLower().Equals("pink sheet")) {
 	@Html.Raw("OAS_publication = 'pinksheet.pharmamedtechbi.com/';");
 } else {
 	@Html.Raw("OAS_publication = '';");

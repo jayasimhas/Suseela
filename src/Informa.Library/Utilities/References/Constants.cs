@@ -6,6 +6,7 @@ namespace Informa.Library.Utilities.References
 	public static class Constants
 	{
 		public const string ArticleNumberLength = "000000";
+		public const string CoreDb = "core";
 		public const string MasterDb = "master";
 		public const string WebDb = "web";
 
@@ -50,6 +51,9 @@ namespace Informa.Library.Utilities.References
 						{ new Guid(RoseSheetRootNode), RoseSheetNodeIntials},
 				};
 
+		/// <summary>
+		/// Why is this a dictionary?  Not changing because I'm afraid the word plugin will blow up.
+		/// </summary>
 		public static readonly Dictionary<string, string> PublicationPrefixCollection = new Dictionary<string, string>
 				{
 						{ ScripRootNodeIntials, ScripRootNodeIntials},

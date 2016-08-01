@@ -6,6 +6,9 @@
 
         <h6 id="aria-label-sort" class="search-sort__title">@Model.SearchSortByText</h6>
 
+        <span style="display:none">
+            @Html.Sitecore().Placeholder("search-sort-options-not-visible")
+        </span>
         <ol class="search-sort__control-list">
 
             @Html.Sitecore().Placeholder("search-sort-options")
@@ -14,7 +17,7 @@
                 <a href=""
                    title="Relevance"
                    class="click-utag btn btn--sort"
-				   data-info='{
+                   data-info='{
 					   "event_name": "search_utility",
 					   "search_utility": "sort_by_relevance"
 				   }'
@@ -22,34 +25,32 @@
             </li>
 
         </ol>
-    </div>
+        </div>
 
-    <div class="search-bar__footer-option">
-        <div class="onoffswitch js-view-headlines-only"
-            ng-controller="HeadlineToggleController as toggle">
+        <div class="search-bar__footer-option">
+            <div class="onoffswitch js-view-headlines-only"
+                 ng-controller="HeadlineToggleController as toggle">
 
-            <input
-                type="checkbox"
-                name="headline-toggle"
-                class="onoffswitch-checkbox"
-                id="headline-toggle">
+                <input type="checkbox"
+                       name="headline-toggle"
+                       class="onoffswitch-checkbox"
+                       id="headline-toggle">
 
-            <label
-                class="onoffswitch-label"
-                for="headline-toggle"
-                ng-click="headlinesOnly.updateValue()">
+                <label class="onoffswitch-label"
+                       for="headline-toggle"
+                       ng-click="headlinesOnly.updateValue()">
 
-                <span class="onoffswitch-inner"></span>
-                <span class="onoffswitch-switch"></span>
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
 
+                </label>
+
+            </div>
+
+            <label class="search-bar__headline-label" for="headline-toggle">
+                @Model.SearchViewHeadlinesOnlyText
             </label>
 
         </div>
-
-        <label class="search-bar__headline-label" for="headline-toggle">
-            @Model.SearchViewHeadlinesOnlyText
-        </label>
-
-    </div>
 
 </section>

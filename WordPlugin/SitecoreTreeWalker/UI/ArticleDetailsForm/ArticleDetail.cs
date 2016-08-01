@@ -261,9 +261,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
         /// </summary>
         public void UpdateFields()
         {
-            Globals.SitecoreAddin.Log("Updating fields...");
-            articleDetailsPageSelector.UpdateFields(ArticleDetails);
-            articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState, ArticleDetails);
+            if (ArticleDetailFieldsUpdateDisabler.DisableFieldsUpdate == false)
+            {
+                Globals.SitecoreAddin.Log("Updating fields...");
+                articleDetailsPageSelector.UpdateFields(ArticleDetails);
+                articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState, ArticleDetails);
+            }
         }
 
         /// <summary>
@@ -767,9 +770,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
                 var articleDate = articleDetailsPageSelector.GetDate();
 
-                var timeUtc = DateTime.UtcNow;
-                TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-                DateTime currentTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
+                //var timeUtc = DateTime.UtcNow;
+                //TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+                DateTime currentTime = DateTime.Now;// TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
 
                 if (articleDate < currentTime)
                 {
@@ -777,7 +780,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     var result = WantsToSetArticleDateToNow(command);
                     if (result == DialogResult.Yes)
                     {
-                        articleDetailsPageSelector.SetDate(DateTime.Now);
+                        articleDetailsPageSelector.SetDate(DateTime.Now, true);
                     }
                     else if (result == DialogResult.Cancel)
                     {
@@ -878,16 +881,16 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
 
                 var articleDate = articleDetailsPageSelector.GetDate();
-                var timeUtc = DateTime.UtcNow;
-                TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-                DateTime currentTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
+                //var timeUtc = DateTime.UtcNow;
+                //TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+                DateTime currentTime = DateTime.Now;// TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
 
                 if (articleDate < currentTime)
                 {
                     var result = WantsToSetArticleDateToNow(command);
                     if (result == DialogResult.Yes)
                     {
-                        articleDetailsPageSelector.SetDate(DateTime.Now);
+                        articleDetailsPageSelector.SetDate(DateTime.Now, true);
                     }
                     else if (result == DialogResult.Cancel)
                     {
@@ -990,6 +993,21 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                         MessageBoxIcon.Exclamation);
             }
             return false;
+        }
+    }
+
+    public class ArticleDetailFieldsUpdateDisabler : IDisposable
+    {
+        public static bool DisableFieldsUpdate { get; private set; }
+
+        public ArticleDetailFieldsUpdateDisabler()
+        {
+            DisableFieldsUpdate = true;
+        }
+
+        public void Dispose()
+        {
+            DisableFieldsUpdate = false;
         }
     }
 }

@@ -25,10 +25,16 @@ namespace Informa.Web.Controllers
         [HttpGet]
         public void SitemapXml()
         {
-            string path = HttpContext.Current.Request.Path.Replace("/", "").Replace(".xml", "");
+            int pageNo = Convert.ToInt32(HttpContext.Current.Request.QueryString["page"]);
+            string SitemapQueryString = string.Empty;
+            if (pageNo != 0)
+            {
+                SitemapQueryString = "?page=" + pageNo;
+            }
+            string path = HttpContext.Current.Request.Path.Replace("/", "").Replace(".xml", "") + SitemapQueryString;
             string cacheKey = $"{HttpContext.Current.Request.Url.Host}.{path}.Sitemap";
             string xml = CacheProvider.GetFromCache(cacheKey, () => BuildSitemapXml(path));
-            
+
             //provide default
             if (xml.Length == 0)
                 xml = new XmlDocument().OuterXml;
@@ -43,7 +49,8 @@ namespace Informa.Web.Controllers
         private string BuildSitemapXml(string path)
         {
             string url = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}/{path}";
-            using (WebClient client = new WebClient()) {
+            using (WebClient client = new WebClient())
+            {
                 client.Headers[HttpRequestHeader.UserAgent] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2";
                 return client.DownloadString(url);
             }

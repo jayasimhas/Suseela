@@ -14,87 +14,99 @@ using Sitecore.Publishing.Pipelines.PublishItem;
 
 namespace Informa.Library.CustomSitecore.Pipelines.PublishItem
 {
-    public class ItemsPublishingProcessor : ProcessorBase<PublishItemContext>
-    {
-        private readonly INlmExportService _exportService;
-        private readonly IFindItemScheduledPublishHistories _publishHistory;
-        private readonly ILog _logger;
-        private readonly Func<Database, ISitecoreService> _serviceFactory;
+	public class ItemsPublishingProcessor : ProcessorBase<PublishItemContext>
+	{
+		private readonly INlmExportService _exportService;
+		private readonly IFindItemScheduledPublishHistories _publishHistory;
+		private readonly ILog _logger;
+		private readonly Func<Database, ISitecoreService> _serviceFactory;
 
-        public ItemsPublishingProcessor(ILog logger, Func<Database, ISitecoreService> serviceFactory,
-            INlmExportService exportService, IFindItemScheduledPublishHistories publishHistory)
-        {
-            if (logger == null) throw new ArgumentNullException(nameof(logger));
-            if (serviceFactory == null) throw new ArgumentNullException(nameof(serviceFactory));
-            if (exportService == null) throw new ArgumentNullException(nameof(exportService));
-            if (publishHistory == null) throw new ArgumentNullException(nameof(publishHistory));
-            _logger = logger;
-            _serviceFactory = serviceFactory;
-            _exportService = exportService;
-            _publishHistory = publishHistory;
-        }
+		public ItemsPublishingProcessor(ILog logger, Func<Database, ISitecoreService> serviceFactory,
+			INlmExportService exportService, IFindItemScheduledPublishHistories publishHistory)
+		{
+			if (logger == null) throw new ArgumentNullException(nameof(logger));
+			if (serviceFactory == null) throw new ArgumentNullException(nameof(serviceFactory));
+			if (exportService == null) throw new ArgumentNullException(nameof(exportService));
+			if (publishHistory == null) throw new ArgumentNullException(nameof(publishHistory));
+			_logger = logger;
+			_serviceFactory = serviceFactory;
+			_exportService = exportService;
+			_publishHistory = publishHistory;
+		}
 
-        protected override void Run(PublishItemContext context)
-        {
-            if (context == null) throw new ArgumentNullException(nameof(context));
+		protected override void Run(PublishItemContext context)
+		{
+			if (context == null) throw new ArgumentNullException(nameof(context));
 
-            try
-            {
-                _logger.Info("Export to NLM started on Publish. Context.Action = [" + context.Action + "].");
+			try
+			{
+				_logger.Debug("Export to NLM started on Publish. Context.Action = [" + context.Action + "].");
 
-                var itemId = context.ItemId;
-                var sourceItem = context.VersionToPublish ?? context.PublishOptions.SourceDatabase.GetItem(itemId);
-                var targetItem = context.PublishOptions.TargetDatabase.GetItem(itemId);
+				var itemId = context.ItemId;
+				var sourceItem = context.VersionToPublish ?? context.PublishOptions.SourceDatabase.GetItem(itemId);
+				var targetItem = context.PublishOptions.TargetDatabase.GetItem(itemId);
 
-                // Check if the current item is actually an Article item
-                if (sourceItem == null || sourceItem.TemplateID != IArticleConstants.TemplateId)
-                {
-                    _logger.Info($"Skipping NLM export for item (not an article): '{itemId}'");
-                    return;
-                }
+				// Check if the current item is actually an Article item
+				if (sourceItem == null || sourceItem.TemplateID != IArticleConstants.TemplateId)
+				{
+					_logger.Debug($"Skipping NLM export for item (not an article): '{itemId}'");
+					return;
+				}
 
-                switch (context.Action)
-                {
-                    // Handle 'Delete' Publish
-                    case PublishAction.DeleteTargetItem:
-                        {
-                            var database = _serviceFactory(context.PublishOptions.TargetDatabase);
-                            var article = database.Cast<ArticleItem>(targetItem);
+				switch (context.Action)
+				{
+					// Handle 'Delete' Publish
+					case PublishAction.DeleteTargetItem:
+					{
+						var database = _serviceFactory(context.PublishOptions.TargetDatabase);
+						var article = database.Cast<ArticleItem>(targetItem);
 
-                            // Export a _del.xml file
-                            _exportService.DeleteNlm(article);
+						// Export a _del.xml file
+						_exportService.DeleteNlm(article);
 
-                            _logger.Info($"Exported NLM delete for article: '{itemId}'");
-                        }
-                        break;
+						_logger.Info($"Exported NLM delete for article: '{itemId}'");
+					}
+						break;
 
-                    // Handle 'New Version' Publish
-                    case PublishAction.PublishVersion:
-                        {
-                            var database = _serviceFactory(context.PublishOptions.SourceDatabase);
-                            var article = database.Cast<ArticleItem>(sourceItem);
-                            var isFirstScheduledPublishForItem = !_publishHistory.Find(sourceItem.ID.Guid).Any();
-                            
-                            if (!isFirstScheduledPublishForItem)
-                            {
-                                _logger.Info($"Skipping NLM export for item (article already published via Scheduled Publishing): '{itemId}'");
-                                return;
-                            }
+					// Handle 'New Version' Publish
+					case PublishAction.PublishVersion:
+					{
+						var database = _serviceFactory(context.PublishOptions.SourceDatabase);
+						var article = database.Cast<ArticleItem>(sourceItem);
+						var isFirstScheduledPublishForItem = !_publishHistory.Find(sourceItem.ID.Guid).Any();
 
-                            // Export the article as an NLM file
-                            _exportService.ExportNlm(article, ExportType.Scheduled);
+						// Check if the current article is migrated content. If so, don't generate NLM
+						if (!string.IsNullOrEmpty(article.Legacy_Article_Number))
+						{
+							_logger.Info($"Skipping NLM export for article {article.Article_Number} (article is a legacy PMBI article {article.Legacy_Article_Number}): article ID - '{itemId}'");
+							return;
+						}
+						if (!string.IsNullOrEmpty(article.Escenic_ID))
+						{
+							_logger.Info($"Skipping NLM export for article {article.Article_Number} (article is legacy Escenic article {article.Escenic_ID}): article ID - '{itemId}'");
+							return;
+						}
 
-                            context.AddMessage($"NLM export of article '{itemId}' was successful.");
-                        }
-                        break;
-                }
+						if (!isFirstScheduledPublishForItem)
+						{
+							_logger.Info($"Skipping NLM export for item (article already published via Scheduled Publishing): '{itemId}'");
+							return;
+						}
 
-                _logger.Info("Export to NLM ended on Publish.");
-            }
-            catch (Exception ex)
-            {
-                _logger.Error($"Unexpected error occurred while exporting Article ID {context.ItemId} on publish.", ex);
-            }
-        }
-    }
+						// Export the article as an NLM file
+						_exportService.ExportNlm(article, ExportType.Scheduled);
+
+						context.AddMessage($"NLM export of article '{itemId}' was successful.");
+					}
+						break;
+				}
+
+				_logger.Debug("Export to NLM ended on Publish.");
+			}
+			catch (Exception ex)
+			{
+				_logger.Error($"Unexpected error occurred while exporting Article ID {context.ItemId} on publish.", ex);
+			}
+		}
+	}
 }

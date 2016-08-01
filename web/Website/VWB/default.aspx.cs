@@ -50,7 +50,7 @@ namespace Elsevier.Web.VWB
 				RunQuery(true);
 			}
 
-			LogoUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.TargetHostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
+			LogoUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
 
 			const string defaultTime = "12:00 AM";
 			txtStartTime.Text = defaultTime;
@@ -104,7 +104,12 @@ namespace Elsevier.Web.VWB
 
 		private static int? GetMaxNumResults()
 		{
-
+            int count = 250;
+            try
+            {
+                count = int.Parse(HttpContext.Current.Request.QueryString["max"]);
+            }
+            catch { }
 			//TextNodeItem maxResults = ItemReference.MaxResultsPerSearch.InnerItem;
 			//if (maxResults != null)
 			//{
@@ -117,7 +122,7 @@ namespace Elsevier.Web.VWB
 			//		return 60;
 			//	}
 			//}
-			return 60;
+			return count;
 		}
 
 		private void UpdateFields()
@@ -229,6 +234,7 @@ namespace Elsevier.Web.VWB
 			q.ShouldRun = execute;
 			q.NumResultsValue = GetMaxNumResults();
 			RedirectTo(q);
+
 		}
 
 		/// <summary>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--
@@ -306,6 +306,12 @@
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStateInfo.Designer.cs">
       <DependentUpon>ArticleVersionStateInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStatePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleVersionStatePopup.Designer.cs">
+      <DependentUpon>ArticleVersionStatePopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ArticleDetailsForm\ArticleDetailsControls\PageUserControls\ArticleWorkflowInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -486,6 +492,7 @@
     <Compile Include="Util\Tables\TableAnalyzer.cs" />
     <Compile Include="Util\Tables\TableBuilder.cs" />
     <Compile Include="Util\Tables\TableCellParagraphsTransformer.cs" />
+    <Compile Include="Util\TimezoneUtil.cs" />
     <Compile Include="Util\UserCredentialReader.cs" />
     <Compile Include="Util\Utils.cs" />
     <Compile Include="Util\WordUtils.cs" />

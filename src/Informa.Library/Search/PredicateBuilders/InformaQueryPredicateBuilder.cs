@@ -12,61 +12,72 @@ using Velir.Search.Core.PredicateBuilders;
 
 namespace Informa.Library.Search.PredicateBuilders
 {
-	public class InformaQueryPredicateBuilder<T> : SearchQueryPredicateBuilder<T> where T : InformaSearchResultItem
-	{
-		private const float bigSlopFactor = 100000; // See http://wiki.apache.org/solr/SolrRelevancyCookbook "Term Proximity"
-		private readonly IQueryFormatter _formatter;
-		private readonly ISearchRequest _request;
+    public class InformaQueryPredicateBuilder<T> : SearchQueryPredicateBuilder<T> where T : InformaSearchResultItem
+    {
+        private const float bigSlopFactor = 100000; // See http://wiki.apache.org/solr/SolrRelevancyCookbook "Term Proximity"
+        private readonly IQueryFormatter _formatter;
+        private readonly ISearchRequest _request;
 
-		public InformaQueryPredicateBuilder(IQueryFormatter queryFormatter, ISearchRequest request = null) : base(request)
-		{
-			_request = request;
-			_formatter = queryFormatter;
-		}
+        public InformaQueryPredicateBuilder(IQueryFormatter queryFormatter, ISearchRequest request = null) : base(request)
+        {
+            _request = request;
+            _formatter = queryFormatter;
+        }
 
-		public override Expression<Func<T, bool>> Build()
-		{
-			var predicate = base.Build();
+        public override Expression<Func<T, bool>> Build()
+        {
+            var predicate = base.Build();
 
-			// date relevancy
-			if (Settings.GetBoolSetting("Search.NewerArticlesBoosting.Enabled", false))
-			{
-				//Boost newer articles (See http://www.sitecoreblogger.com/2014/09/publication-date-boosting-in-sitecore-7.html)
-				predicate = predicate.And(x => x.Val == Settings.GetSetting("Search.NewerArticlesBoosting.BoostFunction"));
-			}
+            // date relevancy
+            if (Settings.GetBoolSetting("Search.NewerArticlesBoosting.Enabled", false))
+            {
+                //Boost newer articles (See http://www.sitecoreblogger.com/2014/09/publication-date-boosting-in-sitecore-7.html)
+                predicate = predicate.And(x => x.Val == Settings.GetSetting("Search.NewerArticlesBoosting.BoostFunction"));
+            }
 
-			return predicate;
-		}
+            if (_request.QueryParameters.ContainsKey("plannedpublishdate") || _request.QueryParameters.ContainsKey("SearchPublicationTitle"))
+            {//VWB
 
-		protected override Expression<Func<T, bool>> AddAllClause(string[] value)
-		{
-			var query = value.FirstOrDefault();
+            }
+            else
+            {
+                //Include Search for authors
+                if (_request.QueryParameters.ContainsKey("q") && string.IsNullOrEmpty(_request.QueryParameters["q"]) == false)
+                    predicate = predicate.Or(x => x.Byline.Contains(_request.QueryParameters["q"]));
+            }
 
-			if (string.IsNullOrEmpty(query)) return null;
+            return predicate;
+        }
 
-			var searchHeadlinesValue = string.Empty;
-			var searchHeadlines =
-				_request.QueryParameters.TryGetValue(Constants.QueryString.SearchHeadlinesOnly, out searchHeadlinesValue) &&
-				!string.IsNullOrEmpty(searchHeadlinesValue);
+        protected override Expression<Func<T, bool>> AddAllClause(string[] value)
+        {
+            var query = value.FirstOrDefault();
 
-			if (_formatter.NeedsFormatting(query))
-			{
-				var formattedQuery = _formatter.FormatQuery(query);
-				if (searchHeadlines)
-				{
-					return item => item.Title.MatchWildcard(formattedQuery);
-				}
+            if (string.IsNullOrEmpty(query)) return null;
 
-				return item => item.Content.MatchWildcard(formattedQuery);
-			}
+            var searchHeadlinesValue = string.Empty;
+            var searchHeadlines =
+                _request.QueryParameters.TryGetValue(Constants.QueryString.SearchHeadlinesOnly, out searchHeadlinesValue) &&
+                !string.IsNullOrEmpty(searchHeadlinesValue);
 
-			var quotedQuery = $"\"{query}\"";
-			if (searchHeadlines)
-			{
-				return item => item.Title.Like(quotedQuery, bigSlopFactor);
-			}
+            if (_formatter.NeedsFormatting(query))
+            {
+                var formattedQuery = _formatter.FormatQuery(query);
+                if (searchHeadlines)
+                {
+                    return item => item.Title.MatchWildcard(formattedQuery);
+                }
 
-			return item => item.Content.Like(quotedQuery, bigSlopFactor);
-		}
-	}
+                return item => item.Content.MatchWildcard(formattedQuery);
+            }
+
+            var quotedQuery = $"\"{query}\"";
+            if (searchHeadlines)
+            {
+                return item => item.Title.Like(quotedQuery, bigSlopFactor);
+            }
+
+            return item => item.Content.Like(quotedQuery, bigSlopFactor);
+        }
+    }
 }

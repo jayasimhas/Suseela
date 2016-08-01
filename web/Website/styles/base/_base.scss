@@ -90,3 +90,15 @@ hr {
 	clear: both;
     height: 1px;
 }
+
+.bottomSpace{
+	display:none;
+}
+
+@media (max-width: 480px){
+	
+	.bottomSpace{
+		display:block;
+		height: 20px;
+	}
+}

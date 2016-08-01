@@ -24,7 +24,7 @@ namespace InformaSitecoreWord.Util
     public class AlertDisabler : IDisposable
     {
         private readonly Word.Application _application;
-		public AlertDisabler(Word.Application application)
+        public AlertDisabler(Word.Application application)
         {
             _application = application;
             _application.DisplayAlerts = WdAlertLevel.wdAlertsNone;
@@ -41,16 +41,16 @@ namespace InformaSitecoreWord.Util
 
         public const string BlockquoteName = "2.4 Quote Box";
         public const string DocxFormatName = "Word12";
-		public Dictionary<string, string> imageFloatDictionary = new Dictionary<string, string>
-		{
-			{ "left", "article-exhibit article-exhibit--pull-left"},
-			{ "right", "article-exhibit article-exhibit--pull-right"},
-			{ "none", "article-exhibit"},
-		};
+        public Dictionary<string, string> imageFloatDictionary = new Dictionary<string, string>
+        {
+            { "left", "article-exhibit article-exhibit--pull-left"},
+            { "right", "article-exhibit article-exhibit--pull-right"},
+            { "none", "article-exhibit"},
+        };
 
-		//These properties are built so that the accessing of the sitecore webservices is deferred until after
-		//the user has actually logged on.
-		protected Dictionary<string, WordStyleStruct> _paragraphStyles;
+        //These properties are built so that the accessing of the sitecore webservices is deferred until after
+        //the user has actually logged on.
+        protected Dictionary<string, WordStyleStruct> _paragraphStyles;
 
         protected Dictionary<string, WordStyleStruct> ParagraphStyles
         {
@@ -562,8 +562,8 @@ namespace InformaSitecoreWord.Util
                         desktopCodeFound = true;
                         cssStyle = String.Format("ewf-desktop-iframe_{0}", iframeGroupId);
                         iframeElement.SetAttributeValue("class", $"iframe-component__desktop {cssStyle}");
-						iframeElement.SetAttributeValue("data-mediaid", iframeGroupId);
-					}
+                        iframeElement.SetAttributeValue("data-mediaid", iframeGroupId);
+                    }
 
                     if (style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
                     {
@@ -584,14 +584,14 @@ namespace InformaSitecoreWord.Util
                         iframeElement.Add(embedElement);
                         iframeGroupElement.Add(iframeElement);
                     }
-	                if (style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
-	                {
-		                xData.Add(iframeGroupElement);
-						iframeGroupElement = new XElement("div");
-						iframeGroupElement.SetAttributeValue("class", "iframe-component");
-					}
+                    if (style.NameLocal == DocumentAndParagraphStyles.IFrameMobileCodeStyle)
+                    {
+                        xData.Add(iframeGroupElement);
+                        iframeGroupElement = new XElement("div");
+                        iframeGroupElement.SetAttributeValue("class", "iframe-component");
+                    }
 
-	                previousIFrameStyle = style.NameLocal;
+                    previousIFrameStyle = style.NameLocal;
                     continue;
                 }
 
@@ -684,14 +684,14 @@ namespace InformaSitecoreWord.Util
 
                     //Get the float Value from the image hyperlink (if it is an image) and set it to the article-image element
                     var hyprlnk = paragraph.Range.Hyperlinks.Cast<Hyperlink>().FirstOrDefault();
-	                if (hyprlnk != null && string.IsNullOrEmpty(hyprlnk.ScreenTip) == false)
-	                {
-						string classValue;
-						classValue = imageFloatDictionary.TryGetValue(hyprlnk.ScreenTip.ToLower(), out classValue) ? classValue : string.Empty;
-						divElement.SetAttributeValue("class", classValue);
-	                }
+                    if (hyprlnk != null && string.IsNullOrEmpty(hyprlnk.ScreenTip) == false)
+                    {
+                        string classValue;
+                        classValue = imageFloatDictionary.TryGetValue(hyprlnk.ScreenTip.ToLower(), out classValue) ? classValue : string.Empty;
+                        divElement.SetAttributeValue("class", classValue);
+                    }
 
-	                var imageTag = ImageReferenceBuilder.Parse(paragraph);
+                    var imageTag = ImageReferenceBuilder.Parse(paragraph);
                     divElement.Add(imageTag);
                     imageTagCount++;
                     continue;
@@ -699,7 +699,7 @@ namespace InformaSitecoreWord.Util
 
                 imageTagCount = 0;
 
-				WordStyleStruct styleStruct;
+                WordStyleStruct styleStruct;
                 if (ParagraphStyles.TryGetValue(currentStyle.NameLocal, out styleStruct))
                 {
                     //if there is a special configuration for the paragraph style, have it configured properly
@@ -721,6 +721,30 @@ namespace InformaSitecoreWord.Util
 
                     xElement = CharacterStyleTransformer.GetCharacterStyledElement(curElement, paragraph,
                         CharacterStyleFactory.GetCharacterStyles(), false);
+
+                    //The next section is group multiple paragraphs belonging to the same answer under the same Answer element to prevent multiple answer styling on front-end for a single answer
+                    if (clas == "article-interview__answer")
+                    {
+                        while (paragraphs.Count > i + 1)//If there are still more element to inspect
+                        {
+                            //Get the styling of the next element
+                            var tempAnswerStyle = (Style)paragraphs[i + 1].get_Style();
+                            WordStyleStruct tempAnswerStyleStruct;
+                            //Get the cssClass of the next element
+                            ParagraphStyles.TryGetValue(tempAnswerStyle.NameLocal, out tempAnswerStyleStruct);
+                            //if it is also an answer paragraph
+                            if (tempAnswerStyleStruct.CssClass == clas)
+                            {
+                                //add the the next paragraph content into the current answer body
+                                xElement.Add(CharacterStyleTransformer.GetCharacterStyledElement(new XElement("p"), paragraphs[i + 1], CharacterStyleFactory.GetCharacterStyles(), false));
+                                i++;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    }
                 }
                 else
                 {
@@ -788,7 +812,7 @@ namespace InformaSitecoreWord.Util
             var currentListElement = new XElement(listType);
             currentListElement.SetAttributeValue("class", "carrot-list");
             XElement rootListElement = currentListElement;
-			WordStyleStruct wstyle;
+            WordStyleStruct wstyle;
             Style style = listItems[0].get_Style();
             if (style != null && ParagraphStyles.TryGetValue(style.NameLocal, out wstyle))
             {

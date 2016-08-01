@@ -29,13 +29,13 @@
 		text — UTF-8 and URL-encoded Tweet text
 		url — fully-qualified URL with a HTTP or HTTPS scheme, URL-encoded
 	*@
-	<a
-		href="https://twitter.com/intent/tweet?text=@HttpUtility.UrlEncode(Model.ArticleTitle)&url=@HttpUtility.UrlEncode(Model.ArticleUrl)"
-		class="link__no-hover click-utag" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"twitter"}'>
+    <a href="https://twitter.com/intent/tweet?text=@HttpUtility.UrlEncode(Model.ArticleTitle)&url=@HttpUtility.UrlEncode(Model.ArticleUrl)"
+       target="_blank"
+       class="link__no-hover click-utag" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"twitter"}'>
+        <svg class="action-flag__icon action-flag__icon--twitter">
 
-		<svg class="action-flag__icon action-flag__icon--twitter" >
-			<use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
-		</svg>
-	</a>
+            <use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
+        </svg>
+    </a>
 
 </li>

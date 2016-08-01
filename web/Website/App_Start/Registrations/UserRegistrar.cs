@@ -34,12 +34,6 @@ namespace Informa.Web.App_Start.Registrations
 
 			builder.RegisterType<WebGenerateUserResetPasswordActions>().As<IWebGenerateUserResetPasswordActions>();
 
-            //builder.RegisterType<Library.User.ResetPassword.MongoDB.MongoDbUserResetPasswordConfiguration>().As<Library.User.ResetPassword.MongoDB.IMongoDbUserResetPasswordConfiguration>();
-            //builder.RegisterType<Library.User.ResetPassword.MongoDB.MongoDbUserResetPasswordContext>().As<Library.User.ResetPassword.MongoDB.IMongoDbUserResetPasswordContext>();
-            //builder.RegisterType<Library.User.ResetPassword.MongoDB.UserResetPasswordDocumentFactory>().As<Library.User.ResetPassword.MongoDB.IUserResetPasswordDocumentFactory>();
-            //builder.RegisterType<Library.User.ResetPassword.MongoDB.MongoDbFindUserResetPassword>().As<IFindUserResetPassword>();
-            //builder.RegisterType<Library.User.ResetPassword.MongoDB.MongoDbStoreUserResetPassword>().As<IStoreUserResetPassword>();
-
             builder.RegisterType<Library.User.ResetPassword.Entity.EntityUserResetPasswordContextFactory>().As<Library.User.ResetPassword.Entity.IEntityUserResetPasswordContextFactory>();
             builder.RegisterType<Library.User.ResetPassword.Entity.EntityFindUserResetPassword>().As<IFindUserResetPassword>();
             builder.RegisterType<Library.User.ResetPassword.Entity.EntityStoreUserResetPassword>().As<IStoreUserResetPassword>();
