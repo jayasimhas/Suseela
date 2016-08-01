@@ -111,15 +111,12 @@
                 <div class="pop-out__form-actions-wrapper">
                     <div class="dismiss-button" data-target-element=".js-pop-out__email-search">
                         <span class="highlight-link">@Model.CancelText</span>
-					</div>
-					<div class="sign-in__submit-wrapper">
-						<button type="submit" class="button--filled click-utag"  data-info='{"event_name" : "email-a-friend", "emailFrom" : "@Model.AuthUserName" }'>@Model.SendText</button>
-					</div>
-				</div>
-
-                @Html.AuthToken()
-
-			</form>
+                    </div>
+                    <div class="sign-in__submit-wrapper">
+                        <button type="submit" class="button--filled click-utag" data-info='{"event_name" : "email-a-friend", "emailFrom" : "@Model.AuthUserName" }'>@Model.SendText</button>
+                    </div>
+                </div>
+            </form>
 
             <p class="pop-out__details u-italic">
                 @Html.Raw(Model.NoticeText)

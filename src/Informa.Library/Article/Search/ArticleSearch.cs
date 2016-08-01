@@ -28,12 +28,12 @@ namespace Informa.Library.Article.Search
         protected readonly ICacheProvider CacheProvider;
 
         public ArticleSearch(
-                IProviderSearchContextFactory searchContextFactory,
+			IProviderSearchContextFactory searchContextFactory,
                 IGlobalSitecoreService globalService,
                 Func<string, ISitecoreService> sitecoreFactory,
                 IItemReferences itemReferences,
                 ICacheProvider cacheProvider
-                )
+			)
         {
             SearchContextFactory = searchContextFactory;
             GlobalService = globalService;
@@ -58,13 +58,13 @@ namespace Informa.Library.Article.Search
             using (var context = SearchContextFactory.Create())
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
-                        .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
                         .FilterByPublications(filter)
-                        .FilterTaxonomies(filter)
-                        .ExcludeManuallyCurated(filter)
+					.FilterTaxonomies(filter)
+					.ExcludeManuallyCurated(filter)
                         .FilteryByArticleNumbers(filter)
-                        .FilteryByEScenicID(filter)
-                        .FilteryByRelatedId(filter)
+					.FilteryByEScenicID(filter)
+					.FilteryByRelatedId(filter)
                         .ApplyDefaultFilters();
 
                 if (filter.PageSize > 0)
@@ -123,21 +123,25 @@ namespace Informa.Library.Article.Search
                 var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
                 if (publicationItem != null)
                 {
-                    var filter = CreateFilter();
+				var filter = CreateFilter();
 
-                    var query = context.GetQueryable<ArticleSearchResultItem>()
-                            .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+				var query = context.GetQueryable<ArticleSearchResultItem>()
+					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
                             .Filter(i => i.PublicationTitle == publicationItem.Publication_Name)
-                            .FilterTaxonomies(filter)
-                            .OrderByDescending(i => i.ArticleIntegerNumber)
-                            .Take(1);
+					.FilterTaxonomies(filter)
+					//.Max(x => x.ArticleIntegerNumber);
+					.OrderByDescending(i => i.ArticleIntegerNumber)
+					.Take(1);
 
-                    var results = query.GetResults();
+				var results = query.GetResults();
 
                     return results?.Hits?.FirstOrDefault()?.Document?.ArticleIntegerNumber + 1 ?? 0;
-                }
-                return 0;
-            }
+				//var results = articleSearchResultItem.GetResults();
+				//var articleResults2 = context.GetQueryable<ArticleSearchResultItem>()     Max(x => x.ArticleIntegerNumber);
+				//return results.Hits.FirstOrDefault().Document.ArticleIntegerNumber;
+			}
+			return 0;
+		}
         }
 
         /// <summary>
@@ -166,7 +170,7 @@ namespace Informa.Library.Article.Search
         {
             string cacheKey = $"{nameof(ArticleSearch)}-GetTaxonomy-{id}";
             return CacheProvider.GetFromCache(cacheKey, () => BuildArticleTaxonomies(id, taxonomyParent));
-        }
+				}
 
         public string BuildArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
@@ -202,7 +206,7 @@ namespace Informa.Library.Article.Search
                 {
                     Articles = results.Hits.Select(i => GlobalService.GetItem<IArticle>(i.Document.ItemId.Guid))
                 };
-            }
+	}
         }
     }
 }
