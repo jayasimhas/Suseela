@@ -29,8 +29,8 @@ namespace Informa.Library.PXM
 
 		private readonly Dictionary<string, string> fieldStyles = new Dictionary<string, string>
 		{
-			{"Title", "1.0 Story Title" },
-			{"Sub Title", "1.0 StorySub-Title" }
+			{"Title", "title" },
+			{"Sub Title", "subhead 1" }
 		};
 
 		protected override void BeginRender(PrintContext printContext)
