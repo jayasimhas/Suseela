@@ -83,7 +83,7 @@ namespace Informa.Library.User.Search
 				Url = ConstructUrl(doc.SearchString),
 				DateSaved = doc.DateCreated,
 				AlertEnabled = doc.HasAlert
-			}).OrderBy(r => r.Title);
+			}).OrderByDescending(r => r.DateSaved);
 		}
 
 		public virtual IContentResponse SaveContent(ISavedSearchSaveable input)
