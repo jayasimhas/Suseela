@@ -8,11 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/VWB//Scripts/jquery-ui/jquery-ui-1.8.11.custom.css" />
     <link rel="stylesheet" type="text/css" href="/VWB//Styles/vwb.css" />
     <link rel="stylesheet" type="text/css" href="/VWB//Scripts/jquery-ui/jquery.ui.timepicker.css" />
-
-
-
     <title><%= Elsevier.Library.Reference.Constants.BusinessName %> - Virtual Whiteboard</title>
-
 </head>
 <body>
     <form id="form1" runat="server">
@@ -69,7 +65,7 @@
         </div>
     </form>
 
-        <script type="text/javascript" src="/VWB/Scripts/jquery.js"></script>
+    <script type="text/javascript" src="/VWB/Scripts/jquery.js"></script>
     <script type="text/javascript" src="/VWB/Scripts/jquery-ui/jquery-ui.js"></script>
     <script type="text/javascript" src="/VWB/Scripts/jquery-ui/jquery.ui.timepicker.js"></script>
 
