@@ -8,8 +8,6 @@ namespace Informa.Library.Utilities
 	public interface IPxmXmlHelper
 	{
 		string FinalizeStyles(string content);
-		string ProcessIframeTag(string content);
-		string AddCssClassToQuickFactsText(string content);
 	}
 
 	[AutowireService]
@@ -78,53 +76,6 @@ namespace Informa.Library.Utilities
 					}
 				}
 			}
-		}
-
-		public string ProcessIframeTag(string content)
-		{
-			var doc = new HtmlDocument();
-			doc.LoadHtml(content);
-			var xpath = @"//iframe";
-			var iframes = doc.DocumentNode.SelectNodes(xpath);
-			if (iframes == null)
-			{
-				return doc.DocumentNode.OuterHtml;
-			}
-
-			foreach (HtmlNode iframe in iframes)
-			{
-				var parent = iframe.ParentNode;
-				var attr = iframe.Attributes["class"];
-				if (attr != null && attr.Value.Contains("mobile"))
-				{
-					parent.RemoveChild(iframe);
-					continue;
-				}
-
-				var src = iframe.Attributes["src"];
-				if (src != null)
-				{
-					parent.InnerHtml = $"<p class=\"iframe-content\"><pre type=\"\" height=\"\" width=\"\"><p>Iframe Content: {src.Value}</p></pre></p>";
-				}
-			}
-			return doc.DocumentNode.OuterHtml;
-		}
-
-		public string AddCssClassToQuickFactsText(string content)
-		{
-			var doc = new HtmlDocument();
-			doc.LoadHtml(content);
-			var xpath = @"//div[@class='quick-facts']/p[not(@class)]";
-			var textElements = doc.DocumentNode.SelectNodes(xpath);
-			if (textElements == null)
-			{
-				return doc.DocumentNode.OuterHtml;
-			}
-			foreach (HtmlNode textElement in textElements)
-			{
-				textElement.Attributes.Add("class", "quick-facts__text");
-			}
-			return doc.DocumentNode.OuterHtml;
-		}
+		}		
 	}
 }

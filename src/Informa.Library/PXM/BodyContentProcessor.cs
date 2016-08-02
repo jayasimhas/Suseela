@@ -17,10 +17,11 @@ namespace Informa.Library.PXM
 			using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
 			{
 				var tokenToHtml = scope.Resolve<ITokenToHtml>();
-				var helper = scope.Resolve<IPxmXmlHelper>();
+				var helper = scope.Resolve<IPxmHtmlHelper>();
 				args.InputText = tokenToHtml.ReplaceAllTokens(args.InputText);
 				args.InputText = helper.ProcessIframeTag(args.InputText);
 				args.InputText = helper.AddCssClassToQuickFactsText(args.InputText);
+				args.InputText = helper.ProcessTableStyles(args.InputText);
 			}
 		}
 	}
