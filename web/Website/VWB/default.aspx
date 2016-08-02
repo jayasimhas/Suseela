@@ -1,10 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Elsevier.Web.VWB._default" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ Register TagPrefix="asp" Namespace="Saplin.Controls" Assembly="DropDownCheckBoxes" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
     <link rel="stylesheet" type="text/css" href="/VWB//Scripts/jquery-ui/jquery-ui-1.8.11.custom.css" />
     <link rel="stylesheet" type="text/css" href="/VWB//Styles/vwb.css" />
     <link rel="stylesheet" type="text/css" href="/VWB//Scripts/jquery-ui/jquery.ui.timepicker.css" />
@@ -18,8 +18,6 @@
             <div class="top">
                 <asp:DropDownCheckBoxes ID="ddlPublications" runat="server" Width="200px" UseSelectAllNode="true">
                     <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
-                    <Items>
-                    </Items>
                 </asp:DropDownCheckBoxes>
                 <div id="dateRangeWrapper">
                     <div class="left radioButtonWrapper">
@@ -40,8 +38,6 @@
                         <br />
                         <asp:CheckBox runat="server" ID="chkShowInProgressArticles" Text="Show in-progress articles only" />
                     </div>
-
-
                     <div class="appbuttons">
                         <asp:Label runat="server" ID="lblMsg"></asp:Label>
                         <br />
