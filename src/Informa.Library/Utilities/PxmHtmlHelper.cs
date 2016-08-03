@@ -9,8 +9,8 @@ namespace Informa.Library.Utilities
 	{
 		string ProcessIframe(string content);
         string ProcessIframeTag(string content);
-		string AddCssClassToQuickFactsText(string content);
-		string ProcessTableStyles(string content);
+		string ProcessQuickFacts(string content);
+        string ProcessTableStyles(string content);
 	}
 
 	[AutowireService]
@@ -69,21 +69,44 @@ namespace Informa.Library.Utilities
 		{
 			var result = ProcessIframeTag(content);
 			var doc = CreateDocument(result);
-			var aside = doc.CreateElement("aside");
-			doc.DocumentNode.FirstChild.ChildNodes.Insert(0, aside);
+			
 			var headerPath = @"//p[contains(@class,'iframe-header')]";
 			var titlePath = @"//p[contains(@class,'iframe-title')]";
 			var iframePath = @"//div[contains(@class,'iframe-component')]";
 			var captionPath = @"//p[contains(@class,'iframe-caption')]";
 			var sourcePath = @"//p[contains(@class,'iframe-source')]";
 
-			ModifyIframeStructure(doc, aside, headerPath, titlePath, iframePath, captionPath, sourcePath);
+			var nodes = GethHtmlNodes(doc, headerPath, titlePath, iframePath, captionPath, sourcePath).ToList();
+			if (nodes.Any())
+			{
+				var aside = doc.CreateElement("pre");
+				doc.DocumentNode.FirstChild.ChildNodes.Insert(0, aside);
+				ModifyHtmlStructure(doc, aside, nodes);
+			}
+
 			return doc.DocumentNode.OuterHtml;
 		}
 
-		public void ModifyIframeStructure(HtmlDocument doc, HtmlNode root, params string[] paths)
+		public string ProcessQuickFacts(string content)
 		{
-			var nodes = GethHtmlNodes(doc, paths).ToList();
+			var result = AddCssClassToQuickFactsText(content);
+			var doc = CreateDocument(result);
+
+			var xpath = @"//div[@class='quick-facts']";
+			var nodes = doc.DocumentNode.SelectNodes(xpath);
+		
+			if (nodes != null)
+			{
+				var aside = doc.CreateElement("pre");
+				doc.DocumentNode.FirstChild.ChildNodes.Insert(0, aside);
+				ModifyHtmlStructure(doc, aside, nodes);
+			}
+			
+			return doc.DocumentNode.OuterHtml;
+		}
+
+		internal void ModifyHtmlStructure(HtmlDocument doc, HtmlNode root, IEnumerable<HtmlNode> nodes)
+		{		
 			foreach (var node in nodes)
 			{
 				AppendAndDeleteOriginal(doc, root, node);
@@ -94,7 +117,11 @@ namespace Informa.Library.Utilities
 		{
 			foreach (var path in paths)
 			{
-				yield return doc.DocumentNode.SelectSingleNode(path);
+				var result = doc.DocumentNode.SelectSingleNode(path);
+				if (result != null)
+				{
+					yield return result;
+				}
 			}
 		}
 
