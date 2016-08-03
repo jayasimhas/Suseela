@@ -102,10 +102,12 @@ namespace Informa.Library.Utilities.TokenMatcher
 			var timeClass = "article-sidebar__date";
             var readAllArticle = "Read the full article here";
 			var document = new HtmlDocument();
-			document.LoadHtml($"<aside type=\"\" height=\"\" width=\"\" class=\"article-sidebar\"><h3></h3><p class=\"{spanClass}\"></p><p class=\"{timeClass}\"></p><div></div><a class=\"article-sidebar__read-more click-utag\" href=\"\"></a></aside>");
+			document.LoadHtml($"<aside type=\"\" height=\"\" width=\"\" class=\"article-sidebar\"><h3 class=\"sidebar-title\"></h3><h4 class=\"sidebar-subhead\"></h4><p class=\"{spanClass}\"></p><p class=\"{timeClass}\"></p><div class=\"sidebar-body\"></div><a class=\"article-sidebar__read-more click-utag\" href=\"\"></a></aside>");
 
 			// Set title
 			document.DocumentNode.SelectSingleNode("//h3").InnerHtml = HttpUtility.HtmlDecode(article.Title);
+			// Set subhead
+			document.DocumentNode.SelectSingleNode("//h4").InnerHtml = HttpUtility.HtmlDecode(article.Sub_Title);
 			// Set author
 			var nodes = document.DocumentNode.SelectNodes("//p");
 			var span = GetNodeByClass(nodes, spanClass);
@@ -128,6 +130,10 @@ namespace Informa.Library.Utilities.TokenMatcher
 			// Add summary
 			var div = document.DocumentNode.SelectSingleNode("//div");
 			div.InnerHtml = _dependencies.ArticleService.GetArticleBody(article);
+
+			// Add css style to outer p
+			var p = document.DocumentNode.SelectSingleNode("//div/p");
+			p.Attributes.Add("class", "sidebar-body");
 
 			return new HtmlString(document.DocumentNode.OuterHtml);
 		}
