@@ -1,11 +1,14 @@
-﻿using HtmlAgilityPack;
+﻿using System.Collections.Generic;
+using System.Linq;
+using HtmlAgilityPack;
 using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Library.Utilities
 {
 	public interface IPxmHtmlHelper
 	{
-		string ProcessIframeTag(string content);
+		string ProcessIframe(string content);
+        string ProcessIframeTag(string content);
 		string AddCssClassToQuickFactsText(string content);
 		string ProcessTableStyles(string content);
 	}
@@ -45,6 +48,7 @@ namespace Informa.Library.Utilities
 			foreach (HtmlNode iframe in iframes)
 			{
 				var parent = iframe.ParentNode;
+				
 				var attr = iframe.Attributes[ClassAttributeName];
 				if (attr != null && attr.Value.Contains("mobile"))
 				{
@@ -55,10 +59,53 @@ namespace Informa.Library.Utilities
 				var src = iframe.Attributes["src"];
 				if (src != null)
 				{
-					parent.InnerHtml = $"<p class=\"iframe-content\"><pre type=\"\" height=\"\" width=\"\"><p>Iframe Content: {src.Value}</p></pre></p>";
+					parent.InnerHtml = $"<p>Iframe Content: {src.Value}</p>";
 				}
 			}
 			return doc.DocumentNode.OuterHtml;
+		}
+
+		public string ProcessIframe(string content)
+		{
+			var result = ProcessIframeTag(content);
+			var doc = CreateDocument(result);
+			var aside = doc.CreateElement("aside");
+			doc.DocumentNode.FirstChild.ChildNodes.Insert(0, aside);
+			var headerPath = @"//p[contains(@class,'iframe-header')]";
+			var titlePath = @"//p[contains(@class,'iframe-title')]";
+			var iframePath = @"//div[contains(@class,'iframe-component')]";
+			var captionPath = @"//p[contains(@class,'iframe-caption')]";
+			var sourcePath = @"//p[contains(@class,'iframe-source')]";
+
+			ModifyIframeStructure(doc, aside, headerPath, titlePath, iframePath, captionPath, sourcePath);
+			return doc.DocumentNode.OuterHtml;
+		}
+
+		public void ModifyIframeStructure(HtmlDocument doc, HtmlNode root, params string[] paths)
+		{
+			var nodes = GethHtmlNodes(doc, paths).ToList();
+			foreach (var node in nodes)
+			{
+				AppendAndDeleteOriginal(doc, root, node);
+			}
+		}
+
+		internal IEnumerable<HtmlNode> GethHtmlNodes(HtmlDocument doc, params string[] paths)
+		{
+			foreach (var path in paths)
+			{
+				yield return doc.DocumentNode.SelectSingleNode(path);
+			}
+		}
+
+		internal void AppendAndDeleteOriginal(HtmlDocument doc, HtmlNode root, HtmlNode element)
+		{
+			if (element != null)
+			{
+				var parent = element.ParentNode;
+				root.AppendChild(element);
+				parent.RemoveChild(element);
+			}
 		}
 
 		public string AddCssClassToQuickFactsText(string content)
