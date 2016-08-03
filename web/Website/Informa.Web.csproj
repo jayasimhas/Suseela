@@ -104,10 +104,6 @@
     <Reference Include="DotNetOpenAuth">
       <HintPath>..\..\lib\Sitecore\DotNetOpenAuth.dll</HintPath>
     </Reference>
-    <Reference Include="DropDownCheckBoxes, Version=1.1.0.27408, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\InformaProj\lib\CustomControls\DropDownCheckBoxes.dll</HintPath>
-    </Reference>
     <Reference Include="EcmaScript.NET">
       <HintPath>..\..\lib\Sitecore\EcmaScript.NET.dll</HintPath>
     </Reference>
