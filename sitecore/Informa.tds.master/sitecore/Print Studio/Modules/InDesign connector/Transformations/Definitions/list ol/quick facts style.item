@@ -20,9 +20,9 @@ Style
 field: {9F94D809-627E-468E-99DC-AB523D8F2E56}
 name: XML Default value
 key: xml default value
-content-length: 24
+content-length: 16
 
-3.3 Quick Facts Numbered
+qf_numbered list
 ----field----
 field: {89AD5209-B1C5-44D0-99E8-46F391B12E0F}
 name: XHTML Attribute
@@ -40,7 +40,7 @@ quick-facts__list--ol
 ----version----
 language: en
 version: 1
-revision: 39502039-ac06-4951-8996-39d59207a68a
+revision: 2435b459-b343-43bd-955b-99a9e9927311
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-39502039-ac06-4951-8996-39d59207a68a
+2435b459-b343-43bd-955b-99a9e9927311
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160726T175516Z
+20160803T180058Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
