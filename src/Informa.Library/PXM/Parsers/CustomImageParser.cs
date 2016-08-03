@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Xml.Linq;
 using HtmlAgilityPack;
@@ -26,7 +27,11 @@ namespace Informa.Library.PXM.Parsers
 			if (htmlAttribute != null)
 			{
 				MediaItem mediaItem = (MediaItem)null;
-				string mediaPath = this.GetMediaPath(htmlAttribute.Value);
+				Regex regex = new Regex(@"[^/]+$");
+
+				Match match = regex.Match(htmlAttribute.Value);
+				string mediaPath = this.GetMediaPath(htmlAttribute.Value.Replace(match.Value, match.Value.Replace("-"," ")));
+
 				if (!string.IsNullOrEmpty(mediaPath))
 					mediaItem = (MediaItem)(ID.IsID(mediaPath) ? parseContext.Database.GetItem(ID.Parse(mediaPath)) : parseContext.Database.GetItem(mediaPath));
 				if (mediaItem != null)
@@ -36,6 +41,7 @@ namespace Informa.Library.PXM.Parsers
 					resultElement.Add((object)element);
 				}
 			}
+			
 			if (xelement == null)
 				return;
 			resultElement.Add((object)xelement);
