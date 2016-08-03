@@ -132,8 +132,21 @@ namespace Informa.Library.Utilities.TokenMatcher
 			div.InnerHtml = _dependencies.ArticleService.GetArticleBody(article);
 
 			// Add css style to outer p
-			var p = document.DocumentNode.SelectSingleNode("//div/p");
-			p.Attributes.Add("class", "sidebar-body");
+			var p = document.DocumentNode.SelectNodes("//div/p");
+			if (p != null)
+			{
+				foreach (var node in p)
+				{
+					if (node.Attributes["class"] == null)
+					{
+						node.Attributes.Add("class", "sidebar-body");
+					}
+					else
+					{
+						node.Attributes["class"].Value = "sidebar-body";
+					}
+				}
+			}
 
 			return new HtmlString(document.DocumentNode.OuterHtml);
 		}
