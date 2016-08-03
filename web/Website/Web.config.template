@@ -84,6 +84,20 @@
       <error statusCode="404" path="/404" responseMode="ExecuteURL" />
     </httpErrors>
   </system.webServer>
+
+  <!--Fin:005 protecte Web Service exposed could lead to Denial Of Service -->
+  <system.web>
+    <webServices>
+      <protocols>
+        <remove name="Documentation" />
+        <add name="HttpGet"/>
+        <add name="HttpPost"/>
+      </protocols>
+    </webServices>
+  </system.web>
+
+
+
   <!--                    //App-config version
   <system.webServer>
     <staticContent configSource="App_Config\Web\system.webServer.staticContent.config" />
