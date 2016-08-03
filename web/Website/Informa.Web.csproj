@@ -1175,7 +1175,6 @@
     <Content Include="Views\Shared\Components\ListItemSimple.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="GlassMaps\" />
@@ -1220,6 +1219,7 @@
     <None Include="App_Config\Prefetch\Core.config.template" />
     <None Include="App_Config\Prefetch\Master.config.template" />
     <None Include="App_Config\Prefetch\Webdb.config.template" />
+    <Content Include="App_Data\MiniProfilerUI\includes.tmpl" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>

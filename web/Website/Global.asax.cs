@@ -52,7 +52,8 @@ namespace Informa.Web
 		{
 			if (Sitecore.Context.Item != null && !Sitecore.Context.PageMode.IsExperienceEditorEditing && !Sitecore.Context.PageMode.IsPreview)
 			{
-				MiniProfiler.Start();
+                MiniProfiler.Settings.CustomUITemplates = "~/App_Data/MiniProfilerUI";
+                MiniProfiler.Start();
 			}
 		}
 
