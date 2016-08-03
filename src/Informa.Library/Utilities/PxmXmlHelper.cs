@@ -14,7 +14,6 @@ namespace Informa.Library.Utilities
 	public class PxmXmlHelper : IPxmXmlHelper
 	{
 		private readonly IDependencies _dependencies;
-		private const string SidebarStyling = "Sidebar styling";
 		private const string BlockquoteStyle = "quote";
 		private const string OrderedListsStyle = "body_numbered list";
 		private const string UnOrderedListsStyle = "body_bullet";
@@ -34,20 +33,10 @@ namespace Informa.Library.Utilities
 		{
 			var doc = new XmlDocument();
 			doc.LoadXml(content);
-			AddSidebarStyles(doc);
 			AddBlockquoteStyles(doc);
 			AddOrderedListStyles(doc);
 			AddUnOrderedListStyles(doc);
 			return doc.OuterXml.Replace("<TextFrame>", "").Replace("</TextFrame>", "");
-		}
-
-		public void AddSidebarStyles(XmlDocument doc)
-		{
-			var inlines = doc.SelectNodes("//Inline");
-			if (inlines != null)
-			{
-				ApplyStyles(ref doc, inlines, "Inline", "sidebar", SidebarStyling);
-			}
 		}
 
 		public void AddBlockquoteStyles(XmlDocument doc)
