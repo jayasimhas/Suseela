@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {F2B01B48-D456-42DF-88F2-B11A637718EC}
+id: {09FA40FE-E605-4996-A254-0D12C20B6ACC}
 database: master
-path: /sitecore/Print Studio/Modules/InDesign connector/Transformations/Definitions/paragraph/default style
-parent: {614A1FEB-FB7A-4133-B054-20E0A55189FD}
-name: default style
+path: /sitecore/Print Studio/Modules/InDesign connector/Transformations/Definitions/list ol/ArticleSource
+parent: {E8F4EEB0-6148-4A1F-A407-A3CC5B0D12BC}
+name: ArticleSource
 master: {00000000-0000-0000-0000-000000000000}
 template: {7CD0ED9C-975D-41ED-B106-E4C60E06D4F7}
 templatekey: TransformationAttribute
@@ -13,27 +13,20 @@ templatekey: TransformationAttribute
 field: {A05E1D55-B7C5-4B57-AA0C-C1A7845CFC7C}
 name: XML Attribute
 key: xml attribute
-content-length: 5
+content-length: 13
 
-Style
+ArticleSource
 ----field----
 field: {9F94D809-627E-468E-99DC-AB523D8F2E56}
 name: XML Default value
 key: xml default value
-content-length: 4
+content-length: 13
 
-body
-----field----
-field: {89AD5209-B1C5-44D0-99E8-46F391B12E0F}
-name: XHTML Attribute
-key: xhtml attribute
-content-length: 5
-
-class
+ordered_lists
 ----version----
 language: en
 version: 1
-revision: 77aeb93e-85e3-4403-b04e-b7081c48dd31
+revision: ecb270ed-5dde-4b05-a42d-e208d012ff44
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -48,7 +41,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20160729T180325Z
+20160803T181610Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -62,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-77aeb93e-85e3-4403-b04e-b7081c48dd31
+ecb270ed-5dde-4b05-a42d-e208d012ff44
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160801T184523Z
+20160803T181700Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
