@@ -778,9 +778,6 @@
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\Print Studio Projects\Master documents\Default master.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\Print Studio Projects\Page Previews.item">
