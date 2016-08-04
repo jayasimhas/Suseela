@@ -51,7 +51,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 		public string ReplaceAllTokens(string content)
 		{
 			var result = ReplaceBodyContentTokens(content);
-			result = ModifyColspan(result);
+			//result = ModifyColspan(result);
 			result = ReplaceSectionBreaks(result);
 			return result;
 		}

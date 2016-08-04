@@ -1437,6 +1437,7 @@
 			<xs:element ref="Inline"/>
 			<xs:element ref="InsertVar"/>
 			<xs:element ref="Table"/>
+			<xs:element ref="Format"/>
 		</xs:choice>
 		<xs:attribute name="Bold"/>
 		<xs:attribute name="Italic"/>
