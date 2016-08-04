@@ -248,7 +248,7 @@ $(document).ready(function() {
 		failureCallback: function(form, context, event) {
 
 			var loginAnalytics = {
-				event_name: "login",
+				event_name: "Login Failure",
 				login_state: "unsuccessful",
 				userName: '"' + $(form).find('input[name=username]').val() + '"'
 			};
