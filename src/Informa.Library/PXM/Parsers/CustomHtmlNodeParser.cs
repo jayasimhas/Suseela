@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Web;
 using System.Xml.Linq;
-using Glass.Mapper;
 using HtmlAgilityPack;
 using Sitecore.PrintStudio.PublishingEngine.Helpers;
 using Sitecore.PrintStudio.PublishingEngine.Text;
@@ -15,6 +11,8 @@ namespace Informa.Library.PXM.Parsers
 {
 	public class CustomHtmlNodeParser
 	{
+	    public ISpecialCharacterMapper SpecialCharacterMapper { get; set; }
+
 		public virtual void ParseNode(HtmlNode htmlNode, XElement resultElement, ParseContext parseContext, XElement baseFormattingElement)
 		{
 			XElement element = this.CreateElement(htmlNode, parseContext.ParseDefinitions[htmlNode]);
@@ -82,33 +80,41 @@ namespace Informa.Library.PXM.Parsers
 			if (definition != null)
 			{
 				Type typeInfo = ReflectionUtil.GetTypeInfo(definition.HtmlParserType);
-				object parser = null;
 
-				if (typeInfo.Name == "CustomHtmlNodeParser")
+			    if (typeInfo.Name == "CustomHtmlNodeParser")
 				{
-					parser = CustomHtmlParseHelper.GetParser<CustomHtmlNodeParser>(definition);
-					((CustomHtmlNodeParser)parser)?.ParseNode(htmlNode, resultElement, parseContext, baseFormattingElement);
+                    var customParser = CustomHtmlParseHelper.GetParser<CustomHtmlNodeParser>(definition);
+				    if (customParser == null) { return; }
+				    customParser.SpecialCharacterMapper = SpecialCharacterMapper;
+                    customParser.ParseNode(htmlNode, resultElement, parseContext, baseFormattingElement);
 				}
 				else
 				{
-					parser = CustomHtmlParseHelper.GetParser<HtmlNodeParser>(definition);
-					((HtmlNodeParser)parser)?.ParseNode(htmlNode, resultElement, parseContext, baseFormattingElement);
+				    object parser = CustomHtmlParseHelper.GetParser<HtmlNodeParser>(definition);
+				    ((HtmlNodeParser)parser)?.ParseNode(htmlNode, resultElement, parseContext, baseFormattingElement);
 				}
-
-				if (parser == null)
-					return;
 			}
 			else if (HtmlParseHelper.IsPlainTextNode(htmlNode))
 			{
 				XCData xcData = new XCData(HtmlEntityHelper.DeEntitize(htmlNode.InnerHtml));
-				if (baseFormattingElement != null)
-				{
-					XElement xelement = new XElement(baseFormattingElement);
-					xelement.Add((object)xcData);
-					resultElement.Add((object)xelement);
-				}
-				else
-					resultElement.Add((object)xcData);
+
+                if (SpecialCharacterMapper != null)
+                {
+                    SpecialCharacterMapper.ParseSpecialCharacters(xcData.Value, baseFormattingElement, ref resultElement);
+                    return;
+                }
+
+                if (baseFormattingElement != null)
+			    {
+			        XElement xelement = new XElement(baseFormattingElement);
+			        xelement.Add((object) xcData);
+
+                    resultElement.Add((object) xelement);
+			    }
+			    else
+			    {
+                    resultElement.Add(xcData);
+			    }
 			}
 			else
 			{

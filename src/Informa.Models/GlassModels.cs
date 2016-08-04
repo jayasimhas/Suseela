@@ -20780,6 +20780,44 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.Print_Studio_Templates.InDesign_connector.Special_Characters
+{
+
+
+ 	/// <summary>
+	/// ISpecial_Characters_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Print Studio Templates/InDesign connector/Special Characters/Special Characters Folder</para>	
+	/// <para>ID: 80d46d0d-b174-4034-a742-ace278878c7b</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISpecial_Characters_FolderConstants.TemplateIdString)]
+	public partial interface ISpecial_Characters_Folder : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+	{
+				}
+
+	
+		/// <summary>
+		/// ISpecial_Characters_Folder Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Print Studio Templates/InDesign connector/Special Characters/Special Characters Folder</para>	
+		/// <para>ID: 80d46d0d-b174-4034-a742-ace278878c7b</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ISpecial_Characters_Folder__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder__Raw
+		{
+						}
+	
+	public static partial class ISpecial_Characters_FolderConstants{
+
+			public const string TemplateIdString = "80d46d0d-b174-4034-a742-ace278878c7b";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Special Characters Folder";
+
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates
 {
 
@@ -41787,16 +41825,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
 						
 					
-			public static readonly ID Journal_IDFieldId = new ID("8eef4c5d-e765-4f76-af30-a6168fdddd08");
-			public const string Journal_IDFieldName = "Journal ID";
-
-						
-					
-			public static readonly ID Journal_TitleFieldId = new ID("1e44223b-5a22-4fe5-ae46-1e814ac36cab");
-			public const string Journal_TitleFieldName = "Journal Title";
-
-						
-					
 			public static readonly ID Publication_CodeFieldId = new ID("5eea0a43-3174-451d-ab8b-aa348e6352cb");
 			public const string Publication_CodeFieldName = "Publication Code";
 
@@ -44096,6 +44124,90 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Modules.Data_Import.M
 					
 			public static readonly ID Handler_ClassFieldId = new ID("fa7b99b1-6bb9-469c-b786-f8a9d52d2f0a");
 			public const string Handler_ClassFieldName = "Handler Class";
+
+						
+			
+
+	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.Print_Studio_Templates.InDesign_connector.Special_Characters
+{
+
+
+ 	/// <summary>
+	/// ICharacter_Mapping Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Print Studio Templates/InDesign connector/Special Characters/Character Mapping</para>	
+	/// <para>ID: e99db339-e308-4d1b-af4d-180cd0dd38bf</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICharacter_MappingConstants.TemplateIdString)]
+	public partial interface ICharacter_Mapping : IGlassBase 
+	{
+								/// <summary>
+					/// The From Code field.
+					/// <para>Hex Unicode Value</para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: b1413a4c-19bc-415d-b4b6-7572c58bf394</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICharacter_MappingConstants.From_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string From_Code  {get; set;}
+								/// <summary>
+					/// The To Code field.
+					/// <para>Hex Unicode Value</para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 4925fb15-b2cb-4ace-8be2-5fb142d01523</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICharacter_MappingConstants.To_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string To_Code  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ICharacter_Mapping Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/Print Studio Templates/InDesign connector/Special Characters/Character Mapping</para>	
+		/// <para>ID: e99db339-e308-4d1b-af4d-180cd0dd38bf</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ICharacter_Mapping__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The From Code field.
+						/// <para>Hex Unicode Value</para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: b1413a4c-19bc-415d-b4b6-7572c58bf394</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICharacter_MappingConstants.From_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string From_Code  {get; set;}
+										/// <summary>
+						/// The To Code field.
+						/// <para>Hex Unicode Value</para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: 4925fb15-b2cb-4ace-8be2-5fb142d01523</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICharacter_MappingConstants.To_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string To_Code  {get; set;}
+						}
+	
+	public static partial class ICharacter_MappingConstants{
+
+			public const string TemplateIdString = "e99db339-e308-4d1b-af4d-180cd0dd38bf";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Character Mapping";
+
+					
+			public static readonly ID From_CodeFieldId = new ID("b1413a4c-19bc-415d-b4b6-7572c58bf394");
+			public const string From_CodeFieldName = "From Code";
+
+						
+					
+			public static readonly ID To_CodeFieldId = new ID("4925fb15-b2cb-4ace-8be2-5fb142d01523");
+			public const string To_CodeFieldName = "To Code";
 
 						
 			
