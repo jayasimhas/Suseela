@@ -11146,6 +11146,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Global_Leaderboard_Slot_ID  {get; set;}
 								/// <summary>
+					/// The Register SubTitle field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: b66e2fb9-4d82-43cf-a6db-cf9b4c1414d3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Register_SubTitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string Register_SubTitle  {get; set;}
+								/// <summary>
+					/// The SignIn SubTitle field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 1909cff6-2bfb-4e87-a69c-273c1aa83024</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.SignIn_SubTitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string SignIn_SubTitle  {get; set;}
+								/// <summary>
 					/// The Email Footer Navigation field.
 					/// <para></para>
 					/// <para>Field Type: Droptree</para>		
@@ -11860,6 +11878,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Global_Leaderboard_Slot_IDFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Global_Leaderboard_Slot_ID  {get; set;}
 										/// <summary>
+						/// The Register SubTitle field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: b66e2fb9-4d82-43cf-a6db-cf9b4c1414d3</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Register_SubTitleFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string Register_SubTitle  {get; set;}
+										/// <summary>
+						/// The SignIn SubTitle field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 1909cff6-2bfb-4e87-a69c-273c1aa83024</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.SignIn_SubTitleFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string SignIn_SubTitle  {get; set;}
+										/// <summary>
 						/// The Email Footer Navigation field.
 						/// <para></para>
 						/// <para>Field Type: Droptree</para>		
@@ -12536,6 +12572,20 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Global_Leaderboard_Slot_IDFieldId = new ID("6c312b88-b709-4eb1-a483-0222a8d7e401");
 			public const string Global_Leaderboard_Slot_IDFieldName = "Global Leaderboard Slot ID";
 
+						
+					
+			public static readonly ID Register_SubTitleFieldId = new ID("b66e2fb9-4d82-43cf-a6db-cf9b4c1414d3");
+			public const string Register_SubTitleFieldName = "Register SubTitle";
+
+							public static readonly ID Register_SubTitle__RawFieldId = new ID("b66e2fb9-4d82-43cf-a6db-cf9b4c1414d3");
+				public const string Register_SubTitle__RawFieldName = "Register SubTitle";
+						
+					
+			public static readonly ID SignIn_SubTitleFieldId = new ID("1909cff6-2bfb-4e87-a69c-273c1aa83024");
+			public const string SignIn_SubTitleFieldName = "SignIn SubTitle";
+
+							public static readonly ID SignIn_SubTitle__RawFieldId = new ID("1909cff6-2bfb-4e87-a69c-273c1aa83024");
+				public const string SignIn_SubTitle__RawFieldName = "SignIn SubTitle";
 						
 					
 			public static readonly ID Email_Footer_NavigationFieldId = new ID("c3b51bcd-d830-415d-8e66-53e80bb9cd7d");
@@ -17555,6 +17605,20 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Global_Leaderboard_Slot_IDFieldId = new ID("6c312b88-b709-4eb1-a483-0222a8d7e401");
 			public const string Global_Leaderboard_Slot_IDFieldName = "Global Leaderboard Slot ID";
 
+						
+					
+			public static readonly ID Register_SubTitleFieldId = new ID("b66e2fb9-4d82-43cf-a6db-cf9b4c1414d3");
+			public const string Register_SubTitleFieldName = "Register SubTitle";
+
+							public static readonly ID Register_SubTitle__RawFieldId = new ID("b66e2fb9-4d82-43cf-a6db-cf9b4c1414d3");
+				public const string Register_SubTitle__RawFieldName = "Register SubTitle";
+						
+					
+			public static readonly ID SignIn_SubTitleFieldId = new ID("1909cff6-2bfb-4e87-a69c-273c1aa83024");
+			public const string SignIn_SubTitleFieldName = "SignIn SubTitle";
+
+							public static readonly ID SignIn_SubTitle__RawFieldId = new ID("1909cff6-2bfb-4e87-a69c-273c1aa83024");
+				public const string SignIn_SubTitle__RawFieldName = "SignIn SubTitle";
 						
 					
 			public static readonly ID Email_Footer_NavigationFieldId = new ID("c3b51bcd-d830-415d-8e66-53e80bb9cd7d");
