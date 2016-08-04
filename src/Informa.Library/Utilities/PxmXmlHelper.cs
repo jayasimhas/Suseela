@@ -8,16 +8,15 @@ namespace Informa.Library.Utilities
 	public interface IPxmXmlHelper
 	{
 		string FinalizeStyles(string content);
-		string ProcessIframeTag(string content);
-		string AddCssClassToQuickFactsText(string content);
 	}
 
 	[AutowireService]
 	public class PxmXmlHelper : IPxmXmlHelper
 	{
 		private readonly IDependencies _dependencies;
-		private const string SidebarStyling = "Sidebar styling";
 		private const string BlockquoteStyle = "quote";
+		private const string OrderedListsStyle = "body_numbered list";
+		private const string UnOrderedListsStyle = "body_bullet";
 
 		[AutowireService(IsAggregateService = true)]
 		public interface IDependencies
@@ -34,18 +33,10 @@ namespace Informa.Library.Utilities
 		{
 			var doc = new XmlDocument();
 			doc.LoadXml(content);
-			AddSidebarStyles(doc);
 			AddBlockquoteStyles(doc);
+			AddOrderedListStyles(doc);
+			AddUnOrderedListStyles(doc);
 			return doc.OuterXml.Replace("<TextFrame>", "").Replace("</TextFrame>", "");
-		}
-
-		public void AddSidebarStyles(XmlDocument doc)
-		{
-			var inlines = doc.SelectNodes("//Inline");
-			if (inlines != null)
-			{
-				ApplyStyles(ref doc, inlines, "Inline", "sidebar", SidebarStyling);
-			}
 		}
 
 		public void AddBlockquoteStyles(XmlDocument doc)
@@ -57,6 +48,24 @@ namespace Informa.Library.Utilities
 			}
 		}
 
+		public void AddOrderedListStyles(XmlDocument doc)
+		{
+			var textFrames = doc.SelectNodes("//TextFrame");
+			if (textFrames != null)
+			{
+				ApplyListStyles(ref doc, textFrames, "ParagraphStyle", "ordered_lists", OrderedListsStyle);
+			}
+		}
+
+		public void AddUnOrderedListStyles(XmlDocument doc)
+		{
+			var textFrames = doc.SelectNodes("//TextFrame");
+			if (textFrames != null)
+			{
+				ApplyListStyles(ref doc, textFrames, "ParagraphStyle", "unordered_lists", UnOrderedListsStyle);
+			}
+		}
+
 		public void ApplyStyles(ref XmlDocument doc, XmlNodeList xmlNodeList, string parentNodeType, string childNodeType, string style)
 		{
 			foreach (XmlNode xmlNode in xmlNodeList)
@@ -64,67 +73,36 @@ namespace Informa.Library.Utilities
 				var children = xmlNode.SelectNodes("//" + parentNodeType + "[@ArticleSource='" + childNodeType + "']/ParagraphStyle");
 				if (children == null) continue;
 
-				foreach (XmlNode child in children)
-				{
-					if (child.Attributes?["Style"] != null)
-					{
-						child.Attributes["Style"].Value = style;
-					}
-					else
-					{
-						var attr = doc.CreateAttribute("Style");
-						attr.Value = style;
-						child.Attributes?.Append(attr);
-					}
-				}
+				AddStyles(doc, children, style);
 			}
 		}
 
-		public string ProcessIframeTag(string content)
+		public void ApplyListStyles(ref XmlDocument doc, XmlNodeList xmlNodeList, string parentNodeType, string childNodeType, string style)
 		{
-			var doc = new HtmlDocument();
-			doc.LoadHtml(content);
-			var xpath = @"//iframe";
-			var iframes = doc.DocumentNode.SelectNodes(xpath);
-			if (iframes == null)
+			foreach (XmlNode xmlNode in xmlNodeList)
 			{
-				return doc.DocumentNode.OuterHtml;
-			}
+				var children = xmlNode.SelectNodes("//" + parentNodeType + "[@ArticleSource='" + childNodeType + "']");
+				if (children == null) continue;
 
-			foreach (HtmlNode iframe in iframes)
-			{
-				var parent = iframe.ParentNode;
-				var attr = iframe.Attributes["class"];
-				if (attr != null && attr.Value.Contains("mobile"))
-				{
-					parent.RemoveChild(iframe);
-					continue;
-				}
-
-				var src = iframe.Attributes["src"];
-				if (src != null)
-				{
-					parent.InnerHtml = $"<p class=\"iframe-content\"><pre type=\"\" height=\"\" width=\"\"><p>Iframe Content: {src.Value}</p></pre></p>";
-				}
+				AddStyles(doc, children, style);
 			}
-			return doc.DocumentNode.OuterHtml;
 		}
 
-		public string AddCssClassToQuickFactsText(string content)
+		public void AddStyles(XmlDocument doc, XmlNodeList children, string style)
 		{
-			var doc = new HtmlDocument();
-			doc.LoadHtml(content);
-			var xpath = @"//div[@class='quick-facts']/p[not(@class)]";
-			var textElements = doc.DocumentNode.SelectNodes(xpath);
-			if (textElements == null)
+			foreach (XmlNode child in children)
 			{
-				return doc.DocumentNode.OuterHtml;
+				if (child.Attributes?["Style"] != null)
+				{
+					child.Attributes["Style"].Value = style;
+				}
+				else
+				{
+					var attr = doc.CreateAttribute("Style");
+					attr.Value = style;
+					child.Attributes?.Append(attr);
+				}
 			}
-			foreach (HtmlNode textElement in textElements)
-			{
-				textElement.Attributes.Add("class", "quick-facts__text");
-			}
-			return doc.DocumentNode.OuterHtml;
 		}
 	}
 }

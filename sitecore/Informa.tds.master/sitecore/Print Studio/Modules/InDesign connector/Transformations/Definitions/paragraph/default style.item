@@ -20,9 +20,9 @@ Style
 field: {9F94D809-627E-468E-99DC-AB523D8F2E56}
 name: XML Default value
 key: xml default value
-content-length: 14
+content-length: 4
 
-2.2 Story Text
+body
 ----field----
 field: {89AD5209-B1C5-44D0-99E8-46F391B12E0F}
 name: XHTML Attribute
@@ -33,7 +33,7 @@ class
 ----version----
 language: en
 version: 1
-revision: b908d29b-7d78-4747-a225-c73ba0e0a819
+revision: 77aeb93e-85e3-4403-b04e-b7081c48dd31
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -62,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b908d29b-7d78-4747-a225-c73ba0e0a819
+77aeb93e-85e3-4403-b04e-b7081c48dd31
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160729T180843Z
+20160801T184523Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

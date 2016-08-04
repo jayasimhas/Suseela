@@ -51,7 +51,6 @@ namespace Informa.Library.Utilities.TokenMatcher
 		public string ReplaceAllTokens(string content)
 		{
 			var result = ReplaceBodyContentTokens(content);
-			//result = ModifyColspan(result);
 			result = ReplaceSectionBreaks(result);
 			return result;
 		}
@@ -103,10 +102,12 @@ namespace Informa.Library.Utilities.TokenMatcher
 			var timeClass = "article-sidebar__date";
             var readAllArticle = "Read the full article here";
 			var document = new HtmlDocument();
-			document.LoadHtml($"<aside type=\"\" height=\"\" width=\"\" class=\"article-sidebar\"><h3></h3><p class=\"{spanClass}\"></p><p class=\"{timeClass}\"></p><div></div><a class=\"article-sidebar__read-more click-utag\" href=\"\"></a></aside>");
+			document.LoadHtml($"<aside type=\"\" height=\"\" width=\"\" class=\"article-sidebar\"><h3 class=\"sidebar-title\"></h3><h4 class=\"sidebar-subhead\"></h4><p class=\"{spanClass}\"></p><p class=\"{timeClass}\"></p><div class=\"sidebar-body\"></div><a class=\"article-sidebar__read-more click-utag\" href=\"\"></a></aside>");
 
 			// Set title
 			document.DocumentNode.SelectSingleNode("//h3").InnerHtml = HttpUtility.HtmlDecode(article.Title);
+			// Set subhead
+			document.DocumentNode.SelectSingleNode("//h4").InnerHtml = HttpUtility.HtmlDecode(article.Sub_Title);
 			// Set author
 			var nodes = document.DocumentNode.SelectNodes("//p");
 			var span = GetNodeByClass(nodes, spanClass);
@@ -130,25 +131,24 @@ namespace Informa.Library.Utilities.TokenMatcher
 			var div = document.DocumentNode.SelectSingleNode("//div");
 			div.InnerHtml = _dependencies.ArticleService.GetArticleBody(article);
 
-			return new HtmlString(document.DocumentNode.OuterHtml);
-		}
-
-		public string ModifyColspan(string content)
-		{
-			var document = new HtmlDocument();
-			document.LoadHtml(content);
-			var nodes = document.DocumentNode.SelectNodes("//td");
-			if (nodes != null)
+			// Add css style to outer p
+			var p = document.DocumentNode.SelectNodes("//div/p");
+			if (p != null)
 			{
-				foreach (var node in nodes)
+				foreach (var node in p)
 				{
-					if (node.Attributes["colspan"] != null && Convert.ToInt16(node.Attributes["colspan"].Value) >= 2)
+					if (node.Attributes["class"] == null)
 					{
-						node.Attributes["colspan"].Value = "1";
+						node.Attributes.Add("class", "sidebar-body");
+					}
+					else
+					{
+						node.Attributes["class"].Value = "sidebar-body";
 					}
 				}
-			}			
-			return document.DocumentNode.OuterHtml;
+			}
+
+			return new HtmlString(document.DocumentNode.OuterHtml);
 		}
 
 		private HtmlNode GetNodeByClass(HtmlNodeCollection nodes, string cssClass)

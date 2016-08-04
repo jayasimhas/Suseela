@@ -1519,6 +1519,10 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h3\sidebar title.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h3\style.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
@@ -1536,6 +1540,10 @@
       <ExcludeItemFrom>
       </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h4\sidebar subhead.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\h4\style.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
@@ -1615,6 +1623,10 @@
       </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\list ol\ArticleSource.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\list ol\default style.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ExcludeItemFrom>
@@ -1636,6 +1648,10 @@
       <ExcludeItemFrom>
       </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\list ul\ArticleSource.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\list ul\default style.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
@@ -1663,7 +1679,47 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\img exhibit caption.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\img exhibit number.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\img exhibit source.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\img exhibit title.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\quick facts source.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\quick facts text.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\sidebar body.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\story text.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\table column header.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\table story text alternate.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\table subhead alternate.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\Print Studio\Modules\InDesign connector\Transformations\Definitions\paragraph\table subhead.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
