@@ -28,14 +28,8 @@
                 </svg> <!-- example media type icon, video -->
             </div>
             <input type="hidden" class="js-search-results-id" data-bookmark-id="{{::doc.itemId}}" />
-            
-            <div    class="search-result__bookmark pop-out__trigger js-angular-bookmark"
-                    ng-class="doc.isUserAuthenticated ? 'js-bookmark-article' : 'js-pop-out-trigger'"
-                    data-pop-out-type="sign-in"
-                    data-pop-out-align="right"
-                    data-bookmark-id="{{::doc.itemId}}"
-                    ng-click="doc.isUserAuthenticated ? fireBookmark(doc, $event, $index) : null"
-                    data-is-bookmarked="{{doc.isArticleBookmarked}}">
+
+
 
 
             <div class="search-result__bookmark pop-out__trigger js-angular-bookmark @(Model.IsAuthenticated ? "js-bookmark-article" : "js-pop-out-trigger")"
@@ -44,18 +38,18 @@
                  data-bookmark-id="{{::doc.itemId}}"
                  ng-click="@(Model.IsAuthenticated ? "fireBookmark(doc, $event, $index)" : "null")"
                  data-is-bookmarked="{{doc.isArticleBookmarked}}"
-				 data-analytics='{
+                 data-analytics='{
  					"bookmark": "true",
  					"bookmark_title": "{{ ::doc.title }}",
  					"bookmark_publication": "{{ ::doc.publicationTitle }}"}'>
 
                 <svg ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'" class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked js-angular-bookmark"
-				ng-class="{ 'is-visible': doc.isArticleBookmarked }">
+                     ng-class="{ 'is-visible': doc.isArticleBookmarked }">
                     <use xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
                 </svg>
 
                 <svg ng-if="doc.templateId == '@IArticleConstants.TemplateIdString'" class="action-flag__icon action-flag__icon--bookmark article-bookmark js-angular-bookmark"
-				ng-class="{ 'is-visible': !doc.isArticleBookmarked }">
+                     ng-class="{ 'is-visible': !doc.isArticleBookmarked }">
                     <use xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
                 </svg>
             </div>
@@ -68,7 +62,7 @@
             <a class="search-result__heading article-preview__headline click-utag"
                ng-href="{{ ::doc.url }}"
                title="{{ ::doc.title }}"
-               data-info='{ "event_name": "search_click_through", "click_through_destination": "{{ ::doc.url }}", "click_through_source": "{{ ::doc.title }}" }' ng-bind-html="doc.title">
+               data-info='{ "event_name": "search_click_through", "click_through_destination": "{{ ::doc.title }}", "click_through_source": "@Model.GlassModel.Title" }' ng-bind-html="doc.title">
             </a>
 
             <div class="search-result__author" ng-if="doc.byline">
@@ -87,7 +81,7 @@
                 </span>
             </div>
 
+
         </div>
-    </div>
-    <!-- end Media Object - Default (no width) -->
+        <!-- end Media Object - Default (no width) -->
 </section>
