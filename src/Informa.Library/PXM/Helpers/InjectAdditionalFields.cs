@@ -1,10 +1,11 @@
-﻿using Jabberwocky.Autofac.Attributes;
+﻿using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Library.PXM.Helpers
 {
     public interface IInjectAdditionalFields
     {
-
+        string InjectIntoHtml(string html, IArticle article);
     }
 
     [AutowireService]
@@ -23,9 +24,21 @@ namespace Informa.Library.PXM.Helpers
             _dependencies = dependencies;
         }
 
-        public string GetAuthors()
+        public string InjectIntoHtml(string html, IArticle article)
         {
-            return null;
+            var result = InjectAuthors(html, article);
+            result = InjectTitles(result, article);
+            return result;
+        }
+
+        public string InjectAuthors(string html, IArticle article)
+        {
+            return html;
+        }
+
+        public string InjectTitles(string html, IArticle article)
+        {
+            return html;
         }
     }
 }

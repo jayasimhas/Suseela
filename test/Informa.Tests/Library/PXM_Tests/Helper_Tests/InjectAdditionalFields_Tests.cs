@@ -19,14 +19,14 @@ namespace Informa.Tests.Library.PXM_Tests.Helper_Tests
         }
 
         [Test]
-        public void GetAuthors_ItemId_ReturnsListOfAuthors()
+        public void MethodName_Input_Expectation()
         {
             // ARRANGE
-            _injectAdditionalFields.GetAuthors();
 
             // ACT
 
             // ASSERT
+
         }
     }
 }
