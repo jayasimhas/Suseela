@@ -77,35 +77,41 @@ namespace Informa.Web.Areas.VWB.Controllers
 			};
 		}
 
-		[HttpPost]
-		public ActionResult Save(string issue, string order, string todelete, string title, string date, string notes, string submit)
-		{
-			Guid issueId;
-			if (!Guid.TryParse(issue, out issueId))
-                return Redirect(Request?.Url?.ToString());
-            
-			if (!string.IsNullOrWhiteSpace(todelete))
-			{
-				_dependencies.IssuesService.DeleteArticles(todelete);
-			}
+	    [HttpPost]
+	    public ActionResult Save(string issue, string order, string todelete, string title, string date, string notes,
+	        string submit, string editorialnotes)
+	    {
+	        Guid issueId;
+	        if (!Guid.TryParse(issue, out issueId))
+	            return Redirect(Request?.Url?.ToString());
 
-			if (!string.IsNullOrWhiteSpace(order))
-			{
-				_dependencies.IssuesService.ReorderArticles(order);
-			}
+	        if (!string.IsNullOrWhiteSpace(todelete))
+	        {
+	            _dependencies.IssuesService.DeleteArticles(todelete);
+	        }
 
-			var model = new IssueModel
-			{
-			    Title = title,
-                PublishedDate = date.ToDate(),
-			    Notes = notes
-			};
+	        if (!string.IsNullOrWhiteSpace(order))
+	        {
+	            _dependencies.IssuesService.ReorderArticles(order);
+	        }
 
-			_dependencies.IssuesService.UpdateIssueItem(model, issueId);
-            if (submit.Equals("save"))
-                return Redirect($"/vwb/addissue?id={issueId.ToString("D")}");
-            else
-                return Redirect("/vwb");
-		}
+	        if (!string.IsNullOrWhiteSpace(editorialnotes))
+	        {
+	            _dependencies.IssuesService.UpdateEditorialNotes(editorialnotes);
+	        }
+
+	        var model = new IssueModel
+	        {
+	            Title = title,
+	            PublishedDate = date.ToDate(),
+	            Notes = notes
+	        };
+
+	        _dependencies.IssuesService.UpdateIssueItem(model, issueId);
+	        if (submit.Equals("save"))
+	            return Redirect($"/vwb/addissue?id={issueId.ToString("D")}");
+	        else
+	            return Redirect("/vwb");
+	    }
 	}
 }

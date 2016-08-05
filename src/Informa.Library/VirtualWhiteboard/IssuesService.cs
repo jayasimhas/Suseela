@@ -10,6 +10,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whit
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Models;
+using Newtonsoft.Json;
 using Sitecore.Mvc.Extensions;
 using Velir.Core.Extensions.System.Collections.Generic;
 using EnumerableExtensions = Informa.Library.Utilities.Extensions.EnumerableExtensions;
@@ -28,6 +29,7 @@ namespace Informa.Library.VirtualWhiteboard
         IEnumerable<IIssue> GetActiveIssues();
 		bool DoesIssueContains(Guid issueId, string articleId);
 		void AddArticlesToIssue(Guid issueId, IEnumerable<Guid> itemIds);
+	    void UpdateEditorialNotes(string notesJson);
 	}
 
 	[AutowireService]
@@ -244,5 +246,22 @@ namespace Informa.Library.VirtualWhiteboard
 		{
 			return GetIssueArticlesSet(issueId).Contains(articleId);
 		}
+
+	    public void UpdateEditorialNotes(string notesJson)
+	    {
+            var idToNoteDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(notesJson);
+
+	        foreach (var kvPair in idToNoteDict)
+	        {
+                Guid id;
+                if(!Guid.TryParse(kvPair.Key, out id)) { continue; }
+
+	            var article = _dependencies.SitecoreServiceMaster.GetItem<IArticle__Raw>(id);
+                if(article == null) { continue; }
+
+	            article.Editorial_Notes = kvPair.Value;
+                _dependencies.SitecoreServiceMaster.Save(article);
+	        }
+        }
 	}
 }

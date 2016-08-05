@@ -31,7 +31,8 @@
 						@Math.Abs(Model.Issue._Name.GetHashCode())
 						<input type="hidden" id="js-issue" name="issue" value="@Model.Issue._Id" />
 						<input type="hidden" id="js-order" name="order" value="" />
-						<input type="hidden" id="js-todelete" name="todelete" value="" />
+					    <input type="hidden" id="js-todelete" name="todelete" value=""/>
+                        <input type="hidden" id="js-editorialnotes" name="editorialnotes" value="" />
 						<button class="js-archive orange-button">Archive Issue</button>
 					</td>
 				</tr>
@@ -99,7 +100,7 @@
 						</div>
 						<div>sidebars</div>
 						<div class="issue-notes">
-							<textarea >@article.Editorial_Notes</textarea>
+							<textarea class="js-editorial-note">@article.Editorial_Notes</textarea>
 						</div>
 						<div class="delete-article js-delete-article">
 							<a class="delete-button">Toggle Delete</a>
