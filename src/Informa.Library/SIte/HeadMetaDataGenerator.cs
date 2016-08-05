@@ -102,7 +102,7 @@ namespace Informa.Library.Site
 
             foreach (var pair in properties)
             {
-                string propertyName = (pair.Key.ToLower().Contains("og")) ? "property" : "name";
+                string propertyName = (pair.Key.ToLower().StartsWith("twitter")) ? "name" : "property";
                 result.AppendLine($"<meta {propertyName}=\"{pair.Key}\" content=\"{pair.Value}\">");
             }
 

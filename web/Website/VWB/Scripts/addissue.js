@@ -21,6 +21,14 @@ $(function() {
 			return keep;
 		};
 
+    // Capture Editorial Notes
+    var changedEditorialNotes = {};
+    $(".js-editorial-note").change(function (e) {
+        var sender = $(e.target);
+        changedEditorialNotes[sender.parent().parent().attr("id")] = sender.val();
+        $("#js-editorialnotes").val(JSON.stringify(changedEditorialNotes));
+    });
+
 		// Delete article toggle
 		$(".js-delete-article").click(function() {
 			var locInDeleteArray = articlesToDelete.indexOf($(this).parent().attr("id"));
