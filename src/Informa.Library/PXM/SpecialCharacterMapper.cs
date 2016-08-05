@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 using Glass.Mapper.Sc;
-using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.Print_Studio_Templates.InDesign_connector.Special_Characters;
 using Jabberwocky.Autofac.Attributes;
 
