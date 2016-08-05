@@ -1,6 +1,8 @@
 ﻿@{
 	Layout = null;
 }
+@using Informa.Library.Utilities.Extensions
+@using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 @model Informa.Web.ViewModels.VWB.AddIssueViewModel
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -98,7 +100,7 @@
 								@Html.Raw(article.Title)
 							</a>
 						</div>
-						<div>sidebars</div>
+						<div>@Html.Raw(Model.GetSidebars(article))</div>
 						<div class="issue-notes">
 							<textarea class="js-editorial-note">@article.Editorial_Notes</textarea>
 						</div>
