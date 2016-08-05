@@ -97,15 +97,8 @@ namespace Informa.Library.PXM
 								DefaultParagraphStyle = str,
 								ParseDefinitions = RichTextParser.GetParseDefinitionCollection(this.RenderingItem)
 							};
-					        string modifiedHtml;
-					        using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
-					        {
-					            var sitecoreService = scope.Resolve<ISitecoreService>();
-					            var injector = scope.Resolve<IInjectAdditionalFields>();
-                                var glassArticle = sitecoreService.Cast<IArticle>(dataItem);
-					            modifiedHtml = injector.InjectIntoHtml(field.Value, glassArticle);
-					        }
-							string xml = RichTextParser.ConvertToXml(modifiedHtml, context, printContext.Language);
+					        string htmlWithItemId = $"<!--{dataItem.ID.Guid.ToString("B")}-->" + field.Value;
+							string xml = RichTextParser.ConvertToXml(htmlWithItemId, context, printContext.Language);
 							XElement element = new XElement((XName)"temp");
 							element.AddFragment(xml);
 							return element.Elements();
