@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;
+	Layout = null;
 }
 @model Informa.Web.ViewModels.VWB.AddIssueViewModel
 
@@ -17,94 +17,107 @@
 
 </head>
 <body class="bigger">
-<div class="pad-it">
-	@using (Html.BeginForm("Save", "AddIssue"))
-	{
-		<h2>Issue Information</h2>
+	<div class="pad-it">
+		@using (Html.BeginForm("Save", "AddIssue"))
+		{
+			<h2>Issue Information</h2>
 
-		<table class="basic">
-			<tr>
-				<td>
-					Issue Number
-				</td>
-				<td>
-					@Math.Abs(Model.Issue._Name.GetHashCode())
-					<input type="hidden" id="js-issue" name="issue" value="@Model.Issue._Id" />
-					<input type="hidden" id="js-order" name="order" value="" />
-					<input type="hidden" id="js-todelete" name="todelete" value="" />
-					<button class="js-archive orange-button">Archive Issue</button>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Title
-				</td>
-				<td>
-					<input type="text" name="title" value="@Model.Issue.Title" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Date Published
-				</td>
-				<td>
-					<input type="text" name="date" id="js-datepicker" value="@Model.Issue.Published_Date.ToString("d")" />
-				</td>
-			</tr>
-		</table>
+			<table class="basic">
+				<tr>
+					<td>
+						Issue Number
+					</td>
+					<td>
+						@Math.Abs(Model.Issue._Name.GetHashCode())
+						<input type="hidden" id="js-issue" name="issue" value="@Model.Issue._Id" />
+						<input type="hidden" id="js-order" name="order" value="" />
+						<input type="hidden" id="js-todelete" name="todelete" value="" />
+						<button class="js-archive orange-button">Archive Issue</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Title
+					</td>
+					<td>
+						<input type="text" name="title" value="@Model.Issue.Title" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Date Published
+					</td>
+					<td>
+						<input type="text" name="date" id="js-datepicker" value="@Model.Issue.Published_Date.ToString("d")" />
+					</td>
+				</tr>
+			</table>
 
-		<h2>Articles in Issue</h2>
+			<h2>Articles in Issue</h2>
 
-		<div class="draggable-wrapper js-draggable-wrapper">
+			<div class="draggable-wrapper js-draggable-wrapper">
 
-			<div class="draggable draggable-header">
-		<div></div>
-		<div>
-			Article Number
-		</div>
-		<div>
-			Title
-		</div>
-		<div>
-			Delete/Re-Add
-		</div>
-	</div>
-			@foreach (var article in Model.Articles)
-			{
-				<div class="draggable js-draggable" id="@article._Id">
+				<div class="draggable draggable-header">
 					<div></div>
 					<div>
-                        @if (!string.IsNullOrEmpty(Model.ArticleService.GetDownloadUrl(article))) {
-                        <a target="_blank" href="@Model.ArticleService.GetDownloadUrl(article)">
-                            <img width="16" height="16" align="absmiddle" src="/VWB/images/vwb/wordicon.png" alt="Hyperlink"/>
-                            @article.Article_Number
-                        </a>
-                        } else {
-                            @article.Article_Number
-                        }
+						Article Number
 					</div>
 					<div>
-                        <a target="_blank" href="@Model.ArticleService.GetPreviewUrl(article)">
-                            @Html.Raw(article.Title)
-                        </a>
+						Title
 					</div>
-					<div class="delete-article js-delete-article">
-						<a class="delete-button">Toggle Delete</a>
+					<div>
+						Sidebar(s)
 					</div>
+					<div>
+						Notes
+					</div>
+					<div>
+						Delete/Re-Add
+					</div>					
 				</div>
-			}
-		</div>
+				@foreach (var article in Model.Articles)
+				{
+					<div class="draggable js-draggable" id="@article._Id">
+						<div></div>
+						<div>
+							@if (!string.IsNullOrEmpty(Model.ArticleService.GetDownloadUrl(article)))
+							{
+								<a target="_blank" href="@Model.ArticleService.GetDownloadUrl(article)">
+									<img width="16" height="16" align="absmiddle" src="/VWB/images/vwb/wordicon.png" alt="Hyperlink" />
+									@article.Article_Number
+								</a>
+							}
+							else
+							{
+								@article.Article_Number
+							}
+						</div>
+						<div>
+							<a target="_blank" href="@Model.ArticleService.GetPreviewUrl(article)">
+								@Html.Raw(article.Title)
+							</a>
+						</div>
+						<div>sidebars</div>
+						<div class="issue-notes">
+							<textarea >@article.Editorial_Notes</textarea>
+						</div>
+						<div class="delete-article js-delete-article">
+							<a class="delete-button">Toggle Delete</a>
+						</div>
+					</div>
+				}
+			</div>
 
-		<div class="issue-notes">
-			<h3>Issue Notes</h3>
-			<textarea name="notes">@Model.Issue.Notes</textarea>
-		</div>
+			<div class="issue-notes">
+				<h3>Issue Notes</h3>
+				<textarea name="notes">@Model.Issue.Notes</textarea>
+			</div>
 
-		<button type="submit" class="orange-button" name="submit" value="save">Save Updates to Issue</button>
-		<button type="submit" class="orange-button" name="submit" value="return">Save Updates and Go Back to VWB</button>
-		<a href="/vwb">Go Back to VWB Without Saving</a>
-	}
-</div>
+			<button type="submit" class="orange-button" name="submit" value="save">Save Updates to Issue</button>
+			<button type="submit" class="orange-button" name="submit" value="return">Save Updates and Go Back to VWB</button>
+			<a href="/vwb">Go Back to VWB Without Saving</a>
+		}
+	</div>
 
 	<div id="js-dialog">
 	</div>
