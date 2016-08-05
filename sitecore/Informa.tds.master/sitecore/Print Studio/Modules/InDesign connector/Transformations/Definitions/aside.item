@@ -13,9 +13,9 @@ templatekey: TransformationElement
 field: {F29087BF-DE4D-46EB-8C9F-072D8F098458}
 name: Type
 key: type
-content-length: 109
+content-length: 65
 
-Sitecore.PrintStudio.PublishingEngine.Text.Parsers.Html.HtmlNodeParser, Sitecore.PrintStudio.PublishingEngine
+Informa.Library.PXM.Parsers.CustomHtmlNodeParser, Informa.Library
 ----field----
 field: {80090593-07B3-4E16-843D-336D83DBD355}
 name: XML Name
@@ -94,7 +94,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: ef559f1c-81da-4e34-9517-19a072d27cfb
+revision: 470f2a9e-2be9-4204-9ece-6701506d0dd8
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -109,14 +109,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ef559f1c-81da-4e34-9517-19a072d27cfb
+470f2a9e-2be9-4204-9ece-6701506d0dd8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160715T211634Z
+20160805T185503Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
