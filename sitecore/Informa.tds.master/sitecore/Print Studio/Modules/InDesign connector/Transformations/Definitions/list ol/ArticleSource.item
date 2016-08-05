@@ -23,10 +23,24 @@ key: xml default value
 content-length: 13
 
 ordered_lists
+----field----
+field: {89AD5209-B1C5-44D0-99E8-46F391B12E0F}
+name: XHTML Attribute
+key: xhtml attribute
+content-length: 5
+
+class
+----field----
+field: {6BCB71D1-9FB5-4AF5-96D5-9FC1E4284E49}
+name: XHTML Default value
+key: xhtml default value
+content-length: 16
+
+article-list--ol
 ----version----
 language: en
 version: 1
-revision: ecb270ed-5dde-4b05-a42d-e208d012ff44
+revision: 2ddcd5e9-fe02-43c4-8bcd-49b8b7788007
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -55,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ecb270ed-5dde-4b05-a42d-e208d012ff44
+2ddcd5e9-fe02-43c4-8bcd-49b8b7788007
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160803T181700Z
+20160805T141523Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
