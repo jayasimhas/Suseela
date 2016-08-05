@@ -372,8 +372,9 @@
     <Compile Include="DCD\DcdContentAnalyzer.cs" />
     <Compile Include="PXM\CustomConvertToXml.cs" />
     <Compile Include="PXM\CustomFinalizeProcessor.cs" />
+    <Compile Include="PXM\Helpers\InjectAdditionalFields.cs" />
     <Compile Include="PXM\Parsers\CustomHtmlNodeParser.cs" />
-    <Compile Include="PXM\CustomHtmlParseHelper.cs" />
+    <Compile Include="PXM\Helpers\CustomHtmlParseHelper.cs" />
     <Compile Include="PXM\CustomInDesignConnectorService.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1126,8 +1127,8 @@
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
     <Compile Include="Utilities\Extensions\GenericsExtensions.cs" />
     <Compile Include="Utilities\Extensions\StringExtensions.cs" />
-    <Compile Include="Utilities\PxmHtmlHelper.cs" />
-    <Compile Include="Utilities\PxmXmlHelper.cs" />
+    <Compile Include="PXM\Helpers\PxmHtmlHelper.cs" />
+    <Compile Include="PXM\Helpers\PxmXmlHelper.cs" />
     <Compile Include="Utilities\References\Constants.cs" />
     <Compile Include="Utilities\References\DictionaryKeys.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />

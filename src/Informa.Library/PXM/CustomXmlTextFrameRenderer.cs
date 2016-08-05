@@ -58,6 +58,7 @@ namespace Informa.Library.PXM
 				}
 			}
 			Item dataItem = this.GetDataItem(printContext);
+		    dataItem.Fields["body"].SetValue("<div class='root'><h1>MMOOSEEE</h1></div>", true);
 			XElement xelement = RenderItemHelper.CreateXElement("TextFrame", this.RenderingItem, printContext.Settings.IsClient, dataItem);
 			this.SetAttributes(xelement);
 			IEnumerable<XElement> xelements = (IEnumerable<XElement>)null;

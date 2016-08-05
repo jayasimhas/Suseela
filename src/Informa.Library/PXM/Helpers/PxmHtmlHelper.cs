@@ -3,7 +3,7 @@ using System.Linq;
 using HtmlAgilityPack;
 using Jabberwocky.Autofac.Attributes;
 
-namespace Informa.Library.Utilities
+namespace Informa.Library.PXM.Helpers
 {
 	public interface IPxmHtmlHelper
 	{

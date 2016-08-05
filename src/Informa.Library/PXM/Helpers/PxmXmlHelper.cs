@@ -1,9 +1,7 @@
-﻿using System.Linq;
-using System.Xml;
-using HtmlAgilityPack;
+﻿using System.Xml;
 using Jabberwocky.Autofac.Attributes;
 
-namespace Informa.Library.Utilities
+namespace Informa.Library.PXM.Helpers
 {
 	public interface IPxmXmlHelper
 	{

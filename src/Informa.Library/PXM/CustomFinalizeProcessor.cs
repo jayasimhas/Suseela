@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
+using Informa.Library.PXM.Helpers;
 using Informa.Library.Utilities;
 using Sitecore.PrintStudio.PublishingEngine.Pipelines.ConvertHtmlToXml;
 

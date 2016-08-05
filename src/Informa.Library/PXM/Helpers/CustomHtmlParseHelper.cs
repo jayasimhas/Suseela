@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Sitecore.PrintStudio.PublishingEngine.Helpers;
 using Sitecore.PrintStudio.PublishingEngine.Text;
-using Sitecore.PrintStudio.PublishingEngine.Text.Parsers.Html;
 using Sitecore.Reflection;
 
-namespace Informa.Library.PXM
+namespace Informa.Library.PXM.Helpers
 {
 	public class CustomHtmlParseHelper
 	{
