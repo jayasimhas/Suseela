@@ -309,7 +309,7 @@ namespace Elsevier.Web.VWB
 			issuesService.AddArticlesToIssue(issueId, articlesToAdd);
 			BuildReport();
             string url = $"{IssuePageUrl}{issueId}";
-            Response.Write($"<script>window.open('{ResolveUrl(url)}','_blank')</script>");			
+		    ClientScript.RegisterStartupScript(GetType(), "", $"<script>window.open('{ResolveUrl(url)}','_blank')</script>");
 	    }
 
         #endregion
