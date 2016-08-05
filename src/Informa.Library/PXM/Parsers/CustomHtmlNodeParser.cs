@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using HtmlAgilityPack;
+using Informa.Library.PXM.Helpers;
 using Sitecore.PrintStudio.PublishingEngine.Helpers;
 using Sitecore.PrintStudio.PublishingEngine.Text;
 using Sitecore.PrintStudio.PublishingEngine.Text.Parsers.Html;

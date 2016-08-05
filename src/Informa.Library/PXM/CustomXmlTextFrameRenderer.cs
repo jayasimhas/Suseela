@@ -13,6 +13,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using Autofac;
+using Glass.Mapper.Sc;
+using Informa.Library.PXM.Helpers;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Jabberwocky.Glass.Autofac.Util;
 using Sitecore.PrintStudio.PublishingEngine;
 using Sitecore.PrintStudio.PublishingEngine.Rendering;
 
@@ -58,7 +63,7 @@ namespace Informa.Library.PXM
 				}
 			}
 			Item dataItem = this.GetDataItem(printContext);
-			XElement xelement = RenderItemHelper.CreateXElement("TextFrame", this.RenderingItem, printContext.Settings.IsClient, dataItem);
+		    XElement xelement = RenderItemHelper.CreateXElement("TextFrame", this.RenderingItem, printContext.Settings.IsClient, dataItem);
 			this.SetAttributes(xelement);
 			IEnumerable<XElement> xelements = (IEnumerable<XElement>)null;
 			if (flag)
@@ -92,7 +97,15 @@ namespace Informa.Library.PXM
 								DefaultParagraphStyle = str,
 								ParseDefinitions = RichTextParser.GetParseDefinitionCollection(this.RenderingItem)
 							};
-							string xml = RichTextParser.ConvertToXml(field.Value, context, printContext.Language);
+					        string modifiedHtml;
+					        using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
+					        {
+					            var sitecoreService = scope.Resolve<ISitecoreService>();
+					            var injector = scope.Resolve<IInjectAdditionalFields>();
+                                var glassArticle = sitecoreService.Cast<IArticle>(dataItem);
+					            modifiedHtml = injector.InjectIntoHtml(field.Value, glassArticle);
+					        }
+							string xml = RichTextParser.ConvertToXml(modifiedHtml, context, printContext.Language);
 							XElement element = new XElement((XName)"temp");
 							element.AddFragment(xml);
 							return element.Elements();
