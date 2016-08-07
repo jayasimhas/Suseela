@@ -39,9 +39,9 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 
 			RenewBtnSettings = new Dictionary<string, bool>();
 			SubscriptionBtnSettings = new Dictionary<string, bool>();
-			_subcriptions = userSubscriptionsContext.Subscriptions;
+            _subcriptions = userSubscriptionsContext.Subscriptions.Where(w => string.IsNullOrEmpty(w.Publication) == false).ToList();
 
-			foreach (var sub in _subcriptions)
+            foreach (var sub in _subcriptions)
 			{
 				//renew btns
 				if (!RenewBtnSettings.ContainsKey(sub.ProductCode))
