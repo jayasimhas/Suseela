@@ -58,7 +58,7 @@ var renderIframeComponents = function() {
             if (mobileEmbed.html() == '') 
                 mobileEmbed.html(decodeHtml(mobileEmbed.data('embed-link')));
         } else {
-            desktopEmbed.hide();
+            mobileEmbed.hide();
         }
         
         if (showDesktop) {
@@ -66,7 +66,7 @@ var renderIframeComponents = function() {
             if (desktopEmbed.html() == '') 
                 desktopEmbed.html(decodeHtml(desktopEmbed.data('embed-link')));
         } else {
-            mobileEmbed.hide();
+            desktopEmbed.hide();
         }
 
         var desktopMediaId = $(elm).find('.iframe-component__desktop').data("mediaid");
@@ -619,7 +619,7 @@ $(document).ready(function() {
 
     // Find duplicate embeds on article page
     // IITS2-312
-    $('[class^=iframe-component__desktop] ~ [class^=iframe-component__mobile]').each(function(index, item) {
+    $('[class^=ewf-desktop-iframe] ~ [class^=ewf-mobile-iframe]').each(function(index, item) {
         $(item).remove();
     });
 
