@@ -6,7 +6,6 @@ using Informa.Library.Subscription;
 using Informa.Library.Subscription.User;
 using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account;
-using Informa.Web.ViewModels;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Library.ViewModels.Account;
 using Informa.Library.Publication;
@@ -39,7 +38,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 
             RenewBtnSettings = new Dictionary<string, bool>();
             SubscriptionBtnSettings = new Dictionary<string, bool>();
-            _subcriptions = userSubscriptionsContext.Subscriptions.Where(w => string.IsNullOrEmpty(w.Publication) == false && w.ExpirationDate >= DateTime.Now.AddMonths(-6)).OrderByDescending(o => o.ExpirationDate).ToList();
+
+            _subcriptions = userSubscriptionsContext.Subscriptions.Where(w => string.IsNullOrEmpty(w.Publication) == false && w.ExpirationDate >= DateTime.Now.AddMonths(-6)).OrderByDescending(o => o.ExpirationDate);
 
             foreach (var sub in _subcriptions)
             {
@@ -114,5 +114,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public string SubscriptionTypeText => TextTranslator.Translate("Subscriptions.SubscriptionType");
         public string ExpirationDateText => TextTranslator.Translate("Subscriptions.ExpirationDate");
         public string ActionText => TextTranslator.Translate("Subscriptions.Action");
+        public string BottomNotation => GlassModel.Bottom_Notation;
     }
 }

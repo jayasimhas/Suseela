@@ -3,7 +3,7 @@
 @if (Model.IsAuthenticated)
 {
     <div class="page-account">
-		@Html.Sitecore().Placeholder("page-account")
+        @Html.Sitecore().Placeholder("page-account")
 
         <div class="page-preferences js-preferences-user-container">
 
@@ -100,45 +100,46 @@
                     </tr>
                 </thead>
                 <tbody>
-                @foreach (var item in Model.SubscriptionViewModels)
+                    @foreach (var item in Model.SubscriptionViewModels)
                 {
-                    <tr>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--publication">
-                            @item.Publication
-                        </td>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--sub-type">
-                            @item.Type
-                        </td>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--exp-date">
-                            @item.Expiration.ToString("d MMMM yyyy")
-                        </td>
-                        <td class="sortable-table__col">
-                            @if (item.Renewable) {
-                                <a
-									class="button button--outline click-utag"
-									data-info='{
+                        <tr>
+                            <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--publication">
+                                @item.Publication
+                            </td>
+                            <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--sub-type">
+                                @item.Type
+                            </td>
+                            <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--exp-date">
+                                @item.Expiration.ToString("d MMMM yyyy")
+                            </td>
+                            <td class="sortable-table__col">
+                                @if (item.Renewable)
+                                {
+                                    <a class="button button--outline click-utag"
+                                       data-info='{
 										"event_name": "subscription_renew"
 									}'
-									href="@Model.OffSiteRenewLink">
-									Renew
-								</a>
-                            }
-                            @if (item.Subscribable) {
-                                @Html.Raw("&nbsp;&nbsp;&nbsp;")
-                                <a
-									class="button button--outline click-utag"
-									data-info='{
+                                       href="@Model.OffSiteRenewLink">
+                                        Renew
+                                    </a>
+                                }
+                                @if (item.Subscribable)
+                                {
+                                    @Html.Raw("&nbsp;&nbsp;&nbsp;")
+                                    <a class="button button--outline click-utag"
+                                       data-info='{
 										"event_name": "subscription_subscribe"
 									}'
-									href="@Model.OffSiteSubscriptionLink">
-									Subscribe
-								</a>
-                            }
-                        </td>
-                    </tr>
-                }
+                                       href="@Model.OffSiteSubscriptionLink">
+                                        Subscribe
+                                    </a>
+                                }
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
+            <label>@Model.BottomNotation</label>
         </div>
     </div>
 }
@@ -147,4 +148,4 @@ else
     <div class="page-account__sign-in-solo">
         @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
     </div>
-}
+            }
