@@ -254,10 +254,12 @@ namespace Elsevier.Web.VWB
 
         protected void NewIssueSubmitButton_OnClick(object sender, EventArgs e)
         {
+	        DateTime date;
+
             var model = new Informa.Library.VirtualWhiteboard.Models.IssueModel
             {
+				PublishedDate = DateTime.TryParse(IssuePublishedDateInput.Value, out date) ? date : DateTime.Now,
                 Title = IssueTitleInput.Value,
-                PublishedDate = DateTime.Parse(IssuePublishedDateInput.Value),
                 ArticleIds = IssueArticleIdsInput.Value.Split('|').Select(Guid.Parse)
             };
 
