@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Text.RegularExpressions;
 using Informa.Library.Utilities.Extensions;
+using Informa.Library.Utilities.StringUtils;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 
@@ -14,6 +15,19 @@ namespace Informa.Library.PXM.Helpers
     [AutowireService]
     public class InjectAdditionalFields : IInjectAdditionalFields
     {
+        private readonly IDependencies _dependencies;
+
+        [AutowireService(true)]
+        public interface IDependencies
+        {
+            IBylineMaker BylineMaker { get; }
+        }
+        public InjectAdditionalFields(IDependencies dependencies)
+        {
+            _dependencies = dependencies;
+        }
+
+
         private const string RootRegex = @"<\s*div .*?class\s*=\s*['""]root['""].*?>";
 
         public string InjectIntoHtml(string html, IArticle article)
@@ -27,19 +41,12 @@ namespace Informa.Library.PXM.Helpers
 
         public string InjectAuthors(string html, IArticle article)
         {
-            var authorsTag = $"<pre><h3 class='authors'>{GetAuthorsFormatted(article)}</h3></pre>";
+            var authors = article?.Authors?.ToArray();
+            if (authors == null || authors.Length == 0) { return html; }
+
+            var authorsTag = $"<pre><h3 class='authors'>{_dependencies.BylineMaker.MakePrintByLine(authors)}</h3></pre>";
 
             return InjectAfterRegex(RootRegex, html, authorsTag);
-        }
-
-        public string GetAuthorsFormatted(IArticle article)
-        {
-            if(article?.Authors == null) { return string.Empty; }
-
-            var formattedStrings =
-                article.Authors.Select(a => $"{a.First_Name} {a.Last_Name} {a.Email_Address}");
-
-            return string.Join(" ", formattedStrings);
         }
 
         public string InjectTitles(string html, IArticle article)
