@@ -11,6 +11,7 @@ namespace Informa.Library.Utilities.StringUtils
     public interface IBylineMaker
     {
         string MakeByline(IEnumerable<I___Person> authors);
+        string MakePrintByLine(IEnumerable<I___Person> authors);
     }
 
     [AutowireService]
@@ -52,6 +53,16 @@ namespace Informa.Library.Utilities.StringUtils
             var result = $"{by}{names.JoinWithFinal(", ", "and")}";
 
             return result == by ? string.Empty : result;
+        }
+
+        public string MakePrintByLine(IEnumerable<I___Person> authors)
+        {
+            if (authors == null) { return string.Empty; }
+
+            var formattedStrings =
+                authors.Select(a => $"{a.First_Name} {a.Last_Name} {a.Email_Address}");
+
+            return string.Join(" ", formattedStrings);
         }
     }
 }

@@ -34,7 +34,8 @@ namespace Informa.Library.PXM.Helpers
 			AddBlockquoteStyles(doc);
 			AddOrderedListStyles(doc);
 			AddUnOrderedListStyles(doc);
-			return doc.OuterXml.Replace("<TextFrame>", "").Replace("</TextFrame>", "");
+			ApplyTableStyles(doc);
+            return doc.OuterXml.Replace("<TextFrame>", "").Replace("</TextFrame>", "");
 		}
 
 		public void AddBlockquoteStyles(XmlDocument doc)
@@ -101,6 +102,24 @@ namespace Informa.Library.PXM.Helpers
 					child.Attributes?.Append(attr);
 				}
 			}
+		}
+
+		public void ApplyTableStyles(XmlDocument doc)
+		{
+			var tds = doc.SelectNodes("//Cell[@ChildStyle != '']");
+			if (tds != null)
+			{
+				foreach (XmlNode td in tds)
+				{
+					foreach (XmlNode childNode in td.ChildNodes)
+					{
+						if (childNode.Attributes?["Style"] != null)
+						{
+							childNode.Attributes["Style"].Value = td.Attributes?["ChildStyle"].Value;
+						}
+					}
+				}
+			}			
 		}
 	}
 }

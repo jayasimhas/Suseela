@@ -85,21 +85,21 @@ namespace Informa.Library.Utilities.TokenMatcher
 			filter.ArticleNumbers = articleNumber.SingleToList();
 			var results = _dependencies.ArticleSearch.Search(filter);
 			var replace = new HtmlString("");
-			if (results.Articles.Any())
-			{
-				var article = results.Articles.FirstOrDefault();
-				if (article != null)
-				{
-					replace = BuildSideArticleHtml(article);
-				}
-			}
-			return replace.ToHtmlString();
+
+            var article = results.Articles?.FirstOrDefault();
+
+		    if (article != null)
+		    {
+                replace = BuildSideArticleHtml(article);
+            }
+
+		    return replace.ToHtmlString();
 		}
 
 		private HtmlString BuildSideArticleHtml(IArticle article)
 		{
-			var spanClass = "article-sidebar__byline";
-			var timeClass = "article-sidebar__date";
+			var spanClass = "sidebar__byline";
+			var timeClass = "sidebar__date";
             var readAllArticle = "Read the full article here";
 			var document = new HtmlDocument();
 			document.LoadHtml($"<aside type=\"\" height=\"\" width=\"\" class=\"article-sidebar\"><h3 class=\"sidebar-title\"></h3><h4 class=\"sidebar-subhead\"></h4><p class=\"{spanClass}\"></p><p class=\"{timeClass}\"></p><div class=\"sidebar-body\"></div><a class=\"article-sidebar__read-more click-utag\" href=\"\"></a></aside>");
@@ -111,7 +111,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 			// Set author
 			var nodes = document.DocumentNode.SelectNodes("//p");
 			var span = GetNodeByClass(nodes, spanClass);
-			var author = _dependencies.ByLineMaker.MakeByline(article.Authors);
+			var author = _dependencies.ByLineMaker.MakePrintByLine(article.Authors);
             if (!string.IsNullOrEmpty(author))
 			{
 				span.InnerHtml = author;
@@ -122,8 +122,15 @@ namespace Informa.Library.Utilities.TokenMatcher
 			}
 			// Set time
 			var time = GetNodeByClass(nodes, timeClass);
-			time.InnerHtml = article.Actual_Publish_Date.ToString("dd MMM yyyy");
-			// Set linkable url
+		    if (article.Actual_Publish_Date != DateTime.MinValue)
+		    {
+		        time.InnerHtml = article.Actual_Publish_Date.ToString("dd MMM yyyy");
+		    }
+		    else
+		    {
+		        time.Remove();
+		    }
+		    // Set linkable url
 			var a = document.DocumentNode.SelectSingleNode("//a");
 			a.Attributes["href"].Value = article._Url;
 			a.InnerHtml = readAllArticle;
