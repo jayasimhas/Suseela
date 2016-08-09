@@ -1,4 +1,5 @@
-﻿using Informa.Library.PXM.Helpers;
+﻿using System.Collections.Generic;
+using Informa.Library.PXM.Helpers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using NSubstitute;
@@ -11,11 +12,14 @@ namespace Informa.Tests.Library.PXM_Tests.Helper_Tests
     public class InjectAdditionalFields_Tests
     {
         InjectAdditionalFields _injectAdditionalFields;
+        private InjectAdditionalFields.IDependencies _dependencies;
+
 
         [SetUp]
         public void SetUp()
         {
-            _injectAdditionalFields = new InjectAdditionalFields();
+            _dependencies = Substitute.For<InjectAdditionalFields.IDependencies>();
+            _injectAdditionalFields = new InjectAdditionalFields(_dependencies);
         }
 
         [Test]
@@ -95,6 +99,9 @@ namespace Informa.Tests.Library.PXM_Tests.Helper_Tests
             var fakeArticle = Substitute.For<IArticle>();
             fakeArticle.Authors.Returns(new[] { fakeAuthor1 });
 
+            _dependencies.BylineMaker.MakePrintByLine(Arg.Any<IEnumerable<IStaff_Item>>())
+                .Returns("Joe Faker joe.faker@example.com");
+
             var fakeHtml = "<div class='root'></div>";
 
             // ACT
@@ -116,6 +123,9 @@ namespace Informa.Tests.Library.PXM_Tests.Helper_Tests
             var fakeArticle = Substitute.For<IArticle>();
             fakeArticle.Authors.Returns(new[] { fakeAuthor1 });
 
+            _dependencies.BylineMaker.MakePrintByLine(Arg.Any<IEnumerable<IStaff_Item>>())
+                .Returns("Joe Faker joe.faker@example.com");
+
             var fakeHtml = "<  DIV width='3' clASS = \"Root\" data-fun='moose' ><p>Other stuff!</p></div>";
 
             // ACT
@@ -125,74 +135,6 @@ namespace Informa.Tests.Library.PXM_Tests.Helper_Tests
             Assert.AreEqual(
                 "<  DIV width='3' clASS = \"Root\" data-fun='moose' ><pre><h3 class='authors'>Joe Faker joe.faker@example.com</h3></pre><p>Other stuff!</p></div>",
                 result);
-        }
-
-        [Test]
-        public void GetAuthorsFormatted_OneAuthor_AuthorNameAndEmail()
-        {
-            // ARRANGE
-            var fakeAuthor1 = Substitute.For<IStaff_Item>();
-            fakeAuthor1.First_Name = "Joe";
-            fakeAuthor1.Last_Name = "Faker";
-            fakeAuthor1.Email_Address = "joe.faker@example.com";
-
-            var fakeArticle = Substitute.For<IArticle>();
-            fakeArticle.Authors.Returns(new[] {fakeAuthor1});
-
-            // ACT
-            var result = _injectAdditionalFields.GetAuthorsFormatted(fakeArticle);
-
-            // ASSERT
-            Assert.AreEqual("Joe Faker joe.faker@example.com", result);
-        }
-
-        [Test]
-        public void GetAuthorsFormatted_ThreeAuthors_AuthorsSpaceSeparated()
-        {
-            // ARRANGE
-            var fakeAuthor1 = Substitute.For<IStaff_Item>();
-            fakeAuthor1.First_Name = "Joe";
-            fakeAuthor1.Last_Name = "Faker";
-            fakeAuthor1.Email_Address = "joe.faker@example.com";
-
-            var fakeAuthor2 = Substitute.For<IStaff_Item>();
-            fakeAuthor2.First_Name = "a2";
-            fakeAuthor2.Last_Name = "d2";
-            fakeAuthor2.Email_Address = "a2d2@example.com";
-
-            var fakeAuthor3 = Substitute.For<IStaff_Item>();
-            fakeAuthor3.First_Name = "a3";
-            fakeAuthor3.Last_Name = "you sunk my battleship";
-            fakeAuthor3.Email_Address = "direct_hit@battleship.com";
-
-            var fakeArticle = Substitute.For<IArticle>();
-            fakeArticle.Authors.Returns(new[] {fakeAuthor1, fakeAuthor2, fakeAuthor3});
-
-            // ACT
-            var result = _injectAdditionalFields.GetAuthorsFormatted(fakeArticle);
-
-            // ASSERT
-            Assert.AreEqual(
-                "Joe Faker joe.faker@example.com a2 d2 a2d2@example.com a3 you sunk my battleship direct_hit@battleship.com",
-                result);
-        }
-
-        [Test]
-        public void GetAuthorsFormatted_ZeroAuthorsOrNull_EmptyString()
-        {
-            // ARRANGE
-            var fakeArticle1 = Substitute.For<IArticle>();
-            fakeArticle1.Authors.Returns(new IStaff_Item[0]);
-            var fakeArticle2 = Substitute.For<IArticle>();
-            fakeArticle2.Authors.Returns((IStaff_Item[]) null);
-
-            // ACT
-            var result1 = _injectAdditionalFields.GetAuthorsFormatted(fakeArticle1);
-            var result2 = _injectAdditionalFields.GetAuthorsFormatted(fakeArticle2);
-
-            // ASSERT
-            Assert.AreEqual(string.Empty, result1);
-            Assert.AreEqual(string.Empty, result2);
         }
     }
 }
