@@ -17,7 +17,7 @@ namespace Informa.Library.PXM.Helpers
 	public class PxmHtmlHelper : IPxmHtmlHelper
 	{
 		private readonly IDependencies _dependencies;
-		private const string ClassAttributeName = "class";
+		private const string ClassAttributeName = "childstyle";
         private const string QuickFactsTextStyle = "quick-facts__text";
 		private const string ColumnHeadingStyle = "table-column-heading";
 		private const string SubHeadingStyle = "table-sub-heading";
@@ -148,6 +148,8 @@ namespace Informa.Library.PXM.Helpers
 			result = ProcessSubHeading(result);
 			result = ProcessSubHeadAlt(result);
 			result = ProcessStoryTextAlt(result);
+			var xpath = @"//table/tbody/tr/td/p";
+			result = MoveTableContent(result, xpath);
 			return result;
 		}
 
@@ -155,7 +157,7 @@ namespace Informa.Library.PXM.Helpers
 		{
 			var xpath = @"//table/tbody/tr/td[@class='header colored']/p";
 			var result = AddCssClassToElements(content, xpath, ClassAttributeName, ColumnHeadingStyle);
-			return result;
+            return result;
 		}
 
 		internal string ProcessSubHeading(string content)
@@ -189,15 +191,31 @@ namespace Informa.Library.PXM.Helpers
 			}
 			foreach (HtmlNode element in elements)
 			{
-				var attribute = element.Attributes[attributeName];
+				var attribute = element.ParentNode.Attributes[attributeName];
 				if (attribute == null)
 				{
-					element.Attributes.Add(attributeName, attributeValue);
+					element.ParentNode.Attributes.Add(attributeName, attributeValue);
 				}
 				else
 				{
 					attribute.Value = attributeValue;
 				}
+			}
+			return doc.DocumentNode.OuterHtml;
+		}
+
+		internal string MoveTableContent(string content, string xpath)
+		{
+			var doc = CreateDocument(content);
+			var elements = doc.DocumentNode.SelectNodes(xpath);
+			if (elements == null)
+			{
+				return doc.DocumentNode.OuterHtml;
+			}
+			foreach (HtmlNode element in elements)
+			{
+				var contentText = element.InnerText;
+				element.ParentNode.InnerHtml = contentText;
 			}
 			return doc.DocumentNode.OuterHtml;
 		}

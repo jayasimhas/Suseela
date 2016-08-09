@@ -1113,6 +1113,7 @@
 		<xs:attribute name="ColWidth" use="required"/>
 		<xs:attribute name="HorStradle"/>
 		<xs:attribute name="VerStradle"/>
+		<xs:attribute name="ChildStyle"/>
 	</xs:complexType>
 	<xs:element name="Cell" type="Cell"/>
 	<xs:complexType name="Ellipse">
