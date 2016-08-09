@@ -5,6 +5,7 @@ using Informa.Library.Services.Article;
 using Informa.Library.User.Entitlement;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Glass.Models;
+using Informa.Library.User;
 
 namespace Informa.Web.ViewModels
 {
@@ -16,7 +17,8 @@ namespace Informa.Web.ViewModels
 		public ArticleKeyDocumentsModel(
             ITextTranslator textTranslator, 
             IIsEntitledProducItemContext entitledProductContext,
-            IArticleService articleService) : base(entitledProductContext)
+            ISitecoreUserContext sitecoreUserContext,
+            IArticleService articleService) : base(entitledProductContext, sitecoreUserContext)
 		{
 			TextTranslator = textTranslator;
 		    ArticleService = articleService;
