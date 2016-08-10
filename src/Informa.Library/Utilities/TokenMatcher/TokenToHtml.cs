@@ -98,8 +98,8 @@ namespace Informa.Library.Utilities.TokenMatcher
 
 		private HtmlString BuildSideArticleHtml(IArticle article)
 		{
-			var spanClass = "sidebar__byline";
-			var timeClass = "sidebar__date";
+			var spanClass = "sidebar_byline";
+			var timeClass = "sidebar_date";
             var readAllArticle = "Read the full article here";
 			var document = new HtmlDocument();
 			document.LoadHtml($"<aside type=\"\" height=\"\" width=\"\" class=\"article-sidebar\"><h3 class=\"sidebar-title\"></h3><h4 class=\"sidebar-subhead\"></h4><p class=\"{spanClass}\"></p><p class=\"{timeClass}\"></p><div class=\"sidebar-body\"></div><a class=\"article-sidebar__read-more click-utag\" href=\"\"></a></aside>");
