@@ -21,7 +21,7 @@
                         @Html.Raw(Model.LinkText)
                     }*@
             string searchTopicLink = Model.GlassModel.Navigation_Link.LinkUrl() + Model.GlassModel.Navigation_Link.Query;
-            <a lass="topic-subtopic__header-explore-link" href="@searchTopicLink">@Model.LinkText</a>
+            <a class="topic-subtopic__header-explore-link" href="@searchTopicLink">@Model.LinkText</a>
             }
         </h1>
         @Html.Sitecore().Rendering(RenderingReferences.Instance.TopicAlertButton.ToString(), new { Datasource = Model.GlassModel._Id.ToString(), Parameters = @RenderingContext.GetRenderingParameters() })
