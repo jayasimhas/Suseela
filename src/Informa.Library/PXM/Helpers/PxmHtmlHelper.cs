@@ -19,10 +19,10 @@ namespace Informa.Library.PXM.Helpers
 		private readonly IDependencies _dependencies;
 		private const string ClassAttributeName = "childstyle";
         private const string QuickFactsTextStyle = "quick-facts__text";
-		private const string ColumnHeadingStyle = "table-column-heading";
-		private const string SubHeadingStyle = "table-sub-heading";
-		private const string SubHeadAltStyle = "table-subhead-alt";
-		private const string StoryTextAltStyle = "table-storytext-alt";
+		private const string ColumnHeadingStyle = "table_subhead 1";
+		private const string SubHeadingStyle = "table_subhead 2";
+		private const string SubHeadAltStyle = "table_subhead 3";
+		private const string StoryTextAltStyle = "table_body";
 
 		[AutowireService(IsAggregateService = true)]
 		public interface IDependencies
