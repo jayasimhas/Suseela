@@ -125,6 +125,8 @@ public class MyAccount extends SetupClass {
 
         helper.click(emailPreferenceButton);
 
+        helper.waitForSeconds(4);
+
         Assert.assertEquals(helper.getElementText(By.cssSelector(".alert-success.js-form-success>p")),"Your preferences have been updated.");
 
 

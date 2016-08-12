@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by ishan.kumar on 5/23/2016.
  */
@@ -24,14 +27,13 @@ public class EmailResults extends SetupClass {
         By cancelLocator = By.cssSelector("form.form-email-search > div.pop-out__form-actions-wrapper > div.dismiss-button > span.highlight-link");
 
 
-        fillForm("ishankumarinforma@yopmail.com");
+        fillForm("informaAutomation@yopmail.com");
 
         String send = driver.findElement(sendLocator).getText();
         Assert.assertEquals(send, "SEND");
 
 
         if (BROWSER.equalsIgnoreCase("Mobile")){
-
             helper.getURL(ENV + "/search#?q=test");
             helper.waitForSeconds(2);
              }
@@ -56,9 +58,9 @@ public class EmailResults extends SetupClass {
 
         helper.sendKeys(By.name("RecipientEmail"),email);
 
-        helper.sendKeys(senderName,"Ishan");
+        helper.sendKeys(senderName,"Automation");
 
-        helper.sendKeys(By.name("SenderEmail"),"ishankumar@yopmail.com");
+        helper.sendKeys(By.name("SenderEmail"),"senderemail@yopmail.com");
 
         helper.sendKeys(By.name("Subject"),"Result");
 
@@ -66,7 +68,7 @@ public class EmailResults extends SetupClass {
     }
 
 
-    //Don't run on Mobile
+    //Don't access yopmail on Mobile
     @Test
     public void functionOfcomponent(){
 
@@ -112,7 +114,24 @@ public class EmailResults extends SetupClass {
             driver.switchTo().frame("ifmail");
             helper.waitForSeconds(2);
 
+            Date date = new Date();
+
+
+            SimpleDateFormat ft1 =
+                    new SimpleDateFormat("d");
+
+            SimpleDateFormat ft2 =
+                    new SimpleDateFormat("E");
+
             Assert.assertEquals(helper.getElementText(By.xpath(".//*[@id='mailhaut']/div[1]")), "Result");
+
+            //verify date is correct
+            Assert.assertTrue(helper.getElementText(By.cssSelector(".preheaderContent")).contains(ft1.format(date)));
+
+            //verify day is correct
+            Assert.assertTrue(helper.getElementText(By.cssSelector(".preheaderContent")).contains(ft2.format(date)));
+
+
 
         }
 

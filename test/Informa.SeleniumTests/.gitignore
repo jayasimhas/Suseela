@@ -1,0 +1,6 @@
+emailable-report.html
+*.iml
+.idea
+target/
+*.iws
+*.ipr

@@ -146,19 +146,21 @@ public class Registration extends SetupClass {
 //        builder.moveToElement(clickReg, 90, 1070).click().build().perform();
 
 
-        if (BROWSER.equalsIgnoreCase("Mobile"))
-        ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().x+")");
+        if (BROWSER.equalsIgnoreCase("Mobile")){
+            helper.waitForSeconds(2);
+        ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().x + ")");}
         else
             ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().y + ")");
 
 
+        helper.waitForSeconds(3);
         clickReg.click();
 
-        helper.waitForSeconds(4);
+        //helper.waitForSeconds(2);
 
         helper.click(By.cssSelector(".button--filled.js-register-user-submit"));
 
-        helper.waitForSeconds(20);
+        helper.waitForSeconds(10);
     }
 
     private void clickRegisterNEnterEmail(String user) {
@@ -166,9 +168,11 @@ public class Registration extends SetupClass {
         helper.click(By.xpath("//div[4]/div[5]/div[1]"));
 
         helper.waitForSeconds(2);
-        helper.sendKeys(username,user);
+        helper.sendKeys(username, user);
 
-        helper.click(By.xpath("//div[4]/div[2]/form/button"));
+       // helper.click(By.xpath("//div[4]/div[2]/form/button"));
+
+        helper.click(By.cssSelector(".js-pre-register-user-submit"));
     }
 
 }

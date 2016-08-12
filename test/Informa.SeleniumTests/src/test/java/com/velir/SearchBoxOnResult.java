@@ -183,7 +183,7 @@ public class SearchBoxOnResult extends SetupClass {
             helper.waitForSeconds(4);
             helper.click(By.xpath("//form[4]/fieldset/button[1]"));
 
-            helper.waitForSeconds(2);
+            helper.waitForSeconds(3);
 
             Assert.assertTrue(driver.findElements(By.xpath("//form[4]/fieldset/div/ul/li/label/span")).size() >= 7);
         }
@@ -232,19 +232,18 @@ public class SearchBoxOnResult extends SetupClass {
         { By facetItems1= By.xpath("//form[10]/fieldset/div/ul/li/label/span");
             actual= helper.getElementsText(facetItems1);
             helper.log(actual);
-            helper.click(By.xpath("//form[10]//fieldset/div[3]/ul/li/label/span"));
-            //helper.waitForSeconds(4);
-            //helper.click(By.xpath("//form[7]/fieldset/button[1]"));
-            //Assert.assertTrue(driver.findElements(By.xpath("//form[7]/fieldset/div/ul/li/label/span")).size()>=7);
+//            if (BROWSER.equalsIgnoreCase("Mobile"))
+//                helper.clickLocation(By.xpath("//form[10]//fieldset/div[3]/ul/li/label/span"),"y");
+//            else
+                helper.click(By.xpath("//form[10]//fieldset/div[3]/ul/li/label/span"));
+
         }
         else{
             By facetItems2= By.xpath("//form[2]/fieldset/div/ul/li/label/span");
             actual= helper.getElementsText(facetItems2);
             helper.log(actual);
             helper.click(By.xpath("//form[2]//fieldset/div[3]/ul/li/label/span"));
-            //helper.waitForSeconds(4);
-            //helper.click(By.xpath("//form[4]/fieldset/button[1]"));
-            //Assert.assertTrue(driver.findElements(By.xpath("//form[4]/fieldset/div/ul/li/label/span")).size() >= 7);
+
         }
         helper.waitForSeconds(2);
 
@@ -271,31 +270,31 @@ public class SearchBoxOnResult extends SetupClass {
 
 
 
-
-    public void headlines(){
-
-        helper.getURL(ENV + "search#?q=test");
-
-        Assert.assertTrue(helper.isElementPresent(By.cssSelector(".result__description.ng-binding")));
-
-        helper.click(By.cssSelector(".onoffswitch-label"));
-
-        Assert.assertFalse(driver.findElement(By.cssSelector(".result__description.ng-binding")).isDisplayed());
-
-
-    }
-
-
-
-    public void searchTips(){
-
-        helper.getURL(ENV + "search#?q=test");
-
-        By searchTipLocator = By.cssSelector(".search-bar__tips-button.js-toggle-search-tips>span");
-
-        Assert.assertTrue(helper.isElementPresent(searchTipLocator));
-
-        Assert.assertEquals(driver.findElement(searchTipLocator).getText(), "Search Tips");
-
-    }
+//
+//    public void headlines(){
+//
+//        helper.getURL(ENV + "search#?q=test");
+//
+//        Assert.assertTrue(helper.isElementPresent(By.cssSelector(".result__description.ng-binding")));
+//
+//        helper.click(By.cssSelector(".onoffswitch-label"));
+//
+//        Assert.assertFalse(driver.findElement(By.cssSelector(".result__description.ng-binding")).isDisplayed());
+//
+//
+//    }
+//
+//
+//
+//    public void searchTips(){
+//
+//        helper.getURL(ENV + "search#?q=test");
+//
+//        By searchTipLocator = By.cssSelector(".search-bar__tips-button.js-toggle-search-tips>span");
+//
+//        Assert.assertTrue(helper.isElementPresent(searchTipLocator));
+//
+//        Assert.assertEquals(driver.findElement(searchTipLocator).getText(), "Search Tips");
+//
+//    }
 }

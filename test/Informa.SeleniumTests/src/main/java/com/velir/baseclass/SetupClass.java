@@ -32,7 +32,7 @@ public class SetupClass {
 
     @BeforeMethod
     @Parameters({"browser","environment"})
-    public void launchBrowser(@Optional("IE")String browser,@Optional("Stage.Scrip") String environment){  //to launch browser, open url and click on our consultants
+    public void launchBrowser(@Optional("Mobile")String browser,@Optional("Stage.Scrip") String environment){  //to launch browser, open url and click on our consultants
 
             switch (browser){
                 case "Chrome":
@@ -44,13 +44,15 @@ public class SetupClass {
                 case "FF":
                     driver = new FirefoxDriver();
                     //driver.manage().window().setSize(new Dimension(1200, 1000));
+                    driver.manage().window().setSize(new Dimension(1600, 1200));
                     break;
 
                 case "IE":
                     System.setProperty("webdriver.ie.driver",
                             "C:\\Browser Drivers\\IEDriverServer.exe");
                     driver = new InternetExplorerDriver();
-                    driver.manage().window().maximize();
+                    //driver.manage().window().maximize();
+                    driver.manage().window().setSize(new Dimension(1600, 1200));
                     break;
 
 
@@ -58,15 +60,18 @@ public class SetupClass {
                     System.setProperty("webdriver.chrome.driver",
                             "C:\\Browser Drivers\\chromedriver.exe");
                     Map<String, String> mobileEmulation = new HashMap<String, String>();
-                   // mobileEmulation.put("deviceName", "Apple iPhone 6");
-
+                   //mobileEmulation.put("deviceName", "Apple iPhone 6");
                     mobileEmulation.put("deviceName", "Google Nexus 6");
+
+
+
+
                     Map<String, Object> chromeOptions = new HashMap<String, Object>();
                     chromeOptions.put("mobileEmulation", mobileEmulation);
                     DesiredCapabilities capabilities = DesiredCapabilities.chrome();
                     capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
                     driver = new ChromeDriver(capabilities);
-                  //  driver.manage().window().maximize();
+                    //driver.manage().window().setSize(new Dimension(600, 1400));
                     break;
 
                 case "iPad":
@@ -80,10 +85,13 @@ public class SetupClass {
                     capabilities = DesiredCapabilities.safari();
                     capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
                     driver = new ChromeDriver(capabilities);
+                   // driver.manage().window().setSize(new Dimension(1600, 1200));
+
                     break;
 
                 default:
                     driver = new FirefoxDriver();
+                    driver.manage().window().setSize(new Dimension(1600, 1200));
                     break;
             }
         helper =new Helper(driver);

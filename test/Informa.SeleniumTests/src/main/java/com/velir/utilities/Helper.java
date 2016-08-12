@@ -179,6 +179,26 @@ public class Helper {
         waitForSeconds(2);
     }
 
+    //click on the co-ordinate of an element
+    public void clickLocation(By locator, String axis){
+
+
+        waitTillElementLocated(locator);
+
+        WebElement clickReg = driver.findElement(locator);
+
+
+        if (axis.equalsIgnoreCase("x")){
+            ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().x + ")");}
+        else if (axis.equalsIgnoreCase("y"))
+            ((JavascriptExecutor)driver).executeScript("window.scrollTo(0," + clickReg.getLocation().y + ")");
+
+
+        waitForSeconds(4);
+        clickReg.click();
+        waitForSeconds(2);
+    }
+
     //SEND KEYS
     public void sendKeys(By byObject,String typeKeys){
         waitTillElementLocated(byObject);
