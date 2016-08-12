@@ -1,0 +1,262 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Informa Regression Test Suite" verbose="10" parallel="false">
+
+
+    <test name="MEDTECH Tests on Chrome">
+        <parameter name="browser" value="FF"/>
+        <parameter name="environment" value="Stage.Pink"/>
+
+        <classes>
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunctionMobile"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <class name="com.velir.ForgotPassword"/>
+        </classes>
+    </test>
+
+    <!--SCRIP TESTCASES ON CHROME, FIREFOX, IE-11, MOBILE -->
+
+    <!--<test name="SCRIP Tests on Chrome">-->
+        <!--<parameter name="browser" value="Chrome"/>-->
+        <!--<parameter name="environment" value="Stage.Scrip"/>-->
+
+        <!--<classes>-->
+        <!--<class name="com.velir.SearchBoxOnResult">-->
+        <!--<methods>-->
+            <!--<exclude name="searchFunctionMobile"/>-->
+        <!--</methods>-->
+        <!--</class>-->
+        <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="SCRIP Tests on Firefox">-->
+        <!--<parameter name="browser" value="FF"/>-->
+        <!--<parameter name="environment" value="Stage.Scrip"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunctionMobile"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <test name="SCRIP Tests on iPhone 6">
+        <parameter name="browser" value="Mobile"/>
+        <parameter name="environment" value="Stage.Scrip"/>
+
+        <classes>
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+            <!--<methods>-->
+                <!--<exclude name="searchFunction"/>-->
+            <!--</methods>-->
+            <!--</class>-->
+            <class name="com.velir.ForgotPassword"/>
+        </classes>
+    </test>
+
+     <!--&lt;!&ndash;PINK TESTCASES ON CHROME, FIREFOX, IE-11, MOBILE&ndash;&gt;-->
+
+    <!--<test name="PINK Tests on Chrome">-->
+        <!--<parameter name="browser" value="Chrome"/>-->
+        <!--<parameter name="environment" value="Stage.Pink"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunctionMobile"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="PINK Tests on Firefox">-->
+        <!--<parameter name="browser" value="FF"/>-->
+        <!--<parameter name="environment" value="Stage.Pink"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunctionMobile"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="PINK Tests on Nexus 5">-->
+        <!--<parameter name="browser" value="Nexus5"/>-->
+        <!--<parameter name="environment" value="Stage.Pink"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunction"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+
+    <!--&lt;!&ndash; MEDTECH TESTCASES ON CHROME, FIREFOX, IE-11, MOBILE &ndash;&gt;-->
+
+    <!--<test name="MEDTECH Tests on Chrome">-->
+        <!--<parameter name="browser" value="Chrome"/>-->
+        <!--<parameter name="environment" value="Stage.Medtech"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunctionMobile"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="MEDTECH Tests on Firefox">-->
+        <!--<parameter name="browser" value="FF"/>-->
+        <!--<parameter name="environment" value="Stage.Medtech"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunctionMobile"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="MEDTECH Tests on Nexus 5">-->
+        <!--<parameter name="browser" value="Nexus5"/>-->
+        <!--<parameter name="environment" value="Stage.Medtech"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunction"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <!--&lt;!&ndash;ROSE TESTCASES ON CHROME, FIREFOX, IE-11, MOBILE&ndash;&gt;-->
+
+    <!--<test name="ROSE Tests on Chrome">-->
+        <!--<parameter name="browser" value="Chrome"/>-->
+        <!--<parameter name="environment" value="Stage.Rose"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunctionMobile"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="ROSE Tests on Firefox">-->
+        <!--<parameter name="browser" value="FF"/>-->
+        <!--<parameter name="environment" value="Stage.Rose"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunctionMobile"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="ROSE Tests on Nexus 5">-->
+        <!--<parameter name="browser" value="Nexus5"/>-->
+        <!--<parameter name="environment" value="Stage.Rose"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunction"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+
+
+
+    <!--&lt;!&ndash;INVIVODEV TESTCASES ON CHROME, FIREFOX, IE-11, MOBILE&ndash;&gt;-->
+
+    <!--<test name="INVIVODEV Tests on Chrome">-->
+        <!--<parameter name="browser" value="Chrome"/>-->
+        <!--<parameter name="environment" value="Stage.InVivoDev"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunctionMobile"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="INVIVODEV Tests on Firefox">-->
+        <!--<parameter name="browser" value="FF"/>-->
+        <!--<parameter name="environment" value="Stage.InVivoDev"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunctionMobile"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+    <!--<test name="INVIVODEV Tests on Nexus 5">-->
+        <!--<parameter name="browser" value="Nexus5"/>-->
+        <!--<parameter name="environment" value="Stage.InVivoDev"/>-->
+
+        <!--<classes>-->
+            <!--<class name="com.velir.SearchBoxOnResult">-->
+                <!--<methods>-->
+                    <!--<exclude name="searchFunction"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <!--<class name="com.velir.ForgotPassword"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+
+    <!--&lt;!&ndash;WHITEBOARD TESTCASES ON CHROME, FIREFOX, IE-11&ndash;&gt;-->
+
+    <!--<test name="WHITEBOARD Tests on Chrome">-->
+        <!--<parameter name="browser" value="Chrome"/>-->
+        <!--<classes>-->
+            <!--<class name="com.velir.WhiteBoard"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="WHITEBOARD Tests on Firefox">-->
+        <!--<parameter name="browser" value="FF"/>-->
+        <!--<classes>-->
+            <!--<class name="com.velir.WhiteBoard"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+
+
+</suite>

@@ -345,7 +345,6 @@ web/Website/sitecore/*
 
 #selenium
 emailable-report.html
-testngDebug.xml
 *.iml
 .idea
 target/
