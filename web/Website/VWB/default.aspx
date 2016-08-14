@@ -18,6 +18,7 @@
             <div class="top">
                 <asp:DropDownCheckBoxes ID="ddlPublications" runat="server" Width="200px" UseSelectAllNode="true">
                     <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
+                    <Texts SelectBoxCaption="Select Publication(s)" />
                 </asp:DropDownCheckBoxes>
                 <div id="dateRangeWrapper">
                     <div class="left radioButtonWrapper">
