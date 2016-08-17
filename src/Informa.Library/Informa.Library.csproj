@@ -343,6 +343,7 @@
     <Compile Include="ComponentModel\DataAnnotations\RequiredIfAttribute.cs" />
     <Compile Include="CustomSitecore\Events\AddFromBranchPreset.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
+    <Compile Include="CustomSitecore\Events\ArticleItemSave.cs" />
     <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
@@ -379,6 +380,7 @@
     <Compile Include="Publication\ISitePublicationFactory.cs" />
     <Compile Include="Publication\ISitePublicationNameFactory.cs" />
     <Compile Include="Publication\ISitePublicationsContext.cs" />
+    <Compile Include="Publication\ISitePublicationWorkflow.cs" />
     <Compile Include="Publication\ISitesPublicationNameContext.cs" />
     <Compile Include="Publication\ISitePublicationNameContext.cs" />
     <Compile Include="Publication\SitePublication.cs" />
@@ -386,6 +388,7 @@
     <Compile Include="Publication\SitePublicationFactory.cs" />
     <Compile Include="Publication\SitePublicationNameFactory.cs" />
     <Compile Include="Publication\SitePublicationsContext.cs" />
+    <Compile Include="Publication\SitePublicationWorkflow.cs" />
     <Compile Include="Publication\SitesPublicationNameContext.cs" />
     <Compile Include="Publication\SitePublicationNameContext.cs" />
     <Compile Include="Publishing\Events\ItemPublishedPublishItemProcessing.cs" />
