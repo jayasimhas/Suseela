@@ -23,7 +23,7 @@ namespace Informa.Library.CustomSitecore.Events
             var item = icArgs.Item;
 
             //If article save process
-            if (System.Web.HttpContext.Current != null && item.TemplateID.Guid == Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticleConstants.TemplateId.Guid)
+            if (item.Paths.Path.ToLower().StartsWith("/sitecore/content") && item.TemplateID.Guid == Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticleConstants.TemplateId.Guid)
             {
                 changeWorkflowStateAndExecuteActions(item, new ID(publicationWorkflow.GetInitialState(item)._Id), new ID(publicationWorkflow.GetPublicationWorkflow(item)._Id));
             }
