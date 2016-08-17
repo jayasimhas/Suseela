@@ -343,7 +343,7 @@
     <Compile Include="ComponentModel\DataAnnotations\RequiredIfAttribute.cs" />
     <Compile Include="CustomSitecore\Events\AddFromBranchPreset.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
-    <Compile Include="CustomSitecore\Events\ArticleItemSave.cs" />
+    <Compile Include="CustomSitecore\Events\ArticleItemCreated.cs" />
     <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />

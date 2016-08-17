@@ -93,7 +93,8 @@ namespace Informa.Library.Publication
             ISite_Root siteRoot = _cacheProvider.GetFromCache<ISite_Root>(cacheKey);
             if (siteRoot == null)
             {
-                var articleItem = _service.GetItem<ArticleItem>(item.ID.Guid);
+                //item.Parent because on Created event the next line returns empty 
+                var articleItem = _service.Cast<ArticleItem>(item.Parent);
 
                 siteRoot = articleItem.Crawl<ISite_Root>();
                 _cacheProvider.AddToCache<ISite_Root>(cacheKey, siteRoot);
