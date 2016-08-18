@@ -15,6 +15,7 @@ import java.lang.reflect.Field;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -210,16 +211,18 @@ public class Helper {
 
 
 
-
-//    //Custom Reporter for TestNG Report
-//    public static String customReporter(Object actual, Object expected){
-//
-//        Reporter.log("<b> Expected Result : </b>" + expected, true);
-//        Reporter.log("<b> Actual Result : </b>" + actual + "<br>", true);
-//
-//        return "Expected Result:\n"+expected+"\nActual Result:\n"+actual;
-//
-//    }
+    public String randomString(){
+    char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+    StringBuilder sb = new StringBuilder();
+    Random random = new Random();
+    for (int i = 0; i < 6; i++) {
+        char c = chars[random.nextInt(chars.length)];
+        sb.append(c);
+    }
+    String output = sb.toString();
+    System.out.println(output);
+    return output;
+    }
 
     //Logs Console and TestNG Report
     public void log(Object description){

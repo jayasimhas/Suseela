@@ -39,6 +39,7 @@ public class SetupClass {
                     System.setProperty("webdriver.chrome.driver",
                             "C:\\Browser Drivers\\chromedriver.exe");
                     driver = new ChromeDriver();
+                    driver.manage().window().setSize(new Dimension(1600, 1200));
                     break;
 
                 case "FF":

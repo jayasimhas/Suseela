@@ -22,32 +22,31 @@ import java.util.*;
 public class WhiteBoard extends SetupClass {
 
 
-//    public WhiteBoard(WebDriver driver) {
-//        super(driver);
-//    }
+    private void navigateAndLogin() {
+        driver.get(ENV_BE + "/login?returnUrl=/vwb");
+        WhiteBoardPage page = new WhiteBoardPage(driver);
+        page.boardLogin(configuration.getString("Auth.username"),configuration.getString("Auth.password"));
+    }
 
 
     @Test
     public void downloadArticle(){
         By fileLocator = By.xpath(".//*[@id='tblResults']/tbody/tr[3]/td[1]/a");
 
-        driver.get(ENV_BE + "/login?returnUrl=/vwb");
-        WhiteBoardPage page = new WhiteBoardPage(driver);
-        page.boardLogin();
+        navigateAndLogin();
 
         helper.click(fileLocator);
         Assert.assertTrue(driver.findElement(fileLocator).getAttribute("href").contains(".docx?sc_mode=preview"));
 
     }
 
+
+
     @Test
     public void previewArticle(){
         By titleLocator = By.xpath(".//*[@id='tblResults']/tbody/tr[3]/td[2]/a");
 
-        driver.get(ENV_BE + "/login?returnUrl=/vwb");
-        WhiteBoardPage page = new WhiteBoardPage(driver);
-        page.boardLogin();
-
+        navigateAndLogin();
         driver.findElement(titleLocator).click();
         helper.waitForSeconds(4);
 
@@ -67,10 +66,7 @@ public class WhiteBoard extends SetupClass {
 
         helper.log("Description - Verify Title sorting in asc. and dec. order");
 
-        driver.get(ENV_BE + "/login?returnUrl=/vwb");
-        WhiteBoardPage page = new WhiteBoardPage(driver);
-
-        page.boardLogin();
+        navigateAndLogin();
 
         helper.waitForSeconds(2);
 
@@ -103,9 +99,7 @@ public class WhiteBoard extends SetupClass {
     public void showInProgress(){
         By fileLocator = By.xpath(".//*[@id='tblResults']/tbody/tr[3]/td[1]/a");
 
-        driver.get(ENV_BE + "/login?returnUrl=/vwb");
-        WhiteBoardPage page = new WhiteBoardPage(driver);
-        page.boardLogin();
+       navigateAndLogin();
 
         Select dropdown1 =new Select(driver.findElement(By.cssSelector("#ddColumns")));
         dropdown1.selectByValue("wsc");
