@@ -13,23 +13,24 @@ using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Core.Caching;
 
-namespace Informa.Library.Services.Article {
+namespace Informa.Library.Services.Article
+{
 
     [AutowireService(LifetimeScope.SingleInstance)]
     public class ArticleService : IArticleService
     {
         protected readonly ICacheProvider CacheProvider;
         protected readonly ITextTranslator TextTranslator;
-		protected readonly ISiteRootsContext SiteRootsContext;
+        protected readonly ISiteRootsContext SiteRootsContext;
 
-		public ArticleService(
+        public ArticleService(
             ICacheProvider cacheProvider,
-            ITextTranslator textTranslator, 
-			ISiteRootsContext siteRootsContext)
+            ITextTranslator textTranslator,
+            ISiteRootsContext siteRootsContext)
         {
             CacheProvider = cacheProvider;
             TextTranslator = textTranslator;
-			SiteRootsContext = siteRootsContext;
+            SiteRootsContext = siteRootsContext;
         }
 
         private string CreateCacheKey(string suffix)
@@ -43,16 +44,18 @@ namespace Informa.Library.Services.Article {
             return CacheProvider.GetFromCache(cacheKey, () => BuildLegacyPublicationNames(article));
         }
 
-        private IEnumerable<string> BuildLegacyPublicationNames(IArticle article) { 
+        private IEnumerable<string> BuildLegacyPublicationNames(IArticle article)
+        {
 
             List<string> l = new List<string>();
-            foreach (IGlassBase g in article.Legacy_Publications) {
+            foreach (IGlassBase g in article.Legacy_Publications)
+            {
                 if (g == null)
                     continue;
 
                 l.Add(((ITaxonomy_Item)g).Item_Name);
             }
-            
+
             return l;
         }
 
@@ -62,7 +65,8 @@ namespace Informa.Library.Services.Article {
             return CacheProvider.GetFromCache(cacheKey, () => BuildLinkableTaxonomies(article));
         }
 
-        private IEnumerable<ILinkable> BuildLinkableTaxonomies(IArticle article) { 
+        private IEnumerable<ILinkable> BuildLinkableTaxonomies(IArticle article)
+        {
 
             var taxItems = article.Taxonomies?
                 .Select(x => new LinkableModel
@@ -74,9 +78,10 @@ namespace Informa.Library.Services.Article {
             return taxItems;
         }
 
-        public string GetMediaTypeName(IArticle article) {
-            return article.Media_Type?.Item_Name == "Data" 
-                ? "chart" 
+        public string GetMediaTypeName(IArticle article)
+        {
+            return article.Media_Type?.Item_Name == "Data"
+                ? "chart"
                 : article.Media_Type?.Item_Name?.ToLower() ?? "";
         }
 
@@ -86,7 +91,7 @@ namespace Informa.Library.Services.Article {
             return CacheProvider.GetFromCache(cacheKey, () => BuildTokenizedArticleText(article.Summary));
         }
 
-        public string GetArticleBody(IArticle article) 
+        public string GetArticleBody(IArticle article)
         {
             string cacheKey = CreateCacheKey($"Body-{article._Id}");
             return CacheProvider.GetFromCache(cacheKey, () => BuildTokenizedArticleText(article.Body));
@@ -98,7 +103,7 @@ namespace Informa.Library.Services.Article {
         }
 
         public string GetLegacyPublicationText(IArticle article)
-        {            
+        {
             var legacyText = TextTranslator.Translate("Article.LegacyPublications");
             var legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
 
@@ -113,24 +118,24 @@ namespace Informa.Library.Services.Article {
 
         private IEnumerable<IFile> BuildSupportingDocuments(IArticle article)
         {
-            return article.Supporting_Documents.Select(a => (IFile) a).ToList();
+            return article.Supporting_Documents.OfType<IFile>();//.Select(a => (IFile) a).ToList();
         }
 
-	    public string GetArticlePublicationName(IArticle article)
-	    {
-			string cacheKey = CreateCacheKey($"ArticlePublicationCode-{article._Id}");
-			return CacheProvider.GetFromCache(cacheKey, () => BuildArticlePublicationName(article));
-		}
+        public string GetArticlePublicationName(IArticle article)
+        {
+            string cacheKey = CreateCacheKey($"ArticlePublicationCode-{article._Id}");
+            return CacheProvider.GetFromCache(cacheKey, () => BuildArticlePublicationName(article));
+        }
 
-		private string BuildArticlePublicationName(IArticle article)
-		{
-			var siteRoot = SiteRootsContext
-				.SiteRoots
-				.FirstOrDefault(i => article._Path.StartsWith(i._Path));
+        private string BuildArticlePublicationName(IArticle article)
+        {
+            var siteRoot = SiteRootsContext
+                .SiteRoots
+                .FirstOrDefault(i => article._Path.StartsWith(i._Path));
 
-		    return (siteRoot != null)
-			    ? siteRoot.Publication_Name
-			    : string.Empty;
-	    }
+            return (siteRoot != null)
+                ? siteRoot.Publication_Name
+                : string.Empty;
+        }
     }
 }
