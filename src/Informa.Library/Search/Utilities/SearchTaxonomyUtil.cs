@@ -25,13 +25,13 @@ namespace Informa.Library.Search.Utilities
 				//Subject
 				if (IsSubjectTaxonomy(parentPath))
 				{
-					key = Subjects;
+                url.AppendFormat("subjects={0}", taxonomyItem._Name);
 				}
 
 				//Region
 				if (IsRegionTaxonomy(parentPath))
 				{
-					key = Regions;
+                url.AppendFormat("regions={0}", taxonomyItem._Name);
 				}
 
 				//Area
@@ -68,7 +68,7 @@ namespace Informa.Library.Search.Utilities
 
 			foreach (var pair in dict)
 			{
-				url.AppendFormat("{0}={1}", pair.Key, pair.Value);
+                url.AppendFormat("areas={0}", taxonomyItem._Name);
 			}
 			
 			return url.ToString();
