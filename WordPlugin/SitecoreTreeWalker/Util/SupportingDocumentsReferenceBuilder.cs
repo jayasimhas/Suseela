@@ -34,8 +34,10 @@ namespace InformaSitecoreWord.Util
 				}
 				var url = SitecoreClient.GetDynamicUrl(path);
 				root.SetAttributeValue("href", url);
-                //fix showing supporting document links in edit mode
-                root.SetAttributeValue("style", "display:none;");
+                //TamerM - 2016-08-25: Request to do the following in IIS-17 was a mistake (hide key docs from body), so reverting now
+                ////fix showing supporting document links in edit mode
+                ////root.SetAttributeValue("style", "display:none;");
+
                 root.SetAttributeValue("target", "_blank");
                 root.Value = hyperlink.Range.Text;
 				//root.Add(GetDocIcon(url));
