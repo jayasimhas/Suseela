@@ -11,8 +11,10 @@ namespace Informa.Library.Utilities.References
 
 		Guid NlmErrorDistributionList { get; }
 
-		// Pharma Globals
-		Guid NlmCopyrightStatement { get; }
+        Guid UserLockoutedEmails { get; }
+
+        // Pharma Globals
+        Guid NlmCopyrightStatement { get; }
 		Guid InformaBar { get; }
 
 		Guid GeneratedDictionary { get; }
