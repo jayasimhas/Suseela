@@ -566,5 +566,14 @@ namespace Informa.Web.Controllers
 				return state;
 			}
 		}
+ 		public DateTime GetArticleActualPublishedDate(Guid itemID)
+        {
+            var article = _sitecoreMasterService.GetItem<Item>(itemID);
+
+            var date = DateUtil.IsoDateToDateTime(article.Fields["Actual Publish Date"].Value);
+            var actualPublishDate = new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, date.Second, DateTimeKind.Local);
+
+            return actualPublishDate;
+        }
 	}
 }

@@ -23,8 +23,7 @@ using Sitecore.Data.Items;
 using Sitecore.Links;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
-using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
-
+using Sitecore.Data;
 
 namespace Informa.Web.Controllers
 {
@@ -820,7 +819,8 @@ namespace Informa.Web.Controllers
         }
     }
 
-    public class GetServerTimezoneController : ApiController
+    {
+public class GetServerTimezoneController : ApiController
     {
         public GetServerTimezoneController()
         {
@@ -831,5 +831,25 @@ namespace Informa.Web.Controllers
             return Json(TimeZoneInfo.Local);
         }
     }
+        public class GetArticleActualPublishedDateController : ApiController
+    {
+        ArticleUtil _articleUtil;
+        public GetArticleActualPublishedDateController(ArticleUtil articleUtil)
+        {
+            _articleUtil = articleUtil;
+        }
 
+        public JsonResult<DateTime> Get(Guid itemID)
+        {
+            return Json(_articleUtil.GetArticleActualPublishedDate(itemID));
+        }
+    }
+
+    public class GetArticleWorkflowHistoryController : ApiController
+    {
+        public JsonResult<List<Tuple<DateTime, string, bool>>> Get(Guid itemID)
+        {
+            return Json(new Informa.Library.Utilities.SitecoreUtils.WorkflowUtil().GetWorkflowHistory(new ID(itemID)));
+        }
+    }
 }

@@ -266,7 +266,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 Globals.SitecoreAddin.Log("Updating fields...");
                 articleDetailsPageSelector.UpdateFields(ArticleDetails);
                 articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState, ArticleDetails);
-            }
+				articleStatusBar1.RefreshWorkflowDetails();
         }
 
         /// <summary>
@@ -836,6 +836,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     EnablePreview();
                     uxCreateArticle.Visible = false;
                 }
+                articleStatusBar1.RefreshWorkflowDetails();
 
                 MessageBox.Show(@"Metadata saved!", @"Informa");
             }
@@ -908,6 +909,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument, _wordUtils.CharacterStyleTransformer);
                 if (PreSavePrompts(metadataParser)) return;
                 SaveArticleToSitecoreUpdateUI(metadataParser);
+                articleStatusBar1.RefreshWorkflowDetails();
             }
             catch (WebException wex)
             {
