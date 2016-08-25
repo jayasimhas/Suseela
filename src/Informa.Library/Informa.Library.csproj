@@ -344,10 +344,11 @@
     <Compile Include="CustomSitecore\Events\AddFromBranchPreset.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
     <Compile Include="CustomSitecore\Events\ArticleItemCreated.cs" />
-     <Compile Include="CustomSitecore\Pipelines\CheckClientUser.cs" />
+    <Compile Include="CustomSitecore\Pipelines\CheckClientUser.cs" />
     <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
+    <Compile Include="CustomSitecore\Pipelines\ISendinUserLockedOutEmail.cs" />
     <Compile Include="CustomSitecore\Providers\EmailLinkProvider.cs" />
     <Compile Include="CustomSitecore\Pipelines\PasswordRecoveryPipeline.cs" />
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
@@ -397,7 +398,7 @@
     <Compile Include="Publishing\Events\PublishItemProcessing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishingDateTime.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishingDateTime.cs" />
-<Compile Include="Publishing\Scheduled\Tasks\SchedulingUnlockUser.cs" />
+    <Compile Include="Publishing\Scheduled\Tasks\SchedulingUnlockUser.cs" />
     <Compile Include="Purchase\ArticlePurchaseItem.cs" />
     <Compile Include="Purchase\ArticlePurchaseItemsFactory.cs" />
     <Compile Include="Purchase\IArticlePurchase.cs" />
@@ -1100,13 +1101,14 @@
     <Compile Include="Utilities\Security\Crypto.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
-	<Compile Include="Utilities\SitecoreUtils\WorkflowUtil.cs" />
+    <Compile Include="Utilities\SitecoreUtils\WorkflowUtil.cs" />
     <Compile Include="Utilities\StringUtils\BylineMaker.cs" />
     <Compile Include="Utilities\StringUtils\HtmlUtil.cs" />
     <Compile Include="Utilities\StringUtils\WordUtil.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
     <Compile Include="Utilities\TokenMatcher\DCDTokenMatchers.cs" />
     <Compile Include="Utilities\UserMembership\CustomSqlMembershipProvider.cs" />
+    <Compile Include="Utilities\UserMembership\CustomSqlUserUnlocker.cs" />
     <Compile Include="Utilities\UserMembership\UserAttemp.cs" />
     <Compile Include="Utilities\WebApi\Caching\ApiOutputCacheAdapter.cs" />
     <Compile Include="Utilities\WebApi\Filters\ArgumentsRequiredAttribute.cs" />

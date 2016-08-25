@@ -52,7 +52,7 @@ namespace Informa.Web.Controllers
             HtmlEmailTemplateFactory = htmlEmailTemplateFactory;
             Logger = logger;
             _siteWorkflow = siteWorkflow;
-           // _siteRootContext = siteRootContext;
+            // _siteRootContext = siteRootContext;
         }
 
         private string GetStaffEmail(Guid g)
@@ -166,7 +166,7 @@ namespace Informa.Web.Controllers
             if (string.IsNullOrEmpty(fromEmail) || string.IsNullOrEmpty(replyToEmail)) return;
 
             var workflowItem = _siteWorkflow.GetPublicationWorkflow(_service.GetItem<Item>(articleStruct.ArticleGuid));
-                //_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(_siteWorkflow.get _siteRootContext.Item.Workflow);
+            //_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(_siteWorkflow.get _siteRootContext.Item.Workflow);
             if (workflowItem == null) return;
             var notificationList = workflowItem.Notified_After_Publishes;
             var staffItems = notificationList as IStaff_Item[] ?? notificationList.ToArray();
@@ -242,8 +242,9 @@ namespace Informa.Web.Controllers
 
             List<WorkflowEvent> workflowHistory = GetWorkflowHistory(article);
             replacements["#history#"] = HistoryTableCreation(workflowHistory);
+            var eHtml = emailHtml.ReplacePatternCaseInsensitive(replacements);
+            return eHtml;
 
-            return emailHtml.ReplacePatternCaseInsensitive(replacements);
         }
 
         public string CreateEditAfterPublishBody(ArticleStruct articleStruct, string emailTitle, string publication)

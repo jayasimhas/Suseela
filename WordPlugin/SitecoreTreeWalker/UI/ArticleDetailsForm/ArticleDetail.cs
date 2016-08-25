@@ -265,8 +265,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             {
                 Globals.SitecoreAddin.Log("Updating fields...");
                 articleDetailsPageSelector.UpdateFields(ArticleDetails);
-                articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState, ArticleDetails);
-				articleStatusBar1.RefreshWorkflowDetails();
+                articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState,
+                    ArticleDetails);
+                articleStatusBar1.RefreshWorkflowDetails();
+            }
         }
 
         /// <summary>

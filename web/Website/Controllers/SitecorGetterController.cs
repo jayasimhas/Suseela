@@ -819,7 +819,7 @@ namespace Informa.Web.Controllers
         }
     }
 
-    {
+    
 public class GetServerTimezoneController : ApiController
     {
         public GetServerTimezoneController()
