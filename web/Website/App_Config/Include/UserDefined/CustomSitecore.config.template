@@ -102,7 +102,7 @@ But you can also use "patch:attribute" for clarity:
             <site name="medtech">MedtechInsight</site>
             <site name="pink">PinkSheet</site>
             <site name="rose">RoseSheet</site>
-			<site name="ScripIntelligence">ScripIntelligence</>
+			<site name="ScripIntelligence">ScripIntelligence</site>
           </sites>
         </handler>
       </event>
@@ -113,7 +113,7 @@ But you can also use "patch:attribute" for clarity:
             <site name="medtech">MedtechInsight</site>
             <site name="pink">PinkSheet</site>
             <site name="rose">RoseSheet</site>
-			<site name="ScripIntelligence">ScripIntelligence</>
+			<site name="ScripIntelligence">ScripIntelligence</site>
           </sites>
         </handler>
       </event>
