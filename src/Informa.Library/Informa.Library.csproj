@@ -415,6 +415,7 @@
     <Compile Include="Rss\Utils\RssConstants.cs" />
     <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
     <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchResultPublicationCodeField.cs" />
     <Compile Include="Search\FacetBuilders\CompaniesFacetBuilder.cs" />
     <Compile Include="Search\Formatting\IQueryFormatter.cs" />
     <Compile Include="Search\Formatting\SolrQueryFormatter.cs" />
