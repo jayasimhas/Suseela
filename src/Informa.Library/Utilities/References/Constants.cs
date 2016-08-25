@@ -39,14 +39,14 @@ namespace Informa.Library.Utilities.References
 		public const string RoseSheetRootNode = "{204199B0-C381-4B9B-92BE-63E5754F5E90}";
 		public const string RoseSheetNodeIntials = "RS";
 
-        public const string MSWordDocumentRootNode = "{FDBFCAC8 -03CA-4B0B-BEFE-2171050E19C6}";
+		public const string MSWordDocumentRootNode = "{FDBFCAC8 -03CA-4B0B-BEFE-2171050E19C6}";
 
-        public static string EditAfterPublishWorkflowCommand = "{322D0739-B3AC-416F-BF58-5E39E716F003}";
+		//public static string EditAfterPublishWorkflowCommand = "{322D0739-B3AC-416F-BF58-5E39E716F003}";
 
-        public static string ScripWorkflow = "{926E6200-EB76-4AD4-8614-691D002573AC}";
-        public static readonly Dictionary<Guid, string> PublicationPrefixDictionary = new Dictionary<Guid, string>
-		{
-			{ new Guid(ScripRootNode), ScripRootNodeIntials},
+		//public static string ScripWorkflow = "{926E6200-EB76-4AD4-8614-691D002573AC}";
+		public static readonly Dictionary<Guid, string> PublicationPrefixDictionary = new Dictionary<Guid, string>
+				{
+						{ new Guid(ScripRootNode), ScripRootNodeIntials},
 						{ new Guid(InVivoRootNode), InVivoRootNodeIntials},
 						{ new Guid(PinkSheetRootNode), PinkSheetRootNodeIntials},
 						{ new Guid(MedtechInsightRootNode), MedtechInsightRootNodeIntials},
