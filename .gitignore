@@ -344,3 +344,13 @@ web/Website/sitecore/*
 #PXM
 web/Website/PrintStudio/Projects/*
 web/Website/App_Config/Include/PXM/Sitecore.PrintStudio.config
+
+#selenium
+emailable-report.html
+testngDebug.xml
+*.iml
+.idea
+target/
+*.iws
+*.ipr
+ 

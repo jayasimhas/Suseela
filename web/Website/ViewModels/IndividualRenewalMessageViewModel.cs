@@ -70,13 +70,13 @@ namespace Informa.Web.ViewModels
 			{
 				return Context.Message_FreeTrial
 						.Replace("#FIRST_NAME#", userName)
-						.Replace("#SUB_EXPIRATION#", subscription.ExpirationDate.ToShortDateString());
+						.Replace("#SUB_EXPIRATION#", subscription.ExpirationDate.ToString("dd MMM yyyy"));
 			}
 
 			return Context.Message_IndividualSubscriptiong
 					.Replace("#FIRST_NAME#", userName)
-					.Replace("#SUB_EXPIRATION#", subscription.ExpirationDate.ToShortDateString());
-		}
+					.Replace("#SUB_EXPIRATION#", subscription.ExpirationDate.ToString("dd MMM yyyy"));
+        }
 
 		public string DismissText { get; set; }
 		public bool Display { get; set; }

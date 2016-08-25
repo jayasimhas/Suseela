@@ -61,8 +61,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 
         private void uxVersionStateButton_Click(object sender, EventArgs e)
         {
-            var articleVersionStateInfo = new ArticleVersionStateInfo(_parent) { StartPosition = FormStartPosition.CenterParent };
-            articleVersionStateInfo.ShowDialog();
+            //var articleVersionStateInfo = new ArticleVersionStateInfo(_parent) { StartPosition = FormStartPosition.CenterParent };
+            var articleVersionState = new ArticleVersionStatePopup(_parent) { StartPosition = FormStartPosition.CenterParent };
+            articleVersionState.ShowDialog();
+            //articleVersionStateInfo.ShowDialog();
         }
 
         private void uxWorkflowButton_Click(object sender, EventArgs e)

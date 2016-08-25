@@ -180,6 +180,7 @@ namespace Elsevier.Web.VWB
 			q.ShouldRun = execute;
 			q.NumResultsValue = GetMaxNumResults();
 			RedirectTo(q);
+
 		}
 
         protected DateTime? GetDateValue(string date, string time) {

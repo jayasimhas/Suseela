@@ -7,100 +7,109 @@ using Informa.Web.Areas.Account.Models.User.Registration;
 using System.Collections.Generic;
 using System.Web.Http;
 using System.Linq;
+using Glass.Mapper.Sc.IoC;
 using Informa.Library.Company;
 using Informa.Library.Subscription.User;
 using Informa.Library.User.Authentication;
+using Informa.Library.User.Newsletter;
+using Informa.Library.User.Offer;
 using Informa.Library.User.Orders;
 using Informa.Library.User.Profile;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
-	public class RegistrationApiController : ApiController
-	{
-		protected readonly IFindUserByEmail FindUser;
-		protected readonly INewUserFactory NewUserFactory;
-		protected readonly IWebRegisterUser RegisterUser;
-		protected readonly IWebSetOptInsRegisterUser SetOptInsRegisterUser;
-		protected readonly IUserCompanyContext UserCompanyContext;
+    public class RegistrationApiController : ApiController
+    {
+        protected readonly IFindUserByEmail FindUser;
+        protected readonly INewUserFactory NewUserFactory;
+        protected readonly IWebRegisterUser RegisterUser;
+        protected readonly IWebSetOptInsRegisterUser SetOptInsRegisterUser;
+        protected readonly IUserCompanyContext UserCompanyContext;
         protected readonly IManageAccountInfo AccountInfo;
-	    protected readonly IUserOrder UserOrder;
+        protected readonly IUserOrder UserOrder;
+        protected readonly ISetPublicationsNewsletterUserOptIns SetNewsletterUserOptInsContext;
+        protected readonly IUpdateOfferUserOptInContext OffersOptIn;
 
         public RegistrationApiController(
-			IFindUserByEmail findUser,
-			INewUserFactory newUserFactory,
-			IWebRegisterUser registerUser,
-			IWebSetOptInsRegisterUser setOptInsRegisterUser,
-			IUserCompanyContext userCompanyContext,
+            IFindUserByEmail findUser,
+            INewUserFactory newUserFactory,
+            IWebRegisterUser registerUser,
+            IWebSetOptInsRegisterUser setOptInsRegisterUser,
             IManageAccountInfo accountInfo,
-            IUserOrder userOrder)
-		{
-			FindUser = findUser;
-			NewUserFactory = newUserFactory;
-			RegisterUser = registerUser;
-			SetOptInsRegisterUser = setOptInsRegisterUser;
-	        UserCompanyContext = userCompanyContext;
+            IUserOrder userOrder,
+            IUserCompanyContext userCompanyContext,
+            ISetPublicationsNewsletterUserOptIns setNewsletterUserOptInsContext,
+            IUpdateOfferUserOptInContext offersOptIn)
+        {
+            FindUser = findUser;
+            NewUserFactory = newUserFactory;
+            RegisterUser = registerUser;
+            SetOptInsRegisterUser = setOptInsRegisterUser;
+            UserCompanyContext = userCompanyContext;
             AccountInfo = accountInfo;
             UserOrder = userOrder;
+            SetNewsletterUserOptInsContext = setNewsletterUserOptInsContext;
+            OffersOptIn = offersOptIn;
 
-		}
+        }
 
-		[HttpPost]
-		[ValidateReasons]
-		[ArgumentsRequired]
-		public IHttpActionResult PreRegister(PreRegisterRequest request)
-		{
-			if (IsExistingUser(request.Username))
-			{
-				return CreateUserExistsResponse();
-			}
+        [HttpPost]
+        [ValidateReasons]
+        [ArgumentsRequired]
+        public IHttpActionResult PreRegister(PreRegisterRequest request)
+        {
+            if (IsExistingUser(request.Username))
+            {
+                return CreateUserExistsResponse();
+            }
 
-			return Ok(new
-			{
-				success = true
-			});
-		}
+            return Ok(new
+            {
+                success = true
+            });
+        }
 
-		[HttpPost]
-		[ValidateReasons]
-		[ArgumentsRequired]
-		public IHttpActionResult Register(RegisterRequest request)
-		{
-			if (IsExistingUser(request.Username))
-			{
-				return CreateUserExistsResponse();
-			}
+        [HttpPost]
+        [ValidateReasons]
+        [ArgumentsRequired]
+        public IHttpActionResult Register(RegisterRequest request)
+        {
+            if (IsExistingUser(request.Username))
+            {
+                return CreateUserExistsResponse();
+            }
 
-			var newUser = NewUserFactory.Create();
+            var newUser = NewUserFactory.Create();
 
-			newUser.FirstName = request.FirstName;
-			newUser.LastName = request.LastName;
-			newUser.Password = request.Password;
-			newUser.Username = request.Username;
+            newUser.FirstName = request.FirstName;
+            newUser.LastName = request.LastName;
+            newUser.Password = request.Password;
+            newUser.Username = request.Username;
 
-			if (request.AssociateMaster)
-			{
-				newUser.MasterId = request.MasterId;
-				newUser.MasterPassword = request.MasterPassword;
-			}
+            if (request.AssociateMaster)
+            {
+                newUser.MasterId = request.MasterId;
+                newUser.MasterPassword = request.MasterPassword;
+            }
 
-			var registerResult = RegisterUser.Register(newUser);
-			var success = registerResult.Success;
-			var reasons = new List<string>();
+            var registerResult = RegisterUser.Register(newUser);
+            var success = registerResult.Success;
+            var reasons = new List<string>();
 
-			if (!success)
-			{
-				reasons.AddRange(registerResult.Errors.Select(e => GetRegisterValidationReason(e)));
-			}
+            if (!success)
+            {
+                reasons.AddRange(registerResult.Errors.Select(e => GetRegisterValidationReason(e)));
+            }
 
-			var registrationType = GetRegistrationType(UserCompanyContext);
+            var registrationType = GetRegistrationType(UserCompanyContext);
 
-			return Ok(new
-			{
-				success = success,
-				reasons = reasons,
-				registration_type = registrationType
-			});
-		}
+            return Ok(new
+            {
+                success = success,
+                reasons = reasons,
+                registration_type = registrationType
+            });
+        }
 
         [HttpPost]
         [ValidateReasons]
@@ -159,59 +168,60 @@ namespace Informa.Web.Areas.Account.Controllers
         }
 
         private string GetRegistrationType(IUserCompanyContext context)
-		{
-			if (context.Company == null)
-			{
-				return "Free User";
-			}
+        {
+            if (context.Company == null)
+            {
+                return "Free User";
+            }
 
-			if (context.Company.Type == CompanyType.TransparentIP)
-			{
-				return "Transparent IP";
-			}
-			return "Corporate";
-		}
+            if (context.Company.Type == CompanyType.TransparentIP)
+            {
+                return "Transparent IP";
+            }
+            return "Corporate";
+        }
 
-		public string GetRegisterValidationReason(string error)
-		{
-			switch (error)
-			{
-				case "MasterIdInvalid":
-					return RegisterValidationReason.MasterIdInvalid;
-				case "MasterIdExpired":
-					return RegisterValidationReason.MasterIdExpired;
-				default:
-					return "Unknown";
-			}
-		}
+        public string GetRegisterValidationReason(string error)
+        {
+            switch (error)
+            {
+                case "MasterIdInvalid":
+                    return RegisterValidationReason.MasterIdInvalid;
+                case "MasterIdExpired":
+                    return RegisterValidationReason.MasterIdExpired;
+                default:
+                    return "Unknown";
+            }
+        }
 
-		[HttpPost]
-		[ArgumentsRequired]
-		public IHttpActionResult SetOptIns(SetOptInsRequest request)
-		{
-			var success = SetOptInsRegisterUser.Set(request.Offers, request.Newsletters);
+        [HttpPost]
+        [ArgumentsRequired]
+        public IHttpActionResult SetOptIns(SetOptInsRequest request)
+        {
+            var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request?.Newsletters?.Where(w => w.NewsletterChecked).Select(s => s.PublicationCode).ToList() ?? Enumerable.Empty<string>());
+            var offersUpdated = OffersOptIn.Update(!request.Offers);
 
-			return Ok(new
-			{
-				success = success
-			});
-		}
+            return Ok(new
+            {
+                success = newsletterUpdated && offersUpdated
+            });
+        }
 
-		public bool IsExistingUser(string username)
-		{
-			return FindUser.Find(username) != null;
-		}
+        public bool IsExistingUser(string username)
+        {
+            return FindUser.Find(username) != null;
+        }
 
-		public IHttpActionResult CreateUserExistsResponse()
-		{
-			return Ok(new
-			{
-				success = false,
-				reasons = new List<string>
-				{
-					{ RegisterValidationReason.UsernameExists }
-				}
-			});
-		}
+        public IHttpActionResult CreateUserExistsResponse()
+        {
+            return Ok(new
+            {
+                success = false,
+                reasons = new List<string>
+                {
+                    { RegisterValidationReason.UsernameExists }
+                }
+            });
+        }
     }
 }

@@ -38,8 +38,8 @@ namespace Informa.Library.Search.PredicateBuilders
 				}
 			}
 
-			// fiure-out time parameter
-			if (_request.QueryParameters.ContainsKey(Constants.QueryString.DateRangeFilterLabelKey))
+            // fiure-out time parameter
+            if (_request.QueryParameters.ContainsKey(Constants.QueryString.DateRangeFilterLabelKey))
 			{
 				string dateRangeFilterLabelValue = _request.QueryParameters[Constants.QueryString.DateRangeFilterLabelKey];
 				if (_request.QueryParameters.ContainsKey(Constants.QueryString.TimeKey))
