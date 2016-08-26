@@ -22,6 +22,9 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Link
                 return string.Empty;
             }
 
+            if (string.IsNullOrEmpty(BaseUrl))
+                return string.Format("/{0}", linkId);
+
             return string.Format("{1}/a/{0}", linkId, BaseUrl);
         }
 
@@ -40,10 +43,10 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Link
 
             using (var db = new SitecoreService(Constants.MasterDb))
             {
-				var articleItem = db.GetItem<Item>(item._Id);
-				var publicationItem = ArticleExtension.GetAncestorItemBasedOnTemplateID(articleItem);
-				Guid publicationGuid = publicationItem.ID.Guid;
-				var publication = db.GetItem<ISite_Root>(publicationGuid);
+                var articleItem = db.GetItem<Item>(item._Id);
+                var publicationItem = ArticleExtension.GetAncestorItemBasedOnTemplateID(articleItem);
+                Guid publicationGuid = publicationItem.ID.Guid;
+                var publication = db.GetItem<ISite_Root>(publicationGuid);
                 textToReturn += "\"" + publication?.Publication_Name + "\" ";
             }
 
@@ -58,5 +61,5 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Link
         {
             get { return "pii"; }
         }
-	}
+    }
 }
