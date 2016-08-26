@@ -606,6 +606,9 @@
     <Reference Include="Sitecore.Speak.Web">
       <HintPath>..\..\lib\Sitecore\Sitecore.Speak.Web.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Support.88491">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Support.88491.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Web, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Web.dll</HintPath>
