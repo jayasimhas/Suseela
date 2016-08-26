@@ -72,6 +72,7 @@ namespace Informa.Library.Utilities.References
 				};
 
 		public static int[] PerPageSizes = { 10, 20, 50 };
+        public static string NavigationItemTemplateID = "{354B0538-CB81-4B26-A25E-7B5DBA03C2F5}";
 
 		public static class QueryString
 		{
