@@ -1142,6 +1142,7 @@
     <Compile Include="Utilities\Security\Crypto.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
+	<Compile Include="Utilities\SitecoreUtils\WorkflowUtil.cs" />
     <Compile Include="Utilities\StringUtils\BylineMaker.cs" />
     <Compile Include="Utilities\StringUtils\HtmlUtil.cs" />
     <Compile Include="Utilities\StringUtils\WordUtil.cs" />

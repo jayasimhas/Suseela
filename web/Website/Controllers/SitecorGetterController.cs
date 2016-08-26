@@ -14,7 +14,6 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Text_Nodes;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
-using Informa.Web.Areas.Account.Models;
 using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Glass.Models;
@@ -23,8 +22,7 @@ using Sitecore.Data.Items;
 using Sitecore.Links;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
-using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
-
+using Sitecore.Data;
 
 namespace Informa.Web.Controllers
 {
@@ -821,15 +819,33 @@ namespace Informa.Web.Controllers
     }
 
     public class GetServerTimezoneController : ApiController
+		{
+			public GetServerTimezoneController() { }
+			public JsonResult<TimeZoneInfo> Get()
+			{
+				return Json(TimeZoneInfo.Local);
+			}
+		}
+
+    public class GetArticleActualPublishedDateController : ApiController
     {
-        public GetServerTimezoneController()
+        ArticleUtil _articleUtil;
+        public GetArticleActualPublishedDateController(ArticleUtil articleUtil)
         {
+            _articleUtil = articleUtil;
         }
 
-        public JsonResult<TimeZoneInfo> Get()
+        public JsonResult<DateTime> Get(Guid itemID)
         {
-            return Json(TimeZoneInfo.Local);
+            return Json(_articleUtil.GetArticleActualPublishedDate(itemID));
         }
     }
 
+    public class GetArticleWorkflowHistoryController : ApiController
+    {
+        public JsonResult<List<Tuple<DateTime, string, bool>>> Get(Guid itemID)
+        {
+            return Json(new Informa.Library.Utilities.SitecoreUtils.WorkflowUtil().GetWorkflowHistory(new ID(itemID)));
+        }
+    }
 }
