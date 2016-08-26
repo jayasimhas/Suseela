@@ -22,6 +22,8 @@ using Sitecore.Data.Items;
 using Sitecore.Resources.Media;
 using Sitecore.Workflows;
 using Constants = Informa.Library.Utilities.References.Constants;
+using Informa.Library.Site;
+using Informa.Library.Publication;
 
 namespace Informa.Web.Controllers
 {
@@ -31,28 +33,33 @@ namespace Informa.Web.Controllers
         private ArticleUtil _articleUtil;
         protected readonly IEmailSender EmailSender;
         protected readonly IHtmlEmailTemplateFactory HtmlEmailTemplateFactory;
-	    protected readonly ILogWrapper Logger;
+        protected readonly ILogWrapper Logger;
+        protected readonly ISitePublicationWorkflow _siteWorkflow;
+        //protected readonly ISiteRootContext _siteRootContext;
 
-		public EmailUtil(
-            ArticleUtil articleUtil, 
-            Func<string, ISitecoreService> 
-            sitecoreFactory, 
-            IEmailSender emailSender, 
+        public EmailUtil(
+            ArticleUtil articleUtil,
+            Func<string, ISitecoreService>
+            sitecoreFactory,
+            IEmailSender emailSender,
             IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
-            ILogWrapper logger)
+            ILogWrapper logger,
+            ISitePublicationWorkflow siteWorkflow)
         {
             EmailSender = emailSender;
             _articleUtil = articleUtil;
             _service = sitecoreFactory(Constants.MasterDb);
             HtmlEmailTemplateFactory = htmlEmailTemplateFactory;
-		    Logger = logger;
+            Logger = logger;
+            _siteWorkflow = siteWorkflow;
+           // _siteRootContext = siteRootContext;
         }
 
-	    private string GetStaffEmail(Guid g)
-	    {
+        private string GetStaffEmail(Guid g)
+        {
             var notificationUser = _service.GetItem<IStaff_Item>(g);
-	        return notificationUser?.Email_Address ?? string.Empty;
-	    }
+            return notificationUser?.Email_Address ?? string.Empty;
+        }
 
         /// <summary>
         /// 
@@ -110,10 +117,10 @@ namespace Informa.Web.Controllers
             foreach (var eachEmail in notificationList)
             {
                 var staffEmail = GetStaffEmail(eachEmail.ID);
-				if (string.IsNullOrEmpty(staffEmail)) continue;
+                if (string.IsNullOrEmpty(staffEmail)) continue;
                 Email email = new Email
                 {
-					To = staffEmail,
+                    To = staffEmail,
                     Subject = title,
                     From = fromEmail,
                     Body = emailBody,
@@ -123,7 +130,7 @@ namespace Informa.Web.Controllers
                 Logger.SitecoreInfo($"EmailUtil.SendNotification: notifying - {staffEmail}");
 
                 EmailSender.SendWorkflowNotification(email, replyToEmail);
-				if (replyToEmail == staffEmail)
+                if (replyToEmail == staffEmail)
                 {
                     isAuthorInSenderList = true;
                 }
@@ -158,9 +165,8 @@ namespace Informa.Web.Controllers
             var replyToEmail = Sitecore.Context.User.Profile.Email;
             if (string.IsNullOrEmpty(fromEmail) || string.IsNullOrEmpty(replyToEmail)) return;
 
-            var workflowItem =
-                _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(
-                    Constants.ScripWorkflow);
+            var workflowItem = _siteWorkflow.GetPublicationWorkflow(_service.GetItem<Item>(articleStruct.ArticleGuid));
+                //_service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(_siteWorkflow.get _siteRootContext.Item.Workflow);
             if (workflowItem == null) return;
             var notificationList = workflowItem.Notified_After_Publishes;
             var staffItems = notificationList as IStaff_Item[] ?? notificationList.ToArray();

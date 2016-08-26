@@ -12,6 +12,9 @@ using Sitecore.Web;
 using Informa.Library.Utilities.References;
 using PluginModels;
 using Informa.Library.CustomSitecore.Ribbon;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Informa.Library.Site;
+using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Web.Controllers
 {
@@ -42,7 +45,9 @@ namespace Informa.Web.Controllers
 
                 //Hack to start the workflow
                 var articleItem = _sitecoreMasterService.GetItem<Item>(articleCreate._Id);
-                var intialWorkflow = _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow("{926E6200-EB76-4AD4-8614-691D002573AC}");
+                var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(articleCreate._Id);
+                //var intialWorkflow = _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow("{926E6200-EB76-4AD4-8614-691D002573AC}");
+                var intialWorkflow = _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow(savedArticle.Crawl<ISite_Root>().Workflow.ToString());
                 intialWorkflow.Start(articleItem);
 
                 var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
@@ -51,7 +56,7 @@ namespace Informa.Web.Controllers
                 article.Created_Date = DateTime.Now;
                 article.Article_Number = SitecoreUtil.GetNextArticleNumber(_articleSearch.GetNextArticleNumber(content.PublicationID), content.PublicationID);
                 _sitecoreMasterService.Save(article);
-                var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
+                savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(articleCreate._Id);
                 var articleStruct = _articleUtil.GetArticleStruct(savedArticle);
                 return articleStruct;
             }

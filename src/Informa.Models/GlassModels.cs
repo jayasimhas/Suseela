@@ -5454,6 +5454,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 					[SitecoreField(IStateConstants.Preview_Publishing_TargetsFieldName, Setting = SitecoreFieldSettings.InferType)]
 					IEnumerable<IGlassBase> Preview_Publishing_Targets  {get; set;}
 								/// <summary>
+					/// The Is Edit After Publish field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: aa0ada61-b05e-4cd4-b39e-d183e36c312d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStateConstants.Is_Edit_After_PublishFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Is_Edit_After_Publish  {get; set;}
+								/// <summary>
 					/// The Staff field.
 					/// <para></para>
 					/// <para>Field Type: Treelist</para>		
@@ -5502,6 +5511,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 						[SitecoreField(IStateConstants.Preview_Publishing_TargetsFieldName, Setting = SitecoreFieldSettings.InferType)]
 						IEnumerable<IGlassBase> Preview_Publishing_Targets  {get; set;}
 										/// <summary>
+						/// The Is Edit After Publish field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: aa0ada61-b05e-4cd4-b39e-d183e36c312d</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStateConstants.Is_Edit_After_PublishFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Is_Edit_After_Publish  {get; set;}
+										/// <summary>
 						/// The Staff field.
 						/// <para></para>
 						/// <para>Field Type: Treelist</para>		
@@ -5531,6 +5549,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.System.Workflow
 					
 			public static readonly ID Preview_Publishing_TargetsFieldId = new ID("a438dfd1-154e-4584-b7e3-d1e28315e415");
 			public const string Preview_Publishing_TargetsFieldName = "Preview publishing targets";
+
+						
+					
+			public static readonly ID Is_Edit_After_PublishFieldId = new ID("aa0ada61-b05e-4cd4-b39e-d183e36c312d");
+			public const string Is_Edit_After_PublishFieldName = "Is Edit After Publish";
 
 						
 					
@@ -12956,6 +12979,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Publication_ThemeFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Publication_Theme  {get; set;}
 								/// <summary>
+					/// The Workflow field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 57389b93-9681-4e67-8fb0-4e04e532716c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.WorkflowFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Guid Workflow  {get; set;}
+								/// <summary>
 					/// The Register Link field.
 					/// <para></para>
 					/// <para>Field Type: General Link</para>		
@@ -13796,6 +13828,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Publication_ThemeFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Publication_Theme  {get; set;}
 										/// <summary>
+						/// The Workflow field.
+						/// <para></para>
+						/// <para>Field Type: Droplink</para>		
+						/// <para>Field ID: 57389b93-9681-4e67-8fb0-4e04e532716c</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.WorkflowFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Guid Workflow  {get; set;}
+										/// <summary>
 						/// The Register Link field.
 						/// <para></para>
 						/// <para>Field Type: General Link</para>		
@@ -14381,6 +14422,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Publication_ThemeFieldId = new ID("21e92b06-95e5-45bd-9ad3-d2fe207eef7b");
 			public const string Publication_ThemeFieldName = "Publication Theme";
+
+						
+					
+			public static readonly ID WorkflowFieldId = new ID("57389b93-9681-4e67-8fb0-4e04e532716c");
+			public const string WorkflowFieldName = "Workflow";
 
 						
 					
@@ -20172,6 +20218,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Publication_ThemeFieldId = new ID("21e92b06-95e5-45bd-9ad3-d2fe207eef7b");
 			public const string Publication_ThemeFieldName = "Publication Theme";
+
+						
+					
+			public static readonly ID WorkflowFieldId = new ID("57389b93-9681-4e67-8fb0-4e04e532716c");
+			public const string WorkflowFieldName = "Workflow";
 
 						
 					
