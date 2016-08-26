@@ -49,6 +49,8 @@ namespace Informa.Library.Utilities.References
 		Guid SubscriptionPage { get; }
 
 		Guid EmailPreferences { get; }
+
+        Guid PasswordRecoveryEmail { get; }
         
         // Restriction Access
         Guid FreeWithEntitlement { get; }

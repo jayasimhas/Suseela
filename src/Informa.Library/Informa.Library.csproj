@@ -368,6 +368,7 @@
     <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
+    <Compile Include="CustomSitecore\Pipelines\PasswordRecoveryPipeline.cs" />
     <Compile Include="CustomSitecore\Providers\EmailLinkProvider.cs" />
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
@@ -508,7 +509,9 @@
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedFormToken.cs" />
     <Compile Include="User\Authentication\AuthorizeToken.cs" />
+    <Compile Include="User\Authentication\ISendRecoveryPassword.cs" />
     <Compile Include="User\Authentication\IAuthenticatedFormToken.cs" />
+    <Compile Include="User\Authentication\SendRecoveryPassword.cs" />
     <Compile Include="User\EmailOptIns\OptInManager.cs" />
     <Compile Include="User\EmailOptIns\OptInResponseModel.cs" />
     <Compile Include="Taxonomy\HeirarchyLinks.cs" />

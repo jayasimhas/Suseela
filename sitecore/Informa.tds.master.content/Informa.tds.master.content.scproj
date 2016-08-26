@@ -1636,6 +1636,10 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
+	 <SitecoreItem Include="sitecore\content\Environment Globals\Email Config\Password Recovery Email Config.item">
+       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+       <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Environment Globals\Email Config\Transactional Emails\Email a friend.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
