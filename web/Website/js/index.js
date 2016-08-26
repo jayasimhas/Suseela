@@ -963,6 +963,14 @@ window.findTooltips();
 		w); } (document,"script","twitter-wjs");
 
 
+    $('.contactInfoNumericField').on('keypress', function (e) {
+        e = (e) ? e : window.event;
+        var charCode = (e.which) ? e.which : e.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    });
 
 	// Pretty select boxes
 	$('select:not(.ng-scope)').selectivity({
@@ -976,3 +984,4 @@ window.findTooltips();
 		$(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
 	});
 });
+    
