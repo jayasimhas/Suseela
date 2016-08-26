@@ -3550,6 +3550,7 @@
       <ExcludeItemFrom>
       </ExcludeItemFrom>
       <ItemDeployment>DeployOnce</ItemDeployment>
+      <CodeGenTemplate>&lt;None&gt;</CodeGenTemplate>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Print Studio Templates\Content Merge.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
@@ -4286,6 +4287,7 @@
     <SitecoreItem Include="sitecore\templates\Print Studio Templates\InDesign connector\Special Characters.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <CodeGenTemplate>glassv3item.tt</CodeGenTemplate>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Print Studio Templates\InDesign connector\Special Characters\Character Mapping.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
