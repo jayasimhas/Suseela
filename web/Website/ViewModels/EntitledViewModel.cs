@@ -1,4 +1,5 @@
 using Informa.Library.User.Authentication;
+using Informa.Library.User;
 using Informa.Library.User.Entitlement;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Entitlement;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
@@ -9,13 +10,16 @@ namespace Informa.Web.ViewModels
     {
         public readonly IIsEntitledProducItemContext IsEntitledProductItemContext;
         public readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        public readonly ISitecoreUserContext SitecoreUserContext;
 
         protected EntitledViewModel(
-			IIsEntitledProducItemContext isEntitledItemProductContext,
-            IAuthenticatedUserContext authenticatedUserContext)
+            IIsEntitledProducItemContext isEntitledItemProductContext,
+            IAuthenticatedUserContext authenticatedUserContext,
+            ISitecoreUserContext sitecoreUserContext)
         {
             IsEntitledProductItemContext = isEntitledItemProductContext;
             AuthenticatedUserContext = authenticatedUserContext;
+            SitecoreUserContext = sitecoreUserContext;
         }
 
         public virtual bool IsFree => GlassModel.Free;
@@ -23,7 +27,10 @@ namespace Informa.Web.ViewModels
 
         public bool IsEntitled()
         {
-			return IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitledProductItemContext.IsEntitled(GlassModel);
+            return SitecoreUserContext.User.Domain.Name == "sitecore" 
+              || IsFree 
+              || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) 
+              || IsEntitledProductItemContext.IsEntitled(GlassModel);
         }
     }
 }

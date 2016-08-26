@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Informa.Library.Globalization;
 using Informa.Library.Services.Article;
+using Informa.Library.User;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Entitlement;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
@@ -16,7 +17,8 @@ namespace Informa.Web.ViewModels.Articles
             ITextTranslator textTranslator, 
             IIsEntitledProducItemContext entitledProductContext,
             IArticleService articleService,
-            IAuthenticatedUserContext authenticatedUserContext) : base(entitledProductContext, authenticatedUserContext)
+            IAuthenticatedUserContext authenticatedUserContext,
+						ISitecoreUserContext sitecoreUserContext) : base(entitledProductContext, authenticatedUserContext, sitecoreUserContext)
 		{
 			TextTranslator = textTranslator;
 		    ArticleService = articleService;
