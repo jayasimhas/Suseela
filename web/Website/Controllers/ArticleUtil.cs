@@ -429,10 +429,11 @@ namespace Informa.Web.Controllers
 
 			try
 			{
-				ISitecoreService service = new SitecoreContentContext();
-				var webItem = service.GetItem<Item>(articleItem._Id);
-				articleStruct.IsPublished = webItem != null;
-			}
+                //ISitecoreService service = new SitecoreContentContext();
+                //var webItem = service.GetItem<Item>(articleItem._Id);
+                //articleStruct.IsPublished = webItem != null;
+                articleStruct.IsPublished = articleItem.Actual_Publish_Date != DateTime.MinValue && article.Actual_Publish_Date < DateTime.Now;
+            }
 			catch (Exception ex)
 			{
 				articleStruct.IsPublished = false;
