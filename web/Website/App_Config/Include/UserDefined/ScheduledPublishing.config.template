@@ -13,7 +13,8 @@
 			</event>
 		</events>
 		<scheduling>
-			<agent type="Informa.Library.Publishing.Scheduled.Tasks.ScheduledPublishing" method="Run" interval="${ScheduledPublishing.Interval}" />
+			<agent type="Informa.Library.Publishing.Scheduled.Tasks.SchedulingUnlockUser" method="Process" interval="00:01:00" />
+			<agent type="Informa.Library.Publishing.Scheduled.Tasks.ScheduledPublishing" method="Run" interval="00:01:00" />
 		</scheduling>
 	#end
 	</sitecore>
