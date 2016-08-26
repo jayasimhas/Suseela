@@ -19,7 +19,7 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
 
 			HtmlLinkList links = new HtmlLinkList
 			{
-				Links = indexItem.Taxonomies.Take(2).Select(t => new HtmlLink { Title = t.Item_Name?.Trim() ?? string.Empty, Url = SearchTaxonomyUtil.GetSearchUrl(t) }).ToList()
+				Links = indexItem.Taxonomies.Take(3).Select(t => new HtmlLink { Title = t.Item_Name?.Trim() ?? string.Empty, Url = SearchTaxonomyUtil.GetSearchUrl(t) }).ToList()
 			};
 			
 			return new JavaScriptSerializer().Serialize(links);
