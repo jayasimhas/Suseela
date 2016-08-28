@@ -7,45 +7,67 @@ function bookmarkController() {
     //  Article bookmarking logic goes here
     // * * *
     this.toggle = function(e) {
+        var bookmarklist=[];
+        var bookmarklastone={};
+        var bokID=$(e).closest('.js-bookmark-article').data('bookmark-id');
+        
+        //$('*[data-bookmark-id="'+bokID+'"]').each(function(){
+        //    console.log("bookmark objects ", $(this));
+        //});
 
-        var bookmark = {
-            elm: $(e)
-        };
+        //console.log("bookmark objects ",bokID, $('*[data-bookmark-id="'+bokID+'"]') );
 
-        // ID of the article we're bookmarking or un-bookmarking
-        bookmark.id = bookmark.elm.closest('.js-bookmark-article').data('bookmark-id');
+        $('*[data-bookmark-id="'+bokID+'"]').each(function(){
+           
+            
+            var bookmark = {
+                elm: $(this)
+            };
+            console.log("bookmark object ", bookmark);
+            // ID of the article we're bookmarking or un-bookmarking
+            bookmark.id = bookmark.elm.closest('.js-bookmark-article').data('bookmark-id');
+            
 
-        // Stash the bookmark label data now, swap label text later
-        bookmark.label = {
-            elm: bookmark.elm.find('.js-bookmark-label')
-        };
-        bookmark.label.bookmark = bookmark.label.elm.data('label-bookmark');
-        bookmark.label.bookmarked = bookmark.label.elm.data('label-bookmarked');
+            // Stash the bookmark label data now, swap label text later
+            bookmark.label = {
+                elm: bookmark.elm.find('.js-bookmark-label')
+            };
+            bookmark.label.bookmark = bookmark.label.elm.data('label-bookmark');
+            bookmark.label.bookmarked = bookmark.label.elm.data('label-bookmarked');
 
-        // Are we bookmarking an article, or un-bookmarking?
-        // Used later to know what API endpoint to hit, and what DOM changes are required
-        bookmark.isBookmarking = bookmark.elm.data('is-bookmarked') ? false : true;
+            // Are we bookmarking an article, or un-bookmarking?
+            // Used later to know what API endpoint to hit, and what DOM changes are required
+            bookmark.isBookmarking = bookmark.elm.data('is-bookmarked') ? false : true;
+            bookmarklist.push(bookmark);
+            bookmarklastone=bookmark;
 
-        var apiEndpoint = bookmark.isBookmarking ?
-            '/Account/api/SavedDocumentApi/SaveItem/' :
-            '/Account/api/SavedDocumentApi/RemoveItem/';
+        });
+        console.log("bookmark list ", bookmarklist);
+        console.log("bookmark last one  ", bookmarklastone);
 
-        if(bookmark.id) {
+        var apiEndpoint = bookmarklastone.isBookmarking ?
+    '/Account/api/SavedDocumentApi/SaveItem/' :
+    '/Account/api/SavedDocumentApi/RemoveItem/';
+
+ 
+        if(bookmarklastone.id) {
             $.ajax({
                 url: apiEndpoint,
                 type: 'POST',
                 data: {
-                    DocumentID: bookmark.id
+                    DocumentID: bookmarklastone.id
                 },
                 context: this,
                 success: function (response) {
                     if (response.success) {
 
-						if(bookmark.isBookmarking) {
-							analyticsEvent( $.extend(analytics_data, $(bookmark.elm).data('analytics')) );
-						}
-
-                        this.flipIcon(bookmark);
+                        if(bookmarklastone.isBookmarking) {
+                            analyticsEvent( $.extend(analytics_data, $(bookmarklastone.elm).data('analytics')) );
+                        }
+                        for(var indx in bookmarklist){
+                            this.flipIcon(bookmarklist[indx]);
+                        }
+                    
                         return true;
                     }
                     else {
@@ -58,13 +80,14 @@ function bookmarkController() {
             });
 
         }
+
     };
 
     this.flipIcon = function(bookmark) {
 
-		if(!bookmark.elm.hasClass('js-angular-bookmark')) {
-			$(bookmark.elm).find('.article-bookmark').removeClass('is-visible');
-		}
+        if(!bookmark.elm.hasClass('js-angular-bookmark')) {
+            $(bookmark.elm).find('.article-bookmark').removeClass('is-visible');
+        }
 
         if(bookmark.isBookmarking) {
             if(!bookmark.elm.hasClass('js-angular-bookmark')) {
