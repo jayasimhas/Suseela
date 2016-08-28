@@ -5,7 +5,7 @@
     <div class="page-account">
 
 		@Html.Sitecore().Placeholder("page-account")
-
+        <h2 class="page-account__table-headline">@Model.TitleText</h2>
         <div class="page-preferences js-preferences-user-container">
 			@if (Model.SavedDocumentItems.Any())
 			{
