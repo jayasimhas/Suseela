@@ -9,6 +9,7 @@ using Autofac;
 using System.Web;
 using Sitecore.Configuration;
 using StackExchange.Profiling;
+using Informa.Library.User.Authentication;
 
 namespace Informa.Web
 {
@@ -51,9 +52,25 @@ namespace Informa.Web
 			{
 				MiniProfiler.Start();
 			}
-		}
 
-		protected void Application_EndRequest()
+
+            if (HttpContext.Current.Request.Url.AbsoluteUri.ToLower().Contains("/sitecore/"))
+            {
+                IAuthenticatedUserContext user;
+                using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
+                {
+                    user = scope.Resolve<IAuthenticatedUserContext>();
+                }
+
+                if (!user.IsAuthenticated)
+                {
+                    HttpContext.Current.Response.Redirect("/404");
+                }
+            }
+
+        }
+
+        protected void Application_EndRequest()
 		{
 			MiniProfiler.Stop();
 		}
