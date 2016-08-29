@@ -15741,6 +15741,67 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewri
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+
+ 	/// <summary>
+	/// ICustom_Publishing_Config Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Configuration/Custom Publishing Config</para>	
+	/// <para>ID: a5e86cd9-2654-4422-93d3-9d24c41dd899</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICustom_Publishing_ConfigConstants.TemplateIdString)]
+	public partial interface ICustom_Publishing_Config : IGlassBase 
+	{
+								/// <summary>
+					/// The Allow Publishing with Subitems field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: fa6e9f43-1c24-49ea-9d35-cb2e19b9b6d4</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ICustom_Publishing_ConfigConstants.Allow_Publishing_With_SubitemsFieldName, Setting = SitecoreFieldSettings.InferType)]
+					bool Allow_Publishing_With_Subitems  {get; set;}
+				}
+
+	
+		/// <summary>
+		/// ICustom_Publishing_Config Interface
+		/// <para></para>
+		/// <para>Path: /sitecore/templates/User Defined/Configuration/Custom Publishing Config</para>	
+		/// <para>ID: a5e86cd9-2654-4422-93d3-9d24c41dd899</para>	
+		/// </summary>
+		[SitecoreType]
+		public partial interface ICustom_Publishing_Config__Raw : IGlassBase 
+		{
+										/// <summary>
+						/// The Allow Publishing with Subitems field.
+						/// <para></para>
+						/// <para>Field Type: Checkbox</para>		
+						/// <para>Field ID: fa6e9f43-1c24-49ea-9d35-cb2e19b9b6d4</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ICustom_Publishing_ConfigConstants.Allow_Publishing_With_SubitemsFieldName, Setting = SitecoreFieldSettings.InferType)]
+						bool Allow_Publishing_With_Subitems  {get; set;}
+						}
+	
+	public static partial class ICustom_Publishing_ConfigConstants{
+
+			public const string TemplateIdString = "a5e86cd9-2654-4422-93d3-9d24c41dd899";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Custom Publishing Config";
+
+					
+			public static readonly ID Allow_Publishing_With_SubitemsFieldId = new ID("fa6e9f43-1c24-49ea-9d35-cb2e19b9b6d4");
+			public const string Allow_Publishing_With_SubitemsFieldName = "Allow Publishing with Subitems";
+
+						
+			
+
+	}
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Rss
 {
 
