@@ -18,6 +18,8 @@ using Sitecore.Web;
 using Sitecore.Web.Authentication;
 using DateTime = System.DateTime;
 using System.Web.Mvc;
+using System.Data;
+using System.Linq;
 
 namespace Elsevier.Web.VWB
 {
@@ -39,26 +41,30 @@ namespace Elsevier.Web.VWB
 		private readonly List<Control> ReportBuilderBlacklist = new List<Control>();
 		private const string IssuePageUrl = "/vwb/AddIssue?id=";
 
-		protected void Page_Load(object sender, EventArgs e)
-		{
-		    imgLogo.ImageUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.TargetHostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
-		    imgLogo.Attributes.Add("style", "width:317px;height:122px");
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
             if (!Sitecore.Context.User.IsAuthenticated)
-			{
-				Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?returnUrl=" + Request.RawUrl);
-			}
-			if (IsPostBack)
-			{
-				//let the event handlers for the control causing postback
-				//execute
-				return;
-			}
+            {
+                Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?returnUrl=" + Request.RawUrl);
+            }
 
-			if (Request.QueryString.Count == 0 || (Request.QueryString.Count == 1 && Request.QueryString["sc_lang"] != null))
-			{
-				RunQuery(true);
-			}
+						imgLogo.ImageUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.TargetHostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
+						imgLogo.Attributes.Add("style", "width:317px;height:122px");						
+
+						if (IsPostBack)
+            {
+                //let the event handlers for the control causing postback
+                //execute
+                return;
+            }
+
+            fillPublicationsList();
+
+            if (Request.QueryString.Count == 0 || (Request.QueryString.Count == 1 && Request.QueryString["sc_lang"] != null))
+            {
+                RunQuery(true);
+            }
             
 			const string defaultTime = "12:00 AM";
 			txtStartTime.Text = defaultTime;
@@ -101,6 +107,33 @@ namespace Elsevier.Web.VWB
                 return FindControl(buttons.First());
 
             return null;
+        }
+
+        private void fillPublicationsList()
+        {
+            var dbMaster = Sitecore.Data.Database.GetDatabase("master");
+
+            var pubItems = dbMaster.GetItem("/sitecore/content/").Children;
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Code");
+            dt.Columns.Add("Name");
+            foreach (Sitecore.Data.Items.Item item in pubItems)
+            {
+                try
+                {
+                    string pubName = item.Fields["Publication Name"].Value;
+                    string pubCode = item.Fields["Publication Code"].Value;
+
+                    dt.Rows.Add(pubCode, pubName);
+                }
+                catch { }
+            }
+
+            ddlPublications.DataSource = dt;
+            ddlPublications.DataValueField = "Code";
+            ddlPublications.DataTextField = "Name";
+            ddlPublications.DataBind();
         }
 
         private static int? GetMaxNumResults()
@@ -147,7 +180,15 @@ namespace Elsevier.Web.VWB
 				chkShowInProgressArticles.Checked = true;
 			}
 
-		}
+            if (string.IsNullOrEmpty(_vwbQuery.PublicationCodes) == false)
+            {
+                List<string> codes = _vwbQuery.PublicationCodes.Split(',').ToList();
+                foreach (var item in codes)
+                {
+                    ddlPublications.Items.FindByValue(item).Selected = true;
+                }
+            }
+        }
 
 		protected void EnableDate()
 		{
@@ -165,23 +206,38 @@ namespace Elsevier.Web.VWB
 			_reportBuilder.BuildTable(tblResults);
 		}
 
-		protected void RunReport(object sender, EventArgs e)
-		{
-			RunQuery(true);
-		}
+        protected void RunReport(object sender, EventArgs e)
+        {
+            var pubCount = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).Count();
+            if (pubCount == 0)
+            {
+                lblMsg.Text = "You must select at least one publication";
+                lblMsg.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+            else if (pubCount > 1 && rbNoDate.Checked)
+            {
+                lblMsg.Text = "You must specify a date range when selecting more than one publication";
+                lblMsg.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
 
-		private void RunQuery(bool execute)
-		{
-			var q = _vwbQuery.Clone();
-            q.StartDate = (rbDateRange.Checked) ? GetDateValue(txtStart.Text, txtStartTime.Text) : null;
-            q.EndDate = (rbDateRange.Checked) ? GetDateValue(txtEnd.Text, txtEndTime.Text) : null;
-            q.InProgressValue = chkShowInProgressArticles.Checked;
-			
-			q.ShouldRun = execute;
-			q.NumResultsValue = GetMaxNumResults();
-			RedirectTo(q);
+            RunQuery(true);
+        }
 
-		}
+				private void RunQuery(bool execute)
+				{
+					var q = _vwbQuery.Clone();
+					q.StartDate = (rbDateRange.Checked) ? GetDateValue(txtStart.Text, txtStartTime.Text) : null;
+					q.EndDate = (rbDateRange.Checked) ? GetDateValue(txtEnd.Text, txtEndTime.Text) : null;
+					q.InProgressValue = chkShowInProgressArticles.Checked;
+					List<ListItem> selected = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+					q.PublicationCodes = string.Join(",", selected.Select(s => s.Value));
+						
+					q.ShouldRun = execute;
+					q.NumResultsValue = GetMaxNumResults();
+					RedirectTo(q);
+				}
 
         protected DateTime? GetDateValue(string date, string time) {
             if (string.IsNullOrEmpty(date))
@@ -194,6 +250,7 @@ namespace Elsevier.Web.VWB
                 return dt;
             else
                 return null;
+
         }
 
 		/// <summary>

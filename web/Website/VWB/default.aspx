@@ -1,11 +1,12 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Elsevier.Web.VWB._default"  %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Elsevier.Web.VWB._default" %>
+
+<%@ Register TagPrefix="asp" Namespace="Saplin.Controls" Assembly="DropDownCheckBoxes" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="/VWB/Scripts/jquery-ui/jquery.ui.timepicker.js"></script>
-
 	<link rel="stylesheet" type="text/css" href="/VWB/Scripts/jquery-ui/jquery-ui-1.10.4.custom.css" />
 	<link rel="stylesheet" type="text/css" href="/VWB/Styles/vwb.css" />
 	<link rel="stylesheet" type="text/css" href="/VWB/Scripts/jquery-ui/jquery.ui.timepicker.css" />
@@ -22,42 +23,46 @@
 
 	<div class="wrapper">
 	    <asp:Image ID="imgLogo" CssClass="banner" AlternateText="Informa Business Information - Virtual Whiteboard" runat="server"/>
-		<div class="top">
-
-			<div id="dateRangeWrapper">
-				<div class="left radioButtonWrapper">
+            <div class="top">
+                <asp:DropDownCheckBoxes ID="ddlPublications" runat="server" Width="200px" UseSelectAllNode="true">
+                    <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
+                    <Texts SelectBoxCaption="Select Publication(s)" />
+                </asp:DropDownCheckBoxes>
+                <div id="dateRangeWrapper">
+                    <div class="left radioButtonWrapper">
 				<asp:RadioButton ID="rbNoDate" runat="server" Text="Default" GroupName="choice" class="enabledate" />
+                    </div>
+                    <div class="left radioButtonWrapper">
+                        <asp:RadioButton ID="rbDateRange" runat="server" Text="Date Range" GroupName="choice" class="enabledate" />
+                    </div>
+                    <div class="left inputWrapper">
+                        <div class="left dateRangeLabel">From</div>
+                        <asp:TextBox ID="txtStart" runat="server" class="date" Enabled="false"></asp:TextBox>
+                        <asp:TextBox ID="txtStartTime" runat="server" class="time" Enabled="false"></asp:TextBox>
+
+                        <br />
+                        <div class="left dateRangeLabel">To</div>
+                        <asp:TextBox ID="txtEnd" runat="server" class="date" Enabled="false"></asp:TextBox>
+                        <asp:TextBox ID="txtEndTime" runat="server" class="time" Enabled="false"></asp:TextBox>
+                        <br />
+                        <asp:CheckBox runat="server" ID="chkShowInProgressArticles" Text="Show in-progress articles only" />
+				</div>
+                    <div class="appbuttons">
+                        <asp:Label runat="server" ID="lblMsg"></asp:Label>
+                        <br />
+                        <asp:Button ID="btnRunReport" runat="server" Text="Run Report" OnClick="RunReport" OnClientClick="$('#hidPubs').val($('#ddlP').val())" />
+                        &nbsp;<asp:Button ID="btnReset" runat="server" Text="Reset" OnClick="ResetReport" />
+                        &nbsp;<asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="Logout" />
+                    </div>
                 </div>
-				<div class="left radioButtonWrapper">
-					<asp:RadioButton ID="rbDateRange" runat="server" Text="Date Range" GroupName="choice" class="enabledate" />
-				</div>
-				<div class="left inputWrapper">
-					<div class="left dateRangeLabel">From</div>
-					<asp:TextBox ID="txtStart" runat="server" class="date" Enabled="false"></asp:TextBox>
-					<asp:TextBox ID="txtStartTime" runat="server" class="time" Enabled="false"></asp:TextBox>
-					<br />
-					<div class="left dateRangeLabel">To</div>
-					<asp:TextBox ID="txtEnd" runat="server" class="date" Enabled="false"></asp:TextBox>
-					<asp:TextBox ID="txtEndTime" runat="server" class="time" Enabled="false"></asp:TextBox>
-                    <br/>
-                    <asp:CheckBox runat="server" id="chkShowInProgressArticles" Text="Show in-progress articles only"/>
-				</div>
-
-
-				<div class="appbuttons">
-					<asp:Button ID="btnRunReport" runat="server" Text="Run Report" OnClick="RunReport"/>
-					&nbsp;<asp:Button ID="btnReset" runat="server" Text="Reset" OnClick="ResetReport"/>
-					&nbsp;<asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="Logout"/>
-				</div>
-			</div>
-		</div>
-		<br />
-		<br />
-		<br />
-		<div class="report">
-		    
-			<asp:Table ID="tblResults" runat="server" border="1">
-			</asp:Table>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="report">
+                <br />
+                <asp:Table ID="tblResults" runat="server" border="1">
+                </asp:Table>
 
 			<div class="vwb-report-options">
 			    
@@ -81,9 +86,9 @@
 				<asp:Button runat="server" ID="btnAddArticleToExistingIssue" Text="Add Selected Articles to Existing Issue" OnClick="btnAddArticleToExistingIssue_OnClick" CssClass="orange-button js-append-to-issue"/>
 			</div>
 
-		</div>
-	</div>
-	</form>
+            </div>
+        </div>
+    </form>
 		
 	<!-- NEW ISSUE MODAL -->
 	<div class="new-issue-modal js-new-issue-modal" title="Dialog Title">
@@ -102,61 +107,65 @@
 
 	<script type="text/javascript" src="/VWB/Scripts/selected-articles.js"></script>
 
-	<script>
-		jQuery(function ($) {
-			$('#txtStartTime, #txtEndTime').timepicker({
-				showPeriod: true,
-				showLeadingZero: false
-			});
+    <script>
 
-			$('#txtEnd').datepicker();
-			$('#txtStart').datepicker();
-			$('#rbIssue').click(function () {
-				$("#txtStart").attr("disabled", "disabled");
-				$("#txtEnd").attr("disabled", "disabled");
-				$("#txtStartTime").attr("disabled", "disabled");
-				$("#txtEndTime").attr("disabled", "disabled");
+        $(document).ready(function () {
+
+            $('#txtStartTime, #txtEndTime').timepicker({
+                showPeriod: true,
+                showLeadingZero: false
+            });
+
+            $('#txtEnd').datepicker();
+            $('#txtStart').datepicker();
+            $('#rbIssue').click(function () {
+                $("#txtStart").attr("disabled", "disabled");
+                $("#txtEnd").attr("disabled", "disabled");
+                $("#txtStartTime").attr("disabled", "disabled");
+                $("#txtEndTime").attr("disabled", "disabled");
 				$("#ddIssue").attr("disabled", null);
-			});
+            });
 
-			$('#rbDateRange').click(function () {
+            $('#rbDateRange').click(function () {
 				$("#txtStart").attr("disabled", null);
 				$("#txtEnd").attr("disabled", null);
 				$("#txtStartTime").attr("disabled", null);
 				$("#txtEndTime").attr("disabled", null);
-				$("#ddIssue").attr("disabled", "disabled");
-			});
-		});
+                $("#ddIssue").attr("disabled", "disabled");
+            });
 
-	</script>
-	<script type="text/javascript">
+        });
 
-		function UpdateEditorialNote(itemID) {
 
-			var text = $("body").find('textarea[itemID=' + itemID + ']').val();
-			$.ajax({
-				type: "POST",
-				url: "/VWB/services/virtualwhiteboard.asmx/UpdateEditorialNotes",
-				data: "{'itemID':'" + itemID + "', 'text':'" + text + "'}",
-				contentType: "application/json; charset=utf-8",
-				dataType: "json",
-				success: function (msg) {
-						location.reload(true);
-				}
-				//FOR DEBUGGING ONLY
+    </script>
+    <script type="text/javascript">
+
+        function UpdateEditorialNote(itemID) {
+
+            var text = $("body").find('textarea[itemID=' + itemID + ']').val();
+            $.ajax({
+                type: "POST",
+                url: "/VWB/services/virtualwhiteboard.asmx/UpdateEditorialNotes",
+                data: "{'itemID':'" + itemID + "', 'text':'" + text + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    location.reload(true);
+                }
+                //FOR DEBUGGING ONLY
 				//				,
-				//				error: function (jqXHR, textStatus, errorThrown) {
+                //				error: function (jqXHR, textStatus, errorThrown) {
 				//					// The .NET error and stacktrace is hidden
-				//					// inside the XMLHttpRequest response
-				//					if ($.isFunction(onFail))
-				//						onFail($.parseJSON(jqXHR.response));
-				//				}
-			});
-		}
+                //					// inside the XMLHttpRequest response
+                //					if ($.isFunction(onFail))
+                //						onFail($.parseJSON(jqXHR.response));
+                //				}
+            });
+        }
 
-//		function onFail(data) {
-//			alert(data.Message + "\n" + data.StackTrace);
-//		}
-	</script>
+        //		function onFail(data) {
+        //			alert(data.Message + "\n" + data.StackTrace);
+        //		}
+    </script>
 </body>
 </html>

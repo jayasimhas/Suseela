@@ -12596,6 +12596,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\System\Media\Unversioned\Doc.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\System\Media\Unversioned\Document.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -12603,9 +12604,11 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\System\Media\Unversioned\Document\__Standard Values.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\System\Media\Unversioned\Docx.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\System\Media\Unversioned\File.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -12722,6 +12725,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\System\Media\Unversioned\Pdf.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\System\Workflow.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
