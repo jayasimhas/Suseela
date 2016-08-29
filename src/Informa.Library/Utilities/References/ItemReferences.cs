@@ -18,7 +18,7 @@ namespace Informa.Library.Utilities.References
         
 		public Guid NlmConfiguration => new Guid(ItemIdResolver.GetItemIdByKey("NlmConfiguration"));
 		public Guid NlmErrorDistributionList => new Guid(ItemIdResolver.GetItemIdByKey("NlmErrorDistributionList"));
-
+        public Guid CustomPublishingConfig => new Guid("{E892C2E5-4091-43A7-AAF6-C3A2DFCE05CE}");
         #region Pharma Globals
         public Guid NlmCopyrightStatement => new Guid(ItemIdResolver.GetItemIdByKey("NlmCopyrightStatement"));     
         public Guid InformaBar => new Guid(ItemIdResolver.GetItemIdByKey("InformaBar"));
