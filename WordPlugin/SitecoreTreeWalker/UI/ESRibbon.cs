@@ -511,6 +511,8 @@ namespace InformaSitecoreWord.UI
             string ExecutiveSummary = metadataParser.ExecutiveSummary;
             var articleDetails = new ArticleStruct
             {
+                ArticleGuid = sitecoreArticleDetails.ArticleGuid,
+                IsPublished = sitecoreArticleDetails.IsPublished,
                 ArticleNumber = sitecoreArticleDetails.ArticleNumber,
                 WebPublicationDate = sitecoreArticleDetails.WebPublicationDate,
                 Title = metadataParser.Title.Trim(),
@@ -527,7 +529,8 @@ namespace InformaSitecoreWord.UI
                 ArticleSpecificNotifications = sitecoreArticleDetails.GlobalNotifications,
                 Embargoed = sitecoreArticleDetails.Embargoed,
                 FeaturedImageCaption = sitecoreArticleDetails.FeaturedImageCaption,
-                FeaturedImageSource = sitecoreArticleDetails.FeaturedImageSource
+                FeaturedImageSource = sitecoreArticleDetails.FeaturedImageSource,
+                NotificationText = sitecoreArticleDetails.NotificationText
             };
 
             //RelatedInlineArticles = sitecoreArticleDetails.RelatedInlineArticles.ToList(),
