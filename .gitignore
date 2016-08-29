@@ -342,3 +342,13 @@ solr/informa/data/index/segments_1
 solr/informa/data/index/write.lock
 web/Website/App_Config/Include/LiveMode.config
 web/Website/sitecore/*
+
+#selenium
+emailable-report.html
+testngDebug.xml
+*.iml
+.idea
+target/
+*.iws
+*.ipr
+ 

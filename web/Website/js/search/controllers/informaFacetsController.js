@@ -16,8 +16,8 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
     vm.MaxFacetShow = 5;
     vm.showingOnlySubscriptions = false;
 
-	vm.areFacetsDisabled = facetAvailabilityService.facetsAreEnabled();
-
+    
+    vm.companies = { "companies": "", "isCompanySelected": false };
 	$rootScope.$watch('facetAvailability', function () {
 		vm.areFacetsDisabled = facetAvailabilityService.facetsAreEnabled();
     });
@@ -188,6 +188,22 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 		// Disable all facet options while updating search results
 		facetAvailabilityService.disableFacets();
 
+        var params = this.searchService.getRouteBuilder().getRoute().split('&');
+        if (this.searchService.getRouteBuilder().getRoute().includes("companies")) {
+            for (var idx_param in params) {
+                if (params[idx_param].includes("companies")) {
+                    var compValue = params[idx_param].split('=')[1];
+                    vm.companies["isCompanySelected"] = true;
+                    vm.companies["companies"] = compValue;
+                }
+            }
+        } else {
+            vm.companies["isCompanySelected"] = false;
+            vm.companies["companies"] = "";
+        }
+
+
+
         vm.searchService.getFilter('page').setValue('1');
         var routeBuilder = this.searchService.getRouteBuilder();
         vm.location.search(routeBuilder.getRoute());
@@ -218,13 +234,31 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
                         hash[currentParameter[0]] = currentParameter[1];
                         urlQuery = urlQuery + "&" + currentParameter[0] + "=" + currentParameter[1];
                     }
+
                 }
+
             }
         }
         hash["time"] = vm.timesObject[filter].value;
         urlQuery = urlQuery + "&time=" + vm.timesObject[filter].value;
 
+
+        if (vm.companies["isCompanySelected"]) {
+            hash["companies"] = vm.companies["companies"];
+        }
+
+        if ("companies" in hash) {
+            vm.isCompanySelected = true;
+            hash["companies"] = hash["companies"].replace(/%20/g, " ").replace(/%3B/g, ';');
+            vm.companies["companies"] = hash["companies"].replace(/%20/g, " ").replace(/%3B/g, ';');
+        }
+
+
+
+
         vm.location.search(urlQuery);
+
+
         vm.searchService.queryTimePeriod(hash);
         //Scroll to the top of the results when a new page is chosen
         vm.location.hash("searchTop");
@@ -354,6 +388,17 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
         var filter = vm.getFilter(filterKey);
         var filterDateLabel = vm.getFilter('dateFilterLabel');
         filterDateLabel.setValue('custom');
+
+        if(startDate > new Date()){
+            alert("you can't select date bigger than today");
+            $scope.dateValues.dtFrom="";
+        }
+
+        if(endDate > new Date()){
+            alert("you can't select date bigger than today");
+            $scope.dateValues.dtTo="";
+        }
+
         if (startDate > 0 && endDate > 0 && startDate < endDate) {
             var date1Unparsed = new Date(startDate);
             var date1 = (date1Unparsed.getMonth() + 1) + '/' + date1Unparsed.getDate() + '/' + date1Unparsed.getFullYear();
@@ -365,8 +410,21 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 
             vm.update();
         }
+        else{
+             if( (startDate!="" && startDate != undefined) && (endDate!="" && endDate!=undefined) ){
+                if(startDate > endDate){
+                    alert("You cant put 'from' date bigger than 'to' date");
+                    $scope.dateValues.dtFrom="";
+                    $scope.dateValues.dtTo="";
+                  }
+              }
+           }
+        };
+  
+        $scope.options = {
+                showWeeks: false
+        };
 
-    };
 
     //** This builds date parameters for the search query **//
     vm.dateRangeSearch = function (filterKey, dateFilter) {

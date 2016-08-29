@@ -9,84 +9,110 @@ using Informa.Library.Navigation;
 using Informa.Library.Subscription.User;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using Sitecore.Data;
+using Glass.Mapper.Sc;
+using Informa.Library.Utilities.References;
 
 namespace Informa.Web.ViewModels
 {
-	public class FooterViewModel : GlassViewModel<I___BasePage>
-	{
-		protected readonly ISiteRootContext SiteRootContext;
-		protected readonly IPageLinksFactory PageLinksFactory;
-		protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
-		protected readonly IUserSubscribedContext UserSubscriptionContext;
-		protected readonly ITextTranslator TextTranslator;
-		protected readonly IFooterNavigationMenuViewModel _footerNavViewModel;
+    public class FooterViewModel : GlassViewModel<I___BasePage>
+    {
+        protected readonly ISiteRootContext SiteRootContext;
+        protected readonly IPageLinksFactory PageLinksFactory;
+        protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        protected readonly IUserSubscribedContext UserSubscriptionContext;
+        protected readonly ITextTranslator TextTranslator;
+        protected readonly IFooterNavigationMenuViewModel _footerNavViewModel;
 
-		public FooterViewModel(
-				ISiteRootContext siteRootContext,
-				IPageLinksFactory pageLinksFactory,
-				IAuthenticatedUserContext authenticatedUserContext,
-				IUserSubscribedContext userSubscriptionContext,
-				ITextTranslator textTranslator,
-				IFooterNavigationMenuViewModel footerNavViewModel)
-		{
-			SiteRootContext = siteRootContext;
-			PageLinksFactory = pageLinksFactory;
-			AuthenticatedUserContext = authenticatedUserContext;
-			UserSubscriptionContext = userSubscriptionContext;
-			TextTranslator = textTranslator;
-			_footerNavViewModel = footerNavViewModel;
-		}
+        public FooterViewModel(
+                ISiteRootContext siteRootContext,
+                IPageLinksFactory pageLinksFactory,
+                IAuthenticatedUserContext authenticatedUserContext,
+                IUserSubscribedContext userSubscriptionContext,
+                ITextTranslator textTranslator,
+                ISitecoreService sitecoreService,
+                IFooterNavigationMenuViewModel footerNavViewModel)
+        {
+            SiteRootContext = siteRootContext;
+            PageLinksFactory = pageLinksFactory;
+            AuthenticatedUserContext = authenticatedUserContext;
+            UserSubscriptionContext = userSubscriptionContext;
+            TextTranslator = textTranslator;
+            _footerNavViewModel = footerNavViewModel;
 
-		public string FooterLogoUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Footer_Logo?.Src;
+            List<IPageLink> lstLocalLinks = new List<IPageLink>();
+            foreach (var item in siteRootContext.Item.Local_Footer_Links)
+            {
+                if (item._TemplateId == new System.Guid(Constants.NavigationItemTemplateID))
+                {
+                    var navItem = Sitecore.Context.Database.GetItem(new ID(item._Id));
+                    if (navItem != null)
+                    {
+                        var nav = sitecoreService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link>(navItem.ID.Guid);
+                        if (nav != null && nav.Navigation_Link != null && string.IsNullOrEmpty(nav.Navigation_Link.Url) == false && string.IsNullOrEmpty(nav.Navigation_Text) == false)
+                            lstLocalLinks.Add(new PageLink { Text = nav.Navigation_Text, Url = nav.Navigation_Link.Url });
+                    }
+                }
+                else
+                    lstLocalLinks.Add(new PageLink { Text = item._Name, Url = item._Url });
+            }
 
-		public string FooterRssLogoUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.RSS_Logo?.Src;
-		public Link FooterRssLink => SiteRootContext.Item == null ? null : SiteRootContext.Item.RSS_Link;
+            LocalLinks = lstLocalLinks;
+        }
 
-		public string CopyrightText => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Copyright_Text;
+        public string FooterLogoUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Footer_Logo?.Src;
 
-		public Link SubscribeLink
-		{
-			get
-			{
-				if (SiteRootContext.Item == null)
-				{
-					return null;
-				}
+        public string FooterRssLogoUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.RSS_Logo?.Src;
+        public Link FooterRssLink => SiteRootContext.Item == null ? null : SiteRootContext.Item.RSS_Link;
 
-				if (!UserSubscriptionContext.IsSubscribed)
-				{
-					return SiteRootContext.Item.Subscribe_Link;
-				}
+        public string CopyrightText => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Copyright_Text;
 
-				if (AuthenticatedUserContext.IsAuthenticated)
-				{
-					return SiteRootContext.Item.Purchase_Link;
-				}
-				else
-				{
-					return SiteRootContext.Item.Register_Link;
-				}
-			}
-		}
+        public Link SubscribeLink
+        {
+            get
+            {
+                if (SiteRootContext.Item == null)
+                {
+                    return null;
+                }
 
-		public IEnumerable<IPageLink> LocalLinks => SiteRootContext.Item == null ? Enumerable.Empty<IPageLink>() : PageLinksFactory.Create(SiteRootContext.Item.Local_Footer_Links);
+                if (!UserSubscriptionContext.IsSubscribed)
+                {
+                    return SiteRootContext.Item.Subscribe_Link;
+                }
 
-		public string FollowText => TextTranslator.Translate("Footer.Follow");
+                if (AuthenticatedUserContext.IsAuthenticated)
+                {
+                    return SiteRootContext.Item.Purchase_Link;
+                }
+                else
+                {
+                    return SiteRootContext.Item.Register_Link;
+                }
+            }
+        }
 
-		public Link LinkedInLink => SiteRootContext.Item == null ? null : SiteRootContext.Item.LinkedIn_Link;
+        public IEnumerable<IPageLink> LocalLinks
+        {
+            get; set;
+        }// => SiteRootContext.Item == null ? Enumerable.Empty<IPageLink>() : PageLinksFactory.Create(SiteRootContext.Item.Local_Footer_Links);
 
-		public Link FacebookLink => SiteRootContext.Item == null ? null : SiteRootContext.Item.Facebook_Link;
+        public string FollowText => TextTranslator.Translate("Footer.Follow");
 
-		public Link TwitterLink => SiteRootContext.Item == null ? null : SiteRootContext.Item.Twitter_Link;
+        public Link LinkedInLink => SiteRootContext.Item == null ? null : SiteRootContext.Item.LinkedIn_Link;
 
-		public string MenuOneHeader => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Menu_One_Header;
+        public Link FacebookLink => SiteRootContext.Item == null ? null : SiteRootContext.Item.Facebook_Link;
 
-		//public IEnumerable<IPageLink> MenuOneLinks => SiteRootContext.Item == null ? Enumerable.Empty<IPageLink>() : PageLinksFactory.Create(SiteRootContext.Item.Menu_One_Links);
-		public IEnumerable<INavigation> MenuOneLinks => _footerNavViewModel.MenuOneNavigation;
+        public Link TwitterLink => SiteRootContext.Item == null ? null : SiteRootContext.Item.Twitter_Link;
 
-		public string MenuTwoHeader => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Menu_Two_Header;
+        public string MenuOneHeader => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Menu_One_Header;
 
-		//public IEnumerable<IPageLink> MenuTwoLinks => SiteRootContext.Item == null ? Enumerable.Empty<IPageLink>() : PageLinksFactory.Create(SiteRootContext.Item.Menu_Two_Links);
-		public IEnumerable<INavigation> MenuTwoLinks => _footerNavViewModel.MenuTwoNavigation;
-	}
+        //public IEnumerable<IPageLink> MenuOneLinks => SiteRootContext.Item == null ? Enumerable.Empty<IPageLink>() : PageLinksFactory.Create(SiteRootContext.Item.Menu_One_Links);
+        public IEnumerable<INavigation> MenuOneLinks => _footerNavViewModel.MenuOneNavigation;
+
+        public string MenuTwoHeader => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Menu_Two_Header;
+
+        //public IEnumerable<IPageLink> MenuTwoLinks => SiteRootContext.Item == null ? Enumerable.Empty<IPageLink>() : PageLinksFactory.Create(SiteRootContext.Item.Menu_Two_Links);
+        public IEnumerable<INavigation> MenuTwoLinks => _footerNavViewModel.MenuTwoNavigation;
+    }
 }

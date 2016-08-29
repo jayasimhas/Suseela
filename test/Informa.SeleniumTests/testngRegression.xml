@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Informa Regression Test Suite" verbose="10" parallel="none">
+
+
+
+    <!--SCRIP TESTCASES ON CHROME, FIREFOX, IE-11, MOBILE-->
+
+    <test name="SCRIP Tests on Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="environment" value="Stage.Scrip"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed"/>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+    <test name="SCRIP Tests on Firefox">
+        <parameter name="browser" value="FF"/>
+        <parameter name="environment" value="Stage.Scrip"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed">
+                <methods>
+                    <exclude name="rssFeedPublication"/>
+                </methods>
+            </class>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+    <test name="SCRIP Tests on IE-11">
+        <parameter name="browser" value="IE"/>
+        <parameter name="environment" value="Stage.Scrip"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed">
+                <methods>
+                    <exclude name="rssFeedPublication"/>
+                </methods>
+            </class>
+            <!--<class name="com.velir.XMLrecord"/>-->
+        </classes>
+    </test>
+
+    <test name="SCRIP Tests on iPhone 6">
+        <parameter name="browser" value="Mobile"/>
+        <parameter name="environment" value="Stage.Scrip"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed"/>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+
+
+     <!--PINK TESTCASES ON CHROME, FIREFOX, IE-11, MOBILE-->
+
+    <test name="PINK Tests on Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="environment" value="Stage.Pink"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed"/>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+    <test name="PINK Tests on Firefox">
+        <parameter name="browser" value="FF"/>
+        <parameter name="environment" value="Stage.Pink"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed">
+                <methods>
+                    <exclude name="rssFeedPublication"/>
+                </methods>
+            </class>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+    <test name="PINK Tests on IE-11">
+        <parameter name="browser" value="IE"/>
+        <parameter name="environment" value="Stage.Pink"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed">
+                <methods>
+                    <exclude name="rssFeedPublication"/>
+                </methods>
+            </class>
+            <!--<class name="com.velir.XMLrecord"/>-->
+        </classes>
+    </test>
+
+    <test name="PINK Tests on iPhone 6">
+        <parameter name="browser" value="Mobile"/>
+        <parameter name="environment" value="Stage.Pink"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed"/>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+
+    <!-- MEDTECH TESTCASES ON CHROME, FIREFOX, IE-11, MOBILE -->
+
+    <test name="MEDTECH Tests on Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="environment" value="Stage.Medtech"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed"/>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+    <test name="MEDTECH Tests on Firefox">
+        <parameter name="browser" value="FF"/>
+        <parameter name="environment" value="Stage.Medtech"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed">
+                <methods>
+                    <exclude name="rssFeedPublication"/>
+                </methods>
+            </class>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+    <test name="MEDTECH Tests on IE-11">
+        <parameter name="browser" value="IE"/>
+        <parameter name="environment" value="Stage.Medtech"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed">
+                <methods>
+                    <exclude name="rssFeedPublication"/>
+                </methods>
+            </class>
+            <!--<class name="com.velir.XMLrecord"/>-->
+        </classes>
+    </test>
+
+    <test name="MEDTECH Tests on iPhone 6">
+        <parameter name="browser" value="Mobile"/>
+        <parameter name="environment" value="Stage.Medtech"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed"/>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+    <!--ROSE TESTCASES ON CHROME, FIREFOX, IE-11, MOBILE-->
+
+    <test name="ROSE Tests on Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="environment" value="Stage.Rose"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed"/>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+    <test name="ROSE Tests on Firefox">
+        <parameter name="browser" value="FF"/>
+        <parameter name="environment" value="Stage.Rose"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed">
+                <methods>
+                    <exclude name="rssFeedPublication"/>
+                </methods>
+            </class>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+    <test name="ROSE Tests on IE-11">
+        <parameter name="browser" value="IE"/>
+        <parameter name="environment" value="Stage.Rose"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed">
+                <methods>
+                    <exclude name="rssFeedPublication"/>
+                </methods>
+            </class>
+            <!--<class name="com.velir.XMLrecord"/>-->
+        </classes>
+    </test>
+
+    <test name="ROSE Tests on iPhone 6">
+        <parameter name="browser" value="Mobile"/>
+        <parameter name="environment" value="Stage.Rose"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed"/>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+
+
+    <!--INVIVODEV TESTCASES ON CHROME, FIREFOX, IE-11, MOBILE-->
+
+    <test name="INVIVODEV Tests on Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="environment" value="Stage.InVivoDev"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed"/>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+    <test name="INVIVODEV Tests on Firefox">
+        <parameter name="browser" value="FF"/>
+        <parameter name="environment" value="Stage.InVivoDev"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed">
+                <methods>
+                    <exclude name="rssFeedPublication"/>
+                </methods>
+            </class>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+    <test name="INVIVODEV Tests on IE-11">
+        <parameter name="browser" value="IE"/>
+        <parameter name="environment" value="Stage.InVivoDev"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed">
+                <methods>
+                    <exclude name="rssFeedPublication"/>
+                </methods>
+            </class>
+            <!--<class name="com.velir.XMLrecord"/>-->
+        </classes>
+    </test>
+
+
+
+    <test name="INVIVODEV Tests on iPhone 6">
+        <parameter name="browser" value="Mobile"/>
+        <parameter name="environment" value="Stage.InVivoDev"/>
+
+        <classes>
+            <class name="com.velir.Homepage"/>
+            <class name="com.velir.SearchBoxOnResult"/>
+            <class name="com.velir.EmailResults"/>
+            <class name="com.velir.Registration"/>
+            <class name="com.velir.ForgotPassword"/>
+            <class name="com.velir.MyAccount"/>
+            <class name="com.velir.ManageMyInformation"/>
+            <class name="com.velir.RSSFeed"/>
+            <class name="com.velir.XMLrecord"/>
+        </classes>
+    </test>
+
+
+    <!--WHITEBOARD TESTCASES ON CHROME, FIREFOX, IE-11-->
+
+    <test name="WHITEBOARD Tests on Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="com.velir.WhiteBoard"/>
+        </classes>
+    </test>
+    <test name="WHITEBOARD Tests on Firefox">
+        <parameter name="browser" value="FF"/>
+        <classes>
+            <class name="com.velir.WhiteBoard"/>
+        </classes>
+    </test>
+
+    <test name="WHITEBOARD Tests on IE-11">
+        <parameter name="browser" value="IE"/>
+        <classes>
+            <class name="com.velir.WhiteBoard"/>
+        </classes>
+    </test>
+
+
+</suite>

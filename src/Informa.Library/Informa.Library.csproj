@@ -343,10 +343,14 @@
     <Compile Include="ComponentModel\DataAnnotations\RequiredIfAttribute.cs" />
     <Compile Include="CustomSitecore\Events\AddFromBranchPreset.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
+    <Compile Include="CustomSitecore\Events\ArticleItemCreated.cs" />
+    <Compile Include="CustomSitecore\Pipelines\CheckClientUser.cs" />
     <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
+    <Compile Include="CustomSitecore\Pipelines\ISendinUserLockedOutEmail.cs" />
     <Compile Include="CustomSitecore\Providers\EmailLinkProvider.cs" />
+    <Compile Include="CustomSitecore\Pipelines\PasswordRecoveryPipeline.cs" />
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
@@ -379,6 +383,7 @@
     <Compile Include="Publication\ISitePublicationFactory.cs" />
     <Compile Include="Publication\ISitePublicationNameFactory.cs" />
     <Compile Include="Publication\ISitePublicationsContext.cs" />
+    <Compile Include="Publication\ISitePublicationWorkflow.cs" />
     <Compile Include="Publication\ISitesPublicationNameContext.cs" />
     <Compile Include="Publication\ISitePublicationNameContext.cs" />
     <Compile Include="Publication\SitePublication.cs" />
@@ -386,6 +391,7 @@
     <Compile Include="Publication\SitePublicationFactory.cs" />
     <Compile Include="Publication\SitePublicationNameFactory.cs" />
     <Compile Include="Publication\SitePublicationsContext.cs" />
+    <Compile Include="Publication\SitePublicationWorkflow.cs" />
     <Compile Include="Publication\SitesPublicationNameContext.cs" />
     <Compile Include="Publication\SitePublicationNameContext.cs" />
     <Compile Include="Publishing\Events\BeginPublishItemProcessing.cs" />
@@ -393,6 +399,7 @@
     <Compile Include="Publishing\Events\PublishItemProcessing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishingDateTime.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishingDateTime.cs" />
+    <Compile Include="Publishing\Scheduled\Tasks\SchedulingUnlockUser.cs" />
     <Compile Include="Purchase\ArticlePurchaseItem.cs" />
     <Compile Include="Purchase\ArticlePurchaseItemsFactory.cs" />
     <Compile Include="Purchase\IArticlePurchase.cs" />
@@ -416,6 +423,7 @@
     <Compile Include="Rss\Utils\RssConstants.cs" />
     <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
     <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchResultPublicationCodeField.cs" />
     <Compile Include="Search\FacetBuilders\CompaniesFacetBuilder.cs" />
     <Compile Include="Search\Formatting\IQueryFormatter.cs" />
     <Compile Include="Search\Formatting\SolrQueryFormatter.cs" />
@@ -458,6 +466,8 @@
     <Compile Include="Subscription\User\IUserSubscriptionsContext.cs" />
     <Compile Include="Subscription\User\UserSubscribedContext.cs" />
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
+    <Compile Include="User\Authentication\ISendRecoveryPassword.cs" />
+    <Compile Include="User\Authentication\SendRecoveryPassword.cs" />
     <Compile Include="User\Authentication\AuthenticatedFormToken.cs" />
     <Compile Include="User\Authentication\AuthorizeToken.cs" />
     <Compile Include="User\Authentication\IAuthenticatedFormToken.cs" />
@@ -1092,11 +1102,15 @@
     <Compile Include="Utilities\Security\Crypto.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
+    <Compile Include="Utilities\SitecoreUtils\WorkflowUtil.cs" />
     <Compile Include="Utilities\StringUtils\BylineMaker.cs" />
     <Compile Include="Utilities\StringUtils\HtmlUtil.cs" />
     <Compile Include="Utilities\StringUtils\WordUtil.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
     <Compile Include="Utilities\TokenMatcher\DCDTokenMatchers.cs" />
+    <Compile Include="Utilities\UserMembership\CustomSqlMembershipProvider.cs" />
+    <Compile Include="Utilities\UserMembership\CustomSqlUserUnlocker.cs" />
+    <Compile Include="Utilities\UserMembership\UserAttemp.cs" />
     <Compile Include="Utilities\WebApi\Caching\ApiOutputCacheAdapter.cs" />
     <Compile Include="Utilities\WebApi\Filters\ArgumentsRequiredAttribute.cs" />
     <Compile Include="Utilities\WebApi\Filters\ValidateCsrfAttribute.cs" />

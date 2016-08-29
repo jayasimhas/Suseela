@@ -7,6 +7,7 @@ using Informa.Library.User.Entitlement;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Utilities.Extensions;
+using Informa.Library.User;
 
 namespace Informa.Web.ViewModels
 {
@@ -15,16 +16,18 @@ namespace Informa.Web.ViewModels
 		public readonly ICallToActionViewModel CallToActionViewModel;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IArticleService ArticleService;
+        public readonly ISitecoreUserContext SitecoreUserContext;
 
-		private readonly Lazy<string> _lazyBody;
+        private readonly Lazy<string> _lazyBody;
 
 		public ArticleBodyContentModel(
 						IArticle model,
 						IIsEntitledProducItemContext entitledProductContext,
-						ITextTranslator textTranslator,
+                        ISitecoreUserContext sitecoreUserContext,
+                        ITextTranslator textTranslator,
 						ICallToActionViewModel callToActionViewModel,
 						IArticleService articleService)
-						: base(entitledProductContext)
+						: base(entitledProductContext, sitecoreUserContext)
 		{
 			TextTranslator = textTranslator;
 			CallToActionViewModel = callToActionViewModel;

@@ -429,10 +429,11 @@ namespace Informa.Web.Controllers
 
 			try
 			{
-				ISitecoreService service = new SitecoreContentContext();
-				var webItem = service.GetItem<Item>(articleItem._Id);
-				articleStruct.IsPublished = webItem != null;
-			}
+                //ISitecoreService service = new SitecoreContentContext();
+                //var webItem = service.GetItem<Item>(articleItem._Id);
+                //articleStruct.IsPublished = webItem != null;
+                articleStruct.IsPublished = articleItem.Actual_Publish_Date != DateTime.MinValue && article.Actual_Publish_Date < DateTime.Now;
+            }
 			catch (Exception ex)
 			{
 				articleStruct.IsPublished = false;
@@ -566,5 +567,14 @@ namespace Informa.Web.Controllers
 				return state;
 			}
 		}
+ 		public DateTime GetArticleActualPublishedDate(Guid itemID)
+        {
+            var article = _sitecoreMasterService.GetItem<Item>(itemID);
+
+            var date = DateUtil.IsoDateToDateTime(article.Fields["Actual Publish Date"].Value);
+            var actualPublishDate = new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, date.Second, DateTimeKind.Local);
+
+            return actualPublishDate;
+        }
 	}
 }
