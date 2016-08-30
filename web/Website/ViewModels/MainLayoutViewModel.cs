@@ -1,14 +1,10 @@
-﻿using System;
+﻿using System.Linq;
 using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
-using Informa.Web.ViewModels.SiteDebugging;
-using Informa.Web.ViewModels.PopOuts;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Informa.Library.User.Authentication;
-using Informa.Library.Utilities.References;
 using System.Web;
-using System.Web.Mvc;
 using Informa.Library.Globalization;
 using Informa.Library.Company;
 using Informa.Library.Services.Global;
@@ -25,6 +21,7 @@ namespace Informa.Web.ViewModels
         protected readonly ISiteDebuggingAllowedContext SiteDebuggingAllowedContext;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISiteRootContext SiteRootContext;
+        protected readonly IHome_Page HomePage;
 
         public readonly IUserCompanyContext UserCompanyContext;
 
@@ -42,6 +39,7 @@ namespace Informa.Web.ViewModels
             SiteDebuggingAllowedContext = siteDebuggingAllowedContext;
             GlobalService = globalService;
             SiteRootContext = siteRootContext;
+            HomePage = SiteRootContext.Item._ChildrenWithInferType.OfType<IHome_Page>().First();
         }
 
         public bool IsSiteDebuggingAllowed => SiteDebuggingAllowedContext.IsAllowed;
@@ -52,8 +50,8 @@ namespace Informa.Web.ViewModels
         public string BodyCssClass => SiteRootContext.GetBodyCssClass();
         public HtmlString PrintPageHeaderMessage => SiteRootContext.GetPrintHeaderMessage();
         public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
-        public string Meta_Description => GlassModel.Meta_Description;
-        public string Meta_Keywords => GlassModel.Meta_Keywords;
-        public HtmlString Meta_CustomTags => new HtmlString(GlassModel.Custom_Meta_Tags);
+        public string Meta_Description => HomePage.Meta_Description;
+        public string Meta_Keywords => HomePage.Meta_Keywords;
+        public HtmlString Meta_CustomTags => new HtmlString(HomePage.Custom_Meta_Tags);
     }
 }
