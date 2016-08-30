@@ -17,10 +17,6 @@
     @include breakpoint('small') {
         display: none;
     }
-
-    @include breakpoint('600px') {
-        color:purple;
-    }
 }
 
 .header-account-access {
