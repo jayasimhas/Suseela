@@ -9,7 +9,7 @@
     <meta name="description" content="@Model.Meta_Description">
     <meta name="keywords" content="@Model.Meta_Keywords">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @Model.Meta_CustomTags.ToHtmlString()
+    @Model.Meta_CustomTags
 
     <title>@Html.Raw(Model.Title)</title>
 
@@ -64,8 +64,7 @@
     @* end pseudo-if *@
 
     <script src="/dist/js/index.js"></script>
-    @if (Model.IsSiteDebuggingAllowed)
-    {
+    @if (Model.IsSiteDebuggingAllowed) {
         @Html.Sitecore().Placeholder("site-debugger")
     }
     @MiniProfiler.RenderIncludes()
