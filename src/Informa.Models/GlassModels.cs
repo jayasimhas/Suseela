@@ -11785,6 +11785,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					[SitecoreField(ISite_ConfigConstants.Facebook_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Link Facebook_Link  {get; set;}
 								/// <summary>
+					/// The Footer Logo Link field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 6af28ec9-4d84-443e-a8e7-22ea5bd88a6b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISite_ConfigConstants.Footer_Logo_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+					Link Footer_Logo_Link  {get; set;}
+								/// <summary>
 					/// The Footer Logo field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
@@ -12508,6 +12517,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						[SitecoreField(ISite_ConfigConstants.Facebook_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Link Facebook_Link  {get; set;}
 										/// <summary>
+						/// The Footer Logo Link field.
+						/// <para></para>
+						/// <para>Field Type: General Link</para>		
+						/// <para>Field ID: 6af28ec9-4d84-443e-a8e7-22ea5bd88a6b</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(ISite_ConfigConstants.Footer_Logo_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+						Link Footer_Logo_Link  {get; set;}
+										/// <summary>
 						/// The Footer Logo field.
 						/// <para></para>
 						/// <para>Field Type: Image</para>		
@@ -13162,6 +13180,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Facebook_LinkFieldId = new ID("cf68ed35-f96d-4924-850c-e96f0a7f1e34");
 			public const string Facebook_LinkFieldName = "Facebook Link";
+
+						
+					
+			public static readonly ID Footer_Logo_LinkFieldId = new ID("6af28ec9-4d84-443e-a8e7-22ea5bd88a6b");
+			public const string Footer_Logo_LinkFieldName = "Footer Logo Link";
 
 						
 					
@@ -18295,6 +18318,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					
 			public static readonly ID Facebook_LinkFieldId = new ID("cf68ed35-f96d-4924-850c-e96f0a7f1e34");
 			public const string Facebook_LinkFieldName = "Facebook Link";
+
+						
+					
+			public static readonly ID Footer_Logo_LinkFieldId = new ID("6af28ec9-4d84-443e-a8e7-22ea5bd88a6b");
+			public const string Footer_Logo_LinkFieldName = "Footer Logo Link";
 
 						
 					

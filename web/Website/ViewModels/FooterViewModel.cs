@@ -61,6 +61,7 @@ namespace Informa.Web.ViewModels
         }
 
         public string FooterLogoUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Footer_Logo?.Src;
+        public string FooterLogoLink => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Footer_Logo_Link?.Url;
 
         public string FooterRssLogoUrl => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.RSS_Logo?.Src;
         public Link FooterRssLink => SiteRootContext.Item == null ? null : SiteRootContext.Item.RSS_Link;

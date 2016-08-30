@@ -1,17 +1,19 @@
 ﻿@inherits CustomGlassView<FooterViewModel>
 
 <div class="footer__wrapper">
-    
+
     <ul class="footer__section footer__section--corporate">
         <li>
-            <img class="footer__logo" src="@Model.FooterLogoUrl">@Model.CopyrightText
+            <a href="@Model.FooterLogoLink">
+                <img class="footer__logo" src="@Model.FooterLogoUrl">
+            </a><br /> @Model.CopyrightText
         </li>
     </ul>
 
     <div class="footer__section footer__section--double">
         <ul>
-            @* THE SUBSCRIBE LINK HERE IS INCORRECT AND PULLING THE SAME 
-                LINK/TEXT THAT IS USED FOR THE CALL-TO-ACTION BANNER.  
+            @* THE SUBSCRIBE LINK HERE IS INCORRECT AND PULLING THE SAME
+                LINK/TEXT THAT IS USED FOR THE CALL-TO-ACTION BANNER.
                 THIS IS GOING TO NEED TO BE IT'S OWN FIELD *@
             @if (false && Model.SubscribeLink != null)
             {
@@ -55,7 +57,7 @@
             {
                 <a href="@Model.FooterRssLink.Url" target="_blank" title="@Model.FooterRssLink.Text" class="click-utag" data-info='{"event_name" : "rss-footer-link-click"}'>
 
-                    <img class="footer__share-icons" src="@Model.FooterRssLogoUrl"/>
+                    <img class="footer__share-icons" src="@Model.FooterRssLogoUrl" />
 
                 </a>
             }
