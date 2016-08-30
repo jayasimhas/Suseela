@@ -1,4 +1,26 @@
 ﻿@model Informa.Web.ViewModels.PopOuts.ISignInPopOutViewModel
+    @*This View Contains 2 Popups "@Model.TopHeaderSignInHeaderText"
+    1- Top Header Sign in Popup "@Model.InnerPagesSignInHeaderText"
+    2- Other Website Areas (Social Media icons, Bookmark from Search, Subscribtion Articles .. etc)*@
+
+<!-- Begin Top Header Sign In Popup -->
+<div class="pop-out js-pop-out__header-sign-in">
+    <div class="pop-out__tab"></div>
+    <div class="pop-out__internal">
+        <div class="pop-out__header-sign-in">
+            <div class="dismiss-button" data-target-element=".js-pop-out__header-sign-in">
+                <svg class="dismiss-button__icon">
+                    <use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                </svg>
+            </div>
+            <h3 class="pop-out__register-header">@Model.TopHeaderSignInHeaderText</h3>
+            @Html.Sitecore().Placeholder("signin-popout-form")
+        </div>
+    </div>
+</div>
+<!-- End Top Header Sign In Popup -->
+
+<!-- Begin Inner Pages Sign In Popup -->
 <div class="pop-out js-pop-out__sign-in">
 	<div class="pop-out__tab"></div>
 	<div class="pop-out__internal">
@@ -9,10 +31,11 @@
 				</svg>
 			</div>
 
-			<h3 class="pop-out__register-header">@Model.HeaderText</h3>
+			<h3 class="pop-out__register-header">@Model.InnerPagesSignInHeaderText</h3>
 
             @Html.Sitecore().Placeholder("signin-popout-form")
 
 		</div>
 	</div>
 </div>
+<!-- Begin Inner Pages Sign In Popup -->

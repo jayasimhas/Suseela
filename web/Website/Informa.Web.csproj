@@ -1445,7 +1445,6 @@
     <Content Include="Views\EmailComponents\FeaturedArticle.cshtml" />
     <Content Include="Views\EmailComponents\SectionHeader.cshtml" />
     <Content Include="Views\Article\TopicPageTitle.cshtml" />
-    <Content Include="Views\Shared\PopOuts\SocialSignIn.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

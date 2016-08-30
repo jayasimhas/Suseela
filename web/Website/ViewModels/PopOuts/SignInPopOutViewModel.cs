@@ -13,7 +13,7 @@ namespace Informa.Web.ViewModels.PopOuts
 		    _textTranslator = textTranslator;
 		}
 
-		public string HeaderText => _textTranslator.Translate("Authentication.SignIn.SignInRequired");
-        public string SocialHeaderText => _textTranslator.Translate("Authentication.SignIn.SocialSignInPopupHeader");
+		public string InnerPagesSignInHeaderText => _textTranslator.Translate("Authentication.SignIn.InnerPagesSignInHeaderText");
+        public string TopHeaderSignInHeaderText => _textTranslator.Translate("Authentication.SignIn.TopHeaderSignInHeaderText");
     }
 }
