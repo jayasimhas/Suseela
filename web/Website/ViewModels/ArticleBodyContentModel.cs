@@ -8,6 +8,9 @@ using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.User;
+using Informa.Library.Site;
+using System.Web;
+using Informa.Library.Services.Global;
 
 namespace Informa.Web.ViewModels
 {
@@ -17,7 +20,8 @@ namespace Informa.Web.ViewModels
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IArticleService ArticleService;
         public readonly ISitecoreUserContext SitecoreUserContext;
-
+        private readonly ISiteRootContext SiteRootContext;
+        protected readonly IGlobalSitecoreService GlobalService;
         private readonly Lazy<string> _lazyBody;
 
 		public ArticleBodyContentModel(
@@ -26,17 +30,21 @@ namespace Informa.Web.ViewModels
                         ISitecoreUserContext sitecoreUserContext,
                         ITextTranslator textTranslator,
 						ICallToActionViewModel callToActionViewModel,
-						IArticleService articleService)
+						IArticleService articleService,
+                        ISiteRootContext siteRootContext,
+                        IGlobalSitecoreService globalService)
 						: base(entitledProductContext, sitecoreUserContext)
 		{
 			TextTranslator = textTranslator;
 			CallToActionViewModel = callToActionViewModel;
 			ArticleService = articleService;
+            SiteRootContext = siteRootContext;
+            GlobalService = globalService;
 
-			_lazyBody = new Lazy<string>(() => IsFree || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
+            _lazyBody = new Lazy<string>(() => IsFree || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
 		}
 
-		public string Title => GlassModel.Title;
+		public string Title => GlobalService.GetPageTitle(GlassModel);//GlassModel.Title;
 		public string Sub_Title => GlassModel.Sub_Title;
 		public bool DisplayLegacyPublication => LegacyPublicationNames.Any();
 
@@ -69,5 +77,8 @@ namespace Informa.Web.ViewModels
 		public string Media_Type => ArticleService.GetMediaTypeName(GlassModel);
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
-	}
+        public string Meta_Description => GlassModel.Meta_Description;
+        public string Meta_Keywords => GlassModel.Meta_Keywords;
+        public HtmlString Meta_CustomTags => new HtmlString(GlassModel.Custom_Meta_Tags);
+    }
 }

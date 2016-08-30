@@ -9,8 +9,11 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>@Model.Title</title>
-    <meta name="description" content="">
+    <meta name="description" content="@Model.Meta_Description">
+    <meta name="keywords" content="@Model.Meta_Keywords">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Model.Meta_CustomTags
+    <!--Mobile-->
 
     <!-- STATIC PLACEHOLDER -->
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
@@ -22,9 +25,7 @@
 <body>
 
     @*@Html.Sitecore().Placeholder("header")*@
-<header>
-
-</header>
+    <header></header>
     <main class="main--solo">
 
         @*@Html.Glass().InvokeAction(mvc => Execute());*@
