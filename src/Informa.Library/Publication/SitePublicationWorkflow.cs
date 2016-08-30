@@ -10,151 +10,142 @@ using System;
 using Autofac;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Utilities.Extensions;
+using Informa.Library.Services.Global;
 using System.Web.Mvc;
 
 namespace Informa.Library.Publication
 {
-    [AutowireService(LifetimeScope.Default)]
-    public class SitePublicationWorkflow : ISitePublicationWorkflow
-    {
-        private readonly ISitecoreService _service;
-        private readonly ICacheProvider _cacheProvider;
+	[AutowireService(LifetimeScope.Default)]
+	public class SitePublicationWorkflow : ISitePublicationWorkflow
+	{
+		private readonly ISitecoreService _service;
+		private readonly ICacheProvider _cacheProvider;
+		private readonly IGlobalSitecoreService _globalSitecoreService;
 
-        public SitePublicationWorkflow(Func<string, ISitecoreService> serviceFactory, ICacheProvider cacheProvider)
-        {
-            _service = serviceFactory("master");
-            _cacheProvider = cacheProvider;
-        }
+		public SitePublicationWorkflow(Func<string, ISitecoreService> serviceFactory, ICacheProvider cacheProvider, IGlobalSitecoreService globalSitecoreService)
+		{
+			_service = serviceFactory("master");
+			_cacheProvider = cacheProvider;
+			_globalSitecoreService = globalSitecoreService;
+		}
 
-        public IWorkflow GetPublicationWorkflow(Item item)
-        {
-            string cacheKey = $"{getSiteRoot(item).Publication_Code}-PublicationWorkflow";
+		public IWorkflow GetPublicationWorkflow(Item item)
+		{
+			string cacheKey = $"{getSiteRoot(item).Publication_Code}-PublicationWorkflow";
 
-            IWorkflow workflowFromCache = _cacheProvider.GetFromCache<IWorkflow>(cacheKey);
-            if (workflowFromCache == null)
-            {
-                var workflow = _service.GetItem<IWorkflow>(getSiteRoot(item).Workflow);
-                _cacheProvider.AddToCache(cacheKey, workflow);
-                return workflow;
-            }
+			IWorkflow workflowFromCache = _cacheProvider.GetFromCache<IWorkflow>(cacheKey);
+			if (workflowFromCache == null)
+			{
+				var workflow = _service.GetItem<IWorkflow>(getSiteRoot(item).Workflow);
+				_cacheProvider.AddToCache(cacheKey, workflow);
+				return workflow;
+			}
 
-            return workflowFromCache;
-        }
+			return workflowFromCache;
+		}
 
-        public IState GetEditAfterPublishState(Item item)
-        {
-            string cacheKey = $"{getSiteRoot(item).Publication_Code}-EditAfterPublishWorkflowState";
+		public IState GetEditAfterPublishState(Item item)
+		{
+			string cacheKey = $"{getSiteRoot(item).Publication_Code}-EditAfterPublishWorkflowState";
 
-            IState stateFromCache = _cacheProvider.GetFromCache<IState>(cacheKey);
-            if (stateFromCache == null)
-            {
-                var state = getEditAfterPublishState(item);
-                _cacheProvider.AddToCache(cacheKey, state);
-                return state;
-            }
+			IState stateFromCache = _cacheProvider.GetFromCache<IState>(cacheKey);
+			if (stateFromCache == null)
+			{
+				var state = getEditAfterPublishState(item);
+				_cacheProvider.AddToCache(cacheKey, state);
+				return state;
+			}
 
-            return stateFromCache;
-        }
+			return stateFromCache;
+		}
 
-        public IState GetFinalState(Item item)
-        {
-            string cacheKey = $"{getSiteRoot(item).Publication_Code}-FinalWorkflowState";
+		public IState GetFinalState(Item item)
+		{
+			string cacheKey = $"{getSiteRoot(item).Publication_Code}-FinalWorkflowState";
 
-            IState stateFromCache = _cacheProvider.GetFromCache<IState>(cacheKey);
-            if (stateFromCache == null)
-            {
-                var state = getFinalState(item);
-                _cacheProvider.AddToCache(cacheKey, state);
-                return state;
-            }
+			IState stateFromCache = _cacheProvider.GetFromCache<IState>(cacheKey);
+			if (stateFromCache == null)
+			{
+				var state = getFinalState(item);
+				_cacheProvider.AddToCache(cacheKey, state);
+				return state;
+			}
 
-            return stateFromCache;
-        }
+			return stateFromCache;
+		}
 
-        public IState GetInitialState(Item item)
-        {
-            string cacheKey = $"{getSiteRoot(item).Publication_Code}-InitialWorkflowState";
+		public IState GetInitialState(Item item)
+		{
+			string cacheKey = $"{getSiteRoot(item).Publication_Code}-InitialWorkflowState";
 
-            IState stateFromCache = _cacheProvider.GetFromCache<IState>(cacheKey);
-            if (stateFromCache == null)
-            {
-                var state = getInitialState(item);
-                _cacheProvider.AddToCache(cacheKey, state);
-                return state;
-            }
+			IState stateFromCache = _cacheProvider.GetFromCache<IState>(cacheKey);
+			if (stateFromCache == null)
+			{
+				var state = getInitialState(item);
+				_cacheProvider.AddToCache(cacheKey, state);
+				return state;
+			}
 
-            return stateFromCache;
-        }
+			return stateFromCache;
+		}
 
-        private ISite_Root getSiteRoot(Item item)
-        {
-            string cacheKey = $"{item.ID}-ItemSiteRoot";
+		private ISite_Root getSiteRoot(Item item)
+		{
+			return _globalSitecoreService.GetSiteRootAncestor(item.ID.ToGuid());
+		}
 
-            ISite_Root siteRoot = _cacheProvider.GetFromCache<ISite_Root>(cacheKey);
-            if (siteRoot == null)
-            {
-                //item.Parent because on Created event the next line returns empty 
-                var articleItem = _service.Cast<ArticleItem>(item.Parent);
+		private IState getEditAfterPublishState(Item item)
+		{
+			var workflowItem = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(getSiteRoot(item).Workflow);
 
-                siteRoot = articleItem.Crawl<ISite_Root>();
-                _cacheProvider.AddToCache<ISite_Root>(cacheKey, siteRoot);
-            }
+			var states = _service.Database.WorkflowProvider.GetWorkflow(getSiteRoot(item).Workflow.ToString()).GetStates();
 
-            return siteRoot;
-        }
+			IState editAfterPublish = null;
+			IState finalState = null;
+			foreach (var state in states)
+			{
+				var stateID = state.StateID;
 
-        private IState getEditAfterPublishState(Item item)
-        {
-            var workflowItem = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(getSiteRoot(item).Workflow);
+				var istate = _service.GetItem<IState>(new Guid(stateID));
+				if (istate.Is_Edit_After_Publish && editAfterPublish == null)
+				{
+					editAfterPublish = istate;
+				}
+				else if (istate.Final && finalState == null)
+				{
+					finalState = istate;
+				}
+			}
 
-            var states = _service.Database.WorkflowProvider.GetWorkflow(getSiteRoot(item).Workflow.ToString()).GetStates();
+			return editAfterPublish == null || editAfterPublish == null ? finalState : editAfterPublish;
+		}
 
-            IState editAfterPublish = null;
-            IState finalState = null;
-            foreach (var state in states)
-            {
-                var stateID = state.StateID;
+		private IState getFinalState(Item item)
+		{
+			var workflowItem = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(getSiteRoot(item).Workflow);
 
-                var istate = _service.GetItem<IState>(new Guid(stateID));
-                if (istate.Is_Edit_After_Publish && editAfterPublish == null)
-                {
-                    editAfterPublish = istate;
-                }
-                else if (istate.Final && finalState == null)
-                {
-                    finalState = istate;
-                }
-            }
+			var states = _service.Database.WorkflowProvider.GetWorkflow(getSiteRoot(item).Workflow.ToString()).GetStates();
 
-            return editAfterPublish == null || editAfterPublish == null ? finalState : editAfterPublish;
-        }
+			IState finalState = null;
+			foreach (var state in states)
+			{
+				var stateID = state.StateID;
 
-        private IState getFinalState(Item item)
-        {
-            var workflowItem = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(getSiteRoot(item).Workflow);
+				var istate = _service.GetItem<IState>(new Guid(stateID));
+				if (istate.Final)
+				{
+					return istate;
+				}
+			}
 
-            var states = _service.Database.WorkflowProvider.GetWorkflow(getSiteRoot(item).Workflow.ToString()).GetStates();
+			return finalState;
+		}
 
-            IState finalState = null;
-            foreach (var state in states)
-            {
-                var stateID = state.StateID;
+		private IState getInitialState(Item item)
+		{
+			var workflowItem = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(getSiteRoot(item).Workflow);
 
-                var istate = _service.GetItem<IState>(new Guid(stateID));
-                if (istate.Final)
-                {
-                    return istate;
-                }
-            }
-
-            return finalState;
-        }
-
-        private IState getInitialState(Item item)
-        {
-            var workflowItem = _service.GetItem<Informa.Models.Informa.Models.sitecore.templates.System.Workflow.IWorkflow>(getSiteRoot(item).Workflow);
-
-            return _service.GetItem<IState>(workflowItem.Initial_State);
-        }
-    }
+			return _service.GetItem<IState>(workflowItem.Initial_State);
+		}
+	}
 }
