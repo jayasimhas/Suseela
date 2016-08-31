@@ -472,7 +472,8 @@ namespace InformaSitecoreWord.UI
                 {
                     var copy = ArticleDetails.ArticleGuid;
                     ArticleDetails = GetArticleDetails(articleNumber, metadataParser);
-                    ArticleDetails.ArticleGuid = copy;
+                    if (copy.Equals(new Guid()) == false)
+                        ArticleDetails.ArticleGuid = copy;
                     _sitecoreArticle = new SitecoreClient();
                     //TODO - Add workflow stuff here
                     List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails,
