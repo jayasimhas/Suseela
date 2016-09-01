@@ -99,7 +99,17 @@ namespace Informa.Library.PXM.Helpers
 			{
 				var aside = doc.CreateElement("pre");
 				doc.DocumentNode.FirstChild.ChildNodes.Insert(0, aside);
-				ModifyHtmlStructure(doc, aside, nodes);
+                string qfBody = "qf_body";
+                foreach (var node in nodes) {
+                    foreach (var childNode in node.ChildNodes) {
+                        if (!childNode.Name.Equals("p"))
+                            continue;
+                        var cAttr = childNode.Attributes["class"];
+                        if (cAttr == null)
+                            childNode.Attributes.Add("class", qfBody);                        
+                    }
+                }
+                ModifyHtmlStructure(doc, aside, nodes);
 			}
 			
 			return doc.DocumentNode.OuterHtml;
@@ -215,7 +225,8 @@ namespace Informa.Library.PXM.Helpers
 			foreach (HtmlNode element in elements)
 			{
 				var contentText = element.InnerText;
-				element.ParentNode.InnerHtml = contentText;
+                if(element.ParentNode != null)
+				    element.ParentNode.InnerHtml = contentText;
 			}
 			return doc.DocumentNode.OuterHtml;
 		}
