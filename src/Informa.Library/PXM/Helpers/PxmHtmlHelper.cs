@@ -11,7 +11,9 @@ namespace Informa.Library.PXM.Helpers
         string ProcessIframeTag(string content);
 		string ProcessQuickFacts(string content);
         string ProcessTableStyles(string content);
-	}
+        string ProcessPullQuotes(string content);
+
+    }
 
 	[AutowireService]
 	public class PxmHtmlHelper : IPxmHtmlHelper
@@ -160,7 +162,8 @@ namespace Informa.Library.PXM.Helpers
 			result = ProcessStoryTextAlt(result);
 			var xpath = @"//table/tbody/tr/td/p";
 			result = MoveTableContent(result, xpath);
-			return result;
+            result = ProcessPullQuotes(result);
+            return result;
 		}
 
 		internal string ProcessColumnHeading(string content)
@@ -190,8 +193,8 @@ namespace Informa.Library.PXM.Helpers
 			var result = AddCssClassToElements(content, xpath, ClassAttributeName, StoryTextAltStyle);
 			return result;
 		}
-
-		internal string AddCssClassToElements(string content, string xpath, string attributeName, string attributeValue)
+        
+        internal string AddCssClassToElements(string content, string xpath, string attributeName, string attributeValue)
 		{
 			var doc = CreateDocument(content);
 			var elements = doc.DocumentNode.SelectNodes(xpath);
@@ -224,9 +227,12 @@ namespace Informa.Library.PXM.Helpers
 			}
 			foreach (HtmlNode element in elements)
 			{
-				var contentText = element.InnerText;
+                var v = element.Attributes["class"];
+                if (v == null)
+                    element.Attributes.Append(doc.CreateAttribute("class", "table_paragraph"));
+				var contentText = element.InnerHtml;
                 if(element.ParentNode != null)
-				    element.ParentNode.InnerHtml = contentText;
+				    element.ParentNode.InnerHtml += contentText;
 			}
 			return doc.DocumentNode.OuterHtml;
 		}
@@ -237,5 +243,25 @@ namespace Informa.Library.PXM.Helpers
 			doc.LoadHtml(content);
 			return doc;
 		}
-	}
+
+        public string ProcessPullQuotes(string content) {
+            var xpath = @"//div[contains(@class, 'sidebar-body')]//*/blockquote[contains(@class,'article-pullquote')]/p";
+            var doc = CreateDocument(content);
+            var elements = doc.DocumentNode.SelectNodes(xpath);
+            if (elements == null)
+                return doc.DocumentNode.OuterHtml;
+
+            string classAttr = "class";
+            string SidebarPullQuote = "sidebar";
+            foreach (HtmlNode element in elements) {
+                var attribute = element.Attributes[classAttr];
+                if (attribute == null)
+                    element.Attributes.Add(classAttr, SidebarPullQuote);
+                else
+                    attribute.Value = SidebarPullQuote;
+            }
+            return doc.DocumentNode.OuterHtml;
+        }
+
+    }
 }
