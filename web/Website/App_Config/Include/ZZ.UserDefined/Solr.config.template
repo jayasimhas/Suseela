@@ -29,6 +29,7 @@
             <field fieldName="FacetIndustries" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.IndustriesField, Informa.Library</field>
             <field fieldName="FacetDeviceAreas" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.DeviceAreasField, Informa.Library</field>
             <field fieldName="FacetArticleInProgress" returnType="bool">Informa.Library.Search.ComputedFields.Facets.ArticleInProgressField, Informa.Library</field>
+            <field fieldName="FacetAuthorNames" returnType="stringCollection">Informa.Library.Search.ComputedFields.Facets.AuthorNamesField, Informa.Library</field>
           </fields>
 
           <indexFieldStorageValueFormatter>

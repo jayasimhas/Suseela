@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Informa.Library.Search.ComputedFields.Facets;
+using Informa.Library.Utilities.References;
 
 namespace Informa.Library.Authors {
     [AutowireService]
@@ -27,7 +29,7 @@ namespace Informa.Library.Authors {
                 return options;
 
             options.Search_Name = $"{a?.First_Name} {a?.Last_Name}" ?? string.Empty;
-            options.Related_Search = $"?author={a?._Id.ToString("N")}";
+            options.Related_Search = $"?{Constants.QueryString.AuthorFullName}={AuthorNamesField.ToAuthorName(a)}";
 
             return options;
         }

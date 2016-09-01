@@ -11,6 +11,7 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 using Informa.Library.Utilities.References;
 using Informa.Library.Globalization;
+using Informa.Library.Search.ComputedFields.Facets;
 
 namespace Informa.Web.ViewModels.Authors
 {
@@ -104,21 +105,26 @@ namespace Informa.Web.ViewModels.Authors
 
 		public bool PersonWritesFor => WriteForExpertise.Any();
 
-		private TaxonomyLinkViewModel ConvertToTaxonomyLink(ITaxonomy_Item item, IGlassBase glassItem, string type)
+		private TaxonomyLinkViewModel ConvertToTaxonomyLink(ITaxonomy_Item item, IStaff_Item glassItem, string type)
 		{
 			return new TaxonomyLinkViewModel
 			{
 				LinkText = item.Item_Name,
-				LinkUrl = $"/search#?author={glassItem._Id.ToString("N")}&{type}={HttpUtility.UrlEncode(item.Item_Name)}"
+				LinkUrl = $"/search#?{GetAuthorNameParameter(glassItem)}&{type}={HttpUtility.UrlEncode(item.Item_Name)}"
 			};
 		}
-		private TaxonomyLinkViewModel ConvertToTaxonomyLink(ISite_Root item, IGlassBase glassItem)
+		private TaxonomyLinkViewModel ConvertToTaxonomyLink(ISite_Root item, IStaff_Item glassItem)
 		{
 			return new TaxonomyLinkViewModel
 			{
 				LinkText = item.Publication_Name,
-				LinkUrl = $"/search#?author={glassItem._Id.ToString("N")}&publication={HttpUtility.UrlEncode(item.Publication_Name)}"
+				LinkUrl = $"/search#?{GetAuthorNameParameter(glassItem)}&publication={HttpUtility.UrlEncode(item.Publication_Name)}"
 			};
+		}
+
+		private string GetAuthorNameParameter(IStaff_Item staffItem)
+		{
+			return $"{Constants.QueryString.AuthorFullName}={AuthorNamesField.ToAuthorName(staffItem)}";
 		}
 
 		private string GetKeyName(ITaxonomy_Item item){

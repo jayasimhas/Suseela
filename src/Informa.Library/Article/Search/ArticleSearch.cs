@@ -50,7 +50,7 @@ namespace Informa.Library.Article.Search
                 TaxonomyIds = new List<Guid>(),
                 ArticleNumbers = new List<string>(),
                 PublicationNames = new List<string>(),
-                AuthorNames = new List<string>(),
+                AuthorGuids = new List<string>(),
                 CompanyRecordNumbers = new List<string>(),
             };
         }

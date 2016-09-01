@@ -91,7 +91,10 @@ namespace Informa.Library.Search.Results
 		[IndexField("authors_sm")]
 		public List<string> Authors { get; set; }
 
-        [IndexField("referenced_companies_t")]
+		[IndexField("facetauthornames_sm")]
+		public List<string> AuthorFullNames { get; set; }
+
+		[IndexField("referenced_companies_t")]
         public string ReferencedCompany { get; set; }
         [DataMember]
 		public bool IsArticleBookmarked => DocumentContext.IsSaved(ItemId.Guid);

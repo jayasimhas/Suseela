@@ -385,6 +385,7 @@
     <Compile Include="PXM\CustomXmlTextFrameRenderer.cs" />
     <Compile Include="PXM\Parsers\CustomImageParser.cs" />
     <Compile Include="PXM\SpecialCharacterMapper.cs" />
+    <Compile Include="Search\ComputedFields\Facets\AuthorNamesField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchMediaTooltipField.cs" />
     <Compile Include="Search\Crawlers\InformaItemCrawler.cs" />
     <Compile Include="Utilities\Parsers\CachedXmlParser.cs" />

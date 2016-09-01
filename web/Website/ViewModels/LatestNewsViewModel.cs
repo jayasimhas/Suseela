@@ -20,6 +20,7 @@ using Informa.Model.DCD;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.ViewModels.Articles;
+using Informa.Library.Search.ComputedFields.Facets;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
 
 namespace Informa.Web.ViewModels
@@ -112,7 +113,7 @@ namespace Informa.Web.ViewModels
             Authors = new List<string> { RemoveSpecialCharactersFromGuid(CurrentAuthor._Id.ToString()) };
 
             if (SeeAllLink != null)
-                SeeAllLink.Url = string.Format("/search#?{0}={1}", Constants.QueryString.Author, RemoveSpecialCharactersFromGuid(CurrentAuthor._Id.ToString()));
+                SeeAllLink.Url = string.Format("/search#?{0}={1}", Constants.QueryString.AuthorFullName, AuthorNamesField.ToAuthorName(CurrentAuthor));
         }
         public string AnalyticsName { get; private set; }
         public void Company_Page()
@@ -194,7 +195,7 @@ namespace Informa.Web.ViewModels
         }
 
         private IEnumerable<IListableViewModel> GetLatestNews(Guid datasourceId, IEnumerable<Guid> subjectIds, IEnumerable<string> publicationNames,
-            IEnumerable<string> authorNames, IEnumerable<string> companyRecordNumbers, int itemsToDisplay)
+            IEnumerable<string> authorGuids, IEnumerable<string> companyRecordNumbers, int itemsToDisplay)
         {
             var manuallyCuratedContent = ItemManuallyCuratedContent.Get(datasourceId);
             var filter = ArticleSearch.CreateFilter();
@@ -204,7 +205,7 @@ namespace Informa.Web.ViewModels
             if(manuallyCuratedContent != null) filter.ExcludeManuallyCuratedItems.AddRange(manuallyCuratedContent);
             if(subjectIds != null) filter.TaxonomyIds.AddRange(subjectIds);
             if(publicationNames != null) filter.PublicationNames.AddRange(publicationNames);
-            if(authorNames != null) filter.AuthorNames.AddRange(authorNames);
+            if(authorGuids != null) filter.AuthorGuids.AddRange(authorGuids);
             if(companyRecordNumbers != null) filter.CompanyRecordNumbers.AddRange(companyRecordNumbers);
 
             var results = ArticleSearch.Search(filter);
