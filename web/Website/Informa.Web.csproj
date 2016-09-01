@@ -418,7 +418,7 @@
     </Reference>
     <Reference Include="sitecore.nexus, Version=1.0.0.4404, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Informa\lib\Sitecore\sitecore.nexus.dll</HintPath>
+      <HintPath>..\..\lib\Sitecore\sitecore.nexus.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.NVelocity">
       <HintPath>..\..\lib\Sitecore\Sitecore.NVelocity.dll</HintPath>
