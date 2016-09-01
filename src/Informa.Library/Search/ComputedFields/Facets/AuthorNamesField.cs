@@ -24,7 +24,9 @@ namespace Informa.Library.Search.ComputedFields.Facets
 
 		public static string ToAuthorName(IStaff_Item staffMember)
 		{
-			return string.Join(" ", staffMember.First_Name, staffMember.Last_Name);
+			if (staffMember == null)
+				return string.Empty;
+			return string.Join(" ", staffMember.First_Name, staffMember.Last_Name).Trim();
 		}
 	}
 }
