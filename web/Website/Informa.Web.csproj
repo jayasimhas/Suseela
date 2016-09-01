@@ -1555,22 +1555,27 @@
     <ProjectReference Include="..\..\src\Informa.Library.Salesforce\Informa.Library.Salesforce.csproj">
       <Project>{69ff8121-1969-4032-90fa-b4b9148cd780}</Project>
       <Name>Informa.Library.Salesforce</Name>
+	  <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Informa.Library\Informa.Library.csproj">
       <Project>{4fb3b700-30c7-4b1b-b377-59c15a58cb3d}</Project>
       <Name>Informa.Library</Name>
+	  <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Informa.Models\Informa.Models.csproj">
       <Project>{79466a53-db00-47d6-ba80-b02bd8a87337}</Project>
       <Name>Informa.Models</Name>
+	  <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\src\PluginModels\PluginModels.csproj">
       <Project>{be0591fc-dabc-44b0-b267-0e3ab0fd02d4}</Project>
       <Name>PluginModels</Name>
+	  <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Sitecore.SharedSource.DataImporter\Sitecore.SharedSource.DataImporter.csproj">
       <Project>{0e4f3486-8733-4e18-a5d0-51f2b92b2974}</Project>
       <Name>Sitecore.SharedSource.DataImporter</Name>
+	  <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
