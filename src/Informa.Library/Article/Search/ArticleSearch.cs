@@ -52,6 +52,7 @@ namespace Informa.Library.Article.Search
                 PublicationNames = new List<string>(),
                 AuthorGuids = new List<string>(),
                 CompanyRecordNumbers = new List<string>(),
+                AuthorFullNames = new List<string>()
             };
         }
 
