@@ -5,6 +5,7 @@
     <div class="page-account">
 
         <h1 class="page-account__header">@Html.Glass().Editable(m => m.GlassModel.Title)</h1>
+        <h2 class="page-account__table-headline">@Html.Glass().Editable(m => m.GlassModel.Sub_Title)</h2>
 		<div class="page-account__introduction">
             @Html.Glass().Editable(m => m.GlassModel.Body)
         </div>
@@ -16,9 +17,6 @@
 
             <form   class="form-email-preferences"
                     data-on-submit="/Account/api/PreferencesApi/Update/">
-
-				<h2 class="page-account__table-headline">@Model.NewsletterTitle</h2>
-
 				<table class="page-account__table sortable-table js-sortable-table">
 					<thead class="sortable-table__header">
 						<tr>

@@ -4,11 +4,8 @@
 {
     <div class="page-account">
 		@Html.Sitecore().Placeholder("page-account")
-
+        <h2 class="page-account__table-headline">@Html.Glass().Editable(Model.GlassModel, model => model.Sub_Title)</h2>
         <div class="page-preferences js-preferences-user-container">
-
-            <h2 class="page-account__table-headline">@Model.Title</h2>
-
             <table class="page-account__table sortable-table js-sortable-table">
                 <thead class="sortable-table__header">
                     <tr>

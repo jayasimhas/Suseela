@@ -4,6 +4,7 @@
 {
     <div class="page-account page-account-contact">
         <h1 class="page-account__header">@Model.Title</h1>
+        <h2 class="page-account__table-headline">@Html.Glass().Editable(Model.GlassModel, model => model.Sub_Title)</h2>
         <div class="page-preferences js-preferences-user-container">
 
             <div class="page-account-contact__column">
