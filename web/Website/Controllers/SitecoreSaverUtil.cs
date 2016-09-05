@@ -351,6 +351,7 @@ namespace Informa.Web.Controllers
         /// <param name="articleStruct"></param>
         public void SaveArticleDetailsAndText(ArticleItem article, string articleText, ArticleStruct articleStruct)
         {
+			try { 
             using (new SecurityDisabler())
             {
                 article = SaveArticleDetails(article, articleStruct, true, true);
@@ -367,8 +368,12 @@ namespace Informa.Web.Controllers
 
                 _sitecoreMasterService.Save(article);
             }
-        }
-
+			}
+			catch (Exception ex)
+			{
+				Sitecore.Diagnostics.Log.Error("SaveArticleDetailsAndText: " + ex.ToString(), this);
+			}
+		}
 
         public int SendDocumentToSitecore(ArticleItem article, byte[] data, string extension)
         {
