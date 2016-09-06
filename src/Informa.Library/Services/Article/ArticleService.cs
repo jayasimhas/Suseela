@@ -20,25 +20,28 @@ using Sitecore.Data.Items;
 using Sitecore.Web;
 using System.Web;
 
-namespace Informa.Library.Services.Article {
+namespace Informa.Library.Services.Article
+{
 
     [AutowireService(LifetimeScope.SingleInstance)]
     public class ArticleService : IArticleService
     {
         protected readonly ICacheProvider CacheProvider;
         protected readonly ITextTranslator TextTranslator;
-		protected readonly ISiteRootsContext SiteRootsContext;
+        protected readonly ISiteRootsContext SiteRootsContext;
         protected readonly IGlobalSitecoreService GlobalService;
+        // JIRA IPMP-56
+        protected readonly ISiteRootContext SiteRootContext;
 
-		public ArticleService(
+        public ArticleService(
             ICacheProvider cacheProvider,
-            ITextTranslator textTranslator, 
-			ISiteRootsContext siteRootsContext,
+            ITextTranslator textTranslator,
+            ISiteRootsContext siteRootsContext,
             IGlobalSitecoreService globalService)
         {
             CacheProvider = cacheProvider;
             TextTranslator = textTranslator;
-			SiteRootsContext = siteRootsContext;
+            SiteRootsContext = siteRootsContext;
             GlobalService = globalService;
         }
 
@@ -53,16 +56,48 @@ namespace Informa.Library.Services.Article {
             return CacheProvider.GetFromCache(cacheKey, () => BuildLegacyPublicationNames(article));
         }
 
-        private IEnumerable<string> BuildLegacyPublicationNames(IArticle article) { 
+        private IEnumerable<string> BuildLegacyPublicationNames(IArticle article)
+        {
+            #region PharmaUsed
+
+            //List<string> l = new List<string>();
+            //foreach (IGlassBase g in article.Legacy_Publications) {
+            //    if (g == null)
+            //        continue;
+
+            //    l.Add(((ITaxonomy_Item)g).Item_Name);
+            //}
+
+            //return l;
+
+            #endregion
+
+            // JIRA IPMP-56
 
             List<string> l = new List<string>();
-            foreach (IGlassBase g in article.Legacy_Publications) {
+            foreach (IGlassBase g in article.Legacy_Publications)
+            {
                 if (g == null)
                     continue;
-
-                l.Add(((ITaxonomy_Item)g).Item_Name);
+                if (SiteRootContext.Item.Legacy_Brand_Active)
+                {
+                    if (((ITaxonomy_Item)g).URL == null)
+                    {
+                        l.Add(((ITaxonomy_Item)g).Item_Name);
+                        return l;
+                    }
+                    else
+                    {
+                        l.Add(((ITaxonomy_Item)g).Item_Name);
+                        l.Add(((ITaxonomy_Item)g).URL.Url);
+                    }
+                }
+                else
+                {
+                    l.Add(((ITaxonomy_Item)g).Item_Name);
+                }
             }
-            
+
             return l;
         }
 
@@ -72,7 +107,8 @@ namespace Informa.Library.Services.Article {
             return CacheProvider.GetFromCache(cacheKey, () => BuildLinkableTaxonomies(article));
         }
 
-        private IEnumerable<ILinkable> BuildLinkableTaxonomies(IArticle article) { 
+        private IEnumerable<ILinkable> BuildLinkableTaxonomies(IArticle article)
+        {
 
             var taxItems = article.Taxonomies?
                 .Select(x => new LinkableModel
@@ -86,7 +122,7 @@ namespace Informa.Library.Services.Article {
 
         public MediaTypeIconData GetMediaTypeIconData(IArticle article)
         {
-            if(article?.Media_Type == null) { return null; }
+            if (article?.Media_Type == null) { return null; }
 
             var mediaType = article.Media_Type.Item_Name == "Data"
                 ? "chart"
@@ -94,7 +130,7 @@ namespace Informa.Library.Services.Article {
 
             var tooltipText = article.Media_Type.Tooltip;
 
-            return new MediaTypeIconData() {MediaType = mediaType, Tooltip = tooltipText};
+            return new MediaTypeIconData() { MediaType = mediaType, Tooltip = tooltipText };
         }
 
         public string GetArticleSummary(IArticle article)
@@ -103,7 +139,7 @@ namespace Informa.Library.Services.Article {
             return CacheProvider.GetFromCache(cacheKey, () => BuildTokenizedArticleText(article.Summary));
         }
 
-        public string GetArticleBody(IArticle article) 
+        public string GetArticleBody(IArticle article)
         {
             string cacheKey = CreateCacheKey($"Body-{article._Id}");
             return CacheProvider.GetFromCache(cacheKey, () => BuildTokenizedArticleText(article.Body));
@@ -115,11 +151,30 @@ namespace Informa.Library.Services.Article {
         }
 
         public string GetLegacyPublicationText(IArticle article)
-        {            
-            var legacyText = TextTranslator.Translate("Article.LegacyPublications");
-            var legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
+        {
+            // JIRA IPMP-56
 
+            string legacyText = null;
+            string legacyPublicationsText = null;
+            if (SiteRootContext.Item.Legacy_Brand_Active)
+            {
+                legacyText = TextTranslator.Translate("Article.LegacyPublications");
+                legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
+                return legacyText.Replace("{Legacy Publications}", "");
+            }
+            else
+            {
+                legacyText = TextTranslator.Translate("Article.LegacyPublications");
+                legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
+            }
             return legacyText.Replace("{Legacy Publications}", legacyPublicationsText);
+
+            #region PharamaUsed
+            //var legacyText = TextTranslator.Translate("Article.LegacyPublications");
+            //var legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
+
+            //return legacyText.Replace("{Legacy Publications}", legacyPublicationsText);
+            #endregion
         }
 
         public IEnumerable<IFile> GetSupportingDocuments(IArticle article)
@@ -130,51 +185,55 @@ namespace Informa.Library.Services.Article {
 
         private IEnumerable<IFile> BuildSupportingDocuments(IArticle article)
         {
-            return article.Supporting_Documents.Select(a => (IFile) a).ToList();
+            return article.Supporting_Documents.Select(a => (IFile)a).ToList();
         }
 
-	    public string GetArticlePublicationName(IArticle article)
-	    {
-			string cacheKey = CreateCacheKey($"ArticlePublicationCode-{article._Id}");
-			return CacheProvider.GetFromCache(cacheKey, () => BuildArticlePublicationName(article));
-		}
+        public string GetArticlePublicationName(IArticle article)
+        {
+            string cacheKey = CreateCacheKey($"ArticlePublicationCode-{article._Id}");
+            return CacheProvider.GetFromCache(cacheKey, () => BuildArticlePublicationName(article));
+        }
 
-		private string BuildArticlePublicationName(IArticle article)
-		{
-			var siteRoot = SiteRootsContext
-				.SiteRoots
-				.FirstOrDefault(i => article._Path.StartsWith(i._Path));
+        private string BuildArticlePublicationName(IArticle article)
+        {
+            var siteRoot = SiteRootsContext
+                .SiteRoots
+                .FirstOrDefault(i => article._Path.StartsWith(i._Path));
 
-		    return (siteRoot != null)
-			    ? siteRoot.Publication_Name
-			    : string.Empty;
-	    }
+            return (siteRoot != null)
+                ? siteRoot.Publication_Name
+                : string.Empty;
+        }
 
-        public string GetDownloadUrl(IArticle article) {
+        public string GetDownloadUrl(IArticle article)
+        {
             string cacheKey = CreateCacheKey($"GetDownloadLink-{article._Id}");
             return CacheProvider.GetFromCache(cacheKey, () => BuildDownloadUrl(article));
         }
-        protected string BuildDownloadUrl(IArticle article) {
+        protected string BuildDownloadUrl(IArticle article)
+        {
 
             if (article.Word_Document == null)
                 return string.Empty;
 
-            Item wordDoc =  GlobalService.GetItem<Item>(article.Word_Document.TargetId);
-            if (wordDoc == null) 
+            Item wordDoc = GlobalService.GetItem<Item>(article.Word_Document.TargetId);
+            if (wordDoc == null)
                 return string.Empty;
-            
+
             string url = MediaManager.GetMediaUrl(wordDoc)
                 .Replace("/-/", "/~/")
                 .Replace("-", " ");
             return url;
         }
 
-        public string GetPreviewUrl(IArticle article) {
+        public string GetPreviewUrl(IArticle article)
+        {
             string cacheKey = CreateCacheKey($"GetPreviewLink-{article._Id}");
             return CacheProvider.GetFromCache(cacheKey, () => BuildPreviewUrl(article));
         }
 
-        protected string BuildPreviewUrl(IArticle article) {
+        protected string BuildPreviewUrl(IArticle article)
+        {
             string previewUrl = HttpContext.Current.Request.Url.Scheme + "://" + WebUtil.GetHostName() + "/?sc_itemid={" + article._Id + "}&sc_mode=preview&sc_lang=en";
             string fullLink = $"/VWB/Util/LoginRedirectToPreview.aspx?redirect={HttpUtility.UrlEncode(previewUrl)}";
 

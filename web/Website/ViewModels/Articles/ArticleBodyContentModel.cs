@@ -9,6 +9,9 @@ using Informa.Library.User.Entitlement;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Library.Site;
 
 namespace Informa.Web.ViewModels.Articles
 {
@@ -17,8 +20,9 @@ namespace Informa.Web.ViewModels.Articles
 		public readonly ICallToActionViewModel CallToActionViewModel;
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IArticleService ArticleService;
-
-		private readonly Lazy<string> _lazyBody;
+        //JIRA IPMP-56
+        protected readonly ISiteRootContext SiteRootContext;
+        private readonly Lazy<string> _lazyBody;
 
 		public ArticleBodyContentModel(
 						IArticle model,
@@ -26,13 +30,16 @@ namespace Informa.Web.ViewModels.Articles
 						ITextTranslator textTranslator,
 						ICallToActionViewModel callToActionViewModel,
 						IArticleService articleService,
-                        IAuthenticatedUserContext authenticatedUserContext)
+                        IAuthenticatedUserContext authenticatedUserContext,
+                        // JIRA IPMP-56
+                        ISiteRootContext siteRootContext)
 						: base(entitledProductContext, authenticatedUserContext)
 		{
 			TextTranslator = textTranslator;
 			CallToActionViewModel = callToActionViewModel;
 			ArticleService = articleService;
-
+            // JIRA IPMP-56
+            SiteRootContext = siteRootContext;
             _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled() ? ArticleService.GetArticleBody(model) : "");
 		}
 
@@ -70,5 +77,9 @@ namespace Informa.Web.ViewModels.Articles
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
 		public string FeaturedImageSource => TextTranslator.Translate("Article.FeaturedImageSource");
         public string ExecutiveSummary => TextTranslator.Translate("SharedContent.ExecutiveSummary");
+
+        // JIRA IPMP-56
+        public bool IsActiveLegacyBrand => SiteRootContext.Item.Legacy_Brand_Active;
+        public List<string> LagacyBrandUrl => ArticleService.GetLegacyPublicationNames(GlassModel).ToList<string>();
     }
 }
