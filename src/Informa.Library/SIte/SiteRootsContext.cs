@@ -28,9 +28,16 @@ namespace Informa.Library.Site
 
 		private IList<ISite_Root> BuildSiteRootsContext()
 		{
-			var contentItem = SitecoreService.GetItem<IGlassBase>("/sitecore/content");
-			var siteRoots = contentItem._ChildrenWithInferType.OfType<ISite_Root>();
-			return siteRoots.ToList();
-		}
-	}
+            //JIRA Ticket IPMP-269
+
+            IEnumerable<ISite_Root> siteRoots = null;
+            var contentItem = SitecoreService.GetItem<IGlassBase>("/sitecore/content");
+            foreach (var verticalContentItems in contentItem._ChildrenWithInferType)
+            {
+                siteRoots = verticalContentItems._ChildrenWithInferType.OfType<ISite_Root>();
+            }
+
+            return siteRoots.ToList();
+        }
+    }
 }
