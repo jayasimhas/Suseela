@@ -511,6 +511,9 @@
     <Reference Include="Sitecore.Logging.Client">
       <HintPath>..\..\lib\Sitecore\Sitecore.Logging.Client.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Marketing">
+      <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Marketing.Campaigns.Client, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Marketing.Campaigns.Client.dll</HintPath>
@@ -1102,6 +1105,7 @@
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
     <Compile Include="Areas\Article\Controllers\EmailFriendController.cs" />
+    <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailDCDRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendSearchRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendValidationReason.cs" />
@@ -1173,6 +1177,7 @@
     <Compile Include="ViewModels\Articles\ArticleMobileMediaComponentModel.cs" />
     <Compile Include="ViewModels\AuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\AuthorShareViewModel.cs" />
+    <Compile Include="ViewModels\CompaniesAndDeals\CompaniesandDealsPrologueShareViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\DealViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\CompanyViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\DealsAndCompaniesSubscribeViewModel.cs" />
@@ -1767,6 +1772,13 @@
     <Content Include="Views\Advertisements\RectangularAd.cshtml" />
     <Content Include="Views\Advertisements\LeaderboardAd.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealSponsor.cshtml" />
+    <Content Include="Views\Shared\PopOuts\EmailCompany.cshtml" />
+    <Content Include="Views\Shared\PopOuts\EmailDeal.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealShare.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompanyShare.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompanyPrologueEmail.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\DealPrologueEmail.cshtml" />
+    <Content Include="Views\CompaniesAndDeals\CompaniesAndDealsPrologueShare.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

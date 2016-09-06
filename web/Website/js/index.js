@@ -408,6 +408,50 @@ $(document).ready(function() {
 		}
 	});
 
+	var emailAuthorController = new FormController({
+	    observe: '.form-email-author',
+	    successCallback: function(form) {
+	        $('.js-email-author-form-wrapper').hide();
+	        $('.js-email-author-recip-success').html($('.js-email-author-recip-addr').val());
+	        $('.js-email-author-success').show();
+
+	        // Reset the Email Author pop-out to its default state when closed
+	        $('.js-dismiss-email-author').one('click', function() {
+	            $('.js-email-author-form-wrapper').show();
+	            $('.js-email-author-success').hide();
+	        });
+	    }
+	});
+
+	var emailCompanyController = new FormController({
+	    observe: '.form-email-company',
+	    successCallback: function(form) {
+	        $('.js-email-company-form-wrapper').hide();
+	        $('.js-email-company-recip-success').html($('.js-email-company-recip-addr').val());
+	        $('.js-email-company-success').show();
+
+	        // Reset the Email Company pop-out to its default state when closed
+	        $('.js-dismiss-email-company').one('click', function() {
+	            $('.js-email-company-form-wrapper').show();
+	            $('.js-email-company-success').hide();
+	        });
+	    }
+	});
+
+	var emailDealController = new FormController({
+	    observe: '.form-email-deal',
+	    successCallback: function(form) {
+	        $('.js-email-deal-form-wrapper').hide();
+	        $('.js-email-deal-recip-success').html($('.js-email-deal-recip-addr').val());
+	        $('.js-email-deal-success').show();
+
+	        // Reset the Email Deal pop-out to its default state when closed
+	        $('.js-dismiss-email-deal').one('click', function() {
+	            $('.js-email-deal-form-wrapper').show();
+	            $('.js-email-deal-success').hide();
+	        });
+	    }
+	});
 
 	var emailSearchController = new FormController({
 		observe: '.form-email-search',
