@@ -17558,16 +17558,27 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 					/// </summary>
 					[SitecoreField(ITaxonomy_ItemConstants.TooltipFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Tooltip  {get; set;}
-				}
+                    // JIRA IPMP-56
+                    /// <summary>
+                    /// The Link field.
+                    /// <para></para>
+                    /// <para>Field Type: General Link</para>		
+                    /// <para>Field ID: 32B8C3AC-38A7-4AE5-8FD0-8DDE297B557F</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ITaxonomy_ItemConstants.URL_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+                    Link URL { get; set; }
+                    // JIRA IPMP-56
+    }
 
-	
-		/// <summary>
-		/// ITaxonomy_Item Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Objects/Taxonomy Item</para>	
-		/// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
-		/// </summary>
-		[SitecoreType]
+
+    /// <summary>
+    /// ITaxonomy_Item Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Objects/Taxonomy Item</para>	
+    /// <para>ID: 6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1</para>	
+    /// </summary>
+    [SitecoreType]
 		public partial interface ITaxonomy_Item__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryLinkable__Raw
 		{
 										/// <summary>
@@ -17597,9 +17608,20 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 						/// </summary>
 						[SitecoreField(ITaxonomy_ItemConstants.TooltipFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Tooltip  {get; set;}
-						}
-	
-	public static partial class ITaxonomy_ItemConstants{
+                        // JIRA IPMP-56
+                        /// <summary>
+                        /// The Link field.
+                        /// <para></para>
+                        /// <para>Field Type: General Link</para>		
+                        /// <para>Field ID: 32B8C3AC-38A7-4AE5-8FD0-8DDE297B557F</para>
+                        /// <para>Custom Data: </para>
+                        /// </summary>
+                        [SitecoreField(ITaxonomy_ItemConstants.URL_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+                        Link URL { get; set; }
+                        // JIRA IPMP-56
+    }
+
+    public static partial class ITaxonomy_ItemConstants{
 
 			public const string TemplateIdString = "6d72d3c0-b5d7-4d08-9bdd-0d9627ef5ad1";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
@@ -17614,9 +17636,13 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 			public static readonly ID Media_Type_IconFieldId = new ID("1cfbe05b-a4af-4b00-90fb-734cba008f42");
 			public const string Media_Type_IconFieldName = "Media Type Icon";
 
-						
-					
-			public static readonly ID TooltipFieldId = new ID("58aeb695-872c-4038-b602-2fb8a6f17d5c");
+            // JIRA IPMP-56
+            public static readonly ID URL_LinkFieldNameId = new ID("32B8C3AC-38A7-4AE5-8FD0-8DDE297B557F");
+            public const string URL_LinkFieldName = "URL";
+            //IPMP-56
+        			
+
+            public static readonly ID TooltipFieldId = new ID("58aeb695-872c-4038-b602-2fb8a6f17d5c");
 			public const string TooltipFieldName = "Tooltip";
 
 						
@@ -25922,14 +25948,27 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.Publication_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Publication_Code  {get; set;}
-								/// <summary>
-					/// The Publication Name field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: 9aee6c51-8392-4461-b24c-bf22acf5b07f</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISite_ConfigConstants.Publication_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+
+                    //JIRA IPMP-56           
+                    /// <summary>
+                    /// The Legacy Brand Active field.
+                    /// <para></para>
+                    /// <para>Field Type: Checkbox</para>		
+                    /// <para>Field ID: {FA9CC7FF-C51B-40F1-B688-5AB739BEEEF7}</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ISite_ConfigConstants.Legacy_Brand_ActiveFieldName, Setting = SitecoreFieldSettings.InferType)]
+                    bool Legacy_Brand_Active { get; set; }
+                    // JIRA IPMP-56
+
+                    /// <summary>
+                    /// The Publication Name field.
+                    /// <para></para>
+                    /// <para>Field Type: Single-Line Text</para>		
+                    /// <para>Field ID: 9aee6c51-8392-4461-b24c-bf22acf5b07f</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(ISite_ConfigConstants.Publication_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Publication_Name  {get; set;}
 								/// <summary>
 					/// The Publication Theme field.
@@ -27362,9 +27401,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 			public static readonly ID Publication_NameFieldId = new ID("9aee6c51-8392-4461-b24c-bf22acf5b07f");
 			public const string Publication_NameFieldName = "Publication Name";
 
-						
-					
-			public static readonly ID Publication_ThemeFieldId = new ID("21e92b06-95e5-45bd-9ad3-d2fe207eef7b");
+            //JIRA IPMP-56
+            public static readonly ID Legacy_Brand_ActiveFieldId = new ID("FA9CC7FF-C51B-40F1-B688-5AB739BEEEF7");
+            public const string Legacy_Brand_ActiveFieldName = "Legacy Brand Active";
+            //JIRA IPMP-56	
+
+            public static readonly ID Publication_ThemeFieldId = new ID("21e92b06-95e5-45bd-9ad3-d2fe207eef7b");
 			public const string Publication_ThemeFieldName = "Publication Theme";
 
 						
