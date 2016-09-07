@@ -447,10 +447,14 @@ namespace InformaSitecoreWord.UI
         /// </summary>
         public bool SaveArticle(ArticleDocumentMetadataParser metadataParser = null, string body = null)
         {
-            var documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
-            var articleNumber = GetArticleNumber();
+			StringBuilder logBuilder = new StringBuilder();
 
-            if (!string.IsNullOrEmpty(documentCustomProperties.ArticleNumber) && !string.IsNullOrEmpty(articleNumber))
+			logBuilder.AppendLine("ESRibbon.SaveArticle");
+			var documentCustomProperties = new DocumentCustomProperties(SitecoreAddin.ActiveDocument);
+            var articleNumber = GetArticleNumber();
+			logBuilder.AppendLine("articleNumber: " + articleNumber);
+
+			if (!string.IsNullOrEmpty(documentCustomProperties.ArticleNumber) && !string.IsNullOrEmpty(articleNumber))
             {
                 if (articleNumber != documentCustomProperties.ArticleNumber)
                 {
@@ -466,36 +470,45 @@ namespace InformaSitecoreWord.UI
                 }
             }
 
-            try
-            {
-                if (HasArticleNumber())
-                {
-                    var copy = ArticleDetails.ArticleGuid;
-                    ArticleDetails = GetArticleDetails(articleNumber, metadataParser);
-                    if (copy.Equals(new Guid()) == false)
-                        ArticleDetails.ArticleGuid = copy;
-                    _sitecoreArticle = new SitecoreClient();
-                    //TODO - Add workflow stuff here
-                    List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails,
-                        new Guid(), new List<StaffStruct>(), GetArticleNumber(), body);
-                    if (errors != null && errors.Any())
-                    {
-                        foreach (string error in errors)
-                        {
-                            if (!String.IsNullOrEmpty(error))
-                            {
-                                MessageBox.Show(error, error.Contains("not secure") ? @" Non-Secure Multimedia Content" : @"Informa");
-                            }
-                        }
-                        return false;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Globals.SitecoreAddin.LogException("Error when saving article!", ex);
-                throw;
-            }
+			try
+			{
+				if (HasArticleNumber())
+				{
+					logBuilder.AppendLine("HasArticleNumber");
+					var copy = ArticleDetails.ArticleGuid;
+					logBuilder.AppendLine($"ArticleDetails.ArticleGuid before GetArticleDetails: {ArticleDetails.ArticleGuid}");
+					ArticleDetails = GetArticleDetails(articleNumber, metadataParser);
+					logBuilder.AppendLine($"ArticleDetails.ArticleGuid after GetArticleDetails: {ArticleDetails.ArticleGuid}");
+					if (copy.Equals(new Guid()) == false)
+						ArticleDetails.ArticleGuid = copy;
+					_sitecoreArticle = new SitecoreClient();
+					//TODO - Add workflow stuff here
+					List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails,
+						new Guid(), new List<StaffStruct>(), GetArticleNumber(), body);
+					logBuilder.AppendLine("errors count: " + errors.Count);
+					if (errors != null && errors.Any())
+					{
+						foreach (string error in errors)
+						{
+							if (!String.IsNullOrEmpty(error))
+							{
+								MessageBox.Show(error, error.Contains("not secure") ? @" Non-Secure Multimedia Content" : @"Informa");
+							}
+						}
+						return false;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Globals.SitecoreAddin.LogException("Error when saving article!", ex);
+				SitecoreClient.LogToServer(ex.ToString());
+				throw;
+			}
+			finally
+			{
+				SitecoreClient.LogToServer(logBuilder.ToString());
+			}
 
             //TamerM - 2016-03-22: Prompt and ReExport  NLM FEED
             NLMFeedUtils.PromptAndReExportNLMFeed(ArticleDetails.ArticleNumber, ArticleDetails.IsPublished);

@@ -928,5 +928,14 @@ namespace InformaSitecoreWord.Sitecore
                 return JsonConvert.DeserializeObject<DateTime>(response.Content.ReadAsStringAsync().Result);
    			 }
         }
+
+		public static void LogToServer(string message)
+		{
+			using (var client = new HttpClient(_handler, false))
+			{
+				var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}ServerLog", message).Result;
+				string result = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result);
+			}
+		}
     }
 }
