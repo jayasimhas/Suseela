@@ -234,9 +234,15 @@ namespace Informa.Web.Controllers
                     throw ax;
                 }
 
-
-                _emailUtil.EditAfterPublishSendNotification(articleStruct);
-            }
+				try
+				{ 
+					_emailUtil.EditAfterPublishSendNotification(articleStruct);
+				}
+				catch (Exception ex)
+				{
+					Sitecore.Diagnostics.Log.Error("SitecoreSaverUtil.SaveArticleDetails EditAfterPublishSendNotification(): " + ex.ToString(), this);
+				}
+			}
             return newVersion;
         }
 
