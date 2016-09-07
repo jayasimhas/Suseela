@@ -143,7 +143,7 @@
 
         function UpdateEditorialNote(itemID) {
 
-            var text = $("body").find('textarea[itemID=' + itemID + ']').val();
+            var text = $("body").find('textarea[itemID="' + itemID + '"]').val();
             $.ajax({
                 type: "POST",
                 url: "/VWB/services/virtualwhiteboard.asmx/UpdateEditorialNotes",
