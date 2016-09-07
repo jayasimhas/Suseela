@@ -531,7 +531,6 @@ namespace InformaSitecoreWord.UI
                 Embargoed = sitecoreArticleDetails.Embargoed,
                 FeaturedImageCaption = sitecoreArticleDetails.FeaturedImageCaption,
                 FeaturedImageSource = sitecoreArticleDetails.FeaturedImageSource,
-                NotificationText = sitecoreArticleDetails.NotificationText
             };
 
             //RelatedInlineArticles = sitecoreArticleDetails.RelatedInlineArticles.ToList(),
