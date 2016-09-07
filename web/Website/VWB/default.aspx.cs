@@ -327,8 +327,8 @@ namespace Elsevier.Web.VWB
 				{
 					BuildReport();
 					string url = $"{IssuePageUrl}{result.IssueId}";
-					Response.Write($"<script>window.open('{ResolveUrl(url)}','_blank')</script>");
-				}
+                    ClientScript.RegisterStartupScript(GetType(), "", $"<script>window.open('{ResolveUrl(url)}','_blank')</script>");
+                }
 				else
 				{
 					throw new Exception($"Failed to created new issue, error: {result.DebugErrorMessage}");
