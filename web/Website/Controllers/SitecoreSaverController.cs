@@ -626,4 +626,15 @@ namespace Informa.Web.Controllers
 			return new ReExportArticleNlm().ReExport(articleNumber);
 		}
 	}
+
+	[Route]
+	public class ServerLogController : ApiController
+	{
+		[HttpPost]
+		//[Authorize]
+		public void Post([FromBody] string message)
+		{
+			Sitecore.Diagnostics.Log.Warn("Incoming message from WordPlugin: " + message, this);
+		}
+	}
 }
