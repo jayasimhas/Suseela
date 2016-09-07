@@ -357,27 +357,29 @@ namespace Informa.Web.Controllers
         /// <param name="articleStruct"></param>
         public void SaveArticleDetailsAndText(ArticleItem article, string articleText, ArticleStruct articleStruct)
         {
-			try { 
-            using (new SecurityDisabler())
-            {
-                article = SaveArticleDetails(article, articleStruct, true, true);
-                string parsedText = ParseXmltoHtml(articleText);
-                article.Body = articleText;
-                if (articleText != parsedText)
-                {
-                    article.Body = parsedText;
-                }
+			try
+			{ 
+				using (new SecurityDisabler())
+				{
+					article = SaveArticleDetails(article, articleStruct, true, true);
+					string parsedText = ParseXmltoHtml(articleText);
+					article.Body = articleText;
+					if (articleText != parsedText)
+					{
+						article.Body = parsedText;
+					}
 
-                string companyIdsCsv;
-                article.Body = CompanyTokenizer.ReplaceStrongCompanyNamesWithToken(articleText, out companyIdsCsv);
-                article.Referenced_Companies = companyIdsCsv;
+					string companyIdsCsv;
+					article.Body = CompanyTokenizer.ReplaceStrongCompanyNamesWithToken(articleText, out companyIdsCsv);
+					article.Referenced_Companies = companyIdsCsv;
 
-                _sitecoreMasterService.Save(article);
-            }
+					_sitecoreMasterService.Save(article);
+				}
 			}
 			catch (Exception ex)
 			{
 				Sitecore.Diagnostics.Log.Error("SaveArticleDetailsAndText: " + ex.ToString(), this);
+				throw;
 			}
 		}
 
