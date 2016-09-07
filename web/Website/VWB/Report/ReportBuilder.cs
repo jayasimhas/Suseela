@@ -174,7 +174,7 @@ namespace Elsevier.Web.VWB.Report
 
 			using (new Sitecore.SecurityModel.SecurityDisabler())
 			{
-				string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
+				string searchPageId = Constants.VWBSearchPageId;
 				string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
 				string url = string.Format("{0}://{1}/api/informasearch?pId={2}&sortBy=plannedpublishdate&sortOrder=desc", HttpContext.Current.Request.Url.Scheme, hostName, searchPageId);
 

@@ -10,9 +10,9 @@ namespace Informa.Library.Utilities.References
 		public const string MasterDb = "master";
 		public const string WebDb = "web";
 
-	    public const string AuthorsIndexName = "informa_authors";
+		public const string AuthorsIndexName = "informa_authors";
 
-        public const string ContentRootNode = "{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}";
+		public const string ContentRootNode = "{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}";
 
 		public const string ScripPublicationName = "Scrip Intelligence";
 
@@ -23,11 +23,11 @@ namespace Informa.Library.Utilities.References
 
 		public const string CryptoKey = "Ajv4FMtL7Iuq3H04ZkQC";
 
-	    public const string StrategicTransactionsComponent = "{7072BDB1-1398-4C51-986F-404251CF3E8A}";
-        public const string DCDSubscribeComponent = "{602FABB7-E964-45B2-A8DF-E29356A7A8ED}";
-        
-        public const string VirtualWhiteboardIssuesFolder = "{ECE677C9-3CC5-41F5-ADCB-D103C60783A7}";
-	    public const string VirtualWhiteboardArchivedIssuesFolder = "{AAB11244-7D15-4A43-A709-DC8951893FD2}";
+		public const string StrategicTransactionsComponent = "{7072BDB1-1398-4C51-986F-404251CF3E8A}";
+		public const string DCDSubscribeComponent = "{602FABB7-E964-45B2-A8DF-E29356A7A8ED}";
+
+		public const string VirtualWhiteboardIssuesFolder = "{ECE677C9-3CC5-41F5-ADCB-D103C60783A7}";
+		public const string VirtualWhiteboardArchivedIssuesFolder = "{AAB11244-7D15-4A43-A709-DC8951893FD2}";
 
 		public const string ScripRootNode = "{3818C47E-4B75-4305-8F01-AB994150A1B0}";
 		public const string ScripRootNodeIntials = "SC";
@@ -72,10 +72,12 @@ namespace Informa.Library.Utilities.References
 				};
 
 		public static int[] PerPageSizes = { 10, 20, 50 };
-        public static string NavigationItemTemplateID = "{354B0538-CB81-4B26-A25E-7B5DBA03C2F5}";
+		public static string NavigationItemTemplateID = "{354B0538-CB81-4B26-A25E-7B5DBA03C2F5}";
+		public static string VWBSearchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
 
 		public static class QueryString
 		{
+			public const string PageId = "pId";
 			public const string InProgressKey = "inprogress";
 			public const string SearchHeadlinesOnly = "headlinesOnly";
 			public const string PerPageKey = "perPage";
@@ -87,8 +89,8 @@ namespace Informa.Library.Utilities.References
 			public const string TimeKey = "time";
 			public const string Author = "author";
 			public const string AuthorFullName = "authorName";
-            public const string Company = "companies";
-            public const string Publication = "publication";
+			public const string Company = "companies";
+			public const string Publication = "publication";
 		}
 
 		public static class SettingKeys
