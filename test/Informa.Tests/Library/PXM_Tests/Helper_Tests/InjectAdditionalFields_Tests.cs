@@ -52,7 +52,7 @@ namespace Informa.Tests.Library.PXM_Tests.Helper_Tests
 
             // ASSERT
             Assert.AreEqual(
-                "< Div class ='root' data-test=\"7\"    ><pre><h1 class=\"title\">Moose attacks on the rise!</h1></pre><pre><h2 class=\"subtitle\">j/k, lolz</h2></pre><p>Only safe while gurgling!</p></div>",
+                "< Div class ='root' data-test=\"7\"    ><h1 class=\"title\">Moose attacks on the rise!</h1><h2 class=\"subtitle\">j/k, lolz</h2><p>Only safe while gurgling!</p></div>",
                 result);
         }
 
@@ -67,7 +67,7 @@ namespace Informa.Tests.Library.PXM_Tests.Helper_Tests
             var result = _injectAdditionalFields.GetTitlesHtml(fakeArticle);
 
             // ASSERT
-            Assert.AreEqual("<pre><h1 class=\"title\">Moose attacks on the rise!</h1></pre>", result);
+            Assert.AreEqual("<h1 class=\"title\">Moose attacks on the rise!</h1>", result);
         }
 
         [Test]
@@ -83,7 +83,7 @@ namespace Informa.Tests.Library.PXM_Tests.Helper_Tests
 
             // ASSERT
             Assert.AreEqual(
-                "<pre><h1 class=\"title\">Moose attacks on the rise!</h1></pre><pre><h2 class=\"subtitle\">j/k, lolz</h2></pre>",
+                "<h1 class=\"title\">Moose attacks on the rise!</h1><h2 class=\"subtitle\">j/k, lolz</h2>",
                 result);
         }
 
