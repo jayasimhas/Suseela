@@ -146,7 +146,8 @@ namespace Informa.Web.Controllers
 
         public JsonResult<List<TaxonomyStruct>> Get(string searchTerm)
         {
-            var taxonomyItem = _sitecoreService.GetItem<Item>(new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}"));
+            var taxoGuid = new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}");
+            var taxonomyItem = _sitecoreService.GetItem<Item>(taxoGuid);
             if (taxonomyItem == null)
             {
                 return null;
@@ -160,7 +161,7 @@ namespace Informa.Web.Controllers
             {
                 children = taxonomyItem.Axes.GetDescendants().ToList();
             }
-            var matches = children.Select(child => new TaxonomyStruct { ID = child.ID.Guid, Name = child.DisplayName }).ToList();
+            var matches = children.Select(child => new TaxonomyStruct { ID = child.ID.Guid, Name = child.DisplayName, Section = child.ParentID.Guid.Equals(taxoGuid) ? null : child.ParentID.Guid.ToString() }).ToList();
 
             return Json(matches);
 

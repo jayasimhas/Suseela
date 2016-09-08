@@ -451,7 +451,7 @@ namespace InformaSitecoreWord.UI.Controllers
         {
             string lcKey = text.ToLower();
 
-			List<TaxonomyStruct> list = CompleteList.Where(t => t.Name.ToLower().Contains(lcKey)).ToList();
+            List<TaxonomyStruct> list = CompleteList.Where(t => t.Section != null && t.Name.ToLower().Contains(lcKey)).ToList();
             list.Sort(new TaxonomyComparer(text));
 
             return list;
