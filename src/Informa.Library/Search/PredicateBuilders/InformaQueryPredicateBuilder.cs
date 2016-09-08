@@ -38,7 +38,7 @@ namespace Informa.Library.Search.PredicateBuilders
 			if (_request.PageId == Constants.VWBSearchPageId)
 			{
 				//VWB:  Filter out non Article items
-				predicate = predicate.Or(x => x.TemplateName == Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticleConstants.TemplateName);
+				predicate = predicate.And(x => x.TemplateName == Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IArticleConstants.TemplateName);
 			}
 			else
 			{
