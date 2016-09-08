@@ -7,7 +7,7 @@
 	ANALYTICS DATA
 	* * */
 	var analytics_data = {
-		"actual_publish_date": "@Model.ArticlePublishDate",
+		//"actual_publish_date": "@Model.ArticlePublishDate",
 		"article_author": "@Html.Raw(Model.ArticleAuthors)",
 		"article_content_type": "@Model.ArticleContentType",
 		"article_embargo": "@Model.ArticleEmbargoed",
@@ -45,6 +45,9 @@
 	    "deal": "@Model.DealName",
         "company_name": "@Model.CompanyName"
 	};
+
+    if ('@Model.ArcticleNumber' != '')
+        analytics_data["actual_publish_date"] = "@Model.ArticlePublishDate";
 
 	var utag_data = analytics_data;
 
