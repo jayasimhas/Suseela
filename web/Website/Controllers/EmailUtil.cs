@@ -222,7 +222,15 @@ namespace Informa.Web.Controllers
 
             replacements["#Authors#"] = string.IsNullOrEmpty(authorString) ? "No authors selected" : authorString;
             replacements["#Publication#"] = publication;
+
+            replacements["#show_notes#"] = "Notes: ";
             replacements["#Body_Content#"] = articleStruct.NotificationText;
+            if (articleStruct.NotificationText == "")
+            {
+                replacements["#show_notes#"] = "";
+                replacements["#Body_Content#"] = "";
+            } 
+
             replacements["#content_editor#"] = Sitecore.Context.User.Profile.FullName;
             replacements["#current_time#"] = DateTime.Now.ToString();
 
@@ -242,8 +250,9 @@ namespace Informa.Web.Controllers
 
             List<WorkflowEvent> workflowHistory = GetWorkflowHistory(article);
             replacements["#history#"] = HistoryTableCreation(workflowHistory);
+            var eHtml= emailHtml.ReplacePatternCaseInsensitive(replacements);
+            return eHtml;
 
-            return emailHtml.ReplacePatternCaseInsensitive(replacements);
         }
 
         public string CreateEditAfterPublishBody(ArticleStruct articleStruct, string emailTitle, string publication)
