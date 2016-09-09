@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Informa.Web", "web\Website\Informa.Web.csproj", "{EFE15F11-B900-4515-A45E-5B817C483A36}"
 EndProject
@@ -39,11 +39,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", 
 	ProjectSection(SolutionItems) = preProject
 		config\env\default.properties = config\env\default.properties
 		config\env\dev.properties = config\env\dev.properties
+		config\env\intCD.properties = config\env\intCD.properties
+		config\env\intCM.properties = config\env\intCM.properties
 		config\env\local.properties = config\env\local.properties
 		config\env\local.properties.example = config\env\local.properties.example
 		config\env\prodCD.properties = config\env\prodCD.properties
 		config\env\prodCD2.properties = config\env\prodCD2.properties
 		config\env\prodCM.properties = config\env\prodCM.properties
+		config\env\qaCD.properties = config\env\qaCD.properties
+		config\env\qaCM.properties = config\env\qaCM.properties
 		config\env\stageCD.properties = config\env\stageCD.properties
 		config\env\stageCM.properties = config\env\stageCM.properties
 		config\env\uat.properties = config\env\uat.properties
