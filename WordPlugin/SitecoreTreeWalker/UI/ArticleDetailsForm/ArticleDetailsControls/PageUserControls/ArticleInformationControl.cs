@@ -24,6 +24,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         protected DocumentCustomProperties _documentCustomProperties;
 
         private string ArticleNumber;
+        public Guid ArticleGuid;
+        public bool IsPublished;
 
         public bool _isLive;
 
@@ -629,6 +631,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             }
 
             ArticleNumber = articleDetails.ArticleNumber;
+            ArticleGuid = articleDetails.ArticleGuid;
+            IsPublished = articleDetails.IsPublished;
             uxEmbargoed.Checked = articleDetails.Embargoed;
             uxMediaTypes.SelectedValue = articleDetails.MediaType;
             uxLabel.SelectedValue = articleDetails.Label;

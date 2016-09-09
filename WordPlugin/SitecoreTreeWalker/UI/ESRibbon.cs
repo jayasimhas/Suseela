@@ -472,7 +472,8 @@ namespace InformaSitecoreWord.UI
                 {
                     var copy = ArticleDetails.ArticleGuid;
                     ArticleDetails = GetArticleDetails(articleNumber, metadataParser);
-                    ArticleDetails.ArticleGuid = copy;
+                    if (copy.Equals(new Guid()) == false)
+                        ArticleDetails.ArticleGuid = copy;
                     _sitecoreArticle = new SitecoreClient();
                     //TODO - Add workflow stuff here
                     List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails,
@@ -511,6 +512,8 @@ namespace InformaSitecoreWord.UI
             string ExecutiveSummary = metadataParser.ExecutiveSummary;
             var articleDetails = new ArticleStruct
             {
+                ArticleGuid = sitecoreArticleDetails.ArticleGuid,
+                IsPublished = sitecoreArticleDetails.IsPublished,
                 ArticleNumber = sitecoreArticleDetails.ArticleNumber,
                 WebPublicationDate = sitecoreArticleDetails.WebPublicationDate,
                 Title = metadataParser.Title.Trim(),
@@ -527,7 +530,7 @@ namespace InformaSitecoreWord.UI
                 ArticleSpecificNotifications = sitecoreArticleDetails.GlobalNotifications,
                 Embargoed = sitecoreArticleDetails.Embargoed,
                 FeaturedImageCaption = sitecoreArticleDetails.FeaturedImageCaption,
-                FeaturedImageSource = sitecoreArticleDetails.FeaturedImageSource
+                FeaturedImageSource = sitecoreArticleDetails.FeaturedImageSource,
             };
 
             //RelatedInlineArticles = sitecoreArticleDetails.RelatedInlineArticles.ToList(),

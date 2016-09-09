@@ -104,8 +104,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			var articleDetails = new ArticleStruct();
 			try
 			{
-				articleDetails.ArticleNumber = pageArticleInformationControl.GetArticleNumber();
-				articleDetails.WebPublicationDate = pageArticleInformationControl.GetWebPublishDate();
+                articleDetails.ArticleGuid = pageArticleInformationControl.ArticleGuid;
+                articleDetails.IsPublished = pageArticleInformationControl.IsPublished;
+                articleDetails.ArticleNumber = pageArticleInformationControl.GetArticleNumber();
+                articleDetails.WebPublicationDate = pageArticleInformationControl.GetWebPublishDate();
 				articleDetails.Title = metadataParser.Title.Trim();
 				articleDetails.Summary = ExecutiveSummary;
 				articleDetails.Subtitle = metadataParser.Subtitle;

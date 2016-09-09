@@ -289,8 +289,8 @@ namespace Informa.Web.Controllers
 
             replacements["#Authors#"] = string.IsNullOrEmpty(authorString) ? "No authors selected" : authorString;
             replacements["#Publication#"] = publication;
-            replacements["#Body_Content#"] = articleStruct.NotificationText;
-            replacements["#content_editor#"] = Sitecore.Context.User.Profile.FullName;
+			replacements["#Body_Content#"] = articleStruct.NotificationText == null ? string.Empty : articleStruct.NotificationText;
+			replacements["#content_editor#"] = Sitecore.Context.User.Profile.FullName;
             replacements["#current_time#"] = DateTime.Now.ToString();
 
             List<WorkflowEvent> workflowHistory = GetWorkflowHistory(article);
