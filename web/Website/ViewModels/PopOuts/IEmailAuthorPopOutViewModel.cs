@@ -19,5 +19,6 @@
         string EmptyFieldText { get; }
         string NoticeText { get; }
         string AuthorName { get; }
+				string CaptchaSiteKey { get; }
 	}
 }

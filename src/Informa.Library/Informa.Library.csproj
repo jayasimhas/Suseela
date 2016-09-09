@@ -343,6 +343,7 @@
     <Compile Include="Authors\ComputedFields\IsValid.cs" />
     <Compile Include="Authors\IAuthorAlertOptions.cs" />
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
+    <Compile Include="Services\Captcha\RecaptchaService.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\CompanyRegisterUserError.cs" />

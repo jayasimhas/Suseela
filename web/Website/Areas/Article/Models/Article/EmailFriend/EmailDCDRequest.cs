@@ -11,5 +11,6 @@ namespace Informa.Web.Areas.Article.Models.Article.EmailFriend {
         public string SenderEmail { get; set; }
         public string PersonalMessage { get; set; }
         public string Subject { get; set; }
+				public string RecaptchaResponse { get; set; }
     }
 }

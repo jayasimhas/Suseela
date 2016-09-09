@@ -8,5 +8,6 @@
 		public string PersonalMessage { get; set; }
 		public string ArticleNumber { get; set; }
 		public string ArticleTitle { get; set; }
+		public string RecaptchaResponse { get; set; }
 	}
 }
