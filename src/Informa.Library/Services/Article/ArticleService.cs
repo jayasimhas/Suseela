@@ -37,12 +37,14 @@ namespace Informa.Library.Services.Article
             ICacheProvider cacheProvider,
             ITextTranslator textTranslator,
             ISiteRootsContext siteRootsContext,
-            IGlobalSitecoreService globalService)
+            IGlobalSitecoreService globalService, 
+            ISiteRootContext siteRootContext) // JIRA IPMP-56 
         {
             CacheProvider = cacheProvider;
             TextTranslator = textTranslator;
             SiteRootsContext = siteRootsContext;
             GlobalService = globalService;
+            SiteRootContext = siteRootContext; // JIRA IPMP-56 
         }
 
         private string CreateCacheKey(string suffix)
