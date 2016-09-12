@@ -8,17 +8,17 @@
     <h3>@Html.Raw(Model.Sub_Title)</h3>
     @if (Model.IsActiveLegacyBrand)
     {
-        if (Model.DisplayLegacyPublication && Model.LagacyBrandUrl.Count == 1)
+        if (Model.DisplayLegacyPublication)
         {
+            if (Model.LagacyBrandUrl.Count == 1)
+            { 
             <p class="article-legacy-publication">@Model.LegacyPublicationText @Model.LagacyBrandUrl[0]</p>
-        }
-        else
-        {
-            <p class="article-legacy-publication">
+            }
+            else
+            {
                 @Model.LegacyPublicationText <a href=@Model.LagacyBrandUrl[1]>@Model.LagacyBrandUrl[0]</a>
-            </p>
+            }
         }
-
     }
     else
     {
