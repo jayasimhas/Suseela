@@ -97,6 +97,11 @@ function formController(opts) {
 					}
 				});
 
+				// add recaptcha if it exists in the form
+				var captchaResponse = grecaptcha.getResponse();
+				if (captchaResponse !== undefined)
+					inputData['RecaptchaResponse'] = captchaResponse;
+
 				if(!$(currentForm).data('on-submit')) {
 					console.warn('No submit link for form');
 				}
@@ -144,6 +149,9 @@ function formController(opts) {
 						if (opts.failureCallback) {
 							opts.failureCallback(currentForm,response);
 						}
+
+						// reset captcha if available
+						grecaptcha.reset();
 					},
 					complete: function() {
 						setTimeout((function() {

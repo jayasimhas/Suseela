@@ -7,4 +7,7 @@
   
   <add key="NewRelic.AppName" value="${NewRelic.AppName}" />
   <add key="unlocktimer" value="20" />
+
+  <add key="Recaptcha.SiteKey" value="${Recaptcha.SiteKey}" />
+  <add key="Recaptcha.SecretKey" value="${Recaptcha.SecretKey}" />
 </appSettings>
