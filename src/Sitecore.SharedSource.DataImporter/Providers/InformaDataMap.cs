@@ -45,7 +45,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 			List<Dictionary<string, string>> l = new List<Dictionary<string, string>>();
 
-			long artNumber = GetNextArticleNumber();
+			long artNumber = 100000; //GetNextArticleNumber();
 
 			string[] files = Directory.GetFiles(this.Query);
 			foreach (string f in files)
@@ -62,14 +62,15 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				//escenic field values
 				string authorNode = "STORYAUTHORNAME";
 				ao.Add(authorNode, AuthorHelper.Authors(GetXMLData(d, authorNode)));
-				string bodyNode = "STORYBODY";
+				string bodyNode = "BODY";
 				ao.Add(bodyNode, GetXMLData(d, bodyNode));
-				string titleNode = "STORYTITLE";
+				string titleNode = "TITLE";
 				string cleanTitleHtml = CleanTitleHtml(GetXMLData(d, titleNode));
 				ao.Add(titleNode, cleanTitleHtml);
 				ao.Add("FILENAME", cleanTitleHtml);
 				ao.Add("META TITLE OVERRIDE", cleanTitleHtml);
 				ao.Add("ARTICLEID", curFileName.Replace(".xml", ""));
+				ao.Add("ABSTRACT", GetXMLData(d, "ABSTRACT"));
 
 				l.Add(ao);
 				artNumber++;
@@ -77,7 +78,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				//autonomy fields
 				string autFile = $@"{this.Query}\..\Autonomy\{curFileName}";
 
-				List<string> autNodes = new List<string>() { "CATEGORY", "COMPANY", "STORYUPDATE", "SECTION", "COUNTRY", "KEYWORD", "THERAPY_SECTOR", "TREATABLE_CONDITION" };
+				List<string> autNodes = new List<string>() { "CATEGORY", "COMPANY", "ARTICLEPUBDATE", "STORYUPDATE", "SECTION" };
 				//if no autonomy file then fill fields with empty
 				if (!File.Exists(autFile))
 				{

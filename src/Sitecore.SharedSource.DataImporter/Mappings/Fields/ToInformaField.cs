@@ -149,8 +149,10 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 			List<string> removeAttrs = new List<string>() { "style", "align", "height", "width" };
 			DateTime dt = new DateTime(1800, 1, 1);
 			DateField df = newItem.Fields["Created Date"];
-			if (df != null && !string.IsNullOrEmpty(df.Value))
-				dt = df.DateTime;
+			DateTime fromIso = new DateTime(Sitecore.DateUtil.IsoDateToDateTime(df.Value).Ticks, DateTimeKind.Utc);
+			DateTime utcDate = Sitecore.DateUtil.ToUniversalTime(fromIso);
+			if (utcDate != null && utcDate != DateTime.MinValue)
+				dt = utcDate;
 			string newImportValue = CleanHtml(map, newItem.Paths.FullPath, dt, importValue, removeTags, removeAttrs);
 
 			//store the imported value as is
