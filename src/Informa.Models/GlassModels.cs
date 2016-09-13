@@ -26801,14 +26801,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 						/// </summary>
 						[SitecoreField(ISite_ConfigConstants.Publication_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Publication_Code  {get; set;}
-										/// <summary>
-						/// The Publication Name field.
-						/// <para></para>
-						/// <para>Field Type: Single-Line Text</para>		
-						/// <para>Field ID: 9aee6c51-8392-4461-b24c-bf22acf5b07f</para>
-						/// <para>Custom Data: </para>
-						/// </summary>
-						[SitecoreField(ISite_ConfigConstants.Publication_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        //Biswajit JIRA IPMP-56           
+        /// <summary>
+        /// The Legacy Brand Active field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: {FA9CC7FF-C51B-40F1-B688-5AB739BEEEF7}</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Legacy_Brand_ActiveFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Legacy_Brand_Active { get; set; }
+        // JIRA IPMP-56
+
+        /// <summary>
+        /// The Publication Name field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 9aee6c51-8392-4461-b24c-bf22acf5b07f</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ISite_ConfigConstants.Publication_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
 						string Publication_Name  {get; set;}
 										/// <summary>
 						/// The Publication Theme field.
