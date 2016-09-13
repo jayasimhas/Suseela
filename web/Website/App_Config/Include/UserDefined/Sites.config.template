@@ -5,7 +5,7 @@
           database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
 				  dictionaryDomain="InVivoDictionary"
 				  hostName="${Site.Domain.InVivo}" targetHostName="${Site.Domain.InVivoTargetHostName}"
-				  rootPath="/sitecore/content/InVivo" startItem="/home"
+				  rootPath="/sitecore/content/Pharma/InVivo" startItem="/home"
 				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
 				  enableTracking="true" allowDebug="true"
           enablePreview="true" enableWebEdit="true"
@@ -15,7 +15,7 @@
           database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
 				  dictionaryDomain="MedtechInsightDictionary"
 				  hostName="${Site.Domain.MedtechInsight}" targetHostName="${Site.Domain.MedtechInsightTargetHostName}"
-				  rootPath="/sitecore/content/MedtechInsight" startItem="/home"
+				  rootPath="/sitecore/content/Pharma/MedtechInsight" startItem="/home"
 				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
 				  enableTracking="true" allowDebug="true"
           enablePreview="true" enableWebEdit="true"
@@ -25,7 +25,7 @@
           database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
 				  dictionaryDomain="PinkSheetDictionary"
 				  hostName="${Site.Domain.PinkSheet}" targetHostName="${Site.Domain.PinkSheetTargetHostName}"
-				  rootPath="/sitecore/content/PinkSheet" startItem="/home"
+				  rootPath="/sitecore/content/Pharma/PinkSheet" startItem="/home"
 				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
 				  enableTracking="true" allowDebug="true"
           enablePreview="true" enableWebEdit="true"
@@ -35,7 +35,7 @@
           database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
 				  dictionaryDomain="RoseSheetDictionary"
 				  hostName="${Site.Domain.RoseSheet}" targetHostName="${Site.Domain.RoseSheetTargetHostName}"
-				  rootPath="/sitecore/content/RoseSheet" startItem="/home"
+				  rootPath="/sitecore/content/Pharma/RoseSheet" startItem="/home"
 				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
 				  enableTracking="true" allowDebug="true"
           enablePreview="true" enableWebEdit="true"
@@ -45,24 +45,34 @@
           database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
 				  dictionaryDomain="ScriptIntelligenceDictionary"
 				  hostName="${Site.Domain.Scrip}" targetHostName="${Site.Domain.ScripTargetHostName}"
-				  rootPath="/sitecore/content/ScripIntelligence" startItem="/home"
+				  rootPath="/sitecore/content/Pharma/ScripIntelligence" startItem="/home"
 				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
 				  enableTracking="true" allowDebug="true"
           enablePreview="true" enableWebEdit="true"
           enableDebugger="true" disableClientData="false">
       </site>
+      <site patch:before="site[@name='website']" name="commodities"
+         database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
+         dictionaryDomain="ScriptIntelligenceDictionary"
+         hostName="${Site.Domain.Scrip}" targetHostName="${Site.Domain.ScripTargetHostName}"
+         rootPath="/sitecore/content/Agri/commodities" startItem="/home"
+         cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+         enableTracking="true" allowDebug="true"
+         enablePreview="true" enableWebEdit="true"
+         enableDebugger="true" disableClientData="false">
+      </site>
       <site patch:before="site[@name='website']" name="LegacyRedirect"
             database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
             hostName="${Site.Domain.LegacyRedirect}"
             dictionaryDomain="LegacyRedirectDictionary"
-            rootPath="/sitecore/content/LegacyRedirect" startItem="/home"
+            rootPath="/sitecore/content/Pharma/LegacyRedirect" startItem="/home"
             cacheHtml="true" htmlCacheSize="50MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
             enableTracking="true" allowDebug="true"
             enablePreview="true" enableWebEdit="true"
             enableDebugger="true" disableClientData="false">
       </site>
       <site name="website">
-        <patch:attribute name="rootPath">/sitecore/content/ScripIntelligence</patch:attribute>
+        <patch:attribute name="rootPath">/sitecore/content/Pharma/ScripIntelligence</patch:attribute>
         <patch:attribute name="dictionaryDomain">ScriptIntelligenceDictionary</patch:attribute>
         <patch:attribute name="targetHostName">${project.domain}</patch:attribute>
         <patch:attribute name="hostName">${project.domain}</patch:attribute>
