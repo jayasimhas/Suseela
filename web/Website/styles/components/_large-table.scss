@@ -1,0 +1,196 @@
+	.large_table{
+		
+		.large-table-responsive{
+			box-sizing: border-box;
+			width:100%;
+			.table{
+				border-collapse: inherit;
+				border: 1px solid $color-light-gray;
+				width:100%;
+				box-sizing: border-box;
+				tr:nth-child(odd) {background-color: $color-concrete-table-gray;}
+				tr.table_head{
+				  background-color: $color-ship-gray;
+				  color: $color-white;	
+				  font-style: normal;
+				  @include textMix('Roboto', 1.125em, 400);
+					span{
+						@include textMix('Roboto', 1.125em, 700);
+						padding-left:10px;
+						
+					}
+				}
+				 th{
+					@include textMix('Roboto', 1.125em, 400);
+					font-style: normal;
+					text-align: center;
+					background-color: $color-red;
+					color:$color-white;
+				  }
+				.graybg{
+				  background-color: $color-concrete-table-gray;
+				  td{ padding-left:10px;}
+				}
+				td, th{
+					padding: 5px 0;
+					border-left: 1px solid $color-white;
+				}
+				td:first-child, th:first-child{
+					border-left: 0 !important;
+				}
+				
+				.R16{
+				   @include textMix('Roboto', 1em, 400);
+				   font-style: normal;
+				}
+			}
+			.R16{
+				   @include textMix('Roboto', 1em, 400);
+				   font-style: normal;
+				}
+			
+			h1.primary_heading{
+				@include textMix('Roboto Condensed', 2.9em, 400);
+				 font-style: normal;
+				 color: $color-zeus-black;
+				 margin-top:45px;
+			}
+			h5.secondary_heading{
+				@include textMix('PT Serif', 1.68em, 400);
+				   font-style: italic;
+				   color: $color-zeus-black;
+				   margin-top:30px;
+				@include breakpoint('small') {
+					margin-bottom:30px;
+				}
+				@include breakpoint('medium') {
+					margin-bottom:30px;
+				}
+				@include breakpoint('large') {
+					margin-bottom:30px;
+				}
+			}
+			.pad-10{
+				padding: 10px;
+			}
+			hr{
+			  margin: 35px 0 35px 0;
+			  @include breakpoint('small') {
+						display: none;
+				}
+				@include breakpoint('medium') {
+						display: none;
+				}
+				@include breakpoint('large') {
+						display: none;
+			}
+			}	
+				
+		}
+		.article-right-rail{
+			@include breakpoint('small') {
+						display: none;
+			}
+			@include breakpoint('medium') {
+						display: none;
+			}
+			@include breakpoint('large') {
+						display: none;
+			}
+		}
+		.visible-lg{
+			@include breakpoint('small') {
+						display: none;
+			}
+			@include breakpoint('medium-small') {
+						display: none;
+			}
+		}
+		.visible-sm{
+			display: none;
+			@include breakpoint('small') {
+						display: block;
+			}
+			@include breakpoint('medium-small') {
+						display: block;
+			}
+			position:relative;
+			width: 100%;
+			float: left;
+			.table_head{
+				background-color: $color-ship-gray;
+				color: $color-white;
+				.RB16{
+				   @include textMix('Roboto', 1.0625em, 700);
+				   font-style: normal;
+				}
+				.R16{
+				   @include textMix('Roboto', 1.0625em, 400);
+				   font-style: normal;
+				}
+			}
+			.states_heading{
+				position:relative;
+				float:left;
+				width:30%;
+				border-right:1px solid $color-light-gray; 
+				.redbg{
+					background-color: $color-red !important;
+				}	
+				div{
+					margin-bottom:10px;
+					padding:10px;
+				}
+				div:nth-child(odd){
+					background-color: $color-concrete-table-gray;
+				}
+			}
+			.RB16{
+				   @include textMix('Roboto', 1em, 700);
+				   font-style: normal;
+				}
+			.article{
+				width:100%;
+				text-align: center;
+				div:nth-child(odd){
+				 background-color: #f1f1f1;
+
+				}
+				.R16{
+				    height: 58px;
+					padding-top: 14px;
+					margin-top: 10px;
+				}
+				
+			}
+			.year_heading{
+			  background-color: #bb1528 !important;
+				color: white;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			.owl-dots{
+			  float: left;
+			  margin-top: 20px;
+			}
+			.owl-nav {
+				float:right;
+			}
+			.owl-item.active{
+				width:5% !important;
+				margin-right: 1px !important;
+			}
+			.owl-controls{
+				position:absolute;
+				top:-51px;
+				right: 0px;
+			}	
+			.owl-theme .owl-controls .owl-nav div{
+				background: none;
+				padding:0;
+				margin:0 3px;
+			}
+			
+		}
+	}
+	

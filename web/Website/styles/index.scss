@@ -13,7 +13,8 @@
 
 /* * * * VENDORS * * * */
 @import 'vendor/normalize';
-
+@import 'vendor/owl.carousel';
+@import 'vendor/owl.theme.default';
 
 /* * * * BASE * * * */
 @import 'base/colors'; // first!
@@ -47,6 +48,7 @@
 @import 'components/landscape-image-component';
 @import 'components/latest-news';
 @import 'components/lightbox-modal';
+@import 'components/large-table';
 @import 'components/main-menu';
 @import 'components/manually-curated-content';
 @import 'components/media-exhibit';
@@ -63,6 +65,8 @@
 @import 'components/sortable-table';
 @import 'components/sorting-arrows';
 @import 'components/sub-topic-links';
+@import 'components/table';
+@import 'components/tableau-landing'
 @import 'components/toggle-icons';
 @import 'components/tooltip';
 @import 'components/topic-featured-article';
