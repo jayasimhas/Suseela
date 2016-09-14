@@ -5,6 +5,10 @@ import Zepto from './zepto.min';
 import svg4everybody from './svg4everybody';
 import Cookies from './jscookie';
 
+// CAROUSEL
+//import highlight from './carousel/highlight.pack';
+import zeptoData from './carousel/zepto.data';
+//import app from './carousel/app';
 
 // CONTROLLERS
 import FormController from './controllers/form-controller';
@@ -35,6 +39,8 @@ window.jQuery = $;
 import selectivity from './selectivity-full';
 
 
+import video from './components/video-mini';
+import videomodal from './modal';
 // Make sure proper elm gets the click event
 // When a user submits a Forgot Password request, this will display the proper
 // success message and hide the form to prevent re-sending.
@@ -101,7 +107,6 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 $(document).ready(function() {
-
 
     var mediaTable = getParameterByName('mobilemedia');
     if(mediaTable=="true"){
@@ -571,6 +576,19 @@ $(document).ready(function() {
 		$('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
 			e.target !== this ? this.click() : $(e.target).toggleClass('is-active');
 		});
+		
+		 $('.show-demo').click(function(){
+			 $(this).closest('.js-toggle-demo').toggleClass('collapsed');
+				
+			 if($(this).parent().hasClass('collapsed')){
+				$('.hd').show();
+				$('.sd').hide();
+			 }else{
+				$('.sd').show();
+				$('.hd').hide();
+			 }
+		});
+		 
 
 	})();
 
@@ -975,4 +993,6 @@ window.findTooltips();
 	$(".selectivity-input .selectivity-single-select").each(function() {
 		$(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
 	});
+	
+	
 });

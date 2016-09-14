@@ -11,6 +11,7 @@ footer {
 	@include breakpoint('small') {
 		text-align: center;
 	}
+	clear: both;
 }
 
 footer a,
