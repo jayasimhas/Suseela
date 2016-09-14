@@ -6,9 +6,26 @@
 <div class="article-body-content">
     <h1>@Html.Raw(Model.Title)</h1>
     <h3>@Html.Raw(Model.Sub_Title)</h3>
-    @if (Model.DisplayLegacyPublication)
+    @if (Model.IsActiveLegacyBrand)
     {
-        <p class="article-legacy-publication">@Model.LegacyPublicationText</p>
+        if (Model.DisplayLegacyPublication)
+        {
+            if (Model.LagacyBrandUrl.Count == 1)
+            { 
+            <p class="article-legacy-publication">@Model.LegacyPublicationText @Model.LagacyBrandUrl[0]</p>
+            }
+            else
+            {
+                @Model.LegacyPublicationText <a href=@Model.LagacyBrandUrl[1]>@Model.LagacyBrandUrl[0]</a>
+            }
+        }
+    }
+    else
+    {
+        if (Model.DisplayLegacyPublication)
+        {
+            <p class="article-legacy-publication">@Model.LegacyPublicationText</p>
+        }
     }
     <div class="article-metadata">
         <ul>

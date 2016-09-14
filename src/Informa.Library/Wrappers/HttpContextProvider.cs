@@ -16,5 +16,6 @@ namespace Informa.Library.Wrappers
         public HttpContextBase Current => new HttpContextWrapper(HttpContext.Current);
 
         public Uri RequestUri => HttpContext.Current?.Request.Url;
+        //just for testing
     }
 }
