@@ -472,8 +472,9 @@ namespace InformaSitecoreWord.UI
                 {
                     var copy = ArticleDetails.ArticleGuid;
                     ArticleDetails = GetArticleDetails(articleNumber, metadataParser);
-                    if (copy.Equals(new Guid()) == false)
-                        ArticleDetails.ArticleGuid = copy;
+					//TamerM 2016-09-13: Removed the below since copy doesn't always contain the active document Guid and GetArticleDetails does return the ArticleGuid from the server
+                    //if (copy.Equals(new Guid()) == false)
+                        //ArticleDetails.ArticleGuid = copy;
                     _sitecoreArticle = new SitecoreClient();
                     //TODO - Add workflow stuff here
                     List<string> errors = _sitecoreArticle.SaveArticle(SitecoreAddin.ActiveDocument, ArticleDetails,
