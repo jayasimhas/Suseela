@@ -11,7 +11,6 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 using Informa.Library.Utilities.Extensions;
-using Informa.Models.Informa.Models.sitecore.templates.System.Dictionary;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Core.Caching;
 using Sitecore.Resources.Media;
@@ -30,21 +29,17 @@ namespace Informa.Library.Services.Article
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISiteRootsContext SiteRootsContext;
         protected readonly IGlobalSitecoreService GlobalService;
-        // JIRA IPMP-56
-        protected readonly ISiteRootContext SiteRootContext;
 
         public ArticleService(
             ICacheProvider cacheProvider,
             ITextTranslator textTranslator,
             ISiteRootsContext siteRootsContext,
-            IGlobalSitecoreService globalService, 
-            ISiteRootContext siteRootContext) // JIRA IPMP-56 
+            IGlobalSitecoreService globalService)
         {
             CacheProvider = cacheProvider;
             TextTranslator = textTranslator;
             SiteRootsContext = siteRootsContext;
             GlobalService = globalService;
-            SiteRootContext = siteRootContext; // JIRA IPMP-56 
         }
 
         private string CreateCacheKey(string suffix)
