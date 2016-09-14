@@ -11,7 +11,6 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 using Informa.Library.Utilities.Extensions;
-using Informa.Models.Informa.Models.sitecore.templates.System.Dictionary;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
 using Jabberwocky.Core.Caching;
 using Sitecore.Resources.Media;
@@ -30,21 +29,17 @@ namespace Informa.Library.Services.Article
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISiteRootsContext SiteRootsContext;
         protected readonly IGlobalSitecoreService GlobalService;
-        // JIRA IPMP-56
-        protected readonly ISiteRootContext SiteRootContext;
 
         public ArticleService(
             ICacheProvider cacheProvider,
             ITextTranslator textTranslator,
             ISiteRootsContext siteRootsContext,
-            IGlobalSitecoreService globalService, 
-            ISiteRootContext siteRootContext) // JIRA IPMP-56 
+            IGlobalSitecoreService globalService)
         {
             CacheProvider = cacheProvider;
             TextTranslator = textTranslator;
             SiteRootsContext = siteRootsContext;
             GlobalService = globalService;
-            SiteRootContext = siteRootContext; // JIRA IPMP-56 
         }
 
         private string CreateCacheKey(string suffix)
@@ -52,13 +47,13 @@ namespace Informa.Library.Services.Article
             return $"{nameof(ArticleService)}-{suffix}";
         }
 
-        public IEnumerable<string> GetLegacyPublicationNames(IArticle article)
+        public IEnumerable<string> GetLegacyPublicationNames(IArticle article, bool isLegacyBrandSelected = false)
         {
             string cacheKey = CreateCacheKey($"PublicationNames-{article._Id}");
-            return CacheProvider.GetFromCache(cacheKey, () => BuildLegacyPublicationNames(article));
+            return CacheProvider.GetFromCache(cacheKey, () => BuildLegacyPublicationNames(article, isLegacyBrandSelected));
         }
 
-        private IEnumerable<string> BuildLegacyPublicationNames(IArticle article)
+        private IEnumerable<string> BuildLegacyPublicationNames(IArticle article,bool isLegacyBarndSelected)
         {
             #region PharmaUsed
 
@@ -81,7 +76,7 @@ namespace Informa.Library.Services.Article
             {
                 if (g == null)
                     continue;
-                if (SiteRootContext.Item.Legacy_Brand_Active)
+                if (isLegacyBarndSelected)
                 {
                     if (((ITaxonomy_Item)g).URL == null)
                     {
@@ -152,13 +147,13 @@ namespace Informa.Library.Services.Article
             return DCDTokenMatchers.ProcessDCDTokens(text);
         }
 
-        public string GetLegacyPublicationText(IArticle article)
+        public string GetLegacyPublicationText(IArticle article, bool isLegacyBrandSelected = false)
         {
             // JIRA IPMP-56
 
             string legacyText = null;
             string legacyPublicationsText = null;
-            if (SiteRootContext.Item.Legacy_Brand_Active)
+            if (isLegacyBrandSelected)
             {
                 legacyText = TextTranslator.Translate("Article.LegacyPublications");
                 legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
@@ -240,6 +235,6 @@ namespace Informa.Library.Services.Article
             string fullLink = $"/VWB/Util/LoginRedirectToPreview.aspx?redirect={HttpUtility.UrlEncode(previewUrl)}";
 
             return fullLink;
-        }
+        }        
     }
 }
