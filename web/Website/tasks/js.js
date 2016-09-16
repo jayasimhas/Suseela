@@ -19,6 +19,7 @@ utils.setTaskConfig("js", {
         // Pass array instead of single file!
         src: [
             config.root + "/js/index.js",
+			config.root + "/js/owlCarousel.js",
             config.root + "/js/search/search.js",
 
             // Angular 1.x doesn't play well with CommonJS modules :(

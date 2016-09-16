@@ -37,8 +37,6 @@ window.toggleIcons = toggleIcons;
 /* Polyfill for scripts expecting `jQuery`. Also see: CSS selectors support in zepto.min.js */
 window.jQuery = $;
 import selectivity from './selectivity-full';
-
-
 import video from './components/video-mini';
 import videomodal from './modal';
 // Make sure proper elm gets the click event
