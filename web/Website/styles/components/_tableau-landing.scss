@@ -50,6 +50,7 @@
 					width: 50%;
 					float: left;
 					text-align: justify;
+					line-height: 30px;
 					color: $color-abbey-gray;
 					@include breakpoint('small') {
 						width:100%;
@@ -135,6 +136,7 @@
 				width: 50%;
 				clear: right;
 				padding: 15px;
+				line-height: 30px;
 				@include breakpoint('medium-small') {
 					width:100%;
 				}	
@@ -180,6 +182,7 @@
 			  clear: both;
 			  text-align: left;
 			  padding: 10px;
+			  line-height: 30px;
 			 p 
 			 {
 				margin-top:20px;
