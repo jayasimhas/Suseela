@@ -1099,6 +1099,7 @@ stopVideo.owl
 
 		// set Min
 		var minimum = this.dom.$oItems.eq(0).data('owl-item').indexAbs;
+		var i;
 		this.pos.min = 0;
 		this.pos.minValue = this.pos.items[minimum];
 
@@ -1354,7 +1355,7 @@ stopVideo.owl
 
 
 	Owl.prototype.updateActiveItems = function(){
-		var i,j,item,ipos,iwidth,wpos,stage,outsideView,foundCurrent;
+		var i,j,item,ipos,iwidth,wpos,stage,outsideView,foundCurrent,stageX,view;
 		// clear states
 		for(i = 0; i<this.num.items; i++){
 			this.dom.$items.eq(i).data('owl-item').active = false;
@@ -1965,7 +1966,7 @@ stopVideo.owl
 			style = this.dom.stage.style;
 
 		if(this.support3d){
-			translate = 'translate3d(' + posX + 'px'+',0px, 0px)';
+			var translate = 'translate3d(' + posX + 'px'+',0px, 0px)';
 			style[this.transformVendor] = translate;
 		} else if(this.state.isTouch){
 			style.left = posX+'px';

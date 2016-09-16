@@ -10,8 +10,9 @@
 			  font-family: "PT Serif", Georgia, serif;
 			  font-style: italic;
 			  font-weight: 400;
-			  color: $color-zeus-black;
+			  color: $color-abbey-gray;
 			  margin-bottom: 0.75rem;
+			  font-size: 1.5em;
 		}
 		.js-toggle-demo{
 			width: 100%;			
@@ -45,10 +46,11 @@
 					font-family: 'Roboto', Arial Narrow, sans-serif;
 					font-style: normal;
 					font-weight: 400;
+					font-size: 1.125em;
 					width: 50%;
 					float: left;
 					text-align: justify;
-					color: $color-dusty-gray;
+					color: $color-abbey-gray;
 					@include breakpoint('small') {
 						width:100%;
 					}
@@ -114,9 +116,57 @@
 			}
 			
 		}
-		.tableau-graph{
+		.article-tableau-placeholder{
+		   width: 100%;
+		   float: left;
+		   .tableau-placeholder{
+				 float: left;
+				 width: 50%;
+				 margin-bottom:0;
+				@include breakpoint('medium-small') {
+					width:100%;
+				}
+				@include breakpoint('small') {
+					width:100%;
+				}	
+		   }
+		   .articleText{
+				float: left;
+				width: 50%;
+				clear: right;
+				padding: 15px;
+				@include breakpoint('medium-small') {
+					width:100%;
+				}	
+				@include breakpoint('small') {
+					width:100%;
+				}	
+		   }
+		}
+		.tableau-placeholder{
 			width: 100%;
 			margin-bottom: 0.75rem;
+			h3.tableau-heading{
+				font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+				font-style: normal;
+				font-weight: 700;
+				font-size: 1.5em
+			}
+			.tableau-graph{
+				width: 100%;
+			}
+		}
+		.tableau-placeholder-right-rail{
+			width: 100%;
+			h3.tableau-heading{
+				font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+				font-style: normal;
+				font-weight: 700;
+				font-size: 1.125em
+			}
+			.tableau-graph{
+				width: 100%;
+			}
 		}
 		.articleText{
 			width: 100%;
@@ -124,11 +174,22 @@
 			  font-style: italic;
 			  border-top: 1px solid $color-light-gray;
 			  font-weight: 400;
-			  color: $color-dusty-gray;
+			  font-size: 1.125em;
+			  color: $color-abbey-gray;
 			  background-color: $color-concrete-table-gray;
 			  clear: both;
 			  text-align: left;
 			  padding: 10px;
+			 p 
+			 {
+				margin-top:20px;
+				 a{
+					color: $color-red;
+					font-family: "Roboto", Arial Narrow, sans-serif;
+					font-style: normal;
+					font-weight: 400;
+				 }
+			}	
 		}
 		.visible-sm{
 			display: none;
