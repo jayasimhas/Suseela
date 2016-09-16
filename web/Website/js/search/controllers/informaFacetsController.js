@@ -189,9 +189,9 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 		facetAvailabilityService.disableFacets();
 
         var params = this.searchService.getRouteBuilder().getRoute().split('&');
-        if (this.searchService.getRouteBuilder().getRoute().includes("companies")) {
+        if (this.searchService.getRouteBuilder().getRoute().indexOf("companies") >= 0) {
             for (var idx_param in params) {
-                if (params[idx_param].includes("companies")) {
+                if (params[idx_param].indexOf("companies") >= 0) {
                     var compValue = params[idx_param].split('=')[1];
                     vm.companies["isCompanySelected"] = true;
                     vm.companies["companies"] = compValue;
