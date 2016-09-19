@@ -240,15 +240,40 @@ namespace Informa.Library.PXM.Helpers
 			return doc;
 		}
 
-        public string ProcessPullQuotes(string content) {
-            var xpath = @"//div[contains(@class, 'sidebar-body')]//*/blockquote[contains(@class,'article-pullquote')]/p";
+	    public string ProcessPullQuotes(string content)
+	    {
+	        var result = ProcessPullQuotesStyle(content);
+	        result = ProcessPullQuotesHtml(result);
+	        return result;
+	    }
+
+	    private string ProcessPullQuotesHtml(string content)
+	    {
+	        var xpath = @"//div[contains(@class, 'sidebar-body')]//blockquote[contains(@class,'article-pullquote')]";
+	        var doc = CreateDocument(content);
+	        var elements = doc.DocumentNode.SelectNodes(xpath);
+	        if (elements == null)
+	        {
+	            return doc.DocumentNode.OuterHtml;
+	        }
+	        foreach (HtmlNode element in elements)
+	        {
+	            var nodeStr = element.OuterHtml.Replace("blockquote", "p");
+	            var blockquote = HtmlNode.CreateNode(nodeStr);
+	            element.ParentNode.ReplaceChild(blockquote, element);
+	        }
+	        return doc.DocumentNode.OuterHtml;
+	    }
+
+        private string ProcessPullQuotesStyle(string content) {
+            var xpath = @"//div[contains(@class, 'sidebar-body')]//blockquote[contains(@class,'article-pullquote')]/p";
             var doc = CreateDocument(content);
             var elements = doc.DocumentNode.SelectNodes(xpath);
             if (elements == null)
                 return doc.DocumentNode.OuterHtml;
 
             string classAttr = "class";
-            string SidebarPullQuote = "sidebar";
+            string SidebarPullQuote = "sidebar-quote";
             foreach (HtmlNode element in elements) {
                 var attribute = element.Attributes[classAttr];
                 if (attribute == null)
