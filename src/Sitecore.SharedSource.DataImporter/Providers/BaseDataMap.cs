@@ -568,6 +568,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 							Logger.Log(newItem.Paths.FullPath, "the FillField failed", ProcessStatus.FieldError, d.ItemName(), importValue);
 						}
 					}
+					newItem.Fields["Notification Text"].Value = "Imported with DataImporter";
 
 					//calls the subclass method to handle custom fields and fields
 					ProcessCustomData(ref newItem, importRow);
