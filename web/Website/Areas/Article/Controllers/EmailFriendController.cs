@@ -127,7 +127,57 @@ namespace Informa.Web.Areas.Article.Controllers
 			});
 		}
 
-		[HttpPost]
+        [HttpPost]
+        public IHttpActionResult EmailAuthor(EmailAuthorRequest request) {
+            // VERIFY CAPTCHA
+            if (!RecaptchaService.Verify(request.RecaptchaResponse)) {
+                return Ok(new {
+                    success = false
+                });
+            }
+
+            var siteRoot = SiteRootContext.Item;
+
+            if (string.IsNullOrWhiteSpace(request.RecipientEmail)
+                    || string.IsNullOrWhiteSpace(request.SenderEmail)
+                    || string.IsNullOrWhiteSpace(request.SenderName)
+                    || string.IsNullOrWhiteSpace(request.Subject)) {
+                _logger.Warn($"Field is null");
+                return Ok(new {
+                    success = false
+                });
+            }
+
+            var emailFrom = string.Format("{0} <{1}>", siteRoot.Publication_Name, GetValue(siteRoot?.Email_From_Address));
+            var allEmails = request.RecipientEmail.Split(';');
+            var result = true;
+            var emailBody = GetEmailBody(request.SenderEmail, request.SenderName, string.Empty, request.PersonalMessage);
+
+            foreach (var eachEmail in allEmails) {
+                string specificEmailBody = emailBody
+                        .ReplacePatternCaseInsensitive("#friend_name#", eachEmail)
+                        .ReplacePatternCaseInsensitive("#RECIPIENT_EMAIL#", eachEmail);
+
+                var friendEmail = new Email {
+                    To = eachEmail,
+                    Subject = request.Subject,
+                    From = emailFrom,
+                    Body = specificEmailBody,
+                    IsBodyHtml = true
+                };
+
+                var isEmailSent = EmailSender.Send(friendEmail);
+                if (!isEmailSent) {
+                    _logger.Warn($"Email sender failed");
+                    result = false;
+                }
+            }
+            return Ok(new {
+                success = result
+            });
+        }
+        
+        [HttpPost]
 		public IHttpActionResult Email(EmailFriendRequest request)
 		{
 			var siteRoot = SiteRootContext.Item;

@@ -30,7 +30,7 @@
 			</p>
 
 			<form 	class="form-email-author"
-					data-on-submit="/Account/api/EmailFriend/Email/">
+					data-on-submit="/Account/api/EmailFriend/EmailAuthor/">
 
 				<p class="	pop-out__error
 							js-form-error
@@ -73,7 +73,7 @@
 
 				<p>
 					<span class="pop-out__run-in">@Model.SubjectText</span> @Html.Raw(Model.AuthorName)
-					<input type="hidden" name="ArticleTitle" value="@Model.AuthorName">
+                    <input type="hidden" name="Subject" value="@Model.AuthorName">
 				</p>
 
 				<p>
@@ -83,8 +83,6 @@
 				<textarea name="PersonalMessage" class="pop-out__input pop-out__textarea"></textarea>
 				
 				<div class="g-recaptcha" data-sitekey="@Model.CaptchaSiteKey"></div>
-
-				@*<input type="hidden" name="ArticleNumber" value="@Model.ArticleNumber">*@
 
 				<div class="pop-out__form-actions-wrapper">
 					<div class="dismiss-button" data-target-element=".js-pop-out__email-author">
