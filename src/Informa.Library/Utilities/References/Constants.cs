@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Informa.Library.Utilities.CMSHelpers;
+using System;
 using System.Collections.Generic;
 
 namespace Informa.Library.Utilities.References
@@ -12,7 +13,7 @@ namespace Informa.Library.Utilities.References
 
 	    public const string AuthorsIndexName = "informa_authors";
 
-        public const string ContentRootNode = "{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}";
+        public static string ContentRootNode = ItemIdResolver.GetItemIdByKey("ContentRootNode");
 
 		public const string ScripPublicationName = "Scrip Intelligence";
 
@@ -23,33 +24,34 @@ namespace Informa.Library.Utilities.References
 
 		public const string CryptoKey = "Ajv4FMtL7Iuq3H04ZkQC";
 
-	    public const string StrategicTransactionsComponent = "{7072BDB1-1398-4C51-986F-404251CF3E8A}";
-        public const string DCDSubscribeComponent = "{602FABB7-E964-45B2-A8DF-E29356A7A8ED}";
+	    public static string StrategicTransactionsComponent = ItemIdResolver.GetItemIdByKey("StrategicTransactionsComponent");
+        public static string DCDSubscribeComponent = ItemIdResolver.GetItemIdByKey("DCDSubscribeComponent");
         
-        public const string VirtualWhiteboardIssuesFolder = "{ECE677C9-3CC5-41F5-ADCB-D103C60783A7}";
-	    public const string VirtualWhiteboardArchivedIssuesFolder = "{AAB11244-7D15-4A43-A709-DC8951893FD2}";
+        public static string VirtualWhiteboardIssuesFolder = ItemIdResolver.GetItemIdByKey("VirtualWhiteboardIssuesFolder");
+        public static string VirtualWhiteboardArchivedIssuesFolder = ItemIdResolver.GetItemIdByKey("VirtualWhiteboardArchivedIssuesFolder");
 
-		public const string ScripRootNode = "{3818C47E-4B75-4305-8F01-AB994150A1B0}";
+
+        public static string ScripRootNode = ItemIdResolver.GetItemIdByKey("ScripRootNode");
 		public const string ScripRootNodeIntials = "SC";
-		public const string ScripEmailConfig = "{077AB43D-8F0F-413E-A585-4DB65EA23234}";
+		public static string ScripEmailConfig = ItemIdResolver.GetItemIdByKey("ScripEmailConfig");
 
-		public const string InVivoRootNode = "{920FAC0D-4DA5-465A-94F9-A8B4D03DFCE3}";
+		public static string InVivoRootNode = ItemIdResolver.GetItemIdByKey("InVivoRootNode");
 		public const string InVivoRootNodeIntials = "IV";
 
-		public const string PinkSheetRootNode = "{87B710BC-BACD-4D38-895F-90F42D762393}";
+		public static string PinkSheetRootNode = ItemIdResolver.GetItemIdByKey("PinkSheetRootNode");
 		public const string PinkSheetRootNodeIntials = "PS";
 
-		public const string MedtechInsightRootNode = "{989CA96C-8A54-4CC0-BD51-A127930935A9}";
+		public static string MedtechInsightRootNode = ItemIdResolver.GetItemIdByKey("MedtechInsightRootNode");
 		public const string MedtechInsightRootNodeIntials = "MT";
 
-		public const string RoseSheetRootNode = "{204199B0-C381-4B9B-92BE-63E5754F5E90}";
+		public static string RoseSheetRootNode = ItemIdResolver.GetItemIdByKey("RoseSheetRootNode");
 		public const string RoseSheetNodeIntials = "RS";
 
-		public const string MSWordDocumentRootNode = "{FDBFCAC8 -03CA-4B0B-BEFE-2171050E19C6}";
+		public const string MSWordDocumentRootNode = "{FDBFCAC8 -03CA-4B0B-BEFE-2171050E19C6}"; //not added to config, as it's missing in CMS
 
-		public static string EditAfterPublishWorkflowCommand = "{322D0739-B3AC-416F-BF58-5E39E716F003}";
+		public static string EditAfterPublishWorkflowCommand = ItemIdResolver.GetItemIdByKey("EditAfterPublishWorkflowCommand");
 
-		public static string ScripWorkflow = "{926E6200-EB76-4AD4-8614-691D002573AC}";
+		public static string ScripWorkflow = ItemIdResolver.GetItemIdByKey("FreeWithEntitlement");
 		public static readonly Dictionary<Guid, string> PublicationPrefixDictionary = new Dictionary<Guid, string>
 				{
 						{ new Guid(ScripRootNode), ScripRootNodeIntials},

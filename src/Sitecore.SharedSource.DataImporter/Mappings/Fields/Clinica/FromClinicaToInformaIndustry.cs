@@ -1,3 +1,4 @@
+using Informa.Library.Utilities.CMSHelpers;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.SharedSource.DataImporter.Providers;
@@ -14,11 +15,11 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields.Clinica
 		{
 			Field f = newItem.Fields[NewItemField];
 
-			if (!f.Value.Contains("{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}"))
+			if (!f.Value.Contains(ItemIdResolver.GetItemIdByKey("MedicalDeviceItem")))
 			{
 				f.Value = f.Value.Length == 0
-					? "{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}"
-					: string.Join("|", new [] {f.Value, "{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}" });
+					? ItemIdResolver.GetItemIdByKey("MedicalDeviceItem")
+                    : string.Join("|", new [] {f.Value, ItemIdResolver.GetItemIdByKey("MedicalDeviceItem") });
 			}
 		}
 	}

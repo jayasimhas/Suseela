@@ -215,8 +215,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
@@ -1370,6 +1370,7 @@
     <Folder Include="CustomMvc\Parsers\" />
     <Folder Include="GlassMaps\" />
     <Folder Include="js\search\services\" />
+    <Folder Include="NWebsecConfig\" />
     <Folder Include="packages\" />
     <Folder Include="Views\Partials\" />
     <Folder Include="Views\VWB\" />
@@ -1404,8 +1405,13 @@
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
-    <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config" />
+    <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\ZZ.UserDefined\AuthorsIndex.config.template" />
+    <Content Include="App_Config\Include\Informa.Products.Insights.Global.ItemIds.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />
@@ -1415,9 +1421,6 @@
     <None Include="App_Config\Prefetch\Webdb.config.template" />
     <Content Include="Areas\VWB\Views\web.config" />
     <Content Include="Areas\Account\Views\Registration\RegisterFreeTrial.cshtml" />
-    <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="PrintStudio\Data\PublishingEngine.dtd" />
     <Content Include="PrintStudio\Handlers\PrintCacheHandler.ashx" />
     <None Include="PrintStudio\Data\PublishingEngine.xsd">
