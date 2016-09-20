@@ -12,6 +12,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.ContentSearch.Linq;
 using System;
+using Informa.Library.Search.SearchIndex;
 
 namespace Informa.Library.Services.Sitemap
 {
@@ -28,6 +29,7 @@ namespace Informa.Library.Services.Sitemap
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IArticleSearch ArticleSearcher;
         protected readonly ITextTranslator TextTranslator;
+        protected readonly ISearchIndexNameService IndexNameService;
 
         protected readonly string Xmlns = "http://www.sitemaps.org/schemas/sitemap/0.9";
         protected readonly string DateFormat = "yyyy-MM-ddTHH:mm:ss%K";
@@ -36,12 +38,14 @@ namespace Informa.Library.Services.Sitemap
             IProviderSearchContextFactory searchContextFactory,
             ISitecoreContext context,
             IArticleSearch searcher,
-            ITextTranslator translator)
+            ITextTranslator translator,
+            ISearchIndexNameService indexNameService)
         {
             SearchContextFactory = searchContextFactory;
             SitecoreContext = context;
             ArticleSearcher = searcher;
             TextTranslator = translator;
+            IndexNameService = indexNameService;
         }
 
         public string GetSitemapXML_Old()
@@ -205,7 +209,7 @@ namespace Informa.Library.Services.Sitemap
         {
             int pageNo = Convert.ToInt32(HttpContext.Current.Request.QueryString["page"]);
 
-            using (var context = SearchContextFactory.Create())
+            using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
             {
                 var query = context.GetQueryable<GeneralContentResult>()
                     .Filter(j
@@ -224,7 +228,7 @@ namespace Informa.Library.Services.Sitemap
 
         private IEnumerable<IArticle> GetNewsPages(string startPath)
         {
-            using (var context = SearchContextFactory.Create())
+            using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)

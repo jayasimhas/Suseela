@@ -885,6 +885,7 @@
     <Compile Include="Controllers\FrontendController.cs" />
     <Compile Include="Areas\Search\Controllers\HeaderSearchController.cs" />
     <Compile Include="Controllers\EmailUtil.cs" />
+    <Compile Include="Controllers\Search\InformaBaseSearchController.cs" />
     <Compile Include="Controllers\Search\InformaSearchController.cs" />
     <Compile Include="Controllers\Search\SavedSearchesController.cs" />
     <Compile Include="Controllers\Search\TypeAheadController.cs" />
@@ -1372,6 +1373,7 @@
     <Folder Include="js\search\services\" />
     <Folder Include="NWebsecConfig\" />
     <Folder Include="packages\" />
+    <Folder Include="Views\InformaBaseSearch\" />
     <Folder Include="Views\Partials\" />
     <Folder Include="Views\VWB\" />
   </ItemGroup>
