@@ -13,8 +13,7 @@ namespace Informa.Web.Controllers.Search
         public ISearchManager<InformaSearchResultItem> _searchManager;
         public InformaBaseSearchController(ISiteRootContext siterootContext, ISitecoreContext context, ISearchIndexNameService indexNameService)
         {
-            string indexName = indexNameService.GetIndexName();
-            _searchManager = SearchManagerFactory.CreateSearchManager(indexName, context);
+            _searchManager = SearchManagerFactory.CreateSearchManager(indexNameService.GetIndexName(), context);
         }
     }
 }
