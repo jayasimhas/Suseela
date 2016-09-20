@@ -26222,6 +26222,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 					/// </summary>
 					[SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string From_Email_Address  {get; set;}
+
+                    [SitecoreField("Search Index Name", Setting = SitecoreFieldSettings.InferType)]
+                    string SearchIndexName { get; set; }
+
 				}
 
 	
