@@ -12,6 +12,7 @@ using Sitecore.Web;
 using Informa.Library.Utilities.References;
 using PluginModels;
 using Informa.Library.CustomSitecore.Ribbon;
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Informa.Web.Controllers
 {
@@ -42,7 +43,7 @@ namespace Informa.Web.Controllers
 
                 //Hack to start the workflow
                 var articleItem = _sitecoreMasterService.GetItem<Item>(articleCreate._Id);
-                var intialWorkflow = _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow("{926E6200-EB76-4AD4-8614-691D002573AC}");
+                var intialWorkflow = _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow(ItemIdResolver.GetItemIdByKey("ScripWorkflow"));
                 intialWorkflow.Start(articleItem);
 
                 var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);

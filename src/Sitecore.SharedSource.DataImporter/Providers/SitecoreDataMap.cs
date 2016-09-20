@@ -19,6 +19,7 @@ using Sitecore.Globalization;
 using Sitecore.Data.Managers;
 using Sitecore.SharedSource.DataImporter.Mappings.Templates;
 using Sitecore.SharedSource.DataImporter.Logger;
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Sitecore.SharedSource.DataImporter.Providers {
     public class SitecoreDataMap : BaseDataMap {
@@ -28,12 +29,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers {
         /// <summary>
         /// template id of the properties folder
         /// </summary>
-        public static readonly string PropertiesFolderTemplateID = "{8452785D-FFE7-47F3-911E-F219F5BDEA3A}";
+        public static readonly string PropertiesFolderTemplateID =ItemIdResolver.GetItemIdByKey("DataImportPropertyFolder");
 
         /// <summary>
         /// template id of the templates folder
         /// </summary>
-        public static readonly string TemplatesFolderTemplateID = "{3D915406-97F6-4E94-AC50-B7CAF468A50F}";
+        public static readonly string TemplatesFolderTemplateID = ItemIdResolver.GetItemIdByKey("DataImportTemplateFolder");
 
         #endregion Static IDs
 

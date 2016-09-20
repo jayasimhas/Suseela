@@ -14,6 +14,7 @@ using Sitecore.Shell.Applications.ContentEditor;
 using Sitecore.Web.UI.HtmlControls;
 using Sitecore.Web.UI.Sheer;
 using Sitecore.Web.UI.WebControls;
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Informa.Library.CustomSitecore.Fields
 {            
@@ -243,9 +244,9 @@ namespace Informa.Library.CustomSitecore.Fields
 			if (depth < -1)
 				throw new ArgumentOutOfRangeException("depth", (object) depth, "Depth but be -1, 0, or greater.");
 			if (IsOfTemplate(item, templateId) ||
-			    IsOfTemplate(item, "{AB86861A-6030-46C5-B394-E8F99E8B87DB}") && item.ID.ToString() == templateId)
+			    IsOfTemplate(item, ItemIdResolver.GetItemIdByKey("TemplateFolder")) && item.ID.ToString() == templateId)
 				return true;
-			if (depth == 0 || IsOfTemplate(item, "{AB86861A-6030-46C5-B394-E8F99E8B87DB}"))
+			if (depth == 0 || IsOfTemplate(item, ItemIdResolver.GetItemIdByKey("TemplateFolder")))
 				return false;
 			foreach (TemplateItem templateItem in item.Template.BaseTemplates)
 			{
@@ -264,7 +265,7 @@ namespace Informa.Library.CustomSitecore.Fields
 				throw new ArgumentOutOfRangeException("depth", (object) depth, "Depth but be -1, 0, or greater.");
 			if (item.ID.ToString() == templateId)
 				return true;
-			if (item.ID.ToString() == "{AB86861A-6030-46C5-B394-E8F99E8B87DB}" || depth == 0)
+			if (item.ID.ToString() == ItemIdResolver.GetItemIdByKey("TemplateFolder") || depth == 0)
 				return false;
 			foreach (TemplateItem templateItem in item.BaseTemplates)
 			{
