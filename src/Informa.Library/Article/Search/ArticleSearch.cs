@@ -155,9 +155,9 @@ namespace Informa.Library.Article.Search
 
         public long GetNextArticleNumber(Guid publicationGuid)
         {
-            using (var context = SearchContextFactory.Create(Constants.MasterDb, IndexNameService.GetIndexName()))
+            var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
+            using (var context = SearchContextFactory.Create(Constants.MasterDb, publicationItem.SearchIndexName))
             {
-                var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
                 if (publicationItem != null)
                 {
                     var filter = CreateFilter();
