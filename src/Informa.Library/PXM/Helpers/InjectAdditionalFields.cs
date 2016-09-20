@@ -44,7 +44,7 @@ namespace Informa.Library.PXM.Helpers
             var authors = article?.Authors?.ToArray();
             if (authors == null || authors.Length == 0) { return html; }
 
-            var authorsTag = $"<pre><h3 class='authors'>{_dependencies.BylineMaker.MakePrintByLine(authors)}</h3></pre>";
+            var authorsTag = $"<h3 class='authors'>{_dependencies.BylineMaker.MakePrintByLine(authors)}</h3>";
 
             return InjectAfterRegex(RootRegex, html, authorsTag);
         }
