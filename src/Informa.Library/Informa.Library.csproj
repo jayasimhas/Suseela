@@ -371,7 +371,6 @@
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
     <Compile Include="DCD\DcdContentAnalyzer.cs" />
-    <Compile Include="Logging\TraceSoapExtension.cs" />
     <Compile Include="PXM\CustomConvertToXml.cs" />
     <Compile Include="PXM\CustomFinalizeProcessor.cs" />
     <Compile Include="PXM\Helpers\InjectAdditionalFields.cs" />
