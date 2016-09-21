@@ -15,7 +15,7 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Link
                 return string.Empty;
             }
 
-            return string.Format("{1}/d/{0}", deal.RecordNumber, BaseUrl);
+            return string.Format("{1}/{0}", deal.RecordNumber, BaseUrl);
         }
 
         public override string GetLinkText(string linkId)
