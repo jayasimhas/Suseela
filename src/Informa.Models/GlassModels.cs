@@ -12792,6 +12792,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ITableau_ConfigurationConstants.User_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
         string User_Name { get; set; }
+
+        /// <summary>
+        /// JS API Url field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: FCFEDA02-FAF9-4B6D-AE86-6D0D1BF13540</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_ConfigurationConstants.JS_API_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string JS_API_Url { get; set; }
     }
 
 
@@ -12823,6 +12833,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ITableau_ConfigurationConstants.User_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
         string User_Name { get; set; }
+
+        /// <summary>
+        /// JS API Url field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: FCFEDA02-FAF9-4B6D-AE86-6D0D1BF13540</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_ConfigurationConstants.JS_API_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string JS_API_Url { get; set; }
     }
 
     public static partial class ITableau_ConfigurationConstants
@@ -12838,6 +12858,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID User_NameFieldId = new ID("{8BBC5FCD-26A6-4421-B263-E3AEB0D1AC66}");
         public const string User_NameFieldName = "User Name";
+
+        public static readonly ID JS_API_UrlFieldId = new ID("{FCFEDA02-FAF9-4B6D-AE86-6D0D1BF13540}");
+        public const string JS_API_UrlFieldName = "JS API Url";
 
     }
 
@@ -13965,6 +13988,17 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         string Height { get; set; }
 
         /// <summary>
+        /// The Is Right Rail field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID:</para>
+        /// <para>Custom Data: DD18A68F-8CCD-4475-AAEA-F2B1DC26C0DD</para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Is_Right_RailFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Is_Right_Rail { get; set; }
+
+
+        /// <summary>
         /// The Page Title field.
         /// <para></para>
         /// <para>Field Type: Single-Line Text</para>		
@@ -14147,6 +14181,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         string Height { get; set; }
 
         /// <summary>
+        /// The Is Right Rail field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID:</para>
+        /// <para>Custom Data: DD18A68F-8CCD-4475-AAEA-F2B1DC26C0DD</para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Is_Right_RailFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Is_Right_Rail { get; set; }
+
+        /// <summary>
         /// The Page Title field.
         /// <para></para>
         /// <para>Field Type: Single-Line Text</para>		
@@ -14262,6 +14306,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 
         public static readonly ID HeightFieldId = new ID("A3D71CB3-E7E3-4DC4-A025-B8D27147FA8B");
         public const string HeightFieldName = "Height";
+
+        public static readonly ID Is_Right_RailFieldId = new ID("DD18A68F-8CCD-4475-AAEA-F2B1DC26C0DD");
+        public const string Is_Right_RailFieldName = "Is Right Rail";
 
         public static readonly ID Page_TitleFieldId = new ID("889A40F6-8A6B-44F0-A305-38DE22186F7A");
         public const string Page_TitleFieldName = "Page Title";

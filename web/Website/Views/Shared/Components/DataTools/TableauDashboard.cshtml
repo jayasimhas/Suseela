@@ -1,0 +1,71 @@
+﻿@model TableauDashboardViewModel
+@if (Model.IsRightRail)
+{
+    <div class="tableau-placeholder-right-rail">
+        <h3 class="tableau-heading">@Model.ComponentHeading</h3>
+        <script type="text/javascript" src="@Model.JSAPIUrl"></script>
+        <div class="tableau-graph">
+            <object class="tableauViz" width='@Model.DashboardWidth' height='@Model.DashboardHeight%'>
+                <param name="host_url" value="@Model.HostUrl" />
+                <param name="name" value="@Model.DashboardName" />
+                <param name="tabs" value="@Model.DisplayTabs" />
+                <param name="toolbar" value="@Model.DisplayToolbars" />
+                <param name='customViews' value='@Model.AllowCustomViews' />
+                <param name='filter' value='@Model.Filter' />
+                <param name='ticket' value='@Model.TableauTicket' />
+            </object>
+        </div>
+        <h3 class="tableau-heading">@Model.LandingPageLink</h3>
+    </div>
+}
+else
+{
+    <div class="tableau-landing">
+        <h1>@Model.PageTitle</h1>
+        <div class="sub-heading-text">@Model.PageSubheading</div>
+        <div class="js-toggle-demo">
+            <div class="show-demo">
+                <div class="sd">SHOW DEMO <i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                <div class="hd">HIDE DEMO <i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+            </div>
+            <div class="toggle-demo">
+                <div class="demoText">
+                    <span>
+                        @Model.IntroductoryText
+                    </span>
+                </div>
+                <div class="video-demo">
+                    <div class="visible-lg">
+                        <div class="video-mini-container">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <img src="/dist/img/video-thumb.png" data-videotype="wistia" data-videourl="http://fast.wistia.net/embed/iframe/sq50iiqaq9?autoPlay=true" alt="wistia video" width="100%" class="video-img img-responsive">
+                                <span class="play-icon" style="display: block;"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="visible-sm">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="@Model.JSAPIUrl"></script>
+        <div class="tableau-graph">
+            <object class="tableauViz" width='@Model.DashboardWidth' height='@Model.DashboardHeight%'>
+                <param name="host_url" value="@Model.HostUrl" />
+                <param name="name" value="@Model.DashboardName" />
+                <param name="tabs" value="@Model.DisplayTabs" />
+                <param name="toolbar" value="@Model.DisplayToolbars" />
+                <param name='customViews' value='@Model.AllowCustomViews' />
+                <param name='filter' value='@Model.Filter' />
+                <param name='ticket' value='@Model.TableauTicket' />
+            </object>
+        </div>
+        <div class="articleText">
+            <span>
+                @Model.ToolExplanation
+            </span>
+        </div>
+    </div>
+}
+

@@ -370,6 +370,8 @@
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
+    <Compile Include="DataTools\ITableauUtil.cs" />
+    <Compile Include="DataTools\TableauUtil.cs" />
     <Compile Include="DCD\DcdContentAnalyzer.cs" />
     <Compile Include="PXM\CustomConvertToXml.cs" />
     <Compile Include="PXM\CustomFinalizeProcessor.cs" />

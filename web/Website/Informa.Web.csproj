@@ -952,6 +952,7 @@
     <Compile Include="ViewModels\CompaniesAndDeals\StratrgicTransactionViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorProfileViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\TableauDashboardViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailLayoutViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
@@ -1536,6 +1537,7 @@
     <Content Include="Views\Advertisements\RectangularAd.cshtml" />
     <Content Include="Views\Advertisements\LeaderboardAd.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealSponsor.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\TableauDashboard.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
