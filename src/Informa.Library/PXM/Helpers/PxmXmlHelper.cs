@@ -36,6 +36,7 @@ namespace Informa.Library.PXM.Helpers
             AddOrderedListStyles(doc);
             AddUnOrderedListStyles(doc);
             ApplyTableStyles(doc);
+            ChangeDefaultParagraphStyle(doc);
             MatchCellStyleWithParagraphStyle(doc);
             return doc.OuterXml.Replace("<TextFrame>", "").Replace("</TextFrame>", "");
         }
@@ -137,6 +138,22 @@ namespace Informa.Library.PXM.Helpers
                         {
                             childNode.Attributes["Style"].Value = td.Attributes?["ChildStyle"].Value;
                         }
+                    }
+                }
+            }
+        }
+
+        // Change default paragraph style in table from "body" to "table_body"
+        public void ChangeDefaultParagraphStyle(XmlDocument doc)
+        {
+            var pTags = doc.SelectNodes("//Cell/ParagraphStyle[@Style = 'body']");
+            if (pTags != null)
+            {
+                foreach (XmlNode p in pTags)
+                {
+                    if (p.Attributes != null)
+                    {
+                        p.Attributes["Style"].Value = "table_body";
                     }
                 }
             }
