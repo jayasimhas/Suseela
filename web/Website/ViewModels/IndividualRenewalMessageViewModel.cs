@@ -21,48 +21,47 @@ namespace Informa.Web.ViewModels
         protected readonly IUserSubscriptionsContext UserSubscriptionsContext;
         protected readonly IUserProfileContext ProfileContext;
 
+		public IndividualRenewalMessageViewModel(
+				 ITextTranslator textTranslator,
+				 IIndividualSubscriptionRenewalMessageContext context,
+				 IAuthenticatedUserContext userContext,
+				 ISiteRootContext siteRootContext,
+				 IUserSubscriptionsContext userSubscriptionsContext,
+				 IUserProfileContext profileContext)
+		{
+			Context = context;
+			SiteRootContext = siteRootContext;
+			UserSubscriptionsContext = userSubscriptionsContext;
+			ProfileContext = profileContext;
 
-        public IndividualRenewalMessageViewModel(
-                ITextTranslator textTranslator,
-                IIndividualSubscriptionRenewalMessageContext context,
-                IAuthenticatedUserContext userContext,
-                ISiteRootContext siteRootContext,
-                IUserSubscriptionsContext userSubscriptionsContext,
-                IUserProfileContext profileContext)
-        {
-            Context = context;
-            SiteRootContext = siteRootContext;
-            UserSubscriptionsContext = userSubscriptionsContext;
-            ProfileContext = profileContext;
+			ISubscription record = userContext.IsAuthenticated ? GetLatestExpiringRecord() : null;
 
-            ISubscription record = userContext.IsAuthenticated ? GetLatestRecord() : null;
+			DismissText = textTranslator.Translate("Subscriptions.Renewals.Dismiss");
+			Display = DisplayMessage(record);
 
-            DismissText = textTranslator.Translate("Subscriptions.Renewals.Dismiss");
-            Display = DisplayMessage(record);
-            Message = Display ? GetMessage(record, profileContext?.Profile?.FirstName ?? string.Empty) : string.Empty;
-            Id = context.ID;
-            RenewURL = context.RenewalLinkURL;
-            RenewURLText = context.RenewalLinkText;
-        }
+			Message = Display ? GetMessage(record, profileContext?.Profile?.FirstName ?? string.Empty) : string.Empty;
+			Id = context.ID;
+			RenewURL = context.RenewalLinkURL;
+			RenewURLText = context.RenewalLinkText;
+		}
 
-        private ISubscription GetLatestRecord()
-        {
-            return UserSubscriptionsContext.Subscriptions?.OrderByDescending(o => o.ExpirationDate).FirstOrDefault() ?? null;
-        }
+		private ISubscription GetLatestExpiringRecord()
+		{
+			return UserSubscriptionsContext.Subscriptions?.Where(subscription => subscription.ProductCode.ToLower() == SiteRootContext.Item.Publication_Code.ToLower()
+						&& (subscription.ExpirationDate - DateTime.Now).TotalDays <= SiteRootContext.Item.Days_To_Expiration
+						&& SUBSCRIPTIONTYPE.Contains(subscription.SubscriptionType.ToLower())
+						&& subscription.ProductType.ToLower() == PRODUCT_TYPE).OrderByDescending(o => o.ExpirationDate).FirstOrDefault() ?? null;
+		}
 
-        private bool DisplayMessage(ISubscription subscription)
-        {
-            if (subscription == null
-                        || subscription.ProductCode.ToLower() != SiteRootContext.Item.Publication_Code.ToLower()
-                        || (subscription.ExpirationDate - DateTime.Now).TotalDays > SiteRootContext.Item.Days_To_Expiration
-                        || SUBSCRIPTIONTYPE.Contains(subscription.SubscriptionType.ToLower()) == false
-                        || subscription.ProductType.ToLower() != PRODUCT_TYPE)
-                return false;
+		private bool DisplayMessage(ISubscription subscription)
+		{
+			if (subscription == null)
+				return false;
 
-            return true;
-        }
+			return true;
+		}
 
-        private string GetMessage(ISubscription subscription, string userName)
+		private string GetMessage(ISubscription subscription, string userName)
         {
             if (subscription == null)
             {
