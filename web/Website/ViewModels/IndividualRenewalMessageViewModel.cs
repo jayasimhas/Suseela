@@ -35,9 +35,9 @@ namespace Informa.Web.ViewModels
             UserSubscriptionsContext = userSubscriptionsContext;
             ProfileContext = profileContext;
 
-            ISubscription record = userContext.IsAuthenticated ? GetLatestRecord() : null;
+			ISubscription record = userContext.IsAuthenticated ? GetLatestExpiringRecord() : null;
 
-            DismissText = textTranslator.Translate("Subscriptions.Renewals.Dismiss");
+			DismissText = textTranslator.Translate("Subscriptions.Renewals.Dismiss");
             Display = DisplayMessage(record);
             Message = Display ? GetMessage(record, profileContext?.Profile?.FirstName ?? string.Empty) : string.Empty;
             Id = context.ID;
@@ -45,18 +45,17 @@ namespace Informa.Web.ViewModels
             RenewURLText = context.RenewalLinkText;
         }
 
-        private ISubscription GetLatestRecord()
-        {
-            return UserSubscriptionsContext.Subscriptions?.OrderByDescending(o => o.ExpirationDate).FirstOrDefault() ?? null;
-        }
+		private ISubscription GetLatestExpiringRecord()
+		{
+			return UserSubscriptionsContext.Subscriptions?.Where(subscription => subscription.ProductCode.ToLower() == SiteRootContext.Item.Publication_Code.ToLower()
+						&& (subscription.ExpirationDate - DateTime.Now).TotalDays <= SiteRootContext.Item.Days_To_Expiration
+						&& SUBSCRIPTIONTYPE.Contains(subscription.SubscriptionType.ToLower())
+						&& subscription.ProductType.ToLower() == PRODUCT_TYPE).OrderByDescending(o => o.ExpirationDate).FirstOrDefault() ?? null;
+		}
 
-        private bool DisplayMessage(ISubscription subscription)
+		private bool DisplayMessage(ISubscription subscription)
         {
-            if (subscription == null
-                        || subscription.ProductCode.ToLower() != SiteRootContext.Item.Publication_Code.ToLower()
-                        || (subscription.ExpirationDate - DateTime.Now).TotalDays > SiteRootContext.Item.Days_To_Expiration
-                        || SUBSCRIPTIONTYPE.Contains(subscription.SubscriptionType.ToLower()) == false
-                        || subscription.ProductType.ToLower() != PRODUCT_TYPE)
+            if (subscription == null)
                 return false;
 
             return true;
