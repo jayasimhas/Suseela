@@ -273,7 +273,7 @@ namespace Informa.Library.PXM.Helpers
                 return doc.DocumentNode.OuterHtml;
 
             string classAttr = "class";
-            string SidebarPullQuote = "sidebar-quote";
+            string SidebarPullQuote = "sidebar_quote";
             foreach (HtmlNode element in elements) {
                 var attribute = element.Attributes[classAttr];
                 if (attribute == null)
