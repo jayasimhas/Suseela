@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Jabberwocky.Core.Caching;
+using Informa.Library.Search.SearchIndex;
 
 namespace Informa.Library.ContentCuration.Search
 {
@@ -14,13 +15,15 @@ namespace Informa.Library.ContentCuration.Search
 	{
 		protected readonly IProviderSearchContextFactory SearchContextFactory;
 	    protected readonly ICacheProvider CacheProvider;
+        protected readonly ISearchIndexNameService IndexNameService;
 
-		public ItemManuallyCuratedContentSearch(
+        public ItemManuallyCuratedContentSearch(
 			IProviderSearchContextFactory searchContextFactory,
-            ICacheProvider cacheProvider)
+            ICacheProvider cacheProvider, ISearchIndexNameService indexNameService)
 		{
 			SearchContextFactory = searchContextFactory;
 		    CacheProvider = cacheProvider;
+            IndexNameService = indexNameService;
 
 		}
 
@@ -32,7 +35,7 @@ namespace Informa.Library.ContentCuration.Search
 
 	    public IEnumerable<Guid> BuildResults(Guid itemId) {
 
-            using (var context = SearchContextFactory.Create())
+            using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
 			{
 				var query = context.GetQueryable<ManuallyCuratedContentSearchResult>().Filter(i => i.ItemId == ID.Parse(itemId));
 				var results = query.GetResults();

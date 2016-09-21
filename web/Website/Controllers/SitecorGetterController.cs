@@ -24,7 +24,7 @@ using Sitecore.Links;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
 using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
-
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Informa.Web.Controllers
 {
@@ -40,7 +40,7 @@ namespace Informa.Web.Controllers
         public JsonResult<List<TaxonomyStruct>> Get()
         {
             List<TaxonomyStruct> result = new List<TaxonomyStruct>();
-            var baseFolder = _sitecoreService.GetItem<IFolder>(new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}"));
+            var baseFolder = _sitecoreService.GetItem<IFolder>(new Guid(ItemIdResolver.GetItemIdByKey("TaxonomyRoot")));
             result = baseFolder?._ChildrenWithInferType.OfType<ITaxonomy_Item>()
                 .Select(eachChild => new TaxonomyStruct() { Name = eachChild.Item_Name, ID = eachChild._Id }).ToList();
             return Json(result);
@@ -148,7 +148,7 @@ namespace Informa.Web.Controllers
 
         public JsonResult<List<TaxonomyStruct>> Get(string searchTerm)
         {
-            var taxonomyItem = _sitecoreService.GetItem<Item>(new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}"));
+            var taxonomyItem = _sitecoreService.GetItem<Item>(new Guid(ItemIdResolver.GetItemIdByKey("TaxonomyRoot")));
             if (taxonomyItem == null)
             {
                 return null;
@@ -188,7 +188,7 @@ namespace Informa.Web.Controllers
         public JsonResult<string[]> Get()
         {
             List<string> result = new List<string>();
-            var baseFolder = _sitecoreService.GetItem<IGlassBase>("{3D6658D8-A0BF-4E75-B3E2-D050FABCF4E1}");
+            var baseFolder = _sitecoreService.GetItem<IGlassBase>(ItemIdResolver.GetItemIdByKey("MediaLibraryFolder"));
             if (baseFolder != null)
             {
                 result.Add(baseFolder._Name);
@@ -228,7 +228,7 @@ namespace Informa.Web.Controllers
         // GET api/<controller>
         public JsonResult<List<WordStyleStruct>> Get()
         {
-            var baseFolder = _sitecoreService.GetItem<IGlassBase>(new Guid("{0C51AAA3-70D9-408C-9130-852F32BF4BEE}"));
+            var baseFolder = _sitecoreService.GetItem<IGlassBase>(new Guid(ItemIdResolver.GetItemIdByKey("ParagraphStylesFolder")));
             var styleItems = baseFolder?._ChildrenWithInferType.OfType<IMS_Paragraph_Style>()
                 .Select(eachChild => new WordStyleStruct() { CssClass = eachChild.CSS_Class, CssElement = eachChild.CSS_Element, WordStyle = eachChild.Title }).ToList();
             return Json(styleItems);
@@ -246,7 +246,7 @@ namespace Informa.Web.Controllers
         // GET api/<controller>
         public JsonResult<List<WordStyleStruct>> Get()
         {
-            var baseFolder = _sitecoreService.GetItem<IGlassBase>("{18EE6A90-E8AE-4DEA-B475-274567126FC0}");
+            var baseFolder = _sitecoreService.GetItem<IGlassBase>(ItemIdResolver.GetItemIdByKey("CharacterStylesFolder"));
             var styleItems = baseFolder?._ChildrenWithInferType.OfType<IMS_Character_Style>()
                 .Select(eachChild => new WordStyleStruct() { CssClass = eachChild.CSS_Class, CssElement = eachChild.CSS_Element, WordStyle = eachChild.Title }).ToList();
             return Json(styleItems);
@@ -284,7 +284,7 @@ namespace Informa.Web.Controllers
         // GET api/<controller>
         public JsonResult<List<StaffStruct>> Get()
         {
-            var staffFolder = _sitecoreService.GetItem<IFolder>(new Guid("{5C4D8806-C74E-465E-AB61-FC50F168BCBC}"));
+            var staffFolder = _sitecoreService.GetItem<IFolder>(new Guid(ItemIdResolver.GetItemIdByKey("StaffParentFolder")));
             var members = staffFolder?._ChildrenWithInferType.OfType<I___Person>().Where(c => !c.Inactive).OrderBy(o => o.Last_Name)
                 .Select(eachChild => new StaffStruct() { Name = eachChild.Last_Name + ", " + eachChild.First_Name, ID = eachChild._Id }).ToList();
             return Json(members);
@@ -328,7 +328,7 @@ namespace Informa.Web.Controllers
         // GET api/<controller>
         public JsonResult<List<ItemStruct>> Get()
         {
-            var publicationRootChildren = GetChildrenWithIDs("{C00E39E4-3566-4307-93AE-8471769D6B36}");
+            var publicationRootChildren = GetChildrenWithIDs(ItemIdResolver.GetItemIdByKey("MediaTypeIconsFolder"));
             return Json(publicationRootChildren.Select(c => new ItemStruct() { Name = c.Key, ID = c.Value }).ToList());
         }
         public Dictionary<string, Guid> GetChildrenWithIDs(string pathOrId)
@@ -349,7 +349,7 @@ namespace Informa.Web.Controllers
         // GET api/<controller>
         public JsonResult<List<ItemStruct>> Get()
         {
-            var publicationRootChildren = GetChildrenWithIDs("{CAAD10A6-51CF-41F4-B6CE-773C8CA94CB9}");
+            var publicationRootChildren = GetChildrenWithIDs(ItemIdResolver.GetItemIdByKey("ContentTypesFolder"));
             return Json(publicationRootChildren.Select(c => new ItemStruct() { Name = c.Key, ID = c.Value }).ToList());
         }
         public Dictionary<string, Guid> GetChildrenWithIDs(string pathOrId)
@@ -417,7 +417,7 @@ namespace Informa.Web.Controllers
         // GET api/<controller>
         public JsonResult<int> Get()
         {
-            var length = _sitecoreService.GetItem<IText_Node>("{5FF122A8-A7C6-4DAB-B135-9DD6E276EE08}");
+            var length = _sitecoreService.GetItem<IText_Node>(ItemIdResolver.GetItemIdByKey("MaxLengthShortSummary"));
             return Json(!string.IsNullOrEmpty(length?.Text) ? Int32.Parse(length.Text) : 1000);
         }
     }
@@ -432,7 +432,7 @@ namespace Informa.Web.Controllers
         }
         public JsonResult<int> Get()
         {
-            var length = _sitecoreService.GetItem<IText_Node>("{6759EBC6-101A-4187-9B3A-BE466C1C5DA0}");
+            var length = _sitecoreService.GetItem<IText_Node>(ItemIdResolver.GetItemIdByKey("MaxLengthLongSummary"));
             return Json(!string.IsNullOrEmpty(length?.Text) ? Int32.Parse(length.Text) : 1500);
         }
     }
@@ -472,7 +472,7 @@ namespace Informa.Web.Controllers
         // GET api/<controller>
         public JsonResult<DirectoryStruct[]> Get()
         {
-            var item = _sitecoreService.GetItem<Item>("{11111111-1111-1111-1111-111111111111}");
+            var item = _sitecoreService.GetItem<Item>(ItemIdResolver.GetItemIdByKey("SitecoreRoot"));
             var children = new List<DirectoryStruct>();
 
             foreach (var child in item.Children.ToArray())
@@ -719,7 +719,7 @@ namespace Informa.Web.Controllers
         // GET api/<controller>
         public JsonResult<string> Get()
         {
-            IText_Node pass = _sitecoreService.GetItem<IText_Node>("{990801B9-36A1-499C-91D4-D1562D4B93F4}");
+            IText_Node pass = _sitecoreService.GetItem<IText_Node>(ItemIdResolver.GetItemIdByKey("WordPlugInPassword"));
             return Json(pass.Text);
         }
     }

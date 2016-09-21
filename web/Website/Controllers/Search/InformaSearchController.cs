@@ -1,51 +1,50 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http.ModelBinding;
+﻿using Glass.Mapper.Sc;
 using Informa.Library.Search;
 using Informa.Library.Search.Formatting;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
+using Informa.Library.Search.SearchIndex;
+using Informa.Library.Site;
 using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Factory;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Http.ModelBinding;
 using Velir.Search.Core.Facets;
-using Velir.Search.Core.Managers;
 using Velir.Search.Core.Page;
 using Velir.Search.Core.Queries;
 using Velir.Search.Core.Results;
 using Velir.Search.Core.Results.Facets;
 using Velir.Search.Models;
-using Velir.Search.WebApi.Controllers;
 using Velir.Search.WebApi.Models;
 
 namespace Informa.Web.Controllers.Search
 {
-	public class InformaSearchController : VelirSearchController<InformaSearchResultItem>
+    public class InformaSearchController : InformaBaseSearchController//VelirSearchController<InformaSearchResultItem>
 	{
 		private readonly ISearchPageParser _parser;
-		private readonly ISearchManager<InformaSearchResultItem> _searchManager;
 		private readonly IQueryFormatter _queryFormatter;
 		private readonly IGlassInterfaceFactory _interfaceFactory;
 		private readonly ICacheProvider _cacheProvider;
-		
-		public InformaSearchController(
-			ISearchManager<InformaSearchResultItem> searchManager,
+
+
+        public InformaSearchController(
 			ISearchPageParser parser,
 			IQueryFormatter queryFormatter,
 		IGlassInterfaceFactory interfaceFactory,
-		ICacheProvider cacheProvider)
-						: base(searchManager, parser)
+		ICacheProvider cacheProvider, ISitecoreContext sitecoreContext, ISiteRootContext siterootContext, ISearchIndexNameService indexNameService)
+						: base(siterootContext, sitecoreContext, indexNameService)
 		{
-			_searchManager = searchManager;
 			_parser = parser;
 			_queryFormatter = queryFormatter;
 			_interfaceFactory = interfaceFactory;
 			_cacheProvider = cacheProvider;
 		}
 
-		public override IQueryResults Get([ModelBinder(typeof(ApiSearchRequestModelBinder))]ApiSearchRequest request)
+		public IQueryResults Get([ModelBinder(typeof(ApiSearchRequestModelBinder))]ApiSearchRequest request)
 		{
-			//If an improper request is passed in return nothing
-			if (string.IsNullOrEmpty(request?.PageId))
+            //If an improper request is passed in return nothing
+            if (string.IsNullOrEmpty(request?.PageId))
 			{
 				return null;
 			}
@@ -108,5 +107,5 @@ namespace Informa.Web.Controllers.Search
 
 			return results.Facets;
 		}
-	}
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using Glass.Mapper.Sc;
+using Informa.Library.Utilities.CMSHelpers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Validation.Email;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System;
@@ -24,7 +25,7 @@ namespace Informa.Library.User.Registration
 		{
 			get
 			{
-				var folder = SitecoreContext.GetItem<IRestricted_Email_Domain_Folder>(new Guid("{E8B387F0-97EB-4633-AA9F-6208CF4E207F}"));
+				var folder = SitecoreContext.GetItem<IRestricted_Email_Domain_Folder>(new Guid(ItemIdResolver.GetItemIdByKey("RestrictedEmailDomainsPublic")));
 
 				return EmailDomainsFactory.Create(folder);
 			}

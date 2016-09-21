@@ -54,7 +54,7 @@ namespace Informa.Web.App_Start
 			//Velir Search Library
 			builder.RegisterModule<SearchModule>();
 			builder.RegisterModule<SolrSearchModule>();
-			SearchRegistrar.RegisterDependencies(builder);
+			//SearchRegistrar.RegisterDependencies(builder);
 
 			SessionRegistrar.RegisterDependencies(builder);
 			AuthenticationRegistrar.RegisterDependencies(builder);
