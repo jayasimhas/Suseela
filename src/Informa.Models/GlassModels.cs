@@ -14036,7 +14036,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(ITableau_DashboardConstants.Introductory_VideoFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Introductory_Video { get; set; }
+        Link Introductory_Video { get; set; }
 
         /// <summary>
         /// The Tool Explanation field.
@@ -14228,7 +14228,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(ITableau_DashboardConstants.Introductory_VideoFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Introductory_Video { get; set; }
+        Link Introductory_Video { get; set; }
 
         /// <summary>
         /// The Tool Explanation field.

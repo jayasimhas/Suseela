@@ -15,15 +15,18 @@ namespace Informa.Web.ViewModels
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ITableauUtil TableauUtil;
+        protected readonly ITextTranslator TextTranslator;
 
         public TableauDashboardViewModel(
             ISiteRootContext siteRootContext, 
             IGlobalSitecoreService globalService,
-            ITableauUtil tableauUtil)
+            ITableauUtil tableauUtil, 
+            ITextTranslator textTranslator)
         {
             SiteRootContext = siteRootContext;
             GlobalService = globalService;
             TableauUtil = tableauUtil;
+            TextTranslator = textTranslator;
         }
 
         #region Tableau Dashboard Parameters/details
@@ -60,9 +63,13 @@ namespace Informa.Web.ViewModels
 
         public string IntroductoryText => GlassModel?.Introductory_Text;
 
-        public string IntroductoryVideoLink => GlassModel?.Introductory_Video;
+        public string IntroductoryVideoLink => GlassModel?.Introductory_Video.Url;
 
         public string ToolExplanation => GlassModel?.Tool_Explanation;
+
+        public string ShowDemoLable => TextTranslator.Translate("DataTools.ShowDemo");
+
+        public string HideDemoLable => TextTranslator.Translate("DataTools.HideDemo");
 
         #endregion
 
@@ -73,6 +80,8 @@ namespace Informa.Web.ViewModels
         public string ComponentText => GlassModel?.Text;
 
         public string LandingPageLink => GlassModel?.Landing_Page_Link;
+
+        public string LandingPageLinkLable => TextTranslator.Translate("DataTools.LandingPageLink");
 
         #endregion
 
