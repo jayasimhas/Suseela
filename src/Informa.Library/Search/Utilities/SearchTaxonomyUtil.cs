@@ -66,10 +66,10 @@ namespace Informa.Library.Search.Utilities
 			StringBuilder url = new StringBuilder();
             foreach (var pair in dict)
 			{
-				url.AppendFormat("{0}={1}", pair.Key, pair.Value);
+				url.AppendFormat("{0}={1}", pair.Key, HttpUtility.UrlEncode(pair.Value));
 			}
 			
-			return $"/search#?{HttpUtility.UrlEncode(url.ToString())}";
+			return $"/search#?{url.ToString()}";
 		}
 
 		public static bool IsSubjectTaxonomy(string itemPath)
