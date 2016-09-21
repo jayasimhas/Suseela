@@ -179,7 +179,7 @@ function ValidateContactInforForm() {
 	var result = false;
 	var scrollTo = '';
 	$('.required').each(function () {
-		if ($(this).val() == '') {
+            if ($(this).val() == '' || $(this).text().indexOf("- Select One -") >= 0) {
 			$(this).parent().append(errorHtml);
 			errors++;
 			if(errors==1)
