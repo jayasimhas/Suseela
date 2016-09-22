@@ -39,11 +39,13 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 			{
 				var Company = DCDReader.GetCompanyByRecordNumber(wildcardValue);
 				PageTitle = Company.Title;
+                CompanyId = Company.RecordNumber.ToString();
 			}
 			else if (glassModel._TemplateId.Equals(IDeal_PageConstants.TemplateId.Guid))
 			{
 				var Deal = DCDReader.GetDealByRecordNumber(wildcardValue);
 				PageTitle = Deal.Title;
+                DealId = Deal.RecordNumber.ToString();
 			}
 		}
 
@@ -51,6 +53,8 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 		public string AuthUserName => UserContext.User?.Name ?? string.Empty;
 
 		public string PageTitle = string.Empty;
+        public string CompanyId = string.Empty;
+        public string DealId = string.Empty;
 		public string PageUrl => $"{HttpContextProvider.Current.Request.Url.Scheme}://{HttpContextProvider.Current.Request.Url.Host}{HttpContextProvider.Current.Request.Url.PathAndQuery}";
 		public string ShareText => TextTranslator.Translate("DCD.Share");
 		public string EmailCompanyText => TextTranslator.Translate("DCD.EmailPopout.EmailCompany");

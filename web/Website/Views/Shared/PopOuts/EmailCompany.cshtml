@@ -29,7 +29,7 @@
 			</p>
 
 			<form 	class="form-email-company"
-					data-on-submit="/Account/api/EmailFriend/EmailDCD/">
+					data-on-submit="/Account/api/EmailDCD/EmailFriendCompany/">
 
 				<p class="	pop-out__error
 							js-form-error
@@ -73,6 +73,7 @@
 				<p>
 					<span class="pop-out__run-in">@Model.SubjectText</span> @Html.Raw(Model.PageTitle)
                     <input type="hidden" name="Subject" value="@Model.PageTitle">
+                    <input type="hidden" name="CompanyId" value="@Model.CompanyId" />
 				</p>
 
 				<p>

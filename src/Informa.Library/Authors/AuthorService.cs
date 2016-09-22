@@ -16,6 +16,7 @@ namespace Informa.Library.Authors
         string ConvertAuthorNameToUrlName(string authorName);
         string GetUrlName(Guid authorId);
         string GetUrlName([NotNull] IStaff_Item authorItem);
+        string ConvertAuthorToUrl(IStaff_Item s);
         string ConvertUrlNameToLink(string authorUrlName);
         IStaff_Item GetCurrentAuthor();
     }
@@ -45,6 +46,12 @@ namespace Informa.Library.Authors
             return ConvertAuthorNameToUrlName(authorItem._Name);
         }
 
+        public string ConvertAuthorToUrl(IStaff_Item s) {
+            if (s == null)
+                return string.Empty;
+            
+            return ConvertUrlNameToLink(GetUrlName(s._Id));
+        }
 
         public string ConvertAuthorNameToUrlName(string authorName)
         {

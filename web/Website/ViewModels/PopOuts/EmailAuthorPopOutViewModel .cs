@@ -57,6 +57,7 @@ namespace Informa.Web.ViewModels.PopOuts
 		public string EmptyFieldText => TextTranslator.Translate("Article.EmailPopout.EmptyField");
 		public string NoticeText => TextTranslator.Translate("Article.EmailPopout.Notice");
 		public string AuthorName => Author.First_Name + " " + Author.Last_Name;
+        public string AuthorId => Author._Id.ToString("B");
 		public string CaptchaSiteKey => RecaptchaSettings.SiteKey;
 
 

@@ -1105,8 +1105,11 @@
     <Compile Include="Areas\Article\ArticleAreaRegistration.cs" />
     <Compile Include="Areas\Article\Controllers\HomeController.cs" />
     <Compile Include="Areas\Article\Controllers\EmailFriendController.cs" />
-    <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailAuthorRequest.cs" />
-    <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailDCDRequest.cs" />
+    <Compile Include="Areas\Authors\Controllers\EmailAuthorController.cs" />
+    <Compile Include="Areas\Authors\Models\EmailAuthorRequest.cs" />
+    <Compile Include="Areas\DCD\Controllers\EmailDCDController.cs" />
+    <Compile Include="Areas\DCD\Models\EmailCompanyRequest.cs" />
+    <Compile Include="Areas\DCD\Models\EmailDealRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendSearchRequest.cs" />
     <Compile Include="Areas\Article\Models\Article\EmailFriend\EmailFriendValidationReason.cs" />
@@ -1413,6 +1416,8 @@
     <Content Include="default.js" />
     <Content Include="dist\js\index.js" />
     <Content Include="email\EditAfterPublishEmail.html" />
+    <Content Include="email\EmailFriendDCD.html" />
+    <Content Include="email\EmailFriendAuthor.html" />
     <Content Include="email\EmailFriendSearchAuthor.html" />
     <Content Include="email\EmailFriendSearchRow.html" />
     <Content Include="email\EmailFriendSearch.html" />
