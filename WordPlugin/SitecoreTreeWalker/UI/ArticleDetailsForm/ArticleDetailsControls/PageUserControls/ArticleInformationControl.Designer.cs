@@ -50,6 +50,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             this.uxMediaTypes = new System.Windows.Forms.ComboBox();
             this.uxNotes = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.uxVertical = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.uxLabel = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
@@ -74,7 +76,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(6, 52);
+            this.label4.Location = new System.Drawing.Point(6, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 44;
@@ -83,7 +85,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             // uxWebPublishTime
             // 
             this.uxWebPublishTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.uxWebPublishTime.Location = new System.Drawing.Point(9, 109);
+            this.uxWebPublishTime.Location = new System.Drawing.Point(9, 150);
             this.uxWebPublishTime.Name = "uxWebPublishTime";
             this.uxWebPublishTime.ShowUpDown = true;
             this.uxWebPublishTime.Size = new System.Drawing.Size(89, 22);
@@ -95,7 +97,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             this.uxEmbargoed.AutoSize = true;
             this.uxEmbargoed.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.uxEmbargoed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxEmbargoed.Location = new System.Drawing.Point(243, 111);
+            this.uxEmbargoed.Location = new System.Drawing.Point(243, 152);
             this.uxEmbargoed.Name = "uxEmbargoed";
             this.uxEmbargoed.Size = new System.Drawing.Size(91, 17);
             this.uxEmbargoed.TabIndex = 42;
@@ -106,7 +108,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             // 
             this.uxWebPublishDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.uxWebPublishDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.uxWebPublishDate.Location = new System.Drawing.Point(121, 109);
+            this.uxWebPublishDate.Location = new System.Drawing.Point(121, 150);
             this.uxWebPublishDate.Name = "uxWebPublishDate";
             this.uxWebPublishDate.Size = new System.Drawing.Size(97, 22);
             this.uxWebPublishDate.TabIndex = 41;
@@ -117,9 +119,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(6, 84);
+            this.label11.Location = new System.Drawing.Point(6, 125);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(251, 13);
+            this.label11.Size = new System.Drawing.Size(220, 13);
             this.label11.TabIndex = 40;
             this.label11.Text = "Scheduled Article Publish Date and Time:";
             // 
@@ -129,7 +131,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uxPublication.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uxPublication.FormattingEnabled = true;
-            this.uxPublication.Location = new System.Drawing.Point(81, 15);
+            this.uxPublication.Location = new System.Drawing.Point(81, 56);
             this.uxPublication.Name = "uxPublication";
             this.uxPublication.Size = new System.Drawing.Size(504, 21);
             this.uxPublication.TabIndex = 33;
@@ -139,7 +141,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(6, 18);
+            this.label7.Location = new System.Drawing.Point(6, 59);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 13);
             this.label7.TabIndex = 0;
@@ -164,7 +166,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             this.uxSelectAuthor.Location = new System.Drawing.Point(9, 39);
             this.uxSelectAuthor.Name = "uxSelectAuthor";
             this.uxSelectAuthor.Size = new System.Drawing.Size(302, 21);
-			this.uxSelectAuthor.AutoSize = true;
             this.uxSelectAuthor.TabIndex = 19;
             // 
             // uxAddAuthor
@@ -219,7 +220,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(6, 146);
+            this.label2.Location = new System.Drawing.Point(362, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 13);
             this.label2.TabIndex = 47;
@@ -229,9 +230,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             // 
             this.uxMediaTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uxMediaTypes.FormattingEnabled = true;
-            this.uxMediaTypes.Location = new System.Drawing.Point(142, 142);
+            this.uxMediaTypes.Location = new System.Drawing.Point(362, 148);
             this.uxMediaTypes.Name = "uxMediaTypes";
-            this.uxMediaTypes.Size = new System.Drawing.Size(443, 21);
+            this.uxMediaTypes.Size = new System.Drawing.Size(223, 21);
             this.uxMediaTypes.TabIndex = 78;
             // 
             // uxNotes
@@ -244,6 +245,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.uxVertical);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.uxLabel);
             this.groupBox2.Controls.Add(this.uxEmbargoed);
             this.groupBox2.Controls.Add(this.uxWebPublishTime);
@@ -261,13 +264,35 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Article Information";
             // 
+            // uxVertical
+            // 
+            this.uxVertical.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uxVertical.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.uxVertical.FormattingEnabled = true;
+            this.uxVertical.Location = new System.Drawing.Point(81, 21);
+            this.uxVertical.Name = "uxVertical";
+            this.uxVertical.Size = new System.Drawing.Size(504, 21);
+            this.uxVertical.TabIndex = 84;
+            this.uxVertical.SelectedIndexChanged += new System.EventHandler(this.uxVertical_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(6, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 83;
+            this.label3.Text = "Vertical:";
+            // 
             // uxLabel
             // 
             this.uxLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uxLabel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uxLabel.FormattingEnabled = true;
-            this.uxLabel.Location = new System.Drawing.Point(81, 49);
+            this.uxLabel.Location = new System.Drawing.Point(81, 90);
             this.uxLabel.Name = "uxLabel";
             this.uxLabel.Size = new System.Drawing.Size(504, 21);
             this.uxLabel.TabIndex = 82;
@@ -327,5 +352,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.ComboBox uxLabel;
-	}
+        private ComboBox uxVertical;
+        private Label label3;
+    }
 }

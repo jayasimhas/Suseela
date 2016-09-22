@@ -20,8 +20,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
     /// </summary>
     public partial class ArticleInformationControl : ArticleDetailsPageUserControl
     {
+        public delegate void VerticalItemChanged();
+        public event VerticalItemChanged OnVerticalItemChanged;
+
         private ArticleDetail _parent;
         protected DocumentCustomProperties _documentCustomProperties;
+        public bool IsVerticalsLoaded { get; set; }
 
         private string ArticleNumber;
 
@@ -326,6 +330,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             //uxLockStatus.Visible = true;
             _parent.articleStatusBar1.ChangeLockButtonStatus(LockStatus.Unlocked);
             //uxVersionStatus.Visible = true;
+            uxVertical.Enabled = false;
             uxPublication.Enabled = false;
             //_parent.EnablePreview();
             //_parent.HideCreationButtons();
@@ -341,6 +346,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             uxSelectAuthor.Enabled = true;
             uxAddAuthor.Enabled = true;
             uxSelectedAuthors.Enabled = true;
+            uxVertical.Enabled = false;
             uxPublication.Enabled = false;
             uxLabel.Enabled = true;
             uxWebPublishDate.Enabled = true;
@@ -355,6 +361,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             uxSelectAuthor.Enabled = false;
             uxAddAuthor.Enabled = false;
             uxSelectedAuthors.Enabled = false;
+            uxVertical.Enabled = false;
             uxPublication.Enabled = false;
             uxLabel.Enabled = false;
             uxWebPublishDate.Enabled = false;
@@ -403,9 +410,26 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             //uxUnlockButton.Enabled = true;
         }
 
-        public void InitializePublications()
+        //added,21Sep16
+        public void InitializeVerticals()
         {
-            List<PluginModels.ItemStruct> publications = SitecoreClient.GetPublications();
+            List<PluginModels.VerticalStruct> verticals = SitecoreClient.GetVerticals();
+            verticals.Insert(0, new PluginModels.VerticalStruct { ID = Guid.Empty, Name = "Select Vertical", Publications = new List<PluginModels.ItemStruct>() });
+            uxVertical.DataSource = verticals;
+            uxVertical.DisplayMember = "Name";
+            uxVertical.ValueMember = "ID";
+
+            IsVerticalsLoaded = !IsVerticalsLoaded;
+            /*List<PluginModels.ItemStruct> verticals = SitecoreClient.GetVerticals();
+            verticals.Insert(0, new PluginModels.ItemStruct { ID = Guid.Empty, Name = "Select Vertical" });
+            uxVertical.DataSource = verticals;
+            uxVertical.DisplayMember = "Name";
+            uxVertical.ValueMember = "ID";*/
+        }
+
+        public void InitializePublications(List<PluginModels.ItemStruct> publications)//parameter added,21Sep16
+        {
+            //List<PluginModels.ItemStruct> publications = SitecoreClient.GetPublications();//commented,21Sep16
             publications.Insert(0, new PluginModels.ItemStruct { ID = Guid.Empty, Name = "Select Publication" });
             uxPublication.DataSource = publications;
             uxPublication.DisplayMember = "Name";
@@ -608,7 +632,15 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 
         public void UpdateFields(ArticleStruct articleDetails)
         {
-            InitializePublications();
+            uxVertical.Enabled = false;
+            uxPublication.Enabled = false;
+
+            if (!IsVerticalsLoaded)//added, 21Sep
+            {
+                InitializeVerticals();
+            }
+
+            //InitializePublications();//commented,21Sep16
             InitializeMediaType();
             InitializeContentType();
             SetCheckedOutStatus();
@@ -718,6 +750,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         /// </summary>
         public void PostLinkEnable()
         {
+            uxVertical.Enabled = false;
             uxPublication.Enabled = false;
             //uxLinkDocument.Enabled = false;
             uxSelectAuthor.Enabled = true;
@@ -739,6 +772,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         /// </summary>
         public void PreLinkEnable()
         {
+            uxVertical.Enabled = true;
             uxPublication.Enabled = true;
             //uxLinkDocument.Enabled = true;
 
@@ -904,6 +938,35 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         public ArticleInformationControl GetObject()
         {
             return this;
+        }
+
+        public bool IsVerticalSelected()
+        {
+            return uxVertical.SelectedIndex <= 0 ? false : true;
+        }
+        public bool IsPublicationSelected()
+        {
+            return uxPublication.SelectedIndex <= 0 ? false : true;
+        }
+
+        //added,21Sep16
+        private void uxVertical_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PluginModels.VerticalStruct verticalStruct = (PluginModels.VerticalStruct)uxVertical.SelectedItem;
+            uxPublication.DataSource = null;
+            uxPublication.Items.Clear();
+            if (verticalStruct.Name != "Select Vertical")
+            {
+                uxPublication.Enabled = true;
+                InitializePublications(verticalStruct.Publications);
+
+                PluginSingletonVerticalRoot.Instance.CurrentVertical = verticalStruct;
+                OnVerticalItemChanged?.Invoke();//Message the vertical changes to the subscriber
+            }
+            else
+            {
+                uxPublication.Enabled = false;
+            }
         }
     }
 }
