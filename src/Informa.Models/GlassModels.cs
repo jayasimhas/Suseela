@@ -51900,3 +51900,177 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Print_Studio_Template
 	}
 
 }
+
+
+
+//added,21Sep16
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+    /// <summary>
+    /// IVertical_Config Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Vertical Config</para> 
+    /// <para>ID: E9C3A582-B186-4970-8EB5-78CEBE21184E</para> 
+
+    /// </summary>
+    [SitecoreType(TemplateId = IVertical_ConfigConstants.TemplateIdString)]
+    public partial interface IVertical_Config : IGlassBase
+    {
+
+        /// <summary>
+        /// The Vertical Name field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>         
+
+        /// <para>Field ID: 0E255F6B-02F6-409A-AB3B-EB536FD4D531</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IVertical_ConfigConstants.Vertical_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Vertical_Name { get; set; }
+
+    }
+
+    /// <summary>
+    /// IVertical_Config Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Vertical Config</para> 
+    /// <para>ID: E9C3A582-B186-4970-8EB5-78CEBE21184E</para> 
+
+    /// </summary>
+    [SitecoreType]
+    public partial interface IVertical_Config__Raw : IGlassBase
+    {
+
+        /// <summary>
+        /// The Vertical Name field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>         
+        /// <para>Field ID: 0E255F6B-02F6-409A-AB3B-EB536FD4D531</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IVertical_ConfigConstants.Vertical_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+
+        string Vertical_Name { get; set; }
+
+    }
+
+    public static partial class IVertical_ConfigConstants
+    {
+
+        public const string TemplateIdString = "E9C3A582-B186-4970-8EB5-78CEBE21184E";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Vertical Config";
+
+        public static readonly ID Vertical_NameFieldId = new ID("0E255F6B-02F6-409A-AB3B-EB536FD4D531");
+        public const string Vertical_NameFieldName = "Vertical Name";
+
+    }
+
+
+}
+
+
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+    /// <summary>
+    /// IVertical_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Vertical Root</para>  
+    /// <para>ID: DE3615F6-1562-4CB4-80EA-7FA45F49B7B7</para> 
+    /// </summary>
+    [SitecoreType(TemplateId = IVertical_RootConstants.TemplateIdString)]
+    public partial interface IVertical_Root : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.IVertical_Config
+
+    {
+    }
+
+    /// <summary>
+    /// IVertical_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Vertical Root</para>  
+    /// <para>ID: DE3615F6-1562-4CB4-80EA-7FA45F49B7B7</para> 
+    /// </summary>
+    [SitecoreType]
+    public partial interface IVertical_Root__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.IVertical_Config__Raw
+    {
+    }
+
+    public static partial class IVertical_RootConstants
+    {
+
+        public const string TemplateIdString = "DE3615F6-1562-4CB4-80EA-7FA45F49B7B7";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Vertical Root";
+
+
+        public static readonly ID Vertical_NameFieldId = new ID("0E255F6B-02F6-409A-AB3B-EB536FD4D531");
+        public const string Vertical_NameFieldName = "Vertical Name";
+
+    }
+}
+//added,21Sep16
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+    /// <summary>
+    /// IEnvironment_Global_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Environment Global Root</para>	
+    /// <para>ID: 71A96EA3-22A9-4538-B2BE-A6E8FA52B239</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IEnvironment_Global_RootConstants.TemplateIdString)]
+    public partial interface IEnvironment_Global_Root : IGlassBase
+    {
+    }
+
+    /// <summary>
+    /// IEnvironment_Global_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Environment Global Root</para>	
+    /// <para>ID: 71A96EA3-22A9-4538-B2BE-A6E8FA52B239</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IEnvironment_Global_Root__Raw : IGlassBase
+    {
+    }
+
+    public static partial class IEnvironment_Global_RootConstants
+    {
+        public const string TemplateIdString = "71A96EA3-22A9-4538-B2BE-A6E8FA52B239";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Environment Global Root";
+    }
+}
+
+//added,21Sep16
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+    /// <summary>
+    /// IStaff_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Staff Root</para>	
+    /// <para>ID: CD13DC0D-E78C-4E00-AEFF-2DC8751850EE</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IStaff_RootConstants.TemplateIdString)]
+    public partial interface IStaff_Root : IGlassBase
+    {
+    }
+
+    /// <summary>
+    /// IStaff_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Staff Root</para>	
+    /// <para>ID: CD13DC0D-E78C-4E00-AEFF-2DC8751850EE</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IStaff_Root__Raw : IGlassBase
+    {
+    }
+
+    public static partial class IStaff_RootConstants
+    {
+        public const string TemplateIdString = "CD13DC0D-E78C-4E00-AEFF-2DC8751850EE";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Staff Root";
+    }
+}
