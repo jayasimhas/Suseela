@@ -90,6 +90,33 @@ var renderIframeComponents = function() {
 	});
 };
 
+var renderTableau = function() {
+	
+		var desktopEmbed = $('.tableau_component__desktop');
+		var mobileEmbed = $('.tableau_component__mobile');
+
+		
+		var mobileHiddenValue = $('#IsMobileDashboardAvailable').val();
+		var showMobile = ($(window).width() <= 480);
+		var showDesktop = !showMobile;
+
+		if (showMobile) {
+		    if(mobileHiddenValue == "true"){
+			mobileEmbed.show();
+			desktopEmbed.hide();
+			}else{
+			desktopEmbed.show();
+			}
+		}
+
+		if (showDesktop) {
+			desktopEmbed.show();
+			mobileEmbed.hide();
+		}
+
+		
+};
+
 var decodeHtml = function(html) {
 	var txt = document.createElement("textarea");
 	txt.innerHTML = html;
@@ -654,8 +681,10 @@ $(document).ready(function() {
 	// When DOM loads, render the appropriate iFrame components
 	// Also add a listener for winder resize, render appropriate containers
 	renderIframeComponents();
+	renderTableau();
 	$(window).on('resize', (event) => {
 		renderIframeComponents();
+		renderTableau();
 	});
 
 	// Topic links
