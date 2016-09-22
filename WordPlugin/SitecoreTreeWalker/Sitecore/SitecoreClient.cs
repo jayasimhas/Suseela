@@ -59,17 +59,17 @@ namespace InformaSitecoreWord.Sitecore
             }
         }
 
-        public static List<TaxonomyStruct> SearchTaxonomy(string term)
+        public static List<TaxonomyStruct> SearchTaxonomy(string term,Guid verticalGuid = default(Guid))
         {
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}SearchTaxonomy?searchTerm={term}").Result;
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}SearchTaxonomy?searchTerm={term}&verticalTaxonomyGuid={verticalGuid}").Result;
                 var taxonomy = JsonConvert.DeserializeObject<List<TaxonomyStruct>>(response.Content.ReadAsStringAsync().Result);
-                return taxonomy;
+                return taxonomy??new List<TaxonomyStruct>();
             }
         }
 
-        public static HDirectoryStruct GetHierarchyByGuid(Guid taxonomyGuid)
+        public static HDirectoryStruct GetHierarchyByGuid(Guid taxonomyGuid= default(Guid))
         {
             using (var client = new HttpClient(_handler, false))
             {
@@ -157,6 +157,19 @@ namespace InformaSitecoreWord.Sitecore
         {
             return _articleDetails = GetArticleDetails(articleGuid);
         }
+        
+        public static List<VerticalStruct> GetVerticals()
+        {
+            Globals.SitecoreAddin.Log("Getting vertical details from Sitecore...");
+            using (var client = new HttpClient(_handler, false))
+            {
+
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetVerticals").Result;
+                var verticalList = JsonConvert.DeserializeObject<List<VerticalStruct>>(response.Content.ReadAsStringAsync().Result);
+
+                return verticalList;
+            }
+        }
 
         public static List<ItemStruct> GetPublications()
         {
@@ -164,6 +177,7 @@ namespace InformaSitecoreWord.Sitecore
             {
                 var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetPublications").Result;
                 var publicationsList = JsonConvert.DeserializeObject<List<ItemStruct>>(response.Content.ReadAsStringAsync().Result);
+
                 return publicationsList;
             }
         }
@@ -713,6 +727,7 @@ namespace InformaSitecoreWord.Sitecore
             using (var client = new HttpClient(_handler, false))
             {
                 var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}AuthenticateUser", new LoginModel() { Username = username, Password = password }).Result;
+                //var userStatus = JsonConvert.DeserializeObject<dynamic>(response.Content.ReadAsStringAsync().Result);
                 var userStatus = JsonConvert.DeserializeObject<UserStatusStruct>(response.Content.ReadAsStringAsync().Result);
 
                 var cookies = _handler.CookieContainer.GetCookies(new Uri(Constants.EDITOR_ENVIRONMENT_SERVERURL));

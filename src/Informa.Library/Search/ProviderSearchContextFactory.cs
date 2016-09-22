@@ -21,7 +21,7 @@ namespace Informa.Library.Search
         //}
         public IProviderSearchContext Create(string database,  string indexName)
 		{
-			return ContentSearchManager.GetIndex(indexName).CreateSearchContext();
+			return ContentSearchManager.GetIndex(string.Format(indexName, database.ToLower())).CreateSearchContext();
 		}
 
         public IProviderSearchContext Create(string indexName)
