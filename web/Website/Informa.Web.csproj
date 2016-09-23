@@ -634,6 +634,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -953,6 +954,7 @@
     <Compile Include="ViewModels\CompaniesAndDeals\StratrgicTransactionViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorProfileViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\TableauDashboardViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailLayoutViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
     <Compile Include="ViewModels\Emails\FeaturedArticleViewModel.cs" />
@@ -1255,6 +1257,7 @@
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
     <Content Include="PrintStudio\Data\special.xml" />
     <Content Include="PrintStudio\Services\InDesignConnectorService.asmx" />
+    <Content Include="sitecore\login\default.aspx" />
     <Content Include="sitecore\login\login.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\css\ViewNlm.css" />
@@ -1541,6 +1544,7 @@
     <Content Include="Views\Advertisements\RectangularAd.cshtml" />
     <Content Include="Views\Advertisements\LeaderboardAd.cshtml" />
     <Content Include="Views\CompaniesAndDeals\DealSponsor.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\TableauDashboard.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

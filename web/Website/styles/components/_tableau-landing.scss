@@ -1,5 +1,5 @@
 	.tableau-landing{
-		
+		width: 100%;
 		h1{
 			font-family: "Roboto Condensed", Arial Narrow, sans-serif;
 			font-style: normal;
@@ -156,6 +156,7 @@
 			}
 			.tableau-graph{
 				width: 100%;
+				clear: both;
 			}
 		}
 		.tableau-placeholder-right-rail{
@@ -168,6 +169,16 @@
 			}
 			.tableau-graph{
 				width: 100%;
+			}
+			p 
+			 {
+				margin-top:20px;
+				 a{
+					color: $color-red;
+					font-family: "Roboto", Arial Narrow, sans-serif;
+					font-style: normal;
+					font-weight: 400;
+				 }
 			}
 		}
 		.articleText{
@@ -203,7 +214,7 @@
 				  margin: 0 auto;
 			  }
 			  .modal-content {
-				margin-top:20%;
+				margin-top:10%;
 			  }
 			  .modal-header {
 				  border-bottom: 0;

@@ -222,9 +222,12 @@ namespace InformaSitecoreWord.UI
 			}
 		}
 
-		public Version AssemblyVersion => ApplicationDeployment.CurrentDeployment.CurrentVersion;
+        public Version AssemblyVersion => //ApplicationDeployment.CurrentDeployment.CurrentVersion;
+        (ApplicationDeployment.IsNetworkDeployed == true) ? ApplicationDeployment.CurrentDeployment.CurrentVersion
+            : Version.Parse(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion);
+        
 
-		private void LoginControl_Load(object sender, EventArgs e)
+        private void LoginControl_Load(object sender, EventArgs e)
 		{
 			string version = $"{AssemblyVersion.Major}.{AssemblyVersion.Minor}.{AssemblyVersion.Build}.{AssemblyVersion.Revision}";
 			uxVersionNumber.Text = version;

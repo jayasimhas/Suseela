@@ -12758,6 +12758,113 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 	}
 
 }
+
+// IPMP-262 |BIWEB-804 - Market data tool - Tableau - CMS
+
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+
+    /// <summary>
+    /// ITableau_Configuration Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Tableau Configuration</para>	
+    /// <para>ID: {4885551-7E32-4154-8D91-408C4E835791</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = ITableau_ConfigurationConstants.TemplateIdString)]
+    public partial interface ITableau_Configuration : IGlassBase
+    {
+     /// <summary>
+     /// Server Name field.
+     /// <para></para>
+     /// <para>Field Type: Single-Line Text</para>		
+     /// <para>Field ID: B2D9215B-43D1-478D-9CCC-7411A05B32BE</para>
+     /// <para>Custom Data: </para>
+     /// </summary>
+        [SitecoreField(ITableau_ConfigurationConstants.Server_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Server_Name { get; set; }
+
+        /// <summary>
+        /// User Name field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 8BBC5FCD-26A6-4421-B263-E3AEB0D1AC66</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_ConfigurationConstants.User_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string User_Name { get; set; }
+
+        /// <summary>
+        /// JS API Url field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: FCFEDA02-FAF9-4B6D-AE86-6D0D1BF13540</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_ConfigurationConstants.JS_API_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string JS_API_Url { get; set; }
+    }
+
+
+    /// <summary>
+    /// ITableau_Configuration Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Tableau Configuration</para>	
+    /// <para>ID: {4885551-7E32-4154-8D91-408C4E835791</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface ITableau_Configuration__Raw : IGlassBase
+    {
+        /// <summary>
+        /// Server Name field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: B2D9215B-43D1-478D-9CCC-7411A05B32BE</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_ConfigurationConstants.Server_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Server_Name { get; set; }
+
+        /// <summary>
+        /// User Name field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 8BBC5FCD-26A6-4421-B263-E3AEB0D1AC66</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_ConfigurationConstants.User_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string User_Name { get; set; }
+
+        /// <summary>
+        /// JS API Url field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: FCFEDA02-FAF9-4B6D-AE86-6D0D1BF13540</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_ConfigurationConstants.JS_API_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string JS_API_Url { get; set; }
+    }
+
+    public static partial class ITableau_ConfigurationConstants
+    {
+
+        public const string TemplateIdString = "54885551-7E32-4154-8D91-408C4E835791";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Tableau Configuration";
+
+
+        public static readonly ID Server_NameFieldId = new ID("{B2D9215B-43D1-478D-9CCC-7411A05B32BE}");
+        public const string Server_NameFieldName = "Server Name";
+
+        public static readonly ID User_NameFieldId = new ID("{8BBC5FCD-26A6-4421-B263-E3AEB0D1AC66}");
+        public const string User_NameFieldName = "User Name";
+
+        public static readonly ID JS_API_UrlFieldId = new ID("{FCFEDA02-FAF9-4B6D-AE86-6D0D1BF13540}");
+        public const string JS_API_UrlFieldName = "JS API Url";
+
+    }
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.Print_Studio_Templates.InDesign_connector.Other_Settings.Layers
 {
 
@@ -13775,6 +13882,470 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 	}
 
 }
+
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+
+
+    /// <summary>
+    /// ITableau_Dashboard Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/Tableau Dashboard</para>	
+    /// <para>ID: 580A652A-EB37-446A-A16B-B3409C902FE5</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = ITableau_DashboardConstants.TemplateIdString)]
+    public partial interface ITableau_Dashboard : IGlassBase
+    {
+        /// <summary>
+        /// The Dashboard Name field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 161FB372-121C-47E4-9704-E6CAF1490D43</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Dashboard_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Dashboard_Name { get; set; }
+
+        /// <summary>
+        /// The Mobile Dashboard Name field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: CF2E5DBF-D588-4ABE-A0FA-C481D122625F</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Mobile_Dashboard_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Mobile_Dashboard_Name { get; set; }
+
+        /// <summary>
+        /// The Authentication Required field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 36A636B0-0150-457C-9992-3E21DAC32317</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Authentication_RequiredFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Authentication_Required { get; set; }
+
+        /// <summary>
+        /// The Display Tabs field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: AB873933-A60E-45BA-B16E-E906A9FD216B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Display_TabsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Display_Tabs { get; set; }
+
+        /// <summary>
+        /// The Display Toolbars field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 9FC83340-A27C-46E4-9835-7F83BBF2C9BA</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Display_ToolbarsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Display_Toolbars { get; set; }
+
+        /// <summary>
+        /// The Allow Custom Views field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID:</para>
+        /// <para>Custom Data: 3DD075E3-2560-4697-8EA4-D38C9FBD48BA</para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Allow_Custom_ViewsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Allow_Custom_Views { get; set; }
+
+
+        /// <summary>
+        /// The Filter field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  C6078D72-176F-4961-8E34-69629CCA6DE2</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.FilterFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Filter { get; set; }
+
+        /// <summary>
+        /// The Width field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  CB083E09-7ECE-458E-BFAB-3E8F87F2BF0B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.WidthFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Width { get; set; }
+
+        /// <summary>
+        /// The Height field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  A3D71CB3-E7E3-4DC4-A025-B8D27147FA8B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Height { get; set; }
+
+        /// <summary>
+        /// The Is Right Rail field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID:</para>
+        /// <para>Custom Data: DD18A68F-8CCD-4475-AAEA-F2B1DC26C0DD</para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Is_Right_RailFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Is_Right_Rail { get; set; }
+
+
+        /// <summary>
+        /// The Page Title field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  889A40F6-8A6B-44F0-A305-38DE22186F7A</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Page_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Page_Title { get; set; }
+
+        /// <summary>
+        /// The Page Subheading field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  14A2AA8C-0456-4265-A11C-5DBF4946C555</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Page_SubheadingFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Page_Subheading { get; set; }
+
+        /// <summary>
+        /// The Introductory Text field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID:  FBDE2560-E5F4-4CAE-A2B8-8B7EC100E6A5</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Introductory_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+        string Introductory_Text { get; set; }
+
+        /// <summary>
+        /// The Introductory Video field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  D132179D-815A-4281-8E4E-E8A7A8BDD701</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Introductory_VideoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Introductory_Video { get; set; }
+
+        /// <summary>
+        /// The Tool Explanation field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID:  58EADA52-FE63-4FD3-8034-0BB6FBBCCD16</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Tool_ExplanationFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+        string Tool_Explanation { get; set; }
+
+        /// <summary>
+        /// The Heading field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  ACA997C5-4D8A-4C6C-AAA7-88272311FA31</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.HeadingFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Heading { get; set; }
+
+        /// <summary>
+        /// The Text field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID:  7F90260E-4AFB-4929-9E5D-DEF26974C50F</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+        string Text { get; set; }
+
+        /// <summary>
+        /// The Landing Page Link field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  9ABC643C-8ED6-455C-8598-EA73A420E96B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Landing_Page_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Landing_Page_Link { get; set; }
+    }
+
+
+    /// <summary>
+    /// ITableau_Dashboard Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/Tableau Dashboard</para>	
+    /// <para>ID: 580A652A-EB37-446A-A16B-B3409C902FE5</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface ITableau_Dashboard__Raw : IGlassBase
+    {
+        /// <summary>
+        /// The Dashboard Name field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 161FB372-121C-47E4-9704-E6CAF1490D43</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Dashboard_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Dashboard_Name { get; set; }
+
+        /// <summary>
+        /// The Mobile Dashboard Name field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: CF2E5DBF-D588-4ABE-A0FA-C481D122625F</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Mobile_Dashboard_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Mobile_Dashboard_Name { get; set; }
+
+        /// <summary>
+        /// The Authentication Required field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 36A636B0-0150-457C-9992-3E21DAC32317</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Authentication_RequiredFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Authentication_Required { get; set; }
+
+        /// <summary>
+        /// The Display Tabs field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: AB873933-A60E-45BA-B16E-E906A9FD216B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Display_TabsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Display_Tabs { get; set; }
+
+        /// <summary>
+        /// The Display Toolbars field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 9FC83340-A27C-46E4-9835-7F83BBF2C9BA</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Display_ToolbarsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Display_Toolbars { get; set; }
+
+        /// <summary>
+        /// The Allow Custom Views field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID:</para>
+        /// <para>Custom Data: 3DD075E3-2560-4697-8EA4-D38C9FBD48BA</para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Allow_Custom_ViewsFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Allow_Custom_Views { get; set; }
+
+
+        /// <summary>
+        /// The Filter field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  C6078D72-176F-4961-8E34-69629CCA6DE2</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.FilterFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Filter { get; set; }
+
+        /// <summary>
+        /// The Width field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  CB083E09-7ECE-458E-BFAB-3E8F87F2BF0B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.WidthFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Width { get; set; }
+
+        /// <summary>
+        /// The Height field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  A3D71CB3-E7E3-4DC4-A025-B8D27147FA8B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Height { get; set; }
+
+        /// <summary>
+        /// The Is Right Rail field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID:</para>
+        /// <para>Custom Data: DD18A68F-8CCD-4475-AAEA-F2B1DC26C0DD</para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Is_Right_RailFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Is_Right_Rail { get; set; }
+
+        /// <summary>
+        /// The Page Title field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  889A40F6-8A6B-44F0-A305-38DE22186F7A</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Page_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Page_Title { get; set; }
+
+        /// <summary>
+        /// The Page Subheading field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  14A2AA8C-0456-4265-A11C-5DBF4946C555</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Page_SubheadingFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Page_Subheading { get; set; }
+
+        /// <summary>
+        /// The Introductory Text field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID:  FBDE2560-E5F4-4CAE-A2B8-8B7EC100E6A5</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Introductory_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Introductory_Text { get; set; }
+
+        /// <summary>
+        /// The Introductory Video field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  D132179D-815A-4281-8E4E-E8A7A8BDD701</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Introductory_VideoFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Introductory_Video { get; set; }
+
+        /// <summary>
+        /// The Tool Explanation field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID:  58EADA52-FE63-4FD3-8034-0BB6FBBCCD16</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Tool_ExplanationFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Tool_Explanation { get; set; }
+
+        /// <summary>
+        /// The Heading field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  ACA997C5-4D8A-4C6C-AAA7-88272311FA31</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.HeadingFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Heading { get; set; }
+
+        /// <summary>
+        /// The Text field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID:  7F90260E-4AFB-4929-9E5D-DEF26974C50F</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Text { get; set; }
+
+        /// <summary>
+        /// The Landing Page Link field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID:  9ABC643C-8ED6-455C-8598-EA73A420E96B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_DashboardConstants.Landing_Page_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Landing_Page_Link { get; set; }
+    }
+
+    public static partial class ITableau_DashboardConstants
+    {
+
+        public const string TemplateIdString = "580A652A-EB37-446A-A16B-B3409C902FE5";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Tableau Dashboard";
+
+
+        public static readonly ID Dashboard_NameFieldId = new ID("161FB372-121C-47E4-9704-E6CAF1490D43");
+        public const string Dashboard_NameFieldName = "Dashboard Name";
+
+        public static readonly ID Mobile_Dashboard_NameFieldId = new ID("CF2E5DBF-D588-4ABE-A0FA-C481D122625F");
+        public const string Mobile_Dashboard_NameFieldName = "Mobile Dashboard Name";
+
+
+        public static readonly ID Authentication_RequiredFieldId = new ID("36A636B0-0150-457C-9992-3E21DAC32317");
+        public const string Authentication_RequiredFieldName = "Authentication Required";
+
+        public static readonly ID Display_TabsFieldId = new ID("AB873933-A60E-45BA-B16E-E906A9FD216B");
+        public const string Display_TabsFieldName = "Display Tabs";
+
+        public static readonly ID Display_ToolbarsFieldId = new ID("9FC83340-A27C-46E4-9835-7F83BBF2C9BA");
+        public const string Display_ToolbarsFieldName = "Display Toolbars";
+
+        public static readonly ID Allow_Custom_ViewsFieldId = new ID("3DD075E3-2560-4697-8EA4-D38C9FBD48BA");
+        public const string Allow_Custom_ViewsFieldName = "Allow Custom Views";
+
+        public static readonly ID FilterFieldId = new ID("C6078D72-176F-4961-8E34-69629CCA6DE2");
+        public const string FilterFieldName = "Filter";
+
+        public static readonly ID WidthFieldId = new ID("CB083E09-7ECE-458E-BFAB-3E8F87F2BF0B");
+        public const string WidthFieldName = "Width";
+
+        public static readonly ID HeightFieldId = new ID("A3D71CB3-E7E3-4DC4-A025-B8D27147FA8B");
+        public const string HeightFieldName = "Height";
+
+        public static readonly ID Is_Right_RailFieldId = new ID("DD18A68F-8CCD-4475-AAEA-F2B1DC26C0DD");
+        public const string Is_Right_RailFieldName = "Is Right Rail";
+
+        public static readonly ID Page_TitleFieldId = new ID("889A40F6-8A6B-44F0-A305-38DE22186F7A");
+        public const string Page_TitleFieldName = "Page Title";
+
+        public static readonly ID Page_SubheadingFieldId = new ID("14A2AA8C-0456-4265-A11C-5DBF4946C555");
+        public const string Page_SubheadingFieldName = "Page Subheading";
+
+        public static readonly ID Introductory_TextFieldId = new ID("FBDE2560-E5F4-4CAE-A2B8-8B7EC100E6A5");
+        public const string Introductory_TextFieldName = "Introductory Text";
+
+        public static readonly ID Introductory_Text__RawFieldId = new ID("FBDE2560-E5F4-4CAE-A2B8-8B7EC100E6A5");
+        public const string Introductory_Text__RawFieldName = "Introductory Text";
+
+        public static readonly ID Introductory_VideoFieldId = new ID("D132179D-815A-4281-8E4E-E8A7A8BDD701");
+        public const string Introductory_VideoFieldName = "Introductory Video";
+
+        public static readonly ID Tool_ExplanationFieldId = new ID("58EADA52-FE63-4FD3-8034-0BB6FBBCCD16");
+        public const string Tool_ExplanationFieldName = "Tool Explanation";
+
+        public static readonly ID Tool_Explanation__RawFieldId = new ID("58EADA52-FE63-4FD3-8034-0BB6FBBCCD16");
+        public const string Tool_Explanation__RawFieldName = "Tool Explanation";
+
+        public static readonly ID HeadingFieldId = new ID("ACA997C5-4D8A-4C6C-AAA7-88272311FA31");
+        public const string HeadingFieldName = "Heading";
+
+        public static readonly ID TextFieldId = new ID("7F90260E-4AFB-4929-9E5D-DEF26974C50F");
+        public const string TextFieldName = "Text";
+
+        public static readonly ID Text__RawFieldId = new ID("7F90260E-4AFB-4929-9E5D-DEF26974C50F");
+        public const string Text__RawFieldName = "Text";
+
+        public static readonly ID Landing_Page_LinkFieldId = new ID("9ABC643C-8ED6-455C-8598-EA73A420E96B");
+        public const string Landing_Page_LinkFieldName = "Landing Page Link";
+    }
+
+}
+
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Outbound
 {
 
@@ -51330,6 +51901,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.Print_Studio_Template
 
 }
 
+
+
+//added,21Sep16
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
 {
     /// <summary>
@@ -51337,6 +51911,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
     /// <para></para>
     /// <para>Path: /sitecore/templates/User Defined/Configuration/Vertical Config</para> 
     /// <para>ID: E9C3A582-B186-4970-8EB5-78CEBE21184E</para> 
+
     /// </summary>
     [SitecoreType(TemplateId = IVertical_ConfigConstants.TemplateIdString)]
     public partial interface IVertical_Config : IGlassBase
@@ -51346,6 +51921,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// The Vertical Name field.
         /// <para></para>
         /// <para>Field Type: Single-Line Text</para>         
+
         /// <para>Field ID: 0E255F6B-02F6-409A-AB3B-EB536FD4D531</para>
         /// <para>Custom Data: </para>
         /// </summary>
@@ -51359,6 +51935,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
     /// <para></para>
     /// <para>Path: /sitecore/templates/User Defined/Configuration/Vertical Config</para> 
     /// <para>ID: E9C3A582-B186-4970-8EB5-78CEBE21184E</para> 
+
     /// </summary>
     [SitecoreType]
     public partial interface IVertical_Config__Raw : IGlassBase
@@ -51372,6 +51949,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IVertical_ConfigConstants.Vertical_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+
         string Vertical_Name { get; set; }
 
     }
@@ -51403,6 +51981,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
     /// </summary>
     [SitecoreType(TemplateId = IVertical_RootConstants.TemplateIdString)]
     public partial interface IVertical_Root : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration.IVertical_Config
+
     {
     }
 
@@ -51417,7 +51996,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
     {
     }
 
-
     public static partial class IVertical_RootConstants
     {
 
@@ -51431,4 +52009,68 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
     }
 }
+//added,21Sep16
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+    /// <summary>
+    /// IEnvironment_Global_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Environment Global Root</para>	
+    /// <para>ID: 71A96EA3-22A9-4538-B2BE-A6E8FA52B239</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IEnvironment_Global_RootConstants.TemplateIdString)]
+    public partial interface IEnvironment_Global_Root : IGlassBase
+    {
+    }
 
+    /// <summary>
+    /// IEnvironment_Global_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Environment Global Root</para>	
+    /// <para>ID: 71A96EA3-22A9-4538-B2BE-A6E8FA52B239</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IEnvironment_Global_Root__Raw : IGlassBase
+    {
+    }
+
+    public static partial class IEnvironment_Global_RootConstants
+    {
+        public const string TemplateIdString = "71A96EA3-22A9-4538-B2BE-A6E8FA52B239";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Environment Global Root";
+    }
+}
+
+//added,21Sep16
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
+{
+    /// <summary>
+    /// IStaff_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Staff Root</para>	
+    /// <para>ID: CD13DC0D-E78C-4E00-AEFF-2DC8751850EE</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IStaff_RootConstants.TemplateIdString)]
+    public partial interface IStaff_Root : IGlassBase
+    {
+    }
+
+    /// <summary>
+    /// IStaff_Root Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/Staff Root</para>	
+    /// <para>ID: CD13DC0D-E78C-4E00-AEFF-2DC8751850EE</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IStaff_Root__Raw : IGlassBase
+    {
+    }
+
+    public static partial class IStaff_RootConstants
+    {
+        public const string TemplateIdString = "CD13DC0D-E78C-4E00-AEFF-2DC8751850EE";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Staff Root";
+    }
+}

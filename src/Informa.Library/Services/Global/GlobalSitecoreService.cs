@@ -15,7 +15,8 @@ using Sitecore.Data.Items;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 
-namespace Informa.Library.Services.Global {
+namespace Informa.Library.Services.Global
+{
 
     [AutowireService(LifetimeScope.PerScope)]
     public class GlobalService : IGlobalSitecoreService
@@ -38,7 +39,8 @@ namespace Informa.Library.Services.Global {
             SiteRootContext = siteRootContext;
         }
 
-        private string CreateCacheKey(string suffix) {
+        private string CreateCacheKey(string suffix)
+        {
             return $"{nameof(GlobalService)}-{suffix}";
         }
 
@@ -73,11 +75,13 @@ namespace Informa.Library.Services.Global {
             return GetListing(ItemReferences.AccountJobIndustries);
         }
 
-        public IEnumerable<ListItem> GetPhoneTypes() {
+        public IEnumerable<ListItem> GetPhoneTypes()
+        {
             return GetListing(ItemReferences.AccountPhoneTypes);
         }
 
-        public IEnumerable<ListItem> GetCountries() {
+        public IEnumerable<ListItem> GetCountries()
+        {
             return GetListing(ItemReferences.AccountCountries);
         }
 
@@ -87,7 +91,8 @@ namespace Informa.Library.Services.Global {
             return CacheProvider.GetFromCache(cacheKey, () => BuildListing(g));
         }
 
-        private IEnumerable<ListItem> BuildListing(Guid g) { 
+        private IEnumerable<ListItem> BuildListing(Guid g)
+        {
 
             var item = SitecoreService.GetItem<Item>(g);
             if (item == null)
@@ -95,8 +100,8 @@ namespace Informa.Library.Services.Global {
 
             return item.GetChildren()
                 .Select(a => SitecoreService.GetItem<ITaxonomy_Item>(a.ID.Guid))
-                .Select(b => new ListItem(b.Item_Name, (b.Item_Name.ToLower().Contains("select one")) 
-                ? "" : 
+                .Select(b => new ListItem(b.Item_Name, (b.Item_Name.ToLower().Contains("select one"))
+                ? "" :
                 b.Item_Name));
         }
 
@@ -107,6 +112,14 @@ namespace Informa.Library.Services.Global {
 
             string cacheKey = CreateCacheKey($"GetItem-{g}");
             return CacheProvider.GetFromCache(cacheKey, () => BuildItem<T>(g));
+        }
+
+        public Item GetItemByTemplateId(string templateId)
+        {
+            return SitecoreService.GetItem<Item>(SiteRootContext.Item._Id).Axes.GetDescendants()
+                .Where(item => item.TemplateID.ToString()
+                .Equals(templateId, StringComparison.OrdinalIgnoreCase))
+                .FirstOrDefault();
         }
 
         private T BuildItem<T>(Guid g) where T : class
@@ -155,10 +168,10 @@ namespace Informa.Library.Services.Global {
             if (curItem == null)
                 return null;
 
-					if (curItem.TemplateID == ISite_RootConstants.TemplateId)
-		        return SitecoreService.GetItem<ISite_Root>(curItem.ID.Guid);
+            if (curItem.TemplateID == ISite_RootConstants.TemplateId)
+                return SitecoreService.GetItem<ISite_Root>(curItem.ID.Guid);
 
-	        var rootItem = curItem.Axes
+            var rootItem = curItem.Axes
                   .GetAncestors()
                   .FirstOrDefault(a => a.Template.ID.Guid.Equals(ISite_RootConstants.TemplateId.Guid));
 

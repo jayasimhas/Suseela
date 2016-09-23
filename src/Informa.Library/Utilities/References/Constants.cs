@@ -33,7 +33,7 @@ namespace Informa.Library.Utilities.References
 
         public static string ScripRootNode = ItemIdResolver.GetItemIdByKey("ScripRootNode");
 		public const string ScripRootNodeIntials = "SC";
-		public static string ScripEmailConfig = ItemIdResolver.GetItemIdByKey("ScripEmailConfig");
+		public static string ScripEmailConfig = ItemIdResolver.GetItemIdByKey("EmailConfig");
 
 		public static string InVivoRootNode = ItemIdResolver.GetItemIdByKey("InVivoRootNode");
 		public const string InVivoRootNodeIntials = "IV";

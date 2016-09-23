@@ -23,8 +23,10 @@ using Sitecore.Data.Items;
 using Sitecore.Links;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders;
 using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
 using Informa.Library.Utilities.CMSHelpers;
+using Informa.Library.Utilities;
 
 namespace Informa.Web.Controllers
 {
@@ -37,13 +39,32 @@ namespace Informa.Web.Controllers
             _sitecoreService = sitecoreFactory(Constants.MasterDb);
         }
 
+        //modified,21Sep16
         public JsonResult<List<TaxonomyStruct>> Get()
         {
             List<TaxonomyStruct> result = new List<TaxonomyStruct>();
             var baseFolder = _sitecoreService.GetItem<IFolder>(new Guid(ItemIdResolver.GetItemIdByKey("TaxonomyRoot")));
+            //Old code commented
+            /*
+            List<TaxonomyStruct> result = new List<TaxonomyStruct>(); 
+            var baseFolder = _sitecoreService.GetItem<IFolder>(new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}"));
             result = baseFolder?._ChildrenWithInferType.OfType<ITaxonomy_Item>()
-                .Select(eachChild => new TaxonomyStruct() { Name = eachChild.Item_Name, ID = eachChild._Id }).ToList();
-            return Json(result);
+                .Select(eachChild => new TaxonomyStruct() { Name = eachChild.Item_Name, ID = eachChild._Id }).ToList();*/
+
+            List<TaxonomyStruct> taxonomyGlobal = new List<TaxonomyStruct>();
+            //Uncomment Start, use this code only when environment global/Taxonomy require at content root level as well
+            /*
+            Guid environmentGlobalGuid = (Guid)_sitecoreService.GetItem<IMain_Section>(
+                new Guid(Constants.ContentRootNode))?._ChildrenWithInferType.OfType<IEnvironment_Global_Root>()?.FirstOrDefault()?._Id;
+
+            var taxonomyItems = _sitecoreService.GetItem<Item>(environmentGlobalGuid)?.Axes.GetDescendants()
+                .Where(a => ArticleExtension.IsID(a.Template, ITaxonomy_ItemConstants.TemplateId.ToString()));
+
+            taxonomyGlobal = taxonomyItems.Select(eachChild => new TaxonomyStruct() { Name = eachChild.Name, ID = eachChild.ID.Guid }).ToList();
+            */
+            //UnComment End
+
+            return Json(taxonomyGlobal);
         }
 
         // GET api/<controller>/5
@@ -174,7 +195,36 @@ namespace Informa.Web.Controllers
             string lcTerm = term.ToLower();
             return lcName.Contains(lcTerm);
         }
+
+        //modified,21Sep16
+        public JsonResult<List<TaxonomyStruct>> Get(string searchTerm, string verticalTaxonomyGuid)
+        {
+            List<TaxonomyStruct> matches = null;
+
+            if (new Guid(verticalTaxonomyGuid) != default(Guid))
+            {
+                Guid currentGuid = new Guid(verticalTaxonomyGuid); //new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}");
+
+                var taxonomyItem = _sitecoreService.GetItem<Item>(currentGuid);
+                if (taxonomyItem == null)
+                {
+                    return null;
+                }
+                List<Item> children;
+                if (!string.IsNullOrEmpty(searchTerm))
+                {
+                    children = taxonomyItem.Axes.GetDescendants().Where(i => TaxonomyMatch(i.Name, searchTerm)).ToList();
+                }
+                else
+                {
+                    children = taxonomyItem.Axes.GetDescendants().ToList();
+                }
+                matches = children.Select(child => new TaxonomyStruct { ID = child.ID.Guid, Name = child.DisplayName }).ToList();
+            }
+            return Json(matches);
+        }
     }
+
 
     [Route]
     public class GraphicsNodeController : ApiController
@@ -292,6 +342,36 @@ namespace Informa.Web.Controllers
     }
 
     [Route]
+    public class GetVerticalsController : ApiController
+    {
+        private ISitecoreService _sitecoreService;
+        public GetVerticalsController(Func<string, ISitecoreService> sitecoreFactory)
+        {
+            _sitecoreService = sitecoreFactory(Constants.MasterDb);
+        }
+        public JsonResult<List<VerticalStruct>> Get()
+        {
+            var contentFolder = _sitecoreService.GetItem<IMain_Section>(new Guid(Constants.ContentRootNode));
+
+            var verticalsPublications = contentFolder?._ChildrenWithInferType.OfType<IVertical_Root>().Select(c =>
+                         new VerticalStruct
+                         {
+                             ID = c._Id,
+                             Name = String.IsNullOrEmpty(c.Vertical_Name) ? c._Name : c.Vertical_Name,
+                             TaxonomyItem = (ItemStruct) c._ChildrenWithInferType.OfType<IEnvironment_Global_Root>().FirstOrDefault()?
+                             ._ChildrenWithInferType.OfType<ITaxonomy_Folder>().Select(
+                                 s => new ItemStruct { ID=(Guid)s._Id, Name=s._Name}).FirstOrDefault(),
+                             Publications = c._ChildrenWithInferType.OfType<ISite_Root>().Select(e => new ItemStruct
+                             {
+                                 ID = e._Id,
+                                 Name = string.IsNullOrEmpty(e.Publication_Name) ? e._Name : e.Publication_Name,
+                             }).ToList()
+                         }).ToList();
+            return Json(verticalsPublications);
+        }
+    }
+
+    [Route]
     public class GetPublicationsController : ApiController
     {
         private ISitecoreService _sitecoreService;
@@ -299,6 +379,7 @@ namespace Informa.Web.Controllers
         {
             _sitecoreService = sitecoreFactory(Constants.MasterDb);
         }
+
         // GET api/<controller>
         public JsonResult<List<ItemStruct>> Get()
         {
@@ -308,6 +389,7 @@ namespace Informa.Web.Controllers
             return Json(members);
         }
     }
+
 
     [Route]
     public class IsAvailableController : ApiController
@@ -732,19 +814,75 @@ namespace Informa.Web.Controllers
         {
             _sitecoreService = sitecoreFactory(Constants.MasterDb);
         }
+        //Commented,22Sep,Not useful
         // GET api/<controller>
-        public JsonResult<string> Get()
-        {
-            return Json(string.Empty);
-        }
+        //public JsonResult<string> Get()
+        //{
+        //    return Json(string.Empty);
+        //}
 
-        public JsonResult<HDirectoryStruct> Get(string guid)
+        //moified,21Sep16
+        public JsonResult<HDirectoryStruct> Get(string guid = null)
         {
-            var item = _sitecoreService.GetItem<Item>(guid);
-            var children = item.Children.Select(child => GetHierarchy(child.Paths.Path)).ToList();
+            Item item = null;
+            
+            HDirectoryStruct childNode = null;
+            List<HDirectoryStruct> children = null;
 
-            var childNode = new HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
-            childNode.Children = childNode.ChildrenList.ToArray();
+            //Uncomment Start, use this code only when environment global/Taxonomy require at content root level as well
+            /*HDirectoryStruct childNodeRoot = null;
+            try
+            {
+                Guid environmentGlobalGuid = (Guid)_sitecoreService.GetItem<IMain_Section>(
+                new Guid(Constants.ContentRootNode))?._ChildrenWithInferType.OfType<IEnvironment_Global_Root>()?.FirstOrDefault()?._Id;
+
+                if (environmentGlobalGuid != default(Guid))
+                {
+                    var taxonomyFolderGuid = (Guid)_sitecoreService.GetItem<Item>(environmentGlobalGuid)?.Axes.GetDescendants()
+                        .Where(a => ArticleExtension.IsID(a.Template, ITaxonomy_FolderConstants.TemplateId.ToString())).FirstOrDefault().ID.Guid;
+
+                    if (taxonomyFolderGuid != default(Guid))
+                    {
+                        var taxonomyFolderItem = _sitecoreService.GetItem<Item>(taxonomyFolderGuid);
+                        children = taxonomyFolderItem.Children.Select(child => GetHierarchy(child.Paths.Path)).ToList();
+                        childNodeRoot = new HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
+                    }
+                }
+            }catch(Exception exp)
+            {
+                //skip to proceed vertical
+            }
+            */
+            //Uncomment End
+
+            //Specific Vertical
+            if (new Guid(guid) != default(Guid))
+            {
+                item = _sitecoreService.GetItem<Item>(guid);
+                children = item.Children.Select(child => GetHierarchy(child.Paths.Path)).ToList();
+
+                childNode = new HDirectoryStruct() { ChildrenList = children, Name = item.DisplayName, ID = item.ID.ToGuid() };
+            }
+
+            //Uncomment Start, use this code only when environment global/Taxonomy require at content root level as well
+            /* if (childNode!=null && childNode.ChildrenList != null)
+             {
+                 if (childNodeRoot.ChildrenList != null)
+                 {
+                     childNode.ChildrenList.AddRange(childNodeRoot.ChildrenList);
+                 }
+
+                 childNode.Children = childNode.ChildrenList.ToArray();
+             }
+             else if (childNodeRoot!=null && childNodeRoot.ChildrenList != null)
+             {
+                 childNode = childNodeRoot;
+                 childNode.Children = childNode.ChildrenList.ToArray();
+             }
+             */
+            //Uncomment End
+
+            childNode.Children = childNode.ChildrenList.ToArray();//Comment this line if the above code (environment global/Taxonomy) is uncommented 
             return Json(childNode);
         }
 
