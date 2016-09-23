@@ -1,5 +1,6 @@
 ﻿
 using Informa.Library.Utilities.Parsers;
+using Informa.Library.Utilities.Settings;
 using Informa.Library.Utilities.TokenMatcher;
 using Informa.Library.Wrappers;
 using Informa.Model.DCD;
@@ -18,6 +19,8 @@ namespace Informa.Library.DCD {
         string GetDealSummary(string DealId);
 
         string GetDealUrl(string DealId);
+
+        string GetPMBIDealUrl(string DealId);
     }
     
     [AutowireService]
@@ -30,6 +33,7 @@ namespace Informa.Library.DCD {
             IDCDReader DcdReader { get; set; }
             ICachedXmlParser CachedXmlParser { get; set; }
             IHttpContextProvider HttpContext { get; set; }
+            ISiteSettings SiteSettings { get; set; }
         }
 
         public DealService(IDependencies dependencies) {
@@ -67,6 +71,10 @@ namespace Informa.Library.DCD {
 
         public string GetDealUrl(string DealId) {
             return $"{_.HttpContext.Current.Request.Url.Scheme}://{_.HttpContext.Current.Request.Url.Host}/deals/{DealId}";
-        }        
+        }
+
+        public string GetPMBIDealUrl(string DealId) {
+            return string.Format(_.SiteSettings.OldDealsUrl, DealId);
+        }
     }
 }

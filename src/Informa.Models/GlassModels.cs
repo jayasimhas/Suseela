@@ -5791,6 +5791,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 					[SitecoreField(IStrategic_TransactionsConstants.LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
 					Image Logo  {get; set;}
 								/// <summary>
+					/// The STAT Entitled Body field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 19318fc7-0823-4985-a533-62c35efbed70</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStrategic_TransactionsConstants.STAT_Entitled_BodyFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string STAT_Entitled_Body  {get; set;}
+								/// <summary>
+					/// The STAT Entitled Subscribe Button Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: e358cfd9-f70c-4008-81af-bdf3deb73450</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStrategic_TransactionsConstants.STAT_Entitled_Subscribe_Button_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+					string STAT_Entitled_Subscribe_Button_Text  {get; set;}
+								/// <summary>
 					/// The Subscribe Button Text field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -5839,6 +5857,24 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 						[SitecoreField(IStrategic_TransactionsConstants.LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
 						Image Logo  {get; set;}
 										/// <summary>
+						/// The STAT Entitled Body field.
+						/// <para></para>
+						/// <para>Field Type: Rich Text</para>		
+						/// <para>Field ID: 19318fc7-0823-4985-a533-62c35efbed70</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStrategic_TransactionsConstants.STAT_Entitled_BodyFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+						string STAT_Entitled_Body  {get; set;}
+										/// <summary>
+						/// The STAT Entitled Subscribe Button Text field.
+						/// <para></para>
+						/// <para>Field Type: Single-Line Text</para>		
+						/// <para>Field ID: e358cfd9-f70c-4008-81af-bdf3deb73450</para>
+						/// <para>Custom Data: </para>
+						/// </summary>
+						[SitecoreField(IStrategic_TransactionsConstants.STAT_Entitled_Subscribe_Button_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+						string STAT_Entitled_Subscribe_Button_Text  {get; set;}
+										/// <summary>
 						/// The Subscribe Button Text field.
 						/// <para></para>
 						/// <para>Field Type: Single-Line Text</para>		
@@ -5874,6 +5910,18 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 					
 			public static readonly ID LogoFieldId = new ID("669c4be3-9a09-4278-80b6-c5e49c09ec30");
 			public const string LogoFieldName = "Logo";
+
+						
+					
+			public static readonly ID STAT_Entitled_BodyFieldId = new ID("19318fc7-0823-4985-a533-62c35efbed70");
+			public const string STAT_Entitled_BodyFieldName = "STAT Entitled Body";
+
+							public static readonly ID STAT_Entitled_Body__RawFieldId = new ID("19318fc7-0823-4985-a533-62c35efbed70");
+				public const string STAT_Entitled_Body__RawFieldName = "STAT Entitled Body";
+						
+					
+			public static readonly ID STAT_Entitled_Subscribe_Button_TextFieldId = new ID("e358cfd9-f70c-4008-81af-bdf3deb73450");
+			public const string STAT_Entitled_Subscribe_Button_TextFieldName = "STAT Entitled Subscribe Button Text";
 
 						
 					
