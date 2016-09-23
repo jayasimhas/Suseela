@@ -14,5 +14,7 @@ namespace Informa.Library.Utilities.Settings
 
 		string MailFromAddress { get; }
         string OldDealsUrl { get; }
+        string PMBIDealsUrl { get; }
+        string PMBICompaniesUrl { get; }
     }
 }

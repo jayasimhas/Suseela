@@ -17,6 +17,8 @@ namespace Informa.Library.Utilities.Settings
 		public string NlmExportPath => GetSetting("NLM.ExportPath", string.Empty);
 		public string MailFromAddress => GetSetting("Mail.MailServerFromAddress", string.Empty);
 		public SiteInfoModel GetCurrentSiteInfo() => Map(Sitecore.Context.Site.SiteInfo);
+        public string PMBIDealsUrl => GetSetting("DCD.PMBIDealsURL", string.Empty);
+        public string PMBICompaniesUrl => GetSetting("DCD.PMBICompaniesURL", string.Empty);
         public string OldDealsUrl => GetSetting("DCD.OldDealsURL", string.Empty);
         public IEnumerable<SiteInfoModel> GetSiteInfoList() =>
 				Sitecore.Configuration.Factory.GetSiteInfoList().Select(Map);

@@ -74,7 +74,7 @@ namespace Informa.Library.DCD {
         }
 
         public string GetPMBIDealUrl(string DealId) {
-            string s = string.Format(_.SiteSettings.OldDealsUrl, DealId);
+            string s = string.Format(_.SiteSettings.PMBIDealsUrl, DealId);
             return $"{s}?r=0";
         }
     }
