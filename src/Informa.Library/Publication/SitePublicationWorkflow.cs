@@ -10,7 +10,6 @@ using System;
 using Autofac;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Utilities.Extensions;
-using Informa.Library.Services.Global;
 using System.Web.Mvc;
 
 namespace Informa.Library.Publication
@@ -20,13 +19,11 @@ namespace Informa.Library.Publication
 	{
 		private readonly ISitecoreService _service;
 		private readonly ICacheProvider _cacheProvider;
-		private readonly IGlobalSitecoreService _globalSitecoreService;
 
-		public SitePublicationWorkflow(Func<string, ISitecoreService> serviceFactory, ICacheProvider cacheProvider, IGlobalSitecoreService globalSitecoreService)
+		public SitePublicationWorkflow(Func<string, ISitecoreService> serviceFactory, ICacheProvider cacheProvider)
 		{
 			_service = serviceFactory("master");
 			_cacheProvider = cacheProvider;
-			_globalSitecoreService = globalSitecoreService;
 		}
 
 		public IWorkflow GetPublicationWorkflow(Item item)
@@ -91,7 +88,19 @@ namespace Informa.Library.Publication
 
 		private ISite_Root getSiteRoot(Item item)
 		{
-			return _globalSitecoreService.GetSiteRootAncestor(item.ID.ToGuid());
+			string cacheKey = $"{item.ID}-ItemSiteRoot";
+
+			ISite_Root siteRoot = _cacheProvider.GetFromCache<ISite_Root>(cacheKey);
+			if (siteRoot == null)
+			{
+				//item.Parent because on Created event the next line returns empty 
+				var articleItem = _service.Cast<ArticleItem>(item.Parent);
+
+				siteRoot = articleItem.Crawl<ISite_Root>();
+				_cacheProvider.AddToCache<ISite_Root>(cacheKey, siteRoot);
+			}
+
+			return siteRoot;
 		}
 
 		private IState getEditAfterPublishState(Item item)
