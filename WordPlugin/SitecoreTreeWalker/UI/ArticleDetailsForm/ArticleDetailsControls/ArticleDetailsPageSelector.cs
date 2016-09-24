@@ -7,6 +7,7 @@ using InformaSitecoreWord.Sitecore;
 using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using InformaSitecoreWord.Util.Document;
 using PluginModels;
+using InformaSitecoreWord.Util;
 
 namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 {
@@ -281,9 +282,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			pageRelatedArticlesControl.UpdateFields(articleDetails);
 			pageFeaturedImageControl.UpdateFields(articleDetails);
 			pageWorkflowControl.UpdateFields(articleDetails.ArticleWorkflowState, articleDetails);
-			pageTaxonomyControl.UpdateFields(articleDetails);
+            pageTaxonomyControl.UpdateFields(articleDetails);
 
-			if (string.IsNullOrEmpty(articleDetails.ArticleNumber))
+            pageArticleInformationControl.OnVerticalItemChanged -= UpdateTaxonomyControl;//added,21Sep16
+            pageArticleInformationControl.OnVerticalItemChanged += UpdateTaxonomyControl;//added,21Sep16
+
+            if (string.IsNullOrEmpty(articleDetails.ArticleNumber))
 			{
 				return;
 			}
@@ -291,6 +295,23 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
 			pageTaxonomyControl.TabController.UpdateFields(articleDetails.Taxonomoy.ToList());
 			pageWorkflowControl.UpdateFields(articleDetails.ArticleWorkflowState, articleDetails);
 		}
+
+        //added,21Sep16
+        public void UpdateTaxonomyControl()
+        {
+            if (PluginSingletonVerticalRoot.Instance.CurrentVertical.Name == null)
+            {
+                MessageBox.Show("Vertical Information Not Available.",@"Informa",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (PluginSingletonVerticalRoot.Instance.CurrentVertical.TaxonomyItem.Name == null)
+            {
+                //MessageBox.Show("Taxonomy not exists fot vertical.",@"Informa",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            pageTaxonomyControl.PopulateTaxonomyItems();
+        }
 
 		/// <summary>
 		/// 

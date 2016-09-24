@@ -34,8 +34,9 @@
 				padding-bottom: 5px;
 				cursor: pointer;
 				padding-top: 5px;
-				.sd{ display: block;}
-				.hd{display: none;}
+				li a{background: url("/dist/img/arrows.png") no-repeat; color: #979797; text-decoration: none;  padding-right: 25px;}
+				.sd{background-position: 55px 2px;}
+				.hd{background-position: 65px -18px; display: none;}
 			}
 			.toggle-demo{
 				width: 100%;
@@ -120,6 +121,7 @@
 		.article-tableau-placeholder{
 		   width: 100%;
 		   float: left;
+		   margin-bottom: 0.75em;
 		   .tableau-placeholder{
 				 float: left;
 				 width: 50%;
@@ -215,6 +217,12 @@
 			  }
 			  .modal-content {
 				margin-top:10%;
+				@include breakpoint('medium-small') {
+					margin-top:30%;
+				}	
+				@include breakpoint('small') {
+					margin-top:30%;
+				}	
 			  }
 			  .modal-header {
 				  border-bottom: 0;
@@ -246,3 +254,61 @@
 		}
 		.video-mini-container .embed-responsive.embed-responsive-16by9 {padding-bottom:0;}
 	
+		.article-related-content{
+			float: left;
+			clear: both;
+			h1{
+				 font-family: 'Roboto Condensed';
+				 font-style: normal;
+				 font-weight: 700;
+				 font-size: 1.875em;
+			}
+			.section-article{
+				width: 29%;
+				float: left;
+				margin: 0 2em 0 0;
+				
+				span{
+					 font-family: 'Roboto';
+					 font-style: normal;
+					 font-weight: 500;
+					 font-size: 0.75em;
+					 color: $color-dusty-gray;
+					 letter-spacing: 1px;
+					 display: block;
+					 
+				}
+				.date{
+						margin-bottom: 15px;
+						margin-top:10px;
+				}
+				.article-heading{
+					 text-transform: uppercase;
+					 margin-top:10px;
+					 margin-bottom:5px;
+				}
+				div{	
+					font-family: 'Roboto';
+					font-style: normal;
+					font-weight: 500;
+					font-size: 1.125em;
+					line-height: 25px;
+					margin: 2px 0;
+					clear: both;
+					hr{
+						border-bottom:1px solid #d1d3d4;						
+					}
+				}
+				@include breakpoint('medium'){
+					width: 45%;
+				}
+				
+				@include breakpoint('medium-small'){
+					width: 100%;
+				}
+				@include breakpoint('small'){
+					width: 100%;
+				}
+			}
+			
+		}
