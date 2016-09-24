@@ -117,6 +117,24 @@ var renderTableau = function() {
 		
 };
 
+var renderAMchart=function() {
+    
+    var amChartType = $('#amChartType').val();
+    var dataProvider = $('#amChartDataProvider').val();
+    var categoryField = $('#CategoryField').val();
+    var valueField = $('#ValueField').val();
+
+    AmCharts.makeChart("chartdiv", {
+        "type": amChartType,
+        "dataProvider": dataProvider,
+        "categoryField": categoryField,
+        "graphs": [{
+            "valueField": valueField,
+            "type":"column"
+        }]
+    });
+};
+
 var decodeHtml = function(html) {
 	var txt = document.createElement("textarea");
 	txt.innerHTML = html;
@@ -682,6 +700,7 @@ $(document).ready(function() {
 	// Also add a listener for winder resize, render appropriate containers
 	renderIframeComponents();
 	renderTableau();
+	renderAMchart();
 	$(window).on('resize', (event) => {
 		renderIframeComponents();
 		renderTableau();
