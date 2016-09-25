@@ -1,9 +1,10 @@
-﻿using Informa.Library.Globalization;
+﻿using Glass.Mapper.Sc;
+using Informa.Library.Globalization;
 using Informa.Library.Mail;
-using Informa.Library.Site;
 using Informa.Library.User.Profile;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.Settings;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Glass.Autofac.Attributes;
 using System.Collections.Generic;
 
@@ -13,7 +14,7 @@ namespace Informa.Library.User.ResetPassword.Web
 	public class WebUserResetPasswordEmailFactory : IWebUserResetPasswordEmailFactory
 	{
 		protected readonly ITextTranslator TextTranslator;
-		protected readonly ISiteRootContext SiteRootContext;
+		protected readonly ISitecoreContext SitecoreContext;
 		protected readonly IFindUserProfileByUsername FindUserProfile;
 		protected readonly IWebUserResetPasswordUrlFactory UrlFactory;
 		protected readonly IHtmlEmailTemplateFactory HtmlEmailTemplateFactory;
@@ -21,7 +22,7 @@ namespace Informa.Library.User.ResetPassword.Web
 		protected readonly ISiteSettings SiteSettings;
 		public WebUserResetPasswordEmailFactory(
 			ITextTranslator textTranslator,
-			ISiteRootContext siteRootContext,
+			ISitecoreContext sitecoreContext,
 			IFindUserProfileByUsername findUserProfile,
 			IWebUserResetPasswordUrlFactory urlFactory,
 			IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
@@ -29,7 +30,7 @@ namespace Informa.Library.User.ResetPassword.Web
 			ISiteSettings siteSettings)
 		{
 			TextTranslator = textTranslator;
-			SiteRootContext = siteRootContext;
+			SitecoreContext = sitecoreContext;
 			FindUserProfile = findUserProfile;
 			UrlFactory = urlFactory;
 			HtmlEmailTemplateFactory = htmlEmailTemplateFactory;
@@ -39,6 +40,7 @@ namespace Informa.Library.User.ResetPassword.Web
 
 		public IEmail Create(IUserResetPassword userResetPassword)
 		{
+			var siteRootContext = SitecoreContext?.GetRootItem<ISite_Root>();
 			if (userResetPassword == null)
 			{
 				return null;
@@ -52,7 +54,7 @@ namespace Informa.Library.User.ResetPassword.Web
 			}
 
 			var email = EmailFactory.Create();
-			var siteRoot = SiteRootContext.Item;
+			var siteRoot = siteRootContext;
 			var resetPasswordHtml = htmlEmailTemplate.Html;
 			var userProfile = FindUserProfile.Find(userResetPassword.Username);
 			var emailTo = userResetPassword.Username;

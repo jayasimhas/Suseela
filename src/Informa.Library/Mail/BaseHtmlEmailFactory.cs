@@ -1,8 +1,6 @@
-﻿using Informa.Library.Site;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Web;
-using Glass.Mapper.Sc;
 using Informa.Library.Services.Global;
 using Informa.Library.Utilities.Extensions;
 using Jabberwocky.Glass.Autofac.Attributes;
@@ -10,13 +8,15 @@ using Sitecore.Data.Items;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
 using Informa.Library.Utilities.Settings;
+using Glass.Mapper.Sc;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 
 namespace Informa.Library.Mail
 {
 	[AutowireService(LifetimeScope.PerScope)]
 	public class BaseHtmlEmailFactory : IBaseHtmlEmailFactory
 	{
-		protected readonly ISiteRootContext SiteRootContext;
+		protected ISitecoreContext SitecoreContext;
 		protected readonly IHtmlEmailTemplateFactory HtmlEmailTemplateFactory;
 		protected readonly IEmailFactory EmailFactory;
 	    protected readonly IGlobalSitecoreService GlobalService;
@@ -24,18 +24,18 @@ namespace Informa.Library.Mail
 
 
         public BaseHtmlEmailFactory(
-			ISiteRootContext siteRootContext,
+			ISitecoreContext sitecoreContext,
 			IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
 			IEmailFactory emailFactory,
             IGlobalSitecoreService globalService,
             ISiteSettings siteSettings)
 		{
-			SiteRootContext = siteRootContext;
+			SitecoreContext = sitecoreContext;
 			HtmlEmailTemplateFactory = htmlEmailTemplateFactory;
 			EmailFactory = emailFactory;
             GlobalService = globalService;
             SiteSettings = siteSettings;
-        }
+		}
 
         public IEmail Create() {
             return Create(new Dictionary<string, string>());
@@ -43,12 +43,14 @@ namespace Informa.Library.Mail
         
         public IEmail Create(Dictionary<string, string> replacements)
 		{
+			var siteRootContext = SitecoreContext?.GetRootItem<ISite_Root>();
+
 			var htmlEmailTemplate = HtmlEmailTemplateFactory.Create("_BaseEmail");
 
 			if (htmlEmailTemplate == null)
                 return null;
 		
-			var siteRoot = SiteRootContext.Item;
+			var siteRoot = siteRootContext;
 			var emailHtml = htmlEmailTemplate.Html;
 
             replacements.SetValue("#Environment#", SiteSettings.GetSetting("Env.Value", string.Empty));
