@@ -40,16 +40,15 @@
 			}
 			.toggle-demo{
 				width: 100%;
-				display: block;
-				padding: 10px 15px 15px 15px;
+				display: inline-flex;
+				padding: 10px 15px 15px 0;
 				float: left;
 				.demoText{
 					font-family: 'Roboto', Arial Narrow, sans-serif;
 					font-style: normal;
 					font-weight: 400;
 					font-size: 1.125em;
-					width: 50%;
-					float: left;
+					padding-left:15px;
 					text-align: justify;
 					line-height: 30px;
 					color: $color-abbey-gray;
@@ -61,8 +60,7 @@
 					}
 				}
 				.video-demo{
-					width: 50%;
-					float: left;
+						padding-left: 15px;
 						@include breakpoint('small') {
 							width:100%;
 							.visible-sm{
@@ -81,7 +79,7 @@
 								height: 90px;
 								background: url("/dist/img/video-icon.png") no-repeat;
 								top: 50%;
-								left: 60%;
+								left: 50%;
 								margin-top: -27px;
 								margin-left: -27px;
 								cursor: pointer;
@@ -93,12 +91,11 @@
 								}
 							}
 							.video-mini-container {
-								padding: 0 0 0 50px;
 								@include breakpoint('medium-small') {
-								padding: 0
+								padding: 0;
 								}
 								@include breakpoint('small') {
-								padding: 0
+								padding: 0;
 								}
 							}
 						}
