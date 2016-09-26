@@ -634,6 +634,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -1555,6 +1556,7 @@
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
     <Content Include="PrintStudio\Data\special.xml" />
     <Content Include="PrintStudio\Services\InDesignConnectorService.asmx" />
+    <Content Include="sitecore\login\default.aspx" />
     <Content Include="sitecore\login\login.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\css\ViewNlm.css" />

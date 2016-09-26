@@ -112,6 +112,16 @@ $main-menu-handle-width: 70px;
 }
 
 // Toggle menu section link visibility on-click
+
+.main-menu__section{
+	p{
+		font-size: 13px;
+		padding: 0 22px;
+		margin: 8px 0 6px;
+		line-height: 20px;
+	}
+}
+
 .main-menu__section-title.is-active {
 
 	// For some reason, this is required for the transform to render properly

@@ -299,14 +299,15 @@ namespace Informa.Web.Controllers
 			string year = date.Year.ToString();
 			var month = date.Month < 10 ? "0" + date.Month : date.Month.ToString();
 			string day = date.Day < 10 ? "0" + date.Day : date.Day.ToString();
-			IHome_Page homeFolder;
+ 
+            IHome_Page homeFolder;
 			IArticle_Folder articlesFolder;
 			IArticle_Date_Folder yearFolder;
 			IArticle_Date_Folder monthFolder;
 			IArticle_Date_Folder dayFolder;
-
-			// Home Folder
-			if (!publication._ChildrenWithInferType.OfType<IHome_Page>().Any())
+ 
+            // Home Folder
+            if (!publication._ChildrenWithInferType.OfType<IHome_Page>().Any())
 			{
 				var home = _sitecoreMasterService.Create<IHome_Page, IGlassBase>(publication, "Home");
 				_sitecoreMasterService.Save(home);

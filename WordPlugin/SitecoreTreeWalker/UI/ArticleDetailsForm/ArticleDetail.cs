@@ -690,6 +690,22 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 Globals.SitecoreAddin.LogException("Error when parsing article on creation!", ex);
                 return;
             }
+
+            //added,21Sep16
+            if (articleDetailsPageSelector.pageArticleInformationControl.IsVerticalSelected() == false)
+            {
+                Cursor = Cursors.Arrow;
+                MessageBox.Show("Please Select Vertical.",@"Informa",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
+            }
+            //added,21Sep16
+            if (articleDetailsPageSelector.pageArticleInformationControl.IsPublicationSelected()==false)
+            {
+                Cursor = Cursors.Arrow;
+                MessageBox.Show("Please Select Publication.",@"Informa",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
+            }
+
             try
             {
                 var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument,
@@ -965,7 +981,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             return redirect;
         }
 
-        public System.Version AssemblyVersion => ApplicationDeployment.CurrentDeployment.CurrentVersion;
+        public System.Version AssemblyVersion => //ApplicationDeployment.CurrentDeployment.CurrentVersion;
+            (ApplicationDeployment.IsNetworkDeployed == true) ? ApplicationDeployment.CurrentDeployment.CurrentVersion 
+            : System.Version.Parse(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion);
 
         private void ArticleDetail_Load(object sender, EventArgs e)
         {

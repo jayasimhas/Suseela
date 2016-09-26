@@ -7,7 +7,7 @@ using InformaSitecoreWord.Sitecore;
 using InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.Interfaces;
 using InformaSitecoreWord.UI.Controllers;
 using PluginModels;
-using PluginModels;
+using InformaSitecoreWord.Util;
 
 namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageUserControls
 {
@@ -25,14 +25,37 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 
 		public void UpdateFields(ArticleStruct articleDetails)
 		{
-			List<TaxonomyStruct> taxonomyItems = SitecoreClient.SearchTaxonomy("").ToList();
-			HDirectoryStruct taxonomyDirectory = SitecoreClient.GetHierarchyByGuid(new Guid(Constants.TAXONOMY_GUID));
 
-            TabController.InitializeSitecoreValues(taxonomyItems, taxonomyDirectory);
 
-			_isLive = articleDetails.IsPublished;
+            //Uncomment Start, use this code only when environment global/Taxonomy require at content root level as well
+            /*List<TaxonomyStruct> taxonomyItems = SitecoreClient.SearchTaxonomy("").ToList();
+            HDirectoryStruct taxonomyDirectory = SitecoreClient.GetHierarchyByGuid(Guid.Empty);//modified,21Sep16
+            */
+            //Uncomment End
+
+            //Old Code not needed now
+            //HDirectoryStruct taxonomyDirectory = SitecoreClient.GetHierarchyByGuid(new Guid(Constants.TAXONOMY_GUID));//commented,21Sep16
+
+            //Uncomment Start, use this code only when environment global/Taxonomy require at content root level as well
+            /*if (taxonomyItems != null && taxonomyDirectory != default(HDirectoryStruct) )
+            {
+                TabController.InitializeSitecoreValues(taxonomyItems, taxonomyDirectory);
+            }*/
+            //Uncomment End
+
+            _isLive = articleDetails.IsPublished;
 			label4.Refresh();
 		}
+
+        //added,21Sep16
+        public void PopulateTaxonomyItems()
+        {
+            List<TaxonomyStruct> taxonomyItems = SitecoreClient.SearchTaxonomy("", PluginSingletonVerticalRoot.Instance.CurrentVertical.TaxonomyItem.ID).ToList();
+            HDirectoryStruct taxonomyDirectory = SitecoreClient.GetHierarchyByGuid(PluginSingletonVerticalRoot.Instance.CurrentVertical.TaxonomyItem.ID);
+
+            TabController.InitializeSitecoreValues(taxonomyItems, taxonomyDirectory);
+            
+        }
 
 		public override void LinkToMenuItem(MenuSelectorItem menuItem)
 		{
