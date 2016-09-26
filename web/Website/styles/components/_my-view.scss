@@ -1,0 +1,107 @@
+header{
+	.header-account-access{
+		flex: 2 0 auto !important;
+		padding: 0 !important;
+		.myView-placeholder{				
+				float: left;
+				padding: 0.3em 0;
+				position: relative;
+				.btn-my-view{
+					border: 1px solid transparent;
+					color: $color-white;
+					padding: 12px;
+					background-color: $color-my-view; 
+					width: 146px;
+					font-family: 'Roboto', Arial Narrow, sans-serif;
+					font-style: normal;
+					font-weight: 700;
+					font-size: 0.75em;
+					
+					@include breakpoint('wide'){
+						text-transform: uppercase;
+					}
+					@include breakpoint('medium'){
+						text-transform: uppercase;
+					}
+					@include breakpoint('medium-small') {
+						background: none; 
+						color: $color-my-view;
+						padding: 0;
+						width: auto;
+						font-family: 'Roboto', Arial Narrow, sans-serif;
+						font-style: normal;
+						font-weight: 400;
+					}
+					@include breakpoint('small') {
+						background: none; 
+						color: $color-my-view;
+						padding: 0;
+						width: auto;
+						font-family: 'Roboto', Arial Narrow, sans-serif;
+						font-style: normal;
+						font-weight: 400;
+					}
+				}
+				@include breakpoint('medium') {
+					float: right;
+					margin-right: 20px;
+					clear: both;
+					display: block
+				}
+				@include breakpoint('medium-small') {
+					float: right;
+					width: auto;
+				}
+				@include breakpoint('small') {
+					position: absolute;
+					top: 38px;
+					margin-right: 12px;
+					right: 0;
+					
+				}
+			.arrow{
+				display: none;
+				float: left;
+				margin-top: 3px;
+				margin-right: 3px;
+				@include breakpoint('small') {
+						display: block;
+				}
+				@include breakpoint('medium-small') {
+						display: block;
+				}
+			}
+				
+		}
+		.header-account-right-access{
+			float: right;
+			padding: 1rem 0;
+			@include breakpoint('medium') {
+				float: right;
+				margin-right: 20px;
+				clear: both;
+				display: block;
+			}
+			@include breakpoint('small') {
+				float: left;
+				padding: 9px 0;
+			}
+			
+		}
+	}
+	.header__logo{
+		@include breakpoint('small') {
+			margin-right:0 !important;
+		}
+	}
+	.header__icons--search, .header__icons--dismiss-search{
+		@include breakpoint('small') {
+		margin: 2.5rem 0 1rem 0.5rem !important;
+		}
+		@include breakpoint('medium-small') {
+		margin: 2.5rem 0 1rem 0.5rem !important;
+		}
+	}
+
+	
+}
