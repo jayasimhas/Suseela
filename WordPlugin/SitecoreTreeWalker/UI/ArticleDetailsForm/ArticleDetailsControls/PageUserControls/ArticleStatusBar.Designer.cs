@@ -45,12 +45,12 @@
 			this.uxArticleStatusBar.BackColor = System.Drawing.Color.Transparent;
 			this.uxArticleStatusBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.uxArticleStatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uxArticleNumberLabel,
-            this.uxArticleNumber,
-            this.uxLinkUnlinkButton,
-            this.uxLockStateButton,
-            this.uxVersionStateButton,
-            this.uxWorkflowButton});
+			this.uxArticleNumberLabel,
+			this.uxArticleNumber,
+			this.uxLinkUnlinkButton,
+			this.uxLockStateButton,
+			this.uxVersionStateButton,
+			this.uxWorkflowButton});
 			this.uxArticleStatusBar.Location = new System.Drawing.Point(0, 0);
 			this.uxArticleStatusBar.Name = "uxArticleStatusBar";
 			this.uxArticleStatusBar.Size = new System.Drawing.Size(794, 40);
@@ -122,7 +122,6 @@
 			this.Controls.Add(this.uxArticleStatusBar);
 			this.Name = "ArticleStatusBar";
 			this.Size = new System.Drawing.Size(794, 41);
-			this.Load += new System.EventHandler(this.ArticleStatusBar_Load);
 			this.uxArticleStatusBar.ResumeLayout(false);
 			this.uxArticleStatusBar.PerformLayout();
 			this.ResumeLayout(false);

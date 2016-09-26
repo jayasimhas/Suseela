@@ -178,18 +178,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                     break;
             }
         }
-
-		private void ArticleStatusBar_Load(object sender, EventArgs e)
-		{
-			try {
-				var articleLockInfo = new ArticleLockInfo();
-				articleLockInfo.LinkToParent(_parent);
-				articleLockInfo.SetArticleNumber(_articleNumber);
-				articleLockInfo.LinkToStatusBar(this);
-				articleLockInfo.SetCheckedOutStatus();
-			}
-			catch { }
-		}
+    }
 	}
 
 	public enum LockStatus
