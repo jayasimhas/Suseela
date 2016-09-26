@@ -133,7 +133,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                 uxLinkUnlinkButton.Image = new Bitmap(Resources.link_32);
             }
             var articleLockInfo = new ArticleLockInfo();
-            articleLockInfo.SetCheckedOutStatus();
+			articleLockInfo.LinkToParent(_parent);
+			articleLockInfo.SetCheckedOutStatus();
         }
 
         public void RefreshWorkflowDetails()
