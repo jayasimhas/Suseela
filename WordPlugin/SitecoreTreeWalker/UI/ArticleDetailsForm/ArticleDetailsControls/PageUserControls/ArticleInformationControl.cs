@@ -379,9 +379,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             IsCheckedOutByMe = false;
 
             _parent.PreLinkEnable();
+			IndicatedUnfavoredLink();
+			_parent.EnablePreview();
+			_parent.HideCreationButtons();
 
-            //_parent.articleStatusBar1.up
-            _parent.articleStatusBar1.ChangeLockButtonStatus(LockStatus.Locked);
+			//_parent.articleStatusBar1.up
+			_parent.articleStatusBar1.ChangeLockButtonStatus(LockStatus.Locked);
             //IndicatedUnfavoredLink();
             DocumentProtection.Protect(_documentCustomProperties);
         }
