@@ -1679,7 +1679,9 @@
     <Folder Include="Views\VWB\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\Sitecore.Support.405677.config" />
     <Content Include="Areas\Account\Views\ResetPassword\Change.cshtml" />
     <Content Include="Areas\Account\Views\Registration\RegisterUser.cshtml" />
