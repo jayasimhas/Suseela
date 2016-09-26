@@ -178,7 +178,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                     break;
             }
         }
-    }
+    
 	}
 
 	public enum LockStatus
