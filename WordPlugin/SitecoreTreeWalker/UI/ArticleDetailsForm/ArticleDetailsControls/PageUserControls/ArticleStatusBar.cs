@@ -132,9 +132,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                 uxLinkUnlinkButton.Text = "Link";
                 uxLinkUnlinkButton.Image = new Bitmap(Resources.link_32);
             }
-            var articleLockInfo = new ArticleLockInfo();
-            articleLockInfo.SetCheckedOutStatus();
-        }
+
+			var articleLockInfo = new ArticleLockInfo();
+			articleLockInfo.SetCheckedOutStatus();
+		}
 
         public void RefreshWorkflowDetails()
         {
@@ -177,9 +178,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                     break;
             }
         }
-    }
+    
+	}
 
-    public enum LockStatus
+	public enum LockStatus
     {
         Locked,
         Unlocked
