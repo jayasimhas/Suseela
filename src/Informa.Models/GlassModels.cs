@@ -14414,6 +14414,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         string Tool_Explanation { get; set; }
 
         /// <summary>
+        /// The Related Articles field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: 9B17A58E-112B-4A71-81A2-70F5EA7D337E</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IData_Tool_BaseConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Related_Articles { get; set; }
+
+        /// <summary>
+        /// The Taxonomy Listings field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: 7AF498FA-B21A-40DD-8E61-A369B4AA6691</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IData_Tool_BaseConstants.TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Taxonomy { get; set; }
+
+        /// <summary>
         /// The Heading field.
         /// <para></para>
         /// <para>Field Type: Single-Line Text</para>		
