@@ -1,0 +1,23 @@
+﻿@model Informa.Web.ViewModels.DataTools.AMChartViewModel
+
+
+@if (!string.IsNullOrEmpty(Model.ChartType))
+{
+    var chartType = Model.ChartType;
+    var ChartTypeScript = "~/amcharts/" + chartType + ".js";
+    var dashboardWidth = string.IsNullOrWhiteSpace(Model.Height) ? "640px" : Model.Height;
+    var dashboardHeight = string.IsNullOrWhiteSpace(Model.Width) ? "400px" : Model.Width;
+    var jsonDataPath = string.IsNullOrWhiteSpace(Model.JsonPath) ? "~/amcharts/data/AMChartData.js" : Model.JsonPath;
+
+    <script src="~/amcharts/amcharts.js"></script>
+    <script src=@ChartTypeScript></script>
+    <script src=@jsonDataPath></script>
+   
+
+    @Html.HiddenFor(m=>m.CategoryField)
+    @Html.HiddenFor(m => m.ValueField)
+    <input type="hidden" id="amChartType" value="@chartType" />
+    <input type="hidden" id="amChartDataProvider" value="chartData" />
+    @*<input type="button" value="click" onclick="RenderAMChartData()" />*@
+  <div id="chartdiv" style="width:@dashboardHeight; height:@dashboardWidth;"></div>
+ }
