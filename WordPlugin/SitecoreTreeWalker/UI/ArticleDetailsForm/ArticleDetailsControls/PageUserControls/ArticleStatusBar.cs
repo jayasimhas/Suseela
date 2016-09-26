@@ -180,11 +180,14 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 
 		private void ArticleStatusBar_Load(object sender, EventArgs e)
 		{
-			var articleLockInfo = new ArticleLockInfo ();
-			articleLockInfo.LinkToParent(_parent);
-			articleLockInfo.SetArticleNumber(_articleNumber);
-			articleLockInfo.LinkToStatusBar(this);
-			articleLockInfo.SetCheckedOutStatus();
+			try {
+				var articleLockInfo = new ArticleLockInfo();
+				articleLockInfo.LinkToParent(_parent);
+				articleLockInfo.SetArticleNumber(_articleNumber);
+				articleLockInfo.LinkToStatusBar(this);
+				articleLockInfo.SetCheckedOutStatus();
+			}
+			catch { }
 		}
 	}
 
