@@ -25,7 +25,7 @@ namespace Informa.Web.ViewModels.DataTools
         protected readonly IArticleSearch Searcher;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
         private readonly IAuthenticatedUserContext _authenticatedUserContext;
-        public readonly ISignInViewModel SignInViewModel;
+        public readonly ICallToActionViewModel CallToActionViewModel;
 
         public TableauDashboardViewModel(
             ISiteRootContext siteRootContext,
@@ -35,8 +35,8 @@ namespace Informa.Web.ViewModels.DataTools
             IDataToolPrologueViewModel dataToolPrologueViewModel,
             IArticleListItemModelFactory articleListableFactory,
             IArticleSearch searcher,
-            IAuthenticatedUserContext authenticatedUserContext,
-            ISignInViewModel signInViewModel)
+            ICallToActionViewModel callToActionViewModel,
+             IAuthenticatedUserContext authenticatedUserContext)
         {
             SiteRootContext = siteRootContext;
             GlobalService = globalService;
@@ -45,7 +45,8 @@ namespace Informa.Web.ViewModels.DataTools
             PrologueViewModel = dataToolPrologueViewModel;
             ArticleListableFactory = articleListableFactory;
             Searcher = searcher;
-            SignInViewModel = signInViewModel;
+            CallToActionViewModel = callToActionViewModel;
+            _authenticatedUserContext = authenticatedUserContext;
         }
 
         #region Tableau Dashboard Parameters/details
