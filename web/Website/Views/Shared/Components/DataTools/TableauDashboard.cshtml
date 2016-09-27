@@ -32,10 +32,10 @@
             @if (!string.IsNullOrWhiteSpace(@Model.IntroductoryVideoLink) && !string.IsNullOrWhiteSpace(@Model.IntroductoryText))
             {
                 <div class="js-toggle-demo">
-                    <div class="show-demo">
-                        <div class="sd">@Model.HideDemoLable<i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-                        <div class="hd">@Model.ShowDemoLable<i class="fa fa-chevron-up" aria-hidden="true"></i></div>
-                    </div>
+                    <ul class="show-demo">
+                        <li><a class="sd" href="javascript: void(0);">@Model.HideDemoLable</a></li>
+                        <li><a class="hd" href="javascript: void(0);">@Model.ShowDemoLable</a></li>
+                    </ul>
                     <div class="toggle-demo">
                         <div class="demoText">
                             <span>
