@@ -1,0 +1,10 @@
+﻿@model Informa.Web.ViewModels.DataTools.IDataToolTagsViewModel
+<div class="article-tags-bar">
+    <span class="article-tags-bar__label">@Model.TagsLableText</span>
+    <div class="bar-separated-link-list">
+        @foreach (var tag in Model.Tags)
+        {
+            <a href="@tag.LinkableUrl">@tag.LinkableText</a>
+        }
+    </div>
+</div>
