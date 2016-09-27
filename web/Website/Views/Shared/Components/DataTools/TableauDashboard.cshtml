@@ -26,6 +26,7 @@
         var dashboardHeight = string.IsNullOrWhiteSpace(Model.DashboardHeight) ? "100%" : Model.DashboardHeight;
         <div class="data-tool-landing">
             @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolPrologue.cshtml", Model.PrologueViewModel); }
+
             <h1>@Model.PageTitle</h1>
             <div class="sub-heading-text">@Model.PageSubheading</div>
             @if (!string.IsNullOrWhiteSpace(@Model.IntroductoryVideoLink) && !string.IsNullOrWhiteSpace(@Model.IntroductoryText))
@@ -61,24 +62,14 @@
                 </div>
             }
             <script type="text/javascript" src="@Model.JSAPIUrl"></script>
+
             <div class="data-tool-placeholder">
-                <div class="data-tool-graph tableau_component__desktop">
-                    <object class="tableauViz" width='@dashboardWidth' height='@dashboardHeight'>
-                        <param name="host_url" value="@Model.HostUrl" />
-                        <param name="name" value="@Model.DashboardName" />
-                        <param name="tabs" value="@Model.DisplayTabs" />
-                        <param name="toolbar" value="@Model.DisplayToolbars" />
-                        <param name='customViews' value='@Model.AllowCustomViews' />
-                        <param name='filter' value='@Model.Filter' />
-                        <param name='ticket' value='@Model.TableauTicket' />
-                    </object>
-                </div>
-                @if (Model.IsMobileDashboardAvailable)
-                    {
-                    <div class="data-tool-graph tableau_component__mobile">
+                @if (Model.IsUserAuthenticated || !Model.AuthenticationRequired)
+                {
+                    <div class="data-tool-graph tableau_component__desktop">
                         <object class="tableauViz" width='@dashboardWidth' height='@dashboardHeight'>
                             <param name="host_url" value="@Model.HostUrl" />
-                            <param name="name" value="@Model." />
+                            <param name="name" value="@Model.DashboardName" />
                             <param name="tabs" value="@Model.DisplayTabs" />
                             <param name="toolbar" value="@Model.DisplayToolbars" />
                             <param name='customViews' value='@Model.AllowCustomViews' />
@@ -86,13 +77,32 @@
                             <param name='ticket' value='@Model.TableauTicket' />
                         </object>
                     </div>
+                    if (Model.IsMobileDashboardAvailable)
+                    {
+                        <div class="data-tool-graph tableau_component__mobile">
+                            <object class="tableauViz" width='@dashboardWidth' height='@dashboardHeight'>
+                                <param name="host_url" value="@Model.HostUrl" />
+                                <param name="name" value="@Model." />
+                                <param name="tabs" value="@Model.DisplayTabs" />
+                                <param name="toolbar" value="@Model.DisplayToolbars" />
+                                <param name='customViews' value='@Model.AllowCustomViews' />
+                                <param name='filter' value='@Model.Filter' />
+                                <param name='ticket' value='@Model.TableauTicket' />
+                            </object>
+                        </div>
+                    }
+                    <div class="articleText">
+                        <span>
+                            @Model.ToolExplanation
+                        </span>
+                    </div>
                 }
-                <div class="articleText">
-                    <span>
-                        @Model.ToolExplanation
-                    </span>
-                </div>
-
+                else
+                {
+                    <div class="article-call-to-action">
+                        @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataTollUserCallToAction.cshtml", Model.CallToActionViewModel); }
+                    </div>
+                            }
             </div>
             @{
                 Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolRelatedList.cshtml", Model);
