@@ -14197,13 +14197,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "Tableau Dashboard";
 
-
         public static readonly ID Dashboard_NameFieldId = new ID("161FB372-121C-47E4-9704-E6CAF1490D43");
         public const string Dashboard_NameFieldName = "Dashboard Name";
 
         public static readonly ID Mobile_Dashboard_NameFieldId = new ID("CF2E5DBF-D588-4ABE-A0FA-C481D122625F");
         public const string Mobile_Dashboard_NameFieldName = "Mobile Dashboard Name";
-
 
         public static readonly ID Authentication_RequiredFieldId = new ID("36A636B0-0150-457C-9992-3E21DAC32317");
         public const string Authentication_RequiredFieldName = "Authentication Required";
@@ -14304,6 +14302,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         string Tool_Explanation { get; set; }
 
         /// <summary>
+        /// The Related Articles field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: 9B17A58E-112B-4A71-81A2-70F5EA7D337E</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IData_Tool_BaseConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Related_Articles { get; set; }
+
+        /// <summary>
+        /// The Taxonomy Listings field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: 7AF498FA-B21A-40DD-8E61-A369B4AA6691</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IData_Tool_BaseConstants.TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Taxonomy { get; set; }
+
+        /// <summary>
         /// The Heading field.
         /// <para></para>
         /// <para>Field Type: Single-Line Text</para>		
@@ -14313,15 +14331,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         [SitecoreField(IData_Tool_BaseConstants.HeadingFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Heading { get; set; }
 
-        /// <summary>
-        /// The Text field.
-        /// <para></para>
-        /// <para>Field Type: Rich Text</para>		
-        /// <para>Field ID:  7F90260E-4AFB-4929-9E5D-DEF26974C50F</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IData_Tool_BaseConstants.TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
-        string Text { get; set; }
 
         /// <summary>
         /// The Landing Page Link field.
@@ -14331,7 +14340,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IData_Tool_BaseConstants.Landing_Page_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Landing_Page_Link { get; set; }
+        Link Landing_Page_Link { get; set; }
     }
 
 
@@ -14405,6 +14414,26 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         string Tool_Explanation { get; set; }
 
         /// <summary>
+        /// The Related Articles field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: 9B17A58E-112B-4A71-81A2-70F5EA7D337E</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IData_Tool_BaseConstants.Related_ArticlesFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Related_Articles { get; set; }
+
+        /// <summary>
+        /// The Taxonomy Listings field.
+        /// <para></para>
+        /// <para>Field Type: Treelist</para>		
+        /// <para>Field ID: 7AF498FA-B21A-40DD-8E61-A369B4AA6691</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IData_Tool_BaseConstants.TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
+        IEnumerable<IGlassBase> Taxonomy { get; set; }
+
+        /// <summary>
         /// The Heading field.
         /// <para></para>
         /// <para>Field Type: Single-Line Text</para>		
@@ -14414,15 +14443,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         [SitecoreField(IData_Tool_BaseConstants.HeadingFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Heading { get; set; }
 
-        /// <summary>
-        /// The Text field.
-        /// <para></para>
-        /// <para>Field Type: Rich Text</para>		
-        /// <para>Field ID:  7F90260E-4AFB-4929-9E5D-DEF26974C50F</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IData_Tool_BaseConstants.TextFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Text { get; set; }
 
         /// <summary>
         /// The Landing Page Link field.
@@ -14432,7 +14452,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IData_Tool_BaseConstants.Landing_Page_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Landing_Page_Link { get; set; }
+        Link Landing_Page_Link { get; set; }
     }
 
     public static partial class IData_Tool_BaseConstants
@@ -14466,14 +14486,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         public static readonly ID Tool_Explanation__RawFieldId = new ID("58EADA52-FE63-4FD3-8034-0BB6FBBCCD16");
         public const string Tool_Explanation__RawFieldName = "Tool Explanation";
 
+        public static readonly ID Related_ArticlesFieldId = new ID("9B17A58E-112B-4A71-81A2-70F5EA7D337E");
+        public const string Related_ArticlesFieldName = "Related Articles";
+
+        public static readonly ID TaxonomyFieldId = new ID("7AF498FA-B21A-40DD-8E61-A369B4AA6691");
+        public const string TaxonomyFieldName = "Taxonomy";
+
         public static readonly ID HeadingFieldId = new ID("ACA997C5-4D8A-4C6C-AAA7-88272311FA31");
         public const string HeadingFieldName = "Heading";
-
-        public static readonly ID TextFieldId = new ID("7F90260E-4AFB-4929-9E5D-DEF26974C50F");
-        public const string TextFieldName = "Text";
-
-        public static readonly ID Text__RawFieldId = new ID("7F90260E-4AFB-4929-9E5D-DEF26974C50F");
-        public const string Text__RawFieldName = "Text";
 
         public static readonly ID Landing_Page_LinkFieldId = new ID("9ABC643C-8ED6-455C-8598-EA73A420E96B");
         public const string Landing_Page_LinkFieldName = "Landing Page Link";
@@ -14481,6 +14501,187 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 
 }
 
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+
+
+    /// <summary>
+    /// IAMChart_Dashboard Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/AMcharts Dashboard</para>	
+    /// <para>ID: F0160F93-A592-4F61-8E4E-F8F7E1C00246</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IAMcharts_DashboardConstants.TemplateIdString)]
+    public partial interface IAMcharts_Dashboard : IGlassBase
+    {
+        /// <summary>
+        /// The Chart Type field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 5808558D-AC15-4692-8726-991C350DE014</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.ChartTypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string ChartType { get; set; }
+
+        /// <summary>
+        /// Category field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: F9722A63-D4A7-4B85-BC22-BB0FE5C6C444</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.CategoryFieldFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string CategoryField { get; set; }
+
+        /// <summary>
+        /// Value Field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: CCAF314E-0C9B-4DFF-B7CA-2C2AFC985531</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.ValueFieldFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string ValueField { get; set; }
+
+        /// <summary>
+        /// Height Field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 7018F640-6C11-46E3-A563-843B36E100A5</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Height { get; set; }
+
+        /// <summary>
+        /// Width Field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: B510B4F7-5383-433F-87A6-3E0C5B14A58F</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.WidthFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Width { get; set; }
+
+        /// <summary>
+        /// Json Path field
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 67D813E6-5140-486C-A479-9B86C5AAA66C</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.JsonPathFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string JsonPath { get; set; }
+
+
+
+    }
+
+
+    /// <summary>
+    /// IAMChart_Dashboard Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/AMcharts Dashboard</para>	
+    /// <para>ID: F0160F93-A592-4F61-8E4E-F8F7E1C00246</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IAMcharts_Dashboard__Raw : IGlassBase
+    {
+        /// <summary>
+        /// The Chart Type field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 5808558D-AC15-4692-8726-991C350DE014</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.ChartTypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string ChartType { get; set; }
+
+        /// <summary>
+        /// Category field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: F9722A63-D4A7-4B85-BC22-BB0FE5C6C444</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.CategoryFieldFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string CategoryField { get; set; }
+
+        /// <summary>
+        /// Value Field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: CCAF314E-0C9B-4DFF-B7CA-2C2AFC985531</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.ValueFieldFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string ValueField { get; set; }
+
+        /// <summary>
+        /// Height Field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 7018F640-6C11-46E3-A563-843B36E100A5</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.HeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Height { get; set; }
+
+        /// <summary>
+        /// Width Field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: B510B4F7-5383-433F-87A6-3E0C5B14A58F</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.WidthFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Width { get; set; }
+
+        /// <summary>
+        /// Json Path field
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 67D813E6-5140-486C-A479-9B86C5AAA66C</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.JsonPathFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string JsonPath { get; set; }
+
+    }
+
+    public static partial class IAMcharts_DashboardConstants
+    {
+
+        public const string TemplateIdString = "F0160F93-A592-4F61-8E4E-F8F7E1C00246";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "AMcharts Dashboard";
+
+
+        public static readonly ID ChartTypeFieldId = new ID("5808558D-AC15-4692-8726-991C350DE014");
+        public const string ChartTypeFieldName = "ChartType";
+
+        public static readonly ID CategoryFieldFieldId = new ID("F9722A63-D4A7-4B85-BC22-BB0FE5C6C444");
+        public const string CategoryFieldFieldName = "CategoryField";
+
+
+        public static readonly ID ValueFieldFieldId = new ID("CCAF314E-0C9B-4DFF-B7CA-2C2AFC985531");
+        public const string ValueFieldFieldName = "ValueField";
+
+        public static readonly ID HeightFieldId = new ID("7018F640-6C11-46E3-A563-843B36E100A5");
+        public const string HeightFieldName = "Height";
+
+        public static readonly ID WidthFieldId = new ID("B510B4F7-5383-433F-87A6-3E0C5B14A58F");
+        public const string WidthFieldName = "Width";
+
+
+        public static readonly ID JsonPathFieldId = new ID("67D813E6-5140-486C-A479-9B86C5AAA66C");
+        public const string JsonPathFieldName = "JsonPath";
+
+
+    }
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Outbound
 {
 

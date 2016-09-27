@@ -20,6 +20,7 @@ using Sitecore.Data.Items;
 using Informa.Library.Site;
 using Velir.Search.Models;
 using Informa.Library.Search.SearchIndex;
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Informa.Library.Article.Search
 {
@@ -156,12 +157,12 @@ namespace Informa.Library.Article.Search
         public long GetNextArticleNumber(Guid publicationGuid)
         {
             var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
+
             using (var context = SearchContextFactory.Create(Constants.MasterDb, publicationItem.SearchIndexName))
             {
                 if (publicationItem != null)
                 {
                     var filter = CreateFilter();
-
                     var query = context.GetQueryable<ArticleSearchResultItem>()
                         .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
                                 .Filter(i => i.PublicationTitle == publicationItem.Publication_Name)
@@ -190,6 +191,16 @@ namespace Informa.Library.Article.Search
         {
             string value;
             return Constants.PublicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : null;
+        }
+
+        public string GetPublicationPrefix(string publicationGuid)
+        {
+            var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
+            var verticalItemName = publicationItem?._Parent._Name;// GlobalService.GetItem<IVertical_Root>((Guid)publicationItem?._Parent._Id)?._Name; //Vertical Folder//added,21Sep16
+            //Example Content.Pharma.Scrip.Prefix
+            var publicationPrefix = SitecoreSettingResolver.Instance.ItemSetting[SitecoreSettingResolver.Instance.ContentRootname + "." + verticalItemName + "." + publicationItem._Name + ".Prefix"];
+
+            return publicationPrefix;
         }
 
         public static string GetCleansedArticleTitle(IArticle a)
