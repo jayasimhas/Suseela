@@ -4168,6 +4168,8 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
             display: block; }
           .data-tool-landing .js-toggle-demo .toggle-demo .visble-lg {
             display: none; } }
+      .data-tool-landing .js-toggle-demo .toggle-demo .add-width-50 {
+        width: 50%; }
 
 .article-data-tool-placeholder {
   width: 100%;
