@@ -126,11 +126,12 @@ var renderAMchart=function() {
 
     AmCharts.makeChart("chartdiv", {
         "type": amChartType,
-        "dataProvider": dataProvider,
+        "dataProvider": chartData,
         "categoryField": categoryField,
         "graphs": [{
             "valueField": valueField,
             "type":"column"
+            
         }]
     });
 };
