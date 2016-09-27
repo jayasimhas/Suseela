@@ -955,6 +955,16 @@
     <Compile Include="ViewModels\Authors\AuthorProfileViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
     <Compile Include="ViewModels\DataTools\AMChartViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\DataToolPrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\DataToolProloguePrintViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\DataToolPrologueShareViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\DataToolPrologueViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\DataToolTagsViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\IDataToolPrologueEmailViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\IDataToolProloguePrintViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\IDataToolPrologueShareViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\IDataToolPrologueViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\IDataToolTagsViewModel.cs" />
     <Compile Include="ViewModels\DataTools\TableauDashboardViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailLayoutViewModel.cs" />
     <Compile Include="ViewModels\Emails\EmailAdvertisementViewModel.cs" />
@@ -1100,7 +1110,6 @@
     <Content Include="500.html" />
     <Content Include="amcharts\amcharts.js" />
     <Content Include="amcharts\data\AMChartData.js" />
-    <Content Include="amcharts\data\Amchartrender.js" />
     <Content Include="amcharts\funnel.js" />
     <Content Include="amcharts\gantt.js" />
     <Content Include="amcharts\gauge.js" />
@@ -1849,6 +1858,14 @@
     <Content Include="Views\Shared\Components\DataTools\TableauDashboard.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\AMChartDashboard.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\Components\DataTools\DataToolTags.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\DataToolPrologue.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\DataToolPrologueEmail.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\DataToolProloguePrint.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\DataToolPrologueShare.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\DataToolRelatedList.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\DataToolListItem.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\DataTollUserCallToAction.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

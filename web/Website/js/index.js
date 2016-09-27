@@ -126,11 +126,12 @@ var renderAMchart=function() {
 
     AmCharts.makeChart("chartdiv", {
         "type": amChartType,
-        "dataProvider": dataProvider,
+        "dataProvider": chartData,
         "categoryField": categoryField,
         "graphs": [{
             "valueField": valueField,
             "type":"column"
+            
         }]
     });
 };
@@ -1039,6 +1040,9 @@ window.findTooltips();
 	$(".selectivity-input .selectivity-single-select").each(function() {
 		$(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
 	});
-	
-	
+	//landing page
+	if($(".demoText").is(':visible') && $(".video-demo").is(':visible')){
+	   $('.demoText').addClass('add-width-50');
+	   $('.video-demo').addClass('add-width-50');
+	}
 });

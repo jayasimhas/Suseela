@@ -1,4 +1,4 @@
-	.tableau-landing{
+	.data-tool-landing{
 		width: 100%;
 		h1{
 			font-family: "Roboto Condensed", Arial Narrow, sans-serif;
@@ -34,9 +34,8 @@
 				padding-bottom: 5px;
 				cursor: pointer;
 				padding-top: 5px;
-				li a{background: url("/dist/img/arrows.png") no-repeat; color: #979797; text-decoration: none;  padding-right: 25px;}
-				.sd{background-position: 55px 2px;}
-				.hd{background-position: 65px -18px; display: none;}
+				.sd{ display: block;}
+				.hd{display: none;}
 			}
 			.toggle-demo{
 				width: 100%;
@@ -115,11 +114,11 @@
 			}
 			
 		}
-		.article-tableau-placeholder{
+		.article-data-tool-placeholder{
 		   width: 100%;
 		   float: left;
 		   margin-bottom: 0.75em;
-		   .tableau-placeholder{
+		   .data-tool-placeholder{
 				 float: left;
 				 width: 50%;
 				 margin-bottom:0;
@@ -144,29 +143,29 @@
 				}	
 		   }
 		}
-		.tableau-placeholder{
+		.data-tool-placeholder{
 			width: 100%;
 			margin-bottom: 0.75rem;
-			h3.tableau-heading{
+			h3.data-tool-heading{
 				font-family: "Roboto Condensed", Arial Narrow, sans-serif;
 				font-style: normal;
 				font-weight: 700;
 				font-size: 1.5em
 			}
-			.tableau-graph{
+			.data-tool-graph{
 				width: 100%;
 				clear: both;
 			}
 		}
-		.tableau-placeholder-right-rail{
+		.data-tool-placeholder-right-rail{
 			width: 100%;
-			h3.tableau-heading{
+			h3.data-tool-heading{
 				font-family: "Roboto Condensed", Arial Narrow, sans-serif;
 				font-style: normal;
 				font-weight: 700;
 				font-size: 1.125em
 			}
-			.tableau-graph{
+			.data-tool-graph{
 				width: 100%;
 			}
 			p 
@@ -275,16 +274,15 @@
 					 display: block;
 					 
 				}
-				.date{
-						margin-bottom: 15px;
-						margin-top:10px;
-				}
-				.article-heading{
+				.article-related-content__date:last-child {
+					border-bottom: 1px solid #d1d3d4 !important;
+				}	
+				.article-related-content__category{
 					 text-transform: uppercase;
 					 margin-top:10px;
 					 margin-bottom:5px;
 				}
-				div{	
+				h5{	
 					font-family: 'Roboto';
 					font-style: normal;
 					font-weight: 500;
@@ -292,9 +290,6 @@
 					line-height: 25px;
 					margin: 2px 0;
 					clear: both;
-					hr{
-						border-bottom:1px solid #d1d3d4;						
-					}
 				}
 				@include breakpoint('medium'){
 					width: 45%;
