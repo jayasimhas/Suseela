@@ -1,14 +1,20 @@
-﻿using Informa.Library.DataTools;
+﻿using Informa.Library.Article.Search;
+using Informa.Library.DataTools;
 using Informa.Library.Globalization;
 using Informa.Library.Services.Global;
 using Informa.Library.Site;
-using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Informa.Web.ViewModels.Articles;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
-using Jabberwocky.Glass.Models;
+using System.Collections.Generic;
+using System.Linq;
+using Informa.Models.FactoryInterface;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Library.User.Authentication;
+using Informa.Library.ViewModels.Account;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Web.ViewModels.DataTools
 {
     public class TableauDashboardViewModel : GlassViewModel<ITableau_Dashboard>
     {
@@ -16,17 +22,30 @@ namespace Informa.Web.ViewModels
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ITableauUtil TableauUtil;
         protected readonly ITextTranslator TextTranslator;
+        protected readonly IArticleSearch Searcher;
+        protected readonly IArticleListItemModelFactory ArticleListableFactory;
+        private readonly IAuthenticatedUserContext _authenticatedUserContext;
+        public readonly ISignInViewModel SignInViewModel;
 
         public TableauDashboardViewModel(
-            ISiteRootContext siteRootContext, 
+            ISiteRootContext siteRootContext,
             IGlobalSitecoreService globalService,
-            ITableauUtil tableauUtil, 
-            ITextTranslator textTranslator)
+            ITableauUtil tableauUtil,
+            ITextTranslator textTranslator,
+            IDataToolPrologueViewModel dataToolPrologueViewModel,
+            IArticleListItemModelFactory articleListableFactory,
+            IArticleSearch searcher,
+            IAuthenticatedUserContext authenticatedUserContext,
+            ISignInViewModel signInViewModel)
         {
             SiteRootContext = siteRootContext;
             GlobalService = globalService;
             TableauUtil = tableauUtil;
             TextTranslator = textTranslator;
+            PrologueViewModel = dataToolPrologueViewModel;
+            ArticleListableFactory = articleListableFactory;
+            Searcher = searcher;
+            SignInViewModel = signInViewModel;
         }
 
         #region Tableau Dashboard Parameters/details
@@ -70,6 +89,16 @@ namespace Informa.Web.ViewModels
         public string ShowDemoLable => TextTranslator.Translate("DataTools.ShowDemo");
 
         public string HideDemoLable => TextTranslator.Translate("DataTools.HideDemo");
+
+        public IDataToolPrologueViewModel PrologueViewModel;
+
+        public IEnumerable<IListable> RelatedArticles => GlassModel?.Related_Articles.
+            Where(r => r != null).Select(x => ArticleListableFactory.Create(GlobalService.GetItem<IArticle>(x._Id))).
+            Cast<IListable>().OrderByDescending(x => x.ListableDate);
+
+        public string RealatedContentLableText => TextTranslator.Translate("DataTools.RelatedContentLable");
+
+        public bool IsUserAuthenticated => _authenticatedUserContext.IsAuthenticated;
 
         #endregion
 

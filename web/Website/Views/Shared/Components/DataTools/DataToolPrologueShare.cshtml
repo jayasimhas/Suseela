@@ -1,0 +1,42 @@
+﻿@model Informa.Web.ViewModels.DataTools.IDataToolPrologueShareViewModel
+<li class="action-flag action-flag--social">
+	<span class="action-flag__label">@Model.ShareText</span>
+
+	@*
+		LAST UPDATED — FEBRAURY 02 2016
+		https://developer.linkedin.com/docs/share-on-linkedin
+
+		url — The url-encoded URL of the page that you wish to share
+		mini — Required, and must be 'true'
+		title — OPTIONAL URL-encoded title, max length of 200 characters
+		summary — OPTIONAL URL-encoded description, max length of 256 characters
+		source — OPTIONAL URL-encoded source of the content (e.g. your website or application name)
+	*@
+	<a
+		href="https://www.linkedin.com/shareArticle?mini=true&url=@HttpUtility.UrlEncode(Model.Url)&title=@HttpUtility.UrlEncode(Model.Title)&summary=&source="
+		target="_blank"
+		class="link__no-hover click-utag" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"linkedin"}'>
+
+		<svg class="action-flag__icon action-flag__icon--linkedin">
+			<use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
+		</svg>
+	</a>
+
+	@*
+		LAST UPDATED — FEBRAURY 02 2016
+		https://dev.twitter.com/web/tweet-button/web-intent
+
+		text — UTF-8 and URL-encoded Tweet text
+		url — fully-qualified URL with a HTTP or HTTPS scheme, URL-encoded
+	*@
+    <a href="https://twitter.com/intent/tweet?text=@HttpUtility.UrlEncode(Model.Title)&url=@HttpUtility.UrlEncode(Model.Url)"
+       target="_blank"
+       class="link__no-hover click-utag" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"twitter"}'>
+        <svg class="action-flag__icon action-flag__icon--twitter">
+
+            <use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
+        </svg>
+    </a>
+
+</li>
+ 

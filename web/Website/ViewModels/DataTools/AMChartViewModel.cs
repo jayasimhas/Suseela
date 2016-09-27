@@ -45,8 +45,8 @@ namespace Informa.Web.ViewModels.DataTools
 
         #region AMcharts Right rail component content  
         public string ComponentHeading => GlassModel?.Heading;
-        public string ComponentText => GlassModel?.Text;
-        public string LandingPageLink => GlassModel?.Landing_Page_Link;
+       // public string ComponentText => GlassModel?.Text;
+        public string LandingPageLink => GlassModel?.Landing_Page_Link.Url;
         public string LandingPageLinkLable => TextTranslator.Translate("DataTools.LandingPageLink");
         #endregion
     }
