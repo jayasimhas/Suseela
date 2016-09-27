@@ -51,10 +51,10 @@
           enablePreview="true" enableWebEdit="true"
           enableDebugger="true" disableClientData="false">
       </site>
-      <site patch:before="site[@name='website']" name="commodities"
+      <site patch:before="site[@name='website']" name="Commodities"
          database="web" domain="extranet" virtualFolder="/" physicalFolder="/"
-         dictionaryDomain="ScriptIntelligenceDictionary"
-         hostName="${Site.Domain.Scrip}" targetHostName="${Site.Domain.ScripTargetHostName}"
+         dictionaryDomain="CommoditiesDictionary"
+         hostName="${Site.Domain.Commodities}" targetHostName="${Site.Domain.CommoditiesTargetHostName}"
          rootPath="/sitecore/content/Agri/commodities" startItem="/home"
          cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
          enableTracking="true" allowDebug="true"

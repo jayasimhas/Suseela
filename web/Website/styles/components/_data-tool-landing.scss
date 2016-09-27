@@ -34,8 +34,10 @@
 				padding-bottom: 5px;
 				cursor: pointer;
 				padding-top: 5px;
-				.sd{ display: block;}
-				.hd{display: none;}
+				li a{background: url("/dist/img/arrows.png") no-repeat; color: #979797; text-decoration: none;  padding-right: 25px;}
+				.sd{background-position: 41px 2px;}
+				.hd{background-position: 71px -18px; display: none;}
+
 			}
 			.toggle-demo{
 				width: 100%;
@@ -109,8 +111,12 @@
 							display: none;
 						}
 					}
+					.add-width-50{
+						width: 50%;
+					}
 					
 				}
+				
 			}
 			
 		}
