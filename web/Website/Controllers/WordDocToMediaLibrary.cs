@@ -78,7 +78,7 @@ namespace Informa.Web.Controllers
                 }
 
                 //Publication (modified,21Sep16)
-                if (mediaFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == publication._Name))
+                if (mediaVerticalFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == publication._Name))
 				{
 					mediaPublicationFolder =
                         mediaVerticalFolder._ChildrenWithInferType.OfType<IMedia_Folder>().First(x => x._Name == publication._Name);

@@ -15,7 +15,7 @@ namespace Informa.Library.Utilities.References
 
         public static string ContentRootNode = ItemIdResolver.GetItemIdByKey("ContentRootNode");
 
-		public const string ScripPublicationName = "Scrip Intelligence";
+        public const string ScripPublicationName = "Scrip Intelligence";
 
 		public const string MediaLibraryRoot = "/sitecore/media library/";
 		public const string MediaLibraryPath = "Documents/";
@@ -47,7 +47,7 @@ namespace Informa.Library.Utilities.References
 		public static string RoseSheetRootNode = ItemIdResolver.GetItemIdByKey("RoseSheetRootNode");
 		public const string RoseSheetNodeIntials = "RS";
 
-		public const string MSWordDocumentRootNode = "{FDBFCAC8 -03CA-4B0B-BEFE-2171050E19C6}"; //not added to config, as it's missing in CMS
+        public const string MSWordDocumentRootNode = "{FDBFCAC8 -03CA-4B0B-BEFE-2171050E19C6}"; //not added to config, as it's missing in CMS
 
 		public static string EditAfterPublishWorkflowCommand = ItemIdResolver.GetItemIdByKey("EditAfterPublishWorkflowCommand");
 
@@ -59,7 +59,7 @@ namespace Informa.Library.Utilities.References
 						{ new Guid(PinkSheetRootNode), PinkSheetRootNodeIntials},
 						{ new Guid(MedtechInsightRootNode), MedtechInsightRootNodeIntials},
 						{ new Guid(RoseSheetRootNode), RoseSheetNodeIntials},
-				};
+                };
 
 		/// <summary>
 		/// Why is this a dictionary?  Not changing because I'm afraid the word plugin will blow up.
@@ -71,7 +71,7 @@ namespace Informa.Library.Utilities.References
 						{ PinkSheetRootNodeIntials, PinkSheetRootNodeIntials},
 						{ MedtechInsightRootNodeIntials, MedtechInsightRootNodeIntials},
 						{ RoseSheetNodeIntials, RoseSheetNodeIntials},
-				};
+                };
 
 		public static int[] PerPageSizes = { 10, 20, 50 };
 

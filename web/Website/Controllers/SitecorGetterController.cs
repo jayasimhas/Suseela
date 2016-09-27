@@ -348,11 +348,12 @@ namespace Informa.Web.Controllers
         public GetVerticalsController(Func<string, ISitecoreService> sitecoreFactory)
         {
             _sitecoreService = sitecoreFactory(Constants.MasterDb);
+            
         }
         public JsonResult<List<VerticalStruct>> Get()
         {
-            var contentFolder = _sitecoreService.GetItem<IMain_Section>(new Guid(Constants.ContentRootNode));
-
+            Guid mainSectionGuid = new Guid(SitecoreSettingResolver.Instance.ContentRootGuid);
+            var contentFolder = _sitecoreService.GetItem<IMain_Section>(mainSectionGuid);
             var verticalsPublications = contentFolder?._ChildrenWithInferType.OfType<IVertical_Root>().Select(c =>
                          new VerticalStruct
                          {

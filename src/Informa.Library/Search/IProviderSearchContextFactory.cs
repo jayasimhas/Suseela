@@ -7,5 +7,6 @@ namespace Informa.Library.Search
 		//IProviderSearchContext Create();
 		IProviderSearchContext Create(string indexName);
         IProviderSearchContext Create(string database, string indexName);
-	}
+
+    }
 }
