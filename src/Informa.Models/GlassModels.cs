@@ -14492,7 +14492,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
     /// <para>ID: F0160F93-A592-4F61-8E4E-F8F7E1C00246</para>	
     /// </summary>
     [SitecoreType(TemplateId = IAMcharts_DashboardConstants.TemplateIdString)]
-    public partial interface IAMcharts_Dashboard : IGlassBase
+    public partial interface IAMcharts_Dashboard : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Scope_Type, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.IData_Tool_Base
     {
         /// <summary>
         /// The Chart Type field.
@@ -14566,7 +14566,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
     /// <para>ID: F0160F93-A592-4F61-8E4E-F8F7E1C00246</para>	
     /// </summary>
     [SitecoreType]
-    public partial interface IAMcharts_Dashboard__Raw : IGlassBase
+    public partial interface IAMcharts_Dashboard__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IBase_Match, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Scope_Type, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.IData_Tool_Base__Raw
     {
         /// <summary>
         /// The Chart Type field.
