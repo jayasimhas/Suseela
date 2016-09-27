@@ -1865,6 +1865,7 @@
     <Content Include="Views\Shared\Components\DataTools\DataToolPrologueShare.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\DataToolRelatedList.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\DataToolListItem.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\DataTollUserCallToAction.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
