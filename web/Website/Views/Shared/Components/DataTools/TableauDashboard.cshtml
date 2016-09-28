@@ -109,9 +109,15 @@
                     </div>
                             }
             </div>
-            @{
-                Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolRelatedList.cshtml", Model);
-            }
+           @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
+           {
+            <div class="article-related-content">
+                <h1>@Model.RealatedContentLableText</h1>
+                @{
+                    Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolRelatedList.cshtml", Model.RelatedArticles);
+                }
+            </div>
+                    }
         </div>
         @Html.HiddenFor(m => m.IsMobileDashboardAvailable);
                 }

@@ -5,15 +5,16 @@
 {
     var chartType = Model.ChartType;
     var ChartTypeScript = "/amcharts/" + chartType + ".js";
-    var dashboardWidth = string.IsNullOrWhiteSpace(Model.Height) ? "100%" : Model.Height;
-    var dashboardHeight = string.IsNullOrWhiteSpace(Model.Width) ? "100%" : Model.Width;
-    var jsonDataPath = string.IsNullOrWhiteSpace(Model.JsonPath) ? "/amcharts/data/AMChartData.js" : Model.JsonPath;
+    var dashboardHeight = string.IsNullOrWhiteSpace(Model.Height) ? "100%" : Model.Height;
+    var dashboardWidth = string.IsNullOrWhiteSpace(Model.Width) ? "100%" : Model.Width; 
+     var jsonDataPath = string.IsNullOrWhiteSpace(Model.JsonPath) ? "/amcharts/data/AMChartData.js" : Model.JsonPath;
 
     if (!string.IsNullOrEmpty(ChartTypeScript) && !string.IsNullOrEmpty(jsonDataPath))
     {
         <script src="/amcharts/amcharts.js"></script>
         <script src=@ChartTypeScript></script>
         <script src=@jsonDataPath></script>
+        <script src="/amcharts/plugins/responsive/responsive.min.js"></script>
 
         @Html.HiddenFor(m => m.CategoryField)
         @Html.HiddenFor(m => m.ValueField)
@@ -25,7 +26,7 @@
             <div class="data-tool-placeholder-right-rail">
                 <h3 class="data-tool-heading">@Model.ComponentHeading</h3>
                 <div class="data-tool-graph">
-                    <div id="chartdiv" style="width:@dashboardHeight; height:@dashboardWidth;"></div>
+                    <div id="chartdiv" style="width:@dashboardWidth; height:@dashboardHeight;"></div>
                 </div>
                 <p><a href="@Model.LandingPageLink">@Model.LandingPageLinkLable</a></p>
             </div>
@@ -33,6 +34,7 @@
         else
         {
             <div class="data-tool-landing">
+                @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolPrologue.cshtml", Model.PrologueViewModel); }
                 <h1>@Model.PageTitle</h1>
                 <div class="sub-heading-text">@Model.PageSubheading</div>
                 @if (!string.IsNullOrWhiteSpace(@Model.IntroductoryVideoLink) && !string.IsNullOrWhiteSpace(@Model.IntroductoryText))
@@ -68,18 +70,39 @@
                     </div>
                 }
                 <div class="data-tool-placeholder">
-                 <div class="data-tool-graph data_tool_component__desktop">
-                    <div id="chartdiv" style="width:@dashboardHeight; height:@dashboardWidth;"></div>
-                </div>
-                 </div>
-                <div class="articleText">
-                    <span>
-                        @Model.ToolExplanation
-                    </span>
-                </div>
-                <p><a href="@Model.LandingPageLink">@Model.LandingPageLinkLable</a></p>
-            </div>
-        }
+                    @if (Model.IsUserAuthenticated || !Model.AuthenticationRequired)
+                    {
+                        <div class="data-tool-graph data_tool_component__desktop">
+                            <div id="chartdiv" style="width:@dashboardWidth; height:@dashboardHeight;"></div>
+                            @*<div class="resizable">
+                                <div id="chartdiv"></div>
+                            </div>*@
+                        </div>
 
-    }
-}
+                        <div class="articleText">
+                            <span>
+                                @Model.ToolExplanation
+                            </span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="article-call-to-action">
+                            @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataTollUserCallToAction.cshtml", Model.CallToActionViewModel); }
+                        </div>
+                                }
+                </div>
+                @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
+                {
+                    <div class="article-related-content">
+                        <h1>@Model.RealatedContentLableText</h1>
+                        @{
+                            Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolRelatedList.cshtml", Model.RelatedArticles);
+                        }
+                    </div>
+                            }
+            </div>
+                                    }
+
+                                }
+                            }
