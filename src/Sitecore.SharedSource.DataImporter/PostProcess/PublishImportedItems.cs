@@ -56,7 +56,17 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 						}
 
 						//Publish item
-						PublishManager.PublishItem(item, new Data.Database[] { Sitecore.Data.Database.GetDatabase("web") }, item.Languages, false, false, true);
+						//PublishManager.PublishItem(item, new Data.Database[] { Sitecore.Data.Database.GetDatabase("web") }, item.Languages, false, false, true);
+						Sitecore.Publishing.PublishOptions publishOptions =
+						new Sitecore.Publishing.PublishOptions(item.Database,
+										 Sitecore.Data.Database.GetDatabase("web"),
+										 Sitecore.Publishing.PublishMode.SingleItem,
+										 item.Language,
+										 System.DateTime.Now);
+						Sitecore.Publishing.Publisher publisher = new Sitecore.Publishing.Publisher(publishOptions);
+						publisher.Options.RootItem = item;
+						publisher.Options.Deep = false;
+						publisher.Publish();
 					}
 					catch (Exception ex)
 					{
