@@ -178,7 +178,6 @@ $(document).ready(function() {
 
         window.controlPopOuts = new PopOutController('.js-pop-out-trigger');
 
-<<<<<<< HEAD
 		window.controlPopOuts.customize({
 			id: 'header-register',
 			tabStyles: {
@@ -196,7 +195,6 @@ $(document).ready(function() {
 				phoneHeight: '' // Default
 			}
 		});
-=======
         window.controlPopOuts.customize({
             id: 'header-register',
             tabStyles: {
@@ -205,7 +203,6 @@ $(document).ready(function() {
                 phoneHeight: '' // Default
             }
         });
->>>>>>> d80fe177d66bac24db335af63d11ad80bb6941c8
 
         window.controlPopOuts.customize({
             id: 'header-signin',
