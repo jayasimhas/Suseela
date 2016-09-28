@@ -183,6 +183,15 @@ $(document).ready(function() {
 				phoneHeight: '' // Default
 			}
 		});
+		
+		window.controlPopOuts.customize({
+			id: 'myView-header-register',
+			tabStyles: {
+				deskHeight: 87,
+				tabletHeight: 72,
+				phoneHeight: '' // Default
+			}
+		});
 
 		window.controlPopOuts.customize({
 			id: 'header-signin',
