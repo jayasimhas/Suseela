@@ -39,7 +39,7 @@ namespace Sitecore.SharedSource.DataImporter.PostProcess
 			try
 			{
 				//Get all items that have been imported using the DataImporter Module
-				var importedItems = _importToWhereItem.Axes.GetDescendants().Where(w => w.Fields["Notification Text"] != null && w.Fields["Notification Text"].Value == "Imported with DataImporter").ToList();
+				var importedItems = _importToWhereItem.Axes.GetDescendants().Where(w => w.Fields["Notification Text"] != null && w.Fields["Notification Text"].Value == "Imported with DataImporter").ToList();//Notification Text gets filled in BaseDataMap
 
 				if (Sitecore.Context.Job != null)
 					Sitecore.Context.Job.Status.Total = importedItems.Count;
