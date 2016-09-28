@@ -66,13 +66,18 @@
             <div class="data-tool-placeholder">
                 @if (Model.IsUserAuthenticated || !Model.AuthenticationRequired)
                 {
+                    
+                        var displayTabs = Model.DisplayTabs ? "yes" : "no";
+                        var displayToolbars = Model.DisplayToolbars ? "yes" : "no";
+                        var allowCustomViews = Model.AllowCustomViews ? "yes" : "no";
+
                     <div class="data-tool-graph tableau_component__desktop">
                         <object class="tableauViz" width='@dashboardWidth' height='@dashboardHeight'>
                             <param name="host_url" value="@Model.HostUrl" />
                             <param name="name" value="@Model.DashboardName" />
-                            <param name="tabs" value="@Model.DisplayTabs" />
-                            <param name="toolbar" value="@Model.DisplayToolbars" />
-                            <param name='customViews' value='@Model.AllowCustomViews' />
+                            <param name="tabs" value="@displayTabs" />
+                            <param name="toolbar" value="@displayToolbars" />
+                            <param name='customViews' value="@allowCustomViews" />
                             <param name='filter' value='@Model.Filter' />
                             <param name='ticket' value='@Model.TableauTicket' />
                         </object>
