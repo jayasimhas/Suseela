@@ -26429,6 +26429,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ISite_ConfigConstants.My_Account_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
         I___BasePage My_Account_Page { get; set; }
+        [SitecoreField(ISite_ConfigConstants.MyView_Settings_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        I___BasePage MyView_Settings_Page { get; set; }
+        [SitecoreField(ISite_ConfigConstants.Enable_MyView_ToggleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Enable_MyView_Toggle { get; set; }
         /// <summary>
         /// The Ad Domain field.
         /// <para></para>
@@ -27253,8 +27257,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         [SitecoreField(ISite_ConfigConstants.From_Email_AddressFieldName, Setting = SitecoreFieldSettings.InferType)]
         string From_Email_Address { get; set; }
 
-        [SitecoreField("Search Index Name", Setting = SitecoreFieldSettings.InferType)]
-        string SearchIndexName { get; set; }
+        [SitecoreField(ISite_ConfigConstants.Search_Index_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Search_Index_Name { get; set; }
 
     }
 
@@ -28126,7 +28130,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public static readonly ID My_Account_PageFieldId = new ID("6b8b6c6d-013a-4ba0-a166-f57747668b0f");
         public const string My_Account_PageFieldName = "My Account Page";
 
+        public static readonly ID MyView_Settings_PageFieldId = new ID("c039ce68-6c4b-4a07-ab45-1d4f539f562d");
+        public const string MyView_Settings_PageFieldName = "MyView Settings Page";
 
+        public static readonly ID Enable_MyView_ToggleFieldId = new ID("0f9d9311-be37-47a3-bb47-0237ba3265d2");
+        public const string Enable_MyView_ToggleFieldName = "Enable MyView Toggle";
 
         public static readonly ID Ad_DomainFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
         public const string Ad_DomainFieldName = "Ad Domain";
@@ -28602,6 +28610,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID From_Email_AddressFieldId = new ID("c89fa3b2-0d80-4086-a9f0-24a5a3e9d14e");
         public const string From_Email_AddressFieldName = "From Email Address";
+
+        public static readonly ID Search_Index_NameFieldId = new ID("56e146a6-cc34-4c23-9229-9d92a4cf4a51");
+        public const string Search_Index_NameFieldName = "Search Index Name";
 
 
 
@@ -52534,6 +52545,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         [SitecoreField(IVertical_ConfigConstants.Vertical_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Vertical_Name { get; set; }
 
+        [SitecoreField(IVertical_ConfigConstants.Search_Index_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Search_Index_Name { get; set; }
     }
 
     /// <summary>
@@ -52569,6 +52582,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Vertical_NameFieldId = new ID("0E255F6B-02F6-409A-AB3B-EB536FD4D531");
         public const string Vertical_NameFieldName = "Vertical Name";
+
+        public static readonly ID Search_Index_NameFieldId = new ID("4a181bc9-7b01-4dd5-8ae7-952582d73665");
+        public const string Search_Index_NameFieldName = "Search Index Name";
 
     }
 

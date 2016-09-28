@@ -4,7 +4,7 @@
 
     public class ChannelPreference : IChannelPreference
     {
-        public IChannel Channel { get; set; }
-        public List<ITopic> Topics { get; set; }
+        public Channel Channel { get; set; }
+        public List<Topic> Topics { get; set; }
     }
 }
