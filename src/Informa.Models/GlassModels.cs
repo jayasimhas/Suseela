@@ -14016,15 +14016,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         [SitecoreField(ITableau_DashboardConstants.Mobile_Dashboard_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Mobile_Dashboard_Name { get; set; }
 
-        /// <summary>
-        /// The Authentication Required field.
-        /// <para></para>
-        /// <para>Field Type: Checkbox</para>		
-        /// <para>Field ID: 36A636B0-0150-457C-9992-3E21DAC32317</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ITableau_DashboardConstants.Authentication_RequiredFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool Authentication_Required { get; set; }
 
         /// <summary>
         /// The Display Tabs field.
@@ -14119,16 +14110,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         string Mobile_Dashboard_Name { get; set; }
 
         /// <summary>
-        /// The Authentication Required field.
-        /// <para></para>
-        /// <para>Field Type: Checkbox</para>		
-        /// <para>Field ID: 36A636B0-0150-457C-9992-3E21DAC32317</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(ITableau_DashboardConstants.Authentication_RequiredFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool Authentication_Required { get; set; }
-
-        /// <summary>
         /// The Display Tabs field.
         /// <para></para>
         /// <para>Field Type: Checkbox</para>		
@@ -14203,9 +14184,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         public static readonly ID Mobile_Dashboard_NameFieldId = new ID("CF2E5DBF-D588-4ABE-A0FA-C481D122625F");
         public const string Mobile_Dashboard_NameFieldName = "Mobile Dashboard Name";
 
-        public static readonly ID Authentication_RequiredFieldId = new ID("36A636B0-0150-457C-9992-3E21DAC32317");
-        public const string Authentication_RequiredFieldName = "Authentication Required";
-
         public static readonly ID Display_TabsFieldId = new ID("AB873933-A60E-45BA-B16E-E906A9FD216B");
         public const string Display_TabsFieldName = "Display Tabs";
 
@@ -14250,7 +14228,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         [SitecoreField(IData_Tool_BaseConstants.Is_Right_RailFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Is_Right_Rail { get; set; }
 
-
+        /// <summary>
+        /// The Authentication Required field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 36A636B0-0150-457C-9992-3E21DAC32317</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IData_Tool_BaseConstants.Authentication_RequiredFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Authentication_Required { get; set; }
         /// <summary>
         /// The Page Title field.
         /// <para></para>
@@ -14364,6 +14350,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         bool Is_Right_Rail { get; set; }
 
         /// <summary>
+        /// The Authentication Required field.
+        /// <para></para>
+        /// <para>Field Type: Checkbox</para>		
+        /// <para>Field ID: 36A636B0-0150-457C-9992-3E21DAC32317</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IData_Tool_BaseConstants.Authentication_RequiredFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Authentication_Required { get; set; }
+
+        /// <summary>
         /// The Page Title field.
         /// <para></para>
         /// <para>Field Type: Single-Line Text</para>		
@@ -14464,6 +14460,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 
         public static readonly ID Is_Right_RailFieldId = new ID("DD18A68F-8CCD-4475-AAEA-F2B1DC26C0DD");
         public const string Is_Right_RailFieldName = "Is Right Rail";
+
+        public static readonly ID Authentication_RequiredFieldId = new ID("36A636B0-0150-457C-9992-3E21DAC32317");
+        public const string Authentication_RequiredFieldName = "Authentication Required";
 
         public static readonly ID Page_TitleFieldId = new ID("889A40F6-8A6B-44F0-A305-38DE22186F7A");
         public const string Page_TitleFieldName = "Page Title";
