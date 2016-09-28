@@ -4096,9 +4096,15 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       padding-bottom: 5px;
       cursor: pointer;
       padding-top: 5px; }
+      .data-tool-landing .js-toggle-demo .show-demo li a, .data-tool-landing .js-toggle-demo .show-demo li .pop-out__reset-password, .data-tool-landing .js-toggle-demo .show-demo li .sortable-table__list-toggler, .data-tool-landing .js-toggle-demo .show-demo li .mobile-table-exit {
+        background: url("/dist/img/arrows.png") no-repeat;
+        color: #979797;
+        text-decoration: none;
+        padding-right: 25px; }
       .data-tool-landing .js-toggle-demo .show-demo .sd {
-        display: block; }
+        background-position: 41px 2px; }
       .data-tool-landing .js-toggle-demo .show-demo .hd {
+        background-position: 71px -18px;
         display: none; }
     .data-tool-landing .js-toggle-demo .toggle-demo {
       width: 100%;
@@ -4162,6 +4168,8 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
             display: block; }
           .data-tool-landing .js-toggle-demo .toggle-demo .visble-lg {
             display: none; } }
+      .data-tool-landing .js-toggle-demo .toggle-demo .add-width-50 {
+        width: 50%; }
 
 .article-data-tool-placeholder {
   width: 100%;
