@@ -2157,7 +2157,7 @@ var renderTableau = function renderTableau() {
     var showDesktop = !showMobile;
 
     if (showMobile) {
-        if (mobileHiddenValue == "true") {
+        if (mobileHiddenValue == "True") {
             mobileEmbed.show();
             desktopEmbed.hide();
         } else {
@@ -2285,6 +2285,23 @@ $(document).ready(function () {
     };
 
     window.indexBookmarks();
+
+    //Data tool Landing page
+
+    window.addWidth = function () {
+        //landing page
+        if ($(".demoText").is(':visible') && !$(".video-demo").is(':hidden')) {
+            $('.demoText').addClass('add-width-100');
+        }
+        if (!$(".demoText").is(':hidden') && $(".video-demo").is(':visible')) {
+            $('.video-demo').addClass('add-width-100');
+        }
+        if ($(".demoText").is(':visible') && $(".video-demo").is(':visible')) {
+            $('.demoText').removeClass('add-width-100');
+            $('.video-demo').removeClass('add-width-100');
+        }
+    };
+    window.addWidth();
 
     /* * *
     If a user tries bookmarking an article while logged out, they'll be
@@ -3068,11 +3085,6 @@ $(document).ready(function () {
     $(".selectivity-input .selectivity-single-select").each(function () {
         $(this).append('<span class="selectivity-arrow"><svg class="alert__icon"><use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use></svg></span>');
     });
-    //landing page
-    if ($(".demoText").is(':visible') && $(".video-demo").is(':visible')) {
-        $('.demoText').addClass('add-width-50');
-        $('.video-demo').addClass('add-width-50');
-    }
 });
 
 },{"./carousel/zepto.data":2,"./components/article-sidebar-component":3,"./components/save-search-component":4,"./components/video-mini":5,"./controllers/analytics-controller":6,"./controllers/bookmark-controller":7,"./controllers/form-controller":8,"./controllers/lightbox-modal-controller":9,"./controllers/pop-out-controller":10,"./controllers/register-controller":11,"./controllers/reset-password-controller":12,"./controllers/sortable-table-controller":13,"./controllers/tooltip-controller":14,"./jscookie":16,"./modal":17,"./newsletter-signup":18,"./search-page.js":19,"./selectivity-full":20,"./svg4everybody":21,"./toggle-icons":22,"./zepto.min":23}],16:[function(require,module,exports){
