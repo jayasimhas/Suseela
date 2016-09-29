@@ -100,7 +100,7 @@ var renderTableau = function() {
     var showDesktop = !showMobile;
 
     if (showMobile) {
-        if(mobileHiddenValue == "true"){
+        if(mobileHiddenValue == "True"){
             mobileEmbed.show();
             desktopEmbed.hide();
         }else{

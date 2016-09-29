@@ -3952,6 +3952,79 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     margin-top: -48px;
     margin-top: -3rem; }
 
+.subscription .page-account_text {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.125em;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  display: block; }
+  @media (max-width: 480px) {
+    .subscription .page-account_text {
+      font-style: italic;
+      font-size: 1em;
+      line-height: 20px; } }
+
+.subscription .sortable-table__header--mobile {
+  display: none; }
+
+@media (max-width: 480px) {
+  .subscription .js-sortable-table tr {
+    margin-bottom: 1em;
+    position: relative;
+    border-bottom: 1px solid #d1d3d4; }
+    .subscription .js-sortable-table tr td.sortable-table__col.sortable-table__col--publication, .subscription .js-sortable-table tr td.sortable-table__col.sortable-table__col--exp-date {
+      background-color: #f1f2f2;
+      padding: 16px 20px;
+      padding: 1rem 1.25rem; }
+    .subscription .js-sortable-table tr td.sortable-table__col.sortable-table__col--sub-type {
+      padding: 16px 20px;
+      padding: 1rem 1.25rem; } }
+
+.subscription .button, .subscription .full-diminished-button, .subscription .button--filled, .subscription .pop-out__register-submit, .subscription .pop-out__sign-in-submit, .subscription .button--outlined, .subscription .button--outline, .subscription .button--gilded,
+.subscription a.button,
+.subscription a.full-diminished-button,
+.subscription .full-diminished-button.pop-out__reset-password,
+.subscription .full-diminished-button.sortable-table__list-toggler,
+.subscription .full-diminished-button.mobile-table-exit,
+.subscription .button.pop-out__reset-password,
+.subscription .button.sortable-table__list-toggler,
+.subscription .button.mobile-table-exit,
+.subscription a.button--filled,
+.subscription a.pop-out__register-submit,
+.subscription .pop-out__register-submit.pop-out__reset-password,
+.subscription .pop-out__register-submit.sortable-table__list-toggler,
+.subscription .pop-out__register-submit.mobile-table-exit,
+.subscription a.pop-out__sign-in-submit,
+.subscription .pop-out__sign-in-submit.pop-out__reset-password,
+.subscription .pop-out__sign-in-submit.sortable-table__list-toggler,
+.subscription .pop-out__sign-in-submit.mobile-table-exit,
+.subscription .button--filled.pop-out__reset-password,
+.subscription .button--filled.sortable-table__list-toggler,
+.subscription .button--filled.mobile-table-exit,
+.subscription a.button--outlined,
+.subscription .button--outlined.pop-out__reset-password,
+.subscription .button--outlined.sortable-table__list-toggler,
+.subscription .button--outlined.mobile-table-exit,
+.subscription a.button--outline,
+.subscription .button--outline.pop-out__reset-password,
+.subscription .button--outline.sortable-table__list-toggler,
+.subscription .button--outline.mobile-table-exit,
+.subscription a.button--gilded,
+.subscription .button--gilded.pop-out__reset-password,
+.subscription .button--gilded.sortable-table__list-toggler,
+.subscription .button--gilded.mobile-table-exit {
+  color: #231f20; }
+
+.subscription .button--outline:enabled:hover,
+.subscription a.button--outline:enabled:hover,
+.subscription .button--outline.pop-out__reset-password:enabled:hover,
+.subscription .button--outline.sortable-table__list-toggler:enabled:hover,
+.subscription .button--outline.mobile-table-exit:enabled:hover {
+  color: #ffffff;
+  text-decoration: none; }
+
 .small_table .table-responsive .table {
   border-collapse: inherit;
   border: 1px solid #d1d3d4;
@@ -4340,6 +4413,9 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     @media (max-width: 480px) {
       .article-related-content .section-article {
         width: 100%; } }
+
+#chartdiv {
+  width: 100% !important; }
 
 .toggleable-icon {
   display: none; }
