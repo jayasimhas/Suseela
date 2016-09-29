@@ -260,146 +260,6 @@ $(window).on('scroll', function () {
 });
 
 },{}],4:[function(require,module,exports){
-'use strict';
-
-function setClsforFlw(t) {
-	for (var i = 0; i < t.length; i++) {
-		var tableFlwrow = $(t[i]).find('.followrow.disabled:eq(0)');
-		tableFlwrow.addClass('frow');
-	}
-}
-$(function () {
-
-	$('#allPublicationsPan').on('click', '.followAllBtn', function () {
-		var curpublicPan = $(this).closest('.publicationPan'),
-		    $lgfollow = curpublicPan.find('.followBtn'),
-		    table = $('.table');
-		$lgfollow.addClass('followingBtn').removeClass('followBtn').html('following');
-
-		curpublicPan.find('.unfollowAllBtn').removeClass('hideBtn');
-
-		for (var i = 0; i < $lgfollow.length; i++) {
-			$($lgfollow[i], curpublicPan).closest('tr').removeAttr('class').addClass('followingrow');
-		}
-		setClsforFlw(table);
-	});
-
-	$('#allPublicationsPan').on('click', '.unfollowAllBtn', function () {
-		var curpublicPan = $(this).closest('.publicationPan'),
-		    $lgfollowing = curpublicPan.find('.followingBtn');
-		$(this).addClass('hideBtn');
-		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html('follow');
-
-		for (var i = 0; i < $lgfollowing.length; i++) {
-			$($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled ufa');
-		}
-	});
-
-	$('#allPublicationsPan').on('click', '.mcheckedAll', function () {
-		var $this = $(this),
-		    mcall = $this.closest('.mca'),
-		    muall = $this.closest('.smfollowingBtn').find('.mua'),
-		    curpublicPan = $(this).closest('.publicationPan'),
-		    mchecked = curpublicPan.find('.mchecked');
-		mcall.addClass('hideBtn');
-		muall.removeClass('hideBtn');
-
-		for (var i = 0; i < mchecked.length; i++) {
-			$(mchecked[i], curpublicPan).addClass('munchecked').removeClass('mchecked');
-		}
-	});
-
-	$('#allPublicationsPan').on('click', '.muncheckedAll', function () {
-		var $this = $(this),
-		    mcall = $this.closest('.smfollowingBtn').find('.mca'),
-		    muall = $this.closest('.mua'),
-		    curpublicPan = $(this).closest('.publicationPan'),
-		    munchecked = curpublicPan.find('.munchecked');
-		muall.addClass('hideBtn');
-		mcall.removeClass('hideBtn');
-
-		for (var i = 0; i < munchecked.length; i++) {
-			$(munchecked[i], curpublicPan).addClass('mchecked').removeClass('munchecked');
-		}
-	});
-
-	$('#allPublicationsPan').on('click', '.smfollowingBtn .mchecked', function () {
-		var $this = $(this),
-		    smfollowingBtn = $this.closest('.smfollowingBtn');
-		smfollowingBtn.find('a').addClass('munchecked').removeClass('mchecked');
-	});
-
-	$('#allPublicationsPan').on('click', '.smfollowingBtn .munchecked', function () {
-		var $this = $(this),
-		    smfollowingBtn = $this.closest('.smfollowingBtn');
-		smfollowingBtn.find('a').addClass('mchecked').removeClass('munchecked');
-	});
-
-	$('#allPublicationsPan').on('click', '.followrow .followBtn', function () {
-		var $this = $(this),
-		    followrow = $this.closest('.followrow'),
-		    table = $this.closest('.table');
-		followrow.addClass('followingrow').removeClass('followrow disabled frow');
-		$this.addClass('followingBtn').removeClass('followBtn').html('Following');
-		setClsforFlw(table);
-		if ($('.followrow.disabled.frow', table).length) {
-			followrow.appendTo(followrow.clone().insertBefore('.followrow.disabled.frow'));
-		} else {
-			followrow.clone().appendTo($this.closest('tbody'));
-		}
-		followrow.remove();
-	});
-
-	$('#allPublicationsPan').on('click', '.followingrow .followingBtn', function () {
-		var $this = $(this),
-		    followingrow = $this.closest('.followingrow');
-		followingrow.addClass('followrow disabled').removeClass('followingrow');
-		$this.addClass('followBtn').removeClass('followingBtn').html('Follow');
-		followingrow.clone().appendTo($this.closest('tbody'));
-		followingrow.remove();
-	});
-
-	$('.publicationPan').on('click', '.accordionImg a', function () {
-		var $this = $(this),
-		    pPan = $this.closest('.publicationPan'),
-		    tbody = pPan.find('tbody');
-		if ($this.hasClass('collapsed')) {
-			$this.removeClass('collapsed');
-			tbody.addClass('tbodyhidden');
-		} else {
-			$this.addClass('collapsed');
-			tbody.removeClass('tbodyhidden');
-		}
-	});
-
-	var tables = $('.publicationPan table');
-	setClsforFlw(tables);
-
-	$('.saveview').click(function () {
-		var alltables = $('.table'),
-		    createtableData = {};
-		createtableData.allpublications = {};
-		for (var i = 0; i < alltables.length; i++) {
-			var currenttabtrs = $(alltables[i]).find('tbody tr'),
-			    pubPanPosition = $(alltables[i]).closest('.publicationPan').attr('data-row'),
-			    tableId = $(alltables[i]).attr('id'),
-			    publicationName = $(alltables[i]).find('h2').html(),
-			    subscribeStatus = $(alltables[i]).find('.subscribed').html();
-			var alltdata = [];
-			for (var j = 0; j < currenttabtrs.length; j++) {
-				var datarowNo = $(currenttabtrs[j]).attr('data-row'),
-				    firsttd = $(currenttabtrs[j]).find('td.wd-55').html(),
-				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span:first').html();
-				alltdata.push({ 'tableRowNo': datarowNo, 'topic': firsttd, 'subStatus': secondtd });
-			}
-			createtableData.allpublications[tableId] = { "publicationName": publicationName, "subscribeStatus": subscribeStatus, "position": pubPanPosition, "tableData": alltdata };
-		}
-
-		console.log(JSON.stringify(createtableData));
-	});
-});
-
-},{}],5:[function(require,module,exports){
 /* global analyticsEvent, analytics_data, angular */
 'use strict';
 
@@ -599,7 +459,7 @@ $(document).ready(function () {
 	});
 });
 
-},{"../controllers/analytics-controller":7,"../controllers/form-controller":9,"../jscookie":17}],6:[function(require,module,exports){
+},{"../controllers/analytics-controller":6,"../controllers/form-controller":8,"../jscookie":16}],5:[function(require,module,exports){
 'use strict';
 
 var INFORMA = window.INFORMA || {};
@@ -668,7 +528,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
 })(undefined, Zepto, 'INFORMA');
 Zepto(INFORMA.videoMini.init());
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 // * * *
 //  ANALYTICS CONTROLLER
 //  For ease-of-use, better DRY, better prevention of JS errors when ads are blocked
@@ -687,7 +547,7 @@ function analyticsEvent(dataObj) {
 
 exports.analyticsEvent = analyticsEvent;
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /* globals analytics_data */
 'use strict';
 
@@ -775,7 +635,7 @@ function bookmarkController() {
 exports['default'] = bookmarkController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":7}],9:[function(require,module,exports){
+},{"./analytics-controller":6}],8:[function(require,module,exports){
 /*
 
 opts.observe — Form element(s) to observe
@@ -942,7 +802,7 @@ function formController(opts) {
 exports['default'] = formController;
 module.exports = exports['default'];
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /* global angular */
 'use strict';
 
@@ -1010,7 +870,7 @@ function lightboxModalController() {
 exports['default'] = lightboxModalController;
 module.exports = exports['default'];
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1288,7 +1148,7 @@ function popOutController(triggerElm) {
 exports['default'] = popOutController;
 module.exports = exports['default'];
 
-},{}],12:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1413,7 +1273,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":7}],13:[function(require,module,exports){
+},{"./analytics-controller":6}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1631,7 +1491,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":7}],14:[function(require,module,exports){
+},{"./analytics-controller":6}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1948,7 +1808,7 @@ function sortableTableController() {
 exports['default'] = sortableTableController;
 module.exports = exports['default'];
 
-},{}],15:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 /* global tooltipController */
 
 "use strict";
@@ -2139,7 +1999,7 @@ function createPopup(initialState) {
 
 module.exports = exports["default"];
 
-},{"../calculatePopupOffsets.js":1}],16:[function(require,module,exports){
+},{"../calculatePopupOffsets.js":1}],15:[function(require,module,exports){
 /* global angular, analytics_data */
 
 // THIRD-PARTY / VENDOR
@@ -2219,10 +2079,6 @@ var _newsletterSignup2 = _interopRequireDefault(_newsletterSignup);
 var _searchPageJs = require('./search-page.js');
 
 var _searchPageJs2 = _interopRequireDefault(_searchPageJs);
-
-var _componentsMyviewSettings = require('./components/myview-settings');
-
-var _componentsMyviewSettings2 = _interopRequireDefault(_componentsMyviewSettings);
 
 var _toggleIcons = require('./toggle-icons');
 
@@ -3231,7 +3087,7 @@ $(document).ready(function () {
     });
 });
 
-},{"./carousel/zepto.data":2,"./components/article-sidebar-component":3,"./components/myview-settings":4,"./components/save-search-component":5,"./components/video-mini":6,"./controllers/analytics-controller":7,"./controllers/bookmark-controller":8,"./controllers/form-controller":9,"./controllers/lightbox-modal-controller":10,"./controllers/pop-out-controller":11,"./controllers/register-controller":12,"./controllers/reset-password-controller":13,"./controllers/sortable-table-controller":14,"./controllers/tooltip-controller":15,"./jscookie":17,"./modal":18,"./newsletter-signup":19,"./search-page.js":20,"./selectivity-full":21,"./svg4everybody":22,"./toggle-icons":23,"./zepto.min":24}],17:[function(require,module,exports){
+},{"./carousel/zepto.data":2,"./components/article-sidebar-component":3,"./components/save-search-component":4,"./components/video-mini":5,"./controllers/analytics-controller":6,"./controllers/bookmark-controller":7,"./controllers/form-controller":8,"./controllers/lightbox-modal-controller":9,"./controllers/pop-out-controller":10,"./controllers/register-controller":11,"./controllers/reset-password-controller":12,"./controllers/sortable-table-controller":13,"./controllers/tooltip-controller":14,"./jscookie":16,"./modal":17,"./newsletter-signup":18,"./search-page.js":19,"./selectivity-full":20,"./svg4everybody":21,"./toggle-icons":22,"./zepto.min":23}],16:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -3372,7 +3228,7 @@ $(document).ready(function () {
 	return init(function () {});
 });
 
-},{}],18:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
@@ -3680,7 +3536,7 @@ $(document).ready(function () {
   });
 })($);
 
-},{}],19:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /* global analytics_data */
 
 'use strict';
@@ -3757,7 +3613,7 @@ function newsletterSignupController() {
 exports['default'] = newsletterSignupController;
 module.exports = exports['default'];
 
-},{"./controllers/analytics-controller":7}],20:[function(require,module,exports){
+},{"./controllers/analytics-controller":6}],19:[function(require,module,exports){
 'use strict';
 
 var SearchScript = (function () {
@@ -3769,7 +3625,7 @@ var SearchScript = (function () {
 	});
 })();
 
-},{}],21:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -4794,7 +4650,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],22:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 "use strict";
 
 !(function (root, factory) {
@@ -4899,7 +4755,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
     return svg4everybody;
 });
 
-},{}],23:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -4916,7 +4772,7 @@ var toggleIcons = function toggleIcons(container) {
 
 exports.toggleIcons = toggleIcons;
 
-},{}],24:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 "use strict";
 
@@ -5655,7 +5511,7 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}]},{},[16])
+},{}]},{},[15])
 
 
 //# sourceMappingURL=index.js.map
