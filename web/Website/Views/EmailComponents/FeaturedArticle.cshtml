@@ -41,7 +41,7 @@
                             <a href="@Model.TargetArticleUrl">
                                 <h3 class="featured__title">@(Model.GlassModel.Article?.Title)</h3>
                             </a>
-                            <span class="article-byline">@Model.Byline</span>
+                            <span class="article-byline">@Html.Raw(Model.Byline)</span>
                         </td>
                     </tr>
 
