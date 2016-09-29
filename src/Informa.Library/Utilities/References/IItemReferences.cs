@@ -20,6 +20,8 @@ namespace Informa.Library.Utilities.References
         Guid DownloadTypes { get; }
 
         // Taxonomy Folders
+		Guid GlobalTaxonomyFolder { get; }
+        Guid Folder { get; }
         Guid SubjectsTaxonomyFolder { get; }
 		Guid RegionsTaxonomyFolder { get; }
 		Guid TherapyAreasTaxonomyFolder { get; }
