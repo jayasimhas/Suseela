@@ -147,42 +147,24 @@ namespace Informa.Library.Services.Article
             return DCDTokenMatchers.ProcessDCDTokens(text);
         }
 
-        public string GetLegacyPublicationText(IArticle article, bool isLegacyBrandSelected = false, string escenicID = null, string legacyArticleNumber = null)
+        public string GetLegacyPublicationText(IArticle article, bool isLegacyBrandSelected = false)
         {
             // JIRA IPMP-56
 
             string legacyText = null;
             string legacyPublicationsText = null;
-            if (string.IsNullOrEmpty(escenicID) & string.IsNullOrEmpty(legacyArticleNumber))
+            if (isLegacyBrandSelected)
             {
-                if (isLegacyBrandSelected)
-                {
-                    legacyText = TextTranslator.Translate("Article.NewLegacyPublications");
-                    legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
-                    return legacyText.Replace("{Legacy Publications}", "");
-                }
-                else
-                {
-                    legacyText = TextTranslator.Translate("Article.NewLegacyPublications");
-                    legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
-                    return legacyText.Replace("{Legacy Publications}", legacyPublicationsText);
-                }
+                legacyText = TextTranslator.Translate("Article.LegacyPublications");
+                legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
+                return legacyText.Replace("{Legacy Publications}", "");
             }
             else
             {
-                if (isLegacyBrandSelected)
-                {
-                    legacyText = TextTranslator.Translate("Article.LegacyPublications");
-                    legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
-                    return legacyText.Replace("{Legacy Publications}", "");
-                }
-                else
-                {
-                    legacyText = TextTranslator.Translate("Article.LegacyPublications");
-                    legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
-                }
-                return legacyText.Replace("{Legacy Publications}", legacyPublicationsText);
+                legacyText = TextTranslator.Translate("Article.LegacyPublications");
+                legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");
             }
+            return legacyText.Replace("{Legacy Publications}", legacyPublicationsText);
 
             #region PharamaUsed
             //var legacyText = TextTranslator.Translate("Article.LegacyPublications");

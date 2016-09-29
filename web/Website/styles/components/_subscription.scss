@@ -1,0 +1,53 @@
+.subscription{
+	.page-account_text{
+		font-family: 'PT Serif';
+		  font-style: normal;
+		  font-weight: 400;
+		  font-size: 1.125em;
+		  margin-bottom: 1.25rem;
+		  display: block;
+		  @include breakpoint('small') {
+		   font-style: italic;
+		   font-size: 1em;
+		   line-height: 20px;
+		  }
+	}
+	.sortable-table__header--mobile{
+		display: none;
+	}
+	.js-sortable-table{
+		@include breakpoint('small') {
+			tr{
+				margin-bottom: 1em;
+				position: relative;
+				border-bottom: 1px solid #d1d3d4;
+				td.sortable-table__col{
+					&.sortable-table__col--publication, &.sortable-table__col--exp-date{
+						background-color: $color-concrete-gray;
+						padding: 1rem 1.25rem;
+					}
+					&.sortable-table__col--sub-type{
+						padding: 1rem 1.25rem;
+					}
+				}
+				
+			}
+		}
+	}
+	.button,
+		a.button {
+		&,
+		&--filled,
+		&--outlined,
+		&--outline,
+		&--gilded {
+			color: $color-zeus-black;
+		}
+		&--outline:enabled {
+			&:hover {
+				color: $color-white;
+				text-decoration: none;
+			}
+		}
+	}
+}

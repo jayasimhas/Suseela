@@ -41,7 +41,7 @@
 			}
 			.toggle-demo{
 				width: 100%;
-				display: inline-flex;
+				display: block;
 				padding: 10px 15px 15px 0;
 				float: left;
 				.demoText{
@@ -53,6 +53,8 @@
 					text-align: justify;
 					line-height: 30px;
 					color: $color-abbey-gray;
+					width: 50%;
+					float: left;
 					@include breakpoint('small') {
 						width:100%;
 					}
@@ -62,6 +64,8 @@
 				}
 				.video-demo{
 						padding-left: 15px;
+						width: 50%;
+						float: left;
 						@include breakpoint('small') {
 							width:100%;
 							.visible-sm{
@@ -111,8 +115,8 @@
 							display: none;
 						}
 					}
-					.add-width-50{
-						width: 50%;
+					.add-width-100{
+						width: 100%;
 					}
 					
 				}

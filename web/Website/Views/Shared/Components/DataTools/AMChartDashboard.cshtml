@@ -14,7 +14,6 @@
         <script src="/amcharts/amcharts.js"></script>
         <script src=@ChartTypeScript></script>
         <script src=@jsonDataPath></script>
-        <script src="/amcharts/plugins/responsive/responsive.min.js"></script>
 
         @Html.HiddenFor(m => m.CategoryField)
         @Html.HiddenFor(m => m.ValueField)
@@ -26,7 +25,7 @@
             <div class="data-tool-placeholder-right-rail">
                 <h3 class="data-tool-heading">@Model.PageTitle</h3>
                 <div class="data-tool-graph">
-                    <div id="chartdiv" style="width:@dashboardWidth; height:@dashboardHeight;"></div>
+                    <div id="chartdiv" style="width:@dashboardHeight; height:@dashboardWidth;"></div>
                 </div>
                 <p><a href="@Model.LandingPageLink">@Model.LandingPageLinkLable</a></p>
             </div>
@@ -34,7 +33,6 @@
         else
         {
             <div class="data-tool-landing">
-                @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolPrologue.cshtml", Model.PrologueViewModel); }
                 <h1>@Model.PageTitle</h1>
                 <div class="sub-heading-text">@Model.PageSubheading</div>
                 <div class="js-toggle-demo">
@@ -84,7 +82,7 @@
                     </div>
                             }
             </div>
-                                    }
+        }
 
-                                }
-                            }
+    }
+}

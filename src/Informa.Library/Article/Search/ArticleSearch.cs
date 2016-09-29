@@ -158,7 +158,7 @@ namespace Informa.Library.Article.Search
         {
             var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
 
-            using (var context = SearchContextFactory.Create(Constants.MasterDb, publicationItem.SearchIndexName))
+            using (var context = SearchContextFactory.Create(Constants.MasterDb, publicationItem.Search_Index_Name))
             {
                 if (publicationItem != null)
                 {

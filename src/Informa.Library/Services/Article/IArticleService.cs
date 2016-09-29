@@ -13,7 +13,7 @@ namespace Informa.Library.Services.Article
         MediaTypeIconData GetMediaTypeIconData(IArticle article);
         string GetArticleSummary(IArticle article);
         string GetArticleBody(IArticle article);
-        string GetLegacyPublicationText(IArticle glassModel, bool isLegacyBrandSelected = false,string escenicID =null,string legacyArticleNumber = null);
+        string GetLegacyPublicationText(IArticle glassModel, bool isLegacyBrandSelected = false);
         IEnumerable<IFile> GetSupportingDocuments(IArticle glassModel);
 	    string GetArticlePublicationName(IArticle article);
         string GetDownloadUrl(IArticle article);

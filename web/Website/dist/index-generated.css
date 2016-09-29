@@ -3508,6 +3508,9 @@ section: UI Elements
 .header-logo-print {
   display: none; }
 
+.js-myViewregister-user-container .pop-out__internal {
+  min-width: 740px; }
+
 .promotional-sidebar {
   margin-bottom: 24px;
   margin-bottom: 1.5rem;
@@ -4108,9 +4111,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         display: none; }
     .data-tool-landing .js-toggle-demo .toggle-demo {
       width: 100%;
-      display: -webkit-inline-box;
-      display: -ms-inline-flexbox;
-      display: inline-flex;
+      display: block;
       padding: 10px 15px 15px 0;
       float: left; }
       .data-tool-landing .js-toggle-demo .toggle-demo .demoText {
@@ -4121,7 +4122,9 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         padding-left: 15px;
         text-align: justify;
         line-height: 30px;
-        color: #58595b; }
+        color: #58595b;
+        width: 50%;
+        float: left; }
         @media (max-width: 480px) {
           .data-tool-landing .js-toggle-demo .toggle-demo .demoText {
             width: 100%; } }
@@ -4129,7 +4132,9 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
           .data-tool-landing .js-toggle-demo .toggle-demo .demoText {
             width: 100%; } }
       .data-tool-landing .js-toggle-demo .toggle-demo .video-demo {
-        padding-left: 15px; }
+        padding-left: 15px;
+        width: 50%;
+        float: left; }
         @media (max-width: 480px) {
           .data-tool-landing .js-toggle-demo .toggle-demo .video-demo {
             width: 100%; }
@@ -4168,8 +4173,8 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
             display: block; }
           .data-tool-landing .js-toggle-demo .toggle-demo .visble-lg {
             display: none; } }
-      .data-tool-landing .js-toggle-demo .toggle-demo .add-width-50 {
-        width: 50%; }
+      .data-tool-landing .js-toggle-demo .toggle-demo .add-width-100 {
+        width: 100%; }
 
 .article-data-tool-placeholder {
   width: 100%;

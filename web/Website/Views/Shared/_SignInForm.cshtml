@@ -24,6 +24,7 @@
 				<div class="pop-out__sign-in-remember-me">
 					<input name="persist" type="checkbox" data-checkbox-type="boolean"> @Model.SignInRememberMeText
 				</div>
+                @Html.HiddenFor(m => m.IsSignInFromMyView)
 			</div>
 			<div class="sign-in__submit-wrapper">
 				<button type="submit" class="button--filled sign-in__submit" data-login-redirect-url="">@Model.SignInButtonText</button>

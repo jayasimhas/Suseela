@@ -862,6 +862,7 @@
     <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\ArticlePurchasesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\EmailPreferencesViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\MyViewToggle.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedArticlesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedSearchesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SubscriptionsViewModel.cs" />
@@ -1554,6 +1555,7 @@
     <Content Include="amcharts\plugins\export\README.md" />
     <Content Include="amcharts\plugins\responsive\readme.md" />
     <Content Include="amcharts\plugins\responsive\responsive.min.js.map" />
+    <Content Include="Areas\Account\Views\Management\MyViewGlobalToggle.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

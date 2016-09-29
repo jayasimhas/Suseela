@@ -4,7 +4,7 @@
 
     public interface IChannelPreference
     {
-        IChannel Channel { get; set; }
-        List<ITopic> Topics { get; set; }
+        Channel Channel { get; set; }
+        List<Topic> Topics { get; set; }
     }
 }

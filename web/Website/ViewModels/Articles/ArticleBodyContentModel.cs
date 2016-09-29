@@ -49,7 +49,7 @@ namespace Informa.Web.ViewModels.Articles
 
 		public IEnumerable<string> LegacyPublicationNames => ArticleService.GetLegacyPublicationNames(GlassModel, SiteRootContext.Item.Legacy_Brand_Active);// JIRA IPMP-56
 
-        public string LegacyPublicationText => ArticleService.GetLegacyPublicationText(GlassModel, SiteRootContext.Item.Legacy_Brand_Active,GlassModel.Escenic_ID,GlassModel.Legacy_Article_Number);  // JIRA IPMP-56      
+        public string LegacyPublicationText => ArticleService.GetLegacyPublicationText(GlassModel, SiteRootContext.Item.Legacy_Brand_Active);  // JIRA IPMP-56      
 
         private string _summary;
 		public string Summary => _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
