@@ -982,6 +982,7 @@
     <Compile Include="ViewModels\PopOuts\SaveSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\RelatedCompaniesModel.cs" />
     <Compile Include="ViewModels\CompaniesAndDeals\RelatedDealsModel.cs" />
+    <Compile Include="ViewModels\PopOuts\VideoPopOutViewModel.cs" />
     <Compile Include="ViewModels\SearchRssViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\EntitlementsCheckEnabledViewModel.cs" />
     <Compile Include="ViewModels\SiteDebugging\IEntitlementsCheckEnabledViewModel.cs" />
@@ -1868,6 +1869,7 @@
     <Content Include="Views\Shared\Components\DataTools\DataToolRelatedList.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\DataToolListItem.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\DataTollUserCallToAction.cshtml" />
+    <Content Include="Views\Shared\PopOuts\VideoControl.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
