@@ -1,13 +1,13 @@
 ﻿@model Informa.Web.ViewModels.DataTools.AMChartViewModel
 
-
 @if (!string.IsNullOrEmpty(Model.ChartType))
 {
     var chartType = Model.ChartType;
     var ChartTypeScript = "/amcharts/" + chartType + ".js";
     var dashboardHeight = string.IsNullOrWhiteSpace(Model.Height) ? "100%" : Model.Height;
-    var dashboardWidth = string.IsNullOrWhiteSpace(Model.Width) ? "100%" : Model.Width; 
-     var jsonDataPath = string.IsNullOrWhiteSpace(Model.JsonPath) ? "/amcharts/data/AMChartData.js" : Model.JsonPath;
+    var dashboardWidth = string.IsNullOrWhiteSpace(Model.Width) ? "100%" : Model.Width;
+    var jsonDataPath = string.IsNullOrWhiteSpace(Model.JsonPath) ? "/amcharts/data/AMChartData.js" : Model.JsonPath;
+    var showInRightRail = Html.Sitecore().CurrentRendering.Parameters["Show in Right Rail"];
 
     if (!string.IsNullOrEmpty(ChartTypeScript) && !string.IsNullOrEmpty(jsonDataPath))
     {
@@ -21,10 +21,10 @@
         <input type="hidden" id="amChartType" value="@chartType" />
         <input type="hidden" id="amChartDataProvider" value="chartData" />
 
-        if (Model.IsRightRail)
+        if (!string.IsNullOrEmpty(@showInRightRail) && @showInRightRail == "1")
         {
             <div class="data-tool-placeholder-right-rail">
-                <h3 class="data-tool-heading">@Model.ComponentHeading</h3>
+                <h3 class="data-tool-heading">@Model.PageTitle</h3>
                 <div class="data-tool-graph">
                     <div id="chartdiv" style="width:@dashboardWidth; height:@dashboardHeight;"></div>
                 </div>
@@ -37,46 +37,28 @@
                 @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolPrologue.cshtml", Model.PrologueViewModel); }
                 <h1>@Model.PageTitle</h1>
                 <div class="sub-heading-text">@Model.PageSubheading</div>
-                @if (!string.IsNullOrWhiteSpace(@Model.IntroductoryVideoLink) && !string.IsNullOrWhiteSpace(@Model.IntroductoryText))
-                {
-                    <div class="js-toggle-demo">
-                        <div class="show-demo">
-                            <div class="sd">@Model.HideDemoLable<i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-                            <div class="hd">@Model.ShowDemoLable<i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+                <div class="js-toggle-demo">
+                    <ul class="show-demo">
+                        <li><a class="sd" href="javascript: void(0);">@Model.HideDemoLable</a></li>
+                        <li><a class="hd" href="javascript: void(0);">@Model.ShowDemoLable</a></li>
+                    </ul>
+                    <div class="toggle-demo">
+                        <div class="demoText">
+                            <span>
+                                @Model.IntroductoryText
+                            </span>
                         </div>
-                        <div class="toggle-demo">
-                            <div class="demoText">
-                                <span>
-                                    @Model.IntroductoryText
-                                </span>
-                            </div>
-                            @if (!string.IsNullOrWhiteSpace(@Model.IntroductoryVideoLink))
-                            {
-                                <div class="video-demo">
-                                    <div class="visible-lg">
-                                        <div class="video-mini-container">
-                                            <div class="embed-responsive embed-responsive-16by9">
-                                                <img src="/dist/img/video-thumb.png" data-videotype="wistia" data-videourl="@Model.IntroductoryVideoLink" alt="wistia video" width="100%" class="video-img img-responsive">
-                                                <span class="play-icon" style="display: block;"></span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="visible-sm">
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                        @Html.Sitecore().Placeholder("VideoControl")
                     </div>
-                }
+                </div>
                 <div class="data-tool-placeholder">
                     @if (Model.IsUserAuthenticated || !Model.AuthenticationRequired)
                     {
                         <div class="data-tool-graph data_tool_component__desktop">
                             <div id="chartdiv" style="width:@dashboardWidth; height:@dashboardHeight;"></div>
                             @*<div class="resizable">
-                                <div id="chartdiv"></div>
-                            </div>*@
+                                    <div id="chartdiv"></div>
+                                </div>*@
                         </div>
 
                         <div class="articleText">

@@ -1,13 +1,14 @@
 ﻿@model Informa.Web.ViewModels.DataTools.TableauDashboardViewModel
 @if (Model != null)
 {
-    if (Model.IsRightRail)
+    var showInRightRail = Html.Sitecore().CurrentRendering.Parameters["Show in Right Rail"];
+    if (!string.IsNullOrEmpty(@showInRightRail) && @showInRightRail == "1")
     {
         <div class="data-tool-placeholder-right-rail">
-            <h3 class="data-tool-heading">@Model.ComponentHeading</h3>
+            <h3 class="data-tool-heading">@Model.PageTitle</h3>
             <script type="text/javascript" src="@Model.JSAPIUrl"></script>
             <div class="data-tool-graph">
-                <object class="tableauViz" width='@Model.DashboardWidth' height='@Model.DashboardHeight%'>
+                <object class="tableauViz" width='@Model.DashboardWidth' height='@Model.DashboardHeight'>
                     <param name="host_url" value="@Model.HostUrl" />
                     <param name="name" value="@Model.DashboardName" />
                     <param name="tabs" value="@Model.DisplayTabs" />
@@ -29,8 +30,6 @@
 
             <h1>@Model.PageTitle</h1>
             <div class="sub-heading-text">@Model.PageSubheading</div>
-            @if (!string.IsNullOrWhiteSpace(@Model.IntroductoryVideoLink) && !string.IsNullOrWhiteSpace(@Model.IntroductoryText))
-            {
                 <div class="js-toggle-demo">
                     <ul class="show-demo">
                         <li><a class="sd" href="javascript: void(0);">@Model.HideDemoLable</a></li>
@@ -42,25 +41,9 @@
                                 @Model.IntroductoryText
                             </span>
                         </div>
-                        @if (!string.IsNullOrWhiteSpace(@Model.IntroductoryVideoLink))
-                        {
-                            <div class="video-demo">
-                                <div class="visible-lg">
-                                    <div class="video-mini-container">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <img src="/dist/img/video-thumb.png" data-videotype="wistia" data-videourl="@Model.IntroductoryVideoLink" alt="wistia video" width="100%" class="video-img img-responsive">
-                                            <span class="play-icon" style="display: block;"></span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="visible-sm">
-                                </div>
-                            </div>
-                        }
+                        @Html.Sitecore().Placeholder("VideoControl")
                     </div>
                 </div>
-            }
             <script type="text/javascript" src="@Model.JSAPIUrl"></script>
 
             <div class="data-tool-placeholder">

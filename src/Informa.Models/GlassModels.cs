@@ -12891,7 +12891,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(ITableau_ConfigurationConstants.JS_API_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string JS_API_Url { get; set; }
+        Link JS_API_Url { get; set; }
     }
 
 
@@ -12932,7 +12932,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(ITableau_ConfigurationConstants.JS_API_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string JS_API_Url { get; set; }
+        Link JS_API_Url { get; set; }
     }
 
     public static partial class ITableau_ConfigurationConstants
@@ -14219,16 +14219,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
     public partial interface IData_Tool_Base : IGlassBase
     {
         /// <summary>
-        /// The Is Right Rail field.
-        /// <para></para>
-        /// <para>Field Type: Checkbox</para>		
-        /// <para>Field ID:</para>
-        /// <para>Custom Data: DD18A68F-8CCD-4475-AAEA-F2B1DC26C0DD</para>
-        /// </summary>
-        [SitecoreField(IData_Tool_BaseConstants.Is_Right_RailFieldName, Setting = SitecoreFieldSettings.InferType)]
-        bool Is_Right_Rail { get; set; }
-
-        /// <summary>
         /// The Authentication Required field.
         /// <para></para>
         /// <para>Field Type: Checkbox</para>		
@@ -14265,17 +14255,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IData_Tool_BaseConstants.Introductory_TextFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
-        string Introductory_Text { get; set; }
-
-        /// <summary>
-        /// The Introductory Video field.
-        /// <para></para>
-        /// <para>Field Type: Single-Line Text</para>		
-        /// <para>Field ID:  D132179D-815A-4281-8E4E-E8A7A8BDD701</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IData_Tool_BaseConstants.Introductory_VideoFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link Introductory_Video { get; set; }
+        string Introductory_Text { get; set; }        
 
         /// <summary>
         /// The Tool Explanation field.
@@ -14306,16 +14286,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// </summary>
         [SitecoreField(IData_Tool_BaseConstants.TaxonomyFieldName, Setting = SitecoreFieldSettings.InferType)]
         IEnumerable<IGlassBase> Taxonomy { get; set; }
-
-        /// <summary>
-        /// The Heading field.
-        /// <para></para>
-        /// <para>Field Type: Single-Line Text</para>		
-        /// <para>Field ID:  ACA997C5-4D8A-4C6C-AAA7-88272311FA31</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IData_Tool_BaseConstants.HeadingFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Heading { get; set; }
 
 
         /// <summary>
@@ -14571,7 +14541,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IAMcharts_DashboardConstants.JsonPathFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string JsonPath { get; set; }
+        Link JsonPath { get; set; }
 
 
 
@@ -14645,7 +14615,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IAMcharts_DashboardConstants.JsonPathFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string JsonPath { get; set; }
+        Link JsonPath { get; set; }
 
     }
 
@@ -14678,6 +14648,112 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         public const string JsonPathFieldName = "JsonPath";
 
 
+    }
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+
+
+    /// <summary>
+    /// IVideoControl Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/Video Control</para>	
+    /// <para>ID: 00DC502A-7FCF-4160-86BF-B8EB1C15CBA1</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IVideoControlConstants.TemplateIdString)]
+    public partial interface IVideoControl : IGlassBase
+    { 
+       /// <summary>
+       /// Thumbnail field.
+       /// <para></para>
+       /// <para>Field Type: Image</para>		
+       /// <para>Field ID: 2D73E75C-2A90-4AC5-8FAF-9023D34B64C1</para>
+       /// <para>Custom Data: </para>
+       /// </summary>
+        [SitecoreField(IVideoControlConstants.ThumbnailFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Image Thumbnail { get; set; }
+
+        /// <summary>
+        /// Category field.
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: 3C01C81B-99DF-48F4-875B-60AD28FF53CC</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IVideoControlConstants.VideoLinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link VideoLink { get; set; }
+
+        /// <summary>
+        /// Alternative Text.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 1FC1398F-3081-4190-997A-708FE0C0A73B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IVideoControlConstants.AlternativeTextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string AlternativeText { get; set; }
+
+    }
+
+
+    /// <summary>
+    /// IVideoControl Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/Video Control</para>	
+    /// <para>ID: 00DC502A-7FCF-4160-86BF-B8EB1C15CBA1</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IVideoControl__Raw : IGlassBase
+    {
+        /// <summary>
+        /// Thumbnail field.
+        /// <para></para>
+        /// <para>Field Type: Image</para>		
+        /// <para>Field ID: 2D73E75C-2A90-4AC5-8FAF-9023D34B64C1</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IVideoControlConstants.ThumbnailFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Image Thumbnail { get; set; }
+
+        /// <summary>
+        /// Category field.
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: 3C01C81B-99DF-48F4-875B-60AD28FF53CC</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IVideoControlConstants.VideoLinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link VideoLink { get; set; }
+
+        /// <summary>
+        /// Alternative Text.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 1FC1398F-3081-4190-997A-708FE0C0A73B</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IVideoControlConstants.AlternativeTextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string AlternativeText { get; set; }
+
+    }
+
+    public static partial class IVideoControlConstants
+    {
+
+        public const string TemplateIdString = "00DC502A-7FCF-4160-86BF-B8EB1C15CBA1";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Video Control";
+
+
+        public static readonly ID ThumbnailFieldId = new ID("2D73E75C-2A90-4AC5-8FAF-9023D34B64C1");
+        public const string ThumbnailFieldName = "Thumbnail";
+
+        public static readonly ID VideoLinkFieldId = new ID("3C01C81B-99DF-48F4-875B-60AD28FF53CC");
+        public const string VideoLinkFieldName = "VideoLink";
+
+        public static readonly ID AlternativeTextFieldId = new ID("1FC1398F-3081-4190-997A-708FE0C0A73B");
+        public const string AlternativeTextFieldName = "AlternativeText";
     }
 
 }

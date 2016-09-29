@@ -12,7 +12,7 @@ using System.Linq;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.User.Authentication;
-using Informa.Library.ViewModels.Account;
+using Sitecore.Data.Fields;
 
 namespace Informa.Web.ViewModels.DataTools
 {
@@ -50,9 +50,7 @@ namespace Informa.Web.ViewModels.DataTools
         }
 
         #region Tableau Dashboard Parameters/details
-
-        public bool IsRightRail => GlassModel.Is_Right_Rail;
-
+        
         public string DashboardName => GlassModel?.Dashboard_Name;
 
         public string MobileDashboardName => GlassModel?.Mobile_Dashboard_Name;
@@ -82,9 +80,6 @@ namespace Informa.Web.ViewModels.DataTools
         public string PageSubheading => GlassModel?.Page_Subheading;
 
         public string IntroductoryText => GlassModel?.Introductory_Text;
-
-        public string IntroductoryVideoLink => GlassModel?.Introductory_Video.Url;
-
         public string ToolExplanation => GlassModel?.Tool_Explanation;
 
         public string ShowDemoLable => TextTranslator.Translate("DataTools.ShowDemo");
@@ -104,10 +99,8 @@ namespace Informa.Web.ViewModels.DataTools
         #endregion
 
         #region Tableau right rail component content
-
-        public string ComponentHeading => GlassModel?.Heading;
-
-        public string LandingPageLink => GlassModel?.Landing_Page_Link.Url;
+        
+        public string LandingPageLink => GlassModel?.Landing_Page_Link?.Url;
 
         public string LandingPageLinkLable => TextTranslator.Translate("DataTools.LandingPageLink");
 
@@ -116,8 +109,10 @@ namespace Informa.Web.ViewModels.DataTools
         #region Tableau server details
 
         public string HostUrl => GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.Server_NameFieldId];
-
-        public string JSAPIUrl => GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.JS_API_UrlFieldId];
+        
+        public LinkField JSAPILinkField => GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString()).Fields[ITableau_ConfigurationConstants.JS_API_UrlFieldId];
+        
+        public string JSAPIUrl => JSAPILinkField.Url;
 
         public string TableauTicket => TableauUtil.GenerateSecureTicket(GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.Server_NameFieldId],
             GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.User_NameFieldId]);
