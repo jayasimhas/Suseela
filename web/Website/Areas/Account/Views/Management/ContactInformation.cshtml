@@ -170,7 +170,7 @@
                                 <input type="text"
                                        name="FirstName"
                                        value="@Model.Profile.FirstName"
-                                       placeholder="@Model.FirstNamePlaceholderText">
+                                       placeholder="@Model.FirstNamePlaceholderText" class="required">
                             </p>
 
                             <p>
@@ -190,7 +190,7 @@
                                 <input type="text"
                                        name="LastName"
                                        value="@Model.Profile.LastName"
-                                       placeholder="@Model.LastNamePlaceholderText">
+                                       placeholder="@Model.LastNamePlaceholderText" class="required">
                             </p>
 
                             <p>
@@ -217,7 +217,7 @@
                                 <input type="text"
                                        name="Company"
                                        value="@Model.Profile.Company"
-                                       placeholder="@Model.CompanyPlaceholderText">
+                                       placeholder="@Model.CompanyPlaceholderText" class="required">
                             </p>
 
                             @if (!string.IsNullOrEmpty(Model.AssociatedCompany)) {
@@ -237,7 +237,7 @@
                                 <input type="text"
                                        name="JobTitle"
                                        value="@Model.Profile.JobTitle"
-                                       placeholder="@Model.JobTitlePlaceholderText">
+                                       placeholder="@Model.JobTitlePlaceholderText" class="required">
                             </p>
 
                             <p>
@@ -256,7 +256,7 @@
                                 <label for="JobIndustry" class="page-account__text-label">
                                     @Model.JobIndustryLabelText <span class="asterisk-required"></span>
                                 </label>
-                                <select name="JobIndustry">
+                                <select name="JobIndustry" class="required">
                                     @foreach (var o in Model.JobIndustries)
                                     {
                                         <option @(@Model.Profile.JobIndustry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
@@ -273,7 +273,7 @@
                                 <label for="PhoneType" class="page-account__text-label">
                                     @Model.PhoneTypeLabelText <span class="asterisk-required"></span>
                                 </label>
-                                <select name="PhoneType">
+                                <select name="PhoneType" class="required">
                                     @foreach (var o in Model.PhoneTypes)
                                     {
                                         <option @(@Model.Profile.PhoneType.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
@@ -288,7 +288,8 @@
                                 <input type="text"
                                        name="CountryCode"
                                        value="@Model.Profile.CountryCode"
-                                       placeholder="@Model.CountryCodePlaceholderText">
+                                       placeholder="@Model.CountryCodePlaceholderText"
+                                       class="contactInfoNumericField">
                             </p>
 
                             <p>
@@ -298,7 +299,7 @@
                                 <input type="text"
                                        name="Phone"
                                        value="@Model.Profile.Phone"
-                                       placeholder="@Model.PhonePlaceholderText">
+                                       placeholder="@Model.PhonePlaceholderText" class="required">
                             </p>
 
                             <p>
@@ -318,7 +319,8 @@
                                 <input type="text"
                                        name="Fax"
                                        value="@Model.Profile.Fax"
-                                       placeholder="@Model.FaxPlaceholderText">
+                                       placeholder="@Model.FaxPlaceholderText"
+                                       class="contactInfoNumericField">
                             </p>
                         </div>
                     </div>
@@ -332,7 +334,7 @@
                                 <label for="BillCountry" class="page-account__text-label">
                                     @Model.BillCountryLabelText <span class="asterisk-required"></span>
                                 </label>
-                                <select name="BillCountry" id="ddlBillingCountry">
+                                <select name="BillCountry" id="ddlBillingCountry" class="required">
                                     @foreach (var o in Model.Countries)
                                     {
                                         <option @(@Model.Profile.BillCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
@@ -347,7 +349,7 @@
                                 <input type="text"
                                        name="BillAddress1"
                                        value="@Model.Profile.BillAddress1"
-                                       placeholder="@Model.BillAddress1PlaceholderText" id="txtBillingAddress1">
+                                       placeholder="@Model.BillAddress1PlaceholderText" id="txtBillingAddress1" class="required">
                             </p>
 
                             <p>
@@ -367,7 +369,7 @@
                                 <input type="text"
                                        name="BillCity"
                                        value="@Model.Profile.BillCity"
-                                       placeholder="@Model.BillCityPlaceholderText" id="txtBillingCity">
+                                       placeholder="@Model.BillCityPlaceholderText" id="txtBillingCity" class="required">
                             </p>
 
                             <p>
@@ -407,7 +409,7 @@
                                 <label for="ShipCountry" class="page-account__text-label">
                                     @Model.ShipCountryLabelText <span class="asterisk-required"></span>
                                 </label>
-                                <select name="ShipCountry" id="ddlShippingCountry">
+                                <select name="ShipCountry" id="ddlShippingCountry" class="required">
                                     @foreach (var o in Model.Countries)
                                     {
                                         <option @(@Model.Profile.ShipCountry.Equals(o.Text) ? "selected" : "") value="@o.Value">@o.Text</option>
@@ -422,7 +424,7 @@
                                 <input type="text"
                                        name="ShipAddress1"
                                        value="@Model.Profile.ShipAddress1"
-                                       placeholder="@Model.ShipAddress1PlaceholderText" id="txtShippingAddress1">
+                                       placeholder="@Model.ShipAddress1PlaceholderText" id="txtShippingAddress1" class="required">
                             </p>
 
                             <p>
@@ -442,7 +444,7 @@
                                 <input type="text"
                                        name="ShipCity"
                                        value="@Model.Profile.ShipCity"
-                                       placeholder="@Model.ShipCityPlaceholderText" id="txtShippingCity">
+                                       placeholder="@Model.ShipCityPlaceholderText" id="txtShippingCity" class="required">
                             </p>
 
                             <p>
@@ -492,3 +494,31 @@ else
         @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
     </div>
 }
+
+
+<div id="errorMessage" style="display:none;">
+    <div style="display: block;" class="field-error js-form-error js-form-error-Required">
+        <svg class="alert__icon">
+            <use xlink:href="/dist/img/svg-sprite.svg#alert" />
+        </svg>
+
+        <p class="page-account-contact__error">
+            This field is required.
+        </p>
+    </div>
+</div>
+
+<style type="text/css">
+    .field-error {
+        background-color: #fce5e6;
+        color: #be1e2d;
+        display: none;
+        padding: 0;
+    }
+
+    svg {
+        float: left;
+        margin-right: 10px;
+        margin-top: 3px;
+    }
+</style>

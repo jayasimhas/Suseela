@@ -47,7 +47,7 @@ namespace Informa.Tests.Library.Utilities_Tests.StringUtils_Tests
             var result = _bylineMaker.MakeByline(authors);
 
             // ASSERT
-            Assert.AreEqual("THESE FOLKS: Author McAuthorface", result);
+            Assert.AreEqual("THESE FOLKS: <a href=''>Author McAuthorface</a>", result);
         }
 
         [Test]
@@ -69,7 +69,7 @@ namespace Informa.Tests.Library.Utilities_Tests.StringUtils_Tests
             var result = _bylineMaker.MakeByline(authors);
 
             // ASSERT
-            Assert.AreEqual("THESE FOLKS: Author McAuthorface and Bob", result);
+            Assert.AreEqual("THESE FOLKS: <a href=''>Author McAuthorface</a> and <a href=''>Bob </a>", result);
         }
 
         [Test]
@@ -95,7 +95,7 @@ namespace Informa.Tests.Library.Utilities_Tests.StringUtils_Tests
             var result = _bylineMaker.MakeByline(authors);
 
             // ASSERT
-            Assert.AreEqual("THESE FOLKS: Author McAuthorface, Bob and Alice in Wonderland", result);
+            Assert.AreEqual("THESE FOLKS: <a href=''>Author McAuthorface</a>, <a href=''>Bob </a> and <a href=''>Alice in Wonderland</a>", result);
         }
 
 		[Test]
@@ -118,7 +118,65 @@ namespace Informa.Tests.Library.Utilities_Tests.StringUtils_Tests
 			var result = _bylineMaker.MakeByline(authors);
 
 			// ASSERT
-			Assert.AreEqual("THESE FOLKS: Author McAuthorface and Bob McBob, Sr.", result);
+			Assert.AreEqual("THESE FOLKS: <a href=''>Author McAuthorface</a> and <a href=''>Bob McBob, Sr.</a>", result);
 		}
-	}
+
+        [Test]
+        public void MakePrintByLine_OneAuthor_AuthorNameAndEmail()
+        {
+            // ARRANGE
+            var fakeAuthor1 = Substitute.For<IStaff_Item>();
+            fakeAuthor1.First_Name = "Joe";
+            fakeAuthor1.Last_Name = "Faker";
+            fakeAuthor1.Email_Address = "joe.faker@example.com";
+
+            // ACT
+            var result = _bylineMaker.MakePrintByLine(new[] {fakeAuthor1});
+
+            // ASSERT
+            Assert.AreEqual("Joe Faker joe.faker@example.com", result);
+        }
+
+        [Test]
+        public void MakePrintByLine_ThreeAuthors_AuthorsSpaceSeparated()
+        {
+            // ARRANGE
+            var fakeAuthor1 = Substitute.For<IStaff_Item>();
+            fakeAuthor1.First_Name = "Joe";
+            fakeAuthor1.Last_Name = "Faker";
+            fakeAuthor1.Email_Address = "joe.faker@example.com";
+
+            var fakeAuthor2 = Substitute.For<IStaff_Item>();
+            fakeAuthor2.First_Name = "a2";
+            fakeAuthor2.Last_Name = "d2";
+            fakeAuthor2.Email_Address = "a2d2@example.com";
+
+            var fakeAuthor3 = Substitute.For<IStaff_Item>();
+            fakeAuthor3.First_Name = "a3";
+            fakeAuthor3.Last_Name = "you sunk my battleship";
+            fakeAuthor3.Email_Address = "direct_hit@battleship.com";
+
+            // ACT
+            var result = _bylineMaker.MakePrintByLine(new[] { fakeAuthor1, fakeAuthor2, fakeAuthor3 });
+
+            // ASSERT
+            Assert.AreEqual(
+                "Joe Faker joe.faker@example.com a2 d2 a2d2@example.com a3 you sunk my battleship direct_hit@battleship.com",
+                result);
+        }
+
+        [Test]
+        public void MakePrintByLine_ZeroAuthorsOrNull_EmptyString()
+        {
+            // ARRANGE
+
+            // ACT
+            var result1 = _bylineMaker.MakePrintByLine(new IStaff_Item[0]);
+            var result2 = _bylineMaker.MakePrintByLine((IStaff_Item[])null);
+
+            // ASSERT
+            Assert.AreEqual(string.Empty, result1);
+            Assert.AreEqual(string.Empty, result2);
+        }
+    }
 }

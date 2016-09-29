@@ -203,6 +203,17 @@
     <Reference Include="Sitecore.Mvc">
       <HintPath>..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.PrintStudio.Configuration, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore\Sitecore.PrintStudio.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.InDesignConnectorService">
+      <HintPath>..\..\lib\Sitecore\Sitecore.PrintStudio.InDesignConnectorService.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PrintStudio.PublishingEngine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\PXM\Sitecore.PrintStudio.PublishingEngine.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Services.Core">
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Core.dll</HintPath>
     </Reference>
@@ -224,6 +235,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -257,6 +269,7 @@
       <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
       <Private>True</Private>
@@ -316,13 +329,23 @@
     <Compile Include="Article\Search\ArticleSearchFilter.cs" />
     <Compile Include="Article\Search\ArticleSearchResultItem.cs" />
     <Compile Include="Article\Search\ArticleSearchResults.cs" />
+    <Compile Include="Article\Search\IArticleCompanyFilter.cs" />
+    <Compile Include="Article\Search\IArticleAuthorFilter.cs" />
     <Compile Include="Article\Search\IArticlePublicationFilter.cs" />
     <Compile Include="Article\Search\IArticleSearch.cs" />
     <Compile Include="Article\Search\IArticleSearchFilter.cs" />
     <Compile Include="Article\Search\IArticleSearchResults.cs" />
     <Compile Include="Article\Service\ArticleSearchService.cs" />
     <Compile Include="Article\Service\IArticleSearchService.cs" />
+    <Compile Include="Authors\AuthorIndexClient.cs" />
+    <Compile Include="Authors\AuthorsAlertOptions.cs" />
+    <Compile Include="Authors\AuthorService.cs" />
+    <Compile Include="Authors\ComputedFields\IsValid.cs" />
+    <Compile Include="Authors\IAuthorAlertOptions.cs" />
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
+    <Compile Include="DCD\CompanyService.cs" />
+    <Compile Include="DCD\DealService.cs" />
+    <Compile Include="Services\Captcha\RecaptchaService.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\CompanyRegisterUserError.cs" />
@@ -343,13 +366,33 @@
     <Compile Include="ComponentModel\DataAnnotations\RequiredIfAttribute.cs" />
     <Compile Include="CustomSitecore\Events\AddFromBranchPreset.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
+    <Compile Include="CustomSitecore\Events\ArticleItemCreated.cs" />
+    <Compile Include="CustomSitecore\Pipelines\CheckClientUser.cs" />
     <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
+    <Compile Include="CustomSitecore\Pipelines\PasswordRecoveryPipeline.cs" />
     <Compile Include="CustomSitecore\Providers\EmailLinkProvider.cs" />
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
     <Compile Include="CustomSitecore\Ribbon\ReExportArticleNlm.cs" />
+    <Compile Include="DCD\DcdContentAnalyzer.cs" />
+    <Compile Include="PXM\CustomConvertToXml.cs" />
+    <Compile Include="PXM\CustomFinalizeProcessor.cs" />
+    <Compile Include="PXM\Helpers\InjectAdditionalFields.cs" />
+    <Compile Include="PXM\Parsers\CustomHtmlNodeParser.cs" />
+    <Compile Include="PXM\Helpers\CustomHtmlParseHelper.cs" />
+    <Compile Include="PXM\CustomInDesignConnectorService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PXM\CustomXmlTextFrameRenderer.cs" />
+    <Compile Include="PXM\Parsers\CustomImageParser.cs" />
+    <Compile Include="PXM\SpecialCharacterMapper.cs" />
+    <Compile Include="Search\ComputedFields\Facets\AuthorNamesField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchMediaTooltipField.cs" />
+    <Compile Include="Search\Crawlers\InformaItemCrawler.cs" />
+    <Compile Include="User\Entitlement\IStrategicEntitlementContext.cs" />
+    <Compile Include="Utilities\Parsers\CachedXmlParser.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
     <Compile Include="Logging\LogWrapper.cs" />
@@ -379,6 +422,7 @@
     <Compile Include="Publication\ISitePublicationFactory.cs" />
     <Compile Include="Publication\ISitePublicationNameFactory.cs" />
     <Compile Include="Publication\ISitePublicationsContext.cs" />
+    <Compile Include="Publication\ISitePublicationWorkflow.cs" />
     <Compile Include="Publication\ISitesPublicationNameContext.cs" />
     <Compile Include="Publication\ISitePublicationNameContext.cs" />
     <Compile Include="Publication\SitePublication.cs" />
@@ -386,12 +430,14 @@
     <Compile Include="Publication\SitePublicationFactory.cs" />
     <Compile Include="Publication\SitePublicationNameFactory.cs" />
     <Compile Include="Publication\SitePublicationsContext.cs" />
+    <Compile Include="Publication\SitePublicationWorkflow.cs" />
     <Compile Include="Publication\SitesPublicationNameContext.cs" />
     <Compile Include="Publication\SitePublicationNameContext.cs" />
     <Compile Include="Publishing\Events\ItemPublishedPublishItemProcessing.cs" />
     <Compile Include="Publishing\Events\PublishItemProcessing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishingDateTime.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishingDateTime.cs" />
+    <Compile Include="Publishing\Scheduled\Tasks\SchedulingUnlockUser.cs" />
     <Compile Include="Purchase\ArticlePurchaseItem.cs" />
     <Compile Include="Purchase\ArticlePurchaseItemsFactory.cs" />
     <Compile Include="Purchase\IArticlePurchase.cs" />
@@ -403,6 +449,7 @@
     <Compile Include="Purchase\User\IUserArticlePurchasesContext.cs" />
     <Compile Include="Purchase\User\UserArticlePurchaseItemsContext.cs" />
     <Compile Include="Purchase\User\UserArticlePurchasesContext.cs" />
+    <Compile Include="PXM\BodyContentProcessor.cs" />
     <Compile Include="Rss\FeedGenerators\BaseInformaFeedGenerator.cs" />
     <Compile Include="Rss\FeedGenerators\SearchFeedGenerator.cs" />
     <Compile Include="Rss\Interfaces\IRssFeedGeneration.cs" />
@@ -413,18 +460,26 @@
     <Compile Include="Rss\ItemGenerators\SearchRssItemGenerator.cs" />
     <Compile Include="Rss\ItemRetrieval\RssSearchResultsItemRetrieval.cs" />
     <Compile Include="Rss\Utils\RssConstants.cs" />
+    <Compile Include="Authors\ComputedFields\AuthorUrlName.cs" />
     <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
     <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchResultPublicationCodeField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\MediaTypeIcon\MediaTypeIconData.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\MediaTypeIcon\MediaTypeIconDataConverter.cs" />
     <Compile Include="Search\FacetBuilders\CompaniesFacetBuilder.cs" />
     <Compile Include="Search\Formatting\IQueryFormatter.cs" />
     <Compile Include="Search\Formatting\SolrQueryFormatter.cs" />
     <Compile Include="Search\InformaApiSearchRequest.cs" />
     <Compile Include="Search\PredicateBuilders\InformaQueryPredicateBuilder.cs" />
+    <Compile Include="Search\Results\IArticleCompanyResults.cs" />
+    <Compile Include="Search\Results\IArticleAuthorResults.cs" />
     <Compile Include="Search\Results\IArticlePublicationResults.cs" />
     <Compile Include="Search\Results\QueryResults.cs" />
     <Compile Include="Search\Sort\SitecoreOrderStrategy.cs" />
     <Compile Include="Search\Utilities\SearchSummaryUtil.cs" />
     <Compile Include="Search\Utilities\SearchWebClientUtil.cs" />
+    <Compile Include="Services\AccountManagement\AccountManagementService.cs" />
+    <Compile Include="Services\AccountManagement\IAccountManagementService.cs" />
     <Compile Include="Services\Article\ArticleService.cs" />
     <Compile Include="Services\Article\IArticleService.cs" />
     <Compile Include="Services\Global\GlobalSitecoreService.cs" />
@@ -440,6 +495,7 @@
     <Compile Include="SiteDebugging\ISiteDebugging.cs" />
     <Compile Include="SiteDebugging\SiteDebugger.cs" />
     <Compile Include="Site\GlassSiteRootContext.cs" />
+    <Compile Include="Site\HeadMetaDataGenerator.cs" />
     <Compile Include="Site\IIsUrlCurrentSite.cs" />
     <Compile Include="Site\ISiteHostName.cs" />
     <Compile Include="Site\ISiteRootContext.cs" />
@@ -459,7 +515,9 @@
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedFormToken.cs" />
     <Compile Include="User\Authentication\AuthorizeToken.cs" />
+    <Compile Include="User\Authentication\ISendRecoveryPassword.cs" />
     <Compile Include="User\Authentication\IAuthenticatedFormToken.cs" />
+    <Compile Include="User\Authentication\SendRecoveryPassword.cs" />
     <Compile Include="User\EmailOptIns\OptInManager.cs" />
     <Compile Include="User\EmailOptIns\OptInResponseModel.cs" />
     <Compile Include="Taxonomy\HeirarchyLinks.cs" />
@@ -675,6 +733,8 @@
     <Compile Include="User\Document\ISaveDocument.cs" />
     <Compile Include="User\Document\ISaveDocumentContext.cs" />
     <Compile Include="User\Document\IsSavedDocumentContext.cs" />
+    <Compile Include="User\Orders\ICreateUserOrderResult.cs" />
+    <Compile Include="User\Orders\IUserOrder.cs" />
     <Compile Include="User\Profile\IUserProfileContext.cs" />
     <Compile Include="User\Newsletter\INewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\NewsletterUserOptInsContext.cs" />
@@ -897,9 +957,9 @@
     <Compile Include="ContentCuration\Search\Filter\IManuallyCuratedContentFilter.cs" />
     <Compile Include="ContentCuration\Search\Extensions\QueryableExtensions.cs" />
     <Compile Include="Search\ComputedFields\Base\IsSearchableField.cs" />
-    <Compile Include="Search\ComputedFields\SearchResults\Converter\HtmlLink.cs" />
-    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomyTypeConverter.cs" />
-    <Compile Include="Search\ComputedFields\SearchResults\Converter\HtmlLinkList.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomy\HtmlLink.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomy\HtmlLinkListTypeConverter.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\Converter\DisplayTaxonomy\HtmlLinkList.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchDisplayTaxonomyField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultBylineField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchResultDateField.cs" />
@@ -1049,6 +1109,7 @@
     <Compile Include="User\UserIpAddressContext.cs" />
     <Compile Include="User\UserIpAddressSession.cs" />
     <Compile Include="User\UserSession.cs" />
+    <Compile Include="Utilities\Attributes\NotNullAttribute.cs" />
     <Compile Include="Utilities\Autofac\Modules\AutoMapperModule.cs" />
     <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleBodyProfile.cs" />
     <Compile Include="Utilities\AutoMapper\Profiles\Nlm\ArticleFrontProfile.cs" />
@@ -1072,7 +1133,9 @@
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalIdResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\JournalTitleResolver.cs" />
     <Compile Include="Utilities\AutoMapper\Resolvers\Nlm\Front\Journal\PublisherResolver.cs" />
+    <Compile Include="Utilities\DataModels\TreeNode%272.cs" />
     <Compile Include="Utilities\Extensions\ArticleExtensions.cs" />
+    <Compile Include="Utilities\Extensions\BooleanExtensions.cs" />
     <Compile Include="Utilities\Extensions\EnumerableExtensions.cs" />
     <Compile Include="Utilities\Extensions\EnumerableStringExtensions.cs" />
     <Compile Include="Utilities\Extensions\GlassBaseExtensions.cs" />
@@ -1082,6 +1145,8 @@
     <Compile Include="Utilities\Extensions\ListExtensions.cs" />
     <Compile Include="Utilities\Extensions\GenericsExtensions.cs" />
     <Compile Include="Utilities\Extensions\StringExtensions.cs" />
+    <Compile Include="PXM\Helpers\PxmHtmlHelper.cs" />
+    <Compile Include="PXM\Helpers\PxmXmlHelper.cs" />
     <Compile Include="Utilities\References\Constants.cs" />
     <Compile Include="Utilities\References\DictionaryKeys.cs" />
     <Compile Include="Utilities\References\IItemReferences.cs" />
@@ -1093,11 +1158,16 @@
     <Compile Include="Utilities\Security\Crypto.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
+    <Compile Include="Utilities\SitecoreUtils\WorkflowUtil.cs" />
     <Compile Include="Utilities\StringUtils\BylineMaker.cs" />
     <Compile Include="Utilities\StringUtils\HtmlUtil.cs" />
     <Compile Include="Utilities\StringUtils\WordUtil.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
     <Compile Include="Utilities\TokenMatcher\DCDTokenMatchers.cs" />
+    <Compile Include="Utilities\TokenMatcher\TokenToHtml.cs" />
+    <Compile Include="Utilities\UserMembership\CustomSqlMembershipProvider.cs" />
+    <Compile Include="Utilities\UserMembership\CustomSqlUserUnlocker.cs" />
+    <Compile Include="Utilities\UserMembership\UserAttemp.cs" />
     <Compile Include="Utilities\WebApi\Caching\ApiOutputCacheAdapter.cs" />
     <Compile Include="Utilities\WebApi\Filters\ArgumentsRequiredAttribute.cs" />
     <Compile Include="Utilities\WebApi\Filters\ValidateCsrfAttribute.cs" />
@@ -1109,7 +1179,12 @@
     <Compile Include="Utilities\WebUtils\UrlUtils.cs" />
     <Compile Include="ViewModels\Account\ISignInViewModel.cs" />
     <Compile Include="ViewModels\Account\SignInViewModel.cs" />
+    <Compile Include="VirtualWhiteboard\Models\IssueModel.cs" />
+    <Compile Include="VirtualWhiteboard\Models\VWBResponseModel.cs" />
+    <Compile Include="VirtualWhiteboard\IssuesService.cs" />
+    <Compile Include="Wrappers\BaseSitecoreWrapper.cs" />
     <Compile Include="Wrappers\HttpContextProvider.cs" />
+    <Compile Include="Wrappers\SitecoreClonesWrapper.cs" />
     <Compile Include="Wrappers\SitecoreSecurityWrapper.cs" />
     <Compile Include="Wrappers\SitecoreServiceAliases.cs" />
     <Compile Include="Wrappers\SitecoreUrlWrapper.cs" />

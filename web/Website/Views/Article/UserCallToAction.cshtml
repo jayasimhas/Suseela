@@ -21,7 +21,7 @@
             <span class="article-call-to-action__subtitle">
                 @Model.RegisterSubtitle
             </span>
-            <form class="pop-out__register form-pre-registration"
+            <form class="pop-out__register form-pre-registration user-calltoaction"
                   data-on-submit="/Account/api/RegistrationApi/PreRegister/"
                   data-forwarding-url="@(Model.RegisterPopOutViewModel.RegisterUrl+"?returnUrl="+ HttpContext.Current.Request.Url.AbsolutePath)">
                 <input name="username"

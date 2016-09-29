@@ -71,6 +71,20 @@ content-length: 4
 
 mtin
 ----field----
+field: {64C48243-DFCE-4E94-985C-E0441FFF76AA}
+name: Free Trial Rate Plan Charge Id
+key: free trial rate plan charge id
+content-length: 32
+
+4028e696324aa56f01324fbdcd4b24aa
+----field----
+field: {79D023A1-B034-4228-8ADD-17802896CE53}
+name: Free Trial Rate Plan Id
+key: free trial rate plan id
+content-length: 32
+
+4028e696324aa56f01324fbdc9e924a8
+----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name

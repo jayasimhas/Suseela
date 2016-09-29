@@ -10,5 +10,6 @@ namespace Informa.Library.Utilities.References
 		Guid TopicAlertButton { get; }
 		Guid LogoutMessage { get; }
 		Guid RenderingMVC { get; }
+		Guid MediaTypeIcon { get; }
 	}
 }

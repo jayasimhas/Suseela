@@ -1,0 +1,107 @@
+﻿@model Informa.Web.ViewModels.CompaniesAndDeals.CompaniesandDealsShareViewModel
+<div class="pop-out js-pop-out__email-company">
+	<div class="pop-out__form-error">
+		@Model.PageTitle
+	</div>
+	<div class="pop-out__tab"></div>
+	<div class="pop-out__internal">
+
+		<div class="dismiss-button js-dismiss-email-company" data-target-element=".js-pop-out__email-company">
+			<svg class="dismiss-button__icon">
+				<use xlink:href="/dist/img/svg-sprite.svg#x"></use>
+			</svg>
+		</div>
+
+		<h3 class="pop-out__header">
+			@Model.EmailCompanyText
+		</h3>
+
+		<div class="alert-success js-email-company-success">
+			<svg class="alert__icon">
+				<use xlink:href="/dist/img/svg-sprite.svg#check"></use>
+			</svg>
+			<p>@Model.EmailSentSuccessMessage <b class="js-email-company-recip-success">my&#64;email.address</b>.</p>
+		</div>
+
+		<div class="js-email-company-form-wrapper">
+			<p class="pop-out__details u-italic">
+				@Model.EmailFormInstructionsText
+			</p>
+
+			<form 	class="form-email-company"
+					data-on-submit="/Account/api/EmailDCD/EmailFriendCompany/">
+
+				<p class="	pop-out__error
+							js-form-error
+							js-form-error-general">
+					@Model.GeneralError
+				</p>
+
+				<p class="	pop-out__error
+							js-form-error
+							js-form-error-failType">
+					@Model.InvalidEmailText
+				</p>
+				<input	name="RecipientEmail"
+					   	class="pop-out__input js-email-company-recip-addr"
+					   	type="text"
+					   	placeholder="@Model.RecipientEmailPlaceholderText">
+
+				<p class="	pop-out__error
+							js-form-error
+							js-form-error-failType">
+					@Model.EmptyFieldText
+				</p>
+				<input 	name="SenderName"
+					   	class="pop-out__input"
+					   	type="text"
+					   	placeholder="@Model.YourNamePlaceholderText"
+		               	value="@Model.AuthUserName">
+
+
+				<p class="	pop-out__error
+							js-form-error
+							js-form-error-failType">
+					@Model.EmptyFieldText
+				</p>
+				<input 	name="SenderEmail"
+					   	class="pop-out__input"
+					   	type="text"
+					   	placeholder="@Model.YourEmailPlaceholderText"
+		               	value="@Model.AuthUserEmail">
+
+				<p>
+					<span class="pop-out__run-in">@Model.SubjectText</span> @Html.Raw(Model.PageTitle)
+                    <input type="hidden" name="Subject" value="@Model.PageTitle">
+                    <input type="hidden" name="CompanyId" value="@Model.CompanyId" />
+				</p>
+
+				<p>
+					<span class="pop-out__run-in">@Model.AddMessageText</span>
+				</p>
+
+				<textarea name="PersonalMessage" class="pop-out__input pop-out__textarea"></textarea>
+
+				<div class="g-recaptcha" data-sitekey="@Model.CaptchaSiteKey"></div>
+
+				<div class="pop-out__form-actions-wrapper">
+					<div class="dismiss-button" data-target-element=".js-pop-out__email-company">
+                        <span class="highlight-link">@Model.CancelText</span>
+					</div>
+					<div class="sign-in__submit-wrapper">
+						<button type="submit" class="button--filled click-utag"  data-info='{"event_name" : "toolbar_use", "toolbar_tool" : "email" }'>@Model.SendText</button>
+					</div>
+				</div>
+
+                @Html.AuthToken()
+
+
+			</form>
+
+			<p class="pop-out__details u-italic">
+				@Html.Raw(Model.NoticeText)
+			</p>
+		</div>
+
+	</div>
+</div>

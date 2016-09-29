@@ -1,4 +1,5 @@
-﻿@model Informa.Web.ViewModels.IListableViewModel
+﻿@using Informa.Library.Utilities.References
+@model Informa.Web.ViewModels.IListableViewModel
 
 @if (Model.DisplayImage && !string.IsNullOrEmpty(Model.ListableImage))
 {
@@ -16,6 +17,13 @@
  			"bookmark_title": "@Model.ListableTitle",
  			"bookmark_publication": "@Model.ListablePublication"
 		}'>
+        @* Storing "bookmark" / "bookmarked" labels in data attributes so Javascript
+        can use text provided by Sitecore when toggling state post-load. *@
+        <span   class="action-flag__label js-bookmark-label"
+                data-label-bookmark="@Model.BookmarkText"
+                data-label-bookmarked="@Model.BookmarkedText">
+            @( Model.IsArticleBookmarked ? Model.BookmarkedText : Model.BookmarkText )
+        </span>
 
         
 		<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked @( Model.IsArticleBookmarked ? "is-visible" : null)">
@@ -40,9 +48,7 @@
         @if (!string.IsNullOrEmpty(Model.ListableType))
         {
             <li>
-                <svg class="article-metadata__media-type">
-                    <use xlink:href="/dist/img/svg-sprite.svg#@Model.ListableType"></use>
-                </svg>
+                @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model.ID })
             </li>
         }
     </ul>

@@ -100,6 +100,8 @@
   <ItemGroup>
     <Compile Include="AncestorDataMapper.cs" />
     <Compile Include="CoreGlassModels.cs" />
+    <Compile Include="DCD\DealContent.cs" />
+    <Compile Include="DCD\CompanyContent.cs" />
     <Compile Include="DCD\CompanyRecordCache.cs" />
     <Compile Include="DCD\CompanyTokenizer.cs" />
     <Compile Include="DCD\DCDConstants.cs" />
@@ -120,6 +122,7 @@
     <Compile Include="DCD\IDCDRecordImporting.cs" />
     <Compile Include="FieldSources\FactoryInterfaceModels.cs" />
     <Compile Include="GlassModels.cs" />
+    <Compile Include="GlassModels\ICloneArticle.cs" />
     <Compile Include="GlassModels\IPage_Assets.cs" />
     <Compile Include="GlassModels\ITaxonomyHierarchy.cs" />
     <Compile Include="GlassModels\IStaff_Item.cs" />

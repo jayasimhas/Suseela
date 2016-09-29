@@ -1,7 +1,8 @@
 .action-flags-bar {
-    border-top: 2px solid $color-light-gray;
-    clear: both;
-    margin-bottom: 36px;
+	border-top: 2px solid $color-light-gray;
+	clear: both;
+	margin-bottom: 36px;
+	margin-top: 36px;
 }
 
 .action-flags {
@@ -9,80 +10,83 @@
 }
 
 .action-flag {
-    display: inline-block;
-    margin-left: 2rem;
-    padding-top: 0.875rem;
+	display: inline-block;
+	margin-left: 2rem;
+	padding-top: 0.875rem;
 
-    &:first-child {
-        margin-left: 0;
-    }
+	&:first-child {
+		margin-left: 0;
+	}
 
-    a {
-        @include on-event(true) {
-            text-decoration: none;
-        }
-    }
+	a {
+		@include on-event(true) {
+			text-decoration: none;
+		}
+	}
 
-    @include breakpoint('small') {
-        margin: 0 0.5rem;
-    }
-
-
-    &__label {
-        @include textMix('Roboto Condensed', 14px, 700);
-        color: $color-zeus-black;
-        margin-right: 0.4375rem;
-        text-transform: uppercase;
-        vertical-align: middle;
-
-        @include breakpoint('medium') {
-            display: none;
-        }
-    }
+	@include breakpoint('small') {
+		margin: 0 0.5rem;
+	}
 
 
-    &__icon {
-        @include svg-fill($color-dusty-gray);
-        height: 22px;
-        vertical-align: middle;
-        width: 20px;
+	&__label {
+		@include textMix('Roboto Condensed', 14px, 700);
+		color: $color-zeus-black;
+		margin-right: 0.4375rem;
+		text-transform: uppercase;
+		vertical-align: middle;
 
-        &--email {
-            width: 21px;
-            height: 21px;
-            margin-top: -3px;
-        }
+		@include breakpoint('medium') {
+			display: none;
+		}
+	}
 
-        &--bookmark {
-            margin-top: -1px;
-        }
 
-        &--linkedin {
-            margin-top: -4px;
-        }
+	&__icon {
+		@include svg-fill($color-dusty-gray);
+		height: 22px;
+		vertical-align: middle;
+		width: 20px;
 
-        &--twitter {
-            margin-top: -3px;
-            width: 23px;
-            height: 23px;
-            margin-left: 1rem;
-        }
-    }
+		&--email {
+			width: 21px;
+			height: 21px;
+			margin-top: -3px;
+		}
 
-    &:hover .action-flag__icon {
-        @include svg-fill($color-zeus-black);
-    }
+		&--bookmark {
+			margin-top: -1px;
+		}
 
-    &--social {
-        @extend .action-flag;
+		&--linkedin {
+			margin-top: -4px;
+		}
 
-        &:hover .action-flag__icon {
-            @include svg-fill($color-dusty-gray);
-        }
+		&--twitter {
+			margin-top: -3px;
+			width: 23px;
+			height: 23px;
+			margin-left: 1rem;
+		}
+	}
 
-        & a:hover .action-flag__icon {
-            @include svg-fill($color-zeus-black);
-        }
-    }
+	&:hover .action-flag__icon {
+		@include svg-fill($color-zeus-black);
+	}
 
+	&--social {
+		@extend .action-flag;
+
+		&:hover .action-flag__icon {
+			@include svg-fill($color-dusty-gray);
+		}
+
+		& a:hover .action-flag__icon {
+			@include svg-fill($color-zeus-black);
+		}
+	}
+
+	&--red {
+		color: $color-cardinal-red;
+	}
 }

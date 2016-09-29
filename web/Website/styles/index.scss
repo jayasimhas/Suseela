@@ -15,16 +15,19 @@
 @import 'vendor/normalize';
 
 
-/* * * * HELPERS * * * */
-@import 'helpers/layout-helpers';
-
-
 /* * * * BASE * * * */
 @import 'base/colors'; // first!
 @import 'base/base';
 @import 'base/fonts';
 @import 'base/helpers';
+@import 'base/icons';
 @import 'base/typography';
+
+
+/* * * * HELPERS * * * */
+@import 'helpers/class-helpers';
+@import 'helpers/layout-helpers';
+
 
 
 /* * * * COMPONENTS — GLOBAL * * * */
@@ -34,8 +37,10 @@
 @import 'components/banners';
 @import 'components/bar-separated-link-list';
 @import 'components/buttons';
+@import 'components/callout';
 @import 'components/dismiss-button';
 @import 'components/forms';
+@import 'components/generic-content';
 @import 'components/iframe-component';
 @import 'components/image-cutline-block';
 @import 'components/informa-bar';
@@ -54,15 +59,24 @@
 @import 'components/print-boxout';
 @import 'components/promotional-sidebar';
 @import 'components/rte-component';
+@import 'components/selectivity-full';
 @import 'components/sortable-table';
 @import 'components/sorting-arrows';
 @import 'components/sub-topic-links';
 @import 'components/toggle-icons';
+@import 'components/tooltip';
 @import 'components/topic-featured-article';
 @import 'components/topic-subtopic';
 
 /* * * * COMPONENTS — HEADER * * * */
 @import 'components/header/header-account-access';
+
+
+/* * * * COMPONENTS — DEALS * * * */
+@import 'components/deal';
+
+/* * * * COMPONENTS — PROFILE * * * */
+@import 'components/profile';
 
 /* * * * COMPONENTS — ARTICLE * * * */
 @import 'components/article/article-author';

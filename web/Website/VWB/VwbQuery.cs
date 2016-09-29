@@ -9,6 +9,7 @@ namespace Elsevier.Web.VWB
 {
 	public class VwbQuery
 	{
+		public string PublicationCodes;
 		public bool ShouldRun;
 		/// <summary>
 		/// Guid representing "Next Issue" option
@@ -48,7 +49,7 @@ namespace Elsevier.Web.VWB
 		public const string NumResultsParam = "max";
 		public int? NumResultsValue;
 
-        public const string InProgressParam = "inprogress";
+		public const string InProgressParam = "inprogress";
 		public bool InProgressValue;
 
 
@@ -65,7 +66,7 @@ namespace Elsevier.Web.VWB
 			SortColumnKey = request[SortColumnParam];
 			if (ColumnOrderValue != null)
 			{
-				ColumnKeysInOrder = ColumnOrderValue.Split(ColumnOrderDelimiter).ToList(); 
+				ColumnKeysInOrder = ColumnOrderValue.Split(ColumnOrderDelimiter).ToList();
 			}
 			else
 			{
@@ -90,16 +91,23 @@ namespace Elsevier.Web.VWB
 			{
 				NumResultsValue = null;
 			}
-            if (request[InProgressParam] != null)
-            {
-                InProgressValue = true;
-            }
-            else
-            {
-                InProgressValue = false;
-            }
-        
-        }
+			if (request[InProgressParam] != null)
+			{
+				InProgressValue = true;
+			}
+			else
+			{
+				InProgressValue = false;
+			}
+			if (request["pubCodes"] != null)
+			{
+				PublicationCodes = request["pubCodes"];
+			}
+			else
+			{
+				PublicationCodes = string.Empty;
+			}
+		}
 
 		/// <summary>
 		/// parses date from MMddyyyy
@@ -108,18 +116,18 @@ namespace Elsevier.Web.VWB
 		/// <returns></returns>
 		public static DateTime? GetDateTime(string queryParam)
 		{
-		    DateTime parsedTime;
-            if (DateTime.TryParseExact(queryParam, "MMddyyyyhhmmtt", CultureInfo.CurrentCulture, DateTimeStyles.None, out parsedTime))
-            {
-                return parsedTime;
-            }
-		    return null;
+			DateTime parsedTime;
+			if (DateTime.TryParseExact(queryParam, "MMddyyyyhhmmtt", CultureInfo.CurrentCulture, DateTimeStyles.None, out parsedTime))
+			{
+				return parsedTime;
+			}
+			return null;
 		}
 
 		public static string GetQueryDateTime(DateTime? dateTime)
 		{
 			if (dateTime == null) return null;
-            return string.Format("{0:MMddyyyyhhmmtt}", dateTime);
+			return string.Format("{0:MMddyyyyhhmmtt}", dateTime);
 		}
 
 		/// <summary>
@@ -146,24 +154,24 @@ namespace Elsevier.Web.VWB
 			{
 				query += EndDateParam + "=" + GetQueryDateTime(EndDate) + "&";
 			}
-			if(ColumnKeysInOrder.Count > 0)
+			if (ColumnKeysInOrder.Count > 0)
 			{
-				query += ColumnOrderParam + "=" 
-					+ String.Join(ColumnOrderDelimiter.ToString(), ColumnKeysInOrder.ToArray()) + "&";
+				query += ColumnOrderParam + "="
+						+ String.Join(ColumnOrderDelimiter.ToString(), ColumnKeysInOrder.ToArray()) + "&";
 			}
-			if(Descending)
+			if (Descending)
 			{
 				query += DescendingParam + "=1&";
 			}
-			if(NumResultsValue != null)
+			if (NumResultsValue != null)
 			{
 				query += NumResultsParam + "=" + NumResultsValue + "&";
 			}
-			if(InProgressValue)
+			if (InProgressValue)
 			{
 				query += InProgressParam + "=" + InProgressValue + "&";
 			}
-			if(SortColumnKey != null)
+			if (SortColumnKey != null)
 			{
 				query += SortColumnParam + "=" + SortColumnKey + "&";
 			}
@@ -171,16 +179,20 @@ namespace Elsevier.Web.VWB
 			{
 				query += RunParam + "=1&";
 			}
+			if (string.IsNullOrEmpty(PublicationCodes) == false)
+			{
+				query += "pubCodes=" + PublicationCodes + "&";
+			}
 			query += "sc_mode=normal";
 			return query;
 		}
 
 		public void MoveColumnLeft(string columnKey)
 		{
-			if(ColumnKeysInOrder.Contains(columnKey))
+			if (ColumnKeysInOrder.Contains(columnKey))
 			{
 				var prev = ColumnKeysInOrder.IndexOf(columnKey);
-				if(prev > 0)
+				if (prev > 0)
 				{
 					ColumnKeysInOrder.Insert(prev - 1, columnKey);
 					ColumnKeysInOrder.RemoveAt(prev + 1);
@@ -218,6 +230,7 @@ namespace Elsevier.Web.VWB
 			clone.Descending = Descending;
 			clone.NumResultsValue = NumResultsValue;
 			clone.InProgressValue = InProgressValue;
+			clone.PublicationCodes = PublicationCodes;
 			return clone;
 		}
 	}

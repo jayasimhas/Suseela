@@ -93,7 +93,7 @@ namespace Informa.Library.Mail.ExactTarget
         }
 
         private void UpdateSitecoreWithEmailId(IExactTarget_Email etEmail, ExactTargetResponse response) =>
-            _dependencies.SitecoreSecurityWrapper.SecurityDisabledAction(
+            _dependencies.SitecoreSecurityWrapper.WithSecurityDisabled(
                 () => _dependencies.SitecoreServiceMaster.Save(
                     etEmail.Alter(
                         email => email.Exact_Target_External_Key = response.ExactTargetEmailId)));

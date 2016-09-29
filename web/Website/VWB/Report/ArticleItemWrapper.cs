@@ -141,24 +141,19 @@ namespace Elsevier.Web.VWB.Report
                 }
             }
 
-            foreach (IArticle referencedArticle in article.Referenced_Articles)
-            {
-                if (!string.IsNullOrEmpty(referencedArticle.Article_Number))
-                {
-                    SidebarArticleNumbers.Add(referencedArticle.Article_Number);
-                }
-            }
+            var ra = (article.Referenced_Articles != null)
+                ? article.Referenced_Articles.Select(a => ((IArticle)a).Article_Number).Where(b => !string.IsNullOrEmpty(b))
+                : Enumerable.Empty<string>();
 
+            if (ra.Any())
+                SidebarArticleNumbers.AddRange(ra);
+            
             SidebarArticleNumbers.Sort();
 
-            TaxonomyString = "";
-            string sep = "";
-            foreach (var taxonomy in article.Taxonomies)
-            {
-                TaxonomyString += sep + taxonomy.Item_Name;
-                sep = ",";
-            }
-
+            TaxonomyString = (article.Taxonomies != null)
+                ? string.Join(",", article.Taxonomies.Select(t => t.Item_Name))
+                : string.Empty;
+		    
             ContentType = "";
 
             if (article.Content_Type != null)

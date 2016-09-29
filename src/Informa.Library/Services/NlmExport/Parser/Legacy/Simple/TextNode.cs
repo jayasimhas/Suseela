@@ -51,7 +51,7 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.Simple
         private static string ConvertLinks(string text)
         {
             // matches links in pattern [LETTER#NUMBERS]
-            string r = @"\[(\w)#(\d*):(.*)\]";
+            string r = @"\[(\w)#(\w*):?(.*?)\]";
             var matches = Regex.Matches(text, r);
 
             foreach (Match match in matches)

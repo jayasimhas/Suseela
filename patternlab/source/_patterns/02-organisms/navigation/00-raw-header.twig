@@ -1,0 +1,115 @@
+<header>
+
+	<div class="banner banner--cookie-policy" data-banner-id="cookie-policy-0001">
+		<div class="banner__wrapper">
+			<div class="dismiss-button js-dismiss-banner">
+				<svg class="dismiss-button__icon">
+					<use xlink:href="/web/Website/dist/img/svg-sprite.svg#x"></use>
+				</svg>
+			</div>
+			<span>In order to deliver a personalized, responsive service and to improve the site, we remember and store information about how you use it. This is done using simple text files called cookies which site on your computer. By continuing to use this site and access its features, you are consenting to our use of cookies. To find out more about the way Informa uses cookies please go to our <a href="/cookie-policy">Cookie Policy</a> page.</span>
+		</div>
+	</div>
+
+	<div class="informa-ribbon">
+		<div class="informa-ribbon__wrapper">
+			<div class="informa-ribbon__detail">
+				<div class="informa-ribbon__left">
+					<p>Scrip is part of the Business Intelligence Division of Informa PLC</p>
+					<ul>
+						<li class="iribbon-mainlink">
+							<a href='http://www.google.com' target=''>Informa PLC</a>
+						</li>
+						<li>
+							<a href='http://www.google.com' target=''>About us</a>
+						</li>
+						<li>
+							<a href='http://www.google.com' target=''>Investor relations</a>
+						</li>
+						<li>
+							<a href='http://www.google.com' target=''>Talent</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="informa-ribbon__right">
+					<p>This site is operated by a business or businesses owned by Informa PLC and all copyright resides with them. Informa PLC’s registered office is 5 Howick Place, London SW1P 1WG. Registered in England and Wales. Number 8860726.</p>
+				</div>
+			</div>
+
+			<button class="informa-ribbon__title">
+				Informa
+			</button>
+		</div>
+	</div>
+
+	{% if showHeaderAd %}
+		{% include "molecules-ad-leaderboard" %}
+	{% endif %}
+
+	<div class="header__wrapper clearfix">
+
+
+		<div class="menu-toggler menu-toggler--mini js-menu-toggle-button">
+			<button class="menu-toggler__button">
+				<span>Toggle Menu</span>
+			</button>
+			Menu
+		</div>
+
+		<div class="header__logo">
+			<a href="/"><img src="http://scrip.dev.ibi.velir.com/-/media/scriplogo.png"></a>
+		</div>
+		<div class="header-logo-print">
+			<a href="/"><img src="/-/media/scriplogoprint.png"></a>
+		</div>
+
+
+
+<div class="header-search__wrapper">
+
+<form action="/" method="post"><input name="__RequestVerificationToken" type="hidden" value="4_qG1fJdkLwFiDtvIQVGLNhsAC3AAt_bsjoN7zaN1PztxrsbYAJqG7D0Wm_lK2tRCS7qaf6gbSUtxG7x0Yg85aoLUszMgxhNWMr7C3bMtQA1" /><input id="fhController" name="fhController" type="hidden" value="HeaderSearch" /><input id="fhAction" name="fhAction" type="hidden" value="Search" />		<input class="header-search__field" type="search" placeholder="Search the site" name="SearchTerm">
+		<svg class="header__icons header__icons--search js-header-search-trigger">
+			<use xlink:href="/web/Website/dist/img/svg-sprite.svg#search"></use>
+		</svg>
+		<svg class="header__icons header__icons--dismiss-search js-header-search-trigger">
+			<use xlink:href="/web/Website/dist/img/svg-sprite.svg#x"></use>
+		</svg>
+</form></div>
+
+
+		<div class="header-account-access">
+
+
+				<div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger"
+					 data-pop-out-id="header-register"
+					 data-pop-out-type="register">
+
+					<svg class="header__icons icon-register">
+						<use xlink:href="/web/Website/dist/img/svg-sprite.svg#register"></use>
+					</svg>
+					<span class="header-account-access__label">Register</span>
+				</div>
+				<div class="header-account-access__sign-in-out pop-out__trigger js-pop-out-trigger"
+					 data-pop-out-id="header-signin"
+					 data-pop-out-align="right"
+					 data-pop-out-type="sign-in"
+					 data-pop-out-tab-height="87">
+					<svg class="header__icons icon-sign-in">
+						<use xlink:href="/web/Website/dist/img/svg-sprite.svg#sign-in"></use>
+					</svg>
+					<span class="header-account-access__label">Sign In</span>
+				</div>
+		</div>
+
+
+
+		<div class="boxout-print-info">
+			<p><em style="color: #58595b;">After years of warding off generics, large pharma companies are embracing generic drug manufacturers and vying for a share of the off-patent drugs business. Indian generic companies, once considered business pariahs, are the focus of plenty of action, Anju Ghangurde reports.</em></p>
+			<p>Printed By <b>  </b></p>
+		</div>
+
+
+	</div>
+
+</header>

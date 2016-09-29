@@ -1,0 +1,5 @@
+{
+	"alertType": "success",
+	"alertIcon": "check",
+	"alertText": "Good work! The thing you did was a success."
+}

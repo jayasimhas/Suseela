@@ -1,0 +1,107 @@
+----item----
+version: 1
+id: {D965F99C-DA60-4C32-97B4-3803FD22F2C4}
+database: master
+path: /sitecore/templates/Print Studio Templates/Publishing Engine/P_TextFrame/__Standard Values
+parent: {0637DE6E-33FE-40C1-9233-98A3A6B88792}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {0637DE6E-33FE-40C1-9233-98A3A6B88792}
+templatekey: P_TextFrame
+
+----field----
+field: {09772857-332A-4E06-A337-787F87E6C89F}
+name: Xml Renderer
+key: xml renderer
+content-length: 38
+
+{FF0E86EE-491A-4670-B50E-6BCEDE2D5411}
+----field----
+field: {5BEFCFA8-7E5F-4333-8ECC-49DDBE8E0EBD}
+name: OverruleChilds
+key: overrulechilds
+content-length: 0
+
+
+----field----
+field: {22F731FF-8D35-44E1-B989-A3C6E62B3D32}
+name: ParagraphStyle
+key: paragraphstyle
+content-length: 4
+
+body
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+150
+----field----
+field: {B03569B1-1534-43F2-8C83-BD064B7D782C}
+name: __Renderers
+key: __renderers
+content-length: 0
+
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: 6bdd9323-7594-4164-b871-566d8e775501
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20080725T090600
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6bdd9323-7594-4164-b871-566d8e775501
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160907T135931Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 0
+
+

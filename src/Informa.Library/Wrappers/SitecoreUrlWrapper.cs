@@ -17,7 +17,7 @@ namespace Informa.Library.Wrappers
     }
 
     [AutowireService]
-    public class SitecoreUrlWrapper : ISitecoreUrlWrapper
+    public class SitecoreUrlWrapper : BaseSitecoreWrapper, ISitecoreUrlWrapper
     {
         private readonly IDependencies _dependencies;
 				public Database ContextDatabase { get; private set; }
@@ -41,7 +41,7 @@ namespace Informa.Library.Wrappers
         {
             var item = ContextDatabase.GetItem(new ID(itemId));
             var itemUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
-            var scheme = _dependencies.HttpContextProvider.RequestUrl?.Scheme + "://";
+            var scheme = _dependencies.HttpContextProvider.RequestUri?.Scheme + "://";
 
             return itemUrl;
         }
@@ -53,7 +53,7 @@ namespace Informa.Library.Wrappers
 
             if (imageItem == null) return null;
 
-            var scheme = _dependencies.HttpContextProvider.RequestUrl?.Scheme + "://";
+            var scheme = _dependencies.HttpContextProvider.RequestUri?.Scheme + "://";
 
             return scheme + GetHostName() + Sitecore.Resources.Media.MediaManager.GetMediaUrl(imageItem);
         }

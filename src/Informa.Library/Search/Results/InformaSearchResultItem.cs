@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Web.Mvc;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter;
+using Informa.Library.Search.ComputedFields.SearchResults.Converter.DisplayTaxonomy;
 using Informa.Library.User.Document;
 using Informa.Library.Utilities.TokenMatcher;
 using Sitecore.ContentSearch;
@@ -53,7 +54,11 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public string PublicationTitle { get; set; }
 
-		[IndexField("searchbyline_t")]
+        [IndexField("searchpublicationcode_s")]
+        [DataMember]
+        public string PublicationCode { get; set; }
+
+        [IndexField("searchbyline_t")]
 		[DataMember]
 		public string Byline { get; set; }
 
@@ -65,7 +70,11 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public string MediaType { get; set; }
 
-		[DataMember]
+        [IndexField("searchmediatooltip_s")]
+        [DataMember]
+        public string MediaTooltip { get; set; }
+
+        [DataMember]
 		public string Summary => DCDTokenMatchers.ProcessDCDTokens(RawSummary);
 
 		[IndexField("searchsummary_s")]
@@ -79,7 +88,15 @@ namespace Informa.Library.Search.Results
 		[IndexField("facetcompanies")]
 		public List<string> CompaniesFacet { get; set; }
 
-		[DataMember]
+		[IndexField("authors_sm")]
+		public List<string> Authors { get; set; }
+
+		[IndexField("facetauthornames_sm")]
+		public List<string> AuthorFullNames { get; set; }
+
+		[IndexField("referenced_companies_t")]
+        public string ReferencedCompany { get; set; }
+        [DataMember]
 		public bool IsArticleBookmarked => DocumentContext.IsSaved(ItemId.Guid);
 		
 		[DataMember]

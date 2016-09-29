@@ -1,164 +1,170 @@
-﻿@using Informa.Web.Models
+﻿@using Informa.Library.Utilities.References
+@using Informa.Web.Models
 @using Sitecore.Resources.Media
-@inherits CustomGlassView<ArticleBodyContentModel>
+@inherits CustomGlassView<Informa.Web.ViewModels.Articles.ArticleBodyContentModel>
 
 <div class="article-body-content">
-	<h1>@Html.Raw(Model.Title)</h1>
-	<h3>@Html.Raw(Model.Sub_Title)</h3>
-	@if (Model.DisplayLegacyPublication)
-	{
-		<p class="article-legacy-publication">@Model.LegacyPublicationText</p>
-	}
-	<div class="article-metadata">
-		<ul>
-			<li>
-				<time class="article-metadata__date">@Model.Date.ToString("dd MMM yyyy")</time>
-			</li>
-			@if (!string.IsNullOrEmpty(Model.Content_Type))
-			{
-				<li>
-					<h6>@Model.Content_Type</h6>
-				</li>
-			}
-			@if (!string.IsNullOrEmpty(Model.Media_Type))
-			{
-				<li>
-					<svg class="article-metadata__media-type">
-						<use xlink:href="/dist/img/svg-sprite.svg#@Model.Media_Type"></use>
-					</svg>
-				</li>
-			}
-		</ul>
-	</div>
+    <h1>@Html.Raw(Model.Title)</h1>
+    <h3>@Html.Raw(Model.Sub_Title)</h3>
+    @if (Model.DisplayLegacyPublication)
+    {
+        <p class="article-legacy-publication">@Model.LegacyPublicationText</p>
+    }
+    <div class="article-metadata">
+        <ul>
+            <li>
+                <time class="article-metadata__date">@Model.Date.ToString("dd MMM yyyy")</time>
+            </li>
+            @if (!string.IsNullOrEmpty(Model.ContentType))
+            {
+                <li>
+                    <h6>@Model.ContentType</h6>
+                </li>}
+            @if (!string.IsNullOrEmpty(Model.MediaTypeIconData?.MediaType))
+            {
+
+                <li>
+                    @Html.Sitecore().Rendering(RenderingReferences.Instance.MediaTypeIcon.ToString(), new { DataSource = Model.GlassModel._Id })
+                </li>}
+        </ul>
+    </div>
 
     @* MULTIPLE AUTHORS *@
     @{
         var authors = Model.Authors.Take(3).ToArray();
     }
-	@if (authors.Length == 1)
-	{
-		var author = authors.FirstOrDefault();
-		@* SINGLE AUTHOR*@
-		<div class="article-author article-author--solo">
-			<ul class="article-author__list">
-				<li>
-					@if (author.Image != null)
-					{
-						<div class="article-author__photo">
-						    @RenderImage(author, model => model.Image, new { width = 120 })
-						</div>
-					}
-					<div class="article-author__solo-wrapper">
-						<span class="article-author__name">@author.Name</span>
-						<span class="article-author__contact">
-							@if (!string.IsNullOrEmpty(author.Twitter))
-							{
-								<a href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
-							}
-							@if (!string.IsNullOrEmpty(author.Email_Address))
-							{
-								<a href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
-							}
-						</span>
-					</div>
-				</li>
-			</ul>
-		</div>
+    @if (authors.Length == 1)
+    {
+        var author = authors.FirstOrDefault();
+        @* SINGLE AUTHOR*@
+        <div class="article-author article-author--solo">
+            <ul class="article-author__list">
+                <li>
+                    @if (author.Image != null)
+                    {
+                        <div class="article-author__photo">
+                            @RenderImage(author, model => model.Image, new { width = 120 })
+                        </div>
+                    }
+                    <div class="article-author__solo-wrapper">
+                        <span class="article-author__name">
+                            @if (author.InActive)
+                            {
+                                @author.Name
+                            }
+                            else
+                            {
+                                <a href="@author.AuthorLink">@author.Name</a>
+                            }
+                        </span>
+                        <span class="article-author__contact">
+                            @if (!string.IsNullOrEmpty(author.Twitter))
+                            {
+                                <a href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
+                            }
+                            @if (!string.IsNullOrEmpty(author.Email_Address))
+                            {
+                                <a href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
+                            }
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-		@* END SINGLE AUTHOR *@
+        @* END SINGLE AUTHOR *@
 
-	}
-	else if (authors.Length > 1)
-	{
-		<div class="article-author">
-			<ul class="article-author__list">
-				@foreach (var author in authors)
-				{
-					<li>
-						<span class="article-author__name">@author.Name</span>
-						<span class="article-author__contact">
-							@if (!string.IsNullOrEmpty(author.Twitter))
-							{
-								<a href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
-							}
-							@if (!string.IsNullOrEmpty(author.Email_Address))
-							{
-								<a href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
-							}
-						</span>
-					</li>
-				}
-			</ul>
-		</div>
-		@* END MULTIPLE AUTHORs *@
-	}
+    }
+    else if (authors.Length > 1)
+    {
+        <div class="article-author">
+            <ul class="article-author__list">
+                @foreach (var author in authors)
+                {
+                    <li>
+                        <span class="article-author__name"><a href="@author.AuthorLink">@author.Name</a></span>
+                        <span class="article-author__contact">
+                            @if (!string.IsNullOrEmpty(author.Twitter))
+                            {
+                                <a href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
+                            }
+                            @if (!string.IsNullOrEmpty(author.Email_Address))
+                            {
+                                <a href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
+                            }
+                        </span>
+                    </li>
+                }
+            </ul>
+        </div>
+        @* END MULTIPLE AUTHORs *@
+    }
 
-	@* If plugin created summary for article, it's the same as first paragraph... so hide summary. *@
-	@if (!string.IsNullOrEmpty(Model.Summary) && !Model.Body.Contains(Model.Summary))
-	{
-		@* * * Executive Summary *@
-		<div class="article-executive-summary">
-			<h4>Executive Summary</h4>
-			@Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))
-		</div>
-		@* End Executive Summary  *@
-	}
+    @* If plugin created summary for article, it's the same as first paragraph... so hide summary. *@
+    @if (!string.IsNullOrEmpty(Model.Summary) && !Model.Body.Contains(Model.Summary))
+    {
+        @* * * Executive Summary *@
+        <div class="article-executive-summary">
+            <h4>@Model.ExecutiveSummary</h4>
+            @Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))
+        </div>
+        @* End Executive Summary  *@
+    }
 
-	@if (!Model.IsEntitled() && Model.CallToActionViewModel != null)
-	{
-		//This will show context for subscribe, login, register
-	    <div class="article-call-to-action">
-	        @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
-	    </div>
-	}
+    @if (!Model.IsEntitled() && Model.CallToActionViewModel != null)
+    {
+        //This will show context for subscribe, login, register
+        <div class="article-call-to-action">
+            @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
+        </div>
+                }
 
 
 
-	@if (Model.Image != null && !string.IsNullOrEmpty(Model.Image.ImageUrl))
-	{
-		@* * *  ARTICLE - FEATURED IMAGE
-			IIPP-117 *@
-		<aside class="article-inline-image">
-			<img src="@Model.Image.GetScaledImage(790)" alt="@Model.Image.ImageAltText">
-			@if (!string.IsNullOrEmpty(Model.Image.ImageSource))
-			{
-				<span class="article-inline-image__source">
-					@Model.FeaturedImageSource @Model.Image.ImageSource
-				</span>
-			}
-			<span class="article-inline-image__caption">@Model.Image.ImageCaption</span>
-		</aside>
-				@* * *  END ARTICLE - FEATURED IMAGE *@
-	}
-   	@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
+    @if (Model.Image != null && !string.IsNullOrEmpty(Model.Image.ImageUrl))
+    {
+        @* * *  ARTICLE - FEATURED IMAGE
+            IIPP-117 *@
+        <aside class="article-inline-image">
+            <img src="@Model.Image.GetScaledImage(790)" alt="@Model.Image.ImageAltText">
+            @if (!string.IsNullOrEmpty(Model.Image.ImageSource))
+            {
+                <span class="article-inline-image__source">
+                    @Model.FeaturedImageSource @Model.Image.ImageSource
+                </span>}
+            <span class="article-inline-image__caption">@Model.Image.ImageCaption</span>
+        </aside>
+        @* * *  END ARTICLE - FEATURED IMAGE *@
+    }
+    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
 
 </div>
 
 @*
-	This element is a template for viewing tables on narrow screens
-	On document ready, each article table gets one of these appended to it
-	On narrow screens, the elements are visible so users can click/tap to view
+    This element is a template for viewing tables on narrow screens
+    On document ready, each article table gets one of these appended to it
+    On narrow screens, the elements are visible so users can click/tap to view
 *@
 <div class="hidden-mobile-table-template js-mobile-table-template">
-	<table class="article-table article-table--mobile-link" data-table-id="TABLEIDHERE">
-		<thead>
-			<tr>
-				<th>Table</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td class="cell">
-					<p class="small">
-						<a class="js-mobile-table-link" href="#" target="_blank" onclick="window.open($(this).data('table-url')); return false;">
-							<svg class="article-table__expand-table">
-								<use xlink:href="/dist/img/svg-sprite.svg#expand-table"></use>
-							</svg>
-						</a>
-						<a class="js-mobile-table-link" href="#" target="_blank" onclick="window.open($(this).data('table-url')); return false;">View full table</a>
-					</p>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+    <table class="article-table article-table--mobile-link" data-table-id="TABLEIDHERE">
+        <thead>
+            <tr>
+                <th>Table</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="cell">
+                    <p class="small">
+                        <a class="js-mobile-table-link" href="#" target="_blank" onclick="window.open($(this).data('table-url')); return false;">
+                            <svg class="article-table__expand-table">
+                                <use xlink:href="/dist/img/svg-sprite.svg#expand-table"></use>
+                            </svg>
+                        </a>
+                        <a class="js-mobile-table-link" href="#" target="_blank" onclick="window.open($(this).data('table-url')); return false;">View full table</a>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

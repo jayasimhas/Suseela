@@ -13,9 +13,9 @@ templatekey: Template
 field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
 name: __Base template
 key: __base template
-content-length: 116
+content-length: 155
 
-{1930BBEB-7805-471A-A3BE-4858AC7CF696}|{8CB9B3DC-FB05-4F6C-A73B-19EADB3A6391}|{A3EC5DA5-C37C-44A5-83F3-96D45B53389F}
+{1930BBEB-7805-471A-A3BE-4858AC7CF696}|{8CB9B3DC-FB05-4F6C-A73B-19EADB3A6391}|{A3EC5DA5-C37C-44A5-83F3-96D45B53389F}|{C8E61F64-8645-4917-892D-CDE98B89E1E8}
 ----field----
 field: {F7D48A55-2158-4F02-9356-756654404F73}
 name: __Standard values
@@ -33,7 +33,7 @@ Apps/32x32/Text-Document.png
 ----version----
 language: en
 version: 1
-revision: ebed6fce-056c-44c9-8bc2-993ae6e1e0b9
+revision: 593d70d6-bb73-45f1-943f-4da812a13947
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ebed6fce-056c-44c9-8bc2-993ae6e1e0b9
+593d70d6-bb73-45f1-943f-4da812a13947
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160226T150547Z
+20160614T192507Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

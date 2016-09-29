@@ -15,5 +15,8 @@ namespace Informa.Library.Article.Search
 		public string EScenicID { get; set; }
 		public Guid ReferencedArticle { get; set; }
 		public IList<string> PublicationNames { get; set; }
+		public IList<string> AuthorGuids { get; set; }
+		public IList<string> AuthorFullNames { get; set; }
+		public IList<string> CompanyRecordNumbers { get; set; }
 	}
 }

@@ -1,0 +1,105 @@
+{# Randoms #}
+{% if topicsListHeader == false %}
+	{% set topicsListHeader = random(randomTitles).text %}
+{% endif %}
+{% if topicsListWords == false %}
+	{% set topicsListWords = [{
+		&quot;sectionHeader&quot;: &quot;Section Header&quot;,
+		&quot;items&quot;: [
+				{
+					&quot;itemText&quot; : random(randomTags).text
+				},
+				{
+					&quot;itemURL&quot;: &quot;#&quot;,
+					&quot;itemText&quot; : random(randomTags).text
+				},
+				{
+					&quot;itemURL&quot;: &quot;#&quot;,
+					&quot;itemText&quot; : random(randomTags).text,
+					&quot;subsection&quot;: [
+						{
+							&quot;itemText&quot; : random(randomTags).text
+						},
+						{
+							&quot;itemURL&quot;: &quot;#&quot;,
+							&quot;itemText&quot; : random(randomTags).text
+						},
+						{
+							&quot;itemURL&quot;: &quot;#&quot;,
+							&quot;itemText&quot; : random(randomTags).text
+						}
+					]
+				},
+				{
+					&quot;itemURL&quot;: &quot;#&quot;,
+					&quot;itemText&quot; : random(randomTags).text
+				},
+				{
+					&quot;itemURL&quot;: &quot;#&quot;,
+					&quot;itemText&quot; : random(randomTags).text
+				},
+				{
+					&quot;itemURL&quot;: &quot;#&quot;,
+					&quot;itemText&quot; : random(randomTags).text
+				}
+			]
+		}]
+	%}
+{% endif %}
+
+{# Pattern #}
+&lt;div class=&quot;article-topics&quot;&gt;
+	&lt;h2 class=&quot;article-topics__header&quot;&gt;{{topicsListHeader}}&lt;/h2&gt;
+
+	{% for section in topicsListWords %}
+		&lt;ul&gt;
+			{% if section.sectionHeader %}
+				&lt;li class=&quot;article-topics__section-header&quot;&gt;
+					{{section.sectionHeader}}
+				&lt;/li&gt;
+			{% endif %}
+			{% if section.sectionDesc %}
+				&lt;li class=&quot;article-topics__section-desc&quot;&gt;
+					{{section.sectionDesc | raw}}
+				&lt;/li&gt;
+			{% endif %}
+			{% for item in section.items %}
+				&lt;li class=&quot;article-topics__li&quot;&gt;
+					{% if item.itemURL %}
+						&lt;a href=&quot;{{item.itemURL}}&quot;&gt;{{item.itemText}}&lt;/a&gt;
+					{% else %}
+						{{item.itemText}}
+					{% endif %}
+					{% if item.subsection %}
+						&lt;ul&gt;
+							{% for subitem in item.subsection %}
+								&lt;li class=&quot;article-topics__li&quot;&gt;
+									{% if subitem.itemURL %}
+										&lt;a href=&quot;{{subitem.itemURL}}&quot;&gt;{{subitem.itemText}}&lt;/a&gt;
+									{% else %}
+										{{subitem.itemText}}
+									{% endif %}
+
+									{% if subitem.subsection %}
+										&lt;ul&gt;
+											{% for subsubitem in subitem.subsection %}
+												&lt;li class=&quot;article-topics__li&quot;&gt;
+													{% if subsubitem.itemURL %}
+														&lt;a href=&quot;{{subsubitem.itemURL}}&quot;&gt;{{subsubitem.itemText}}&lt;/a&gt;
+													{% else %}
+														{{subsubitem.itemText}}
+													{% endif %}
+												&lt;/li&gt;
+											{% endfor %}
+										&lt;/ul&gt;
+									{% endif %}
+
+								&lt;/li&gt;
+							{% endfor %}
+						&lt;/ul&gt;
+					{% endif %}
+				&lt;/li&gt;
+			{% endfor %}
+		&lt;/ul&gt;
+	{% endfor %}
+&lt;/div&gt;

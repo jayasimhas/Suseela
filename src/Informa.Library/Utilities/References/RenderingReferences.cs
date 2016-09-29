@@ -20,5 +20,6 @@ namespace Informa.Library.Utilities.References
 		public Guid TopicAlertButton => new Guid("{39C8CD59-AFEA-4B6C-8071-FF799AD45596}");
 		public Guid LogoutMessage => new Guid("{1460F117-C1C2-45EF-884A-9520FB3A7FDB}");
 		public Guid RenderingMVC => new Guid("{3A09B629-FF07-4B1A-B1D4-748E712C18CA}");
+		public Guid MediaTypeIcon => new Guid("{EBEB54C0-7008-4E3B-994D-CE9737A56745}");
 	}
 }

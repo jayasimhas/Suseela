@@ -1,0 +1,11 @@
+﻿@model Informa.Web.ViewModels.AuthorShareViewModel
+
+<div class="action-flags-bar article-prologue">
+    <div class="action-flags article-prologue__share-bar">
+        <ul>
+            @{ Html.RenderPartial("/Views/Authors/AuthorPrologueEmail.cshtml", Model.EmailViewModel); }
+            @{ Html.RenderPartial("/Views/Authors/AuthorPrologueShare.cshtml", Model.ShareViewModel); }
+        </ul>
+    </div>
+    <div></div>
+</div>

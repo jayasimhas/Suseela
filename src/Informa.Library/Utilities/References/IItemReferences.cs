@@ -11,6 +11,8 @@ namespace Informa.Library.Utilities.References
 
 		Guid NlmErrorDistributionList { get; }
 
+        Guid UserLockoutedEmails { get; }
+
 		// Pharma Globals
 		Guid NlmCopyrightStatement { get; }
 		Guid InformaBar { get; }
@@ -25,6 +27,7 @@ namespace Informa.Library.Utilities.References
         Guid SubjectsTaxonomyFolder { get; }
 		Guid RegionsTaxonomyFolder { get; }
 		Guid TherapyAreasTaxonomyFolder { get; }
+        Guid DeviceAreasTaxonomyFolder { get; }
 
 		//Account Drop Down
 		Guid AccountCountries { get; }
@@ -33,6 +36,11 @@ namespace Informa.Library.Utilities.References
 		Guid AccountNameSuffixes { get; }
 		Guid AccountPhoneTypes { get; }
 		Guid AccountSalutations { get; }
+
+    //Issues Items
+    Guid IssuesRootCurrent { get; }
+    Guid IssuesRootArchive { get; }
+
         
 		// Templates
 		Guid FolderTemplate { get; }
@@ -42,5 +50,11 @@ namespace Informa.Library.Utilities.References
 		Guid SubscriptionPage { get; }
 
 		Guid EmailPreferences { get; }
+
+        Guid PasswordRecoveryEmail { get; }
+        
+        // Restriction Access
+        Guid FreeWithEntitlement { get; }
+        Guid FreeWithRegistration { get; }
 	}
 }

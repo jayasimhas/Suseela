@@ -1,0 +1,6 @@
+{% if buttonText == false %}
+	{% set buttonText = "Button, Filled" %}
+{% elseif buttonText == "random" %}
+	{% set buttonText = random(randomButtons).text %}
+{% endif %}
+<button href="#" class="button--filled">{{buttonText}}</button>

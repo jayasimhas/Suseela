@@ -1,0 +1,6 @@
+{% if quoteText == false %}
+	{% set quoteText = random(randomParas).text %}
+{% endif %}
+<div class="quote">
+	<p>{{quoteText}}</p>
+</div>

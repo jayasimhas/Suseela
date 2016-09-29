@@ -1,0 +1,22 @@
+﻿@model Informa.Library.Utilities.DataModels.TreeNode<string, string>
+
+<li class="article-topics__li">
+    @if (Model.Data.HasContent())
+    {
+        <a href="/companies/_id@(Model.Data)">@Model.Key</a>
+    }
+    else
+    {
+        @Model.Key
+    }
+    @if (Model.Children.Any())
+    {
+        <ul>
+            @foreach (var child in Model.Children)
+            {
+                @Html.Partial("~/Views/CompaniesAndDeals/SubsidiariesTree.cshtml", child)
+            }
+        </ul>
+    }
+</li>
+ 

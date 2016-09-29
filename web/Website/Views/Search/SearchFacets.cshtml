@@ -178,7 +178,7 @@
                                 <li class="facets__field-group facets__field-group--from input-group">
                                     <label for="date-picker-from" ng-click="open($event,'dtFrom');  facetController.updateSelectedDate(dateFilter.key)">From</label>
                                     <input type="text"
-                                           datepicker-options="fromDateOptions"
+                                           datepicker-options="options"
                                            id="date-picker-from"
                                            is-open="datepickers.dtFrom"
                                            name="dtFrom"
@@ -189,7 +189,7 @@
                                            placeholder="dd/mm/yyyy"
                                            popup-placement="auto right-top"
                                            show-button-bar="false"
-                                           uib-datepicker-popup="dd/MM/yyyy">
+                                           uib-datepicker-popup="d/M/yyyy">
 
                                     <span class="input-group-btn">
                                         <button type="button"
@@ -206,7 +206,7 @@
                                     <label for="date-picker-to" ng-click="open($event,'dtTo');  facetController.updateSelectedDate(dateFilter.key)">To</label>
 
                                     <input type="text"
-                                           datepicker-options="toDateOptions"
+                                           datepicker-options="options"
                                            datepicker-popup="shortDate"
                                            id="date-picker-to"
                                            is-open="datepickers.dtTo"
@@ -218,7 +218,7 @@
                                            placeholder="dd/mm/yyyy"
                                            popup-placement="auto right-top"
                                            show-button-bar="false"
-                                           uib-datepicker-popup="dd/MM/yyyy">
+                                           uib-datepicker-popup="d/M/yyyy">
 
                                     <span class="input-group-btn">
                                         <button type="button"
