@@ -5,6 +5,6 @@
 
     public class UserPreferences : IUserPreferences
     {
-       public List<IChannelPreference> Preferences { get; set; }
+       public List<ChannelPreference> PreferredChannels { get; set; }
     }
 }

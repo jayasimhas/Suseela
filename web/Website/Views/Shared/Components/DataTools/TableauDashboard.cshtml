@@ -1,67 +1,14 @@
-﻿@model TableauDashboardViewModel
-
-@if (Model.IsRightRail)
+﻿@model Informa.Web.ViewModels.DataTools.TableauDashboardViewModel
+@if (Model != null)
 {
-    <div class="tableau-placeholder-right-rail">
-        <h3 class="tableau-heading">@Model.ComponentHeading</h3>
-        <script type="text/javascript" src="@Model.JSAPIUrl"></script>
-        <div class="tableau-graph">
-            <object class="tableauViz" width='@Model.DashboardWidth' height='@Model.DashboardHeight%'>
-                <param name="host_url" value="@Model.HostUrl" />
-                <param name="name" value="@Model.DashboardName" />
-                <param name="tabs" value="@Model.DisplayTabs" />
-                <param name="toolbar" value="@Model.DisplayToolbars" />
-                <param name='customViews' value='@Model.AllowCustomViews' />
-                <param name='filter' value='@Model.Filter' />
-                <param name='ticket' value='@Model.TableauTicket' />
-            </object>
-        </div>
-        <p><a href="@Model.LandingPageLink">@Model.LandingPageLinkLable</a></p>
-    </div>
-}
-else
-{
-    var dashboardWidth = string.IsNullOrWhiteSpace(Model.DashboardWidth) ? "100%" : Model.DashboardWidth;
-    var dashboardHeight = string.IsNullOrWhiteSpace(Model.DashboardHeight) ? "100%" : Model.DashboardHeight;
-    <div class="tableau-landing">
-        <h1>@Model.PageTitle</h1>
-        <div class="sub-heading-text">@Model.PageSubheading</div>
-        @if (!string.IsNullOrWhiteSpace(@Model.IntroductoryVideoLink) && !string.IsNullOrWhiteSpace(@Model.IntroductoryText))
-        {
-            <div class="js-toggle-demo">
-                <div class="show-demo">
-                    <div class="sd">@Model.HideDemoLable<i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-                    <div class="hd">@Model.ShowDemoLable<i class="fa fa-chevron-up" aria-hidden="true"></i></div>
-                </div>
-                <div class="toggle-demo">
-                    <div class="demoText">
-                        <span>
-                            @Model.IntroductoryText
-                        </span>
-                    </div>
-                    @if (!string.IsNullOrWhiteSpace(@Model.IntroductoryVideoLink))
-                    {
-                        <div class="video-demo">
-                            <div class="visible-lg">
-                                <div class="video-mini-container">
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <img src="/dist/img/video-thumb.png" data-videotype="wistia" data-videourl="@Model.IntroductoryVideoLink" alt="wistia video" width="100%" class="video-img img-responsive">
-                                        <span class="play-icon" style="display: block;"></span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="visible-sm">
-                            </div>
-                        </div>
-                    }
-                </div>
-            </div>
-        }
-        <script type="text/javascript" src="@Model.JSAPIUrl"></script>
-        <div class="tableau-placeholder">
-            <div class="tableau-graph tableau_component__desktop">
-                <object class="tableauViz" width='@dashboardWidth' height='@dashboardHeight'>
+    var showInRightRail = Html.Sitecore().CurrentRendering.Parameters["Show in Right Rail"];
+    if (!string.IsNullOrEmpty(@showInRightRail) && @showInRightRail == "1")
+    {
+        <div class="data-tool-placeholder-right-rail">
+            <h3 class="data-tool-heading">@Model.PageTitle</h3>
+            <script type="text/javascript" src="@Model.JSAPIUrl"></script>
+            <div class="data-tool-graph">
+                <object class="tableauViz" width='@Model.DashboardWidth' height='@Model.DashboardHeight'>
                     <param name="host_url" value="@Model.HostUrl" />
                     <param name="name" value="@Model.DashboardName" />
                     <param name="tabs" value="@Model.DisplayTabs" />
@@ -71,27 +18,85 @@ else
                     <param name='ticket' value='@Model.TableauTicket' />
                 </object>
             </div>
-            @if (Model.IsMobileDashboardAvailable)
-            {
-                <div class="tableau-graph tableau_component__mobile">
-                    <object class="tableauViz" width='@dashboardWidth' height='@dashboardHeight'>
-                        <param name="host_url" value="@Model.HostUrl" />
-                        <param name="name" value="@Model." />
-                        <param name="tabs" value="@Model.DisplayTabs" />
-                        <param name="toolbar" value="@Model.DisplayToolbars" />
-                        <param name='customViews' value='@Model.AllowCustomViews' />
-                        <param name='filter' value='@Model.Filter' />
-                        <param name='ticket' value='@Model.TableauTicket' />
-                    </object>
-                </div>
-            }
-            <div class="articleText">
-                <span>
-                    @Model.ToolExplanation
-                </span>
-            </div>
+            <p><a href="@Model.LandingPageLink">@Model.LandingPageLinkLable</a></p>
         </div>
-    </div>
-    @Html.HiddenFor(m => m.IsMobileDashboardAvailable);
-}
+    }
+    else
+    {
+        var dashboardWidth = string.IsNullOrWhiteSpace(Model.DashboardWidth) ? "100%" : Model.DashboardWidth;
+        var dashboardHeight = string.IsNullOrWhiteSpace(Model.DashboardHeight) ? "100%" : Model.DashboardHeight;
+        <div class="data-tool-landing">
+            @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolPrologue.cshtml", Model.PrologueViewModel); }
 
+            <h1>@Model.PageTitle</h1>
+            <div class="sub-heading-text">@Model.PageSubheading</div>
+                <div class="js-toggle-demo">
+                    <ul class="show-demo">
+                        <li><a class="sd" href="javascript: void(0);">@Model.HideDemoLable</a></li>
+                        <li><a class="hd" href="javascript: void(0);">@Model.ShowDemoLable</a></li>
+                    </ul>
+                    <div class="toggle-demo">
+                        <div class="demoText">
+                            <span>
+                                @Model.IntroductoryText
+                            </span>
+                        </div>
+                        @Html.Sitecore().Placeholder("VideoControl")
+                    </div>
+                </div>
+            <script type="text/javascript" src="@Model.JSAPIUrl"></script>
+
+            <div class="data-tool-placeholder">
+                @if (Model.IsUserAuthenticated || !Model.AuthenticationRequired)
+                {
+                    <div class="data-tool-graph tableau_component__desktop">
+                        <object class="tableauViz" width='@dashboardWidth' height='@dashboardHeight'>
+                            <param name="host_url" value="@Model.HostUrl" />
+                            <param name="name" value="@Model.DashboardName" />
+                            <param name="tabs" value="@Model.DisplayTabs" />
+                            <param name="toolbar" value="@Model.DisplayToolbars" />
+                            <param name='customViews' value='@Model.AllowCustomViews' />
+                            <param name='filter' value='@Model.Filter' />
+                            <param name='ticket' value='@Model.TableauTicket' />
+                        </object>
+                    </div>
+                    if (Model.IsMobileDashboardAvailable)
+                    {
+                        <div class="data-tool-graph tableau_component__mobile">
+                            <object class="tableauViz" width='@dashboardWidth' height='@dashboardHeight'>
+                                <param name="host_url" value="@Model.HostUrl" />
+                                <param name="name" value="@Model." />
+                                <param name="tabs" value="@Model.DisplayTabs" />
+                                <param name="toolbar" value="@Model.DisplayToolbars" />
+                                <param name='customViews' value='@Model.AllowCustomViews' />
+                                <param name='filter' value='@Model.Filter' />
+                                <param name='ticket' value='@Model.TableauTicket' />
+                            </object>
+                        </div>
+                    }
+                    <div class="articleText">
+                        <span>
+                            @Model.ToolExplanation
+                        </span>
+                    </div>
+                }
+                else
+                {
+                    <div class="article-call-to-action">
+                        @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataTollUserCallToAction.cshtml", Model.CallToActionViewModel); }
+                    </div>
+                            }
+            </div>
+            @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
+            {
+                <div class="article-related-content">
+                    <h1>@Model.RealatedContentLableText</h1>
+                    @{
+                        Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolRelatedList.cshtml", Model.RelatedArticles);
+                    }
+                </div>
+                        }
+        </div>
+        @Html.HiddenFor(m => m.IsMobileDashboardAvailable);
+                }
+            }

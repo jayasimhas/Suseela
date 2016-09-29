@@ -1,0 +1,89 @@
+﻿@model Informa.Web.ViewModels.DataTools.AMChartViewModel
+
+@if (!string.IsNullOrEmpty(Model.ChartType))
+{
+    var chartType = Model.ChartType;
+    var ChartTypeScript = "/amcharts/" + chartType + ".js";
+    var dashboardHeight = string.IsNullOrWhiteSpace(Model.Height) ? "100%" : Model.Height;
+    var dashboardWidth = string.IsNullOrWhiteSpace(Model.Width) ? "100%" : Model.Width;
+    var jsonDataPath = string.IsNullOrWhiteSpace(Model.JsonPath) ? "/amcharts/data/AMChartData.js" : Model.JsonPath;
+    var showInRightRail = Html.Sitecore().CurrentRendering.Parameters["Show in Right Rail"];
+
+    if (!string.IsNullOrEmpty(ChartTypeScript) && !string.IsNullOrEmpty(jsonDataPath))
+    {
+        <script src="/amcharts/amcharts.js"></script>
+        <script src=@ChartTypeScript></script>
+        <script src=@jsonDataPath></script>
+
+        @Html.HiddenFor(m => m.CategoryField)
+        @Html.HiddenFor(m => m.ValueField)
+        <input type="hidden" id="amChartType" value="@chartType" />
+        <input type="hidden" id="amChartDataProvider" value="chartData" />
+
+        if (!string.IsNullOrEmpty(@showInRightRail) && @showInRightRail == "1")
+        {
+            <div class="data-tool-placeholder-right-rail">
+                <h3 class="data-tool-heading">@Model.PageTitle</h3>
+                <div class="data-tool-graph">
+                    <div id="chartdiv" style="width:@dashboardHeight; height:@dashboardWidth;"></div>
+                </div>
+                <p><a href="@Model.LandingPageLink">@Model.LandingPageLinkLable</a></p>
+            </div>
+        }
+        else
+        {
+            <div class="data-tool-landing">
+                @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolPrologue.cshtml", Model.PrologueViewModel); }
+                <h1>@Model.PageTitle</h1>
+                <div class="sub-heading-text">@Model.PageSubheading</div>
+                <div class="js-toggle-demo">
+                    <ul class="show-demo">
+                        <li><a class="sd" href="javascript: void(0);">@Model.HideDemoLable</a></li>
+                        <li><a class="hd" href="javascript: void(0);">@Model.ShowDemoLable</a></li>
+                    </ul>
+                    <div class="toggle-demo">
+                        <div class="demoText">
+                            <span>
+                                @Model.IntroductoryText
+                            </span>
+                        </div>
+                        @Html.Sitecore().Placeholder("VideoControl")
+                    </div>
+                </div>
+                <div class="data-tool-placeholder">
+                    @if (Model.IsUserAuthenticated || !Model.AuthenticationRequired)
+                    {
+                        <div class="data-tool-graph data_tool_component__desktop">
+                            <div id="chartdiv" style="width:@dashboardWidth; height:@dashboardHeight;"></div>
+                            @*<div class="resizable">
+                                    <div id="chartdiv"></div>
+                                </div>*@
+                        </div>
+
+                        <div class="articleText">
+                            <span>
+                                @Model.ToolExplanation
+                            </span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="article-call-to-action">
+                            @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataTollUserCallToAction.cshtml", Model.CallToActionViewModel); }
+                        </div>
+                                }
+                </div>
+                @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
+                {
+                    <div class="article-related-content">
+                        <h1>@Model.RealatedContentLableText</h1>
+                        @{
+                            Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolRelatedList.cshtml", Model.RelatedArticles);
+                        }
+                    </div>
+                            }
+            </div>
+        }
+
+    }
+}

@@ -1,14 +1,20 @@
-﻿using Informa.Library.DataTools;
+﻿using Informa.Library.Article.Search;
+using Informa.Library.DataTools;
 using Informa.Library.Globalization;
 using Informa.Library.Services.Global;
 using Informa.Library.Site;
-using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Informa.Web.ViewModels.Articles;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
-using Jabberwocky.Glass.Models;
+using System.Collections.Generic;
+using System.Linq;
+using Informa.Models.FactoryInterface;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Informa.Library.User.Authentication;
+using Sitecore.Data.Fields;
 
-namespace Informa.Web.ViewModels
+namespace Informa.Web.ViewModels.DataTools
 {
     public class TableauDashboardViewModel : GlassViewModel<ITableau_Dashboard>
     {
@@ -16,23 +22,35 @@ namespace Informa.Web.ViewModels
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ITableauUtil TableauUtil;
         protected readonly ITextTranslator TextTranslator;
+        protected readonly IArticleSearch Searcher;
+        protected readonly IArticleListItemModelFactory ArticleListableFactory;
+        private readonly IAuthenticatedUserContext _authenticatedUserContext;
+        public readonly ICallToActionViewModel CallToActionViewModel;
 
         public TableauDashboardViewModel(
-            ISiteRootContext siteRootContext, 
+            ISiteRootContext siteRootContext,
             IGlobalSitecoreService globalService,
-            ITableauUtil tableauUtil, 
-            ITextTranslator textTranslator)
+            ITableauUtil tableauUtil,
+            ITextTranslator textTranslator,
+            IDataToolPrologueViewModel dataToolPrologueViewModel,
+            IArticleListItemModelFactory articleListableFactory,
+            IArticleSearch searcher,
+            ICallToActionViewModel callToActionViewModel,
+             IAuthenticatedUserContext authenticatedUserContext)
         {
             SiteRootContext = siteRootContext;
             GlobalService = globalService;
             TableauUtil = tableauUtil;
             TextTranslator = textTranslator;
+            PrologueViewModel = dataToolPrologueViewModel;
+            ArticleListableFactory = articleListableFactory;
+            Searcher = searcher;
+            CallToActionViewModel = callToActionViewModel;
+            _authenticatedUserContext = authenticatedUserContext;
         }
 
         #region Tableau Dashboard Parameters/details
-
-        public bool IsRightRail => GlassModel.Is_Right_Rail;
-
+        
         public string DashboardName => GlassModel?.Dashboard_Name;
 
         public string MobileDashboardName => GlassModel?.Mobile_Dashboard_Name;
@@ -62,24 +80,27 @@ namespace Informa.Web.ViewModels
         public string PageSubheading => GlassModel?.Page_Subheading;
 
         public string IntroductoryText => GlassModel?.Introductory_Text;
-
-        public string IntroductoryVideoLink => GlassModel?.Introductory_Video.Url;
-
         public string ToolExplanation => GlassModel?.Tool_Explanation;
 
         public string ShowDemoLable => TextTranslator.Translate("DataTools.ShowDemo");
 
         public string HideDemoLable => TextTranslator.Translate("DataTools.HideDemo");
 
+        public IDataToolPrologueViewModel PrologueViewModel;
+
+        public IEnumerable<IListable> RelatedArticles => GlassModel?.Related_Articles.
+            Where(r => r != null).Select(x => ArticleListableFactory.Create(GlobalService.GetItem<IArticle>(x._Id))).
+            Cast<IListable>().OrderByDescending(x => x.ListableDate);
+
+        public string RealatedContentLableText => TextTranslator.Translate("DataTools.RelatedContentLable");
+
+        public bool IsUserAuthenticated => _authenticatedUserContext.IsAuthenticated;
+
         #endregion
 
         #region Tableau right rail component content
-
-        public string ComponentHeading => GlassModel?.Heading;
-
-        public string ComponentText => GlassModel?.Text;
-
-        public string LandingPageLink => GlassModel?.Landing_Page_Link;
+        
+        public string LandingPageLink => GlassModel?.Landing_Page_Link?.Url;
 
         public string LandingPageLinkLable => TextTranslator.Translate("DataTools.LandingPageLink");
 
@@ -88,8 +109,10 @@ namespace Informa.Web.ViewModels
         #region Tableau server details
 
         public string HostUrl => GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.Server_NameFieldId];
-
-        public string JSAPIUrl => GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.JS_API_UrlFieldId];
+        
+        public LinkField JSAPILinkField => GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString()).Fields[ITableau_ConfigurationConstants.JS_API_UrlFieldId];
+        
+        public string JSAPIUrl => JSAPILinkField.Url;
 
         public string TableauTicket => TableauUtil.GenerateSecureTicket(GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.Server_NameFieldId],
             GlobalService.GetItemByTemplateId(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.User_NameFieldId]);

@@ -1,4 +1,4 @@
-	.tableau-landing{
+	.data-tool-landing{
 		width: 100%;
 		h1{
 			font-family: "Roboto Condensed", Arial Narrow, sans-serif;
@@ -35,24 +35,26 @@
 				cursor: pointer;
 				padding-top: 5px;
 				li a{background: url("/dist/img/arrows.png") no-repeat; color: #979797; text-decoration: none;  padding-right: 25px;}
-				.sd{background-position: 55px 2px;}
-				.hd{background-position: 65px -18px; display: none;}
+				.sd{background-position: 41px 2px;}
+				.hd{background-position: 71px -18px; display: none;}
+
 			}
 			.toggle-demo{
 				width: 100%;
 				display: block;
-				padding: 10px 15px 15px 15px;
+				padding: 10px 15px 15px 0;
 				float: left;
 				.demoText{
 					font-family: 'Roboto', Arial Narrow, sans-serif;
 					font-style: normal;
 					font-weight: 400;
 					font-size: 1.125em;
-					width: 50%;
-					float: left;
+					padding-left:15px;
 					text-align: justify;
 					line-height: 30px;
 					color: $color-abbey-gray;
+					width: 50%;
+					float: left;
 					@include breakpoint('small') {
 						width:100%;
 					}
@@ -61,8 +63,9 @@
 					}
 				}
 				.video-demo{
-					width: 50%;
-					float: left;
+						padding-left: 15px;
+						width: 50%;
+						float: left;
 						@include breakpoint('small') {
 							width:100%;
 							.visible-sm{
@@ -81,7 +84,7 @@
 								height: 90px;
 								background: url("/dist/img/video-icon.png") no-repeat;
 								top: 50%;
-								left: 60%;
+								left: 50%;
 								margin-top: -27px;
 								margin-left: -27px;
 								cursor: pointer;
@@ -93,12 +96,11 @@
 								}
 							}
 							.video-mini-container {
-								padding: 0 0 0 50px;
 								@include breakpoint('medium-small') {
-								padding: 0
+								padding: 0;
 								}
 								@include breakpoint('small') {
-								padding: 0
+								padding: 0;
 								}
 							}
 						}
@@ -113,15 +115,20 @@
 							display: none;
 						}
 					}
+					.add-width-100{
+						width: 100%;
+					}
 					
 				}
+				
 			}
 			
 		}
-		.article-tableau-placeholder{
+		.article-data-tool-placeholder{
 		   width: 100%;
 		   float: left;
-		   .tableau-placeholder{
+		   margin-bottom: 0.75em;
+		   .data-tool-placeholder{
 				 float: left;
 				 width: 50%;
 				 margin-bottom:0;
@@ -146,29 +153,29 @@
 				}	
 		   }
 		}
-		.tableau-placeholder{
+		.data-tool-placeholder{
 			width: 100%;
 			margin-bottom: 0.75rem;
-			h3.tableau-heading{
+			h3.data-tool-heading{
 				font-family: "Roboto Condensed", Arial Narrow, sans-serif;
 				font-style: normal;
 				font-weight: 700;
 				font-size: 1.5em
 			}
-			.tableau-graph{
+			.data-tool-graph{
 				width: 100%;
 				clear: both;
 			}
 		}
-		.tableau-placeholder-right-rail{
+		.data-tool-placeholder-right-rail{
 			width: 100%;
-			h3.tableau-heading{
+			h3.data-tool-heading{
 				font-family: "Roboto Condensed", Arial Narrow, sans-serif;
 				font-style: normal;
 				font-weight: 700;
 				font-size: 1.125em
 			}
-			.tableau-graph{
+			.data-tool-graph{
 				width: 100%;
 			}
 			p 
@@ -216,6 +223,12 @@
 			  }
 			  .modal-content {
 				margin-top:10%;
+				@include breakpoint('medium-small') {
+					margin-top:30%;
+				}	
+				@include breakpoint('small') {
+					margin-top:30%;
+				}	
 			  }
 			  .modal-header {
 				  border-bottom: 0;
@@ -247,3 +260,57 @@
 		}
 		.video-mini-container .embed-responsive.embed-responsive-16by9 {padding-bottom:0;}
 	
+		.article-related-content{
+			float: left;
+			clear: both;
+			h1{
+				 font-family: 'Roboto Condensed';
+				 font-style: normal;
+				 font-weight: 700;
+				 font-size: 1.875em;
+			}
+			.section-article{
+				width: 29%;
+				float: left;
+				margin: 0 2em 0 0;
+				
+				span{
+					 font-family: 'Roboto';
+					 font-style: normal;
+					 font-weight: 500;
+					 font-size: 0.75em;
+					 color: $color-dusty-gray;
+					 letter-spacing: 1px;
+					 display: block;
+					 
+				}
+				.article-related-content__date:last-child {
+					border-bottom: 1px solid #d1d3d4 !important;
+				}	
+				.article-related-content__category{
+					 text-transform: uppercase;
+					 margin-top:10px;
+					 margin-bottom:5px;
+				}
+				h5{	
+					font-family: 'Roboto';
+					font-style: normal;
+					font-weight: 500;
+					font-size: 1.125em;
+					line-height: 25px;
+					margin: 2px 0;
+					clear: both;
+				}
+				@include breakpoint('medium'){
+					width: 45%;
+				}
+				
+				@include breakpoint('medium-small'){
+					width: 100%;
+				}
+				@include breakpoint('small'){
+					width: 100%;
+				}
+			}
+			
+		}

@@ -3,6 +3,6 @@
     using System.Collections.Generic;
     public interface IUserPreferences
     {
-        List<IChannelPreference> Preferences { get; set; }
+        List<ChannelPreference> PreferredChannels { get; set; }
     }
 }

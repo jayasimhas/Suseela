@@ -17,5 +17,6 @@ namespace Informa.Library.ViewModels.Account
 		string ResetPasswordErrorGeneralText { get; }
 		string ResetPasswordSubmitText { get; }
 		IHtmlString ResetPasswordContactText { get; }
-	}
+        bool IsSignInFromMyView { get; set; }
+    }
 }
