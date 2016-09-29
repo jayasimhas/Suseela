@@ -14419,9 +14419,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         public static readonly ID Introductory_Text__RawFieldId = new ID("FBDE2560-E5F4-4CAE-A2B8-8B7EC100E6A5");
         public const string Introductory_Text__RawFieldName = "Introductory Text";
 
-        public static readonly ID Introductory_VideoFieldId = new ID("D132179D-815A-4281-8E4E-E8A7A8BDD701");
-        public const string Introductory_VideoFieldName = "Introductory Video";
-
         public static readonly ID Tool_ExplanationFieldId = new ID("58EADA52-FE63-4FD3-8034-0BB6FBBCCD16");
         public const string Tool_ExplanationFieldName = "Tool Explanation";
 
@@ -14437,7 +14434,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         public static readonly ID HeadingFieldId = new ID("ACA997C5-4D8A-4C6C-AAA7-88272311FA31");
         public const string HeadingFieldName = "Heading";
 
-        public static readonly ID Landing_Page_LinkFieldId = new ID("9ABC643C-8ED6-455C-8598-EA73A420E96B");
+        public static readonly ID Landing_Page_LinkFieldId = new ID("5CAC4FEC-AB94-495F-ADA4-FE34B08EBF7B");
         public const string Landing_Page_LinkFieldName = "Landing Page Link";
     }
 

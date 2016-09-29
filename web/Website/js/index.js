@@ -25,7 +25,6 @@ import tooltipController from './controllers/tooltip-controller';
 import './components/article-sidebar-component';
 import './components/save-search-component';
 
-
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page.js';
@@ -118,26 +117,28 @@ var renderTableau = function() {
 };
 
 var renderAMchart=function() {
-    
-    var amChartType = $('#amChartType').val();
-    var dataProvider = $('#amChartDataProvider').val();
-    var categoryField = $('#CategoryField').val();
-    var valueField = $('#ValueField').val();
-    
-    AmCharts.makeChart("chartdiv", {
-        "type": amChartType,
-        "dataProvider": chartData,
-        "categoryField": categoryField,
-        "graphs": [{
-            "valueField": valueField,
-            "type":"column"
-            
-        }],
-        "responsive": {
-            "enabled": true
-        }
-});
+    if($("#amchartDashboard").hasClass("amchart-dashboard"))
+    {
+        var amChartType = $('#amChartType').val();
+        var dataProvider = $('#amChartDataProvider').val();
+        var categoryField = $('#CategoryField').val();
+        var valueField = $('#ValueField').val();
+
+        AmCharts.makeChart("chartdiv", {
+            "type": amChartType,
+            "dataProvider": chartData,
+            "categoryField": categoryField,
+            "graphs": [{
+                "valueField": valueField,
+                "type":"column"
+            }],
+            "responsive": {
+                "enabled": true
+            }
+        });
+    }
 };
+
 
 var decodeHtml = function(html) {
     var txt = document.createElement("textarea");

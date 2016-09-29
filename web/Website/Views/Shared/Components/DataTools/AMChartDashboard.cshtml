@@ -11,21 +11,23 @@
 
     if (!string.IsNullOrEmpty(ChartTypeScript) && !string.IsNullOrEmpty(jsonDataPath))
     {
-        <script src="/amcharts/amcharts.js"></script>
-        <script src=@ChartTypeScript></script>
-        <script src=@jsonDataPath></script>
+        <div id="amchartDashboard" class="amchart-dashboard">
+            <script src="/amcharts/amcharts.js"></script>
+            <script src=@ChartTypeScript></script>
+            <script src=@jsonDataPath></script>
+        </div>
 
         @Html.HiddenFor(m => m.CategoryField)
         @Html.HiddenFor(m => m.ValueField)
         <input type="hidden" id="amChartType" value="@chartType" />
-        <input type="hidden" id="amChartDataProvider" value="chartData" />
+            <input type="hidden" id="amChartDataProvider" value="chartData" />
 
         if (!string.IsNullOrEmpty(@showInRightRail) && @showInRightRail == "1")
         {
             <div class="data-tool-placeholder-right-rail">
                 <h3 class="data-tool-heading">@Model.PageTitle</h3>
                 <div class="data-tool-graph">
-                    <div id="chartdiv" style="width:@dashboardHeight; height:@dashboardWidth;"></div>
+                    <div id="chartdiv" style="height:@dashboardHeight;"></div>
                 </div>
                 <p><a href="@Model.LandingPageLink">@Model.LandingPageLinkLable</a></p>
             </div>
@@ -54,10 +56,7 @@
                     @if (Model.IsUserAuthenticated || !Model.AuthenticationRequired)
                     {
                         <div class="data-tool-graph data_tool_component__desktop">
-                            <div id="chartdiv" style="width:@dashboardWidth; height:@dashboardHeight;"></div>
-                            @*<div class="resizable">
-                                    <div id="chartdiv"></div>
-                                </div>*@
+                            <div id="chartdiv" style="height:@dashboardHeight;"></div>
                         </div>
 
                         <div class="articleText">
@@ -83,7 +82,8 @@
                     </div>
                             }
             </div>
-        }
+                                    }
 
-    }
-}
+
+                                }
+                            }
