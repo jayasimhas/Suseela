@@ -1,13 +1,9 @@
-﻿@model Informa.Web.ViewModels.DataTools.TableauDashboardViewModel
+﻿@model IEnumerable<Informa.Models.FactoryInterface.IListable>
 
-@if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
+@if (Model != null)
 {
-    <div class="article-related-content">
-        <h1>@Model.RealatedContentLableText</h1>
-
-        @foreach (var article in Model.RelatedArticles)
+        foreach (var article in Model)
         {
             Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolListItem.cshtml", article);
         }
-    </div>
 }
