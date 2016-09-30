@@ -24765,7 +24765,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
     /// <para>ID: {C27F6F34-74DC-4A01-AA56-8E39FD4FD501}</para>	
     /// </summary>
     [SitecoreType(TemplateId = IIndustries_FolderConstants.TemplateIdString)]
-    public partial interface ITaxonomy_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+    public partial interface IIndustries_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
     {
     }
     /// <summary>
@@ -24775,7 +24775,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
     /// <para>ID: 93b32253-7548-4ae4-8be8-5f015bde124b</para>	
     /// </summary>
     [SitecoreType(TemplateId = ITaxonomy_FolderConstants.TemplateIdString)]
-    public partial interface IIndustries_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+    public partial interface ITaxonomy_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
     {
     }
 
@@ -24812,9 +24812,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
     public static partial class IIndustries_FolderConstants
     {
 
-        public const string TemplateIdString = "93b32253-7548-4ae4-8be8-5f015bde124b";
+        public const string TemplateIdString = "C27F6F34-74DC-4A01-AA56-8E39FD4FD501";
         public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Taxonomy Folder";
+        public const string TemplateName = "Industries Folder";
 
 
 
