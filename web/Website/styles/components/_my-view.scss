@@ -6,6 +6,7 @@ header{
 				float: left;
 				padding: 0.3em 0;
 				position: relative;
+				text-align: center;
 				.btn-my-view{
 					border: 1px solid transparent;
 					color: $color-white;
@@ -16,7 +17,7 @@ header{
 					font-style: normal;
 					font-weight: 700;
 					font-size: 0.75em;
-					
+					display: block;
 					@include breakpoint('wide'){
 						text-transform: uppercase;
 					}
@@ -36,7 +37,7 @@ header{
 						background: none; 
 						color: $color-my-view;
 						padding: 0;
-						width: auto;
+						width: 60px;
 						font-family: 'Roboto', Arial Narrow, sans-serif;
 						font-style: normal;
 						font-weight: 400;
@@ -50,11 +51,11 @@ header{
 				}
 				@include breakpoint('medium-small') {
 					float: right;
-					width: auto;
+					width: 60px;
 				}
 				@include breakpoint('small') {
 					position: absolute;
-					top: 38px;
+					top: 130px;
 					margin-right: 12px;
 					right: 0;
 					
