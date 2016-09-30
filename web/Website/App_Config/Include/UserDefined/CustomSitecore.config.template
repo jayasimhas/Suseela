@@ -294,6 +294,8 @@ But you can also use "patch:attribute" for clarity:
       
       <setting name="DCD.OldDealsURL" value="${DCD.OldDealsURL}" />
       
+      <setting name="DCD.PMBIDealsURL" value="${DCD.PMBIDealsURL}" />
+      
       <setting name="NLM.ExportPath" value="${NLM.ExportPath}" />
 
       <setting name="Taxonomy.SubjectPath" value="/sitecore/content/environment globals/taxonomy/subjects"></setting>
