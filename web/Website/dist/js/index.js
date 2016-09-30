@@ -2172,25 +2172,26 @@ var renderTableau = function renderTableau() {
 };
 
 var renderAMchart = function renderAMchart() {
+    if ($("#amchartDashboard").hasClass("amchart-dashboard")) {
 
-    var amChartType = $('#amChartType').val();
-    var dataProvider = $('#amChartDataProvider').val();
-    var categoryField = $('#CategoryField').val();
-    var valueField = $('#ValueField').val();
+        var amChartType = $('#amChartType').val();
+        var dataProvider = $('#amChartDataProvider').val();
+        var categoryField = $('#CategoryField').val();
+        var valueField = $('#ValueField').val();
 
-    AmCharts.makeChart("chartdiv", {
-        "type": amChartType,
-        "dataProvider": chartData,
-        "categoryField": categoryField,
-        "graphs": [{
-            "valueField": valueField,
-            "type": "column"
-
-        }],
-        "responsive": {
-            "enabled": true
-        }
-    });
+        AmCharts.makeChart("chartdiv", {
+            "type": amChartType,
+            "dataProvider": chartData,
+            "categoryField": categoryField,
+            "graphs": [{
+                "valueField": valueField,
+                "type": "column"
+            }],
+            "responsive": {
+                "enabled": true
+            }
+        });
+    }
 };
 
 var decodeHtml = function decodeHtml(html) {
