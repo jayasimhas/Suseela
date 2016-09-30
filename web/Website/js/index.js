@@ -4,6 +4,8 @@
 import Zepto from './zepto.min';
 import svg4everybody from './svg4everybody';
 import Cookies from './jscookie';
+import DrapSwap from './zepto.dragswap';
+import DropBox from './DragDropTouch';
 
 // CAROUSEL
 //import highlight from './carousel/highlight.pack';
@@ -24,6 +26,9 @@ import tooltipController from './controllers/tooltip-controller';
 // COMPONENTS
 import './components/article-sidebar-component';
 import './components/save-search-component';
+
+import './components/myview-settings';
+import './components/subscription';
 
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
