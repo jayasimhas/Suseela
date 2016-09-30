@@ -3954,7 +3954,19 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     margin-top: -48px;
     margin-top: -3rem; }
 
-.subscription .page-account_text {
+@media (max-width: 480px) {
+  .subscriptionPan {
+    font-size: 1em;
+    line-height: 20px;
+    width: 100%; } }
+
+.subscriptionPan .page-account__table {
+  border: 1px solid #d2d4d3; }
+  @media (max-width: 480px) {
+    .subscriptionPan .page-account__table {
+      border: none; } }
+
+.subscriptionPan .page-account_text {
   font-family: 'PT Serif';
   font-style: normal;
   font-weight: 400;
@@ -3963,69 +3975,156 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   margin-bottom: 1.25rem;
   display: block; }
   @media (max-width: 480px) {
-    .subscription .page-account_text {
-      font-style: italic;
+    .subscriptionPan .page-account_text {
       font-size: 1em;
       line-height: 20px; } }
 
-.subscription .sortable-table__header--mobile {
+.subscriptionPan .sortable-table__header--mobile {
   display: none; }
 
-@media (max-width: 480px) {
-  .subscription .js-sortable-table tr {
-    margin-bottom: 1em;
-    position: relative;
-    border-bottom: 1px solid #d1d3d4; }
-    .subscription .js-sortable-table tr td.sortable-table__col.sortable-table__col--publication, .subscription .js-sortable-table tr td.sortable-table__col.sortable-table__col--exp-date {
-      background-color: #f1f2f2;
-      padding: 16px 20px;
-      padding: 1rem 1.25rem; }
-    .subscription .js-sortable-table tr td.sortable-table__col.sortable-table__col--sub-type {
-      padding: 16px 20px;
-      padding: 1rem 1.25rem; } }
+.subscriptionPan .sortable-table__col {
+  width: 25%;
+  float: left; }
+  .subscriptionPan .sortable-table__col .accordian {
+    background: url(/dist/img/arrow2.jpg) no-repeat -18px -14px;
+    height: 17px;
+    min-width: 17px;
+    display: inline-block;
+    cursor: pointer; }
+    .subscriptionPan .sortable-table__col .accordian.active {
+      background: url(/dist/img/arrow2.jpg) no-repeat 0 6px; }
+    @media only screen and (max-device-width: 480px) {
+      .subscriptionPan .sortable-table__col .accordian {
+        display: none; } }
+  .subscriptionPan .sortable-table__col span:nth-child(1) {
+    padding-left: 20px; }
+    @media only screen and (max-device-width: 480px) {
+      .subscriptionPan .sortable-table__col span:nth-child(1) {
+        padding-left: 0px; } }
+  .subscriptionPan .sortable-table__col .accordian:nth-child(2) {
+    position: absolute;
+    margin-left: 40px; }
+  @media (max-width: 480px) {
+    .subscriptionPan .sortable-table__col {
+      width: 100%; } }
+  @media (max-width: 480px) {
+    .subscriptionPan .sortable-table__col {
+      padding: 12px; } }
 
-.subscription .button, .subscription .full-diminished-button, .subscription .button--filled, .subscription .pop-out__register-submit, .subscription .pop-out__sign-in-submit, .subscription .button--outlined, .subscription .button--outline, .subscription .button--gilded,
-.subscription a.button,
-.subscription a.full-diminished-button,
-.subscription .full-diminished-button.pop-out__reset-password,
-.subscription .full-diminished-button.sortable-table__list-toggler,
-.subscription .full-diminished-button.mobile-table-exit,
-.subscription .button.pop-out__reset-password,
-.subscription .button.sortable-table__list-toggler,
-.subscription .button.mobile-table-exit,
-.subscription a.button--filled,
-.subscription a.pop-out__register-submit,
-.subscription .pop-out__register-submit.pop-out__reset-password,
-.subscription .pop-out__register-submit.sortable-table__list-toggler,
-.subscription .pop-out__register-submit.mobile-table-exit,
-.subscription a.pop-out__sign-in-submit,
-.subscription .pop-out__sign-in-submit.pop-out__reset-password,
-.subscription .pop-out__sign-in-submit.sortable-table__list-toggler,
-.subscription .pop-out__sign-in-submit.mobile-table-exit,
-.subscription .button--filled.pop-out__reset-password,
-.subscription .button--filled.sortable-table__list-toggler,
-.subscription .button--filled.mobile-table-exit,
-.subscription a.button--outlined,
-.subscription .button--outlined.pop-out__reset-password,
-.subscription .button--outlined.sortable-table__list-toggler,
-.subscription .button--outlined.mobile-table-exit,
-.subscription a.button--outline,
-.subscription .button--outline.pop-out__reset-password,
-.subscription .button--outline.sortable-table__list-toggler,
-.subscription .button--outline.mobile-table-exit,
-.subscription a.button--gilded,
-.subscription .button--gilded.pop-out__reset-password,
-.subscription .button--gilded.sortable-table__list-toggler,
-.subscription .button--gilded.mobile-table-exit {
+.subscriptionPan .subjectsAct .hide {
+  display: none; }
+
+.subscriptionPan .tablerow {
+  border-top: 1px solid #d1d3d4;
+  min-height: 55px; }
+  @media (max-width: 480px) {
+    .subscriptionPan .tablerow {
+      clear: both; } }
+
+.subscriptionPan .button, .subscriptionPan .full-diminished-button, .subscriptionPan .button--filled, .subscriptionPan .pop-out__register-submit, .subscriptionPan .pop-out__sign-in-submit, .subscriptionPan .button--outlined, .subscriptionPan .button--outline, .subscriptionPan .button--gilded,
+.subscriptionPan a.button,
+.subscriptionPan a.full-diminished-button,
+.subscriptionPan .full-diminished-button.pop-out__reset-password,
+.subscriptionPan .full-diminished-button.sortable-table__list-toggler,
+.subscriptionPan .full-diminished-button.mobile-table-exit,
+.subscriptionPan .button.pop-out__reset-password,
+.subscriptionPan .button.sortable-table__list-toggler,
+.subscriptionPan .button.mobile-table-exit,
+.subscriptionPan a.button--filled,
+.subscriptionPan a.pop-out__register-submit,
+.subscriptionPan .pop-out__register-submit.pop-out__reset-password,
+.subscriptionPan .pop-out__register-submit.sortable-table__list-toggler,
+.subscriptionPan .pop-out__register-submit.mobile-table-exit,
+.subscriptionPan a.pop-out__sign-in-submit,
+.subscriptionPan .pop-out__sign-in-submit.pop-out__reset-password,
+.subscriptionPan .pop-out__sign-in-submit.sortable-table__list-toggler,
+.subscriptionPan .pop-out__sign-in-submit.mobile-table-exit,
+.subscriptionPan .button--filled.pop-out__reset-password,
+.subscriptionPan .button--filled.sortable-table__list-toggler,
+.subscriptionPan .button--filled.mobile-table-exit,
+.subscriptionPan a.button--outlined,
+.subscriptionPan .button--outlined.pop-out__reset-password,
+.subscriptionPan .button--outlined.sortable-table__list-toggler,
+.subscriptionPan .button--outlined.mobile-table-exit,
+.subscriptionPan a.button--outline,
+.subscriptionPan .button--outline.pop-out__reset-password,
+.subscriptionPan .button--outline.sortable-table__list-toggler,
+.subscriptionPan .button--outline.mobile-table-exit,
+.subscriptionPan a.button--gilded,
+.subscriptionPan .button--gilded.pop-out__reset-password,
+.subscriptionPan .button--gilded.sortable-table__list-toggler,
+.subscriptionPan .button--gilded.mobile-table-exit {
   color: #231f20; }
 
-.subscription .button--outline:enabled:hover,
-.subscription a.button--outline:enabled:hover,
-.subscription .button--outline.pop-out__reset-password:enabled:hover,
-.subscription .button--outline.sortable-table__list-toggler:enabled:hover,
-.subscription .button--outline.mobile-table-exit:enabled:hover {
+.subscriptionPan .button--outline:enabled:hover,
+.subscriptionPan a.button--outline:enabled:hover,
+.subscriptionPan .button--outline.pop-out__reset-password:enabled:hover,
+.subscriptionPan .button--outline.sortable-table__list-toggler:enabled:hover,
+.subscriptionPan .button--outline.mobile-table-exit:enabled:hover {
   color: #ffffff;
   text-decoration: none; }
+
+.subscriptionPan .title {
+  background: #ececec;
+  padding: 10px;
+  font-size: 1.125em;
+  color: #231f20;
+  font-weight: bold; }
+  @media (max-width: 480px) {
+    .subscriptionPan .title {
+      clear: both; } }
+
+.subscriptionPan .maintitle {
+  background: #ececec url(/dist/img/mob-arrow.png) no-repeat right 14px; }
+  .subscriptionPan .maintitle.active {
+    background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px; }
+
+@media (max-width: 480px) {
+  .hidden-xs {
+    display: none !important; }
+  .page-account__header {
+    font-size: 36px;
+    line-height: 32px; }
+  .mobileCls {
+    margin-top: 20px;
+    border: 1px solid #d2d4d3; }
+    .mobileCls:before {
+      clear: both;
+      content: '';
+      display: table; }
+    .mobileCls:after {
+      clear: both;
+      display: table;
+      content: " "; }
+    .mobileCls .sub {
+      float: left;
+      width: 60%;
+      margin-top: 8px; }
+    .mobileCls .subsubscribe {
+      float: left;
+      width: 38%;
+      margin-top: -3px; }
+      .mobileCls .subsubscribe a, .mobileCls .subsubscribe .pop-out__reset-password, .mobileCls .subsubscribe .sortable-table__list-toggler, .mobileCls .subsubscribe .mobile-table-exit {
+        display: inline-block;
+        padding: 8px 14px; }
+    .mobileCls .maccordian {
+      background: url(/dist/img/mob-arrow.jpg) no-repeat 0 0;
+      height: 12px;
+      width: 22px;
+      display: inline-block;
+      cursor: pointer; }
+      .mobileCls .maccordian.active {
+        background: url(/dist/img/mob-arrow.jpg) no-repeat 0 6px; } }
+
+@media only screen and (min-width: 481px) {
+  .hidden-lg {
+    display: none !important; }
+  .purchases .sortable-table__col.fdata {
+    width: 30%; }
+  .purchases .sortable-table__col.sdata {
+    width: 50%; }
+  .purchases .sortable-table__col.tdata {
+    width: 20%; } }
 
 .small_table .table-responsive .table {
   border-collapse: inherit;
