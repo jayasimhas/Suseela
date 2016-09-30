@@ -75,9 +75,16 @@ namespace Informa.Library.Search.Results
         public string MediaTooltip { get; set; }
 
         [DataMember]
-		public string Summary => DCDTokenMatchers.ProcessDCDTokens(RawSummary);
+        public string Summary {
+            get {
+                var d = DependencyResolver.Current.GetService<IDCDTokenMatchers>();
+                return (d != null)
+                    ? d.ProcessDCDTokens(RawSummary)
+                    : RawSummary;
+            }
+        }
 
-		[IndexField("searchsummary_s")]
+        [IndexField("searchsummary_s")]
 		public string RawSummary { get; set; }
 
 		[TypeConverter(typeof(HtmlLinkListTypeConverter))]

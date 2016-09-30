@@ -9,20 +9,45 @@ using Informa.Library.Article.Search;
 using Informa.Library.Services.Global;
 using Informa.Library.Utilities.Extensions;
 using Jabberwocky.Core.Caching;
+using Jabberwocky.Autofac.Attributes;
+using Jabberwocky.Glass.Autofac.Util;
+using Autofac;
 
 namespace Informa.Library.Utilities.TokenMatcher
 {
-	public static class DCDTokenMatchers
-	{
-		private static readonly Lazy<IArticleSearch> _lazySearch = new Lazy<IArticleSearch>(() => DependencyResolver.Current.GetService<IArticleSearch>());
-		private static IArticleSearch ArticleSearch => _lazySearch.Value;
-		private static readonly Lazy<ICacheProvider> _lazyCache = new Lazy<ICacheProvider>(() => DependencyResolver.Current.GetService<ICacheProvider>());
-		private static ICacheProvider CacheProvider => _lazyCache.Value;
-		private static readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
-		private static readonly string OldDealsUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL");
-	    private static IGlobalSitecoreService GlobalService = DependencyResolver.Current.GetService<IGlobalSitecoreService>();
+    public interface IDCDTokenMatchers {
+        string ProcessDCDTokens(string text);
+        string DealMatchEval(Match match);
+        string ReplaceDealNameTokens(string text);
+    }
 
-		public static string ProcessDCDTokens(string text)
+    [AutowireService]
+	public class DCDTokenMatchers : IDCDTokenMatchers
+	{
+		private readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
+		private readonly string OldDealsUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL");
+	    
+        [AutowireService(true)]
+        public interface IDependencies {
+            IArticleSearch ArticleSearch { get; }
+            ICacheProvider CacheProvider { get; }
+            IGlobalSitecoreService GlobalService { get; }
+        }
+
+        private IDependencies _;
+
+        public DCDTokenMatchers(IDependencies dependencies) {
+            _ = dependencies;
+        }
+
+        public static string ProcessDCDTokensStatic(string text) {
+            using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope()) {
+                var tokenMatcher = scope.Resolve<IDCDTokenMatchers>();
+                return tokenMatcher.ProcessDCDTokens(text);
+            }
+        }
+
+		public string ProcessDCDTokens(string text)
 		{
 			string body = text;
 
@@ -65,7 +90,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 			return body;
 		}
 
-		private static string ProcessCompanyTokens(string text)
+		private string ProcessCompanyTokens(string text)
 		{
 			//Find all matches with Company token
 			Regex regex = new Regex(DCDConstants.CompanyTokenRegex);
@@ -99,7 +124,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 			return text;
 		}
 
-		private static string ProcessDealTokens(string text)
+		private string ProcessDealTokens(string text)
 		{
 			//Find all matches with Deal token
 			Regex regex = new Regex(DCDConstants.DealTokenRegex);
@@ -108,7 +133,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 			return regex.Replace(text, evaluator);
 		}
 
-		private static string ProcessArticleTokens(string text)
+		private string ProcessArticleTokens(string text)
 		{
 			//Find all matches with Article token
 			Regex regex = new Regex(DCDConstants.ArticleTokenRegex);
@@ -120,7 +145,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 			return legacyRegex.Replace(replacedText, evaluator);
 		}
 
-		private static string CompanyMatchEval(Match match)
+		private string CompanyMatchEval(Match match)
 		{
 			try
 			{
@@ -134,7 +159,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 			}
 		}
 
-		public static string DealMatchEval(Match match)
+		public string DealMatchEval(Match match)
 		{
 			try
 			{
@@ -152,28 +177,28 @@ namespace Informa.Library.Utilities.TokenMatcher
 			}
 		}
 
-		private static string ArticleMatchEval(Match match)
+		private string ArticleMatchEval(Match match)
 		{
 			string articleNumber = match.Groups[1].Value;
 			string cacheKey = $"DCDArticleText-{articleNumber}";
-            return CacheProvider.GetFromCache(cacheKey, () => BuildArticleMatch(articleNumber));
+            return _.CacheProvider.GetFromCache(cacheKey, () => BuildArticleMatch(articleNumber));
 		}
 
-	    private static string BuildArticleMatch(string articleNumber)
+	    private string BuildArticleMatch(string articleNumber)
 	    {
             try {
 
-                IArticleSearchFilter filter = ArticleSearch.CreateFilter();
+                IArticleSearchFilter filter = _.ArticleSearch.CreateFilter();
                 filter.ArticleNumbers = articleNumber.SingleToList();
                 filter.PageSize = 1;
-                var results = ArticleSearch.Search(filter);
+                var results = _.ArticleSearch.Search(filter);
 
                 if (results.Articles.Any()) {
                     var article = results.Articles.FirstOrDefault();
 
                     if (article != null) {
                         return
-                            $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {GlobalService.GetPublicationName(article._Id)}, " +
+                            $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {_.GlobalService.GetPublicationName(article._Id)}, " +
                             $"{(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
                     }
                 }
@@ -188,7 +213,7 @@ namespace Informa.Library.Utilities.TokenMatcher
         /// This will replace company and product tokens like this: [Company Name] or {Product Name} with <b>Company Name</b> or <i>Product Name</i>
         /// </summary>
         /// <returns></returns>
-        public static string ReplaceDealNameTokens(string text) {
+        public string ReplaceDealNameTokens(string text) {
 
             Regex companyRegex = new Regex(DCDConstants.DealCompanyNameRegex);
             foreach(Match cm in companyRegex.Matches(text)) {

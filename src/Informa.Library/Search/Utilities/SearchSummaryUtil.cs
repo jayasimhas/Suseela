@@ -12,7 +12,7 @@ namespace Informa.Library.Search.Utilities
 		public static string GetTruncatedSearchSummary(string summaryText)
 		{
 			//Replacing the summary text with company and deals token
-			var companyReplacedSummary = DCDTokenMatchers.ProcessDCDTokens(summaryText);
+			var companyReplacedSummary = DCDTokenMatchers.ProcessDCDTokensStatic(summaryText);
 
 			//Replace any article tokens with a placeholder
 			var processedTextAndArticleTokens = ArticleTokenProcessingStart(companyReplacedSummary);
