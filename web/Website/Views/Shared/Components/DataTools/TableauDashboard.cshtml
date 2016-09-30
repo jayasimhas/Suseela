@@ -28,7 +28,7 @@
         <div class="data-tool-landing">
             @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolPrologue.cshtml", Model.PrologueViewModel); }
 
-            <h1>@Model.PageTitle</h1>
+            <h1>@Html.Raw(Model.PageTitle)</h1>
             <div class="sub-heading-text">@Model.PageSubheading</div>
                 <div class="js-toggle-demo">
                     <ul class="show-demo">
@@ -38,7 +38,7 @@
                     <div class="toggle-demo">
                         <div class="demoText">
                             <span>
-                                @Model.IntroductoryText
+                                @Html.Raw(Model.IntroductoryText)
                             </span>
                         </div>
                         @Html.Sitecore().Placeholder("VideoControl")
@@ -76,7 +76,7 @@
                     }
                     <div class="articleText">
                         <span>
-                            @Model.ToolExplanation
+                            @Html.Raw(Model.ToolExplanation)
                         </span>
                     </div>
                 }

@@ -955,6 +955,7 @@
     <Compile Include="ViewModels\CompaniesAndDeals\StratrgicTransactionViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorProfileViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\AMChartsUsingBuilderViewModel.cs" />
     <Compile Include="ViewModels\DataTools\AMChartViewModel.cs" />
     <Compile Include="ViewModels\DataTools\DataToolPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\DataTools\DataToolProloguePrintViewModel.cs" />
@@ -1870,6 +1871,7 @@
     <Content Include="Views\Shared\Components\DataTools\DataToolListItem.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\DataTollUserCallToAction.cshtml" />
     <Content Include="Views\Shared\PopOuts\VideoControl.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\AMchartsUsingBuilder.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>
