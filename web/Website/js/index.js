@@ -119,6 +119,7 @@ var renderTableau = function() {
 var renderAMchart=function() {
     if($("#amchartDashboard").hasClass("amchart-dashboard"))
     {
+
         var amChartType = $('#amChartType').val();
         var dataProvider = $('#amChartDataProvider').val();
         var categoryField = $('#CategoryField').val();
@@ -133,7 +134,7 @@ var renderAMchart=function() {
                 "type":"column"
             }],
             "responsive": {
-                "enabled": true
+                "enabled": true 
             }
         });
     }
