@@ -71,34 +71,40 @@
         @Html.Sitecore().Placeholder("header-search")
 
         <div class="header-account-access">
+          
+                @Html.Sitecore().Placeholder("header-myview")
 
-            @if (Request.Cookies["LoggedoutActionFlag"] == null || Model.IsAuthenticated)
+            <div class="header-account-right-access">
+                @if (Request.Cookies["LoggedoutActionFlag"] == null || Model.IsAuthenticated)
             {
+
 
                 if (!string.IsNullOrWhiteSpace(Model.WelcomeText))
                 {
-                    <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
+                        <div class="header-account-access__friendly-greeting">@Model.WelcomeText</div>
+                    }
                 }
-            }
-            @Html.Sitecore().Placeholder("header-myview")
-            @if (Model.IsAuthenticated)
+
+
+
+                @if (Model.IsAuthenticated)
             {
-                @* TODO: UNTIL WE GET ENTITLED USERS *@
-                <div class="header-account-access__my-account">
-                    <svg class="header__icons icon-my-account">
-                        <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
-                    </svg>
-                    <span class="header-account-access__label"><a href="@Model.MyAccountLink">@Model.MyAccountLinkText</a></span>
-                </div>
-                <div class="header-account-access__sign-in-out click-logout">
-                    <svg class="header__icons icon-sign-out">
-                        <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
-                    </svg>
-                    <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
-                </div>}
-            else
-            {
-                <div class="header-account-right-access">
+                    @* TODO: UNTIL WE GET ENTITLED USERS *@
+                    <div class="header-account-access__my-account">
+                        <svg class="header__icons icon-my-account">
+                            <use xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
+                        </svg>
+                        <span class="header-account-access__label"><a href="@Model.MyAccountLink">@Model.MyAccountLinkText</a></span>
+                    </div>
+                    <div class="header-account-access__sign-in-out click-logout">
+                        <svg class="header__icons icon-sign-out">
+                            <use xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
+                        </svg>
+                        <span class="header-account-access__label">@Html.ActionLink(Model.SignOutLinkText, "Logout", "LogoutWebUser", new { area = "Account", returnUrl = HttpContext.Current.Request.Url }, new { })</span>
+                    </div>}
+                else
+                {
+
                     <div class="header-account-access__my-account pop-out__trigger js-pop-out-trigger"
                          data-pop-out-id="header-register"
                          data-pop-out-type="register">
@@ -119,8 +125,10 @@
                         </svg>
                         <span class="header-account-access__label">@Model.SignInLinkText</span>
                     </div>
-                </div>
-            }
+
+                }
+            </div>
+
                 </div>
 
 

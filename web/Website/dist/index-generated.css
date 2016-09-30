@@ -3033,7 +3033,8 @@ header .header-account-access {
   header .header-account-access .myView-placeholder {
     float: left;
     padding: 0.3em 0;
-    position: relative; }
+    position: relative;
+    text-align: center; }
     header .header-account-access .myView-placeholder .btn-my-view {
       border: 1px solid transparent;
       color: #ffffff;
@@ -3043,7 +3044,8 @@ header .header-account-access {
       font-family: 'Roboto', Arial Narrow, sans-serif;
       font-style: normal;
       font-weight: 700;
-      font-size: 0.75em; }
+      font-size: 0.75em;
+      display: block; }
       @media (min-width: 801px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           text-transform: uppercase; } }
@@ -3064,7 +3066,7 @@ header .header-account-access {
           background: none;
           color: #c22d3b;
           padding: 0;
-          width: auto;
+          width: 60px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
           font-style: normal;
           font-weight: 400; } }
@@ -3077,11 +3079,11 @@ header .header-account-access {
     @media (max-width: 640px) {
       header .header-account-access .myView-placeholder {
         float: right;
-        width: auto; } }
+        width: 60px; } }
     @media (max-width: 480px) {
       header .header-account-access .myView-placeholder {
         position: absolute;
-        top: 38px;
+        top: 130px;
         margin-right: 12px;
         right: 0; } }
     header .header-account-access .myView-placeholder .arrow {
