@@ -34,6 +34,7 @@ namespace Informa.Library.DCD {
             ICachedXmlParser CachedXmlParser { get; set; }
             IHttpContextProvider HttpContext { get; set; }
             ISiteSettings SiteSettings { get; set; }
+            IDCDTokenMatchers DCDTokenMatchers { get; set; }
         }
 
         public DealService(IDependencies dependencies) {
@@ -65,7 +66,7 @@ namespace Informa.Library.DCD {
                 return string.Empty;
 
             return (!string.IsNullOrEmpty(dc.DealSummary)) 
-                ? DCDTokenMatchers.ReplaceDealNameTokens(dc.DealSummary) 
+                ? _.DCDTokenMatchers.ReplaceDealNameTokens(dc.DealSummary) 
                 : string.Empty;
         }
 
