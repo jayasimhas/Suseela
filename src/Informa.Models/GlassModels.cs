@@ -18544,7 +18544,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
         /// The Link field.
         /// <para></para>
         /// <para>Field Type: General Link</para>		
-        /// <para>Field ID: 32B8C3AC-38A7-4AE5-8FD0-8DDE297B557F</para>
+        /// <para>Field ID: CE4B393C-2F58-45D1-B55F-F5485D71DFB4</para>
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(ITaxonomy_ItemConstants.URL_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
