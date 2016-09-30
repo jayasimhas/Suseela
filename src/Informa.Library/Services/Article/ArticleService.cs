@@ -190,8 +190,9 @@ namespace Informa.Library.Services.Article
 
         public string GetArticlePublicationName(IArticle article)
         {
-            string cacheKey = CreateCacheKey($"ArticlePublicationCode-{article._Id}");
-            return CacheProvider.GetFromCache(cacheKey, () => BuildArticlePublicationName(article));
+            //string cacheKey = CreateCacheKey($"ArticlePublicationCode-{article._Id}");
+            //return CacheProvider.GetFromCache(cacheKey, () => BuildArticlePublicationName(article));
+            return string.Empty;
         }
 
         private string BuildArticlePublicationName(IArticle article)
