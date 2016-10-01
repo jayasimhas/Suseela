@@ -1,4 +1,407 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
+var DragDropTouch;
+(function (DragDropTouch_1) {
+    'use strict';
+    /**
+     * Object used to hold the data that is being dragged during drag and drop operations.
+     *
+     * It may hold one or more data items of different types. For more information about
+     * drag and drop operations and data transfer objects, see
+     * <a href="https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer">HTML Drag and Drop API</a>.
+     *
+     * This object is created automatically by the @see:DragDropTouch singleton and is
+     * accessible through the @see:dataTransfer property of all drag events.
+     */
+    var DataTransfer = (function () {
+        function DataTransfer() {
+            this._dropEffect = 'move';
+            this._effectAllowed = 'all';
+            this._data = {};
+        }
+        Object.defineProperty(DataTransfer.prototype, "dropEffect", {
+            /**
+             * Gets or sets the type of drag-and-drop operation currently selected.
+             * The value must be 'none',  'copy',  'link', or 'move'.
+             */
+            get: function get() {
+                return this._dropEffect;
+            },
+            set: function set(value) {
+                this._dropEffect = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(DataTransfer.prototype, "effectAllowed", {
+            /**
+             * Gets or sets the types of operations that are possible.
+             * Must be one of 'none', 'copy', 'copyLink', 'copyMove', 'link',
+             * 'linkMove', 'move', 'all' or 'uninitialized'.
+             */
+            get: function get() {
+                return this._effectAllowed;
+            },
+            set: function set(value) {
+                this._effectAllowed = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(DataTransfer.prototype, "types", {
+            /**
+             * Gets an array of strings giving the formats that were set in the @see:dragstart event.
+             */
+            get: function get() {
+                return Object.keys(this._data);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+         * Removes the data associated with a given type.
+         *
+         * The type argument is optional. If the type is empty or not specified, the data
+         * associated with all types is removed. If data for the specified type does not exist,
+         * or the data transfer contains no data, this method will have no effect.
+         *
+         * @param type Type of data to remove.
+         */
+        DataTransfer.prototype.clearData = function (type) {
+            if (type != null) {
+                delete this._data[type];
+            } else {
+                this._data = null;
+            }
+        };
+        /**
+         * Retrieves the data for a given type, or an empty string if data for that type does
+         * not exist or the data transfer contains no data.
+         *
+         * @param type Type of data to retrieve.
+         */
+        DataTransfer.prototype.getData = function (type) {
+            return this._data[type] || '';
+        };
+        /**
+         * Set the data for a given type.
+         *
+         * For a list of recommended drag types, please see
+         * https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Recommended_Drag_Types.
+         *
+         * @param type Type of data to add.
+         * @param value Data to add.
+         */
+        DataTransfer.prototype.setData = function (type, value) {
+            this._data[type] = value;
+        };
+        /**
+         * Set the image to be used for dragging if a custom one is desired.
+         *
+         * @param img An image element to use as the drag feedback image.
+         * @param offsetX The horizontal offset within the image.
+         * @param offsetY The vertical offset within the image.
+         */
+        DataTransfer.prototype.setDragImage = function (img, offsetX, offsetY) {
+            var ddt = DragDropTouch._instance;
+            ddt._imgCustom = img;
+            ddt._imgOffset = { x: offsetX, y: offsetY };
+        };
+        return DataTransfer;
+    })();
+    DragDropTouch_1.DataTransfer = DataTransfer;
+    /**
+     * Defines a class that adds support for touch-based HTML5 drag/drop operations.
+     *
+     * The @see:DragDropTouch class listens to touch events and raises the
+     * appropriate HTML5 drag/drop events as if the events had been caused
+     * by mouse actions.
+     *
+     * The purpose of this class is to enable using existing, standard HTML5
+     * drag/drop code on mobile devices running IOS or Android.
+     *
+     * To use, include the DragDropTouch.js file on the page. The class will
+     * automatically start monitoring touch events and will raise the HTML5
+     * drag drop events (dragstart, dragenter, dragleave, drop, dragend) which
+     * should be handled by the application.
+     *
+     * For details and examples on HTML drag and drop, see
+     * https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Drag_operations.
+     */
+    var DragDropTouch = (function () {
+        /**
+         * Initializes the single instance of the @see:DragDropTouch class.
+         */
+        function DragDropTouch() {
+            this._lastClick = 0;
+            // enforce singleton pattern
+            if (DragDropTouch._instance) {
+                throw 'DragDropTouch instance already created.';
+            }
+            // listen to touch events
+            if ('ontouchstart' in document) {
+                var d = document,
+                    ts = this._touchstart.bind(this),
+                    tm = this._touchmove.bind(this),
+                    te = this._touchend.bind(this);
+                d.addEventListener('touchstart', ts);
+                d.addEventListener('touchmove', tm);
+                d.addEventListener('touchend', te);
+                d.addEventListener('touchcancel', te);
+            }
+        }
+        /**
+         * Gets a reference to the @see:DragDropTouch singleton.
+         */
+        DragDropTouch.getInstance = function () {
+            return DragDropTouch._instance;
+        };
+        // ** event handlers
+        DragDropTouch.prototype._touchstart = function (e) {
+            var _this = this;
+            if (this._shouldHandle(e)) {
+                // raise double-click and prevent zooming
+                if (Date.now() - this._lastClick < DragDropTouch._DBLCLICK) {
+                    if (this._dispatchEvent(e, 'dblclick', e.target)) {
+                        e.preventDefault();
+                        this._reset();
+                        return;
+                    }
+                }
+                // clear all variables
+                this._reset();
+                // get nearest draggable element
+                var src = this._closestDraggable(e.target);
+                if (src) {
+                    // give caller a chance to handle the hover/move events
+                    if (!this._dispatchEvent(e, 'mousemove', e.target) && !this._dispatchEvent(e, 'mousedown', e.target)) {
+                        // get ready to start dragging
+                        this._dragSource = src;
+                        this._ptDown = this._getPoint(e);
+                        this._lastTouch = e;
+                        e.preventDefault();
+                        // show context menu if the user hasn't started dragging after a while
+                        setTimeout(function () {
+                            if (_this._dragSource == src && _this._img == null) {
+                                if (_this._dispatchEvent(e, 'contextmenu', src)) {
+                                    _this._reset();
+                                }
+                            }
+                        }, DragDropTouch._CTXMENU);
+                    }
+                }
+            }
+        };
+        DragDropTouch.prototype._touchmove = function (e) {
+            if (this._shouldHandle(e)) {
+                // see if target wants to handle move
+                var target = this._getTarget(e);
+                if (this._dispatchEvent(e, 'mousemove', target)) {
+                    this._lastTouch = e;
+                    e.preventDefault();
+                    return;
+                }
+                // start dragging
+                if (this._dragSource && !this._img) {
+                    var delta = this._getDelta(e);
+                    if (delta > DragDropTouch._THRESHOLD) {
+                        this._dispatchEvent(e, 'dragstart', this._dragSource);
+                        this._createImage(e);
+                        this._dispatchEvent(e, 'dragenter', target);
+                    }
+                }
+                // continue dragging
+                if (this._img) {
+                    this._lastTouch = e;
+                    e.preventDefault(); // prevent scrolling
+                    if (target != this._lastTarget) {
+                        this._dispatchEvent(this._lastTouch, 'dragleave', this._lastTarget);
+                        this._dispatchEvent(e, 'dragenter', target);
+                        this._lastTarget = target;
+                    }
+                    this._moveImage(e);
+                    this._dispatchEvent(e, 'dragover', target);
+                }
+            }
+        };
+        DragDropTouch.prototype._touchend = function (e) {
+            if (this._shouldHandle(e)) {
+                // see if target wants to handle up
+                if (this._dispatchEvent(this._lastTouch, 'mouseup', e.target)) {
+                    e.preventDefault();
+                    return;
+                }
+                // user clicked the element but didn't drag, so clear the source and simulate a click
+                if (!this._img) {
+                    this._dragSource = null;
+                    this._dispatchEvent(this._lastTouch, 'click', e.target);
+                    this._lastClick = Date.now();
+                }
+                // finish dragging
+                this._destroyImage();
+                if (this._dragSource) {
+                    if (e.type.indexOf('cancel') < 0) {
+                        this._dispatchEvent(this._lastTouch, 'drop', this._lastTarget);
+                    }
+                    this._dispatchEvent(this._lastTouch, 'dragend', this._dragSource);
+                    this._reset();
+                }
+            }
+        };
+        // ** utilities
+        // ignore events that have been handled or that involve more than one touch
+        DragDropTouch.prototype._shouldHandle = function (e) {
+            return e && !e.defaultPrevented && e.touches && e.touches.length < 2;
+        };
+        // clear all members
+        DragDropTouch.prototype._reset = function () {
+            this._destroyImage();
+            this._dragSource = null;
+            this._lastTouch = null;
+            this._lastTarget = null;
+            this._ptDown = null;
+            this._dataTransfer = new DataTransfer();
+        };
+        // get point for a touch event
+        DragDropTouch.prototype._getPoint = function (e, page) {
+            if (e && e.touches) {
+                e = e.touches[0];
+            }
+            return { x: page ? e.pageX : e.clientX, y: page ? e.pageY : e.clientY };
+        };
+        // get distance between the current touch event and the first one
+        DragDropTouch.prototype._getDelta = function (e) {
+            var p = this._getPoint(e);
+            return Math.abs(p.x - this._ptDown.x) + Math.abs(p.y - this._ptDown.y);
+        };
+        // get the element at a given touch event
+        DragDropTouch.prototype._getTarget = function (e) {
+            var pt = this._getPoint(e),
+                el = document.elementFromPoint(pt.x, pt.y);
+            while (el && getComputedStyle(el).pointerEvents == 'none') {
+                el = el.parentElement;
+            }
+            return el;
+        };
+        // create drag image from source element
+        DragDropTouch.prototype._createImage = function (e) {
+            // just in case...
+            if (this._img) {
+                this._destroyImage();
+            }
+            // create drag image from custom element or drag source
+            var src = this._imgCustom || this._dragSource;
+            this._img = src.cloneNode(true);
+            this._copyStyle(src, this._img);
+            this._img.style.top = this._img.style.left = '-9999px';
+            // if creating from drag source, apply offset and opacity
+            if (!this._imgCustom) {
+                var rc = src.getBoundingClientRect(),
+                    pt = this._getPoint(e);
+                this._imgOffset = { x: pt.x - rc.left, y: pt.y - rc.top };
+                this._img.style.opacity = DragDropTouch._OPACITY.toString();
+            }
+            // add image to document
+            this._moveImage(e);
+            document.body.appendChild(this._img);
+        };
+        // dispose of drag image element
+        DragDropTouch.prototype._destroyImage = function () {
+            if (this._img && this._img.parentElement) {
+                this._img.parentElement.removeChild(this._img);
+            }
+            this._img = null;
+            this._imgCustom = null;
+        };
+        // move the drag image element
+        DragDropTouch.prototype._moveImage = function (e) {
+            var _this = this;
+            requestAnimationFrame(function () {
+                var pt = _this._getPoint(e, true),
+                    s = _this._img.style;
+                s.position = 'absolute';
+                s.pointerEvents = 'none';
+                s.zIndex = '999999';
+                s.left = Math.round(pt.x - _this._imgOffset.x) + 'px';
+                s.top = Math.round(pt.y - _this._imgOffset.y) + 'px';
+            });
+        };
+        // copy properties from an object to another
+        DragDropTouch.prototype._copyProps = function (dst, src, props) {
+            for (var i = 0; i < props.length; i++) {
+                var p = props[i];
+                dst[p] = src[p];
+            }
+        };
+        DragDropTouch.prototype._copyStyle = function (src, dst) {
+            // remove potentially troublesome attributes
+            DragDropTouch._rmvAtts.forEach(function (att) {
+                dst.removeAttribute(att);
+            });
+            // copy canvas content
+            if (src instanceof HTMLCanvasElement) {
+                var cSrc = src,
+                    cDst = dst;
+                cDst.width = cSrc.width;
+                cDst.height = cSrc.height;
+                cDst.getContext('2d').drawImage(cSrc, 0, 0);
+            }
+            // copy style
+            var cs = getComputedStyle(src);
+            for (var i = 0; i < cs.length; i++) {
+                var key = cs[i];
+                dst.style[key] = cs[key];
+            }
+            dst.style.pointerEvents = 'none';
+            // and repeat for all children
+            for (var i = 0; i < src.children.length; i++) {
+                this._copyStyle(src.children[i], dst.children[i]);
+            }
+        };
+        DragDropTouch.prototype._dispatchEvent = function (e, type, target) {
+            if (e && target) {
+                var evt = document.createEvent('Event'),
+                    t = e.touches ? e.touches[0] : e;
+                evt.initEvent(type, true, true);
+                evt.button = 0;
+                evt.which = evt.buttons = 1;
+                this._copyProps(evt, e, DragDropTouch._kbdProps);
+                this._copyProps(evt, t, DragDropTouch._ptProps);
+                evt.dataTransfer = this._dataTransfer;
+                target.dispatchEvent(evt);
+                return evt.defaultPrevented;
+            }
+            return false;
+        };
+        // gets an element's closest draggable ancestor
+        DragDropTouch.prototype._closestDraggable = function (e) {
+            for (; e; e = e.parentElement) {
+                if (e.hasAttribute('draggable')) {
+                    return e;
+                }
+            }
+            return null;
+        };
+        /*private*/DragDropTouch._instance = new DragDropTouch(); // singleton
+        // constants
+        DragDropTouch._THRESHOLD = 5; // pixels to move before drag starts
+        DragDropTouch._OPACITY = 0.5; // drag image opacity
+        DragDropTouch._DBLCLICK = 500; // max ms between clicks in a double click
+        DragDropTouch._CTXMENU = 900; // ms to hold before raising 'contextmenu' event
+        // copy styles/attributes from drag source to drag image element
+        DragDropTouch._rmvAtts = 'id,class,style,draggable'.split(',');
+        // synthesize and dispatch an event
+        // returns true if the event has been handled (e.preventDefault == true)
+        DragDropTouch._kbdProps = 'altKey,ctrlKey,metaKey,shiftKey'.split(',');
+        DragDropTouch._ptProps = 'pageX,pageY,clientX,clientY,screenX,screenY'.split(',');
+        return DragDropTouch;
+    })();
+    DragDropTouch_1.DragDropTouch = DragDropTouch;
+})(DragDropTouch || (DragDropTouch = {}));
+
+
+},{}],2:[function(require,module,exports){
 /**
  * if this popup is outside of it's parent, nudge it back in
  * @param  {element} popup: DOM elmenet of the popup to be placed
@@ -139,7 +542,7 @@ function calculatePopupOffsets(_ref) {
 exports["default"] = calculatePopupOffsets;
 module.exports = exports["default"];
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 //     Zepto.js
 //     (c) 2010-2014 Thomas Fuchs
 //     Zepto.js may be freely distributed under the MIT license.
@@ -228,7 +631,7 @@ module.exports = exports["default"];
   });
 })(Zepto);
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
 
 var articleSidebarAd, articleSidebarAdParent, lastActionFlagsBar, stickyFloor;
@@ -259,7 +662,147 @@ $(window).on('scroll', function () {
 	}
 });
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
+'use strict';
+
+function setClsforFlw(t) {
+	for (var i = 0; i < t.length; i++) {
+		var tableFlwrow = $(t[i]).find('.followrow.disabled:eq(0)');
+		tableFlwrow.addClass('frow');
+	}
+}
+$(function () {
+
+	$('#allPublicationsPan').on('click', '.followAllBtn', function () {
+		var curpublicPan = $(this).closest('.publicationPan'),
+		    $lgfollow = curpublicPan.find('.followBtn'),
+		    table = $('.table');
+		$lgfollow.addClass('followingBtn').removeClass('followBtn').html('following');
+
+		curpublicPan.find('.unfollowAllBtn').removeClass('hideBtn');
+
+		for (var i = 0; i < $lgfollow.length; i++) {
+			$($lgfollow[i], curpublicPan).closest('tr').removeAttr('class').addClass('followingrow');
+		}
+		setClsforFlw(table);
+	});
+
+	$('#allPublicationsPan').on('click', '.unfollowAllBtn', function () {
+		var curpublicPan = $(this).closest('.publicationPan'),
+		    $lgfollowing = curpublicPan.find('.followingBtn');
+		$(this).addClass('hideBtn');
+		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html('follow');
+
+		for (var i = 0; i < $lgfollowing.length; i++) {
+			$($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled ufa');
+		}
+	});
+
+	$('#allPublicationsPan').on('click', '.mcheckedAll', function () {
+		var $this = $(this),
+		    mcall = $this.closest('.mca'),
+		    muall = $this.closest('.smfollowingBtn').find('.mua'),
+		    curpublicPan = $(this).closest('.publicationPan'),
+		    mchecked = curpublicPan.find('.mchecked');
+		mcall.addClass('hideBtn');
+		muall.removeClass('hideBtn');
+
+		for (var i = 0; i < mchecked.length; i++) {
+			$(mchecked[i], curpublicPan).addClass('munchecked').removeClass('mchecked');
+		}
+	});
+
+	$('#allPublicationsPan').on('click', '.muncheckedAll', function () {
+		var $this = $(this),
+		    mcall = $this.closest('.smfollowingBtn').find('.mca'),
+		    muall = $this.closest('.mua'),
+		    curpublicPan = $(this).closest('.publicationPan'),
+		    munchecked = curpublicPan.find('.munchecked');
+		muall.addClass('hideBtn');
+		mcall.removeClass('hideBtn');
+
+		for (var i = 0; i < munchecked.length; i++) {
+			$(munchecked[i], curpublicPan).addClass('mchecked').removeClass('munchecked');
+		}
+	});
+
+	$('#allPublicationsPan').on('click', '.smfollowingBtn .mchecked', function () {
+		var $this = $(this),
+		    smfollowingBtn = $this.closest('.smfollowingBtn');
+		smfollowingBtn.find('a').addClass('munchecked').removeClass('mchecked');
+	});
+
+	$('#allPublicationsPan').on('click', '.smfollowingBtn .munchecked', function () {
+		var $this = $(this),
+		    smfollowingBtn = $this.closest('.smfollowingBtn');
+		smfollowingBtn.find('a').addClass('mchecked').removeClass('munchecked');
+	});
+
+	$('#allPublicationsPan').on('click', '.followrow .followBtn', function () {
+		var $this = $(this),
+		    followrow = $this.closest('.followrow'),
+		    table = $this.closest('.table');
+		followrow.addClass('followingrow').removeClass('followrow disabled frow');
+		$this.addClass('followingBtn').removeClass('followBtn').html('Following');
+		setClsforFlw(table);
+		if ($('.followrow.disabled.frow', table).length) {
+			followrow.appendTo(followrow.clone().insertBefore('.followrow.disabled.frow'));
+		} else {
+			followrow.clone().appendTo($this.closest('tbody'));
+		}
+		followrow.remove();
+	});
+
+	$('#allPublicationsPan').on('click', '.followingrow .followingBtn', function () {
+		var $this = $(this),
+		    followingrow = $this.closest('.followingrow');
+		followingrow.addClass('followrow disabled').removeClass('followingrow');
+		$this.addClass('followBtn').removeClass('followingBtn').html('Follow');
+		followingrow.clone().appendTo($this.closest('tbody'));
+		followingrow.remove();
+	});
+
+	$('.publicationPan').on('click', '.accordionImg a', function () {
+		var $this = $(this),
+		    pPan = $this.closest('.publicationPan'),
+		    tbody = pPan.find('tbody');
+		if ($this.hasClass('collapsed')) {
+			$this.removeClass('collapsed');
+			tbody.addClass('tbodyhidden');
+		} else {
+			$this.addClass('collapsed');
+			tbody.removeClass('tbodyhidden');
+		}
+	});
+
+	var tables = $('.publicationPan table');
+	setClsforFlw(tables);
+
+	$('.saveview').click(function () {
+		var alltables = $('.table'),
+		    createtableData = {};
+		createtableData.allpublications = {};
+		for (var i = 0; i < alltables.length; i++) {
+			var currenttabtrs = $(alltables[i]).find('tbody tr'),
+			    pubPanPosition = $(alltables[i]).closest('.publicationPan').attr('data-row'),
+			    tableId = $(alltables[i]).attr('id'),
+			    publicationName = $(alltables[i]).find('h2').html(),
+			    subscribeStatus = $(alltables[i]).find('.subscribed').html();
+			var alltdata = [];
+			for (var j = 0; j < currenttabtrs.length; j++) {
+				var datarowNo = $(currenttabtrs[j]).attr('data-row'),
+				    firsttd = $(currenttabtrs[j]).find('td.wd-55').html(),
+				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span:first').html();
+				alltdata.push({ 'tableRowNo': datarowNo, 'topic': firsttd, 'subStatus': secondtd });
+			}
+			createtableData.allpublications[tableId] = { "publicationName": publicationName, "subscribeStatus": subscribeStatus, "position": pubPanPosition, "tableData": alltdata };
+		}
+
+		console.log(JSON.stringify(createtableData));
+	});
+});
+
+},{}],6:[function(require,module,exports){
 /* global analyticsEvent, analytics_data, angular */
 'use strict';
 
@@ -459,7 +1002,38 @@ $(document).ready(function () {
 	});
 });
 
-},{"../controllers/analytics-controller":6,"../controllers/form-controller":8,"../jscookie":16}],5:[function(require,module,exports){
+},{"../controllers/analytics-controller":9,"../controllers/form-controller":11,"../jscookie":19}],7:[function(require,module,exports){
+'use strict';
+
+$(function () {
+	$('.accordian', '.subjectsAct').click(function () {
+		var $this = $(this),
+		    tablerow = $this.closest('.tablerow'),
+		    subjectsPan = $this.closest('.subjectsAct').find('.subjects');
+		if (!$this.hasClass('active')) {
+			tablerow.find('.accordian').addClass('active');
+			subjectsPan.removeClass('hide');
+		} else {
+			tablerow.find('.accordian').removeClass('active');
+			subjectsPan.addClass('hide');
+		}
+	});
+
+	$('.maintitle').click(function () {
+		var $this = $(this),
+		    subjectsAct = $this.closest('.subjectsAct'),
+		    subjectsPan = subjectsAct.find('.subjects');
+		if (!$this.hasClass('active')) {
+			subjectsPan.removeClass('hide');
+			$this.addClass('active');
+		} else {
+			subjectsPan.addClass('hide');
+			$this.removeClass('active');
+		}
+	});
+});
+
+},{}],8:[function(require,module,exports){
 'use strict';
 
 var INFORMA = window.INFORMA || {};
@@ -528,7 +1102,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
 })(undefined, Zepto, 'INFORMA');
 Zepto(INFORMA.videoMini.init());
 
-},{}],6:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 // * * *
 //  ANALYTICS CONTROLLER
 //  For ease-of-use, better DRY, better prevention of JS errors when ads are blocked
@@ -547,7 +1121,7 @@ function analyticsEvent(dataObj) {
 
 exports.analyticsEvent = analyticsEvent;
 
-},{}],7:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /* globals analytics_data */
 'use strict';
 
@@ -635,7 +1209,7 @@ function bookmarkController() {
 exports['default'] = bookmarkController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":6}],8:[function(require,module,exports){
+},{"./analytics-controller":9}],11:[function(require,module,exports){
 /*
 
 opts.observe — Form element(s) to observe
@@ -802,7 +1376,7 @@ function formController(opts) {
 exports['default'] = formController;
 module.exports = exports['default'];
 
-},{}],9:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /* global angular */
 'use strict';
 
@@ -870,7 +1444,7 @@ function lightboxModalController() {
 exports['default'] = lightboxModalController;
 module.exports = exports['default'];
 
-},{}],10:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1148,7 +1722,7 @@ function popOutController(triggerElm) {
 exports['default'] = popOutController;
 module.exports = exports['default'];
 
-},{}],11:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1273,7 +1847,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":6}],12:[function(require,module,exports){
+},{"./analytics-controller":9}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1491,7 +2065,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":6}],13:[function(require,module,exports){
+},{"./analytics-controller":9}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1808,7 +2382,7 @@ function sortableTableController() {
 exports['default'] = sortableTableController;
 module.exports = exports['default'];
 
-},{}],14:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 /* global tooltipController */
 
 "use strict";
@@ -1999,7 +2573,7 @@ function createPopup(initialState) {
 
 module.exports = exports["default"];
 
-},{"../calculatePopupOffsets.js":1}],15:[function(require,module,exports){
+},{"../calculatePopupOffsets.js":2}],18:[function(require,module,exports){
 /* global angular, analytics_data */
 
 // THIRD-PARTY / VENDOR
@@ -2018,6 +2592,14 @@ var _svg4everybody2 = _interopRequireDefault(_svg4everybody);
 var _jscookie = require('./jscookie');
 
 var _jscookie2 = _interopRequireDefault(_jscookie);
+
+var _zeptoDragswap = require('./zepto.dragswap');
+
+var _zeptoDragswap2 = _interopRequireDefault(_zeptoDragswap);
+
+var _DragDropTouch = require('./DragDropTouch');
+
+var _DragDropTouch2 = _interopRequireDefault(_DragDropTouch);
 
 // CAROUSEL
 //import highlight from './carousel/highlight.pack';
@@ -2069,6 +2651,10 @@ var _controllersTooltipController2 = _interopRequireDefault(_controllersTooltipC
 require('./components/article-sidebar-component');
 
 require('./components/save-search-component');
+
+require('./components/myview-settings');
+
+require('./components/subscription');
 
 // OTHER CODE
 
@@ -3103,7 +3689,7 @@ $(document).ready(function () {
     });
 });
 
-},{"./carousel/zepto.data":2,"./components/article-sidebar-component":3,"./components/save-search-component":4,"./components/video-mini":5,"./controllers/analytics-controller":6,"./controllers/bookmark-controller":7,"./controllers/form-controller":8,"./controllers/lightbox-modal-controller":9,"./controllers/pop-out-controller":10,"./controllers/register-controller":11,"./controllers/reset-password-controller":12,"./controllers/sortable-table-controller":13,"./controllers/tooltip-controller":14,"./jscookie":16,"./modal":17,"./newsletter-signup":18,"./search-page.js":19,"./selectivity-full":20,"./svg4everybody":21,"./toggle-icons":22,"./zepto.min":23}],16:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/myview-settings":5,"./components/save-search-component":6,"./components/subscription":7,"./components/video-mini":8,"./controllers/analytics-controller":9,"./controllers/bookmark-controller":10,"./controllers/form-controller":11,"./controllers/lightbox-modal-controller":12,"./controllers/pop-out-controller":13,"./controllers/register-controller":14,"./controllers/reset-password-controller":15,"./controllers/sortable-table-controller":16,"./controllers/tooltip-controller":17,"./jscookie":19,"./modal":20,"./newsletter-signup":21,"./search-page.js":22,"./selectivity-full":23,"./svg4everybody":24,"./toggle-icons":25,"./zepto.dragswap":26,"./zepto.min":27}],19:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -3244,7 +3830,7 @@ $(document).ready(function () {
 	return init(function () {});
 });
 
-},{}],17:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
@@ -3552,7 +4138,7 @@ $(document).ready(function () {
   });
 })($);
 
-},{}],18:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /* global analytics_data */
 
 'use strict';
@@ -3629,7 +4215,7 @@ function newsletterSignupController() {
 exports['default'] = newsletterSignupController;
 module.exports = exports['default'];
 
-},{"./controllers/analytics-controller":6}],19:[function(require,module,exports){
+},{"./controllers/analytics-controller":9}],22:[function(require,module,exports){
 'use strict';
 
 var SearchScript = (function () {
@@ -3641,7 +4227,7 @@ var SearchScript = (function () {
 	});
 })();
 
-},{}],20:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -4666,7 +5252,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],21:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 "use strict";
 
 !(function (root, factory) {
@@ -4771,7 +5357,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
     return svg4everybody;
 });
 
-},{}],22:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -4788,7 +5374,237 @@ var toggleIcons = function toggleIcons(container) {
 
 exports.toggleIcons = toggleIcons;
 
-},{}],23:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
+/*!
+ * Zepto HTML5 Drag and Drop Sortable
+ * Author: James Doyle(@james2doyle) http://ohdoylerules.com
+ * Repository: https://github.com/james2doyle/zepto-dragswap
+ * Licensed under the MIT license
+ */
+'use strict';
+
+;(function ($) {
+    $.fn.dragswap = function (options) {
+        var dragSrcEl;
+        function getPrefix() {
+            var el = document.createElement('p'),
+                getPre,
+                transforms = {
+                'webkitAnimation': '-webkit-animation',
+                'OAnimation': '-o-animation',
+                'msAnimation': '-ms-animation',
+                'MozAnimation': '-moz-animation',
+                'animation': 'animation'
+            };
+            document.body.insertBefore(el, null);
+            for (var t in transforms) {
+                if (el.style[t] !== undefined) {
+                    el.style[t] = "translate3d(1px,1px,1px)";
+                    getPre = window.getComputedStyle(el).getPropertyValue(transforms[t]);
+                    // return the successful prefix
+                    return t;
+                }
+            }
+            document.body.removeChild(el);
+        }
+        this.defaultOptions = {
+            element: 'li',
+            overClass: 'over',
+            moveClass: 'moving',
+            dropClass: 'drop',
+            dropAnimation: false,
+            exclude: '.disabled',
+            prefix: getPrefix(),
+            dropComplete: function dropComplete() {
+                return;
+            }
+        };
+
+        function excludePattern(elem) {
+            return elem.is(settings.excludePatt);
+        }
+
+        function onAnimEnd(elem) {
+            var $elem = $(elem);
+            $elem.addClass(settings.dropClass);
+            // add an event for when the animation has finished
+            $elem.on(settings.prefix + 'End', function () {
+                // remove the class now that the animation is done
+                $elem.removeClass(settings.dropClass);
+            }, false);
+        }
+
+        function handleDragStart(e) {
+            if (!excludePattern($(this))) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+            $(this).addClass(settings.moveClass);
+            // get the dragging element
+            dragSrcEl = this;
+            // it is moving
+            //console.log(e);
+            if (e.originalEvent.dataTransfer) {
+                var dt = e.originalEvent.dataTransfer;
+                dt.effectAllowed = 'move';
+                dt.setData('text', this.innerHTML);
+            } else if (e.dataTransfer) {
+                var dt = e.dataTransfer;
+                dt.effectAllowed = 'move';
+                dt.setData('text', this.innerHTML);
+            }
+        }
+
+        function handleDragEnter(e) {
+            // this / e.target is the current hover target.
+            $(this).addClass(settings.overClass);
+        }
+
+        function handleDragLeave(e) {
+            $(this).removeClass(settings.overClass); // this / e.target is previous target element.
+        }
+
+        function handleDragOver(e) {
+            if (e.preventDefault) {
+                e.preventDefault(); // Necessary. Allows us to drop.
+            }
+            if (e.originalEvent.dataTransfer) {
+                e.originalEvent.dataTransfer.dropEffect = 'move'; // See the section on the DataTransfer object.
+            } else if (e.dataTransfer) {
+                    e.dataTransfer.dropEffect = 'move'; // See the section on the DataTransfer object.
+                }
+            return false;
+        }
+
+        function handleDrop(e) {
+            // this / e.target is current target element.
+            if (e.stopPropagation) {
+                e.stopPropagation(); // Stops some browsers from redirecting.
+            }
+            if (!excludePattern($(this))) {
+                console.log('prevent drop');
+                return false;
+            }
+
+            // Don't do anything if dropping the same column we're draggi.
+            if (dragSrcEl != this) {
+                // Set the source column's HTML to the HTML of the column dropped on.
+                var oldEl = {
+                    html: this.innerHTML,
+                    id: this.id
+                };
+                var newEl = {
+                    html: dragSrcEl.innerHTML,
+                    id: dragSrcEl.id
+                };
+                // swap all the data
+                dragSrcEl.innerHTML = oldEl.html;
+                dragSrcEl.id = oldEl.id;
+                this.innerHTML = newEl.html;
+                this.id = newEl.id;
+                if (settings.dropAnimation) {
+                    onAnimEnd(this);
+                    onAnimEnd(dragSrcEl);
+                }
+                $(this).siblings().removeAttr('draggable');
+                $(this).siblings().filter(settings.excludePatt).attr('draggable', true);
+                console.log('dropped');
+                settings.dropComplete();
+            }
+            return false;
+        }
+
+        var settings = $.extend({}, this.defaultOptions, options);
+        if (settings.exclude) {
+            if (typeof settings.exclude != 'string') {
+                var excludePatt = '';
+                for (var i = 0; i < settings.exclude.length; i++) {
+                    excludePatt += ':not(' + settings.exclude[i] + ')';
+                }
+                settings.excludePatt = excludePatt;
+            } else {
+                settings.excludePatt = ':not(' + settings.exclude + ')';
+            }
+        }
+
+        var method = String(options);
+        var items = [];
+        // check for the methods
+        if (/^(toArray|toJSON)$/.test(method)) {
+            if (method == 'toArray') {
+                $(this).find(settings.element).each(function (index, elem) {
+                    items.push(this.id);
+                });
+                return items;
+            } else if (method == 'toJSON') {
+                $(this).find(settings.element).each(function (index, elem) {
+                    items[index] = {
+                        id: this.id
+                    };
+                });
+                return JSON.stringify(items);
+            }
+            return;
+        }
+
+        return this.each(function (index, item) {
+            var $this = $(this);
+            // select all but the disabled things
+            var $elem = $this.find(settings.element);
+
+            var target = this;
+            var config = { childList: true };
+            var observer = new MutationObserver(function (mutations) {
+                console.log(mutations);
+                for (var i = 0; i < mutations.length; i++) {
+                    if (mutations[i].addedNodes.length != 0) {
+                        for (var j = 0; j < mutations[i].addedNodes.length; j++) {
+                            $(mutations[i].addedNodes[j]).siblings().removeAttr('draggable');
+                            $(mutations[i].addedNodes[j]).siblings().filter(settings.excludePatt).attr('draggable', true);
+                        }
+                    }
+                }
+            });
+
+            observer.observe(target, config);
+
+            function handleDragEnd(e) {
+                $this.removeClass(settings.moveClass);
+                // this/e.target is the source node.
+                //console.log('handleDragEnd');
+                $elem = $this.find(settings.element);
+                $elem.each(function (index, item) {
+                    // console.log(item);
+                    $(item).removeClass(settings.overClass);
+                    $(item).removeClass(settings.moveClass);
+                });
+            }
+            // set the items to draggable
+            $elem.filter(settings.excludePatt).attr('draggable', true);
+
+            $this.off('dragstart');
+            $this.off('dragenter');
+            $this.off('dragover');
+            $this.off('dragleave');
+            $this.off('drop');
+            $this.off('dragend');
+
+            $this.on('dragstart', settings.element, handleDragStart);
+            $this.on('dragenter', settings.element, handleDragEnter);
+            $this.on('dragover', settings.element, handleDragOver);
+            $this.on('dragleave', settings.element, handleDragLeave);
+            $this.on('drop', settings.element, handleDrop);
+            $this.on('dragend', settings.element, handleDragEnd);
+
+            $this.on('touchmove', settings.element, handleDragStart);
+            $this.on('touchstart', settings.element, handleDragEnter);
+            $this.on('touchend', settings.element, handleDragEnd);
+        });
+    };
+})(Zepto);
+
+},{}],27:[function(require,module,exports){
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 "use strict";
 
@@ -5527,7 +6343,7 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}]},{},[15])
+},{}]},{},[18])
 
 
 //# sourceMappingURL=index.js.map

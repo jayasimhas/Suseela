@@ -18697,7 +18697,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
         /// The Link field.
         /// <para></para>
         /// <para>Field Type: General Link</para>		
-        /// <para>Field ID: 32B8C3AC-38A7-4AE5-8FD0-8DDE297B557F</para>
+        /// <para>Field ID: CE4B393C-2F58-45D1-B55F-F5485D71DFB4</para>
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(ITaxonomy_ItemConstants.URL_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
@@ -24918,7 +24918,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
     /// <para>ID: {C27F6F34-74DC-4A01-AA56-8E39FD4FD501}</para>	
     /// </summary>
     [SitecoreType(TemplateId = IIndustries_FolderConstants.TemplateIdString)]
-    public partial interface ITaxonomy_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+    public partial interface IIndustries_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
     {
     }
     /// <summary>
@@ -24928,7 +24928,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
     /// <para>ID: 93b32253-7548-4ae4-8be8-5f015bde124b</para>	
     /// </summary>
     [SitecoreType(TemplateId = ITaxonomy_FolderConstants.TemplateIdString)]
-    public partial interface IIndustries_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+    public partial interface ITaxonomy_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
     {
     }
 
@@ -24965,9 +24965,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
     public static partial class IIndustries_FolderConstants
     {
 
-        public const string TemplateIdString = "93b32253-7548-4ae4-8be8-5f015bde124b";
+        public const string TemplateIdString = "C27F6F34-74DC-4A01-AA56-8E39FD4FD501";
         public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Taxonomy Folder";
+        public const string TemplateName = "Industries Folder";
 
 
 
@@ -26631,6 +26631,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         I___BasePage MyView_Settings_Page { get; set; }
         [SitecoreField(ISite_ConfigConstants.Enable_MyView_ToggleFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Enable_MyView_Toggle { get; set; }
+        [SitecoreField(ISite_ConfigConstants.MyView_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        I___BasePage MyView_Page { get; set; }
         /// <summary>
         /// The Ad Domain field.
         /// <para></para>
@@ -28333,6 +28335,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Enable_MyView_ToggleFieldId = new ID("0f9d9311-be37-47a3-bb47-0237ba3265d2");
         public const string Enable_MyView_ToggleFieldName = "Enable MyView Toggle";
+
+        public static readonly ID MyView_PageFieldId = new ID("a58c32cd93454710aa06b4f6615047ec");
+        public const string MyView_PageFieldName = "MyView Page";
 
         public static readonly ID Ad_DomainFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
         public const string Ad_DomainFieldName = "Ad Domain";
