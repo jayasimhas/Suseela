@@ -1113,6 +1113,7 @@
     <Content Include="500.html" />
     <Content Include="amcharts\amcharts.js" />
     <Content Include="amcharts\data\AMChartData.js" />
+    <Content Include="amcharts\data\JsonDataFile.js" />
     <Content Include="amcharts\funnel.js" />
     <Content Include="amcharts\gantt.js" />
     <Content Include="amcharts\gauge.js" />
