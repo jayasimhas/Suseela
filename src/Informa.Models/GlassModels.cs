@@ -26478,6 +26478,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         I___BasePage MyView_Settings_Page { get; set; }
         [SitecoreField(ISite_ConfigConstants.Enable_MyView_ToggleFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Enable_MyView_Toggle { get; set; }
+        [SitecoreField(ISite_ConfigConstants.MyView_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        I___BasePage MyView_Page { get; set; }
         /// <summary>
         /// The Ad Domain field.
         /// <para></para>
@@ -28180,6 +28182,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Enable_MyView_ToggleFieldId = new ID("0f9d9311-be37-47a3-bb47-0237ba3265d2");
         public const string Enable_MyView_ToggleFieldName = "Enable MyView Toggle";
+
+        public static readonly ID MyView_PageFieldId = new ID("a58c32cd93454710aa06b4f6615047ec");
+        public const string MyView_PageFieldName = "MyView Page";
 
         public static readonly ID Ad_DomainFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
         public const string Ad_DomainFieldName = "Ad Domain";
