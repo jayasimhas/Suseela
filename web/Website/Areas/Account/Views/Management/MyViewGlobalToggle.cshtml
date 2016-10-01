@@ -1,0 +1,37 @@
+﻿@model Informa.Web.Areas.Account.ViewModels.Management.MyViewToggle
+
+@if (Model != null && Model.IsGlobalToggleEnabled)
+{
+    if (Model.IsAuthenticated)
+    {
+        <div class="myView-placeholder">
+            <img src="../dist/img/arrow.png" class="arrow" width="5" height="10">
+            <a href="@Model.MyViewLinkURL" class="btn btn-my-view">@Model.MyViewLinkText</a>
+        </div>
+    }
+    else
+    {
+        <div class="myView-placeholder pop-out__trigger js-pop-out-trigger" data-pop-out-id="myView-header-register" data-pop-out-align="right" data-pop-out-type="myViewregister">
+            <img src="../dist/img/arrow.png" class="arrow" width="5" height="10">
+            <a href="@Model.MyViewLinkURL" class="btn btn-my-view">@Model.MyViewLinkText</a>        
+        </div>
+    }
+    if (!Model.IsAuthenticated && Model.CallToActionViewModel != null)
+    {
+        Model.CallToActionViewModel.SignInViewModel.IsSignInFromMyView = true;
+        <div class="pop-out js-pop-out__myViewregister js-myViewregister-user-container">
+            <div class="pop-out__tab"></div>
+            <div class="pop-out__internal">
+                <div class="pop-out__myViewregister">
+                    <div class="dismiss-button" data-target-element=".js-pop-out__myViewregister">
+                        <svg class="dismiss-button__icon">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                            UsernamePublicRestriction
+                        </svg>
+                    </div>
+                    @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
+                </div>
+            </div>
+        </div>
+    }
+}

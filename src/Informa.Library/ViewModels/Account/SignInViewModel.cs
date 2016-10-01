@@ -3,6 +3,7 @@ using Informa.Library.Site;
 using System.Web;
 using Informa.Library.ViewModels.Account;
 using Jabberwocky.Autofac.Attributes;
+using System;
 
 namespace Informa.Web.ViewModels
 {
@@ -58,6 +59,9 @@ namespace Informa.Web.ViewModels
 
 		public IHtmlString ResetPasswordContactText
 				=> new HtmlString(SiteRootContext.Item?.Customer_Support_Text ?? string.Empty);
-	}
+
+        public bool IsSignInFromMyView { get; set; }
+        
+    }
 
 }

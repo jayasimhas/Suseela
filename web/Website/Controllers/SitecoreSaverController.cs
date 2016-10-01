@@ -12,6 +12,7 @@ using Sitecore.Web;
 using Informa.Library.Utilities.References;
 using PluginModels;
 using Informa.Library.CustomSitecore.Ribbon;
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Informa.Web.Controllers
 {
@@ -42,14 +43,16 @@ namespace Informa.Web.Controllers
 
                 //Hack to start the workflow
                 var articleItem = _sitecoreMasterService.GetItem<Item>(articleCreate._Id);
-                var intialWorkflow = _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow("{926E6200-EB76-4AD4-8614-691D002573AC}");
+                var intialWorkflow = _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow(ItemIdResolver.GetItemIdByKey("ScripWorkflow"));
                 intialWorkflow.Start(articleItem);
 
                 var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
                 article.Title = content.Name;
                 article.Planned_Publish_Date = publicationDate;
                 article.Created_Date = DateTime.Now;
-                article.Article_Number = SitecoreUtil.GetNextArticleNumber(_articleSearch.GetNextArticleNumber(content.PublicationID), content.PublicationID);
+                var articleNum = _articleSearch.GetNextArticleNumber(content.PublicationID);
+                article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleNum, content.PublicationID, _articleSearch.GetPublicationPrefix(content.PublicationID.ToString()));
+                //article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleNum, content.PublicationID);
                 _sitecoreMasterService.Save(article);
                 var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
                 var articleStruct = _articleUtil.GetArticleStruct(savedArticle);

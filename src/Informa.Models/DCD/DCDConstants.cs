@@ -17,6 +17,6 @@ namespace Informa.Models.DCD
 		public static readonly string EmailNoReplySenderAddress = Sitecore.Configuration.Settings.GetSetting("Mail.MailServerFromAddress");
 		public static readonly string BusinessAcronym = "IBI";
 
-		public static readonly ID DCDConfigurationItemID = new ID("{52461CA2-7C9F-483C-B5F2-433B9351FA6F}");
+		public static readonly ID DCDConfigurationItemID = new ID(Sitecore.Configuration.Settings.GetSetting("DCDConfiguration"));
 	}
 }

@@ -11,7 +11,8 @@ namespace Informa.Library.Article.Search
         IArticleSearchResults FreeWithRegistrationArticles(string database);
         IArticleSearchFilter CreateFilter();
 		long GetNextArticleNumber(Guid publicationGuid);
-		string GetArticleTaxonomies(Guid id, Guid taxonomyParent);
+        string GetPublicationPrefix(string publicationGuid);
+        string GetArticleTaxonomies(Guid id, Guid taxonomyParent);
 		IArticleSearchResults GetLegacyArticleUrl(string path);
 	}
 }

@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.Print_Studio_Templates.InDesign_connector.Special_Characters;
 using Jabberwocky.Autofac.Attributes;
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Informa.Library.PXM
 {
@@ -20,7 +21,7 @@ namespace Informa.Library.PXM
     public class SpecialCharacterMapper : ISpecialCharacterMapper
     {
         private readonly IDependencies _dependencies;
-        private readonly Guid _specialCharactersFolderId = new Guid("{60E5FA01-BBE6-4FA0-8F95-119F8CBD243E}");
+        private readonly Guid _specialCharactersFolderId = new Guid(ItemIdResolver.GetItemIdByKey("SpecialCharacterFolder"));
 
         [AutowireService(true)]
         public interface IDependencies

@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Informa.Models.FactoryInterface.IListable>
+
+@if (Model != null)
+{
+        foreach (var article in Model)
+        {
+            Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolListItem.cshtml", article);
+        }
+}

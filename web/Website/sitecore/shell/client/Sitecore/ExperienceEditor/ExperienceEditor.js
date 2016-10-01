@@ -507,7 +507,7 @@
         url: "/-/speak/request/v1/expeditor/" + requestType,
         data: {
           __RequestVerificationToken: token,
-          data: decodeURIComponent(JSON.stringify(commandContext))
+          data: decodeURIComponent(decodeURIComponent(JSON.stringify(commandContext)))
         },
         success: handler,
         type: "POST",

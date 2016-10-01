@@ -43,7 +43,7 @@ namespace Informa.Web.ViewModels
             BookmarkedText = _dependencies.TextTranslator.Translate("Bookmarked");
 		    IsUserAuthenticated = _dependencies.AuthenticatedUserContext.IsAuthenticated;
 			BookmarkPublication = _dependencies.ArticleService.GetArticlePublicationName(GlassModel);
-			BookmarkTitle = GlassModel.ListableTitle;
+			//BookmarkTitle = GlassModel.ListableTitle;
 		}
 
 		public string Title => GlassModel.Title;

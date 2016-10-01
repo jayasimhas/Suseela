@@ -51,23 +51,41 @@ namespace Informa.Web.Controllers
 		{
 			using (new Sitecore.SecurityModel.SecurityDisabler())
 			{
-				var mediaFolder = _sitecoreMasterService.GetItem<IMedia_Folder>(Constants.MediaLibraryRoot + Constants.MediaLibraryPath);
-				var publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid);
-				string year = date.Year.ToString();
+                var publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid);
+                var vertical = _sitecoreMasterService.GetItem<IGlassBase>((Guid)publication?._Parent._Id);//Vertical Folder//added,21Sep16
+                var mediaFolder = _sitecoreMasterService.GetItem<IMedia_Folder>(Constants.MediaLibraryRoot + Constants.MediaLibraryPath);
+
+                string year = date.Year.ToString();
 				string month = date.Month.ToString();
 				string day = date.Day.ToString();
 				IMedia_Folder mediaPublicationFolder;
-				IMedia_Folder yearFolder;
+                IMedia_Folder mediaVerticalFolder;//Vertical Folder//added,21Sep16
+                IMedia_Folder yearFolder;
 				IMedia_Folder monthFolder;
 				IMedia_Folder dayFolder;
-				if (mediaFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == publication._Name))
+
+                //Vertical Folder (added,21Sep16)
+                if (mediaFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == vertical._Name))
+                {
+                    mediaVerticalFolder =
+                        mediaFolder._ChildrenWithInferType.OfType<IMedia_Folder>().First(x => x._Name == vertical._Name);
+                }
+                else
+                {
+                    var newMediaFolder = _sitecoreMasterService.Create<IMedia_Folder, IMedia_Folder>(mediaFolder, vertical._Name);
+                    _sitecoreMasterService.Save(newMediaFolder);
+                    mediaVerticalFolder = newMediaFolder;
+                }
+
+                //Publication (modified,21Sep16)
+                if (mediaVerticalFolder._ChildrenWithInferType.OfType<IMedia_Folder>().Any(x => x._Name == publication._Name))
 				{
 					mediaPublicationFolder =
-						mediaFolder._ChildrenWithInferType.OfType<IMedia_Folder>().First(x => x._Name == publication._Name);
+                        mediaVerticalFolder._ChildrenWithInferType.OfType<IMedia_Folder>().First(x => x._Name == publication._Name);
 				}
 				else
 				{
-					var newMediaFolder = _sitecoreMasterService.Create<IMedia_Folder, IMedia_Folder>(mediaFolder, publication._Name);
+					var newMediaFolder = _sitecoreMasterService.Create<IMedia_Folder, IMedia_Folder>(mediaVerticalFolder, publication._Name);
 					_sitecoreMasterService.Save(newMediaFolder);
 					mediaPublicationFolder = newMediaFolder;
 				}

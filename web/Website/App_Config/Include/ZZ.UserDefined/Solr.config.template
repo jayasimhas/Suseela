@@ -73,7 +73,44 @@
             <locations hint="list:AddCrawler">
               <crawler type="Informa.Library.Search.Crawlers.InformaItemCrawler, Informa.Library">
                 <Database>web</Database>
-                <Root>/sitecore/Content</Root>
+                <Root>/sitecore/Content/Pharma</Root>
+                <ExcludeItemsList hint="list">
+                  <VirtualWhiteBoard>/Virtual Whiteboard</VirtualWhiteBoard>
+                </ExcludeItemsList>
+              </crawler>
+            </locations>
+          </index>
+          <index id="informa_content_agri_web_index" type="Informa.Library.Search.SearchIndex.CustomSwitchOnRebuildSolrSearchIndex, Informa.Library">
+            <param desc="name">$(id)</param>
+            <param desc="core">informa_content_agri_web_index</param>
+            <param desc="rebuildcore">informa_content_agri_web_index_rebuild</param>
+            <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
+            <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration" />
+            <strategies hint="list:AddStrategy">
+              <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/onPublishEndAsync" />
+            </strategies>
+            <locations hint="list:AddCrawler">
+              <crawler type="Informa.Library.Search.Crawlers.InformaItemCrawler, Informa.Library">
+                <Database>web</Database>
+                <Root>/sitecore/Content/Agri</Root>
+                <ExcludeItemsList hint="list">
+                  <VirtualWhiteBoard>/Virtual Whiteboard</VirtualWhiteBoard>
+                </ExcludeItemsList>
+              </crawler>
+            </locations>
+          </index>
+          <index id="informa_content_agri_master_index" type="Informa.Library.Search.SearchIndex.CustomSolrSearchIndex, Informa.Library">
+            <param desc="name">$(id)</param>
+            <param desc="core">informa_content_agri_master_index</param>
+            <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)"/>
+            <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration" />
+            <strategies hint="list:AddStrategy">
+              <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/syncMaster" />
+            </strategies>
+            <locations hint="list:AddCrawler">
+              <crawler type="Informa.Library.Search.Crawlers.InformaItemCrawler, Informa.Library">
+                <Database>master</Database>
+                <Root>/sitecore/Content/Agri</Root>
                 <ExcludeItemsList hint="list">
                   <VirtualWhiteBoard>/Virtual Whiteboard</VirtualWhiteBoard>
                 </ExcludeItemsList>

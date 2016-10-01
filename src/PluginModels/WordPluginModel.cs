@@ -234,6 +234,14 @@ namespace PluginModels
             }
         }
     }
+    public struct VerticalStruct
+    {
+        public string Name { get; set; }
+        public Guid ID { get; set; }
+        public List<ItemStruct>  Publications {get; set;}
+        public ItemStruct TaxonomyItem { get; set; }
+        public ItemStruct StaffItem { get; set; }
+    }
 
     public struct ItemStruct
     {

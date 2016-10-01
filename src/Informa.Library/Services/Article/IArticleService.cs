@@ -8,12 +8,12 @@ namespace Informa.Library.Services.Article
 {
     public interface IArticleService
     {
-        IEnumerable<string> GetLegacyPublicationNames(IArticle article);
+        IEnumerable<string> GetLegacyPublicationNames(IArticle article,bool isLegacyBrandSelected = false);
         IEnumerable<ILinkable> GetLinkableTaxonomies(IArticle article);
         MediaTypeIconData GetMediaTypeIconData(IArticle article);
         string GetArticleSummary(IArticle article);
         string GetArticleBody(IArticle article);
-        string GetLegacyPublicationText(IArticle glassModel);
+        string GetLegacyPublicationText(IArticle glassModel, bool isLegacyBrandSelected = false,string Escenic_ID = null,string Legacy_Article_Number = null);
         IEnumerable<IFile> GetSupportingDocuments(IArticle glassModel);
 	    string GetArticlePublicationName(IArticle article);
         string GetDownloadUrl(IArticle article);

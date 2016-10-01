@@ -47,11 +47,11 @@ namespace Informa.Web.ViewModels.Articles
 		public string Sub_Title => GlassModel.Sub_Title;
 		public bool DisplayLegacyPublication => LegacyPublicationNames.Any();
 
-		public IEnumerable<string> LegacyPublicationNames => ArticleService.GetLegacyPublicationNames(GlassModel);
+		public IEnumerable<string> LegacyPublicationNames => ArticleService.GetLegacyPublicationNames(GlassModel, SiteRootContext.Item.Legacy_Brand_Active);// JIRA IPMP-56
 
-		public string LegacyPublicationText => ArticleService.GetLegacyPublicationText(GlassModel);
+        public string LegacyPublicationText => ArticleService.GetLegacyPublicationText(GlassModel, SiteRootContext.Item.Legacy_Brand_Active,GlassModel.Escenic_ID,GlassModel.Legacy_Article_Number);  // JIRA IPMP-56      
 
-		private string _summary;
+        private string _summary;
 		public string Summary => _summary ?? (_summary = ArticleService.GetArticleSummary(GlassModel));
 
 		private IEnumerable<IPersonModel> _authors;
@@ -80,6 +80,6 @@ namespace Informa.Web.ViewModels.Articles
 
         // JIRA IPMP-56
         public bool IsActiveLegacyBrand => SiteRootContext.Item.Legacy_Brand_Active;
-        public List<string> LagacyBrandUrl => ArticleService.GetLegacyPublicationNames(GlassModel).ToList<string>();
+        public List<string> LagacyBrandUrl => ArticleService.GetLegacyPublicationNames(GlassModel, SiteRootContext.Item.Legacy_Brand_Active).ToList<string>();
     }
 }

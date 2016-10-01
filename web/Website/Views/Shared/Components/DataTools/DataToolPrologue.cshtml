@@ -1,0 +1,13 @@
+﻿@model Informa.Web.ViewModels.DataTools.IDataToolPrologueViewModel
+
+<div class="action-flags-bar article-prologue">
+    @*<div class="action-flags article-prologue__share-bar">
+        <ul>
+            @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolPrologueEmail.cshtml", Model.EmailViewModel); }
+            @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolProloguePrint.cshtml", Model.PrintViewModel); }
+            @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolPrologueShare.cshtml", Model.ShareViewModel); }
+        </ul>
+    </div>*@
+    @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolTags.cshtml", Model.TagsViewModel); }
+</div>
+

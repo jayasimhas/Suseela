@@ -17,7 +17,8 @@
     {
         <link rel="canonical" href="@Model.CanonicalUrl" />
     }
-    
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic|Roboto:400,300,500,700,400italic|Roboto+Condensed:400,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/dist/index-generated.css">
 
@@ -62,7 +63,21 @@
     <footer>
         @Html.Sitecore().Placeholder("footer")
     </footer>
-
+    //IPMP-265
+    <div class="video-mini-modal modal fade" id="videoMiniModal" tabindex="-1" role="dialog" aria-labelledby="videoMiniModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog" role="video">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close video-mini-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="video-mini-player embed-responsive embed-responsive-16by9"></div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
     @* If this is an Article page... *@
     <div class="boxout-print-info footer">
         <p>@Model.PrintPageHeaderMessage</p>

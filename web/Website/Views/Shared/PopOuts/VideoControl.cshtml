@@ -1,0 +1,18 @@
+﻿@model Informa.Web.ViewModels.PopOuts.VideoPopOutViewModel
+
+@if (Model != null && !string.IsNullOrEmpty(Model.VideoLink))
+{
+    <div class="video-demo">
+        <div class="visible-lg">
+            <div class="video-mini-container">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <img src="@Model.Thumbnail.Src" data-videotype="wistia" data-videourl="@Model.VideoLink" alt="@Model.AlternativeText" width="100%" class="video-img img-responsive">
+                    <span class="play-icon" style="display: block;"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="visible-sm">
+        </div>
+    </div>
+}

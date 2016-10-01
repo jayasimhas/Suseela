@@ -13,7 +13,8 @@
 
 /* * * * VENDORS * * * */
 @import 'vendor/normalize';
-
+@import 'vendor/owl.carousel';
+@import 'vendor/owl.theme.default';
 
 /* * * * BASE * * * */
 @import 'base/colors'; // first!
@@ -47,10 +48,14 @@
 @import 'components/landscape-image-component';
 @import 'components/latest-news';
 @import 'components/lightbox-modal';
+@import 'components/large-table';
 @import 'components/main-menu';
 @import 'components/manually-curated-content';
 @import 'components/media-exhibit';
 @import 'components/menu-toggler';
+@import 'components/my-view';
+@import 'components/myview-settings';
+@import 'components/modals';
 @import 'components/newsletter-signup';
 @import 'components/pop-out';
 @import 'components/pop-out-register';
@@ -63,6 +68,9 @@
 @import 'components/sortable-table';
 @import 'components/sorting-arrows';
 @import 'components/sub-topic-links';
+@import 'components/subscription';
+@import 'components/table';
+@import 'components/data-tool-landing';
 @import 'components/toggle-icons';
 @import 'components/tooltip';
 @import 'components/topic-featured-article';
@@ -97,6 +105,7 @@
 @import 'components/article/article-tables';
 @import 'components/article/article-tags';
 @import 'components/article/article-topics';
+
 
 /* * * * COMPONENTS — SEARCH RESULTS * * * */
 @import 'components/search/search-wrapper';

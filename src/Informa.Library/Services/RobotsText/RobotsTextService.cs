@@ -7,6 +7,7 @@ using Informa.Library.Search.Results;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Sitecore.ContentSearch.Linq;
+using Informa.Library.Search.SearchIndex;
 
 namespace Informa.Library.Services.RobotsText
 {
@@ -20,13 +21,15 @@ namespace Informa.Library.Services.RobotsText
     {
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IProviderSearchContextFactory SearchContextFactory;
+        protected readonly ISearchIndexNameService IndexNameService;
 
         public RobotsTextService(
             ISitecoreContext context,
-            IProviderSearchContextFactory searchFactory)
+            IProviderSearchContextFactory searchFactory, ISearchIndexNameService indexNameService)
         {
             SitecoreContext = context;
             SearchContextFactory = searchFactory;
+            IndexNameService = indexNameService;
         }
 
         public string GetDisallowedGeneralContentUrls()
@@ -53,7 +56,7 @@ namespace Informa.Library.Services.RobotsText
         {
             var home = SitecoreContext.GetHomeItem<IHome_Page>();
             var startPath = home._Path;
-            using (var context = SearchContextFactory.Create())
+            using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
             {
                 var query = context.GetQueryable<GeneralContentResult>()
                     .Filter(j => j.TemplateId == IGeneral_Content_PageConstants.TemplateId && j.Path.StartsWith(startPath.ToLower()) && j.ExcludeFromGoogleSearch);

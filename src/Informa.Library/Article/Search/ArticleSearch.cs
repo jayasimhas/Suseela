@@ -15,6 +15,12 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuratio
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Core.Caching;
 using Constants = Informa.Library.Utilities.References.Constants;
+using Velir.Search.Core.Page;
+using Sitecore.Data.Items;
+using Informa.Library.Site;
+using Velir.Search.Models;
+using Informa.Library.Search.SearchIndex;
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Informa.Library.Article.Search
 {
@@ -26,20 +32,32 @@ namespace Informa.Library.Article.Search
         protected readonly Func<string, ISitecoreService> SitecoreFactory;
         protected readonly IItemReferences ItemReferences;
         protected readonly ICacheProvider CacheProvider;
+        protected readonly ISearchPageParser SearchPageParser;
+        protected readonly ISitecoreContext SitecoreContext;
+        protected readonly ISiteRootContext SiteRootContext;
+        protected readonly ISearchIndexNameService IndexNameService;
 
         public ArticleSearch(
-			IProviderSearchContextFactory searchContextFactory,
+            IProviderSearchContextFactory searchContextFactory,
                 IGlobalSitecoreService globalService,
                 Func<string, ISitecoreService> sitecoreFactory,
                 IItemReferences itemReferences,
-                ICacheProvider cacheProvider
-			)
+                ICacheProvider cacheProvider,
+                ISearchPageParser searchPageParser,
+                ISitecoreContext context,
+                ISiteRootContext siteRootContext,
+                ISearchIndexNameService indexNameService
+            )
         {
             SearchContextFactory = searchContextFactory;
             GlobalService = globalService;
             SitecoreFactory = sitecoreFactory;
             ItemReferences = itemReferences;
             CacheProvider = cacheProvider;
+            SearchPageParser = searchPageParser;
+            SitecoreContext = context;
+            SiteRootContext = siteRootContext;
+            IndexNameService = indexNameService;
         }
 
         public IArticleSearchFilter CreateFilter()
@@ -57,18 +75,18 @@ namespace Informa.Library.Article.Search
 
         public IArticleSearchResults Search(IArticleSearchFilter filter)
         {
-            using (var context = SearchContextFactory.Create())
+            using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
-					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+                    .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
                         .FilterByPublications(filter)
                         .FilterByAuthor(filter)
                         .FilterByCompany(filter)
                         .FilterTaxonomies(filter)
-					.ExcludeManuallyCurated(filter)
+                    .ExcludeManuallyCurated(filter)
                         .FilteryByArticleNumbers(filter)
-					.FilteryByEScenicID(filter)
-					.FilteryByRelatedId(filter)
+                    .FilteryByEScenicID(filter)
+                    .FilteryByRelatedId(filter)
                         .ApplyDefaultFilters();
 
                 if (filter.PageSize > 0)
@@ -95,7 +113,7 @@ namespace Informa.Library.Article.Search
         /// <returns></returns>
         public IArticleSearchResults SearchCustomDatabase(IArticleSearchFilter filter, string database)
         {
-            using (var context = SearchContextFactory.Create(database))
+            using (var context = SearchContextFactory.Create(database, IndexNameService.GetIndexName()))
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
@@ -120,14 +138,17 @@ namespace Informa.Library.Article.Search
             }
         }
 
-        public IArticleSearchResults FreeWithRegistrationArticles(string database) {
-            using (var context = SearchContextFactory.Create(database)) {
+        public IArticleSearchResults FreeWithRegistrationArticles(string database)
+        {
+            using (var context = SearchContextFactory.Create(database, IndexNameService.GetIndexName()))
+            {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
                     .Where(a => a.TemplateId == IArticleConstants.TemplateId && a.FreeWithRegistration == true)
                     .ApplyDefaultFilters();
-                
+
                 ISitecoreService localSearchContext = SitecoreFactory(database);
-                return new ArticleSearchResults {
+                return new ArticleSearchResults
+                {
                     Articles = query.OrderByDescending(i => i.ActualPublishDate).GetResults().Hits.Select(h => localSearchContext.GetItem<IArticle>(h.Document.ItemId.Guid))
                 };
             }
@@ -135,30 +156,30 @@ namespace Informa.Library.Article.Search
 
         public long GetNextArticleNumber(Guid publicationGuid)
         {
-            using (var context = SearchContextFactory.Create(Constants.MasterDb))
+            var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
+
+            using (var context = SearchContextFactory.Create(Constants.MasterDb, publicationItem.Search_Index_Name))
             {
-                var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
                 if (publicationItem != null)
                 {
-				var filter = CreateFilter();
+                    var filter = CreateFilter();
+                    var query = context.GetQueryable<ArticleSearchResultItem>()
+                        .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
+                                .Filter(i => i.PublicationTitle == publicationItem.Publication_Name)
+                        .FilterTaxonomies(filter)
+                        //.Max(x => x.ArticleIntegerNumber);
+                        .OrderByDescending(i => i.ArticleIntegerNumber)
+                        .Take(1);
 
-				var query = context.GetQueryable<ArticleSearchResultItem>()
-					.Filter(i => i.TemplateId == IArticleConstants.TemplateId)
-                            .Filter(i => i.PublicationTitle == publicationItem.Publication_Name)
-					.FilterTaxonomies(filter)
-					//.Max(x => x.ArticleIntegerNumber);
-					.OrderByDescending(i => i.ArticleIntegerNumber)
-					.Take(1);
-
-				var results = query.GetResults();
+                    var results = query.GetResults();
 
                     return results?.Hits?.FirstOrDefault()?.Document?.ArticleIntegerNumber + 1 ?? 0;
-				//var results = articleSearchResultItem.GetResults();
-				//var articleResults2 = context.GetQueryable<ArticleSearchResultItem>()     Max(x => x.ArticleIntegerNumber);
-				//return results.Hits.FirstOrDefault().Document.ArticleIntegerNumber;
-			}
-			return 0;
-		}
+                    //var results = articleSearchResultItem.GetResults();
+                    //var articleResults2 = context.GetQueryable<ArticleSearchResultItem>()     Max(x => x.ArticleIntegerNumber);
+                    //return results.Hits.FirstOrDefault().Document.ArticleIntegerNumber;
+                }
+                return 0;
+            }
         }
 
         /// <summary>
@@ -170,6 +191,16 @@ namespace Informa.Library.Article.Search
         {
             string value;
             return Constants.PublicationPrefixDictionary.TryGetValue(publicationGuid, out value) ? value : null;
+        }
+
+        public string GetPublicationPrefix(string publicationGuid)
+        {
+            var publicationItem = GlobalService.GetItem<ISite_Root>(publicationGuid);
+            var verticalItemName = publicationItem?._Parent._Name;// GlobalService.GetItem<IVertical_Root>((Guid)publicationItem?._Parent._Id)?._Name; //Vertical Folder//added,21Sep16
+            //Example Content.Pharma.Scrip.Prefix
+            var publicationPrefix = SitecoreSettingResolver.Instance.ItemSetting[SitecoreSettingResolver.Instance.ContentRootname + "." + verticalItemName + "." + publicationItem._Name + ".Prefix"];
+
+            return publicationPrefix;
         }
 
         public static string GetCleansedArticleTitle(IArticle a)
@@ -187,7 +218,7 @@ namespace Informa.Library.Article.Search
         {
             string cacheKey = $"{nameof(ArticleSearch)}-GetTaxonomy-{id}";
             return CacheProvider.GetFromCache(cacheKey, () => BuildArticleTaxonomies(id, taxonomyParent));
-				}
+        }
 
         public string BuildArticleTaxonomies(Guid id, Guid taxonomyParent)
         {
@@ -212,7 +243,7 @@ namespace Informa.Library.Article.Search
         public IArticleSearchResults GetLegacyArticleUrl(string path)
         {
             path = path.ToLower();
-            using (var context = SearchContextFactory.Create())
+            using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
@@ -223,7 +254,7 @@ namespace Informa.Library.Article.Search
                 {
                     Articles = results.Hits.Select(i => GlobalService.GetItem<IArticle>(i.Document.ItemId.Guid))
                 };
-	}
+            }
         }
     }
 }

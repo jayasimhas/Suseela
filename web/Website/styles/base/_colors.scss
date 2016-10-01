@@ -11,6 +11,7 @@ section: Colors
 @color: #e2e4e4 @name: Mercury Gray
 @color: #d1d3d4 @name: Light Gray
 @color: #ffffff @name: White
+@color: #f1f1f1 @name: gray
 @color: #bbbcbe @name: Light Gray B
 @color: #808285 @name: Medium Gray 8
 @color: #6D6E71 @name: Dove Gray
@@ -24,8 +25,10 @@ $color-dove-gray:           #6D6E71;
 $color-old-silver-gray:     #808285;
 $color-dusty-gray:          #979797;
 $color-concrete-gray:       #f1f2f2;
+$color-concrete-table-gray: #f1f1f1;
 $color-mercury-gray:        #e2e4e4;
 $color-light-gray:          #d1d3d4;
+$color-sub-gray: 			#6e6c6d;
 $color-x11-gray:            #bbbcbe;
 $color-iceberg-green:       #d6ebdc;
 $color-antique-white:       #ffeedd;
@@ -48,6 +51,7 @@ section: Colors
 */
 
 $color-butterscotch-orange: #f9af40;
+$color-red:                 #bb1528;          
 $color-cardinal-red:        #be1e2d;
 $color-goldenrod:           #daa520;
 $color-lime-green:          #31be48;
@@ -102,6 +106,7 @@ $color-rose-red:            #ba005b;
 $color-rubine-red:          #DD3580;
 $color-valerian-red:        #c8206e;
 $color-cherub-pink:         #f8d7e6;
+$color-my-view:    			#c22d3b;
 
 
 

@@ -59,6 +59,10 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         
         private System.Threading.SendOrPostCallback deleteSavedSearchOperationCompleted;
         
+        private System.Threading.SendOrPostCallback IN_queryProfilePreferencesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IN_updateProfilePreferencesOperationCompleted;
+        
         private System.Threading.SendOrPostCallback INqueryEntitlementsOperationCompleted;
         
         private System.Threading.SendOrPostCallback INquerySiteEntitlementsIPOperationCompleted;
@@ -255,6 +259,12 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         
         /// <remarks/>
         public event deleteSavedSearchCompletedEventHandler deleteSavedSearchCompleted;
+        
+        /// <remarks/>
+        public event IN_queryProfilePreferencesCompletedEventHandler IN_queryProfilePreferencesCompleted;
+        
+        /// <remarks/>
+        public event IN_updateProfilePreferencesCompletedEventHandler IN_updateProfilePreferencesCompleted;
         
         /// <remarks/>
         public event INqueryEntitlementsCompletedEventHandler INqueryEntitlementsCompleted;
@@ -753,6 +763,78 @@ namespace Informa.Library.Salesforce.EBIWebServices {
             if ((this.deleteSavedSearchCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.deleteSavedSearchCompleted(this, new deleteSavedSearchCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public IN_ProfilePreferencesQueryResponse IN_queryProfilePreferences([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName) {
+            object[] results = this.Invoke("IN_queryProfilePreferences", new object[] {
+                        userName});
+            return ((IN_ProfilePreferencesQueryResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IN_queryProfilePreferencesAsync(string userName) {
+            this.IN_queryProfilePreferencesAsync(userName, null);
+        }
+        
+        /// <remarks/>
+        public void IN_queryProfilePreferencesAsync(string userName, object userState) {
+            if ((this.IN_queryProfilePreferencesOperationCompleted == null)) {
+                this.IN_queryProfilePreferencesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIN_queryProfilePreferencesOperationCompleted);
+            }
+            this.InvokeAsync("IN_queryProfilePreferences", new object[] {
+                        userName}, this.IN_queryProfilePreferencesOperationCompleted, userState);
+        }
+        
+        private void OnIN_queryProfilePreferencesOperationCompleted(object arg) {
+            if ((this.IN_queryProfilePreferencesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IN_queryProfilePreferencesCompleted(this, new IN_queryProfilePreferencesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction=System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace="http://soap.sforce.com/schemas/class/EBI_WebServices", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public EBI_WebServiceResponse IN_updateProfilePreferences([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] IN_ProfilePreferencesRequest contactPref) {
+            object[] results = this.Invoke("IN_updateProfilePreferences", new object[] {
+                        userName,
+                        contactPref});
+            return ((EBI_WebServiceResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IN_updateProfilePreferencesAsync(string userName, IN_ProfilePreferencesRequest contactPref) {
+            this.IN_updateProfilePreferencesAsync(userName, contactPref, null);
+        }
+        
+        /// <remarks/>
+        public void IN_updateProfilePreferencesAsync(string userName, IN_ProfilePreferencesRequest contactPref, object userState) {
+            if ((this.IN_updateProfilePreferencesOperationCompleted == null)) {
+                this.IN_updateProfilePreferencesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIN_updateProfilePreferencesOperationCompleted);
+            }
+            this.InvokeAsync("IN_updateProfilePreferences", new object[] {
+                        userName,
+                        contactPref}, this.IN_updateProfilePreferencesOperationCompleted, userState);
+        }
+        
+        private void OnIN_updateProfilePreferencesOperationCompleted(object arg) {
+            if ((this.IN_updateProfilePreferencesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IN_updateProfilePreferencesCompleted(this, new IN_updateProfilePreferencesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -5811,6 +5893,154 @@ namespace Informa.Library.Salesforce.EBIWebServices {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
+    public partial class IN_ProfilePreferencesRequest {
+        
+        private string additionalPreferencesField;
+        
+        private string channelPreferencesField;
+        
+        private string usernameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string additionalPreferences {
+            get {
+                return this.additionalPreferencesField;
+            }
+            set {
+                this.additionalPreferencesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string channelPreferences {
+            get {
+                return this.channelPreferencesField;
+            }
+            set {
+                this.channelPreferencesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                this.usernameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
+    public partial class IN_ProfilePreferencesQueryResponse {
+        
+        private string additionalPreferencesField;
+        
+        private string channelPreferencesField;
+        
+        private string responseCodeField;
+        
+        private string responseDescriptionField;
+        
+        private System.Nullable<bool> successField;
+        
+        private bool successFieldSpecified;
+        
+        private string usernameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string additionalPreferences {
+            get {
+                return this.additionalPreferencesField;
+            }
+            set {
+                this.additionalPreferencesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string channelPreferences {
+            get {
+                return this.channelPreferencesField;
+            }
+            set {
+                this.channelPreferencesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string responseCode {
+            get {
+                return this.responseCodeField;
+            }
+            set {
+                this.responseCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string responseDescription {
+            get {
+                return this.responseDescriptionField;
+            }
+            set {
+                this.responseDescriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<bool> success {
+            get {
+                return this.successField;
+            }
+            set {
+                this.successField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool successSpecified {
+            get {
+                return this.successFieldSpecified;
+            }
+            set {
+                this.successFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                this.usernameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://soap.sforce.com/schemas/class/EBIWebServiceSchema")]
     public partial class EBI_CreateProfileResponse {
         
         private string contactIdField;
@@ -6604,9 +6834,6 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         None,
         
         /// <remarks/>
-        Internal,
-        
-        /// <remarks/>
         Finest,
         
         /// <remarks/>
@@ -7001,6 +7228,58 @@ namespace Informa.Library.Salesforce.EBIWebServices {
         private object[] results;
         
         internal deleteSavedSearchCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public EBI_WebServiceResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((EBI_WebServiceResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IN_queryProfilePreferencesCompletedEventHandler(object sender, IN_queryProfilePreferencesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IN_queryProfilePreferencesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IN_queryProfilePreferencesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public IN_ProfilePreferencesQueryResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((IN_ProfilePreferencesQueryResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IN_updateProfilePreferencesCompletedEventHandler(object sender, IN_updateProfilePreferencesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IN_updateProfilePreferencesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IN_updateProfilePreferencesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

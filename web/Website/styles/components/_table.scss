@@ -1,0 +1,119 @@
+	.small_table{
+		
+		.table-responsive{
+			
+			.table{
+				border-collapse: inherit;
+				border: 1px solid $color-light-gray;
+				width:100%;
+				.table_head{
+				  background-color: $color-ship-gray;
+				  color: $color-white;
+				  
+				  th{
+					@include textMix('Roboto', 1.125em, 700);
+					font-style: normal;
+					text-align: left;
+					
+				  }
+				}
+				.graybg{
+				  background-color: $color-concrete-table-gray;
+				}
+				.R16{
+				   @include textMix('Roboto', 1em, 400);
+				   font-style: normal;
+				}
+				.RB16{
+				   font-family: "Roboto", Helvetica, Arial, sans-serif;
+				   font-size: 1em;
+				   color:$color-red;
+				   font-style: normal;
+				   font-weight: 700;
+				}
+				.R21_RedColor{
+				   @include textMix('Roboto', 1.3125em, 400);
+				   font-style: normal;
+				   color:$color-red;
+				}
+				.R21_GrayColor{
+				   @include textMix('Roboto', 1.3125em, 400);
+				   font-style: normal;
+				   color:$color-ship-gray;
+				}
+				.RB18{
+					@include textMix('Roboto', 1.125em, 700);
+					font-style: normal;
+				}
+				.visible-lg{
+					@include breakpoint('small') {
+						display: none;
+					}
+					@include breakpoint('medium-small') {
+						display: none;
+					}
+					
+				}	
+				
+			}
+			h1.primary_heading{
+				@include textMix('Roboto Condensed', 2.9em, 400);
+				 font-style: normal;
+				 color: $color-zeus-black;
+				 margin-top:45px;
+			}
+			h5.secondary_heading{
+				@include textMix('PT Serif', 1.68em, 400);
+				   font-style: italic;
+				   color: $color-zeus-black;
+				   margin-top:30px;
+				@include breakpoint('small') {
+					margin-bottom:30px;
+				}
+				@include breakpoint('medium') {
+					margin-bottom:30px;
+				}
+				@include breakpoint('large') {
+					margin-bottom:30px;
+				}
+			}
+			.pad-10{
+				padding: 10px;
+			}
+			hr{
+			  margin: 35px 0 35px 0;
+			  @include breakpoint('small') {
+						display: none;
+				}
+				@include breakpoint('medium') {
+						display: none;
+				}
+				@include breakpoint('large') {
+						display: none;
+			}
+			}	
+				
+		}
+		.article-right-rail{
+			@include breakpoint('small') {
+						display: none;
+			}
+			@include breakpoint('medium') {
+						display: none;
+			}
+			@include breakpoint('large') {
+						display: none;
+			}
+		}
+		
+		.visible-sm{
+			display: none;
+			@include breakpoint('small') {
+						display: block;
+			}
+			@include breakpoint('medium-small') {
+						display: block;
+			}
+		}
+	}
+	

@@ -73,8 +73,8 @@ namespace Informa.Library.Salesforce.EBIWebServices
 		[return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable = true)]
 		EBI_CreateAccountResponse createAccount([System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] EBI_Name name, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] EBI_CompanyJob CompanyJob);
 
-		/// <remarks/>
-		[System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
 		[System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
 		[System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
 		[System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
@@ -633,6 +633,27 @@ namespace Informa.Library.Salesforce.EBIWebServices
 		[System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace = "http://soap.sforce.com/schemas/class/EBI_WebServices", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
 		[return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable = true)]
 		EBI_WebServiceResponse updateShippingName([System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] EBI_Name ShippingName);
-	}
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace = "http://soap.sforce.com/schemas/class/EBI_WebServices", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable = true)]
+        IN_ProfilePreferencesQueryResponse IN_queryProfilePreferences([System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string userName);
+
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapHeaderAttribute("CallOptionsValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("SessionHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("AllowFieldTruncationHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingHeaderValue")]
+        [System.Web.Services.Protocols.SoapHeaderAttribute("DebuggingInfoValue", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "http://soap.sforce.com/schemas/class/EBI_WebServices", ResponseNamespace = "http://soap.sforce.com/schemas/class/EBI_WebServices", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable = true)]
+        EBI_WebServiceResponse IN_updateProfilePreferences([System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] string userName, [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)] IN_ProfilePreferencesRequest contactPref);
+
+    }
 
 }

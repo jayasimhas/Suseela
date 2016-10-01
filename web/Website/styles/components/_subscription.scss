@@ -1,0 +1,176 @@
+
+.subscriptionPan{
+	@include breakpoint('small') {
+		font-size: 1em;
+		line-height: 20px;
+		width: 100%;
+	}
+	.page-account__table{
+		border: 1px solid #d2d4d3;
+		@include breakpoint('small') {
+			border: none;
+		}
+	}
+	.page-account_text{
+		font-family: 'PT Serif';
+		  font-style: normal;
+		  font-weight: 400;
+		  font-size: 1.125em;
+		  margin-bottom: 1.25rem;
+		  display: block;
+		  @include breakpoint('small') {
+		   font-size: 1em;
+		   line-height: 20px;
+		  }
+	}
+	.sortable-table__header--mobile{
+		display: none;
+	}
+	.sortable-table__col{
+		width: 25%; 
+		float: left; 
+		& .accordian{
+			background: url(/dist/img/arrow2.jpg) no-repeat -18px -14px;
+			height: 17px;
+			min-width: 17px;
+			display: inline-block;
+			cursor: pointer;
+			&.active{
+				background: url(/dist/img/arrow2.jpg) no-repeat 0 6px;
+			}
+			@media only screen and (max-device-width: 480px) {
+				display: none;
+			}
+		}
+		span:nth-child(1){
+			padding-left: 20px;
+			@media only screen and (max-device-width: 480px) {
+				padding-left: 0px;
+			}
+		}
+		& .accordian:nth-child(2){
+		    position: absolute;
+			margin-left: 40px;
+		}
+		@include breakpoint('small') {
+			width: 100%; 
+		}
+		@include breakpoint('small') {
+			padding: 12px;
+		}
+	}
+	.subjectsAct{
+		.hide{
+			display: none;
+		}
+	}
+	.tablerow{
+		border-top: 1px solid #d1d3d4;
+		min-height: 55px;
+		@include breakpoint('small') {
+			clear: both;
+		}
+	}
+	
+	.button,
+		a.button {
+		&,
+		&--filled,
+		&--outlined,
+		&--outline,
+		&--gilded {
+			color: $color-zeus-black;
+		}
+		&--outline:enabled {
+			&:hover {
+				color: $color-white;
+				text-decoration: none;
+			}
+		}
+	} 
+	.title{
+		background: #ececec;
+		padding: 10px;
+		font-size: 1.125em;
+		color: #231f20;
+		font-weight: bold;
+		@include breakpoint('small') {
+			clear: both;
+		}
+	}
+	.maintitle{
+			background: #ececec url(/dist/img/mob-arrow.png) no-repeat right 14px;
+		&.active{
+			background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px;
+		}
+	}
+}
+
+@include breakpoint('small') {
+	.hidden-xs{
+		display: none !important;
+	}
+	.page-account__header{
+		font-size: 36px;
+		line-height: 32px;
+	}
+	.mobileCls{
+		margin-top: 20px;
+		border: 1px solid #d2d4d3;
+		&:before{
+			clear: both;
+			content: '';
+			 display: table;
+		}
+		&:after{
+			clear: both;
+			display: table;
+			content: " ";
+		}
+		
+		.sub{
+			float: left;
+			width: 60%;
+			margin-top: 8px;
+		}
+		.subsubscribe{
+			float: left;
+			width: 38%;
+			margin-top: -3px;
+			a{
+				display: inline-block;
+				padding: 8px 14px;
+			}
+		}
+		& .maccordian{
+			background: url(/dist/img/mob-arrow.jpg) no-repeat 0 0;
+			height: 12px;
+			width: 22px;
+			display: inline-block;
+			cursor: pointer;
+			&.active{
+				background: url(/dist/img/mob-arrow.jpg) no-repeat 0 6px;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 481px) {
+	.hidden-lg{
+		display: none !important;
+	}
+	.purchases{ 
+		.sortable-table__col{
+			&.fdata{
+				width: 30%; 
+			}
+			&.sdata{
+				width: 50%; 
+			}
+			&.tdata{
+				width: 20%; 
+			}
+		} 
+	}
+
+}
