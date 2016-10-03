@@ -1,0 +1,41 @@
+.job_listing{
+	.sub-heading-text{
+		span{
+			font-family: "PT Serif", Georgia, serif;
+			font-style: italic;
+			font-weight: 400;
+			color: $color-abbey-gray;
+			margin-bottom: 0.75rem;
+			font-size: 1.5em;
+		}
+	}
+	.stacked_job_view{
+		clear: both;
+		width: 100%;
+		.job_list_individual{
+			width: 100%;
+			padding: 1em;
+			border-top: 1px solid $color-light-gray;
+			.job_description{
+				.job_heading{
+					h3{
+					  font-family: 'Roboto Condensed';
+					  font-style: normal;
+					  font-weight: 400;
+					  font-size: 1.875em;
+					 } 
+				}
+				.job_description_detail{
+					span{
+					  font-family: 'PT Serif';
+					font-style: normal;
+					font-weight: 400;
+					font-size: 1.125em;
+					line-height: 20px;
+					color: $color-abbey-gray;
+					}
+				}
+			}
+		}
+	}
+}
