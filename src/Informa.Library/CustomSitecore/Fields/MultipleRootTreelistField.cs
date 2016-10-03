@@ -105,7 +105,7 @@ namespace Informa.Library.CustomSitecore.Fields
                     if (item != null)
                     {
                         //Feching Ancestor of Selected Item and replaceing with Token
-                        var rootItem = item.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == ItemIdResolver.GetItemIdByKey("VerticalTemplate.global"));
+                        var rootItem = item.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == ItemIdResolver.GetItemIdByKey("VerticalTemplate"));
                         dataContext.Root = dataContext.Root.Replace("$verticalnode", rootItem.Name);
                         //ToDo
                         return dataContext;
