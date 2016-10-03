@@ -3245,14 +3245,14 @@ header .header-account-access {
   .myview-settings h1 {
     margin-bottom: 0px;
     float: left; }
-    @media only screen and (max-device-width: 480px) {
+    @media (max-width: 480px) {
       .myview-settings h1 {
         font-size: 32px; } }
   .myview-settings .mysettingsHead {
     border-bottom: 1px solid #d1d3d4;
     padding-bottom: 10px;
     margin-bottom: 20px; }
-    @media only screen and (max-device-width: 480px) {
+    @media (max-width: 480px) {
       .myview-settings .mysettingsHead {
         margin-bottom: 0px;
         border-bottom: none; } }
@@ -3261,14 +3261,15 @@ header .header-account-access {
   .myview-settings .mb-10 {
     margin: 10px 0 20px; }
   .myview-settings .sub-heading-text {
-    font-size: 1.125em; }
+    font-size: 1.125em;
+    margin-bottom: 20px; }
     .myview-settings .sub-heading-text p {
       line-height: 16px;
       font-style: normal;
       font-family: "PT Serif Caption";
       font-weight: 400;
       font-size: 1.125em; }
-      @media only screen and (max-device-width: 480px) {
+      @media (max-width: 480px) {
         .myview-settings .sub-heading-text p {
           font-size: 0.875em;
           margin: 0px;
@@ -3280,7 +3281,7 @@ header .header-account-access {
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
       float: left; }
-      @media only screen and (max-device-width: 480px) {
+      @media (max-width: 480px) {
         .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
           font-size: 1.25em;
           margin-bottom: 12px;
@@ -3290,8 +3291,25 @@ header .header-account-access {
       float: left;
       padding-left: 20px;
       margin: 12px 20px; }
-      @media only screen and (max-device-width: 480px) {
+      @media (max-width: 480px) {
         .myview-settings .publicationPan .subscribed {
+          font-size: 0.875em;
+          border-left: none;
+          padding-left: 0px;
+          margin: 0px; } }
+    .myview-settings .publicationPan .subscribe {
+      float: left;
+      width: 120px;
+      height: 32px;
+      background: #f7941e;
+      color: #fff;
+      margin: 8px 0 0 20px;
+      line-height: 32px;
+      font-size: 12px;
+      cursor: pointer;
+      padding-left: 0px; }
+      @media (max-width: 480px) {
+        .myview-settings .publicationPan .subscribe {
           font-size: 0.875em;
           border-left: none;
           padding-left: 0px;
@@ -3373,12 +3391,12 @@ header .header-account-access {
             background: #acacad; }
           .myview-settings .table-responsive .table tbody tr.followingrow:hover .move {
             display: block; }
-            @media only screen and (max-device-width: 480px) {
+            @media (max-width: 480px) {
               .myview-settings .table-responsive .table tbody tr.followingrow:hover .move {
                 display: none; } }
         .myview-settings .table-responsive .table tbody tr.followrow {
           background: #f9f9f9; }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table tbody tr.followrow {
               background: #fff; } }
           .myview-settings .table-responsive .table tbody tr.followrow .rowlines {
@@ -3403,7 +3421,7 @@ header .header-account-access {
                   z-index: -1; } }
           .myview-settings .table-responsive .table tbody tr.followrow.frow {
             border-top: 2px solid #d1d3d4; }
-            @media only screen and (max-device-width: 480px) {
+            @media (max-width: 480px) {
               .myview-settings .table-responsive .table tbody tr.followrow.frow {
                 border-top: none; } }
           .myview-settings .table-responsive .table tbody tr.followrow .move {
@@ -3415,25 +3433,25 @@ header .header-account-access {
         vertical-align: top;
         border-top: 0px solid #ddd;
         background: #f9f9f9; }
-        @media only screen and (max-device-width: 480px) {
+        @media (max-width: 480px) {
           .myview-settings .table-responsive .table thead th {
             padding: 8px 0px 10px 10px; } }
         .myview-settings .table-responsive .table thead th p {
           font-size: 1em;
           text-align: left;
           padding: 12px 0 0; }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table thead th p {
               padding: 0;
               font-size: 0.875em; } }
         .myview-settings .table-responsive .table thead th.firstrow {
           padding: 40px 20px 10px; }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table thead th.firstrow {
               padding: 20px 10px 10px; } }
         .myview-settings .table-responsive .table thead th.nopad {
           padding: 0px 20px; }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table thead th.nopad {
               padding: 0px 10px; } }
         .myview-settings .table-responsive .table thead th.pbot {
@@ -3459,10 +3477,10 @@ header .header-account-access {
             @media only screen and (max-device-width: 480px) {
               .myview-settings .table-responsive .table thead th .rowlines .move {
                 z-index: -1; } }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table thead th .rowlines {
               top: 4px; } }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table thead th .rowlines span {
               background: #808081; } }
         .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
@@ -3470,16 +3488,20 @@ header .header-account-access {
           height: 17px;
           width: 32px;
           display: inline-block; }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
               position: relative;
               left: -15px; } }
           .myview-settings .table-responsive .table thead th .accordionImg a.collapsed, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.mobile-table-exit {
             background: url(/dist/img/accordion.jpg) no-repeat 0 0; }
-            @media only screen and (max-device-width: 480px) {
+            @media (max-width: 480px) {
               .myview-settings .table-responsive .table thead th .accordionImg a.collapsed, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.mobile-table-exit {
                 position: relative;
                 left: -5px; } }
+        .myview-settings .table-responsive .table thead th.notsubscr {
+          text-align: left;
+          padding-bottom: 0px;
+          padding-top: 0px; }
       .myview-settings .table-responsive .table thead .followAllBtn {
         border: 1px solid #f7941e;
         cursor: pointer;
@@ -3515,19 +3537,19 @@ header .header-account-access {
         margin: 8px 0 0 20px; }
       .myview-settings .table-responsive .table .wd-55 {
         width: 55%; }
-        @media only screen and (max-device-width: 480px) {
+        @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-55 {
             width: 65%; } }
       .myview-settings .table-responsive .table .wd-25 {
         width: 25%; }
-        @media only screen and (max-device-width: 480px) {
+        @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-25 {
             width: 20%;
             padding: 8px 0px 10px 10px;
             text-align: right; } }
       .myview-settings .table-responsive .table .wd-15 {
         width: 15%; }
-        @media only screen and (max-device-width: 480px) {
+        @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-15 {
             width: 10%; } }
       .myview-settings .table-responsive .table .graybg {
@@ -3550,11 +3572,11 @@ header .header-account-access {
         .myview-settings .table-responsive .table .smfollowingBtn .mchecked {
           background-position: 0 0; }
         .myview-settings .table-responsive .table .smfollowingBtn .munchecked {
-          background-position: -31px 0; }
+          background-position: 0 -31px; }
         .myview-settings .table-responsive .table .smfollowingBtn .mcheckedAll {
           background-position: 0 0; }
         .myview-settings .table-responsive .table .smfollowingBtn .muncheckedAll {
-          background-position: -31px 0; }
+          background-position: 0 -31px; }
   .myview-settings .hideBtn {
     display: none !important; }
   .myview-settings .saveoption {
@@ -3576,7 +3598,7 @@ header .header-account-access {
       .myview-settings .saveoption .gotoview:hover {
         background: #f7941e;
         color: #fff; }
-      @media only screen and (max-device-width: 480px) {
+      @media (max-width: 480px) {
         .myview-settings .saveoption .gotoview {
           border: 1px solid #f7941e;
           cursor: pointer;
@@ -3606,9 +3628,18 @@ header .header-account-access {
       margin-left: 20px;
       background: #f7941e;
       color: #fff; }
-      @media only screen and (max-device-width: 480px) {
+      @media (max-width: 480px) {
         .myview-settings .saveoption .saveview {
           width: 120px; } }
+  .myview-settings .dosubscribe .followrow {
+    background: #f9f9f9; }
+    @media (max-width: 480px) {
+      .myview-settings .dosubscribe .followrow {
+        background: #fff; } }
+    .myview-settings .dosubscribe .followrow .rowlines {
+      display: none; }
+  .myview-settings .hidden {
+    display: none !important; }
 
 @media only screen and (max-device-width: 480px) {
   .hidden-xs {
