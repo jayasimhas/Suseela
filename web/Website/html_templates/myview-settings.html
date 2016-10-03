@@ -1390,8 +1390,6 @@
       </div>
       <script src="/dist/js/index.js"></script>
 	  <script src="/dist/js/owlCarousel.js"></script>
-	   <script src="/dist/js/zepto.dragswap.js"></script>
-	   <script src="/dist/js/DragDropTouch.js"></script>
 	   
       <script async type="text/javascript" id="mini-profiler" src="/mini-profiler-resources/includes.js?v=ySF6M98CBehTtL86BbiEmys9yxR1HKazhe2sznfdUWQ=" data-version="ySF6M98CBehTtL86BbiEmys9yxR1HKazhe2sznfdUWQ=" data-path="/mini-profiler-resources/" data-current-id="14946f4e-f2ce-41f6-84cc-7c401a694783" data-ids="f69e9c99-c107-42cf-97fe-afbf9e7b68c6,3e9e2fe4-fd8f-4710-811a-73f70c0101b2,2b081c31-454c-4972-8449-e8f6b9ec6ee7,cec802fd-f7d8-484d-b43c-c46eb261fa43,14946f4e-f2ce-41f6-84cc-7c401a694783" data-position="left" data-trivial="false" data-children="false" data-max-traces="15" data-controls="false" data-authorized="true" data-toggle-shortcut="Alt+P" data-start-hidden="false" data-trivial-milliseconds="2"></script>
 	  <script>
@@ -1423,14 +1421,18 @@
 					}
 					}
 				});
-				$('.publicationPan').dragswap({
-					element : '.table tbody tr',
-					dropAnimation: true  
-				}); 
+				
+				var alltables = $('.table');
+				for(var i=0; i<alltables.length; i++){
+					var eachtableid = $(alltables[i]).attr('id');
+					
+					$('#'+eachtableid).dragswap({
+						element : 'tbody tr'
+					}); 
+				} 
 				
 				$('#allPublicationsPan').dragswap({
-					element : '.publicationPan',
-					dropAnimation: true  
+					element : '.publicationPan'
 				}); 
 			});
 			</script>
