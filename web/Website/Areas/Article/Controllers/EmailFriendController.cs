@@ -23,6 +23,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.Data.Items;
 using Sitecore.Resources.Media;
 using Sitecore.Web;
+using Sitecore.Configuration;
 
 namespace Informa.Web.Areas.Article.Controllers
 {
@@ -130,8 +131,10 @@ namespace Informa.Web.Areas.Article.Controllers
                 }
 
                 var siteRoot = SiteRootContext.Item;
-                emailHtml = htmlEmailTemplate.Html;
-                var footerContent = GlobalService.GetItem<IEmail_Config>(Constants.ScripEmailConfig);
+                var verticalName = siteRoot._Path.Split('/')[3].ToLower();
+                emailHtml = htmlEmailTemplate.Html;  
+                var footerContent = GlobalService.GetItem<IEmail_Config>(Settings.GetSetting("EmailConfig."+verticalName));
+
                 var replacements = new Dictionary<string, string>
                 {
                     ["#Environment#"] = SiteSettings.GetSetting("Env.Value", string.Empty),

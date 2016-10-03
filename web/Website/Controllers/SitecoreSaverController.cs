@@ -50,7 +50,9 @@ namespace Informa.Web.Controllers
                 article.Title = content.Name;
                 article.Planned_Publish_Date = publicationDate;
                 article.Created_Date = DateTime.Now;
-                article.Article_Number = SitecoreUtil.GetNextArticleNumber(_articleSearch.GetNextArticleNumber(content.PublicationID), content.PublicationID);
+                var articleNum = _articleSearch.GetNextArticleNumber(content.PublicationID);
+                article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleNum, content.PublicationID, _articleSearch.GetPublicationPrefix(content.PublicationID.ToString()));
+                //article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleNum, content.PublicationID);
                 _sitecoreMasterService.Save(article);
                 var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
                 var articleStruct = _articleUtil.GetArticleStruct(savedArticle);

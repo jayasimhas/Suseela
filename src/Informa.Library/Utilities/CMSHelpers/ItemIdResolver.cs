@@ -1,5 +1,11 @@
 ﻿using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Sitecore.Configuration;
+using Sitecore.Xml;
+using System;
+using System.Collections.Generic;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Informa.Library.Utilities.CMSHelpers
 {
@@ -37,6 +43,61 @@ namespace Informa.Library.Utilities.CMSHelpers
         public IVertical_Root GetVerticalName()
         {
            return VerticalRootContext.Item;
+        }
+    }
+
+    public sealed class SitecoreSettingResolver
+    {
+        private static volatile SitecoreSettingResolver instance;
+        private static object syncRoot = new Object();
+        public Dictionary<string, string> ItemSetting { get; set; } //new Dictionary<Guid, string>
+        public string ContentRootname { get; set; }
+        public string ContentRootGuid { get; set; }
+        public Dictionary<string, string> PublicationPrefix { get; set; }
+
+
+        private void PopulateItemSetting()
+        {
+            ItemSetting = new Dictionary<string, string>();
+            PublicationPrefix = new Dictionary<string, string>();
+
+            foreach (XmlNode node in Factory.GetConfigNodes("settings/setting"))
+            {
+                if(XmlUtil.GetAttribute("name", node).StartsWith("Content."))
+                    ItemSetting.Add(XmlUtil.GetAttribute("name", node), XmlUtil.GetAttribute("value", node));
+            }
+
+            foreach (XmlNode node in Factory.GetConfigNodes("settings/setting"))
+            {
+                if (XmlUtil.GetAttribute("name", node).StartsWith("Content.") && XmlUtil.GetAttribute("name", node).EndsWith(".Prefix"))
+                    PublicationPrefix.Add(XmlUtil.GetAttribute("value", node), XmlUtil.GetAttribute("value", node));
+            }
+
+            ContentRootname = Sitecore.Configuration.Settings.GetSetting("Sitecore.ContentRoot.Name");
+            ContentRootGuid = ItemSetting["Content.Guid"];
+        }
+        
+        private SitecoreSettingResolver()
+        {
+            //SitecoreContext = new SitecoreContext();
+            PopulateItemSetting();
+        }
+
+        public static SitecoreSettingResolver Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    lock (syncRoot)
+                    {
+                        if (instance == null)
+                            instance = new SitecoreSettingResolver();
+                    }
+                }
+
+                return instance;
+            }
         }
     }
 }

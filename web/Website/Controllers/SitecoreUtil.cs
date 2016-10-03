@@ -24,6 +24,11 @@ namespace Informa.Web.Controllers
             return number;
         }
 
+        public static string GetNextArticleNumber(long lastArticleNumber, Guid publication, string publicationPrefix)
+        {
+            string number = publicationPrefix + lastArticleNumber.ToString(Constants.ArticleNumberLength);
+            return number;
+        }
 
         /// <summary>
         /// This method gets the Publication Prefix which is used in Article Number Generation.

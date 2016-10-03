@@ -119,6 +119,10 @@ function popOutController(triggerElm) {
 			case 'register':
 				popOut = $('.js-pop-out__register');
 				break;
+			// GLOBAL HEADER REGISTRATION
+			case 'myViewregister':
+				popOut = $('.js-pop-out__myViewregister');
+				break;	
 			// SEARCH PAGE - SAVE SEARCH
 			case 'save-search':
 				popOut = $('.js-pop-out__save-search');

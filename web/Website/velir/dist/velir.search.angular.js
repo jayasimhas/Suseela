@@ -1258,6 +1258,10 @@
                             end = this.totalResults;
                         }
 
+                        if (end == 0) {
+                            start = 0;
+                        }
+
                         return "" + start + " - " + end;
                     }
                 }, {

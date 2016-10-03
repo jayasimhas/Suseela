@@ -1,0 +1,430 @@
+$yellowColor: #f7941e;
+
+@mixin folow-btn($w, $h){
+	border: 1px solid $yellowColor;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 0.75em;
+	font-family: "Roboto";
+	font-weight: 700;
+	width: $w;
+	height: $h;
+	text-align: center;
+	display: inline-block;
+    line-height: $h;
+	float: right;
+}
+@mixin tableData($px){
+	white-space: nowrap;
+	padding: 12px 20px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: $px solid #ddd;
+}
+@mixin getMove(){
+	float: right;
+	margin-top: 3px;
+	position: relative;
+	span{
+		height: 2px;
+		width: 21px;
+		background: #d1d3d5;
+		display: block;
+		margin-bottom: 3px;
+	}
+	.move{
+		position: absolute;
+		left: -43px;
+		top: 1px;
+		text-transform: uppercase;
+		font-size: 0.75em;
+		display: none;
+		@media only screen and (max-device-width: 480px) {
+			z-index: -1;
+		}
+	}
+}
+
+@mixin mobileFlwBtn(){
+	
+}
+
+.myview-settings {
+	margin-bottom: 50px;
+	h1{
+		margin-bottom: 0px;
+		float: left;
+		@media only screen and (max-device-width: 480px) {
+			font-size: 32px;
+		}
+	}
+	.mysettingsHead{
+		border-bottom: 1px solid #d1d3d4;
+		padding-bottom: 10px;
+		margin-bottom: 20px;
+		@media only screen and (max-device-width: 480px) {
+			margin-bottom: 0px;
+			border-bottom: none;
+		}
+	}
+	.mtop-10{
+		margin-top: 10px;
+	}
+	.mb-10{
+		margin: 10px 0 20px;
+	}
+	.sub-heading-text{
+		font-size: 1.125em;
+		p{
+			line-height: 16px;
+			font-style: normal;
+			font-family: "PT Serif Caption";
+			font-weight: 400;
+			font-size: 1.125em;
+			@media only screen and (max-device-width: 480px) {
+				font-size: 0.875em;
+				margin: 0px;
+				padding: 0px;
+				line-height: 24px;
+			}
+		}
+	}
+	.publicationPan{
+		margin-bottom: 25px;
+		border: 1px solid #d9dadb;
+		h2{
+			text-align: left;
+			float: left;
+			@media only screen and (max-device-width: 480px) {
+				font-size: 1.25em;
+				margin-bottom: 12px;
+				float: none;
+			}
+		}
+		.subscribed{
+			border-left: 1px solid #d9dadb;
+			float: left;
+			padding-left: 20px;
+			margin: 12px 20px;
+			@media only screen and (max-device-width: 480px) {
+				font-size: 0.875em;
+				border-left: none;				
+				padding-left: 0px;
+				margin: 0px;
+			}
+		}
+	}
+	.table-responsive {
+		width: 100%;
+		overflow-y: hidden;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		.table{
+			border-collapse: collapse;
+			width: 100%;
+			max-width: 100%;
+			font-family: "Roboto Condensed";
+			font-style: normal;
+			tbody{
+				 tr{
+					-webkit-transition: all 0.2s ease;
+					-moz-transition: all 0.2s ease;
+					-o-transition: all 0.2s ease;
+					-ms-transition: all 0.2s ease;
+					transition: all 0.2s ease; 
+					td{
+						@include tableData(1px);
+					}
+					.followingBtn{
+						@include folow-btn(120px, 32px);
+						&:hover{
+							background: $yellowColor;
+							color: #fff;
+						}
+					
+					}
+					.followBtn{
+						@include folow-btn(120px, 32px);
+						background: $yellowColor;
+						color: #fff;
+					}
+					&.followingrow{
+						.rowlines{
+							@include getMove();
+						}
+						&:hover{
+							background: #f5f5f5;
+							cursor: move;
+							& .rowlines{
+								span{
+									background: #acacad;
+								}
+							}
+							& .move{
+								@media only screen and (max-device-width: 480px) {
+									display: none;
+								}
+								display: block;
+							}
+						}
+					}
+					&.followrow{
+						background: #f9f9f9;
+						@media only screen and (max-device-width: 480px) {
+							background: #fff;
+						}
+						.rowlines{
+							@include getMove();
+						}
+						&.frow{
+							border-top: 2px solid #d1d3d4;
+							@media only screen and (max-device-width: 480px) {
+								border-top: none;
+							}
+						}
+						& .move{
+							display: none;
+						}
+					}
+				 }
+			}
+			thead{
+				th{
+					@include tableData(0px);
+					background: #f9f9f9;
+					@media only screen and (max-device-width: 480px) {
+						padding: 8px 0px 10px 10px;
+					}
+					p{
+						font-size: 1em; 
+						text-align: left;
+						padding: 12px 0 0;
+						@media only screen and (max-device-width: 480px) {
+							padding: 0;
+							font-size: 0.875em; 
+						}
+					} 
+					&.firstrow{
+						padding: 40px 20px 10px;
+						@media only screen and (max-device-width: 480px) {
+							padding: 20px 10px 10px;
+						}
+					}
+					&.nopad{
+						padding: 0px 20px;
+						@media only screen and (max-device-width: 480px) {
+							padding:  0px 10px;
+						}
+					}
+					&.pbot{
+						padding: 0px 20px 15px;
+					}
+					& .rowlines{
+						@include getMove();
+						top: -24px;
+						@media only screen and (max-device-width: 480px) {
+							top: 4px;
+						}
+						span{
+							@media only screen and (max-device-width: 480px) {
+								background: #808081;
+							}
+						}
+					}
+					& .accordionImg{
+						
+						a{
+							background: url(/dist/img/accordion.jpg) no-repeat 0 -18px;
+							height: 17px;
+							width: 32px;
+							display: inline-block;
+							@media only screen and (max-device-width: 480px) {
+								position: relative;
+								left: -15px;
+							}
+							
+							&.collapsed{
+								background: url(/dist/img/accordion.jpg) no-repeat 0 0;
+								@media only screen and (max-device-width: 480px) {
+									position: relative;
+									left: -5px;
+								}
+							}
+						}
+					}
+				} 
+				.followAllBtn{
+					@include folow-btn(120px, 32px);
+					margin-top: 8px;
+					&:hover{
+						background: $yellowColor;
+						color: #fff;
+					}
+				}
+				.unfollowAllBtn{
+					@include folow-btn(120px, 32px);
+					background: $yellowColor;
+					color: #fff;
+					margin: 8px 0 0 20px;
+				}
+			}
+			.wd-55{
+				width: 55%;
+				@media only screen and (max-device-width: 480px) {
+					width: 65%;
+				}
+			}
+			.wd-25{
+				width: 25%;
+				@media only screen and (max-device-width: 480px) {
+					width: 20%;
+					padding: 8px 0px 10px 10px;
+					text-align: right;
+				}
+			}
+			.wd-15{
+				width: 15%;
+				@media only screen and (max-device-width: 480px) {
+					width: 10%;
+				}
+			}
+			.graybg{
+				background: #f9fafa;
+			}
+			.smfollowingBtn{
+				text-align: right;
+				a{
+					background: url(/dist/img/follow-mob.jpg) no-repeat;
+					height: 30px;
+					width: 30px;
+					display: inline-block;
+					margin-left: 10px;
+				}
+				span{
+					position: relative;
+					top: -12px;
+					font-size: 0.6875em;
+					font-weight: bold;
+					font-family: "Roboto";
+					text-transform: uppercase;
+				}
+				& .mchecked{
+					background-position: 0 0;
+				}
+				& .munchecked{
+					background-position: -31px 0;
+				}
+				& .mcheckedAll{
+					background-position: 0 0;
+				}
+				& .muncheckedAll{
+					background-position: -31px 0;
+				}
+			}
+		}
+  }
+  .hideBtn{
+	  display: none !important;
+  }
+  .saveoption{
+	  float: right;
+	  .gotoview{
+		 @include folow-btn(150px, 32px);
+		  margin-left: 20px;
+		  &:hover{
+				background: $yellowColor;
+				color: #fff;
+			}
+		@media only screen and (max-device-width: 480px) {
+			@include folow-btn(120px, 32px);
+		}
+	  }
+	  .saveview{
+		 @include folow-btn(90px, 32px);
+		  margin-left: 20px;
+		  background: $yellowColor;
+		  color: #fff;
+		  @media only screen and (max-device-width: 480px) {
+			width: 120px;
+		  }
+	  }
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+	.hidden-xs{
+		display: none !important;
+	}
+	.smfollowingBtn{
+		margin: 8px 0;
+	}
+}
+@media only screen and (min-width: 481px) {
+	.hidden-lg{
+		display: none !important;
+	}
+}
+
+.tbodyhidden{
+	display: none;
+}
+
+/************ drag and drop styles ***********/
+.sortable {
+	margin: auto;
+	padding: 0;
+	width: 310px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}  
+.drop {
+	-webkit-animation: drop 1s ease;
+	-moz-animation: drop 1s ease;
+	-ms-animation: drop 1s ease;
+	-o-animation: drop 1s ease;
+	animation: drop 1s ease;
+}
+ 
+@-moz-keyframes drop {
+	0%, 100% {
+		background: #FF9933;
+		color: #fff;
+	}
+	50% {
+		color: #FF9933;
+		background: #fff;
+	}
+}
+@-webkit-keyframes "drop" {
+	0%, 100% {
+		background: #FF9933;
+		color: #fff;
+	}
+	50% {
+		color: #FF9933;
+		background: #fff;
+	}
+}
+@-ms-keyframes "drop" {
+	0%, 100% {
+		background: #FF9933;
+		color: #fff;
+	}
+	50% {
+		color: #FF9933;
+		background: #fff;
+	}
+}
+@-o-keyframes "drop" {
+	0%, 100% {
+		background: #FF9933;
+		color: #fff;
+	}
+	50% {
+		color: #FF9933;
+		background: #fff;
+	}
+}

@@ -35,6 +35,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Jabberwocky.Glass.1.0.1.0\lib\net45\Jabberwocky.Glass.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
@@ -80,6 +84,7 @@
     <Compile Include="EBIWebServices\EBI_WebServiceResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponse.cs" />
     <Compile Include="EBIWebServices\IEbiResponseExtensions.cs" />
+    <Compile Include="EBIWebServices\IN_ProfilePreferencesQueryResponse.cs" />
     <Compile Include="ISalesforceDebugLogger.cs" />
     <Compile Include="ISalesforceErrorLogger.cs" />
     <Compile Include="ISalesforceServiceContextEnabled.cs" />
@@ -151,6 +156,9 @@
     <Compile Include="User\SalesforceUpdateUserPassword.cs" />
     <Compile Include="User\SalesforceUser.cs" />
     <Compile Include="User\Search\SalesforceSavedSearchRepository.cs" />
+    <Compile Include="User\UserPreferences\ISalesforceFindUserPreferences.cs" />
+    <Compile Include="User\UserPreferences\ISalesforceUserPreferences.cs" />
+    <Compile Include="User\UserPreferences\SalesforceFindUserPreferences.cs" />
     <Compile Include="Web References\EBIWebServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -172,10 +180,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="D:\Projects\Informa\IN_WebServices.xml">
+    <WebReferenceUrl Include="D:\SoapUI-Projects\Agri_WebServices.xml">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\EBIWebServices\</RelPath>
-      <UpdateFromURL>D:\Projects\Informa\IN_WebServices.xml</UpdateFromURL>
+      <UpdateFromURL>D:\SoapUI-Projects\Agri_WebServices.xml</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -201,6 +209,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Web References\EBIWebServices\Agri_WebServices.wsdl" />
     <None Include="Web References\EBIWebServices\EBI_CartItemResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -273,10 +282,13 @@
     <None Include="Web References\EBIWebServices\EBI_WebServiceResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\EBIWebServices\IN_ProfilePreferencesQueryResponse.datasource" />
+    <None Include="Web References\EBIWebServices\IN_ProfilePreferencesQueryResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\EBIWebServices\IN_QueryEntitlementsResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\EBIWebServices\IN_WebServices.wsdl" />
     <None Include="Web References\EBIWebServices\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
