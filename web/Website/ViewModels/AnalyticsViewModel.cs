@@ -249,7 +249,7 @@ namespace Informa.Web.ViewModels
 
 	    private string GetOpportunityLineItemIds()
 	    {
-			var ids = string.Join("|", UserEntitlementsContext.Entitlements.Select(i => $"'{i.OpportunityLineItemId}'"));
+			var ids = string.Join("|", UserEntitlementsContext.Entitlements.Where(w => w.ProductCode.ToLower() == SiteRootContext.Item.Publication_Code.ToLower()).Select(i => $"'{i.OpportunityLineItemId}'"));
 			return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
 		}
     }
