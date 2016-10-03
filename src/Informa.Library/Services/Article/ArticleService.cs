@@ -207,8 +207,16 @@ namespace Informa.Library.Services.Article
 
         public string GetArticlePublicationName(IArticle article)
         {
-            string cacheKey = CreateCacheKey($"ArticlePublicationCode-{article._Id}");
-            return CacheProvider.GetFromCache(cacheKey, () => BuildArticlePublicationName(article));
+            if (article != null)
+            {
+                string cacheKey = CreateCacheKey($"ArticlePublicationCode-{article._Id}");
+                return CacheProvider.GetFromCache(cacheKey, () => BuildArticlePublicationName(article));
+            }
+            else
+            {
+                return string.Empty;
+            }
+            
         }
 
         private string BuildArticlePublicationName(IArticle article)
