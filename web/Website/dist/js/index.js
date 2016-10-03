@@ -2760,11 +2760,11 @@ var renderTableau = function renderTableau() {
 var renderAMchart = function renderAMchart() {
     if ($("#amchartDashboard").hasClass("amchart-dashboard")) {
 
-        var amChartType = $('#ChartType').val();
-        var dataProvider = $('#amChartDataProvider').val();
-        var graphType = $('#GraphType').val();
-        var categoryField = $('#CategoryField').val();
-        var valueField = $('#ValueField').val();
+        var amChartType = $('#ChartType').val().toLowerCase();
+        var dataProvider = $('#amChartDataProvider').val().toLowerCase();
+        var graphType = $('#GraphType').val().toLowerCase();
+        var categoryField = $('#CategoryField').val().toLowerCase();
+        var valueField = $('#ValueField').val().toLowerCase();
 
         AmCharts.makeChart("chartdiv", {
             "type": amChartType,
@@ -2777,19 +2777,6 @@ var renderAMchart = function renderAMchart() {
             "responsive": {
                 "enabled": true
             }
-        });
-    }
-};
-
-var AMchartUsingBuilder = function AMchartUsingBuilder() {
-    if ($("#amchartDashboardBuilder").hasClass("amchart-dashboard-using-builder")) {
-        var chartPresentation = $("#chartPresentation").val();
-        alert(chartPresentation);
-        if (chartPresentation.length >= 2 && chartPresentation.charAt(0) == '"' && chartPresentation.charAt(chartPresentation.length - 1) == '"') {
-            chartPresentation = chartPresentation.substring(1, chartPresentation.length - 1);
-        }
-        AmCharts.makeChart("chartdiv", {
-            chartPresentation: chartPresentation
         });
     }
 };
@@ -3363,7 +3350,6 @@ $(document).ready(function () {
     renderIframeComponents();
     renderTableau();
     renderAMchart();
-    AMchartUsingBuilder();
     $(window).on('resize', function (event) {
         renderIframeComponents();
         renderTableau();
