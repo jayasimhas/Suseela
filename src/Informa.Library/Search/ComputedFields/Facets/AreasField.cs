@@ -3,6 +3,8 @@ using System.Linq;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Services.Search.Fields.Base;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Sitecore.Data.Items;
+using Sitecore.Data;
 
 namespace Informa.Library.Search.ComputedFields.Facets
 {
@@ -12,7 +14,11 @@ namespace Informa.Library.Search.ComputedFields.Facets
 		{
 			if (indexItem?.Taxonomies != null)
 			{
-				var areaTaxonomyItems = indexItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsAreaTaxonomy(x._Path));
+                Item item = Sitecore.Context.ContentDatabase.GetItem(new ID(indexItem._Id));
+
+                var rootItem = item.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == "{DE3615F6-1562-4CB4-80EA-7FA45F49B7B7}");
+
+                var areaTaxonomyItems = indexItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsAreaTaxonomy(x._Path, rootItem.Name));
 
                 return SearchTaxonomyUtil.GetHierarchicalFacetFieldValue(areaTaxonomyItems);
             }
