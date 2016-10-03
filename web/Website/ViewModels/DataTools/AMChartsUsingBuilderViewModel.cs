@@ -15,7 +15,7 @@ using System.Web;
 
 namespace Informa.Web.ViewModels.DataTools
 {
-    public class AMChartsUsingBuilderViewModel: GlassViewModel<IAMcharts_Dashboard>
+    public class AMChartsUsingBuilderViewModel: GlassViewModel<IAMCharts_Using_Builder>
     {
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IGlobalSitecoreService GlobalService;
@@ -46,9 +46,9 @@ namespace Informa.Web.ViewModels.DataTools
         #region AMcharts dashboard parameters
 
         public string ChartType => GlassModel?.ChartType;
-        public string Height => GlassModel?.Height;
-        public string JsonPath => GlassModel?.JsonPath?.Url;
-
+        public string ChartHeight => GlassModel?.ChartHeight;
+        public string JsonDataPath => GlassModel?.JsonDataUrl?.Url;
+        public string Presentation => GlassModel?.Presentation;
         #endregion
 
         #region AMcharts landing page component content   

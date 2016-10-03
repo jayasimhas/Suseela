@@ -1,89 +1,93 @@
 ﻿@model Informa.Web.ViewModels.DataTools.AMChartViewModel
-
-@if (Model != null&&!string.IsNullOrEmpty(Model.ChartType))
+@if (Model != null)
 {
-    var chartType = Model.ChartType;
-    var ChartTypeScript = "/amcharts/" + chartType + ".js";
-    var dashboardHeight = string.IsNullOrWhiteSpace(Model.Height) ? "100%" : Model.Height;
-    var dashboardWidth = string.IsNullOrWhiteSpace(Model.Width) ? "100%" : Model.Width;
-    var jsonDataPath = string.IsNullOrWhiteSpace(Model.JsonPath) ? "/amcharts/data/AMChartData.js" : Model.JsonPath;
-    var showInRightRail = Html.Sitecore().CurrentRendering.Parameters["Show in Right Rail"];
+        var chartType = Model.ChartType;
+        var ChartTypeScript = "/amcharts/" + chartType + ".js";
+        var dashboardHeight = string.IsNullOrWhiteSpace(Model.Height) ? "640px" : Model.Height;
+        var jsonDataPath = string.IsNullOrWhiteSpace(Model.JsonPath) ? "/amcharts/data/AMChartData.js" : Model.JsonPath;
+        var showInRightRail = Html.Sitecore().CurrentRendering.Parameters["Show in Right Rail"];
 
-    if (!string.IsNullOrEmpty(ChartTypeScript) && !string.IsNullOrEmpty(jsonDataPath))
-    {
-        <div id="amchartDashboard" class="amchart-dashboard">
-            <script src="/amcharts/amcharts.js"></script>
-            <script src=@ChartTypeScript></script>
-            <script src=@jsonDataPath></script>
-        </div>
+        if (!string.IsNullOrEmpty(ChartTypeScript) && !string.IsNullOrEmpty(jsonDataPath))
+        {
+            <div id="amchartDashboard" class="amchart-dashboard">
+                <script src="/amcharts/amcharts.js"></script>
+                <script src=@ChartTypeScript></script>
+                <script src=@jsonDataPath></script>
+            </div>
 
-        @Html.HiddenFor(m => m.CategoryField)
-        @Html.HiddenFor(m => m.ValueField)
-        <input type="hidden" id="amChartType" value="@chartType" />
+            @Html.HiddenFor(m => m.CategoryField)
+            @Html.HiddenFor(m => m.ValueField)
+            @Html.HiddenFor(m => m.ChartType)
+            @Html.HiddenFor(m => m.GraphType)
             <input type="hidden" id="amChartDataProvider" value="chartData" />
 
-        if (!string.IsNullOrEmpty(@showInRightRail) && @showInRightRail == "1")
-        {
-            <div class="data-tool-placeholder-right-rail">
-                <h3 class="data-tool-heading">@Html.Raw(Model.PageTitle)</h3>
-                <div class="data-tool-graph">
-                    <div id="chartdiv" style="height:@dashboardHeight;"></div>
-                </div>
-                <p><a href="@Model.LandingPageLink">@Model.LandingPageLinkLable</a></p>
-            </div>
-        }
-        else
-        {
-            <div class="data-tool-landing">
-                @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolPrologue.cshtml", Model.PrologueViewModel); }
-                <h1>@Html.Raw(Model.PageTitle)</h1>
-                <div class="sub-heading-text">@Html.Raw(Model.PageSubheading)</div>
-                <div class="js-toggle-demo">
-                    <ul class="show-demo">
-                        <li><a class="sd" href="javascript: void(0);">@Model.HideDemoLable</a></li>
-                        <li><a class="hd" href="javascript: void(0);">@Model.ShowDemoLable</a></li>
-                    </ul>
-                    <div class="toggle-demo">
-                        <div class="demoText">
-                            <span>
-                                @Html.Raw(Model.IntroductoryText)
-                            </span>
-                        </div>
-                        @Html.Sitecore().Placeholder("VideoControl")
+            if (!string.IsNullOrEmpty(@showInRightRail) && @showInRightRail == "1")
+            {
+                <div class="data-tool-placeholder-right-rail">
+                    <h3 class="data-tool-heading">@Html.Raw(Model.PageTitle)</h3>
+                    <div class="data-tool-graph">
+                        <div id="chartdiv" style="height:@dashboardHeight;"></div>
                     </div>
+                    <p><a href="@Model.LandingPageLink">@Model.LandingPageLinkLable</a></p>
                 </div>
-                <div class="data-tool-placeholder">
-                    @if (Model.IsUserAuthenticated || !Model.AuthenticationRequired)
-                    {
-                        <div class="data-tool-graph data_tool_component__desktop">
-                            <div id="chartdiv" style="height:@dashboardHeight;"></div>
-                        </div>
-
-                        <div class="articleText">
-                            <span>
-                                @Html.Raw(Model.ToolExplanation)
-                            </span>
-                        </div>
+            }
+            else
+            {
+                <div class="data-tool-landing">
+                    @{
+                        Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolPrologue.cshtml", Model.PrologueViewModel);
                     }
-                    else
+                    <h1>@Html.Raw(Model.PageTitle)</h1>
+                    <div class="sub-heading-text">@Html.Raw(Model.PageSubheading)</div>
+                    <div class="js-toggle-demo">
+                        <ul class="show-demo">
+                            <li><a class="sd" href="javascript: void(0);">@Model.HideDemoLable</a></li>
+                            <li><a class="hd" href="javascript: void(0);">@Model.ShowDemoLable</a></li>
+                        </ul>
+                        <div class="toggle-demo">
+                            <div class="demoText">
+                                <span>
+                                    @Html.Raw(Model.IntroductoryText)
+                                </span>
+                            </div>
+                            @Html.Sitecore().Placeholder("VideoControl")
+                        </div>
+                    </div>
+                    <div class="data-tool-placeholder">
+                        @if (Model.IsUserAuthenticated || !Model.AuthenticationRequired)
+                        {
+                            <div class="data-tool-graph tableau_component__desktop">
+                                <div id="chartdiv" style="height:@dashboardHeight;"></div>
+                            </div>
+
+                            <div class="articleText">
+                                <span>
+                                    @Html.Raw(Model.ToolExplanation)
+                                </span>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="article-call-to-action">
+                                @{
+                                    Html.RenderPartial("/Views/Shared/Components/DataTools/DataTollUserCallToAction.cshtml", Model.CallToActionViewModel);
+                                }
+                            </div>
+                                    }
+                    </div>
+                    @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
                     {
-                        <div class="article-call-to-action">
-                            @{ Html.RenderPartial("/Views/Shared/Components/DataTools/DataTollUserCallToAction.cshtml", Model.CallToActionViewModel); }
+                        <div class="article-related-content">
+                            <h1>@Model.RealatedContentLableText</h1>
+                            @{
+                                Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolRelatedList.cshtml", Model.RelatedArticles);
+                            }
                         </div>
                                 }
                 </div>
-                @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
-                {
-                    <div class="article-related-content">
-                        <h1>@Model.RealatedContentLableText</h1>
-                        @{
-                            Html.RenderPartial("/Views/Shared/Components/DataTools/DataToolRelatedList.cshtml", Model.RelatedArticles);
-                        }
-                    </div>
-                            }
-            </div>
+                                            }
+
+
+                                        }
                                     }
-
-
-                                }
-                            }
+                                

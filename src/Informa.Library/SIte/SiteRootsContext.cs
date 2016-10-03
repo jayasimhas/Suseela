@@ -32,7 +32,7 @@ namespace Informa.Library.Site
 
             IEnumerable<ISite_Root> siteRoots = null;
             var contentItem = SitecoreService.GetItem<IGlassBase>("/sitecore/content");
-            foreach (var verticalContentItems in contentItem._ChildrenWithInferType)
+            foreach (var verticalContentItems in contentItem._ChildrenWithInferType.OfType<IVertical_Root>())
             {
                 siteRoots = verticalContentItems._ChildrenWithInferType.OfType<ISite_Root>();
             }

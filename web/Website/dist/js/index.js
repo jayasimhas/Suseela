@@ -2760,8 +2760,9 @@ var renderTableau = function renderTableau() {
 var renderAMchart = function renderAMchart() {
     if ($("#amchartDashboard").hasClass("amchart-dashboard")) {
 
-        var amChartType = $('#amChartType').val();
+        var amChartType = $('#ChartType').val();
         var dataProvider = $('#amChartDataProvider').val();
+        var graphType = $('#GraphType').val();
         var categoryField = $('#CategoryField').val();
         var valueField = $('#ValueField').val();
 
@@ -2771,11 +2772,24 @@ var renderAMchart = function renderAMchart() {
             "categoryField": categoryField,
             "graphs": [{
                 "valueField": valueField,
-                "type": "column"
+                "type": graphType
             }],
             "responsive": {
                 "enabled": true
             }
+        });
+    }
+};
+
+var AMchartUsingBuilder = function AMchartUsingBuilder() {
+    if ($("#amchartDashboardBuilder").hasClass("amchart-dashboard-using-builder")) {
+        var chartPresentation = $("#chartPresentation").val();
+        alert(chartPresentation);
+        if (chartPresentation.length >= 2 && chartPresentation.charAt(0) == '"' && chartPresentation.charAt(chartPresentation.length - 1) == '"') {
+            chartPresentation = chartPresentation.substring(1, chartPresentation.length - 1);
+        }
+        AmCharts.makeChart("chartdiv", {
+            chartPresentation: chartPresentation
         });
     }
 };
@@ -3349,6 +3363,7 @@ $(document).ready(function () {
     renderIframeComponents();
     renderTableau();
     renderAMchart();
+    AMchartUsingBuilder();
     $(window).on('resize', function (event) {
         renderIframeComponents();
         renderTableau();

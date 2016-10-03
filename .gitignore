@@ -354,3 +354,8 @@ target/
 *.iws
 *.ipr
  
+/src/Informa.Library
+/src/Informa.Library.Salesforce
+/web/Website/Areas/Account
+/web/Website/App_Config_Old
+/web/Website

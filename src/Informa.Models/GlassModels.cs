@@ -14464,6 +14464,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         string ChartType { get; set; }
 
         /// <summary>
+        /// Graph Type.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 918301A7-250B-46DE-AD50-EE91BE10CBD4</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.GraphTypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string GraphType { get; set; }
+
+        /// <summary>
         /// Category field.
         /// <para></para>
         /// <para>Field Type: Single-Line Text</para>		
@@ -14538,6 +14548,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         string ChartType { get; set; }
 
         /// <summary>
+        /// Graph Type.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 918301A7-250B-46DE-AD50-EE91BE10CBD4</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMcharts_DashboardConstants.GraphTypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string GraphType { get; set; }
+
+        /// <summary>
         /// Category field.
         /// <para></para>
         /// <para>Field Type: Single-Line Text</para>		
@@ -14603,6 +14623,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         public static readonly ID CategoryFieldFieldId = new ID("F9722A63-D4A7-4B85-BC22-BB0FE5C6C444");
         public const string CategoryFieldFieldName = "CategoryField";
 
+        public static readonly ID GraphTypeFieldId = new ID("918301A7-250B-46DE-AD50-EE91BE10CBD4");
+        public const string GraphTypeFieldName = "GraphType";
+
 
         public static readonly ID ValueFieldFieldId = new ID("CCAF314E-0C9B-4DFF-B7CA-2C2AFC985531");
         public const string ValueFieldFieldName = "ValueField";
@@ -14617,6 +14640,136 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         public static readonly ID JsonPathFieldId = new ID("67D813E6-5140-486C-A479-9B86C5AAA66C");
         public const string JsonPathFieldName = "JsonPath";
 
+
+    }
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components
+{
+
+
+    /// <summary>
+    /// IAMCharts Using Builder
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/IAMCharts Using Builder</para>	
+    /// <para>ID: 72A31ABC-2015-4569-8845-F2FEEF019EB5</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IAMCharts_Using_BuilderConstants.TemplateIdString)]
+    public partial interface IAMCharts_Using_Builder: IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Scope_Type, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.IData_Tool_Base
+    {
+        /// <summary>
+        /// The Chart Type field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: F0830893-14EC-41F0-B7A9-A80813095489</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMCharts_Using_BuilderConstants.ChartTypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string ChartType { get; set; }
+
+        /// <summary>
+        ///  Presentation.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 98E1FB53-8679-48AA-9F2D-E5A02786B2F8</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMCharts_Using_BuilderConstants.PresentationdFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Presentation { get; set; }
+
+        /// <summary>
+        /// Json Data Url.
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: 072E3C22-8907-4CBB-9681-FA3E753D986E</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMCharts_Using_BuilderConstants.JsonDataUrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link JsonDataUrl { get; set; }
+
+        /// <summary>
+        /// Chart Height.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 8E6F48EE-8514-46C4-9C0B-668BE61CFB1C</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMCharts_Using_BuilderConstants.ChartHeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string ChartHeight { get; set; }
+    }
+
+
+    /// <summary>
+    /// IAMCharts Using Builder
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Components/IAMCharts Using Builder</para>	
+    /// <para>ID: 72A31ABC-2015-4569-8845-F2FEEF019EB5</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IAMCharts_Using_Builder__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IBase_Match, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.UrlRewrite.Templates.Match.IMatch_Scope_Type, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.IData_Tool_Base__Raw
+    {
+        /// <summary>
+        /// The Chart Type field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: F0830893-14EC-41F0-B7A9-A80813095489</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMCharts_Using_BuilderConstants.ChartTypeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string ChartType { get; set; }
+
+        /// <summary>
+        ///  Presentation.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 98E1FB53-8679-48AA-9F2D-E5A02786B2F8</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMCharts_Using_BuilderConstants.PresentationdFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Presentation { get; set; }
+
+        /// <summary>
+        /// Json Data Url.
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: 072E3C22-8907-4CBB-9681-FA3E753D986E</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMCharts_Using_BuilderConstants.JsonDataUrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link JsonDataUrl { get; set; }
+
+        /// <summary>
+        /// Chart Height.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 8E6F48EE-8514-46C4-9C0B-668BE61CFB1C</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IAMCharts_Using_BuilderConstants.ChartHeightFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string ChartHeight { get; set; }
+
+    }
+
+    public static partial class IAMCharts_Using_BuilderConstants
+    {
+
+        public const string TemplateIdString = "72A31ABC-2015-4569-8845-F2FEEF019EB5";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "AMCharts Using Builder";
+
+
+        public static readonly ID ChartTypeFieldId = new ID("F0830893-14EC-41F0-B7A9-A80813095489");
+        public const string ChartTypeFieldName = "ChartType";
+
+        public static readonly ID PresentationFieldId = new ID("98E1FB53-8679-48AA-9F2D-E5A02786B2F8");
+        public const string PresentationdFieldName = "Presentation";
+
+
+        public static readonly ID JsonDataUrlFieldId = new ID("072E3C22-8907-4CBB-9681-FA3E753D986E");
+        public const string JsonDataUrlFieldName = "JsonDataUrl";
+
+        public static readonly ID ChartHeightFieldId = new ID("8E6F48EE-8514-46C4-9C0B-668BE61CFB1C");
+        public const string ChartHeightFieldName = "ChartHeight";
 
     }
 
@@ -18544,7 +18697,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
         /// The Link field.
         /// <para></para>
         /// <para>Field Type: General Link</para>		
-        /// <para>Field ID: 32B8C3AC-38A7-4AE5-8FD0-8DDE297B557F</para>
+        /// <para>Field ID: CE4B393C-2F58-45D1-B55F-F5485D71DFB4</para>
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(ITaxonomy_ItemConstants.URL_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
@@ -24765,7 +24918,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
     /// <para>ID: {C27F6F34-74DC-4A01-AA56-8E39FD4FD501}</para>	
     /// </summary>
     [SitecoreType(TemplateId = IIndustries_FolderConstants.TemplateIdString)]
-    public partial interface ITaxonomy_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+    public partial interface IIndustries_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
     {
     }
     /// <summary>
@@ -24775,7 +24928,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
     /// <para>ID: 93b32253-7548-4ae4-8be8-5f015bde124b</para>	
     /// </summary>
     [SitecoreType(TemplateId = ITaxonomy_FolderConstants.TemplateIdString)]
-    public partial interface IIndustries_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
+    public partial interface ITaxonomy_Folder : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.Common.IFolder
     {
     }
 
@@ -24812,9 +24965,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders
     public static partial class IIndustries_FolderConstants
     {
 
-        public const string TemplateIdString = "93b32253-7548-4ae4-8be8-5f015bde124b";
+        public const string TemplateIdString = "C27F6F34-74DC-4A01-AA56-8E39FD4FD501";
         public static readonly ID TemplateId = new ID(TemplateIdString);
-        public const string TemplateName = "Taxonomy Folder";
+        public const string TemplateName = "Industries Folder";
 
 
 
@@ -26478,6 +26631,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         I___BasePage MyView_Settings_Page { get; set; }
         [SitecoreField(ISite_ConfigConstants.Enable_MyView_ToggleFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Enable_MyView_Toggle { get; set; }
+        [SitecoreField(ISite_ConfigConstants.MyView_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+        I___BasePage MyView_Page { get; set; }
         /// <summary>
         /// The Ad Domain field.
         /// <para></para>
@@ -28180,6 +28335,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Enable_MyView_ToggleFieldId = new ID("0f9d9311-be37-47a3-bb47-0237ba3265d2");
         public const string Enable_MyView_ToggleFieldName = "Enable MyView Toggle";
+
+        public static readonly ID MyView_PageFieldId = new ID("a58c32cd93454710aa06b4f6615047ec");
+        public const string MyView_PageFieldName = "MyView Page";
 
         public static readonly ID Ad_DomainFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
         public const string Ad_DomainFieldName = "Ad Domain";
