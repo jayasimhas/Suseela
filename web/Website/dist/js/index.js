@@ -726,19 +726,19 @@ $(function () {
 		}
 	});
 
-	$('#allPublicationsPan').on('click', '.smfollowingBtn .mchecked', function () {
+	$('#allPublicationsPan .donesubscribe').on('click', '.smfollowingBtn .mchecked', function () {
 		var $this = $(this),
 		    smfollowingBtn = $this.closest('.smfollowingBtn');
 		smfollowingBtn.find('a').addClass('munchecked').removeClass('mchecked');
 	});
 
-	$('#allPublicationsPan').on('click', '.smfollowingBtn .munchecked', function () {
+	$('#allPublicationsPan .donesubscribe').on('click', '.smfollowingBtn .munchecked', function () {
 		var $this = $(this),
 		    smfollowingBtn = $this.closest('.smfollowingBtn');
 		smfollowingBtn.find('a').addClass('mchecked').removeClass('munchecked');
 	});
 
-	$('#allPublicationsPan').on('click', '.followrow .followBtn', function () {
+	$('#allPublicationsPan .donesubscribe').on('click', '.followrow .followBtn', function () {
 		var $this = $(this),
 		    followrow = $this.closest('.followrow'),
 		    table = $this.closest('.table');
@@ -753,7 +753,7 @@ $(function () {
 		followrow.remove();
 	});
 
-	$('#allPublicationsPan').on('click', '.followingrow .followingBtn', function () {
+	$('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function () {
 		var $this = $(this),
 		    followingrow = $this.closest('.followingrow');
 		followingrow.addClass('followrow disabled').removeClass('followingrow');
