@@ -94,7 +94,7 @@ namespace Informa.Library.Salesforce
 				return Execute(function);
 			}
 
-			if (!result.IsSuccess())
+			if (!result.IsSuccess() && result.errors != null)
 			{
 				foreach (var error in result.errors)
 				{

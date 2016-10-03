@@ -44,6 +44,7 @@ namespace Informa.Web.ViewModels.DataTools
         #region AMcharts dashboard parameters
        
         public string ChartType => GlassModel?.ChartType;
+        public string GraphType => GlassModel?.GraphType;
         public string CategoryField => GlassModel?.CategoryField;
         public string ValueField => GlassModel?.ValueField;
         public string Height => GlassModel?.Height;
