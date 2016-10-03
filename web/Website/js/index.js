@@ -161,6 +161,14 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 $(document).ready(function() {
+	//messaging web users
+	window.dismiss=function(){
+		$('.dismiss').on('click', function(){
+			$('.messaging_webUsers').remove(); 
+			$('.messaging_webUsers_white').remove(); 
+		});
+	}
+	window.dismiss();
 
     var mediaTable = getParameterByName('mobilemedia');
     if(mediaTable=="true"){
