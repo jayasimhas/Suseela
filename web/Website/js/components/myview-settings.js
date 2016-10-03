@@ -110,7 +110,6 @@ $(function(){
 		
 		console.log(JSON.stringify(createtableData));
 	});
-
 });
 
 
