@@ -294,11 +294,15 @@ But you can also use "patch:attribute" for clarity:
       
       <setting name="NLM.ExportPath" value="${NLM.ExportPath}" />
 
-      <setting name="Taxonomy.SubjectPath" value="/sitecore/content/{0}/vertical globals/taxonomy/subjects"></setting>
+      <setting name="Taxonomy.SubjectPath" value="/sitecore/content/pharma/vertical globals/taxonomy/subjects"></setting>
       <setting name="Taxonomy.RegionPath" value="/sitecore/content/environment globals/taxonomy/regions"></setting>
-      <setting name="Taxonomy.AreaPath" value="/sitecore/content/{0}/vertical globals/taxonomy/therapy areas"></setting>
+      <setting name="Taxonomy.AreaPath" value="/sitecore/content/pharma/vertical globals/taxonomy/therapy areas"></setting>
       <setting name="Taxonomy.IndustryPath" value="/sitecore/content/{0}/vertical globals/taxonomy/industries"></setting>
-      <setting name="Taxonomy.DeviceAreaPath" value="/sitecore/content/{0}/vertical globals/taxonomy/device areas"></setting>
+      <setting name="Taxonomy.DeviceAreaPath" value="/sitecore/content/pharma/vertical globals/taxonomy/device areas"></setting>
+      <setting name="Taxonomy.Commercial" value="/sitecore/content/agri/vertical globals/taxonomy/commercial"></setting>
+      <setting name="Taxonomy.Commodity" value="/sitecore/content/agri/vertical globals/taxonomy/commodity"></setting>
+      <setting name="Taxonomy.CommodityFactors" value="/sitecore/content/agri/vertical globals/taxonomy/commodity factors"></setting>
+      <setting name="Taxonomy.Companies" value="/sitecore/content/agri/vertical globals/taxonomy/companies"></setting>
       <setting name="Search.NewerArticlesBoosting.Enabled" value="${Search.NewerArticlesBoosting.Enabled}" />
       <setting name="Search.NewerArticlesBoosting.BoostFunction" value="${Search.NewerArticlesBoosting.BoostFunction}" />
     </settings>
