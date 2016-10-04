@@ -142,6 +142,14 @@
 	}
 }
 
+.tablesorter-headerAsc .sorting-arrows__arrow--up{
+	fill: #be1e2d;
+}
+
+.tablesorter-headerDesc .sorting-arrows__arrow--down{
+	fill: #be1e2d;
+}
+
 @include breakpoint('small') {
 	font-size: 15px;
 	.hidden-xs{

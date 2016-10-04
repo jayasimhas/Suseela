@@ -11,6 +11,7 @@
 			color: $color-zeus-black;
 			margin-bottom: 0.75rem;
 			font-size: 1.5em;
+			line-height:30px;
 		}
 		margin-bottom: 0.75rem;
 	}
@@ -23,6 +24,11 @@
 			border-top: 1px solid $color-light-gray;
 			float: left;
 			.job_logo{
+				@include breakpoint('small'){
+					width: 100%;
+					display: block;
+					float: none;
+				}
 				width: 20%;
 				float: left;
 				img{
@@ -37,9 +43,9 @@
 					h3{
 					  font-family: 'Roboto Condensed';
 					  font-style: normal;
-					  font-weight: 400;
+					  font-weight: 700;
 					  font-size: 1.875em;
-					  margin-bottom: 0.5em;
+					  margin-bottom: 0.3em;
 					 } 
 				}
 				.job_description_detail{

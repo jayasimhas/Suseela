@@ -2248,7 +2248,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     color: #231f20;
     margin-bottom: 12px;
     margin-bottom: 0.75rem;
-    font-size: 1.5em; }
+    font-size: 1.5em;
+    line-height: 30px; }
 
 .job_listing .stacked_job_view {
   clear: both;
@@ -2261,6 +2262,11 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     .job_listing .stacked_job_view .job_list_individual .job_logo {
       width: 20%;
       float: left; }
+      @media (max-width: 480px) {
+        .job_listing .stacked_job_view .job_list_individual .job_logo {
+          width: 100%;
+          display: block;
+          float: none; } }
       .job_listing .stacked_job_view .job_list_individual .job_logo img {
         width: 100%; }
     .job_listing .stacked_job_view .job_list_individual .job_description {
@@ -2271,9 +2277,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title {
         font-family: 'Roboto Condensed';
         font-style: normal;
-        font-weight: 400;
+        font-weight: 700;
         font-size: 1.875em;
-        margin-bottom: 0.5em; }
+        margin-bottom: 0.3em; }
       .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail span {
         font-family: 'PT Serif';
         font-style: normal;
@@ -4670,6 +4676,12 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 
 #purchases .purrow {
   border-top: 1px solid #d2d4d3; }
+
+.tablesorter-headerAsc .sorting-arrows__arrow--up {
+  fill: #be1e2d; }
+
+.tablesorter-headerDesc .sorting-arrows__arrow--down {
+  fill: #be1e2d; }
 
 @media (max-width: 480px) {
   font-size: 15px;
