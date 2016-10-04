@@ -24,6 +24,8 @@ $.fn.sortElements = (function(){
 	
 $(function(){
 	$('#mySubscriptionTab').tablesorter(); 
+	$('#mypurchases').tablesorter(); 
+	
 	table=$("table")   
 	$('#publicationtd, #subjecttd, #expDatetd').each(function(){
 	  var th = $(this),
@@ -79,5 +81,30 @@ $(function(){
 				
 			  
 		  });
-	  });		  
+	  });
+
+	/******** accordian script **********/
+	$('.accordian', '.parent').click(function(){
+		var $this = $(this), parentrow = $this.closest('.parent'), parentCls = parentrow.attr('class'), getrowCls = parentCls.replace(/parent /ig, '').replace('hidden-xs', '').replace('active', '').replace(/ /ig, ''), setchildCls = getrowCls.substr(1);
+		if(!$this.hasClass('active')){
+			parentrow.find('.accordian').addClass('active');
+			$('.child.'+ setchildCls).addClass('hiderow');
+		}
+		else{
+			parentrow.find('.accordian').removeClass('active');
+			$('.child.'+ setchildCls).removeClass('hiderow');
+		}
+	});
+	
+	$('.maintitle').click(function(){
+		var $this = $(this), td = $this.closest('td'), subjectsPan = td.find('.subjects');
+		if(!$this.hasClass('active')){
+			subjectsPan.removeClass('hiderow');
+			$this.addClass('active');
+		}
+		else{
+			subjectsPan.addClass('hiderow');
+			$this.removeClass('active');
+		}
+	});
   });
