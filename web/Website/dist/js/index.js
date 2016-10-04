@@ -1002,38 +1002,7 @@ $(document).ready(function () {
 	});
 });
 
-},{"../controllers/analytics-controller":9,"../controllers/form-controller":11,"../jscookie":19}],7:[function(require,module,exports){
-'use strict';
-
-$(function () {
-	$('.accordian', '.subjectsAct').click(function () {
-		var $this = $(this),
-		    tablerow = $this.closest('.tablerow'),
-		    subjectsPan = $this.closest('.subjectsAct').find('.subjects');
-		if (!$this.hasClass('active')) {
-			tablerow.find('.accordian').addClass('active');
-			subjectsPan.removeClass('hide');
-		} else {
-			tablerow.find('.accordian').removeClass('active');
-			subjectsPan.addClass('hide');
-		}
-	});
-
-	$('.maintitle').click(function () {
-		var $this = $(this),
-		    subjectsAct = $this.closest('.subjectsAct'),
-		    subjectsPan = subjectsAct.find('.subjects');
-		if (!$this.hasClass('active')) {
-			subjectsPan.removeClass('hide');
-			$this.addClass('active');
-		} else {
-			subjectsPan.addClass('hide');
-			$this.removeClass('active');
-		}
-	});
-});
-
-},{}],8:[function(require,module,exports){
+},{"../controllers/analytics-controller":8,"../controllers/form-controller":10,"../jscookie":18}],7:[function(require,module,exports){
 'use strict';
 
 var INFORMA = window.INFORMA || {};
@@ -1102,7 +1071,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
 })(undefined, Zepto, 'INFORMA');
 Zepto(INFORMA.videoMini.init());
 
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 // * * *
 //  ANALYTICS CONTROLLER
 //  For ease-of-use, better DRY, better prevention of JS errors when ads are blocked
@@ -1121,7 +1090,7 @@ function analyticsEvent(dataObj) {
 
 exports.analyticsEvent = analyticsEvent;
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /* globals analytics_data */
 'use strict';
 
@@ -1209,7 +1178,7 @@ function bookmarkController() {
 exports['default'] = bookmarkController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":9}],11:[function(require,module,exports){
+},{"./analytics-controller":8}],10:[function(require,module,exports){
 /*
 
 opts.observe — Form element(s) to observe
@@ -1376,7 +1345,7 @@ function formController(opts) {
 exports['default'] = formController;
 module.exports = exports['default'];
 
-},{}],12:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /* global angular */
 'use strict';
 
@@ -1444,7 +1413,7 @@ function lightboxModalController() {
 exports['default'] = lightboxModalController;
 module.exports = exports['default'];
 
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1722,7 +1691,7 @@ function popOutController(triggerElm) {
 exports['default'] = popOutController;
 module.exports = exports['default'];
 
-},{}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1847,7 +1816,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":9}],15:[function(require,module,exports){
+},{"./analytics-controller":8}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2065,7 +2034,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":9}],16:[function(require,module,exports){
+},{"./analytics-controller":8}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2382,7 +2351,7 @@ function sortableTableController() {
 exports['default'] = sortableTableController;
 module.exports = exports['default'];
 
-},{}],17:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 /* global tooltipController */
 
 "use strict";
@@ -2573,7 +2542,7 @@ function createPopup(initialState) {
 
 module.exports = exports["default"];
 
-},{"../calculatePopupOffsets.js":2}],18:[function(require,module,exports){
+},{"../calculatePopupOffsets.js":2}],17:[function(require,module,exports){
 /* global angular, analytics_data */
 
 // THIRD-PARTY / VENDOR
@@ -2653,8 +2622,6 @@ require('./components/article-sidebar-component');
 require('./components/save-search-component');
 
 require('./components/myview-settings');
-
-require('./components/subscription');
 
 // OTHER CODE
 
@@ -3683,7 +3650,7 @@ $(document).ready(function () {
     });
 });
 
-},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/myview-settings":5,"./components/save-search-component":6,"./components/subscription":7,"./components/video-mini":8,"./controllers/analytics-controller":9,"./controllers/bookmark-controller":10,"./controllers/form-controller":11,"./controllers/lightbox-modal-controller":12,"./controllers/pop-out-controller":13,"./controllers/register-controller":14,"./controllers/reset-password-controller":15,"./controllers/sortable-table-controller":16,"./controllers/tooltip-controller":17,"./jscookie":19,"./modal":20,"./newsletter-signup":21,"./search-page.js":22,"./selectivity-full":23,"./svg4everybody":24,"./toggle-icons":25,"./zepto.dragswap":26,"./zepto.min":27}],19:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/myview-settings":5,"./components/save-search-component":6,"./components/video-mini":7,"./controllers/analytics-controller":8,"./controllers/bookmark-controller":9,"./controllers/form-controller":10,"./controllers/lightbox-modal-controller":11,"./controllers/pop-out-controller":12,"./controllers/register-controller":13,"./controllers/reset-password-controller":14,"./controllers/sortable-table-controller":15,"./controllers/tooltip-controller":16,"./jscookie":18,"./modal":19,"./newsletter-signup":20,"./search-page.js":21,"./selectivity-full":22,"./svg4everybody":23,"./toggle-icons":24,"./zepto.dragswap":25,"./zepto.min":26}],18:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -3824,7 +3791,7 @@ $(document).ready(function () {
 	return init(function () {});
 });
 
-},{}],20:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
@@ -4132,7 +4099,7 @@ $(document).ready(function () {
   });
 })($);
 
-},{}],21:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 /* global analytics_data */
 
 'use strict';
@@ -4209,7 +4176,7 @@ function newsletterSignupController() {
 exports['default'] = newsletterSignupController;
 module.exports = exports['default'];
 
-},{"./controllers/analytics-controller":9}],22:[function(require,module,exports){
+},{"./controllers/analytics-controller":8}],21:[function(require,module,exports){
 'use strict';
 
 var SearchScript = (function () {
@@ -4221,7 +4188,7 @@ var SearchScript = (function () {
 	});
 })();
 
-},{}],23:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -5246,7 +5213,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],24:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 "use strict";
 
 !(function (root, factory) {
@@ -5351,7 +5318,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
     return svg4everybody;
 });
 
-},{}],25:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -5368,7 +5335,7 @@ var toggleIcons = function toggleIcons(container) {
 
 exports.toggleIcons = toggleIcons;
 
-},{}],26:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 /*!
  * Zepto HTML5 Drag and Drop Sortable
  * Author: James Doyle(@james2doyle) http://ohdoylerules.com
@@ -5598,7 +5565,7 @@ exports.toggleIcons = toggleIcons;
     };
 })(Zepto);
 
-},{}],27:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 "use strict";
 
@@ -6337,7 +6304,7 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}]},{},[18])
+},{}]},{},[17])
 
 
 //# sourceMappingURL=index.js.map
