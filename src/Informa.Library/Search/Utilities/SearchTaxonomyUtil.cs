@@ -4,6 +4,9 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Sitecore.Configuration;
 using Velir.Search.Core.Reference;
 using System.Web;
+using Sitecore.Data.Items;
+using Sitecore.Data;
+using System.Linq;
 
 namespace Informa.Library.Search.Utilities
 {
@@ -17,14 +20,29 @@ namespace Informa.Library.Search.Utilities
 
 		public static string GetSearchUrl(params ITaxonomy_Item[] taxonomyItems)
 		{
-			var dict = new Dictionary<string,string>();
+            Item rootItem = null;
+            Item currentItem = null;
+            if (taxonomyItems.Length > 0)
+            {
+                if (Sitecore.Context.ContentDatabase != null)
+                {
+                    currentItem = Sitecore.Context.ContentDatabase.GetItem(new ID(taxonomyItems[0]._Id));
+                }
+                else if(Sitecore.Context.Database != null)
+                {
+                    currentItem = Sitecore.Context.Database.GetItem(new ID(taxonomyItems[0]._Id));
+                }
+                rootItem = currentItem.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == "{DE3615F6-1562-4CB4-80EA-7FA45F49B7B7}");
+            }
+            var dict = new Dictionary<string,string>();
 			foreach (var item in taxonomyItems)
 			{
-				string parentPath = item._Parent._Path;
+                string parentPath = item._Parent._Path;
 				string key = string.Empty;
+                string verticalName = (rootItem != null) ? rootItem.Name : string.Empty;
 
 				//Subject
-				if (IsSubjectTaxonomy(parentPath))
+				if (IsSubjectTaxonomy(parentPath, verticalName))
 				{
 					key = Subjects;
 				}
@@ -36,19 +54,19 @@ namespace Informa.Library.Search.Utilities
 				}
 
 				//Area
-				if (IsAreaTaxonomy(parentPath))
+				if (IsAreaTaxonomy(parentPath, verticalName))
 				{
 					key = Areas;
 				}
 
 				//Industry
-				if (IsIndustryTaxonomy(parentPath))
+				if (IsIndustryTaxonomy(parentPath, verticalName))
 				{
 					key = Industries;
 				}
 
 				//Device Area
-				if (IsDeviceAreaTaxonomy(parentPath))
+				if (IsDeviceAreaTaxonomy(parentPath, verticalName))
 				{
 					key = DeviceAreas;
 				}
@@ -69,35 +87,35 @@ namespace Informa.Library.Search.Utilities
 				url.AppendFormat("{0}={1}", pair.Key, pair.Value);
 			}
 			
-			return $"/search#?{HttpUtility.UrlEncode(url.ToString())}";
+			return $"/search#?{url.ToString()}";
 		}
 
-		public static bool IsSubjectTaxonomy(string itemPath)
+		public static bool IsSubjectTaxonomy(string itemPath, string verticlaName)
 		{
 			return itemPath.ToLower()
-					.StartsWith(Settings.GetSetting("Taxonomy.SubjectPath"));
+					.StartsWith(string.Format(Settings.GetSetting("Taxonomy.SubjectPath"), verticlaName).ToLower());
 		}
 		public static bool IsRegionTaxonomy(string itemPath)
 		{
 			return itemPath.ToLower()
 					.StartsWith(Settings.GetSetting("Taxonomy.RegionPath"));
 		}
-		public static bool IsAreaTaxonomy(string itemPath)
+		public static bool IsAreaTaxonomy(string itemPath, string verticalName)
 		{
 			return itemPath.ToLower()
-					.StartsWith(Settings.GetSetting("Taxonomy.AreaPath"));
+					.StartsWith(string.Format(Settings.GetSetting("Taxonomy.AreaPath"), verticalName).ToLower());
 		}
 
-		public static bool IsIndustryTaxonomy(string itemPath)
+		public static bool IsIndustryTaxonomy(string itemPath, string verticalName)
 		{
 			return itemPath.ToLower()
-					.StartsWith(Settings.GetSetting("Taxonomy.IndustryPath"));
+					.StartsWith(string.Format(Settings.GetSetting("Taxonomy.IndustryPath"), verticalName).ToLower());
 		}
 
-		public static bool IsDeviceAreaTaxonomy(string itemPath)
+		public static bool IsDeviceAreaTaxonomy(string itemPath, string verticalName)
 		{
 			return itemPath.ToLower()
-					.StartsWith(Settings.GetSetting("Taxonomy.DeviceAreaPath"));
+					.StartsWith(string.Format(Settings.GetSetting("Taxonomy.DeviceAreaPath"), verticalName).ToLower());
 		}
 		
 		 public static IEnumerable<string> GetHierarchicalFacetFieldValue(IEnumerable<ITaxonomy_Item> taxonomyItems)

@@ -294,11 +294,11 @@ But you can also use "patch:attribute" for clarity:
       
       <setting name="NLM.ExportPath" value="${NLM.ExportPath}" />
 
-      <setting name="Taxonomy.SubjectPath" value="/sitecore/content/environment globals/taxonomy/subjects"></setting>
+      <setting name="Taxonomy.SubjectPath" value="/sitecore/content/{0}/vertical globals/taxonomy/subjects"></setting>
       <setting name="Taxonomy.RegionPath" value="/sitecore/content/environment globals/taxonomy/regions"></setting>
-      <setting name="Taxonomy.AreaPath" value="/sitecore/content/environment globals/taxonomy/therapy areas"></setting>
-      <setting name="Taxonomy.IndustryPath" value="/sitecore/content/environment globals/taxonomy/industries"></setting>
-      <setting name="Taxonomy.DeviceAreaPath" value="/sitecore/content/environment globals/taxonomy/device areas"></setting>
+      <setting name="Taxonomy.AreaPath" value="/sitecore/content/{0}/vertical globals/taxonomy/therapy areas"></setting>
+      <setting name="Taxonomy.IndustryPath" value="/sitecore/content/{0}/vertical globals/taxonomy/industries"></setting>
+      <setting name="Taxonomy.DeviceAreaPath" value="/sitecore/content/{0}/vertical globals/taxonomy/device areas"></setting>
       <setting name="Search.NewerArticlesBoosting.Enabled" value="${Search.NewerArticlesBoosting.Enabled}" />
       <setting name="Search.NewerArticlesBoosting.BoostFunction" value="${Search.NewerArticlesBoosting.BoostFunction}" />
     </settings>

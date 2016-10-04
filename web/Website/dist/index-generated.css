@@ -2234,6 +2234,35 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   .show .informa-ribbon__title {
     background-position: bottom center; }
 
+.job_listing .sub-heading-text span {
+  font-family: "PT Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #58595b;
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
+  font-size: 1.5em; }
+
+.job_listing .stacked_job_view {
+  clear: both;
+  width: 100%; }
+  .job_listing .stacked_job_view .job_list_individual {
+    width: 100%;
+    padding: 1em;
+    border-top: 1px solid #d1d3d4; }
+    .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title {
+      font-family: 'Roboto Condensed';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.875em; }
+    .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail span {
+      font-family: 'PT Serif';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.125em;
+      line-height: 20px;
+      color: #58595b; }
+
 .landscape-image-component {
   margin-bottom: 32px;
   margin-bottom: 2rem;
@@ -3130,8 +3159,9 @@ header .header-account-access {
   width: 100%;
   background: #f1f2f2;
   clear: both;
-  border-top: 2px solid #be1e2d;
-  padding: 15px;
+  border-top: 4px solid #be1e2d;
+  padding: 28px 32px;
+  padding: 1.75rem 2rem;
   position: relative;
   float: left;
   line-height: 20px;
@@ -3198,9 +3228,10 @@ header .header-account-access {
   line-height: 20px;
   width: 80%;
   clear: both;
-  border-top: 2px solid #be1e2d;
+  border-top: 4px solid #be1e2d;
   border-bottom: 1px solid #be1e2d;
-  padding: 1em;
+  padding: 28px 32px;
+  padding: 1.75rem 2rem;
   margin-bottom: 1em; }
   .messaging_webUsers_white .msg_dismiss {
     text-transform: uppercase;
