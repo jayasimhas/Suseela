@@ -88,6 +88,7 @@
                     <asp:Button ID="btnImport" Text="Run Import" OnClick="btnImport_Click" runat="server" BackColor="#474747" ForeColor="White" BorderWidth="0" Width="100px" Height="30px"  />
 					<asp:Button ID="btnMediaImport" Text="Run Media Import" OnClick="btnMediaImport_Click" runat="server" BackColor="#474747" ForeColor="White" BorderWidth="0" Width="120px" Height="30px"  />
                     <asp:Button ID="btnPostImport" Text="Run Post Import Cleanup" OnClick="btnPostImport_Click" runat="server" BackColor="#474747" ForeColor="White" BorderWidth="0" Width="150px" Height="30px" />
+                    <asp:Button ID="btnPublishImported" Text="Publish Imported Items" OnClick="btnPublishImported_Click" runat="server" BackColor="#474747" ForeColor="White" BorderWidth="0" Width="150px" Height="30px" />
                 </div>
                 <div class="rowSpacer"></div>
                 <div class="formRow">

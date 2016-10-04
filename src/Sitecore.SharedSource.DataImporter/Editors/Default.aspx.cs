@@ -288,9 +288,67 @@ namespace Sitecore.SharedSource.DataImporter.Editors
             WriteLogs(l);
         }
 
-        #endregion Post Import
+		#endregion Post Import
 
-        public IEnumerable<Sitecore.Jobs.Job> Jobs
+		#region Publish Items
+		protected void btnPublishImported_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				//check import item
+				if (importItem == null)
+				{
+					Log("Error", "Import item is null");
+					txtMessage.Text = log.ToString();
+					return;
+				}
+
+				//check handler assembly
+				TextField wh = importItem.Fields["Import To Where"];
+				if (wh == null || string.IsNullOrEmpty(wh.Value))
+				{
+					Log("Error", "Import To Where is not defined");
+					txtMessage.Text = log.ToString();
+					return;
+				}
+
+				var jobOptions = new Sitecore.Jobs.JobOptions(
+									"PublishImportedItems",
+									"Publish Imported Items",
+									Sitecore.Context.Site.Name,
+									this,
+									"HandlePublishItems",
+									new object[] { new ID(new Guid(wh.Value)) });
+
+				Sitecore.Jobs.JobManager.Start(jobOptions);
+
+				repJobs.DataSource = Jobs;
+				repJobs.DataBind();
+			}
+			catch (Exception ex)
+			{ }
+		}
+
+		protected void HandlePublishItems(ID importToWhereID)
+		{
+			var item = Sitecore.Context.ContentDatabase.GetItem(importToWhereID);
+			if (item == null)
+			{
+				Log("Error", "Import To Where is not valid");
+				txtMessage.Text = log.ToString();
+				return;
+			}
+
+			DefaultLogger l = new DefaultLogger();
+			PublishImportedItems p = new PublishImportedItems(l, item);
+			p.Publish();
+
+			WriteLogs(l);
+		}
+
+		#endregion
+
+		public IEnumerable<Sitecore.Jobs.Job> Jobs
         {
             get
             {

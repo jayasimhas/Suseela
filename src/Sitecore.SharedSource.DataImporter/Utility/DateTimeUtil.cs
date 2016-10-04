@@ -11,8 +11,8 @@ namespace Sitecore.SharedSource.DataImporter.Utility
     {
         public static bool ParseInformaDate(string value, out DateTime date)
         {
-            return DateTime.TryParseExact(value, new string[] {"yyyy-MM-ddTHH:mm:ss", "d/M/yyyy", "d/M/yyyy HH:mm:ss", "yyyyMMddThhmmss" },
-                CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
-        }
+			return DateTime.TryParseExact(value, new string[] { "yyyy-MM-dd HH:mm:ss", "yyyy-MM-ddTHH:mm:ss", "d/M/yyyy", "d/M/yyyy HH:mm:ss", "d/M/yyyy HH:mm:ss.fff", "yyyy-MM-dd HH:mm:ss.f", "yyyyMMdd", "yyMMdd", "yyyy" },
+						   CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
+		}
     }
 }
