@@ -14,10 +14,7 @@ namespace Informa.Library.Search.ComputedFields.Facets
 		{
 			if (glassItem?.Taxonomies != null)
 			{
-                Item item = Sitecore.Context.ContentDatabase.GetItem(new ID(glassItem._Id));
-
-                var rootItem = item.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == "{DE3615F6-1562-4CB4-80EA-7FA45F49B7B7}");
-                var taxonomyItems = glassItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsDeviceAreaTaxonomy(x._Path, rootItem.Name));
+                var taxonomyItems = glassItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsDeviceAreaTaxonomy(x._Path));
 
 				return taxonomyItems.Where(x => !string.IsNullOrEmpty(x.Item_Name)).Select(x => x.Item_Name.Trim()).ToList();
 			}

@@ -14,11 +14,7 @@ namespace Informa.Library.Search.ComputedFields.Facets
 		{
 			if (indexItem?.Taxonomies != null)
 			{
-                Item item = Sitecore.Context.ContentDatabase.GetItem(new ID(indexItem._Id));
-
-                var rootItem = item.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == "{DE3615F6-1562-4CB4-80EA-7FA45F49B7B7}");
-
-                var areaTaxonomyItems = indexItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsAreaTaxonomy(x._Path, rootItem.Name));
+                var areaTaxonomyItems = indexItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsAreaTaxonomy(x._Path));
 
                 return SearchTaxonomyUtil.GetHierarchicalFacetFieldValue(areaTaxonomyItems);
             }

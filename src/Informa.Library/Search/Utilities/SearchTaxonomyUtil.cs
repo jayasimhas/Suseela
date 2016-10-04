@@ -17,8 +17,12 @@ namespace Informa.Library.Search.Utilities
 		private const string Areas = "areas";
 		private const string Industries = "industries";
 		private const string DeviceAreas = "deviceareas";
+        private const string Commercial = "commercial";
+        private const string Commodity = "commodity";
+        private const string CommodityFactors = "commodityfactors";
+        private const string Companies = "companies";
 
-		public static string GetSearchUrl(params ITaxonomy_Item[] taxonomyItems)
+        public static string GetSearchUrl(params ITaxonomy_Item[] taxonomyItems)
 		{
             Item rootItem = null;
             Item currentItem = null;
@@ -42,7 +46,7 @@ namespace Informa.Library.Search.Utilities
                 string verticalName = (rootItem != null) ? rootItem.Name : string.Empty;
 
 				//Subject
-				if (IsSubjectTaxonomy(parentPath, verticalName))
+				if (IsSubjectTaxonomy(parentPath))
 				{
 					key = Subjects;
 				}
@@ -54,7 +58,7 @@ namespace Informa.Library.Search.Utilities
 				}
 
 				//Area
-				if (IsAreaTaxonomy(parentPath, verticalName))
+				if (IsAreaTaxonomy(parentPath))
 				{
 					key = Areas;
 				}
@@ -66,12 +70,32 @@ namespace Informa.Library.Search.Utilities
 				}
 
 				//Device Area
-				if (IsDeviceAreaTaxonomy(parentPath, verticalName))
+				if (IsDeviceAreaTaxonomy(parentPath))
 				{
 					key = DeviceAreas;
 				}
 
-				if (dict.ContainsKey(key))
+                if(IsCommercialTaxonomy(parentPath))
+                {
+                    key = Commercial;
+                }
+
+                if (IsCommodityTaxonomy(parentPath))
+                {
+                    key = Commodity;
+                }
+
+                if (IsCommodityFactorsTaxonomy(parentPath))
+                {
+                    key = CommodityFactors;
+                }
+
+                if (IsCompaniesTaxonomy(parentPath))
+                {
+                    key = Companies;
+                }
+
+                if (dict.ContainsKey(key))
 				{
 					dict[key] = $"{dict[key]}{SiteSettings.ValueSeparator}{item.Item_Name}";
 				}
@@ -90,20 +114,20 @@ namespace Informa.Library.Search.Utilities
 			return $"/search#?{url.ToString()}";
 		}
 
-		public static bool IsSubjectTaxonomy(string itemPath, string verticlaName)
+		public static bool IsSubjectTaxonomy(string itemPath)
 		{
 			return itemPath.ToLower()
-					.StartsWith(string.Format(Settings.GetSetting("Taxonomy.SubjectPath"), verticlaName).ToLower());
+					.StartsWith(Settings.GetSetting("Taxonomy.SubjectPath").ToLower());
 		}
 		public static bool IsRegionTaxonomy(string itemPath)
 		{
 			return itemPath.ToLower()
 					.StartsWith(Settings.GetSetting("Taxonomy.RegionPath"));
 		}
-		public static bool IsAreaTaxonomy(string itemPath, string verticalName)
+		public static bool IsAreaTaxonomy(string itemPath)
 		{
 			return itemPath.ToLower()
-					.StartsWith(string.Format(Settings.GetSetting("Taxonomy.AreaPath"), verticalName).ToLower());
+					.StartsWith(Settings.GetSetting("Taxonomy.AreaPath").ToLower());
 		}
 
 		public static bool IsIndustryTaxonomy(string itemPath, string verticalName)
@@ -112,13 +136,34 @@ namespace Informa.Library.Search.Utilities
 					.StartsWith(string.Format(Settings.GetSetting("Taxonomy.IndustryPath"), verticalName).ToLower());
 		}
 
-		public static bool IsDeviceAreaTaxonomy(string itemPath, string verticalName)
+		public static bool IsDeviceAreaTaxonomy(string itemPath)
 		{
 			return itemPath.ToLower()
-					.StartsWith(string.Format(Settings.GetSetting("Taxonomy.DeviceAreaPath"), verticalName).ToLower());
+					.StartsWith(Settings.GetSetting("Taxonomy.DeviceAreaPath").ToLower());
 		}
-		
-		 public static IEnumerable<string> GetHierarchicalFacetFieldValue(IEnumerable<ITaxonomy_Item> taxonomyItems)
+
+        public static bool IsCommercialTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower()
+                    .StartsWith(Settings.GetSetting("Taxonomy.Commercial").ToLower());
+        }
+
+        public static bool IsCommodityTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.Commodity").ToLower());
+        }
+
+        public static bool IsCommodityFactorsTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.CommodityFactors").ToLower());
+        }
+
+        public static bool IsCompaniesTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.Companies").ToLower());
+        }
+
+        public static IEnumerable<string> GetHierarchicalFacetFieldValue(IEnumerable<ITaxonomy_Item> taxonomyItems)
         {
             List<string> fullTaxonomyList =new List<string>();
 
