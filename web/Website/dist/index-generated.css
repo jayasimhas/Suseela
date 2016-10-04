@@ -2234,14 +2234,21 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   .show .informa-ribbon__title {
     background-position: bottom center; }
 
-.job_listing .sub-heading-text span {
-  font-family: "PT Serif", Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  color: #58595b;
+.job_listing h1 {
   margin-bottom: 12px;
-  margin-bottom: 0.75rem;
-  font-size: 1.5em; }
+  margin-bottom: 0.75rem; }
+
+.job_listing .sub-heading-text {
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem; }
+  .job_listing .sub-heading-text span {
+    font-family: "PT Serif", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: #231f20;
+    margin-bottom: 12px;
+    margin-bottom: 0.75rem;
+    font-size: 1.5em; }
 
 .job_listing .stacked_job_view {
   clear: both;
@@ -2249,19 +2256,31 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   .job_listing .stacked_job_view .job_list_individual {
     width: 100%;
     padding: 1em;
-    border-top: 1px solid #d1d3d4; }
-    .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title {
-      font-family: 'Roboto Condensed';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 1.875em; }
-    .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail span {
-      font-family: 'PT Serif';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 1.125em;
-      line-height: 20px;
-      color: #58595b; }
+    border-top: 1px solid #d1d3d4;
+    float: left; }
+    .job_listing .stacked_job_view .job_list_individual .job_logo {
+      width: 20%;
+      float: left; }
+      .job_listing .stacked_job_view .job_list_individual .job_logo img {
+        width: 100%; }
+    .job_listing .stacked_job_view .job_list_individual .job_description {
+      float: left;
+      width: 70%;
+      margin-left: 32px;
+      margin-left: 2rem; }
+      .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title {
+        font-family: 'Roboto Condensed';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.875em;
+        margin-bottom: 0.5em; }
+      .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail span {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.125em;
+        line-height: 20px;
+        color: #58595b; }
 
 .landscape-image-component {
   margin-bottom: 32px;
@@ -5143,11 +5162,11 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     font-size: 1.5em; }
   .data-tool-placeholder .data-tool-graph {
     width: 100%;
-    clear: both;
-    height: 600px; }
+    clear: both; }
 
 .data-tool-placeholder-right-rail {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 1.75em; }
   .data-tool-placeholder-right-rail h3.data-tool-heading, .data-tool-placeholder-right-rail .data-tool-heading.article-call-to-action__title {
     font-family: "Roboto Condensed", Arial Narrow, sans-serif;
     font-style: normal;
@@ -5155,9 +5174,10 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     font-size: 1.125em; }
   .data-tool-placeholder-right-rail .data-tool-graph {
     width: 100%;
-    height: 600px; }
+    clear: both; }
   .data-tool-placeholder-right-rail p {
-    margin-top: 20px; }
+    margin-top: 20px;
+    clear: both; }
     .data-tool-placeholder-right-rail p a, .data-tool-placeholder-right-rail p .pop-out__reset-password, .data-tool-placeholder-right-rail p .sortable-table__list-toggler, .data-tool-placeholder-right-rail p .mobile-table-exit {
       color: #bb1528;
       font-family: "Roboto", Arial Narrow, sans-serif;
