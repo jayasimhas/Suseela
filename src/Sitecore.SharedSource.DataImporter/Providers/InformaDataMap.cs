@@ -110,7 +110,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 if (!string.IsNullOrEmpty(imageTitleHtml))
                 {
-                    bodyTitleHtml= bodyTitleHtml + imageTitleHtml;
+                    bodyTitleHtml = imageTitleHtml + bodyTitleHtml ;
                 }
 
                 string binaryTitleHtml = GetXMLData(d, "BINARY");
@@ -127,8 +127,26 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 //autonomy fields
                 string autFile = $@"{this.Query}\..\Autonomy\{curFileName}";
 
-                 List<string> autNodes = new List<string>() { "CATEGORY", "COMPANY", "STORYUPDATE", "SECTION", "COUNTRY", "KEYWORD", "THERAPY_SECTOR", "TREATABLE_CONDITION" };
-                  //if no autonomy file then fill fields with empty
+                 List<string> autNodes = new List<string>() { "CATEGORY", "COMPANY", "STORYUPDATE", "SECTION", "KEYWORD"  };
+                //List<string> autNodes = new List<string>() { "CATEGORY", "COMPANY", "STORYUPDATE", "SECTION", "COUNTRY", "KEYWORD", "THERAPY_SECTOR", "TREATABLE_CONDITION" };
+                //if no autonomy file then fill fields with empty
+
+                //ao.Add("COUNTRY", "ANGOLA");
+                //ao.Add("COMMERCIAL", "Deals");
+                //ao.Add("COMMODITY", "BARLEY");
+                //ao.Add("COMPANIES", "2 Sisters Food Group");
+                //ao.Add("THERAPY_SECTOR", "AFGHANISTAN");
+                //ao.Add("TREATABLE_CONDITION", "AFGHANISTAN");
+
+                ao.Add("COUNTRY", "");
+                ao.Add("COMMERCIAL", "");
+                ao.Add("COMMODITY", "");
+                ao.Add("COMPANIES", "");
+                ao.Add("THERAPY_SECTOR", "");
+                ao.Add("TREATABLE_CONDITION", "");
+
+
+
                 if (!File.Exists(autFile))
                 {
                     Logger.Log("N/A", "File not found", ProcessStatus.NotFoundError, "File", autFile);
@@ -228,6 +246,16 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             int n = int.Parse(num);
             return n + 1;
         }
+
+
+
+
+
+
+
+
+
+
 
         public string GetXMLData(XmlDocument xd, string nodeName)
         {
@@ -492,4 +520,321 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
         #endregion Override Methods
     }
+
+    public class dataimport
+    {
+
+
+
+        public static readonly List<string> ContentType =
+              new List<string>()
+              {
+            "Analysis",
+            "News",
+            "Opinion",
+            "Interviews",
+            "Sponsored Content"
+              };
+
+        public static readonly List<string> MediaType =
+           new List<string>()
+           {
+         "Image",
+        "Audio",
+        "Video",
+        "Chart / Graph",
+        "Infographic",
+        "Timeline",
+        "Data Table",
+        "Webinars",
+        "Interactive Dashboards",
+        "Supporting Document"
+
+           };
+
+
+
+
+        public static readonly List<string> Region =
+           new List<string>() {
+           "Middle East & Africa",
+           "Afghanistan",
+"Algeria",
+"Angola",
+"Bahrain",
+"Benin",
+"Botswana",
+"Burkina Faso",
+"Burundi",
+"Cabo Verde",
+"Cameroon",
+"Central African Republic",
+"Chad",
+"Comoros",
+"Congo",
+"Congo (Democratic Republic)",
+"Côte d'Ivoire",
+"Djibouti",
+"Egypt",
+"Equatorial Guinea",
+"Eritrea",
+"Ethiopia",
+"Gabon",
+"Gambia",
+"Ghana",
+"Guinea",
+"Guinea-Bissau",
+"Iran",
+"Iraq",
+"Israel",
+"Jordan",
+"Kenya",
+"Kuwait",
+"Lebanon",
+"Lesotho",
+"Liberia",
+"Libya",
+"Madagascar",
+"Malawi",
+ "Mali",
+"Mauritania",
+"Mauritius",
+"Mayotte","Morocco",
+"Mozambique",
+"Namibia",
+"Niger",
+"Nigeria",
+"Oman",
+"Palestine",
+"Qatar",
+"Réunion",
+"Rwanda",
+"Saint Helena, Ascension and Tristan da Cunha",
+"Sao Tome and Principe",
+"Saudi Arabia",
+"Senegal",
+"Seychelles",
+"Sierra Leone",
+"Somalia",
+"South Africa",
+"South Sudan",
+"Sudan",
+"Swaziland",
+"Syria",
+"Tanzania",
+"Togo",
+"Tunisia",
+"Turkey",
+"Uganda",
+"United Arab Emirates",
+"Western Sahara",
+"Yemen",
+"Zambia",
+"Zimbabwe",
+
+
+"Asia Pacific",
+"American Samoa",
+"Australia",
+"Bangladesh",
+"Bhutan",
+"British Indian Ocean Territory",
+"Brunei Darussalam",
+"Cambodia",
+"China",
+"Christmas Island",
+"Cocos (Keeling) Islands",
+"Cook Islands",
+"Fiji",
+"French Polynesia",
+"Georgia",
+"Guam",
+"Heard Island and McDonald Islands",
+"Hong Kong",
+"India",
+"Indonesia",
+"Japan",
+"Kazakhstan",
+"Kiribati",
+"Kyrgyzstan",
+"Laos",
+"Macao",
+"Malaysia",
+"Maldives",
+"Marshall Islands",
+"Micronesia",
+"Mongolia",
+"Myanmar",
+"Nauru",
+"Nepal",
+"New Caledonia",
+"New Zealand",
+"Niue",
+"Norfolk Island",
+"North Korea",
+"Northern Mariana Islands",
+"Pakistan",
+"Palau",
+"Papua New Guinea",
+"Philippines",
+"Pitcairn",
+"Russian Federation",
+"Samoa",
+"Singapore",
+"Solomon Islands",
+"South Korea",
+"Sri Lanka",
+"Taiwan",
+"Tajikistan",
+"Thailand",
+"Timor-Leste",
+"Tokelau",
+"Tonga",
+"Turkmenistan",
+"Tuvalu",
+"Uzbekistan",
+"Vanuatu",
+"Vietnam",
+"Wallis and Futuna",
+
+
+"Europe",
+"Åland Islands",
+"Albania",
+"Andorra",
+"Armenia",
+"Austria",
+"Azerbaijan",
+"Belarus",
+"Belgium",
+"Bosnia And Herzegovina",
+"Bouvet Island",
+"Bulgaria",
+"Croatia",
+"Cyprus",
+"Czech Republic",
+"Denmark",
+"Estonia",
+"Faroe Islands",
+"Finland",
+"France",
+"Germany",
+"Gibraltar",
+"Greece",
+"Guernsey",
+"Holy See",
+"Hungary",
+"Iceland",
+"Ireland",
+"Isle of Man",
+"Italy",
+"Jersey",
+"Latvia",
+"Liechtenstein",
+"Lithuania",
+"Luxembourg",
+"Macedonia",
+"Malta",
+"Moldova",
+"Monaco",
+"Montenegro",
+"Netherlands",
+"Norway",
+"Poland",
+"Portugal",
+"Romania",
+"San Marino",
+"Serbia",
+"Slovakia",
+"Slovenia",
+"Spain",
+"Svalbard and Jan Mayen",
+"Sweden",
+"Switzerland",
+"Ukraine",
+"United Kingdom",
+
+
+
+"North America",
+"Anguilla",
+"Antigua And Barbuda",
+"Aruba",
+"Bahamas",
+"Barbados",
+"Belize",
+"Bermuda",
+"Bonaire, Sint Eustatius and Saba",
+"Canada",
+"Cayman Islands",
+"Costa Rica",
+"Cuba",
+"Curaçao",
+"Dominica",
+"Dominican Republic",
+"El Salvador",
+"Greenland",
+"Grenada",
+"Guadeloupe",
+"Guatemala",
+"Haiti",
+"Honduras",
+"Jamaica",
+"Martinique",
+"Mexico",
+"Montserrat",
+"Nicaragua",
+"Panama",
+"Puerto Rico",
+"Saint Barthélemy",
+"Saint Kitts and Nevis",
+"Saint Lucia",
+"Saint Martin (French)",
+"Saint Pierre and Miquelon",
+"Saint Vincent and the Grenadines",
+"Sint Maarten (Dutch)",
+"Trinidad And Tobago",
+"Turks and Caicos Islands",
+"United States",
+"United States Minor Outlying Islands",
+"Virgin Islands (British)",
+"Virgin Islands (U.S.)",
+
+"South America",
+"Argentina",
+"Bolivia",
+"Brazil",
+"Chile",
+"Colombia",
+"Ecuador",
+"Falkland Islands (Malvinas)",
+"French Guiana",
+"Guyana",
+"Paraguay",
+"Peru",
+"Suriname",
+"Uruguay",
+"Venezuela",
+
+"Antarctica",
+"Antarctica",
+"French Southern Territories",
+"South Georgia and the South Sandwich Islands"
+
+
+
+           };
+
+
+
+
+
+
+
+
+
+
+
+    }
+
 }

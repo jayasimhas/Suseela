@@ -3394,7 +3394,249 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 		};
 	}
 
-	#endregion
+
+    public class InformaListToCommodity : ListToGuid
+    {
+        public InformaListToCommodity(Item i) : base(i) { }
+
+        #region Methods
+
+        public override void FillField(IDataMap map, ref Item newItem, string importValue, string id = null)
+        {
+            if (string.IsNullOrEmpty(importValue))
+                return;
+
+            //get parent item of list to search
+            var sourceItems = GetSourceItems(newItem.Database);
+            if (sourceItems == null)
+                return;
+
+            Dictionary<string, string> d = GetMapping();
+
+            var values = importValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
+
+            foreach (var val in values)
+            {
+                string upperValue = val.ToUpper();
+                string transformValue = (d.ContainsKey(upperValue)) ? d[upperValue] : string.Empty;
+                if (string.IsNullOrEmpty(transformValue))
+                {
+                    map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
+                    continue;
+                }
+
+                string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
+                IEnumerable<Item> t = sourceItems.Where(c => c.DisplayName.Equals(cleanName));
+
+                //if you find one then store the id
+                if (!t.Any())
+                {
+                    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                    continue;
+                }
+
+                Field f = newItem.Fields[NewItemField];
+                if (f == null)
+                    continue;
+
+                string ctID = t.First().ID.ToString();
+                if (!f.Value.Contains(ctID))
+                    f.Value = (f.Value.Length > 0) ? $"{f.Value}|{ctID}" : ctID;
+            }
+        }
+
+        public virtual Dictionary<string, string> GetMapping()
+        {
+            Dictionary<string, string> d = new Dictionary<string, string>();
+            d.Add("GRAINS AND FEED", "Grains & Feed");
+            d.Add("BARLEY", "Barley");
+            d.Add("ANDORRA", "Andorra");
+            d.Add("ANGOLA", "Angola");
+            d.Add("ANGUILLA", "Anguilla");
+            d.Add("ANTIGUA AND BARBUDA", "Antigua And Barbuda");
+            d.Add("ARGENTINA", "Argentina");
+            d.Add("ARMENIA", "Armenia");
+            d.Add("ASIA PACIFIC", "Asia");
+            d.Add("AUSTRALIA", "Australia");
+            d.Add("AUSTRIA", "Austria");
+            d.Add("AZERBAIJAN", "Azerbaijan");
+            d.Add("BAHRAIN", "Bahrain");
+            d.Add("BANGLADESH", "Bangladesh");
+            d.Add("BARBADOS", "Barbados");
+            d.Add("BELARUS", "Belarus");
+            d.Add("BELGIUM", "Belgium");
+            d.Add("BELIZE", "Belize");
+            d.Add("BENIN", "Benin");
+            d.Add("BERMUDA", "Bermuda");
+            d.Add("BHUTAN", "Bhutan");
+            d.Add("BOLIVIA", "Bolivia");
+            d.Add("BOSNIA AND HERZEGOVINA", "Bosnia And Herzegovina");
+            d.Add("BOTSWANA", "Botswana");
+            d.Add("BRAZIL", "Brazil");
+            d.Add("BRUNEI DARUSSALAM", "Brunei Darussalam");
+            d.Add("BULGARIA", "Bulgaria");
+            d.Add("BURKINA FASO", "Burkina Faso");
+            d.Add("BURUNDI", "Burundi");
+            d.Add("CAMBODIA", "Cambodia");
+            d.Add("CAMEROON", "Cameroon");
+            d.Add("CANADA", "Canada");
+            d.Add("CAPE VERDE", "Cape Verde");
+            d.Add("CAYMAN ISLANDS", "Cayman Islands");
+            d.Add("CENTRAL AFRICAN REPUBLIC", "Central African Republic");
+            d.Add("CHAD", "Chad");
+            d.Add("CHILE", "Chile");
+            d.Add("CHINA", "China");
+            d.Add("COLOMBIA", "Colombia");
+            d.Add("COSTA RICA", "Costa Rica");
+            d.Add("COTE DIVOIRE", "Cote Divoire");
+            d.Add("CROATIA", "Croatia");
+            d.Add("CUBA", "Cuba");
+            d.Add("CYPRUS", "Cyprus");
+            d.Add("CZECH REPUBLIC", "Czech Republic");
+            d.Add("DENMARK", "Denmark");
+            d.Add("DJIBOUTI", "Djibouti");
+            d.Add("DOMINICA", "Dominica");
+            d.Add("DOMINICAN REPUBLIC", "Dominican Republic");
+            d.Add("ECUADOR", "Ecuador");
+            d.Add("EL SALVADOR", "El Salvador");
+            d.Add("EQUATORIAL GUINEA", "Equatorial Guinea");
+            d.Add("ERITREA", "");
+            d.Add("EUROPE", "Europe");
+            d.Add("ESTONIA", "Estonia");
+            d.Add("ETHIOPIA", "Ethiopia");
+            d.Add("FIJI", "Fiji");
+            d.Add("FINLAND", "Finland");
+            d.Add("FRANCE", "France");
+            d.Add("GABON", "Gabon");
+            d.Add("GAMBIA", "Gambia");
+            d.Add("GEORGIA", "Georgia");
+            d.Add("GERMANY", "Germany");
+            d.Add("GHANA", "Ghana");
+            d.Add("GREECE", "Greece");
+            d.Add("GUATEMALA", "Guatemala");
+            d.Add("GUINEA", "Guinea");
+            d.Add("GUINEA-BISSAU", "Guinea-Bissau");
+            d.Add("GUYANA", "Guyana");
+            d.Add("HAITI", "Haiti");
+            d.Add("HONDURAS", "Honduras");
+            d.Add("HONG KONG", "Hong Kong");
+            d.Add("HUNGARY", "Hungary");
+            d.Add("ICELAND", "Iceland");
+            d.Add("INDIA", "India");
+            d.Add("INDONESIA", "Indonesia");
+            d.Add("INSIDE CHINA: INVESTING IN MEDTECH COMPANIES", "China");
+            d.Add("IRAN", "Iran");
+            d.Add("IRAQ", "Iraq");
+            d.Add("IRELAND", "Ireland");
+            d.Add("ISRAEL", "Israel");
+            d.Add("ITALY", "Italy");
+            d.Add("JAMAICA", "Jamaica");
+            d.Add("JAPAN", "Japan");
+            d.Add("JORDAN", "Jordan");
+            d.Add("KAZAKHSTAN", "Kazakhstan");
+            d.Add("KENYA", "Kenya");
+            d.Add("KIRIBATI", "Kiribati");
+            d.Add("KOREA", "South Korea");
+            d.Add("KUWAIT", "Kuwait");
+            d.Add("KYRGYZSTAN", "Kyrgyzstan");
+            d.Add("LAOS", "Laos");
+            d.Add("LATIN AMERICA", "Americas");
+            d.Add("LATVIA", "Latvia");
+            d.Add("LEBANON", "Lebanon");
+            d.Add("LESOTHO", "Lesotho");
+            d.Add("LIBERIA", "Liberia");
+            d.Add("LIECHTENSTEIN", "Liechtenstein");
+            d.Add("LITHUANIA", "Lithuania");
+            d.Add("LUXEMBOURG", "Luxembourg");
+            d.Add("MADAGASCAR", "Madagascar");
+            d.Add("MALAWI", "Malawi");
+            d.Add("MALAYSIA", "Malaysia");
+            d.Add("MALDIVES", "Maldives");
+            d.Add("MALI", "Mali");
+            d.Add("MALTA", "Malta");
+            d.Add("MAURITIUS", "Mauritius");
+            d.Add("MEXICO", "Mexico");
+            d.Add("MOLDOVA", "Moldova");
+            d.Add("MONGOLIA", "Mongolia");
+            d.Add("MONTENEGRO", "Montenegro");
+            d.Add("MOZAMBIQUE", "Mozambique");
+            d.Add("MYANMAR", "Myanmar");
+            d.Add("NAMIBIA", "Namibia");
+            d.Add("NEPAL", "Nepal");
+            d.Add("NETHERLANDS", "Netherlands");
+            d.Add("NEW ZEALAND", "New Zealand");
+            d.Add("NICARAGUA", "Nicaragua");
+            d.Add("NIGER", "Niger");
+            d.Add("NIGERIA", "Nigeria");
+            d.Add("NORWAY", "Norway");
+            d.Add("OMAN", "Oman");
+            d.Add("PAKISTAN", "Pakistan");
+            d.Add("PANAMA", "Panama");
+            d.Add("PAPUA NEW GUINEA", "Papua New Guinea");
+            d.Add("PARAGUAY", "Paraguay");
+            d.Add("PERU", "Peru");
+            d.Add("PHILIPPINES", "Philippines");
+            d.Add("POLAND", "Poland");
+            d.Add("PORTUGAL", "Portugal");
+            d.Add("PUERTO RICO", "Puerto Rico");
+            d.Add("QATAR", "Qatar");
+            d.Add("ROMANIA", "Romania");
+            d.Add("RUSSIAN FEDERATION", "Russian Federation");
+            d.Add("RWANDA", "Rwanda");
+            d.Add("SAMOA", "Samoa");
+            d.Add("SAUDI ARABIA", "Saudi Arabia");
+            d.Add("SENEGAL", "Senegal");
+            d.Add("SERBIA", "Serbia");
+            d.Add("SIERRA LEONE", "Sierra Leone");
+            d.Add("SINGAPORE", "Singapore");
+            d.Add("SLOVAKIA", "Slovakia");
+            d.Add("SLOVENIA", "Slovenia");
+            d.Add("SOMALIA", "Somalia");
+            d.Add("SOUTH", "");
+            d.Add("SOUTH AFRICA", "South Africa");
+            d.Add("SPAIN", "Spain");
+            d.Add("SRI LANKA", "Sri Lanka");
+            d.Add("SUDAN", "Sudan");
+            d.Add("SURINAME", "Suriname");
+            d.Add("SWAZILAND", "Swaziland");
+            d.Add("SWEDEN", "Sweden");
+            d.Add("SWITZERLAND", "Switzerland");
+            d.Add("SYRIA", "Syria");
+            d.Add("TAIWAN", "Taiwan");
+            d.Add("TAJIKISTAN", "Tajikistan");
+            d.Add("TANZANIA", "Tanzania");
+            d.Add("THAILAND", "Thailand");
+            d.Add("TIMOR-LESTE", "Timor-Leste");
+            d.Add("TOGO", "Togo");
+            d.Add("TONGA", "Tonga");
+            d.Add("TRINIDAD AND TOBAGO", "Trinidad And Tobago");
+            d.Add("TURKEY", "Turkey");
+            d.Add("TURKMENISTAN", "Turkmenistan");
+            d.Add("UGANDA", "Uganda");
+            d.Add("UK", "United Kingdom");
+            d.Add("UK:", "United Kingdom");
+            d.Add("UKRAINE", "Ukraine");
+            d.Add("UNITED ARAB EMIRATES", "United Arab Emirates");
+            d.Add("UNITED KINGDOM", "United Kingdom");
+            d.Add("UNITED STATES", "United States");
+            d.Add("URUGUAY", "Uruguay");
+            d.Add("US", "United States");
+            d.Add("UZBEKISTAN", "Uzbekistan");
+            d.Add("VENEZUELA", "Venezuela");
+            d.Add("VIET NAM", "Viet Nam");
+            d.Add("YEMEN", "Yemen");
+            d.Add("ZAMBIA", "Zambia");
+            d.Add("ZIMBABWE", "Zimbabwe");
+
+            return d;
+        }
+
+        #endregion Methods
+
+    }
+
+
+    #endregion
 
 
 }
