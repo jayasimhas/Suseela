@@ -28,7 +28,6 @@ import './components/article-sidebar-component';
 import './components/save-search-component';
 
 import './components/myview-settings';
-import './components/subscription';
 
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';

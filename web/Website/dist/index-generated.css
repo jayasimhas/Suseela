@@ -3728,178 +3728,6 @@ header .header-account-access {
     color: #FF9933;
     background: #fff; } }
 
-@media (max-width: 480px) {
-  .subscriptionPan {
-    font-size: 1em;
-    line-height: 20px;
-    width: 100%; } }
-
-.subscriptionPan .page-account__table {
-  border: 1px solid #d2d4d3; }
-  @media (max-width: 480px) {
-    .subscriptionPan .page-account__table {
-      border: none; } }
-
-.subscriptionPan .page-account_text {
-  font-family: 'PT Serif';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.125em;
-  margin-bottom: 20px;
-  margin-bottom: 1.25rem;
-  display: block; }
-  @media (max-width: 480px) {
-    .subscriptionPan .page-account_text {
-      font-size: 1em;
-      line-height: 20px; } }
-
-.subscriptionPan .sortable-table__header--mobile {
-  display: none; }
-
-.subscriptionPan .sortable-table__col {
-  width: 25%;
-  float: left; }
-  .subscriptionPan .sortable-table__col .accordian {
-    background: url(/dist/img/arrow2.jpg) no-repeat -18px -14px;
-    height: 17px;
-    min-width: 17px;
-    display: inline-block;
-    cursor: pointer; }
-    .subscriptionPan .sortable-table__col .accordian.active {
-      background: url(/dist/img/arrow2.jpg) no-repeat 0 6px; }
-    @media only screen and (max-device-width: 480px) {
-      .subscriptionPan .sortable-table__col .accordian {
-        display: none; } }
-  .subscriptionPan .sortable-table__col span:nth-child(1) {
-    padding-left: 20px; }
-    @media only screen and (max-device-width: 480px) {
-      .subscriptionPan .sortable-table__col span:nth-child(1) {
-        padding-left: 0px; } }
-  .subscriptionPan .sortable-table__col .accordian:nth-child(2) {
-    position: absolute;
-    margin-left: 40px; }
-  @media (max-width: 480px) {
-    .subscriptionPan .sortable-table__col {
-      width: 100%; } }
-  @media (max-width: 480px) {
-    .subscriptionPan .sortable-table__col {
-      padding: 12px; } }
-
-.subscriptionPan .subjectsAct .hide {
-  display: none; }
-
-.subscriptionPan .tablerow {
-  border-top: 1px solid #d1d3d4;
-  min-height: 55px; }
-  @media (max-width: 480px) {
-    .subscriptionPan .tablerow {
-      clear: both; } }
-
-.subscriptionPan .button, .subscriptionPan .full-diminished-button, .subscriptionPan .button--filled, .subscriptionPan .pop-out__register-submit, .subscriptionPan .pop-out__sign-in-submit, .subscriptionPan .button--outlined, .subscriptionPan .button--outline, .subscriptionPan .button--gilded,
-.subscriptionPan a.button,
-.subscriptionPan a.full-diminished-button,
-.subscriptionPan .full-diminished-button.pop-out__reset-password,
-.subscriptionPan .full-diminished-button.sortable-table__list-toggler,
-.subscriptionPan .full-diminished-button.mobile-table-exit,
-.subscriptionPan .button.pop-out__reset-password,
-.subscriptionPan .button.sortable-table__list-toggler,
-.subscriptionPan .button.mobile-table-exit,
-.subscriptionPan a.button--filled,
-.subscriptionPan a.pop-out__register-submit,
-.subscriptionPan .pop-out__register-submit.pop-out__reset-password,
-.subscriptionPan .pop-out__register-submit.sortable-table__list-toggler,
-.subscriptionPan .pop-out__register-submit.mobile-table-exit,
-.subscriptionPan a.pop-out__sign-in-submit,
-.subscriptionPan .pop-out__sign-in-submit.pop-out__reset-password,
-.subscriptionPan .pop-out__sign-in-submit.sortable-table__list-toggler,
-.subscriptionPan .pop-out__sign-in-submit.mobile-table-exit,
-.subscriptionPan .button--filled.pop-out__reset-password,
-.subscriptionPan .button--filled.sortable-table__list-toggler,
-.subscriptionPan .button--filled.mobile-table-exit,
-.subscriptionPan a.button--outlined,
-.subscriptionPan .button--outlined.pop-out__reset-password,
-.subscriptionPan .button--outlined.sortable-table__list-toggler,
-.subscriptionPan .button--outlined.mobile-table-exit,
-.subscriptionPan a.button--outline,
-.subscriptionPan .button--outline.pop-out__reset-password,
-.subscriptionPan .button--outline.sortable-table__list-toggler,
-.subscriptionPan .button--outline.mobile-table-exit,
-.subscriptionPan a.button--gilded,
-.subscriptionPan .button--gilded.pop-out__reset-password,
-.subscriptionPan .button--gilded.sortable-table__list-toggler,
-.subscriptionPan .button--gilded.mobile-table-exit {
-  color: #231f20; }
-
-.subscriptionPan .button--outline:enabled:hover,
-.subscriptionPan a.button--outline:enabled:hover,
-.subscriptionPan .button--outline.pop-out__reset-password:enabled:hover,
-.subscriptionPan .button--outline.sortable-table__list-toggler:enabled:hover,
-.subscriptionPan .button--outline.mobile-table-exit:enabled:hover {
-  color: #ffffff;
-  text-decoration: none; }
-
-.subscriptionPan .title {
-  background: #ececec;
-  padding: 10px;
-  font-size: 1.125em;
-  color: #231f20;
-  font-weight: bold; }
-  @media (max-width: 480px) {
-    .subscriptionPan .title {
-      clear: both; } }
-
-.subscriptionPan .maintitle {
-  background: #ececec url(/dist/img/mob-arrow.png) no-repeat right 14px; }
-  .subscriptionPan .maintitle.active {
-    background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px; }
-
-@media (max-width: 480px) {
-  .hidden-xs {
-    display: none !important; }
-  .page-account__header {
-    font-size: 36px;
-    line-height: 32px; }
-  .mobileCls {
-    margin-top: 20px;
-    border: 1px solid #d2d4d3; }
-    .mobileCls:before {
-      clear: both;
-      content: '';
-      display: table; }
-    .mobileCls:after {
-      clear: both;
-      display: table;
-      content: " "; }
-    .mobileCls .sub {
-      float: left;
-      width: 60%;
-      margin-top: 8px; }
-    .mobileCls .subsubscribe {
-      float: left;
-      width: 38%;
-      margin-top: -3px; }
-      .mobileCls .subsubscribe a, .mobileCls .subsubscribe .pop-out__reset-password, .mobileCls .subsubscribe .sortable-table__list-toggler, .mobileCls .subsubscribe .mobile-table-exit {
-        display: inline-block;
-        padding: 8px 14px; }
-    .mobileCls .maccordian {
-      background: url(/dist/img/mob-arrow.jpg) no-repeat 0 0;
-      height: 12px;
-      width: 22px;
-      display: inline-block;
-      cursor: pointer; }
-      .mobileCls .maccordian.active {
-        background: url(/dist/img/mob-arrow.jpg) no-repeat 0 6px; } }
-
-@media only screen and (min-width: 481px) {
-  .hidden-lg {
-    display: none !important; }
-  .purchases .sortable-table__col.fdata {
-    width: 30%; }
-  .purchases .sortable-table__col.sdata {
-    width: 50%; }
-  .purchases .sortable-table__col.tdata {
-    width: 20%; } }
-
 .modal-open {
   overflow: hidden; }
 
@@ -4728,167 +4556,128 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     margin-top: -48px;
     margin-top: -3rem; }
 
-@media (max-width: 480px) {
-  .subscriptionPan {
-    font-size: 1em;
-    line-height: 20px;
-    width: 100%; } }
-
-.subscriptionPan .page-account__table {
-  border: 1px solid #d2d4d3; }
+.subscriptionPan {
+  font-family: "Roboto", Helvetica, Arial, sans-serif; }
   @media (max-width: 480px) {
-    .subscriptionPan .page-account__table {
-      border: none; } }
-
-.subscriptionPan .page-account_text {
-  font-family: 'PT Serif';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.125em;
-  margin-bottom: 20px;
-  margin-bottom: 1.25rem;
-  display: block; }
-  @media (max-width: 480px) {
-    .subscriptionPan .page-account_text {
+    .subscriptionPan {
       font-size: 1em;
-      line-height: 20px; } }
-
-.subscriptionPan .sortable-table__header--mobile {
-  display: none; }
-
-.subscriptionPan .sortable-table__col {
-  width: 25%;
-  float: left; }
-  .subscriptionPan .sortable-table__col .accordian {
-    background: url(/dist/img/arrow2.jpg) no-repeat -18px -14px;
-    height: 17px;
-    min-width: 17px;
-    display: inline-block;
-    cursor: pointer; }
-    .subscriptionPan .sortable-table__col .accordian.active {
-      background: url(/dist/img/arrow2.jpg) no-repeat 0 6px; }
-    @media only screen and (max-device-width: 480px) {
-      .subscriptionPan .sortable-table__col .accordian {
-        display: none; } }
-  .subscriptionPan .sortable-table__col span:nth-child(1) {
-    padding-left: 20px; }
-    @media only screen and (max-device-width: 480px) {
-      .subscriptionPan .sortable-table__col span:nth-child(1) {
-        padding-left: 0px; } }
-  .subscriptionPan .sortable-table__col .accordian:nth-child(2) {
-    position: absolute;
-    margin-left: 40px; }
-  @media (max-width: 480px) {
-    .subscriptionPan .sortable-table__col {
+      line-height: 20px;
       width: 100%; } }
+  .subscriptionPan #mySubscription {
+    margin-bottom: 50px; }
+  .subscriptionPan #mySubscriptionTab {
+    width: 100%;
+    border: 1px solid #d2d4d3;
+    border-collapse: collapse; }
+    @media (max-width: 480px) {
+      .subscriptionPan #mySubscriptionTab {
+        border: none; } }
+  .subscriptionPan #mypurchases {
+    width: 100%;
+    border: 1px solid #d2d4d3;
+    border-collapse: collapse; }
+    @media (max-width: 480px) {
+      .subscriptionPan #mypurchases {
+        border: none; } }
+  .subscriptionPan .page-account__table {
+    border: 1px solid #d2d4d3; }
+    @media (max-width: 480px) {
+      .subscriptionPan .page-account__table {
+        border: none; } }
+  .subscriptionPan .page-account_text {
+    font-family: 'PT Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125em;
+    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
+    display: block; }
+    @media (max-width: 480px) {
+      .subscriptionPan .page-account_text {
+        font-size: 1em;
+        line-height: 20px; } }
+  .subscriptionPan .sortable-table__col {
+    width: 25%;
+    text-align: left; }
+    .subscriptionPan .sortable-table__col .accordian {
+      background: url(/dist/img/arrow2.jpg) no-repeat -18px -14px;
+      height: 17px;
+      min-width: 17px;
+      display: inline-block;
+      cursor: pointer; }
+      .subscriptionPan .sortable-table__col .accordian.active {
+        background: url(/dist/img/arrow2.jpg) no-repeat 0 6px; }
+      @media (max-width: 480px) {
+        .subscriptionPan .sortable-table__col .accordian {
+          display: none; } }
+    .subscriptionPan .sortable-table__col .accordian:nth-child(2) {
+      position: absolute;
+      margin-left: 40px; }
+    @media (max-width: 480px) {
+      .subscriptionPan .sortable-table__col {
+        width: 100%;
+        display: table-cell;
+        padding: 12px;
+        font-size: 1em;
+        line-height: 24px; } }
   @media (max-width: 480px) {
-    .subscriptionPan .sortable-table__col {
-      padding: 12px; } }
+    .subscriptionPan .tableMrow {
+      clear: both;
+      border: 1px solid #d2d4d3;
+      margin-bottom: 20px; }
+      .subscriptionPan .tableMrow .pubName {
+        width: 60%;
+        float: left;
+        padding: 12px; }
+      .subscriptionPan .tableMrow .pubSubscribe {
+        width: 40%;
+        float: left;
+        padding: 12px 0; }
+        .subscriptionPan .tableMrow .pubSubscribe .button, .subscriptionPan .tableMrow .pubSubscribe .full-diminished-button {
+          padding-top: 7px;
+          padding-bottom: 7px; } }
+  .subscriptionPan .tableMrow .tablerow {
+    clear: both;
+    border: 1px solid #d2d4d3; }
+  .subscriptionPan .parent {
+    border-top: 1px solid #d2d4d3; }
+  .subscriptionPan .child {
+    border-top: 1px solid #d2d4d3; }
+  .subscriptionPan .hiderow {
+    display: none; }
+  .subscriptionPan .title {
+    background: #ececec;
+    padding: 10px;
+    font-size: 1.125em;
+    color: #231f20;
+    font-weight: bold; }
+    @media (max-width: 480px) {
+      .subscriptionPan .title {
+        clear: both; } }
+  .subscriptionPan .maintitle {
+    background: #ececec url(/dist/img/mob-arrow.png) no-repeat right 14px; }
+    .subscriptionPan .maintitle.active {
+      background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px; }
 
-.subscriptionPan .subjectsAct .hide {
-  display: none; }
+#purchases #mypurchases tr td:nth-child(1) {
+  width: 20%; }
 
-.subscriptionPan .tablerow {
-  border-top: 1px solid #d1d3d4;
-  min-height: 55px; }
-  @media (max-width: 480px) {
-    .subscriptionPan .tablerow {
-      clear: both; } }
+#purchases #mypurchases tr td:nth-child(2) {
+  width: 55%; }
 
-.subscriptionPan .button, .subscriptionPan .full-diminished-button, .subscriptionPan .button--filled, .subscriptionPan .pop-out__register-submit, .subscriptionPan .pop-out__sign-in-submit, .subscriptionPan .button--outlined, .subscriptionPan .button--outline, .subscriptionPan .button--gilded,
-.subscriptionPan a.button,
-.subscriptionPan a.full-diminished-button,
-.subscriptionPan .full-diminished-button.pop-out__reset-password,
-.subscriptionPan .full-diminished-button.sortable-table__list-toggler,
-.subscriptionPan .full-diminished-button.mobile-table-exit,
-.subscriptionPan .button.pop-out__reset-password,
-.subscriptionPan .button.sortable-table__list-toggler,
-.subscriptionPan .button.mobile-table-exit,
-.subscriptionPan a.button--filled,
-.subscriptionPan a.pop-out__register-submit,
-.subscriptionPan .pop-out__register-submit.pop-out__reset-password,
-.subscriptionPan .pop-out__register-submit.sortable-table__list-toggler,
-.subscriptionPan .pop-out__register-submit.mobile-table-exit,
-.subscriptionPan a.pop-out__sign-in-submit,
-.subscriptionPan .pop-out__sign-in-submit.pop-out__reset-password,
-.subscriptionPan .pop-out__sign-in-submit.sortable-table__list-toggler,
-.subscriptionPan .pop-out__sign-in-submit.mobile-table-exit,
-.subscriptionPan .button--filled.pop-out__reset-password,
-.subscriptionPan .button--filled.sortable-table__list-toggler,
-.subscriptionPan .button--filled.mobile-table-exit,
-.subscriptionPan a.button--outlined,
-.subscriptionPan .button--outlined.pop-out__reset-password,
-.subscriptionPan .button--outlined.sortable-table__list-toggler,
-.subscriptionPan .button--outlined.mobile-table-exit,
-.subscriptionPan a.button--outline,
-.subscriptionPan .button--outline.pop-out__reset-password,
-.subscriptionPan .button--outline.sortable-table__list-toggler,
-.subscriptionPan .button--outline.mobile-table-exit,
-.subscriptionPan a.button--gilded,
-.subscriptionPan .button--gilded.pop-out__reset-password,
-.subscriptionPan .button--gilded.sortable-table__list-toggler,
-.subscriptionPan .button--gilded.mobile-table-exit {
-  color: #231f20; }
+#purchases #mypurchases tr td:nth-child(3) {
+  width: 22%; }
 
-.subscriptionPan .button--outline:enabled:hover,
-.subscriptionPan a.button--outline:enabled:hover,
-.subscriptionPan .button--outline.pop-out__reset-password:enabled:hover,
-.subscriptionPan .button--outline.sortable-table__list-toggler:enabled:hover,
-.subscriptionPan .button--outline.mobile-table-exit:enabled:hover {
-  color: #ffffff;
-  text-decoration: none; }
-
-.subscriptionPan .title {
-  background: #ececec;
-  padding: 10px;
-  font-size: 1.125em;
-  color: #231f20;
-  font-weight: bold; }
-  @media (max-width: 480px) {
-    .subscriptionPan .title {
-      clear: both; } }
-
-.subscriptionPan .maintitle {
-  background: #ececec url(/dist/img/mob-arrow.png) no-repeat right 14px; }
-  .subscriptionPan .maintitle.active {
-    background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px; }
+#purchases .purrow {
+  border-top: 1px solid #d2d4d3; }
 
 @media (max-width: 480px) {
+  font-size: 15px;
   .hidden-xs {
     display: none !important; }
   .page-account__header {
     font-size: 36px;
-    line-height: 32px; }
-  .mobileCls {
-    margin-top: 20px;
-    border: 1px solid #d2d4d3; }
-    .mobileCls:before {
-      clear: both;
-      content: '';
-      display: table; }
-    .mobileCls:after {
-      clear: both;
-      display: table;
-      content: " "; }
-    .mobileCls .sub {
-      float: left;
-      width: 60%;
-      margin-top: 8px; }
-    .mobileCls .subsubscribe {
-      float: left;
-      width: 38%;
-      margin-top: -3px; }
-      .mobileCls .subsubscribe a, .mobileCls .subsubscribe .pop-out__reset-password, .mobileCls .subsubscribe .sortable-table__list-toggler, .mobileCls .subsubscribe .mobile-table-exit {
-        display: inline-block;
-        padding: 8px 14px; }
-    .mobileCls .maccordian {
-      background: url(/dist/img/mob-arrow.jpg) no-repeat 0 0;
-      height: 12px;
-      width: 22px;
-      display: inline-block;
-      cursor: pointer; }
-      .mobileCls .maccordian.active {
-        background: url(/dist/img/mob-arrow.jpg) no-repeat 0 6px; } }
+    line-height: 32px; } }
 
 @media only screen and (min-width: 481px) {
   .hidden-lg {
