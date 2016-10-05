@@ -2330,8 +2330,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   margin: 0 10px; }
 
 .job_listing .sub-heading-text {
-  margin-bottom: 12px;
-  margin-bottom: 0.75rem; }
+  padding-bottom: 12px;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #d1d3d4; }
   .job_listing .sub-heading-text span {
     font-family: "PT Serif", Georgia, serif;
     font-style: italic;
@@ -2348,7 +2349,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   .job_listing .stacked_job_view .job_list_individual {
     width: 100%;
     padding: 1em;
-    border-top: 1px solid #d1d3d4;
+    border-bottom: 1px solid #d1d3d4;
     float: left;
     position: relative; }
     @media (max-width: 480px) {
@@ -2398,6 +2399,40 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
         font-size: 1.125em;
         line-height: 30px;
         color: #58595b; }
+
+.job_listing .pagination {
+  padding: 1.75em 0;
+  clear: both; }
+  .job_listing .pagination li > a, .job_listing .pagination li > .pop-out__reset-password, .job_listing .pagination li > .sortable-table__list-toggler, .job_listing .pagination li > .mobile-table-exit {
+    background: url(/dist/img/pagination-arr.gif) no-repeat;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    text-indent: -9999px; }
+  .job_listing .pagination span a, .job_listing .pagination span .pop-out__reset-password, .job_listing .pagination span .sortable-table__list-toggler, .job_listing .pagination span .mobile-table-exit {
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    background: #f1f1f1;
+    text-align: center;
+    color: #000;
+    line-height: 40px; }
+    .job_listing .pagination span a:hover, .job_listing .pagination span .pop-out__reset-password:hover, .job_listing .pagination span .sortable-table__list-toggler:hover, .job_listing .pagination span .mobile-table-exit:hover {
+      text-decoration: none; }
+    .job_listing .pagination span a.active, .job_listing .pagination span .active.pop-out__reset-password, .job_listing .pagination span .active.sortable-table__list-toggler, .job_listing .pagination span .active.mobile-table-exit {
+      background: #c6c2c2; }
+  .job_listing .pagination a.prev, .job_listing .pagination .prev.pop-out__reset-password, .job_listing .pagination .prev.sortable-table__list-toggler, .job_listing .pagination .prev.mobile-table-exit {
+    background-position: 0 0; }
+  .job_listing .pagination a.next, .job_listing .pagination .next.pop-out__reset-password, .job_listing .pagination .next.sortable-table__list-toggler, .job_listing .pagination .next.mobile-table-exit {
+    background-position: -41px 0; }
+  .job_listing .pagination .nums {
+    text-align: center; }
+    .job_listing .pagination .nums li {
+      display: inline-block; }
 
 .landscape-image-component {
   margin-bottom: 32px;
