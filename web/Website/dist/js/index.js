@@ -803,6 +803,72 @@ $(function () {
 });
 
 },{}],6:[function(require,module,exports){
+'use strict';
+
+var toVal = 1,
+    fromVal = 1;
+
+function paginationCur(fv, tv) {
+	$('.eachCategory').hide();
+	for (var i = fv; i < tv; i++) {
+		$('.eachCategory').eq(i).show();
+	}
+}
+$(function () {
+	var showPageLinks = Math.ceil(paginationObj.totalCategories / paginationObj.categoryLimit);
+	var linkStr = '';
+	for (var i = 1; i <= showPageLinks; i++) {
+		linkStr += '<a href="javascript:void(0);">' + i + '</a>';
+	}
+	if (showPageLinks > 1) {
+		$('.pagination span').html(linkStr);
+	} else {
+		$('.pagination').hide();
+	}
+
+	$('.pagination a').click(function () {
+		var $this = $(this),
+		    $val = $this.html();
+		if ($val.toLowerCase().indexOf('prev') >= 0) {
+			var idx = $('.pagination span a.active').index();
+			$('.pagination span a:eq(' + idx + ')').prev('a').click();
+			var curidx = $('.pagination span a.active').index();
+			$('.pagination a:last').attr('href', 'javascript:void(0);');
+			if (curidx == 0) {
+				$('.pagination a:eq(0)').removeAttr('href');
+			}
+		} else if ($val.toLowerCase().indexOf('next') >= 0) {
+			var idx = $('.pagination span a.active').index();
+			$('.pagination span a:eq(' + idx + ')').next('a').click();
+			var curidx = $('.pagination span a.active').index(),
+			    pagesLen = $('.pagination li > span a').length - 1;
+			$('.pagination a:first').attr('href', 'javascript:void(0);');
+			if (curidx == pagesLen) {
+				$('.pagination a:last').removeAttr('href');
+			}
+		} else {
+			if (!$this.hasClass('active')) {
+				$('.pagination span a').removeClass('active').attr('href', 'javascript:void(0);');
+				$this.addClass('active').removeAttr('href');
+				toVal = paginationObj.categoryLimit * $val;
+				fromVal = toVal - paginationObj.categoryLimit;
+				paginationCur(fromVal, toVal);
+				$('.pagination a:last').attr('href', 'javascript:void(0);');
+				$('.pagination a:first').attr('href', 'javascript:void(0);');
+				if ($('.pagination span a.active').next('a').length == 0) {
+					$('.pagination a:last').removeAttr('href');
+				}
+				if ($('.pagination span a.active').prev('a').length == 0) {
+					$('.pagination a:first').removeAttr('href');
+				}
+			}
+		}
+	});
+	$('.pagination span a:eq(0)').click();
+	$('.pagination a:eq(0)').removeAttr('href');
+});
+
+},{}],7:[function(require,module,exports){
 /* global analyticsEvent, analytics_data, angular */
 'use strict';
 
@@ -1002,7 +1068,7 @@ $(document).ready(function () {
 	});
 });
 
-},{"../controllers/analytics-controller":8,"../controllers/form-controller":10,"../jscookie":18}],7:[function(require,module,exports){
+},{"../controllers/analytics-controller":9,"../controllers/form-controller":11,"../jscookie":19}],8:[function(require,module,exports){
 'use strict';
 
 var INFORMA = window.INFORMA || {};
@@ -1071,7 +1137,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
 })(undefined, Zepto, 'INFORMA');
 Zepto(INFORMA.videoMini.init());
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 // * * *
 //  ANALYTICS CONTROLLER
 //  For ease-of-use, better DRY, better prevention of JS errors when ads are blocked
@@ -1090,7 +1156,7 @@ function analyticsEvent(dataObj) {
 
 exports.analyticsEvent = analyticsEvent;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /* globals analytics_data */
 'use strict';
 
@@ -1178,7 +1244,7 @@ function bookmarkController() {
 exports['default'] = bookmarkController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":8}],10:[function(require,module,exports){
+},{"./analytics-controller":9}],11:[function(require,module,exports){
 /*
 
 opts.observe — Form element(s) to observe
@@ -1345,7 +1411,7 @@ function formController(opts) {
 exports['default'] = formController;
 module.exports = exports['default'];
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /* global angular */
 'use strict';
 
@@ -1413,7 +1479,7 @@ function lightboxModalController() {
 exports['default'] = lightboxModalController;
 module.exports = exports['default'];
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1691,7 +1757,7 @@ function popOutController(triggerElm) {
 exports['default'] = popOutController;
 module.exports = exports['default'];
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1816,7 +1882,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":8}],14:[function(require,module,exports){
+},{"./analytics-controller":9}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2034,7 +2100,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":8}],15:[function(require,module,exports){
+},{"./analytics-controller":9}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2351,7 +2417,7 @@ function sortableTableController() {
 exports['default'] = sortableTableController;
 module.exports = exports['default'];
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 /* global tooltipController */
 
 "use strict";
@@ -2542,7 +2608,7 @@ function createPopup(initialState) {
 
 module.exports = exports["default"];
 
-},{"../calculatePopupOffsets.js":2}],17:[function(require,module,exports){
+},{"../calculatePopupOffsets.js":2}],18:[function(require,module,exports){
 /* global angular, analytics_data */
 
 // THIRD-PARTY / VENDOR
@@ -2620,6 +2686,8 @@ var _controllersTooltipController2 = _interopRequireDefault(_controllersTooltipC
 require('./components/article-sidebar-component');
 
 require('./components/save-search-component');
+
+require('./components/pagination');
 
 require('./components/myview-settings');
 
@@ -3650,7 +3718,7 @@ $(document).ready(function () {
     });
 });
 
-},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/myview-settings":5,"./components/save-search-component":6,"./components/video-mini":7,"./controllers/analytics-controller":8,"./controllers/bookmark-controller":9,"./controllers/form-controller":10,"./controllers/lightbox-modal-controller":11,"./controllers/pop-out-controller":12,"./controllers/register-controller":13,"./controllers/reset-password-controller":14,"./controllers/sortable-table-controller":15,"./controllers/tooltip-controller":16,"./jscookie":18,"./modal":19,"./newsletter-signup":20,"./search-page.js":21,"./selectivity-full":22,"./svg4everybody":23,"./toggle-icons":24,"./zepto.dragswap":25,"./zepto.min":26}],18:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/myview-settings":5,"./components/pagination":6,"./components/save-search-component":7,"./components/video-mini":8,"./controllers/analytics-controller":9,"./controllers/bookmark-controller":10,"./controllers/form-controller":11,"./controllers/lightbox-modal-controller":12,"./controllers/pop-out-controller":13,"./controllers/register-controller":14,"./controllers/reset-password-controller":15,"./controllers/sortable-table-controller":16,"./controllers/tooltip-controller":17,"./jscookie":19,"./modal":20,"./newsletter-signup":21,"./search-page.js":22,"./selectivity-full":23,"./svg4everybody":24,"./toggle-icons":25,"./zepto.dragswap":26,"./zepto.min":27}],19:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -3791,7 +3859,7 @@ $(document).ready(function () {
 	return init(function () {});
 });
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
@@ -4099,7 +4167,7 @@ $(document).ready(function () {
   });
 })($);
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /* global analytics_data */
 
 'use strict';
@@ -4176,7 +4244,7 @@ function newsletterSignupController() {
 exports['default'] = newsletterSignupController;
 module.exports = exports['default'];
 
-},{"./controllers/analytics-controller":8}],21:[function(require,module,exports){
+},{"./controllers/analytics-controller":9}],22:[function(require,module,exports){
 'use strict';
 
 var SearchScript = (function () {
@@ -4188,7 +4256,7 @@ var SearchScript = (function () {
 	});
 })();
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -5213,7 +5281,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 "use strict";
 
 !(function (root, factory) {
@@ -5318,7 +5386,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
     return svg4everybody;
 });
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -5335,7 +5403,7 @@ var toggleIcons = function toggleIcons(container) {
 
 exports.toggleIcons = toggleIcons;
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 /*!
  * Zepto HTML5 Drag and Drop Sortable
  * Author: James Doyle(@james2doyle) http://ohdoylerules.com
@@ -5565,7 +5633,7 @@ exports.toggleIcons = toggleIcons;
     };
 })(Zepto);
 
-},{}],26:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 "use strict";
 
@@ -6304,7 +6372,7 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}]},{},[17])
+},{}]},{},[18])
 
 
 //# sourceMappingURL=index.js.map

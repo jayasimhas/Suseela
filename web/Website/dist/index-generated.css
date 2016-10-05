@@ -2000,6 +2000,94 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   margin-bottom: 16px;
   margin-bottom: 1rem; }
 
+#foodNews {
+  font-family: "Roboto"; }
+  #foodNews .subtitle {
+    font-size: 1.6875em;
+    margin-bottom: 25px;
+    font-weight: normal;
+    font-style: italic;
+    font-family: "PTSerif Italic"; }
+    #foodNews .subtitle span {
+      font-weight: bold; }
+  #foodNews .searchpan {
+    border: 1px solid #d1d3d4;
+    background: #fbfbfb;
+    padding: 20px; }
+    #foodNews .searchpan label[for=searchNews] {
+      float: left;
+      font-size: 1.5em;
+      color: #231f20;
+      margin-right: 22px; }
+    #foodNews .searchpan #searchNews {
+      width: 300px;
+      height: 34px;
+      float: left;
+      font-size: 0.9375em;
+      font-style: italic; }
+    #foodNews .searchpan .searchImg {
+      cursor: pointer;
+      margin: 6px 0 0 20px; }
+  #foodNews .downloadBtn {
+    border: 1px solid #f7941e;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: 700;
+    width: 120px;
+    height: 32px;
+    text-align: center;
+    display: inline-block;
+    line-height: 32px; }
+    #foodNews .downloadBtn:hover {
+      background: #f7941e;
+      color: #fff; }
+  #foodNews .curSubscriber {
+    border-top: 1px solid #d1d3d4;
+    margin-top: 30px;
+    padding-top: 30px; }
+    #foodNews .curSubscriber h3, #foodNews .curSubscriber .article-call-to-action__title {
+      font-size: 24px;
+      color: #231f20;
+      font-weight: bold;
+      margin-bottom: 20px; }
+    #foodNews .curSubscriber p {
+      font-family: "PTSerif regular";
+      font-size: 1.29em;
+      line-height: 32px; }
+      #foodNews .curSubscriber p a, #foodNews .curSubscriber p .pop-out__reset-password, #foodNews .curSubscriber p .sortable-table__list-toggler, #foodNews .curSubscriber p .mobile-table-exit {
+        color: #f38220; }
+  #foodNews .pagination li > a, #foodNews .pagination li > .pop-out__reset-password, #foodNews .pagination li > .sortable-table__list-toggler, #foodNews .pagination li > .mobile-table-exit {
+    background: url(/dist/img/pagination-arr.gif) no-repeat;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    text-indent: -9999px; }
+  #foodNews .pagination span a, #foodNews .pagination span .pop-out__reset-password, #foodNews .pagination span .sortable-table__list-toggler, #foodNews .pagination span .mobile-table-exit {
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    background: #f1f1f1;
+    text-align: center;
+    color: #000;
+    line-height: 40px; }
+    #foodNews .pagination span a:hover, #foodNews .pagination span .pop-out__reset-password:hover, #foodNews .pagination span .sortable-table__list-toggler:hover, #foodNews .pagination span .mobile-table-exit:hover {
+      text-decoration: none; }
+    #foodNews .pagination span a.active, #foodNews .pagination span .active.pop-out__reset-password, #foodNews .pagination span .active.sortable-table__list-toggler, #foodNews .pagination span .active.mobile-table-exit {
+      background: #c6c2c2; }
+  #foodNews .pagination a.prev, #foodNews .pagination .prev.pop-out__reset-password, #foodNews .pagination .prev.sortable-table__list-toggler, #foodNews .pagination .prev.mobile-table-exit {
+    background-position: 0 0; }
+  #foodNews .pagination a.next, #foodNews .pagination .next.pop-out__reset-password, #foodNews .pagination .next.sortable-table__list-toggler, #foodNews .pagination .next.mobile-table-exit {
+    background-position: -41px 0; }
+  #foodNews .pagination .nums {
+    text-align: center; }
+    #foodNews .pagination .nums li {
+      display: inline-block; }
+
 .generic-content {
   margin-bottom: 32px;
   margin-bottom: 2rem; }
@@ -2238,6 +2326,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   margin-bottom: 12px;
   margin-bottom: 0.75rem; }
 
+.job_listing #page_navigation a, .job_listing #page_navigation .pop-out__reset-password, .job_listing #page_navigation .sortable-table__list-toggler, .job_listing #page_navigation .mobile-table-exit {
+  margin: 0 10px; }
+
 .job_listing .sub-heading-text {
   margin-bottom: 12px;
   margin-bottom: 0.75rem; }
@@ -2258,7 +2349,11 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     width: 100%;
     padding: 1em;
     border-top: 1px solid #d1d3d4;
-    float: left; }
+    float: left;
+    position: relative; }
+    @media (max-width: 480px) {
+      .job_listing .stacked_job_view .job_list_individual {
+        padding: 0; } }
     .job_listing .stacked_job_view .job_list_individual .job_logo {
       width: 20%;
       float: left; }
@@ -2266,7 +2361,10 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
         .job_listing .stacked_job_view .job_list_individual .job_logo {
           width: 100%;
           display: block;
-          float: none; } }
+          float: none;
+          clear: both;
+          margin-top: 55px;
+          margin-bottom: 10px; } }
       .job_listing .stacked_job_view .job_list_individual .job_logo img {
         width: 100%; }
     .job_listing .stacked_job_view .job_list_individual .job_description {
@@ -2274,18 +2372,31 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       width: 70%;
       margin-left: 32px;
       margin-left: 2rem; }
-      .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title {
-        font-family: 'Roboto Condensed';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 1.875em;
-        margin-bottom: 0.3em; }
+      @media (max-width: 480px) {
+        .job_listing .stacked_job_view .job_list_individual .job_description {
+          width: 100%;
+          display: block;
+          float: none;
+          margin-left: 0; } }
+      .job_listing .stacked_job_view .job_list_individual .job_description .job_heading {
+        clear: both; }
+        .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title {
+          font-family: 'Roboto Condensed';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 1.875em;
+          margin-bottom: 0.3em; }
+        @media (max-width: 480px) {
+          .job_listing .stacked_job_view .job_list_individual .job_description .job_heading {
+            position: absolute;
+            top: -20px;
+            margin-top: 30px; } }
       .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail span {
         font-family: 'PT Serif';
         font-style: normal;
         font-weight: 400;
         font-size: 1.125em;
-        line-height: 20px;
+        line-height: 30px;
         color: #58595b; }
 
 .landscape-image-component {
