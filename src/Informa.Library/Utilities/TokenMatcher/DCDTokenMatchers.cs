@@ -20,7 +20,14 @@ namespace Informa.Library.Utilities.TokenMatcher
 		private static ICacheProvider CacheProvider => _lazyCache.Value;
 		private static readonly string OldCompaniesUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldCompaniesURL");
 		private static readonly string OldDealsUrl = Sitecore.Configuration.Settings.GetSetting("DCD.OldDealsURL");
-	    private static IGlobalSitecoreService GlobalService = DependencyResolver.Current.GetService<IGlobalSitecoreService>();
+		private static IGlobalSitecoreService GlobalService = null;
+
+		static DCDTokenMatchers()
+		{
+			try {
+				GlobalService = DependencyResolver.Current.GetService<IGlobalSitecoreService>(); 
+			} catch { }
+		}
 
 		public static string ProcessDCDTokens(string text)
 		{
@@ -173,7 +180,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 
                     if (article != null) {
                         return
-                            $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {GlobalService.GetPublicationName(article._Id)}, " +
+                            $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {GlobalService?.GetPublicationName(article._Id)}, " +
                             $"{(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
                     }
                 }
