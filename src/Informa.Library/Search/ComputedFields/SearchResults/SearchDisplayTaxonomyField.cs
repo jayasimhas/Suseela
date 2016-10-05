@@ -5,6 +5,8 @@ using Informa.Library.Search.ComputedFields.SearchResults.Converter.DisplayTaxon
 using Informa.Library.Search.Utilities;
 using Informa.Library.Services.Search.Fields.Base;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Sitecore.Data.Items;
+using Sitecore.Data;
 
 namespace Informa.Library.Search.ComputedFields.SearchResults
 {
@@ -17,7 +19,9 @@ namespace Informa.Library.Search.ComputedFields.SearchResults
 				return string.Empty;
 			}
 
-			HtmlLinkList links = new HtmlLinkList
+            
+
+            HtmlLinkList links = new HtmlLinkList
 			{
 				Links = indexItem.Taxonomies.Take(2).Select(t => new HtmlLink { Title = t.Item_Name?.Trim() ?? string.Empty, Url = SearchTaxonomyUtil.GetSearchUrl(t) }).ToList()
 			};

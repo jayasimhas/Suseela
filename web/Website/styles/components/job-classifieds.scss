@@ -1,0 +1,64 @@
+.job_listing{
+	h1{
+		margin-bottom: 0.75rem;
+		
+	}
+	.sub-heading-text{
+		span{
+			font-family: "PT Serif", Georgia, serif;
+			font-style: italic;
+			font-weight: 400;
+			color: $color-zeus-black;
+			margin-bottom: 0.75rem;
+			font-size: 1.5em;
+			line-height:30px;
+		}
+		margin-bottom: 0.75rem;
+	}
+	.stacked_job_view{
+		clear: both;
+		width: 100%;
+		.job_list_individual{
+			width: 100%;
+			padding: 1em;
+			border-top: 1px solid $color-light-gray;
+			float: left;
+			.job_logo{
+				@include breakpoint('small'){
+					width: 100%;
+					display: block;
+					float: none;
+				}
+				width: 20%;
+				float: left;
+				img{
+					width: 100%;
+				}
+			}
+			.job_description{
+				float: left;
+				width: 70%;
+				margin-left: 2rem;
+				.job_heading{
+					h3{
+					  font-family: 'Roboto Condensed';
+					  font-style: normal;
+					  font-weight: 700;
+					  font-size: 1.875em;
+					  margin-bottom: 0.3em;
+					 } 
+				}
+				.job_description_detail{
+					span{
+					font-family: 'PT Serif';
+					font-style: normal;
+					font-weight: 400;
+					font-size: 1.125em;
+					line-height: 20px;
+					color: $color-abbey-gray;
+					}
+				}
+			}
+		}
+	}
+}

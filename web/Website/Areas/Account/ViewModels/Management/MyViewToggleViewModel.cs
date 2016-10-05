@@ -1,21 +1,21 @@
 ﻿namespace Informa.Web.Areas.Account.ViewModels.Management
 {
-    using System;
     using Jabberwocky.Glass.Autofac.Mvc.Models;
     using Jabberwocky.Glass.Models;
     using Library.Globalization;
     using Library.Site;
     using Library.User.Authentication;
-    using Web.ViewModels;
     using Library.User.UserPreference;
-    public class MyViewToggle : GlassViewModel<IGlassBase>
+    using Web.ViewModels;
+
+    public class MyViewToggleViewModel : GlassViewModel<IGlassBase>
     {
         protected readonly ISiteRootContext SiterootContext;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
         public readonly ICallToActionViewModel CallToActionViewModel;
         protected readonly ITextTranslator TextTranslator;
         protected readonly IUserPreferenceContext UserPreferences;
-        public MyViewToggle(ISiteRootContext siterootContext, IAuthenticatedUserContext authenticatedUserContext,
+        public MyViewToggleViewModel(ISiteRootContext siterootContext, IAuthenticatedUserContext authenticatedUserContext,
                             ICallToActionViewModel callToActionViewModel, ITextTranslator textTranslator, IUserPreferenceContext userPreferences)
         {
             SiterootContext = siterootContext;
@@ -25,13 +25,14 @@
             UserPreferences = userPreferences;
         }
 
+        //Dictionary label
         public string MyViewLinkText => TextTranslator.Translate("MyView.MyViewLink");
 
         public bool IsGlobalToggleEnabled => SiterootContext.Item.Enable_MyView_Toggle;
         public string MyViewLinkURL => GetNavigationUrl();
         private string GetNavigationUrl()
         {
-            if(IsAuthenticated)
+            if (IsAuthenticated)
             {
                 if (UserPreferences.Preferences != null &&
                     UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)

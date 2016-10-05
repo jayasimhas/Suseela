@@ -28,7 +28,6 @@ import './components/article-sidebar-component';
 import './components/save-search-component';
 
 import './components/myview-settings';
-import './components/subscription';
 
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
@@ -125,10 +124,11 @@ var renderAMchart=function() {
     if($("#amchartDashboard").hasClass("amchart-dashboard"))
     {
 
-        var amChartType = $('#amChartType').val();
-        var dataProvider = $('#amChartDataProvider').val();
-        var categoryField = $('#CategoryField').val();
-        var valueField = $('#ValueField').val();
+        var amChartType = $('#ChartType').val().toLowerCase();
+        var dataProvider = $('#amChartDataProvider').val().toLowerCase();
+        var graphType = $('#GraphType').val().toLowerCase();
+        var categoryField = $('#CategoryField').val().toLowerCase();
+        var valueField = $('#ValueField').val().toLowerCase();
 
         AmCharts.makeChart("chartdiv", {
             "type": amChartType,
@@ -136,7 +136,7 @@ var renderAMchart=function() {
             "categoryField": categoryField,
             "graphs": [{
                 "valueField": valueField,
-                "type":"column"
+                "type":graphType
             }],
             "responsive": {
                 "enabled": true 
@@ -144,7 +144,6 @@ var renderAMchart=function() {
         });
     }
 };
-
 
 var decodeHtml = function(html) {
     var txt = document.createElement("textarea");
@@ -161,6 +160,14 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 $(document).ready(function() {
+	//messaging web users
+	window.dismiss=function(){
+		$('.dismiss').on('click', function(){
+			$('.messaging_webUsers').remove(); 
+			$('.messaging_webUsers_white').remove(); 
+		});
+	}
+	window.dismiss();
 
     var mediaTable = getParameterByName('mobilemedia');
     if(mediaTable=="true"){

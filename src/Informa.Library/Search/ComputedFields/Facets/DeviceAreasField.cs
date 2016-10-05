@@ -3,6 +3,8 @@ using System.Linq;
 using Informa.Library.Search.Utilities;
 using Informa.Library.Services.Search.Fields.Base;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
+using Sitecore.Data.Items;
+using Sitecore.Data;
 
 namespace Informa.Library.Search.ComputedFields.Facets
 {
@@ -12,7 +14,7 @@ namespace Informa.Library.Search.ComputedFields.Facets
 		{
 			if (glassItem?.Taxonomies != null)
 			{
-				var taxonomyItems = glassItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsDeviceAreaTaxonomy(x._Path));
+                var taxonomyItems = glassItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsDeviceAreaTaxonomy(x._Path));
 
 				return taxonomyItems.Where(x => !string.IsNullOrEmpty(x.Item_Name)).Select(x => x.Item_Name.Trim()).ToList();
 			}

@@ -14,7 +14,7 @@ namespace Informa.Library.User.UserPreference
         }
         public string create()
         {
-            return SiterootContext.Item?.MyView_Settings_Page?._Url;
+            return SiterootContext.Item?.MyView_Page?._Url;
         }
     }
 }
