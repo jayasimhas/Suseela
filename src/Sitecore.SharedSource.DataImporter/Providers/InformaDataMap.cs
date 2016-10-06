@@ -104,11 +104,18 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				foreach (string n in autNodes)
 					ao.Add(n, GetXMLData(d2, n));
 
-				var actOubDateString = ao["ARTICLEPUBDATE"];
-				DateTime actPubDate;
-				if (DateTimeUtil.ParseInformaDate(actOubDateString, out actPubDate) == false)
+				if (ao.ContainsKey("ARTICLEPUBDATE"))
 				{
-					ao["ARTICLEPUBDATE"] = ao["STORYUPDATE"];
+					var actOubDateString = ao["ARTICLEPUBDATE"];
+					DateTime actPubDate;
+					if (DateTimeUtil.ParseInformaDate(actOubDateString, out actPubDate) == false)
+					{
+						ao["ARTICLEPUBDATE"] = ao["STORYUPDATE"];
+					}
+				}
+				else
+				{
+					ao.Add("ARTICLEPUBDATE", ao["STORYUPDATE"]);
 				}
 			}
 
