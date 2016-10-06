@@ -30,17 +30,20 @@ namespace Informa.Library.Services.Article
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISiteRootsContext SiteRootsContext;
         protected readonly IGlobalSitecoreService GlobalService;
+        protected readonly IDCDTokenMatchers DCDTokenMatchers;
 
         public ArticleService(
             ICacheProvider cacheProvider,
             ITextTranslator textTranslator,
 			ISiteRootsContext siteRootsContext,
-            IGlobalSitecoreService globalService)
+            IGlobalSitecoreService globalService,
+            IDCDTokenMatchers dcdTokenMatchers)
         {
             CacheProvider = cacheProvider;
             TextTranslator = textTranslator;
             SiteRootsContext = siteRootsContext;
             GlobalService = globalService;
+            DCDTokenMatchers = dcdTokenMatchers;
         }
 
         private string CreateCacheKey(string suffix)

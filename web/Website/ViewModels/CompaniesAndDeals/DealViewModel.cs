@@ -30,6 +30,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             ITextTranslator TextTranslator { get; }
             ISitecoreService SitecoreService { get; set; }
             IDcdContentAnalyzer DcdContentAnalyzer { get; set; }
+            IDCDTokenMatchers DCDTokenMatchers { get; set; }
         }
 
         public DealViewModel(IDependencies dependencies)
@@ -57,7 +58,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 
         public string DealSummary => (Content == null || Content.DealSummary == null)
             ? string.Empty
-            : DCDTokenMatchers.ReplaceDealNameTokens(Content.DealSummary);
+            : _dependencies.DCDTokenMatchers.ReplaceDealNameTokens(Content.DealSummary);
         public string DealsSummaryText =>_dependencies.TextTranslator.Translate("DCD.Summary");
         public string BroughtToYouByText => _dependencies.TextTranslator.Translate("DCD.BroughToYouBy");
         public string DealIndustryHeader => _dependencies.TextTranslator.Translate("DCD.DealIndustry");

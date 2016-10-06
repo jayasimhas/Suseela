@@ -1428,6 +1428,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="js\components\article-sidebar-component.js" />
     <Content Include="js\components\save-search-component.js" />
     <Content Include="js\controllers\analytics-controller.js" />
     <Content Include="js\controllers\bookmark-controller.js" />
