@@ -5,5 +5,6 @@
         public int ChannelId { get; set; }
         public string ChannelName { get; set; }
         public int ChannelOrder { get; set; }
+        public string ChannelLink { get; set; }
     }
 }
