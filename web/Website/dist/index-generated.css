@@ -5058,14 +5058,14 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     .data-tool-landing .js-toggle-demo .toggle-demo {
       width: 100%;
       display: block;
-      padding: 24px 15px 15px 0;
+      padding: 23px 40px 30px 0;
       float: left; }
       .data-tool-landing .js-toggle-demo .toggle-demo .demoText {
         font-family: 'Roboto', Arial Narrow, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 1.125em;
-        padding-left: 15px;
+        padding-left: 40px;
         text-align: left;
         line-height: 30px;
         color: #58595b;
@@ -5078,7 +5078,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
           .data-tool-landing .js-toggle-demo .toggle-demo .demoText {
             width: 100%; } }
       .data-tool-landing .js-toggle-demo .toggle-demo .video-demo {
-        padding-left: 15px;
+        padding-left: 40px;
         width: 50%;
         float: left; }
         @media (max-width: 480px) {
@@ -5202,6 +5202,9 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       font-family: "Roboto", Arial Narrow, sans-serif;
       font-style: normal;
       font-weight: 400; }
+    .articleText p:last-child {
+      margin-bottom: 50px;
+      margin-bottom: 3.125rem; }
 
 .visible-sm {
   display: none; }

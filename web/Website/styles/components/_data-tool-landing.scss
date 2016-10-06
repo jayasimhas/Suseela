@@ -42,14 +42,14 @@
 			.toggle-demo{
 				width: 100%;
 				display: block;
-				padding: 24px 15px 15px 0;
+				padding: 23px 40px 30px 0;
 				float: left;
 				.demoText{
 					font-family: 'Roboto', Arial Narrow, sans-serif;
 					font-style: normal;
 					font-weight: 400;
 					font-size: 1.125em;
-					padding-left:15px;
+					padding-left:40px;
 					text-align: left;
 					line-height: 30px;
 					color: $color-abbey-gray;
@@ -63,7 +63,7 @@
 					}
 				}
 				.video-demo{
-						padding-left: 15px;
+						padding-left: 40px;
 						width: 50%;
 						float: left;
 						@include breakpoint('small') {
@@ -214,6 +214,9 @@
 					font-style: normal;
 					font-weight: 400;
 				 }
+				&:last-child{
+					margin-bottom: 3.125rem;
+				} 
 			}	
 		}
 		.visible-sm{
