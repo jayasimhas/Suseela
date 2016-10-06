@@ -103,6 +103,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 				foreach (string n in autNodes)
 					ao.Add(n, GetXMLData(d2, n));
+
+				var actOubDateString = ao["ARTICLEPUBDATE"];
+				DateTime actPubDate;
+				if (DateTimeUtil.ParseInformaDate(actOubDateString, out actPubDate) == false)
+				{
+					ao["ARTICLEPUBDATE"] = ao["STORYUPDATE"];
+				}
 			}
 
 			return l;
