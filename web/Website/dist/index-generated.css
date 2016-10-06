@@ -2436,6 +2436,34 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     .job_listing .pagination .nums li {
       display: inline-block; }
 
+.job_detail .sub-heading-text {
+  font-family: "PT Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5625em;
+  margin: 1em 0; }
+  .job_detail .sub-heading-text p {
+    margin-bottom: 0; }
+
+.job_detail .job_logo {
+  border-top: 1px solid #d1d3d4;
+  border-bottom: 1px solid #d1d3d4;
+  clear: both;
+  padding: 20px 0;
+  margin-bottom: 2em;
+  width: 100%; }
+  .job_detail .job_logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
+.job_detail .job_description {
+  font-family: "PT Serif", Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  font-size: 1.125em; }
+
 .landscape-image-component {
   margin-bottom: 32px;
   margin-bottom: 2rem;
