@@ -1,0 +1,117 @@
+#foodNews{
+	font-family: "Roboto";
+	
+	.subtitle{
+		font-size: 1.6875em;
+		margin-bottom: 25px;
+		font-weight: normal;
+		font-style: italic;
+		font-family: "PTSerif Italic";
+		span{
+			font-weight: bold;
+		}
+		
+	}
+	.searchpan{
+		border: 1px solid #d1d3d4;
+		background: #fbfbfb;
+		padding: 20px;
+		label[for=searchNews]{
+			float: left;
+			font-size: 1.5em;
+			color: #231f20;
+			margin-right: 22px;
+		}
+		#searchNews{
+			width: 300px;
+			height: 34px;
+			float: left;
+			font-size: 0.9375em;
+			font-style: italic;
+		}
+		.searchImg{
+			cursor: pointer;
+			margin: 6px 0 0 20px;
+		}
+	}
+	
+	.downloadBtn{
+		border: 1px solid #f7941e;
+		cursor: pointer;
+		text-transform: uppercase;
+		font-size: 0.75em;
+		font-weight: 700;
+		width: 120px;
+		height: 32px;
+		text-align: center;
+		display: inline-block;
+		line-height: 32px;
+		&:hover{
+			background: #f7941e;
+			color: #fff;
+		}
+	}
+	.curSubscriber{
+		border-top: 1px solid #d1d3d4;
+		margin-top: 30px;
+		padding-top: 30px;
+		h3{
+			font-size: 24px;
+			color: #231f20;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		p{
+			font-family: "PTSerif regular";
+			font-size: 1.29em;
+			line-height: 32px;
+			a{
+				color: #f38220;
+			}
+		}
+	}
+	.pagination{
+		li{
+			> a{
+				background: url(/dist/img/pagination-arr.gif) no-repeat;
+				height: 40px;
+				width: 40px;
+				overflow: hidden;
+				display: block;
+				float: left;
+				margin-right: 10px;
+				text-indent: -9999px;
+			}
+		}
+		span a{
+			float: left;
+			height: 40px;
+			width: 40px;
+			margin-right: 10px;
+			background: #f1f1f1;
+			text-align: center;
+			color: #000;
+			line-height: 40px;
+			&:hover{
+				text-decoration: none;
+			}
+			&.active{
+				background: #c6c2c2;
+			}
+		}
+		a.prev{ 
+			background-position: 0 0;
+		}
+		a.next{
+			background-position: -41px 0;
+		}
+		 
+			
+		.nums{
+			text-align: center;
+			li{
+				display: inline-block; 
+			}
+		}
+	}
+}

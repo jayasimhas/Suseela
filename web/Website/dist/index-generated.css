@@ -2000,6 +2000,94 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   margin-bottom: 16px;
   margin-bottom: 1rem; }
 
+#foodNews {
+  font-family: "Roboto"; }
+  #foodNews .subtitle {
+    font-size: 1.6875em;
+    margin-bottom: 25px;
+    font-weight: normal;
+    font-style: italic;
+    font-family: "PTSerif Italic"; }
+    #foodNews .subtitle span {
+      font-weight: bold; }
+  #foodNews .searchpan {
+    border: 1px solid #d1d3d4;
+    background: #fbfbfb;
+    padding: 20px; }
+    #foodNews .searchpan label[for=searchNews] {
+      float: left;
+      font-size: 1.5em;
+      color: #231f20;
+      margin-right: 22px; }
+    #foodNews .searchpan #searchNews {
+      width: 300px;
+      height: 34px;
+      float: left;
+      font-size: 0.9375em;
+      font-style: italic; }
+    #foodNews .searchpan .searchImg {
+      cursor: pointer;
+      margin: 6px 0 0 20px; }
+  #foodNews .downloadBtn {
+    border: 1px solid #f7941e;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: 700;
+    width: 120px;
+    height: 32px;
+    text-align: center;
+    display: inline-block;
+    line-height: 32px; }
+    #foodNews .downloadBtn:hover {
+      background: #f7941e;
+      color: #fff; }
+  #foodNews .curSubscriber {
+    border-top: 1px solid #d1d3d4;
+    margin-top: 30px;
+    padding-top: 30px; }
+    #foodNews .curSubscriber h3, #foodNews .curSubscriber .article-call-to-action__title {
+      font-size: 24px;
+      color: #231f20;
+      font-weight: bold;
+      margin-bottom: 20px; }
+    #foodNews .curSubscriber p {
+      font-family: "PTSerif regular";
+      font-size: 1.29em;
+      line-height: 32px; }
+      #foodNews .curSubscriber p a, #foodNews .curSubscriber p .pop-out__reset-password, #foodNews .curSubscriber p .sortable-table__list-toggler, #foodNews .curSubscriber p .mobile-table-exit {
+        color: #f38220; }
+  #foodNews .pagination li > a, #foodNews .pagination li > .pop-out__reset-password, #foodNews .pagination li > .sortable-table__list-toggler, #foodNews .pagination li > .mobile-table-exit {
+    background: url(/dist/img/pagination-arr.gif) no-repeat;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    text-indent: -9999px; }
+  #foodNews .pagination span a, #foodNews .pagination span .pop-out__reset-password, #foodNews .pagination span .sortable-table__list-toggler, #foodNews .pagination span .mobile-table-exit {
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    background: #f1f1f1;
+    text-align: center;
+    color: #000;
+    line-height: 40px; }
+    #foodNews .pagination span a:hover, #foodNews .pagination span .pop-out__reset-password:hover, #foodNews .pagination span .sortable-table__list-toggler:hover, #foodNews .pagination span .mobile-table-exit:hover {
+      text-decoration: none; }
+    #foodNews .pagination span a.active, #foodNews .pagination span .active.pop-out__reset-password, #foodNews .pagination span .active.sortable-table__list-toggler, #foodNews .pagination span .active.mobile-table-exit {
+      background: #c6c2c2; }
+  #foodNews .pagination a.prev, #foodNews .pagination .prev.pop-out__reset-password, #foodNews .pagination .prev.sortable-table__list-toggler, #foodNews .pagination .prev.mobile-table-exit {
+    background-position: 0 0; }
+  #foodNews .pagination a.next, #foodNews .pagination .next.pop-out__reset-password, #foodNews .pagination .next.sortable-table__list-toggler, #foodNews .pagination .next.mobile-table-exit {
+    background-position: -41px 0; }
+  #foodNews .pagination .nums {
+    text-align: center; }
+    #foodNews .pagination .nums li {
+      display: inline-block; }
+
 .generic-content {
   margin-bottom: 32px;
   margin-bottom: 2rem; }
@@ -2233,6 +2321,148 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     max-height: 400px; }
   .show .informa-ribbon__title {
     background-position: bottom center; }
+
+.job_listing h1 {
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem; }
+
+.job_listing #page_navigation a, .job_listing #page_navigation .pop-out__reset-password, .job_listing #page_navigation .sortable-table__list-toggler, .job_listing #page_navigation .mobile-table-exit {
+  margin: 0 10px; }
+
+.job_listing .sub-heading-text {
+  padding-bottom: 12px;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #d1d3d4; }
+  .job_listing .sub-heading-text span {
+    font-family: "PT Serif", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: #231f20;
+    margin-bottom: 12px;
+    margin-bottom: 0.75rem;
+    font-size: 1.5em;
+    line-height: 30px; }
+
+.job_listing .stacked_job_view {
+  clear: both;
+  width: 100%; }
+  .job_listing .stacked_job_view .job_list_individual {
+    width: 100%;
+    padding: 1em;
+    border-bottom: 1px solid #d1d3d4;
+    float: left;
+    position: relative; }
+    @media (max-width: 480px) {
+      .job_listing .stacked_job_view .job_list_individual {
+        padding: 0; } }
+    .job_listing .stacked_job_view .job_list_individual .job_logo {
+      width: 20%;
+      float: left; }
+      @media (max-width: 480px) {
+        .job_listing .stacked_job_view .job_list_individual .job_logo {
+          width: 100%;
+          display: block;
+          float: none;
+          clear: both;
+          margin-top: 55px;
+          margin-bottom: 10px; } }
+      .job_listing .stacked_job_view .job_list_individual .job_logo img {
+        width: 100%; }
+    .job_listing .stacked_job_view .job_list_individual .job_description {
+      float: left;
+      width: 70%;
+      margin-left: 32px;
+      margin-left: 2rem; }
+      @media (max-width: 480px) {
+        .job_listing .stacked_job_view .job_list_individual .job_description {
+          width: 100%;
+          display: block;
+          float: none;
+          margin-left: 0; } }
+      .job_listing .stacked_job_view .job_list_individual .job_description .job_heading {
+        clear: both; }
+        .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title {
+          font-family: 'Roboto Condensed';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 1.875em;
+          margin-bottom: 0.3em; }
+          .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 a, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title a, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .pop-out__reset-password, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .pop-out__reset-password, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .sortable-table__list-toggler, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .sortable-table__list-toggler, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .mobile-table-exit, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .mobile-table-exit {
+            color: #231f20; }
+        @media (max-width: 480px) {
+          .job_listing .stacked_job_view .job_list_individual .job_description .job_heading {
+            position: absolute;
+            top: -20px;
+            margin-top: 30px; } }
+      .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail p {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.125em;
+        line-height: 30px;
+        color: #58595b; }
+
+.job_listing .pagination {
+  padding: 1.75em 0;
+  clear: both; }
+  .job_listing .pagination li > a, .job_listing .pagination li > .pop-out__reset-password, .job_listing .pagination li > .sortable-table__list-toggler, .job_listing .pagination li > .mobile-table-exit {
+    background: url(/dist/img/pagination-arr.gif) no-repeat;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    text-indent: -9999px; }
+  .job_listing .pagination span a, .job_listing .pagination span .pop-out__reset-password, .job_listing .pagination span .sortable-table__list-toggler, .job_listing .pagination span .mobile-table-exit {
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    background: #f1f1f1;
+    text-align: center;
+    color: #000;
+    line-height: 40px; }
+    .job_listing .pagination span a:hover, .job_listing .pagination span .pop-out__reset-password:hover, .job_listing .pagination span .sortable-table__list-toggler:hover, .job_listing .pagination span .mobile-table-exit:hover {
+      text-decoration: none; }
+    .job_listing .pagination span a.active, .job_listing .pagination span .active.pop-out__reset-password, .job_listing .pagination span .active.sortable-table__list-toggler, .job_listing .pagination span .active.mobile-table-exit {
+      background: #c6c2c2; }
+  .job_listing .pagination a.prev, .job_listing .pagination .prev.pop-out__reset-password, .job_listing .pagination .prev.sortable-table__list-toggler, .job_listing .pagination .prev.mobile-table-exit {
+    background-position: 0 0; }
+  .job_listing .pagination a.next, .job_listing .pagination .next.pop-out__reset-password, .job_listing .pagination .next.sortable-table__list-toggler, .job_listing .pagination .next.mobile-table-exit {
+    background-position: -41px 0; }
+  .job_listing .pagination .nums {
+    text-align: center; }
+    .job_listing .pagination .nums li {
+      display: inline-block; }
+
+.job_detail .sub-heading-text {
+  font-family: "PT Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5625em;
+  margin: 1em 0; }
+  .job_detail .sub-heading-text p {
+    margin-bottom: 0; }
+
+.job_detail .job_logo {
+  border-top: 1px solid #d1d3d4;
+  border-bottom: 1px solid #d1d3d4;
+  clear: both;
+  padding: 20px 0;
+  margin-bottom: 2em;
+  width: 100%; }
+  .job_detail .job_logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
+.job_detail .job_description {
+  font-family: "PT Serif", Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  font-size: 1.125em; }
 
 .landscape-image-component {
   margin-bottom: 32px;
@@ -3126,19 +3356,135 @@ header .header-account-access {
     margin: 40px 0 16px 8px !important;
     margin: 2.5rem 0 1rem 0.5rem !important; } }
 
+.messaging_webUsers {
+  width: 100%;
+  background: #f1f2f2;
+  clear: both;
+  border-top: 4px solid #be1e2d;
+  padding: 28px 32px;
+  padding: 1.75rem 2rem;
+  position: relative;
+  float: left;
+  line-height: 20px;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+  color: #58595b; }
+  .messaging_webUsers h3, .messaging_webUsers .article-call-to-action__title {
+    font-family: "Roboto",​Arial Narrow,​sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.375em;
+    margin-bottom: 16px;
+    margin-bottom: 1rem;
+    color: #58595b; }
+  .messaging_webUsers .msg-text {
+    clear: both;
+    margin-bottom: 16px;
+    margin-bottom: 1rem; }
+    .messaging_webUsers .msg-text p {
+      font-family: "PT Serif",​Georgia,​serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.9375em;
+      color: #58595b; }
+  .messaging_webUsers .button-msg-webUser {
+    width: 100%;
+    clear: both;
+    font-family: "Roboto",​Arial Narrow,​sans-serif;
+    font-style: normal;
+    font-size: 0.9375em;
+    font-weight: 400;
+    position: relative;
+    float: left; }
+    .messaging_webUsers .button-msg-webUser .msg_link {
+      float: left;
+      margin-top: 10px; }
+    .messaging_webUsers .button-msg-webUser .find_more {
+      float: right;
+      text-transform: uppercase; }
+    @media (max-width: 480px) {
+      .messaging_webUsers .button-msg-webUser .msg_link {
+        display: block;
+        float: none;
+        clear: both;
+        margin-bottom: 16px;
+        margin-bottom: 1rem; }
+      .messaging_webUsers .button-msg-webUser .find_more {
+        float: left; } }
+  .messaging_webUsers .msg_dismiss {
+    text-transform: uppercase;
+    float: right;
+    font-family: "Roboto",​Arial Narrow,​sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.5625em;
+    clear: both; }
+    .messaging_webUsers .msg_dismiss a, .messaging_webUsers .msg_dismiss .pop-out__reset-password, .messaging_webUsers .msg_dismiss .sortable-table__list-toggler, .messaging_webUsers .msg_dismiss .mobile-table-exit {
+      background: url("/dist/img/dismiss.png") no-repeat right top;
+      padding-right: 15px; }
+
+.messaging_webUsers_white {
+  margin: 0 auto;
+  position: relative;
+  line-height: 20px;
+  width: 80%;
+  clear: both;
+  border-top: 4px solid #be1e2d;
+  border-bottom: 1px solid #be1e2d;
+  padding: 28px 32px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1em; }
+  .messaging_webUsers_white .msg_dismiss {
+    text-transform: uppercase;
+    float: right;
+    font-family: "Roboto",​Arial Narrow,​sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.5625em;
+    clear: both; }
+    .messaging_webUsers_white .msg_dismiss a, .messaging_webUsers_white .msg_dismiss .pop-out__reset-password, .messaging_webUsers_white .msg_dismiss .sortable-table__list-toggler, .messaging_webUsers_white .msg_dismiss .mobile-table-exit {
+      background: url("/dist/img/dismiss.png") no-repeat right top;
+      padding-right: 15px; }
+  .messaging_webUsers_white .msg-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.125em;
+    color: #231f20;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px; }
+    .messaging_webUsers_white .msg-text h3, .messaging_webUsers_white .msg-text .article-call-to-action__title {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.25em;
+      color: #be1e2d; }
+    .messaging_webUsers_white .msg-text .red {
+      color: #be1e2d; }
+  @media (max-width: 480px) {
+    .messaging_webUsers_white {
+      width: 100%;
+      float: left; }
+      .messaging_webUsers_white .msg-text {
+        float: left;
+        width: 100%;
+        text-align: left; } }
+
 .myview-settings {
   margin-bottom: 50px; }
   .myview-settings h1 {
     margin-bottom: 0px;
     float: left; }
-    @media only screen and (max-device-width: 480px) {
+    @media (max-width: 480px) {
       .myview-settings h1 {
         font-size: 32px; } }
   .myview-settings .mysettingsHead {
     border-bottom: 1px solid #d1d3d4;
     padding-bottom: 10px;
     margin-bottom: 20px; }
-    @media only screen and (max-device-width: 480px) {
+    @media (max-width: 480px) {
       .myview-settings .mysettingsHead {
         margin-bottom: 0px;
         border-bottom: none; } }
@@ -3147,14 +3493,15 @@ header .header-account-access {
   .myview-settings .mb-10 {
     margin: 10px 0 20px; }
   .myview-settings .sub-heading-text {
-    font-size: 1.125em; }
+    font-size: 1.125em;
+    margin-bottom: 20px; }
     .myview-settings .sub-heading-text p {
       line-height: 16px;
       font-style: normal;
       font-family: "PT Serif Caption";
       font-weight: 400;
       font-size: 1.125em; }
-      @media only screen and (max-device-width: 480px) {
+      @media (max-width: 480px) {
         .myview-settings .sub-heading-text p {
           font-size: 0.875em;
           margin: 0px;
@@ -3166,7 +3513,7 @@ header .header-account-access {
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
       float: left; }
-      @media only screen and (max-device-width: 480px) {
+      @media (max-width: 480px) {
         .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
           font-size: 1.25em;
           margin-bottom: 12px;
@@ -3176,8 +3523,25 @@ header .header-account-access {
       float: left;
       padding-left: 20px;
       margin: 12px 20px; }
-      @media only screen and (max-device-width: 480px) {
+      @media (max-width: 480px) {
         .myview-settings .publicationPan .subscribed {
+          font-size: 0.875em;
+          border-left: none;
+          padding-left: 0px;
+          margin: 0px; } }
+    .myview-settings .publicationPan .subscribe {
+      float: left;
+      width: 120px;
+      height: 32px;
+      background: #f7941e;
+      color: #fff;
+      margin: 8px 0 0 20px;
+      line-height: 32px;
+      font-size: 12px;
+      cursor: pointer;
+      padding-left: 0px; }
+      @media (max-width: 480px) {
+        .myview-settings .publicationPan .subscribe {
           font-size: 0.875em;
           border-left: none;
           padding-left: 0px;
@@ -3259,12 +3623,12 @@ header .header-account-access {
             background: #acacad; }
           .myview-settings .table-responsive .table tbody tr.followingrow:hover .move {
             display: block; }
-            @media only screen and (max-device-width: 480px) {
+            @media (max-width: 480px) {
               .myview-settings .table-responsive .table tbody tr.followingrow:hover .move {
                 display: none; } }
         .myview-settings .table-responsive .table tbody tr.followrow {
           background: #f9f9f9; }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table tbody tr.followrow {
               background: #fff; } }
           .myview-settings .table-responsive .table tbody tr.followrow .rowlines {
@@ -3289,7 +3653,7 @@ header .header-account-access {
                   z-index: -1; } }
           .myview-settings .table-responsive .table tbody tr.followrow.frow {
             border-top: 2px solid #d1d3d4; }
-            @media only screen and (max-device-width: 480px) {
+            @media (max-width: 480px) {
               .myview-settings .table-responsive .table tbody tr.followrow.frow {
                 border-top: none; } }
           .myview-settings .table-responsive .table tbody tr.followrow .move {
@@ -3301,25 +3665,25 @@ header .header-account-access {
         vertical-align: top;
         border-top: 0px solid #ddd;
         background: #f9f9f9; }
-        @media only screen and (max-device-width: 480px) {
+        @media (max-width: 480px) {
           .myview-settings .table-responsive .table thead th {
             padding: 8px 0px 10px 10px; } }
         .myview-settings .table-responsive .table thead th p {
           font-size: 1em;
           text-align: left;
           padding: 12px 0 0; }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table thead th p {
               padding: 0;
               font-size: 0.875em; } }
         .myview-settings .table-responsive .table thead th.firstrow {
           padding: 40px 20px 10px; }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table thead th.firstrow {
               padding: 20px 10px 10px; } }
         .myview-settings .table-responsive .table thead th.nopad {
           padding: 0px 20px; }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table thead th.nopad {
               padding: 0px 10px; } }
         .myview-settings .table-responsive .table thead th.pbot {
@@ -3345,10 +3709,10 @@ header .header-account-access {
             @media only screen and (max-device-width: 480px) {
               .myview-settings .table-responsive .table thead th .rowlines .move {
                 z-index: -1; } }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table thead th .rowlines {
               top: 4px; } }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table thead th .rowlines span {
               background: #808081; } }
         .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
@@ -3356,16 +3720,20 @@ header .header-account-access {
           height: 17px;
           width: 32px;
           display: inline-block; }
-          @media only screen and (max-device-width: 480px) {
+          @media (max-width: 480px) {
             .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
               position: relative;
               left: -15px; } }
           .myview-settings .table-responsive .table thead th .accordionImg a.collapsed, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.mobile-table-exit {
             background: url(/dist/img/accordion.jpg) no-repeat 0 0; }
-            @media only screen and (max-device-width: 480px) {
+            @media (max-width: 480px) {
               .myview-settings .table-responsive .table thead th .accordionImg a.collapsed, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.mobile-table-exit {
                 position: relative;
                 left: -5px; } }
+        .myview-settings .table-responsive .table thead th.notsubscr {
+          text-align: left;
+          padding-bottom: 0px;
+          padding-top: 0px; }
       .myview-settings .table-responsive .table thead .followAllBtn {
         border: 1px solid #f7941e;
         cursor: pointer;
@@ -3401,19 +3769,19 @@ header .header-account-access {
         margin: 8px 0 0 20px; }
       .myview-settings .table-responsive .table .wd-55 {
         width: 55%; }
-        @media only screen and (max-device-width: 480px) {
+        @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-55 {
             width: 65%; } }
       .myview-settings .table-responsive .table .wd-25 {
         width: 25%; }
-        @media only screen and (max-device-width: 480px) {
+        @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-25 {
             width: 20%;
             padding: 8px 0px 10px 10px;
             text-align: right; } }
       .myview-settings .table-responsive .table .wd-15 {
         width: 15%; }
-        @media only screen and (max-device-width: 480px) {
+        @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-15 {
             width: 10%; } }
       .myview-settings .table-responsive .table .graybg {
@@ -3436,11 +3804,11 @@ header .header-account-access {
         .myview-settings .table-responsive .table .smfollowingBtn .mchecked {
           background-position: 0 0; }
         .myview-settings .table-responsive .table .smfollowingBtn .munchecked {
-          background-position: -31px 0; }
+          background-position: 0 -31px; }
         .myview-settings .table-responsive .table .smfollowingBtn .mcheckedAll {
           background-position: 0 0; }
         .myview-settings .table-responsive .table .smfollowingBtn .muncheckedAll {
-          background-position: -31px 0; }
+          background-position: 0 -31px; }
   .myview-settings .hideBtn {
     display: none !important; }
   .myview-settings .saveoption {
@@ -3462,7 +3830,7 @@ header .header-account-access {
       .myview-settings .saveoption .gotoview:hover {
         background: #f7941e;
         color: #fff; }
-      @media only screen and (max-device-width: 480px) {
+      @media (max-width: 480px) {
         .myview-settings .saveoption .gotoview {
           border: 1px solid #f7941e;
           cursor: pointer;
@@ -3492,9 +3860,18 @@ header .header-account-access {
       margin-left: 20px;
       background: #f7941e;
       color: #fff; }
-      @media only screen and (max-device-width: 480px) {
+      @media (max-width: 480px) {
         .myview-settings .saveoption .saveview {
           width: 120px; } }
+  .myview-settings .dosubscribe .followrow {
+    background: #f9f9f9; }
+    @media (max-width: 480px) {
+      .myview-settings .dosubscribe .followrow {
+        background: #fff; } }
+    .myview-settings .dosubscribe .followrow .rowlines {
+      display: none; }
+  .myview-settings .hidden {
+    display: none !important; }
 
 @media only screen and (max-device-width: 480px) {
   .hidden-xs {
@@ -3532,6 +3909,27 @@ header .header-account-access {
   50% {
     color: #FF9933;
     background: #fff; } }
+
+div.main-menu__section .titleMyView {
+  color: #231f20;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  padding-left: 24px;
+  padding-left: 24px;
+  padding-left: 1.5rem;
+  text-transform: uppercase;
+  width: 100%; }
+
+div.main-menu__section .edit-link {
+  margin-left: 24px;
+  font-size: 12px; }
+
+div.main-menu__section .navContent {
+  font-size: 12px;
+  margin: 6px 0 0 25px;
+  line-height: 20px;
+  color: #979799; }
 
 .modal-open {
   overflow: hidden; }
@@ -4361,167 +4759,134 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     margin-top: -48px;
     margin-top: -3rem; }
 
-@media (max-width: 480px) {
-  .subscriptionPan {
-    font-size: 1em;
-    line-height: 20px;
-    width: 100%; } }
-
-.subscriptionPan .page-account__table {
-  border: 1px solid #d2d4d3; }
+.subscriptionPan {
+  font-family: "Roboto", Helvetica, Arial, sans-serif; }
   @media (max-width: 480px) {
-    .subscriptionPan .page-account__table {
-      border: none; } }
-
-.subscriptionPan .page-account_text {
-  font-family: 'PT Serif';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.125em;
-  margin-bottom: 20px;
-  margin-bottom: 1.25rem;
-  display: block; }
-  @media (max-width: 480px) {
-    .subscriptionPan .page-account_text {
+    .subscriptionPan {
       font-size: 1em;
-      line-height: 20px; } }
-
-.subscriptionPan .sortable-table__header--mobile {
-  display: none; }
-
-.subscriptionPan .sortable-table__col {
-  width: 25%;
-  float: left; }
-  .subscriptionPan .sortable-table__col .accordian {
-    background: url(/dist/img/arrow2.jpg) no-repeat -18px -14px;
-    height: 17px;
-    min-width: 17px;
-    display: inline-block;
-    cursor: pointer; }
-    .subscriptionPan .sortable-table__col .accordian.active {
-      background: url(/dist/img/arrow2.jpg) no-repeat 0 6px; }
-    @media only screen and (max-device-width: 480px) {
-      .subscriptionPan .sortable-table__col .accordian {
-        display: none; } }
-  .subscriptionPan .sortable-table__col span:nth-child(1) {
-    padding-left: 20px; }
-    @media only screen and (max-device-width: 480px) {
-      .subscriptionPan .sortable-table__col span:nth-child(1) {
-        padding-left: 0px; } }
-  .subscriptionPan .sortable-table__col .accordian:nth-child(2) {
-    position: absolute;
-    margin-left: 40px; }
-  @media (max-width: 480px) {
-    .subscriptionPan .sortable-table__col {
+      line-height: 20px;
       width: 100%; } }
+  .subscriptionPan #mySubscription {
+    margin-bottom: 50px; }
+  .subscriptionPan #mySubscriptionTab {
+    width: 100%;
+    border: 1px solid #d2d4d3;
+    border-collapse: collapse; }
+    @media (max-width: 480px) {
+      .subscriptionPan #mySubscriptionTab {
+        border: none; } }
+  .subscriptionPan #mypurchases {
+    width: 100%;
+    border: 1px solid #d2d4d3;
+    border-collapse: collapse; }
+    @media (max-width: 480px) {
+      .subscriptionPan #mypurchases {
+        border: none; } }
+  .subscriptionPan .page-account__table {
+    border: 1px solid #d2d4d3; }
+    @media (max-width: 480px) {
+      .subscriptionPan .page-account__table {
+        border: none; } }
+  .subscriptionPan .page-account_text {
+    font-family: 'PT Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125em;
+    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
+    display: block; }
+    @media (max-width: 480px) {
+      .subscriptionPan .page-account_text {
+        font-size: 1em;
+        line-height: 20px; } }
+  .subscriptionPan .sortable-table__col {
+    width: 25%;
+    text-align: left; }
+    .subscriptionPan .sortable-table__col .accordian {
+      background: url(/dist/img/arrow2.jpg) no-repeat -18px -14px;
+      height: 17px;
+      min-width: 17px;
+      display: inline-block;
+      cursor: pointer; }
+      .subscriptionPan .sortable-table__col .accordian.active {
+        background: url(/dist/img/arrow2.jpg) no-repeat 0 6px; }
+      @media (max-width: 480px) {
+        .subscriptionPan .sortable-table__col .accordian {
+          display: none; } }
+    .subscriptionPan .sortable-table__col .accordian:nth-child(2) {
+      position: absolute;
+      margin-left: 40px; }
+    @media (max-width: 480px) {
+      .subscriptionPan .sortable-table__col {
+        width: 100%;
+        display: table-cell;
+        padding: 12px;
+        font-size: 1em;
+        line-height: 24px; } }
   @media (max-width: 480px) {
-    .subscriptionPan .sortable-table__col {
-      padding: 12px; } }
+    .subscriptionPan .tableMrow {
+      clear: both;
+      border: 1px solid #d2d4d3;
+      margin-bottom: 20px; }
+      .subscriptionPan .tableMrow .pubName {
+        width: 60%;
+        float: left;
+        padding: 12px; }
+      .subscriptionPan .tableMrow .pubSubscribe {
+        width: 40%;
+        float: left;
+        padding: 12px 0; }
+        .subscriptionPan .tableMrow .pubSubscribe .button, .subscriptionPan .tableMrow .pubSubscribe .full-diminished-button {
+          padding-top: 7px;
+          padding-bottom: 7px; } }
+  .subscriptionPan .tableMrow .tablerow {
+    clear: both;
+    border: 1px solid #d2d4d3; }
+  .subscriptionPan .parent {
+    border-top: 1px solid #d2d4d3; }
+  .subscriptionPan .child {
+    border-top: 1px solid #d2d4d3; }
+  .subscriptionPan .hiderow {
+    display: none; }
+  .subscriptionPan .title {
+    background: #ececec;
+    padding: 10px;
+    font-size: 1.125em;
+    color: #231f20;
+    font-weight: bold; }
+    @media (max-width: 480px) {
+      .subscriptionPan .title {
+        clear: both; } }
+  .subscriptionPan .maintitle {
+    background: #ececec url(/dist/img/mob-arrow.png) no-repeat right 14px; }
+    .subscriptionPan .maintitle.active {
+      background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px; }
 
-.subscriptionPan .subjectsAct .hide {
-  display: none; }
+#purchases #mypurchases tr td:nth-child(1) {
+  width: 20%; }
 
-.subscriptionPan .tablerow {
-  border-top: 1px solid #d1d3d4;
-  min-height: 55px; }
-  @media (max-width: 480px) {
-    .subscriptionPan .tablerow {
-      clear: both; } }
+#purchases #mypurchases tr td:nth-child(2) {
+  width: 55%; }
 
-.subscriptionPan .button, .subscriptionPan .full-diminished-button, .subscriptionPan .button--filled, .subscriptionPan .pop-out__register-submit, .subscriptionPan .pop-out__sign-in-submit, .subscriptionPan .button--outlined, .subscriptionPan .button--outline, .subscriptionPan .button--gilded,
-.subscriptionPan a.button,
-.subscriptionPan a.full-diminished-button,
-.subscriptionPan .full-diminished-button.pop-out__reset-password,
-.subscriptionPan .full-diminished-button.sortable-table__list-toggler,
-.subscriptionPan .full-diminished-button.mobile-table-exit,
-.subscriptionPan .button.pop-out__reset-password,
-.subscriptionPan .button.sortable-table__list-toggler,
-.subscriptionPan .button.mobile-table-exit,
-.subscriptionPan a.button--filled,
-.subscriptionPan a.pop-out__register-submit,
-.subscriptionPan .pop-out__register-submit.pop-out__reset-password,
-.subscriptionPan .pop-out__register-submit.sortable-table__list-toggler,
-.subscriptionPan .pop-out__register-submit.mobile-table-exit,
-.subscriptionPan a.pop-out__sign-in-submit,
-.subscriptionPan .pop-out__sign-in-submit.pop-out__reset-password,
-.subscriptionPan .pop-out__sign-in-submit.sortable-table__list-toggler,
-.subscriptionPan .pop-out__sign-in-submit.mobile-table-exit,
-.subscriptionPan .button--filled.pop-out__reset-password,
-.subscriptionPan .button--filled.sortable-table__list-toggler,
-.subscriptionPan .button--filled.mobile-table-exit,
-.subscriptionPan a.button--outlined,
-.subscriptionPan .button--outlined.pop-out__reset-password,
-.subscriptionPan .button--outlined.sortable-table__list-toggler,
-.subscriptionPan .button--outlined.mobile-table-exit,
-.subscriptionPan a.button--outline,
-.subscriptionPan .button--outline.pop-out__reset-password,
-.subscriptionPan .button--outline.sortable-table__list-toggler,
-.subscriptionPan .button--outline.mobile-table-exit,
-.subscriptionPan a.button--gilded,
-.subscriptionPan .button--gilded.pop-out__reset-password,
-.subscriptionPan .button--gilded.sortable-table__list-toggler,
-.subscriptionPan .button--gilded.mobile-table-exit {
-  color: #231f20; }
+#purchases #mypurchases tr td:nth-child(3) {
+  width: 22%; }
 
-.subscriptionPan .button--outline:enabled:hover,
-.subscriptionPan a.button--outline:enabled:hover,
-.subscriptionPan .button--outline.pop-out__reset-password:enabled:hover,
-.subscriptionPan .button--outline.sortable-table__list-toggler:enabled:hover,
-.subscriptionPan .button--outline.mobile-table-exit:enabled:hover {
-  color: #ffffff;
-  text-decoration: none; }
+#purchases .purrow {
+  border-top: 1px solid #d2d4d3; }
 
-.subscriptionPan .title {
-  background: #ececec;
-  padding: 10px;
-  font-size: 1.125em;
-  color: #231f20;
-  font-weight: bold; }
-  @media (max-width: 480px) {
-    .subscriptionPan .title {
-      clear: both; } }
+.tablesorter-headerAsc .sorting-arrows__arrow--up {
+  fill: #be1e2d; }
 
-.subscriptionPan .maintitle {
-  background: #ececec url(/dist/img/mob-arrow.png) no-repeat right 14px; }
-  .subscriptionPan .maintitle.active {
-    background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px; }
+.tablesorter-headerDesc .sorting-arrows__arrow--down {
+  fill: #be1e2d; }
 
 @media (max-width: 480px) {
+  font-size: 15px;
   .hidden-xs {
     display: none !important; }
   .page-account__header {
     font-size: 36px;
-    line-height: 32px; }
-  .mobileCls {
-    margin-top: 20px;
-    border: 1px solid #d2d4d3; }
-    .mobileCls:before {
-      clear: both;
-      content: '';
-      display: table; }
-    .mobileCls:after {
-      clear: both;
-      display: table;
-      content: " "; }
-    .mobileCls .sub {
-      float: left;
-      width: 60%;
-      margin-top: 8px; }
-    .mobileCls .subsubscribe {
-      float: left;
-      width: 38%;
-      margin-top: -3px; }
-      .mobileCls .subsubscribe a, .mobileCls .subsubscribe .pop-out__reset-password, .mobileCls .subsubscribe .sortable-table__list-toggler, .mobileCls .subsubscribe .mobile-table-exit {
-        display: inline-block;
-        padding: 8px 14px; }
-    .mobileCls .maccordian {
-      background: url(/dist/img/mob-arrow.jpg) no-repeat 0 0;
-      height: 12px;
-      width: 22px;
-      display: inline-block;
-      cursor: pointer; }
-      .mobileCls .maccordian.active {
-        background: url(/dist/img/mob-arrow.jpg) no-repeat 0 6px; } }
+    line-height: 32px; } }
 
 @media only screen and (min-width: 481px) {
   .hidden-lg {
@@ -4798,16 +5163,19 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     clear: both; }
 
 .data-tool-placeholder-right-rail {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 1.75em; }
   .data-tool-placeholder-right-rail h3.data-tool-heading, .data-tool-placeholder-right-rail .data-tool-heading.article-call-to-action__title {
     font-family: "Roboto Condensed", Arial Narrow, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 1.125em; }
   .data-tool-placeholder-right-rail .data-tool-graph {
-    width: 100%; }
+    width: 100%;
+    clear: both; }
   .data-tool-placeholder-right-rail p {
-    margin-top: 20px; }
+    margin-top: 20px;
+    clear: both; }
     .data-tool-placeholder-right-rail p a, .data-tool-placeholder-right-rail p .pop-out__reset-password, .data-tool-placeholder-right-rail p .sortable-table__list-toggler, .data-tool-placeholder-right-rail p .mobile-table-exit {
       color: #bb1528;
       font-family: "Roboto", Arial Narrow, sans-serif;
@@ -10257,163 +10625,5 @@ main {
   background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20width%3D%2216%22%20height%3D%2216%22%20enable-background%3D%22new%200%200%2016%2016%22%20xml%3Aspace%3D%22preserve%22%3E%3Crect%20id%3D%22backgroundrect%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20x%3D%220%22%20y%3D%220%22%20fill%3D%22none%22%20stroke%3D%22none%22/%3E%0A%0A%3Cg%20class%3D%22currentLayer%22%3E%3Ctitle%3ELayer%201%3C/title%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20stroke-width%3D%223%22%20stroke-miterlimit%3D%2210%22%20points%3D%222.473933666944504%2C6%206.473933666944504%2C10%2014.473933666944504%2C2%20%22%20id%3D%22svg_1%22%20class%3D%22%22%20stroke-opacity%3D%221%22/%3E%3C/g%3E%3C/svg%3E); }
   .facets__section-list input[type="checkbox"]:checked + label:after use > svg {
     fill: #231f20; }
-/*
- *  Owl Carousel - Core
- */
-.owl-carousel {
-  display: none;
-  width: 100%;
-  -webkit-tap-highlight-color: transparent;
-  /* position relative and z-index fix webkit rendering fonts issue */
-  position: relative;
-  z-index: 1; }
-  .owl-carousel .owl-stage {
-    position: relative;
-    -ms-touch-action: pan-Y; }
-  .owl-carousel .owl-stage:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0; }
-  .owl-carousel .owl-stage-outer {
-    position: relative;
-    overflow: hidden;
-    /* fix for flashing background */
-    -webkit-transform: translate3d(0px, 0px, 0px); }
-  .owl-carousel .owl-item {
-    position: relative;
-    min-height: 1px;
-    float: left;
-    -webkit-backface-visibility: hidden;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none; }
-  .owl-carousel .owl-item img {
-    display: block;
-    width: 100%;
-    -webkit-transform-style: preserve-3d; }
-  .owl-carousel .owl-nav.disabled,
-  .owl-carousel .owl-dots.disabled {
-    display: none; }
-  .owl-carousel .owl-nav .owl-prev,
-  .owl-carousel .owl-nav .owl-next,
-  .owl-carousel .owl-dot {
-    cursor: pointer;
-    cursor: hand;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .owl-carousel.owl-loaded {
-    display: block; }
-  .owl-carousel.owl-loading {
-    opacity: 0;
-    display: block; }
-  .owl-carousel.owl-hidden {
-    opacity: 0; }
-  .owl-carousel.owl-refresh .owl-item {
-    display: none; }
-  .owl-carousel.owl-drag .owl-item {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .owl-carousel.owl-grab {
-    cursor: move;
-    cursor: grab; }
-  .owl-carousel.owl-rtl {
-    direction: rtl; }
-  .owl-carousel.owl-rtl .owl-item {
-    float: right; }
-
-/* No Js */
-.no-js .owl-carousel {
-  display: block; }
-
-/*
- *  Owl Carousel - Animate Plugin
- */
-.owl-carousel .animated {
-  -webkit-animation-duration: 1000ms;
-          animation-duration: 1000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
-
-.owl-carousel .owl-animated-in {
-  z-index: 0; }
-
-.owl-carousel .owl-animated-out {
-  z-index: 1; }
-
-.owl-carousel .fadeOut {
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut; }
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-/*
- * 	Owl Carousel - Auto Height Plugin
- */
-.owl-height {
-  -webkit-transition: height 500ms ease-in-out;
-          transition: height 500ms ease-in-out; }
-/*
- * 	Default theme - Owl Carousel CSS File
- */
-.owl-theme .owl-nav {
-  margin-top: 10px;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent; }
-  .owl-theme .owl-nav [class*='owl-'] {
-    color: #FFF;
-    font-size: 14px;
-    margin: 5px;
-    padding: 4px 7px;
-    background: #D6D6D6;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px; }
-    .owl-theme .owl-nav [class*='owl-']:hover {
-      background: #869791;
-      color: #FFF;
-      text-decoration: none; }
-  .owl-theme .owl-nav .disabled {
-    opacity: 0.5;
-    cursor: default; }
-
-.owl-theme .owl-nav.disabled + .owl-dots {
-  margin-top: 10px; }
-
-.owl-theme .owl-dots {
-  text-align: center;
-  -webkit-tap-highlight-color: transparent; }
-  .owl-theme .owl-dots .owl-dot {
-    display: inline-block;
-    zoom: 1;
-    *display: inline; }
-    .owl-theme .owl-dots .owl-dot span {
-      width: 10px;
-      height: 10px;
-      margin: 5px 7px;
-      background: #D6D6D6;
-      display: block;
-      -webkit-backface-visibility: visible;
-      -webkit-transition: opacity 200ms ease;
-              transition: opacity 200ms ease;
-      border-radius: 30px; }
-    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-      background: #869791; }
 
 /*# sourceMappingURL=index-generated.css.map */

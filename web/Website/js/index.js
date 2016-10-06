@@ -26,9 +26,8 @@ import tooltipController from './controllers/tooltip-controller';
 // COMPONENTS
 import './components/article-sidebar-component';
 import './components/save-search-component';
-
+import './components/pagination';
 import './components/myview-settings';
-import './components/subscription';
 
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
@@ -177,6 +176,14 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 $(document).ready(function() {
+	//messaging web users
+	window.dismiss=function(){
+		$('.dismiss').on('click', function(){
+			$('.messaging_webUsers').remove(); 
+			$('.messaging_webUsers_white').remove(); 
+		});
+	}
+	window.dismiss();
 
     var mediaTable = getParameterByName('mobilemedia');
     if(mediaTable=="true"){
@@ -1103,3 +1110,4 @@ $(document).ready(function() {
     });
    
 });
+

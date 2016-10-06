@@ -4,6 +4,9 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Sitecore.Configuration;
 using Velir.Search.Core.Reference;
 using System.Web;
+using Sitecore.Data.Items;
+using Sitecore.Data;
+using System.Linq;
 
 namespace Informa.Library.Search.Utilities
 {
@@ -14,14 +17,33 @@ namespace Informa.Library.Search.Utilities
 		private const string Areas = "areas";
 		private const string Industries = "industries";
 		private const string DeviceAreas = "deviceareas";
+        private const string Commercial = "commercial";
+        private const string Commodity = "commodity";
+        private const string CommodityFactors = "commodityfactors";
+        private const string Companies = "companies";
 
-		public static string GetSearchUrl(params ITaxonomy_Item[] taxonomyItems)
+        public static string GetSearchUrl(params ITaxonomy_Item[] taxonomyItems)
 		{
-			var dict = new Dictionary<string,string>();
+            Item rootItem = null;
+            Item currentItem = null;
+            if (taxonomyItems.Length > 0)
+            {
+                if (Sitecore.Context.ContentDatabase != null)
+                {
+                    currentItem = Sitecore.Context.ContentDatabase.GetItem(new ID(taxonomyItems[0]._Id));
+                }
+                else if(Sitecore.Context.Database != null)
+                {
+                    currentItem = Sitecore.Context.Database.GetItem(new ID(taxonomyItems[0]._Id));
+                }
+                rootItem = currentItem.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == "{DE3615F6-1562-4CB4-80EA-7FA45F49B7B7}");
+            }
+            var dict = new Dictionary<string,string>();
 			foreach (var item in taxonomyItems)
 			{
-				string parentPath = item._Parent._Path;
+                string parentPath = item._Parent._Path;
 				string key = string.Empty;
+                string verticalName = (rootItem != null) ? rootItem.Name : string.Empty;
 
 				//Subject
 				if (IsSubjectTaxonomy(parentPath))
@@ -42,7 +64,7 @@ namespace Informa.Library.Search.Utilities
 				}
 
 				//Industry
-				if (IsIndustryTaxonomy(parentPath))
+				if (IsIndustryTaxonomy(parentPath, verticalName))
 				{
 					key = Industries;
 				}
@@ -53,7 +75,27 @@ namespace Informa.Library.Search.Utilities
 					key = DeviceAreas;
 				}
 
-				if (dict.ContainsKey(key))
+                if(IsCommercialTaxonomy(parentPath))
+                {
+                    key = Commercial;
+                }
+
+                if (IsCommodityTaxonomy(parentPath))
+                {
+                    key = Commodity;
+                }
+
+                if (IsCommodityFactorsTaxonomy(parentPath))
+                {
+                    key = CommodityFactors;
+                }
+
+                if (IsCompaniesTaxonomy(parentPath))
+                {
+                    key = Companies;
+                }
+
+                if (dict.ContainsKey(key))
 				{
 					dict[key] = $"{dict[key]}{SiteSettings.ValueSeparator}{item.Item_Name}";
 				}
@@ -69,13 +111,13 @@ namespace Informa.Library.Search.Utilities
 				url.AppendFormat("{0}={1}", pair.Key, pair.Value);
 			}
 			
-			return $"/search#?{HttpUtility.UrlEncode(url.ToString())}";
+			return $"/search#?{url.ToString()}";
 		}
 
 		public static bool IsSubjectTaxonomy(string itemPath)
 		{
 			return itemPath.ToLower()
-					.StartsWith(Settings.GetSetting("Taxonomy.SubjectPath"));
+					.StartsWith(Settings.GetSetting("Taxonomy.SubjectPath").ToLower());
 		}
 		public static bool IsRegionTaxonomy(string itemPath)
 		{
@@ -85,22 +127,43 @@ namespace Informa.Library.Search.Utilities
 		public static bool IsAreaTaxonomy(string itemPath)
 		{
 			return itemPath.ToLower()
-					.StartsWith(Settings.GetSetting("Taxonomy.AreaPath"));
+					.StartsWith(Settings.GetSetting("Taxonomy.AreaPath").ToLower());
 		}
 
-		public static bool IsIndustryTaxonomy(string itemPath)
+		public static bool IsIndustryTaxonomy(string itemPath, string verticalName)
 		{
 			return itemPath.ToLower()
-					.StartsWith(Settings.GetSetting("Taxonomy.IndustryPath"));
+					.StartsWith(string.Format(Settings.GetSetting("Taxonomy.IndustryPath"), verticalName).ToLower());
 		}
 
 		public static bool IsDeviceAreaTaxonomy(string itemPath)
 		{
 			return itemPath.ToLower()
-					.StartsWith(Settings.GetSetting("Taxonomy.DeviceAreaPath"));
+					.StartsWith(Settings.GetSetting("Taxonomy.DeviceAreaPath").ToLower());
 		}
-		
-		 public static IEnumerable<string> GetHierarchicalFacetFieldValue(IEnumerable<ITaxonomy_Item> taxonomyItems)
+
+        public static bool IsCommercialTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower()
+                    .StartsWith(Settings.GetSetting("Taxonomy.Commercial").ToLower());
+        }
+
+        public static bool IsCommodityTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.Commodity").ToLower());
+        }
+
+        public static bool IsCommodityFactorsTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.CommodityFactors").ToLower());
+        }
+
+        public static bool IsCompaniesTaxonomy(string itemPath)
+        {
+            return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.Companies").ToLower());
+        }
+
+        public static IEnumerable<string> GetHierarchicalFacetFieldValue(IEnumerable<ITaxonomy_Item> taxonomyItems)
         {
             List<string> fullTaxonomyList =new List<string>();
 

@@ -1,0 +1,128 @@
+.messaging_webUsers{
+	width: 100%;
+	background: $color-concrete-gray;
+	clear: both;
+	border-top: 4px solid $color-cardinal-red;
+	padding: 1.75rem 2rem;
+	position: relative;
+	float: left;
+	line-height: 20px;
+	margin-bottom:1rem;
+	color: $color-abbey-gray;
+	h3{
+		font-family:"Roboto",​Arial Narrow,​sans-serif;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 1.375em;
+		margin-bottom:1rem;
+		color: $color-abbey-gray;
+	}
+	.msg-text {
+		clear: both;
+		p{
+			font-family: "PT Serif",​Georgia,​serif;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 0.9375em;
+			color: $color-abbey-gray;
+		}
+		margin-bottom:1rem;
+	}
+	.button-msg-webUser{
+		width: 100%;
+		clear: both;
+		font-family:"Roboto",​Arial Narrow,​sans-serif;
+		font-style: normal;
+		font-size: 0.9375em;
+		font-weight: 400;
+		position: relative;
+		float: left;
+		.msg_link{
+			float: left;
+			margin-top: 10px;
+		}
+		.find_more{
+			float: right;
+			text-transform: uppercase;
+		}
+		@include breakpoint('small'){
+			.msg_link{
+					display: block;
+					float: none;
+					clear: both;
+					margin-bottom: 1rem;
+				}
+				.find_more{
+					float: left;
+				}
+			
+		}
+	}
+	.msg_dismiss{
+		text-transform: uppercase;
+		float: right;
+		font-family:"Roboto",​Arial Narrow,​sans-serif;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 0.5625em;
+		clear: both;
+		a{
+		background: url("/dist/img/dismiss.png") no-repeat right top;
+		padding-right: 15px;
+		}
+	}
+}
+.messaging_webUsers_white{
+	margin: 0 auto;
+	position: relative;
+	line-height: 20px;
+	width: 80%;
+	clear: both;
+	border-top: 4px solid $color-cardinal-red;
+	border-bottom: 1px solid $color-cardinal-red;
+	padding: 1.75rem 2rem;
+	margin-bottom: 1em;
+	.msg_dismiss{
+		text-transform: uppercase;
+		float: right;
+		font-family:"Roboto",​Arial Narrow,​sans-serif;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 0.5625em;
+		clear: both;
+		a{
+		background: url("/dist/img/dismiss.png") no-repeat right top;
+		padding-right: 15px;
+		}
+	}
+	.msg-text{
+		h3{
+		  font-family: 'Roboto';
+		  font-style: normal;
+		  font-weight: 700;
+		  font-size: 1.25em;
+		  color: $color-cardinal-red;
+		}
+		  font-family: 'Roboto';
+		  font-style: normal;
+		  font-weight: 700;
+		  font-size: 1.125em;
+		  color: $color-zeus-black;
+		  width: 50%;
+		  margin: 0 auto;
+		  text-align: center;
+		  line-height: 30px;
+		  .red{
+			color: $color-cardinal-red;
+		  }
+	}
+	@include breakpoint('small'){
+		width: 100%;
+		float: left;
+		.msg-text{
+			float: left;
+			width: 100%;
+			text-align: left;
+		}	
+	}
+}

@@ -18,7 +18,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuratio
 namespace Informa.Library.Services.Global
 {
 
-    [AutowireService(LifetimeScope.PerScope)]
+    [AutowireService(LifetimeScope.NoTracking)]
     public class GlobalService : IGlobalSitecoreService
     {
         protected readonly ISitecoreService SitecoreService;

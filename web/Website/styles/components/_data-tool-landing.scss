@@ -169,6 +169,7 @@
 		}
 		.data-tool-placeholder-right-rail{
 			width: 100%;
+			margin-bottom:1.75em;
 			h3.data-tool-heading{
 				font-family: "Roboto Condensed", Arial Narrow, sans-serif;
 				font-style: normal;
@@ -177,10 +178,12 @@
 			}
 			.data-tool-graph{
 				width: 100%;
+				clear: both;
 			}
 			p 
 			 {
 				margin-top:20px;
+				clear: both;
 				 a{
 					color: $color-red;
 					font-family: "Roboto", Arial Narrow, sans-serif;
