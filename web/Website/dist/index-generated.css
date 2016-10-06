@@ -5015,15 +5015,15 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     font-family: "Roboto Condensed", Arial Narrow, sans-serif;
     font-style: normal;
     font-weight: 700;
-    margin-bottom: 12px;
-    margin-bottom: 0.75rem; }
+    margin-bottom: 40px;
+    margin-bottom: 2.5rem; }
   .data-tool-landing .sub-heading-text {
     font-family: "PT Serif", Georgia, serif;
     font-style: italic;
     font-weight: 400;
     color: #58595b;
-    margin-bottom: 12px;
-    margin-bottom: 0.75rem;
+    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     font-size: 1.5em; }
   .data-tool-landing .js-toggle-demo {
     width: 100%;
@@ -5040,7 +5040,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       font-family: 'Roboto', Arial Narrow, sans-serif;
       font-style: normal;
       font-weight: 400;
-      font-size: 0.66em;
+      font-size: 0.75em;
       color: #979797;
       padding-bottom: 5px;
       cursor: pointer;
@@ -5051,14 +5051,14 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         text-decoration: none;
         padding-right: 25px; }
       .data-tool-landing .js-toggle-demo .show-demo .sd {
-        background-position: 41px 2px; }
+        background-position: 51px 4px; }
       .data-tool-landing .js-toggle-demo .show-demo .hd {
-        background-position: 71px -18px;
+        background-position: 77px -15px;
         display: none; }
     .data-tool-landing .js-toggle-demo .toggle-demo {
       width: 100%;
       display: block;
-      padding: 10px 15px 15px 0;
+      padding: 24px 15px 15px 0;
       float: left; }
       .data-tool-landing .js-toggle-demo .toggle-demo .demoText {
         font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -5066,7 +5066,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         font-weight: 400;
         font-size: 1.125em;
         padding-left: 15px;
-        text-align: justify;
+        text-align: left;
         line-height: 30px;
         color: #58595b;
         width: 50%;
@@ -5151,8 +5151,8 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 
 .data-tool-placeholder {
   width: 100%;
-  margin-bottom: 12px;
-  margin-bottom: 0.75rem; }
+  margin-bottom: 50px;
+  margin-bottom: 3.125rem; }
   .data-tool-placeholder h3.data-tool-heading, .data-tool-placeholder .data-tool-heading.article-call-to-action__title {
     font-family: "Roboto Condensed", Arial Narrow, sans-serif;
     font-style: normal;
