@@ -26,7 +26,6 @@ import tooltipController from './controllers/tooltip-controller';
 // COMPONENTS
 import './components/article-sidebar-component';
 import './components/save-search-component';
-import './components/pagination';
 import './components/myview-settings';
 
 // OTHER CODE
