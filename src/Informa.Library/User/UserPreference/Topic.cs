@@ -2,8 +2,10 @@
 {
     public class Topic : ITopic
     {
-        public int TopicId { get; set; }
+        public string TopicId { get; set; }
+        public string TopicCode { get; set; }
         public string TopicName { get; set; }
         public int TopicOrder { get; set; }
+        public bool IsFollowing { get; set; }
     }
 }
