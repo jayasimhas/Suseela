@@ -2,143 +2,195 @@
 
 @if (Model.IsAuthenticated)
 {
-    <div class="page-account">
-		@Html.Sitecore().Placeholder("page-account")
-
+    <div class="page-account subscriptionPan">
+        @Html.Sitecore().Placeholder("page-account")
+        <span class="page-account_text">
+            @Model.SubscriptionHeaderSubTitle;
+        </span>
         <div class="page-preferences js-preferences-user-container">
 
             <h2 class="page-account__table-headline">@Model.Title</h2>
+            <div id="mySubscription">
+                <table id="mySubscriptionTab" cellspacing="0" cellpadding="0" class="tablesorter tablesorter-default" role="grid">
+                    <thead class="sortable-table__header">
+                        <tr class="parent tablesorter-headerRow" role="row">
+                            <th id="publicationtd" class="sortable-table__col tablesorter-header tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="mySubscriptionTab" unselectable="on" aria-sort="none" aria-label="Publication: No sort applied, activate to apply an ascending sort" style="-webkit-user-select: none;">
+                                <div class="tablesorter-header-inner">
+                                    @Model.PublicationText
+                                    <div class="sorting-arrows">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                        </svg>
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </th>
+                            <th data-sorter="false" id="subjecttd" class="sortable-table__col tablesorter-header sorter-false tablesorter-headerUnSorted" data-column="1" scope="col" role="columnheader" aria-disabled="true" unselectable="on" aria-sort="none" aria-label="Subjects: No sort applied, sorting is disabled" style="-webkit-user-select: none;">
+                                <div class="tablesorter-header-inner">
+                                    @Model.SubjectType
+                                    <div class="sorting-arrows">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                        </svg>
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </th>
+                            <th id="expDatetd" class="sortable-table__col tablesorter-header tablesorter-headerUnSorted" data-column="2" tabindex="0" scope="col" role="columnheader" aria-disabled="false" aria-controls="mySubscriptionTab" unselectable="on" aria-sort="none" aria-label="Expiration Date: No sort applied, activate to apply an ascending sort" style="-webkit-user-select: none;">
+                                <div class="tablesorter-header-inner">
+                                    @Model.ExpirationDateText
+                                    <div class="sorting-arrows">
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
+                                        </svg>
+                                        <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </th>
+                            <th data-sorter="false" class="sortable-table__col tablesorter-header sorter-false tablesorter-headerUnSorted" data-column="3" scope="col" role="columnheader" aria-disabled="true" unselectable="on" aria-sort="none" aria-label="Action: No sort applied, sorting is disabled" style="-webkit-user-select: none;">
+                                <div class="tablesorter-header-inner">@Model.ActionText</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody aria-live="polite" aria-relevant="all">
 
-            <table class="page-account__table sortable-table js-sortable-table">
-                <thead class="sortable-table__header">
-                    <tr>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="1">
-                            @Model.PublicationText
 
-                            <div class="sorting-arrows">
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
+                        @{
+                            int i = 1;
+                            foreach (var item in Model.SubscriptionViewModels)
+                            {
+                                string parentrow = "ptc" + i;
+                                string active = item.IsCurrentPublication ? "active" : string.Empty;
+                                @*Mobile section Starts*@
+                                <tr class="hidden-lg" role="row">
+                                    <td colspan="4">
+                                        <div class="tableMrow">
+                                            <div class="title maintitle active">@Model.PublicationText</div>
+                                            <div class="pubName">@item.Publication</div>
+                                            <div class="pubSubscribe">
+                                                @if (item.Renewable)
+                                                {
+                                                    <a class="button button--outline click-utag"
+                                                       data-info='{"event_name": "subscription_renew"}'
+                                                       href="@Model.OffSiteRenewLink">
+                                                        @Model.Renew
+                                                    </a>
+                                                }
+                                                @if (item.Subscribable)
+                                                {
+                                                    <a class="button button--outline click-utag"
+                                                       data-info='{"event_name": "subscription_subscribe"}'
+                                                       href="@Model.OffSiteSubscriptionLink">
+                                                        @Model.Subscribe
+                                                    </a>
+                                                }
+                                            </div>
+                                            <div class="title">@Model.ExpirationDateText</div>
+                                            <div class="sortable-table__col">
+                                                @item.Expiration.ToString("d MMMM yyyy")
+                                            </div>
+                                            @if (item.TaxonomyItems != null && item.TaxonomyItems.Any())
+                                            {
+                                                <div class="subjects">
+                                                    <div class="hidden-lg title">Subjects</div>
+                                                    @foreach (var taxonomy in item.TaxonomyItems)
+                                                    {
+                                                        <div class="tablerow clearfix">
+                                                            <div class="pubName">@taxonomy.Item_Name</div>
+                                                            <div class="pubSubscribe">
+                                                                @if (item.Renewable)
+                                                                {
+                                                                    <a class="button button--outline click-utag"
+                                                                       data-info='{"event_name": "subscription_renew"}'
+                                                                       href="@Model.OffSiteRenewLink">
+                                                                        @Model.Renew
+                                                                    </a>
+                                                                }
+                                                                @if (item.Subscribable)
+                                                                {
+                                                                    <a class="button button--outline click-utag"
+                                                                       data-info='{"event_name": "subscription_subscribe"}'
+                                                                       href="@Model.OffSiteSubscriptionLink">
+                                                                        @Model.Subscribe
+                                                                    </a>
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                    }
 
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="2">
-                            @Model.SubscriptionTypeText
-                            <div class="sorting-arrows">
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="3">
-                            @Model.ExpirationDateText
-                            <div class="sorting-arrows">
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="sortable-table__col">
-                            @Model.ActionText
-                        </td>
-                    </tr>
-                </thead>
-
-                <thead class="sortable-table__header sortable-table__header--mobile">
-                    <tr>
-                        <td class="sortable-table__col sortable-table__sort-by-header">
-                            <h6>Sort by:</h6>
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="1">
-                            @Model.PublicationText
-                            <div class="sorting-arrows">
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="2">
-                            @Model.SubscriptionTypeText
-                            <div class="sorting-arrows">
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="sortable-table__col js-sortable-table-sorter"
-                            data-sortable-table-col="3">
-                            @Model.ExpirationDateText
-                            <div class="sorting-arrows">
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--up">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-up-arrow"></use>
-                                </svg>
-                                <svg class="sorting-arrows__arrow sorting-arrows__arrow--down">
-                                    <use xlink:href="/dist/img/svg-sprite.svg#sort-down-arrow"></use>
-                                </svg>
-                            </div>
-                        </td>
-                    </tr>
-                </thead>
-                <tbody>
-                @foreach (var item in Model.SubscriptionViewModels)
-                {
-                    <tr>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--publication">
-                            @item.Publication
-                        </td>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--sub-type">
-                            @item.Type
-                        </td>
-                        <td class="sortable-table__col sortable-table__col--has-title sortable-table__col--exp-date">
-                            @item.Expiration.ToString("d MMMM yyyy")
-                        </td>
-                        <td class="sortable-table__col">
-                            @if (item.Renewable) {
-                                <a
-									class="button button--outline click-utag"
-									data-info='{
-										"event_name": "subscription_renew"
-									}'
-									href="@Model.OffSiteRenewLink">
-									Renew
-								</a>
-                            }
-                            @if (item.Subscribable) {
-                                @Html.Raw("&nbsp;&nbsp;&nbsp;")
-                                <a
-									class="button button--outline click-utag"
-									data-info='{
-										"event_name": "subscription_subscribe"
-									}'
-									href="@Model.OffSiteSubscriptionLink">
-									Subscribe
-								</a>
-                            }
-                        </td>
-                    </tr>
-                }
-                </tbody>
-            </table>
+                                                </div>
+                                            }
+                                        </div>
+                                    </td>
+                                </tr>
+                                @*Mobile Section Ends*@
+                                @*Desktop section Starts*@
+                                <tr class="parent @parentrow @active hidden-xs" role="row">
+                                    <td colspan="2" class="sortable-table__col"><span class="accordian"></span> @item.Publication</td>
+                                    <td class="sortable-table__col">@item.Expiration.ToString("d MMMM yyyy")</td>
+                                    <td class="sortable-table__col hidden-xs">
+                                        @if (item.Renewable)
+                                        {
+                                            <a class="button button--outline click-utag"
+                                               data-info='{"event_name": "subscription_renew"}'
+                                               href="@Model.OffSiteRenewLink">
+                                                @Model.Renew
+                                            </a>
+                                        }
+                                        @if (item.Subscribable)
+                                        {
+                                            <a class="button button--outline click-utag"
+                                               data-info='{"event_name": "subscription_subscribe"}'
+                                               href="@Model.OffSiteSubscriptionLink">
+                                                @Model.Subscribe
+                                            </a>
+                                        }
+                                        <span class="accordian"></span>
+                                    </td>
+                                </tr>
+                                if (item.TaxonomyItems != null && item.TaxonomyItems.Any())
+                                {
+                                    string childrow = "tc" + i;
+                                    foreach (var taxonomy in item.TaxonomyItems)
+                                    {
+                                        <tr class="child @childrow hidden-xs" role="row">
+                                            <td></td>
+                                            <td class="hidden-lg" colspan="2">@taxonomy.Item_Name</td>
+                                            <td class="hidden-xs sortable-table__col" colspan="2">@taxonomy.Item_Name</td>
+                                            <td class="sortable-table__col hidden-xs">
+                                                @if (item.Renewable)
+                                                {
+                                                    <a class="button button--outline click-utag"
+                                                       data-info='{"event_name": "subscription_renew"}'
+                                                       href="@Model.OffSiteRenewLink">
+                                                        @Model.Renew
+                                                    </a>
+                                                }
+                                                @if (item.Subscribable)
+                                                {
+                                                    <a class="button button--outline click-utag"
+                                                       data-info='{"event_name": "subscription_subscribe"}'
+                                                       href="@Model.OffSiteSubscriptionLink">
+                                                        @Model.Subscribe
+                                                    </a>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                @*Desktop section Ends*@
+                            i++;
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 }
