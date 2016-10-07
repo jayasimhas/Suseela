@@ -63,12 +63,12 @@ namespace Informa.Web.ViewModels
             IUserPreferences prefChannels = new UserPreferences();
             if (IsAuthenticated)
             {
-                if (UserPreferences.Preferences != null &&
+                if (UserPreferences!=null && UserPreferences.Preferences != null &&
                 UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
                 {
                     foreach (var preference in UserPreferences.Preferences.PreferredChannels)
                     {
-                        //preferredChannels.Add(new Navigation { Text = preference.Channel.ChannelName, Link = new Link { Url = preference.Channel.ChannelLink } });
+                        preferredChannels.Add(new Navigation { Text = preference.ChannelName, Link = new Link { Url = preference.ChannelLink } });
                     }
                     navigation.Children = preferredChannels;
                 }
