@@ -1,4 +1,4 @@
-﻿namespace Informa.Web.Areas.Account.ViewModels.Management
+﻿namespace Informa.Web.Areas.Account.ViewModels.Personalization
 {
     using Jabberwocky.Glass.Autofac.Mvc.Models;
     using Jabberwocky.Glass.Models;
@@ -26,7 +26,7 @@
         }
 
         //Dictionary label
-        public string MyViewLinkText => TextTranslator.Translate("MyView.MyViewLink");
+        public string MyViewLinkText => TextTranslator.Translate("MyViewToggle.MyViewLinkText");
 
         public bool IsGlobalToggleEnabled => SiterootContext.Item.Enable_MyView_Toggle;
         public string MyViewLinkURL => GetNavigationUrl();
