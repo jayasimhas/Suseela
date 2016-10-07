@@ -2387,12 +2387,14 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
           font-weight: 700;
           font-size: 1.875em;
           margin-bottom: 0.3em; }
+          .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 a, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title a, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .pop-out__reset-password, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .pop-out__reset-password, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .sortable-table__list-toggler, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .sortable-table__list-toggler, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading h3 .mobile-table-exit, .job_listing .stacked_job_view .job_list_individual .job_description .job_heading .article-call-to-action__title .mobile-table-exit {
+            color: #231f20; }
         @media (max-width: 480px) {
           .job_listing .stacked_job_view .job_list_individual .job_description .job_heading {
             position: absolute;
             top: -20px;
             margin-top: 30px; } }
-      .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail span {
+      .job_listing .stacked_job_view .job_list_individual .job_description .job_description_detail p {
         font-family: 'PT Serif';
         font-style: normal;
         font-weight: 400;
@@ -2433,6 +2435,34 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     text-align: center; }
     .job_listing .pagination .nums li {
       display: inline-block; }
+
+.job_detail .sub-heading-text {
+  font-family: "PT Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5625em;
+  margin: 1em 0; }
+  .job_detail .sub-heading-text p {
+    margin-bottom: 0; }
+
+.job_detail .job_logo {
+  border-top: 1px solid #d1d3d4;
+  border-bottom: 1px solid #d1d3d4;
+  clear: both;
+  padding: 20px 0;
+  margin-bottom: 2em;
+  width: 100%; }
+  .job_detail .job_logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
+.job_detail .job_description {
+  font-family: "PT Serif", Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  font-size: 1.125em; }
 
 .landscape-image-component {
   margin-bottom: 32px;
@@ -3880,6 +3910,27 @@ header .header-account-access {
     color: #FF9933;
     background: #fff; } }
 
+div.main-menu__section .titleMyView {
+  color: #231f20;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  padding-left: 24px;
+  padding-left: 24px;
+  padding-left: 1.5rem;
+  text-transform: uppercase;
+  width: 100%; }
+
+div.main-menu__section .edit-link {
+  margin-left: 24px;
+  font-size: 12px; }
+
+div.main-menu__section .navContent {
+  font-size: 12px;
+  margin: 6px 0 0 25px;
+  line-height: 20px;
+  color: #979799; }
+
 .modal-open {
   overflow: hidden; }
 
@@ -4964,15 +5015,15 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     font-family: "Roboto Condensed", Arial Narrow, sans-serif;
     font-style: normal;
     font-weight: 700;
-    margin-bottom: 12px;
-    margin-bottom: 0.75rem; }
+    margin-bottom: 40px;
+    margin-bottom: 2.5rem; }
   .data-tool-landing .sub-heading-text {
     font-family: "PT Serif", Georgia, serif;
     font-style: italic;
     font-weight: 400;
     color: #58595b;
-    margin-bottom: 12px;
-    margin-bottom: 0.75rem;
+    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     font-size: 1.5em; }
   .data-tool-landing .js-toggle-demo {
     width: 100%;
@@ -4989,7 +5040,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       font-family: 'Roboto', Arial Narrow, sans-serif;
       font-style: normal;
       font-weight: 400;
-      font-size: 0.66em;
+      font-size: 0.75em;
       color: #979797;
       padding-bottom: 5px;
       cursor: pointer;
@@ -5000,22 +5051,22 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         text-decoration: none;
         padding-right: 25px; }
       .data-tool-landing .js-toggle-demo .show-demo .sd {
-        background-position: 41px 2px; }
+        background-position: 51px 4px; }
       .data-tool-landing .js-toggle-demo .show-demo .hd {
-        background-position: 71px -18px;
+        background-position: 77px -15px;
         display: none; }
     .data-tool-landing .js-toggle-demo .toggle-demo {
       width: 100%;
       display: block;
-      padding: 10px 15px 15px 0;
+      padding: 23px 40px 30px 0;
       float: left; }
       .data-tool-landing .js-toggle-demo .toggle-demo .demoText {
         font-family: 'Roboto', Arial Narrow, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 1.125em;
-        padding-left: 15px;
-        text-align: justify;
+        padding-left: 40px;
+        text-align: left;
         line-height: 30px;
         color: #58595b;
         width: 50%;
@@ -5027,7 +5078,7 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
           .data-tool-landing .js-toggle-demo .toggle-demo .demoText {
             width: 100%; } }
       .data-tool-landing .js-toggle-demo .toggle-demo .video-demo {
-        padding-left: 15px;
+        padding-left: 40px;
         width: 50%;
         float: left; }
         @media (max-width: 480px) {
@@ -5100,8 +5151,8 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 
 .data-tool-placeholder {
   width: 100%;
-  margin-bottom: 12px;
-  margin-bottom: 0.75rem; }
+  margin-bottom: 50px;
+  margin-bottom: 3.125rem; }
   .data-tool-placeholder h3.data-tool-heading, .data-tool-placeholder .data-tool-heading.article-call-to-action__title {
     font-family: "Roboto Condensed", Arial Narrow, sans-serif;
     font-style: normal;
@@ -5151,6 +5202,9 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       font-family: "Roboto", Arial Narrow, sans-serif;
       font-style: normal;
       font-weight: 400; }
+    .articleText p:last-child {
+      margin-bottom: 50px;
+      margin-bottom: 3.125rem; }
 
 .visible-sm {
   display: none; }

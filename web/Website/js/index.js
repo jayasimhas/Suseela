@@ -26,7 +26,6 @@ import tooltipController from './controllers/tooltip-controller';
 // COMPONENTS
 import './components/article-sidebar-component';
 import './components/save-search-component';
-import './components/pagination';
 import './components/myview-settings';
 
 // OTHER CODE
@@ -144,6 +143,22 @@ var renderAMchart=function() {
         });
     }
 };
+
+var AMchartUsingBuilder=function() {
+    if($("#amchartDashboardBuilder").hasClass("amchart-dashboard-using-builder"))
+    {
+        
+        alert(chartPresentation);
+        
+        AmCharts.makeChart("chartdiv", {
+            "type": "serial", 
+            "dataProvider": chartData, 
+            "categoryField": "category", 
+            "graphs": [ { "balloonText": "[[title]] of [[category]]:[[value]]", "fillAlphas": 1, "id": "AmGraph-1", "title": "graph 1", "type": "column", "valueField": "column-1" }, { "balloonText": "[[title]] of [[category]]:[[value]]", "fillAlphas": 1, "id": "AmGraph-2", "title": "graph 2", "type": "column", "valueField": "column-2" } ]
+        });
+    }
+};
+
 
 var decodeHtml = function(html) {
     var txt = document.createElement("textarea");
@@ -753,6 +768,7 @@ $(document).ready(function() {
     renderIframeComponents();
     renderTableau();
     renderAMchart();
+    AMchartUsingBuilder();
     $(window).on('resize', (event) => {
         renderIframeComponents();
         renderTableau();

@@ -956,6 +956,7 @@
     <Compile Include="ViewModels\CompaniesAndDeals\StratrgicTransactionViewModel.cs" />
     <Compile Include="ViewModels\Authors\AuthorProfileViewModel.cs" />
     <Compile Include="ViewModels\CompanyRegisterMessageViewModel.cs" />
+    <Compile Include="ViewModels\DataTools\AMChartsUsingBuilderViewModel.cs" />
     <Compile Include="ViewModels\DataTools\AMChartViewModel.cs" />
     <Compile Include="ViewModels\DataTools\DataToolPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\DataTools\DataToolProloguePrintViewModel.cs" />
@@ -977,6 +978,8 @@
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
+    <Compile Include="ViewModels\IPersonalizedMyViewViewModel.cs" />
+    <Compile Include="ViewModels\PersonalizedMyViewViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />
@@ -1873,6 +1876,8 @@
     <Content Include="Views\Shared\Components\DataTools\DataToolListItem.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\DataTollUserCallToAction.cshtml" />
     <Content Include="Views\Shared\PopOuts\VideoControl.cshtml" />
+    <Content Include="Views\Shared\Components\DataTools\AMchartsUsingBuilder.cshtml" />
+    <Content Include="Views\Shared\_PersonalizedMyViewNavigation.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

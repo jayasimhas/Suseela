@@ -67,6 +67,9 @@
 					  font-weight: 700;
 					  font-size: 1.875em;
 					  margin-bottom: 0.3em;
+					  a{
+						color: $color-zeus-black;
+					  }
 					 }
 					@include breakpoint('small'){
 						position: absolute;
@@ -77,7 +80,7 @@
 					
 				}
 				.job_description_detail{
-					span{
+					p{
 					font-family: 'PT Serif';
 					font-style: normal;
 					font-weight: 400;
@@ -134,5 +137,39 @@
 				display: inline-block; 
 			}
 		}
+	}
+}
+.job_detail{
+	.sub-heading-text{
+		font-family: "PT Serif", Georgia, serif;
+		font-style: italic;
+		font-weight: 400;
+		font-size: 1.5625em;
+		margin: 1em 0;
+		p{
+			margin-bottom:0;
+		}
+	}
+	.job_logo{
+		border-top: 1px solid $color-light-gray;
+		border-bottom: 1px solid $color-light-gray;
+		clear: both;
+		padding: 20px 0;
+		margin-bottom: 2em;
+		width:100%;
+		img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			
+		}
+	}
+	.job_description{
+		font-family: "PT Serif", Georgia, serif;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 30px;
+		font-size: 1.125em;
+		
 	}
 }

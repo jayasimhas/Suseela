@@ -4,14 +4,14 @@
 			font-family: "Roboto Condensed", Arial Narrow, sans-serif;
 			font-style: normal;
 			font-weight: 700;
-			margin-bottom: 0.75rem;
+			margin-bottom: 2.5rem;
 		}
 		.sub-heading-text{
 			  font-family: "PT Serif", Georgia, serif;
 			  font-style: italic;
 			  font-weight: 400;
 			  color: $color-abbey-gray;
-			  margin-bottom: 0.75rem;
+			  margin-bottom: 1.25rem;
 			  font-size: 1.5em;
 		}
 		.js-toggle-demo{
@@ -29,28 +29,28 @@
 				font-family: 'Roboto', Arial Narrow, sans-serif;
 				font-style: normal;
 				font-weight: 400;
-				font-size: 0.66em;
+				font-size: 0.75em;
 				color: $color-dusty-gray;
 				padding-bottom: 5px;
 				cursor: pointer;
 				padding-top: 5px;
 				li a{background: url("/dist/img/arrows.png") no-repeat; color: #979797; text-decoration: none;  padding-right: 25px;}
-				.sd{background-position: 41px 2px;}
-				.hd{background-position: 71px -18px; display: none;}
+				.sd{background-position: 51px 4px;}
+				.hd{background-position: 77px -15px; display: none;}
 
 			}
 			.toggle-demo{
 				width: 100%;
 				display: block;
-				padding: 10px 15px 15px 0;
+				padding: 23px 40px 30px 0;
 				float: left;
 				.demoText{
 					font-family: 'Roboto', Arial Narrow, sans-serif;
 					font-style: normal;
 					font-weight: 400;
 					font-size: 1.125em;
-					padding-left:15px;
-					text-align: justify;
+					padding-left:40px;
+					text-align: left;
 					line-height: 30px;
 					color: $color-abbey-gray;
 					width: 50%;
@@ -63,7 +63,7 @@
 					}
 				}
 				.video-demo{
-						padding-left: 15px;
+						padding-left: 40px;
 						width: 50%;
 						float: left;
 						@include breakpoint('small') {
@@ -155,7 +155,7 @@
 		}
 		.data-tool-placeholder{
 			width: 100%;
-			margin-bottom: 0.75rem;
+			margin-bottom: 3.125rem;
 			h3.data-tool-heading{
 				font-family: "Roboto Condensed", Arial Narrow, sans-serif;
 				font-style: normal;
@@ -214,6 +214,9 @@
 					font-style: normal;
 					font-weight: 400;
 				 }
+				&:last-child{
+					margin-bottom: 3.125rem;
+				} 
 			}	
 		}
 		.visible-sm{
