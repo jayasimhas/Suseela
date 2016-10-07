@@ -68,7 +68,7 @@ namespace Informa.Web.ViewModels
                 {
                     foreach (var preference in UserPreferences.Preferences.PreferredChannels)
                     {
-                        preferredChannels.Add(new Navigation { Text = preference.Channel.ChannelName, Link = new Link { Url = preference.Channel.ChannelLink } });
+                        //preferredChannels.Add(new Navigation { Text = preference.Channel.ChannelName, Link = new Link { Url = preference.Channel.ChannelLink } });
                     }
                     navigation.Children = preferredChannels;
                 }
