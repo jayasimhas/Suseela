@@ -7,7 +7,7 @@ namespace Informa.Library.User.UserPreference
         int ChannelId { get; set; }
         string ChannelName { get; set; }
         int ChannelOrder { get; set; }
-
+        string ChannelLink { get; set; }
         IList<Topic> Topics { get; set; }
     }
 }

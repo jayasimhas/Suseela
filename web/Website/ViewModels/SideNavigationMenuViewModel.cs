@@ -65,20 +65,19 @@ namespace Informa.Web.ViewModels
             tempObj.Text = "My View";
             tempObj.Link = new Link { Url = @"http://facebook.com" };
 
-            var Prefdchannel = new ChannelPreference();
-            Prefdchannel.Channel = new Channel();
-            Prefdchannel.Channel.ChannelName = "Beverages";
-            Prefdchannel.Channel.ChannelOrder = 1;
-            Prefdchannel.Channel.ChannelLink = @"http://google.com";
+            var Prefdchannel = new Channel();
+            Prefdchannel.ChannelName = "Beverages";
+            Prefdchannel.ChannelOrder = 1;
+            Prefdchannel.ChannelLink = @"http://google.com";
 
-            children.Add(new Navigation { Text = Prefdchannel.Channel.ChannelName, Link = new Link { Url = Prefdchannel.Channel.ChannelLink } });
+            children.Add(new Navigation { Text = Prefdchannel.ChannelName, Link = new Link { Url = Prefdchannel.ChannelLink } });
 
-            Prefdchannel.Channel = new Channel();
-            Prefdchannel.Channel.ChannelName = "Cocoa";
-            Prefdchannel.Channel.ChannelOrder = 2;
-            Prefdchannel.Channel.ChannelLink = @"http://yahoo.com";
+            Prefdchannel = new Channel();
+            Prefdchannel.ChannelName = "Cocoa";
+            Prefdchannel.ChannelOrder = 2;
+            Prefdchannel.ChannelLink = @"http://yahoo.com";
 
-            children.Add(new Navigation { Text = Prefdchannel.Channel.ChannelName, Link = new Link { Url = Prefdchannel.Channel.ChannelLink } });
+            children.Add(new Navigation { Text = Prefdchannel.ChannelName, Link = new Link { Url = Prefdchannel.ChannelLink } });
 
             tempObj.Children = children;
 

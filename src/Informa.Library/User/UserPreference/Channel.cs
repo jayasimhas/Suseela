@@ -1,4 +1,6 @@
-﻿namespace Informa.Library.User.UserPreference
+﻿using System.Collections.Generic;
+
+namespace Informa.Library.User.UserPreference
 {
     public class Channel : IChannel
     {
@@ -6,5 +8,6 @@
         public string ChannelName { get; set; }
         public int ChannelOrder { get; set; }
         public string ChannelLink { get; set; }
+        public IList<Topic> Topics { get; set; }
     }
 }
