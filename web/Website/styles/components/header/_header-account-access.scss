@@ -1,3 +1,24 @@
+.header-publication-links {
+    float: right;
+    font-size: 14px;
+    height: 25px;
+    top: 10px;
+    position: absolute;
+    text-align: right;
+    right: 0px;
+    padding-right: 2rem;
+    max-width:480px
+
+    @include breakpoint('medium') {
+        font-size: 11px;
+        padding-right: 1rem;
+    }
+
+    @include breakpoint('small') {
+        display: none;
+    }
+}
+
 .header-account-access {
     float: right;
     font-size: 1rem;
@@ -11,6 +32,7 @@
         padding: 2.5rem 1rem;
         height: auto;
     }
+
     @include breakpoint('small') {
         border-top: 1px solid #ccc;
         font-size: 13px;
@@ -29,7 +51,6 @@
             margin-right: 1.75rem;
         }
     }
-
     // Don't show the friendly welcome at smartphone widths
     @include breakpoint('small') {
         &__friendly-greeting {
@@ -44,7 +65,6 @@
     &__sign-in-out {
         color: $color-cardinal-red;
         margin-right: 0;
-
         // Separator between sign-in-out and my-account
         &:before {
             content: "";
