@@ -92,7 +92,10 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 					if (!DateTimeUtil.ParseInformaDate(dateVal, out date))
 						Logger.Log("N/A", "No Date to parse error", ProcessStatus.DateParseError, "Missing Autonomy File Name", autFile);
 					else
+					{
 						ao["STORYUPDATE"] = dateVal;
+						ao["ARTICLEPUBDATE"] = dateVal;
+					}
 
 					continue;
 				}
@@ -104,18 +107,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 				foreach (string n in autNodes)
 					ao.Add(n, GetXMLData(d2, n));
 
-				if (ao.ContainsKey("ARTICLEPUBDATE"))
+				var actOubDateString = ao["ARTICLEPUBDATE"];
+				DateTime actPubDate;
+				if (DateTimeUtil.ParseInformaDate(actOubDateString, out actPubDate) == false)
 				{
-					var actOubDateString = ao["ARTICLEPUBDATE"];
-					DateTime actPubDate;
-					if (DateTimeUtil.ParseInformaDate(actOubDateString, out actPubDate) == false)
-					{
-						ao["ARTICLEPUBDATE"] = ao["STORYUPDATE"];
-					}
-				}
-				else
-				{
-					ao.Add("ARTICLEPUBDATE", ao["STORYUPDATE"]);
+					ao["ARTICLEPUBDATE"] = ao["STORYUPDATE"];
 				}
 			}
 
