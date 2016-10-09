@@ -13,10 +13,20 @@ namespace Informa.Library.CustomSitecore.Events
 {
 	public class ArticleItemCreated
 	{
-		private ISitePublicationWorkflow publicationWorkflow => DependencyResolver.Current.GetService<ISitePublicationWorkflow>();
+		private ISitePublicationWorkflow publicationWorkflow { get; set; }
+
+		public ArticleItemCreated()
+		{
+			try {
+				publicationWorkflow = DependencyResolver.Current.GetService<ISitePublicationWorkflow>();
+			} catch { }
+		}
 
 		public void Process(object sender, EventArgs args)
 		{
+			if (publicationWorkflow == null)
+				return;
+
 			Assert.ArgumentNotNull(args, "args");
 
 			ItemCreatedEventArgs icArgs = Event.ExtractParameter(args, 0) as ItemCreatedEventArgs;

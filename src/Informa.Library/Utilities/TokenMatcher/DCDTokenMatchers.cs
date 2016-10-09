@@ -98,6 +98,9 @@ namespace Informa.Library.Utilities.TokenMatcher
 
         private string ProcessCompanyTokens(string text)
         {
+			if (string.IsNullOrEmpty(text))
+				return string.Empty;
+
             //Find all matches with Company token
             Regex regex = new Regex(DCDConstants.CompanyTokenRegex);
 
@@ -132,8 +135,11 @@ namespace Informa.Library.Utilities.TokenMatcher
 
         private string ProcessDealTokens(string text)
         {
-            //Find all matches with Deal token
-            Regex regex = new Regex(DCDConstants.DealTokenRegex);
+			if (string.IsNullOrEmpty(text))
+				return string.Empty;
+
+			//Find all matches with Deal token
+			Regex regex = new Regex(DCDConstants.DealTokenRegex);
 
             MatchEvaluator evaluator = new MatchEvaluator(DealMatchEval);
             return regex.Replace(text, evaluator);
@@ -141,8 +147,11 @@ namespace Informa.Library.Utilities.TokenMatcher
 
         private string ProcessArticleTokens(string text)
         {
-            //Find all matches with Article token
-            Regex regex = new Regex(DCDConstants.ArticleTokenRegex);
+			if (string.IsNullOrEmpty(text))
+				return string.Empty;
+
+			//Find all matches with Article token
+			Regex regex = new Regex(DCDConstants.ArticleTokenRegex);
 
             MatchEvaluator evaluator = new MatchEvaluator(ArticleMatchEval);
             var replacedText = regex.Replace(text, evaluator);
@@ -207,7 +216,7 @@ namespace Informa.Library.Utilities.TokenMatcher
                     if (article != null)
                     {
                         return
-                            $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {_.GlobalService.GetPublicationName(article._Id)}, " +
+                            $" (Also see \"<a href='{article._Url}'>{WebUtility.HtmlDecode(article.Title)}</a>\" - {_.GlobalService?.GetPublicationName(article._Id)}, " +
                             $"{(article.Actual_Publish_Date > DateTime.MinValue ? article.Actual_Publish_Date.ToString("d MMM, yyyy") : "")}.)";
                     }
                 }
