@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {47DF5975-6551-45AE-A2A0-2128EA20931A}
+id: {FF4FFBF3-E6EB-4D94-B7FF-B649B5F9D6AE}
 database: master
-path: /sitecore/templates/User Defined/Components/DCDSubscribe/Content/Subscriber SubHeadline
+path: /sitecore/templates/User Defined/Components/DCDSubscribe/Content/Promotional Button Text
 parent: {0DD32BAE-515E-42D5-8203-DA28B774F232}
-name: Subscriber SubHeadline
+name: Promotional Button Text
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -22,11 +22,11 @@ name: __Sortorder
 key: __sortorder
 content-length: 3
 
-500
+600
 ----version----
 language: en
 version: 1
-revision: 2d20aeb0-62d0-4424-b291-c0e99c460ea9
+revision: 406a5957-a164-41b8-bbe5-bb77822c0fdd
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-2d20aeb0-62d0-4424-b291-c0e99c460ea9
+406a5957-a164-41b8-bbe5-bb77822c0fdd
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160714T161603Z
+20161010T124416Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

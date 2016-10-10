@@ -28,18 +28,18 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
                 dependencies.SitecoreService.GetItem<IDCDSubscribe>(Constants.DCDSubscribeComponent);
             if (dcdSubscribeComponent == null) return;
 
-            PurchaseHeadline = dcdSubscribeComponent.Purchase_Headline;
-            PurchaseSubHeading = dcdSubscribeComponent.Purchase_Subheading;
-            PurchaseButtonText = dcdSubscribeComponent.Purchase_Button_Text;
+			PurchaseHeadline = dcdSubscribeComponent.Subscriber_Headline;
+            PurchaseSubHeading = dcdSubscribeComponent.Subscriber_Subheading;
+            PurchaseButtonText = dcdSubscribeComponent.Subscriber_Button_Text;
 
             var recordNumber = UrlUtils.GetLastUrlSement(dependencies.HttpContextProvider.Current);
 
             PurchaseButtonLink = string.Format(dependencies.SiteSettingsContext.OldDealsUrl, recordNumber);
             SubscriberHeadline = dcdSubscribeComponent.Subscriber_Headline;
-            SubscriberSubHeading = dcdSubscribeComponent.Subscriber_SubHeadline;
-            SubscriberButtonText = dcdSubscribeComponent.Subscribe_Button_Text;
-            SubscriberButtonLink = dcdSubscribeComponent.Subscribe_Button_Link != null
-                ? dcdSubscribeComponent.Subscribe_Button_Link.Url
+            SubscriberSubHeading = dcdSubscribeComponent.Promotional_Subheadline;
+            SubscriberButtonText = dcdSubscribeComponent.Promotional_Button_Text;
+            SubscriberButtonLink = dcdSubscribeComponent.Promotional_Button_Link != null
+                ? dcdSubscribeComponent.Promotional_Button_Link.Url
                 : string.Empty;
             ContactHeadline = dcdSubscribeComponent.Contact_Headline;
             ContactInfo = dcdSubscribeComponent.Contact_Info;
