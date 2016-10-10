@@ -39,7 +39,7 @@ namespace Informa.Web.ViewModels
 
         #region Side Navigation Menu Items  
         public IEnumerable<INavigation> Navigation => SiteMainNavigationContext.Navigation;
-        public IEnumerable<ISubscription> NavigationWithSubs => GetNavigationWithSubScriptions();
+        public IEnumerable<ISubscription> ValidSubscriptions => GetValidSubscriptions();
         public string MenuText => TextTranslator.Translate("MainNavigation.Menu");
         public string MenuButtonText => TextTranslator.Translate("MainNavigation.ToggleMenu");
         public string MyViewHelpText => TextTranslator.Translate("MainNavigation.MyViewHelpText");
@@ -63,12 +63,25 @@ namespace Informa.Web.ViewModels
             IUserPreferences prefChannels = new UserPreferences();
             if (IsAuthenticated)
             {
-                if (UserPreferences!=null && UserPreferences.Preferences != null &&
+                if (UserPreferences != null && UserPreferences.Preferences != null &&
                 UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
                 {
                     foreach (var preference in UserPreferences.Preferences.PreferredChannels)
                     {
-                        preferredChannels.Add(new Navigation { Text = preference.ChannelName, Link = new Link { Url = preference.ChannelLink } });
+                        if(!string.IsNullOrWhiteSpace(preference.ChannelId)&& !string.IsNullOrWhiteSpace(preference.ChannelName))
+                        {
+                            preferredChannels.Add(new Navigation { Text = preference.ChannelName, /*Link = new Link { Url = preference.ChannelLink }*/ });
+                        }
+                        else if(preference.Topics!=null)
+                        {
+                            foreach (var topic in preference.Topics)
+                            {
+                                if (!string.IsNullOrWhiteSpace(topic.TopicId) && !string.IsNullOrWhiteSpace(topic.TopicName))
+                                {
+                                    preferredChannels.Add(new Navigation { Text = topic.TopicName, /*Link = new Link { Url = topic.TopicLink } */});
+                                }
+                            }
+                        }
                     }
                     navigation.Children = preferredChannels;
                 }
@@ -88,20 +101,21 @@ namespace Informa.Web.ViewModels
             //tempObj.Text = "My View";
             //tempObj.Link = new Link { Url = @"http://facebook.com" };
 
-            //var Prefdchannel = new ChannelPreference();
-            //Prefdchannel.Channel = new Channel();
-            //Prefdchannel.Channel.ChannelName = "Beverages";
-            //Prefdchannel.Channel.ChannelOrder = 1;
-            //Prefdchannel.Channel.ChannelLink = @"http://google.com";
+            //var Prefdchannel = new UserPreferences();
+            //Prefdchannel.PreferredChannels = new List<Channel>();
+            //var channel = new Channel();
+            //channel.ChannelName = "Beverages";
+            //channel.ChannelOrder = 1;
+            //channel.ChannelLink = @"http://google.com";
 
-            //children.Add(new Navigation { Text = Prefdchannel.Channel.ChannelName, Link = new Link { Url = Prefdchannel.Channel.ChannelLink } });
+            //children.Add(new Navigation { Text = channel.ChannelName, Link = new Link { Url = channel.ChannelLink } });
 
-            //Prefdchannel.Channel = new Channel();
-            //Prefdchannel.Channel.ChannelName = "Cocoa";
-            //Prefdchannel.Channel.ChannelOrder = 2;
-            //Prefdchannel.Channel.ChannelLink = @"http://yahoo.com";
+            //var channel1 = new Channel();
+            //channel1.ChannelName = "Cocoa";
+            //channel1.ChannelOrder = 2;
+            //channel1.ChannelLink = @"http://yahoo.com";
 
-            //children.Add(new Navigation { Text = Prefdchannel.Channel.ChannelName, Link = new Link { Url = Prefdchannel.Channel.ChannelLink } });
+            //children.Add(new Navigation { Text = channel1.ChannelName, Link = new Link { Url = channel1.ChannelLink } });
 
             //tempObj.Children = children;
 
@@ -113,12 +127,12 @@ namespace Informa.Web.ViewModels
         /// Method to get the logged in user subscriptions
         /// </summary>
         /// <returns>list of subscriptions</returns>
-        public IEnumerable<ISubscription> GetNavigationWithSubScriptions()
+        public IEnumerable<ISubscription> GetValidSubscriptions()
         {
             #region reading actual subscriptions
             //var subscriptions = new List<ISubscription>();
             //if (IsAuthenticated)
-            //{
+            //{                
             //    if (Subscriptions != null && Subscriptions.Count() > 0)
             //    {
             //        foreach (var subscription in Subscriptions)
@@ -128,6 +142,10 @@ namespace Informa.Web.ViewModels
             //                subscriptions.Add(subscription);
             //            }
             //        }
+            //    }
+            //    else
+            //    {
+            //        //do topic level subscriptions
             //    }
             //    return subscriptions;
             //}
@@ -149,10 +167,6 @@ namespace Informa.Web.ViewModels
             subscription1.ExpirationDate = new DateTime(2016, 10, 25);
             subscriptions.Add(subscription1);
 
-            ISubscription subscription2 = new SalesforceSubscription();
-            subscription2.Publication = "People";
-            subscription2.ExpirationDate = new DateTime(2016, 10, 25);
-            subscriptions.Add(subscription2);
             return subscriptions;
             #endregion
         }
