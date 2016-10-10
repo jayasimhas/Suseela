@@ -31,17 +31,17 @@
         public string FindOutMoreText => TextTranslator.Translate("Personalization.FindOutMoreText");
         public bool IsGlobalToggleEnabled => SiterootContext.Item.Enable_MyView_Toggle;
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
-        public bool PreferencesExists => UserHasPreferences();
+        public bool HideWelcomeMessage => GetWelcomeMessageStatus();
 
-        private bool UserHasPreferences()
+        private bool GetWelcomeMessageStatus()
         {
             if(IsAuthenticated)
             {
-                return UserPreferences.Preferences != null &&
+                return (UserPreferences.Preferences != null &&
                        UserPreferences.Preferences.PreferredChannels != null &&
-                       UserPreferences.Preferences.PreferredChannels.Count > 0;
+                       UserPreferences.Preferences.PreferredChannels.Count > 0) && Convert.ToInt32(SiterootContext.Item.Welcome_Message_Display_Frequency) > 30;
             }
-            return false;
+            return true;
         }
 
         private string GetMessageForRightRail()

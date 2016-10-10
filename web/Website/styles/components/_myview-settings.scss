@@ -14,8 +14,7 @@ $yellowColor: #f7941e;
     line-height: $h;
 	float: right;
 }
-@mixin tableData($px){
-	white-space: nowrap;
+@mixin tableData($px){ 
 	padding: 12px 20px;
 	line-height: 1.42857143;
 	vertical-align: top;
@@ -296,6 +295,9 @@ $yellowColor: #f7941e;
 				@include breakpoint('small') {
 					width: 65%;
 				}
+				@include breakpoint('medium-small') {
+					width: 45%;
+				}
 			}
 			.wd-25{
 				width: 25%;
@@ -304,11 +306,17 @@ $yellowColor: #f7941e;
 					padding: 8px 0px 10px 10px;
 					text-align: right;
 				}
+				@include breakpoint('medium-small') {
+					width: 25%;
+				}
 			}
 			.wd-15{
 				width: 15%;
 				@include breakpoint('small') {
 					width: 10%;
+				}
+				@include breakpoint('medium-small') {
+					width: 15%;
 				}
 			}
 			.graybg{
