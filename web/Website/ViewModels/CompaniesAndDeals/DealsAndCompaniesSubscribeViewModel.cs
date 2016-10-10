@@ -35,7 +35,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             var recordNumber = UrlUtils.GetLastUrlSement(dependencies.HttpContextProvider.Current);
 
             PurchaseButtonLink = string.Format(dependencies.SiteSettingsContext.OldDealsUrl, recordNumber);
-            SubscriberHeadline = dcdSubscribeComponent.Subscriber_Headline;
+            SubscriberHeadline = dcdSubscribeComponent.Promotional_Headline;
             SubscriberSubHeading = dcdSubscribeComponent.Promotional_Subheadline;
             SubscriberButtonText = dcdSubscribeComponent.Promotional_Button_Text;
             SubscriberButtonLink = dcdSubscribeComponent.Promotional_Button_Link != null
