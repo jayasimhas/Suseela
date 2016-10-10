@@ -54,8 +54,17 @@
                 <div class="main-menu__section">
                     <div class="titleMyView">@navigation.Text</div>
                     <ul>
-                        <li class="edit-link"><a href="javascript: void(0);">@Model.MyViewEditBtnText</a></li>
-                        <li class="navContent">@Model.MyViewHelpText</li>
+                        @if (Model.IsAuthenticated)
+                        {
+                            <li class="edit-link"><a href="@Model.MyViewLinkURL">@Model.MyViewEditBtnText</a></li>
+                            <li class="navContent">@Model.MyViewHelpText</li>
+                        }
+                        else
+                        {
+                            <li class="edit-link"><a id="myBtn" href="javascript: void(0);">@Model.MyViewEditBtnText</a></li>
+                            <li class="navContent">@Model.MyViewHelpText</li>
+                        }
+                        
                         @if (Nav.Children.Any())
                         {
                             foreach (var navigationChild in Nav.Children)
@@ -106,13 +115,18 @@
         }
     }
 </div>
-<!-- The Modal -->
-<div id="myModal" class="modal">
+<!-- The Personalised Modal -->
+<div id="myModal" class="personalise_nav">
 
     <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">x</span>
-        <p>Some text in the Modal..</p>
+    <div class="personalise_nav-content">
+        <span class="personalise_close">
+            <svg class="dismiss-button__icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#x"></use>
+                UsernamePublicRestriction
+            </svg>
+        </span>
+        @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
     </div>
 
 </div>
