@@ -5,13 +5,10 @@ function setClsforFlw(t) {
 	}
 }
 $(function(){
-	
 	$('#allPublicationsPan').on('click', '.followAllBtn', function(){
 		var curpublicPan = $(this).closest('.publicationPan'), $lgfollow = curpublicPan.find('.followBtn'), table = $('.table');
 		$lgfollow.addClass('followingBtn').removeClass('followBtn').html('following');
-		
 		curpublicPan.find('.unfollowAllBtn').removeClass('hideBtn');
-		
 		for(var i=0; i<$lgfollow.length; i++){
 			$($lgfollow[i], curpublicPan).closest('tr').removeAttr('class').addClass('followingrow');
 		}
@@ -22,7 +19,6 @@ $(function(){
 		var curpublicPan = $(this).closest('.publicationPan'), $lgfollowing = curpublicPan.find('.followingBtn');
 		$(this).addClass('hideBtn');
 		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html('follow');
-		
 		for(var i=0; i<$lgfollowing.length; i++){
 			$($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled ufa');
 		}
@@ -32,7 +28,6 @@ $(function(){
 		var $this = $(this), mcall = $this.closest('.mca'), muall = $this.closest('.smfollowingBtn').find('.mua'), curpublicPan = $(this).closest('.publicationPan'), mchecked = curpublicPan.find('.mchecked');
 		mcall.addClass('hideBtn');
 		muall.removeClass('hideBtn');
-		
 		for(var i=0; i<mchecked.length; i++){
 			$(mchecked[i], curpublicPan).addClass('munchecked').removeClass('mchecked');
 		}
@@ -42,21 +37,20 @@ $(function(){
 		var $this = $(this), mcall = $this.closest('.smfollowingBtn').find('.mca'), muall = $this.closest('.mua'), curpublicPan = $(this).closest('.publicationPan'), munchecked = curpublicPan.find('.munchecked');
 		muall.addClass('hideBtn');
 		mcall.removeClass('hideBtn');
-		
 		for(var i=0; i<munchecked.length; i++){
 			$(munchecked[i], curpublicPan).addClass('mchecked').removeClass('munchecked');
 		}
 	});
-	
-	$('#allPublicationsPan .donesubscribe').on('click', '.smfollowingBtn .mchecked', function(){
+	 
+	$('#allPublicationsPan .donesubscribe').on('click', '.smfollowingBtn a', function(){
 		var $this = $(this), smfollowingBtn = $this.closest('.smfollowingBtn');
-		smfollowingBtn.find('a').addClass('munchecked').removeClass('mchecked');
-	});
-	
-	$('#allPublicationsPan .donesubscribe').on('click', '.smfollowingBtn .munchecked', function(){
-		var $this = $(this), smfollowingBtn = $this.closest('.smfollowingBtn');
-		smfollowingBtn.find('a').addClass('mchecked').removeClass('munchecked');
-	});
+		if($this.hasClass('munchecked')){
+			smfollowingBtn.find('a').addClass('mchecked').removeClass('munchecked');
+		}
+		else{
+			smfollowingBtn.find('a').addClass('munchecked').removeClass('mchecked');
+		}
+	}); 
 	
 	$('#allPublicationsPan .donesubscribe').on('click', '.followrow .followBtn', function(){
 	  var $this = $(this), followrow = $this.closest('.followrow'), table = $this.closest('.table');
@@ -69,7 +63,7 @@ $(function(){
 	  else{
 		followrow.clone().appendTo($this.closest('tbody'));
 	  }
-	  followrow.remove(); 
+	  followrow.remove();
 	});
 	
 	$('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function(){
@@ -77,7 +71,7 @@ $(function(){
 	  followingrow.addClass('followrow disabled').removeClass('followingrow');
 	  $this.addClass('followBtn').removeClass('followingBtn').html('Follow');
 	  followingrow.clone().appendTo($this.closest('tbody'));
-	  followingrow.remove();
+	  followingrow.remove(); 
 	});
 	
 	$('.publicationPan').on('click', '.accordionImg a', function(){
@@ -85,10 +79,14 @@ $(function(){
 		if($this.hasClass('collapsed')){
 			$this.removeClass('collapsed');
 			tbody.addClass('tbodyhidden');
+			pPan.find('.smfollowingBtn').hide();
+			pPan.find('.graybg').hide();
 		}
 		else{
 			$this.addClass('collapsed');
 			tbody.removeClass('tbodyhidden');
+			pPan.find('.smfollowingBtn').show();
+			pPan.find('.graybg').show();
 		}
 	});
 	
@@ -107,10 +105,8 @@ $(function(){
 			}
 			createtableData.allpublications[tableId] = {"publicationName": publicationName, "subscribeStatus": subscribeStatus, "position": pubPanPosition, "tableData": alltdata}
 		}
-		
 		console.log(JSON.stringify(createtableData));
 	});
-
 });
 
 

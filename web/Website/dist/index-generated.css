@@ -2027,7 +2027,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       font-style: italic; }
     #foodNews .searchpan .searchImg {
       cursor: pointer;
-      margin: 6px 0 0 20px; }
+      margin: 6px 0 0 20px;
+      float: left; }
   #foodNews .downloadBtn {
     border: 1px solid #f7941e;
     cursor: pointer;
@@ -2087,6 +2088,65 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
     text-align: center; }
     #foodNews .pagination .nums li {
       display: inline-block; }
+  #foodNews .hidden-lg {
+    display: none !important; }
+  @media (max-width: 640px) {
+    #foodNews .sortable-table__col {
+      padding: 16px;
+      padding: 1rem; } }
+  @media (max-width: 480px) {
+    #foodNews .page-account__table {
+      margin-bottom: 0px; }
+    #foodNews .searchpan {
+      margin-bottom: 20px; }
+      #foodNews .searchpan label[for=searchNews] {
+        font-size: 1.1em;
+        color: #000;
+        float: none;
+        display: block;
+        margin-bottom: 10px; }
+      #foodNews .searchpan #searchNews {
+        width: 205px;
+        height: 44px; }
+      #foodNews .searchpan .searchImg {
+        margin-top: 10px; }
+    #foodNews .subtitle {
+      font-size: 1.2em;
+      font-style: normal;
+      font-family: "Roboto"; }
+    #foodNews .eachCategory {
+      display: block;
+      font-size: 1.125em; }
+      #foodNews .eachCategory .tableMrow {
+        clear: both;
+        border: 1px solid #d2d4d3;
+        border-bottom: none; }
+        #foodNews .eachCategory .tableMrow .title {
+          background: #ececec;
+          padding: 12px;
+          color: #231f20;
+          font-weight: bold; }
+        #foodNews .eachCategory .tableMrow .item {
+          padding: 18px 12px 12px 12px;
+          border-bottom: 1px solid #d1d3d4; }
+        #foodNews .eachCategory .tableMrow .download {
+          padding: 18px 12px 12px 12px;
+          border-bottom: 1px solid #d1d3d4;
+          text-align: center; }
+          #foodNews .eachCategory .tableMrow .download .downloadBtn {
+            cursor: pointer;
+            font-size: .95em;
+            width: 170px;
+            height: 52px;
+            line-height: 52px;
+            color: #000;
+            letter-spacing: 1px; }
+    #foodNews .sortable-table tbody tr {
+      border: none; }
+    #foodNews .sortable-table tbody tr td {
+      display: block; }
+    #foodNews .hidden-lg {
+      display: block !important; } }
 
 .generic-content {
   margin-bottom: 32px;
@@ -3560,7 +3620,6 @@ header .header-account-access {
         -webkit-transition: all 0.2s ease;
         transition: all 0.2s ease; }
         .myview-settings .table-responsive .table tbody tr td {
-          white-space: nowrap;
           padding: 12px 20px;
           line-height: 1.42857143;
           vertical-align: top;
@@ -3659,7 +3718,6 @@ header .header-account-access {
           .myview-settings .table-responsive .table tbody tr.followrow .move {
             display: none; }
       .myview-settings .table-responsive .table thead th {
-        white-space: nowrap;
         padding: 12px 20px;
         line-height: 1.42857143;
         vertical-align: top;
@@ -3772,6 +3830,9 @@ header .header-account-access {
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-55 {
             width: 65%; } }
+        @media (max-width: 640px) {
+          .myview-settings .table-responsive .table .wd-55 {
+            width: 45%; } }
       .myview-settings .table-responsive .table .wd-25 {
         width: 25%; }
         @media (max-width: 480px) {
@@ -3779,11 +3840,17 @@ header .header-account-access {
             width: 20%;
             padding: 8px 0px 10px 10px;
             text-align: right; } }
+        @media (max-width: 640px) {
+          .myview-settings .table-responsive .table .wd-25 {
+            width: 25%; } }
       .myview-settings .table-responsive .table .wd-15 {
         width: 15%; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table .wd-15 {
             width: 10%; } }
+        @media (max-width: 640px) {
+          .myview-settings .table-responsive .table .wd-15 {
+            width: 15%; } }
       .myview-settings .table-responsive .table .graybg {
         background: #f9fafa; }
       .myview-settings .table-responsive .table .smfollowingBtn {
@@ -3909,6 +3976,149 @@ header .header-account-access {
   50% {
     color: #FF9933;
     background: #fff; } }
+
+.personalisationhome .article-preview__headline {
+  font-size: 26px;
+  font-size: 1.625rem; }
+
+.personalisationhome .article-metadata {
+  margin-top: 0px; }
+
+.personalisationhome .personalHead {
+  border-bottom: 1px solid #d1d3d4;
+  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem; }
+  .personalisationhome .personalHead h1 {
+    float: left;
+    margin-right: 25px;
+    margin-right: 1.5625rem; }
+
+.personalisationhome .sub-heading-text {
+  font-size: 1.125em;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem; }
+  .personalisationhome .sub-heading-text p {
+    line-height: 16px;
+    line-height: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125em; }
+    @media (max-width: 480px) {
+      .personalisationhome .sub-heading-text p {
+        font-size: 0.875em;
+        margin: 0px;
+        padding: 0px;
+        line-height: 24px;
+        line-height: 1.5rem; } }
+
+.personalisationhome .latestSubject {
+  color: #231f20;
+  position: relative;
+  margin: 50px 0;
+  margin: 3.125rem 0; }
+  .personalisationhome .latestSubject span {
+    background: #ffffff;
+    padding-right: 20px;
+    padding-right: 1.25rem;
+    font-size: 32px;
+    font-size: 2rem;
+    font-family: "Roboto condensed";
+    position: relative;
+    font-weight: bold;
+    z-index: 2; }
+  .personalisationhome .latestSubject:before {
+    background-color: #be1e2d;
+    content: "";
+    display: block;
+    height: 4px;
+    position: absolute;
+    top: calc(50% - 2px);
+    width: 85%;
+    z-index: 1; }
+  .personalisationhome .latestSubject .editView {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.8125em;
+    font-family: "Roboto";
+    font-weight: 500;
+    width: 140px;
+    width: 8.75rem;
+    height: 34px;
+    height: 2.125rem;
+    text-align: center;
+    display: inline-block;
+    line-height: 34px;
+    line-height: 2.125rem;
+    background: #f7941e;
+    color: #ffffff;
+    float: right;
+    margin: 0px;
+    padding: 0px; }
+
+.personalisationhome .latest-news__articles .article-small-preview {
+  border: 1px solid #d1d3d4;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  height: 220px;
+  height: 13.75rem;
+  width: 300px;
+  width: 18.75rem;
+  margin: 0 16px 36px;
+  margin: 0 1rem 2.25rem;
+  padding: 16px 20px 48px;
+  padding: 1rem 1.25rem 3rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  overflow: hidden; }
+
+.personalisationhome .editView {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.8125em;
+  font-family: "Roboto";
+  font-weight: 500;
+  width: 140px;
+  width: 8.75rem;
+  height: 34px;
+  height: 2.125rem;
+  text-align: center;
+  display: inline-block;
+  line-height: 34px;
+  line-height: 2.125rem;
+  background: #f7941e;
+  color: #ffffff;
+  float: left;
+  margin: 18px 0 0;
+  margin: 1.125rem 0 0; }
+
+.personalisationhome .article-preview--small.topics:after {
+  height: 48px;
+  height: 3rem; }
+
+.personalisationhome .article-preview--small.topics h6, .personalisationhome .article-preview--small.topics .article-tags-bar__label, .personalisationhome .article-preview--small.topics .article-topics__section-header {
+  margin-bottom: 10px; }
+
+.personalisationhome .article-preview--small .article-preview_rheadline {
+  font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+  border-bottom: 1px solid #d1d3d4;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+  padding-bottom: 16px;
+  padding-bottom: 1rem;
+  font-size: 26px;
+  font-size: 1.625rem;
+  font-weight: 700;
+  line-height: 34px;
+  line-height: 2.125rem; }
+  .personalisationhome .article-preview--small .article-preview_rheadline a, .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password, .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler, .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit {
+    color: #231f20; }
+    .personalisationhome .article-preview--small .article-preview_rheadline a:hover, .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password:hover, .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler:hover, .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit:hover {
+      color: #be1e2d; }
 
 div.main-menu__section .titleMyView {
   color: #231f20;
