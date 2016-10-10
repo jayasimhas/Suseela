@@ -3966,18 +3966,18 @@ div.main-menu__section .navContent {
   background-color: #f1f2f2;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid #d1d3d4;
   width: 80%; }
 
 .personalise_close {
-  color: #aaaaaa;
+  color: #231f20;
   float: right;
   font-size: 28px;
   font-weight: bold; }
 
 .personalise_close:hover,
 .personalise_close:focus {
-  color: #000;
+  color: #231f20;
   text-decoration: none;
   cursor: pointer; }
 
@@ -4817,14 +4817,22 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       line-height: 20px;
       width: 100%; } }
   .subscriptionPan #mySubscription {
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    width: 100%; }
   .subscriptionPan #mySubscriptionTab {
     width: 100%;
     border: 1px solid #d2d4d3;
     border-collapse: collapse; }
     @media (max-width: 480px) {
       .subscriptionPan #mySubscriptionTab {
-        border: none; } }
+        border: none; }
+        .subscriptionPan #mySubscriptionTab .hidden-lg {
+          display: block !important; } }
+    @media (max-width: 640px) {
+      .subscriptionPan #mySubscriptionTab .sortable-table__header {
+        display: none; }
+      .subscriptionPan #mySubscriptionTab .hidden-lg {
+        display: block !important; } }
   .subscriptionPan #mypurchases {
     width: 100%;
     border: 1px solid #d2d4d3;
@@ -4850,8 +4858,10 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         font-size: 1em;
         line-height: 20px; } }
   .subscriptionPan .sortable-table__col {
-    width: 25%;
-    text-align: left; }
+    text-align: left;
+    position: relative;
+    padding: 16px;
+    padding: 1rem; }
     .subscriptionPan .sortable-table__col .accordian {
       background: url(/dist/img/arrow2.jpg) no-repeat -18px -14px;
       height: 17px;
@@ -4865,15 +4875,15 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
           display: none; } }
     .subscriptionPan .sortable-table__col .accordian:nth-child(2) {
       position: absolute;
-      margin-left: 40px; }
-    @media (max-width: 480px) {
+      right: 10px; }
+    @media (max-width: 640px) {
       .subscriptionPan .sortable-table__col {
         width: 100%;
         display: table-cell;
         padding: 12px;
         font-size: 1em;
         line-height: 24px; } }
-  @media (max-width: 480px) {
+  @media (max-width: 640px) {
     .subscriptionPan .tableMrow {
       clear: both;
       border: 1px solid #d2d4d3;
@@ -4904,13 +4914,17 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     font-size: 1.125em;
     color: #231f20;
     font-weight: bold; }
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
       .subscriptionPan .title {
         clear: both; } }
   .subscriptionPan .maintitle {
     background: #ececec url(/dist/img/mob-arrow.png) no-repeat right 14px; }
     .subscriptionPan .maintitle.active {
       background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px; }
+
+@media (max-width: 640px) {
+  #purchases .sortable-table__header {
+    display: none; } }
 
 #purchases #mypurchases tr td:nth-child(1) {
   width: 20%; }
@@ -4931,22 +4945,29 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   fill: #be1e2d; }
 
 @media (max-width: 480px) {
-  font-size: 15px;
+  font-size: 0.9375rem;
   .hidden-xs {
     display: none !important; }
   .page-account__header {
     font-size: 36px;
+    font-size: 2.25rem;
     line-height: 32px; } }
 
-@media only screen and (min-width: 481px) {
+@media (max-width: 640px) {
   .hidden-lg {
-    display: none !important; }
-  .purchases .sortable-table__col.fdata {
-    width: 30%; }
-  .purchases .sortable-table__col.sdata {
-    width: 50%; }
-  .purchases .sortable-table__col.tdata {
-    width: 20%; } }
+    display: block !important; }
+  .hidden-xs {
+    display: none !important; } }
+
+@media only screen and (min-width: 481px) {
+  .purchases .sortable-table__col {
+    position: relative; }
+    .purchases .sortable-table__col.fdata {
+      width: 30%; }
+    .purchases .sortable-table__col.sdata {
+      width: 50%; }
+    .purchases .sortable-table__col.tdata {
+      width: 20%; } }
 
 .small_table .table-responsive .table {
   border-collapse: inherit;
