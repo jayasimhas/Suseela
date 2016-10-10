@@ -98,11 +98,25 @@ namespace Informa.Library.Search.PredicateBuilders
 
 			if (_request.QueryParameters.ContainsKey(Constants.QueryString.Publication))
 			{
-				predicate =
-					predicate.And(
-						x => x.PublicationTitle.Equals(_request.QueryParameters[Constants.QueryString.Publication]));
+				var publicationPredicate = PredicateBuilder.True<T>();
+				//List all the publications selected by splitting it by ;
+				var publications = _request.QueryParameters[Constants.QueryString.Publication].Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+				//Foreach publication selected in search
+				foreach (var publication in publications)
+				{
+					//Or it with the other selected publications
+					publicationPredicate.Or(x => x.PublicationTitle.Equals(publication));
+				}
+
+				//And the publicationsPredicate with the original predicate
+				predicate.And(publicationPredicate);
+
+				//Comment out old code that is designed to read one publication only
+				//predicate =
+				//	predicate.And(
+				//		x => x.PublicationTitle.Equals(_request.QueryParameters[Constants.QueryString.Publication]));
 			}
-            return predicate;
+			return predicate;
         }
     }
 }
