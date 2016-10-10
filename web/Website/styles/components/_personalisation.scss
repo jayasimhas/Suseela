@@ -1,0 +1,125 @@
+@mixin editView(){ 
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 0.8125em;
+	font-family: "Roboto";
+	font-weight: 500;
+	width: 8.75rem;
+	height: 2.125rem;
+	text-align: center;
+	display: inline-block;
+	line-height: 2.125rem;
+	background: $color-tree-poppy-orange;
+	color: $color-white;
+}
+
+.personalisationhome{
+	.article-preview__headline{
+		font-size: 1.625rem;
+	}
+	.article-metadata{
+		margin-top: 0px;
+	}
+	.personalHead{
+		border-bottom: 1px solid $color-light-gray;
+		padding-bottom: 0.625rem;
+		margin-bottom: 1.25rem;
+		h1{
+			float: left;
+			margin-right: 1.5625rem;
+		}
+	}
+	.sub-heading-text{
+		font-size: 1.125em;
+		margin-bottom: 1.25rem;
+		p{
+			line-height: 1rem;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 1.125em;
+			@include breakpoint('small') {
+				font-size: 0.875em;
+				margin: 0px;
+				padding: 0px;
+				line-height: 1.5rem;
+			}
+		}
+	}
+	.latestSubject{
+		color: $color-zeus-black;
+		position: relative;
+		margin: 3.125rem 0;
+		span{
+			background: $color-white;
+			padding-right: 1.25rem;
+			font-size: 2rem;
+			font-family: "Roboto condensed";
+			position: relative; 
+			font-weight: bold;
+			z-index: 2;
+		}
+		&:before {
+			background-color: $color-cardinal-red;
+			content: "";
+			display: block;
+			height: 4px;
+			position: absolute;
+			top: calc(50% - 2px);
+			width: 85%;
+			z-index: 1;
+		}
+		.editView{
+			@include editView();
+			float: right;
+			margin: 0px;
+			padding: 0px;
+		}
+	}
+	.latest-news__articles {
+		.article-small-preview {
+		  border: 1px solid $color-light-gray;
+		  -webkit-box-flex: 1;
+			  -ms-flex: 1 0 auto;
+				  flex: 1 0 auto;
+		  height: 13.75rem;
+		  width: 18.75rem;
+		  margin: 0 1rem 2.25rem;
+		  padding: 1rem 1.25rem 3rem;
+		  line-height: 1.5rem;
+		  line-height: 1.5rem;
+		  overflow: hidden; 
+		}
+	}
+	
+	.editView{
+		@include editView();
+		float: left;
+		margin: 1.125rem 0 0;
+	}
+	
+	.article-preview--small{
+		&.topics{
+			&:after{
+				height: 3rem;
+			}
+			h6{
+				margin-bottom: 10px;
+			}
+		}
+		.article-preview_rheadline{
+			font-family: "Roboto Condensed", Arial Narrow, sans-serif;
+			border-bottom: 1px solid $color-light-gray;
+			margin-bottom: 1rem;
+			padding-bottom: 1rem;
+			font-size: 1.625rem;
+			font-weight: 700;
+			line-height: 2.125rem; 
+			a{
+				color: $color-zeus-black;
+				&:hover{
+					color: $color-cardinal-red;
+				}
+			}
+		}
+	}
+}
