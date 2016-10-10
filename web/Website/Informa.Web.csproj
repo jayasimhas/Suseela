@@ -862,12 +862,14 @@
     <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\ArticlePurchasesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\EmailPreferencesViewModel.cs" />
-    <Compile Include="Areas\Account\ViewModels\Management\MyViewToggleViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Management\MyViewSettingsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedArticlesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedSearchesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SubscriptionsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\ContactInformationViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SubscriptionViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Personalization\MyViewToggleViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Personalization\PersonalizationMessageViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterFreeTrialUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
@@ -977,8 +979,6 @@
     <Compile Include="ViewModels\IAnalyticsViewModel.cs" />
     <Compile Include="ViewModels\IAuthorPrologueEmailViewModel.cs" />
     <Compile Include="ViewModels\IFooterNavigationMenuViewModel.cs" />
-    <Compile Include="ViewModels\IPersonalizedMyViewViewModel.cs" />
-    <Compile Include="ViewModels\PersonalizedMyViewViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\EmailAuthorPopOutViewModel .cs" />
     <Compile Include="ViewModels\PopOuts\EmailSearchPopOutViewModel.cs" />
     <Compile Include="ViewModels\PopOuts\IEmailAuthorPopOutViewModel.cs" />
@@ -1559,7 +1559,10 @@
     <Content Include="amcharts\plugins\export\README.md" />
     <Content Include="amcharts\plugins\responsive\readme.md" />
     <Content Include="amcharts\plugins\responsive\responsive.min.js.map" />
-    <Content Include="Areas\Account\Views\Management\MyViewGlobalToggle.cshtml" />
+    <Content Include="Areas\Account\Views\Management\MyViewSettings.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\MyViewGlobalToggle.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageFull.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageSmall.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1875,7 +1878,6 @@
     <Content Include="Views\Shared\Components\DataTools\DataTollUserCallToAction.cshtml" />
     <Content Include="Views\Shared\PopOuts\VideoControl.cshtml" />
     <Content Include="Views\Shared\Components\DataTools\AMchartsUsingBuilder.cshtml" />
-    <Content Include="Views\Shared\_PersonalizedMyViewNavigation.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>
     </None>

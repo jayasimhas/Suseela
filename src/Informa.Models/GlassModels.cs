@@ -20752,6 +20752,342 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
     }
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
+{
+
+
+    /// <summary>
+    /// IChannels_Page Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Channels Page</para>	
+    /// <para>ID: {1F72A666-79A1-4468-A48F-E44EE7CB9232}</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IChannels_PageConstants.TemplateIdString)]
+    public partial interface IChannels_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___OpenGraph
+    {
+    }
+
+    /// <summary>
+    /// IChannels_Page Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Channels Page</para>	
+    /// <para>ID: {1F72A666-79A1-4468-A48F-E44EE7CB9232}</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IChannels_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___OpenGraph__Raw
+    {
+    }
+
+    public static partial class IChannels_PageConstants
+    {
+
+        public const string TemplateIdString = "1F72A666-79A1-4468-A48F-E44EE7CB9232";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Channels Page";
+
+
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+
+
+        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+
+
+        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+        public const string Meta_DescriptionFieldName = "Meta Description";
+
+
+
+        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+        public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+
+
+        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+
+
+        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+        public const string Navigation_TitleFieldName = "Navigation Title";
+
+
+
+        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string BodyFieldName = "Body";
+
+        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string Body__RawFieldName = "Body";
+
+
+        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+        public const string Sub_TitleFieldName = "Sub Title";
+
+
+
+        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+        public const string TitleFieldName = "Title";
+
+
+
+        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+        public const string Include_In_SearchFieldName = "Include In Search";
+
+
+
+        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+        public const string TaxonomiesFieldName = "Taxonomy";
+
+
+
+        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+        public const string Canonical_LinkFieldName = "Canonical Link";
+
+
+
+        public static readonly ID FactoryListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+        public const string FactoryListableAuthorsFieldName = "FactoryListableAuthors";
+
+
+
+        public static readonly ID FactoryListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+        public const string FactoryListableDatesFieldName = "FactoryListableDate";
+
+
+
+        public static readonly ID FactoryListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+        public const string FactoryListableImagesFieldName = "FactoryListableImage";
+
+
+
+        public static readonly ID FactoryListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+        public const string FactoryListableSummariesFieldName = "FactoryListableSummary";
+
+
+
+        public static readonly ID FactoryListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+        public const string FactoryListableTitlesFieldName = "FactoryListableTitle";
+
+
+
+        public static readonly ID FactoryListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+        public const string FactoryListableTopicsFieldName = "FactoryListableTopics";
+
+
+
+        public static readonly ID FactoryListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+        public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
+
+
+
+        public static readonly ID Og_DescriptionFieldId = new ID("2237176c-baf4-415f-9ba0-8d82c3595664");
+        public const string Og_DescriptionFieldName = "og_description";
+
+
+
+        public static readonly ID Og_ImageFieldId = new ID("c39a6847-98cc-48fa-815e-7459bbec73a9");
+        public const string Og_ImageFieldName = "og_image";
+
+
+
+        public static readonly ID Og_TitleFieldId = new ID("76a7a327-065f-49f6-8407-c57c29f3a5ef");
+        public const string Og_TitleFieldName = "og_title";
+
+
+
+
+    }
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
+{
+
+
+    /// <summary>
+    /// IChannel Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Channel</para>	
+    /// <para>ID: {5AFF7554-4CD4-4F40-BD6F-5FBC11C1793E}</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IChannel_PageConstants.TemplateIdString)]
+    public partial interface IChannel_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___OpenGraph
+    {
+        /// <summary>
+        /// The Display Text field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: DB32F049-337D-4F28-B7AA-88AEB4E2FF1E</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IChannel_PageConstants.Display_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Display_Text { get; set; }
+        /// <summary>
+        /// The Channel Code name field.
+        /// <para></para>
+        /// <para>Field Type:  Single-Line Text</para>		
+        /// <para>Field ID: 8A396DEB-508E-4CA3-AF22-F0372ACF7134</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IChannel_PageConstants.Channel_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Channel_Code { get; set; }
+    }
+
+    /// <summary>
+    /// IChannel Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Channel</para>	
+    /// <para>ID: {5AFF7554-4CD4-4F40-BD6F-5FBC11C1793E}</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IChannel_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw, global::Informa.Models.Informa.Models.sitecore.templates.Velir.FactoryInterface.IFactoryListable__Raw, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___OpenGraph__Raw
+    {
+        /// <summary>
+        /// The Display Text field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: DB32F049-337D-4F28-B7AA-88AEB4E2FF1E</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IChannel_PageConstants.Display_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Display_Text { get; set; }
+        /// <summary>
+        /// The Channel Code name field.
+        /// <para></para>
+        /// <para>Field Type:  Single-Line Text</para>		
+        /// <para>Field ID: 8A396DEB-508E-4CA3-AF22-F0372ACF7134</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IChannel_PageConstants.Channel_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Channel_Code { get; set; }
+    }
+
+    public static partial class IChannel_PageConstants
+    {
+
+        public const string TemplateIdString = "5AFF7554-4CD4-4F40-BD6F-5FBC11C1793E";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Channel";
+
+        public static readonly ID Display_TextFieldId = new ID("DB32F049-337D-4F28-B7AA-88AEB4E2FF1E");
+        public const string Display_TextFieldName = "Display Text";
+
+        public static readonly ID Channel_CodeFieldId = new ID("8A396DEB-508E-4CA3-AF22-F0372ACF7134");
+        public const string Channel_CodeFieldName = "Channel Code";
+
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+
+        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+
+
+        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+        public const string Meta_DescriptionFieldName = "Meta Description";
+
+
+
+        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+        public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+
+
+        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+
+
+        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+        public const string Navigation_TitleFieldName = "Navigation Title";
+
+
+
+        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string BodyFieldName = "Body";
+
+        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string Body__RawFieldName = "Body";
+
+
+        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+        public const string Sub_TitleFieldName = "Sub Title";
+
+
+
+        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+        public const string TitleFieldName = "Title";
+
+
+
+        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+        public const string Include_In_SearchFieldName = "Include In Search";
+
+
+
+        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+        public const string TaxonomiesFieldName = "Taxonomy";
+
+
+
+        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+        public const string Canonical_LinkFieldName = "Canonical Link";
+
+
+
+        public static readonly ID FactoryListableAuthorsFieldId = new ID("5f51fa66-5326-4aa6-9671-57a48aedeaa4");
+        public const string FactoryListableAuthorsFieldName = "FactoryListableAuthors";
+
+
+
+        public static readonly ID FactoryListableDatesFieldId = new ID("73f216e4-c244-4a3b-95ee-07d9ffd2d4f7");
+        public const string FactoryListableDatesFieldName = "FactoryListableDate";
+
+
+
+        public static readonly ID FactoryListableImagesFieldId = new ID("6d481d3a-7c71-488f-88ff-9c53de9b4ac3");
+        public const string FactoryListableImagesFieldName = "FactoryListableImage";
+
+
+
+        public static readonly ID FactoryListableSummariesFieldId = new ID("241b01c9-b518-4182-9b94-c40db3fb9cb2");
+        public const string FactoryListableSummariesFieldName = "FactoryListableSummary";
+
+
+
+        public static readonly ID FactoryListableTitlesFieldId = new ID("a92e4bfb-3010-4332-a7a0-c788348993ce");
+        public const string FactoryListableTitlesFieldName = "FactoryListableTitle";
+
+
+
+        public static readonly ID FactoryListableTopicsFieldId = new ID("629bddb3-5e8e-49bb-a323-6e1c46bc7cb5");
+        public const string FactoryListableTopicsFieldName = "FactoryListableTopics";
+
+
+
+        public static readonly ID FactoryListableUrlsFieldId = new ID("5083ca52-6de6-4be9-a1e6-30e9579e782d");
+        public const string FactoryListableUrlsFieldName = "FactoryListableUrl";
+
+
+
+        public static readonly ID Og_DescriptionFieldId = new ID("2237176c-baf4-415f-9ba0-8d82c3595664");
+        public const string Og_DescriptionFieldName = "og_description";
+
+
+
+        public static readonly ID Og_ImageFieldId = new ID("c39a6847-98cc-48fa-815e-7459bbec73a9");
+        public const string Og_ImageFieldName = "og_image";
+
+
+
+        public static readonly ID Og_TitleFieldId = new ID("76a7a327-065f-49f6-8407-c57c29f3a5ef");
+        public const string Og_TitleFieldName = "og_title";
+    }
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.Print_Studio_Templates.Processing_Jobs.ProcessingItems
 {
 
@@ -32653,6 +32989,114 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         public const string TemplateIdString = "ad6c16ac-05ce-45e4-a56b-9fca24cbaf57";
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "Contact Information Page";
+
+
+        public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
+        public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
+
+        public static readonly ID Update_Email_Help_Text__RawFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
+        public const string Update_Email_Help_Text__RawFieldName = "Update Email Help Text";
+
+
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+
+
+        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+
+
+        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+        public const string Meta_DescriptionFieldName = "Meta Description";
+
+
+
+        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+        public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+
+
+        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+
+
+        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+        public const string Navigation_TitleFieldName = "Navigation Title";
+
+
+
+        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string BodyFieldName = "Body";
+
+        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string Body__RawFieldName = "Body";
+
+
+        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+        public const string Sub_TitleFieldName = "Sub Title";
+
+
+
+        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+        public const string TitleFieldName = "Title";
+
+
+
+        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+        public const string Include_In_SearchFieldName = "Include In Search";
+
+
+
+        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+        public const string TaxonomiesFieldName = "Taxonomy";
+
+
+
+        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+        public const string Canonical_LinkFieldName = "Canonical Link";
+
+
+
+
+    }
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account
+{
+
+
+    /// <summary>
+    /// IMy_View_Settings_Page
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Account/My View Settings Page</para>	
+    /// <para>ID: 62FBEB9B-7BC6-4032-84D5-87532DBF3D91</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = IMy_View_Settings_PageConstants.TemplateIdString)]
+    public partial interface IMy_View_Settings_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    {
+    }
+
+
+    /// <summary>
+    /// IMy_View_Settings_Page
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Account/My View Settings Page</para>	
+    /// <para>ID: 62FBEB9B-7BC6-4032-84D5-87532DBF3D91</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface IMy_View_Settings_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    {
+    }
+
+    public static partial class IMy_View_Settings_PageConstants
+    {
+
+        public const string TemplateIdString = "62FBEB9B-7BC6-4032-84D5-87532DBF3D91";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "My View Settings Page";
 
 
         public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");

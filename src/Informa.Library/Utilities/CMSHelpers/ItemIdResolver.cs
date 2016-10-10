@@ -20,7 +20,11 @@ namespace Informa.Library.Utilities.CMSHelpers
             SitecoreContext = new SitecoreContext();
             VerticalRootContext = new GlassVerticalRootContext(SitecoreContext);
         }
-        
+        /// <summary>
+        /// Method for reading Guid value from config based on key
+        /// </summary>
+        /// <param name="itemKey">Key</param>
+        /// <returns>Value: Guid</returns>
         public static string GetItemIdByKey(string itemKey)
         {
             string itemId = string.Empty;
@@ -40,6 +44,10 @@ namespace Informa.Library.Utilities.CMSHelpers
             return itemId;
         }
 
+        /// <summary>
+        /// Method for fetching Vertinal name based on current context
+        /// </summary>
+        /// <returns>Vertical Name</returns>
         public IVertical_Root GetVerticalName()
         {
            return VerticalRootContext.Item;

@@ -393,9 +393,7 @@
     <Compile Include="Search\SearchManager\PharmaSearchManager.cs" />
     <Compile Include="Search\SearchManager\SearchManagerFactory.cs" />
     <Compile Include="User\UserPreference\Channel.cs" />
-    <Compile Include="User\UserPreference\ChannelPreference.cs" />
     <Compile Include="User\UserPreference\IChannel.cs" />
-    <Compile Include="User\UserPreference\IChannelPreference.cs" />
     <Compile Include="User\UserPreference\IFindUserPreferences.cs" />
     <Compile Include="User\UserPreference\IMyViewToggleRedirectUrlFactory.cs" />
     <Compile Include="User\UserPreference\ITopic.cs" />

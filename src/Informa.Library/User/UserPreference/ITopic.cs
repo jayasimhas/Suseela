@@ -2,8 +2,10 @@
 {
     public interface ITopic
     {
-        int TopicId { get; set; }
+        string TopicId { get; set; }
+        string TopicCode { get; set; }
         string TopicName { get; set; }
         int TopicOrder { get; set; }
+        bool IsFollowing { get; set; }
     }
 }

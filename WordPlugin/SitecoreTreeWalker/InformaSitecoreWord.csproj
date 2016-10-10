@@ -594,7 +594,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram1.cd" />
-    <None Include="InformaSitecoreWord_TemporaryKey.pfx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -617,6 +616,7 @@
       <DependentUpon>SitecoreAddin.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+    <None Include="WorldPluginDevCertificate.pfx" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -731,10 +731,10 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B1440187B71AE08BEC90E545CBFB27EC966EA3EA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>BC3296A2B92276F90360B705843FDFDF43AB2D8D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>InformaSitecoreWord_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>WorldPluginDevCertificate.pfx</ManifestKeyFile>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
