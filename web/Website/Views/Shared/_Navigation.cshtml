@@ -15,13 +15,10 @@
         foreach (var navigation in Model.Navigation.Where(n => !(n.Link == null && !n.Children.Any())))
         {
             Nav.Children = new List<Navigation>();
-            IEnumerable<INavigation> ChildrenListTop = new List<Navigation>();
-            IEnumerable<INavigation> ChildrenListBottom = new List<Navigation>();
-            if (Model.NavigationWithSubs != null)
+            if (Model.ValidSubscriptions != null)
             {
-                ChildrenListTop = navigation.Children.Where(m => Model.NavigationWithSubs.Any(n => n.Publication == m.Text));
-                ChildrenListBottom = navigation.Children.Where(m => !Model.NavigationWithSubs.Any(n => n.Publication == m.Text));
-                Nav.Children = ChildrenListTop.Concat(ChildrenListBottom);
+                Nav.Children = navigation.Children.Where(m => Model.ValidSubscriptions.Any(n => n.Publication == m.Text)).
+                    Concat(navigation.Children.Where(m => !Model.ValidSubscriptions.Any(n => n.Publication == m.Text)));
             }
             else
             {
@@ -108,4 +105,14 @@
             }
         }
     }
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">x</span>
+        <p>Some text in the Modal..</p>
+    </div>
+
 </div>

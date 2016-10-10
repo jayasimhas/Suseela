@@ -611,6 +611,15 @@ section: Colors
 
 ```
 */
+/*---
+title: Agri
+section: Colors
+---
+```example:color
+@color: #9E310D @name: Rosewood Red
+@color: #F5821F @name: Pumpkin
+```
+*/
 /**
  * Set up a decent box model on the root element
  */
@@ -4141,6 +4150,47 @@ div.main-menu__section .navContent {
   line-height: 20px;
   color: #979799; }
 
+.personalise_nav {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 90899;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */ }
+
+.personalise_nav-content {
+  background-color: #f1f2f2;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #d1d3d4;
+  width: 80%; }
+
+.personalise_close {
+  color: #231f20;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; }
+
+.personalise_close:hover,
+.personalise_close:focus {
+  color: #231f20;
+  text-decoration: none;
+  cursor: pointer; }
+
 .modal-open {
   overflow: hidden; }
 
@@ -4977,14 +5027,22 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
       line-height: 20px;
       width: 100%; } }
   .subscriptionPan #mySubscription {
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    width: 100%; }
   .subscriptionPan #mySubscriptionTab {
     width: 100%;
     border: 1px solid #d2d4d3;
     border-collapse: collapse; }
     @media (max-width: 480px) {
       .subscriptionPan #mySubscriptionTab {
-        border: none; } }
+        border: none; }
+        .subscriptionPan #mySubscriptionTab .hidden-lg {
+          display: block !important; } }
+    @media (max-width: 640px) {
+      .subscriptionPan #mySubscriptionTab .sortable-table__header {
+        display: none; }
+      .subscriptionPan #mySubscriptionTab .hidden-lg {
+        display: block !important; } }
   .subscriptionPan #mypurchases {
     width: 100%;
     border: 1px solid #d2d4d3;
@@ -5010,8 +5068,10 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
         font-size: 1em;
         line-height: 20px; } }
   .subscriptionPan .sortable-table__col {
-    width: 25%;
-    text-align: left; }
+    text-align: left;
+    position: relative;
+    padding: 16px;
+    padding: 1rem; }
     .subscriptionPan .sortable-table__col .accordian {
       background: url(/dist/img/arrow2.jpg) no-repeat -18px -14px;
       height: 17px;
@@ -5025,15 +5085,15 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
           display: none; } }
     .subscriptionPan .sortable-table__col .accordian:nth-child(2) {
       position: absolute;
-      margin-left: 40px; }
-    @media (max-width: 480px) {
+      right: 10px; }
+    @media (max-width: 640px) {
       .subscriptionPan .sortable-table__col {
         width: 100%;
         display: table-cell;
         padding: 12px;
         font-size: 1em;
         line-height: 24px; } }
-  @media (max-width: 480px) {
+  @media (max-width: 640px) {
     .subscriptionPan .tableMrow {
       clear: both;
       border: 1px solid #d2d4d3;
@@ -5064,13 +5124,17 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     font-size: 1.125em;
     color: #231f20;
     font-weight: bold; }
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
       .subscriptionPan .title {
         clear: both; } }
   .subscriptionPan .maintitle {
     background: #ececec url(/dist/img/mob-arrow.png) no-repeat right 14px; }
     .subscriptionPan .maintitle.active {
       background: #ececec url(/dist/img/mob-arrow.png) no-repeat right -20px; }
+
+@media (max-width: 640px) {
+  #purchases .sortable-table__header {
+    display: none; } }
 
 #purchases #mypurchases tr td:nth-child(1) {
   width: 20%; }
@@ -5091,22 +5155,29 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   fill: #be1e2d; }
 
 @media (max-width: 480px) {
-  font-size: 15px;
+  font-size: 0.9375rem;
   .hidden-xs {
     display: none !important; }
   .page-account__header {
     font-size: 36px;
+    font-size: 2.25rem;
     line-height: 32px; } }
 
-@media only screen and (min-width: 481px) {
+@media (max-width: 640px) {
   .hidden-lg {
-    display: none !important; }
-  .purchases .sortable-table__col.fdata {
-    width: 30%; }
-  .purchases .sortable-table__col.sdata {
-    width: 50%; }
-  .purchases .sortable-table__col.tdata {
-    width: 20%; } }
+    display: block !important; }
+  .hidden-xs {
+    display: none !important; } }
+
+@media only screen and (min-width: 481px) {
+  .purchases .sortable-table__col {
+    position: relative; }
+    .purchases .sortable-table__col.fdata {
+      width: 30%; }
+    .purchases .sortable-table__col.sdata {
+      width: 50%; }
+    .purchases .sortable-table__col.tdata {
+      width: 20%; } }
 
 .small_table .table-responsive .table {
   border-collapse: inherit;

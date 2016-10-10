@@ -26969,6 +26969,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         bool Enable_MyView_Toggle { get; set; }
         [SitecoreField(ISite_ConfigConstants.MyView_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
         I___BasePage MyView_Page { get; set; }
+        [SitecoreField(ISite_ConfigConstants.Welcome_Message_Display_FrequencyFieldName, Setting = SitecoreFieldSettings.InferType)]
+        int Welcome_Message_Display_Frequency { get; set; }
         /// <summary>
         /// The Ad Domain field.
         /// <para></para>
@@ -28674,6 +28676,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID MyView_PageFieldId = new ID("a58c32cd93454710aa06b4f6615047ec");
         public const string MyView_PageFieldName = "MyView Page";
+
+        public static readonly ID Welcome_Message_Display_FrequencyFieldId = new ID("2bce4993cc1f4afdbd50b9404b9059d0");
+        public const string Welcome_Message_Display_FrequencyFieldName = "Welcome Message Display Frequency";
 
         public static readonly ID Ad_DomainFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
         public const string Ad_DomainFieldName = "Ad Domain";
