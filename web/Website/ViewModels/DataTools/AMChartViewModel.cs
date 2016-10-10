@@ -53,7 +53,7 @@ namespace Informa.Web.ViewModels.DataTools
 
         #endregion
 
-        #region AMcharts landing page component content   
+        #region AMcharts landing page component content parameters
         public bool IsUserAuthenticated => _authenticatedUserContext.IsAuthenticated;
         public bool AuthenticationRequired => GlassModel.Authentication_Required;
         public string PageTitle => GlassModel?.Page_Title;
