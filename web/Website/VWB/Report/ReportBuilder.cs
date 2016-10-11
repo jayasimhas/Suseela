@@ -185,11 +185,11 @@ namespace Elsevier.Web.VWB.Report
 
 				DateTime startDate = (query.StartDate != null)
 										? query.StartDate.Value
-										: DateTime.MinValue;
+										: DateTime.Now.AddDays(-1);
 
 				DateTime endDate = (query.EndDate != null)
 						? query.EndDate.Value
-						: DateTime.MaxValue;
+						: DateTime.Now.AddDays(30);
 
 				url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
 				url += ";" + endDate.ToString("MM/dd/yyyy");
