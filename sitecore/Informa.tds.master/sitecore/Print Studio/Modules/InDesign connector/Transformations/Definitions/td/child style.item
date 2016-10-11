@@ -20,9 +20,9 @@ ChildStyle
 field: {9F94D809-627E-468E-99DC-AB523D8F2E56}
 name: XML Default value
 key: xml default value
-content-length: 0
+content-length: 10
 
-
+table_body
 ----field----
 field: {89AD5209-B1C5-44D0-99E8-46F391B12E0F}
 name: XHTML Attribute
@@ -101,7 +101,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: a4d83304-2ed9-46f9-ac45-0f8a807279c2
+revision: 14f116e6-c7e8-40a8-93f1-b44127ef913c
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -130,14 +130,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-a4d83304-2ed9-46f9-ac45-0f8a807279c2
+14f116e6-c7e8-40a8-93f1-b44127ef913c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160809T142837Z
+20161011T200714Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
