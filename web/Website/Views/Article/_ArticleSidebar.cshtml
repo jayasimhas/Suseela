@@ -6,7 +6,7 @@
 	<h3>@HttpUtility.HtmlDecode(Model.ListableTitle)</h3>
 	@if(!string.IsNullOrEmpty(Model.ListableAuthorByLine))
     {
-	    <span class="article-sidebar__byline">@Model.ListableAuthorByLine</span>
+	    <span class="article-sidebar__byline">@Html.Raw(Model.ListableAuthorByLine)</span>
 	}
 	<time class="article-sidebar__date">@Model.ListableDate.ToString("dd MMM yyyy")</time>
 
