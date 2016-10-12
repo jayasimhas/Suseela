@@ -64,17 +64,17 @@ namespace Informa.Library.Salesforce.Subscription.User
                     Publication = sap.name,
                     ProductType = sap.productType,
                     ExpirationDate = sap.expirationDate,
-                    Channels = (sap.channels.Select(ch => new Channel
+                    SubscribedChannels = (sap.channels.Select(ch => new ChannelSubscription
                     {
-                        ChannelCode = ch.code,
+                         ChannelId = ch.code,
                         ChannelName = ch.name,
-                        ExpiryDate = ch.expirydate
+                         ExpirationDate = ch.expirydate
                     })).ToList(),
-                    Topics = (sap.topics.Select(tp => new Topic
+                    SubscribedTopics = (sap.topics.Select(tp => new TopicSubscription
                     {
-                        TopicCode = tp.code,
-                        TopicName = tp.name,
-                        ExpiryDate = tp.expirydate
+                         TopicId = tp.code,
+                         TopicName = tp.name,
+                         ExpirationDate = tp.expirydate
                     })).ToList()
 
                 }).ToList();

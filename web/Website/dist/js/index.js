@@ -795,6 +795,12 @@ $(function () {
 		}
 		console.log(JSON.stringify(createtableData));
 	});
+
+	if (window.matchMedia('(max-width: 630px)').matches) {
+		$('.mobshowView').removeClass('desktophide');
+	} else {
+		$('.mobshowView').addClass('desktophide');
+	}
 });
 
 },{}],6:[function(require,module,exports){
