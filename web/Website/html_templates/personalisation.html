@@ -116,7 +116,7 @@
 				<div class="tableau-landing clearfix">
 					<div class="personalHead clearfix">
 						<h1>My View</h1>
-						<span class="editView" href="javascript: void(0);">EDIT MY VIEW</span>
+						<span class="editView hidden-xs" href="javascript: void(0);">EDIT MY VIEW</span>
 					</div>	
 					
 					<div class="sub-heading-text">
@@ -124,216 +124,438 @@
 						<p>You can change what you see in here by going to <a href="#">Edit My View</a></p>
 					</div>
 					
-					<div class="latestSubject">
-						<span>Latest from [Subject]</span>
-						<span class="editView" href="javascript: void(0);">EDIT MY VIEW</span>
+					<div class="latestSubject clearfix">
+						<span class="sub">Latest from [Subject]</span>
+						<span class="editView mobview" href="javascript: void(0);">EDIT MY VIEW</span>
 					</div>
 				</div> 
 					
 				<div class="personalisationPan">
-					<div></div> 
-					<section class="article-preview topic-featured-article">
-						<img class="topic-featured-article__image" src="/dist/img/personalisation-img.jpg">
+					<div class="eachstoryMpan">
+						<div class="eachstory layout1">
+							<section class="article-preview topic-featured-article">
+								<img class="topic-featured-article__image" src="/dist/img/article-img1.jpg">
 
-						<div class="article-metadata">
-							<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
-								<span class="action-flag__label js-bookmark-label">Bookmarked</span>
-								<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-								</svg>
-								<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-								</svg>
+								<div class="article-metadata">
+									<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
+										<span class="action-flag__label js-bookmark-label">Bookmark</span>
+										<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+										</svg>
+										<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+										</svg>
 
-							</div>
-							<ul>
-								<li><time class="article-metadata__date">26 Sep 2015</time></li>
-								<li><h6>News</h6></li>
-							</ul>
-						</div>
-						<div class="topic-featured-article__inner-wrapper">
-							<h3 class="topic-featured-article__headline">
-								<a href="#" class="click-utag">1st U.S. Biosimilar Arrives: Zarxio Launches</a>
-							</h3> 
-							<span class="article-preview__byline">By <a href="#">Ian Haydock</a></span>
-							<div class="article-summary">
-								<p>The US SEC has accepted a $20m payment from GSK to settle charges that it violated US legislation on foreign corrupt practices.</p> 
-							</div>
-						</div>
-						<div class="article-preview__tags bar-separated-link-list">
-							<a href="#">USA</a>
-							<a href="#">Sandoz</a>
-							<a href="#">Biosimilars</a>
-						</div>
-					</section>  
-					
-					<div class="latest-news__articles">
-						<section class="article-preview article-preview--small">
-							<div class="article-metadata">
-								<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
-									<span class="action-flag__label js-bookmark-label">Bookmark</span>
-									<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-									</svg>
-									<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-									</svg>
+									</div>
+									<ul>
+										<li><time class="article-metadata__date">26 Sep 2015</time></li>
+										<li><h6>News</h6></li>
+									</ul>
 								</div>
-								<ul>
-									<li><time class="article-metadata__date">26 Sep 2015</time></li>
-									<li><h6>News</h6></li>
-								</ul>
-							</div>
-
-							<div class="article-preview__inner-wrapper">
-								<h1 class="article-preview__headline">
-									<a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
-								</h1> 
-								<span class="article-preview__byline">By <a href="#">Brenda Sandburg</a></span> 
-								<div class="article-summary">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat bibendum a. Aliquam vitae erat viverra ex vehicula dictum. Ut dignissim mi justo, sodales bibendum velit imperdiet nec. Suspendisse eu varius orci.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat.</p> 
+								<div class="topic-featured-article__inner-wrapper">
+									<h3 class="topic-featured-article__headline">
+										<a href="#" class="click-utag">1st U.S. Biosimilar Arrives: Zarxio Launches</a>
+									</h3> 
+									<span class="article-preview__byline">By <a href="#">Ian Haydock</a></span>
+									<div class="article-summary">
+										<p>The US SEC has accepted a $20m payment from GSK to settle charges that it violated US legislation on foreign corrupt practices.</p> 
+									</div>
 								</div>
-							</div>
+								<div class="article-preview__tags bar-separated-link-list">
+									<a href="#">USA</a>
+									<a href="#">Sandoz</a>
+									<a href="#">Biosimilars</a>
+								</div>
+							</section>  
+							
+							<div class="latest-news__articles">
+								<section class="article-preview article-preview--small mobview">
+									<div class="article-metadata">
+										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"> 
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+											</svg>
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+											</svg>
+										</div>
+										<ul>
+											<li><time class="article-metadata__date">26 Sep 2015</time></li>
+											<li><h6>News</h6></li>
+										</ul>
+									</div>
 
-							<div class="article-preview__tags bar-separated-link-list">
-								<a href="#">Deals</a>
-								<a href="#">Biosimilars</a>
+									<div class="article-preview__inner-wrapper">
+										<h1 class="article-preview__headline">
+											<a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
+										</h1> 
+										<span class="article-preview__byline">By <a href="#">Brenda Sandburg</a></span> 
+										<div class="article-summary">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat bibendum a. Aliquam vitae erat viverra ex vehicula dictum. Ut dignissim mi justo, sodales bibendum velit imperdiet nec. Suspendisse eu varius orci.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat.</p> 
+										</div>
+									</div>
+
+									<div class="article-preview__tags bar-separated-link-list">
+										<a href="#">Deals</a>
+										<a href="#">Biosimilars</a>
+									</div>
+								</section>
+								
+								<section class="article-preview article-preview--small mobview">
+									<div class="article-metadata">
+										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"> 
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+											</svg>
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+											</svg>
+										</div>
+										<ul>
+											<li><time class="article-metadata__date">26 Sep 2015</time></li>
+											<li><h6>News</h6></li>
+										</ul>
+									</div>
+
+									<div class="article-preview__inner-wrapper">
+										<h1 class="article-preview__headline">
+											<a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
+										</h1> 
+										<span class="article-preview__byline">By <a href="#">Brenda Sandburg</a></span> 
+										<div class="article-summary">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat bibendum a. Aliquam vitae erat viverra ex vehicula dictum. Ut dignissim mi justo, sodales bibendum velit imperdiet nec. Suspendisse eu varius orci.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat.</p> 
+										</div>
+									</div>
+
+									<div class="article-preview__tags bar-separated-link-list">
+										<a href="#">Deals</a>
+										<a href="#">Biosimilars</a>
+									</div>
+								</section>
+								
+								<section class="article-preview article-preview--small topics">
+									<h6>Topic</h6>
+									<h1 class="article-preview_rheadline">
+										<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>
+									</h1> 
+									<h1 class="article-preview_rheadline">
+										<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>
+									</h1>
+									<h1 class="article-preview_rheadline nobord">
+										<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>
+									</h1>
+								</section>
 							</div>
-						</section>
+							
+							<div class="latest-news__articles">
+								<section class="article-preview article-small-preview mobview">
+									<div class="article-metadata">
+										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+											</svg>
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+											</svg>
+										</div>
+										<ul>
+											<li><time class="article-metadata__date">26 Sep 2015</time></li>
+											<li><h6>News</h6></li>
+										</ul>
+									</div>
+
+									<div class="article-preview__inner-wrapper">
+										<h1 class="article-preview__headline">
+											<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>
+										</h1>
+									</div>
+									
+									<div class="article-preview__tags bar-separated-link-list">
+										<a href="#">Deals</a>
+										<a href="#">Biosimilars</a>
+									</div>
+								</section>
+								
+								<section class="article-preview article-small-preview mobview">
+									<div class="article-metadata">
+										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"> 
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+											</svg>
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+											</svg>
+										</div>
+										<ul>
+											<li><time class="article-metadata__date">26 Sep 2015</time></li>
+											<li><h6>News</h6></li>
+										</ul>
+									</div>
+
+									<div class="article-preview__inner-wrapper">
+										<h1 class="article-preview__headline">
+											<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>
+										</h1>
+									</div> 
+									
+									<div class="article-preview__tags bar-separated-link-list">
+										<a href="#">Deals</a>
+										<a href="#">Biosimilars</a>
+									</div>
+								</section>
+								
+								<section class="article-preview article-small-preview mobview">
+									<div class="article-metadata">
+										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+											</svg>
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+											</svg>
+										</div>
+										<ul>
+											<li><time class="article-metadata__date">26 Sep 2015</time></li>
+											<li><h6>News</h6></li>
+										</ul>
+									</div>
+
+									<div class="article-preview__inner-wrapper">
+										<h1 class="article-preview__headline">
+											<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory</a>
+										</h1>
+										
+										<span class="article-preview__byline">By <a href="#">Brenda Sandburg</a></span>
+									</div> 
+									
+									<div class="article-preview__tags bar-separated-link-list">
+										<a href="#">Deals</a>
+										<a href="#">Biosimilars</a>
+									</div>
+								</section>
+							</div>
+						</div>
 						
-						<section class="article-preview article-preview--small">
-							<div class="article-metadata">
-								<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
-									<span class="action-flag__label js-bookmark-label">Bookmark</span>
-									<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-									</svg>
-									<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-									</svg>
-								</div>
-								<ul>
-									<li><time class="article-metadata__date">26 Sep 2015</time></li>
-									<li><h6>News</h6></li>
-								</ul>
-							</div>
-
-							<div class="article-preview__inner-wrapper">
-								<h1 class="article-preview__headline">
-									<a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
-								</h1> 
-								<span class="article-preview__byline">By <a href="#">Brenda Sandburg</a></span> 
-								<div class="article-summary">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat bibendum a. Aliquam vitae erat viverra ex vehicula dictum. Ut dignissim mi justo, sodales bibendum velit imperdiet nec. Suspendisse eu varius orci.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat.</p> 
-								</div>
-							</div>
-
-							<div class="article-preview__tags bar-separated-link-list">
-								<a href="#">Deals</a>
-								<a href="#">Biosimilars</a>
-							</div>
-						</section>
-						
-						<section class="article-preview article-preview--small topics">
-							<h6>Topic</h6>
-							<h1 class="article-preview_rheadline">
-								<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>
-							</h1> 
-							<h1 class="article-preview_rheadline">
-								<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>
-							</h1>
-							<h1 class="article-preview_rheadline">
-								<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>
-							</h1>
-						</section>
+						<div class="loadmore"><span>LOAD MORE FROM [SUBJECT]</span></div>
 					</div>
 					
-					<div class="latest-news__articles">
-						<section class="article-preview article-small-preview">
-							<div class="article-metadata">
-								<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
-									<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-									</svg>
-									<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-									</svg>
-								</div>
-								<ul>
-									<li><time class="article-metadata__date">26 Sep 2015</time></li>
-									<li><h6>News</h6></li>
-								</ul>
-							</div>
-
-							<div class="article-preview__inner-wrapper">
-								<h1 class="article-preview__headline">
-									<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>
-								</h1>
-							</div>
-							
-							<div class="article-preview__tags bar-separated-link-list">
-								<a href="#">Deals</a>
-								<a href="#">Biosimilars</a>
-							</div>
-						</section>
-						
-						<section class="article-preview article-small-preview">
-							<div class="article-metadata">
-								<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"> 
-									<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-									</svg>
-									<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-									</svg>
-								</div>
-								<ul>
-									<li><time class="article-metadata__date">26 Sep 2015</time></li>
-									<li><h6>News</h6></li>
-								</ul>
-							</div>
-
-							<div class="article-preview__inner-wrapper">
-								<h1 class="article-preview__headline">
-									<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>
-								</h1>
-							</div> 
-							
-							<div class="article-preview__tags bar-separated-link-list">
-								<a href="#">Deals</a>
-								<a href="#">Biosimilars</a>
-							</div>
-						</section>
-						
-						<section class="article-preview article-small-preview">
-							<div class="article-metadata">
-								<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
-									<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
-									</svg>
-									<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
-									</svg>
-								</div>
-								<ul>
-									<li><time class="article-metadata__date">26 Sep 2015</time></li>
-									<li><h6>News</h6></li>
-								</ul>
-							</div>
-
-							<div class="article-preview__inner-wrapper">
-								<h1 class="article-preview__headline">
-									<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>
-								</h1>
-							</div> 
-							
-							<div class="article-preview__tags bar-separated-link-list">
-								<a href="#">Deals</a>
-								<a href="#">Biosimilars</a>
-							</div>
-						</section>
+					<div class="googleAdd">
+						<img src="/dist/img/google-add.gif">
 					</div>
 					
+					
+					<div class="latestSubject clearfix">
+						<span class="sub">Latest from [Subject]</span>
+						<span class="editView mobview" href="javascript: void(0);">EDIT MY VIEW</span>
+					</div>
+					
+					<div class="eachstoryMpan">
+						<div class="eachstory layout2">
+							<div class="latest-news__articles"> 
+								<section class="article-preview article-preview--small preview2"> 
+									<img class="topic-featured-article__image2 hidden-lg" src="/dist/img/article-img2.jpg">
+									<div class="article-metadata">
+										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"> 
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+											</svg>
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+											</svg>
+										</div>
+										<ul>
+											<li><time class="article-metadata__date">26 Sep 2015</time></li>
+											<li><h6>News</h6></li>
+										</ul>
+									</div>
+									<img class="topic-featured-article__image2 hidden-xs" src="/dist/img/article-img2.jpg">
+
+									<div class="article-preview__inner-wrapper">
+										<h1 class="article-preview__headline">
+											<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>
+										</h1> 
+										<span class="article-preview__byline">By <a href="#">Brenda Sandburg</a></span> 
+										<div class="article-summary">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat bibendum a. Aliquam vitae erat viverra ex vehicula dictum. Ut dignissim mi justo, sodales bibendum velit imperdiet nec. Suspendisse eu varius orci.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat.</p> 
+										</div>
+									</div>
+
+									<div class="article-preview__tags bar-separated-link-list">
+										<a href="#">Deals</a>
+										<a href="#">Biosimilars</a>
+									</div>
+								</section>
+								
+								<section class="article-preview article-preview--small artheight">
+									<div class="article-metadata">
+										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+											</svg>
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+											</svg>
+										</div>
+										<ul>
+											<li><time class="article-metadata__date">26 Sep 2015</time></li>
+											<li><h6>News</h6></li>
+										</ul>
+									</div>
+
+									<div class="article-preview__inner-wrapper">
+										<h1 class="article-preview__headline">
+											<a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
+										</h1> 
+										<span class="article-preview__byline">By <a href="#">Brenda Sandburg</a></span> 
+										<div class="article-summary">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat bibendum a. Aliquam vitae erat viverra ex vehicula dictum. Ut dignissim mi justo, sodales bibendum velit imperdiet nec. Suspendisse eu varius orci.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat.</p> 
+										</div>
+									</div>
+
+									<div class="article-preview__tags bar-separated-link-list">
+										<a href="#">Deals</a>
+										<a href="#">Biosimilars</a>
+									</div>
+								</section>
+								
+								<section class="article-preview article-preview--small artheight topics">
+									<h6>Topic</h6>
+									<h1 class="article-preview_rheadline">
+										<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>
+									</h1> 
+									<h1 class="article-preview_rheadline">
+										<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>
+									</h1>
+									<h1 class="article-preview_rheadline nobord">
+										<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>
+									</h1>
+								</section>
+							</div>
+							
+							<div class="latest-news__articles">
+								<section class="article-preview article-small-preview mobview">
+									<div class="article-metadata">
+										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+											</svg>
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+											</svg>
+										</div>
+										<ul>
+											<li><time class="article-metadata__date">26 Sep 2015</time></li>
+											<li><h6>News</h6></li>
+										</ul>
+									</div>
+
+									<div class="article-preview__inner-wrapper">
+										<h1 class="article-preview__headline">
+											<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>
+										</h1>
+									</div>
+									
+									<div class="article-preview__tags bar-separated-link-list">
+										<a href="#">Deals</a>
+										<a href="#">Biosimilars</a>
+									</div>
+								</section>
+								
+								<section class="article-preview article-preview--small artheight mtop">
+									<div class="article-metadata">
+										<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+											</svg>
+											<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+											</svg>
+										</div>
+										<ul>
+											<li><time class="article-metadata__date">26 Sep 2015</time></li>
+											<li><h6>News</h6></li>
+										</ul>
+									</div>
+
+									<div class="article-preview__inner-wrapper">
+										<h1 class="article-preview__headline">
+											<a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>
+										</h1> 
+										<span class="article-preview__byline">By <a href="#">Brenda Sandburg</a></span> 
+										<div class="article-summary">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat bibendum a. Aliquam vitae erat viverra ex vehicula dictum. Ut dignissim mi justo, sodales bibendum velit imperdiet nec. Suspendisse eu varius orci.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat.</p> 
+										</div>
+									</div>
+
+									<div class="article-preview__tags bar-separated-link-list">
+										<a href="#">Deals</a>
+										<a href="#">Biosimilars</a>
+									</div>
+								</section>
+								
+								<section class="article-preview article-small-preview sm-article sm-articles mtop">
+									<section class="sm-article mobview">
+										<div class="article-metadata">
+											<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
+												<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+												</svg>
+												<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+												</svg>
+											</div>
+											<ul>
+												<li><time class="article-metadata__date">26 Sep 2015</time></li>
+												<li><h6>News</h6></li>
+											</ul>
+										</div>
+
+										<div class="article-preview__inner-wrapper">
+											<h1 class="article-preview__headline">
+												<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>
+											</h1>
+										</div> 
+										
+										<div class="article-preview__tags bar-separated-link-list">
+											<a href="#">Deals</a>
+											<a href="#">Biosimilars</a>
+										</div>
+									</section>
+									
+									<section class="sm-article mobview">
+										<div class="article-metadata">
+											<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">
+												<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use>
+												</svg>
+												<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible">
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use>
+												</svg>
+											</div>
+											<ul>
+												<li><time class="article-metadata__date">26 Sep 2015</time></li>
+												<li><h6>News</h6></li>
+											</ul>
+										</div>
+
+										<div class="article-preview__inner-wrapper">
+											<h1 class="article-preview__headline">
+												<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>
+											</h1>
+										</div> 
+										
+										<div class="article-preview__tags bar-separated-link-list">
+											<a href="#">Deals</a>
+											<a href="#">Biosimilars</a>
+										</div>
+									</section>
+								</section>
+							</div>
+							 
+						</div>
+						
+						<div class="loadmore"><span>LOAD MORE FROM [SUBJECT]</span></div>
+					</div>
 				</div> 
 			</div>
 			
