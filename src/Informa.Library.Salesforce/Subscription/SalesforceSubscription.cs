@@ -1,6 +1,5 @@
 ﻿using Informa.Library.Subscription;
 using System;
-using System.Collections.Generic;
 
 namespace Informa.Library.Salesforce.Subscription
 {
@@ -13,8 +12,5 @@ namespace Informa.Library.Salesforce.Subscription
 		public string ProductCode { get; set; }
 		public string ProductGuid { get; set; }
 		public string ProductType { get; set; }
-        public List<ChannelSubscription> SubscribedChannels { get; set; }
-        public List<TopicSubscription> SubscribedTopics { get; set; }
-
-    }
+	}
 }

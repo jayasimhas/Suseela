@@ -8,7 +8,7 @@ namespace Informa.Library.Search.SearchManager
     {
         public static ISearchManager<InformaSearchResultItem> CreateSearchManager(string indexName, ISitecoreContext context)
         {
-            if(indexName.Contains("agri"))//TDDO hard coded agri will be replaced with publication name
+            if(indexName.Contains("agri"))
             {
                 return AgriSearchManager.CreateInstance(indexName, context);
             }

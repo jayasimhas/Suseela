@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System;
 
 namespace Informa.Library.User.UserPreference
 {
@@ -10,7 +9,7 @@ namespace Informa.Library.User.UserPreference
         string ChannelName { get; set; }
         int ChannelOrder { get; set; }
         string ChannelLink { get; set; }
-        bool IsSubscribed { get; set; }       
+        bool IsSubscribed { get; set; }
         IList<Topic> Topics { get; set; }
     }
 }
