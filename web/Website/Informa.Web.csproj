@@ -1562,7 +1562,7 @@
     <Content Include="Areas\Account\Views\Management\MyViewSettings.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewGlobalToggle.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageLandingPage.cshtml" />
-    <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageRightRaill.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageRightRail.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PresonalizationMessageArticlePage.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
