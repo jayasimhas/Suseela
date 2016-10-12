@@ -1,5 +1,4 @@
-﻿using System;
-namespace Informa.Library.User.UserPreference
+﻿namespace Informa.Library.User.UserPreference
 {
     public interface ITopic
     {
@@ -8,6 +7,5 @@ namespace Informa.Library.User.UserPreference
         string TopicName { get; set; }
         int TopicOrder { get; set; }
         bool IsFollowing { get; set; }
-        DateTime ExpiryDate { get; set; }
     }
 }
