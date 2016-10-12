@@ -24,8 +24,10 @@
             AuthenticatedUserContext = authenticatedUserContext;
             UserPreferences = userPreferences;
         }
-        public string MessageSmall => GetMessageForRightRail();
-        public string MessageFull => GetMessageForFullView();
+        public string RightRailMessage => GetMessageForRightRail();
+        public string LandingPageMessage => GetMessageForLandingPage();
+        public string ArticlePageMessage => GetMessageForArticlePage();
+
         public string MyViewText => TextTranslator.Translate("MyView.MyViewLink");
         public string DismissText => TextTranslator.Translate("Personalization.DismissText");
         public string FindOutMoreText => TextTranslator.Translate("Personalization.FindOutMoreText");
@@ -55,15 +57,25 @@
             return TextTranslator.Translate("CorporateUser.RightRailMessage");
         }
 
-        private string GetMessageForFullView()
+        private string GetMessageForLandingPage()
         {
             if (UserCompanyContext?.Company?.Type == CompanyType.TransparentIP)
-                return TextTranslator.Translate("IPAuthenticatedUser.FullViewMessage");
+                return TextTranslator.Translate("IPAuthenticatedUser.LandingPageMessage");
 
             else if (UserCompanyContext?.Company?.Type == null)
-                return TextTranslator.Translate("FreeTrialUser.FullViewMessage");
+                return TextTranslator.Translate("FreeTrialUser.LandingPageMessage");
 
-            return TextTranslator.Translate("CorporateUser.FullViewMessage");
+            return TextTranslator.Translate("CorporateUser.LandingPageMessage");
+        }
+        private string GetMessageForArticlePage()
+        {
+            if (UserCompanyContext?.Company?.Type == CompanyType.TransparentIP)
+                return TextTranslator.Translate("IPAuthenticatedUser.ArticlePageMessage");
+
+            else if (UserCompanyContext?.Company?.Type == null)
+                return TextTranslator.Translate("FreeTrialUser.ArticlePageMessage");
+
+            return TextTranslator.Translate("CorporateUser.ArticlePageMessage");
         }
     }
 }
