@@ -1,11 +1,14 @@
-﻿namespace Informa.Library.User.UserPreference
+﻿using System;
+namespace Informa.Library.User.UserPreference
 {
     public class Topic : ITopic
     {
         public string TopicId { get; set; }
         public string TopicCode { get; set; }
-        public string TopicName { get; set; }        
+        public string TopicName { get; set; }
         public int TopicOrder { get; set; }
         public bool IsFollowing { get; set; }
+        public bool IsSubscribed { get; set; }
+        public DateTime ExpiryDate { get; set; }
     }
 }
