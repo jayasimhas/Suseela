@@ -10,8 +10,7 @@ namespace Informa.Library.User.UserPreference
         string ChannelName { get; set; }
         int ChannelOrder { get; set; }
         string ChannelLink { get; set; }
-        bool IsSubscribed { get; set; }
-        DateTime ExpiryDate { get; set; }
+        bool IsSubscribed { get; set; }       
         IList<Topic> Topics { get; set; }
     }
 }

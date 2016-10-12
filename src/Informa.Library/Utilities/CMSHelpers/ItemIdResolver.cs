@@ -29,6 +29,7 @@ namespace Informa.Library.Utilities.CMSHelpers
         {
             string itemId = string.Empty;
             itemResolver = new ItemIdResolver();
+            //Get vertical name based on current context
             var vertical = itemResolver.GetVerticalName();           
             if (vertical!=null && !string.IsNullOrEmpty(vertical._Path))
             {
