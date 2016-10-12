@@ -14,6 +14,13 @@
 				}
 			}
 		}
-		
+		.newsletter_box{
+			height: 130px;
+			background-color:$color-concrete-gray;
+			border: 1px solid $color-light-gray;
+			clear: both;
+			margin-bottom: 1.25rem;
+			padding: 1rem;
+		}
 	}
 }

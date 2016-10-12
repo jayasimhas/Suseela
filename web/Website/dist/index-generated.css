@@ -4904,6 +4904,16 @@ section: UI Elements
     .register .register_newsletter div .next_right a, .register .register_newsletter div .next_right .pop-out__reset-password, .register .register_newsletter div .next_right .sortable-table__list-toggler, .register .register_newsletter div .next_right .mobile-table-exit {
       color: #231f20; }
 
+.register .register_newsletter .newsletter_box {
+  height: 130px;
+  background-color: #f1f2f2;
+  border: 1px solid #d1d3d4;
+  clear: both;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  padding: 16px;
+  padding: 1rem; }
+
 /*
  * This borrows and modifies the base selectivity styles, so don't just drop in
  * selectivity-full.css and expect it to work if you're upgrading selectivity,
