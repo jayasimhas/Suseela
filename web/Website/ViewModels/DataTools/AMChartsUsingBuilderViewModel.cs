@@ -8,12 +8,14 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.ViewModels.Articles;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 
 namespace Informa.Web.ViewModels.DataTools
 {
-    public class AMChartViewModel: GlassViewModel<IAMcharts_Dashboard>
+    public class AMChartsUsingBuilderViewModel: GlassViewModel<IAMCharts_Using_Builder>
     {
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IGlobalSitecoreService GlobalService;
@@ -22,7 +24,7 @@ namespace Informa.Web.ViewModels.DataTools
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
         private readonly IAuthenticatedUserContext _authenticatedUserContext;
         public readonly ICallToActionViewModel CallToActionViewModel;
-        public AMChartViewModel(ISiteRootContext siteRootContext, 
+        public AMChartsUsingBuilderViewModel(ISiteRootContext siteRootContext,
             IGlobalSitecoreService globalService,
             ITextTranslator textTranslator,
             IDataToolPrologueViewModel dataToolPrologueViewModel,
@@ -42,18 +44,14 @@ namespace Informa.Web.ViewModels.DataTools
         }
 
         #region AMcharts dashboard parameters
-       
-        public string ChartType => GlassModel?.ChartType;
-        public string GraphType => GlassModel?.GraphType;
-        public string CategoryField => GlassModel?.CategoryField;
-        public string ValueField => GlassModel?.ValueField;
-        public string Height => GlassModel?.Height;
-        public string Width => GlassModel?.Width;
-        public string JsonPath => GlassModel?.JsonPath?.Url;
 
+        public string ChartType => GlassModel?.ChartType;
+        public string ChartHeight => GlassModel?.ChartHeight;
+        public string JsonDataPath => GlassModel?.JsonDataUrl?.Url;
+        public string Presentation => GlassModel?.Presentation;
         #endregion
 
-        #region AMcharts landing page component content parameters
+        #region AMcharts landing page component content parameters 
         public bool IsUserAuthenticated => _authenticatedUserContext.IsAuthenticated;
         public bool AuthenticationRequired => GlassModel.Authentication_Required;
         public string PageTitle => GlassModel?.Page_Title;
@@ -65,7 +63,7 @@ namespace Informa.Web.ViewModels.DataTools
         #endregion
         public IDataToolPrologueViewModel PrologueViewModel;
 
-        #region AMcharts Right rail component content  
+        #region AMcharts Right rail component content
         public string LandingPageLink => GlassModel?.Landing_Page_Link?.Url;
         public string LandingPageLinkLable => TextTranslator.Translate("DataTools.LandingPageLink");
         public string RealatedContentLableText => TextTranslator.Translate("DataTools.RelatedContentLable");
@@ -73,7 +71,6 @@ namespace Informa.Web.ViewModels.DataTools
             Where(r => r != null).Select(x => ArticleListableFactory.Create(GlobalService.GetItem<IArticle>(x._Id))).
             Cast<IListable>().OrderByDescending(x => x.ListableDate);
         #endregion
-
 
     }
 }

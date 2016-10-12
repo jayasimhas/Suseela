@@ -27,6 +27,7 @@ import tooltipController from './controllers/tooltip-controller';
 import './components/article-sidebar-component';
 import './components/save-search-component';
 import './components/myview-settings';
+import './components/pagination';
 
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
@@ -44,6 +45,7 @@ import videomodal from './modal';
 // Make sure proper elm gets the click event
 // When a user submits a Forgot Password request, this will display the proper
 // success message and hide the form to prevent re-sending.
+
 var showForgotPassSuccess = function() {
     $('.pop-out__sign-in-forgot-password-nested').toggleClass('is-hidden');
     $('.pop-out__sign-in-forgot-password')
@@ -165,6 +167,7 @@ var decodeHtml = function(html) {
     txt.innerHTML = html;
     return txt.value;
 }
+
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
@@ -174,6 +177,7 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
 $(document).ready(function() {
 	//messaging web users
 	window.dismiss=function(){
@@ -183,7 +187,37 @@ $(document).ready(function() {
 		});
 	}
 	window.dismiss();
+	
+	window.personalised_nav = function() {
+	//personalise pop up
+	var modal = document.getElementById('myModal');
 
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("personalise_close")[0];
+
+	    // When the user clicks the button, open the modal
+	$(document).on('click','#myBtn',function() {
+			modal.style.display = "block";
+	});  
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+		
+	}
+	window.personalised_nav();
+	
     var mediaTable = getParameterByName('mobilemedia');
     if(mediaTable=="true"){
         $("table").each(function(){
@@ -1109,4 +1143,6 @@ $(document).ready(function() {
     });
    
 });
+
+
 

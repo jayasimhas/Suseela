@@ -1,6 +1,6 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.Personalization.PersonalizationMessageViewModel
 
-@if (Model != null && Model.IsAuthenticated && Model.IsGlobalToggleEnabled && !Model.PreferencesExists)
+@if (Model != null && Model.IsAuthenticated && Model.IsGlobalToggleEnabled && !Model.HideWelcomeMessage)
 {
     <div class="messaging_webUsers">
         <div class="msg_dismiss">
@@ -8,7 +8,7 @@
         </div>
         <h3>@Model.MyViewText</h3>
         <div class="msg-text">
-            <p>@Model.MessageSmall</p>
+            <p>@Model.RightRailMessage</p>
         </div>
         <div class="button-msg-webUser">
             <div class="msg_link"><a href="#">Lorem ipsum</a></div>

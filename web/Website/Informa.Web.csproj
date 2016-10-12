@@ -1561,8 +1561,9 @@
     <Content Include="amcharts\plugins\responsive\responsive.min.js.map" />
     <Content Include="Areas\Account\Views\Management\MyViewSettings.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewGlobalToggle.cshtml" />
-    <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageFull.cshtml" />
-    <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageSmall.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageLandingPage.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageRightRail.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\PresonalizationMessageArticlePage.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
