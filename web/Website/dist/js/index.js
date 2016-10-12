@@ -795,6 +795,12 @@ $(function () {
 		}
 		console.log(JSON.stringify(createtableData));
 	});
+
+	if (window.matchMedia('(max-width: 630px)').matches) {
+		$('.mobshowView').removeClass('desktophide');
+	} else {
+		$('.mobshowView').addClass('desktophide');
+	}
 });
 
 },{}],6:[function(require,module,exports){
@@ -872,9 +878,194 @@ $(function () {
 	});
 	$('.pagination span a:eq(0)').click();
 	$('.pagination a:eq(0)').removeAttr('href');
+
+	$('.sortable-table__header').on('click', '.sortable-table__col', function () {
+		var $this = $(this),
+		    table = $this.closest('.sortable-table'),
+		    tbodytrs = table.find('tbody tr');
+		setTimeout(function () {
+			tbodytrs.removeAttr('style');
+			if (!$('.pagination span a:eq(0)').hasClass('active')) {
+				$('.pagination span a:eq(0)').click();
+			} else {
+				paginationCur(0, defaults.categoryLimit);
+			}
+		}, 1);
+	});
 });
 
 },{}],7:[function(require,module,exports){
+'use strict';
+
+$(function () {
+	$('.loadmore').click(function () {
+		var loadData = '<div class="eachstory layout1">';
+		loadData += '<section class="article-preview topic-featured-article">';
+		loadData += '<img class="topic-featured-article__image" src="/dist/img/article-img1.jpg">';
+		loadData += '<div class="article-metadata">';
+		loadData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
+		loadData += '<span class="action-flag__label js-bookmark-label">Bookmark</span>';
+		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg>';
+		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
+		loadData += '</div>';
+		loadData += '<ul>';
+		loadData += '<li><time class="article-metadata__date">26 Sep 2015</time></li>';
+		loadData += '<li><h6>News</h6></li>';
+		loadData += '</ul>';
+		loadData += '</div>';
+		loadData += '<div class="topic-featured-article__inner-wrapper">';
+		loadData += '<h3 class="topic-featured-article__headline">';
+		loadData += '<a href="#" class="click-utag">1st U.S. Biosimilar Arrives: Zarxio Launches</a>';
+		loadData += '</h3>';
+		loadData += '<span class="article-preview__byline">By <a href="#">Ian Haydock</a></span>';
+		loadData += '<div class="article-summary">';
+		loadData += '<p>The US SEC has accepted a $20m payment from GSK to settle charges that it violated US legislation on foreign corrupt practices.</p>';
+		loadData += '</div>';
+		loadData += '</div>';
+		loadData += '<div class="article-preview__tags bar-separated-link-list">';
+		loadData += '<a href="#">USA</a>';
+		loadData += '<a href="#">Sandoz</a>';
+		loadData += '<a href="#">Biosimilars</a>';
+		loadData += '</div>';
+		loadData += '</section>';
+		loadData += '<div class="latest-news__articles">';
+		loadData += '<section class="article-preview article-preview--small">';
+		loadData += '<div class="article-metadata">';
+		loadData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
+		loadData += '<span class="action-flag__label js-bookmark-label">Bookmark</span>';
+		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg>';
+		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
+		loadData += '</div>';
+		loadData += '<ul>';
+		loadData += '<li><time class="article-metadata__date">26 Sep 2015</time></li>';
+		loadData += '<li><h6>News</h6></li>';
+		loadData += '</ul>';
+		loadData += '</div>';
+		loadData += '<div class="article-preview__inner-wrapper">';
+		loadData += '<h1 class="article-preview__headline">';
+		loadData += '<a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>';
+		loadData += '</h1>';
+		loadData += '<span class="article-preview__byline">By <a href="#">Brenda Sandburg</a></span>';
+		loadData += '<div class="article-summary">';
+		loadData += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat bibendum a. Aliquam vitae erat viverra ex vehicula dictum. Ut dignissim mi justo, sodales bibendum velit imperdiet nec. Suspendisse eu varius orci.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat.</p>';
+		loadData += '</div>';
+		loadData += '</div>';
+		loadData += '<div class="article-preview__tags bar-separated-link-list">';
+		loadData += '<a href="#">Deals</a>';
+		loadData += '<a href="#">Biosimilars</a>';
+		loadData += '</div>';
+		loadData += '</section>';
+		loadData += '<section class="article-preview article-preview--small">';
+		loadData += '<div class="article-metadata">';
+		loadData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
+		loadData += '<span class="action-flag__label js-bookmark-label">Bookmark</span>';
+		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg>';
+		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
+		loadData += '</div>';
+		loadData += '<ul>';
+		loadData += '<li><time class="article-metadata__date">26 Sep 2015</time></li>';
+		loadData += '<li><h6>News</h6></li>';
+		loadData += '</ul>';
+		loadData += '</div>';
+		loadData += '<div class="article-preview__inner-wrapper">';
+		loadData += '<h1 class="article-preview__headline">';
+		loadData += '<a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>';
+		loadData += '</h1>';
+		loadData += '<span class="article-preview__byline">By <a href="#">Brenda Sandburg</a></span>';
+		loadData += '<div class="article-summary">';
+		loadData += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat bibendum a. Aliquam vitae erat viverra ex vehicula dictum. Ut dignissim mi justo, sodales bibendum velit imperdiet nec. Suspendisse eu varius orci.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat.</p>';
+		loadData += '</div>';
+		loadData += '</div>';
+		loadData += '<div class="article-preview__tags bar-separated-link-list">';
+		loadData += '<a href="#">Deals</a>';
+		loadData += '<a href="#">Biosimilars</a>';
+		loadData += '</div>';
+		loadData += '</section>';
+		loadData += '<section class="article-preview article-preview--small topics">';
+		loadData += '<h6>Topic</h6>';
+		loadData += '<h1 class="article-preview_rheadline">';
+		loadData += '<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>';
+		loadData += '</h1>';
+		loadData += '<h1 class="article-preview_rheadline">';
+		loadData += '<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>';
+		loadData += '</h1>';
+		loadData += '<h1 class="article-preview_rheadline nobord">';
+		loadData += '<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>';
+		loadData += '</h1>';
+		loadData += '</section>';
+		loadData += '</div>';
+		loadData += '<div class="latest-news__articles">';
+		loadData += '<section class="article-preview article-small-preview">';
+		loadData += '<div class="article-metadata">';
+		loadData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
+		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg>';
+		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
+		loadData += '</div>';
+		loadData += '<ul>';
+		loadData += '<li><time class="article-metadata__date">26 Sep 2015</time></li>';
+		loadData += '<li><h6>News</h6></li>';
+		loadData += '</ul>';
+		loadData += '</div>';
+		loadData += '<div class="article-preview__inner-wrapper">';
+		loadData += '<h1 class="article-preview__headline">';
+		loadData += '<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>';
+		loadData += '</h1>';
+		loadData += '</div>';
+		loadData += '<div class="article-preview__tags bar-separated-link-list">';
+		loadData += '<a href="#">Deals</a>';
+		loadData += '<a href="#">Biosimilars</a>';
+		loadData += '</div>';
+		loadData += '</section>';
+		loadData += '<section class="article-preview article-small-preview">';
+		loadData += '<div class="article-metadata">';
+		loadData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"> ';
+		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg>';
+		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
+		loadData += '</div>';
+		loadData += '<ul>';
+		loadData += '<li><time class="article-metadata__date">26 Sep 2015</time></li>';
+		loadData += '<li><h6>News</h6></li>';
+		loadData += '</ul>';
+		loadData += '</div>';
+		loadData += '<div class="article-preview__inner-wrapper">';
+		loadData += '<h1 class="article-preview__headline">';
+		loadData += '<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>';
+		loadData += '</h1>';
+		loadData += '</div>';
+		loadData += '<div class="article-preview__tags bar-separated-link-list">';
+		loadData += '<a href="#">Deals</a>';
+		loadData += '<a href="#">Biosimilars</a>';
+		loadData += '</div>';
+		loadData += '</section>';
+		loadData += '<section class="article-preview article-small-preview">';
+		loadData += '<div class="article-metadata">';
+		loadData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
+		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg>';
+		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
+		loadData += '</div>';
+		loadData += '<ul>';
+		loadData += '<li><time class="article-metadata__date">26 Sep 2015</time></li>';
+		loadData += '<li><h6>News</h6></li>';
+		loadData += '</ul>';
+		loadData += '</div>';
+		loadData += '<div class="article-preview__inner-wrapper">';
+		loadData += '<h1 class="article-preview__headline">';
+		loadData += '<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>';
+		loadData += '</h1>';
+		loadData += '</div> ';
+		loadData += '<div class="article-preview__tags bar-separated-link-list">';
+		loadData += '<a href="#">Deals</a>';
+		loadData += '<a href="#">Biosimilars</a>';
+		loadData += '</div>';
+		loadData += '</section>';
+		loadData += '</div>';
+		loadData += '</div>';
+
+		$('.eachstory').last().after(loadData);
+	});
+});
+
+},{}],8:[function(require,module,exports){
 /* global analyticsEvent, analytics_data, angular */
 'use strict';
 
@@ -1074,7 +1265,7 @@ $(document).ready(function () {
 	});
 });
 
-},{"../controllers/analytics-controller":9,"../controllers/form-controller":11,"../jscookie":19}],8:[function(require,module,exports){
+},{"../controllers/analytics-controller":10,"../controllers/form-controller":12,"../jscookie":20}],9:[function(require,module,exports){
 'use strict';
 
 var INFORMA = window.INFORMA || {};
@@ -1143,7 +1334,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
 })(undefined, Zepto, 'INFORMA');
 Zepto(INFORMA.videoMini.init());
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 // * * *
 //  ANALYTICS CONTROLLER
 //  For ease-of-use, better DRY, better prevention of JS errors when ads are blocked
@@ -1162,7 +1353,7 @@ function analyticsEvent(dataObj) {
 
 exports.analyticsEvent = analyticsEvent;
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /* globals analytics_data */
 'use strict';
 
@@ -1250,7 +1441,7 @@ function bookmarkController() {
 exports['default'] = bookmarkController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":9}],11:[function(require,module,exports){
+},{"./analytics-controller":10}],12:[function(require,module,exports){
 /*
 
 opts.observe — Form element(s) to observe
@@ -1417,7 +1608,7 @@ function formController(opts) {
 exports['default'] = formController;
 module.exports = exports['default'];
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /* global angular */
 'use strict';
 
@@ -1485,7 +1676,7 @@ function lightboxModalController() {
 exports['default'] = lightboxModalController;
 module.exports = exports['default'];
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1763,7 +1954,7 @@ function popOutController(triggerElm) {
 exports['default'] = popOutController;
 module.exports = exports['default'];
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1888,7 +2079,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":9}],15:[function(require,module,exports){
+},{"./analytics-controller":10}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2106,7 +2297,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":9}],16:[function(require,module,exports){
+},{"./analytics-controller":10}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2423,7 +2614,7 @@ function sortableTableController() {
 exports['default'] = sortableTableController;
 module.exports = exports['default'];
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /* global tooltipController */
 
 "use strict";
@@ -2614,7 +2805,7 @@ function createPopup(initialState) {
 
 module.exports = exports["default"];
 
-},{"../calculatePopupOffsets.js":2}],18:[function(require,module,exports){
+},{"../calculatePopupOffsets.js":2}],19:[function(require,module,exports){
 /* global angular, analytics_data */
 
 // THIRD-PARTY / VENDOR
@@ -2696,6 +2887,8 @@ require('./components/save-search-component');
 require('./components/myview-settings');
 
 require('./components/pagination');
+
+require('./components/personalisation');
 
 // OTHER CODE
 
@@ -3771,7 +3964,7 @@ $(document).ready(function () {
     });
 });
 
-},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/myview-settings":5,"./components/pagination":6,"./components/save-search-component":7,"./components/video-mini":8,"./controllers/analytics-controller":9,"./controllers/bookmark-controller":10,"./controllers/form-controller":11,"./controllers/lightbox-modal-controller":12,"./controllers/pop-out-controller":13,"./controllers/register-controller":14,"./controllers/reset-password-controller":15,"./controllers/sortable-table-controller":16,"./controllers/tooltip-controller":17,"./jscookie":19,"./modal":20,"./newsletter-signup":21,"./search-page.js":22,"./selectivity-full":23,"./svg4everybody":24,"./toggle-icons":25,"./zepto.dragswap":26,"./zepto.min":27}],19:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/myview-settings":5,"./components/pagination":6,"./components/personalisation":7,"./components/save-search-component":8,"./components/video-mini":9,"./controllers/analytics-controller":10,"./controllers/bookmark-controller":11,"./controllers/form-controller":12,"./controllers/lightbox-modal-controller":13,"./controllers/pop-out-controller":14,"./controllers/register-controller":15,"./controllers/reset-password-controller":16,"./controllers/sortable-table-controller":17,"./controllers/tooltip-controller":18,"./jscookie":20,"./modal":21,"./newsletter-signup":22,"./search-page.js":23,"./selectivity-full":24,"./svg4everybody":25,"./toggle-icons":26,"./zepto.dragswap":27,"./zepto.min":28}],20:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -3912,7 +4105,7 @@ $(document).ready(function () {
 	return init(function () {});
 });
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
@@ -4220,7 +4413,7 @@ $(document).ready(function () {
   });
 })($);
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 /* global analytics_data */
 
 'use strict';
@@ -4297,7 +4490,7 @@ function newsletterSignupController() {
 exports['default'] = newsletterSignupController;
 module.exports = exports['default'];
 
-},{"./controllers/analytics-controller":9}],22:[function(require,module,exports){
+},{"./controllers/analytics-controller":10}],23:[function(require,module,exports){
 'use strict';
 
 var SearchScript = (function () {
@@ -4309,7 +4502,7 @@ var SearchScript = (function () {
 	});
 })();
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -5334,7 +5527,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 "use strict";
 
 !(function (root, factory) {
@@ -5439,7 +5632,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
     return svg4everybody;
 });
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -5456,7 +5649,7 @@ var toggleIcons = function toggleIcons(container) {
 
 exports.toggleIcons = toggleIcons;
 
-},{}],26:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 /*!
  * Zepto HTML5 Drag and Drop Sortable
  * Author: James Doyle(@james2doyle) http://ohdoylerules.com
@@ -5593,9 +5786,6 @@ exports.toggleIcons = toggleIcons;
                 $(this).siblings().filter(settings.excludePatt).attr('draggable', true);
                 console.log('dropped');
                 settings.dropComplete();
-
-                $('#setbrowVal').val(true);
-                $('#setbrowVal').handleBrowser($('#setbrowVal').val(true));
             }
             return false;
         }
@@ -5689,7 +5879,7 @@ exports.toggleIcons = toggleIcons;
     };
 })(Zepto);
 
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 "use strict";
 
@@ -6428,7 +6618,7 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}]},{},[18])
+},{}]},{},[19])
 
 
 //# sourceMappingURL=index.js.map
