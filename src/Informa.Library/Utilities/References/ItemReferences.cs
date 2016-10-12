@@ -16,6 +16,7 @@ namespace Informa.Library.Utilities.References
 		public Guid NlmConfiguration => new Guid("{B0C03A57-0C1E-4BC9-BE7A-5871695FD79B}");
 		public Guid NlmErrorDistributionList => new Guid("{54C6F361-9A73-453F-89E4-6230090C122A}");
         public Guid UserLockoutedEmails => new Guid("{8A553CE0-6AD6-4CC8-964C-BEAA9714F74B}");
+        public Guid CustomPublishingConfig => new Guid("{E892C2E5-4091-43A7-AAF6-C3A2DFCE05CE}");
         
         #region Pharma Globals
 
