@@ -4920,19 +4920,27 @@ section: UI Elements
   display: block;
   width: 100%;
   float: left;
-  margin-bottom: 32px;
-  margin-bottom: 2rem; }
+  position: relative; }
   .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox {
     width: 50%;
     display: inline;
     float: left; }
     .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .checkbox-label, .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox label, .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .page-registration__tos-confirm label, .page-registration__tos-confirm .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox label {
-      position: absolute;
       margin-left: 16px;
       margin-left: 1rem; }
+    @media (max-width: 480px) {
+      .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox {
+        width: 100%;
+        clear: both;
+        display: block; } }
   .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper {
     float: right;
     width: 40%; }
+    @media (max-width: 480px) {
+      .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper {
+        width: 100%;
+        clear: both;
+        display: block; } }
 
 /*
  * This borrows and modifies the base selectivity styles, so don't just drop in

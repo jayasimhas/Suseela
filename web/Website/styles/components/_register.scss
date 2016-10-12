@@ -26,19 +26,28 @@
 			display: block;
 			width: 100%;
 			float: left;
-			margin-bottom: 2rem;
+			position: relative;
 			.page-registration__labeled-checkbox{
 				width: 50%;
 				display: inline;
 				float: left;
 				.checkbox-label{
-					position: absolute;
 					margin-left: 1rem;
+				}
+				@include breakpoint('small'){
+					width: 100%;
+					clear: both;
+					display: block;
 				}
 			}
 			.page-account__submit-wrapper{
 			   float: right;
 			   width: 40%;
+			   @include breakpoint('small'){
+					width: 100%;
+					clear: both;
+					display: block;
+				} 
 			}
 		}
 	}
