@@ -10,7 +10,6 @@ namespace Informa.Library.User.UserPreference
         public int ChannelOrder { get; set; }
         public string ChannelLink { get; set; }
         public bool IsSubscribed { get; set; }
-        public bool IsFollowing { get; set; }
         public IList<Topic> Topics { get; set; }
     }
 }

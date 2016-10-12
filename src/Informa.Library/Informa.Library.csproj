@@ -392,6 +392,10 @@
     <Compile Include="Search\SearchManager\AgriSearchManager.cs" />
     <Compile Include="Search\SearchManager\PharmaSearchManager.cs" />
     <Compile Include="Search\SearchManager\SearchManagerFactory.cs" />
+    <Compile Include="Subscription\ChannelSubscription.cs" />
+    <Compile Include="Subscription\IChannelSubscription.cs" />
+    <Compile Include="Subscription\ITopicSubscription.cs" />
+    <Compile Include="Subscription\TopicSubscription.cs" />
     <Compile Include="User\UserPreference\Channel.cs" />
     <Compile Include="User\UserPreference\IChannel.cs" />
     <Compile Include="User\UserPreference\IFindUserPreferences.cs" />

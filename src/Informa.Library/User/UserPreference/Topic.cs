@@ -6,7 +6,6 @@
         public string TopicCode { get; set; }
         public string TopicName { get; set; }        
         public int TopicOrder { get; set; }
-        public bool IsSubscribed { get; set; }
         public bool IsFollowing { get; set; }
     }
 }
