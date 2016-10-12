@@ -672,15 +672,12 @@ function setClsforFlw(t) {
 	}
 }
 $(function () {
-
 	$('#allPublicationsPan').on('click', '.followAllBtn', function () {
 		var curpublicPan = $(this).closest('.publicationPan'),
 		    $lgfollow = curpublicPan.find('.followBtn'),
 		    table = $('.table');
 		$lgfollow.addClass('followingBtn').removeClass('followBtn').html('following');
-
 		curpublicPan.find('.unfollowAllBtn').removeClass('hideBtn');
-
 		for (var i = 0; i < $lgfollow.length; i++) {
 			$($lgfollow[i], curpublicPan).closest('tr').removeAttr('class').addClass('followingrow');
 		}
@@ -692,7 +689,6 @@ $(function () {
 		    $lgfollowing = curpublicPan.find('.followingBtn');
 		$(this).addClass('hideBtn');
 		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html('follow');
-
 		for (var i = 0; i < $lgfollowing.length; i++) {
 			$($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled ufa');
 		}
@@ -706,7 +702,6 @@ $(function () {
 		    mchecked = curpublicPan.find('.mchecked');
 		mcall.addClass('hideBtn');
 		muall.removeClass('hideBtn');
-
 		for (var i = 0; i < mchecked.length; i++) {
 			$(mchecked[i], curpublicPan).addClass('munchecked').removeClass('mchecked');
 		}
@@ -720,22 +715,19 @@ $(function () {
 		    munchecked = curpublicPan.find('.munchecked');
 		muall.addClass('hideBtn');
 		mcall.removeClass('hideBtn');
-
 		for (var i = 0; i < munchecked.length; i++) {
 			$(munchecked[i], curpublicPan).addClass('mchecked').removeClass('munchecked');
 		}
 	});
 
-	$('#allPublicationsPan .donesubscribe').on('click', '.smfollowingBtn .mchecked', function () {
+	$('#allPublicationsPan .donesubscribe').on('click', '.smfollowingBtn a', function () {
 		var $this = $(this),
 		    smfollowingBtn = $this.closest('.smfollowingBtn');
-		smfollowingBtn.find('a').addClass('munchecked').removeClass('mchecked');
-	});
-
-	$('#allPublicationsPan .donesubscribe').on('click', '.smfollowingBtn .munchecked', function () {
-		var $this = $(this),
-		    smfollowingBtn = $this.closest('.smfollowingBtn');
-		smfollowingBtn.find('a').addClass('mchecked').removeClass('munchecked');
+		if ($this.hasClass('munchecked')) {
+			smfollowingBtn.find('a').addClass('mchecked').removeClass('munchecked');
+		} else {
+			smfollowingBtn.find('a').addClass('munchecked').removeClass('mchecked');
+		}
 	});
 
 	$('#allPublicationsPan .donesubscribe').on('click', '.followrow .followBtn', function () {
@@ -769,9 +761,13 @@ $(function () {
 		if ($this.hasClass('collapsed')) {
 			$this.removeClass('collapsed');
 			tbody.addClass('tbodyhidden');
+			pPan.find('.smfollowingBtn').hide();
+			pPan.find('.graybg').hide();
 		} else {
 			$this.addClass('collapsed');
 			tbody.removeClass('tbodyhidden');
+			pPan.find('.smfollowingBtn').show();
+			pPan.find('.graybg').show();
 		}
 	});
 
@@ -797,9 +793,14 @@ $(function () {
 			}
 			createtableData.allpublications[tableId] = { "publicationName": publicationName, "subscribeStatus": subscribeStatus, "position": pubPanPosition, "tableData": alltdata };
 		}
-
 		console.log(JSON.stringify(createtableData));
 	});
+
+	if (window.matchMedia('(max-width: 630px)').matches) {
+		$('.mobshowView').removeClass('desktophide');
+	} else {
+		$('.mobshowView').addClass('desktophide');
+	}
 });
 
 },{}],6:[function(require,module,exports){
@@ -2687,9 +2688,9 @@ require('./components/article-sidebar-component');
 
 require('./components/save-search-component');
 
-require('./components/pagination');
-
 require('./components/myview-settings');
+
+require('./components/pagination');
 
 // OTHER CODE
 
@@ -2720,6 +2721,7 @@ var _modal2 = _interopRequireDefault(_modal);
 // Make sure proper elm gets the click event
 // When a user submits a Forgot Password request, this will display the proper
 // success message and hide the form to prevent re-sending.
+
 window.toggleIcons = _toggleIcons.toggleIcons;
 
 /* Polyfill for scripts expecting `jQuery`. Also see: CSS selectors support in zepto.min.js */
@@ -2816,11 +2818,26 @@ var renderAMchart = function renderAMchart() {
     }
 };
 
+var AMchartUsingBuilder = function AMchartUsingBuilder() {
+    if ($("#amchartDashboardBuilder").hasClass("amchart-dashboard-using-builder")) {
+
+        alert(chartPresentation);
+
+        AmCharts.makeChart("chartdiv", {
+            "type": "serial",
+            "dataProvider": chartData,
+            "categoryField": "category",
+            "graphs": [{ "balloonText": "[[title]] of [[category]]:[[value]]", "fillAlphas": 1, "id": "AmGraph-1", "title": "graph 1", "type": "column", "valueField": "column-1" }, { "balloonText": "[[title]] of [[category]]:[[value]]", "fillAlphas": 1, "id": "AmGraph-2", "title": "graph 2", "type": "column", "valueField": "column-2" }]
+        });
+    }
+};
+
 var decodeHtml = function decodeHtml(html) {
     var txt = document.createElement("textarea");
     txt.innerHTML = html;
     return txt.value;
 };
+
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
@@ -2830,6 +2847,7 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
 $(document).ready(function () {
     //messaging web users
     window.dismiss = function () {
@@ -2839,6 +2857,35 @@ $(document).ready(function () {
         });
     };
     window.dismiss();
+
+    window.personalised_nav = function () {
+        //personalise pop up
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("personalise_close")[0];
+
+        // When the user clicks the button, open the modal
+        $(document).on('click', '#myBtn', function () {
+            modal.style.display = "block";
+        });
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    };
+    window.personalised_nav();
 
     var mediaTable = getParameterByName('mobilemedia');
     if (mediaTable == "true") {
@@ -3393,6 +3440,7 @@ $(document).ready(function () {
     renderIframeComponents();
     renderTableau();
     renderAMchart();
+    AMchartUsingBuilder();
     $(window).on('resize', function (event) {
         renderIframeComponents();
         renderTableau();

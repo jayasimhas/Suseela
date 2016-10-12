@@ -1,7 +1,5 @@
-$yellowColor: #f7941e;
-
 @mixin folow-btn($w, $h){
-	border: 1px solid $yellowColor;
+	border: 1px solid $color-tree-poppy-orange;
 	cursor: pointer;
 	text-transform: uppercase;
 	font-size: 0.75em;
@@ -14,122 +12,120 @@ $yellowColor: #f7941e;
     line-height: $h;
 	float: right;
 }
-@mixin tableData($px){
-	white-space: nowrap;
-	padding: 12px 20px;
-	line-height: 1.42857143;
+@mixin tableData($px){ 
+	padding: 0.75rem 1.25rem;
+	line-height: 1.5rem;
 	vertical-align: top;
 	border-top: $px solid #ddd;
 }
 @mixin getMove(){
 	float: right;
-	margin-top: 3px;
+	margin-top: 0.1875rem;
 	position: relative;
 	span{
-		height: 2px;
-		width: 21px;
+		height: 0.125rem;
+		width: 1.3125rem;
 		background: #d1d3d5;
 		display: block;
 		margin-bottom: 3px;
 	}
 	.move{
 		position: absolute;
-		left: -43px;
+		left: -2.6875rem;
 		top: 1px;
 		text-transform: uppercase;
 		font-size: 0.75em;
 		display: none;
-		@media only screen and (max-device-width: 480px) {
+		@include breakpoint('small') {
 			z-index: -1;
 		}
 	}
 }
 
-@mixin mobileFlwBtn(){
-	
-}
-
 .myview-settings {
-	margin-bottom: 50px;
+	margin-bottom: 3.125rem;
 	h1{
-		margin-bottom: 0px;
+		margin-bottom: 0rem;
 		float: left;
-		@include breakpoint('small') {
-			font-size: 32px;
+		@include breakpoint('medium-small') {
+			font-size: 2rem;
 		}
 	}
 	.mysettingsHead{
 		border-bottom: 1px solid #d1d3d4;
-		padding-bottom: 10px;
-		margin-bottom: 20px;
+		padding-bottom: 0.625rem;
+		margin-bottom: 1.25rem;
 		@include breakpoint('small') {
-			margin-bottom: 0px;
+			margin-bottom: 0rem;
 			border-bottom: none;
 		}
 	}
 	.mtop-10{
-		margin-top: 10px;
+		margin-top: 0.625rem;
 	}
 	.mb-10{
-		margin: 10px 0 20px;
+		margin: 0.625rem 0 1.25rem;
+	}
+	.desktophide{
+		display: none !important;
 	}
 	.sub-heading-text{
 		font-size: 1.125em;
-		margin-bottom: 20px;
+		margin-bottom: 1.25rem;
 		p{
-			line-height: 16px;
+			line-height: 1rem;
 			font-style: normal;
 			font-family: "PT Serif Caption";
 			font-weight: 400;
 			font-size: 1.125em;
 			@include breakpoint('small') {
 				font-size: 0.875em;
-				margin: 0px;
-				padding: 0px;
-				line-height: 24px;
+				margin: 0rem;
+				padding: 0rem;
+				line-height: 1.5rem;
 			}
 		}
 	}
 	.publicationPan{
-		margin-bottom: 25px;
+		margin-bottom: 1.5625rem;
 		border: 1px solid #d9dadb;
 		h2{
 			text-align: left;
 			float: left;
-			@include breakpoint('small') {
+			@include breakpoint('medium-small') {
 				font-size: 1.25em;
-				margin-bottom: 12px;
+				margin-bottom: 0.75rem;
 				float: none;
 			}
 		}
 		.subscribed{
 			border-left: 1px solid #d9dadb;
 			float: left;
-			padding-left: 20px;
-			margin: 12px 20px;
-			@include breakpoint('small') {
+			padding-left: 1.25rem;
+			margin: 0.1875rem 1.25rem;
+			@include breakpoint('medium-small') {
 				font-size: 0.875em;
 				border-left: none;				
-				padding-left: 0px;
-				margin: 0px;
+				padding-left: 0rem;
+				margin: 0rem;
 			}
 		}
 		.subscribe{
 			float: left;
-			width: 120px;
-			height: 32px;
-			background: $yellowColor;
-			color: #fff;
-			margin: 8px 0 0 20px;
-			line-height: 32px;
-			font-size: 12px;
+			width: 7.5rem;
+			height: 2rem;
+			background: $color-tree-poppy-orange;
+			color: $color-white;
+			margin: 0.5rem 0 0 1.25rem;
+			line-height: 2rem;
+			font-size: 0.75rem;
 			cursor: pointer;
-			padding-left: 0px;
+			padding-left: 0rem;
 			@include breakpoint('small') {
 				font-size: 0.875em;
 				border-left: none;				
-				padding-left: 0px;
-				margin: 0px;
+				padding-left: 0rem;
+				margin: 0rem;
 			}
 		}
 	}
@@ -154,17 +150,17 @@ $yellowColor: #f7941e;
 						@include tableData(1px);
 					}
 					.followingBtn{
-						@include folow-btn(120px, 32px);
+						@include folow-btn(7.5rem, 2rem);
 						&:hover{
-							background: $yellowColor;
-							color: #fff;
+							background: $color-tree-poppy-orange;
+							color: $color-white;
 						}
 					
 					}
 					.followBtn{
-						@include folow-btn(120px, 32px);
-						background: $yellowColor;
-						color: #fff;
+						@include folow-btn(7.5rem, 2rem);
+						background: $color-tree-poppy-orange;
+						color: $color-white;
 					}
 					&.followingrow{
 						.rowlines{
@@ -189,7 +185,7 @@ $yellowColor: #f7941e;
 					&.followrow{
 						background: #f9f9f9;
 						@include breakpoint('small') {
-							background: #fff;
+							background: $color-white;
 						}
 						.rowlines{
 							@include getMove();
@@ -211,84 +207,91 @@ $yellowColor: #f7941e;
 					@include tableData(0px);
 					background: #f9f9f9;
 					@include breakpoint('small') {
-						padding: 8px 0px 10px 10px;
+						padding: 0.5rem 0rem 0.625rem 0.625rem;
 					}
 					p{
 						font-size: 1em; 
 						text-align: left;
-						padding: 12px 0 0;
-						@include breakpoint('small') {
+						padding: 0.75rem 0 0;
+						@include breakpoint('medium-small') {
 							padding: 0;
 							font-size: 0.875em; 
 						}
 					} 
 					&.firstrow{
-						padding: 40px 20px 10px;
-						@include breakpoint('small') {
-							padding: 20px 10px 10px;
+						padding: 2.5rem 1.25rem 0.625rem;
+						@include breakpoint('medium-small') {
+							padding: 1.25rem 0.625rem 0.625rem;
 						}
 					}
 					&.nopad{
-						padding: 0px 20px;
+						padding: 0rem 1.25rem;
 						@include breakpoint('small') {
-							padding:  0px 10px;
+							padding:  0rem 0.625rem;
 						}
 					}
 					&.pbot{
-						padding: 0px 20px 15px;
+						padding: 0rem 1.25rem 0.9375rem;
 					}
 					& .rowlines{
 						@include getMove();
-						top: -24px;
-						@include breakpoint('small') {
+						top: -1.5rem;
+						@include breakpoint('medium-small') {
 							top: 4px;
 						}
 						span{
-							@include breakpoint('small') {
+							@include breakpoint('medium-small') {
 								background: #808081;
 							}
 						}
 					}
 					& .accordionImg{
-						
 						a{
 							background: url(/dist/img/accordion.jpg) no-repeat 0 -18px;
-							height: 17px;
-							width: 32px;
+							height: 1.0625rem;
+							width: 2rem;
 							display: inline-block;
+							@include breakpoint('medium') {
+								position: relative;
+								left: -1.25rem;
+							}
 							@include breakpoint('small') {
 								position: relative;
-								left: -15px;
+								left: -0.9375rem;
 							}
 							
 							&.collapsed{
 								background: url(/dist/img/accordion.jpg) no-repeat 0 0;
 								@include breakpoint('small') {
 									position: relative;
-									left: -5px;
+									left: -0.3125rem;
+								}
+								@include breakpoint('medium') {
+									position: relative;
+									left: -1.25rem;
 								}
 							}
 						}
 					}
 					&.notsubscr{
 						text-align: left;
-						padding-bottom: 0px;
-						padding-top: 0px;
+						padding-bottom: 0rem;
+						padding-top: 0rem;
 					}
 				} 
 				.followAllBtn{
-					@include folow-btn(120px, 32px);
-					margin-top: 8px;
+					@include folow-btn(7.5rem, 2rem);
+					margin-top: 0.5rem;
 					&:hover{
-						background: $yellowColor;
-						color: #fff;
+						background: $color-tree-poppy-orange;
+						color: $color-white;
 					}
 				}
 				.unfollowAllBtn{
-					@include folow-btn(120px, 32px);
-					background: $yellowColor;
-					color: #fff;
-					margin: 8px 0 0 20px;
+					@include folow-btn(7.5rem, 2rem);
+					background: $color-tree-poppy-orange;
+					color: $color-white;
+					margin: 0.5rem 0 0 1.25rem;
 				}
 			}
 			.wd-55{
@@ -296,19 +299,28 @@ $yellowColor: #f7941e;
 				@include breakpoint('small') {
 					width: 65%;
 				}
+				@include breakpoint('medium-small') {
+					width: 45%;
+				}
 			}
 			.wd-25{
 				width: 25%;
 				@include breakpoint('small') {
 					width: 20%;
-					padding: 8px 0px 10px 10px;
+					padding: 0.5rem 0rem 0rem 0.625rem;
 					text-align: right;
+				}
+				@include breakpoint('medium-small') {
+					width: 25%;
 				}
 			}
 			.wd-15{
 				width: 15%;
 				@include breakpoint('small') {
 					width: 10%;
+				}
+				@include breakpoint('medium-small') {
+					width: 15%;
 				}
 			}
 			.graybg{
@@ -318,14 +330,14 @@ $yellowColor: #f7941e;
 				text-align: right;
 				a{
 					background: url(/dist/img/follow-mob.jpg) no-repeat;
-					height: 30px;
-					width: 30px;
+					height: 1.875rem;
+					width: 1.875rem;
 					display: inline-block;
-					margin-left: 10px;
+					margin-left: 0.625rem;
 				}
 				span{
 					position: relative;
-					top: -12px;
+					top: -0.75rem;
 					font-size: 0.6875em;
 					font-weight: bold;
 					font-family: "Roboto";
@@ -352,23 +364,23 @@ $yellowColor: #f7941e;
   .saveoption{
 	  float: right;
 	  .gotoview{
-		 @include folow-btn(150px, 32px);
-		  margin-left: 20px;
+		 @include folow-btn(9.375rem, 2rem);
+		  margin-left: 1.25rem;
 		  &:hover{
-				background: $yellowColor;
-				color: #fff;
+				background: $color-tree-poppy-orange;
+				color: $color-white;
 			}
 		@include breakpoint('small') {
-			@include folow-btn(120px, 32px);
+			@include folow-btn(7.5rem, 2rem);
 		}
 	  }
 	  .saveview{
-		 @include folow-btn(90px, 32px);
-		  margin-left: 20px;
-		  background: $yellowColor;
-		  color: #fff;
+		 @include folow-btn(5.625rem, 2rem);
+		  margin-left: 1.25rem;
+		  background: $color-tree-poppy-orange;
+		  color: $color-white;
 		  @include breakpoint('small') {
-			width: 120px;
+			width: 7.5rem;
 		  }
 	  }
   }
@@ -377,7 +389,7 @@ $yellowColor: #f7941e;
 	& .followrow{
 		background: #f9f9f9;
 		@include breakpoint('small') {
-			background: #fff;
+			background: $color-white;
 		}
 		& .rowlines{
 			display: none;
@@ -387,14 +399,18 @@ $yellowColor: #f7941e;
   & .hidden{
 	display: none !important;
   }
+	
 }
 
-@media only screen and (max-device-width: 480px) {
+@include breakpoint('small') {
 	.hidden-xs{
 		display: none !important;
 	}
 	.smfollowingBtn{
-		margin: 8px 0;
+		margin: 0.1rem 0;
+	}
+	.hidden-lg{
+		display: none !important;
 	}
 }
 @media only screen and (min-width: 481px) {
@@ -408,17 +424,6 @@ $yellowColor: #f7941e;
 }
 
 /************ drag and drop styles ***********/
-.sortable {
-	margin: auto;
-	padding: 0;
-	width: 310px;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}  
 .drop {
 	-webkit-animation: drop 1s ease;
 	-moz-animation: drop 1s ease;
@@ -429,41 +434,46 @@ $yellowColor: #f7941e;
  
 @-moz-keyframes drop {
 	0%, 100% {
-		background: #FF9933;
-		color: #fff;
+		background: $color-tree-poppy-orange;
+		color: $color-white;
 	}
 	50% {
-		color: #FF9933;
-		background: #fff;
+		color: $color-tree-poppy-orange;
+		background: $color-white;
 	}
 }
 @-webkit-keyframes "drop" {
 	0%, 100% {
-		background: #FF9933;
-		color: #fff;
+		background: $color-tree-poppy-orange;
+		color: $color-white;
 	}
 	50% {
-		color: #FF9933;
-		background: #fff;
+		color: $color-tree-poppy-orange;
+		background: $color-white;
 	}
 }
 @-ms-keyframes "drop" {
 	0%, 100% {
-		background: #FF9933;
-		color: #fff;
+		background: $color-tree-poppy-orange;
+		color: $color-white;
 	}
 	50% {
-		color: #FF9933;
-		background: #fff;
+		color: $color-tree-poppy-orange;
+		background: $color-white;
 	}
 }
 @-o-keyframes "drop" {
 	0%, 100% {
-		background: #FF9933;
-		color: #fff;
+		background: $color-tree-poppy-orange;
+		color: $color-white;
 	}
 	50% {
-		color: #FF9933;
-		background: #fff;
+		color: $color-tree-poppy-orange;
+		background: $color-white;
+	}
+}
+@include breakpoint('medium') {
+	.desktophide{
+		display: block !important;
 	}
 }

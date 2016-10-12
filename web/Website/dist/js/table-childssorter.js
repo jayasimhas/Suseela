@@ -97,11 +97,11 @@ $(function(){
 	});
 	
 	$('.maintitle').click(function(){
-		var $this = $(this), td = $this.closest('td'), subjectsPan = td.find('.subjects');
+		var $this = $(this), tableMrow = $this.closest('.tableMrow'), subjectsPan = tableMrow.find('.subjects');
 		if(!$this.hasClass('active')){
 			subjectsPan.removeClass('hiderow');
-			$this.addClass('active');
-		}
+			$this.addClass('active'); 
+		} 
 		else{
 			subjectsPan.addClass('hiderow');
 			$this.removeClass('active');

@@ -392,10 +392,12 @@
     <Compile Include="Search\SearchManager\AgriSearchManager.cs" />
     <Compile Include="Search\SearchManager\PharmaSearchManager.cs" />
     <Compile Include="Search\SearchManager\SearchManagerFactory.cs" />
+    <Compile Include="Subscription\ChannelSubscription.cs" />
+    <Compile Include="Subscription\IChannelSubscription.cs" />
+    <Compile Include="Subscription\ITopicSubscription.cs" />
+    <Compile Include="Subscription\TopicSubscription.cs" />
     <Compile Include="User\UserPreference\Channel.cs" />
-    <Compile Include="User\UserPreference\ChannelPreference.cs" />
     <Compile Include="User\UserPreference\IChannel.cs" />
-    <Compile Include="User\UserPreference\IChannelPreference.cs" />
     <Compile Include="User\UserPreference\IFindUserPreferences.cs" />
     <Compile Include="User\UserPreference\IMyViewToggleRedirectUrlFactory.cs" />
     <Compile Include="User\UserPreference\ITopic.cs" />
@@ -1221,6 +1223,10 @@
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
     <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props'))" />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

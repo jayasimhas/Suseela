@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Informa.Library.Subscription
 {
@@ -11,5 +12,8 @@ namespace Informa.Library.Subscription
         string ProductCode { get; set; }
         string ProductGuid { get; set; }
         string ProductType { get; set; }
+        List<ChannelSubscription> SubscribedChannels { get; set; }
+        List<TopicSubscription> SubscribedTopics { get; set; }
+        
     }
 }
