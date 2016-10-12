@@ -20,9 +20,7 @@ namespace Informa.Library.User.UserPreference
         }
         public string create()
         {
-            return SiterootContext.Item?.MyView_Page?._Url;
-
-            if (AuthenticatedUserContext.IsAuthenticated)
+            if(AuthenticatedUserContext.IsAuthenticated)
             {
                 if (UserPreferences.Preferences != null &&
                     UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
@@ -36,6 +34,8 @@ namespace Informa.Library.User.UserPreference
                     return SiterootContext.Item?.MyView_Settings_Page?._Url;
                 }
             }
+
+            return string.Empty;
         }
     }
 }

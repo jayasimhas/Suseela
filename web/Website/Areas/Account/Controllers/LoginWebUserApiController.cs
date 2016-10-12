@@ -63,7 +63,7 @@ namespace Informa.Web.Areas.Account.Controllers
             {
                 success = result.Success,
                 redirectUrl = redirectUrl,
-                RedirectRequired = request.IsSignInFromMyView ? true : false
+                RedirectRequired = (request.IsSignInFromMyView && !string.IsNullOrWhiteSpace(redirectUrl)) ? true : false
             });
 		}
 	}
