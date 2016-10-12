@@ -108,7 +108,7 @@ namespace Informa.Tests.Library.PXM_Tests.Helper_Tests
             var result = _injectAdditionalFields.InjectAuthors(fakeHtml, fakeArticle);
 
             // ASSERT
-            Assert.AreEqual("<div class='root'><pre><h3 class='authors'>Joe Faker joe.faker@example.com</h3></pre></div>", result);
+            Assert.AreEqual("<div class='root'><h3 class='authors'>Joe Faker joe.faker@example.com</h3></div>", result);
         }
 
         [Test]
@@ -133,7 +133,7 @@ namespace Informa.Tests.Library.PXM_Tests.Helper_Tests
 
             // ASSERT
             Assert.AreEqual(
-                "<  DIV width='3' clASS = \"Root\" data-fun='moose' ><pre><h3 class='authors'>Joe Faker joe.faker@example.com</h3></pre><p>Other stuff!</p></div>",
+                "<  DIV width='3' clASS = \"Root\" data-fun='moose' ><h3 class='authors'>Joe Faker joe.faker@example.com</h3><p>Other stuff!</p></div>",
                 result);
         }
     }
