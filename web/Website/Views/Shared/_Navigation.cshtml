@@ -15,15 +15,10 @@
         foreach (var navigation in Model.Navigation.Where(n => !(n.Link == null && !n.Children.Any())))
         {
             Nav.Children = new List<Navigation>();
-            if (Model.ValidSubscriptions != null && Model.ValidSubscriptions.SelectMany(p => p.SubscribedChannels).ToList() != null)
+            if (Model.ValidSubscriptions != null)
             {
-                Nav.Children = navigation.Children.Where(m => Model.ValidSubscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelName == m.Text)).
-                    Concat(navigation.Children.Where(m => !Model.ValidSubscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelName == m.Text)));
-            }
-            else if (Model.ValidSubscriptions != null && Model.ValidSubscriptions.SelectMany(p => p.SubscribedTopics).ToList() != null)
-            {
-                Nav.Children = navigation.Children.Where(m => Model.ValidSubscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicName == m.Text)).
-                    Concat(navigation.Children.Where(m => !Model.ValidSubscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicName == m.Text)));
+                Nav.Children = navigation.Children.Where(m => Model.ValidSubscriptions.Any(n => n.Publication == m.Text)).
+                    Concat(navigation.Children.Where(m => !Model.ValidSubscriptions.Any(n => n.Publication == m.Text)));
             }
             else
             {
@@ -69,8 +64,7 @@
                             <li class="edit-link"><a id="myBtn" href="javascript: void(0);">@Model.MyViewEditBtnText</a></li>
                             <li class="navContent">@Model.MyViewHelpText</li>
                         }
-
-
+                        
                         @if (Nav.Children.Any())
                         {
                             foreach (var navigationChild in Nav.Children)
