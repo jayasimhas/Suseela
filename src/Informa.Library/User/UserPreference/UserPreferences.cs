@@ -6,5 +6,6 @@
     public class UserPreferences : IUserPreferences
     {
        public IList<Channel> PreferredChannels { get; set; }
+        public IList<Topic> PreferredTopics { get; set; }
     }
 }
