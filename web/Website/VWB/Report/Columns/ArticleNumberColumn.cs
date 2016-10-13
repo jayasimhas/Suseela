@@ -92,7 +92,7 @@ namespace Elsevier.Web.VWB.Report.Columns
 
             string url = MediaManager.GetMediaUrl(wordDoc);
             url = url.Replace("/-/", "/~/");
-            return url.Replace("-", " ");
+            return url.Replace("-", " ") + string.Format("&ts={0}", System.DateTime.Now.ToString("yyyyMMddHHmmss")); ;
         }
 
 		#endregion
