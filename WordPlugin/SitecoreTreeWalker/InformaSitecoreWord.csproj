@@ -594,6 +594,8 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram1.cd" />
+    <None Include="InformaSitecoreWord_2_TemporaryKey.pfx" />
+    <None Include="InformaSitecoreWord_3_TemporaryKey.pfx" />
     <None Include="InformaSitecoreWord_TemporaryKey.pfx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -733,10 +735,11 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>95220FFBC6C8D4E0B86237EF436256389B01528C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A3CB4D5C6B0573983A39E95BE02F873A2D3BAC1F</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>InformaSitecoreWord_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>
