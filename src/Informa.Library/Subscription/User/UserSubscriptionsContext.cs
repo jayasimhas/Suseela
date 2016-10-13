@@ -33,14 +33,14 @@ namespace Informa.Library.Subscription.User
 			        return Enumerable.Empty<ISubscription>();
 			    }
                 //Commenting it for the time being for local verification.
-				//var subscriptionSession = UserSession.Get<IEnumerable<ISubscription>>(subscriptionsSessionKey);
+                var subscriptionSession = UserSession.Get<IEnumerable<ISubscription>>(subscriptionsSessionKey);
 
-				//if (subscriptionSession.HasValue)
-				//{
-				//	return subscriptionSession.Value;
-				//}
+                if (subscriptionSession.HasValue)
+                {
+                    return subscriptionSession.Value;
+                }
 
-				var subscriptions = Subscriptions = FindSubscriptions.Find(UserContext.User?.Username);
+                var subscriptions = Subscriptions = FindSubscriptions.Find(UserContext.User?.Username);
 
 				return subscriptions;
 			}

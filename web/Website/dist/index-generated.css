@@ -616,8 +616,9 @@ title: Agri
 section: Colors
 ---
 ```example:color
-@color: #9E310D @name: Rosewood Red
+@color: #9E310D @name: primary
 @color: #F5821F @name: Pumpkin
+@color: #c12d3b @name: Persian Red
 ```
 */
 /**
@@ -4893,18 +4894,44 @@ section: UI Elements
   line-height: 24px;
   line-height: 1.5rem; }
 
-.register .register_newsletter div {
+.register .register_newsletter div.page-registration {
   display: block;
   position: relative; }
-  .register .register_newsletter div .page-registration__header {
+  .register .register_newsletter div.page-registration .page-registration__header {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex; }
-  .register .register_newsletter div .next_right {
+  .register .register_newsletter div.page-registration .next_right {
     display: inline;
-    float: right; }
-    .register .register_newsletter div .next_right a, .register .register_newsletter div .next_right .pop-out__reset-password, .register .register_newsletter div .next_right .sortable-table__list-toggler, .register .register_newsletter div .next_right .mobile-table-exit {
-      color: #231f20; }
+    float: right;
+    position: relative;
+    margin-right: 16px;
+    margin-right: 1rem;
+    top: 15px; }
+    .register .register_newsletter div.page-registration .next_right .step {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: normal;
+      margin-right: 15px;
+      vertical-align: middle; }
+    .register .register_newsletter div.page-registration .next_right button {
+      padding: 11px 52px;
+      padding: 0.7rem 3.3rem;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      font-style: normal;
+      color: #231f20;
+      text-transform: uppercase; }
+    @media (max-width: 480px) {
+      .register .register_newsletter div.page-registration .next_right {
+        display: none; } }
+    @media (max-width: 640px) {
+      .register .register_newsletter div.page-registration .next_right {
+        display: none; } }
 
 .register .register_newsletter .newsletter_box {
   background-color: #f1f2f2;
@@ -4913,7 +4940,76 @@ section: UI Elements
   margin-bottom: 20px;
   margin-bottom: 1.25rem;
   padding: 16px;
-  padding: 1rem; }
+  padding: 1rem;
+  float: left;
+  position: relative;
+  width: 100%; }
+  .register .register_newsletter .newsletter_box p {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 30px; }
+    .register .register_newsletter .newsletter_box p .latest_newsletter {
+      color: #c12d3b; }
+  .register .register_newsletter .newsletter_box .site_div h1 {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex; }
+  @media (max-width: 480px) {
+    .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox {
+      display: none; } }
+  @media (max-width: 640px) {
+    .register .register_newsletter .newsletter_box .site_div .newsletter_checkbox {
+      display: none; } }
+  .register .register_newsletter .newsletter_box .newsletter_checkbox {
+    display: inline;
+    float: right;
+    border: 1px solid #F5821F;
+    background: #ffffff;
+    padding: 5px 9px;
+    padding: 0.3125rem 0.5625rem;
+    text-transform: uppercase;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-style: normal;
+    position: relative; }
+    .register .register_newsletter .newsletter_box .newsletter_checkbox input[type="checkbox"] {
+      margin-right: 5px; }
+    .register .register_newsletter .newsletter_box .newsletter_checkbox .chk_box {
+      background: url("/dist/img/chk-boxes.png");
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: 5px;
+      cursor: pointer; }
+    .register .register_newsletter .newsletter_box .newsletter_checkbox.wcs-c-on {
+      background-color: #F5821F;
+      color: #ffffff; }
+      .register .register_newsletter .newsletter_box .newsletter_checkbox.wcs-c-on .chk_box {
+        background-position: 0 -17px;
+        background-color: #F5821F; }
+  .register .register_newsletter .newsletter_box .mobile {
+    display: none;
+    clear: both; }
+    @media (max-width: 480px) {
+      .register .register_newsletter .newsletter_box .mobile {
+        display: block; }
+        .register .register_newsletter .newsletter_box .mobile .newsletter_checkbox {
+          float: left;
+          margin-top: 10px;
+          margin-bottom: 5px; } }
+    @media (max-width: 640px) {
+      .register .register_newsletter .newsletter_box .mobile {
+        display: block; }
+        .register .register_newsletter .newsletter_box .mobile .newsletter_checkbox {
+          float: left;
+          margin-top: 10px;
+          margin-bottom: 5px; } }
 
 .register .register_newsletter .registrationSubmit_div {
   clear: both;
@@ -4926,21 +5022,77 @@ section: UI Elements
     display: inline;
     float: left; }
     .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .checkbox-label, .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox label, .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .page-registration__tos-confirm label, .page-registration__tos-confirm .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox label {
-      margin-left: 16px;
-      margin-left: 1rem; }
+      margin-left: 27px;
+      margin-left: 1.7rem;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-size: 0.875rem;
+      font-weight: 400;
+      font-style: normal;
+      display: table;
+      margin-top: -27px;
+      margin-top: -1.7rem;
+      line-height: 30px; }
     @media (max-width: 480px) {
+      .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox {
+        width: 100%;
+        clear: both;
+        display: block; } }
+    .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox .chk_box {
+      background: url("/dist/img/chk-boxes.png");
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: 0;
+      top: 3px;
+      cursor: pointer;
+      background-position: 0 -34px; }
+    .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox.wcs-c-on .chk_box {
+      background-position: 0 -17px;
+      background-color: #F5821F; }
+    @media (max-width: 480px) {
+      .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox {
+        width: 100%;
+        clear: both;
+        display: block; } }
+    @media (max-width: 640px) {
       .register .register_newsletter .registrationSubmit_div .page-registration__labeled-checkbox {
         width: 100%;
         clear: both;
         display: block; } }
   .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper {
     float: right;
-    width: 40%; }
+    width: 40%;
+    position: relative; }
     @media (max-width: 480px) {
       .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper {
         width: 100%;
         clear: both;
         display: block; } }
+    @media (max-width: 640px) {
+      .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper {
+        width: 100%;
+        clear: both;
+        display: block; } }
+    .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper .step {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: normal;
+      margin-right: 15px;
+      vertical-align: middle; }
+    .register .register_newsletter .registrationSubmit_div .page-account__submit-wrapper button {
+      padding: 11px 52px;
+      padding: 0.7rem 3.3rem;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      font-style: normal;
+      color: #231f20;
+      text-transform: uppercase; }
 
 /*
  * This borrows and modifies the base selectivity styles, so don't just drop in
