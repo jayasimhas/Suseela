@@ -17,13 +17,13 @@
             Nav.Children = new List<Navigation>();
             if (Model.ValidSubscriptions != null && Model.ValidSubscriptions.SelectMany(p => p.SubscribedChannels).ToList() != null)
             {
-                Nav.Children = navigation.Children.Where(m => Model.ValidSubscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelName == m.Text)).
-                    Concat(navigation.Children.Where(m => !Model.ValidSubscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelName == m.Text)));
+                Nav.Children = navigation.Children.Where(m => Model.ValidSubscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelId == m.Code)).
+                    Concat(navigation.Children.Where(m => !Model.ValidSubscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelId == m.Code)));
             }
             else if (Model.ValidSubscriptions != null && Model.ValidSubscriptions.SelectMany(p => p.SubscribedTopics).ToList() != null)
             {
-                Nav.Children = navigation.Children.Where(m => Model.ValidSubscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicName == m.Text)).
-                    Concat(navigation.Children.Where(m => !Model.ValidSubscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicName == m.Text)));
+                Nav.Children = navigation.Children.Where(m => Model.ValidSubscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicId == m.Code)).
+                    Concat(navigation.Children.Where(m => !Model.ValidSubscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicId == m.Code)));
             }
             else
             {
@@ -107,7 +107,7 @@
                     {
                         <li class="main-menu__section-wrapper">
                             <ul>
-                                @foreach (var navigationChild in Model.Preferencelst != null ? Nav.Children.Where(p => !Model.Preferencelst.Children.Any(p2 => p2.Text == p.Text)) : Nav.Children)
+                                @foreach (var navigationChild in Model.Preferencelst != null ? Nav.Children.Where(p => !Model.Preferencelst.Children.Any(p2 => p2.Code == p.Code)) : Nav.Children)
                                 {
                                     <li class="main-menu__hoverable">
                                         <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link">@navigationChild.Text</a>

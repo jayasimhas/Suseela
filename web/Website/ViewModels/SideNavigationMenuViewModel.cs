@@ -60,6 +60,11 @@ namespace Informa.Web.ViewModels
         public Navigation Preferencelst { get; set; }
         public Navigation MyViewPreferences => GetUserPreferences();
         #endregion
+
+        /// <summary>
+        /// Get NAvigation URL for My View Items
+        /// </summary>
+        /// <returns>friendly URL</returns>
         private string GetNavigationUrl()
         {
             if (IsAuthenticated)
@@ -88,77 +93,48 @@ namespace Informa.Web.ViewModels
         public Navigation GetUserPreferences()
         {
             #region reading actual preferences
-            //var navigation = new Navigation();
-            //navigation.Children = new List<INavigation>();
-            //var preferredChannels = new List<Navigation>();
-            //IUserPreferences prefChannels = new UserPreferences();
-            //if (IsAuthenticated)
-            //{
-            //    var channelPages = GlobalService.GetItem<IChannels_Page>(GlassModel?._Id.ToString()).
-            //    _ChildrenWithInferType.OfType<IChannel_Page>();
+            var navigation = new Navigation();
+            navigation.Children = new List<INavigation>();
+            var preferredChannels = new List<Navigation>();
+            IUserPreferences prefChannels = new UserPreferences();
+            if (IsAuthenticated)
+            {
+                var channelPages = GlobalService.GetItem<IChannels_Page>(GlassModel?._Id.ToString()).
+                _ChildrenWithInferType.OfType<IChannel_Page>();
 
-            //    //channel based navigation
-            //    if (UserPreferences != null && UserPreferences.Preferences != null &&
-            //    UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
-            //    {
-            //        foreach (var preference in UserPreferences.Preferences.PreferredChannels)
-            //        {
-            //            if (string.IsNullOrWhiteSpace(preference.ChannelId) && string.IsNullOrWhiteSpace(preference.ChannelName))
-            //            {
-            //                preferredChannels.Add(new Navigation { Text = preference.ChannelName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.ChannelName).Select(n => n.LinkableUrl).ToString() } });
-            //            }
-            //        }
-            //        navigation.Children = preferredChannels;
-            //    }
-            //    //Topic based navigation
-            //    else if (UserPreferences != null && UserPreferences.Preferences != null &&
-            //    UserPreferences.Preferences.PreferredTopics != null && UserPreferences.Preferences.PreferredTopics.Count > 0)
-            //    {
-            //        foreach (var preference in UserPreferences.Preferences.PreferredTopics)
-            //        {
-            //            if (string.IsNullOrWhiteSpace(preference.TopicId) && string.IsNullOrWhiteSpace(preference.TopicName))
-            //            {
-            //                preferredChannels.Add(new Navigation { Text = preference.TopicName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.TopicName).Select(n => n.LinkableUrl).ToString() } });
-            //            }
-            //        }
-            //        navigation.Children = preferredChannels;
-            //    }
-            //    return navigation;
-            //}
-            //else
-            //{
-            //    return null;
-            //}
+                //channel based navigation
+                if (UserPreferences != null && UserPreferences.Preferences != null &&
+                UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
+                {
+                    foreach (var preference in UserPreferences.Preferences.PreferredChannels)
+                    {
+                        if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && !string.IsNullOrWhiteSpace(preference.ChannelName))
+                        {
+                            preferredChannels.Add(new Navigation {  Code= preference.ChannelCode, Text = preference.ChannelName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.ChannelName).Select(n => n.LinkableUrl).ToString() } });
+                        }
+                    }
+                    navigation.Children = preferredChannels;
+                }
+                //Topic based navigation
+                else if (UserPreferences != null && UserPreferences.Preferences != null &&
+                UserPreferences.Preferences.PreferredTopics != null && UserPreferences.Preferences.PreferredTopics.Count > 0)
+                {
+                    foreach (var preference in UserPreferences.Preferences.PreferredTopics)
+                    {
+                        if (!string.IsNullOrWhiteSpace(preference.TopicCode) && !string.IsNullOrWhiteSpace(preference.TopicName))
+                        {
+                            preferredChannels.Add(new Navigation {  Code= preference.TopicCode, Text = preference.TopicName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.TopicName).Select(n => n.LinkableUrl).ToString() } });
+                        }
+                    }
+                    navigation.Children = preferredChannels;
+                }
+                return navigation;
+            }
+            else
+            {
+                return null;
+            }
 
-            #endregion
-
-            #region hardcoded data
-            var tempObj = new Navigation();
-            var children = new List<Navigation>();
-            tempObj.Children = new List<INavigation>();
-
-            tempObj.Text = "My View";
-            tempObj.Link = new Link { Url = @"http://facebook.com" };
-
-            var Prefdchannel = new UserPreferences();
-            Prefdchannel.PreferredChannels = new List<Channel>();
-            var channel = new Channel();
-            channel.ChannelName = "Beverages";
-            channel.ChannelOrder = 1;
-            channel.ChannelLink = @"http://google.com";
-
-            children.Add(new Navigation { Text = channel.ChannelName, Link = new Link { Url = channel.ChannelLink } });
-
-            var channel1 = new Channel();
-            channel1.ChannelName = "Cocoa";
-            channel1.ChannelOrder = 2;
-            channel1.ChannelLink = @"http://yahoo.com";
-
-            children.Add(new Navigation { Text = channel1.ChannelName, Link = new Link { Url = channel1.ChannelLink } });
-
-            tempObj.Children = children;
-
-            return tempObj;
             #endregion
         }
 
@@ -169,61 +145,42 @@ namespace Informa.Web.ViewModels
         public IEnumerable<ISubscription> GetValidSubscriptions()
         {
             #region reading actual subscriptions
-            //var subscriptions = new List<ISubscription>();
-            //var channelSubscriptions = new List<ChannelSubscription>();
-            //var topicSubscriptions = new List<TopicSubscription>();
-            //if (IsAuthenticated)
-            //{
-            //    //channel base subscriptions
-            //    if (UserSubcriptions != null && UserSubcriptions.Subscriptions!=null&& UserSubcriptions.Subscriptions.SelectMany(n=>n.SubscribedChannels).ToList()!=null)
-            //    {
-            //        foreach (var subscription in UserSubcriptions.Subscriptions.SelectMany(n=>n.SubscribedChannels))
-            //        {
-            //            if (subscription != null && subscription.ExpirationDate > DateTime.Now)
-            //            {
-            //                channelSubscriptions.Add(subscription);
-            //            }
-            //        }
-            //        subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions });
-            //    }
-            //    else if(UserSubcriptions != null && UserSubcriptions.Subscriptions != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics).ToList() != null)
-            //    {
-            //        foreach (var subscription in UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics))
-            //        {
-            //            if (subscription != null && subscription.ExpirationDate > DateTime.Now)
-            //            {
-            //                topicSubscriptions.Add(subscription);
-            //            }
-            //        }
-            //        subscriptions.Add(new SalesforceSubscription { SubscribedTopics = topicSubscriptions });
-            //    }
-            //    return subscriptions;
-            //}
-            //else
-            //{
-            //    return Enumerable.Empty<ISubscription>();
-            //}
-            #endregion
+            var subscriptions = new List<ISubscription>();
+            var channelSubscriptions = new List<ChannelSubscription>();
+            var topicSubscriptions = new List<TopicSubscription>();
+            if (IsAuthenticated)
+            {
+                //channel based subscriptions
+                if (UserSubcriptions != null && UserSubcriptions.Subscriptions != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedChannels).ToList() != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedChannels).Count() > 0)
+                {
+                    foreach (var subscription in UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedChannels))
+                    {
+                        if (subscription != null && subscription.ExpirationDate > DateTime.Now)
+                        {
+                            channelSubscriptions.Add(subscription);
+                        }
+                    }
+                    subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions });
+                }
 
-            #region hardcoded data for channel based subscription        
-            ISubscription subscription = new SalesforceSubscription();
-            var subscriptions = new List<ISubscription>();          
-            var Channelsubscriptions = new List<ChannelSubscription>();
-
-            var Channelsubscription1 = new ChannelSubscription();
-            Channelsubscription1.ChannelName = "Frozen Foods";
-            Channelsubscription1.ExpirationDate = new DateTime(2016, 10, 25);
-            Channelsubscriptions.Add(Channelsubscription1);
-
-
-            var Channelsubscription2 = new ChannelSubscription();
-            Channelsubscription2.ChannelName = "Dairy";
-            Channelsubscription2.ExpirationDate = new DateTime(2016, 10, 25);
-            Channelsubscriptions.Add(Channelsubscription2);
-
-            subscriptions.Add(new SalesforceSubscription { SubscribedChannels = Channelsubscriptions });
-
-            return subscriptions;
+                //Topic based subscriptions
+                else if (UserSubcriptions != null && UserSubcriptions.Subscriptions != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics).ToList() != null&& UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics).Count()>0)
+                {
+                    foreach (var subscription in UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics))
+                    {
+                        if (subscription != null && subscription.ExpirationDate > DateTime.Now)
+                        {
+                            topicSubscriptions.Add(subscription);
+                        }
+                    }
+                    subscriptions.Add(new SalesforceSubscription { SubscribedTopics = topicSubscriptions });
+                }
+                return subscriptions;
+            }
+            else
+            {
+                return Enumerable.Empty<ISubscription>();
+            }
             #endregion
         }
     }

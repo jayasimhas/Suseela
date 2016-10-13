@@ -82,10 +82,11 @@ namespace Informa.Library.Navigation
 		public Navigation CreateNavigation(INavigation_Link navigationLinkItem)
 		{
 			return new Navigation
-			{
+			{ 
 				Link = navigationLinkItem.Navigation_Link,
-				Text = string.IsNullOrWhiteSpace(navigationLinkItem.Navigation_Text) ? (navigationLinkItem.Navigation_Link == null ? navigationLinkItem._Name : navigationLinkItem.Navigation_Link.Text) : navigationLinkItem.Navigation_Text
-			};
+				Text = string.IsNullOrWhiteSpace(navigationLinkItem.Navigation_Text) ? (navigationLinkItem.Navigation_Link == null ? navigationLinkItem._Name : navigationLinkItem.Navigation_Link.Text) : navigationLinkItem.Navigation_Text,
+                Code= navigationLinkItem.Navigation_Code
+            };
 		}
 
 		public IEnumerable<INavigation_Link> GetChildLinkItems(IGlassBase item)
