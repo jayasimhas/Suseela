@@ -122,6 +122,10 @@ function formController(opts) {
 							if($(form).data('on-success')) {
 								window.location.href = $(currentForm).data('on-success');
 							}
+
+							if(response.redirectRequired !== undefined && response.redirectRequired){
+							    window.location.href = response.redirectUrl;
+							 }
 						}
 						else {
 							if (response.reasons && response.reasons.length > 0) {

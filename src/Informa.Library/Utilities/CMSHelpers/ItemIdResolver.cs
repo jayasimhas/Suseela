@@ -29,7 +29,6 @@ namespace Informa.Library.Utilities.CMSHelpers
         {
             string itemId = string.Empty;
             itemResolver = new ItemIdResolver();
-            //Get vertical name based on current context
             var vertical = itemResolver.GetVerticalName();           
             if (vertical!=null && !string.IsNullOrEmpty(vertical._Path))
             {
@@ -72,7 +71,7 @@ namespace Informa.Library.Utilities.CMSHelpers
 
             foreach (XmlNode node in Factory.GetConfigNodes("settings/setting"))
             {
-                if(XmlUtil.GetAttribute("name", node).StartsWith("Content."))
+                if(XmlUtil.GetAttribute("name", node).StartsWith("Content.") || XmlUtil.GetAttribute("name", node).EndsWith(".pharma"))
                     ItemSetting.Add(XmlUtil.GetAttribute("name", node), XmlUtil.GetAttribute("value", node));
             }
 
