@@ -28,7 +28,6 @@ import './components/article-sidebar-component';
 import './components/save-search-component';
 import './components/myview-settings';
 import './components/pagination';
-import './components/personalisation';
 
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
@@ -188,6 +187,23 @@ $(document).ready(function() {
 		});
 	}
 	window.dismiss();
+	
+	window.custom_label = function() {
+		$("body").off().on("click", '.label-check:not(.wcs-inactive)', function(e) {
+			if($(this).hasClass("wcs-label-check")) {
+				// Fix to stop click event triggering twice
+				e.preventDefault();
+				var ele = $(this).find('input');
+				if(ele.is(':checked')){
+				  ele.prop('checked', false);        
+				}else{
+				  ele.prop('checked', true);
+				}
+			}
+		});
+	
+	}
+	window.custom_label();
 	
 	window.personalised_nav = function() {
 	//personalise pop up

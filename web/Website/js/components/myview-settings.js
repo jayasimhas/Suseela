@@ -115,6 +115,17 @@ $(function(){
 		$('.mobshowView').addClass('desktophide');
 		
 	}
+	
+	$('.publicationPan.donesubscribe').dragswap({
+		element : '.table tbody tr',
+		dropAnimation: true  
+	}); 
+	
+	$('#allPublicationsPan').dragswap({
+		element : '.publicationPan.donesubscribe',
+		dropAnimation: true  
+	}); 
+
 });
 
 
