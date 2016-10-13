@@ -189,19 +189,20 @@ $(document).ready(function() {
 	window.dismiss();
 	
 	window.custom_label = function() {
-		$("body").off().on("click", '.label-check:not(.wcs-inactive)', function(e) {
-			if($(this).hasClass("wcs-label-check")) {
-				// Fix to stop click event triggering twice
-				e.preventDefault();
+		$("body").off().on("click", '.label-check', function(e) {
+			if($(this).hasClass("label-check")) {
+				
 				var ele = $(this).find('input');
 				if(ele.is(':checked')){
-				  ele.prop('checked', false);        
+				  ele.prop('checked', false);
+				  ele.parent('div').removeClass('wcs-c-on');
 				}else{
 				  ele.prop('checked', true);
+				  ele.parent('div').addClass('wcs-c-on');
 				}
 			}
 		});
-	
+		
 	}
 	window.custom_label();
 	

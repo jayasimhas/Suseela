@@ -9,8 +9,27 @@
 			.next_right{
 				display: inline;
 				float: right;
-				a{
-					color: $color-zeus-black;
+				position: relative;
+				margin-right: 1rem;
+				top: 15px;
+				.step{
+					@include textMix('Roboto', 1rem, 400);
+					font-style: normal;
+					margin-right: 15px;
+					vertical-align: middle;
+				}
+				button{
+				   padding: 0.7rem 3.3rem;
+				   @include textMix('Roboto', 0.8125rem, 700);
+				   font-style: normal;
+				   color: $color-zeus-black;
+				   text-transform: uppercase;
+				}
+				@include breakpoint('small'){
+					display: none;
+				}
+				@include breakpoint('medium-small'){
+					display: none;
 				}
 			}
 		}
@@ -20,29 +39,83 @@
 			clear: both;
 			margin-bottom: 1.25rem;
 			padding: 1rem;
+			float:left;
+			position: relative;
+			width: 100%;
+			p{
+			    @include textMix('Roboto', 0.875rem, 400);
+				font-style: normal;
+				line-height: 30px;
+				.latest_newsletter{
+					color: $color-persian-red;
+				}
+			}
 			.site_div{
 				h1{ display: inline-flex;}
+				.newsletter_checkbox{
+				    @include breakpoint('small'){
+						display: none;
+					}
+					@include breakpoint('medium-small'){
+						display: none;
+					}
+				}
+			}	
 				.newsletter_checkbox{
 					display: inline;
 					float: right;
 					border: 1px solid $color-pumpkin-orange;
 					background: $color-white;
-					padding: 0.3125rem;
+					padding: 0.3125rem 0.5625rem;
 					text-transform:  uppercase;
 					@include textMix('Roboto', 0.75rem, 700);
 				    font-style: normal;
 					position: relative;
+					input[type="checkbox"]{
+						margin-right: 5px;
+					}
 					.chk_box{
 						background: url('/dist/img/chk-boxes.png');
 						background-repeat: no-repeat;
-						width:33px;
+						width:16px;
 						height:16px;
 						position: absolute;
-						left:3px;
+						left:5px;
 						cursor: pointer;
+					}
+					&.wcs-c-on{
+						background-color: $color-pumpkin-orange;
+						color: $color-white;
+					  .chk_box{
+						background-position: 0 -17px;
+						background-color: $color-pumpkin-orange;
+					  }
+					}
+					
+				}
+			
+			.mobile{
+				display: none;
+				clear: both;
+				@include breakpoint('small'){
+					display: block;
+					.newsletter_checkbox{
+						float: left;
+						margin-top:10px;
+						margin-bottom:5px;
+					}
+				}
+				@include breakpoint('medium-small'){
+					display: block;
+					.newsletter_checkbox{
+						float: left;
+						margin-top:10px;
+						margin-bottom:5px;
 					}
 				}
 			}
+			
+			
 		}
 		.registrationSubmit_div{
 			clear: both;
@@ -55,9 +128,41 @@
 				display: inline;
 				float: left;
 				.checkbox-label{
-					margin-left: 1rem;
+					margin-left: 1.7rem;
+					@include textMix('Roboto', 0.875rem, 400);
+				    font-style: normal;
+					display: table;
+					margin-top: -1.7rem;
+					line-height:30px;
 				}
 				@include breakpoint('small'){
+					width: 100%;
+					clear: both;
+					display: block;
+				}
+				.chk_box{
+					background: url('/dist/img/chk-boxes.png');
+					background-repeat: no-repeat;
+					width:16px;
+					height:16px;
+					position: absolute;
+					left:0;
+					top:3px;
+					cursor: pointer;
+					background-position: 0 -34px;
+				}
+				&.wcs-c-on{
+					  .chk_box{
+						background-position: 0 -17px;
+						background-color: $color-pumpkin-orange;
+					  }
+				}
+				@include breakpoint('small'){
+					width: 100%;
+					clear: both;
+					display: block;
+				}
+				 @include breakpoint('medium-small'){
 					width: 100%;
 					clear: both;
 					display: block;
@@ -66,11 +171,30 @@
 			.page-account__submit-wrapper{
 			   float: right;
 			   width: 40%;
+			   position: relative;
 			   @include breakpoint('small'){
 					width: 100%;
 					clear: both;
 					display: block;
-				} 
+				}
+				 @include breakpoint('medium-small'){
+					width: 100%;
+					clear: both;
+					display: block;
+				}
+				.step{
+					@include textMix('Roboto', 1rem, 400);
+					font-style: normal;
+					margin-right: 15px;
+					vertical-align: middle;
+				}
+				button{
+				   padding: 0.7rem 3.3rem;
+				   @include textMix('Roboto', 0.8125rem, 700);
+				   font-style: normal;
+				   color: $color-zeus-black;
+				   text-transform: uppercase;
+				}
 			}
 		}
 	}
