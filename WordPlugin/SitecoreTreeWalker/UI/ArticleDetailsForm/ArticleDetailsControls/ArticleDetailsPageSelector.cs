@@ -304,7 +304,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls
                 MessageBox.Show("Vertical Information Not Available.",@"Informa",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 return;
             }
-            if (PluginSingletonVerticalRoot.Instance.CurrentVertical.TaxonomyItem.ID == default(Guid))
+            if (PluginSingletonVerticalRoot.Instance.CurrentVertical.TaxonomyItem.Name == null)
             {
                 //MessageBox.Show("Taxonomy not exists fot vertical.",@"Informa",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 return;

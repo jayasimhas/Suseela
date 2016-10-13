@@ -1,6 +1,6 @@
 .register{
 	.register_newsletter{
-		div{
+		div.page-registration{
 			display: block;
 			position: relative;
 			.page-registration__header{
@@ -20,6 +20,29 @@
 			clear: both;
 			margin-bottom: 1.25rem;
 			padding: 1rem;
+			.site_div{
+				h1{ display: inline-flex;}
+				.newsletter_checkbox{
+					display: inline;
+					float: right;
+					border: 1px solid $color-pumpkin-orange;
+					background: $color-white;
+					padding: 0.3125rem;
+					text-transform:  uppercase;
+					@include textMix('Roboto', 0.75rem, 700);
+				    font-style: normal;
+					position: relative;
+					.chk_box{
+						background: url('/dist/img/chk-boxes.png');
+						background-repeat: no-repeat;
+						width:33px;
+						height:16px;
+						position: absolute;
+						left:3px;
+						cursor: pointer;
+					}
+				}
+			}
 		}
 		.registrationSubmit_div{
 			clear: both;
