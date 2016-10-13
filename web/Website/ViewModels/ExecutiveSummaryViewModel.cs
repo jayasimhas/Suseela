@@ -15,7 +15,7 @@ namespace Informa.Web.ViewModels {
         private readonly IAccountManagementService AccountService;
         private readonly IItemReferences ItemReferences;
 
-        public ExecutiveSummaryViewModel(
+		public ExecutiveSummaryViewModel(
             ITextTranslator textTranslator,
             IAccountManagementService accountService,
             IItemReferences itemReferences)
@@ -23,10 +23,12 @@ namespace Informa.Web.ViewModels {
             TextTranslator = textTranslator;
             AccountService = accountService;
             ItemReferences = itemReferences;
-        }
+		}
 
         public string ExecutiveSummary => TextTranslator.Translate("SharedContent.ExecutiveSummary");
 
-        public bool ShowSummary => AccountService.IsUserRestricted(GlassModel) || (AccountService.IsPageRestrictionSet(GlassModel) && GlassModel.Show_Summary_When_Entitled);
+		public bool IsArticlePage => GlassModel is IArticle;
+
+		public bool ShowSummary => AccountService.IsUserRestricted(GlassModel) || (AccountService.IsPageRestrictionSet(GlassModel) && GlassModel.Show_Summary_When_Entitled);
     }
 }
