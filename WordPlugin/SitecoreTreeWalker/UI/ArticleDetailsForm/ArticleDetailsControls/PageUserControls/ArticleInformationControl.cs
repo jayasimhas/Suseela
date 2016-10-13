@@ -905,7 +905,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 
         private void uxPublication_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UpdateAuthorsList();
+            //UpdateAuthorsList(veticalGuid);
             IndicateChanged();
         }
 
@@ -961,6 +961,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                 InitializePublications(verticalStruct.Publications);
 
                 PluginSingletonVerticalRoot.Instance.CurrentVertical = verticalStruct;
+
+                UpdateAuthorsList();
                 OnVerticalItemChanged?.Invoke();//Message the vertical changes to the subscriber
             }
             else
