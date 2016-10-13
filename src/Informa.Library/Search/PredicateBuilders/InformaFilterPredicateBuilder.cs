@@ -95,14 +95,7 @@ namespace Informa.Library.Search.PredicateBuilders
 			{
 				predicate = predicate.And(x => x.AuthorFullNames.Contains(_request.QueryParameters[Constants.QueryString.AuthorFullName]));
 			}
-
-			if (_request.QueryParameters.ContainsKey(Constants.QueryString.Publication))
-			{
-				predicate =
-					predicate.And(
-						x => x.PublicationTitle.Equals(_request.QueryParameters[Constants.QueryString.Publication]));
-			}
-            return predicate;
+			return predicate;
         }
     }
 }
