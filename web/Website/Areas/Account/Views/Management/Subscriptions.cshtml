@@ -58,7 +58,7 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody aria-live="polite" aria-relevant="all">
+                    <tbody class="hidden-xs" aria-live="polite" aria-relevant="all">
 
 
                         @{
@@ -67,69 +67,7 @@
                             {
                                 string parentrow = "ptc" + i;
                                 string active = item.IsCurrentPublication ? "active" : string.Empty;
-                                @*Mobile section Starts*@
-                                <tr class="hidden-lg" role="row">
-                                    <td colspan="4">
-                                        <div class="tableMrow">
-                                            <div class="title maintitle active">@Model.PublicationText</div>
-                                            <div class="pubName">@item.Publication</div>
-                                            <div class="pubSubscribe">
-                                                @if (item.Renewable)
-                                                {
-                                                    <a class="button button--outline click-utag"
-                                                       data-info='{"event_name": "subscription_renew"}'
-                                                       href="@Model.OffSiteRenewLink">
-                                                        @Model.Renew
-                                                    </a>
-                                                }
-                                                @if (item.Subscribable)
-                                                {
-                                                    <a class="button button--outline click-utag"
-                                                       data-info='{"event_name": "subscription_subscribe"}'
-                                                       href="@Model.OffSiteSubscriptionLink">
-                                                        @Model.Subscribe
-                                                    </a>
-                                                }
-                                            </div>
-                                            <div class="title">@Model.ExpirationDateText</div>
-                                            <div class="sortable-table__col">
-                                                @item.Expiration.ToString("d MMMM yyyy")
-                                            </div>
-                                            @if (item.TaxonomyItems != null && item.TaxonomyItems.Any())
-                                            {
-                                                <div class="subjects">
-                                                    <div class="hidden-lg title">Subjects</div>
-                                                    @foreach (var taxonomy in item.TaxonomyItems)
-                                                    {
-                                                        <div class="tablerow clearfix">
-                                                            <div class="pubName">@taxonomy.Item_Name</div>
-                                                            <div class="pubSubscribe">
-                                                                @if (item.Renewable)
-                                                                {
-                                                                    <a class="button button--outline click-utag"
-                                                                       data-info='{"event_name": "subscription_renew"}'
-                                                                       href="@Model.OffSiteRenewLink">
-                                                                        @Model.Renew
-                                                                    </a>
-                                                                }
-                                                                @if (item.Subscribable)
-                                                                {
-                                                                    <a class="button button--outline click-utag"
-                                                                       data-info='{"event_name": "subscription_subscribe"}'
-                                                                       href="@Model.OffSiteSubscriptionLink">
-                                                                        @Model.Subscribe
-                                                                    </a>
-                                                                }
-                                                            </div>
-                                                        </div>
-                                                    }
 
-                                                </div>
-                                            }
-                                        </div>
-                                    </td>
-                                </tr>
-                                @*Mobile Section Ends*@
                                 @*Desktop section Starts*@
                                 <tr class="parent @parentrow @active hidden-xs" role="row">
                                     <td colspan="2" class="sortable-table__col"><span class="accordian"></span> @item.Publication</td>
@@ -158,7 +96,7 @@
                                 {
                                     string childrow = "tc" + i;
                                     foreach (var taxonomy in item.TaxonomyItems)
-                                    {
+                                        {
                                         <tr class="child @childrow hidden-xs" role="row">
                                             <td></td>
                                             <td class="hidden-lg" colspan="2">@taxonomy.Item_Name</td>
@@ -190,9 +128,79 @@
                         }
                     </tbody>
                 </table>
+                @{
+                    @*Mobile section Starts*@
+                foreach (var item in Model.SubscriptionViewModels)
+                {
+
+                        <div class="hidden-lg">
+                            <div class="tableMrow">
+                                <div class="title maintitle active">@Model.PublicationText</div>
+                                <div class="pubName">@item.Publication</div>
+                                <div class="pubSubscribe">
+                                    @if (item.Renewable)
+                                    {
+                                        <a class="button button--outline click-utag"
+                                           data-info='{"event_name": "subscription_renew"}'
+                                           href="@Model.OffSiteRenewLink">
+                                            @Model.Renew
+                                        </a>
+                                    }
+                                    @if (item.Subscribable)
+                                    {
+                                        <a class="button button--outline click-utag"
+                                           data-info='{"event_name": "subscription_subscribe"}'
+                                           href="@Model.OffSiteSubscriptionLink">
+                                            @Model.Subscribe
+                                        </a>
+                                    }
+                                </div>
+                                <div class="title">@Model.ExpirationDateText</div>
+                                <div class="sortable-table__col">
+                                    @item.Expiration.ToString("d MMMM yyyy")
+                                </div>
+                                @if (item.TaxonomyItems != null && item.TaxonomyItems.Any())
+                                {
+                                    <div class="subjects">
+                                        <div class="hidden-lg title">Subjects</div>
+                                        @foreach (var taxonomy in item.TaxonomyItems)
+                                        {
+                                            <div class="tablerow clearfix">
+                                                <div class="pubName">@taxonomy.Item_Name</div>
+                                                <div class="pubSubscribe">
+                                                    @if (item.Renewable)
+                                                    {
+                                                        <a class="button button--outline click-utag"
+                                                           data-info='{"event_name": "subscription_renew"}'
+                                                           href="@Model.OffSiteRenewLink">
+                                                            @Model.Renew
+                                                        </a>
+                                                    }
+                                                    @if (item.Subscribable)
+                                                    {
+                                                        <a class="button button--outline click-utag"
+                                                           data-info='{"event_name": "subscription_subscribe"}'
+                                                           href="@Model.OffSiteSubscriptionLink">
+                                                            @Model.Subscribe
+                                                        </a>
+                                                    }
+                                                </div>
+                                            </div>
+                                        }
+
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                }
+                @*Mobile section Ends*@
+                }
             </div>
         </div>
     </div>
+<script src="/dist/js/jquery-3.1.1.js"></script>
+<script src="/dist/js/jquery.tablesorter.js"></script>
+<script src="/dist/js/table-childssorter.js"></script>
 }
 else
 {
