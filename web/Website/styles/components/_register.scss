@@ -10,14 +10,12 @@
 				display: inline;
 				float: right;
 				position: relative;
-				width: 25%;
 				margin-right: 1rem;
 				top: 15px;
 				.step{
 					@include textMix('Roboto', 1rem, 400);
 					font-style: normal;
-					position: absolute;
-					top: 5px;
+					margin-right: 15px;
 				}
 				button{
 				   padding: 0.7rem 3.3rem;
@@ -25,6 +23,12 @@
 				   font-style: normal;
 				   color: $color-zeus-black;
 				   text-transform: uppercase;
+				}
+				@include breakpoint('small'){
+					display: none;
+				}
+				@include breakpoint('medium-small'){
+					display: none;
 				}
 			}
 		}
@@ -34,15 +38,28 @@
 			clear: both;
 			margin-bottom: 1.25rem;
 			padding: 1rem;
+			float:left;
+			position: relative;
+			width: 100%;
 			p{
 			    @include textMix('Roboto', 0.875rem, 400);
 				font-style: normal;
+				line-height: 30px;
 				.latest_newsletter{
 					color: $color-persian-red;
 				}
 			}
 			.site_div{
 				h1{ display: inline-flex;}
+				.newsletter_checkbox{
+				    @include breakpoint('small'){
+						display: none;
+					}
+					@include breakpoint('medium-small'){
+						display: none;
+					}
+				}
+			}	
 				.newsletter_checkbox{
 					display: inline;
 					float: right;
@@ -73,8 +90,31 @@
 						background-color: $color-pumpkin-orange;
 					  }
 					}
+					
+				}
+			
+			.mobile{
+				display: none;
+				clear: both;
+				@include breakpoint('small'){
+					display: block;
+					.newsletter_checkbox{
+						float: left;
+						margin-top:10px;
+						margin-bottom:5px;
+					}
+				}
+				@include breakpoint('medium-small'){
+					display: block;
+					.newsletter_checkbox{
+						float: left;
+						margin-top:10px;
+						margin-bottom:5px;
+					}
 				}
 			}
+			
+			
 		}
 		.registrationSubmit_div{
 			clear: both;
@@ -87,11 +127,41 @@
 				display: inline;
 				float: left;
 				.checkbox-label{
-					margin-left: 1rem;
+					margin-left: 1.7rem;
 					@include textMix('Roboto', 0.875rem, 400);
 				    font-style: normal;
+					display: table;
+					margin-top: -1.3rem;
+					line-height:30px;
 				}
 				@include breakpoint('small'){
+					width: 100%;
+					clear: both;
+					display: block;
+				}
+				.chk_box{
+					background: url('/dist/img/chk-boxes.png');
+					background-repeat: no-repeat;
+					width:16px;
+					height:16px;
+					position: absolute;
+					left:0;
+					top:3px;
+					cursor: pointer;
+					background-position: 0 -34px;
+				}
+				&.wcs-c-on{
+					  .chk_box{
+						background-position: 0 -17px;
+						background-color: $color-pumpkin-orange;
+					  }
+				}
+				@include breakpoint('small'){
+					width: 100%;
+					clear: both;
+					display: block;
+				}
+				 @include breakpoint('medium-small'){
 					width: 100%;
 					clear: both;
 					display: block;
@@ -102,6 +172,11 @@
 			   width: 40%;
 			   position: relative;
 			   @include breakpoint('small'){
+					width: 100%;
+					clear: both;
+					display: block;
+				}
+				 @include breakpoint('medium-small'){
 					width: 100%;
 					clear: both;
 					display: block;
