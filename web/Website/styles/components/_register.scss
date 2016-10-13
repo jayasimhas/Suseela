@@ -4,7 +4,7 @@
 			display: block;
 			position: relative;
 			.page-registration__header{
-				display: inline;
+				display: inline-flex;
 			}
 			.next_right{
 				display: inline;
@@ -15,12 +15,40 @@
 			}
 		}
 		.newsletter_box{
-			height: 130px;
 			background-color:$color-concrete-gray;
 			border: 1px solid $color-light-gray;
 			clear: both;
 			margin-bottom: 1.25rem;
 			padding: 1rem;
+		}
+		.registrationSubmit_div{
+			clear: both;
+			display: block;
+			width: 100%;
+			float: left;
+			position: relative;
+			.page-registration__labeled-checkbox{
+				width: 50%;
+				display: inline;
+				float: left;
+				.checkbox-label{
+					margin-left: 1rem;
+				}
+				@include breakpoint('small'){
+					width: 100%;
+					clear: both;
+					display: block;
+				}
+			}
+			.page-account__submit-wrapper{
+			   float: right;
+			   width: 40%;
+			   @include breakpoint('small'){
+					width: 100%;
+					clear: both;
+					display: block;
+				} 
+			}
 		}
 	}
 }

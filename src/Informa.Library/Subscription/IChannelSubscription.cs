@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Informa.Library.Subscription
+{
+    public interface IChannelSubscription
+    {
+        string ChannelId { get; set; }
+        string ChannelName { get; set; }
+        DateTime ExpirationDate { get; set; }
+    }
+}
