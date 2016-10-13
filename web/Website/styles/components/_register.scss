@@ -1,0 +1,54 @@
+.register{
+	.register_newsletter{
+		div{
+			display: block;
+			position: relative;
+			.page-registration__header{
+				display: inline-flex;
+			}
+			.next_right{
+				display: inline;
+				float: right;
+				a{
+					color: $color-zeus-black;
+				}
+			}
+		}
+		.newsletter_box{
+			background-color:$color-concrete-gray;
+			border: 1px solid $color-light-gray;
+			clear: both;
+			margin-bottom: 1.25rem;
+			padding: 1rem;
+		}
+		.registrationSubmit_div{
+			clear: both;
+			display: block;
+			width: 100%;
+			float: left;
+			position: relative;
+			.page-registration__labeled-checkbox{
+				width: 50%;
+				display: inline;
+				float: left;
+				.checkbox-label{
+					margin-left: 1rem;
+				}
+				@include breakpoint('small'){
+					width: 100%;
+					clear: both;
+					display: block;
+				}
+			}
+			.page-account__submit-wrapper{
+			   float: right;
+			   width: 40%;
+			   @include breakpoint('small'){
+					width: 100%;
+					clear: both;
+					display: block;
+				} 
+			}
+		}
+	}
+}

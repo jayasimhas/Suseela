@@ -795,6 +795,22 @@ $(function () {
 		}
 		console.log(JSON.stringify(createtableData));
 	});
+
+	if (window.matchMedia('(max-width: 630px)').matches) {
+		$('.mobshowView').removeClass('desktophide');
+	} else {
+		$('.mobshowView').addClass('desktophide');
+	}
+
+	$('.publicationPan.donesubscribe').dragswap({
+		element: '.table tbody tr',
+		dropAnimation: true
+	});
+
+	$('#allPublicationsPan').dragswap({
+		element: '.publicationPan.donesubscribe',
+		dropAnimation: true
+	});
 });
 
 },{}],6:[function(require,module,exports){
@@ -872,6 +888,20 @@ $(function () {
 	});
 	$('.pagination span a:eq(0)').click();
 	$('.pagination a:eq(0)').removeAttr('href');
+
+	$('.sortable-table__header').on('click', '.sortable-table__col', function () {
+		var $this = $(this),
+		    table = $this.closest('.sortable-table'),
+		    tbodytrs = table.find('tbody tr');
+		setTimeout(function () {
+			tbodytrs.removeAttr('style');
+			if (!$('.pagination span a:eq(0)').hasClass('active')) {
+				$('.pagination span a:eq(0)').click();
+			} else {
+				paginationCur(0, defaults.categoryLimit);
+			}
+		}, 1);
+	});
 });
 
 },{}],7:[function(require,module,exports){
@@ -1377,6 +1407,10 @@ function formController(opts) {
 
 							if ($(form).data('on-success')) {
 								window.location.href = $(currentForm).data('on-success');
+							}
+
+							if (response.redirectRequired !== undefined && response.redirectRequired) {
+								window.location.href = response.redirectUrl;
 							}
 						} else {
 							if (response.reasons && response.reasons.length > 0) {
@@ -2862,6 +2896,23 @@ $(document).ready(function () {
         });
     };
     window.dismiss();
+
+    window.custom_label = function () {
+        $("body").off().on("click", '.label-check', function (e) {
+            if ($(this).hasClass("label-check")) {
+
+                var ele = $(this).find('input');
+                if (ele.is(':checked')) {
+                    ele.prop('checked', false);
+                    ele.parent('div').removeClass('wcs-c-on');
+                } else {
+                    ele.prop('checked', true);
+                    ele.parent('div').addClass('wcs-c-on');
+                }
+            }
+        });
+    };
+    window.custom_label();
 
     window.personalised_nav = function () {
         //personalise pop up
@@ -5593,9 +5644,6 @@ exports.toggleIcons = toggleIcons;
                 $(this).siblings().filter(settings.excludePatt).attr('draggable', true);
                 console.log('dropped');
                 settings.dropComplete();
-
-                $('#setbrowVal').val(true);
-                $('#setbrowVal').handleBrowser($('#setbrowVal').val(true));
             }
             return false;
         }
