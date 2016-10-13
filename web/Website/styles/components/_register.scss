@@ -16,6 +16,7 @@
 					@include textMix('Roboto', 1rem, 400);
 					font-style: normal;
 					margin-right: 15px;
+					vertical-align: middle;
 				}
 				button{
 				   padding: 0.7rem 3.3rem;
@@ -131,7 +132,7 @@
 					@include textMix('Roboto', 0.875rem, 400);
 				    font-style: normal;
 					display: table;
-					margin-top: -1.3rem;
+					margin-top: -1.7rem;
 					line-height:30px;
 				}
 				@include breakpoint('small'){
@@ -185,6 +186,7 @@
 					@include textMix('Roboto', 1rem, 400);
 					font-style: normal;
 					margin-right: 15px;
+					vertical-align: middle;
 				}
 				button{
 				   padding: 0.7rem 3.3rem;
