@@ -17,9 +17,9 @@ namespace Informa.Library.Utilities.References
 		public Guid NlmErrorDistributionList => new Guid("{54C6F361-9A73-453F-89E4-6230090C122A}");
         public Guid UserLockoutedEmails => new Guid("{8A553CE0-6AD6-4CC8-964C-BEAA9714F74B}");
         
-        #region Pharma Globals
+		#region Pharma Globals
 
-        public Guid NlmCopyrightStatement => new Guid("{EE38E489-23F7-4637-A152-3FDC696FAACF}");
+		public Guid NlmCopyrightStatement => new Guid("{EE38E489-23F7-4637-A152-3FDC696FAACF}");
 		public Guid InformaBar => new Guid("{F3082926-B856-4B48-8DD8-5D55573FE4F6}");
 
 		public Guid GeneratedDictionary => new Guid("{1B81B972-B282-46F0-89DF-6C1A25A68A92}");
@@ -28,7 +28,7 @@ namespace Informa.Library.Utilities.References
         #endregion
 
         #region Taxonomy Folders
-
+		public Guid GlobalTaxonomyFolder => new Guid("{E8A37C2D-FFE3-42D4-B38E-164584743832}");
         public Guid Folder => new Guid("{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}");
         public Guid SubjectsTaxonomyFolder => new Guid("{46D8B99F-4A19-4D67-A083-0EFE313154AC}");
 		public Guid RegionsTaxonomyFolder => new Guid("{5728D226-839C-44E3-B044-C88321A53421}");
@@ -46,7 +46,7 @@ namespace Informa.Library.Utilities.References
     public Guid IssueArchivedTemplate => new Guid("{6467B31C-4196-44EB-A215-EEC8F733FFF8}");
      
 
-    public Guid SubscriptionPage => new Guid("{39611772-CD97-4610-BB55-F96BE4C1F540}");
+		public Guid SubscriptionPage => new Guid("{39611772-CD97-4610-BB55-F96BE4C1F540}");
 
 		public Guid EmailPreferences => new Guid("{BAF1D4FB-7599-4EDA-8926-0A4995E4DC2D}");
 
@@ -70,7 +70,7 @@ namespace Informa.Library.Utilities.References
 		public Guid AccountPhoneTypes => new Guid("{361E7AC5-BF4B-4FD2-A840-5BE7457BBDD5}");
 		public Guid AccountSalutations => new Guid("{E7366564-0E17-43FF-8ECA-0BD9829392AC}");
 
-	  #endregion Account Contact Info Drop Downs
+		#endregion Account Contact Info Drop Downs
 
 		#region Templates
 
@@ -79,7 +79,7 @@ namespace Informa.Library.Utilities.References
 
 
 
-        #endregion
+		#endregion
 
         #region Restriction Access
 
@@ -87,5 +87,5 @@ namespace Informa.Library.Utilities.References
         public Guid FreeWithRegistration => new Guid("{1A8FB076-2CBF-4CD7-9D9C-92E2B4296D12}");
 
         #endregion Restriction Access
-    }
+	}
 }
