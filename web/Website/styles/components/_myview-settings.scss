@@ -464,6 +464,10 @@
 	-o-animation: drop 1s ease;
 	animation: drop 1s ease;
 }
+
+.followingrow.over{
+	background: $color-tree-poppy-orange;
+}
  
 @-moz-keyframes drop {
 	0%, 100% {
