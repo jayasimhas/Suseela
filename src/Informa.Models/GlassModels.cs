@@ -26971,6 +26971,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         I___BasePage MyView_Page { get; set; }
         [SitecoreField(ISite_ConfigConstants.Welcome_Message_Display_FrequencyFieldName, Setting = SitecoreFieldSettings.InferType)]
         int Welcome_Message_Display_Frequency { get; set; }
+        [SitecoreField(ISite_ConfigConstants.Welcome_Message_MyView_LinkUrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        I___BasePage Welcome_Message_MyView_LinkUrl { get; set; }
+        [SitecoreField(ISite_ConfigConstants.Welcome_Message_FindOutMore_LinkUrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        I___BasePage Welcome_Message_FindOutMore_LinkUrl { get; set; }
         /// <summary>
         /// The Ad Domain field.
         /// <para></para>
@@ -28679,6 +28683,12 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Welcome_Message_Display_FrequencyFieldId = new ID("2bce4993cc1f4afdbd50b9404b9059d0");
         public const string Welcome_Message_Display_FrequencyFieldName = "Welcome Message Display Frequency";
+
+        public static readonly ID Welcome_Message_MyView_LinkUrlFieldId = new ID("3c6989d29af546b28c219ad2bfce298c");
+        public const string Welcome_Message_MyView_LinkUrlFieldName = "Welcome Message MyView LinkUrl";
+
+        public static readonly ID Welcome_Message_FindOutMore_LinkUrlFieldId = new ID("4906d7ea75a743ee97f2eeebaac59450");
+        public const string Welcome_Message_FindOutMore_LinkUrlFieldName = "Welcome Message FindOutMore LinkUrl";
 
         public static readonly ID Ad_DomainFieldId = new ID("a933a49a-de33-48f4-957e-0211e00084a9");
         public const string Ad_DomainFieldName = "Ad Domain";
