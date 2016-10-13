@@ -153,11 +153,13 @@ title: Agri
 section: Colors
 ---
 ```example:color
-@color: #9E310D @name: Rosewood Red
+@color: #9E310D @name: primary
 @color: #F5821F @name: Pumpkin
+@color: #c12d3b @name: Persian Red
 ```
 */
 $color-primary-orange:      #9E310D;
 $color-pumpkin-orange:      #F5821F;
+$color-persian-red: #c12d3b;
 
 

@@ -71,7 +71,7 @@ namespace Informa.Library.Utilities.CMSHelpers
 
             foreach (XmlNode node in Factory.GetConfigNodes("settings/setting"))
             {
-                if(XmlUtil.GetAttribute("name", node).StartsWith("Content.") || XmlUtil.GetAttribute("name", node).EndsWith(".pharma"))
+                if(XmlUtil.GetAttribute("name", node).StartsWith("Content."))
                     ItemSetting.Add(XmlUtil.GetAttribute("name", node), XmlUtil.GetAttribute("value", node));
             }
 

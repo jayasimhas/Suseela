@@ -59,11 +59,11 @@ namespace InformaSitecoreWord.Sitecore
             }
         }
 
-        public static List<TaxonomyStruct> SearchTaxonomy(string term,Guid verticalTaxonomyGuid = default(Guid))
+        public static List<TaxonomyStruct> SearchTaxonomy(string term,Guid verticalGuid = default(Guid))
         {
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}SearchTaxonomy?searchTerm={term}&verticalTaxonomyGuid={verticalTaxonomyGuid}").Result;
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}SearchTaxonomy?searchTerm={term}&verticalTaxonomyGuid={verticalGuid}").Result;
                 var taxonomy = JsonConvert.DeserializeObject<List<TaxonomyStruct>>(response.Content.ReadAsStringAsync().Result);
                 return taxonomy??new List<TaxonomyStruct>();
             }
@@ -96,8 +96,7 @@ namespace InformaSitecoreWord.Sitecore
         /// <returns></returns>
         public static List<StaffStruct> LazyReadAuthors()
         {
-            //return _authors ?? (_authors = GetAuthors());
-            return GetAuthors();
+            return _authors ?? (_authors = GetAuthors());
         }
 
         /// <summary>
@@ -215,12 +214,9 @@ namespace InformaSitecoreWord.Sitecore
 
         private static List<StaffStruct> GetAuthors()
         {
-            Guid veticalGuid = default(Guid);
-            veticalGuid = PluginSingletonVerticalRoot.Instance.CurrentVertical.ID;
-
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors?veticalGuid={veticalGuid}").Result;
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors").Result;
                 var mediaItem = JsonConvert.DeserializeObject<List<StaffStruct>>(response.Content.ReadAsStringAsync().Result);
                 return mediaItem;
             }
@@ -331,13 +327,10 @@ namespace InformaSitecoreWord.Sitecore
 
         public static List<StaffStruct> GetStaffAndGroups()
         {
-            Guid veticalGuid = default(Guid);
-            veticalGuid = PluginSingletonVerticalRoot.Instance.CurrentVertical.ID;
-
             using (var client = new HttpClient(_handler, false))
             {
                 //TODO - This might change due to change in Staff and Authors
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors?veticalGuid={veticalGuid}").Result;
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors").Result;
                 var mediaItem = JsonConvert.DeserializeObject<List<StaffStruct>>(response.Content.ReadAsStringAsync().Result);
                 return mediaItem;
             }

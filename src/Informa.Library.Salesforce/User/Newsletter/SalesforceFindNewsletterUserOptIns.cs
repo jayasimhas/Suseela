@@ -20,25 +20,24 @@ namespace Informa.Library.Salesforce.User.Newsletter
 
         public IEnumerable<INewsletterUserOptIn> Find(string username)
         {
-            //         if (string.IsNullOrEmpty(username))
-            //         {
-            //             return Enumerable.Empty<INewsletterUserOptIn>();
-            //         }
+            if (string.IsNullOrEmpty(username))
+            {
+                return Enumerable.Empty<INewsletterUserOptIn>();
+            }
+            
+            var response = Service.Execute(s => s.queryEmailNewsletterOptins(username));
 
-            //         var response = Service.Execute(s => s.queryEmailNewsletterOptins(username));
+            if (!response.IsSuccess())
+            {
+                return Enumerable.Empty<INewsletterUserOptIn>();
+            }
 
-            //         if (!response.IsSuccess())
-            //         {
-            //             return Enumerable.Empty<INewsletterUserOptIn>();
-            //         }
+			var optIns = response.emailNewsletterOptins.Select(eno => OptInFactory.Create(
+				eno.optinName,
+				eno.IsReceivingEmailNewsletterSpecified && eno.IsReceivingEmailNewsletter.Value)
+			);
 
-            //var optIns = response.emailNewsletterOptins.Select(eno => OptInFactory.Create(
-            //	eno.optinName,
-            //	eno.IsReceivingEmailNewsletterSpecified && eno.IsReceivingEmailNewsletter.Value)
-            //);
-
-            //return optIns;
-            return Enumerable.Empty<INewsletterUserOptIn>();
-        }
+			return optIns;
+		}
     }
 }
