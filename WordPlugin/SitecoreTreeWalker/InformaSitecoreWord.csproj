@@ -738,8 +738,7 @@
     <ManifestCertificateThumbprint>BC3296A2B92276F90360B705843FDFDF43AB2D8D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>WorldPluginDevCertificate.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>WorldPluginDevCertificate.pfx</AssemblyOriginatorKeyFile>
