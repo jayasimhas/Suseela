@@ -77,9 +77,7 @@ $(function(){
 						});
 					  inverse = !inverse;
 					  }, 2);
-				}
-				
-			  
+				} 
 		  });
 	  });
 

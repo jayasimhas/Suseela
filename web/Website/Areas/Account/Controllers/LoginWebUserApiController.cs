@@ -59,11 +59,12 @@ namespace Informa.Web.Areas.Account.Controllers
 				}
 			}
 
-			return Ok(new
-			{
-				success = result.Success,
-				redirectUrl = redirectUrl
-			});
+            return Ok(new
+            {
+                success = result.Success,
+                redirectUrl = redirectUrl,
+                RedirectRequired = (request.IsSignInFromMyView && !string.IsNullOrWhiteSpace(redirectUrl)) ? true : false
+            });
 		}
 	}
 }

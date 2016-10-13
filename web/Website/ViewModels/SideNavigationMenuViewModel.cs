@@ -23,7 +23,7 @@ namespace Informa.Web.ViewModels
         protected readonly ITextTranslator TextTranslator;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly IUserPreferenceContext UserPreferences;
-        private readonly IUserSubscriptionsContext UserSubcriptions;
+        private readonly IEnumerable<ISubscription> _subcriptions;
         public readonly ICallToActionViewModel CallToActionViewModel;
         protected readonly ISiteRootContext SiterootContext;
         protected readonly IGlobalSitecoreService GlobalService;
@@ -42,7 +42,7 @@ namespace Informa.Web.ViewModels
             TextTranslator = textTranslator;
             AuthenticatedUserContext = authenticatedUserContext;
             UserPreferences = userPreferences;
-            UserSubcriptions = userSubscriptionsContext;
+            _subcriptions = userSubscriptionsContext.Subscriptions;
             CallToActionViewModel = callToActionViewModel;
             SiterootContext = siterootContext;
             GlobalService = globalService;
@@ -57,6 +57,7 @@ namespace Informa.Web.ViewModels
         public string MyViewHelpText => TextTranslator.Translate("MainNavigation.MyViewHelpText");
         public string MyViewEditBtnText => TextTranslator.Translate("MainNavigation.MyViewEditButtonText");
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
+        public IEnumerable<ISubscription> Subscriptions => _subcriptions;
         public Navigation Preferencelst { get; set; }
         public Navigation MyViewPreferences => GetUserPreferences();
         #endregion
@@ -97,28 +98,32 @@ namespace Informa.Web.ViewModels
             //    var channelPages = GlobalService.GetItem<IChannels_Page>(GlassModel?._Id.ToString()).
             //    _ChildrenWithInferType.OfType<IChannel_Page>();
 
-            //    //channel based navigation
             //    if (UserPreferences != null && UserPreferences.Preferences != null &&
             //    UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count > 0)
             //    {
             //        foreach (var preference in UserPreferences.Preferences.PreferredChannels)
             //        {
-            //            if (string.IsNullOrWhiteSpace(preference.ChannelId) && string.IsNullOrWhiteSpace(preference.ChannelName))
+            //            //channel based preferences
+            //            //check channel is followed
+            //            if (preference.IsFollowing && string.IsNullOrWhiteSpace(preference.ChannelId) && string.IsNullOrWhiteSpace(preference.ChannelName))
+            //            {
+            //                preferredChannels.Add(new Navigation { Text = preference.ChannelName, Link = new Link { Url = channelPages.Where(m=>m.LinkableText== preference.ChannelName).Select(n=>n.LinkableUrl).ToString() } });
+            //            }
+            //            //check if any topic is followed
+            //            else if (preference.Topics != null&&preference.Topics.Any(n=>n.IsFollowing) && string.IsNullOrWhiteSpace(preference.ChannelId) && string.IsNullOrWhiteSpace(preference.ChannelName))
             //            {
             //                preferredChannels.Add(new Navigation { Text = preference.ChannelName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.ChannelName).Select(n => n.LinkableUrl).ToString() } });
             //            }
-            //        }
-            //        navigation.Children = preferredChannels;
-            //    }
-            //    //Topic based navigation
-            //    else if (UserPreferences != null && UserPreferences.Preferences != null &&
-            //    UserPreferences.Preferences.PreferredTopics != null && UserPreferences.Preferences.PreferredTopics.Count > 0)
-            //    {
-            //        foreach (var preference in UserPreferences.Preferences.PreferredTopics)
-            //        {
-            //            if (string.IsNullOrWhiteSpace(preference.TopicId) && string.IsNullOrWhiteSpace(preference.TopicName))
+            //            //topic based navigation
+            //            else if(preference.Topics != null && preference.Topics.Any(n => n.IsFollowing) && !string.IsNullOrWhiteSpace(preference.ChannelId) && !string.IsNullOrWhiteSpace(preference.ChannelName))
             //            {
-            //                preferredChannels.Add(new Navigation { Text = preference.TopicName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == preference.TopicName).Select(n => n.LinkableUrl).ToString() } });
+            //                foreach (var topic in preference.Topics)
+            //                {
+            //                    if (topic.IsFollowing && !string.IsNullOrWhiteSpace(topic.TopicId) && !string.IsNullOrWhiteSpace(topic.TopicName))
+            //                    {
+            //                        preferredChannels.Add(new Navigation { Text = topic.TopicName, Link = new Link { Url = channelPages.Where(m => m.LinkableText == topic.TopicName).Select(n => n.LinkableUrl).ToString() } });
+            //                    }
+            //                }
             //            }
             //        }
             //        navigation.Children = preferredChannels;
@@ -129,7 +134,6 @@ namespace Informa.Web.ViewModels
             //{
             //    return null;
             //}
-
             #endregion
 
             #region hardcoded data
@@ -170,32 +174,21 @@ namespace Informa.Web.ViewModels
         {
             #region reading actual subscriptions
             //var subscriptions = new List<ISubscription>();
-            //var channelSubscriptions = new List<ChannelSubscription>();
-            //var topicSubscriptions = new List<TopicSubscription>();
             //if (IsAuthenticated)
             //{
-            //    //channel base subscriptions
-            //    if (UserSubcriptions != null && UserSubcriptions.Subscriptions!=null&& UserSubcriptions.Subscriptions.SelectMany(n=>n.SubscribedChannels).ToList()!=null)
+            //    if (Subscriptions != null && Subscriptions.Count() > 0)
             //    {
-            //        foreach (var subscription in UserSubcriptions.Subscriptions.SelectMany(n=>n.SubscribedChannels))
+            //        foreach (var subscription in Subscriptions)
             //        {
             //            if (subscription != null && subscription.ExpirationDate > DateTime.Now)
             //            {
-            //                channelSubscriptions.Add(subscription);
+            //                subscriptions.Add(subscription);
             //            }
             //        }
-            //        subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions });
             //    }
-            //    else if(UserSubcriptions != null && UserSubcriptions.Subscriptions != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics).ToList() != null)
+            //    else
             //    {
-            //        foreach (var subscription in UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedTopics))
-            //        {
-            //            if (subscription != null && subscription.ExpirationDate > DateTime.Now)
-            //            {
-            //                topicSubscriptions.Add(subscription);
-            //            }
-            //        }
-            //        subscriptions.Add(new SalesforceSubscription { SubscribedTopics = topicSubscriptions });
+            //        //do topic level subscriptions
             //    }
             //    return subscriptions;
             //}
@@ -205,25 +198,26 @@ namespace Informa.Web.ViewModels
             //}
             #endregion
 
-            #region hardcoded data for channel based subscription        
+            #region hardcoded data
+            var subscriptions = new List<ISubscription>();
             ISubscription subscription = new SalesforceSubscription();
-            var subscriptions = new List<ISubscription>();          
-            var Channelsubscriptions = new List<ChannelSubscription>();
+            subscription.Publication = "Frozen Foods";
+            subscription.ExpirationDate = new DateTime(2016, 10, 25);
+            subscriptions.Add(subscription);
 
-            var Channelsubscription1 = new ChannelSubscription();
-            Channelsubscription1.ChannelName = "Frozen Foods";
-            Channelsubscription1.ExpirationDate = new DateTime(2016, 10, 25);
-            Channelsubscriptions.Add(Channelsubscription1);
-
-
-            var Channelsubscription2 = new ChannelSubscription();
-            Channelsubscription2.ChannelName = "Dairy";
-            Channelsubscription2.ExpirationDate = new DateTime(2016, 10, 25);
-            Channelsubscriptions.Add(Channelsubscription2);
-
-            subscriptions.Add(new SalesforceSubscription { SubscribedChannels = Channelsubscriptions });
+            ISubscription subscription1 = new SalesforceSubscription();
+            subscription1.Publication = "Dairy";
+            subscription1.ExpirationDate = new DateTime(2016, 10, 25);
+            subscriptions.Add(subscription1);
 
             return subscriptions;
+            #endregion
+
+            #region new code
+            //var subscriptions = new List<ISubscription>();
+            //IUserPreferences prefChannels = new UserPreferences();
+
+            //return subscriptions;
             #endregion
         }
     }
