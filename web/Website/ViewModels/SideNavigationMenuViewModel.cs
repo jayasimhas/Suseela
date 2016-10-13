@@ -57,7 +57,6 @@ namespace Informa.Web.ViewModels
         public string MyViewHelpText => TextTranslator.Translate("MainNavigation.MyViewHelpText");
         public string MyViewEditBtnText => TextTranslator.Translate("MainNavigation.MyViewEditButtonText");
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
-        public IEnumerable<ISubscription> Subscriptions => _subcriptions;
         public Navigation Preferencelst { get; set; }
         public Navigation MyViewPreferences => GetUserPreferences();
         #endregion

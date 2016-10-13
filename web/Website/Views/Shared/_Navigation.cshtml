@@ -15,12 +15,12 @@
         foreach (var navigation in Model.Navigation.Where(n => !(n.Link == null && !n.Children.Any())))
         {
             Nav.Children = new List<Navigation>();
-            if (Model.ValidSubscriptions != null && Model.ValidSubscriptions.SelectMany(p => p.SubscribedChannels).ToList() != null)
+            if (Model.ValidSubscriptions != null && Model.ValidSubscriptions.Count() > 0 && Model.ValidSubscriptions.SelectMany(p => p.SubscribedChannels).ToList() != null)
             {
                 Nav.Children = navigation.Children.Where(m => Model.ValidSubscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelId == m.Code)).
                     Concat(navigation.Children.Where(m => !Model.ValidSubscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelId == m.Code)));
             }
-            else if (Model.ValidSubscriptions != null && Model.ValidSubscriptions.SelectMany(p => p.SubscribedTopics).ToList() != null)
+            else if (Model.ValidSubscriptions != null && Model.ValidSubscriptions.Count() > 0 && Model.ValidSubscriptions.SelectMany(p => p.SubscribedTopics).ToList() != null)
             {
                 Nav.Children = navigation.Children.Where(m => Model.ValidSubscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicId == m.Code)).
                     Concat(navigation.Children.Where(m => !Model.ValidSubscriptions.SelectMany(p => p.SubscribedTopics).Any(n => n.TopicId == m.Code)));
