@@ -110,9 +110,15 @@
 			display: none;
 			@include breakpoint('small') {
 						display: block;
+						.border{
+							border-top: 1px solid $color-light-gray;
+						}
 			}
 			@include breakpoint('medium-small') {
 						display: block;
+						.border{
+							border-top: 1px solid $color-light-gray;
+						}
 			}
 		}
 	}
