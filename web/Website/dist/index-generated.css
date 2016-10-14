@@ -5891,10 +5891,14 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   display: none; }
   @media (max-width: 480px) {
     .small_table .visible-sm {
-      display: block; } }
+      display: block; }
+      .small_table .visible-sm .border {
+        border-top: 1px solid #d1d3d4; } }
   @media (max-width: 640px) {
     .small_table .visible-sm {
-      display: block; } }
+      display: block; }
+      .small_table .visible-sm .border {
+        border-top: 1px solid #d1d3d4; } }
 
 .data-tool-landing {
   width: 100%; }
