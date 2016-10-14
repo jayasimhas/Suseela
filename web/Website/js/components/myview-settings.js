@@ -66,20 +66,26 @@ $(function(){
 	});
 	
 	$('.publicationPan').on('click', '.accordionImg a', function(){
-		var $this = $(this), pPan = $this.closest('.publicationPan'), thead = pPan.find('thead'), tbody = pPan.find('tbody'), trs = tbody.find('tr'), accCont = pPan.find('.accCont');
+		var $this = $(this), pPan = $this.closest('.publicationPan'), thead = pPan.find('thead'), tbody = pPan.find('tbody'), trs = tbody.find('tr'), disabledtrs = tbody.find('tr.disabled'), accCont = pPan.find('.accCont'), followlbl = thead.find('.followlbl'), followinglbl = thead.find('.followinglbl'); 
 		if($this.hasClass('collapsed')){
 			$this.removeClass('collapsed');
-			thead.find('.mtp').removeClass('vh');
 			tbody.addClass('tbodyhidden');
 			accCont.addClass('tbodyhidden');
 			pPan.find('.smfollowingBtn').hide();
-			pPan.find('.graybg').hide();
+			pPan.find('.graybg').hide(); 
+			thead.find('.mtp').addClass('hideBtn'); 
+			if(trs.length === disabledtrs.length){
+				followlbl.removeClass('hideBtn');
+			}
+			else{
+				followinglbl.removeClass('hideBtn');
+			}
 		}
 		else{
 			$this.addClass('collapsed');
 			tbody.removeClass('tbodyhidden');
 			accCont.removeClass('tbodyhidden');
-			thead.find('.mtp').addClass('vh');
+			thead.find('.mtp').addClass('hideBtn');
 			pPan.find('.smfollowingBtn').show();
 			pPan.find('.graybg').show();
 		}

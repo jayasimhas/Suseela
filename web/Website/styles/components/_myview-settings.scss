@@ -41,6 +41,28 @@
 		}
 	}
 }
+@mixin unfollowBtnLbl(){
+	@include folow-btn(7.5rem, 2rem);
+	background-color: $color-tree-poppy-orange;
+	color: $color-white;
+	margin: 0.5rem 0 0 1.25rem;
+	&.mtp{
+		margin-top: -6px;
+		margin-bottom: 25px;
+	}
+}
+@mixin followBtnLbl(){
+	@include folow-btn(7.5rem, 2rem);
+	margin-top: 0.5rem;
+	&:hover{
+		background-color: $color-tree-poppy-orange;
+		color: $color-white;
+	}
+	&.mtp{
+		margin-top: -6px;
+		margin-bottom: 25px;
+	}
+}
 
 .myview-settings {
 	padding-bottom: 50px !important;
@@ -322,26 +344,16 @@
 					}
 				} 
 				.followAllBtn{
-					@include folow-btn(7.5rem, 2rem);
-					margin-top: 0.5rem;
-					&:hover{
-						background-color: $color-tree-poppy-orange;
-						color: $color-white;
-					}
-					&.mtp{
-						margin-top: -6px;
-						margin-bottom: 25px;
-					}
+					@include followBtnLbl();
+				}
+				.followinglbl{
+					@include followBtnLbl();
 				}
 				.unfollowAllBtn{
-					@include folow-btn(7.5rem, 2rem);
-					background-color: $color-tree-poppy-orange;
-					color: $color-white;
-					margin: 0.5rem 0 0 1.25rem;
-					&.mtp{
-						margin-top: -6px;
-						margin-bottom: 25px;
-					}
+					@include unfollowBtnLbl();
+				}
+				.followlbl{
+					@include unfollowBtnLbl();
 				}
 			}
 			.wd-55{

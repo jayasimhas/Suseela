@@ -753,19 +753,27 @@ $(function () {
 		    thead = pPan.find('thead'),
 		    tbody = pPan.find('tbody'),
 		    trs = tbody.find('tr'),
-		    accCont = pPan.find('.accCont');
+		    disabledtrs = tbody.find('tr.disabled'),
+		    accCont = pPan.find('.accCont'),
+		    followlbl = thead.find('.followlbl'),
+		    followinglbl = thead.find('.followinglbl');
 		if ($this.hasClass('collapsed')) {
 			$this.removeClass('collapsed');
-			thead.find('.mtp').removeClass('vh');
 			tbody.addClass('tbodyhidden');
 			accCont.addClass('tbodyhidden');
 			pPan.find('.smfollowingBtn').hide();
 			pPan.find('.graybg').hide();
+			thead.find('.mtp').addClass('hideBtn');
+			if (trs.length === disabledtrs.length) {
+				followlbl.removeClass('hideBtn');
+			} else {
+				followinglbl.removeClass('hideBtn');
+			}
 		} else {
 			$this.addClass('collapsed');
 			tbody.removeClass('tbodyhidden');
 			accCont.removeClass('tbodyhidden');
-			thead.find('.mtp').addClass('vh');
+			thead.find('.mtp').addClass('hideBtn');
 			pPan.find('.smfollowingBtn').show();
 			pPan.find('.graybg').show();
 		}
@@ -797,7 +805,6 @@ $(function () {
 			}
 			UserPreferences.PreferredChannels.Channel.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, Topics: { "Topic": alltdata } });
 		}
-		//console.log(JSON.stringify(UserPreferences));
 		$.post('/Account/api/PreferencesApi/SetUserPreferences/', { 'UserPreferences': JSON.stringify(UserPreferences) });
 	});
 

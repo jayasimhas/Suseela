@@ -3948,6 +3948,30 @@ header .header-account-access {
         .myview-settings .table-responsive .table thead .followAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
+      .myview-settings .table-responsive .table thead .followinglbl {
+        border: 1px solid #f7941e;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        font-family: "Roboto";
+        font-weight: 700;
+        width: 120px;
+        width: 7.5rem;
+        height: 32px;
+        height: 2rem;
+        text-align: center;
+        display: inline-block;
+        line-height: 32px;
+        line-height: 2rem;
+        float: right;
+        margin-top: 8px;
+        margin-top: 0.5rem; }
+        .myview-settings .table-responsive .table thead .followinglbl:hover {
+          background-color: #f7941e;
+          color: #ffffff; }
+        .myview-settings .table-responsive .table thead .followinglbl.mtp {
+          margin-top: -6px;
+          margin-bottom: 25px; }
       .myview-settings .table-responsive .table thead .unfollowAllBtn {
         border: 1px solid #f7941e;
         cursor: pointer;
@@ -3969,6 +3993,29 @@ header .header-account-access {
         margin: 8px 0 0 20px;
         margin: 0.5rem 0 0 1.25rem; }
         .myview-settings .table-responsive .table thead .unfollowAllBtn.mtp {
+          margin-top: -6px;
+          margin-bottom: 25px; }
+      .myview-settings .table-responsive .table thead .followlbl {
+        border: 1px solid #f7941e;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        font-family: "Roboto";
+        font-weight: 700;
+        width: 120px;
+        width: 7.5rem;
+        height: 32px;
+        height: 2rem;
+        text-align: center;
+        display: inline-block;
+        line-height: 32px;
+        line-height: 2rem;
+        float: right;
+        background-color: #f7941e;
+        color: #ffffff;
+        margin: 8px 0 0 20px;
+        margin: 0.5rem 0 0 1.25rem; }
+        .myview-settings .table-responsive .table thead .followlbl.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
       .myview-settings .table-responsive .table .wd-55 {
