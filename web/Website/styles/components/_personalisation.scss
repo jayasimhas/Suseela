@@ -178,7 +178,7 @@
 			border-bottom: 1px solid $color-light-gray;
 			margin-bottom: 1rem;
 			padding-bottom: 1rem;
-			font-size: 1.625rem;
+			font-size: 1.5rem;
 			font-weight: 700;
 			line-height: 2.125rem;
 			height: 7.5rem;
@@ -192,6 +192,9 @@
 			}
 			a{
 				color: $color-zeus-black;
+				height: 100px;
+				overflow: hidden;
+				display: block;
 				&:hover{
 					color: $color-cardinal-red;
 				}
