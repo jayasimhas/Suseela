@@ -15,6 +15,8 @@ using Sitecore.Mvc.Extensions;
 using Velir.Core.Extensions.System.Collections.Generic;
 using EnumerableExtensions = Informa.Library.Utilities.Extensions.EnumerableExtensions;
 using Sitecore.Data.Items;
+using Sitecore.Data.Fields;
+using Sitecore.Data;
 
 namespace Informa.Library.VirtualWhiteboard
 {
@@ -237,14 +239,43 @@ namespace Informa.Library.VirtualWhiteboard
 		public HashSet<string> BuildIssueDictionary(Guid issueId)
 		{
 			var dict = new HashSet<string>();
-			_dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId)
-				._ChildrenWithInferType.ForEach(i => dict.Add(i._Id.ToString()));
+            IEnumerable<IGlassBase> items = _dependencies.SitecoreServiceMaster.GetItem<IIssue>(issueId)._ChildrenWithInferType;
+            string idFormat = "B";
+            foreach(var i in items) {
+                Guid id = ReturnSourceID(i);
+                if (Guid.Empty.Equals(id))
+                    continue;
+
+                if (dict.Contains(id.ToString(idFormat).ToLower()))
+                    continue;
+
+                dict.Add(id.ToString(idFormat));
+            }
+
 			return dict;
 		}
 
+        public Guid ReturnSourceID(IGlassBase i) {
+            if (i == null)
+                return Guid.Empty;
+
+            Item itm = _dependencies.SitecoreServiceMaster.GetItem<Item>(i._Id);
+            if (itm == null)
+                return Guid.Empty;
+
+            Field f = itm.Fields[Sitecore.FieldIDs.Source];
+            if (f == null)
+                return Guid.Empty;
+
+            if (!ItemUri.IsItemUri(f.Value))
+                return Guid.Empty;
+
+            return ItemUri.Parse(f.Value).ItemID.Guid;
+        }
+
 		public bool DoesIssueContains(Guid issueId, string articleId)
 		{
-			return GetIssueArticlesSet(issueId).Contains(articleId);
+			return GetIssueArticlesSet(issueId).Contains(articleId.ToLower());
 		}
 
 	    public void UpdateEditorialNotes(string notesJson)

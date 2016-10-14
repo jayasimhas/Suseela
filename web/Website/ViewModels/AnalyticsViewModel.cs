@@ -81,6 +81,7 @@ namespace Informa.Web.ViewModels
         public IArticle Article => GlassModel as IArticle;
 
         public string PublicationName => SiteRootContext.Item.Publication_Name;
+        public string PublicationCode => SiteRootContext.Item.Publication_Code;
         public string PageTitleAnalytics => GlassModel?.Title ?? string.Empty;
         public string PageType => Sitecore.Context.Item.TemplateName;
         public string AdDomain => SiteRootContext.Item.Ad_Domain;
@@ -240,13 +241,15 @@ namespace Informa.Web.ViewModels
 
 	    private string GetOpportunityIds()
 	    {
-			var ids = string.Join("|", UserEntitlementsContext.Entitlements.Select(i => $"'{i.OpportunityId}'"));
-			return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
+            var UserEntitlements = UserEntitlementsContext.Entitlements;
+            UserEntitlements = UserEntitlements.Where(i => i.ProductCode.ToLower() == PublicationCode.ToLower());
+            var ids = string.Join("|", UserEntitlements.Select(i => $"'{i.OpportunityId}'"));
+            return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
 		}
 
 	    private string GetOpportunityLineItemIds()
 	    {
-			var ids = string.Join("|", UserEntitlementsContext.Entitlements.Select(i => $"'{i.OpportunityLineItemId}'"));
+			var ids = string.Join("|", UserEntitlementsContext.Entitlements.Where(w => w.ProductCode.ToLower() == SiteRootContext.Item.Publication_Code.ToLower()).Select(i => $"'{i.OpportunityLineItemId}'"));
 			return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
 		}
     }

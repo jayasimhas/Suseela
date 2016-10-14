@@ -4,6 +4,7 @@ using System.Linq;
 using Informa.Library.Globalization;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon;
 using Informa.Library.Services.Article;
+using Informa.Library.User;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Utilities.Extensions;
@@ -31,10 +32,10 @@ namespace Informa.Web.ViewModels.Articles
 						ICallToActionViewModel callToActionViewModel,
 						IArticleService articleService,
                         IAuthenticatedUserContext authenticatedUserContext,
-                        // JIRA IPMP-56
-                        ISiteRootContext siteRootContext)
-						: base(entitledProductContext, authenticatedUserContext)
-		{
+                        ISiteRootContext siteRootContext,
+                        ISitecoreUserContext sitecoreUserContext)
+						: base(entitledProductContext, authenticatedUserContext, sitecoreUserContext)
+         {
 			TextTranslator = textTranslator;
 			CallToActionViewModel = callToActionViewModel;
 			ArticleService = articleService;

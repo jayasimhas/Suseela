@@ -27,5 +27,6 @@ namespace Informa.Web.Areas.Article.Models.Article.EmailFriend
         public string QueryTerm { get; set; }
         [Required(ErrorMessage = EmailFriendValidationReason.Required)]
         public string QueryUrl { get; set; }
+				public string RecaptchaResponse { get; set; }
     }
 }

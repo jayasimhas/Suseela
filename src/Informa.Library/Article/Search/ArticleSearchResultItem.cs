@@ -23,6 +23,7 @@ namespace Informa.Library.Article.Search
         [IndexField("legacy_article_url_s")]
         public string LegacyArticleUrl { get; set; }
         public IList<string> AuthorGuid { get; set; }
+				public IList<string> AuthorFullNames { get; set; }
         public string CompanyRecordIDs { get; set; }
         #region Implementation of IReferencedArticles
         public List<Guid> ReferencedArticles { get; set; }

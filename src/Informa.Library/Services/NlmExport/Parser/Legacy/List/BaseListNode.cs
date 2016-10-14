@@ -8,7 +8,7 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.List
     {
         public static int ListCounter = 0;
 
-        public abstract string ListType { get;  }
+        public abstract string ListType { get; }
 
         public abstract string ContentType { get; }
 
@@ -24,16 +24,19 @@ namespace Informa.Library.Services.NlmExport.Parser.Legacy.List
                 var listNodes = node.SelectNodes(NlmGlobals.Input.ListItemHtmlTag);
                 var listItemNode = new ListItemNode(ContentType);
 
-                for (int i = 0; i < listNodes.Count; i++)
+                if (listNodes != null)
                 {
-                    var listNode = listNodes[i];
-                    if (Type == ListItemNodeType.Bullet)
+                    for (int i = 0; i < listNodes.Count; i++)
                     {
-                        listItemNode.Convert(listNode, writer);
-                    }
-                    else
-                    {
-                        listItemNode.Convert(listNode, writer, i + 1);
+                        var listNode = listNodes[i];
+                        if (Type == ListItemNodeType.Bullet)
+                        {
+                            listItemNode.Convert(listNode, writer);
+                        }
+                        else
+                        {
+                            listItemNode.Convert(listNode, writer, i + 1);
+                        }
                     }
                 }
             }

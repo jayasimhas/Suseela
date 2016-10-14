@@ -54,7 +54,11 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public string PublicationTitle { get; set; }
 
-		[IndexField("searchbyline_t")]
+        [IndexField("searchpublicationcode_s")]
+        [DataMember]
+        public string PublicationCode { get; set; }
+
+        [IndexField("searchbyline_t")]
 		[DataMember]
 		public string Byline { get; set; }
 
@@ -71,9 +75,16 @@ namespace Informa.Library.Search.Results
         public string MediaTooltip { get; set; }
 
         [DataMember]
-		public string Summary => DCDTokenMatchers.ProcessDCDTokens(RawSummary);
+        public string Summary {
+            get {
+                var d = DependencyResolver.Current.GetService<IDCDTokenMatchers>();
+                return (d != null)
+                    ? d.ProcessDCDTokens(RawSummary)
+                    : RawSummary;
+            }
+        }
 
-		[IndexField("searchsummary_s")]
+        [IndexField("searchsummary_s")]
 		public string RawSummary { get; set; }
 
 		[TypeConverter(typeof(HtmlLinkListTypeConverter))]
@@ -87,7 +98,10 @@ namespace Informa.Library.Search.Results
 		[IndexField("authors_sm")]
 		public List<string> Authors { get; set; }
 
-        [IndexField("referenced_companies_t")]
+		[IndexField("facetauthornames_sm")]
+		public List<string> AuthorFullNames { get; set; }
+
+		[IndexField("referenced_companies_t")]
         public string ReferencedCompany { get; set; }
         [DataMember]
 		public bool IsArticleBookmarked => DocumentContext.IsSaved(ItemId.Guid);

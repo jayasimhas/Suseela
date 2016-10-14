@@ -23,9 +23,9 @@ utils.setTaskConfig("js", {
             config.root + "/js/search/search.js",
 
             // Angular 1.x doesn't play well with CommonJS modules :(
-            config.root + "/js/search/angular-1.5.0.min.js",
-            config.root + "/js/search/angular-animate-1.5.0.min.js",
-            config.root + "/js/search/angular-sanitize-1.5.0.min.js"
+            config.root + "/js/search/angular-1.5.1.min.js",
+            config.root + "/js/search/angular-animate-1.5.1.min.js",
+            config.root + "/js/search/angular-sanitize-1.5.1.min.js"
         ],
 
         dest: config.dest + "/js",

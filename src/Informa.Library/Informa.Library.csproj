@@ -343,6 +343,9 @@
     <Compile Include="Authors\ComputedFields\IsValid.cs" />
     <Compile Include="Authors\IAuthorAlertOptions.cs" />
     <Compile Include="Caching\CrossSiteCacheProvider.cs" />
+    <Compile Include="DCD\CompanyService.cs" />
+    <Compile Include="DCD\DealService.cs" />
+    <Compile Include="Services\Captcha\RecaptchaService.cs" />
     <Compile Include="Company\AllowCompanyRegisterUserContext.cs" />
     <Compile Include="Company\AllowedRegisterUserCompanyTypes.cs" />
     <Compile Include="Company\CompanyRegisterUserError.cs" />
@@ -363,10 +366,15 @@
     <Compile Include="ComponentModel\DataAnnotations\RequiredIfAttribute.cs" />
     <Compile Include="CustomSitecore\Events\AddFromBranchPreset.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
-    <Compile Include="CustomSitecore\Fields\MultipleRootTreelistField.cs" />
+	<Compile Include="CustomSitecore\Fields\MultipleRootTreelistField.cs" />
+
+    <Compile Include="CustomSitecore\Events\ArticleItemCreated.cs" />
+    <Compile Include="CustomSitecore\Pipelines\CheckClientUser.cs" />
+
     <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
+    <Compile Include="CustomSitecore\Pipelines\PasswordRecoveryPipeline.cs" />
     <Compile Include="CustomSitecore\Providers\EmailLinkProvider.cs" />
     <Compile Include="CustomSitecore\Ribbon\PushToExactTarget.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NotFoundResolver.cs" />
@@ -385,8 +393,10 @@
     <Compile Include="PXM\CustomXmlTextFrameRenderer.cs" />
     <Compile Include="PXM\Parsers\CustomImageParser.cs" />
     <Compile Include="PXM\SpecialCharacterMapper.cs" />
+    <Compile Include="Search\ComputedFields\Facets\AuthorNamesField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchMediaTooltipField.cs" />
     <Compile Include="Search\Crawlers\InformaItemCrawler.cs" />
+
     <Compile Include="Search\SearchIndex\ISearchIndexNameService.cs" />
     <Compile Include="Search\SearchIndex\SearchIndexNameService.cs" />
     <Compile Include="Search\SearchManager\AgriSearchManager.cs" />
@@ -410,6 +420,9 @@
     <Compile Include="Utilities\CMSHelpers\GlassVerticalRootContext.cs" />
     <Compile Include="Utilities\CMSHelpers\ItemIdResolver.cs" />
     <Compile Include="Utilities\CMSHelpers\IVerticalRootContext.cs" />
+
+    <Compile Include="User\Entitlement\IStrategicEntitlementContext.cs" />
+
     <Compile Include="Utilities\Parsers\CachedXmlParser.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />
@@ -440,6 +453,7 @@
     <Compile Include="Publication\ISitePublicationFactory.cs" />
     <Compile Include="Publication\ISitePublicationNameFactory.cs" />
     <Compile Include="Publication\ISitePublicationsContext.cs" />
+    <Compile Include="Publication\ISitePublicationWorkflow.cs" />
     <Compile Include="Publication\ISitesPublicationNameContext.cs" />
     <Compile Include="Publication\ISitePublicationNameContext.cs" />
     <Compile Include="Publication\SitePublication.cs" />
@@ -447,12 +461,14 @@
     <Compile Include="Publication\SitePublicationFactory.cs" />
     <Compile Include="Publication\SitePublicationNameFactory.cs" />
     <Compile Include="Publication\SitePublicationsContext.cs" />
+    <Compile Include="Publication\SitePublicationWorkflow.cs" />
     <Compile Include="Publication\SitesPublicationNameContext.cs" />
     <Compile Include="Publication\SitePublicationNameContext.cs" />
     <Compile Include="Publishing\Events\ItemPublishedPublishItemProcessing.cs" />
     <Compile Include="Publishing\Events\PublishItemProcessing.cs" />
     <Compile Include="Publishing\Scheduled\IScheduledPublishingDateTime.cs" />
     <Compile Include="Publishing\Scheduled\ScheduledPublishingDateTime.cs" />
+    <Compile Include="Publishing\Scheduled\Tasks\SchedulingUnlockUser.cs" />
     <Compile Include="Purchase\ArticlePurchaseItem.cs" />
     <Compile Include="Purchase\ArticlePurchaseItemsFactory.cs" />
     <Compile Include="Purchase\IArticlePurchase.cs" />
@@ -478,6 +494,7 @@
     <Compile Include="Authors\ComputedFields\AuthorUrlName.cs" />
     <Compile Include="Search\ComputedFields\Facets\DeviceAreasField.cs" />
     <Compile Include="Search\ComputedFields\Facets\IndustriesField.cs" />
+    <Compile Include="Search\ComputedFields\SearchResults\SearchResultPublicationCodeField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\Converter\MediaTypeIcon\MediaTypeIconData.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\Converter\MediaTypeIcon\MediaTypeIconDataConverter.cs" />
     <Compile Include="Search\FacetBuilders\CompaniesFacetBuilder.cs" />
@@ -529,7 +546,9 @@
     <Compile Include="Subscription\User\UserSubscriptionsContext.cs" />
     <Compile Include="User\Authentication\AuthenticatedFormToken.cs" />
     <Compile Include="User\Authentication\AuthorizeToken.cs" />
+    <Compile Include="User\Authentication\ISendRecoveryPassword.cs" />
     <Compile Include="User\Authentication\IAuthenticatedFormToken.cs" />
+    <Compile Include="User\Authentication\SendRecoveryPassword.cs" />
     <Compile Include="User\EmailOptIns\OptInManager.cs" />
     <Compile Include="User\EmailOptIns\OptInResponseModel.cs" />
     <Compile Include="Taxonomy\HeirarchyLinks.cs" />
@@ -1168,12 +1187,16 @@
     <Compile Include="Utilities\Security\Crypto.cs" />
     <Compile Include="Utilities\Settings\ISiteSettings.cs" />
     <Compile Include="Utilities\Settings\SiteSettings.cs" />
+    <Compile Include="Utilities\SitecoreUtils\WorkflowUtil.cs" />
     <Compile Include="Utilities\StringUtils\BylineMaker.cs" />
     <Compile Include="Utilities\StringUtils\HtmlUtil.cs" />
     <Compile Include="Utilities\StringUtils\WordUtil.cs" />
     <Compile Include="Utilities\Testing\GlassProxyFactory.cs" />
     <Compile Include="Utilities\TokenMatcher\DCDTokenMatchers.cs" />
     <Compile Include="Utilities\TokenMatcher\TokenToHtml.cs" />
+    <Compile Include="Utilities\UserMembership\CustomSqlMembershipProvider.cs" />
+    <Compile Include="Utilities\UserMembership\CustomSqlUserUnlocker.cs" />
+    <Compile Include="Utilities\UserMembership\UserAttemp.cs" />
     <Compile Include="Utilities\WebApi\Caching\ApiOutputCacheAdapter.cs" />
     <Compile Include="Utilities\WebApi\Filters\ArgumentsRequiredAttribute.cs" />
     <Compile Include="Utilities\WebApi\Filters\ValidateCsrfAttribute.cs" />

@@ -187,7 +187,7 @@ Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
                         http://dtd.nlm.nih.gov/articleauthoring/tag-library/3.0/index.html?elem=italic
                         http://dtd.nlm.nih.gov/book/tag-library/3.0/index.html?elem=italic
                                                                    -->
-<!ELEMENT  italic       (#PCDATA %emphasized-text;)*                 >
+<!ELEMENT  italic       (#PCDATA %emphasized-text; | supplementary-material)*                 >
 
 
 <!--                    MONOSPACE TEXT (TYPEWRITER TEXT)           -->

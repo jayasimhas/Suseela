@@ -11,7 +11,8 @@ namespace Informa.Library.Utilities.References
 		public const string MasterDb = "master";
 		public const string WebDb = "web";
 
-	    public const string AuthorsIndexName = "informa_authors";
+		public const string AuthorsIndexName = "informa_authors";
+
 
         public static string ContentRootNode = ItemIdResolver.GetItemIdByKey("ContentRootNode");
 
@@ -23,6 +24,7 @@ namespace Informa.Library.Utilities.References
 		public const string DTDPath = "Util\\DTD\\";
 
 		public const string CryptoKey = "Ajv4FMtL7Iuq3H04ZkQC";
+
 
 	    public static string StrategicTransactionsComponent = ItemIdResolver.GetItemIdByKey("StrategicTransactionsComponent");
         public static string DCDSubscribeComponent = ItemIdResolver.GetItemIdByKey("DCDSubscribeComponent");
@@ -49,10 +51,11 @@ namespace Informa.Library.Utilities.References
 
         public const string MSWordDocumentRootNode = "{FDBFCAC8 -03CA-4B0B-BEFE-2171050E19C6}"; //not added to config, as it's missing in CMS
 
+
 		public static string EditAfterPublishWorkflowCommand = ItemIdResolver.GetItemIdByKey("EditAfterPublishWorkflowCommand");
 
 		public static string ScripWorkflow = ItemIdResolver.GetItemIdByKey("FreeWithEntitlement");
-		public static readonly Dictionary<Guid, string> PublicationPrefixDictionary = new Dictionary<Guid, string>
+        public static readonly Dictionary<Guid, string> PublicationPrefixDictionary = new Dictionary<Guid, string>
 				{
 						{ new Guid(ScripRootNode), ScripRootNodeIntials},
 						{ new Guid(InVivoRootNode), InVivoRootNodeIntials},
@@ -74,9 +77,12 @@ namespace Informa.Library.Utilities.References
                 };
 
 		public static int[] PerPageSizes = { 10, 20, 50 };
+		public static string NavigationItemTemplateID = "{354B0538-CB81-4B26-A25E-7B5DBA03C2F5}";
+		public static string VWBSearchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
 
 		public static class QueryString
 		{
+			public const string PageId = "pId";
 			public const string InProgressKey = "inprogress";
 			public const string SearchHeadlinesOnly = "headlinesOnly";
 			public const string PerPageKey = "perPage";
@@ -87,8 +93,9 @@ namespace Informa.Library.Utilities.References
 			public const string DateRangeFilterLabelKey = "dateFilterLabel";
 			public const string TimeKey = "time";
 			public const string Author = "author";
-            public const string Company = "companies";
-            public const string Publication = "publication";
+			public const string AuthorFullName = "authorName";
+			public const string Company = "companies";
+			public const string Publication = "publication";
 		}
 
 		public static class SettingKeys

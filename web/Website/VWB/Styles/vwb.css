@@ -237,6 +237,10 @@ textarea, input {
 	font-family: arial,helvetica,sans-serif;
 }
 
+textarea {
+    font:1em arial,helvetica,sans-serif;
+}
+
 .block:active {
 	color: red;
 }

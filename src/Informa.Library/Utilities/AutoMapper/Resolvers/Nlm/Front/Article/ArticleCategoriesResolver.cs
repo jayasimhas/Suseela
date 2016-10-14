@@ -36,7 +36,7 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
                 {
                     GroupType = "Category",
                     Subjects = EmptySubjects
-                }, 
+                },
                 new NlmCategoryModel
                 {
                     GroupType = "Subjects",
@@ -46,7 +46,7 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
                 {
                     GroupType = "Geography",
                     Subjects = GetTaxonomyItems(source, _itemReferences.RegionsTaxonomyFolder)
-                }, 
+                },
                 new NlmCategoryModel
                 {
                     GroupType = "Therapy Areas",
@@ -59,15 +59,27 @@ namespace Informa.Library.Utilities.AutoMapper.Resolvers.Nlm.Front.Article
         {
             var taxonomyFolderPath = _service.GetItem<IGlassBase>(taxonomyFolder)?._Path;
             if (taxonomyFolderPath == null) return new string[0];
-            
+
             var items = (source?.Taxonomies ?? new ITaxonomy_Item[0])
                 .Where(item => item._Path.StartsWith(taxonomyFolderPath, StringComparison.InvariantCultureIgnoreCase))
-                .Select(item => item.Item_Name)
+                .Select(item => getItemNameWithParent(item, taxonomyFolder))
                 .ToArray();
 
             return items.Any()
                 ? items
                 : EmptySubjects;
+        }
+
+        private string getItemNameWithParent(ITaxonomy_Item item, Guid taxonomyFolder)
+        {
+            if (item._Parent._Id.Equals(taxonomyFolder))
+            {
+                return item.Item_Name;
+            }
+            else
+            {
+                return getItemNameWithParent(item._Parent as ITaxonomy_Item, taxonomyFolder) + @"\" + item.Item_Name;
+            }
         }
     }
 }

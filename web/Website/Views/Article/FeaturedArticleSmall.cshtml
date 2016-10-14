@@ -61,7 +61,7 @@
 					href="@Model.GlassModel._Url"
 					class="click-utag"
 					data-info='{ "event_name": "article_click_through", "click_through_source": "@Model.PageTitle", "click_through_destination": "@Model.Title" }'>
-					@HttpUtility.HtmlDecode(Model.Title)
+					@Html.Raw(Model.Title)
 				</a>
             </h1>
 

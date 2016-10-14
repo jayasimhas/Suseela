@@ -1,0 +1,25 @@
+﻿@model Informa.Web.ViewModels.Authors.IAuthorShareViewModel
+<li class="action-flag action-flag--social">
+	<span class="action-flag__label">@Model.ShareText</span>
+
+    <a
+		href="https://www.linkedin.com/shareArticle?mini=true&url=@HttpUtility.UrlEncode(Model.PageUrl)&title=@HttpUtility.UrlEncode(Model.PageTitle)&summary=&source="
+		target="_blank"
+		class="link__no-hover click-utag" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"linkedin"}'>
+
+		<svg class="action-flag__icon action-flag__icon--linkedin">
+			<use xlink:href="/dist/img/svg-sprite.svg#linkedin"></use>
+		</svg>
+	</a>
+
+    <a href="https://twitter.com/intent/tweet?text=@HttpUtility.UrlEncode(Model.PageTitle)&url=@HttpUtility.UrlEncode(Model.PageUrl)"
+       target="_blank"
+       class="link__no-hover click-utag" data-info='{"event_name" : "toolbar_use", "toolbar_tool":"twitter"}'>
+        <svg class="action-flag__icon action-flag__icon--twitter">
+
+            <use xlink:href="/dist/img/svg-sprite.svg#twitter"></use>
+        </svg>
+    </a>
+
+</li>
+ 

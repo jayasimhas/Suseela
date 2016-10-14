@@ -11,7 +11,9 @@ namespace Informa.Library.PXM.Helpers
         string ProcessIframeTag(string content);
 		string ProcessQuickFacts(string content);
         string ProcessTableStyles(string content);
-	}
+        string ProcessPullQuotes(string content);
+
+    }
 
 	[AutowireService]
 	public class PxmHtmlHelper : IPxmHtmlHelper
@@ -38,30 +40,19 @@ namespace Informa.Library.PXM.Helpers
 		public string ProcessIframeTag(string content)
 		{
 			var doc = CreateDocument(content);
-			var xpath = @"//iframe";
-			var iframes = doc.DocumentNode.SelectNodes(xpath);
-			if (iframes == null)
-			{
-				return doc.DocumentNode.OuterHtml;
-			}
+			var wrapXPath = @"//div[contains(@class,'iframe-component')]";
+            var iframeXPath = @"//div[contains(@class, 'ewf-desktop-iframe')]/iframe";
 
-			foreach (HtmlNode iframe in iframes)
-			{
-				var parent = iframe.ParentNode;
-				
-				var attr = iframe.Attributes[ClassAttributeName];
-				if (attr != null && attr.Value.Contains("mobile"))
-				{
-					parent.RemoveChild(iframe);
-					continue;
-				}
+            var iframe = doc.DocumentNode.SelectSingleNode(iframeXPath);
+            var wrapper = doc.DocumentNode.SelectSingleNode(wrapXPath);
+			if (iframe == null || wrapper == null)
+			    return doc.DocumentNode.OuterHtml;
+			
+			var src = iframe.Attributes["src"];
+			if (src != null)
+				wrapper.InnerHtml = src.Value;
 
-				var src = iframe.Attributes["src"];
-				if (src != null)
-				{
-					parent.InnerHtml = $"<p>Iframe Content: {src.Value}</p>";
-				}
-			}
+            wrapper.Name = "p";
 			return doc.DocumentNode.OuterHtml;
 		}
 
@@ -70,22 +61,41 @@ namespace Informa.Library.PXM.Helpers
 			var result = ProcessIframeTag(content);
 			var doc = CreateDocument(result);
 			
-			var headerPath = @"//p[contains(@class,'iframe-header')]";
-			var titlePath = @"//p[contains(@class,'iframe-title')]";
-			var iframePath = @"//div[contains(@class,'iframe-component')]";
-			var captionPath = @"//p[contains(@class,'iframe-caption')]";
-			var sourcePath = @"//p[contains(@class,'iframe-source')]";
-
-			var nodes = GethHtmlNodes(doc, headerPath, titlePath, iframePath, captionPath, sourcePath).ToList();
-			if (nodes.Any())
-			{
-				var aside = doc.CreateElement("pre");
-				doc.DocumentNode.FirstChild.ChildNodes.Insert(0, aside);
-				ModifyHtmlStructure(doc, aside, nodes);
-			}
-
+			UpdateNode(doc, @"//p[contains(@class,'iframe-header')]", "exhibit_number");
+            doc = CreateDocument(doc.DocumentNode.OuterHtml);
+            UpdateNode(doc, @"//p[contains(@class,'iframe-title')]", "exhibit_title");
+            doc = CreateDocument(doc.DocumentNode.OuterHtml);
+            UpdateNode(doc, @"//p[contains(@class,'iframe-component')]", "exhibit_url");
+            doc = CreateDocument(doc.DocumentNode.OuterHtml);
+            UpdateNode(doc, @"//p[contains(@class,'iframe-caption')]", "exhibit_caption");
+            doc = CreateDocument(doc.DocumentNode.OuterHtml);
+            UpdateNode(doc, @"//p[contains(@class,'iframe-source')]", "exhibit_source");
+            
 			return doc.DocumentNode.OuterHtml;
 		}
+
+        public void UpdateNode(HtmlDocument doc, string xPath, string cssClass) {
+            
+            var node = doc.DocumentNode.SelectSingleNode(xPath);
+            if (node == null)
+                return;
+
+            var attr = node.Attributes["class"];
+            if (attr == null)
+                return;
+
+            attr.Value = cssClass;
+
+            var newParent = doc.DocumentNode.SelectSingleNode(@"//pre");
+            if(newParent == null) {
+                newParent = doc.CreateElement("pre");
+                doc.DocumentNode.FirstChild.ChildNodes.Insert(0, newParent);
+            }            
+
+            var oldParent = node.ParentNode;
+            newParent.AppendChild(node);
+            oldParent.RemoveChild(node);
+        }
 
 		public string ProcessQuickFacts(string content)
 		{
@@ -99,7 +109,17 @@ namespace Informa.Library.PXM.Helpers
 			{
 				var aside = doc.CreateElement("pre");
 				doc.DocumentNode.FirstChild.ChildNodes.Insert(0, aside);
-				ModifyHtmlStructure(doc, aside, nodes);
+                string qfBody = "qf_body";
+                foreach (var node in nodes) {
+                    foreach (var childNode in node.ChildNodes) {
+                        if (!childNode.Name.Equals("p"))
+                            continue;
+                        var cAttr = childNode.Attributes["class"];
+                        if (cAttr == null)
+                            childNode.Attributes.Add("class", qfBody);                        
+                    }
+                }
+                ModifyHtmlStructure(doc, aside, nodes);
 			}
 			
 			return doc.DocumentNode.OuterHtml;
@@ -112,19 +132,7 @@ namespace Informa.Library.PXM.Helpers
 				AppendAndDeleteOriginal(doc, root, node);
 			}
 		}
-
-		internal IEnumerable<HtmlNode> GethHtmlNodes(HtmlDocument doc, params string[] paths)
-		{
-			foreach (var path in paths)
-			{
-				var result = doc.DocumentNode.SelectSingleNode(path);
-				if (result != null)
-				{
-					yield return result;
-				}
-			}
-		}
-
+        
 		internal void AppendAndDeleteOriginal(HtmlDocument doc, HtmlNode root, HtmlNode element)
 		{
 			if (element != null)
@@ -150,7 +158,8 @@ namespace Informa.Library.PXM.Helpers
 			result = ProcessStoryTextAlt(result);
 			var xpath = @"//table/tbody/tr/td/p";
 			result = MoveTableContent(result, xpath);
-			return result;
+            result = ProcessPullQuotes(result);
+            return result;
 		}
 
 		internal string ProcessColumnHeading(string content)
@@ -180,8 +189,8 @@ namespace Informa.Library.PXM.Helpers
 			var result = AddCssClassToElements(content, xpath, ClassAttributeName, StoryTextAltStyle);
 			return result;
 		}
-
-		internal string AddCssClassToElements(string content, string xpath, string attributeName, string attributeValue)
+        
+        internal string AddCssClassToElements(string content, string xpath, string attributeName, string attributeValue)
 		{
 			var doc = CreateDocument(content);
 			var elements = doc.DocumentNode.SelectNodes(xpath);
@@ -214,8 +223,12 @@ namespace Informa.Library.PXM.Helpers
 			}
 			foreach (HtmlNode element in elements)
 			{
-				var contentText = element.InnerText;
-				element.ParentNode.InnerHtml = contentText;
+                var v = element.Attributes["class"];
+                if (v == null)
+                    element.Attributes.Append(doc.CreateAttribute("class", "table_paragraph"));
+				var contentText = element.InnerHtml;
+                if(element.ParentNode != null)
+				    element.ParentNode.InnerHtml += contentText;
 			}
 			return doc.DocumentNode.OuterHtml;
 		}
@@ -226,5 +239,50 @@ namespace Informa.Library.PXM.Helpers
 			doc.LoadHtml(content);
 			return doc;
 		}
-	}
+
+	    public string ProcessPullQuotes(string content)
+	    {
+	        var result = ProcessPullQuotesStyle(content);
+	        result = ProcessPullQuotesHtml(result);
+	        return result;
+	    }
+
+	    private string ProcessPullQuotesHtml(string content)
+	    {
+	        var xpath = @"//div[contains(@class, 'sidebar-body')]//blockquote[contains(@class,'article-pullquote')]";
+	        var doc = CreateDocument(content);
+	        var elements = doc.DocumentNode.SelectNodes(xpath);
+	        if (elements == null)
+	        {
+	            return doc.DocumentNode.OuterHtml;
+	        }
+	        foreach (HtmlNode element in elements)
+	        {
+	            var nodeStr = element.OuterHtml.Replace("blockquote", "p");
+	            var blockquote = HtmlNode.CreateNode(nodeStr);
+	            element.ParentNode.ReplaceChild(blockquote, element);
+	        }
+	        return doc.DocumentNode.OuterHtml;
+	    }
+
+        private string ProcessPullQuotesStyle(string content) {
+            var xpath = @"//div[contains(@class, 'sidebar-body')]//blockquote[contains(@class,'article-pullquote')]/p";
+            var doc = CreateDocument(content);
+            var elements = doc.DocumentNode.SelectNodes(xpath);
+            if (elements == null)
+                return doc.DocumentNode.OuterHtml;
+
+            string classAttr = "class";
+            string SidebarPullQuote = "sidebar_quote";
+            foreach (HtmlNode element in elements) {
+                var attribute = element.Attributes[classAttr];
+                if (attribute == null)
+                    element.Attributes.Add(classAttr, SidebarPullQuote);
+                else
+                    attribute.Value = SidebarPullQuote;
+            }
+            return doc.DocumentNode.OuterHtml;
+        }
+
+    }
 }

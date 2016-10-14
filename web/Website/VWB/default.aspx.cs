@@ -18,10 +18,12 @@ using Sitecore.Web;
 using Sitecore.Web.Authentication;
 using DateTime = System.DateTime;
 using System.Web.Mvc;
+using System.Data;
+using System.Linq;
 
 namespace Elsevier.Web.VWB
 {
-    public struct ItemStruct
+	public struct ItemStruct
 	{
 		public string Name { get; set; }
 		public Guid ID { get; set; }
@@ -41,10 +43,10 @@ namespace Elsevier.Web.VWB
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-		    imgLogo.ImageUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.TargetHostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
-		    imgLogo.Attributes.Add("style", "width:317px;height:122px");
+			imgLogo.ImageUrl = $"{HttpContext.Current.Request.Url.Scheme}://{Factory.GetSiteInfo("website")?.TargetHostName ?? WebUtil.GetHostName()}/-/media/scriplogo.jpg";
+			imgLogo.Attributes.Add("style", "width:317px;height:122px");
 
-            if (!Sitecore.Context.User.IsAuthenticated)
+			if (!Sitecore.Context.User.IsAuthenticated)
 			{
 				Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?returnUrl=" + Request.RawUrl);
 			}
@@ -55,19 +57,20 @@ namespace Elsevier.Web.VWB
 				return;
 			}
 
+			FillPublicationsList();
+
 			if (Request.QueryString.Count == 0 || (Request.QueryString.Count == 1 && Request.QueryString["sc_lang"] != null))
 			{
 				RunQuery(true);
 			}
-            
+
 			const string defaultTime = "12:00 AM";
 			txtStartTime.Text = defaultTime;
 			txtEndTime.Text = defaultTime;
 
 			UpdateFields();
 			BuildOptionalColumnDropdown();
-		    BuildExistingIssuesList();
-
+			BuildExistingIssuesList();
 		}
 
 		protected void Page_Init(object sender, EventArgs e)
@@ -82,35 +85,61 @@ namespace Elsevier.Web.VWB
 			}
 		}
 
-        public Control GetPostBackControl()
-        {
-            Control control = null;
-
-            string ctrlname = Request.Params.Get("__EVENTTARGET");
-            if (!string.IsNullOrEmpty(ctrlname))
-                return FindControl(ctrlname);
-
-            List<string> names = new List<string>();
-            foreach (string s in Request.Form)
-                names.Add(s);
-
-            var buttons = names
-                .Where(a => a.Contains("btn"));
-
-            if (buttons.Any())
-                return FindControl(buttons.First());
-
-            return null;
-        }
-
-        private static int? GetMaxNumResults()
+		public Control GetPostBackControl()
 		{
-            int count = 250;
-            try
-            {
-                count = int.Parse(HttpContext.Current.Request.QueryString["max"]);
-            }
-            catch { }
+			Control control = null;
+
+			string ctrlname = Request.Params.Get("__EVENTTARGET");
+			if (!string.IsNullOrEmpty(ctrlname))
+				return FindControl(ctrlname);
+
+			List<string> names = new List<string>();
+			foreach (string s in Request.Form)
+				names.Add(s);
+
+			var buttons = names
+					.Where(a => a.Contains("btn"));
+
+			if (buttons.Any())
+				return FindControl(buttons.First());
+
+			return null;
+		}		
+		private void FillPublicationsList()
+		{
+			var dbMaster = Sitecore.Data.Database.GetDatabase("master");
+
+			var pubItems = dbMaster.GetItem("/sitecore/content/").Children;
+
+			DataTable dt = new DataTable();
+			dt.Columns.Add("Code");
+			dt.Columns.Add("Name");
+			foreach (Sitecore.Data.Items.Item item in pubItems)
+			{
+				try
+				{
+					string pubName = item.Fields["Publication Name"].Value;
+					string pubCode = item.Fields["Publication Code"].Value;
+
+					dt.Rows.Add(pubCode, pubName);
+				}
+				catch { }
+			}
+
+			ddlPublications.DataSource = dt;
+			ddlPublications.DataValueField = "Code";
+			ddlPublications.DataTextField = "Name";
+			ddlPublications.DataBind();
+		}		
+
+		private static int? GetMaxNumResults()
+		{
+			int count = 250;
+			try
+			{
+				count = int.Parse(HttpContext.Current.Request.QueryString["max"]);
+			}
+			catch { }
 			return count;
 		}
 
@@ -146,7 +175,15 @@ namespace Elsevier.Web.VWB
 			{
 				chkShowInProgressArticles.Checked = true;
 			}
-
+			
+			if (string.IsNullOrEmpty(_vwbQuery.PublicationCodes) == false)
+			{
+				List<string> codes = _vwbQuery.PublicationCodes.Split(',').ToList();
+				foreach (var item in codes)
+				{
+					ddlPublications.Items.FindByValue(item).Selected = true;
+				}
+			}
 		}
 
 		protected void EnableDate()
@@ -167,48 +204,65 @@ namespace Elsevier.Web.VWB
 
 		protected void RunReport(object sender, EventArgs e)
 		{
+			var pubCount = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).Count();
+			if (pubCount == 0)
+			{
+				lblMsg.Text = "You must select at least one publication";
+				lblMsg.ForeColor = System.Drawing.Color.Red;
+				return;
+			}
+			else if (pubCount > 1 && rbNoDate.Checked)
+			{
+				lblMsg.Text = "You must specify a date range when selecting more than one publication";
+				lblMsg.ForeColor = System.Drawing.Color.Red;
+				return;
+			}
 			RunQuery(true);
 		}
 
 		private void RunQuery(bool execute)
 		{
 			var q = _vwbQuery.Clone();
-            q.StartDate = (rbDateRange.Checked) ? GetDateValue(txtStart.Text, txtStartTime.Text) : null;
-            q.EndDate = (rbDateRange.Checked) ? GetDateValue(txtEnd.Text, txtEndTime.Text) : null;
-            q.InProgressValue = chkShowInProgressArticles.Checked;
-			
+			q.StartDate = (rbDateRange.Checked) ? GetDateValue(txtStart.Text, txtStartTime.Text) : null;
+			q.EndDate = (rbDateRange.Checked) ? GetDateValue(txtEnd.Text, txtEndTime.Text) : null;
+			q.InProgressValue = chkShowInProgressArticles.Checked;
+
 			q.ShouldRun = execute;
+
+			List<ListItem> selected = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+			q.PublicationCodes = string.Join(",", selected.Select(s => s.Value));
+
 			q.NumResultsValue = GetMaxNumResults();
 			RedirectTo(q);
-
 		}
 
-        protected DateTime? GetDateValue(string date, string time) {
-            if (string.IsNullOrEmpty(date))
-                return null;
+		protected DateTime? GetDateValue(string date, string time)
+		{
+			if (string.IsNullOrEmpty(date))
+				return null;
 
-            DateTime dt;
-            string formattedDate = (string.IsNullOrEmpty(time)) ? date : string.Format("{0} {1}", date, time);
-            bool validStart = DateTime.TryParse(formattedDate, out dt);
-            if (validStart)
-                return dt;
-            else
-                return null;
-        }
+			DateTime dt;
+			string formattedDate = (string.IsNullOrEmpty(time)) ? date : string.Format("{0} {1}", date, time);
+			bool validStart = DateTime.TryParse(formattedDate, out dt);
+			if (validStart)
+				return dt;
+			else
+				return null;
+		}
 
 		/// <summary>
 		/// Populates ddColumns with all columns not already spoken for in generated report
 		/// </summary>
 		protected void BuildOptionalColumnDropdown()
 		{
-            ddColumns.Items.Add("Add New Field...");
+			ddColumns.Items.Add("Add New Field...");
 			foreach (var column in ColumnFactory.GetColumnFactory().GetColumnsNot(_vwbQuery.ColumnKeysInOrder))
 			{
 				ddColumns.Items.Add(new ListItem(column.GetHeader(), column.Key()));
 			}
 		}
 
-        protected string GetCurrentPageUrl()
+		protected string GetCurrentPageUrl()
 		{
 			bool httpsOn = Request.ServerVariables["HTTPS"].Equals("ON");
 			string http = httpsOn ? "https://" : "http://";
@@ -251,70 +305,70 @@ namespace Elsevier.Web.VWB
 			Response.Redirect(WebUtil.GetFullUrl(Factory.GetSiteInfo("shell").LoginPage) + "?redirect=" + Request.RawUrl);
 		}
 
-        #region issue management
+		#region issue management
 
-        protected void NewIssueSubmitButton_OnClick(object sender, EventArgs e)
-        {
-	        DateTime date;
+		protected void NewIssueSubmitButton_OnClick(object sender, EventArgs e)
+		{
+			DateTime date;
 
-            var model = new Informa.Library.VirtualWhiteboard.Models.IssueModel
-            {
+			var model = new Informa.Library.VirtualWhiteboard.Models.IssueModel
+			{
 				PublishedDate = DateTime.TryParse(IssuePublishedDateInput.Value, out date) ? date : DateTime.Now,
-                Title = IssueTitleInput.Value,
-                ArticleIds = IssueArticleIdsInput.Value.Split('|').Select(Guid.Parse)
-            };
+				Title = IssueTitleInput.Value,
+				ArticleIds = IssueArticleIdsInput.Value.Split('|').Select(Guid.Parse)
+			};
 
-            using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
-            {
-                var issueBuilder = scope.Resolve<IIssuesService>();
-                var result = issueBuilder.CreateIssueFromModel(model);
+			using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
+			{
+				var issueBuilder = scope.Resolve<IIssuesService>();
+				var result = issueBuilder.CreateIssueFromModel(model);
 
-                if (result.IsSuccess)
-                {
-                    BuildReport();
-                    string url = $"{IssuePageUrl}{result.IssueId}";
-                    Response.Write($"<script>window.open('{ResolveUrl(url)}','_blank')</script>");
+				if (result.IsSuccess)
+				{
+					BuildReport();
+					string url = $"{IssuePageUrl}{result.IssueId}";
+                    ClientScript.RegisterStartupScript(GetType(), "", $"<script>window.open('{ResolveUrl(url)}','_blank')</script>");
                 }
-                else
-                {
-                    throw new Exception($"Failed to created new issue, error: {result.DebugErrorMessage}");
-                }
-            }
-        }
+				else
+				{
+					throw new Exception($"Failed to created new issue, error: {result.DebugErrorMessage}");
+				}
+			}
+		}
 
-        protected void BuildExistingIssuesList()
-        {
-            ExistingIssueSelector.CssClass = "js-existing-issue";
-            ExistingIssueSelector.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
+		protected void BuildExistingIssuesList()
+		{
+			ExistingIssueSelector.CssClass = "js-existing-issue";
+			ExistingIssueSelector.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
 
-	        using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
-	        {
-		        var issuesService = scope.Resolve<IIssuesService>();
-		        var issues = issuesService.GetActiveIssues();
-		        issues.Each(i => ExistingIssueSelector.Items.Add(new ListItem($"{i._Name} - {Math.Abs(i._Name.GetHashCode())}", i._Id.ToString())));
-	        }
-        }
+			using (var scope = Jabberwocky.Glass.Autofac.Util.AutofacConfig.ServiceLocator.BeginLifetimeScope())
+			{
+				var issuesService = scope.Resolve<IIssuesService>();
+				var issues = issuesService.GetActiveIssues();
+				issues.Each(i => ExistingIssueSelector.Items.Add(new ListItem($"{i._Name} - {Math.Abs(i._Name.GetHashCode())}", i._Id.ToString())));
+			}
+		}
 
-	    protected void btnAddArticleToExistingIssue_OnClick(object sender, EventArgs e)
-	    {
-		    Guid issueId;
-		    if (!Guid.TryParse(ExistingIssueSelector.SelectedItem.Value, out issueId))
-                Response.Redirect(Request.Url.PathAndQuery);
-            
+		protected void btnAddArticleToExistingIssue_OnClick(object sender, EventArgs e)
+		{
+			Guid issueId;
+			if (!Guid.TryParse(ExistingIssueSelector.SelectedItem.Value, out issueId))
+				Response.Redirect(Request.Url.PathAndQuery);
+
 			var sitecoreService = DependencyResolver.Current.GetService<ISitecoreServiceMaster>();
 			var issuesService = DependencyResolver.Current.GetService<IIssuesService>();
 			var issue = sitecoreService.GetItem<IIssue>(issueId);
 			if (issue == null)
-                Response.Redirect(Request.Url.PathAndQuery);
-            
+				Response.Redirect(Request.Url.PathAndQuery);
+
 			var articleIds = IssueArticleIdsInput.Value.Split('|');
 			var articlesToAdd = articleIds.Where(i => !issuesService.DoesIssueContains(issueId, i)).Select(i => new Guid(i));
 			issuesService.AddArticlesToIssue(issueId, articlesToAdd);
 			BuildReport();
-            string url = $"{IssuePageUrl}{issueId}";
-		    ClientScript.RegisterStartupScript(GetType(), "", $"<script>window.open('{ResolveUrl(url)}','_blank')</script>");
-	    }
+			string url = $"{IssuePageUrl}{issueId}";
+			ClientScript.RegisterStartupScript(GetType(), "", $"<script>window.open('{ResolveUrl(url)}','_blank')</script>");
+		}
 
-        #endregion
-    }
+		#endregion
+	}
 }

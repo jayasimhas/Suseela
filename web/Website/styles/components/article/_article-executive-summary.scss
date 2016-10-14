@@ -1,5 +1,8 @@
 .article-executive-summary {
     margin-bottom: 2rem;
+    
+    border-bottom: solid #888888;
+	padding-bottom: 30px;
 
     p {
         @extend .article-paragraph;

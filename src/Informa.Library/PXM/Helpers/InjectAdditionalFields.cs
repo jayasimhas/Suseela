@@ -44,7 +44,7 @@ namespace Informa.Library.PXM.Helpers
             var authors = article?.Authors?.ToArray();
             if (authors == null || authors.Length == 0) { return html; }
 
-            var authorsTag = $"<pre><h3 class='authors'>{_dependencies.BylineMaker.MakePrintByLine(authors)}</h3></pre>";
+            var authorsTag = $"<h3 class='authors'>{_dependencies.BylineMaker.MakePrintByLine(authors)}</h3>";
 
             return InjectAfterRegex(RootRegex, html, authorsTag);
         }
@@ -60,11 +60,11 @@ namespace Informa.Library.PXM.Helpers
             var html = string.Empty;
             if (article.Title.HasContent())
             {
-                html += $"<pre><h1 class=\"title\">{article.Title}</h1></pre>";
+                html += $"<h1 class=\"title\">{article.Title}</h1>";
             }
             if (article.Sub_Title.HasContent())
             {
-                html += $"<pre><h2 class=\"subtitle\">{article.Sub_Title}</h2></pre>";
+                html += $"<h2 class=\"subtitle\">{article.Sub_Title}</h2>";
             }
 
             return html;

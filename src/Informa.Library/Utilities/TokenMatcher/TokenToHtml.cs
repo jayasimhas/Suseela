@@ -240,7 +240,7 @@ namespace Informa.Library.Utilities.TokenMatcher
 				// Replace the first occurrence with hyperlink
 				if (!matchSet.Contains(match.Groups[1].Value))
 				{
-					replace = $"<aside type=\"\" height=\"10\" width=\"\"><a href=\"{string.Format(OldCompaniesUrl, match.Groups[1].Value.Split(':')[0])}\">{match.Groups[1].Value.Split(':')[1]}</a></aside>";
+					replace = $"<aside type=\"\" height=\"10\" width=\"\"><a href=\"{string.Format(OldCompaniesUrl, match.Groups[1].Value.Split(':')[0])}\"><span class=\"indexentry\">{match.Groups[1].Value.Split(':')[1]}</span></a></aside>";
 					content = regex.Replace(content, replace, 1);
 					matchSet.Add(match.Groups[1].Value);
 				}
@@ -248,8 +248,9 @@ namespace Informa.Library.Utilities.TokenMatcher
 				else
 				{
 					replace = match.Groups[1].Value.Split(':')[1];
-					content = content.Replace(match.Value, replace);
-				}
+					content = content.Replace(match.Value, $"<span class=\"indexentry\">{replace}</span>");
+
+                }
 			}
 			return content;
 		}

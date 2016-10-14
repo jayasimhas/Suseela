@@ -266,6 +266,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 Globals.SitecoreAddin.Log("Updating fields...");
                 articleDetailsPageSelector.UpdateFields(ArticleDetails);
                 articleDetailsPageSelector.pageWorkflowControl.UpdateFields(ArticleDetails.ArticleWorkflowState, ArticleDetails);
+            articleStatusBar1.RefreshWorkflowDetails();
             }
         }
 
@@ -676,12 +677,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 }
 
                 MessageBox.Show("The following multimedia content is not secure. Please correct and try to save again. " + message, "Non-secure Multimedia Content");
-                Cursor = Cursors.Arrow;
                 return;
             }
             catch (InvalidHtmlException)
             {
-                Cursor = Cursors.Arrow;
                 return;
             }
             catch (Exception ex)
@@ -690,6 +689,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 Globals.SitecoreAddin.LogException("Error when parsing article on creation!", ex);
                 return;
             }
+
 
             //added,21Sep16
             if (articleDetailsPageSelector.pageArticleInformationControl.IsVerticalSelected() == false)
@@ -706,11 +706,19 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 return;
             }
 
+
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+
             try
             {
-                var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument,
-                                                                       _wordUtils.CharacterStyleTransformer);
-                if (PreSavePrompts(metadataParser)) return;
+                Cursor.Current = Cursors.WaitCursor;
+                var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument, _wordUtils.CharacterStyleTransformer);
+                if (PreSavePrompts(metadataParser))
+                    return;
+
                 ArticleDetails = CreateSitecoreArticleItem();
                 if (ArticleDetails != null)
                 {
@@ -769,6 +777,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
 
         private void uxSaveMetadata_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var command = articleDetailsPageSelector.pageWorkflowControl.GetSelectedCommandState();
 
             // Checking for Taxonomy is the workflow state is final
@@ -806,7 +815,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 }
 
                 SuspendLayout();
-                Cursor = Cursors.WaitCursor;
 
                 var isPublished = ArticleDetails.IsPublished;
                 Guid guidCopy = ArticleDetails.ArticleGuid;
@@ -852,6 +860,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                     EnablePreview();
                     uxCreateArticle.Visible = false;
                 }
+                articleStatusBar1.RefreshWorkflowDetails();
 
                 MessageBox.Show(@"Metadata saved!", @"Informa");
             }
@@ -893,6 +902,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
             }
             try
             {
+                Cursor = Cursors.WaitCursor;
                 if (articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Enabled)
                     workflowChange_UnlockOnSave = articleDetailsPageSelector.pageWorkflowControl.uxUnlockOnSave.Checked;
 
@@ -916,14 +926,18 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 }
 
                 Globals.SitecoreAddin.Log("Save and transferring");
-                Cursor = Cursors.WaitCursor;
+
                 SuspendLayout();
 
                 SitecoreAddin.ActiveDocument.Saved = false;
 
+
+
+
                 var metadataParser = new ArticleDocumentMetadataParser(SitecoreAddin.ActiveDocument, _wordUtils.CharacterStyleTransformer);
                 if (PreSavePrompts(metadataParser)) return;
                 SaveArticleToSitecoreUpdateUI(metadataParser);
+                articleStatusBar1.RefreshWorkflowDetails();
             }
             catch (WebException wex)
             {

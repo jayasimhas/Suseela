@@ -21,30 +21,31 @@ namespace Informa.Web.ViewModels
 {
 	public class FeaturedArticleViewModel : GlassViewModel<IArticle>, IArticleBookmarker
 	{
-	    private readonly IDependencies _dependencies;
+		private readonly IDependencies _dependencies;
 
-	    [AutowireService(true)]
-	    public interface IDependencies
-	    {
-            IRenderingParametersContext RenderingParametersContext { get; }
-            IArticleService ArticleService { get; }
-            IAuthenticatedUserContext AuthenticatedUserContext { get; }
-            IIsSavedDocumentContext IsSavedDocumentContext { get; }
-            ITextTranslator TextTranslator { get; }
-            IBylineMaker BylineMaker { get; }
-            IPageItemContext PageItemContext { get; }
-	    }
+		[AutowireService(true)]
+		public interface IDependencies
+		{
+			IRenderingParametersContext RenderingParametersContext { get; }
+			IArticleService ArticleService { get; }
+			IAuthenticatedUserContext AuthenticatedUserContext { get; }
+			IIsSavedDocumentContext IsSavedDocumentContext { get; }
+			ITextTranslator TextTranslator { get; }
+			IBylineMaker BylineMaker { get; }
+			IPageItemContext PageItemContext { get; }
+		}
 
 		public FeaturedArticleViewModel(IDependencies dependencies)
 		{
+
 		    _dependencies = dependencies;
 
-		    BookmarkText = _dependencies.TextTranslator.Translate("Bookmark");
-            BookmarkedText = _dependencies.TextTranslator.Translate("Bookmarked");
-		    IsUserAuthenticated = _dependencies.AuthenticatedUserContext.IsAuthenticated;
-			BookmarkPublication = _dependencies.ArticleService.GetArticlePublicationName(GlassModel);
+		    //BookmarkText = _dependencies.TextTranslator.Translate("Bookmark");
+            //BookmarkedText = _dependencies.TextTranslator.Translate("Bookmarked");
+		    //IsUserAuthenticated = _dependencies.AuthenticatedUserContext.IsAuthenticated;
+			//BookmarkPublication = _dependencies.ArticleService.GetArticlePublicationName(GlassModel);
 			//BookmarkTitle = GlassModel.ListableTitle;
-		}
+        }
 
 		public string Title => GlassModel.Title;
 		private string _summary;
@@ -54,32 +55,35 @@ namespace Informa.Web.ViewModels
 		public bool DisplayImage => Options.Show_Image && !string.IsNullOrEmpty(Image?.ImageUrl);
 		public IFeatured_Article_Options Options => _dependencies.RenderingParametersContext.GetParameters<IFeatured_Article_Options>();
 
-	    private string _articleByLine;
-	    public string ArticleByLine
-	        => _articleByLine ?? (_articleByLine = _dependencies.BylineMaker.MakeByline(GlassModel.Authors));
+		private string _articleByLine;
+		public string ArticleByLine
+				=> _articleByLine ?? (_articleByLine = _dependencies.BylineMaker.MakeByline(GlassModel.Authors));
 
 		private DateTime? _date;
-	    public DateTime Date => _date ?? (_date = GlassModel.GetDate()).Value;
-		
+		public DateTime Date => _date ?? (_date = GlassModel.GetDate()).Value;
+
 		public string ContentType => GlassModel.Content_Type?.Item_Name;
 		public string MediaType => _dependencies.ArticleService.GetMediaTypeIconData(GlassModel)?.MediaType;
 		public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
-	    public bool IsUserAuthenticated { get; set; }
-	    public string BookmarkText { get; set; }
-        public string BookmarkedText { get; set; }
-	    private bool? _isArticleBookmarked;
-        public bool IsArticleBookmarked {
-            get
-            {
-                return _isArticleBookmarked ??
-                       (_isArticleBookmarked = _dependencies.IsSavedDocumentContext.IsSaved(GlassModel._Id)).Value;
-            }
-            set { _isArticleBookmarked = value; } }
+		public bool IsUserAuthenticated => _dependencies.AuthenticatedUserContext.IsAuthenticated;
+		public string BookmarkText => _dependencies.TextTranslator.Translate("Bookmarked");
+		public string BookmarkedText => _dependencies.TextTranslator.Translate("Bookmark");
+
+		private bool? _isArticleBookmarked;
+		public bool IsArticleBookmarked
+		{
+			get
+			{
+				return _isArticleBookmarked ??
+							 (_isArticleBookmarked = _dependencies.IsSavedDocumentContext.IsSaved(GlassModel._Id)).Value;
+			}
+			set { _isArticleBookmarked = value; }
+		}
 
 
-        public Guid ID => GlassModel._Id;
-		public string BookmarkPublication { get; set; }
-		public string BookmarkTitle { get; set; }
+		public Guid ID => GlassModel._Id;
+		public string BookmarkPublication => _dependencies.ArticleService.GetArticlePublicationName(GlassModel);
+		public string BookmarkTitle => GlassModel.ListableTitle;
 		public string PageTitle => _dependencies.PageItemContext.Get<I___BasePage>()?.Title;
 	}
 }

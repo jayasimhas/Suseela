@@ -26,19 +26,20 @@ namespace Elsevier.Web.VWB.Report
 		static readonly ColumnFactory ColumnFactory = ColumnFactory.GetColumnFactory();
 		private PublicationItem _publication;
 		private List<ArticleItemWrapper> _results;
-	    private IVwbColumn _articleCheckboxes;
-        private IVwbColumn _articleNumberColumn;
-        private IVwbColumn _titleColumn;
+		private IVwbColumn _articleCheckboxes;
+		private IVwbColumn _articleNumberColumn;
+		private IVwbColumn _titleColumn;
 		private IssueItem _iitem;
 		private readonly VwbQuery _query;
 		private readonly Page _page;
+
 		public ReportBuilder(Page page, VwbQuery query)
 		{
 			_page = page;
 			_query = query.Clone();
 			IEnumerable<string> immutableColKeys = ColumnFactory.ImmutableColumns.Select(i => i.Key());
 			if (_query.SortColumnKey != null && !_query.ColumnKeysInOrder.Contains(_query.SortColumnKey)
-				&& !immutableColKeys.Contains(_query.SortColumnKey))
+					&& !immutableColKeys.Contains(_query.SortColumnKey))
 			{
 				_query.SortColumnKey = null;
 			}
@@ -70,8 +71,8 @@ namespace Elsevier.Web.VWB.Report
 			if (_query.IssueIdValue == VwbQuery.NextIssueValue && _iitem == null && (_results == null || _results.Count() == 0))
 			{
 				report.Rows.Add(_publication.IsDaily()
-													? CreateAlert("There are no articles tomorrow!")
-													: CreateAlert("There is no future issue for this publication!"));
+																						? CreateAlert("There are no articles tomorrow!")
+																						: CreateAlert("There is no future issue for this publication!"));
 				return true;
 			}
 			return false;
@@ -173,7 +174,7 @@ namespace Elsevier.Web.VWB.Report
 
 			using (new Sitecore.SecurityModel.SecurityDisabler())
 			{
-				string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
+				string searchPageId = Constants.VWBSearchPageId;
 				string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
 				string url = string.Format("{0}://{1}/api/informasearch?pId={2}&sortBy=plannedpublishdate&sortOrder=desc", HttpContext.Current.Request.Url.Scheme, hostName, searchPageId);
 
@@ -182,16 +183,18 @@ namespace Elsevier.Web.VWB.Report
 					url += "&inprogress=1";
 				}
 
-				DateTime startDate = (query.StartDate != null) 
-                    ? query.StartDate.Value 
-                    : DateTime.MinValue;
+				DateTime startDate = (query.StartDate != null)
+										? query.StartDate.Value
+										: DateTime.MinValue;
 
-                DateTime endDate = (query.EndDate != null)
-                    ? query.EndDate.Value
-                    : DateTime.MaxValue;
-                
+				DateTime endDate = (query.EndDate != null)
+						? query.EndDate.Value
+						: DateTime.MaxValue;
+
 				url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
 				url += ";" + endDate.ToString("MM/dd/yyyy");
+				if (string.IsNullOrEmpty(query.PublicationCodes) == false)
+					url += "&SearchPublicationTitle=" + query.PublicationCodes;
 
 				var client = new WebClient();
 				var content = client.DownloadString(url);
@@ -215,7 +218,7 @@ namespace Elsevier.Web.VWB.Report
 					IArticle article = theItem.InnerItem.GlassCast<IArticle>(inferType: true);
 
 					if (article.Planned_Publish_Date.Ticks >= startDate.Ticks &&
-							article.Planned_Publish_Date.Ticks <= endDate.Ticks)
+									article.Planned_Publish_Date.Ticks <= endDate.Ticks)
 					{
 						resultItems.Add(theItem);
 					}
@@ -223,25 +226,28 @@ namespace Elsevier.Web.VWB.Report
 				}
 
 				articles = ArticleItemWrapper.GetArticleItemProxies(resultItems).ToList();
-
-
 			}
+
 			if (query.SortColumnKey != null && ColumnFactory.GetColumn(query.SortColumnKey) != null)
 			{
 				articles.Sort(ColumnFactory.GetColumn(query.SortColumnKey));
 			}
+
 			if (query.SortColumnKey == ColumnFactory.GetArticleNumberColumn().Key())
 			{
 				articles.Sort(ColumnFactory.GetArticleNumberColumn());
 			}
+
 			if (query.SortColumnKey == ColumnFactory.GetTitleColumn().Key())
 			{
 				articles.Sort(ColumnFactory.GetTitleColumn());
 			}
+
 			if (query.Descending)
 			{
 				articles.Reverse();
 			}
+
 			if (query.NumResultsValue != null)
 			{
 				return articles.GetRange(0, Math.Min(articles.Count, (int)query.NumResultsValue));
@@ -253,12 +259,12 @@ namespace Elsevier.Web.VWB.Report
 		private void InitializeColumns(VwbQuery query)
 		{
 			Columns = query.ColumnKeysInOrder != null
-									? ColumnFactory.GetColumns(query.ColumnKeysInOrder).ToList()
-									: new List<IVwbColumn>();
-		    _articleCheckboxes = ColumnFactory.GetArticleCheckboxes();
+															? ColumnFactory.GetColumns(query.ColumnKeysInOrder).ToList()
+															: new List<IVwbColumn>();
+			_articleCheckboxes = ColumnFactory.GetArticleCheckboxes();
 			_articleNumberColumn = ColumnFactory.GetArticleNumberColumn();
 			_titleColumn = ColumnFactory.GetTitleColumn();
-            Columns.InsertRange(0, new[] {_articleCheckboxes, _articleNumberColumn, _titleColumn});
+			Columns.InsertRange(0, new[] { _articleCheckboxes, _articleNumberColumn, _titleColumn });
 		}
 
 		private void BuildHeaderRows(Table report)
@@ -277,9 +283,9 @@ namespace Elsevier.Web.VWB.Report
 			{
 				CssClass = "sort-move"
 			};
-            TableCell cell = GetImmutableSubHeaderCell(_articleCheckboxes);
-            header.Cells.Add(cell); //add cell for article checkboxes column
-            cell = GetImmutableSubHeaderCell(_articleNumberColumn);
+			TableCell cell = GetImmutableSubHeaderCell(_articleCheckboxes);
+			header.Cells.Add(cell); //add cell for article checkboxes column
+			cell = GetImmutableSubHeaderCell(_articleNumberColumn);
 			header.Cells.Add(cell); //add cell for article number column
 			cell = GetImmutableSubHeaderCell(_titleColumn);
 			header.Cells.Add(cell); //add cell for title column
@@ -324,24 +330,24 @@ namespace Elsevier.Web.VWB.Report
 		{
 			if (column == _articleCheckboxes || column == _articleNumberColumn || column == _titleColumn) return;
 
-		    if (!_query.ColumnKeysInOrder.Any()) return;
+			if (!_query.ColumnKeysInOrder.Any()) return;
 
-		    if (column.Key() != _query.ColumnKeysInOrder.FirstOrDefault())
-		    {
-		        var link = new HyperLink {CssClass = "moveleft"};
-		        var query = _query.Clone();
-		        query.MoveColumnLeft(column.Key());
-		        link.Attributes.Add("href", GetUrlForQuery(query));
-		        tableCell.Controls.Add(link);
-		    }
-		    if (column.Key() != _query.ColumnKeysInOrder.Last())
-		    {
-		        var link = new HyperLink {CssClass = "moveright"};
-		        var query = _query.Clone();
-		        query.MoveColumnRight(column.Key());
-		        link.Attributes.Add("href", GetUrlForQuery(query));
-		        tableCell.Controls.Add(link);
-		    }
+			if (column.Key() != _query.ColumnKeysInOrder.FirstOrDefault())
+			{
+				var link = new HyperLink { CssClass = "moveleft" };
+				var query = _query.Clone();
+				query.MoveColumnLeft(column.Key());
+				link.Attributes.Add("href", GetUrlForQuery(query));
+				tableCell.Controls.Add(link);
+			}
+			if (column.Key() != _query.ColumnKeysInOrder.Last())
+			{
+				var link = new HyperLink { CssClass = "moveright" };
+				var query = _query.Clone();
+				query.MoveColumnRight(column.Key());
+				link.Attributes.Add("href", GetUrlForQuery(query));
+				tableCell.Controls.Add(link);
+			}
 		}
 
 		private string GetUrlForQuery(VwbQuery query)

@@ -11,10 +11,10 @@ namespace Informa.Web.ViewModels
 
     public interface IArticleBookmarker
     {
-        bool IsUserAuthenticated { get; set; }
-        bool IsArticleBookmarked { get; set; }
-        string BookmarkText { get; set; }
-        string BookmarkedText { get; set; }
+        bool IsUserAuthenticated { get; }
+        bool IsArticleBookmarked { get; }
+        string BookmarkText { get; }
+        string BookmarkedText { get; }
 				Guid ID { get; }
     }
 }

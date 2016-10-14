@@ -10,6 +10,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whit
 using Jabberwocky.Glass.Models;
 using NSubstitute;
 using NUnit.Framework;
+using Sitecore.Data.Items;
 
 namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 {
@@ -380,22 +381,5 @@ namespace Informa.Tests.Library.VirtualWhiteboard_Tests
 			Assert.AreEqual(order,article1.Sortorder);
 			Assert.AreEqual(++order,article2.Sortorder);
 		}
-
-	    [Test]
-	    public void BuildIssueDictionary_IssueId_ASetOfChildren()
-	    {
-		    // ARRANGE
-		    var issue = Substitute.For<IIssue>();
-	        issue._Id.Returns(new Guid("38FFB1E3-7748-4F8F-ACFF-F98676D22012"));
-		    _dependencies.SitecoreServiceMaster.GetItem<IIssue>(issue._Id).Returns(issue);
-		    var article = Substitute.For<IGlassBase>();
-		    issue._ChildrenWithInferType.Returns(new[] {article, article});
-
-            // ACT
-            var result = _issuesService.BuildIssueDictionary(issue._Id);
-
-		    // ASSERT
-			Assert.IsNotEmpty(result);
-	    }
 	}
 }

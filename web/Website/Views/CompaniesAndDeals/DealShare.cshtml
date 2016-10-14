@@ -1,0 +1,10 @@
+﻿@model Informa.Web.ViewModels.CompaniesAndDeals.CompaniesandDealsShareViewModel
+<div class="action-flags-bar article-prologue">
+    <div class="action-flags article-prologue__share-bar">
+        <ul>
+            @{ Html.RenderPartial("/Views/CompaniesAndDeals/DealPrologueEmail.cshtml"); }
+            @{ Html.RenderPartial("/Views/CompaniesAndDeals/CompaniesAndDealsPrologueShare.cshtml", Model); }
+        </ul>
+    </div>
+    <div></div>
+</div>

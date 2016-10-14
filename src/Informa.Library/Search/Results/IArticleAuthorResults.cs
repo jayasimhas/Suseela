@@ -7,5 +7,8 @@ namespace Informa.Library.Search.Results
 	{
 		[IndexField("authors_sm")]
 		IList<string> AuthorGuid { get; set; }
+
+		[IndexField("facetauthornames_sm")]
+		IList<string> AuthorFullNames { get; set; }
 	}
 }

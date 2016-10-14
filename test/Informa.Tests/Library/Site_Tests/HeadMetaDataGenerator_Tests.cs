@@ -61,8 +61,8 @@ namespace Informa.Tests.Library.Site_Tests
 
             // ASSERT
             var expected = new StringBuilder();
-            expected.AppendLine("<meta name=\"animal\" content=\"moose\">");
-            expected.AppendLine("<meta name=\"parable\" content=\"meandering story that is supposed to be meaningful\">");
+            expected.AppendLine("<meta property=\"animal\" content=\"moose\">");
+            expected.AppendLine("<meta property=\"parable\" content=\"meandering story that is supposed to be meaningful\">");
             Assert.AreEqual(expected.ToString(), result);
         }
 

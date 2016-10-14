@@ -2,11 +2,12 @@
 
 @if (Model.IsAuthenticated)
 {
-    <div class="page-account subscriptionPan">
+<div class="page-account subscriptionPan">
         @Html.Sitecore().Placeholder("page-account")
         <span class="page-account_text">
             @Model.SubscriptionHeaderSubTitle;
         </span>
+
         <div class="page-preferences js-preferences-user-container">
 
             <h2 class="page-account__table-headline">@Model.Title</h2>
@@ -191,6 +192,7 @@
                                     </div>
                                 }
                             </div>
+
                         </div>
                 }
                 @*Mobile section Ends*@

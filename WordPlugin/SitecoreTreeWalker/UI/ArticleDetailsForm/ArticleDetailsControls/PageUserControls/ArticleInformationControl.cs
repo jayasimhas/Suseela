@@ -28,6 +28,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         public bool IsVerticalsLoaded { get; set; }
 
         private string ArticleNumber;
+        public Guid ArticleGuid;
+        public bool IsPublished;
 
         public bool _isLive;
 
@@ -384,9 +386,12 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             IsCheckedOutByMe = false;
 
             _parent.PreLinkEnable();
+			IndicatedUnfavoredLink();
+			_parent.EnablePreview();
+			_parent.HideCreationButtons();
 
-            //_parent.articleStatusBar1.up
-            _parent.articleStatusBar1.ChangeLockButtonStatus(LockStatus.Locked);
+			//_parent.articleStatusBar1.up
+			_parent.articleStatusBar1.ChangeLockButtonStatus(LockStatus.Locked);
             //IndicatedUnfavoredLink();
             DocumentProtection.Protect(_documentCustomProperties);
         }
@@ -661,6 +666,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             }
 
             ArticleNumber = articleDetails.ArticleNumber;
+            ArticleGuid = articleDetails.ArticleGuid;
+            IsPublished = articleDetails.IsPublished;
             uxEmbargoed.Checked = articleDetails.Embargoed;
             uxMediaTypes.SelectedValue = articleDetails.MediaType;
             uxLabel.SelectedValue = articleDetails.Label;

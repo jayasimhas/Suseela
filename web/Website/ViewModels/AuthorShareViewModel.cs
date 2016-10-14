@@ -1,4 +1,5 @@
 ﻿using Informa.Web.ViewModels.Articles;
+using Informa.Web.ViewModels.Authors;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 
@@ -8,15 +9,15 @@ namespace Informa.Web.ViewModels
 	{
 		public AuthorShareViewModel(
 			IAuthorPrologueEmailViewModel authorPrologueEmailViewModel,
-			IArticlePrologueShareViewModel articlePrologueShareViewModel
-			)
+            IAuthorShareViewModel authorShareViewModel
+            )
 		{
 			EmailViewModel = authorPrologueEmailViewModel;
-			ShareViewModel = articlePrologueShareViewModel;
+			ShareViewModel = authorShareViewModel;
 		}
 
 		public IAuthorPrologueEmailViewModel EmailViewModel;
 
-		public IArticlePrologueShareViewModel ShareViewModel;
+		public IAuthorShareViewModel ShareViewModel;
 	}
 }
