@@ -10438,6 +10438,17 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
         /// </summary>
         [SitecoreField(INavigation_LinkConstants.Navigation_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Navigation_Text { get; set; }
+
+        /// <summary>
+        /// The Navigation Code field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: BBFBB899-20C6-43BC-B6DE-021E84CD5BB6</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(INavigation_LinkConstants.Navigation_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Navigation_Code { get; set; }
+
     }
 
 
@@ -10468,6 +10479,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
         /// </summary>
         [SitecoreField(INavigation_LinkConstants.Navigation_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Navigation_Text { get; set; }
+
+        /// <summary>
+        /// The Navigation Code field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: BBFBB899-20C6-43BC-B6DE-021E84CD5BB6</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(INavigation_LinkConstants.Navigation_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Navigation_Code { get; set; }
     }
 
     public static partial class INavigation_LinkConstants
@@ -10486,8 +10507,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
         public static readonly ID Navigation_TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
         public const string Navigation_TextFieldName = "Navigation Text";
 
-
-
+        public static readonly ID Navigation_CodeFieldId = new ID("bbfbb899-20c6-43bc-b6de-021e84cd5bb6");
+        public const string Navigation_CodeFieldName = "Navigation Code";
 
     }
 
