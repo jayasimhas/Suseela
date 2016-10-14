@@ -274,9 +274,9 @@ namespace Informa.Web.Controllers
         [HttpPost]
         [Authorize]
         [Authorize]
-        public bool Post([FromBody] string articleNumber)
+        public bool Post([FromBody] string articleNumber, Guid publicationGuid = default(Guid))
         {
-            Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
+            Item article = _articleUtil.GetArticleItemByNumber(articleNumber, publicationGuid);
             return article != null;
         }
     }
@@ -343,9 +343,9 @@ namespace Informa.Web.Controllers
         [HttpPost]
         [Authorize]
         [Authorize]
-        public ArticlePreviewInfo Post([FromBody] string articleNumber)
+        public ArticlePreviewInfo Post([FromBody] string articleNumber, Guid publicationGuid = default(Guid))
         {
-            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
+            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber, publicationGuid);
             var preview = article != null ? _articleUtil.GetPreviewInfo(article) : new ArticlePreviewInfo();
             return preview;
         }
@@ -543,9 +543,9 @@ namespace Informa.Web.Controllers
 
         [HttpPost]
         [Authorize]
-        public string Post([FromBody] string articleNumber)
+        public string Post([FromBody] string articleNumber, Guid publicationGuid = default(Guid))
         {
-            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
+            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber, publicationGuid);
             return article?._Id.ToString() ?? Guid.Empty.ToString();
         }
     }

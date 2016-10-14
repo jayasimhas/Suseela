@@ -12,6 +12,7 @@ namespace InformaSitecoreWord.Util
         private static volatile PluginSingletonVerticalRoot instance;
         private static object syncRoot = new Object();
         public VerticalStruct CurrentVertical { get; set; }
+        public ItemStruct CurrentPublication { get; set; }
 
         private PluginSingletonVerticalRoot() { }
 
