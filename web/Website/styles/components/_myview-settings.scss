@@ -159,12 +159,28 @@
 							background: $color-tree-poppy-orange;
 							color: $color-white;
 						}
-					
+						@include breakpoint('medium-small'){
+							background: url(/dist/img/follow-mob.jpg) no-repeat;
+							height: 1.875rem;
+							width: 1.875rem;
+							display: inline-block;
+							margin-left: 0.625rem;
+							text-indent: -9999px;
+						}
 					}
 					.followBtn{
 						@include folow-btn(7.5rem, 2rem);
 						background: $color-tree-poppy-orange;
 						color: $color-white;
+						@include breakpoint('medium-small'){
+							background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+							height: 1.875rem;
+							width: 1.875rem;
+							display: inline-block;
+							margin-left: 0.625rem;
+							border: none;
+							text-indent: -9999px;
+						}
 					}
 					&.followingrow{
 						.rowlines{
@@ -307,20 +323,22 @@
 					@include folow-btn(7.5rem, 2rem);
 					margin-top: 0.5rem;
 					&:hover{
-						background: $color-tree-poppy-orange;
+						background-color: $color-tree-poppy-orange;
 						color: $color-white;
 					}
 					&.mtp{
 						margin-top: -6px;
+						margin-bottom: 25px;
 					}
 				}
 				.unfollowAllBtn{
 					@include folow-btn(7.5rem, 2rem);
-					background: $color-tree-poppy-orange;
+					background-color: $color-tree-poppy-orange;
 					color: $color-white;
 					margin: 0.5rem 0 0 1.25rem;
 					&.mtp{
 						margin-top: -6px;
+						margin-bottom: 25px;
 					}
 				}
 			}
@@ -355,36 +373,6 @@
 			}
 			.graybg{
 				background: #f9fafa;
-			}
-			.smfollowingBtn{
-				text-align: right;
-				a{
-					background: url(/dist/img/follow-mob.jpg) no-repeat;
-					height: 1.875rem;
-					width: 1.875rem;
-					display: inline-block;
-					margin-left: 0.625rem;
-				}
-				span{
-					position: relative;
-					top: -0.75rem;
-					font-size: 0.6875em;
-					font-weight: bold;
-					font-family: "Roboto";
-					text-transform: uppercase;
-				}
-				& .mchecked{
-					background-position: 0 0;
-				}
-				& .munchecked{
-					background-position: 0 -31px;
-				}
-				& .mcheckedAll{
-					background-position: 0 0;
-				}
-				& .muncheckedAll{
-					background-position: 0 -31px;
-				}
 			}
 		}
   }
@@ -441,6 +429,23 @@
 	}
 	.smfollowingBtn{
 		margin: 0.1rem 0;
+		span{
+			background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+			border: none;
+			height: 30px !important;
+			width: 30px !important;
+			line-height: 1.75rem !important;
+			&.unfollowAllBtn{
+				background-position: 0 -31px;
+				border: none !important;
+				text-indent: -124px;
+				color: $color-abbey-gray !important;
+			} 
+			&.followAllBtn{
+				background-position: 0 0;
+				text-indent: -140px;
+			}
+		}		
 	}
 	.hidden-lg{
 		display: none !important;
