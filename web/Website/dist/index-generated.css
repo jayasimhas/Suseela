@@ -3688,6 +3688,17 @@ header .header-account-access {
           .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
             background: #f7941e;
             color: #ffffff; }
+          @media (max-width: 640px) {
+            .myview-settings .table-responsive .table tbody tr .followingBtn {
+              background: url(/dist/img/follow-mob.jpg) no-repeat;
+              height: 30px;
+              height: 1.875rem;
+              width: 30px;
+              width: 1.875rem;
+              display: inline-block;
+              margin-left: 10px;
+              margin-left: 0.625rem;
+              text-indent: -9999px; } }
         .myview-settings .table-responsive .table tbody tr .followBtn {
           border: 1px solid #f7941e;
           cursor: pointer;
@@ -3706,6 +3717,18 @@ header .header-account-access {
           float: right;
           background: #f7941e;
           color: #ffffff; }
+          @media (max-width: 640px) {
+            .myview-settings .table-responsive .table tbody tr .followBtn {
+              background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+              height: 30px;
+              height: 1.875rem;
+              width: 30px;
+              width: 1.875rem;
+              display: inline-block;
+              margin-left: 10px;
+              margin-left: 0.625rem;
+              border: none;
+              text-indent: -9999px; } }
         .myview-settings .table-responsive .table tbody tr.followingrow .rowlines {
           float: right;
           margin-top: 3px;
@@ -3919,10 +3942,11 @@ header .header-account-access {
         margin-top: 8px;
         margin-top: 0.5rem; }
         .myview-settings .table-responsive .table thead .followAllBtn:hover {
-          background: #f7941e;
+          background-color: #f7941e;
           color: #ffffff; }
         .myview-settings .table-responsive .table thead .followAllBtn.mtp {
-          margin-top: -6px; }
+          margin-top: -6px;
+          margin-bottom: 25px; }
       .myview-settings .table-responsive .table thead .unfollowAllBtn {
         border: 1px solid #f7941e;
         cursor: pointer;
@@ -3939,12 +3963,13 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        background: #f7941e;
+        background-color: #f7941e;
         color: #ffffff;
         margin: 8px 0 0 20px;
         margin: 0.5rem 0 0 1.25rem; }
         .myview-settings .table-responsive .table thead .unfollowAllBtn.mtp {
-          margin-top: -6px; }
+          margin-top: -6px;
+          margin-bottom: 25px; }
       .myview-settings .table-responsive .table .wd-55 {
         width: 55%; }
         @media (max-width: 480px) {
@@ -3974,33 +3999,6 @@ header .header-account-access {
             width: 15%; } }
       .myview-settings .table-responsive .table .graybg {
         background: #f9fafa; }
-      .myview-settings .table-responsive .table .smfollowingBtn {
-        text-align: right; }
-        .myview-settings .table-responsive .table .smfollowingBtn a, .myview-settings .table-responsive .table .smfollowingBtn .pop-out__reset-password, .myview-settings .table-responsive .table .smfollowingBtn .sortable-table__list-toggler, .myview-settings .table-responsive .table .smfollowingBtn .mobile-table-exit {
-          background: url(/dist/img/follow-mob.jpg) no-repeat;
-          height: 30px;
-          height: 1.875rem;
-          width: 30px;
-          width: 1.875rem;
-          display: inline-block;
-          margin-left: 10px;
-          margin-left: 0.625rem; }
-        .myview-settings .table-responsive .table .smfollowingBtn span {
-          position: relative;
-          top: -12px;
-          top: -0.75rem;
-          font-size: 0.6875em;
-          font-weight: bold;
-          font-family: "Roboto";
-          text-transform: uppercase; }
-        .myview-settings .table-responsive .table .smfollowingBtn .mchecked {
-          background-position: 0 0; }
-        .myview-settings .table-responsive .table .smfollowingBtn .munchecked {
-          background-position: 0 -31px; }
-        .myview-settings .table-responsive .table .smfollowingBtn .mcheckedAll {
-          background-position: 0 0; }
-        .myview-settings .table-responsive .table .smfollowingBtn .muncheckedAll {
-          background-position: 0 -31px; }
   .myview-settings .hideBtn {
     display: none !important; }
   .myview-settings .saveoption {
@@ -4086,6 +4084,21 @@ header .header-account-access {
   .smfollowingBtn {
     margin: 1px 0;
     margin: 0.1rem 0; }
+    .smfollowingBtn span {
+      background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+      border: none;
+      height: 30px !important;
+      width: 30px !important;
+      line-height: 28px !important;
+      line-height: 1.75rem !important; }
+      .smfollowingBtn span.unfollowAllBtn {
+        background-position: 0 -31px;
+        border: none !important;
+        text-indent: -124px;
+        color: #58595b !important; }
+      .smfollowingBtn span.followAllBtn {
+        background-position: 0 0;
+        text-indent: -140px; }
   .hidden-lg {
     display: none !important; } }
 
@@ -4958,10 +4971,7 @@ section: UI Elements
       font-weight: 700;
       font-style: normal;
       color: #231f20;
-      text-transform: uppercase;
-      background: #F5821F url("/dist/img/chk-boxes.png");
-      background-position: 0 -51px;
-      background-repeat: no-repeat; }
+      text-transform: uppercase; }
     @media (max-width: 480px) {
       .register .register_newsletter div.page-registration .next_right {
         display: none; } }
@@ -5128,10 +5138,7 @@ section: UI Elements
       font-weight: 700;
       font-style: normal;
       color: #231f20;
-      text-transform: uppercase;
-      background: #F5821F url("/dist/img/chk-boxes.png");
-      background-position: 0 -51px;
-      background-repeat: no-repeat; }
+      text-transform: uppercase; }
 
 /*
  * This borrows and modifies the base selectivity styles, so don't just drop in
