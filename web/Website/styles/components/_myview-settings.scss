@@ -160,9 +160,10 @@
 							color: $color-white;
 						}
 						@include breakpoint('medium-small'){
-							background: url(/dist/img/follow-mob.jpg) no-repeat;
+							background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
 							height: 1.875rem;
 							width: 1.875rem;
+							border: none;
 							display: inline-block;
 							margin-left: 0.625rem;
 							text-indent: -9999px;
@@ -173,7 +174,7 @@
 						background: $color-tree-poppy-orange;
 						color: $color-white;
 						@include breakpoint('medium-small'){
-							background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+							background: url(/dist/img/follow-mob.jpg) no-repeat 0 0;
 							height: 1.875rem;
 							width: 1.875rem;
 							display: inline-block;
@@ -235,7 +236,8 @@
 						padding: 0.75rem 0 0;
 						@include breakpoint('medium-small') {
 							padding: 0;
-							font-size: 0.875em; 
+							font-size: 1em;
+							font-weight: normal;
 						}
 					} 
 					&.firstrow{
@@ -304,7 +306,7 @@
 								background: url(/dist/img/accordion.png) no-repeat 0 0;
 								@include breakpoint('small') {
 									position: relative;
-									left: -0.3125rem;
+									left: 0;
 								}
 								@include breakpoint('medium') {
 									position: relative;
