@@ -675,7 +675,7 @@ $(function () {
 	$('#allPublicationsPan').on('click', '.followAllBtn', function () {
 		var $this = $(this),
 		    curpublicPan = $this.closest('.publicationPan'),
-		    div = $this.closest('div.hidden-xs'),
+		    div = $this.closest('div'),
 		    $lgfollow = curpublicPan.find('.followBtn'),
 		    table = $('.table');
 		$this.addClass('hideBtn');
@@ -691,49 +691,13 @@ $(function () {
 	$('#allPublicationsPan').on('click', '.unfollowAllBtn', function () {
 		var $this = $(this),
 		    curpublicPan = $this.closest('.publicationPan'),
-		    div = $this.closest('div.hidden-xs'),
+		    div = $this.closest('div'),
 		    $lgfollowing = curpublicPan.find('.followingBtn');
 		$this.addClass('hideBtn');
 		div.find('.followAllBtn').removeClass('hideBtn');
 		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html('follow');
 		for (var i = 0; i < $lgfollowing.length; i++) {
 			$($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled ufa');
-		}
-	});
-
-	$('#allPublicationsPan').on('click', '.mcheckedAll', function () {
-		var $this = $(this),
-		    mcall = $this.closest('.mca'),
-		    muall = $this.closest('.smfollowingBtn').find('.mua'),
-		    curpublicPan = $(this).closest('.publicationPan'),
-		    mchecked = curpublicPan.find('.mchecked');
-		mcall.addClass('hideBtn');
-		muall.removeClass('hideBtn');
-		for (var i = 0; i < mchecked.length; i++) {
-			$(mchecked[i], curpublicPan).addClass('munchecked').removeClass('mchecked');
-		}
-	});
-
-	$('#allPublicationsPan').on('click', '.muncheckedAll', function () {
-		var $this = $(this),
-		    mcall = $this.closest('.smfollowingBtn').find('.mca'),
-		    muall = $this.closest('.mua'),
-		    curpublicPan = $(this).closest('.publicationPan'),
-		    munchecked = curpublicPan.find('.munchecked');
-		muall.addClass('hideBtn');
-		mcall.removeClass('hideBtn');
-		for (var i = 0; i < munchecked.length; i++) {
-			$(munchecked[i], curpublicPan).addClass('mchecked').removeClass('munchecked');
-		}
-	});
-
-	$('#allPublicationsPan .donesubscribe').on('click', '.smfollowingBtn a', function () {
-		var $this = $(this),
-		    smfollowingBtn = $this.closest('.smfollowingBtn');
-		if ($this.hasClass('munchecked')) {
-			smfollowingBtn.find('a').addClass('mchecked').removeClass('munchecked');
-		} else {
-			smfollowingBtn.find('a').addClass('munchecked').removeClass('mchecked');
 		}
 	});
 
@@ -789,19 +753,27 @@ $(function () {
 		    thead = pPan.find('thead'),
 		    tbody = pPan.find('tbody'),
 		    trs = tbody.find('tr'),
-		    accCont = pPan.find('.accCont');
+		    disabledtrs = tbody.find('tr.disabled'),
+		    accCont = pPan.find('.accCont'),
+		    followlbl = thead.find('.followlbl'),
+		    followinglbl = thead.find('.followinglbl');
 		if ($this.hasClass('collapsed')) {
 			$this.removeClass('collapsed');
-			thead.find('.mtp').removeClass('vh');
 			tbody.addClass('tbodyhidden');
 			accCont.addClass('tbodyhidden');
 			pPan.find('.smfollowingBtn').hide();
 			pPan.find('.graybg').hide();
+			thead.find('.mtp').addClass('hideBtn');
+			if (trs.length === disabledtrs.length) {
+				followlbl.removeClass('hideBtn');
+			} else {
+				followinglbl.removeClass('hideBtn');
+			}
 		} else {
 			$this.addClass('collapsed');
 			tbody.removeClass('tbodyhidden');
 			accCont.removeClass('tbodyhidden');
-			thead.find('.mtp').addClass('vh');
+			thead.find('.mtp').addClass('hideBtn');
 			pPan.find('.smfollowingBtn').show();
 			pPan.find('.graybg').show();
 		}
@@ -833,7 +805,6 @@ $(function () {
 			}
 			UserPreferences.PreferredChannels.Channel.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, Topics: { "Topic": alltdata } });
 		}
-		//console.log(JSON.stringify(UserPreferences));
 		$.post('/Account/api/PreferencesApi/SetUserPreferences/', { 'UserPreferences': JSON.stringify(UserPreferences) });
 	});
 
