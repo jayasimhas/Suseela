@@ -43,6 +43,7 @@
 }
 
 .myview-settings {
+	padding-bottom: 50px !important;
 	margin-bottom: 3.125rem;
 	h1{
 		margin-bottom: 0rem;
@@ -101,8 +102,11 @@
 		.subscribed{
 			border-left: 1px solid #d9dadb;
 			float: left;
+			cursor: pointer;
 			padding-left: 1.25rem;
 			margin: 0.1875rem 1.25rem;
+			position: relative;
+			top: -2px;
 			@include breakpoint('medium-small') {
 				font-size: 0.875em;
 				border-left: none;				
@@ -116,7 +120,7 @@
 			height: 2rem;
 			background: $color-tree-poppy-orange;
 			color: $color-white;
-			margin: 0.5rem 0 0 1.25rem;
+			margin: -4px 0 0 1.25rem;
 			line-height: 2rem;
 			font-size: 0.75rem;
 			cursor: pointer;
@@ -235,22 +239,39 @@
 					}
 					& .rowlines{
 						@include getMove();
-						top: -1.5rem;
+						margin-top: -1.5rem;
 						@include breakpoint('medium-small') {
 							top: 4px;
+							margin-top: 0px;
 						}
 						span{
 							@include breakpoint('medium-small') {
 								background: #808081;
 							}
 						}
+						& .vline{
+							border: 1px solid #dadada;
+							height: 40px;
+							width: 1px;
+							float: left;
+							position: relative;
+							top: -13px;
+							right: 22px;
+							@include breakpoint('medium-small'){
+								display: none;
+							}
+							@include breakpoint('medium'){
+								right: 12px;
+							}
+						}
 					}
 					& .accordionImg{
 						a{
-							background: url(/dist/img/accordion.jpg) no-repeat 0 -18px;
+							background: url(/dist/img/accordion.png) no-repeat 0 -21px;
 							height: 1.0625rem;
 							width: 2rem;
 							display: inline-block;
+							margin-right: 10%;
 							@include breakpoint('medium') {
 								position: relative;
 								left: -1.25rem;
@@ -259,9 +280,12 @@
 								position: relative;
 								left: -0.9375rem;
 							}
+							@media screen and (min-width: 801px) and (max-width: 1130px){
+								margin-right: 50%;
+							}
 							
 							&.collapsed{
-								background: url(/dist/img/accordion.jpg) no-repeat 0 0;
+								background: url(/dist/img/accordion.png) no-repeat 0 0;
 								@include breakpoint('small') {
 									position: relative;
 									left: -0.3125rem;
@@ -275,7 +299,7 @@
 					}
 					&.notsubscr{
 						text-align: left;
-						padding-bottom: 0rem;
+						padding-bottom: 1.5rem;
 						padding-top: 0rem;
 					}
 				} 
@@ -286,12 +310,18 @@
 						background: $color-tree-poppy-orange;
 						color: $color-white;
 					}
+					&.mtp{
+						margin-top: -6px;
+					}
 				}
 				.unfollowAllBtn{
 					@include folow-btn(7.5rem, 2rem);
 					background: $color-tree-poppy-orange;
 					color: $color-white;
 					margin: 0.5rem 0 0 1.25rem;
+					&.mtp{
+						margin-top: -6px;
+					}
 				}
 			}
 			.wd-55{
@@ -399,7 +429,10 @@
   & .hidden{
 	display: none !important;
   }
-	
+  .vh{
+	visibility: hidden;
+	background: #f9f9f9;
+  }
 }
 
 @include breakpoint('small') {
@@ -430,6 +463,10 @@
 	-ms-animation: drop 1s ease;
 	-o-animation: drop 1s ease;
 	animation: drop 1s ease;
+}
+
+.followingrow.over{
+	background: $color-tree-poppy-orange;
 }
  
 @-moz-keyframes drop {
