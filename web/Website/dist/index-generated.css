@@ -5835,7 +5835,9 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 .small_table .table-responsive .table {
   border-collapse: inherit;
   border: 1px solid #d1d3d4;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 48px;
+  margin-bottom: 3rem; }
   .small_table .table-responsive .table .table_head {
     background-color: #414042;
     color: #ffffff; }
@@ -5851,36 +5853,46 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: 400;
-    font-style: normal; }
+    font-style: normal;
+    vertical-align: top; }
   .small_table .table-responsive .table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
     color: #bb1528;
     font-style: normal;
-    font-weight: 700; }
+    font-weight: 700;
+    vertical-align: top; }
   .small_table .table-responsive .table .R21_RedColor {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.3125em;
     font-weight: 400;
     font-style: normal;
     color: #bb1528; }
+    @media (max-width: 480px) {
+      .small_table .table-responsive .table .R21_RedColor {
+        vertical-align: top; } }
   .small_table .table-responsive .table .R21_GrayColor {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.3125em;
     font-weight: 400;
     font-style: normal;
     color: #414042; }
+    @media (max-width: 480px) {
+      .small_table .table-responsive .table .R21_GrayColor {
+        vertical-align: top; } }
   .small_table .table-responsive .table .RB18 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.125em;
     font-weight: 700;
     font-style: normal; }
-  @media (max-width: 480px) {
-    .small_table .table-responsive .table .visible-lg {
-      display: none; } }
-  @media (max-width: 640px) {
-    .small_table .table-responsive .table .visible-lg {
-      display: none; } }
+  .small_table .table-responsive .table .visible-lg {
+    margin-bottom: 20px; }
+    @media (max-width: 480px) {
+      .small_table .table-responsive .table .visible-lg {
+        display: none; } }
+    @media (max-width: 640px) {
+      .small_table .table-responsive .table .visible-lg {
+        display: none; } }
 
 .small_table .table-responsive h1.primary_heading {
   font-family: "Roboto Condensed", Arial Narrow, sans-serif;
@@ -5909,6 +5921,18 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 
 .small_table .table-responsive .pad-10 {
   padding: 10px; }
+  @media (max-width: 480px) {
+    .small_table .table-responsive .pad-10 {
+      padding: 10px 15px 10px; } }
+
+.small_table .table-responsive .pad-full-10 {
+  padding: 10px; }
+
+.small_table .table-responsive .pad-bottom-20 {
+  padding-bottom: 20px; }
+
+.small_table .table-responsive .pad-top-10 {
+  padding-top: 10px; }
 
 .small_table .table-responsive hr {
   margin: 35px 0 35px 0; }

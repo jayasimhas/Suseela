@@ -6,6 +6,7 @@
 				border-collapse: inherit;
 				border: 1px solid $color-light-gray;
 				width:100%;
+				margin-bottom: 3rem;
 				.table_head{
 				  background-color: $color-ship-gray;
 				  color: $color-white;
@@ -23,6 +24,7 @@
 				.R16{
 				   @include textMix('Roboto', 1em, 400);
 				   font-style: normal;
+				   vertical-align: top;
 				}
 				.RB16{
 				   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -30,22 +32,30 @@
 				   color:$color-red;
 				   font-style: normal;
 				   font-weight: 700;
+				   vertical-align: top;
 				}
 				.R21_RedColor{
 				   @include textMix('Roboto', 1.3125em, 400);
 				   font-style: normal;
 				   color:$color-red;
+				   @include breakpoint('small'){
+					vertical-align: top; 
+				   }
 				}
 				.R21_GrayColor{
 				   @include textMix('Roboto', 1.3125em, 400);
 				   font-style: normal;
 				   color:$color-ship-gray;
+				   @include breakpoint('small'){
+					vertical-align: top; 
+				   }
 				}
 				.RB18{
 					@include textMix('Roboto', 1.125em, 700);
 					font-style: normal;
 				}
 				.visible-lg{
+					margin-bottom: 20px;
 					@include breakpoint('small') {
 						display: none;
 					}
@@ -79,6 +89,16 @@
 			}
 			.pad-10{
 				padding: 10px;
+				@include breakpoint('small'){
+					padding: 10px 15px 10px;
+				}
+			}
+			.pad-full-10{ padding: 10px;}
+			.pad-bottom-20{
+				padding-bottom:20px;
+			}
+			.pad-top-10{
+				padding-top: 10px;
 			}
 			hr{
 			  margin: 35px 0 35px 0;
