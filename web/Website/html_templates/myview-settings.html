@@ -142,15 +142,21 @@
 							<thead>
 								<tr>
 									<th class="wd-55 firstrow">
-										<h2>Publication 1</h2>
-										<div class="subscribed">SUBSCRIBED</div>
+										<h2 data-publication="name">Publication 1</h2>
+										<div class="subscribed" data-subscribe-status="SUBSCRIBED">SUBSCRIBED</div>
 									</th>
-									<th class="wd-25 firstrow"></th>
+									<th class="wd-25 firstrow">
+										<div class="hidden-xs">
+											<span class="followlbl mtp hideBtn">FOLLOW</span>
+											<span class="followinglbl mtp hideBtn">FOLLOWING</span>
+										</div>
+									</th>
 									<th class="wd-15 firstrow">
 										<div class="accordionImg hidden-xs">
 											<a class="collapsed" href="javascript: void(0);"></a>
 										</div>
 										<div class="rowlines">
+											<div class="vline"></div>
 											<span></span>
 											<span></span>
 											<span></span>
@@ -159,23 +165,23 @@
 									</th>
 								</tr>
 								<tr>
-									<th colspan="3" class="nopad">
+									<th colspan="3" class="nopad accCont">
 										<hr />
 									</th>
 								</tr>
-								<tr class="hidden-xs">
+								<tr class="hidden-xs accCont">
 									<th class="wd-55 pbot"><p>Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p></th>
 									<th class="wd-25 pbot">
 										<div class="hidden-xs">
-											<span class="unfollowAllBtn" href="javascript: void(0);">UNFOLLOW ALL</span>
-											<span class="followAllBtn" href="javascript: void(0);">FOLLOW ALL</span>
+											<span class="unfollowAllBtn">UNFOLLOW ALL</span>
+											<span class="followAllBtn">FOLLOW ALL</span>
 										</div>
 									</th>
 									<th class="wd-15"></th>
 								</tr>
 								<tr class="mobshowView desktophide">
 									<th colspan="2">
-										<p class="pickTxt">Pick and choose</p> 
+										<p class="pickTxt">Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p> 
 									</th>
 									<th>
 										<div class="accordionImg">
@@ -191,19 +197,18 @@
 								<tr class="graybg mobshowView desktophide">
 									<th colspan="2">
 										<div class="smfollowingBtn hidden-lg">
-											<div class="mca"><span>Unfollow All</span><a class="mcheckedAll" href="javascript: void(0);"></a></div>
-											<div class="mua hidden-lg hideBtn"><span>Follow All</span><a class="muncheckedAll" href="javascript: void(0);"></a></div>
+											<span class="followAllBtn hideBtn">Unfollow All</span>
+											<span class="unfollowAllBtn">Follow All</span>
 										</div>
 									</th>
 									<th></th>
 							  </tr>
 							</thead>
 							<tbody>
-							  <tr class="followingrow" data-row="1">
+							  <tr class="followingrow" data-row="1" data-row-topic="Topic 1">
 								<td class="wd-55">Topic 1</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followingBtn">following</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -215,11 +220,10 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followingrow" data-row="2">
+							  <tr class="followingrow" data-row="2" data-row-topic="Topic 2">
 								<td class="wd-55">Topic 2</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followingBtn">following</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -231,11 +235,10 @@
 									</div>
 								</td> 
 							  </tr> 
-							  <tr class="followingrow" data-row="3">
+							  <tr class="followingrow" data-row="3" data-row-topic="Topic 3">
 								<td class="wd-55">Topic 3</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followingBtn">following</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -247,11 +250,10 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followingrow" data-row="4">
+							  <tr class="followingrow" data-row="4" data-row-topic="Topic 4">
 								<td class="wd-55">Topic 4</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followingBtn">following</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -263,11 +265,10 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followingrow" data-row="5">
+							  <tr class="followingrow" data-row="5" data-row-topic="Topic 5">
 								<td class="wd-55">Topic 5</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followingBtn">following</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -279,11 +280,10 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followingrow" data-row="6">
+							  <tr class="followingrow" data-row="6" data-row-topic="Topic 6">
 								<td class="wd-55">Topic 6</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followingBtn">following</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -295,11 +295,10 @@
 									</div>
 								</td> 
 							  </tr> 
-							  <tr class="followingrow" data-row="7">
+							  <tr class="followingrow" data-row="7" data-row-topic="Topic 7">
 								<td class="wd-55">Topic 7</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followingBtn">following</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -311,11 +310,10 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followingrow" data-row="8">
+							  <tr class="followingrow" data-row="8" data-row-topic="Topic 8">
 								<td class="wd-55">Topic 8</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followingBtn">following</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -327,11 +325,10 @@
 									</div>
 								</td> 
 							  </tr> 
-							  <tr class="followingrow" data-row="9">
+							  <tr class="followingrow" data-row="9" data-row-topic="Topic 9">
 								<td class="wd-55">Topic 9</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followingBtn">following</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -343,11 +340,10 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followingrow" data-row="10">
+							  <tr class="followingrow" data-row="10" data-row-topic="Topic 10">
 								<td class="wd-55">Topic 10</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followingBtn">following</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -359,11 +355,10 @@
 									</div>
 								</td> 
 							  </tr> 
-							  <tr class="followingrow" data-row="11">
+							  <tr class="followingrow" data-row="11" data-row-topic="Topic 11">
 								<td class="wd-55">Topic 11</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followingBtn">following</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -375,11 +370,10 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followingrow" data-row="12">
+							  <tr class="followingrow" data-row="12" data-row-topic="Topic 12">
 								<td class="wd-55">Topic 12</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followingBtn">following</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -391,11 +385,10 @@
 									</div>
 								</td> 
 							  </tr>  
-							  <tr class="followrow disabled" data-row="13">
+							  <tr class="followrow disabled" data-row="13" data-row-topic="Topic 13">
 								<td class="wd-55">Topic 13</td>
 								<td class="wd-25">
-									<span class="followBtn hidden-xs">follow</span>
-									<span class="smfollowingBtn hidden-lg"><a class="munchecked" href="javascript: void(0);"></a></span>
+									<span class="followBtn">follow</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -407,11 +400,10 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followrow disabled" data-row="14">
+							  <tr class="followrow disabled" data-row="14" data-row-topic="Topic 14">
 								<td class="wd-55">Topic 14</td>
 								<td class="wd-25">
-									<span class="followBtn hidden-xs">follow</span>
-									<span class="smfollowingBtn hidden-lg"><a class="munchecked" href="javascript: void(0);"></a></span>
+									<span class="followBtn">follow</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -423,11 +415,10 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followrow disabled" data-row="15">
+							  <tr class="followrow disabled" data-row="15" data-row-topic="Topic 15">
 								<td class="wd-55">Topic 15</td>
 								<td class="wd-25">
-									<span class="followBtn hidden-xs">follow</span>
-									<span class="smfollowingBtn hidden-lg"><a class="munchecked" href="javascript: void(0);"></a></span>
+									<span class="followBtn">follow</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -445,21 +436,27 @@
 					</div>
 					
 					
-					<div class="publicationPan donesubscribe" data-row="2">
+					<div class="publicationPan donesubscribe" data-row="1">
 						<div class="table-responsive">
 						  <table class="table" id="publication2">
 							<thead>
 								<tr>
 									<th class="wd-55 firstrow">
-										<h2>Publication 2</h2>
-										<div class="subscribed">SUBSCRIBE</div>
+										<h2 data-publication="name2">Publication 2</h2>
+										<div class="subscribed" data-subscribe-status="SUBSCRIBED">SUBSCRIBED</div>
 									</th>
-									<th class="wd-25 firstrow"></th>
+									<th class="wd-25 firstrow">
+										<div class="hidden-xs">
+											<span class="followlbl mtp">FOLLOW</span>
+											<span class="followinglbl mtp hideBtn">FOLLOWING</span>
+										</div>
+									</th>
 									<th class="wd-15 firstrow">
 										<div class="accordionImg hidden-xs">
 											<a href="javascript: void(0);"></a>
 										</div>
 										<div class="rowlines">
+											<div class="vline"></div>
 											<span></span>
 											<span></span>
 											<span></span>
@@ -468,51 +465,50 @@
 									</th>
 								</tr>
 								<tr>
-									<th colspan="3" class="nopad">
+									<th colspan="3" class="nopad accCont tbodyhidden">
 										<hr />
 									</th>
 								</tr>
-								<tr class="hidden-xs">
+								<tr class="hidden-xs accCont tbodyhidden">
 									<th class="wd-55 pbot"><p>Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p></th>
 									<th class="wd-25 pbot">
 										<div class="hidden-xs">
-											<span class="unfollowAllBtn" href="javascript: void(0);">UNFOLLOW ALL</span>
-											<span class="followAllBtn" href="javascript: void(0);">FOLLOW ALL</span>
+											<span class="unfollowAllBtn hideBtn">UNFOLLOW ALL</span>
+											<span class="followAllBtn">FOLLOW ALL</span>
 										</div>
 									</th>
 									<th class="wd-15"></th>
 								</tr>
 								<tr class="mobshowView desktophide">
 									<th colspan="2">
-										<p class="pickTxt">Pick and choose</p> 
+										<p class="pickTxt">Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p> 
 									</th>
 									<th>
 										<div class="accordionImg">
-											<a class="collapsed" href="javascript: void(0);"></a>
+											<a href="javascript: void(0);"></a>
 										</div>
 									</th>
 								</tr>
-								<tr class="graybg mobshowView desktophide">
+								<tr class="graybg mobshowView desktophide tbodyhidden">
 									<th colspan="3" class="nopad">
 										<hr />
 									</th>
 								</tr>
-								<tr class="graybg mobshowView desktophide">
+								<tr class="graybg mobshowView desktophide tbodyhidden">
 									<th colspan="2">
 										<div class="smfollowingBtn hidden-lg">
-											<div class="mca"><span>Unfollow All</span><a class="mcheckedAll" href="javascript: void(0);"></a></div>
-											<div class="mua hidden-lg hideBtn"><span>Follow All</span><a class="muncheckedAll" href="javascript: void(0);"></a></div>
+											<span class="unfollowAllBtn hideBtn">Unfollow All</span>
+											<span class="followAllBtn">Follow All</span>
 										</div>
 									</th>
 									<th></th>
 							  </tr>
 							</thead>
 							<tbody class="tbodyhidden">
-							  <tr class="followingrow" data-row="1">
+							  <tr class="followrow disabled" data-row="1" data-row-topic="Topic 1">
 								<td class="wd-55">Topic 1</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followBtn">follow</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -524,11 +520,10 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followingrow" data-row="2">
+							  <tr class="followrow disabled" data-row="2" data-row-topic="Topic 2">
 								<td class="wd-55">Topic 2</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followBtn">follow</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -539,12 +534,11 @@
 										<span></span>
 									</div>
 								</td> 
-							  </tr> 
-							  <tr class="followingrow" data-row="3">
+							  </tr>
+							  <tr class="followrow disabled" data-row="3" data-row-topic="Topic 3">
 								<td class="wd-55">Topic 3</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followBtn">follow</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -556,11 +550,10 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followingrow" data-row="4">
+							  <tr class="followrow disabled" data-row="4" data-row-topic="Topic 4">
 								<td class="wd-55">Topic 4</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followBtn">follow</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -572,11 +565,10 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followingrow" data-row="5">
+							  <tr class="followrow disabled" data-row="5" data-row-topic="Topic 5">
 								<td class="wd-55">Topic 5</td>
 								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
+									<span class="followBtn">follow</span>
 								</td>
 								<td class="wd-15">
 									<div class="rowlines">
@@ -588,173 +580,162 @@
 									</div>
 								</td> 
 							  </tr>
-							  <tr class="followingrow" data-row="6">
-								<td class="wd-55">Topic 6</td>
-								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
-								</td>
-								<td class="wd-15">
-									<div class="rowlines">
-										<div class="move">move</div>
-										<span></span>
-										<span></span>
-										<span></span>
-										<span></span>
-									</div>
-								</td> 
-							  </tr> 
-							  <tr class="followingrow" data-row="7">
-								<td class="wd-55">Topic 7</td>
-								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
-								</td>
-								<td class="wd-15">
-									<div class="rowlines">
-										<div class="move">move</div>
-										<span></span>
-										<span></span>
-										<span></span>
-										<span></span>
-									</div>
-								</td> 
-							  </tr>
-							  <tr class="followingrow" data-row="8">
-								<td class="wd-55">Topic 8</td>
-								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
-								</td>
-								<td class="wd-15">
-									<div class="rowlines">
-										<div class="move">move</div>
-										<span></span>
-										<span></span>
-										<span></span>
-										<span></span>
-									</div>
-								</td> 
-							  </tr> 
-							  <tr class="followingrow" data-row="9">
-								<td class="wd-55">Topic 9</td>
-								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
-								</td>
-								<td class="wd-15">
-									<div class="rowlines">
-										<div class="move">move</div>
-										<span></span>
-										<span></span>
-										<span></span>
-										<span></span>
-									</div>
-								</td> 
-							  </tr>
-							  <tr class="followingrow" data-row="10">
-								<td class="wd-55">Topic 10</td>
-								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
-								</td>
-								<td class="wd-15">
-									<div class="rowlines">
-										<div class="move">move</div>
-										<span></span>
-										<span></span>
-										<span></span>
-										<span></span>
-									</div>
-								</td> 
-							  </tr> 
-							  <tr class="followingrow" data-row="11">
-								<td class="wd-55">Topic 11</td>
-								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
-								</td>
-								<td class="wd-15">
-									<div class="rowlines">
-										<div class="move">move</div>
-										<span></span>
-										<span></span>
-										<span></span>
-										<span></span>
-									</div>
-								</td> 
-							  </tr>
-							  <tr class="followingrow" data-row="12">
-								<td class="wd-55">Topic 12</td>
-								<td class="wd-25">
-									<span class="followingBtn hidden-xs">following</span>
-									<span class="smfollowingBtn hidden-lg"><a class="mchecked" href="javascript: void(0);"></a></span>
-								</td>
-								<td class="wd-15">
-									<div class="rowlines">
-										<div class="move">move</div>
-										<span></span>
-										<span></span>
-										<span></span>
-										<span></span>
-									</div>
-								</td> 
-							  </tr>  
-							  <tr class="followrow disabled" data-row="13">
-								<td class="wd-55">Topic 13</td>
-								<td class="wd-25">
-									<span class="followBtn hidden-xs">follow</span>
-									<span class="smfollowingBtn hidden-lg"><a class="munchecked" href="javascript: void(0);"></a></span>
-								</td>
-								<td class="wd-15">
-									<div class="rowlines">
-										<div class="move">move</div>
-										<span></span>
-										<span></span>
-										<span></span>
-										<span></span>
-									</div>
-								</td> 
-							  </tr>
-							  <tr class="followrow disabled" data-row="14">
-								<td class="wd-55">Topic 14</td>
-								<td class="wd-25">
-									<span class="followBtn hidden-xs">follow</span>
-									<span class="smfollowingBtn hidden-lg"><a class="munchecked" href="javascript: void(0);"></a></span>
-								</td>
-								<td class="wd-15">
-									<div class="rowlines">
-										<div class="move">move</div>
-										<span></span>
-										<span></span>
-										<span></span>
-										<span></span>
-									</div>
-								</td> 
-							  </tr>
-							  <tr class="followrow disabled" data-row="15">
-								<td class="wd-55">Topic 15</td>
-								<td class="wd-25">
-									<span class="followBtn hidden-xs">follow</span>
-									<span class="smfollowingBtn hidden-lg"><a class="munchecked" href="javascript: void(0);"></a></span>
-								</td>
-								<td class="wd-15">
-									<div class="rowlines">
-										<div class="move">move</div>
-										<span></span>
-										<span></span>
-										<span></span>
-										<span></span>
-									</div>
-								</td> 
-							  </tr>
-							</tbody>
+							</tbody> 
 						  </table>
 						 </div>
 					</div>
 					
 					
-					<div class="publicationPan dosubscribe" data-row="3">
+					<div class="publicationPan donesubscribe" data-row="1">
+						<div class="table-responsive">
+						  <table class="table" id="publication3">
+							<thead>
+								<tr>
+									<th class="wd-55 firstrow">
+										<h2 data-publication="name3">Publication 3</h2>
+										<div class="subscribed" data-subscribe-status="SUBSCRIBED">SUBSCRIBED</div>
+									</th>
+									<th class="wd-25 firstrow">
+										<div class="hidden-xs">
+											<span class="followlbl mtp hideBtn">FOLLOW</span>
+											<span class="followinglbl mtp">FOLLOWING</span>
+										</div>
+									</th>
+									<th class="wd-15 firstrow">
+										<div class="accordionImg hidden-xs">
+											<a href="javascript: void(0);"></a>
+										</div>
+										<div class="rowlines">
+											<div class="vline"></div>
+											<span></span>
+											<span></span>
+											<span></span>
+											<span></span>
+										</div>
+									</th>
+								</tr>
+								<tr>
+									<th colspan="3" class="nopad accCont tbodyhidden">
+										<hr />
+									</th>
+								</tr>
+								<tr class="hidden-xs accCont tbodyhidden">
+									<th class="wd-55 pbot"><p>Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p></th>
+									<th class="wd-25 pbot">
+										<div class="hidden-xs">
+											<span class="unfollowAllBtn">UNFOLLOW ALL</span>
+											<span class="followAllBtn hideBtn">FOLLOW ALL</span>
+										</div>
+									</th>
+									<th class="wd-15"></th>
+								</tr>
+								<tr class="mobshowView desktophide">
+									<th colspan="2">
+										<p class="pickTxt">Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p> 
+									</th>
+									<th>
+										<div class="accordionImg">
+											<a href="javascript: void(0);"></a>
+										</div>
+									</th>
+								</tr>
+								<tr class="graybg mobshowView desktophide tbodyhidden">
+									<th colspan="3" class="nopad">
+										<hr />
+									</th>
+								</tr>
+								<tr class="graybg mobshowView desktophide tbodyhidden">
+									<th colspan="2">
+										<div class="smfollowingBtn hidden-lg">
+											<span class="unfollowAllBtn hideBtn">Unfollow All</span>
+											<span class="followAllBtn">Follow All</span>
+										</div>
+									</th>
+									<th></th>
+							  </tr>
+							</thead>
+							<tbody class="tbodyhidden">
+							  <tr class="followingrow" data-row="1" data-row-topic="Topic 1">
+								<td class="wd-55">Topic 1</td>
+								<td class="wd-25">
+									<span class="followingBtn">following</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							  <tr class="followingrow" data-row="2" data-row-topic="Topic 2">
+								<td class="wd-55">Topic 2</td>
+								<td class="wd-25">
+									<span class="followingBtn">following</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr> 
+							  <tr class="followingrow" data-row="3" data-row-topic="Topic 3">
+								<td class="wd-55">Topic 3</td>
+								<td class="wd-25">
+									<span class="followingBtn">following</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							  <tr class="followingrow" data-row="4" data-row-topic="Topic 4">
+								<td class="wd-55">Topic 4</td>
+								<td class="wd-25">
+									<span class="followingBtn">following</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr>
+							  <tr class="followingrow" data-row="5" data-row-topic="Topic 5">
+								<td class="wd-55">Topic 5</td>
+								<td class="wd-25">
+									<span class="followingBtn">following</span>
+								</td>
+								<td class="wd-15">
+									<div class="rowlines">
+										<div class="move">move</div>
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</td> 
+							  </tr> 
+							</tbody>
+						  </table>
+						 </div>
+					</div>
+					
+					<!--<div class="publicationPan dosubscribe" data-row="3">
 						<div class="table-responsive">
 						  <table class="table" id="publicationnoSub1">
 							<thead>
@@ -780,11 +761,11 @@
 									<th colspan="3" class="notsubscr"><p>You are not subscribed to the publication. You can still add this to 'My View' but note you will not be able to view the full content article</p></th>
 								</tr>
 								<tr>
-									<th colspan="3" class="nopad">
+									<th colspan="3" class="nopad accCont tbodyhidden">
 										<hr />
 									</th>
 								</tr>
-								<tr class="hidden-xs">
+								<tr class="hidden-xs accCont tbodyhidden">
 									<th class="wd-55 pbot"><p>Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p></th>
 									<th class="wd-25 pbot">
 										<div class="hidden-xs">
@@ -1049,7 +1030,7 @@
 							</tbody>
 						  </table>
 						 </div>
-						</div>
+						</div>-->
 				
 				</div>
 				
@@ -1405,47 +1386,8 @@
          <p>Printed By <b>  Daniel Dewey Test</b></p>
       </div>
       <script src="/dist/js/index.js"></script>
-	  <script src="/dist/js/owlCarousel.js"></script>
+	   
       <script async type="text/javascript" id="mini-profiler" src="/mini-profiler-resources/includes.js?v=ySF6M98CBehTtL86BbiEmys9yxR1HKazhe2sznfdUWQ=" data-version="ySF6M98CBehTtL86BbiEmys9yxR1HKazhe2sznfdUWQ=" data-path="/mini-profiler-resources/" data-current-id="14946f4e-f2ce-41f6-84cc-7c401a694783" data-ids="f69e9c99-c107-42cf-97fe-afbf9e7b68c6,3e9e2fe4-fd8f-4710-811a-73f70c0101b2,2b081c31-454c-4972-8449-e8f6b9ec6ee7,cec802fd-f7d8-484d-b43c-c46eb261fa43,14946f4e-f2ce-41f6-84cc-7c401a694783" data-position="left" data-trivial="false" data-children="false" data-max-traces="15" data-controls="false" data-authorized="true" data-toggle-shortcut="Alt+P" data-start-hidden="false" data-trivial-milliseconds="2"></script>
-	  <script>
-			$(document).ready(function($) {
-				$('.owl-carousel').owlCarousel({
-					loop:true,
-					margin:10,
-					merge:true,
-					nav:true,
-					 navText: [
-						  "<img src='/dist/img/lessthan.png'/>",
-						  "<img src='/dist/img/greaterthan.png'/>"
-						  ],
-					responsive:{
-					0:{
-					items:3
-					},
-					678:{
-					items:3
-					},
-					320:{
-					 items:3
-					},
-					480:{
-					 items:3
-					},
-					1000:{
-					items:3
-					}
-					}
-				});
-				$('.publicationPan.donesubscribe').dragswap({
-					element : '.table tbody tr',
-					dropAnimation: true  
-				}); 
-				
-				$('#allPublicationsPan').dragswap({
-					element : '.publicationPan.donesubscribe',
-					dropAnimation: true  
-				}); 
-			});
-			</script>
+	  
    </body>
 </html>

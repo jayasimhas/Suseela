@@ -3543,6 +3543,7 @@ header .header-account-access {
         text-align: left; } }
 
 .myview-settings {
+  padding-bottom: 50px !important;
   margin-bottom: 50px;
   margin-bottom: 3.125rem; }
   .myview-settings h1 {
@@ -3608,10 +3609,13 @@ header .header-account-access {
     .myview-settings .publicationPan .subscribed {
       border-left: 1px solid #d9dadb;
       float: left;
+      cursor: pointer;
       padding-left: 20px;
       padding-left: 1.25rem;
       margin: 3px 20px;
-      margin: 0.1875rem 1.25rem; }
+      margin: 0.1875rem 1.25rem;
+      position: relative;
+      top: -2px; }
       @media (max-width: 640px) {
         .myview-settings .publicationPan .subscribed {
           font-size: 0.875em;
@@ -3628,8 +3632,8 @@ header .header-account-access {
       height: 2rem;
       background: #f7941e;
       color: #ffffff;
-      margin: 8px 0 0 20px;
-      margin: 0.5rem 0 0 1.25rem;
+      margin: -4px 0 0 20px;
+      margin: -4px 0 0 1.25rem;
       line-height: 32px;
       line-height: 2rem;
       font-size: 12px;
@@ -3684,6 +3688,18 @@ header .header-account-access {
           .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
             background: #f7941e;
             color: #ffffff; }
+          @media (max-width: 640px) {
+            .myview-settings .table-responsive .table tbody tr .followingBtn {
+              background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+              height: 30px;
+              height: 1.875rem;
+              width: 30px;
+              width: 1.875rem;
+              border: none;
+              display: inline-block;
+              margin-left: 10px;
+              margin-left: 0.625rem;
+              text-indent: -9999px; } }
         .myview-settings .table-responsive .table tbody tr .followBtn {
           border: 1px solid #f7941e;
           cursor: pointer;
@@ -3702,6 +3718,18 @@ header .header-account-access {
           float: right;
           background: #f7941e;
           color: #ffffff; }
+          @media (max-width: 640px) {
+            .myview-settings .table-responsive .table tbody tr .followBtn {
+              background: url(/dist/img/follow-mob.jpg) no-repeat 0 0;
+              height: 30px;
+              height: 1.875rem;
+              width: 30px;
+              width: 1.875rem;
+              display: inline-block;
+              margin-left: 10px;
+              margin-left: 0.625rem;
+              border: none;
+              text-indent: -9999px; } }
         .myview-settings .table-responsive .table tbody tr.followingrow .rowlines {
           float: right;
           margin-top: 3px;
@@ -3792,7 +3820,8 @@ header .header-account-access {
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th p {
               padding: 0;
-              font-size: 0.875em; } }
+              font-size: 1em;
+              font-weight: normal; } }
         .myview-settings .table-responsive .table thead th.firstrow {
           padding: 40px 20px 10px;
           padding: 2.5rem 1.25rem 0.625rem; }
@@ -3815,8 +3844,8 @@ header .header-account-access {
           margin-top: 3px;
           margin-top: 0.1875rem;
           position: relative;
-          top: -24px;
-          top: -1.5rem; }
+          margin-top: -24px;
+          margin-top: -1.5rem; }
           .myview-settings .table-responsive .table thead th .rowlines span {
             height: 2px;
             height: 0.125rem;
@@ -3838,17 +3867,33 @@ header .header-account-access {
                 z-index: -1; } }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th .rowlines {
-              top: 4px; } }
+              top: 4px;
+              margin-top: 0px; } }
           @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th .rowlines span {
               background: #808081; } }
+          .myview-settings .table-responsive .table thead th .rowlines .vline {
+            border: 1px solid #dadada;
+            height: 40px;
+            width: 1px;
+            float: left;
+            position: relative;
+            top: -13px;
+            right: 22px; }
+            @media (max-width: 640px) {
+              .myview-settings .table-responsive .table thead th .rowlines .vline {
+                display: none; } }
+            @media (max-width: 800px) {
+              .myview-settings .table-responsive .table thead th .rowlines .vline {
+                right: 12px; } }
         .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
-          background: url(/dist/img/accordion.jpg) no-repeat 0 -18px;
+          background: url(/dist/img/accordion.png) no-repeat 0 -21px;
           height: 17px;
           height: 1.0625rem;
           width: 32px;
           width: 2rem;
-          display: inline-block; }
+          display: inline-block;
+          margin-right: 10%; }
           @media (max-width: 800px) {
             .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
               position: relative;
@@ -3859,13 +3904,15 @@ header .header-account-access {
               position: relative;
               left: -15px;
               left: -0.9375rem; } }
+          @media screen and (min-width: 801px) and (max-width: 1130px) {
+            .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
+              margin-right: 50%; } }
           .myview-settings .table-responsive .table thead th .accordionImg a.collapsed, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.mobile-table-exit {
-            background: url(/dist/img/accordion.jpg) no-repeat 0 0; }
+            background: url(/dist/img/accordion.png) no-repeat 0 0; }
             @media (max-width: 480px) {
               .myview-settings .table-responsive .table thead th .accordionImg a.collapsed, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.mobile-table-exit {
                 position: relative;
-                left: -5px;
-                left: -0.3125rem; } }
+                left: 0; } }
             @media (max-width: 800px) {
               .myview-settings .table-responsive .table thead th .accordionImg a.collapsed, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.mobile-table-exit {
                 position: relative;
@@ -3873,8 +3920,8 @@ header .header-account-access {
                 left: -1.25rem; } }
         .myview-settings .table-responsive .table thead th.notsubscr {
           text-align: left;
-          padding-bottom: 0px;
-          padding-bottom: 0rem;
+          padding-bottom: 24px;
+          padding-bottom: 1.5rem;
           padding-top: 0px;
           padding-top: 0rem; }
       .myview-settings .table-responsive .table thead .followAllBtn {
@@ -3896,8 +3943,35 @@ header .header-account-access {
         margin-top: 8px;
         margin-top: 0.5rem; }
         .myview-settings .table-responsive .table thead .followAllBtn:hover {
-          background: #f7941e;
+          background-color: #f7941e;
           color: #ffffff; }
+        .myview-settings .table-responsive .table thead .followAllBtn.mtp {
+          margin-top: -6px;
+          margin-bottom: 25px; }
+      .myview-settings .table-responsive .table thead .followinglbl {
+        border: 1px solid #f7941e;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        font-family: "Roboto";
+        font-weight: 700;
+        width: 120px;
+        width: 7.5rem;
+        height: 32px;
+        height: 2rem;
+        text-align: center;
+        display: inline-block;
+        line-height: 32px;
+        line-height: 2rem;
+        float: right;
+        margin-top: 8px;
+        margin-top: 0.5rem; }
+        .myview-settings .table-responsive .table thead .followinglbl:hover {
+          background-color: #f7941e;
+          color: #ffffff; }
+        .myview-settings .table-responsive .table thead .followinglbl.mtp {
+          margin-top: -6px;
+          margin-bottom: 25px; }
       .myview-settings .table-responsive .table thead .unfollowAllBtn {
         border: 1px solid #f7941e;
         cursor: pointer;
@@ -3914,10 +3988,36 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        background: #f7941e;
+        background-color: #f7941e;
         color: #ffffff;
         margin: 8px 0 0 20px;
         margin: 0.5rem 0 0 1.25rem; }
+        .myview-settings .table-responsive .table thead .unfollowAllBtn.mtp {
+          margin-top: -6px;
+          margin-bottom: 25px; }
+      .myview-settings .table-responsive .table thead .followlbl {
+        border: 1px solid #f7941e;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        font-family: "Roboto";
+        font-weight: 700;
+        width: 120px;
+        width: 7.5rem;
+        height: 32px;
+        height: 2rem;
+        text-align: center;
+        display: inline-block;
+        line-height: 32px;
+        line-height: 2rem;
+        float: right;
+        background-color: #f7941e;
+        color: #ffffff;
+        margin: 8px 0 0 20px;
+        margin: 0.5rem 0 0 1.25rem; }
+        .myview-settings .table-responsive .table thead .followlbl.mtp {
+          margin-top: -6px;
+          margin-bottom: 25px; }
       .myview-settings .table-responsive .table .wd-55 {
         width: 55%; }
         @media (max-width: 480px) {
@@ -3947,33 +4047,6 @@ header .header-account-access {
             width: 15%; } }
       .myview-settings .table-responsive .table .graybg {
         background: #f9fafa; }
-      .myview-settings .table-responsive .table .smfollowingBtn {
-        text-align: right; }
-        .myview-settings .table-responsive .table .smfollowingBtn a, .myview-settings .table-responsive .table .smfollowingBtn .pop-out__reset-password, .myview-settings .table-responsive .table .smfollowingBtn .sortable-table__list-toggler, .myview-settings .table-responsive .table .smfollowingBtn .mobile-table-exit {
-          background: url(/dist/img/follow-mob.jpg) no-repeat;
-          height: 30px;
-          height: 1.875rem;
-          width: 30px;
-          width: 1.875rem;
-          display: inline-block;
-          margin-left: 10px;
-          margin-left: 0.625rem; }
-        .myview-settings .table-responsive .table .smfollowingBtn span {
-          position: relative;
-          top: -12px;
-          top: -0.75rem;
-          font-size: 0.6875em;
-          font-weight: bold;
-          font-family: "Roboto";
-          text-transform: uppercase; }
-        .myview-settings .table-responsive .table .smfollowingBtn .mchecked {
-          background-position: 0 0; }
-        .myview-settings .table-responsive .table .smfollowingBtn .munchecked {
-          background-position: 0 -31px; }
-        .myview-settings .table-responsive .table .smfollowingBtn .mcheckedAll {
-          background-position: 0 0; }
-        .myview-settings .table-responsive .table .smfollowingBtn .muncheckedAll {
-          background-position: 0 -31px; }
   .myview-settings .hideBtn {
     display: none !important; }
   .myview-settings .saveoption {
@@ -4049,6 +4122,9 @@ header .header-account-access {
       display: none; }
   .myview-settings .hidden {
     display: none !important; }
+  .myview-settings .vh {
+    visibility: hidden;
+    background: #f9f9f9; }
 
 @media (max-width: 480px) {
   .hidden-xs {
@@ -4056,6 +4132,21 @@ header .header-account-access {
   .smfollowingBtn {
     margin: 1px 0;
     margin: 0.1rem 0; }
+    .smfollowingBtn span {
+      background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+      border: none;
+      height: 30px !important;
+      width: 30px !important;
+      line-height: 28px !important;
+      line-height: 1.75rem !important; }
+      .smfollowingBtn span.unfollowAllBtn {
+        background-position: 0 -31px;
+        border: none !important;
+        text-indent: -124px;
+        color: #58595b !important; }
+      .smfollowingBtn span.followAllBtn {
+        background-position: 0 0;
+        text-indent: -140px; }
   .hidden-lg {
     display: none !important; } }
 
@@ -4071,6 +4162,9 @@ header .header-account-access {
   -webkit-animation: drop 1s ease;
   animation: drop 1s ease; }
 
+.followingrow.over {
+  background: #f7941e; }
+
 @-webkit-keyframes "drop" {
   0%, 100% {
     background: #f7941e;
@@ -4083,6 +4177,18 @@ header .header-account-access {
   .desktophide {
     display: block !important; } }
 
+@media (max-width: 1080px) {
+  .personalisationhome .topic-featured-article__headline {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 26px;
+    line-height: 1.625rem; }
+  .personalisationhome .article-preview--small .article-preview__headline {
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 26px;
+    line-height: 1.625rem; } }
+
 .personalisationhome .hidden-lg {
   display: none !important; }
 
@@ -4092,6 +4198,12 @@ header .header-account-access {
 
 .personalisationhome .article-metadata {
   margin-top: 0px; }
+  @media (max-width: 1080px) {
+    .personalisationhome .article-metadata li {
+      margin-right: 6px;
+      margin-right: 0.375rem;
+      padding-right: 6px;
+      padding-right: 0.375rem; } }
 
 .personalisationhome .personalHead {
   border-bottom: 1px solid #d1d3d4;
@@ -4133,7 +4245,7 @@ header .header-account-access {
         line-height: 21px;
         line-height: 1.3125rem; } }
 
-@media (min-width: 481px) {
+@media (min-width: 768px) {
   .personalisationhome .latestSubject {
     color: #231f20;
     position: relative;
@@ -4229,8 +4341,8 @@ header .header-account-access {
         border-top: 2px solid #d1d3d4;
         padding: 16px 0 0;
         padding: 1rem 0 0;
-        margin: 0 14px;
-        margin: 0 0.9rem; } }
+        margin: 0 -20px !important;
+        margin: 0 -1.25rem !important; } }
 
 .personalisationhome .editView {
   cursor: pointer;
@@ -4271,8 +4383,8 @@ header .header-account-access {
   margin-bottom: 1rem;
   padding-bottom: 16px;
   padding-bottom: 1rem;
-  font-size: 26px;
-  font-size: 1.625rem;
+  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 34px;
   line-height: 2.125rem;
@@ -4287,12 +4399,23 @@ header .header-account-access {
         margin-bottom: -0.625rem;
         padding: 0px; } }
   .personalisationhome .article-preview--small .article-preview_rheadline a, .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password, .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler, .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit {
-    color: #231f20; }
+    color: #231f20;
+    height: 100px;
+    overflow: hidden;
+    display: block; }
     .personalisationhome .article-preview--small .article-preview_rheadline a:hover, .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password:hover, .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler:hover, .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit:hover {
       color: #be1e2d; }
   @media (max-width: 480px) {
     .personalisationhome .article-preview--small .article-preview_rheadline {
       height: auto; } }
+  @media (max-width: 1080px) {
+    .personalisationhome .article-preview--small .article-preview_rheadline a, .personalisationhome .article-preview--small .article-preview_rheadline .pop-out__reset-password, .personalisationhome .article-preview--small .article-preview_rheadline .sortable-table__list-toggler, .personalisationhome .article-preview--small .article-preview_rheadline .mobile-table-exit {
+      font-size: 22px;
+      font-size: 1.375rem;
+      height: 100px;
+      height: 6.25rem;
+      overflow: hidden;
+      display: block; } }
 
 .personalisationhome .loadmore {
   text-align: center;
@@ -4337,9 +4460,17 @@ header .header-account-access {
 .personalisationhome .mtop {
   margin-top: -240px !important;
   margin-top: -15rem !important; }
-  @media (max-width: 480px) {
+  @media (max-width: 640px) {
     .personalisationhome .mtop {
-      margin: 0px !important; } }
+      margin-top: 0px !important; } }
+
+@media (max-width: 640px) {
+  .personalisationhome .googleAdd {
+    margin-bottom: 40px;
+    margin-bottom: 2.5rem; }
+    .personalisationhome .googleAdd img {
+      max-width: 100%;
+      width: 100%; } }
 
 .personalisationhome .artheight {
   height: 460px;
@@ -4357,6 +4488,56 @@ header .header-account-access {
     display: none; }
   .personalisationhome .hidden-lg {
     display: block !important; }
+  .personalisationhome .article-preview--small {
+    border: none;
+    border-top: 2px solid #d1d3d4; }
+    .personalisationhome .article-preview--small.mobview {
+      padding: 16px 0 0;
+      padding: 1rem 0 0;
+      margin: 0 14px;
+      margin: 0 0.9rem; }
+  .personalisationhome .topic-featured-article.article-preview {
+    padding: 16px;
+    padding: 1rem; } }
+
+@media screen and (min-width: 768px) and (max-width: 1090px) {
+  .personalisationhome .article-preview--small {
+    width: 200px;
+    width: 12.5rem; }
+  .personalisationhome .latest-news__articles .article-small-preview {
+    width: 200px;
+    width: 12.5rem; }
+    .personalisationhome .latest-news__articles .article-small-preview .article-preview__inner-wrapper {
+      height: 100px;
+      overflow: hidden; } }
+    @media screen and (min-width: 768px) and (max-width: 1090px) and (max-width: 1080px) {
+      .personalisationhome .latest-news__articles .article-small-preview .article-preview__inner-wrapper .article-preview__headline {
+        font-size: 22px;
+        font-size: 1.375rem;
+        line-height: 26px;
+        line-height: 1.625rem; } }
+
+@media screen and (min-width: 768px) and (max-width: 1090px) {
+    .personalisationhome .latest-news__articles .article-small-preview ul li {
+      font-size: 14px;
+      font-size: 0.875rem; }
+      .personalisationhome .latest-news__articles .article-small-preview ul li .article-metadata {
+        font-size: 13px;
+        font-size: 0.8125rem; }
+      .personalisationhome .latest-news__articles .article-small-preview ul li h6, .personalisationhome .latest-news__articles .article-small-preview ul li .article-tags-bar__label, .personalisationhome .latest-news__articles .article-small-preview ul li .article-topics__section-header {
+        font-size: 13px;
+        font-size: 0.8125rem; } }
+
+@media screen and (max-width: 767px) {
+  .personalisationhome .article-preview--small {
+    width: 90%; }
+  .personalisationhome .latest-news__articles .article-small-preview {
+    width: 90%; }
+  .personalisationhome .mtop {
+    margin-top: 0px !important; }
+  .personalisationhome .googleAdd img {
+    max-width: 100%;
+    width: 100%; }
   .personalisationhome .latestSubject {
     margin-bottom: 16px;
     margin-bottom: 1rem;
@@ -4393,32 +4574,7 @@ header .header-account-access {
       color: #ffffff; }
       .personalisationhome .latestSubject .editView.mobview {
         margin: 24px 20px 8px;
-        margin: 1.5rem 1.25rem .5rem; }
-  .personalisationhome .article-preview--small {
-    border: none;
-    border-top: 2px solid #d1d3d4; }
-    .personalisationhome .article-preview--small.mobview {
-      padding: 16px 0 0;
-      padding: 1rem 0 0;
-      margin: 0 14px;
-      margin: 0 0.9rem; }
-  .personalisationhome .topic-featured-article.article-preview {
-    padding: 16px;
-    padding: 1rem; }
-  .personalisationhome .googleAdd {
-    margin-bottom: 40px;
-    margin-bottom: 2.5rem; }
-    .personalisationhome .googleAdd img {
-      max-width: 100%;
-      width: 100%; } }
-
-@media screen and (min-width: 768px) and (max-width: 1090px) {
-  .personalisationhome .article-preview--small {
-    width: 200px;
-    width: 12.5rem; }
-  .personalisationhome .latest-news__articles .article-small-preview {
-    width: 200px;
-    width: 12.5rem; } }
+        margin: 1.5rem 1.25rem .5rem; } }
 
 div.main-menu__section .titleMyView {
   color: #231f20;
@@ -4925,7 +5081,10 @@ section: UI Elements
       font-weight: 700;
       font-style: normal;
       color: #231f20;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      background: #F5821F url("/dist/img/chk-boxes.png");
+      background-position: 0 -51px;
+      background-repeat: no-repeat; }
     @media (max-width: 480px) {
       .register .register_newsletter div.page-registration .next_right {
         display: none; } }
@@ -5092,7 +5251,10 @@ section: UI Elements
       font-weight: 700;
       font-style: normal;
       color: #231f20;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      background: #F5821F url("/dist/img/chk-boxes.png");
+      background-position: 0 -51px;
+      background-repeat: no-repeat; }
 
 /*
  * This borrows and modifies the base selectivity styles, so don't just drop in
@@ -5673,7 +5835,9 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 .small_table .table-responsive .table {
   border-collapse: inherit;
   border: 1px solid #d1d3d4;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 48px;
+  margin-bottom: 3rem; }
   .small_table .table-responsive .table .table_head {
     background-color: #414042;
     color: #ffffff; }
@@ -5689,36 +5853,46 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: 400;
-    font-style: normal; }
+    font-style: normal;
+    vertical-align: top; }
   .small_table .table-responsive .table .RB16 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1em;
     color: #bb1528;
     font-style: normal;
-    font-weight: 700; }
+    font-weight: 700;
+    vertical-align: top; }
   .small_table .table-responsive .table .R21_RedColor {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.3125em;
     font-weight: 400;
     font-style: normal;
     color: #bb1528; }
+    @media (max-width: 480px) {
+      .small_table .table-responsive .table .R21_RedColor {
+        vertical-align: top; } }
   .small_table .table-responsive .table .R21_GrayColor {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.3125em;
     font-weight: 400;
     font-style: normal;
     color: #414042; }
+    @media (max-width: 480px) {
+      .small_table .table-responsive .table .R21_GrayColor {
+        vertical-align: top; } }
   .small_table .table-responsive .table .RB18 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.125em;
     font-weight: 700;
     font-style: normal; }
-  @media (max-width: 480px) {
-    .small_table .table-responsive .table .visible-lg {
-      display: none; } }
-  @media (max-width: 640px) {
-    .small_table .table-responsive .table .visible-lg {
-      display: none; } }
+  .small_table .table-responsive .table .visible-lg {
+    margin-bottom: 20px; }
+    @media (max-width: 480px) {
+      .small_table .table-responsive .table .visible-lg {
+        display: none; } }
+    @media (max-width: 640px) {
+      .small_table .table-responsive .table .visible-lg {
+        display: none; } }
 
 .small_table .table-responsive h1.primary_heading {
   font-family: "Roboto Condensed", Arial Narrow, sans-serif;
@@ -5747,6 +5921,18 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
 
 .small_table .table-responsive .pad-10 {
   padding: 10px; }
+  @media (max-width: 480px) {
+    .small_table .table-responsive .pad-10 {
+      padding: 10px 15px 10px; } }
+
+.small_table .table-responsive .pad-full-10 {
+  padding: 10px; }
+
+.small_table .table-responsive .pad-bottom-20 {
+  padding-bottom: 20px; }
+
+.small_table .table-responsive .pad-top-10 {
+  padding-top: 10px; }
 
 .small_table .table-responsive hr {
   margin: 35px 0 35px 0; }
@@ -5776,10 +5962,14 @@ Contains a list of links to anchors within the page, allowing visitors to jump d
   display: none; }
   @media (max-width: 480px) {
     .small_table .visible-sm {
-      display: block; } }
+      display: block; }
+      .small_table .visible-sm .border {
+        border-top: 1px solid #d1d3d4; } }
   @media (max-width: 640px) {
     .small_table .visible-sm {
-      display: block; } }
+      display: block; }
+      .small_table .visible-sm .border {
+        border-top: 1px solid #d1d3d4; } }
 
 .data-tool-landing {
   width: 100%; }

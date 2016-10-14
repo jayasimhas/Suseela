@@ -24,6 +24,9 @@
 				   font-style: normal;
 				   color: $color-zeus-black;
 				   text-transform: uppercase;
+				   background:  $color-pumpkin-orange url('/dist/img/chk-boxes.png');
+				   background-position: 0 -51px;
+				   background-repeat: no-repeat;
 				}
 				@include breakpoint('small'){
 					display: none;
@@ -194,6 +197,9 @@
 				   font-style: normal;
 				   color: $color-zeus-black;
 				   text-transform: uppercase;
+				   background:  $color-pumpkin-orange url('/dist/img/chk-boxes.png');
+				   background-position: 0 -51px;
+				   background-repeat: no-repeat;
 				}
 			}
 		}
