@@ -557,9 +557,12 @@ namespace InformaSitecoreWord.Sitecore
 
         public static bool DoesArticleExist(string articleNumber)
         {
+            Guid publicationGuid = default(Guid);
+            publicationGuid = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
+
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleExist", articleNumber).Result;
+                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleExist?publicationGuid={publicationGuid}", articleNumber).Result;
                 if (response.StatusCode == HttpStatusCode.Unauthorized)
                     throw new UnauthorizedAccessException(response.StatusCode.ToString() + ": Connection Timeout");
 
@@ -638,9 +641,12 @@ namespace InformaSitecoreWord.Sitecore
 
         public static string GetArticleGuidByArticleNumber(string articleNumber)
         {
+            Guid publicationGuid = default(Guid);
+            publicationGuid = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
+
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleGuidByNum", articleNumber).Result;
+                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleGuidByNum?publicationGuid={publicationGuid}", articleNumber).Result;
                 var articleGuid = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result, new IsoDateTimeConverter());
                 return articleGuid;
             }
@@ -648,9 +654,12 @@ namespace InformaSitecoreWord.Sitecore
 
         public static ArticlePreviewInfo GetArticlePreviewInfo(string articleNumber)
         {
+            Guid publicationGuid = default(Guid);
+            publicationGuid = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
+
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfo", articleNumber).Result;
+                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfo?publicationGuid={publicationGuid}", articleNumber).Result;
                 var previewInfo = JsonConvert.DeserializeObject<ArticlePreviewInfo>(response.Content.ReadAsStringAsync().Result, new IsoDateTimeConverter());
                 TimezoneUtil.ConvertArticleDatesToLocalTimezone(previewInfo);
                 return previewInfo;
