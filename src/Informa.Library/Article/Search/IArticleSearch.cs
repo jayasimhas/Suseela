@@ -7,7 +7,7 @@ namespace Informa.Library.Article.Search
 	public interface IArticleSearch
 	{
 		IArticleSearchResults Search(IArticleSearchFilter filter);
-		IArticleSearchResults SearchCustomDatabase(IArticleSearchFilter filter, string database);
+		IArticleSearchResults SearchCustomDatabase(IArticleSearchFilter filter, string database, Guid publicationGuid = default(Guid));
         IArticleSearchResults FreeWithRegistrationArticles(string database);
         IArticleSearchFilter CreateFilter();
 		long GetNextArticleNumber(Guid publicationGuid);
