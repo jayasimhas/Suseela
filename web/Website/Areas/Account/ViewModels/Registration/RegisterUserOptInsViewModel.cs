@@ -7,6 +7,7 @@ using Informa.Library.Site;
 using Informa.Library.User.Newsletter;
 using Informa.Library.Utilities.Extensions;
 using Informa.Library.Utilities.References;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using System;
@@ -44,7 +45,25 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
             PublicationNewsletterOptIns = PublicationNewsletterUserOptInContext.OptIns.ToList();
             PublicationNewsletterOptIns.Where(w => w.Publication.Code == SiteRootContext.Item.Publication_Code).FirstOrDefault().OptIn = true;
         }
+        public string NextStepUrl
+        {
+            get
+            {
+                if (GlassModel == null)
+                {
+                    return string.Empty;
+                }
 
+                var nextStepItem = GlobalService.GetItem<I___BasePage>(GlassModel.Next_Step_Page);
+
+                if (nextStepItem == null)
+                {
+                    return string.Empty;
+                }
+
+                return nextStepItem == null ? string.Empty : nextStepItem._Url;
+            }
+        }
         public List<IPublicationNewsletterUserOptIn> PublicationNewsletterOptIns { get; set; }// => PublicationNewsletterUserOptInContext.OptIns.ToList();
         public string Title => GlassModel?.Title;
         public string SubTitle => UserCompanyContext.Company == null ? GlassModel?.Sub_Title : GlassModel?.Company_Sub_Title.ReplacePatternCaseInsensitive("#User_Company_Name#", UserCompanyContext.Company.Name);
