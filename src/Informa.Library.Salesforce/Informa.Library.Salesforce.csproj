@@ -159,7 +159,6 @@
     <Compile Include="User\UserPreferences\ISalesforceFindUserPreferences.cs" />
     <Compile Include="User\UserPreferences\ISalesforceSetuserPreferences.cs" />
     <Compile Include="User\UserPreferences\ISalesforceUserPreferences.cs" />
-    <Compile Include="User\UserPreferences\JavaScriptSerializer.cs" />
     <Compile Include="User\UserPreferences\SalesforceFindUserPreferences.cs" />
     <Compile Include="User\UserPreferences\SalesforceSetuserPreferences.cs" />
     <Compile Include="Web References\EBIWebServices\Reference.cs">
