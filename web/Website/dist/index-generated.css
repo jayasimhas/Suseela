@@ -3584,15 +3584,16 @@ header .header-account-access {
       font-family: "PT Serif Caption";
       font-weight: 400;
       font-size: 1.125em; }
-      @media (max-width: 480px) {
+      @media (max-width: 640px) {
         .myview-settings .sub-heading-text p {
-          font-size: 0.875em;
+          font-family: "Roboto";
+          font-size: 0.85em;
           margin: 0px;
           margin: 0rem;
           padding: 0px;
           padding: 0rem;
-          line-height: 24px;
-          line-height: 1.5rem; } }
+          line-height: 22px;
+          line-height: 1.375rem; } }
   .myview-settings .publicationPan {
     margin-bottom: 25px;
     margin-bottom: 1.5625rem;
@@ -3894,30 +3895,24 @@ header .header-account-access {
           width: 2rem;
           display: inline-block;
           margin-right: 10%; }
-          @media (max-width: 800px) {
+          @media (max-width: 640px) {
             .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
+              background: url(/dist/img/mob-arrow.png) no-repeat 0 -33px;
+              height: 12px;
+              height: 0.75rem;
+              width: 23px;
+              width: 1.4375rem;
               position: relative;
-              left: -20px;
-              left: -1.25rem; } }
-          @media (max-width: 480px) {
-            .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
-              position: relative;
-              left: -15px;
-              left: -0.9375rem; } }
+              left: 0; }
+              .myview-settings .table-responsive .table thead th .accordionImg a.collapsed, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.mobile-table-exit {
+                position: relative;
+                left: 0;
+                background-position: 0 0; } }
+          .myview-settings .table-responsive .table thead th .accordionImg a.collapsed, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.mobile-table-exit {
+            background-position: 0 0; }
           @media screen and (min-width: 801px) and (max-width: 1130px) {
             .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
               margin-right: 50%; } }
-          .myview-settings .table-responsive .table thead th .accordionImg a.collapsed, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.mobile-table-exit {
-            background: url(/dist/img/accordion.png) no-repeat 0 0; }
-            @media (max-width: 480px) {
-              .myview-settings .table-responsive .table thead th .accordionImg a.collapsed, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.mobile-table-exit {
-                position: relative;
-                left: 0; } }
-            @media (max-width: 800px) {
-              .myview-settings .table-responsive .table thead th .accordionImg a.collapsed, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .collapsed.mobile-table-exit {
-                position: relative;
-                left: -20px;
-                left: -1.25rem; } }
         .myview-settings .table-responsive .table thead th.notsubscr {
           text-align: left;
           padding-bottom: 24px;
@@ -3972,6 +3967,10 @@ header .header-account-access {
         .myview-settings .table-responsive .table thead .followinglbl.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
+        @media (max-width: 640px) {
+          .myview-settings .table-responsive .table thead .followinglbl {
+            margin: 0px !important;
+            float: left; } }
       .myview-settings .table-responsive .table thead .unfollowAllBtn {
         border: 1px solid #f7941e;
         cursor: pointer;
@@ -4018,6 +4017,10 @@ header .header-account-access {
         .myview-settings .table-responsive .table thead .followlbl.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
+        @media (max-width: 640px) {
+          .myview-settings .table-responsive .table thead .followlbl {
+            margin: 0px !important;
+            float: left; } }
       .myview-settings .table-responsive .table .wd-55 {
         width: 55%; }
         @media (max-width: 480px) {
