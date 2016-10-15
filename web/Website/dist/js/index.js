@@ -709,11 +709,12 @@ $(function () {
 		    unfollowAllBtn = table.find('.unfollowAllBtn'),
 		    trs = $this.closest('tbody').find('tr'),
 		    trsfollowing = $this.closest('tbody').find('tr.followingrow');
+		followrow.attr('draggable', true);
 		followrow.addClass('followingrow').removeClass('followrow disabled frow');
 		$this.addClass('followingBtn').removeClass('followBtn').html('Following');
 		setClsforFlw(table);
 		if ($('.followrow.disabled.frow', table).length) {
-			followrow.appendTo(followrow.clone().insertBefore('.followrow.disabled.frow'));
+			followrow.appendTo(followrow.clone().insertBefore(table.find('.followrow.disabled.frow')));
 		} else {
 			followrow.clone().appendTo($this.closest('tbody'));
 		}
@@ -738,6 +739,7 @@ $(function () {
 		$this.addClass('followBtn').removeClass('followingBtn').html('Follow');
 		followingrow.clone().appendTo($this.closest('tbody'));
 		followingrow.remove();
+
 		if (trs.length === trsfollow.length + 1) {
 			unfollowAllBtn.addClass('hideBtn');
 			followAllBtn.removeClass('hideBtn');
@@ -784,8 +786,20 @@ $(function () {
 
 	$('.saveview').click(function () {
 		var alltables = $('.table'),
-		    UserPreferences = {};
+		    UserPreferences = {},
+		    allpublications = $('.publicationPan', '#allPublicationsPan');
 		UserPreferences.PreferredChannels = [];
+
+		for (var k = 0; k < allpublications.length; k++) {
+			var tbody = $(allpublications[k]).find('tbody'),
+			    newtrs = tbody.find('tr'),
+			    cnt = 0;
+			newtrs.removeAttr('data-row');
+			for (var v = 0; v < newtrs.length; v++) {
+				$(newtrs[v]).attr('data-row', v + 1);
+			}
+		}
+
 		for (var i = 0; i < alltables.length; i++) {
 			var currenttabtrs = $(alltables[i]).find('tbody tr'),
 			    pubPanPosition = $(alltables[i]).closest('.publicationPan').attr('data-row'),
@@ -796,9 +810,9 @@ $(function () {
 			for (var j = 0; j < currenttabtrs.length; j++) {
 				var datarowNo = $(currenttabtrs[j]).attr('data-row'),
 				    eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
-				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span:first').html();
+				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html();
 
-				var followStatus = secondtd == 'following' ? true : false;
+				var followStatus = secondtd.toLowerCase() == 'following' ? true : false;
 				var subscripStatus = subscribeStatus.toUpperCase() == 'SUBSCRIBED' ? true : false;
 				alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus });
 			}

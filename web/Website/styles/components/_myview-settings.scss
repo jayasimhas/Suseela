@@ -183,7 +183,7 @@
 							color: $color-white;
 						}
 						@include breakpoint('medium-small'){
-							background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+							background: url(/dist/img/follow-mob.jpg) no-repeat 0 0;
 							height: 1.875rem;
 							width: 1.875rem;
 							border: none;
@@ -197,7 +197,7 @@
 						background: $color-tree-poppy-orange;
 						color: $color-white;
 						@include breakpoint('medium-small'){
-							background: url(/dist/img/follow-mob.jpg) no-repeat 0 0;
+							background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
 							height: 1.875rem;
 							width: 1.875rem;
 							display: inline-block;
@@ -489,7 +489,7 @@
 }
 
 .followingrow.over{
-	background: $color-tree-poppy-orange;
+	/*background: $color-tree-poppy-orange;*/
 }
  
 @-moz-keyframes drop {
