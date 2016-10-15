@@ -39,7 +39,7 @@ namespace Informa.Web
 			Library.DCD.XMLImporting.FileImportingManager mgr = new Library.DCD.XMLImporting.FileImportingManager();
 			mgr.StartIfStartable();
 			
-			AreaRegistration.RegisterAllAreas();
+			////AreaRegistration.RegisterAllAreas();
 			//GlobalConfiguration.Configure(WebApiConfig.Register);
 			//FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			//RouteConfig.RegisterRoutes(RouteTable.Routes);

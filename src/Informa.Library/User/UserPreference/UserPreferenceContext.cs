@@ -12,11 +12,16 @@
         protected readonly IAuthenticatedUserContext UserContext;
         protected readonly IAuthenticatedUserSession UserSession;
         protected readonly IFindUserPreferences FindUserPreferences;
-        public UserPreferenceContext(IAuthenticatedUserContext userContext, IAuthenticatedUserSession userSession, IFindUserPreferences findUserPreferences)
+        protected readonly ISetUserPreferences SetUserPreferences;
+        public UserPreferenceContext(IAuthenticatedUserContext userContext,
+            IAuthenticatedUserSession userSession,
+            IFindUserPreferences findUserPreferences,
+          ISetUserPreferences setUserPreferences)
         {
             UserContext = userContext;
             UserSession = userSession;
             FindUserPreferences = findUserPreferences;
+            SetUserPreferences = setUserPreferences;
         }
         public IUserPreferences Preferences
         {
@@ -50,6 +55,13 @@
         public void clear()
         {
             UserSession.Clear(sessionKey);
+        }
+
+        public bool Set(string channelPreferences)
+        {
+            if (string.IsNullOrWhiteSpace(channelPreferences))
+                return false;
+            return SetUserPreferences.Set(UserContext.User?.Username ?? string.Empty, channelPreferences);
         }
     }
 }

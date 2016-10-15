@@ -906,6 +906,11 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         private void uxPublication_SelectedIndexChanged(object sender, EventArgs e)
         {
             //UpdateAuthorsList(veticalGuid);
+            PluginModels.ItemStruct publicationStruct = (PluginModels.ItemStruct)uxPublication.SelectedItem;
+            if (publicationStruct.Name != "Select Vertical")
+            {
+                PluginSingletonVerticalRoot.Instance.CurrentPublication = publicationStruct;
+            }
             IndicateChanged();
         }
 

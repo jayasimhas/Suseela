@@ -1,7 +1,9 @@
-﻿namespace Informa.Library.Search.SearchIndex
+﻿using System;
+
+namespace Informa.Library.Search.SearchIndex
 {
     public interface ISearchIndexNameService
     {
-        string GetIndexName();
+        string GetIndexName(Guid publicationGuid = default(Guid));
     }
 }

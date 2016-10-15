@@ -103,10 +103,10 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="articleNumber"></param>
 		/// <returns></returns>
-		public Item GetArticleItemByNumber(string articleNumber)
+		public Item GetArticleItemByNumber(string articleNumber, Guid publicationGuid = default(Guid))
 		{
 
-			ArticleItem articleItem = GetArticleByNumber(articleNumber);
+			ArticleItem articleItem = GetArticleByNumber(articleNumber, publicationGuid);
 			if (articleItem != null)
 			{
 				var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
@@ -120,17 +120,17 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="articleNumber"></param>
 		/// <returns></returns>
-		public ArticleItem GetArticleByNumber(string articleNumber)
+		public ArticleItem GetArticleByNumber(string articleNumber, Guid publicationGuid = default(Guid))
 		{
-			return GetArticleByNumber(articleNumber, Constants.MasterDb);
+			return GetArticleByNumber(articleNumber, Constants.MasterDb, publicationGuid);
 		}
 
-		public ArticleItem GetArticleByNumber(string articleNumber, string databaseName)
+		public ArticleItem GetArticleByNumber(string articleNumber, string databaseName, Guid publicationGuid = default(Guid))
 		{
 			IArticleSearchFilter filter = _articleSearcher.CreateFilter();
             filter.ArticleNumbers = articleNumber.SingleToList();
-			var results = _articleSearcher.SearchCustomDatabase(filter, databaseName);
-			if (results.Articles.Any())
+			var results = _articleSearcher.SearchCustomDatabase(filter, databaseName, publicationGuid);
+            if (results.Articles.Any())
 			{
 				var foundArticle = results.Articles.FirstOrDefault();
 				var service = SitecoreFactory(databaseName);

@@ -111,9 +111,9 @@ namespace Informa.Library.Article.Search
         /// <param name="filter"></param>
         /// <param name="database"></param>
         /// <returns></returns>
-        public IArticleSearchResults SearchCustomDatabase(IArticleSearchFilter filter, string database)
+        public IArticleSearchResults SearchCustomDatabase(IArticleSearchFilter filter, string database, Guid publicationGuid = default(Guid))
         {
-            using (var context = SearchContextFactory.Create(database, IndexNameService.GetIndexName()))
+            using (var context = SearchContextFactory.Create(database, IndexNameService.GetIndexName(publicationGuid)))
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)

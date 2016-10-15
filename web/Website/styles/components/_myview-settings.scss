@@ -41,6 +41,28 @@
 		}
 	}
 }
+@mixin unfollowBtnLbl(){
+	@include folow-btn(7.5rem, 2rem);
+	background-color: $color-tree-poppy-orange;
+	color: $color-white;
+	margin: 0.5rem 0 0 1.25rem;
+	&.mtp{
+		margin-top: -6px;
+		margin-bottom: 25px;
+	}
+}
+@mixin followBtnLbl(){
+	@include folow-btn(7.5rem, 2rem);
+	margin-top: 0.5rem;
+	&:hover{
+		background-color: $color-tree-poppy-orange;
+		color: $color-white;
+	}
+	&.mtp{
+		margin-top: -6px;
+		margin-bottom: 25px;
+	}
+}
 
 .myview-settings {
 	padding-bottom: 50px !important;
@@ -79,11 +101,12 @@
 			font-family: "PT Serif Caption";
 			font-weight: 400;
 			font-size: 1.125em;
-			@include breakpoint('small') {
-				font-size: 0.875em;
+			@include breakpoint('medium-small') {
+				font-family: "Roboto";
+				font-size: 0.85em;
 				margin: 0rem;
 				padding: 0rem;
-				line-height: 1.5rem;
+				line-height: 1.375rem;
 			}
 		}
 	}
@@ -159,12 +182,29 @@
 							background: $color-tree-poppy-orange;
 							color: $color-white;
 						}
-					
+						@include breakpoint('medium-small'){
+							background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+							height: 1.875rem;
+							width: 1.875rem;
+							border: none;
+							display: inline-block;
+							margin-left: 0.625rem;
+							text-indent: -9999px;
+						}
 					}
 					.followBtn{
 						@include folow-btn(7.5rem, 2rem);
 						background: $color-tree-poppy-orange;
 						color: $color-white;
+						@include breakpoint('medium-small'){
+							background: url(/dist/img/follow-mob.jpg) no-repeat 0 0;
+							height: 1.875rem;
+							width: 1.875rem;
+							display: inline-block;
+							margin-left: 0.625rem;
+							border: none;
+							text-indent: -9999px;
+						}
 					}
 					&.followingrow{
 						.rowlines{
@@ -219,7 +259,8 @@
 						padding: 0.75rem 0 0;
 						@include breakpoint('medium-small') {
 							padding: 0;
-							font-size: 0.875em; 
+							font-size: 1em;
+							font-weight: normal;
 						}
 					} 
 					&.firstrow{
@@ -272,28 +313,23 @@
 							width: 2rem;
 							display: inline-block;
 							margin-right: 10%;
-							@include breakpoint('medium') {
+							@include breakpoint('medium-small') {
+								background: url(/dist/img/mob-arrow.png) no-repeat 0 -33px;
+								height: 0.75rem;
+								width: 1.4375rem;
 								position: relative;
-								left: -1.25rem;
-							}
-							@include breakpoint('small') {
-								position: relative;
-								left: -0.9375rem;
+								left: 0;
+								&.collapsed{
+									position: relative;
+									left: 0;
+									background-position: 0 0; 
+								}
+							} 
+							&.collapsed{
+								background-position: 0 0;
 							}
 							@media screen and (min-width: 801px) and (max-width: 1130px){
 								margin-right: 50%;
-							}
-							
-							&.collapsed{
-								background: url(/dist/img/accordion.png) no-repeat 0 0;
-								@include breakpoint('small') {
-									position: relative;
-									left: -0.3125rem;
-								}
-								@include breakpoint('medium') {
-									position: relative;
-									left: -1.25rem;
-								}
 							}
 						}
 					}
@@ -304,23 +340,23 @@
 					}
 				} 
 				.followAllBtn{
-					@include folow-btn(7.5rem, 2rem);
-					margin-top: 0.5rem;
-					&:hover{
-						background: $color-tree-poppy-orange;
-						color: $color-white;
-					}
-					&.mtp{
-						margin-top: -6px;
+					@include followBtnLbl();
+				}
+				.followinglbl{
+					@include followBtnLbl();
+					@include breakpoint('medium-small') {
+						margin: 0px !important;
+						float: left;
 					}
 				}
 				.unfollowAllBtn{
-					@include folow-btn(7.5rem, 2rem);
-					background: $color-tree-poppy-orange;
-					color: $color-white;
-					margin: 0.5rem 0 0 1.25rem;
-					&.mtp{
-						margin-top: -6px;
+					@include unfollowBtnLbl();
+				}
+				.followlbl{
+					@include unfollowBtnLbl();
+					@include breakpoint('medium-small') {
+						margin: 0px !important;
+						float: left;
 					}
 				}
 			}
@@ -355,36 +391,6 @@
 			}
 			.graybg{
 				background: #f9fafa;
-			}
-			.smfollowingBtn{
-				text-align: right;
-				a{
-					background: url(/dist/img/follow-mob.jpg) no-repeat;
-					height: 1.875rem;
-					width: 1.875rem;
-					display: inline-block;
-					margin-left: 0.625rem;
-				}
-				span{
-					position: relative;
-					top: -0.75rem;
-					font-size: 0.6875em;
-					font-weight: bold;
-					font-family: "Roboto";
-					text-transform: uppercase;
-				}
-				& .mchecked{
-					background-position: 0 0;
-				}
-				& .munchecked{
-					background-position: 0 -31px;
-				}
-				& .mcheckedAll{
-					background-position: 0 0;
-				}
-				& .muncheckedAll{
-					background-position: 0 -31px;
-				}
 			}
 		}
   }
@@ -441,6 +447,23 @@
 	}
 	.smfollowingBtn{
 		margin: 0.1rem 0;
+		span{
+			background: url(/dist/img/follow-mob.jpg) no-repeat 0 -31px;
+			border: none;
+			height: 30px !important;
+			width: 30px !important;
+			line-height: 1.75rem !important;
+			&.unfollowAllBtn{
+				background-position: 0 -31px;
+				border: none !important;
+				text-indent: -124px;
+				color: $color-abbey-gray !important;
+			} 
+			&.followAllBtn{
+				background-position: 0 0;
+				text-indent: -140px;
+			}
+		}		
 	}
 	.hidden-lg{
 		display: none !important;
