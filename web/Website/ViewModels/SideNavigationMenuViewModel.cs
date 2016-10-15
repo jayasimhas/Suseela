@@ -99,6 +99,7 @@ namespace Informa.Web.ViewModels
             IUserPreferences prefChannels = new UserPreferences();
             if (IsAuthenticated)
             {
+                
                 var channelPages = GlobalService.GetItem<IChannels_Page>(GlassModel?._Id.ToString()).
                 _ChildrenWithInferType.OfType<IChannel_Page>();
 
@@ -150,6 +151,7 @@ namespace Informa.Web.ViewModels
             var topicSubscriptions = new List<TopicSubscription>();
             if (IsAuthenticated)
             {
+           
                 //channel based subscriptions
                 if (UserSubcriptions != null && UserSubcriptions.Subscriptions != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedChannels).ToList() != null && UserSubcriptions.Subscriptions.SelectMany(n => n.SubscribedChannels).Count() > 0)
                 {

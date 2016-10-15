@@ -4,6 +4,9 @@ using Informa.Library.User.Newsletter;
 using Informa.Web.Areas.Account.Models.User.Management;
 using Informa.Library.Utilities.WebApi.Filters;
 using System.Linq;
+using Informa.Library.User.UserPreference;
+using Informa.Library.User.Authentication;
+using Informa.Library.Globalization;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -14,7 +17,7 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly ISiteNewsletterUserOptedInContext NewsletterOptedInContext;
 		protected readonly ISetPublicationsNewsletterUserOptIns SetNewsletterUserOptInsContext;
 
-		public PreferencesApiController(
+        public PreferencesApiController(
 			IUpdateOfferUserOptInContext offersOptIn,
 			IUpdateSiteNewsletterUserOptIn updateSiteNewsletterOptIn,
 			ISiteNewsletterUserOptedInContext newsletterOptedInContext,
@@ -24,7 +27,7 @@ namespace Informa.Web.Areas.Account.Controllers
 			UpdateSiteNewsletterOptIn = updateSiteNewsletterOptIn;
 			NewsletterOptedInContext = newsletterOptedInContext;
 			SetNewsletterUserOptInsContext = setNewsletterUserOptInsContext;
-		}
+        }
 
 		[HttpPost]
         [ArgumentsRequired]
@@ -52,5 +55,5 @@ namespace Informa.Web.Areas.Account.Controllers
 		{
 			return NewsletterOptedInContext.OptedIn;
 		}
-	}
+    }
 }

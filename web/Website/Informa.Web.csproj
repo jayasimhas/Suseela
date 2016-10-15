@@ -837,6 +837,7 @@
     <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
+    <Compile Include="Areas\Account\Controllers\PersonalizeUserPreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
     <Compile Include="Areas\Account\Controllers\ResetPasswordApiController.cs" />
@@ -849,6 +850,7 @@
     <Compile Include="Areas\Account\Models\User\Management\PreferencesRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentRemoveRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentSaveRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Personalization\PersonalizeUserPreferencesRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\PreRegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterFreeTrialRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
@@ -862,7 +864,9 @@
     <Compile Include="Areas\Account\ViewModels\Management\AccountNavViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\ArticlePurchasesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\EmailPreferencesViewModel.cs" />
-    <Compile Include="Areas\Account\ViewModels\Management\MyViewSettingsViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Personalization\ChannelsViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Personalization\IChannelsViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Personalization\MyViewSettingsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedArticlesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SavedSearchesViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SubscriptionsViewModel.cs" />
@@ -870,6 +874,7 @@
     <Compile Include="Areas\Account\ViewModels\Management\SubscriptionViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Personalization\MyViewToggleViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Personalization\PersonalizationMessageViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Registration\RegisterContentCustomizeViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterFreeTrialUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
@@ -1461,6 +1466,9 @@
     <Content Include="App_Config\Web\system.webServer.staticContent.config.template" />
     <Content Include="App_Config\XamlSharp.config" />
     <Content Include="Artifacts\PerformanceCounters\Sitecore.CES.DeviceDetection.Counters.xml" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
@@ -1474,6 +1482,7 @@
     <Content Include="email\Workflow.html" />
     <Content Include="email\ResetPassword.html" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="js\components\save-search-component.js" />
@@ -1559,12 +1568,21 @@
     <Content Include="amcharts\plugins\export\README.md" />
     <Content Include="amcharts\plugins\responsive\readme.md" />
     <Content Include="amcharts\plugins\responsive\responsive.min.js.map" />
-    <Content Include="Areas\Account\Views\Management\MyViewSettings.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\MyViewGlobalToggle.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageLandingPage.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageRightRail.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\Publications.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PresonalizationMessageArticlePage.cshtml" />
+    <Content Include="Areas\Account\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Account\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Account\Views\Registration\RegisterUserContentCustomize.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Account\Views\Personalization\MyViewSettings.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -1572,6 +1590,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="sitecore modules\Shell\Informa\FreeTrialArticleSearch.aspx" />
     <Content Include="sitecore\admin\Tools\TestUtils.aspx" />
     <Content Include="PrintStudio\Data\special.xml" />
@@ -1688,7 +1707,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Article\Views\Account\" />
     <Folder Include="CustomMvc\Parsers\" />
     <Folder Include="GlassMaps\" />

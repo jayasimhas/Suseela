@@ -7,7 +7,7 @@
     <p class="page-registration__introduction">@Model.Body</p>
     <form class="form-registration-optins"
           data-on-submit="/Account/api/RegistrationApi/SetOptIns/"
-          data-on-success="@Model.RegisterReturnUrl">
+          data-on-success="@Model.NextStepUrl">
 
         <p class="page-registration__error
 		   js-form-error

@@ -4,5 +4,6 @@
     {
         IUserPreferences Preferences { get; set; }
         void clear();
+        bool Set(string channelPreferences);
     }
 }
