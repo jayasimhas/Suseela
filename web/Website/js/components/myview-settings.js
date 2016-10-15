@@ -94,24 +94,32 @@ $(function(){
 	var tables = $('.publicationPan table');
 	setClsforFlw(tables);
 	
-	$('.saveview').click(function(){
-		var alltables = $('.table'), UserPreferences = {};
-		UserPreferences.PreferredChannels = {};
-		UserPreferences.PreferredChannels.Channel = [];
-		for(var i=0; i<alltables.length; i++){
-			var currenttabtrs = $(alltables[i]).find('tbody tr'), pubPanPosition = $(alltables[i]).closest('.publicationPan').attr('data-row'), tableId = $(alltables[i]).attr('id'), publicationName = $(alltables[i]).find('h2').attr('data-publication'), subscribeStatus = $(alltables[i]).find('.subscribed').html();
+	
+	
+	$('.saveview').click(function () {
+		var alltables = $('.table'),
+		    UserPreferences = {};
+		UserPreferences.PreferredChannels = [];
+		for (var i = 0; i < alltables.length; i++) {
+			var currenttabtrs = $(alltables[i]).find('tbody tr'),
+			    pubPanPosition = $(alltables[i]).closest('.publicationPan').attr('data-row'),
+			    tableId = $(alltables[i]).attr('id'),
+			    publicationName = $(alltables[i]).find('h2').attr('data-publication'),
+			    subscribeStatus = $(alltables[i]).find('.subscribed').html();
 			var alltdata = [];
-			for(var j=0; j<currenttabtrs.length; j++){
-				var datarowNo = $(currenttabtrs[j]).attr('data-row'), eachrowAttr = $(currenttabtrs[j]).attr('data-row-topic'), secondtd = $(currenttabtrs[j]).find('td.wd-25 span:first').html();
-				
+			for (var j = 0; j < currenttabtrs.length; j++) {
+				var datarowNo = $(currenttabtrs[j]).attr('data-row'),
+				    eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
+				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span:first').html();
+
 				var followStatus = (secondtd == 'following') ? true : false;
-				var subscripStatus = (subscribeStatus.toUpperCase() == 'SUBSCRIBED') ? true : false;
-				alltdata.push({'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus});
+				var subscripStatus = (subscribeStatus.toUpperCase()) == 'SUBSCRIBED' ? true : false;
+				alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus });
 			}
-			UserPreferences.PreferredChannels.Channel.push({"ChannelCode": publicationName, "ChannelOrder": pubPanPosition, Topics: {"Topic": alltdata}});
+			UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, Topics: alltdata });
 		}
-		$.post('/Account/api/PreferencesApi/SetUserPreferences/', {'UserPreferences': JSON.stringify(UserPreferences)});
-	});
+		$.post('/Account/api/PersonalizeUserPreferencesApi/Update/', { 'UserPreferences': JSON.stringify(UserPreferences) });
+	}); 
 	
 	if (window.matchMedia('(max-width: 630px)').matches){
 		$('.mobshowView').removeClass('desktophide');
