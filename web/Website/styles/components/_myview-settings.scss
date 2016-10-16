@@ -319,13 +319,13 @@
 								width: 1.4375rem;
 								position: relative;
 								left: 0;
-								&.collapsed{
+								&.expanded{
 									position: relative;
 									left: 0;
 									background-position: 0 0; 
 								}
 							} 
-							&.collapsed{
+							&.expanded{
 								background-position: 0 0;
 							}
 							@media screen and (min-width: 801px) and (max-width: 1130px){
@@ -402,10 +402,18 @@
 	  .gotoview{
 		 @include folow-btn(9.375rem, 2rem);
 		  margin-left: 1.25rem;
-		  &:hover{
+		  a{
+			color: $color-abbey-gray;
+			display: block;
+			&:hover{
 				background: $color-tree-poppy-orange;
 				color: $color-white;
+				text-decoration: none;
 			}
+			&:focus{
+				text-decoration: none;
+			}
+		  }
 		@include breakpoint('small') {
 			@include folow-btn(7.5rem, 2rem);
 		}
@@ -439,9 +447,79 @@
 	visibility: hidden;
 	background: #f9f9f9;
   }
+    .modal-view {
+	    position: fixed;
+		width: 25rem;
+		height: 8.125rem;
+		top: 50%;
+		left: 50%;
+		z-index: 5000;
+		margin-left: -12.5rem;
+		margin-top: -4.0625rem;
+		background: $color-white;
+		padding: 2.1875rem 2.5rem 2.5rem;
+		border: 1px solid $color-tree-poppy-orange;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		display: none;
+		@include breakpoint('small') {
+			width: 18.75rem;
+			height: 6.25rem;
+			margin-left: -9.375rem;
+			margin-top: -9.375rem;
+			padding: 1.625rem 2.5rem 2.5rem;
+		}
+		h4{
+			font-size: 1.125rem;
+			text-align: center;
+			line-height: 1.875rem;
+			
+			@include breakpoint('small') {
+				font-size: 0.875rem;
+				text-align: center;
+				line-height: 1.5rem;
+			}
+		}
+		
+	  .modal-inner {
+			display: inline-block;
+			text-align: left;
+			background-color: #eee;
+			color: #000;
+			padding: 1.25rem;
+			
+			@include breakpoint('small') {
+				padding: 0.625rem;
+			}
+		}
+
+		.close-modal {
+			position: absolute;
+			right: 0.625rem;
+			top: 0.625rem;
+			color: #f7941e;
+			font-family: "Roboto";
+			font-weight: bold;
+			font-size: 1rem;
+			cursor: pointer;
+		}
+	}
+	.modal-overlay{
+		&.in{
+			background: #000;
+			height: 100%;
+			width: 100%;
+			position: fixed;
+			top: 0rem;
+			left: 0rem;
+			z-index: 99;
+			opacity: 0.5;
+		}
+	}
 }
 
-@include breakpoint('small') {
+@include breakpoint('medium-small') {
 	.hidden-xs{
 		display: none !important;
 	}
@@ -454,14 +532,14 @@
 			width: 30px !important;
 			line-height: 1.75rem !important;
 			&.unfollowAllBtn{
-				background-position: 0 -31px;
-				border: none !important;
-				text-indent: -124px;
+				background-position: 0 0;
+				text-indent: -8.75rem;
 				color: $color-abbey-gray !important;
 			} 
 			&.followAllBtn{
-				background-position: 0 0;
-				text-indent: -140px;
+				background-position: 0 -31px;
+				text-indent: -124px;
+				border: none !important;
 			}
 		}		
 	}
@@ -489,7 +567,7 @@
 }
 
 .followingrow.over{
-	/*background: $color-tree-poppy-orange;*/
+	background: $color-tree-poppy-orange;
 }
  
 @-moz-keyframes drop {

@@ -116,8 +116,8 @@
 					<div class="mysettingsHead clearfix">
 						<h1>My View Settings</h1>
 						<div class="saveoption mtop-10 hidden-xs">
-							<span class="saveview" href="javascript: void(0);">Save</span>
-							<span class="gotoview" href="javascript: void(0);">Go to my view</span>
+							<span class="saveview">Save</span>
+							<span class="gotoview"><a href="http://www.google.com">Go to my view</a></span>
 						</div>
 					</div>
 					
@@ -129,9 +129,16 @@
 					</div>
 					
 					<div class="saveoption mb-10 hidden-lg">
-						<span class="saveview" href="javascript: void(0);">Save</span>
-						<span class="gotoview" href="javascript: void(0);">Go to my view</span>
+						<span class="saveview">Save</span>
+						<span class="gotoview"><a href="http://www.google.com">Go to my view</a></span>
 					</div>
+					
+					<div class="modal-overlay"></div>
+					<div class="modal-view">
+						<p class="close-modal">X</p>
+						<h4>You didn't save your preferences. <br /> Please save your preferences.</h4>
+					</div>
+					<input type="hidden" value="0" id="validatePreference" />
 				</div> 
 				
 				<div id="allPublicationsPan"> 
@@ -153,7 +160,7 @@
 									</th>
 									<th class="wd-15 firstrow">
 										<div class="accordionImg hidden-xs">
-											<a class="collapsed" href="javascript: void(0);"></a>
+											<a class="expanded" href="javascript: void(0);"></a>
 										</div>
 										<div class="rowlines">
 											<div class="vline"></div>
@@ -164,8 +171,8 @@
 										</div>
 									</th>
 								</tr>
-								<tr>
-									<th colspan="3" class="nopad accCont">
+								<tr class="accCont">
+									<th colspan="3" class="nopad">
 										<hr />
 									</th>
 								</tr>
@@ -185,11 +192,11 @@
 									</th>
 									<th>
 										<div class="accordionImg">
-											<a class="collapsed" href="javascript: void(0);"></a>
+											<a class="expanded" href="javascript: void(0);"></a>
 										</div>
 									</th>
 								</tr>
-								<tr class="graybg mobshowView desktophide">
+								<tr class="graybg mobshowView desktophide expandHide">
 									<th colspan="3" class="nopad">
 										<hr />
 									</th>
@@ -202,7 +209,7 @@
 										</div>
 									</th>
 								</tr>
-								<tr class="graybg mobshowView desktophide">
+								<tr class="graybg mobshowView desktophide expandHide">
 									<th colspan="3" class="nopad">
 										<hr />
 									</th>
@@ -210,8 +217,8 @@
 								<tr class="graybg mobshowView desktophide">
 									<th colspan="2">
 										<div class="smfollowingBtn hidden-lg">
-											<span class="followAllBtn hideBtn">Unfollow All</span>
-											<span class="unfollowAllBtn">Follow All</span>
+											<span class="unfollowAllBtn hideBtn">Unfollow All</span>
+											<span class="followAllBtn">Follow All</span>
 										</div>
 									</th>
 									<th></th>
@@ -220,7 +227,7 @@
 							<tbody>
 							  <tr class="followingrow" data-row="1">
 								<input type="hidden" data-row-topic="Topic 1" />
-								<td class="wd-55">Topic 1</td>
+								<td class="wd-55">ABC Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followingBtn">following</span>
 								</td>
@@ -236,7 +243,7 @@
 							  </tr>
 							  <tr class="followingrow" data-row="2">
 								<input type="hidden" data-row-topic="Topic 2" />
-								<td class="wd-55">Topic 2</td>
+								<td class="wd-55">BCD Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followingBtn">following</span>
 								</td>
@@ -252,7 +259,7 @@
 							  </tr> 
 							  <tr class="followingrow" data-row="3">
 								<input type="hidden" data-row-topic="Topic 3" />
-								<td class="wd-55">Topic 3</td>
+								<td class="wd-55">CDE Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followingBtn">following</span>
 								</td>
@@ -268,7 +275,7 @@
 							  </tr>
 							  <tr class="followingrow" data-row="4">
 								<input type="hidden" data-row-topic="Topic 4" />
-								<td class="wd-55">Topic 4</td>
+								<td class="wd-55">DEF Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followingBtn">following</span>
 								</td>
@@ -284,7 +291,7 @@
 							  </tr>
 							  <tr class="followingrow" data-row="5">
 								<input type="hidden" data-row-topic="Topic 5" />
-								<td class="wd-55">Topic 5</td>
+								<td class="wd-55">EFG Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followingBtn">following</span>
 								</td>
@@ -300,7 +307,7 @@
 							  </tr>
 							  <tr class="followingrow" data-row="6">
 								<input type="hidden" data-row-topic="Topic 6" />
-								<td class="wd-55">Topic 6</td>
+								<td class="wd-55">FGH Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followingBtn">following</span>
 								</td>
@@ -316,7 +323,7 @@
 							  </tr> 
 							  <tr class="followingrow" data-row="7">
 								<input type="hidden" data-row-topic="Topic 7" />
-								<td class="wd-55">Topic 7</td>
+								<td class="wd-55">IJK Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followingBtn">following</span>
 								</td>
@@ -332,7 +339,7 @@
 							  </tr>
 							  <tr class="followingrow" data-row="8">
 								<input type="hidden" data-row-topic="Topic 8" />
-								<td class="wd-55">Topic 8</td>
+								<td class="wd-55">LMN Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followingBtn">following</span>
 								</td>
@@ -348,7 +355,7 @@
 							  </tr> 
 							  <tr class="followingrow" data-row="9">
 								<input type="hidden" data-row-topic="Topic 9" />
-								<td class="wd-55">Topic 9</td>
+								<td class="wd-55">OPQ Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followingBtn">following</span>
 								</td>
@@ -364,7 +371,7 @@
 							  </tr>
 							  <tr class="followingrow" data-row="10">
 								<input type="hidden" data-row-topic="Topic 10" />
-								<td class="wd-55">Topic 10</td>
+								<td class="wd-55">RST Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followingBtn">following</span>
 								</td>
@@ -380,7 +387,7 @@
 							  </tr> 
 							  <tr class="followingrow" data-row="11">
 								<input type="hidden" data-row-topic="Topic 11" />
-								<td class="wd-55">Topic 11</td>
+								<td class="wd-55">STU Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followingBtn">following</span>
 								</td>
@@ -396,7 +403,7 @@
 							  </tr>
 							  <tr class="followingrow" data-row="12">
 								<input type="hidden" data-row-topic="Topic 12" />
-								<td class="wd-55">Topic 12</td>
+								<td class="wd-55">TUV Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followingBtn">following</span>
 								</td>
@@ -409,10 +416,10 @@
 										<span></span>
 									</div>
 								</td> 
-							  </tr>  
+							  </tr>
 							  <tr class="followrow disabled" data-row="13">
 								<input type="hidden" data-row-topic="Topic 13" />
-								<td class="wd-55">Topic 13</td>
+								<td class="wd-55">UVW Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followBtn">follow</span>
 								</td>
@@ -428,7 +435,7 @@
 							  </tr>
 							  <tr class="followrow disabled" data-row="14">
 								<input type="hidden" data-row-topic="Topic 14" />
-								<td class="wd-55">Topic 14</td>
+								<td class="wd-55">WXY Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followBtn">follow</span>
 								</td>
@@ -444,7 +451,7 @@
 							  </tr>
 							  <tr class="followrow disabled" data-row="15">
 								<input type="hidden" data-row-topic="Topic 15" />
-								<td class="wd-55">Topic 15</td>
+								<td class="wd-55">XYZ Animal Pharm</td>
 								<td class="wd-25">
 									<span class="followBtn">follow</span>
 								</td>
@@ -1293,6 +1300,7 @@
          <p></p>
          <p>Printed By <b>  Daniel Dewey Test</b></p>
       </div>
+	   
       <script src="/dist/js/index.js"></script>
 	   
       <script async type="text/javascript" id="mini-profiler" src="/mini-profiler-resources/includes.js?v=ySF6M98CBehTtL86BbiEmys9yxR1HKazhe2sznfdUWQ=" data-version="ySF6M98CBehTtL86BbiEmys9yxR1HKazhe2sznfdUWQ=" data-path="/mini-profiler-resources/" data-current-id="14946f4e-f2ce-41f6-84cc-7c401a694783" data-ids="f69e9c99-c107-42cf-97fe-afbf9e7b68c6,3e9e2fe4-fd8f-4710-811a-73f70c0101b2,2b081c31-454c-4972-8449-e8f6b9ec6ee7,cec802fd-f7d8-484d-b43c-c46eb261fa43,14946f4e-f2ce-41f6-84cc-7c401a694783" data-position="left" data-trivial="false" data-children="false" data-max-traces="15" data-controls="false" data-authorized="true" data-toggle-shortcut="Alt+P" data-start-hidden="false" data-trivial-milliseconds="2"></script>

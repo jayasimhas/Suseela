@@ -1,13 +1,23 @@
-var toVal = 1, fromVal = 1;
+var defaults = {
+	totalCategories: 1,
+	categoryLimit: 10,
+	currentPage: 1
+},  toVal = 1, fromVal = 1; 
+ 
+$.fn.setPagination = function(source){
+    $.extend(defaults, source);
+};
 
 function paginationCur(fv, tv){
-	$('.eachCategory').hide();
+	$('tbody.hidden-xs tr', '.page-account__table').hide();
+	$('tbody.hidden-lg tr', '.page-account__table').hide();
 	for(var i = fv; i < tv; i++){
-		$('.eachCategory').eq(i).show();
+		$('tbody.hidden-xs tr', '.page-account__table').eq(i).show();
+		$('tbody.hidden-lg tr', '.page-account__table').eq(i).show();
 	}
 }
 $(function(){
-	var showPageLinks = Math.ceil(paginationObj.totalCategories / paginationObj.categoryLimit);
+	var showPageLinks = Math.ceil(defaults.totalCategories / defaults.categoryLimit);
 	var linkStr = '';
 	for(var i=1; i<=showPageLinks; i++){
 		linkStr += '<a href="javascript:void(0);">'+i+'</a>';
@@ -43,8 +53,8 @@ $(function(){
 			if(!$this.hasClass('active')){
 				$('.pagination span a').removeClass('active').attr('href','javascript:void(0);');
 				$this.addClass('active').removeAttr('href');
-				toVal = paginationObj.categoryLimit * $val;
-				fromVal = toVal - paginationObj.categoryLimit;
+				toVal = defaults.categoryLimit * $val;
+				fromVal = toVal - defaults.categoryLimit;
 				paginationCur(fromVal, toVal);
 				$('.pagination a:last').attr('href','javascript:void(0);');
 				$('.pagination a:first').attr('href','javascript:void(0);');
@@ -59,5 +69,18 @@ $(function(){
 	});
 	$('.pagination span a:eq(0)').click();
 	$('.pagination a:eq(0)').removeAttr('href');
+	
+	$('.sortable-table__header').on('click', '.sortable-table__col', function(){
+		var $this = $(this), table = $this.closest('.sortable-table'), tbodytrs = table.find('tbody tr');
+		setTimeout(function(){
+			tbodytrs.removeAttr('style');
+			if(!$('.pagination span a:eq(0)').hasClass('active')){
+				$('.pagination span a:eq(0)').click();
+			}
+			else{
+				paginationCur(0, defaults.categoryLimit);
+			}
+		}, 1);
+	});
 });
 

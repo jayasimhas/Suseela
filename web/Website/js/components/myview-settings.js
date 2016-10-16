@@ -4,10 +4,41 @@ function setClsforFlw(t) {
 	  tableFlwrow.addClass('frow');
 	}
 }
+ 
+function sort_table(tbody, col, asc) {
+	var allrows = tbody[0].rows, rows = [];
+		for(var j = 0; j < allrows.length; j++){
+			if(allrows[j].className == 'followrow disabled' || allrows[j].className == 'followrow disabled frow'){
+				rows.push(allrows[j]);
+			}
+		}
+		var rlen = rows.length,
+		arr = new Array(),
+		i, j, cells, clen;
+	// fill the array with values from the table
+	for (i = 0; i < rlen; i++) {
+		cells = rows[i].cells;
+		clen = cells.length;
+		arr[i] = new Array(); 
+		for (j = 0; j < clen; j++) {
+			arr[i][j] = cells[j].innerHTML;
+		}
+	}
+	// sort the array by the specified column number (col) and order (asc)
+	arr.sort(function (a, b) {
+		return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : -1 * asc);
+	});
+	// replace existing rows with new rows created from the sorted array
+	for (i = 0; i < rlen; i++) {
+		rows[i].innerHTML = "<td>" + arr[i].join("</td><td>") + "</td>";
+	}
+}
+
 $(function(){
 	$('#allPublicationsPan').on('click', '.followAllBtn', function(){
 		var $this = $(this), curpublicPan = $this.closest('.publicationPan'), div = $this.closest('div'), $lgfollow = curpublicPan.find('.followBtn'), table = $('.table');
 		$this.addClass('hideBtn');
+		$('#validatePreference').val(1);
 		div.find('.unfollowAllBtn').removeClass('hideBtn');
 		$lgfollow.addClass('followingBtn').removeClass('followBtn').html('following');
 		curpublicPan.find('.unfollowAllBtn').removeClass('hideBtn');
@@ -20,6 +51,7 @@ $(function(){
 	$('#allPublicationsPan').on('click', '.unfollowAllBtn', function(){
 		var $this = $(this), curpublicPan = $this.closest('.publicationPan'), div = $this.closest('div'), $lgfollowing = curpublicPan.find('.followingBtn');
 		$this.addClass('hideBtn');
+		$('#validatePreference').val(1);
 		div.find('.followAllBtn').removeClass('hideBtn');
 		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html('follow');
 		for(var i=0; i<$lgfollowing.length; i++){
@@ -30,6 +62,7 @@ $(function(){
 	$('#allPublicationsPan .donesubscribe').on('click', '.followrow .followBtn', function(){
 	  var $this = $(this), followrow = $this.closest('.followrow'), table = $this.closest('.table'), followAllBtn = table.find('.followAllBtn'), unfollowAllBtn = table.find('.unfollowAllBtn'), trs = $this.closest('tbody').find('tr'), trsfollowing = $this.closest('tbody').find('tr.followingrow');
 	  followrow.attr('draggable', true);
+	  $('#validatePreference').val(1);
 	  followrow.addClass('followingrow').removeClass('followrow disabled frow');
 	  $this.addClass('followingBtn').removeClass('followBtn').html('Following');
 	  setClsforFlw(table);
@@ -51,12 +84,13 @@ $(function(){
 	});
 	
 	$('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function(){
-	  var $this = $(this), followingrow = $this.closest('.followingrow'), followAllBtn = $this.closest('table').find('.followAllBtn'), unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'), trs = $this.closest('tbody').find('tr'), trsfollow = $this.closest('tbody').find('tr.followrow');
+	  var $this = $(this), followingrow = $this.closest('.followingrow'), followAllBtn = $this.closest('table').find('.followAllBtn'), unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'), tbody = $this.closest('tbody'), trs = $this.closest('tbody').find('tr'), trsfollow = $this.closest('tbody').find('tr.followrow');
 	  followingrow.addClass('followrow disabled').removeClass('followingrow');
 	  $this.addClass('followBtn').removeClass('followingBtn').html('Follow');
 	  followingrow.clone().appendTo($this.closest('tbody'));
 	  followingrow.remove();
-	  
+	  $('#validatePreference').val(1);
+	  sort_table(tbody, 0, 1);
 	  if(trs.length === trsfollow.length+1){
 		unfollowAllBtn.addClass('hideBtn');
 		followAllBtn.removeClass('hideBtn');
@@ -68,11 +102,12 @@ $(function(){
 	});
 	
 	$('.publicationPan').on('click', '.accordionImg a', function(){
-		var $this = $(this), pPan = $this.closest('.publicationPan'), thead = pPan.find('thead'), tbody = pPan.find('tbody'), trs = tbody.find('tr'), disabledtrs = tbody.find('tr.disabled'), accCont = pPan.find('.accCont'), followlbl = thead.find('.followlbl'), followinglbl = thead.find('.followinglbl'); 
-		if($this.hasClass('collapsed')){
-			$this.removeClass('collapsed');
+		var $this = $(this), allPublications = $('#allPublicationsPan'), pPan = $this.closest('.publicationPan'), thead = pPan.find('thead'), tbody = pPan.find('tbody'), trs = tbody.find('tr'), disabledtrs = tbody.find('tr.disabled'), accCont = pPan.find('.accCont'), followlbl = thead.find('.followlbl'), followinglbl = thead.find('.followinglbl');
+		if($this.hasClass('expanded')){
+			$this.removeClass('expanded');
 			tbody.addClass('tbodyhidden');
 			accCont.addClass('tbodyhidden');
+			thead.find('.expandHide').show();
 			pPan.find('.smfollowingBtn').hide();
 			pPan.find('.graybg').hide(); 
 			thead.find('.mtp').addClass('hideBtn'); 
@@ -84,19 +119,34 @@ $(function(){
 			}
 		}
 		else{
-			$this.addClass('collapsed');
+			allPublications.find('tbody').addClass('tbodyhidden');
+			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
+			allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
+			thead.find('tr').removeClass('hidden');
+			$this.addClass('expanded');
 			tbody.removeClass('tbodyhidden');
 			accCont.removeClass('tbodyhidden');
+			thead.find('.expandHide').hide();
 			thead.find('.mtp').addClass('hideBtn');
 			pPan.find('.smfollowingBtn').show();
 			pPan.find('.graybg').show();
+			
+			/*var alltheads = allPublications.find('thead'), alltbodys = allPublications.find('tbody');
+			for(var i = 0; i < alltbodys.length; i++){
+				var eachTableTrs = $(alltbodys[i]).find('tr'), eachTabledisTrs = $(alltbodys[i]).find('tr.disabled'),
+					eachTablefollowlbl = $(alltheads[i]).find('.followlbl'), eachTablefollowinglbl = $(alltheads[i]).find('.followinglbl');
+				if(eachTableTrs.length === eachTabledisTrs.length){
+					eachTablefollowlbl.removeClass('hideBtn');
+				}
+				else{
+					eachTablefollowinglbl.removeClass('hideBtn');
+				}
+			}*/
 		}
 	});
 	
 	var tables = $('.publicationPan table');
 	setClsforFlw(tables);
-	
-	
 	
 	$('.saveview').click(function () {
 		var alltables = $('.table'),
@@ -130,8 +180,21 @@ $(function(){
 			UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, Topics: alltdata });
 		}
 		$.post('/Account/api/PersonalizeUserPreferencesApi/Update/', { 'UserPreferences': JSON.stringify(UserPreferences) });
-	}); 
+		$('#validatePreference').val(0);
+	});
 	
+	$('.gotoview').click(function(e){
+		if(+$('#validatePreference').val()){
+			e.preventDefault();
+			$('.modal-overlay').addClass('in');
+			$('.modal-view').show();
+		}
+	});
+	$('.close-modal').click(function(){
+		$('.modal-overlay').removeClass('in');
+		$('.modal-view').hide();
+	});
+	 
 	if (window.matchMedia('(max-width: 630px)').matches){
 		$('.mobshowView').removeClass('desktophide');
 	}
