@@ -143,7 +143,8 @@ $(function(){
 			else{
 				followinglbl.removeClass('hideBtn');
 			}
-			$(window).scrollTop(450);
+			var position = $this.closest('.publicationPan').position();
+			$(window).scrollTop(position.top - 40);
 		}
 		else{
 			allPublications.find('tbody').addClass('tbodyhidden');
@@ -157,7 +158,8 @@ $(function(){
 			thead.find('.expandHide').removeClass('collapseshow');
 			thead.find('.mtp').addClass('hideBtn');
 			pPan.find('.smfollowingBtn').show();
-			$(window).scrollTop(450);
+			var position = $this.closest('.publicationPan').position();
+			$(window).scrollTop(position.top - 40);
 			
 			//pPan.find('.graybg').show();
 			
@@ -182,8 +184,7 @@ $(function(){
 			$this.removeClass('expanded');
 			tbody.addClass('tbodyhidden');
 			thead.find('.mtp').addClass('hideBtn'); 
-			accCont.addClass('tbodyhidden');
-			pPan.find('.smfollowingBtn').hide();
+			accCont.addClass('tbodyhidden'); 
 			if(trs.length === disabledtrs.length){
 				followlbl.removeClass('hideBtn');
 			}
@@ -191,7 +192,7 @@ $(function(){
 				followinglbl.removeClass('hideBtn');
 			}
 			var position = $this.closest('.publicationPan').position();
-			$(window).scrollTop(position);
+			$(window).scrollTop(position.top);
 		}
 		else{
 			allPublications.find('tbody').addClass('tbodyhidden');
@@ -203,12 +204,10 @@ $(function(){
 			accCont.removeClass('tbodyhidden');
 			tbody.removeClass('tbodyhidden'); 
 			flwBtn.addClass('hideRow');
-			flwlbl.removeClass('hideRow');
-			pPan.find('.smfollowingBtn').show();
+			flwlbl.removeClass('hideRow');  
 			
 			var position = $this.closest('.publicationPan').position();
-			
-			$(window).scrollTop(position);
+			$(window).scrollTop(position.top);
 		}
 	});
 	
@@ -283,14 +282,6 @@ $(function(){
 		$('.modal-overlay').removeClass('in');
 		$('.modal-view').hide();
 	});
-	 
-	/*if (window.matchMedia('(max-width: 630px)').matches){
-		$('.mobshowView').removeClass('desktophide');
-	}
-	else{
-		$('.mobshowView').addClass('desktophide');
-		
-	}*/
 	
 	$('.publicationPan.donesubscribe').dragswap({
 		element : '.table tbody tr',

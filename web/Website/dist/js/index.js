@@ -840,7 +840,8 @@ $(function () {
 			} else {
 				followinglbl.removeClass('hideBtn');
 			}
-			$(window).scrollTop(450);
+			var position = $this.closest('.publicationPan').position();
+			$(window).scrollTop(position.top - 40);
 		} else {
 			allPublications.find('tbody').addClass('tbodyhidden');
 			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
@@ -853,7 +854,8 @@ $(function () {
 			thead.find('.expandHide').removeClass('collapseshow');
 			thead.find('.mtp').addClass('hideBtn');
 			pPan.find('.smfollowingBtn').show();
-			$(window).scrollTop(450);
+			var position = $this.closest('.publicationPan').position();
+			$(window).scrollTop(position.top - 40);
 
 			//pPan.find('.graybg').show();
 
@@ -890,14 +892,13 @@ $(function () {
 			tbody.addClass('tbodyhidden');
 			thead.find('.mtp').addClass('hideBtn');
 			accCont.addClass('tbodyhidden');
-			pPan.find('.smfollowingBtn').hide();
 			if (trs.length === disabledtrs.length) {
 				followlbl.removeClass('hideBtn');
 			} else {
 				followinglbl.removeClass('hideBtn');
 			}
 			var position = $this.closest('.publicationPan').position();
-			$(window).scrollTop(position);
+			$(window).scrollTop(position.top);
 		} else {
 			allPublications.find('tbody').addClass('tbodyhidden');
 			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
@@ -909,11 +910,9 @@ $(function () {
 			tbody.removeClass('tbodyhidden');
 			flwBtn.addClass('hideRow');
 			flwlbl.removeClass('hideRow');
-			pPan.find('.smfollowingBtn').show();
 
 			var position = $this.closest('.publicationPan').position();
-
-			$(window).scrollTop(position);
+			$(window).scrollTop(position.top);
 		}
 	});
 
@@ -965,13 +964,13 @@ $(function () {
 					$('.alert-success').show();
 				} else {
 					$('.alert-error p').html(data.reason);
-					$('.alert-success').show();
+					$('.alert-error').show();
 				}
 			},
 			error: function error(err) {
 				if (err && !err.success) {
 					$('.alert-error p').html(err.reason);
-					$('.alert-success').show();
+					$('.alert-error').show();
 				}
 			}
 		});
@@ -990,14 +989,6 @@ $(function () {
 		$('.modal-overlay').removeClass('in');
 		$('.modal-view').hide();
 	});
-
-	/*if (window.matchMedia('(max-width: 630px)').matches){
- 	$('.mobshowView').removeClass('desktophide');
- }
- else{
- 	$('.mobshowView').addClass('desktophide');
- 	
- }*/
 
 	$('.publicationPan.donesubscribe').dragswap({
 		element: '.table tbody tr',
