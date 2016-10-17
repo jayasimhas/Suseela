@@ -253,15 +253,18 @@ $(function(){
 			type: 'POST',
 			success: function(data){
 				if(data && data.success){
-					$('.alert-success p').html(data.reason).show();
+					$('.alert-success p').html(data.reason);
+					$('.alert-success').show();
 				}
 				else{
-					$('.alert-error p').html(data.reason).show();
+					$('.alert-error p').html(data.reason);
+					$('.alert-error').show();
 				}
 			},
 			error: function(err){
 				if(err && !err.success){
-					$('.alert-error p').html(err.reason).show();
+					$('.alert-error p').html(err.reason);
+					$('.alert-error').show();
 				}
 			}
 		});
