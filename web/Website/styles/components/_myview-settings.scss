@@ -166,6 +166,10 @@
 			max-width: 100%;
 			font-family: "Roboto Condensed";
 			font-style: normal;
+			@include breakpoint('small') {
+				display: block;
+				position: relative;
+			}
 			tbody{
 				 tr{
 					-webkit-transition: all 0.2s ease;
@@ -251,6 +255,9 @@
 					@include breakpoint('small') {
 						&.expandHide{
 							display: none;
+							&.collapseshow{
+								display: block !important;
+							}
 						}
 					}
 				}
@@ -527,8 +534,25 @@
 			opacity: 0.5;
 		}
 	}
+	.hidden-large{
+		display: none;
+	}
 }
-
+@include breakpoint('small') {
+	.myview-settings{
+		.hidden-large{
+			display: block !important;
+		}
+		.smfollowingBtn{
+			margin-top: -0.5rem;
+		}
+		.accordionStatus{
+			&.hideRow{
+				display: none;
+			}
+		}
+	}
+}
 @include breakpoint('medium-small') {
 	.hidden-xs{
 		display: none !important;
@@ -553,14 +577,12 @@
 			}
 		}		
 	}
-	.hidden-lg{
-		display: none !important;
-	}
+	
 }
 @media only screen and (min-width: 481px) {
-	.hidden-lg{
+	/*.hidden-lg{
 		display: none !important;
-	}
+	}*/
 }
 
 .tbodyhidden{
