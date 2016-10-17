@@ -359,3 +359,15 @@ target/
 /web/Website/Areas/Account
 /web/Website/App_Config_Old
 /web/Website
+/WordPlugin/SitecoreTreeWalker_TemporaryKey.pfx
+/WordPlugin/SitecoreTreeWalker/WordPluginTest.cer
+/WordPlugin/SitecoreTreeWalker/WordPluginTempKey.snk
+/WordPlugin/SitecoreTreeWalker/WordPluginTemp.snk
+/WordPlugin/SitecoreTreeWalker/PFPAutoUpdaterUAT.pfx
+/WordPlugin/SitecoreTreeWalker/InformaSitecoreWord_TemporaryKey.pfx
+/WordPlugin/SitecoreTreeWalker/InformaSitecoreWord_3_TemporaryKey.pfx
+/WordPlugin/SitecoreTreeWalker/InformaSitecoreWord_2_TemporaryKey.pfx
+/WordPlugin/SitecoreTreeWalker/InformaSitecoreWord_1_TemporaryKey.pfx
+/WordPlugin/SitecoreTreeWalker/WordPlugin/SitecoreTreeWalker/publish/Application Files/InformaSitecoreWord_16_09_06_1758
+/WordPlugin/SitecoreTreeWalker/WordPlugin/SitecoreTreeWalker/publish/InformaSitecoreWord.vsto
+/WordPlugin/SitecoreTreeWalker/WordPlugin/SitecoreTreeWalker/publish/setup.exe
