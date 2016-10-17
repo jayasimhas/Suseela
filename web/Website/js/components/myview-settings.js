@@ -190,7 +190,8 @@ $(function(){
 			else{
 				followinglbl.removeClass('hideBtn');
 			}
-			$(window).scrollTop(500);
+			var position = $this.closest('.publicationPan').position();
+			$(window).scrollTop(position);
 		}
 		else{
 			allPublications.find('tbody').addClass('tbodyhidden');
@@ -204,7 +205,9 @@ $(function(){
 			flwBtn.addClass('hideRow');
 			flwlbl.removeClass('hideRow');
 			pPan.find('.smfollowingBtn').show();
-			$(window).scrollTop(500);
+			
+			var position = $this.closest('.publicationPan').position();
+			$(window).scrollTop(position);
 		}
 	});
 	
@@ -232,17 +235,33 @@ $(function(){
 			    subscribeStatus = $(alltables[i]).find('.subscribed').html();
 			var alltdata = [];
 			for (var j = 0; j < currenttabtrs.length; j++) {
-				var datarowNo = $(currenttabtrs[j]).attr('data-row'),
-				    eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
-				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html();
-
+				var eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
+				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html(),
+					datarowNo = secondtd.toLowerCase() == 'following' ? $(currenttabtrs[j]).attr('data-row') : '0'; 
+				
 				var followStatus = (secondtd.toLowerCase() == 'following') ? true : false;
 				var subscripStatus = (subscribeStatus.toUpperCase()) == 'SUBSCRIBED' ? true : false;
 				alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus });
 			}
 			UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, Topics: alltdata });
 		}
-		$.post('/Account/api/PersonalizeUserPreferencesApi/Update/', { 'UserPreferences': JSON.stringify(UserPreferences) });
+		$.ajax({
+			url: '/Account/api/PersonalizeUserPreferencesApi/Update/', 
+			data: {'UserPreferences': JSON.stringify(UserPreferences)}, 
+			dataType: 'json',
+			type: 'POST',
+			success: function(data){
+				if(data){
+					$('.alert-success').show();
+				}
+			},
+			error: function(err){
+				if(err){
+					$('.alert-error').show();
+				}
+			}
+		});
+		
 		$('#validatePreference').val(0);
 	});
 	

@@ -840,7 +840,7 @@ $(function () {
 			} else {
 				followinglbl.removeClass('hideBtn');
 			}
-			$(window).scrollTop(400);
+			$(window).scrollTop(450);
 		} else {
 			allPublications.find('tbody').addClass('tbodyhidden');
 			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
@@ -853,7 +853,7 @@ $(function () {
 			thead.find('.expandHide').removeClass('collapseshow');
 			thead.find('.mtp').addClass('hideBtn');
 			pPan.find('.smfollowingBtn').show();
-			$(window).scrollTop(400);
+			$(window).scrollTop(450);
 
 			//pPan.find('.graybg').show();
 
@@ -896,7 +896,8 @@ $(function () {
 			} else {
 				followinglbl.removeClass('hideBtn');
 			}
-			$(window).scrollTop(500);
+			var position = $this.closest('.publicationPan').position();
+			$(window).scrollTop(position);
 		} else {
 			allPublications.find('tbody').addClass('tbodyhidden');
 			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
@@ -909,7 +910,9 @@ $(function () {
 			flwBtn.addClass('hideRow');
 			flwlbl.removeClass('hideRow');
 			pPan.find('.smfollowingBtn').show();
-			$(window).scrollTop(500);
+
+			var position = $this.closest('.publicationPan').position();
+			$(window).scrollTop(position);
 		}
 	});
 
@@ -940,9 +943,9 @@ $(function () {
 			    subscribeStatus = $(alltables[i]).find('.subscribed').html();
 			var alltdata = [];
 			for (var j = 0; j < currenttabtrs.length; j++) {
-				var datarowNo = $(currenttabtrs[j]).attr('data-row'),
-				    eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
-				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html();
+				var eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
+				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html(),
+				    datarowNo = secondtd.toLowerCase() == 'following' ? $(currenttabtrs[j]).attr('data-row') : '0';
 
 				var followStatus = secondtd.toLowerCase() == 'following' ? true : false;
 				var subscripStatus = subscribeStatus.toUpperCase() == 'SUBSCRIBED' ? true : false;
@@ -950,7 +953,23 @@ $(function () {
 			}
 			UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, Topics: alltdata });
 		}
-		$.post('/Account/api/PersonalizeUserPreferencesApi/Update/', { 'UserPreferences': JSON.stringify(UserPreferences) });
+		$.ajax({
+			url: '/Account/api/PersonalizeUserPreferencesApi/Update/',
+			data: { 'UserPreferences': JSON.stringify(UserPreferences) },
+			dataType: 'json',
+			type: 'POST',
+			success: function success(data) {
+				if (data) {
+					$('.alert-success').show();
+				}
+			},
+			error: function error(err) {
+				if (err) {
+					$('.alert-error').show();
+				}
+			}
+		});
+
 		$('#validatePreference').val(0);
 	});
 
