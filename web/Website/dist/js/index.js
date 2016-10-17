@@ -840,7 +840,7 @@ $(function () {
 			} else {
 				followinglbl.removeClass('hideBtn');
 			}
-			$(window).scrollTop(400);
+			$(window).scrollTop(450);
 		} else {
 			allPublications.find('tbody').addClass('tbodyhidden');
 			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
@@ -853,7 +853,7 @@ $(function () {
 			thead.find('.expandHide').removeClass('collapseshow');
 			thead.find('.mtp').addClass('hideBtn');
 			pPan.find('.smfollowingBtn').show();
-			$(window).scrollTop(400);
+			$(window).scrollTop(450);
 
 			//pPan.find('.graybg').show();
 
@@ -940,9 +940,9 @@ $(function () {
 			    subscribeStatus = $(alltables[i]).find('.subscribed').html();
 			var alltdata = [];
 			for (var j = 0; j < currenttabtrs.length; j++) {
-				var datarowNo = $(currenttabtrs[j]).attr('data-row'),
-				    eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
-				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html();
+				var eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
+				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html(),
+				    datarowNo = secondtd.toLowerCase() == 'following' ? $(currenttabtrs[j]).attr('data-row') : '0';
 
 				var followStatus = secondtd.toLowerCase() == 'following' ? true : false;
 				var subscripStatus = subscribeStatus.toUpperCase() == 'SUBSCRIBED' ? true : false;

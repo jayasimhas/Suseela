@@ -232,10 +232,10 @@ $(function(){
 			    subscribeStatus = $(alltables[i]).find('.subscribed').html();
 			var alltdata = [];
 			for (var j = 0; j < currenttabtrs.length; j++) {
-				var datarowNo = $(currenttabtrs[j]).attr('data-row'),
-				    eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
-				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html();
-
+				var eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
+				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html(),
+					datarowNo = secondtd.toLowerCase() == 'following' ? $(currenttabtrs[j]).attr('data-row') : '0'; 
+				
 				var followStatus = (secondtd.toLowerCase() == 'following') ? true : false;
 				var subscripStatus = (subscribeStatus.toUpperCase()) == 'SUBSCRIBED' ? true : false;
 				alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus });
