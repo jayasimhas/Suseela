@@ -660,6 +660,10 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                 SetPublicationTime(articleDetails.WebPublicationDate, true);
             }
 
+            uxVertical.SelectedValue = PluginSingletonVerticalRoot.Instance.CurrentVertical.ID;
+            uxPublication.SelectedValue = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
+            uxPublication.Enabled = false;
+
             ArticleNumber = articleDetails.ArticleNumber;
             uxEmbargoed.Checked = articleDetails.Embargoed;
             uxMediaTypes.SelectedValue = articleDetails.MediaType;
@@ -792,6 +796,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 
         public void ResetFields()
         {
+            uxVertical.SelectedIndex = 0;
             uxPublication.SelectedIndex = 0;
             SetPublicationTime(DateTime.Today, true);
             uxMediaTypes.SelectedIndex = 0;
@@ -907,10 +912,18 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         {
             //UpdateAuthorsList(veticalGuid);
             PluginModels.ItemStruct publicationStruct = (PluginModels.ItemStruct)uxPublication.SelectedItem;
+            if (PluginSingletonVerticalRoot.Instance.CurrentPublication.ID != default(Guid) && publicationStruct.ID == default(Guid))
+            {
+                InitializePublications(PluginSingletonVerticalRoot.Instance.CurrentVertical.Publications);
+                uxPublication.SelectedValue = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
+            }
+
             if (publicationStruct.Name != "Select Vertical")
             {
                 PluginSingletonVerticalRoot.Instance.CurrentPublication = publicationStruct;
             }
+
+
             IndicateChanged();
         }
 
