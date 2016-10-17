@@ -68,9 +68,8 @@ namespace Informa.Library.Article.Search
                 TaxonomyIds = new List<Guid>(),
                 ArticleNumbers = new List<string>(),
                 PublicationNames = new List<string>(),
-                AuthorGuids = new List<string>(),
+                AuthorFullNames = new List<string>(),
                 CompanyRecordNumbers = new List<string>(),
-                AuthorFullNames = new List<string>()
             };
         }
 
@@ -112,9 +111,9 @@ namespace Informa.Library.Article.Search
         /// <param name="filter"></param>
         /// <param name="database"></param>
         /// <returns></returns>
-        public IArticleSearchResults SearchCustomDatabase(IArticleSearchFilter filter, string database)
+        public IArticleSearchResults SearchCustomDatabase(IArticleSearchFilter filter, string database, Guid publicationGuid = default(Guid))
         {
-            using (var context = SearchContextFactory.Create(database, IndexNameService.GetIndexName()))
+            using (var context = SearchContextFactory.Create(database, IndexNameService.GetIndexName(publicationGuid)))
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
                     .Filter(i => i.TemplateId == IArticleConstants.TemplateId)

@@ -103,10 +103,10 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="articleNumber"></param>
 		/// <returns></returns>
-		public Item GetArticleItemByNumber(string articleNumber)
+		public Item GetArticleItemByNumber(string articleNumber, Guid publicationGuid = default(Guid))
 		{
 
-			ArticleItem articleItem = GetArticleByNumber(articleNumber);
+			ArticleItem articleItem = GetArticleByNumber(articleNumber, publicationGuid);
 			if (articleItem != null)
 			{
 				var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
@@ -120,17 +120,17 @@ namespace Informa.Web.Controllers
 		/// </summary>
 		/// <param name="articleNumber"></param>
 		/// <returns></returns>
-		public ArticleItem GetArticleByNumber(string articleNumber)
+		public ArticleItem GetArticleByNumber(string articleNumber, Guid publicationGuid = default(Guid))
 		{
-			return GetArticleByNumber(articleNumber, Constants.MasterDb);
+			return GetArticleByNumber(articleNumber, Constants.MasterDb, publicationGuid);
 		}
 
-		public ArticleItem GetArticleByNumber(string articleNumber, string databaseName)
+		public ArticleItem GetArticleByNumber(string articleNumber, string databaseName, Guid publicationGuid = default(Guid))
 		{
 			IArticleSearchFilter filter = _articleSearcher.CreateFilter();
             filter.ArticleNumbers = articleNumber.SingleToList();
-			var results = _articleSearcher.SearchCustomDatabase(filter, databaseName);
-			if (results.Articles.Any())
+			var results = _articleSearcher.SearchCustomDatabase(filter, databaseName, publicationGuid);
+            if (results.Articles.Any())
 			{
 				var foundArticle = results.Articles.FirstOrDefault();
 				var service = SitecoreFactory(databaseName);
@@ -288,12 +288,23 @@ namespace Informa.Web.Controllers
 			{
 				return !string.IsNullOrEmpty(article.Body.Trim());
 			}
-		}
+        }
 
-		/// <summary>
-		/// Generates the parent for a article
-		/// </summary>	
-		public IArticle_Date_Folder GenerateDailyFolder(Guid publicationGuid, DateTime date)
+        public DateTime GetArticleActualPublishedDate(Guid itemID)
+        {
+            var article = _sitecoreMasterService.GetItem<Item>(itemID);
+
+            var date = DateUtil.IsoDateToDateTime(article.Fields["Actual Publish Date"].Value);
+            var actualPublishDate = new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, date.Second, DateTimeKind.Local);
+
+            return actualPublishDate;
+        }
+
+
+        /// <summary>
+        /// Generates the parent for a article
+        /// </summary>	
+        public IArticle_Date_Folder GenerateDailyFolder(Guid publicationGuid, DateTime date)
 		{
 			var publication = _sitecoreMasterService.GetItem<IGlassBase>(publicationGuid);
 			string year = date.Year.ToString();
@@ -430,11 +441,10 @@ namespace Informa.Web.Controllers
 
 			try
 			{
-                //ISitecoreService service = new SitecoreContentContext();
-                //var webItem = service.GetItem<Item>(articleItem._Id);
-                //articleStruct.IsPublished = webItem != null;
-                articleStruct.IsPublished = articleItem.Actual_Publish_Date != DateTime.MinValue && article.Actual_Publish_Date < DateTime.Now;
-            }
+				ISitecoreService service = new SitecoreContentContext();
+				var webItem = service.GetItem<Item>(articleItem._Id);
+				articleStruct.IsPublished = webItem != null;
+			}
 			catch (Exception ex)
 			{
 				articleStruct.IsPublished = false;
@@ -568,14 +578,5 @@ namespace Informa.Web.Controllers
 				return state;
 			}
 		}
- 		public DateTime GetArticleActualPublishedDate(Guid itemID)
-        {
-            var article = _sitecoreMasterService.GetItem<Item>(itemID);
-
-            var date = DateUtil.IsoDateToDateTime(article.Fields["Actual Publish Date"].Value);
-            var actualPublishDate = new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, date.Second, DateTimeKind.Local);
-
-            return actualPublishDate;
-        }
 	}
 }

@@ -13,9 +13,6 @@ using Informa.Library.Utilities.References;
 using PluginModels;
 using Informa.Library.CustomSitecore.Ribbon;
 using Informa.Library.Utilities.CMSHelpers;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
-using Informa.Library.Site;
-using Informa.Library.Utilities.Extensions;
 
 namespace Informa.Web.Controllers
 {
@@ -26,8 +23,7 @@ namespace Informa.Web.Controllers
         private readonly ArticleUtil _articleUtil;
         private readonly IArticleSearch _articleSearch;
 
-        public CreateArticleController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil,
-            IArticleSearch search)
+        public CreateArticleController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil, IArticleSearch search)
         {
             _sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
             _articleUtil = articleUtil;
@@ -47,9 +43,7 @@ namespace Informa.Web.Controllers
 
                 //Hack to start the workflow
                 var articleItem = _sitecoreMasterService.GetItem<Item>(articleCreate._Id);
-                var intialWorkflow =
-                    _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow(
-                        ItemIdResolver.GetItemIdByKey("ScripWorkflow"));
+                var intialWorkflow = _sitecoreMasterService.Database.WorkflowProvider.GetWorkflow(ItemIdResolver.GetItemIdByKey("ScripWorkflow"));
                 intialWorkflow.Start(articleItem);
 
                 var article = _sitecoreMasterService.GetItem<IArticle__Raw>(articleCreate._Id);
@@ -57,8 +51,7 @@ namespace Informa.Web.Controllers
                 article.Planned_Publish_Date = publicationDate;
                 article.Created_Date = DateTime.Now;
                 var articleNum = _articleSearch.GetNextArticleNumber(content.PublicationID);
-                article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleNum, content.PublicationID,
-                    _articleSearch.GetPublicationPrefix(content.PublicationID.ToString()));
+                article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleNum, content.PublicationID, _articleSearch.GetPublicationPrefix(content.PublicationID.ToString()));
                 //article.Article_Number = SitecoreUtil.GetNextArticleNumber(articleNum, content.PublicationID);
                 _sitecoreMasterService.Save(article);
                 var savedArticle = _sitecoreMasterService.GetItem<ArticleItem>(article._Id);
@@ -67,7 +60,7 @@ namespace Informa.Web.Controllers
             }
             catch (Exception ex)
             {
-                return new ArticleStruct {RemoteErrorMessage = ex.ToString()};
+                return new ArticleStruct { RemoteErrorMessage = ex.ToString() };
             }
         }
 
@@ -89,8 +82,7 @@ namespace Informa.Web.Controllers
         private readonly ISitecoreService _sitecoreMasterService;
         private readonly SitecoreSaverUtil _sitecoreSaverUtil;
 
-        public SaveArticleTextByGuidController(Func<string, ISitecoreService> sitecoreFactory,
-            SitecoreSaverUtil articleUtil)
+        public SaveArticleTextByGuidController(Func<string, ISitecoreService> sitecoreFactory, SitecoreSaverUtil articleUtil)
         {
             _sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
             _sitecoreSaverUtil = articleUtil;
@@ -282,9 +274,9 @@ namespace Informa.Web.Controllers
         [HttpPost]
         [Authorize]
         [Authorize]
-        public bool Post([FromBody] string articleNumber)
+        public bool Post([FromBody] string articleNumber, Guid publicationGuid = default(Guid))
         {
-            Item article = _articleUtil.GetArticleItemByNumber(articleNumber);
+            Item article = _articleUtil.GetArticleItemByNumber(articleNumber, publicationGuid);
             return article != null;
         }
     }
@@ -315,8 +307,7 @@ namespace Informa.Web.Controllers
         private readonly ISitecoreService _sitecoreMasterService;
         private readonly ArticleUtil _articleUtil;
 
-        public GetArticlePreviewInfoByGuidsController(Func<string, ISitecoreService> sitecoreFactory,
-            ArticleUtil articleUtil)
+        public GetArticlePreviewInfoByGuidsController(Func<string, ISitecoreService> sitecoreFactory, ArticleUtil articleUtil)
         {
             _sitecoreMasterService = sitecoreFactory(Constants.MasterDb);
             _articleUtil = articleUtil;
@@ -352,9 +343,9 @@ namespace Informa.Web.Controllers
         [HttpPost]
         [Authorize]
         [Authorize]
-        public ArticlePreviewInfo Post([FromBody] string articleNumber)
+        public ArticlePreviewInfo Post([FromBody] string articleNumber, Guid publicationGuid = default(Guid))
         {
-            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
+            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber, publicationGuid);
             var preview = article != null ? _articleUtil.GetPreviewInfo(article) : new ArticlePreviewInfo();
             return preview;
         }
@@ -552,9 +543,9 @@ namespace Informa.Web.Controllers
 
         [HttpPost]
         [Authorize]
-        public string Post([FromBody] string articleNumber)
+        public string Post([FromBody] string articleNumber, Guid publicationGuid = default(Guid))
         {
-            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber);
+            ArticleItem article = _articleUtil.GetArticleByNumber(articleNumber, publicationGuid);
             return article?._Id.ToString() ?? Guid.Empty.ToString();
         }
     }
@@ -634,7 +625,3 @@ namespace Informa.Web.Controllers
         }
     }
 }
-
-
-
-

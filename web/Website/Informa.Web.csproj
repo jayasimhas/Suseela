@@ -1067,6 +1067,7 @@
     <Compile Include="Areas\Account\Controllers\ContactInfoApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LoginWebUserApiController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutWebUserController.cs" />
+    <Compile Include="Areas\Account\Controllers\PersonalizeUserPreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\PreferencesApiController.cs" />
     <Compile Include="Areas\Account\Controllers\RegistrationApiController.cs" />
     <Compile Include="Areas\Account\Controllers\ResetPasswordApiController.cs" />
@@ -1079,6 +1080,7 @@
     <Compile Include="Areas\Account\Models\User\Management\PreferencesRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentRemoveRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Management\SavedDocumentSaveRequest.cs" />
+    <Compile Include="Areas\Account\Models\User\Personalization\PersonalizeUserPreferencesRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\PreRegisterRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterFreeTrialRequest.cs" />
     <Compile Include="Areas\Account\Models\User\Registration\RegisterRequest.cs" />
@@ -1098,8 +1100,12 @@
     <Compile Include="Areas\Account\ViewModels\Management\SubscriptionsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\ContactInformationViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Management\SubscriptionViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Personalization\ChannelsViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Personalization\IChannelsViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Personalization\MyViewSettingsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Personalization\MyViewToggleViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Personalization\PersonalizationMessageViewModel.cs" />
+    <Compile Include="Areas\Account\ViewModels\Registration\RegisterContentCustomizeViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserOptInsViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterFreeTrialUserViewModel.cs" />
     <Compile Include="Areas\Account\ViewModels\Registration\RegisterUserViewModel.cs" />
@@ -1810,6 +1816,9 @@
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageLandingPage.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PersonalizationMessageRightRail.cshtml" />
     <Content Include="Areas\Account\Views\Personalization\PresonalizationMessageArticlePage.cshtml" />
+    <Content Include="Areas\Account\Views\Registration\RegisterUserContentCustomize.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\MyViewSettings.cshtml" />
+    <Content Include="Areas\Account\Views\Personalization\Publications.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

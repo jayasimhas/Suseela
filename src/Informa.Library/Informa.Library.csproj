@@ -366,11 +366,9 @@
     <Compile Include="ComponentModel\DataAnnotations\RequiredIfAttribute.cs" />
     <Compile Include="CustomSitecore\Events\AddFromBranchPreset.cs" />
     <Compile Include="CustomSitecore\Extensions\StringExtensions.cs" />
-	<Compile Include="CustomSitecore\Fields\MultipleRootTreelistField.cs" />
-
+    <Compile Include="CustomSitecore\Fields\MultipleRootTreelistField.cs" />
     <Compile Include="CustomSitecore\Events\ArticleItemCreated.cs" />
     <Compile Include="CustomSitecore\Pipelines\CheckClientUser.cs" />
-
     <Compile Include="CustomSitecore\Pipelines\ExpandNewTokensOnAllItems\InformaMasterVariablesReplacer.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\LegacyRedirectResolver.cs" />
     <Compile Include="CustomSitecore\Pipelines\HttpRequest\NewRelicTransactionNameProcessor.cs" />
@@ -396,7 +394,6 @@
     <Compile Include="Search\ComputedFields\Facets\AuthorNamesField.cs" />
     <Compile Include="Search\ComputedFields\SearchResults\SearchMediaTooltipField.cs" />
     <Compile Include="Search\Crawlers\InformaItemCrawler.cs" />
-
     <Compile Include="Search\SearchIndex\ISearchIndexNameService.cs" />
     <Compile Include="Search\SearchIndex\SearchIndexNameService.cs" />
     <Compile Include="Search\SearchManager\AgriSearchManager.cs" />
@@ -410,6 +407,7 @@
     <Compile Include="User\UserPreference\IChannel.cs" />
     <Compile Include="User\UserPreference\IFindUserPreferences.cs" />
     <Compile Include="User\UserPreference\IMyViewToggleRedirectUrlFactory.cs" />
+    <Compile Include="User\UserPreference\ISetUserPreferences.cs" />
     <Compile Include="User\UserPreference\ITopic.cs" />
     <Compile Include="User\UserPreference\IUserPreferenceContext.cs" />
     <Compile Include="User\UserPreference\IUserPreferences.cs" />
@@ -420,9 +418,7 @@
     <Compile Include="Utilities\CMSHelpers\GlassVerticalRootContext.cs" />
     <Compile Include="Utilities\CMSHelpers\ItemIdResolver.cs" />
     <Compile Include="Utilities\CMSHelpers\IVerticalRootContext.cs" />
-
     <Compile Include="User\Entitlement\IStrategicEntitlementContext.cs" />
-
     <Compile Include="Utilities\Parsers\CachedXmlParser.cs" />
     <Compile Include="Logging\IDebugLogger.cs" />
     <Compile Include="Logging\IErrorLogger.cs" />

@@ -4313,7 +4313,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 					/// </summary>
 					[SitecoreField(INavigation_LinkConstants.Navigation_TextFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Navigation_Text  {get; set;}
-				}
+                        [SitecoreField(INavigation_LinkConstants.Navigation_CodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+                        string Navigation_Code { get; set; }
+
+    }
 
 	
 		/// <summary>
@@ -4360,10 +4363,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 			public static readonly ID Navigation_TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
 			public const string Navigation_TextFieldName = "Navigation Text";
 
-						
-			
-
-	}
+            public const string Navigation_CodeFieldName = "Navigation Code";
+ }
 
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration
@@ -16143,7 +16144,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					/// </summary>
 					[SitecoreField(IRegistration_Thank_You_PageConstants.Company_Sub_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Company_Sub_Title  {get; set;}
-				}
+                    /// <summary>
+                    /// The Next Page Link field.
+                    /// <para></para>
+                    /// <para>Field Type: Single-Line Text</para>		
+                    /// <para>Field ID: 7EC23124-5B13-4565-82B8-CDAB9F397B9B</para>
+                    /// <para>Custom Data: </para>
+                    /// </summary>
+                    [SitecoreField(IRegistration_Thank_You_PageConstants.Next_Step_PageFieldName, Setting = SitecoreFieldSettings.InferType)]
+                    string Next_Step_Page { get; set; }
+    }
 
 	
 		/// <summary>
@@ -16175,10 +16185,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 					
 			public static readonly ID Company_Sub_TitleFieldId = new ID("deb975e3-e165-4444-9146-b570b7aa5312");
 			public const string Company_Sub_TitleFieldName = "Company Sub Title";
+            public static readonly ID Next_Step_PageFieldId = new ID("7EC23124-5B13-4565-82B8-CDAB9F397B9B");
+        public const string Next_Step_PageFieldName = "Next Step Page";
 
-						
-					
-			public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
 			public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
 
 						
@@ -17702,16 +17712,37 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 					/// </summary>
 					[SitecoreField(ITopicConstants.TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
 					string Title  {get; set;}
-				}
 
-	
-		/// <summary>
-		/// ITopic Interface
-		/// <para></para>
-		/// <para>Path: /sitecore/templates/User Defined/Objects/Topics/Topic</para>	
-		/// <para>ID: abc8aabb-3e85-4f91-b7cb-ab2156de7a74</para>	
-		/// </summary>
-		[SitecoreType]
+       
+        /// <summary>
+        /// The Display Text field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 32BCC6AD-3737-498C-BDCF-B19BF18040CF</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITopicConstants.DisplayTextFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Display_Text { get; set; }
+        /// <summary>
+        /// The Topic Code field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 59D3CE76-381A-43B9-9642-9516B36A500C</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITopicConstants.TopicCodeFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Topic_Code { get; set; }
+
+    }
+
+
+    /// <summary>
+    /// ITopic Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Objects/Topics/Topic</para>	
+    /// <para>ID: abc8aabb-3e85-4f91-b7cb-ab2156de7a74</para>	
+    /// </summary>
+    [SitecoreType]
 		public partial interface ITopic__Raw : IGlassBase , global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Navigation.INavigation_Link__Raw
 		{
 										/// <summary>
@@ -17745,10 +17776,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.
 			public static readonly ID Navigation_TextFieldId = new ID("ec1885ad-c358-4653-b1e5-55efd796b35c");
 			public const string Navigation_TextFieldName = "Navigation Text";
 
-						
-			
+            public static readonly ID DisplayTextFieldId = new ID("32BCC6AD-3737-498C-BDCF-B19BF18040CF");
+            public const string DisplayTextFieldName = "Display Text";
 
-	}
+            public static readonly ID TopicCodeFieldId = new ID("59D3CE76-381A-43B9-9642-9516B36A500C");
+            public const string TopicCodeFieldName = "Topic Code";
+
+
+    }
 
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Virtual_Whiteboard
@@ -18259,6 +18294,151 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
 			
 
 	}
+
+}
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
+{
+
+
+    /// <summary>
+    /// IRegistration_ContentCustomizePage Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Registration Content Customization Page</para>       
+    /// <para>ID: 138A9648-6D7B-4FA5-B216-BEC7B9E05308</para> 
+    /// </summary>
+    [SitecoreType(TemplateId = IRegistration_ContentCustomizePageConstants.TemplateIdString)]
+    public partial interface IRegistration_ContentCustomizePage : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
+    {
+        /// <summary>
+        /// The Help Link field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>         
+        /// <para>Field ID: E087119A-3935-4E5E-9657-7BD930FB2BAD</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IRegistration_ContentCustomizePageConstants.Help_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Help_Link { get; set; }
+
+        /// <summary>
+        /// The Not Followed Error field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>         
+        /// <para>Field ID: AAD6836A-ED83-4658-BF76-87A028ACB257</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IRegistration_ContentCustomizePageConstants.Not_Followed_ErrorFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Not_Followed_Error { get; set; }
+    }
+
+    /// <summary>
+    /// IRegistration_ContentCustomizePage Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Pages/Registration Content Customization Page</para>       
+    /// <para>ID: 138A9648-6D7B-4FA5-B216-BEC7B9E05308</para> 
+    /// </summary>
+    [SitecoreType]
+    public partial interface IRegistration_ContentCustomizePage__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
+    {
+        /// <summary>
+        /// The Help Link field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>         
+        /// <para>Field ID: E087119A-3935-4E5E-9657-7BD930FB2BAD</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IRegistration_ContentCustomizePageConstants.Help_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Help_Link { get; set; }
+
+        /// <summary>
+        /// The Not Followed Error field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>         
+        /// <para>Field ID: AAD6836A-ED83-4658-BF76-87A028ACB257</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IRegistration_ContentCustomizePageConstants.Not_Followed_ErrorFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Not_Followed_Error { get; set; }
+    }
+
+    public static partial class IRegistration_ContentCustomizePageConstants
+    {
+
+        public const string TemplateIdString = "ad812609-c21c-42f6-a1d4-283d7699bd8a";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "Registration Page";
+
+        public static readonly ID Help_LinkFieldId = new ID("E087119A-3935-4E5E-9657-7BD930FB2BAD");
+        public const string Help_LinkFieldName = "Help Link";
+
+
+
+        public static readonly ID Not_Followed_ErrorFieldId = new ID("AAD6836A-ED83-4658-BF76-87A028ACB257");
+        public const string Not_Followed_ErrorFieldName = "Not Followed Error";
+
+        public static readonly ID Leaderboard_Slot_IDFieldId = new ID("82af6295-2b81-4ce0-8674-f6f72f38bff6");
+        public const string Leaderboard_Slot_IDFieldName = "Leaderboard Slot ID";
+
+
+
+        public static readonly ID Custom_Meta_TagsFieldId = new ID("58c1bb46-882f-4f72-8e76-72fca199706b");
+        public const string Custom_Meta_TagsFieldName = "Custom Meta Tags";
+
+
+
+        public static readonly ID Meta_DescriptionFieldId = new ID("15f619cd-b981-477f-b496-b88577615c11");
+        public const string Meta_DescriptionFieldName = "Meta Description";
+
+
+
+        public static readonly ID Meta_KeywordsFieldId = new ID("77b76c9b-2c0e-44cb-aa78-5b9cb1b535ba");
+        public const string Meta_KeywordsFieldName = "Meta Keywords";
+
+
+
+        public static readonly ID Meta_Title_OverrideFieldId = new ID("31603f25-6d9c-4954-bcde-342e1e184a30");
+        public const string Meta_Title_OverrideFieldName = "Meta Title Override";
+
+
+
+        public static readonly ID Navigation_TitleFieldId = new ID("8f4ee718-6fa0-42a5-85c4-6c8fe8b1fcd4");
+        public const string Navigation_TitleFieldName = "Navigation Title";
+
+
+
+        public static readonly ID BodyFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string BodyFieldName = "Body";
+
+        public static readonly ID Body__RawFieldId = new ID("446a339b-e1d9-4de1-8b5e-db7942ef1723");
+        public const string Body__RawFieldName = "Body";
+
+
+        public static readonly ID Sub_TitleFieldId = new ID("f1d1dc93-63df-4afa-b60f-b3a3e9d36675");
+        public const string Sub_TitleFieldName = "Sub Title";
+
+
+
+        public static readonly ID TitleFieldId = new ID("2d750eff-9058-4abf-a7ff-57ffe5da1e3c");
+        public const string TitleFieldName = "Title";
+
+
+
+        public static readonly ID Include_In_SearchFieldId = new ID("f2b6ee8b-d5e1-49ae-92f0-bc966269b300");
+        public const string Include_In_SearchFieldName = "Include In Search";
+
+
+
+        public static readonly ID TaxonomiesFieldId = new ID("0212fc0f-953b-461c-b4d9-b7483a4d4f1b");
+        public const string TaxonomiesFieldName = "Taxonomy";
+
+
+
+        public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
+        public const string Canonical_LinkFieldName = "Canonical Link";
+
+
+
+
+    }
 
 }
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Style_Mapping

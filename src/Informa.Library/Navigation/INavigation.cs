@@ -8,5 +8,6 @@ namespace Informa.Library.Navigation
 		Link Link { get; }
 		string Text { get; }
 		IEnumerable<INavigation> Children { get; }
-	}
+        string Code { get; }
+    }
 }

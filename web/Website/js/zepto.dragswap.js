@@ -133,6 +133,7 @@
                 $(this).siblings().removeAttr('draggable');
                 $(this).siblings().filter(settings.excludePatt).attr('draggable', true);
                 console.log('dropped');
+				$('#validatePreference').val(1);
                 settings.dropComplete();
             }
             return false;

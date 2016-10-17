@@ -59,11 +59,11 @@ namespace InformaSitecoreWord.Sitecore
             }
         }
 
-        public static List<TaxonomyStruct> SearchTaxonomy(string term,Guid verticalGuid = default(Guid))
+        public static List<TaxonomyStruct> SearchTaxonomy(string term,Guid verticalTaxonomyGuid = default(Guid))
         {
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}SearchTaxonomy?searchTerm={term}&verticalTaxonomyGuid={verticalGuid}").Result;
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}SearchTaxonomy?searchTerm={term}&verticalTaxonomyGuid={verticalTaxonomyGuid}").Result;
                 var taxonomy = JsonConvert.DeserializeObject<List<TaxonomyStruct>>(response.Content.ReadAsStringAsync().Result);
                 return taxonomy??new List<TaxonomyStruct>();
             }
@@ -96,7 +96,8 @@ namespace InformaSitecoreWord.Sitecore
         /// <returns></returns>
         public static List<StaffStruct> LazyReadAuthors()
         {
-            return _authors ?? (_authors = GetAuthors());
+            //return _authors ?? (_authors = GetAuthors());
+            return GetAuthors();
         }
 
         /// <summary>
@@ -214,9 +215,12 @@ namespace InformaSitecoreWord.Sitecore
 
         private static List<StaffStruct> GetAuthors()
         {
+            Guid veticalGuid = default(Guid);
+            veticalGuid = PluginSingletonVerticalRoot.Instance.CurrentVertical.ID;
+
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors").Result;
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors?veticalGuid={veticalGuid}").Result;
                 var mediaItem = JsonConvert.DeserializeObject<List<StaffStruct>>(response.Content.ReadAsStringAsync().Result);
                 return mediaItem;
             }
@@ -327,10 +331,13 @@ namespace InformaSitecoreWord.Sitecore
 
         public static List<StaffStruct> GetStaffAndGroups()
         {
+            Guid veticalGuid = default(Guid);
+            veticalGuid = PluginSingletonVerticalRoot.Instance.CurrentVertical.ID;
+
             using (var client = new HttpClient(_handler, false))
             {
                 //TODO - This might change due to change in Staff and Authors
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors").Result;
+                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetAuthors?veticalGuid={veticalGuid}").Result;
                 var mediaItem = JsonConvert.DeserializeObject<List<StaffStruct>>(response.Content.ReadAsStringAsync().Result);
                 return mediaItem;
             }
@@ -550,9 +557,12 @@ namespace InformaSitecoreWord.Sitecore
 
         public static bool DoesArticleExist(string articleNumber)
         {
+            Guid publicationGuid = default(Guid);
+            publicationGuid = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
+
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleExist", articleNumber).Result;
+                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}DoesArticleExist?publicationGuid={publicationGuid}", articleNumber).Result;
                 if (response.StatusCode == HttpStatusCode.Unauthorized)
                     throw new UnauthorizedAccessException(response.StatusCode.ToString() + ": Connection Timeout");
 
@@ -631,9 +641,12 @@ namespace InformaSitecoreWord.Sitecore
 
         public static string GetArticleGuidByArticleNumber(string articleNumber)
         {
+            Guid publicationGuid = default(Guid);
+            publicationGuid = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
+
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleGuidByNum", articleNumber).Result;
+                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleGuidByNum?publicationGuid={publicationGuid}", articleNumber).Result;
                 var articleGuid = JsonConvert.DeserializeObject<string>(response.Content.ReadAsStringAsync().Result, new IsoDateTimeConverter());
                 return articleGuid;
             }
@@ -641,9 +654,12 @@ namespace InformaSitecoreWord.Sitecore
 
         public static ArticlePreviewInfo GetArticlePreviewInfo(string articleNumber)
         {
+            Guid publicationGuid = default(Guid);
+            publicationGuid = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
+
             using (var client = new HttpClient(_handler, false))
             {
-                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfo", articleNumber).Result;
+                var response = client.PostAsJsonAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticlePreviewInfo?publicationGuid={publicationGuid}", articleNumber).Result;
                 var previewInfo = JsonConvert.DeserializeObject<ArticlePreviewInfo>(response.Content.ReadAsStringAsync().Result, new IsoDateTimeConverter());
                 TimezoneUtil.ConvertArticleDatesToLocalTimezone(previewInfo);
                 return previewInfo;
@@ -924,24 +940,6 @@ namespace InformaSitecoreWord.Sitecore
                 var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}/api/"}GetServerTimezone").Result;
                 return JsonConvert.DeserializeObject<TimeZoneInfo>(response.Content.ReadAsStringAsync().Result);
             }
-        }
-
-        public static List<Tuple<DateTime, string, bool>> GetItemWorkflowHistory(Guid itemID)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleWorkflowHistory?itemID=" + itemID).Result;
-                return JsonConvert.DeserializeObject<List<Tuple<DateTime, string, bool>>>(response.Content.ReadAsStringAsync().Result);
-            }
-        }
-
-        public static DateTime GetArticleActualPublishedDate(Guid itemID)
-        {
-            using (var client = new HttpClient(_handler, false))
-            {
-                var response = client.GetAsync($"{$"{Constants.EDITOR_ENVIRONMENT_SERVERURL}" + "/api/"}GetArticleActualPublishedDate?itemID=" + itemID).Result;
-                return JsonConvert.DeserializeObject<DateTime>(response.Content.ReadAsStringAsync().Result);
-    }
         }
     }
 }

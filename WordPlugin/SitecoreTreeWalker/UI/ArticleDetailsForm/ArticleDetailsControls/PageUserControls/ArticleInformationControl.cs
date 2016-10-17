@@ -28,8 +28,6 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
         public bool IsVerticalsLoaded { get; set; }
 
         private string ArticleNumber;
-        public Guid ArticleGuid;
-        public bool IsPublished;
 
         public bool _isLive;
 
@@ -386,12 +384,9 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
             IsCheckedOutByMe = false;
 
             _parent.PreLinkEnable();
-			IndicatedUnfavoredLink();
-			_parent.EnablePreview();
-			_parent.HideCreationButtons();
 
-			//_parent.articleStatusBar1.up
-			_parent.articleStatusBar1.ChangeLockButtonStatus(LockStatus.Locked);
+            //_parent.articleStatusBar1.up
+            _parent.articleStatusBar1.ChangeLockButtonStatus(LockStatus.Locked);
             //IndicatedUnfavoredLink();
             DocumentProtection.Protect(_documentCustomProperties);
         }
@@ -665,9 +660,11 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                 SetPublicationTime(articleDetails.WebPublicationDate, true);
             }
 
+            uxVertical.SelectedValue = PluginSingletonVerticalRoot.Instance.CurrentVertical.ID;
+            uxPublication.SelectedValue = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
+            uxPublication.Enabled = false;
+
             ArticleNumber = articleDetails.ArticleNumber;
-            ArticleGuid = articleDetails.ArticleGuid;
-            IsPublished = articleDetails.IsPublished;
             uxEmbargoed.Checked = articleDetails.Embargoed;
             uxMediaTypes.SelectedValue = articleDetails.MediaType;
             uxLabel.SelectedValue = articleDetails.Label;
@@ -799,6 +796,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 
         public void ResetFields()
         {
+            uxVertical.SelectedIndex = 0;
             uxPublication.SelectedIndex = 0;
             SetPublicationTime(DateTime.Today, true);
             uxMediaTypes.SelectedIndex = 0;
@@ -912,7 +910,20 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
 
         private void uxPublication_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UpdateAuthorsList();
+            //UpdateAuthorsList(veticalGuid);
+            PluginModels.ItemStruct publicationStruct = (PluginModels.ItemStruct)uxPublication.SelectedItem;
+            if (PluginSingletonVerticalRoot.Instance.CurrentPublication.ID != default(Guid) && publicationStruct.ID == default(Guid))
+            {
+                InitializePublications(PluginSingletonVerticalRoot.Instance.CurrentVertical.Publications);
+                uxPublication.SelectedValue = PluginSingletonVerticalRoot.Instance.CurrentPublication.ID;
+            }
+
+            if (publicationStruct.Name != "Select Vertical")
+            {
+                PluginSingletonVerticalRoot.Instance.CurrentPublication = publicationStruct;
+            }
+
+
             IndicateChanged();
         }
 
@@ -968,6 +979,8 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm.ArticleDetailsControls.PageU
                 InitializePublications(verticalStruct.Publications);
 
                 PluginSingletonVerticalRoot.Instance.CurrentVertical = verticalStruct;
+
+                UpdateAuthorsList();
                 OnVerticalItemChanged?.Invoke();//Message the vertical changes to the subscriber
             }
             else
