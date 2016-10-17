@@ -179,9 +179,11 @@ function getParameterByName(name, url) {
 }
 
 $(document).ready(function() {
+	
 	//messaging web users
 	window.dismiss=function(){
-		$('.dismiss').on('click', function(){
+		$('.dismiss').on('click', function(){		
+			 Cookies.set('dismiss_cookie', 'dismiss_cookie_created','');
 			$('.messaging_webUsers').remove(); 
 			$('.messaging_webUsers_white').remove(); 
 		});
