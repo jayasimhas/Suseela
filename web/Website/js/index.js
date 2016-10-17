@@ -178,7 +178,7 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-$(document).ready(function() {
+$(document)
 	//messaging web users
 	window.dismiss=function(){
 		$('.dismiss').on('click', function(){
