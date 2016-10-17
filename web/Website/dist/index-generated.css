@@ -3801,6 +3801,9 @@ header .header-account-access {
                 border-top: none; } }
           .myview-settings .table-responsive .table tbody tr.followrow .move {
             display: none; }
+      @media (max-width: 480px) {
+        .myview-settings .table-responsive .table thead tr.expandHide {
+          display: none; } }
       .myview-settings .table-responsive .table thead th {
         padding: 12px 20px;
         padding: 0.75rem 1.25rem;
@@ -3943,6 +3946,9 @@ header .header-account-access {
         .myview-settings .table-responsive .table thead .followAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
+        @media (max-width: 480px) {
+          .myview-settings .table-responsive .table thead .followAllBtn {
+            float: none; } }
       .myview-settings .table-responsive .table thead .followinglbl {
         border: 1px solid #f7941e;
         cursor: pointer;

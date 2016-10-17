@@ -247,6 +247,13 @@
 				 }
 			}
 			thead{
+				tr{
+					@include breakpoint('small') {
+						&.expandHide{
+							display: none;
+						}
+					}
+				}
 				th{
 					@include tableData(0px);
 					background: #f9f9f9;
@@ -341,6 +348,9 @@
 				} 
 				.followAllBtn{
 					@include followBtnLbl();
+					@include breakpoint('small') {
+						float: none;
+					}
 				}
 				.followinglbl{
 					@include followBtnLbl();

@@ -15,11 +15,10 @@ function sort_table(tbody, col, asc) {
 		var rlen = rows.length,
 		arr = new Array(),
 		i, j, cells, clen;
-	// fill the array with values from the table
 	for (i = 0; i < rlen; i++) {
 		cells = rows[i].cells;
 		clen = cells.length;
-		arr[i] = new Array(); 
+		arr[i] = new Array();
 		for (j = 0; j < clen; j++) {
 			arr[i][j] = cells[j].innerHTML;
 		}
@@ -30,7 +29,8 @@ function sort_table(tbody, col, asc) {
 	});
 	// replace existing rows with new rows created from the sorted array
 	for (i = 0; i < rlen; i++) {
-		rows[i].innerHTML = "<td>" + arr[i].join("</td><td>") + "</td>";
+		//rows[i].innerHTML = "<td class='wd-55'>" + arr[i].join("</td><td class='wd-25'>") + "</td>";
+		rows[i].innerHTML = "<td class='wd-55'>" + arr[i][0] + "</td><td class='wd-25'>" + arr[i][1] + "</td><td class='wd-15'>" + arr[i][2] + "</td>";
 	}
 }
 
@@ -88,6 +88,7 @@ $(function(){
 	  followingrow.addClass('followrow disabled').removeClass('followingrow');
 	  $this.addClass('followBtn').removeClass('followingBtn').html('Follow');
 	  followingrow.clone().appendTo($this.closest('tbody'));
+	  console.log(followingrow.clone())
 	  followingrow.remove();
 	  $('#validatePreference').val(1);
 	  sort_table(tbody, 0, 1);
@@ -103,12 +104,13 @@ $(function(){
 	
 	$('.publicationPan').on('click', '.accordionImg a', function(){
 		var $this = $(this), allPublications = $('#allPublicationsPan'), pPan = $this.closest('.publicationPan'), thead = pPan.find('thead'), tbody = pPan.find('tbody'), trs = tbody.find('tr'), disabledtrs = tbody.find('tr.disabled'), accCont = pPan.find('.accCont'), followlbl = thead.find('.followlbl'), followinglbl = thead.find('.followinglbl');
+		 
 		if($this.hasClass('expanded')){
 			$this.removeClass('expanded');
 			tbody.addClass('tbodyhidden');
 			accCont.addClass('tbodyhidden');
-			thead.find('.expandHide').show();
-			pPan.find('.smfollowingBtn').hide();
+			thead.find('.expandHide').hide();
+			pPan.find('.smfollowingBtn').hide(); 
 			pPan.find('.graybg').hide(); 
 			thead.find('.mtp').addClass('hideBtn'); 
 			if(trs.length === disabledtrs.length){
@@ -126,7 +128,7 @@ $(function(){
 			$this.addClass('expanded');
 			tbody.removeClass('tbodyhidden');
 			accCont.removeClass('tbodyhidden');
-			thead.find('.expandHide').hide();
+			thead.find('.expandHide').show();
 			thead.find('.mtp').addClass('hideBtn');
 			pPan.find('.smfollowingBtn').show();
 			pPan.find('.graybg').show();
