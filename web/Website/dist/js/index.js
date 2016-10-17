@@ -640,6 +640,7 @@ $(document).ready(function () {
 	articleSidebarAdParent = $('.article-right-rail section:last-child');
 	articleSidebarAd = articleSidebarAdParent.find('.advertising');
 	lastActionFlagsBar = $('.action-flags-bar:last-of-type');
+	sidebarIsTaller = $('.article-right-rail').height() > $('.article-left-rail').height();
 });
 
 $(window).on('scroll', function () {
@@ -671,11 +672,50 @@ function setClsforFlw(t) {
 		tableFlwrow.addClass('frow');
 	}
 }
+
+function sort_table(tbody, col, asc) {
+	var allrows = tbody[0].rows,
+	    rows = [];
+	for (var j = 0; j < allrows.length; j++) {
+		if (allrows[j].className == 'followrow disabled' || allrows[j].className == 'followrow disabled frow') {
+			rows.push(allrows[j]);
+		}
+	}
+	var rlen = rows.length,
+	    arr = new Array(),
+	    i,
+	    j,
+	    cells,
+	    clen;
+	for (i = 0; i < rlen; i++) {
+		cells = rows[i].cells;
+		clen = cells.length;
+		arr[i] = new Array();
+		for (j = 0; j < clen; j++) {
+			arr[i][j] = cells[j].innerHTML;
+		}
+	}
+	// sort the array by the specified column number (col) and order (asc)
+	arr.sort(function (a, b) {
+		return a[col] == b[col] ? 0 : a[col] > b[col] ? asc : -1 * asc;
+	});
+	// replace existing rows with new rows created from the sorted array
+	for (i = 0; i < rlen; i++) {
+		//rows[i].innerHTML = "<td class='wd-55'>" + arr[i].join("</td><td class='wd-25'>") + "</td>";
+		rows[i].innerHTML = "<td class='wd-55'>" + arr[i][0] + "</td><td class='wd-25'>" + arr[i][1] + "</td><td class='wd-15'>" + arr[i][2] + "</td>";
+	}
+}
+
 $(function () {
 	$('#allPublicationsPan').on('click', '.followAllBtn', function () {
-		var curpublicPan = $(this).closest('.publicationPan'),
+		var $this = $(this),
+		    curpublicPan = $this.closest('.publicationPan'),
+		    div = $this.closest('div'),
 		    $lgfollow = curpublicPan.find('.followBtn'),
 		    table = $('.table');
+		$this.addClass('hideBtn');
+		$('#validatePreference').val(1);
+		div.find('.unfollowAllBtn').removeClass('hideBtn');
 		$lgfollow.addClass('followingBtn').removeClass('followBtn').html('following');
 		curpublicPan.find('.unfollowAllBtn').removeClass('hideBtn');
 		for (var i = 0; i < $lgfollow.length; i++) {
@@ -685,89 +725,157 @@ $(function () {
 	});
 
 	$('#allPublicationsPan').on('click', '.unfollowAllBtn', function () {
-		var curpublicPan = $(this).closest('.publicationPan'),
+		var $this = $(this),
+		    curpublicPan = $this.closest('.publicationPan'),
+		    div = $this.closest('div'),
 		    $lgfollowing = curpublicPan.find('.followingBtn');
-		$(this).addClass('hideBtn');
+		$this.addClass('hideBtn');
+		$('#validatePreference').val(1);
+		div.find('.followAllBtn').removeClass('hideBtn');
 		$lgfollowing.addClass('followBtn').removeClass('followingBtn').html('follow');
 		for (var i = 0; i < $lgfollowing.length; i++) {
 			$($lgfollowing[i], curpublicPan).closest('tr').removeAttr('class').addClass('followrow disabled ufa');
 		}
 	});
 
-	$('#allPublicationsPan').on('click', '.mcheckedAll', function () {
-		var $this = $(this),
-		    mcall = $this.closest('.mca'),
-		    muall = $this.closest('.smfollowingBtn').find('.mua'),
-		    curpublicPan = $(this).closest('.publicationPan'),
-		    mchecked = curpublicPan.find('.mchecked');
-		mcall.addClass('hideBtn');
-		muall.removeClass('hideBtn');
-		for (var i = 0; i < mchecked.length; i++) {
-			$(mchecked[i], curpublicPan).addClass('munchecked').removeClass('mchecked');
-		}
-	});
-
-	$('#allPublicationsPan').on('click', '.muncheckedAll', function () {
-		var $this = $(this),
-		    mcall = $this.closest('.smfollowingBtn').find('.mca'),
-		    muall = $this.closest('.mua'),
-		    curpublicPan = $(this).closest('.publicationPan'),
-		    munchecked = curpublicPan.find('.munchecked');
-		muall.addClass('hideBtn');
-		mcall.removeClass('hideBtn');
-		for (var i = 0; i < munchecked.length; i++) {
-			$(munchecked[i], curpublicPan).addClass('mchecked').removeClass('munchecked');
-		}
-	});
-
-	$('#allPublicationsPan .donesubscribe').on('click', '.smfollowingBtn a', function () {
-		var $this = $(this),
-		    smfollowingBtn = $this.closest('.smfollowingBtn');
-		if ($this.hasClass('munchecked')) {
-			smfollowingBtn.find('a').addClass('mchecked').removeClass('munchecked');
-		} else {
-			smfollowingBtn.find('a').addClass('munchecked').removeClass('mchecked');
-		}
-	});
-
 	$('#allPublicationsPan .donesubscribe').on('click', '.followrow .followBtn', function () {
 		var $this = $(this),
 		    followrow = $this.closest('.followrow'),
-		    table = $this.closest('.table');
+		    table = $this.closest('.table'),
+		    followAllBtn = table.find('.followAllBtn'),
+		    unfollowAllBtn = table.find('.unfollowAllBtn'),
+		    trs = $this.closest('tbody').find('tr'),
+		    trsfollowing = $this.closest('tbody').find('tr.followingrow');
+		followrow.attr('draggable', true);
+		$('#validatePreference').val(1);
 		followrow.addClass('followingrow').removeClass('followrow disabled frow');
 		$this.addClass('followingBtn').removeClass('followBtn').html('Following');
 		setClsforFlw(table);
 		if ($('.followrow.disabled.frow', table).length) {
-			followrow.appendTo(followrow.clone().insertBefore('.followrow.disabled.frow'));
+			followrow.appendTo(followrow.clone().insertBefore(table.find('.followrow.disabled.frow')));
 		} else {
 			followrow.clone().appendTo($this.closest('tbody'));
 		}
 		followrow.remove();
+		if (trs.length === trsfollowing.length + 1) {
+			followAllBtn.addClass('hideBtn');
+			unfollowAllBtn.removeClass('hideBtn');
+		} else {
+			followAllBtn.removeClass('hideBtn');
+			unfollowAllBtn.removeClass('hideBtn');
+		}
 	});
 
 	$('#allPublicationsPan .donesubscribe').on('click', '.followingrow .followingBtn', function () {
 		var $this = $(this),
-		    followingrow = $this.closest('.followingrow');
+		    followingrow = $this.closest('.followingrow'),
+		    followAllBtn = $this.closest('table').find('.followAllBtn'),
+		    unfollowAllBtn = $this.closest('table').find('.unfollowAllBtn'),
+		    tbody = $this.closest('tbody'),
+		    trs = $this.closest('tbody').find('tr'),
+		    trsfollow = $this.closest('tbody').find('tr.followrow');
 		followingrow.addClass('followrow disabled').removeClass('followingrow');
 		$this.addClass('followBtn').removeClass('followingBtn').html('Follow');
 		followingrow.clone().appendTo($this.closest('tbody'));
+		console.log(followingrow.clone());
 		followingrow.remove();
+		$('#validatePreference').val(1);
+		sort_table(tbody, 0, 1);
+		if (trs.length === trsfollow.length + 1) {
+			unfollowAllBtn.addClass('hideBtn');
+			followAllBtn.removeClass('hideBtn');
+		} else {
+			followAllBtn.removeClass('hideBtn');
+			unfollowAllBtn.removeClass('hideBtn');
+		}
 	});
 
-	$('.publicationPan').on('click', '.accordionImg a', function () {
+	$('.publicationPan').on('click', '.accordionImg a.mobileMode', function () {
 		var $this = $(this),
+		    allPublications = $('#allPublicationsPan'),
 		    pPan = $this.closest('.publicationPan'),
-		    tbody = pPan.find('tbody');
-		if ($this.hasClass('collapsed')) {
-			$this.removeClass('collapsed');
+		    thead = pPan.find('thead'),
+		    tbody = pPan.find('tbody'),
+		    trs = tbody.find('tr'),
+		    disabledtrs = tbody.find('tr.disabled'),
+		    accCont = pPan.find('.accCont'),
+		    followlbl = thead.find('.followlbl'),
+		    followinglbl = thead.find('.followinglbl');
+
+		if ($this.hasClass('expanded')) {
+			$this.removeClass('expanded');
 			tbody.addClass('tbodyhidden');
+			accCont.addClass('tbodyhidden');
+			thead.find('.expandHide').addClass('collapseshow');
 			pPan.find('.smfollowingBtn').hide();
 			pPan.find('.graybg').hide();
+			thead.find('.mtp').addClass('hideBtn');
+			if (trs.length === disabledtrs.length) {
+				followlbl.removeClass('hideBtn');
+			} else {
+				followinglbl.removeClass('hideBtn');
+			}
+			$(window).scrollTop(pPan.position());
 		} else {
-			$this.addClass('collapsed');
+			allPublications.find('tbody').addClass('tbodyhidden');
+			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
+			allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
+			thead.find('tr').removeClass('hidden');
+			$this.addClass('expanded');
 			tbody.removeClass('tbodyhidden');
+			accCont.removeClass('tbodyhidden');
+			thead.find('.expandHide').removeClass('collapseshow');
+			thead.find('.mtp').addClass('hideBtn');
 			pPan.find('.smfollowingBtn').show();
 			pPan.find('.graybg').show();
+
+			/*var alltheads = allPublications.find('thead'), alltbodys = allPublications.find('tbody');
+   for(var i = 0; i < alltbodys.length; i++){
+   	var eachTableTrs = $(alltbodys[i]).find('tr'), eachTabledisTrs = $(alltbodys[i]).find('tr.disabled'),
+   		eachTablefollowlbl = $(alltheads[i]).find('.followlbl'), eachTablefollowinglbl = $(alltheads[i]).find('.followinglbl');
+   	if(eachTableTrs.length === eachTabledisTrs.length){
+   		eachTablefollowlbl.removeClass('hideBtn');
+   	}
+   	else{
+   		eachTablefollowinglbl.removeClass('hideBtn');
+   	}
+   }*/
+		}
+	});
+
+	$('.publicationPan').on('click', '.accordionImg a.desktopMode', function () {
+		var $this = $(this),
+		    allPublications = $('#allPublicationsPan'),
+		    pPan = $this.closest('.publicationPan'),
+		    thead = pPan.find('thead'),
+		    tbody = pPan.find('tbody'),
+		    trs = tbody.find('tr'),
+		    disabledtrs = tbody.find('tr.disabled'),
+		    flwlbl = thead.find('.flwLbl'),
+		    flwBtn = thead.find('.flwBtn'),
+		    followlbl = thead.find('.followlbl'),
+		    followinglbl = thead.find('.followinglbl');
+
+		if ($this.hasClass('expanded')) {
+			$this.removeClass('expanded');
+			tbody.addClass('tbodyhidden');
+			//pPan.find('.smfollowingBtn').hide();
+			if (trs.length === disabledtrs.length) {
+				followlbl.removeClass('hideBtn');
+			} else {
+				followinglbl.removeClass('hideBtn');
+			}
+			$(window).scrollTop(pPan.position());
+		} else {
+			allPublications.find('tbody').addClass('tbodyhidden');
+			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
+			allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
+			thead.find('tr').removeClass('hidden');
+			$this.addClass('expanded');
+			tbody.removeClass('tbodyhidden');
+			flwBtn.addClass('hideRow');
+			flwlbl.removeClass('hideRow');
+			//pPan.find('.smfollowingBtn').show();
 		}
 	});
 
@@ -776,47 +884,98 @@ $(function () {
 
 	$('.saveview').click(function () {
 		var alltables = $('.table'),
-		    createtableData = {};
-		createtableData.allpublications = {};
+		    UserPreferences = {},
+		    allpublications = $('.publicationPan', '#allPublicationsPan');
+		UserPreferences.PreferredChannels = [];
+
+		for (var k = 0; k < allpublications.length; k++) {
+			var tbody = $(allpublications[k]).find('tbody'),
+			    newtrs = tbody.find('tr'),
+			    cnt = 0;
+			newtrs.removeAttr('data-row');
+			for (var v = 0; v < newtrs.length; v++) {
+				$(newtrs[v]).attr('data-row', v + 1);
+			}
+		}
+
 		for (var i = 0; i < alltables.length; i++) {
 			var currenttabtrs = $(alltables[i]).find('tbody tr'),
 			    pubPanPosition = $(alltables[i]).closest('.publicationPan').attr('data-row'),
 			    tableId = $(alltables[i]).attr('id'),
-			    publicationName = $(alltables[i]).find('h2').html(),
+			    publicationName = $(alltables[i]).find('h2').attr('data-publication'),
 			    subscribeStatus = $(alltables[i]).find('.subscribed').html();
 			var alltdata = [];
 			for (var j = 0; j < currenttabtrs.length; j++) {
 				var datarowNo = $(currenttabtrs[j]).attr('data-row'),
-				    firsttd = $(currenttabtrs[j]).find('td.wd-55').html(),
-				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span:first').html();
-				alltdata.push({ 'tableRowNo': datarowNo, 'topic': firsttd, 'subStatus': secondtd });
+				    eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
+				    secondtd = $(currenttabtrs[j]).find('td.wd-25 span').html();
+
+				var followStatus = secondtd.toLowerCase() == 'following' ? true : false;
+				var subscripStatus = subscribeStatus.toUpperCase() == 'SUBSCRIBED' ? true : false;
+				alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus });
 			}
-			createtableData.allpublications[tableId] = { "publicationName": publicationName, "subscribeStatus": subscribeStatus, "position": pubPanPosition, "tableData": alltdata };
+			UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, Topics: alltdata });
 		}
-		console.log(JSON.stringify(createtableData));
+		$.post('/Account/api/PersonalizeUserPreferencesApi/Update/', { 'UserPreferences': JSON.stringify(UserPreferences) });
+		$('#validatePreference').val(0);
 	});
 
-	if (window.matchMedia('(max-width: 630px)').matches) {
-		$('.mobshowView').removeClass('desktophide');
-	} else {
-		$('.mobshowView').addClass('desktophide');
-	}
+	$('.gotoview').click(function (e) {
+		if (+$('#validatePreference').val()) {
+			e.preventDefault();
+			$('.modal-overlay').addClass('in');
+			$('.modal-view').show();
+		}
+	});
+	$('.close-modal').click(function () {
+		$('.modal-overlay').removeClass('in');
+		$('.modal-view').hide();
+	});
+
+	/*if (window.matchMedia('(max-width: 630px)').matches){
+ 	$('.mobshowView').removeClass('desktophide');
+ }
+ else{
+ 	$('.mobshowView').addClass('desktophide');
+ 	
+ }*/
+
+	$('.publicationPan.donesubscribe').dragswap({
+		element: '.table tbody tr',
+		dropAnimation: true
+	});
+
+	$('#allPublicationsPan').dragswap({
+		element: '.publicationPan.donesubscribe',
+		dropAnimation: true
+	});
 });
 
 },{}],6:[function(require,module,exports){
 'use strict';
 
-var toVal = 1,
+var defaults = {
+	totalCategories: 1,
+	categoryLimit: 10,
+	currentPage: 1
+},
+    toVal = 1,
     fromVal = 1;
 
+$.fn.setPagination = function (source) {
+	$.extend(defaults, source);
+};
+
 function paginationCur(fv, tv) {
-	$('.eachCategory').hide();
+	$('tbody.hidden-xs tr', '.page-account__table').hide();
+	$('tbody.hidden-lg tr', '.page-account__table').hide();
 	for (var i = fv; i < tv; i++) {
-		$('.eachCategory').eq(i).show();
+		$('tbody.hidden-xs tr', '.page-account__table').eq(i).show();
+		$('tbody.hidden-lg tr', '.page-account__table').eq(i).show();
 	}
 }
 $(function () {
-	var showPageLinks = Math.ceil(paginationObj.totalCategories / paginationObj.categoryLimit);
+	var showPageLinks = Math.ceil(defaults.totalCategories / defaults.categoryLimit);
 	var linkStr = '';
 	for (var i = 1; i <= showPageLinks; i++) {
 		linkStr += '<a href="javascript:void(0);">' + i + '</a>';
@@ -851,8 +1010,8 @@ $(function () {
 			if (!$this.hasClass('active')) {
 				$('.pagination span a').removeClass('active').attr('href', 'javascript:void(0);');
 				$this.addClass('active').removeAttr('href');
-				toVal = paginationObj.categoryLimit * $val;
-				fromVal = toVal - paginationObj.categoryLimit;
+				toVal = defaults.categoryLimit * $val;
+				fromVal = toVal - defaults.categoryLimit;
 				paginationCur(fromVal, toVal);
 				$('.pagination a:last').attr('href', 'javascript:void(0);');
 				$('.pagination a:first').attr('href', 'javascript:void(0);');
@@ -867,180 +1026,23 @@ $(function () {
 	});
 	$('.pagination span a:eq(0)').click();
 	$('.pagination a:eq(0)').removeAttr('href');
-});
 
-},{}],7:[function(require,module,exports){
-'use strict';
-
-$(function () {
-	$('.loadmore').click(function () {
-		var loadData = '<div class="eachstory layout1">';
-		loadData += '<section class="article-preview topic-featured-article">';
-		loadData += '<img class="topic-featured-article__image" src="/dist/img/article-img1.jpg">';
-		loadData += '<div class="article-metadata">';
-		loadData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
-		loadData += '<span class="action-flag__label js-bookmark-label">Bookmark</span>';
-		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg>';
-		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
-		loadData += '</div>';
-		loadData += '<ul>';
-		loadData += '<li><time class="article-metadata__date">26 Sep 2015</time></li>';
-		loadData += '<li><h6>News</h6></li>';
-		loadData += '</ul>';
-		loadData += '</div>';
-		loadData += '<div class="topic-featured-article__inner-wrapper">';
-		loadData += '<h3 class="topic-featured-article__headline">';
-		loadData += '<a href="#" class="click-utag">1st U.S. Biosimilar Arrives: Zarxio Launches</a>';
-		loadData += '</h3>';
-		loadData += '<span class="article-preview__byline">By <a href="#">Ian Haydock</a></span>';
-		loadData += '<div class="article-summary">';
-		loadData += '<p>The US SEC has accepted a $20m payment from GSK to settle charges that it violated US legislation on foreign corrupt practices.</p>';
-		loadData += '</div>';
-		loadData += '</div>';
-		loadData += '<div class="article-preview__tags bar-separated-link-list">';
-		loadData += '<a href="#">USA</a>';
-		loadData += '<a href="#">Sandoz</a>';
-		loadData += '<a href="#">Biosimilars</a>';
-		loadData += '</div>';
-		loadData += '</section>';
-		loadData += '<div class="latest-news__articles">';
-		loadData += '<section class="article-preview article-preview--small">';
-		loadData += '<div class="article-metadata">';
-		loadData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
-		loadData += '<span class="action-flag__label js-bookmark-label">Bookmark</span>';
-		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg>';
-		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
-		loadData += '</div>';
-		loadData += '<ul>';
-		loadData += '<li><time class="article-metadata__date">26 Sep 2015</time></li>';
-		loadData += '<li><h6>News</h6></li>';
-		loadData += '</ul>';
-		loadData += '</div>';
-		loadData += '<div class="article-preview__inner-wrapper">';
-		loadData += '<h1 class="article-preview__headline">';
-		loadData += '<a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>';
-		loadData += '</h1>';
-		loadData += '<span class="article-preview__byline">By <a href="#">Brenda Sandburg</a></span>';
-		loadData += '<div class="article-summary">';
-		loadData += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat bibendum a. Aliquam vitae erat viverra ex vehicula dictum. Ut dignissim mi justo, sodales bibendum velit imperdiet nec. Suspendisse eu varius orci.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat.</p>';
-		loadData += '</div>';
-		loadData += '</div>';
-		loadData += '<div class="article-preview__tags bar-separated-link-list">';
-		loadData += '<a href="#">Deals</a>';
-		loadData += '<a href="#">Biosimilars</a>';
-		loadData += '</div>';
-		loadData += '</section>';
-		loadData += '<section class="article-preview article-preview--small">';
-		loadData += '<div class="article-metadata">';
-		loadData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
-		loadData += '<span class="action-flag__label js-bookmark-label">Bookmark</span>';
-		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg>';
-		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
-		loadData += '</div>';
-		loadData += '<ul>';
-		loadData += '<li><time class="article-metadata__date">26 Sep 2015</time></li>';
-		loadData += '<li><h6>News</h6></li>';
-		loadData += '</ul>';
-		loadData += '</div>';
-		loadData += '<div class="article-preview__inner-wrapper">';
-		loadData += '<h1 class="article-preview__headline">';
-		loadData += '<a href="#" class="click-utag">INTERVIEW: Heart Failure, A Growing Market</a>';
-		loadData += '</h1>';
-		loadData += '<span class="article-preview__byline">By <a href="#">Brenda Sandburg</a></span>';
-		loadData += '<div class="article-summary">';
-		loadData += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat bibendum a. Aliquam vitae erat viverra ex vehicula dictum. Ut dignissim mi justo, sodales bibendum velit imperdiet nec. Suspendisse eu varius orci.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate massa nulla, non dictum erat.</p>';
-		loadData += '</div>';
-		loadData += '</div>';
-		loadData += '<div class="article-preview__tags bar-separated-link-list">';
-		loadData += '<a href="#">Deals</a>';
-		loadData += '<a href="#">Biosimilars</a>';
-		loadData += '</div>';
-		loadData += '</section>';
-		loadData += '<section class="article-preview article-preview--small topics">';
-		loadData += '<h6>Topic</h6>';
-		loadData += '<h1 class="article-preview_rheadline">';
-		loadData += '<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>';
-		loadData += '</h1>';
-		loadData += '<h1 class="article-preview_rheadline">';
-		loadData += '<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>';
-		loadData += '</h1>';
-		loadData += '<h1 class="article-preview_rheadline nobord">';
-		loadData += '<a href="#" class="click-utag">Brexit: Issues and Opportunities As UK Life Sciences Define A New Relationship In Europe</a>';
-		loadData += '</h1>';
-		loadData += '</section>';
-		loadData += '</div>';
-		loadData += '<div class="latest-news__articles">';
-		loadData += '<section class="article-preview article-small-preview">';
-		loadData += '<div class="article-metadata">';
-		loadData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
-		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg>';
-		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
-		loadData += '</div>';
-		loadData += '<ul>';
-		loadData += '<li><time class="article-metadata__date">26 Sep 2015</time></li>';
-		loadData += '<li><h6>News</h6></li>';
-		loadData += '</ul>';
-		loadData += '</div>';
-		loadData += '<div class="article-preview__inner-wrapper">';
-		loadData += '<h1 class="article-preview__headline">';
-		loadData += '<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>';
-		loadData += '</h1>';
-		loadData += '</div>';
-		loadData += '<div class="article-preview__tags bar-separated-link-list">';
-		loadData += '<a href="#">Deals</a>';
-		loadData += '<a href="#">Biosimilars</a>';
-		loadData += '</div>';
-		loadData += '</section>';
-		loadData += '<section class="article-preview article-small-preview">';
-		loadData += '<div class="article-metadata">';
-		loadData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article"> ';
-		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg>';
-		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
-		loadData += '</div>';
-		loadData += '<ul>';
-		loadData += '<li><time class="article-metadata__date">26 Sep 2015</time></li>';
-		loadData += '<li><h6>News</h6></li>';
-		loadData += '</ul>';
-		loadData += '</div>';
-		loadData += '<div class="article-preview__inner-wrapper">';
-		loadData += '<h1 class="article-preview__headline">';
-		loadData += '<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>';
-		loadData += '</h1>';
-		loadData += '</div>';
-		loadData += '<div class="article-preview__tags bar-separated-link-list">';
-		loadData += '<a href="#">Deals</a>';
-		loadData += '<a href="#">Biosimilars</a>';
-		loadData += '</div>';
-		loadData += '</section>';
-		loadData += '<section class="article-preview article-small-preview">';
-		loadData += '<div class="article-metadata">';
-		loadData += '<div class="action-flag article-preview__bookmarker pop-out__trigger js-bookmark-article">';
-		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark article-bookmark__bookmarked"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmarked"></use></svg>';
-		loadData += '<svg class="action-flag__icon action-flag__icon--bookmark article-bookmark is-visible"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#bookmark"></use></svg>';
-		loadData += '</div>';
-		loadData += '<ul>';
-		loadData += '<li><time class="article-metadata__date">26 Sep 2015</time></li>';
-		loadData += '<li><h6>News</h6></li>';
-		loadData += '</ul>';
-		loadData += '</div>';
-		loadData += '<div class="article-preview__inner-wrapper">';
-		loadData += '<h1 class="article-preview__headline">';
-		loadData += '<a href="#" class="click-utag">Sarepta Must Balance Exondys 51 Confirmatory Trials And Sales</a>';
-		loadData += '</h1>';
-		loadData += '</div> ';
-		loadData += '<div class="article-preview__tags bar-separated-link-list">';
-		loadData += '<a href="#">Deals</a>';
-		loadData += '<a href="#">Biosimilars</a>';
-		loadData += '</div>';
-		loadData += '</section>';
-		loadData += '</div>';
-		loadData += '</div>';
-
-		$('.eachstory').last().after(loadData);
+	$('.sortable-table__header').on('click', '.sortable-table__col', function () {
+		var $this = $(this),
+		    table = $this.closest('.sortable-table'),
+		    tbodytrs = table.find('tbody tr');
+		setTimeout(function () {
+			tbodytrs.removeAttr('style');
+			if (!$('.pagination span a:eq(0)').hasClass('active')) {
+				$('.pagination span a:eq(0)').click();
+			} else {
+				paginationCur(0, defaults.categoryLimit);
+			}
+		}, 1);
 	});
 });
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /* global analyticsEvent, analytics_data, angular */
 'use strict';
 
@@ -1240,7 +1242,7 @@ $(document).ready(function () {
 	});
 });
 
-},{"../controllers/analytics-controller":10,"../controllers/form-controller":12,"../jscookie":20}],9:[function(require,module,exports){
+},{"../controllers/analytics-controller":9,"../controllers/form-controller":11,"../jscookie":19}],8:[function(require,module,exports){
 'use strict';
 
 var INFORMA = window.INFORMA || {};
@@ -1309,7 +1311,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
 })(undefined, Zepto, 'INFORMA');
 Zepto(INFORMA.videoMini.init());
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 // * * *
 //  ANALYTICS CONTROLLER
 //  For ease-of-use, better DRY, better prevention of JS errors when ads are blocked
@@ -1328,7 +1330,7 @@ function analyticsEvent(dataObj) {
 
 exports.analyticsEvent = analyticsEvent;
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /* globals analytics_data */
 'use strict';
 
@@ -1416,7 +1418,7 @@ function bookmarkController() {
 exports['default'] = bookmarkController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":10}],12:[function(require,module,exports){
+},{"./analytics-controller":9}],11:[function(require,module,exports){
 /*
 
 opts.observe — Form element(s) to observe
@@ -1489,101 +1491,136 @@ function formController(opts) {
 				}
 
 				var inputData = {};
-
-				$(currentForm).find('input, select, textarea').each(function () {
-
-					var value = '';
-					var field = $(this);
-
-					if (field.data('checkbox-type') === 'boolean') {
-						value = this.checked;
-
-						if (field.data('checkbox-boolean-type') === 'reverse') {
-							value = !value;
-						}
-					} else if (field.data('checkbox-type') === 'value') {
-						value = this.checked ? field.val() : undefined;
-					} else {
-						value = field.val();
-					}
-
-					if (value !== undefined) {
-						if (inputData[field.attr('name')] === undefined) {
-							inputData[field.attr('name')] = value;
-						} else if ($.isArray(inputData[field.attr('name')])) {
-							inputData[field.attr('name')].push(value);
-						} else {
-							inputData[field.attr('name')] = [inputData[field.attr('name')]];
-							inputData[field.attr('name')].push(value);
-						}
-					}
-				});
-
-				if (!$(currentForm).data('on-submit')) {
-					console.warn('No submit link for form');
+				var IsValid = true; //Skip Validation if the form is not Update Contact Informatin Form
+				if ($(currentForm).hasClass('form-update-account-contact')) {
+					IsValid = ValidateContactInforForm();
 				}
+				if (IsValid) {
+					$(currentForm).find('input, select, textarea').each(function () {
 
-				$.ajax({
-					url: $(currentForm).data('on-submit'),
-					type: $(currentForm).data('submit-type') || 'POST',
-					data: inputData,
-					context: this,
-					success: function success(response) {
-						if (response.success) {
+						var value = '';
+						var field = $(this);
 
-							showSuccessMessage(currentForm);
+						if (field.data('checkbox-type') === 'boolean') {
+							value = this.checked;
 
-							// Passes the form response through with the "context"
-							// successCallback is ripe for refactoring, improving parameters
-							this.response = response;
-
-							if (opts.successCallback) {
-								opts.successCallback(currentForm, this, event);
+							if (field.data('checkbox-boolean-type') === 'reverse') {
+								value = !value;
 							}
-
-							if ($(form).data('on-success')) {
-								window.location.href = $(currentForm).data('on-success');
-							}
+						} else if (field.data('checkbox-type') === 'value') {
+							value = this.checked ? field.val() : undefined;
 						} else {
-							if (response.reasons && response.reasons.length > 0) {
-								for (var reason in response.reasons) {
-									showError(form, '.js-form-error-' + response.reasons[reason]);
+							value = field.val();
+						}
+
+						if (value !== undefined) {
+							if (inputData[field.attr('name')] === undefined) {
+								inputData[field.attr('name')] = value;
+							} else if ($.isArray(inputData[field.attr('name')])) {
+								inputData[field.attr('name')].push(value);
+							} else {
+								inputData[field.attr('name')] = [inputData[field.attr('name')]];
+								inputData[field.attr('name')].push(value);
+							}
+						}
+					});
+
+					// add recaptcha if it exists in the form
+					var captchaResponse = grecaptcha.getResponse();
+					if (captchaResponse !== undefined) inputData['RecaptchaResponse'] = captchaResponse;
+
+					if (!$(currentForm).data('on-submit')) {
+						console.warn('No submit link for form');
+					}
+
+					$.ajax({
+						url: $(currentForm).data('on-submit'),
+						type: $(currentForm).data('submit-type') || 'POST',
+						data: inputData,
+						context: this,
+						success: function success(response) {
+							if (response.success) {
+
+								showSuccessMessage(currentForm);
+
+								// Passes the form response through with the "context"
+								// successCallback is ripe for refactoring, improving parameters
+								this.response = response;
+
+								if (opts.successCallback) {
+									opts.successCallback(currentForm, this, event);
+								}
+
+								if ($(form).data('on-success')) {
+									window.location.href = $(currentForm).data('on-success');
 								}
 							} else {
-								showError(currentForm, '.js-form-error-general');
+								if (response.reasons && response.reasons.length > 0) {
+									for (var reason in response.reasons) {
+										showError(form, '.js-form-error-' + response.reasons[reason]);
+									}
+								} else {
+									showError(currentForm, '.js-form-error-general');
+								}
+
+								if (opts.failureCallback) {
+									opts.failureCallback(currentForm, response);
+								}
 							}
+						},
+						error: function error(response) {
+
+							showError(currentForm, '.js-form-error-general');
 
 							if (opts.failureCallback) {
 								opts.failureCallback(currentForm, response);
 							}
+						},
+						complete: function complete() {
+							setTimeout(function () {
+								$(formSubmit).removeAttr('disabled');
+							}, 250);
+
+							// reset captcha if available
+							grecaptcha.reset();
 						}
-					},
-					error: function error(response) {
 
-						showError(currentForm, '.js-form-error-general');
-
-						if (opts.failureCallback) {
-							opts.failureCallback(currentForm, response);
-						}
-					},
-					complete: function complete() {
-						setTimeout(function () {
-							$(formSubmit).removeAttr('disabled');
-						}, 250);
-					}
-
-				});
-			} // if actionConfirmed
-
+					});
+				} // if actionConfirmed
+			}
 			return false;
 		});
 	})();
+}
+function ValidateContactInforForm() {
+	var errorHtml = $('#errorMessage').html();
+	var errors = 0;
+	var result = false;
+	var scrollTo = '';
+	$('.required').each(function () {
+		if ($(this).val() == '' || $(this).text().indexOf("- Select One -") >= 0) {
+			$(this).parent().append(errorHtml);
+			errors++;
+			if (errors == 1) {
+				scrollTo = $(this);
+			}
+		} else {
+			$(this).parent().find('.js-form-error').remove();
+		}
+	});
+	if (errors > 0) {
+		window.scrollTo(0, scrollTo.offset().top - 30);
+		result = false;
+	} else {
+		result = true;
+	}
+	return result;
 }
 
 exports['default'] = formController;
 module.exports = exports['default'];
 
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /* global angular */
 'use strict';
 
@@ -1651,7 +1688,7 @@ function lightboxModalController() {
 exports['default'] = lightboxModalController;
 module.exports = exports['default'];
 
-},{}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1769,6 +1806,14 @@ function popOutController(triggerElm) {
 			// EMAIL AUTHOR
 			case 'email-author':
 				popOut = $('.js-pop-out__email-author');
+				break;
+			// EMAIL COMPANy
+			case 'email-company':
+				popOut = $('.js-pop-out__email-company');
+				break;
+			// EMAIL DEAL
+			case 'email-deal':
+				popOut = $('.js-pop-out__email-deal');
 				break;
 			// GLOBAL HEADER REGISTRATION
 			case 'register':
@@ -1929,7 +1974,7 @@ function popOutController(triggerElm) {
 exports['default'] = popOutController;
 module.exports = exports['default'];
 
-},{}],15:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2054,7 +2099,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":10}],16:[function(require,module,exports){
+},{"./analytics-controller":9}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2272,7 +2317,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":10}],17:[function(require,module,exports){
+},{"./analytics-controller":9}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2589,7 +2634,7 @@ function sortableTableController() {
 exports['default'] = sortableTableController;
 module.exports = exports['default'];
 
-},{}],18:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 /* global tooltipController */
 
 "use strict";
@@ -2780,7 +2825,7 @@ function createPopup(initialState) {
 
 module.exports = exports["default"];
 
-},{"../calculatePopupOffsets.js":2}],19:[function(require,module,exports){
+},{"../calculatePopupOffsets.js":2}],18:[function(require,module,exports){
 /* global angular, analytics_data */
 
 // THIRD-PARTY / VENDOR
@@ -2862,8 +2907,6 @@ require('./components/save-search-component');
 require('./components/myview-settings');
 
 require('./components/pagination');
-
-require('./components/personalisation');
 
 // OTHER CODE
 
@@ -3031,6 +3074,23 @@ $(document).ready(function () {
     };
     window.dismiss();
 
+    window.custom_label = function () {
+        $("body").off().on("click", '.label-check', function (e) {
+            if ($(this).hasClass("label-check")) {
+
+                var ele = $(this).find('input');
+                if (ele.is(':checked')) {
+                    ele.prop('checked', false);
+                    ele.parent('div').removeClass('wcs-c-on');
+                } else {
+                    ele.prop('checked', true);
+                    ele.parent('div').addClass('wcs-c-on');
+                }
+            }
+        });
+    };
+    window.custom_label();
+
     window.personalised_nav = function () {
         //personalise pop up
         var modal = document.getElementById('myModal');
@@ -3047,9 +3107,11 @@ $(document).ready(function () {
         });
 
         // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        };
+        if (span !== undefined) {
+            span.onclick = function () {
+                modal.style.display = "none";
+            };
+        }
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
@@ -3939,7 +4001,7 @@ $(document).ready(function () {
     });
 });
 
-},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/myview-settings":5,"./components/pagination":6,"./components/personalisation":7,"./components/save-search-component":8,"./components/video-mini":9,"./controllers/analytics-controller":10,"./controllers/bookmark-controller":11,"./controllers/form-controller":12,"./controllers/lightbox-modal-controller":13,"./controllers/pop-out-controller":14,"./controllers/register-controller":15,"./controllers/reset-password-controller":16,"./controllers/sortable-table-controller":17,"./controllers/tooltip-controller":18,"./jscookie":20,"./modal":21,"./newsletter-signup":22,"./search-page.js":23,"./selectivity-full":24,"./svg4everybody":25,"./toggle-icons":26,"./zepto.dragswap":27,"./zepto.min":28}],20:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/zepto.data":3,"./components/article-sidebar-component":4,"./components/myview-settings":5,"./components/pagination":6,"./components/save-search-component":7,"./components/video-mini":8,"./controllers/analytics-controller":9,"./controllers/bookmark-controller":10,"./controllers/form-controller":11,"./controllers/lightbox-modal-controller":12,"./controllers/pop-out-controller":13,"./controllers/register-controller":14,"./controllers/reset-password-controller":15,"./controllers/sortable-table-controller":16,"./controllers/tooltip-controller":17,"./jscookie":19,"./modal":20,"./newsletter-signup":21,"./search-page.js":22,"./selectivity-full":23,"./svg4everybody":24,"./toggle-icons":25,"./zepto.dragswap":26,"./zepto.min":27}],19:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -4080,7 +4142,7 @@ $(document).ready(function () {
 	return init(function () {});
 });
 
-},{}],21:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
@@ -4388,7 +4450,7 @@ $(document).ready(function () {
   });
 })($);
 
-},{}],22:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /* global analytics_data */
 
 'use strict';
@@ -4465,7 +4527,7 @@ function newsletterSignupController() {
 exports['default'] = newsletterSignupController;
 module.exports = exports['default'];
 
-},{"./controllers/analytics-controller":10}],23:[function(require,module,exports){
+},{"./controllers/analytics-controller":9}],22:[function(require,module,exports){
 'use strict';
 
 var SearchScript = (function () {
@@ -4477,7 +4539,7 @@ var SearchScript = (function () {
 	});
 })();
 
-},{}],24:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -5502,7 +5564,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],25:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 "use strict";
 
 !(function (root, factory) {
@@ -5607,7 +5669,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
     return svg4everybody;
 });
 
-},{}],26:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -5624,7 +5686,7 @@ var toggleIcons = function toggleIcons(container) {
 
 exports.toggleIcons = toggleIcons;
 
-},{}],27:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 /*!
  * Zepto HTML5 Drag and Drop Sortable
  * Author: James Doyle(@james2doyle) http://ohdoylerules.com
@@ -5760,6 +5822,7 @@ exports.toggleIcons = toggleIcons;
                 $(this).siblings().removeAttr('draggable');
                 $(this).siblings().filter(settings.excludePatt).attr('draggable', true);
                 console.log('dropped');
+                $('#validatePreference').val(1);
                 settings.dropComplete();
             }
             return false;
@@ -5854,7 +5917,7 @@ exports.toggleIcons = toggleIcons;
     };
 })(Zepto);
 
-},{}],28:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 "use strict";
 
@@ -6593,7 +6656,7 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}]},{},[19])
+},{}]},{},[18])
 
 
 //# sourceMappingURL=index.js.map
