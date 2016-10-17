@@ -3661,6 +3661,10 @@ header .header-account-access {
       max-width: 100%;
       font-family: "Roboto Condensed";
       font-style: normal; }
+      @media (max-width: 480px) {
+        .myview-settings .table-responsive .table {
+          display: block;
+          position: relative; } }
       .myview-settings .table-responsive .table tbody tr {
         -webkit-transition: all 0.2s ease;
         transition: all 0.2s ease; }
@@ -3804,7 +3808,9 @@ header .header-account-access {
             display: none; }
       @media (max-width: 480px) {
         .myview-settings .table-responsive .table thead tr.expandHide {
-          display: none; } }
+          display: none; }
+          .myview-settings .table-responsive .table thead tr.expandHide.collapseshow {
+            display: block !important; } }
       .myview-settings .table-responsive .table thead th {
         padding: 12px 20px;
         padding: 0.75rem 1.25rem;
@@ -4229,6 +4235,17 @@ header .header-account-access {
     left: 0rem;
     z-index: 99;
     opacity: 0.5; }
+  .myview-settings .hidden-large {
+    display: none; }
+
+@media (max-width: 480px) {
+  .myview-settings .hidden-large {
+    display: block !important; }
+  .myview-settings .smfollowingBtn {
+    margin-top: -8px;
+    margin-top: -0.5rem; }
+  .myview-settings .accordionStatus.hideRow {
+    display: none; } }
 
 @media (max-width: 640px) {
   .hidden-xs {
@@ -4251,13 +4268,7 @@ header .header-account-access {
       .smfollowingBtn span.followAllBtn {
         background-position: 0 -31px;
         text-indent: -124px;
-        border: none !important; }
-  .hidden-lg {
-    display: none !important; } }
-
-@media only screen and (min-width: 481px) {
-  .hidden-lg {
-    display: none !important; } }
+        border: none !important; } }
 
 .tbodyhidden {
   display: none; }
