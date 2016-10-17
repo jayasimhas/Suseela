@@ -961,14 +961,17 @@ $(function () {
 			type: 'POST',
 			success: function success(data) {
 				if (data && data.success) {
-					$('.alert-success p').html(data.reason).show();
+					$('.alert-success p').html(data.reason);
+					$('.alert-success').show();
 				} else {
-					$('.alert-error p').html(data.reason).show();
+					$('.alert-error p').html(data.reason);
+					$('.alert-success').show();
 				}
 			},
 			error: function error(err) {
-				if (data && !data.success) {
-					$('.alert-error p').html(data.reason).show();
+				if (err && !err.success) {
+					$('.alert-error p').html(err.reason);
+					$('.alert-success').show();
 				}
 			}
 		});
