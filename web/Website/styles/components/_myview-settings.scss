@@ -543,6 +543,13 @@
 	.hidden-large{
 		display: none;
 	}
+	
+	.alert-success{
+		margin-bottom: 20px;
+	}
+	.alert-error{
+		margin-bottom: 20px;
+	}
 }
 @include breakpoint('small') {
 	.myview-settings{

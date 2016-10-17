@@ -896,7 +896,8 @@ $(function () {
 			} else {
 				followinglbl.removeClass('hideBtn');
 			}
-			$(window).scrollTop(500);
+			var position = $this.closest('.publicationPan').position();
+			$(window).scrollTop(position);
 		} else {
 			allPublications.find('tbody').addClass('tbodyhidden');
 			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
@@ -909,7 +910,9 @@ $(function () {
 			flwBtn.addClass('hideRow');
 			flwlbl.removeClass('hideRow');
 			pPan.find('.smfollowingBtn').show();
-			$(window).scrollTop(500);
+
+			var position = $this.closest('.publicationPan').position();
+			$(window).scrollTop(position);
 		}
 	});
 
@@ -950,7 +953,23 @@ $(function () {
 			}
 			UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, Topics: alltdata });
 		}
-		$.post('/Account/api/PersonalizeUserPreferencesApi/Update/', { 'UserPreferences': JSON.stringify(UserPreferences) });
+		$.ajax({
+			url: '/Account/api/PersonalizeUserPreferencesApi/Update/',
+			data: { 'UserPreferences': JSON.stringify(UserPreferences) },
+			dataType: 'json',
+			type: 'POST',
+			success: function success(data) {
+				if (data) {
+					$('.alert-success').show();
+				}
+			},
+			error: function error(err) {
+				if (err) {
+					$('.alert-error').show();
+				}
+			}
+		});
+
 		$('#validatePreference').val(0);
 	});
 
