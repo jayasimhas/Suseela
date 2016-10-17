@@ -619,6 +619,7 @@ section: Colors
 @color: #9E310D @name: primary
 @color: #F5821F @name: Pumpkin
 @color: #c12d3b @name: Persian Red
+@color: #f7941e @name: Carrot Orange
 ```
 */
 /**
@@ -11674,8 +11675,8 @@ main {
 .theme-commodities .button--filled:not([disabled]), .theme-commodities .pop-out__register-submit:not([disabled]), .theme-commodities .pop-out__sign-in-submit:not([disabled]),
 .theme-commodities .search-bar__submit,
 .theme-commodities .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-  background: #9E310D;
-  background-color: #9E310D;
+  background: #f7941e;
+  background-color: #f7941e;
   color: #ffffff; }
   .theme-commodities .button--filled:not([disabled]):hover, .theme-commodities .pop-out__register-submit:not([disabled]):hover, .theme-commodities .pop-out__sign-in-submit:not([disabled]):hover,
   .theme-commodities .search-bar__submit:hover,
@@ -11684,7 +11685,7 @@ main {
     background-color: #F5821F; }
 
 .theme-commodities .button--outline:not([disabled]) {
-  border-color: #9E310D; }
+  border-color: #f7941e; }
   .theme-commodities .button--outline:not([disabled]):hover {
     background-color: #F5821F;
     border-color: #F5821F;
