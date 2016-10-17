@@ -207,6 +207,7 @@ $(function(){
 			pPan.find('.smfollowingBtn').show();
 			
 			var position = $this.closest('.publicationPan').position();
+			
 			$(window).scrollTop(position);
 		}
 	});
@@ -251,13 +252,16 @@ $(function(){
 			dataType: 'json',
 			type: 'POST',
 			success: function(data){
-				if(data){
-					$('.alert-success').show();
+				if(data && data.success){
+					$('.alert-success p').html(data.reason).show();
+				}
+				else{
+					$('.alert-error p').html(data.reason).show();
 				}
 			},
 			error: function(err){
-				if(err){
-					$('.alert-error').show();
+				if(err && !err.success){
+					$('.alert-error p').html(err.reason).show();
 				}
 			}
 		});
