@@ -14,6 +14,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Glass.Models;
 using System.Text.RegularExpressions;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Custom_Tags;
 
 namespace Informa.Library.Site
 {
@@ -25,6 +26,7 @@ namespace Informa.Library.Site
     public interface IHeadMetaDataGenerator
     {
         string GetMetaHtml();
+        string GetCustomTags();
     }
 
     [AutowireService]
@@ -194,6 +196,32 @@ namespace Informa.Library.Site
             section = first.Item_Name;
             string temp = string.Join(",", taxonomy.Skip(1).Select(t => t.Item_Name));
             tags = Regex.Replace(temp, @"\r\n?|\n|\t", string.Empty);
+        }
+
+        public string GetCustomTags()
+        {
+            var siteRoot = _dependencies.SiteRootContext.Item;
+            var globalItemFolder = siteRoot._ChildrenWithInferType.FirstOrDefault(ch => ch._Name.Equals("Globals"));
+            if (globalItemFolder != null)
+            {
+                var customtagsFolder = globalItemFolder._ChildrenWithInferType.FirstOrDefault(ch => ch._Name.Equals("CustomTags"));
+                if (customtagsFolder != null && customtagsFolder._ChildrenWithInferType.OfType<ICustom_Tag>().Any())
+                {
+                    StringBuilder tagBuilder = new StringBuilder();
+                    foreach (var ctag in customtagsFolder._ChildrenWithInferType.OfType<ICustom_Tag>())
+                    {
+                        tagBuilder.Append(ctag.Custom_Tag);
+                    }
+                    return tagBuilder.ToString();
+
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+            return string.Empty;
+
         }
     }
 }

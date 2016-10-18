@@ -89,5 +89,7 @@
         @Html.Sitecore().Placeholder("site-debugger")
     }
     @MiniProfiler.RenderIncludes()
+    @Html.Raw(@Model.CustomTags)
+   
 </body>
 </html>

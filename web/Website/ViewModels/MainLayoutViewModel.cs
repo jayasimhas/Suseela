@@ -30,6 +30,7 @@ namespace Informa.Web.ViewModels
             IUserCompanyContext UserCompanyContext { get; }
             IHeadMetaDataGenerator HeadMetaDataGenerator { get; }
             IAccountManagementService AccountManagementService { get; }
+            
         }
 
 	    public MainLayoutViewModel(IDependencies dependencies)
@@ -47,5 +48,9 @@ namespace Informa.Web.ViewModels
         public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
 	    public string MetaDataHtml => _dependencies.HeadMetaDataGenerator.GetMetaHtml();
 	    public bool IsRestricted => _dependencies.AccountManagementService.IsUserRestricted(GlassModel);
-	}
+        //Custom tag implementation
+        public string CustomTags => _dependencies.HeadMetaDataGenerator.GetCustomTags();
+
+
+    }
 }
