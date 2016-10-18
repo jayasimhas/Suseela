@@ -3960,7 +3960,8 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        padding: 0 20px;
+        padding: 0 25px;
+        padding: 0 1.5625rem;
         margin-top: 8px;
         margin-top: 0.5rem; }
         .myview-settings .table-responsive .table thead .followAllBtn:hover {
@@ -3986,7 +3987,8 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
-        padding: 0 20px;
+        padding: 0 25px;
+        padding: 0 1.5625rem;
         margin-top: 8px;
         margin-top: 0.5rem;
         cursor: text; }
@@ -4132,8 +4134,8 @@ header .header-account-access {
           line-height: 32px;
           line-height: 2rem;
           float: right;
-          float: left;
-          margin: 0px; } }
+          margin: 0 10px;
+          margin: 0 0.625rem; } }
     .myview-settings .saveoption .complete-settings {
       display: inline-block;
       float: right; }
@@ -4298,7 +4300,7 @@ header .header-account-access {
 
 @media (max-width: 640px) {
   .myview-settings .hidden-large {
-    display: block !important; } }
+    display: table-row-group !important; } }
 
 @media (max-width: 800px) {
   .myview-settings .desktopMode {
