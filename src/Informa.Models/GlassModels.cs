@@ -8358,7 +8358,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.C
     /// <para>ID: 65468DC7-3416-4517-8049-A1F0F89BC416</para>	
     /// </summary>
     [SitecoreType(TemplateId = ICustom_TagConstants.TemplateIdString)]
-    public partial interface IText_Node : IGlassBase
+    public partial interface ICustom_Tag : IGlassBase
     {
         /// <summary>
         /// The Text field.
