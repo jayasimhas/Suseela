@@ -8347,6 +8347,65 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.T
 	}
 
 }
+namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Global.Custom_Tags
+{
+
+
+    /// <summary>
+    /// ICustom_Tag Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Global/CustomTags/GeneralTag</para>	
+    /// <para>ID: 65468DC7-3416-4517-8049-A1F0F89BC416</para>	
+    /// </summary>
+    [SitecoreType(TemplateId = ICustom_TagConstants.TemplateIdString)]
+    public partial interface IText_Node : IGlassBase
+    {
+        /// <summary>
+        /// The Text field.
+        /// <para></para>
+        /// <para>Field Type: Multi-Line Text</para>		
+        /// <para>Field ID: 056e7b2c-28dc-441d-bf93-bd74d8b6763a</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ICustom_TagConstants.CustomTagFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Custom_Tag { get; set; }
+    }
+
+
+    /// <summary>
+    /// IText_Node Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Global/Text Nodes/Text Node</para>	
+    /// <para>ID: 780d36d9-466d-4b6a-a07e-c12f11f9e56e</para>	
+    /// </summary>
+    [SitecoreType]
+    public partial interface ICustom_Tag__Raw : IGlassBase
+    {
+        /// <summary>
+        /// The Text field.
+        /// <para></para>
+        /// <para>Field Type: Multi-Line Text</para>		
+        /// <para>Field ID: 056e7b2c-28dc-441d-bf93-bd74d8b6763a</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ICustom_TagConstants.CustomTagFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Custom_Tag { get; set; }
+    }
+
+    public static partial class ICustom_TagConstants
+    {
+
+        public const string TemplateIdString = "65468DC7-3416-4517-8049-A1F0F89BC416";
+        public static readonly ID TemplateId = new ID(TemplateIdString);
+        public const string TemplateName = "GeneralTag";
+
+
+        public static readonly ID CustomTagFieldId = new ID("EFBDB4CF-FD4B-478B-B2C4-987DAB9EC07B");
+        public const string CustomTagFieldName = "CustomTag";
+
+   }
+
+}
 namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Account
 {
     /// <summary>
