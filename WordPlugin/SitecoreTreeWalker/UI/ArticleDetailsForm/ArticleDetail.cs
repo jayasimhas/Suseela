@@ -689,21 +689,18 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 Globals.SitecoreAddin.LogException("Error when parsing article on creation!", ex);
                 return;
             }
-
-
-            //added,21Sep16
-            if (articleDetailsPageSelector.pageArticleInformationControl.IsVerticalSelected() == false)
-            {
-                Cursor = Cursors.Arrow;
-                MessageBox.Show("Please Select Vertical.",@"Informa",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                return;
-            }
-           
             finally
             {
                 Cursor.Current = Cursors.Default;
             }
 
+            //added,21Sep16
+            if (articleDetailsPageSelector.pageArticleInformationControl.IsVerticalSelected() == false)
+            {
+                Cursor = Cursors.Arrow;
+                MessageBox.Show("Please Select Vertical.", @"Informa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
