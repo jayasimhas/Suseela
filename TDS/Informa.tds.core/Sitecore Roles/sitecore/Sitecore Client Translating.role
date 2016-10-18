@@ -1,6 +1,3 @@
 ----role----
 name: sitecore\Sitecore Client Translating
 
-----role-in-role----
-rolename: sitecore\Editor
-
