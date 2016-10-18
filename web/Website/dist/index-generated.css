@@ -3431,8 +3431,7 @@ header .header-account-access {
   background: #f1f2f2;
   clear: both;
   border-top: 4px solid #be1e2d;
-  padding: 28px 32px;
-  padding: 1.75rem 2rem;
+  padding: 0 15px 0 25px;
   position: relative;
   float: left;
   line-height: 20px;
@@ -3465,7 +3464,8 @@ header .header-account-access {
     font-size: 0.9375em;
     font-weight: 400;
     position: relative;
-    float: left; }
+    float: left;
+    padding-bottom: 30px; }
     .messaging_webUsers .button-msg-webUser .msg_link {
       float: left;
       margin-top: 10px; }
@@ -3488,7 +3488,9 @@ header .header-account-access {
     font-style: normal;
     font-weight: 400;
     font-size: 0.5625em;
-    clear: both; }
+    clear: both;
+    padding-top: 4px;
+    padding-top: 0.3rem; }
     .messaging_webUsers .msg_dismiss a, .messaging_webUsers .msg_dismiss .pop-out__reset-password, .messaging_webUsers .msg_dismiss .sortable-table__list-toggler, .messaging_webUsers .msg_dismiss .mobile-table-exit {
       background: url("/dist/img/dismiss.png") no-repeat right top;
       padding-right: 15px; }

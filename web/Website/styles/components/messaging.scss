@@ -3,7 +3,7 @@
 	background: $color-concrete-gray;
 	clear: both;
 	border-top: 4px solid $color-cardinal-red;
-	padding: 1.75rem 2rem;
+	padding: 0 15px 0 25px;
 	position: relative;
 	float: left;
 	line-height: 20px;
@@ -37,6 +37,7 @@
 		font-weight: 400;
 		position: relative;
 		float: left;
+		padding-bottom: 30px;
 		.msg_link{
 			float: left;
 			margin-top: 10px;
@@ -66,6 +67,7 @@
 		font-weight: 400;
 		font-size: 0.5625em;
 		clear: both;
+		padding-top: 0.3rem;
 		a{
 		background: url("/dist/img/dismiss.png") no-repeat right top;
 		padding-right: 15px;
