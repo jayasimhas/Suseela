@@ -45,6 +45,8 @@
 		.find_more{
 			float: right;
 			text-transform: uppercase;
+			padding-top: 6px;
+			padding-bottom: 6px;
 		}
 		@include breakpoint('small'){
 			.msg_link{

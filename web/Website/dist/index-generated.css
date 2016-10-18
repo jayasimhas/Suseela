@@ -3471,7 +3471,9 @@ header .header-account-access {
       margin-top: 10px; }
     .messaging_webUsers .button-msg-webUser .find_more {
       float: right;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      padding-top: 6px;
+      padding-bottom: 6px; }
     @media (max-width: 480px) {
       .messaging_webUsers .button-msg-webUser .msg_link {
         display: block;
