@@ -627,6 +627,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.SequenceAnalyzer.dll</HintPath>
     </Reference>
+	<Reference Include="Sitecore.SessionSerialization">
+      <HintPath>..\..\lib\sitecore\Sitecore.SessionSerialization.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Services.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore\Sitecore.Services.Client.dll</HintPath>
