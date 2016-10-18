@@ -3602,8 +3602,8 @@ header .header-account-access {
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
       float: left;
-      width: 500px;
-      width: 31.25rem;
+      width: 480px;
+      width: 30rem;
       line-height: 40px;
       line-height: 2.5rem; }
       @media (max-width: 640px) {
