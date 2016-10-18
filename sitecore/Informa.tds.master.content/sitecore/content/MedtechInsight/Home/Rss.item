@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {47F2533D-33F2-4C2E-B619-39128485BE54}
+database: master
+path: /sitecore/content/MedtechInsight/Home/Rss
+parent: {C161BAA2-CD78-4400-8A60-0652D5B79EEB}
+name: Rss
+master: {CBA15CFC-A70C-4146-8A11-25AA3F4FDDB4}
+template: {0CEC731C-0B3D-4017-9486-053FA3169902}
+templatekey: Rss Feed Folder
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+850
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: c2df9d95-2618-480a-8035-e46c33d9489a
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160418T200800Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c2df9d95-2618-480a-8035-e46c33d9489a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160418T200800Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

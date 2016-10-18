@@ -23,10 +23,17 @@ key: __icon
 content-length: 21
 
 Apps/32x32/Pencil.png
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
 ----version----
 language: en
 version: 1
-revision: 78635ecd-9226-424f-9805-264bf2d88145
+revision: f747266e-a3c4-411f-9cc3-35c2c24f9fe5
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
@@ -34,7 +41,7 @@ name: Phrase
 key: phrase
 content-length: 10
 
-Writes for
+Writes For
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,18 +55,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-78635ecd-9226-424f-9805-264bf2d88145
+f747266e-a3c4-411f-9cc3-35c2c24f9fe5
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160719T174437Z
+20160714T222103Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 18
+content-length: 14
 
-sitecore\haboulela
+sitecore\admin

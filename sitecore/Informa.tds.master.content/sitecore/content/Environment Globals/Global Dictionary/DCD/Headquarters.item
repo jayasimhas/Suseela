@@ -23,6 +23,13 @@ key: __icon
 content-length: 21
 
 Apps/32x32/Pencil.png
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
 ----version----
 language: en
 version: 1
