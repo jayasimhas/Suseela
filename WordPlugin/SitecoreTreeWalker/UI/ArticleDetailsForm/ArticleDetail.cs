@@ -698,15 +698,7 @@ namespace InformaSitecoreWord.UI.ArticleDetailsForm
                 MessageBox.Show("Please Select Vertical.",@"Informa",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 return;
             }
-            //added,21Sep16
-            if (articleDetailsPageSelector.pageArticleInformationControl.IsPublicationSelected()==false)
-            {
-                Cursor = Cursors.Arrow;
-                MessageBox.Show("Please Select Publication.",@"Informa",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                return;
-            }
-
-
+           
             finally
             {
                 Cursor.Current = Cursors.Default;
