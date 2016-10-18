@@ -3601,13 +3601,20 @@ header .header-account-access {
     border: 1px solid #d9dadb; }
     .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
       text-align: left;
-      float: left; }
+      float: left;
+      width: 500px;
+      width: 31.25rem;
+      line-height: 40px;
+      line-height: 2.5rem; }
       @media (max-width: 640px) {
         .myview-settings .publicationPan h2, .myview-settings .publicationPan .article-topics__header {
           font-size: 1.25em;
           margin-bottom: 12px;
           margin-bottom: 0.75rem;
-          float: none; } }
+          float: none;
+          width: auto;
+          line-height: 26px;
+          line-height: 1.625rem; } }
     .myview-settings .publicationPan .subscribed {
       border-left: 1px solid #d9dadb;
       float: left;
@@ -3981,7 +3988,8 @@ header .header-account-access {
         float: right;
         padding: 0 20px;
         margin-top: 8px;
-        margin-top: 0.5rem; }
+        margin-top: 0.5rem;
+        cursor: text; }
         .myview-settings .table-responsive .table thead .followinglbl:hover {
           background-color: #f7941e;
           color: #ffffff; }
@@ -4040,7 +4048,8 @@ header .header-account-access {
         margin: 8px 0 0 20px;
         margin: 0.5rem 0 0 1.25rem;
         padding: 0 36px;
-        padding: 0 2.25rem; }
+        padding: 0 2.25rem;
+        cursor: text; }
         .myview-settings .table-responsive .table thead .followlbl.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -4122,7 +4131,9 @@ header .header-account-access {
           display: inline-block;
           line-height: 32px;
           line-height: 2rem;
-          float: right; } }
+          float: right;
+          float: left;
+          margin: 0px; } }
     .myview-settings .saveoption .complete-settings {
       display: inline-block;
       float: right; }
@@ -4148,7 +4159,7 @@ header .header-account-access {
       color: #ffffff; }
       @media (max-width: 480px) {
         .myview-settings .saveoption .saveview {
-          float: left;
+          float: right;
           margin: 0px;
           padding: 0 40px;
           padding: 0 2.5rem; } }
@@ -4282,6 +4293,8 @@ header .header-account-access {
     margin-bottom: 20px; }
   .myview-settings .alert-error {
     margin-bottom: 20px; }
+  .myview-settings .tbodyhidden {
+    display: none; }
 
 @media (max-width: 640px) {
   .myview-settings .hidden-large {
@@ -4290,7 +4303,14 @@ header .header-account-access {
 @media (max-width: 800px) {
   .myview-settings .desktopMode {
     margin-left: -30px;
-    margin-left: -1.875rem; } }
+    margin-left: -1.875rem; }
+  .myview-settings .firstrow h2, .myview-settings .firstrow .article-topics__header {
+    width: auto; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .myview-settings .firstrow h2, .myview-settings .firstrow .article-topics__header {
+    width: 240px;
+    width: 15rem; } }
 
 @media screen and (min-width: 800px) and (max-width: 900px) {
   .myview-settings .desktopMode {
@@ -4346,9 +4366,6 @@ header .header-account-access {
         background-position: 0 -31px;
         text-indent: -124px;
         border: none !important; } }
-
-.tbodyhidden {
-  display: none; }
 
 /************ drag and drop styles ***********/
 .drop {
