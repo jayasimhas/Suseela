@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {CB795CBD-46C9-4D4E-9409-B64ABABF832E}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/Clinica at GE Healthcare in Hatfield
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: Clinica at GE Healthcare in Hatfield
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: fa7e50b8-7600-4300-972d-764b826e5008
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 318
+
+<p> GE Healthcare's UK commercial headquarters in Hatfeild is also home to the company's patient monitoring demo suite. During the tour of the suite, multimedia editor <i>Salina Christmas</i> noted how a simple user interface is becoming, more than ever before, a high priority as technologes become more complex. </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 36
+
+Clinica at GE Healthcare in Hatfield
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3536
+
+<p> GE Healthcare's UK commercial headquarters in Hatfeild is also home to the company's patient monitoring demo suite. During the tour of the suite, multimedia editor <i>Salina Christmas</i> noted how a simple user interface is becoming, more than ever before, a high priority as technologes become more complex. </p> <p><table> <br> <br> <tr> <td colspan="4"><h3><escenic_non_breaking_space></escenic_non_breaking_space></h3></td> </tr> <tr> <td><div> <embed src="http://widget-38.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979435115832&site=widget-38.slide.com" name="flashticker"> </div></td> <td><div><embed src="http://widget-ce.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979435115982&site=widget-ce.slide.com" name="flashticker"></div></td> <td> <div><embed src="http://widget-21.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979435116065&site=widget-21.slide.com" name="flashticker"></div></td> <td><div> <embed src="http://widget-67.slide.com/widgets/slideticker.swf" type="application/x-shockwave-flash" quality="high" scale="noscale" salign="l" wmode="transparent" flashvars="cy=lt&il=1&channel=2666130979435116135&site=widget-67.slide.com" name="flashticker"> </div></td> </tr> <tr> <td><p> <a href="http://www.clinica.co.uk/images/ge/carescape/" class="optionsLink">The Carescape B850 </a></p></td> <td><p> <a href="http://www.clinica.co.uk/images/ge/interface/" class="optionsLink">The aesthetics of interface </a></p></td> <td><p> <a href="http://www.clinica.co.uk/images/ge/artifacts/" class="optionsLink">The artifacts </a></p></td> <td><p> <a href="http://www.clinica.co.uk/images/ge/people/" class="optionsLink">People</a></p></td> </tr> </table></p> <p> <b>&nbsp; MORE ON GE HEALTHCARE</b> </p> <p> <img align="left" height="80" width="80" src="-/media/FA1FB349D89D4316A081CD50237CFE03.ashx" border="0" style="margin-right: 5px"> <a href="http://www.clinica.co.uk/business/Fighting-Fitt-221781?autnID=/contentstore/clinica/codex/5dec22ea-3811-11df-9b41-8be21d0289c0.xml" target="_blank" class="emailLink">Fighting Fitt</a><br> <i> By Tina Tan, 26 March 2010 </i><br> The imminent cuts in spending by the UK National Health Service over the next few years signal tough times ahead for NHS suppliers. Bettina Fitt, GE Healthcare&rsquo;s general manager for UK and Ireland operations, tells Tina Tan how the business is shaping up to meet these challenges head-on. </p> <p> <img align="left" height="80" width="80" src="http://www.clinica.co.uk/multimedia/archive/00079/salina_80x80_79637a.jpg" border="0" style="margin-right: 5px"> <a href="http://www.clinica.co.uk/home/blogopensurgery/GE-Healthcare-The-aesthetics-of-interface-219023?autnID=/contentstore/clinica/escenic/219023.xml" target="_blank" class="emailLink">Open Surgery: The aesthetics of interface </a><br> <i>By Salina Christmas, 23 March 2010 </i><br> Designing the interface of a life support machine is a cognitive challenge, but GE Healthcare makes sure the user experience elements are spot on. If only that coffee machine was just as effective with its design. </p> <p> <b><i>Editor, Clinica:</i></b><i> Tina Tan. <b>Editor, Multimedia:</b> Salina Christmas</i> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 36
+
+Clinica at GE Healthcare in Hatfield
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T210912
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT038164
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 36
+
+Clinica at GE Healthcare in Hatfield
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+221760
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T175615Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fa7e50b8-7600-4300-972d-764b826e5008
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160623T010912Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

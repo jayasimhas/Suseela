@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {8A72006F-F662-4030-860A-9D619059C627}
+database: master
+path: /sitecore/content/Virtual Whiteboard/Issues/SC Aug 8 2016 Issue
+parent: {ECE677C9-3CC5-41F5-ADCB-D103C60783A7}
+name: SC Aug 8 2016 Issue
+master: {00000000-0000-0000-0000-000000000000}
+template: {90C7C95A-2D6F-49D8-B471-7626E3135201}
+templatekey: Issue
+
+----field----
+field: {2242E825-8258-4C3F-9FC0-3CE1420CF35A}
+name: Title
+key: title
+content-length: 19
+
+SC Aug 8 2016 Issue
+----field----
+field: {205B5967-3F09-4ECB-BEA8-D1F01CA4E4AD}
+name: Published Date
+key: published date
+content-length: 16
+
+20160808T040000Z
+----field----
+field: {1A83FD14-2FA1-47EC-85A6-A424CAB26258}
+name: Notes
+key: notes
+content-length: 31
+
+Spain story has an infographic.
+----version----
+language: en
+version: 1
+revision: 3db98ef8-0ec8-42c6-a3cc-026e71d2f985
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160722T131312Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\haboulela
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3db98ef8-0ec8-42c6-a3cc-026e71d2f985
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160722T131353Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\haboulela

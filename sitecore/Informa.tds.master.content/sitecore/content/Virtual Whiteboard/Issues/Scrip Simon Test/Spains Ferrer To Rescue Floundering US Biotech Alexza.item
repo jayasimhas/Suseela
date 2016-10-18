@@ -1,0 +1,86 @@
+----item----
+version: 1
+id: {836A0ED6-8698-4FAF-AC27-2E44FA1A51E7}
+database: master
+path: /sitecore/content/Virtual Whiteboard/Issues/Scrip Simon Test/Spains Ferrer To Rescue Floundering US Biotech Alexza
+parent: {BB99706F-AB6F-48D0-8C35-A925AB1F4737}
+name: Spains Ferrer To Rescue Floundering US Biotech Alexza
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {19B597D3-2EDD-4AE2-AEFE-4A94C7F10E31}
+name: __Source Item
+key: __source item
+content-length: 56
+
+sitecore://master/{F1432020-1D98-4486-A279-EE7C68D0ABD3}
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 6096a094-15c7-46e9-b51e-8c0e21287484
+
+----field----
+field: {1B86697D-60CA-4D80-83FB-7555A2E6CE1C}
+name: __Source
+key: __source
+content-length: 71
+
+sitecore://master/{F1432020-1D98-4486-A279-EE7C68D0ABD3}?lang=en&ver=11
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160719T183425Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\haboulela
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6096a094-15c7-46e9-b51e-8c0e21287484
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160719T183425Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\haboulela
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 0
+
+

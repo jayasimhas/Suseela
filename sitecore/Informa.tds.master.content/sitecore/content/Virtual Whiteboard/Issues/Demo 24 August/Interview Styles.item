@@ -1,0 +1,100 @@
+----item----
+version: 1
+id: {68E2905F-60C6-4851-99C9-B94D6918D02D}
+database: master
+path: /sitecore/content/Virtual Whiteboard/Issues/Demo 24 August/Interview Styles
+parent: {E79781A2-6179-4540-AA1A-99D8F0E7FAD7}
+name: Interview Styles
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {19B597D3-2EDD-4AE2-AEFE-4A94C7F10E31}
+name: __Source Item
+key: __source item
+content-length: 56
+
+sitecore://master/{F48B19CE-0EC4-4066-B642-208A972B562D}
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+102
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 21bed5d7-acfb-47cc-a394-0e4ebb7a8dcb
+
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 16
+
+20160726T170936Z
+----field----
+field: {DF3BA324-C51E-430B-B396-7B0A24245605}
+name: Free With Registration
+key: free with registration
+content-length: 1
+
+0
+----field----
+field: {1B86697D-60CA-4D80-83FB-7555A2E6CE1C}
+name: __Source
+key: __source
+content-length: 70
+
+sitecore://master/{F48B19CE-0EC4-4066-B642-208A972B562D}?lang=en&ver=3
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160824T153553Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+21bed5d7-acfb-47cc-a394-0e4ebb7a8dcb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160824T153606Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{A5CCF3CC-05E9-431A-A2FC-D21ED60A9F34}
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 0
+
+

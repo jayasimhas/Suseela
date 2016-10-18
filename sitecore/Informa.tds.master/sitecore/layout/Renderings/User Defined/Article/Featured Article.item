@@ -41,9 +41,9 @@ content-length: 1
 field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
 name: Datasource Location
 key: datasource location
-content-length: 69
+content-length: 17
 
-query:./ancestor-or-self::*[@@templatename='Site Root']/Home/Articles
+/sitecore/content
 ----field----
 field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
 name: Datasource Template
@@ -54,7 +54,7 @@ content-length: 46
 ----version----
 language: en
 version: 1
-revision: dbf71a6a-b583-4c1f-8137-85233eaeece2
+revision: ef449bfc-4fd2-4ce7-ae62-b4cc58a6d614
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-dbf71a6a-b583-4c1f-8137-85233eaeece2
+ef449bfc-4fd2-4ce7-ae62-b4cc58a6d614
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160606T202706Z
+20160929T142130Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

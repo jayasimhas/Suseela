@@ -594,8 +594,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram1.cd" />
-    <None Include="InformaSitecoreWord_2_TemporaryKey.pfx" />
-    <None Include="InformaSitecoreWord_3_TemporaryKey.pfx" />
     <None Include="InformaSitecoreWord_TemporaryKey.pfx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -619,7 +617,6 @@
       <DependentUpon>SitecoreAddin.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
-    <None Include="WordPluginTempKey.snk" />
     <None Include="WorldPluginDevCertificate.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -735,10 +732,10 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>BC3296A2B92276F90360B705843FDFDF43AB2D8D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>14D4ED2CF2140B73762B101F4A3BBD95414FCB93</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>WorldPluginDevCertificate.pfx</ManifestKeyFile>
+    <ManifestKeyFile>InformaSitecoreWord_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>WorldPluginDevCertificate.pfx</AssemblyOriginatorKeyFile>

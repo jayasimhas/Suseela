@@ -1,0 +1,68 @@
+----item----
+version: 1
+id: {99899796-4AD2-4942-81B1-2FBAFE245F53}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/Customer Feedback/PageAssets/PageContent
+parent: {ECBABE2D-F2D1-4A0A-AA94-19A2631213E0}
+name: PageContent
+master: {00000000-0000-0000-0000-000000000000}
+template: {7B44925F-DD3B-4D01-988C-94A2D4BDC71F}
+templatekey: Content Text
+
+----version----
+language: en
+version: 1
+revision: 3fe1273d-0f1d-4d53-ac8c-e3e7ba475dc2
+
+----field----
+field: {789ADC78-20BA-4599-8C29-ED74BC4C7122}
+name: Text
+key: text
+content-length: 3809
+
+<p >
+commodities</p>
+<p style="background-color: #ffffff; margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices sem quam, ac condimentum justo sodales vitae. Suspendisse rutrum est in ex fringilla, vitae tristique lacus eleifend. Cras sed nunc et orci ullamcorper laoreet a sit amet nulla. Sed varius ex non nunc maximus eleifend. Vivamus imperdiet et turpis ac tincidunt. Mauris velit magna, congue sit amet dui ac, efficitur dignissim leo. Aenean fringilla metus at ligula consequat rhoncus.</p>
+<p style="background-color: #ffffff; margin: 0px 0px 15px; padding: 0px; text-align: justify;">Nam posuere, metus quis tincidunt euismod, justo mauris maximus libero, ac finibus libero augue a dolor. Maecenas elementum, quam quis volutpat fermentum, dui arcu ornare ipsum, ut pretium ex dolor eget nisl. Vivamus rutrum risus nulla, eu venenatis nibh iaculis id. Nunc gravida, ipsum finibus porta eleifend, ipsum lacus fringilla massa, ac maximus lacus ligula sed ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla eleifend mi sit amet ligula posuere consectetur. Etiam convallis risus in aliquam faucibus. Nulla non nunc fermentum, pharetra orci a, tempus tortor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas nec sodales purus, vitae commodo felis. Etiam pretium, tellus vitae imperdiet vehicula, lectus eros maximus ipsum, quis congue erat lacus ut massa.</p>
+<p style="background-color: #ffffff; margin: 0px 0px 15px; padding: 0px; text-align: justify;">Phasellus ornare dapibus commodo. Fusce bibendum, mauris nec elementum tristique, quam ex varius tellus, a suscipit velit ante scelerisque elit. Vivamus bibendum aliquet pulvinar. Integer dapibus, tellus id tincidunt euismod, nibh justo suscipit velit, sit amet congue nisi nunc ut mauris. Proin id enim risus. Vestibulum magna felis, dapibus ac ligula non, porta pretium risus. Donec dictum ligula sem, nec mollis orci maximus eu. Sed finibus vitae dui vel tincidunt. Sed nisi tortor, egestas sed ex venenatis, gravida hendrerit nunc. Mauris ut aliquam felis. Maecenas a scelerisque tellus. Donec vulputate, lectus dapibus vulputate venenatis, quam odio egestas diam, nec mattis turpis ligula a massa. Cras mattis vehicula urna, in consequat ipsum imperdiet ac.</p>
+<p style="background-color: #ffffff; margin: 0px 0px 15px; padding: 0px; text-align: justify;">Nam facilisis tellus vel rhoncus scelerisque. Aliquam purus erat, varius non lobortis vel, gravida vel nulla. Pellentesque condimentum, magna eu viverra commodo, lectus ipsum consequat arcu, aliquet luctus velit elit vel ex. Donec et massa bibendum, blandit mi elementum, venenatis mauris. Aenean nisi lacus, dapibus ac sem a, tristique consequat velit. Etiam eleifend quam facilisis eros accumsan, in dignissim lectus scelerisque. Praesent tempus feugiat urna. Nam tempor cursus enim, non congue mauris consequat ac. Sed et sapien vitae dolor blandit lacinia. Aenean nunc tellus, eleifend vitae est in, condimentum congue erat. Vestibulum ut fringilla nisl. Maecenas et turpis sit amet lacus volutpat placerat a nec dui. Fusce nec elementum neque. Sed aliquam nulla ut porta aliquam.</p>
+<p>We'd like your feedback on the new Scrip website. &nbsp;Please complete the form below.</p>
+<p>
+<a name="form1618651756" id="formAnchor1618651756"></a>
+<script type="text/javascript" src="https://fs8.formsite.com/include/form/embedManager.js?1618651756"></script>
+<script type="text/javascript">
+EmbedManager.embed({
+	key: "https://fs8.formsite.com/res/showFormEmbed?EParam=bJeI6E3QIKCKwe%2BL8pj2O7uaVastpUR2&amp;1618651756",
+	width: "100%",
+	mobileResponsive: true
+});
+</script>
+</p>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160411T183854Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3fe1273d-0f1d-4d53-ac8c-e3e7ba475dc2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160930T130346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

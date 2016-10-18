@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {F6020751-DCC9-42DB-9207-FD06483D167A}
+database: master
+path: /sitecore/content/Agri/Vertical Globals/Account Form Lists/Job Industries/Financial Services Investment
+parent: {0D6142F0-6AFE-49D4-A332-FA97636A6CFE}
+name: Financial Services Investment
+master: {00000000-0000-0000-0000-000000000000}
+template: {6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+templatekey: Taxonomy Item
+
+----version----
+language: en
+version: 1
+revision: 7b77102f-0dfd-4c5d-9965-d4381ea4bc18
+
+----field----
+field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
+name: Item Name
+key: item name
+content-length: 29
+
+Financial Services/Investment
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160315T032246Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7b77102f-0dfd-4c5d-9965-d4381ea4bc18
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160315T032249Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

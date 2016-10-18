@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {3E94E492-14D2-4908-BBBC-DCCA7E654E45}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Globals/Navigation/Footer Menu 1/Medtech Insight
+parent: {513F7FEC-E40B-4424-94FA-DE336DCC3AF9}
+name: Medtech Insight
+master: {00000000-0000-0000-0000-000000000000}
+template: {354B0538-CB81-4B26-A25E-7B5DBA03C2F5}
+templatekey: Navigation Link
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+300
+----version----
+language: en
+version: 1
+revision: a5929b69-38e5-4155-b47d-571dfe0d012a
+
+----field----
+field: {944FDC25-89F4-4127-8808-F136DDA47AB3}
+name: Navigation Link
+key: navigation link
+content-length: 138
+
+<link text="Medtech Insight" linktype="external" url="https://www.pharmamedtechbi.com/publications/medtech-insight" anchor="" target="" />
+----field----
+field: {EC1885AD-C358-4653-B1E5-55EFD796B35C}
+name: Navigation Text
+key: navigation text
+content-length: 15
+
+Medtech Insight
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160421T155938Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a5929b69-38e5-4155-b47d-571dfe0d012a
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160421T160127Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

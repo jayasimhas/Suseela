@@ -20,9 +20,9 @@ Treelist
 field: {1EB8AE32-E190-44A6-968D-ED904C794EBF}
 name: Source
 key: source
-content-length: 43
+content-length: 84
 
-/sitecore/content/Environment Globals/Staff
+query:./ancestor-or-self::*[@@templatename = 'Vertical Root']/Vertical Globals/Staff
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
@@ -33,7 +33,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: da9686b7-e7b4-49e5-9f4e-7b76c075210e
+revision: 819145e1-3ae3-4810-9c1c-ec95cf4472c3
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-da9686b7-e7b4-49e5-9f4e-7b76c075210e
+819145e1-3ae3-4810-9c1c-ec95cf4472c3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160310T155659Z
+20161003T125325Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

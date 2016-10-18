@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {33E6258B-8121-4F7D-9D61-D18918A4CC58}
+database: master
+path: /sitecore/content/Agri/Vertical Globals/Account Form Lists/Countries/Costa Rica
+parent: {268329EE-EBAC-478B-B355-0DD2638D2B5F}
+name: Costa Rica
+master: {00000000-0000-0000-0000-000000000000}
+template: {6D72D3C0-B5D7-4D08-9BDD-0D9627EF5AD1}
+templatekey: Taxonomy Item
+
+----version----
+language: en
+version: 1
+revision: 4ee94330-de64-4972-940b-d75a9947a606
+
+----field----
+field: {AC58F381-3D7F-4D90-966D-41813DC66E87}
+name: Item Name
+key: item name
+content-length: 10
+
+Costa Rica
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160315T033013Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4ee94330-de64-4972-940b-d75a9947a606
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160315T033013Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

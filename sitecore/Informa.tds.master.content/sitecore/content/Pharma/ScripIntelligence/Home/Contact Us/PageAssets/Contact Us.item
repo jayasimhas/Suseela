@@ -1,0 +1,75 @@
+----item----
+version: 1
+id: {F5489C03-C37C-434D-BE18-45B8075AE7DC}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Contact Us/PageAssets/Contact Us
+parent: {C21E2FE9-CEF5-46ED-9492-C4B77631AB3F}
+name: Contact Us
+master: {00000000-0000-0000-0000-000000000000}
+template: {7B44925F-DD3B-4D01-988C-94A2D4BDC71F}
+templatekey: Content Text
+
+----version----
+language: en
+version: 1
+revision: 8ba8d070-3e74-4105-a0c1-f5a16473b28f
+
+----field----
+field: {789ADC78-20BA-4599-8C29-ED74BC4C7122}
+name: Text
+key: text
+content-length: 1338
+
+<h3>Request a Free Trial</h3>
+<span style="line-height: 32px; font-size: 16px;">To request a free trial to Scrip, please fill out this <a href="~/link.aspx?_id=1721E85B291140C298E3B7B9F7EF2A9A&_z=z">form</a></span><span style="line-height: 32px; font-size: 16px;">.</span>
+<h3>Sales & Subscriptions</h3>
+<p>
+To speak with one of our knowledgeable sales representatives, please e-mail Sales at: <a href="mailto:PharmaNewsSales@informa.com" target="_blank">PharmaNewsSales@informa.com</a>  or by calling (UK & Europe): +44 (0) 20 7017 4191 or US: +1 212-520-2765.
+</p>
+<h3>Customer Care & Support</h3>
+<p>
+For questions or comments about your account or any of our products, you can email: <a href="mailto:clientservices@scripintelligence.com" target="_blank">clientservices@scripintelligence.com</a> or contact our customer services team by calling (UK & Europe): +44 (20) 337 73737; (US Toll-Free): +1 888-670-8900; (US Collect): +1 908-547-2200; (APAC): +61 2 8705 6907.
+</p>
+<h3>Advertising</h3>
+<p>
+Please visit our <a href="http://advertising.scripintelligence.com" target="_blank">advertising page</a> for more information.
+</p>
+<h3>Editorial Feedback</h3>
+<p>
+We welcome all <a href="mailto:clientservices@scripintelligence.com?subject=Editorial Feedback">feedback</a> on our articles, as well as suggestions for future topics.
+</p>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160420T025051Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8ba8d070-3e74-4105-a0c1-f5a16473b28f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160512T220244Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

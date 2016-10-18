@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {92E6E16B-F6C6-4EAA-9756-145B0C9471C9}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Emails Folder/ChrisTestEmail/Featured Article 3
+parent: {46E64807-A58F-46F6-AC58-D2943DA27F24}
+name: Featured Article 3
+master: {00000000-0000-0000-0000-000000000000}
+template: {CB4CA050-2626-4979-A53D-77613B218043}
+templatekey: Featured Article
+
+----version----
+language: en
+version: 1
+revision: cbaa4b8f-0a2d-4c08-a336-9a8ca2e39d14
+
+----field----
+field: {E4AF834D-E606-4424-8DDE-326953ED32B3}
+name: Article
+key: article
+content-length: 38
+
+{25918716-54A5-4B86-A91C-8C75F41A0CDD}
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160530T151458Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+cbaa4b8f-0a2d-4c08-a336-9a8ca2e39d14
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160530T152221Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

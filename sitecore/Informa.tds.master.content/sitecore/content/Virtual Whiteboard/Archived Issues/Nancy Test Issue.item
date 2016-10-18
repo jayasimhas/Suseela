@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {3943A013-DA00-49C7-8228-076518B82593}
+database: master
+path: /sitecore/content/Virtual Whiteboard/Archived Issues/Nancy Test Issue
+parent: {AAB11244-7D15-4A43-A709-DC8951893FD2}
+name: Nancy Test Issue
+master: {00000000-0000-0000-0000-000000000000}
+template: {6467B31C-4196-44EB-A215-EEC8F733FFF8}
+templatekey: Archived Issue
+
+----field----
+field: {1B000C0C-6A90-409A-BA21-FC91D90EF455}
+name: Issue Articles
+key: issue articles
+content-length: 857
+
+{360BD3E9-2F9C-4E9E-A6C6-16BF9B239C9F}|{360BD3E9-2F9C-4E9E-A6C6-16BF9B239C9F}|{360BD3E9-2F9C-4E9E-A6C6-16BF9B239C9F}|{360BD3E9-2F9C-4E9E-A6C6-16BF9B239C9F}|{8C3CC2EB-DC74-4783-A18C-8563631F6916}|{8C3CC2EB-DC74-4783-A18C-8563631F6916}|{8C3CC2EB-DC74-4783-A18C-8563631F6916}|{8C3CC2EB-DC74-4783-A18C-8563631F6916}|{346040ED-DE8F-4A77-A1C5-7D5143DA78B1}|{346040ED-DE8F-4A77-A1C5-7D5143DA78B1}|{346040ED-DE8F-4A77-A1C5-7D5143DA78B1}|{838A8E0B-4EA6-41B3-97F3-120F03FF56C2}|{838A8E0B-4EA6-41B3-97F3-120F03FF56C2}|{838A8E0B-4EA6-41B3-97F3-120F03FF56C2}|{AFA2136E-6194-464C-B787-74C13291276D}|{558250A7-2980-4022-9E3A-F3C922753D25}|{558250A7-2980-4022-9E3A-F3C922753D25}|{1A0A7107-5567-44C2-8BB8-9CD7B1CDFE49}|{889E69C7-AA86-4991-8331-39A514D54D62}|{1A0A7107-5567-44C2-8BB8-9CD7B1CDFE49}|{889E69C7-AA86-4991-8331-39A514D54D62}|{1A0A7107-5567-44C2-8BB8-9CD7B1CDFE49}
+----field----
+field: {2242E825-8258-4C3F-9FC0-3CE1420CF35A}
+name: Title
+key: title
+content-length: 16
+
+Nancy Test Issue
+----field----
+field: {205B5967-3F09-4ECB-BEA8-D1F01CA4E4AD}
+name: Published Date
+key: published date
+content-length: 16
+
+20160628T040000Z
+----version----
+language: en
+version: 1
+revision: c80fc22e-e9d1-4d05-8865-43abdac1df7b
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160628T201311Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 16
+
+sitecore\ndecker
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c80fc22e-e9d1-4d05-8865-43abdac1df7b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160628T201311Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\ndecker
