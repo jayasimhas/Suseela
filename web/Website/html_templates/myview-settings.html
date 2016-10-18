@@ -78,12 +78,7 @@
                      <div class="header-account-access">
          
                          <div class="header-account-access__friendly-greeting">Hi, Open License</div>
-         				<div class="header-account-access__my-account">
-                             <svg class="header__icons icon-my-account">
-                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#my-account"></use>
-                             </svg>
-                             <span class="header-account-access__label"><a href="/my-account/contact-information">My Account</a></span>
-                         </div>
+         				
                          <div class="header-account-access__sign-in-out click-logout">
                              <svg class="header__icons icon-sign-out">
                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#sign-out"></use>
@@ -162,9 +157,12 @@
 						  <table class="table" id="publication1">
 							<thead class="hidden-large">
 								<tr>
-									<th class="wd-55 firstrow">
+									<th class="firstrow" style="width:100%;">
 										<h2 data-publication="name1">Publication 1</h2>
 										<div class="subscribed" data-subscribe-status="SUBSCRIBED">SUBSCRIBED</div>
+										 <!--<div class="pub-subscription-subtitle">
+										You are subscribed to this publication. You can take a look at <a href="~/link.aspx?_id=6A5C9CD9ABEF4CAA90E6FAE85B8495B3&amp;_z=z">your subscriptions</a> at any time. 
+										</div>--> 
 									</th>
 									<th class="wd-25 firstrow"></th>
 									<th class="wd-15 firstrow">
@@ -184,7 +182,7 @@
 								</tr> 
 								<tr class="accordionStatus">
 									<th colspan="2">
-										<p class="pickTxt">Pick and choose the topics you are interested in. Drag and drop to prioritise what you see first.</p> 
+										<p class="pickTxt">Pick and choose.</p> 
 									</th>
 									<th>
 										<div class="accordionImg">
@@ -221,6 +219,9 @@
 									<th class="wd-55 firstrow">
 										<h2 data-publication="name1">Publication 1</h2>
 										<div class="subscribed" data-subscribe-status="SUBSCRIBED">SUBSCRIBED</div>
+										<div class="pub-subscription-subtitle">
+										You are subscribed to this publication. You can take a look at <a href="~/link.aspx?_id=6A5C9CD9ABEF4CAA90E6FAE85B8495B3&amp;_z=z">your subscriptions</a> at any time. 
+										</div> 
 									</th>
 									<th class="wd-25 firstrow">
 										<div>
@@ -1023,10 +1024,12 @@
 				
 				</div>
 				
-				<div class="saveoption">
-					<span class="saveview" href="javascript: void(0);">Save</span>
-					<span class="gotoview" href="javascript: void(0);">Go to my view</span>
-				</div>
+
+			<div class="saveoption"><span class="helplink">Any Questions? <a href="/contact-us">Get in touch</a></span> 
+				<div class="complete-settings">
+				 <span class="registrationBtn" href="javascript: void(0);">Complete your registration</span>
+				<span class="gotoview"><a href="javascript: void(0);">GO TO MY VIEW</a></span></div>
+		        </div> 
 			</div>
 			
       

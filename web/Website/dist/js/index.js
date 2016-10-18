@@ -943,8 +943,7 @@ $(function () {
 
 		for (var k = 0; k < allpublications.length; k++) {
 			var tbody = $(allpublications[k]).find('tbody'),
-			    newtrs = tbody.find('tr'),
-			    cnt = 0;
+			    newtrs = tbody.find('tr');
 			newtrs.removeAttr('data-row');
 			for (var v = 0; v < newtrs.length; v++) {
 				$(newtrs[v]).attr('data-row', v + 1);
@@ -976,16 +975,16 @@ $(function () {
 			type: 'POST',
 			success: function success(data) {
 				if (data && data.success) {
-					//$('.alert-success p').html(data.reason);
+					$('.alert-success p').html(data.reason);
 					$('.alert-success').show();
 				} else {
-					//$('.alert-error p').html(data.reason);
+					$('.alert-error p').html(data.reason);
 					$('.alert-error').show();
 				}
 			},
 			error: function error(err) {
 				if (err && !err.success) {
-					//$('.alert-error p').html(err.reason);
+					$('.alert-error p').html(err.reason);
 					$('.alert-error').show();
 				}
 			}
