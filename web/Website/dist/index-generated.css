@@ -3837,6 +3837,9 @@ header .header-account-access {
           .myview-settings .table-responsive .table thead th p.nosubscr {
             margin: -40px 0 -30px;
             font-weight: normal; }
+          .myview-settings .table-responsive .table thead th p.pickTxt {
+            width: 270px;
+            width: 16.875rem; }
         .myview-settings .table-responsive .table thead th.firstrow {
           padding: 40px 20px 10px;
           padding: 2.5rem 1.25rem 0.625rem; }
