@@ -177,5 +177,22 @@ namespace Informa.Library.PXM.Helpers
                 }
             }
         }
+
+
+        public void AddSidebarPrefix(XmlDocument doc) {
+
+            var paragraphs = doc.SelectNodes("//Inline[@ArticleSource='sidebar']/ParagraphStyle");
+
+            foreach (XmlNode p in paragraphs) {
+                if (p == null) continue;
+
+                var att = p.Attributes["Style"];
+                if (att == null || att.Value.StartsWith("sidebar_"))
+                    continue;
+
+                att.Value = $"sidebar_{att.Value}";
+            }
+        }
+
     }
 }
