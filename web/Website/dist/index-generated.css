@@ -3615,9 +3615,9 @@ header .header-account-access {
       padding-left: 20px;
       padding-left: 1.25rem;
       margin: 3px 20px;
-      margin: 0.1875rem 1.25rem;
-      position: relative;
-      top: -2px; }
+      vertical-align: top;
+      line-height: 30px;
+      position: relative; }
       @media (max-width: 640px) {
         .myview-settings .publicationPan .subscribed {
           font-size: 0.875em;
@@ -3649,8 +3649,7 @@ header .header-account-access {
           border-left: none;
           padding-left: 0px;
           padding-left: 0rem;
-          margin: 0px;
-          margin: 0rem; } }
+          margin: 0 !important; } }
   .myview-settings .table-responsive {
     width: 100%;
     overflow-y: hidden;
@@ -3682,15 +3681,15 @@ header .header-account-access {
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          width: 120px;
-          width: 7.5rem;
           height: 32px;
           height: 2rem;
           text-align: center;
           display: inline-block;
           line-height: 32px;
           line-height: 2rem;
-          float: right; }
+          float: right;
+          padding: 0 26px;
+          padding: 0 1.625rem; }
           .myview-settings .table-responsive .table tbody tr .followingBtn:hover {
             background: #f7941e;
             color: #ffffff; }
@@ -3702,6 +3701,8 @@ header .header-account-access {
               width: 30px;
               width: 1.875rem;
               border: none;
+              padding: 0 16px;
+              padding: 0 1rem;
               display: inline-block;
               margin-left: 10px;
               margin-left: 0.625rem;
@@ -3713,8 +3714,6 @@ header .header-account-access {
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          width: 120px;
-          width: 7.5rem;
           height: 32px;
           height: 2rem;
           text-align: center;
@@ -3722,6 +3721,8 @@ header .header-account-access {
           line-height: 32px;
           line-height: 2rem;
           float: right;
+          padding: 0 36px;
+          padding: 0 2.25rem;
           background: #f7941e;
           color: #ffffff; }
           @media (max-width: 640px) {
@@ -3735,6 +3736,8 @@ header .header-account-access {
               margin-left: 10px;
               margin-left: 0.625rem;
               border: none;
+              padding: 0 16px;
+              padding: 0 1rem;
               text-indent: -9999px; } }
         .myview-settings .table-responsive .table tbody tr.followingrow .rowlines {
           float: right;
@@ -3821,8 +3824,7 @@ header .header-account-access {
         background: #f9f9f9; }
         @media (max-width: 480px) {
           .myview-settings .table-responsive .table thead th {
-            padding: 8px 0px 10px 10px;
-            padding: 0.5rem 0rem 0.625rem 0.625rem; } }
+            /*padding: 0.5rem 0rem 0.625rem 0.625rem;*/ } }
         .myview-settings .table-responsive .table thead th p {
           font-size: 1em;
           text-align: left;
@@ -3835,11 +3837,8 @@ header .header-account-access {
               font-size: 1em;
               font-weight: normal; } }
           .myview-settings .table-responsive .table thead th p.nosubscr {
-            margin: -40px 0 -30px;
+            margin: -40px 0 0;
             font-weight: normal; }
-          .myview-settings .table-responsive .table thead th p.pickTxt {
-            width: 270px;
-            width: 16.875rem; }
         .myview-settings .table-responsive .table thead th.firstrow {
           padding: 40px 20px 10px;
           padding: 2.5rem 1.25rem 0.625rem; }
@@ -3925,6 +3924,10 @@ header .header-account-access {
                 position: relative;
                 left: 0;
                 background-position: 0 0; } }
+          @media screen and (min-width: 667px) and (max-width: 767px) {
+            .myview-settings .table-responsive .table thead th .accordionImg a, .myview-settings .table-responsive .table thead th .accordionImg .pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .mobile-table-exit {
+              margin-right: 50px;
+              margin-right: 3.125rem; } }
           .myview-settings .table-responsive .table thead th .accordionImg a.expanded, .myview-settings .table-responsive .table thead th .accordionImg .expanded.pop-out__reset-password, .myview-settings .table-responsive .table thead th .accordionImg .expanded.sortable-table__list-toggler, .myview-settings .table-responsive .table thead th .accordionImg .expanded.mobile-table-exit {
             background-position: 0 0; }
           @media screen and (min-width: 801px) and (max-width: 1130px) {
@@ -3943,8 +3946,6 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
         height: 32px;
         height: 2rem;
         text-align: center;
@@ -3952,6 +3953,7 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
+        padding: 0 20px;
         margin-top: 8px;
         margin-top: 0.5rem; }
         .myview-settings .table-responsive .table thead .followAllBtn:hover {
@@ -3970,8 +3972,6 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
         height: 32px;
         height: 2rem;
         text-align: center;
@@ -3979,6 +3979,7 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
+        padding: 0 20px;
         margin-top: 8px;
         margin-top: 0.5rem; }
         .myview-settings .table-responsive .table thead .followinglbl:hover {
@@ -3998,8 +3999,6 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
         height: 32px;
         height: 2rem;
         text-align: center;
@@ -4007,13 +4006,20 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
+        padding: 0 20px;
         background-color: #f7941e;
         color: #ffffff;
         margin: 8px 0 0 20px;
-        margin: 0.5rem 0 0 1.25rem; }
+        margin: 0.5rem 0 0 1.25rem;
+        padding: 0 16px;
+        padding: 0 1rem; }
         .myview-settings .table-responsive .table thead .unfollowAllBtn.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
+        @media screen and (min-width: 667px) and (max-width: 767px) {
+          .myview-settings .table-responsive .table thead .unfollowAllBtn {
+            padding: 0 20px;
+            padding: 0 1.25rem; } }
       .myview-settings .table-responsive .table thead .followlbl {
         border: 1px solid #f7941e;
         cursor: pointer;
@@ -4021,8 +4027,6 @@ header .header-account-access {
         font-size: 0.75em;
         font-family: "Roboto";
         font-weight: 700;
-        width: 120px;
-        width: 7.5rem;
         height: 32px;
         height: 2rem;
         text-align: center;
@@ -4030,10 +4034,13 @@ header .header-account-access {
         line-height: 32px;
         line-height: 2rem;
         float: right;
+        padding: 0 20px;
         background-color: #f7941e;
         color: #ffffff;
         margin: 8px 0 0 20px;
-        margin: 0.5rem 0 0 1.25rem; }
+        margin: 0.5rem 0 0 1.25rem;
+        padding: 0 36px;
+        padding: 0 2.25rem; }
         .myview-settings .table-responsive .table thead .followlbl.mtp {
           margin-top: -6px;
           margin-bottom: 25px; }
@@ -4073,7 +4080,8 @@ header .header-account-access {
   .myview-settings .hideBtn {
     display: none !important; }
   .myview-settings .saveoption {
-    float: right; }
+    float: left;
+    width: 100%; }
     .myview-settings .saveoption .gotoview {
       border: 1px solid #f7941e;
       cursor: pointer;
@@ -4081,8 +4089,6 @@ header .header-account-access {
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      width: 150px;
-      width: 9.375rem;
       height: 32px;
       height: 2rem;
       text-align: center;
@@ -4094,7 +4100,8 @@ header .header-account-access {
       margin-left: 1.25rem; }
       .myview-settings .saveoption .gotoview a, .myview-settings .saveoption .gotoview .pop-out__reset-password, .myview-settings .saveoption .gotoview .sortable-table__list-toggler, .myview-settings .saveoption .gotoview .mobile-table-exit {
         color: #58595b;
-        display: block; }
+        display: block;
+        padding: 0 25px; }
         .myview-settings .saveoption .gotoview a:hover, .myview-settings .saveoption .gotoview .pop-out__reset-password:hover, .myview-settings .saveoption .gotoview .sortable-table__list-toggler:hover, .myview-settings .saveoption .gotoview .mobile-table-exit:hover {
           background: #f7941e;
           color: #ffffff;
@@ -4109,8 +4116,6 @@ header .header-account-access {
           font-size: 0.75em;
           font-family: "Roboto";
           font-weight: 700;
-          width: 120px;
-          width: 7.5rem;
           height: 32px;
           height: 2rem;
           text-align: center;
@@ -4118,15 +4123,18 @@ header .header-account-access {
           line-height: 32px;
           line-height: 2rem;
           float: right; } }
+    .myview-settings .saveoption .complete-settings {
+      display: inline-block;
+      float: right; }
     .myview-settings .saveoption .saveview {
+      padding: 0 32px;
+      padding: 0 2rem;
       border: 1px solid #f7941e;
       cursor: pointer;
       text-transform: uppercase;
       font-size: 0.75em;
       font-family: "Roboto";
       font-weight: 700;
-      width: 90px;
-      width: 5.625rem;
       height: 32px;
       height: 2rem;
       text-align: center;
@@ -4140,6 +4148,32 @@ header .header-account-access {
       color: #ffffff; }
       @media (max-width: 480px) {
         .myview-settings .saveoption .saveview {
+          float: left;
+          margin: 0px;
+          padding: 0 40px;
+          padding: 0 2.5rem; } }
+    .myview-settings .saveoption .registrationBtn {
+      padding: 0 32px;
+      padding: 0 2rem;
+      border: 1px solid #f7941e;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 0.75em;
+      font-family: "Roboto";
+      font-weight: 700;
+      height: 32px;
+      height: 2rem;
+      text-align: center;
+      display: inline-block;
+      line-height: 32px;
+      line-height: 2rem;
+      float: right;
+      margin-left: 20px;
+      margin-left: 1.25rem;
+      background: #f7941e;
+      color: #ffffff; }
+      @media (max-width: 480px) {
+        .myview-settings .saveoption .registrationBtn {
           width: 120px;
           width: 7.5rem; } }
   .myview-settings .dosubscribe .followrow {
@@ -4249,14 +4283,33 @@ header .header-account-access {
   .myview-settings .alert-error {
     margin-bottom: 20px; }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .myview-settings .hidden-large {
-    display: block !important; }
+    display: block !important; } }
+
+@media (max-width: 800px) {
+  .myview-settings .desktopMode {
+    margin-left: -30px;
+    margin-left: -1.875rem; } }
+
+@media screen and (min-width: 800px) and (max-width: 900px) {
+  .myview-settings .desktopMode {
+    margin-left: -40px;
+    margin-left: -2.5rem; } }
+
+@media screen and (min-width: 640px) and (max-width: 900px) {
+  .myview-settings .desktopMode {
+    margin-left: -55px;
+    margin-left: -3.4375rem; } }
+
+@media screen and (min-width: 480px) and (max-width: 640px) {
+  .myview-settings .accordionStatus.hideRow {
+    display: none; } }
+
+@media (max-width: 480px) {
   .myview-settings .smfollowingBtn {
     margin-top: -8px;
-    margin-top: -0.5rem;
-    margin-right: 68px;
-    margin-right: 4.25rem; }
+    margin-top: -0.5rem; }
     .myview-settings .smfollowingBtn .unfollowAllBtn {
       background-position: 0 0;
       text-indent: -140px;
@@ -4316,6 +4369,12 @@ header .header-account-access {
 @media (max-width: 800px) {
   .desktophide {
     display: block !important; } }
+
+.pub-subscription-subtitle {
+  clear: both;
+  float: left;
+  margin: 15px 0 0 0;
+  padding: 0; }
 
 @media (max-width: 1080px) {
   .personalisationhome .topic-featured-article__headline {

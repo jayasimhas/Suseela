@@ -232,7 +232,7 @@ $(function(){
 		UserPreferences.PreferredChannels = [];
 		
 		for(var k = 0; k < allpublications.length; k++){
-			var tbody = $(allpublications[k]).find('tbody'), newtrs = tbody.find('tr'), cnt = 0;
+			var tbody = $(allpublications[k]).find('tbody'), newtrs = tbody.find('tr');
 			newtrs.removeAttr('data-row');
 			for(var v = 0; v < newtrs.length; v++){
 				$(newtrs[v]).attr('data-row', v+1);
@@ -264,17 +264,17 @@ $(function(){
 			type: 'POST',
 			success: function(data){
 				if(data && data.success){
-					//$('.alert-success p').html(data.reason);
+					$('.alert-success p').html(data.reason);
 					$('.alert-success').show();
 				}
 				else{
-					//$('.alert-error p').html(data.reason);
+					$('.alert-error p').html(data.reason);
 					$('.alert-error').show();
 				}
 			},
 			error: function(err){
 				if(err && !err.success){
-					//$('.alert-error p').html(err.reason);
+					$('.alert-error p').html(err.reason);
 					$('.alert-error').show();
 				}
 			}
@@ -282,7 +282,7 @@ $(function(){
 		
 		$('#validatePreference').val(0);
 	});
-	
+	 
 	$('.gotoview').click(function(e){
 		if(+$('#validatePreference').val()){
 			e.preventDefault();

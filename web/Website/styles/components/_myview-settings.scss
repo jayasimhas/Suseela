@@ -5,7 +5,6 @@
 	font-size: 0.75em;
 	font-family: "Roboto";
 	font-weight: 700;
-	width: $w;
 	height: $h;
 	text-align: center;
 	display: inline-block;
@@ -42,7 +41,8 @@
 	}
 }
 @mixin unfollowBtnLbl(){
-	@include folow-btn(7.5rem, 2rem);
+	@include folow-btn(auto, 2rem);
+	padding: 0 20px;
 	background-color: $color-tree-poppy-orange;
 	color: $color-white;
 	margin: 0.5rem 0 0 1.25rem;
@@ -52,7 +52,8 @@
 	}
 }
 @mixin followBtnLbl(){
-	@include folow-btn(7.5rem, 2rem);
+	@include folow-btn(auto, 2rem);
+	padding: 0 20px;
 	margin-top: 0.5rem;
 	&:hover{
 		background-color: $color-tree-poppy-orange;
@@ -127,9 +128,10 @@
 			float: left;
 			cursor: pointer;
 			padding-left: 1.25rem;
-			margin: 0.1875rem 1.25rem;
+			margin: 3px 20px;
+			vertical-align: top;
+			line-height: 30px;
 			position: relative;
-			top: -2px;
 			@include breakpoint('medium-small') {
 				font-size: 0.875em;
 				border-left: none;				
@@ -152,7 +154,7 @@
 				font-size: 0.875em;
 				border-left: none;				
 				padding-left: 0rem;
-				margin: 0rem;
+				margin: 0 !important;
 			}
 		}
 	}
@@ -182,6 +184,7 @@
 					}
 					.followingBtn{
 						@include folow-btn(7.5rem, 2rem);
+						padding: 0 1.625rem;
 						&:hover{
 							background: $color-tree-poppy-orange;
 							color: $color-white;
@@ -191,6 +194,7 @@
 							height: 1.875rem;
 							width: 1.875rem;
 							border: none;
+							padding: 0 1rem;
 							display: inline-block;
 							margin-left: 0.625rem;
 							text-indent: -9999px;
@@ -198,6 +202,7 @@
 					}
 					.followBtn{
 						@include folow-btn(7.5rem, 2rem);
+						padding: 0 2.25rem;
 						background: $color-tree-poppy-orange;
 						color: $color-white;
 						@include breakpoint('medium-small'){
@@ -207,6 +212,7 @@
 							display: inline-block;
 							margin-left: 0.625rem;
 							border: none;
+							padding: 0 1rem;
 							text-indent: -9999px;
 						}
 					}
@@ -265,7 +271,7 @@
 					@include tableData(0px);
 					background: #f9f9f9;
 					@include breakpoint('small') {
-						padding: 0.5rem 0rem 0.625rem 0.625rem;
+						/*padding: 0.5rem 0rem 0.625rem 0.625rem;*/
 					}
 					p{
 						font-size: 1em; 
@@ -279,12 +285,9 @@
 						}
 						
 						&.nosubscr{
-							margin: -40px 0 -30px;
+							margin: -40px 0 0;
 							font-weight: normal;
-						}
-						&.pickTxt{
-							width: 16.875rem;
-						}
+						} 
 					} 
 					&.firstrow{
 						padding: 2.5rem 1.25rem 0.625rem;
@@ -347,7 +350,10 @@
 									left: 0;
 									background-position: 0 0; 
 								}
-							} 
+							}
+							@media screen and (min-width: 667px) and (max-width: 767px){
+								margin-right: 3.125rem;
+							}
 							&.expanded{
 								background-position: 0 0;
 							}
@@ -377,9 +383,14 @@
 				}
 				.unfollowAllBtn{
 					@include unfollowBtnLbl();
+					padding: 0 1rem;
+					@media screen and (min-width: 667px) and (max-width: 767px){
+						padding: 0 1.25rem;
+					}
 				}
 				.followlbl{
 					@include unfollowBtnLbl();
+					padding: 0 2.25rem;
 					@include breakpoint('medium-small') {
 						margin: 0px !important;
 						float: left;
@@ -424,13 +435,15 @@
 	  display: none !important;
   }
   .saveoption{
-	  float: right;
+	  float: left;
+	  width: 100%;
 	  .gotoview{
-		 @include folow-btn(9.375rem, 2rem);
+		 @include folow-btn(auto, 2rem);
 		  margin-left: 1.25rem;
 		  a{
 			color: $color-abbey-gray;
 			display: block;
+			padding: 0 25px;
 			&:hover{
 				background: $color-tree-poppy-orange;
 				color: $color-white;
@@ -443,9 +456,27 @@
 		@include breakpoint('small') {
 			@include folow-btn(7.5rem, 2rem);
 		}
+		
 	  }
+	  .complete-settings{
+			display: inline-block;
+			float: right;
+		}
 	  .saveview{
-		 @include folow-btn(5.625rem, 2rem);
+		padding: 0 2rem;
+		 @include folow-btn(auto, 2rem);
+		  margin-left: 1.25rem;
+		  background: $color-tree-poppy-orange;
+		  color: $color-white;
+		  @include breakpoint('small') {
+			float: left;
+			margin: 0px;
+			padding: 0 2.5rem;
+		  }
+	  }
+	  .registrationBtn{
+		padding: 0 2rem;
+		 @include folow-btn(auto, 2rem);
 		  margin-left: 1.25rem;
 		  background: $color-tree-poppy-orange;
 		  color: $color-white;
@@ -554,14 +585,51 @@
 		margin-bottom: 20px;
 	}
 }
-@include breakpoint('small') {
-	.myview-settings{
+
+@include breakpoint('medium-small') {
+	.myview-settings{ 
 		.hidden-large{
 			display: block !important;
 		}
+	}
+}
+
+@include breakpoint('medium') {
+	.myview-settings{
+		.desktopMode{
+			margin-left: -1.875rem;
+		}
+	}
+}
+
+@media screen and (min-width: 800px) and (max-width: 900px){
+	.myview-settings{
+		.desktopMode{
+			margin-left: -2.5rem;
+		}
+	}
+}
+@media screen and (min-width: 640px) and (max-width: 900px){
+	.myview-settings{
+		.desktopMode{
+			margin-left: -3.4375rem;
+		}
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 640px){
+	.myview-settings{
+		.accordionStatus{
+			&.hideRow{
+				display: none;
+			}
+		}
+	}
+}
+@include breakpoint('small') {
+	.myview-settings{ 
 		.smfollowingBtn{
 			margin-top: -0.5rem;
-			margin-right: 4.25rem;
 			
 			.unfollowAllBtn{
 				background-position: 0 0;
@@ -675,4 +743,10 @@
 	.desktophide{
 		display: block !important;
 	}
+}
+.pub-subscription-subtitle{
+	clear: both;
+	float: left;
+	margin: 15px 0 0 0;
+	padding: 0;
 }
