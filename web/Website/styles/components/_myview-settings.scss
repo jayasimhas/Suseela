@@ -117,10 +117,14 @@
 		h2{
 			text-align: left;
 			float: left;
+			width: 31.25rem;
+			line-height: 2.5rem;
 			@include breakpoint('medium-small') {
 				font-size: 1.25em;
 				margin-bottom: 0.75rem;
 				float: none;
+				width: auto;
+				line-height: 1.625rem;
 			}
 		}
 		.subscribed{
@@ -376,6 +380,7 @@
 				}
 				.followinglbl{
 					@include followBtnLbl();
+					cursor: text;
 					@include breakpoint('medium-small') {
 						margin: 0px !important;
 						float: left;
@@ -391,6 +396,7 @@
 				.followlbl{
 					@include unfollowBtnLbl();
 					padding: 0 2.25rem;
+					cursor: text;
 					@include breakpoint('medium-small') {
 						margin: 0px !important;
 						float: left;
@@ -455,6 +461,8 @@
 		  }
 		@include breakpoint('small') {
 			@include folow-btn(7.5rem, 2rem);
+			float: left;
+			margin: 0px;
 		}
 		
 	  }
@@ -469,7 +477,7 @@
 		  background: $color-tree-poppy-orange;
 		  color: $color-white;
 		  @include breakpoint('small') {
-			float: left;
+			float: right;
 			margin: 0px;
 			padding: 0 2.5rem;
 		  }
@@ -584,6 +592,9 @@
 	.alert-error{
 		margin-bottom: 20px;
 	}
+	.tbodyhidden{
+		display: none;
+	}	
 }
 
 @include breakpoint('medium-small') {
@@ -599,9 +610,20 @@
 		.desktopMode{
 			margin-left: -1.875rem;
 		}
+		.firstrow{
+			h2{
+				width: auto;
+			}
+		}
 	}
 }
-
+@media screen and (min-width: 768px) and (max-width: 1024px){
+	.myview-settings{
+		.firstrow h2{
+			width: 15rem;
+		}
+	}
+}
 @media screen and (min-width: 800px) and (max-width: 900px){
 	.myview-settings{
 		.desktopMode{
@@ -673,19 +695,9 @@
 				border: none !important;
 			}
 		}		
-	}
-	
+	} 
 }
-@media only screen and (min-width: 481px) {
-	/*.hidden-lg{
-		display: none !important;
-	}*/
-}
-
-.tbodyhidden{
-	display: none;
-}
-
+ 
 /************ drag and drop styles ***********/
 .drop {
 	-webkit-animation: drop 1s ease;
