@@ -3578,8 +3578,8 @@ header .header-account-access {
     margin-bottom: 20px;
     margin-bottom: 1.25rem; }
     .myview-settings .sub-heading-text p {
-      line-height: 16px;
-      line-height: 1rem;
+      line-height: 32px;
+      line-height: 2rem;
       font-style: normal;
       font-family: "PT Serif Caption";
       font-weight: 400;
