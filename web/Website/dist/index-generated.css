@@ -3644,6 +3644,10 @@ header .header-account-access {
           padding-left: 0rem;
           margin: 0px;
           margin: 0rem; } }
+      .myview-settings .publicationPan .subscribed a, .myview-settings .publicationPan .subscribed .pop-out__reset-password, .myview-settings .publicationPan .subscribed .sortable-table__list-toggler, .myview-settings .publicationPan .subscribed .mobile-table-exit {
+        color: #fff; }
+        .myview-settings .publicationPan .subscribed a:hover, .myview-settings .publicationPan .subscribed .pop-out__reset-password:hover, .myview-settings .publicationPan .subscribed .sortable-table__list-toggler:hover, .myview-settings .publicationPan .subscribed .mobile-table-exit:hover {
+          text-decoration: none; }
     .myview-settings .publicationPan .subscribe {
       float: left;
       width: 120px;
