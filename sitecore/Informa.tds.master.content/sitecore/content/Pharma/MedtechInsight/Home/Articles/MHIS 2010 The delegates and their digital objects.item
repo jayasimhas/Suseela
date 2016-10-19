@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {5AD200C8-75B2-4E27-8AFA-322F5D160A20}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/MHIS 2010 The delegates and their digital objects
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: MHIS 2010 The delegates and their digital objects
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 6a7a39c6-eaa1-4b04-b90b-f58709e7d19d
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 3591
+
+<p> <p><em><strong>Words and photos: Salina Christmas</strong><br> 6 October 2010</em></p> <p><a></a></p> <p>Apart from top-down descriptions of mobile phone-based technologies, the summit also featured presentations that focused on the sociality around mobile health systems and devices. There were talks on 'insertion points' and common denominators, but they all boiled down to the notion of mobile phones being the extension of the self, and how people, in healthcare settings, interact with these 'm-health' objects. And while talks went on at the front of the hall, the audience at the back engaged with the extension of themselves, namely their mobile phones, Flip cameras, laptops and tablets.</p>  <tr> <td><div></div></td> <td><div></div></td> </tr> <tr> <td><strong>Left:</strong> Ilka Vartiainen, CEO, European Mobile Health Alliance (EUMHA) checks his messages. <strong>Right</strong>: Eric Leven, Director, Riproad, is constantly on email communications on his Mac.</td> </tr> <tr> <td><div></div></td> <td><div></div></td> </tr> <tr> <td><strong>Left:</strong> Brian Dolan, Editor, Mobilehealthnews.com, who is chairing several of the talks, is being captured on a Flip camera. <strong>Right</strong>: It's good to text.</td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> David Doherty, co-founder, 3G Doctor, tweets throghout the summit. <strong>Right</strong>: Doherty, pictured left, and Informa Telecoms &amp; Media Conference Manager Sophie Powell, pictured right, keeping up-to-date using the laptops. </td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> The charismatic Don Jones, VP Healthcare, Qualcomm, explains to Tam McDonald, CEO, Harley Street World, during filming, about the Qualcomm chip. <strong>Right</strong>: The cameraman asks Jones to hold that pose a little longer for the shot. </td> </tr> <tr> <td><em>Reportage: Salina Christmas </em></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr>  <p><escenic_non_breaking_space></escenic_non_breaking_space></p>  <tr> <td><div></div></td> <td><div></div></td> </tr> <tr> <td>Thomas Bergdahl (pictured, right) of Doro AB shows Clinica the Doro mobile phones. We like the red model. </td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> A delegate texts as Robin Spinks, Principal Manager, Digital Accessibility, Royal Institute of the Blind (RNIB) talks about health wellness functionality at source for devices. <strong>Right:</strong> Spinks shows how the iPad works in this context. </td> </tr> <tr> <td></td> <td></td> </tr> <tr> <td><strong>Left:</strong> The iPad wows <em>Clinica</em>. In the background, Dr Talya Miron-Shatz, Head, Center for Medical Decision Making, Ono Academic College, Israel/University of Pennsylvania. <strong>Right:</strong> Qualcomm devices on display outside the conference hall. </td> </tr> <tr> <td><em>Reportage: Salina Christmas </em></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr>  <p><a>The Mobile Healthcare Industry Summit</a><br> <a>Telecoms.com</a></p> <p><strong>CONFERENCE REPORT</strong><br> <a>MHIS 2010: All bets are on m-health, but where to start to cash in on opportunities?</a></p> <p><strong>PHOTO ESSAYS </strong><br> <a>MHIS 2010: Speakers and delegates</a> <br> <a>MHIS 2010: Coffee and conversation </a><br> <a>MHIS 2010: Delegates and their digital objects</a><br> <a>MHIS 2010: Get on your bike</a><br> <a>MHIS 2010: Competitions and winners </a><br> <a>MHIS 2010: Harley Street World discusses health and sports </a></p> </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 50
+
+MHIS 2010: The delegates and their digital objects
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 6131
+
+<p> <p><em><strong>Words and photos: Salina Christmas</strong><br> 6 October 2010</em></p> <p><a href="http://www.mobilehealthcareindustrysummit.com/" target="_blank"><img src="-/media/5A43EAFC8E844221851DE7C3E4CCB4CA.ashx" alt="Mobile Healthcare Industry Summit 2010" width="200" height="43" border="0" align="left" style="margin-right: 3px"></a></p> <p>Apart from top-down descriptions of mobile phone-based technologies, the summit also featured presentations that focused on the sociality around mobile health systems and devices. There were talks on 'insertion points' and common denominators, but they all boiled down to the notion of mobile phones being the extension of the self, and how people, in healthcare settings, interact with these 'm-health' objects. And while talks went on at the front of the hall, the audience at the back engaged with the extension of themselves, namely their mobile phones, Flip cameras, laptops and tablets.</p> <table> <tr> <td><div><img src="-/media/8E375B39550F4C60AC2B4869A6EFE22C.ashx" width="350" height="232" style="margin-right: 3px"></div></td> <td><div><img src="-/media/F28A88B72CEE4A3B867072D94D9E86BA.ashx" width="350" height="232"></div></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Ilka Vartiainen, CEO, European Mobile Health Alliance (EUMHA) checks his messages. <strong>Right</strong>: Eric Leven, Director, Riproad, is constantly on email communications on his Mac.</td> </tr> <tr> <td><div><img src="-/media/965115D459FF48E991CC5E823AF9A7E5.ashx" width="350" height="232"></div></td> <td><div><img src="http://www.clinica.co.uk/multimedia/archive/00106/mhis_devices_4_106658a.jpg" width="350" height="232"></div></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> Brian Dolan, Editor, Mobilehealthnews.com, who is chairing several of the talks, is being captured on a Flip camera. <strong>Right</strong>: It's good to text.</td> </tr> <tr> <td><img src="http://www.clinica.co.uk/multimedia/archive/00106/mhis_devices_5_106659a.jpg" width="350" height="232" style="margin-right: 3px"></td> <td><img src="-/media/BDC8846BF0DD4D5C8D09A7D91F91A623.ashx" width="350" height="232"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> David Doherty, co-founder, 3G Doctor, tweets throghout the summit. <strong>Right</strong>: Doherty, pictured left, and Informa Telecoms &amp; Media Conference Manager Sophie Powell, pictured right, keeping up-to-date using the laptops. </td> </tr> <tr> <td><img src="-/media/5A96E030942C4FFA913C4ED23649A7A7.ashx" width="350" height="232"></td> <td><img src="-/media/7E2971D5386442E08278E2D53CADF6D3.ashx" width="350" height="232"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> The charismatic Don Jones, VP Healthcare, Qualcomm, explains to Tam McDonald, CEO, Harley Street World, during filming, about the Qualcomm chip. <strong>Right</strong>: The cameraman asks Jones to hold that pose a little longer for the shot. </td> </tr> <tr> <td><em>Reportage: Salina Christmas </em></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> </table> <p><escenic_non_breaking_space></escenic_non_breaking_space></p> <table> <tr> <td><div><img src="-/media/DC823DAF9AF445E49E9C3F637A66E367.ashx" width="350" height="232" style="margin-right: 3px"></div></td> <td><div><img src="-/media/CD21EADF64E8472B8E57F8D60718BC6D.ashx" width="350" height="232"></div></td> </tr> <tr> <td colspan="2">Thomas Bergdahl (pictured, right) of Doro AB shows Clinica the Doro mobile phones. We like the red model. </td> </tr> <tr> <td><img src="http://www.clinica.co.uk/multimedia/archive/00106/mhis_devices_12_106666a.jpg" width="350" height="232"></td> <td><img src="http://www.clinica.co.uk/multimedia/archive/00106/mhis_speakers_14_106668a.jpg" width="350" height="232" style="margin-right: 3px"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> A delegate texts as Robin Spinks, Principal Manager, Digital Accessibility, Royal Institute of the Blind (RNIB) talks about health wellness functionality at source for devices. <strong>Right:</strong> Spinks shows how the iPad works in this context. </td> </tr> <tr> <td><img src="http://www.clinica.co.uk/multimedia/archive/00106/mhis_devices_13_106667a.jpg" width="350" height="232"></td> <td><img src="-/media/8FE8FEC1D2D6465F855698E1CD4787A9.ashx" width="350" height="232" style="margin-right: 3px"></td> </tr> <tr> <td colspan="2"><strong>Left:</strong> The iPad wows <em>Clinica</em>. In the background, Dr Talya Miron-Shatz, Head, Center for Medical Decision Making, Ono Academic College, Israel/University of Pennsylvania. <strong>Right:</strong> Qualcomm devices on display outside the conference hall. </td> </tr> <tr> <td><em>Reportage: Salina Christmas </em></td> <td><escenic_non_breaking_space></escenic_non_breaking_space></td> </tr> </table> <p><a href="http://www.mobilehealthcareindustrysummit.com/" target="_blank" class="optionsLink">The Mobile Healthcare Industry Summit</a><br> <a href="http://www.telecoms.com/" target="_blank" class="optionsLink">Telecoms.com</a></p> <p><strong>CONFERENCE REPORT</strong><br> <a href="http://www.clinica.co.uk/marketsector/imagingit/MHIS-2010-All-bets-are-on-m-health-but-where-to-start-to-cash-in-on-opportunities-304020" class="optionsLink">MHIS 2010: All bets are on m-health, but where to start to cash in on opportunities?</a></p> <p><strong>PHOTO ESSAYS </strong><br> <a href="http://www.clinica.co.uk/mhis10/speakers/" class="optionsLink">MHIS 2010: Speakers and delegates</a> <br> <a href="http://www.clinica.co.uk/mhis10/coffee_break/" class="optionsLink">MHIS 2010: Coffee and conversation </a><br> <a href="http://www.clinica.co.uk/mhis10/devices/" class="optionsLink">MHIS 2010: Delegates and their digital objects</a><br> <a href="http://www.clinica.co.uk/mhis10/bicycle/" class="optionsLink">MHIS 2010: Get on your bike</a><br> <a href="http://www.clinica.co.uk/mhis10/winners/" class="optionsLink">MHIS 2010: Competitions and winners </a><br> <a href="http://www.clinica.co.uk/mhis10/harley_street/" class="optionsLink">MHIS 2010: Harley Street World discusses health and sports </a></p> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 49
+
+MHIS 2010 The delegates and their digital objects
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T191343
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT056958
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 50
+
+MHIS 2010: The delegates and their digital objects
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+303864
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T185812Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6a7a39c6-eaa1-4b04-b90b-f58709e7d19d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T231343Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

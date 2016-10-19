@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {EF05A67D-A068-4AFA-9BD1-B984E9FFBA00}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/01/09/Medical technology changes with the times  Surgery and lasers in 1994 part 3
+parent: {7B86794A-DD4D-4230-BCA8-3B9DB9A7ED1A}
+name: Medical technology changes with the times  Surgery and lasers in 1994 part 3
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 67f37b29-964a-4bd1-b0f2-f518b3fedf1c
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 435
+
+<p>Minimally invasive surgery (MIS) continued to dominate developments in the surgery market in 1994. Early in the year, a UK working group concluded that in ten years' time, 70% of surgical operations will be conducted endoscopically. The use of MIS, in addition to new and improved medicines, could lead to the closure of 45,000 (40%) acute care hospital beds in the same period, according to Health Secretary Virginia Bottomley.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 77
+
+Medical technology changes with the times - Surgery and lasers in 1994 part 3
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7412
+
+<p>Minimally invasive surgery (MIS) continued to dominate developments in the surgery market in 1994. Early in the year, a UK working group concluded that in ten years' time, 70% of surgical operations will be conducted endoscopically. The use of MIS, in addition to new and improved medicines, could lead to the closure of 45,000 (40%) acute care hospital beds in the same period, according to Health Secretary Virginia Bottomley.</p><p>The use of an MIS technique for gall bladder surgery was compared with conventional minilaparotomy in a multi-centre UK trial of 302 patients. Researchers found that laparoscopic cholecystectomy results in a shorter hospital stay, less post-operative dysfunction and quicker return to normal activity than the conventional technique. However, it was more expensive, they add. Post-operative complications were similar in both groups and the MIS technique resulted in a higher incidence of bile duct injury.</p><p>Later in the year, the UK Department of Health called for MIS to be restricted to trial centres, adding that with the exception of cholecystectomy, there is no evidence that the technique is better than open surgery. The NHS Executive Research and Development Directorate added that the cost-effectiveness of laparoscopic cholecystectomy has yet to be demonstrated.</p><p>MIS training</p><p>Safety issues played a major part in MIS developments in the year. The Royal Surgical Colleges of Great Britain and Ireland published a number of proposals related to MIS covering surgical training, continuing education, certification and audit. The Royal College of Obstetricians and Gynaecologists also published an MIS training framework in response to concerns over the safety of the technique.</p><p>UK company Limbs & Things launched an MIS training dummy and a research centre was set up at Manchester Royal Infirmary using virtual reality to train surgeons on MIS techniques. Marconi Simulation and Training (UK) announced it is collaborating with European companies and institutions to develop a 3-D virtual reality training simulator.</p><p>new MIS products</p><p>The two main players in the US MIS market, United States Surgical and Johnson & Johnson subsidiary Ethicon, both launched new products at the American College of Surgeons Congress in Chicago in October. US Surgical's optical trocar, Visiport, accepts a standard 10 mm scope and can be fired repeatedly, allowing the surgeon to work through the abdomen wall avoiding damage to other structures. Ethicon's new optical obturator, Endopath, has a lens mounted on a conical tip and two recessed blades for controlled entry. The companies also launched suturing devices: Ethicon's Autosuture uses a standard needle and features automatic knot tying; and US Surgical's Endostitch is a reloadable double-ended needle with a centrally-attached suture which works like a sewing machine.</p><p>Advanced Surgical (US) launched a range of MIS products in 1994. The eXcel-DR puncture closure device and Glasser laparoscopic suture needle both use a mixture of disposable and reusable components. The company also launched products developed by its recent acquisition, Laparomed, including two devices for percutaneous introduction of laparoscopes and a colangiography catheter for diagnostic procedures during gall-bladder surgery.</p><p>Origin Medsystems (US) claimed its new needle endoscopy system overcomes the visual limitations of small fibre-optic scopes. The EnView Vision system and Pixie microendoscope are designed to give views with greater field depth, allowing the user to see 15 to 20 cm ahead. Japanese company Fujinon introduced a new video endoscope at Medica 94 in Germany which can produce a 410,000 pixel digital image. The high cost of the system means it is sold for research only but an analog version is available for clinical use.</p><p><strong>[C#198600199:Pfizer]</strong> subsidiary Valleylab (UK) introduced what it claimed was the first electrosurgery system designed specifically for laparoscopic procedures. The Procision bipolar system combines the performance of monopolar systems with localised tissue effects. The battery-powered system, tested at 16 clinical sites in the UK and US, was launched in Europe, with Australia, Canada and the US to follow. Karl Storz (Germany) launched an endoscope guide and intubation aid for patients with constricted larynx. The Tuttlingen-based company also introduced two 9.5 F urology systems: the Gelet continuous-flow ureteroscope features a remote eyepiece, allowing the physician to keep both hands free; and the other continuous-flow system features a movable eyepiece and stepped sheath to aid insertion.</p><p>MIS robot</p><p>Computer Motion (US) received FDA marketing clearance for its robot assistant for MIS. AEesop, which holds and moves the surgeon's laparoscope, made its debut at the American College of Obstetricians and Gynaecologists in May. It replaces the nurse or technician who would operate the scope under verbal command and is controlled by the hand or foot.</p><p>BPH</p><p>The use of lasers to treat benign prostatic hyperplasia made the news in 1994 with concerns over off-label use of Nd:YAG lasers prompting the US FDA to advise manufacturers that a PMA would be required for this indication and that it is illegal to promote lasers for BPH treatment under a 510(k) clearance. Indigo Medical has entered clinical trials in Europe with a gallium-aluminium-arsenide diode laser to treat BPH while Cabot Medical launched the Ultragold urological laser fibre, approved for use in the urinary tract but not for BPH.</p><p>Dornier Medizintechnik (Germany) introduced the UroWave system for BPH treatment which uses microwave energy to heat the prostate above 45 degrees - higher than other hyperthermal methods, says the company. An integrated cooling system prevents overheating of the urethra and temperature is monitored constantly. A US trial of VidaMed's transurethral needle ablation (TUNA) system for treating BPH began during the year. The blinded, randomised trial of over 100 patients will measure procedure outcome against complications associated with standard surgical treatment and an additional study will assess cost-effectiveness. The TUNA system, which comprises a catheter, RF generator and fibre-optic scope is approved in several European countries.</p><p>surgical lasers</p><p>Sharplan (US) received FDA approval to market its new Nd:YAG and CO(2) lasers in the US. The 40 and 60 W Nd:YAG systems are air-cooled and smaller than other systems for use in urology applications. The 40 W CO2 system is for use in laparoscopic ENT and gynaecological procedures. Laserscope's (US) new Orion lasers, which have received FDA clearance, are the only systems to operate in continuous-wave or variable pulsing mode, says the company.</p><p>Researchers in the US are using an advanced laser system for soft tissue ablation which overcomes problems of damage to surrounding tissue and photochemical effects. The free-electron laser, installed at Vanderbilt University, Tennessee, operates at wavelengths between 2 and 10 microns, a range unattainable with other lasers. This allows the researchers to select the optimum wavelength for tissue ablation with minimal collateral damage. The team hopes to enter clinical trials of a system for neurosurgery and produce a dedicated laser at a lower cost.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 272
+
+{7AA0D9E7-CD93-42A7-A8C3-41A6A512D533}|{EBE9B072-7313-4B27-B849-CB50CD3B42E6}|{F5161CC2-772F-472E-A21C-BF196343462E}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{B3CB389F-B9B7-4041-9E3D-C9810F548727}|{023AF810-44A6-4788-BF12-09F49F37E94F}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 76
+
+Medical technology changes with the times  Surgery and lasers in 1994 part 3
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950109T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950109T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950109T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051001
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 77
+
+Medical technology changes with the times - Surgery and lasers in 1994 part 3
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600199
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+252770
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183721Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+67f37b29-964a-4bd1-b0f2-f518b3fedf1c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183721Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

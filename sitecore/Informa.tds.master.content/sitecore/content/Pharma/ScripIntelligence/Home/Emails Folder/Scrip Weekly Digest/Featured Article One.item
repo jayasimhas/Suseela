@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {B01AD55B-3A92-4755-9A07-F84CBD363BEF}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Emails Folder/Scrip Weekly Digest/Featured Article One
+parent: {E9CA55C0-C079-4886-AAF7-97DD34F24280}
+name: Featured Article One
+master: {00000000-0000-0000-0000-000000000000}
+template: {CB4CA050-2626-4979-A53D-77613B218043}
+templatekey: Featured Article
+
+----version----
+language: en
+version: 1
+revision: c00feeb2-003b-4b58-b11a-264dab74a787
+
+----field----
+field: {E4AF834D-E606-4424-8DDE-326953ED32B3}
+name: Article
+key: article
+content-length: 38
+
+{25918716-54A5-4B86-A91C-8C75F41A0CDD}
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160606T142904Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c00feeb2-003b-4b58-b11a-264dab74a787
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160606T145048Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {D6630A82-AE4B-4F68-A62D-B844ED2A60DA}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/05/01/Innovations spearhead Bayer Diagnostics drive for profits
+parent: {15F58FFA-40DD-4E79-AF60-F1AAEC858239}
+name: Innovations spearhead Bayer Diagnostics drive for profits
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 7901720a-60cc-4018-9f20-52ecc55bdda6
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 123
+
+<p>Brigitte Ascher reports on the immediate and ongoing advantages of buying back <strong>[C#198600358:Bayer]</strong>.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 58
+
+Innovations spearhead Bayer Diagnostics' drive for profits
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 7539
+
+<p>Brigitte Ascher reports on the immediate and ongoing advantages of buying back <strong>[C#198600358:Bayer]</strong>.</p><p>The small-town taxi driver in upstate New York was surprised to find one of Tarrytown's landmarks had changed its name. Miles Diagnostics' world headquarters, set in idyllic greenbelt countryside, was renamed Bayer Diagnostics at the beginning of April. Last year its German parent Bayer bought back the right to use the Bayer name in the US nearly 80 years after it was confiscated by the US government during the First World War - along with the German company's other assets in the US. "For us it is a tremendous advantage to be known as Bayer Diagnostics," Rolf Classon, senior vice-president of marketing, sales and service, told Clinica at the company's Tarrytown headquarters.</p><p>The Bayer group had sales of around $30,000 million last year from pharmaceuticals, chemicals, fibres - and diagnostics which contributed less than 4% to 1994 turnover but around 15% to Bayer's healthcare business. Bayer Diagnostics is relatively strong in clinical chemistry, diabetes testing and haematology and very strong in urine chemistry, as illustrated in the following market share data based on analysts' estimates:</p><pre>Bayer Diagnostics' world market position Market sector Market share Rank Clinical chemistry 7% 5 Diabetes 23% 3 Immunodiagnostics 1% - Haematology 13% 3 Urine chemistry 63% 1 Cellular diagnostics 26% 1</pre><p>Bayer Diagnostics is a comparatively late entrant in the immunodiagnostics field, having launched its Technicon Immuno 1 random-access immunoassay analyser after a delay of some years in 1993. Sales director Mr Classon believes that the system has benefited from the delay which was caused by a desire to get it right. This gave an advantage over the competition which may or may not persist.</p><p>Immuno 1 is one of the "fresh and competitive products" introduced in the last two years which make up Bayer Diagnostics' arsenal for the next phase of its development. This follows the completion of the restructuring and integration of Technicon (see box).</p><p>Other newly-marketed products include the Glucometer Elite and the Glucometer Encore. The Elite blood glucose monitoring system for self-monitoring was developed by Kyoto Daichii. Outside Japan, Bayer Diagnostics is distributing the product. The Encore system, designed for bedside blood glucose monitoring as well as self-monitoring, was developed internally.</p><p>In haematology, Bayer Diagnostics competes at the top end of the market where it holds around 40%. When including medium-sized and small systems its market share falls to 13%. A recently introduced product is the state-of-the-art haematology analyser H3 which is available in two models - the H3 RTC and H3 RTX - offering a choice of high-volume throughput from 60 to 102 CBS plus full differentials per hour plus 60 reticulocyte analyses per hour. In urine chemistry, Clinitek Atlas, a fully automated analyser, was introduced at the beginning of this year.</p><p>Clinical chemistry is the one business area where no major new development has occurred since 1989. At the time of the Technicon acquisition, this business unit's pipeline was empty. However, Bayer Diagnostics launched a modernised version of an established system at the end of last year under the name Opera - operationally enhanced RA. Mr Classon states: "After four months, Opera is more successful than we dared to think." In the late 1980s, Technicon had about 9,500 large systems installed. This bottomed out at around 8,000 in 1993 and has started growing again by about 5% a year. "We will build back to around 10,000 instruments and Opera is helpful in doing that," says Mr Classon.</p><p>Sales growth is accelerating for all these recently introduced products with Bayer Diagnostics focusing on the US, Canada, Germany, the UK, Italy and Spain. The company is disenchanted with France, which has been a declining market. In Japan, it has taken the company some time to merge two subsidiaries. However, Immuno 1 will be launched in May.</p><p>One of the goals of the next stage of Bayer Diagnostics' growth strategy is to balance its geographical profile with the relative total size of the diagnostics market. As the chart shows, the company is under-represented in the US but strong in western Europe.</p><p>Mr Classon believes that Bayer Diagnostics' US sales are improving but the rate of growth "will all depend on the success of Immuno 1 and the other new products".</p><p>In the longer term, R&D is concentrated on three areas - considerable investment is directed to diabetes; the combination of immunodiagnostics and clinical chemistry; with urine chemistry and haematology accounting for less significant amounts. While actual figures for R&D spending are not available for the diagnostics subsidiary, they are said to be around the industry average - about 10% of sales. Mr Classon adds: "We believe that our three healthcare businesses - pharmaceuticals, OTC and diagnostics - will create interesting synergies." As an example he mentions the company's efforts to develop a drug for the treatment of non-insulin diabetes which would complement Bayer Diagnostics' strength in diabetes testing.</p><p>As successful as such synergies may prove, the one major development Mr Classon identifies is the attempt to create efficiency gains or savings for customers by offering a broad and, even more important, an integrated product line with standardised components, workstations and software.</p><p>Bayer Diagnostics has embarked on building an innovative pattern of horizontal integration. This involves marketing a broad product line without being active in all stages (from R&D to production). For example, Bayer Diagnostics is a distributor in some areas, such as with Kyoto Daichii's blood glucose monitor, while in others it participates in R&D but licenses out the manufacturing. "For this you need to be a certain size and belong to the top group of companies, able to spend more than $100 million a year on R&D."</p><p>Ways to achieve such broad and eventually integrated product lines include alliances as well as acquisitions. The "large acquisition", however, that is in the offing for Bayer group as mentioned by chairman Manfred Schneider in January, is unlikely to concern the diagnostics division. Alliances, on the other hand, could be plentiful.</p><p>The Technicon acquisition</p><p>Bayer entered diagnostics when it bought Miles in 1977 and expanded its presence with the Technicon acquisition in 1989. It spent three years restructuring Technicon and merging two similarly-sized companies each with around $500 million sales. Bayer paid $187 million for a company which by the late 1980s had a limited R&D pipeline due to a lack of earlier investment.</p><p>In the first year or so, Bayer's efforts to restructure and merge Technicon ran into trouble. In 1991, some new managers were brought in to complete the merger. Within two years around 2,000 staff, 27% of the worldwide workforce, had been laid off. The number of production and R&D facilities was cut and the Paris headquarters closed.</p><p>The rationalisation measures have led Bayer Diagnostics from the red in 1991 into profitability by 1993 despite essentially flat turnover. There are probably better days ahead.</p><p>The chart on the left shows the strengths and weaknesses of the top diagnostics players as well as the gaps in their product lines at the beginning of the year.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 311
+
+{3A5E806F-C17B-4751-9A9A-7717F936EE6A}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{32C2DFCA-405E-43AB-88A5-3883EB932000}|{F5161CC2-772F-472E-A21C-BF196343462E}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{72D49F7F-DA69-4EE0-ACAA-8D50362AD510}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 57
+
+Innovations spearhead Bayer Diagnostics drive for profits
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950501T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950501T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950501T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT052471
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 58
+
+Innovations spearhead Bayer Diagnostics' drive for profits
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 9
+
+198600358
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254240
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184203Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7901720a-60cc-4018-9f20-52ecc55bdda6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184203Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

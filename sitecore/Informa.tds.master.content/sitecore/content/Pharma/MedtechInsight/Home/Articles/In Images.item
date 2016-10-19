@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {DFD50E5A-C62E-4E6D-A676-B2D6B241439B}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/In Images
+parent: {D5B965D3-AC3D-4A7F-90E6-65193022C6B5}
+name: In Images
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: cd61e37e-8ca7-4e8f-9403-72b00dcd9a62
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 98
+
+<p> This is the medical device community and technology, depicted in the language of imagery. </p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 9
+
+In Images
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4373
+
+<p> This is the medical device community and technology, depicted in the language of imagery. </p> <p> If you want to highlight your photos, videos, podcasts or animations on the latest medical device technology, contact <a href="mailto:salina.christmas@informa.com" target="_blank" class="emailLink">Salina Christmas</a>, Editor, Multimedia. </p> <p> <table> <br> <br> <tr> <td><div><img alt="" border="0" src="-/media/9CAFD88CBC70480B9BDF73061E4A2D62.ashx" height="130" width="190"> </div></td> <td><div><img alt="" border="0" src="-/media/0C3AEBA03A234FD29662678CA3128113.ashx" height="130" width="190"> </div></td> <td><div><img alt="" border="0" src="-/media/5FBA161FA7DE483BBF4F3C0E7ABD8398.ashx" height="130" width="190"></div></td> <td><div><img alt="" border="0" src="http://www.clinica.co.uk/multimedia/archive/00069/ahus5_190x130_69008a.jpg" height="130" width="190"></div></td> </tr> <tr> <td><p> <a href="http://www.clinica.co.uk/images/ge/" class="optionsLink" target="_blank">Clinica at GE Healthcare in Hatfield </a></p></td> <td><p> <a href="http://www.clinica.co.uk/marketsector/other/Optos-looks-to-cement-leadership-position-in-2-3bn-retinal-imaging-market-184500?autnID=/contentstore/clinica/codex/082fd402-e329-11de-b968-450df8da70ea.xml" class="optionsLink" target="_blank">Optos retinal imaging device </a></p></td> <td><p> <a href="http://www.clinica.co.uk/home/features/images/mobile_health_2009/" class="optionsLink" target="_blank">Mobile Health Industry Summit 2009 </a></p></td> <td><p> <a href="http://www.clinica.co.uk/home/features/images/norway_2009/" class="optionsLink" target="_blank">Clinica in Norway 2009 </a></p></td> </tr> <tr> <td><div><img alt="" border="0" src="-/media/C7B5BD9B033A461B8F81892162716B53.ashx" height="130" width="190"></div></td> <td><div><img alt="" border="0" src="-/media/41B0876EAEB54165A6CFB995C79D59D4.ashx" height="130" width="190"></div></td> <td><div><img alt="" border="0" src="-/media/2332D83C72A14038AC890B81D8870953.ashx" height="130" width="190"></div></td> <td><div><img alt="" border="0" src="-/media/BE26AD029A1244B29D68EA1390E98657.ashx" height="130" width="190"></div></td> </tr> <tr> <td><p> <a href="http://www.clinica.co.uk/home/features/images/rsna_2008/" class="optionsLink" target="_blank">Clinica at RSNA 2008 </a></p></td> <td><p> <a href="http://www.clinica.co.uk/home/features/Brussels-Notified-Bodies-Workshop-April-28-2009-EMEA-perfectly-placed-to-monitor-improve-consistency-among-NBs-148609?autnID=/contentstore/clinica/codex/67ce006c-38ea-11de-bc24-677755fc5d9e.xml" class="optionsLink" target="_blank">Brussels Notified Bodies <br> Workshop 2009 </a></p></td> <td><p><a href="http://www.clinica.co.uk/images/swine_flu/" class="optionsLink" target="_blank">The swine flu </a></p></td> <td><p> <a href="http://www.clinica.co.uk/home/features/visualised/unique_device_identification/" class="optionsLink" target="_blank">Unique device identification and global trade item number </a></p></td> </tr> <tr> <td><div><img alt="" border="0" src="-/media/D4C2B86F7B4E4D9E948316F8362D9B7A.ashx" height="130" width="190"></div></td> <td><div><img alt="" border="0" src="-/media/166FC3768D7F4D0EA0B4481DD82BEBC1.ashx" height="130" width="190"></div></td> <td><div><img alt="" border="0" src="-/media/FEC104A63C9D45B498171B61BE08D749.ashx" height="130" width="190"></div></td> <td><div><img alt="" border="0" src="-/media/3CF46B3F8598452E84806245CDBF6AA7.ashx" height="130" width="190"></div></td> </tr> <tr> <td><p> <a href="http://www.clinica.co.uk/home/features/visualised/isotope_crisis/" class="optionsLink" target="_blank">An isotope crisis: Six nuclear reactors, and they are all ageing</a></p></td> <td><p> <a href="http://www.clinica.co.uk/home/features/visualised/cochlear_nucleus/" class="optionsLink" target="_blank">The world's thinnest cochlear implant </a></p></td> <td><p> <a href="http://www.clinica.co.uk/home/features/visualised/phtalates_labelling/" class="optionsLink" target="_blank">Labelling of medical devices containing phthalates</a></p></td> <td><p> <a href="http://www.clinica.co.uk/home/features/visualised/philips_mpi_technology/" class="optionsLink" target="_blank">Philips Research's Magnetic Particle Imaging (MPI) </a></p></td> </tr> </table></p> <p> <b>Clinica photographers' credit:</b> <i>Madeleine Armstrong, Joseph Harvey, Salina Christmas </i> </p> 
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 9
+
+In Images
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+20160622T231300
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT005186
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 9
+
+In Images
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+176368
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T160803Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+cd61e37e-8ca7-4e8f-9403-72b00dcd9a62
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160623T031300Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

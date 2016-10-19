@@ -1,0 +1,170 @@
+----item----
+version: 1
+id: {0E2888BB-6AE0-43C7-AA3C-6BEB89632CE1}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/07/17/As many challenges as opportunities in Asian markets
+parent: {22C5F4C9-3E20-450E-A15B-315DB823AD7A}
+name: As many challenges as opportunities in Asian markets
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: d8ad7bc0-c092-44bf-935d-134aec362e21
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 154
+
+<p>Widely accepted as the market of the future, Asia will not be an easy ride for Western companies. Jeanette Marchant reports from Vancouver, Canada.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+As many challenges as opportunities in Asian markets
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 11763
+
+<p>Widely accepted as the market of the future, Asia will not be an easy ride for Western companies. Jeanette Marchant reports from Vancouver, Canada.</p><p>The Asian market (excluding Japan) for medical technology is forecast to grow 20% this year, more than double the rate of growth expected for the US, the EU and Japan. Although individual markets in the region are still comparatively small, investment in healthcare and the importance being placed on medical technology means that those companies already established in Asia will be well-positioned to seize future opportunities. At the Global Medical Device Conference in Vancouver, Canada, last month, speakers with experience in the Asian healthcare market gave a useful insight into the challenges facing industry in the region.</p><p>Setting the scene, Terri Zavada, director of global strategy and analysis for US industry association HIMA, noted that South Korea and Taiwan - which both have universal health coverage - are the strongest markets in the region. Korea is also one of the largest with 1994 sales of $870 million.</p><pre>Asian medical technology markets 1994 Country $ millions % growth China 900 +23 S Korea 870 +20 India 740 +24 Taiwan 570 +15 Thailand 250 +20 Singapore 190 +12 Source: HIMA</pre><p>South Korea</p><p>The South Korean medical device market is projected to reach $1,051 million in 1995 and $1,261 million in 1996, according to Richard Larkin, director of international regulatory affairs and quality assurance for CR Bard. For the country's 44 million population there are 650 hospitals, 125,100 hospital beds and 51,425 doctors. Imports account for almost 70% of medical device consumption: in 1993, imports represented $493 million of total $730 million sales.</p><pre>S Korean market 1993 ($ millions) Surgical & medical instruments 205 Surgical appliances & supplies 214 X-ray apparatus & tubes 112 Dental equipment & supplies 92 Electromedical equipment 77 Diagnostic products 30 TOTAL 730 Source: HIMA</pre><p>One of the major challenges facing importers are the new medical device regulations which came into effect at the beginning of this year (see Clinica Nos 615, p 7 & 653, p 10). For products sold after July 1st, 1992, companies have to submit applications - in Korean - for marketing approval to one of eight testing agencies. It is possible to submit applications for a similar group of products. The agency has 15 working days in which to complete the review.</p><p>Additional safety and efficacy data are required for implants and new devices, noted Mr Larkin. The testing agency sends the application to the National Institute of Safety Research which has 90 days in which to complete its review.</p><p>The amount of paperwork required and the bureaucratic procedures involved in getting products on the Korean market are significant challenges for importers, said Mr Larkin. He noted that the Ministry of Health and Welfare does not accept certificates of free sale or ISO 9001 accreditation.</p><p>He concluded on a note of optimism with news that the grandfather provisions of the new regulations may be extended to products on the market before July 1st, 1995. Draft revised regulations are planned by the end of this year and should be finalised by July 1996, coming into effect a year later, according to Mr Larkin. It is expected that a globalised regulatory system will be introduced aligned with the European quality systems approach. The Korean government is also planning to set up an FDA by 1996 to enforce medical device regulations and conduct compliance audits.</p><p>Taiwan</p><p>As with Korea, Taiwan's product approval system has proved excessively bureaucratic for importers and fears have been raised that the health system will experience severe financial problems with the introduction of universal coverage (see Clinica No 630, p 9). The national health insurance scheme - introduced in March this year (No 637, p 7) - is expected to cost $13,850 million in its first year, according to Chi Li, country manager for <strong>[C#198600118:Becton Dickinson]</strong>. This will represent 5.6% of GDP compared with 5.02% in 1993 when 45% of Taiwan's 21 million population were uninsured. National coverage, regarded by Mr Li as a political strategy in the light of forthcoming elections, is intended to be self-funded, although the government will finance the deficit in the first two years.</p><p>Unlike Japan, which has the most rapidly ageing population, 82% of Taiwan's population are under 50. The country is served by 810 hospitals, 14,252 clinics and 23,475 doctors. Under the current Medicare system, payment is on a fee-for-service basis. The government intends to introduce a DRG system shortly with a view to achieving global budgets in the long term.</p><p>China</p><p>By contrast, fewer than 10 million of China's 1,200 million population are covered by healthcare insurance. Although one of the fastest growing world markets, China presents a number of obstacles to importing companies, which account for 70% of the $900 million market, according to Fred Halverson, vice-president of corporate affairs at <strong>[C#198600185:Medtronic]</strong>. Profitability, corruption and regulatory inconsistency are cited as challenges.</p><p>Medical device tariffs range from 6% to 35%, although disposables can be much higher - in the 80% range, noted Mr Halverson. Furthermore, there is inconsistency in duties imposed by Beijing and the provinces. The need for importers to use local trading companies entails additional costs and reduces the control of the manufacturer on its products.</p><p>New device regulations are likely to be developed in the next year, according to Mr Halverson, and these are expected to involve registration of all devices. Currently, therapeutic device regulation, introduced in 1992, relates to prosthetic and bioprosthetic heart valves; sutures; implantable teeth; implantable drug delivery devices; and single-use syringes, infusion and blood sets. Assessment of these devices by the Centre of Medical Devices in the National Institute for the Control of Pharmaceutical and Biological Products (NICPBP) has been required since October 1st, 1993.</p><p>Premarket assessment of all devices according to risk is likely to be introduced under the new proposed regulations, said Mr Halverson. Meanwhile, a new Division of Medical Devices is being set up this year within the Chinese Ministry of Public Health and the staffing level of the Centre of Medical Devices at the NICPBP will be increased to speed up the registration process.</p><p>Regulatory requirements in China will be the subject of the second meeting of the US-China Joint Commission on Commerce and Trade medical technologies subgroup which is due to meet in January next year (see Clinica No 654, p 7). A third meeting is planned in June 1996, noted Mr Halverson.</p><p>Thailand</p><p>The fastest growing market for medical technology products in the ASEAN countries, Thailand is projected by Tilleke & Gibbins Consultants to register 23% growth in 1994-5.</p><pre>ASEAN medtech market 1993 Country Sales ($ millions) Projected growth 1994-5 Brunei 13 8% Indonesia 77 10% Malaysia 98 20% Philippines 90 14% Singapore 176 12% Thailand 205 23% Vietnam* 125 15% * an additional $300 million of supplies and equipment was donated Source: Tilleke & Gibbins Consultants</pre><p>Just over 50% of the 60 million Thai population are covered by the national public health insurance, said Peter Ruderman, chief representative of the consultancy which has offices in Bangkok and Vietnam. Public hospitals, which account for 60% of all medical device purchases, represent 70% of all hospital beds, but it is the private sector which is showing the greatest growth. Mr Ruderman predicted a 30% annual increase in this sector, boosted by government incentives.</p><p>Thailand's 9,967 practising doctors play a crucial role in hospital purchasing decisions. Sales are made on a hospital-by- hospital basis; there is no sharing of capital-intensive medical devices, he noted. Local manufacturers tend to receive preferential treatment under the government procurement system; nevertheless, imports account for 80% of all medical devices sales, particularly purchases of high tech equipment.</p><pre>Thai market for electromed/diagnostic imaging equipment $ millions Projected growth 1993 1992 over next 3 yrs Imports 105 75 20% Local production 1 0.46 10% Total market 110 78 20% Source: Thai Customs Office</pre><p>Protection of the domestic industry is evidenced by current regulations, believes Mr Ruderman. Class I devices, which require full registration, include syringes, condoms, surgical gloves, thermometers, sphygmomanometers, sutures, contact lenses, magnetic vibrators and X-ray equipment. In the first six months of 1992, Thai companies exported Baht 21.8 million ($0.9 million at current exchange rates) worth of condoms and Baht 361.9 million worth of latex gloves.</p><p>Product specifications only need be submitted for Class II devices (including HIV reagents and kits) while a certificate of sale or export certificate issued by the manufacturer's health authority is all that is required for Class III devices. Mr Ruderman pointed out that product classification is not a risk-based system.</p><p>He informed delegates of a Medical Technology Industry Committee for Thailand/Indochina that has been formed in Bangkok by private industry to promote clear regulations for medical devices. The committee's priorities in the next two years are to promote ISO 9000 standards through the Thai FDA - emphasising quality rather than product standards - and to encourage foreign investment in local production.</p><p>Vietnam</p><p>While there are limitations in the Vietnamese market, since the government may not yet purchase medical devices on credit, Mr Ruderman noted that Vietnam is the fifth most populous Asian country with 74 million inhabitants (after China, India, Indonesia and Japan) and has a private market growing at 20-25% annually.</p><p>There are 830 hospitals in the country and since December last year, 100% foreign-owned hospitals have been permitted. Purchasing of medical technology is from the state budget and is carried out centrally through the Ministry of Health in Hanoi and through regional agencies. Government spending for devices is increasing at 10-15% per annum. While the purchasing power of the private and public health sectors remains limited, many experts believe that Vietnam's medical device sector will rapidly grow in the next few years.</p><p>There are few restrictions on the import of medical devices, unlike pharmaceuticals, he pointed out. An application for a Permit of Circulation must be obtained from the Ministry of Health prior to import and clinical tests require the Ministry People's Committee approval. Japan, Germany and France are the leading suppliers of medtech products to the $125 million market.</p><p>Private distribution is permitted only if the product is manufactured domestically. The government encourages joint ventures, noted Mr Ruderman, citing two Korean-Vietnamese ventures licensed to manufacture disposable syringes and transfusion tubes, both capitalised at $3 million. An unnamed joint venture is seeking permission to produce orthopaedic fixation devices in Vietnam. The government also permits 100% foreign-owned concerns to operate in the sector.</p><p>While it may hold promise in the future, the potential of the Vietnamese market is still limited by the poverty of the country and the paucity of funds available to purchase healthcare supplies. Furthermore, there are few healthcare providers and the local industry lacks technical know-how.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 389
+
+{6EFD9948-FDD4-4012-851B-6AB7F203124F}|{C7EBBDA0-1A1D-4B22-8330-447DC674C2DB}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{9C44D781-BA9D-40E0-AD1C-02E7C02607EE}|{D96D1CF9-9C1A-4F0C-8A5A-E8349BE8C5F6}|{F5161CC2-772F-472E-A21C-BF196343462E}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{43534FDC-BD6B-4C2A-A407-8938CABFC859}|{2360F67B-A7D7-4E2A-9C6C-5618FAE5CB5D}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+As many challenges as opportunities in Asian markets
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950717T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950717T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950717T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053465
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+As many challenges as opportunities in Asian markets
+----field----
+field: {53288D3D-66D7-4ACE-B3E4-D7D02B1F3672}
+name: Referenced Companies
+key: referenced companies
+content-length: 19
+
+198600185,198600118
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+255274
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184516Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d8ad7bc0-c092-44bf-935d-134aec362e21
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184516Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

@@ -23,25 +23,18 @@ key: __icon
 content-length: 21
 
 Apps/32x32/Pencil.png
-----field----
-field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
-name: __Originator
-key: __originator
-content-length: 0
-
-
 ----version----
 language: en
 version: 1
-revision: 1119f668-de1e-4915-b6a9-004a6620f571
+revision: c43faaa5-5e4b-4ba8-8e19-ec9660f028fe
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
 name: Phrase
 key: phrase
-content-length: 68
+content-length: 10
 
-Receive daily, weekly and breaking new email newsletters from Scrip.
+Newsletter
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -55,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-1119f668-de1e-4915-b6a9-004a6620f571
+c43faaa5-5e4b-4ba8-8e19-ec9660f028fe
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160425T192242Z
+20161017T144142Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

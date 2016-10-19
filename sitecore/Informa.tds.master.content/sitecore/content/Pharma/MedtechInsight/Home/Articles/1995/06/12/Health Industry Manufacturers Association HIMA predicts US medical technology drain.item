@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {5934F3E4-BA64-4DC5-AE9B-A3DC1796A901}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/06/12/Health Industry Manufacturers Association HIMA predicts US medical technology drain
+parent: {457BA35E-723F-4E2B-9A26-9BC7B4646E90}
+name: Health Industry Manufacturers Association HIMA predicts US medical technology drain
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: c39b0d50-39ed-46f8-8d20-8460dc03ea04
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 436
+
+<p>Public policies - especially the FDA device approval process - combined with market forces have set off a chain reaction that is sapping the vigour of the US medical technology industry. This could signal the end of US innovation leadership in this field, claims a study commissioned by the US Health Industry Manufacturers Association entitled Forces Reshaping the Performance and Contribution of the US Medical Device Industry.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 85
+
+Health Industry Manufacturers Association (HIMA) predicts US medical technology drain
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 4830
+
+<p>Public policies - especially the FDA device approval process - combined with market forces have set off a chain reaction that is sapping the vigour of the US medical technology industry. This could signal the end of US innovation leadership in this field, claims a study commissioned by the US Health Industry Manufacturers Association entitled Forces Reshaping the Performance and Contribution of the US Medical Device Industry.</p><p>"On the basis of our analysis, financial modelling, interviews, literature reviews, surveys and our own knowledge, we conclude that the US healthcare technology industry is undergoing dramatic change. This is a function of public and private sector forces that are changing its costs of operation and product development, altering markets, and forcing the industry to adapt, refocus, and reallocate its product development efforts," the study concludes.</p><p>At a Washington press conference on June 8th, HIMA president Alan Magazine chose to focus on government factors. The association believes a number of public policies "must be reformed, and FDA regulation tops the list", he said.</p><p>According to the study, prepared by the Wilkerson Group, a typical product subject to FDA regulation can cost $20 million more and take two years longer to bring to market than it did a decade ago. "This is a stark economic fact not lost on venture capitalists who are increasingly reluctant to invest in this industry," HIMA chairman Ray Holman notes. "This delay forces US companies to adopt a 'Europe first' strategy for new product development and introduction."</p><p>The Wilkerson study confirms his claim: 61% of companies responding to its survey indicates that they currently market or plan to market overseas products not available in the US. More than 90% of these respondents blame the FDA.</p><p>This has had a domino effect: most companies plan to increase the level of clinical trials, research and manufacturing overseas. Already, the report notes, "we are beginning to observe the loss of the knowledge base and capital which fuel innovation." The study estimates "conservatively ... that the US will lose the opportunity to create 40,000 to 50,000 jobs over the next five years."</p><p>Wilkerson predicts that whether they stay or move, only 50-60% of the current 2,000-4,000 US manufacturers will "find a means to establish a viable position over the next five years, leaving approximately 1,500 companies at high risk of being forced to exit the industry, or merge or be acquired". At the same time, US FDA regulatory barriers will lessen the number of new start-up companies - "the source of most breakthrough innovation" - while established, large companies "increasingly plan to acquire, rather than develop, new technologies".</p><p>greater expectations from market</p><p>The FDA, however, does not deserve full blame for the decline. The private sector, in its efforts to contain healthcare costs through managed care and other private health purchasing systems, is expecting more from the manufacturer - including greater price concessions. At the same time, they are unwilling to invest in new technology.</p><p>Medicare, the government health programme for the elderly, will not pay for investigational devices. "Some hospitals have had to cancel clinical trials or require that the company assume full risk of nonpayment by Medicare," the study reports. At the same time, public funding of research-oriented institutions and academic medical centres is also lessening. Yet these facilities are critical to new product development and testing.</p><p>The US propensity for product liability suits has also played its part. Producers of some critical raw materials will no longer supply US device companies. Manufacturers are divesting themselves of risky businesses, abandoning new product development or just leaving the industry.</p><p>The result of all this is more than economic, the study notes. "US patients are gaining access to important advances in medical technology months, even years, later than patients in other countries .... Implantable defibrillators now available to US patients are two generations behind those available in Europe." The report lists 100 examples of new products currently available in Europe, but not in the US, ranging from lasers for heart treatment to multifocal intra-ocular lenses.</p><p>"We do not suggest that the quality of US healthcare will undergo a wrenching change for the worse," the study concludes, "but the US trails other countries in access to the newest and most advanced technologies." The diagnosis for industry is bleaker: "There is ample evidence that the heightened risks, barriers and costs of bringing new products to the US market point to a less optimistic future for the US medical device industry."</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 38
+
+{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 83
+
+Health Industry Manufacturers Association HIMA predicts US medical technology drain
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950612T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950612T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950612T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT053011
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 85
+
+Health Industry Manufacturers Association (HIMA) predicts US medical technology drain
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+254820
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184348Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c39b0d50-39ed-46f8-8d20-8460dc03ea04
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184348Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

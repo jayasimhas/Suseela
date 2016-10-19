@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {69E339CC-D650-4932-80CD-DFD6643FB29C}
+database: master
+path: /sitecore/content/Pharma/ScripIntelligence/Home/Marketing/Clinical Trial Hub/PageAssets/Advertisement
+parent: {B7A031A3-5C1F-44E9-89E9-88BAD565EAC0}
+name: Advertisement
+master: {00000000-0000-0000-0000-000000000000}
+template: {8B3E1556-4C33-46BD-BE35-EEB3D62196E1}
+templatekey: Advertisement
+
+----version----
+language: en
+version: 1
+revision: 167f8da9-fc4b-4569-bf87-53471120b84f
+
+----field----
+field: {136A0D73-06A9-42B3-9D21-F9BD6B877A89}
+name: Slot ID
+key: slot id
+content-length: 9
+
+Position2
+----field----
+field: {3505DD34-D65E-4969-9BC3-690CCCC919DB}
+name: Zone
+key: zone
+content-length: 4
+
+home
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 15
+
+sitecore\srigby
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160424T174318Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 15
+
+sitecore\srigby
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+167f8da9-fc4b-4569-bf87-53471120b84f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160424T175858Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 15
+
+sitecore\srigby

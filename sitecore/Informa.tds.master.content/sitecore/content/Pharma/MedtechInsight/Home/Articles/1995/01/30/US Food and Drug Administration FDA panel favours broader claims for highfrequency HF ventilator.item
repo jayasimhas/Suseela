@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {B1B36B05-2C5C-4665-9773-2566B96EB9A0}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/01/30/US Food and Drug Administration FDA panel favours broader claims for highfrequency HF ventilator
+parent: {7791BF15-2986-498D-9ED7-B919FE9E17BD}
+name: US Food and Drug Administration FDA panel favours broader claims for highfrequency HF ventilator
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 433ffd30-7201-499d-9d17-ede1841d881d
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 390
+
+<p>The US FDA's Anaesthesiology and Respiratory Therapy Devices Advisory Panel voted unanimously on January 20th to recommend expanded label claims for SensorMedics' high-frequency oscillatory ventilators, models 3100 and 3100A. Members recommended approval for use of the devices in children of any age who fail to show an adequate response to treatment with a conventional ventilator.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 101
+
+US Food and Drug Administration (FDA) panel favours broader claims for high-frequency (HF) ventilator
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 3680
+
+<p>The US FDA's Anaesthesiology and Respiratory Therapy Devices Advisory Panel voted unanimously on January 20th to recommend expanded label claims for SensorMedics' high-frequency oscillatory ventilators, models 3100 and 3100A. Members recommended approval for use of the devices in children of any age who fail to show an adequate response to treatment with a conventional ventilator.</p><p>SensorMedics of Yorba Linda, California, already has FDA approval for use of the machines in neonates with respiratory disease requiring ventilation as either primary or secondary treatment in those who respond poorly on conventional ventilators. Model 3100A is currently being marketed by SensorMedics and has replaced the earlier model 3100.</p><p>SensorMedics presented clinical data submitted in the PMA from a single randomised trial comprising 20 patients treated with model 3100/3100A ventilators and 27 patients treated with conventional ventilators. Patients with respiratory disease from three centres were entered into the study if they did not show adequate improvement on a conventional ventilator. The results suggest that those who were treated with SensorMedics' ventilators responded better but there was no statistical difference in survival, number of days requiring ventilation or other objective outcome criteria.</p><p>Statistically significant results were obtained from an expanded study including an additional 11 patients. Dr John Arnold of Boston Children's Hospital found that 21% of 29 patients ventilated with model 3100/3100A machines had lung trauma caused by ventilation compared with 59% of 29 patients treated with conventional machines.</p><p>Thomas Bachman of SensorMedics told the panel that the company will not seek permission to claim that model 3100/3100A is superior to conventional ventilators. It plans to claim that it provides adequate oxygenation and ventilation, may enhance oxygenation and outcome, and does not increase patient risk.</p><p>The panel members concurred that it was extremely difficult to compare the function of ventilators in older children and adults in clinical trials because lung disease varies greatly between patients. They considered that even though SensorMedics' study was small it was adequate based on the difficult circumstances of recruiting and studying patients in this population.</p><p>Dr Robert Mueller of the University of North Carolina expressed his concern and confusion about the effect of SensorMedics' product in larger children. "At some point," he said, "depending on what frequency you pick and the size of the patient,... the airway parameters may be very close to what you see with conventional ventilation."</p><p>In response, Dr Arnold said that the machine was generally less effective in ventilating larger children; nevertheless, in those with mild lung disease it may be more effective than in smaller children with very severe disease. Most of his experience with model 3100/3100A, however, has been with children weighing under 20 kg.</p><p>The panel voted unanimously to recommend approval of SensorMedics' model 3100/3100A for the treatment of paediatric patients who fail conventional ventilation. There was insufficient evidence to support the use of model 3100/3100A as a primary treatment. One panel member suggested the label should recommend restricting use of the ventilator to patients weighing under 90 kg. The rest of the panel members felt there should be no labelling restrictions but the label should state that most of the research has been performed on children weighing under 20 kg and caution should be employed when using the ventilator with larger children.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{4A8776DE-66AB-4542-A464-96B948F54764}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 96
+
+US Food and Drug Administration FDA panel favours broader claims for highfrequency HF ventilator
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950130T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950130T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950130T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051298
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 101
+
+US Food and Drug Administration (FDA) panel favours broader claims for high-frequency (HF) ventilator
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253067
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T183817Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+433ffd30-7201-499d-9d17-ede1841d881d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T183817Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

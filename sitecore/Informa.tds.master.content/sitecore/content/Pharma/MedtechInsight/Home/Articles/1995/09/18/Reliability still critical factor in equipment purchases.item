@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {8D600047-77AD-4A5E-863A-E614720CD14F}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/09/18/Reliability still critical factor in equipment purchases
+parent: {459FB2B1-6BED-4CC3-B44E-7D03009D4B45}
+name: Reliability still critical factor in equipment purchases
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 60e520b3-cc6f-4546-9121-f90c7483cfd5
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 491
+
+<p>Price, service and reliability are the critical factors when purchasing laboratory equipment, says a study by the French Salon du Laboratoire. The survey, carried out last year, collected data from over 500 clinical laboratories in 17 European countries. The respondents filled in questionnaires based on purchasing decisions, development of activities, ordering methods and choice of supplier. Purchasing was broken down into consumables, reagents and three cost bands for equipment.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 56
+
+Reliability still critical factor in equipment purchases
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 5745
+
+<p>Price, service and reliability are the critical factors when purchasing laboratory equipment, says a study by the French Salon du Laboratoire. The survey, carried out last year, collected data from over 500 clinical laboratories in 17 European countries. The respondents filled in questionnaires based on purchasing decisions, development of activities, ordering methods and choice of supplier. Purchasing was broken down into consumables, reagents and three cost bands for equipment.</p><p>Over two thirds of the laboratories claim reliability is the critical factor in purchasing equipment costing less than $1,000, says the survey. The next most important factor is price (60% of respondents), followed by ease of use (58%). Other important factors include technical support, supplier reputation and contact with sales representatives.</p><p>The pattern is similar for equipment costing $1,000 to $10,000, except that price is relegated to third position behind reliability and maintenance. For equipment costing over $10,000, a slightly different profile emerges, with over 80% of laboratories considering maintenance service as the most important criterion. This is followed by reliability and technical support, with price only the fourth most important consideration.</p><p>Three-quarters of the laboratories claim price is the most important factor in purchasing consumables. This is followed by reliability, delivery dates and ease of use. Only 10% and 8% of respondents cite technical support and maintenance service as critical factors. For reagent purchases, price is the most important factor (69%), but is closely followed by reliability (68%). Technical support is regarded as more important for reagent purchases with almost 22% of the 467 respondents citing it as a critical factor.</p><pre>Factors influencing purchasing decisions Reliability 88.5% Price 85.4% Maintenance service 82.7% Technical support 80.5% Ease of use 75.7% Simple to maintain 69.5% Supplier reputation 63.4% Delivery dates 61.3% Supplier's range of products 42.8% Regular contact with sales rep 39.3% (100% = 486 respondents) Source: Salon du Laboratoire's purchasing survey</pre><p>personal touch</p><p>The majority of laboratories purchasing equipment over $10,000 contact the manufacturer directly (61%). Their second most popular option is through a dealer or distributor and thirdly, as a result of an exhibition visit. Just 13% of respondents order from a catalogue. A similar pattern develops when purchasing equipment costing between $1,000 and $10,000. However, for minor equipment purchases, while over half contact a dealer or distributor, some 40% submit orders from a catalogue and just a third of respondents contact a manufacturer directly.</p><p>For reagent and consumables acquisitions, different profiles emerge, with almost 60% of laboratories choosing from a catalogue and 51% contacting a dealer or distributor. Indeed, of the 63% of laboratories which claim they order from catalogues, over 85% of purchases are for reagents and consumables. Only 6% of respondents order expensive equipment through catalogues. Bulk purchase is more common in the procurement of consumables and reagents.</p><p>Just over 50% of laboratories say instruments are placed free of charge by manufacturers in exchange for purchasing reagents for use with these instruments.</p><pre>How orders are submitted By contacting dealer/distributor 72.7% From a catalogue 70.7% By contacting manufacturer 69.7% As a result of an exhibition visit 43.9% As a result of seeing an ad 40.6% Following a call from a sales rep 40.4% As a result of a promotional offer 30.5% Through a bulk purchasing organ. 29.7% (100% = 488 respondents) Source: Salon du Laboratoire's purchasing survey</pre><p>service vital</p><p>Given equal price and quality of product, service and technical support are overwhelmingly the top choices for equipment purchases. In selecting a supplier, laboratories also cite suppliers' service record and brand image as important considerations.</p><p>For the purchase of reagents and consumables, delivery dates and loyalty to current supplier are the most important criteria given equal price and quality. Less than a third of purchasers regard service and technical support as important for reagents and consumables. Proximity to supplier is also mentioned by around 20% of laboratories as an influencing factor.</p><pre>Purchasing factors given products of equal price and quality Service 81.8% Technical support 77.9% Supplier's service record 60.1% Delivery dates 54.3% Brand image 49.2% Loyalty to current supplier 46.9% Supplier's nearby location 33.1% ISO 9000 certification 21.3% (100% = 484 respondents) Source: Salon du Laboratoire's purchasing survey</pre><p>Over 80% of purchasers say they do not often change suppliers. However, they had plenty of suggestions as to how suppliers might improve their performance. The most common request was for an improved after-sale service, followed by reduced price, better product information and improved customer service.</p><p>Almost two-thirds of European clinical laboratories intend to expand their activities, even though few expect an increase in their budgets, according to the survey. The majority consider expansion in DNA diagnostics (37%), followed by infectious disease testing (25%), autoimmune testing (19%) and histology (18%).</p><p>Of the laboratories which responded to the questionnaire, 60% were public, 33% were medical research and 17% were private, with almost a third specialising in clinical chemistry. The survey was produced by the Salon du Laboratoire, 39-41 rue Louis Blanc, Cedex 72 F 92038 Paris La Defense, France. Tel: +33(1)4717 6505. Fax: +33(1)4717 6481.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 77
+
+{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 56
+
+Reliability still critical factor in equipment purchases
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950918T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950918T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950918T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT054381
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 56
+
+Reliability still critical factor in equipment purchases
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+256311
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184817Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+60e520b3-cc6f-4546-9121-f90c7483cfd5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184817Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

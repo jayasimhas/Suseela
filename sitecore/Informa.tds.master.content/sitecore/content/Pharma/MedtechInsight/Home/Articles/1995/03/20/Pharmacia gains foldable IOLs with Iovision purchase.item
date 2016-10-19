@@ -1,0 +1,163 @@
+----item----
+version: 1
+id: {FC1832CB-A1BA-4CF1-BC3B-22D9A72545E1}
+database: master
+path: /sitecore/content/Pharma/MedtechInsight/Home/Articles/1995/03/20/Pharmacia gains foldable IOLs with Iovision purchase
+parent: {1CFCC57C-483C-471E-949E-5DDD10332228}
+name: Pharmacia gains foldable IOLs with Iovision purchase
+master: {00000000-0000-0000-0000-000000000000}
+template: {11380B5D-3531-4570-B213-EFC5312266E4}
+templatekey: Article
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{926E6200-EB76-4AD4-8614-691D002573AC}
+----version----
+language: en
+version: 1
+revision: 744a7c39-9eba-4a26-b626-c47a087e9615
+
+----field----
+field: {5BA0578F-65B7-4C22-8233-1603D698D8A4}
+name: Summary
+key: summary
+content-length: 401
+
+<p>Pharmacia (Sweden) has reached a definitive agreement to acquire US intra-ocular lens company Iovision for $20 million. The purchase will add foldable monofocal lenses, which allow the smallest possible incision in the eye during cataract surgery, to Pharmacia's existing ophthalmology product range. California-based Iovision also manufactures shunts for the treatment of intractable glaucoma.</p>
+----field----
+field: {2D750EFF-9058-4ABF-A7FF-57FFE5DA1E3C}
+name: Title
+key: title
+content-length: 52
+
+Pharmacia gains foldable IOLs with Iovision purchase
+----field----
+field: {446A339B-E1D9-4DE1-8B5E-DB7942EF1723}
+name: Body
+key: body
+content-length: 1669
+
+<p>Pharmacia (Sweden) has reached a definitive agreement to acquire US intra-ocular lens company Iovision for $20 million. The purchase will add foldable monofocal lenses, which allow the smallest possible incision in the eye during cataract surgery, to Pharmacia's existing ophthalmology product range. California-based Iovision also manufactures shunts for the treatment of intractable glaucoma.</p><p>Foldable lenses are experiencing a rapid increase in use, according to Pharmacia. Currently, they hold a 20% market share in the US and in five years are expected to account for 60-90% of total US intra-ocular lens sales. Foldable lens market shares range from 10% to 15% in Europe and Japan, where they are forecast to see a similar growth trend to the US.</p><p>ophthalmic sales fall in '94</p><p>Sales at Pharmacia's ophthalmics division declined 2.1% to SKr 2,170 million ($300 million) during 1994, with sales of Healon, the viscoelastic eye surgery aid, falling 4.6% to SKr 1,591 million. Despite positive turnover for Healon in Japan, the UK, Sweden and Italy, "mounting competition and downward pressure on prices" adversely affected sales in the US and France.</p><p>Sales by the company's diagnostics business grew only slightly - by 1.3% to SKr 1,669 million. Group revenue rose 7.1% to SKr 26,450 million, while income after financial items leapt 60.3% to SKr 5,322 million, reflecting productivity gains following Pharmacia's acquisition of Farmitalia Carlo Erba in 1993. The June 1994 divestiture of US ambulatory pump manufacturer Deltec to Smiths Industries (see Clinica No 606/7, p 22) generated a capital gain for Pharmacia of SKr 596 million.</p>
+----field----
+field: {0212FC0F-953B-461C-B4D9-B7483A4D4F1B}
+name: Taxonomy
+key: taxonomy
+content-length: 194
+
+{424A060F-E184-40D6-AC5C-9C52FBDA3B16}|{B2967A9C-ABDA-4628-A672-9EDDCD142AEA}|{32C2DFCA-405E-43AB-88A5-3883EB932000}|{FC1DA89F-D8A0-415D-99B6-86FF397EC709}|{2EDCC1FF-26E4-4C6E-AF73-0F43F0F033B8}
+----field----
+field: {8F4EE718-6FA0-42A5-85C4-6C8FE8B1FCD4}
+name: Navigation Title
+key: navigation title
+content-length: 52
+
+Pharmacia gains foldable IOLs with Iovision purchase
+----field----
+field: {7C4FC796-1311-4DAA-81AC-85EAA2C1C108}
+name: Actual Publish Date
+key: actual publish date
+content-length: 15
+
+19950320T000000
+----field----
+field: {BDF7C8E1-869E-49FF-B9F5-854B3081A45D}
+name: Created Date
+key: created date
+content-length: 15
+
+19950320T000000
+----field----
+field: {C926A72A-39DA-446D-B78C-2A650F820A73}
+name: Modified Date
+key: modified date
+content-length: 15
+
+19950320T000000
+----field----
+field: {1616FE67-7278-4169-948E-C29B00EC8781}
+name: Article Number
+key: article number
+content-length: 8
+
+MT051986
+----field----
+field: {2C985172-2B37-4CFE-AEDE-2A42EC833941}
+name: Content Type
+key: content type
+content-length: 38
+
+{832554E5-EC9E-4747-8623-6770D36CAF32}
+----field----
+field: {31603F25-6D9C-4954-BCDE-342E1E184A30}
+name: Meta Title Override
+key: meta title override
+content-length: 52
+
+Pharmacia gains foldable IOLs with Iovision purchase
+----field----
+field: {AE1BD751-D4E7-49CB-96C4-62E995A06B51}
+name: Article Category
+key: article category
+content-length: 4
+
+News
+----field----
+field: {0F6C8F42-01DC-4E05-B63E-AA25D8AA0E09}
+name: Legacy Publication
+key: legacy publication
+content-length: 38
+
+{FF38DC83-07D4-43F0-8C55-84EB64FAF35A}
+----field----
+field: {5795FF15-0942-41FF-8A77-3B73185F5E1B}
+name: Escenic ID
+key: escenic id
+content-length: 6
+
+253755
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160622T184028Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+744a7c39-9eba-4a26-b626-c47a087e9615
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160622T184028Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{962542F5-554E-4DE8-BE4C-B0796FDAC854}

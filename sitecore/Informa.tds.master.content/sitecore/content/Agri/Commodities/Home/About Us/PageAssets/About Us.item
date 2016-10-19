@@ -1,0 +1,68 @@
+----item----
+version: 1
+id: {2636CF45-0412-490E-8D55-2E8D8CC8BA05}
+database: master
+path: /sitecore/content/Agri/Commodities/Home/About Us/PageAssets/About Us
+parent: {5BE98608-B93D-42F6-BC6C-A41135DC220F}
+name: About Us
+master: {00000000-0000-0000-0000-000000000000}
+template: {7B44925F-DD3B-4D01-988C-94A2D4BDC71F}
+templatekey: Content Text
+
+----version----
+language: en
+version: 1
+revision: e65d76b0-a37d-4c87-9380-905247a44fb4
+
+----field----
+field: {789ADC78-20BA-4599-8C29-ED74BC4C7122}
+name: Text
+key: text
+content-length: 2694
+
+<h2>commodities&nbsp;About us</h2>
+<p>Welcome to the new Scrip website. Now, you&rsquo;ll be able to access your content on a more user-friendly, responsive platform where you&rsquo;ll spend less time having to look for the information you need. With simpler navigation and menus, an improved search capability and more video, audio and graphics, you&rsquo;ll get closer to the leading source of news and strategic analysis for the global pharmaceutical industry.
+We filter the flood of information on the industry and apply the knowledge of our extensive network of analysts, journalists and key opinion leaders to provide our readers with timely business-critical market and competitor intelligence.
+</p>
+<p>
+Our experienced writers and analysts are based in key geographic markets and cover all aspects of the industry &ndash; from small biotech start-ups to multinational giants, research boutiques to generic manufacturers. We focus on the whole of the drug discovery and development value chain and report on regulatory news, product approvals and rejections, and key corporate events.
+</p>
+<p>
+In addition to our internal resources, Scrip reaches out to expert colleagues in other Informa businesses including Datamonitor, Citeline, Scrip Business Insights, Scrip Regulatory Affairs, Clinica and the Informa Healthcare journals. Owing to our high standing within the industry and the credibility of our writers, Scrip also enjoys privileged access to the industry's key thinkers and opinion leaders.
+</p>
+<p>
+</p>
+<h2>What's New?</h2>
+<p>With Scrip, you&rsquo;ll discover a time saving resource dedicated to bringing you closer to the content you need, with new and improved navigation, menu and layout -&nbsp;all designed to get you to the information you  need much more quickly and easily than before. </p>
+<p>The new platform puts you in control through a brand new and improved multi-faceted search capability, allowing you to decide what content you want to see, whether it be a broad search on a general topic or pinpointing something very specific.  You can also share your search results using a simple email form, or turn your searches into custom RSS feeds so new content of interest is pushed out to you on a regular basis. As we continually add more audio and video content, you can easily search by media type so you can "listen" and "watch" Scrip to really bring the pharma industry to life.
+</p>
+<p>With Scrip's new, fully-responsive design, you can stay on top of industry insights and developments on multiple devices anytime, anywhere. This means you are no longer restricted to your desk PC and you will always be kept informed and stay ahead of the competition.
+</p>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160420T020453Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e65d76b0-a37d-4c87-9380-905247a44fb4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160929T142855Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
