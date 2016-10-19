@@ -49,7 +49,8 @@ namespace Informa.Web.ViewModels
 	    public string MetaDataHtml => _dependencies.HeadMetaDataGenerator.GetMetaHtml();
 	    public bool IsRestricted => _dependencies.AccountManagementService.IsUserRestricted(GlassModel);
         //Custom tag implementation
-        public string CustomTags => _dependencies.HeadMetaDataGenerator.GetCustomTags();
+        public string CustomTagsHeader => _dependencies.HeadMetaDataGenerator.GetCustomTags(0);
+        public string CustomTagsFooter => _dependencies.HeadMetaDataGenerator.GetCustomTags(1);
 
 
     }

@@ -26,7 +26,7 @@ namespace Informa.Library.Site
     public interface IHeadMetaDataGenerator
     {
         string GetMetaHtml();
-        string GetCustomTags();
+        string GetCustomTags(int i);
     }
 
     [AutowireService]
@@ -198,8 +198,9 @@ namespace Informa.Library.Site
             tags = Regex.Replace(temp, @"\r\n?|\n|\t", string.Empty);
         }
 
-        public string GetCustomTags()
+        public string GetCustomTags(int i)
         {
+            bool displayInHead = i == 0 ? true : false;
             var siteRoot = _dependencies.SiteRootContext.Item;
             var globalItemFolder = siteRoot._ChildrenWithInferType.FirstOrDefault(ch => ch._Name.Equals("Globals"));
             if (globalItemFolder != null)
@@ -208,7 +209,7 @@ namespace Informa.Library.Site
                 if (customtagsFolder != null && customtagsFolder._ChildrenWithInferType.OfType<ICustom_Tag>().Any())
                 {
                     StringBuilder tagBuilder = new StringBuilder();
-                    foreach (var ctag in customtagsFolder._ChildrenWithInferType.OfType<ICustom_Tag>())
+                    foreach (var ctag in customtagsFolder._ChildrenWithInferType.OfType<ICustom_Tag>().Where(p=>p.Display_In_Head.Equals(displayInHead)))
                     {
                         tagBuilder.Append(ctag.Custom_Tag);
                     }
