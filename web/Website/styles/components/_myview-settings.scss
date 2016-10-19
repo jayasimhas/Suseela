@@ -118,10 +118,12 @@
 			text-align: left;
 			float: left;
 			width: 30rem;
+			margin-top: -5px;
 			line-height: 2.5rem;
 			@include breakpoint('medium-small') {
 				font-size: 1.25em;
 				margin-bottom: 0.75rem;
+				margin-top: 0px;
 				float: none;
 				width: auto;
 				line-height: 1.625rem;
@@ -160,6 +162,7 @@
 			font-size: 0.75rem;
 			cursor: pointer;
 			padding-left: 0rem;
+			font-family: "Roboto";
 			@include breakpoint('small') {
 				font-size: 0.875em;
 				border-left: none;				
