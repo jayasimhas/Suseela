@@ -1,47 +1,63 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.Registration.RegisterUserOptInsViewModel
 
-<div class="page-registration js-register-user-container">
-    <h1 class="page-registration__header">@Model.Title</h1>
-    <h2 class="page-registration__subheader">@Model.SubTitle</h2>
-    <hr />
-    <p class="page-registration__introduction">@Model.Body</p>
-    <form class="form-registration-optins"
-          data-on-submit="/Account/api/RegistrationApi/SetOptIns/"
-          data-on-success="@Model.NextStepUrl">
-
-        <p class="page-registration__error
-		   js-form-error
-		   js-form-error-general">
-            @Model.GeneralErrorText
-        </p>
-
-        <div>
-            @for (int i = 0; i < Model.PublicationNewsletterOptIns.Count; i++)
-            {
-                var item = Model.PublicationNewsletterOptIns[i];
-                <div class="page-registration__labeled-checkbox">
-                    <input type="hidden" name="Newsletters[@i].PublicationCode" value="@item.Publication.Code" />
-                    <input name="Newsletters[@i].NewsletterChecked"
-                           id="newsletters"
-                           type="checkbox"
-                           @(item.OptIn ? "checked='checked'" : string.Empty)
-                           data-checkbox-type="boolean">
-                    <label class="checkbox-label">@Model.NewslettersLabelTemplateText.Replace("#PubName#", item.Publication.Name)</label>
-                </div>
-            }
-            <br />
-            <div class="page-registration__labeled-checkbox">
-                <input name="offers"
-                       id="offers"
-                       type="checkbox"
-                       data-checkbox-type="boolean"
-                       data-checkbox-boolean-type="reverse">
-                <label class="checkbox-label">@Model.OffersLabelText</label>
-            </div>
-
-            <div class="page-account__submit-wrapper">
-                <button type="submit" class="button--filled registration-final js-register-final">@Model.SubmitText</button>
+<div class="register">
+    <div class="register_newsletter">
+        <div class="page-registration">
+            <h1 class="page-registration__header">@Model.Title</h1>
+            <div class="next_right">
+                <button type="submit" class="button--filled button--fly-right">@Model.SubmitText</button>
             </div>
         </div>
-    </form>
+        <hr />
+        <p class="page-registration__introduction">@Model.SubTitle</p>
+        @{var nextStepUrl = Model.IsGlobalToggleEnabled ? Model.NextStepUrl : Model.RegisterReturnUrl;}
+        <form class="form-registration-optins"
+              data-on-submit="/Account/api/RegistrationApi/SetOptIns/"
+              data-on-success="@nextStepUrl">
+
+            <p class="page-registration__error
+		   js-form-error
+		   js-form-error-general">
+                @Model.GeneralErrorText
+            </p>
+
+            <div>
+                @for (int i = 0; i < Model.PublicationNewsletterOptIns.Count; i++)
+            {
+                var item = Model.PublicationNewsletterOptIns[i];
+                    <div class="newsletter_box">
+                        <div class="site_div">
+                            <h1 class="article-preview__headline">@item.Publication.Name</h1>
+                            <div class="newsletter_checkbox label-check">
+                                <input name="offers" id="offers" type="checkbox" data-checkbox-type="boolean" data-checkbox-boolean-type="reverse">
+                                <span class="chk_box"></span>
+                                <span>@Model.NewslettersLabelText</span>
+                            </div>
+                        </div>
+                        <hr>
+                        <p>@Html.Raw(Model.Body)</p>
+                        <div class="mobile">
+                            <hr>
+                            <div class="newsletter_checkbox label-check ">
+                                <input name="offers" id="offers" type="checkbox" data-checkbox-type="boolean" data-checkbox-boolean-type="reverse">
+                                <span class="chk_box"></span>
+                                <span>@Model.NewslettersLabelText</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <br />
+                <div class="registrationSubmit_div">
+                    <div class="page-registration__labeled-checkbox label-check">
+                        <input name="offers" id="offers" type="checkbox" data-checkbox-type="boolean" data-checkbox-boolean-type="reverse">
+                        <span class="chk_box"></span>
+                        <label class="checkbox-label">@Model.OffersLabelText</label>
+                    </div>
+                    <div class="page-account__submit-wrapper">
+                        <button type="submit" class="button--filled registration-final js-register-final">@Model.SubmitText</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

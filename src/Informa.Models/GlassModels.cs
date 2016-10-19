@@ -33130,7 +33130,37 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
     [SitecoreType(TemplateId = IMy_View_Settings_PageConstants.TemplateIdString)]
     public partial interface IMy_View_Settings_Page : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage
     {
+        /// <summary>
+        /// Is Flow from Registration page.
+        /// <para></para>
+        /// <para>Field Type: CheckBox</para>		
+        /// <para>Field ID: 9CCC3811-7453-458A-BAF6-064FF6114EA6</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMy_View_Settings_PageConstants.IsFromRegistrationFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool IsFromRegistration { get; set; }
+
+        /// <summary>
+        /// Not Followed Error Message.
+        /// <para></para>
+        /// <para>Field Type: Sign Line Text</para>		
+        /// <para>Field ID: 94F93D7B-8A6B-4302-BDEA-354F6F1BBB4D</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMy_View_Settings_PageConstants.Not_Followed_ErrorFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Not_Followed_Error { get; set; }
+
+        /// <summary>
+        /// Hlep Link Text Field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 6317B355-6FA2-4EFC-9DF9-994A9ACE5C58</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMy_View_Settings_PageConstants.Help_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Help_Link { get; set; }
     }
+
 
 
     /// <summary>
@@ -33142,6 +33172,35 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
     [SitecoreType]
     public partial interface IMy_View_Settings_Page__Raw : IGlassBase, global::Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates.I___BasePage__Raw
     {
+        /// <summary>
+        /// Is Flow from Registration page.
+        /// <para></para>
+        /// <para>Field Type: CheckBox</para>		
+        /// <para>Field ID: 9CCC3811-7453-458A-BAF6-064FF6114EA6</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMy_View_Settings_PageConstants.IsFromRegistrationFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool IsFromRegistration { get; set; }
+
+        /// <summary>
+        /// Not Followed Error Message.
+        /// <para></para>
+        /// <para>Field Type: Sign Line Text</para>		
+        /// <para>Field ID: 94F93D7B-8A6B-4302-BDEA-354F6F1BBB4D</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMy_View_Settings_PageConstants.Not_Followed_ErrorFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Not_Followed_Error { get; set; }
+
+        /// <summary>
+        /// Hlep Link Text Field.
+        /// <para></para>
+        /// <para>Field Type: Rich Text</para>		
+        /// <para>Field ID: 6317B355-6FA2-4EFC-9DF9-994A9ACE5C58</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(IMy_View_Settings_PageConstants.Help_LinkFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Help_Link { get; set; }
     }
 
     public static partial class IMy_View_Settings_PageConstants
@@ -33151,6 +33210,14 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "My View Settings Page";
 
+        public static readonly ID IsFromRegistrationFieldId = new ID("9CCC3811-7453-458A-BAF6-064FF6114EA6");
+        public const string IsFromRegistrationFieldName = "IsFromRegistration";
+
+        public static readonly ID Not_Followed_ErrorFieldId = new ID("94F93D7B-8A6B-4302-BDEA-354F6F1BBB4D");
+        public const string Not_Followed_ErrorFieldName = "Not Followed Error";
+
+        public static readonly ID Help_LinkFieldId = new ID("6317B355-6FA2-4EFC-9DF9-994A9ACE5C58");
+        public const string Help_LinkFieldName = "Help Link";
 
         public static readonly ID Update_Email_Help_TextFieldId = new ID("6bcc4eca-2e47-4340-8e01-72d5d7311121");
         public const string Update_Email_Help_TextFieldName = "Update Email Help Text";
@@ -33218,9 +33285,6 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Ac
 
         public static readonly ID Canonical_LinkFieldId = new ID("fd4b0a78-6cfe-4fbc-b802-1145e22e4222");
         public const string Canonical_LinkFieldName = "Canonical Link";
-
-
-
 
     }
 
@@ -33393,7 +33457,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages
     public static partial class IRegistration_ContentCustomizePageConstants
     {
 
-        public const string TemplateIdString = "ad812609-c21c-42f6-a1d4-283d7699bd8a";
+        public const string TemplateIdString = "138A9648-6D7B-4FA5-B216-BEC7B9E05308";
         public static readonly ID TemplateId = new ID(TemplateIdString);
         public const string TemplateName = "Registration Page";
 
