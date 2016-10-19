@@ -205,6 +205,7 @@ $(function(){
 			allPublications.find('tbody').addClass('tbodyhidden');
 			allPublications.find('.publicationPan .accordionImg a').removeClass('expanded');
 			allPublications.find('.publicationPan thead tr').not(':nth-child(1)').addClass('hidden');
+			allPublications.find('.publicationPan thead tr.showinview').removeClass('hidden');
 			thead.find('tr').removeClass('hidden');
 			$this.addClass('expanded'); 
 			accCont.removeClass('tbodyhidden');
@@ -287,7 +288,12 @@ $(function(){
 		var table = $('.table', '.publicationPan'), alltrs = table.find('tbody tr'),
 		    UserPreferences = {}, allpublications = $('.publicationPan', '#allPublicationsPan');
 			UserPreferences.PreferredChannels = [];
-	  
+		
+		if(!+$('#validatePreference').val()){
+			$('.alert-error').show();
+			return false;
+		}
+		
 		for(var k = 0; k < allpublications.length; k++){
 			var tbody = $(allpublications[k]).find('tbody'), newtrs = tbody.find('tr');
 			newtrs.removeAttr('data-row');
@@ -327,7 +333,6 @@ $(function(){
 				}
 			}
 		});
-		
 	});
 	 
 	$('.gotoview').click(function(e){
@@ -337,11 +342,12 @@ $(function(){
 			$('.modal-view').show();
 		}
 	});
+	
 	$('.close-modal').click(function(){
 		$('.modal-overlay').removeClass('in');
 		$('.modal-view').hide();
 	});
-	
+
 	$('.publicationPan.donesubscribe').dragswap({
 		element : '.table tbody tr',
 		dropAnimation: true  
