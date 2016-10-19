@@ -61,7 +61,11 @@
         {
             if (string.IsNullOrWhiteSpace(channelPreferences))
                 return false;
-            return SetUserPreferences.Set(UserContext.User?.Username ?? string.Empty, channelPreferences);
+            var status = SetUserPreferences.Set(UserContext.User?.Username ?? string.Empty, channelPreferences);
+            if (status)
+                clear();
+            return status;
+
         }
     }
 }

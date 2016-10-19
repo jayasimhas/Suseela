@@ -112,7 +112,7 @@ namespace Informa.Web.ViewModels
                     foreach (var preference in UserPreferences.Preferences.PreferredChannels)
                     {
                         
-                        if (!string.IsNullOrWhiteSpace(preference.ChannelCode))
+                        if (!string.IsNullOrWhiteSpace(preference.ChannelCode) && (preference.IsFollowing || preference.Topics.Any(tp => tp.IsFollowing)))
                         {
                             var channelName = Navigation.SelectMany(p => p.Children.Where(n => n.Code == preference.ChannelCode).Select(q => q.Text)).FirstOrDefault();
                             if(!string.IsNullOrEmpty(channelName))
