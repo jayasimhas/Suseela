@@ -4403,10 +4403,7 @@ header .header-account-access {
     display: block !important; } }
 
 .pub-subscription-subtitle {
-  clear: both;
-  float: left;
-  margin: 15px 0 0 0;
-  padding: 0; }
+  text-align: left; }
 
 @media (max-width: 1080px) {
   .personalisationhome .topic-featured-article__headline {
