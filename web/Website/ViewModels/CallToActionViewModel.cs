@@ -35,9 +35,9 @@ namespace Informa.Web.ViewModels
         public ISignInViewModel SignInViewModel { get; }
         public IRegisterPopOutViewModel RegisterPopOutViewModel { get; }
         public string SigninTitle => TextTranslator.Translate("CallToAction.SignIn.Title");
-        public string SigninSubtitle => TextTranslator.Translate("CallToAction.SignIn.SubTitle");
+        public string SigninSubtitle => string.IsNullOrEmpty(SiteRootContext?.Item?.SignIn_SubTitle) ? TextTranslator.Translate("CallToAction.SignIn.SubTitle") : SiteRootContext?.Item?.SignIn_SubTitle;
         public string RegisterTitle => TextTranslator.Translate("CallToAction.Register.Title");
-        public string RegisterSubtitle => TextTranslator.Translate("CallToAction.Register.SubTitle");
+        public string RegisterSubtitle => string.IsNullOrEmpty(SiteRootContext?.Item?.Register_SubTitle) ? TextTranslator.Translate("CallToAction.Register.SubTitle") : SiteRootContext?.Item?.Register_SubTitle;
         public string SubscribeTitle => TextTranslator.Translate("CallToAction.Subscribe.Title");
         public string SubscribeLinkUrl => SiteRootContext?.Item?.Subscribe_Link?.Url ?? string.Empty;
         public string SubscribeLinkText => SiteRootContext?.Item?.Subscribe_Link?.Text ?? string.Empty;
