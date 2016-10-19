@@ -9,7 +9,7 @@ namespace Informa.Library.PXM.Helpers {
 		string ProcessQuickFacts(string content);
         string ProcessTableStyles(string content);
         string ProcessPullQuotes(string content);
-
+        string ProcessQandA(string content);
     }
 
 	[AutowireService]
@@ -320,6 +320,45 @@ namespace Informa.Library.PXM.Helpers {
                     attribute.Value = SidebarPullQuote;
             }
             return doc.DocumentNode.OuterHtml;
+        }
+        public string ProcessQandA(string content) {
+            var doc = CreateDocument(content);
+            var paras = doc.DocumentNode.SelectNodes(@"//div[contains(@class, 'article-interview__answer')]//p");
+            foreach(var q in paras) {
+                var a = q.Attributes["class"];
+                if (a != null && !a.Value.Contains("article-interview__answer")) 
+                    a.Value = $"{a.Value} article-interview__answer";
+                else
+                    q.Attributes.Add("class", "article-interview__answer");
+
+                var oldWrapNode = q.ParentNode;
+                var sib = GetNewAnswerNode(oldWrapNode);
+                
+                sib.AppendChild(q);
+                oldWrapNode.RemoveChild(q);
+            }
+            
+            var divs = doc.DocumentNode.SelectNodes(@"//div[contains(@class, 'article-interview__answer')]");
+            foreach(var d in divs) {
+                
+                var sib = GetNewAnswerNode(d);
+                var newNode = HtmlNode.CreateNode($"<p class=\"article-interview__answer\">{d.InnerText}</p>");
+                sib.PrependChild(newNode);
+
+                d.ParentNode.RemoveChild(d);
+            }
+
+            return doc.DocumentNode.OuterHtml;
+        }
+
+        private HtmlNode GetNewAnswerNode(HtmlNode answerRoot) {
+            var sib = answerRoot.NextSibling;
+            if (sib.Attributes["class"] == null || !sib.Attributes["class"].Value.Equals("answer-wrap")) {
+                sib = HtmlNode.CreateNode($"<p class=\"answer-wrap\"></p>");
+                answerRoot.ParentNode.InsertAfter(sib, answerRoot);
+            }
+
+            return sib;
         }
     }
 }
