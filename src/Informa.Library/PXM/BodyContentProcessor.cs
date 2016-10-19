@@ -31,6 +31,7 @@ namespace Informa.Library.PXM
                 }
 
                 var helper = scope.Resolve<IPxmHtmlHelper>();
+                args.InputText = helper.ProcessTokens(args.InputText);
 				args.InputText = tokenToHtml.ReplaceAllTokens(args.InputText);
 				args.InputText = helper.ProcessIframe(args.InputText);
 				args.InputText = helper.ProcessQuickFacts(args.InputText);
