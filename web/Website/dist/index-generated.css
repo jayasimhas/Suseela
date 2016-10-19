@@ -4105,7 +4105,8 @@ header .header-account-access {
       .myview-settings .table-responsive .table .graybg {
         background: #f9fafa; }
   .myview-settings .hideBtn {
-    display: none !important; }
+    display: none !important;
+    visibility: hidden; }
   .myview-settings .saveoption {
     float: left;
     width: 100%; }
